@@ -45,60 +45,56 @@ component7->setLevel(1);
 head1->addComponent(*component7);
 
 Ccomponent* component8 = new Ccomponent();
-component8->setName("Shape");
-component8->setLevel(4);
+component8->setName("Grouping");
+component8->setLevel(3);
 head1->addComponent(*component8);
 
 Ccomponent* component9 = new Ccomponent();
-component9->setName("Grouping");
-component9->setLevel(3);
+component9->setName("Core");
+component9->setLevel(1);
 head1->addComponent(*component9);
 
-Ccomponent* component10 = new Ccomponent();
-component10->setName("Core");
-component10->setLevel(1);
-head1->addComponent(*component10);
+//<component name='Shape' level='4'></component>
+Cmeta* meta10 = new Cmeta();
+meta10->setName("title");
+meta10->setContent("flowerproto.x3d");
+head1->addMeta(*meta10);
 
 Cmeta* meta11 = new Cmeta();
-meta11->setName("title");
-meta11->setContent("flowerproto.x3d");
+meta11->setName("creator");
+meta11->setContent("John Carlson");
 head1->addMeta(*meta11);
 
 Cmeta* meta12 = new Cmeta();
-meta12->setName("creator");
-meta12->setContent("John Carlson");
+meta12->setName("description");
+meta12->setContent("A flower proto with configurable shaders");
 head1->addMeta(*meta12);
 
 Cmeta* meta13 = new Cmeta();
-meta13->setName("description");
-meta13->setContent("A flower proto with configurable shaders");
+meta13->setName("generator");
+meta13->setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit");
 head1->addMeta(*meta13);
 
 Cmeta* meta14 = new Cmeta();
-meta14->setName("generator");
-meta14->setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit");
+meta14->setName("identifier");
+meta14->setContent("https://coderextreme.net/X3DJSONLD/src/main/data/flowerproto.x3d");
 head1->addMeta(*meta14);
-
-Cmeta* meta15 = new Cmeta();
-meta15->setName("identifier");
-meta15->setContent("https://coderextreme.net/X3DJSONLD/src/main/data/flowerproto.x3d");
-head1->addMeta(*meta15);
 
 X3D0->setHead(*head1);
 
-CScene* Scene16 = new CScene();
-CProtoDeclare ProtoDeclare17 = browser.createX3DFromString(R"foo(<?xml version="1.0" encoding="undefined"?>
+CScene* Scene15 = new CScene();
+CProtoDeclare ProtoDeclare16 = browser.createX3DFromString(R"foo(<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="FlowerProto" ><ProtoInterface><field name="vertex" accessType="inputOutput" type="MFString" value="&quot;../shaders/gl_flowers_chromatic.vs&quot;"></field>
 <field name="fragment" accessType="inputOutput" type="MFString" value="&quot;../shaders/pc_flowers.fs&quot;"></field>
 </ProtoInterface>
-<ProtoBody><Transform DEF="transform"><Shape><Appearance><Material diffuseColor="0.7 0.7 0.7" specularColor="0.5 0.5 0.5"></Material>
-<ComposedCubeMapTexture containerField="texture" DEF="texture"><ImageTexture containerField="back" url="&quot;../resources/images/all_probes/stpeters_cross/stpeters_back.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png&quot;"></ImageTexture>
-<ImageTexture containerField="bottom" url="&quot;../resources/images/all_probes/stpeters_cross/stpeters_bottom.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png&quot;"></ImageTexture>
-<ImageTexture containerField="front" url="&quot;../resources/images/all_probes/stpeters_cross/stpeters_front.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png&quot;"></ImageTexture>
-<ImageTexture containerField="left" url="&quot;../resources/images/all_probes/stpeters_cross/stpeters_left.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png&quot;"></ImageTexture>
-<ImageTexture containerField="right" url="&quot;../resources/images/all_probes/stpeters_cross/stpeters_right.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png&quot;"></ImageTexture>
-<ImageTexture containerField="top" url="&quot;../resources/images/all_probes/stpeters_cross/stpeters_top.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png&quot;"></ImageTexture>
+<ProtoBody><Transform DEF="transform"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0.7 0.7 0.7" specularColor="0.5 0.5 0.5"></Material>
+<ComposedCubeMapTexture containerField="texture" DEF="texture"><ImageTexture containerField="backTexture" url="&quot;../resources/images/all_probes/stpeters_cross/stpeters_back.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png&quot;"></ImageTexture>
+<ImageTexture containerField="bottomTexture" url="&quot;../resources/images/all_probes/stpeters_cross/stpeters_bottom.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png&quot;"></ImageTexture>
+<ImageTexture containerField="frontTexture" url="&quot;../resources/images/all_probes/stpeters_cross/stpeters_front.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png&quot;"></ImageTexture>
+<ImageTexture containerField="leftTexture" url="&quot;../resources/images/all_probes/stpeters_cross/stpeters_left.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png&quot;"></ImageTexture>
+<ImageTexture containerField="rightTexture" url="&quot;../resources/images/all_probes/stpeters_cross/stpeters_right.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png&quot;"></ImageTexture>
+<ImageTexture containerField="topTexture" url="&quot;../resources/images/all_probes/stpeters_cross/stpeters_top.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png&quot;"></ImageTexture>
 </ComposedCubeMapTexture>
 <ComposedShader DEF="shader" language="GLSL"><field name="cube" type="SFInt32" accessType="inputOutput" value="0"></field>
 <field name="chromaticDispertion" accessType="initializeOnly" type="SFVec3f" value="0.98 1 1.033"></field>
@@ -208,242 +204,242 @@ CProtoDeclare ProtoDeclare17 = browser.createX3DFromString(R"foo(<?xml version="
 </Transform>
 </ProtoBody>
 </ProtoDeclare>)foo");
-ProtoDeclare17->setName("FlowerProto");
-CProtoInterface* ProtoInterface18 = new CProtoInterface();
+ProtoDeclare16->setName("FlowerProto");
+CProtoInterface* ProtoInterface17 = new CProtoInterface();
+Cfield* field18 = new Cfield();
+field18->setName("vertex");
+field18->setAccessType("inputOutput");
+field18->setType("MFString");
+field18->setValue("\"../shaders/gl_flowers_chromatic.vs\"");
+ProtoInterface17->addField(*field18);
+
 Cfield* field19 = new Cfield();
-field19->setName("vertex");
+field19->setName("fragment");
 field19->setAccessType("inputOutput");
 field19->setType("MFString");
-field19->setValue("\"../shaders/gl_flowers_chromatic.vs\"");
-ProtoInterface18->addField(*field19);
+field19->setValue("\"../shaders/pc_flowers.fs\"");
+ProtoInterface17->addField(*field19);
 
-Cfield* field20 = new Cfield();
-field20->setName("fragment");
-field20->setAccessType("inputOutput");
-field20->setType("MFString");
-field20->setValue("\"../shaders/pc_flowers.fs\"");
-ProtoInterface18->addField(*field20);
+ProtoDeclare16->setProtoInterface(*ProtoInterface17);
 
-ProtoDeclare17->setProtoInterface(*ProtoInterface18);
+CProtoBody* ProtoBody20 = new CProtoBody();
+CTransform* Transform21 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform21->setDEF("transform");
+CShape* Shape22 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance23 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material24 = (CMaterial *)(m_pScene.createNode("Material"));
+Material24->setDiffuseColor(new float[3]{0.7,0.7,0.7});
+Material24->setSpecularColor(new float[3]{0.5,0.5,0.5});
+Appearance23->setMaterial(*Material24);
 
-CProtoBody* ProtoBody21 = new CProtoBody();
-CTransform* Transform22 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform22->setDEF("transform");
-CShape* Shape23 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance24 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material25 = (CMaterial *)(m_pScene.createNode("Material"));
-Material25->setDiffuseColor(new float[3]{0.7,0.7,0.7});
-Material25->setSpecularColor(new float[3]{0.5,0.5,0.5});
-Appearance24->setMaterial(*Material25);
+CComposedCubeMapTexture* ComposedCubeMapTexture25 = (CComposedCubeMapTexture *)(m_pScene.createNode("ComposedCubeMapTexture"));
+ComposedCubeMapTexture25->setDEF("texture");
+CImageTexture* ImageTexture26 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture26->setUrl(new CString[2]{"../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"}, 2);
+ComposedCubeMapTexture25->setBackTexture(*ImageTexture26);
 
-CComposedCubeMapTexture* ComposedCubeMapTexture26 = (CComposedCubeMapTexture *)(m_pScene.createNode("ComposedCubeMapTexture"));
-ComposedCubeMapTexture26->setDEF("texture");
 CImageTexture* ImageTexture27 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
-ImageTexture27->setUrl(new CString[2]{"../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"}, 2);
-ComposedCubeMapTexture26->setBack(*ImageTexture27);
+ImageTexture27->setUrl(new CString[2]{"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"}, 2);
+ComposedCubeMapTexture25->setBottomTexture(*ImageTexture27);
 
 CImageTexture* ImageTexture28 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
-ImageTexture28->setUrl(new CString[2]{"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"}, 2);
-ComposedCubeMapTexture26->setBottom(*ImageTexture28);
+ImageTexture28->setUrl(new CString[2]{"../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"}, 2);
+ComposedCubeMapTexture25->setFrontTexture(*ImageTexture28);
 
 CImageTexture* ImageTexture29 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
-ImageTexture29->setUrl(new CString[2]{"../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"}, 2);
-ComposedCubeMapTexture26->setFront(*ImageTexture29);
+ImageTexture29->setUrl(new CString[2]{"../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"}, 2);
+ComposedCubeMapTexture25->setLeftTexture(*ImageTexture29);
 
 CImageTexture* ImageTexture30 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
-ImageTexture30->setUrl(new CString[2]{"../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"}, 2);
-ComposedCubeMapTexture26->setLeft(*ImageTexture30);
+ImageTexture30->setUrl(new CString[2]{"../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"}, 2);
+ComposedCubeMapTexture25->setRightTexture(*ImageTexture30);
 
 CImageTexture* ImageTexture31 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
-ImageTexture31->setUrl(new CString[2]{"../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"}, 2);
-ComposedCubeMapTexture26->setRight(*ImageTexture31);
+ImageTexture31->setUrl(new CString[2]{"../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"}, 2);
+ComposedCubeMapTexture25->setTopTexture(*ImageTexture31);
 
-CImageTexture* ImageTexture32 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
-ImageTexture32->setUrl(new CString[2]{"../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"}, 2);
-ComposedCubeMapTexture26->setTop(*ImageTexture32);
+Appearance23->setTexture(*ComposedCubeMapTexture25);
 
-Appearance24->setTexture(*ComposedCubeMapTexture26);
+CComposedShader* ComposedShader32 = (CComposedShader *)(m_pScene.createNode("ComposedShader"));
+ComposedShader32->setDEF("shader");
+ComposedShader32->setLanguage("GLSL");
+Cfield* field33 = new Cfield();
+field33->setName("cube");
+field33->setType("SFInt32");
+field33->setAccessType("inputOutput");
+field33->setValue("0");
+ComposedShader32->addField(*field33);
 
-CComposedShader* ComposedShader33 = (CComposedShader *)(m_pScene.createNode("ComposedShader"));
-ComposedShader33->setDEF("shader");
-ComposedShader33->setLanguage("GLSL");
 Cfield* field34 = new Cfield();
-field34->setName("cube");
-field34->setType("SFInt32");
-field34->setAccessType("inputOutput");
-field34->setValue("0");
-ComposedShader33->addField(*field34);
+field34->setName("chromaticDispertion");
+field34->setAccessType("initializeOnly");
+field34->setType("SFVec3f");
+field34->setValue("0.98 1 1.033");
+ComposedShader32->addField(*field34);
 
 Cfield* field35 = new Cfield();
-field35->setName("chromaticDispertion");
-field35->setAccessType("initializeOnly");
-field35->setType("SFVec3f");
-field35->setValue("0.98 1 1.033");
-ComposedShader33->addField(*field35);
+field35->setName("bias");
+field35->setType("SFFloat");
+field35->setAccessType("inputOutput");
+field35->setValue("0.5");
+ComposedShader32->addField(*field35);
 
 Cfield* field36 = new Cfield();
-field36->setName("bias");
+field36->setName("scale");
 field36->setType("SFFloat");
 field36->setAccessType("inputOutput");
 field36->setValue("0.5");
-ComposedShader33->addField(*field36);
+ComposedShader32->addField(*field36);
 
 Cfield* field37 = new Cfield();
-field37->setName("scale");
+field37->setName("power");
 field37->setType("SFFloat");
 field37->setAccessType("inputOutput");
-field37->setValue("0.5");
-ComposedShader33->addField(*field37);
+field37->setValue("2");
+ComposedShader32->addField(*field37);
 
 Cfield* field38 = new Cfield();
-field38->setName("power");
+field38->setName("a");
 field38->setType("SFFloat");
 field38->setAccessType("inputOutput");
-field38->setValue("2");
-ComposedShader33->addField(*field38);
+field38->setValue("10");
+ComposedShader32->addField(*field38);
 
 Cfield* field39 = new Cfield();
-field39->setName("a");
+field39->setName("b");
 field39->setType("SFFloat");
 field39->setAccessType("inputOutput");
-field39->setValue("10");
-ComposedShader33->addField(*field39);
+field39->setValue("1");
+ComposedShader32->addField(*field39);
 
 Cfield* field40 = new Cfield();
-field40->setName("b");
+field40->setName("c");
 field40->setType("SFFloat");
 field40->setAccessType("inputOutput");
-field40->setValue("1");
-ComposedShader33->addField(*field40);
+field40->setValue("20");
+ComposedShader32->addField(*field40);
 
 Cfield* field41 = new Cfield();
-field41->setName("c");
+field41->setName("d");
 field41->setType("SFFloat");
 field41->setAccessType("inputOutput");
 field41->setValue("20");
-ComposedShader33->addField(*field41);
+ComposedShader32->addField(*field41);
 
 Cfield* field42 = new Cfield();
-field42->setName("d");
+field42->setName("tdelta");
 field42->setType("SFFloat");
 field42->setAccessType("inputOutput");
-field42->setValue("20");
-ComposedShader33->addField(*field42);
+field42->setValue("0");
+ComposedShader32->addField(*field42);
 
 Cfield* field43 = new Cfield();
-field43->setName("tdelta");
+field43->setName("pdelta");
 field43->setType("SFFloat");
 field43->setAccessType("inputOutput");
 field43->setValue("0");
-ComposedShader33->addField(*field43);
-
-Cfield* field44 = new Cfield();
-field44->setName("pdelta");
-field44->setType("SFFloat");
-field44->setAccessType("inputOutput");
-field44->setValue("0");
-ComposedShader33->addField(*field44);
+ComposedShader32->addField(*field43);
 
 //<field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field>
-CShaderPart* ShaderPart45 = (CShaderPart *)(m_pScene.createNode("ShaderPart"));
-ShaderPart45->setType("VERTEX");
-CIS* IS46 = new CIS();
-Cconnect* connect47 = new Cconnect();
-connect47->setNodeField("url");
-connect47->setProtoField("vertex");
-IS46->addConnect(*connect47);
+CShaderPart* ShaderPart44 = (CShaderPart *)(m_pScene.createNode("ShaderPart"));
+ShaderPart44->setType("VERTEX");
+CIS* IS45 = new CIS();
+Cconnect* connect46 = new Cconnect();
+connect46->setNodeField("url");
+connect46->setProtoField("vertex");
+IS45->addConnect(*connect46);
 
-ShaderPart45->setIS(*IS46);
+ShaderPart44->setIS(*IS45);
 
-ComposedShader33->addParts(*ShaderPart45);
+ComposedShader32->addParts(*ShaderPart44);
 
-CShaderPart* ShaderPart48 = (CShaderPart *)(m_pScene.createNode("ShaderPart"));
-ShaderPart48->setType("FRAGMENT");
-CIS* IS49 = new CIS();
-Cconnect* connect50 = new Cconnect();
-connect50->setNodeField("url");
-connect50->setProtoField("fragment");
-IS49->addConnect(*connect50);
+CShaderPart* ShaderPart47 = (CShaderPart *)(m_pScene.createNode("ShaderPart"));
+ShaderPart47->setType("FRAGMENT");
+CIS* IS48 = new CIS();
+Cconnect* connect49 = new Cconnect();
+connect49->setNodeField("url");
+connect49->setProtoField("fragment");
+IS48->addConnect(*connect49);
 
-ShaderPart48->setIS(*IS49);
+ShaderPart47->setIS(*IS48);
 
-ComposedShader33->addParts(*ShaderPart48);
+ComposedShader32->addParts(*ShaderPart47);
 
-Appearance24->addShaders(*ComposedShader33);
+Appearance23->addShaders(*ComposedShader32);
 
-Shape23->setAppearance(*Appearance24);
+Shape22->setAppearance(*Appearance23);
 
-CSphere* Sphere51 = (CSphere *)(m_pScene.createNode("Sphere"));
-Shape23->setGeometry(Sphere51);
+CSphere* Sphere50 = (CSphere *)(m_pScene.createNode("Sphere"));
+Shape22->setGeometry(Sphere50);
 
-Transform22->addChild(*Shape23);
+Transform21->addChild(*Shape22);
 
-CScript* Script52 = (CScript *)(m_pScene.createNode("Script"));
-Script52->setDEF("Animate");
+CScript* Script51 = (CScript *)(m_pScene.createNode("Script"));
+Script51->setDEF("Animate");
+Cfield* field52 = new Cfield();
+field52->setName("translation");
+field52->setAccessType("inputOutput");
+field52->setType("SFVec3f");
+field52->setValue("0 0 0");
+Script51->addField(*field52);
+
 Cfield* field53 = new Cfield();
-field53->setName("translation");
+field53->setName("velocity");
 field53->setAccessType("inputOutput");
 field53->setType("SFVec3f");
 field53->setValue("0 0 0");
-Script52->addField(*field53);
+Script51->addField(*field53);
 
 Cfield* field54 = new Cfield();
-field54->setName("velocity");
-field54->setAccessType("inputOutput");
-field54->setType("SFVec3f");
-field54->setValue("0 0 0");
-Script52->addField(*field54);
+field54->setName("set_fraction");
+field54->setAccessType("inputOnly");
+field54->setType("SFFloat");
+Script51->addField(*field54);
 
 Cfield* field55 = new Cfield();
-field55->setName("set_fraction");
-field55->setAccessType("inputOnly");
+field55->setName("a");
 field55->setType("SFFloat");
-Script52->addField(*field55);
+field55->setAccessType("inputOutput");
+field55->setValue("0.5");
+Script51->addField(*field55);
 
 Cfield* field56 = new Cfield();
-field56->setName("a");
+field56->setName("b");
 field56->setType("SFFloat");
 field56->setAccessType("inputOutput");
 field56->setValue("0.5");
-Script52->addField(*field56);
+Script51->addField(*field56);
 
 Cfield* field57 = new Cfield();
-field57->setName("b");
+field57->setName("c");
 field57->setType("SFFloat");
 field57->setAccessType("inputOutput");
-field57->setValue("0.5");
-Script52->addField(*field57);
+field57->setValue("3");
+Script51->addField(*field57);
 
 Cfield* field58 = new Cfield();
-field58->setName("c");
+field58->setName("d");
 field58->setType("SFFloat");
 field58->setAccessType("inputOutput");
 field58->setValue("3");
-Script52->addField(*field58);
+Script51->addField(*field58);
 
 Cfield* field59 = new Cfield();
-field59->setName("d");
+field59->setName("tdelta");
 field59->setType("SFFloat");
 field59->setAccessType("inputOutput");
-field59->setValue("3");
-Script52->addField(*field59);
+field59->setValue("0.5");
+Script51->addField(*field59);
 
 Cfield* field60 = new Cfield();
-field60->setName("tdelta");
+field60->setName("pdelta");
 field60->setType("SFFloat");
 field60->setAccessType("inputOutput");
 field60->setValue("0.5");
-Script52->addField(*field60);
-
-Cfield* field61 = new Cfield();
-field61->setName("pdelta");
-field61->setType("SFFloat");
-field61->setAccessType("inputOutput");
-field61->setValue("0.5");
-Script52->addField(*field61);
+Script51->addField(*field60);
 
 
-Script52.setSourceCode(`ecmascript:\n"+
+Script51.setSourceCode(`ecmascript:\n"+
 "			function initialize() {\n"+
 "			    translation = new SFVec3f(0, 0, 0);\n"+
 "			    velocity = new SFVec3f(\n"+
@@ -509,77 +505,77 @@ Script52.setSourceCode(`ecmascript:\n"+
 "					d = 4;\n"+
 "				}\n"+
 "			}`)
-Transform22->addChildren(*Script52);
+Transform21->addChildren(*Script51);
 
-CTimeSensor* TimeSensor62 = (CTimeSensor *)(m_pScene.createNode("TimeSensor"));
-TimeSensor62->setDEF("TourTime");
-TimeSensor62->setCycleInterval(5);
-TimeSensor62->setLoop(True);
-Transform22->addChildren(*TimeSensor62);
+CTimeSensor* TimeSensor61 = (CTimeSensor *)(m_pScene.createNode("TimeSensor"));
+TimeSensor61->setDEF("TourTime");
+TimeSensor61->setCycleInterval(5);
+TimeSensor61->setLoop(True);
+Transform21->addChildren(*TimeSensor61);
+
+CROUTE* ROUTE62 = new CROUTE();
+ROUTE62->setFromNode("TourTime");
+ROUTE62->setFromField("fraction_changed");
+ROUTE62->setToNode("Animate");
+ROUTE62->setToField("set_fraction");
+Transform21->addChildren(*ROUTE62);
 
 CROUTE* ROUTE63 = new CROUTE();
-ROUTE63->setFromNode("TourTime");
-ROUTE63->setFromField("fraction_changed");
-ROUTE63->setToNode("Animate");
-ROUTE63->setToField("set_fraction");
-Transform22->addChildren(*ROUTE63);
+ROUTE63->setFromNode("Animate");
+ROUTE63->setFromField("translation_changed");
+ROUTE63->setToNode("transform");
+ROUTE63->setToField("set_translation");
+Transform21->addChildren(*ROUTE63);
 
 CROUTE* ROUTE64 = new CROUTE();
 ROUTE64->setFromNode("Animate");
-ROUTE64->setFromField("translation_changed");
-ROUTE64->setToNode("transform");
-ROUTE64->setToField("set_translation");
-Transform22->addChildren(*ROUTE64);
+ROUTE64->setFromField("a");
+ROUTE64->setToNode("shader");
+ROUTE64->setToField("a");
+Transform21->addChildren(*ROUTE64);
 
 CROUTE* ROUTE65 = new CROUTE();
 ROUTE65->setFromNode("Animate");
-ROUTE65->setFromField("a");
+ROUTE65->setFromField("b");
 ROUTE65->setToNode("shader");
-ROUTE65->setToField("a");
-Transform22->addChildren(*ROUTE65);
+ROUTE65->setToField("b");
+Transform21->addChildren(*ROUTE65);
 
 CROUTE* ROUTE66 = new CROUTE();
 ROUTE66->setFromNode("Animate");
-ROUTE66->setFromField("b");
+ROUTE66->setFromField("c");
 ROUTE66->setToNode("shader");
-ROUTE66->setToField("b");
-Transform22->addChildren(*ROUTE66);
+ROUTE66->setToField("c");
+Transform21->addChildren(*ROUTE66);
 
 CROUTE* ROUTE67 = new CROUTE();
 ROUTE67->setFromNode("Animate");
-ROUTE67->setFromField("c");
+ROUTE67->setFromField("d");
 ROUTE67->setToNode("shader");
-ROUTE67->setToField("c");
-Transform22->addChildren(*ROUTE67);
+ROUTE67->setToField("d");
+Transform21->addChildren(*ROUTE67);
 
 CROUTE* ROUTE68 = new CROUTE();
 ROUTE68->setFromNode("Animate");
-ROUTE68->setFromField("d");
+ROUTE68->setFromField("tdelta");
 ROUTE68->setToNode("shader");
-ROUTE68->setToField("d");
-Transform22->addChildren(*ROUTE68);
+ROUTE68->setToField("tdelta");
+Transform21->addChildren(*ROUTE68);
 
 CROUTE* ROUTE69 = new CROUTE();
 ROUTE69->setFromNode("Animate");
-ROUTE69->setFromField("tdelta");
+ROUTE69->setFromField("pdelta");
 ROUTE69->setToNode("shader");
-ROUTE69->setToField("tdelta");
-Transform22->addChildren(*ROUTE69);
+ROUTE69->setToField("pdelta");
+Transform21->addChildren(*ROUTE69);
 
-CROUTE* ROUTE70 = new CROUTE();
-ROUTE70->setFromNode("Animate");
-ROUTE70->setFromField("pdelta");
-ROUTE70->setToNode("shader");
-ROUTE70->setToField("pdelta");
-Transform22->addChildren(*ROUTE70);
+ProtoBody20->addChildren(*Transform21);
 
-ProtoBody21->addChildren(*Transform22);
+ProtoDeclare16->setProtoBody(*ProtoBody20);
 
-ProtoDeclare17->setProtoBody(*ProtoBody21);
+group->addChildren(*ProtoDeclare16);
 
-group->addChildren(*ProtoDeclare17);
-
-X3D0->setScene(*Scene16);
+X3D0->setScene(*Scene15);
 
 m_pScene.addRootNode(group);
 X3D0->toXMLString();

@@ -4,7 +4,7 @@ import '../x3d.dart';
 var X3D0 =  X3D(
 
       profile_ : SFString('Immersive'),
-      version_ : SFString('4.0'),
+      version_ : SFString('3.3'),
       head_ : 
         head(
           meta_ : [
@@ -62,10 +62,17 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('generator'),
-              content_ : SFString('X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit'))]),
+              content_ : SFString('X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit')),
+
+            meta(
+              name_ : SFString('license'),
+              content_ : SFString('../license.html'))]),
       Scene_ : 
         Scene(
           children_ : [
+            WorldInfo(
+              title_ : SFString('LOA1_WalkAnimation.x3d')),
+
             ProtoDeclare(
               name_ : SFString('LOA1_WalkAnimation'),
               ProtoInterface_ : 
@@ -73,137 +80,138 @@ var X3D0 =  X3D(
                   field_ : [
                     field(
                       type_ : SFString("SFTime"),
-                      accessType_ : SFString("inputOutput"),
                       name_ : SFString('cycleInterval'),
+                      accessType_ : SFString("inputOutput"),
                       value_ : SFString('2')),
 
                     field(
                       type_ : SFString("SFBool"),
-                      accessType_ : SFString("inputOutput"),
                       name_ : SFString('enabled'),
+                      accessType_ : SFString("inputOutput"),
                       value_ : SFString('true')),
 
                     field(
                       type_ : SFString("SFBool"),
-                      accessType_ : SFString("inputOutput"),
                       name_ : SFString('loop'),
+                      accessType_ : SFString("inputOutput"),
                       value_ : SFString('true')),
 
                     field(
                       type_ : SFString("SFTime"),
+                      name_ : SFString('startTime'),
                       accessType_ : SFString("inputOutput"),
-                      name_ : SFString('startTime')),
+                      value_ : SFString('0')),
 
                     field(
                       type_ : SFString("SFTime"),
-                      accessType_ : SFString("inputOutput"),
                       name_ : SFString('stopTime'),
+                      accessType_ : SFString("inputOutput"),
                       value_ : SFString('-1')),
 
                     field(
                       type_ : SFString("SFFloat"),
-                      accessType_ : SFString("outputOnly"),
-                      name_ : SFString('fraction_changed')),
+                      name_ : SFString('fraction_changed'),
+                      accessType_ : SFString("outputOnly")),
 
                     field(
                       type_ : SFString("SFBool"),
-                      accessType_ : SFString("outputOnly"),
-                      name_ : SFString('isActive')),
+                      name_ : SFString('isActive'),
+                      accessType_ : SFString("outputOnly")),
 
                     field(
                       type_ : SFString("SFVec3f"),
-                      accessType_ : SFString("outputOnly"),
-                      name_ : SFString('HumanoidRoot_translation_changed')),
+                      name_ : SFString('HumanoidRoot_translation_changed'),
+                      accessType_ : SFString("outputOnly")),
 
                     field(
                       type_ : SFString("SFRotation"),
-                      accessType_ : SFString("outputOnly"),
-                      name_ : SFString('HumanoidRoot_rotation_changed')),
+                      name_ : SFString('HumanoidRoot_rotation_changed'),
+                      accessType_ : SFString("outputOnly")),
 
                     field(
                       type_ : SFString("SFRotation"),
-                      accessType_ : SFString("outputOnly"),
-                      name_ : SFString('lower_body_rotation_changed')),
+                      name_ : SFString('lower_body_rotation_changed'),
+                      accessType_ : SFString("outputOnly")),
 
                     field(
                       type_ : SFString("SFRotation"),
-                      accessType_ : SFString("outputOnly"),
-                      name_ : SFString('l_hip_rotation_changed')),
+                      name_ : SFString('l_hip_rotation_changed'),
+                      accessType_ : SFString("outputOnly")),
 
                     field(
                       type_ : SFString("SFRotation"),
-                      accessType_ : SFString("outputOnly"),
-                      name_ : SFString('l_knee_rotation_changed')),
+                      name_ : SFString('l_knee_rotation_changed'),
+                      accessType_ : SFString("outputOnly")),
 
                     field(
                       type_ : SFString("SFRotation"),
-                      accessType_ : SFString("outputOnly"),
-                      name_ : SFString('l_ankle_rotation_changed')),
+                      name_ : SFString('l_ankle_rotation_changed'),
+                      accessType_ : SFString("outputOnly")),
 
                     field(
                       type_ : SFString("SFRotation"),
-                      accessType_ : SFString("outputOnly"),
-                      name_ : SFString('l_midtarsal_rotation_changed')),
+                      name_ : SFString('l_midtarsal_rotation_changed'),
+                      accessType_ : SFString("outputOnly")),
 
                     field(
                       type_ : SFString("SFRotation"),
-                      accessType_ : SFString("outputOnly"),
-                      name_ : SFString('r_hip_rotation_changed')),
+                      name_ : SFString('r_hip_rotation_changed'),
+                      accessType_ : SFString("outputOnly")),
 
                     field(
                       type_ : SFString("SFRotation"),
-                      accessType_ : SFString("outputOnly"),
-                      name_ : SFString('r_knee_rotation_changed')),
+                      name_ : SFString('r_knee_rotation_changed'),
+                      accessType_ : SFString("outputOnly")),
 
                     field(
                       type_ : SFString("SFRotation"),
-                      accessType_ : SFString("outputOnly"),
-                      name_ : SFString('r_ankle_rotation_changed')),
+                      name_ : SFString('r_ankle_rotation_changed'),
+                      accessType_ : SFString("outputOnly")),
 
                     field(
                       type_ : SFString("SFRotation"),
-                      accessType_ : SFString("outputOnly"),
-                      name_ : SFString('r_midtarsal_rotation_changed')),
+                      name_ : SFString('r_midtarsal_rotation_changed'),
+                      accessType_ : SFString("outputOnly")),
 
                     field(
                       type_ : SFString("SFRotation"),
-                      accessType_ : SFString("outputOnly"),
-                      name_ : SFString('vl5_rotation_changed')),
+                      name_ : SFString('vl5_rotation_changed'),
+                      accessType_ : SFString("outputOnly")),
 
                     field(
                       type_ : SFString("SFRotation"),
-                      accessType_ : SFString("outputOnly"),
-                      name_ : SFString('skullbase_rotation_changed')),
+                      name_ : SFString('skullbase_rotation_changed'),
+                      accessType_ : SFString("outputOnly")),
 
                     field(
                       type_ : SFString("SFRotation"),
-                      accessType_ : SFString("outputOnly"),
-                      name_ : SFString('l_shoulder_rotation_changed')),
+                      name_ : SFString('l_shoulder_rotation_changed'),
+                      accessType_ : SFString("outputOnly")),
 
                     field(
                       type_ : SFString("SFRotation"),
-                      accessType_ : SFString("outputOnly"),
-                      name_ : SFString('l_elbow_rotation_changed')),
+                      name_ : SFString('l_elbow_rotation_changed'),
+                      accessType_ : SFString("outputOnly")),
 
                     field(
                       type_ : SFString("SFRotation"),
-                      accessType_ : SFString("outputOnly"),
-                      name_ : SFString('l_wrist_rotation_changed')),
+                      name_ : SFString('l_wrist_rotation_changed'),
+                      accessType_ : SFString("outputOnly")),
 
                     field(
                       type_ : SFString("SFRotation"),
-                      accessType_ : SFString("outputOnly"),
-                      name_ : SFString('r_shoulder_rotation_changed')),
+                      name_ : SFString('r_shoulder_rotation_changed'),
+                      accessType_ : SFString("outputOnly")),
 
                     field(
                       type_ : SFString("SFRotation"),
-                      accessType_ : SFString("outputOnly"),
-                      name_ : SFString('r_elbow_rotation_changed')),
+                      name_ : SFString('r_elbow_rotation_changed'),
+                      accessType_ : SFString("outputOnly")),
 
                     field(
                       type_ : SFString("SFRotation"),
-                      accessType_ : SFString("outputOnly"),
-                      name_ : SFString('r_wrist_rotation_changed'))]),
+                      name_ : SFString('r_wrist_rotation_changed'),
+                      accessType_ : SFString("outputOnly"))]),
               ProtoBody_ : 
                 ProtoBody(
                   children_ : [
@@ -215,12 +223,12 @@ var X3D0 =  X3D(
                             IS(
                               connect_ : [
                                 connect(
-                                  nodeField_ : SFString('enabled'),
-                                  protoField_ : SFString('enabled')),
-
-                                connect(
                                   nodeField_ : SFString('cycleInterval'),
                                   protoField_ : SFString('cycleInterval')),
+
+                                connect(
+                                  nodeField_ : SFString('enabled'),
+                                  protoField_ : SFString('enabled')),
 
                                 connect(
                                   nodeField_ : SFString('loop'),
@@ -235,12 +243,12 @@ var X3D0 =  X3D(
                                   protoField_ : SFString('stopTime')),
 
                                 connect(
-                                  nodeField_ : SFString('isActive'),
-                                  protoField_ : SFString('isActive')),
+                                  nodeField_ : SFString('fraction_changed'),
+                                  protoField_ : SFString('fraction_changed')),
 
                                 connect(
-                                  nodeField_ : SFString('fraction_changed'),
-                                  protoField_ : SFString('fraction_changed'))])),
+                                  nodeField_ : SFString('isActive'),
+                                  protoField_ : SFString('isActive'))])),
 
                         PositionInterpolator(
                           DEF_ : SFString('HUMANOIDROOT_POSITION_ANIMATOR'),
@@ -452,138 +460,137 @@ var X3D0 =  X3D(
                                   protoField_ : SFString('r_wrist_rotation_changed'))]))]),
 
                     ROUTE(
-                      fromNode_ : SFString('TIMER'),
                       fromField_ : SFString('fraction_changed'),
-                      toNode_ : SFString('HUMANOIDROOT_POSITION_ANIMATOR'),
-                      toField_ : SFString('set_fraction')),
+                      fromNode_ : SFString('TIMER'),
+                      toField_ : SFString('set_fraction'),
+                      toNode_ : SFString('HUMANOIDROOT_POSITION_ANIMATOR')),
 
                     ROUTE(
-                      fromNode_ : SFString('TIMER'),
                       fromField_ : SFString('fraction_changed'),
-                      toNode_ : SFString('HUMANOIDROOT_ANIMATOR'),
-                      toField_ : SFString('set_fraction')),
+                      fromNode_ : SFString('TIMER'),
+                      toField_ : SFString('set_fraction'),
+                      toNode_ : SFString('HUMANOIDROOT_ANIMATOR')),
 
                     ROUTE(
-                      fromNode_ : SFString('TIMER'),
                       fromField_ : SFString('fraction_changed'),
-                      toNode_ : SFString('SACROILIAC_ANIMATOR'),
-                      toField_ : SFString('set_fraction')),
+                      fromNode_ : SFString('TIMER'),
+                      toField_ : SFString('set_fraction'),
+                      toNode_ : SFString('SACROILIAC_ANIMATOR')),
 
                     ROUTE(
-                      fromNode_ : SFString('TIMER'),
                       fromField_ : SFString('fraction_changed'),
-                      toNode_ : SFString('L_HIP_ANIMATOR'),
-                      toField_ : SFString('set_fraction')),
+                      fromNode_ : SFString('TIMER'),
+                      toField_ : SFString('set_fraction'),
+                      toNode_ : SFString('L_HIP_ANIMATOR')),
 
                     ROUTE(
-                      fromNode_ : SFString('TIMER'),
                       fromField_ : SFString('fraction_changed'),
-                      toNode_ : SFString('L_KNEE_ANIMATOR'),
-                      toField_ : SFString('set_fraction')),
+                      fromNode_ : SFString('TIMER'),
+                      toField_ : SFString('set_fraction'),
+                      toNode_ : SFString('L_KNEE_ANIMATOR')),
 
                     ROUTE(
-                      fromNode_ : SFString('TIMER'),
                       fromField_ : SFString('fraction_changed'),
-                      toNode_ : SFString('L_ANKLE_ANIMATOR'),
-                      toField_ : SFString('set_fraction')),
+                      fromNode_ : SFString('TIMER'),
+                      toField_ : SFString('set_fraction'),
+                      toNode_ : SFString('L_ANKLE_ANIMATOR')),
 
                     ROUTE(
-                      fromNode_ : SFString('TIMER'),
                       fromField_ : SFString('fraction_changed'),
-                      toNode_ : SFString('L_MIDTARSAL_ANIMATOR'),
-                      toField_ : SFString('set_fraction')),
+                      fromNode_ : SFString('TIMER'),
+                      toField_ : SFString('set_fraction'),
+                      toNode_ : SFString('L_MIDTARSAL_ANIMATOR')),
 
                     ROUTE(
-                      fromNode_ : SFString('TIMER'),
                       fromField_ : SFString('fraction_changed'),
-                      toNode_ : SFString('R_HIP_ANIMATOR'),
-                      toField_ : SFString('set_fraction')),
+                      fromNode_ : SFString('TIMER'),
+                      toField_ : SFString('set_fraction'),
+                      toNode_ : SFString('R_HIP_ANIMATOR')),
 
                     ROUTE(
-                      fromNode_ : SFString('TIMER'),
                       fromField_ : SFString('fraction_changed'),
-                      toNode_ : SFString('R_KNEE_ANIMATOR'),
-                      toField_ : SFString('set_fraction')),
+                      fromNode_ : SFString('TIMER'),
+                      toField_ : SFString('set_fraction'),
+                      toNode_ : SFString('R_KNEE_ANIMATOR')),
 
                     ROUTE(
-                      fromNode_ : SFString('TIMER'),
                       fromField_ : SFString('fraction_changed'),
-                      toNode_ : SFString('R_ANKLE_ANIMATOR'),
-                      toField_ : SFString('set_fraction')),
+                      fromNode_ : SFString('TIMER'),
+                      toField_ : SFString('set_fraction'),
+                      toNode_ : SFString('R_ANKLE_ANIMATOR')),
 
                     ROUTE(
-                      fromNode_ : SFString('TIMER'),
                       fromField_ : SFString('fraction_changed'),
-                      toNode_ : SFString('R_MIDTARSAL_ANIMATOR'),
-                      toField_ : SFString('set_fraction')),
+                      fromNode_ : SFString('TIMER'),
+                      toField_ : SFString('set_fraction'),
+                      toNode_ : SFString('R_MIDTARSAL_ANIMATOR')),
 
                     ROUTE(
-                      fromNode_ : SFString('TIMER'),
                       fromField_ : SFString('fraction_changed'),
-                      toNode_ : SFString('VL5_ANIMATOR'),
-                      toField_ : SFString('set_fraction')),
+                      fromNode_ : SFString('TIMER'),
+                      toField_ : SFString('set_fraction'),
+                      toNode_ : SFString('VL5_ANIMATOR')),
 
                     ROUTE(
-                      fromNode_ : SFString('TIMER'),
                       fromField_ : SFString('fraction_changed'),
-                      toNode_ : SFString('SKULLBASE_ANIMATOR'),
-                      toField_ : SFString('set_fraction')),
+                      fromNode_ : SFString('TIMER'),
+                      toField_ : SFString('set_fraction'),
+                      toNode_ : SFString('SKULLBASE_ANIMATOR')),
 
                     ROUTE(
-                      fromNode_ : SFString('TIMER'),
                       fromField_ : SFString('fraction_changed'),
-                      toNode_ : SFString('L_SHOULDER_ANIMATOR'),
-                      toField_ : SFString('set_fraction')),
+                      fromNode_ : SFString('TIMER'),
+                      toField_ : SFString('set_fraction'),
+                      toNode_ : SFString('L_SHOULDER_ANIMATOR')),
 
                     ROUTE(
-                      fromNode_ : SFString('TIMER'),
                       fromField_ : SFString('fraction_changed'),
-                      toNode_ : SFString('L_ELBOW_ANIMATOR'),
-                      toField_ : SFString('set_fraction')),
+                      fromNode_ : SFString('TIMER'),
+                      toField_ : SFString('set_fraction'),
+                      toNode_ : SFString('L_ELBOW_ANIMATOR')),
 
                     ROUTE(
-                      fromNode_ : SFString('TIMER'),
                       fromField_ : SFString('fraction_changed'),
-                      toNode_ : SFString('L_WRIST_ANIMATOR'),
-                      toField_ : SFString('set_fraction')),
+                      fromNode_ : SFString('TIMER'),
+                      toField_ : SFString('set_fraction'),
+                      toNode_ : SFString('L_WRIST_ANIMATOR')),
 
                     ROUTE(
-                      fromNode_ : SFString('TIMER'),
                       fromField_ : SFString('fraction_changed'),
-                      toNode_ : SFString('R_SHOULDER_ANIMATOR'),
-                      toField_ : SFString('set_fraction')),
+                      fromNode_ : SFString('TIMER'),
+                      toField_ : SFString('set_fraction'),
+                      toNode_ : SFString('R_SHOULDER_ANIMATOR')),
 
                     ROUTE(
-                      fromNode_ : SFString('TIMER'),
                       fromField_ : SFString('fraction_changed'),
-                      toNode_ : SFString('R_ELBOW_ANIMATOR'),
-                      toField_ : SFString('set_fraction')),
+                      fromNode_ : SFString('TIMER'),
+                      toField_ : SFString('set_fraction'),
+                      toNode_ : SFString('R_ELBOW_ANIMATOR')),
 
                     ROUTE(
-                      fromNode_ : SFString('TIMER'),
                       fromField_ : SFString('fraction_changed'),
-                      toNode_ : SFString('R_WRIST_ANIMATOR'),
-                      toField_ : SFString('set_fraction'))])),
-
-            WorldInfo(
-              title_ : SFString('LOA1_WalkAnimation.x3d')),
+                      fromNode_ : SFString('TIMER'),
+                      toField_ : SFString('set_fraction'),
+                      toNode_ : SFString('R_WRIST_ANIMATOR'))])),
+          /*======================================*/
+          /*Point to example use in case someone inspects this file*/
 
             Anchor(
               description_ : SFString('InterchangableActorsViaDynamicRouting'),
-              url_ : MFString([SFString("InterchangableActorsViaDynamicRouting.x3d"), SFString("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/InterchangableActorsViaDynamicRouting.x3d"), SFString("InterchangableActorsViaDynamicRouting.wrl"), SFString("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/InterchangableActorsViaDynamicRouting.wrl")]),
               parameter_ : MFString([SFString("target=_blank")]),
+              url_ : MFString([SFString("InterchangableActorsViaDynamicRouting.x3d"), SFString("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/InterchangableActorsViaDynamicRouting.x3d"), SFString("InterchangableActorsViaDynamicRouting.wrl"), SFString("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/InterchangableActorsViaDynamicRouting.wrl")]),
               children_ : [
                 Shape(
-                  appearance_ : 
-                    Appearance(
-                      material_ : 
-                        Material(
-                          diffuseColor_ : SFColor([SFDouble(1), SFDouble(1), SFDouble(0.2)]))),
                   geometry_ : 
                     Text(
                       string_ : MFString([SFString("LOA1_WalkAnimation.x3d"), SFString("defines a prototype"), SFString("for animating a humanoid."), SFString(""), SFString("Click this text to see"), SFString("InterchangableActorsViaDynamicRouting example.")]),
                       fontStyle_ : 
                         FontStyle(
-                          size_ : 0.8,
-                          justify_ : MFString([SFString("MIDDLE"), SFString("MIDDLE")]))))])]));
+                          justify_ : MFString([SFString("MIDDLE"), SFString("MIDDLE")]),
+                          size_ : 0.8)),
+                  appearance_ : 
+                    Appearance(
+                      material_ : 
+                        Material(
+                          diffuseColor_ : SFColor([SFDouble(1), SFDouble(1), SFDouble(0.2)]))))])]));
 void main() { exit(0); }

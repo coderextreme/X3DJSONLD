@@ -1,8 +1,8 @@
 {
   "X3D": {
     "@profile": "Immersive",
-    "@version": "3.2",
-    "@xsd:noNamespaceSchemaLocation": "https://www.web3d.org/specifications/x3d-3.2.xsd",
+    "@version": "4.0",
+    "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-4.0.xsd",
     "head": {
       "meta": [
         {
@@ -23,7 +23,7 @@
         },
         {
           "@name": "modified",
-          "@content": "25 October 2016"
+          "@content": "Thu, 14 Dec 2023 22:19:09 GMT"
         },
         {
           "@name": "TODO",
@@ -38,32 +38,24 @@
           "@content": "https://www.web3d.org/x3d/specifications/ISO-IEC-FDIS-19775-1.2-X3D-AbstractSpecification/Part01/components/navigation.html"
         },
         {
-          "@name": "subject",
-          "@content": "Camera nodes for Viewpoint navigation control"
-        },
-        {
           "@name": "reference",
           "@content": "CameraExamples.x3d"
-        },
-        {
-          "@name": "identifier",
-          "@content": "https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d"
         },
         {
           "@name": "reference",
           "@content": "http://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d"
         },
         {
-          "@name": "generator",
-          "@content": "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          "@name": "subject",
+          "@content": "Camera nodes for Viewpoint navigation control"
         },
         {
-          "@name": "license",
-          "@content": "../license.html"
+          "@name": "identifier",
+          "@content": "https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d"
         },
         {
           "@name": "translated",
-          "@content": "17 January 2022"
+          "@content": "15 December 2023"
         },
         {
           "@name": "generator",
@@ -78,30 +70,19 @@
     "Scene": {
       "-children": [
         {
-          "#comment": "=============== Camera =============="
-        },
-        {
           "ProtoDeclare": {
             "@name": "Camera",
-            "@appinfo": "Camera node provides direct control of scene view to enable cinematic camera animation shot by shot and move by move along with still digital-photography settings for offline rendering of camera images.",
             "ProtoInterface": {
-              "-children": [
-                {
-                  "#comment": "Viewpoint-related fields, NavigationInfo-related fields and Camera-unique fields"
-                }
-              ],
               "field": [
                 {
-                  "@name": "description",
                   "@accessType": "inputOutput",
-                  "@appinfo": "Text description to be displayed for this Camera",
-                  "@type": "SFString"
+                  "@type": "SFString",
+                  "@name": "description"
                 },
                 {
-                  "@name": "position",
                   "@accessType": "inputOutput",
-                  "@appinfo": "Camera position in local transformation frame, which is default prior to first CameraShot initialPosition getting activated",
                   "@type": "SFVec3f",
+                  "@name": "position",
                   "@value": [
                     0,
                     0,
@@ -109,85 +90,62 @@
                   ]
                 },
                 {
-                  "@name": "orientation",
                   "@accessType": "inputOutput",
-                  "@appinfo": "Camera rotation in local transformation frame, which is default prior to first CameraShot initialPosition getting activated",
                   "@type": "SFRotation",
-                  "@value": [
-                    0,
-                    0,
-                    1,
-                    0
-                  ]
+                  "@name": "orientation"
                 },
                 {
-                  "@name": "fieldOfView",
                   "@accessType": "inputOutput",
-                  "@appinfo": "pi/4",
                   "@type": "SFFloat",
+                  "@name": "fieldOfView",
                   "@value": 0.7854
                 },
                 {
-                  "@name": "set_fraction",
                   "@accessType": "inputOnly",
-                  "@appinfo": "input fraction drives interpolators",
-                  "@type": "SFFloat"
-                },
-                {
-                  "@name": "set_bind",
-                  "@accessType": "inputOnly",
-                  "@appinfo": "input event binds or unbinds this Camera",
-                  "@type": "SFBool"
-                },
-                {
-                  "@name": "bindTime",
-                  "@accessType": "outputOnly",
-                  "@appinfo": "output event indicates when this Camera is bound",
-                  "@type": "SFTime"
-                },
-                {
-                  "@name": "isBound",
-                  "@accessType": "outputOnly",
-                  "@appinfo": "output event indicates whether this Camera is bound or unbound",
-                  "@type": "SFBool"
-                },
-                {
-                  "@name": "nearClipPlane",
-                  "@accessType": "inputOutput",
-                  "@appinfo": "Vector distance to near clipping plane corresponds to NavigationInfo.avatarSize[0]",
                   "@type": "SFFloat",
+                  "@name": "set_fraction"
+                },
+                {
+                  "@accessType": "inputOnly",
+                  "@type": "SFBool",
+                  "@name": "set_bind"
+                },
+                {
+                  "@accessType": "outputOnly",
+                  "@type": "SFTime",
+                  "@name": "bindTime"
+                },
+                {
+                  "@accessType": "outputOnly",
+                  "@type": "SFBool",
+                  "@name": "isBound"
+                },
+                {
+                  "@accessType": "inputOutput",
+                  "@type": "SFFloat",
+                  "@name": "nearClipPlane",
                   "@value": 0.25
                 },
                 {
-                  "@name": "farClipPlane",
                   "@accessType": "inputOutput",
-                  "@appinfo": "Vector distance to far clipping plane corresponds to NavigationInfo.visibilityLimit",
                   "@type": "SFFloat",
-                  "@value": 0
+                  "@name": "farClipPlane"
                 },
                 {
-                  "@name": "shots",
                   "@accessType": "inputOutput",
-                  "@appinfo": "Array of CameraShot nodes which in turn contain CameraMovement nodes",
                   "@type": "MFNode",
-                  "-children": [
-                    {
-                      "#comment": "initialization nodes (if any) go here"
-                    }
-                  ]
+                  "@name": "shots"
                 },
                 {
-                  "@name": "headlight",
                   "@accessType": "inputOutput",
-                  "@appinfo": "Whether camera headlight is on or off",
                   "@type": "SFBool",
+                  "@name": "headlight",
                   "@value": true
                 },
                 {
+                  "@accessType": "inputOutput",
+                  "@type": "SFColor",
                   "@name": "headlightColor",
-                  "@accessType": "inputOutput",
-                  "@appinfo": "Camera headlight color",
-                  "@type": "SFColor",
                   "@value": [
                     1,
                     1,
@@ -195,17 +153,15 @@
                   ]
                 },
                 {
+                  "@accessType": "inputOutput",
+                  "@type": "SFFloat",
                   "@name": "headlightIntensity",
-                  "@accessType": "inputOutput",
-                  "@appinfo": "Camera headlight intensity",
-                  "@type": "SFFloat",
                   "@value": 1
                 },
                 {
-                  "@name": "filterColor",
                   "@accessType": "inputOutput",
-                  "@appinfo": "Camera filter color that modifies virtual lens capture",
                   "@type": "SFColor",
+                  "@name": "filterColor",
                   "@value": [
                     1,
                     1,
@@ -213,17 +169,15 @@
                   ]
                 },
                 {
-                  "@name": "filterTransparency",
                   "@accessType": "inputOutput",
-                  "@appinfo": "Camera filter transparency that modifies virtual lens capture",
                   "@type": "SFFloat",
+                  "@name": "filterTransparency",
                   "@value": 1
                 },
                 {
-                  "@name": "upVector",
                   "@accessType": "inputOutput",
-                  "@appinfo": "upVector changes modify camera orientation (and possibly vice versa)",
                   "@type": "SFVec3f",
+                  "@name": "upVector",
                   "@value": [
                     0,
                     1,
@@ -231,48 +185,36 @@
                   ]
                 },
                 {
-                  "@name": "fStop",
                   "@accessType": "inputOutput",
-                  "@appinfo": "Focal length divided effective aperture diameter indicating width of focal plane",
                   "@type": "SFFloat",
+                  "@name": "fStop",
                   "@value": 5.6
                 },
                 {
-                  "@name": "focusDistance",
                   "@accessType": "inputOutput",
-                  "@appinfo": "Distance to focal plane of sharpest focus",
                   "@type": "SFFloat",
+                  "@name": "focusDistance",
                   "@value": 10
                 },
                 {
-                  "@name": "isActive",
                   "@accessType": "outputOnly",
-                  "@appinfo": "Mark start/stop with true/false output respectively useful to trigger external animations",
-                  "@type": "SFBool"
-                },
-                {
-                  "@name": "totalDuration",
-                  "@accessType": "outputOnly",
-                  "@appinfo": "Total duration of contained enabled CameraShot (and thus CameraMovement) move durations",
-                  "@type": "SFTime"
-                },
-                {
-                  "@name": "offlineRender",
-                  "@accessType": "inputOutput",
-                  "@appinfo": "OfflineRender node",
-                  "@type": "SFNode",
-                  "-children": [
-                    {
-                      "#comment": "initialization node (if any) goes here"
-                    }
-                  ]
-                },
-                {
-                  "@name": "traceEnabled",
-                  "@accessType": "initializeOnly",
-                  "@appinfo": "enable console output to trace script computations and prototype progress",
                   "@type": "SFBool",
-                  "@value": false
+                  "@name": "isActive"
+                },
+                {
+                  "@accessType": "outputOnly",
+                  "@type": "SFTime",
+                  "@name": "totalDuration"
+                },
+                {
+                  "@accessType": "inputOutput",
+                  "@type": "SFNode",
+                  "@name": "offlineRender"
+                },
+                {
+                  "@accessType": "initializeOnly",
+                  "@type": "SFBool",
+                  "@name": "traceEnabled"
                 }
               ]
             },
@@ -283,6 +225,10 @@
                     "@DEF": "CameraViewpoint",
                     "IS": {
                       "connect": [
+                        {
+                          "@nodeField": "set_bind",
+                          "@protoField": "set_bind"
+                        },
                         {
                           "@nodeField": "description",
                           "@protoField": "description"
@@ -300,23 +246,16 @@
                           "@protoField": "fieldOfView"
                         },
                         {
-                          "@nodeField": "set_bind",
-                          "@protoField": "set_bind"
+                          "@nodeField": "isBound",
+                          "@protoField": "isBound"
                         },
                         {
                           "@nodeField": "bindTime",
                           "@protoField": "bindTime"
-                        },
-                        {
-                          "@nodeField": "isBound",
-                          "@protoField": "isBound"
                         }
                       ]
                     }
                   }
-                },
-                {
-                  "#comment": "NavInfo EXAMINE used since some browsers (InstantReality) try to lock view to vertical when flying to avoid disorientation"
                 },
                 {
                   "NavigationInfo": {
@@ -340,27 +279,14 @@
                           "@nodeField": "visibilityLimit",
                           "@protoField": "farClipPlane"
                         }
-                      ],
-                      "-children": [
-                        {
-                          "#comment": "No need to bind outputs bindTime, isBound from NavigationInfo since Viewpoint outputs will suffice. TODO inform BitManagement that bindTime field is missing."
-                        }
                       ]
                     }
                   }
                 },
                 {
-                  "#comment": "this DirectionalLight replaces NavigationInfo headlight in order to add color capability"
-                },
-                {
                   "DirectionalLight": {
                     "@DEF": "CameraDirectionalLight",
                     "@global": true,
-                    "-children": [
-                      {
-                        "#comment": "TODO confirm other default field values match NavigationInfo spec"
-                      }
-                    ],
                     "IS": {
                       "connect": [
                         {
@@ -432,149 +358,100 @@
                   }
                 },
                 {
-                  "ROUTE": {
-                    "@fromField": "value_changed",
-                    "@fromNode": "CameraPositionInterpolator",
-                    "@toField": "position",
-                    "@toNode": "CameraViewpoint"
-                  }
-                },
-                {
-                  "ROUTE": {
-                    "@fromField": "value_changed",
-                    "@fromNode": "CameraOrientationInterpolator",
-                    "@toField": "orientation",
-                    "@toNode": "CameraViewpoint"
-                  }
-                },
-                {
                   "Script": {
                     "@DEF": "CameraScript",
                     "@directOutput": true,
                     "@mustEvaluate": true,
-                    "-children": [
-                      {
-                        "#comment": "binding is controlled externally, all camera operations proceed the same regardless of whether bound or not"
-                      }
-                    ],
                     "field": [
                       {
-                        "@name": "description",
                         "@accessType": "inputOutput",
-                        "@appinfo": "Text description to be displayed for this Camera",
-                        "@type": "SFString"
+                        "@type": "SFString",
+                        "@name": "description"
                       },
                       {
-                        "@name": "position",
                         "@accessType": "inputOutput",
-                        "@appinfo": "Camera position in local transformation frame",
-                        "@type": "SFVec3f"
+                        "@type": "SFVec3f",
+                        "@name": "position"
                       },
                       {
-                        "@name": "orientation",
                         "@accessType": "inputOutput",
-                        "@appinfo": "Camera rotation in local transformation frame",
-                        "@type": "SFRotation"
+                        "@type": "SFRotation",
+                        "@name": "orientation"
                       },
                       {
-                        "@name": "set_fraction",
                         "@accessType": "inputOnly",
-                        "@appinfo": "input fraction drives interpolators",
-                        "@type": "SFFloat"
+                        "@type": "SFFloat",
+                        "@name": "set_fraction"
                       },
                       {
-                        "@name": "set_bind",
                         "@accessType": "inputOnly",
-                        "@appinfo": "input event binds or unbinds this Camera",
-                        "@type": "SFBool"
+                        "@type": "SFBool",
+                        "@name": "set_bind"
                       },
                       {
-                        "@name": "fieldOfView",
                         "@accessType": "inputOutput",
-                        "@appinfo": "pi/4",
-                        "@type": "SFFloat"
+                        "@type": "SFFloat",
+                        "@name": "fieldOfView"
                       },
                       {
-                        "@name": "nearClipPlane",
                         "@accessType": "inputOutput",
-                        "@appinfo": "Vector distance to near clipping plane",
-                        "@type": "SFFloat"
+                        "@type": "SFFloat",
+                        "@name": "nearClipPlane"
                       },
                       {
-                        "@name": "farClipPlane",
                         "@accessType": "inputOutput",
-                        "@appinfo": "Vector distance to far clipping plane",
-                        "@type": "SFFloat"
+                        "@type": "SFFloat",
+                        "@name": "farClipPlane"
                       },
                       {
-                        "@name": "shots",
                         "@accessType": "inputOutput",
-                        "@appinfo": "Array of CameraShot nodes which in turn contain CameraMovement nodes",
                         "@type": "MFNode",
-                        "-children": [
-                          {
-                            "#comment": "initialization nodes (if any) go here"
-                          }
-                        ]
+                        "@name": "shots"
                       },
                       {
-                        "@name": "filterColor",
                         "@accessType": "inputOutput",
-                        "@appinfo": "Camera filter color that modifies virtual lens capture",
-                        "@type": "SFColor"
+                        "@type": "SFColor",
+                        "@name": "filterColor"
                       },
                       {
-                        "@name": "filterTransparency",
                         "@accessType": "inputOutput",
-                        "@appinfo": "Camera filter transparency that modifies virtual lens capture",
-                        "@type": "SFFloat"
+                        "@type": "SFFloat",
+                        "@name": "filterTransparency"
                       },
                       {
-                        "@name": "upVector",
                         "@accessType": "inputOutput",
-                        "@appinfo": "upVector changes modify camera orientation (and possibly vice versa)",
-                        "@type": "SFVec3f"
+                        "@type": "SFVec3f",
+                        "@name": "upVector"
                       },
                       {
-                        "@name": "fStop",
                         "@accessType": "inputOutput",
-                        "@appinfo": "Focal length divided effective aperture diameter indicating width of focal plane",
-                        "@type": "SFFloat"
+                        "@type": "SFFloat",
+                        "@name": "fStop"
                       },
                       {
-                        "@name": "focusDistance",
                         "@accessType": "inputOutput",
-                        "@appinfo": "Distance to focal plane of sharpest focus",
-                        "@type": "SFFloat"
+                        "@type": "SFFloat",
+                        "@name": "focusDistance"
                       },
                       {
-                        "@name": "isActive",
                         "@accessType": "outputOnly",
-                        "@appinfo": "Mark start/stop with true/false output respectively useful to trigger external animations",
-                        "@type": "SFBool"
+                        "@type": "SFBool",
+                        "@name": "isActive"
                       },
                       {
-                        "@name": "totalDuration",
                         "@accessType": "outputOnly",
-                        "@appinfo": "Total duration of contained enabled CameraShot (and thus CameraMovement) move durations",
-                        "@type": "SFTime"
+                        "@type": "SFTime",
+                        "@name": "totalDuration"
                       },
                       {
-                        "@name": "offlineRender",
                         "@accessType": "inputOutput",
-                        "@appinfo": "OfflineRender node",
                         "@type": "SFNode",
-                        "-children": [
-                          {
-                            "#comment": "initialization node (if any) goes here"
-                          }
-                        ]
+                        "@name": "offlineRender"
                       },
                       {
-                        "@name": "ViewpointNode",
                         "@accessType": "initializeOnly",
-                        "@appinfo": "node reference to permit getting setting fields from within Script",
                         "@type": "SFNode",
+                        "@name": "ViewpointNode",
                         "-children": [
                           {
                             "Viewpoint": {
@@ -584,10 +461,9 @@
                         ]
                       },
                       {
-                        "@name": "NavInfoNode",
                         "@accessType": "initializeOnly",
-                        "@appinfo": "node reference to permit getting setting fields from within Script",
                         "@type": "SFNode",
+                        "@name": "NavInfoNode",
                         "-children": [
                           {
                             "NavigationInfo": {
@@ -597,10 +473,9 @@
                         ]
                       },
                       {
-                        "@name": "CameraPI",
                         "@accessType": "initializeOnly",
-                        "@appinfo": "node reference to permit getting setting fields from within Script",
                         "@type": "SFNode",
+                        "@name": "CameraPI",
                         "-children": [
                           {
                             "PositionInterpolator": {
@@ -610,10 +485,9 @@
                         ]
                       },
                       {
-                        "@name": "CameraOI",
                         "@accessType": "initializeOnly",
-                        "@appinfo": "node reference to permit getting setting fields from within Script",
                         "@type": "SFNode",
+                        "@name": "CameraOI",
                         "-children": [
                           {
                             "OrientationInterpolator": {
@@ -623,78 +497,402 @@
                         ]
                       },
                       {
-                        "@name": "key",
                         "@accessType": "inputOutput",
-                        "@appinfo": "key array for interpolators",
-                        "@type": "MFFloat"
+                        "@type": "MFFloat",
+                        "@name": "key"
                       },
                       {
-                        "@name": "keyValuePosition",
                         "@accessType": "inputOutput",
-                        "@appinfo": "keyValue array for PositionInterpolator",
-                        "@type": "MFVec3f"
+                        "@type": "MFVec3f",
+                        "@name": "keyValuePosition"
                       },
                       {
-                        "@name": "keyValueOrientation",
                         "@accessType": "inputOutput",
-                        "@appinfo": "keyValue array for OrientationInterpolator",
-                        "@type": "MFRotation"
+                        "@type": "MFRotation",
+                        "@name": "keyValueOrientation"
                       },
                       {
-                        "@name": "animated",
                         "@accessType": "inputOutput",
-                        "@appinfo": "whether internal CameraShot and CameraMove nodes are tracking or changed via ROUTE events",
                         "@type": "SFBool",
-                        "@value": false
+                        "@name": "animated"
                       },
                       {
-                        "@name": "initialized",
                         "@accessType": "initializeOnly",
-                        "@appinfo": "perform checkShots() function once immediately after initialization",
                         "@type": "SFBool",
-                        "@value": false
+                        "@name": "initialized"
                       },
                       {
-                        "@name": "shotCount",
                         "@accessType": "initializeOnly",
-                        "@appinfo": "how many CameraShot nodes are contained in shots array",
                         "@type": "SFInt32",
-                        "@value": 0
+                        "@name": "shotCount"
                       },
                       {
-                        "@name": "movesCount",
                         "@accessType": "initializeOnly",
-                        "@appinfo": "how many CameraMove nodes are contained in moves array",
                         "@type": "SFInt32",
-                        "@value": 0
+                        "@name": "movesCount"
                       },
                       {
-                        "@name": "frameCount",
                         "@accessType": "initializeOnly",
-                        "@appinfo": "how many frames were created in current loop",
                         "@type": "SFFloat",
-                        "@value": 0
+                        "@name": "frameCount"
                       },
                       {
-                        "@name": "startTime",
                         "@accessType": "initializeOnly",
-                        "@appinfo": "holding variable",
                         "@type": "SFTime",
-                        "@value": 0
+                        "@name": "startTime"
                       },
                       {
-                        "@name": "priorTraceTime",
                         "@accessType": "initializeOnly",
-                        "@appinfo": "holding variable",
                         "@type": "SFTime",
-                        "@value": 0
+                        "@name": "priorTraceTime"
                       },
                       {
-                        "@name": "traceEnabled",
                         "@accessType": "initializeOnly",
-                        "@appinfo": "enable console output to trace script computations and prototype progress",
-                        "@type": "SFBool"
+                        "@type": "SFBool",
+                        "@name": "traceEnabled"
                       }
+                    ],
+                    "#sourceCode": [
+                      "ecmascript:\r",
+                      "function initialize () // CameraScript\r",
+                      "{\r",
+                      "//  tracePrint ('initialize start...');\r",
+                      "\r",
+                      "    NavInfoNode.avatarSize[0]   = nearClipPlane;\r",
+                      "\r",
+                      "    // remaining setups deferred to invocation of checkShots() method\r",
+                      "    // thanks to Yvonne Jung Fraunhofer for diagnosing better approach to function initialization\r",
+                      "    alwaysPrint ('initialize complete');\r",
+                      "}\r",
+                      "\r",
+                      "function checkShots (eventValue)\r",
+                      "{\r",
+                      "    tracePrint ('checkShots() method should only occur after initialize() methods in all other Scripts are complete');\r",
+                      "\r",
+                      "    // compute totalDuration by summing durations from contained CameraShot and CameraMovement nodes\r",
+                      "    totalDuration= 0;\r",
+                      "    shotCount  = shots.length;\r",
+                      "    movesCount = 0;\r",
+                      "    for (i = 0; i < shotCount; i++) // shots index\r",
+                      "    {\r",
+                      "       tracePrint ('shots[' + i + '].moves.length=' + shots[i].moves.length);\r",
+                      "       movesCount   += shots[i].moves.length;\r",
+                      "       totalDuration = totalDuration + shots[i].shotDuration;\r",
+                      "       if (shots[i].moves.length == 0)\r",
+                      "       {\r",
+                      "          alwaysPrint ('warning: CameraShot[' + i + '][' + shots[i].description + '] has no contained CameraMove nodes');\r",
+                      "       }\r",
+                      "    }\r",
+                      "    // size checks before proceeding\r",
+                      "    if (shotCount == 0)\r",
+                      "    {\r",
+                      "       alwaysPrint ('warning: no CameraShot nodes found for the shots, nothing to do!');\r",
+                      "       return;\r",
+                      "    }\r",
+                      "    else if (movesCount == 0)\r",
+                      "    {\r",
+                      "       alwaysPrint ('warning: no CameraMove nodes found for the shots, nothing to do!');\r",
+                      "       return;\r",
+                      "    }\r",
+                      "    else if (totalDuration == 0)\r",
+                      "    {\r",
+                      "       alwaysPrint ('warning: totalDuration = 0 seconds, nothing to do!');\r",
+                      "       return;\r",
+                      "    }\r",
+                      "    tracePrint ('number of contained CameraShot nodes=' + shotCount);\r",
+                      "    tracePrint ('number of contained CameraMove nodes=' + movesCount);\r",
+                      "    tracePrint ('totalDuration=' + totalDuration + ' seconds for all shots and moves');\r",
+                      "\r",
+                      "    // compute interpolators\r",
+                      "    var k = 0; // index for latest key, keyValuePosition, keyValueOrientation\r",
+                      "    for (i = 0; i < shotCount; i++) // shots index\r",
+                      "    {\r",
+                      "        if (i==0) // initial entries\r",
+                      "        {\r",
+                      "           key[0]                   = 0.0; // no previous move\r",
+                      "           keyValuePosition[0]      = shots[i].initialPosition;\r",
+                      "           keyValueOrientation[0]   = shots[i].initialOrientation;\r",
+                      "        }\r",
+                      "        else     // new shot repositions, reorients camera as clean break from preceding shot/move\r",
+                      "        {\r",
+                      "           key[k+1]                 = key[k]; // start from end from previous move\r",
+                      "           keyValuePosition[k+1]    = shots[i].initialPosition;\r",
+                      "           keyValueOrientation[k+1] = shots[i].initialOrientation;\r",
+                      "           k++;\r",
+                      "        }\r",
+                      "        tracePrint (shots[i].description);\r",
+                      "        tracePrint ('shots[i].moves.length=' + shots[i].moves.length);\r",
+                      "\r",
+                      "        for (j = 0; j < shots[i].moves.length; j++) // moves index\r",
+                      "        {\r",
+                      "            var durationFloat =              shots[i].moves[j].duration;  // implicit type conversion from SFTime\r",
+                      "            //  durationFloat = new SFFloat (shots[i].moves[j].duration); // explicit type conversion from SFTime\r",
+                      "            //  tracePrint ('durationFloat=' + durationFloat);\r",
+                      "            key[k+1]               = key[k] + (durationFloat / totalDuration);\r",
+                      "            keyValuePosition[k+1]  = shots[i].moves[j].goalPosition;\r",
+                      "            if (!animated)\r",
+                      "            {\r",
+                      "                 keyValueOrientation[k+1] = shots[i].moves[j].goalOrientation;\r",
+                      "            }\r",
+                      "            else\r",
+                      "            {\r",
+                      "                // using constructor SFRotation (SFVec3f fromVector, SFVec3f toVector)\r",
+                      "                // see X3D ECMAScript binding Table 7.18 — SFRotation instance creation functions\r",
+                      "\r",
+                      "                // test if difference vector is zero, if so maintain previous rotation\r",
+                      "                var shotVector = ViewpointNode.position.subtract(shots[i].moves[j].goalAimPoint).normalize();\r",
+                      "                if (shotVector.length() >= 0)\r",
+                      "                {\r",
+                      "                    // default view direction is along -Z axis\r",
+                      "                    shots[i].moves[j].goalOrientation = new SFRotation (new SFVec3f (0, 0, 1), shotVector);\r",
+                      "                    keyValueOrientation[k+1] = shots[i].moves[j].goalOrientation;\r",
+                      "                }\r",
+                      "                else // note (k > 0)\r",
+                      "                {\r",
+                      "                    keyValueOrientation[k+1] = keyValueOrientation[k];  // no change\r",
+                      "                }\r",
+                      "\r",
+                      "                tracePrint ('shots[' + i + '].moves[' + j + '].goalAimPoint=' + shots[i].moves[j].goalAimPoint.toString());\r",
+                      "                tracePrint ('        ViewpointNode.position=' + ViewpointNode.position.toString());\r",
+                      "                tracePrint ('          shotVector     delta=' + ViewpointNode.position.subtract(shots[i].moves[j].goalAimPoint).toString());\r",
+                      "                tracePrint ('          shotVector normalize=' + ViewpointNode.position.subtract(shots[i].moves[j].goalAimPoint).normalize().toString());\r",
+                      "                tracePrint ('               goalOrientation=' + shots[i].moves[j].goalOrientation.toString());\r",
+                      "                tracePrint ('      keyValueOrientation[k+1]=' + keyValueOrientation[k+1].toString() + '\n');\r",
+                      "            }\r",
+                      "            k++; // update index to match latest key, keyValuePosition, keyValueOrientation\r",
+                      "\r",
+                      "            // check animated parameter:  set true if any of moves are tracking moves\r",
+                      "            if (!animated)  animated = shots[i].moves[j].tracking; // once true, remains true\r",
+                      "         // tracePrint ('shots[' + i + '].moves[' + j + '].tracking=' + shots[i].moves[j].tracking + ', animated=' + animated);\r",
+                      "\r",
+                      "            // intermediate trace\r",
+                      "            tracePrint ('                key=' + key);\r",
+                      "            tracePrint ('   keyValuePosition=' + keyValuePosition);\r",
+                      "            tracePrint ('keyValueOrientation=' + keyValueOrientation);\r",
+                      "            tracePrint ('- ' + shots[i].moves[j].description);\r",
+                      "        }\r",
+                      "    }\r",
+                      "    tracePrint ('                key=' + key);\r",
+                      "    tracePrint ('   keyValuePosition=' + keyValuePosition);\r",
+                      "    tracePrint ('keyValueOrientation=' + keyValueOrientation);\r",
+                      "    if (key.length != keyValuePosition.length)\r",
+                      "    {\r",
+                      "      alwaysPrint ('warning: internal error during array construction, ' +\r",
+                      "                  'key.length=' + key.length + ' must equal ' +\r",
+                      "                  'keyValuePosition.length=' + keyValuePosition.length);\r",
+                      "    }\r",
+                      "    if (key.length != keyValueOrientation.length)\r",
+                      "    {\r",
+                      "      alwaysPrint ('warning: internal error during array construction, ' +\r",
+                      "                  'key.length=' + key.length + ' must equal ' +\r",
+                      "                  'keyValueOrientation.length=' + keyValueOrientation.length);\r",
+                      "    }\r",
+                      "    if (key.length != (shotCount + movesCount))\r",
+                      "    {\r",
+                      "      alwaysPrint ('warning: internal error during array construction, ' +\r",
+                      "                  'key.length=' + key.length + ' must equal ' +\r",
+                      "                  '(shotCount + movesCount)=' + (shotCount + movesCount));\r",
+                      "    }\r",
+                      "    tracePrint ('           animated=' + animated);\r",
+                      "    // set node values\r",
+                      "    CameraPI.key      = key;\r",
+                      "    CameraOI.key      = key;\r",
+                      "    CameraPI.keyValue = keyValuePosition;\r",
+                      "    CameraOI.keyValue = keyValueOrientation;\r",
+                      "\r",
+                      "    if (!animated) // output results\r",
+                      "    {\r",
+                      "        tracePrint ('<PositionInterpolator    DEF=\\'CameraPositionInterpolator\\'    key=\\'' + stripBrackets(CameraPI.key) + '\\' keyValue=\\'' + stripBrackets(CameraPI.keyValue) + '\\'/>');\r",
+                      "        tracePrint ('<OrientationInterpolator DEF=\\'CameraOrientationInterpolator\\' key=\\'' + stripBrackets(CameraOI.key) + '\\' keyValue=\\'' + stripBrackets(CameraOI.keyValue) + '\\'/>');\r",
+                      "    }\r",
+                      "    tracePrint ('checkShots() complete');\r",
+                      "}\r",
+                      "\r",
+                      "function stripBrackets (fieldArray)\r",
+                      "{\r",
+                      "    // some browsers add brackets to array output strings, this function strips them\r",
+                      "    outputString = '';\r",
+                      "    for (i = 0; i < fieldArray.length; i++)\r",
+                      "    {\r",
+                      "       outputString += fieldArray[i].toString();\r",
+                      "       if (i < fieldArray.length - 1) outputString += ' ';\r",
+                      "    }\r",
+                      "    return outputString;\r",
+                      "}\r",
+                      "\r",
+                      "function set_fraction (eventValue, timestamp) // input event received for inputOnly field\r",
+                      "{\r",
+                      "   // traceEnabled = false;  // for testing purposes\r",
+                      "\r",
+                      "   // if Camera is being animated, immediately recompute interpolator settings\r",
+                      "   if (animated) checkShots (true);\r",
+                      "\r",
+                      "   // trace progress on console with reduced output frequency\r",
+                      "   if (frameCount == 0)\r",
+                      "   {\r",
+                      "      alwaysPrint ('Animation loop commencing, timestamp=' + timestamp);\r",
+                      "      startTime      = timestamp;\r",
+                      "      priorTraceTime = timestamp;\r",
+                      "      alwaysPrint ('shotClock=' + (timestamp - startTime) + ' seconds, frameCount=' + frameCount + ', fraction=' + eventValue + ', position=' + ViewpointNode.position.toString() + ', orientation=' + ViewpointNode.orientation.toString());\r",
+                      "\r",
+                      "      if (animated) // output results\r",
+                      "      {\r",
+                      "        // TODO how to report or speed up response?  alwaysPrint ('  aimPoint=' + aimPoint.toString());\r",
+                      "        tracePrint ('  <PositionInterpolator    DEF=\\'CameraPositionInterpolator\\'    key=\\'' + stripBrackets(CameraPI.key) + '\\' keyValue=\\'' + stripBrackets(CameraPI.keyValue) + '\\'/>');\r",
+                      "        tracePrint ('  <OrientationInterpolator DEF=\\'CameraOrientationInterpolator\\' key=\\'' + stripBrackets(CameraOI.key) + '\\' keyValue=\\'' + stripBrackets(CameraOI.keyValue) + '\\'/>');\r",
+                      "      }\r",
+                      "   }\r",
+                      "   else if ((timestamp - priorTraceTime) >= 1.0) // 1 second trace interval\r",
+                      "   {\r",
+                      "      alwaysPrint ('shotClock=' + (timestamp - startTime) + ' seconds, frameCount=' + frameCount + ', fraction=' + eventValue + ', position=' + ViewpointNode.position.toString() + ', orientation=' + ViewpointNode.orientation.toString());\r",
+                      "      priorTraceTime = timestamp;\r",
+                      "\r",
+                      "      if (animated) // output results\r",
+                      "      {\r",
+                      "        // TODO how to report or speed up response?  alwaysPrint ('  aimPoint=' + aimPoint.toString());\r",
+                      "        tracePrint ('  <PositionInterpolator    DEF=\\'CameraPositionInterpolator\\'    key=\\'' + stripBrackets(CameraPI.key) + '\\' keyValue=\\'' + stripBrackets(CameraPI.keyValue) + '\\'/>');\r",
+                      "        alwaysPrint ('  <OrientationInterpolator DEF=\\'CameraOrientationInterpolator\\' key=\\'' + stripBrackets(CameraOI.key) + '\\' keyValue=\\'' + stripBrackets(CameraOI.keyValue) + '\\'/>');\r",
+                      "      }\r",
+                      "   }\r",
+                      "   if (eventValue == 0)\r",
+                      "   {\r",
+                      "      // note that zero value is not necessarily sent first by TimeSensor, so otherwise ignored\r",
+                      "      frameCount++;\r",
+                      "   }\r",
+                      "   else if (eventValue == 1)\r",
+                      "   {\r",
+                      "      alwaysPrint ('shotClock=' + (timestamp - startTime) + ', frameCount=' + frameCount + ', fraction=' + eventValue + ', position=' + ViewpointNode.position.toString() + ', orientation=' + ViewpointNode.orientation.toString());\r",
+                      "      if (animated) // output results\r",
+                      "      {\r",
+                      "        // TODO how to report or speed up response?  alwaysPrint ('  aimPoint=' + aimPoint.toString());\r",
+                      "      }\r",
+                      "      alwaysPrint ('Animation loop complete.');\r",
+                      "      // do not unbind the Viewpoint and NavigationInfo nodes, let that be controlled externally\r",
+                      "   }\r",
+                      "   else\r",
+                      "   {\r",
+                      "      frameCount++;\r",
+                      "   }\r",
+                      "}\r",
+                      "\r",
+                      "function set_bind (eventValue) // input event received for inputOnly field\r",
+                      "{\r",
+                      "   // need to ensure CameraShot nodes are properly initialized\r",
+                      "   if (initialized == false)\r",
+                      "   {\r",
+                      "      checkShots (true);\r",
+                      "      initialized = true;\r",
+                      "   }\r",
+                      "   if (eventValue)\r",
+                      "   {\r",
+                      "       tracePrint ('Camera has been bound');\r",
+                      "   }\r",
+                      "   else\r",
+                      "   {\r",
+                      "       tracePrint ('Camera has been unbound');\r",
+                      "   }\r",
+                      "}\r",
+                      "\r",
+                      "function set_description (eventValue) // input event received for inputOutput field\r",
+                      "{\r",
+                      "    description = eventValue;\r",
+                      "}\r",
+                      "\r",
+                      "function set_position (eventValue) // input event received for inputOutput field\r",
+                      "{\r",
+                      "    position = eventValue;\r",
+                      "}\r",
+                      "\r",
+                      "function set_orientation (eventValue) // input event received for inputOutput field\r",
+                      "{\r",
+                      "    orientation = eventValue;\r",
+                      "}\r",
+                      "\r",
+                      "function set_fieldOfView (eventValue) // input event received for inputOutput field\r",
+                      "{\r",
+                      "    fieldOfView = eventValue;\r",
+                      "}\r",
+                      "\r",
+                      "function set_nearClipPlane (eventValue) // input event received for inputOutput field\r",
+                      "{\r",
+                      "    nearClipPlane = eventValue;\r",
+                      "}\r",
+                      "\r",
+                      "function set_farClipPlane (eventValue) // input event received for inputOutput field\r",
+                      "{\r",
+                      "    farClipPlane = eventValue;\r",
+                      "}\r",
+                      "\r",
+                      "function set_shots (eventValue) // input event received for inputOutput field\r",
+                      "{\r",
+                      "    shots = eventValue;\r",
+                      "}\r",
+                      "\r",
+                      "function set_filterColor (eventValue) // input event received for inputOutput field\r",
+                      "{\r",
+                      "    filterColor = eventValue;\r",
+                      "}\r",
+                      "\r",
+                      "function set_filterTransparency (eventValue) // input event received for inputOutput field\r",
+                      "{\r",
+                      "    filterTransparency = eventValue;\r",
+                      "}\r",
+                      "\r",
+                      "function set_upVector (eventValue) // input event received for inputOutput field\r",
+                      "{\r",
+                      "    upVector = eventValue;\r",
+                      "}\r",
+                      "\r",
+                      "function set_fStop (eventValue) // input event received for inputOutput field\r",
+                      "{\r",
+                      "    fStop = eventValue;\r",
+                      "}\r",
+                      "\r",
+                      "function set_focusDistance (eventValue) // input event received for inputOutput field\r",
+                      "{\r",
+                      "    focusDistance = eventValue;\r",
+                      "}\r",
+                      "\r",
+                      "function set_offlineRender (eventValue) // input event received for inputOutput field\r",
+                      "{\r",
+                      "    offlineRender = eventValue;\r",
+                      "}\r",
+                      "\r",
+                      "function set_key (eventValue) // input event received for inputOutput field\r",
+                      "{\r",
+                      "    key = eventValue;\r",
+                      "}\r",
+                      "\r",
+                      "function set_keyValuePosition (eventValue) // input event received for inputOutput field\r",
+                      "{\r",
+                      "    keyValuePosition = eventValue;\r",
+                      "}\r",
+                      "\r",
+                      "function set_keyValueOrientation (eventValue) // input event received for inputOutput field\r",
+                      "{\r",
+                      "    keyValueOrientation = eventValue;\r",
+                      "}\r",
+                      "\r",
+                      "function set_animated (eventValue) // input event received for inputOutput field\r",
+                      "{\r",
+                      "    animated = eventValue;\r",
+                      "}\r",
+                      "\r",
+                      "function tracePrint (outputValue)\r",
+                      "{\r",
+                      "\tif (traceEnabled) alwaysPrint (outputValue);\r",
+                      "}\r",
+                      "function alwaysPrint (outputValue)\r",
+                      "{\r",
+                      "    // try to ensure outputValue is converted to string despite Browser.println idiosyncracies\r",
+                      "    var outputString = outputValue.toString(); // utility function according to spec\r",
+                      "    if (outputString == null) outputString = outputValue; // direct cast\r",
+                      "\r",
+                      "    if  (description.length > 0)\r",
+                      "         Browser.print ('[Camera: ' + description + '] ' + outputString + '\n');\r",
+                      "    else\r",
+                      "         Browser.print ('[Camera] ' + outputString + '\n');\r",
+                      "}"
                     ],
                     "IS": {
                       "connect": [
@@ -771,389 +969,63 @@
                           "@protoField": "traceEnabled"
                         }
                       ]
-                    },
-                    "#sourceCode": [
-                      "ecmascript:",
-                      "function initialize () // CameraScript",
-                      "{",
-                      "//  tracePrint ('initialize start...');",
-                      "",
-                      "    NavInfoNode.avatarSize[0]   = nearClipPlane;",
-                      "",
-                      "    // remaining setups deferred to invocation of checkShots() method",
-                      "    // thanks to Yvonne Jung Fraunhofer for diagnosing better approach to function initialization",
-                      "    alwaysPrint ('initialize complete');",
-                      "}",
-                      "",
-                      "function checkShots (eventValue)",
-                      "{",
-                      "    tracePrint ('checkShots() method should only occur after initialize() methods in all other Scripts are complete');",
-                      "",
-                      "    // compute totalDuration by summing durations from contained CameraShot and CameraMovement nodes",
-                      "    totalDuration= 0;",
-                      "    shotCount  = shots.length;",
-                      "    movesCount = 0;",
-                      "    for (i = 0; i < shotCount; i++) // shots index",
-                      "    {",
-                      "       tracePrint ('shots[' + i + '].moves.length=' + shots[i].moves.length);",
-                      "       movesCount   += shots[i].moves.length;",
-                      "       totalDuration = totalDuration + shots[i].shotDuration;",
-                      "       if (shots[i].moves.length == 0)",
-                      "       {",
-                      "          alwaysPrint ('warning: CameraShot[' + i + '][' + shots[i].description + '] has no contained CameraMove nodes');",
-                      "       }",
-                      "    }",
-                      "    // size checks before proceeding",
-                      "    if (shotCount == 0)",
-                      "    {",
-                      "       alwaysPrint ('warning: no CameraShot nodes found for the shots, nothing to do!');",
-                      "       return;",
-                      "    }",
-                      "    else if (movesCount == 0)",
-                      "    {",
-                      "       alwaysPrint ('warning: no CameraMove nodes found for the shots, nothing to do!');",
-                      "       return;",
-                      "    }",
-                      "    else if (totalDuration == 0)",
-                      "    {",
-                      "       alwaysPrint ('warning: totalDuration = 0 seconds, nothing to do!');",
-                      "       return;",
-                      "    }",
-                      "    tracePrint ('number of contained CameraShot nodes=' + shotCount);",
-                      "    tracePrint ('number of contained CameraMove nodes=' + movesCount);",
-                      "    tracePrint ('totalDuration=' + totalDuration + ' seconds for all shots and moves');",
-                      "",
-                      "    // compute interpolators",
-                      "    var k = 0; // index for latest key, keyValuePosition, keyValueOrientation",
-                      "    for (i = 0; i < shotCount; i++) // shots index",
-                      "    {",
-                      "        if (i==0) // initial entries",
-                      "        {",
-                      "           key[0]                   = 0.0; // no previous move",
-                      "           keyValuePosition[0]      = shots[i].initialPosition;",
-                      "           keyValueOrientation[0]   = shots[i].initialOrientation;",
-                      "        }",
-                      "        else     // new shot repositions, reorients camera as clean break from preceding shot/move",
-                      "        {",
-                      "           key[k+1]                 = key[k]; // start from end from previous move",
-                      "           keyValuePosition[k+1]    = shots[i].initialPosition;",
-                      "           keyValueOrientation[k+1] = shots[i].initialOrientation;",
-                      "           k++;",
-                      "        }",
-                      "        tracePrint (shots[i].description);",
-                      "        tracePrint ('shots[i].moves.length=' + shots[i].moves.length);",
-                      "",
-                      "        for (j = 0; j < shots[i].moves.length; j++) // moves index",
-                      "        {",
-                      "            var durationFloat =              shots[i].moves[j].duration;  // implicit type conversion from SFTime",
-                      "            //  durationFloat = new SFFloat (shots[i].moves[j].duration); // explicit type conversion from SFTime",
-                      "            //  tracePrint ('durationFloat=' + durationFloat);",
-                      "            key[k+1]               = key[k] + (durationFloat / totalDuration);",
-                      "            keyValuePosition[k+1]  = shots[i].moves[j].goalPosition;",
-                      "            if (!animated)",
-                      "            {",
-                      "                 keyValueOrientation[k+1] = shots[i].moves[j].goalOrientation;",
-                      "            }",
-                      "            else",
-                      "            {",
-                      "                // using constructor SFRotation (SFVec3f fromVector, SFVec3f toVector)",
-                      "                // see X3D ECMAScript binding Table 7.18 — SFRotation instance creation functions",
-                      "",
-                      "                // test if difference vector is zero, if so maintain previous rotation",
-                      "                var shotVector = ViewpointNode.position.subtract(shots[i].moves[j].goalAimPoint).normalize();",
-                      "                if (shotVector.length() >= 0)",
-                      "                {",
-                      "                    // default view direction is along -Z axis",
-                      "                    shots[i].moves[j].goalOrientation = new SFRotation (new SFVec3f (0, 0, 1), shotVector);",
-                      "                    keyValueOrientation[k+1] = shots[i].moves[j].goalOrientation;",
-                      "                }",
-                      "                else // note (k > 0)",
-                      "                {",
-                      "                    keyValueOrientation[k+1] = keyValueOrientation[k];  // no change",
-                      "                }",
-                      "",
-                      "                tracePrint ('shots[' + i + '].moves[' + j + '].goalAimPoint=' + shots[i].moves[j].goalAimPoint.toString());",
-                      "                tracePrint ('        ViewpointNode.position=' + ViewpointNode.position.toString());",
-                      "                tracePrint ('          shotVector     delta=' + ViewpointNode.position.subtract(shots[i].moves[j].goalAimPoint).toString());",
-                      "                tracePrint ('          shotVector normalize=' + ViewpointNode.position.subtract(shots[i].moves[j].goalAimPoint).normalize().toString());",
-                      "                tracePrint ('               goalOrientation=' + shots[i].moves[j].goalOrientation.toString());",
-                      "                tracePrint ('      keyValueOrientation[k+1]=' + keyValueOrientation[k+1].toString() + '\n');",
-                      "            }",
-                      "            k++; // update index to match latest key, keyValuePosition, keyValueOrientation",
-                      "",
-                      "            // check animated parameter:  set true if any of moves are tracking moves",
-                      "            if (!animated)  animated = shots[i].moves[j].tracking; // once true, remains true",
-                      "         // tracePrint ('shots[' + i + '].moves[' + j + '].tracking=' + shots[i].moves[j].tracking + ', animated=' + animated);",
-                      "",
-                      "            // intermediate trace",
-                      "            tracePrint ('                key=' + key);",
-                      "            tracePrint ('   keyValuePosition=' + keyValuePosition);",
-                      "            tracePrint ('keyValueOrientation=' + keyValueOrientation);",
-                      "            tracePrint ('- ' + shots[i].moves[j].description);",
-                      "        }",
-                      "    }",
-                      "    tracePrint ('                key=' + key);",
-                      "    tracePrint ('   keyValuePosition=' + keyValuePosition);",
-                      "    tracePrint ('keyValueOrientation=' + keyValueOrientation);",
-                      "    if (key.length != keyValuePosition.length)",
-                      "    {",
-                      "      alwaysPrint ('warning: internal error during array construction, ' +",
-                      "                  'key.length=' + key.length + ' must equal ' +",
-                      "                  'keyValuePosition.length=' + keyValuePosition.length);",
-                      "    }",
-                      "    if (key.length != keyValueOrientation.length)",
-                      "    {",
-                      "      alwaysPrint ('warning: internal error during array construction, ' +",
-                      "                  'key.length=' + key.length + ' must equal ' +",
-                      "                  'keyValueOrientation.length=' + keyValueOrientation.length);",
-                      "    }",
-                      "    if (key.length != (shotCount + movesCount))",
-                      "    {",
-                      "      alwaysPrint ('warning: internal error during array construction, ' +",
-                      "                  'key.length=' + key.length + ' must equal ' +",
-                      "                  '(shotCount + movesCount)=' + (shotCount + movesCount));",
-                      "    }",
-                      "    tracePrint ('           animated=' + animated);",
-                      "    // set node values",
-                      "    CameraPI.key      = key;",
-                      "    CameraOI.key      = key;",
-                      "    CameraPI.keyValue = keyValuePosition;",
-                      "    CameraOI.keyValue = keyValueOrientation;",
-                      "",
-                      "    if (!animated) // output results",
-                      "    {",
-                      "        tracePrint ('<PositionInterpolator    DEF=\\'CameraPositionInterpolator\\'    key=\\'' + stripBrackets(CameraPI.key) + '\\' keyValue=\\'' + stripBrackets(CameraPI.keyValue) + '\\'/>');",
-                      "        tracePrint ('<OrientationInterpolator DEF=\\'CameraOrientationInterpolator\\' key=\\'' + stripBrackets(CameraOI.key) + '\\' keyValue=\\'' + stripBrackets(CameraOI.keyValue) + '\\'/>');",
-                      "    }",
-                      "    tracePrint ('checkShots() complete');",
-                      "}",
-                      "",
-                      "function stripBrackets (fieldArray)",
-                      "{",
-                      "    // some browsers add brackets to array output strings, this function strips them",
-                      "    outputString = '';",
-                      "    for (i = 0; i < fieldArray.length; i++)",
-                      "    {",
-                      "       outputString += fieldArray[i].toString();",
-                      "       if (i < fieldArray.length - 1) outputString += ' ';",
-                      "    }",
-                      "    return outputString;",
-                      "}",
-                      "",
-                      "function set_fraction (eventValue, timestamp) // input event received for inputOnly field",
-                      "{",
-                      "   // traceEnabled = false;  // for testing purposes",
-                      "",
-                      "   // if Camera is being animated, immediately recompute interpolator settings",
-                      "   if (animated) checkShots (true);",
-                      "",
-                      "   // trace progress on console with reduced output frequency",
-                      "   if (frameCount == 0)",
-                      "   {",
-                      "      alwaysPrint ('Animation loop commencing, timestamp=' + timestamp);",
-                      "      startTime      = timestamp;",
-                      "      priorTraceTime = timestamp;",
-                      "      alwaysPrint ('shotClock=' + (timestamp - startTime) + ' seconds, frameCount=' + frameCount + ', fraction=' + eventValue + ', position=' + ViewpointNode.position.toString() + ', orientation=' + ViewpointNode.orientation.toString());",
-                      "",
-                      "      if (animated) // output results",
-                      "      {",
-                      "        // TODO how to report or speed up response?  alwaysPrint ('  aimPoint=' + aimPoint.toString());",
-                      "        tracePrint ('  <PositionInterpolator    DEF=\\'CameraPositionInterpolator\\'    key=\\'' + stripBrackets(CameraPI.key) + '\\' keyValue=\\'' + stripBrackets(CameraPI.keyValue) + '\\'/>');",
-                      "        tracePrint ('  <OrientationInterpolator DEF=\\'CameraOrientationInterpolator\\' key=\\'' + stripBrackets(CameraOI.key) + '\\' keyValue=\\'' + stripBrackets(CameraOI.keyValue) + '\\'/>');",
-                      "      }",
-                      "   }",
-                      "   else if ((timestamp - priorTraceTime) >= 1.0) // 1 second trace interval",
-                      "   {",
-                      "      alwaysPrint ('shotClock=' + (timestamp - startTime) + ' seconds, frameCount=' + frameCount + ', fraction=' + eventValue + ', position=' + ViewpointNode.position.toString() + ', orientation=' + ViewpointNode.orientation.toString());",
-                      "      priorTraceTime = timestamp;",
-                      "",
-                      "      if (animated) // output results",
-                      "      {",
-                      "        // TODO how to report or speed up response?  alwaysPrint ('  aimPoint=' + aimPoint.toString());",
-                      "        tracePrint ('  <PositionInterpolator    DEF=\\'CameraPositionInterpolator\\'    key=\\'' + stripBrackets(CameraPI.key) + '\\' keyValue=\\'' + stripBrackets(CameraPI.keyValue) + '\\'/>');",
-                      "        alwaysPrint ('  <OrientationInterpolator DEF=\\'CameraOrientationInterpolator\\' key=\\'' + stripBrackets(CameraOI.key) + '\\' keyValue=\\'' + stripBrackets(CameraOI.keyValue) + '\\'/>');",
-                      "      }",
-                      "   }",
-                      "   if (eventValue == 0)",
-                      "   {",
-                      "      // note that zero value is not necessarily sent first by TimeSensor, so otherwise ignored",
-                      "      frameCount++;",
-                      "   }",
-                      "   else if (eventValue == 1)",
-                      "   {",
-                      "      alwaysPrint ('shotClock=' + (timestamp - startTime) + ', frameCount=' + frameCount + ', fraction=' + eventValue + ', position=' + ViewpointNode.position.toString() + ', orientation=' + ViewpointNode.orientation.toString());",
-                      "      if (animated) // output results",
-                      "      {",
-                      "        // TODO how to report or speed up response?  alwaysPrint ('  aimPoint=' + aimPoint.toString());",
-                      "      }",
-                      "      alwaysPrint ('Animation loop complete.');",
-                      "      // do not unbind the Viewpoint and NavigationInfo nodes, let that be controlled externally",
-                      "   }",
-                      "   else",
-                      "   {",
-                      "      frameCount++;",
-                      "   }",
-                      "}",
-                      "",
-                      "function set_bind (eventValue) // input event received for inputOnly field",
-                      "{",
-                      "   // need to ensure CameraShot nodes are properly initialized",
-                      "   if (initialized == false)",
-                      "   {",
-                      "      checkShots (true);",
-                      "      initialized = true;",
-                      "   }",
-                      "   if (eventValue)",
-                      "   {",
-                      "       tracePrint ('Camera has been bound');",
-                      "   }",
-                      "   else",
-                      "   {",
-                      "       tracePrint ('Camera has been unbound');",
-                      "   }",
-                      "}",
-                      "",
-                      "function set_description (eventValue) // input event received for inputOutput field",
-                      "{",
-                      "    description = eventValue;",
-                      "}",
-                      "",
-                      "function set_position (eventValue) // input event received for inputOutput field",
-                      "{",
-                      "    position = eventValue;",
-                      "}",
-                      "",
-                      "function set_orientation (eventValue) // input event received for inputOutput field",
-                      "{",
-                      "    orientation = eventValue;",
-                      "}",
-                      "",
-                      "function set_fieldOfView (eventValue) // input event received for inputOutput field",
-                      "{",
-                      "    fieldOfView = eventValue;",
-                      "}",
-                      "",
-                      "function set_nearClipPlane (eventValue) // input event received for inputOutput field",
-                      "{",
-                      "    nearClipPlane = eventValue;",
-                      "}",
-                      "",
-                      "function set_farClipPlane (eventValue) // input event received for inputOutput field",
-                      "{",
-                      "    farClipPlane = eventValue;",
-                      "}",
-                      "",
-                      "function set_shots (eventValue) // input event received for inputOutput field",
-                      "{",
-                      "    shots = eventValue;",
-                      "}",
-                      "",
-                      "function set_filterColor (eventValue) // input event received for inputOutput field",
-                      "{",
-                      "    filterColor = eventValue;",
-                      "}",
-                      "",
-                      "function set_filterTransparency (eventValue) // input event received for inputOutput field",
-                      "{",
-                      "    filterTransparency = eventValue;",
-                      "}",
-                      "",
-                      "function set_upVector (eventValue) // input event received for inputOutput field",
-                      "{",
-                      "    upVector = eventValue;",
-                      "}",
-                      "",
-                      "function set_fStop (eventValue) // input event received for inputOutput field",
-                      "{",
-                      "    fStop = eventValue;",
-                      "}",
-                      "",
-                      "function set_focusDistance (eventValue) // input event received for inputOutput field",
-                      "{",
-                      "    focusDistance = eventValue;",
-                      "}",
-                      "",
-                      "function set_offlineRender (eventValue) // input event received for inputOutput field",
-                      "{",
-                      "    offlineRender = eventValue;",
-                      "}",
-                      "",
-                      "function set_key (eventValue) // input event received for inputOutput field",
-                      "{",
-                      "    key = eventValue;",
-                      "}",
-                      "",
-                      "function set_keyValuePosition (eventValue) // input event received for inputOutput field",
-                      "{",
-                      "    keyValuePosition = eventValue;",
-                      "}",
-                      "",
-                      "function set_keyValueOrientation (eventValue) // input event received for inputOutput field",
-                      "{",
-                      "    keyValueOrientation = eventValue;",
-                      "}",
-                      "",
-                      "function set_animated (eventValue) // input event received for inputOutput field",
-                      "{",
-                      "    animated = eventValue;",
-                      "}",
-                      "",
-                      "function tracePrint (outputValue)",
-                      "{",
-                      "\tif (traceEnabled) alwaysPrint (outputValue);",
-                      "}",
-                      "function alwaysPrint (outputValue)",
-                      "{",
-                      "    // try to ensure outputValue is converted to string despite Browser.println idiosyncracies",
-                      "    var outputString = outputValue.toString(); // utility function according to spec",
-                      "    if (outputString == null) outputString = outputValue; // direct cast",
-                      "",
-                      "    if  (description.length > 0)",
-                      "         Browser.print ('[Camera: ' + description + '] ' + outputString + '\n');",
-                      "    else",
-                      "         Browser.print ('[Camera] ' + outputString + '\n');",
-                      "}"
-                    ]
+                    }
                   }
                 },
                 {
                   "ROUTE": {
+                    "@fromNode": "CameraPositionInterpolator",
+                    "@fromField": "value_changed",
+                    "@toNode": "CameraViewpoint",
+                    "@toField": "position"
+                  }
+                },
+                {
+                  "ROUTE": {
+                    "@fromNode": "CameraOrientationInterpolator",
+                    "@fromField": "value_changed",
+                    "@toNode": "CameraViewpoint",
+                    "@toField": "orientation"
+                  }
+                },
+                {
+                  "ROUTE": {
+                    "@fromNode": "CameraScript",
                     "@fromField": "position",
-                    "@fromNode": "CameraScript",
-                    "@toField": "position",
-                    "@toNode": "CameraViewpoint"
+                    "@toNode": "CameraViewpoint",
+                    "@toField": "position"
                   }
                 },
                 {
                   "ROUTE": {
+                    "@fromNode": "CameraScript",
                     "@fromField": "orientation",
-                    "@fromNode": "CameraScript",
-                    "@toField": "orientation",
-                    "@toNode": "CameraViewpoint"
+                    "@toNode": "CameraViewpoint",
+                    "@toField": "orientation"
                   }
                 },
                 {
                   "ROUTE": {
-                    "@fromField": "isActive",
                     "@fromNode": "CameraScript",
-                    "@toField": "set_bind",
-                    "@toNode": "CameraViewpoint"
+                    "@fromField": "isActive",
+                    "@toNode": "CameraViewpoint",
+                    "@toField": "set_bind"
                   }
                 },
                 {
                   "ROUTE": {
-                    "@fromField": "isActive",
                     "@fromNode": "CameraScript",
-                    "@toField": "set_bind",
-                    "@toNode": "CameraNavInfo"
+                    "@fromField": "isActive",
+                    "@toNode": "CameraNavInfo",
+                    "@toField": "set_bind"
                   }
                 },
                 {
                   "ROUTE": {
-                    "@fromField": "isActive",
                     "@fromNode": "CameraScript",
-                    "@toField": "on",
-                    "@toNode": "CameraDirectionalLight"
+                    "@fromField": "isActive",
+                    "@toNode": "CameraDirectionalLight",
+                    "@toField": "on"
                   }
                 }
               ]
@@ -1161,43 +1033,30 @@
           }
         },
         {
-          "#comment": "=============== CameraShot =============="
-        },
-        {
           "ProtoDeclare": {
             "@name": "CameraShot",
-            "@appinfo": "CameraShot collects a specific set of CameraMovement animations that make up an individual shot.",
             "ProtoInterface": {
               "field": [
                 {
-                  "@name": "description",
                   "@accessType": "inputOutput",
-                  "@appinfo": "Text description to be displayed for this CameraShot",
-                  "@type": "SFString"
+                  "@type": "SFString",
+                  "@name": "description"
                 },
                 {
-                  "@name": "enabled",
                   "@accessType": "inputOutput",
-                  "@appinfo": "Whether this CameraShot can be activated",
                   "@type": "SFBool",
+                  "@name": "enabled",
                   "@value": true
                 },
                 {
-                  "@name": "moves",
                   "@accessType": "inputOutput",
-                  "@appinfo": "Set of CameraMovement nodes",
                   "@type": "MFNode",
-                  "-children": [
-                    {
-                      "#comment": "initializing CameraMovement nodes are inserted here by scene author using ProtoInstance"
-                    }
-                  ]
+                  "@name": "moves"
                 },
                 {
-                  "@name": "initialPosition",
                   "@accessType": "inputOutput",
-                  "@appinfo": "Setup to reinitialize camera position for this shot",
                   "@type": "SFVec3f",
+                  "@name": "initialPosition",
                   "@value": [
                     0,
                     0,
@@ -1205,67 +1064,47 @@
                   ]
                 },
                 {
-                  "@name": "initialOrientation",
                   "@accessType": "inputOutput",
-                  "@appinfo": "Setup to reinitialize camera rotation for this shot",
                   "@type": "SFRotation",
-                  "@value": [
-                    0,
-                    0,
-                    1,
-                    0
-                  ]
+                  "@name": "initialOrientation"
                 },
                 {
-                  "@name": "initialAimPoint",
                   "@accessType": "inputOutput",
-                  "@appinfo": "Setup to reinitialize aimpoint (relative location for camera direction) for this shot",
                   "@type": "SFVec3f",
-                  "@value": [
-                    0,
-                    0,
-                    0
-                  ]
+                  "@name": "initialAimPoint"
                 },
                 {
-                  "@name": "initialFieldOfView",
                   "@accessType": "inputOutput",
-                  "@appinfo": "pi/4",
                   "@type": "SFFloat",
+                  "@name": "initialFieldOfView",
                   "@value": 0.7854
                 },
                 {
-                  "@name": "initialFStop",
                   "@accessType": "inputOutput",
-                  "@appinfo": "Focal length divided effective aperture diameter indicating width of focal plane",
                   "@type": "SFFloat",
+                  "@name": "initialFStop",
                   "@value": 5.6
                 },
                 {
-                  "@name": "initialFocusDistance",
                   "@accessType": "inputOutput",
-                  "@appinfo": "Distance to focal plane of sharpest focus",
                   "@type": "SFFloat",
+                  "@name": "initialFocusDistance",
                   "@value": 10
                 },
                 {
-                  "@name": "shotDuration",
                   "@accessType": "outputOnly",
-                  "@appinfo": "Subtotal duration of contained CameraMovement move durations",
-                  "@type": "SFTime"
+                  "@type": "SFTime",
+                  "@name": "shotDuration"
                 },
                 {
-                  "@name": "isActive",
                   "@accessType": "outputOnly",
-                  "@appinfo": "Mark start/stop with true/false output respectively useful to trigger external animations",
-                  "@type": "SFBool"
-                },
-                {
-                  "@name": "traceEnabled",
-                  "@accessType": "initializeOnly",
-                  "@appinfo": "enable console output to trace script computations and prototype progress",
                   "@type": "SFBool",
-                  "@value": false
+                  "@name": "isActive"
+                },
+                {
+                  "@accessType": "initializeOnly",
+                  "@type": "SFBool",
+                  "@name": "traceEnabled"
                 }
               ]
             },
@@ -1278,100 +1117,175 @@
                     "@mustEvaluate": true,
                     "field": [
                       {
-                        "@name": "description",
                         "@accessType": "inputOutput",
-                        "@appinfo": "Text description to be displayed for this CameraShot",
-                        "@type": "SFString"
+                        "@type": "SFString",
+                        "@name": "description"
                       },
                       {
-                        "@name": "enabled",
                         "@accessType": "inputOutput",
-                        "@appinfo": "Whether this CameraShot can be activated",
-                        "@type": "SFBool"
+                        "@type": "SFBool",
+                        "@name": "enabled"
                       },
                       {
-                        "@name": "moves",
                         "@accessType": "inputOutput",
-                        "@appinfo": "Set of CameraMovement nodes",
                         "@type": "MFNode",
-                        "-children": [
-                          {
-                            "#comment": "initialization nodes (if any) go here"
-                          }
-                        ]
+                        "@name": "moves"
                       },
                       {
-                        "@name": "initialPosition",
                         "@accessType": "inputOutput",
-                        "@appinfo": "Setup to reinitialize camera position for this shot",
-                        "@type": "SFVec3f"
+                        "@type": "SFVec3f",
+                        "@name": "initialPosition"
                       },
                       {
-                        "@name": "initialOrientation",
                         "@accessType": "inputOutput",
-                        "@appinfo": "Setup to reinitialize camera rotation for this shot",
-                        "@type": "SFRotation"
+                        "@type": "SFRotation",
+                        "@name": "initialOrientation"
                       },
                       {
-                        "@name": "initialAimPoint",
                         "@accessType": "inputOutput",
-                        "@appinfo": "Setup to reinitialize aimpoint (relative location for camera direction) for this shot",
-                        "@type": "SFVec3f"
+                        "@type": "SFVec3f",
+                        "@name": "initialAimPoint"
                       },
                       {
-                        "@name": "initialFieldOfView",
                         "@accessType": "inputOutput",
-                        "@appinfo": "pi/4",
-                        "@type": "SFFloat"
+                        "@type": "SFFloat",
+                        "@name": "initialFieldOfView"
                       },
                       {
-                        "@name": "initialFStop",
                         "@accessType": "inputOutput",
-                        "@appinfo": "Focal length divided effective aperture diameter indicating width of focal plane",
-                        "@type": "SFFloat"
+                        "@type": "SFFloat",
+                        "@name": "initialFStop"
                       },
                       {
-                        "@name": "initialFocusDistance",
                         "@accessType": "inputOutput",
-                        "@appinfo": "Distance to focal plane of sharpest focus",
-                        "@type": "SFFloat"
+                        "@type": "SFFloat",
+                        "@name": "initialFocusDistance"
                       },
                       {
-                        "@name": "shotDuration",
                         "@accessType": "outputOnly",
-                        "@appinfo": "Subtotal duration of contained CameraMovement move durations",
-                        "@type": "SFTime"
+                        "@type": "SFTime",
+                        "@name": "shotDuration"
                       },
                       {
-                        "@name": "isActive",
                         "@accessType": "outputOnly",
-                        "@appinfo": "Mark start/stop with true/false output respectively useful to trigger external animations",
-                        "@type": "SFBool"
+                        "@type": "SFBool",
+                        "@name": "isActive"
                       },
                       {
-                        "@name": "traceEnabled",
                         "@accessType": "initializeOnly",
-                        "@appinfo": "enable console output to trace script computations and prototype progress",
-                        "@type": "SFBool"
+                        "@type": "SFBool",
+                        "@name": "traceEnabled"
                       },
                       {
-                        "@name": "key",
                         "@accessType": "inputOutput",
-                        "@appinfo": "key array for interpolators",
-                        "@type": "MFFloat"
+                        "@type": "MFFloat",
+                        "@name": "key"
                       },
                       {
-                        "@name": "keyValuePosition",
                         "@accessType": "inputOutput",
-                        "@appinfo": "keyValue array for PositionInterpolator",
-                        "@type": "MFVec3f"
+                        "@type": "MFVec3f",
+                        "@name": "keyValuePosition"
                       },
                       {
-                        "@name": "keyValueOrientation",
                         "@accessType": "inputOutput",
-                        "@appinfo": "keyValue array for OrientationInterpolator",
-                        "@type": "MFRotation"
+                        "@type": "MFRotation",
+                        "@name": "keyValueOrientation"
                       }
+                    ],
+                    "#sourceCode": [
+                      "ecmascript:\r",
+                      "function initialize () // CameraShotScript\r",
+                      "{\r",
+                      "//  tracePrint ('initialize start...');\r",
+                      "\r",
+                      "    // compute shotDuration by summing durations from contained CameraMovement nodes\r",
+                      "    shotDuration = 0;\r",
+                      "    for (i = 0; i < moves.length; i++)\r",
+                      "    {\r",
+                      "        shotDuration = shotDuration + moves[i].duration;\r",
+                      "    }\r",
+                      "    alwaysPrint ('number of contained CameraMove nodes=' + moves.length + ', shotDuration=' + shotDuration + ' seconds');\r",
+                      "\r",
+                      "//  tracePrint ('... initialize() complete');\r",
+                      "}\r",
+                      "\r",
+                      "function set_description (eventValue) // input event received for inputOutput field\r",
+                      "{\r",
+                      "    description = eventValue;\r",
+                      "}\r",
+                      "\r",
+                      "function set_enabled (eventValue) // input event received for inputOutput field\r",
+                      "{\r",
+                      "    enabled = eventValue;\r",
+                      "}\r",
+                      "\r",
+                      "function set_moves (eventValue) // input event received for inputOutput field\r",
+                      "{\r",
+                      "    moves = eventValue;\r",
+                      "}\r",
+                      "\r",
+                      "function set_initialPosition (eventValue) // input event received for inputOutput field\r",
+                      "{\r",
+                      "    initialPosition = eventValue;\r",
+                      "}\r",
+                      "\r",
+                      "function set_initialOrientation (eventValue) // input event received for inputOutput field\r",
+                      "{\r",
+                      "    initialOrientation = eventValue;\r",
+                      "}\r",
+                      "\r",
+                      "function set_initialAimPoint (eventValue) // input event received for inputOutput field\r",
+                      "{\r",
+                      "    initialAimPoint = eventValue;\r",
+                      "}\r",
+                      "\r",
+                      "function set_initialFieldOfView (eventValue) // input event received for inputOutput field\r",
+                      "{\r",
+                      "    initialFieldOfView = eventValue;\r",
+                      "}\r",
+                      "\r",
+                      "function set_initialFStop (eventValue) // input event received for inputOutput field\r",
+                      "{\r",
+                      "    initialFStop = eventValue;\r",
+                      "}\r",
+                      "\r",
+                      "function set_initialFocusDistance (eventValue) // input event received for inputOutput field\r",
+                      "{\r",
+                      "    initialFocusDistance = eventValue;\r",
+                      "}\r",
+                      "\r",
+                      "function set_key (eventValue) // input event received for inputOutput field\r",
+                      "{\r",
+                      "    key = eventValue;\r",
+                      "}\r",
+                      "\r",
+                      "function set_keyValuePosition (eventValue) // input event received for inputOutput field\r",
+                      "{\r",
+                      "    keyValuePosition = eventValue;\r",
+                      "}\r",
+                      "\r",
+                      "function set_keyValueOrientation (eventValue) // input event received for inputOutput field\r",
+                      "{\r",
+                      "    keyValueOrientation = eventValue;\r",
+                      "}\r",
+                      "\r",
+                      "// TODO consider method set_active for constructed Camera node BooleanSequencer to send isActive\r",
+                      "\r",
+                      "function tracePrint (outputValue)\r",
+                      "{\r",
+                      "\tif (traceEnabled) alwaysPrint (outputValue);\r",
+                      "}\r",
+                      "function alwaysPrint (outputValue)\r",
+                      "{\r",
+                      "\t// try to ensure outputValue is converted to string despite browser idiosyncracies\r",
+                      "    var outputString = outputValue.toString(); // utility function according to spec\r",
+                      "    if (outputString == null) outputString = outputValue; // direct cast\r",
+                      "\r",
+                      "    if  (description.length > 0)\r",
+                      "         Browser.print ('[CameraShot: ' + description + '] ' + outputString + '\n');\r",
+                      "    else\r",
+                      "         Browser.print ('[CameraShot] ' + outputString + '\n');\r",
+                      "}"
                     ],
                     "IS": {
                       "connect": [
@@ -1424,145 +1338,38 @@
                           "@protoField": "traceEnabled"
                         }
                       ]
-                    },
-                    "#sourceCode": [
-                      "ecmascript:",
-                      "function initialize () // CameraShotScript",
-                      "{",
-                      "//  tracePrint ('initialize start...');",
-                      "",
-                      "    // compute shotDuration by summing durations from contained CameraMovement nodes",
-                      "    shotDuration = 0;",
-                      "    for (i = 0; i < moves.length; i++)",
-                      "    {",
-                      "        shotDuration = shotDuration + moves[i].duration;",
-                      "    }",
-                      "    alwaysPrint ('number of contained CameraMove nodes=' + moves.length + ', shotDuration=' + shotDuration + ' seconds');",
-                      "",
-                      "//  tracePrint ('... initialize() complete');",
-                      "}",
-                      "",
-                      "function set_description (eventValue) // input event received for inputOutput field",
-                      "{",
-                      "    description = eventValue;",
-                      "}",
-                      "",
-                      "function set_enabled (eventValue) // input event received for inputOutput field",
-                      "{",
-                      "    enabled = eventValue;",
-                      "}",
-                      "",
-                      "function set_moves (eventValue) // input event received for inputOutput field",
-                      "{",
-                      "    moves = eventValue;",
-                      "}",
-                      "",
-                      "function set_initialPosition (eventValue) // input event received for inputOutput field",
-                      "{",
-                      "    initialPosition = eventValue;",
-                      "}",
-                      "",
-                      "function set_initialOrientation (eventValue) // input event received for inputOutput field",
-                      "{",
-                      "    initialOrientation = eventValue;",
-                      "}",
-                      "",
-                      "function set_initialAimPoint (eventValue) // input event received for inputOutput field",
-                      "{",
-                      "    initialAimPoint = eventValue;",
-                      "}",
-                      "",
-                      "function set_initialFieldOfView (eventValue) // input event received for inputOutput field",
-                      "{",
-                      "    initialFieldOfView = eventValue;",
-                      "}",
-                      "",
-                      "function set_initialFStop (eventValue) // input event received for inputOutput field",
-                      "{",
-                      "    initialFStop = eventValue;",
-                      "}",
-                      "",
-                      "function set_initialFocusDistance (eventValue) // input event received for inputOutput field",
-                      "{",
-                      "    initialFocusDistance = eventValue;",
-                      "}",
-                      "",
-                      "function set_key (eventValue) // input event received for inputOutput field",
-                      "{",
-                      "    key = eventValue;",
-                      "}",
-                      "",
-                      "function set_keyValuePosition (eventValue) // input event received for inputOutput field",
-                      "{",
-                      "    keyValuePosition = eventValue;",
-                      "}",
-                      "",
-                      "function set_keyValueOrientation (eventValue) // input event received for inputOutput field",
-                      "{",
-                      "    keyValueOrientation = eventValue;",
-                      "}",
-                      "",
-                      "// TODO consider method set_active for constructed Camera node BooleanSequencer to send isActive",
-                      "",
-                      "function tracePrint (outputValue)",
-                      "{",
-                      "\tif (traceEnabled) alwaysPrint (outputValue);",
-                      "}",
-                      "function alwaysPrint (outputValue)",
-                      "{",
-                      "\t// try to ensure outputValue is converted to string despite browser idiosyncracies",
-                      "    var outputString = outputValue.toString(); // utility function according to spec",
-                      "    if (outputString == null) outputString = outputValue; // direct cast",
-                      "",
-                      "    if  (description.length > 0)",
-                      "         Browser.print ('[CameraShot: ' + description + '] ' + outputString + '\n');",
-                      "    else",
-                      "         Browser.print ('[CameraShot] ' + outputString + '\n');",
-                      "}"
-                    ]
+                    }
                   }
-                },
-                {
-                  "#comment": "Add any ROUTEs here, going from Script to other nodes within ProtoBody"
                 }
               ]
             }
           }
         },
         {
-          "#comment": "=============== CameraMovement =============="
-        },
-        {
           "ProtoDeclare": {
             "@name": "CameraMovement",
-            "@appinfo": "CameraMovement node defines a single camera movement animation including goalPosition, goalOrientation, goalAimPoint and goalFieldOfView.",
             "ProtoInterface": {
               "field": [
                 {
-                  "@name": "description",
                   "@accessType": "inputOutput",
-                  "@appinfo": "Text description to be displayed for this CameraMovement",
-                  "@type": "SFString"
+                  "@type": "SFString",
+                  "@name": "description"
                 },
                 {
-                  "@name": "enabled",
                   "@accessType": "inputOutput",
-                  "@appinfo": "Whether this CameraMovement can be activated",
                   "@type": "SFBool",
+                  "@name": "enabled",
                   "@value": true
                 },
                 {
-                  "@name": "duration",
                   "@accessType": "inputOutput",
-                  "@appinfo": "Duration in seconds for this move",
                   "@type": "SFFloat",
-                  "@value": 0
+                  "@name": "duration"
                 },
                 {
-                  "@name": "goalPosition",
                   "@accessType": "inputOutput",
-                  "@appinfo": "Goal camera position for this move",
                   "@type": "SFVec3f",
+                  "@name": "goalPosition",
                   "@value": [
                     0,
                     0,
@@ -1570,82 +1377,52 @@
                   ]
                 },
                 {
-                  "@name": "goalOrientation",
                   "@accessType": "inputOutput",
-                  "@appinfo": "Goal camera rotation for this move",
                   "@type": "SFRotation",
-                  "@value": [
-                    0,
-                    0,
-                    1,
-                    0
-                  ]
+                  "@name": "goalOrientation"
                 },
                 {
-                  "@name": "tracking",
                   "@accessType": "inputOutput",
-                  "@appinfo": "Whether or not camera direction is tracking towards the aimPoint",
                   "@type": "SFBool",
-                  "@value": false
+                  "@name": "tracking"
                 },
                 {
-                  "@name": "goalAimPoint",
                   "@accessType": "inputOutput",
-                  "@appinfo": "Goal aimPoint for this move, ignored if tracking=false",
                   "@type": "SFVec3f",
-                  "@value": [
-                    0,
-                    0,
-                    0
-                  ]
+                  "@name": "goalAimPoint"
                 },
                 {
-                  "@name": "goalFieldOfView",
                   "@accessType": "inputOutput",
-                  "@appinfo": "Goal fieldOfView for this move",
                   "@type": "SFFloat",
+                  "@name": "goalFieldOfView",
                   "@value": 0.7854
                 },
                 {
-                  "@name": "goalFStop",
                   "@accessType": "inputOutput",
-                  "@appinfo": "Focal length divided effective aperture diameter indicating width of focal plane",
                   "@type": "SFFloat",
+                  "@name": "goalFStop",
                   "@value": 5.6
                 },
                 {
-                  "@name": "goalFocusDistance",
                   "@accessType": "inputOutput",
-                  "@appinfo": "Distance to focal plane of sharpest focus",
                   "@type": "SFFloat",
+                  "@name": "goalFocusDistance",
                   "@value": 10
                 },
                 {
-                  "@name": "isActive",
                   "@accessType": "outputOnly",
-                  "@appinfo": "Mark start/stop with true/false output respectively useful to trigger external animations",
-                  "@type": "SFBool"
+                  "@type": "SFBool",
+                  "@name": "isActive"
                 },
                 {
-                  "@name": "traceEnabled",
                   "@accessType": "initializeOnly",
-                  "@appinfo": "enable console output to trace script computations and prototype progress",
                   "@type": "SFBool",
-                  "@value": false
+                  "@name": "traceEnabled"
                 }
               ]
             },
             "ProtoBody": {
               "-children": [
-                {
-                  "#comment": "First node determines node type of this prototype"
-                },
-                {
-                  "#comment": "Subsequent nodes do not render, but still must be a valid X3D subgraph"
-                },
-                {
-                  "#comment": "Script holds CameraMovement initialization values for query by parent CameraShot, and also permits changing values via events"
-                },
                 {
                   "Script": {
                     "@DEF": "CameraMovementScript",
@@ -1653,77 +1430,157 @@
                     "@mustEvaluate": true,
                     "field": [
                       {
-                        "@name": "description",
                         "@accessType": "inputOutput",
-                        "@appinfo": "Text description to be displayed for this CameraMovement",
-                        "@type": "SFString"
+                        "@type": "SFString",
+                        "@name": "description"
                       },
                       {
-                        "@name": "enabled",
                         "@accessType": "inputOutput",
-                        "@appinfo": "Whether this CameraMovement can be activated",
-                        "@type": "SFBool"
+                        "@type": "SFBool",
+                        "@name": "enabled"
                       },
                       {
-                        "@name": "duration",
                         "@accessType": "inputOutput",
-                        "@appinfo": "Duration in seconds for this move",
-                        "@type": "SFFloat"
+                        "@type": "SFFloat",
+                        "@name": "duration"
                       },
                       {
-                        "@name": "goalPosition",
                         "@accessType": "inputOutput",
-                        "@appinfo": "Goal camera position for this move",
-                        "@type": "SFVec3f"
+                        "@type": "SFVec3f",
+                        "@name": "goalPosition"
                       },
                       {
-                        "@name": "goalOrientation",
                         "@accessType": "inputOutput",
-                        "@appinfo": "Goal camera rotation for this move",
-                        "@type": "SFRotation"
+                        "@type": "SFRotation",
+                        "@name": "goalOrientation"
                       },
                       {
-                        "@name": "tracking",
                         "@accessType": "inputOutput",
-                        "@appinfo": "Whether or not camera direction is tracking towards the aimPoint",
-                        "@type": "SFBool"
+                        "@type": "SFBool",
+                        "@name": "tracking"
                       },
                       {
-                        "@name": "goalAimPoint",
                         "@accessType": "inputOutput",
-                        "@appinfo": "Goal aimPoint for this move, ignored if tracking=false",
-                        "@type": "SFVec3f"
+                        "@type": "SFVec3f",
+                        "@name": "goalAimPoint"
                       },
                       {
-                        "@name": "goalFieldOfView",
                         "@accessType": "inputOutput",
-                        "@appinfo": "Goal fieldOfView for this move",
-                        "@type": "SFFloat"
+                        "@type": "SFFloat",
+                        "@name": "goalFieldOfView"
                       },
                       {
-                        "@name": "goalFStop",
                         "@accessType": "inputOutput",
-                        "@appinfo": "Focal length divided effective aperture diameter indicating width of focal plane",
-                        "@type": "SFFloat"
+                        "@type": "SFFloat",
+                        "@name": "goalFStop"
                       },
                       {
-                        "@name": "goalFocusDistance",
                         "@accessType": "inputOutput",
-                        "@appinfo": "Distance to focal plane of sharpest focus",
-                        "@type": "SFFloat"
+                        "@type": "SFFloat",
+                        "@name": "goalFocusDistance"
                       },
                       {
-                        "@name": "isActive",
                         "@accessType": "outputOnly",
-                        "@appinfo": "Mark start/stop with true/false output respectively useful to trigger external animations",
-                        "@type": "SFBool"
+                        "@type": "SFBool",
+                        "@name": "isActive"
                       },
                       {
-                        "@name": "traceEnabled",
                         "@accessType": "initializeOnly",
-                        "@appinfo": "enable console output to trace script computations and prototype progress",
-                        "@type": "SFBool"
+                        "@type": "SFBool",
+                        "@name": "traceEnabled"
                       }
+                    ],
+                    "#sourceCode": [
+                      "ecmascript:\r",
+                      "function initialize () // CameraMovementScript\r",
+                      "{\r",
+                      "//  tracePrint ('initialize start...');\r",
+                      "    alwaysPrint ('initialize goalPosition=' + goalPosition.toString() + ', goalOrientation=' + goalOrientation.toString() +\r",
+                      "                           ', goalAimPoint=' + goalAimPoint.toString() // + ', tracking=' + tracking.toString()\r",
+                      "                           );\r",
+                      "    if (duration < 0)\r",
+                      "    {\r",
+                      "       alwaysPrint ('error: negative duration=' + duration + ', reset to 0 and ignored');\r",
+                      "       duration = 0;\r",
+                      "    }\r",
+                      "    else if (duration == 0)\r",
+                      "    {\r",
+                      "       alwaysPrint ('warning: duration=0, nothing to do!');\r",
+                      "    }\r",
+                      "    tracePrint ('... initialize complete');\r",
+                      "}\r",
+                      "\r",
+                      "function set_goalAimPoint (eventValue) // input event received for inputOutput field\r",
+                      "{\r",
+                      "    goalAimPoint_changed = eventValue;\r",
+                      "    tracePrint ('goalAimPoint=' + goalAimPoint.toString());\r",
+                      "\r",
+                      "    // updated goalOrientation tracking is handled by Camera recomputing the OrientationInterpolator\r",
+                      "}\r",
+                      "\r",
+                      "function set_description (eventValue) // input event received for inputOutput field\r",
+                      "{\r",
+                      "    description = eventValue;\r",
+                      "}\r",
+                      "\r",
+                      "function set_enabled (eventValue) // input event received for inputOutput field\r",
+                      "{\r",
+                      "    enabled = eventValue;\r",
+                      "}\r",
+                      "\r",
+                      "function set_duration (eventValue) // input event received for inputOutput field\r",
+                      "{\r",
+                      "    duration = eventValue;\r",
+                      "}\r",
+                      "\r",
+                      "function set_goalPosition (eventValue) // input event received for inputOutput field\r",
+                      "{\r",
+                      "    goalPosition = eventValue;\r",
+                      "}\r",
+                      "\r",
+                      "function set_goalOrientation (eventValue) // input event received for inputOutput field\r",
+                      "{\r",
+                      "    goalOrientation = eventValue;\r",
+                      "}\r",
+                      "\r",
+                      "function set_tracking (eventValue) // input event received for inputOutput field\r",
+                      "{\r",
+                      "    tracking = eventValue;\r",
+                      "}\r",
+                      "\r",
+                      "function set_goalFieldOfView (eventValue) // input event received for inputOutput field\r",
+                      "{\r",
+                      "    goalFieldOfView = eventValue;\r",
+                      "}\r",
+                      "\r",
+                      "function set_goalFStop (eventValue) // input event received for inputOutput field\r",
+                      "{\r",
+                      "    goalFStop = eventValue;\r",
+                      "}\r",
+                      "\r",
+                      "function set_goalFocusDistance (eventValue) // input event received for inputOutput field\r",
+                      "{\r",
+                      "    goalFocusDistance = eventValue;\r",
+                      "}\r",
+                      "\r",
+                      "// TODO consider method set_active for constructed Camera node BooleanSequencer to send isActive\r",
+                      "\r",
+                      "function tracePrint (outputValue)\r",
+                      "{\r",
+                      "\tif (traceEnabled) alwaysPrint (outputValue);\r",
+                      "}\r",
+                      "\r",
+                      "function alwaysPrint (outputValue)\r",
+                      "{\r",
+                      "\t// try to ensure outputValue is converted to string despite browser idiosyncracies\r",
+                      "    var outputString = outputValue.toString(); // utility function according to spec\r",
+                      "    if (outputString == null) outputString = outputValue; // direct cast\r",
+                      "\r",
+                      "    if  (description.length > 0)\r",
+                      "         Browser.print ('[CameraMovement: ' + description + '] ' + outputString + '\n');\r",
+                      "    else\r",
+                      "         Browser.print ('[CameraMovement] ' + outputString + '\n');\r",
+                      "}"
                     ],
                     "IS": {
                       "connect": [
@@ -1776,283 +1633,206 @@
                           "@protoField": "traceEnabled"
                         }
                       ]
-                    },
-                    "#sourceCode": [
-                      "ecmascript:",
-                      "function initialize () // CameraMovementScript",
-                      "{",
-                      "//  tracePrint ('initialize start...');",
-                      "    alwaysPrint ('initialize goalPosition=' + goalPosition.toString() + ', goalOrientation=' + goalOrientation.toString() +",
-                      "                           ', goalAimPoint=' + goalAimPoint.toString() // + ', tracking=' + tracking.toString()",
-                      "                           );",
-                      "    if (duration < 0)",
-                      "    {",
-                      "       alwaysPrint ('error: negative duration=' + duration + ', reset to 0 and ignored');",
-                      "       duration = 0;",
-                      "    }",
-                      "    else if (duration == 0)",
-                      "    {",
-                      "       alwaysPrint ('warning: duration=0, nothing to do!');",
-                      "    }",
-                      "    tracePrint ('... initialize complete');",
-                      "}",
-                      "",
-                      "function set_goalAimPoint (eventValue) // input event received for inputOutput field",
-                      "{",
-                      "    goalAimPoint_changed = eventValue;",
-                      "    tracePrint ('goalAimPoint=' + goalAimPoint.toString());",
-                      "",
-                      "    // updated goalOrientation tracking is handled by Camera recomputing the OrientationInterpolator",
-                      "}",
-                      "",
-                      "function set_description (eventValue) // input event received for inputOutput field",
-                      "{",
-                      "    description = eventValue;",
-                      "}",
-                      "",
-                      "function set_enabled (eventValue) // input event received for inputOutput field",
-                      "{",
-                      "    enabled = eventValue;",
-                      "}",
-                      "",
-                      "function set_duration (eventValue) // input event received for inputOutput field",
-                      "{",
-                      "    duration = eventValue;",
-                      "}",
-                      "",
-                      "function set_goalPosition (eventValue) // input event received for inputOutput field",
-                      "{",
-                      "    goalPosition = eventValue;",
-                      "}",
-                      "",
-                      "function set_goalOrientation (eventValue) // input event received for inputOutput field",
-                      "{",
-                      "    goalOrientation = eventValue;",
-                      "}",
-                      "",
-                      "function set_tracking (eventValue) // input event received for inputOutput field",
-                      "{",
-                      "    tracking = eventValue;",
-                      "}",
-                      "",
-                      "function set_goalFieldOfView (eventValue) // input event received for inputOutput field",
-                      "{",
-                      "    goalFieldOfView = eventValue;",
-                      "}",
-                      "",
-                      "function set_goalFStop (eventValue) // input event received for inputOutput field",
-                      "{",
-                      "    goalFStop = eventValue;",
-                      "}",
-                      "",
-                      "function set_goalFocusDistance (eventValue) // input event received for inputOutput field",
-                      "{",
-                      "    goalFocusDistance = eventValue;",
-                      "}",
-                      "",
-                      "// TODO consider method set_active for constructed Camera node BooleanSequencer to send isActive",
-                      "",
-                      "function tracePrint (outputValue)",
-                      "{",
-                      "\tif (traceEnabled) alwaysPrint (outputValue);",
-                      "}",
-                      "",
-                      "function alwaysPrint (outputValue)",
-                      "{",
-                      "\t// try to ensure outputValue is converted to string despite browser idiosyncracies",
-                      "    var outputString = outputValue.toString(); // utility function according to spec",
-                      "    if (outputString == null) outputString = outputValue; // direct cast",
-                      "",
-                      "    if  (description.length > 0)",
-                      "         Browser.print ('[CameraMovement: ' + description + '] ' + outputString + '\n');",
-                      "    else",
-                      "         Browser.print ('[CameraMovement] ' + outputString + '\n');",
-                      "}"
-                    ]
+                    }
                   }
-                },
-                {
-                  "#comment": "Add any ROUTEs here, going from Script to other nodes within ProtoBody"
                 }
               ]
             }
           }
         },
         {
-          "#comment": "=============== OfflineRender =============="
-        },
-        {
           "ProtoDeclare": {
             "@name": "OfflineRender",
-            "@appinfo": "OfflineRender defines a parameters for offline rendering of Camera animation output to a movie file (or possibly a still shot).",
             "ProtoInterface": {
-              "-children": [
-                {
-                  "#comment": "TODO non-photorealistic rendering (NPR) parameters"
-                }
-              ],
               "field": [
                 {
-                  "@name": "description",
                   "@accessType": "inputOutput",
-                  "@appinfo": "Text description to be displayed for this OfflineRender",
-                  "@type": "SFString"
+                  "@type": "SFString",
+                  "@name": "description"
                 },
                 {
-                  "@name": "enabled",
                   "@accessType": "inputOutput",
-                  "@appinfo": "Whether this OfflineRender can be activated",
                   "@type": "SFBool",
+                  "@name": "enabled",
                   "@value": true
                 },
                 {
-                  "@name": "frameRate",
                   "@accessType": "inputOutput",
-                  "@appinfo": "Frames per second recorded for this rendering",
                   "@type": "SFFloat",
+                  "@name": "frameRate",
                   "@value": 30
                 },
                 {
-                  "@name": "frameSize",
                   "@accessType": "inputOutput",
-                  "@appinfo": "Size of frame in number of pixels width and height",
                   "@type": "SFVec2f",
+                  "@name": "frameSize",
                   "@value": [
                     640,
                     480
                   ]
                 },
                 {
-                  "@name": "pixelAspectRatio",
                   "@accessType": "inputOutput",
-                  "@appinfo": "Relative dimensions of pixel height/width typically 1.33 or 1",
                   "@type": "SFFloat",
+                  "@name": "pixelAspectRatio",
                   "@value": 1.33
                 },
                 {
-                  "@name": "set_startTime",
                   "@accessType": "inputOnly",
-                  "@appinfo": "Begin render operation",
-                  "@type": "SFTime"
+                  "@type": "SFTime",
+                  "@name": "set_startTime"
                 },
                 {
-                  "@name": "progress",
                   "@accessType": "outputOnly",
-                  "@appinfo": "Progress performing render operation (0..1)",
-                  "@type": "SFFloat"
+                  "@type": "SFFloat",
+                  "@name": "progress"
                 },
                 {
-                  "@name": "renderCompleteTime",
                   "@accessType": "outputOnly",
-                  "@appinfo": "Render operation complete",
-                  "@type": "SFTime"
+                  "@type": "SFTime",
+                  "@name": "renderCompleteTime"
                 },
                 {
-                  "@name": "movieFormat",
                   "@accessType": "initializeOnly",
-                  "@appinfo": "Format of rendered output movie (mpeg mp4 etc.), use first supported format",
                   "@type": "MFString",
+                  "@name": "movieFormat",
                   "@value": [
                     "mpeg"
                   ]
                 },
                 {
-                  "@name": "imageFormat",
                   "@accessType": "initializeOnly",
-                  "@appinfo": "Format of rendered output images (png jpeg gif tiff etc.) use first supported format",
                   "@type": "MFString",
+                  "@name": "imageFormat",
                   "@value": [
                     "png"
                   ]
                 },
                 {
-                  "@name": "traceEnabled",
                   "@accessType": "initializeOnly",
-                  "@appinfo": "enable console output to trace script computations and prototype progress",
                   "@type": "SFBool",
-                  "@value": false
+                  "@name": "traceEnabled"
                 }
               ]
             },
             "ProtoBody": {
               "-children": [
                 {
-                  "#comment": "First node determines node type of this prototype"
-                },
-                {
-                  "#comment": "Subsequent nodes do not render, but still must be a valid X3D subgraph"
-                },
-                {
                   "Script": {
                     "@DEF": "OfflineRenderScript",
                     "@mustEvaluate": true,
                     "field": [
                       {
-                        "@name": "description",
                         "@accessType": "inputOutput",
-                        "@appinfo": "Text description to be displayed for this OfflineRender",
-                        "@type": "SFString"
+                        "@type": "SFString",
+                        "@name": "description"
                       },
                       {
-                        "@name": "enabled",
                         "@accessType": "inputOutput",
-                        "@appinfo": "Whether this OfflineRender can be activated",
-                        "@type": "SFBool"
+                        "@type": "SFBool",
+                        "@name": "enabled"
                       },
                       {
-                        "@name": "frameRate",
                         "@accessType": "inputOutput",
-                        "@appinfo": "Frames per second recorded for this rendering",
-                        "@type": "SFFloat"
+                        "@type": "SFFloat",
+                        "@name": "frameRate"
                       },
                       {
-                        "@name": "frameSize",
                         "@accessType": "inputOutput",
-                        "@appinfo": "Size of frame in number of pixels width and height",
-                        "@type": "SFVec2f"
+                        "@type": "SFVec2f",
+                        "@name": "frameSize"
                       },
                       {
-                        "@name": "pixelAspectRatio",
                         "@accessType": "inputOutput",
-                        "@appinfo": "Relative dimensions of pixel height/width typically 1.33 or 1",
-                        "@type": "SFFloat"
+                        "@type": "SFFloat",
+                        "@name": "pixelAspectRatio"
                       },
                       {
-                        "@name": "set_startTime",
                         "@accessType": "inputOnly",
-                        "@appinfo": "Begin render operation",
-                        "@type": "SFTime"
+                        "@type": "SFTime",
+                        "@name": "set_startTime"
                       },
                       {
-                        "@name": "progress",
                         "@accessType": "outputOnly",
-                        "@appinfo": "Progress performing render operation (0..1)",
-                        "@type": "SFFloat"
+                        "@type": "SFFloat",
+                        "@name": "progress"
                       },
                       {
-                        "@name": "renderCompleteTime",
                         "@accessType": "outputOnly",
-                        "@appinfo": "Render operation complete",
-                        "@type": "SFTime"
+                        "@type": "SFTime",
+                        "@name": "renderCompleteTime"
                       },
                       {
-                        "@name": "movieFormat",
                         "@accessType": "initializeOnly",
-                        "@appinfo": "Format of rendered output movie (mpeg mp4 etc.)",
-                        "@type": "MFString"
+                        "@type": "MFString",
+                        "@name": "movieFormat"
                       },
                       {
-                        "@name": "imageFormat",
                         "@accessType": "initializeOnly",
-                        "@appinfo": "Format of rendered output images (png jpeg gif tiff etc.)",
-                        "@type": "MFString"
+                        "@type": "MFString",
+                        "@name": "imageFormat"
                       },
                       {
-                        "@name": "traceEnabled",
                         "@accessType": "initializeOnly",
-                        "@appinfo": "enable console output to trace script computations and prototype progress",
-                        "@type": "SFBool"
+                        "@type": "SFBool",
+                        "@name": "traceEnabled"
                       }
+                    ],
+                    "#sourceCode": [
+                      "ecmascript:\r",
+                      "function initialize () // OfflineRenderScript\r",
+                      "{\r",
+                      "//  tracePrint ('initialize start...');\r",
+                      "\r",
+                      "    tracePrint ('... initialize complete');\r",
+                      "}\r",
+                      "\r",
+                      "function set_description (eventValue) // input event received for inputOutput field\r",
+                      "{\r",
+                      "    description = eventValue;\r",
+                      "}\r",
+                      "\r",
+                      "function set_enabled (eventValue) // input event received for inputOutput field\r",
+                      "{\r",
+                      "    enabled = eventValue;\r",
+                      "}\r",
+                      "\r",
+                      "function set_frameRate (eventValue) // input event received for inputOutput field\r",
+                      "{\r",
+                      "    frameRate = eventValue;\r",
+                      "}\r",
+                      "\r",
+                      "function set_frameSize (eventValue) // input event received for inputOutput field\r",
+                      "{\r",
+                      "    frameSize = eventValue;\r",
+                      "}\r",
+                      "\r",
+                      "function set_pixelAspectRatio (eventValue) // input event received for inputOutput field\r",
+                      "{\r",
+                      "    pixelAspectRatio = eventValue;\r",
+                      "}\r",
+                      "\r",
+                      "function set_startTime (eventValue) // input event received for inputOnly field\r",
+                      "{\r",
+                      "   // do something with input eventValue;\r",
+                      "}\r",
+                      "\r",
+                      "function tracePrint (outputValue)\r",
+                      "{\r",
+                      "\tif (traceEnabled) alwaysPrint (outputValue);\r",
+                      "}\r",
+                      "\r",
+                      "function alwaysPrint (outputValue)\r",
+                      "{\r",
+                      "\t// try to ensure outputValue is converted to string despite browser idiosyncracies\r",
+                      "    var outputString = outputValue.toString(); // utility function according to spec\r",
+                      "    if (outputString == null) outputString = outputValue; // direct cast\r",
+                      "\r",
+                      "    if  (description.length > 0)\r",
+                      "         Browser.print ('[OfflineRender: ' + description + '] ' + outputString + '\n');\r",
+                      "    else\r",
+                      "         Browser.print ('[OfflineRender] ' + outputString + '\n');\r",
+                      "}"
                     ],
                     "IS": {
                       "connect": [
@@ -2101,74 +1881,12 @@
                           "@protoField": "traceEnabled"
                         }
                       ]
-                    },
-                    "#sourceCode": [
-                      "ecmascript:",
-                      "function initialize () // OfflineRenderScript",
-                      "{",
-                      "//  tracePrint ('initialize start...');",
-                      "",
-                      "    tracePrint ('... initialize complete');",
-                      "}",
-                      "",
-                      "function set_description (eventValue) // input event received for inputOutput field",
-                      "{",
-                      "    description = eventValue;",
-                      "}",
-                      "",
-                      "function set_enabled (eventValue) // input event received for inputOutput field",
-                      "{",
-                      "    enabled = eventValue;",
-                      "}",
-                      "",
-                      "function set_frameRate (eventValue) // input event received for inputOutput field",
-                      "{",
-                      "    frameRate = eventValue;",
-                      "}",
-                      "",
-                      "function set_frameSize (eventValue) // input event received for inputOutput field",
-                      "{",
-                      "    frameSize = eventValue;",
-                      "}",
-                      "",
-                      "function set_pixelAspectRatio (eventValue) // input event received for inputOutput field",
-                      "{",
-                      "    pixelAspectRatio = eventValue;",
-                      "}",
-                      "",
-                      "function set_startTime (eventValue) // input event received for inputOnly field",
-                      "{",
-                      "   // do something with input eventValue;",
-                      "}",
-                      "",
-                      "function tracePrint (outputValue)",
-                      "{",
-                      "\tif (traceEnabled) alwaysPrint (outputValue);",
-                      "}",
-                      "",
-                      "function alwaysPrint (outputValue)",
-                      "{",
-                      "\t// try to ensure outputValue is converted to string despite browser idiosyncracies",
-                      "    var outputString = outputValue.toString(); // utility function according to spec",
-                      "    if (outputString == null) outputString = outputValue; // direct cast",
-                      "",
-                      "    if  (description.length > 0)",
-                      "         Browser.print ('[OfflineRender: ' + description + '] ' + outputString + '\n');",
-                      "    else",
-                      "         Browser.print ('[OfflineRender] ' + outputString + '\n');",
-                      "}"
-                    ]
+                    }
                   }
-                },
-                {
-                  "#comment": "Add any ROUTEs here, going from Script to other nodes within ProtoBody"
                 }
               ]
             }
           }
-        },
-        {
-          "#comment": "=============== Launch Prototype Example =============="
         },
         {
           "Background": {
@@ -2194,27 +1912,6 @@
                   "-children": [
                     {
                       "Shape": {
-                        "-geometry": {
-                          "Text": {
-                            "@string": [
-                              "CameraPrototypes.x3d",
-                              "defines multiple prototype nodes",
-                              "",
-                              "Click on this text to see",
-                              "CameraExamples.x3d scene"
-                            ],
-                            "-children": [
-                              {
-                                "FontStyle": {
-                                  "@justify": [
-                                    "MIDDLE",
-                                    "MIDDLE"
-                                  ]
-                                }
-                              }
-                            ]
-                          }
-                        },
                         "-children": [
                           {
                             "Appearance": {
@@ -2225,6 +1922,27 @@
                                       1,
                                       1,
                                       0.2
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "Text": {
+                              "@string": [
+                                "CameraPrototypes.x3d",
+                                "defines multiple prototype nodes",
+                                "",
+                                "Click on this text to see",
+                                "CameraExamples.x3d scene"
+                              ],
+                              "-children": [
+                                {
+                                  "FontStyle": {
+                                    "@justify": [
+                                      "MIDDLE",
+                                      "MIDDLE"
                                     ]
                                   }
                                 }

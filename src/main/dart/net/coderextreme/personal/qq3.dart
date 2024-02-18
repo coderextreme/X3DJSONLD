@@ -4,7 +4,7 @@ import '../x3d.dart';
 var X3D0 =  X3D(
 
       profile_ : SFString('Immersive'),
-      version_ : SFString('4.0'),
+      version_ : SFString('3.3'),
       head_ : 
         head(
           meta_ : [
@@ -52,7 +52,7 @@ var X3D0 =  X3D(
                       children_ : [
                         Transform(
                           scale_ : SFVec3f([SFDouble(0.5), SFDouble(0.5), SFDouble(0.5)]),
-                          children_ : [
+                          child_ : 
                             Shape(
                               DEF_ : SFString('ShapeLeftDown'),
                               appearance_ : 
@@ -64,12 +64,12 @@ var X3D0 =  X3D(
                                 Extrusion(
                                   spine_ : MFVec3f([SFVec3f([-2.5,0,0]),SFVec3f([-1.5,0,0])]),
                                   creaseAngle_ : 0.785,
-                                  crossSection_ : MFVec2f([SFVec2f([1,0]),SFVec2f([0.92,-0.38]),SFVec2f([0.71,-0.71]),SFVec2f([0.38,-0.92]),SFVec2f([0,-1]),SFVec2f([-0.38,-0.92]),SFVec2f([-0.71,-0.71]),SFVec2f([-0.92,-0.38]),SFVec2f([-1,0]),SFVec2f([-0.92,0.38]),SFVec2f([-0.71,0.71]),SFVec2f([-0.38,0.92]),SFVec2f([0,1]),SFVec2f([0.38,0.92]),SFVec2f([0.71,0.71]),SFVec2f([0.92,0.38]),SFVec2f([1,0])])))]),
+                                  crossSection_ : MFVec2f([SFVec2f([1,0]),SFVec2f([0.92,-0.38]),SFVec2f([0.71,-0.71]),SFVec2f([0.38,-0.92]),SFVec2f([0,-1]),SFVec2f([-0.38,-0.92]),SFVec2f([-0.71,-0.71]),SFVec2f([-0.92,-0.38]),SFVec2f([-1,0]),SFVec2f([-0.92,0.38]),SFVec2f([-0.71,0.71]),SFVec2f([-0.38,0.92]),SFVec2f([0,1]),SFVec2f([0.38,0.92]),SFVec2f([0.71,0.71]),SFVec2f([0.92,0.38]),SFVec2f([1,0])])))),
                       /*right*/
 
                         Transform(
                           scale_ : SFVec3f([SFDouble(0.5), SFDouble(0.5), SFDouble(0.5)]),
-                          children_ : [
+                          child_ : 
                             Shape(
                               DEF_ : SFString('ShapeUpRight'),
                               appearance_ : 
@@ -81,21 +81,21 @@ var X3D0 =  X3D(
                                 Extrusion(
                                   spine_ : MFVec3f([SFVec3f([1.5,0,0]),SFVec3f([2.5,0,0])]),
                                   creaseAngle_ : 0.785,
-                                  crossSection_ : MFVec2f([SFVec2f([1,0]),SFVec2f([0.92,-0.38]),SFVec2f([0.71,-0.71]),SFVec2f([0.38,-0.92]),SFVec2f([0,-1]),SFVec2f([-0.38,-0.92]),SFVec2f([-0.71,-0.71]),SFVec2f([-0.92,-0.38]),SFVec2f([-1,0]),SFVec2f([-0.92,0.38]),SFVec2f([-0.71,0.71]),SFVec2f([-0.38,0.92]),SFVec2f([0,1]),SFVec2f([0.38,0.92]),SFVec2f([0.71,0.71]),SFVec2f([0.92,0.38]),SFVec2f([1,0])])))]),
+                                  crossSection_ : MFVec2f([SFVec2f([1,0]),SFVec2f([0.92,-0.38]),SFVec2f([0.71,-0.71]),SFVec2f([0.38,-0.92]),SFVec2f([0,-1]),SFVec2f([-0.38,-0.92]),SFVec2f([-0.71,-0.71]),SFVec2f([-0.92,-0.38]),SFVec2f([-1,0]),SFVec2f([-0.92,0.38]),SFVec2f([-0.71,0.71]),SFVec2f([-0.38,0.92]),SFVec2f([0,1]),SFVec2f([0.38,0.92]),SFVec2f([0.71,0.71]),SFVec2f([0.92,0.38]),SFVec2f([1,0])])))),
                       /*up*/
 
                         Transform(
                           scale_ : SFVec3f([SFDouble(0.5), SFDouble(0.5), SFDouble(0.5)]),
-                          children_ : [
+                          child_ : 
                             Shape(
-                              USE_ : SFString('ShapeUpRight'))]),
+                              USE_ : SFString('ShapeUpRight'))),
                       /*down*/
 
                         Transform(
                           scale_ : SFVec3f([SFDouble(0.5), SFDouble(0.5), SFDouble(0.5)]),
-                          children_ : [
+                          child_ : 
                             Shape(
-                              USE_ : SFString('ShapeLeftDown'))])])])),
+                              USE_ : SFString('ShapeLeftDown')))])])),
 
             Viewpoint(
               description_ : SFString('Process pipes'),

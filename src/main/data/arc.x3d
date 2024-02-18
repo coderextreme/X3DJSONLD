@@ -2,10 +2,10 @@
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
 <X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-3.3.xsd">
 <head>        
-        <meta name='title' content='arc'/>
+        <meta name='title' content='arc.x3d'/>
         <meta name='creator' content='Lost, Doug Sanden I think'/>
         <meta name='generator' content='manual'/>
-	<meta name='identifier' content='https://coderextreme.net/X3DJSONLD/src/main/data/x3dconnectorProto.x3d'/>
+	<meta name='identifier' content='https://coderextreme.net/X3DJSONLD/src/main/data/arc.x3d'/>
         <meta name='description' content='a generic proto to connect two objects'/>
 </head>
 <Scene>

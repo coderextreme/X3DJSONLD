@@ -1,10 +1,48 @@
 {
   "X3D": {
     "@profile": "Immersive",
-    "@version": "3.3",
-    "@xsd:noNamespaceSchemaLocation": "https://www.web3d.org/specifications/x3d-3.3.xsd",
+    "@version": "4.0",
+    "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-4.0.xsd",
     "head": {
+      "meta": [
+        {
+          "@name": "title",
+          "@content": "flowers4.x3d"
+        },
+        {
+          "@name": "creator",
+          "@content": "John Carlson"
+        },
+        {
+          "@name": "generator",
+          "@content": "manual"
+        },
+        {
+          "@name": "generator",
+          "@content": "x3d-tidy V1.0.117, https://www.npmjs.com/package/x3d-tidy"
+        },
+        {
+          "@name": "translated",
+          "@content": "15 December 2023"
+        },
+        {
+          "@name": "generator",
+          "@content": "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"
+        },
+        {
+          "@name": "reference",
+          "@content": "X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+        }
+      ],
       "component": [
+        {
+          "@name": "Scripting",
+          "@level": 1
+        },
+        {
+          "@name": "EnvironmentalEffects",
+          "@level": 3
+        },
         {
           "@name": "Shaders",
           "@level": 1
@@ -28,40 +66,10 @@
         {
           "@name": "Grouping",
           "@level": 3
-        }
-      ],
-      "meta": [
-        {
-          "@name": "title",
-          "@content": "flowers4.x3d"
         },
         {
-          "@name": "creator",
-          "@content": "John Carlson"
-        },
-        {
-          "@name": "generator",
-          "@content": "manual"
-        },
-        {
-          "@name": "identifier",
-          "@content": "https://coderextreme.net/X3DJSONLD/flowers4.x3d"
-        },
-        {
-          "@name": "description",
-          "@content": "an animated flower"
-        },
-        {
-          "@name": "translated",
-          "@content": "16 January 2021"
-        },
-        {
-          "@name": "generator",
-          "@content": "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"
-        },
-        {
-          "@name": "reference",
-          "@content": "X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          "@name": "Core",
+          "@level": 1
         }
       ]
     },
@@ -72,29 +80,29 @@
         },
         {
           "Background": {
-            "@backUrl": [
-              "../resources/images/all_probes/stpeters_cross/stpeters_back.png",
-              "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"
-            ],
-            "@bottomUrl": [
-              "../resources/images/all_probes/stpeters_cross/stpeters_bottom.png",
-              "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"
-            ],
             "@frontUrl": [
               "../resources/images/all_probes/stpeters_cross/stpeters_front.png",
-              "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"
+              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"
+            ],
+            "@backUrl": [
+              "../resources/images/all_probes/stpeters_cross/stpeters_back.png",
+              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"
             ],
             "@leftUrl": [
               "../resources/images/all_probes/stpeters_cross/stpeters_left.png",
-              "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"
+              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"
             ],
             "@rightUrl": [
               "../resources/images/all_probes/stpeters_cross/stpeters_right.png",
-              "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"
+              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"
             ],
             "@topUrl": [
               "../resources/images/all_probes/stpeters_cross/stpeters_top.png",
-              "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"
+              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"
+            ],
+            "@bottomUrl": [
+              "../resources/images/all_probes/stpeters_cross/stpeters_bottom.png",
+              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"
             ]
           }
         },
@@ -126,17 +134,35 @@
                             "ComposedShader": {
                               "@DEF": "shader",
                               "@language": "GLSL",
-                              "field": [
+                              "-children": [
                                 {
-                                  "@name": "cube",
-                                  "@type": "SFInt32",
-                                  "@accessType": "inputOutput",
-                                  "@value": 0
+                                  "ShaderPart": {
+                                    "@url": [
+                                      "../shaders/x3dom.vs",
+                                      "https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"
+                                    ]
+                                  }
                                 },
                                 {
-                                  "@name": "chromaticDispertion",
+                                  "ShaderPart": {
+                                    "@type": "FRAGMENT",
+                                    "@url": [
+                                      "../shaders/pc_bubbles.fs",
+                                      "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"
+                                    ]
+                                  }
+                                }
+                              ],
+                              "field": [
+                                {
+                                  "@accessType": "inputOutput",
+                                  "@type": "SFInt32",
+                                  "@name": "cube"
+                                },
+                                {
                                   "@accessType": "inputOutput",
                                   "@type": "SFVec3f",
+                                  "@name": "chromaticDispertion",
                                   "@value": [
                                     0.98,
                                     1,
@@ -144,116 +170,44 @@
                                   ]
                                 },
                                 {
+                                  "@accessType": "inputOutput",
+                                  "@type": "SFFloat",
                                   "@name": "bias",
-                                  "@type": "SFFloat",
-                                  "@accessType": "inputOutput",
                                   "@value": 0.5
                                 },
                                 {
+                                  "@accessType": "inputOutput",
+                                  "@type": "SFFloat",
                                   "@name": "scale",
-                                  "@type": "SFFloat",
-                                  "@accessType": "inputOutput",
                                   "@value": 0.5
                                 },
                                 {
-                                  "@name": "power",
-                                  "@type": "SFFloat",
                                   "@accessType": "inputOutput",
+                                  "@type": "SFFloat",
+                                  "@name": "power",
                                   "@value": 2
-                                }
-                              ],
-                              "-children": [
-                                {
-                                  "ShaderPart": {
-                                    "@url": [
-                                      "../shaders/x3dom.vs",
-                                      "https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"
-                                    ],
-                                    "@type": "VERTEX"
-                                  }
-                                },
-                                {
-                                  "ShaderPart": {
-                                    "@url": [
-                                      "../shaders/pc_bubbles.fs",
-                                      "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"
-                                    ],
-                                    "@type": "FRAGMENT"
-                                  }
                                 }
                               ]
                             }
                           }
                         ],
                         "-texture": {
-                          "ComposedCubeMapTexture": {
-                            "-backTexture": {
-                              "ImageTexture": {
-                                "@url": [
-                                  "../resources/images/all_probes/stpeters_cross/stpeters_back.png",
-                                  "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"
-                                ]
-                              }
-                            },
-                            "-bottomTexture": {
-                              "ImageTexture": {
-                                "@url": [
-                                  "../resources/images/all_probes/stpeters_cross/stpeters_bottom.png",
-                                  "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"
-                                ]
-                              }
-                            },
-                            "-frontTexture": {
-                              "ImageTexture": {
-                                "@url": [
-                                  "../resources/images/all_probes/stpeters_cross/stpeters_front.png",
-                                  "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"
-                                ]
-                              }
-                            },
-                            "-leftTexture": {
-                              "ImageTexture": {
-                                "@url": [
-                                  "../resources/images/all_probes/stpeters_cross/stpeters_left.png",
-                                  "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"
-                                ]
-                              }
-                            },
-                            "-rightTexture": {
-                              "ImageTexture": {
-                                "@url": [
-                                  "../resources/images/all_probes/stpeters_cross/stpeters_right.png",
-                                  "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"
-                                ]
-                              }
-                            },
-                            "-topTexture": {
-                              "ImageTexture": {
-                                "@url": [
-                                  "../resources/images/all_probes/stpeters_cross/stpeters_top.png",
-                                  "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"
-                                ]
-                              }
-                            }
-                          }
+                          "ComposedCubeMapTexture": {}
                         }
                       }
                     },
                     {
-                      "#comment": "<Sphere>"
-                    }
-                  ],
-                  "-geometry": {
-                    "IndexedFaceSet": {
-                      "@convex": false,
-                      "@DEF": "Orbit",
-                      "-coord": {
-                        "Coordinate": {
-                          "@DEF": "OrbitCoordinates"
+                      "IndexedFaceSet": {
+                        "@DEF": "Orbit",
+                        "@convex": false,
+                        "-coord": {
+                          "Coordinate": {
+                            "@DEF": "OrbitCoordinates"
+                          }
                         }
                       }
                     }
-                  }
+                  ]
                 }
               }
             ]
@@ -264,92 +218,92 @@
             "@DEF": "OrbitScript",
             "field": [
               {
-                "@name": "set_fraction",
                 "@accessType": "inputOnly",
-                "@type": "SFFloat"
+                "@type": "SFFloat",
+                "@name": "set_fraction"
               },
               {
-                "@name": "coordinates",
                 "@accessType": "inputOutput",
-                "@type": "MFVec3f"
+                "@type": "MFVec3f",
+                "@name": "coordinates"
               },
               {
-                "@name": "coordIndexes",
                 "@accessType": "outputOnly",
-                "@type": "MFInt32"
+                "@type": "MFInt32",
+                "@name": "coordIndexes"
               }
             ],
             "#sourceCode": [
-              "ecmascript:",
-              "",
-              "var e = 5;",
-              "var f = 5;",
-              "var g = 5;",
-              "var h = 5;",
-              "",
-              "function initialize() {",
-              "     var resolution = 100;",
-              "     updateCoordinates(resolution);",
-              "     var cis = [];",
-              "     for ( i = 0; i < resolution-1; i++) {",
-              "     \tfor ( j = 0; j < resolution-1; j++) {",
-              "\t     cis.push(i*resolution+j);",
-              "\t     cis.push(i*resolution+j+1);",
-              "\t     cis.push((i+1)*resolution+j+1);",
-              "\t     cis.push((i+1)*resolution+j);",
-              "\t     cis.push(-1);",
-              "\t}",
-              "    }",
-              "    coordIndexes = new MFInt32(cis);",
-              "}",
-              "",
-              "function updateCoordinates(resolution) {",
-              "     var theta = 0.0;",
-              "     var phi = 0.0;",
-              "     var delta = (2 * 3.141592653) / (resolution-1);",
-              "     var crds = [];",
-              "     for ( i = 0; i < resolution; i++) {",
-              "     \tfor ( j = 0; j < resolution; j++) {",
-              "\t\tvar rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);",
-              "\t\tcrds.push(new SFVec3f(",
-              "\t\t\trho * Math.cos(phi) * Math.cos(theta),",
-              "\t\t\trho * Math.cos(phi) * Math.sin(theta),",
-              "\t\t\trho * Math.sin(phi)",
-              "\t\t));",
-              "\t\ttheta += delta;",
-              "\t}",
-              "\tphi += delta;",
-              "     }",
-              "     coordinates = new MFVec3f(crds);",
-              "}",
-              "",
-              "function set_fraction(fraction, eventTime) {",
-              "\tvar choice = Math.floor(Math.random() * 4);",
-              "\tswitch (choice) {",
-              "\tcase 0:",
-              "\t\te += Math.floor(Math.random() * 2) * 2 - 1;",
-              "\t\tbreak;",
-              "\tcase 1:",
-              "\t\tf += Math.floor(Math.random() * 2) * 2 - 1;",
-              "\t\tbreak;",
-              "\tcase 2:",
-              "\t\tg += Math.floor(Math.random() * 2) * 2 - 1;",
-              "\t\tbreak;",
-              "\tcase 3:",
-              "\t\th += Math.floor(Math.random() * 2) * 2 - 1;",
-              "\t\tbreak;",
-              "\t}",
-              "\tif (f < 1) {",
-              "\t\tf = 10;",
-              "\t}",
-              "\tif (g < 1) {",
-              "\t\tg = 4;",
-              "\t}",
-              "\tif (h < 1) {",
-              "\t\th = 4;",
-              "\t}",
-              "\tvar resolution = 100;",
-              "\tupdateCoordinates(resolution);",
+              "ecmascript:\r",
+              "\r",
+              "var e = 5;\r",
+              "var f = 5;\r",
+              "var g = 5;\r",
+              "var h = 5;\r",
+              "\r",
+              "function initialize() {\r",
+              "     var resolution = 100;\r",
+              "     updateCoordinates(resolution);\r",
+              "     var cis = [];\r",
+              "     for ( i = 0; i < resolution-1; i++) {\r",
+              "     \tfor ( j = 0; j < resolution-1; j++) {\r",
+              "\t     cis.push(i*resolution+j);\r",
+              "\t     cis.push(i*resolution+j+1);\r",
+              "\t     cis.push((i+1)*resolution+j+1);\r",
+              "\t     cis.push((i+1)*resolution+j);\r",
+              "\t     cis.push(-1);\r",
+              "\t}\r",
+              "    }\r",
+              "    coordIndexes = new MFInt32(cis);\r",
+              "}\r",
+              "\r",
+              "function updateCoordinates(resolution) {\r",
+              "     var theta = 0.0;\r",
+              "     var phi = 0.0;\r",
+              "     var delta = (2 * 3.141592653) / (resolution-1);\r",
+              "     var crds = [];\r",
+              "     for ( i = 0; i < resolution; i++) {\r",
+              "     \tfor ( j = 0; j < resolution; j++) {\r",
+              "\t\tvar rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);\r",
+              "\t\tcrds.push(new SFVec3f(\r",
+              "\t\t\trho * Math.cos(phi) * Math.cos(theta),\r",
+              "\t\t\trho * Math.cos(phi) * Math.sin(theta),\r",
+              "\t\t\trho * Math.sin(phi)\r",
+              "\t\t));\r",
+              "\t\ttheta += delta;\r",
+              "\t}\r",
+              "\tphi += delta;\r",
+              "     }\r",
+              "     coordinates = new MFVec3f(crds);\r",
+              "}\r",
+              "\r",
+              "function set_fraction(fraction, eventTime) {\r",
+              "\tvar choice = Math.floor(Math.random() * 4);\r",
+              "\tswitch (choice) {\r",
+              "\tcase 0:\r",
+              "\t\te += Math.floor(Math.random() * 2) * 2 - 1;\r",
+              "\t\tbreak;\r",
+              "\tcase 1:\r",
+              "\t\tf += Math.floor(Math.random() * 2) * 2 - 1;\r",
+              "\t\tbreak;\r",
+              "\tcase 2:\r",
+              "\t\tg += Math.floor(Math.random() * 2) * 2 - 1;\r",
+              "\t\tbreak;\r",
+              "\tcase 3:\r",
+              "\t\th += Math.floor(Math.random() * 2) * 2 - 1;\r",
+              "\t\tbreak;\r",
+              "\t}\r",
+              "\tif (f < 1) {\r",
+              "\t\tf = 10;\r",
+              "\t}\r",
+              "\tif (g < 1) {\r",
+              "\t\tg = 4;\r",
+              "\t}\r",
+              "\tif (h < 1) {\r",
+              "\t\th = 4;\r",
+              "\t}\r",
+              "\tvar resolution = 100;\r",
+              "\tupdateCoordinates(resolution);\r",
               "}"
             ]
           }
@@ -363,26 +317,26 @@
         },
         {
           "ROUTE": {
+            "@fromNode": "OrbitScript",
             "@fromField": "coordIndexes",
-            "@fromNode": "OrbitScript",
-            "@toField": "set_coordIndex",
-            "@toNode": "Orbit"
+            "@toNode": "Orbit",
+            "@toField": "set_coordIndex"
           }
         },
         {
           "ROUTE": {
+            "@fromNode": "OrbitScript",
             "@fromField": "coordinates",
-            "@fromNode": "OrbitScript",
-            "@toField": "set_point",
-            "@toNode": "OrbitCoordinates"
+            "@toNode": "OrbitCoordinates",
+            "@toField": "point"
           }
         },
         {
           "ROUTE": {
-            "@fromField": "fraction_changed",
             "@fromNode": "Clock",
-            "@toField": "set_fraction",
-            "@toNode": "OrbitScript"
+            "@fromField": "fraction_changed",
+            "@toNode": "OrbitScript",
+            "@toField": "set_fraction"
           }
         }
       ]

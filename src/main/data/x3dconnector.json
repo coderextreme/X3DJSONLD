@@ -8,7 +8,7 @@
         "meta": [
           {
             "@name":"title",
-            "@content":"x3dconnector"
+            "@content":"x3dconnector.x3d"
           },
           {
             "@name":"creator",
@@ -28,7 +28,7 @@
           },
           {
             "@name":"translated",
-            "@content":"14 September 2023"
+            "@content":"18 February 2024"
           },
           {
             "@name":"generator",

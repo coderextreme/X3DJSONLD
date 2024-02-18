@@ -104,7 +104,7 @@ import org.web3d.x3d.jsail.Text.*;
 	* @author Dick Puk
  */
 
-public class DesignPatternsApparelMedicalSkinLayers
+import net.coderextreme.X3DRoots;import java.util.List;import java.util.ArrayList;public class DesignPatternsApparelMedicalSkinLayers implements X3DRoots 
 {
 	/** Default constructor to create this object. */
 	public DesignPatternsApparelMedicalSkinLayers ()
@@ -117,6 +117,7 @@ public class DesignPatternsApparelMedicalSkinLayers
 	{
             try { // catch-all
   x3dModel = new X3D().setProfile(X3D.PROFILE_IMMERSIVE).setVersion(X3D.VERSION_4_0)
+  .addComponent(new component().setName("HAnim").setLevel(2))
   .setHead(new head()
     .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("DesignPatternsApparelMedicalSkinLayers.x3d"))
     .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("Design patterns for skin and apparel using HAnim2 standard in X3D4"))
@@ -231,6 +232,11 @@ public class DesignPatternsApparelMedicalSkinLayers
 	{	  
 		return x3dModel;
 	}
+	public List<X3D> getRootNodeList() {
+		List<X3D> list = new ArrayList<X3D>(1);
+		list.add(x3dModel);
+		return list;
+	}
 	   
     /** 
      * Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
@@ -243,7 +249,7 @@ public class DesignPatternsApparelMedicalSkinLayers
      */
     public static void main(String args[])
     {
-        System.out.println("Build this X3D model, showing diagnostics...");
+        System.out.println("Build this X3D model, showing validation diagnostics...");
         X3D thisExampleX3dModel = new DesignPatternsApparelMedicalSkinLayers().getX3dModel();
 //      System.out.println("X3D model construction complete.");
 	

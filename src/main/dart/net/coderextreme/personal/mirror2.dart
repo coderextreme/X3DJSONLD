@@ -9,6 +9,14 @@ var X3D0 =  X3D(
         head(
           component_ : 
             component(
+              name_ : SFString('Scripting'),
+              level_ : 1),
+          component_ : 
+            component(
+              name_ : SFString('EnvironmentalEffects'),
+              level_ : 3),
+          component_ : 
+            component(
               name_ : SFString('Shaders'),
               level_ : 1),
           component_ : 
@@ -31,6 +39,10 @@ var X3D0 =  X3D(
             component(
               name_ : SFString('Grouping'),
               level_ : 3),
+          component_ : 
+            component(
+              name_ : SFString('Core'),
+              level_ : 1),
           meta_ : [
             meta(
               name_ : SFString('title'),
@@ -46,7 +58,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('identifier'),
-              content_ : SFString('https://coderextreme.net/X3DJSONLD/src/main/personal/mirror2.x3d')),
+              content_ : SFString('https://coderextreme.net/X3DJSONLD/src/main/data/mirror2.x3d')),
 
             meta(
               name_ : SFString('description'),
@@ -68,7 +80,7 @@ var X3D0 =  X3D(
               bottomUrl_ : MFString([SFString("../resources/images/all_probes/beach_cross/beach_bottom.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png")])),
 
             Transform(
-              children_ : [
+              child_ : 
                 Shape(
                   appearance_ : 
                     Appearance(
@@ -190,7 +202,7 @@ var X3D0 =  X3D(
                   geometry_ : 
                     Sphere(
                       radius_ : 30)),
-
+              children_ : [
                 Script(
                   DEF_ : SFString('UrlSelector'),
                   directOutput_ : true,

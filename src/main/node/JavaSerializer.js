@@ -1,7 +1,7 @@
 "use strict";
 
-const DOUBLE_SUFFIX = 'd';
-const FLOAT_SUFFIX = 'f ';
+const DOUBLE_SUFFIX = '';
+const FLOAT_SUFFIX = '';
 
 function JavaSerializer() {
 this.code = [];
@@ -14,136 +14,143 @@ this.postcode = [];
 
 JavaSerializer.prototype = {
 	serializeToString : function(json, element, clazz, mapToMethod, fieldTypes) {
-		this.code = [];
-		this.codeno = 0;
-		this.precode = [];
-		this.preno = 0;
-		this.postcode = [];
+		try {
+			// console.error(clazz);
+			this.code = [];
+			this.codeno = 0;
+			this.precode = [];
+			this.preno = 0;
+			this.postcode = [];
 
-		var str = "";
-		var pc = clazz.replace(/-|\.| /g, "$");
-		var c = pc.lastIndexOf("/");
-		if (pc.lastIndexOf("\\") > c) {
-			c = pc.lastIndexOf("\\");
-		}
-		var clz = pc.substr(c+1);
-		clz = clz.replace(/^([0-9].*|default$)/, "_$1")
-		str += "package net.coderextreme"+clazz.substring(0, clazz.lastIndexOf('/')).replace(/^\.\./, "").replace(/\//g, '.')+";\n";
-		// console.error(pkg, clz);
-		str += "import org.web3d.x3d.jsail.*;\n";
-		str += "import org.web3d.x3d.jsail.CADGeometry.*;\n";
-		str += "import org.web3d.x3d.jsail.Core.*;\n";
-		str += "import org.web3d.x3d.jsail.CubeMapTexturing.*;\n";
-		str += "import org.web3d.x3d.jsail.DIS.*;\n";
-		str += "import org.web3d.x3d.jsail.EnvironmentalEffects.*;\n";
-		str += "import org.web3d.x3d.jsail.EnvironmentalSensor.*;\n";
-		str += "import org.web3d.x3d.jsail.EventUtilities.*;\n";
-		str += "import org.web3d.x3d.jsail.Followers.*;\n";
-		str += "import org.web3d.x3d.jsail.Geometry2D.*;\n";
-		str += "import org.web3d.x3d.jsail.Geometry3D.*;\n";
-		str += "import org.web3d.x3d.jsail.Geospatial.*;\n";
-		str += "import org.web3d.x3d.jsail.Grouping.*;\n";
-		str += "import org.web3d.x3d.jsail.HAnim.*;\n";
-		str += "import org.web3d.x3d.jsail.Interpolation.*;\n";
-		str += "import org.web3d.x3d.jsail.KeyDeviceSensor.*;\n";
-		str += "import org.web3d.x3d.jsail.Layering.*;\n";
-		str += "import org.web3d.x3d.jsail.Layout.*;\n";
-		str += "import org.web3d.x3d.jsail.Lighting.*;\n";
-		str += "import org.web3d.x3d.jsail.NURBS.*;\n";
-		str += "import org.web3d.x3d.jsail.Navigation.*;\n";
-		str += "import org.web3d.x3d.jsail.Networking.*;\n";
-		str += "import org.web3d.x3d.jsail.ParticleSystems.*;\n";
-		str += "import org.web3d.x3d.jsail.Picking.*;\n";
-		str += "import org.web3d.x3d.jsail.PointingDeviceSensor.*;\n";
-		str += "import org.web3d.x3d.jsail.Rendering.*;\n";
-		str += "import org.web3d.x3d.jsail.RigidBodyPhysics.*;\n";
-		str += "import org.web3d.x3d.jsail.Scripting.*;\n";
-		str += "import org.web3d.x3d.jsail.Shaders.*;\n";
-		str += "import org.web3d.x3d.jsail.Shape.*;\n";
-		str += "import org.web3d.x3d.jsail.Sound.*;\n";
-		str += "import org.web3d.x3d.jsail.Text.*;\n";
-		str += "import org.web3d.x3d.jsail.Texturing3D.*;\n";
-		str += "import org.web3d.x3d.jsail.Texturing.*;\n";
-		str += "import org.web3d.x3d.jsail.Time.*;\n";
-		str += "import org.web3d.x3d.jsail.VolumeRendering.*;\n";
-		str += "import org.web3d.x3d.jsail.fields.*;\n";
-		/*
-		str += "import org.web3d.x3d.sai.*;\n";
-		str += "import org.web3d.x3d.sai.CADGeometry.*;\n";
-		str += "import org.web3d.x3d.sai.Core.*;\n";
-		str += "import org.web3d.x3d.sai.CubeMapTexturing.*;\n";
-		str += "import org.web3d.x3d.sai.DIS.*;\n";
-		str += "import org.web3d.x3d.sai.EnvironmentalEffects.*;\n";
-		str += "import org.web3d.x3d.sai.EnvironmentalSensor.*;\n";
-		str += "import org.web3d.x3d.sai.EventUtilities.*;\n";
-		str += "import org.web3d.x3d.sai.Followers.*;\n";
-		str += "import org.web3d.x3d.sai.Geometry2D.*;\n";
-		str += "import org.web3d.x3d.sai.Geometry3D.*;\n";
-		str += "import org.web3d.x3d.sai.Geospatial.*;\n";
-		str += "import org.web3d.x3d.sai.Grouping.*;\n";
-		str += "import org.web3d.x3d.sai.HAnim.*;\n";
-		str += "import org.web3d.x3d.sai.Interpolation.*;\n";
-		str += "import org.web3d.x3d.sai.KeyDeviceSensor.*;\n";
-		str += "import org.web3d.x3d.sai.Layering.*;\n";
-		str += "import org.web3d.x3d.sai.Layout.*;\n";
-		str += "import org.web3d.x3d.sai.Lighting.*;\n";
-		str += "import org.web3d.x3d.sai.NURBS.*;\n";
-		str += "import org.web3d.x3d.sai.Navigation.*;\n";
-		str += "import org.web3d.x3d.sai.Networking.*;\n";
-		str += "import org.web3d.x3d.sai.ParticleSystems.*;\n";
-		str += "import org.web3d.x3d.sai.Picking.*;\n";
-		str += "import org.web3d.x3d.sai.PointingDeviceSensor.*;\n";
-		str += "import org.web3d.x3d.sai.Rendering.*;\n";
-		str += "import org.web3d.x3d.sai.RigidBodyPhysics.*;\n";
-		str += "import org.web3d.x3d.sai.Scripting.*;\n";
-		str += "import org.web3d.x3d.sai.Shaders.*;\n";
-		str += "import org.web3d.x3d.sai.Shape.*;\n";
-		str += "import org.web3d.x3d.sai.Sound.*;\n";
-		str += "import org.web3d.x3d.sai.Text.*;\n";
-		str += "import org.web3d.x3d.sai.Texturing3D.*;\n";
-		str += "import org.web3d.x3d.sai.Texturing.*;\n";
-		str += "import org.web3d.x3d.sai.Time.*;\n";
-		str += "import org.web3d.x3d.sai.VolumeRendering.*;\n";
-		*/
-		str += "import java.util.ArrayList;\n";
-		str += "import java.util.List;\n";
-		str += "import net.coderextreme.X3DRoots;\n";
-		str += "public class "+clz+" implements X3DRoots {\n";
-		str += "  public static void main(String[] args) {\n";
-		str += "    ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);\n";
-		str += "    ConfigurationProperties.setDeleteIntermediateFiles(false);\n";
-		str += "    "+element.nodeName+" model = new "+clz+"().getRootNodeList().get(0); // only get one root node\n" 
-		str += "    System.out.print(model.validationReport().trim());\n"
-		str += "    model.toFileX3D(\""+clazz+".new.java.x3d\");\n";
-		str += "    model.toFileJSON(\""+clazz+".new.json\");\n";
-		str += "    }\n";
-		str += "    public List<X3D> getRootNodeList() {\n";
-		str += "    	List<X3D> list = new ArrayList<X3D>(1);\n";
-		str += "    	list.add(initialize());\n";
-		str += "    	return list;\n";
-		str += "    }\n";
-		str += "    public "+element.nodeName+" initialize() {\n";
-
-		// we figure out body first and print it out later
-		var body = "      "+element.nodeName+" "+element.nodeName+0+" =  new "+element.nodeName+"()";
-		body += this.subSerializeToString(element, mapToMethod, fieldTypes, 3, []);
-		for (var po in this.precode) {
-			str += this.precode[po];
-		}
-		str += body;
-		str += "      ;\n";
-		for (var postno = 0;  postno < this.postcode.length; postno++) {
-			if (typeof this.postcode[postno] !== 'undefined') {
-				str += this.postcode[postno];
+			var str = "";
+			var pc = clazz.replace(/-|\.| /g, "$");
+			var c = pc.lastIndexOf("/");
+			if (pc.lastIndexOf("\\") > c) {
+				c = pc.lastIndexOf("\\");
 			}
+			var clz = pc.substr(c+1);
+			clz = clz.replace(/^([0-9].*|default$)/, "_$1")
+			str += "package net.coderextreme"+clazz.substring(0, clazz.lastIndexOf('/')).replace(/^\.\./, "").replace(/\//g, '.')+";\n";
+			// console.error(pkg, clz);
+			str += "import org.web3d.x3d.jsail.*;\n";
+			str += "import org.web3d.x3d.jsail.CADGeometry.*;\n";
+			str += "import org.web3d.x3d.jsail.Core.*;\n";
+			str += "import org.web3d.x3d.jsail.CubeMapTexturing.*;\n";
+			str += "import org.web3d.x3d.jsail.DIS.*;\n";
+			str += "import org.web3d.x3d.jsail.EnvironmentalEffects.*;\n";
+			str += "import org.web3d.x3d.jsail.EnvironmentalSensor.*;\n";
+			str += "import org.web3d.x3d.jsail.EventUtilities.*;\n";
+			str += "import org.web3d.x3d.jsail.Followers.*;\n";
+			str += "import org.web3d.x3d.jsail.Geometry2D.*;\n";
+			str += "import org.web3d.x3d.jsail.Geometry3D.*;\n";
+			str += "import org.web3d.x3d.jsail.Geospatial.*;\n";
+			str += "import org.web3d.x3d.jsail.Grouping.*;\n";
+			str += "import org.web3d.x3d.jsail.HAnim.*;\n";
+			str += "import org.web3d.x3d.jsail.Interpolation.*;\n";
+			str += "import org.web3d.x3d.jsail.KeyDeviceSensor.*;\n";
+			str += "import org.web3d.x3d.jsail.Layering.*;\n";
+			str += "import org.web3d.x3d.jsail.Layout.*;\n";
+			str += "import org.web3d.x3d.jsail.Lighting.*;\n";
+			str += "import org.web3d.x3d.jsail.NURBS.*;\n";
+			str += "import org.web3d.x3d.jsail.Navigation.*;\n";
+			str += "import org.web3d.x3d.jsail.Networking.*;\n";
+			str += "import org.web3d.x3d.jsail.ParticleSystems.*;\n";
+			str += "import org.web3d.x3d.jsail.Picking.*;\n";
+			str += "import org.web3d.x3d.jsail.PointingDeviceSensor.*;\n";
+			str += "import org.web3d.x3d.jsail.Rendering.*;\n";
+			str += "import org.web3d.x3d.jsail.RigidBodyPhysics.*;\n";
+			str += "import org.web3d.x3d.jsail.Scripting.*;\n";
+			str += "import org.web3d.x3d.jsail.Shaders.*;\n";
+			str += "import org.web3d.x3d.jsail.Shape.*;\n";
+			str += "import org.web3d.x3d.jsail.Sound.*;\n";
+			str += "import org.web3d.x3d.jsail.Text.*;\n";
+			str += "import org.web3d.x3d.jsail.Texturing3D.*;\n";
+			str += "import org.web3d.x3d.jsail.Texturing.*;\n";
+			str += "import org.web3d.x3d.jsail.Time.*;\n";
+			str += "import org.web3d.x3d.jsail.VolumeRendering.*;\n";
+			str += "import org.web3d.x3d.jsail.fields.*;\n";
+			/*
+			str += "import org.web3d.x3d.sai.*;\n";
+			str += "import org.web3d.x3d.sai.CADGeometry.*;\n";
+			str += "import org.web3d.x3d.sai.Core.*;\n";
+			str += "import org.web3d.x3d.sai.CubeMapTexturing.*;\n";
+			str += "import org.web3d.x3d.sai.DIS.*;\n";
+			str += "import org.web3d.x3d.sai.EnvironmentalEffects.*;\n";
+			str += "import org.web3d.x3d.sai.EnvironmentalSensor.*;\n";
+			str += "import org.web3d.x3d.sai.EventUtilities.*;\n";
+			str += "import org.web3d.x3d.sai.Followers.*;\n";
+			str += "import org.web3d.x3d.sai.Geometry2D.*;\n";
+			str += "import org.web3d.x3d.sai.Geometry3D.*;\n";
+			str += "import org.web3d.x3d.sai.Geospatial.*;\n";
+			str += "import org.web3d.x3d.sai.Grouping.*;\n";
+			str += "import org.web3d.x3d.sai.HAnim.*;\n";
+			str += "import org.web3d.x3d.sai.Interpolation.*;\n";
+			str += "import org.web3d.x3d.sai.KeyDeviceSensor.*;\n";
+			str += "import org.web3d.x3d.sai.Layering.*;\n";
+			str += "import org.web3d.x3d.sai.Layout.*;\n";
+			str += "import org.web3d.x3d.sai.Lighting.*;\n";
+			str += "import org.web3d.x3d.sai.NURBS.*;\n";
+			str += "import org.web3d.x3d.sai.Navigation.*;\n";
+			str += "import org.web3d.x3d.sai.Networking.*;\n";
+			str += "import org.web3d.x3d.sai.ParticleSystems.*;\n";
+			str += "import org.web3d.x3d.sai.Picking.*;\n";
+			str += "import org.web3d.x3d.sai.PointingDeviceSensor.*;\n";
+			str += "import org.web3d.x3d.sai.Rendering.*;\n";
+			str += "import org.web3d.x3d.sai.RigidBodyPhysics.*;\n";
+			str += "import org.web3d.x3d.sai.Scripting.*;\n";
+			str += "import org.web3d.x3d.sai.Shaders.*;\n";
+			str += "import org.web3d.x3d.sai.Shape.*;\n";
+			str += "import org.web3d.x3d.sai.Sound.*;\n";
+			str += "import org.web3d.x3d.sai.Text.*;\n";
+			str += "import org.web3d.x3d.sai.Texturing3D.*;\n";
+			str += "import org.web3d.x3d.sai.Texturing.*;\n";
+			str += "import org.web3d.x3d.sai.Time.*;\n";
+			str += "import org.web3d.x3d.sai.VolumeRendering.*;\n";
+			*/
+			str += "import java.util.ArrayList;\n";
+			str += "import java.util.List;\n";
+			str += "import net.coderextreme.X3DRoots;\n";
+			str += "public class "+clz+" implements X3DRoots {\n";
+			str += "  public static void main(String[] args) {\n";
+			str += "    ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);\n";
+			str += "    ConfigurationProperties.setDeleteIntermediateFiles(false);\n";
+			str += "    "+element.nodeName+" model = new "+clz+"().getRootNodeList().get(0); // only get one root node\n" 
+			str += "    System.out.print(model.validationReport().trim());\n"
+			str += "    model.toFileX3D(\""+clazz+".new.java.x3d\");\n";
+			str += "    model.toFileJSON(\""+clazz+".new.json\");\n";
+			str += "    }\n";
+			str += "    public List<X3D> getRootNodeList() {\n";
+			str += "    	List<X3D> list = new ArrayList<X3D>(1);\n";
+			str += "    	list.add(initialize());\n";
+			str += "    	return list;\n";
+			str += "    }\n";
+			str += "    public "+element.nodeName+" initialize() {\n";
+
+			// we figure out body first and print it out later
+			var body = "      "+element.nodeName+" "+element.nodeName+0+" =  new "+element.nodeName+"()";
+						// console.error(body);
+			body += this.subSerializeToString(element, mapToMethod, fieldTypes, 3, []);
+			for (var po in this.precode) {
+				str += this.precode[po];
+			}
+			str += body;
+			str += "      ;\n";
+			for (var postno = 0;  postno < this.postcode.length; postno++) {
+				if (typeof this.postcode[postno] !== 'undefined') {
+					str += this.postcode[postno];
+				}
+			}
+			str += "    return "+element.nodeName+0+";\n";
+			str += "    }\n";
+			for (var co in this.code) {
+				str += this.code[co];
+			}
+			str += "}\n";
+			return str;
+		} catch (e) {
+			console.error(e);
+			return "";
 		}
-		str += "    return "+element.nodeName+0+";\n";
-		str += "    }\n";
-		for (var co in this.code) {
-			str += this.code[co];
-		}
-		str += "}\n";
-		return str;
 	},
 
 	printSubArray : function (attrType, type, values, co, j, lead, trail) {
@@ -298,6 +305,7 @@ JavaSerializer.prototype = {
 			method = "Metadata"
 			addpre = "add";
 		}
+		/*
 		if (node.nodeName === 'MetadataSet' && addpre+method === "addValue") {
 			method = "Metadata"
 			addpre = "set";
@@ -306,6 +314,7 @@ JavaSerializer.prototype = {
 			method = "Metadata"
 			addpre = "set";
 		}
+		*/
 		if (element.nodeName === 'HAnimHumanoid' && addpre+method === "addValue") {
 			method = "Metadata"
 			addpre = "set";
@@ -389,7 +398,7 @@ JavaSerializer.prototype = {
 						attrs[a].nodeValue === "skin" ||
 						attrs[a].nodeValue === "skinCoord" ||
 						attrs[a].nodeValue === "sites")) {
-						console.log("################## FOUND", attr, attrs[a].nodeValue);
+						// console.error("################## FOUND", attr, attrs[a].nodeValue);
 						attr = "containerFieldOverride";
 
 					} else if (attr === "xmlns:xsd" || attr === "xsd:noNamespaceSchemaLocation" || attr === 'containerField' || attr === 'type') {
@@ -401,7 +410,7 @@ JavaSerializer.prototype = {
 					if (attr === "USE") {
 						USE = attrs[a].nodeValue;
 					}
-					// console.log("DEF/USE", DEF, USE);
+					// console.error("DEF/USE", DEF, USE);
 					var method = attr;
 					// look at object model
 					var attrType = "SFString";
@@ -461,7 +470,7 @@ JavaSerializer.prototype = {
 								       // replace(/&/g, "&amp;").
 								       replace(/\\n/g, '\\n');
 								if (y !== x) {
-									// console.log("Java Replacing "+x+" with "+y);
+									// console.error("Java Replacing "+x+" with "+y);
 								}
 								return y;
 							}), this.codeno, '","', '"', '"');
@@ -488,7 +497,7 @@ JavaSerializer.prototype = {
 						attrType === "SFRotation"||
 						attrType === "MFRotation"||
 						attrType === "MFFloat") {
-						strval = this.printSubArray(attrType, "float", attrs[a].nodeValue.split(/[ ,]+/), this.codeno, FLOAT_SUFFIX+',', '', FLOAT_SUFFIX);
+						strval = this.printSubArray(attrType, "double", attrs[a].nodeValue.split(/[ ,]+/), this.codeno, FLOAT_SUFFIX+',', '', FLOAT_SUFFIX);
 					} else if (
 						attrType === "SFVec2d"||
 						attrType === "SFVec3d"||
@@ -535,7 +544,7 @@ JavaSerializer.prototype = {
 					
 					str += '.'+method+"("+strval+")";
 					if (attr === 'containerFieldOverride' && (attrs[a].nodeValue === "joints" || attrs[a].nodeValue === "skeleton" || attrs[a].nodeValue === "segments" || attrs[a].nodeValue === "viewpoints" || attrs[a].nodeValue === "skinCoord" || attrs[a].nodeValue === "skin" || attrs[a].nodeValue === "sites")) {
-					console.log("################## FOUND", method, attrs[a].nodeValue);
+					// console.error("################## FOUND", method, attrs[a].nodeValue);
 						str += ')'; // for cast
 					}
 				}

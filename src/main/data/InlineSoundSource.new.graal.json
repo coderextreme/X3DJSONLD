@@ -40,12 +40,12 @@ the structure of Web Audio API."
 "@content":"CHANGELOG.txt"
 },
 {
-"@name":"reference",
-"@content":"https://medialab.hmu.gr/minipages/x3domAudio"
-},
-{
 "@name":"TODO",
 "@content":"credit for audio files"
+},
+{
+"@name":"reference",
+"@content":"https://medialab.hmu.gr/minipages/x3domAudio"
 },
 {
 "@name":"identifier",
@@ -56,8 +56,12 @@ the structure of Web Audio API."
 "@content":"X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"
 },
 {
+"@name":"license",
+"@content":"../license.html"
+},
+{
 "@name":"translated",
-"@content":"08 September 2023"
+"@content":"18 February 2024"
 },
 {
 "@name":"generator",

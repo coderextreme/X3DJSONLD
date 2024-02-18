@@ -1,9 +1,9 @@
-#include "/c/x3d-code/www.web3d.org/x3d/languages/c/X3DLib/X3DLib.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/c/Concretes.h"
 void main(int argc, char ** argv) {
 Browser browser = X3D.getBrowser();
 X3D X3D0;
 X3D0.profile = "Immersive";
-X3D0.version = "4.0";
+X3D0.version = "3.3";
 head head1 = createNode("head");
 meta meta2 = createNode("meta");
 meta2.name = "creator";
@@ -24,7 +24,7 @@ head1.meta[2] = meta4;
 
 meta meta5 = createNode("meta");
 meta5.name = "identifier";
-meta5.content = "https://coderextreme.net/X3DJSONLD/force.x3d";
+meta5.content = "https://coderextreme.net/X3DJSONLD/src/main/data/force.x3d";
 head1.meta[3] = meta5;
 
 meta meta6 = createNode("meta");
@@ -45,13 +45,13 @@ ProtoDeclare ProtoDeclare9 = browser.createX3DFromString(`<?xml version="1.0" en
 </ProtoInterface>
 <ProtoBody><Group><Transform DEF="transform"><IS><connect nodeField="translation" protoField="position"></connect>
 </IS>
-<Shape><Sphere containerField="geometry"></Sphere>
-<Appearance><Material diffuseColor="1 0 0"></Material>
+<Shape><Sphere></Sphere>
+<Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 0 0"></Material>
 </Appearance>
 </Shape>
-<Transform translation="1 0 1"><Shape><Text containerField="geometry" string="&quot;Node&quot;"><FontStyle justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" size="5"></FontStyle>
+<Transform translation="1 0 1"><Shape><Text string="&quot;Node&quot;"><FontStyle containerField="fontStyle" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" size="5"></FontStyle>
 </Text>
-<Appearance><Material diffuseColor="0 0 1"></Material>
+<Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 0 1"></Material>
 </Appearance>
 </Shape>
 </Transform>
@@ -65,7 +65,7 @@ ProtoDeclare ProtoDeclare9 = browser.createX3DFromString(`<?xml version="1.0" en
 					function set_cycle(value) {
                                                 old = translation;
 						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);
-                                                keyValue = new MFVec3f([old, translation]);
+                                                keyValue = new MFVec3f(...[old, translation]);
 						// Browser.println(translation);
 					}]]></Script>
 <TimeSensor DEF="nodeClock" cycleInterval="3" loop="true"></TimeSensor>
@@ -114,9 +114,9 @@ Appearance19.material = Material20;
 
 Shape17.appearance = Appearance19;
 
-Transform14.children = new MFNode();
+Transform14.child = new undefined();
 
-Transform14.children[0] = Shape17;
+Transform14.child[0] = Shape17;
 
 Transform Transform21 = createNode("Transform");
 Transform21.translation = new SFVec3f(new float[1,0,1]);
@@ -137,9 +137,9 @@ Appearance25.material = Material26;
 
 Shape22.appearance = Appearance25;
 
-Transform21.children = new MFNode();
+Transform21.child = new undefined();
 
-Transform21.children[0] = Shape22;
+Transform21.child[0] = Shape22;
 
 Transform14.children[1] = Transform21;
 
@@ -188,7 +188,7 @@ Script28.setSourceCode(`ecmascript:\n"+
 "					function set_cycle(value) {\n"+
 "                                                old = translation;\n"+
 "						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);\n"+
-"                                                keyValue = new MFVec3f([old, translation]);\n"+
+"                                                keyValue = new MFVec3f(...[old, translation]);\n"+
 "						// Browser.println(translation);\n"+
 "					}`)
 Group13.children[2] = Script28;
@@ -242,8 +242,8 @@ ProtoDeclare ProtoDeclare38 = browser.createX3DFromString(`<?xml version="1.0" e
 <ProtoDeclare name="cylinder" ><ProtoInterface><field name="set_positionA" accessType="inputOnly" type="SFVec3f"></field>
 <field name="set_positionB" accessType="inputOnly" type="SFVec3f"></field>
 </ProtoInterface>
-<ProtoBody><Group><Shape><Extrusion containerField="geometry" DEF="extrusion" creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0" spine="0 -50 0 0 50 0"></Extrusion>
-<Appearance><Material diffuseColor="0 1 0"></Material>
+<ProtoBody><Group><Shape><Extrusion DEF="extrusion" creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0" spine="0 -50 0 0 50 0"></Extrusion>
+<Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 1 0"></Material>
 </Appearance>
 </Shape>
 <Script DEF="MoveCylinder"><field name="spine" accessType="inputOutput" type="MFVec3f" value="0 -50 0 0 50 0"></field>
@@ -256,17 +256,17 @@ ProtoDeclare ProtoDeclare38 = browser.createX3DFromString(`<?xml version="1.0" e
 
                 function set_endA(value) {
 		    if (typeof spine === 'undefined') {
-		        spine = new MFVec3f([value, value]);
+		        spine = new MFVec3f(...[value, value]);
 		    } else {
-		        spine = new MFVec3f([value, spine[1]]);
+		        spine = new MFVec3f(...[value, spine[1]]);
 		    }
                 }
 
                 function set_endB(value) {
 		    if (typeof spine === 'undefined') {
-		        spine = new MFVec3f([value, value]);
+		        spine = new MFVec3f(...[value, value]);
 		    } else {
-		        spine = new MFVec3f([spine[0], value]);
+		        spine = new MFVec3f(...[spine[0], value]);
 		    }
                 }
 
@@ -359,17 +359,17 @@ Script48.setSourceCode(`ecmascript:\n"+
 "\n"+
 "                function set_endA(value) {\n"+
 "		    if (typeof spine === 'undefined') {\n"+
-"		        spine = new MFVec3f([value, value]);\n"+
+"		        spine = new MFVec3f(...[value, value]);\n"+
 "		    } else {\n"+
-"		        spine = new MFVec3f([value, spine[1]]);\n"+
+"		        spine = new MFVec3f(...[value, spine[1]]);\n"+
 "		    }\n"+
 "                }\n"+
 "\n"+
 "                function set_endB(value) {\n"+
 "		    if (typeof spine === 'undefined') {\n"+
-"		        spine = new MFVec3f([value, value]);\n"+
+"		        spine = new MFVec3f(...[value, value]);\n"+
 "		    } else {\n"+
-"		        spine = new MFVec3f([spine[0], value]);\n"+
+"		        spine = new MFVec3f(...[spine[0], value]);\n"+
 "		    }\n"+
 "                }\n"+
 "\n"+

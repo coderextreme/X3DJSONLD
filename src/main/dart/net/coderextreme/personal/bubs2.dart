@@ -4,7 +4,7 @@ import '../x3d.dart';
 var X3D0 =  X3D(
 
       profile_ : SFString('Immersive'),
-      version_ : SFString('4.0'),
+      version_ : SFString('3.3'),
       head_ : 
         head(
           meta_ : [
@@ -26,7 +26,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('identifier'),
-              content_ : SFString('https://coderextreme.net/X3DJSONLD/geo.x3d')),
+              content_ : SFString('https://coderextreme.net/X3DJSONLD/src/main/data/geo.x3d')),
 
             meta(
               name_ : SFString('translated'),
@@ -34,7 +34,11 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('generator'),
-              content_ : SFString('X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html'))]),
+              content_ : SFString('X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html')),
+          component_ : 
+            component(
+              name_ : SFString('Scripting'),
+              level_ : 1)]),
       Scene_ : 
         Scene(
           children_ : [
@@ -47,12 +51,12 @@ var X3D0 =  X3D(
               description_ : SFString('Bubbles in action')),
 
             Background(
-              backUrl_ : MFString([SFString("../resources/images/BK.png"), SFString("https://coderextreme.net/X3DJSONLD/images/BK.png")]),
-              bottomUrl_ : MFString([SFString("../resources/images/BT.png"), SFString("https://coderextreme.net/X3DJSONLD/images/BT.png")]),
-              frontUrl_ : MFString([SFString("../resources/images/FR.png"), SFString("https://coderextreme.net/X3DJSONLD/images/FR.png")]),
-              leftUrl_ : MFString([SFString("../resources/images/LF.png"), SFString("https://coderextreme.net/X3DJSONLD/images/LF.png")]),
-              rightUrl_ : MFString([SFString("../resources/images/RT.png"), SFString("https://coderextreme.net/X3DJSONLD/images/RT.png")]),
-              topUrl_ : MFString([SFString("../resources/images/TP.png"), SFString("https://coderextreme.net/X3DJSONLD/images/TP.png")])),
+              backUrl_ : MFString([SFString("../resources/images/BK.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/BK.png")]),
+              bottomUrl_ : MFString([SFString("../resources/images/BT.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/BT.png")]),
+              frontUrl_ : MFString([SFString("../resources/images/FR.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/FR.png")]),
+              leftUrl_ : MFString([SFString("../resources/images/LF.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/LF.png")]),
+              rightUrl_ : MFString([SFString("../resources/images/RT.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/RT.png")]),
+              topUrl_ : MFString([SFString("../resources/images/TP.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/TP.png")])),
 
             ProtoDeclare(
               name_ : SFString('Bubble'),
@@ -61,7 +65,7 @@ var X3D0 =  X3D(
                   children_ : [
                     Transform(
                       DEF_ : SFString('body_trans'),
-                      children_ : [
+                      child_ : 
                         Shape(
                           geometry_ : 
                             Sphere(
@@ -72,7 +76,7 @@ var X3D0 =  X3D(
                                 Material(
                                   diffuseColor_ : SFColor([SFDouble(1), SFDouble(0), SFDouble(0)]),
                                   transparency_ : 0.2))),
-
+                      children_ : [
                         Script(
                           DEF_ : SFString('bounce'),
                           field_ : [

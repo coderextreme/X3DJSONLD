@@ -4,7 +4,7 @@ import '../x3d.dart';
 var X3D0 =  X3D(
 
       profile_ : SFString('Immersive'),
-      version_ : SFString('4.0'),
+      version_ : SFString('3.3'),
       head_ : 
         head(
           meta_ : [
@@ -22,7 +22,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('identifier'),
-              content_ : SFString('https://coderextreme.net/X3DJSONLD/force.x3d')),
+              content_ : SFString('https://coderextreme.net/X3DJSONLD/src/main/data/force.x3d')),
 
             meta(
               name_ : SFString('description'),
@@ -57,7 +57,7 @@ var X3D0 =  X3D(
                                 connect(
                                   nodeField_ : SFString('translation'),
                                   protoField_ : SFString('position'))]),
-                          children_ : [
+                          child_ : 
                             Shape(
                               geometry_ : 
                                 Sphere(),
@@ -66,10 +66,10 @@ var X3D0 =  X3D(
                                   material_ : 
                                     Material(
                                       diffuseColor_ : SFColor([SFDouble(1), SFDouble(0), SFDouble(0)])))),
-
+                          children_ : [
                             Transform(
                               translation_ : SFVec3f([SFDouble(1), SFDouble(0), SFDouble(1)]),
-                              children_ : [
+                              child_ : 
                                 Shape(
                                   geometry_ : 
                                     Text(
@@ -82,7 +82,7 @@ var X3D0 =  X3D(
                                     Appearance(
                                       material_ : 
                                         Material(
-                                          diffuseColor_ : SFColor([SFDouble(0), SFDouble(0), SFDouble(1)]))))])]),
+                                          diffuseColor_ : SFColor([SFDouble(0), SFDouble(0), SFDouble(1)])))))]),
 
                         PositionInterpolator(
                           DEF_ : SFString('NodePosition'),
@@ -118,7 +118,7 @@ ecmascript:eval (0
 					, function set_cycle(value) {
                                                 old = translation;
 						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);
-                                                keyValue = new MFVec3f([old, translation]);
+                                                keyValue = new MFVec3f(...[old, translation]);
 						// Browser.println(translation);
 					})),
 
@@ -217,17 +217,17 @@ ecmascript:eval (0
 
                 , function set_endA(value) {
 		    if (typeof spine === 'undefined') {
-		        spine = new MFVec3f([value, value]);
+		        spine = new MFVec3f(...[value, value]);
 		    } else {
-		        spine = new MFVec3f([value, spine[1]]);
+		        spine = new MFVec3f(...[value, spine[1]]);
 		    }
                 }
 
                 , function set_endB(value) {
 		    if (typeof spine === 'undefined') {
-		        spine = new MFVec3f([value, value]);
+		        spine = new MFVec3f(...[value, value]);
 		    } else {
-		        spine = new MFVec3f([spine[0], value]);
+		        spine = new MFVec3f(...[spine[0], value]);
 		    }
                 }
 

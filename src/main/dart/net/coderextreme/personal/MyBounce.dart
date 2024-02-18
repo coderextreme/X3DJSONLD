@@ -4,7 +4,7 @@ import '../x3d.dart';
 var X3D0 =  X3D(
 
       profile_ : SFString('Immersive'),
-      version_ : SFString('4.0'),
+      version_ : SFString('3.3'),
       head_ : 
         head(
           component_ : 
@@ -26,7 +26,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('identifier'),
-              content_ : SFString('https://coderextreme.net/X3DJSONLD/SFVec3f.x3d'))]),
+              content_ : SFString('https://coderextreme.net/X3DJSONLD/src/main/data/SFVec3f.x3d'))]),
       Scene_ : 
         Scene(
           children_ : [
@@ -34,7 +34,7 @@ var X3D0 =  X3D(
 
             Transform(
               DEF_ : SFString('transform'),
-              children_ : [
+              child_ : 
                 Shape(
                   appearance_ : 
                     Appearance(
@@ -43,7 +43,7 @@ var X3D0 =  X3D(
                           diffuseColor_ : SFColor([SFDouble(0.7), SFDouble(0.7), SFDouble(0.7)]),
                           specularColor_ : SFColor([SFDouble(0.5), SFDouble(0.5), SFDouble(0.5)]))),
                   geometry_ : 
-                    Sphere())]),
+                    Sphere())),
 
             Script(
               DEF_ : SFString('Bounce2'),

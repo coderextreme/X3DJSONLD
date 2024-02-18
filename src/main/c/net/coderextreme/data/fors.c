@@ -46,12 +46,12 @@ ProtoDeclare ProtoDeclare9 = browser.createX3DFromString(`<?xml version="1.0" en
 <ProtoBody><Transform DEF="transform"><IS><connect nodeField="translation" protoField="position"></connect>
 </IS>
 <Shape><Sphere></Sphere>
-<Appearance><Material diffuseColor="1 0 0"></Material>
+<Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 0 0"></Material>
 </Appearance>
 </Shape>
-<Transform translation="1 0 0"><Shape><Text string="&quot;Node&quot;"><FontStyle justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" size="5"></FontStyle>
+<Transform translation="1 0 0"><Shape><Text string="&quot;Node&quot;"><FontStyle containerField="fontStyle" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" size="5"></FontStyle>
 </Text>
-<Appearance><Material diffuseColor="0 0 1"></Material>
+<Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 0 1"></Material>
 </Appearance>
 </Shape>
 </Transform>
@@ -233,11 +233,11 @@ children[0] = ProtoDeclare9;
 
 ProtoDeclare ProtoDeclare37 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
-<ProtoDeclare name="cylinder" ><ProtoInterface><field name="set_positionA" accessType="inputOnly" type="SFVec3f"></field>
+<ProtoDeclare name="cyl" ><ProtoInterface><field name="set_positionA" accessType="inputOnly" type="SFVec3f"></field>
 <field name="set_positionB" accessType="inputOnly" type="SFVec3f"></field>
 </ProtoInterface>
 <ProtoBody><Shape><Extrusion DEF="extrusion" creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0" spine="0 -50 0 0 50 0"></Extrusion>
-<Appearance><Material diffuseColor="0 1 0"></Material>
+<Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 1 0"></Material>
 </Appearance>
 </Shape>
 <Script DEF="MoveCylinder"><field name="spine" accessType="inputOutput" type="MFVec3f" value="0 -50 0 0 50 0"></field>
@@ -270,7 +270,7 @@ ProtoDeclare ProtoDeclare37 = browser.createX3DFromString(`<?xml version="1.0" e
 <ROUTE fromNode="MoveCylinder" fromField="spine" toNode="extrusion" toField="set_spine"></ROUTE>
 </ProtoBody>
 </ProtoDeclare>`);
-ProtoDeclare37.name = "cylinder";
+ProtoDeclare37.name = "cyl";
 ProtoInterface ProtoInterface38 = createNode("ProtoInterface");
 field field39 = createNode("field");
 field39.name = "set_positionA";
@@ -418,7 +418,7 @@ ProtoInstance58.fieldValue[0] = fieldValue59;
 Transform54.children[2] = ProtoInstance58;
 
 ProtoInstance ProtoInstance60 = createNode("ProtoInstance");
-ProtoInstance60.name = "cylinder";
+ProtoInstance60.name = "cyl";
 ProtoInstance60.DEF = "linkA";
 fieldValue fieldValue61 = createNode("fieldValue");
 fieldValue61.name = "set_positionA";

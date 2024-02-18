@@ -4,7 +4,7 @@ import '../x3d.dart';
 var X3D0 =  X3D(
 
       profile_ : SFString('Immersive'),
-      version_ : SFString('4.0'),
+      version_ : SFString('3.3'),
       head_ : 
         head(
           meta_ : [
@@ -26,7 +26,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('modified'),
-              content_ : SFString('05 May 2017')),
+              content_ : SFString('23 Dec 2022')),
 
             meta(
               name_ : SFString('description'),
@@ -52,7 +52,7 @@ var X3D0 =  X3D(
                       children_ : [
                         Transform(
                           scale_ : SFVec3f([SFDouble(0.5), SFDouble(0.5), SFDouble(0.5)]),
-                          children_ : [
+                          child_ : 
                             Shape(
                               appearance_ : 
                                 Appearance(
@@ -65,12 +65,12 @@ var X3D0 =  X3D(
                                   creaseAngle_ : 0.785,
                                   crossSection_ : MFVec2f([SFVec2f([1,0]),SFVec2f([0.92,-0.38]),SFVec2f([0.71,-0.71]),SFVec2f([0.38,-0.92]),SFVec2f([0,-1]),SFVec2f([-0.38,-0.92]),SFVec2f([-0.71,-0.71]),SFVec2f([-0.92,-0.38]),SFVec2f([-1,0]),SFVec2f([-0.92,0.38]),SFVec2f([-0.71,0.71]),SFVec2f([-0.38,0.92]),SFVec2f([0,1]),SFVec2f([0.38,0.92]),SFVec2f([0.71,0.71]),SFVec2f([0.92,0.38]),SFVec2f([1,0])]),
                                   spine_ : MFVec3f([SFVec3f([-2.5,0,0]),SFVec3f([-1.5,0,0])]))),
-                          /*<Transform translation=\"-2.5 0 0\"> <Shape> <Text DEF=\"LeftString\" string='\"l\"'/> </Shape> </Transform> <StringSensor DEF=\"LeftSensor\" enabled=\"false\"/> <TouchSensor DEF=\"LeftTouch\" enabled=\"true\"/>*/]),
+                          /*<Transform translation=\"-2.5 0 0\"> <Shape> <Text DEF=\"LeftString\" string='\"l\"'/> </Shape> </Transform> <StringSensor DEF=\"LeftSensor\" enabled=\"false\"/> <TouchSensor DEF=\"LeftTouch\" enabled=\"true\"/>*/),
                       /*right*/
 
                         Transform(
                           scale_ : SFVec3f([SFDouble(0.5), SFDouble(0.5), SFDouble(0.5)]),
-                          children_ : [
+                          child_ : 
                             Shape(
                               appearance_ : 
                                 Appearance(
@@ -83,10 +83,10 @@ var X3D0 =  X3D(
                                   creaseAngle_ : 0.785,
                                   crossSection_ : MFVec2f([SFVec2f([1,0]),SFVec2f([0.92,-0.38]),SFVec2f([0.71,-0.71]),SFVec2f([0.38,-0.92]),SFVec2f([0,-1]),SFVec2f([-0.38,-0.92]),SFVec2f([-0.71,-0.71]),SFVec2f([-0.92,-0.38]),SFVec2f([-1,0]),SFVec2f([-0.92,0.38]),SFVec2f([-0.71,0.71]),SFVec2f([-0.38,0.92]),SFVec2f([0,1]),SFVec2f([0.38,0.92]),SFVec2f([0.71,0.71]),SFVec2f([0.92,0.38]),SFVec2f([1,0])]),
                                   spine_ : MFVec3f([SFVec3f([1.5,0,0]),SFVec3f([2.5,0,0])]))),
-
+                          children_ : [
                             Transform(
                               translation_ : SFVec3f([SFDouble(2), SFDouble(0), SFDouble(0)]),
-                              children_ : [
+                              child_ : 
                                 Shape(
                                   appearance_ : 
                                     Appearance(
@@ -97,7 +97,7 @@ var X3D0 =  X3D(
                                   geometry_ : 
                                     Text(
                                       DEF_ : SFString('RightString'),
-                                      string_ : MFString([SFString("r")])))]),
+                                      string_ : MFString([SFString("r")])))),
 
                             StringSensor(
                               DEF_ : SFString('RightSensor'),
@@ -110,7 +110,7 @@ var X3D0 =  X3D(
 
                         Transform(
                           scale_ : SFVec3f([SFDouble(0.5), SFDouble(0.5), SFDouble(0.5)]),
-                          children_ : [
+                          child_ : 
                             Shape(
                               appearance_ : 
                                 Appearance(
@@ -123,10 +123,10 @@ var X3D0 =  X3D(
                                   creaseAngle_ : 0.785,
                                   crossSection_ : MFVec2f([SFVec2f([1,0]),SFVec2f([0.92,-0.38]),SFVec2f([0.71,-0.71]),SFVec2f([0.38,-0.92]),SFVec2f([0,-1]),SFVec2f([-0.38,-0.92]),SFVec2f([-0.71,-0.71]),SFVec2f([-0.92,-0.38]),SFVec2f([-1,0]),SFVec2f([-0.92,0.38]),SFVec2f([-0.71,0.71]),SFVec2f([-0.38,0.92]),SFVec2f([0,1]),SFVec2f([0.38,0.92]),SFVec2f([0.71,0.71]),SFVec2f([0.92,0.38]),SFVec2f([1,0])]),
                                   spine_ : MFVec3f([SFVec3f([0,1.5,0]),SFVec3f([0,2.5,0])]))),
-
+                          children_ : [
                             Transform(
                               translation_ : SFVec3f([SFDouble(-0.5), SFDouble(2), SFDouble(0)]),
-                              children_ : [
+                              child_ : 
                                 Shape(
                                   appearance_ : 
                                     Appearance(
@@ -136,7 +136,7 @@ var X3D0 =  X3D(
                                   geometry_ : 
                                     Text(
                                       DEF_ : SFString('UpString'),
-                                      string_ : MFString([SFString("u")])))]),
+                                      string_ : MFString([SFString("u")])))),
 
                             StringSensor(
                               DEF_ : SFString('UpSensor'),
@@ -149,7 +149,7 @@ var X3D0 =  X3D(
 
                         Transform(
                           scale_ : SFVec3f([SFDouble(0.5), SFDouble(0.5), SFDouble(0.5)]),
-                          children_ : [
+                          child_ : 
                             Shape(
                               appearance_ : 
                                 Appearance(
@@ -162,11 +162,11 @@ var X3D0 =  X3D(
                                   creaseAngle_ : 0.785,
                                   crossSection_ : MFVec2f([SFVec2f([1,0]),SFVec2f([0.92,-0.38]),SFVec2f([0.71,-0.71]),SFVec2f([0.38,-0.92]),SFVec2f([0,-1]),SFVec2f([-0.38,-0.92]),SFVec2f([-0.71,-0.71]),SFVec2f([-0.92,-0.38]),SFVec2f([-1,0]),SFVec2f([-0.92,0.38]),SFVec2f([-0.71,0.71]),SFVec2f([-0.38,0.92]),SFVec2f([0,1]),SFVec2f([0.38,0.92]),SFVec2f([0.71,0.71]),SFVec2f([0.92,0.38]),SFVec2f([1,0])]),
                                   spine_ : MFVec3f([SFVec3f([0,-2.5,0]),SFVec3f([0,-1.5,0])]))),
-                          /*<Transform translation=\"-0.5 -2.5 0\"> <Shape> <Text DEF=\"DownString\" string='\"d\"'/> </Shape> </Transform> <StringSensor DEF=\"DownSensor\" enabled=\"false\"/> <TouchSensor description='touch to activate' DEF=\"DownTouch\" enabled=\"true\"/>*/]),
+                          /*<Transform translation=\"-0.5 -2.5 0\"> <Shape> <Text DEF=\"DownString\" string='\"d\"'/> </Shape> </Transform> <StringSensor DEF=\"DownSensor\" enabled=\"false\"/> <TouchSensor description='touch to activate' DEF=\"DownTouch\" enabled=\"true\"/>*/),
                       /*center*/
 
                         Transform(
-                          children_ : [
+                          child_ : 
                             Shape(
                               appearance_ : 
                                 Appearance(
@@ -175,11 +175,11 @@ var X3D0 =  X3D(
                                       diffuseColor_ : SFColor([SFDouble(1), SFDouble(0), SFDouble(0.7)]))),
                               geometry_ : 
                                 Sphere()),
-
+                          children_ : [
                             Transform(
                               scale_ : SFVec3f([SFDouble(0.5), SFDouble(0.5), SFDouble(0.5)]),
                               translation_ : SFVec3f([SFDouble(-0.5), SFDouble(0), SFDouble(1)]),
-                              children_ : [
+                              child_ : 
                                 Shape(
                                   appearance_ : 
                                     Appearance(
@@ -188,7 +188,7 @@ var X3D0 =  X3D(
                                           USE_ : SFString('MaterialLightBlue'))),
                                   geometry_ : 
                                     Text(
-                                      DEF_ : SFString('CenterString')))]),
+                                      DEF_ : SFString('CenterString')))),
 
                             StringSensor(
                               DEF_ : SFString('CenterSensor'),

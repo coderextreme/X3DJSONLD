@@ -1,7 +1,7 @@
 #!/bin/sh
 
-top_srcdir=/c/Users/coderextreme/Backup/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0
-top_builddir=/c/Users/coderextreme/Backup/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0
+top_srcdir=/c/Users/john/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0
+top_builddir=/c/Users/john/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0
 
 wd="${top_srcdir}/samples/data"
 

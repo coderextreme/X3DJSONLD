@@ -12,81 +12,81 @@ CX3D* X3D0 = new CX3D();
 CGroup* group = (CGroup*)(m_pScene.createNode("Group"));
 group->addChildren(X3D0);
 X3D0->setProfile("Immersive");
-X3D0->setVersion("4.0");
+X3D0->setVersion("3.2");
 Chead* head1 = new Chead();
-Cmeta* meta2 = new Cmeta();
-meta2->setName("title");
-meta2->setContent("SimpleShader.x3d");
-head1->addMeta(*meta2);
+Ccomponent* component2 = new Ccomponent();
+component2->setName("Shaders");
+component2->setLevel(1);
+head1->addComponent(*component2);
 
 Cmeta* meta3 = new Cmeta();
-meta3->setName("description");
-meta3->setContent("Simple shader example");
+meta3->setName("title");
+meta3->setContent("SimpleShader.x3d");
 head1->addMeta(*meta3);
 
 Cmeta* meta4 = new Cmeta();
-meta4->setName("creator");
-meta4->setContent("John Stewart");
+meta4->setName("description");
+meta4->setContent("Simple shader example");
 head1->addMeta(*meta4);
 
 Cmeta* meta5 = new Cmeta();
-meta5->setName("translator");
-meta5->setContent("Holger Seelig, John Carlson, Don Brutzman and Jeff Malnick");
+meta5->setName("creator");
+meta5->setContent("John Stewart");
 head1->addMeta(*meta5);
 
 Cmeta* meta6 = new Cmeta();
-meta6->setName("created");
-meta6->setContent("26 May 2009");
+meta6->setName("translator");
+meta6->setContent("Holger Seelig, John Carlson, Don Brutzman and Jeff Malnick");
 head1->addMeta(*meta6);
 
 Cmeta* meta7 = new Cmeta();
-meta7->setName("translated");
-meta7->setContent("15 October 2009");
+meta7->setName("created");
+meta7->setContent("26 May 2009");
 head1->addMeta(*meta7);
 
 Cmeta* meta8 = new Cmeta();
-meta8->setName("modified");
-meta8->setContent("20 October 2019");
+meta8->setName("translated");
+meta8->setContent("15 October 2009");
 head1->addMeta(*meta8);
 
 Cmeta* meta9 = new Cmeta();
-meta9->setName("reference");
-meta9->setContent("http://www.opengl.org/wiki/Fragment_Shader");
+meta9->setName("modified");
+meta9->setContent("20 October 2019");
 head1->addMeta(*meta9);
 
 Cmeta* meta10 = new Cmeta();
 meta10->setName("reference");
-meta10->setContent("http://www.opengl.org/wiki/http://www.opengl.org/wiki/Vertex_Shader");
+meta10->setContent("http://www.opengl.org/wiki/Fragment_Shader");
 head1->addMeta(*meta10);
 
 Cmeta* meta11 = new Cmeta();
 meta11->setName("reference");
-meta11->setContent("https://www.web3d.org/x3d/wiki/index.php/X3D_Plugfest");
+meta11->setContent("http://www.opengl.org/wiki/http://www.opengl.org/wiki/Vertex_Shader");
 head1->addMeta(*meta11);
 
 Cmeta* meta12 = new Cmeta();
 meta12->setName("reference");
-meta12->setContent("originals/simpleShader.x3dv");
+meta12->setContent("https://www.web3d.org/x3d/wiki/index.php/X3D_Plugfest");
 head1->addMeta(*meta12);
 
 Cmeta* meta13 = new Cmeta();
-meta13->setName("reference");
-meta13->setContent("ShaderTutorialInstantReality.pdf");
+meta13->setName("subject");
+meta13->setContent("X3D shader example");
 head1->addMeta(*meta13);
 
 Cmeta* meta14 = new Cmeta();
-meta14->setName("subject");
-meta14->setContent("X3D shader example");
+meta14->setName("reference");
+meta14->setContent("originals/simpleShader.x3dv");
 head1->addMeta(*meta14);
 
 Cmeta* meta15 = new Cmeta();
-meta15->setName("generator");
-meta15->setContent("Titania V3.0.3, http://titania.create3000.de");
+meta15->setName("reference");
+meta15->setContent("ShaderTutorialInstantReality.pdf");
 head1->addMeta(*meta15);
 
 Cmeta* meta16 = new Cmeta();
 meta16->setName("generator");
-meta16->setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit");
+meta16->setContent("Titania V3.0.3, http://titania.create3000.de");
 head1->addMeta(*meta16);
 
 Cmeta* meta17 = new Cmeta();
@@ -100,32 +100,38 @@ meta18->setContent("nicest");
 head1->addMeta(*meta18);
 
 Cmeta* meta19 = new Cmeta();
-meta19->setName("identifier");
-meta19->setContent("https://www.web3d.org/x3d/content/examples/Basic/Shaders/SimpleShader.x3d");
+meta19->setName("generator");
+meta19->setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit");
 head1->addMeta(*meta19);
 
-Ccomponent* component20 = new Ccomponent();
-component20->setName("Shaders");
-component20->setLevel(1);
-head1->addComponent(*component20);
+Cmeta* meta20 = new Cmeta();
+meta20->setName("identifier");
+meta20->setContent("https://www.web3d.org/x3d/content/examples/Basic/Shaders/SimpleShader.x3d");
+head1->addMeta(*meta20);
 
+Cmeta* meta21 = new Cmeta();
+meta21->setName("license");
+meta21->setContent("../../license.html");
+head1->addMeta(*meta21);
+
+//meta content='under development' name='warning'/
 X3D0->setHead(*head1);
 
-CScene* Scene21 = new CScene();
-CProtoDeclare ProtoDeclare22 = browser.createX3DFromString(R"foo(<?xml version="1.0" encoding="undefined"?>
+CScene* Scene22 = new CScene();
+CProtoDeclare ProtoDeclare23 = browser.createX3DFromString(R"foo(<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
-<ProtoDeclare name="myPrototype" ><ProtoInterface><field accessType="initializeOnly" type="SFVec3f" name="myInputRange" value="0.95 0.44 0.22"></field>
+<ProtoDeclare name="myPrototype" ><ProtoInterface><field name="myInputRange" accessType="initializeOnly" type="SFVec3f" value="0.95 0.44 0.22"></field>
 </ProtoInterface>
-<ProtoBody><Transform DEF="TR"><Shape><Appearance><Material diffuseColor="0.5 0.5 0.9"></Material>
-<ComposedShader language="GLSL"><ShaderPart></ShaderPart>
-<ShaderPart type="FRAGMENT"></ShaderPart>
-<field accessType="initializeOnly" type="SFVec3f" name="decis"></field>
+<ProtoBody><Transform DEF="TR"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0.5 0.5 0.9"></Material>
+<ComposedShader language="GLSL"><field name="decis" accessType="initializeOnly" type="SFVec3f"></field>
 <IS><connect nodeField="decis" protoField="myInputRange"></connect>
 </IS>
-</ComposedShader>
-<ComposedShader DEF="Cobweb" language="GLSL"><ShaderPart></ShaderPart>
+<ShaderPart type="VERTEX"></ShaderPart>
 <ShaderPart type="FRAGMENT"></ShaderPart>
-<field accessType="initializeOnly" type="SFVec3f" name="decis" value="0.95 0.77 0.44"></field>
+</ComposedShader>
+<ComposedShader DEF="Cobweb" language="GLSL"><field name="decis" accessType="initializeOnly" type="SFVec3f" value="0.95 0.77 0.44"></field>
+<ShaderPart type="VERTEX"></ShaderPart>
+<ShaderPart DEF="_1" type="FRAGMENT"></ShaderPart>
 </ComposedShader>
 </Appearance>
 <Sphere radius="1.75"></Sphere>
@@ -133,151 +139,155 @@ CProtoDeclare ProtoDeclare22 = browser.createX3DFromString(R"foo(<?xml version="
 </Transform>
 </ProtoBody>
 </ProtoDeclare>)foo");
-ProtoDeclare22->setName("myPrototype");
-CProtoInterface* ProtoInterface23 = new CProtoInterface();
-Cfield* field24 = new Cfield();
-field24->setAccessType("initializeOnly");
-field24->setType("SFVec3f");
-field24->setName("myInputRange");
-field24->setValue("0.95 0.44 0.22");
-ProtoInterface23->addField(*field24);
+ProtoDeclare23->setName("myPrototype");
+CProtoInterface* ProtoInterface24 = new CProtoInterface();
+Cfield* field25 = new Cfield();
+field25->setName("myInputRange");
+field25->setAccessType("initializeOnly");
+field25->setType("SFVec3f");
+field25->setValue("0.95 0.44 0.22");
+ProtoInterface24->addField(*field25);
 
-ProtoDeclare22->setProtoInterface(*ProtoInterface23);
+ProtoDeclare23->setProtoInterface(*ProtoInterface24);
 
-CProtoBody* ProtoBody25 = new CProtoBody();
-CTransform* Transform26 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform26->setDEF("TR");
-CShape* Shape27 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance28 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material29 = (CMaterial *)(m_pScene.createNode("Material"));
-Material29->setDiffuseColor(new float[3]{0.5,0.5,0.9});
-Appearance28->setMaterial(*Material29);
+CProtoBody* ProtoBody26 = new CProtoBody();
+CTransform* Transform27 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform27->setDEF("TR");
+CShape* Shape28 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance29 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material30 = (CMaterial *)(m_pScene.createNode("Material"));
+Material30->setDiffuseColor(new float[3]{0.5,0.5,0.9});
+Appearance29->setMaterial(*Material30);
 
-CComposedShader* ComposedShader30 = (CComposedShader *)(m_pScene.createNode("ComposedShader"));
-ComposedShader30->setLanguage("GLSL");
-CShaderPart* ShaderPart31 = (CShaderPart *)(m_pScene.createNode("ShaderPart"));
-ComposedShader30->addParts(*ShaderPart31);
+CComposedShader* ComposedShader31 = (CComposedShader *)(m_pScene.createNode("ComposedShader"));
+ComposedShader31->setLanguage("GLSL");
+Cfield* field32 = new Cfield();
+field32->setName("decis");
+field32->setAccessType("initializeOnly");
+field32->setType("SFVec3f");
+ComposedShader31->addField(*field32);
 
-CShaderPart* ShaderPart32 = (CShaderPart *)(m_pScene.createNode("ShaderPart"));
-ShaderPart32->setType("FRAGMENT");
-ComposedShader30->addParts(*ShaderPart32);
+CIS* IS33 = new CIS();
+Cconnect* connect34 = new Cconnect();
+connect34->setNodeField("decis");
+connect34->setProtoField("myInputRange");
+IS33->addConnect(*connect34);
 
-Cfield* field33 = new Cfield();
-field33->setAccessType("initializeOnly");
-field33->setType("SFVec3f");
-field33->setName("decis");
-ComposedShader30->addField(*field33);
+ComposedShader31->setIS(*IS33);
 
-CIS* IS34 = new CIS();
-Cconnect* connect35 = new Cconnect();
-connect35->setNodeField("decis");
-connect35->setProtoField("myInputRange");
-IS34->addConnect(*connect35);
+CShaderPart* ShaderPart35 = (CShaderPart *)(m_pScene.createNode("ShaderPart"));
+ShaderPart35->setType("VERTEX");
+ComposedShader31->addParts(*ShaderPart35);
 
-ComposedShader30->setIS(*IS34);
+CShaderPart* ShaderPart36 = (CShaderPart *)(m_pScene.createNode("ShaderPart"));
+ShaderPart36->setType("FRAGMENT");
+ComposedShader31->addParts(*ShaderPart36);
 
-Appearance28->addShaders(*ComposedShader30);
+Appearance29->addShaders(*ComposedShader31);
 
-CComposedShader* ComposedShader36 = (CComposedShader *)(m_pScene.createNode("ComposedShader"));
-ComposedShader36->setDEF("Cobweb");
-ComposedShader36->setLanguage("GLSL");
-CShaderPart* ShaderPart37 = (CShaderPart *)(m_pScene.createNode("ShaderPart"));
-ComposedShader36->addParts(*ShaderPart37);
+CComposedShader* ComposedShader37 = (CComposedShader *)(m_pScene.createNode("ComposedShader"));
+ComposedShader37->setDEF("Cobweb");
+ComposedShader37->setLanguage("GLSL");
+Cfield* field38 = new Cfield();
+field38->setName("decis");
+field38->setAccessType("initializeOnly");
+field38->setType("SFVec3f");
+field38->setValue("0.95 0.77 0.44");
+ComposedShader37->addField(*field38);
 
-CShaderPart* ShaderPart38 = (CShaderPart *)(m_pScene.createNode("ShaderPart"));
-ShaderPart38->setType("FRAGMENT");
-ComposedShader36->addParts(*ShaderPart38);
+CShaderPart* ShaderPart39 = (CShaderPart *)(m_pScene.createNode("ShaderPart"));
+ShaderPart39->setType("VERTEX");
+ComposedShader37->addParts(*ShaderPart39);
 
-Cfield* field39 = new Cfield();
-field39->setAccessType("initializeOnly");
-field39->setType("SFVec3f");
-field39->setName("decis");
-field39->setValue("0.95 0.77 0.44");
-ComposedShader36->addField(*field39);
+CShaderPart* ShaderPart40 = (CShaderPart *)(m_pScene.createNode("ShaderPart"));
+ShaderPart40->setDEF("_1");
+ShaderPart40->setType("FRAGMENT");
+ComposedShader37->addParts(*ShaderPart40);
 
-Appearance28->addShaders(*ComposedShader36);
+Appearance29->addShaders(*ComposedShader37);
 
-Shape27->setAppearance(*Appearance28);
+Shape28->setAppearance(*Appearance29);
 
-CSphere* Sphere40 = (CSphere *)(m_pScene.createNode("Sphere"));
-Sphere40->setRadius(1.75);
-Shape27->setGeometry(Sphere40);
+CSphere* Sphere41 = (CSphere *)(m_pScene.createNode("Sphere"));
+Sphere41->setRadius(1.75);
+Shape28->setGeometry(Sphere41);
 
-Transform26->addChild(*Shape27);
+Transform27->addChild(*Shape28);
 
-ProtoBody25->addChildren(*Transform26);
+ProtoBody26->addChildren(*Transform27);
 
-ProtoDeclare22->setProtoBody(*ProtoBody25);
+ProtoDeclare23->setProtoBody(*ProtoBody26);
 
-group->addChildren(*ProtoDeclare22);
+group->addChildren(*ProtoDeclare23);
 
-CWorldInfo* WorldInfo41 = (CWorldInfo *)(m_pScene.createNode("WorldInfo"));
-WorldInfo41->setTitle("SimpleShader");
-CMetadataSet* MetadataSet42 = (CMetadataSet *)(m_pScene.createNode("MetadataSet"));
-MetadataSet42->setDEF("Titania");
-MetadataSet42->setName("Titania");
-MetadataSet42->setReference("http://titania.create3000.de");
+CWorldInfo* WorldInfo42 = (CWorldInfo *)(m_pScene.createNode("WorldInfo"));
+WorldInfo42->setTitle("SimpleShader");
 CMetadataSet* MetadataSet43 = (CMetadataSet *)(m_pScene.createNode("MetadataSet"));
-MetadataSet43->setDEF("Selection");
-MetadataSet43->setName("Selection");
+MetadataSet43->setName("Titania");
+MetadataSet43->setDEF("Titania");
 MetadataSet43->setReference("http://titania.create3000.de");
 CMetadataSet* MetadataSet44 = (CMetadataSet *)(m_pScene.createNode("MetadataSet"));
-MetadataSet44->setDEF("nodes");
-MetadataSet44->setName("nodes");
+MetadataSet44->setName("Selection");
+MetadataSet44->setDEF("Selection");
 MetadataSet44->setReference("http://titania.create3000.de");
+CMetadataSet* MetadataSet45 = (CMetadataSet *)(m_pScene.createNode("MetadataSet"));
+MetadataSet45->setName("nodes");
+MetadataSet45->setDEF("nodes");
+MetadataSet45->setReference("http://titania.create3000.de");
+//NULL
+MetadataSet44->setValue(*MetadataSet45);
+
 MetadataSet43->setValue(*MetadataSet44);
 
-MetadataSet42->setValue(*MetadataSet43);
+CMetadataSet* MetadataSet46 = (CMetadataSet *)(m_pScene.createNode("MetadataSet"));
+MetadataSet46->setName("NavigationInfo");
+MetadataSet46->setDEF("NavigationInfo");
+MetadataSet46->setReference("http://titania.create3000.de");
+CMetadataString* MetadataString47 = (CMetadataString *)(m_pScene.createNode("MetadataString"));
+MetadataString47->setName("type");
+MetadataString47->setDEF("type");
+MetadataString47->setReference("http://titania.create3000.de");
+MetadataString47->setValue(new CString[1]{"EXAMINE"}, 1);
+MetadataSet46->setValue(*MetadataString47);
 
-CMetadataSet* MetadataSet45 = (CMetadataSet *)(m_pScene.createNode("MetadataSet"));
-MetadataSet45->setDEF("NavigationInfo");
-MetadataSet45->setName("NavigationInfo");
-MetadataSet45->setReference("http://titania.create3000.de");
-CMetadataString* MetadataString46 = (CMetadataString *)(m_pScene.createNode("MetadataString"));
-MetadataString46->setDEF("type");
-MetadataString46->setName("type");
-MetadataString46->setReference("http://titania.create3000.de");
-MetadataString46->setValue(new CString[1]{"EXAMINE"}, 1);
-MetadataSet45->setValue(*MetadataString46);
+MetadataSet43->setValue(*MetadataSet46);
 
-MetadataSet42->setValue(*MetadataSet45);
-
-CMetadataSet* MetadataSet47 = (CMetadataSet *)(m_pScene.createNode("MetadataSet"));
-MetadataSet47->setDEF("Viewpoint");
-MetadataSet47->setName("Viewpoint");
-MetadataSet47->setReference("http://titania.create3000.de");
-CMetadataDouble* MetadataDouble48 = (CMetadataDouble *)(m_pScene.createNode("MetadataDouble"));
-MetadataDouble48->setDEF("position");
-MetadataDouble48->setName("position");
-MetadataDouble48->setReference("http://titania.create3000.de");
-MetadataDouble48->setValue(new double[3]{6.24067728185014,0.00250837343276661,2.92117542307615});
-MetadataSet47->setValue(*MetadataDouble48);
-
+CMetadataSet* MetadataSet48 = (CMetadataSet *)(m_pScene.createNode("MetadataSet"));
+MetadataSet48->setName("Viewpoint");
+MetadataSet48->setDEF("Viewpoint");
+MetadataSet48->setReference("http://titania.create3000.de");
 CMetadataDouble* MetadataDouble49 = (CMetadataDouble *)(m_pScene.createNode("MetadataDouble"));
-MetadataDouble49->setDEF("orientation");
-MetadataDouble49->setName("orientation");
+MetadataDouble49->setName("position");
+MetadataDouble49->setDEF("position");
 MetadataDouble49->setReference("http://titania.create3000.de");
-MetadataDouble49->setValue(new double[4]{-0.110173424710488,0.990158061907379,-0.0863065984000336,1.21146676119191});
-MetadataSet47->setValue(*MetadataDouble49);
+MetadataDouble49->setValue(new double[3]{6.24067728185014,0.00250837343276661,2.92117542307615});
+MetadataSet48->setValue(*MetadataDouble49);
 
 CMetadataDouble* MetadataDouble50 = (CMetadataDouble *)(m_pScene.createNode("MetadataDouble"));
-MetadataDouble50->setDEF("centerOfRotation");
-MetadataDouble50->setName("centerOfRotation");
+MetadataDouble50->setName("orientation");
+MetadataDouble50->setDEF("orientation");
 MetadataDouble50->setReference("http://titania.create3000.de");
-MetadataDouble50->setValue(new double[3]{-0.808320198626341,-0.358072370409949,0.22817191560906});
-MetadataSet47->setValue(*MetadataDouble50);
+MetadataDouble50->setValue(new double[4]{-0.110173424710488,0.990158061907379,-0.0863065984000336,1.21146676119191});
+MetadataSet48->setValue(*MetadataDouble50);
 
-MetadataSet42->setValue(*MetadataSet47);
+CMetadataDouble* MetadataDouble51 = (CMetadataDouble *)(m_pScene.createNode("MetadataDouble"));
+MetadataDouble51->setName("centerOfRotation");
+MetadataDouble51->setDEF("centerOfRotation");
+MetadataDouble51->setReference("http://titania.create3000.de");
+MetadataDouble51->setValue(new double[3]{-0.808320198626341,-0.358072370409949,0.22817191560906});
+MetadataSet48->setValue(*MetadataDouble51);
 
-WorldInfo41->setMetadata(*MetadataSet42);
+MetadataSet43->setValue(*MetadataSet48);
 
-group->addChildren(*WorldInfo41);
+WorldInfo42->setMetadata(*MetadataSet43);
 
-CProtoInstance* ProtoInstance51 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
-ProtoInstance51->setName("myPrototype");
-group->addChildren(*ProtoInstance51);
+group->addChildren(*WorldInfo42);
 
-X3D0->setScene(*Scene21);
+CProtoInstance* ProtoInstance52 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
+ProtoInstance52->setName("myPrototype");
+group->addChildren(*ProtoInstance52);
+
+X3D0->setScene(*Scene22);
 
 m_pScene.addRootNode(group);
 X3D0->toXMLString();

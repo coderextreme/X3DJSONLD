@@ -59,7 +59,7 @@ import org.web3d.x3d.jsail.Time.*;
 	* @author John Carlson
  */
 
-public class bubs3
+import net.coderextreme.X3DRoots;import java.util.List;import java.util.ArrayList;public class bubs3 implements X3DRoots 
 {
 	/** Default constructor to create this object. */
 	public bubs3 ()
@@ -326,6 +326,11 @@ function set_fraction(value) {
 	{	  
 		return x3dModel;
 	}
+	public List<X3D> getRootNodeList() {
+		List<X3D> list = new ArrayList<X3D>(1);
+		list.add(x3dModel);
+		return list;
+	}
 	   
     /** 
      * Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
@@ -338,7 +343,7 @@ function set_fraction(value) {
      */
     public static void main(String args[])
     {
-        System.out.println("Build this X3D model, showing diagnostics...");
+        System.out.println("Build this X3D model, showing validation diagnostics...");
         X3D thisExampleX3dModel = new bubs3().getX3dModel();
 //      System.out.println("X3D model construction complete.");
 	

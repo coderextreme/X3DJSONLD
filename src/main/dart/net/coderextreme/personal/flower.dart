@@ -47,7 +47,7 @@ var X3D0 =  X3D(
               translation_ : SFVec3f([SFDouble(0), SFDouble(-1), SFDouble(1)]),
               rotation_ : SFRotation([SFDouble(0), SFDouble(1), SFDouble(0), SFDouble(3.1415926)]),
               scale_ : SFVec3f([SFDouble(1.5), SFDouble(1.5), SFDouble(1.5)]),
-              children_ : [
+              child_ : 
                 Shape(
                   appearance_ : 
                     Appearance(
@@ -66,7 +66,7 @@ var X3D0 =  X3D(
                       coord_ : 
                         Coordinate(
                           DEF_ : SFString('OrbitCoordinates'),
-                          point_ : MFVec3f([SFVec3f([0,0,1]),SFVec3f([0,1,0]),SFVec3f([1,0,0])]))))]),
+                          point_ : MFVec3f([SFVec3f([0,0,1]),SFVec3f([0,1,0]),SFVec3f([1,0,0])]))))),
 
             Script(
               DEF_ : SFString('OrbitScript'),
@@ -109,7 +109,7 @@ var p = 0;
 	     localci.push(-1);
 	}
     }
-    coordIndexes = new MFInt32(localci);
+    coordIndexes = new MFInt32(...localci);
 }
 
 , function generateCoordinates(resolution) {
@@ -129,7 +129,7 @@ var p = 0;
 	}
 	phi += delta;
      }
-     coordinates = new MFVec3f(localc);
+     coordinates = new MFVec3f(...localc);
 }
 
 , function set_fraction(fraction, eventTime) {

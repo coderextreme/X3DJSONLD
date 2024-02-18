@@ -7,6 +7,14 @@
     "head": {
         "component": [
           {
+            "@name":"Scripting",
+            "@level":1
+          },
+          {
+            "@name":"EnvironmentalEffects",
+            "@level":3
+          },
+          {
             "@name":"Shaders",
             "@level":1
           },
@@ -29,6 +37,10 @@
           {
             "@name":"Grouping",
             "@level":3
+          },
+          {
+            "@name":"Core",
+            "@level":1
           }
         ],
         "meta": [
@@ -46,7 +58,7 @@
           },
           {
             "@name":"identifier",
-            "@content":"https://coderextreme.net/X3DJSONLD/flowers4.x3d"
+            "@content":"https://coderextreme.net/X3DJSONLD/src/main/data/flowers4.x3d"
           },
           {
             "@name":"description",
@@ -54,7 +66,7 @@
           },
           {
             "@name":"translated",
-            "@content":"27 October 2023"
+            "@content":"18 February 2024"
           },
           {
             "@name":"generator",
@@ -74,12 +86,12 @@
           },
           { "Background":
             {
-              "@backUrl":["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"],
-              "@bottomUrl":["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"],
-              "@frontUrl":["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"],
-              "@leftUrl":["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"],
-              "@rightUrl":["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"],
-              "@topUrl":["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"]
+              "@backUrl":["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"],
+              "@bottomUrl":["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"],
+              "@frontUrl":["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"],
+              "@leftUrl":["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"],
+              "@rightUrl":["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"],
+              "@topUrl":["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]
             }
           },
           { "Transform":
@@ -144,13 +156,13 @@
                                   { "ShaderPart":
                                     {
                                       "@type":"VERTEX",
-                                      "@url":["../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"]
+                                      "@url":["../shaders/x_ite.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"]
                                     }
                                   },
                                   { "ShaderPart":
                                     {
                                       "@type":"FRAGMENT",
-                                      "@url":["../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"]
+                                      "@url":["../shaders/x_ite.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"]
                                     }
                                   }
                                 ]
@@ -163,37 +175,37 @@
                                 "-backTexture":
                                   { "ImageTexture":
                                     {
-                                      "@url":["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"]
+                                      "@url":["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]
                                     }
                                   },
                                 "-bottomTexture":
                                   { "ImageTexture":
                                     {
-                                      "@url":["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"]
+                                      "@url":["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]
                                     }
                                   },
                                 "-frontTexture":
                                   { "ImageTexture":
                                     {
-                                      "@url":["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"]
+                                      "@url":["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"]
                                     }
                                   },
                                 "-leftTexture":
                                   { "ImageTexture":
                                     {
-                                      "@url":["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"]
+                                      "@url":["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]
                                     }
                                   },
                                 "-rightTexture":
                                   { "ImageTexture":
                                     {
-                                      "@url":["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"]
+                                      "@url":["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]
                                     }
                                   },
                                 "-topTexture":
                                   { "ImageTexture":
                                     {
-                                      "@url":["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"]
+                                      "@url":["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]
                                     }
                                   }
                               }
@@ -236,18 +248,36 @@
                   "@name":"coordIndexes",
                   "@accessType":"outputOnly",
                   "@type":"MFInt32"
+                },
+                {
+                  "@name":"e",
+                  "@accessType":"inputOutput",
+                  "@type":"SFFloat",
+                  "@value":5.0
+                },
+                {
+                  "@name":"f",
+                  "@accessType":"inputOutput",
+                  "@type":"SFFloat",
+                  "@value":5.0
+                },
+                {
+                  "@name":"g",
+                  "@accessType":"inputOutput",
+                  "@type":"SFFloat",
+                  "@value":5.0
+                },
+                {
+                  "@name":"h",
+                  "@accessType":"inputOutput",
+                  "@type":"SFFloat",
+                  "@value":5.0
                 }
               ],
               "#sourceCode":[
 "",
 "",
 "ecmascript:",
-"",
-"var e = 5;",
-"var f = 5;",
-"var g = 5;",
-"var h = 5;",
-"",
 "function initialize() {",
 "     var resolution = 100;",
 "     updateCoordinates(resolution);",
@@ -261,7 +291,7 @@
 "\t     cis.push(-1);",
 "\t}",
 "    }",
-"    coordIndexes = new MFInt32(cis);",
+"    coordIndexes = new MFInt32(...cis);",
 "}",
 "",
 "function updateCoordinates(resolution) {",
@@ -281,7 +311,7 @@
 "\t}",
 "\tphi += delta;",
 "     }",
-"     coordinates = new MFVec3f(crds);",
+"     coordinates = new MFVec3f(...crds);",
 "}",
 "",
 "function set_fraction(fraction, eventTime) {",
@@ -299,6 +329,9 @@
 "\tcase 3:",
 "\t\th += Math.floor(Math.random() * 2) * 2 - 1;",
 "\t\tbreak;",
+"\t}",
+"\tif (e < 1) {",
+"\t\te = 10;",
 "\t}",
 "\tif (f < 1) {",
 "\t\tf = 10;",

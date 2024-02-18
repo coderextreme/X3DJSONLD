@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd" ><head><meta name="title" content="bubble.x3d"></meta>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-3.3.xsd" ><head><meta name="title" content="bubble.x3d"></meta>
 <meta name="creator" content="John Carlson"></meta>
 <meta name="description" content="Tour around a prismatic sphere"></meta>
 <meta name="generator" content="X3D-Edit, https://savage.nps.edu/X3D-Edit"></meta>
-<meta name="identifier" content="https://coderextreme.net/X3DJSONLD/bubble.x3d"></meta>
+<meta name="identifier" content="https://coderextreme.net/X3DJSONLD/src/main/data/bubble.x3d"></meta>
 </head>
 <Scene><NavigationInfo type="&quot;EXAMINE&quot;"></NavigationInfo>
 <Viewpoint position="0 0 4" orientation="1 0 0 0" description="Bubble in action"></Viewpoint>
-<ProtoDeclare name="Bubble"><ProtoBody><Transform DEF="transform"><Shape><Sphere containerField="geometry" radius="0.25"></Sphere>
-<Appearance><Material diffuseColor="1 0 0" transparency="0.2"></Material>
+<ProtoDeclare name="Bubble"><ProtoBody><Transform DEF="transform"><Shape><Sphere radius="0.25"></Sphere>
+<Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 0 0" transparency="0.2"></Material>
 </Appearance>
 </Shape>
 <Script DEF="bounce"><field name="scale" accessType="inputOutput" type="SFVec3f" value="1 1 1"></field>

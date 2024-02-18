@@ -14,13 +14,13 @@ ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_
 ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
 var ProtoInstance0 = null;
-      var X3D0 =  (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
+      var X3D0 =  (new autoclass.X3D()).setProfile("Immersive").setVersion("3.3")
       .setHead((new autoclass.head())
         .addMeta((new autoclass.meta()).setName("title").setContent("ViewFrustumExample.x3d"))
         .addMeta((new autoclass.meta()).setName("description").setContent("Display view frustum associated with a given pair of Viewpoint and NavigationInfo nodes, illustrating ProtoInstance reuse of a separately declared prototype."))
         .addMeta((new autoclass.meta()).setName("creator").setContent("Don Brutzman"))
         .addMeta((new autoclass.meta()).setName("translated").setContent("16 August 2008"))
-        .addMeta((new autoclass.meta()).setName("modified").setContent("Sat, 30 Dec 2023 08:00:26 GMT"))
+        .addMeta((new autoclass.meta()).setName("modified").setContent("20 October 2019"))
         .addMeta((new autoclass.meta()).setName("reference").setContent("ViewFrustumPrototype.x3d"))
         .addMeta((new autoclass.meta()).setName("drawing").setContent("ViewFrustumComputation.png"))
         .addMeta((new autoclass.meta()).setName("Image").setContent("ViewFrustumOverheadView.png"))
@@ -28,33 +28,44 @@ var ProtoInstance0 = null;
         .addMeta((new autoclass.meta()).setName("Image").setContent("ViewpointCalculator.png"))
         .addMeta((new autoclass.meta()).setName("Image").setContent("ViewpointCalculatorComposed.png"))
         .addMeta((new autoclass.meta()).setName("subject").setContent("view culling frustum"))
-        .addMeta((new autoclass.meta()).setName("identifier").setContent("http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumExample.x3d")))
+        .addMeta((new autoclass.meta()).setName("identifier").setContent("http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumExample.x3d"))
+        .addMeta((new autoclass.meta()).setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
+        .addMeta((new autoclass.meta()).setName("license").setContent("../license.html")))
       .setScene((new autoclass.Scene())
-        .addChild((new autoclass.ExternProtoDeclare()).setName("ViewFrustum").setUrl(java.newArray("java.lang.String", ["ViewFrustumPrototype.x3d#ViewFrustum"]))
-          .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFNODE).setAccessType(autoclass.field.ACCESSTYPE_INITIALIZEONLY).setName("ViewpointNode"))
-          .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFNODE).setAccessType(autoclass.field.ACCESSTYPE_INITIALIZEONLY).setName("NavigationInfoNode"))
-          .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFBOOL).setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setName("visible"))
-          .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFCOLOR).setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setName("lineColor"))
-          .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFCOLOR).setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setName("frustumColor"))
-          .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFFLOAT).setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setName("transparency"))
-          .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFFLOAT).setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setName("aspectRatio"))
-          .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFBOOL).setAccessType(autoclass.field.ACCESSTYPE_INITIALIZEONLY).setName("trace")))
         .addChild((new autoclass.WorldInfo()).setTitle("ViewFrustumExample.x3d"))
-        .addChild((new autoclass.Viewpoint()).setDescription("ViewFrustum from above, looking down").setPosition(java.newArray("float", [java.newFloat(0f), java.newFloat(40f), java.newFloat(0f)])).setOrientation(java.newArray("float", [java.newFloat(1f), java.newFloat(0f), java.newFloat(0f), java.newFloat(-1.57f)])))
+        .addChild((new autoclass.Viewpoint()).setDescription("ViewFrustum from above, looking down").setOrientation(java.newArray("float", [java.newFloat(1), java.newFloat(0), java.newFloat(0), java.newFloat(-1.57)])).setPosition(java.newArray("float", [java.newFloat(0), java.newFloat(40), java.newFloat(0)])))
         .addChild((new autoclass.Viewpoint()).setDescription("ViewFrustum from point of view"))
-        .addChild((new autoclass.Viewpoint()).setDescription("ViewFrustum behind point of view").setPosition(java.newArray("float", [java.newFloat(0f), java.newFloat(0f), java.newFloat(15f)])))
-        .addChild((new autoclass.Viewpoint()).setDescription("ViewFrustum oblique side view").setPosition(java.newArray("float", [java.newFloat(-5f), java.newFloat(5f), java.newFloat(20f)])).setOrientation(java.newArray("float", [java.newFloat(0.8005f), java.newFloat(0.5926f), java.newFloat(0.0898f), java.newFloat(-0.3743f)])))
+        .addChild((new autoclass.Viewpoint()).setDescription("ViewFrustum behind point of view").setPosition(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(15)])))
+        .addChild((new autoclass.Viewpoint()).setDescription("ViewFrustum oblique side view").setOrientation(java.newArray("float", [java.newFloat(0.8005), java.newFloat(0.5926), java.newFloat(0.0898), java.newFloat(-0.3743)])).setPosition(java.newArray("float", [java.newFloat(-5), java.newFloat(5), java.newFloat(20)])))
         .addChild((new autoclass.NavigationInfo()).setType(java.newArray("java.lang.String", ["EXAMINE","FLY","ANY"])))
+        .addChild((new autoclass.ExternProtoDeclare()).setName("ViewFrustum").setAppinfo("Display view frustum associated with a given pair of Viewpoint NavigationInfo nodes").setUrl(java.newArray("java.lang.String", ["ViewFrustumPrototype.x3d#ViewFrustum"]))
+          .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFNODE).setName("ViewpointNode").setAccessType(autoclass.field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("required: insert Viewpoint DEF or USE node for view of interest"))
+          .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFNODE).setName("NavigationInfoNode").setAccessType(autoclass.field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("required: insert NavigationInfo DEF or USE node of interest"))
+          .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFBOOL).setName("visible").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("whether or not frustum geometry is rendered"))
+          .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFCOLOR).setName("lineColor").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("RGB color of ViewFrustum outline, default value 0.9 0.9 0.9"))
+          .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFCOLOR).setName("frustumColor").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("RGB color of ViewFrustum hull geometry, default value 0.8 0.8 0.8"))
+          .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFFLOAT).setName("transparency").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("transparency of ViewFrustum hull geometry, default value 0.5"))
+          .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFFLOAT).setName("aspectRatio").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("assumed ratio height/width, default value 0.75"))
+          .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFBOOL).setName("trace").setAccessType(autoclass.field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("debug support, default false")))
+        .addComments((new autoclass.CommentsBlock("Example use")))
         .addChild(ProtoInstance0 = (new autoclass.ProtoInstance()).setName("ViewFrustum"))
-        .addChild((new autoclass.Inline()).setDEF("GridXZ").setGlobal(true).setUrl(java.newArray("java.lang.String", ["GridXZ_20x20Fixed.x3d"])))
-        .addChild((new autoclass.Transform()).setScale(java.newArray("float", [java.newFloat(5f), java.newFloat(5f), java.newFloat(5f)]))
-          .addChild((new autoclass.Inline()).setDEF("CoordinateAxes").setGlobal(true).setUrl(java.newArray("java.lang.String", ["CoordinateAxes.x3d"])))))      ;
+        .addComments((new autoclass.CommentsBlock("Visualization assists")))
+        .addChild((new autoclass.Inline()).setDEF("GridXZ").setUrl(java.newArray("java.lang.String", ["GridXZ_20x20Fixed.x3d"])))
+        .addChild((new autoclass.Transform()).setScale(java.newArray("float", [java.newFloat(5), java.newFloat(5), java.newFloat(5)]))
+          .addChild((new autoclass.Inline()).setDEF("CoordinateAxes").setUrl(java.newArray("java.lang.String", ["CoordinateAxes.x3d"])))))      ;
 ProtoInstance0
           .addFieldValue((new autoclass.fieldValue()).setName("ViewpointNode")
-            .addChild((new autoclass.Viewpoint()).setDEF("_1").setDescription("ViewFrustum ViewpointNode")));
+            .addComments((new autoclass.CommentsBlock("prefer empty description to prevent entry in player's ViewpointList")))
+            .addChild((new autoclass.Viewpoint()).setDescription("ViewFrustum ViewpointNode")));
 ProtoInstance0
           .addFieldValue((new autoclass.fieldValue()).setName("NavigationInfoNode")
-            .addChild((new autoclass.NavigationInfo()).setDEF("_2").setVisibilityLimit(java.newFloat(15f))));
+            .addChild((new autoclass.NavigationInfo()).setVisibilityLimit(java.newFloat(15))));
+ProtoInstance0
+          .addFieldValue((new autoclass.fieldValue()).setName("visible").setValue("true"));
+ProtoInstance0
+          .addFieldValue((new autoclass.fieldValue()).setName("lineColor").setValue("0.9 0.9 0.9"));
+ProtoInstance0
+          .addFieldValue((new autoclass.fieldValue()).setName("frustumColor").setValue("0.8 0.8 0.8"));
 ProtoInstance0
           .addFieldValue((new autoclass.fieldValue()).setName("transparency").setValue("0.75"));
 ProtoInstance0

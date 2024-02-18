@@ -3,7 +3,7 @@ void main(int argc, char ** argv) {
 Browser browser = X3D.getBrowser();
 X3D X3D0;
 X3D0.profile = "Interchange";
-X3D0.version = "4.0";
+X3D0.version = "3.3";
 head head1 = createNode("head");
 meta meta2 = createNode("meta");
 meta2.name = "title";
@@ -37,40 +37,45 @@ meta7.name = "license";
 meta7.content = "https://www.web3d.org/x3d/content/examples/license.html";
 head1.meta[5] = meta7;
 
+meta meta8 = createNode("meta");
+meta8.name = "generator";
+meta8.content = "X3D-Edit, https://savage.nps.edu/X3D-Edit";
+head1.meta[6] = meta8;
+
 head = head1;
 
-WorldInfo WorldInfo9 = createNode("WorldInfo");
-WorldInfo9.title = "ifscubeworks.x3d";
+WorldInfo WorldInfo10 = createNode("WorldInfo");
+WorldInfo10.title = "ifscubeworks.x3d";
 children = new MFNode();
 
-children[0] = WorldInfo9;
+children[0] = WorldInfo10;
 
-Group Group10 = createNode("Group");
-Shape Shape11 = createNode("Shape");
-IndexedFaceSet IndexedFaceSet12 = createNode("IndexedFaceSet");
-IndexedFaceSet12.DEF = "IndexedFaceSet";
-IndexedFaceSet12.normalPerVertex = False;
-IndexedFaceSet12.colorIndex = new MFInt32(new int[0,0,0,-1,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1]);
-IndexedFaceSet12.normalIndex = new MFInt32(new int[0,0,1,2,3,4,5]);
-IndexedFaceSet12.coordIndex = new MFInt32(new int[0,0,1,-1,0,1,1,-1,2,2,3,3,-1,0,3,3,0,-1,0,3,2,1,-1,1,2,2,1,-1,1,2,3,0,-1]);
-Color Color13 = createNode("Color");
-Color13.color = new MFColor(new float[0,1,0]);
-IndexedFaceSet12.color = Color13;
+Group Group11 = createNode("Group");
+Shape Shape12 = createNode("Shape");
+IndexedFaceSet IndexedFaceSet13 = createNode("IndexedFaceSet");
+IndexedFaceSet13.DEF = "IndexedFaceSet";
+IndexedFaceSet13.coordIndex = new MFInt32(new int[0,0,1,-1,0,1,1,-1,2,2,3,3,-1,0,3,3,0,-1,0,3,2,1,-1,1,2,2,1,-1,1,2,3,0,-1]);
+IndexedFaceSet13.normalIndex = new MFInt32(new int[0,0,1,2,3,4,5]);
+IndexedFaceSet13.normalPerVertex = False;
+IndexedFaceSet13.colorIndex = new MFInt32(new int[0,0,0,-1,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1]);
+Coordinate Coordinate14 = createNode("Coordinate");
+Coordinate14.point = new MFVec3f(new float[0,0,1,0,1,1,1,1,1,1,0,1]);
+IndexedFaceSet13.coord = Coordinate14;
 
-Normal Normal14 = createNode("Normal");
-Normal14.vector = new MFVec3f(new float[1,0,0,-1,0,0,0,1,0,0,0,-1,0,-1,0,0,0,1]);
-IndexedFaceSet12.normal = Normal14;
+Normal Normal15 = createNode("Normal");
+Normal15.vector = new MFVec3f(new float[1,0,0,-1,0,0,0,1,0,0,0,-1,0,-1,0,0,0,1]);
+IndexedFaceSet13.normal = Normal15;
 
-Coordinate Coordinate15 = createNode("Coordinate");
-Coordinate15.point = new MFVec3f(new float[0,0,1,0,1,1,1,1,1,1,0,1]);
-IndexedFaceSet12.coord = Coordinate15;
+Color Color16 = createNode("Color");
+Color16.color = new MFColor(new float[0,1,0]);
+IndexedFaceSet13.color = Color16;
 
-Shape11.geometry = IndexedFaceSet12;
+Shape12.geometry = IndexedFaceSet13;
 
-Group10.children = new MFNode();
+Group11.children = new MFNode();
 
-Group10.children[0] = Shape11;
+Group11.children[0] = Shape12;
 
-children[1] = Group10;
+children[1] = Group11;
 
 }

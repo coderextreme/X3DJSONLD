@@ -24,11 +24,11 @@ import org.web3d.x3d.jsail.Texturing.*;
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="http://www.web3d.org/x3d/content/examples/HumanoidAnimation/Humanoid4NoSegSite.x3d">Humanoid4NoSegSite.x3d</a> </td>
+			<td> <a href="http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d">JohnBoy.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="http://www.web3d.org/x3d/content/examples/HumanoidAnimation/Humanoid4NoSegSite.x3d" target="_blank">http://www.web3d.org/x3d/content/examples/HumanoidAnimation/Humanoid4NoSegSite.x3d</a> </td>
+			<td> <a href="http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d" target="_blank">http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
@@ -72,7 +72,7 @@ import org.web3d.x3d.jsail.Texturing.*;
 	* @author John Carlson
  */
 
-public class Humanoid4NoSegSite
+import net.coderextreme.X3DRoots;import java.util.List;import java.util.ArrayList;public class Humanoid4NoSegSite implements X3DRoots 
 {
 	/** Default constructor to create this object. */
 	public Humanoid4NoSegSite ()
@@ -87,8 +87,8 @@ public class Humanoid4NoSegSite
   x3dModel = new X3D().setProfile(X3D.PROFILE_IMMERSIVE).setVersion(X3D.VERSION_4_0)
   .setHead(new head()
     .addComponent(new component().setName("HAnim").setLevel(1))
-    .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("Humanoid4NoSegSite.x3d"))
-    .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("http://www.web3d.org/x3d/content/examples/HumanoidAnimation/Humanoid4NoSegSite.x3d"))
+    .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("JohnBoy.x3d"))
+    .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d"))
     .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("An attempt at a standard LOA-4 skeleton"))
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("h2.pl"))
     .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("14 Jan 2023"))
@@ -157,7 +157,7 @@ public class Humanoid4NoSegSite
                         .addChild(new HAnimJoint("hanim_l_tarsal_proximal_interphalangeal_2").setName("l_tarsal_proximal_interphalangeal_2").setCenter(0.0841,0.0041,0.0121).setLlimit(new double[] {0.0,0.0,0.0}).setSkinCoordIndex(new int[] {0}).setSkinCoordWeight(new double[] {0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                           .addChild(new HAnimJoint("hanim_l_tarsal_distal_interphalangeal_2").setName("l_tarsal_distal_interphalangeal_2").setCenter(0.0841,0.0013,0.0216).setLlimit(new double[] {0.0,0.0,0.0}).setSkinCoordIndex(new int[] {0}).setSkinCoordWeight(new double[] {0.0}).setUlimit(new double[] {0.0,0.0,0.0}))))))
                   .addChild(new HAnimJoint("hanim_l_cuneonavicular_3").setName("l_cuneonavicular_3").setCenter(0.0928,0.0248,-0.0821).setLlimit(new double[] {0.0,0.0,0.0}).setSkinCoordIndex(new int[] {0}).setSkinCoordWeight(new double[] {0.0}).setUlimit(new double[] {0.0,0.0,0.0})
-                    .addChild(new HAnimJoint("hanim_l_tarsometatarsal_3").setName("l_tarsometatarsal_3").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
+                    .addChild(new HAnimJoint("hanim_l_tarsometatarsal_3").setName("l_tarsometatarsal_3").setCenter(0.0944,0.0175,-0.0625).setLlimit(new double[] {0.0,0.0,0.0}).setSkinCoordIndex(new int[] {0}).setSkinCoordWeight(new double[] {0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                       .addChild(new HAnimJoint("hanim_l_metatarsophalangeal_3").setName("l_metatarsophalangeal_3").setCenter(0.0963,0.0065,-0.0065).setLlimit(new double[] {0.0,0.0,0.0}).setSkinCoordIndex(new int[] {0}).setSkinCoordWeight(new double[] {0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                         .addChild(new HAnimJoint("hanim_l_tarsal_proximal_interphalangeal_3").setName("l_tarsal_proximal_interphalangeal_3").setCenter(0.0987,0.0034,0.0086).setLlimit(new double[] {0.0,0.0,0.0}).setSkinCoordIndex(new int[] {0}).setSkinCoordWeight(new double[] {0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                           .addChild(new HAnimJoint("hanim_l_tarsal_distal_interphalangeal_3").setName("l_tarsal_distal_interphalangeal_3").setCenter(0.1002,0.0013,0.0178).setLlimit(new double[] {0.0,0.0,0.0}).setSkinCoordIndex(new int[] {0}).setSkinCoordWeight(new double[] {0.0}).setUlimit(new double[] {0.0,0.0,0.0})))))))
@@ -185,7 +185,7 @@ public class Humanoid4NoSegSite
                         .addChild(new HAnimJoint("hanim_r_tarsal_proximal_interphalangeal_2").setName("r_tarsal_proximal_interphalangeal_2").setCenter(-0.0841,0.0041,0.0121).setLlimit(new double[] {0.0,0.0,0.0}).setSkinCoordIndex(new int[] {0}).setSkinCoordWeight(new double[] {0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                           .addChild(new HAnimJoint("hanim_r_tarsal_distal_interphalangeal_2").setName("r_tarsal_distal_interphalangeal_2").setCenter(-0.0841,0.0013,0.0216).setLlimit(new double[] {0.0,0.0,0.0}).setSkinCoordIndex(new int[] {0}).setSkinCoordWeight(new double[] {0.0}).setUlimit(new double[] {0.0,0.0,0.0}))))))
                   .addChild(new HAnimJoint("hanim_r_cuneonavicular_3").setName("r_cuneonavicular_3").setCenter(-0.0928,0.0248,-0.0821).setLlimit(new double[] {0.0,0.0,0.0}).setSkinCoordIndex(new int[] {0}).setSkinCoordWeight(new double[] {0.0}).setUlimit(new double[] {0.0,0.0,0.0})
-                    .addChild(new HAnimJoint("hanim_r_tarsometatarsal_3").setName("r_tarsometatarsal_3").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
+                    .addChild(new HAnimJoint("hanim_r_tarsometatarsal_3").setName("r_tarsometatarsal_3").setCenter(-0.0944,0.0175,-0.0625).setLlimit(new double[] {0.0,0.0,0.0}).setSkinCoordIndex(new int[] {0}).setSkinCoordWeight(new double[] {0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                       .addChild(new HAnimJoint("hanim_r_metatarsophalangeal_3").setName("r_metatarsophalangeal_3").setCenter(-0.0963,0.0065,-0.0065).setLlimit(new double[] {0.0,0.0,0.0}).setSkinCoordIndex(new int[] {0}).setSkinCoordWeight(new double[] {0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                         .addChild(new HAnimJoint("hanim_r_tarsal_proximal_interphalangeal_3").setName("r_tarsal_proximal_interphalangeal_3").setCenter(-0.0987,0.0034,0.0086).setLlimit(new double[] {0.0,0.0,0.0}).setSkinCoordIndex(new int[] {0}).setSkinCoordWeight(new double[] {0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                           .addChild(new HAnimJoint("hanim_r_tarsal_distal_interphalangeal_3").setName("r_tarsal_distal_interphalangeal_3").setCenter(-0.1002,0.0013,0.0178).setLlimit(new double[] {0.0,0.0,0.0}).setSkinCoordIndex(new int[] {0}).setSkinCoordWeight(new double[] {0.0}).setUlimit(new double[] {0.0,0.0,0.0})))))))
@@ -586,6 +586,11 @@ public class Humanoid4NoSegSite
 	{	  
 		return x3dModel;
 	}
+	public List<X3D> getRootNodeList() {
+		List<X3D> list = new ArrayList<X3D>(1);
+		list.add(x3dModel);
+		return list;
+	}
 	   
     /** 
      * Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
@@ -598,7 +603,7 @@ public class Humanoid4NoSegSite
      */
     public static void main(String args[])
     {
-        System.out.println("Build this X3D model, showing diagnostics...");
+        System.out.println("Build this X3D model, showing validation diagnostics...");
         X3D thisExampleX3dModel = new Humanoid4NoSegSite().getX3dModel();
 //      System.out.println("X3D model construction complete.");
 	

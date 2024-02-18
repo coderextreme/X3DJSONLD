@@ -59,7 +59,7 @@ CProtoDeclare ProtoDeclare10 = browser.createX3DFromString(R"foo(<?xml version="
 <ProtoBody><Transform DEF="transform"><IS><connect nodeField="translation" protoField="position"></connect>
 </IS>
 <Shape><!--comment before Sphere--><!--comment after Sphere--><!--comment after Appearance--><Sphere></Sphere>
-<Appearance><!--comment before Material--><!--comment after Material--><Material diffuseColor="1 0 0"></Material>
+<Appearance containerField="appearance"><!--comment before Material--><!--comment after Material--><Material containerField="material" diffuseColor="1 0 0"></Material>
 </Appearance>
 </Shape>
 </Transform>
@@ -208,11 +208,11 @@ group->addChildren(*ProtoDeclare10);
 
 CProtoDeclare ProtoDeclare32 = browser.createX3DFromString(R"foo(<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
-<ProtoDeclare name="cylinder" ><ProtoInterface><field name="positionA" accessType="inputOnly" type="SFVec3f"></field>
+<ProtoDeclare name="cyl" ><ProtoInterface><field name="positionA" accessType="inputOnly" type="SFVec3f"></field>
 <field name="positionB" accessType="inputOnly" type="SFVec3f"></field>
 </ProtoInterface>
 <ProtoBody><Shape><Extrusion DEF="extrusion" creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0" spine="0 -50 0 0 0 0 0 50 0"></Extrusion>
-<Appearance><Material diffuseColor="0 1 0"></Material>
+<Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 1 0"></Material>
 </Appearance>
 </Shape>
 <Script DEF="MoveCylinder"><field name="spine" accessType="inputOutput" type="MFVec3f" value="0 -50 0 0 0 0 0 50 0"></field>
@@ -246,7 +246,7 @@ CProtoDeclare ProtoDeclare32 = browser.createX3DFromString(R"foo(<?xml version="
 <ROUTE fromNode="MoveCylinder" fromField="spine" toNode="extrusion" toField="set_spine"></ROUTE>
 </ProtoBody>
 </ProtoDeclare>)foo");
-ProtoDeclare32->setName("cylinder");
+ProtoDeclare32->setName("cyl");
 CProtoInterface* ProtoInterface33 = new CProtoInterface();
 Cfield* field34 = new Cfield();
 field34->setName("positionA");
@@ -373,7 +373,7 @@ ProtoInstance52->addFieldValue(*fieldValue53);
 Transform49->addChildren(*ProtoInstance52);
 
 CProtoInstance* ProtoInstance54 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
-ProtoInstance54->setName("cylinder");
+ProtoInstance54->setName("cyl");
 ProtoInstance54->setDEF("linkA");
 CfieldValue* fieldValue55 = new CfieldValue();
 fieldValue55->setName("positionA");

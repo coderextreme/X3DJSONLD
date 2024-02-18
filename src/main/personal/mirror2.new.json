@@ -7,6 +7,14 @@
     "head": {
         "component": [
           {
+            "@name":"Scripting",
+            "@level":1
+          },
+          {
+            "@name":"EnvironmentalEffects",
+            "@level":3
+          },
+          {
             "@name":"Shaders",
             "@level":1
           },
@@ -29,6 +37,10 @@
           {
             "@name":"Grouping",
             "@level":3
+          },
+          {
+            "@name":"Core",
+            "@level":1
           }
         ],
         "meta": [
@@ -46,7 +58,7 @@
           },
           {
             "@name":"identifier",
-            "@content":"https://coderextreme.net/X3DJSONLD/src/main/personal/mirror2.x3d"
+            "@content":"https://coderextreme.net/X3DJSONLD/src/main/data/mirror2.x3d"
           },
           {
             "@name":"description",
@@ -54,7 +66,7 @@
           },
           {
             "@name":"translated",
-            "@content":"27 October 2023"
+            "@content":"18 February 2024"
           },
           {
             "@name":"generator",

@@ -7,7 +7,7 @@ X3D0.version = "3.3";
 head head1 = createNode("head");
 meta meta2 = createNode("meta");
 meta2.name = "title";
-meta2.content = "x3dconnectorProto";
+meta2.content = "x3dconnectorProto.x3d";
 head1.meta = new MFNode();
 
 head1.meta[0] = meta2;
@@ -306,11 +306,11 @@ ProtoDeclare ProtoDeclare60 = browser.createX3DFromString(`<?xml version="1.0" e
 	    if (typeof endpoint === 'undefined') {
 		return;
 	    }
-            let dif = endpoint.subtract(startpoint);
-            let dist = dif.length()*0.5;
-            let dif2 = dif.multiply(0.5);
-            let norm = dif.normalize();
-            let transl = startpoint.add(dif2);
+            var dif = endpoint.subtract(startpoint);
+            var dist = dif.length()*0.5;
+            var dif2 = dif.multiply(0.5);
+            var norm = dif.normalize();
+            var transl = startpoint.add(dif2);
 	    if (typeof Quaternion !== 'undefined') {
 		    return {
 			    scale : new SFVec3f(1.0,dist,1.0),
@@ -326,7 +326,7 @@ ProtoDeclare ProtoDeclare60 = browser.createX3DFromString(`<?xml version="1.0" e
 	    }
 	}
 	function recompute_and_route(startpoint, endpoint) {
-	      let trafo = recompute(startpoint, endpoint);
+	      var trafo = recompute(startpoint, endpoint);
 	      if (trafo) {
 		      transnode.translation = trafo.translation;
 		      rotscalenode.rotation = trafo.rotation;
@@ -469,11 +469,11 @@ Script69.setSourceCode(`ecmascript:\n"+
 "	    if (typeof endpoint === 'undefined') {\n"+
 "		return;\n"+
 "	    }\n"+
-"            let dif = endpoint.subtract(startpoint);\n"+
-"            let dist = dif.length()*0.5;\n"+
-"            let dif2 = dif.multiply(0.5);\n"+
-"            let norm = dif.normalize();\n"+
-"            let transl = startpoint.add(dif2);\n"+
+"            var dif = endpoint.subtract(startpoint);\n"+
+"            var dist = dif.length()*0.5;\n"+
+"            var dif2 = dif.multiply(0.5);\n"+
+"            var norm = dif.normalize();\n"+
+"            var transl = startpoint.add(dif2);\n"+
 "	    if (typeof Quaternion !== 'undefined') {\n"+
 "		    return {\n"+
 "			    scale : new SFVec3f(1.0,dist,1.0),\n"+
@@ -489,7 +489,7 @@ Script69.setSourceCode(`ecmascript:\n"+
 "	    }\n"+
 "	}\n"+
 "	function recompute_and_route(startpoint, endpoint) {\n"+
-"	      let trafo = recompute(startpoint, endpoint);\n"+
+"	      var trafo = recompute(startpoint, endpoint);\n"+
 "	      if (trafo) {\n"+
 "		      transnode.translation = trafo.translation;\n"+
 "		      rotscalenode.rotation = trafo.rotation;\n"+

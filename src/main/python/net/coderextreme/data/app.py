@@ -5,17 +5,17 @@ print("-->")
 import json
 model = (
 X3D(profile="Immersive", version="4.0", 
-head=head(
+head=Pyhead(
 children=[
-meta(name="title", content="app.x3d"),
-meta(name="creator", content="Carlson, I"),
-meta(name="creator", content="Carlson, II"),
-meta(name="creator", content="Carlson, III"),
-meta(name="translated", content="02 September 2023"),
-meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
-meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
+Pymeta(name="title", content="app.x3d"),
+Pymeta(name="creator", content="Carlson, I"),
+Pymeta(name="creator", content="Carlson, II"),
+Pymeta(name="creator", content="Carlson, III"),
+Pymeta(name="translated", content="30 December 2023"),
+Pymeta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
+Pymeta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
-Scene=Scene(children=[
+Scene=PyScene(children=[
 Group(children=[
 Shape(
 appearance=

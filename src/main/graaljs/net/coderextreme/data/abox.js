@@ -4,6 +4,10 @@ ConfigurationProperties.showDefaultAttributes = false;
 ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;
 ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
+function doubleToFloat(d) {
+    if (Float32Array)
+	return new Float32Array([d])[0];
+}
 var ProtoInstance0 = null;
 var ProtoInstance1 = null;
       var X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
@@ -37,6 +41,6 @@ var ProtoInstance1 = null;
 ProtoInstance1
           .addFieldValue(new fieldValue().setName("myShape")
             .addChild(new Shape()
-              .setGeometry(new Box().setSize(Java.to([140,140,140], Java.type("double[]"))))));
+              .setGeometry(new Box().setSize(Java.to([doubleToFloat(140),doubleToFloat(140),doubleToFloat(140)], Java.type("float[]"))))));
     X3D0.toFileX3D("../data/abox.new.graal.x3d");
     X3D0.toFileJSON("../data/abox.new.graal.json");

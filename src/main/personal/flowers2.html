@@ -1,0 +1,908 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/TR/xhtml1/strict"
+       xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
+       xmlns:saxon="http://icl.com/saxon">
+   <head>
+      <title>flowers2.x3d (X3dToXhtml listing)</title>
+      <!-- I18N -->
+      <meta http-equiv="X-UA-Compatible" content="chrome=1,IE=edge"/>
+      <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+      <style type="text/css">
+span.element   {color: navy}
+span.attribute {color: green}
+span.value     {color: teal}
+span.plain     {color: black}
+span.gray      {color: gray}
+span.idName    {color: maroon}
+span.addedDocumentation {background-color:#EEEEEE;} /* slightly darker for html page contrast */
+span.behaviorNode       {background-color:#DDEEFF;} /*      light blue for html page contrast */
+span.extensibilityNode  {background-color:#FFEEFF;} /*    lighter blue for html page contrast */
+a.idName {color: maroon}
+div.boxedBlock          {border: 1px solid grey;  }
+div.center {text-align: center}
+div.indented {margin-left: 25px}
+
+span.prototype {color: purple}
+a.prototype {color: purple}
+a.prototype:visited {color: black}
+span.route {color: red}
+b.warning {color: #CC5500}
+b.error {color: #CC0000}
+
+/* https://stackoverflow.com/questions/10769016/display-image-on-text-link-hover-css-only 
+    position: relative;
+    left: 20px;*/
+.child {
+    float: right;
+    height: 0px;
+}
+.parent:hover {
+    background-color: lightyellow;
+}
+.parent:hover .child {
+    background-color: lightyellow;
+    height: 200px;
+}
+
+                </style>
+      <style type="text/css">
+table.curvedEdges { border:10px solid RoyalBlue;-webkit-border-radius:13px;-moz-border-radius:13px;-ms-border-radius:13px;-o-border-radius:13px;border-radius:13px; }
+table.curvedEdges td, table.curvedEdges th { border-bottom:1px dotted black;padding:5px; }
+</style>
+      <meta name="generator" content="XSLT processor Saxonica"/>
+      <meta name="generator"
+             content="https://www.web3d.org/x3d/stylesheets/X3dToXhtml.xslt"/>
+      <meta name="generator"
+             content="https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/X3dToXhtml.xslt"/>
+      <link rel="shortcut icon"
+             href="https://www.web3d.org/x3d/content/icons/X3DtextIcon16.png"
+             title="X3D"/>
+   </head>
+   <body>
+      <code title="XML declaration">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</code>
+      <br/>
+      <code title="Document Type Declaration (DTD) for X3D validation">&lt;!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.0//EN" "<a href="https://www.web3d.org/specifications/x3d-3.0.dtd">https://www.web3d.org/specifications/x3d-3.0.dtd</a>"&gt;</code>
+      <div>
+<span title="X3D is the top-most XML element for an Extensible 3D (X3D) Graphics file">&lt;<span class="element">X3D</span>&#160;<span title="X3D Immersive Profile supports most nodes, similar to VRML97"><span class="attribute">profile</span>='<span class="value">Immersive</span>'</span>
+&#160;<span class="attribute">version</span>='<span class="value">3.0</span>'&#160;<span title="XML namespace for X3D Graphics schema validation"><span title="XML namespace for XML Schema validation">
+            <span class="attribute">xmlns:xsd</span>='<a href="http://www.w3.org/2001/XMLSchema-instance" target="_blank">http://www.w3.org/2001/XMLSchema-instance</a>'
+</span>
+         <span title="XML namespace for X3D Graphics schema validation">
+            <span class="attribute">xsd:noNamespaceSchemaLocation</span>
+         </span>='
+<a href="https://www.web3d.org/specifications/x3d-3.0.xsd" target="_blank">https://www.web3d.org/specifications/x3d-3.0.xsd</a>
+'</span>
+&gt;
+</span>
+<div class="indented">
+<span title="head can contain component, unit, and author-defined metadata (meta) tags">&lt;<span class="element">head</span>&gt;
+</span>
+<div class="indented">
+<span title="X3D component name and level indicate any additional scene functionality needed above the given X3D profile">&lt;<span class="element">component</span>&#160;<span class="attribute">level</span>='<span class="value">1</span>'&#160;<span class="attribute">name</span>='<span class="value">Scripting</span>'/&gt;
+</span><br />
+
+<span title="meta 'title' provides file name for this resource">&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">title</span>'&#160;<span class="attribute">content</span>='<a href="flowers2.x3d">flowers2.x3d</a>'/&gt;
+</span><br />
+
+<span title="meta 'creator' provides name of original author">&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">creator</span>'&#160;<span class="attribute">content</span>='<span class="value">John Carlson</span>'/&gt;
+</span><br />
+
+<span title="author-defined metadata">&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">transcriber</span>'&#160;<span class="attribute">content</span>='<span class="value">John Carlson</span>'/&gt;
+</span><br />
+
+<span title="meta 'created' provides date of initial version">&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">created</span>'&#160;<span class="attribute">content</span>='<span class="value">23 January 2005</span>'/&gt;
+</span><br />
+
+<span title="meta 'modified' provides date of modified version">&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">modified</span>'&#160;<span class="attribute">content</span>='<span class="value">21 March 2018</span>'/&gt;
+</span><br />
+
+<span title="meta 'description' provides summary overview describing this resource">&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">description</span>'&#160;<span class="attribute">content</span>='<span class="plain">2 random mathematical roses in spherical dimensions. rho = a + b * cos(c * theta) * cos(d * phi)</span>'/&gt;
+</span><br />
+
+<span title="meta 'identifier' provides the unique Uniform Resource Identifier (URI) or url address for this resource">&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">identifier</span>'&#160;<span class="attribute">content</span>='
+<a href="https://coderextreme.net/X3DJSONLD/src/main/data/flowers2.x3d"
+                   target="_blank">https://coderextreme.net/X3DJSONLD/src/main/data/flowers2.x3d</a>
+'/&gt;
+</span><br />
+
+<span title="meta 'generator' provides name of authoring tool or translation tool producing this scene">&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">generator</span>'&#160;<span class="attribute">content</span>='<span class="value">manually written</span>'/&gt;
+</span><br />
+
+<span title="meta 'license' provides software license link or information">&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">license</span>'&#160;<span class="attribute">content</span>='
+<a href="https://www.web3d.org/x3d/content/examples/license.html"
+                   target="_blank">https://www.web3d.org/x3d/content/examples/license.html</a>
+'/&gt;
+</span></div><span title="head can contain component, unit, and author-defined metadata (meta) tags">&lt;/<span class="element">head</span>&gt;
+</span>
+<br /><span style="color:white">&lt;!--</span>
+            <div class="center">
+               <hr style="width:100%"/>
+               <b>
+                  <i>Index for ProtoDeclare definition: </i>
+               </b>
+               <a title="go to this declaration"
+                   href="#ProtoDeclare_orbit"
+                   class="prototype">orbit</a>
+<br /><hr width="25%"/>
+               <b>
+                  <i>Index for DEF nodes: </i>
+               </b>
+               <a title="go to this TimeSensor node" href="#Clock" class="idName">Clock</a>,
+<a title="go to this IndexedFaceSet node" href="#Orbit" class="idName">Orbit</a>,
+<a title="go to this Coordinate node"
+                   href="#OrbitCoordinates"
+                   class="idName">OrbitCoordinates</a>,
+<a title="go to this OrientationInterpolator node"
+                   href="#OrbitPath"
+                   class="idName">OrbitPath</a>,
+<a title="go to this Script node" href="#OrbitScript" class="idName">OrbitScript</a>,
+<a title="go to this Transform node"
+                   href="#OrbitTransform"
+                   class="idName">OrbitTransform</a> and <a title="Event Graph ROUTE Table shows event connections"
+                   href="#EventGraph">Event&#160;Graph ROUTE&#160;Table</a>
+               <hr style="width:100%"/>
+            </div>
+            <span style="color:white">--&gt;</span>
+<br />
+
+<span title="Scene is the root node that contains an X3D scene graph">&lt;<span class="element">Scene</span>&gt;
+</span>
+<div class="indented">
+<span title="NavigationInfo describes the viewing model and physical characteristics of the viewer's avatar">&lt;<span class="element">NavigationInfo</span>/&gt;
+</span><br />
+<a name="Viewpoint_1"> </a> 
+<span title="Viewpoint provides a specific location and direction where the user may view the scene">&lt;<span class="element">Viewpoint</span>&#160;<span class="attribute">description</span>='<span class="value">Two mathematical orbitals</span>'&#160;<span class="attribute">position</span>='<span class="value">0 0 50</span>'/&gt;
+</span><br />
+
+<span title="Group is a Grouping node that can contain most nodes">&lt;<span class="element">Group</span>&gt;
+</span>
+<div class="indented">
+<span title="DirectionalLight creates parallel light rays to illuminate geometric shapes">&lt;<span class="element">DirectionalLight</span>&#160;<span class="attribute">direction</span>='<span class="value">1 1 1</span>'/&gt;
+</span><br />
+<a name="ProtoDeclare_orbit"> </a> 
+<span title="ProtoDeclare is a Prototype declaration, defining a new node made up of other node(s)" style="background-color:#FFEEFF;">&lt;<span class="prototype">ProtoDeclare</span>&#160;<span class="attribute">name</span>='<span class="prototype">orbit</span>'&gt;
+</span>
+<div class="indented">
+<span title="ProtoInterface is first statement inside a ProtoDeclare statement and holds field definitions" style="background-color:#FFEEFF;">&lt;<span class="prototype">ProtoInterface</span>&gt;
+</span>
+<div class="indented">
+                        <a name="orbitProtoField_translation"> </a> 
+<span title="A field element defines an interface attribute or node" style="background-color:#FFEEFF;">&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">translation</span>'&#160;<span class="attribute">type</span>='<span class="value">SFVec3f</span>'&#160;<span class="attribute">value</span>='<span class="value">-8 0 0</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'/&gt;
+</span><br />
+<a name="orbitProtoField_diffuseColor"> </a> 
+<span title="A field element defines an interface attribute or node" style="background-color:#FFEEFF;">&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">diffuseColor</span>'&#160;<span class="attribute">type</span>='<span class="value">SFColor</span>'&#160;<span class="attribute">value</span>='<span class="value">1 0.5 0</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'/&gt;
+</span><br />
+<a name="orbitProtoField_specularColor"> </a> 
+<span title="A field element defines an interface attribute or node" style="background-color:#FFEEFF;">&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">specularColor</span>'&#160;<span class="attribute">type</span>='<span class="value">SFColor</span>'&#160;<span class="attribute">value</span>='<span class="value">1 0.5 0</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'/&gt;
+</span><br />
+<a name="orbitProtoField_transparency"> </a> 
+<span title="A field element defines an interface attribute or node" style="background-color:#FFEEFF;">&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">transparency</span>'&#160;<span class="attribute">type</span>='<span class="value">SFFloat</span>'&#160;<span class="attribute">value</span>='<span class="value">0.75</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'/&gt;
+</span></div><span title="ProtoInterface is first statement inside a ProtoDeclare statement and holds field definitions" style="background-color:#FFEEFF;">&lt;/<span class="prototype">ProtoInterface</span>&gt;
+</span>
+<br />
+
+<span title="Initial scene node in ProtoDeclare/ProtoBody statement determines this prototype's node type" style="background-color:#FFEEFF;">&lt;<span class="prototype">ProtoBody</span>&gt;
+</span>
+<div class="indented">
+<span title="Group is a Grouping node that can contain most nodes">&lt;<span class="element">Group</span>&gt;
+</span>
+<div class="indented">
+                           <a name="Clock"> </a> 
+<div class="boxedBlock">
+<span style="background-color:#EEEEEE;" title="inserted documentation about ROUTE connections">&lt;!-- <i>ROUTE</i> information for <span class="idName">Clock</span> node:&#160;
+[<a title="go to this ROUTE" href="#ROUTE_3"><i>from</i>&#160;<span class="attribute">fraction_changed</span>&#160;<i>to</i>&#160;<span class="idName">OrbitScript</span>.<span class="attribute">set_fraction</span>
+                           </a>]
+[<a title="go to this ROUTE" href="#ROUTE_5"><i>from</i>&#160;<span class="attribute">fraction_changed</span>&#160;<i>to</i>&#160;<span class="idName">OrbitPath</span>.<span class="attribute">set_fraction</span>
+                           </a>]
+ --&gt;<br /></span>
+<span title="TimeSensor continuously generates events as time passes" style="background-color:#DDEEFF;">&lt;<span class="element">TimeSensor</span>&#160;<span class="attribute">DEF</span>='<a title="bookmark link to Clock" href="#Clock" class="idName">Clock</a>'&#160;<span class="attribute">cycleInterval</span>='<span class="value">16</span>'&#160;<span class="attribute">loop</span>='<span class="value">true</span>'/&gt;
+</span></div><!--div.boxedBlock-->
+<br />
+<a name="OrbitPath"> </a> 
+<div class="boxedBlock">
+<span style="background-color:#EEEEEE;" title="inserted documentation about ROUTE connections">&lt;!-- <i>ROUTE</i> information for <span class="idName">OrbitPath</span> node:&#160;
+[<a title="go to this ROUTE" href="#ROUTE_5"><i>from</i>&#160;<span class="idName">Clock</span>.<span class="attribute">fraction_changed</span>&#160;<i>to</i>&#160;<span class="attribute">set_fraction</span>
+                           </a>]
+[<a title="go to this ROUTE" href="#ROUTE_4"><i>from</i>&#160;<span class="attribute">value_changed</span>&#160;<i>to</i>&#160;<span class="idName">OrbitTransform</span>.<span class="attribute">rotation</span>
+                           </a>]
+ --&gt;<br /></span>
+<span title="Interpolator nodes output event values using piecewise-linear function definitions" style="background-color:#DDEEFF;">&lt;<span class="element">OrientationInterpolator</span>&#160;<span class="attribute">DEF</span>='<a title="bookmark link to OrbitPath" href="#OrbitPath" class="idName">OrbitPath</a>'&#160;<span class="attribute">key</span>='<span class="value">0.0 0.50 1.0</span>'&#160;<span class="attribute">keyValue</span>='<span class="value">1.0 0.0 0.0 0.0 1.0 0.0 0.0 3.14 1.0 0.0 0.0 6.28</span>'/&gt;
+</span></div><!--div.boxedBlock-->
+<br />
+<a name="OrbitTransform"> </a> 
+<div class="boxedBlock">
+<span style="background-color:#EEEEEE;" title="inserted documentation about ROUTE connections">&lt;!-- <i>ROUTE</i> information for <span class="idName">OrbitTransform</span> node:&#160;
+[<a title="go to this ROUTE" href="#ROUTE_4"><i>from</i>&#160;<span class="idName">OrbitPath</span>.<span class="attribute">value_changed</span>&#160;<i>to</i>&#160;<span class="attribute">rotation</span>
+                           </a>]
+ --&gt;<br /></span>
+<span title="Transform translates, orients and scales child geometry within the local world coordinate system">&lt;<span class="element">Transform</span>&#160;<span class="attribute">DEF</span>='<a title="bookmark link to OrbitTransform"
+                               href="#OrbitTransform"
+                               class="idName">OrbitTransform</a>'&gt;
+</span>
+
+</div><!--div.boxedBlock-->
+<div class="indented">
+<span title="IS connects ProtoDeclare interface fields to node fields inside ProtoDeclare definitions" style="background-color:#FFEEFF;">&lt;<span class="element">IS</span>&gt;
+</span>
+<div class="indented">
+<span title="connect tags define each ProtoDeclare field connection within ProtoDeclare definitions" style="background-color:#FFEEFF;">&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype"
+                                        title="connect interface events to this field in given node">translation</span>'&#160;<span class="attribute">protoField</span>='<span title="field interface connecting events into the prototype interior"><span class="prototype"><a title="go to the protoField definition"
+                                        href="#orbitProtoField_translation"
+                                        class="prototype">translation</a></span></span>'/&gt;
+</span></div><span title="IS connects ProtoDeclare interface fields to node fields inside ProtoDeclare definitions" style="background-color:#FFEEFF;">&lt;/<span class="element">IS</span>&gt;
+</span>
+<br />
+
+<span title="Shape contains geometry and optional corresponding Appearance">&lt;<span class="element">Shape</span>&gt;
+</span>
+<div class="indented">
+<span title="Appearance specifies visual properties of geometry by containing Material, texture and TextureTransform nodes">&lt;<span class="element">Appearance</span>&gt;
+</span>
+<div class="indented">
+<span title="Material specifies surface rendering properties for associated geometry">&lt;<span class="element">Material</span>&gt;
+</span>
+<div class="indented">
+<span title="IS connects ProtoDeclare interface fields to node fields inside ProtoDeclare definitions" style="background-color:#FFEEFF;">&lt;<span class="element">IS</span>&gt;
+</span>
+<div class="indented">
+<span title="connect tags define each ProtoDeclare field connection within ProtoDeclare definitions" style="background-color:#FFEEFF;">&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype"
+                                                 title="connect interface events to this field in given node">diffuseColor</span>'&#160;<span class="attribute">protoField</span>='<span title="field interface connecting events into the prototype interior"><span class="prototype"><a title="go to the protoField definition"
+                                                 href="#orbitProtoField_diffuseColor"
+                                                 class="prototype">diffuseColor</a></span></span>'/&gt;
+</span><br />
+
+<span title="connect tags define each ProtoDeclare field connection within ProtoDeclare definitions" style="background-color:#FFEEFF;">&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype"
+                                                 title="connect interface events to this field in given node">specularColor</span>'&#160;<span class="attribute">protoField</span>='<span title="field interface connecting events into the prototype interior"><span class="prototype"><a title="go to the protoField definition"
+                                                 href="#orbitProtoField_specularColor"
+                                                 class="prototype">specularColor</a></span></span>'/&gt;
+</span><br />
+
+<span title="connect tags define each ProtoDeclare field connection within ProtoDeclare definitions" style="background-color:#FFEEFF;">&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype"
+                                                 title="connect interface events to this field in given node">transparency</span>'&#160;<span class="attribute">protoField</span>='<span title="field interface connecting events into the prototype interior"><span class="prototype"><a title="go to the protoField definition"
+                                                 href="#orbitProtoField_transparency"
+                                                 class="prototype">transparency</a></span></span>'/&gt;
+</span></div><span title="IS connects ProtoDeclare interface fields to node fields inside ProtoDeclare definitions" style="background-color:#FFEEFF;">&lt;/<span class="element">IS</span>&gt;
+</span>
+</div><span title="Material specifies surface rendering properties for associated geometry">&lt;/<span class="element">Material</span>&gt;
+</span>
+</div><span title="Appearance specifies visual properties of geometry by containing Material, texture and TextureTransform nodes">&lt;/<span class="element">Appearance</span>&gt;
+</span>
+<br /><span title="XML comment">&lt;!--  &lt;IndexedFaceSet  DEF="Orbit" <br /> creaseAngle="0"&gt;  &lt;Coordinate  DEF="OrbitCoordinates"/&gt;  &lt;/IndexedFaceSet&gt;  here!!! --&gt;</span>
+<br />
+<a name="Orbit"> </a> 
+<div class="boxedBlock">
+<span style="background-color:#EEEEEE;" title="inserted documentation about ROUTE connections">&lt;!-- <i>ROUTE</i> information for <span class="idName">Orbit</span> node:&#160;
+[<a title="go to this ROUTE" href="#ROUTE_1"><i>from</i>&#160;<span class="idName">OrbitScript</span>.<span class="attribute">coordIndexes</span>&#160;<i>to</i>&#160;<span class="attribute">set_coordIndex</span>
+                                 </a>]
+ --&gt;<br /></span>
+<span title="IndexedFaceSet is a geometry node">&lt;<span class="element">IndexedFaceSet</span>&#160;<span class="attribute">DEF</span>='<a title="bookmark link to Orbit" href="#Orbit" class="idName">Orbit</a>'&#160;<span class="attribute">ccw</span>='<span class="value">false</span>'&#160;<span class="attribute">convex</span>='<span class="value">false</span>'&#160;<span class="attribute">coordIndex</span>='<span class="value">0 1 2 -1</span>'&gt;
+</span>
+
+</div><!--div.boxedBlock-->
+<div class="indented">
+                                    <a name="OrbitCoordinates"> </a> 
+<div class="boxedBlock">
+<span style="background-color:#EEEEEE;" title="inserted documentation about ROUTE connections">&lt;!-- <i>ROUTE</i> information for <span class="idName">OrbitCoordinates</span> node:&#160;
+[<a title="go to this ROUTE" href="#ROUTE_2"><i>from</i>&#160;<span class="idName">OrbitScript</span>.<span class="attribute">coordinates</span>&#160;<i>to</i>&#160;<span class="attribute">point</span>
+                                    </a>]
+ --&gt;<br /></span>
+<span title="Coordinate defines a set of 3D coordinate triplet values">&lt;<span class="element">Coordinate</span>&#160;<span class="attribute">DEF</span>='<a title="bookmark link to OrbitCoordinates"
+                                        href="#OrbitCoordinates"
+                                        class="idName">OrbitCoordinates</a>'&#160;<span class="attribute">point</span>='<span class="value">0 0 1 0 1 0 1 0 0</span>'/&gt;
+</span></div><!--div.boxedBlock-->
+</div><span title="IndexedFaceSet is a geometry node">&lt;/<span class="element">IndexedFaceSet</span>&gt;
+</span>
+</div><span title="Shape contains geometry and optional corresponding Appearance">&lt;/<span class="element">Shape</span>&gt;
+</span>
+</div><span title="Transform translates, orients and scales child geometry within the local world coordinate system">&lt;/<span class="element">Transform</span>&gt;
+</span>
+<br />
+<a name="OrbitScript"> </a> 
+<div class="boxedBlock">
+<span style="background-color:#EEEEEE;" title="inserted documentation about ROUTE connections">&lt;!-- <i>ROUTE</i> information for <span class="idName">OrbitScript</span> node:&#160;
+[<a title="go to this ROUTE" href="#ROUTE_3"><i>from</i>&#160;<span class="idName">Clock</span>.<span class="attribute">fraction_changed</span>&#160;<i>to</i>&#160;<span class="attribute">set_fraction</span>
+                           </a>]
+[<a title="go to this ROUTE" href="#ROUTE_1"><i>from</i>&#160;<span class="attribute">coordIndexes</span>&#160;<i>to</i>&#160;<span class="idName">Orbit</span>.<span class="attribute">set_coordIndex</span>
+                           </a>]
+[<a title="go to this ROUTE" href="#ROUTE_2"><i>from</i>&#160;<span class="attribute">coordinates</span>&#160;<i>to</i>&#160;<span class="idName">OrbitCoordinates</span>.<span class="attribute">point</span>
+                           </a>]
+ --&gt;<br /></span>
+<span title="Script contains author-programmed event behaviors for a scene" style="background-color:#DDEEFF;">&lt;<span class="element">Script</span>&#160;<span class="attribute">DEF</span>='<a title="bookmark link to OrbitScript"
+                               href="#OrbitScript"
+                               class="idName">OrbitScript</a>'&gt;
+</span>
+
+</div><!--div.boxedBlock-->
+<div class="indented">
+<span title="A field element defines an interface attribute or node for a parent Script" style="background-color:#DDEEFF;">&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">set_fraction</span>'&#160;<span class="attribute">type</span>='<span class="value">SFFloat</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOnly</span>'/&gt;
+</span><br />
+
+<span title="A field element defines an interface attribute or node for a parent Script" style="background-color:#DDEEFF;">&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">coordinates</span>'&#160;<span class="attribute">type</span>='<span class="value">MFVec3f</span>'&#160;<span class="attribute">accessType</span>='<span class="value">outputOnly</span>'/&gt;
+</span><br />
+
+<span title="A field element defines an interface attribute or node for a parent Script" style="background-color:#DDEEFF;">&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">coordIndexes</span>'&#160;<span class="attribute">type</span>='<span class="value">MFInt32</span>'&#160;<span class="attribute">accessType</span>='<span class="value">outputOnly</span>'/&gt;
+</span><br />
+
+<span title="A field element defines an interface attribute or node for a parent Script" style="background-color:#DDEEFF;">&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">e</span>'&#160;<span class="attribute">type</span>='<span class="value">SFFloat</span>'&#160;<span class="attribute">value</span>='<span class="value">5</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'/&gt;
+</span><br />
+
+<span title="A field element defines an interface attribute or node for a parent Script" style="background-color:#DDEEFF;">&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">f</span>'&#160;<span class="attribute">type</span>='<span class="value">SFFloat</span>'&#160;<span class="attribute">value</span>='<span class="value">5</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'/&gt;
+</span><br />
+
+<span title="A field element defines an interface attribute or node for a parent Script" style="background-color:#DDEEFF;">&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">g</span>'&#160;<span class="attribute">type</span>='<span class="value">SFFloat</span>'&#160;<span class="attribute">value</span>='<span class="value">5</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'/&gt;
+</span><br />
+
+<span title="A field element defines an interface attribute or node for a parent Script" style="background-color:#DDEEFF;">&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">h</span>'&#160;<span class="attribute">type</span>='<span class="value">SFFloat</span>'&#160;<span class="attribute">value</span>='<span class="value">5</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'/&gt;
+</span><br />
+
+<span title="A field element defines an interface attribute or node for a parent Script" style="background-color:#DDEEFF;">&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">resolution</span>'&#160;<span class="attribute">type</span>='<span class="value">SFInt32</span>'&#160;<span class="attribute">value</span>='<span class="value">50</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'/&gt;
+</span><br />
+</div class="indented">
+</div class="indented">
+</div class="indented">
+</div class="indented">
+</div class="indented">
+</div class="indented">
+<code>
+                                 <b>&lt;![CDATA[</b>
+                              </code>
+                              <pre>
+			
+			ecmascript:
+
+			var e = 5;
+			var f = 5;
+			var g = 5;
+			var h = 5;
+			var resolution = 100;
+
+			function initialize() {
+			     generateCoordinates();
+			     var localci = [];
+			     for (var i = 0; i &lt; resolution-1; i++) {
+				for (var j = 0; j &lt; resolution-1; j++) {
+				     localci.push(i*resolution+j);
+				     localci.push(i*resolution+j+1);
+				     localci.push((i+1)*resolution+j+1);
+				     localci.push((i+1)*resolution+j);
+				     localci.push(-1);
+				}
+			    }
+			    coordIndexes = new MFInt32(localci);
+			}
+
+			function generateCoordinates() {
+			     var theta = 0.0;
+			     var phi = 0.0;
+			     var delta = (2 * 3.141592653) / (resolution-1);
+			     var localc = [];
+			     for (var i = 0; i &lt; resolution; i++) {
+				for (var j = 0; j &lt; resolution; j++) {
+					var rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);
+					localc.push(new SFVec3f(
+						rho * Math.cos(phi) * Math.cos(theta),
+						rho * Math.cos(phi) * Math.sin(theta),
+						rho * Math.sin(phi)
+					));
+					theta += delta;
+				}
+				phi += delta;
+			     }
+			     
+			     coordinates = new MFVec3f(localc);
+			}
+
+			function set_fraction(fraction, eventTime) {
+				var choice = Math.floor(Math.random() * 4);
+				switch (choice) {
+				case 0:
+					e += Math.floor(Math.random() * 2) * 2 - 1;
+					break;
+				case 1:
+					f += Math.floor(Math.random() * 2) * 2 - 1;
+					break;
+				case 2:
+					g += Math.floor(Math.random() * 2) * 2 - 1;
+					break;
+				case 3:
+					h += Math.floor(Math.random() * 2) * 2 - 1;
+					break;
+				}
+				if (e &lt; 1) {
+					f = 10;
+				}
+				if (f &lt; 1) {
+					f = 10;
+				}
+				if (g &lt; 1) {
+					g = 4;
+				}
+				if (h &lt; 1) {
+					h = 4;
+				}
+				generateCoordinates();
+			}
+			      </pre>
+                              <code>
+                                 <b>]]&gt;</b>
+                              </code>
+<div class="indented">
+<div class="indented">
+<div class="indented">
+<div class="indented">
+<div class="indented">
+<div class="indented">
+</div><span title="Script contains author-programmed event behaviors for a scene" style="background-color:#DDEEFF;">&lt;/<span class="element">Script</span>&gt;
+</span>
+<br />
+<a name="ROUTE_1"> </a> 
+<span title="ROUTE connects fields between nodes to enable event passing" style="background-color:#DDEEFF;">&lt;<span class="route">
+                              <a title="HTML bookmark for this ROUTE is #ROUTE_1"
+                                  href="#ROUTE_1"
+                                  class="route">ROUTE</a>
+                           </span>&#160;<span class="attribute">fromNode</span>='
+<a title="go to the original DEF node definition"
+                               href="#OrbitScript"
+                               class="idName">OrbitScript</a>'<span title="" style="background-color:#DDEEFF;;">&#160;<span class="attribute">fromField</span>='<span class="value">coordIndexes</span>'</span>&#160;<span class="attribute">toNode</span>='
+<a title="go to the original DEF node definition"
+                               href="#Orbit"
+                               class="idName">Orbit</a>'<span title="" style="background-color:#DDEEFF;;">&#160;<span class="attribute">toField</span>='<span class="value">set_coordIndex</span>'</span>/&gt;
+</span><br />
+<a name="ROUTE_2"> </a> 
+<span title="ROUTE connects fields between nodes to enable event passing" style="background-color:#DDEEFF;">&lt;<span class="route">
+                              <a title="HTML bookmark for this ROUTE is #ROUTE_2"
+                                  href="#ROUTE_2"
+                                  class="route">ROUTE</a>
+                           </span>&#160;<span class="attribute">fromNode</span>='
+<a title="go to the original DEF node definition"
+                               href="#OrbitScript"
+                               class="idName">OrbitScript</a>'<span title="" style="background-color:#DDEEFF;;">&#160;<span class="attribute">fromField</span>='<span class="value">coordinates</span>'</span>&#160;<span class="attribute">toNode</span>='
+<a title="go to the original DEF node definition"
+                               href="#OrbitCoordinates"
+                               class="idName">OrbitCoordinates</a>'<span title="" style="background-color:#DDEEFF;;">&#160;<span class="attribute">toField</span>='<span class="value">point</span>'</span>/&gt;
+</span><br />
+<a name="ROUTE_3"> </a> 
+<span title="ROUTE connects fields between nodes to enable event passing" style="background-color:#DDEEFF;">&lt;<span class="route">
+                              <a title="HTML bookmark for this ROUTE is #ROUTE_3"
+                                  href="#ROUTE_3"
+                                  class="route">ROUTE</a>
+                           </span>&#160;<span class="attribute">fromNode</span>='
+<a title="go to the original DEF node definition"
+                               href="#Clock"
+                               class="idName">Clock</a>'<span title="" style="background-color:#DDEEFF;;">&#160;<span class="attribute">fromField</span>='<span class="value">fraction_changed</span>'</span>&#160;<span class="attribute">toNode</span>='
+<a title="go to the original DEF node definition"
+                               href="#OrbitScript"
+                               class="idName">OrbitScript</a>'<span title="" style="background-color:#DDEEFF;;">&#160;<span class="attribute">toField</span>='<span class="value">set_fraction</span>'</span>/&gt;
+</span><br />
+<a name="ROUTE_4"> </a> 
+<span title="ROUTE connects fields between nodes to enable event passing" style="background-color:#DDEEFF;">&lt;<span class="route">
+                              <a title="HTML bookmark for this ROUTE is #ROUTE_4"
+                                  href="#ROUTE_4"
+                                  class="route">ROUTE</a>
+                           </span>&#160;<span class="attribute">fromNode</span>='
+<a title="go to the original DEF node definition"
+                               href="#OrbitPath"
+                               class="idName">OrbitPath</a>'<span title="" style="background-color:#DDEEFF;;">&#160;<span class="attribute">fromField</span>='<span class="value">value_changed</span>'</span>&#160;<span class="attribute">toNode</span>='
+<a title="go to the original DEF node definition"
+                               href="#OrbitTransform"
+                               class="idName">OrbitTransform</a>'<span title="" style="background-color:#DDEEFF;;">&#160;<span class="attribute">toField</span>='<span class="value">rotation</span>'</span>/&gt;
+</span><br />
+<a name="ROUTE_5"> </a> 
+<span title="ROUTE connects fields between nodes to enable event passing" style="background-color:#DDEEFF;">&lt;<span class="route">
+                              <a title="HTML bookmark for this ROUTE is #ROUTE_5"
+                                  href="#ROUTE_5"
+                                  class="route">ROUTE</a>
+                           </span>&#160;<span class="attribute">fromNode</span>='
+<a title="go to the original DEF node definition"
+                               href="#Clock"
+                               class="idName">Clock</a>'<span title="" style="background-color:#DDEEFF;;">&#160;<span class="attribute">fromField</span>='<span class="value">fraction_changed</span>'</span>&#160;<span class="attribute">toNode</span>='
+<a title="go to the original DEF node definition"
+                               href="#OrbitPath"
+                               class="idName">OrbitPath</a>'<span title="" style="background-color:#DDEEFF;;">&#160;<span class="attribute">toField</span>='<span class="value">set_fraction</span>'</span>/&gt;
+</span></div><span title="Group is a Grouping node that can contain most nodes">&lt;/<span class="element">Group</span>&gt;
+</span>
+</div><span title="Initial scene node in ProtoDeclare/ProtoBody statement determines this prototype's node type" style="background-color:#FFEEFF;">&lt;/<span class="prototype">ProtoBody</span>&gt;
+</span>
+</div><span title="ProtoDeclare is a Prototype declaration, defining a new node made up of other node(s)" style="background-color:#FFEEFF;">&lt;/<span class="prototype">ProtoDeclare</span>&gt;
+</span>
+<br />
+
+<span title="ProtoInstance creates an instance of a locally or externally declared prototype node" style="background-color:#FFEEFF;">&lt;<span class="prototype">ProtoInstance</span>&#160;<span class="attribute">name</span>='<a title="go to the defining ProtoDeclare for this prototype instance"
+                      href="#ProtoDeclare_orbit"
+                      class="prototype">orbit</a>'&gt;
+</span>
+<div class="indented">
+<span title="A fieldValue element is used to re-initialize a default field value in a ProtoInstance" style="background-color:#FFEEFF;">&lt;<span class="prototype">fieldValue</span>&#160;<span class="attribute">name</span>='<span class="prototype">translation</span>'&#160;<span class="attribute">value</span>='<span class="value">-8 0 0</span>'/&gt;
+</span><br />
+
+<span title="A fieldValue element is used to re-initialize a default field value in a ProtoInstance" style="background-color:#FFEEFF;">&lt;<span class="prototype">fieldValue</span>&#160;<span class="attribute">name</span>='<span class="prototype">diffuseColor</span>'&#160;<span class="attribute">value</span>='<span class="value">1 0.5 0</span>'/&gt;
+</span><br />
+
+<span title="A fieldValue element is used to re-initialize a default field value in a ProtoInstance" style="background-color:#FFEEFF;">&lt;<span class="prototype">fieldValue</span>&#160;<span class="attribute">name</span>='<span class="prototype">specularColor</span>'&#160;<span class="attribute">value</span>='<span class="value">1 0.5 0</span>'/&gt;
+</span><br />
+
+<span title="A fieldValue element is used to re-initialize a default field value in a ProtoInstance" style="background-color:#FFEEFF;">&lt;<span class="prototype">fieldValue</span>&#160;<span class="attribute">name</span>='<span class="prototype">transparency</span>'&#160;<span class="attribute">value</span>='<span class="value">0.75</span>'/&gt;
+</span></div><span title="ProtoInstance creates an instance of a locally or externally declared prototype node" style="background-color:#FFEEFF;">&lt;/<span class="prototype">ProtoInstance</span>&gt;
+</span>
+<br />
+
+<span title="ProtoInstance creates an instance of a locally or externally declared prototype node" style="background-color:#FFEEFF;">&lt;<span class="prototype">ProtoInstance</span>&#160;<span class="attribute">name</span>='<a title="go to the defining ProtoDeclare for this prototype instance"
+                      href="#ProtoDeclare_orbit"
+                      class="prototype">orbit</a>'&gt;
+</span>
+<div class="indented">
+<span title="A fieldValue element is used to re-initialize a default field value in a ProtoInstance" style="background-color:#FFEEFF;">&lt;<span class="prototype">fieldValue</span>&#160;<span class="attribute">name</span>='<span class="prototype">translation</span>'&#160;<span class="attribute">value</span>='<span class="value">8 0 0</span>'/&gt;
+</span><br />
+
+<span title="A fieldValue element is used to re-initialize a default field value in a ProtoInstance" style="background-color:#FFEEFF;">&lt;<span class="prototype">fieldValue</span>&#160;<span class="attribute">name</span>='<span class="prototype">diffuseColor</span>'&#160;<span class="attribute">value</span>='<span class="value">0 0.5 1</span>'/&gt;
+</span><br />
+
+<span title="A fieldValue element is used to re-initialize a default field value in a ProtoInstance" style="background-color:#FFEEFF;">&lt;<span class="prototype">fieldValue</span>&#160;<span class="attribute">name</span>='<span class="prototype">specularColor</span>'&#160;<span class="attribute">value</span>='<span class="value">0 0.5 1</span>'/&gt;
+</span><br />
+
+<span title="A fieldValue element is used to re-initialize a default field value in a ProtoInstance" style="background-color:#FFEEFF;">&lt;<span class="prototype">fieldValue</span>&#160;<span class="attribute">name</span>='<span class="prototype">transparency</span>'&#160;<span class="attribute">value</span>='<span class="value">0.5</span>'/&gt;
+</span></div><span title="ProtoInstance creates an instance of a locally or externally declared prototype node" style="background-color:#FFEEFF;">&lt;/<span class="prototype">ProtoInstance</span>&gt;
+</span>
+</div><span title="Group is a Grouping node that can contain most nodes">&lt;/<span class="element">Group</span>&gt;
+</span>
+</div><span title="Scene is the root node that contains an X3D scene graph">&lt;/<span class="element">Scene</span>&gt;
+</span>
+</div><span title="X3D is the top-most XML element for an Extensible 3D (X3D) Graphics file">&lt;/<span class="element">X3D</span>&gt;
+</span>
+<br /><span style="color:white">&lt;!--</span>
+         <div class="center">
+            <hr style="width:100%"/>
+            <b>
+               <i>Index for ProtoDeclare definition: </i>
+            </b>
+            <a title="go to this declaration"
+                href="#ProtoDeclare_orbit"
+                class="prototype">orbit</a>
+<br /><hr width="25%"/>
+            <b>
+               <i>Index for DEF nodes: </i>
+            </b>
+            <a title="go to this TimeSensor node" href="#Clock" class="idName">Clock</a>,
+<a title="go to this IndexedFaceSet node" href="#Orbit" class="idName">Orbit</a>,
+<a title="go to this Coordinate node"
+                href="#OrbitCoordinates"
+                class="idName">OrbitCoordinates</a>,
+<a title="go to this OrientationInterpolator node"
+                href="#OrbitPath"
+                class="idName">OrbitPath</a>,
+<a title="go to this Script node" href="#OrbitScript" class="idName">OrbitScript</a>,
+<a title="go to this Transform node"
+                href="#OrbitTransform"
+                class="idName">OrbitTransform</a> and <a title="Event Graph ROUTE Table shows event connections"
+                href="#EventGraph">Event&#160;Graph ROUTE&#160;Table</a>
+            <hr style="width:100%"/>
+         </div>
+         <span style="color:white">--&gt;</span>
+         <!-- apply-templates * | comment() complete -->
+      </div>
+      <div style="background-color:#DDEEFF;">
+         <br/>
+         <p style="text-align:center;">
+            <b>
+               <a name="EventGraph"> </a>
+               <a href="#EventGraph" title="bookmark link">Event Graph ROUTE Table</a> entries with 5 <a href="https://www.web3d.org/x3d/content/X3dTooltips.html#ROUTE"
+                   title="X3D Tooltips: ROUTE"
+                   target="_blank">ROUTE</a> connections total, showing <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-IS.proof/Part01/concepts.html#Eventmodel"
+                   target="_blank"
+                   title="X3D 4.0 Architecture, Concepts, Event Model">event model relationships</a> for this scene.</b>
+         </p>
+         <!-- EventGraph -->
+         <table border="1"
+                 style="border: 1px solid black; margin-left: auto; margin-right: auto; background-color:#DDEEFF;"><!--starting first row-->
+<tr>
+         <td style="text-align:right; background-color:white;" title="">
+               <a href="#Clock" title="DEF name">Clock</a>
+               <br/>
+               <b>
+                  <span title="X3D node name">TimeSensor</span>
+               </b>
+               <br/>
+               <b>
+                  <a title="X3D Tooltips: field TimeSensor.fraction_changed"
+                      target="_blank"
+                      href="https://www.web3d.org/x3d/content/X3dTooltips.html#TimeSensor.fraction">fraction_changed</a>
+               </b>
+               <br/>
+               <span title="" style="background-color:white;title:;">
+                  <a title="X3D Tooltips: SFFloat data type"
+                      target="_tooltip_type"
+                      href="https://www.web3d.org/x3d/content/X3dTooltips.html#SFFloat">SFFloat</a>
+               </span>
+            </td>
+            <td style="vertical-align:middle; text-align:center; background-color:white;">
+               <div style="background-color:white" title="">
+                  <br/>
+                  <a title="go to #ROUTE_3" href="#ROUTE_3">ROUTE</a>
+                  <br/> event to <br/> &#160; </div>
+            </td>
+            <td style="text-align:left; background-color:white;" title="">
+               <a href="#OrbitScript" title="DEF name">OrbitScript</a>
+               <br/>
+               <b>
+                  <span title="X3D node name">Script</span>
+               </b>
+               <br/>
+               <b>
+                  <a title="X3D Tooltips: field Script.set_fraction"
+                      target="_blank"
+                      href="https://www.web3d.org/x3d/content/X3dTooltips.html#Script.set_fraction">set_fraction</a>
+               </b>
+               <br/>
+               <span title="" style="background-color:white;">
+                  <a title="X3D Tooltips: SFFloat data type"
+                      target="_tooltip_type"
+                      href="https://www.web3d.org/x3d/content/X3dTooltips.html#SFFloat">SFFloat</a>
+               </span>
+            </td>
+            <td style="text-align:center; background-color:white; vertical-align:bottom;">
+               <span style="background-color:lightgrey;">
+                  <i>then</i>
+               </span>
+            </td>
+            <td style="text-align:right; background-color:white;" title="">
+               <a href="#OrbitScript" title="DEF name">OrbitScript</a>
+               <br/>
+               <b>
+                  <span title="X3D node name">Script</span>
+               </b>
+               <br/>
+               <b>
+                  <a title="X3D Tooltips: field Script.coordinates"
+                      target="_blank"
+                      href="https://www.web3d.org/x3d/content/X3dTooltips.html#Script.coordinates">coordinates</a>
+               </b>
+               <br/>
+               <span title="" style="background-color:white;title:;">
+                  <a title="X3D Tooltips: MFVec3f data type"
+                      target="_tooltip_type"
+                      href="https://www.web3d.org/x3d/content/X3dTooltips.html#MFVec3f">MFVec3f</a>
+               </span>
+            </td>
+            <td style="vertical-align:middle; text-align:center; background-color:white;">
+               <div style="background-color:white" title="">
+                  <br/>
+                  <a title="go to #ROUTE_2" href="#ROUTE_2">ROUTE</a>
+                  <br/> event to <br/> &#160; </div>
+            </td>
+            <td style="text-align:left; background-color:white;" title="">
+               <a href="#OrbitCoordinates" title="DEF name">OrbitCoordinates</a>
+               <br/>
+               <b>
+                  <span title="X3D node name">Coordinate</span>
+               </b>
+               <br/>
+               <b>
+                  <a title="X3D Tooltips: field Coordinate.point"
+                      target="_blank"
+                      href="https://www.web3d.org/x3d/content/X3dTooltips.html#Coordinate.point">point</a>
+               </b>
+               <br/>
+               <span title="" style="background-color:white;">
+                  <a title="X3D Tooltips: MFVec3f data type"
+                      target="_tooltip_type"
+                      href="https://www.web3d.org/x3d/content/X3dTooltips.html#MFVec3f">MFVec3f</a>
+               </span>
+            </td>
+            <!--time to start new row-->
+</tr>
+
+<tr>
+         <td colspan="3" style="background-color:#DDEEFF;"> &#160; <!--skip 3for depth 1--></td>
+            <td style="text-align:center; background-color:white; vertical-align:bottom;">
+               <span style="background-color:lightgrey;">
+                  <i>then</i>
+               </span>
+            </td>
+            <td style="text-align:right; background-color:white;" title="">
+               <a href="#OrbitScript" title="DEF name">OrbitScript</a>
+               <br/>
+               <b>
+                  <span title="X3D node name">Script</span>
+               </b>
+               <br/>
+               <b>
+                  <a title="X3D Tooltips: field Script.coordIndexes"
+                      target="_blank"
+                      href="https://www.web3d.org/x3d/content/X3dTooltips.html#Script.coordIndexes">coordIndexes</a>
+               </b>
+               <br/>
+               <span title="" style="background-color:white;title:;">
+                  <a title="X3D Tooltips: MFInt32 data type"
+                      target="_tooltip_type"
+                      href="https://www.web3d.org/x3d/content/X3dTooltips.html#MFInt32">MFInt32</a>
+               </span>
+            </td>
+            <td style="vertical-align:middle; text-align:center; background-color:white;">
+               <div style="background-color:white" title="">
+                  <br/>
+                  <a title="go to #ROUTE_1" href="#ROUTE_1">ROUTE</a>
+                  <br/> event to <br/> &#160; </div>
+            </td>
+            <td style="text-align:left; background-color:white;" title="">
+               <a href="#Orbit" title="DEF name">Orbit</a>
+               <br/>
+               <b>
+                  <span title="X3D node name">IndexedFaceSet</span>
+               </b>
+               <br/>
+               <b>
+                  <a title="X3D Tooltips: field IndexedFaceSet.coordIndex"
+                      target="_blank"
+                      href="https://www.web3d.org/x3d/content/X3dTooltips.html#IndexedFaceSet.coordIndex">set_coordIndex</a>
+               </b>
+               <br/>
+               <span title="" style="background-color:white;">
+                  <a title="X3D Tooltips: MFInt32 data type"
+                      target="_tooltip_type"
+                      href="https://www.web3d.org/x3d/content/X3dTooltips.html#MFInt32">MFInt32</a>
+               </span>
+            </td>
+            <!--time to start new row-->
+            <!--row finished-->
+</tr>
+<!--starting new row-->
+<tr>
+         <td style="text-align:right; background-color:white;" title="">
+               <a href="#Clock" title="DEF name">Clock</a>
+               <br/>
+               <b>
+                  <span title="X3D node name">TimeSensor</span>
+               </b>
+               <br/>
+               <b>
+                  <a title="X3D Tooltips: field TimeSensor.fraction_changed"
+                      target="_blank"
+                      href="https://www.web3d.org/x3d/content/X3dTooltips.html#TimeSensor.fraction">fraction_changed</a>
+               </b>
+               <br/>
+               <span title="" style="background-color:white;title:;">
+                  <a title="X3D Tooltips: SFFloat data type"
+                      target="_tooltip_type"
+                      href="https://www.web3d.org/x3d/content/X3dTooltips.html#SFFloat">SFFloat</a>
+               </span>
+            </td>
+            <td style="vertical-align:middle; text-align:center; background-color:white;">
+               <div style="background-color:white" title="">
+                  <br/>
+                  <a title="go to #ROUTE_5" href="#ROUTE_5">ROUTE</a>
+                  <br/> event to <br/> &#160; </div>
+            </td>
+            <td style="text-align:left; background-color:white;" title="">
+               <a href="#OrbitPath" title="DEF name">OrbitPath</a>
+               <br/>
+               <b>
+                  <span title="X3D node name">OrientationInterpolator</span>
+               </b>
+               <br/>
+               <b>
+                  <a title="X3D Tooltips: field OrientationInterpolator.set_fraction"
+                      target="_blank"
+                      href="https://www.web3d.org/x3d/content/X3dTooltips.html#OrientationInterpolator.set_fraction">set_fraction</a>
+               </b>
+               <br/>
+               <span title="" style="background-color:white;">
+                  <a title="X3D Tooltips: SFFloat data type"
+                      target="_tooltip_type"
+                      href="https://www.web3d.org/x3d/content/X3dTooltips.html#SFFloat">SFFloat</a>
+               </span>
+            </td>
+            <td style="text-align:center; background-color:white; vertical-align:bottom;">
+               <span style="background-color:lightgrey;">
+                  <i>then</i>
+               </span>
+            </td>
+            <td style="text-align:right; background-color:white;" title="">
+               <a href="#OrbitPath" title="DEF name">OrbitPath</a>
+               <br/>
+               <b>
+                  <span title="X3D node name">OrientationInterpolator</span>
+               </b>
+               <br/>
+               <b>
+                  <a title="X3D Tooltips: field OrientationInterpolator.value_changed"
+                      target="_blank"
+                      href="https://www.web3d.org/x3d/content/X3dTooltips.html#OrientationInterpolator.value_changed">value_changed</a>
+               </b>
+               <br/>
+               <span title="" style="background-color:white;title:;">
+                  <a title="X3D Tooltips: SFRotation data type"
+                      target="_tooltip_type"
+                      href="https://www.web3d.org/x3d/content/X3dTooltips.html#SFRotation">SFRotation</a>
+               </span>
+            </td>
+            <td style="vertical-align:middle; text-align:center; background-color:white;">
+               <div style="background-color:white" title="">
+                  <br/>
+                  <a title="go to #ROUTE_4" href="#ROUTE_4">ROUTE</a>
+                  <br/> event to <br/> &#160; </div>
+            </td>
+            <td style="text-align:left; background-color:white;" title="">
+               <a href="#OrbitTransform" title="DEF name">OrbitTransform</a>
+               <br/>
+               <b>
+                  <span title="X3D node name">Transform</span>
+               </b>
+               <br/>
+               <b>
+                  <a title="X3D Tooltips: field Transform.rotation"
+                      target="_blank"
+                      href="https://www.web3d.org/x3d/content/X3dTooltips.html#Transform.rotation">rotation</a>
+               </b>
+               <br/>
+               <span title="" style="background-color:white;">
+                  <a title="X3D Tooltips: SFRotation data type"
+                      target="_tooltip_type"
+                      href="https://www.web3d.org/x3d/content/X3dTooltips.html#SFRotation">SFRotation</a>
+               </span>
+            </td>
+            <!--time to start new row-->
+            <!--row finished-->
+</tr>
+</table>
+         <br/>
+         <!-- EventGraph -->
+         <table border="1"
+                 style="border: 1px solid black; margin-left: auto; margin-right: auto; background-color:white;">
+            <td style="text-align:right">
+               <br/>
+               <b>ProtoInstance</b>
+               <br/>
+            </td>
+            <td>
+               <br/>(No ROUTE connection found for this node)<br/>
+            </td>
+         </table>
+         <br/>
+         <!-- EventGraph -->
+         <table border="1"
+                 style="border: 1px solid black; margin-left: auto; margin-right: auto; background-color:white;">
+            <td style="text-align:right">
+               <br/>
+               <b>ProtoInstance</b>
+               <br/>
+            </td>
+            <td>
+               <br/>(No ROUTE connection found for this node)<br/>
+            </td>
+         </table>
+         <br/>
+      </div>
+      <hr style="width:100%"/>
+      <span style="color:white">--&gt;</span>
+      <p style="text-align:center;">
+         <span style="color:white">&lt;!--</span>
+Color legend: X3D terminology <!--(matching X3D and XML terminology) -->
+&lt;<span class="element">X3dNode</span>
+         <span class="idName"> DEF</span>='<span class="idName">idName</span>' <span class="attribute">field</span>='<span class="value">value</span>'/&gt; 
+ matches XML terminology 
+&lt;<span class="element">XmlElement</span>
+         <span class="idName"> DEF</span>='<span class="idName">idName</span>' <span class="attribute">attribute</span>='<span class="value">value</span>'/&gt; <br/>
+<span title="behavior node" style="background-color:#DDEEFF;" >(Light-blue background: event-based behavior node or statement)</span>
+<span title="inserted documentation about ROUTE connections" style="background-color:#EEEEEE;">(Grey background inside box: inserted documentation)</span>
+<span title="X3D Extensibility" style="background-color:#FFEEFF;">(Magenta background: X3D Extensibility)</span><br/>
+&#160;&#160;&#160;
+&lt;<span class="prototype">ProtoInstance</span>
+         <span class="attribute">name</span>='<span class="prototype">ProtoName</span>'&gt;
+	&lt;<span class="prototype">field</span>
+         <span class="attribute">name</span>='<span class="prototype">fieldName</span>'/&gt; &lt;/<span class="prototype">ProtoInstance</span>&gt;
+<span style="color:white"> --&gt;</span>
+      </p>
+      <p style="text-align:center; background-color:white">
+         <span style="color:white">&lt;!--</span>
+For additional help information about X3D scenes, please see <a href="https://www.web3d.org/x3d/content/X3dTooltips.html"
+             title="Summary descriptions and authoring hints for each X3D node (element) and field (attribute)"
+             target="_blank">X3D Tooltips</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html"
+             title="Numerous resources that support X3D graphics"
+             target="_blank">X3D Resources</a>, and <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html"
+             title="Style guidelines, authoring tips, and best practices"
+             target="_blank">X3D Scene Authoring Hints</a>.
+<span style="color:white">--&gt;</span>
+      </p>
+   </body>
+</html>

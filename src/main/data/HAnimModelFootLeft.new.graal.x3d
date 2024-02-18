@@ -30,60 +30,7 @@
       <MetadataSet name='HAnimHumanoid.info' containerField='metadata' reference='https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid'>
         <MetadataString name='authorName' value='"Kwan-Hee YOO, Don Brutzman and Joe Williams"'/>
       </MetadataSet>
-      <HAnimJoint USE='hanim_humanoid_root'/>
-      <HAnimJoint USE='hanim_l_calcaneocuboid'/>
-      <HAnimJoint USE='hanim_l_cuneonavicular_1'/>
-      <HAnimJoint USE='hanim_l_cuneonavicular_2'/>
-      <HAnimJoint USE='hanim_l_cuneonavicular_3'/>
-      <HAnimJoint USE='hanim_l_metatarsophalangeal_1'/>
-      <HAnimJoint USE='hanim_l_metatarsophalangeal_2'/>
-      <HAnimJoint USE='hanim_l_metatarsophalangeal_3'/>
-      <HAnimJoint USE='hanim_l_metatarsophalangeal_4'/>
-      <HAnimJoint USE='hanim_l_metatarsophalangeal_5'/>
-      <HAnimJoint USE='hanim_l_talocalcaneonavicular'/>
-      <HAnimJoint USE='hanim_l_talocrural'/>
-      <HAnimJoint USE='hanim_l_tarsal_distal_interphalangeal_2'/>
-      <HAnimJoint USE='hanim_l_tarsal_distal_interphalangeal_3'/>
-      <HAnimJoint USE='hanim_l_tarsal_distal_interphalangeal_4'/>
-      <HAnimJoint USE='hanim_l_tarsal_distal_interphalangeal_5'/>
-      <HAnimJoint USE='hanim_l_tarsal_interphalangeal_1'/>
-      <HAnimJoint USE='hanim_l_tarsal_proximal_interphalangeal_2'/>
-      <HAnimJoint USE='hanim_l_tarsal_proximal_interphalangeal_3'/>
-      <HAnimJoint USE='hanim_l_tarsal_proximal_interphalangeal_4'/>
-      <HAnimJoint USE='hanim_l_tarsal_proximal_interphalangeal_5'/>
-      <HAnimJoint USE='hanim_l_tarsometatarsal_1'/>
-      <HAnimJoint USE='hanim_l_tarsometatarsal_2'/>
-      <HAnimJoint USE='hanim_l_tarsometatarsal_3'/>
-      <HAnimJoint USE='hanim_l_tarsometatarsal_4'/>
-      <HAnimJoint USE='hanim_l_tarsometatarsal_5'/>
-      <HAnimJoint USE='hanim_l_transversetarsal'/>
-      <HAnimSegment USE='hanim_l_calcaneus'/>
-      <HAnimSegment USE='hanim_l_cuboid'/>
-      <HAnimSegment USE='hanim_l_cuneiform_1'/>
-      <HAnimSegment USE='hanim_l_cuneiform_2'/>
-      <HAnimSegment USE='hanim_l_cuneiform_3'/>
-      <HAnimSegment USE='hanim_l_metatarsal_1'/>
-      <HAnimSegment USE='hanim_l_metatarsal_2'/>
-      <HAnimSegment USE='hanim_l_metatarsal_3'/>
-      <HAnimSegment USE='hanim_l_metatarsal_4'/>
-      <HAnimSegment USE='hanim_l_metatarsal_5'/>
-      <HAnimSegment USE='hanim_l_navicular'/>
-      <HAnimSegment USE='hanim_l_talus'/>
-      <HAnimSegment USE='hanim_l_tarsal_distal_phalanx_1'/>
-      <HAnimSegment USE='hanim_l_tarsal_distal_phalanx_2'/>
-      <HAnimSegment USE='hanim_l_tarsal_distal_phalanx_3'/>
-      <HAnimSegment USE='hanim_l_tarsal_distal_phalanx_4'/>
-      <HAnimSegment USE='hanim_l_tarsal_distal_phalanx_5'/>
-      <HAnimSegment USE='hanim_l_tarsal_middle_phalanx_2'/>
-      <HAnimSegment USE='hanim_l_tarsal_middle_phalanx_3'/>
-      <HAnimSegment USE='hanim_l_tarsal_middle_phalanx_4'/>
-      <HAnimSegment USE='hanim_l_tarsal_middle_phalanx_5'/>
-      <HAnimSegment USE='hanim_l_tarsal_proximal_phalanx_1'/>
-      <HAnimSegment USE='hanim_l_tarsal_proximal_phalanx_2'/>
-      <HAnimSegment USE='hanim_l_tarsal_proximal_phalanx_3'/>
-      <HAnimSegment USE='hanim_l_tarsal_proximal_phalanx_4'/>
-      <HAnimSegment USE='hanim_l_tarsal_proximal_phalanx_5'/>
-      <HAnimJoint DEF='hanim_humanoid_root' name='humanoid_root' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+      <HAnimJoint DEF='hanim_humanoid_root' name='humanoid_root' containerField='skeleton' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
         <!-- Might consider putting a HAnimSegment here, but that doesn't help with re-use of this foot model -->
         <HAnimJoint DEF='hanim_l_talocrural' name='l_talocrural' description='connection joint of foot to leg above' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
           <HAnimSegment DEF='hanim_l_talus' name='l_talus' momentsOfInertia='0 0 0 0 0 0 0 0 0'>
@@ -521,6 +468,59 @@
           </HAnimJoint>
         </HAnimJoint>
       </HAnimJoint>
+      <HAnimJoint USE='hanim_humanoid_root' containerField='joints'/>
+      <HAnimJoint USE='hanim_l_calcaneocuboid' containerField='joints'/>
+      <HAnimJoint USE='hanim_l_cuneonavicular_1' containerField='joints'/>
+      <HAnimJoint USE='hanim_l_cuneonavicular_2' containerField='joints'/>
+      <HAnimJoint USE='hanim_l_cuneonavicular_3' containerField='joints'/>
+      <HAnimJoint USE='hanim_l_metatarsophalangeal_1' containerField='joints'/>
+      <HAnimJoint USE='hanim_l_metatarsophalangeal_2' containerField='joints'/>
+      <HAnimJoint USE='hanim_l_metatarsophalangeal_3' containerField='joints'/>
+      <HAnimJoint USE='hanim_l_metatarsophalangeal_4' containerField='joints'/>
+      <HAnimJoint USE='hanim_l_metatarsophalangeal_5' containerField='joints'/>
+      <HAnimJoint USE='hanim_l_talocalcaneonavicular' containerField='joints'/>
+      <HAnimJoint USE='hanim_l_talocrural' containerField='joints'/>
+      <HAnimJoint USE='hanim_l_tarsal_distal_interphalangeal_2' containerField='joints'/>
+      <HAnimJoint USE='hanim_l_tarsal_distal_interphalangeal_3' containerField='joints'/>
+      <HAnimJoint USE='hanim_l_tarsal_distal_interphalangeal_4' containerField='joints'/>
+      <HAnimJoint USE='hanim_l_tarsal_distal_interphalangeal_5' containerField='joints'/>
+      <HAnimJoint USE='hanim_l_tarsal_interphalangeal_1' containerField='joints'/>
+      <HAnimJoint USE='hanim_l_tarsal_proximal_interphalangeal_2' containerField='joints'/>
+      <HAnimJoint USE='hanim_l_tarsal_proximal_interphalangeal_3' containerField='joints'/>
+      <HAnimJoint USE='hanim_l_tarsal_proximal_interphalangeal_4' containerField='joints'/>
+      <HAnimJoint USE='hanim_l_tarsal_proximal_interphalangeal_5' containerField='joints'/>
+      <HAnimJoint USE='hanim_l_tarsometatarsal_1' containerField='joints'/>
+      <HAnimJoint USE='hanim_l_tarsometatarsal_2' containerField='joints'/>
+      <HAnimJoint USE='hanim_l_tarsometatarsal_3' containerField='joints'/>
+      <HAnimJoint USE='hanim_l_tarsometatarsal_4' containerField='joints'/>
+      <HAnimJoint USE='hanim_l_tarsometatarsal_5' containerField='joints'/>
+      <HAnimJoint USE='hanim_l_transversetarsal' containerField='joints'/>
+      <HAnimSegment USE='hanim_l_calcaneus' containerField='segments'/>
+      <HAnimSegment USE='hanim_l_cuboid' containerField='segments'/>
+      <HAnimSegment USE='hanim_l_cuneiform_1' containerField='segments'/>
+      <HAnimSegment USE='hanim_l_cuneiform_2' containerField='segments'/>
+      <HAnimSegment USE='hanim_l_cuneiform_3' containerField='segments'/>
+      <HAnimSegment USE='hanim_l_metatarsal_1' containerField='segments'/>
+      <HAnimSegment USE='hanim_l_metatarsal_2' containerField='segments'/>
+      <HAnimSegment USE='hanim_l_metatarsal_3' containerField='segments'/>
+      <HAnimSegment USE='hanim_l_metatarsal_4' containerField='segments'/>
+      <HAnimSegment USE='hanim_l_metatarsal_5' containerField='segments'/>
+      <HAnimSegment USE='hanim_l_navicular' containerField='segments'/>
+      <HAnimSegment USE='hanim_l_talus' containerField='segments'/>
+      <HAnimSegment USE='hanim_l_tarsal_distal_phalanx_1' containerField='segments'/>
+      <HAnimSegment USE='hanim_l_tarsal_distal_phalanx_2' containerField='segments'/>
+      <HAnimSegment USE='hanim_l_tarsal_distal_phalanx_3' containerField='segments'/>
+      <HAnimSegment USE='hanim_l_tarsal_distal_phalanx_4' containerField='segments'/>
+      <HAnimSegment USE='hanim_l_tarsal_distal_phalanx_5' containerField='segments'/>
+      <HAnimSegment USE='hanim_l_tarsal_middle_phalanx_2' containerField='segments'/>
+      <HAnimSegment USE='hanim_l_tarsal_middle_phalanx_3' containerField='segments'/>
+      <HAnimSegment USE='hanim_l_tarsal_middle_phalanx_4' containerField='segments'/>
+      <HAnimSegment USE='hanim_l_tarsal_middle_phalanx_5' containerField='segments'/>
+      <HAnimSegment USE='hanim_l_tarsal_proximal_phalanx_1' containerField='segments'/>
+      <HAnimSegment USE='hanim_l_tarsal_proximal_phalanx_2' containerField='segments'/>
+      <HAnimSegment USE='hanim_l_tarsal_proximal_phalanx_3' containerField='segments'/>
+      <HAnimSegment USE='hanim_l_tarsal_proximal_phalanx_4' containerField='segments'/>
+      <HAnimSegment USE='hanim_l_tarsal_proximal_phalanx_5' containerField='segments'/>
     </HAnimHumanoid>
   </Scene>
 </X3D>

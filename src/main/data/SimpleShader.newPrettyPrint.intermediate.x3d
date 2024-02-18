@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.2//EN" "https://www.web3d.org/specifications/x3d-3.2.dtd">
+<X3D profile='Immersive' version='3.2' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.2.xsd'>
   <head>
+    <!-- meta content='under development' name='warning'/ -->
     <component name='Shaders' level='1'/>
     <meta content='SimpleShader.x3d' name='title'/>
     <meta content='Simple shader example' name='description'/>
@@ -13,14 +14,15 @@
     <meta content='http://www.opengl.org/wiki/Fragment_Shader' name='reference'/>
     <meta content='http://www.opengl.org/wiki/http://www.opengl.org/wiki/Vertex_Shader' name='reference'/>
     <meta content='https://www.web3d.org/x3d/wiki/index.php/X3D_Plugfest' name='reference'/>
+    <meta content='X3D shader example' name='subject'/>
     <meta content='originals/simpleShader.x3dv' name='reference'/>
     <meta content='ShaderTutorialInstantReality.pdf' name='reference'/>
-    <meta content='X3D shader example' name='subject'/>
     <meta content='Titania V3.0.3, http://titania.create3000.de' name='generator'/>
-    <meta content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' name='generator'/>
     <meta content='World of Titania' name='info'/>
     <meta content='nicest' name='outputStyle'/>
+    <meta content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' name='generator'/>
     <meta content='https://www.web3d.org/x3d/content/examples/Basic/Shaders/SimpleShader.x3d' name='identifier'/>
+    <meta content='../../license.html' name='license'/>
   </head>
   <Scene>
     <ProtoDeclare name='myPrototype'>
@@ -43,7 +45,7 @@
               <ComposedShader DEF='Cobweb' language='GLSL'>
                 <field name='decis' accessType='initializeOnly' type='SFVec3f' value='0.95 0.77 0.44'/>
                 <ShaderPart/>
-                <ShaderPart type='FRAGMENT'/>
+                <ShaderPart DEF='_1' type='FRAGMENT'/>
               </ComposedShader>
             </Appearance>
             <Sphere radius='1.75'/>
@@ -53,10 +55,10 @@
     </ProtoDeclare>
     <WorldInfo title='SimpleShader'>
       <MetadataSet DEF='Titania' name='Titania' containerField='metadata' reference='http://titania.create3000.de'>
-        <MetadataSet DEF='Viewpoint' name='Viewpoint' reference='http://titania.create3000.de'>
-          <MetadataDouble DEF='position' name='position' reference='http://titania.create3000.de' value='6.24067728185014 0.00250837343276661 2.92117542307615'/>
-          <MetadataDouble DEF='orientation' name='orientation' reference='http://titania.create3000.de' value='-0.110173424710488 0.990158061907379 -0.0863065984000336 1.21146676119191'/>
-          <MetadataDouble DEF='centerOfRotation' name='centerOfRotation' reference='http://titania.create3000.de' value='-0.808320198626341 -0.358072370409949 0.22817191560906'/>
+        <MetadataSet DEF='Viewpoint' name='Viewpoint' containerField='' reference='http://titania.create3000.de'>
+          <MetadataDouble DEF='position' name='position' containerField='value' reference='http://titania.create3000.de' value='6.24067728185014 0.00250837343276661 2.92117542307615'/>
+          <MetadataDouble DEF='orientation' name='orientation' containerField='value' reference='http://titania.create3000.de' value='-0.110173424710488 0.990158061907379 -0.0863065984000336 1.21146676119191'/>
+          <MetadataDouble DEF='centerOfRotation' name='centerOfRotation' containerField='value' reference='http://titania.create3000.de' value='-0.808320198626341 -0.358072370409949 0.22817191560906'/>
         </MetadataSet>
       </MetadataSet>
     </WorldInfo>

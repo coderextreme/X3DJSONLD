@@ -77,7 +77,7 @@ import org.web3d.x3d.jsail.Time.*;
 	* @author John Carlson
  */
 
-public class flowers2
+import net.coderextreme.X3DRoots;import java.util.List;import java.util.ArrayList;public class flowers2 implements X3DRoots 
 {
 	/** Default constructor to create this object. */
 	public flowers2 ()
@@ -89,7 +89,7 @@ public class flowers2
 	public final void initialize()
 	{
             try { // catch-all
-  x3dModel = new X3D().setProfile(X3D.PROFILE_IMMERSIVE).setVersion(X3D.VERSION_3_0)
+  x3dModel = new X3D().setProfile(X3D.PROFILE_IMMERSIVE).setVersion(X3D.VERSION_4_0)
   .setHead(new head()
     .addComponent(new component().setName("Scripting").setLevel(1))
     .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("flowers2.x3d"))
@@ -255,6 +255,11 @@ ecmascript:
 	{	  
 		return x3dModel;
 	}
+	public List<X3D> getRootNodeList() {
+		List<X3D> list = new ArrayList<X3D>(1);
+		list.add(x3dModel);
+		return list;
+	}
 	   
     /** 
      * Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
@@ -267,7 +272,7 @@ ecmascript:
      */
     public static void main(String args[])
     {
-        System.out.println("Build this X3D model, showing diagnostics...");
+        System.out.println("Build this X3D model, showing validation diagnostics...");
         X3D thisExampleX3dModel = new flowers2().getX3dModel();
 //      System.out.println("X3D model construction complete.");
 	

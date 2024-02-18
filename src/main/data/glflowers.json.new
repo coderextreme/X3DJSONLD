@@ -1,8 +1,8 @@
 {
   "X3D": {
     "@profile": "Immersive",
-    "@version": "3.3",
-    "@xsd:noNamespaceSchemaLocation": "https://www.web3d.org/specifications/x3d-3.3.xsd",
+    "@version": "4.0",
+    "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-4.0.xsd",
     "head": {
       "meta": [
         {
@@ -22,12 +22,8 @@
           "@content": "X3D-Edit, https://savage.nps.edu/X3D-Edit"
         },
         {
-          "@name": "identifier",
-          "@content": "https://coderextreme.net/X3DJSONLD/src/main/data/glflowers.x3d"
-        },
-        {
           "@name": "translated",
-          "@content": "16 January 2021"
+          "@content": "15 December 2023"
         },
         {
           "@name": "generator",
@@ -42,85 +38,49 @@
     "Scene": {
       "-children": [
         {
-          "NavigationInfo": {}
-        },
-        {
-          "Background": {
-            "@backUrl": [
-              "../resources/images/all_probes/stpeters_cross/stpeters_back.png",
-              "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"
+          "ExternProtoDeclare": {
+            "@name": "FlowerProto",
+            "@url": [
+              "../data/flowerproto.x3d#FlowerProto"
             ],
-            "@bottomUrl": [
-              "../resources/images/all_probes/stpeters_cross/stpeters_bottom.png",
-              "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"
-            ],
-            "@frontUrl": [
-              "../resources/images/all_probes/stpeters_cross/stpeters_front.png",
-              "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"
-            ],
-            "@leftUrl": [
-              "../resources/images/all_probes/stpeters_cross/stpeters_left.png",
-              "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"
-            ],
-            "@rightUrl": [
-              "../resources/images/all_probes/stpeters_cross/stpeters_right.png",
-              "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"
-            ],
-            "@topUrl": [
-              "../resources/images/all_probes/stpeters_cross/stpeters_top.png",
-              "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"
+            "field": [
+              {
+                "@accessType": "inputOutput",
+                "@type": "MFString",
+                "@name": "vertex"
+              },
+              {
+                "@accessType": "inputOutput",
+                "@type": "MFString",
+                "@name": "fragment"
+              }
             ]
           }
         },
         {
-          "Group": {
-            "-children": [
-              {
-                "ExternProtoDeclare": {
-                  "@name": "FlowerProto",
-                  "@url": [
-                    "../data/flowerproto.x3d#FlowerProto"
-                  ],
-                  "field": [
-                    {
-                      "@name": "vertex",
-                      "@accessType": "inputOutput",
-                      "@type": "MFString"
-                    },
-                    {
-                      "@name": "fragment",
-                      "@accessType": "inputOutput",
-                      "@type": "MFString"
-                    }
-                  ]
-                }
-              },
-              {
-                "ProtoDeclare": {
-                  "@name": "flower",
-                  "ProtoBody": {
+          "ProtoDeclare": {
+            "@name": "flower",
+            "ProtoInterface": {},
+            "ProtoBody": {
+              "-children": [
+                {
+                  "Group": {
                     "-children": [
                       {
-                        "Group": {
-                          "-children": [
+                        "ProtoInstance": {
+                          "@name": "FlowerProto",
+                          "fieldValue": [
                             {
-                              "ProtoInstance": {
-                                "@name": "FlowerProto",
-                                "fieldValue": [
-                                  {
-                                    "@name": "vertex",
-                                    "@value": [
-                                      "../shaders/gl_flowers_chromatic.vs"
-                                    ]
-                                  },
-                                  {
-                                    "@name": "fragment",
-                                    "@value": [
-                                      "../shaders/common.fs"
-                                    ]
-                                  }
-                                ]
-                              }
+                              "@name": "vertex",
+                              "@value": [
+                                "../shaders/gl_flowers_chromatic.vs"
+                              ]
+                            },
+                            {
+                              "@name": "fragment",
+                              "@value": [
+                                "../shaders/common.fs"
+                              ]
                             }
                           ]
                         }
@@ -128,7 +88,44 @@
                     ]
                   }
                 }
-              },
+              ]
+            }
+          }
+        },
+        {
+          "NavigationInfo": {}
+        },
+        {
+          "Background": {
+            "@frontUrl": [
+              "../resources/images/all_probes/stpeters_cross/stpeters_front.png",
+              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"
+            ],
+            "@backUrl": [
+              "../resources/images/all_probes/stpeters_cross/stpeters_back.png",
+              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"
+            ],
+            "@leftUrl": [
+              "../resources/images/all_probes/stpeters_cross/stpeters_left.png",
+              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"
+            ],
+            "@rightUrl": [
+              "../resources/images/all_probes/stpeters_cross/stpeters_right.png",
+              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"
+            ],
+            "@topUrl": [
+              "../resources/images/all_probes/stpeters_cross/stpeters_top.png",
+              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"
+            ],
+            "@bottomUrl": [
+              "../resources/images/all_probes/stpeters_cross/stpeters_bottom.png",
+              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"
+            ]
+          }
+        },
+        {
+          "Group": {
+            "-children": [
               {
                 "ProtoInstance": {
                   "@name": "flower"

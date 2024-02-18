@@ -5,40 +5,40 @@ print("-->")
 import json
 model = (
 X3D(profile="Immersive", version="3.3", 
-head=head(
+head=Pyhead(
 children=[
-meta(name="title", content="asmallbox.x3d"),
-meta(name="creator", content="John Carlson"),
-meta(name="generator", content="manual"),
-meta(name="identifier", content="https://coderextreme.net/X3DJSONLD/src/main/data/abox.x3d"),
-meta(name="description", content="a box"),
-meta(name="translated", content="02 September 2023"),
-meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
-meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
+Pymeta(name="title", content="asmallbox.x3d"),
+Pymeta(name="creator", content="John Carlson"),
+Pymeta(name="generator", content="manual"),
+Pymeta(name="identifier", content="https://coderextreme.net/X3DJSONLD/src/main/data/abox.x3d"),
+Pymeta(name="description", content="a box"),
+Pymeta(name="translated", content="30 December 2023"),
+Pymeta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
+Pymeta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
-Scene=Scene(children=[
+Scene=PyScene(children=[
 ProtoDeclare(name="anyShape", 
-ProtoInterface=ProtoInterface(field=[field(name="myShape", accessType="inputOutput", type="MFNode", children=[
+ProtoInterface=PyProtoInterface(field=[Pyfield(name="myShape", accessType="inputOutput", type="MFNode", children=[
 Shape(
 geometry=
 Sphere())])
 ]), 
-ProtoBody=ProtoBody(children=[
+ProtoBody=PyProtoBody(children=[
 Transform(
-IS=IS(connect=[connect(nodeField="children", protoField="myShape")
+IS=PyIS(connect=[Pyconnect(nodeField="children", protoField="myShape")
 ]))])),
 ProtoDeclare(name="one", 
-ProtoInterface=ProtoInterface(field=[field(name="myShape", accessType="inputOutput", type="MFNode", children=[
+ProtoInterface=PyProtoInterface(field=[Pyfield(name="myShape", accessType="inputOutput", type="MFNode", children=[
 Shape(
 geometry=
 Cylinder())])
 ]), 
-ProtoBody=ProtoBody(children=[
+ProtoBody=PyProtoBody(children=[
 Transform(children=[
 ProtoInstance(name="anyShape", 
-IS=IS(connect=[connect(nodeField="myShape", protoField="myShape")
+IS=PyIS(connect=[Pyconnect(nodeField="myShape", protoField="myShape")
 ]))])])),
-ProtoInstance(name="one", fieldValue=[fieldValue(name="myShape", children=[
+ProtoInstance(name="one", fieldValue=[PyfieldValue(name="myShape", children=[
 Shape(
 geometry=
 Box())])

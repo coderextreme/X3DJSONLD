@@ -5,23 +5,23 @@ print("-->")
 import json
 model = (
 X3D(profile="Interchange", version="3.3", 
-head=head(
+head=Pyhead(
 children=[
-meta(name="title", content="gears.x3d"),
-meta(name="identifier", content="http://coderextreme.net/X3DJSONLD/template.json"),
-meta(name="description", content="Template for an Indexed Face Set"),
-meta(name="creator", content="John Carlson"),
-meta(name="created", content="4 April 2017"),
-meta(name="generator", content="convertStlToJson.js:  https://github.com/coderextreme/X3DJSONLD/src/main/node/convertStlToJson.js"),
-meta(name="license", content="../license.html"),
-meta(name="modified", content="30 April 2017"),
-meta(name="translated", content="30 April 2017"),
-meta(name="generator", content="X3DJSONLD: https://github.com/coderextreme/X3DJSONLD"),
-meta(name="translated", content="02 September 2023"),
-meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
-meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
+Pymeta(name="title", content="gears.x3d"),
+Pymeta(name="identifier", content="http://coderextreme.net/X3DJSONLD/template.json"),
+Pymeta(name="description", content="Template for an Indexed Face Set"),
+Pymeta(name="creator", content="John Carlson"),
+Pymeta(name="created", content="4 April 2017"),
+Pymeta(name="generator", content="convertStlToJson.js:  https://github.com/coderextreme/X3DJSONLD/src/main/node/convertStlToJson.js"),
+Pymeta(name="license", content="../license.html"),
+Pymeta(name="modified", content="30 April 2017"),
+Pymeta(name="translated", content="30 April 2017"),
+Pymeta(name="generator", content="X3DJSONLD: https://github.com/coderextreme/X3DJSONLD"),
+Pymeta(name="translated", content="30 December 2023"),
+Pymeta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
+Pymeta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
-Scene=Scene(children=[
+Scene=PyScene(children=[
 NavigationInfo(type="\"EXAMINE\" \"FLY\" \"WALK\" \"ANY\""),
 Group(children=[
 Shape(bboxCenter=((-4.868185499999999,25.359741,0)), bboxSize=((77.23637099999999,100.502162,6)), 

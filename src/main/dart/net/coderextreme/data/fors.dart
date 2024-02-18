@@ -150,7 +150,7 @@ ecmascript:eval (0
                       toField_ : SFString('set_translation'))])),
 
             ProtoDeclare(
-              name_ : SFString('cylinder'),
+              name_ : SFString('cyl'),
               ProtoInterface_ : 
                 ProtoInterface(
                   field_ : [
@@ -264,7 +264,7 @@ ecmascript:eval (0
                       value_ : SFString('50 50 50'))]),
 
                 ProtoInstance(
-                  name_ : SFString('cylinder'),
+                  name_ : SFString('cyl'),
                   DEF_ : SFString('linkA'),
                   fieldValue_ : [
                     fieldValue(

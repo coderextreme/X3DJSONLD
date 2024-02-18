@@ -12,7 +12,7 @@ CX3D* X3D0 = new CX3D();
 CGroup* group = (CGroup*)(m_pScene.createNode("Group"));
 group->addChildren(X3D0);
 X3D0->setProfile("Immersive");
-X3D0->setVersion("4.0");
+X3D0->setVersion("3.3");
 Chead* head1 = new Chead();
 Cmeta* meta2 = new Cmeta();
 meta2->setName("title");
@@ -89,45 +89,54 @@ meta16->setName("generator");
 meta16->setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit");
 head1->addMeta(*meta16);
 
+Cmeta* meta17 = new Cmeta();
+meta17->setName("license");
+meta17->setContent("../license.html");
+head1->addMeta(*meta17);
+
 X3D0->setHead(*head1);
 
-CScene* Scene17 = new CScene();
-CProtoDeclare ProtoDeclare18 = browser.createX3DFromString(R"foo(<?xml version="1.0" encoding="undefined"?>
+CScene* Scene18 = new CScene();
+CWorldInfo* WorldInfo19 = (CWorldInfo *)(m_pScene.createNode("WorldInfo"));
+WorldInfo19->setTitle("LOA1_StandAnimation.x3d");
+group->addChildren(*WorldInfo19);
+
+CProtoDeclare ProtoDeclare20 = browser.createX3DFromString(R"foo(<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
-<ProtoDeclare name="LOA1_StandAnimation" ><ProtoInterface><field accessType="inputOutput" type="SFTime" name="cycleInterval" value="0.00999999977648258"></field>
-<field accessType="inputOutput" type="SFBool" name="enabled" value="true"></field>
-<field accessType="inputOutput" type="SFBool" name="loop" value="true"></field>
-<field accessType="inputOutput" type="SFTime" name="startTime"></field>
-<field accessType="inputOutput" type="SFTime" name="stopTime" value="-1"></field>
-<field accessType="outputOnly" type="SFFloat" name="fraction_changed"></field>
-<field accessType="outputOnly" type="SFBool" name="isActive"></field>
-<field accessType="outputOnly" type="SFVec3f" name="HumanoidRoot_translation_changed"></field>
-<field accessType="outputOnly" type="SFRotation" name="HumanoidRoot_rotation_changed"></field>
-<field accessType="outputOnly" type="SFRotation" name="lower_body_rotation_changed"></field>
-<field accessType="outputOnly" type="SFRotation" name="l_hip_rotation_changed"></field>
-<field accessType="outputOnly" type="SFRotation" name="l_knee_rotation_changed"></field>
-<field accessType="outputOnly" type="SFRotation" name="l_ankle_rotation_changed"></field>
-<field accessType="outputOnly" type="SFRotation" name="l_midtarsal_rotation_changed"></field>
-<field accessType="outputOnly" type="SFRotation" name="r_hip_rotation_changed"></field>
-<field accessType="outputOnly" type="SFRotation" name="r_knee_rotation_changed"></field>
-<field accessType="outputOnly" type="SFRotation" name="r_ankle_rotation_changed"></field>
-<field accessType="outputOnly" type="SFRotation" name="r_midtarsal_rotation_changed"></field>
-<field accessType="outputOnly" type="SFRotation" name="vl5_rotation_changed"></field>
-<field accessType="outputOnly" type="SFRotation" name="skullbase_rotation_changed"></field>
-<field accessType="outputOnly" type="SFRotation" name="l_shoulder_rotation_changed"></field>
-<field accessType="outputOnly" type="SFRotation" name="l_elbow_rotation_changed"></field>
-<field accessType="outputOnly" type="SFRotation" name="l_wrist_rotation_changed"></field>
-<field accessType="outputOnly" type="SFRotation" name="r_shoulder_rotation_changed"></field>
-<field accessType="outputOnly" type="SFRotation" name="r_elbow_rotation_changed"></field>
-<field accessType="outputOnly" type="SFRotation" name="r_wrist_rotation_changed"></field>
+<ProtoDeclare name="LOA1_StandAnimation" ><ProtoInterface><field name="cycleInterval" accessType="inputOutput" type="SFTime" value="0.009999999776482582"></field>
+<field name="enabled" accessType="inputOutput" type="SFBool" value="true"></field>
+<field name="loop" accessType="inputOutput" type="SFBool" value="true"></field>
+<field name="startTime" accessType="inputOutput" type="SFTime" value="0"></field>
+<field name="stopTime" accessType="inputOutput" type="SFTime" value="-1"></field>
+<field name="fraction_changed" accessType="outputOnly" type="SFFloat"></field>
+<field name="isActive" accessType="outputOnly" type="SFBool"></field>
+<field name="HumanoidRoot_translation_changed" accessType="outputOnly" type="SFVec3f"></field>
+<field name="HumanoidRoot_rotation_changed" accessType="outputOnly" type="SFRotation"></field>
+<field name="lower_body_rotation_changed" accessType="outputOnly" type="SFRotation"></field>
+<field name="l_hip_rotation_changed" accessType="outputOnly" type="SFRotation"></field>
+<field name="l_knee_rotation_changed" accessType="outputOnly" type="SFRotation"></field>
+<field name="l_ankle_rotation_changed" accessType="outputOnly" type="SFRotation"></field>
+<field name="l_midtarsal_rotation_changed" accessType="outputOnly" type="SFRotation"></field>
+<field name="r_hip_rotation_changed" accessType="outputOnly" type="SFRotation"></field>
+<field name="r_knee_rotation_changed" accessType="outputOnly" type="SFRotation"></field>
+<field name="r_ankle_rotation_changed" accessType="outputOnly" type="SFRotation"></field>
+<field name="r_midtarsal_rotation_changed" accessType="outputOnly" type="SFRotation"></field>
+<field name="vl5_rotation_changed" accessType="outputOnly" type="SFRotation"></field>
+<field name="skullbase_rotation_changed" accessType="outputOnly" type="SFRotation"></field>
+<field name="l_shoulder_rotation_changed" accessType="outputOnly" type="SFRotation"></field>
+<field name="l_elbow_rotation_changed" accessType="outputOnly" type="SFRotation"></field>
+<field name="l_wrist_rotation_changed" accessType="outputOnly" type="SFRotation"></field>
+<field name="r_shoulder_rotation_changed" accessType="outputOnly" type="SFRotation"></field>
+<field name="r_elbow_rotation_changed" accessType="outputOnly" type="SFRotation"></field>
+<field name="r_wrist_rotation_changed" accessType="outputOnly" type="SFRotation"></field>
 </ProtoInterface>
-<ProtoBody><Group><TimeSensor DEF="TIMER"><IS><connect nodeField="enabled" protoField="enabled"></connect>
-<connect nodeField="cycleInterval" protoField="cycleInterval"></connect>
+<ProtoBody><Group><TimeSensor DEF="TIMER"><IS><connect nodeField="cycleInterval" protoField="cycleInterval"></connect>
+<connect nodeField="enabled" protoField="enabled"></connect>
 <connect nodeField="loop" protoField="loop"></connect>
 <connect nodeField="startTime" protoField="startTime"></connect>
 <connect nodeField="stopTime" protoField="stopTime"></connect>
-<connect nodeField="isActive" protoField="isActive"></connect>
 <connect nodeField="fraction_changed" protoField="fraction_changed"></connect>
+<connect nodeField="isActive" protoField="isActive"></connect>
 </IS>
 </TimeSensor>
 <PositionInterpolator DEF="HUMANOIDROOT_POSITION_ANIMATOR" key="0 1" keyValue="0 0 0 0 0 0"><IS><connect nodeField="value_changed" protoField="HumanoidRoot_translation_changed"></connect>
@@ -188,670 +197,669 @@ CProtoDeclare ProtoDeclare18 = browser.createX3DFromString(R"foo(<?xml version="
 </IS>
 </OrientationInterpolator>
 </Group>
-<ROUTE fromNode="TIMER" fromField="fraction_changed" toNode="HUMANOIDROOT_POSITION_ANIMATOR" toField="set_fraction"></ROUTE>
-<ROUTE fromNode="TIMER" fromField="fraction_changed" toNode="HUMANOIDROOT_ANIMATOR" toField="set_fraction"></ROUTE>
-<ROUTE fromNode="TIMER" fromField="fraction_changed" toNode="SACROILIAC_ANIMATOR" toField="set_fraction"></ROUTE>
-<ROUTE fromNode="TIMER" fromField="fraction_changed" toNode="L_HIP_ANIMATOR" toField="set_fraction"></ROUTE>
-<ROUTE fromNode="TIMER" fromField="fraction_changed" toNode="L_KNEE_ANIMATOR" toField="set_fraction"></ROUTE>
-<ROUTE fromNode="TIMER" fromField="fraction_changed" toNode="L_ANKLE_ANIMATOR" toField="set_fraction"></ROUTE>
-<ROUTE fromNode="TIMER" fromField="fraction_changed" toNode="L_MIDTARSAL_ANIMATOR" toField="set_fraction"></ROUTE>
-<ROUTE fromNode="TIMER" fromField="fraction_changed" toNode="R_HIP_ANIMATOR" toField="set_fraction"></ROUTE>
-<ROUTE fromNode="TIMER" fromField="fraction_changed" toNode="R_KNEE_ANIMATOR" toField="set_fraction"></ROUTE>
-<ROUTE fromNode="TIMER" fromField="fraction_changed" toNode="R_ANKLE_ANIMATOR" toField="set_fraction"></ROUTE>
-<ROUTE fromNode="TIMER" fromField="fraction_changed" toNode="R_MIDTARSAL_ANIMATOR" toField="set_fraction"></ROUTE>
-<ROUTE fromNode="TIMER" fromField="fraction_changed" toNode="VL5_ANIMATOR" toField="set_fraction"></ROUTE>
-<ROUTE fromNode="TIMER" fromField="fraction_changed" toNode="SKULLBASE_ANIMATOR" toField="set_fraction"></ROUTE>
-<ROUTE fromNode="TIMER" fromField="fraction_changed" toNode="L_SHOULDER_ANIMATOR" toField="set_fraction"></ROUTE>
-<ROUTE fromNode="TIMER" fromField="fraction_changed" toNode="L_ELBOW_ANIMATOR" toField="set_fraction"></ROUTE>
-<ROUTE fromNode="TIMER" fromField="fraction_changed" toNode="L_WRIST_ANIMATOR" toField="set_fraction"></ROUTE>
-<ROUTE fromNode="TIMER" fromField="fraction_changed" toNode="R_SHOULDER_ANIMATOR" toField="set_fraction"></ROUTE>
-<ROUTE fromNode="TIMER" fromField="fraction_changed" toNode="R_ELBOW_ANIMATOR" toField="set_fraction"></ROUTE>
-<ROUTE fromNode="TIMER" fromField="fraction_changed" toNode="R_WRIST_ANIMATOR" toField="set_fraction"></ROUTE>
+<ROUTE fromField="fraction_changed" fromNode="TIMER" toField="set_fraction" toNode="HUMANOIDROOT_POSITION_ANIMATOR"></ROUTE>
+<ROUTE fromField="fraction_changed" fromNode="TIMER" toField="set_fraction" toNode="HUMANOIDROOT_ANIMATOR"></ROUTE>
+<ROUTE fromField="fraction_changed" fromNode="TIMER" toField="set_fraction" toNode="SACROILIAC_ANIMATOR"></ROUTE>
+<ROUTE fromField="fraction_changed" fromNode="TIMER" toField="set_fraction" toNode="L_HIP_ANIMATOR"></ROUTE>
+<ROUTE fromField="fraction_changed" fromNode="TIMER" toField="set_fraction" toNode="L_KNEE_ANIMATOR"></ROUTE>
+<ROUTE fromField="fraction_changed" fromNode="TIMER" toField="set_fraction" toNode="L_ANKLE_ANIMATOR"></ROUTE>
+<ROUTE fromField="fraction_changed" fromNode="TIMER" toField="set_fraction" toNode="L_MIDTARSAL_ANIMATOR"></ROUTE>
+<ROUTE fromField="fraction_changed" fromNode="TIMER" toField="set_fraction" toNode="R_HIP_ANIMATOR"></ROUTE>
+<ROUTE fromField="fraction_changed" fromNode="TIMER" toField="set_fraction" toNode="R_KNEE_ANIMATOR"></ROUTE>
+<ROUTE fromField="fraction_changed" fromNode="TIMER" toField="set_fraction" toNode="R_ANKLE_ANIMATOR"></ROUTE>
+<ROUTE fromField="fraction_changed" fromNode="TIMER" toField="set_fraction" toNode="R_MIDTARSAL_ANIMATOR"></ROUTE>
+<ROUTE fromField="fraction_changed" fromNode="TIMER" toField="set_fraction" toNode="VL5_ANIMATOR"></ROUTE>
+<ROUTE fromField="fraction_changed" fromNode="TIMER" toField="set_fraction" toNode="SKULLBASE_ANIMATOR"></ROUTE>
+<ROUTE fromField="fraction_changed" fromNode="TIMER" toField="set_fraction" toNode="L_SHOULDER_ANIMATOR"></ROUTE>
+<ROUTE fromField="fraction_changed" fromNode="TIMER" toField="set_fraction" toNode="L_ELBOW_ANIMATOR"></ROUTE>
+<ROUTE fromField="fraction_changed" fromNode="TIMER" toField="set_fraction" toNode="L_WRIST_ANIMATOR"></ROUTE>
+<ROUTE fromField="fraction_changed" fromNode="TIMER" toField="set_fraction" toNode="R_SHOULDER_ANIMATOR"></ROUTE>
+<ROUTE fromField="fraction_changed" fromNode="TIMER" toField="set_fraction" toNode="R_ELBOW_ANIMATOR"></ROUTE>
+<ROUTE fromField="fraction_changed" fromNode="TIMER" toField="set_fraction" toNode="R_WRIST_ANIMATOR"></ROUTE>
 </ProtoBody>
 </ProtoDeclare>)foo");
-ProtoDeclare18->setName("LOA1_StandAnimation");
-CProtoInterface* ProtoInterface19 = new CProtoInterface();
-Cfield* field20 = new Cfield();
-field20->setAccessType("inputOutput");
-field20->setType("SFTime");
-field20->setName("cycleInterval");
-field20->setValue("0.00999999977648258");
-ProtoInterface19->addField(*field20);
-
-Cfield* field21 = new Cfield();
-field21->setAccessType("inputOutput");
-field21->setType("SFBool");
-field21->setName("enabled");
-field21->setValue("true");
-ProtoInterface19->addField(*field21);
-
+ProtoDeclare20->setName("LOA1_StandAnimation");
+CProtoInterface* ProtoInterface21 = new CProtoInterface();
 Cfield* field22 = new Cfield();
+field22->setName("cycleInterval");
 field22->setAccessType("inputOutput");
-field22->setType("SFBool");
-field22->setName("loop");
-field22->setValue("true");
-ProtoInterface19->addField(*field22);
+field22->setType("SFTime");
+field22->setValue("0.009999999776482582");
+ProtoInterface21->addField(*field22);
 
 Cfield* field23 = new Cfield();
+field23->setName("enabled");
 field23->setAccessType("inputOutput");
-field23->setType("SFTime");
-field23->setName("startTime");
-ProtoInterface19->addField(*field23);
+field23->setType("SFBool");
+field23->setValue("true");
+ProtoInterface21->addField(*field23);
 
 Cfield* field24 = new Cfield();
+field24->setName("loop");
 field24->setAccessType("inputOutput");
-field24->setType("SFTime");
-field24->setName("stopTime");
-field24->setValue("-1");
-ProtoInterface19->addField(*field24);
+field24->setType("SFBool");
+field24->setValue("true");
+ProtoInterface21->addField(*field24);
 
 Cfield* field25 = new Cfield();
-field25->setAccessType("outputOnly");
-field25->setType("SFFloat");
-field25->setName("fraction_changed");
-ProtoInterface19->addField(*field25);
+field25->setName("startTime");
+field25->setAccessType("inputOutput");
+field25->setType("SFTime");
+field25->setValue("0");
+ProtoInterface21->addField(*field25);
 
 Cfield* field26 = new Cfield();
-field26->setAccessType("outputOnly");
-field26->setType("SFBool");
-field26->setName("isActive");
-ProtoInterface19->addField(*field26);
+field26->setName("stopTime");
+field26->setAccessType("inputOutput");
+field26->setType("SFTime");
+field26->setValue("-1");
+ProtoInterface21->addField(*field26);
 
 Cfield* field27 = new Cfield();
+field27->setName("fraction_changed");
 field27->setAccessType("outputOnly");
-field27->setType("SFVec3f");
-field27->setName("HumanoidRoot_translation_changed");
-ProtoInterface19->addField(*field27);
+field27->setType("SFFloat");
+ProtoInterface21->addField(*field27);
 
 Cfield* field28 = new Cfield();
+field28->setName("isActive");
 field28->setAccessType("outputOnly");
-field28->setType("SFRotation");
-field28->setName("HumanoidRoot_rotation_changed");
-ProtoInterface19->addField(*field28);
+field28->setType("SFBool");
+ProtoInterface21->addField(*field28);
 
 Cfield* field29 = new Cfield();
+field29->setName("HumanoidRoot_translation_changed");
 field29->setAccessType("outputOnly");
-field29->setType("SFRotation");
-field29->setName("lower_body_rotation_changed");
-ProtoInterface19->addField(*field29);
+field29->setType("SFVec3f");
+ProtoInterface21->addField(*field29);
 
 Cfield* field30 = new Cfield();
+field30->setName("HumanoidRoot_rotation_changed");
 field30->setAccessType("outputOnly");
 field30->setType("SFRotation");
-field30->setName("l_hip_rotation_changed");
-ProtoInterface19->addField(*field30);
+ProtoInterface21->addField(*field30);
 
 Cfield* field31 = new Cfield();
+field31->setName("lower_body_rotation_changed");
 field31->setAccessType("outputOnly");
 field31->setType("SFRotation");
-field31->setName("l_knee_rotation_changed");
-ProtoInterface19->addField(*field31);
+ProtoInterface21->addField(*field31);
 
 Cfield* field32 = new Cfield();
+field32->setName("l_hip_rotation_changed");
 field32->setAccessType("outputOnly");
 field32->setType("SFRotation");
-field32->setName("l_ankle_rotation_changed");
-ProtoInterface19->addField(*field32);
+ProtoInterface21->addField(*field32);
 
 Cfield* field33 = new Cfield();
+field33->setName("l_knee_rotation_changed");
 field33->setAccessType("outputOnly");
 field33->setType("SFRotation");
-field33->setName("l_midtarsal_rotation_changed");
-ProtoInterface19->addField(*field33);
+ProtoInterface21->addField(*field33);
 
 Cfield* field34 = new Cfield();
+field34->setName("l_ankle_rotation_changed");
 field34->setAccessType("outputOnly");
 field34->setType("SFRotation");
-field34->setName("r_hip_rotation_changed");
-ProtoInterface19->addField(*field34);
+ProtoInterface21->addField(*field34);
 
 Cfield* field35 = new Cfield();
+field35->setName("l_midtarsal_rotation_changed");
 field35->setAccessType("outputOnly");
 field35->setType("SFRotation");
-field35->setName("r_knee_rotation_changed");
-ProtoInterface19->addField(*field35);
+ProtoInterface21->addField(*field35);
 
 Cfield* field36 = new Cfield();
+field36->setName("r_hip_rotation_changed");
 field36->setAccessType("outputOnly");
 field36->setType("SFRotation");
-field36->setName("r_ankle_rotation_changed");
-ProtoInterface19->addField(*field36);
+ProtoInterface21->addField(*field36);
 
 Cfield* field37 = new Cfield();
+field37->setName("r_knee_rotation_changed");
 field37->setAccessType("outputOnly");
 field37->setType("SFRotation");
-field37->setName("r_midtarsal_rotation_changed");
-ProtoInterface19->addField(*field37);
+ProtoInterface21->addField(*field37);
 
 Cfield* field38 = new Cfield();
+field38->setName("r_ankle_rotation_changed");
 field38->setAccessType("outputOnly");
 field38->setType("SFRotation");
-field38->setName("vl5_rotation_changed");
-ProtoInterface19->addField(*field38);
+ProtoInterface21->addField(*field38);
 
 Cfield* field39 = new Cfield();
+field39->setName("r_midtarsal_rotation_changed");
 field39->setAccessType("outputOnly");
 field39->setType("SFRotation");
-field39->setName("skullbase_rotation_changed");
-ProtoInterface19->addField(*field39);
+ProtoInterface21->addField(*field39);
 
 Cfield* field40 = new Cfield();
+field40->setName("vl5_rotation_changed");
 field40->setAccessType("outputOnly");
 field40->setType("SFRotation");
-field40->setName("l_shoulder_rotation_changed");
-ProtoInterface19->addField(*field40);
+ProtoInterface21->addField(*field40);
 
 Cfield* field41 = new Cfield();
+field41->setName("skullbase_rotation_changed");
 field41->setAccessType("outputOnly");
 field41->setType("SFRotation");
-field41->setName("l_elbow_rotation_changed");
-ProtoInterface19->addField(*field41);
+ProtoInterface21->addField(*field41);
 
 Cfield* field42 = new Cfield();
+field42->setName("l_shoulder_rotation_changed");
 field42->setAccessType("outputOnly");
 field42->setType("SFRotation");
-field42->setName("l_wrist_rotation_changed");
-ProtoInterface19->addField(*field42);
+ProtoInterface21->addField(*field42);
 
 Cfield* field43 = new Cfield();
+field43->setName("l_elbow_rotation_changed");
 field43->setAccessType("outputOnly");
 field43->setType("SFRotation");
-field43->setName("r_shoulder_rotation_changed");
-ProtoInterface19->addField(*field43);
+ProtoInterface21->addField(*field43);
 
 Cfield* field44 = new Cfield();
+field44->setName("l_wrist_rotation_changed");
 field44->setAccessType("outputOnly");
 field44->setType("SFRotation");
-field44->setName("r_elbow_rotation_changed");
-ProtoInterface19->addField(*field44);
+ProtoInterface21->addField(*field44);
 
 Cfield* field45 = new Cfield();
+field45->setName("r_shoulder_rotation_changed");
 field45->setAccessType("outputOnly");
 field45->setType("SFRotation");
-field45->setName("r_wrist_rotation_changed");
-ProtoInterface19->addField(*field45);
+ProtoInterface21->addField(*field45);
 
-ProtoDeclare18->setProtoInterface(*ProtoInterface19);
+Cfield* field46 = new Cfield();
+field46->setName("r_elbow_rotation_changed");
+field46->setAccessType("outputOnly");
+field46->setType("SFRotation");
+ProtoInterface21->addField(*field46);
 
-CProtoBody* ProtoBody46 = new CProtoBody();
-CGroup* Group47 = (CGroup *)(m_pScene.createNode("Group"));
-CTimeSensor* TimeSensor48 = (CTimeSensor *)(m_pScene.createNode("TimeSensor"));
-TimeSensor48->setDEF("TIMER");
-CIS* IS49 = new CIS();
-Cconnect* connect50 = new Cconnect();
-connect50->setNodeField("enabled");
-connect50->setProtoField("enabled");
-IS49->addConnect(*connect50);
+Cfield* field47 = new Cfield();
+field47->setName("r_wrist_rotation_changed");
+field47->setAccessType("outputOnly");
+field47->setType("SFRotation");
+ProtoInterface21->addField(*field47);
 
-Cconnect* connect51 = new Cconnect();
-connect51->setNodeField("cycleInterval");
-connect51->setProtoField("cycleInterval");
-IS49->addConnect(*connect51);
+ProtoDeclare20->setProtoInterface(*ProtoInterface21);
 
+CProtoBody* ProtoBody48 = new CProtoBody();
+CGroup* Group49 = (CGroup *)(m_pScene.createNode("Group"));
+CTimeSensor* TimeSensor50 = (CTimeSensor *)(m_pScene.createNode("TimeSensor"));
+TimeSensor50->setDEF("TIMER");
+CIS* IS51 = new CIS();
 Cconnect* connect52 = new Cconnect();
-connect52->setNodeField("loop");
-connect52->setProtoField("loop");
-IS49->addConnect(*connect52);
+connect52->setNodeField("cycleInterval");
+connect52->setProtoField("cycleInterval");
+IS51->addConnect(*connect52);
 
 Cconnect* connect53 = new Cconnect();
-connect53->setNodeField("startTime");
-connect53->setProtoField("startTime");
-IS49->addConnect(*connect53);
+connect53->setNodeField("enabled");
+connect53->setProtoField("enabled");
+IS51->addConnect(*connect53);
 
 Cconnect* connect54 = new Cconnect();
-connect54->setNodeField("stopTime");
-connect54->setProtoField("stopTime");
-IS49->addConnect(*connect54);
+connect54->setNodeField("loop");
+connect54->setProtoField("loop");
+IS51->addConnect(*connect54);
 
 Cconnect* connect55 = new Cconnect();
-connect55->setNodeField("isActive");
-connect55->setProtoField("isActive");
-IS49->addConnect(*connect55);
+connect55->setNodeField("startTime");
+connect55->setProtoField("startTime");
+IS51->addConnect(*connect55);
 
 Cconnect* connect56 = new Cconnect();
-connect56->setNodeField("fraction_changed");
-connect56->setProtoField("fraction_changed");
-IS49->addConnect(*connect56);
+connect56->setNodeField("stopTime");
+connect56->setProtoField("stopTime");
+IS51->addConnect(*connect56);
 
-TimeSensor48->setIS(*IS49);
+Cconnect* connect57 = new Cconnect();
+connect57->setNodeField("fraction_changed");
+connect57->setProtoField("fraction_changed");
+IS51->addConnect(*connect57);
 
-Group47->addChildren(*TimeSensor48);
+Cconnect* connect58 = new Cconnect();
+connect58->setNodeField("isActive");
+connect58->setProtoField("isActive");
+IS51->addConnect(*connect58);
 
-CPositionInterpolator* PositionInterpolator57 = (CPositionInterpolator *)(m_pScene.createNode("PositionInterpolator"));
-PositionInterpolator57->setDEF("HUMANOIDROOT_POSITION_ANIMATOR");
-PositionInterpolator57->setKey(new float[2]{0,1}, 2);
-PositionInterpolator57->setKeyValue(new float[6]{0,0,0,0,0,0});
-CIS* IS58 = new CIS();
-Cconnect* connect59 = new Cconnect();
-connect59->setNodeField("value_changed");
-connect59->setProtoField("HumanoidRoot_translation_changed");
-IS58->addConnect(*connect59);
+TimeSensor50->setIS(*IS51);
 
-PositionInterpolator57->setIS(*IS58);
+Group49->addChildren(*TimeSensor50);
 
-Group47->addChildren(*PositionInterpolator57);
+CPositionInterpolator* PositionInterpolator59 = (CPositionInterpolator *)(m_pScene.createNode("PositionInterpolator"));
+PositionInterpolator59->setDEF("HUMANOIDROOT_POSITION_ANIMATOR");
+PositionInterpolator59->setKey(new float[2]{0,1}, 2);
+PositionInterpolator59->setKeyValue(new float[6]{0,0,0,0,0,0});
+CIS* IS60 = new CIS();
+Cconnect* connect61 = new Cconnect();
+connect61->setNodeField("value_changed");
+connect61->setProtoField("HumanoidRoot_translation_changed");
+IS60->addConnect(*connect61);
 
-COrientationInterpolator* OrientationInterpolator60 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
-OrientationInterpolator60->setDEF("HUMANOIDROOT_ANIMATOR");
-OrientationInterpolator60->setKey(new float[2]{0,1}, 2);
-OrientationInterpolator60->setKeyValue(new float[8]{0,0,1,0,0,0,1,0});
-CIS* IS61 = new CIS();
-Cconnect* connect62 = new Cconnect();
-connect62->setNodeField("value_changed");
-connect62->setProtoField("HumanoidRoot_rotation_changed");
-IS61->addConnect(*connect62);
+PositionInterpolator59->setIS(*IS60);
 
-OrientationInterpolator60->setIS(*IS61);
+Group49->addChildren(*PositionInterpolator59);
 
-Group47->addChildren(*OrientationInterpolator60);
+COrientationInterpolator* OrientationInterpolator62 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator62->setDEF("HUMANOIDROOT_ANIMATOR");
+OrientationInterpolator62->setKey(new float[2]{0,1}, 2);
+OrientationInterpolator62->setKeyValue(new float[8]{0,0,1,0,0,0,1,0});
+CIS* IS63 = new CIS();
+Cconnect* connect64 = new Cconnect();
+connect64->setNodeField("value_changed");
+connect64->setProtoField("HumanoidRoot_rotation_changed");
+IS63->addConnect(*connect64);
 
-COrientationInterpolator* OrientationInterpolator63 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
-OrientationInterpolator63->setDEF("SACROILIAC_ANIMATOR");
-OrientationInterpolator63->setKey(new float[2]{0,1}, 2);
-OrientationInterpolator63->setKeyValue(new float[8]{0,0,1,0,0,0,1,0});
-CIS* IS64 = new CIS();
-Cconnect* connect65 = new Cconnect();
-connect65->setNodeField("value_changed");
-connect65->setProtoField("lower_body_rotation_changed");
-IS64->addConnect(*connect65);
+OrientationInterpolator62->setIS(*IS63);
 
-OrientationInterpolator63->setIS(*IS64);
+Group49->addChildren(*OrientationInterpolator62);
 
-Group47->addChildren(*OrientationInterpolator63);
+COrientationInterpolator* OrientationInterpolator65 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator65->setDEF("SACROILIAC_ANIMATOR");
+OrientationInterpolator65->setKey(new float[2]{0,1}, 2);
+OrientationInterpolator65->setKeyValue(new float[8]{0,0,1,0,0,0,1,0});
+CIS* IS66 = new CIS();
+Cconnect* connect67 = new Cconnect();
+connect67->setNodeField("value_changed");
+connect67->setProtoField("lower_body_rotation_changed");
+IS66->addConnect(*connect67);
 
-COrientationInterpolator* OrientationInterpolator66 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
-OrientationInterpolator66->setDEF("L_HIP_ANIMATOR");
-OrientationInterpolator66->setKey(new float[2]{0,1}, 2);
-OrientationInterpolator66->setKeyValue(new float[8]{0,0,1,0,0,0,1,0});
-CIS* IS67 = new CIS();
-Cconnect* connect68 = new Cconnect();
-connect68->setNodeField("value_changed");
-connect68->setProtoField("l_hip_rotation_changed");
-IS67->addConnect(*connect68);
+OrientationInterpolator65->setIS(*IS66);
 
-OrientationInterpolator66->setIS(*IS67);
+Group49->addChildren(*OrientationInterpolator65);
 
-Group47->addChildren(*OrientationInterpolator66);
+COrientationInterpolator* OrientationInterpolator68 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator68->setDEF("L_HIP_ANIMATOR");
+OrientationInterpolator68->setKey(new float[2]{0,1}, 2);
+OrientationInterpolator68->setKeyValue(new float[8]{0,0,1,0,0,0,1,0});
+CIS* IS69 = new CIS();
+Cconnect* connect70 = new Cconnect();
+connect70->setNodeField("value_changed");
+connect70->setProtoField("l_hip_rotation_changed");
+IS69->addConnect(*connect70);
 
-COrientationInterpolator* OrientationInterpolator69 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
-OrientationInterpolator69->setDEF("L_KNEE_ANIMATOR");
-OrientationInterpolator69->setKey(new float[2]{0,1}, 2);
-OrientationInterpolator69->setKeyValue(new float[8]{0,0,1,0,0,0,1,0});
-CIS* IS70 = new CIS();
-Cconnect* connect71 = new Cconnect();
-connect71->setNodeField("value_changed");
-connect71->setProtoField("l_knee_rotation_changed");
-IS70->addConnect(*connect71);
+OrientationInterpolator68->setIS(*IS69);
 
-OrientationInterpolator69->setIS(*IS70);
+Group49->addChildren(*OrientationInterpolator68);
 
-Group47->addChildren(*OrientationInterpolator69);
+COrientationInterpolator* OrientationInterpolator71 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator71->setDEF("L_KNEE_ANIMATOR");
+OrientationInterpolator71->setKey(new float[2]{0,1}, 2);
+OrientationInterpolator71->setKeyValue(new float[8]{0,0,1,0,0,0,1,0});
+CIS* IS72 = new CIS();
+Cconnect* connect73 = new Cconnect();
+connect73->setNodeField("value_changed");
+connect73->setProtoField("l_knee_rotation_changed");
+IS72->addConnect(*connect73);
 
-COrientationInterpolator* OrientationInterpolator72 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
-OrientationInterpolator72->setDEF("L_ANKLE_ANIMATOR");
-OrientationInterpolator72->setKey(new float[2]{0,1}, 2);
-OrientationInterpolator72->setKeyValue(new float[8]{0,0,1,0,0,0,1,0});
-CIS* IS73 = new CIS();
-Cconnect* connect74 = new Cconnect();
-connect74->setNodeField("value_changed");
-connect74->setProtoField("l_ankle_rotation_changed");
-IS73->addConnect(*connect74);
+OrientationInterpolator71->setIS(*IS72);
 
-OrientationInterpolator72->setIS(*IS73);
+Group49->addChildren(*OrientationInterpolator71);
 
-Group47->addChildren(*OrientationInterpolator72);
+COrientationInterpolator* OrientationInterpolator74 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator74->setDEF("L_ANKLE_ANIMATOR");
+OrientationInterpolator74->setKey(new float[2]{0,1}, 2);
+OrientationInterpolator74->setKeyValue(new float[8]{0,0,1,0,0,0,1,0});
+CIS* IS75 = new CIS();
+Cconnect* connect76 = new Cconnect();
+connect76->setNodeField("value_changed");
+connect76->setProtoField("l_ankle_rotation_changed");
+IS75->addConnect(*connect76);
 
-COrientationInterpolator* OrientationInterpolator75 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
-OrientationInterpolator75->setDEF("L_MIDTARSAL_ANIMATOR");
-OrientationInterpolator75->setKey(new float[2]{0,1}, 2);
-OrientationInterpolator75->setKeyValue(new float[8]{1,0,0,0,1,0,0,0});
-CIS* IS76 = new CIS();
-Cconnect* connect77 = new Cconnect();
-connect77->setNodeField("value_changed");
-connect77->setProtoField("l_midtarsal_rotation_changed");
-IS76->addConnect(*connect77);
+OrientationInterpolator74->setIS(*IS75);
 
-OrientationInterpolator75->setIS(*IS76);
+Group49->addChildren(*OrientationInterpolator74);
 
-Group47->addChildren(*OrientationInterpolator75);
+COrientationInterpolator* OrientationInterpolator77 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator77->setDEF("L_MIDTARSAL_ANIMATOR");
+OrientationInterpolator77->setKey(new float[2]{0,1}, 2);
+OrientationInterpolator77->setKeyValue(new float[8]{1,0,0,0,1,0,0,0});
+CIS* IS78 = new CIS();
+Cconnect* connect79 = new Cconnect();
+connect79->setNodeField("value_changed");
+connect79->setProtoField("l_midtarsal_rotation_changed");
+IS78->addConnect(*connect79);
 
-COrientationInterpolator* OrientationInterpolator78 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
-OrientationInterpolator78->setDEF("R_HIP_ANIMATOR");
-OrientationInterpolator78->setKey(new float[2]{0,1}, 2);
-OrientationInterpolator78->setKeyValue(new float[8]{0,0,1,0,0,0,1,0});
-CIS* IS79 = new CIS();
-Cconnect* connect80 = new Cconnect();
-connect80->setNodeField("value_changed");
-connect80->setProtoField("r_hip_rotation_changed");
-IS79->addConnect(*connect80);
+OrientationInterpolator77->setIS(*IS78);
 
-OrientationInterpolator78->setIS(*IS79);
+Group49->addChildren(*OrientationInterpolator77);
 
-Group47->addChildren(*OrientationInterpolator78);
+COrientationInterpolator* OrientationInterpolator80 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator80->setDEF("R_HIP_ANIMATOR");
+OrientationInterpolator80->setKey(new float[2]{0,1}, 2);
+OrientationInterpolator80->setKeyValue(new float[8]{0,0,1,0,0,0,1,0});
+CIS* IS81 = new CIS();
+Cconnect* connect82 = new Cconnect();
+connect82->setNodeField("value_changed");
+connect82->setProtoField("r_hip_rotation_changed");
+IS81->addConnect(*connect82);
 
-COrientationInterpolator* OrientationInterpolator81 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
-OrientationInterpolator81->setDEF("R_KNEE_ANIMATOR");
-OrientationInterpolator81->setKey(new float[2]{0,1}, 2);
-OrientationInterpolator81->setKeyValue(new float[8]{0,0,1,0,0,0,1,0});
-CIS* IS82 = new CIS();
-Cconnect* connect83 = new Cconnect();
-connect83->setNodeField("value_changed");
-connect83->setProtoField("r_knee_rotation_changed");
-IS82->addConnect(*connect83);
+OrientationInterpolator80->setIS(*IS81);
 
-OrientationInterpolator81->setIS(*IS82);
+Group49->addChildren(*OrientationInterpolator80);
 
-Group47->addChildren(*OrientationInterpolator81);
+COrientationInterpolator* OrientationInterpolator83 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator83->setDEF("R_KNEE_ANIMATOR");
+OrientationInterpolator83->setKey(new float[2]{0,1}, 2);
+OrientationInterpolator83->setKeyValue(new float[8]{0,0,1,0,0,0,1,0});
+CIS* IS84 = new CIS();
+Cconnect* connect85 = new Cconnect();
+connect85->setNodeField("value_changed");
+connect85->setProtoField("r_knee_rotation_changed");
+IS84->addConnect(*connect85);
 
-COrientationInterpolator* OrientationInterpolator84 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
-OrientationInterpolator84->setDEF("R_ANKLE_ANIMATOR");
-OrientationInterpolator84->setKey(new float[2]{0,1}, 2);
-OrientationInterpolator84->setKeyValue(new float[8]{0,0,1,0,0,0,1,0});
-CIS* IS85 = new CIS();
-Cconnect* connect86 = new Cconnect();
-connect86->setNodeField("value_changed");
-connect86->setProtoField("r_ankle_rotation_changed");
-IS85->addConnect(*connect86);
+OrientationInterpolator83->setIS(*IS84);
 
-OrientationInterpolator84->setIS(*IS85);
+Group49->addChildren(*OrientationInterpolator83);
 
-Group47->addChildren(*OrientationInterpolator84);
+COrientationInterpolator* OrientationInterpolator86 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator86->setDEF("R_ANKLE_ANIMATOR");
+OrientationInterpolator86->setKey(new float[2]{0,1}, 2);
+OrientationInterpolator86->setKeyValue(new float[8]{0,0,1,0,0,0,1,0});
+CIS* IS87 = new CIS();
+Cconnect* connect88 = new Cconnect();
+connect88->setNodeField("value_changed");
+connect88->setProtoField("r_ankle_rotation_changed");
+IS87->addConnect(*connect88);
 
-COrientationInterpolator* OrientationInterpolator87 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
-OrientationInterpolator87->setDEF("R_MIDTARSAL_ANIMATOR");
-OrientationInterpolator87->setKey(new float[2]{0,1}, 2);
-OrientationInterpolator87->setKeyValue(new float[8]{1,0,0,0,1,0,0,0});
-CIS* IS88 = new CIS();
-Cconnect* connect89 = new Cconnect();
-connect89->setNodeField("value_changed");
-connect89->setProtoField("r_midtarsal_rotation_changed");
-IS88->addConnect(*connect89);
+OrientationInterpolator86->setIS(*IS87);
 
-OrientationInterpolator87->setIS(*IS88);
+Group49->addChildren(*OrientationInterpolator86);
 
-Group47->addChildren(*OrientationInterpolator87);
+COrientationInterpolator* OrientationInterpolator89 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator89->setDEF("R_MIDTARSAL_ANIMATOR");
+OrientationInterpolator89->setKey(new float[2]{0,1}, 2);
+OrientationInterpolator89->setKeyValue(new float[8]{1,0,0,0,1,0,0,0});
+CIS* IS90 = new CIS();
+Cconnect* connect91 = new Cconnect();
+connect91->setNodeField("value_changed");
+connect91->setProtoField("r_midtarsal_rotation_changed");
+IS90->addConnect(*connect91);
 
-COrientationInterpolator* OrientationInterpolator90 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
-OrientationInterpolator90->setDEF("VL5_ANIMATOR");
-OrientationInterpolator90->setKey(new float[2]{0,1}, 2);
-OrientationInterpolator90->setKeyValue(new float[8]{0,0,1,0,0,0,1,0});
-CIS* IS91 = new CIS();
-Cconnect* connect92 = new Cconnect();
-connect92->setNodeField("value_changed");
-connect92->setProtoField("vl5_rotation_changed");
-IS91->addConnect(*connect92);
+OrientationInterpolator89->setIS(*IS90);
 
-OrientationInterpolator90->setIS(*IS91);
+Group49->addChildren(*OrientationInterpolator89);
 
-Group47->addChildren(*OrientationInterpolator90);
+COrientationInterpolator* OrientationInterpolator92 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator92->setDEF("VL5_ANIMATOR");
+OrientationInterpolator92->setKey(new float[2]{0,1}, 2);
+OrientationInterpolator92->setKeyValue(new float[8]{0,0,1,0,0,0,1,0});
+CIS* IS93 = new CIS();
+Cconnect* connect94 = new Cconnect();
+connect94->setNodeField("value_changed");
+connect94->setProtoField("vl5_rotation_changed");
+IS93->addConnect(*connect94);
 
-COrientationInterpolator* OrientationInterpolator93 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
-OrientationInterpolator93->setDEF("SKULLBASE_ANIMATOR");
-OrientationInterpolator93->setKey(new float[3]{0,0.5,1}, 3);
-OrientationInterpolator93->setKeyValue(new float[12]{0,0,1,0,-1,0,0,0.5,0,0,1,0});
-CIS* IS94 = new CIS();
-Cconnect* connect95 = new Cconnect();
-connect95->setNodeField("value_changed");
-connect95->setProtoField("skullbase_rotation_changed");
-IS94->addConnect(*connect95);
+OrientationInterpolator92->setIS(*IS93);
 
-OrientationInterpolator93->setIS(*IS94);
+Group49->addChildren(*OrientationInterpolator92);
 
-Group47->addChildren(*OrientationInterpolator93);
+COrientationInterpolator* OrientationInterpolator95 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator95->setDEF("SKULLBASE_ANIMATOR");
+OrientationInterpolator95->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator95->setKeyValue(new float[12]{0,0,1,0,-1,0,0,0.5,0,0,1,0});
+CIS* IS96 = new CIS();
+Cconnect* connect97 = new Cconnect();
+connect97->setNodeField("value_changed");
+connect97->setProtoField("skullbase_rotation_changed");
+IS96->addConnect(*connect97);
 
-COrientationInterpolator* OrientationInterpolator96 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
-OrientationInterpolator96->setDEF("L_SHOULDER_ANIMATOR");
-OrientationInterpolator96->setKey(new float[2]{0,1}, 2);
-OrientationInterpolator96->setKeyValue(new float[8]{0,0,1,0,0,0,1,0});
-CIS* IS97 = new CIS();
-Cconnect* connect98 = new Cconnect();
-connect98->setNodeField("value_changed");
-connect98->setProtoField("l_shoulder_rotation_changed");
-IS97->addConnect(*connect98);
+OrientationInterpolator95->setIS(*IS96);
 
-OrientationInterpolator96->setIS(*IS97);
+Group49->addChildren(*OrientationInterpolator95);
 
-Group47->addChildren(*OrientationInterpolator96);
+COrientationInterpolator* OrientationInterpolator98 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator98->setDEF("L_SHOULDER_ANIMATOR");
+OrientationInterpolator98->setKey(new float[2]{0,1}, 2);
+OrientationInterpolator98->setKeyValue(new float[8]{0,0,1,0,0,0,1,0});
+CIS* IS99 = new CIS();
+Cconnect* connect100 = new Cconnect();
+connect100->setNodeField("value_changed");
+connect100->setProtoField("l_shoulder_rotation_changed");
+IS99->addConnect(*connect100);
 
-COrientationInterpolator* OrientationInterpolator99 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
-OrientationInterpolator99->setDEF("L_ELBOW_ANIMATOR");
-OrientationInterpolator99->setKey(new float[2]{0,1}, 2);
-OrientationInterpolator99->setKeyValue(new float[8]{0,0,1,0,0,0,1,0});
-CIS* IS100 = new CIS();
-Cconnect* connect101 = new Cconnect();
-connect101->setNodeField("value_changed");
-connect101->setProtoField("l_elbow_rotation_changed");
-IS100->addConnect(*connect101);
+OrientationInterpolator98->setIS(*IS99);
 
-OrientationInterpolator99->setIS(*IS100);
+Group49->addChildren(*OrientationInterpolator98);
 
-Group47->addChildren(*OrientationInterpolator99);
+COrientationInterpolator* OrientationInterpolator101 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator101->setDEF("L_ELBOW_ANIMATOR");
+OrientationInterpolator101->setKey(new float[2]{0,1}, 2);
+OrientationInterpolator101->setKeyValue(new float[8]{0,0,1,0,0,0,1,0});
+CIS* IS102 = new CIS();
+Cconnect* connect103 = new Cconnect();
+connect103->setNodeField("value_changed");
+connect103->setProtoField("l_elbow_rotation_changed");
+IS102->addConnect(*connect103);
 
-COrientationInterpolator* OrientationInterpolator102 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
-OrientationInterpolator102->setDEF("L_WRIST_ANIMATOR");
-OrientationInterpolator102->setKey(new float[2]{0,1}, 2);
-OrientationInterpolator102->setKeyValue(new float[8]{0,0,1,0,0,0,1,0});
-CIS* IS103 = new CIS();
-Cconnect* connect104 = new Cconnect();
-connect104->setNodeField("value_changed");
-connect104->setProtoField("l_wrist_rotation_changed");
-IS103->addConnect(*connect104);
+OrientationInterpolator101->setIS(*IS102);
 
-OrientationInterpolator102->setIS(*IS103);
+Group49->addChildren(*OrientationInterpolator101);
 
-Group47->addChildren(*OrientationInterpolator102);
+COrientationInterpolator* OrientationInterpolator104 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator104->setDEF("L_WRIST_ANIMATOR");
+OrientationInterpolator104->setKey(new float[2]{0,1}, 2);
+OrientationInterpolator104->setKeyValue(new float[8]{0,0,1,0,0,0,1,0});
+CIS* IS105 = new CIS();
+Cconnect* connect106 = new Cconnect();
+connect106->setNodeField("value_changed");
+connect106->setProtoField("l_wrist_rotation_changed");
+IS105->addConnect(*connect106);
 
-COrientationInterpolator* OrientationInterpolator105 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
-OrientationInterpolator105->setDEF("R_SHOULDER_ANIMATOR");
-OrientationInterpolator105->setKey(new float[2]{0,1}, 2);
-OrientationInterpolator105->setKeyValue(new float[8]{0,0,1,0,0,0,1,0});
-CIS* IS106 = new CIS();
-Cconnect* connect107 = new Cconnect();
-connect107->setNodeField("value_changed");
-connect107->setProtoField("r_shoulder_rotation_changed");
-IS106->addConnect(*connect107);
+OrientationInterpolator104->setIS(*IS105);
 
-OrientationInterpolator105->setIS(*IS106);
+Group49->addChildren(*OrientationInterpolator104);
 
-Group47->addChildren(*OrientationInterpolator105);
+COrientationInterpolator* OrientationInterpolator107 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator107->setDEF("R_SHOULDER_ANIMATOR");
+OrientationInterpolator107->setKey(new float[2]{0,1}, 2);
+OrientationInterpolator107->setKeyValue(new float[8]{0,0,1,0,0,0,1,0});
+CIS* IS108 = new CIS();
+Cconnect* connect109 = new Cconnect();
+connect109->setNodeField("value_changed");
+connect109->setProtoField("r_shoulder_rotation_changed");
+IS108->addConnect(*connect109);
 
-COrientationInterpolator* OrientationInterpolator108 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
-OrientationInterpolator108->setDEF("R_ELBOW_ANIMATOR");
-OrientationInterpolator108->setKey(new float[2]{0,1}, 2);
-OrientationInterpolator108->setKeyValue(new float[8]{0,0,1,0,0,0,1,0});
-CIS* IS109 = new CIS();
-Cconnect* connect110 = new Cconnect();
-connect110->setNodeField("value_changed");
-connect110->setProtoField("r_elbow_rotation_changed");
-IS109->addConnect(*connect110);
+OrientationInterpolator107->setIS(*IS108);
 
-OrientationInterpolator108->setIS(*IS109);
+Group49->addChildren(*OrientationInterpolator107);
 
-Group47->addChildren(*OrientationInterpolator108);
+COrientationInterpolator* OrientationInterpolator110 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator110->setDEF("R_ELBOW_ANIMATOR");
+OrientationInterpolator110->setKey(new float[2]{0,1}, 2);
+OrientationInterpolator110->setKeyValue(new float[8]{0,0,1,0,0,0,1,0});
+CIS* IS111 = new CIS();
+Cconnect* connect112 = new Cconnect();
+connect112->setNodeField("value_changed");
+connect112->setProtoField("r_elbow_rotation_changed");
+IS111->addConnect(*connect112);
 
-COrientationInterpolator* OrientationInterpolator111 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
-OrientationInterpolator111->setDEF("R_WRIST_ANIMATOR");
-OrientationInterpolator111->setKey(new float[2]{0,1}, 2);
-OrientationInterpolator111->setKeyValue(new float[8]{0,0,1,0,0,0,1,0});
-CIS* IS112 = new CIS();
-Cconnect* connect113 = new Cconnect();
-connect113->setNodeField("value_changed");
-connect113->setProtoField("r_wrist_rotation_changed");
-IS112->addConnect(*connect113);
+OrientationInterpolator110->setIS(*IS111);
 
-OrientationInterpolator111->setIS(*IS112);
+Group49->addChildren(*OrientationInterpolator110);
 
-Group47->addChildren(*OrientationInterpolator111);
+COrientationInterpolator* OrientationInterpolator113 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator113->setDEF("R_WRIST_ANIMATOR");
+OrientationInterpolator113->setKey(new float[2]{0,1}, 2);
+OrientationInterpolator113->setKeyValue(new float[8]{0,0,1,0,0,0,1,0});
+CIS* IS114 = new CIS();
+Cconnect* connect115 = new Cconnect();
+connect115->setNodeField("value_changed");
+connect115->setProtoField("r_wrist_rotation_changed");
+IS114->addConnect(*connect115);
 
-ProtoBody46->addChildren(*Group47);
+OrientationInterpolator113->setIS(*IS114);
 
-CROUTE* ROUTE114 = new CROUTE();
-ROUTE114->setFromNode("TIMER");
-ROUTE114->setFromField("fraction_changed");
-ROUTE114->setToNode("HUMANOIDROOT_POSITION_ANIMATOR");
-ROUTE114->setToField("set_fraction");
-ProtoBody46->addChildren(*ROUTE114);
+Group49->addChildren(*OrientationInterpolator113);
 
-CROUTE* ROUTE115 = new CROUTE();
-ROUTE115->setFromNode("TIMER");
-ROUTE115->setFromField("fraction_changed");
-ROUTE115->setToNode("HUMANOIDROOT_ANIMATOR");
-ROUTE115->setToField("set_fraction");
-ProtoBody46->addChildren(*ROUTE115);
+ProtoBody48->addChildren(*Group49);
 
 CROUTE* ROUTE116 = new CROUTE();
-ROUTE116->setFromNode("TIMER");
 ROUTE116->setFromField("fraction_changed");
-ROUTE116->setToNode("SACROILIAC_ANIMATOR");
+ROUTE116->setFromNode("TIMER");
 ROUTE116->setToField("set_fraction");
-ProtoBody46->addChildren(*ROUTE116);
+ROUTE116->setToNode("HUMANOIDROOT_POSITION_ANIMATOR");
+ProtoBody48->addChildren(*ROUTE116);
 
 CROUTE* ROUTE117 = new CROUTE();
-ROUTE117->setFromNode("TIMER");
 ROUTE117->setFromField("fraction_changed");
-ROUTE117->setToNode("L_HIP_ANIMATOR");
+ROUTE117->setFromNode("TIMER");
 ROUTE117->setToField("set_fraction");
-ProtoBody46->addChildren(*ROUTE117);
+ROUTE117->setToNode("HUMANOIDROOT_ANIMATOR");
+ProtoBody48->addChildren(*ROUTE117);
 
 CROUTE* ROUTE118 = new CROUTE();
-ROUTE118->setFromNode("TIMER");
 ROUTE118->setFromField("fraction_changed");
-ROUTE118->setToNode("L_KNEE_ANIMATOR");
+ROUTE118->setFromNode("TIMER");
 ROUTE118->setToField("set_fraction");
-ProtoBody46->addChildren(*ROUTE118);
+ROUTE118->setToNode("SACROILIAC_ANIMATOR");
+ProtoBody48->addChildren(*ROUTE118);
 
 CROUTE* ROUTE119 = new CROUTE();
-ROUTE119->setFromNode("TIMER");
 ROUTE119->setFromField("fraction_changed");
-ROUTE119->setToNode("L_ANKLE_ANIMATOR");
+ROUTE119->setFromNode("TIMER");
 ROUTE119->setToField("set_fraction");
-ProtoBody46->addChildren(*ROUTE119);
+ROUTE119->setToNode("L_HIP_ANIMATOR");
+ProtoBody48->addChildren(*ROUTE119);
 
 CROUTE* ROUTE120 = new CROUTE();
-ROUTE120->setFromNode("TIMER");
 ROUTE120->setFromField("fraction_changed");
-ROUTE120->setToNode("L_MIDTARSAL_ANIMATOR");
+ROUTE120->setFromNode("TIMER");
 ROUTE120->setToField("set_fraction");
-ProtoBody46->addChildren(*ROUTE120);
+ROUTE120->setToNode("L_KNEE_ANIMATOR");
+ProtoBody48->addChildren(*ROUTE120);
 
 CROUTE* ROUTE121 = new CROUTE();
-ROUTE121->setFromNode("TIMER");
 ROUTE121->setFromField("fraction_changed");
-ROUTE121->setToNode("R_HIP_ANIMATOR");
+ROUTE121->setFromNode("TIMER");
 ROUTE121->setToField("set_fraction");
-ProtoBody46->addChildren(*ROUTE121);
+ROUTE121->setToNode("L_ANKLE_ANIMATOR");
+ProtoBody48->addChildren(*ROUTE121);
 
 CROUTE* ROUTE122 = new CROUTE();
-ROUTE122->setFromNode("TIMER");
 ROUTE122->setFromField("fraction_changed");
-ROUTE122->setToNode("R_KNEE_ANIMATOR");
+ROUTE122->setFromNode("TIMER");
 ROUTE122->setToField("set_fraction");
-ProtoBody46->addChildren(*ROUTE122);
+ROUTE122->setToNode("L_MIDTARSAL_ANIMATOR");
+ProtoBody48->addChildren(*ROUTE122);
 
 CROUTE* ROUTE123 = new CROUTE();
-ROUTE123->setFromNode("TIMER");
 ROUTE123->setFromField("fraction_changed");
-ROUTE123->setToNode("R_ANKLE_ANIMATOR");
+ROUTE123->setFromNode("TIMER");
 ROUTE123->setToField("set_fraction");
-ProtoBody46->addChildren(*ROUTE123);
+ROUTE123->setToNode("R_HIP_ANIMATOR");
+ProtoBody48->addChildren(*ROUTE123);
 
 CROUTE* ROUTE124 = new CROUTE();
-ROUTE124->setFromNode("TIMER");
 ROUTE124->setFromField("fraction_changed");
-ROUTE124->setToNode("R_MIDTARSAL_ANIMATOR");
+ROUTE124->setFromNode("TIMER");
 ROUTE124->setToField("set_fraction");
-ProtoBody46->addChildren(*ROUTE124);
+ROUTE124->setToNode("R_KNEE_ANIMATOR");
+ProtoBody48->addChildren(*ROUTE124);
 
 CROUTE* ROUTE125 = new CROUTE();
-ROUTE125->setFromNode("TIMER");
 ROUTE125->setFromField("fraction_changed");
-ROUTE125->setToNode("VL5_ANIMATOR");
+ROUTE125->setFromNode("TIMER");
 ROUTE125->setToField("set_fraction");
-ProtoBody46->addChildren(*ROUTE125);
+ROUTE125->setToNode("R_ANKLE_ANIMATOR");
+ProtoBody48->addChildren(*ROUTE125);
 
 CROUTE* ROUTE126 = new CROUTE();
-ROUTE126->setFromNode("TIMER");
 ROUTE126->setFromField("fraction_changed");
-ROUTE126->setToNode("SKULLBASE_ANIMATOR");
+ROUTE126->setFromNode("TIMER");
 ROUTE126->setToField("set_fraction");
-ProtoBody46->addChildren(*ROUTE126);
+ROUTE126->setToNode("R_MIDTARSAL_ANIMATOR");
+ProtoBody48->addChildren(*ROUTE126);
 
 CROUTE* ROUTE127 = new CROUTE();
-ROUTE127->setFromNode("TIMER");
 ROUTE127->setFromField("fraction_changed");
-ROUTE127->setToNode("L_SHOULDER_ANIMATOR");
+ROUTE127->setFromNode("TIMER");
 ROUTE127->setToField("set_fraction");
-ProtoBody46->addChildren(*ROUTE127);
+ROUTE127->setToNode("VL5_ANIMATOR");
+ProtoBody48->addChildren(*ROUTE127);
 
 CROUTE* ROUTE128 = new CROUTE();
-ROUTE128->setFromNode("TIMER");
 ROUTE128->setFromField("fraction_changed");
-ROUTE128->setToNode("L_ELBOW_ANIMATOR");
+ROUTE128->setFromNode("TIMER");
 ROUTE128->setToField("set_fraction");
-ProtoBody46->addChildren(*ROUTE128);
+ROUTE128->setToNode("SKULLBASE_ANIMATOR");
+ProtoBody48->addChildren(*ROUTE128);
 
 CROUTE* ROUTE129 = new CROUTE();
-ROUTE129->setFromNode("TIMER");
 ROUTE129->setFromField("fraction_changed");
-ROUTE129->setToNode("L_WRIST_ANIMATOR");
+ROUTE129->setFromNode("TIMER");
 ROUTE129->setToField("set_fraction");
-ProtoBody46->addChildren(*ROUTE129);
+ROUTE129->setToNode("L_SHOULDER_ANIMATOR");
+ProtoBody48->addChildren(*ROUTE129);
 
 CROUTE* ROUTE130 = new CROUTE();
-ROUTE130->setFromNode("TIMER");
 ROUTE130->setFromField("fraction_changed");
-ROUTE130->setToNode("R_SHOULDER_ANIMATOR");
+ROUTE130->setFromNode("TIMER");
 ROUTE130->setToField("set_fraction");
-ProtoBody46->addChildren(*ROUTE130);
+ROUTE130->setToNode("L_ELBOW_ANIMATOR");
+ProtoBody48->addChildren(*ROUTE130);
 
 CROUTE* ROUTE131 = new CROUTE();
-ROUTE131->setFromNode("TIMER");
 ROUTE131->setFromField("fraction_changed");
-ROUTE131->setToNode("R_ELBOW_ANIMATOR");
+ROUTE131->setFromNode("TIMER");
 ROUTE131->setToField("set_fraction");
-ProtoBody46->addChildren(*ROUTE131);
+ROUTE131->setToNode("L_WRIST_ANIMATOR");
+ProtoBody48->addChildren(*ROUTE131);
 
 CROUTE* ROUTE132 = new CROUTE();
-ROUTE132->setFromNode("TIMER");
 ROUTE132->setFromField("fraction_changed");
-ROUTE132->setToNode("R_WRIST_ANIMATOR");
+ROUTE132->setFromNode("TIMER");
 ROUTE132->setToField("set_fraction");
-ProtoBody46->addChildren(*ROUTE132);
+ROUTE132->setToNode("R_SHOULDER_ANIMATOR");
+ProtoBody48->addChildren(*ROUTE132);
 
-ProtoDeclare18->setProtoBody(*ProtoBody46);
+CROUTE* ROUTE133 = new CROUTE();
+ROUTE133->setFromField("fraction_changed");
+ROUTE133->setFromNode("TIMER");
+ROUTE133->setToField("set_fraction");
+ROUTE133->setToNode("R_ELBOW_ANIMATOR");
+ProtoBody48->addChildren(*ROUTE133);
 
-group->addChildren(*ProtoDeclare18);
+CROUTE* ROUTE134 = new CROUTE();
+ROUTE134->setFromField("fraction_changed");
+ROUTE134->setFromNode("TIMER");
+ROUTE134->setToField("set_fraction");
+ROUTE134->setToNode("R_WRIST_ANIMATOR");
+ProtoBody48->addChildren(*ROUTE134);
 
-CWorldInfo* WorldInfo133 = (CWorldInfo *)(m_pScene.createNode("WorldInfo"));
-WorldInfo133->setTitle("LOA1_StandAnimation.x3d");
-group->addChildren(*WorldInfo133);
+ProtoDeclare20->setProtoBody(*ProtoBody48);
 
-CAnchor* Anchor134 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor134->setDescription("InterchangableActorsViaDynamicRouting");
-Anchor134->setUrl(new CString[4]{"InterchangableActorsViaDynamicRouting.x3d","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/InterchangableActorsViaDynamicRouting.x3d","InterchangableActorsViaDynamicRouting.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/InterchangableActorsViaDynamicRouting.wrl"}, 4);
-Anchor134->setParameter(new CString[1]{"target=_blank"}, 1);
-CShape* Shape135 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance136 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material137 = (CMaterial *)(m_pScene.createNode("Material"));
-Material137->setDiffuseColor(new float[3]{1,1,0.2});
-Appearance136->setMaterial(*Material137);
+group->addChildren(*ProtoDeclare20);
 
-Shape135->setAppearance(*Appearance136);
+//======================================
+//Point to example use in case someone inspects this file
+CAnchor* Anchor135 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor135->setDescription("InterchangableActorsViaDynamicRouting");
+Anchor135->setParameter(new CString[1]{"target=_blank"}, 1);
+Anchor135->setUrl(new CString[4]{"InterchangableActorsViaDynamicRouting.x3d","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/InterchangableActorsViaDynamicRouting.x3d","InterchangableActorsViaDynamicRouting.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/InterchangableActorsViaDynamicRouting.wrl"}, 4);
+CShape* Shape136 = (CShape *)(m_pScene.createNode("Shape"));
+CText* Text137 = (CText *)(m_pScene.createNode("Text"));
+Text137->setString(new CString[6]{"LOA1_StandAnimation.x3d","defines a prototype","for animating a humanoid.","","Click this text to see","InterchangableActorsViaDynamicRouting example."}, 6);
+CFontStyle* FontStyle138 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
+FontStyle138->setJustify(new CString[2]{"MIDDLE","MIDDLE"}, 2);
+FontStyle138->setSize(0.8);
+Text137->setFontStyle(*FontStyle138);
 
-CText* Text138 = (CText *)(m_pScene.createNode("Text"));
-Text138->setString(new CString[6]{"LOA1_StandAnimation.x3d","defines a prototype","for animating a humanoid.","","Click this text to see","InterchangableActorsViaDynamicRouting example."}, 6);
-CFontStyle* FontStyle139 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
-FontStyle139->setSize(0.8);
-FontStyle139->setJustify(new CString[2]{"MIDDLE","MIDDLE"}, 2);
-Text138->setFontStyle(*FontStyle139);
+Shape136->setGeometry(Text137);
 
-Shape135->setGeometry(Text138);
+CAppearance* Appearance139 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material140 = (CMaterial *)(m_pScene.createNode("Material"));
+Material140->setDiffuseColor(new float[3]{1,1,0.2});
+Appearance139->setMaterial(*Material140);
 
-Anchor134->addChildren(*Shape135);
+Shape136->setAppearance(*Appearance139);
 
-group->addChildren(*Anchor134);
+Anchor135->addChildren(*Shape136);
 
-X3D0->setScene(*Scene17);
+group->addChildren(*Anchor135);
+
+X3D0->setScene(*Scene18);
 
 m_pScene.addRootNode(group);
 X3D0->toXMLString();

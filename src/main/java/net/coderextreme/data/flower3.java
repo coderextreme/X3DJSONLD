@@ -36,16 +36,25 @@ import org.web3d.x3d.jsail.Texturing.*;
 import org.web3d.x3d.jsail.Time.*;
 import org.web3d.x3d.jsail.VolumeRendering.*;
 import org.web3d.x3d.jsail.fields.*;
-public class flower3 {
+import java.util.ArrayList;
+import java.util.List;
+import net.coderextreme.X3DRoots;
+public class flower3 implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    X3D model = new flower3().initialize();
+    X3D model = new flower3().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
+    model.toFileX3D("../data/flower3.new.java.x3d");
     model.toFileJSON("../data/flower3.new.json");
     }
+    public List<X3D> getRootNodeList() {
+    	List<X3D> list = new ArrayList<X3D>(1);
+    	list.add(initialize());
+    	return list;
+    }
     public X3D initialize() {
-      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
+      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
       .setHead(new head()
         .addMeta(new meta().setName("title").setContent("flower3.x3d"))
         .addMeta(new meta().setName("creator").setContent("John Carlson"))
@@ -54,13 +63,13 @@ public class flower3 {
         .addMeta(new meta().setName("description").setContent("a flower")))
       .setScene(new Scene()
         .addChild(new NavigationInfo())
-        .addChild(new DirectionalLight().setDirection(new float[] {0f ,-0.8f ,-0.2f }).setIntensity(0.5f ))
+        .addChild(new DirectionalLight().setDirection(new double[] {0,-0.8,-0.2}).setIntensity(0.5))
         .addChild(new Background().setSkyColor(new MFColor0().getArray()))
-        .addChild(new Viewpoint().setDescription("One mathematical orbital").setPosition(new float[] {0f ,0f ,50f }))
-        .addChild(new Transform().setDEF("OrbitTransform").setTranslation(new float[] {8f ,0f ,0f })
+        .addChild(new Viewpoint().setDescription("One mathematical orbital").setPosition(new double[] {0,0,50}))
+        .addChild(new Transform().setDEF("OrbitTransform").setTranslation(new double[] {8,0,0})
           .addChild(new Shape()
             .setAppearance(new Appearance()
-              .setMaterial(new Material().setDiffuseColor(new float[] {0f ,0.5f ,1f }).setSpecularColor(new float[] {0f ,0.5f ,1f })))
+              .setMaterial(new Material().setDiffuseColor(new double[] {0,0.5,1}).setSpecularColor(new double[] {0,0.5,1})))
             .setGeometry(new IndexedFaceSet().setConvex(false).setDEF("Orbit")
               .setCoord(new Coordinate().setDEF("OrbitCoordinates")))))
         .addChild(new Script().setDEF("OrbitScript")
@@ -142,7 +151,7 @@ public class flower3 {
 "	}\n"+
 "	generateCoordinates(resolution);\n"+
 "}"))
-        .addChild(new TimeSensor().setDEF("Clock").setCycleInterval(16d).setLoop(true))
+        .addChild(new TimeSensor().setDEF("Clock").setCycleInterval(16).setLoop(true))
         .addChild(new ROUTE().setFromNode("OrbitScript").setFromField("coordIndexes").setToNode("Orbit").setToField("set_coordIndex"))
         .addChild(new ROUTE().setFromNode("OrbitScript").setFromField("coordinates").setToNode("OrbitCoordinates").setToField("point"))
         .addChild(new ROUTE().setFromNode("Clock").setFromField("fraction_changed").setToNode("OrbitScript").setToField("set_fraction")))      ;
@@ -150,7 +159,7 @@ public class flower3 {
     }
 private class MFColor0 {
   private org.web3d.x3d.jsail.fields.MFColor getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {1f ,1f ,1f });
+    return new org.web3d.x3d.jsail.fields.MFColor(new double[] {1,1,1});
   }
 }
 }

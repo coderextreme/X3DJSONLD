@@ -26,7 +26,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('identifier'),
-              content_ : SFString('https://coderextreme.net/X3DJSONLD/force.x3d')),
+              content_ : SFString('https://coderextreme.net/X3DJSONLD/src/main/data/force.x3d')),
 
             meta(
               name_ : SFString('description'),
@@ -61,7 +61,7 @@ var X3D0 =  X3D(
                                 connect(
                                   nodeField_ : SFString('translation'),
                                   protoField_ : SFString('position'))]),
-                          children_ : [
+                          child_ : 
                             Shape(
                               geometry_ : 
                                 Sphere(),
@@ -70,10 +70,10 @@ var X3D0 =  X3D(
                                   material_ : 
                                     Material(
                                       diffuseColor_ : SFColor([SFDouble(1), SFDouble(0), SFDouble(0)])))),
-
+                          children_ : [
                             Transform(
                               translation_ : SFVec3f([SFDouble(1), SFDouble(0), SFDouble(0)]),
-                              children_ : [
+                              child_ : 
                                 Shape(
                                   geometry_ : 
                                     Text(
@@ -86,7 +86,7 @@ var X3D0 =  X3D(
                                     Appearance(
                                       material_ : 
                                         Material(
-                                          diffuseColor_ : SFColor([SFDouble(0), SFDouble(0), SFDouble(1)]))))])]),
+                                          diffuseColor_ : SFColor([SFDouble(0), SFDouble(0), SFDouble(1)])))))]),
 
                         PositionInterpolator(
                           DEF_ : SFString('NodePosition'),
@@ -122,7 +122,11 @@ ecmascript:eval (0
 					, function set_cycle(value) {
                                                 old = translation;
 						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);
-                                                keyValue = new MFVec3f([old, translation]);
+                                                var tmpkeyValue = new MFVec3f();
+			    			tmpkeyValue[0] = old;
+			    			tmpkeyValue[1] = translation;
+                                                keyValue = tmpkeyValue;
+			    		
 						// Browser.println(translation);
 					})),
 
@@ -156,7 +160,7 @@ ecmascript:eval (0
                           toField_ : SFString('set_translation'))])])),
 
             ProtoDeclare(
-              name_ : SFString('cylinder'),
+              name_ : SFString('cyl'),
               ProtoInterface_ : 
                 ProtoInterface(
                   field_ : [
@@ -221,17 +225,29 @@ ecmascript:eval (0
 
                 , function set_endA(value) {
 		    if (typeof spine === 'undefined') {
-		        spine = new MFVec3f([value, value]);
+		        var tmpspine = new MFVec3f();
+			tmpspine[0] = value;
+			tmpspine[1] = value;
+			spine = tmpspine;
 		    } else {
-		        spine = new MFVec3f([value, spine[1]]);
+		        var tmpspine = new MFVec3f();
+			tmpspine[0] = value;
+			tmpspine[1] = spine[1];
+			spine = tmpspine;
 		    }
                 }
 
                 , function set_endB(value) {
 		    if (typeof spine === 'undefined') {
-		        spine = new MFVec3f([value, value]);
+		        var tmpspine = new MFVec3f();
+			tmpspine[0] = value;
+			tmpspine[1] = value;
+			spine = tmpspine;
 		    } else {
-		        spine = new MFVec3f([spine[0], value]);
+		        var tmpspine = new MFVec3f();
+			tmpspine[0] = spine[0];
+			tmpspine[1] = value;
+			spine = tmpspine;
 		    }
                 }
 
@@ -288,7 +304,7 @@ ecmascript:eval (0
                       value_ : SFString('50 50 -50'))]),
 
                 ProtoInstance(
-                  name_ : SFString('cylinder'),
+                  name_ : SFString('cyl'),
                   DEF_ : SFString('linkA'),
                   fieldValue_ : [
                     fieldValue(
@@ -300,7 +316,7 @@ ecmascript:eval (0
                       value_ : SFString('50 50 50'))]),
 
                 ProtoInstance(
-                  name_ : SFString('cylinder'),
+                  name_ : SFString('cyl'),
                   DEF_ : SFString('linkB'),
                   fieldValue_ : [
                     fieldValue(
@@ -312,7 +328,7 @@ ecmascript:eval (0
                       value_ : SFString('-50 -50 -50'))]),
 
                 ProtoInstance(
-                  name_ : SFString('cylinder'),
+                  name_ : SFString('cyl'),
                   DEF_ : SFString('linkC'),
                   fieldValue_ : [
                     fieldValue(

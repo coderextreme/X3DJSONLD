@@ -54,11 +54,23 @@
           },
           {
             "@name":"modified",
-            "@content":"Fri, 06 Oct 2023 12:45:36 GMT"
+            "@content":"Sep 3 2023"
+          },
+          {
+            "@name":"description",
+            "@content":"5 or more prismatic flowers"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://coderextreme.net/X3DJSONLD/src/main/data/sphereflowers.x3d"
           },
           {
             "@name":"translated",
-            "@content":"27 October 2023"
+            "@content":"18 February 2024"
           },
           {
             "@name":"generator",
@@ -72,56 +84,6 @@
     },
     "Scene": {
         "-children":[
-          { "ExternProtoDeclare":
-            {
-              "@name":"FlowerProto",
-              "@url":["../personal/flowerproto.json#FlowerProto"],
-              "field": [
-                {
-                  "@name":"vertex",
-                  "@accessType":"inputOutput",
-                  "@type":"MFString"
-                },
-                {
-                  "@name":"fragment",
-                  "@accessType":"inputOutput",
-                  "@type":"MFString"
-                }
-              ]
-            }
-          },
-          { "ProtoDeclare":
-            {
-              "@name":"flower",
-              "ProtoInterface": {
-              },
-              "ProtoBody": {
-                  "-children":[
-                    { "Group":
-                      {
-                        "-children":[
-                          { "ProtoInstance":
-                            {
-                              "@name":"FlowerProto",
-                              "fieldValue": [
-                                {
-                                  "@name":"vertex",
-                                  "@value":["../shaders/x_ite_flowers_chromatic.vs"]
-                                },
-                                {
-                                  "@name":"fragment",
-                                  "@value":["../shaders/x_ite.fs"]
-                                }
-                              ]
-                            }
-                          }
-                        ]
-                      }
-                    }
-                  ]
-              }
-            }
-          },
           { "NavigationInfo":
             {
             }
@@ -139,6 +101,54 @@
           { "Group":
             {
               "-children":[
+                { "ExternProtoDeclare":
+                  {
+                    "@name":"FlowerProto",
+                    "@url":["../personal/flowerproto.json#FlowerProto"],
+                    "field": [
+                      {
+                        "@name":"vertex",
+                        "@accessType":"inputOutput",
+                        "@type":"MFString"
+                      },
+                      {
+                        "@name":"fragment",
+                        "@accessType":"inputOutput",
+                        "@type":"MFString"
+                      }
+                    ]
+                  }
+                },
+                { "ProtoDeclare":
+                  {
+                    "@name":"flower",
+                    "ProtoBody": {
+                        "-children":[
+                          { "Group":
+                            {
+                              "-children":[
+                                { "ProtoInstance":
+                                  {
+                                    "@name":"FlowerProto",
+                                    "fieldValue": [
+                                      {
+                                        "@name":"vertex",
+                                        "@value":["../shaders/x_ite_flowers_chromatic.vs"]
+                                      },
+                                      {
+                                        "@name":"fragment",
+                                        "@value":["../shaders/x_ite.fs"]
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                    }
+                  }
+                },
                 { "ProtoInstance":
                   {
                     "@name":"flower"
@@ -187,21 +197,20 @@
                         {
                           "@DEF":"AudioClip",
                           "@description":"Chandubabamusic #1",
-                          "@startTime":1.696596336598E9,
                           "@url":["../resources/chandubabamusic1.wav"]
                         }
                       }
                   }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"cycleTime",
+                    "@fromNode":"SongTime",
+                    "@toField":"startTime",
+                    "@toNode":"AudioClip"
+                  }
                 }
               ]
-            }
-          },
-          { "ROUTE":
-            {
-              "@fromField":"cycleTime",
-              "@fromNode":"SongTime",
-              "@toField":"startTime",
-              "@toNode":"AudioClip"
             }
           }
         ]

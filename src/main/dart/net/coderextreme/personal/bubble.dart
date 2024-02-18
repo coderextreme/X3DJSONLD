@@ -4,7 +4,7 @@ import '../x3d.dart';
 var X3D0 =  X3D(
 
       profile_ : SFString('Immersive'),
-      version_ : SFString('4.0'),
+      version_ : SFString('3.3'),
       head_ : 
         head(
           meta_ : [
@@ -26,7 +26,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('identifier'),
-              content_ : SFString('https://coderextreme.net/X3DJSONLD/bubble.x3d'))]),
+              content_ : SFString('https://coderextreme.net/X3DJSONLD/src/main/data/bubble.x3d'))]),
       Scene_ : 
         Scene(
           children_ : [
@@ -45,7 +45,7 @@ var X3D0 =  X3D(
                   children_ : [
                     Transform(
                       DEF_ : SFString('transform'),
-                      children_ : [
+                      child_ : 
                         Shape(
                           geometry_ : 
                             Sphere(
@@ -56,7 +56,7 @@ var X3D0 =  X3D(
                                 Material(
                                   diffuseColor_ : SFColor([SFDouble(1), SFDouble(0), SFDouble(0)]),
                                   transparency_ : 0.2))),
-
+                      children_ : [
                         Script(
                           DEF_ : SFString('bounce'),
                           field_ : [

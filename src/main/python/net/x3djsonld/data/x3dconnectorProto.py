@@ -2,7 +2,7 @@
 #
 # Invoking X3D model self-test:
 #
-#   $ python .py
+#   $ python x3dconnectorProto.py
 #
 # Python package x3d.py package is available on PyPI for import.
 #   This approach simplifies Python X3D deployment and use.
@@ -29,7 +29,7 @@ from x3d import *
 newModel=X3D(profile='Immersive',version='3.3',
   head=head(
     children=[
-    meta(name='title',content='x3dconnectorProto'),
+    meta(name='title',content='x3dconnectorProto.x3d'),
     meta(name='creator',content='Lost, Doug Sanden I think'),
     meta(name='created',content='Unknown'),
     meta(name='modified',content='July 30 2023'),
@@ -132,11 +132,11 @@ ecmascript:
 	    if (typeof endpoint === 'undefined') {
 		return;
 	    }
-            let dif = endpoint.subtract(startpoint);
-            let dist = dif.length()*0.5;
-            let dif2 = dif.multiply(0.5);
-            let norm = dif.normalize();
-            let transl = startpoint.add(dif2);
+            var dif = endpoint.subtract(startpoint);
+            var dist = dif.length()*0.5;
+            var dif2 = dif.multiply(0.5);
+            var norm = dif.normalize();
+            var transl = startpoint.add(dif2);
 	    if (typeof Quaternion !== 'undefined') {
 		    return {
 			    scale : new SFVec3f(1.0,dist,1.0),
@@ -152,7 +152,7 @@ ecmascript:
 	    }
 	}
 	function recompute_and_route(startpoint, endpoint) {
-	      let trafo = recompute(startpoint, endpoint);
+	      var trafo = recompute(startpoint, endpoint);
 	      if (trafo) {
 		      transnode.translation = trafo.translation;
 		      rotscalenode.rotation = trafo.rotation;
@@ -229,7 +229,7 @@ ecmascript:
 # Self-test diagnostics
 ####################################################################################################
 
-print('Self-test diagnostics for .py:')
+print('Self-test diagnostics for x3dconnectorProto.py:')
 if        metaDiagnostics(newModel): # built-in utility method in X3D class
     print(metaDiagnostics(newModel)) # display meta info, hint, warning, error, TODO values in this model
 # print('check newModel.XML() serialization...')
@@ -258,4 +258,4 @@ except Exception as err: # usually SyntaxError
     if newModelJSON: # may have failed to generate
         print(prependLineNumbers(newModelJSON,err.lineno))
 
-print("python .py load and self-test diagnostics complete.")
+print("python x3dconnectorProto.py load and self-test diagnostics complete.")

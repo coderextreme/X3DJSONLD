@@ -51,16 +51,16 @@ head = head1;
 
 ProtoDeclare ProtoDeclare11 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
-<ProtoDeclare name="Process" ><ProtoBody><Group><!--left--><Transform scale="0.5 0.5 0.5"><Shape><Appearance><Material diffuseColor="0.7 1 0" transparency="0.5"></Material>
+<ProtoDeclare name="Process" ><ProtoBody><Group><!--left--><Transform scale="0.5 0.5 0.5"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0.7 1 0" transparency="0.5"></Material>
 </Appearance>
 <Extrusion creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0" spine="-2.5 0 0 -1.5 0 0"></Extrusion>
 </Shape>
 <!--<Transform translation="-2.5 0 0"> <Shape> <Text DEF="LeftString" string='"l"'></Text> </Shape> </Transform> <StringSensor DEF="LeftSensor" enabled="false"></StringSensor> <TouchSensor DEF="LeftTouch" enabled="true"></TouchSensor>--></Transform>
-<!--right--><Transform scale="0.5 0.5 0.5"><Shape><Appearance><Material diffuseColor="0 0.7 1" transparency="0.5"></Material>
+<!--right--><Transform scale="0.5 0.5 0.5"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 0.7 1" transparency="0.5"></Material>
 </Appearance>
 <Extrusion creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0" spine="1.5 0 0 2.5 0 0"></Extrusion>
 </Shape>
-<Transform translation="2 0 0"><Shape><Appearance><Material DEF="MaterialLightBlue" diffuseColor="1 1 1"></Material>
+<Transform translation="2 0 0"><Shape><Appearance containerField="appearance"><Material containerField="material" DEF="MaterialLightBlue" diffuseColor="1 1 1"></Material>
 </Appearance>
 <Text DEF="RightString" string="&quot;r&quot;"></Text>
 </Shape>
@@ -68,11 +68,11 @@ ProtoDeclare ProtoDeclare11 = browser.createX3DFromString(`<?xml version="1.0" e
 <StringSensor DEF="RightSensor" enabled="false"></StringSensor>
 <TouchSensor description="touch to activate" DEF="RightTouch"></TouchSensor>
 </Transform>
-<!--up--><Transform scale="0.5 0.5 0.5"><Shape><Appearance><Material diffuseColor="0 0.7 1" transparency="0.5"></Material>
+<!--up--><Transform scale="0.5 0.5 0.5"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 0.7 1" transparency="0.5"></Material>
 </Appearance>
 <Extrusion creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0" spine="0 1.5 0 0 2.5 0"></Extrusion>
 </Shape>
-<Transform translation="-0.5 2 0"><Shape><Appearance><Material USE="MaterialLightBlue"></Material>
+<Transform translation="-0.5 2 0"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="MaterialLightBlue"></Material>
 </Appearance>
 <Text DEF="UpString" string="&quot;u&quot;"></Text>
 </Shape>
@@ -80,16 +80,16 @@ ProtoDeclare ProtoDeclare11 = browser.createX3DFromString(`<?xml version="1.0" e
 <StringSensor DEF="UpSensor" enabled="false"></StringSensor>
 <TouchSensor description="touch to activate" DEF="UpTouch"></TouchSensor>
 </Transform>
-<!--down--><Transform scale="0.5 0.5 0.5"><Shape><Appearance><Material diffuseColor="0.7 1 0" transparency="0.5"></Material>
+<!--down--><Transform scale="0.5 0.5 0.5"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0.7 1 0" transparency="0.5"></Material>
 </Appearance>
 <Extrusion creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0" spine="0 -2.5 0 0 -1.5 0"></Extrusion>
 </Shape>
 <!--<Transform translation="-0.5 -2.5 0"> <Shape> <Text DEF="DownString" string='"d"'></Text> </Shape> </Transform> <StringSensor DEF="DownSensor" enabled="false"></StringSensor> <TouchSensor description='touch to activate' DEF="DownTouch" enabled="true"></TouchSensor>--></Transform>
-<!--center--><Transform><Shape><Appearance><Material diffuseColor="1 0 0.7"></Material>
+<!--center--><Transform><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 0 0.7"></Material>
 </Appearance>
 <Sphere></Sphere>
 </Shape>
-<Transform scale="0.5 0.5 0.5" translation="-0.5 0 1"><Shape><Appearance><Material USE="MaterialLightBlue"></Material>
+<Transform scale="0.5 0.5 0.5" translation="-0.5 0 1"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="MaterialLightBlue"></Material>
 </Appearance>
 <Text DEF="CenterString"></Text>
 </Shape>

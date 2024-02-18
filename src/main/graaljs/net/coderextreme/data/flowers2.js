@@ -4,9 +4,13 @@ ConfigurationProperties.showDefaultAttributes = false;
 ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;
 ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
+function doubleToFloat(d) {
+    if (Float32Array)
+	return new Float32Array([d])[0];
+}
 var ProtoInstance0 = null;
 var ProtoInstance1 = null;
-      var X3D0 =  new X3D().setProfile("Immersive").setVersion("3.0")
+      var X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
       .setHead(new head()
         .addComponent(new component().setName("Scripting").setLevel(1))
         .addMeta(new meta().setName("title").setContent("flowers2.x3d"))
@@ -20,9 +24,9 @@ var ProtoInstance1 = null;
         .addMeta(new meta().setName("license").setContent("https://www.web3d.org/x3d/content/examples/license.html")))
       .setScene(new Scene()
         .addChild(new NavigationInfo())
-        .addChild(new Viewpoint().setDescription("Two mathematical orbitals").setPosition(Java.to([0,0,50], Java.type("double[]"))))
+        .addChild(new Viewpoint().setDescription("Two mathematical orbitals").setPosition(Java.to([doubleToFloat(0),doubleToFloat(0),doubleToFloat(50)], Java.type("float[]"))))
         .addChild(new Group()
-          .addChild(new DirectionalLight().setDirection(Java.to([1,1,1], Java.type("double[]"))))
+          .addChild(new DirectionalLight().setDirection(Java.to([doubleToFloat(1),doubleToFloat(1),doubleToFloat(1)], Java.type("float[]"))))
           .addChild(new ProtoDeclare().setName("orbit")
             .setProtoInterface(new ProtoInterface()
               .addField(new field().setType(field.TYPE_SFVEC3F).setName("translation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("-8 0 0"))
@@ -32,7 +36,7 @@ var ProtoInstance1 = null;
             .setProtoBody(new ProtoBody()
               .addChild(new Group()
                 .addChild(new TimeSensor().setDEF("Clock").setCycleInterval(16).setLoop(true))
-                .addChild(new OrientationInterpolator().setDEF("OrbitPath").setKey(Java.to([0,0.5,1], Java.type("double[]"))).setKeyValue(Java.to([1,0,0,0,1,0,0,3.14,1,0,0,6.28], Java.type("double[]"))))
+                .addChild(new OrientationInterpolator().setDEF("OrbitPath").setKey(Java.to([doubleToFloat(0),doubleToFloat(0.5),doubleToFloat(1)], Java.type("float[]"))).setKeyValue(Java.to([doubleToFloat(1),doubleToFloat(0),doubleToFloat(0),doubleToFloat(0),doubleToFloat(1),doubleToFloat(0),doubleToFloat(0),doubleToFloat(3.14),doubleToFloat(1),doubleToFloat(0),doubleToFloat(0),doubleToFloat(6.28)], Java.type("float[]"))))
                 .addChild(new Transform().setDEF("OrbitTransform")
                   .setIS(new IS()
                     .addConnect(new connect().setNodeField("translation").setProtoField("translation")))
@@ -45,7 +49,7 @@ var ProtoInstance1 = null;
                           .addConnect(new connect().setNodeField("transparency").setProtoField("transparency")))))
                     .addComments(new CommentsBlock("<IndexedFaceSet DEF=\"Orbit\" creaseAngle=\"0\"> <Coordinate DEF=\"OrbitCoordinates\"/> </IndexedFaceSet>"))
                     .setGeometry(new IndexedFaceSet().setCcw(false).setConvex(false).setCoordIndex(Java.to([0,1,2,-1], Java.type("int[]"))).setDEF("Orbit")
-                      .setCoord(new Coordinate().setDEF("OrbitCoordinates").setPoint(Java.to([0,0,1,0,1,0,1,0,0], Java.type("double[]")))))))
+                      .setCoord(new Coordinate().setDEF("OrbitCoordinates").setPoint(Java.to([doubleToFloat(0),doubleToFloat(0),doubleToFloat(1),doubleToFloat(0),doubleToFloat(1),doubleToFloat(0),doubleToFloat(1),doubleToFloat(0),doubleToFloat(0)], Java.type("float[]")))))))
                 .addChild(new Script().setDEF("OrbitScript")
                   .addField(new field().setType(field.TYPE_SFFLOAT).setName("set_fraction").setAccessType(field.ACCESSTYPE_INPUTONLY))
                   .addField(new field().setType(field.TYPE_MFVEC3F).setName("coordinates").setAccessType(field.ACCESSTYPE_OUTPUTONLY))

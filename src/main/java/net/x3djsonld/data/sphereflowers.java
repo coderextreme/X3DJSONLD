@@ -5,6 +5,7 @@ import org.web3d.x3d.jsail.EnvironmentalEffects.*;
 import org.web3d.x3d.jsail.fields.*;
 import org.web3d.x3d.jsail.Grouping.*;
 import org.web3d.x3d.jsail.Navigation.*;
+import org.web3d.x3d.jsail.Sound.*;
 import org.web3d.x3d.jsail.Time.*;
 
 // Javadoc metadata annotations follow, see below for X3DJSAIL Java source code.
@@ -64,7 +65,7 @@ import org.web3d.x3d.jsail.Time.*;
 	* @author John Carlson
  */
 
-public class sphereflowers
+import net.coderextreme.X3DRoots;import java.util.List;import java.util.ArrayList;public class sphereflowers implements X3DRoots 
 {
 	/** Default constructor to create this object. */
 	public sphereflowers ()
@@ -95,9 +96,9 @@ public class sphereflowers
     .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("https://coderextreme.net/X3DJSONLD/src/main/data/sphereflowers.x3d")))
   .setScene(new Scene()
     .addChild(new NavigationInfo())
-    .addChild(new Background().setBackUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_back.png"}).setBottomUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"}).setFrontUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_front.png"}).setLeftUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_left.png"}).setRightUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_right.png"}).setTopUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_top.png"}))
+    .addChild(new Background().setBackUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"}).setBottomUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"}).setFrontUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"}).setLeftUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"}).setRightUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"}).setTopUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"}))
     .addChild(new Group()
-      .addChild(new ExternProtoDeclare("FlowerProto").setName("FlowerProto").setUrl(new String[] {"../personal/flowerproto.json#FlowerProto"})
+      .addChild(new ExternProtoDeclare("FlowerProto").setName("FlowerProto").setUrl(new String[] {"../data/flowerproto.x3d#FlowerProto","https://coderextreme.net/X3DJSONLD/src/main/data/flowerproto.x3d#FlowerProto"})
         .addField(new field().setName("vertex").setType(field.TYPE_MFSTRING).setAccessType(field.ACCESSTYPE_INPUTOUTPUT))
         .addField(new field().setName("fragment").setType(field.TYPE_MFSTRING).setAccessType(field.ACCESSTYPE_INPUTOUTPUT)))
       .addChild(new ProtoDeclare("flower").setName("flower")
@@ -113,11 +114,9 @@ public class sphereflowers
       .addChild(new ProtoInstance("flower").setContainerField("children"))
       .addChild(new ProtoInstance("flower").setContainerField("children"))
       .addChild(new TimeSensor("SongTime").setLoop(true))
-      .addComments(new String[] {"",
-"	        <Sound maxBack='100' maxFront='100' minBack='20' minFront='20' location='0 1 0'>",
-"			<AudioClip DEF='AudioClip' description='Chandubabamusic #1' url='\"../resources/chandubabamusic1.wav\"'/>",
-"		</Sound>",
-"      		<ROUTE fromField='cycleTime' fromNode='SongTime' toField='startTime' toNode='AudioClip'/>"})));
+      .addChild(new Sound().setLocation(0.0,1.0,0.0).setMaxBack(100).setMaxFront(100).setMinBack(20).setMinFront(20)
+        .setSource(new AudioClip("AudioClip").setDescription("Chandubabamusic #1").setUrl(new String[] {"../resources/chandubabamusic1.wav","https://coderextreme.net/X3DJSONLD/src/main/resources/chandubabamusic1.wav"})))
+      .addChild(new ROUTE().setFromNode("SongTime").setFromField("cycleTime").setToNode("AudioClip").setToField("startTime"))));
             }
             catch (Exception ex)
             {       
@@ -142,6 +141,11 @@ public class sphereflowers
 	{	  
 		return x3dModel;
 	}
+	public List<X3D> getRootNodeList() {
+		List<X3D> list = new ArrayList<X3D>(1);
+		list.add(x3dModel);
+		return list;
+	}
 	   
     /** 
      * Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
@@ -154,7 +158,7 @@ public class sphereflowers
      */
     public static void main(String args[])
     {
-        System.out.println("Build this X3D model, showing diagnostics...");
+        System.out.println("Build this X3D model, showing validation diagnostics...");
         X3D thisExampleX3dModel = new sphereflowers().getX3dModel();
 //      System.out.println("X3D model construction complete.");
 	

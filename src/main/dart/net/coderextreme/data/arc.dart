@@ -10,7 +10,7 @@ var X3D0 =  X3D(
           meta_ : [
             meta(
               name_ : SFString('title'),
-              content_ : SFString('arc')),
+              content_ : SFString('arc.x3d')),
 
             meta(
               name_ : SFString('creator'),
@@ -22,7 +22,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('identifier'),
-              content_ : SFString('https://coderextreme.net/X3DJSONLD/src/main/data/x3dconnectorProto.x3d')),
+              content_ : SFString('https://coderextreme.net/X3DJSONLD/src/main/data/arc.x3d')),
 
             meta(
               name_ : SFString('description'),

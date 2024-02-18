@@ -4,6 +4,10 @@ ConfigurationProperties.showDefaultAttributes = false;
 ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;
 ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
+function doubleToFloat(d) {
+    if (Float32Array)
+	return new Float32Array([d])[0];
+}
 var ProtoInstance0 = null;
       var X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
       .setHead(new head()
@@ -13,27 +17,27 @@ var ProtoInstance0 = null;
         .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/x3dconnectorProto.x3d"))
         .addMeta(new meta().setName("description").setContent("a generic proto to connect two objects")))
       .setScene(new Scene()
-        .addChild(new Viewpoint().setPosition(Java.to([0,0,5], Java.type("double[]"))).setDescription("Only Viewpoint"))
-        .addChild(new Background().setSkyColor(Java.to([0.4,0.4,0.4], Java.type("double[]"))))
+        .addChild(new Viewpoint().setPosition(Java.to([doubleToFloat(0),doubleToFloat(0),doubleToFloat(5)], Java.type("float[]"))).setDescription("Only Viewpoint"))
+        .addChild(new Background().setSkyColor(Java.to([doubleToFloat(0.4),doubleToFloat(0.4),doubleToFloat(0.4)], Java.type("float[]"))))
         .addChild(new Transform().setDEF("G1")
           .addChild(new Shape()
             .setAppearance(new Appearance()
-              .setMaterial(new Material().setDiffuseColor(Java.to([0.7,0.2,0.2], Java.type("double[]")))))
+              .setMaterial(new Material().setDiffuseColor(Java.to([doubleToFloat(0.7),doubleToFloat(0.2),doubleToFloat(0.2)], Java.type("float[]")))))
             .setGeometry(new Sphere().setRadius(0.1)))
           .addChild(new PlaneSensor().setDescription("Grab to move").setDEF("PS1"))
           .addChild(new ROUTE().setFromNode("PS1").setFromField("translation_changed").setToNode("G1").setToField("set_translation")))
-        .addChild(new Transform().setDEF("G2").setTranslation(Java.to([1,-1,0.01], Java.type("double[]")))
+        .addChild(new Transform().setDEF("G2").setTranslation(Java.to([doubleToFloat(1),doubleToFloat(-1),doubleToFloat(0.01)], Java.type("float[]")))
           .addChild(new Shape()
             .setAppearance(new Appearance()
-              .setMaterial(new Material().setDiffuseColor(Java.to([0.2,0.7,0.2], Java.type("double[]")))))
+              .setMaterial(new Material().setDiffuseColor(Java.to([doubleToFloat(0.2),doubleToFloat(0.7),doubleToFloat(0.2)], Java.type("float[]")))))
             .setGeometry(new Sphere().setRadius(0.1)))
-          .addChild(new PlaneSensor().setDescription("Grab to move").setOffset(Java.to([1,-1,0.01], Java.type("double[]"))).setDEF("PS2"))
+          .addChild(new PlaneSensor().setDescription("Grab to move").setOffset(Java.to([doubleToFloat(1),doubleToFloat(-1),doubleToFloat(0.01)], Java.type("float[]"))).setDEF("PS2"))
           .addChild(new ROUTE().setFromNode("PS2").setFromField("translation_changed").setToNode("G2").setToField("set_translation")))
         .addChild(new Transform().setDEF("transC1")
           .addChild(new Transform().setDEF("rotscaleC1")
             .addChild(new Shape()
               .setAppearance(new Appearance()
-                .setMaterial(new Material().setDiffuseColor(Java.to([0.2,0.7,0.7], Java.type("double[]"))).setTransparency(0.5)))
+                .setMaterial(new Material().setDiffuseColor(Java.to([doubleToFloat(0.2),doubleToFloat(0.7),doubleToFloat(0.7)], Java.type("float[]"))).setTransparency(0.5)))
               .setGeometry(new Cylinder().setRadius(0.05)))))
         .addChild(new ProtoDeclare().setName("x3dconnector")
           .setProtoInterface(new ProtoInterface()

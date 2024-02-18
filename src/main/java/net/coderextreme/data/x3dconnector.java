@@ -36,13 +36,22 @@ import org.web3d.x3d.jsail.Texturing.*;
 import org.web3d.x3d.jsail.Time.*;
 import org.web3d.x3d.jsail.VolumeRendering.*;
 import org.web3d.x3d.jsail.fields.*;
-public class x3dconnector {
+import java.util.ArrayList;
+import java.util.List;
+import net.coderextreme.X3DRoots;
+public class x3dconnector implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    X3D model = new x3dconnector().initialize();
+    X3D model = new x3dconnector().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
+    model.toFileX3D("../data/x3dconnector.new.java.x3d");
     model.toFileJSON("../data/x3dconnector.new.json");
+    }
+    public List<X3D> getRootNodeList() {
+    	List<X3D> list = new ArrayList<X3D>(1);
+    	list.add(initialize());
+    	return list;
     }
     public X3D initialize() {
 ProtoInstance ProtoInstance0 = null;
@@ -54,28 +63,28 @@ ProtoInstance ProtoInstance0 = null;
         .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/x3dconnectorProto.x3d"))
         .addMeta(new meta().setName("description").setContent("a generic proto to connect two objects")))
       .setScene(new Scene()
-        .addChild(new Viewpoint().setPosition(new float[] {0f ,0f ,5f }).setDescription("Only Viewpoint"))
+        .addChild(new Viewpoint().setPosition(new double[] {0,0,5}).setDescription("Only Viewpoint"))
         .addChild(new Background().setSkyColor(new MFColor0().getArray()))
         .addChild(new Transform().setDEF("G1")
           .addChild(new Shape()
             .setAppearance(new Appearance()
-              .setMaterial(new Material().setDiffuseColor(new float[] {0.7f ,0.2f ,0.2f })))
-            .setGeometry(new Sphere().setRadius(0.1f )))
+              .setMaterial(new Material().setDiffuseColor(new double[] {0.7,0.2,0.2})))
+            .setGeometry(new Sphere().setRadius(0.1)))
           .addChild(new PlaneSensor().setDescription("Grab to move").setDEF("PS1"))
           .addChild(new ROUTE().setFromNode("PS1").setFromField("translation_changed").setToNode("G1").setToField("set_translation")))
-        .addChild(new Transform().setDEF("G2").setTranslation(new float[] {1f ,-1f ,0.01f })
+        .addChild(new Transform().setDEF("G2").setTranslation(new double[] {1,-1,0.01})
           .addChild(new Shape()
             .setAppearance(new Appearance()
-              .setMaterial(new Material().setDiffuseColor(new float[] {0.2f ,0.7f ,0.2f })))
-            .setGeometry(new Sphere().setRadius(0.1f )))
-          .addChild(new PlaneSensor().setDescription("Grab to move").setOffset(new float[] {1f ,-1f ,0.01f }).setDEF("PS2"))
+              .setMaterial(new Material().setDiffuseColor(new double[] {0.2,0.7,0.2})))
+            .setGeometry(new Sphere().setRadius(0.1)))
+          .addChild(new PlaneSensor().setDescription("Grab to move").setOffset(new double[] {1,-1,0.01}).setDEF("PS2"))
           .addChild(new ROUTE().setFromNode("PS2").setFromField("translation_changed").setToNode("G2").setToField("set_translation")))
         .addChild(new Transform().setDEF("transC1")
           .addChild(new Transform().setDEF("rotscaleC1")
             .addChild(new Shape()
               .setAppearance(new Appearance()
-                .setMaterial(new Material().setDiffuseColor(new float[] {0.2f ,0.7f ,0.7f }).setTransparency(0.5f )))
-              .setGeometry(new Cylinder().setRadius(0.05f )))))
+                .setMaterial(new Material().setDiffuseColor(new double[] {0.2,0.7,0.7}).setTransparency(0.5)))
+              .setGeometry(new Cylinder().setRadius(0.05)))))
         .addChild(new ProtoDeclare().setName("x3dconnector")
           .setProtoInterface(new ProtoInterface()
             .addField(new field().setType("SFNode").setName("startnode").setAccessType(field.ACCESSTYPE_INITIALIZEONLY))
@@ -163,7 +172,7 @@ ProtoInstance0
     }
 private class MFColor0 {
   private org.web3d.x3d.jsail.fields.MFColor getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0.4f ,0.4f ,0.4f });
+    return new org.web3d.x3d.jsail.fields.MFColor(new double[] {0.4,0.4,0.4});
   }
 }
 }

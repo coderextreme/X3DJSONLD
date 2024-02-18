@@ -37,12 +37,12 @@ var X3D0 =  X3D(
               content_ : SFString('CHANGELOG.txt')),
 
             meta(
-              name_ : SFString('reference'),
-              content_ : SFString('https://www.medialab.hmu.gr/minipages/x3domAudio')),
-
-            meta(
               name_ : SFString('TODO'),
               content_ : SFString('credit for audio files')),
+
+            meta(
+              name_ : SFString('reference'),
+              content_ : SFString('https://www.medialab.hmu.gr/minipages/x3domAudio')),
 
             meta(
               name_ : SFString('identifier'),
@@ -50,7 +50,11 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('generator'),
-              content_ : SFString('X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit'))]),
+              content_ : SFString('X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit')),
+
+            meta(
+              name_ : SFString('license'),
+              content_ : SFString('../license.html'))]),
       Scene_ : 
         Scene(
           children_ : [
@@ -60,18 +64,18 @@ var X3D0 =  X3D(
             NavigationInfo(),
 
             Background(
-              frontUrl_ : MFString([SFString("images/generic/FR1.png"), SFString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/FR1.png")]),
               backUrl_ : MFString([SFString("images/generic/BK1.png"), SFString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/BK1.png")]),
+              bottomUrl_ : MFString([SFString("images/generic/DN1.png"), SFString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/DN1.png")]),
+              frontUrl_ : MFString([SFString("images/generic/FR1.png"), SFString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/FR1.png")]),
               leftUrl_ : MFString([SFString("images/generic/LF1.png"), SFString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/LF1.png")]),
               rightUrl_ : MFString([SFString("images/generic/RT1.png"), SFString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/RT1.png")]),
-              topUrl_ : MFString([SFString("images/generic/UP1.png"), SFString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/UP1.png")]),
-              bottomUrl_ : MFString([SFString("images/generic/DN1.png"), SFString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/DN1.png")])),
+              topUrl_ : MFString([SFString("images/generic/UP1.png"), SFString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/UP1.png")])),
 
             Viewpoint(
               DEF_ : SFString('Camera001'),
               description_ : SFString('Viewpoint is like camera, prepositioned in locations (and directions) of interest. In this example the camera is the \"ears of the user\". So, if the trackCurrentView field from ListenerPointSource is TRUE then position and orientation matches the users current view'),
-              position_ : SFVec3f([SFDouble(0), SFDouble(2000), SFDouble(3500)]),
-              orientation_ : SFRotation([SFDouble(1), SFDouble(0), SFDouble(0), SFDouble(-0.523599)])),
+              orientation_ : SFRotation([SFDouble(1), SFDouble(0), SFDouble(0), SFDouble(-0.523599)]),
+              position_ : SFVec3f([SFDouble(0), SFDouble(2000), SFDouble(3500)])),
 
             TimeSensor(
               DEF_ : SFString('TIMER'),
@@ -87,6 +91,30 @@ var X3D0 =  X3D(
               DEF_ : SFString('Camera001-ROT-INTERP'),
               key_ : MFFloat([SFFloat(0), SFFloat(0.25), SFFloat(0.5), SFFloat(0.75), SFFloat(1)]),
               keyValue_ : MFRotation([SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(-0.523599), SFRotation(0.99999), SFRotation(0.003554), SFRotation(0.002727), SFRotation(-1.309007), SFRotation(0), SFRotation(-0.965926), SFRotation(-0.258819), SFRotation(-3.141593), SFRotation(0.002282), SFRotation(-0.793351), SFRotation(-0.60876), SFRotation(-3.135645), SFRotation(1), SFRotation(-0.000001), SFRotation(0), SFRotation(-0.523599)])),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('TIMER'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Camera001-POS-INTERP')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Camera001-POS-INTERP'),
+              toField_ : SFString('set_position'),
+              toNode_ : SFString('Camera001')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('TIMER'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Camera001-ROT-INTERP')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Camera001-ROT-INTERP'),
+              toField_ : SFString('set_orientation'),
+              toNode_ : SFString('Camera001')),
 
             Transform(
               DEF_ : SFString('Floor'),
@@ -105,7 +133,7 @@ var X3D0 =  X3D(
 
             Transform(
               DEF_ : SFString('TransformAudio1'),
-              translation_ : SFVec3f([SFDouble(-933.1235), SFDouble(0), SFDouble(-926.2532)]),
+              translation_ : SFVec3f([SFDouble(-933.123474), SFDouble(0), SFDouble(-926.253235)]),
               child_ : 
                 Shape(
                   appearance_ : 
@@ -122,9 +150,9 @@ var X3D0 =  X3D(
                   children_ : [
                     Transform(
                       DEF_ : SFString('violin'),
-                      translation_ : SFVec3f([SFDouble(0), SFDouble(100), SFDouble(0)]),
                       rotation_ : SFRotation([SFDouble(1), SFDouble(0), SFDouble(0), SFDouble(-0.5)]),
                       scale_ : SFVec3f([SFDouble(100), SFDouble(100), SFDouble(100)]),
+                      translation_ : SFVec3f([SFDouble(0), SFDouble(100), SFDouble(0)]),
                       child_ : 
                         Shape(
                           appearance_ : 
@@ -133,8 +161,8 @@ var X3D0 =  X3D(
                                 Material(
                                   ambientIntensity_ : 0.0933,
                                   diffuseColor_ : SFColor([SFDouble(1), SFDouble(1), SFDouble(1)]),
-                                  specularColor_ : SFColor([SFDouble(0.46), SFDouble(0.46), SFDouble(0.46)]),
-                                  shininess_ : 0.51)),
+                                  shininess_ : 0.51,
+                                  specularColor_ : SFColor([SFDouble(0.46), SFDouble(0.46), SFDouble(0.46)]))),
                           geometry_ : 
                             Text(
                               string_ : MFString([SFString("Violin")]),
@@ -146,7 +174,7 @@ var X3D0 =  X3D(
 
             Transform(
               DEF_ : SFString('TransformAudio2'),
-              translation_ : SFVec3f([SFDouble(933.4756), SFDouble(0), SFDouble(924.4232)]),
+              translation_ : SFVec3f([SFDouble(933.475586), SFDouble(0), SFDouble(924.423218)]),
               child_ : 
                 Shape(
                   appearance_ : 
@@ -163,9 +191,9 @@ var X3D0 =  X3D(
                   children_ : [
                     Transform(
                       DEF_ : SFString('saxophone'),
-                      translation_ : SFVec3f([SFDouble(0), SFDouble(100), SFDouble(0)]),
                       rotation_ : SFRotation([SFDouble(1), SFDouble(0), SFDouble(0), SFDouble(-0.5)]),
                       scale_ : SFVec3f([SFDouble(100), SFDouble(100), SFDouble(100)]),
+                      translation_ : SFVec3f([SFDouble(0), SFDouble(100), SFDouble(0)]),
                       child_ : 
                         Shape(
                           appearance_ : 
@@ -174,8 +202,8 @@ var X3D0 =  X3D(
                                 Material(
                                   ambientIntensity_ : 0.0933,
                                   diffuseColor_ : SFColor([SFDouble(1), SFDouble(1), SFDouble(1)]),
-                                  specularColor_ : SFColor([SFDouble(0.46), SFDouble(0.46), SFDouble(0.46)]),
-                                  shininess_ : 0.51)),
+                                  shininess_ : 0.51,
+                                  specularColor_ : SFColor([SFDouble(0.46), SFDouble(0.46), SFDouble(0.46)]))),
                           geometry_ : 
                             Text(
                               string_ : MFString([SFString("Saxophone")]),
@@ -195,8 +223,8 @@ var X3D0 =  X3D(
                       children_ : [
                         AudioClip(
                           description_ : SFString('Violin'),
-                          url_ : MFString([SFString("sound/violin.mp3"), SFString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3")]),
-                          loop_ : true)])]),
+                          loop_ : true,
+                          url_ : MFString([SFString("sound/violin.mp3"), SFString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3")]))])]),
 
                 SpatialSound(
                   DEF_ : SFString('Audio2'),
@@ -205,30 +233,6 @@ var X3D0 =  X3D(
                       children_ : [
                         AudioClip(
                           description_ : SFString('Saxophone'),
-                          url_ : MFString([SFString("sound/saxophone.mp3"), SFString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/saxophone.mp3")]),
-                          loop_ : true)])])]),
-
-            ROUTE(
-              fromNode_ : SFString('TIMER'),
-              fromField_ : SFString('fraction_changed'),
-              toNode_ : SFString('Camera001-POS-INTERP'),
-              toField_ : SFString('set_fraction')),
-
-            ROUTE(
-              fromNode_ : SFString('Camera001-POS-INTERP'),
-              fromField_ : SFString('value_changed'),
-              toNode_ : SFString('Camera001'),
-              toField_ : SFString('position')),
-
-            ROUTE(
-              fromNode_ : SFString('TIMER'),
-              fromField_ : SFString('fraction_changed'),
-              toNode_ : SFString('Camera001-ROT-INTERP'),
-              toField_ : SFString('set_fraction')),
-
-            ROUTE(
-              fromNode_ : SFString('Camera001-ROT-INTERP'),
-              fromField_ : SFString('value_changed'),
-              toNode_ : SFString('Camera001'),
-              toField_ : SFString('orientation'))]));
+                          loop_ : true,
+                          url_ : MFString([SFString("sound/saxophone.mp3"), SFString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/saxophone.mp3")]))])])])]));
 void main() { exit(0); }

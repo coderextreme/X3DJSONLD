@@ -14,1417 +14,1487 @@ group->addChildren(X3D0);
 X3D0->setProfile("Immersive");
 X3D0->setVersion("4.0");
 Chead* head1 = new Chead();
-Cmeta* meta2 = new Cmeta();
-meta2->setName("title");
-meta2->setContent("HAnimModelFootLeft.x3d");
-head1->addMeta(*meta2);
+Ccomponent* component2 = new Ccomponent();
+component2->setName("HAnim");
+component2->setLevel(1);
+head1->addComponent(*component2);
 
 Cmeta* meta3 = new Cmeta();
-meta3->setName("description");
-meta3->setContent("Left foot, using high-fidelity definitions for HAnim version 2.0");
+meta3->setName("title");
+meta3->setContent("HAnimModelFootLeft.x3d");
 head1->addMeta(*meta3);
 
 Cmeta* meta4 = new Cmeta();
-meta4->setName("creator");
-meta4->setContent("Kwan-Hee YOO, Don Brutzman and Joe Williams");
+meta4->setName("description");
+meta4->setContent("Left foot, using high-fidelity definitions for HAnim version 2.0");
 head1->addMeta(*meta4);
 
 Cmeta* meta5 = new Cmeta();
-meta5->setName("created");
-meta5->setContent("26 January 2015");
+meta5->setName("creator");
+meta5->setContent("Kwan-Hee YOO, Don Brutzman and Joe Williams");
 head1->addMeta(*meta5);
 
 Cmeta* meta6 = new Cmeta();
-meta6->setName("modified");
-meta6->setContent("23 December 2021");
+meta6->setName("created");
+meta6->setContent("26 January 2015");
 head1->addMeta(*meta6);
 
 Cmeta* meta7 = new Cmeta();
-meta7->setName("warning");
-meta7->setContent("not yet to scale");
+meta7->setName("modified");
+meta7->setContent("23 December 2021");
 head1->addMeta(*meta7);
 
 Cmeta* meta8 = new Cmeta();
 meta8->setName("warning");
-meta8->setContent("TODO will X3D HAnim component add a new level to support LOA-4 functionality?");
+meta8->setContent("not yet to scale");
 head1->addMeta(*meta8);
 
 Cmeta* meta9 = new Cmeta();
-meta9->setName("info");
-meta9->setContent("TODO describe how to compute and apply offsets for center values whenever attaching this appendage to a body");
+meta9->setName("warning");
+meta9->setContent("TODO will X3D HAnim component add a new level to support LOA-4 functionality?");
 head1->addMeta(*meta9);
 
 Cmeta* meta10 = new Cmeta();
-meta10->setName("reference");
-meta10->setContent("https://www.web3d.org/working-groups/humanoid-animation-HAnim");
+meta10->setName("info");
+meta10->setContent("TODO describe how to compute and apply offsets for center values whenever attaching this appendage to a body");
 head1->addMeta(*meta10);
 
 Cmeta* meta11 = new Cmeta();
 meta11->setName("reference");
-meta11->setContent("https://www.web3d.org/documents/specifications/19774/V2.0");
+meta11->setContent("https://www.web3d.org/working-groups/humanoid-animation-HAnim");
 head1->addMeta(*meta11);
 
 Cmeta* meta12 = new Cmeta();
 meta12->setName("reference");
-meta12->setContent("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/concepts.html#TheFeet");
+meta12->setContent("https://www.web3d.org/documents/specifications/19774/V2.0");
 head1->addMeta(*meta12);
 
 Cmeta* meta13 = new Cmeta();
 meta13->setName("reference");
-meta13->setContent("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/concepts.html#f-FootJoints");
+meta13->setContent("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/concepts.html#TheFeet");
 head1->addMeta(*meta13);
 
 Cmeta* meta14 = new Cmeta();
 meta14->setName("reference");
-meta14->setContent("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/concepts.html#Hierarchy4");
+meta14->setContent("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/concepts.html#f-FootJoints");
 head1->addMeta(*meta14);
 
 Cmeta* meta15 = new Cmeta();
 meta15->setName("reference");
-meta15->setContent("https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/hanim.html");
+meta15->setContent("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/concepts.html#Hierarchy4");
 head1->addMeta(*meta15);
 
 Cmeta* meta16 = new Cmeta();
-meta16->setName("subject");
-meta16->setContent("X3D HAnim humanoid animation");
+meta16->setName("reference");
+meta16->setContent("https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/hanim.html");
 head1->addMeta(*meta16);
 
 Cmeta* meta17 = new Cmeta();
-meta17->setName("TODO");
-meta17->setContent("Integrate and confirm Segment/Joint names, Viewpoints.");
+meta17->setName("subject");
+meta17->setContent("X3D HAnim humanoid animation");
 head1->addMeta(*meta17);
 
 Cmeta* meta18 = new Cmeta();
-meta18->setName("identifier");
-meta18->setContent("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelFootLeft.x3d");
+meta18->setName("TODO");
+meta18->setContent("Integrate and confirm Segment/Joint names, Viewpoints.");
 head1->addMeta(*meta18);
 
 Cmeta* meta19 = new Cmeta();
-meta19->setName("generator");
-meta19->setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit");
+meta19->setName("identifier");
+meta19->setContent("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelFootLeft.x3d");
 head1->addMeta(*meta19);
 
-Ccomponent* component20 = new Ccomponent();
-component20->setName("HAnim");
-component20->setLevel(1);
-head1->addComponent(*component20);
+Cmeta* meta20 = new Cmeta();
+meta20->setName("generator");
+meta20->setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit");
+head1->addMeta(*meta20);
+
+Cmeta* meta21 = new Cmeta();
+meta21->setName("license");
+meta21->setContent("../license.html");
+head1->addMeta(*meta21);
 
 X3D0->setHead(*head1);
 
-CScene* Scene21 = new CScene();
-CWorldInfo* WorldInfo22 = (CWorldInfo *)(m_pScene.createNode("WorldInfo"));
-WorldInfo22->setTitle("HAnimModelFootLeft.x3d");
-group->addChildren(*WorldInfo22);
+CScene* Scene22 = new CScene();
+CWorldInfo* WorldInfo23 = (CWorldInfo *)(m_pScene.createNode("WorldInfo"));
+WorldInfo23->setTitle("HAnimModelFootLeft.x3d");
+group->addChildren(*WorldInfo23);
 
-CHAnimHumanoid* HAnimHumanoid23 = (CHAnimHumanoid *)(m_pScene.createNode("HAnimHumanoid"));
-HAnimHumanoid23->setDEF("hanim_Foot_Left");
-HAnimHumanoid23->setVersion("2.0");
-HAnimHumanoid23->setName("Foot_Left");
-HAnimHumanoid23->setLoa(4);
-CMetadataSet* MetadataSet24 = (CMetadataSet *)(m_pScene.createNode("MetadataSet"));
-MetadataSet24->setName("HAnimHumanoid.info");
-MetadataSet24->setReference("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid");
-CMetadataString* MetadataString25 = (CMetadataString *)(m_pScene.createNode("MetadataString"));
-MetadataString25->setName("authorName");
-MetadataSet24->setMetadata(*MetadataString25);
+CHAnimHumanoid* HAnimHumanoid24 = (CHAnimHumanoid *)(m_pScene.createNode("HAnimHumanoid"));
+HAnimHumanoid24->setName("Foot_Left");
+HAnimHumanoid24->setDEF("hanim_Foot_Left");
+HAnimHumanoid24->setLoa(4);
+HAnimHumanoid24->setVersion("2.0");
+//original HAnimHumanoid info='\"authorName=Kwan-Hee YOO, Don Brutzman and Joe Williams\"'
+CMetadataSet* MetadataSet25 = (CMetadataSet *)(m_pScene.createNode("MetadataSet"));
+MetadataSet25->setName("HAnimHumanoid.info");
+MetadataSet25->setReference("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid");
+CMetadataString* MetadataString26 = (CMetadataString *)(m_pScene.createNode("MetadataString"));
+MetadataString26->setName("authorName");
+MetadataString26->setValue(new CString[1]{"Kwan-Hee YOO, Don Brutzman and Joe Williams"}, 1);
+MetadataSet25->setValue(*MetadataString26);
 
-HAnimHumanoid23->setMetadata(*MetadataSet24);
+HAnimHumanoid24->setMetadata(*MetadataSet25);
 
-CHAnimJoint* HAnimJoint26 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
-HAnimJoint26->setDEF("hanim_humanoid_root");
-HAnimJoint26->setName("humanoid_root");
 CHAnimJoint* HAnimJoint27 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
-HAnimJoint27->setDEF("hanim_l_talocrural");
-HAnimJoint27->setDescription("connection joint of foot to leg above");
-HAnimJoint27->setName("l_talocrural");
-CHAnimSegment* HAnimSegment28 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
-HAnimSegment28->setDEF("hanim_l_talus");
-HAnimSegment28->setName("l_talus");
-CTransform* Transform29 = (CTransform *)(m_pScene.createNode("Transform"));
-CShape* Shape30 = (CShape *)(m_pScene.createNode("Shape"));
-Shape30->setDEF("HAnimJointShape");
-CAppearance* Appearance31 = (CAppearance *)(m_pScene.createNode("Appearance"));
-Appearance31->setDEF("HAnimJointAppearance");
-CMaterial* Material32 = (CMaterial *)(m_pScene.createNode("Material"));
-Material32->setDiffuseColor(new float[3]{0,0,1});
-Appearance31->setMaterial(*Material32);
+HAnimJoint27->setName("humanoid_root");
+HAnimJoint27->setDEF("hanim_humanoid_root");
+HAnimJoint27->setUlimit(new float[3]{0,0,0}, 3);
+HAnimJoint27->setLlimit(new float[3]{0,0,0}, 3);
+//Might consider putting a HAnimSegment here, but that doesn't help with re-use of this foot model
+CHAnimJoint* HAnimJoint28 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
+HAnimJoint28->setName("l_talocrural");
+HAnimJoint28->setDEF("hanim_l_talocrural");
+HAnimJoint28->setDescription("connection joint of foot to leg above");
+HAnimJoint28->setUlimit(new float[3]{0,0,0}, 3);
+HAnimJoint28->setLlimit(new float[3]{0,0,0}, 3);
+CHAnimSegment* HAnimSegment29 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
+HAnimSegment29->setName("l_talus");
+HAnimSegment29->setDEF("hanim_l_talus");
+CTransform* Transform30 = (CTransform *)(m_pScene.createNode("Transform"));
+CShape* Shape31 = (CShape *)(m_pScene.createNode("Shape"));
+Shape31->setDEF("HAnimJointShape");
+CSphere* Sphere32 = (CSphere *)(m_pScene.createNode("Sphere"));
+Sphere32->setRadius(0.025);
+Shape31->setGeometry(Sphere32);
 
-Shape30->setAppearance(*Appearance31);
+CAppearance* Appearance33 = (CAppearance *)(m_pScene.createNode("Appearance"));
+Appearance33->setDEF("HAnimJointAppearance");
+CMaterial* Material34 = (CMaterial *)(m_pScene.createNode("Material"));
+Material34->setDiffuseColor(new float[3]{0,0,1});
+Appearance33->setMaterial(*Material34);
 
-CSphere* Sphere33 = (CSphere *)(m_pScene.createNode("Sphere"));
-Sphere33->setRadius(0.025);
-Shape30->setGeometry(Sphere33);
+Shape31->setAppearance(*Appearance33);
 
-Transform29->addChild(*Shape30);
+Transform30->addChild(*Shape31);
 
-HAnimSegment28->addChildren(*Transform29);
+HAnimSegment29->addChildren(*Transform30);
 
-CShape* Shape34 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance35 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material36 = (CMaterial *)(m_pScene.createNode("Material"));
-Material36->setEmissiveColor(new float[3]{1,1,1});
-Appearance35->setMaterial(*Material36);
+CShape* Shape35 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance36 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material37 = (CMaterial *)(m_pScene.createNode("Material"));
+Material37->setEmissiveColor(new float[3]{1,1,1});
+Appearance36->setMaterial(*Material37);
 
-Shape34->setAppearance(*Appearance35);
+Shape35->setAppearance(*Appearance36);
 
-CIndexedLineSet* IndexedLineSet37 = (CIndexedLineSet *)(m_pScene.createNode("IndexedLineSet"));
-IndexedLineSet37->setDEF("TCtoTCN");
-IndexedLineSet37->setCoordIndex(new int[2]{0,1});
-CCoordinate* Coordinate38 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
-Coordinate38->setPoint(new float[6]{0,0,0,0,-0.3,0});
-IndexedLineSet37->setCoord(*Coordinate38);
+CIndexedLineSet* IndexedLineSet38 = (CIndexedLineSet *)(m_pScene.createNode("IndexedLineSet"));
+IndexedLineSet38->setDEF("TCtoTCN");
+IndexedLineSet38->setCoordIndex(new int[2]{0,1});
+CCoordinate* Coordinate39 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate39->setPoint(new float[6]{0,0,0,0,-0.3,0});
+IndexedLineSet38->setCoord(*Coordinate39);
 
-Shape34->setGeometry(IndexedLineSet37);
+Shape35->setGeometry(IndexedLineSet38);
 
-HAnimSegment28->addChildren(*Shape34);
+HAnimSegment29->addChildren(*Shape35);
 
-CShape* Shape39 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance40 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material41 = (CMaterial *)(m_pScene.createNode("Material"));
-Material41->setEmissiveColor(new float[3]{1,1,1});
-Appearance40->setMaterial(*Material41);
+CShape* Shape40 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance41 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material42 = (CMaterial *)(m_pScene.createNode("Material"));
+Material42->setEmissiveColor(new float[3]{1,1,1});
+Appearance41->setMaterial(*Material42);
 
-Shape39->setAppearance(*Appearance40);
+Shape40->setAppearance(*Appearance41);
 
-CIndexedLineSet* IndexedLineSet42 = (CIndexedLineSet *)(m_pScene.createNode("IndexedLineSet"));
-IndexedLineSet42->setDEF("TCtoCC");
-IndexedLineSet42->setCoordIndex(new int[2]{0,1});
-CCoordinate* Coordinate43 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
-Coordinate43->setPoint(new float[6]{0,0,0,0.2,0.3,0});
-IndexedLineSet42->setCoord(*Coordinate43);
+CIndexedLineSet* IndexedLineSet43 = (CIndexedLineSet *)(m_pScene.createNode("IndexedLineSet"));
+IndexedLineSet43->setDEF("TCtoCC");
+IndexedLineSet43->setCoordIndex(new int[2]{0,1});
+CCoordinate* Coordinate44 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate44->setPoint(new float[6]{0,0,0,0.2,0.3,0});
+IndexedLineSet43->setCoord(*Coordinate44);
 
-Shape39->setGeometry(IndexedLineSet42);
+Shape40->setGeometry(IndexedLineSet43);
 
-HAnimSegment28->addChildren(*Shape39);
+HAnimSegment29->addChildren(*Shape40);
 
-HAnimJoint27->addChildren(*HAnimSegment28);
+HAnimJoint28->addChildren(*HAnimSegment29);
 
-CHAnimJoint* HAnimJoint44 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
-HAnimJoint44->setDEF("hanim_l_talocalcaneonavicular");
-HAnimJoint44->setName("l_talocalcaneonavicular");
-HAnimJoint44->setCenter(new float[3]{0,-0.3,0});
-CHAnimSegment* HAnimSegment45 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
-HAnimSegment45->setDEF("hanim_l_navicular");
-HAnimSegment45->setName("l_navicular");
-CTransform* Transform46 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform46->setTranslation(new float[3]{0,-0.3,0});
-CShape* Shape47 = (CShape *)(m_pScene.createNode("Shape"));
-Shape47->setUSE("HAnimJointShape");
-Transform46->addChild(*Shape47);
-
-HAnimSegment45->addChildren(*Transform46);
-
+//TCN
+CHAnimJoint* HAnimJoint45 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
+HAnimJoint45->setName("l_talocalcaneonavicular");
+HAnimJoint45->setDEF("hanim_l_talocalcaneonavicular");
+HAnimJoint45->setCenter(new float[3]{0,-0.3,0});
+HAnimJoint45->setUlimit(new float[3]{0,0,0}, 3);
+HAnimJoint45->setLlimit(new float[3]{0,0,0}, 3);
+CHAnimSegment* HAnimSegment46 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
+HAnimSegment46->setName("l_navicular");
+HAnimSegment46->setDEF("hanim_l_navicular");
+CTransform* Transform47 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform47->setTranslation(new float[3]{0,-0.3,0});
 CShape* Shape48 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance49 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material50 = (CMaterial *)(m_pScene.createNode("Material"));
-Material50->setEmissiveColor(new float[3]{1,1,1});
-Appearance49->setMaterial(*Material50);
+Shape48->setUSE("HAnimJointShape");
+Transform47->addChild(*Shape48);
 
-Shape48->setAppearance(*Appearance49);
+HAnimSegment46->addChildren(*Transform47);
 
-CIndexedLineSet* IndexedLineSet51 = (CIndexedLineSet *)(m_pScene.createNode("IndexedLineSet"));
-IndexedLineSet51->setDEF("TCNtoCN1");
-IndexedLineSet51->setCoordIndex(new int[2]{0,1});
-CCoordinate* Coordinate52 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
-Coordinate52->setPoint(new float[6]{0,-0.3,0,-0.1,-0.45,0});
-IndexedLineSet51->setCoord(*Coordinate52);
+CShape* Shape49 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance50 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material51 = (CMaterial *)(m_pScene.createNode("Material"));
+Material51->setEmissiveColor(new float[3]{1,1,1});
+Appearance50->setMaterial(*Material51);
 
-Shape48->setGeometry(IndexedLineSet51);
+Shape49->setAppearance(*Appearance50);
 
-HAnimSegment45->addChildren(*Shape48);
+CIndexedLineSet* IndexedLineSet52 = (CIndexedLineSet *)(m_pScene.createNode("IndexedLineSet"));
+IndexedLineSet52->setDEF("TCNtoCN1");
+IndexedLineSet52->setCoordIndex(new int[2]{0,1});
+CCoordinate* Coordinate53 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate53->setPoint(new float[6]{0,-0.3,0,-0.1,-0.45,0});
+IndexedLineSet52->setCoord(*Coordinate53);
 
-CShape* Shape53 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance54 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material55 = (CMaterial *)(m_pScene.createNode("Material"));
-Material55->setEmissiveColor(new float[3]{1,1,1});
-Appearance54->setMaterial(*Material55);
+Shape49->setGeometry(IndexedLineSet52);
 
-Shape53->setAppearance(*Appearance54);
+HAnimSegment46->addChildren(*Shape49);
 
-CIndexedLineSet* IndexedLineSet56 = (CIndexedLineSet *)(m_pScene.createNode("IndexedLineSet"));
-IndexedLineSet56->setDEF("TCNtoCN2");
-IndexedLineSet56->setCoordIndex(new int[2]{0,1});
-CCoordinate* Coordinate57 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
-Coordinate57->setPoint(new float[6]{0,-0.3,0,0,-0.45,0});
-IndexedLineSet56->setCoord(*Coordinate57);
+CShape* Shape54 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance55 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material56 = (CMaterial *)(m_pScene.createNode("Material"));
+Material56->setEmissiveColor(new float[3]{1,1,1});
+Appearance55->setMaterial(*Material56);
 
-Shape53->setGeometry(IndexedLineSet56);
+Shape54->setAppearance(*Appearance55);
 
-HAnimSegment45->addChildren(*Shape53);
+CIndexedLineSet* IndexedLineSet57 = (CIndexedLineSet *)(m_pScene.createNode("IndexedLineSet"));
+IndexedLineSet57->setDEF("TCNtoCN2");
+IndexedLineSet57->setCoordIndex(new int[2]{0,1});
+CCoordinate* Coordinate58 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate58->setPoint(new float[6]{0,-0.3,0,0,-0.45,0});
+IndexedLineSet57->setCoord(*Coordinate58);
 
-CShape* Shape58 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance59 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material60 = (CMaterial *)(m_pScene.createNode("Material"));
-Material60->setEmissiveColor(new float[3]{1,1,1});
-Appearance59->setMaterial(*Material60);
+Shape54->setGeometry(IndexedLineSet57);
 
-Shape58->setAppearance(*Appearance59);
+HAnimSegment46->addChildren(*Shape54);
 
-CIndexedLineSet* IndexedLineSet61 = (CIndexedLineSet *)(m_pScene.createNode("IndexedLineSet"));
-IndexedLineSet61->setDEF("TCNtoCN3");
-IndexedLineSet61->setCoordIndex(new int[2]{0,1});
-CCoordinate* Coordinate62 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
-Coordinate62->setPoint(new float[6]{0,-0.3,0,0.1,-0.4,0});
-IndexedLineSet61->setCoord(*Coordinate62);
+CShape* Shape59 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance60 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material61 = (CMaterial *)(m_pScene.createNode("Material"));
+Material61->setEmissiveColor(new float[3]{1,1,1});
+Appearance60->setMaterial(*Material61);
 
-Shape58->setGeometry(IndexedLineSet61);
+Shape59->setAppearance(*Appearance60);
 
-HAnimSegment45->addChildren(*Shape58);
+CIndexedLineSet* IndexedLineSet62 = (CIndexedLineSet *)(m_pScene.createNode("IndexedLineSet"));
+IndexedLineSet62->setDEF("TCNtoCN3");
+IndexedLineSet62->setCoordIndex(new int[2]{0,1});
+CCoordinate* Coordinate63 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate63->setPoint(new float[6]{0,-0.3,0,0.1,-0.4,0});
+IndexedLineSet62->setCoord(*Coordinate63);
 
-HAnimJoint44->addChildren(*HAnimSegment45);
+Shape59->setGeometry(IndexedLineSet62);
 
-CHAnimJoint* HAnimJoint63 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
-HAnimJoint63->setDEF("hanim_l_cuneonavicular_1");
-HAnimJoint63->setName("l_cuneonavicular_1");
-HAnimJoint63->setCenter(new float[3]{-0.1,-0.45,0});
-CHAnimSegment* HAnimSegment64 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
-HAnimSegment64->setDEF("hanim_l_cuneiform_1");
-HAnimSegment64->setName("l_cuneiform_1");
-CTransform* Transform65 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform65->setTranslation(new float[3]{-0.1,-0.45,0});
-CShape* Shape66 = (CShape *)(m_pScene.createNode("Shape"));
-Shape66->setUSE("HAnimJointShape");
-Transform65->addChild(*Shape66);
+HAnimSegment46->addChildren(*Shape59);
 
-HAnimSegment64->addChildren(*Transform65);
+HAnimJoint45->addChildren(*HAnimSegment46);
 
+//CN1
+CHAnimJoint* HAnimJoint64 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
+HAnimJoint64->setName("l_cuneonavicular_1");
+HAnimJoint64->setDEF("hanim_l_cuneonavicular_1");
+HAnimJoint64->setCenter(new float[3]{-0.1,-0.45,0});
+HAnimJoint64->setUlimit(new float[3]{0,0,0}, 3);
+HAnimJoint64->setLlimit(new float[3]{0,0,0}, 3);
+CHAnimSegment* HAnimSegment65 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
+HAnimSegment65->setName("l_cuneiform_1");
+HAnimSegment65->setDEF("hanim_l_cuneiform_1");
+CTransform* Transform66 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform66->setTranslation(new float[3]{-0.1,-0.45,0});
 CShape* Shape67 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance68 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material69 = (CMaterial *)(m_pScene.createNode("Material"));
-Material69->setEmissiveColor(new float[3]{1,1,1});
-Appearance68->setMaterial(*Material69);
+Shape67->setUSE("HAnimJointShape");
+Transform66->addChild(*Shape67);
 
-Shape67->setAppearance(*Appearance68);
+HAnimSegment65->addChildren(*Transform66);
 
-CIndexedLineSet* IndexedLineSet70 = (CIndexedLineSet *)(m_pScene.createNode("IndexedLineSet"));
-IndexedLineSet70->setDEF("CN1toTMT1");
-IndexedLineSet70->setCoordIndex(new int[2]{0,1});
-CCoordinate* Coordinate71 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
-Coordinate71->setPoint(new float[6]{-0.1,-0.45,0,-0.1,-0.6,0});
-IndexedLineSet70->setCoord(*Coordinate71);
+CShape* Shape68 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance69 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material70 = (CMaterial *)(m_pScene.createNode("Material"));
+Material70->setEmissiveColor(new float[3]{1,1,1});
+Appearance69->setMaterial(*Material70);
 
-Shape67->setGeometry(IndexedLineSet70);
+Shape68->setAppearance(*Appearance69);
 
-HAnimSegment64->addChildren(*Shape67);
+CIndexedLineSet* IndexedLineSet71 = (CIndexedLineSet *)(m_pScene.createNode("IndexedLineSet"));
+IndexedLineSet71->setDEF("CN1toTMT1");
+IndexedLineSet71->setCoordIndex(new int[2]{0,1});
+CCoordinate* Coordinate72 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate72->setPoint(new float[6]{-0.1,-0.45,0,-0.1,-0.6,0});
+IndexedLineSet71->setCoord(*Coordinate72);
 
-HAnimJoint63->addChildren(*HAnimSegment64);
+Shape68->setGeometry(IndexedLineSet71);
 
-CHAnimJoint* HAnimJoint72 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
-HAnimJoint72->setDEF("hanim_l_tarsometatarsal_1");
-HAnimJoint72->setName("l_tarsometatarsal_1");
-HAnimJoint72->setCenter(new float[3]{-0.1,-0.6,0});
-CHAnimSegment* HAnimSegment73 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
-HAnimSegment73->setDEF("hanim_l_metatarsal_1");
-HAnimSegment73->setName("l_metatarsal_1");
-CTransform* Transform74 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform74->setTranslation(new float[3]{-0.1,-0.6,0});
-CShape* Shape75 = (CShape *)(m_pScene.createNode("Shape"));
-Shape75->setUSE("HAnimJointShape");
-Transform74->addChild(*Shape75);
+HAnimSegment65->addChildren(*Shape68);
 
-HAnimSegment73->addChildren(*Transform74);
+HAnimJoint64->addChildren(*HAnimSegment65);
 
+CHAnimJoint* HAnimJoint73 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
+HAnimJoint73->setName("l_tarsometatarsal_1");
+HAnimJoint73->setDEF("hanim_l_tarsometatarsal_1");
+HAnimJoint73->setCenter(new float[3]{-0.1,-0.6,0});
+HAnimJoint73->setUlimit(new float[3]{0,0,0}, 3);
+HAnimJoint73->setLlimit(new float[3]{0,0,0}, 3);
+CHAnimSegment* HAnimSegment74 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
+HAnimSegment74->setName("l_metatarsal_1");
+HAnimSegment74->setDEF("hanim_l_metatarsal_1");
+CTransform* Transform75 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform75->setTranslation(new float[3]{-0.1,-0.6,0});
 CShape* Shape76 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance77 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material78 = (CMaterial *)(m_pScene.createNode("Material"));
-Material78->setEmissiveColor(new float[3]{1,1,1});
-Appearance77->setMaterial(*Material78);
+Shape76->setUSE("HAnimJointShape");
+Transform75->addChild(*Shape76);
 
-Shape76->setAppearance(*Appearance77);
+HAnimSegment74->addChildren(*Transform75);
 
-CIndexedLineSet* IndexedLineSet79 = (CIndexedLineSet *)(m_pScene.createNode("IndexedLineSet"));
-IndexedLineSet79->setDEF("TMT1toMTP1");
-IndexedLineSet79->setCoordIndex(new int[2]{0,1});
-CCoordinate* Coordinate80 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
-Coordinate80->setPoint(new float[6]{-0.1,-0.6,0,-0.1,-0.9,0});
-IndexedLineSet79->setCoord(*Coordinate80);
+CShape* Shape77 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance78 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material79 = (CMaterial *)(m_pScene.createNode("Material"));
+Material79->setEmissiveColor(new float[3]{1,1,1});
+Appearance78->setMaterial(*Material79);
 
-Shape76->setGeometry(IndexedLineSet79);
+Shape77->setAppearance(*Appearance78);
 
-HAnimSegment73->addChildren(*Shape76);
+CIndexedLineSet* IndexedLineSet80 = (CIndexedLineSet *)(m_pScene.createNode("IndexedLineSet"));
+IndexedLineSet80->setDEF("TMT1toMTP1");
+IndexedLineSet80->setCoordIndex(new int[2]{0,1});
+CCoordinate* Coordinate81 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate81->setPoint(new float[6]{-0.1,-0.6,0,-0.1,-0.9,0});
+IndexedLineSet80->setCoord(*Coordinate81);
 
-HAnimJoint72->addChildren(*HAnimSegment73);
+Shape77->setGeometry(IndexedLineSet80);
 
-CHAnimJoint* HAnimJoint81 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
-HAnimJoint81->setDEF("hanim_l_metatarsophalangeal_1");
-HAnimJoint81->setName("l_metatarsophalangeal_1");
-HAnimJoint81->setCenter(new float[3]{-0.1,-0.9,0});
-CHAnimSegment* HAnimSegment82 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
-HAnimSegment82->setDEF("hanim_l_tarsal_proximal_phalanx_1");
-HAnimSegment82->setName("l_tarsal_proximal_phalanx_1");
-CTransform* Transform83 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform83->setTranslation(new float[3]{-0.1,-0.9,0});
-CShape* Shape84 = (CShape *)(m_pScene.createNode("Shape"));
-Shape84->setUSE("HAnimJointShape");
-Transform83->addChild(*Shape84);
+HAnimSegment74->addChildren(*Shape77);
 
-HAnimSegment82->addChildren(*Transform83);
+HAnimJoint73->addChildren(*HAnimSegment74);
 
+CHAnimJoint* HAnimJoint82 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
+HAnimJoint82->setName("l_metatarsophalangeal_1");
+HAnimJoint82->setDEF("hanim_l_metatarsophalangeal_1");
+HAnimJoint82->setCenter(new float[3]{-0.1,-0.9,0});
+HAnimJoint82->setUlimit(new float[3]{0,0,0}, 3);
+HAnimJoint82->setLlimit(new float[3]{0,0,0}, 3);
+CHAnimSegment* HAnimSegment83 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
+HAnimSegment83->setName("l_tarsal_proximal_phalanx_1");
+HAnimSegment83->setDEF("hanim_l_tarsal_proximal_phalanx_1");
+CTransform* Transform84 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform84->setTranslation(new float[3]{-0.1,-0.9,0});
 CShape* Shape85 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance86 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material87 = (CMaterial *)(m_pScene.createNode("Material"));
-Material87->setEmissiveColor(new float[3]{1,1,1});
-Appearance86->setMaterial(*Material87);
+Shape85->setUSE("HAnimJointShape");
+Transform84->addChild(*Shape85);
 
-Shape85->setAppearance(*Appearance86);
+HAnimSegment83->addChildren(*Transform84);
 
-CIndexedLineSet* IndexedLineSet88 = (CIndexedLineSet *)(m_pScene.createNode("IndexedLineSet"));
-IndexedLineSet88->setDEF("MTP1toIP1");
-IndexedLineSet88->setCoordIndex(new int[2]{0,1});
-CCoordinate* Coordinate89 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
-Coordinate89->setPoint(new float[6]{-0.1,-0.9,0,-0.1,-1.05,0});
-IndexedLineSet88->setCoord(*Coordinate89);
+CShape* Shape86 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance87 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material88 = (CMaterial *)(m_pScene.createNode("Material"));
+Material88->setEmissiveColor(new float[3]{1,1,1});
+Appearance87->setMaterial(*Material88);
 
-Shape85->setGeometry(IndexedLineSet88);
+Shape86->setAppearance(*Appearance87);
 
-HAnimSegment82->addChildren(*Shape85);
+CIndexedLineSet* IndexedLineSet89 = (CIndexedLineSet *)(m_pScene.createNode("IndexedLineSet"));
+IndexedLineSet89->setDEF("MTP1toIP1");
+IndexedLineSet89->setCoordIndex(new int[2]{0,1});
+CCoordinate* Coordinate90 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate90->setPoint(new float[6]{-0.1,-0.9,0,-0.1,-1.05,0});
+IndexedLineSet89->setCoord(*Coordinate90);
 
-HAnimJoint81->addChildren(*HAnimSegment82);
+Shape86->setGeometry(IndexedLineSet89);
 
-CHAnimJoint* HAnimJoint90 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
-HAnimJoint90->setDEF("hanim_l_tarsal_interphalangeal_1");
-HAnimJoint90->setName("l_tarsal_interphalangeal_1");
-HAnimJoint90->setCenter(new float[3]{-0.1,-1.05,0});
-CHAnimSegment* HAnimSegment91 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
-HAnimSegment91->setDEF("hanim_l_tarsal_distal_phalanx_1");
-HAnimSegment91->setName("l_tarsal_distal_phalanx_1");
-CTransform* Transform92 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform92->setTranslation(new float[3]{-0.1,-1.05,0});
-CShape* Shape93 = (CShape *)(m_pScene.createNode("Shape"));
-Shape93->setUSE("HAnimJointShape");
-Transform92->addChild(*Shape93);
+HAnimSegment83->addChildren(*Shape86);
 
-HAnimSegment91->addChildren(*Transform92);
+HAnimJoint82->addChildren(*HAnimSegment83);
 
+CHAnimJoint* HAnimJoint91 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
+HAnimJoint91->setName("l_tarsal_interphalangeal_1");
+HAnimJoint91->setDEF("hanim_l_tarsal_interphalangeal_1");
+HAnimJoint91->setCenter(new float[3]{-0.1,-1.05,0});
+HAnimJoint91->setUlimit(new float[3]{0,0,0}, 3);
+HAnimJoint91->setLlimit(new float[3]{0,0,0}, 3);
+CHAnimSegment* HAnimSegment92 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
+HAnimSegment92->setName("l_tarsal_distal_phalanx_1");
+HAnimSegment92->setDEF("hanim_l_tarsal_distal_phalanx_1");
+CTransform* Transform93 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform93->setTranslation(new float[3]{-0.1,-1.05,0});
 CShape* Shape94 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance95 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material96 = (CMaterial *)(m_pScene.createNode("Material"));
-Material96->setEmissiveColor(new float[3]{1,1,1});
-Appearance95->setMaterial(*Material96);
+Shape94->setUSE("HAnimJointShape");
+Transform93->addChild(*Shape94);
 
-Shape94->setAppearance(*Appearance95);
+HAnimSegment92->addChildren(*Transform93);
 
-CIndexedLineSet* IndexedLineSet97 = (CIndexedLineSet *)(m_pScene.createNode("IndexedLineSet"));
-IndexedLineSet97->setDEF("tiptoe_l_tarsal_distal_interphalangeal_1");
-IndexedLineSet97->setCoordIndex(new int[2]{0,1});
-CCoordinate* Coordinate98 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
-Coordinate98->setPoint(new float[6]{-0.1,-1.05,0,-0.1,-1.1,0});
-IndexedLineSet97->setCoord(*Coordinate98);
+CShape* Shape95 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance96 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material97 = (CMaterial *)(m_pScene.createNode("Material"));
+Material97->setEmissiveColor(new float[3]{1,1,1});
+Appearance96->setMaterial(*Material97);
 
-Shape94->setGeometry(IndexedLineSet97);
+Shape95->setAppearance(*Appearance96);
 
-HAnimSegment91->addChildren(*Shape94);
+CIndexedLineSet* IndexedLineSet98 = (CIndexedLineSet *)(m_pScene.createNode("IndexedLineSet"));
+IndexedLineSet98->setDEF("tiptoe_l_tarsal_distal_interphalangeal_1");
+IndexedLineSet98->setCoordIndex(new int[2]{0,1});
+CCoordinate* Coordinate99 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate99->setPoint(new float[6]{-0.1,-1.05,0,-0.1,-1.1,0});
+IndexedLineSet98->setCoord(*Coordinate99);
 
-HAnimJoint90->addChildren(*HAnimSegment91);
+Shape95->setGeometry(IndexedLineSet98);
 
-HAnimJoint81->addChildren(*HAnimJoint90);
+HAnimSegment92->addChildren(*Shape95);
 
-HAnimJoint72->addChildren(*HAnimJoint81);
+HAnimJoint91->addChildren(*HAnimSegment92);
 
-HAnimJoint63->addChildren(*HAnimJoint72);
+HAnimJoint82->addChildren(*HAnimJoint91);
 
-HAnimJoint44->addChildren(*HAnimJoint63);
+HAnimJoint73->addChildren(*HAnimJoint82);
 
-CHAnimJoint* HAnimJoint99 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
-HAnimJoint99->setDEF("hanim_l_cuneonavicular_2");
-HAnimJoint99->setName("l_cuneonavicular_2");
-HAnimJoint99->setCenter(new float[3]{0,-0.45,0});
-CHAnimSegment* HAnimSegment100 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
-HAnimSegment100->setDEF("hanim_l_cuneiform_2");
-HAnimSegment100->setName("l_cuneiform_2");
-CTransform* Transform101 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform101->setTranslation(new float[3]{0,-0.45,0});
-CShape* Shape102 = (CShape *)(m_pScene.createNode("Shape"));
-Shape102->setUSE("HAnimJointShape");
-Transform101->addChild(*Shape102);
+HAnimJoint64->addChildren(*HAnimJoint73);
 
-HAnimSegment100->addChildren(*Transform101);
+HAnimJoint45->addChildren(*HAnimJoint64);
 
+//CN2
+CHAnimJoint* HAnimJoint100 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
+HAnimJoint100->setName("l_cuneonavicular_2");
+HAnimJoint100->setDEF("hanim_l_cuneonavicular_2");
+HAnimJoint100->setCenter(new float[3]{0,-0.45,0});
+HAnimJoint100->setUlimit(new float[3]{0,0,0}, 3);
+HAnimJoint100->setLlimit(new float[3]{0,0,0}, 3);
+CHAnimSegment* HAnimSegment101 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
+HAnimSegment101->setName("l_cuneiform_2");
+HAnimSegment101->setDEF("hanim_l_cuneiform_2");
+CTransform* Transform102 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform102->setTranslation(new float[3]{0,-0.45,0});
 CShape* Shape103 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance104 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material105 = (CMaterial *)(m_pScene.createNode("Material"));
-Material105->setEmissiveColor(new float[3]{1,1,1});
-Appearance104->setMaterial(*Material105);
+Shape103->setUSE("HAnimJointShape");
+Transform102->addChild(*Shape103);
 
-Shape103->setAppearance(*Appearance104);
+HAnimSegment101->addChildren(*Transform102);
 
-CIndexedLineSet* IndexedLineSet106 = (CIndexedLineSet *)(m_pScene.createNode("IndexedLineSet"));
-IndexedLineSet106->setDEF("CN2toTMT2");
-IndexedLineSet106->setCoordIndex(new int[2]{0,1});
-CCoordinate* Coordinate107 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
-Coordinate107->setPoint(new float[6]{0,-0.45,0,0.05,-0.6,0});
-IndexedLineSet106->setCoord(*Coordinate107);
+CShape* Shape104 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance105 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material106 = (CMaterial *)(m_pScene.createNode("Material"));
+Material106->setEmissiveColor(new float[3]{1,1,1});
+Appearance105->setMaterial(*Material106);
 
-Shape103->setGeometry(IndexedLineSet106);
+Shape104->setAppearance(*Appearance105);
 
-HAnimSegment100->addChildren(*Shape103);
+CIndexedLineSet* IndexedLineSet107 = (CIndexedLineSet *)(m_pScene.createNode("IndexedLineSet"));
+IndexedLineSet107->setDEF("CN2toTMT2");
+IndexedLineSet107->setCoordIndex(new int[2]{0,1});
+CCoordinate* Coordinate108 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate108->setPoint(new float[6]{0,-0.45,0,0.05,-0.6,0});
+IndexedLineSet107->setCoord(*Coordinate108);
 
-HAnimJoint99->addChildren(*HAnimSegment100);
+Shape104->setGeometry(IndexedLineSet107);
 
-CHAnimJoint* HAnimJoint108 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
-HAnimJoint108->setDEF("hanim_l_tarsometatarsal_2");
-HAnimJoint108->setName("l_tarsometatarsal_2");
-HAnimJoint108->setCenter(new float[3]{0.05,-0.6,0});
-CHAnimSegment* HAnimSegment109 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
-HAnimSegment109->setDEF("hanim_l_metatarsal_2");
-HAnimSegment109->setName("l_metatarsal_2");
-CTransform* Transform110 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform110->setTranslation(new float[3]{0.05,-0.6,0});
-CShape* Shape111 = (CShape *)(m_pScene.createNode("Shape"));
-Shape111->setUSE("HAnimJointShape");
-Transform110->addChild(*Shape111);
+HAnimSegment101->addChildren(*Shape104);
 
-HAnimSegment109->addChildren(*Transform110);
+HAnimJoint100->addChildren(*HAnimSegment101);
 
+CHAnimJoint* HAnimJoint109 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
+HAnimJoint109->setName("l_tarsometatarsal_2");
+HAnimJoint109->setDEF("hanim_l_tarsometatarsal_2");
+HAnimJoint109->setCenter(new float[3]{0.05,-0.6,0});
+HAnimJoint109->setUlimit(new float[3]{0,0,0}, 3);
+HAnimJoint109->setLlimit(new float[3]{0,0,0}, 3);
+CHAnimSegment* HAnimSegment110 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
+HAnimSegment110->setName("l_metatarsal_2");
+HAnimSegment110->setDEF("hanim_l_metatarsal_2");
+CTransform* Transform111 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform111->setTranslation(new float[3]{0.05,-0.6,0});
 CShape* Shape112 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance113 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material114 = (CMaterial *)(m_pScene.createNode("Material"));
-Material114->setEmissiveColor(new float[3]{1,1,1});
-Appearance113->setMaterial(*Material114);
+Shape112->setUSE("HAnimJointShape");
+Transform111->addChild(*Shape112);
 
-Shape112->setAppearance(*Appearance113);
+HAnimSegment110->addChildren(*Transform111);
 
-CIndexedLineSet* IndexedLineSet115 = (CIndexedLineSet *)(m_pScene.createNode("IndexedLineSet"));
-IndexedLineSet115->setDEF("TMT2toMTP2");
-IndexedLineSet115->setCoordIndex(new int[2]{0,1});
-CCoordinate* Coordinate116 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
-Coordinate116->setPoint(new float[6]{0.05,-0.6,0,0.05,-0.9,0});
-IndexedLineSet115->setCoord(*Coordinate116);
+CShape* Shape113 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance114 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material115 = (CMaterial *)(m_pScene.createNode("Material"));
+Material115->setEmissiveColor(new float[3]{1,1,1});
+Appearance114->setMaterial(*Material115);
 
-Shape112->setGeometry(IndexedLineSet115);
+Shape113->setAppearance(*Appearance114);
 
-HAnimSegment109->addChildren(*Shape112);
+CIndexedLineSet* IndexedLineSet116 = (CIndexedLineSet *)(m_pScene.createNode("IndexedLineSet"));
+IndexedLineSet116->setDEF("TMT2toMTP2");
+IndexedLineSet116->setCoordIndex(new int[2]{0,1});
+CCoordinate* Coordinate117 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate117->setPoint(new float[6]{0.05,-0.6,0,0.05,-0.9,0});
+IndexedLineSet116->setCoord(*Coordinate117);
 
-HAnimJoint108->addChildren(*HAnimSegment109);
+Shape113->setGeometry(IndexedLineSet116);
 
-CHAnimJoint* HAnimJoint117 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
-HAnimJoint117->setDEF("hanim_l_metatarsophalangeal_2");
-HAnimJoint117->setName("l_metatarsophalangeal_2");
-HAnimJoint117->setCenter(new float[3]{0.05,-0.9,0});
-CHAnimSegment* HAnimSegment118 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
-HAnimSegment118->setDEF("hanim_l_tarsal_proximal_phalanx_2");
-HAnimSegment118->setName("l_tarsal_proximal_phalanx_2");
-CTransform* Transform119 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform119->setTranslation(new float[3]{0.05,-0.9,0});
-CShape* Shape120 = (CShape *)(m_pScene.createNode("Shape"));
-Shape120->setUSE("HAnimJointShape");
-Transform119->addChild(*Shape120);
+HAnimSegment110->addChildren(*Shape113);
 
-HAnimSegment118->addChildren(*Transform119);
+HAnimJoint109->addChildren(*HAnimSegment110);
 
+CHAnimJoint* HAnimJoint118 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
+HAnimJoint118->setName("l_metatarsophalangeal_2");
+HAnimJoint118->setDEF("hanim_l_metatarsophalangeal_2");
+HAnimJoint118->setCenter(new float[3]{0.05,-0.9,0});
+HAnimJoint118->setUlimit(new float[3]{0,0,0}, 3);
+HAnimJoint118->setLlimit(new float[3]{0,0,0}, 3);
+CHAnimSegment* HAnimSegment119 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
+HAnimSegment119->setName("l_tarsal_proximal_phalanx_2");
+HAnimSegment119->setDEF("hanim_l_tarsal_proximal_phalanx_2");
+CTransform* Transform120 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform120->setTranslation(new float[3]{0.05,-0.9,0});
 CShape* Shape121 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance122 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material123 = (CMaterial *)(m_pScene.createNode("Material"));
-Material123->setEmissiveColor(new float[3]{1,1,1});
-Appearance122->setMaterial(*Material123);
+Shape121->setUSE("HAnimJointShape");
+Transform120->addChild(*Shape121);
 
-Shape121->setAppearance(*Appearance122);
+HAnimSegment119->addChildren(*Transform120);
 
-CIndexedLineSet* IndexedLineSet124 = (CIndexedLineSet *)(m_pScene.createNode("IndexedLineSet"));
-IndexedLineSet124->setDEF("MTP2toPIP2");
-IndexedLineSet124->setCoordIndex(new int[2]{0,1});
-CCoordinate* Coordinate125 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
-Coordinate125->setPoint(new float[6]{0.05,-0.9,0,0.05,-1.05,0});
-IndexedLineSet124->setCoord(*Coordinate125);
+CShape* Shape122 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance123 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material124 = (CMaterial *)(m_pScene.createNode("Material"));
+Material124->setEmissiveColor(new float[3]{1,1,1});
+Appearance123->setMaterial(*Material124);
 
-Shape121->setGeometry(IndexedLineSet124);
+Shape122->setAppearance(*Appearance123);
 
-HAnimSegment118->addChildren(*Shape121);
+CIndexedLineSet* IndexedLineSet125 = (CIndexedLineSet *)(m_pScene.createNode("IndexedLineSet"));
+IndexedLineSet125->setDEF("MTP2toPIP2");
+IndexedLineSet125->setCoordIndex(new int[2]{0,1});
+CCoordinate* Coordinate126 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate126->setPoint(new float[6]{0.05,-0.9,0,0.05,-1.05,0});
+IndexedLineSet125->setCoord(*Coordinate126);
 
-HAnimJoint117->addChildren(*HAnimSegment118);
+Shape122->setGeometry(IndexedLineSet125);
 
-CHAnimJoint* HAnimJoint126 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
-HAnimJoint126->setDEF("hanim_l_tarsal_proximal_interphalangeal_1");
-HAnimJoint126->setName("l_tarsal_proximal_interphalangeal_2");
-HAnimJoint126->setCenter(new float[3]{0.05,-1.05,0});
-CHAnimSegment* HAnimSegment127 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
-HAnimSegment127->setDEF("hanim_l_tarsal_middle_phalanx_1");
-HAnimSegment127->setName("l_tarsal_middle_phalanx_2");
-CTransform* Transform128 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform128->setTranslation(new float[3]{0.05,-1.05,0});
-CShape* Shape129 = (CShape *)(m_pScene.createNode("Shape"));
-Shape129->setUSE("HAnimJointShape");
-Transform128->addChild(*Shape129);
+HAnimSegment119->addChildren(*Shape122);
 
-HAnimSegment127->addChildren(*Transform128);
+HAnimJoint118->addChildren(*HAnimSegment119);
 
+CHAnimJoint* HAnimJoint127 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
+HAnimJoint127->setName("l_tarsal_proximal_interphalangeal_2");
+HAnimJoint127->setDEF("hanim_l_tarsal_proximal_interphalangeal_2");
+HAnimJoint127->setCenter(new float[3]{0.05,-1.05,0});
+HAnimJoint127->setUlimit(new float[3]{0,0,0}, 3);
+HAnimJoint127->setLlimit(new float[3]{0,0,0}, 3);
+CHAnimSegment* HAnimSegment128 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
+HAnimSegment128->setName("l_tarsal_middle_phalanx_2");
+HAnimSegment128->setDEF("hanim_l_tarsal_middle_phalanx_2");
+CTransform* Transform129 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform129->setTranslation(new float[3]{0.05,-1.05,0});
 CShape* Shape130 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance131 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material132 = (CMaterial *)(m_pScene.createNode("Material"));
-Material132->setEmissiveColor(new float[3]{1,1,1});
-Appearance131->setMaterial(*Material132);
+Shape130->setUSE("HAnimJointShape");
+Transform129->addChild(*Shape130);
 
-Shape130->setAppearance(*Appearance131);
+HAnimSegment128->addChildren(*Transform129);
 
-CIndexedLineSet* IndexedLineSet133 = (CIndexedLineSet *)(m_pScene.createNode("IndexedLineSet"));
-IndexedLineSet133->setDEF("PIP2toDIP2");
-IndexedLineSet133->setCoordIndex(new int[2]{0,1});
-CCoordinate* Coordinate134 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
-Coordinate134->setPoint(new float[6]{0.05,-1.05,0,0.05,-1.12,0});
-IndexedLineSet133->setCoord(*Coordinate134);
+CShape* Shape131 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance132 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material133 = (CMaterial *)(m_pScene.createNode("Material"));
+Material133->setEmissiveColor(new float[3]{1,1,1});
+Appearance132->setMaterial(*Material133);
 
-Shape130->setGeometry(IndexedLineSet133);
+Shape131->setAppearance(*Appearance132);
 
-HAnimSegment127->addChildren(*Shape130);
+CIndexedLineSet* IndexedLineSet134 = (CIndexedLineSet *)(m_pScene.createNode("IndexedLineSet"));
+IndexedLineSet134->setDEF("PIP2toDIP2");
+IndexedLineSet134->setCoordIndex(new int[2]{0,1});
+CCoordinate* Coordinate135 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate135->setPoint(new float[6]{0.05,-1.05,0,0.05,-1.12,0});
+IndexedLineSet134->setCoord(*Coordinate135);
 
-HAnimJoint126->addChildren(*HAnimSegment127);
+Shape131->setGeometry(IndexedLineSet134);
 
-CHAnimJoint* HAnimJoint135 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
-HAnimJoint135->setDEF("hanim_l_tarsal_distal_interphalangeal_1");
-HAnimJoint135->setName("l_tarsal_distal_interphalangeal_2");
-HAnimJoint135->setCenter(new float[3]{0.05,-1.12,0});
-CHAnimSegment* HAnimSegment136 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
-HAnimSegment136->setDEF("hanim_l_tarsal_distal_phalanx_2");
-HAnimSegment136->setName("l_tarsal_distal_phalanx_2");
-CTransform* Transform137 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform137->setTranslation(new float[3]{0.05,-1.12,0});
-CShape* Shape138 = (CShape *)(m_pScene.createNode("Shape"));
-Shape138->setUSE("HAnimJointShape");
-Transform137->addChild(*Shape138);
+HAnimSegment128->addChildren(*Shape131);
 
-HAnimSegment136->addChildren(*Transform137);
+HAnimJoint127->addChildren(*HAnimSegment128);
 
+CHAnimJoint* HAnimJoint136 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
+HAnimJoint136->setName("l_tarsal_distal_interphalangeal_2");
+HAnimJoint136->setDEF("hanim_l_tarsal_distal_interphalangeal_2");
+HAnimJoint136->setCenter(new float[3]{0.05,-1.12,0});
+HAnimJoint136->setUlimit(new float[3]{0,0,0}, 3);
+HAnimJoint136->setLlimit(new float[3]{0,0,0}, 3);
+CHAnimSegment* HAnimSegment137 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
+HAnimSegment137->setName("l_tarsal_distal_phalanx_2");
+HAnimSegment137->setDEF("hanim_l_tarsal_distal_phalanx_2");
+CTransform* Transform138 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform138->setTranslation(new float[3]{0.05,-1.12,0});
 CShape* Shape139 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance140 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material141 = (CMaterial *)(m_pScene.createNode("Material"));
-Material141->setEmissiveColor(new float[3]{1,1,1});
-Appearance140->setMaterial(*Material141);
+Shape139->setUSE("HAnimJointShape");
+Transform138->addChild(*Shape139);
 
-Shape139->setAppearance(*Appearance140);
+HAnimSegment137->addChildren(*Transform138);
 
-CIndexedLineSet* IndexedLineSet142 = (CIndexedLineSet *)(m_pScene.createNode("IndexedLineSet"));
-IndexedLineSet142->setDEF("tiptoe_l_tarsal_distal_phalanx_1");
-IndexedLineSet142->setCoordIndex(new int[2]{0,1});
-CCoordinate* Coordinate143 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
-Coordinate143->setPoint(new float[6]{0.05,-1.12,0,0.05,-1.16,0});
-IndexedLineSet142->setCoord(*Coordinate143);
+CShape* Shape140 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance141 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material142 = (CMaterial *)(m_pScene.createNode("Material"));
+Material142->setEmissiveColor(new float[3]{1,1,1});
+Appearance141->setMaterial(*Material142);
 
-Shape139->setGeometry(IndexedLineSet142);
+Shape140->setAppearance(*Appearance141);
 
-HAnimSegment136->addChildren(*Shape139);
+CIndexedLineSet* IndexedLineSet143 = (CIndexedLineSet *)(m_pScene.createNode("IndexedLineSet"));
+IndexedLineSet143->setDEF("tiptoe_l_tarsal_distal_phalanx_2");
+IndexedLineSet143->setCoordIndex(new int[2]{0,1});
+CCoordinate* Coordinate144 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate144->setPoint(new float[6]{0.05,-1.12,0,0.05,-1.16,0});
+IndexedLineSet143->setCoord(*Coordinate144);
 
-HAnimJoint135->addChildren(*HAnimSegment136);
+Shape140->setGeometry(IndexedLineSet143);
 
-HAnimJoint126->addChildren(*HAnimJoint135);
+HAnimSegment137->addChildren(*Shape140);
 
-HAnimJoint117->addChildren(*HAnimJoint126);
+HAnimJoint136->addChildren(*HAnimSegment137);
 
-HAnimJoint108->addChildren(*HAnimJoint117);
+HAnimJoint127->addChildren(*HAnimJoint136);
 
-HAnimJoint99->addChildren(*HAnimJoint108);
+HAnimJoint118->addChildren(*HAnimJoint127);
 
-HAnimJoint44->addChildren(*HAnimJoint99);
+HAnimJoint109->addChildren(*HAnimJoint118);
 
-CHAnimJoint* HAnimJoint144 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
-HAnimJoint144->setDEF("hanim_l_cuneonavicular_3");
-HAnimJoint144->setName("l_cuneonavicular_3");
-HAnimJoint144->setCenter(new float[3]{0.1,-0.4,0});
-CHAnimSegment* HAnimSegment145 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
-HAnimSegment145->setDEF("hanim_l_cuneiform_3");
-HAnimSegment145->setName("l_cuneiform_3");
-CTransform* Transform146 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform146->setTranslation(new float[3]{0.1,-0.4,0});
-CShape* Shape147 = (CShape *)(m_pScene.createNode("Shape"));
-Shape147->setUSE("HAnimJointShape");
-Transform146->addChild(*Shape147);
+HAnimJoint100->addChildren(*HAnimJoint109);
 
-HAnimSegment145->addChildren(*Transform146);
+HAnimJoint45->addChildren(*HAnimJoint100);
 
+//CN3
+CHAnimJoint* HAnimJoint145 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
+HAnimJoint145->setName("l_cuneonavicular_3");
+HAnimJoint145->setDEF("hanim_l_cuneonavicular_3");
+HAnimJoint145->setCenter(new float[3]{0.1,-0.4,0});
+HAnimJoint145->setUlimit(new float[3]{0,0,0}, 3);
+HAnimJoint145->setLlimit(new float[3]{0,0,0}, 3);
+CHAnimSegment* HAnimSegment146 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
+HAnimSegment146->setName("l_cuneiform_3");
+HAnimSegment146->setDEF("hanim_l_cuneiform_3");
+CTransform* Transform147 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform147->setTranslation(new float[3]{0.1,-0.4,0});
 CShape* Shape148 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance149 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material150 = (CMaterial *)(m_pScene.createNode("Material"));
-Material150->setEmissiveColor(new float[3]{1,1,1});
-Appearance149->setMaterial(*Material150);
+Shape148->setUSE("HAnimJointShape");
+Transform147->addChild(*Shape148);
 
-Shape148->setAppearance(*Appearance149);
+HAnimSegment146->addChildren(*Transform147);
 
-CIndexedLineSet* IndexedLineSet151 = (CIndexedLineSet *)(m_pScene.createNode("IndexedLineSet"));
-IndexedLineSet151->setDEF("CN3toTMT3");
-IndexedLineSet151->setCoordIndex(new int[2]{0,1});
-CCoordinate* Coordinate152 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
-Coordinate152->setPoint(new float[6]{0.1,-0.4,0,0.15,-0.6,0});
-IndexedLineSet151->setCoord(*Coordinate152);
+CShape* Shape149 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance150 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material151 = (CMaterial *)(m_pScene.createNode("Material"));
+Material151->setEmissiveColor(new float[3]{1,1,1});
+Appearance150->setMaterial(*Material151);
 
-Shape148->setGeometry(IndexedLineSet151);
+Shape149->setAppearance(*Appearance150);
 
-HAnimSegment145->addChildren(*Shape148);
+CIndexedLineSet* IndexedLineSet152 = (CIndexedLineSet *)(m_pScene.createNode("IndexedLineSet"));
+IndexedLineSet152->setDEF("CN3toTMT3");
+IndexedLineSet152->setCoordIndex(new int[2]{0,1});
+CCoordinate* Coordinate153 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate153->setPoint(new float[6]{0.1,-0.4,0,0.15,-0.6,0});
+IndexedLineSet152->setCoord(*Coordinate153);
 
-HAnimJoint144->addChildren(*HAnimSegment145);
+Shape149->setGeometry(IndexedLineSet152);
 
-CHAnimJoint* HAnimJoint153 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
-HAnimJoint153->setDEF("hanim_l_tarsometatarsal_3");
-HAnimJoint153->setName("l_tarsometatarsal_3");
-HAnimJoint153->setCenter(new float[3]{0.15,-0.6,0});
-CHAnimSegment* HAnimSegment154 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
-HAnimSegment154->setDEF("hanim_l_metatarsal_3");
-HAnimSegment154->setName("l_metatarsal_3");
-CTransform* Transform155 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform155->setTranslation(new float[3]{0.15,-0.6,0});
-CShape* Shape156 = (CShape *)(m_pScene.createNode("Shape"));
-Shape156->setUSE("HAnimJointShape");
-Transform155->addChild(*Shape156);
+HAnimSegment146->addChildren(*Shape149);
 
-HAnimSegment154->addChildren(*Transform155);
+HAnimJoint145->addChildren(*HAnimSegment146);
 
+CHAnimJoint* HAnimJoint154 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
+HAnimJoint154->setName("l_tarsometatarsal_3");
+HAnimJoint154->setDEF("hanim_l_tarsometatarsal_3");
+HAnimJoint154->setCenter(new float[3]{0.15,-0.6,0});
+HAnimJoint154->setUlimit(new float[3]{0,0,0}, 3);
+HAnimJoint154->setLlimit(new float[3]{0,0,0}, 3);
+CHAnimSegment* HAnimSegment155 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
+HAnimSegment155->setName("l_metatarsal_3");
+HAnimSegment155->setDEF("hanim_l_metatarsal_3");
+CTransform* Transform156 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform156->setTranslation(new float[3]{0.15,-0.6,0});
 CShape* Shape157 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance158 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material159 = (CMaterial *)(m_pScene.createNode("Material"));
-Material159->setEmissiveColor(new float[3]{1,1,1});
-Appearance158->setMaterial(*Material159);
+Shape157->setUSE("HAnimJointShape");
+Transform156->addChild(*Shape157);
 
-Shape157->setAppearance(*Appearance158);
+HAnimSegment155->addChildren(*Transform156);
 
-CIndexedLineSet* IndexedLineSet160 = (CIndexedLineSet *)(m_pScene.createNode("IndexedLineSet"));
-IndexedLineSet160->setDEF("TMT3toMTP3");
-IndexedLineSet160->setCoordIndex(new int[2]{0,1});
-CCoordinate* Coordinate161 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
-Coordinate161->setPoint(new float[6]{0.15,-0.6,0,0.15,-0.9,0});
-IndexedLineSet160->setCoord(*Coordinate161);
+CShape* Shape158 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance159 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material160 = (CMaterial *)(m_pScene.createNode("Material"));
+Material160->setEmissiveColor(new float[3]{1,1,1});
+Appearance159->setMaterial(*Material160);
 
-Shape157->setGeometry(IndexedLineSet160);
+Shape158->setAppearance(*Appearance159);
 
-HAnimSegment154->addChildren(*Shape157);
+CIndexedLineSet* IndexedLineSet161 = (CIndexedLineSet *)(m_pScene.createNode("IndexedLineSet"));
+IndexedLineSet161->setDEF("TMT3toMTP3");
+IndexedLineSet161->setCoordIndex(new int[2]{0,1});
+CCoordinate* Coordinate162 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate162->setPoint(new float[6]{0.15,-0.6,0,0.15,-0.9,0});
+IndexedLineSet161->setCoord(*Coordinate162);
 
-HAnimJoint153->addChildren(*HAnimSegment154);
+Shape158->setGeometry(IndexedLineSet161);
 
-CHAnimJoint* HAnimJoint162 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
-HAnimJoint162->setDEF("hanim_l_metatarsophalangeal_3");
-HAnimJoint162->setName("l_metatarsophalangeal_3");
-HAnimJoint162->setCenter(new float[3]{0.15,-0.9,0});
-CHAnimSegment* HAnimSegment163 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
-HAnimSegment163->setDEF("hanim_l_tarsal_proximal_phalanx_3");
-HAnimSegment163->setName("l_tarsal_proximal_phalanx_3");
-CTransform* Transform164 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform164->setTranslation(new float[3]{0.15,-0.9,0});
-CShape* Shape165 = (CShape *)(m_pScene.createNode("Shape"));
-Shape165->setUSE("HAnimJointShape");
-Transform164->addChild(*Shape165);
+HAnimSegment155->addChildren(*Shape158);
 
-HAnimSegment163->addChildren(*Transform164);
+HAnimJoint154->addChildren(*HAnimSegment155);
 
+CHAnimJoint* HAnimJoint163 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
+HAnimJoint163->setName("l_metatarsophalangeal_3");
+HAnimJoint163->setDEF("hanim_l_metatarsophalangeal_3");
+HAnimJoint163->setCenter(new float[3]{0.15,-0.9,0});
+HAnimJoint163->setUlimit(new float[3]{0,0,0}, 3);
+HAnimJoint163->setLlimit(new float[3]{0,0,0}, 3);
+CHAnimSegment* HAnimSegment164 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
+HAnimSegment164->setName("l_tarsal_proximal_phalanx_3");
+HAnimSegment164->setDEF("hanim_l_tarsal_proximal_phalanx_3");
+CTransform* Transform165 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform165->setTranslation(new float[3]{0.15,-0.9,0});
 CShape* Shape166 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance167 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material168 = (CMaterial *)(m_pScene.createNode("Material"));
-Material168->setEmissiveColor(new float[3]{1,1,1});
-Appearance167->setMaterial(*Material168);
+Shape166->setUSE("HAnimJointShape");
+Transform165->addChild(*Shape166);
 
-Shape166->setAppearance(*Appearance167);
+HAnimSegment164->addChildren(*Transform165);
 
-CIndexedLineSet* IndexedLineSet169 = (CIndexedLineSet *)(m_pScene.createNode("IndexedLineSet"));
-IndexedLineSet169->setDEF("MTP3toPIP3");
-IndexedLineSet169->setCoordIndex(new int[2]{0,1});
-CCoordinate* Coordinate170 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
-Coordinate170->setPoint(new float[6]{0.15,-0.9,0,0.15,-1.05,0});
-IndexedLineSet169->setCoord(*Coordinate170);
+CShape* Shape167 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance168 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material169 = (CMaterial *)(m_pScene.createNode("Material"));
+Material169->setEmissiveColor(new float[3]{1,1,1});
+Appearance168->setMaterial(*Material169);
 
-Shape166->setGeometry(IndexedLineSet169);
+Shape167->setAppearance(*Appearance168);
 
-HAnimSegment163->addChildren(*Shape166);
+CIndexedLineSet* IndexedLineSet170 = (CIndexedLineSet *)(m_pScene.createNode("IndexedLineSet"));
+IndexedLineSet170->setDEF("MTP3toPIP3");
+IndexedLineSet170->setCoordIndex(new int[2]{0,1});
+CCoordinate* Coordinate171 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate171->setPoint(new float[6]{0.15,-0.9,0,0.15,-1.05,0});
+IndexedLineSet170->setCoord(*Coordinate171);
 
-HAnimJoint162->addChildren(*HAnimSegment163);
+Shape167->setGeometry(IndexedLineSet170);
 
-CHAnimJoint* HAnimJoint171 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
-HAnimJoint171->setDEF("hanim_l_tarsal_proximal_interphalangeal_2");
-HAnimJoint171->setName("l_tarsal_proximal_interphalangeal_3");
-HAnimJoint171->setCenter(new float[3]{0.15,-1.05,0});
-CHAnimSegment* HAnimSegment172 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
-HAnimSegment172->setDEF("hanim_l_tarsal_middle_phalanx_2");
-HAnimSegment172->setName("l_tarsal_middle_phalanx_3");
-CTransform* Transform173 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform173->setTranslation(new float[3]{0.15,-1.05,0});
-CShape* Shape174 = (CShape *)(m_pScene.createNode("Shape"));
-Shape174->setUSE("HAnimJointShape");
-Transform173->addChild(*Shape174);
+HAnimSegment164->addChildren(*Shape167);
 
-HAnimSegment172->addChildren(*Transform173);
+HAnimJoint163->addChildren(*HAnimSegment164);
 
+CHAnimJoint* HAnimJoint172 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
+HAnimJoint172->setName("l_tarsal_proximal_interphalangeal_3");
+HAnimJoint172->setDEF("hanim_l_tarsal_proximal_interphalangeal_3");
+HAnimJoint172->setCenter(new float[3]{0.15,-1.05,0});
+HAnimJoint172->setUlimit(new float[3]{0,0,0}, 3);
+HAnimJoint172->setLlimit(new float[3]{0,0,0}, 3);
+CHAnimSegment* HAnimSegment173 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
+HAnimSegment173->setName("l_tarsal_middle_phalanx_3");
+HAnimSegment173->setDEF("hanim_l_tarsal_middle_phalanx_3");
+CTransform* Transform174 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform174->setTranslation(new float[3]{0.15,-1.05,0});
 CShape* Shape175 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance176 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material177 = (CMaterial *)(m_pScene.createNode("Material"));
-Material177->setEmissiveColor(new float[3]{1,1,1});
-Appearance176->setMaterial(*Material177);
+Shape175->setUSE("HAnimJointShape");
+Transform174->addChild(*Shape175);
 
-Shape175->setAppearance(*Appearance176);
+HAnimSegment173->addChildren(*Transform174);
 
-CIndexedLineSet* IndexedLineSet178 = (CIndexedLineSet *)(m_pScene.createNode("IndexedLineSet"));
-IndexedLineSet178->setDEF("PIP3toDIP3");
-IndexedLineSet178->setCoordIndex(new int[2]{0,1});
-CCoordinate* Coordinate179 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
-Coordinate179->setPoint(new float[6]{0.15,-1.05,0,0.15,-1.13,0});
-IndexedLineSet178->setCoord(*Coordinate179);
+CShape* Shape176 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance177 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material178 = (CMaterial *)(m_pScene.createNode("Material"));
+Material178->setEmissiveColor(new float[3]{1,1,1});
+Appearance177->setMaterial(*Material178);
 
-Shape175->setGeometry(IndexedLineSet178);
+Shape176->setAppearance(*Appearance177);
 
-HAnimSegment172->addChildren(*Shape175);
+CIndexedLineSet* IndexedLineSet179 = (CIndexedLineSet *)(m_pScene.createNode("IndexedLineSet"));
+IndexedLineSet179->setDEF("PIP3toDIP3");
+IndexedLineSet179->setCoordIndex(new int[2]{0,1});
+CCoordinate* Coordinate180 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate180->setPoint(new float[6]{0.15,-1.05,0,0.15,-1.13,0});
+IndexedLineSet179->setCoord(*Coordinate180);
 
-HAnimJoint171->addChildren(*HAnimSegment172);
+Shape176->setGeometry(IndexedLineSet179);
 
-CHAnimJoint* HAnimJoint180 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
-HAnimJoint180->setDEF("hanim_l_tarsal_distal_interphalangeal_2");
-HAnimJoint180->setName("l_tarsal_distal_interphalangeal_3");
-HAnimJoint180->setCenter(new float[3]{0.15,-1.13,0});
-CHAnimSegment* HAnimSegment181 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
-HAnimSegment181->setDEF("hanim_l_tarsal_distal_phalanx_3");
-HAnimSegment181->setName("l_tarsal_distal_phalanx_3");
-CTransform* Transform182 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform182->setTranslation(new float[3]{0.15,-1.13,0});
-CShape* Shape183 = (CShape *)(m_pScene.createNode("Shape"));
-Shape183->setUSE("HAnimJointShape");
-Transform182->addChild(*Shape183);
+HAnimSegment173->addChildren(*Shape176);
 
-HAnimSegment181->addChildren(*Transform182);
+HAnimJoint172->addChildren(*HAnimSegment173);
 
+CHAnimJoint* HAnimJoint181 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
+HAnimJoint181->setName("l_tarsal_distal_interphalangeal_3");
+HAnimJoint181->setDEF("hanim_l_tarsal_distal_interphalangeal_3");
+HAnimJoint181->setCenter(new float[3]{0.15,-1.13,0});
+HAnimJoint181->setUlimit(new float[3]{0,0,0}, 3);
+HAnimJoint181->setLlimit(new float[3]{0,0,0}, 3);
+CHAnimSegment* HAnimSegment182 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
+HAnimSegment182->setName("l_tarsal_distal_phalanx_3");
+HAnimSegment182->setDEF("hanim_l_tarsal_distal_phalanx_3");
+CTransform* Transform183 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform183->setTranslation(new float[3]{0.15,-1.13,0});
 CShape* Shape184 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance185 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material186 = (CMaterial *)(m_pScene.createNode("Material"));
-Material186->setEmissiveColor(new float[3]{1,1,1});
-Appearance185->setMaterial(*Material186);
+Shape184->setUSE("HAnimJointShape");
+Transform183->addChild(*Shape184);
 
-Shape184->setAppearance(*Appearance185);
+HAnimSegment182->addChildren(*Transform183);
 
-CIndexedLineSet* IndexedLineSet187 = (CIndexedLineSet *)(m_pScene.createNode("IndexedLineSet"));
-IndexedLineSet187->setDEF("tiptoe_l_tarsal_distal_interphalangeal_2");
-IndexedLineSet187->setCoordIndex(new int[2]{0,1});
-CCoordinate* Coordinate188 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
-Coordinate188->setPoint(new float[6]{0.15,-1.13,0,0.15,-1.16,0});
-IndexedLineSet187->setCoord(*Coordinate188);
+CShape* Shape185 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance186 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material187 = (CMaterial *)(m_pScene.createNode("Material"));
+Material187->setEmissiveColor(new float[3]{1,1,1});
+Appearance186->setMaterial(*Material187);
 
-Shape184->setGeometry(IndexedLineSet187);
+Shape185->setAppearance(*Appearance186);
 
-HAnimSegment181->addChildren(*Shape184);
+CIndexedLineSet* IndexedLineSet188 = (CIndexedLineSet *)(m_pScene.createNode("IndexedLineSet"));
+IndexedLineSet188->setDEF("tiptoe_l_tarsal_distal_interphalangeal_3");
+IndexedLineSet188->setCoordIndex(new int[2]{0,1});
+CCoordinate* Coordinate189 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate189->setPoint(new float[6]{0.15,-1.13,0,0.15,-1.16,0});
+IndexedLineSet188->setCoord(*Coordinate189);
 
-HAnimJoint180->addChildren(*HAnimSegment181);
+Shape185->setGeometry(IndexedLineSet188);
 
-HAnimJoint171->addChildren(*HAnimJoint180);
+HAnimSegment182->addChildren(*Shape185);
 
-HAnimJoint162->addChildren(*HAnimJoint171);
+HAnimJoint181->addChildren(*HAnimSegment182);
 
-HAnimJoint153->addChildren(*HAnimJoint162);
+HAnimJoint172->addChildren(*HAnimJoint181);
 
-HAnimJoint144->addChildren(*HAnimJoint153);
+HAnimJoint163->addChildren(*HAnimJoint172);
 
-HAnimJoint44->addChildren(*HAnimJoint144);
+HAnimJoint154->addChildren(*HAnimJoint163);
 
-HAnimJoint27->addChildren(*HAnimJoint44);
+HAnimJoint145->addChildren(*HAnimJoint154);
 
-CHAnimJoint* HAnimJoint189 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
-HAnimJoint189->setDEF("hanim_l_calcaneocuboid");
-HAnimJoint189->setName("l_calcaneocuboid");
-HAnimJoint189->setCenter(new float[3]{0.2,0.3,0});
-CHAnimSegment* HAnimSegment190 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
-HAnimSegment190->setDEF("hanim_l_calcaneus");
-HAnimSegment190->setName("l_calcaneus");
-CTransform* Transform191 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform191->setTranslation(new float[3]{0.2,0.3,0});
-CShape* Shape192 = (CShape *)(m_pScene.createNode("Shape"));
-Shape192->setUSE("HAnimJointShape");
-Transform191->addChild(*Shape192);
+HAnimJoint45->addChildren(*HAnimJoint145);
 
-HAnimSegment190->addChildren(*Transform191);
+HAnimJoint28->addChildren(*HAnimJoint45);
 
+//CC
+CHAnimJoint* HAnimJoint190 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
+HAnimJoint190->setName("l_calcaneocuboid");
+HAnimJoint190->setDEF("hanim_l_calcaneocuboid");
+HAnimJoint190->setCenter(new float[3]{0.2,0.3,0});
+HAnimJoint190->setUlimit(new float[3]{0,0,0}, 3);
+HAnimJoint190->setLlimit(new float[3]{0,0,0}, 3);
+CHAnimSegment* HAnimSegment191 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
+HAnimSegment191->setName("l_calcaneus");
+HAnimSegment191->setDEF("hanim_l_calcaneus");
+CTransform* Transform192 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform192->setTranslation(new float[3]{0.2,0.3,0});
 CShape* Shape193 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance194 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material195 = (CMaterial *)(m_pScene.createNode("Material"));
-Material195->setEmissiveColor(new float[3]{1,1,1});
-Appearance194->setMaterial(*Material195);
+Shape193->setUSE("HAnimJointShape");
+Transform192->addChild(*Shape193);
 
-Shape193->setAppearance(*Appearance194);
+HAnimSegment191->addChildren(*Transform192);
 
-CIndexedLineSet* IndexedLineSet196 = (CIndexedLineSet *)(m_pScene.createNode("IndexedLineSet"));
-IndexedLineSet196->setDEF("CCtoTT");
-IndexedLineSet196->setCoordIndex(new int[2]{0,1});
-CCoordinate* Coordinate197 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
-Coordinate197->setPoint(new float[6]{0.2,0.3,0,0.21,-0.3,0});
-IndexedLineSet196->setCoord(*Coordinate197);
+CShape* Shape194 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance195 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material196 = (CMaterial *)(m_pScene.createNode("Material"));
+Material196->setEmissiveColor(new float[3]{1,1,1});
+Appearance195->setMaterial(*Material196);
 
-Shape193->setGeometry(IndexedLineSet196);
+Shape194->setAppearance(*Appearance195);
 
-HAnimSegment190->addChildren(*Shape193);
+CIndexedLineSet* IndexedLineSet197 = (CIndexedLineSet *)(m_pScene.createNode("IndexedLineSet"));
+IndexedLineSet197->setDEF("CCtoTT");
+IndexedLineSet197->setCoordIndex(new int[2]{0,1});
+CCoordinate* Coordinate198 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate198->setPoint(new float[6]{0.2,0.3,0,0.21,-0.3,0});
+IndexedLineSet197->setCoord(*Coordinate198);
 
-HAnimJoint189->addChildren(*HAnimSegment190);
+Shape194->setGeometry(IndexedLineSet197);
 
-CHAnimJoint* HAnimJoint198 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
-HAnimJoint198->setDEF("hanim_l_transversetarsal");
-HAnimJoint198->setName("l_transversetarsal");
-HAnimJoint198->setCenter(new float[3]{0.21,-0.3,0});
-CHAnimSegment* HAnimSegment199 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
-HAnimSegment199->setDEF("hanim_l_cuboid");
-HAnimSegment199->setName("l_cuboid");
-CTransform* Transform200 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform200->setTranslation(new float[3]{0.21,-0.3,0});
-CShape* Shape201 = (CShape *)(m_pScene.createNode("Shape"));
-Shape201->setUSE("HAnimJointShape");
-Transform200->addChild(*Shape201);
+HAnimSegment191->addChildren(*Shape194);
 
-HAnimSegment199->addChildren(*Transform200);
+HAnimJoint190->addChildren(*HAnimSegment191);
 
+//TT
+CHAnimJoint* HAnimJoint199 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
+HAnimJoint199->setName("l_transversetarsal");
+HAnimJoint199->setDEF("hanim_l_transversetarsal");
+HAnimJoint199->setCenter(new float[3]{0.21,-0.3,0});
+HAnimJoint199->setUlimit(new float[3]{0,0,0}, 3);
+HAnimJoint199->setLlimit(new float[3]{0,0,0}, 3);
+CHAnimSegment* HAnimSegment200 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
+HAnimSegment200->setName("l_cuboid");
+HAnimSegment200->setDEF("hanim_l_cuboid");
+CTransform* Transform201 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform201->setTranslation(new float[3]{0.21,-0.3,0});
 CShape* Shape202 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance203 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material204 = (CMaterial *)(m_pScene.createNode("Material"));
-Material204->setEmissiveColor(new float[3]{1,1,1});
-Appearance203->setMaterial(*Material204);
+Shape202->setUSE("HAnimJointShape");
+Transform201->addChild(*Shape202);
 
-Shape202->setAppearance(*Appearance203);
+HAnimSegment200->addChildren(*Transform201);
 
-CIndexedLineSet* IndexedLineSet205 = (CIndexedLineSet *)(m_pScene.createNode("IndexedLineSet"));
-IndexedLineSet205->setDEF("TTtoTMT4");
-IndexedLineSet205->setCoordIndex(new int[2]{0,1});
-CCoordinate* Coordinate206 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
-Coordinate206->setPoint(new float[6]{0.21,-0.3,0,0.25,-0.58,0});
-IndexedLineSet205->setCoord(*Coordinate206);
+CShape* Shape203 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance204 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material205 = (CMaterial *)(m_pScene.createNode("Material"));
+Material205->setEmissiveColor(new float[3]{1,1,1});
+Appearance204->setMaterial(*Material205);
 
-Shape202->setGeometry(IndexedLineSet205);
+Shape203->setAppearance(*Appearance204);
 
-HAnimSegment199->addChildren(*Shape202);
+CIndexedLineSet* IndexedLineSet206 = (CIndexedLineSet *)(m_pScene.createNode("IndexedLineSet"));
+IndexedLineSet206->setDEF("TTtoTMT4");
+IndexedLineSet206->setCoordIndex(new int[2]{0,1});
+CCoordinate* Coordinate207 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate207->setPoint(new float[6]{0.21,-0.3,0,0.25,-0.58,0});
+IndexedLineSet206->setCoord(*Coordinate207);
 
-CShape* Shape207 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance208 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material209 = (CMaterial *)(m_pScene.createNode("Material"));
-Material209->setEmissiveColor(new float[3]{1,1,1});
-Appearance208->setMaterial(*Material209);
+Shape203->setGeometry(IndexedLineSet206);
 
-Shape207->setAppearance(*Appearance208);
+HAnimSegment200->addChildren(*Shape203);
 
-CIndexedLineSet* IndexedLineSet210 = (CIndexedLineSet *)(m_pScene.createNode("IndexedLineSet"));
-IndexedLineSet210->setDEF("TTtoTMT5");
-IndexedLineSet210->setCoordIndex(new int[2]{0,1});
-CCoordinate* Coordinate211 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
-Coordinate211->setPoint(new float[6]{0.21,-0.3,0,0.33,-0.52,0});
-IndexedLineSet210->setCoord(*Coordinate211);
+CShape* Shape208 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance209 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material210 = (CMaterial *)(m_pScene.createNode("Material"));
+Material210->setEmissiveColor(new float[3]{1,1,1});
+Appearance209->setMaterial(*Material210);
 
-Shape207->setGeometry(IndexedLineSet210);
+Shape208->setAppearance(*Appearance209);
 
-HAnimSegment199->addChildren(*Shape207);
+CIndexedLineSet* IndexedLineSet211 = (CIndexedLineSet *)(m_pScene.createNode("IndexedLineSet"));
+IndexedLineSet211->setDEF("TTtoTMT5");
+IndexedLineSet211->setCoordIndex(new int[2]{0,1});
+CCoordinate* Coordinate212 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate212->setPoint(new float[6]{0.21,-0.3,0,0.33,-0.52,0});
+IndexedLineSet211->setCoord(*Coordinate212);
 
-HAnimJoint198->addChildren(*HAnimSegment199);
+Shape208->setGeometry(IndexedLineSet211);
 
-CHAnimJoint* HAnimJoint212 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
-HAnimJoint212->setDEF("hanim_l_tarsometatarsal_4");
-HAnimJoint212->setName("l_tarsometatarsal_4");
-HAnimJoint212->setCenter(new float[3]{0.25,-0.58,0});
-CHAnimSegment* HAnimSegment213 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
-HAnimSegment213->setDEF("hanim_l_metatarsal_4");
-HAnimSegment213->setName("l_metatarsal_4");
-CTransform* Transform214 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform214->setTranslation(new float[3]{0.25,-0.58,0});
-CShape* Shape215 = (CShape *)(m_pScene.createNode("Shape"));
-Shape215->setUSE("HAnimJointShape");
-Transform214->addChild(*Shape215);
+HAnimSegment200->addChildren(*Shape208);
 
-HAnimSegment213->addChildren(*Transform214);
+HAnimJoint199->addChildren(*HAnimSegment200);
 
+//TMT4
+CHAnimJoint* HAnimJoint213 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
+HAnimJoint213->setName("l_tarsometatarsal_4");
+HAnimJoint213->setDEF("hanim_l_tarsometatarsal_4");
+HAnimJoint213->setCenter(new float[3]{0.25,-0.58,0});
+HAnimJoint213->setUlimit(new float[3]{0,0,0}, 3);
+HAnimJoint213->setLlimit(new float[3]{0,0,0}, 3);
+CHAnimSegment* HAnimSegment214 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
+HAnimSegment214->setName("l_metatarsal_4");
+HAnimSegment214->setDEF("hanim_l_metatarsal_4");
+CTransform* Transform215 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform215->setTranslation(new float[3]{0.25,-0.58,0});
 CShape* Shape216 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance217 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material218 = (CMaterial *)(m_pScene.createNode("Material"));
-Material218->setEmissiveColor(new float[3]{1,1,1});
-Appearance217->setMaterial(*Material218);
+Shape216->setUSE("HAnimJointShape");
+Transform215->addChild(*Shape216);
 
-Shape216->setAppearance(*Appearance217);
+HAnimSegment214->addChildren(*Transform215);
 
-CIndexedLineSet* IndexedLineSet219 = (CIndexedLineSet *)(m_pScene.createNode("IndexedLineSet"));
-IndexedLineSet219->setDEF("TMT4toMTP4");
-IndexedLineSet219->setCoordIndex(new int[2]{0,1});
-CCoordinate* Coordinate220 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
-Coordinate220->setPoint(new float[6]{0.25,-0.58,0,0.25,-0.87,0});
-IndexedLineSet219->setCoord(*Coordinate220);
+CShape* Shape217 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance218 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material219 = (CMaterial *)(m_pScene.createNode("Material"));
+Material219->setEmissiveColor(new float[3]{1,1,1});
+Appearance218->setMaterial(*Material219);
 
-Shape216->setGeometry(IndexedLineSet219);
+Shape217->setAppearance(*Appearance218);
 
-HAnimSegment213->addChildren(*Shape216);
+CIndexedLineSet* IndexedLineSet220 = (CIndexedLineSet *)(m_pScene.createNode("IndexedLineSet"));
+IndexedLineSet220->setDEF("TMT4toMTP4");
+IndexedLineSet220->setCoordIndex(new int[2]{0,1});
+CCoordinate* Coordinate221 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate221->setPoint(new float[6]{0.25,-0.58,0,0.25,-0.87,0});
+IndexedLineSet220->setCoord(*Coordinate221);
 
-HAnimJoint212->addChildren(*HAnimSegment213);
+Shape217->setGeometry(IndexedLineSet220);
 
-CHAnimJoint* HAnimJoint221 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
-HAnimJoint221->setDEF("hanim_l_metatarsophalangeal_4");
-HAnimJoint221->setName("l_metatarsophalangeal_4");
-HAnimJoint221->setCenter(new float[3]{0.25,-0.87,0});
-CHAnimSegment* HAnimSegment222 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
-HAnimSegment222->setDEF("hanim_l_tarsal_proximal_phalanx_4");
-HAnimSegment222->setName("l_tarsal_proximal_phalanx_4");
-CTransform* Transform223 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform223->setTranslation(new float[3]{0.25,-0.87,0});
-CShape* Shape224 = (CShape *)(m_pScene.createNode("Shape"));
-Shape224->setUSE("HAnimJointShape");
-Transform223->addChild(*Shape224);
+HAnimSegment214->addChildren(*Shape217);
 
-HAnimSegment222->addChildren(*Transform223);
+HAnimJoint213->addChildren(*HAnimSegment214);
 
+CHAnimJoint* HAnimJoint222 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
+HAnimJoint222->setName("l_metatarsophalangeal_4");
+HAnimJoint222->setDEF("hanim_l_metatarsophalangeal_4");
+HAnimJoint222->setCenter(new float[3]{0.25,-0.87,0});
+HAnimJoint222->setUlimit(new float[3]{0,0,0}, 3);
+HAnimJoint222->setLlimit(new float[3]{0,0,0}, 3);
+CHAnimSegment* HAnimSegment223 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
+HAnimSegment223->setName("l_tarsal_proximal_phalanx_4");
+HAnimSegment223->setDEF("hanim_l_tarsal_proximal_phalanx_4");
+CTransform* Transform224 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform224->setTranslation(new float[3]{0.25,-0.87,0});
 CShape* Shape225 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance226 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material227 = (CMaterial *)(m_pScene.createNode("Material"));
-Material227->setEmissiveColor(new float[3]{1,1,1});
-Appearance226->setMaterial(*Material227);
+Shape225->setUSE("HAnimJointShape");
+Transform224->addChild(*Shape225);
 
-Shape225->setAppearance(*Appearance226);
+HAnimSegment223->addChildren(*Transform224);
 
-CIndexedLineSet* IndexedLineSet228 = (CIndexedLineSet *)(m_pScene.createNode("IndexedLineSet"));
-IndexedLineSet228->setDEF("MTP4toPIP4");
-IndexedLineSet228->setCoordIndex(new int[2]{0,1});
-CCoordinate* Coordinate229 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
-Coordinate229->setPoint(new float[6]{0.25,-0.87,0,0.25,-1,0});
-IndexedLineSet228->setCoord(*Coordinate229);
+CShape* Shape226 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance227 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material228 = (CMaterial *)(m_pScene.createNode("Material"));
+Material228->setEmissiveColor(new float[3]{1,1,1});
+Appearance227->setMaterial(*Material228);
 
-Shape225->setGeometry(IndexedLineSet228);
+Shape226->setAppearance(*Appearance227);
 
-HAnimSegment222->addChildren(*Shape225);
+CIndexedLineSet* IndexedLineSet229 = (CIndexedLineSet *)(m_pScene.createNode("IndexedLineSet"));
+IndexedLineSet229->setDEF("MTP4toPIP4");
+IndexedLineSet229->setCoordIndex(new int[2]{0,1});
+CCoordinate* Coordinate230 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate230->setPoint(new float[6]{0.25,-0.87,0,0.25,-1,0});
+IndexedLineSet229->setCoord(*Coordinate230);
 
-HAnimJoint221->addChildren(*HAnimSegment222);
+Shape226->setGeometry(IndexedLineSet229);
 
-CHAnimJoint* HAnimJoint230 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
-HAnimJoint230->setDEF("hanim_l_tarsal_proximal_interphalangeal_3");
-HAnimJoint230->setName("l_tarsal_proximal_interphalangeal_4");
-HAnimJoint230->setCenter(new float[3]{0.25,-1,0});
-CHAnimSegment* HAnimSegment231 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
-HAnimSegment231->setDEF("hanim_l_tarsal_middle_phalanx_3");
-HAnimSegment231->setName("l_tarsal_middle_phalanx_4");
-CTransform* Transform232 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform232->setTranslation(new float[3]{0.25,-1,0});
-CShape* Shape233 = (CShape *)(m_pScene.createNode("Shape"));
-Shape233->setUSE("HAnimJointShape");
-Transform232->addChild(*Shape233);
+HAnimSegment223->addChildren(*Shape226);
 
-HAnimSegment231->addChildren(*Transform232);
+HAnimJoint222->addChildren(*HAnimSegment223);
 
+CHAnimJoint* HAnimJoint231 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
+HAnimJoint231->setName("l_tarsal_proximal_interphalangeal_4");
+HAnimJoint231->setDEF("hanim_l_tarsal_proximal_interphalangeal_4");
+HAnimJoint231->setCenter(new float[3]{0.25,-1,0});
+HAnimJoint231->setUlimit(new float[3]{0,0,0}, 3);
+HAnimJoint231->setLlimit(new float[3]{0,0,0}, 3);
+CHAnimSegment* HAnimSegment232 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
+HAnimSegment232->setName("l_tarsal_middle_phalanx_4");
+HAnimSegment232->setDEF("hanim_l_tarsal_middle_phalanx_4");
+CTransform* Transform233 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform233->setTranslation(new float[3]{0.25,-1,0});
 CShape* Shape234 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance235 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material236 = (CMaterial *)(m_pScene.createNode("Material"));
-Material236->setEmissiveColor(new float[3]{1,1,1});
-Appearance235->setMaterial(*Material236);
+Shape234->setUSE("HAnimJointShape");
+Transform233->addChild(*Shape234);
 
-Shape234->setAppearance(*Appearance235);
+HAnimSegment232->addChildren(*Transform233);
 
-CIndexedLineSet* IndexedLineSet237 = (CIndexedLineSet *)(m_pScene.createNode("IndexedLineSet"));
-IndexedLineSet237->setDEF("PIP4toDIP4");
-IndexedLineSet237->setCoordIndex(new int[2]{0,1});
-CCoordinate* Coordinate238 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
-Coordinate238->setPoint(new float[6]{0.25,-1,0,0.25,-1.1,0});
-IndexedLineSet237->setCoord(*Coordinate238);
+CShape* Shape235 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance236 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material237 = (CMaterial *)(m_pScene.createNode("Material"));
+Material237->setEmissiveColor(new float[3]{1,1,1});
+Appearance236->setMaterial(*Material237);
 
-Shape234->setGeometry(IndexedLineSet237);
+Shape235->setAppearance(*Appearance236);
 
-HAnimSegment231->addChildren(*Shape234);
+CIndexedLineSet* IndexedLineSet238 = (CIndexedLineSet *)(m_pScene.createNode("IndexedLineSet"));
+IndexedLineSet238->setDEF("PIP4toDIP4");
+IndexedLineSet238->setCoordIndex(new int[2]{0,1});
+CCoordinate* Coordinate239 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate239->setPoint(new float[6]{0.25,-1,0,0.25,-1.1,0});
+IndexedLineSet238->setCoord(*Coordinate239);
 
-HAnimJoint230->addChildren(*HAnimSegment231);
+Shape235->setGeometry(IndexedLineSet238);
 
-CHAnimJoint* HAnimJoint239 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
-HAnimJoint239->setDEF("hanim_l_tarsal_distal_interphalangeal_3");
-HAnimJoint239->setName("l_tarsal_distal_interphalangeal_4");
-HAnimJoint239->setCenter(new float[3]{0.25,-1.1,0});
-CHAnimSegment* HAnimSegment240 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
-HAnimSegment240->setDEF("hanim_l_tarsal_distal_phalanx_4");
-HAnimSegment240->setName("l_tarsal_distal_phalanx_4");
-CTransform* Transform241 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform241->setTranslation(new float[3]{0.25,-1.1,0});
-CShape* Shape242 = (CShape *)(m_pScene.createNode("Shape"));
-Shape242->setUSE("HAnimJointShape");
-Transform241->addChild(*Shape242);
+HAnimSegment232->addChildren(*Shape235);
 
-HAnimSegment240->addChildren(*Transform241);
+HAnimJoint231->addChildren(*HAnimSegment232);
 
+CHAnimJoint* HAnimJoint240 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
+HAnimJoint240->setName("l_tarsal_distal_interphalangeal_4");
+HAnimJoint240->setDEF("hanim_l_tarsal_distal_interphalangeal_4");
+HAnimJoint240->setCenter(new float[3]{0.25,-1.1,0});
+HAnimJoint240->setUlimit(new float[3]{0,0,0}, 3);
+HAnimJoint240->setLlimit(new float[3]{0,0,0}, 3);
+CHAnimSegment* HAnimSegment241 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
+HAnimSegment241->setName("l_tarsal_distal_phalanx_4");
+HAnimSegment241->setDEF("hanim_l_tarsal_distal_phalanx_4");
+CTransform* Transform242 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform242->setTranslation(new float[3]{0.25,-1.1,0});
 CShape* Shape243 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance244 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material245 = (CMaterial *)(m_pScene.createNode("Material"));
-Material245->setEmissiveColor(new float[3]{1,1,1});
-Appearance244->setMaterial(*Material245);
+Shape243->setUSE("HAnimJointShape");
+Transform242->addChild(*Shape243);
 
-Shape243->setAppearance(*Appearance244);
+HAnimSegment241->addChildren(*Transform242);
 
-CIndexedLineSet* IndexedLineSet246 = (CIndexedLineSet *)(m_pScene.createNode("IndexedLineSet"));
-IndexedLineSet246->setDEF("tiptoe_l_tarsal_distal_interphalangeal_3");
-IndexedLineSet246->setCoordIndex(new int[2]{0,1});
-CCoordinate* Coordinate247 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
-Coordinate247->setPoint(new float[6]{0.25,-1.1,0,0.25,-1.15,0});
-IndexedLineSet246->setCoord(*Coordinate247);
+CShape* Shape244 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance245 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material246 = (CMaterial *)(m_pScene.createNode("Material"));
+Material246->setEmissiveColor(new float[3]{1,1,1});
+Appearance245->setMaterial(*Material246);
 
-Shape243->setGeometry(IndexedLineSet246);
+Shape244->setAppearance(*Appearance245);
 
-HAnimSegment240->addChildren(*Shape243);
+CIndexedLineSet* IndexedLineSet247 = (CIndexedLineSet *)(m_pScene.createNode("IndexedLineSet"));
+IndexedLineSet247->setDEF("tiptoe_l_tarsal_distal_interphalangeal_4");
+IndexedLineSet247->setCoordIndex(new int[2]{0,1});
+CCoordinate* Coordinate248 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate248->setPoint(new float[6]{0.25,-1.1,0,0.25,-1.15,0});
+IndexedLineSet247->setCoord(*Coordinate248);
 
-HAnimJoint239->addChildren(*HAnimSegment240);
+Shape244->setGeometry(IndexedLineSet247);
 
-HAnimJoint230->addChildren(*HAnimJoint239);
+HAnimSegment241->addChildren(*Shape244);
 
-HAnimJoint221->addChildren(*HAnimJoint230);
+HAnimJoint240->addChildren(*HAnimSegment241);
 
-HAnimJoint212->addChildren(*HAnimJoint221);
+HAnimJoint231->addChildren(*HAnimJoint240);
 
-HAnimJoint198->addChildren(*HAnimJoint212);
+HAnimJoint222->addChildren(*HAnimJoint231);
 
-CHAnimJoint* HAnimJoint248 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
-HAnimJoint248->setDEF("hanim_l_tarsometatarsal_5");
-HAnimJoint248->setName("l_tarsometatarsal_5");
-HAnimJoint248->setCenter(new float[3]{0.33,-0.52,0});
-CHAnimSegment* HAnimSegment249 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
-HAnimSegment249->setDEF("hanim_l_metatarsal_5");
-HAnimSegment249->setName("l_metatarsal_5");
-CTransform* Transform250 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform250->setTranslation(new float[3]{0.33,-0.52,0});
-CShape* Shape251 = (CShape *)(m_pScene.createNode("Shape"));
-Shape251->setUSE("HAnimJointShape");
-Transform250->addChild(*Shape251);
+HAnimJoint213->addChildren(*HAnimJoint222);
 
-HAnimSegment249->addChildren(*Transform250);
+HAnimJoint199->addChildren(*HAnimJoint213);
 
+//TMT5
+CHAnimJoint* HAnimJoint249 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
+HAnimJoint249->setName("l_tarsometatarsal_5");
+HAnimJoint249->setDEF("hanim_l_tarsometatarsal_5");
+HAnimJoint249->setCenter(new float[3]{0.33,-0.52,0});
+HAnimJoint249->setUlimit(new float[3]{0,0,0}, 3);
+HAnimJoint249->setLlimit(new float[3]{0,0,0}, 3);
+CHAnimSegment* HAnimSegment250 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
+HAnimSegment250->setName("l_metatarsal_5");
+HAnimSegment250->setDEF("hanim_l_metatarsal_5");
+CTransform* Transform251 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform251->setTranslation(new float[3]{0.33,-0.52,0});
 CShape* Shape252 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance253 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material254 = (CMaterial *)(m_pScene.createNode("Material"));
-Material254->setEmissiveColor(new float[3]{1,1,1});
-Appearance253->setMaterial(*Material254);
+Shape252->setUSE("HAnimJointShape");
+Transform251->addChild(*Shape252);
 
-Shape252->setAppearance(*Appearance253);
+HAnimSegment250->addChildren(*Transform251);
 
-CIndexedLineSet* IndexedLineSet255 = (CIndexedLineSet *)(m_pScene.createNode("IndexedLineSet"));
-IndexedLineSet255->setDEF("TMT5toMTP5");
-IndexedLineSet255->setCoordIndex(new int[2]{0,1});
-CCoordinate* Coordinate256 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
-Coordinate256->setPoint(new float[6]{0.33,-0.52,0,0.34,-0.8,0});
-IndexedLineSet255->setCoord(*Coordinate256);
+CShape* Shape253 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance254 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material255 = (CMaterial *)(m_pScene.createNode("Material"));
+Material255->setEmissiveColor(new float[3]{1,1,1});
+Appearance254->setMaterial(*Material255);
 
-Shape252->setGeometry(IndexedLineSet255);
+Shape253->setAppearance(*Appearance254);
 
-HAnimSegment249->addChildren(*Shape252);
+CIndexedLineSet* IndexedLineSet256 = (CIndexedLineSet *)(m_pScene.createNode("IndexedLineSet"));
+IndexedLineSet256->setDEF("TMT5toMTP5");
+IndexedLineSet256->setCoordIndex(new int[2]{0,1});
+CCoordinate* Coordinate257 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate257->setPoint(new float[6]{0.33,-0.52,0,0.34,-0.8,0});
+IndexedLineSet256->setCoord(*Coordinate257);
 
-HAnimJoint248->addChildren(*HAnimSegment249);
+Shape253->setGeometry(IndexedLineSet256);
 
-CHAnimJoint* HAnimJoint257 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
-HAnimJoint257->setDEF("hanim_l_metatarsophalangeal_5");
-HAnimJoint257->setName("l_metatarsophalangeal_5");
-HAnimJoint257->setCenter(new float[3]{0.34,-0.8,0});
-CHAnimSegment* HAnimSegment258 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
-HAnimSegment258->setDEF("hanim_l_tarsal_proximal_phalanx_5");
-HAnimSegment258->setName("l_tarsal_proximal_phalanx_5");
-CTransform* Transform259 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform259->setTranslation(new float[3]{0.34,-0.8,0});
-CShape* Shape260 = (CShape *)(m_pScene.createNode("Shape"));
-Shape260->setUSE("HAnimJointShape");
-Transform259->addChild(*Shape260);
+HAnimSegment250->addChildren(*Shape253);
 
-HAnimSegment258->addChildren(*Transform259);
+HAnimJoint249->addChildren(*HAnimSegment250);
 
+CHAnimJoint* HAnimJoint258 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
+HAnimJoint258->setName("l_metatarsophalangeal_5");
+HAnimJoint258->setDEF("hanim_l_metatarsophalangeal_5");
+HAnimJoint258->setCenter(new float[3]{0.34,-0.8,0});
+HAnimJoint258->setUlimit(new float[3]{0,0,0}, 3);
+HAnimJoint258->setLlimit(new float[3]{0,0,0}, 3);
+CHAnimSegment* HAnimSegment259 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
+HAnimSegment259->setName("l_tarsal_proximal_phalanx_5");
+HAnimSegment259->setDEF("hanim_l_tarsal_proximal_phalanx_5");
+CTransform* Transform260 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform260->setTranslation(new float[3]{0.34,-0.8,0});
 CShape* Shape261 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance262 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material263 = (CMaterial *)(m_pScene.createNode("Material"));
-Material263->setEmissiveColor(new float[3]{1,1,1});
-Appearance262->setMaterial(*Material263);
+Shape261->setUSE("HAnimJointShape");
+Transform260->addChild(*Shape261);
 
-Shape261->setAppearance(*Appearance262);
+HAnimSegment259->addChildren(*Transform260);
 
-CIndexedLineSet* IndexedLineSet264 = (CIndexedLineSet *)(m_pScene.createNode("IndexedLineSet"));
-IndexedLineSet264->setDEF("MTP5toPIP5");
-IndexedLineSet264->setCoordIndex(new int[2]{0,1});
-CCoordinate* Coordinate265 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
-Coordinate265->setPoint(new float[6]{0.34,-0.8,0,0.34,-0.95,0});
-IndexedLineSet264->setCoord(*Coordinate265);
+CShape* Shape262 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance263 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material264 = (CMaterial *)(m_pScene.createNode("Material"));
+Material264->setEmissiveColor(new float[3]{1,1,1});
+Appearance263->setMaterial(*Material264);
 
-Shape261->setGeometry(IndexedLineSet264);
+Shape262->setAppearance(*Appearance263);
 
-HAnimSegment258->addChildren(*Shape261);
+CIndexedLineSet* IndexedLineSet265 = (CIndexedLineSet *)(m_pScene.createNode("IndexedLineSet"));
+IndexedLineSet265->setDEF("MTP5toPIP5");
+IndexedLineSet265->setCoordIndex(new int[2]{0,1});
+CCoordinate* Coordinate266 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate266->setPoint(new float[6]{0.34,-0.8,0,0.34,-0.95,0});
+IndexedLineSet265->setCoord(*Coordinate266);
 
-HAnimJoint257->addChildren(*HAnimSegment258);
+Shape262->setGeometry(IndexedLineSet265);
 
-CHAnimJoint* HAnimJoint266 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
-HAnimJoint266->setDEF("hanim_l_tarsal_proximal_interphalangeal_4");
-HAnimJoint266->setName("l_tarsal_proximal_interphalangeal_5");
-HAnimJoint266->setCenter(new float[3]{0.34,-0.95,0});
-CHAnimSegment* HAnimSegment267 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
-HAnimSegment267->setDEF("hanim_l_tarsal_middle_phalanx_4");
-HAnimSegment267->setName("l_tarsal_middle_phalanx_5");
-CTransform* Transform268 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform268->setTranslation(new float[3]{0.34,-0.95,0});
-CShape* Shape269 = (CShape *)(m_pScene.createNode("Shape"));
-Shape269->setUSE("HAnimJointShape");
-Transform268->addChild(*Shape269);
+HAnimSegment259->addChildren(*Shape262);
 
-HAnimSegment267->addChildren(*Transform268);
+HAnimJoint258->addChildren(*HAnimSegment259);
 
+CHAnimJoint* HAnimJoint267 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
+HAnimJoint267->setName("l_tarsal_proximal_interphalangeal_5");
+HAnimJoint267->setDEF("hanim_l_tarsal_proximal_interphalangeal_5");
+HAnimJoint267->setCenter(new float[3]{0.34,-0.95,0});
+HAnimJoint267->setUlimit(new float[3]{0,0,0}, 3);
+HAnimJoint267->setLlimit(new float[3]{0,0,0}, 3);
+CHAnimSegment* HAnimSegment268 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
+HAnimSegment268->setName("l_tarsal_middle_phalanx_5");
+HAnimSegment268->setDEF("hanim_l_tarsal_middle_phalanx_5");
+CTransform* Transform269 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform269->setTranslation(new float[3]{0.34,-0.95,0});
 CShape* Shape270 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance271 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material272 = (CMaterial *)(m_pScene.createNode("Material"));
-Material272->setEmissiveColor(new float[3]{1,1,1});
-Appearance271->setMaterial(*Material272);
+Shape270->setUSE("HAnimJointShape");
+Transform269->addChild(*Shape270);
 
-Shape270->setAppearance(*Appearance271);
+HAnimSegment268->addChildren(*Transform269);
 
-CIndexedLineSet* IndexedLineSet273 = (CIndexedLineSet *)(m_pScene.createNode("IndexedLineSet"));
-IndexedLineSet273->setDEF("PIP5toDIP5");
-IndexedLineSet273->setCoordIndex(new int[2]{0,1});
-CCoordinate* Coordinate274 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
-Coordinate274->setPoint(new float[6]{0.34,-0.95,0,0.34,-1.05,0});
-IndexedLineSet273->setCoord(*Coordinate274);
+CShape* Shape271 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance272 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material273 = (CMaterial *)(m_pScene.createNode("Material"));
+Material273->setEmissiveColor(new float[3]{1,1,1});
+Appearance272->setMaterial(*Material273);
 
-Shape270->setGeometry(IndexedLineSet273);
+Shape271->setAppearance(*Appearance272);
 
-HAnimSegment267->addChildren(*Shape270);
+CIndexedLineSet* IndexedLineSet274 = (CIndexedLineSet *)(m_pScene.createNode("IndexedLineSet"));
+IndexedLineSet274->setDEF("PIP5toDIP5");
+IndexedLineSet274->setCoordIndex(new int[2]{0,1});
+CCoordinate* Coordinate275 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate275->setPoint(new float[6]{0.34,-0.95,0,0.34,-1.05,0});
+IndexedLineSet274->setCoord(*Coordinate275);
 
-HAnimJoint266->addChildren(*HAnimSegment267);
+Shape271->setGeometry(IndexedLineSet274);
 
-CHAnimJoint* HAnimJoint275 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
-HAnimJoint275->setDEF("hanim_l_tarsal_distal_interphalangeal_4");
-HAnimJoint275->setName("l_tarsal_distal_interphalangeal_5");
-HAnimJoint275->setCenter(new float[3]{0.34,-1.05,0});
-CHAnimSegment* HAnimSegment276 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
-HAnimSegment276->setDEF("hanim_l_tarsal_distal_phalanx_5");
-HAnimSegment276->setName("l_tarsal_distal_phalanx_5");
-CTransform* Transform277 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform277->setTranslation(new float[3]{0.34,-1.05,0});
-CShape* Shape278 = (CShape *)(m_pScene.createNode("Shape"));
-Shape278->setUSE("HAnimJointShape");
-Transform277->addChild(*Shape278);
+HAnimSegment268->addChildren(*Shape271);
 
-HAnimSegment276->addChildren(*Transform277);
+HAnimJoint267->addChildren(*HAnimSegment268);
 
+CHAnimJoint* HAnimJoint276 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
+HAnimJoint276->setName("l_tarsal_distal_interphalangeal_5");
+HAnimJoint276->setDEF("hanim_l_tarsal_distal_interphalangeal_5");
+HAnimJoint276->setCenter(new float[3]{0.34,-1.05,0});
+HAnimJoint276->setUlimit(new float[3]{0,0,0}, 3);
+HAnimJoint276->setLlimit(new float[3]{0,0,0}, 3);
+CHAnimSegment* HAnimSegment277 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
+HAnimSegment277->setName("l_tarsal_distal_phalanx_5");
+HAnimSegment277->setDEF("hanim_l_tarsal_distal_phalanx_5");
+CTransform* Transform278 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform278->setTranslation(new float[3]{0.34,-1.05,0});
 CShape* Shape279 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance280 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material281 = (CMaterial *)(m_pScene.createNode("Material"));
-Material281->setEmissiveColor(new float[3]{1,1,1});
-Appearance280->setMaterial(*Material281);
+Shape279->setUSE("HAnimJointShape");
+Transform278->addChild(*Shape279);
 
-Shape279->setAppearance(*Appearance280);
+HAnimSegment277->addChildren(*Transform278);
 
-CIndexedLineSet* IndexedLineSet282 = (CIndexedLineSet *)(m_pScene.createNode("IndexedLineSet"));
-IndexedLineSet282->setDEF("tiptoe_l_tarsal_distal_interphalangeal_4");
-IndexedLineSet282->setCoordIndex(new int[2]{0,1});
-CCoordinate* Coordinate283 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
-Coordinate283->setPoint(new float[6]{0.34,-1.05,0,0.34,-1.08,0});
-IndexedLineSet282->setCoord(*Coordinate283);
+CShape* Shape280 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance281 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material282 = (CMaterial *)(m_pScene.createNode("Material"));
+Material282->setEmissiveColor(new float[3]{1,1,1});
+Appearance281->setMaterial(*Material282);
 
-Shape279->setGeometry(IndexedLineSet282);
+Shape280->setAppearance(*Appearance281);
 
-HAnimSegment276->addChildren(*Shape279);
+CIndexedLineSet* IndexedLineSet283 = (CIndexedLineSet *)(m_pScene.createNode("IndexedLineSet"));
+IndexedLineSet283->setDEF("tiptoe_l_tarsal_distal_interphalangeal_5");
+IndexedLineSet283->setCoordIndex(new int[2]{0,1});
+CCoordinate* Coordinate284 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate284->setPoint(new float[6]{0.34,-1.05,0,0.34,-1.08,0});
+IndexedLineSet283->setCoord(*Coordinate284);
 
-HAnimJoint275->addChildren(*HAnimSegment276);
+Shape280->setGeometry(IndexedLineSet283);
 
-HAnimJoint266->addChildren(*HAnimJoint275);
+HAnimSegment277->addChildren(*Shape280);
 
-HAnimJoint257->addChildren(*HAnimJoint266);
+HAnimJoint276->addChildren(*HAnimSegment277);
 
-HAnimJoint248->addChildren(*HAnimJoint257);
+HAnimJoint267->addChildren(*HAnimJoint276);
 
-HAnimJoint198->addChildren(*HAnimJoint248);
+HAnimJoint258->addChildren(*HAnimJoint267);
 
-HAnimJoint189->addChildren(*HAnimJoint198);
+HAnimJoint249->addChildren(*HAnimJoint258);
 
-HAnimJoint27->addChildren(*HAnimJoint189);
+HAnimJoint199->addChildren(*HAnimJoint249);
 
-HAnimJoint26->addChildren(*HAnimJoint27);
+HAnimJoint190->addChildren(*HAnimJoint199);
 
-HAnimHumanoid23->setSkeleton(*HAnimJoint26);
+HAnimJoint28->addChildren(*HAnimJoint190);
 
-CHAnimSegment* HAnimSegment284 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
-HAnimSegment284->setUSE("hanim_l_calcaneus");
-HAnimHumanoid23->setSegments(*HAnimSegment284);
+HAnimJoint27->addChildren(*HAnimJoint28);
 
-CHAnimSegment* HAnimSegment285 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
-HAnimSegment285->setUSE("hanim_l_cuboid");
-HAnimHumanoid23->setSegments(*HAnimSegment285);
+HAnimHumanoid24->setSkeleton(*HAnimJoint27);
 
-CHAnimSegment* HAnimSegment286 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
-HAnimSegment286->setUSE("hanim_l_cuneiform_1");
-HAnimHumanoid23->setSegments(*HAnimSegment286);
+CHAnimJoint* HAnimJoint285 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
+HAnimJoint285->setUSE("hanim_humanoid_root");
+HAnimHumanoid24->addJoints(*HAnimJoint285);
 
-CHAnimSegment* HAnimSegment287 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
-HAnimSegment287->setUSE("hanim_l_cuneiform_2");
-HAnimHumanoid23->setSegments(*HAnimSegment287);
+CHAnimJoint* HAnimJoint286 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
+HAnimJoint286->setUSE("hanim_l_calcaneocuboid");
+HAnimHumanoid24->addJoints(*HAnimJoint286);
 
-CHAnimSegment* HAnimSegment288 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
-HAnimSegment288->setUSE("hanim_l_cuneiform_3");
-HAnimHumanoid23->setSegments(*HAnimSegment288);
+CHAnimJoint* HAnimJoint287 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
+HAnimJoint287->setUSE("hanim_l_cuneonavicular_1");
+HAnimHumanoid24->addJoints(*HAnimJoint287);
 
-CHAnimSegment* HAnimSegment289 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
-HAnimSegment289->setUSE("hanim_l_metatarsal_1");
-HAnimHumanoid23->setSegments(*HAnimSegment289);
+CHAnimJoint* HAnimJoint288 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
+HAnimJoint288->setUSE("hanim_l_cuneonavicular_2");
+HAnimHumanoid24->addJoints(*HAnimJoint288);
 
-CHAnimSegment* HAnimSegment290 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
-HAnimSegment290->setUSE("hanim_l_metatarsal_2");
-HAnimHumanoid23->setSegments(*HAnimSegment290);
+CHAnimJoint* HAnimJoint289 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
+HAnimJoint289->setUSE("hanim_l_cuneonavicular_3");
+HAnimHumanoid24->addJoints(*HAnimJoint289);
 
-CHAnimSegment* HAnimSegment291 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
-HAnimSegment291->setUSE("hanim_l_metatarsal_3");
-HAnimHumanoid23->setSegments(*HAnimSegment291);
+CHAnimJoint* HAnimJoint290 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
+HAnimJoint290->setUSE("hanim_l_metatarsophalangeal_1");
+HAnimHumanoid24->addJoints(*HAnimJoint290);
 
-CHAnimSegment* HAnimSegment292 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
-HAnimSegment292->setUSE("hanim_l_metatarsal_4");
-HAnimHumanoid23->setSegments(*HAnimSegment292);
+CHAnimJoint* HAnimJoint291 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
+HAnimJoint291->setUSE("hanim_l_metatarsophalangeal_2");
+HAnimHumanoid24->addJoints(*HAnimJoint291);
 
-CHAnimSegment* HAnimSegment293 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
-HAnimSegment293->setUSE("hanim_l_metatarsal_5");
-HAnimHumanoid23->setSegments(*HAnimSegment293);
+CHAnimJoint* HAnimJoint292 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
+HAnimJoint292->setUSE("hanim_l_metatarsophalangeal_3");
+HAnimHumanoid24->addJoints(*HAnimJoint292);
 
-CHAnimSegment* HAnimSegment294 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
-HAnimSegment294->setUSE("hanim_l_navicular");
-HAnimHumanoid23->setSegments(*HAnimSegment294);
+CHAnimJoint* HAnimJoint293 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
+HAnimJoint293->setUSE("hanim_l_metatarsophalangeal_4");
+HAnimHumanoid24->addJoints(*HAnimJoint293);
 
-CHAnimSegment* HAnimSegment295 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
-HAnimSegment295->setUSE("hanim_l_talus");
-HAnimHumanoid23->setSegments(*HAnimSegment295);
+CHAnimJoint* HAnimJoint294 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
+HAnimJoint294->setUSE("hanim_l_metatarsophalangeal_5");
+HAnimHumanoid24->addJoints(*HAnimJoint294);
 
-CHAnimSegment* HAnimSegment296 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
-HAnimSegment296->setUSE("hanim_l_tarsal_distal_phalanx_1");
-HAnimHumanoid23->setSegments(*HAnimSegment296);
+CHAnimJoint* HAnimJoint295 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
+HAnimJoint295->setUSE("hanim_l_talocalcaneonavicular");
+HAnimHumanoid24->addJoints(*HAnimJoint295);
 
-CHAnimSegment* HAnimSegment297 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
-HAnimSegment297->setUSE("hanim_l_tarsal_distal_phalanx_2");
-HAnimHumanoid23->setSegments(*HAnimSegment297);
+CHAnimJoint* HAnimJoint296 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
+HAnimJoint296->setUSE("hanim_l_talocrural");
+HAnimHumanoid24->addJoints(*HAnimJoint296);
 
-CHAnimSegment* HAnimSegment298 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
-HAnimSegment298->setUSE("hanim_l_tarsal_distal_phalanx_3");
-HAnimHumanoid23->setSegments(*HAnimSegment298);
+CHAnimJoint* HAnimJoint297 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
+HAnimJoint297->setUSE("hanim_l_tarsal_distal_interphalangeal_2");
+HAnimHumanoid24->addJoints(*HAnimJoint297);
 
-CHAnimSegment* HAnimSegment299 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
-HAnimSegment299->setUSE("hanim_l_tarsal_distal_phalanx_4");
-HAnimHumanoid23->setSegments(*HAnimSegment299);
+CHAnimJoint* HAnimJoint298 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
+HAnimJoint298->setUSE("hanim_l_tarsal_distal_interphalangeal_3");
+HAnimHumanoid24->addJoints(*HAnimJoint298);
 
-CHAnimSegment* HAnimSegment300 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
-HAnimSegment300->setUSE("hanim_l_tarsal_distal_phalanx_5");
-HAnimHumanoid23->setSegments(*HAnimSegment300);
+CHAnimJoint* HAnimJoint299 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
+HAnimJoint299->setUSE("hanim_l_tarsal_distal_interphalangeal_4");
+HAnimHumanoid24->addJoints(*HAnimJoint299);
 
-CHAnimSegment* HAnimSegment301 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
-HAnimSegment301->setUSE("hanim_l_tarsal_middle_phalanx_1");
-HAnimHumanoid23->setSegments(*HAnimSegment301);
+CHAnimJoint* HAnimJoint300 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
+HAnimJoint300->setUSE("hanim_l_tarsal_distal_interphalangeal_5");
+HAnimHumanoid24->addJoints(*HAnimJoint300);
 
-CHAnimSegment* HAnimSegment302 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
-HAnimSegment302->setUSE("hanim_l_tarsal_middle_phalanx_2");
-HAnimHumanoid23->setSegments(*HAnimSegment302);
+CHAnimJoint* HAnimJoint301 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
+HAnimJoint301->setUSE("hanim_l_tarsal_interphalangeal_1");
+HAnimHumanoid24->addJoints(*HAnimJoint301);
 
-CHAnimSegment* HAnimSegment303 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
-HAnimSegment303->setUSE("hanim_l_tarsal_middle_phalanx_3");
-HAnimHumanoid23->setSegments(*HAnimSegment303);
+CHAnimJoint* HAnimJoint302 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
+HAnimJoint302->setUSE("hanim_l_tarsal_proximal_interphalangeal_2");
+HAnimHumanoid24->addJoints(*HAnimJoint302);
 
-CHAnimSegment* HAnimSegment304 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
-HAnimSegment304->setUSE("hanim_l_tarsal_middle_phalanx_4");
-HAnimHumanoid23->setSegments(*HAnimSegment304);
+CHAnimJoint* HAnimJoint303 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
+HAnimJoint303->setUSE("hanim_l_tarsal_proximal_interphalangeal_3");
+HAnimHumanoid24->addJoints(*HAnimJoint303);
 
-CHAnimSegment* HAnimSegment305 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
-HAnimSegment305->setUSE("hanim_l_tarsal_proximal_phalanx_1");
-HAnimHumanoid23->setSegments(*HAnimSegment305);
+CHAnimJoint* HAnimJoint304 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
+HAnimJoint304->setUSE("hanim_l_tarsal_proximal_interphalangeal_4");
+HAnimHumanoid24->addJoints(*HAnimJoint304);
 
-CHAnimSegment* HAnimSegment306 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
-HAnimSegment306->setUSE("hanim_l_tarsal_proximal_phalanx_2");
-HAnimHumanoid23->setSegments(*HAnimSegment306);
+CHAnimJoint* HAnimJoint305 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
+HAnimJoint305->setUSE("hanim_l_tarsal_proximal_interphalangeal_5");
+HAnimHumanoid24->addJoints(*HAnimJoint305);
 
-CHAnimSegment* HAnimSegment307 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
-HAnimSegment307->setUSE("hanim_l_tarsal_proximal_phalanx_3");
-HAnimHumanoid23->setSegments(*HAnimSegment307);
+CHAnimJoint* HAnimJoint306 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
+HAnimJoint306->setUSE("hanim_l_tarsometatarsal_1");
+HAnimHumanoid24->addJoints(*HAnimJoint306);
 
-CHAnimSegment* HAnimSegment308 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
-HAnimSegment308->setUSE("hanim_l_tarsal_proximal_phalanx_4");
-HAnimHumanoid23->setSegments(*HAnimSegment308);
+CHAnimJoint* HAnimJoint307 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
+HAnimJoint307->setUSE("hanim_l_tarsometatarsal_2");
+HAnimHumanoid24->addJoints(*HAnimJoint307);
 
-CHAnimSegment* HAnimSegment309 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
-HAnimSegment309->setUSE("hanim_l_tarsal_proximal_phalanx_5");
-HAnimHumanoid23->setSegments(*HAnimSegment309);
+CHAnimJoint* HAnimJoint308 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
+HAnimJoint308->setUSE("hanim_l_tarsometatarsal_3");
+HAnimHumanoid24->addJoints(*HAnimJoint308);
+
+CHAnimJoint* HAnimJoint309 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
+HAnimJoint309->setUSE("hanim_l_tarsometatarsal_4");
+HAnimHumanoid24->addJoints(*HAnimJoint309);
 
 CHAnimJoint* HAnimJoint310 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
-HAnimJoint310->setUSE("hanim_humanoid_root");
-HAnimHumanoid23->addJoints(*HAnimJoint310);
+HAnimJoint310->setUSE("hanim_l_tarsometatarsal_5");
+HAnimHumanoid24->addJoints(*HAnimJoint310);
 
 CHAnimJoint* HAnimJoint311 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
-HAnimJoint311->setUSE("hanim_l_calcaneocuboid");
-HAnimHumanoid23->addJoints(*HAnimJoint311);
+HAnimJoint311->setUSE("hanim_l_transversetarsal");
+HAnimHumanoid24->addJoints(*HAnimJoint311);
 
-CHAnimJoint* HAnimJoint312 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
-HAnimJoint312->setUSE("hanim_l_cuneonavicular_1");
-HAnimHumanoid23->addJoints(*HAnimJoint312);
+CHAnimSegment* HAnimSegment312 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
+HAnimSegment312->setUSE("hanim_l_calcaneus");
+HAnimHumanoid24->setSegments(*HAnimSegment312);
 
-CHAnimJoint* HAnimJoint313 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
-HAnimJoint313->setUSE("hanim_l_cuneonavicular_2");
-HAnimHumanoid23->addJoints(*HAnimJoint313);
+CHAnimSegment* HAnimSegment313 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
+HAnimSegment313->setUSE("hanim_l_cuboid");
+HAnimHumanoid24->setSegments(*HAnimSegment313);
 
-CHAnimJoint* HAnimJoint314 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
-HAnimJoint314->setUSE("hanim_l_cuneonavicular_3");
-HAnimHumanoid23->addJoints(*HAnimJoint314);
+CHAnimSegment* HAnimSegment314 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
+HAnimSegment314->setUSE("hanim_l_cuneiform_1");
+HAnimHumanoid24->setSegments(*HAnimSegment314);
 
-CHAnimJoint* HAnimJoint315 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
-HAnimJoint315->setUSE("hanim_l_metatarsophalangeal_1");
-HAnimHumanoid23->addJoints(*HAnimJoint315);
+CHAnimSegment* HAnimSegment315 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
+HAnimSegment315->setUSE("hanim_l_cuneiform_2");
+HAnimHumanoid24->setSegments(*HAnimSegment315);
 
-CHAnimJoint* HAnimJoint316 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
-HAnimJoint316->setUSE("hanim_l_metatarsophalangeal_2");
-HAnimHumanoid23->addJoints(*HAnimJoint316);
+CHAnimSegment* HAnimSegment316 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
+HAnimSegment316->setUSE("hanim_l_cuneiform_3");
+HAnimHumanoid24->setSegments(*HAnimSegment316);
 
-CHAnimJoint* HAnimJoint317 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
-HAnimJoint317->setUSE("hanim_l_metatarsophalangeal_3");
-HAnimHumanoid23->addJoints(*HAnimJoint317);
+CHAnimSegment* HAnimSegment317 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
+HAnimSegment317->setUSE("hanim_l_metatarsal_1");
+HAnimHumanoid24->setSegments(*HAnimSegment317);
 
-CHAnimJoint* HAnimJoint318 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
-HAnimJoint318->setUSE("hanim_l_metatarsophalangeal_4");
-HAnimHumanoid23->addJoints(*HAnimJoint318);
+CHAnimSegment* HAnimSegment318 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
+HAnimSegment318->setUSE("hanim_l_metatarsal_2");
+HAnimHumanoid24->setSegments(*HAnimSegment318);
 
-CHAnimJoint* HAnimJoint319 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
-HAnimJoint319->setUSE("hanim_l_metatarsophalangeal_5");
-HAnimHumanoid23->addJoints(*HAnimJoint319);
+CHAnimSegment* HAnimSegment319 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
+HAnimSegment319->setUSE("hanim_l_metatarsal_3");
+HAnimHumanoid24->setSegments(*HAnimSegment319);
 
-CHAnimJoint* HAnimJoint320 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
-HAnimJoint320->setUSE("hanim_l_talocalcaneonavicular");
-HAnimHumanoid23->addJoints(*HAnimJoint320);
+CHAnimSegment* HAnimSegment320 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
+HAnimSegment320->setUSE("hanim_l_metatarsal_4");
+HAnimHumanoid24->setSegments(*HAnimSegment320);
 
-CHAnimJoint* HAnimJoint321 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
-HAnimJoint321->setUSE("hanim_l_talocrural");
-HAnimHumanoid23->addJoints(*HAnimJoint321);
+CHAnimSegment* HAnimSegment321 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
+HAnimSegment321->setUSE("hanim_l_metatarsal_5");
+HAnimHumanoid24->setSegments(*HAnimSegment321);
 
-CHAnimJoint* HAnimJoint322 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
-HAnimJoint322->setUSE("hanim_l_tarsal_distal_interphalangeal_1");
-HAnimHumanoid23->addJoints(*HAnimJoint322);
+CHAnimSegment* HAnimSegment322 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
+HAnimSegment322->setUSE("hanim_l_navicular");
+HAnimHumanoid24->setSegments(*HAnimSegment322);
 
-CHAnimJoint* HAnimJoint323 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
-HAnimJoint323->setUSE("hanim_l_tarsal_distal_interphalangeal_2");
-HAnimHumanoid23->addJoints(*HAnimJoint323);
+CHAnimSegment* HAnimSegment323 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
+HAnimSegment323->setUSE("hanim_l_talus");
+HAnimHumanoid24->setSegments(*HAnimSegment323);
 
-CHAnimJoint* HAnimJoint324 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
-HAnimJoint324->setUSE("hanim_l_tarsal_distal_interphalangeal_3");
-HAnimHumanoid23->addJoints(*HAnimJoint324);
+CHAnimSegment* HAnimSegment324 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
+HAnimSegment324->setUSE("hanim_l_tarsal_distal_phalanx_1");
+HAnimHumanoid24->setSegments(*HAnimSegment324);
 
-CHAnimJoint* HAnimJoint325 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
-HAnimJoint325->setUSE("hanim_l_tarsal_distal_interphalangeal_4");
-HAnimHumanoid23->addJoints(*HAnimJoint325);
+CHAnimSegment* HAnimSegment325 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
+HAnimSegment325->setUSE("hanim_l_tarsal_distal_phalanx_2");
+HAnimHumanoid24->setSegments(*HAnimSegment325);
 
-CHAnimJoint* HAnimJoint326 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
-HAnimJoint326->setUSE("hanim_l_tarsal_interphalangeal_1");
-HAnimHumanoid23->addJoints(*HAnimJoint326);
+CHAnimSegment* HAnimSegment326 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
+HAnimSegment326->setUSE("hanim_l_tarsal_distal_phalanx_3");
+HAnimHumanoid24->setSegments(*HAnimSegment326);
 
-CHAnimJoint* HAnimJoint327 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
-HAnimJoint327->setUSE("hanim_l_tarsal_proximal_interphalangeal_1");
-HAnimHumanoid23->addJoints(*HAnimJoint327);
+CHAnimSegment* HAnimSegment327 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
+HAnimSegment327->setUSE("hanim_l_tarsal_distal_phalanx_4");
+HAnimHumanoid24->setSegments(*HAnimSegment327);
 
-CHAnimJoint* HAnimJoint328 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
-HAnimJoint328->setUSE("hanim_l_tarsal_proximal_interphalangeal_2");
-HAnimHumanoid23->addJoints(*HAnimJoint328);
+CHAnimSegment* HAnimSegment328 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
+HAnimSegment328->setUSE("hanim_l_tarsal_distal_phalanx_5");
+HAnimHumanoid24->setSegments(*HAnimSegment328);
 
-CHAnimJoint* HAnimJoint329 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
-HAnimJoint329->setUSE("hanim_l_tarsal_proximal_interphalangeal_3");
-HAnimHumanoid23->addJoints(*HAnimJoint329);
+CHAnimSegment* HAnimSegment329 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
+HAnimSegment329->setUSE("hanim_l_tarsal_middle_phalanx_2");
+HAnimHumanoid24->setSegments(*HAnimSegment329);
 
-CHAnimJoint* HAnimJoint330 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
-HAnimJoint330->setUSE("hanim_l_tarsal_proximal_interphalangeal_4");
-HAnimHumanoid23->addJoints(*HAnimJoint330);
+CHAnimSegment* HAnimSegment330 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
+HAnimSegment330->setUSE("hanim_l_tarsal_middle_phalanx_3");
+HAnimHumanoid24->setSegments(*HAnimSegment330);
 
-CHAnimJoint* HAnimJoint331 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
-HAnimJoint331->setUSE("hanim_l_tarsometatarsal_1");
-HAnimHumanoid23->addJoints(*HAnimJoint331);
+CHAnimSegment* HAnimSegment331 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
+HAnimSegment331->setUSE("hanim_l_tarsal_middle_phalanx_4");
+HAnimHumanoid24->setSegments(*HAnimSegment331);
 
-CHAnimJoint* HAnimJoint332 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
-HAnimJoint332->setUSE("hanim_l_tarsometatarsal_2");
-HAnimHumanoid23->addJoints(*HAnimJoint332);
+CHAnimSegment* HAnimSegment332 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
+HAnimSegment332->setUSE("hanim_l_tarsal_middle_phalanx_5");
+HAnimHumanoid24->setSegments(*HAnimSegment332);
 
-CHAnimJoint* HAnimJoint333 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
-HAnimJoint333->setUSE("hanim_l_tarsometatarsal_3");
-HAnimHumanoid23->addJoints(*HAnimJoint333);
+CHAnimSegment* HAnimSegment333 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
+HAnimSegment333->setUSE("hanim_l_tarsal_proximal_phalanx_1");
+HAnimHumanoid24->setSegments(*HAnimSegment333);
 
-CHAnimJoint* HAnimJoint334 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
-HAnimJoint334->setUSE("hanim_l_tarsometatarsal_4");
-HAnimHumanoid23->addJoints(*HAnimJoint334);
+CHAnimSegment* HAnimSegment334 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
+HAnimSegment334->setUSE("hanim_l_tarsal_proximal_phalanx_2");
+HAnimHumanoid24->setSegments(*HAnimSegment334);
 
-CHAnimJoint* HAnimJoint335 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
-HAnimJoint335->setUSE("hanim_l_tarsometatarsal_5");
-HAnimHumanoid23->addJoints(*HAnimJoint335);
+CHAnimSegment* HAnimSegment335 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
+HAnimSegment335->setUSE("hanim_l_tarsal_proximal_phalanx_3");
+HAnimHumanoid24->setSegments(*HAnimSegment335);
 
-CHAnimJoint* HAnimJoint336 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
-HAnimJoint336->setUSE("hanim_l_transversetarsal");
-HAnimHumanoid23->addJoints(*HAnimJoint336);
+CHAnimSegment* HAnimSegment336 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
+HAnimSegment336->setUSE("hanim_l_tarsal_proximal_phalanx_4");
+HAnimHumanoid24->setSegments(*HAnimSegment336);
 
-group->addChildren(*HAnimHumanoid23);
+CHAnimSegment* HAnimSegment337 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
+HAnimSegment337->setUSE("hanim_l_tarsal_proximal_phalanx_5");
+HAnimHumanoid24->setSegments(*HAnimSegment337);
 
-X3D0->setScene(*Scene21);
+group->addChildren(*HAnimHumanoid24);
+
+X3D0->setScene(*Scene22);
 
 m_pScene.addRootNode(group);
 X3D0->toXMLString();

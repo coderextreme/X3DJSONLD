@@ -36,13 +36,22 @@ import org.web3d.x3d.jsail.Texturing.*;
 import org.web3d.x3d.jsail.Time.*;
 import org.web3d.x3d.jsail.VolumeRendering.*;
 import org.web3d.x3d.jsail.fields.*;
-public class ViewFrustumPrototype {
+import java.util.ArrayList;
+import java.util.List;
+import net.coderextreme.X3DRoots;
+public class ViewFrustumPrototype implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    X3D model = new ViewFrustumPrototype().initialize();
+    X3D model = new ViewFrustumPrototype().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
+    model.toFileX3D("../data/ViewFrustumPrototype.new.java.x3d");
     model.toFileJSON("../data/ViewFrustumPrototype.new.json");
+    }
+    public List<X3D> getRootNodeList() {
+    	List<X3D> list = new ArrayList<X3D>(1);
+    	list.add(initialize());
+    	return list;
     }
     public X3D initialize() {
       X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
@@ -76,7 +85,7 @@ public class ViewFrustumPrototype {
             .addField(new field().setType("SFBool").setName("trace").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("debug support, default false").setValue("false")))
           .setProtoBody(new ProtoBody()
             .addChild(new Switch().setDEF("VisibilitySwitch").setWhichChoice(-1)
-              .addChild(new Transform().setDEF("PositionTransform").setRotation(new float[] {0f ,1f ,0f ,3.14159f })
+              .addChild(new Transform().setDEF("PositionTransform").setRotation(new double[] {0,1,0,3.14159})
                 .addChild(new Transform().setDEF("OrientationTransform")
                   .addChild(new Shape()
                     .setGeometry(new IndexedLineSet().setDEF("FrustumLines").setCoordIndex(new MFInt320().getArray())
@@ -93,7 +102,7 @@ public class ViewFrustumPrototype {
                           .addConnect(new connect().setNodeField("diffuseColor").setProtoField("frustumColor"))
                           .addConnect(new connect().setNodeField("transparency").setProtoField("transparency"))))))
                   .addChild(new Shape()
-                    .setGeometry(new Sphere().setRadius(0.08f ))
+                    .setGeometry(new Sphere().setRadius(0.08))
                     .setAppearance(new Appearance().setUSE("FrustumAppearance"))))))
             .addChild(new Script().setDEF("GeometryComputationScript").setDirectOutput(true).setUrl(new MFString2().getArray())
               .addField(new field().setType("SFBool").setName("visible").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Whether or not frustum geometry is rendered"))
@@ -130,9 +139,9 @@ public class ViewFrustumPrototype {
         .addChild(new Anchor().setDescription("ViewFrustum Example").setUrl(new MFString3().getArray())
           .addChild(new Shape()
             .setAppearance(new Appearance()
-              .setMaterial(new Material().setDiffuseColor(new float[] {0.8f ,0.4f ,0f })))
+              .setMaterial(new Material().setDiffuseColor(new double[] {0.8,0.4,0})))
             .setGeometry(new Text().setString(new MFString4().getArray())
-              .setFontStyle(new FontStyle().setJustify(new MFString5().getArray()).setSize(0.8f ))))))      ;
+              .setFontStyle(new FontStyle().setJustify(new MFString5().getArray()).setSize(0.8))))))      ;
     return X3D0;
     }
 private class MFInt320 {
@@ -142,7 +151,7 @@ private class MFInt320 {
 }
 private class MFVec3f1 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f ,0f ,0f ,0f ,0f ,0f ,0f ,0f ,0f ,0f ,0f ,0f ,0f ,0f ,0f ,0f ,0f ,0f ,0f ,0f ,0f ,0f ,0f ,0f });
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0});
   }
 }
 private class MFString2 {

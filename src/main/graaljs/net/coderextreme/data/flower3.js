@@ -4,7 +4,11 @@ ConfigurationProperties.showDefaultAttributes = false;
 ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;
 ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
-      var X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
+function doubleToFloat(d) {
+    if (Float32Array)
+	return new Float32Array([d])[0];
+}
+      var X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
       .setHead(new head()
         .addMeta(new meta().setName("title").setContent("flower3.x3d"))
         .addMeta(new meta().setName("creator").setContent("John Carlson"))
@@ -13,13 +17,13 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addMeta(new meta().setName("description").setContent("a flower")))
       .setScene(new Scene()
         .addChild(new NavigationInfo())
-        .addChild(new DirectionalLight().setDirection(Java.to([0,-0.8,-0.2], Java.type("double[]"))).setIntensity(0.5))
-        .addChild(new Background().setSkyColor(Java.to([1,1,1], Java.type("double[]"))))
-        .addChild(new Viewpoint().setDescription("One mathematical orbital").setPosition(Java.to([0,0,50], Java.type("double[]"))))
-        .addChild(new Transform().setDEF("OrbitTransform").setTranslation(Java.to([8,0,0], Java.type("double[]")))
+        .addChild(new DirectionalLight().setDirection(Java.to([doubleToFloat(0),doubleToFloat(-0.8),doubleToFloat(-0.2)], Java.type("float[]"))).setIntensity(0.5))
+        .addChild(new Background().setSkyColor(Java.to([doubleToFloat(1),doubleToFloat(1),doubleToFloat(1)], Java.type("float[]"))))
+        .addChild(new Viewpoint().setDescription("One mathematical orbital").setPosition(Java.to([doubleToFloat(0),doubleToFloat(0),doubleToFloat(50)], Java.type("float[]"))))
+        .addChild(new Transform().setDEF("OrbitTransform").setTranslation(Java.to([doubleToFloat(8),doubleToFloat(0),doubleToFloat(0)], Java.type("float[]")))
           .addChild(new Shape()
             .setAppearance(new Appearance()
-              .setMaterial(new Material().setDiffuseColor(Java.to([0,0.5,1], Java.type("double[]"))).setSpecularColor(Java.to([0,0.5,1], Java.type("double[]")))))
+              .setMaterial(new Material().setDiffuseColor(Java.to([doubleToFloat(0),doubleToFloat(0.5),doubleToFloat(1)], Java.type("float[]"))).setSpecularColor(Java.to([doubleToFloat(0),doubleToFloat(0.5),doubleToFloat(1)], Java.type("float[]")))))
             .setGeometry(new IndexedFaceSet().setConvex(false).setDEF("Orbit")
               .setCoord(new Coordinate().setDEF("OrbitCoordinates")))))
         .addChild(new Script().setDEF("OrbitScript")

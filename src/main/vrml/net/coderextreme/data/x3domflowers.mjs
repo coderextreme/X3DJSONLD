@@ -1,172 +1,174 @@
 let browser = X3D.getBrowser();
 let X3D0 = {};
 X3D0.profile = "Immersive";
-X3D0.version = "4.0";
+X3D0.version = "3.3";
 let head1 = browser.currentScene.createNode("head");
-let meta2 = browser.currentScene.createNode("meta");
-meta2.name = "title";
-meta2.content = "x3domflowers.x3d";
-head1.meta = new MFNode();
+let component2 = browser.currentScene.createNode("component");
+component2.name = "Scripting";
+component2.level = 1;
+head1.component = new MFNode();
 
-head1.meta[0] = meta2;
+head1.component[0] = component2;
 
-let meta3 = browser.currentScene.createNode("meta");
-meta3.name = "creator";
-meta3.content = "John Carlson";
-head1.meta[1] = meta3;
+let component3 = browser.currentScene.createNode("component");
+component3.name = "EnvironmentalEffects";
+component3.level = 3;
+head1.component[1] = component3;
 
-let meta4 = browser.currentScene.createNode("meta");
-meta4.name = "description";
-meta4.content = "5 or more prismatic flowers";
-head1.meta[2] = meta4;
+let component4 = browser.currentScene.createNode("component");
+component4.name = "Shaders";
+component4.level = 1;
+head1.component[2] = component4;
 
-let meta5 = browser.currentScene.createNode("meta");
-meta5.name = "generator";
-meta5.content = "X3D-Edit, https://savage.nps.edu/X3D-Edit";
-head1.meta[3] = meta5;
+let component5 = browser.currentScene.createNode("component");
+component5.name = "CubeMapTexturing";
+component5.level = 1;
+head1.component[3] = component5;
 
 let component6 = browser.currentScene.createNode("component");
-component6.name = "Scripting";
+component6.name = "Texturing";
 component6.level = 1;
 head1.component[4] = component6;
 
 let component7 = browser.currentScene.createNode("component");
-component7.name = "EnvironmentalEffects";
-component7.level = 3;
+component7.name = "Rendering";
+component7.level = 1;
 head1.component[5] = component7;
 
 let component8 = browser.currentScene.createNode("component");
-component8.name = "Shaders";
-component8.level = 1;
+component8.name = "Grouping";
+component8.level = 3;
 head1.component[6] = component8;
 
 let component9 = browser.currentScene.createNode("component");
-component9.name = "CubeMapTexturing";
+component9.name = "Core";
 component9.level = 1;
 head1.component[7] = component9;
 
-let component10 = browser.currentScene.createNode("component");
-component10.name = "Texturing";
-component10.level = 1;
-head1.component[8] = component10;
+let meta10 = browser.currentScene.createNode("meta");
+meta10.name = "title";
+meta10.content = "x3domflowers.x3d";
+head1.meta[8] = meta10;
 
-let component11 = browser.currentScene.createNode("component");
-component11.name = "Rendering";
-component11.level = 1;
-head1.component[9] = component11;
+let meta11 = browser.currentScene.createNode("meta");
+meta11.name = "creator";
+meta11.content = "John Carlson";
+head1.meta[9] = meta11;
 
-let component12 = browser.currentScene.createNode("component");
-component12.name = "Grouping";
-component12.level = 3;
-head1.component[10] = component12;
+let meta12 = browser.currentScene.createNode("meta");
+meta12.name = "description";
+meta12.content = "5 or more prismatic flowers";
+head1.meta[10] = meta12;
 
-let component13 = browser.currentScene.createNode("component");
-component13.name = "Core";
-component13.level = 1;
-head1.component[11] = component13;
+let meta13 = browser.currentScene.createNode("meta");
+meta13.name = "generator";
+meta13.content = "X3D-Edit, https://savage.nps.edu/X3D-Edit";
+head1.meta[11] = meta13;
+
+let meta14 = browser.currentScene.createNode("meta");
+meta14.name = "identifier";
+meta14.content = "https://coderextreme.net/X3DJSONLD/src/main/data/x3domflowers.x3d";
+head1.meta[12] = meta14;
 
 head = head1;
 
-let ExternProtoDeclare15 = browser.currentScene.createNode("ExternProtoDeclare");
-ExternProtoDeclare15.name = "FlowerProto";
-ExternProtoDeclare15.url = new MFString(new java.lang.String["../data/flowerproto.json#FlowerProto"]);
-let field16 = browser.currentScene.createNode("field");
-field16.accessType = "inputOutput";
-field16.type = "MFString";
-field16.name = "vertex";
-ExternProtoDeclare15.field = new MFNode();
-
-ExternProtoDeclare15.field[0] = field16;
-
-let field17 = browser.currentScene.createNode("field");
-field17.accessType = "inputOutput";
-field17.type = "MFString";
-field17.name = "fragment";
-ExternProtoDeclare15.field[1] = field17;
-
+let NavigationInfo16 = browser.currentScene.createNode("NavigationInfo");
 browser.currentScene.children = new MFNode();
 
-browser.currentScene.children[0] = ExternProtoDeclare15;
+browser.currentScene.children[0] = NavigationInfo16;
 
-let ProtoDeclare18 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
+//Images courtesy of Paul Debevec's Light Probe Image Gallery
+let Background17 = browser.currentScene.createNode("Background");
+Background17.backUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]);
+Background17.bottomUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]);
+Background17.frontUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"]);
+Background17.leftUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]);
+Background17.rightUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]);
+Background17.topUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]);
+browser.currentScene.children[1] = Background17;
+
+let Group18 = browser.currentScene.createNode("Group");
+let ExternProtoDeclare19 = browser.currentScene.createNode("ExternProtoDeclare");
+ExternProtoDeclare19.name = "FlowerProto";
+ExternProtoDeclare19.url = new MFString(new java.lang.String["../data/flowerproto.json#FlowerProto"]);
+let field20 = browser.currentScene.createNode("field");
+field20.name = "vertex";
+field20.accessType = "inputOutput";
+field20.type = "MFString";
+ExternProtoDeclare19.field = new MFNode();
+
+ExternProtoDeclare19.field[0] = field20;
+
+let field21 = browser.currentScene.createNode("field");
+field21.name = "fragment";
+field21.accessType = "inputOutput";
+field21.type = "MFString";
+ExternProtoDeclare19.field[1] = field21;
+
+Group18.children = new MFNode();
+
+Group18.children[0] = ExternProtoDeclare19;
+
+let ProtoDeclare22 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
-<ProtoDeclare name="flower" ><ProtoInterface></ProtoInterface>
-<ProtoBody><Group><ProtoInstance name="FlowerProto"><fieldValue name="vertex" value="&quot;../shaders/x3dom_flowers_chromatic.vs&quot;"></fieldValue>
+<ProtoDeclare name="flower" ><ProtoBody><Group><ProtoInstance name="FlowerProto"><fieldValue name="vertex" value="&quot;../shaders/x3dom_flowers_chromatic.vs&quot;"></fieldValue>
 <fieldValue name="fragment" value="&quot;../shaders/common.fs&quot;"></fieldValue>
 </ProtoInstance>
 </Group>
 </ProtoBody>
 </ProtoDeclare>`);
-ProtoDeclare18.name = "flower";
-let ProtoInterface19 = browser.currentScene.createNode("ProtoInterface");
-ProtoDeclare18.protoInterface = ProtoInterface19;
+ProtoDeclare22.name = "flower";
+let ProtoBody23 = browser.currentScene.createNode("ProtoBody");
+let Group24 = browser.currentScene.createNode("Group");
+let ProtoInstance25 = browser.currentScene.createNode("ProtoInstance");
+ProtoInstance25.name = "FlowerProto";
+let fieldValue26 = browser.currentScene.createNode("fieldValue");
+fieldValue26.name = "vertex";
+fieldValue26.value = "\"../shaders/x3dom_flowers_chromatic.vs\"";
+ProtoInstance25.fieldValue = new MFNode();
 
-let ProtoBody20 = browser.currentScene.createNode("ProtoBody");
-let Group21 = browser.currentScene.createNode("Group");
-let ProtoInstance22 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance22.name = "FlowerProto";
-let fieldValue23 = browser.currentScene.createNode("fieldValue");
-fieldValue23.name = "vertex";
-fieldValue23.value = "\"../shaders/x3dom_flowers_chromatic.vs\"";
-ProtoInstance22.fieldValue = new MFNode();
+ProtoInstance25.fieldValue[0] = fieldValue26;
 
-ProtoInstance22.fieldValue[0] = fieldValue23;
+let fieldValue27 = browser.currentScene.createNode("fieldValue");
+fieldValue27.name = "fragment";
+fieldValue27.value = "\"../shaders/common.fs\"";
+ProtoInstance25.fieldValue[1] = fieldValue27;
 
-let fieldValue24 = browser.currentScene.createNode("fieldValue");
-fieldValue24.name = "fragment";
-fieldValue24.value = "\"../shaders/common.fs\"";
-ProtoInstance22.fieldValue[1] = fieldValue24;
+Group24.children = new MFNode();
 
-Group21.children = new MFNode();
+Group24.children[0] = ProtoInstance25;
 
-Group21.children[0] = ProtoInstance22;
+ProtoBody23.children = new MFNode();
 
-ProtoBody20.children = new MFNode();
+ProtoBody23.children[0] = Group24;
 
-ProtoBody20.children[0] = Group21;
+ProtoDeclare22.protoBody = ProtoBody23;
 
-ProtoDeclare18.protoBody = ProtoBody20;
+Group18.children[1] = ProtoDeclare22;
 
-browser.currentScene.children[1] = ProtoDeclare18;
-
-let NavigationInfo25 = browser.currentScene.createNode("NavigationInfo");
-browser.currentScene.children[2] = NavigationInfo25;
-
-let Background26 = browser.currentScene.createNode("Background");
-Background26.frontUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"]);
-Background26.backUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]);
-Background26.leftUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]);
-Background26.rightUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]);
-Background26.topUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]);
-Background26.bottomUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]);
-browser.currentScene.children[3] = Background26;
-
-let Group27 = browser.currentScene.createNode("Group");
 let ProtoInstance28 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance28.name = "flower";
-Group27.children = new MFNode();
-
-Group27.children[0] = ProtoInstance28;
+Group18.children[2] = ProtoInstance28;
 
 let ProtoInstance29 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance29.name = "flower";
-Group27.children[1] = ProtoInstance29;
+Group18.children[3] = ProtoInstance29;
 
 let ProtoInstance30 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance30.name = "flower";
-Group27.children[2] = ProtoInstance30;
+Group18.children[4] = ProtoInstance30;
 
 let ProtoInstance31 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance31.name = "flower";
-Group27.children[3] = ProtoInstance31;
+Group18.children[5] = ProtoInstance31;
 
 let ProtoInstance32 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance32.name = "flower";
-Group27.children[4] = ProtoInstance32;
+Group18.children[6] = ProtoInstance32;
 
 let ProtoInstance33 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance33.name = "flower";
-Group27.children[5] = ProtoInstance33;
+Group18.children[7] = ProtoInstance33;
 
-browser.currentScene.children[4] = Group27;
+browser.currentScene.children[2] = Group18;
 

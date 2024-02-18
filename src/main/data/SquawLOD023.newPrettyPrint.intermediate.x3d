@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
+<X3D profile='Immersive' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.3.xsd'>
   <head>
     <component name='Geospatial' level='1'/>
     <meta content='SquawLOD023.x3d' name='title'/>
@@ -14,12 +14,13 @@
     <meta content='https://www.web3d.org/x3d/content/examples/Basic/Geospatial/SquawLOD023.x3d' name='identifier'/>
     <meta content='Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html' name='generator'/>
     <meta content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' name='generator'/>
+    <meta content='../license.html' name='license'/>
   </head>
   <Scene>
     <WorldInfo title='SquawLOD023.x3d'/>
     <GeoLOD center='4344125.917539 741821.999947 1970.5' geoSystem='"UTM" "Z10" "N"' range='0.0'>
       <GeoOrigin DEF='ORIGIN' geoCoords='4342525.5 740604 0' geoSystem='"UTM" "Z10" "N"' rotateYUp='true'/>
-      <Shape DEF='_1'>
+      <Shape>
         <Appearance>
           <Material ambientIntensity='0.9' diffuseColor='1 1 1' shininess='1.0'/>
           <ImageTexture url='"images/squaw011.jpg" "https://www.web3d.org/x3d/content/examples/Basic/Geospatial/images/squaw011.jpg"'/>

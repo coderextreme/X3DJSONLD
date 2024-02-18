@@ -1,9 +1,9 @@
-#include "/c/x3d-code/www.web3d.org/x3d/languages/c/X3DLib/X3DLib.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/c/Concretes.h"
 void main(int argc, char ** argv) {
 Browser browser = X3D.getBrowser();
 X3D X3D0;
 X3D0.profile = "Interchange";
-X3D0.version = "4.0";
+X3D0.version = "3.3";
 head head1 = createNode("head");
 meta meta2 = createNode("meta");
 meta2.name = "title";
@@ -34,7 +34,7 @@ head1.meta[4] = meta6;
 
 meta meta7 = createNode("meta");
 meta7.name = "generator";
-meta7.content = "convertStlToJson.js:  https://github.com/coderextreme/X3DJSONLD/convertStlToJson.js";
+meta7.content = "convertStlToJson.js:  https://github.com/coderextreme/X3DJSONLD/src/main/node/convertStlToJson.js";
 head1.meta[5] = meta7;
 
 meta meta8 = createNode("meta");

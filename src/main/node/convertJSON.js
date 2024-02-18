@@ -15,9 +15,9 @@ var replaceX3DJSON = loadValidate.replaceX3DJSON;
 var loadSchema = loadValidate.loadSchema;
 var loadX3DJS = loadValidate.loadX3DJS;
 var doValidate = loadValidate.doValidate;
-//console.log("DOM", DOMImplementation);
+//console.error("DOM", DOMImplementation);
 var domImpl = new DOMImplementation();
-//console.log("DOM Impl", domImpl);
+//console.error("DOM Impl", domImpl);
 
 var LOG = Script.LOG;
 X3DJSONLD = Object.assign(X3DJSONLD, { processURLs : function(urls) { return urls; }});
@@ -46,7 +46,7 @@ function convertJSON(options) {
 		}
 		var basefile = file.substr(0, file.lastIndexOf("."));
 		var file = basefile+".json";
-		console.log("Reading", file, domImpl);
+		console.error("Reading", file, domImpl);
 		var str = fs.readFileSync(file).toString();
 		if (typeof str === 'undefined') {
 			throw("Read nothing, or possbile error");
@@ -61,6 +61,7 @@ function convertJSON(options) {
 			continue;
 		}
 		var NS = "https://www.web3d.org/specifications/x3d";
+		console.error("loading", file);
 		loadX3DJS(domImpl, json, file, NS, function(element, xml) {
 			if (typeof element === undefined) {
 				throw ("Undefined element returned from loadX3DJS()")
@@ -81,11 +82,16 @@ function convertJSON(options) {
 			basefile = basefile.replace(/-| /g, "_")
 			// handle filenames with leading zeros and java keywords
 			basefile = basefile.replace(/^(.*[\\\/])([0-9].*|default|switch|for)$/, "$1_$2")
+			console.error(basefile);
 
 			for (var ser in options) {
 				var serializer = require(options[ser].serializer);
 				var co = options[ser].codeOutput+basefile;
-				str = new serializer().serializeToString(json, element, co, mapToMethod, fieldTypes)
+				try {
+					str = new serializer().serializeToString(json, element, co, mapToMethod, fieldTypes)
+				} catch (e) {
+					console.error(e);
+				}
 				if (typeof str !== 'undefined') {
 					// console.error("basefile", basefile);
 					var outfile = options[ser].folder+basefile+options[ser].extension

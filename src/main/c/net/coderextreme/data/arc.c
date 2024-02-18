@@ -7,7 +7,7 @@ X3D0.version = "3.3";
 head head1 = createNode("head");
 meta meta2 = createNode("meta");
 meta2.name = "title";
-meta2.content = "arc";
+meta2.content = "arc.x3d";
 head1.meta = new MFNode();
 
 head1.meta[0] = meta2;
@@ -24,7 +24,7 @@ head1.meta[2] = meta4;
 
 meta meta5 = createNode("meta");
 meta5.name = "identifier";
-meta5.content = "https://coderextreme.net/X3DJSONLD/src/main/data/x3dconnectorProto.x3d";
+meta5.content = "https://coderextreme.net/X3DJSONLD/src/main/data/arc.x3d";
 head1.meta[3] = meta5;
 
 meta meta6 = createNode("meta");
@@ -52,7 +52,7 @@ ProtoDeclare ProtoDeclare10 = browser.createX3DFromString(`<?xml version="1.0" e
 <ProtoBody><Transform DEF="node"><IS><connect nodeField="translation" protoField="translation"></connect>
 </IS>
 <Shape><Sphere radius="0.1"></Sphere>
-<Appearance><Material diffuseColor="1 0 0"></Material>
+<Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 0 0"></Material>
 </Appearance>
 </Shape>
 <PositionInterpolator DEF="PI1" key="0 1" keyValue="0 0 0 0 5 0"></PositionInterpolator>
@@ -213,7 +213,7 @@ ProtoDeclare ProtoDeclare32 = browser.createX3DFromString(`<?xml version="1.0" e
 <field name="set_startpoint" accessType="inputOnly" type="SFVec3f"></field>
 <field name="set_endpoint" accessType="inputOnly" type="SFVec3f"></field>
 </ProtoInterface>
-<ProtoBody><Group><Transform DEF="trans"><Transform DEF="rotscale"><Shape><Appearance><Material diffuseColor="0.2 0.7 0.7" transparency="0.5"></Material>
+<ProtoBody><Group><Transform DEF="trans"><Transform DEF="rotscale"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0.2 0.7 0.7" transparency="0.5"></Material>
 </Appearance>
 <Cylinder radius="0.05"></Cylinder>
 </Shape>

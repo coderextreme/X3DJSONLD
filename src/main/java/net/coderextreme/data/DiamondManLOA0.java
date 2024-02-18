@@ -36,13 +36,22 @@ import org.web3d.x3d.jsail.Texturing.*;
 import org.web3d.x3d.jsail.Time.*;
 import org.web3d.x3d.jsail.VolumeRendering.*;
 import org.web3d.x3d.jsail.fields.*;
-public class DiamondManLOA0 {
+import java.util.ArrayList;
+import java.util.List;
+import net.coderextreme.X3DRoots;
+public class DiamondManLOA0 implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    X3D model = new DiamondManLOA0().initialize();
+    X3D model = new DiamondManLOA0().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
+    model.toFileX3D("../data/DiamondManLOA0.new.java.x3d");
     model.toFileJSON("../data/DiamondManLOA0.new.json");
+    }
+    public List<X3D> getRootNodeList() {
+    	List<X3D> list = new ArrayList<X3D>(1);
+    	list.add(initialize());
+    	return list;
     }
     public X3D initialize() {
       X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
@@ -73,31 +82,31 @@ public class DiamondManLOA0 {
         .addMeta(new meta().setName("license").setContent("../license.html")))
       .setScene(new Scene()
         .addChild(new WorldInfo().setInfo(new MFString0().getArray()).setTitle("HANIM 2.0 Default Joint Centers, LOA0"))
-        .addChild(new NavigationInfo().setSpeed(1.5f ))
-        .addChild(new Viewpoint().setCenterOfRotation(new float[] {0f ,1f ,0f }).setDescription("Diamond Man, LOA 0").setPosition(new float[] {0f ,1f ,3f }))
+        .addChild(new NavigationInfo().setSpeed(1.5))
+        .addChild(new Viewpoint().setCenterOfRotation(new double[] {0,1,0}).setDescription("Diamond Man, LOA 0").setPosition(new double[] {0,1,3}))
         .addChild(new HAnimHumanoid().setName("humanoid").setDEF("hanim_humanoid").setLoa(0).setVersion("2.0")
           .addComments("original HAnimHumanoid info='\"authorEmail=beitler@graphics.cis.upenn.edu beitler@acm.org\" \"authorName=Matthew T. Beitler\" \"copyright=Copyright 1999 Matthew T. Beitler\" \"creationDate=05/12/99\" \"humanoidVersion=JointCenters 1.1 LOA0\" \"usageRestrictions=PERMISSION TO FULLY USE THIS SCENE GRAPH IS GRANTED PROVIDED THIS COPYRIGHT INFORMATION AND DOCUMENTATION OF THE ORIGINAL AUTHOR IS INCLUDED. This humanoid scene graph is provided _as-is_ and without warranty of any kind express implied or otherwise including without limitation any warranty of merchantability or fitness for a particular purpose.\"'")
           .setMetadata(new MetadataSet().setName("HAnimHumanoid.info").setReference("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid")
-            .setMetadata(new MetadataString().setName("authorEmail").setValue(new MFString1().getArray()))
-            .setMetadata(new MetadataString().setName("authorName").setValue(new MFString2().getArray()))
-            .setMetadata(new MetadataString().setName("copyright").setValue(new MFString3().getArray()))
-            .setMetadata(new MetadataString().setName("creationDate").setValue(new MFString4().getArray()))
-            .setMetadata(new MetadataString().setName("humanoidVersion").setValue(new MFString5().getArray()))
-            .setMetadata(new MetadataString().setName("usageRestrictions").setValue(new MFString6().getArray())))
-          .addSkeleton(((HAnimJoint)new HAnimJoint("hanim_humanoid").setName("humanoid_root").setDEF("hanim_humanoid_root").setCenter(new float[] {0f ,0.824f ,0.0277f }).setUlimit(new MFFloat7().getArray()).setLlimit(new MFFloat8().getArray()).setContainerFieldOverride("skeleton"))
-            .addChild(new HAnimJoint("hanim_humanoid_root").setName("sacroiliac").setDEF("hanim_sacroiliac").setCenter(new float[] {0f ,0.9149f ,0.0016f }).setUlimit(new MFFloat9().getArray()).setLlimit(new MFFloat10().getArray())
+            .addValue(new MetadataString().setName("authorEmail").setValue(new MFString1().getArray()))
+            .addValue(new MetadataString().setName("authorName").setValue(new MFString2().getArray()))
+            .addValue(new MetadataString().setName("copyright").setValue(new MFString3().getArray()))
+            .addValue(new MetadataString().setName("creationDate").setValue(new MFString4().getArray()))
+            .addValue(new MetadataString().setName("humanoidVersion").setValue(new MFString5().getArray()))
+            .addValue(new MetadataString().setName("usageRestrictions").setValue(new MFString6().getArray())))
+          .addSkeleton(((HAnimJoint)new HAnimJoint("hanim_humanoid").setName("humanoid_root").setDEF("hanim_humanoid_root").setCenter(new double[] {0,0.824,0.0277}).setUlimit(new MFFloat7().getArray()).setLlimit(new MFFloat8().getArray()).setContainerFieldOverride("skeleton"))
+            .addChild(new HAnimJoint("hanim_humanoid_root").setName("sacroiliac").setDEF("hanim_sacroiliac").setCenter(new double[] {0,0.9149,0.0016}).setUlimit(new MFFloat9().getArray()).setLlimit(new MFFloat10().getArray())
               .addChild(new HAnimSegment("hanim_sacroiliac").setName("pelvis").setDEF("hanim_pelvis")
-                .addChild(new Transform().setTranslation(new float[] {0f ,0.9149f ,0.0016f })
+                .addChild(new Transform().setTranslation(new double[] {0,0.9149,0.0016})
                   .addChild(new Shape().setDEF("DiamondShape")
-                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3211().getArray()).setCreaseAngle(0.5f )
+                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3211().getArray()).setCreaseAngle(0.5)
                       .setCoord(new Coordinate().setPoint(new MFVec3f12().getArray())))
                     .setAppearance(new Appearance()
-                      .setMaterial(new Material().setDiffuseColor(new float[] {1f ,1f ,0f }))))))))
+                      .setMaterial(new Material().setDiffuseColor(new double[] {1,1,0}))))))))
           .addViewpoints(((HAnimSite)new HAnimSite("hanim_humanoid").setName("site_view").setDEF("hanim_site_view").setContainerFieldOverride("viewpoints"))
-            .addChild(new Viewpoint().setDEF("InclinedView").setDescription("Inclined View").setOrientation(new float[] {-0.113f ,0.993f ,0.0347f ,0.671f }).setPosition(new float[] {1.62f ,1.05f ,2.06f }))
-            .addChild(new Viewpoint().setDEF("FrontView").setDescription("Front View").setPosition(new float[] {0f ,0.854f ,2.57665f }))
-            .addChild(new Viewpoint().setDEF("SideView").setDescription("Side View").setOrientation(new float[] {0f ,1f ,0f ,1.57079f }).setPosition(new float[] {2.5929f ,0.854f ,0f }))
-            .addChild(new Viewpoint().setDEF("TopView").setDescription("Top View").setOrientation(new float[] {1f ,0f ,0f ,-1.57079f }).setPosition(new float[] {0f ,3.4495f ,0f })))
+            .addChild(new Viewpoint().setDEF("InclinedView").setDescription("Inclined View").setOrientation(new double[] {-0.113,0.993,0.0347,0.671}).setPosition(new double[] {1.62,1.05,2.06}))
+            .addChild(new Viewpoint().setDEF("FrontView").setDescription("Front View").setPosition(new double[] {0,0.854,2.57665}))
+            .addChild(new Viewpoint().setDEF("SideView").setDescription("Side View").setOrientation(new double[] {0,1,0,1.57079}).setPosition(new double[] {2.5929,0.854,0}))
+            .addChild(new Viewpoint().setDEF("TopView").setDescription("Top View").setOrientation(new double[] {1,0,0,-1.57079}).setPosition(new double[] {0,3.4495,0})))
           .addJoints(((HAnimJoint)new HAnimJoint("hanim_humanoid").setContainerFieldOverride("joints")).setUSE("hanim_humanoid_root"))
           .addJoints(((HAnimJoint)new HAnimJoint("hanim_humanoid").setContainerFieldOverride("joints")).setUSE("hanim_sacroiliac"))
           .addSegments(((HAnimSegment)new HAnimSegment("hanim_humanoid").setContainerFieldOverride("segments")).setUSE("hanim_pelvis"))))      ;
@@ -140,22 +149,22 @@ private class MFString6 {
 }
 private class MFFloat7 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
   }
 }
 private class MFFloat8 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
   }
 }
 private class MFFloat9 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
   }
 }
 private class MFFloat10 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
   }
 }
 private class MFInt3211 {
@@ -165,7 +174,7 @@ private class MFInt3211 {
 }
 private class MFVec3f12 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f ,0.01f ,0f ,-0.01f ,0f ,0f ,0f ,0f ,0.01f ,0.01f ,0f ,0f ,0f ,0f ,-0.01f ,0f ,-0.01f ,0f });
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0,0.01,0,-0.01,0,0,0,0,0.01,0.01,0,0,0,0,-0.01,0,-0.01,0});
   }
 }
 }

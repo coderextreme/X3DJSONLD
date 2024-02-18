@@ -1,9 +1,9 @@
-#include "/c/x3d-code/www.web3d.org/x3d/languages/c/X3DLib/X3DLib.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/c/Concretes.h"
 void main(int argc, char ** argv) {
 Browser browser = X3D.getBrowser();
 X3D X3D0;
 X3D0.profile = "Immersive";
-X3D0.version = "4.0";
+X3D0.version = "3.3";
 head head1 = createNode("head");
 meta meta2 = createNode("meta");
 meta2.name = "title";
@@ -24,7 +24,7 @@ head1.meta[2] = meta4;
 
 meta meta5 = createNode("meta");
 meta5.name = "identifier";
-meta5.content = "https://coderextreme.net/X3DJSONLD/arc.x3d";
+meta5.content = "https://coderextreme.net/X3DJSONLD/src/main/data/arc.x3d";
 head1.meta[3] = meta5;
 
 meta meta6 = createNode("meta");
@@ -61,9 +61,9 @@ Cylinder Cylinder15 = createNode("Cylinder");
 Cylinder15.radius = 0.1;
 Shape12.geometry = Cylinder15;
 
-Transform11.children = new MFNode();
+Transform11.child = new undefined();
 
-Transform11.children[0] = Shape12;
+Transform11.child[0] = Shape12;
 
 Transform10.children = new MFNode();
 
@@ -87,9 +87,9 @@ Cylinder Cylinder21 = createNode("Cylinder");
 Cylinder21.radius = 0.1;
 Shape18.geometry = Cylinder21;
 
-Transform17.children = new MFNode();
+Transform17.child = new undefined();
 
-Transform17.children[0] = Shape18;
+Transform17.child[0] = Shape18;
 
 Transform16.children = new MFNode();
 
@@ -113,9 +113,9 @@ Cylinder Cylinder27 = createNode("Cylinder");
 Cylinder27.radius = 0.1;
 Shape24.geometry = Cylinder27;
 
-Transform23.children = new MFNode();
+Transform23.child = new undefined();
 
-Transform23.children[0] = Shape24;
+Transform23.child[0] = Shape24;
 
 Transform22.children = new MFNode();
 
@@ -129,8 +129,8 @@ ProtoDeclare ProtoDeclare28 = browser.createX3DFromString(`<?xml version="1.0" e
 </ProtoInterface>
 <ProtoBody><Transform DEF="node"><IS><connect nodeField="translation" protoField="translation"></connect>
 </IS>
-<Shape><Sphere containerField="geometry" radius="0.1"></Sphere>
-<Appearance><Material diffuseColor="1 0 0"></Material>
+<Shape><Sphere radius="0.1"></Sphere>
+<Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 0 0"></Material>
 </Appearance>
 </Shape>
 <PositionInterpolator DEF="PI1" key="0 1" keyValue="0 0 0 0 5 0"></PositionInterpolator>
@@ -191,9 +191,9 @@ Appearance37.material = Material38;
 
 Shape35.appearance = Appearance37;
 
-Transform32.children = new MFNode();
+Transform32.child = new undefined();
 
-Transform32.children[0] = Shape35;
+Transform32.child[0] = Shape35;
 
 PositionInterpolator PositionInterpolator39 = createNode("PositionInterpolator");
 PositionInterpolator39.DEF = "PI1";

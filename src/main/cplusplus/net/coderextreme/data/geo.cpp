@@ -14,70 +14,71 @@ group->addChildren(X3D0);
 X3D0->setProfile("Immersive");
 X3D0->setVersion("4.0");
 Chead* head1 = new Chead();
-Cmeta* meta2 = new Cmeta();
-meta2->setName("title");
-meta2->setContent("geo.x3d");
-head1->addMeta(*meta2);
+Ccomponent* component2 = new Ccomponent();
+component2->setName("Scripting");
+component2->setLevel(1);
+head1->addComponent(*component2);
 
-Cmeta* meta3 = new Cmeta();
-meta3->setName("creator");
-meta3->setContent("John Carlson");
-head1->addMeta(*meta3);
+Ccomponent* component3 = new Ccomponent();
+component3->setName("EnvironmentalEffects");
+component3->setLevel(3);
+head1->addComponent(*component3);
 
-Cmeta* meta4 = new Cmeta();
-meta4->setName("generator");
-meta4->setContent("manual");
-head1->addMeta(*meta4);
+Ccomponent* component4 = new Ccomponent();
+component4->setName("Shaders");
+component4->setLevel(1);
+head1->addComponent(*component4);
 
-Cmeta* meta5 = new Cmeta();
-meta5->setName("identifier");
-meta5->setContent("https://coderextreme.net/X3DJSONLD/src/main/data/geo.x3d");
-head1->addMeta(*meta5);
+Ccomponent* component5 = new Ccomponent();
+component5->setName("CubeMapTexturing");
+component5->setLevel(1);
+head1->addComponent(*component5);
 
 Ccomponent* component6 = new Ccomponent();
-component6->setName("Scripting");
+component6->setName("Texturing");
 component6->setLevel(1);
 head1->addComponent(*component6);
 
 Ccomponent* component7 = new Ccomponent();
-component7->setName("EnvironmentalEffects");
-component7->setLevel(3);
+component7->setName("Rendering");
+component7->setLevel(1);
 head1->addComponent(*component7);
 
 Ccomponent* component8 = new Ccomponent();
-component8->setName("Shaders");
-component8->setLevel(1);
+component8->setName("Grouping");
+component8->setLevel(3);
 head1->addComponent(*component8);
 
 Ccomponent* component9 = new Ccomponent();
-component9->setName("CubeMapTexturing");
+component9->setName("Core");
 component9->setLevel(1);
 head1->addComponent(*component9);
 
-Ccomponent* component10 = new Ccomponent();
-component10->setName("Texturing");
-component10->setLevel(1);
-head1->addComponent(*component10);
+//<component name='Shape' level='4'></component>
+Cmeta* meta10 = new Cmeta();
+meta10->setName("title");
+meta10->setContent("geo.x3d");
+head1->addMeta(*meta10);
 
-Ccomponent* component11 = new Ccomponent();
-component11->setName("Rendering");
-component11->setLevel(1);
-head1->addComponent(*component11);
+Cmeta* meta11 = new Cmeta();
+meta11->setName("creator");
+meta11->setContent("John Carlson");
+head1->addMeta(*meta11);
 
-Ccomponent* component12 = new Ccomponent();
-component12->setName("Shape");
-component12->setLevel(4);
-head1->addComponent(*component12);
+Cmeta* meta12 = new Cmeta();
+meta12->setName("generator");
+meta12->setContent("manual");
+head1->addMeta(*meta12);
 
-Ccomponent* component13 = new Ccomponent();
-component13->setName("Grouping");
-component13->setLevel(3);
-head1->addComponent(*component13);
+Cmeta* meta13 = new Cmeta();
+meta13->setName("identifier");
+meta13->setContent("https://coderextreme.net/X3DJSONLD/src/main/data/geo.x3d");
+head1->addMeta(*meta13);
 
-Ccomponent* component14 = new Ccomponent();
-component14->setName("Core");
-component14->setLevel(1);
-head1->addComponent(*component14);
+Cmeta* meta14 = new Cmeta();
+meta14->setName("description");
+meta14->setContent("a sphere");
+head1->addMeta(*meta14);
 
 X3D0->setHead(*head1);
 
@@ -91,134 +92,161 @@ Viewpoint17->setDEF("Tour");
 Viewpoint17->setDescription("Tour Views");
 group->addChildren(*Viewpoint17);
 
+//Viewpoint position='0 0 4' description='sphere in road'/
 CBackground* Background18 = (CBackground *)(m_pScene.createNode("Background"));
-Background18->setFrontUrl(new CString[2]{"../resources/images/bFR.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bFR.png"}, 2);
 Background18->setBackUrl(new CString[2]{"../resources/images/bBK.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBK.png"}, 2);
+Background18->setBottomUrl(new CString[2]{"../resources/images/bBT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBT.png"}, 2);
+Background18->setFrontUrl(new CString[2]{"../resources/images/bFR.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bFR.png"}, 2);
 Background18->setLeftUrl(new CString[2]{"../resources/images/bLF.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bLF.png"}, 2);
 Background18->setRightUrl(new CString[2]{"../resources/images/bRT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bRT.png"}, 2);
 Background18->setTopUrl(new CString[2]{"../resources/images/bTP.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bTP.png"}, 2);
-Background18->setBottomUrl(new CString[2]{"../resources/images/bBT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBT.png"}, 2);
 group->addChildren(*Background18);
 
 CTransform* Transform19 = (CTransform *)(m_pScene.createNode("Transform"));
 CShape* Shape20 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance21 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material22 = (CMaterial *)(m_pScene.createNode("Material"));
-Material22->setDiffuseColor(new float[3]{0.7,0.7,0.7});
-Material22->setSpecularColor(new float[3]{0.5,0.5,0.5});
-Appearance21->setMaterial(*Material22);
+CSphere* Sphere21 = (CSphere *)(m_pScene.createNode("Sphere"));
+Shape20->setGeometry(Sphere21);
 
-CComposedCubeMapTexture* ComposedCubeMapTexture23 = (CComposedCubeMapTexture *)(m_pScene.createNode("ComposedCubeMapTexture"));
-ComposedCubeMapTexture23->setDEF("texture");
-Appearance21->setTexture(*ComposedCubeMapTexture23);
+CAppearance* Appearance22 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material23 = (CMaterial *)(m_pScene.createNode("Material"));
+Material23->setDiffuseColor(new float[3]{0.7,0.7,0.7});
+Material23->setSpecularColor(new float[3]{0.5,0.5,0.5});
+Appearance22->setMaterial(*Material23);
 
-CComposedShader* ComposedShader24 = (CComposedShader *)(m_pScene.createNode("ComposedShader"));
-ComposedShader24->setLanguage("GLSL");
-CShaderPart* ShaderPart25 = (CShaderPart *)(m_pScene.createNode("ShaderPart"));
-ShaderPart25->setUrl(new CString[2]{"../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"}, 2);
-ComposedShader24->addParts(*ShaderPart25);
+CComposedCubeMapTexture* ComposedCubeMapTexture24 = (CComposedCubeMapTexture *)(m_pScene.createNode("ComposedCubeMapTexture"));
+ComposedCubeMapTexture24->setDEF("texture");
+CImageTexture* ImageTexture25 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture25->setUrl(new CString[2]{"../resources/images/bBK.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBK.png"}, 2);
+ComposedCubeMapTexture24->setBack(*ImageTexture25);
 
-CShaderPart* ShaderPart26 = (CShaderPart *)(m_pScene.createNode("ShaderPart"));
-ShaderPart26->setDEF("common");
-ShaderPart26->setType("FRAGMENT");
-ShaderPart26->setUrl(new CString[2]{"../shaders/common.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"}, 2);
-ComposedShader24->addParts(*ShaderPart26);
+CImageTexture* ImageTexture26 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture26->setUrl(new CString[2]{"../resources/images/bBT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBT.png"}, 2);
+ComposedCubeMapTexture24->setBottom(*ImageTexture26);
 
-Cfield* field27 = new Cfield();
-field27->setAccessType("inputOutput");
-field27->setType("SFVec3f");
-field27->setName("chromaticDispertion");
-field27->setValue("0.98 1 1.033");
-ComposedShader24->addField(*field27);
+CImageTexture* ImageTexture27 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture27->setUrl(new CString[2]{"../resources/images/bFR.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bFR.png"}, 2);
+ComposedCubeMapTexture24->setFront(*ImageTexture27);
 
-Cfield* field28 = new Cfield();
-field28->setAccessType("inputOutput");
-field28->setType("SFNode");
-field28->setName("cube");
-CComposedCubeMapTexture* ComposedCubeMapTexture29 = (CComposedCubeMapTexture *)(m_pScene.createNode("ComposedCubeMapTexture"));
-ComposedCubeMapTexture29->setUSE("texture");
-field28->addChildren(*ComposedCubeMapTexture29);
+CImageTexture* ImageTexture28 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture28->setUrl(new CString[2]{"../resources/images/bLF.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bLF.png"}, 2);
+ComposedCubeMapTexture24->setLeft(*ImageTexture28);
 
-ComposedShader24->addField(*field28);
+CImageTexture* ImageTexture29 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture29->setUrl(new CString[2]{"../resources/images/bRT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bRT.png"}, 2);
+ComposedCubeMapTexture24->setRight(*ImageTexture29);
 
-Cfield* field30 = new Cfield();
-field30->setAccessType("inputOutput");
-field30->setType("SFFloat");
-field30->setName("bias");
-field30->setValue("0.5");
-ComposedShader24->addField(*field30);
+CImageTexture* ImageTexture30 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture30->setUrl(new CString[2]{"../resources/images/bTP.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bTP.png"}, 2);
+ComposedCubeMapTexture24->setTop(*ImageTexture30);
 
-Cfield* field31 = new Cfield();
-field31->setAccessType("inputOutput");
-field31->setType("SFFloat");
-field31->setName("scale");
-field31->setValue("0.5");
-ComposedShader24->addField(*field31);
+Appearance22->setTexture(*ComposedCubeMapTexture24);
 
+CComposedShader* ComposedShader31 = (CComposedShader *)(m_pScene.createNode("ComposedShader"));
+ComposedShader31->setLanguage("GLSL");
 Cfield* field32 = new Cfield();
+field32->setName("chromaticDispertion");
 field32->setAccessType("inputOutput");
-field32->setType("SFFloat");
-field32->setName("power");
-field32->setValue("2");
-ComposedShader24->addField(*field32);
+field32->setType("SFVec3f");
+field32->setValue("0.98 1 1.033");
+ComposedShader31->addField(*field32);
 
-Appearance21->addShaders(*ComposedShader24);
+Cfield* field33 = new Cfield();
+field33->setName("cube");
+field33->setType("SFNode");
+field33->setAccessType("inputOutput");
+CComposedCubeMapTexture* ComposedCubeMapTexture34 = (CComposedCubeMapTexture *)(m_pScene.createNode("ComposedCubeMapTexture"));
+ComposedCubeMapTexture34->setUSE("texture");
+field33->addChildren(*ComposedCubeMapTexture34);
 
-CComposedShader* ComposedShader33 = (CComposedShader *)(m_pScene.createNode("ComposedShader"));
-ComposedShader33->setLanguage("GLSL");
-CShaderPart* ShaderPart34 = (CShaderPart *)(m_pScene.createNode("ShaderPart"));
-ShaderPart34->setUrl(new CString[2]{"../shaders/x_ite.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"}, 2);
-ComposedShader33->addParts(*ShaderPart34);
+ComposedShader31->addField(*field33);
 
-CShaderPart* ShaderPart35 = (CShaderPart *)(m_pScene.createNode("ShaderPart"));
-ShaderPart35->setType("FRAGMENT");
-ShaderPart35->setUrl(new CString[2]{"../shaders/x_ite.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"}, 2);
-ComposedShader33->addParts(*ShaderPart35);
+Cfield* field35 = new Cfield();
+field35->setName("bias");
+field35->setAccessType("inputOutput");
+field35->setType("SFFloat");
+field35->setValue("0.5");
+ComposedShader31->addField(*field35);
 
 Cfield* field36 = new Cfield();
-field36->setAccessType("initializeOnly");
-field36->setType("SFVec3f");
-field36->setName("chromaticDispertion");
-field36->setValue("0.98 1 1.033");
-ComposedShader33->addField(*field36);
+field36->setName("scale");
+field36->setAccessType("inputOutput");
+field36->setType("SFFloat");
+field36->setValue("0.5");
+ComposedShader31->addField(*field36);
 
 Cfield* field37 = new Cfield();
-field37->setAccessType("initializeOnly");
-field37->setType("SFNode");
-field37->setName("cube");
-CComposedCubeMapTexture* ComposedCubeMapTexture38 = (CComposedCubeMapTexture *)(m_pScene.createNode("ComposedCubeMapTexture"));
-ComposedCubeMapTexture38->setUSE("texture");
-field37->addChildren(*ComposedCubeMapTexture38);
+field37->setName("power");
+field37->setAccessType("inputOutput");
+field37->setType("SFFloat");
+field37->setValue("2");
+ComposedShader31->addField(*field37);
 
-ComposedShader33->addField(*field37);
+CShaderPart* ShaderPart38 = (CShaderPart *)(m_pScene.createNode("ShaderPart"));
+ShaderPart38->setUrl(new CString[2]{"../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"}, 2);
+ShaderPart38->setType("VERTEX");
+ComposedShader31->addParts(*ShaderPart38);
 
-Cfield* field39 = new Cfield();
-field39->setAccessType("initializeOnly");
-field39->setType("SFFloat");
-field39->setName("bias");
-field39->setValue("0.5");
-ComposedShader33->addField(*field39);
+CShaderPart* ShaderPart39 = (CShaderPart *)(m_pScene.createNode("ShaderPart"));
+ShaderPart39->setDEF("common");
+ShaderPart39->setUrl(new CString[2]{"../shaders/common.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"}, 2);
+ShaderPart39->setType("FRAGMENT");
+ComposedShader31->addParts(*ShaderPart39);
 
-Cfield* field40 = new Cfield();
-field40->setAccessType("initializeOnly");
-field40->setType("SFFloat");
-field40->setName("scale");
-field40->setValue("0.5");
-ComposedShader33->addField(*field40);
+Appearance22->addShaders(*ComposedShader31);
 
+CComposedShader* ComposedShader40 = (CComposedShader *)(m_pScene.createNode("ComposedShader"));
+ComposedShader40->setLanguage("GLSL");
 Cfield* field41 = new Cfield();
+field41->setName("chromaticDispertion");
 field41->setAccessType("initializeOnly");
-field41->setType("SFFloat");
-field41->setName("power");
-field41->setValue("2");
-ComposedShader33->addField(*field41);
+field41->setType("SFVec3f");
+field41->setValue("0.98 1 1.033");
+ComposedShader40->addField(*field41);
 
-Appearance21->addShaders(*ComposedShader33);
+Cfield* field42 = new Cfield();
+field42->setName("cube");
+field42->setType("SFNode");
+field42->setAccessType("initializeOnly");
+CComposedCubeMapTexture* ComposedCubeMapTexture43 = (CComposedCubeMapTexture *)(m_pScene.createNode("ComposedCubeMapTexture"));
+ComposedCubeMapTexture43->setUSE("texture");
+field42->addChildren(*ComposedCubeMapTexture43);
 
-Shape20->setAppearance(*Appearance21);
+ComposedShader40->addField(*field42);
 
-CSphere* Sphere42 = (CSphere *)(m_pScene.createNode("Sphere"));
-Shape20->setGeometry(Sphere42);
+Cfield* field44 = new Cfield();
+field44->setName("bias");
+field44->setAccessType("initializeOnly");
+field44->setType("SFFloat");
+field44->setValue("0.5");
+ComposedShader40->addField(*field44);
+
+Cfield* field45 = new Cfield();
+field45->setName("scale");
+field45->setAccessType("initializeOnly");
+field45->setType("SFFloat");
+field45->setValue("0.5");
+ComposedShader40->addField(*field45);
+
+Cfield* field46 = new Cfield();
+field46->setName("power");
+field46->setAccessType("initializeOnly");
+field46->setType("SFFloat");
+field46->setValue("2");
+ComposedShader40->addField(*field46);
+
+CShaderPart* ShaderPart47 = (CShaderPart *)(m_pScene.createNode("ShaderPart"));
+ShaderPart47->setUrl(new CString[2]{"../shaders/x_ite.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"}, 2);
+ShaderPart47->setType("VERTEX");
+ComposedShader40->addParts(*ShaderPart47);
+
+CShaderPart* ShaderPart48 = (CShaderPart *)(m_pScene.createNode("ShaderPart"));
+ShaderPart48->setUrl(new CString[2]{"../shaders/x_ite.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"}, 2);
+ShaderPart48->setType("FRAGMENT");
+ComposedShader40->addParts(*ShaderPart48);
+
+Appearance22->addShaders(*ComposedShader40);
+
+Shape20->setAppearance(*Appearance22);
 
 Transform19->addChild(*Shape20);
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
-<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-3.3.xsd" ><head><meta name="title" content="flower3.x3d"></meta>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd" ><head><meta name="title" content="flower3.x3d"></meta>
 <meta name="creator" content="John Carlson"></meta>
 <meta name="generator" content="manual"></meta>
 <meta name="identifier" content="https://coderextreme.net/X3DJSONLD/src/main/data/flower3.x3d"></meta>
@@ -10,9 +10,9 @@
 <DirectionalLight direction="0 -0.8 -0.2" intensity="0.5"></DirectionalLight>
 <Background skyColor="1 1 1"></Background>
 <Viewpoint description="One mathematical orbital" position="0 0 50"></Viewpoint>
-<Transform DEF="OrbitTransform" translation="8 0 0"><Shape><Appearance><Material diffuseColor="0 0.5 1" specularColor="0 0.5 1"></Material>
+<Transform DEF="OrbitTransform" translation="8 0 0"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 0.5 1" specularColor="0 0.5 1"></Material>
 </Appearance>
-<IndexedFaceSet convex="false" DEF="Orbit"><Coordinate containerField="coord" DEF="OrbitCoordinates"></Coordinate>
+<IndexedFaceSet convex="false" DEF="Orbit"><Coordinate DEF="OrbitCoordinates"></Coordinate>
 </IndexedFaceSet>
 </Shape>
 </Transform>

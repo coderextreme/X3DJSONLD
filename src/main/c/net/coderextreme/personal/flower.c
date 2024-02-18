@@ -1,4 +1,4 @@
-#include "/c/x3d-code/www.web3d.org/x3d/languages/c/X3DLib/X3DLib.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/c/Concretes.h"
 void main(int argc, char ** argv) {
 Browser browser = X3D.getBrowser();
 X3D X3D0;
@@ -80,9 +80,9 @@ IndexedFaceSet16.coord = Coordinate17;
 
 Shape13.geometry = IndexedFaceSet16;
 
-Transform12.children = new MFNode();
+Transform12.child = new undefined();
 
-Transform12.children[0] = Shape13;
+Transform12.child[0] = Shape13;
 
 children[4] = Transform12;
 
@@ -132,7 +132,7 @@ Script18.setSourceCode(`ecmascript:\n"+
 "	     localci.push(-1);\n"+
 "	}\n"+
 "    }\n"+
-"    coordIndexes = new MFInt32(localci);\n"+
+"    coordIndexes = new MFInt32(...localci);\n"+
 "}\n"+
 "\n"+
 "function generateCoordinates(resolution) {\n"+
@@ -152,7 +152,7 @@ Script18.setSourceCode(`ecmascript:\n"+
 "	}\n"+
 "	phi += delta;\n"+
 "     }\n"+
-"     coordinates = new MFVec3f(localc);\n"+
+"     coordinates = new MFVec3f(...localc);\n"+
 "}\n"+
 "\n"+
 "function set_fraction(fraction, eventTime) {\n"+

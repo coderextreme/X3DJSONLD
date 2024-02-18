@@ -5,26 +5,26 @@ print("-->")
 import json
 model = (
 X3D(profile="CADInterchange", version="3.1", 
-head=head(
+head=Pyhead(
 children=[
-component(name="CADGeometry", level=2),
-component(name="EnvironmentalEffects", level=1),
-meta(name="title", content="CADPartChildNoTransformation.x3d"),
-meta(name="description", content="Developer scene to explore Mantis Issue 528, providing a baseline example with no transformation of CADPart children."),
-meta(name="creator", content="Vince Marchetti, Don Brutzman, Hyokwang Lee, Dick Puk"),
-meta(name="translator", content="Vince Marchetti bushing generation using python scripts"),
-meta(name="reference", content="https://www.web3d.org/member-only/mantis/view.php?id=528"),
-meta(name="warning", content="This scene is intended for specification development only."),
-meta(name="created", content="29 June 2012"),
-meta(name="modified", content="20 October 2019"),
-meta(name="identifier", content="https://www.web3d.org/x3d/content/examples/Basic/CAD/CADPartChildNoTransformation.x3d"),
-meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
-meta(name="license", content="../license.html"),
-meta(name="translated", content="02 September 2023"),
-meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
-meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
+Pycomponent(name="CADGeometry", level=2),
+Pycomponent(name="EnvironmentalEffects", level=1),
+Pymeta(name="title", content="CADPartChildNoTransformation.x3d"),
+Pymeta(name="description", content="Developer scene to explore Mantis Issue 528, providing a baseline example with no transformation of CADPart children."),
+Pymeta(name="creator", content="Vince Marchetti, Don Brutzman, Hyokwang Lee, Dick Puk"),
+Pymeta(name="translator", content="Vince Marchetti bushing generation using python scripts"),
+Pymeta(name="reference", content="https://www.web3d.org/member-only/mantis/view.php?id=528"),
+Pymeta(name="warning", content="This scene is intended for specification development only."),
+Pymeta(name="created", content="29 June 2012"),
+Pymeta(name="modified", content="20 October 2019"),
+Pymeta(name="identifier", content="https://www.web3d.org/x3d/content/examples/Basic/CAD/CADPartChildNoTransformation.x3d"),
+Pymeta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
+Pymeta(name="license", content="../license.html"),
+Pymeta(name="translated", content="30 December 2023"),
+Pymeta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
+Pymeta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
-Scene=Scene(children=[
+Scene=PyScene(children=[
 WorldInfo(title="CADPartChildNoTransformation.x3d"),
 Background(skyColor=[(0.9607843,1,0.9607843)]),
 Viewpoint(description="Hello CAD bushing", orientation=((1,0,0,-0.321751)), position=((0,5,15))),

@@ -4,7 +4,7 @@ import '../x3d.dart';
 var X3D0 =  X3D(
 
       profile_ : SFString('Immersive'),
-      version_ : SFString('4.0'),
+      version_ : SFString('3.3'),
       head_ : 
         head(
           meta_ : [
@@ -22,10 +22,21 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('identifier'),
-              content_ : SFString('https://coderextreme.net/X3DJSONLD/src/main/data/box.x3d'))]),
+              content_ : SFString('https://coderextreme.net/X3DJSONLD/src/main/data/box.x3d')),
+
+            meta(
+              name_ : SFString('description'),
+              content_ : SFString('3 boxes'))]),
       Scene_ : 
         Scene(
           children_ : [
+            NavigationInfo(
+              type_ : MFString([SFString("EXAMINE")])),
+
+            Viewpoint(
+              description_ : SFString('Cubes on Fire'),
+              position_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(12)])),
+
             ProtoDeclare(
               name_ : SFString('anyShape'),
               ProtoInterface_ : 
@@ -33,22 +44,23 @@ var X3D0 =  X3D(
                   field_ : [
                     field(
                       type_ : SFString("SFVec3f"),
+                      name_ : SFString('xtranslation'),
                       accessType_ : SFString("inputOutput"),
-                      name_ : SFString('xtranslation')),
+                      value_ : SFString('0 0 0')),
 
                     field(
                       type_ : SFString("MFNode"),
-                      accessType_ : SFString("inputOutput"),
                       name_ : SFString('myShape'),
+                      accessType_ : SFString("inputOutput"),
                       children_ : [
                         Shape(
+                          geometry_ : 
+                            Sphere(),
                           appearance_ : 
                             Appearance(
                               material_ : 
                                 Material(
-                                  diffuseColor_ : SFColor([SFDouble(1), SFDouble(1), SFDouble(1)]))),
-                          geometry_ : 
-                            Sphere())])]),
+                                  diffuseColor_ : SFColor([SFDouble(1), SFDouble(1), SFDouble(1)]))))])]),
               ProtoBody_ : 
                 ProtoBody(
                   children_ : [
@@ -71,30 +83,41 @@ var X3D0 =  X3D(
                   field_ : [
                     field(
                       type_ : SFString("SFVec3f"),
+                      name_ : SFString('ytranslation'),
                       accessType_ : SFString("inputOutput"),
-                      name_ : SFString('ytranslation')),
+                      value_ : SFString('0 0 0')),
 
                     field(
                       type_ : SFString("MFNode"),
-                      accessType_ : SFString("inputOutput"),
                       name_ : SFString('myShape'),
+                      accessType_ : SFString("inputOutput"),
                       children_ : [
                         Shape(
-                          DEF_ : SFString('_1'),
+                          geometry_ : 
+                            Cylinder(),
                           appearance_ : 
                             Appearance(
                               material_ : 
                                 Material(
-                                  diffuseColor_ : SFColor([SFDouble(1), SFDouble(1), SFDouble(1)]))),
-                          geometry_ : 
-                            Cylinder())])]),
+                                  diffuseColor_ : SFColor([SFDouble(1), SFDouble(1), SFDouble(1)]))))])]),
               ProtoBody_ : 
                 ProtoBody(
                   children_ : [
                     Transform(
+                      IS_ : 
+                        IS(
+                          connect_ : [
+                            connect(
+                              nodeField_ : SFString('translation'),
+                              protoField_ : SFString('ytranslation'))]),
                       children_ : [
                         ProtoInstance(
                           name_ : SFString('anyShape'),
+                          fieldValue_ : [
+                            fieldValue(
+                              name_ : SFString('xtranslation'),
+                              value_ : SFString('0 0 0'))],
+
                           IS_ : 
                             IS(
                               connect_ : [
@@ -128,39 +151,29 @@ var X3D0 =  X3D(
                               connect_ : [
                                 connect(
                                   nodeField_ : SFString('myShape'),
-                                  protoField_ : SFString('myShape'))]))],
-
-                      IS_ : 
-                        IS(
-                          connect_ : [
-                            connect(
-                              nodeField_ : SFString('translation'),
-                              protoField_ : SFString('ytranslation'))]))])),
-
-            NavigationInfo(
-              type_ : MFString([SFString("EXAMINE")])),
-
-            Viewpoint(
-              description_ : SFString('Cubes on Fire'),
-              position_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(12)])),
+                                  protoField_ : SFString('myShape'))]))])])),
 
             ProtoInstance(
-              DEF_ : SFString('threepi'),
               name_ : SFString('three'),
+              DEF_ : SFString('threepi'),
               fieldValue_ : [
+                fieldValue(
+                  name_ : SFString('ytranslation'),
+                  value_ : SFString('0 0 0')),
+
                 fieldValue(
                   name_ : SFString('myShape'),
                   children_ : [
                     Shape(
                       DEF_ : SFString('box'),
+                      geometry_ : 
+                        Box(
+                          size_ : SFVec3f([SFDouble(1), SFDouble(1), SFDouble(1)])),
                       appearance_ : 
                         Appearance(
                           material_ : 
                             Material(
-                              diffuseColor_ : SFColor([SFDouble(0), SFDouble(1), SFDouble(0)]))),
-                      geometry_ : 
-                        Box(
-                          size_ : SFVec3f([SFDouble(1), SFDouble(1), SFDouble(1)])))])]),
+                              diffuseColor_ : SFColor([SFDouble(0), SFDouble(1), SFDouble(0)]))))])]),
 
             Transform(
               translation_ : SFVec3f([SFDouble(0), SFDouble(2), SFDouble(0)]),

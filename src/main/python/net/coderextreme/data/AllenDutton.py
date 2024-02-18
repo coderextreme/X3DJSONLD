@@ -5,30 +5,30 @@ print("-->")
 import json
 model = (
 X3D(profile="Immersive", version="3.3", 
-head=head(
+head=Pyhead(
 children=[
-component(name="HAnim", level=1),
-meta(name="title", content="AllenDutton.x3d"),
-meta(name="description", content="Articulated human model developed from laser-scan data using X3D native tags, rather than prototypes."),
-meta(name="creator", content="Allen Dutton"),
-meta(name="translator", content="Ozan APAYDIN"),
-meta(name="created", content="8 June 2001"),
-meta(name="translated", content="9 January 2002"),
-meta(name="modified", content="4 July 2020"),
-meta(name="warning", content="X3D Validator reports numerous warnings are present"),
-meta(name="reference", content="http://www.cyberware.com"),
-meta(name="reference", content="AllenDuttonBlurryMotion.x3d"),
-meta(name="reference", content="http://theses.nps.navy.mil/Thesis_01sep_Dutton.pdf"),
-meta(name="reference", content="http://www.MovesInstitute.org/Theses/AllenDutton.pdf"),
-meta(name="reference", content="http://www.HAnim.org"),
-meta(name="identifier", content="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/AllenDutton.x3d"),
-meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
-meta(name="license", content="../license.html"),
-meta(name="translated", content="02 September 2023"),
-meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
-meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
+Pycomponent(name="HAnim", level=1),
+Pymeta(name="title", content="AllenDutton.x3d"),
+Pymeta(name="description", content="Articulated human model developed from laser-scan data using X3D native tags, rather than prototypes."),
+Pymeta(name="creator", content="Allen Dutton"),
+Pymeta(name="translator", content="Ozan APAYDIN"),
+Pymeta(name="created", content="8 June 2001"),
+Pymeta(name="translated", content="9 January 2002"),
+Pymeta(name="modified", content="4 July 2020"),
+Pymeta(name="warning", content="X3D Validator reports numerous warnings are present"),
+Pymeta(name="reference", content="http://www.cyberware.com"),
+Pymeta(name="reference", content="AllenDuttonBlurryMotion.x3d"),
+Pymeta(name="reference", content="http://theses.nps.navy.mil/Thesis_01sep_Dutton.pdf"),
+Pymeta(name="reference", content="http://www.MovesInstitute.org/Theses/AllenDutton.pdf"),
+Pymeta(name="reference", content="http://www.HAnim.org"),
+Pymeta(name="identifier", content="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/AllenDutton.x3d"),
+Pymeta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
+Pymeta(name="license", content="../license.html"),
+Pymeta(name="translated", content="30 December 2023"),
+Pymeta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
+Pymeta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
-Scene=Scene(children=[
+Scene=PyScene(children=[
 Comment(value=''' Start scene graph. '''),
 WorldInfo(title="AllenDutton.x3d"),
 HAnimHumanoid(name="Humanoid", DEF="hanim_Humanoid", version="2.0", skeleton=[

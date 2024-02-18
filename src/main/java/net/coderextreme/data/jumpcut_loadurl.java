@@ -36,16 +36,25 @@ import org.web3d.x3d.jsail.Texturing.*;
 import org.web3d.x3d.jsail.Time.*;
 import org.web3d.x3d.jsail.VolumeRendering.*;
 import org.web3d.x3d.jsail.fields.*;
-public class jumpcut_loadurl {
+import java.util.ArrayList;
+import java.util.List;
+import net.coderextreme.X3DRoots;
+public class jumpcut_loadurl implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    X3D model = new jumpcut_loadurl().initialize();
+    X3D model = new jumpcut_loadurl().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
+    model.toFileX3D("../data/jumpcut_loadurl.new.java.x3d");
     model.toFileJSON("../data/jumpcut_loadurl.new.json");
     }
+    public List<X3D> getRootNodeList() {
+    	List<X3D> list = new ArrayList<X3D>(1);
+    	list.add(initialize());
+    	return list;
+    }
     public X3D initialize() {
-      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
+      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("3.0")
       .setHead(new head()
         .addMeta(new meta().setName("title").setContent("jumpcut_loadurl.x3d"))
         .addMeta(new meta().setName("reference").setContent("http://www.nist.gov/vrml.html"))
@@ -55,16 +64,18 @@ public class jumpcut_loadurl {
         .addMeta(new meta().setName("info").setContent("Correct definition and compliance of this conformance scene is maintained by the X3D Working Group, https://www.web3d.org/working-groups/x3d"))
         .addMeta(new meta().setName("translator").setContent("Michael Kass NIST, Don Brutzman NPS"))
         .addMeta(new meta().setName("translated").setContent("21 January 2001"))
-        .addMeta(new meta().setName("modified").setContent("Sat, 30 Dec 2023 07:50:03 GMT"))
+        .addMeta(new meta().setName("modified").setContent("20 October 2019"))
         .addMeta(new meta().setName("description").setContent("Test jumpcut Viewpoint transition using Script loadUrl method. A NavigationInfo type of ANY is NOT included in the NavigationInfo node field in this world. Consequently, a Script node with a call to the \"loadURL\" method, with a url corresponding to the MFString \"Top_View\" (the name of a Viewpoint in this world) should create a \"jump cut\" transition of views when the Box geometry in this world is indicated by the pointing device. As a result, indicating the Box geometry should result in a Viewpoint transition to the top view of the Box geometry."))
         .addMeta(new meta().setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.x3d"))
-        .addMeta(new meta().setName("generator").setContent("Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html")))
+        .addMeta(new meta().setName("generator").setContent("Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"))
+        .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
+        .addMeta(new meta().setName("license").setContent("../../license.html")))
       .setScene(new Scene()
         .addChild(new WorldInfo().setTitle("jumpcut_loadurl.x3d"))
-        .addChild(new Background().setSkyColor(new MFColor0().getArray()).setGroundAngle(new MFFloat1().getArray()).setGroundColor(new MFColor2().getArray()))
+        .addChild(new Background().setGroundAngle(new MFFloat0().getArray()).setGroundColor(new MFColor1().getArray()).setSkyColor(new MFColor2().getArray()))
         .addChild(new NavigationInfo().setType("\"EXAMINE\" \"WALK\" \"FLY\" \"ANY\""))
         .addChild(new Viewpoint().setDEF("Front_View").setDescription("Front View"))
-        .addChild(new Viewpoint().setDEF("Top_View").setDescription("Top View").setPosition(new float[] {0f,10f,0f}).setOrientation(new float[] {1f,0f,0f,-1.57f}))
+        .addChild(new Viewpoint().setDEF("Top_View").setDescription("Top View").setOrientation(new double[] {1,0,0,-1.57}).setPosition(new double[] {0,10,0}))
         .addChild(new TouchSensor().setDEF("STARTER").setDescription("touch to activate"))
         .addChild(new Transform().setDEF("ROOT")
           .addChild(new Shape()
@@ -72,25 +83,25 @@ public class jumpcut_loadurl {
               .setMaterial(new Material()))
             .setGeometry(new Box())))
         .addChild(new Script().setDEF("MYSCRIPT").setUrl(new MFString3().getArray())
-          .addField(new field().setType("MFString").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setName("myParameter").setValue("\"Top_View\""))
-          .addField(new field().setType("MFString").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setName("myUrl").setValue("\"jumpcut_loadurl.x3d#Top_View\" \"https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.x3d#Top_View\" \"jumpcut_loadurl.wrl#Top_View\" \"https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.wrl#Top_View\""))
-          .addField(new field().setType("SFBool").setAccessType(field.ACCESSTYPE_INPUTONLY).setName("trigger_event")))
-        .addChild(new ROUTE().setFromNode("STARTER").setFromField("isActive").setToNode("MYSCRIPT").setToField("trigger_event")))      ;
+          .addField(new field().setType("MFString").setName("myParameter").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue("\"Top_View\""))
+          .addField(new field().setType("MFString").setName("myUrl").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue("\"jumpcut_loadurl.x3d#Top_View\" \"https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.x3d#Top_View\" \"jumpcut_loadurl.wrl#Top_View\" \"https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.wrl#Top_View\""))
+          .addField(new field().setType("SFBool").setName("trigger_event").setAccessType(field.ACCESSTYPE_INPUTONLY)))
+        .addChild(new ROUTE().setFromField("isActive").setFromNode("STARTER").setToField("trigger_event").setToNode("MYSCRIPT")))      ;
     return X3D0;
     }
-private class MFColor0 {
-  private org.web3d.x3d.jsail.fields.MFColor getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0f,0f,1f});
+private class MFFloat0 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {1.57});
   }
 }
-private class MFFloat1 {
-  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {1.57f});
+private class MFColor1 {
+  private org.web3d.x3d.jsail.fields.MFColor getArray() {
+    return new org.web3d.x3d.jsail.fields.MFColor(new double[] {0,0.5,0,0,0.5,0});
   }
 }
 private class MFColor2 {
   private org.web3d.x3d.jsail.fields.MFColor getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0f,0.5f,0f,0f,0.5f,0f});
+    return new org.web3d.x3d.jsail.fields.MFColor(new double[] {0,0,1});
   }
 }
 private class MFString3 {

@@ -36,13 +36,22 @@ import org.web3d.x3d.jsail.Texturing.*;
 import org.web3d.x3d.jsail.Time.*;
 import org.web3d.x3d.jsail.VolumeRendering.*;
 import org.web3d.x3d.jsail.fields.*;
-public class MainStage {
+import java.util.ArrayList;
+import java.util.List;
+import net.coderextreme.X3DRoots;
+public class MainStage implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    X3D model = new MainStage().initialize();
+    X3D model = new MainStage().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
+    model.toFileX3D("../data/MainStage.new.java.x3d");
     model.toFileJSON("../data/MainStage.new.json");
+    }
+    public List<X3D> getRootNodeList() {
+    	List<X3D> list = new ArrayList<X3D>(1);
+    	list.add(initialize());
+    	return list;
     }
     public X3D initialize() {
       X3D X3D0 =  new X3D().setProfile("Interchange").setVersion("4.0")
@@ -61,42 +70,42 @@ public class MainStage {
       .setScene(new Scene()
         .addChild(new WorldInfo().setTitle("MainStage.x3d"))
         .addChild(new NavigationInfo().setHeadlight(false))
-        .addChild(new DirectionalLight().setAmbientIntensity(1f ).setDirection(new float[] {-0.5f ,-0.5f ,-0.5f }).setGlobal(true))
-        .addChild(new DirectionalLight().setAmbientIntensity(1f ).setDirection(new float[] {-1f ,-1f ,-1f }).setGlobal(true))
-        .addChild(new DirectionalLight().setAmbientIntensity(1f ).setDirection(new float[] {1f ,1f ,-1f }).setGlobal(true).setIntensity(0.5f ))
-        .addChild(new Viewpoint().setDEF("Scene_StageFrontViewFar").setDescription("hanim_Stage Front View").setOrientation(new float[] {1f ,0f ,0f ,-0.449999988f }).setPosition(new float[] {0f ,4f ,10f }))
-        .addChild(new Viewpoint().setDEF("Scene_InclinedView").setDescription("hanim_Inclined View").setOrientation(new float[] {-0.112999998f ,0.992999971f ,0.034699999f ,0.671000004f }).setPosition(new float[] {2.619999886f ,1.049999952f ,4.059999943f }))
-        .addChild(new Viewpoint().setDEF("Scene_StageFrontView").setDescription("hanim_Stage Front View").setPosition(new float[] {0f ,1f ,5f }))
-        .addChild(new Viewpoint().setDEF("Scene_FeetStageBottomView").setDescription("hanim_feet View").setOrientation(new float[] {1f ,0f ,0f ,1.570000052f }).setPosition(new float[] {0f ,-10f ,0f }))
-        .addChild(new Viewpoint().setDEF("Scene_HeadTopView").setDescription("hanim_Head Top View").setOrientation(new float[] {1f ,0f ,0f ,-1.570000052f }).setPosition(new float[] {0f ,15f ,0f }))
-        .addChild(new Viewpoint().setDEF("Scene_TopFrontCloseView").setDescription("hanim_Head Top View").setOrientation(new float[] {1f ,0f ,0f ,-1.100000024f }).setPosition(new float[] {0f ,8f ,3f }))
+        .addChild(new DirectionalLight().setAmbientIntensity(1).setDirection(new double[] {-0.5,-0.5,-0.5}).setGlobal(true))
+        .addChild(new DirectionalLight().setAmbientIntensity(1).setDirection(new double[] {-1,-1,-1}).setGlobal(true))
+        .addChild(new DirectionalLight().setAmbientIntensity(1).setDirection(new double[] {1,1,-1}).setGlobal(true).setIntensity(0.5))
+        .addChild(new Viewpoint().setDEF("Scene_StageFrontViewFar").setDescription("hanim_Stage Front View").setOrientation(new double[] {1,0,0,-0.449999988}).setPosition(new double[] {0,4,10}))
+        .addChild(new Viewpoint().setDEF("Scene_InclinedView").setDescription("hanim_Inclined View").setOrientation(new double[] {-0.112999998,0.992999971,0.034699999,0.671000004}).setPosition(new double[] {2.619999886,1.049999952,4.059999943}))
+        .addChild(new Viewpoint().setDEF("Scene_StageFrontView").setDescription("hanim_Stage Front View").setPosition(new double[] {0,1,5}))
+        .addChild(new Viewpoint().setDEF("Scene_FeetStageBottomView").setDescription("hanim_feet View").setOrientation(new double[] {1,0,0,1.570000052}).setPosition(new double[] {0,-10,0}))
+        .addChild(new Viewpoint().setDEF("Scene_HeadTopView").setDescription("hanim_Head Top View").setOrientation(new double[] {1,0,0,-1.570000052}).setPosition(new double[] {0,15,0}))
+        .addChild(new Viewpoint().setDEF("Scene_TopFrontCloseView").setDescription("hanim_Head Top View").setOrientation(new double[] {1,0,0,-1.100000024}).setPosition(new double[] {0,8,3}))
         .addChild(new Group().setDEF("HAnimStage")
-          .addChild(new Transform().setDEF("cordsysfloor").setScale(new float[] {0.174999997f ,0.174999997f ,0.174999997f })
+          .addChild(new Transform().setDEF("cordsysfloor").setScale(new double[] {0.174999997,0.174999997,0.174999997})
             .addChild(new Inline().setUrl(new MFString0().getArray())))
-          .addChild(new Transform().setDEF("StageGeometry").setScale(new float[] {1f ,0.01f ,1f }).setTranslation(new float[] {0f ,-0.01f ,0f })
+          .addChild(new Transform().setDEF("StageGeometry").setScale(new double[] {1,0.01,1}).setTranslation(new double[] {0,-0.01,0})
             .addChild(new Shape()
               .setAppearance(new Appearance()
-                .setMaterial(new Material().setTransparency(0.6f )))
-              .setGeometry(new Box().setSize(new float[] {9f ,1f ,9f })))
+                .setMaterial(new Material().setTransparency(0.6)))
+              .setGeometry(new Box().setSize(new double[] {9,1,9})))
             .addChild(new Transform().setDEF("Circle0")
               .addChild(new Shape()
                 .setAppearance(new Appearance().setDEF("LineColor")
-                  .setMaterial(new Material().setAmbientIntensity(1f ).setDiffuseColor(new float[] {0.699999988f ,0f ,0.899999976f }).setEmissiveColor(new float[] {0.449999988f ,0.449999988f ,1f }).setShininess(1f ).setSpecularColor(new float[] {0f ,0f ,1f })))
+                  .setMaterial(new Material().setAmbientIntensity(1).setDiffuseColor(new double[] {0.699999988,0,0.899999976}).setEmissiveColor(new double[] {0.449999988,0.449999988,1}).setShininess(1).setSpecularColor(new double[] {0,0,1})))
                 .setGeometry(new IndexedLineSet().setDEF("Orbit1").setCoordIndex(new MFInt321().getArray())
                   .setCoord(new Coordinate().setPoint(new MFVec3f2().getArray())))))
-            .addChild(new Transform().setDEF("Circle1").setScale(new float[] {0.5f ,1f ,0.5f })
+            .addChild(new Transform().setDEF("Circle1").setScale(new double[] {0.5,1,0.5})
               .addChild(new Shape()
                 .setAppearance(new Appearance().setUSE("LineColor"))
                 .setGeometry(new IndexedLineSet().setUSE("Orbit1"))))
-            .addChild(new Transform().setDEF("Circle2").setScale(new float[] {0.25f ,1f ,0.25f })
+            .addChild(new Transform().setDEF("Circle2").setScale(new double[] {0.25,1,0.25})
               .addChild(new Shape()
                 .setAppearance(new Appearance().setUSE("LineColor"))
                 .setGeometry(new IndexedLineSet().setUSE("Orbit1"))))
-            .addChild(new Transform().setDEF("Circle3").setScale(new float[] {2f ,1f ,2f })
+            .addChild(new Transform().setDEF("Circle3").setScale(new double[] {2,1,2})
               .addChild(new Shape()
                 .setAppearance(new Appearance().setUSE("LineColor"))
                 .setGeometry(new IndexedLineSet().setUSE("Orbit1"))))
-            .addChild(new Transform().setDEF("Circle4").setScale(new float[] {3f ,1f ,3f })
+            .addChild(new Transform().setDEF("Circle4").setScale(new double[] {3,1,3})
               .addChild(new Shape()
                 .setAppearance(new Appearance().setUSE("LineColor"))
                 .setGeometry(new IndexedLineSet().setUSE("Orbit1")))))))      ;
@@ -114,7 +123,7 @@ private class MFInt321 {
 }
 private class MFVec3f2 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {1f ,0f ,0f ,0.995000005f ,0f ,-0.104999997f ,0.978999972f ,0f ,-0.208000004f ,0.950999975f ,0f ,-0.308999985f ,0.913999975f ,0f ,-0.407000005f ,0.865999997f ,0f ,-0.5f ,0.809000015f ,0f ,-0.588f ,0.742999971f ,0f ,-0.66900003f ,0.66900003f ,0f ,-0.742999971f ,0.588f ,0f ,-0.809000015f ,0.5f ,0f ,-0.865999997f ,0.407000005f ,0f ,-0.913999975f ,0.308999985f ,0f ,-0.950999975f ,0.208000004f ,0f ,-0.977999985f ,0.104999997f ,0f ,-0.995000005f ,0f ,0f ,-1f ,-0.104999997f ,0f ,-0.994521976f ,-0.208000004f ,0f ,-0.977999985f ,-0.308999985f ,0f ,-0.950999975f ,-0.407000005f ,0f ,-0.913999975f ,-0.5f ,0f ,-0.865999997f ,-0.588f ,0f ,-0.809000015f ,-0.66900003f ,0f ,-0.742999971f ,-0.742999971f ,0f ,-0.66900003f ,-0.809000015f ,0f ,-0.588f ,-0.865999997f ,0f ,-0.5f ,-0.913999975f ,0f ,-0.407000005f ,-0.950999975f ,0f ,-0.308999985f ,-0.977999985f ,0f ,-0.208000004f ,-0.995000005f ,0f ,-0.104999997f ,-1f ,0f ,0f ,-0.995000005f ,0f ,0.104999997f ,-0.977999985f ,0f ,0.208000004f ,-0.950999975f ,0f ,0.308999985f ,-0.913999975f ,0f ,0.407000005f ,-0.865999997f ,0f ,0.5f ,-0.809000015f ,0f ,0.588f ,-0.742999971f ,0f ,0.66900003f ,-0.66900003f ,0f ,0.742999971f ,-0.588f ,0f ,0.809000015f ,-0.5f ,0f ,0.865999997f ,-0.407000005f ,0f ,0.913999975f ,-0.308999985f ,0f ,0.950999975f ,-0.208000004f ,0f ,0.977999985f ,-0.104999997f ,0f ,0.995000005f ,0f ,0f ,1f ,0.104999997f ,0f ,0.995000005f ,0.208000004f ,0f ,0.977999985f ,0.308999985f ,0f ,0.950999975f ,0.407000005f ,0f ,0.913999975f ,0.5f ,0f ,0.865999997f ,0.588f ,0f ,0.809000015f ,0.66900003f ,0f ,0.742999971f ,0.742999971f ,0f ,0.66900003f ,0.809000015f ,0f ,0.588f ,0.865999997f ,0f ,0.5f ,0.913999975f ,0f ,0.407000005f ,0.950999975f ,0f ,0.308999985f ,0.977999985f ,0f ,0.208000004f ,0.995000005f ,0f ,0.104000002f ,1f ,0f ,0f });
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {1,0,0,0.995000005,0,-0.104999997,0.978999972,0,-0.208000004,0.950999975,0,-0.308999985,0.913999975,0,-0.407000005,0.865999997,0,-0.5,0.809000015,0,-0.588,0.742999971,0,-0.66900003,0.66900003,0,-0.742999971,0.588,0,-0.809000015,0.5,0,-0.865999997,0.407000005,0,-0.913999975,0.308999985,0,-0.950999975,0.208000004,0,-0.977999985,0.104999997,0,-0.995000005,0,0,-1,-0.104999997,0,-0.994521976,-0.208000004,0,-0.977999985,-0.308999985,0,-0.950999975,-0.407000005,0,-0.913999975,-0.5,0,-0.865999997,-0.588,0,-0.809000015,-0.66900003,0,-0.742999971,-0.742999971,0,-0.66900003,-0.809000015,0,-0.588,-0.865999997,0,-0.5,-0.913999975,0,-0.407000005,-0.950999975,0,-0.308999985,-0.977999985,0,-0.208000004,-0.995000005,0,-0.104999997,-1,0,0,-0.995000005,0,0.104999997,-0.977999985,0,0.208000004,-0.950999975,0,0.308999985,-0.913999975,0,0.407000005,-0.865999997,0,0.5,-0.809000015,0,0.588,-0.742999971,0,0.66900003,-0.66900003,0,0.742999971,-0.588,0,0.809000015,-0.5,0,0.865999997,-0.407000005,0,0.913999975,-0.308999985,0,0.950999975,-0.208000004,0,0.977999985,-0.104999997,0,0.995000005,0,0,1,0.104999997,0,0.995000005,0.208000004,0,0.977999985,0.308999985,0,0.950999975,0.407000005,0,0.913999975,0.5,0,0.865999997,0.588,0,0.809000015,0.66900003,0,0.742999971,0.742999971,0,0.66900003,0.809000015,0,0.588,0.865999997,0,0.5,0.913999975,0,0.407000005,0.950999975,0,0.308999985,0.977999985,0,0.208000004,0.995000005,0,0.104000002,1,0,0});
   }
 }
 }

@@ -36,22 +36,31 @@ import org.web3d.x3d.jsail.Texturing.*;
 import org.web3d.x3d.jsail.Time.*;
 import org.web3d.x3d.jsail.VolumeRendering.*;
 import org.web3d.x3d.jsail.fields.*;
-public class ObliqueStrategies {
+import java.util.ArrayList;
+import java.util.List;
+import net.coderextreme.X3DRoots;
+public class ObliqueStrategies implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    X3D model = new ObliqueStrategies().initialize();
+    X3D model = new ObliqueStrategies().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
+    model.toFileX3D("../data/ObliqueStrategies.new.java.x3d");
     model.toFileJSON("../data/ObliqueStrategies.new.json");
     }
+    public List<X3D> getRootNodeList() {
+    	List<X3D> list = new ArrayList<X3D>(1);
+    	list.add(initialize());
+    	return list;
+    }
     public X3D initialize() {
-      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
+      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
       .setHead(new head()
         .addMeta(new meta().setName("title").setContent("ObliqueStrategies.x3d"))
         .addMeta(new meta().setName("description").setContent("Text scripting and animation example using Oblique Strategies card set by Brian Eno."))
         .addMeta(new meta().setName("creator").setContent("Don Brutzman, John Kelly, Ben Cheng"))
         .addMeta(new meta().setName("created").setContent("3 November 2013"))
-        .addMeta(new meta().setName("modified").setContent("Sat, 30 Dec 2023 07:55:52 GMT"))
+        .addMeta(new meta().setName("modified").setContent("10 November 2019"))
         .addMeta(new meta().setName("reference").setContent("oblique.html"))
         .addMeta(new meta().setName("reference").setContent("ObliqueStrategies.txt"))
         .addMeta(new meta().setName("reference").setContent("ObliqueStrategiesScript.js"))
@@ -60,105 +69,114 @@ public class ObliqueStrategies {
         .addMeta(new meta().setName("reference").setContent("http://gothpunk.com/haiku-intro.html"))
         .addMeta(new meta().setName("reference").setContent("http://www.rtqe.net/ObliqueStrategies/OSintro.html"))
         .addMeta(new meta().setName("reference").setContent("https://en.wikipedia.org/wiki/Oblique_Strategies"))
-        .addMeta(new meta().setName("reference").setContent("http://stackoverflow.com/questions/9163988/download-mp3-from-google-translate-text-to-speech"))
-        .addMeta(new meta().setName("reference").setContent("http://www.greenbot.com/article/2105862/how-to-get-started-with-google-text-to-speech.html"))
-        .addMeta(new meta().setName("reference").setContent("https://gist.github.com/alotaiba/1728771"))
-        .addMeta(new meta().setName("reference").setContent("https://stackoverflow.com/questions/35002003/how-to-use-google-translate-tts-with-the-new-v2-api"))
-        .addMeta(new meta().setName("reference").setContent("https://cloud.google.com/translate/docs/basic/translating-text"))
         .addMeta(new meta().setName("subject").setContent("Brian Eno, Oblique Strategies"))
         .addMeta(new meta().setName("Image").setContent("images/ObliqueStrategiesEntryScreen.png"))
         .addMeta(new meta().setName("Sound").setContent("http://translate.google.com/translate_tts?tl=en&q=hello%20X3D"))
         .addMeta(new meta().setName("Sound").setContent("translate_tts_HelloX3D.mp3"))
         .addMeta(new meta().setName("Sound").setContent("translate_tts_HelloX3D.wav"))
-        .addMeta(new meta().setName("Sound").setContent("https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=en&q=Hello+X3D4"))
-        .addMeta(new meta().setName("Sound").setContent("translate_tts_HelloX3D4.mp3"))
         .addMeta(new meta().setName("TODO").setContent("multiliingual translation parameter"))
+        .addMeta(new meta().setName("reference").setContent("http://stackoverflow.com/questions/9163988/download-mp3-from-google-translate-text-to-speech"))
+        .addMeta(new meta().setName("reference").setContent("http://www.greenbot.com/article/2105862/how-to-get-started-with-google-text-to-speech.html"))
         .addMeta(new meta().setName("warning").setContent("under development, scene Sound/AudioClip triggering (or retrieved file format) not working"))
         .addMeta(new meta().setName("warning").setContent("TODO resolve potential error in Script node TextScript: parse problem line 15 \" var strategy = [];"))
-        .addMeta(new meta().setName("identifier").setContent("https://x3dgraphics.com/examples/X3dForAdvancedModeling/Inspiration/ObliqueStrategies.x3d")))
+        .addMeta(new meta().setName("reference").setContent("https://gist.github.com/alotaiba/1728771"))
+        .addMeta(new meta().setName("reference").setContent("https://stackoverflow.com/questions/35002003/how-to-use-google-translate-tts-with-the-new-v2-api"))
+        .addMeta(new meta().setName("Sound").setContent("https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=en&q=Hello+X3D4"))
+        .addMeta(new meta().setName("Sound").setContent("translate_tts_HelloX3D4.mp3"))
+        .addMeta(new meta().setName("reference").setContent("https://cloud.google.com/translate/docs/basic/translating-text"))
+        .addMeta(new meta().setName("identifier").setContent("https://x3dgraphics.com/examples/X3dForAdvancedModeling/Inspiration/ObliqueStrategies.x3d"))
+        .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
+        .addMeta(new meta().setName("license").setContent("../license.html")))
       .setScene(new Scene()
         .addChild(new WorldInfo().setTitle("ObliqueStrategies.x3d"))
         .addChild(new NavigationInfo().setType("\"NONE\""))
         .addChild(new Background().setSkyColor(new MFColor0().getArray()))
-        .addChild(new Transform().setTranslation(new float[] {0f,1f,0f}).setScale(new float[] {0.4f,0.4f,0.4f})
+        .addChild(new Transform().setScale(new double[] {0.4,0.4,0.4}).setTranslation(new double[] {0,1,0})
           .addChild(new TouchSensor().setDEF("RandomTextClickedSensor").setDescription("Select to see a new strategy"))
           .addChild(new Shape()
-            .setAppearance(new Appearance()
-              .setMaterial(new Material().setDiffuseColor(new float[] {1f,1f,1f})))
             .setGeometry(new Text().setString(new MFString1().getArray())
-              .setFontStyle(new FontStyle().setDEF("MessageFont").setFamily(new MFString2().getArray()).setStyle("BOLD").setJustify(new MFString3().getArray()))))
-          .addChild(new Transform().setScale(new float[] {10f,3f,1f})
-            .addChild(new Shape().setDEF("HeadlineClickSurface")
-              .setAppearance(new Appearance()
-                .setMaterial(new Material().setAmbientIntensity(0.245763f).setDiffuseColor(new float[] {0.34773f,0.090909f,0.005289f}).setSpecularColor(new float[] {0.336735f,0.051091f,0.051091f}).setShininess(0.07f).setTransparency(0.8f)))
-              .setGeometry(new IndexedFaceSet().setSolid(false).setCoordIndex(new MFInt324().getArray())
-                .setCoord(new Coordinate().setPoint(new MFVec3f5().getArray()))))))
-        .addChild(new Script().setDEF("TextScript").setUrl(new MFString6().getArray())
-          .addField(new field().setType("SFInt32").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setName("index"))
-          .addField(new field().setType("MFString").setAccessType(field.ACCESSTYPE_OUTPUTONLY).setName("string_changed"))
-          .addField(new field().setType("MFString").setAccessType(field.ACCESSTYPE_OUTPUTONLY).setName("textToSpeechUrl"))
-          .addField(new field().setType("SFTime").setAccessType(field.ACCESSTYPE_OUTPUTONLY).setName("newCardTime"))
-          .addField(new field().setType("SFBool").setAccessType(field.ACCESSTYPE_INPUTONLY).setName("selectPreviousCard"))
-          .addField(new field().setType("SFBool").setAccessType(field.ACCESSTYPE_INPUTONLY).setName("selectNextCard"))
-          .addField(new field().setType("SFBool").setAccessType(field.ACCESSTYPE_INPUTONLY).setName("selectRandomCard"))
-          .addField(new field().setType("SFBool").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setName("traceEnabled").setValue("true")))
-        .addChild(new Transform().setDEF("CardTransform").setTranslation(new float[] {0f,-1.5f,0f}).setScale(new float[] {0.4f,0.4f,0.4f})
-          .addChild(new Shape()
+              .setFontStyle(new FontStyle().setDEF("MessageFont").setFamily(new MFString2().getArray()).setJustify(new MFString3().getArray()).setStyle("BOLD")))
             .setAppearance(new Appearance()
-              .setMaterial(new Material().setDiffuseColor(new float[] {1f,1f,1f})))
-            .setGeometry(new Text().setDEF("CardText")
-              .setFontStyle(new FontStyle().setFamily(new MFString7().getArray()).setStyle("BOLD").setJustify(new MFString8().getArray()))))
-          .addChild(new Sound().setDEF("CardSoundSpatialization").setMinBack(20f).setMinFront(20f).setMaxBack(100f).setMaxFront(100f)
-            .setSource(new AudioClip().setDEF("TextToSpeechAudioClip").setDescription("sends strategy text google translate").setUrl(new MFString9().getArray()))))
-        .addChild(new Transform().setTranslation(new float[] {-3.2f,2.5f,0f}).setScale(new float[] {0.4f,0.4f,0.4f})
-          .addChild(new TouchSensor().setDEF("PreviousTextClickedSensor").setDescription("Select to see previous strategy"))
-          .addChild(new Shape()
-            .setAppearance(new Appearance().setDEF("InterfaceAppearance")
-              .setMaterial(new Material().setDiffuseColor(new float[] {1f,0f,0.6f})))
-            .setGeometry(new Text().setString(new MFString10().getArray())
-              .setFontStyle(new FontStyle().setUSE("MessageFont"))))
-          .addChild(new Transform().setScale(new float[] {2f,0.6f,1f})
-            .addChild(new Shape().setDEF("TransparentClickSurface")
+              .setMaterial(new Material().setDiffuseColor(new double[] {1,1,1}))))
+          .addChild(new Transform().setScale(new double[] {10,3,1})
+            .addChild(new Shape().setDEF("HeadlineClickSurface")
+              .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt324().getArray()).setSolid(false)
+                .setCoord(new Coordinate().setPoint(new MFVec3f5().getArray())))
               .setAppearance(new Appearance()
-                .setMaterial(new Material().setTransparency(1f)))
-              .setGeometry(new IndexedFaceSet().setSolid(false).setCoordIndex(new MFInt3211().getArray())
-                .setCoord(new Coordinate().setPoint(new MFVec3f12().getArray()))))))
-        .addChild(new Transform().setTranslation(new float[] {3.5f,2.5f,0f}).setScale(new float[] {0.4f,0.4f,0.4f})
+                .setMaterial(new Material().setAmbientIntensity(0.245763).setDiffuseColor(new double[] {0.34773,0.090909,0.005289}).setShininess(0.07).setSpecularColor(new double[] {0.336735,0.051091,0.051091}).setTransparency(0.8))))))
+        .addChild(new Script().setDEF("TextScript").setUrl(new MFString6().getArray())
+          .addComments("initialize() method includes unit test to printAllStrategies() to console")
+          .addComments("TODO insert field definitions here (index string_changed previous next random) and then animate!")
+          .addField(new field().setType("SFInt32").setName("index").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("index for active strategy card, -1 means no selection").setValue("0"))
+          .addField(new field().setType("MFString").setName("string_changed").setAccessType(field.ACCESSTYPE_OUTPUTONLY).setAppinfo("latest strategy card value"))
+          .addField(new field().setType("MFString").setName("textToSpeechUrl").setAccessType(field.ACCESSTYPE_OUTPUTONLY).setAppinfo("\"url to invoke Google Translate\""))
+          .addField(new field().setType("SFTime").setName("newCardTime").setAccessType(field.ACCESSTYPE_OUTPUTONLY).setAppinfo("activate Sound node"))
+          .addField(new field().setType("SFBool").setName("selectPreviousCard").setAccessType(field.ACCESSTYPE_INPUTONLY))
+          .addField(new field().setType("SFBool").setName("selectNextCard").setAccessType(field.ACCESSTYPE_INPUTONLY))
+          .addField(new field().setType("SFBool").setName("selectRandomCard").setAccessType(field.ACCESSTYPE_INPUTONLY))
+          .addField(new field().setType("SFBool").setName("traceEnabled").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("controls console tracing").setValue("true")))
+        .addChild(new Transform().setDEF("CardTransform").setScale(new double[] {0.4,0.4,0.4}).setTranslation(new double[] {0,-1.5,0})
+          .addChild(new Shape()
+            .setGeometry(new Text().setDEF("CardText")
+              .setFontStyle(new FontStyle().setFamily(new MFString7().getArray()).setJustify(new MFString8().getArray()).setStyle("BOLD")))
+            .setAppearance(new Appearance()
+              .setMaterial(new Material().setDiffuseColor(new double[] {1,1,1}))))
+          .addChild(new ROUTE().setFromField("string_changed").setFromNode("TextScript").setToField("string").setToNode("CardText"))
+          .addChild(new Sound().setDEF("CardSoundSpatialization").setMaxBack(100).setMaxFront(100).setMinBack(20).setMinFront(20)
+            .addComments("Make sure the sound source AudioClip is audible at the user location")
+            .addComments("Not all X3D players seem to use the .mp3")
+            .addComments("&#38; is ampersand character, avoids escaping problems and inconsistencies in browsers and X3D players")
+            .addComments("%20 is space character used in uri/url encoding")
+            .setSource(new AudioClip().setDEF("TextToSpeechAudioClip").setDescription("sends strategy text google translate").setUrl(new MFString9().getArray())))
+          .addChild(new ROUTE().setFromField("textToSpeechUrl").setFromNode("TextScript").setToField("url").setToNode("TextToSpeechAudioClip"))
+          .addChild(new ROUTE().setFromField("newCardTime").setFromNode("TextScript").setToField("startTime").setToNode("TextToSpeechAudioClip")))
+        .addChild(new Transform().setScale(new double[] {0.4,0.4,0.4}).setTranslation(new double[] {-3.2,2.5,0})
+          .addChild(new TouchSensor().setDEF("PreviousTextClickedSensor").setDescription("Select to see previous strategy"))
+          .addChild(new ROUTE().setFromField("isActive").setFromNode("PreviousTextClickedSensor").setToField("selectPreviousCard").setToNode("TextScript"))
+          .addChild(new Shape()
+            .setGeometry(new Text().setString(new MFString10().getArray())
+              .setFontStyle(new FontStyle().setUSE("MessageFont")))
+            .setAppearance(new Appearance().setDEF("InterfaceAppearance")
+              .setMaterial(new Material().setDiffuseColor(new double[] {1,0,0.6}))))
+          .addChild(new Transform().setScale(new double[] {2,0.6,1})
+            .addChild(new Shape().setDEF("TransparentClickSurface")
+              .addComments("support Selectable Text with a scalable IFS")
+              .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3211().getArray()).setSolid(false)
+                .setCoord(new Coordinate().setPoint(new MFVec3f12().getArray())))
+              .setAppearance(new Appearance()
+                .setMaterial(new Material().setTransparency(1))))))
+        .addChild(new Transform().setScale(new double[] {0.4,0.4,0.4}).setTranslation(new double[] {3.5,2.5,0})
           .addChild(new TouchSensor().setDEF("NextTextClickedSensor").setDescription("Select to see next strategy"))
+          .addChild(new ROUTE().setFromField("isActive").setFromNode("NextTextClickedSensor").setToField("selectNextCard").setToNode("TextScript"))
           .addChild(new Shape()
-            .setAppearance(new Appearance().setUSE("InterfaceAppearance"))
             .setGeometry(new Text().setString(new MFString13().getArray())
-              .setFontStyle(new FontStyle().setUSE("MessageFont"))))
-          .addChild(new Transform().setScale(new float[] {1.2f,0.6f,1f})
+              .setFontStyle(new FontStyle().setUSE("MessageFont")))
+            .setAppearance(new Appearance().setUSE("InterfaceAppearance")))
+          .addChild(new Transform().setScale(new double[] {1.2,0.6,1})
             .addChild(new Shape().setUSE("TransparentClickSurface"))))
-        .addChild(new Transform().setTranslation(new float[] {-3.3f,-0.5f,0f}).setScale(new float[] {0.4f,0.4f,0.4f})
+        .addChild(new Transform().setScale(new double[] {0.4,0.4,0.4}).setTranslation(new double[] {-3.3,-0.5,0})
           .addChild(new TouchSensor().setUSE("RandomTextClickedSensor"))
+          .addChild(new ROUTE().setFromField("isActive").setFromNode("RandomTextClickedSensor").setToField("selectRandomCard").setToNode("TextScript"))
           .addChild(new Shape()
-            .setAppearance(new Appearance().setUSE("InterfaceAppearance"))
             .setGeometry(new Text().setString(new MFString14().getArray())
-              .setFontStyle(new FontStyle().setUSE("MessageFont"))))
-          .addChild(new Transform().setScale(new float[] {1.8f,0.6f,1f})
+              .setFontStyle(new FontStyle().setUSE("MessageFont")))
+            .setAppearance(new Appearance().setUSE("InterfaceAppearance")))
+          .addChild(new Transform().setScale(new double[] {1.8,0.6,1})
             .addChild(new Shape().setUSE("TransparentClickSurface"))))
-        .addChild(new Transform().setTranslation(new float[] {3.3f,-0.5f,0f}).setScale(new float[] {0.4f,0.4f,0.4f})
-          .addChild(new Anchor().setDEF("TextToSpeechAnchor").setDescription("text to speech in browser").setUrl(new MFString15().getArray()).setParameter(new MFString16().getArray())
+        .addChild(new Transform().setScale(new double[] {0.4,0.4,0.4}).setTranslation(new double[] {3.3,-0.5,0})
+          .addChild(new Anchor().setDEF("TextToSpeechAnchor").setDescription("text to speech in browser").setParameter(new MFString15().getArray()).setUrl(new MFString16().getArray())
+            .addChild(new ROUTE().setFromField("textToSpeechUrl").setFromNode("TextScript").setToField("url").setToNode("TextToSpeechAnchor"))
             .addChild(new Shape()
-              .setAppearance(new Appearance().setUSE("InterfaceAppearance"))
               .setGeometry(new Text().setString(new MFString17().getArray())
-                .setFontStyle(new FontStyle().setUSE("MessageFont"))))
-            .addChild(new Transform().setScale(new float[] {1.8f,0.6f,1f})
-              .addChild(new Shape().setUSE("TransparentClickSurface")))))
-        .addChild(new ROUTE().setFromNode("TextScript").setFromField("string_changed").setToNode("CardText").setToField("string"))
-        .addChild(new ROUTE().setFromNode("TextScript").setFromField("textToSpeechUrl").setToNode("TextToSpeechAudioClip").setToField("url"))
-        .addChild(new ROUTE().setFromNode("TextScript").setFromField("newCardTime").setToNode("TextToSpeechAudioClip").setToField("startTime"))
-        .addChild(new ROUTE().setFromNode("PreviousTextClickedSensor").setFromField("isActive").setToNode("TextScript").setToField("selectPreviousCard"))
-        .addChild(new ROUTE().setFromNode("NextTextClickedSensor").setFromField("isActive").setToNode("TextScript").setToField("selectNextCard"))
-        .addChild(new ROUTE().setFromNode("RandomTextClickedSensor").setFromField("isActive").setToNode("TextScript").setToField("selectRandomCard"))
-        .addChild(new ROUTE().setFromNode("TextScript").setFromField("textToSpeechUrl").setToNode("TextToSpeechAnchor").setToField("url")))      ;
+                .setFontStyle(new FontStyle().setUSE("MessageFont")))
+              .setAppearance(new Appearance().setUSE("InterfaceAppearance")))
+            .addChild(new Transform().setScale(new double[] {1.8,0.6,1})
+              .addChild(new Shape().setUSE("TransparentClickSurface"))))))      ;
     return X3D0;
     }
 private class MFColor0 {
   private org.web3d.x3d.jsail.fields.MFColor getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0.419608f,0.427451f,1f});
+    return new org.web3d.x3d.jsail.fields.MFColor(new double[] {0.419608,0.427451,1});
   }
 }
 private class MFString1 {
@@ -183,7 +201,7 @@ private class MFInt324 {
 }
 private class MFVec3f5 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {1f,1f,0f,1f,-1f,0f,-1f,-1f,0f,-1f,1f,0f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {1,1,0,1,-1,0,-1,-1,0,-1,1,0});
   }
 }
 private class MFString6 {
@@ -218,7 +236,7 @@ private class MFInt3211 {
 }
 private class MFVec3f12 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {1f,1f,0f,1f,-1f,0f,-1f,-1f,0f,-1f,1f,0f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {1,1,0,1,-1,0,-1,-1,0,-1,1,0});
   }
 }
 private class MFString13 {
@@ -233,12 +251,12 @@ private class MFString14 {
 }
 private class MFString15 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"http://translate.google.com/translate_tts?tl=en&amp;q=Overtly%20resist%20change"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"target=_blank"});
   }
 }
 private class MFString16 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"target=_blank"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"http://translate.google.com/translate_tts?tl=en&amp;q=Overtly%20resist%20change"});
   }
 }
 private class MFString17 {

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.0" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-4.0.xsd" ><head><meta name="title" content="CoordinateAxes.x3d"></meta>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-3.3.xsd" ><head><meta name="title" content="CoordinateAxes.x3d"></meta>
 <meta name="creator" content="Don Brutzman, Byounghyun Yoo"></meta>
 <meta name="created" content="14 July 2000"></meta>
 <meta name="modified" content="20 October 2019"></meta>
@@ -11,53 +11,54 @@
 <meta name="reference" content="https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxesNSEW.x3d"></meta>
 <meta name="identifier" content="https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d"></meta>
 <meta name="generator" content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"></meta>
+<meta name="license" content="../license.html"></meta>
 </head>
 <Scene><WorldInfo title="CoordinateAxes.x3d"></WorldInfo>
-<Collision DEF="DoNotCollideWithVisualizationWidget"><Group><Group DEF="ArrowGreen"><Shape><Appearance DEF="Green"><Material diffuseColor="0.1 0.6 0.1" emissiveColor="0.05 0.2 0.05"></Material>
+<Collision DEF="DoNotCollideWithVisualizationWidget"><!--Invoke CoordinateAxes in other scenes as an Inline child inside a scaling Transform node, at the topmost level of the scene graph.--><!--This NavigationInfo allows examine mode and will be overridden by any parent scene.--><!--Each arrow goes from +1m to -1m to allow linear scaling to fit a scene--><!--Note each label rotates about the scene's vertical Y axis for consistency, enabling local orientation by user--><Group><!--Vertical Y arrow and label--><Group DEF="ArrowGreen"><Shape><Cylinder DEF="ArrowCylinder" radius="0.025" top="false"></Cylinder>
+<Appearance containerField="appearance" DEF="Green"><Material containerField="material" diffuseColor="0.1 0.6 0.1" emissiveColor="0.05 0.2 0.05"></Material>
 </Appearance>
-<Cylinder DEF="ArrowCylinder" top="false" radius="0.025"></Cylinder>
 </Shape>
-<Transform translation="0 1 0"><Shape><Appearance USE="Green"></Appearance>
-<Cone DEF="ArrowCone" height="0.1" bottomRadius="0.05"></Cone>
+<Transform translation="0 1 0"><Shape><Cone DEF="ArrowCone" bottomRadius="0.05" height="0.1"></Cone>
+<Appearance containerField="appearance" USE="Green"></Appearance>
 </Shape>
 </Transform>
 </Group>
-<Transform translation="0 1.08 0"><Billboard><Shape><Appearance DEF="LABEL_APPEARANCE"><Material diffuseColor="1 1 0.3" emissiveColor="0.33 0.33 0.1"></Material>
+<Transform translation="0 1.08 0"><Billboard><Shape><Appearance containerField="appearance" DEF="LABEL_APPEARANCE"><Material containerField="material" diffuseColor="1 1 0.3" emissiveColor="0.33 0.33 0.1"></Material>
 </Appearance>
-<Text string="&quot;Y&quot;"><FontStyle DEF="LABEL_FONT" family="&quot;SANS&quot;" size="0.2" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;"></FontStyle>
+<Text string="&quot;Y&quot;"><FontStyle containerField="fontStyle" DEF="LABEL_FONT" family="&quot;SANS&quot;" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" size="0.2"></FontStyle>
 </Text>
 </Shape>
 </Billboard>
 </Transform>
 </Group>
-<Transform rotation="0 0 1 -1.57079"><Group><Group DEF="ArrowRed"><Shape><Appearance DEF="Red"><Material diffuseColor="0.7 0.1 0.1" emissiveColor="0.33 0 0"></Material>
+<Transform rotation="0 0 1 -1.57079"><!--Horizontal X arrow and label--><Group><Group DEF="ArrowRed"><Shape><Cylinder USE="ArrowCylinder"></Cylinder>
+<Appearance containerField="appearance" DEF="Red"><Material containerField="material" diffuseColor="0.7 0.1 0.1" emissiveColor="0.33 0 0"></Material>
 </Appearance>
-<Cylinder USE="ArrowCylinder"></Cylinder>
 </Shape>
-<Transform translation="0 1 0"><Shape><Appearance USE="Red"></Appearance>
-<Cone USE="ArrowCone"></Cone>
+<Transform translation="0 1 0"><Shape><Cone USE="ArrowCone"></Cone>
+<Appearance containerField="appearance" USE="Red"></Appearance>
 </Shape>
 </Transform>
 </Group>
-<Transform translation="0.072 1.1 0" rotation="0 0 1 1.57079"><Billboard><Shape><Appearance USE="LABEL_APPEARANCE"></Appearance>
-<Text string="&quot;X&quot;"><FontStyle USE="LABEL_FONT"></FontStyle>
+<Transform rotation="0 0 1 1.57079" translation="0.072 1.1 0"><!--note label rotated back to original coordinate frame--><Billboard><Shape><Appearance containerField="appearance" USE="LABEL_APPEARANCE"></Appearance>
+<Text string="&quot;X&quot;"><FontStyle containerField="fontStyle" USE="LABEL_FONT"></FontStyle>
 </Text>
 </Shape>
 </Billboard>
 </Transform>
 </Group>
 </Transform>
-<Transform rotation="1 0 0 1.57079"><Group><Group DEF="ArrowBlue"><Shape><Appearance DEF="Blue"><Material diffuseColor="0.3 0.3 1" emissiveColor="0.1 0.1 0.33"></Material>
+<Transform rotation="1 0 0 1.57079"><!--Perpendicular Z arrow and label, note right-hand rule--><Group><Group DEF="ArrowBlue"><Shape><Cylinder USE="ArrowCylinder"></Cylinder>
+<Appearance containerField="appearance" DEF="Blue"><Material containerField="material" diffuseColor="0.3 0.3 1" emissiveColor="0.1 0.1 0.33"></Material>
 </Appearance>
-<Cylinder USE="ArrowCylinder"></Cylinder>
 </Shape>
-<Transform translation="0 1 0"><Shape><Appearance USE="Blue"></Appearance>
-<Cone USE="ArrowCone"></Cone>
+<Transform translation="0 1 0"><Shape><Cone USE="ArrowCone"></Cone>
+<Appearance containerField="appearance" USE="Blue"></Appearance>
 </Shape>
 </Transform>
 </Group>
-<Transform translation="0 1.1 0.072" rotation="1 0 0 -1.57079"><Billboard><Shape><Appearance USE="LABEL_APPEARANCE"></Appearance>
-<Text string="&quot;Z&quot;"><FontStyle USE="LABEL_FONT"></FontStyle>
+<Transform rotation="1 0 0 -1.57079" translation="0 1.1 0.072"><!--note label rotated back to original coordinate frame--><Billboard><Shape><Appearance containerField="appearance" USE="LABEL_APPEARANCE"></Appearance>
+<Text string="&quot;Z&quot;"><FontStyle containerField="fontStyle" USE="LABEL_FONT"></FontStyle>
 </Text>
 </Shape>
 </Billboard>

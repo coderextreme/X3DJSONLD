@@ -5,21 +5,21 @@ print("-->")
 import json
 model = (
 X3D(profile="Immersive", version="3.0", 
-head=head(
+head=Pyhead(
 children=[
-meta(name="title", content="ExtrusionHeart.x3d"),
-meta(name="description", content="Simple extrusion of a Valentine heart."),
-meta(name="creator", content="Class participants in course Introduction to VRML/X3D."),
-meta(name="created", content="14 February 2001"),
-meta(name="modified", content="27 November 2015"),
-meta(name="identifier", content="https://www.web3d.org/x3d/content/examples/Basic/course/ExtrusionHeart.x3d"),
-meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
-meta(name="license", content="../license.html"),
-meta(name="translated", content="02 September 2023"),
-meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
-meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
+Pymeta(name="title", content="ExtrusionHeart.x3d"),
+Pymeta(name="description", content="Simple extrusion of a Valentine heart."),
+Pymeta(name="creator", content="Class participants in course Introduction to VRML/X3D."),
+Pymeta(name="created", content="14 February 2001"),
+Pymeta(name="modified", content="27 November 2015"),
+Pymeta(name="identifier", content="https://www.web3d.org/x3d/content/examples/Basic/course/ExtrusionHeart.x3d"),
+Pymeta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
+Pymeta(name="license", content="../license.html"),
+Pymeta(name="translated", content="30 December 2023"),
+Pymeta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
+Pymeta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
-Scene=Scene(children=[
+Scene=PyScene(children=[
 Viewpoint(description="Extrusion Heart", orientation=((1,0,0,1.57)), position=((0,-4,0))),
 Transform(translation=((0,-0.5,0)), children=[
 Shape(

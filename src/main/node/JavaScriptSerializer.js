@@ -37,6 +37,10 @@ JavaScriptSerializer.prototype = {
 		str += "ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;\n";
 		str += "ConfigurationProperties.deleteIntermediateFiles = false;\n";
 		str += "ConfigurationProperties.setStripTrailingZeroes(true);\n";
+		str += "function doubleToFloat(d) {\n";
+		str += "    if (Float32Array)\n";
+        	str += "	return new Float32Array([d])[0];\n";
+		str += "}\n";
 		// we figure out body first and print it out later
 		var body = "      var "+element.nodeName+0+" =  new "+element.nodeName+"()";
 		body += this.subSerializeToString(element, mapToMethod, fieldTypes, 3, []);
@@ -57,6 +61,18 @@ JavaScriptSerializer.prototype = {
 	},
 
 	printSubArray : function (attrType, type, values, co, j, lead, trail) {
+		if (type === "int") {
+			for (var v in values) {
+				if (values[v] > 4200000000) {
+					values[v] = "0x"+parseInt(values[v]).toString(16).toUpperCase()+"| 0";
+				}
+			}
+		}
+		if (type === "float") {
+			for (var v in values) {
+				values[v] = "doubleToFloat("+values[v]+")";
+			}
+		}
 		return 'Java.to(['+lead+values.join(j)+trail+'], Java.type("'+type+'[]"))';
 	},
 
@@ -216,7 +232,11 @@ JavaScriptSerializer.prototype = {
 									return y;
 								}), this.codeno, '","', '"', '"');
 						} else if (attrs[a].nodeValue !== "VERTEX" && attrs[a].nodeValue !== "FRAGMENT") {
-							strval = "field.TYPE_"+attrs[a].nodeValue.toUpperCase();
+							if (attrs[a].nodeValue === "ALLPASS") {
+								strval = "BiquadFilter.TYPE_"+attrs[a].nodeValue.toUpperCase();
+							} else {
+								strval = "field.TYPE_"+attrs[a].nodeValue.toUpperCase();
+							}
 						} else {
 							strval = '"'+attrs[a].nodeValue.
 								replace(/\\n/g, '\\\\n').
@@ -343,7 +363,7 @@ JavaScriptSerializer.prototype = {
 						attrType === "SFRotation"||
 						attrType === "MFRotation"||
 						attrType === "MFFloat") {
-						strval = this.printSubArray(attrType, "double", attrs[a].nodeValue.split(/[ ,]+/), this.codeno, this.FLOAT_SUFFIX+',', '', this.FLOAT_SUFFIX);
+						strval = this.printSubArray(attrType, "float", attrs[a].nodeValue.split(/[ ,]+/), this.codeno, this.FLOAT_SUFFIX+',', '', this.FLOAT_SUFFIX);
 					} else if (
 						attrType === "SFVec2d"||
 						attrType === "SFVec3d"||
@@ -387,7 +407,7 @@ JavaScriptSerializer.prototype = {
 					str += '.'+method+"("+strval+")";
 					if (attr === 'containerFieldOverride' && (attrs[a].nodeValue === "joints" || attrs[a].nodeValue === "segments" || attrs[a].nodeValue === "viewpoints" || attrs[a].nodeValue === "skinCoord" || attrs[a].nodeValue === "skin" || attrs[a].nodeValue === "sites")) {
 					// console.log("################## FOUND", method, attrs[a].nodeValue);
-						str += ')'; // for cast
+						// str += ")"; // for cast
 					}
 				}
 			} catch (e) {
@@ -439,16 +459,16 @@ JavaScriptSerializer.prototype = {
 						hAnimListFound = true;
 					}
 				}
-				let construct = "new "+node.nodeName+'('+DEFpar+')';
+				let construct = "new "+node.nodeName+"("+DEFpar+")";
 				if (hAnimListFound) {
-					construct = "("+construct+")";
+					// construct = "("+construct+")";
 				}
 				construct += this.subSerializeToString(node, mapToMethod, fieldTypes, n+1, stack);
 				if (hAnimListFound) {
 					//if (!node.nodeName.startsWith("HAnimHumanoid")) {
-						ch += '(';
+						// ch += "(";
 					//}
-					ch += '('+node.nodeName+')';
+					// ch += "("+node.nodeName+")";
 				}
 				ch += construct;
 				if (element.nodeName === "Appearance" && node.NodeName === "ComposedShader") {
@@ -456,7 +476,7 @@ JavaScriptSerializer.prototype = {
 				}
 				ch += ")";
 				if (node.nodeName.startsWith("Scene") && this.foundHumanoid) {
-					ch += "))";
+					// ch += "))";
 				}
 				if (element.nodeName === "ProtoInstance" && node.nodeName === "fieldValue") {
 					// ch goes to end of body
@@ -488,6 +508,9 @@ JavaScriptSerializer.prototype = {
 					}).join('\\n\"+\n\"')+'`)';
 			}
 		}
+		//if (node.nodeName.startsWith("head")) {
+			// str += ")";
+		//}
 		return str;
 	}
 };

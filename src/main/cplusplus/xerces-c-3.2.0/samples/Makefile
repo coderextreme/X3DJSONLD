@@ -35,7 +35,7 @@
 # $Id: Makefile.am 1803575 2017-07-31 21:54:02Z rleigh $
 #
 
-
+VPATH = .
 am__is_gnu_make = { \
   if test -z '$(MAKELEVEL)'; then \
     false; \
@@ -527,19 +527,19 @@ TEST_LOG_COMPILE = $(TEST_LOG_COMPILER) $(AM_TEST_LOG_FLAGS) \
 am__DIST_COMMON = $(srcdir)/Makefile.in $(top_srcdir)/config/depcomp \
 	$(top_srcdir)/config/test-driver
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
-ACLOCAL = ${SHELL} /c/Users/coderextreme/Backup/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/config/missing aclocal-1.15
+ACLOCAL = aclocal-1.15
 AMTAR = $${TAR-tar}
 AM_DEFAULT_VERBOSITY = 0
 AR = ar
 AS = as
-AUTOCONF = ${SHELL} /c/Users/coderextreme/Backup/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/config/missing autoconf
-AUTOHEADER = ${SHELL} /c/Users/coderextreme/Backup/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/config/missing autoheader
-AUTOMAKE = ${SHELL} /c/Users/coderextreme/Backup/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/config/missing automake-1.15
+AUTOCONF = autoconf
+AUTOHEADER = autoheader
+AUTOMAKE = automake-1.15
 AWK = gawk
 BUILD_SHARED = yes
 BUILD_STATIC = yes
 CC = gcc
-CCDEPMODE = depmode=gcc3
+CCDEPMODE = depmode=none
 CFLAGS = -g -O2
 CPP = gcc -E
 CPPFLAGS = 
@@ -548,7 +548,7 @@ CURL_LIBS = -lcurl
 CURL_PRESENT = no
 CXX = g++
 CXXCPP = g++ -E
-CXXDEPMODE = depmode=gcc3
+CXXDEPMODE = depmode=none
 CXXFLAGS = -g -O2 -msse2
 CYGPATH_W = cygpath -w
 DEFS = -DHAVE_CONFIG_H
@@ -583,7 +583,7 @@ LN_S = ln -s
 LTLIBOBJS =  ${LIBOBJDIR}stricmp$U.lo ${LIBOBJDIR}strnicmp$U.lo
 LT_SYS_LIBRARY_PATH = 
 MAINT = #
-MAKEINFO = ${SHELL} /c/Users/coderextreme/Backup/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/config/missing makeinfo
+MAKEINFO = makeinfo
 MANIFEST_TOOL = :
 MKDIR_P = /usr/bin/mkdir -p
 NM = /usr/bin/nm -B
@@ -606,14 +606,14 @@ PTHREAD_LIBS = -lpthread
 RANLIB = ranlib
 SED = /usr/bin/sed
 SET_MAKE = 
-SHELL = /bin/sh
+SHELL = /bin/bash
 SHREXT = .dll
 STRIP = strip
 VERSION = 3.2.0
-abs_builddir = /c/Users/coderextreme/Backup/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/samples
-abs_srcdir = /c/Users/coderextreme/Backup/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/samples
-abs_top_builddir = /c/Users/coderextreme/Backup/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0
-abs_top_srcdir = /c/Users/coderextreme/Backup/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0
+abs_builddir = /c/Users/john/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/samples
+abs_srcdir = /c/Users/john/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/samples
+abs_top_builddir = /c/Users/john/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0
+abs_top_srcdir = /c/Users/john/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0
 ac_ct_AR = ar
 ac_ct_CC = gcc
 ac_ct_CXX = g++
@@ -646,7 +646,7 @@ htmldir = ${docdir}
 icu_config = 
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
-install_sh = ${SHELL} /c/Users/coderextreme/Backup/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/config/install-sh
+install_sh = ${SHELL} /c/Users/john/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/config/install-sh
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 localedir = ${datarootdir}/locale
@@ -1167,28 +1167,28 @@ include src/StdInParse/$(DEPDIR)/StdInParseHandlers.Po
 include src/XInclude/$(DEPDIR)/XInclude.Po
 
 .cpp.o:
-	$(AM_V_CXX)depbase=`echo $@ | sed 's|[^/]*$$|$(DEPDIR)/&|;s|\.o$$||'`;\
-	$(CXXCOMPILE) -MT $@ -MD -MP -MF $$depbase.Tpo -c -o $@ $< &&\
-	$(am__mv) $$depbase.Tpo $$depbase.Po
-#	$(AM_V_CXX)source='$<' object='$@' libtool=no \
-#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXXCOMPILE) -c -o $@ $<
+#	$(AM_V_CXX)depbase=`echo $@ | sed 's|[^/]*$$|$(DEPDIR)/&|;s|\.o$$||'`;\
+#	$(CXXCOMPILE) -MT $@ -MD -MP -MF $$depbase.Tpo -c -o $@ $< &&\
+#	$(am__mv) $$depbase.Tpo $$depbase.Po
+	$(AM_V_CXX)source='$<' object='$@' libtool=no \
+	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+	$(AM_V_CXX_no)$(CXXCOMPILE) -c -o $@ $<
 
 .cpp.obj:
-	$(AM_V_CXX)depbase=`echo $@ | sed 's|[^/]*$$|$(DEPDIR)/&|;s|\.obj$$||'`;\
-	$(CXXCOMPILE) -MT $@ -MD -MP -MF $$depbase.Tpo -c -o $@ `$(CYGPATH_W) '$<'` &&\
-	$(am__mv) $$depbase.Tpo $$depbase.Po
-#	$(AM_V_CXX)source='$<' object='$@' libtool=no \
-#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXXCOMPILE) -c -o $@ `$(CYGPATH_W) '$<'`
+#	$(AM_V_CXX)depbase=`echo $@ | sed 's|[^/]*$$|$(DEPDIR)/&|;s|\.obj$$||'`;\
+#	$(CXXCOMPILE) -MT $@ -MD -MP -MF $$depbase.Tpo -c -o $@ `$(CYGPATH_W) '$<'` &&\
+#	$(am__mv) $$depbase.Tpo $$depbase.Po
+	$(AM_V_CXX)source='$<' object='$@' libtool=no \
+	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+	$(AM_V_CXX_no)$(CXXCOMPILE) -c -o $@ `$(CYGPATH_W) '$<'`
 
 .cpp.lo:
-	$(AM_V_CXX)depbase=`echo $@ | sed 's|[^/]*$$|$(DEPDIR)/&|;s|\.lo$$||'`;\
-	$(LTCXXCOMPILE) -MT $@ -MD -MP -MF $$depbase.Tpo -c -o $@ $< &&\
-	$(am__mv) $$depbase.Tpo $$depbase.Plo
-#	$(AM_V_CXX)source='$<' object='$@' libtool=yes \
-#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(LTCXXCOMPILE) -c -o $@ $<
+#	$(AM_V_CXX)depbase=`echo $@ | sed 's|[^/]*$$|$(DEPDIR)/&|;s|\.lo$$||'`;\
+#	$(LTCXXCOMPILE) -MT $@ -MD -MP -MF $$depbase.Tpo -c -o $@ $< &&\
+#	$(am__mv) $$depbase.Tpo $$depbase.Plo
+	$(AM_V_CXX)source='$<' object='$@' libtool=yes \
+	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+	$(AM_V_CXX_no)$(LTCXXCOMPILE) -c -o $@ $<
 
 mostlyclean-libtool:
 	-rm -f *.lo

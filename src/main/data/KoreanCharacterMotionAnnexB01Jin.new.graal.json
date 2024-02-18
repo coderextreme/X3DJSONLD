@@ -14,7 +14,7 @@
 "meta": [
 {
 "@name":"title",
-"@content":"KoreanCharacterMotionAnnexB01Jin.x3d"
+"@content":"KoreanCharacterAnnexB01Jin.x3d"
 },
 {
 "@name":"creator",
@@ -34,7 +34,7 @@
 },
 {
 "@name":"modified",
-"@content":"8 January 2023"
+"@content":"14 October 2023"
 },
 {
 "@name":"description",
@@ -80,11 +80,15 @@ D (informative) Examples of HAnim motion data animation using a Motion object"
 },
 {
 "@name":"generator",
-"@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+"@content":"X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"
+},
+{
+"@name":"license",
+"@content":"../license.html"
 },
 {
 "@name":"translated",
-"@content":"08 September 2023"
+"@content":"18 February 2024"
 },
 {
 "@name":"generator",
@@ -117,10 +121,10 @@ D (informative) Examples of HAnim motion data animation using a Motion object"
 "@info":["humanoidVersion=2.0"],
 "@scale":[0.0225,0.0225,0.0225],
 "@version":"2.0",
-"-children":[
+"-skeleton":[
 { "HAnimJoint":
 {
-"@name":"HumanoidRoot",
+"@name":"humanoid_root",
 "@DEF":"hanim_HumanoidRoot",
 "@center":[0,30.53,-0.7076],
 "@llimit":[0,0,0],
@@ -150,7 +154,7 @@ D (informative) Examples of HAnim motion data animation using a Motion object"
 { "ImageTexture":
 {
 "@DEF":"Annex01JinTextureAtlas",
-"@url":["Jin.png","http://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/Jin.png"]
+"@url":["Jin.png","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/Jin.png"]
 }
 }
 }
@@ -1341,14 +1345,14 @@ D (informative) Examples of HAnim motion data animation using a Motion object"
 },
 { "PositionInterpolator":
 {
-"@DEF":"Keyframe_HumanoidRoot_1",
+"@DEF":"Keyframe_HumanoidRootTranslation",
 "@key":[0,1],
 "@keyValue":[0,0,0,0,0,0]
 }
 },
 { "OrientationInterpolator":
 {
-"@DEF":"Keyframe_HumanoidRoot",
+"@DEF":"Keyframe_HumanoidRootOrientation",
 "@key":[0,1],
 "@keyValue":[0,0,0,0,0,0,0,0]
 }
@@ -1471,8 +1475,13 @@ D (informative) Examples of HAnim motion data animation using a Motion object"
 "@key":[0,1],
 "@keyValue":[0,0,0,0,0,0,0,0]
 }
-}
-]
+},
+{ "ROUTE":
+{
+"@fromField":"fraction_changed",
+"@fromNode":"KeyframeTimer",
+"@toField":"set_fraction",
+"@toNode":"Keyframe_HumanoidRootTranslation"
 }
 },
 { "ROUTE":
@@ -1480,7 +1489,7 @@ D (informative) Examples of HAnim motion data animation using a Motion object"
 "@fromField":"fraction_changed",
 "@fromNode":"KeyframeTimer",
 "@toField":"set_fraction",
-"@toNode":"Keyframe_HumanoidRoot"
+"@toNode":"Keyframe_HumanoidRootOrientation"
 }
 },
 { "ROUTE":
@@ -1622,7 +1631,15 @@ D (informative) Examples of HAnim motion data animation using a Motion object"
 { "ROUTE":
 {
 "@fromField":"value_changed",
-"@fromNode":"Keyframe_HumanoidRoot",
+"@fromNode":"Keyframe_HumanoidRootTranslation",
+"@toField":"translation",
+"@toNode":"hanim_HumanoidRoot"
+}
+},
+{ "ROUTE":
+{
+"@fromField":"value_changed",
+"@fromNode":"Keyframe_HumanoidRootOrientation",
 "@toField":"rotation",
 "@toNode":"hanim_HumanoidRoot"
 }
@@ -1761,6 +1778,9 @@ D (informative) Examples of HAnim motion data animation using a Motion object"
 "@fromNode":"Keyframe_l_talocrural",
 "@toField":"rotation",
 "@toNode":"hanim_r_metatarsophalangeal"
+}
+}
+]
 }
 }
 ]

@@ -7,6 +7,14 @@
     "head": {
         "component": [
           {
+            "@name":"Scripting",
+            "@level":1
+          },
+          {
+            "@name":"EnvironmentalEffects",
+            "@level":3
+          },
+          {
             "@name":"Shaders",
             "@level":1
           },
@@ -29,6 +37,10 @@
           {
             "@name":"Grouping",
             "@level":3
+          },
+          {
+            "@name":"Core",
+            "@level":1
           }
         ],
         "meta": [
@@ -50,11 +62,11 @@
           },
           {
             "@name":"identifier",
-            "@content":"https://coderextreme.net/X3DJSONLD/flowerproto.x3d"
+            "@content":"https://coderextreme.net/X3DJSONLD/src/main/data/flowerproto.x3d"
           },
           {
             "@name":"translated",
-            "@content":"27 October 2023"
+            "@content":"18 February 2024"
           },
           {
             "@name":"generator",
@@ -77,13 +89,13 @@
                       "@name":"vertex",
                       "@accessType":"inputOutput",
                       "@type":"MFString",
-                      "@value":["../shaders/gl_flowers_chromatic.vs"]
+                      "@value":["https://coderextreme.net/X3DJSONLD/src/main/shaders/gl_flowers_chromatic.vs"]
                     },
                     {
                       "@name":"fragment",
                       "@accessType":"inputOutput",
                       "@type":"MFString",
-                      "@value":["../shaders/pc_flowers.fs"]
+                      "@value":["https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_flowers.fs"]
                     }
                   ]
               },
@@ -221,37 +233,37 @@
                                           "-backTexture":
                                             { "ImageTexture":
                                               {
-                                                "@url":["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"]
+                                                "@url":["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]
                                               }
                                             },
                                           "-bottomTexture":
                                             { "ImageTexture":
                                               {
-                                                "@url":["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"]
+                                                "@url":["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]
                                               }
                                             },
                                           "-frontTexture":
                                             { "ImageTexture":
                                               {
-                                                "@url":["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"]
+                                                "@url":["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"]
                                               }
                                             },
                                           "-leftTexture":
                                             { "ImageTexture":
                                               {
-                                                "@url":["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"]
+                                                "@url":["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]
                                               }
                                             },
                                           "-rightTexture":
                                             { "ImageTexture":
                                               {
-                                                "@url":["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"]
+                                                "@url":["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]
                                               }
                                             },
                                           "-topTexture":
                                             { "ImageTexture":
                                               {
-                                                "@url":["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"]
+                                                "@url":["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]
                                               }
                                             }
                                         }

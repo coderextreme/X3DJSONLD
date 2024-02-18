@@ -36,13 +36,22 @@ import org.web3d.x3d.jsail.Texturing.*;
 import org.web3d.x3d.jsail.Time.*;
 import org.web3d.x3d.jsail.VolumeRendering.*;
 import org.web3d.x3d.jsail.fields.*;
-public class StringArrayEncodingExamples {
+import java.util.ArrayList;
+import java.util.List;
+import net.coderextreme.X3DRoots;
+public class StringArrayEncodingExamples implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    X3D model = new StringArrayEncodingExamples().initialize();
+    X3D model = new StringArrayEncodingExamples().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
+    model.toFileX3D("../data/StringArrayEncodingExamples.new.java.x3d");
     model.toFileJSON("../data/StringArrayEncodingExamples.new.json");
+    }
+    public List<X3D> getRootNodeList() {
+    	List<X3D> list = new ArrayList<X3D>(1);
+    	list.add(initialize());
+    	return list;
     }
     public X3D initialize() {
       X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
@@ -71,12 +80,12 @@ public class StringArrayEncodingExamples {
             .addComments("alternative Java source: .setString(new String [] {\"One, Two, Three\", \"\", \"He said, \\\"\"Immel did it!\\\"\"\"})")
             .setFontStyle(new FontStyle().setJustify(new MFString2().getArray()).setStyle("BOLD")))
           .setAppearance(new Appearance()
-            .setMaterial(new Material().setDiffuseColor(new float[] {0.6f ,0.4f ,0.2f })))))      ;
+            .setMaterial(new Material().setDiffuseColor(new double[] {0.6,0.4,0.2})))))      ;
     return X3D0;
     }
 private class MFColor0 {
   private org.web3d.x3d.jsail.fields.MFColor getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0.6f ,1f ,0.8f });
+    return new org.web3d.x3d.jsail.fields.MFColor(new double[] {0.6,1,0.8});
   }
 }
 private class MFString1 {

@@ -49,7 +49,7 @@ var X3D0 =  new X3D({
           meta : new MFNode([
             new meta({
               name : new SFString("title"),
-              content : new SFString("arc")}),
+              content : new SFString("arc.x3d")}),
 
             new meta({
               name : new SFString("creator"),
@@ -61,7 +61,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("identifier"),
-              content : new SFString("https://coderextreme.net/X3DJSONLD/src/main/data/x3dconnectorProto.x3d")}),
+              content : new SFString("https://coderextreme.net/X3DJSONLD/src/main/data/arc.x3d")}),
 
             new meta({
               name : new SFString("description"),

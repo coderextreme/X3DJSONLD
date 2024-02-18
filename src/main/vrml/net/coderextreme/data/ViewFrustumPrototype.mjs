@@ -91,20 +91,20 @@ let ProtoDeclare17 = browser.createX3DFromString(`<?xml version="1.0" encoding="
 </ProtoInterface>
 <ProtoBody><Switch DEF="VisibilitySwitch" whichChoice="-1"><Transform DEF="PositionTransform" rotation="0 1 0 3.14159"><Transform DEF="OrientationTransform"><Shape><IndexedLineSet DEF="FrustumLines" coordIndex="0 1 2 3 0 -1 4 5 6 7 4 -1 0 4 -1 1 5 -1 2 6 -1 3 7 -1"><Coordinate DEF="FrustumCoordinate" point="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"></Coordinate>
 </IndexedLineSet>
-<Appearance><Material><IS><connect nodeField="emissiveColor" protoField="lineColor"></connect>
+<Appearance containerField="appearance"><Material containerField="material"><IS><connect nodeField="emissiveColor" protoField="lineColor"></connect>
 </IS>
 </Material>
 </Appearance>
 </Shape>
 <Shape><Extrusion DEF="FrustumExtrusion"></Extrusion>
-<Appearance DEF="FrustumAppearance"><Material><IS><connect nodeField="diffuseColor" protoField="frustumColor"></connect>
+<Appearance containerField="appearance" DEF="FrustumAppearance"><Material containerField="material"><IS><connect nodeField="diffuseColor" protoField="frustumColor"></connect>
 <connect nodeField="transparency" protoField="transparency"></connect>
 </IS>
 </Material>
 </Appearance>
 </Shape>
 <Shape><Sphere radius="0.08"></Sphere>
-<Appearance USE="FrustumAppearance"></Appearance>
+<Appearance containerField="appearance" USE="FrustumAppearance"></Appearance>
 </Shape>
 </Transform>
 </Transform>

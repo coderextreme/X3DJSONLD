@@ -18,7 +18,11 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('creator'),
-              content_ : SFString('Carlson, II'))]),
+              content_ : SFString('Carlson, II')),
+
+            meta(
+              name_ : SFString('creator'),
+              content_ : SFString('Carlson, III'))]),
       Scene_ : 
         Scene(
           children_ : [
@@ -34,7 +38,7 @@ var X3D0 =  X3D(
                     Box())]),
 
             Transform(
-              translation_ : SFVec3f([SFDouble(1), SFDouble(2), SFDouble(3)]),
               rotation_ : SFRotation([SFDouble(7), SFDouble(8), SFDouble(9), SFDouble(3.14)]),
-              scale_ : SFVec3f([SFDouble(4), SFDouble(5), SFDouble(6)]))]));
+              scale_ : SFVec3f([SFDouble(4), SFDouble(5), SFDouble(6)]),
+              translation_ : SFVec3f([SFDouble(1), SFDouble(2), SFDouble(3)]))]));
 void main() { exit(0); }

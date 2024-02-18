@@ -5,20 +5,20 @@ print("-->")
 import json
 model = (
 X3D(profile="Immersive", version="3.3", 
-head=head(
+head=Pyhead(
 children=[
-meta(name="generator", content="hand conversion from http://www.x3dom.org/x3dom/test/functional/flipper.html"),
-meta(name="title", content="flipp.x3d"),
-meta(name="description", content="flipper flopping around"),
-meta(name="identifier", content="http://www.x3dom.org/x3dom/test/functional/flipp.x3d"),
-meta(name="creator", content="Yvonne Jung, metadata by John Carlson"),
-meta(name="translated", content="13 March 2016"),
-meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
-meta(name="translated", content="02 September 2023"),
-meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
-meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
+Pymeta(name="generator", content="hand conversion from http://www.x3dom.org/x3dom/test/functional/flipper.html"),
+Pymeta(name="title", content="flipp.x3d"),
+Pymeta(name="description", content="flipper flopping around"),
+Pymeta(name="identifier", content="http://www.x3dom.org/x3dom/test/functional/flipp.x3d"),
+Pymeta(name="creator", content="Yvonne Jung, metadata by John Carlson"),
+Pymeta(name="translated", content="13 March 2016"),
+Pymeta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
+Pymeta(name="translated", content="30 December 2023"),
+Pymeta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
+Pymeta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
-Scene=Scene(children=[
+Scene=PyScene(children=[
 Viewpoint(DEF="cam0", description="cam0 description", position=((0,0,800))),
 Viewpoint(DEF="cam1", description="cam1 description", position=((0,0,2000))),
 Viewpoint(DEF="cam2", description="cam2 description", position=((0,200,1000))),

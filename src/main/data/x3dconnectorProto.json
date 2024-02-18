@@ -8,7 +8,7 @@
         "meta": [
           {
             "@name":"title",
-            "@content":"x3dconnectorProto"
+            "@content":"x3dconnectorProto.x3d"
           },
           {
             "@name":"creator",
@@ -40,7 +40,7 @@
           },
           {
             "@name":"translated",
-            "@content":"14 September 2023"
+            "@content":"18 February 2024"
           },
           {
             "@name":"generator",
@@ -462,11 +462,11 @@
 "\t    if (typeof endpoint === 'undefined') {",
 "\t\treturn;",
 "\t    }",
-"            let dif = endpoint.subtract(startpoint);",
-"            let dist = dif.length()*0.5;",
-"            let dif2 = dif.multiply(0.5);",
-"            let norm = dif.normalize();",
-"            let transl = startpoint.add(dif2);",
+"            var dif = endpoint.subtract(startpoint);",
+"            var dist = dif.length()*0.5;",
+"            var dif2 = dif.multiply(0.5);",
+"            var norm = dif.normalize();",
+"            var transl = startpoint.add(dif2);",
 "\t    if (typeof Quaternion !== 'undefined') {",
 "\t\t    return {",
 "\t\t\t    scale : new SFVec3f(1.0,dist,1.0),",
@@ -482,7 +482,7 @@
 "\t    }",
 "\t}",
 "\tfunction recompute_and_route(startpoint, endpoint) {",
-"\t      let trafo = recompute(startpoint, endpoint);",
+"\t      var trafo = recompute(startpoint, endpoint);",
 "\t      if (trafo) {",
 "\t\t      transnode.translation = trafo.translation;",
 "\t\t      rotscalenode.rotation = trafo.rotation;",

@@ -81,7 +81,7 @@ let ProtoDeclare14 = browser.createX3DFromString(`<?xml version="1.0" encoding="
 </ProtoInterface>
 <ProtoBody><!--First node determines node type of this prototype--><!--IndexedFaceset creates arch--><Transform DEF="ArchTransform"><Shape DEF="Arch"><!--note that convex='false' (meaning concave geometry) is crucial for this IFS of a geometric chord to render properly--><IndexedFaceSet DEF="ArchIndex" convex="false" solid="false"><Coordinate DEF="ArchChord"></Coordinate>
 </IndexedFaceSet>
-<Appearance><Material DEF="MaterialNode"><IS><connect nodeField="emissiveColor" protoField="emissiveColor"></connect>
+<Appearance containerField="appearance"><Material containerField="material" DEF="MaterialNode"><IS><connect nodeField="emissiveColor" protoField="emissiveColor"></connect>
 <connect nodeField="diffuseColor" protoField="diffuseColor"></connect>
 </IS>
 </Material>

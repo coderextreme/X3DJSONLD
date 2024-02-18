@@ -36,13 +36,22 @@ import org.web3d.x3d.jsail.Texturing.*;
 import org.web3d.x3d.jsail.Time.*;
 import org.web3d.x3d.jsail.VolumeRendering.*;
 import org.web3d.x3d.jsail.fields.*;
-public class SpatialAudioCameraAnimation {
+import java.util.ArrayList;
+import java.util.List;
+import net.coderextreme.X3DRoots;
+public class SpatialAudioCameraAnimation implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    X3D model = new SpatialAudioCameraAnimation().initialize();
+    X3D model = new SpatialAudioCameraAnimation().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
+    model.toFileX3D("../data/SpatialAudioCameraAnimation.new.java.x3d");
     model.toFileJSON("../data/SpatialAudioCameraAnimation.new.json");
+    }
+    public List<X3D> getRootNodeList() {
+    	List<X3D> list = new ArrayList<X3D>(1);
+    	list.add(initialize());
+    	return list;
     }
     public X3D initialize() {
       X3D X3D0 =  new X3D().setProfile("Full").setVersion("4.0")
@@ -63,41 +72,41 @@ public class SpatialAudioCameraAnimation {
         .addChild(new WorldInfo().setTitle("SpatialAudioCameraAnimation.x3d"))
         .addChild(new NavigationInfo())
         .addChild(new Background().setBackUrl(new MFString0().getArray()).setBottomUrl(new MFString1().getArray()).setFrontUrl(new MFString2().getArray()).setLeftUrl(new MFString3().getArray()).setRightUrl(new MFString4().getArray()).setTopUrl(new MFString5().getArray()))
-        .addChild(new Viewpoint().setDEF("Camera001").setDescription("Viewpoint is like camera, prepositioned in locations (and directions) of interest. In this example the camera is the \"ears of the user\". So, if the trackCurrentView field from ListenerPointSource is TRUE then position and orientation matches the users current view").setOrientation(new float[] {1f ,0f ,0f ,-0.523599f }).setPosition(new float[] {0f ,2000f ,3500f }))
-        .addChild(new TimeSensor().setDEF("TIMER").setCycleInterval(33.333332d).setLoop(true))
+        .addChild(new Viewpoint().setDEF("Camera001").setDescription("Viewpoint is like camera, prepositioned in locations (and directions) of interest. In this example the camera is the \"ears of the user\". So, if the trackCurrentView field from ListenerPointSource is TRUE then position and orientation matches the users current view").setOrientation(new double[] {1,0,0,-0.523599}).setPosition(new double[] {0,2000,3500}))
+        .addChild(new TimeSensor().setDEF("TIMER").setCycleInterval(33.333332).setLoop(true))
         .addChild(new PositionInterpolator().setDEF("Camera001-POS-INTERP").setKey(new MFFloat6().getArray()).setKeyValue(new MFVec3f7().getArray()))
         .addChild(new OrientationInterpolator().setDEF("Camera001-ROT-INTERP").setKey(new MFFloat8().getArray()).setKeyValue(new MFRotation9().getArray()))
         .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("TIMER").setToField("set_fraction").setToNode("Camera001-POS-INTERP"))
         .addChild(new ROUTE().setFromField("value_changed").setFromNode("Camera001-POS-INTERP").setToField("set_position").setToNode("Camera001"))
         .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("TIMER").setToField("set_fraction").setToNode("Camera001-ROT-INTERP"))
         .addChild(new ROUTE().setFromField("value_changed").setFromNode("Camera001-ROT-INTERP").setToField("set_orientation").setToNode("Camera001"))
-        .addChild(new Transform().setDEF("Floor").setTranslation(new float[] {1.241f ,0f ,0.358f })
+        .addChild(new Transform().setDEF("Floor").setTranslation(new double[] {1.241,0,0.358})
           .addChild(new Shape()
             .setAppearance(new Appearance().setDEF("WireColor")
-              .setMaterial(new Material().setDiffuseColor(new float[] {0.122f ,0.114f ,0.125f })))
-            .setGeometry(new Box().setSize(new float[] {2000f ,1f ,2000f }))))
-        .addChild(new Transform().setDEF("TransformAudio1").setTranslation(new float[] {-933.123474f ,0f ,-926.253235f })
+              .setMaterial(new Material().setDiffuseColor(new double[] {0.122,0.114,0.125})))
+            .setGeometry(new Box().setSize(new double[] {2000,1,2000}))))
+        .addChild(new Transform().setDEF("TransformAudio1").setTranslation(new double[] {-933.123474,0,-926.253235})
           .addChild(new Shape()
             .setAppearance(new Appearance().setDEF("WireColor_1")
-              .setMaterial(new Material().setDiffuseColor(new float[] {0.690196f ,0.101961f ,0.101961f })))
-            .setGeometry(new Sphere().setRadius(100f )))
+              .setMaterial(new Material().setDiffuseColor(new double[] {0.690196,0.101961,0.101961})))
+            .setGeometry(new Sphere().setRadius(100)))
           .addChild(new Billboard()
-            .addChild(new Transform().setDEF("violin").setRotation(new float[] {1f ,0f ,0f ,-0.5f }).setScale(new float[] {100f ,100f ,100f }).setTranslation(new float[] {0f ,100f ,0f })
+            .addChild(new Transform().setDEF("violin").setRotation(new double[] {1,0,0,-0.5}).setScale(new double[] {100,100,100}).setTranslation(new double[] {0,100,0})
               .addChild(new Shape()
                 .setAppearance(new Appearance()
-                  .setMaterial(new Material().setAmbientIntensity(0.0933f ).setDiffuseColor(new float[] {1f ,1f ,1f }).setShininess(0.51f ).setSpecularColor(new float[] {0.46f ,0.46f ,0.46f })))
+                  .setMaterial(new Material().setAmbientIntensity(0.0933).setDiffuseColor(new double[] {1,1,1}).setShininess(0.51).setSpecularColor(new double[] {0.46,0.46,0.46})))
                 .setGeometry(new Text().setString(new MFString10().getArray())
                   .setFontStyle(new FontStyle().setDEF("ModelFontStyle").setFamily(new MFString11().getArray()).setStyle("BOLD")))))))
-        .addChild(new Transform().setDEF("TransformAudio2").setTranslation(new float[] {933.475586f ,0f ,924.423218f })
+        .addChild(new Transform().setDEF("TransformAudio2").setTranslation(new double[] {933.475586,0,924.423218})
           .addChild(new Shape()
             .setAppearance(new Appearance().setDEF("WireColor_2")
-              .setMaterial(new Material().setDiffuseColor(new float[] {0.105882f ,0.694118f ,0.580392f })))
-            .setGeometry(new Sphere().setRadius(100f )))
+              .setMaterial(new Material().setDiffuseColor(new double[] {0.105882,0.694118,0.580392})))
+            .setGeometry(new Sphere().setRadius(100)))
           .addChild(new Billboard()
-            .addChild(new Transform().setDEF("saxophone").setRotation(new float[] {1f ,0f ,0f ,-0.5f }).setScale(new float[] {100f ,100f ,100f }).setTranslation(new float[] {0f ,100f ,0f })
+            .addChild(new Transform().setDEF("saxophone").setRotation(new double[] {1,0,0,-0.5}).setScale(new double[] {100,100,100}).setTranslation(new double[] {0,100,0})
               .addChild(new Shape()
                 .setAppearance(new Appearance()
-                  .setMaterial(new Material().setAmbientIntensity(0.0933f ).setDiffuseColor(new float[] {1f ,1f ,1f }).setShininess(0.51f ).setSpecularColor(new float[] {0.46f ,0.46f ,0.46f })))
+                  .setMaterial(new Material().setAmbientIntensity(0.0933).setDiffuseColor(new double[] {1,1,1}).setShininess(0.51).setSpecularColor(new double[] {0.46,0.46,0.46})))
                 .setGeometry(new Text().setString(new MFString12().getArray())
                   .setFontStyle(new FontStyle().setUSE("ModelFontStyle")))))))
         .addChild(new ListenerPointSource().setTrackCurrentView(true))
@@ -142,22 +151,22 @@ private class MFString5 {
 }
 private class MFFloat6 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0.25f ,0.5f ,0.75f ,1f });
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.25,0.5,0.75,1});
   }
 }
 private class MFVec3f7 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f ,2000f ,3500f ,0f ,2000f ,0f ,0f ,2000f ,-3500f ,0f ,2000f ,0f ,0f ,2000f ,3500f });
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0,2000,3500,0,2000,0,0,2000,-3500,0,2000,0,0,2000,3500});
   }
 }
 private class MFFloat8 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0.25f ,0.5f ,0.75f ,1f });
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.25,0.5,0.75,1});
   }
 }
 private class MFRotation9 {
   private org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {1f ,0f ,0f ,-0.523599f ,0.99999f ,0.003554f ,0.002727f ,-1.309007f ,0f ,-0.965926f ,-0.258819f ,-3.141593f ,0.002282f ,-0.793351f ,-0.60876f ,-3.135645f ,1f ,-0.000001f ,0f ,-0.523599f });
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {1,0,0,-0.523599,0.99999,0.003554,0.002727,-1.309007,0,-0.965926,-0.258819,-3.141593,0.002282,-0.793351,-0.60876,-3.135645,1,-0.000001,0,-0.523599});
   }
 }
 private class MFString10 {

@@ -36,13 +36,22 @@ import org.web3d.x3d.jsail.Texturing.*;
 import org.web3d.x3d.jsail.Time.*;
 import org.web3d.x3d.jsail.VolumeRendering.*;
 import org.web3d.x3d.jsail.fields.*;
-public class flower {
+import java.util.ArrayList;
+import java.util.List;
+import net.coderextreme.X3DRoots;
+public class flower implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    X3D model = new flower().initialize();
+    X3D model = new flower().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
+    model.toFileX3D("../personal/flower.new.java.x3d");
     model.toFileJSON("../personal/flower.new.json");
+    }
+    public List<X3D> getRootNodeList() {
+    	List<X3D> list = new ArrayList<X3D>(1);
+    	list.add(initialize());
+    	return list;
     }
     public X3D initialize() {
       X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
@@ -54,13 +63,13 @@ public class flower {
         .addMeta(new meta().setName("description").setContent("a flower")))
       .setScene(new Scene()
         .addChild(new NavigationInfo())
-        .addChild(new DirectionalLight().setDirection(new float[] {0f ,-0.8f ,-0.2f }).setIntensity(0.5f ))
+        .addChild(new DirectionalLight().setDirection(new double[] {0,-0.8,-0.2}).setIntensity(0.5))
         .addChild(new Background().setSkyColor(new MFColor0().getArray()))
-        .addChild(new Viewpoint().setDescription("One mathematical orbital").setPosition(new float[] {0f ,0f ,50f }))
-        .addChild(new Transform().setTranslation(new float[] {0f ,-1f ,1f }).setRotation(new float[] {0f ,1f ,0f ,3.1415926f }).setScale(new float[] {1.5f ,1.5f ,1.5f })
+        .addChild(new Viewpoint().setDescription("One mathematical orbital").setPosition(new double[] {0,0,50}))
+        .addChild(new Transform().setTranslation(new double[] {0,-1,1}).setRotation(new double[] {0,1,0,3.1415926}).setScale(new double[] {1.5,1.5,1.5})
           .addChild(new Shape()
             .setAppearance(new Appearance()
-              .setMaterial(new Material().setTransparency(0.1f ).setDiffuseColor(new float[] {0.9f ,0.3f ,0.3f }).setSpecularColor(new float[] {0.8f ,0.8f ,0.8f }).setShininess(0.145f )))
+              .setMaterial(new Material().setTransparency(0.1).setDiffuseColor(new double[] {0.9,0.3,0.3}).setSpecularColor(new double[] {0.8,0.8,0.8}).setShininess(0.145)))
             .setGeometry(new IndexedFaceSet().setCcw(false).setConvex(false).setCoordIndex(new MFInt321().getArray()).setDEF("Orbit")
               .setCoord(new Coordinate().setDEF("OrbitCoordinates").setPoint(new MFVec3f2().getArray())))))
         .addChild(new Script().setDEF("OrbitScript")
@@ -90,7 +99,7 @@ public class flower {
 "	     localci.push(-1);\n"+
 "	}\n"+
 "    }\n"+
-"    coordIndexes = new MFInt32(localci);\n"+
+"    coordIndexes = new MFInt32(...localci);\n"+
 "}\n"+
 "\n"+
 "function generateCoordinates(resolution) {\n"+
@@ -110,7 +119,7 @@ public class flower {
 "	}\n"+
 "	phi += delta;\n"+
 "     }\n"+
-"     coordinates = new MFVec3f(localc);\n"+
+"     coordinates = new MFVec3f(...localc);\n"+
 "}\n"+
 "\n"+
 "function set_fraction(fraction, eventTime) {\n"+
@@ -142,7 +151,7 @@ public class flower {
 "	}\n"+
 "	generateCoordinates(resolution);\n"+
 "}"))
-        .addChild(new TimeSensor().setDEF("Clock").setCycleInterval(16d).setLoop(true))
+        .addChild(new TimeSensor().setDEF("Clock").setCycleInterval(16).setLoop(true))
         .addChild(new ROUTE().setFromNode("OrbitScript").setFromField("coordIndexes").setToNode("Orbit").setToField("set_coordIndex"))
         .addChild(new ROUTE().setFromNode("OrbitScript").setFromField("coordinates").setToNode("OrbitCoordinates").setToField("point"))
         .addChild(new ROUTE().setFromNode("Clock").setFromField("fraction_changed").setToNode("OrbitScript").setToField("set_fraction")))      ;
@@ -150,7 +159,7 @@ public class flower {
     }
 private class MFColor0 {
   private org.web3d.x3d.jsail.fields.MFColor getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {1f ,1f ,1f });
+    return new org.web3d.x3d.jsail.fields.MFColor(new double[] {1,1,1});
   }
 }
 private class MFInt321 {
@@ -160,7 +169,7 @@ private class MFInt321 {
 }
 private class MFVec3f2 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f });
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0,0,1,0,1,0,1,0,0});
   }
 }
 }

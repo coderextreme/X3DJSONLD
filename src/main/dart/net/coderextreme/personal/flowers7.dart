@@ -9,6 +9,14 @@ var X3D0 =  X3D(
         head(
           component_ : 
             component(
+              name_ : SFString('Scripting'),
+              level_ : 1),
+          component_ : 
+            component(
+              name_ : SFString('EnvironmentalEffects'),
+              level_ : 3),
+          component_ : 
+            component(
               name_ : SFString('Shaders'),
               level_ : 1),
           component_ : 
@@ -31,6 +39,10 @@ var X3D0 =  X3D(
             component(
               name_ : SFString('Grouping'),
               level_ : 3),
+          component_ : 
+            component(
+              name_ : SFString('Core'),
+              level_ : 1),
           meta_ : [
             meta(
               name_ : SFString('title'),
@@ -46,7 +58,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('identifier'),
-              content_ : SFString('https://coderextreme.net/X3DJSONLD/flowers7.x3d')),
+              content_ : SFString('https://coderextreme.net/X3DJSONLD/src/main/data/flowers7.x3d')),
 
             meta(
               name_ : SFString('description'),
@@ -59,19 +71,19 @@ var X3D0 =  X3D(
 
             Background(
               DEF_ : SFString('background'),
-              backUrl_ : MFString([SFString("../resources/images/all_probes/beach_cross/beach_back.png"), SFString("https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_back.png")]),
-              bottomUrl_ : MFString([SFString("../resources/images/all_probes/beach_cross/beach_bottom.png"), SFString("https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_bottom.png")]),
-              frontUrl_ : MFString([SFString("../resources/images/all_probes/beach_cross/beach_front.png"), SFString("https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_front.png")]),
-              leftUrl_ : MFString([SFString("../resources/images/all_probes/beach_cross/beach_left.png"), SFString("https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_left.png")]),
-              rightUrl_ : MFString([SFString("../resources/images/all_probes/beach_cross/beach_right.png"), SFString("https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_right.png")]),
-              topUrl_ : MFString([SFString("../resources/images/all_probes/beach_cross/beach_top.png"), SFString("https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_top.png")])),
+              backUrl_ : MFString([SFString("../resources/images/all_probes/beach_cross/beach_back.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png")]),
+              bottomUrl_ : MFString([SFString("../resources/images/all_probes/beach_cross/beach_bottom.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png")]),
+              frontUrl_ : MFString([SFString("../resources/images/all_probes/beach_cross/beach_front.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png")]),
+              leftUrl_ : MFString([SFString("../resources/images/all_probes/beach_cross/beach_left.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png")]),
+              rightUrl_ : MFString([SFString("../resources/images/all_probes/beach_cross/beach_right.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png")]),
+              topUrl_ : MFString([SFString("../resources/images/all_probes/beach_cross/beach_top.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png")])),
 
             Viewpoint(
               position_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(40)]),
               description_ : SFString('Transparent rose')),
 
             Transform(
-              children_ : [
+              child_ : 
                 Shape(
                   appearance_ : 
                     Appearance(
@@ -85,106 +97,28 @@ var X3D0 =  X3D(
                           topTexture_ : 
                             ImageTexture(
                               DEF_ : SFString('backShader'),
-                              url_ : MFString([SFString("../resources/images/all_probes/beach_cross/beach_back.png"), SFString("https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_back.png")])),
+                              url_ : MFString([SFString("../resources/images/all_probes/beach_cross/beach_back.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png")])),
                           topTexture_ : 
                             ImageTexture(
                               DEF_ : SFString('bottomShader'),
-                              url_ : MFString([SFString("../resources/images/all_probes/beach_cross/beach_bottom.png"), SFString("https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_bottom.png")])),
+                              url_ : MFString([SFString("../resources/images/all_probes/beach_cross/beach_bottom.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png")])),
                           topTexture_ : 
                             ImageTexture(
                               DEF_ : SFString('frontShader'),
-                              url_ : MFString([SFString("../resources/images/all_probes/beach_cross/beach_front.png"), SFString("https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_front.png")])),
+                              url_ : MFString([SFString("../resources/images/all_probes/beach_cross/beach_front.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png")])),
                           topTexture_ : 
                             ImageTexture(
                               DEF_ : SFString('leftShader'),
-                              url_ : MFString([SFString("../resources/images/all_probes/beach_cross/beach_left.png"), SFString("https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_left.png")])),
+                              url_ : MFString([SFString("../resources/images/all_probes/beach_cross/beach_left.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png")])),
                           topTexture_ : 
                             ImageTexture(
                               DEF_ : SFString('rightShader'),
-                              url_ : MFString([SFString("../resources/images/all_probes/beach_cross/beach_right.png"), SFString("https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_right.png")])),
+                              url_ : MFString([SFString("../resources/images/all_probes/beach_cross/beach_right.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png")])),
                           topTexture_ : 
                             ImageTexture(
                               DEF_ : SFString('topShader'),
-                              url_ : MFString([SFString("../resources/images/all_probes/beach_cross/beach_top.png"), SFString("https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_top.png")]))),
-                      shaders_ : 
-                        ComposedShader(
-                          DEF_ : SFString('x3dom'),
-                          language_ : SFString('GLSL'),
-                          field_ : [
-                            field(
-                              type_ : SFString("SFInt32"),
-                              name_ : SFString('cube'),
-                              accessType_ : SFString("inputOutput"),
-                              value_ : SFString('0')),
-
-                            field(
-                              type_ : SFString("SFVec3f"),
-                              name_ : SFString('chromaticDispertion'),
-                              accessType_ : SFString("initializeOnly"),
-                              value_ : SFString('0.98 1 1.033')),
-
-                            field(
-                              type_ : SFString("SFFloat"),
-                              name_ : SFString('bias'),
-                              accessType_ : SFString("inputOutput"),
-                              value_ : SFString('0.5')),
-
-                            field(
-                              type_ : SFString("SFFloat"),
-                              name_ : SFString('scale'),
-                              accessType_ : SFString("inputOutput"),
-                              value_ : SFString('0.5')),
-
-                            field(
-                              type_ : SFString("SFFloat"),
-                              name_ : SFString('power'),
-                              accessType_ : SFString("inputOutput"),
-                              value_ : SFString('2')),
-
-                            field(
-                              type_ : SFString("SFFloat"),
-                              name_ : SFString('a'),
-                              accessType_ : SFString("inputOutput"),
-                              value_ : SFString('10')),
-
-                            field(
-                              type_ : SFString("SFFloat"),
-                              name_ : SFString('b'),
-                              accessType_ : SFString("inputOutput"),
-                              value_ : SFString('1')),
-
-                            field(
-                              type_ : SFString("SFFloat"),
-                              name_ : SFString('c'),
-                              accessType_ : SFString("inputOutput"),
-                              value_ : SFString('20')),
-
-                            field(
-                              type_ : SFString("SFFloat"),
-                              name_ : SFString('d'),
-                              accessType_ : SFString("inputOutput"),
-                              value_ : SFString('20')),
-
-                            field(
-                              type_ : SFString("SFFloat"),
-                              name_ : SFString('tdelta'),
-                              accessType_ : SFString("inputOutput"),
-                              value_ : SFString('0')),
-
-                            field(
-                              type_ : SFString("SFFloat"),
-                              name_ : SFString('pdelta'),
-                              accessType_ : SFString("inputOutput"),
-                              value_ : SFString('0')),
-                          /*<field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field>*/
-                          parts_ : 
-                            ShaderPart(
-                              type_ : SFString("VERTEX",
-                              url_ : MFString([SFString("../shaders/x3dom_flowers_chromatic.vs"), SFString("https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs")]))],
-                          parts_ : 
-                            ShaderPart(
-                              type_ : SFString("FRAGMENT",
-                              url_ : MFString([SFString("../shaders/common.fs"), SFString("https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs")]))),
+                              url_ : MFString([SFString("../resources/images/all_probes/beach_cross/beach_top.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png")]))),
+                      /*<ComposedShader DEF='x3dom' language=\"GLSL\"> <field name='cube' type='SFInt32' accessType='inputOutput' value='0'></field> <field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field> <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1.0 1.033'></field> <field name='bias' type='SFFloat' accessType='inputOutput' value='0.5'></field> <field name='scale' type='SFFloat' accessType='inputOutput' value='0.5'></field> <field name='power' type='SFFloat' accessType='inputOutput' value='2'></field> <field name='a' type='SFFloat' accessType='inputOutput' value='10'></field> <field name='b' type='SFFloat' accessType='inputOutput' value='1'></field> <field name='c' type='SFFloat' accessType='inputOutput' value='20'></field> <field name='d' type='SFFloat' accessType='inputOutput' value='20'></field> <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field> <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field> <ShaderPart url='\"https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs\"' containerField='parts' type='VERTEX'></ShaderPart> <ShaderPart url='\"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart> </ComposedShader>*/
                       shaders_ : 
                         ComposedShader(
                           DEF_ : SFString('x_ite'),
@@ -260,13 +194,13 @@ var X3D0 =  X3D(
                           parts_ : 
                             ShaderPart(
                               type_ : SFString("VERTEX",
-                              url_ : MFString([SFString("../shaders/x_ite_flowers_chromatic.vs"), SFString("https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs")]))],
+                              url_ : MFString([SFString("https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs"), SFString("https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs")]))],
                           parts_ : 
                             ShaderPart(
                               type_ : SFString("FRAGMENT",
-                              url_ : MFString([SFString("../shaders/x_ite.fs"), SFString("https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs")])))),
+                              url_ : MFString([SFString("https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"), SFString("https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs")])))),
                   geometry_ : 
-                    Sphere())]),
+                    Sphere())),
 
             Script(
               DEF_ : SFString('UrlSelector'),
@@ -276,37 +210,37 @@ var X3D0 =  X3D(
                   type_ : SFString("MFString"),
                   name_ : SFString('frontUrls'),
                   accessType_ : SFString("initializeOnly"),
-                  value_ : SFString('\"../resources/images/all_probes/beach_cross/beach_front.png\" \"../resources/images/all_probes/building_cross/building_front.png\" \"../resources/images/all_probes/campus_cross/campus_front.png\" \"../resources/images/all_probes/galileo_cross/galileo_front.png\" \"../resources/images/all_probes/grace_cross/grace_front.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_front.png\" \"../resources/images/all_probes/rnl_cross/rnl_front.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_front.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_front.png\"')),
+                  value_ : SFString('\"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/building_cross/building_front.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/campus_cross/campus_front.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/galileo_cross/galileo_front.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/grace_cross/grace_front.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/kitchen_cross/kitchen_front.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/rnl_cross/rnl_front.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_front.png\"')),
 
                 field(
                   type_ : SFString("MFString"),
                   name_ : SFString('backUrls'),
                   accessType_ : SFString("initializeOnly"),
-                  value_ : SFString('\"../resources/images/all_probes/beach_cross/beach_back.png\" \"../resources/images/all_probes/building_cross/building_back.png\" \"../resources/images/all_probes/campus_cross/campus_back.png\" \"../resources/images/all_probes/galileo_cross/galileo_back.png\" \"../resources/images/all_probes/grace_cross/grace_back.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_back.png\" \"../resources/images/all_probes/rnl_cross/rnl_back.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_back.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_back.png\"')),
+                  value_ : SFString('\"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/building_cross/building_back.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/campus_cross/campus_back.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/galileo_cross/galileo_back.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/grace_cross/grace_back.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/kitchen_cross/kitchen_back.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/rnl_cross/rnl_back.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_back.png\"')),
 
                 field(
                   type_ : SFString("MFString"),
                   name_ : SFString('leftUrls'),
                   accessType_ : SFString("initializeOnly"),
-                  value_ : SFString('\"../resources/images/all_probes/beach_cross/beach_left.png\" \"../resources/images/all_probes/building_cross/building_left.png\" \"../resources/images/all_probes/campus_cross/campus_left.png\" \"../resources/images/all_probes/galileo_cross/galileo_left.png\" \"../resources/images/all_probes/grace_cross/grace_left.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_left.png\" \"../resources/images/all_probes/rnl_cross/rnl_left.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_left.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_left.png\"')),
+                  value_ : SFString('\"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/building_cross/building_left.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/campus_cross/campus_left.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/galileo_cross/galileo_left.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/grace_cross/grace_left.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/kitchen_cross/kitchen_left.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/rnl_cross/rnl_left.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_left.png\"')),
 
                 field(
                   type_ : SFString("MFString"),
                   name_ : SFString('rightUrls'),
                   accessType_ : SFString("initializeOnly"),
-                  value_ : SFString('\"../resources/images/all_probes/beach_cross/beach_right.png\" \"../resources/images/all_probes/building_cross/building_right.png\" \"../resources/images/all_probes/campus_cross/campus_right.png\" \"../resources/images/all_probes/galileo_cross/galileo_right.png\" \"../resources/images/all_probes/grace_cross/grace_right.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_right.png\" \"../resources/images/all_probes/rnl_cross/rnl_right.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_right.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_right.png\"')),
+                  value_ : SFString('\"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/building_cross/building_right.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/campus_cross/campus_right.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/galileo_cross/galileo_right.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/grace_cross/grace_right.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/kitchen_cross/kitchen_right.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/rnl_cross/rnl_right.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_right.png\"')),
 
                 field(
                   type_ : SFString("MFString"),
                   name_ : SFString('topUrls'),
                   accessType_ : SFString("initializeOnly"),
-                  value_ : SFString('\"../resources/images/all_probes/beach_cross/beach_top.png\" \"../resources/images/all_probes/building_cross/building_top.png\" \"../resources/images/all_probes/campus_cross/campus_top.png\" \"../resources/images/all_probes/galileo_cross/galileo_top.png\" \"../resources/images/all_probes/grace_cross/grace_top.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_top.png\" \"../resources/images/all_probes/rnl_cross/rnl_top.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_top.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_top.png\"')),
+                  value_ : SFString('\"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/building_cross/building_top.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/campus_cross/campus_top.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/galileo_cross/galileo_top.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/grace_cross/grace_top.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/kitchen_cross/kitchen_top.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/rnl_cross/rnl_top.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_top.png\"')),
 
                 field(
                   type_ : SFString("MFString"),
                   name_ : SFString('bottomUrls'),
                   accessType_ : SFString("initializeOnly"),
-                  value_ : SFString('\"../resources/images/all_probes/beach_cross/beach_bottom.png\" \"../resources/images/all_probes/building_cross/building_bottom.png\" \"../resources/images/all_probes/campus_cross/campus_bottom.png\" \"../resources/images/all_probes/galileo_cross/galileo_bottom.png\" \"../resources/images/all_probes/grace_cross/grace_bottom.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_bottom.png\" \"../resources/images/all_probes/rnl_cross/rnl_bottom.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_bottom.png\"')),
+                  value_ : SFString('\"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/building_cross/building_bottom.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/campus_cross/campus_bottom.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/galileo_cross/galileo_bottom.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/grace_cross/grace_bottom.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/kitchen_cross/kitchen_bottom.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/rnl_cross/rnl_bottom.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_bottom.png\"')),
 
                 field(
                   type_ : SFString("MFString"),

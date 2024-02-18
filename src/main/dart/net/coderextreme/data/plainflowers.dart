@@ -4,7 +4,7 @@ import '../x3d.dart';
 var X3D0 =  X3D(
 
       profile_ : SFString('Immersive'),
-      version_ : SFString('4.0'),
+      version_ : SFString('3.3'),
       head_ : 
         head(
           meta_ : [
@@ -22,56 +22,58 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('generator'),
-              content_ : SFString('X3D-Edit, https://savage.nps.edu/X3D-Edit'))]),
+              content_ : SFString('X3D-Edit, https://savage.nps.edu/X3D-Edit')),
+
+            meta(
+              name_ : SFString('identifier'),
+              content_ : SFString('https://coderextreme.net/X3DJSONLD/src/main/data/plainflowers.x3d'))]),
       Scene_ : 
         Scene(
           children_ : [
-            ExternProtoDeclare(
-              name_ : SFString('FlowerProto'),
-              url_ : MFString([SFString("../data/flowerproto.x3d#FlowerProto")]),
-              field_ : [
-                field(
-                  type_ : SFString("MFString"),
-                  accessType_ : SFString("inputOutput"),
-                  name_ : SFString('vertex')),
-
-                field(
-                  type_ : SFString("MFString"),
-                  accessType_ : SFString("inputOutput"),
-                  name_ : SFString('fragment'))]),
-
-            ProtoDeclare(
-              name_ : SFString('flower'),
-              ProtoInterface_ : 
-                ProtoInterface(),
-              ProtoBody_ : 
-                ProtoBody(
-                  children_ : [
-                    Group(
-                      children_ : [
-                        ProtoInstance(
-                          name_ : SFString('FlowerProto'),
-                          fieldValue_ : [
-                            fieldValue(
-                              name_ : SFString('vertex'),
-                              value_ : SFString('\"../shaders/x_ite_flowers_plain.vs\"')),
-
-                            fieldValue(
-                              name_ : SFString('fragment'),
-                              value_ : SFString('\"../shaders/plain.fs\"'))])])])),
-
             NavigationInfo(),
 
             Background(
-              frontUrl_ : MFString([SFString("../resources/images/all_probes/stpeters_cross/stpeters_front.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png")]),
               backUrl_ : MFString([SFString("../resources/images/all_probes/stpeters_cross/stpeters_back.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png")]),
+              bottomUrl_ : MFString([SFString("../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png")]),
+              frontUrl_ : MFString([SFString("../resources/images/all_probes/stpeters_cross/stpeters_front.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png")]),
               leftUrl_ : MFString([SFString("../resources/images/all_probes/stpeters_cross/stpeters_left.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png")]),
               rightUrl_ : MFString([SFString("../resources/images/all_probes/stpeters_cross/stpeters_right.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png")]),
-              topUrl_ : MFString([SFString("../resources/images/all_probes/stpeters_cross/stpeters_top.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png")]),
-              bottomUrl_ : MFString([SFString("../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png")])),
+              topUrl_ : MFString([SFString("../resources/images/all_probes/stpeters_cross/stpeters_top.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png")])),
 
             Group(
               children_ : [
+                ExternProtoDeclare(
+                  name_ : SFString('FlowerProto'),
+                  url_ : MFString([SFString("../data/flowerproto.x3d#FlowerProto")]),
+                  field_ : [
+                    field(
+                      type_ : SFString("MFString"),
+                      name_ : SFString('vertex'),
+                      accessType_ : SFString("inputOutput")),
+
+                    field(
+                      type_ : SFString("MFString"),
+                      name_ : SFString('fragment'),
+                      accessType_ : SFString("inputOutput"))]),
+
+                ProtoDeclare(
+                  name_ : SFString('flower'),
+                  ProtoBody_ : 
+                    ProtoBody(
+                      children_ : [
+                        Group(
+                          children_ : [
+                            ProtoInstance(
+                              name_ : SFString('FlowerProto'),
+                              fieldValue_ : [
+                                fieldValue(
+                                  name_ : SFString('vertex'),
+                                  value_ : SFString('\"../shaders/x_ite_flowers_plain.vs\"')),
+
+                                fieldValue(
+                                  name_ : SFString('fragment'),
+                                  value_ : SFString('\"../shaders/plain.fs\"'))])])])),
+
                 ProtoInstance(
                   name_ : SFString('flower')),
 

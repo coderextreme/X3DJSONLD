@@ -36,13 +36,22 @@ import org.web3d.x3d.jsail.Texturing.*;
 import org.web3d.x3d.jsail.Time.*;
 import org.web3d.x3d.jsail.VolumeRendering.*;
 import org.web3d.x3d.jsail.fields.*;
-public class ScubaTank {
+import java.util.ArrayList;
+import java.util.List;
+import net.coderextreme.X3DRoots;
+public class ScubaTank implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    X3D model = new ScubaTank().initialize();
+    X3D model = new ScubaTank().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
+    model.toFileX3D("../data/ScubaTank.new.java.x3d");
     model.toFileJSON("../data/ScubaTank.new.json");
+    }
+    public List<X3D> getRootNodeList() {
+    	List<X3D> list = new ArrayList<X3D>(1);
+    	list.add(initialize());
+    	return list;
     }
     public X3D initialize() {
       X3D X3D0 =  new X3D().setProfile("Interchange").setVersion("3.3")
@@ -61,52 +70,52 @@ public class ScubaTank {
           .addChild(new Transform()
             .addChild(new Shape()
               .setAppearance(new Appearance()
-                .setMaterial(new Material().setDEF("tank").setAmbientIntensity(0.3f ).setDiffuseColor(new float[] {0.3f ,0.3f ,0.5f }).setShininess(0.1f ).setSpecularColor(new float[] {0.7f ,0.7f ,0.8f })))
-              .setGeometry(new Cylinder().setHeight(0.7f ).setRadius(0.1f ))))
-          .addChild(new Transform().setTranslation(new float[] {0f ,0.35f ,0f })
+                .setMaterial(new Material().setDEF("tank").setAmbientIntensity(0.3).setDiffuseColor(new double[] {0.3,0.3,0.5}).setShininess(0.1).setSpecularColor(new double[] {0.7,0.7,0.8})))
+              .setGeometry(new Cylinder().setHeight(0.7).setRadius(0.1))))
+          .addChild(new Transform().setTranslation(new double[] {0,0.35,0})
             .addChild(new Shape()
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setUSE("tank")))
-              .setGeometry(new Sphere().setRadius(0.098f ))))
-          .addChild(new Transform().setTranslation(new float[] {0f ,-0.35f ,0f })
+              .setGeometry(new Sphere().setRadius(0.098))))
+          .addChild(new Transform().setTranslation(new double[] {0,-0.35,0})
             .addChild(new Shape().setDEF("tankBottom")
               .setAppearance(new Appearance()
-                .setMaterial(new Material().setDEF("black").setAmbientIntensity(0.3f ).setDiffuseColor(new float[] {0f ,0f ,0f })))
-              .setGeometry(new Cylinder().setHeight(0.06f ).setRadius(0.115f ))))
+                .setMaterial(new Material().setDEF("black").setAmbientIntensity(0.3).setDiffuseColor(new double[] {0,0,0})))
+              .setGeometry(new Cylinder().setHeight(0.06).setRadius(0.115))))
           .addChild(new Group().setDEF("tankNozzle")
             .addChild(new Transform()
-              .addChild(new Transform().setTranslation(new float[] {0f ,0.45f ,0f })
+              .addChild(new Transform().setTranslation(new double[] {0,0.45,0})
                 .addChild(new Shape().setDEF("pressure")
                   .setAppearance(new Appearance()
-                    .setMaterial(new Material().setDEF("pressureColor").setAmbientIntensity(0.4f ).setDiffuseColor(new float[] {0.91f ,0.91f ,0.91f }).setShininess(0.16f ).setSpecularColor(new float[] {0.91f ,0.9f ,0.91f })))
-                  .setGeometry(new Cylinder().setHeight(0.1f ).setRadius(0.015f ))))
-              .addChild(new Transform().setTranslation(new float[] {0f ,0.5f ,0f })
+                    .setMaterial(new Material().setDEF("pressureColor").setAmbientIntensity(0.4).setDiffuseColor(new double[] {0.91,0.91,0.91}).setShininess(0.16).setSpecularColor(new double[] {0.91,0.9,0.91})))
+                  .setGeometry(new Cylinder().setHeight(0.1).setRadius(0.015))))
+              .addChild(new Transform().setTranslation(new double[] {0,0.5,0})
                 .addChild(new Shape().setDEF("pressureTop")
                   .setAppearance(new Appearance()
                     .setMaterial(new Material().setUSE("black")))
-                  .setGeometry(new Cylinder().setHeight(0.02f ).setRadius(0.025f ))))
-              .addChild(new Transform().setRotation(new float[] {0f ,0f ,1f ,1.57f }).setTranslation(new float[] {-0.028f ,0.462f ,0f })
+                  .setGeometry(new Cylinder().setHeight(0.02).setRadius(0.025))))
+              .addChild(new Transform().setRotation(new double[] {0,0,1,1.57}).setTranslation(new double[] {-0.028,0.462,0})
                 .addChild(new Transform()
                   .addChild(new Shape().setDEF("connectorToRegulator")
                     .setAppearance(new Appearance()
                       .setMaterial(new Material().setUSE("pressureColor")))
-                    .setGeometry(new Cylinder().setHeight(0.03f ).setRadius(0.01f ))))
-                .addChild(new Transform().setTranslation(new float[] {0f ,0.02f ,0f })
+                    .setGeometry(new Cylinder().setHeight(0.03).setRadius(0.01))))
+                .addChild(new Transform().setTranslation(new double[] {0,0.02,0})
                   .addChild(new Shape().setDEF("connectorToRegulatorTop")
                     .setAppearance(new Appearance()
                       .setMaterial(new Material().setUSE("black")))
-                    .setGeometry(new Cylinder().setHeight(0.02f ).setRadius(0.02f )))))))
-          .addChild(new Transform().setTranslation(new float[] {0f ,0.2f ,0f })
+                    .setGeometry(new Cylinder().setHeight(0.02).setRadius(0.02)))))))
+          .addChild(new Transform().setTranslation(new double[] {0,0.2,0})
             .addChild(new Shape().setDEF("tankHoldBelt")
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setUSE("black")))
-              .setGeometry(new Cylinder().setHeight(0.1f ).setRadius(0.115f )))))
+              .setGeometry(new Cylinder().setHeight(0.1).setRadius(0.115)))))
         .addChild(new Background().setSkyColor(new MFColor0().getArray())))      ;
     return X3D0;
     }
 private class MFColor0 {
   private org.web3d.x3d.jsail.fields.MFColor getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0.6f ,0.6f ,0.6f });
+    return new org.web3d.x3d.jsail.fields.MFColor(new double[] {0.6,0.6,0.6});
   }
 }
 }

@@ -3,7 +3,7 @@ void main(int argc, char ** argv) {
 Browser browser = X3D.getBrowser();
 X3D X3D0;
 X3D0.profile = "Immersive";
-X3D0.version = "3.0";
+X3D0.version = "4.0";
 head head1 = createNode("head");
 component component2 = createNode("component");
 component2.name = "Scripting";
@@ -87,13 +87,13 @@ ProtoDeclare ProtoDeclare17 = browser.createX3DFromString(`<?xml version="1.0" e
 <OrientationInterpolator DEF="OrbitPath" key="0 0.5 1" keyValue="1 0 0 0 1 0 0 3.14 1 0 0 6.28"></OrientationInterpolator>
 <Transform DEF="OrbitTransform"><IS><connect nodeField="translation" protoField="translation"></connect>
 </IS>
-<Shape><Appearance><Material><IS><connect nodeField="diffuseColor" protoField="diffuseColor"></connect>
+<Shape><Appearance containerField="appearance"><Material containerField="material"><IS><connect nodeField="diffuseColor" protoField="diffuseColor"></connect>
 <connect nodeField="specularColor" protoField="specularColor"></connect>
 <connect nodeField="transparency" protoField="transparency"></connect>
 </IS>
 </Material>
 </Appearance>
-<!--<IndexedFaceSet DEF="Orbit" creaseAngle="0"> <Coordinate DEF="OrbitCoordinates"></Coordinate> </IndexedFaceSet>--><IndexedFaceSet ccw="false" convex="false" coordIndex="0 1 2 -1" DEF="Orbit"><Coordinate containerField="coord" DEF="OrbitCoordinates" point="0 0 1 0 1 0 1 0 0"></Coordinate>
+<!--<IndexedFaceSet DEF="Orbit" creaseAngle="0"> <Coordinate DEF="OrbitCoordinates"></Coordinate> </IndexedFaceSet>--><IndexedFaceSet ccw="false" convex="false" coordIndex="0 1 2 -1" DEF="Orbit"><Coordinate DEF="OrbitCoordinates" point="0 0 1 0 1 0 1 0 0"></Coordinate>
 </IndexedFaceSet>
 </Shape>
 </Transform>

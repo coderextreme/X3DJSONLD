@@ -36,13 +36,22 @@ import org.web3d.x3d.jsail.Texturing.*;
 import org.web3d.x3d.jsail.Time.*;
 import org.web3d.x3d.jsail.VolumeRendering.*;
 import org.web3d.x3d.jsail.fields.*;
-public class flowers4 {
+import java.util.ArrayList;
+import java.util.List;
+import net.coderextreme.X3DRoots;
+public class flowers4 implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    X3D model = new flowers4().initialize();
+    X3D model = new flowers4().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
+    model.toFileX3D("../personal/flowers4.new.java.x3d");
     model.toFileJSON("../personal/flowers4.new.json");
+    }
+    public List<X3D> getRootNodeList() {
+    	List<X3D> list = new ArrayList<X3D>(1);
+    	list.add(initialize());
+    	return list;
     }
     public X3D initialize() {
       X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
@@ -67,13 +76,13 @@ public class flowers4 {
         .addChild(new Transform().setDEF("transform")
           .addChild(new Shape()
             .setAppearance(new Appearance()
-              .setMaterial(new Material().setDiffuseColor(new float[] {0.7f ,0.7f ,0.7f }).setSpecularColor(new float[] {0.5f ,0.5f ,0.5f }))
+              .setMaterial(new Material().setDiffuseColor(new double[] {0.7,0.7,0.7}).setSpecularColor(new double[] {0.5,0.5,0.5}))
               .setTexture(new ComposedCubeMapTexture()
-                .setTopTexture(new ImageTexture().setUrl(new MFString6().getArray()))
-                .setTopTexture(new ImageTexture().setUrl(new MFString7().getArray()))
-                .setTopTexture(new ImageTexture().setUrl(new MFString8().getArray()))
-                .setTopTexture(new ImageTexture().setUrl(new MFString9().getArray()))
-                .setTopTexture(new ImageTexture().setUrl(new MFString10().getArray()))
+                .setBackTexture(new ImageTexture().setUrl(new MFString6().getArray()))
+                .setBottomTexture(new ImageTexture().setUrl(new MFString7().getArray()))
+                .setFrontTexture(new ImageTexture().setUrl(new MFString8().getArray()))
+                .setLeftTexture(new ImageTexture().setUrl(new MFString9().getArray()))
+                .setRightTexture(new ImageTexture().setUrl(new MFString10().getArray()))
                 .setTopTexture(new ImageTexture().setUrl(new MFString11().getArray())))
               .addShaders(new ComposedShader().setDEF("shader").setLanguage("GLSL")
                 .addField(new field().setType("SFInt32").setName("cube").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
@@ -90,13 +99,11 @@ public class flowers4 {
           .addField(new field().setType("SFFloat").setName("set_fraction").setAccessType(field.ACCESSTYPE_INPUTONLY))
           .addField(new field().setType("MFVec3f").setName("coordinates").setAccessType(field.ACCESSTYPE_INPUTOUTPUT))
           .addField(new field().setType("MFInt32").setName("coordIndexes").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
+          .addField(new field().setType("SFFloat").setName("e").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("5"))
+          .addField(new field().setType("SFFloat").setName("f").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("5"))
+          .addField(new field().setType("SFFloat").setName("g").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("5"))
+          .addField(new field().setType("SFFloat").setName("h").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("5"))
           .setSourceCode("ecmascript:\n"+
-"\n"+
-"var e = 5;\n"+
-"var f = 5;\n"+
-"var g = 5;\n"+
-"var h = 5;\n"+
-"\n"+
 "function initialize() {\n"+
 "     var resolution = 100;\n"+
 "     updateCoordinates(resolution);\n"+
@@ -110,7 +117,7 @@ public class flowers4 {
 "	     cis.push(-1);\n"+
 "	}\n"+
 "    }\n"+
-"    coordIndexes = new MFInt32(cis);\n"+
+"    coordIndexes = new MFInt32(...cis);\n"+
 "}\n"+
 "\n"+
 "function updateCoordinates(resolution) {\n"+
@@ -130,7 +137,7 @@ public class flowers4 {
 "	}\n"+
 "	phi += delta;\n"+
 "     }\n"+
-"     coordinates = new MFVec3f(crds);\n"+
+"     coordinates = new MFVec3f(...crds);\n"+
 "}\n"+
 "\n"+
 "function set_fraction(fraction, eventTime) {\n"+
@@ -149,6 +156,9 @@ public class flowers4 {
 "		h += Math.floor(Math.random() * 2) * 2 - 1;\n"+
 "		break;\n"+
 "	}\n"+
+"	if (e < 1) {\n"+
+"		e = 10;\n"+
+"	}\n"+
 "	if (f < 1) {\n"+
 "		f = 10;\n"+
 "	}\n"+
@@ -161,7 +171,7 @@ public class flowers4 {
 "	var resolution = 100;\n"+
 "	updateCoordinates(resolution);\n"+
 "}"))
-        .addChild(new TimeSensor().setDEF("Clock").setCycleInterval(16d).setLoop(true))
+        .addChild(new TimeSensor().setDEF("Clock").setCycleInterval(16).setLoop(true))
         .addChild(new ROUTE().setFromField("coordIndexes").setFromNode("OrbitScript").setToField("set_coordIndex").setToNode("Orbit"))
         .addChild(new ROUTE().setFromField("coordinates").setFromNode("OrbitScript").setToField("set_point").setToNode("OrbitCoordinates"))
         .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("Clock").setToField("set_fraction").setToNode("OrbitScript")))      ;
@@ -229,12 +239,12 @@ private class MFString11 {
 }
 private class MFString12 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../shaders/x_ite.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"});
   }
 }
 private class MFString13 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../shaders/x_ite.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"});
   }
 }
 }

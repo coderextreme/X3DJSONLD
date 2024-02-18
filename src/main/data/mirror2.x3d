@@ -8,7 +8,7 @@
 	      <component name='CubeMapTexturing' level='1'></component>
 	      <component name='Texturing' level='1'></component>
 	      <component name='Rendering' level='1'></component>
-	      <component name='Shape' level='4'></component>
+	      <!--<component name='Shape' level='4'></component>-->
 	      <component name='Grouping' level='3'></component>
 	      <component name='Core' level='1'></component>
         <meta name='title' content='mirror2.x3d'/>

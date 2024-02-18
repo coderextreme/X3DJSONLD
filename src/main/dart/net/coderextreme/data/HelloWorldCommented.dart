@@ -4,7 +4,7 @@ import '../x3d.dart';
 var X3D0 =  X3D(
 
       profile_ : SFString('Immersive'),
-      version_ : SFString('4.0'),
+      version_ : SFString('3.3'),
       head_ : 
         head(
           meta_ : [
@@ -50,27 +50,45 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('license'),
-              content_ : SFString('https://www.web3d.org/x3d/content/examples/license.html'))]),
+              content_ : SFString('https://www.web3d.org/x3d/content/examples/license.html')),
+
+            meta(
+              name_ : SFString('generator'),
+              content_ : SFString('X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit'))]),
       Scene_ : 
         Scene(
+          /*Example scene to illustrate comments interspersed among X3D nodes and fields (XML elements and attributes)*/
+          /*WorldInfo begin*/
           children_ : [
             WorldInfo(
               title_ : SFString('Hello world!')),
+          /*WorldInfo complete, Group begin*/
 
             Group(
+              /*Viewpoint begin*/
               children_ : [
                 Viewpoint(
                   DEF_ : SFString('ViewUpClose'),
+                  centerOfRotation_ : SFVec3f([SFDouble(0), SFDouble(-1), SFDouble(0)]),
                   description_ : SFString('Hello world!'),
-                  position_ : SFVec3f([SFDouble(0), SFDouble(-1), SFDouble(7)]),
-                  centerOfRotation_ : SFVec3f([SFDouble(0), SFDouble(-1), SFDouble(0)])),
+                  position_ : SFVec3f([SFDouble(0), SFDouble(-1), SFDouble(7)])),
+              /*Viewpoint complete, Transform begin*/
 
                 Transform(
                   rotation_ : SFRotation([SFDouble(0), SFDouble(1), SFDouble(0), SFDouble(3)]),
+                  /*Shape begin*/
                   child_ : 
                     Shape(
+                      /*Sphere begin*/
+                      /*Sphere complete, Appearance begin*/
+                      /*Appearance complete*/
+                      geometry_ : 
+                        Sphere(),
                       appearance_ : 
                         Appearance(
+                          /*Material begin*/
+                          /*Material complete, ImageTexture begin*/
+                          /*ImageTexture complete*/
                           material_ : 
                             Material(
                               DEF_ : SFString('MaterialLightBlue'),
@@ -78,24 +96,35 @@ var X3D0 =  X3D(
                           texture_ : 
                             ImageTexture(
                               DEF_ : SFString('ImageCloudlessEarth'),
-                              url_ : MFString([SFString("earth-topo.png"), SFString("earth-topo.jpg"), SFString("earth-topo-small.gif"), SFString("https://www.web3d.org/x3d/content/examples/Basic/earth-topo.png"), SFString("https://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg"), SFString("https://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif")]))),
-                      geometry_ : 
-                        Sphere())),
+                              url_ : MFString([SFString("earth-topo.png"), SFString("earth-topo.jpg"), SFString("earth-topo-small.gif"), SFString("https://www.web3d.org/x3d/content/examples/Basic/earth-topo.png"), SFString("https://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg"), SFString("https://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif")])))),
+                  /*Shape complete*/),
+              /*Transform complete, Transform begin*/
 
                 Transform(
                   translation_ : SFVec3f([SFDouble(0), SFDouble(-2), SFDouble(0)]),
+                  /*Shape begin*/
                   child_ : 
                     Shape(
-                      appearance_ : 
-                        Appearance(
-                          material_ : 
-                            Material(
-                              USE_ : SFString('MaterialLightBlue'))),
+                      /*Text begin*/
+                      /*Text complete, Appearance begin*/
+                      /*Appearance complete*/
                       geometry_ : 
                         Text(
                           DEF_ : SFString('TextMessage'),
                           string_ : MFString([SFString("Hello"), SFString("world!")]),
+                          /*FontStyle begin*/
+                          /*FontStyle complete*/
                           fontStyle_ : 
                             FontStyle(
-                              justify_ : MFString([SFString("MIDDLE"), SFString("MIDDLE")])))))])]));
+                              justify_ : MFString([SFString("MIDDLE"), SFString("MIDDLE")]))),
+                      appearance_ : 
+                        Appearance(
+                          /*Material begin*/
+                          /*Material complete*/
+                          material_ : 
+                            Material(
+                              USE_ : SFString('MaterialLightBlue')))),
+                  /*Shape complete*/),
+              /*Transform complete*/]),
+          /*Group complete*/]));
 void main() { exit(0); }

@@ -9,6 +9,14 @@ var X3D0 =  X3D(
         head(
           component_ : 
             component(
+              name_ : SFString('Scripting'),
+              level_ : 1),
+          component_ : 
+            component(
+              name_ : SFString('EnvironmentalEffects'),
+              level_ : 3),
+          component_ : 
+            component(
               name_ : SFString('Shaders'),
               level_ : 1),
           component_ : 
@@ -31,6 +39,10 @@ var X3D0 =  X3D(
             component(
               name_ : SFString('Grouping'),
               level_ : 3),
+          component_ : 
+            component(
+              name_ : SFString('Core'),
+              level_ : 1),
           meta_ : [
             meta(
               name_ : SFString('title'),
@@ -46,7 +58,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('identifier'),
-              content_ : SFString('https://coderextreme.net/X3DJSONLD/geo.x3d')),
+              content_ : SFString('https://coderextreme.net/X3DJSONLD/src/main/data/geo.x3d')),
 
             meta(
               name_ : SFString('description'),
@@ -71,7 +83,7 @@ var X3D0 =  X3D(
               topUrl_ : MFString([SFString("../resources/images/bTP.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/bTP.png")])),
 
             Transform(
-              children_ : [
+              child_ : 
                 Shape(
                   geometry_ : 
                     Sphere(),
@@ -188,5 +200,5 @@ var X3D0 =  X3D(
                           parts_ : 
                             ShaderPart(
                               type_ : SFString("FRAGMENT",
-                              url_ : MFString([SFString("../shaders/x_ite.fs"), SFString("https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs")])))))])]));
+                              url_ : MFString([SFString("../shaders/x_ite.fs"), SFString("https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs")]))))))]));
 void main() { exit(0); }

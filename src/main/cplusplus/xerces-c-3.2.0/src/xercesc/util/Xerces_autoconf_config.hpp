@@ -1,4 +1,4 @@
-/* xerces-c-3.2.0/src/xercesc/util/Xerces_autoconf_config.hpp.  Generated from Xerces_autoconf_config.hpp.in by configure.  */
+/* src/xercesc/util/Xerces_autoconf_config.hpp.  Generated from Xerces_autoconf_config.hpp.in by configure.  */
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -49,39 +49,39 @@
 // ---------------------------------------------------------------------------
 //  These defines are set by configure as appropriate for the platform.
 // ---------------------------------------------------------------------------
-#define XERCES_AUTOCONF 1
-#define XERCES_HAVE_CSTDINT 1
-#define XERCES_HAVE_STDINT_H 1
-#define XERCES_HAVE_SYS_TYPES_H 1
-#define XERCES_HAVE_INTTYPES_H 1
-/* #undef XERCES_HAVE_INTRIN_H */
-#define XERCES_HAVE_EMMINTRIN_H 1
-/* #undef XERCES_INCLUDE_WCHAR_H */
+#undef XERCES_AUTOCONF
+#undef XERCES_HAVE_CSTDINT
+#undef XERCES_HAVE_STDINT_H
+#undef XERCES_HAVE_SYS_TYPES_H
+#undef XERCES_HAVE_INTTYPES_H
+#undef XERCES_HAVE_INTRIN_H
+#undef XERCES_HAVE_EMMINTRIN_H
+#undef XERCES_INCLUDE_WCHAR_H
 
-#define XERCES_S16BIT_INT int16_t
-#define XERCES_S32BIT_INT int32_t
-#define XERCES_S64BIT_INT int64_t
-#define XERCES_U16BIT_INT uint16_t
-#define XERCES_U32BIT_INT uint32_t
-#define XERCES_U64BIT_INT uint64_t
-#define XERCES_XMLCH_T char16_t
-#define XERCES_SIZE_T size_t
-#define XERCES_SSIZE_T ssize_t
+#undef XERCES_S16BIT_INT
+#undef XERCES_S32BIT_INT
+#undef XERCES_S64BIT_INT
+#undef XERCES_U16BIT_INT
+#undef XERCES_U32BIT_INT
+#undef XERCES_U64BIT_INT
+#undef XERCES_XMLCH_T
+#undef XERCES_SIZE_T
+#undef XERCES_SSIZE_T
 
-#define XERCES_HAS_CPP_NAMESPACE 1
-#define XERCES_STD_NAMESPACE 1
-#define XERCES_NEW_IOSTREAMS 1
-/* #undef XERCES_NO_NATIVE_BOOL */
-#define XERCES_LSTRSUPPORT 1
+#undef XERCES_HAS_CPP_NAMESPACE
+#undef XERCES_STD_NAMESPACE
+#undef XERCES_NEW_IOSTREAMS
+#undef XERCES_NO_NATIVE_BOOL
+#undef XERCES_LSTRSUPPORT
 
-/* #undef XERCES_HAVE_CPUID_INTRINSIC */
-#define XERCES_HAVE_SSE2_INTRINSIC 1
-#define XERCES_HAVE_GETCPUID 1
+#undef XERCES_HAVE_CPUID_INTRINSIC
+#undef XERCES_HAVE_SSE2_INTRINSIC
+#undef XERCES_HAVE_GETCPUID
 
-#define XERCES_PLATFORM_EXPORT 
-#define XERCES_PLATFORM_IMPORT 
+#undef XERCES_PLATFORM_EXPORT
+#undef XERCES_PLATFORM_IMPORT
 
-/* #undef XERCES_NO_MATCHING_DELETE_OPERATOR */
+#undef XERCES_NO_MATCHING_DELETE_OPERATOR
 
 // ---------------------------------------------------------------------------
 //  Include standard headers, if available, that we may rely on below.
@@ -109,8 +109,8 @@
 // ---------------------------------------------------------------------------
 typedef XERCES_SIZE_T				XMLSize_t;
 typedef XERCES_SSIZE_T				XMLSSize_t;
-#define XERCES_SIZE_MAX SIZE_MAX
-#define XERCES_SSIZE_MAX SSIZE_MAX
+#undef XERCES_SIZE_MAX
+#undef XERCES_SSIZE_MAX
 
 // ---------------------------------------------------------------------------
 //  Define our version of the XML character

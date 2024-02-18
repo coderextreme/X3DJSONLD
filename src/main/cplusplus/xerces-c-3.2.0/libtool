@@ -1,6 +1,6 @@
-#! /bin/sh
+#! /bin/bash
 # Generated automatically by config.status (xerces-c) 3.2.0
-# Libtool was configured on host DESKTOP-DOPK2VD:
+# Libtool was configured on host DESKTOP-8OPL3IE:
 # NOTE: Changes made to this file will be lost: look at ltmain.sh.
 
 # Provide generalized library-building support services.
@@ -66,7 +66,7 @@ fast_install=needless
 shared_archive_member_spec=
 
 # Shell to use when invoking shell scripts.
-SHELL="/bin/sh"
+SHELL="/bin/bash"
 
 # An echo program that protects backslashes.
 ECHO="printf %s\\n"
@@ -295,7 +295,7 @@ finish_eval=""
 hardcode_into_libs=no
 
 # Compile-time system search path for libraries.
-sys_lib_search_path_spec="/usr/lib/gcc/x86_64-pc-cygwin/10 /usr/x86_64-pc-cygwin/lib /usr/lib /lib  /usr/lib/w32api"
+sys_lib_search_path_spec="/usr/lib/gcc/x86_64-pc-cygwin/13 /usr/x86_64-pc-cygwin/lib /usr/lib /lib  /usr/lib/w32api"
 
 # Detected run-time system search path for libraries.
 sys_lib_dlsearch_path_spec="/lib /usr/lib"
@@ -11817,17 +11817,17 @@ file_list_spec=""
 hardcode_action=immediate
 
 # The directories searched by this compiler when creating a shared library.
-compiler_lib_search_dirs="/usr/lib/gcc/x86_64-pc-cygwin/10 /usr/lib/gcc/x86_64-pc-cygwin/10/../../../../x86_64-pc-cygwin/lib/../lib /usr/lib/gcc/x86_64-pc-cygwin/10/../../../../lib /lib/../lib /usr/lib/../lib /usr/lib/gcc/x86_64-pc-cygwin/10/../../../../x86_64-pc-cygwin/lib /usr/lib/gcc/x86_64-pc-cygwin/10/../../.."
+compiler_lib_search_dirs="/usr/lib/gcc/x86_64-pc-cygwin/13 /usr/lib/gcc/x86_64-pc-cygwin/13/../../../../x86_64-pc-cygwin/lib /usr/lib/gcc/x86_64-pc-cygwin/13/../../.."
 
 # Dependencies to place before and after the objects being linked to
 # create a shared library.
-predep_objects="/usr/lib/gcc/x86_64-pc-cygwin/10/crtbeginS.o"
-postdep_objects="/usr/lib/gcc/x86_64-pc-cygwin/10/crtend.o"
+predep_objects="/usr/lib/gcc/x86_64-pc-cygwin/13/crtbeginS.o"
+postdep_objects="/usr/lib/gcc/x86_64-pc-cygwin/13/crtend.o"
 predeps=""
 postdeps="-lstdc++ -lgcc_s -lgcc -lcygwin -ladvapi32 -lshell32 -luser32 -lkernel32 -lgcc_s -lgcc"
 
 # The library search path used internally by the compiler when linking
 # a shared library.
-compiler_lib_search_path="-L/usr/lib/gcc/x86_64-pc-cygwin/10 -L/usr/lib/gcc/x86_64-pc-cygwin/10/../../../../x86_64-pc-cygwin/lib/../lib -L/usr/lib/gcc/x86_64-pc-cygwin/10/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-cygwin/10/../../../../x86_64-pc-cygwin/lib -L/usr/lib/gcc/x86_64-pc-cygwin/10/../../.."
+compiler_lib_search_path="-L/usr/lib/gcc/x86_64-pc-cygwin/13 -L/usr/lib/gcc/x86_64-pc-cygwin/13/../../../../x86_64-pc-cygwin/lib -L/usr/lib/gcc/x86_64-pc-cygwin/13/../../.."
 
 # ### END LIBTOOL TAG CONFIG: CXX

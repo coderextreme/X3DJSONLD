@@ -37,12 +37,12 @@ var X3D0 =  X3D(
               content_ : SFString('CHANGELOG.txt')),
 
             meta(
-              name_ : SFString('reference'),
-              content_ : SFString('https://www.medialab.hmu.gr/minipages/x3domAudio')),
-
-            meta(
               name_ : SFString('TODO'),
               content_ : SFString('credit for audio files')),
+
+            meta(
+              name_ : SFString('reference'),
+              content_ : SFString('https://www.medialab.hmu.gr/minipages/x3domAudio')),
 
             meta(
               name_ : SFString('identifier'),
@@ -50,7 +50,11 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('generator'),
-              content_ : SFString('X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit'))]),
+              content_ : SFString('X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit')),
+
+            meta(
+              name_ : SFString('license'),
+              content_ : SFString('../license.html'))]),
       Scene_ : 
         Scene(
           children_ : [
@@ -64,8 +68,8 @@ var X3D0 =  X3D(
 
             Viewpoint(
               description_ : SFString('View entire audio model'),
-              position_ : SFVec3f([SFDouble(0), SFDouble(500), SFDouble(600)]),
               orientation_ : SFRotation([SFDouble(1), SFDouble(0), SFDouble(0), SFDouble(-0.5)]),
+              position_ : SFVec3f([SFDouble(0), SFDouble(500), SFDouble(600)]),
               retainUserOffsets_ : true),
 
             Transform(
@@ -79,8 +83,8 @@ var X3D0 =  X3D(
                       material_ : 
                         Material(
                           diffuseColor_ : SFColor([SFDouble(0.1), SFDouble(0.1), SFDouble(0.1)]),
-                          specularColor_ : SFColor([SFDouble(0.01), SFDouble(0.01), SFDouble(0.01)]),
-                          emissiveColor_ : SFColor([SFDouble(0.8), SFDouble(0.8), SFDouble(0.8)]))),
+                          emissiveColor_ : SFColor([SFDouble(0.8), SFDouble(0.8), SFDouble(0.8)]),
+                          specularColor_ : SFColor([SFDouble(0.01), SFDouble(0.01), SFDouble(0.01)]))),
                   geometry_ : 
                     Sphere(
                       radius_ : 30))),
@@ -96,8 +100,8 @@ var X3D0 =  X3D(
                       material_ : 
                         Material(
                           diffuseColor_ : SFColor([SFDouble(0.1), SFDouble(0.1), SFDouble(0.1)]),
-                          specularColor_ : SFColor([SFDouble(0.01), SFDouble(0.01), SFDouble(0.01)]),
-                          emissiveColor_ : SFColor([SFDouble(0.8), SFDouble(0.8), SFDouble(0.8)]))),
+                          emissiveColor_ : SFColor([SFDouble(0.8), SFDouble(0.8), SFDouble(0.8)]),
+                          specularColor_ : SFColor([SFDouble(0.01), SFDouble(0.01), SFDouble(0.01)]))),
                   geometry_ : 
                     Sphere(
                       radius_ : 30))),
@@ -113,8 +117,8 @@ var X3D0 =  X3D(
                       material_ : 
                         Material(
                           diffuseColor_ : SFColor([SFDouble(0.1), SFDouble(0.1), SFDouble(0.1)]),
-                          specularColor_ : SFColor([SFDouble(0.01), SFDouble(0.01), SFDouble(0.01)]),
-                          emissiveColor_ : SFColor([SFDouble(0.8), SFDouble(0.8), SFDouble(0.8)]))),
+                          emissiveColor_ : SFColor([SFDouble(0.8), SFDouble(0.8), SFDouble(0.8)]),
+                          specularColor_ : SFColor([SFDouble(0.01), SFDouble(0.01), SFDouble(0.01)]))),
                   geometry_ : 
                     Sphere(
                       radius_ : 30))),
@@ -152,8 +156,8 @@ var X3D0 =  X3D(
                       material_ : 
                         Material(
                           diffuseColor_ : SFColor([SFDouble(0.1), SFDouble(0.1), SFDouble(0.1)]),
-                          specularColor_ : SFColor([SFDouble(0.5), SFDouble(0.6), SFDouble(0.7)]),
-                          shininess_ : 0.8)),
+                          shininess_ : 0.8,
+                          specularColor_ : SFColor([SFDouble(0.5), SFDouble(0.6), SFDouble(0.7)]))),
                   geometry_ : 
                     Cylinder(
                       radius_ : 500))),
@@ -182,8 +186,8 @@ var X3D0 =  X3D(
                                       children_ : [
                                         AudioClip(
                                           description_ : SFString('Techno beat'),
-                                          url_ : MFString([SFString("sound/techno_beat.mp3"), SFString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/techno_beat.mp3")]),
-                                          loop_ : true)])])])]),
+                                          loop_ : true,
+                                          url_ : MFString([SFString("sound/techno_beat.mp3"), SFString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/techno_beat.mp3")]))])])])]),
 
                         SpatialSound(
                           DEF_ : SFString('Audio2'),
@@ -200,8 +204,8 @@ var X3D0 =  X3D(
                                       children_ : [
                                         AudioClip(
                                           description_ : SFString('Simple beat'),
-                                          url_ : MFString([SFString("sound/beat.mp3"), SFString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/beat.mp3")]),
-                                          loop_ : true)])])])]),
+                                          loop_ : true,
+                                          url_ : MFString([SFString("sound/beat.mp3"), SFString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/beat.mp3")]))])])])]),
 
                         SpatialSound(
                           DEF_ : SFString('Audio3'),
@@ -217,6 +221,6 @@ var X3D0 =  X3D(
                                       children_ : [
                                         AudioClip(
                                           description_ : SFString('Wobble loop'),
-                                          url_ : MFString([SFString("sound/wobble_loop.mp3"), SFString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/wobble_loop.mp3")]),
-                                          loop_ : true)])])])])])])])]));
+                                          loop_ : true,
+                                          url_ : MFString([SFString("sound/wobble_loop.mp3"), SFString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/wobble_loop.mp3")]))])])])])])])])]));
 void main() { exit(0); }

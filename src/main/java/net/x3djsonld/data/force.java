@@ -64,7 +64,7 @@ import org.web3d.x3d.jsail.Time.*;
 	* @author John W Carlson
  */
 
-public class force
+import net.coderextreme.X3DRoots;import java.util.List;import java.util.ArrayList;public class force implements X3DRoots 
 {
 	/** Default constructor to create this object. */
 	public force ()
@@ -76,7 +76,7 @@ public class force
 	public final void initialize()
 	{
             try { // catch-all
-  x3dModel = new X3D().setProfile(X3D.PROFILE_IMMERSIVE).setVersion(X3D.VERSION_3_3)
+  x3dModel = new X3D().setProfile(X3D.PROFILE_IMMERSIVE).setVersion(X3D.VERSION_4_0)
   .setHead(new head()
     .addComponent(new component().setName("Scripting").setLevel(1))
     .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("John W Carlson"))
@@ -123,7 +123,7 @@ ecmascript:
           .addChild(new ROUTE().setFromNode("nodeClock").setFromField("fraction_changed").setToNode("NodePosition").setToField("set_fraction"))
           .addChild(new ROUTE().setFromNode("MoveBall").setFromField("keyValue").setToNode("NodePosition").setToField("keyValue"))
           .addChild(new ROUTE().setFromNode("NodePosition").setFromField("value_changed").setToNode("transform").setToField("set_translation")))))
-    .addChild(new ProtoDeclare("cylinder").setName("cylinder")
+    .addChild(new ProtoDeclare("cyl").setName("cyl")
       .setProtoInterface(new ProtoInterface()
         .addField(new field().setName("set_positionA").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTONLY))
         .addField(new field().setName("set_positionB").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTONLY)))
@@ -173,13 +173,13 @@ ecmascript:
         .addFieldValue(new fieldValue().setName("position").setValue(new SFVec3f(-50.0,-50.0,-50.0))))
       .addChild(new ProtoInstance("node", "nodeD").setContainerField("children")
         .addFieldValue(new fieldValue().setName("position").setValue(new SFVec3f(50.0,50.0,-50.0))))
-      .addChild(new ProtoInstance("cylinder", "linkA").setContainerField("children")
+      .addChild(new ProtoInstance("cyl", "linkA").setContainerField("children")
         .addFieldValue(new fieldValue().setName("set_positionA").setValue(new SFVec3f(0.0,0.0,0.0)))
         .addFieldValue(new fieldValue().setName("set_positionB").setValue(new SFVec3f(50.0,50.0,50.0))))
-      .addChild(new ProtoInstance("cylinder", "linkB").setContainerField("children")
+      .addChild(new ProtoInstance("cyl", "linkB").setContainerField("children")
         .addFieldValue(new fieldValue().setName("set_positionA").setValue(new SFVec3f(0.0,0.0,0.0)))
         .addFieldValue(new fieldValue().setName("set_positionB").setValue(new SFVec3f(-50.0,-50.0,-50.0))))
-      .addChild(new ProtoInstance("cylinder", "linkC").setContainerField("children")
+      .addChild(new ProtoInstance("cyl", "linkC").setContainerField("children")
         .addFieldValue(new fieldValue().setName("set_positionA").setValue(new SFVec3f(50.0,50.0,50.0)))
         .addFieldValue(new fieldValue().setName("set_positionB").setValue(new SFVec3f(50.0,50.0,-50.0)))))
     .addChild(new Script("clickHandler").setSourceCode("""
@@ -240,6 +240,11 @@ ecmascript:
 	{	  
 		return x3dModel;
 	}
+	public List<X3D> getRootNodeList() {
+		List<X3D> list = new ArrayList<X3D>(1);
+		list.add(x3dModel);
+		return list;
+	}
 	   
     /** 
      * Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
@@ -252,7 +257,7 @@ ecmascript:
      */
     public static void main(String args[])
     {
-        System.out.println("Build this X3D model, showing diagnostics...");
+        System.out.println("Build this X3D model, showing validation diagnostics...");
         X3D thisExampleX3dModel = new force().getX3dModel();
 //      System.out.println("X3D model construction complete.");
 	
