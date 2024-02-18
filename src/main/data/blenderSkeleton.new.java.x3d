@@ -4,9 +4,11 @@
   <head>
     <component name='HAnim' level='3'/>
     <unit name='METERS' category='length' conversionFactor='1.0'/>
-    <meta content='blenderSkeleton.x3d' name='title'/>
+    <meta content='blenderSkeleton.x3d' name='filename'/>
+    <meta name='copyright'/>
     <meta content='http://www.web3D.org' name='reference'/>
     <meta content='Blender 4.0.1' name='generator'/>
+    <meta content='io_scene_x3dv' name='exporter'/>
   </head>
   <Scene>
     <NavigationInfo avatarSize='0.25 1.6 0.75' transitionType='"LINEAR"' type='"EXAMINE" "ANY"'/>
