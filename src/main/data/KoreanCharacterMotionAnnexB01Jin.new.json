@@ -86,7 +86,7 @@
           },
           {
             "@name":"translated",
-            "@content":"30 December 2023"
+            "@content":"18 February 2024"
           },
           {
             "@name":"generator",
@@ -119,7 +119,7 @@
               "@info":["humanoidVersion=2.0"],
               "@scale":[0.0225,0.0225,0.0225],
               "@version":"2.0",
-              "-children":[
+              "-skeleton":[
                 { "HAnimJoint":
                   {
                     "@name":"humanoid_root",

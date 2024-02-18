@@ -78,7 +78,7 @@
           },
           {
             "@name":"translated",
-            "@content":"30 December 2023"
+            "@content":"18 February 2024"
           },
           {
             "@name":"generator",
@@ -124,8 +124,26 @@
                     "-value":[
                       { "MetadataString":
                         {
-                          "@name":"humanoidVersion",
-                          "@value":["2.0"]
+                          "@name":"authorName",
+                          "@value":["Jin Hoon Lee and Min Joo Lee, Chul Hee Jung and Myeong Won Lee"]
+                        }
+                      },
+                      { "MetadataString":
+                        {
+                          "@name":"authorEmail",
+                          "@value":["myeongwonlee@gmail.com"]
+                        }
+                      },
+                      { "MetadataString":
+                        {
+                          "@name":"creationDate",
+                          "@value":["31 March 2011"]
+                        }
+                      },
+                      { "MetadataString":
+                        {
+                          "@name":"gender",
+                          "@value":["female"]
                         }
                       },
                       { "MetadataFloat":
@@ -133,1471 +151,17 @@
                           "@name":"height",
                           "@value":[1.5]
                         }
+                      },
+                      { "MetadataString":
+                        {
+                          "@name":"humanoidVersion",
+                          "@value":["2.0"]
+                        }
                       }
                     ]
                   }
                 },
-              "-children":[
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_humanoid_root"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_sacroiliac"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_vl5"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_vl4"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_vl3"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_vl2"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_vl1"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_vt12"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_vt11"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_vt10"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_vt9"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_vt8"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_vt7"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_vt6"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_vt5"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_vt4"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_vt3"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_vt2"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_vt1"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_vc7"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_vc6"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_vc5"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_vc4"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_vc3"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_vc2"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_vc1"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_skullbase"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_temporomandibular"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_l_acromioclavicular"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_acromioclavicular"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_l_calcaneocuboid"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_calcaneocuboid"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_l_carpal_distal_interphalangeal_2"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_carpal_distal_interphalangeal_2"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_l_carpal_distal_interphalangeal_3"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_carpal_distal_interphalangeal_3"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_l_carpal_distal_interphalangeal_4"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_carpal_distal_interphalangeal_4"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_l_carpal_distal_interphalangeal_5"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_carpal_distal_interphalangeal_5"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_l_carpal_interphalangeal_1"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_carpal_interphalangeal_1"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_l_carpal_proximal_interphalangeal_2"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_carpal_proximal_interphalangeal_2"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_l_carpal_proximal_interphalangeal_3"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_carpal_proximal_interphalangeal_3"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_l_carpal_proximal_interphalangeal_4"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_carpal_proximal_interphalangeal_4"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_l_carpal_proximal_interphalangeal_5"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_carpal_proximal_interphalangeal_5"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_l_carpometacarpal_1"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_carpometacarpal_1"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_l_carpometacarpal_2"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_carpometacarpal_2"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_l_carpometacarpal_3"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_carpometacarpal_3"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_l_carpometacarpal_4"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_carpometacarpal_4"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_l_carpometacarpal_5"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_carpometacarpal_5"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_l_cuneonavicular_1"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_cuneonavicular_1"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_l_cuneonavicular_2"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_cuneonavicular_2"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_l_cuneonavicular_3"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_cuneonavicular_3"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_l_elbow"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_elbow"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_l_eyeball_joint"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_eyeball_joint"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_l_eyebrow_joint"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_eyebrow_joint"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_l_eyelid_joint"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_eyelid_joint"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_l_hip"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_hip"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_l_knee"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_knee"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_l_metacarpophalangeal_1"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_metacarpophalangeal_1"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_l_metacarpophalangeal_2"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_metacarpophalangeal_2"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_l_metacarpophalangeal_3"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_metacarpophalangeal_3"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_l_metacarpophalangeal_4"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_metacarpophalangeal_4"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_l_metacarpophalangeal_5"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_metacarpophalangeal_5"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_l_metatarsophalangeal_1"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_metatarsophalangeal_1"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_l_metatarsophalangeal_2"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_metatarsophalangeal_2"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_l_metatarsophalangeal_3"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_metatarsophalangeal_3"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_l_metatarsophalangeal_4"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_metatarsophalangeal_4"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_l_metatarsophalangeal_5"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_metatarsophalangeal_5"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_l_midcarpal_1"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_midcarpal_1"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_l_midcarpal_2"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_midcarpal_2"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_l_midcarpal_3"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_midcarpal_3"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_l_midcarpal_4_5"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_midcarpal_4_5"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_l_radiocarpal"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_radiocarpal"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_l_shoulder"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_shoulder"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_l_sternoclavicular"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_sternoclavicular"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_l_talocalcaneonavicular"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_talocalcaneonavicular"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_l_talocrural"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_talocrural"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_l_tarsal_distal_interphalangeal_1"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_tarsal_distal_interphalangeal_1"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_l_tarsal_distal_interphalangeal_2"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_tarsal_distal_interphalangeal_2"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_l_tarsal_distal_interphalangeal_3"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_tarsal_distal_interphalangeal_3"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_l_tarsal_distal_interphalangeal_4"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_tarsal_distal_interphalangeal_4"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_l_tarsal_distal_interphalangeal_5"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_tarsal_distal_interphalangeal_5"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_l_tarsal_proximal_interphalangeal_2"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_tarsal_proximal_interphalangeal_2"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_l_tarsal_proximal_interphalangeal_3"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_tarsal_proximal_interphalangeal_3"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_l_tarsal_proximal_interphalangeal_4"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_tarsal_proximal_interphalangeal_4"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_l_tarsal_proximal_interphalangeal_5"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_tarsal_proximal_interphalangeal_5"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_l_tarsometatarsal_1"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_tarsometatarsal_1"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_l_tarsometatarsal_2"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_tarsometatarsal_2"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_l_tarsometatarsal_3"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_tarsometatarsal_3"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_l_tarsometatarsal_4"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_tarsometatarsal_4"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_l_tarsometatarsal_5"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_tarsometatarsal_5"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_l_transversetarsal"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_transversetarsal"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_sacrum"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_pelvis"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l5"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l4"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l3"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l2"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l1"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_t12"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_t11"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_t10"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_t9"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_t8"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_t7"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_t6"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_t5"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_t4"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_t3"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_t2"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_t1"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_c7"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_c6"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_c5"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_c4"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_c3"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_c2"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_c1"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_skull"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_jaw"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_calcaneus"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_calcaneus"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_calf"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_calf"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_capitate"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_capitate"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_carpal"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_carpal"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_carpal_distal_phalanx_1"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_carpal_distal_phalanx_1"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_carpal_distal_phalanx_2"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_carpal_distal_phalanx_2"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_carpal_distal_phalanx_3"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_carpal_distal_phalanx_3"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_carpal_distal_phalanx_4"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_carpal_distal_phalanx_4"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_carpal_distal_phalanx_5"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_carpal_distal_phalanx_5"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_carpal_middle_phalanx_2"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_carpal_middle_phalanx_2"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_carpal_middle_phalanx_3"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_carpal_middle_phalanx_3"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_carpal_middle_phalanx_4"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_carpal_middle_phalanx_4"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_carpal_middle_phalanx_5"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_carpal_middle_phalanx_5"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_carpal_proximal_phalanx_1"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_carpal_proximal_phalanx_1"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_carpal_proximal_phalanx_2"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_carpal_proximal_phalanx_2"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_carpal_proximal_phalanx_3"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_carpal_proximal_phalanx_3"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_carpal_proximal_phalanx_4"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_carpal_proximal_phalanx_4"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_carpal_proximal_phalanx_5"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_carpal_proximal_phalanx_5"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_clavicle"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_clavicle"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_cuboid"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_cuboid"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_cuneiform_1"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_cuneiform_1"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_cuneiform_2"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_cuneiform_2"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_cuneiform_3"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_cuneiform_3"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_eyeball"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_eyeball"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_eyebrow"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_eyebrow"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_eyelid"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_eyelid"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_forearm"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_forearm"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_hamate"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_hamate"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_metacarpal_1"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_metacarpal_1"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_metacarpal_2"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_metacarpal_2"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_metacarpal_3"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_metacarpal_3"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_metacarpal_4"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_metacarpal_4"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_metacarpal_5"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_metacarpal_5"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_metatarsal_1"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_metatarsal_1"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_metatarsal_2"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_metatarsal_2"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_metatarsal_3"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_metatarsal_3"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_metatarsal_4"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_metatarsal_4"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_metatarsal_5"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_metatarsal_5"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_navicular"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_navicular"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_scapula"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_scapula"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_talus"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_talus"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_tarsal_distal_phalanx_1"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_tarsal_distal_phalanx_1"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_tarsal_distal_phalanx_2"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_tarsal_distal_phalanx_2"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_tarsal_distal_phalanx_3"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_tarsal_distal_phalanx_3"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_tarsal_distal_phalanx_4"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_tarsal_distal_phalanx_4"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_tarsal_distal_phalanx_5"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_tarsal_distal_phalanx_5"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_tarsal_middle_phalanx_2"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_tarsal_middle_phalanx_2"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_tarsal_middle_phalanx_3"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_tarsal_middle_phalanx_3"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_tarsal_middle_phalanx_4"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_tarsal_middle_phalanx_4"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_tarsal_middle_phalanx_5"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_tarsal_middle_phalanx_5"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_tarsal_proximal_phalanx_1"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_tarsal_proximal_phalanx_1"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_tarsal_proximal_phalanx_2"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_tarsal_proximal_phalanx_2"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_tarsal_proximal_phalanx_3"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_tarsal_proximal_phalanx_3"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_tarsal_proximal_phalanx_4"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_tarsal_proximal_phalanx_4"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_tarsal_proximal_phalanx_5"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_tarsal_proximal_phalanx_5"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_thigh"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_thigh"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_trapezium"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_trapezium"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_trapezoid"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_trapezoid"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_upperarm"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_upperarm"
-                  }
-                },
+              "-skeleton":[
                 { "HAnimJoint":
                   {
                     "@name":"humanoid_root",
@@ -11379,6 +9943,1470 @@
                         }
                       }
                     ]
+                  }
+                }
+              ],
+              "-joints":[
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_humanoid_root"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_sacroiliac"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_vl5"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_vl4"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_vl3"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_vl2"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_vl1"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_vt12"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_vt11"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_vt10"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_vt9"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_vt8"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_vt7"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_vt6"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_vt5"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_vt4"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_vt3"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_vt2"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_vt1"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_vc7"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_vc6"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_vc5"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_vc4"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_vc3"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_vc2"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_vc1"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_skullbase"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_temporomandibular"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_acromioclavicular"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_acromioclavicular"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_calcaneocuboid"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_calcaneocuboid"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_carpal_distal_interphalangeal_2"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_carpal_distal_interphalangeal_2"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_carpal_distal_interphalangeal_3"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_carpal_distal_interphalangeal_3"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_carpal_distal_interphalangeal_4"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_carpal_distal_interphalangeal_4"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_carpal_distal_interphalangeal_5"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_carpal_distal_interphalangeal_5"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_carpal_interphalangeal_1"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_carpal_interphalangeal_1"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_carpal_proximal_interphalangeal_2"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_carpal_proximal_interphalangeal_2"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_carpal_proximal_interphalangeal_3"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_carpal_proximal_interphalangeal_3"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_carpal_proximal_interphalangeal_4"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_carpal_proximal_interphalangeal_4"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_carpal_proximal_interphalangeal_5"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_carpal_proximal_interphalangeal_5"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_carpometacarpal_1"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_carpometacarpal_1"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_carpometacarpal_2"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_carpometacarpal_2"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_carpometacarpal_3"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_carpometacarpal_3"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_carpometacarpal_4"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_carpometacarpal_4"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_carpometacarpal_5"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_carpometacarpal_5"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_cuneonavicular_1"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_cuneonavicular_1"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_cuneonavicular_2"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_cuneonavicular_2"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_cuneonavicular_3"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_cuneonavicular_3"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_elbow"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_elbow"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_eyeball_joint"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_eyeball_joint"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_eyebrow_joint"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_eyebrow_joint"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_eyelid_joint"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_eyelid_joint"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_hip"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_hip"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_knee"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_knee"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_metacarpophalangeal_1"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_metacarpophalangeal_1"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_metacarpophalangeal_2"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_metacarpophalangeal_2"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_metacarpophalangeal_3"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_metacarpophalangeal_3"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_metacarpophalangeal_4"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_metacarpophalangeal_4"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_metacarpophalangeal_5"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_metacarpophalangeal_5"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_metatarsophalangeal_1"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_metatarsophalangeal_1"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_metatarsophalangeal_2"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_metatarsophalangeal_2"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_metatarsophalangeal_3"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_metatarsophalangeal_3"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_metatarsophalangeal_4"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_metatarsophalangeal_4"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_metatarsophalangeal_5"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_metatarsophalangeal_5"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_midcarpal_1"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_midcarpal_1"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_midcarpal_2"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_midcarpal_2"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_midcarpal_3"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_midcarpal_3"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_midcarpal_4_5"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_midcarpal_4_5"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_radiocarpal"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_radiocarpal"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_shoulder"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_shoulder"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_sternoclavicular"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_sternoclavicular"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_talocalcaneonavicular"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_talocalcaneonavicular"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_talocrural"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_talocrural"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_tarsal_distal_interphalangeal_1"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_tarsal_distal_interphalangeal_1"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_tarsal_distal_interphalangeal_2"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_tarsal_distal_interphalangeal_2"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_tarsal_distal_interphalangeal_3"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_tarsal_distal_interphalangeal_3"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_tarsal_distal_interphalangeal_4"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_tarsal_distal_interphalangeal_4"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_tarsal_distal_interphalangeal_5"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_tarsal_distal_interphalangeal_5"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_tarsal_proximal_interphalangeal_2"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_tarsal_proximal_interphalangeal_2"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_tarsal_proximal_interphalangeal_3"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_tarsal_proximal_interphalangeal_3"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_tarsal_proximal_interphalangeal_4"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_tarsal_proximal_interphalangeal_4"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_tarsal_proximal_interphalangeal_5"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_tarsal_proximal_interphalangeal_5"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_tarsometatarsal_1"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_tarsometatarsal_1"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_tarsometatarsal_2"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_tarsometatarsal_2"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_tarsometatarsal_3"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_tarsometatarsal_3"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_tarsometatarsal_4"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_tarsometatarsal_4"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_tarsometatarsal_5"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_tarsometatarsal_5"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_transversetarsal"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_transversetarsal"
+                  }
+                }
+              ],
+              "-segments":[
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_sacrum"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_pelvis"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l5"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l4"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l3"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l2"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l1"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_t12"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_t11"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_t10"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_t9"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_t8"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_t7"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_t6"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_t5"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_t4"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_t3"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_t2"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_t1"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_c7"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_c6"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_c5"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_c4"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_c3"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_c2"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_c1"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_skull"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_jaw"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_calcaneus"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_calcaneus"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_calf"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_calf"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_capitate"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_capitate"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_carpal"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_carpal"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_carpal_distal_phalanx_1"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_carpal_distal_phalanx_1"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_carpal_distal_phalanx_2"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_carpal_distal_phalanx_2"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_carpal_distal_phalanx_3"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_carpal_distal_phalanx_3"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_carpal_distal_phalanx_4"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_carpal_distal_phalanx_4"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_carpal_distal_phalanx_5"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_carpal_distal_phalanx_5"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_carpal_middle_phalanx_2"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_carpal_middle_phalanx_2"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_carpal_middle_phalanx_3"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_carpal_middle_phalanx_3"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_carpal_middle_phalanx_4"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_carpal_middle_phalanx_4"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_carpal_middle_phalanx_5"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_carpal_middle_phalanx_5"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_carpal_proximal_phalanx_1"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_carpal_proximal_phalanx_1"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_carpal_proximal_phalanx_2"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_carpal_proximal_phalanx_2"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_carpal_proximal_phalanx_3"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_carpal_proximal_phalanx_3"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_carpal_proximal_phalanx_4"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_carpal_proximal_phalanx_4"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_carpal_proximal_phalanx_5"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_carpal_proximal_phalanx_5"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_clavicle"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_clavicle"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_cuboid"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_cuboid"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_cuneiform_1"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_cuneiform_1"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_cuneiform_2"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_cuneiform_2"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_cuneiform_3"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_cuneiform_3"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_eyeball"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_eyeball"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_eyebrow"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_eyebrow"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_eyelid"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_eyelid"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_forearm"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_forearm"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_hamate"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_hamate"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_metacarpal_1"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_metacarpal_1"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_metacarpal_2"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_metacarpal_2"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_metacarpal_3"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_metacarpal_3"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_metacarpal_4"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_metacarpal_4"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_metacarpal_5"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_metacarpal_5"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_metatarsal_1"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_metatarsal_1"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_metatarsal_2"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_metatarsal_2"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_metatarsal_3"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_metatarsal_3"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_metatarsal_4"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_metatarsal_4"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_metatarsal_5"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_metatarsal_5"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_navicular"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_navicular"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_scapula"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_scapula"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_talus"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_talus"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_tarsal_distal_phalanx_1"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_tarsal_distal_phalanx_1"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_tarsal_distal_phalanx_2"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_tarsal_distal_phalanx_2"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_tarsal_distal_phalanx_3"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_tarsal_distal_phalanx_3"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_tarsal_distal_phalanx_4"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_tarsal_distal_phalanx_4"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_tarsal_distal_phalanx_5"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_tarsal_distal_phalanx_5"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_tarsal_middle_phalanx_2"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_tarsal_middle_phalanx_2"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_tarsal_middle_phalanx_3"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_tarsal_middle_phalanx_3"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_tarsal_middle_phalanx_4"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_tarsal_middle_phalanx_4"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_tarsal_middle_phalanx_5"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_tarsal_middle_phalanx_5"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_tarsal_proximal_phalanx_1"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_tarsal_proximal_phalanx_1"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_tarsal_proximal_phalanx_2"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_tarsal_proximal_phalanx_2"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_tarsal_proximal_phalanx_3"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_tarsal_proximal_phalanx_3"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_tarsal_proximal_phalanx_4"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_tarsal_proximal_phalanx_4"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_tarsal_proximal_phalanx_5"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_tarsal_proximal_phalanx_5"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_thigh"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_thigh"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_trapezium"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_trapezium"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_trapezoid"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_trapezoid"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_upperarm"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_upperarm"
                   }
                 }
               ]
