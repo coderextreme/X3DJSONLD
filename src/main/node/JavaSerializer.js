@@ -105,13 +105,22 @@ JavaSerializer.prototype = {
 		str += "import org.web3d.x3d.sai.Time.*;\n";
 		str += "import org.web3d.x3d.sai.VolumeRendering.*;\n";
 		*/
-		str += "public class "+clz+" {\n";
+		str += "import java.util.ArrayList;\n";
+		str += "import java.util.List;\n";
+		str += "import net.coderextreme.X3DRoots;\n";
+		str += "public class "+clz+" implements X3DRoots {\n";
 		str += "  public static void main(String[] args) {\n";
 		str += "    ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);\n";
 		str += "    ConfigurationProperties.setDeleteIntermediateFiles(false);\n";
-		str += "    "+element.nodeName+" model = new "+clz+"().initialize();\n"
+		str += "    "+element.nodeName+" model = new "+clz+"().getRootNodeList().get(0); // only get one root node\n" 
 		str += "    System.out.print(model.validationReport().trim());\n"
+		str += "    model.toFileX3D(\""+clazz+".new.java.x3d\");\n";
 		str += "    model.toFileJSON(\""+clazz+".new.json\");\n";
+		str += "    }\n";
+		str += "    public List<X3D> getRootNodeList() {\n";
+		str += "    	List<X3D> list = new ArrayList<X3D>(1);\n";
+		str += "    	list.add(initialize());\n";
+		str += "    	return list;\n";
 		str += "    }\n";
 		str += "    public "+element.nodeName+" initialize() {\n";
 

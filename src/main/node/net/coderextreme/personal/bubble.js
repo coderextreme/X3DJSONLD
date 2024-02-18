@@ -1,9 +1,10 @@
 var java = require('java');
+var util = require('util');
 java.asyncOptions = {
   asyncSuffix: undefined,     // Don't generate node-style methods taking callbacks
   syncSuffix: "",              // Sync methods use the base name(!!)
   promiseSuffix: "Promise",   // Generate methods returning promises, using the suffix Promise.
-  promisify: require('util').promisify, // Needs Node.js version 8 or greater, see comment below
+  promisify: util.promisify, // Needs Node.js version 8 or greater, see comment below
   ifReadOnlySuffix: "_alt"
 };
 var autoclass = require('../../../X3Dautoclass');
@@ -13,13 +14,13 @@ ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_
 ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
 var ProtoInstance0 = null;
-      var X3D0 =  (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
+      var X3D0 =  (new autoclass.X3D()).setProfile("Immersive").setVersion("3.3")
       .setHead((new autoclass.head())
         .addMeta((new autoclass.meta()).setName("title").setContent("bubble.x3d"))
         .addMeta((new autoclass.meta()).setName("creator").setContent("John Carlson"))
         .addMeta((new autoclass.meta()).setName("description").setContent("Tour around a prismatic sphere"))
         .addMeta((new autoclass.meta()).setName("generator").setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit"))
-        .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/bubble.x3d")))
+        .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/bubble.x3d")))
       .setScene((new autoclass.Scene())
         .addChild((new autoclass.NavigationInfo()).setType(java.newArray("java.lang.String", ["EXAMINE"])))
         .addChild((new autoclass.Viewpoint()).setPosition(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(4)])).setOrientation(java.newArray("float", [java.newFloat(1), java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setDescription("Bubble in action"))
@@ -86,5 +87,5 @@ var ProtoInstance0 = null;
               .addChild((new autoclass.ROUTE()).setFromNode("bounce").setFromField("scale_changed").setToNode("transform").setToField("set_scale"))
               .addChild((new autoclass.ROUTE()).setFromNode("bubbleClock").setFromField("fraction_changed").setToNode("bounce").setToField("set_fraction")))))
         .addChild(ProtoInstance0 = (new autoclass.ProtoInstance()).setName("Bubble").setDEF("bubbleA")))      ;
-    X3D0.toFileX3D("../personal/bubble.new.x3d");
+    X3D0.toFileX3D("../personal/bubble.new.node.x3d");
     process.exit(0);

@@ -13,17 +13,17 @@ var meta = require('./x3d.mjs');
 var Scene = require('./x3d.mjs');
 var Transform = require('./x3d.mjs');
 var Shape = require('./x3d.mjs');
-var Appearance = require('./x3d.mjs');
-var Material = require('./x3d.mjs');
 var Text = require('./x3d.mjs');
 var MFString = require('./x3d.mjs');
 var FontStyle = require('./x3d.mjs');
+var Appearance = require('./x3d.mjs');
+var Material = require('./x3d.mjs');
 var Script = require('./x3d.mjs');
 var field = require('./x3d.mjs');
 var X3D0 =  new X3D({
 
       profile : new SFString("Immersive"),
-      version : new SFString("4.0"),
+      version : new SFString("3.3"),
       head : new SFNode(
         new head({
           meta : new MFNode([
@@ -45,53 +45,57 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("description"),
-              content : new SFString("test \\\\n text")})])})),
+              content : new SFString("test \\n text")}),
+
+            new meta({
+              name : new SFString("generator"),
+              content : new SFString("Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit")})])})),
       Scene : new SFNode(
         new Scene({
           children : new MFNode([
             new Transform({
               child : new SFNode(
                 new Shape({
-                  appearance : new SFNode(
-                    new Appearance({
-                      material : new SFNode(
-                        new Material({}))})),
                   geometry : new SFNode(
                     new Text({
                       string : new MFString(["Node\"\"\""]),
                       fontStyle : new SFNode(
-                        new FontStyle({}))}))})),
-              child : new SFNode(
-                new Shape({
+                        new FontStyle({}))})),
                   appearance : new SFNode(
                     new Appearance({
                       material : new SFNode(
-                        new Material({}))})),
+                        new Material({}))}))})),
+              child : new SFNode(
+                new Shape({
                   geometry : new SFNode(
                     new Text({
                       string : new MFString(["Node2","\\\\","\\\\\\\\","Node2"]),
                       fontStyle : new SFNode(
-                        new FontStyle({}))}))})),
-              child : new SFNode(
-                new Shape({
+                        new FontStyle({}))})),
                   appearance : new SFNode(
                     new Appearance({
                       material : new SFNode(
-                        new Material({}))})),
+                        new Material({}))}))})),
+              child : new SFNode(
+                new Shape({
                   geometry : new SFNode(
                     new Text({
                       string : new MFString(["Node3 \\\\\\\\ \\\\ ","Node3\"\"\""]),
                       fontStyle : new SFNode(
-                        new FontStyle({}))}))})),
+                        new FontStyle({}))})),
+                  appearance : new SFNode(
+                    new Appearance({
+                      material : new SFNode(
+                        new Material({}))}))})),
               children : new MFNode([
                 new Script({
                   field : new MFNode([
                     new field({
                       type : field.TYPE_MFSTRING,
-                      accessType : new SFString(field.ACCESSTYPE_INITIALIZEONLY),
                       name : new SFString("frontUrls"),
+                      accessType : new SFString(field.ACCESSTYPE_INITIALIZEONLY),
                       value : new SFString("\"rnl_front.png\" \"uffizi_front.png\"")}),
                   ]),
-ecmascript:eval (0
-			    var me = '"1" "\"2" "\n3"';)})])})])}))});
+ecmascript:eval (0
+			    var me = '"1" ""2" "\n3"';)})])})])}))});
 console.log(X3D0.toXMLNode());

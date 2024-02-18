@@ -11,27 +11,27 @@ var head = require('./x3d.mjs');
 var MFNode = require('./x3d.mjs');
 var meta = require('./x3d.mjs');
 var Scene = require('./x3d.mjs');
+var NavigationInfo = require('./x3d.mjs');
+var Viewpoint = require('./x3d.mjs');
+var SFVec3f = require('./x3d.mjs');
 var ProtoDeclare = require('./x3d.mjs');
 var ProtoInterface = require('./x3d.mjs');
 var field = require('./x3d.mjs');
 var ProtoBody = require('./x3d.mjs');
 var Transform = require('./x3d.mjs');
+var IS = require('./x3d.mjs');
+var connect = require('./x3d.mjs');
 var Shape = require('./x3d.mjs');
+var Sphere = require('./x3d.mjs');
 var Appearance = require('./x3d.mjs');
 var Material = require('./x3d.mjs');
 var SFColor = require('./x3d.mjs');
-var Sphere = require('./x3d.mjs');
-var IS = require('./x3d.mjs');
-var connect = require('./x3d.mjs');
 var ProtoInstance = require('./x3d.mjs');
 var fieldValue = require('./x3d.mjs');
-var NavigationInfo = require('./x3d.mjs');
-var Viewpoint = require('./x3d.mjs');
-var SFVec3f = require('./x3d.mjs');
 var X3D0 =  new X3D({
 
       profile : new SFString("Immersive"),
-      version : new SFString("4.0"),
+      version : new SFString("3.3"),
       head : new SFNode(
         new head({
           meta : new MFNode([
@@ -48,11 +48,22 @@ var X3D0 =  new X3D({
               content : new SFString("manual")}),
 
             new meta({
-              name : new SFString("generator"),
-              content : new SFString("x3d-tidy V1.0.118, https://www.npmjs.com/package/x3d-tidy")})])})),
+              name : new SFString("identifier"),
+              content : new SFString("https://coderextreme.net/X3DJSONLD/src/main/data/rubik.x3d")}),
+
+            new meta({
+              name : new SFString("description"),
+              content : new SFString("a kind of rubik cube with spheres")})])})),
       Scene : new SFNode(
         new Scene({
           children : new MFNode([
+            new NavigationInfo({
+              type : ["EXAMINE"]}),
+
+            new Viewpoint({
+              description : new SFString("Rubiks Cube"),
+              position : new SFVec3f([0,0,12])}),
+
             new ProtoDeclare({
               name : new SFString("sphereproto"),
               ProtoInterface : new SFNode(
@@ -60,27 +71,28 @@ var X3D0 =  new X3D({
                   field : new MFNode([
                     new field({
                       type : field.TYPE_SFVEC3F,
+                      name : new SFString("xtranslation"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      name : new SFString("xtranslation")})])})),
+                      value : new SFString("0 0 0")})])})),
               ProtoBody : new SFNode(
                 new ProtoBody({
                   children : new MFNode([
                     new Transform({
-                      child : new SFNode(
-                        new Shape({
-                          appearance : new SFNode(
-                            new Appearance({
-                              material : new SFNode(
-                                new Material({
-                                  diffuseColor : new SFColor([1,1,1])}))})),
-                          geometry : new SFNode(
-                            new Sphere({}))})),
                       IS : new SFNode(
                         new IS({
                           connect : new MFNode([
                             new connect({
                               nodeField : new SFString("translation"),
-                              protoField : new SFString("xtranslation")})])}))})])}))}),
+                              protoField : new SFString("xtranslation")})])})),
+                      child : new SFNode(
+                        new Shape({
+                          geometry : new SFNode(
+                            new Sphere({})),
+                          appearance : new SFNode(
+                            new Appearance({
+                              material : new SFNode(
+                                new Material({
+                                  diffuseColor : new SFColor([1,1,1])}))}))}))})])}))}),
 
             new ProtoDeclare({
               name : new SFString("three"),
@@ -89,15 +101,26 @@ var X3D0 =  new X3D({
                   field : new MFNode([
                     new field({
                       type : field.TYPE_SFVEC3F,
+                      name : new SFString("ytranslation"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      name : new SFString("ytranslation")})])})),
+                      value : new SFString("0 0 0")})])})),
               ProtoBody : new SFNode(
                 new ProtoBody({
                   children : new MFNode([
                     new Transform({
+                      IS : new SFNode(
+                        new IS({
+                          connect : new MFNode([
+                            new connect({
+                              nodeField : new SFString("translation"),
+                              protoField : new SFString("ytranslation")})])})),
                       children : new MFNode([
                         new ProtoInstance({
-                          name : new SFString("sphereproto")}),
+                          name : new SFString("sphereproto"),
+                          fieldValue : new MFNode([
+                            new fieldValue({
+                              name : new SFString("xtranslation"),
+                              value : new SFString("0 0 0")})])}),
 
                         new ProtoInstance({
                           name : new SFString("sphereproto"),
@@ -111,13 +134,7 @@ var X3D0 =  new X3D({
                           fieldValue : new MFNode([
                             new fieldValue({
                               name : new SFString("xtranslation"),
-                              value : new SFString("-2 0 0")})])}),
-                      IS : new SFNode(
-                        new IS({
-                          connect : new MFNode([
-                            new connect({
-                              nodeField : new SFString("translation"),
-                              protoField : new SFString("ytranslation")})])})])})])}))}),
+                              value : new SFString("-2 0 0")})])})])})])}))}),
 
             new ProtoDeclare({
               name : new SFString("nine"),
@@ -126,15 +143,26 @@ var X3D0 =  new X3D({
                   field : new MFNode([
                     new field({
                       type : field.TYPE_SFVEC3F,
+                      name : new SFString("ztranslation"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      name : new SFString("ztranslation")})])})),
+                      value : new SFString("0 0 0")})])})),
               ProtoBody : new SFNode(
                 new ProtoBody({
                   children : new MFNode([
                     new Transform({
+                      IS : new SFNode(
+                        new IS({
+                          connect : new MFNode([
+                            new connect({
+                              nodeField : new SFString("translation"),
+                              protoField : new SFString("ztranslation")})])})),
                       children : new MFNode([
                         new ProtoInstance({
-                          name : new SFString("three")}),
+                          name : new SFString("three"),
+                          fieldValue : new MFNode([
+                            new fieldValue({
+                              name : new SFString("ytranslation"),
+                              value : new SFString("0 0 0")})])}),
 
                         new ProtoInstance({
                           name : new SFString("three"),
@@ -148,13 +176,7 @@ var X3D0 =  new X3D({
                           fieldValue : new MFNode([
                             new fieldValue({
                               name : new SFString("ytranslation"),
-                              value : new SFString("0 -2 0")})])}),
-                      IS : new SFNode(
-                        new IS({
-                          connect : new MFNode([
-                            new connect({
-                              nodeField : new SFString("translation"),
-                              protoField : new SFString("ztranslation")})])})])})])}))}),
+                              value : new SFString("0 -2 0")})])})])})])}))}),
 
             new ProtoDeclare({
               name : new SFString("twentyseven"),
@@ -163,15 +185,26 @@ var X3D0 =  new X3D({
                   field : new MFNode([
                     new field({
                       type : field.TYPE_SFVEC3F,
+                      name : new SFString("ttranslation"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      name : new SFString("ttranslation")})])})),
+                      value : new SFString("0 0 0")})])})),
               ProtoBody : new SFNode(
                 new ProtoBody({
                   children : new MFNode([
                     new Transform({
+                      IS : new SFNode(
+                        new IS({
+                          connect : new MFNode([
+                            new connect({
+                              nodeField : new SFString("translation"),
+                              protoField : new SFString("ttranslation")})])})),
                       children : new MFNode([
                         new ProtoInstance({
-                          name : new SFString("nine")}),
+                          name : new SFString("nine"),
+                          fieldValue : new MFNode([
+                            new fieldValue({
+                              name : new SFString("ztranslation"),
+                              value : new SFString("0 0 0")})])}),
 
                         new ProtoInstance({
                           name : new SFString("nine"),
@@ -185,21 +218,12 @@ var X3D0 =  new X3D({
                           fieldValue : new MFNode([
                             new fieldValue({
                               name : new SFString("ztranslation"),
-                              value : new SFString("0 0 -2")})])}),
-                      IS : new SFNode(
-                        new IS({
-                          connect : new MFNode([
-                            new connect({
-                              nodeField : new SFString("translation"),
-                              protoField : new SFString("ttranslation")})])})])})])}))}),
-
-            new NavigationInfo({
-              type : ["EXAMINE"]}),
-
-            new Viewpoint({
-              description : new SFString("Rubiks Cube"),
-              position : new SFVec3f([0,0,12])}),
+                              value : new SFString("0 0 -2")})])})])})])}))}),
 
             new ProtoInstance({
-              name : new SFString("twentyseven")})])}))});
+              name : new SFString("twentyseven"),
+              fieldValue : new MFNode([
+                new fieldValue({
+                  name : new SFString("ttranslation"),
+                  value : new SFString("0 0 0")})])})])}))});
 console.log(X3D0.toXMLNode());
