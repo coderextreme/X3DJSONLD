@@ -14,6 +14,7 @@ this.postcode = [];
 
 JavaScriptSerializer.prototype = {
 	serializeToString : function(json, element, clazz, mapToMethod, fieldTypes) {
+		this.foundHumanoid = false;
 		this.code = [];
 		this.codeno = 0;
 		this.precode = [];
@@ -91,16 +92,19 @@ JavaScriptSerializer.prototype = {
 			var attrs = node.attributes;
 			try {
 				parseInt(a);
-				if (attrs.hasOwnProperty(a) && attrs[a].nodeType == 2) {
+				if (attrs.hasOwnProperty(a) && attrs[a].nodeType === 2) {
 					var attr = attrs[a].nodeName;
 					if (attr === "containerField") {
 						if (method === "setShaders") {
 							method = "addShaders"
 							addpre = "";
 						} else {
-							if (attrs[a].nodeValue == "joints" 
-								|| attrs[a].nodeValue == "sites" 
-								|| attrs[a].nodeValue == "segments" 
+							if (attrs[a].nodeValue === "joints" 
+								|| attrs[a].nodeValue === "sites" 
+								|| attrs[a].nodeValue === "skin" 
+								|| attrs[a].nodeValue === "viewpoints" 
+								|| attrs[a].nodeValue === "skeleton" 
+								|| attrs[a].nodeValue === "segments" 
 							) {
 								method = "add"+attrs[a].nodeValue.charAt(0).toUpperCase() + attrs[a].nodeValue.slice(1);
 							} else if (method === "addValue") {
@@ -189,7 +193,7 @@ JavaScriptSerializer.prototype = {
 			var attrs = element.attributes;
 			try {
 				parseInt(a);
-				if (attrs.hasOwnProperty(a) && attrs[a].nodeType == 2) {
+				if (attrs.hasOwnProperty(a) && attrs[a].nodeType === 2) {
 					var attr = attrs[a].nodeName;
 					if (attr === "type") {
 						fieldAttrType = attrs[a].nodeValue;
@@ -229,14 +233,33 @@ JavaScriptSerializer.prototype = {
 			attrType = "";
 		}
 		attrType = "";
+		var DEF = undefined;
+		var USE = undefined;
 		for (var a in element.attributes) {
 			var attrs = element.attributes;
 			try {
 				parseInt(a);
-				if (attrs.hasOwnProperty(a) && attrs[a].nodeType == 2) {
+				if (attrs.hasOwnProperty(a) && attrs[a].nodeType === 2) {
 					var attr = attrs[a].nodeName;
-					if (attr === "xmlns:xsd" || attr === "xsd:noNamespaceSchemaLocation" || attr === 'containerField' || attr === 'type') {
+					if (attr === 'containerField' && (
+						attrs[a].nodeValue === "joints" ||
+						attrs[a].nodeValue === "skeleton" ||
+						attrs[a].nodeValue === "segments" ||
+						attrs[a].nodeValue === "viewpoints" ||
+						attrs[a].nodeValue === "skin" ||
+						attrs[a].nodeValue === "skinCoord" ||
+						attrs[a].nodeValue === "sites")) {
+						// console.log("################## FOUND", attr, attrs[a].nodeValue);
+						attr = "containerFieldOverride";
+
+					} else if (attr === "xmlns:xsd" || attr === "xsd:noNamespaceSchemaLocation" || attr === 'containerField' || attr === 'type') {
 						continue;
+					}
+					if (attr === "DEF") {
+						DEF = attrs[a].nodeValue;
+					}
+					if (attr === "USE") {
+						USE = attrs[a].nodeValue;
 					}
 					var method = attr;
 					// look at object model
@@ -362,6 +385,10 @@ JavaScriptSerializer.prototype = {
 					}
 					
 					str += '.'+method+"("+strval+")";
+					if (attr === 'containerFieldOverride' && (attrs[a].nodeValue === "joints" || attrs[a].nodeValue === "segments" || attrs[a].nodeValue === "viewpoints" || attrs[a].nodeValue === "skinCoord" || attrs[a].nodeValue === "skin" || attrs[a].nodeValue === "sites")) {
+					// console.log("################## FOUND", method, attrs[a].nodeValue);
+						str += ')'; // for cast
+					}
 				}
 			} catch (e) {
 				console.error(e);
@@ -370,7 +397,7 @@ JavaScriptSerializer.prototype = {
 		}
 		for (var cn in element.childNodes) {
 			var node = element.childNodes[cn];
-			if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 1) {
+			if (element.childNodes.hasOwnProperty(cn) && node.nodeType === 1) {
 				if (node.nodeName === "ProtoInstance") {
 					stack.unshift(this.preno);
 					this.preno++;
@@ -383,6 +410,16 @@ JavaScriptSerializer.prototype = {
 					this.postcode[stack[0]] += element.nodeName+stack[0];
 				}
 				var ch = this.printParentChild(element, node, cn, mapToMethod, n);
+				let hAnimListFound = false;
+				if (ch.indexOf(".addJoints") >= 0 ||
+				    ch.indexOf(".addSites") >= 0 ||
+				    ch.indexOf(".addSkin") >= 0 ||
+				    ch.indexOf(".setSkinCoord") >= 0 ||
+				    ch.indexOf(".addViewpoints") >= 0 ||
+				    ch.indexOf(".addSkeleton") >= 0 ||
+				    ch.indexOf(".addSegments") >= 0) {
+					hAnimListFound = true;
+				}
 				ch += "(";
 				if (element.nodeName === "Appearance" && node.NodeName === "ComposedShader") {
 					ch += "new X3DNode [] {";
@@ -391,12 +428,36 @@ JavaScriptSerializer.prototype = {
 					ch += node.nodeName+stack[0] + " = ";
 				}
 
-				ch += "new "+node.nodeName+"()";
-				ch += this.subSerializeToString(node, mapToMethod, fieldTypes, n+1, stack);
+				var DEFpar = "";
+				// only use a DEF constructor parameter when USE is not present and DEF is present
+				if (node.nodeName.startsWith("HAnim")) {
+					if (typeof USE === 'undefined' && typeof DEF !== 'undefined') {
+						DEFpar = '"'+DEF+'"';
+					}
+					if (node.nodeName.startsWith("HAnimHumanoid")) {
+						this.foundHumanoid = true;
+						hAnimListFound = true;
+					}
+				}
+				let construct = "new "+node.nodeName+'('+DEFpar+')';
+				if (hAnimListFound) {
+					construct = "("+construct+")";
+				}
+				construct += this.subSerializeToString(node, mapToMethod, fieldTypes, n+1, stack);
+				if (hAnimListFound) {
+					//if (!node.nodeName.startsWith("HAnimHumanoid")) {
+						ch += '(';
+					//}
+					ch += '('+node.nodeName+')';
+				}
+				ch += construct;
 				if (element.nodeName === "Appearance" && node.NodeName === "ComposedShader") {
 					ch += "}";
 				}
 				ch += ")";
+				if (node.nodeName.startsWith("Scene") && this.foundHumanoid) {
+					ch += "))";
+				}
 				if (element.nodeName === "ProtoInstance" && node.nodeName === "fieldValue") {
 					// ch goes to end of body
 					this.postcode[stack[0]] += ch+";\n";
@@ -407,7 +468,7 @@ JavaScriptSerializer.prototype = {
 				if (node.nodeName === "ProtoInstance") {
 					stack.shift();
 				}
-			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 8) {
+			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType === 8) {
 				var y = node.nodeValue.
 					replace(/\\/g, '\\\\').
 					replace(/"/g, '\\"');
@@ -415,7 +476,7 @@ JavaScriptSerializer.prototype = {
 				if (y !== node.nodeValue) {
 					// console.error("JavaScript Comment Replacing "+node.nodeValue+" with "+y);
 				}
-			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 4) {
+			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType === 4) {
 				str += "\n"+("  ".repeat(n))+".setSourceCode(`"+node.nodeValue.split("[\r\n]?[\r\n]").map(function(x) {
 					return x.
 					        replace(/\\/g, '\\\\').

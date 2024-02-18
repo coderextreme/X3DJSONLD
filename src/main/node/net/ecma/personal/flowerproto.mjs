@@ -109,13 +109,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFSTRING,
                       name : new SFString("vertex"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      value : new SFString("\"../shaders/gl_flowers_chromatic.vs\"")}),
+                      value : new SFString("\"https://coderextreme.net/X3DJSONLD/src/main/shaders/gl_flowers_chromatic.vs\"")}),
 
                     new field({
                       type : field.TYPE_MFSTRING,
                       name : new SFString("fragment"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      value : new SFString("\"../shaders/pc_flowers.fs\"")})])})),
+                      value : new SFString("\"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_flowers.fs\"")})])})),
               ProtoBody : new SFNode(
                 new ProtoBody({
                   children : new MFNode([

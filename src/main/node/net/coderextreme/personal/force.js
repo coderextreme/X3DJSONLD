@@ -20,7 +20,7 @@ var ProtoInstance3 = null;
 var ProtoInstance4 = null;
 var ProtoInstance5 = null;
 var ProtoInstance6 = null;
-      var X3D0 =  (new autoclass.X3D()).setProfile("Immersive").setVersion("3.3")
+      var X3D0 =  (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
       .setHead((new autoclass.head())
         .addComponent((new autoclass.component()).setName("Scripting").setLevel(1))
         .addMeta((new autoclass.meta()).setName("creator").setContent("John W Carlson"))
@@ -58,7 +58,11 @@ var ProtoInstance6 = null;
 "					function set_cycle(value) {\n"+
 "                                                old = translation;\n"+
 "						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);\n"+
-"                                                keyValue = new MFVec3f([old, translation]);\n"+
+"                                                var tmpkeyValue = new MFVec3f();\n"+
+"			    			tmpkeyValue[0] = old;\n"+
+"			    			tmpkeyValue[1] = translation;\n"+
+"                                                keyValue = tmpkeyValue;\n"+
+"			    		\n"+
 "						// Browser.println(translation);\n"+
 "					}"))
               .addChild((new autoclass.TimeSensor()).setDEF("nodeClock").setCycleInterval(3).setLoop(true))
@@ -66,7 +70,7 @@ var ProtoInstance6 = null;
               .addChild((new autoclass.ROUTE()).setFromNode("nodeClock").setFromField("fraction_changed").setToNode("NodePosition").setToField("set_fraction"))
               .addChild((new autoclass.ROUTE()).setFromNode("MoveBall").setFromField("keyValue").setToNode("NodePosition").setToField("keyValue"))
               .addChild((new autoclass.ROUTE()).setFromNode("NodePosition").setFromField("value_changed").setToNode("transform").setToField("set_translation")))))
-        .addChild((new autoclass.ProtoDeclare()).setName("cylinder")
+        .addChild((new autoclass.ProtoDeclare()).setName("cyl")
           .setProtoInterface((new autoclass.ProtoInterface())
             .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFVEC3F).setName("set_positionA").setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY))
             .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFVEC3F).setName("set_positionB").setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY)))
@@ -87,17 +91,29 @@ var ProtoInstance6 = null;
 "\n"+
 "                function set_endA(value) {\n"+
 "		    if (typeof spine === 'undefined') {\n"+
-"		        spine = new MFVec3f([value, value]);\n"+
+"		        var tmpspine = new MFVec3f();\n"+
+"			tmpspine[0] = value;\n"+
+"			tmpspine[1] = value;\n"+
+"			spine = tmpspine;\n"+
 "		    } else {\n"+
-"		        spine = new MFVec3f([value, spine[1]]);\n"+
+"		        var tmpspine = new MFVec3f();\n"+
+"			tmpspine[0] = value;\n"+
+"			tmpspine[1] = spine[1];\n"+
+"			spine = tmpspine;\n"+
 "		    }\n"+
 "                }\n"+
 "\n"+
 "                function set_endB(value) {\n"+
 "		    if (typeof spine === 'undefined') {\n"+
-"		        spine = new MFVec3f([value, value]);\n"+
+"		        var tmpspine = new MFVec3f();\n"+
+"			tmpspine[0] = value;\n"+
+"			tmpspine[1] = value;\n"+
+"			spine = tmpspine;\n"+
 "		    } else {\n"+
-"		        spine = new MFVec3f([spine[0], value]);\n"+
+"		        var tmpspine = new MFVec3f();\n"+
+"			tmpspine[0] = spine[0];\n"+
+"			tmpspine[1] = value;\n"+
+"			spine = tmpspine;\n"+
 "		    }\n"+
 "                }\n"+
 "\n"+
@@ -111,9 +127,9 @@ var ProtoInstance6 = null;
           .addChild(ProtoInstance1 = (new autoclass.ProtoInstance()).setName("node").setDEF("nodeB"))
           .addChild(ProtoInstance2 = (new autoclass.ProtoInstance()).setName("node").setDEF("nodeC"))
           .addChild(ProtoInstance3 = (new autoclass.ProtoInstance()).setName("node").setDEF("nodeD"))
-          .addChild(ProtoInstance4 = (new autoclass.ProtoInstance()).setName("cylinder").setDEF("linkA"))
-          .addChild(ProtoInstance5 = (new autoclass.ProtoInstance()).setName("cylinder").setDEF("linkB"))
-          .addChild(ProtoInstance6 = (new autoclass.ProtoInstance()).setName("cylinder").setDEF("linkC")))
+          .addChild(ProtoInstance4 = (new autoclass.ProtoInstance()).setName("cyl").setDEF("linkA"))
+          .addChild(ProtoInstance5 = (new autoclass.ProtoInstance()).setName("cyl").setDEF("linkB"))
+          .addChild(ProtoInstance6 = (new autoclass.ProtoInstance()).setName("cyl").setDEF("linkC")))
         .addChild((new autoclass.Script()).setDEF("clickHandler")
           .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFINT32).setName("counter").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
           .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFNODE).setName("node_changed").setAccessType(autoclass.field.ACCESSTYPE_OUTPUTONLY))

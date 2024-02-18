@@ -12,8 +12,8 @@ var MFNode = require('./x3d.mjs');
 var meta = require('./x3d.mjs');
 var Scene = require('./x3d.mjs');
 var Viewpoint = require('./x3d.mjs');
-var SFVec3f = require('./x3d.mjs');
 var SFRotation = require('./x3d.mjs');
+var SFVec3f = require('./x3d.mjs');
 var NavigationInfo = require('./x3d.mjs');
 var Shape = require('./x3d.mjs');
 var Appearance = require('./x3d.mjs');
@@ -28,7 +28,7 @@ var MFVec3f = require('./x3d.mjs');
 var X3D0 =  new X3D({
 
       profile : new SFString("Interchange"),
-      version : new SFString("4.0"),
+      version : new SFString("3.0"),
       head : new SFNode(
         new head({
           meta : new MFNode([
@@ -66,7 +66,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("modified"),
-              content : new SFString("Sat, 30 Dec 2023 07:46:15 GMT")}),
+              content : new SFString("13 January 2014")}),
 
             new meta({
               name : new SFString("description"),
@@ -78,7 +78,15 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("generator"),
-              content : new SFString("Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html")})])})),
+              content : new SFString("Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html")}),
+
+            new meta({
+              name : new SFString("generator"),
+              content : new SFString("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit")}),
+
+            new meta({
+              name : new SFString("license"),
+              content : new SFString("../../license.html")})])})),
       Scene : new SFNode(
         new Scene({
           children : new MFNode([
@@ -87,28 +95,28 @@ var X3D0 =  new X3D({
 
             new Viewpoint({
               description : new SFString("Rear View"),
-              position : new SFVec3f([0,0,-10]),
-              orientation : new SFRotation([0,1,0,3.14])}),
+              orientation : new SFRotation([0,1,0,3.14]),
+              position : new SFVec3f([0,0,-10])}),
 
             new Viewpoint({
               description : new SFString("Top View"),
-              position : new SFVec3f([0,10,0]),
-              orientation : new SFRotation([1,0,0,-1.57])}),
+              orientation : new SFRotation([1,0,0,-1.57]),
+              position : new SFVec3f([0,10,0])}),
 
             new Viewpoint({
               description : new SFString("Bottom View"),
-              position : new SFVec3f([0,-10,0]),
-              orientation : new SFRotation([1,0,0,1.57])}),
+              orientation : new SFRotation([1,0,0,1.57]),
+              position : new SFVec3f([0,-10,0])}),
 
             new Viewpoint({
               description : new SFString("Right View"),
-              position : new SFVec3f([10,0,0]),
-              orientation : new SFRotation([0,1,0,1.57])}),
+              orientation : new SFRotation([0,1,0,1.57]),
+              position : new SFVec3f([10,0,0])}),
 
             new Viewpoint({
               description : new SFString("Left View"),
-              position : new SFVec3f([-10,0,0]),
-              orientation : new SFRotation([0,1,0,-1.57])}),
+              orientation : new SFRotation([0,1,0,-1.57]),
+              position : new SFVec3f([-10,0,0])}),
 
             new NavigationInfo({
               type : ["EXAMINE","WALK","FLY","ANY"]}),

@@ -8,10 +8,10 @@ console.log("Problems loading fs. On browser?",e);
 var SFString = require('./x3d.mjs');
 var SFNode = require('./x3d.mjs');
 var head = require('./x3d.mjs');
-var MFNode = require('./x3d.mjs');
-var meta = require('./x3d.mjs');
 var component = require('./x3d.mjs');
 var SFInt32 = require('./x3d.mjs');
+var MFNode = require('./x3d.mjs');
+var meta = require('./x3d.mjs');
 var Scene = require('./x3d.mjs');
 var ProtoDeclare = require('./x3d.mjs');
 var ProtoInterface = require('./x3d.mjs');
@@ -23,9 +23,9 @@ var Appearance = require('./x3d.mjs');
 var Material = require('./x3d.mjs');
 var SFColor = require('./x3d.mjs');
 var ComposedShader = require('./x3d.mjs');
-var ShaderPart = require('./x3d.mjs');
 var IS = require('./x3d.mjs');
 var connect = require('./x3d.mjs');
+var ShaderPart = require('./x3d.mjs');
 var Sphere = require('./x3d.mjs');
 var SFFloat = require('./x3d.mjs');
 var WorldInfo = require('./x3d.mjs');
@@ -38,9 +38,13 @@ var ProtoInstance = require('./x3d.mjs');
 var X3D0 =  new X3D({
 
       profile : new SFString("Immersive"),
-      version : new SFString("4.0"),
+      version : new SFString("3.2"),
       head : new SFNode(
         new head({
+          component : new SFNode(
+            new component({
+              name : new SFString("Shaders"),
+              level : new SFInt32(1)})),
           meta : new MFNode([
             new meta({
               name : new SFString("title"),
@@ -68,7 +72,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("modified"),
-              content : new SFString("Sat, 30 Dec 2023 07:57:57 GMT")}),
+              content : new SFString("20 October 2019")}),
 
             new meta({
               name : new SFString("reference"),
@@ -83,6 +87,10 @@ var X3D0 =  new X3D({
               content : new SFString("https://www.web3d.org/x3d/wiki/index.php/X3D_Plugfest")}),
 
             new meta({
+              name : new SFString("subject"),
+              content : new SFString("X3D shader example")}),
+
+            new meta({
               name : new SFString("reference"),
               content : new SFString("originals/simpleShader.x3dv")}),
 
@@ -91,28 +99,29 @@ var X3D0 =  new X3D({
               content : new SFString("ShaderTutorialInstantReality.pdf")}),
 
             new meta({
-              name : new SFString("subject"),
-              content : new SFString("X3D shader example")}),
-
-            new meta({
               name : new SFString("generator"),
               content : new SFString("Titania V3.0.3, http://titania.create3000.de")}),
+
+            new meta({
+              name : new SFString("info"),
+              content : new SFString("World of Titania")}),
+
+            new meta({
+              name : new SFString("outputStyle"),
+              content : new SFString("nicest")}),
 
             new meta({
               name : new SFString("generator"),
               content : new SFString("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit")}),
 
             new meta({
-              name : new SFString("generator"),
-              content : new SFString("x3d-tidy V1.0.118, https://www.npmjs.com/package/x3d-tidy")}),
+              name : new SFString("identifier"),
+              content : new SFString("https://www.web3d.org/x3d/content/examples/Basic/Shaders/SimpleShader.x3d")}),
 
             new meta({
-              name : new SFString("info"),
-              content : new SFString("World of Titania")}),
-          component : new SFNode(
-            new component({
-              name : new SFString("Shaders"),
-              level : new SFInt32(1)})])})),
+              name : new SFString("license"),
+              content : new SFString("../../license.html")}),
+          /*meta content='under development' name='warning'/*/])})),
       Scene : new SFNode(
         new Scene({
           children : new MFNode([
@@ -123,8 +132,8 @@ var X3D0 =  new X3D({
                   field : new MFNode([
                     new field({
                       type : field.TYPE_SFVEC3F,
-                      accessType : new SFString(field.ACCESSTYPE_INITIALIZEONLY),
                       name : new SFString("myInputRange"),
+                      accessType : new SFString(field.ACCESSTYPE_INITIALIZEONLY),
                       value : new SFString("0.95 0.44 0.22")})])})),
               ProtoBody : new SFNode(
                 new ProtoBody({
@@ -141,37 +150,40 @@ var X3D0 =  new X3D({
                               shaders : new SFNode(
                                 new ComposedShader({
                                   language : new SFString("GLSL"),
-                                  parts : new SFNode(
-                                    new ShaderPart({})),
-                                  parts : new SFNode(
-                                    new ShaderPart({
-                                      type : "FRAGMENT"})),
                                   field : new MFNode([
                                     new field({
                                       type : field.TYPE_SFVEC3F,
-                                      accessType : new SFString(field.ACCESSTYPE_INITIALIZEONLY),
-                                      name : new SFString("decis")}),
+                                      name : new SFString("decis"),
+                                      accessType : new SFString(field.ACCESSTYPE_INITIALIZEONLY)}),
                                   IS : new SFNode(
                                     new IS({
                                       connect : new MFNode([
                                         new connect({
                                           nodeField : new SFString("decis"),
-                                          protoField : new SFString("myInputRange")})])})])})),
+                                          protoField : new SFString("myInputRange")})])})]),
+                                  parts : new SFNode(
+                                    new ShaderPart({
+                                      type : "VERTEX"})),
+                                  parts : new SFNode(
+                                    new ShaderPart({
+                                      type : "FRAGMENT"}))})),
                               shaders : new SFNode(
                                 new ComposedShader({
                                   DEF : new SFString("Cobweb"),
                                   language : new SFString("GLSL"),
-                                  parts : new SFNode(
-                                    new ShaderPart({})),
-                                  parts : new SFNode(
-                                    new ShaderPart({
-                                      type : "FRAGMENT"})),
                                   field : new MFNode([
                                     new field({
                                       type : field.TYPE_SFVEC3F,
-                                      accessType : new SFString(field.ACCESSTYPE_INITIALIZEONLY),
                                       name : new SFString("decis"),
-                                      value : new SFString("0.95 0.77 0.44")})])}))})),
+                                      accessType : new SFString(field.ACCESSTYPE_INITIALIZEONLY),
+                                      value : new SFString("0.95 0.77 0.44")}),
+                                  parts : new SFNode(
+                                    new ShaderPart({
+                                      type : "VERTEX"})]),
+                                  parts : new SFNode(
+                                    new ShaderPart({
+                                      type : "FRAGMENT",
+                                      DEF : new SFString("_1")}))}))})),
                           geometry : new SFNode(
                             new Sphere({
                               radius : new SFFloat(1.75)}))}))})])}))}),
@@ -180,51 +192,52 @@ var X3D0 =  new X3D({
               title : new SFString("SimpleShader"),
               metadata : new MFNode([
                 new MetadataSet({
-                  DEF : new SFString("Titania"),
                   name : new SFString("Titania"),
+                  DEF : new SFString("Titania"),
                   reference : new SFString("http://titania.create3000.de"),
                   value : new SFNode(
                     new MetadataSet({
-                      DEF : new SFString("Selection"),
                       name : new SFString("Selection"),
+                      DEF : new SFString("Selection"),
                       reference : new SFString("http://titania.create3000.de"),
                       value : new SFNode(
                         new MetadataSet({
-                          DEF : new SFString("nodes"),
                           name : new SFString("nodes"),
-                          reference : new SFString("http://titania.create3000.de")}))})),
+                          DEF : new SFString("nodes"),
+                          reference : new SFString("http://titania.create3000.de"),
+                          /*NULL*/}))})),
                   value : new SFNode(
                     new MetadataSet({
-                      DEF : new SFString("NavigationInfo"),
                       name : new SFString("NavigationInfo"),
+                      DEF : new SFString("NavigationInfo"),
                       reference : new SFString("http://titania.create3000.de"),
                       value : new SFNode(
                         new MetadataString({
-                          DEF : new SFString("type"),
                           name : new SFString("type"),
+                          DEF : new SFString("type"),
                           reference : new SFString("http://titania.create3000.de"),
                           value : new MFString(["EXAMINE"])}))})),
                   value : new SFNode(
                     new MetadataSet({
-                      DEF : new SFString("Viewpoint"),
                       name : new SFString("Viewpoint"),
+                      DEF : new SFString("Viewpoint"),
                       reference : new SFString("http://titania.create3000.de"),
                       value : new SFNode(
                         new MetadataDouble({
-                          DEF : new SFString("position"),
                           name : new SFString("position"),
+                          DEF : new SFString("position"),
                           reference : new SFString("http://titania.create3000.de"),
                           value : new MFDouble([6.24067728185014,0.00250837343276661,2.92117542307615])})),
                       value : new SFNode(
                         new MetadataDouble({
-                          DEF : new SFString("orientation"),
                           name : new SFString("orientation"),
+                          DEF : new SFString("orientation"),
                           reference : new SFString("http://titania.create3000.de"),
                           value : new MFDouble([-0.110173424710488,0.990158061907379,-0.0863065984000336,1.21146676119191])})),
                       value : new SFNode(
                         new MetadataDouble({
-                          DEF : new SFString("centerOfRotation"),
                           name : new SFString("centerOfRotation"),
+                          DEF : new SFString("centerOfRotation"),
                           reference : new SFString("http://titania.create3000.de"),
                           value : new MFDouble([-0.808320198626341,-0.358072370409949,0.22817191560906])}))}))})])}),
 

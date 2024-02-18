@@ -59,7 +59,7 @@ function compare(obj1, p1, obj2, p2) {
 				str += ">"+JSON.stringify(obj2)+"\n";
 				finalret = false;
 			}
-		} else if (parseFloat(obj1).toFixed(6) == parseFloat(obj2).toFixed(6)) {
+		} else if (parseFloat(obj1).toFixed(6) === parseFloat(obj2).toFixed(6)) {
 		} else if (JSON.stringify(parseFloat(obj1).toFixed(6)) != JSON.stringify(parseFloat(obj2).toFixed(6))) {
 		} else {
 			str += "@2 "+p1+" "+p2+"\n";
@@ -122,7 +122,7 @@ function compare(obj1, p1, obj2, p2) {
 			}
 		}
 	} else if (!(typeof obj1 === 'undefined' && typeof obj2 === 'undefined')) {
-		if (parseFloat(obj1).toFixed(6) == parseFloat(obj2).toFixed(6)) {
+		if (parseFloat(obj1).toFixed(6) === parseFloat(obj2).toFixed(6)) {
 		} else {
 			str += "@8 "+p1+" "+p2+"\n";
 			str += "<"+JSON.stringify(obj1)+"\n";
