@@ -1,0 +1,170 @@
+import bpy
+
+# remove initial cube
+objs = bpy.data.objects
+objs.remove(objs["Cube"], do_unlink=True)
+
+skeleton = bpy.data.objects.new("Armature", bpy.data.armatures.new("Armature"))
+bpy.context.collection.objects.link(skeleton)
+bpy.context.view_layer.objects.active = skeleton
+skeleton.select_set(True)
+bpy.ops.object.mode_set(mode='EDIT')
+
+# Create bones
+bones = [
+("sacrum", (0, 0, 0), (0, 0, 0)),
+  ("pelvis", (0, 0, 0.97241), (0, 0, 0)),
+      ("l_thigh", (0.1265, 0.0001, 0.975), (0, 0, 0.97241)),
+        ("l_calf", (0.126, -0.0707, 0.5604), (0.1265, 0.0001, 0.975)),
+          ("l_talus", (0.1215, -0.0798, 0.0711), (0.126, -0.0707, 0.5604)),
+            ("l_tarsal_proximal_phalanx_2", (0.1404, 0.0227, 0.0436), (0.1215, -0.0798, 0.0711)),
+              ("l_tarsal_distal_phalanx_2", (0.155, 0.0899, 0.0312), (0.1404, 0.0227, 0.0436)),
+      ("r_thigh", (-0.1087, 0.0011, 0.9778), (0, 0, 0.97241)),
+        ("r_calf", (-0.1361, -0.0299, 0.5768), (-0.1087, 0.0011, 0.9778)),
+          ("r_talus", (-0.1568, -0.05, 0.0933), (-0.1361, -0.0299, 0.5768)),
+            ("r_tarsal_proximal_phalanx_2", (-0.1739, 0.0317, 0.0421), (-0.1568, -0.05, 0.0933)),
+              ("r_tarsal_distal_phalanx_2", (-0.1868, 0.14, 0.0296), (-0.1739, 0.0317, 0.0421)),
+  ("l5", (0.00133, -0.00574, 1.07967), (0, 0, 0)),
+    ("l3", (0.00138, -0.01072, 1.1687), (0.00133, -0.00574, 1.07967)),
+      ("t12", (0.00198, -0.01566, 1.257), (0.00138, -0.01072, 1.1687)),
+        ("t9", (0.0026, -0.0164, 1.3455), (0.00198, -0.01566, 1.257)),
+          ("t4", (0.00164, -0.0284, 1.436), (0.0026, -0.0164, 1.3455)),
+              ("c7", (0.0003, -0.0564, 1.551), (0.00164, -0.0284, 1.436)),
+                ("c3", (-0.0018, -0.0542, 1.62), (0.0003, -0.0564, 1.551)),
+                  ("skull", (-0.0017, -0.0412, -1.821), (-0.0018, -0.0542, 1.62)),
+              ("l_clavicle", (0.0916, -0.0519, 1.4588), (0.00164, -0.0284, 1.436)),
+                ("l_upperarm", (0.2614, -0.0513, 1.4468), (0.0916, -0.0519, 1.4588)),
+                  ("l_forearm", (0.2806, -0.0782, 1.204), (0.2614, -0.0513, 1.4468)),
+                    ("l_carpal", (0.3207, -0.0607, 0.966), (0.2806, -0.0782, 1.204)),
+                        ("l_metacarpal_1", (0.3138, -0.03519, 0.9566), (0.3207, -0.0607, 0.966)),
+                          ("l_carpal_proximal_phalanx_1", (0.2971, -0.02176, 0.93), (0.3138, -0.03519, 0.9566)),
+                            ("l_carpal_distal_phalanx_1", (0.2955, -0.0138, 0.8924), (0.2971, -0.02176, 0.93)),
+                        ("l_metacarpal_2", (0.3292, -0.0422, 0.9474), (0.3207, -0.0607, 0.966)),
+                          ("l_carpal_proximal_phalanx_2", (0.3416, -0.0361, 0.8905), (0.3292, -0.0422, 0.9474)),
+                            ("l_carpal_middle_phalanx_2", (0.3487, -0.0484, 0.8258), (0.3416, -0.0361, 0.8905)),
+                              ("l_carpal_distal_phalanx_2", (0.3471, -0.0451, 0.843), (0.3487, -0.0484, 0.8258)),
+                        ("l_metacarpal_3", (0.328, -0.0569, 0.9515), (0.3207, -0.0607, 0.966)),
+                          ("l_carpal_proximal_phalanx_3", (0.3501, -0.0622, 0.8826), (0.328, -0.0569, 0.9515)),
+                            ("l_carpal_middle_phalanx_3", (0.3665, -0.0759, 0.8101), (0.3501, -0.0622, 0.8826)),
+                              ("l_carpal_distal_phalanx_3", (0.3592, -0.0688, 0.8441), (0.3665, -0.0759, 0.8101)),
+                        ("l_metacarpal_4", (0.3361, -0.0749, 0.9535), (0.3207, -0.0607, 0.966)),
+                          ("l_carpal_proximal_phalanx_4", (0.3563, -0.0863, 0.9004), (0.3361, -0.0749, 0.9535)),
+                            ("l_carpal_middle_phalanx_4", (0.3656, -0.0974, 0.8534), (0.3563, -0.0863, 0.9004)),
+                              ("l_carpal_distal_phalanx_4", (0.3655, -0.1001, 0.8302), (0.3656, -0.0974, 0.8534)),
+                        ("l_metacarpal_5", (0.3287, -0.8845, 0.9554), (0.3207, -0.0607, 0.966)),
+                          ("l_carpal_proximal_phalanx_5", (0.3522, -0.1043, 0.9029), (0.3287, -0.8845, 0.9554)),
+                            ("l_carpal_middle_phalanx_5", (0.3615, -0.1143, 0.8729), (0.3522, -0.1043, 0.9029)),
+                              ("l_carpal_distal_phalanx_5", (0.365, -0.1195, 0.857), (0.3615, -0.1143, 0.8729)),
+              ("r_clavicle", (-0.0945, -0.0456, 1.465), (0.00164, -0.0284, 1.436)),
+                ("r_upperarm", (-0.2545, -0.0428, 1.4669), (-0.0945, -0.0456, 1.465)),
+                  ("r_forearm", (-0.2652, -0.0826, 1.236), (-0.2545, -0.0428, 1.4669)),
+                    ("r_carpal", (-0.3195, -0.054, 0.988), (-0.2652, -0.0826, 1.236)),
+                        ("r_metacarpal_1", (-0.3106, -0.0245, -0.9603), (-0.3195, -0.054, 0.988)),
+                          ("r_carpal_proximal_phalanx_1", (-0.3004, -0.0022, -0.9283), (-0.3106, -0.0245, -0.9603)),
+                            ("r_carpal_distal_phalanx_1", (-0.2978, -0.0136, 0.8873), (-0.3004, -0.0022, -0.9283)),
+                        ("r_metacarpal_2", (-0.3229, -0.0344, 0.9597), (-0.3195, -0.054, 0.988)),
+                          ("r_carpal_proximal_phalanx_2", (-0.3452, -0.0362, 0.8828), (-0.3229, -0.0344, 0.9597)),
+                            ("r_carpal_middle_phalanx_2", (-0.354, -0.0406, 0.8454), (-0.3452, -0.0362, 0.8828)),
+                              ("r_carpal_distal_phalanx_2", (-0.3553, -0.0439, 0.8218), (-0.354, -0.0406, 0.8454)),
+                        ("r_metacarpal_3", (-0.3294, -0.0476, 0.9674), (-0.3195, -0.054, 0.988)),
+                          ("r_carpal_proximal_phalanx_3", (-0.3526, -0.0609, 0.8886), (-0.3294, -0.0476, 0.9674)),
+                            ("r_carpal_middle_phalanx_3", (-0.3623, -0.068, 0.8459), (-0.3526, -0.0609, 0.8886)),
+                              ("r_carpal_distal_phalanx_3", (-0.3693, -0.0733, 0.817), (-0.3623, -0.068, 0.8459)),
+                        ("r_metacarpal_4", (-0.3329, -0.0634, 0.9656), (-0.3195, -0.054, 0.988)),
+                          ("r_carpal_proximal_phalanx_4", (-0.3531, -0.0794, 0.8977), (-0.3329, -0.0634, 0.9656)),
+                            ("r_carpal_middle_phalanx_4", (-0.3642, -0.0915, 0.8561), (-0.3531, -0.0794, 0.8977)),
+                              ("r_carpal_distal_phalanx_4", (-0.3718, -0.0951, 0.8341), (-0.3642, -0.0915, 0.8561)),
+                        ("r_metacarpal_5", (-0.3312, -0.0918, 0.9537), (-0.3195, -0.054, 0.988)),
+                          ("r_carpal_proximal_phalanx_5", (-0.3511, -0.1039, 0.9031), (-0.3312, -0.0918, 0.9537)),
+                            ("r_carpal_middle_phalanx_5", (-0.3558, -0.1093, 0.8844), (-0.3511, -0.1039, 0.9031)),
+                              ("r_carpal_distal_phalanx_5", (-0.3619, -0.1157, 0.8635), (-0.3558, -0.1093, 0.8844)),
+]
+
+for bone in bones:
+    bone_name, bone_start, bone_end = bone
+    bpy.ops.armature.bone_primitive_add(name=bone_name)
+    new_segment = skeleton.data.edit_bones[bone_name]
+    new_segment.head = bone_start
+    new_segment.tail = bone_end
+
+# Connect bones
+segments = [
+  ("sacrum", "pelvis"),
+      ("pelvis", "l_thigh"),
+        ("l_thigh", "l_calf"),
+          ("l_calf", "l_talus"),
+            ("l_talus", "l_tarsal_proximal_phalanx_2"),
+              ("l_tarsal_proximal_phalanx_2", "l_tarsal_distal_phalanx_2"),
+      ("pelvis", "r_thigh"),
+        ("r_thigh", "r_calf"),
+          ("r_calf", "r_talus"),
+            ("r_talus", "r_tarsal_proximal_phalanx_2"),
+              ("r_tarsal_proximal_phalanx_2", "r_tarsal_distal_phalanx_2"),
+  ("sacrum", "l5"),
+    ("l5", "l3"),
+      ("l3", "t12"),
+        ("t12", "t9"),
+          ("t9", "t4"),
+              ("t4", "c7"),
+                ("c7", "c3"),
+                  ("c3", "skull"),
+              ("t4", "l_clavicle"),
+                ("l_clavicle", "l_upperarm"),
+                  ("l_upperarm", "l_forearm"),
+                    ("l_forearm", "l_carpal"),
+                        ("l_carpal", "l_metacarpal_1"),
+                          ("l_metacarpal_1", "l_carpal_proximal_phalanx_1"),
+                            ("l_carpal_proximal_phalanx_1", "l_carpal_distal_phalanx_1"),
+                        ("l_carpal", "l_metacarpal_2"),
+                          ("l_metacarpal_2", "l_carpal_proximal_phalanx_2"),
+                            ("l_carpal_proximal_phalanx_2", "l_carpal_middle_phalanx_2"),
+                              ("l_carpal_middle_phalanx_2", "l_carpal_distal_phalanx_2"),
+                        ("l_carpal", "l_metacarpal_3"),
+                          ("l_metacarpal_3", "l_carpal_proximal_phalanx_3"),
+                            ("l_carpal_proximal_phalanx_3", "l_carpal_middle_phalanx_3"),
+                              ("l_carpal_middle_phalanx_3", "l_carpal_distal_phalanx_3"),
+                        ("l_carpal", "l_metacarpal_4"),
+                          ("l_metacarpal_4", "l_carpal_proximal_phalanx_4"),
+                            ("l_carpal_proximal_phalanx_4", "l_carpal_middle_phalanx_4"),
+                              ("l_carpal_middle_phalanx_4", "l_carpal_distal_phalanx_4"),
+                        ("l_carpal", "l_metacarpal_5"),
+                          ("l_metacarpal_5", "l_carpal_proximal_phalanx_5"),
+                            ("l_carpal_proximal_phalanx_5", "l_carpal_middle_phalanx_5"),
+                              ("l_carpal_middle_phalanx_5", "l_carpal_distal_phalanx_5"),
+              ("t4", "r_clavicle"),
+                ("r_clavicle", "r_upperarm"),
+                  ("r_upperarm", "r_forearm"),
+                    ("r_forearm", "r_carpal"),
+                        ("r_carpal", "r_metacarpal_1"),
+                          ("r_metacarpal_1", "r_carpal_proximal_phalanx_1"),
+                            ("r_carpal_proximal_phalanx_1", "r_carpal_distal_phalanx_1"),
+                        ("r_carpal", "r_metacarpal_2"),
+                          ("r_metacarpal_2", "r_carpal_proximal_phalanx_2"),
+                            ("r_carpal_proximal_phalanx_2", "r_carpal_middle_phalanx_2"),
+                              ("r_carpal_middle_phalanx_2", "r_carpal_distal_phalanx_2"),
+                        ("r_carpal", "r_metacarpal_3"),
+                          ("r_metacarpal_3", "r_carpal_proximal_phalanx_3"),
+                            ("r_carpal_proximal_phalanx_3", "r_carpal_middle_phalanx_3"),
+                              ("r_carpal_middle_phalanx_3", "r_carpal_distal_phalanx_3"),
+                        ("r_carpal", "r_metacarpal_4"),
+                          ("r_metacarpal_4", "r_carpal_proximal_phalanx_4"),
+                            ("r_carpal_proximal_phalanx_4", "r_carpal_middle_phalanx_4"),
+                              ("r_carpal_middle_phalanx_4", "r_carpal_distal_phalanx_4"),
+                        ("r_carpal", "r_metacarpal_5"),
+                          ("r_metacarpal_5", "r_carpal_proximal_phalanx_5"),
+                            ("r_carpal_proximal_phalanx_5", "r_carpal_middle_phalanx_5"),
+                              ("r_carpal_middle_phalanx_5", "r_carpal_distal_phalanx_5"),
+]
+
+for segment in segments:
+    parent_bone, child_bone = segment
+    parent = skeleton.data.edit_bones[parent_bone]
+    child = skeleton.data.edit_bones[child_bone]
+    child.parent = parent
+
+# Exit edit mode
+bpy.ops.object.mode_set(mode='OBJECT')
+bpy.ops.export_scene.x3dv(filepath="blenderSkeleton.json", export_format="JSON")
+bpy.ops.export_scene.x3dv(filepath="blenderSkeleton.html", export_format="HTML")
+bpy.ops.export_scene.x3dv(filepath="blenderSkeleton.x3d", export_format="X3D")
+bpy.ops.export_scene.x3dv(filepath="blenderSkeleton.x3dv", export_format="X3DV")
