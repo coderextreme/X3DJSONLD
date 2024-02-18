@@ -24,7 +24,7 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> copyright </i> </td>
-			<td>  </td>
+			<td> 2023 </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
@@ -70,7 +70,7 @@ blenderSkeleton.prototype = {
   .setHead((new autoclass.head())
     .addComponent((new autoclass.component()).setName("HAnim").setLevel(3))
     .addMeta((new autoclass.meta()).setName("filename").setContent("blenderSkeleton.x3d"))
-    .addMeta((new autoclass.meta()).setName("copyright"))
+    .addMeta((new autoclass.meta()).setName("copyright").setContent("2023"))
     .addMeta((new autoclass.meta()).setName("reference").setContent("http://www.web3D.org"))
     .addMeta((new autoclass.meta()).setName("generator").setContent("Blender 3.6.4"))
     .addMeta((new autoclass.meta()).setName("exporter").setContent("io_scene_x3dv")))

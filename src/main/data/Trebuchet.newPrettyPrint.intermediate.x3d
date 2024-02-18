@@ -1,0 +1,735 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+  <head>
+    <meta content='Trebuchet.x3d' name='title'/>
+    <meta content='Working model of a 14th century Trebuchet Catapult.' name='description'/>
+    <meta content='LT Joe Roth' name='creator'/>
+    <meta content='20 June 2001' name='created'/>
+    <meta content='Sat, 30 Dec 2023 08:00:17 GMT' name='modified'/>
+    <meta content='7.8' name='version'/>
+    <meta content='https://www.web3d.org/x3d/content/examples/Basic/StudentProjects/Trebuchet.x3d' name='identifier'/>
+    <meta content='http://trebuchet.com' name='reference'/>
+    <meta content='http://members.home.net/dimona' name='reference'/>
+    <meta content='Permission granted for use of the VRML chicken I own a copy of Monty Python and the Holy Grail I have requested permission to use for non profit use. No response received. I will use the sound clips under "Fair Use" clause of the DMCA' name='reference'/>
+    <meta content='https://www.web3d.org/WorkingGroups/media/textures/nature/leaves_5.jpg.htm' name='reference'/>
+    <meta content='http://www.revemonde.net/UniversalMedia/textures/nature/leaves_5.jpg.htm' name='reference'/>
+    <meta content='trebuchet catapult Monty Python' name='subject'/>
+  </head>
+  <Scene>
+    <WorldInfo title='Trebuchet.x3d'/>
+    <Background backUrl='"https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_back.jpg"' bottomUrl='"https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_bottom.jpg"' frontUrl='"https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_front.jpg"' groundAngle='1.309 1.570796' groundColor='0.1 0.1 0 0.4 0.25 0.2 0.6 0.6 0.6' leftUrl='"https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_left.jpg"' rightUrl='"https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_right.jpg"' skyAngle='1.309 1.57079' skyColor='0 0.2 0.7 0 0.5 1 1 1 1' topUrl='"https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_top.jpg"'/>
+    <Sound maxBack='1000.0' maxFront='1000.0'>
+      <AudioClip DEF='HolyGrail' description='HolyGrail' loop='true' url='"holygral.mp3" "http://www.nps.navy.mil/code32/vrml/holygral.mp3"'/>
+    </Sound>
+    <Shape>
+      <Appearance>
+        <ImageTexture url='"grass.jpg" "https://www.web3d.org/x3d/content/examples/Basic/StudentProjects/grass.jpg"'/>
+      </Appearance>
+      <Box size='10000 1 10000'/>
+    </Shape>
+    <Transform rotation='0 1 0 1.57' scale='0.5 0.5 0.5' translation='10.5 6.5 4.5'>
+      <Shape>
+        <Appearance DEF='TextAppearance'>
+          <Material diffuseColor='1 0 0' emissiveColor='1 1 0'/>
+        </Appearance>
+        <Text string='"Click Sling to Select Projectile"'>
+          <FontStyle family='"SERIF"' justify='"BEGIN"'/>
+        </Text>
+      </Shape>
+    </Transform>
+    <Transform rotation='0 1 0 1.57' scale='0.5 0.5 0.5' translation='11 5.5 6'>
+      <Switch DEF='Weight' whichChoice='0'>
+        <Group>
+          <Shape>
+            <Appearance USE='TextAppearance'/>
+            <Text string='"Click Here to Change Counter Weight (50 lbs)"'/>
+          </Shape>
+        </Group>
+        <Group>
+          <Shape>
+            <Appearance USE='TextAppearance'/>
+            <Text string='"Click Here to Change Counter Weight (500 lbs)"'/>
+          </Shape>
+        </Group>
+        <Group>
+          <Shape>
+            <Appearance USE='TextAppearance'/>
+            <Text string='"Click Here to Change Counter Weight (1000 lbs)"'/>
+          </Shape>
+        </Group>
+        <Group>
+          <Shape>
+            <Appearance USE='TextAppearance'/>
+            <Text string='"Click Here to Change Counter Weight (10000 lbs)"'/>
+          </Shape>
+        </Group>
+      </Switch>
+      <TouchSensor DEF='weightselector' description='weight selector'/>
+      <Transform translation='8 0 0'>
+        <Shape>
+          <Appearance>
+            <Material transparency='1.0'/>
+          </Appearance>
+          <Box size='20 1 1'/>
+        </Shape>
+      </Transform>
+    </Transform>
+    <Transform rotation='0 1 0 1.57' translation='10 0.5 4.5'>
+      <Transform DEF='launch' translation='0 2 5'>
+        <Billboard>
+          <Shape>
+            <Appearance>
+              <Material diffuseColor='1 0 0'/>
+            </Appearance>
+            <Text string='"LAUNCH"'>
+              <FontStyle family='"SERIF"' justify='"BEGIN"'/>
+            </Text>
+          </Shape>
+          <Transform translation='2 0.3 0'>
+            <Shape>
+              <Appearance>
+                <Material transparency='1.0'/>
+              </Appearance>
+              <Box size='5 1 1'/>
+            </Shape>
+          </Transform>
+          <Switch DEF='PigdogMonk'>
+            <Group>
+              <Sound maxBack='1000.0' maxFront='1000.0'>
+                <AudioClip DEF='PigDogSound' description='PigDogSound' url='"pigdog.wav" "http://www.nps.navy.mil/code32/vrml/pigdog.wav"'/>
+              </Sound>
+            </Group>
+            <Group>
+              <Sound maxBack='1000.0' maxFront='1000.0'>
+                <AudioClip DEF='MonkSound' description='MonkSound' url='"monks.wav" "http://www.nps.navy.mil/code32/vrml/monks.wav"'/>
+              </Sound>
+            </Group>
+          </Switch>
+        </Billboard>
+        <TouchSensor DEF='Launch' description='launch!'/>
+      </Transform>
+      <Transform>
+        <Switch DEF='projectilename' whichChoice='0'>
+          <Group>
+            <Shape>
+              <Appearance USE='TextAppearance'/>
+              <Text string='"Bowling Ball (10 lbs)"'>
+                <FontStyle family='"SERIF"' justify='"BEGIN"' size='0.5'/>
+              </Text>
+            </Shape>
+            <Sound maxBack='1000.0' maxFront='1000.0' priority='1.0'>
+              <AudioClip DEF='HolyHandGrenadeSound' description='HolyHandGrenadeSound' url='"grenade.wav" "http://www.nps.navy.mil/code32/vrml/grenade.wav"'/>
+            </Sound>
+          </Group>
+          <Group>
+            <Shape>
+              <Appearance USE='TextAppearance'/>
+              <Text string='"Cow (1000 lbs)"'>
+                <FontStyle family='"SERIF"' justify='"BEGIN"' size='0.5'/>
+              </Text>
+            </Shape>
+            <Sound maxBack='1000.0' maxFront='1000.0'>
+              <AudioClip DEF='CowSound' description='CowSound' url='"lavache.wav" "http://www.nps.navy.mil/code32/vrml/lavache.wav"'/>
+            </Sound>
+          </Group>
+          <Group>
+            <Shape>
+              <Appearance USE='TextAppearance'/>
+              <Text string='"Chicken (5 lbs)"'>
+                <FontStyle family='"SERIF"' justify='"BEGIN"' size='0.5'/>
+              </Text>
+            </Shape>
+            <Sound maxBack='1000.0' maxFront='1000.0' priority='1.0'>
+              <AudioClip DEF='HamsterSound' description='HamsterSound' url='"hamster.wav" "http://www.nps.navy.mil/code32/vrml/hamster.wav"'/>
+            </Sound>
+          </Group>
+        </Switch>
+      </Transform>
+    </Transform>
+    <Transform rotation='0 1 0 -1.67'>
+      <Transform DEF='aft' translation='5 5 15'>
+        <Transform translation='-2.5 -4.5 -2'>
+          <Transform USE='launch'/>
+        </Transform>
+      </Transform>
+    </Transform>
+    <Transform translation='0 3 0'>
+      <Shape DEF='plank'>
+        <Appearance DEF='wood'>
+          <ImageTexture DEF='woodTexture' url='"wood.gif" "https://www.web3d.org/x3d/content/examples/Basic/StudentProjects/wood.gif"'/>
+        </Appearance>
+        <Box size='25 1 1'/>
+      </Shape>
+      <Transform DEF='angledsupport' rotation='0 0 1 1' translation='-5 10 0'>
+        <Shape USE='plank'/>
+      </Transform>
+      <Transform DEF='angledsupport2' rotation='0 0 1 -1' translation='5 10 0'>
+        <Shape USE='plank'/>
+      </Transform>
+      <Transform DEF='verticalsupport' rotation='0 0 1 1.57' scale='0.9 1 1' translation='0 11 0'>
+        <Shape USE='plank'/>
+      </Transform>
+      <Transform DEF='horizontalsupport' scale='0.4 1 1' translation='0 10 0'>
+        <Shape USE='plank'/>
+      </Transform>
+      <Transform rotation='0 0 1 1.57' scale='0.6 1 1' translation='0 5 10'>
+        <Transform rotation='0 1 0 0.4'>
+          <Shape USE='plank'/>
+        </Transform>
+      </Transform>
+      <Transform DEF='panel' translation='0 18.2 -0.3'>
+        <Shape>
+          <Appearance USE='wood'/>
+          <Box size='5 5 0.5'/>
+        </Shape>
+      </Transform>
+      <Transform rotation='1 0 0 -1.57' translation='0 0.6 2.5'>
+        <Transform rotation='0 0 1 1.57'>
+          <Shape>
+            <Appearance USE='wood'/>
+            <Extrusion beginCap='false' crossSection='1 -0.38 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 -0.38 -1 -1.1 1 -1.1 1 -0.38' endCap='false' solid='false' spine='0 6 0 0 -11 0'/>
+          </Shape>
+        </Transform>
+      </Transform>
+      <Transform DEF='flinger' center='7 0 0' rotation='0 0 1 0.82' scale='0.9 1 1' translation='-7 18 2.5'>
+        <Transform>
+          <Shape>
+            <Appearance USE='wood'/>
+            <Box size='35 1 1'/>
+          </Shape>
+          <Transform translation='7 0 0'>
+            <Shape>
+              <Appearance USE='wood'/>
+              <Box size='8 2 2'/>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform rotation='1 0 0 1.57' scale='0.2 0.2 0.2' translation='-15 -1 0'>
+          <Shape DEF='Torus'>
+            <Appearance>
+              <Material specularColor='1 1 1'/>
+            </Appearance>
+            <Extrusion beginCap='false' convex='false' creaseAngle='1.57' crossSection='0.9 0 0.81 -0.34 0.63 -0.63 0.34 -0.83 0 -0.9 -0.34 -0.81 -0.63 -0.63 -0.81 -0.34 -0.9 0 -0.81 0.34 -0.63 0.63 -0.34 0.81 0 0.9 0.38 0.81 0.63 0.63 0.81 0.34 0.9 0' endCap='false' spine='2 0 0 1.85 0 0.77 1.41 0 1.41 0.77 0 1.85 0 0 2 -0.77 0 1.85 -1.41 0 1.41 -1.85 0 0.77 -2 0 0 -1.85 0 -0.77 -1.41 0 -1.41 -0.77 0 -1.85 0 0 -2 0.77 0 -1.85 1.41 0 -1.41 1.85 0 -0.77 2 0 0'/>
+          </Shape>
+          <Transform translation='1 0 2'>
+            <Shape>
+              <Appearance DEF='rope'>
+                <ImageTexture USE='woodTexture'/>
+              </Appearance>
+              <Sphere radius='1.5'/>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform rotation='0 0 1 1.2' scale='0.2 0.2 0.2' translation='-18.3 0.3 0'>
+          <Shape>
+            <Appearance>
+              <Material specularColor='1 1 1'/>
+            </Appearance>
+            <Cylinder height='10.0'/>
+          </Shape>
+          <Transform translation='0 -2.5 0'>
+            <Shape USE='Torus'/>
+            <Transform translation='-2 0 0'>
+              <Shape>
+                <Appearance USE='rope'/>
+                <Sphere radius='1.5'/>
+              </Shape>
+            </Transform>
+          </Transform>
+          <Transform rotation='0 0 1 1.2' translation='15 55 -11'>
+            <Transform scale='5 5 5'>
+              <Shape>
+                <Appearance USE='rope'/>
+                <Extrusion beginCap='false' creaseAngle='0.76' crossSection='0.1 0 0.092 -0.038 0.071 -0.071 0.038 -0.092 0 -0.1 -0.038 -0.092 -0.071 -0.071 -0.092 -0.038 -0.1 0 -0.092 0.038 -0.071 0.071 -0.038 0.092 0 0.1 0.038 0.092 0.071 0.071 0.092 0.038 0.1 0' endCap='false' solid='false' spine='-15.2 1.4 2.2 -12 -0.8 2.2'/>
+              </Shape>
+            </Transform>
+          </Transform>
+        </Transform>
+        <Transform rotation='1 0 0 -1.7' translation='-17 -4.5 0'>
+          <Transform scale='0.2 0.2 0.2'>
+            <Shape USE='Torus'/>
+            <Transform translation='-1 0 1.7'>
+              <Shape>
+                <Appearance USE='rope'/>
+                <Sphere radius='1.5'/>
+              </Shape>
+            </Transform>
+          </Transform>
+        </Transform>
+        <Transform DEF='RnS'>
+          <Transform DEF='ropes'>
+            <Transform rotation='0 0 1 -0.82' translation='7 -26 -2.5'>
+              <Shape>
+                <Appearance USE='rope'/>
+                <Extrusion beginCap='false' creaseAngle='0.76' crossSection='0.1 0 0.092 -0.038 0.071 -0.071 0.038 -0.092 0 -0.1 -0.038 -0.092 -0.071 -0.071 -0.092 -0.038 -0.1 0 -0.092 0.038 -0.071 0.071 -0.038 0.092 0 0.1 0.038 0.092 0.071 0.071 0.092 0.038 0.1 0' endCap='false' solid='false' spine='-33 0.9 2.5 -18.5 1.9 2.55'/>
+              </Shape>
+              <Shape>
+                <Appearance USE='rope'/>
+                <Extrusion beginCap='false' creaseAngle='0.76' crossSection='0.1 0 0.092 -0.038 0.071 -0.071 0.038 -0.092 0 -0.1 -0.038 -0.092 -0.071 -0.071 -0.092 -0.038 -0.1 0 -0.092 0.038 -0.071 0.071 -0.038 0.092 0 0.1 0.038 0.092 0.071 0.071 0.092 0.038 0.1 0' endCap='false' solid='false' spine='-35.7 -0.8 2.5 -18.8 -0.8 2.55'/>
+              </Shape>
+            </Transform>
+          </Transform>
+          <Transform DEF='sling' rotation='0 0 1 -0.82' translation='-4 -15.3 0'>
+            <Transform>
+              <Transform rotation='0 1 0 -1.57' scale='1 1.3 1' translation='0.5 0 -1'>
+                <Transform rotation='0 0 1 1.57'>
+                  <Transform scale='0.3 0.3 0.3'>
+                    <Shape DEF='halfsling'>
+                      <Appearance DEF='clear'>
+                        <Material transparency='0.5'/>
+                      </Appearance>
+                      <Extrusion crossSection='0 0 0 5 0.5 7 1 8 2 9 3 11 3.5 11.2 4 11 5 9 6 8 6.5 7 6.7 5 6.7 0 0 0' spine='0 0 0 0.1 0 0'/>
+                    </Shape>
+                    <Transform scale='0.3 0.3 0.3' translation='0 -3.5 11.5'>
+                      <Shape USE='Torus'/>
+                      <Transform translation='0 0 2'>
+                        <Shape>
+                          <Appearance USE='rope'/>
+                          <Sphere radius='1.5'/>
+                        </Shape>
+                      </Transform>
+                    </Transform>
+                  </Transform>
+                  <Transform scale='0.3 0.3 0.3' translation='2 0 0'>
+                    <Shape USE='halfsling'/>
+                    <Transform scale='0.3 0.3 0.3' translation='0 -3.5 11.3'>
+                      <Shape USE='Torus'/>
+                      <Transform translation='0 0 2'>
+                        <Shape>
+                          <Appearance USE='rope'/>
+                          <Sphere radius='1.5'/>
+                        </Shape>
+                      </Transform>
+                    </Transform>
+                  </Transform>
+                  <Transform translation='1 -1 0'>
+                    <Shape>
+                      <Appearance USE='clear'/>
+                      <Extrusion beginCap='false' creaseAngle='0.785' crossSection='1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0' endCap='false' solid='false' spine='0 -1 0 0 1 0'/>
+                    </Shape>
+                  </Transform>
+                </Transform>
+                <TouchSensor DEF='LauncheeChoice' description='launcher choice'/>
+              </Transform>
+              <Transform DEF='projectiletransform' scale='0.01 0.01 0.01'>
+                <Switch DEF='projectile' whichChoice='0'>
+                  <Group>
+                    <Transform translation='0 0.7 0'>
+                      <Shape>
+                        <Appearance DEF='black'>
+                          <Material diffuseColor='0 0 0' specularColor='1 1 1'/>
+                        </Appearance>
+                        <Sphere radius='0.7'/>
+                      </Shape>
+                    </Transform>
+                  </Group>
+                  <Group>
+                    <Transform>
+                      <Inline global='true' url='"cow.wrl" "http://www.uoguelph.ca/~dchiu/cow.wrl"'/>
+                    </Transform>
+                  </Group>
+                  <Group>
+                    <Transform rotation='0 1 0 1.57' scale='0.4 0.4 0.4' translation='0 0.7 0'>
+                      <Inline global='true' url='"vrml_ginger.wrl" "http://home.inreach.com/ntamura/vrml/vrml_ginger.wrl"'/>
+                    </Transform>
+                  </Group>
+                </Switch>
+              </Transform>
+            </Transform>
+          </Transform>
+        </Transform>
+      </Transform>
+      <Transform rotation='1 0 0 1.57' translation='0 18 2.5'>
+        <Shape>
+          <Appearance>
+            <Material diffuseColor='0 0 0' specularColor='1 1 1'/>
+          </Appearance>
+          <Cylinder height='8.0' radius='0.4'/>
+        </Shape>
+      </Transform>
+      <Transform DEF='verticalweight'>
+        <Transform translation='4 18 1.8'>
+          <Shape>
+            <Appearance USE='wood'/>
+            <Box size='1 10 0.5'/>
+          </Shape>
+        </Transform>
+        <Transform translation='4 18 3.2'>
+          <Shape>
+            <Appearance USE='wood'/>
+            <Box size='1 10 0.5'/>
+          </Shape>
+        </Transform>
+        <Transform translation='4 14 2.5'>
+          <Shape>
+            <Appearance>
+              <Material diffuseColor='0 0 0' specularColor='1 1 1'/>
+            </Appearance>
+            <Cylinder height='4.0' radius='1.5'/>
+          </Shape>
+        </Transform>
+        <Transform rotation='1 0 0 1.57' translation='4 22 2.5'>
+          <Shape>
+            <Appearance>
+              <Material diffuseColor='0 0 0' specularColor='1 1 1'/>
+            </Appearance>
+            <Cylinder height='2.5' radius='0.3'/>
+          </Shape>
+        </Transform>
+      </Transform>
+      <Transform rotation='0 0 1 1.57' scale='0.2 0.2 0.2' translation='-11.5 -1 2'>
+        <Transform DEF='screw' rotation='1 0 0 1.57'>
+          <Shape USE='Torus'/>
+          <Transform rotation='1 0 0 -1.57' translation='0 0 7'>
+            <Shape>
+              <Appearance>
+                <Material specularColor='1 1 1'/>
+              </Appearance>
+              <Cylinder height='10.0' radius='0.7'/>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation='0 0 7'>
+          <Transform USE='screw'/>
+        </Transform>
+        <Transform DEF='Pin' rotation='1 0 0 -1.57' translation='0 0 -3'>
+          <Transform USE='screw'/>
+        </Transform>
+      </Transform>
+      <Transform translation='0 0 5'>
+        <Shape USE='plank'/>
+        <Transform USE='angledsupport'/>
+        <Transform USE='angledsupport2'/>
+        <Transform USE='verticalsupport'/>
+        <Transform USE='horizontalsupport'/>
+        <Transform rotation='0 1 0 1.57' scale='0.6 1 1' translation='0 -11 -2.5'>
+          <Transform USE='horizontalsupport'/>
+        </Transform>
+        <Transform rotation='0 0 1 -1.57' scale='0.6 1 1' translation='0 5 -10'>
+          <Transform rotation='0 1 0 0.4'>
+            <Shape USE='plank'/>
+          </Transform>
+        </Transform>
+        <Transform translation='0 0 0.6'>
+          <Transform USE='panel'/>
+        </Transform>
+      </Transform>
+      <Transform translation='10 -1 2.5'>
+        <Shape DEF='Axle'>
+          <Appearance USE='wood'/>
+          <Box size='1 1 8'/>
+        </Shape>
+        <Transform rotation='1 0 0 1.57' translation='0 0 4.5'>
+          <Shape DEF='wheel'>
+            <Appearance USE='wood'/>
+            <Cylinder radius='2.0'/>
+          </Shape>
+          <Shape DEF='tracks'>
+            <Appearance USE='black'/>
+            <Sphere radius='1.5'/>
+          </Shape>
+          <Transform translation='0 0.55 0'>
+            <Shape DEF='hub'>
+              <Appearance USE='black'/>
+              <Sphere radius='1.5'/>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform rotation='1 0 0 1.57' translation='0 0 -4.5'>
+          <Shape USE='wheel'/>
+          <Shape USE='tracks'/>
+          <Transform translation='0 -0.55 0'>
+            <Shape USE='hub'/>
+          </Transform>
+        </Transform>
+      </Transform>
+      <Transform translation='-10 -1 2.5'>
+        <Shape USE='Axle'/>
+        <Transform rotation='1 0 0 1.57' translation='0 0 4.5'>
+          <Shape USE='wheel'/>
+          <Shape USE='tracks'/>
+          <Transform translation='0 0.55 0'>
+            <Shape USE='hub'/>
+          </Transform>
+        </Transform>
+        <Transform rotation='1 0 0 1.57' translation='0 0 -4.5'>
+          <Shape USE='wheel'/>
+          <Shape USE='tracks'/>
+          <Transform translation='0 -0.55 0'>
+            <Shape USE='hub'/>
+          </Transform>
+        </Transform>
+        <Transform rotation='0 1 0 -0.6' translation='0 100 400'>
+          <Transform translation='1 3 0'>
+            <Viewpoint description='Side'/>
+          </Transform>
+          <Transform USE='launch'/>
+          <Transform>
+            <TouchSensor USE='LauncheeChoice'/>
+            <Switch USE='projectilename'/>
+            <Transform translation='2.5 0 0'>
+              <Shape>
+                <Appearance>
+                  <Material transparency='1.0'/>
+                </Appearance>
+                <Box size='5 0.5 0.5'/>
+              </Shape>
+            </Transform>
+          </Transform>
+          <Transform scale='0.5 0.5 0.5' translation='0 -1 0'>
+            <TouchSensor USE='weightselector'/>
+            <Switch USE='Weight'/>
+            <Transform translation='8 0 0'>
+              <Shape>
+                <Appearance>
+                  <Material transparency='1.0'/>
+                </Appearance>
+                <Box size='17 1 0.5'/>
+              </Shape>
+            </Transform>
+          </Transform>
+        </Transform>
+        <Transform DEF='ProjectileTransform' translation='14.25 1.25 0'>
+          <Switch USE='projectile'/>
+          <Transform rotation='0 1 0 1.57' translation='0 1 0'>
+            <Viewpoint description='Projectile Cam' position='0 0 15'/>
+          </Transform>
+        </Transform>
+        <Transform translation='20 2 0'>
+          <Transform DEF='Front' rotation='0 1 0 1.57'>
+            <Viewpoint description='Fore'/>
+          </Transform>
+        </Transform>
+        <Transform translation='-8 4 0'>
+          <Transform rotation='0 1 0 -1.57'>
+            <Viewpoint description='Aft'/>
+          </Transform>
+        </Transform>
+        <Script DEF='WeightScript'>
+          <field name='set_boolean' accessType='inputOnly' type='SFBool'/>
+          <field name='whichchoice' accessType='outputOnly' type='SFInt32'/>
+          <field name='CounterWeight' accessType='outputOnly' type='SFFloat'/>
+<![CDATA[
+ecmascript:
+
+
+
+
+function initialize ()
+
+{
+
+	whichchoice =0;
+
+	CounterWeight=100;
+
+}
+
+
+function set_boolean ( boolean_input, eventTime)
+
+{
+
+
+	if ( boolean_input== false ) { return; } // ignore the unclick
+
+        whichchoice = whichchoice +1;
+
+	if (whichchoice == 0)CounterWeight=50.00;
+
+	if (whichchoice == 1)CounterWeight=500.00;
+
+	if (whichchoice == 2)CounterWeight=1000.00;
+
+	if (whichchoice == 3)CounterWeight=10000.00;
+
+        if ( whichchoice ==4 ) { whichchoice = 0; CounterWeight=50; }
+
+
+
+
+        Browser.print ('CounterWeight ='+CounterWeight);
+
+}
+]]>
+        </Script>
+        <Script DEF='LauncheeScript'>
+          <field name='set_boolean' accessType='inputOnly' type='SFBool'/>
+          <field name='whichchoice' accessType='outputOnly' type='SFInt32'/>
+          <field name='ProjectileWeight' accessType='outputOnly' type='SFFloat'/>
+<![CDATA[
+ecmascript:
+
+
+function set_boolean (boolean_input, eventTime)
+
+{
+
+	if ( boolean_input== false ) { return; } // ignore unclick
+
+        whichchoice = whichchoice +1;
+
+        if (whichchoice == 0)ProjectileWeight=10.00;
+
+        if (whichchoice == 1)ProjectileWeight=1000.00;
+
+	if (whichchoice == 2)ProjectileWeight=5;
+
+
+	if ( whichchoice ==3 ) { whichchoice = 0; ProjectileWeight=10.00; }
+
+	Browser.print ('Projectile Weight'+ProjectileWeight);
+
+}
+]]>
+        </Script>
+        <Script DEF='PigdogMonkScript'>
+          <field name='set_boolean' accessType='inputOnly' type='SFBool'/>
+          <field name='whichchoice' accessType='outputOnly' type='SFInt32'/>
+<![CDATA[
+ecmascript:
+
+
+function set_boolean (boolean_input, eventTime)
+
+{
+
+	if ( boolean_input== false ) { return; } // ignore unclick
+
+
+        whichchoice = whichchoice +1;
+
+
+        if ( whichchoice ==2 )  whichchoice = 0;
+
+
+
+
+}
+]]>
+        </Script>
+        <Script DEF='Mover'>
+          <field name='set_fraction' accessType='inputOnly' type='SFFloat'/>
+          <field name='set_MassCounterWeight' accessType='inputOnly' type='SFFloat'/>
+          <field name='set_MassProjectileWeight' accessType='inputOnly' type='SFFloat'/>
+          <field name='MassCounterWeight' accessType='initializeOnly' type='SFFloat' value='1.0'/>
+          <field name='MassProjectileWeight' accessType='initializeOnly' type='SFFloat' value='1.0'/>
+          <field name='transparent' accessType='outputOnly' type='SFVec3f'/>
+          <field name='value_changed' accessType='outputOnly' type='SFVec3f'/>
+<![CDATA[
+ecmascript:
+
+
+function initialize ()
+
+{
+
+	MassCounterWeight=100;
+
+	MassProjectileWeight=10;
+
+	Browser.print ('MassCounterWeight =' + MassCounterWeight);
+
+	Browser.print ('MassProjectileWeight =' + MassProjectileWeight);
+
+}
+
+
+function set_MassProjectileWeight (value, timestamp)
+
+{
+
+	MassProjectileWeight = value;
+
+	Browser.print ('new MassProjectileWeight =' + MassProjectileWeight);
+
+}
+
+function set_MassCounterWeight (value2, timestamp)
+
+{
+
+	MassCounterWeight = value2;
+
+	Browser.print ('new MassCounterWeight =' + MassCounterWeight);
+
+}
+
+
+
+
+function set_fraction ( fraction, eventTime )
+
+{
+
+	var TrebuchetHeight=45;
+
+	var Height =25;
+
+      	x = (2*(MassCounterWeight/MassProjectileWeight)*Height*fraction)-.5*TrebuchetHeight;
+
+	// start at TrebuchetHeight and keep along z axis (z=zero)
+
+	y =  (MassCounterWeight/MassProjectileWeight)*Height*Math.sin(fraction*3.14);
+
+        z = 0;
+
+        transparent = new SFVec3f (1,1,1);
+
+     if (y <1.5*TrebuchetHeight  )if (x<TrebuchetHeight)
+
+		{
+
+		x=x-10;
+
+		y=y+1;
+
+		transparent = new SFVec3f(.01, .01, .01);
+
+			}
+
+
+	value_changed = new SFVec3f (x, y, z);
+
+	Browser.print ('x=' + value_changed[0] + ' y=' + value_changed[1] + ' z=' + value_changed[2]);
+
+}
+]]>
+        </Script>
+      </Transform>
+    </Transform>
+    <TimeSensor DEF='clock' cycleInterval='10.0'/>
+    <PositionInterpolator DEF='verticalweightpath' key='0 0.1 0.2 0.2 0.3 0.9' keyValue='1.4 1.6 0 1 -8 0 -3.5 -12 0 -3.5 -12 0 1.2 -8 0 1.4 1.6 0'/>
+    <OrientationInterpolator DEF='flingerangles' key='0 0.1 0.2 0.2 0.3 0.9' keyValue='0 0 1 0.82 0 0 1 -0.77 0 0 1 -1.57 0 0 1 -1.57 0 0 1 -0.77 0 0 1 0.82'/>
+    <PositionInterpolator DEF='pinpath' key='0 0.01 0.95 1' keyValue='0 0 -3 0 0 -10 0 0 -10 0 0 -3'/>
+    <OrientationInterpolator DEF='RnSAngels' key='0 0.7 1' keyValue='0 0 1 0 0 0 1 -3.14 0 0 1 0'/>
+    <PositionInterpolator DEF='invisiable' key='0 0.2 0.98 0.99' keyValue='1 1 1 0.01 0.01 0.01 0.01 0.01 0.01 1 1 1'/>
+    <ROUTE fromField='fraction_changed' fromNode='clock' toField='set_fraction' toNode='invisiable'/>
+    <ROUTE fromField='value_changed' fromNode='invisiable' toField='scale' toNode='projectiletransform'/>
+    <ROUTE fromField='CounterWeight' fromNode='WeightScript' toField='set_MassCounterWeight' toNode='Mover'/>
+    <ROUTE fromField='ProjectileWeight' fromNode='LauncheeScript' toField='set_MassProjectileWeight' toNode='Mover'/>
+    <ROUTE fromField='fraction_changed' fromNode='clock' toField='set_fraction' toNode='Mover'/>
+    <ROUTE fromField='value_changed' fromNode='Mover' toField='translation' toNode='ProjectileTransform'/>
+    <ROUTE fromField='transparent' fromNode='Mover' toField='scale' toNode='ProjectileTransform'/>
+    <ROUTE fromField='touchTime' fromNode='Launch' toField='startTime' toNode='clock'/>
+    <ROUTE fromField='isActive' fromNode='Launch' toField='set_boolean' toNode='PigdogMonkScript'/>
+    <ROUTE fromField='touchTime' fromNode='Launch' toField='startTime' toNode='PigDogSound'/>
+    <ROUTE fromField='touchTime' fromNode='Launch' toField='startTime' toNode='MonkSound'/>
+    <ROUTE fromField='whichchoice' fromNode='PigdogMonkScript' toField='whichChoice' toNode='PigdogMonk'/>
+    <ROUTE fromField='touchTime' fromNode='LauncheeChoice' toField='startTime' toNode='HolyHandGrenadeSound'/>
+    <ROUTE fromField='touchTime' fromNode='LauncheeChoice' toField='startTime' toNode='CowSound'/>
+    <ROUTE fromField='touchTime' fromNode='LauncheeChoice' toField='startTime' toNode='HamsterSound'/>
+    <ROUTE fromField='isActive' fromNode='LauncheeChoice' toField='set_boolean' toNode='LauncheeScript'/>
+    <ROUTE fromField='whichchoice' fromNode='LauncheeScript' toField='whichChoice' toNode='projectile'/>
+    <ROUTE fromField='whichchoice' fromNode='LauncheeScript' toField='whichChoice' toNode='projectilename'/>
+    <ROUTE fromField='isActive' fromNode='weightselector' toField='set_boolean' toNode='WeightScript'/>
+    <ROUTE fromField='whichchoice' fromNode='WeightScript' toField='whichChoice' toNode='Weight'/>
+    <ROUTE fromField='fraction_changed' fromNode='clock' toField='set_fraction' toNode='flingerangles'/>
+    <ROUTE fromField='value_changed' fromNode='flingerangles' toField='rotation' toNode='flinger'/>
+    <ROUTE fromField='fraction_changed' fromNode='clock' toField='set_fraction' toNode='verticalweightpath'/>
+    <ROUTE fromField='value_changed' fromNode='verticalweightpath' toField='translation' toNode='verticalweight'/>
+    <ROUTE fromField='fraction_changed' fromNode='clock' toField='set_fraction' toNode='pinpath'/>
+    <ROUTE fromField='value_changed' fromNode='pinpath' toField='translation' toNode='Pin'/>
+  </Scene>
+</X3D>

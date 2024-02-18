@@ -12,7 +12,7 @@ CX3D* X3D0 = new CX3D();
 CGroup* group = (CGroup*)(m_pScene.createNode("Group"));
 group->addChildren(X3D0);
 X3D0->setProfile("Interchange");
-X3D0->setVersion("4.0");
+X3D0->setVersion("3.0");
 Chead* head1 = new Chead();
 Cmeta* meta2 = new Cmeta();
 meta2->setName("title");
@@ -99,98 +99,103 @@ meta18->setName("generator");
 meta18->setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit");
 head1->addMeta(*meta18);
 
+Cmeta* meta19 = new Cmeta();
+meta19->setName("license");
+meta19->setContent("../../license.html");
+head1->addMeta(*meta19);
+
 X3D0->setHead(*head1);
 
-CScene* Scene19 = new CScene();
-CNavigationInfo* NavigationInfo20 = (CNavigationInfo *)(m_pScene.createNode("NavigationInfo"));
-NavigationInfo20->setType(new CString[4]{"EXAMINE","WALK","FLY","ANY"}, 4);
-group->addChildren(*NavigationInfo20);
+CScene* Scene20 = new CScene();
+CNavigationInfo* NavigationInfo21 = (CNavigationInfo *)(m_pScene.createNode("NavigationInfo"));
+NavigationInfo21->setType(new CString[4]{"EXAMINE","WALK","FLY","ANY"}, 4);
+group->addChildren(*NavigationInfo21);
 
-CGroup* Group21 = (CGroup *)(m_pScene.createNode("Group"));
-CTransform* Transform22 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform22->setTranslation(new float[3]{6.14221,0.0694613,-0.000999451});
-CShape* Shape23 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance24 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material25 = (CMaterial *)(m_pScene.createNode("Material"));
-Appearance24->setMaterial(*Material25);
+CGroup* Group22 = (CGroup *)(m_pScene.createNode("Group"));
+CTransform* Transform23 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform23->setTranslation(new float[3]{6.14221,0.0694613,-0.000999451});
+CShape* Shape24 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance25 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material26 = (CMaterial *)(m_pScene.createNode("Material"));
+Appearance25->setMaterial(*Material26);
 
-CPixelTexture* PixelTexture26 = (CPixelTexture *)(m_pScene.createNode("PixelTexture"));
-PixelTexture26->setDEF("RgbOpacityCheckerboard");
-PixelTexture26->setImage(new int[7]{2,2,4,-16776961,-65536,-65536,-16776961});
-Appearance24->setTexture(*PixelTexture26);
+CPixelTexture* PixelTexture27 = (CPixelTexture *)(m_pScene.createNode("PixelTexture"));
+PixelTexture27->setDEF("RgbOpacityCheckerboard");
+PixelTexture27->setImage(new int[7]{2,2,4,-16776961,-65536,-65536,-16776961});
+Appearance25->setTexture(*PixelTexture27);
 
-Shape23->setAppearance(*Appearance24);
+Shape24->setAppearance(*Appearance25);
 
-CBox* Box27 = (CBox *)(m_pScene.createNode("Box"));
-Shape23->setGeometry(Box27);
+CBox* Box28 = (CBox *)(m_pScene.createNode("Box"));
+Shape24->setGeometry(Box28);
 
-Transform22->addChild(*Shape23);
+Transform23->addChild(*Shape24);
 
-Group21->addChildren(*Transform22);
+Group22->addChildren(*Transform23);
 
-CTransform* Transform28 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform28->setTranslation(new float[3]{-4.85443,0.0694381,-0.00149918});
-CShape* Shape29 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance30 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material31 = (CMaterial *)(m_pScene.createNode("Material"));
-Appearance30->setMaterial(*Material31);
+CTransform* Transform29 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform29->setTranslation(new float[3]{-4.85443,0.0694381,-0.00149918});
+CShape* Shape30 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance31 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material32 = (CMaterial *)(m_pScene.createNode("Material"));
+Appearance31->setMaterial(*Material32);
 
-CPixelTexture* PixelTexture32 = (CPixelTexture *)(m_pScene.createNode("PixelTexture"));
-PixelTexture32->setUSE("RgbOpacityCheckerboard");
-Appearance30->setTexture(*PixelTexture32);
+CPixelTexture* PixelTexture33 = (CPixelTexture *)(m_pScene.createNode("PixelTexture"));
+PixelTexture33->setUSE("RgbOpacityCheckerboard");
+Appearance31->setTexture(*PixelTexture33);
 
-Shape29->setAppearance(*Appearance30);
+Shape30->setAppearance(*Appearance31);
 
-CSphere* Sphere33 = (CSphere *)(m_pScene.createNode("Sphere"));
-Shape29->setGeometry(Sphere33);
+CSphere* Sphere34 = (CSphere *)(m_pScene.createNode("Sphere"));
+Shape30->setGeometry(Sphere34);
 
-Transform28->addChild(*Shape29);
+Transform29->addChild(*Shape30);
 
-Group21->addChildren(*Transform28);
+Group22->addChildren(*Transform29);
 
-CTransform* Transform34 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform34->setTranslation(new float[3]{-1.47341,0.036672,-0.00175095});
-CShape* Shape35 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance36 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material37 = (CMaterial *)(m_pScene.createNode("Material"));
-Appearance36->setMaterial(*Material37);
+CTransform* Transform35 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform35->setTranslation(new float[3]{-1.47341,0.036672,-0.00175095});
+CShape* Shape36 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance37 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material38 = (CMaterial *)(m_pScene.createNode("Material"));
+Appearance37->setMaterial(*Material38);
 
-CPixelTexture* PixelTexture38 = (CPixelTexture *)(m_pScene.createNode("PixelTexture"));
-PixelTexture38->setUSE("RgbOpacityCheckerboard");
-Appearance36->setTexture(*PixelTexture38);
+CPixelTexture* PixelTexture39 = (CPixelTexture *)(m_pScene.createNode("PixelTexture"));
+PixelTexture39->setUSE("RgbOpacityCheckerboard");
+Appearance37->setTexture(*PixelTexture39);
 
-Shape35->setAppearance(*Appearance36);
+Shape36->setAppearance(*Appearance37);
 
-CCone* Cone39 = (CCone *)(m_pScene.createNode("Cone"));
-Shape35->setGeometry(Cone39);
+CCone* Cone40 = (CCone *)(m_pScene.createNode("Cone"));
+Shape36->setGeometry(Cone40);
 
-Transform34->addChild(*Shape35);
+Transform35->addChild(*Shape36);
 
-Group21->addChildren(*Transform34);
+Group22->addChildren(*Transform35);
 
-CTransform* Transform40 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform40->setTranslation(new float[3]{2.31094,0.0694206,-0.00187683});
-CShape* Shape41 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance42 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material43 = (CMaterial *)(m_pScene.createNode("Material"));
-Appearance42->setMaterial(*Material43);
+CTransform* Transform41 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform41->setTranslation(new float[3]{2.31094,0.0694206,-0.00187683});
+CShape* Shape42 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance43 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material44 = (CMaterial *)(m_pScene.createNode("Material"));
+Appearance43->setMaterial(*Material44);
 
-CPixelTexture* PixelTexture44 = (CPixelTexture *)(m_pScene.createNode("PixelTexture"));
-PixelTexture44->setUSE("RgbOpacityCheckerboard");
-Appearance42->setTexture(*PixelTexture44);
+CPixelTexture* PixelTexture45 = (CPixelTexture *)(m_pScene.createNode("PixelTexture"));
+PixelTexture45->setUSE("RgbOpacityCheckerboard");
+Appearance43->setTexture(*PixelTexture45);
 
-Shape41->setAppearance(*Appearance42);
+Shape42->setAppearance(*Appearance43);
 
-CCylinder* Cylinder45 = (CCylinder *)(m_pScene.createNode("Cylinder"));
-Shape41->setGeometry(Cylinder45);
+CCylinder* Cylinder46 = (CCylinder *)(m_pScene.createNode("Cylinder"));
+Shape42->setGeometry(Cylinder46);
 
-Transform40->addChild(*Shape41);
+Transform41->addChild(*Shape42);
 
-Group21->addChildren(*Transform40);
+Group22->addChildren(*Transform41);
 
-group->addChildren(*Group21);
+group->addChildren(*Group22);
 
-X3D0->setScene(*Scene19);
+X3D0->setScene(*Scene20);
 
 m_pScene.addRootNode(group);
 X3D0->toXMLString();

@@ -22,7 +22,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('identifier'),
-              content_ : SFString('https://coderextreme.net/X3DJSONLD/force.x3d')),
+              content_ : SFString('https://coderextreme.net/X3DJSONLD/src/main/data/extrusion.x3d')),
 
             meta(
               name_ : SFString('description'),
@@ -73,7 +73,10 @@ ecmascript:eval (0
                         Browser.print(value);
                         var endA = new SFVec3f(spine[0].x*Math.random()*2, spine[0].y*Math.random()*2, spine[0].z*Math.random()*2);
                         var endB = new SFVec3f(spine[1].x*Math.random()*2, spine[1].y*Math.random()*2, spine[1].z*Math.random()*2);
-		        spine = new MFVec3f([endA, endB]);
+                        var tmpspine = new MFVec3f();
+			tmpspine[0] = endA;
+			tmpspine[1] = endB;
+                        spine = tmpspine;
                 })),
 
                 ROUTE(

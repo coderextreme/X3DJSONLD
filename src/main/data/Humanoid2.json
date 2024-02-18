@@ -14,11 +14,11 @@
         "meta": [
           {
             "@name":"title",
-            "@content":"Humanoid2.x3d"
+            "@content":"JohnBoy.x3d"
           },
           {
             "@name":"identifier",
-            "@content":"http://www.web3d.org/x3d/content/examples/HumanoidAnimation/Humanoid2.x3d"
+            "@content":"http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d"
           },
           {
             "@name":"description",
@@ -46,7 +46,7 @@
           },
           {
             "@name":"translated",
-            "@content":"14 September 2023"
+            "@content":"18 February 2024"
           },
           {
             "@name":"generator",
@@ -398,12 +398,12 @@
                             },
                             { "HAnimSite":
                               {
-                                "@name":"buttocks_standing_wall_contact_point_pt",
-                                "@DEF":"hanim_buttocks_standing_wall_contact_point_pt",
+                                "@name":"buttocks_standing_wall_contact_point",
+                                "@DEF":"hanim_buttocks_standing_wall_contact_point",
                                 "-children":[
                                   { "TouchSensor":
                                     {
-                                      "@description":"HAnimSite buttocks_standing_wall_contact_point_pt"
+                                      "@description":"HAnimSite buttocks_standing_wall_contact_point"
                                     }
                                   },
                                   { "Shape":
@@ -416,13 +416,13 @@
                             },
                             { "HAnimSite":
                               {
-                                "@name":"crotch_pt",
-                                "@DEF":"hanim_crotch_pt",
+                                "@name":"crotch",
+                                "@DEF":"hanim_crotch",
                                 "@translation":[0.0034,0.8266,0.0257],
                                 "-children":[
                                   { "TouchSensor":
                                     {
-                                      "@description":"HAnimSite crotch_pt"
+                                      "@description":"HAnimSite crotch"
                                     }
                                   },
                                   { "Shape":
@@ -435,13 +435,13 @@
                             },
                             { "HAnimSite":
                               {
-                                "@name":"l_asis_pt",
-                                "@DEF":"hanim_l_asis_pt",
+                                "@name":"l_asis",
+                                "@DEF":"hanim_l_asis",
                                 "@translation":[0.0925,0.9983,0.1052],
                                 "-children":[
                                   { "TouchSensor":
                                     {
-                                      "@description":"HAnimSite l_asis_pt"
+                                      "@description":"HAnimSite l_asis"
                                     }
                                   },
                                   { "Shape":
@@ -454,13 +454,13 @@
                             },
                             { "HAnimSite":
                               {
-                                "@name":"l_iliocristale_pt",
-                                "@DEF":"hanim_l_iliocristale_pt",
+                                "@name":"l_iliocristale",
+                                "@DEF":"hanim_l_iliocristale",
                                 "@translation":[0.1612,1.0537,0.0008],
                                 "-children":[
                                   { "TouchSensor":
                                     {
-                                      "@description":"HAnimSite l_iliocristale_pt"
+                                      "@description":"HAnimSite l_iliocristale"
                                     }
                                   },
                                   { "Shape":
@@ -473,13 +473,13 @@
                             },
                             { "HAnimSite":
                               {
-                                "@name":"l_psis_pt",
-                                "@DEF":"hanim_l_psis_pt",
+                                "@name":"l_psis",
+                                "@DEF":"hanim_l_psis",
                                 "@translation":[0.0774,1.0190,-0.1151],
                                 "-children":[
                                   { "TouchSensor":
                                     {
-                                      "@description":"HAnimSite l_psis_pt"
+                                      "@description":"HAnimSite l_psis"
                                     }
                                   },
                                   { "Shape":
@@ -492,13 +492,13 @@
                             },
                             { "HAnimSite":
                               {
-                                "@name":"l_trochanterion_pt",
-                                "@DEF":"hanim_l_trochanterion_pt",
+                                "@name":"l_trochanterion",
+                                "@DEF":"hanim_l_trochanterion",
                                 "@translation":[0.1677,0.8336,0.0303],
                                 "-children":[
                                   { "TouchSensor":
                                     {
-                                      "@description":"HAnimSite l_trochanterion_pt"
+                                      "@description":"HAnimSite l_trochanterion"
                                     }
                                   },
                                   { "Shape":
@@ -511,13 +511,13 @@
                             },
                             { "HAnimSite":
                               {
-                                "@name":"r_asis_pt",
-                                "@DEF":"hanim_r_asis_pt",
+                                "@name":"r_asis",
+                                "@DEF":"hanim_r_asis",
                                 "@translation":[-0.0887,1.0021,0.1112],
                                 "-children":[
                                   { "TouchSensor":
                                     {
-                                      "@description":"HAnimSite r_asis_pt"
+                                      "@description":"HAnimSite r_asis"
                                     }
                                   },
                                   { "Shape":
@@ -530,13 +530,13 @@
                             },
                             { "HAnimSite":
                               {
-                                "@name":"r_iliocristale_pt",
-                                "@DEF":"hanim_r_iliocristale_pt",
+                                "@name":"r_iliocristale",
+                                "@DEF":"hanim_r_iliocristale",
                                 "@translation":[-0.1525,1.0628,0.0035],
                                 "-children":[
                                   { "TouchSensor":
                                     {
-                                      "@description":"HAnimSite r_iliocristale_pt"
+                                      "@description":"HAnimSite r_iliocristale"
                                     }
                                   },
                                   { "Shape":
@@ -549,13 +549,13 @@
                             },
                             { "HAnimSite":
                               {
-                                "@name":"r_psis_pt",
-                                "@DEF":"hanim_r_psis_pt",
+                                "@name":"r_psis",
+                                "@DEF":"hanim_r_psis",
                                 "@translation":[-0.0716,1.0190,-0.1138],
                                 "-children":[
                                   { "TouchSensor":
                                     {
-                                      "@description":"HAnimSite r_psis_pt"
+                                      "@description":"HAnimSite r_psis"
                                     }
                                   },
                                   { "Shape":
@@ -568,13 +568,13 @@
                             },
                             { "HAnimSite":
                               {
-                                "@name":"r_trochanterion_pt",
-                                "@DEF":"hanim_r_trochanterion_pt",
+                                "@name":"r_trochanterion",
+                                "@DEF":"hanim_r_trochanterion",
                                 "@translation":[-0.1689,0.8419,0.0352],
                                 "-children":[
                                   { "TouchSensor":
                                     {
-                                      "@description":"HAnimSite r_trochanterion_pt"
+                                      "@description":"HAnimSite r_trochanterion"
                                     }
                                   },
                                   { "Shape":
@@ -614,13 +614,13 @@
                             },
                             { "HAnimSite":
                               {
-                                "@name":"navel_pt",
-                                "@DEF":"hanim_navel_pt",
+                                "@name":"navel",
+                                "@DEF":"hanim_navel",
                                 "@translation":[0.0069,1.0966,0.1017],
                                 "-children":[
                                   { "TouchSensor":
                                     {
-                                      "@description":"HAnimSite navel_pt"
+                                      "@description":"HAnimSite navel"
                                     }
                                   },
                                   { "Shape":
@@ -633,12 +633,12 @@
                             },
                             { "HAnimSite":
                               {
-                                "@name":"waist_preferred_anterior_pt",
-                                "@DEF":"hanim_waist_preferred_anterior_pt",
+                                "@name":"waist_preferred_anterior",
+                                "@DEF":"hanim_waist_preferred_anterior",
                                 "-children":[
                                   { "TouchSensor":
                                     {
-                                      "@description":"HAnimSite waist_preferred_anterior_pt"
+                                      "@description":"HAnimSite waist_preferred_anterior"
                                     }
                                   },
                                   { "Shape":
@@ -651,13 +651,13 @@
                             },
                             { "HAnimSite":
                               {
-                                "@name":"waist_preferred_posterior_pt",
-                                "@DEF":"hanim_waist_preferred_posterior_pt",
+                                "@name":"waist_preferred_posterior",
+                                "@DEF":"hanim_waist_preferred_posterior",
                                 "@translation":[0.2900,1.0915,-0.1091],
                                 "-children":[
                                   { "TouchSensor":
                                     {
-                                      "@description":"HAnimSite waist_preferred_posterior_pt"
+                                      "@description":"HAnimSite waist_preferred_posterior"
                                     }
                                   },
                                   { "Shape":
@@ -734,13 +734,13 @@
                                   },
                                   { "HAnimSite":
                                     {
-                                      "@name":"l_femoral_lateral_epicondyles_pt",
-                                      "@DEF":"hanim_l_femoral_lateral_epicondyles_pt",
+                                      "@name":"l_femoral_lateral_epicondyles",
+                                      "@DEF":"hanim_l_femoral_lateral_epicondyles",
                                       "@translation":[0.1598,0.4967,0.0297],
                                       "-children":[
                                         { "TouchSensor":
                                           {
-                                            "@description":"HAnimSite l_femoral_lateral_epicondyles_pt"
+                                            "@description":"HAnimSite l_femoral_lateral_epicondyles"
                                           }
                                         },
                                         { "Shape":
@@ -753,13 +753,13 @@
                                   },
                                   { "HAnimSite":
                                     {
-                                      "@name":"l_femoral_medial_epicondyles_pt",
-                                      "@DEF":"hanim_l_femoral_medial_epicondyles_pt",
+                                      "@name":"l_femoral_medial_epicondyles",
+                                      "@DEF":"hanim_l_femoral_medial_epicondyles",
                                       "@translation":[0.0398,0.4946,0.0303],
                                       "-children":[
                                         { "TouchSensor":
                                           {
-                                            "@description":"HAnimSite l_femoral_medial_epicondyles_pt"
+                                            "@description":"HAnimSite l_femoral_medial_epicondyles"
                                           }
                                         },
                                         { "Shape":
@@ -772,13 +772,13 @@
                                   },
                                   { "HAnimSite":
                                     {
-                                      "@name":"l_knee_crease_pt",
-                                      "@DEF":"hanim_l_knee_crease_pt",
+                                      "@name":"l_knee_crease",
+                                      "@DEF":"hanim_l_knee_crease",
                                       "@translation":[0.0993,0.4881,-0.0309],
                                       "-children":[
                                         { "TouchSensor":
                                           {
-                                            "@description":"HAnimSite l_knee_crease_pt"
+                                            "@description":"HAnimSite l_knee_crease"
                                           }
                                         },
                                         { "Shape":
@@ -791,12 +791,12 @@
                                   },
                                   { "HAnimSite":
                                     {
-                                      "@name":"l_suprapatella_pt",
-                                      "@DEF":"hanim_l_suprapatella_pt",
+                                      "@name":"l_suprapatella",
+                                      "@DEF":"hanim_l_suprapatella",
                                       "-children":[
                                         { "TouchSensor":
                                           {
-                                            "@description":"HAnimSite l_suprapatella_pt"
+                                            "@description":"HAnimSite l_suprapatella"
                                           }
                                         },
                                         { "Shape":
@@ -836,13 +836,13 @@
                                   },
                                   { "HAnimSite":
                                     {
-                                      "@name":"r_femoral_lateral_epicondyles_pt",
-                                      "@DEF":"hanim_r_femoral_lateral_epicondyles_pt",
+                                      "@name":"r_femoral_lateral_epicondyles",
+                                      "@DEF":"hanim_r_femoral_lateral_epicondyles",
                                       "@translation":[-0.1421,0.4992,0.0310],
                                       "-children":[
                                         { "TouchSensor":
                                           {
-                                            "@description":"HAnimSite r_femoral_lateral_epicondyles_pt"
+                                            "@description":"HAnimSite r_femoral_lateral_epicondyles"
                                           }
                                         },
                                         { "Shape":
@@ -855,13 +855,13 @@
                                   },
                                   { "HAnimSite":
                                     {
-                                      "@name":"r_femoral_medial_epicondyles_pt",
-                                      "@DEF":"hanim_r_femoral_medial_epicondyles_pt",
+                                      "@name":"r_femoral_medial_epicondyles",
+                                      "@DEF":"hanim_r_femoral_medial_epicondyles",
                                       "@translation":[-0.0221,0.5014,0.0289],
                                       "-children":[
                                         { "TouchSensor":
                                           {
-                                            "@description":"HAnimSite r_femoral_medial_epicondyles_pt"
+                                            "@description":"HAnimSite r_femoral_medial_epicondyles"
                                           }
                                         },
                                         { "Shape":
@@ -874,13 +874,13 @@
                                   },
                                   { "HAnimSite":
                                     {
-                                      "@name":"r_knee_crease_pt",
-                                      "@DEF":"hanim_r_knee_crease_pt",
+                                      "@name":"r_knee_crease",
+                                      "@DEF":"hanim_r_knee_crease",
                                       "@translation":[-0.0825,0.4932,-0.0326],
                                       "-children":[
                                         { "TouchSensor":
                                           {
-                                            "@description":"HAnimSite r_knee_crease_pt"
+                                            "@description":"HAnimSite r_knee_crease"
                                           }
                                         },
                                         { "Shape":
@@ -893,12 +893,12 @@
                                   },
                                   { "HAnimSite":
                                     {
-                                      "@name":"r_suprapatella_pt",
-                                      "@DEF":"hanim_r_suprapatella_pt",
+                                      "@name":"r_suprapatella",
+                                      "@DEF":"hanim_r_suprapatella",
                                       "-children":[
                                         { "TouchSensor":
                                           {
-                                            "@description":"HAnimSite r_suprapatella_pt"
+                                            "@description":"HAnimSite r_suprapatella"
                                           }
                                         },
                                         { "Shape":
@@ -975,13 +975,13 @@
                                         },
                                         { "HAnimSite":
                                           {
-                                            "@name":"l_lateral_malleolus_pt",
-                                            "@DEF":"hanim_l_lateral_malleolus_pt",
+                                            "@name":"l_lateral_malleolus",
+                                            "@DEF":"hanim_l_lateral_malleolus",
                                             "@translation":[0.1308,0.0597,-0.1032],
                                             "-children":[
                                               { "TouchSensor":
                                                 {
-                                                  "@description":"HAnimSite l_lateral_malleolus_pt"
+                                                  "@description":"HAnimSite l_lateral_malleolus"
                                                 }
                                               },
                                               { "Shape":
@@ -994,13 +994,13 @@
                                         },
                                         { "HAnimSite":
                                           {
-                                            "@name":"l_medial_malleolus_pt",
-                                            "@DEF":"hanim_l_medial_malleolus_pt",
+                                            "@name":"l_medial_malleolus",
+                                            "@DEF":"hanim_l_medial_malleolus",
                                             "@translation":[0.0890,0.0716,-0.0881],
                                             "-children":[
                                               { "TouchSensor":
                                                 {
-                                                  "@description":"HAnimSite l_medial_malleolus_pt"
+                                                  "@description":"HAnimSite l_medial_malleolus"
                                                 }
                                               },
                                               { "Shape":
@@ -1013,12 +1013,12 @@
                                         },
                                         { "HAnimSite":
                                           {
-                                            "@name":"l_tibiale_pt",
-                                            "@DEF":"hanim_l_tibiale_pt",
+                                            "@name":"l_tibiale",
+                                            "@DEF":"hanim_l_tibiale",
                                             "-children":[
                                               { "TouchSensor":
                                                 {
-                                                  "@description":"HAnimSite l_tibiale_pt"
+                                                  "@description":"HAnimSite l_tibiale"
                                                 }
                                               },
                                               { "Shape":
@@ -1095,13 +1095,13 @@
                                               },
                                               { "HAnimSite":
                                                 {
-                                                  "@name":"l_calcaneus_posterior_pt",
-                                                  "@DEF":"hanim_l_calcaneus_posterior_pt",
+                                                  "@name":"l_calcaneus_posterior",
+                                                  "@DEF":"hanim_l_calcaneus_posterior",
                                                   "@translation":[0.0974,0.0259,-0.1171],
                                                   "-children":[
                                                     { "TouchSensor":
                                                       {
-                                                        "@description":"HAnimSite l_calcaneus_posterior_pt"
+                                                        "@description":"HAnimSite l_calcaneus_posterior"
                                                       }
                                                     },
                                                     { "Shape":
@@ -1114,13 +1114,13 @@
                                               },
                                               { "HAnimSite":
                                                 {
-                                                  "@name":"l_sphyrion_pt",
-                                                  "@DEF":"hanim_l_sphyrion_pt",
+                                                  "@name":"l_sphyrion",
+                                                  "@DEF":"hanim_l_sphyrion",
                                                   "@translation":[0.0890,0.0575,-0.0943],
                                                   "-children":[
                                                     { "TouchSensor":
                                                       {
-                                                        "@description":"HAnimSite l_sphyrion_pt"
+                                                        "@description":"HAnimSite l_sphyrion"
                                                       }
                                                     },
                                                     { "Shape":
@@ -1263,6 +1263,133 @@
                                                                   }
                                                                 }
                                                             }
+                                                          },
+                                                          { "HAnimSite":
+                                                            {
+                                                              "@name":"l_metatarsal_phalanx_1",
+                                                              "@DEF":"hanim_l_metatarsal_phalanx_1",
+                                                              "-children":[
+                                                                { "TouchSensor":
+                                                                  {
+                                                                    "@description":"HAnimSite l_metatarsal_phalanx_1"
+                                                                  }
+                                                                },
+                                                                { "Shape":
+                                                                  {
+                                                                    "@USE":"HAnimSiteShape"
+                                                                  }
+                                                                }
+                                                              ]
+                                                            }
+                                                          },
+                                                          { "HAnimSite":
+                                                            {
+                                                              "@name":"l_metatarsal_phalanx_5",
+                                                              "@DEF":"hanim_l_metatarsal_phalanx_5",
+                                                              "-children":[
+                                                                { "TouchSensor":
+                                                                  {
+                                                                    "@description":"HAnimSite l_metatarsal_phalanx_5"
+                                                                  }
+                                                                },
+                                                                { "Shape":
+                                                                  {
+                                                                    "@USE":"HAnimSiteShape"
+                                                                  }
+                                                                }
+                                                              ]
+                                                            }
+                                                          },
+                                                          { "HAnimSite":
+                                                            {
+                                                              "@name":"l_tarsal_distal_phalanx_1_tip",
+                                                              "@DEF":"hanim_l_tarsal_distal_phalanx_1_tip",
+                                                              "-children":[
+                                                                { "TouchSensor":
+                                                                  {
+                                                                    "@description":"HAnimSite l_tarsal_distal_phalanx_1_tip"
+                                                                  }
+                                                                },
+                                                                { "Shape":
+                                                                  {
+                                                                    "@USE":"HAnimSiteShape"
+                                                                  }
+                                                                }
+                                                              ]
+                                                            }
+                                                          },
+                                                          { "HAnimSite":
+                                                            {
+                                                              "@name":"l_tarsal_distal_phalanx_2_tip",
+                                                              "@DEF":"hanim_l_tarsal_distal_phalanx_2_tip",
+                                                              "@translation":[0.1195,0.0079,0.1433],
+                                                              "-children":[
+                                                                { "TouchSensor":
+                                                                  {
+                                                                    "@description":"HAnimSite l_tarsal_distal_phalanx_2_tip"
+                                                                  }
+                                                                },
+                                                                { "Shape":
+                                                                  {
+                                                                    "@USE":"HAnimSiteShape"
+                                                                  }
+                                                                }
+                                                              ]
+                                                            }
+                                                          },
+                                                          { "HAnimSite":
+                                                            {
+                                                              "@name":"l_tarsal_distal_phalanx_3_tip",
+                                                              "@DEF":"hanim_l_tarsal_distal_phalanx_3_tip",
+                                                              "-children":[
+                                                                { "TouchSensor":
+                                                                  {
+                                                                    "@description":"HAnimSite l_tarsal_distal_phalanx_3_tip"
+                                                                  }
+                                                                },
+                                                                { "Shape":
+                                                                  {
+                                                                    "@USE":"HAnimSiteShape"
+                                                                  }
+                                                                }
+                                                              ]
+                                                            }
+                                                          },
+                                                          { "HAnimSite":
+                                                            {
+                                                              "@name":"l_tarsal_distal_phalanx_4_tip",
+                                                              "@DEF":"hanim_l_tarsal_distal_phalanx_4_tip",
+                                                              "-children":[
+                                                                { "TouchSensor":
+                                                                  {
+                                                                    "@description":"HAnimSite l_tarsal_distal_phalanx_4_tip"
+                                                                  }
+                                                                },
+                                                                { "Shape":
+                                                                  {
+                                                                    "@USE":"HAnimSiteShape"
+                                                                  }
+                                                                }
+                                                              ]
+                                                            }
+                                                          },
+                                                          { "HAnimSite":
+                                                            {
+                                                              "@name":"l_tarsal_distal_phalanx_5_tip",
+                                                              "@DEF":"hanim_l_tarsal_distal_phalanx_5_tip",
+                                                              "-children":[
+                                                                { "TouchSensor":
+                                                                  {
+                                                                    "@description":"HAnimSite l_tarsal_distal_phalanx_5_tip"
+                                                                  }
+                                                                },
+                                                                { "Shape":
+                                                                  {
+                                                                    "@USE":"HAnimSiteShape"
+                                                                  }
+                                                                }
+                                                              ]
+                                                            }
                                                           }
                                                         ]
                                                       }
@@ -1326,25 +1453,6 @@
                                                                             }
                                                                         }
                                                                       }
-                                                                  }
-                                                                },
-                                                                { "HAnimSite":
-                                                                  {
-                                                                    "@name":"l_tarsal_distal_phalanx_2_tip",
-                                                                    "@DEF":"hanim_l_tarsal_distal_phalanx_2_tip",
-                                                                    "@translation":[0.1195,0.0079,0.1433],
-                                                                    "-children":[
-                                                                      { "TouchSensor":
-                                                                        {
-                                                                          "@description":"HAnimSite l_tarsal_distal_phalanx_2_tip"
-                                                                        }
-                                                                      },
-                                                                      { "Shape":
-                                                                        {
-                                                                          "@USE":"HAnimSiteShape"
-                                                                        }
-                                                                      }
-                                                                    ]
                                                                   }
                                                                 }
                                                               ]
@@ -1437,13 +1545,13 @@
                                         },
                                         { "HAnimSite":
                                           {
-                                            "@name":"r_lateral_malleolus_pt",
-                                            "@DEF":"hanim_r_lateral_malleolus_pt",
+                                            "@name":"r_lateral_malleolus",
+                                            "@DEF":"hanim_r_lateral_malleolus",
                                             "@translation":[-0.1006,0.0658,-0.1075],
                                             "-children":[
                                               { "TouchSensor":
                                                 {
-                                                  "@description":"HAnimSite r_lateral_malleolus_pt"
+                                                  "@description":"HAnimSite r_lateral_malleolus"
                                                 }
                                               },
                                               { "Shape":
@@ -1456,13 +1564,13 @@
                                         },
                                         { "HAnimSite":
                                           {
-                                            "@name":"r_medial_malleolus_pt",
-                                            "@DEF":"hanim_r_medial_malleolus_pt",
+                                            "@name":"r_medial_malleolus",
+                                            "@DEF":"hanim_r_medial_malleolus",
                                             "@translation":[-0.0591,0.0760,-0.0928],
                                             "-children":[
                                               { "TouchSensor":
                                                 {
-                                                  "@description":"HAnimSite r_medial_malleolus_pt"
+                                                  "@description":"HAnimSite r_medial_malleolus"
                                                 }
                                               },
                                               { "Shape":
@@ -1475,12 +1583,12 @@
                                         },
                                         { "HAnimSite":
                                           {
-                                            "@name":"r_tibiale_pt",
-                                            "@DEF":"hanim_r_tibiale_pt",
+                                            "@name":"r_tibiale",
+                                            "@DEF":"hanim_r_tibiale",
                                             "-children":[
                                               { "TouchSensor":
                                                 {
-                                                  "@description":"HAnimSite r_tibiale_pt"
+                                                  "@description":"HAnimSite r_tibiale"
                                                 }
                                               },
                                               { "Shape":
@@ -1557,13 +1665,13 @@
                                               },
                                               { "HAnimSite":
                                                 {
-                                                  "@name":"r_calcaneus_posterior_pt",
-                                                  "@DEF":"hanim_r_calcaneus_posterior_pt",
+                                                  "@name":"r_calcaneus_posterior",
+                                                  "@DEF":"hanim_r_calcaneus_posterior",
                                                   "@translation":[-0.0692,0.0297,-0.1221],
                                                   "-children":[
                                                     { "TouchSensor":
                                                       {
-                                                        "@description":"HAnimSite r_calcaneus_posterior_pt"
+                                                        "@description":"HAnimSite r_calcaneus_posterior"
                                                       }
                                                     },
                                                     { "Shape":
@@ -1576,13 +1684,13 @@
                                               },
                                               { "HAnimSite":
                                                 {
-                                                  "@name":"r_sphyrion_pt",
-                                                  "@DEF":"hanim_r_sphyrion_pt",
+                                                  "@name":"r_sphyrion",
+                                                  "@DEF":"hanim_r_sphyrion",
                                                   "@translation":[-0.0603,0.0610,-0.1002],
                                                   "-children":[
                                                     { "TouchSensor":
                                                       {
-                                                        "@description":"HAnimSite r_sphyrion_pt"
+                                                        "@description":"HAnimSite r_sphyrion"
                                                       }
                                                     },
                                                     { "Shape":
@@ -1725,6 +1833,133 @@
                                                                   }
                                                                 }
                                                             }
+                                                          },
+                                                          { "HAnimSite":
+                                                            {
+                                                              "@name":"r_metatarsal_phalanx_1",
+                                                              "@DEF":"hanim_r_metatarsal_phalanx_1",
+                                                              "-children":[
+                                                                { "TouchSensor":
+                                                                  {
+                                                                    "@description":"HAnimSite r_metatarsal_phalanx_1"
+                                                                  }
+                                                                },
+                                                                { "Shape":
+                                                                  {
+                                                                    "@USE":"HAnimSiteShape"
+                                                                  }
+                                                                }
+                                                              ]
+                                                            }
+                                                          },
+                                                          { "HAnimSite":
+                                                            {
+                                                              "@name":"r_metatarsal_phalanx_5",
+                                                              "@DEF":"hanim_r_metatarsal_phalanx_5",
+                                                              "-children":[
+                                                                { "TouchSensor":
+                                                                  {
+                                                                    "@description":"HAnimSite r_metatarsal_phalanx_5"
+                                                                  }
+                                                                },
+                                                                { "Shape":
+                                                                  {
+                                                                    "@USE":"HAnimSiteShape"
+                                                                  }
+                                                                }
+                                                              ]
+                                                            }
+                                                          },
+                                                          { "HAnimSite":
+                                                            {
+                                                              "@name":"r_tarsal_distal_phalanx_1_tip",
+                                                              "@DEF":"hanim_r_tarsal_distal_phalanx_1_tip",
+                                                              "-children":[
+                                                                { "TouchSensor":
+                                                                  {
+                                                                    "@description":"HAnimSite r_tarsal_distal_phalanx_1_tip"
+                                                                  }
+                                                                },
+                                                                { "Shape":
+                                                                  {
+                                                                    "@USE":"HAnimSiteShape"
+                                                                  }
+                                                                }
+                                                              ]
+                                                            }
+                                                          },
+                                                          { "HAnimSite":
+                                                            {
+                                                              "@name":"r_tarsal_distal_phalanx_2_tip",
+                                                              "@DEF":"hanim_r_tarsal_distal_phalanx_2_tip",
+                                                              "@translation":[-0.0883,0.0134,0.1383],
+                                                              "-children":[
+                                                                { "TouchSensor":
+                                                                  {
+                                                                    "@description":"HAnimSite r_tarsal_distal_phalanx_2_tip"
+                                                                  }
+                                                                },
+                                                                { "Shape":
+                                                                  {
+                                                                    "@USE":"HAnimSiteShape"
+                                                                  }
+                                                                }
+                                                              ]
+                                                            }
+                                                          },
+                                                          { "HAnimSite":
+                                                            {
+                                                              "@name":"r_tarsal_distal_phalanx_3_tip",
+                                                              "@DEF":"hanim_r_tarsal_distal_phalanx_3_tip",
+                                                              "-children":[
+                                                                { "TouchSensor":
+                                                                  {
+                                                                    "@description":"HAnimSite r_tarsal_distal_phalanx_3_tip"
+                                                                  }
+                                                                },
+                                                                { "Shape":
+                                                                  {
+                                                                    "@USE":"HAnimSiteShape"
+                                                                  }
+                                                                }
+                                                              ]
+                                                            }
+                                                          },
+                                                          { "HAnimSite":
+                                                            {
+                                                              "@name":"r_tarsal_distal_phalanx_4_tip",
+                                                              "@DEF":"hanim_r_tarsal_distal_phalanx_4_tip",
+                                                              "-children":[
+                                                                { "TouchSensor":
+                                                                  {
+                                                                    "@description":"HAnimSite r_tarsal_distal_phalanx_4_tip"
+                                                                  }
+                                                                },
+                                                                { "Shape":
+                                                                  {
+                                                                    "@USE":"HAnimSiteShape"
+                                                                  }
+                                                                }
+                                                              ]
+                                                            }
+                                                          },
+                                                          { "HAnimSite":
+                                                            {
+                                                              "@name":"r_tarsal_distal_phalanx_5_tip",
+                                                              "@DEF":"hanim_r_tarsal_distal_phalanx_5_tip",
+                                                              "-children":[
+                                                                { "TouchSensor":
+                                                                  {
+                                                                    "@description":"HAnimSite r_tarsal_distal_phalanx_5_tip"
+                                                                  }
+                                                                },
+                                                                { "Shape":
+                                                                  {
+                                                                    "@USE":"HAnimSiteShape"
+                                                                  }
+                                                                }
+                                                              ]
+                                                            }
                                                           }
                                                         ]
                                                       }
@@ -1788,25 +2023,6 @@
                                                                             }
                                                                         }
                                                                       }
-                                                                  }
-                                                                },
-                                                                { "HAnimSite":
-                                                                  {
-                                                                    "@name":"r_tarsal_distal_phalanx_2_tip",
-                                                                    "@DEF":"hanim_r_tarsal_distal_phalanx_2_tip",
-                                                                    "@translation":[-0.0883,0.0134,0.1383],
-                                                                    "-children":[
-                                                                      { "TouchSensor":
-                                                                        {
-                                                                          "@description":"HAnimSite r_tarsal_distal_phalanx_2_tip"
-                                                                        }
-                                                                      },
-                                                                      { "Shape":
-                                                                        {
-                                                                          "@USE":"HAnimSiteShape"
-                                                                        }
-                                                                      }
-                                                                    ]
                                                                   }
                                                                 }
                                                               ]
@@ -1898,6 +2114,80 @@
                                               }
                                           }
                                         }
+                                    }
+                                  },
+                                  { "HAnimSite":
+                                    {
+                                      "@name":"l_rib10",
+                                      "@DEF":"hanim_l_rib10",
+                                      "@translation":[0.0871,1.1925,0.0992],
+                                      "-children":[
+                                        { "TouchSensor":
+                                          {
+                                            "@description":"HAnimSite l_rib10"
+                                          }
+                                        },
+                                        { "Shape":
+                                          {
+                                            "@USE":"HAnimSiteShape"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "HAnimSite":
+                                    {
+                                      "@name":"r_rib10",
+                                      "@DEF":"hanim_r_rib10",
+                                      "@translation":[-0.0711,1.1941,0.1016],
+                                      "-children":[
+                                        { "TouchSensor":
+                                          {
+                                            "@description":"HAnimSite r_rib10"
+                                          }
+                                        },
+                                        { "Shape":
+                                          {
+                                            "@USE":"HAnimSiteShape"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "HAnimSite":
+                                    {
+                                      "@name":"spine_1_middle_back",
+                                      "@DEF":"hanim_spine_1_middle_back",
+                                      "-children":[
+                                        { "TouchSensor":
+                                          {
+                                            "@description":"HAnimSite spine_1_middle_back"
+                                          }
+                                        },
+                                        { "Shape":
+                                          {
+                                            "@USE":"HAnimSiteShape"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  { "HAnimSite":
+                                    {
+                                      "@name":"spine_2_middle_back",
+                                      "@DEF":"hanim_spine_2_middle_back",
+                                      "-children":[
+                                        { "TouchSensor":
+                                          {
+                                            "@description":"HAnimSite spine_2_middle_back"
+                                          }
+                                        },
+                                        { "Shape":
+                                          {
+                                            "@USE":"HAnimSiteShape"
+                                          }
+                                        }
+                                      ]
                                     }
                                   }
                                 ]
@@ -2030,13 +2320,51 @@
                                               },
                                               { "HAnimSite":
                                                 {
-                                                  "@name":"substernale_pt",
-                                                  "@DEF":"hanim_substernale_pt",
+                                                  "@name":"l_thelion",
+                                                  "@DEF":"hanim_l_thelion",
+                                                  "@translation":[0.0918,1.3382,0.1192],
+                                                  "-children":[
+                                                    { "TouchSensor":
+                                                      {
+                                                        "@description":"HAnimSite l_thelion"
+                                                      }
+                                                    },
+                                                    { "Shape":
+                                                      {
+                                                        "@USE":"HAnimSiteShape"
+                                                      }
+                                                    }
+                                                  ]
+                                                }
+                                              },
+                                              { "HAnimSite":
+                                                {
+                                                  "@name":"r_thelion",
+                                                  "@DEF":"hanim_r_thelion",
+                                                  "@translation":[-0.0736,1.3385,0.1217],
+                                                  "-children":[
+                                                    { "TouchSensor":
+                                                      {
+                                                        "@description":"HAnimSite r_thelion"
+                                                      }
+                                                    },
+                                                    { "Shape":
+                                                      {
+                                                        "@USE":"HAnimSiteShape"
+                                                      }
+                                                    }
+                                                  ]
+                                                }
+                                              },
+                                              { "HAnimSite":
+                                                {
+                                                  "@name":"substernale",
+                                                  "@DEF":"hanim_substernale",
                                                   "@translation":[0.0085,1.2995,0.1147],
                                                   "-children":[
                                                     { "TouchSensor":
                                                       {
-                                                        "@description":"HAnimSite substernale_pt"
+                                                        "@description":"HAnimSite substernale"
                                                       }
                                                     },
                                                     { "Shape":
@@ -2113,12 +2441,12 @@
                                                     },
                                                     { "HAnimSite":
                                                       {
-                                                        "@name":"l_chest_midsagittal_plane_pt",
-                                                        "@DEF":"hanim_l_chest_midsagittal_plane_pt",
+                                                        "@name":"l_chest_midsagittal_plane",
+                                                        "@DEF":"hanim_l_chest_midsagittal_plane",
                                                         "-children":[
                                                           { "TouchSensor":
                                                             {
-                                                              "@description":"HAnimSite l_chest_midsagittal_plane_pt"
+                                                              "@description":"HAnimSite l_chest_midsagittal_plane"
                                                             }
                                                           },
                                                           { "Shape":
@@ -2131,12 +2459,12 @@
                                                     },
                                                     { "HAnimSite":
                                                       {
-                                                        "@name":"mesosternale_pt",
-                                                        "@DEF":"hanim_mesosternale_pt",
+                                                        "@name":"mesosternale",
+                                                        "@DEF":"hanim_mesosternale",
                                                         "-children":[
                                                           { "TouchSensor":
                                                             {
-                                                              "@description":"HAnimSite mesosternale_pt"
+                                                              "@description":"HAnimSite mesosternale"
                                                             }
                                                           },
                                                           { "Shape":
@@ -2149,12 +2477,12 @@
                                                     },
                                                     { "HAnimSite":
                                                       {
-                                                        "@name":"r_chest_midsagittal_plane_pt",
-                                                        "@DEF":"hanim_r_chest_midsagittal_plane_pt",
+                                                        "@name":"r_chest_midsagittal_plane",
+                                                        "@DEF":"hanim_r_chest_midsagittal_plane",
                                                         "-children":[
                                                           { "TouchSensor":
                                                             {
-                                                              "@description":"HAnimSite r_chest_midsagittal_plane_pt"
+                                                              "@description":"HAnimSite r_chest_midsagittal_plane"
                                                             }
                                                           },
                                                           { "Shape":
@@ -2167,12 +2495,12 @@
                                                     },
                                                     { "HAnimSite":
                                                       {
-                                                        "@name":"rear_center_midsagittal_plane_pt",
-                                                        "@DEF":"hanim_rear_center_midsagittal_plane_pt",
+                                                        "@name":"rear_center_midsagittal_plane",
+                                                        "@DEF":"hanim_rear_center_midsagittal_plane",
                                                         "-children":[
                                                           { "TouchSensor":
                                                             {
-                                                              "@description":"HAnimSite rear_center_midsagittal_plane_pt"
+                                                              "@description":"HAnimSite rear_center_midsagittal_plane"
                                                             }
                                                           },
                                                           { "Shape":
@@ -2249,13 +2577,13 @@
                                                           },
                                                           { "HAnimSite":
                                                             {
-                                                              "@name":"cervicale_pt",
-                                                              "@DEF":"hanim_cervicale_pt",
+                                                              "@name":"cervicale",
+                                                              "@DEF":"hanim_cervicale",
                                                               "@translation":[0.0064,1.520,-0.0815],
                                                               "-children":[
                                                                 { "TouchSensor":
                                                                   {
-                                                                    "@description":"HAnimSite cervicale_pt"
+                                                                    "@description":"HAnimSite cervicale"
                                                                   }
                                                                 },
                                                                 { "Shape":
@@ -2268,13 +2596,51 @@
                                                           },
                                                           { "HAnimSite":
                                                             {
-                                                              "@name":"suprasternale_pt",
-                                                              "@DEF":"hanim_suprasternale_pt",
+                                                              "@name":"l_neck_base",
+                                                              "@DEF":"hanim_l_neck_base",
+                                                              "@translation":[0.0646,1.5141,-0.0380],
+                                                              "-children":[
+                                                                { "TouchSensor":
+                                                                  {
+                                                                    "@description":"HAnimSite l_neck_base"
+                                                                  }
+                                                                },
+                                                                { "Shape":
+                                                                  {
+                                                                    "@USE":"HAnimSiteShape"
+                                                                  }
+                                                                }
+                                                              ]
+                                                            }
+                                                          },
+                                                          { "HAnimSite":
+                                                            {
+                                                              "@name":"r_neck_base",
+                                                              "@DEF":"hanim_r_neck_base",
+                                                              "@translation":[-0.0419,1.5149,-0.0220],
+                                                              "-children":[
+                                                                { "TouchSensor":
+                                                                  {
+                                                                    "@description":"HAnimSite r_neck_base"
+                                                                  }
+                                                                },
+                                                                { "Shape":
+                                                                  {
+                                                                    "@USE":"HAnimSiteShape"
+                                                                  }
+                                                                }
+                                                              ]
+                                                            }
+                                                          },
+                                                          { "HAnimSite":
+                                                            {
+                                                              "@name":"suprasternale",
+                                                              "@DEF":"hanim_suprasternale",
                                                               "@translation":[0.0084,1.4714,0.0551],
                                                               "-children":[
                                                                 { "TouchSensor":
                                                                   {
-                                                                    "@description":"HAnimSite suprasternale_pt"
+                                                                    "@description":"HAnimSite suprasternale"
                                                                   }
                                                                 },
                                                                 { "Shape":
@@ -2378,13 +2744,13 @@
                                                                 },
                                                                 { "HAnimSite":
                                                                   {
-                                                                    "@name":"l_acromion_pt",
-                                                                    "@DEF":"hanim_l_acromion_pt",
+                                                                    "@name":"l_acromion",
+                                                                    "@DEF":"hanim_l_acromion",
                                                                     "@translation":[0.2032,1.4760,-0.0490],
                                                                     "-children":[
                                                                       { "TouchSensor":
                                                                         {
-                                                                          "@description":"HAnimSite l_acromion_pt"
+                                                                          "@description":"HAnimSite l_acromion"
                                                                         }
                                                                       },
                                                                       { "Shape":
@@ -2416,12 +2782,12 @@
                                                                 },
                                                                 { "HAnimSite":
                                                                   {
-                                                                    "@name":"l_axilla_posterior_folds_pt",
-                                                                    "@DEF":"hanim_l_axilla_posterior_folds_pt",
+                                                                    "@name":"l_axilla_posterior_folds",
+                                                                    "@DEF":"hanim_l_axilla_posterior_folds",
                                                                     "-children":[
                                                                       { "TouchSensor":
                                                                         {
-                                                                          "@description":"HAnimSite l_axilla_posterior_folds_pt"
+                                                                          "@description":"HAnimSite l_axilla_posterior_folds"
                                                                         }
                                                                       },
                                                                       { "Shape":
@@ -2434,13 +2800,13 @@
                                                                 },
                                                                 { "HAnimSite":
                                                                   {
-                                                                    "@name":"l_axilla_proximal_pt",
-                                                                    "@DEF":"hanim_l_axilla_proximal_pt",
+                                                                    "@name":"l_axilla_proximal",
+                                                                    "@DEF":"hanim_l_axilla_proximal",
                                                                     "@translation":[0.1777,1.4065,-0.0075],
                                                                     "-children":[
                                                                       { "TouchSensor":
                                                                         {
-                                                                          "@description":"HAnimSite l_axilla_proximal_pt"
+                                                                          "@description":"HAnimSite l_axilla_proximal"
                                                                         }
                                                                       },
                                                                       { "Shape":
@@ -2453,13 +2819,13 @@
                                                                 },
                                                                 { "HAnimSite":
                                                                   {
-                                                                    "@name":"l_clavicale_pt",
-                                                                    "@DEF":"hanim_l_clavicale_pt",
+                                                                    "@name":"l_clavicale",
+                                                                    "@DEF":"hanim_l_clavicale",
                                                                     "@translation":[0.0271,1.4943,0.0394],
                                                                     "-children":[
                                                                       { "TouchSensor":
                                                                         {
-                                                                          "@description":"HAnimSite l_clavicale_pt"
+                                                                          "@description":"HAnimSite l_clavicale"
                                                                         }
                                                                       },
                                                                       { "Shape":
@@ -2499,13 +2865,13 @@
                                                                 },
                                                                 { "HAnimSite":
                                                                   {
-                                                                    "@name":"r_acromion_pt",
-                                                                    "@DEF":"hanim_r_acromion_pt",
+                                                                    "@name":"r_acromion",
+                                                                    "@DEF":"hanim_r_acromion",
                                                                     "@translation":[-0.1905,1.4791,-0.0431],
                                                                     "-children":[
                                                                       { "TouchSensor":
                                                                         {
-                                                                          "@description":"HAnimSite r_acromion_pt"
+                                                                          "@description":"HAnimSite r_acromion"
                                                                         }
                                                                       },
                                                                       { "Shape":
@@ -2537,12 +2903,12 @@
                                                                 },
                                                                 { "HAnimSite":
                                                                   {
-                                                                    "@name":"r_axilla_posterior_folds_pt",
-                                                                    "@DEF":"hanim_r_axilla_posterior_folds_pt",
+                                                                    "@name":"r_axilla_posterior_folds",
+                                                                    "@DEF":"hanim_r_axilla_posterior_folds",
                                                                     "-children":[
                                                                       { "TouchSensor":
                                                                         {
-                                                                          "@description":"HAnimSite r_axilla_posterior_folds_pt"
+                                                                          "@description":"HAnimSite r_axilla_posterior_folds"
                                                                         }
                                                                       },
                                                                       { "Shape":
@@ -2555,13 +2921,13 @@
                                                                 },
                                                                 { "HAnimSite":
                                                                   {
-                                                                    "@name":"r_axilla_proximal_pt",
-                                                                    "@DEF":"hanim_r_axilla_proximal_pt",
+                                                                    "@name":"r_axilla_proximal",
+                                                                    "@DEF":"hanim_r_axilla_proximal",
                                                                     "@translation":[-0.1626,1.4072,-0.0031],
                                                                     "-children":[
                                                                       { "TouchSensor":
                                                                         {
-                                                                          "@description":"HAnimSite r_axilla_proximal_pt"
+                                                                          "@description":"HAnimSite r_axilla_proximal"
                                                                         }
                                                                       },
                                                                       { "Shape":
@@ -2574,13 +2940,13 @@
                                                                 },
                                                                 { "HAnimSite":
                                                                   {
-                                                                    "@name":"r_clavicale_pt",
-                                                                    "@DEF":"hanim_r_clavicale_pt",
+                                                                    "@name":"r_clavicale",
+                                                                    "@DEF":"hanim_r_clavicale",
                                                                     "@translation":[-0.0115,1.4943,0.0400],
                                                                     "-children":[
                                                                       { "TouchSensor":
                                                                         {
-                                                                          "@description":"HAnimSite r_clavicale_pt"
+                                                                          "@description":"HAnimSite r_clavicale"
                                                                         }
                                                                       },
                                                                       { "Shape":
@@ -2657,12 +3023,12 @@
                                                                       },
                                                                       { "HAnimSite":
                                                                         {
-                                                                          "@name":"adams_apple_pt",
-                                                                          "@DEF":"hanim_adams_apple_pt",
+                                                                          "@name":"adams_apple",
+                                                                          "@DEF":"hanim_adams_apple",
                                                                           "-children":[
                                                                             { "TouchSensor":
                                                                               {
-                                                                                "@description":"HAnimSite adams_apple_pt"
+                                                                                "@description":"HAnimSite adams_apple"
                                                                               }
                                                                             },
                                                                             { "Shape":
@@ -2739,12 +3105,12 @@
                                                                             },
                                                                             { "HAnimSite":
                                                                               {
-                                                                                "@name":"glabella_pt",
-                                                                                "@DEF":"hanim_glabella_pt",
+                                                                                "@name":"glabella",
+                                                                                "@DEF":"hanim_glabella",
                                                                                 "-children":[
                                                                                   { "TouchSensor":
                                                                                     {
-                                                                                      "@description":"HAnimSite glabella_pt"
+                                                                                      "@description":"HAnimSite glabella"
                                                                                     }
                                                                                   },
                                                                                   { "Shape":
@@ -2757,12 +3123,12 @@
                                                                             },
                                                                             { "HAnimSite":
                                                                               {
-                                                                                "@name":"l_ectocanthus_pt",
-                                                                                "@DEF":"hanim_l_ectocanthus_pt",
+                                                                                "@name":"l_ectocanthus",
+                                                                                "@DEF":"hanim_l_ectocanthus",
                                                                                 "-children":[
                                                                                   { "TouchSensor":
                                                                                     {
-                                                                                      "@description":"HAnimSite l_ectocanthus_pt"
+                                                                                      "@description":"HAnimSite l_ectocanthus"
                                                                                     }
                                                                                   },
                                                                                   { "Shape":
@@ -2775,13 +3141,32 @@
                                                                             },
                                                                             { "HAnimSite":
                                                                               {
-                                                                                "@name":"l_infraorbitale_pt",
-                                                                                "@DEF":"hanim_l_infraorbitale_pt",
+                                                                                "@name":"l_gonion",
+                                                                                "@DEF":"hanim_l_gonion",
+                                                                                "@translation":[0.0631,1.5530,0.0330],
+                                                                                "-children":[
+                                                                                  { "TouchSensor":
+                                                                                    {
+                                                                                      "@description":"HAnimSite l_gonion"
+                                                                                    }
+                                                                                  },
+                                                                                  { "Shape":
+                                                                                    {
+                                                                                      "@USE":"HAnimSiteShape"
+                                                                                    }
+                                                                                  }
+                                                                                ]
+                                                                              }
+                                                                            },
+                                                                            { "HAnimSite":
+                                                                              {
+                                                                                "@name":"l_infraorbitale",
+                                                                                "@DEF":"hanim_l_infraorbitale",
                                                                                 "@translation":[0.0341,1.6171,0.0752],
                                                                                 "-children":[
                                                                                   { "TouchSensor":
                                                                                     {
-                                                                                      "@description":"HAnimSite l_infraorbitale_pt"
+                                                                                      "@description":"HAnimSite l_infraorbitale"
                                                                                     }
                                                                                   },
                                                                                   { "Shape":
@@ -2794,13 +3179,13 @@
                                                                             },
                                                                             { "HAnimSite":
                                                                               {
-                                                                                "@name":"l_tragion_pt",
-                                                                                "@DEF":"hanim_l_tragion_pt",
+                                                                                "@name":"l_tragion",
+                                                                                "@DEF":"hanim_l_tragion",
                                                                                 "@translation":[0.0739,1.6348,0.0282],
                                                                                 "-children":[
                                                                                   { "TouchSensor":
                                                                                     {
-                                                                                      "@description":"HAnimSite l_tragion_pt"
+                                                                                      "@description":"HAnimSite l_tragion"
                                                                                     }
                                                                                   },
                                                                                   { "Shape":
@@ -2813,13 +3198,31 @@
                                                                             },
                                                                             { "HAnimSite":
                                                                               {
-                                                                                "@name":"nuchale_pt",
-                                                                                "@DEF":"hanim_nuchale_pt",
+                                                                                "@name":"menton",
+                                                                                "@DEF":"hanim_menton",
+                                                                                "-children":[
+                                                                                  { "TouchSensor":
+                                                                                    {
+                                                                                      "@description":"HAnimSite menton"
+                                                                                    }
+                                                                                  },
+                                                                                  { "Shape":
+                                                                                    {
+                                                                                      "@USE":"HAnimSiteShape"
+                                                                                    }
+                                                                                  }
+                                                                                ]
+                                                                              }
+                                                                            },
+                                                                            { "HAnimSite":
+                                                                              {
+                                                                                "@name":"nuchale",
+                                                                                "@DEF":"hanim_nuchale",
                                                                                 "@translation":[0.0039,1.5972,-0.0796],
                                                                                 "-children":[
                                                                                   { "TouchSensor":
                                                                                     {
-                                                                                      "@description":"HAnimSite nuchale_pt"
+                                                                                      "@description":"HAnimSite nuchale"
                                                                                     }
                                                                                   },
                                                                                   { "Shape":
@@ -2832,12 +3235,12 @@
                                                                             },
                                                                             { "HAnimSite":
                                                                               {
-                                                                                "@name":"opisthocranion_pt",
-                                                                                "@DEF":"hanim_opisthocranion_pt",
+                                                                                "@name":"opisthocranion",
+                                                                                "@DEF":"hanim_opisthocranion",
                                                                                 "-children":[
                                                                                   { "TouchSensor":
                                                                                     {
-                                                                                      "@description":"HAnimSite opisthocranion_pt"
+                                                                                      "@description":"HAnimSite opisthocranion"
                                                                                     }
                                                                                   },
                                                                                   { "Shape":
@@ -2850,12 +3253,12 @@
                                                                             },
                                                                             { "HAnimSite":
                                                                               {
-                                                                                "@name":"r_ectocanthus_pt",
-                                                                                "@DEF":"hanim_r_ectocanthus_pt",
+                                                                                "@name":"r_ectocanthus",
+                                                                                "@DEF":"hanim_r_ectocanthus",
                                                                                 "-children":[
                                                                                   { "TouchSensor":
                                                                                     {
-                                                                                      "@description":"HAnimSite r_ectocanthus_pt"
+                                                                                      "@description":"HAnimSite r_ectocanthus"
                                                                                     }
                                                                                   },
                                                                                   { "Shape":
@@ -2868,13 +3271,32 @@
                                                                             },
                                                                             { "HAnimSite":
                                                                               {
-                                                                                "@name":"r_infraorbitale_pt",
-                                                                                "@DEF":"hanim_r_infraorbitale_pt",
+                                                                                "@name":"r_gonion",
+                                                                                "@DEF":"hanim_r_gonion",
+                                                                                "@translation":[-0.0520,1.5529,0.0347],
+                                                                                "-children":[
+                                                                                  { "TouchSensor":
+                                                                                    {
+                                                                                      "@description":"HAnimSite r_gonion"
+                                                                                    }
+                                                                                  },
+                                                                                  { "Shape":
+                                                                                    {
+                                                                                      "@USE":"HAnimSiteShape"
+                                                                                    }
+                                                                                  }
+                                                                                ]
+                                                                              }
+                                                                            },
+                                                                            { "HAnimSite":
+                                                                              {
+                                                                                "@name":"r_infraorbitale",
+                                                                                "@DEF":"hanim_r_infraorbitale",
                                                                                 "@translation":[-0.0237,1.6171,0.0752],
                                                                                 "-children":[
                                                                                   { "TouchSensor":
                                                                                     {
-                                                                                      "@description":"HAnimSite r_infraorbitale_pt"
+                                                                                      "@description":"HAnimSite r_infraorbitale"
                                                                                     }
                                                                                   },
                                                                                   { "Shape":
@@ -2887,13 +3309,13 @@
                                                                             },
                                                                             { "HAnimSite":
                                                                               {
-                                                                                "@name":"r_tragion_pt",
-                                                                                "@DEF":"hanim_r_tragion_pt",
+                                                                                "@name":"r_tragion",
+                                                                                "@DEF":"hanim_r_tragion",
                                                                                 "@translation":[-0.0646,1.6347,0.0302],
                                                                                 "-children":[
                                                                                   { "TouchSensor":
                                                                                     {
-                                                                                      "@description":"HAnimSite r_tragion_pt"
+                                                                                      "@description":"HAnimSite r_tragion"
                                                                                     }
                                                                                   },
                                                                                   { "Shape":
@@ -2906,13 +3328,13 @@
                                                                             },
                                                                             { "HAnimSite":
                                                                               {
-                                                                                "@name":"sellion_pt",
-                                                                                "@DEF":"hanim_sellion_pt",
+                                                                                "@name":"sellion",
+                                                                                "@DEF":"hanim_sellion",
                                                                                 "@translation":[0.0058,1.6316,0.0852],
                                                                                 "-children":[
                                                                                   { "TouchSensor":
                                                                                     {
-                                                                                      "@description":"HAnimSite sellion_pt"
+                                                                                      "@description":"HAnimSite sellion"
                                                                                     }
                                                                                   },
                                                                                   { "Shape":
@@ -2925,13 +3347,31 @@
                                                                             },
                                                                             { "HAnimSite":
                                                                               {
-                                                                                "@name":"skull_vertex_pt",
-                                                                                "@DEF":"hanim_skull_vertex_pt",
-                                                                                "@translation":[0.0050,1.7504,0.0055],
+                                                                                "@name":"skull_vertex",
+                                                                                "@DEF":"hanim_skull_vertex",
                                                                                 "-children":[
                                                                                   { "TouchSensor":
                                                                                     {
-                                                                                      "@description":"HAnimSite skull_vertex_pt"
+                                                                                      "@description":"HAnimSite skull_vertex"
+                                                                                    }
+                                                                                  },
+                                                                                  { "Shape":
+                                                                                    {
+                                                                                      "@USE":"HAnimSiteShape"
+                                                                                    }
+                                                                                  }
+                                                                                ]
+                                                                              }
+                                                                            },
+                                                                            { "HAnimSite":
+                                                                              {
+                                                                                "@name":"supramenton",
+                                                                                "@DEF":"hanim_supramenton",
+                                                                                "@translation":[0.0061,1.5410,0.0805],
+                                                                                "-children":[
+                                                                                  { "TouchSensor":
+                                                                                    {
+                                                                                      "@description":"HAnimSite supramenton"
                                                                                     }
                                                                                   },
                                                                                   { "Shape":
@@ -3087,12 +3527,12 @@
                                                                             },
                                                                             { "HAnimSite":
                                                                               {
-                                                                                "@name":"l_bideltoid_pt",
-                                                                                "@DEF":"hanim_l_bideltoid_pt",
+                                                                                "@name":"l_bideltoid",
+                                                                                "@DEF":"hanim_l_bideltoid",
                                                                                 "-children":[
                                                                                   { "TouchSensor":
                                                                                     {
-                                                                                      "@description":"HAnimSite l_bideltoid_pt"
+                                                                                      "@description":"HAnimSite l_bideltoid"
                                                                                     }
                                                                                   },
                                                                                   { "Shape":
@@ -3105,13 +3545,13 @@
                                                                             },
                                                                             { "HAnimSite":
                                                                               {
-                                                                                "@name":"l_humeral_lateral_epicondyles_pt",
-                                                                                "@DEF":"hanim_l_humeral_lateral_epicondyles_pt",
+                                                                                "@name":"l_humeral_lateral_epicondyles",
+                                                                                "@DEF":"hanim_l_humeral_lateral_epicondyles",
                                                                                 "@translation":[0.2280,1.1482,-0.1100],
                                                                                 "-children":[
                                                                                   { "TouchSensor":
                                                                                     {
-                                                                                      "@description":"HAnimSite l_humeral_lateral_epicondyles_pt"
+                                                                                      "@description":"HAnimSite l_humeral_lateral_epicondyles"
                                                                                     }
                                                                                   },
                                                                                   { "Shape":
@@ -3188,13 +3628,13 @@
                                                                                   },
                                                                                   { "HAnimSite":
                                                                                     {
-                                                                                      "@name":"l_humeral_medial_epicondyles_pt",
-                                                                                      "@DEF":"hanim_l_humeral_medial_epicondyles_pt",
+                                                                                      "@name":"l_humeral_medial_epicondyles",
+                                                                                      "@DEF":"hanim_l_humeral_medial_epicondyles",
                                                                                       "@translation":[0.1735,1.1272,-0.1113],
                                                                                       "-children":[
                                                                                         { "TouchSensor":
                                                                                           {
-                                                                                            "@description":"HAnimSite l_humeral_medial_epicondyles_pt"
+                                                                                            "@description":"HAnimSite l_humeral_medial_epicondyles"
                                                                                           }
                                                                                         },
                                                                                         { "Shape":
@@ -3207,13 +3647,13 @@
                                                                                   },
                                                                                   { "HAnimSite":
                                                                                     {
-                                                                                      "@name":"l_olecranon_pt",
-                                                                                      "@DEF":"hanim_l_olecranon_pt",
+                                                                                      "@name":"l_olecranon",
+                                                                                      "@DEF":"hanim_l_olecranon",
                                                                                       "@translation":[-0.1962,1.1375,-0.1123],
                                                                                       "-children":[
                                                                                         { "TouchSensor":
                                                                                           {
-                                                                                            "@description":"HAnimSite l_olecranon_pt"
+                                                                                            "@description":"HAnimSite l_olecranon"
                                                                                           }
                                                                                         },
                                                                                         { "Shape":
@@ -3226,13 +3666,13 @@
                                                                                   },
                                                                                   { "HAnimSite":
                                                                                     {
-                                                                                      "@name":"l_radial_styloid_pt",
-                                                                                      "@DEF":"hanim_l_radial_styloid_pt",
+                                                                                      "@name":"l_radial_styloid",
+                                                                                      "@DEF":"hanim_l_radial_styloid",
                                                                                       "@translation":[0.1901,0.8645,-0.0415],
                                                                                       "-children":[
                                                                                         { "TouchSensor":
                                                                                           {
-                                                                                            "@description":"HAnimSite l_radial_styloid_pt"
+                                                                                            "@description":"HAnimSite l_radial_styloid"
                                                                                           }
                                                                                         },
                                                                                         { "Shape":
@@ -3245,13 +3685,13 @@
                                                                                   },
                                                                                   { "HAnimSite":
                                                                                     {
-                                                                                      "@name":"l_radiale_pt",
-                                                                                      "@DEF":"hanim_l_radiale_pt",
+                                                                                      "@name":"l_radiale",
+                                                                                      "@DEF":"hanim_l_radiale",
                                                                                       "@translation":[0.2182,1.1212,-0.1167],
                                                                                       "-children":[
                                                                                         { "TouchSensor":
                                                                                           {
-                                                                                            "@description":"HAnimSite l_radiale_pt"
+                                                                                            "@description":"HAnimSite l_radiale"
                                                                                           }
                                                                                         },
                                                                                         { "Shape":
@@ -3328,13 +3768,13 @@
                                                                                         },
                                                                                         { "HAnimSite":
                                                                                           {
-                                                                                            "@name":"l_ulnar_styloid_pt",
-                                                                                            "@DEF":"hanim_l_ulnar_styloid_pt",
+                                                                                            "@name":"l_ulnar_styloid",
+                                                                                            "@DEF":"hanim_l_ulnar_styloid",
                                                                                             "@translation":[-0.2142,0.8529,-0.0648],
                                                                                             "-children":[
                                                                                               { "TouchSensor":
                                                                                                 {
-                                                                                                  "@description":"HAnimSite l_ulnar_styloid_pt"
+                                                                                                  "@description":"HAnimSite l_ulnar_styloid"
                                                                                                 }
                                                                                               },
                                                                                               { "Shape":
@@ -3444,13 +3884,13 @@
                                                                                               },
                                                                                               { "HAnimSite":
                                                                                                 {
-                                                                                                  "@name":"l_metacarpal_phalanx_2_pt",
-                                                                                                  "@DEF":"hanim_l_metacarpal_phalanx_2_pt",
+                                                                                                  "@name":"l_metacarpal_phalanx_2",
+                                                                                                  "@DEF":"hanim_l_metacarpal_phalanx_2",
                                                                                                   "@translation":[0.2009,0.8139,-0.0237],
                                                                                                   "-children":[
                                                                                                     { "TouchSensor":
                                                                                                       {
-                                                                                                        "@description":"HAnimSite l_metacarpal_phalanx_2_pt"
+                                                                                                        "@description":"HAnimSite l_metacarpal_phalanx_2"
                                                                                                       }
                                                                                                     },
                                                                                                     { "Shape":
@@ -3490,12 +3930,12 @@
                                                                                               },
                                                                                               { "HAnimSite":
                                                                                                 {
-                                                                                                  "@name":"l_metacarpal_phalanx_3_pt",
-                                                                                                  "@DEF":"hanim_l_metacarpal_phalanx_3_pt",
+                                                                                                  "@name":"l_metacarpal_phalanx_3",
+                                                                                                  "@DEF":"hanim_l_metacarpal_phalanx_3",
                                                                                                   "-children":[
                                                                                                     { "TouchSensor":
                                                                                                       {
-                                                                                                        "@description":"HAnimSite l_metacarpal_phalanx_3_pt"
+                                                                                                        "@description":"HAnimSite l_metacarpal_phalanx_3"
                                                                                                       }
                                                                                                     },
                                                                                                     { "Shape":
@@ -3562,13 +4002,13 @@
                                                                                               },
                                                                                               { "HAnimSite":
                                                                                                 {
-                                                                                                  "@name":"l_metacarpal_phalanx_5_pt",
-                                                                                                  "@DEF":"hanim_l_metacarpal_phalanx_5_pt",
+                                                                                                  "@name":"l_metacarpal_phalanx_5",
+                                                                                                  "@DEF":"hanim_l_metacarpal_phalanx_5",
                                                                                                   "@translation":[0.1929,0.7860,-0.1122],
                                                                                                   "-children":[
                                                                                                     { "TouchSensor":
                                                                                                       {
-                                                                                                        "@description":"HAnimSite l_metacarpal_phalanx_5_pt"
+                                                                                                        "@description":"HAnimSite l_metacarpal_phalanx_5"
                                                                                                       }
                                                                                                     },
                                                                                                     { "Shape":
@@ -3952,13 +4392,13 @@
                                                                                                                 },
                                                                                                                 { "HAnimSite":
                                                                                                                   {
-                                                                                                                    "@name":"l_dactylion_pt",
-                                                                                                                    "@DEF":"hanim_l_dactylion_pt",
+                                                                                                                    "@name":"l_dactylion",
+                                                                                                                    "@DEF":"hanim_l_dactylion",
                                                                                                                     "@translation":[0.2056,0.6743,-0.0482],
                                                                                                                     "-children":[
                                                                                                                       { "TouchSensor":
                                                                                                                         {
-                                                                                                                          "@description":"HAnimSite l_dactylion_pt"
+                                                                                                                          "@description":"HAnimSite l_dactylion"
                                                                                                                         }
                                                                                                                       },
                                                                                                                       { "Shape":
@@ -4816,12 +5256,12 @@
                                                                             },
                                                                             { "HAnimSite":
                                                                               {
-                                                                                "@name":"r_bideltoid_pt",
-                                                                                "@DEF":"hanim_r_bideltoid_pt",
+                                                                                "@name":"r_bideltoid",
+                                                                                "@DEF":"hanim_r_bideltoid",
                                                                                 "-children":[
                                                                                   { "TouchSensor":
                                                                                     {
-                                                                                      "@description":"HAnimSite r_bideltoid_pt"
+                                                                                      "@description":"HAnimSite r_bideltoid"
                                                                                     }
                                                                                   },
                                                                                   { "Shape":
@@ -4834,13 +5274,13 @@
                                                                             },
                                                                             { "HAnimSite":
                                                                               {
-                                                                                "@name":"r_humeral_lateral_epicondyles_pt",
-                                                                                "@DEF":"hanim_r_humeral_lateral_epicondyles_pt",
+                                                                                "@name":"r_humeral_lateral_epicondyles",
+                                                                                "@DEF":"hanim_r_humeral_lateral_epicondyles",
                                                                                 "@translation":[-0.2224,1.1517,-0.1033],
                                                                                 "-children":[
                                                                                   { "TouchSensor":
                                                                                     {
-                                                                                      "@description":"HAnimSite r_humeral_lateral_epicondyles_pt"
+                                                                                      "@description":"HAnimSite r_humeral_lateral_epicondyles"
                                                                                     }
                                                                                   },
                                                                                   { "Shape":
@@ -4917,13 +5357,13 @@
                                                                                   },
                                                                                   { "HAnimSite":
                                                                                     {
-                                                                                      "@name":"r_humeral_medial_epicondyles_pt",
-                                                                                      "@DEF":"hanim_r_humeral_medial_epicondyles_pt",
+                                                                                      "@name":"r_humeral_medial_epicondyles",
+                                                                                      "@DEF":"hanim_r_humeral_medial_epicondyles",
                                                                                       "@translation":[-0.1680,1.1298,-0.1062],
                                                                                       "-children":[
                                                                                         { "TouchSensor":
                                                                                           {
-                                                                                            "@description":"HAnimSite r_humeral_medial_epicondyles_pt"
+                                                                                            "@description":"HAnimSite r_humeral_medial_epicondyles"
                                                                                           }
                                                                                         },
                                                                                         { "Shape":
@@ -4936,13 +5376,13 @@
                                                                                   },
                                                                                   { "HAnimSite":
                                                                                     {
-                                                                                      "@name":"r_olecranon_pt",
-                                                                                      "@DEF":"hanim_r_olecranon_pt",
+                                                                                      "@name":"r_olecranon",
+                                                                                      "@DEF":"hanim_r_olecranon",
                                                                                       "@translation":[-0.1907,1.1405,-0.1065],
                                                                                       "-children":[
                                                                                         { "TouchSensor":
                                                                                           {
-                                                                                            "@description":"HAnimSite r_olecranon_pt"
+                                                                                            "@description":"HAnimSite r_olecranon"
                                                                                           }
                                                                                         },
                                                                                         { "Shape":
@@ -4955,13 +5395,13 @@
                                                                                   },
                                                                                   { "HAnimSite":
                                                                                     {
-                                                                                      "@name":"r_radial_styloid_pt",
-                                                                                      "@DEF":"hanim_r_radial_styloid_pt",
+                                                                                      "@name":"r_radial_styloid",
+                                                                                      "@DEF":"hanim_r_radial_styloid",
                                                                                       "@translation":[-0.1884,0.8676,-0.0360],
                                                                                       "-children":[
                                                                                         { "TouchSensor":
                                                                                           {
-                                                                                            "@description":"HAnimSite r_radial_styloid_pt"
+                                                                                            "@description":"HAnimSite r_radial_styloid"
                                                                                           }
                                                                                         },
                                                                                         { "Shape":
@@ -4974,13 +5414,13 @@
                                                                                   },
                                                                                   { "HAnimSite":
                                                                                     {
-                                                                                      "@name":"r_radiale_pt",
-                                                                                      "@DEF":"hanim_r_radiale_pt",
+                                                                                      "@name":"r_radiale",
+                                                                                      "@DEF":"hanim_r_radiale",
                                                                                       "@translation":[-0.2130,1.1305,-0.1091],
                                                                                       "-children":[
                                                                                         { "TouchSensor":
                                                                                           {
-                                                                                            "@description":"HAnimSite r_radiale_pt"
+                                                                                            "@description":"HAnimSite r_radiale"
                                                                                           }
                                                                                         },
                                                                                         { "Shape":
@@ -5057,13 +5497,13 @@
                                                                                         },
                                                                                         { "HAnimSite":
                                                                                           {
-                                                                                            "@name":"r_ulnar_styloid_pt",
-                                                                                            "@DEF":"hanim_r_ulnar_styloid_pt",
+                                                                                            "@name":"r_ulnar_styloid",
+                                                                                            "@DEF":"hanim_r_ulnar_styloid",
                                                                                             "@translation":[-0.2117,0.8562,-0.0584],
                                                                                             "-children":[
                                                                                               { "TouchSensor":
                                                                                                 {
-                                                                                                  "@description":"HAnimSite r_ulnar_styloid_pt"
+                                                                                                  "@description":"HAnimSite r_ulnar_styloid"
                                                                                                 }
                                                                                               },
                                                                                               { "Shape":
@@ -5173,13 +5613,13 @@
                                                                                               },
                                                                                               { "HAnimSite":
                                                                                                 {
-                                                                                                  "@name":"r_metacarpal_phalanx_2_pt",
-                                                                                                  "@DEF":"hanim_r_metacarpal_phalanx_2_pt",
+                                                                                                  "@name":"r_metacarpal_phalanx_2",
+                                                                                                  "@DEF":"hanim_r_metacarpal_phalanx_2",
                                                                                                   "@translation":[-0.1977,0.8169,-0.0177],
                                                                                                   "-children":[
                                                                                                     { "TouchSensor":
                                                                                                       {
-                                                                                                        "@description":"HAnimSite r_metacarpal_phalanx_2_pt"
+                                                                                                        "@description":"HAnimSite r_metacarpal_phalanx_2"
                                                                                                       }
                                                                                                     },
                                                                                                     { "Shape":
@@ -5219,12 +5659,12 @@
                                                                                               },
                                                                                               { "HAnimSite":
                                                                                                 {
-                                                                                                  "@name":"r_metacarpal_phalanx_3_pt",
-                                                                                                  "@DEF":"hanim_r_metacarpal_phalanx_3_pt",
+                                                                                                  "@name":"r_metacarpal_phalanx_3",
+                                                                                                  "@DEF":"hanim_r_metacarpal_phalanx_3",
                                                                                                   "-children":[
                                                                                                     { "TouchSensor":
                                                                                                       {
-                                                                                                        "@description":"HAnimSite r_metacarpal_phalanx_3_pt"
+                                                                                                        "@description":"HAnimSite r_metacarpal_phalanx_3"
                                                                                                       }
                                                                                                     },
                                                                                                     { "Shape":
@@ -5291,13 +5731,13 @@
                                                                                               },
                                                                                               { "HAnimSite":
                                                                                                 {
-                                                                                                  "@name":"r_metacarpal_phalanx_5_pt",
-                                                                                                  "@DEF":"hanim_r_metacarpal_phalanx_5_pt",
+                                                                                                  "@name":"r_metacarpal_phalanx_5",
+                                                                                                  "@DEF":"hanim_r_metacarpal_phalanx_5",
                                                                                                   "@translation":[-0.1929,0.7890,-0.1064],
                                                                                                   "-children":[
                                                                                                     { "TouchSensor":
                                                                                                       {
-                                                                                                        "@description":"HAnimSite r_metacarpal_phalanx_5_pt"
+                                                                                                        "@description":"HAnimSite r_metacarpal_phalanx_5"
                                                                                                       }
                                                                                                     },
                                                                                                     { "Shape":
@@ -5681,13 +6121,13 @@
                                                                                                                 },
                                                                                                                 { "HAnimSite":
                                                                                                                   {
-                                                                                                                    "@name":"r_dactylion_pt",
-                                                                                                                    "@DEF":"hanim_r_dactylion_pt",
+                                                                                                                    "@name":"r_dactylion",
+                                                                                                                    "@DEF":"hanim_r_dactylion",
                                                                                                                     "@translation":[-0.1941,0.6772,-0.0423],
                                                                                                                     "-children":[
                                                                                                                       { "TouchSensor":
                                                                                                                         {
-                                                                                                                          "@description":"HAnimSite r_dactylion_pt"
+                                                                                                                          "@description":"HAnimSite r_dactylion"
                                                                                                                         }
                                                                                                                       },
                                                                                                                       { "Shape":
@@ -7092,132 +7532,147 @@
               "-sites":[
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_buttocks_standing_wall_contact_point_pt"
+                    "@USE":"hanim_buttocks_standing_wall_contact_point"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_crotch_pt"
+                    "@USE":"hanim_crotch"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_l_asis_pt"
+                    "@USE":"hanim_l_asis"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_l_iliocristale_pt"
+                    "@USE":"hanim_l_iliocristale"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_l_psis_pt"
+                    "@USE":"hanim_l_psis"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_l_trochanterion_pt"
+                    "@USE":"hanim_l_trochanterion"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_r_asis_pt"
+                    "@USE":"hanim_r_asis"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_r_iliocristale_pt"
+                    "@USE":"hanim_r_iliocristale"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_r_psis_pt"
+                    "@USE":"hanim_r_psis"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_r_trochanterion_pt"
+                    "@USE":"hanim_r_trochanterion"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_navel_pt"
+                    "@USE":"hanim_navel"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_waist_preferred_anterior_pt"
+                    "@USE":"hanim_waist_preferred_anterior"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_waist_preferred_posterior_pt"
+                    "@USE":"hanim_waist_preferred_posterior"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_l_femoral_lateral_epicondyles_pt"
+                    "@USE":"hanim_l_femoral_lateral_epicondyles"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_l_femoral_medial_epicondyles_pt"
+                    "@USE":"hanim_l_femoral_medial_epicondyles"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_l_knee_crease_pt"
+                    "@USE":"hanim_l_knee_crease"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_l_suprapatella_pt"
+                    "@USE":"hanim_l_suprapatella"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_r_femoral_lateral_epicondyles_pt"
+                    "@USE":"hanim_r_femoral_lateral_epicondyles"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_r_femoral_medial_epicondyles_pt"
+                    "@USE":"hanim_r_femoral_medial_epicondyles"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_r_knee_crease_pt"
+                    "@USE":"hanim_r_knee_crease"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_r_suprapatella_pt"
+                    "@USE":"hanim_r_suprapatella"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_l_lateral_malleolus_pt"
+                    "@USE":"hanim_l_lateral_malleolus"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_l_medial_malleolus_pt"
+                    "@USE":"hanim_l_medial_malleolus"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_l_tibiale_pt"
+                    "@USE":"hanim_l_tibiale"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_l_calcaneus_posterior_pt"
+                    "@USE":"hanim_l_calcaneus_posterior"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_l_sphyrion_pt"
+                    "@USE":"hanim_l_sphyrion"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_l_metatarsal_phalanx_1"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_l_metatarsal_phalanx_5"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_l_tarsal_distal_phalanx_1_tip"
                   }
                 },
                 { "HAnimSite":
@@ -7227,27 +7682,57 @@
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_r_lateral_malleolus_pt"
+                    "@USE":"hanim_l_tarsal_distal_phalanx_3_tip"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_r_medial_malleolus_pt"
+                    "@USE":"hanim_l_tarsal_distal_phalanx_4_tip"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_r_tibiale_pt"
+                    "@USE":"hanim_l_tarsal_distal_phalanx_5_tip"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_r_calcaneus_posterior_pt"
+                    "@USE":"hanim_r_lateral_malleolus"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_r_sphyrion_pt"
+                    "@USE":"hanim_r_medial_malleolus"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_r_tibiale"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_r_calcaneus_posterior"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_r_sphyrion"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_r_metatarsal_phalanx_1"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_r_metatarsal_phalanx_5"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_r_tarsal_distal_phalanx_1_tip"
                   }
                 },
                 { "HAnimSite":
@@ -7257,42 +7742,97 @@
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_substernale_pt"
+                    "@USE":"hanim_r_tarsal_distal_phalanx_3_tip"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_l_chest_midsagittal_plane_pt"
+                    "@USE":"hanim_r_tarsal_distal_phalanx_4_tip"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_mesosternale_pt"
+                    "@USE":"hanim_r_tarsal_distal_phalanx_5_tip"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_r_chest_midsagittal_plane_pt"
+                    "@USE":"hanim_l_rib10"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_rear_center_midsagittal_plane_pt"
+                    "@USE":"hanim_r_rib10"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_cervicale_pt"
+                    "@USE":"hanim_spine_1_middle_back"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_suprasternale_pt"
+                    "@USE":"hanim_spine_2_middle_back"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_l_acromion_pt"
+                    "@USE":"hanim_l_thelion"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_r_thelion"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_substernale"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_l_chest_midsagittal_plane"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_mesosternale"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_r_chest_midsagittal_plane"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_rear_center_midsagittal_plane"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_cervicale"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_l_neck_base"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_r_neck_base"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_suprasternale"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_l_acromion"
                   }
                 },
                 { "HAnimSite":
@@ -7302,22 +7842,22 @@
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_l_axilla_posterior_folds_pt"
+                    "@USE":"hanim_l_axilla_posterior_folds"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_l_axilla_proximal_pt"
+                    "@USE":"hanim_l_axilla_proximal"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_l_clavicale_pt"
+                    "@USE":"hanim_l_clavicale"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_r_acromion_pt"
+                    "@USE":"hanim_r_acromion"
                   }
                 },
                 { "HAnimSite":
@@ -7327,127 +7867,147 @@
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_r_axilla_posterior_folds_pt"
+                    "@USE":"hanim_r_axilla_posterior_folds"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_r_axilla_proximal_pt"
+                    "@USE":"hanim_r_axilla_proximal"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_r_clavicale_pt"
+                    "@USE":"hanim_r_clavicale"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_adams_apple_pt"
+                    "@USE":"hanim_adams_apple"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_glabella_pt"
+                    "@USE":"hanim_glabella"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_l_ectocanthus_pt"
+                    "@USE":"hanim_l_ectocanthus"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_l_infraorbitale_pt"
+                    "@USE":"hanim_l_gonion"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_l_tragion_pt"
+                    "@USE":"hanim_l_infraorbitale"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_nuchale_pt"
+                    "@USE":"hanim_l_tragion"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_opisthocranion_pt"
+                    "@USE":"hanim_menton"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_r_ectocanthus_pt"
+                    "@USE":"hanim_nuchale"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_r_infraorbitale_pt"
+                    "@USE":"hanim_opisthocranion"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_r_tragion_pt"
+                    "@USE":"hanim_r_ectocanthus"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_sellion_pt"
+                    "@USE":"hanim_r_gonion"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_skull_vertex_pt"
+                    "@USE":"hanim_r_infraorbitale"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_l_bideltoid_pt"
+                    "@USE":"hanim_r_tragion"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_l_humeral_lateral_epicondyles_pt"
+                    "@USE":"hanim_sellion"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_l_humeral_medial_epicondyles_pt"
+                    "@USE":"hanim_skull_vertex"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_l_olecranon_pt"
+                    "@USE":"hanim_supramenton"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_l_radial_styloid_pt"
+                    "@USE":"hanim_l_bideltoid"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_l_radiale_pt"
+                    "@USE":"hanim_l_humeral_lateral_epicondyles"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_l_ulnar_styloid_pt"
+                    "@USE":"hanim_l_humeral_medial_epicondyles"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_l_metacarpal_phalanx_2_pt"
+                    "@USE":"hanim_l_olecranon"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_l_metacarpal_phalanx_3_pt"
+                    "@USE":"hanim_l_radial_styloid"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_l_metacarpal_phalanx_5_pt"
+                    "@USE":"hanim_l_radiale"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_l_ulnar_styloid"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_l_metacarpal_phalanx_2"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_l_metacarpal_phalanx_3"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_l_metacarpal_phalanx_5"
                   }
                 },
                 { "HAnimSite":
@@ -7462,7 +8022,7 @@
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_l_dactylion_pt"
+                    "@USE":"hanim_l_dactylion"
                   }
                 },
                 { "HAnimSite":
@@ -7482,52 +8042,52 @@
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_r_bideltoid_pt"
+                    "@USE":"hanim_r_bideltoid"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_r_humeral_lateral_epicondyles_pt"
+                    "@USE":"hanim_r_humeral_lateral_epicondyles"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_r_humeral_medial_epicondyles_pt"
+                    "@USE":"hanim_r_humeral_medial_epicondyles"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_r_olecranon_pt"
+                    "@USE":"hanim_r_olecranon"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_r_radial_styloid_pt"
+                    "@USE":"hanim_r_radial_styloid"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_r_radiale_pt"
+                    "@USE":"hanim_r_radiale"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_r_ulnar_styloid_pt"
+                    "@USE":"hanim_r_ulnar_styloid"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_r_metacarpal_phalanx_2_pt"
+                    "@USE":"hanim_r_metacarpal_phalanx_2"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_r_metacarpal_phalanx_3_pt"
+                    "@USE":"hanim_r_metacarpal_phalanx_3"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_r_metacarpal_phalanx_5_pt"
+                    "@USE":"hanim_r_metacarpal_phalanx_5"
                   }
                 },
                 { "HAnimSite":
@@ -7542,7 +8102,7 @@
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_r_dactylion_pt"
+                    "@USE":"hanim_r_dactylion"
                   }
                 },
                 { "HAnimSite":

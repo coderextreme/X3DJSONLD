@@ -104,12 +104,12 @@ var X3D0 =  new X3D({
           /*Images courtesy of Paul Debevec's Light Probe Image Gallery*/
 
             new Background({
-              backUrl : new MFString(["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]),
-              bottomUrl : new MFString(["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]),
-              frontUrl : new MFString(["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"]),
-              leftUrl : new MFString(["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]),
-              rightUrl : new MFString(["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]),
-              topUrl : new MFString(["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"])}),
+              backUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]),
+              bottomUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]),
+              frontUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"]),
+              leftUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]),
+              rightUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]),
+              topUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"])}),
 
             new ProtoDeclare({
               name : new SFString("flower"),
@@ -131,101 +131,23 @@ var X3D0 =  new X3D({
                                   DEF : new SFString("texture"),
                                   topTexture : new SFNode(
                                     new ImageTexture({
-                                      url : new MFString(["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"])})),
+                                      url : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"])})),
                                   topTexture : new SFNode(
                                     new ImageTexture({
-                                      url : new MFString(["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"])})),
+                                      url : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"])})),
                                   topTexture : new SFNode(
                                     new ImageTexture({
-                                      url : new MFString(["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"])})),
+                                      url : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"])})),
                                   topTexture : new SFNode(
                                     new ImageTexture({
-                                      url : new MFString(["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"])})),
+                                      url : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"])})),
                                   topTexture : new SFNode(
                                     new ImageTexture({
-                                      url : new MFString(["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"])})),
+                                      url : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"])})),
                                   topTexture : new SFNode(
                                     new ImageTexture({
-                                      url : new MFString(["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"])}))})),
-                              shaders : new SFNode(
-                                new ComposedShader({
-                                  DEF : new SFString("x3dom"),
-                                  language : new SFString("GLSL"),
-                                  field : new MFNode([
-                                    new field({
-                                      type : field.TYPE_SFINT32,
-                                      name : new SFString("cube"),
-                                      accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                                      value : new SFString("0")}),
-
-                                    new field({
-                                      type : field.TYPE_SFVEC3F,
-                                      name : new SFString("chromaticDispertion"),
-                                      accessType : new SFString(field.ACCESSTYPE_INITIALIZEONLY),
-                                      value : new SFString("0.98 1 1.033")}),
-
-                                    new field({
-                                      type : field.TYPE_SFFLOAT,
-                                      name : new SFString("bias"),
-                                      accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                                      value : new SFString("0.5")}),
-
-                                    new field({
-                                      type : field.TYPE_SFFLOAT,
-                                      name : new SFString("scale"),
-                                      accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                                      value : new SFString("0.5")}),
-
-                                    new field({
-                                      type : field.TYPE_SFFLOAT,
-                                      name : new SFString("power"),
-                                      accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                                      value : new SFString("2")}),
-
-                                    new field({
-                                      type : field.TYPE_SFFLOAT,
-                                      name : new SFString("a"),
-                                      accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                                      value : new SFString("10")}),
-
-                                    new field({
-                                      type : field.TYPE_SFFLOAT,
-                                      name : new SFString("b"),
-                                      accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                                      value : new SFString("1")}),
-
-                                    new field({
-                                      type : field.TYPE_SFFLOAT,
-                                      name : new SFString("c"),
-                                      accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                                      value : new SFString("20")}),
-
-                                    new field({
-                                      type : field.TYPE_SFFLOAT,
-                                      name : new SFString("d"),
-                                      accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                                      value : new SFString("20")}),
-
-                                    new field({
-                                      type : field.TYPE_SFFLOAT,
-                                      name : new SFString("tdelta"),
-                                      accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                                      value : new SFString("0")}),
-
-                                    new field({
-                                      type : field.TYPE_SFFLOAT,
-                                      name : new SFString("pdelta"),
-                                      accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                                      value : new SFString("0")}),
-                                  /*<field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field>*/
-                                  parts : new SFNode(
-                                    new ShaderPart({
-                                      type : "VERTEX",
-                                      url : new MFString(["https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs"])})]),
-                                  parts : new SFNode(
-                                    new ShaderPart({
-                                      type : "FRAGMENT",
-                                      url : new MFString(["https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"])}))})),
+                                      url : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"])}))})),
+                              /*<ComposedShader DEF='x3dom' language=\"GLSL\"> <field name='cube' type='SFInt32' accessType='inputOutput' value='0'></field> <field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field> <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1.0 1.033'></field> <field name='bias' type='SFFloat' accessType='inputOutput' value='0.5'></field> <field name='scale' type='SFFloat' accessType='inputOutput' value='0.5'></field> <field name='power' type='SFFloat' accessType='inputOutput' value='2'></field> <field name='a' type='SFFloat' accessType='inputOutput' value='10'></field> <field name='b' type='SFFloat' accessType='inputOutput' value='1'></field> <field name='c' type='SFFloat' accessType='inputOutput' value='20'></field> <field name='d' type='SFFloat' accessType='inputOutput' value='20'></field> <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field> <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field> <ShaderPart url='\"https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs\"' containerField='parts' type='VERTEX'></ShaderPart> <ShaderPart url='\"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart> </ComposedShader>*/
                               shaders : new SFNode(
                                 new ComposedShader({
                                   DEF : new SFString("x_ite"),
@@ -485,42 +407,7 @@ ecmascript:eval (0
                       fromField : new SFString("tdelta"),
                       toNode : new SFString("x_ite"),
                       toField : new SFString("tdelta")}),
-
-                    new ROUTE({
-                      fromNode : new SFString("Animate"),
-                      fromField : new SFString("a"),
-                      toNode : new SFString("x3dom"),
-                      toField : new SFString("a")}),
-
-                    new ROUTE({
-                      fromNode : new SFString("Animate"),
-                      fromField : new SFString("b"),
-                      toNode : new SFString("x3dom"),
-                      toField : new SFString("b")}),
-
-                    new ROUTE({
-                      fromNode : new SFString("Animate"),
-                      fromField : new SFString("c"),
-                      toNode : new SFString("x3dom"),
-                      toField : new SFString("c")}),
-
-                    new ROUTE({
-                      fromNode : new SFString("Animate"),
-                      fromField : new SFString("d"),
-                      toNode : new SFString("x3dom"),
-                      toField : new SFString("d")}),
-
-                    new ROUTE({
-                      fromNode : new SFString("Animate"),
-                      fromField : new SFString("pdelta"),
-                      toNode : new SFString("x3dom"),
-                      toField : new SFString("pdelta")}),
-
-                    new ROUTE({
-                      fromNode : new SFString("Animate"),
-                      fromField : new SFString("tdelta"),
-                      toNode : new SFString("x3dom"),
-                      toField : new SFString("tdelta")})])}))}),
+                  /*<ROUTE fromNode='Animate' fromField='a' toNode='x3dom' toField='a'/> <ROUTE fromNode='Animate' fromField='b' toNode='x3dom' toField='b'/> <ROUTE fromNode='Animate' fromField='c' toNode='x3dom' toField='c'/> <ROUTE fromNode='Animate' fromField='d' toNode='x3dom' toField='d'/> <ROUTE fromNode='Animate' fromField='pdelta' toNode='x3dom' toField='pdelta'/> <ROUTE fromNode='Animate' fromField='tdelta' toNode='x3dom' toField='tdelta'/>*/])}))}),
 
             new ProtoInstance({
               name : new SFString("flower")}),

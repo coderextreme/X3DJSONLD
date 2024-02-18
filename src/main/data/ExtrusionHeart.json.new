@@ -1,8 +1,8 @@
 {
   "X3D": {
     "@profile": "Immersive",
-    "@version": "3.0",
-    "@xsd:noNamespaceSchemaLocation": "https://www.web3d.org/specifications/x3d-3.0.xsd",
+    "@version": "4.0",
+    "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-4.0.xsd",
     "head": {
       "meta": [
         {
@@ -23,23 +23,15 @@
         },
         {
           "@name": "modified",
-          "@content": "27 November 2015"
+          "@content": "Thu, 14 Dec 2023 22:21:06 GMT"
         },
         {
           "@name": "identifier",
           "@content": "https://www.web3d.org/x3d/content/examples/Basic/course/ExtrusionHeart.x3d"
         },
         {
-          "@name": "generator",
-          "@content": "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
-        },
-        {
-          "@name": "license",
-          "@content": "../license.html"
-        },
-        {
           "@name": "translated",
-          "@content": "16 January 2021"
+          "@content": "15 December 2023"
         },
         {
           "@name": "generator",
@@ -56,16 +48,16 @@
         {
           "Viewpoint": {
             "@description": "Extrusion Heart",
+            "@position": [
+              0,
+              -4,
+              0
+            ],
             "@orientation": [
               1,
               0,
               0,
               1.57
-            ],
-            "@position": [
-              0,
-              -4,
-              0
             ]
           }
         },
@@ -79,69 +71,6 @@
             "-children": [
               {
                 "Shape": {
-                  "-geometry": {
-                    "Extrusion": {
-                      "@creaseAngle": 3.14159,
-                      "@crossSection": [
-                        0,
-                        0.8,
-                        0.2,
-                        1,
-                        0.7,
-                        0.95,
-                        1,
-                        0.5,
-                        0.8,
-                        0,
-                        0.5,
-                        -0.3,
-                        0,
-                        -0.7,
-                        -0.5,
-                        -0.3,
-                        -0.8,
-                        0,
-                        -1,
-                        0.5,
-                        -0.7,
-                        0.95,
-                        -0.2,
-                        1,
-                        0,
-                        0.8
-                      ],
-                      "@scale": [
-                        0.01,
-                        0.01,
-                        0.8,
-                        0.8,
-                        1,
-                        1,
-                        0.8,
-                        0.8,
-                        0.01,
-                        0.01
-                      ],
-                      "@solid": false,
-                      "@spine": [
-                        0,
-                        0,
-                        0,
-                        0,
-                        0.1,
-                        0,
-                        0,
-                        0.5,
-                        0,
-                        0,
-                        0.9,
-                        0,
-                        0,
-                        1,
-                        0
-                      ]
-                    }
-                  },
                   "-children": [
                     {
                       "Appearance": {
@@ -155,6 +84,69 @@
                               ]
                             }
                           }
+                        ]
+                      }
+                    },
+                    {
+                      "Extrusion": {
+                        "@solid": false,
+                        "@creaseAngle": 3.14159,
+                        "@crossSection": [
+                          0,
+                          0.8,
+                          0.2,
+                          1,
+                          0.7,
+                          0.95,
+                          1,
+                          0.5,
+                          0.8,
+                          0,
+                          0.5,
+                          -0.3,
+                          0,
+                          -0.7,
+                          -0.5,
+                          -0.3,
+                          -0.8,
+                          0,
+                          -1,
+                          0.5,
+                          -0.7,
+                          0.95,
+                          -0.2,
+                          1,
+                          0,
+                          0.8
+                        ],
+                        "@scale": [
+                          0.01,
+                          0.01,
+                          0.8,
+                          0.8,
+                          1,
+                          1,
+                          0.8,
+                          0.8,
+                          0.01,
+                          0.01
+                        ],
+                        "@spine": [
+                          0,
+                          0,
+                          0,
+                          0,
+                          0.1,
+                          0,
+                          0,
+                          0.5,
+                          0,
+                          0,
+                          0.9,
+                          0,
+                          0,
+                          1,
+                          0
                         ]
                       }
                     }

@@ -3,7 +3,9 @@ void main(int argc, char ** argv) {
 Browser browser = X3D.getBrowser();
 X3D X3D0;
 X3D0.profile = "Immersive";
-X3D0.version = "4.0";
+X3D0.version = "3.3";
+//All head/meta tags are optional, WorldInfo is also optional
+//Text node not supported by X3D Interchange profile, use Immersive profile or Text component level 1
 head head1 = createNode("head");
 meta meta2 = createNode("meta");
 meta2.name = "title";
@@ -77,19 +79,24 @@ meta15.name = "generator";
 meta15.content = "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit";
 head1.meta[13] = meta15;
 
+meta meta16 = createNode("meta");
+meta16.name = "license";
+meta16.content = "../license.html";
+head1.meta[14] = meta16;
+
 head = head1;
 
-WorldInfo WorldInfo17 = createNode("WorldInfo");
-WorldInfo17.title = "HelloWorldMinimal.x3d";
+WorldInfo WorldInfo18 = createNode("WorldInfo");
+WorldInfo18.title = "HelloWorldMinimal.x3d";
 children = new MFNode();
 
-children[0] = WorldInfo17;
+children[0] = WorldInfo18;
 
-Shape Shape18 = createNode("Shape");
-Text Text19 = createNode("Text");
-Text19.string = new MFString(new java.lang.String["hello, world"]);
-Shape18.geometry = Text19;
+Shape Shape19 = createNode("Shape");
+Text Text20 = createNode("Text");
+Text20.string = new MFString(new java.lang.String["hello, world"]);
+Shape19.geometry = Text20;
 
-children[1] = Shape18;
+children[1] = Shape19;
 
 }

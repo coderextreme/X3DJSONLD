@@ -1,4 +1,4 @@
-#include "/c/x3d-code/www.web3d.org/x3d/languages/c/X3DLib/X3DLib.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/c/Concretes.h"
 void main(int argc, char ** argv) {
 Browser browser = X3D.getBrowser();
 X3D X3D0;
@@ -24,7 +24,7 @@ head1.meta[2] = meta4;
 
 meta meta5 = createNode("meta");
 meta5.name = "identifier";
-meta5.content = "https://coderextreme.net/X3DJSONLD/force.x3d";
+meta5.content = "https://coderextreme.net/X3DJSONLD/src/main/data/extrusion.x3d";
 head1.meta[3] = meta5;
 
 meta meta6 = createNode("meta");
@@ -88,7 +88,10 @@ Script15.setSourceCode(`ecmascript:\n"+
 "                        Browser.print(value);\n"+
 "                        var endA = new SFVec3f(spine[0].x*Math.random()*2, spine[0].y*Math.random()*2, spine[0].z*Math.random()*2);\n"+
 "                        var endB = new SFVec3f(spine[1].x*Math.random()*2, spine[1].y*Math.random()*2, spine[1].z*Math.random()*2);\n"+
-"		        spine = new MFVec3f([endA, endB]);\n"+
+"                        var tmpspine = new MFVec3f();\n"+
+"			tmpspine[0] = endA;\n"+
+"			tmpspine[1] = endB;\n"+
+"                        spine = tmpspine;\n"+
 "                }`)
 Group9.children[2] = Script15;
 

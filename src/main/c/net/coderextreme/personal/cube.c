@@ -1,9 +1,9 @@
-#include "/c/x3d-code/www.web3d.org/x3d/languages/c/X3DLib/X3DLib.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/c/Concretes.h"
 void main(int argc, char ** argv) {
 Browser browser = X3D.getBrowser();
 X3D X3D0;
 X3D0.profile = "Interchange";
-X3D0.version = "4.0";
+X3D0.version = "3.3";
 head head1 = createNode("head");
 meta meta2 = createNode("meta");
 meta2.name = "title";
@@ -39,7 +39,7 @@ head1.meta[5] = meta7;
 
 meta meta8 = createNode("meta");
 meta8.name = "identifier";
-meta8.content = "https://coderextreme.net/X3DJSONLD/cube.x3d";
+meta8.content = "https://coderextreme.net/X3DJSONLD/src/main/data/cube.x3d";
 head1.meta[6] = meta8;
 
 head = head1;

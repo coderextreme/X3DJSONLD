@@ -36,13 +36,22 @@ import org.web3d.x3d.jsail.Texturing.*;
 import org.web3d.x3d.jsail.Time.*;
 import org.web3d.x3d.jsail.VolumeRendering.*;
 import org.web3d.x3d.jsail.fields.*;
-public class HelloWorld {
+import java.util.ArrayList;
+import java.util.List;
+import net.coderextreme.X3DRoots;
+public class HelloWorld implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    X3D model = new HelloWorld().initialize();
+    X3D model = new HelloWorld().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
+    model.toFileX3D("../data/HelloWorld.new.java.x3d");
     model.toFileJSON("../data/HelloWorld.new.json");
+    }
+    public List<X3D> getRootNodeList() {
+    	List<X3D> list = new ArrayList<X3D>(1);
+    	list.add(initialize());
+    	return list;
     }
     public X3D initialize() {
       X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
@@ -75,14 +84,14 @@ public class HelloWorld {
         .addComments("Example scene to illustrate X3D nodes and fields (XML elements and attributes)")
         .addChild(new WorldInfo().setInfo(new MFString0().getArray()).setTitle("Hello World!"))
         .addChild(new Group()
-          .addChild(new Viewpoint().setDEF("ViewUpClose").setCenterOfRotation(new float[] {0f ,-1f ,0f }).setDescription("Hello world!").setPosition(new float[] {0f ,-1f ,7f }))
-          .addChild(new Transform().setRotation(new float[] {0f ,1f ,0f ,3f })
+          .addChild(new Viewpoint().setDEF("ViewUpClose").setCenterOfRotation(new double[] {0,-1,0}).setDescription("Hello world!").setPosition(new double[] {0,-1,7}))
+          .addChild(new Transform().setRotation(new double[] {0,1,0,3})
             .addChild(new Shape()
               .setGeometry(new Sphere())
               .setAppearance(new Appearance()
-                .setMaterial(new Material().setDEF("MaterialLightBlue").setDiffuseColor(new float[] {0.1f ,0.5f ,1f }))
+                .setMaterial(new Material().setDEF("MaterialLightBlue").setDiffuseColor(new double[] {0.1,0.5,1}))
                 .setTexture(new ImageTexture().setDEF("ImageCloudlessEarth").setUrl(new MFString1().getArray())))))
-          .addChild(new Transform().setTranslation(new float[] {0f ,-2f ,0f })
+          .addChild(new Transform().setTranslation(new double[] {0,-2,0})
             .addChild(new Shape()
               .setGeometry(new Text().setDEF("TextMessage").setString(new MFString2().getArray())
                 .setFontStyle(new FontStyle().setJustify(new MFString3().getArray())))

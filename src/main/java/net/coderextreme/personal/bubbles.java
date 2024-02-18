@@ -36,13 +36,22 @@ import org.web3d.x3d.jsail.Texturing.*;
 import org.web3d.x3d.jsail.Time.*;
 import org.web3d.x3d.jsail.VolumeRendering.*;
 import org.web3d.x3d.jsail.fields.*;
-public class bubbles {
+import java.util.ArrayList;
+import java.util.List;
+import net.coderextreme.X3DRoots;
+public class bubbles implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    X3D model = new bubbles().initialize();
+    X3D model = new bubbles().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
+    model.toFileX3D("../personal/bubbles.new.java.x3d");
     model.toFileJSON("../personal/bubbles.new.json");
+    }
+    public List<X3D> getRootNodeList() {
+    	List<X3D> list = new ArrayList<X3D>(1);
+    	list.add(initialize());
+    	return list;
     }
     public X3D initialize() {
       X3D X3D0 =  new X3D().setProfile("Interchange").setVersion("3.3")
@@ -59,7 +68,7 @@ public class bubbles {
         .addChild(new WorldInfo().setTitle("Bubbles.x3d"))
         .addChild(new Transform().setDEF("Bubbles")
           .addChild(new Group().setDEF("Bubble")
-            .addChild(new TimeSensor().setDEF("BubbleClock").setCycleInterval(6d).setLoop(true))
+            .addChild(new TimeSensor().setDEF("BubbleClock").setCycleInterval(6).setLoop(true))
             .addChild(new PositionInterpolator().setDEF("BubblePath1").setKey(new MFFloat0().getArray()).setKeyValue(new MFVec3f1().getArray()))
             .addChild(new PositionInterpolator().setDEF("BubblePath2").setKey(new MFFloat2().getArray()).setKeyValue(new MFVec3f3().getArray()))
             .addChild(new PositionInterpolator().setDEF("BubblePath3").setKey(new MFFloat4().getArray()).setKeyValue(new MFVec3f5().getArray()))
@@ -74,53 +83,53 @@ public class bubbles {
               .addChild(new Transform().setDEF("bubble1")
                 .addChild(new Shape()
                   .setAppearance(new Appearance()
-                    .setMaterial(new Material().setDiffuseColor(new float[] {1f ,1f ,1f }).setTransparency(0.8f )))
-                  .setGeometry(new Sphere().setRadius(0.025f ))))
+                    .setMaterial(new Material().setDiffuseColor(new double[] {1,1,1}).setTransparency(0.8)))
+                  .setGeometry(new Sphere().setRadius(0.025))))
               .addChild(new Transform().setDEF("bubble2")
                 .addChild(new Shape()
                   .setAppearance(new Appearance()
-                    .setMaterial(new Material().setDiffuseColor(new float[] {1f ,1f ,1f }).setTransparency(0.8f )))
-                  .setGeometry(new Sphere().setRadius(0.055f ))))
+                    .setMaterial(new Material().setDiffuseColor(new double[] {1,1,1}).setTransparency(0.8)))
+                  .setGeometry(new Sphere().setRadius(0.055))))
               .addChild(new Transform().setDEF("bubble3")
                 .addChild(new Shape()
                   .setAppearance(new Appearance()
-                    .setMaterial(new Material().setDiffuseColor(new float[] {1f ,1f ,1f }).setTransparency(0.8f )))
-                  .setGeometry(new Sphere().setRadius(0.065f ))))
+                    .setMaterial(new Material().setDiffuseColor(new double[] {1,1,1}).setTransparency(0.8)))
+                  .setGeometry(new Sphere().setRadius(0.065))))
               .addChild(new Transform().setDEF("bubble4")
                 .addChild(new Shape()
                   .setAppearance(new Appearance()
-                    .setMaterial(new Material().setDiffuseColor(new float[] {1f ,1f ,1f }).setTransparency(0.8f )))
-                  .setGeometry(new Sphere().setRadius(0.015f ))))
+                    .setMaterial(new Material().setDiffuseColor(new double[] {1,1,1}).setTransparency(0.8)))
+                  .setGeometry(new Sphere().setRadius(0.015))))
               .addChild(new Transform().setDEF("bubble5")
                 .addChild(new Shape()
                   .setAppearance(new Appearance()
-                    .setMaterial(new Material().setDiffuseColor(new float[] {1f ,1f ,1f }).setTransparency(0.8f )))
-                  .setGeometry(new Sphere().setRadius(0.075f ))))
+                    .setMaterial(new Material().setDiffuseColor(new double[] {1,1,1}).setTransparency(0.8)))
+                  .setGeometry(new Sphere().setRadius(0.075))))
               .addChild(new Transform().setDEF("bubble6")
                 .addChild(new Shape()
                   .setAppearance(new Appearance()
-                    .setMaterial(new Material().setDiffuseColor(new float[] {1f ,1f ,1f }).setTransparency(0.8f )))
-                  .setGeometry(new Sphere().setRadius(0.005f ))))
+                    .setMaterial(new Material().setDiffuseColor(new double[] {1,1,1}).setTransparency(0.8)))
+                  .setGeometry(new Sphere().setRadius(0.005))))
               .addChild(new Transform().setDEF("bubble7")
                 .addChild(new Shape()
                   .setAppearance(new Appearance()
-                    .setMaterial(new Material().setDiffuseColor(new float[] {1f ,1f ,1f }).setTransparency(0.8f )))
-                  .setGeometry(new Sphere().setRadius(0.035f ))))
+                    .setMaterial(new Material().setDiffuseColor(new double[] {1,1,1}).setTransparency(0.8)))
+                  .setGeometry(new Sphere().setRadius(0.035))))
               .addChild(new Transform().setDEF("bubble8")
                 .addChild(new Shape()
                   .setAppearance(new Appearance()
-                    .setMaterial(new Material().setDiffuseColor(new float[] {1f ,1f ,1f }).setTransparency(0.8f )))
-                  .setGeometry(new Sphere().setRadius(0.05f ))))
+                    .setMaterial(new Material().setDiffuseColor(new double[] {1,1,1}).setTransparency(0.8)))
+                  .setGeometry(new Sphere().setRadius(0.05))))
               .addChild(new Transform().setDEF("bubble9")
                 .addChild(new Shape()
                   .setAppearance(new Appearance()
-                    .setMaterial(new Material().setDiffuseColor(new float[] {1f ,1f ,1f }).setTransparency(0.8f )))
-                  .setGeometry(new Sphere().setRadius(0.045f ))))
+                    .setMaterial(new Material().setDiffuseColor(new double[] {1,1,1}).setTransparency(0.8)))
+                  .setGeometry(new Sphere().setRadius(0.045))))
               .addChild(new Transform().setDEF("bubble10")
                 .addChild(new Shape()
                   .setAppearance(new Appearance()
-                    .setMaterial(new Material().setDiffuseColor(new float[] {1f ,1f ,1f }).setTransparency(0.8f )))
-                  .setGeometry(new Sphere().setRadius(0.035f ))))
+                    .setMaterial(new Material().setDiffuseColor(new double[] {1,1,1}).setTransparency(0.8)))
+                  .setGeometry(new Sphere().setRadius(0.035))))
               .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("BubbleClock").setToField("set_fraction").setToNode("BubblePath1"))
               .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("BubbleClock").setToField("set_fraction").setToNode("BubblePath2"))
               .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("BubbleClock").setToField("set_fraction").setToNode("BubblePath3"))
@@ -146,107 +155,107 @@ public class bubbles {
     }
 private class MFFloat0 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0.5f ,0.8f ,0.9f ,1f });
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,0.8,0.9,1});
   }
 }
 private class MFVec3f1 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f ,0f ,0f ,0.75f ,0.75f ,0.75f ,0.86f ,0.86f ,0.86f ,0.99f ,0.998f ,0.9876f ,1.272f ,1.9044f ,0.9509f });
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0,0,0,0.75,0.75,0.75,0.86,0.86,0.86,0.99,0.998,0.9876,1.272,1.9044,0.9509});
   }
 }
 private class MFFloat2 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0.3f ,0.64f ,0.85f ,1f });
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.3,0.64,0.85,1});
   }
 }
 private class MFVec3f3 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.1f ,0.1f ,0.1f ,0.2f ,0.4f ,0.25f ,0.3f ,0.5f ,0.46f ,0.75f ,0.5f ,0.575f ,0.038483478f ,1.989f ,1.098373f });
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0.1,0.1,0.1,0.2,0.4,0.25,0.3,0.5,0.46,0.75,0.5,0.575,0.038483478,1.989,1.098373});
   }
 }
 private class MFFloat4 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0.1f ,0.45f ,0.7f ,1f });
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.1,0.45,0.7,1});
   }
 }
 private class MFVec3f5 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.01f ,0.01f ,0.01f ,0.25f ,0.35f ,0.0045f ,0.55f ,0.6f ,0.0055f ,0.66f ,0.665f ,0.00655f ,1.555f ,1.09043f ,0.005734f });
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0.01,0.01,0.01,0.25,0.35,0.0045,0.55,0.6,0.0055,0.66,0.665,0.00655,1.555,1.09043,0.005734});
   }
 }
 private class MFFloat6 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0.5f ,0.6f ,0.8f ,1f });
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,0.6,0.8,1});
   }
 }
 private class MFVec3f7 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f ,0f ,0f ,0.5f ,0.5f ,0.005f ,0.6f ,0.6f ,0.006f ,0.75f ,0.75f ,0.0075f ,1.948594f ,1.3983f ,0.009009349f });
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0,0,0,0.5,0.5,0.005,0.6,0.6,0.006,0.75,0.75,0.0075,1.948594,1.3983,0.009009349});
   }
 }
 private class MFFloat8 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0.25f ,0.35f ,0.65f ,1f });
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.25,0.35,0.65,1});
   }
 }
 private class MFVec3f9 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f ,0f ,0f ,0.5f ,0.5f ,0.005f ,0.6f ,0.6f ,0.006f ,0.75f ,0.75f ,0.0075f ,1.84444f ,1.22222f ,0.1f });
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0,0,0,0.5,0.5,0.005,0.6,0.6,0.006,0.75,0.75,0.0075,1.84444,1.22222,0.1});
   }
 }
 private class MFFloat10 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0.15f ,0.22235f ,0.55565f ,1f });
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.15,0.22235,0.55565,1});
   }
 }
 private class MFVec3f11 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f ,0f ,0f ,0.235f ,0.3455f ,0.0055f ,0.356f ,0.676f ,0.00456f ,0.5675f ,0.75f ,0.0074565f ,1.098f ,1.0343f ,0.14f });
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0,0,0,0.235,0.3455,0.0055,0.356,0.676,0.00456,0.5675,0.75,0.0074565,1.098,1.0343,0.14});
   }
 }
 private class MFFloat12 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0.2425f ,0.4535f ,0.6775f ,1f });
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2425,0.4535,0.6775,1});
   }
 }
 private class MFVec3f13 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f ,0f ,0f ,0.12345f ,0.2225f ,0.00335f ,0.786f ,0.456f ,0.00666f ,0.74555f ,0.7335f ,0.00234575f ,0.08787f ,1.022f ,0.12f });
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0,0,0,0.12345,0.2225,0.00335,0.786,0.456,0.00666,0.74555,0.7335,0.00234575,0.08787,1.022,0.12});
   }
 }
 private class MFFloat14 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0.1125f ,0.5535f ,0.97865f ,1f });
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.1125,0.5535,0.97865,1});
   }
 }
 private class MFVec3f15 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f ,0f ,0f ,0.1235f ,0.05f ,0.00125f ,0.5666f ,0.4346f ,0.005556f ,0.8975f ,0.34575f ,0.0098775f ,1.8787f ,1.686f ,0.86f });
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0,0,0,0.1235,0.05,0.00125,0.5666,0.4346,0.005556,0.8975,0.34575,0.0098775,1.8787,1.686,0.86});
   }
 }
 private class MFFloat16 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0.0025f ,0.035f ,0.65f ,1f });
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.0025,0.035,0.65,1});
   }
 }
 private class MFVec3f17 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f ,0f ,0f ,0.522f ,0.5445f ,0.0057f ,0.6543f ,0.226f ,0.0055f ,0.45575f ,0.4375f ,0.0067f ,1.8787f ,2f ,0.1545f });
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0,0,0,0.522,0.5445,0.0057,0.6543,0.226,0.0055,0.45575,0.4375,0.0067,1.8787,2,0.1545});
   }
 }
 private class MFFloat18 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0.00025f ,0.035f ,0.6895f ,1f });
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.00025,0.035,0.6895,1});
   }
 }
 private class MFVec3f19 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f ,0f ,0f ,0.8765f ,0.445f ,0.00335f ,0.3336f ,0.4446f ,0.005556f ,0.765f ,0.75f ,0.0075f ,1f ,1f ,0.1f });
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0,0,0,0.8765,0.445,0.00335,0.3336,0.4446,0.005556,0.765,0.75,0.0075,1,1,0.1});
   }
 }
 private class MFColor20 {
   private org.web3d.x3d.jsail.fields.MFColor getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0f ,0f ,0.6f });
+    return new org.web3d.x3d.jsail.fields.MFColor(new double[] {0,0,0.6});
   }
 }
 }

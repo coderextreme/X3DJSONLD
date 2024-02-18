@@ -4,6 +4,10 @@ ConfigurationProperties.showDefaultAttributes = false;
 ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;
 ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
+function doubleToFloat(d) {
+    if (Float32Array)
+	return new Float32Array([d])[0];
+}
 var ProtoInstance0 = null;
 var ProtoInstance1 = null;
 var ProtoInstance2 = null;
@@ -26,14 +30,14 @@ var ProtoInstance2 = null;
               .addChild(new Shape()
                 .setGeometry(new Sphere())
                 .setAppearance(new Appearance()
-                  .setMaterial(new Material().setDiffuseColor(Java.to([1,0,0], Java.type("double[]"))))))
-              .addChild(new Transform().setTranslation(Java.to([1,0,0], Java.type("double[]")))
+                  .setMaterial(new Material().setDiffuseColor(Java.to([doubleToFloat(1),doubleToFloat(0),doubleToFloat(0)], Java.type("float[]"))))))
+              .addChild(new Transform().setTranslation(Java.to([doubleToFloat(1),doubleToFloat(0),doubleToFloat(0)], Java.type("float[]")))
                 .addChild(new Shape()
                   .setGeometry(new Text().setString(Java.to(["Node"], Java.type("java.lang.String[]")))
                     .setFontStyle(new FontStyle().setJustify(Java.to(["MIDDLE","MIDDLE"], Java.type("java.lang.String[]"))).setSize(5)))
                   .setAppearance(new Appearance()
-                    .setMaterial(new Material().setDiffuseColor(Java.to([0,0,1], Java.type("double[]"))))))))
-            .addChild(new PositionInterpolator().setDEF("NodePosition").setKey(Java.to([0,1], Java.type("double[]"))).setKeyValue(Java.to([0,0,0,0,5,0], Java.type("double[]"))))
+                    .setMaterial(new Material().setDiffuseColor(Java.to([doubleToFloat(0),doubleToFloat(0),doubleToFloat(1)], Java.type("float[]"))))))))
+            .addChild(new PositionInterpolator().setDEF("NodePosition").setKey(Java.to([doubleToFloat(0),doubleToFloat(1)], Java.type("float[]"))).setKeyValue(Java.to([doubleToFloat(0),doubleToFloat(0),doubleToFloat(0),doubleToFloat(0),doubleToFloat(5),doubleToFloat(0)], Java.type("float[]"))))
             .addChild(new Script().setDEF("MoveBall")
               .addField(new field().setType(field.TYPE_SFVEC3F).setName("translation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("50 50 0"))
               .addField(new field().setType(field.TYPE_SFVEC3F).setName("old").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
@@ -57,9 +61,9 @@ var ProtoInstance2 = null;
             .addField(new field().setType(field.TYPE_SFVEC3F).setName("set_positionB").setAccessType(field.ACCESSTYPE_INPUTONLY)))
           .setProtoBody(new ProtoBody()
             .addChild(new Shape()
-              .setGeometry(new Extrusion().setDEF("extrusion").setCreaseAngle(0.785).setCrossSection(Java.to([1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0], Java.type("double[]"))).setSpine(Java.to([0,-50,0,0,50,0], Java.type("double[]"))))
+              .setGeometry(new Extrusion().setDEF("extrusion").setCreaseAngle(0.785).setCrossSection(Java.to([doubleToFloat(1),doubleToFloat(0),doubleToFloat(0.92),doubleToFloat(-0.38),doubleToFloat(0.71),doubleToFloat(-0.71),doubleToFloat(0.38),doubleToFloat(-0.92),doubleToFloat(0),doubleToFloat(-1),doubleToFloat(-0.38),doubleToFloat(-0.92),doubleToFloat(-0.71),doubleToFloat(-0.71),doubleToFloat(-0.92),doubleToFloat(-0.38),doubleToFloat(-1),doubleToFloat(0),doubleToFloat(-0.92),doubleToFloat(0.38),doubleToFloat(-0.71),doubleToFloat(0.71),doubleToFloat(-0.38),doubleToFloat(0.92),doubleToFloat(0),doubleToFloat(1),doubleToFloat(0.38),doubleToFloat(0.92),doubleToFloat(0.71),doubleToFloat(0.71),doubleToFloat(0.92),doubleToFloat(0.38),doubleToFloat(1),doubleToFloat(0)], Java.type("float[]"))).setSpine(Java.to([doubleToFloat(0),doubleToFloat(-50),doubleToFloat(0),doubleToFloat(0),doubleToFloat(50),doubleToFloat(0)], Java.type("float[]"))))
               .setAppearance(new Appearance()
-                .setMaterial(new Material().setDiffuseColor(Java.to([0,1,0], Java.type("double[]"))))))
+                .setMaterial(new Material().setDiffuseColor(Java.to([doubleToFloat(0),doubleToFloat(1),doubleToFloat(0)], Java.type("float[]"))))))
             .addChild(new Script().setDEF("MoveCylinder")
               .addField(new field().setType(field.TYPE_MFVEC3F).setName("spine").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 -50 0 0 50 0"))
               .addField(new field().setType(field.TYPE_SFVEC3F).setName("set_endA").setAccessType(field.ACCESSTYPE_INPUTONLY))
@@ -89,8 +93,8 @@ var ProtoInstance2 = null;
                     spine = value;
                 }`))
             .addChild(new ROUTE().setFromNode("MoveCylinder").setFromField("spine").setToNode("extrusion").setToField("set_spine"))))
-        .addChild(new Transform().setDEF("HoldsContent").setScale(Java.to([0.1,0.1,0.1], Java.type("double[]")))
-          .addChild(new PlaneSensor().setDEF("clickGenerator").setMinPosition(Java.to([-50,-50], Java.type("double[]"))).setMaxPosition(Java.to([50,50], Java.type("double[]"))).setDescription("click on background to add nodes, click on nodes to add links"))
+        .addChild(new Transform().setDEF("HoldsContent").setScale(Java.to([doubleToFloat(0.1),doubleToFloat(0.1),doubleToFloat(0.1)], Java.type("float[]")))
+          .addChild(new PlaneSensor().setDEF("clickGenerator").setMinPosition(Java.to([doubleToFloat(-50),doubleToFloat(-50)], Java.type("float[]"))).setMaxPosition(Java.to([doubleToFloat(50),doubleToFloat(50)], Java.type("float[]"))).setDescription("click on background to add nodes, click on nodes to add links"))
           .addChild(ProtoInstance0 = new ProtoInstance().setName("node").setDEF("nodeA"))
           .addChild(ProtoInstance1 = new ProtoInstance().setName("node").setDEF("nodeB"))
           .addChild(ProtoInstance2 = new ProtoInstance().setName("cyl").setDEF("linkA")))

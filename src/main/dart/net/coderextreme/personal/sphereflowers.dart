@@ -49,6 +49,14 @@ var X3D0 =  X3D(
               content_ : SFString('John Carlson')),
 
             meta(
+              name_ : SFString('created'),
+              content_ : SFString('Jan 17 2022')),
+
+            meta(
+              name_ : SFString('modified'),
+              content_ : SFString('Sep 3 2023')),
+
+            meta(
               name_ : SFString('description'),
               content_ : SFString('5 or more prismatic flowers')),
 
@@ -65,18 +73,18 @@ var X3D0 =  X3D(
             NavigationInfo(),
 
             Background(
-              backUrl_ : MFString([SFString("../resources/images/all_probes/stpeters_cross/stpeters_back.png"), SFString("https://localhost:3000/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png")]),
-              bottomUrl_ : MFString([SFString("../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"), SFString("https://localhost:3000/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png")]),
-              frontUrl_ : MFString([SFString("../resources/images/all_probes/stpeters_cross/stpeters_front.png"), SFString("https://localhost:3000/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png")]),
-              leftUrl_ : MFString([SFString("../resources/images/all_probes/stpeters_cross/stpeters_left.png"), SFString("https://localhost:3000/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png")]),
-              rightUrl_ : MFString([SFString("../resources/images/all_probes/stpeters_cross/stpeters_right.png"), SFString("https://localhost:3000/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png")]),
-              topUrl_ : MFString([SFString("../resources/images/all_probes/stpeters_cross/stpeters_top.png"), SFString("https://localhost:3000/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/src/main/resourcesall_probes/stpeters_cross/stpeters_top.png")])),
+              backUrl_ : MFString([SFString("../resources/images/all_probes/stpeters_cross/stpeters_back.png")]),
+              bottomUrl_ : MFString([SFString("../resources/images/all_probes/stpeters_cross/stpeters_bottom.png")]),
+              frontUrl_ : MFString([SFString("../resources/images/all_probes/stpeters_cross/stpeters_front.png")]),
+              leftUrl_ : MFString([SFString("../resources/images/all_probes/stpeters_cross/stpeters_left.png")]),
+              rightUrl_ : MFString([SFString("../resources/images/all_probes/stpeters_cross/stpeters_right.png")]),
+              topUrl_ : MFString([SFString("../resources/images/all_probes/stpeters_cross/stpeters_top.png")])),
 
             Group(
               children_ : [
                 ExternProtoDeclare(
                   name_ : SFString('FlowerProto'),
-                  url_ : MFString([SFString("../personal/flowerproto.json#FlowerProto"), SFString("https://localhost:3000/src/main/personal/flowerproto.json#FlowerProto"), SFString("https://coderextreme.net/X3DJSONLD/src/main/personal/flowerproto.json#FlowerProto")]),
+                  url_ : MFString([SFString("../personal/flowerproto.json#FlowerProto")]),
                   field_ : [
                     field(
                       type_ : SFString("MFString"),
@@ -133,11 +141,12 @@ var X3D0 =  X3D(
                   maxFront_ : 100,
                   minBack_ : 20,
                   minFront_ : 20,
+                  location_ : SFVec3f([SFDouble(0), SFDouble(1), SFDouble(0)]),
                   source_ : 
                     AudioClip(
                       DEF_ : SFString('AudioClip'),
                       description_ : SFString('Chandubabamusic #1'),
-                      url_ : MFString([SFString("../resources/chandubabamusic1.wav"), SFString("https://localhost:3000/src/main/resources/chandubabamusic1.wav"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/chandubabamusic1.wav")]))),
+                      url_ : MFString([SFString("../resources/chandubabamusic1.wav")]))),
 
                 ROUTE(
                   fromField_ : SFString('cycleTime'),

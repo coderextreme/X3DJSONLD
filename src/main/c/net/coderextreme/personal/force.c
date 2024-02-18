@@ -1,4 +1,4 @@
-#include "/c/x3d-code/www.web3d.org/x3d/languages/c/X3DLib/X3DLib.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/c/Concretes.h"
 void main(int argc, char ** argv) {
 Browser browser = X3D.getBrowser();
 X3D X3D0;
@@ -29,7 +29,7 @@ head1.meta[3] = meta5;
 
 meta meta6 = createNode("meta");
 meta6.name = "identifier";
-meta6.content = "https://coderextreme.net/X3DJSONLD/force.x3d";
+meta6.content = "https://coderextreme.net/X3DJSONLD/src/main/data/force.x3d";
 head1.meta[4] = meta6;
 
 meta meta7 = createNode("meta");
@@ -50,13 +50,13 @@ ProtoDeclare ProtoDeclare10 = browser.createX3DFromString(`<?xml version="1.0" e
 </ProtoInterface>
 <ProtoBody><Group><Transform DEF="transform"><IS><connect nodeField="translation" protoField="position"></connect>
 </IS>
-<Shape><Sphere containerField="geometry"></Sphere>
-<Appearance><Material diffuseColor="1 0 0"></Material>
+<Shape><Sphere></Sphere>
+<Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 0 0"></Material>
 </Appearance>
 </Shape>
-<Transform translation="1 0 0"><Shape><Text containerField="geometry" string="&quot;Node&quot;"><FontStyle justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" size="5"></FontStyle>
+<Transform translation="1 0 0"><Shape><Text string="&quot;Node&quot;"><FontStyle containerField="fontStyle" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" size="5"></FontStyle>
 </Text>
-<Appearance><Material diffuseColor="0 0 1"></Material>
+<Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 0 1"></Material>
 </Appearance>
 </Shape>
 </Transform>
@@ -70,7 +70,11 @@ ProtoDeclare ProtoDeclare10 = browser.createX3DFromString(`<?xml version="1.0" e
 					function set_cycle(value) {
                                                 old = translation;
 						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);
-                                                keyValue = new MFVec3f([old, translation]);
+                                                var tmpkeyValue = new MFVec3f();
+			    			tmpkeyValue[0] = old;
+			    			tmpkeyValue[1] = translation;
+                                                keyValue = tmpkeyValue;
+			    		
 						// Browser.println(translation);
 					}]]></Script>
 <TimeSensor DEF="nodeClock" cycleInterval="3" loop="true"></TimeSensor>
@@ -119,9 +123,9 @@ Appearance20.material = Material21;
 
 Shape18.appearance = Appearance20;
 
-Transform15.children = new MFNode();
+Transform15.child = new undefined();
 
-Transform15.children[0] = Shape18;
+Transform15.child[0] = Shape18;
 
 Transform Transform22 = createNode("Transform");
 Transform22.translation = new SFVec3f(new float[1,0,0]);
@@ -142,9 +146,9 @@ Appearance26.material = Material27;
 
 Shape23.appearance = Appearance26;
 
-Transform22.children = new MFNode();
+Transform22.child = new undefined();
 
-Transform22.children[0] = Shape23;
+Transform22.child[0] = Shape23;
 
 Transform15.children[1] = Transform22;
 
@@ -193,7 +197,11 @@ Script29.setSourceCode(`ecmascript:\n"+
 "					function set_cycle(value) {\n"+
 "                                                old = translation;\n"+
 "						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);\n"+
-"                                                keyValue = new MFVec3f([old, translation]);\n"+
+"                                                var tmpkeyValue = new MFVec3f();\n"+
+"			    			tmpkeyValue[0] = old;\n"+
+"			    			tmpkeyValue[1] = translation;\n"+
+"                                                keyValue = tmpkeyValue;\n"+
+"			    		\n"+
 "						// Browser.println(translation);\n"+
 "					}`)
 Group14.children[2] = Script29;
@@ -244,11 +252,11 @@ children[0] = ProtoDeclare10;
 
 ProtoDeclare ProtoDeclare39 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
-<ProtoDeclare name="cylinder" ><ProtoInterface><field name="set_positionA" accessType="inputOnly" type="SFVec3f"></field>
+<ProtoDeclare name="cyl" ><ProtoInterface><field name="set_positionA" accessType="inputOnly" type="SFVec3f"></field>
 <field name="set_positionB" accessType="inputOnly" type="SFVec3f"></field>
 </ProtoInterface>
-<ProtoBody><Group><Shape><Extrusion containerField="geometry" DEF="extrusion" creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0" spine="0 -50 0 0 50 0"></Extrusion>
-<Appearance><Material diffuseColor="0 1 0"></Material>
+<ProtoBody><Group><Shape><Extrusion DEF="extrusion" creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0" spine="0 -50 0 0 50 0"></Extrusion>
+<Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 1 0"></Material>
 </Appearance>
 </Shape>
 <Script DEF="MoveCylinder"><field name="spine" accessType="inputOutput" type="MFVec3f" value="0 -50 0 0 50 0"></field>
@@ -261,17 +269,29 @@ ProtoDeclare ProtoDeclare39 = browser.createX3DFromString(`<?xml version="1.0" e
 
                 function set_endA(value) {
 		    if (typeof spine === 'undefined') {
-		        spine = new MFVec3f([value, value]);
+		        var tmpspine = new MFVec3f();
+			tmpspine[0] = value;
+			tmpspine[1] = value;
+			spine = tmpspine;
 		    } else {
-		        spine = new MFVec3f([value, spine[1]]);
+		        var tmpspine = new MFVec3f();
+			tmpspine[0] = value;
+			tmpspine[1] = spine[1];
+			spine = tmpspine;
 		    }
                 }
 
                 function set_endB(value) {
 		    if (typeof spine === 'undefined') {
-		        spine = new MFVec3f([value, value]);
+		        var tmpspine = new MFVec3f();
+			tmpspine[0] = value;
+			tmpspine[1] = value;
+			spine = tmpspine;
 		    } else {
-		        spine = new MFVec3f([spine[0], value]);
+		        var tmpspine = new MFVec3f();
+			tmpspine[0] = spine[0];
+			tmpspine[1] = value;
+			spine = tmpspine;
 		    }
                 }
 
@@ -282,7 +302,7 @@ ProtoDeclare ProtoDeclare39 = browser.createX3DFromString(`<?xml version="1.0" e
 </Group>
 </ProtoBody>
 </ProtoDeclare>`);
-ProtoDeclare39.name = "cylinder";
+ProtoDeclare39.name = "cyl";
 ProtoInterface ProtoInterface40 = createNode("ProtoInterface");
 field field41 = createNode("field");
 field41.name = "set_positionA";
@@ -364,17 +384,29 @@ Script49.setSourceCode(`ecmascript:\n"+
 "\n"+
 "                function set_endA(value) {\n"+
 "		    if (typeof spine === 'undefined') {\n"+
-"		        spine = new MFVec3f([value, value]);\n"+
+"		        var tmpspine = new MFVec3f();\n"+
+"			tmpspine[0] = value;\n"+
+"			tmpspine[1] = value;\n"+
+"			spine = tmpspine;\n"+
 "		    } else {\n"+
-"		        spine = new MFVec3f([value, spine[1]]);\n"+
+"		        var tmpspine = new MFVec3f();\n"+
+"			tmpspine[0] = value;\n"+
+"			tmpspine[1] = spine[1];\n"+
+"			spine = tmpspine;\n"+
 "		    }\n"+
 "                }\n"+
 "\n"+
 "                function set_endB(value) {\n"+
 "		    if (typeof spine === 'undefined') {\n"+
-"		        spine = new MFVec3f([value, value]);\n"+
+"		        var tmpspine = new MFVec3f();\n"+
+"			tmpspine[0] = value;\n"+
+"			tmpspine[1] = value;\n"+
+"			spine = tmpspine;\n"+
 "		    } else {\n"+
-"		        spine = new MFVec3f([spine[0], value]);\n"+
+"		        var tmpspine = new MFVec3f();\n"+
+"			tmpspine[0] = spine[0];\n"+
+"			tmpspine[1] = value;\n"+
+"			spine = tmpspine;\n"+
 "		    }\n"+
 "                }\n"+
 "\n"+
@@ -459,7 +491,7 @@ ProtoInstance65.fieldValue[0] = fieldValue66;
 Transform57.children[4] = ProtoInstance65;
 
 ProtoInstance ProtoInstance67 = createNode("ProtoInstance");
-ProtoInstance67.name = "cylinder";
+ProtoInstance67.name = "cyl";
 ProtoInstance67.DEF = "linkA";
 fieldValue fieldValue68 = createNode("fieldValue");
 fieldValue68.name = "set_positionA";
@@ -476,7 +508,7 @@ ProtoInstance67.fieldValue[1] = fieldValue69;
 Transform57.children[5] = ProtoInstance67;
 
 ProtoInstance ProtoInstance70 = createNode("ProtoInstance");
-ProtoInstance70.name = "cylinder";
+ProtoInstance70.name = "cyl";
 ProtoInstance70.DEF = "linkB";
 fieldValue fieldValue71 = createNode("fieldValue");
 fieldValue71.name = "set_positionA";
@@ -493,7 +525,7 @@ ProtoInstance70.fieldValue[1] = fieldValue72;
 Transform57.children[6] = ProtoInstance70;
 
 ProtoInstance ProtoInstance73 = createNode("ProtoInstance");
-ProtoInstance73.name = "cylinder";
+ProtoInstance73.name = "cyl";
 ProtoInstance73.DEF = "linkC";
 fieldValue fieldValue74 = createNode("fieldValue");
 fieldValue74.name = "set_positionA";

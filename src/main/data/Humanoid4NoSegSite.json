@@ -14,11 +14,11 @@
         "meta": [
           {
             "@name":"title",
-            "@content":"Humanoid4NoSegSite.x3d"
+            "@content":"JohnBoy.x3d"
           },
           {
             "@name":"identifier",
-            "@content":"http://www.web3d.org/x3d/content/examples/HumanoidAnimation/Humanoid4NoSegSite.x3d"
+            "@content":"http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d"
           },
           {
             "@name":"description",
@@ -46,7 +46,7 @@
           },
           {
             "@name":"translated",
-            "@content":"14 September 2023"
+            "@content":"18 February 2024"
           },
           {
             "@name":"generator",
@@ -519,6 +519,9 @@
                                                             {
                                                               "@name":"l_tarsometatarsal_3",
                                                               "@DEF":"hanim_l_tarsometatarsal_3",
+                                                              "@center":[0.0944,0.0175,-0.0625],
+                                                              "@skinCoordIndex":[0],
+                                                              "@skinCoordWeight":[0],
                                                               "@ulimit":[0,0,0],
                                                               "@llimit":[0,0,0],
                                                               "-children":[
@@ -867,6 +870,9 @@
                                                             {
                                                               "@name":"r_tarsometatarsal_3",
                                                               "@DEF":"hanim_r_tarsometatarsal_3",
+                                                              "@center":[-0.0944,0.0175,-0.0625],
+                                                              "@skinCoordIndex":[0],
+                                                              "@skinCoordWeight":[0],
                                                               "@ulimit":[0,0,0],
                                                               "@llimit":[0,0,0],
                                                               "-children":[

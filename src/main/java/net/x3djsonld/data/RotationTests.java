@@ -94,7 +94,7 @@ import org.web3d.x3d.jsail.Time.*;
 	* @author Don Brutzman
  */
 
-public class RotationTests
+import net.coderextreme.X3DRoots;import java.util.List;import java.util.ArrayList;public class RotationTests implements X3DRoots 
 {
 	/** Default constructor to create this object. */
 	public RotationTests ()
@@ -156,11 +156,11 @@ public class RotationTests
     .addChild(new ROUTE().setFromNode("ClockStepper").setFromField("fraction_changed").setToNode("DiscreteFrameStepper").setToField("set_fraction"))
     .addComments(" TODO fix OrientationInterpolator euler-angle to SFRotation conversions ")
     .addChild(new OrientationInterpolator("Interpolator1").setKey(getInterpolator1_3_37_key()).setKeyValue(getInterpolator1_3_37_keyValue()))
-    .addComments("*** Warning: extra large comment found (6149 characters)")
+    .addComments("*** Warning: extra-large comment found (6149 characters)")
     .addChild(new OrientationInterpolator("Interpolator2").setKey(getInterpolator2_3_38_key()).setKeyValue(getInterpolator2_3_38_keyValue()))
-    .addComments("*** Warning: extra large comment found (5898 characters)")
+    .addComments("*** Warning: extra-large comment found (5898 characters)")
     .addChild(new OrientationInterpolator("Interpolator3").setKey(getInterpolator3_3_39_key()).setKeyValue(getInterpolator3_3_39_keyValue()))
-    .addComments("*** Warning: extra large comment found (6265 characters)")
+    .addComments("*** Warning: extra-large comment found (6265 characters)")
     .addChild(new ROUTE().setFromNode("ClockTimer").setFromField("fraction_changed").setToNode("Interpolator1").setToField("set_fraction"))
     .addChild(new ROUTE().setFromNode("DiscreteFrameStepper").setFromField("value_changed").setToNode("Interpolator1").setToField("set_fraction"))
     .addChild(new ROUTE().setFromNode("Interpolator1").setFromField("value_changed").setToNode("Transform1").setToField("set_rotation"))
@@ -398,6 +398,11 @@ public class RotationTests
 	{	  
 		return x3dModel;
 	}
+	public List<X3D> getRootNodeList() {
+		List<X3D> list = new ArrayList<X3D>(1);
+		list.add(x3dModel);
+		return list;
+	}
 	   
     /** 
      * Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
@@ -410,7 +415,7 @@ public class RotationTests
      */
     public static void main(String args[])
     {
-        System.out.println("Build this X3D model, showing diagnostics...");
+        System.out.println("Build this X3D model, showing validation diagnostics...");
         X3D thisExampleX3dModel = new RotationTests().getX3dModel();
 //      System.out.println("X3D model construction complete.");
 	

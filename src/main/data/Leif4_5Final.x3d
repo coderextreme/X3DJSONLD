@@ -34,8 +34,8 @@
       </Transform>
       <Group DEF='LeifHumanoid'>
         <HAnimHumanoid DEF='Leif'>
-          <HAnimJoint DEF='Leif_HumanoidRoot' containerField='skeleton'
-              name='HumanoidRoot'>
+          <HAnimJoint DEF='Leif_humanoid_root' containerField='skeleton'
+              name='humanoid_root'>
             <Viewpoint DEF='LeifRootView'
                 description=' Root View '
                 position='0 0.5 1.5'/>
@@ -576,7 +576,7 @@
     <TimeSensor DEF='z100sTimer'
         cycleInterval='10'
         loop='true'/>
-    <PositionInterpolator DEF='Leif_HumanoidRoot_TranslationInterpolator'
+    <PositionInterpolator DEF='Leif_humanoid_root_TranslationInterpolator'
         key='0, 0.09, 0.11, 0.223, 0.043, 0.55, 0.63, 0.73, 0.85, 0.86, 1'
         keyValue='-7.9962 0.4 3, -7.9962 0.4 3, -7.9962 0.4 3, -7.9962 0.4 3, 9.004 0.475 3.4999, 11.5048 0.475 3.3699, 16.0038 0.475 7.8699, 18.5038 0.475 14.8699, 23.0038 0.475 24.3699, 23.0038 0.475 24.3699, 23.0038 0.475 24.3699'/>
     <OrientationInterpolator DEF='Leif_Pitch2Interpolator'
@@ -1262,10 +1262,10 @@
       <TimeSensor DEF='StopTimer'
           cycleInterval='5.73'
           loop='true'/>
-      <PositionInterpolator DEF='Stop_HumanoidRootTransInterp'
+      <PositionInterpolator DEF='Stop_humanoid_rootTransInterp'
           key='0, 0.5, 1'
           keyValue='0 0 0, 0 0 0, 0 0 0'/>
-      <OrientationInterpolator DEF='Stop_HumanoidRootRotInterp'
+      <OrientationInterpolator DEF='Stop_humanoid_rootRotInterp'
           key='0, 0.5, 1'
           keyValue='0 0 1 0, 0 0 1 0, 0 0 1 0'/>
       <OrientationInterpolator DEF='Stop_sacroiliacRotInterp'
@@ -1479,8 +1479,8 @@
     <ROUTE fromNode='Stand_l_shoulderRotInterp' fromField='value_changed' toNode='Leif_l_shoulder' toField='set_rotation'/>
     <ROUTE fromNode='Stand_headRotInterp' fromField='value_changed' toNode='Leif_skullbase' toField='set_rotation'/>
     <ROUTE fromNode='Stand_lower_bodyRotInterp' fromField='value_changed' toNode='Leif_sacroiliac' toField='set_rotation'/>
-    <ROUTE fromNode='Stand_whole_bodyRotInterp' fromField='value_changed' toNode='Leif_HumanoidRoot' toField='set_rotation'/>
-    <ROUTE fromNode='Stand_whole_bodyTransInterp' fromField='value_changed' toNode='Leif_HumanoidRoot' toField='set_translation'/>
+    <ROUTE fromNode='Stand_whole_bodyRotInterp' fromField='value_changed' toNode='Leif_humanoid_root' toField='set_rotation'/>
+    <ROUTE fromNode='Stand_whole_bodyTransInterp' fromField='value_changed' toNode='Leif_humanoid_root' toField='set_translation'/>
     <ROUTE fromNode='Stand_l_sternoclavicularRoll' fromField='value_changed' toNode='Leif_l_sternoclavicular' toField='set_rotation'/>
     <ROUTE fromNode='Stand_r_sternoclavicularRoll' fromField='value_changed' toNode='Leif_r_sternoclavicular' toField='set_rotation'/>
     <ROUTE fromNode='Stand_r_metatarsophalangeal_2Pitch' fromField='value_changed' toNode='Leif_l_metatarsophalangeal_1' toField='set_rotation'/>
@@ -1542,7 +1542,7 @@
     <ROUTE fromNode='Pitches_l_shoulderRotInterp' fromField='value_changed' toNode='Leif_l_shoulder' toField='set_rotation'/>
     <ROUTE fromNode='Pitches_headRotInterp' fromField='value_changed' toNode='Leif_skullbase' toField='set_rotation'/>
     <ROUTE fromNode='Pitches_neckRotInterp' fromField='value_changed' toNode='Leif_vc4' toField='set_rotation'/>
-    <ROUTE fromNode='Pitches_whole_bodyTransInterp' fromField='value_changed' toNode='Leif_HumanoidRoot' toField='set_translation'/>
+    <ROUTE fromNode='Pitches_whole_bodyTransInterp' fromField='value_changed' toNode='Leif_humanoid_root' toField='set_translation'/>
     <ROUTE fromNode='Pitch_l_sternoclavicularRoll' fromField='value_changed' toNode='Leif_l_sternoclavicular' toField='set_rotation'/>
     <ROUTE fromNode='Pitch_r_sternoclavicularRoll' fromField='value_changed' toNode='Leif_r_sternoclavicular' toField='set_rotation'/>
     <ROUTE fromNode='Pitch_r_metatarsophalangeal_2Pitch' fromField='value_changed' toNode='Leif_l_metatarsophalangeal_1' toField='set_rotation'/>
@@ -1592,8 +1592,8 @@
     <ROUTE fromNode='Yaws_l_shoulderRotInterp' fromField='value_changed' toNode='Leif_l_shoulder' toField='set_rotation'/>
     <ROUTE fromNode='Yaws_headRotInterp' fromField='value_changed' toNode='Leif_skullbase' toField='set_rotation'/>
     <ROUTE fromNode='Yaws_neckRotInterp' fromField='value_changed' toNode='Leif_vc4' toField='set_rotation'/>
-    <ROUTE fromNode='Yaws_whole_bodyRotInterp' fromField='value_changed' toNode='Leif_HumanoidRoot' toField='set_rotation'/>
-    <ROUTE fromNode='Yaws_whole_bodyTransInterp' fromField='value_changed' toNode='Leif_HumanoidRoot' toField='set_translation'/>
+    <ROUTE fromNode='Yaws_whole_bodyRotInterp' fromField='value_changed' toNode='Leif_humanoid_root' toField='set_rotation'/>
+    <ROUTE fromNode='Yaws_whole_bodyTransInterp' fromField='value_changed' toNode='Leif_humanoid_root' toField='set_translation'/>
     <ROUTE fromNode='Yaw_l_sternoclavicularRoll' fromField='value_changed' toNode='Leif_l_sternoclavicular' toField='set_rotation'/>
     <ROUTE fromNode='Yaw_r_sternoclavicularRoll' fromField='value_changed' toNode='Leif_r_sternoclavicular' toField='set_rotation'/>
     <ROUTE fromNode='Yaw_r_metatarsophalangeal_2Pitch' fromField='value_changed' toNode='Leif_l_metatarsophalangeal_1' toField='set_rotation'/>
@@ -1643,8 +1643,8 @@
     <ROUTE fromNode='Rolls_l_shoulderRotInterp' fromField='value_changed' toNode='Leif_l_shoulder' toField='set_rotation'/>
     <ROUTE fromNode='Rolls_headRotInterp' fromField='value_changed' toNode='Leif_skullbase' toField='set_rotation'/>
     <ROUTE fromNode='Rolls_neckRotInterp' fromField='value_changed' toNode='Leif_vc4' toField='set_rotation'/>
-    <ROUTE fromNode='Rolls_whole_bodyRotInterp' fromField='value_changed' toNode='Leif_HumanoidRoot' toField='set_rotation'/>
-    <ROUTE fromNode='Rolls_whole_bodyTransInterp' fromField='value_changed' toNode='Leif_HumanoidRoot' toField='set_translation'/>
+    <ROUTE fromNode='Rolls_whole_bodyRotInterp' fromField='value_changed' toNode='Leif_humanoid_root' toField='set_rotation'/>
+    <ROUTE fromNode='Rolls_whole_bodyTransInterp' fromField='value_changed' toNode='Leif_humanoid_root' toField='set_translation'/>
     <ROUTE fromNode='Roll_l_sternoclavicularRoll' fromField='value_changed' toNode='Leif_l_sternoclavicular' toField='set_rotation'/>
     <ROUTE fromNode='Roll_r_sternoclavicularRoll' fromField='value_changed' toNode='Leif_r_sternoclavicular' toField='set_rotation'/>
     <ROUTE fromNode='Roll_r_metatarsophalangeal_2Pitch' fromField='value_changed' toNode='Leif_l_metatarsophalangeal_1' toField='set_rotation'/>
@@ -1694,8 +1694,8 @@
     <ROUTE fromNode='Walk_l_shoulderRotInterp' fromField='value_changed' toNode='Leif_l_shoulder' toField='set_rotation'/>
     <ROUTE fromNode='Walk_headRotInterp' fromField='value_changed' toNode='Leif_skullbase' toField='set_rotation'/>
     <ROUTE fromNode='Walk_neckRotInterp' fromField='value_changed' toNode='Leif_vc4' toField='set_rotation'/>
-    <ROUTE fromNode='Walk_whole_bodyRotInterp' fromField='value_changed' toNode='Leif_HumanoidRoot' toField='set_rotation'/>
-    <ROUTE fromNode='Walk_whole_bodyTranInterp' fromField='value_changed' toNode='Leif_HumanoidRoot' toField='set_translation'/>
+    <ROUTE fromNode='Walk_whole_bodyRotInterp' fromField='value_changed' toNode='Leif_humanoid_root' toField='set_rotation'/>
+    <ROUTE fromNode='Walk_whole_bodyTranInterp' fromField='value_changed' toNode='Leif_humanoid_root' toField='set_translation'/>
     <ROUTE fromNode='Walk_l_sternoclavicularRoll' fromField='value_changed' toNode='Leif_l_sternoclavicular' toField='set_rotation'/>
     <ROUTE fromNode='Walk_r_sternoclavicularRoll' fromField='value_changed' toNode='Leif_r_sternoclavicular' toField='set_rotation'/>
     <ROUTE fromNode='Walk_r_metatarsophalangeal_2Pitch' fromField='value_changed' toNode='Leif_l_metatarsophalangeal_1' toField='set_rotation'/>
@@ -1745,8 +1745,8 @@
     <ROUTE fromNode='Run_lower_bodyRotInterp_Run' fromField='value_changed' toNode='Leif_sacroiliac' toField='set_rotation'/>
     <ROUTE fromNode='Run_headRotInterp_Run' fromField='value_changed' toNode='Leif_skullbase' toField='set_rotation'/>
     <ROUTE fromNode='Run_neckRotInterp_Run' fromField='value_changed' toNode='Leif_vc4' toField='set_rotation'/>
-    <ROUTE fromNode='Run_whole_bodyRotInterp_Run' fromField='value_changed' toNode='Leif_HumanoidRoot' toField='set_rotation'/>
-    <ROUTE fromNode='Run_whole_bodyTranInterp_Run' fromField='value_changed' toNode='Leif_HumanoidRoot' toField='set_translation'/>
+    <ROUTE fromNode='Run_whole_bodyRotInterp_Run' fromField='value_changed' toNode='Leif_humanoid_root' toField='set_rotation'/>
+    <ROUTE fromNode='Run_whole_bodyTranInterp_Run' fromField='value_changed' toNode='Leif_humanoid_root' toField='set_translation'/>
     <ROUTE fromNode='Run_l_sternoclavicularRoll' fromField='value_changed' toNode='Leif_l_sternoclavicular' toField='set_rotation'/>
     <ROUTE fromNode='Run_r_sternoclavicularRoll' fromField='value_changed' toNode='Leif_r_sternoclavicular' toField='set_rotation'/>
     <ROUTE fromNode='Run_r_metatarsophalangeal_2Pitch' fromField='value_changed' toNode='Leif_l_metatarsophalangeal_1' toField='set_rotation'/>
@@ -1796,8 +1796,8 @@
     <ROUTE fromNode='Jump_l_shoulderRotInterp' fromField='value_changed' toNode='Leif_l_shoulder' toField='set_rotation'/>
     <ROUTE fromNode='Jump_headRotInterp' fromField='value_changed' toNode='Leif_skullbase' toField='set_rotation'/>
     <ROUTE fromNode='Jump_neckRotInterp' fromField='value_changed' toNode='Leif_vc4' toField='set_rotation'/>
-    <ROUTE fromNode='Jump_whole_bodyRotInterp' fromField='value_changed' toNode='Leif_HumanoidRoot' toField='set_rotation'/>
-    <ROUTE fromNode='Jump_whole_bodyTranInterp' fromField='value_changed' toNode='Leif_HumanoidRoot' toField='set_translation'/>
+    <ROUTE fromNode='Jump_whole_bodyRotInterp' fromField='value_changed' toNode='Leif_humanoid_root' toField='set_rotation'/>
+    <ROUTE fromNode='Jump_whole_bodyTranInterp' fromField='value_changed' toNode='Leif_humanoid_root' toField='set_translation'/>
     <ROUTE fromNode='Jump_l_sternoclavicularRoll' fromField='value_changed' toNode='Leif_l_sternoclavicular' toField='set_rotation'/>
     <ROUTE fromNode='Jump_r_sternoclavicularRoll' fromField='value_changed' toNode='Leif_r_sternoclavicular' toField='set_rotation'/>
     <ROUTE fromNode='Jump_r_metatarsophalangeal_2Pitch' fromField='value_changed' toNode='Leif_l_metatarsophalangeal_1' toField='set_rotation'/>
@@ -1851,11 +1851,11 @@
     <ROUTE fromNode='Kick_sacroiliacYaw' fromField='value_changed' toNode='Leif_sacroiliac' toField='set_rotation'/>
     <ROUTE fromNode='Kick_vl5Yaw' fromField='value_changed' toNode='Leif_vl5' toField='set_rotation'/>
     <ROUTE fromNode='Kick_lower_bodyRotInterp' fromField='value_changed' toNode='Leif_sacroiliac' toField='set_rotation'/>
-    <ROUTE fromNode='Kick_whole_bodyRotInterp' fromField='value_changed' toNode='Leif_HumanoidRoot' toField='set_rotation'/>
-    <ROUTE fromNode='Kick_whole_bodyTransInterp' fromField='value_changed' toNode='Leif_HumanoidRoot' toField='set_translation'/>
+    <ROUTE fromNode='Kick_whole_bodyRotInterp' fromField='value_changed' toNode='Leif_humanoid_root' toField='set_rotation'/>
+    <ROUTE fromNode='Kick_whole_bodyTransInterp' fromField='value_changed' toNode='Leif_humanoid_root' toField='set_translation'/>
     <ROUTE fromNode='Kick_neckRotInterp' fromField='value_changed' toNode='Leif_vc4' toField='set_rotation'/>
-    <ROUTE fromNode='StopTimer' fromField='fraction_changed' toNode='Stop_HumanoidRootTransInterp' toField='set_fraction'/>
-    <ROUTE fromNode='StopTimer' fromField='fraction_changed' toNode='Stop_HumanoidRootRotInterp' toField='set_fraction'/>
+    <ROUTE fromNode='StopTimer' fromField='fraction_changed' toNode='Stop_humanoid_rootTransInterp' toField='set_fraction'/>
+    <ROUTE fromNode='StopTimer' fromField='fraction_changed' toNode='Stop_humanoid_rootRotInterp' toField='set_fraction'/>
     <ROUTE fromNode='StopTimer' fromField='fraction_changed' toNode='Stop_sacroiliacRotInterp' toField='set_fraction'/>
     <ROUTE fromNode='StopTimer' fromField='fraction_changed' toNode='Stop_l_hipRotInterp' toField='set_fraction'/>
     <ROUTE fromNode='StopTimer' fromField='fraction_changed' toNode='Stop_l_kneeRotInterp' toField='set_fraction'/>
@@ -1910,8 +1910,8 @@
     <ROUTE fromNode='StopTimer' fromField='fraction_changed' toNode='Stop_r_carpal_proximal_interphalangeal_5RotInterp' toField='set_fraction'/>
     <ROUTE fromNode='StopTimer' fromField='fraction_changed' toNode='Stop_r_metacarpophalangeal_5RotInterp' toField='set_fraction'/>
     <ROUTE fromNode='StopTimer' fromField='fraction_changed' toNode='Stop_r_carpal_distal_interphalangeal_5RotInterp' toField='set_fraction'/>
-    <ROUTE fromNode='Stop_HumanoidRootTransInterp' fromField='value_changed' toNode='Leif_HumanoidRoot' toField='set_translation'/>
-    <ROUTE fromNode='Stop_HumanoidRootRotInterp' fromField='value_changed' toNode='Leif_HumanoidRoot' toField='set_rotation'/>
+    <ROUTE fromNode='Stop_humanoid_rootTransInterp' fromField='value_changed' toNode='Leif_humanoid_root' toField='set_translation'/>
+    <ROUTE fromNode='Stop_humanoid_rootRotInterp' fromField='value_changed' toNode='Leif_humanoid_root' toField='set_rotation'/>
     <ROUTE fromNode='Stop_sacroiliacRotInterp' fromField='value_changed' toNode='Leif_sacroiliac' toField='set_rotation'/>
     <ROUTE fromNode='Stop_l_hipRotInterp' fromField='value_changed' toNode='Leif_l_hip' toField='set_rotation'/>
     <ROUTE fromNode='Stop_l_kneeRotInterp' fromField='value_changed' toNode='Leif_l_knee' toField='set_rotation'/>

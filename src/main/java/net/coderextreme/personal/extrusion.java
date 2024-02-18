@@ -36,29 +36,38 @@ import org.web3d.x3d.jsail.Texturing.*;
 import org.web3d.x3d.jsail.Time.*;
 import org.web3d.x3d.jsail.VolumeRendering.*;
 import org.web3d.x3d.jsail.fields.*;
-public class extrusion {
+import java.util.ArrayList;
+import java.util.List;
+import net.coderextreme.X3DRoots;
+public class extrusion implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    X3D model = new extrusion().initialize();
+    X3D model = new extrusion().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
+    model.toFileX3D("../personal/extrusion.new.java.x3d");
     model.toFileJSON("../personal/extrusion.new.json");
     }
+    public List<X3D> getRootNodeList() {
+    	List<X3D> list = new ArrayList<X3D>(1);
+    	list.add(initialize());
+    	return list;
+    }
     public X3D initialize() {
-      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
+      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
       .setHead(new head()
         .addMeta(new meta().setName("creator").setContent("John W Carlson"))
         .addMeta(new meta().setName("created").setContent("December 13 2015"))
         .addMeta(new meta().setName("title").setContent("extrusion.x3d"))
-        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/force.x3d"))
+        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/extrusion.x3d"))
         .addMeta(new meta().setName("description").setContent("beginnings of a force directed graph in 3D"))
         .addMeta(new meta().setName("generator").setContent("Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit")))
       .setScene(new Scene()
         .addChild(new Group()
           .addChild(new Shape()
-            .setGeometry(new Extrusion().setDEF("extrusion").setSpine(new MFVec3f0().getArray()).setCreaseAngle(0.785f ).setCrossSection(new MFVec2f1().getArray()))
+            .setGeometry(new Extrusion().setDEF("extrusion").setSpine(new MFVec3f0().getArray()).setCreaseAngle(0.785).setCrossSection(new MFVec2f1().getArray()))
             .setAppearance(new Appearance()
-              .setMaterial(new Material().setDiffuseColor(new float[] {0f ,1f ,0f }))))
+              .setMaterial(new Material().setDiffuseColor(new double[] {0,1,0}))))
           .addChild(new TimeSensor().setDEF("TourTime").setLoop(true))
           .addChild(new Script().setDEF("MoveCylinder")
             .addField(new field().setType("SFTime").setName("set_cycle").setAccessType(field.ACCESSTYPE_INPUTONLY))
@@ -69,7 +78,10 @@ public class extrusion {
 "                        Browser.print(value);\n"+
 "                        var endA = new SFVec3f(spine[0].x*Math.random()*2, spine[0].y*Math.random()*2, spine[0].z*Math.random()*2);\n"+
 "                        var endB = new SFVec3f(spine[1].x*Math.random()*2, spine[1].y*Math.random()*2, spine[1].z*Math.random()*2);\n"+
-"		        spine = new MFVec3f([endA, endB]);\n"+
+"                        var tmpspine = new MFVec3f();\n"+
+"			tmpspine[0] = endA;\n"+
+"			tmpspine[1] = endB;\n"+
+"                        spine = tmpspine;\n"+
 "                }"))
           .addChild(new ROUTE().setFromNode("TourTime").setFromField("cycleTime").setToNode("MoveCylinder").setToField("set_cycle"))
           .addChild(new ROUTE().setFromNode("MoveCylinder").setFromField("spine_changed").setToNode("extrusion").setToField("set_spine"))))      ;
@@ -77,12 +89,12 @@ public class extrusion {
     }
 private class MFVec3f0 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-50f ,-50f ,0f ,50f ,50f ,0f });
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {-50,-50,0,50,50,0});
   }
 }
 private class MFVec2f1 {
   private org.web3d.x3d.jsail.fields.MFVec2f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec2f(new float[] {1f ,0f ,0.92f ,-0.38f ,0.71f ,-0.71f ,0.38f ,-0.92f ,0f ,-1f ,-0.38f ,-0.92f ,-0.71f ,-0.71f ,-0.92f ,-0.38f ,-1f ,0f ,-0.92f ,0.38f ,-0.71f ,0.71f ,-0.38f ,0.92f ,0f ,1f ,0.38f ,0.92f ,0.71f ,0.71f ,0.92f ,0.38f ,1f ,0f });
+    return new org.web3d.x3d.jsail.fields.MFVec2f(new double[] {1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0});
   }
 }
 }

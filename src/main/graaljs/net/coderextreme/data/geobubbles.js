@@ -4,6 +4,10 @@ ConfigurationProperties.showDefaultAttributes = false;
 ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;
 ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
+function doubleToFloat(d) {
+    if (Float32Array)
+	return new Float32Array([d])[0];
+}
       var X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
       .setHead(new head()
         .addComponent(new component().setName("Geospatial").setLevel(1))
@@ -15,15 +19,15 @@ ConfigurationProperties.setStripTrailingZeroes(true);
       .setScene(new Scene()
         .addComments(new CommentsBlock("Viewpoint DEF='Tour' position='0 0 4' orientation='1 0 0 0' description='Tour Views'/"))
         .addComments(new CommentsBlock("PositionInterpolator DEF='TourPosition' key='0 1' keyValue='-0.5 -0.5 4 -0.5 0.5 4'/"))
-        .addChild(new GeoViewpoint().setDEF("Tour").setPosition(Java.to([0,0,4], Java.type("double[]"))).setOrientation(Java.to([1,0,0,0], Java.type("double[]"))).setDescription("Tour Views"))
+        .addChild(new GeoViewpoint().setDEF("Tour").setPosition(Java.to([0,0,4], Java.type("double[]"))).setOrientation(Java.to([doubleToFloat(1),doubleToFloat(0),doubleToFloat(0),doubleToFloat(0)], Java.type("float[]"))).setDescription("Tour Views"))
         .addChild(new Background().setBackUrl(Java.to(["../resources/images/BK.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/BK.png"], Java.type("java.lang.String[]"))).setBottomUrl(Java.to(["../resources/images/BT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/BT.png"], Java.type("java.lang.String[]"))).setFrontUrl(Java.to(["../resources/images/FR.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/FR.png"], Java.type("java.lang.String[]"))).setLeftUrl(Java.to(["../resources/images/LF.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/LF.png"], Java.type("java.lang.String[]"))).setRightUrl(Java.to(["../resources/images/RT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/RT.png"], Java.type("java.lang.String[]"))).setTopUrl(Java.to(["../resources/images/TP.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/TP.png"], Java.type("java.lang.String[]"))))
         .addChild(new Transform()
           .addChild(new Shape()
             .setGeometry(new Sphere())
             .setAppearance(new Appearance()
-              .setMaterial(new Material().setDiffuseColor(Java.to([0.7,0.7,0.7], Java.type("double[]"))).setSpecularColor(Java.to([0.5,0.5,0.5], Java.type("double[]")))))))
+              .setMaterial(new Material().setDiffuseColor(Java.to([doubleToFloat(0.7),doubleToFloat(0.7),doubleToFloat(0.7)], Java.type("float[]"))).setSpecularColor(Java.to([doubleToFloat(0.5),doubleToFloat(0.5),doubleToFloat(0.5)], Java.type("float[]")))))))
         .addChild(new TimeSensor().setDEF("TourTime").setCycleInterval(5).setLoop(true))
-        .addChild(new GeoPositionInterpolator().setDEF("TourPosition").setKey(Java.to([0,1], Java.type("double[]"))).setKeyValue(Java.to([0.0015708,0,4,0,0.0015708,4], Java.type("double[]"))))
+        .addChild(new GeoPositionInterpolator().setDEF("TourPosition").setKey(Java.to([doubleToFloat(0),doubleToFloat(1)], Java.type("float[]"))).setKeyValue(Java.to([0.0015708,0,4,0,0.0015708,4], Java.type("double[]"))))
         .addChild(new Script().setDEF("RandomTourTime")
           .addField(new field().setType(field.TYPE_SFTIME).setName("set_cycle").setAccessType(field.ACCESSTYPE_INPUTONLY))
           .addField(new field().setType(field.TYPE_SFFLOAT).setName("val").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0"))

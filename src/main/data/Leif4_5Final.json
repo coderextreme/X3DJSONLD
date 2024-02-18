@@ -22,7 +22,7 @@
           },
           {
             "@name":"translated",
-            "@content":"14 September 2023"
+            "@content":"18 February 2024"
           },
           {
             "@name":"generator",
@@ -109,8 +109,8 @@
                           "-skeleton":[
                             { "HAnimJoint":
                               {
-                                "@name":"HumanoidRoot",
-                                "@DEF":"Leif_HumanoidRoot",
+                                "@name":"humanoid_root",
+                                "@DEF":"Leif_humanoid_root",
                                 "@ulimit":[0,0,0],
                                 "@llimit":[0,0,0],
                                 "-children":[
@@ -1480,7 +1480,7 @@
           },
           { "PositionInterpolator":
             {
-              "@DEF":"Leif_HumanoidRoot_TranslationInterpolator",
+              "@DEF":"Leif_humanoid_root_TranslationInterpolator",
               "@key":[0,0.09,0.11,0.223,0.043,0.55,0.63,0.73,0.85,0.86,1],
               "@keyValue":[-7.9962,0.4,3,-7.9962,0.4,3,-7.9962,0.4,3,-7.9962,0.4,3,9.004,0.475,3.4999,11.5048,0.475,3.3699,16.0038,0.475,7.8699,18.5038,0.475,14.8699,23.0038,0.475,24.3699,23.0038,0.475,24.3699,23.0038,0.475,24.3699]
             }
@@ -3101,14 +3101,14 @@
                 },
                 { "PositionInterpolator":
                   {
-                    "@DEF":"Stop_HumanoidRootTransInterp",
+                    "@DEF":"Stop_humanoid_rootTransInterp",
                     "@key":[0,0.5,1],
                     "@keyValue":[0,0,0,0,0,0,0,0,0]
                   }
                 },
                 { "OrientationInterpolator":
                   {
-                    "@DEF":"Stop_HumanoidRootRotInterp",
+                    "@DEF":"Stop_humanoid_rootRotInterp",
                     "@key":[0,0.5,1],
                     "@keyValue":[0,0,1,0,0,0,1,0,0,0,1,0]
                   }
@@ -3882,7 +3882,7 @@
             {
               "@fromNode":"Stand_whole_bodyRotInterp",
               "@fromField":"value_changed",
-              "@toNode":"Leif_HumanoidRoot",
+              "@toNode":"Leif_humanoid_root",
               "@toField":"set_rotation"
             }
           },
@@ -3890,7 +3890,7 @@
             {
               "@fromNode":"Stand_whole_bodyTransInterp",
               "@fromField":"value_changed",
-              "@toNode":"Leif_HumanoidRoot",
+              "@toNode":"Leif_humanoid_root",
               "@toField":"set_translation"
             }
           },
@@ -4386,7 +4386,7 @@
             {
               "@fromNode":"Pitches_whole_bodyTransInterp",
               "@fromField":"value_changed",
-              "@toNode":"Leif_HumanoidRoot",
+              "@toNode":"Leif_humanoid_root",
               "@toField":"set_translation"
             }
           },
@@ -4786,7 +4786,7 @@
             {
               "@fromNode":"Yaws_whole_bodyRotInterp",
               "@fromField":"value_changed",
-              "@toNode":"Leif_HumanoidRoot",
+              "@toNode":"Leif_humanoid_root",
               "@toField":"set_rotation"
             }
           },
@@ -4794,7 +4794,7 @@
             {
               "@fromNode":"Yaws_whole_bodyTransInterp",
               "@fromField":"value_changed",
-              "@toNode":"Leif_HumanoidRoot",
+              "@toNode":"Leif_humanoid_root",
               "@toField":"set_translation"
             }
           },
@@ -5194,7 +5194,7 @@
             {
               "@fromNode":"Rolls_whole_bodyRotInterp",
               "@fromField":"value_changed",
-              "@toNode":"Leif_HumanoidRoot",
+              "@toNode":"Leif_humanoid_root",
               "@toField":"set_rotation"
             }
           },
@@ -5202,7 +5202,7 @@
             {
               "@fromNode":"Rolls_whole_bodyTransInterp",
               "@fromField":"value_changed",
-              "@toNode":"Leif_HumanoidRoot",
+              "@toNode":"Leif_humanoid_root",
               "@toField":"set_translation"
             }
           },
@@ -5602,7 +5602,7 @@
             {
               "@fromNode":"Walk_whole_bodyRotInterp",
               "@fromField":"value_changed",
-              "@toNode":"Leif_HumanoidRoot",
+              "@toNode":"Leif_humanoid_root",
               "@toField":"set_rotation"
             }
           },
@@ -5610,7 +5610,7 @@
             {
               "@fromNode":"Walk_whole_bodyTranInterp",
               "@fromField":"value_changed",
-              "@toNode":"Leif_HumanoidRoot",
+              "@toNode":"Leif_humanoid_root",
               "@toField":"set_translation"
             }
           },
@@ -6010,7 +6010,7 @@
             {
               "@fromNode":"Run_whole_bodyRotInterp_Run",
               "@fromField":"value_changed",
-              "@toNode":"Leif_HumanoidRoot",
+              "@toNode":"Leif_humanoid_root",
               "@toField":"set_rotation"
             }
           },
@@ -6018,7 +6018,7 @@
             {
               "@fromNode":"Run_whole_bodyTranInterp_Run",
               "@fromField":"value_changed",
-              "@toNode":"Leif_HumanoidRoot",
+              "@toNode":"Leif_humanoid_root",
               "@toField":"set_translation"
             }
           },
@@ -6418,7 +6418,7 @@
             {
               "@fromNode":"Jump_whole_bodyRotInterp",
               "@fromField":"value_changed",
-              "@toNode":"Leif_HumanoidRoot",
+              "@toNode":"Leif_humanoid_root",
               "@toField":"set_rotation"
             }
           },
@@ -6426,7 +6426,7 @@
             {
               "@fromNode":"Jump_whole_bodyTranInterp",
               "@fromField":"value_changed",
-              "@toNode":"Leif_HumanoidRoot",
+              "@toNode":"Leif_humanoid_root",
               "@toField":"set_translation"
             }
           },
@@ -6858,7 +6858,7 @@
             {
               "@fromNode":"Kick_whole_bodyRotInterp",
               "@fromField":"value_changed",
-              "@toNode":"Leif_HumanoidRoot",
+              "@toNode":"Leif_humanoid_root",
               "@toField":"set_rotation"
             }
           },
@@ -6866,7 +6866,7 @@
             {
               "@fromNode":"Kick_whole_bodyTransInterp",
               "@fromField":"value_changed",
-              "@toNode":"Leif_HumanoidRoot",
+              "@toNode":"Leif_humanoid_root",
               "@toField":"set_translation"
             }
           },
@@ -6882,7 +6882,7 @@
             {
               "@fromNode":"StopTimer",
               "@fromField":"fraction_changed",
-              "@toNode":"Stop_HumanoidRootTransInterp",
+              "@toNode":"Stop_humanoid_rootTransInterp",
               "@toField":"set_fraction"
             }
           },
@@ -6890,7 +6890,7 @@
             {
               "@fromNode":"StopTimer",
               "@fromField":"fraction_changed",
-              "@toNode":"Stop_HumanoidRootRotInterp",
+              "@toNode":"Stop_humanoid_rootRotInterp",
               "@toField":"set_fraction"
             }
           },
@@ -7328,17 +7328,17 @@
           },
           { "ROUTE":
             {
-              "@fromNode":"Stop_HumanoidRootTransInterp",
+              "@fromNode":"Stop_humanoid_rootTransInterp",
               "@fromField":"value_changed",
-              "@toNode":"Leif_HumanoidRoot",
+              "@toNode":"Leif_humanoid_root",
               "@toField":"set_translation"
             }
           },
           { "ROUTE":
             {
-              "@fromNode":"Stop_HumanoidRootRotInterp",
+              "@fromNode":"Stop_humanoid_rootRotInterp",
               "@fromField":"value_changed",
-              "@toNode":"Leif_HumanoidRoot",
+              "@toNode":"Leif_humanoid_root",
               "@toField":"set_rotation"
             }
           },

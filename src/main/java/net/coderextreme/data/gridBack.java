@@ -36,13 +36,22 @@ import org.web3d.x3d.jsail.Texturing.*;
 import org.web3d.x3d.jsail.Time.*;
 import org.web3d.x3d.jsail.VolumeRendering.*;
 import org.web3d.x3d.jsail.fields.*;
-public class gridBack {
+import java.util.ArrayList;
+import java.util.List;
+import net.coderextreme.X3DRoots;
+public class gridBack implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    X3D model = new gridBack().initialize();
+    X3D model = new gridBack().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
+    model.toFileX3D("../data/gridBack.new.java.x3d");
     model.toFileJSON("../data/gridBack.new.json");
+    }
+    public List<X3D> getRootNodeList() {
+    	List<X3D> list = new ArrayList<X3D>(1);
+    	list.add(initialize());
+    	return list;
     }
     public X3D initialize() {
       X3D X3D0 =  new X3D().setProfile("Interchange").setVersion("3.0")
@@ -61,7 +70,7 @@ public class gridBack {
       .setScene(new Scene()
         .addChild(new Shape()
           .setAppearance(new Appearance()
-            .setMaterial(new Material().setAmbientIntensity(0.01f ).setDiffuseColor(new float[] {1f ,1f ,1f }).setShininess(0.05f )))
+            .setMaterial(new Material().setAmbientIntensity(0.01).setDiffuseColor(new double[] {1,1,1}).setShininess(0.05)))
           .setGeometry(new IndexedFaceSet().setColorIndex(new MFInt320().getArray()).setColorPerVertex(false).setCoordIndex(new MFInt321().getArray()).setNormalPerVertex(false)
             .setCoord(new Coordinate().setPoint(new MFVec3f2().getArray()))
             .setColor(new Color().setColor(new MFColor3().getArray())))))      ;
@@ -79,12 +88,12 @@ private class MFInt321 {
 }
 private class MFVec3f2 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-5.25f ,5.25f ,0f ,-3.75f ,5.25f ,0f ,-2.25f ,5.25f ,0f ,-0.75f ,5.25f ,0f ,0.75f ,5.25f ,0f ,2.25f ,5.25f ,0f ,3.75f ,5.25f ,0f ,5.25f ,5.25f ,0f ,-5.25f ,3.75f ,0f ,-3.75f ,3.75f ,0f ,-2.25f ,3.75f ,0f ,-0.75f ,3.75f ,0f ,0.75f ,3.75f ,0f ,2.25f ,3.75f ,0f ,3.75f ,3.75f ,0f ,5.25f ,3.75f ,0f ,-5.25f ,2.25f ,0f ,-3.75f ,2.25f ,0f ,-2.25f ,2.25f ,0f ,-0.75f ,2.25f ,0f ,0.75f ,2.25f ,0f ,2.25f ,2.25f ,0f ,3.75f ,2.25f ,0f ,5.25f ,2.25f ,0f ,-5.25f ,0.75f ,0f ,-3.75f ,0.75f ,0f ,-2.25f ,0.75f ,0f ,-0.75f ,0.75f ,0f ,0.75f ,0.75f ,0f ,2.25f ,0.75f ,0f ,3.75f ,0.75f ,0f ,5.25f ,0.75f ,0f ,-5.25f ,-0.75f ,0f ,-3.75f ,-0.75f ,0f ,-2.25f ,-0.75f ,0f ,-0.75f ,-0.75f ,0f ,0.75f ,-0.75f ,0f ,2.25f ,-0.75f ,0f ,3.75f ,-0.75f ,0f ,5.25f ,-0.75f ,0f ,-5.25f ,-2.25f ,0f ,-3.75f ,-2.25f ,0f ,-2.25f ,-2.25f ,0f ,-0.75f ,-2.25f ,0f ,0.75f ,-2.25f ,0f ,2.25f ,-2.25f ,0f ,3.75f ,-2.25f ,0f ,5.25f ,-2.25f ,0f ,-5.25f ,-3.75f ,0f ,-3.75f ,-3.75f ,0f ,-2.25f ,-3.75f ,0f ,-0.75f ,-3.75f ,0f ,0.75f ,-3.75f ,0f ,2.25f ,-3.75f ,0f ,3.75f ,-3.75f ,0f ,5.25f ,-3.75f ,0f ,-5.25f ,-5.25f ,0f ,-3.75f ,-5.25f ,0f ,-2.25f ,-5.25f ,0f ,-0.75f ,-5.25f ,0f ,0.75f ,-5.25f ,0f ,2.25f ,-5.25f ,0f ,3.75f ,-5.25f ,0f ,5.25f ,-5.25f ,0f });
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {-5.25,5.25,0,-3.75,5.25,0,-2.25,5.25,0,-0.75,5.25,0,0.75,5.25,0,2.25,5.25,0,3.75,5.25,0,5.25,5.25,0,-5.25,3.75,0,-3.75,3.75,0,-2.25,3.75,0,-0.75,3.75,0,0.75,3.75,0,2.25,3.75,0,3.75,3.75,0,5.25,3.75,0,-5.25,2.25,0,-3.75,2.25,0,-2.25,2.25,0,-0.75,2.25,0,0.75,2.25,0,2.25,2.25,0,3.75,2.25,0,5.25,2.25,0,-5.25,0.75,0,-3.75,0.75,0,-2.25,0.75,0,-0.75,0.75,0,0.75,0.75,0,2.25,0.75,0,3.75,0.75,0,5.25,0.75,0,-5.25,-0.75,0,-3.75,-0.75,0,-2.25,-0.75,0,-0.75,-0.75,0,0.75,-0.75,0,2.25,-0.75,0,3.75,-0.75,0,5.25,-0.75,0,-5.25,-2.25,0,-3.75,-2.25,0,-2.25,-2.25,0,-0.75,-2.25,0,0.75,-2.25,0,2.25,-2.25,0,3.75,-2.25,0,5.25,-2.25,0,-5.25,-3.75,0,-3.75,-3.75,0,-2.25,-3.75,0,-0.75,-3.75,0,0.75,-3.75,0,2.25,-3.75,0,3.75,-3.75,0,5.25,-3.75,0,-5.25,-5.25,0,-3.75,-5.25,0,-2.25,-5.25,0,-0.75,-5.25,0,0.75,-5.25,0,2.25,-5.25,0,3.75,-5.25,0,5.25,-5.25,0});
   }
 }
 private class MFColor3 {
   private org.web3d.x3d.jsail.fields.MFColor getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0.5f ,0.5f ,0.5f ,0.75f ,0.75f ,0.75f });
+    return new org.web3d.x3d.jsail.fields.MFColor(new double[] {0.5,0.5,0.5,0.75,0.75,0.75});
   }
 }
 }

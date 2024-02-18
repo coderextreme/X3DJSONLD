@@ -4,6 +4,10 @@ ConfigurationProperties.showDefaultAttributes = false;
 ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;
 ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
+function doubleToFloat(d) {
+    if (Float32Array)
+	return new Float32Array([d])[0];
+}
       var X3D0 =  new X3D().setVersion("3.0").setProfile("Immersive")
       .setHead(new head()
         .addMeta(new meta().setName("filename").setContent("Scripting.x3d")))
@@ -28,7 +32,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
       }`))
         .addChild(new Shape()
           .setAppearance(new Appearance()
-            .setMaterial(new Material().setDiffuseColor(Java.to([1,0,0], Java.type("double[]")))))
+            .setMaterial(new Material().setDiffuseColor(Java.to([doubleToFloat(1),doubleToFloat(0),doubleToFloat(0)], Java.type("float[]")))))
           .setGeometry(new Sphere()))
         .addChild(new Sound().setMaxBack(1000).setMaxFront(1000).setMinBack(1000).setMinFront(1000)
           .setSource(new AudioClip().setDEF("Click").setStopTime(1).setDescription("clicking sound").setUrl(Java.to(["../resources/chandubabamusic1.wav"], Java.type("java.lang.String[]")))))

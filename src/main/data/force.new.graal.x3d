@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
-<X3D profile='Immersive' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.3.xsd'>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
     <component name='Scripting' level='1'/>
     <meta content='John W Carlson' name='creator'/>
@@ -62,7 +62,7 @@ ecmascript:
         </Group>
       </ProtoBody>
     </ProtoDeclare>
-    <ProtoDeclare name='cylinder'>
+    <ProtoDeclare name='cyl'>
       <ProtoInterface>
         <field name='set_positionA' accessType='inputOnly' type='SFVec3f'/>
         <field name='set_positionB' accessType='inputOnly' type='SFVec3f'/>
@@ -125,15 +125,15 @@ ecmascript:
       <ProtoInstance DEF='nodeD' name='node'>
         <fieldValue name='position' value='50 50 -50'/>
       </ProtoInstance>
-      <ProtoInstance DEF='linkA' name='cylinder'>
+      <ProtoInstance DEF='linkA' name='cyl'>
         <fieldValue name='set_positionA' value='0 0 0'/>
         <fieldValue name='set_positionB' value='50 50 50'/>
       </ProtoInstance>
-      <ProtoInstance DEF='linkB' name='cylinder'>
+      <ProtoInstance DEF='linkB' name='cyl'>
         <fieldValue name='set_positionA' value='0 0 0'/>
         <fieldValue name='set_positionB' value='-50 -50 -50'/>
       </ProtoInstance>
-      <ProtoInstance DEF='linkC' name='cylinder'>
+      <ProtoInstance DEF='linkC' name='cyl'>
         <fieldValue name='set_positionA' value='50 50 50'/>
         <fieldValue name='set_positionB' value='50 50 -50'/>
       </ProtoInstance>

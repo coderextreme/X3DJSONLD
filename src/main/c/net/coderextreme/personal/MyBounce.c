@@ -1,9 +1,9 @@
-#include "/c/x3d-code/www.web3d.org/x3d/languages/c/X3DLib/X3DLib.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/c/Concretes.h"
 void main(int argc, char ** argv) {
 Browser browser = X3D.getBrowser();
 X3D X3D0;
 X3D0.profile = "Immersive";
-X3D0.version = "4.0";
+X3D0.version = "3.3";
 head head1 = createNode("head");
 component component2 = createNode("component");
 component2.name = "Scripting";
@@ -29,7 +29,7 @@ head1.meta[3] = meta5;
 
 meta meta6 = createNode("meta");
 meta6.name = "identifier";
-meta6.content = "https://coderextreme.net/X3DJSONLD/SFVec3f.x3d";
+meta6.content = "https://coderextreme.net/X3DJSONLD/src/main/data/SFVec3f.x3d";
 head1.meta[4] = meta6;
 
 head = head1;
@@ -53,9 +53,9 @@ Shape10.appearance = Appearance11;
 Sphere Sphere13 = createNode("Sphere");
 Shape10.geometry = Sphere13;
 
-Transform9.children = new MFNode();
+Transform9.child = new undefined();
 
-Transform9.children[0] = Shape10;
+Transform9.child[0] = Shape10;
 
 children[1] = Transform9;
 

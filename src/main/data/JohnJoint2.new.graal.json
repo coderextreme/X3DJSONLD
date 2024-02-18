@@ -41,8 +41,12 @@
 "@content":"9 November 2020"
 },
 {
+"@name":"license",
+"@content":"../license.html"
+},
+{
 "@name":"translated",
-"@content":"08 September 2023"
+"@content":"18 February 2024"
 },
 {
 "@name":"generator",
@@ -59,9 +63,17 @@
 { "Transform":
 {
 "-children":[
+{
+"#comment":"DEF for markerfor XYZ axes"
+},
 { "Shape":
 {
 "@DEF":"AxisLinesShape",
+"-children":[
+{
+"#comment":"RGB lines showing XYZ axes"
+}
+],
 "-geometry":
 { "IndexedLineSet":
 {
@@ -90,9 +102,17 @@
 { "Group":
 {
 "-children":[
+{
+"#comment":"DEFS for markers of skeleton joints, segments, and sites"
+},
 { "Transform":
 {
 "-children":[
+{
+"#comment":"&lt;Transform translation='0 2 0' scale='1 1 1'&gt; &lt;Shape DEF='HAnimRootShape'&gt;
+&lt;Sphere radius='0.02' /&gt; &lt;Appearance&gt; &lt;Material DEF='HAnimRootMaterial' diffuseColor='0.8
+0 0' transparency='0.3'/&gt; &lt;/Appearance&gt; &lt;/Shape&gt; &lt;/Transform&gt;"
+},
 { "Transform":
 {
 "@translation":[0,2.1,0],
@@ -154,6 +174,14 @@
 }
 ]
 }
+},
+{
+"#comment":"&lt;Transform translation='0 2.1 0' scale='1 1 1'&gt; &lt;Shape DEF='HAnimSiteShape'&gt;
+&lt;IndexedFaceSet DEF='DiamondIFS' creaseAngle='0.5' solid='false' coordIndex='0 1 2
+-1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1'&gt; &lt;ColorRGBA DEF='HAnimSiteColorRGBA'
+color='1 1 0 1 1 1 0 0.1'/&gt; &lt;Coordinate point='0 0.01 0 -0.01 0 0 0 0 0.01 0.01 0
+0 0 0 -0.01 0 -0.01 0'/&gt; &lt;/IndexedFaceSet&gt; &lt;Appearance&gt; &lt;Material diffuseColor='1
+1 0' transparency='0.3'/&gt; &lt;/Appearance&gt; &lt;/Shape&gt; &lt;/Transform&gt;"
 }
 ]
 }
@@ -177,737 +205,7 @@
 "@DEF":"hanim_HAnim",
 "@info":["humanoidVersion=2.0"],
 "@version":"2.0",
-"-children":[
-{ "HAnimJoint":
-{
-"@USE":"hanim_humanoid_root"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_sacroiliac"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_l_hip"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_l_knee"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_l_talocrural"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_l_talocalcaneonavicular"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_l_cuneonavicular_1"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_l_tarsometatarsal_1"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_l_metatarsophalangeal_1"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_l_tarsal_interphalangeal_1"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_l_cuneonavicular_2"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_l_tarsometatarsal_2"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_l_metatarsophalangeal_2"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_l_tarsal_proximal_interphalangeal_1"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_l_tarsal_distal_interphalangeal_1"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_l_cuneonavicular_3"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_l_tarsometatarsal_3"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_l_metatarsophalangeal_3"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_l_tarsal_proximal_interphalangeal_2"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_l_tarsal_distal_interphalangeal_2"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_l_calcaneocuboid"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_l_transversetarsal"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_l_tarsometatarsal_4"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_l_metatarsophalangeal_4"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_l_tarsal_proximal_interphalangeal_3"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_l_tarsal_distal_interphalangeal_3"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_l_tarsometatarsal_5"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_l_metatarsophalangeal_5"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_l_tarsal_proximal_interphalangeal_4"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_l_tarsal_distal_interphalangeal_4"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_r_hip"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_r_knee"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_r_talocrural"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_r_talocalcaneonavicular"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_r_cuneonavicular_1"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_r_tarsometatarsal_1"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_r_metatarsophalangeal_1"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_r_tarsal_interphalangeal_1"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_r_cuneonavicular_2"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_r_tarsometatarsal_2"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_r_metatarsophalangeal_2"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_r_tarsal_proximal_interphalangeal_1"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_r_tarsal_distal_interphalangeal_1"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_r_cuneonavicular_3"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_r_tarsometatarsal_3"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_r_metatarsophalangeal_3"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_r_tarsal_proximal_interphalangeal_2"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_r_tarsal_distal_interphalangeal_2"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_r_calcaneocuboid"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_r_transversetarsal"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_r_tarsometatarsal_4"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_r_metatarsophalangeal_4"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_r_tarsal_proximal_interphalangeal_3"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_r_tarsal_distal_interphalangeal_3"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_r_tarsometatarsal_5"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_r_metatarsophalangeal_5"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_r_tarsal_proximal_interphalangeal_4"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_r_tarsal_distal_interphalangeal_4"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_vl5"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_vl4"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_vl3"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_vl2"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_vl1"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_vt12"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_vt11"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_vt10"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_vt9"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_vt8"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_vt7"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_vt6"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_vt5"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_vt4"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_vt3"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_vt2"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_vt1"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_vc7"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_vc6"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_vc5"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_vc4"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_vc3"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_vc2"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_vc1"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_skullbase"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_l_eyelid_joint"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_r_eyelid_joint"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_l_eyeball_joint"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_r_eyeball_joint"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_l_eyebrow_joint"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_r_eyebrow_joint"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_temporomandibular"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_l_sternoclavicular"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_l_acromioclavicular"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_l_shoulder"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_l_elbow"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_l_radiocarpal"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_l_midcarpal_1"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_l_carpometacarpal_1"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_l_metacarpophalangeal_1"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_l_carpal_interphalangeal_1"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_l_midcarpal_2"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_l_carpometacarpal_2"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_l_metacarpophalangeal_2"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_l_carpal_proximal_interphalangeal_1"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_l_carpal_distal_interphalangeal_1"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_l_midcarpal_3"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_l_carpometacarpal_3"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_l_metacarpophalangeal_3"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_l_carpal_proximal_interphalangeal_2"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_l_carpal_distal_interphalangeal_2"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_l_midcarpal_4_1"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_l_carpometacarpal_4"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_l_metacarpophalangeal_4"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_l_carpal_proximal_interphalangeal_3"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_l_carpal_distal_interphalangeal_3"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_l_carpometacarpal_5"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_l_metacarpophalangeal_5"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_l_carpal_proximal_interphalangeal_4"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_l_carpal_distal_interphalangeal_4"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_r_sternoclavicular"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_r_acromioclavicular"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_r_shoulder"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_r_elbow"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_r_radiocarpal"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_r_midcarpal_1"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_r_carpometacarpal_1"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_r_metacarpophalangeal_1"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_r_carpal_interphalangeal_1"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_r_midcarpal_2"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_r_carpometacarpal_2"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_r_metacarpophalangeal_2"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_r_carpal_proximal_interphalangeal_1"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_r_carpal_distal_interphalangeal_1"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_r_midcarpal_3"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_r_carpometacarpal_3"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_r_metacarpophalangeal_3"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_r_carpal_proximal_interphalangeal_2"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_r_carpal_distal_interphalangeal_2"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_r_midcarpal_4_1"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_r_carpometacarpal_4"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_r_metacarpophalangeal_4"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_r_carpal_proximal_interphalangeal_3"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_r_carpal_distal_interphalangeal_3"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_r_carpometacarpal_5"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_r_metacarpophalangeal_5"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_r_carpal_proximal_interphalangeal_4"
-}
-},
-{ "HAnimJoint":
-{
-"@USE":"hanim_r_carpal_distal_interphalangeal_4"
-}
-},
+"-skeleton":[
 { "HAnimJoint":
 {
 "@name":"humanoid_root",
@@ -1025,7 +323,7 @@
 { "HAnimJoint":
 {
 "@name":"l_tarsal_proximal_interphalangeal_2",
-"@DEF":"hanim_l_tarsal_proximal_interphalangeal_1",
+"@DEF":"hanim_l_tarsal_proximal_interphalangeal_2",
 "@center":[0,1,0],
 "@llimit":[0,0,0],
 "@ulimit":[0,0,0],
@@ -1033,7 +331,7 @@
 { "HAnimJoint":
 {
 "@name":"l_tarsal_distal_interphalangeal_2",
-"@DEF":"hanim_l_tarsal_distal_interphalangeal_1",
+"@DEF":"hanim_l_tarsal_distal_interphalangeal_2",
 "@center":[0,1,0],
 "@llimit":[0,0,0],
 "@ulimit":[0,0,0]
@@ -1078,7 +376,7 @@
 { "HAnimJoint":
 {
 "@name":"l_tarsal_proximal_interphalangeal_3",
-"@DEF":"hanim_l_tarsal_proximal_interphalangeal_2",
+"@DEF":"hanim_l_tarsal_proximal_interphalangeal_3",
 "@center":[0,1,0],
 "@llimit":[0,0,0],
 "@ulimit":[0,0,0],
@@ -1086,7 +384,7 @@
 { "HAnimJoint":
 {
 "@name":"l_tarsal_distal_interphalangeal_3",
-"@DEF":"hanim_l_tarsal_distal_interphalangeal_2",
+"@DEF":"hanim_l_tarsal_distal_interphalangeal_3",
 "@center":[0,1,0],
 "@llimit":[0,0,0],
 "@ulimit":[0,0,0]
@@ -1142,7 +440,7 @@
 { "HAnimJoint":
 {
 "@name":"l_tarsal_proximal_interphalangeal_4",
-"@DEF":"hanim_l_tarsal_proximal_interphalangeal_3",
+"@DEF":"hanim_l_tarsal_proximal_interphalangeal_4",
 "@center":[0,1,0],
 "@llimit":[0,0,0],
 "@ulimit":[0,0,0],
@@ -1150,7 +448,7 @@
 { "HAnimJoint":
 {
 "@name":"l_tarsal_distal_interphalangeal_4",
-"@DEF":"hanim_l_tarsal_distal_interphalangeal_3",
+"@DEF":"hanim_l_tarsal_distal_interphalangeal_4",
 "@center":[0,1,0],
 "@llimit":[0,0,0],
 "@ulimit":[0,0,0]
@@ -1184,7 +482,7 @@
 { "HAnimJoint":
 {
 "@name":"l_tarsal_proximal_interphalangeal_5",
-"@DEF":"hanim_l_tarsal_proximal_interphalangeal_4",
+"@DEF":"hanim_l_tarsal_proximal_interphalangeal_5",
 "@center":[0,1,0],
 "@llimit":[0,0,0],
 "@ulimit":[0,0,0],
@@ -1192,7 +490,7 @@
 { "HAnimJoint":
 {
 "@name":"l_tarsal_distal_interphalangeal_5",
-"@DEF":"hanim_l_tarsal_distal_interphalangeal_4",
+"@DEF":"hanim_l_tarsal_distal_interphalangeal_5",
 "@center":[0,1,0],
 "@llimit":[0,0,0],
 "@ulimit":[0,0,0]
@@ -1323,7 +621,7 @@
 { "HAnimJoint":
 {
 "@name":"r_tarsal_proximal_interphalangeal_2",
-"@DEF":"hanim_r_tarsal_proximal_interphalangeal_1",
+"@DEF":"hanim_r_tarsal_proximal_interphalangeal_2",
 "@center":[0,1,0],
 "@llimit":[0,0,0],
 "@ulimit":[0,0,0],
@@ -1331,7 +629,7 @@
 { "HAnimJoint":
 {
 "@name":"r_tarsal_distal_interphalangeal_2",
-"@DEF":"hanim_r_tarsal_distal_interphalangeal_1",
+"@DEF":"hanim_r_tarsal_distal_interphalangeal_2",
 "@center":[0,1,0],
 "@llimit":[0,0,0],
 "@ulimit":[0,0,0]
@@ -1376,7 +674,7 @@
 { "HAnimJoint":
 {
 "@name":"r_tarsal_proximal_interphalangeal_3",
-"@DEF":"hanim_r_tarsal_proximal_interphalangeal_2",
+"@DEF":"hanim_r_tarsal_proximal_interphalangeal_3",
 "@center":[0,1,0],
 "@llimit":[0,0,0],
 "@ulimit":[0,0,0],
@@ -1384,7 +682,7 @@
 { "HAnimJoint":
 {
 "@name":"r_tarsal_distal_interphalangeal_3",
-"@DEF":"hanim_r_tarsal_distal_interphalangeal_2",
+"@DEF":"hanim_r_tarsal_distal_interphalangeal_3",
 "@center":[0,1,0],
 "@llimit":[0,0,0],
 "@ulimit":[0,0,0]
@@ -1440,7 +738,7 @@
 { "HAnimJoint":
 {
 "@name":"r_tarsal_proximal_interphalangeal_4",
-"@DEF":"hanim_r_tarsal_proximal_interphalangeal_3",
+"@DEF":"hanim_r_tarsal_proximal_interphalangeal_4",
 "@center":[0,1,0],
 "@llimit":[0,0,0],
 "@ulimit":[0,0,0],
@@ -1448,7 +746,7 @@
 { "HAnimJoint":
 {
 "@name":"r_tarsal_distal_interphalangeal_4",
-"@DEF":"hanim_r_tarsal_distal_interphalangeal_3",
+"@DEF":"hanim_r_tarsal_distal_interphalangeal_4",
 "@center":[0,1,0],
 "@llimit":[0,0,0],
 "@ulimit":[0,0,0]
@@ -1482,7 +780,7 @@
 { "HAnimJoint":
 {
 "@name":"r_tarsal_proximal_interphalangeal_5",
-"@DEF":"hanim_r_tarsal_proximal_interphalangeal_4",
+"@DEF":"hanim_r_tarsal_proximal_interphalangeal_5",
 "@center":[0,1,0],
 "@llimit":[0,0,0],
 "@ulimit":[0,0,0],
@@ -1490,7 +788,7 @@
 { "HAnimJoint":
 {
 "@name":"r_tarsal_distal_interphalangeal_5",
-"@DEF":"hanim_r_tarsal_distal_interphalangeal_4",
+"@DEF":"hanim_r_tarsal_distal_interphalangeal_5",
 "@center":[0,1,0],
 "@llimit":[0,0,0],
 "@ulimit":[0,0,0]
@@ -1919,7 +1217,7 @@
 { "HAnimJoint":
 {
 "@name":"l_carpal_proximal_interphalangeal_2",
-"@DEF":"hanim_l_carpal_proximal_interphalangeal_1",
+"@DEF":"hanim_l_carpal_proximal_interphalangeal_2",
 "@center":[0.2017,0.7363,-0.0248],
 "@llimit":[0,0,0],
 "@ulimit":[0,0,0],
@@ -1927,7 +1225,7 @@
 { "HAnimJoint":
 {
 "@name":"l_carpal_distal_interphalangeal_2",
-"@DEF":"hanim_l_carpal_distal_interphalangeal_1",
+"@DEF":"hanim_l_carpal_distal_interphalangeal_2",
 "@center":[0.2028,0.7139,-0.0236],
 "@llimit":[0,0,0],
 "@ulimit":[0,0,0]
@@ -1972,7 +1270,7 @@
 { "HAnimJoint":
 {
 "@name":"l_carpal_proximal_interphalangeal_3",
-"@DEF":"hanim_l_carpal_proximal_interphalangeal_2",
+"@DEF":"hanim_l_carpal_proximal_interphalangeal_3",
 "@center":[0.2013,0.7273,-0.0503],
 "@llimit":[0,0,0],
 "@ulimit":[0,0,0],
@@ -1980,7 +1278,7 @@
 { "HAnimJoint":
 {
 "@name":"l_carpal_distal_interphalangeal_3",
-"@DEF":"hanim_l_carpal_distal_interphalangeal_2",
+"@DEF":"hanim_l_carpal_distal_interphalangeal_3",
 "@center":[0.2026,0.7011,-0.0494],
 "@llimit":[0,0,0],
 "@ulimit":[0,0,0]
@@ -2001,7 +1299,7 @@
 { "HAnimJoint":
 {
 "@name":"l_midcarpal_4_5",
-"@DEF":"hanim_l_midcarpal_4_1",
+"@DEF":"hanim_l_midcarpal_4_5",
 "@center":[0,1,0],
 "@llimit":[0,0,0],
 "@ulimit":[0,0,0],
@@ -2025,7 +1323,7 @@
 { "HAnimJoint":
 {
 "@name":"l_carpal_proximal_interphalangeal_4",
-"@DEF":"hanim_l_carpal_proximal_interphalangeal_3",
+"@DEF":"hanim_l_carpal_proximal_interphalangeal_4",
 "@center":[0.1973,0.7287,-0.0777],
 "@llimit":[0,0,0],
 "@ulimit":[0,0,0],
@@ -2033,7 +1331,7 @@
 { "HAnimJoint":
 {
 "@name":"l_carpal_distal_interphalangeal_4",
-"@DEF":"hanim_l_carpal_distal_interphalangeal_3",
+"@DEF":"hanim_l_carpal_distal_interphalangeal_4",
 "@center":[0.1983,0.7045,-0.0767],
 "@llimit":[0,0,0],
 "@ulimit":[0,0,0]
@@ -2067,7 +1365,7 @@
 { "HAnimJoint":
 {
 "@name":"l_carpal_proximal_interphalangeal_5",
-"@DEF":"hanim_l_carpal_proximal_interphalangeal_4",
+"@DEF":"hanim_l_carpal_proximal_interphalangeal_5",
 "@center":[0.1938,0.7452,-0.1024],
 "@llimit":[0,0,0],
 "@ulimit":[0,0,0],
@@ -2075,7 +1373,7 @@
 { "HAnimJoint":
 {
 "@name":"l_carpal_distal_interphalangeal_5",
-"@DEF":"hanim_l_carpal_distal_interphalangeal_4",
+"@DEF":"hanim_l_carpal_distal_interphalangeal_5",
 "@center":[0.1948,0.7277,-0.1017],
 "@llimit":[0,0,0],
 "@ulimit":[0,0,0]
@@ -2217,7 +1515,7 @@
 { "HAnimJoint":
 {
 "@name":"r_carpal_proximal_interphalangeal_2",
-"@DEF":"hanim_r_carpal_proximal_interphalangeal_1",
+"@DEF":"hanim_r_carpal_proximal_interphalangeal_2",
 "@center":[-0.1954,0.7393,-0.0185],
 "@llimit":[0,0,0],
 "@ulimit":[0,0,0],
@@ -2225,7 +1523,7 @@
 { "HAnimJoint":
 {
 "@name":"r_carpal_distal_interphalangeal_2",
-"@DEF":"hanim_r_carpal_distal_interphalangeal_1",
+"@DEF":"hanim_r_carpal_distal_interphalangeal_2",
 "@center":[-0.1945,0.7169,-0.0173],
 "@llimit":[0,0,0],
 "@ulimit":[0,0,0]
@@ -2270,7 +1568,7 @@
 { "HAnimJoint":
 {
 "@name":"r_carpal_proximal_interphalangeal_3",
-"@DEF":"hanim_r_carpal_proximal_interphalangeal_2",
+"@DEF":"hanim_r_carpal_proximal_interphalangeal_3",
 "@center":[-0.195,0.7304,-0.0441],
 "@llimit":[0,0,0],
 "@ulimit":[0,0,0],
@@ -2278,7 +1576,7 @@
 { "HAnimJoint":
 {
 "@name":"r_carpal_distal_interphalangeal_3",
-"@DEF":"hanim_r_carpal_distal_interphalangeal_2",
+"@DEF":"hanim_r_carpal_distal_interphalangeal_3",
 "@center":[-0.1939,0.7042,-0.0432],
 "@llimit":[0,0,0],
 "@ulimit":[0,0,0]
@@ -2299,7 +1597,7 @@
 { "HAnimJoint":
 {
 "@name":"r_midcarpal_4_5",
-"@DEF":"hanim_r_midcarpal_4_1",
+"@DEF":"hanim_r_midcarpal_4_5",
 "@center":[0,1,0],
 "@llimit":[0,0,0],
 "@ulimit":[0,0,0],
@@ -2323,7 +1621,7 @@
 { "HAnimJoint":
 {
 "@name":"r_carpal_proximal_interphalangeal_4",
-"@DEF":"hanim_r_carpal_proximal_interphalangeal_3",
+"@DEF":"hanim_r_carpal_proximal_interphalangeal_4",
 "@center":[-0.192,0.7318,-0.0716],
 "@llimit":[0,0,0],
 "@ulimit":[0,0,0],
@@ -2331,7 +1629,7 @@
 { "HAnimJoint":
 {
 "@name":"r_carpal_distal_interphalangeal_4",
-"@DEF":"hanim_r_carpal_distal_interphalangeal_3",
+"@DEF":"hanim_r_carpal_distal_interphalangeal_4",
 "@center":[-0.1908,0.7077,-0.0706],
 "@llimit":[0,0,0],
 "@ulimit":[0,0,0]
@@ -2365,7 +1663,7 @@
 { "HAnimJoint":
 {
 "@name":"r_carpal_proximal_interphalangeal_5",
-"@DEF":"hanim_r_carpal_proximal_interphalangeal_4",
+"@DEF":"hanim_r_carpal_proximal_interphalangeal_5",
 "@center":[-0.1902,0.7483,-0.0963],
 "@llimit":[0,0,0],
 "@ulimit":[0,0,0],
@@ -2373,7 +1671,7 @@
 { "HAnimJoint":
 {
 "@name":"r_carpal_distal_interphalangeal_5",
-"@DEF":"hanim_r_carpal_distal_interphalangeal_4",
+"@DEF":"hanim_r_carpal_distal_interphalangeal_5",
 "@center":[-0.1908,0.754,-0.096],
 "@llimit":[0,0,0],
 "@ulimit":[0,0,0]
@@ -2458,6 +1756,738 @@
 }
 }
 ]
+}
+}
+],
+"-joints":[
+{ "HAnimJoint":
+{
+"@USE":"hanim_humanoid_root"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_sacroiliac"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_l_hip"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_l_knee"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_l_talocrural"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_l_talocalcaneonavicular"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_l_cuneonavicular_1"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_l_tarsometatarsal_1"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_l_metatarsophalangeal_1"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_l_tarsal_interphalangeal_1"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_l_cuneonavicular_2"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_l_tarsometatarsal_2"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_l_metatarsophalangeal_2"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_l_tarsal_proximal_interphalangeal_2"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_l_tarsal_distal_interphalangeal_2"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_l_cuneonavicular_3"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_l_tarsometatarsal_3"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_l_metatarsophalangeal_3"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_l_tarsal_proximal_interphalangeal_3"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_l_tarsal_distal_interphalangeal_3"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_l_calcaneocuboid"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_l_transversetarsal"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_l_tarsometatarsal_4"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_l_metatarsophalangeal_4"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_l_tarsal_proximal_interphalangeal_4"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_l_tarsal_distal_interphalangeal_4"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_l_tarsometatarsal_5"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_l_metatarsophalangeal_5"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_l_tarsal_proximal_interphalangeal_5"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_l_tarsal_distal_interphalangeal_5"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_r_hip"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_r_knee"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_r_talocrural"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_r_talocalcaneonavicular"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_r_cuneonavicular_1"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_r_tarsometatarsal_1"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_r_metatarsophalangeal_1"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_r_tarsal_interphalangeal_1"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_r_cuneonavicular_2"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_r_tarsometatarsal_2"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_r_metatarsophalangeal_2"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_r_tarsal_proximal_interphalangeal_2"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_r_tarsal_distal_interphalangeal_2"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_r_cuneonavicular_3"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_r_tarsometatarsal_3"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_r_metatarsophalangeal_3"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_r_tarsal_proximal_interphalangeal_3"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_r_tarsal_distal_interphalangeal_3"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_r_calcaneocuboid"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_r_transversetarsal"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_r_tarsometatarsal_4"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_r_metatarsophalangeal_4"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_r_tarsal_proximal_interphalangeal_4"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_r_tarsal_distal_interphalangeal_4"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_r_tarsometatarsal_5"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_r_metatarsophalangeal_5"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_r_tarsal_proximal_interphalangeal_5"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_r_tarsal_distal_interphalangeal_5"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_vl5"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_vl4"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_vl3"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_vl2"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_vl1"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_vt12"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_vt11"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_vt10"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_vt9"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_vt8"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_vt7"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_vt6"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_vt5"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_vt4"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_vt3"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_vt2"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_vt1"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_vc7"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_vc6"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_vc5"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_vc4"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_vc3"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_vc2"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_vc1"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_skullbase"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_l_eyelid_joint"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_r_eyelid_joint"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_l_eyeball_joint"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_r_eyeball_joint"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_l_eyebrow_joint"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_r_eyebrow_joint"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_temporomandibular"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_l_sternoclavicular"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_l_acromioclavicular"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_l_shoulder"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_l_elbow"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_l_radiocarpal"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_l_midcarpal_1"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_l_carpometacarpal_1"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_l_metacarpophalangeal_1"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_l_carpal_interphalangeal_1"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_l_midcarpal_2"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_l_carpometacarpal_2"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_l_metacarpophalangeal_2"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_l_carpal_proximal_interphalangeal_2"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_l_carpal_distal_interphalangeal_2"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_l_midcarpal_3"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_l_carpometacarpal_3"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_l_metacarpophalangeal_3"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_l_carpal_proximal_interphalangeal_3"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_l_carpal_distal_interphalangeal_3"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_l_midcarpal_4_5"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_l_carpometacarpal_4"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_l_metacarpophalangeal_4"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_l_carpal_proximal_interphalangeal_4"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_l_carpal_distal_interphalangeal_4"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_l_carpometacarpal_5"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_l_metacarpophalangeal_5"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_l_carpal_proximal_interphalangeal_5"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_l_carpal_distal_interphalangeal_5"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_r_sternoclavicular"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_r_acromioclavicular"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_r_shoulder"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_r_elbow"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_r_radiocarpal"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_r_midcarpal_1"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_r_carpometacarpal_1"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_r_metacarpophalangeal_1"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_r_carpal_interphalangeal_1"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_r_midcarpal_2"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_r_carpometacarpal_2"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_r_metacarpophalangeal_2"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_r_carpal_proximal_interphalangeal_2"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_r_carpal_distal_interphalangeal_2"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_r_midcarpal_3"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_r_carpometacarpal_3"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_r_metacarpophalangeal_3"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_r_carpal_proximal_interphalangeal_3"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_r_carpal_distal_interphalangeal_3"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_r_midcarpal_4_5"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_r_carpometacarpal_4"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_r_metacarpophalangeal_4"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_r_carpal_proximal_interphalangeal_4"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_r_carpal_distal_interphalangeal_4"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_r_carpometacarpal_5"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_r_metacarpophalangeal_5"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_r_carpal_proximal_interphalangeal_5"
+}
+},
+{ "HAnimJoint":
+{
+"@USE":"hanim_r_carpal_distal_interphalangeal_5"
 }
 }
 ]

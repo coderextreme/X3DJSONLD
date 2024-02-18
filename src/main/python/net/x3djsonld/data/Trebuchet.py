@@ -509,7 +509,7 @@ function set_boolean ( boolean_input, eventTime)
         if ( whichchoice ==4 ) { whichchoice = 0; CounterWeight=50; }
 
 
-        Browser.print ('CounterWeight ='+CounterWeight);
+        Browser.println ('CounterWeight ='+CounterWeight);
 }
 """),
         Script(DEF='LauncheeScript',
@@ -530,7 +530,7 @@ function set_boolean (boolean_input, eventTime)
 	if (whichchoice == 2)ProjectileWeight=5;
 
 	if ( whichchoice ==3 ) { whichchoice = 0; ProjectileWeight=10.00; }
-	Browser.print ('Projectile Weight'+ProjectileWeight);
+	Browser.println ('Projectile Weight'+ProjectileWeight);
 }
 """),
         Script(DEF='PigdogMonkScript',
@@ -569,19 +569,19 @@ function initialize ()
 {
 	MassCounterWeight=100;
 	MassProjectileWeight=10;
-	Browser.print ('MassCounterWeight =' + MassCounterWeight);
-	Browser.print ('MassProjectileWeight =' + MassProjectileWeight);
+	Browser.println ('MassCounterWeight =' + MassCounterWeight);
+	Browser.println ('MassProjectileWeight =' + MassProjectileWeight);
 }
 
 function set_MassProjectileWeight (value, timestamp)
 {
 	MassProjectileWeight = value;
-	Browser.print ('new MassProjectileWeight =' + MassProjectileWeight);
+	Browser.println ('new MassProjectileWeight =' + MassProjectileWeight);
 }
 function set_MassCounterWeight (value2, timestamp)
 {
 	MassCounterWeight = value2;
-	Browser.print ('new MassCounterWeight =' + MassCounterWeight);
+	Browser.println ('new MassCounterWeight =' + MassCounterWeight);
 }
 
 
@@ -602,7 +602,7 @@ function set_fraction ( fraction, eventTime )
 			}
 
 	value_changed = new SFVec3f (x, y, z);
-	Browser.print ('x=' + value_changed[0] + ' y=' + value_changed[1] + ' z=' + value_changed[2]);
+	Browser.println ('x=' + value_changed[0] + ' y=' + value_changed[1] + ' z=' + value_changed[2]);
 }
 """)])]),
     TimeSensor(DEF='clock',cycleInterval=10),

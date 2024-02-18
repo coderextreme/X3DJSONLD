@@ -36,13 +36,22 @@ import org.web3d.x3d.jsail.Texturing.*;
 import org.web3d.x3d.jsail.Time.*;
 import org.web3d.x3d.jsail.VolumeRendering.*;
 import org.web3d.x3d.jsail.fields.*;
-public class MyBounce {
+import java.util.ArrayList;
+import java.util.List;
+import net.coderextreme.X3DRoots;
+public class MyBounce implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    X3D model = new MyBounce().initialize();
+    X3D model = new MyBounce().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
+    model.toFileX3D("../personal/MyBounce.new.java.x3d");
     model.toFileJSON("../personal/MyBounce.new.json");
+    }
+    public List<X3D> getRootNodeList() {
+    	List<X3D> list = new ArrayList<X3D>(1);
+    	list.add(initialize());
+    	return list;
     }
     public X3D initialize() {
       X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
@@ -57,7 +66,7 @@ public class MyBounce {
         .addChild(new Transform().setDEF("transform")
           .addChild(new Shape()
             .setAppearance(new Appearance()
-              .setMaterial(new Material().setDiffuseColor(new float[] {0.7f ,0.7f ,0.7f }).setSpecularColor(new float[] {0.5f ,0.5f ,0.5f })))
+              .setMaterial(new Material().setDiffuseColor(new double[] {0.7,0.7,0.7}).setSpecularColor(new double[] {0.5,0.5,0.5})))
             .setGeometry(new Sphere())))
         .addChild(new Script().setDEF("Bounce2")
           .addField(new field().setType("SFVec3f").setName("set_translation").setAccessType(field.ACCESSTYPE_INPUTONLY).setValue("0 0 0"))
@@ -96,7 +105,7 @@ public class MyBounce {
 "			function initialize() {\n"+
 "			     newBubble();\n"+
 "			}"))
-        .addChild(new TimeSensor().setDEF("TourTime").setCycleInterval(0.15d).setLoop(true))
+        .addChild(new TimeSensor().setDEF("TourTime").setCycleInterval(0.15).setLoop(true))
         .addChild(new ROUTE().setFromNode("TourTime").setFromField("cycleTime").setToNode("Bounce2").setToField("set_fraction"))
         .addChild(new ROUTE().setFromNode("Bounce2").setFromField("translation_changed").setToNode("transform").setToField("set_translation")))      ;
     return X3D0;

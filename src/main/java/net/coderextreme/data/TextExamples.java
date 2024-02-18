@@ -36,13 +36,22 @@ import org.web3d.x3d.jsail.Texturing.*;
 import org.web3d.x3d.jsail.Time.*;
 import org.web3d.x3d.jsail.VolumeRendering.*;
 import org.web3d.x3d.jsail.fields.*;
-public class TextExamples {
+import java.util.ArrayList;
+import java.util.List;
+import net.coderextreme.X3DRoots;
+public class TextExamples implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    X3D model = new TextExamples().initialize();
+    X3D model = new TextExamples().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
+    model.toFileX3D("../data/TextExamples.new.java.x3d");
     model.toFileJSON("../data/TextExamples.new.json");
+    }
+    public List<X3D> getRootNodeList() {
+    	List<X3D> list = new ArrayList<X3D>(1);
+    	list.add(initialize());
+    	return list;
     }
     public X3D initialize() {
       X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("3.0")
@@ -58,18 +67,18 @@ public class TextExamples {
         .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
         .addMeta(new meta().setName("license").setContent("../license.html")))
       .setScene(new Scene()
-        .addChild(new Transform().setTranslation(new float[] {0f ,2f ,0f })
+        .addChild(new Transform().setTranslation(new double[] {0,2,0})
           .addChild(new Shape()
             .setGeometry(new Text().setString(new MFString0().getArray())
-              .setFontStyle(new FontStyle().setDEF("testFontStyle").setJustify(new MFString1().getArray()).setSize(0.8f )))
+              .setFontStyle(new FontStyle().setDEF("testFontStyle").setJustify(new MFString1().getArray()).setSize(0.8)))
             .setAppearance(new Appearance().setDEF("LightBlueAppearance")
-              .setMaterial(new Material().setDiffuseColor(new float[] {0.1f ,0.7f ,0.7f })))))
-        .addChild(new Transform().setTranslation(new float[] {-3f ,0f ,0f })
+              .setMaterial(new Material().setDiffuseColor(new double[] {0.1,0.7,0.7})))))
+        .addChild(new Transform().setTranslation(new double[] {-3,0,0})
           .addChild(new Shape()
             .setGeometry(new Text().setString(new MFString2().getArray())
               .setFontStyle(new FontStyle().setUSE("testFontStyle")))
             .setAppearance(new Appearance().setUSE("LightBlueAppearance"))))
-        .addChild(new Transform().setTranslation(new float[] {3f ,0f ,0f })
+        .addChild(new Transform().setTranslation(new double[] {3,0,0})
           .addChild(new Shape()
             .setGeometry(new Text().setString(new MFString3().getArray())
               .setFontStyle(new FontStyle().setUSE("testFontStyle")))

@@ -32,7 +32,7 @@
           },
           {
             "@name":"translated",
-            "@content":"08 September 2023"
+            "@content":"18 February 2024"
           },
           {
             "@name":"generator",
@@ -231,7 +231,7 @@
           },
           { "ProtoDeclare":
             {
-              "@name":"cylinder",
+              "@name":"cyl",
               "ProtoInterface": {
                   "field": [
                     {
@@ -415,7 +415,7 @@
                 },
                 { "ProtoInstance":
                   {
-                    "@name":"cylinder",
+                    "@name":"cyl",
                     "@DEF":"linkA",
                     "fieldValue": [
                       {
@@ -431,7 +431,7 @@
                 },
                 { "ProtoInstance":
                   {
-                    "@name":"cylinder",
+                    "@name":"cyl",
                     "@DEF":"linkB",
                     "fieldValue": [
                       {
@@ -447,7 +447,7 @@
                 },
                 { "ProtoInstance":
                   {
-                    "@name":"cylinder",
+                    "@name":"cyl",
                     "@DEF":"linkC",
                     "fieldValue": [
                       {

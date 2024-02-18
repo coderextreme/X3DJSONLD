@@ -4,6 +4,10 @@ ConfigurationProperties.showDefaultAttributes = false;
 ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;
 ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
+function doubleToFloat(d) {
+    if (Float32Array)
+	return new Float32Array([d])[0];
+}
       var X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
       .setHead(new head()
         .addMeta(new meta().setName("title").setContent("StringArrayEncodingExamples.x3d"))
@@ -23,13 +27,13 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addMeta(new meta().setName("license").setContent("../license.html")))
       .setScene(new Scene()
         .addChild(new Viewpoint().setDEF("EntryView").setDescription("Hello MFString syntax"))
-        .addChild(new Background().setSkyColor(Java.to([0.6,1,0.8], Java.type("double[]"))))
+        .addChild(new Background().setSkyColor(Java.to([doubleToFloat(0.6),doubleToFloat(1),doubleToFloat(0.8)], Java.type("float[]"))))
         .addChild(new Shape()
           .setGeometry(new Text().setString(Java.to(["One, Two, Three","","He said, \"Immel did it!\""], Java.type("java.lang.String[]")))
             .addComments(new CommentsBlock("alternative XML encoding: Text string='\"One, Two, Three\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\"'"))
             .addComments(new CommentsBlock("alternative Java source: .setString(new String [] {\"One, Two, Three\", \"\", \"He said, \\\"\"Immel did it!\\\"\"\"})"))
             .setFontStyle(new FontStyle().setJustify(Java.to(["MIDDLE","MIDDLE"], Java.type("java.lang.String[]"))).setStyle("BOLD")))
           .setAppearance(new Appearance()
-            .setMaterial(new Material().setDiffuseColor(Java.to([0.6,0.4,0.2], Java.type("double[]")))))))      ;
+            .setMaterial(new Material().setDiffuseColor(Java.to([doubleToFloat(0.6),doubleToFloat(0.4),doubleToFloat(0.2)], Java.type("float[]")))))))      ;
     X3D0.toFileX3D("../data/StringArrayEncodingExamples.new.graal.x3d");
     X3D0.toFileJSON("../data/StringArrayEncodingExamples.new.graal.json");

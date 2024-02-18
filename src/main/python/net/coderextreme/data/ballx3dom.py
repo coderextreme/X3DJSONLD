@@ -5,47 +5,60 @@ print("-->")
 import json
 model = (
 X3D(profile="Immersive", version="4.0", 
-head=head(
+head=Pyhead(
 children=[
-meta(name="title", content="ballx3dom.x3d"),
-meta(name="creator", content="John Carlson"),
-meta(name="generator", content="manual"),
-meta(name="identifier", content="https://coderextreme.net/X3DJSONLD/src/main/data/ball.x3d"),
-meta(name="description", content="a prismatic sphere"),
-meta(name="converter", content="x3d-tidy V1.0.56, https://www.npmjs.com/package/x3d-tidy"),
-meta(name="converted", content="Sat, 02 Sep 2023 10:58:52 GMT")
-component(name="Scripting", level=1),
-component(name="EnvironmentalEffects", level=3),
-component(name="Shaders", level=1),
-component(name="CubeMapTexturing", level=1),
-component(name="Texturing", level=1),
-component(name="Rendering", level=1),
-component(name="Grouping", level=3),
-component(name="Core", level=1),
+Pycomponent(name="Scripting", level=1),
+Pycomponent(name="EnvironmentalEffects", level=3),
+Pycomponent(name="Shaders", level=1),
+Pycomponent(name="CubeMapTexturing", level=1),
+Pycomponent(name="Texturing", level=1),
+Pycomponent(name="Rendering", level=1),
+Pycomponent(name="Grouping", level=3),
+Pycomponent(name="Core", level=1),
+Pymeta(name="title", content="ballx3dom.x3d"),
+Pymeta(name="creator", content="John Carlson"),
+Pymeta(name="generator", content="manual"),
+Pymeta(name="identifier", content="https://coderextreme.net/X3DJSONLD/src/main/data/ball.x3d"),
+Pymeta(name="description", content="a prismatic sphere"),
+Pymeta(name="translated", content="30 December 2023"),
+Pymeta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
+Pymeta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
-Scene=Scene(children=[
+Scene=PyScene(children=[
 WorldInfo(title="ball.x3d"),
-NavigationInfo(type=("ANY","EXAMINE","FLY","LOOKAT")),
+NavigationInfo(type="\"ANY\" \"EXAMINE\" \"FLY\" \"LOOKAT\""),
 Viewpoint(description="Tour Views"),
-Background(frontUrl=["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"], backUrl=["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"], leftUrl=["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"], rightUrl=["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"], topUrl=["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"], bottomUrl=["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]),
+Background(backUrl=["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"], bottomUrl=["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"], frontUrl=["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"], leftUrl=["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"], rightUrl=["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"], topUrl=["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]),
 Transform(children=[
 Shape(
+geometry=
+Sphere(), 
 appearance=
 Appearance(
 material=
 Material(diffuseColor=((0.7,0.7,0.7)), specularColor=((0.5,0.5,0.5))), 
 texture=
-ComposedCubeMapTexture(DEF="texture"), shaders=[
-ComposedShader(language="GLSL", parts=[
-ShaderPart(url=["../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"]),
-ShaderPart(DEF="common", type="FRAGMENT", url=["../shaders/common.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"])], field=[field(accessType="inputOutput", type="SFVec3f", name="chromaticDispertion", value=(0.98,1,1.033)),
-field(accessType="inputOutput", type="SFNode", name="cube", children=[
+ComposedCubeMapTexture(DEF="texture", 
+backTexture=
+ImageTexture(url=["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]), 
+bottomTexture=
+ImageTexture(url=["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]), 
+frontTexture=
+ImageTexture(url=["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"]), 
+leftTexture=
+ImageTexture(url=["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]), 
+rightTexture=
+ImageTexture(url=["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]), 
+topTexture=
+ImageTexture(url=["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"])), shaders=[
+ComposedShader(language="GLSL", field=[Pyfield(name="chromaticDispertion", accessType="inputOutput", type="SFVec3f", value=(0.98,1,1.033)),
+Pyfield(name="cube", type="SFNode", accessType="inputOutput", children=[
 ComposedCubeMapTexture(USE="texture")]),
-field(accessType="inputOutput", type="SFFloat", name="bias", value=0.5),
-field(accessType="inputOutput", type="SFFloat", name="scale", value=0.5),
-field(accessType="inputOutput", type="SFFloat", name="power", value=2)
-])]), 
-geometry=
-Sphere())])])))
+Pyfield(name="bias", accessType="inputOutput", type="SFFloat", value=0.5),
+Pyfield(name="scale", accessType="inputOutput", type="SFFloat", value=0.5),
+Pyfield(name="power", accessType="inputOutput", type="SFFloat", value=2)
+], parts=[
+ShaderPart(url=["../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"], type="VERTEX"),
+ShaderPart(DEF="common", url=["../shaders/common.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"], type="FRAGMENT")])]))])])))
 output = model.JSON()
 json.loads(output)

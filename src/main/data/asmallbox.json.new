@@ -1,8 +1,8 @@
 {
   "X3D": {
     "@profile": "Immersive",
-    "@version": "3.3",
-    "@xsd:noNamespaceSchemaLocation": "https://www.web3d.org/specifications/x3d-3.3.xsd",
+    "@version": "4.0",
+    "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-4.0.xsd",
     "head": {
       "meta": [
         {
@@ -18,16 +18,12 @@
           "@content": "manual"
         },
         {
-          "@name": "identifier",
-          "@content": "https://coderextreme.net/X3DJSONLD/abox.x3d"
-        },
-        {
-          "@name": "description",
-          "@content": "a box"
+          "@name": "generator",
+          "@content": "x3d-tidy V1.0.117, https://www.npmjs.com/package/x3d-tidy"
         },
         {
           "@name": "translated",
-          "@content": "17 January 2022"
+          "@content": "15 December 2023"
         },
         {
           "@name": "generator",
@@ -47,15 +43,17 @@
             "ProtoInterface": {
               "field": [
                 {
-                  "@name": "myShape",
                   "@accessType": "inputOutput",
                   "@type": "MFNode",
+                  "@name": "myShape",
                   "-children": [
                     {
                       "Shape": {
-                        "-geometry": {
-                          "Sphere": {}
-                        }
+                        "-children": [
+                          {
+                            "Sphere": {}
+                          }
+                        ]
                       }
                     }
                   ]
@@ -86,15 +84,17 @@
             "ProtoInterface": {
               "field": [
                 {
-                  "@name": "myShape",
                   "@accessType": "inputOutput",
                   "@type": "MFNode",
+                  "@name": "myShape",
                   "-children": [
                     {
                       "Shape": {
-                        "-geometry": {
-                          "Cylinder": {}
-                        }
+                        "-children": [
+                          {
+                            "Cylinder": {}
+                          }
+                        ]
                       }
                     }
                   ]
@@ -135,9 +135,12 @@
                 "-children": [
                   {
                     "Shape": {
-                      "-geometry": {
-                        "Box": {}
-                      }
+                      "@DEF": "_1",
+                      "-children": [
+                        {
+                          "Box": {}
+                        }
+                      ]
                     }
                   }
                 ]

@@ -5,19 +5,19 @@ print("-->")
 import json
 model = (
 X3D(profile="Immersive", version="3.3", 
-head=head(
+head=Pyhead(
 children=[
-component(name="Geospatial", level=1),
-meta(name="title", content="geobubbles.x3d"),
-meta(name="creator", content="John Carlson"),
-meta(name="generator", content="manual"),
-meta(name="identifier", content="https://coderextreme.net/X3DJSONLD/src/main/data/geobubbles.x3d"),
-meta(name="description", content="geo bubbles"),
-meta(name="translated", content="02 September 2023"),
-meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
-meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
+Pycomponent(name="Geospatial", level=1),
+Pymeta(name="title", content="geobubbles.x3d"),
+Pymeta(name="creator", content="John Carlson"),
+Pymeta(name="generator", content="manual"),
+Pymeta(name="identifier", content="https://coderextreme.net/X3DJSONLD/src/main/data/geobubbles.x3d"),
+Pymeta(name="description", content="geo bubbles"),
+Pymeta(name="translated", content="30 December 2023"),
+Pymeta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
+Pymeta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
-Scene=Scene(children=[
+Scene=PyScene(children=[
 Comment(value=''' Viewpoint DEF='Tour' position='0 0 4' orientation='1 0 0 0' description='Tour Views'/ '''),
 Comment(value=''' PositionInterpolator DEF='TourPosition' key='0 1' keyValue='-0.5 -0.5 4 -0.5 0.5 4'/ '''),
 GeoViewpoint(DEF="Tour", position=((0,0,4)), orientation=((1,0,0,0)), description="Tour Views"),
@@ -32,10 +32,10 @@ material=
 Material(diffuseColor=((0.7,0.7,0.7)), specularColor=((0.5,0.5,0.5)))))]),
 TimeSensor(DEF="TourTime", cycleInterval=5, loop=True),
 GeoPositionInterpolator(DEF="TourPosition", key=[float(0),float(1)], keyValue=[(0.0015708,0,4),(0,0.0015708,4)]),
-Script(DEF="RandomTourTime", field=[field(name="set_cycle", accessType="inputOnly", type="SFTime"),
-field(name="val", accessType="inputOutput", type="SFFloat", value=0),
-field(name="positions", accessType="inputOutput", type="MFVec3d", value=[(0.0015708,0,4),(0,0.0015708,4)]),
-field(name="position", accessType="inputOutput", type="MFVec3d", value=[(0.0015708,0,4),(0,0.0015708,4)])
+Script(DEF="RandomTourTime", field=[Pyfield(name="set_cycle", accessType="inputOnly", type="SFTime"),
+Pyfield(name="val", accessType="inputOutput", type="SFFloat", value=0),
+Pyfield(name="positions", accessType="inputOutput", type="MFVec3d", value=[(0.0015708,0,4),(0,0.0015708,4)]),
+Pyfield(name="position", accessType="inputOutput", type="MFVec3d", value=[(0.0015708,0,4),(0,0.0015708,4)])
 ], sourceCode="""['ecmascript:', '', '               function set_cycle(value) {', '                        var cartesianMult = -150;  // -150 if cartesian, 1 if geo', '                        var ov = val;', "\t\t\t// Browser.print('old '+ov);", '                        do {', '                                val = Math.floor(Math.random()*2);', '                                var vc = val;', '                                positions[vc] = new SFVec3d(Math.round(Math.random()*2)*0.0015708*cartesianMult, Math.round(Math.random()*2)*0.0015708*cartesianMult, 4);', '                        } while ( positions[ov][0] === positions[vc][0] && positions[ov][1] === positions[vc][1] && positions[ov][2] === positions[vc][2]);', '\t\t\t// Browser.println(positions[ov]);', '\t\t\t// Browser.println(positions[vc]);', '                        position = new MFVec3d();', '                        position[0] = new SFVec3d(positions[ov][0],positions[ov][1],positions[ov][2]);', '                        position[1] = new SFVec3d(positions[vc][0],positions[vc][1],positions[vc][2]);', '               }']""",),
 ROUTE(fromNode="TourTime", fromField="cycleTime", toNode="RandomTourTime", toField="set_cycle"),
 ROUTE(fromNode="RandomTourTime", fromField="position", toNode="TourPosition", toField="keyValue"),

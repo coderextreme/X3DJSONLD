@@ -1,7 +1,7 @@
 let browser = X3D.getBrowser();
 let X3D0 = {};
 X3D0.profile = "Immersive";
-X3D0.version = "3.3";
+X3D0.version = "4.0";
 let head1 = browser.currentScene.createNode("head");
 let meta2 = browser.currentScene.createNode("meta");
 meta2.name = "title";
@@ -124,7 +124,7 @@ Script18.setSourceCode(`ecmascript:\n"+
 "	     localci.push(-1);\n"+
 "	}\n"+
 "    }\n"+
-"    coordIndexes = new MFInt32(localci);\n"+
+"    coordIndexes = new MFInt32(...localci);\n"+
 "}\n"+
 "\n"+
 "function generateCoordinates(resolution) {\n"+
@@ -144,7 +144,7 @@ Script18.setSourceCode(`ecmascript:\n"+
 "	}\n"+
 "	phi += delta;\n"+
 "     }\n"+
-"     coordinates = new MFVec3f(localc);\n"+
+"     coordinates = new MFVec3f(...localc);\n"+
 "}\n"+
 "\n"+
 "function set_fraction(fraction, eventTime) {\n"+

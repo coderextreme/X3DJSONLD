@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-3.0.xsd" ><head><meta name="title" content="flower.x3d"></meta>
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd" ><head><meta name="title" content="flower.x3d"></meta>
 <meta name="creator" content="John Carlson"></meta>
 <meta name="generator" content="manual"></meta>
 <meta name="identifier" content="https://coderextreme.net/X3DJSONLD/src/main/personal/flower.x3d"></meta>
@@ -10,9 +10,9 @@
 <DirectionalLight direction="0 -0.8 -0.2" intensity="0.5"></DirectionalLight>
 <Background skyColor="1 1 1"></Background>
 <Viewpoint description="One mathematical orbital" position="0 0 50"></Viewpoint>
-<Transform translation="0 -1 1" rotation="0 1 0 3.1415926" scale="1.5 1.5 1.5"><Shape><Appearance><Material transparency="0.1" diffuseColor="0.9 0.3 0.3" specularColor="0.8 0.8 0.8" shininess="0.145"></Material>
+<Transform translation="0 -1 1" rotation="0 1 0 3.1415926" scale="1.5 1.5 1.5"><Shape><Appearance containerField="appearance"><Material containerField="material" transparency="0.1" diffuseColor="0.9 0.3 0.3" specularColor="0.8 0.8 0.8" shininess="0.145"></Material>
 </Appearance>
-<IndexedFaceSet containerField="geometry" ccw="false" convex="false" coordIndex="0 1 2 -1" DEF="Orbit"><Coordinate containerField="coord" DEF="OrbitCoordinates" point="0 0 1 0 1 0 1 0 0"></Coordinate>
+<IndexedFaceSet ccw="false" convex="false" coordIndex="0 1 2 -1" DEF="Orbit"><Coordinate DEF="OrbitCoordinates" point="0 0 1 0 1 0 1 0 0"></Coordinate>
 </IndexedFaceSet>
 </Shape>
 </Transform>
@@ -41,7 +41,7 @@ function initialize() {
 	     localci.push(-1);
 	}
     }
-    coordIndexes = new MFInt32(localci);
+    coordIndexes = new MFInt32(...localci);
 }
 
 function generateCoordinates(resolution) {
@@ -61,7 +61,7 @@ function generateCoordinates(resolution) {
 	}
 	phi += delta;
      }
-     coordinates = new MFVec3f(localc);
+     coordinates = new MFVec3f(...localc);
 }
 
 function set_fraction(fraction, eventTime) {

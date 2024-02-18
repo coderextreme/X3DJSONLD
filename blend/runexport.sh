@@ -1,1 +1,1 @@
-/c/Program\ Files/Blender\ Foundation/Blender\ 3.6/blender.exe --background --python export.py
+/c/Program\ Files/Blender\ Foundation/Blender\ 4.0/blender.exe --background --python export.py

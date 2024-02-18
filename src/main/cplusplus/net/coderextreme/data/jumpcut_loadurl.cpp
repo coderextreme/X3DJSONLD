@@ -12,7 +12,7 @@ CX3D* X3D0 = new CX3D();
 CGroup* group = (CGroup*)(m_pScene.createNode("Group"));
 group->addChildren(X3D0);
 X3D0->setProfile("Immersive");
-X3D0->setVersion("4.0");
+X3D0->setVersion("3.0");
 Chead* head1 = new Chead();
 Cmeta* meta2 = new Cmeta();
 meta2->setName("title");
@@ -79,89 +79,94 @@ meta14->setName("generator");
 meta14->setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit");
 head1->addMeta(*meta14);
 
+Cmeta* meta15 = new Cmeta();
+meta15->setName("license");
+meta15->setContent("../../license.html");
+head1->addMeta(*meta15);
+
 X3D0->setHead(*head1);
 
-CScene* Scene15 = new CScene();
-CWorldInfo* WorldInfo16 = (CWorldInfo *)(m_pScene.createNode("WorldInfo"));
-WorldInfo16->setTitle("jumpcut_loadurl.x3d");
-group->addChildren(*WorldInfo16);
+CScene* Scene16 = new CScene();
+CWorldInfo* WorldInfo17 = (CWorldInfo *)(m_pScene.createNode("WorldInfo"));
+WorldInfo17->setTitle("jumpcut_loadurl.x3d");
+group->addChildren(*WorldInfo17);
 
-CBackground* Background17 = (CBackground *)(m_pScene.createNode("Background"));
-Background17->setSkyColor(new float[3]{0,0,1});
-Background17->setGroundAngle(new float[1]{1.57}, 1);
-Background17->setGroundColor(new float[6]{0,0.5,0,0,0.5,0});
-group->addChildren(*Background17);
+CBackground* Background18 = (CBackground *)(m_pScene.createNode("Background"));
+Background18->setGroundAngle(new float[1]{1.57}, 1);
+Background18->setGroundColor(new float[6]{0,0.5,0,0,0.5,0});
+Background18->setSkyColor(new float[3]{0,0,1});
+group->addChildren(*Background18);
 
-CNavigationInfo* NavigationInfo18 = (CNavigationInfo *)(m_pScene.createNode("NavigationInfo"));
-NavigationInfo18->setType(new CString[4]{"EXAMINE","WALK","FLY","ANY"}, 4);
-group->addChildren(*NavigationInfo18);
-
-CViewpoint* Viewpoint19 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
-Viewpoint19->setDEF("Front_View");
-Viewpoint19->setDescription("Front View");
-group->addChildren(*Viewpoint19);
+CNavigationInfo* NavigationInfo19 = (CNavigationInfo *)(m_pScene.createNode("NavigationInfo"));
+NavigationInfo19->setType(new CString[4]{"EXAMINE","WALK","FLY","ANY"}, 4);
+group->addChildren(*NavigationInfo19);
 
 CViewpoint* Viewpoint20 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
-Viewpoint20->setDEF("Top_View");
-Viewpoint20->setDescription("Top View");
-Viewpoint20->setPosition(new float[3]{0,10,0});
-Viewpoint20->setOrientation(new float[4]{1,0,0,-1.57});
+Viewpoint20->setDEF("Front_View");
+Viewpoint20->setDescription("Front View");
 group->addChildren(*Viewpoint20);
 
-CTouchSensor* TouchSensor21 = (CTouchSensor *)(m_pScene.createNode("TouchSensor"));
-TouchSensor21->setDEF("STARTER");
-TouchSensor21->setDescription("touch to activate");
-group->addChildren(*TouchSensor21);
+CViewpoint* Viewpoint21 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
+Viewpoint21->setDEF("Top_View");
+Viewpoint21->setDescription("Top View");
+Viewpoint21->setOrientation(new float[4]{1,0,0,-1.57});
+Viewpoint21->setPosition(new float[3]{0,10,0});
+group->addChildren(*Viewpoint21);
 
-CTransform* Transform22 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform22->setDEF("ROOT");
-CShape* Shape23 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance24 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material25 = (CMaterial *)(m_pScene.createNode("Material"));
-Appearance24->setMaterial(*Material25);
+CTouchSensor* TouchSensor22 = (CTouchSensor *)(m_pScene.createNode("TouchSensor"));
+TouchSensor22->setDEF("STARTER");
+TouchSensor22->setDescription("touch to activate");
+group->addChildren(*TouchSensor22);
 
-Shape23->setAppearance(*Appearance24);
+CTransform* Transform23 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform23->setDEF("ROOT");
+CShape* Shape24 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance25 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material26 = (CMaterial *)(m_pScene.createNode("Material"));
+Appearance25->setMaterial(*Material26);
 
-CBox* Box26 = (CBox *)(m_pScene.createNode("Box"));
-Shape23->setGeometry(Box26);
+Shape24->setAppearance(*Appearance25);
 
-Transform22->addChild(*Shape23);
+CBox* Box27 = (CBox *)(m_pScene.createNode("Box"));
+Shape24->setGeometry(Box27);
 
-group->addChildren(*Transform22);
+Transform23->addChild(*Shape24);
 
-CScript* Script27 = (CScript *)(m_pScene.createNode("Script"));
-Script27->setDEF("MYSCRIPT");
-Script27->setUrl(new CString[2]{"jumpcut_loadurl.js","https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.js"}, 2);
-Cfield* field28 = new Cfield();
-field28->setAccessType("initializeOnly");
-field28->setType("MFString");
-field28->setName("myParameter");
-field28->setValue("\"Top_View\"");
-Script27->addField(*field28);
+group->addChildren(*Transform23);
 
+CScript* Script28 = (CScript *)(m_pScene.createNode("Script"));
+Script28->setDEF("MYSCRIPT");
+Script28->setUrl(new CString[2]{"jumpcut_loadurl.js","https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.js"}, 2);
 Cfield* field29 = new Cfield();
+field29->setName("myParameter");
 field29->setAccessType("initializeOnly");
 field29->setType("MFString");
-field29->setName("myUrl");
-field29->setValue("\"jumpcut_loadurl.x3d#Top_View\" \"https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.x3d#Top_View\" \"jumpcut_loadurl.wrl#Top_View\" \"https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.wrl#Top_View\"");
-Script27->addField(*field29);
+field29->setValue("\"Top_View\"");
+Script28->addField(*field29);
 
 Cfield* field30 = new Cfield();
-field30->setAccessType("inputOnly");
-field30->setType("SFBool");
-field30->setName("trigger_event");
-Script27->addField(*field30);
+field30->setName("myUrl");
+field30->setAccessType("initializeOnly");
+field30->setType("MFString");
+field30->setValue("\"jumpcut_loadurl.x3d#Top_View\" \"https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.x3d#Top_View\" \"jumpcut_loadurl.wrl#Top_View\" \"https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.wrl#Top_View\"");
+Script28->addField(*field30);
 
-group->addChildren(*Script27);
+Cfield* field31 = new Cfield();
+field31->setName("trigger_event");
+field31->setAccessType("inputOnly");
+field31->setType("SFBool");
+Script28->addField(*field31);
 
-CROUTE* ROUTE31 = new CROUTE();
-ROUTE31->setFromNode("STARTER");
-ROUTE31->setFromField("isActive");
-ROUTE31->setToNode("MYSCRIPT");
-ROUTE31->setToField("trigger_event");
-group->addChildren(*ROUTE31);
+group->addChildren(*Script28);
 
-X3D0->setScene(*Scene15);
+CROUTE* ROUTE32 = new CROUTE();
+ROUTE32->setFromField("isActive");
+ROUTE32->setFromNode("STARTER");
+ROUTE32->setToField("trigger_event");
+ROUTE32->setToNode("MYSCRIPT");
+group->addChildren(*ROUTE32);
+
+X3D0->setScene(*Scene16);
 
 m_pScene.addRootNode(group);
 X3D0->toXMLString();

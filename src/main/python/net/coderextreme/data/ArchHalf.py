@@ -5,23 +5,23 @@ print("-->")
 import json
 model = (
 X3D(profile="Interchange", version="3.3", 
-head=head(
+head=Pyhead(
 children=[
-meta(name="title", content="ArchHalf.x3d"),
-meta(name="description", content="Create a half arch with parameters clearSpanWidth=4; riseHeight=2; depth=3; topAbutmentHeight=0.5; pierWidth=0.5; pierHeight=1. Parameter clearSpanWidth measure refers to a full arc, consider clearSpanWidth/2 for the archHalf width. Modify them with Transform > scale or editing the IndexedFileSet node. See the reference file ArchModelingDiagrams.pdf and the ArchScript_more_readable.js script to find further information."),
-meta(name="creator", content="Michele Foti, Don Brutzman"),
-meta(name="created", content="15 December 2014"),
-meta(name="modified", content="16 February 2016"),
-meta(name="reference", content="ArchModelingDiagrams.pdf"),
-meta(name="reference", content="https://en.wikipedia.org/wiki/Arch"),
-meta(name="identifier", content="http://X3dGraphics.com/examples/X3dForAdvancedModeling/Buildings/ArchHalf.x3d"),
-meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
-meta(name="license", content="../license.html"),
-meta(name="translated", content="02 September 2023"),
-meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
-meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
+Pymeta(name="title", content="ArchHalf.x3d"),
+Pymeta(name="description", content="Create a half arch with parameters clearSpanWidth=4; riseHeight=2; depth=3; topAbutmentHeight=0.5; pierWidth=0.5; pierHeight=1. Parameter clearSpanWidth measure refers to a full arc, consider clearSpanWidth/2 for the archHalf width. Modify them with Transform > scale or editing the IndexedFileSet node. See the reference file ArchModelingDiagrams.pdf and the ArchScript_more_readable.js script to find further information."),
+Pymeta(name="creator", content="Michele Foti, Don Brutzman"),
+Pymeta(name="created", content="15 December 2014"),
+Pymeta(name="modified", content="16 February 2016"),
+Pymeta(name="reference", content="ArchModelingDiagrams.pdf"),
+Pymeta(name="reference", content="https://en.wikipedia.org/wiki/Arch"),
+Pymeta(name="identifier", content="http://X3dGraphics.com/examples/X3dForAdvancedModeling/Buildings/ArchHalf.x3d"),
+Pymeta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
+Pymeta(name="license", content="../license.html"),
+Pymeta(name="translated", content="30 December 2023"),
+Pymeta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
+Pymeta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
-Scene=Scene(children=[
+Scene=PyScene(children=[
 Shape(DEF="Arch", 
 geometry=
 IndexedFaceSet(DEF="ArchIndex", convex=False, coordIndex=[31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,144,-1,149,31,144,147,-1,134,147,144,145,-1,145,144,62,141,-1,132,133,141,62,-1,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,143,-1,148,94,143,146,-1,142,128,146,143,-1,140,125,143,142,-1,125,126,127,140,-1,31,94,95,32,-1,32,95,96,33,-1,33,96,97,34,-1,34,97,98,35,-1,35,98,99,36,-1,36,99,100,37,-1,37,100,101,38,-1,38,101,102,39,-1,39,102,103,40,-1,40,103,104,41,-1,41,104,105,42,-1,42,105,106,43,-1,43,106,107,44,-1,44,107,108,45,-1,45,108,109,46,-1,46,109,110,47,-1,47,110,111,48,-1,48,111,112,49,-1,49,112,113,50,-1,50,113,114,51,-1,51,114,115,52,-1,52,115,116,53,-1,53,116,117,54,-1,54,117,118,55,-1,55,118,119,56,-1,56,119,120,57,-1,57,120,121,58,-1,58,121,122,59,-1,59,122,123,60,-1,60,123,124,61,-1,61,124,125,62,-1,148,149,147,146,-1,146,147,134,128,-1,128,134,145,142,-1,140,141,145,142,-1,127,133,141,140,-1,127,126,132,133,-1,126,132,62,125,-1,31,94,143,144,-1,142,143,144,145,-1,140,125,62,141,-1,31,94,148,149,-1], solid=False, 

@@ -168,12 +168,12 @@ field35.value = "2";
 ComposedShader30.field[4] = field35;
 
 let ShaderPart36 = browser.currentScene.createNode("ShaderPart");
-ShaderPart36.url = new MFString(new java.lang.String["../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"]);
+ShaderPart36.url = new MFString(new java.lang.String["../shaders/x_ite.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"]);
 ShaderPart36.type = "VERTEX";
 ComposedShader30.parts[5] = ShaderPart36;
 
 let ShaderPart37 = browser.currentScene.createNode("ShaderPart");
-ShaderPart37.url = new MFString(new java.lang.String["../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"]);
+ShaderPart37.url = new MFString(new java.lang.String["../shaders/x_ite.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"]);
 ShaderPart37.type = "FRAGMENT";
 ComposedShader30.parts[6] = ShaderPart37;
 
@@ -221,14 +221,36 @@ field43.accessType = "outputOnly";
 field43.type = "MFInt32";
 Script40.field[2] = field43;
 
+let field44 = browser.currentScene.createNode("field");
+field44.name = "e";
+field44.type = "SFFloat";
+field44.accessType = "inputOutput";
+field44.value = "5";
+Script40.field[3] = field44;
+
+let field45 = browser.currentScene.createNode("field");
+field45.name = "f";
+field45.type = "SFFloat";
+field45.accessType = "inputOutput";
+field45.value = "5";
+Script40.field[4] = field45;
+
+let field46 = browser.currentScene.createNode("field");
+field46.name = "g";
+field46.type = "SFFloat";
+field46.accessType = "inputOutput";
+field46.value = "5";
+Script40.field[5] = field46;
+
+let field47 = browser.currentScene.createNode("field");
+field47.name = "h";
+field47.type = "SFFloat";
+field47.accessType = "inputOutput";
+field47.value = "5";
+Script40.field[6] = field47;
+
 
 Script40.setSourceCode(`ecmascript:\n"+
-"\n"+
-"var e = 5;\n"+
-"var f = 5;\n"+
-"var g = 5;\n"+
-"var h = 5;\n"+
-"\n"+
 "function initialize() {\n"+
 "     var resolution = 100;\n"+
 "     updateCoordinates(resolution);\n"+
@@ -242,7 +264,7 @@ Script40.setSourceCode(`ecmascript:\n"+
 "	     cis.push(-1);\n"+
 "	}\n"+
 "    }\n"+
-"    coordIndexes = new MFInt32(cis);\n"+
+"    coordIndexes = new MFInt32(...cis);\n"+
 "}\n"+
 "\n"+
 "function updateCoordinates(resolution) {\n"+
@@ -262,7 +284,7 @@ Script40.setSourceCode(`ecmascript:\n"+
 "	}\n"+
 "	phi += delta;\n"+
 "     }\n"+
-"     coordinates = new MFVec3f(crds);\n"+
+"     coordinates = new MFVec3f(...crds);\n"+
 "}\n"+
 "\n"+
 "function set_fraction(fraction, eventTime) {\n"+
@@ -281,6 +303,9 @@ Script40.setSourceCode(`ecmascript:\n"+
 "		h += Math.floor(Math.random() * 2) * 2 - 1;\n"+
 "		break;\n"+
 "	}\n"+
+"	if (e < 1) {\n"+
+"		e = 10;\n"+
+"	}\n"+
 "	if (f < 1) {\n"+
 "		f = 10;\n"+
 "	}\n"+
@@ -295,30 +320,30 @@ Script40.setSourceCode(`ecmascript:\n"+
 "}`)
 browser.currentScene.children[3] = Script40;
 
-let TimeSensor44 = browser.currentScene.createNode("TimeSensor");
-TimeSensor44.DEF = "Clock";
-TimeSensor44.cycleInterval = 16;
-TimeSensor44.loop = True;
-browser.currentScene.children[4] = TimeSensor44;
+let TimeSensor48 = browser.currentScene.createNode("TimeSensor");
+TimeSensor48.DEF = "Clock";
+TimeSensor48.cycleInterval = 16;
+TimeSensor48.loop = True;
+browser.currentScene.children[4] = TimeSensor48;
 
-let ROUTE45 = browser.currentScene.createNode("ROUTE");
-ROUTE45.fromField = "coordIndexes";
-ROUTE45.fromNode = "OrbitScript";
-ROUTE45.toField = "set_coordIndex";
-ROUTE45.toNode = "Orbit";
-browser.currentScene.children[5] = ROUTE45;
+let ROUTE49 = browser.currentScene.createNode("ROUTE");
+ROUTE49.fromField = "coordIndexes";
+ROUTE49.fromNode = "OrbitScript";
+ROUTE49.toField = "set_coordIndex";
+ROUTE49.toNode = "Orbit";
+browser.currentScene.children[5] = ROUTE49;
 
-let ROUTE46 = browser.currentScene.createNode("ROUTE");
-ROUTE46.fromField = "coordinates";
-ROUTE46.fromNode = "OrbitScript";
-ROUTE46.toField = "set_point";
-ROUTE46.toNode = "OrbitCoordinates";
-browser.currentScene.children[6] = ROUTE46;
+let ROUTE50 = browser.currentScene.createNode("ROUTE");
+ROUTE50.fromField = "coordinates";
+ROUTE50.fromNode = "OrbitScript";
+ROUTE50.toField = "set_point";
+ROUTE50.toNode = "OrbitCoordinates";
+browser.currentScene.children[6] = ROUTE50;
 
-let ROUTE47 = browser.currentScene.createNode("ROUTE");
-ROUTE47.fromField = "fraction_changed";
-ROUTE47.fromNode = "Clock";
-ROUTE47.toField = "set_fraction";
-ROUTE47.toNode = "OrbitScript";
-browser.currentScene.children[7] = ROUTE47;
+let ROUTE51 = browser.currentScene.createNode("ROUTE");
+ROUTE51.fromField = "fraction_changed";
+ROUTE51.fromNode = "Clock";
+ROUTE51.toField = "set_fraction";
+ROUTE51.toNode = "OrbitScript";
+browser.currentScene.children[7] = ROUTE51;
 

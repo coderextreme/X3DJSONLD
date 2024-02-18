@@ -43,13 +43,13 @@ meta8.content = "CHANGELOG.txt";
 head1.meta[6] = meta8;
 
 meta meta9 = createNode("meta");
-meta9.name = "reference";
-meta9.content = "https://www.medialab.hmu.gr/minipages/x3domAudio";
+meta9.name = "TODO";
+meta9.content = "credit for audio files";
 head1.meta[7] = meta9;
 
 meta meta10 = createNode("meta");
-meta10.name = "TODO";
-meta10.content = "credit for audio files";
+meta10.name = "reference";
+meta10.content = "https://www.medialab.hmu.gr/minipages/x3domAudio";
 head1.meta[8] = meta10;
 
 meta meta11 = createNode("meta");
@@ -62,258 +62,263 @@ meta12.name = "generator";
 meta12.content = "X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit";
 head1.meta[10] = meta12;
 
+meta meta13 = createNode("meta");
+meta13.name = "license";
+meta13.content = "../license.html";
+head1.meta[11] = meta13;
+
 head = head1;
 
-WorldInfo WorldInfo14 = createNode("WorldInfo");
-WorldInfo14.title = "SpatialAudioCameraAnimation.x3d";
+WorldInfo WorldInfo15 = createNode("WorldInfo");
+WorldInfo15.title = "SpatialAudioCameraAnimation.x3d";
 children = new MFNode();
 
-children[0] = WorldInfo14;
+children[0] = WorldInfo15;
 
-NavigationInfo NavigationInfo15 = createNode("NavigationInfo");
-children[1] = NavigationInfo15;
+NavigationInfo NavigationInfo16 = createNode("NavigationInfo");
+children[1] = NavigationInfo16;
 
-Background Background16 = createNode("Background");
-Background16.frontUrl = new MFString(new java.lang.String["images/generic/FR1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/FR1.png"]);
-Background16.backUrl = new MFString(new java.lang.String["images/generic/BK1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/BK1.png"]);
-Background16.leftUrl = new MFString(new java.lang.String["images/generic/LF1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/LF1.png"]);
-Background16.rightUrl = new MFString(new java.lang.String["images/generic/RT1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/RT1.png"]);
-Background16.topUrl = new MFString(new java.lang.String["images/generic/UP1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/UP1.png"]);
-Background16.bottomUrl = new MFString(new java.lang.String["images/generic/DN1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/DN1.png"]);
-children[2] = Background16;
+Background Background17 = createNode("Background");
+Background17.backUrl = new MFString(new java.lang.String["images/generic/BK1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/BK1.png"]);
+Background17.bottomUrl = new MFString(new java.lang.String["images/generic/DN1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/DN1.png"]);
+Background17.frontUrl = new MFString(new java.lang.String["images/generic/FR1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/FR1.png"]);
+Background17.leftUrl = new MFString(new java.lang.String["images/generic/LF1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/LF1.png"]);
+Background17.rightUrl = new MFString(new java.lang.String["images/generic/RT1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/RT1.png"]);
+Background17.topUrl = new MFString(new java.lang.String["images/generic/UP1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/UP1.png"]);
+children[2] = Background17;
 
-Viewpoint Viewpoint17 = createNode("Viewpoint");
-Viewpoint17.DEF = "Camera001";
-Viewpoint17.description = "Viewpoint is like camera, prepositioned in locations (and directions) of interest. In this example the camera is the \"ears of the user\". So, if the trackCurrentView field from ListenerPointSource is TRUE then position and orientation matches the users current view";
-Viewpoint17.position = new SFVec3f(new float[0,2000,3500]);
-Viewpoint17.orientation = new SFRotation(new float[1,0,0,-0.523599]);
-children[3] = Viewpoint17;
+Viewpoint Viewpoint18 = createNode("Viewpoint");
+Viewpoint18.DEF = "Camera001";
+Viewpoint18.description = "Viewpoint is like camera, prepositioned in locations (and directions) of interest. In this example the camera is the \"ears of the user\". So, if the trackCurrentView field from ListenerPointSource is TRUE then position and orientation matches the users current view";
+Viewpoint18.orientation = new SFRotation(new float[1,0,0,-0.523599]);
+Viewpoint18.position = new SFVec3f(new float[0,2000,3500]);
+children[3] = Viewpoint18;
 
-TimeSensor TimeSensor18 = createNode("TimeSensor");
-TimeSensor18.DEF = "TIMER";
-TimeSensor18.cycleInterval = 33.333332;
-TimeSensor18.loop = True;
-children[4] = TimeSensor18;
+TimeSensor TimeSensor19 = createNode("TimeSensor");
+TimeSensor19.DEF = "TIMER";
+TimeSensor19.cycleInterval = 33.333332;
+TimeSensor19.loop = True;
+children[4] = TimeSensor19;
 
-PositionInterpolator PositionInterpolator19 = createNode("PositionInterpolator");
-PositionInterpolator19.DEF = "Camera001-POS-INTERP";
-PositionInterpolator19.key = new MFFloat(new float[0,0.25,0.5,0.75,1]);
-PositionInterpolator19.keyValue = new MFVec3f(new float[0,2000,3500,0,2000,0,0,2000,-3500,0,2000,0,0,2000,3500]);
-children[5] = PositionInterpolator19;
+PositionInterpolator PositionInterpolator20 = createNode("PositionInterpolator");
+PositionInterpolator20.DEF = "Camera001-POS-INTERP";
+PositionInterpolator20.key = new MFFloat(new float[0,0.25,0.5,0.75,1]);
+PositionInterpolator20.keyValue = new MFVec3f(new float[0,2000,3500,0,2000,0,0,2000,-3500,0,2000,0,0,2000,3500]);
+children[5] = PositionInterpolator20;
 
-OrientationInterpolator OrientationInterpolator20 = createNode("OrientationInterpolator");
-OrientationInterpolator20.DEF = "Camera001-ROT-INTERP";
-OrientationInterpolator20.key = new MFFloat(new float[0,0.25,0.5,0.75,1]);
-OrientationInterpolator20.keyValue = new MFRotation(new float[1,0,0,-0.523599,0.99999,0.003554,0.002727,-1.309007,0,-0.965926,-0.258819,-3.141593,0.002282,-0.793351,-0.60876,-3.135645,1,-0.000001,0,-0.523599]);
-children[6] = OrientationInterpolator20;
+OrientationInterpolator OrientationInterpolator21 = createNode("OrientationInterpolator");
+OrientationInterpolator21.DEF = "Camera001-ROT-INTERP";
+OrientationInterpolator21.key = new MFFloat(new float[0,0.25,0.5,0.75,1]);
+OrientationInterpolator21.keyValue = new MFRotation(new float[1,0,0,-0.523599,0.99999,0.003554,0.002727,-1.309007,0,-0.965926,-0.258819,-3.141593,0.002282,-0.793351,-0.60876,-3.135645,1,-0.000001,0,-0.523599]);
+children[6] = OrientationInterpolator21;
 
-Transform Transform21 = createNode("Transform");
-Transform21.DEF = "Floor";
-Transform21.translation = new SFVec3f(new float[1.241,0,0.358]);
-Shape Shape22 = createNode("Shape");
-Appearance Appearance23 = createNode("Appearance");
-Appearance23.DEF = "WireColor";
-Material Material24 = createNode("Material");
-Material24.diffuseColor = new SFColor(new float[0.122,0.114,0.125]);
-Appearance23.material = Material24;
+ROUTE ROUTE22 = createNode("ROUTE");
+ROUTE22.fromField = "fraction_changed";
+ROUTE22.fromNode = "TIMER";
+ROUTE22.toField = "set_fraction";
+ROUTE22.toNode = "Camera001-POS-INTERP";
+children[7] = ROUTE22;
 
-Shape22.appearance = Appearance23;
+ROUTE ROUTE23 = createNode("ROUTE");
+ROUTE23.fromField = "value_changed";
+ROUTE23.fromNode = "Camera001-POS-INTERP";
+ROUTE23.toField = "set_position";
+ROUTE23.toNode = "Camera001";
+children[8] = ROUTE23;
 
-Box Box25 = createNode("Box");
-Box25.size = new SFVec3f(new float[2000,1,2000]);
-Shape22.geometry = Box25;
+ROUTE ROUTE24 = createNode("ROUTE");
+ROUTE24.fromField = "fraction_changed";
+ROUTE24.fromNode = "TIMER";
+ROUTE24.toField = "set_fraction";
+ROUTE24.toNode = "Camera001-ROT-INTERP";
+children[9] = ROUTE24;
 
-Transform21.child = new undefined();
-
-Transform21.child[0] = Shape22;
-
-children[7] = Transform21;
+ROUTE ROUTE25 = createNode("ROUTE");
+ROUTE25.fromField = "value_changed";
+ROUTE25.fromNode = "Camera001-ROT-INTERP";
+ROUTE25.toField = "set_orientation";
+ROUTE25.toNode = "Camera001";
+children[10] = ROUTE25;
 
 Transform Transform26 = createNode("Transform");
-Transform26.DEF = "TransformAudio1";
-Transform26.translation = new SFVec3f(new float[-933.1235,0,-926.2532]);
+Transform26.DEF = "Floor";
+Transform26.translation = new SFVec3f(new float[1.241,0,0.358]);
 Shape Shape27 = createNode("Shape");
 Appearance Appearance28 = createNode("Appearance");
-Appearance28.DEF = "WireColor_1";
+Appearance28.DEF = "WireColor";
 Material Material29 = createNode("Material");
-Material29.diffuseColor = new SFColor(new float[0.690196,0.101961,0.101961]);
+Material29.diffuseColor = new SFColor(new float[0.122,0.114,0.125]);
 Appearance28.material = Material29;
 
 Shape27.appearance = Appearance28;
 
-Sphere Sphere30 = createNode("Sphere");
-Sphere30.radius = 100;
-Shape27.geometry = Sphere30;
+Box Box30 = createNode("Box");
+Box30.size = new SFVec3f(new float[2000,1,2000]);
+Shape27.geometry = Box30;
 
 Transform26.child = new undefined();
 
 Transform26.child[0] = Shape27;
 
-Billboard Billboard31 = createNode("Billboard");
-Transform Transform32 = createNode("Transform");
-Transform32.DEF = "violin";
-Transform32.translation = new SFVec3f(new float[0,100,0]);
-Transform32.rotation = new SFRotation(new float[1,0,0,-0.5]);
-Transform32.scale = new SFVec3f(new float[100,100,100]);
-Shape Shape33 = createNode("Shape");
-Appearance Appearance34 = createNode("Appearance");
-Material Material35 = createNode("Material");
-Material35.ambientIntensity = 0.0933;
-Material35.diffuseColor = new SFColor(new float[1,1,1]);
-Material35.specularColor = new SFColor(new float[0.46,0.46,0.46]);
-Material35.shininess = 0.51;
-Appearance34.material = Material35;
+children[11] = Transform26;
 
-Shape33.appearance = Appearance34;
+Transform Transform31 = createNode("Transform");
+Transform31.DEF = "TransformAudio1";
+Transform31.translation = new SFVec3f(new float[-933.123474,0,-926.253235]);
+Shape Shape32 = createNode("Shape");
+Appearance Appearance33 = createNode("Appearance");
+Appearance33.DEF = "WireColor_1";
+Material Material34 = createNode("Material");
+Material34.diffuseColor = new SFColor(new float[0.690196,0.101961,0.101961]);
+Appearance33.material = Material34;
 
-Text Text36 = createNode("Text");
-Text36.string = new MFString(new java.lang.String["Violin"]);
-FontStyle FontStyle37 = createNode("FontStyle");
-FontStyle37.DEF = "ModelFontStyle";
-FontStyle37.family = new MFString(new java.lang.String["Times","SERIF"]);
-FontStyle37.style = "BOLD";
-Text36.fontStyle = FontStyle37;
+Shape32.appearance = Appearance33;
 
-Shape33.geometry = Text36;
+Sphere Sphere35 = createNode("Sphere");
+Sphere35.radius = 100;
+Shape32.geometry = Sphere35;
 
-Transform32.child = new undefined();
+Transform31.child = new undefined();
 
-Transform32.child[0] = Shape33;
+Transform31.child[0] = Shape32;
 
-Billboard31.children = new MFNode();
+Billboard Billboard36 = createNode("Billboard");
+Transform Transform37 = createNode("Transform");
+Transform37.DEF = "violin";
+Transform37.rotation = new SFRotation(new float[1,0,0,-0.5]);
+Transform37.scale = new SFVec3f(new float[100,100,100]);
+Transform37.translation = new SFVec3f(new float[0,100,0]);
+Shape Shape38 = createNode("Shape");
+Appearance Appearance39 = createNode("Appearance");
+Material Material40 = createNode("Material");
+Material40.ambientIntensity = 0.0933;
+Material40.diffuseColor = new SFColor(new float[1,1,1]);
+Material40.shininess = 0.51;
+Material40.specularColor = new SFColor(new float[0.46,0.46,0.46]);
+Appearance39.material = Material40;
 
-Billboard31.children[0] = Transform32;
+Shape38.appearance = Appearance39;
 
-Transform26.children[1] = Billboard31;
+Text Text41 = createNode("Text");
+Text41.string = new MFString(new java.lang.String["Violin"]);
+FontStyle FontStyle42 = createNode("FontStyle");
+FontStyle42.DEF = "ModelFontStyle";
+FontStyle42.family = new MFString(new java.lang.String["Times","SERIF"]);
+FontStyle42.style = "BOLD";
+Text41.fontStyle = FontStyle42;
 
-children[8] = Transform26;
+Shape38.geometry = Text41;
 
-Transform Transform38 = createNode("Transform");
-Transform38.DEF = "TransformAudio2";
-Transform38.translation = new SFVec3f(new float[933.4756,0,924.4232]);
-Shape Shape39 = createNode("Shape");
-Appearance Appearance40 = createNode("Appearance");
-Appearance40.DEF = "WireColor_2";
-Material Material41 = createNode("Material");
-Material41.diffuseColor = new SFColor(new float[0.105882,0.694118,0.580392]);
-Appearance40.material = Material41;
+Transform37.child = new undefined();
 
-Shape39.appearance = Appearance40;
+Transform37.child[0] = Shape38;
 
-Sphere Sphere42 = createNode("Sphere");
-Sphere42.radius = 100;
-Shape39.geometry = Sphere42;
+Billboard36.children = new MFNode();
 
-Transform38.child = new undefined();
+Billboard36.children[0] = Transform37;
 
-Transform38.child[0] = Shape39;
+Transform31.children[1] = Billboard36;
 
-Billboard Billboard43 = createNode("Billboard");
-Transform Transform44 = createNode("Transform");
-Transform44.DEF = "saxophone";
-Transform44.translation = new SFVec3f(new float[0,100,0]);
-Transform44.rotation = new SFRotation(new float[1,0,0,-0.5]);
-Transform44.scale = new SFVec3f(new float[100,100,100]);
-Shape Shape45 = createNode("Shape");
-Appearance Appearance46 = createNode("Appearance");
-Material Material47 = createNode("Material");
-Material47.ambientIntensity = 0.0933;
-Material47.diffuseColor = new SFColor(new float[1,1,1]);
-Material47.specularColor = new SFColor(new float[0.46,0.46,0.46]);
-Material47.shininess = 0.51;
-Appearance46.material = Material47;
+children[12] = Transform31;
 
-Shape45.appearance = Appearance46;
+Transform Transform43 = createNode("Transform");
+Transform43.DEF = "TransformAudio2";
+Transform43.translation = new SFVec3f(new float[933.475586,0,924.423218]);
+Shape Shape44 = createNode("Shape");
+Appearance Appearance45 = createNode("Appearance");
+Appearance45.DEF = "WireColor_2";
+Material Material46 = createNode("Material");
+Material46.diffuseColor = new SFColor(new float[0.105882,0.694118,0.580392]);
+Appearance45.material = Material46;
 
-Text Text48 = createNode("Text");
-Text48.string = new MFString(new java.lang.String["Saxophone"]);
-FontStyle FontStyle49 = createNode("FontStyle");
-FontStyle49.USE = "ModelFontStyle";
-Text48.fontStyle = FontStyle49;
+Shape44.appearance = Appearance45;
 
-Shape45.geometry = Text48;
+Sphere Sphere47 = createNode("Sphere");
+Sphere47.radius = 100;
+Shape44.geometry = Sphere47;
 
-Transform44.child = new undefined();
+Transform43.child = new undefined();
 
-Transform44.child[0] = Shape45;
+Transform43.child[0] = Shape44;
 
-Billboard43.children = new MFNode();
+Billboard Billboard48 = createNode("Billboard");
+Transform Transform49 = createNode("Transform");
+Transform49.DEF = "saxophone";
+Transform49.rotation = new SFRotation(new float[1,0,0,-0.5]);
+Transform49.scale = new SFVec3f(new float[100,100,100]);
+Transform49.translation = new SFVec3f(new float[0,100,0]);
+Shape Shape50 = createNode("Shape");
+Appearance Appearance51 = createNode("Appearance");
+Material Material52 = createNode("Material");
+Material52.ambientIntensity = 0.0933;
+Material52.diffuseColor = new SFColor(new float[1,1,1]);
+Material52.shininess = 0.51;
+Material52.specularColor = new SFColor(new float[0.46,0.46,0.46]);
+Appearance51.material = Material52;
 
-Billboard43.children[0] = Transform44;
+Shape50.appearance = Appearance51;
 
-Transform38.children[1] = Billboard43;
+Text Text53 = createNode("Text");
+Text53.string = new MFString(new java.lang.String["Saxophone"]);
+FontStyle FontStyle54 = createNode("FontStyle");
+FontStyle54.USE = "ModelFontStyle";
+Text53.fontStyle = FontStyle54;
 
-children[9] = Transform38;
+Shape50.geometry = Text53;
 
-ListenerPointSource ListenerPointSource50 = createNode("ListenerPointSource");
-ListenerPointSource50.trackCurrentView = True;
-children[10] = ListenerPointSource50;
+Transform49.child = new undefined();
 
-StreamAudioDestination StreamAudioDestination51 = createNode("StreamAudioDestination");
-SpatialSound SpatialSound52 = createNode("SpatialSound");
-SpatialSound52.DEF = "Audio1";
-Gain Gain53 = createNode("Gain");
-AudioClip AudioClip54 = createNode("AudioClip");
-AudioClip54.description = "Violin";
-AudioClip54.url = new MFString(new java.lang.String["sound/violin.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3"]);
-AudioClip54.loop = True;
-Gain53.children = new MFNode();
+Transform49.child[0] = Shape50;
 
-Gain53.children[0] = AudioClip54;
+Billboard48.children = new MFNode();
 
-SpatialSound52.children = new MFNode();
+Billboard48.children[0] = Transform49;
 
-SpatialSound52.children[0] = Gain53;
+Transform43.children[1] = Billboard48;
 
-StreamAudioDestination51.children = new MFNode();
+children[13] = Transform43;
 
-StreamAudioDestination51.children[0] = SpatialSound52;
+ListenerPointSource ListenerPointSource55 = createNode("ListenerPointSource");
+ListenerPointSource55.trackCurrentView = True;
+children[14] = ListenerPointSource55;
 
-SpatialSound SpatialSound55 = createNode("SpatialSound");
-SpatialSound55.DEF = "Audio2";
-Gain Gain56 = createNode("Gain");
-AudioClip AudioClip57 = createNode("AudioClip");
-AudioClip57.description = "Saxophone";
-AudioClip57.url = new MFString(new java.lang.String["sound/saxophone.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/saxophone.mp3"]);
-AudioClip57.loop = True;
-Gain56.children = new MFNode();
+StreamAudioDestination StreamAudioDestination56 = createNode("StreamAudioDestination");
+SpatialSound SpatialSound57 = createNode("SpatialSound");
+SpatialSound57.DEF = "Audio1";
+Gain Gain58 = createNode("Gain");
+AudioClip AudioClip59 = createNode("AudioClip");
+AudioClip59.description = "Violin";
+AudioClip59.loop = True;
+AudioClip59.url = new MFString(new java.lang.String["sound/violin.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3"]);
+Gain58.children = new MFNode();
 
-Gain56.children[0] = AudioClip57;
+Gain58.children[0] = AudioClip59;
 
-SpatialSound55.children = new MFNode();
+SpatialSound57.children = new MFNode();
 
-SpatialSound55.children[0] = Gain56;
+SpatialSound57.children[0] = Gain58;
 
-StreamAudioDestination51.children[1] = SpatialSound55;
+StreamAudioDestination56.children = new MFNode();
 
-children[11] = StreamAudioDestination51;
+StreamAudioDestination56.children[0] = SpatialSound57;
 
-ROUTE ROUTE58 = createNode("ROUTE");
-ROUTE58.fromNode = "TIMER";
-ROUTE58.fromField = "fraction_changed";
-ROUTE58.toNode = "Camera001-POS-INTERP";
-ROUTE58.toField = "set_fraction";
-children[12] = ROUTE58;
+SpatialSound SpatialSound60 = createNode("SpatialSound");
+SpatialSound60.DEF = "Audio2";
+Gain Gain61 = createNode("Gain");
+AudioClip AudioClip62 = createNode("AudioClip");
+AudioClip62.description = "Saxophone";
+AudioClip62.loop = True;
+AudioClip62.url = new MFString(new java.lang.String["sound/saxophone.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/saxophone.mp3"]);
+Gain61.children = new MFNode();
 
-ROUTE ROUTE59 = createNode("ROUTE");
-ROUTE59.fromNode = "Camera001-POS-INTERP";
-ROUTE59.fromField = "value_changed";
-ROUTE59.toNode = "Camera001";
-ROUTE59.toField = "position";
-children[13] = ROUTE59;
+Gain61.children[0] = AudioClip62;
 
-ROUTE ROUTE60 = createNode("ROUTE");
-ROUTE60.fromNode = "TIMER";
-ROUTE60.fromField = "fraction_changed";
-ROUTE60.toNode = "Camera001-ROT-INTERP";
-ROUTE60.toField = "set_fraction";
-children[14] = ROUTE60;
+SpatialSound60.children = new MFNode();
 
-ROUTE ROUTE61 = createNode("ROUTE");
-ROUTE61.fromNode = "Camera001-ROT-INTERP";
-ROUTE61.fromField = "value_changed";
-ROUTE61.toNode = "Camera001";
-ROUTE61.toField = "orientation";
-children[15] = ROUTE61;
+SpatialSound60.children[0] = Gain61;
+
+StreamAudioDestination56.children[1] = SpatialSound60;
+
+children[15] = StreamAudioDestination56;
 
 }

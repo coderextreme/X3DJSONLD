@@ -36,13 +36,22 @@ import org.web3d.x3d.jsail.Texturing.*;
 import org.web3d.x3d.jsail.Time.*;
 import org.web3d.x3d.jsail.VolumeRendering.*;
 import org.web3d.x3d.jsail.fields.*;
-public class sphereflowers {
+import java.util.ArrayList;
+import java.util.List;
+import net.coderextreme.X3DRoots;
+public class sphereflowers implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    X3D model = new sphereflowers().initialize();
+    X3D model = new sphereflowers().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
+    model.toFileX3D("../data/sphereflowers.new.java.x3d");
     model.toFileJSON("../data/sphereflowers.new.json");
+    }
+    public List<X3D> getRootNodeList() {
+    	List<X3D> list = new ArrayList<X3D>(1);
+    	list.add(initialize());
+    	return list;
     }
     public X3D initialize() {
 ProtoInstance ProtoInstance0 = null;
@@ -54,11 +63,6 @@ ProtoInstance ProtoInstance5 = null;
 ProtoInstance ProtoInstance6 = null;
       X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
       .setHead(new head()
-        .addMeta(new meta().setName("title").setContent("sphereflowers.x3d"))
-        .addMeta(new meta().setName("creator").setContent("John Carlson"))
-        .addMeta(new meta().setName("created").setContent("Jan 17 2022"))
-        .addMeta(new meta().setName("modified").setContent("Sat, 30 Dec 2023 07:58:44 GMT"))
-        .addMeta(new meta().setName("description").setContent("5 or more prismatic flowers"))
         .addComponent(new component().setName("Scripting").setLevel(1))
         .addComponent(new component().setName("EnvironmentalEffects").setLevel(3))
         .addComponent(new component().setName("Shaders").setLevel(1))
@@ -66,19 +70,25 @@ ProtoInstance ProtoInstance6 = null;
         .addComponent(new component().setName("Texturing").setLevel(1))
         .addComponent(new component().setName("Rendering").setLevel(1))
         .addComponent(new component().setName("Grouping").setLevel(3))
-        .addComponent(new component().setName("Core").setLevel(1)))
+        .addComponent(new component().setName("Core").setLevel(1))
+        .addMeta(new meta().setName("title").setContent("sphereflowers.x3d"))
+        .addMeta(new meta().setName("creator").setContent("John Carlson"))
+        .addMeta(new meta().setName("created").setContent("Jan 17 2022"))
+        .addMeta(new meta().setName("modified").setContent("Sep 3 2023"))
+        .addMeta(new meta().setName("description").setContent("5 or more prismatic flowers"))
+        .addMeta(new meta().setName("generator").setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit"))
+        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/sphereflowers.x3d")))
       .setScene(new Scene()
-        .addChild(new ExternProtoDeclare().setName("FlowerProto").setUrl(new MFString0().getArray())
-          .addField(new field().setType("MFString").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setName("vertex"))
-          .addField(new field().setType("MFString").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setName("fragment")))
-        .addChild(new ProtoDeclare().setName("flower")
-          .setProtoInterface(new ProtoInterface())
-          .setProtoBody(new ProtoBody()
-            .addChild(new Group()
-              .addChild(ProtoInstance0 = new ProtoInstance().setName("FlowerProto")))))
         .addChild(new NavigationInfo())
-        .addChild(new Background().setFrontUrl(new MFString1().getArray()).setBackUrl(new MFString2().getArray()).setLeftUrl(new MFString3().getArray()).setRightUrl(new MFString4().getArray()).setTopUrl(new MFString5().getArray()).setBottomUrl(new MFString6().getArray()))
+        .addChild(new Background().setBackUrl(new MFString0().getArray()).setBottomUrl(new MFString1().getArray()).setFrontUrl(new MFString2().getArray()).setLeftUrl(new MFString3().getArray()).setRightUrl(new MFString4().getArray()).setTopUrl(new MFString5().getArray()))
         .addChild(new Group()
+          .addChild(new ExternProtoDeclare().setName("FlowerProto").setUrl(new MFString6().getArray())
+            .addField(new field().setType("MFString").setName("vertex").setAccessType(field.ACCESSTYPE_INPUTOUTPUT))
+            .addField(new field().setType("MFString").setName("fragment").setAccessType(field.ACCESSTYPE_INPUTOUTPUT)))
+          .addChild(new ProtoDeclare().setName("flower")
+            .setProtoBody(new ProtoBody()
+              .addChild(new Group()
+                .addChild(ProtoInstance0 = new ProtoInstance().setName("FlowerProto")))))
           .addChild(ProtoInstance1 = new ProtoInstance().setName("flower"))
           .addChild(ProtoInstance2 = new ProtoInstance().setName("flower"))
           .addChild(ProtoInstance3 = new ProtoInstance().setName("flower"))
@@ -86,53 +96,53 @@ ProtoInstance ProtoInstance6 = null;
           .addChild(ProtoInstance5 = new ProtoInstance().setName("flower"))
           .addChild(ProtoInstance6 = new ProtoInstance().setName("flower"))
           .addChild(new TimeSensor().setDEF("SongTime").setLoop(true))
-          .addChild(new Sound().setLocation(new float[] {0f,1f,0f}).setMinBack(20f).setMinFront(20f).setMaxBack(100f).setMaxFront(100f)
-            .setSource(new AudioClip().setDEF("AudioClip").setDescription("Chandubabamusic #1").setUrl(new MFString7().getArray()).setStartTime(1703923124.156d))))
-        .addChild(new ROUTE().setFromNode("SongTime").setFromField("cycleTime").setToNode("AudioClip").setToField("startTime")))      ;
+          .addChild(new Sound().setMaxBack(100).setMaxFront(100).setMinBack(20).setMinFront(20).setLocation(new double[] {0,1,0})
+            .setSource(new AudioClip().setDEF("AudioClip").setDescription("Chandubabamusic #1").setUrl(new MFString7().getArray())))
+          .addChild(new ROUTE().setFromField("cycleTime").setFromNode("SongTime").setToField("startTime").setToNode("AudioClip"))))      ;
 ProtoInstance0
-                .addFieldValue(new fieldValue().setName("vertex").setValue("\"../shaders/x_ite_flowers_chromatic.vs\""));
+                  .addFieldValue(new fieldValue().setName("vertex").setValue("\"../shaders/x_ite_flowers_chromatic.vs\""));
 ProtoInstance0
-                .addFieldValue(new fieldValue().setName("fragment").setValue("\"../shaders/x_ite.fs\""));
+                  .addFieldValue(new fieldValue().setName("fragment").setValue("\"../shaders/x_ite.fs\""));
     return X3D0;
     }
 private class MFString0 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../personal/flowerproto.json#FlowerProto"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"});
   }
 }
 private class MFString1 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../resources/images/all_probes/stpeters_cross/stpeters_front.png"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"});
   }
 }
 private class MFString2 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../resources/images/all_probes/stpeters_cross/stpeters_back.png"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"});
   }
 }
 private class MFString3 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../resources/images/all_probes/stpeters_cross/stpeters_left.png"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"});
   }
 }
 private class MFString4 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../resources/images/all_probes/stpeters_cross/stpeters_right.png"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"});
   }
 }
 private class MFString5 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../resources/images/all_probes/stpeters_cross/stpeters_top.png"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"});
   }
 }
 private class MFString6 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../data/flowerproto.x3d#FlowerProto","https://coderextreme.net/X3DJSONLD/src/main/data/flowerproto.x3d#FlowerProto"});
   }
 }
 private class MFString7 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../resources/chandubabamusic1.wav"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../resources/chandubabamusic1.wav","https://coderextreme.net/X3DJSONLD/src/main/resources/chandubabamusic1.wav"});
   }
 }
 }

@@ -1,8 +1,8 @@
 {
   "X3D": {
     "@profile": "Immersive",
-    "@version": "3.3",
-    "@xsd:noNamespaceSchemaLocation": "https://www.web3d.org/specifications/x3d-3.3.xsd",
+    "@version": "4.0",
+    "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-4.0.xsd",
     "head": {
       "meta": [
         {
@@ -22,12 +22,8 @@
           "@content": "X3D-Edit, https://savage.nps.edu/X3D-Edit"
         },
         {
-          "@name": "identifier",
-          "@content": "https://coderextreme.net/X3DJSONLD/bubble.x3d"
-        },
-        {
           "@name": "translated",
-          "@content": "17 January 2022"
+          "@content": "15 December 2023"
         },
         {
           "@name": "generator",
@@ -42,31 +38,9 @@
     "Scene": {
       "-children": [
         {
-          "NavigationInfo": {
-            "@type": [
-              "EXAMINE"
-            ]
-          }
-        },
-        {
-          "Viewpoint": {
-            "@position": [
-              0,
-              0,
-              4
-            ],
-            "@orientation": [
-              1,
-              0,
-              0,
-              0
-            ],
-            "@description": "Bubble in action"
-          }
-        },
-        {
           "ProtoDeclare": {
             "@name": "Bubble",
+            "ProtoInterface": {},
             "ProtoBody": {
               "-children": [
                 {
@@ -75,11 +49,6 @@
                     "-children": [
                       {
                         "Shape": {
-                          "-geometry": {
-                            "Sphere": {
-                              "@radius": 0.25
-                            }
-                          },
                           "-children": [
                             {
                               "Appearance": {
@@ -96,6 +65,11 @@
                                   }
                                 ]
                               }
+                            },
+                            {
+                              "Sphere": {
+                                "@radius": 0.25
+                              }
                             }
                           ]
                         }
@@ -105,9 +79,9 @@
                           "@DEF": "bounce",
                           "field": [
                             {
-                              "@name": "scale",
                               "@accessType": "inputOutput",
                               "@type": "SFVec3f",
+                              "@name": "scale",
                               "@value": [
                                 1,
                                 1,
@@ -115,86 +89,71 @@
                               ]
                             },
                             {
-                              "@name": "translation",
                               "@accessType": "inputOutput",
                               "@type": "SFVec3f",
-                              "@value": [
-                                0,
-                                0,
-                                0
-                              ]
+                              "@name": "translation"
                             },
                             {
-                              "@name": "velocity",
                               "@accessType": "inputOutput",
                               "@type": "SFVec3f",
-                              "@value": [
-                                0,
-                                0,
-                                0
-                              ]
+                              "@name": "velocity"
                             },
                             {
-                              "@name": "scalvel",
                               "@accessType": "inputOutput",
                               "@type": "SFVec3f",
-                              "@value": [
-                                0,
-                                0,
-                                0
-                              ]
+                              "@name": "scalvel"
                             },
                             {
-                              "@name": "set_fraction",
                               "@accessType": "inputOnly",
-                              "@type": "SFFloat"
+                              "@type": "SFFloat",
+                              "@name": "set_fraction"
                             }
                           ],
                           "#sourceCode": [
-                            "ecmascript:",
-                            "function initialize() {",
-                            "    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);",
-                            "",
-                            "    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);",
-                            "}",
-                            "",
-                            "function set_fraction(value) {",
-                            "\ttranslation = new SFVec3f(",
-                            "\t\ttranslation.x + velocity.x,",
-                            "\t\ttranslation.y + velocity.y,",
-                            "\t\ttranslation.z + velocity.z);",
-                            "\tscale = new SFVec3f(",
-                            "\t\tscale.x + scalvel.x,",
-                            "\t\tscale.y + scalvel.y,",
-                            "\t\tscale.z + scalvel.z);",
-                            "        // if you get to far away or too big, explode",
-                            "        if ( Math.abs(translation.x) > 256) {",
-                            "\t\ttranslation.x = 0;",
-                            "\t\tinitialize();",
-                            "\t}",
-                            "        if ( Math.abs(translation.y) > 256) {",
-                            "\t\ttranslation.y = 0;",
-                            "\t\tinitialize();",
-                            "\t}",
-                            "        if ( Math.abs(translation.z) > 256) {",
-                            "\t\ttranslation.z = 0;",
-                            "\t\tinitialize();",
-                            "\t}",
-                            "\tif (Math.abs(scale.x) > 20) {",
-                            "\t\tscale.x = scale.x/2;",
-                            "\t\ttranslation.x = 0;",
-                            "\t\tinitialize();",
-                            "\t}",
-                            "\tif (Math.abs(scale.y) > 20) {",
-                            "\t\tscale.y = scale.y/2;",
-                            "\t\ttranslation.y = 0;",
-                            "\t\tinitialize();",
-                            "\t}",
-                            "\tif (Math.abs(scale.z) > 20) {",
-                            "\t\tscale.z = scale.z/2;",
-                            "\t\ttranslation.z = 0;",
-                            "\t\tinitialize();",
-                            "\t}",
+                            "ecmascript:\r",
+                            "function initialize() {\r",
+                            "    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);\r",
+                            "\r",
+                            "    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);\r",
+                            "}\r",
+                            "\r",
+                            "function set_fraction(value) {\r",
+                            "\ttranslation = new SFVec3f(\r",
+                            "\t\ttranslation.x + velocity.x,\r",
+                            "\t\ttranslation.y + velocity.y,\r",
+                            "\t\ttranslation.z + velocity.z);\r",
+                            "\tscale = new SFVec3f(\r",
+                            "\t\tscale.x + scalvel.x,\r",
+                            "\t\tscale.y + scalvel.y,\r",
+                            "\t\tscale.z + scalvel.z);\r",
+                            "        // if you get to far away or too big, explode\r",
+                            "        if ( Math.abs(translation.x) > 256) {\r",
+                            "\t\ttranslation.x = 0;\r",
+                            "\t\tinitialize();\r",
+                            "\t}\r",
+                            "        if ( Math.abs(translation.y) > 256) {\r",
+                            "\t\ttranslation.y = 0;\r",
+                            "\t\tinitialize();\r",
+                            "\t}\r",
+                            "        if ( Math.abs(translation.z) > 256) {\r",
+                            "\t\ttranslation.z = 0;\r",
+                            "\t\tinitialize();\r",
+                            "\t}\r",
+                            "\tif (Math.abs(scale.x) > 20) {\r",
+                            "\t\tscale.x = scale.x/2;\r",
+                            "\t\ttranslation.x = 0;\r",
+                            "\t\tinitialize();\r",
+                            "\t}\r",
+                            "\tif (Math.abs(scale.y) > 20) {\r",
+                            "\t\tscale.y = scale.y/2;\r",
+                            "\t\ttranslation.y = 0;\r",
+                            "\t\tinitialize();\r",
+                            "\t}\r",
+                            "\tif (Math.abs(scale.z) > 20) {\r",
+                            "\t\tscale.z = scale.z/2;\r",
+                            "\t\ttranslation.z = 0;\r",
+                            "\t\tinitialize();\r",
+                            "\t}\r",
                             "}"
                           ]
                         }
@@ -205,32 +164,32 @@
                           "@cycleInterval": 10,
                           "@loop": true
                         }
-                      },
-                      {
-                        "ROUTE": {
-                          "@fromNode": "bounce",
-                          "@fromField": "translation_changed",
-                          "@toNode": "transform",
-                          "@toField": "set_translation"
-                        }
-                      },
-                      {
-                        "ROUTE": {
-                          "@fromNode": "bounce",
-                          "@fromField": "scale_changed",
-                          "@toNode": "transform",
-                          "@toField": "set_scale"
-                        }
-                      },
-                      {
-                        "ROUTE": {
-                          "@fromNode": "bubbleClock",
-                          "@fromField": "fraction_changed",
-                          "@toNode": "bounce",
-                          "@toField": "set_fraction"
-                        }
                       }
                     ]
+                  }
+                },
+                {
+                  "ROUTE": {
+                    "@fromNode": "bounce",
+                    "@fromField": "translation",
+                    "@toNode": "transform",
+                    "@toField": "translation"
+                  }
+                },
+                {
+                  "ROUTE": {
+                    "@fromNode": "bounce",
+                    "@fromField": "scale",
+                    "@toNode": "transform",
+                    "@toField": "scale"
+                  }
+                },
+                {
+                  "ROUTE": {
+                    "@fromNode": "bubbleClock",
+                    "@fromField": "fraction_changed",
+                    "@toNode": "bounce",
+                    "@toField": "set_fraction"
                   }
                 }
               ]
@@ -238,9 +197,26 @@
           }
         },
         {
+          "NavigationInfo": {
+            "@type": [
+              "EXAMINE"
+            ]
+          }
+        },
+        {
+          "Viewpoint": {
+            "@description": "Bubble in action",
+            "@position": [
+              0,
+              0,
+              4
+            ]
+          }
+        },
+        {
           "ProtoInstance": {
-            "@name": "Bubble",
-            "@DEF": "bubbleA"
+            "@DEF": "bubbleA",
+            "@name": "Bubble"
           }
         }
       ]

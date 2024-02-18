@@ -10,7 +10,7 @@ var X3D0 =  X3D(
           meta_ : [
             meta(
               name_ : SFString('title'),
-              content_ : SFString('x3dconnector')),
+              content_ : SFString('x3dconnector.x3d')),
 
             meta(
               name_ : SFString('creator'),

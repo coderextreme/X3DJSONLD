@@ -3,7 +3,7 @@ void main(int argc, char ** argv) {
 Browser browser = X3D.getBrowser();
 X3D X3D0;
 X3D0.profile = "Immersive";
-X3D0.version = "4.0";
+X3D0.version = "3.3";
 head head1 = createNode("head");
 meta meta2 = createNode("meta");
 meta2.name = "title";
@@ -62,74 +62,104 @@ meta12.name = "license";
 meta12.content = "https://www.web3d.org/x3d/content/examples/license.html";
 head1.meta[10] = meta12;
 
+meta meta13 = createNode("meta");
+meta13.name = "generator";
+meta13.content = "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit";
+head1.meta[11] = meta13;
+
 head = head1;
 
-WorldInfo WorldInfo14 = createNode("WorldInfo");
-WorldInfo14.title = "Hello world!";
+//Example scene to illustrate comments interspersed among X3D nodes and fields (XML elements and attributes)
+//WorldInfo begin
+WorldInfo WorldInfo15 = createNode("WorldInfo");
+WorldInfo15.title = "Hello world!";
 children = new MFNode();
 
-children[0] = WorldInfo14;
+children[0] = WorldInfo15;
 
-Group Group15 = createNode("Group");
-Viewpoint Viewpoint16 = createNode("Viewpoint");
-Viewpoint16.DEF = "ViewUpClose";
-Viewpoint16.description = "Hello world!";
-Viewpoint16.position = new SFVec3f(new float[0,-1,7]);
-Viewpoint16.centerOfRotation = new SFVec3f(new float[0,-1,0]);
-Group15.children = new MFNode();
+//WorldInfo complete, Group begin
+Group Group16 = createNode("Group");
+//Viewpoint begin
+Viewpoint Viewpoint17 = createNode("Viewpoint");
+Viewpoint17.DEF = "ViewUpClose";
+Viewpoint17.centerOfRotation = new SFVec3f(new float[0,-1,0]);
+Viewpoint17.description = "Hello world!";
+Viewpoint17.position = new SFVec3f(new float[0,-1,7]);
+Group16.children = new MFNode();
 
-Group15.children[0] = Viewpoint16;
+Group16.children[0] = Viewpoint17;
 
-Transform Transform17 = createNode("Transform");
-Transform17.rotation = new SFRotation(new float[0,1,0,3]);
-Shape Shape18 = createNode("Shape");
-Appearance Appearance19 = createNode("Appearance");
-Material Material20 = createNode("Material");
-Material20.DEF = "MaterialLightBlue";
-Material20.diffuseColor = new SFColor(new float[0.1,0.5,1]);
-Appearance19.material = Material20;
+//Viewpoint complete, Transform begin
+Transform Transform18 = createNode("Transform");
+Transform18.rotation = new SFRotation(new float[0,1,0,3]);
+//Shape begin
+Shape Shape19 = createNode("Shape");
+//Sphere begin
+//Sphere complete, Appearance begin
+//Appearance complete
+Sphere Sphere20 = createNode("Sphere");
+Shape19.geometry = Sphere20;
 
-ImageTexture ImageTexture21 = createNode("ImageTexture");
-ImageTexture21.DEF = "ImageCloudlessEarth";
-ImageTexture21.url = new MFString(new java.lang.String["earth-topo.png","earth-topo.jpg","earth-topo-small.gif","https://www.web3d.org/x3d/content/examples/Basic/earth-topo.png","https://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg","https://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif"]);
-Appearance19.texture = ImageTexture21;
+Appearance Appearance21 = createNode("Appearance");
+//Material begin
+//Material complete, ImageTexture begin
+//ImageTexture complete
+Material Material22 = createNode("Material");
+Material22.DEF = "MaterialLightBlue";
+Material22.diffuseColor = new SFColor(new float[0.1,0.5,1]);
+Appearance21.material = Material22;
 
-Shape18.appearance = Appearance19;
+ImageTexture ImageTexture23 = createNode("ImageTexture");
+ImageTexture23.DEF = "ImageCloudlessEarth";
+ImageTexture23.url = new MFString(new java.lang.String["earth-topo.png","earth-topo.jpg","earth-topo-small.gif","https://www.web3d.org/x3d/content/examples/Basic/earth-topo.png","https://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg","https://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif"]);
+Appearance21.texture = ImageTexture23;
 
-Sphere Sphere22 = createNode("Sphere");
-Shape18.geometry = Sphere22;
+Shape19.appearance = Appearance21;
 
-Transform17.child = new undefined();
+Transform18.child = new undefined();
 
-Transform17.child[0] = Shape18;
+Transform18.child[0] = Shape19;
 
-Group15.children[1] = Transform17;
+//Shape complete
+Group16.children[1] = Transform18;
 
-Transform Transform23 = createNode("Transform");
-Transform23.translation = new SFVec3f(new float[0,-2,0]);
-Shape Shape24 = createNode("Shape");
-Appearance Appearance25 = createNode("Appearance");
-Material Material26 = createNode("Material");
-Material26.USE = "MaterialLightBlue";
-Appearance25.material = Material26;
+//Transform complete, Transform begin
+Transform Transform24 = createNode("Transform");
+Transform24.translation = new SFVec3f(new float[0,-2,0]);
+//Shape begin
+Shape Shape25 = createNode("Shape");
+//Text begin
+//Text complete, Appearance begin
+//Appearance complete
+Text Text26 = createNode("Text");
+Text26.DEF = "TextMessage";
+Text26.string = new MFString(new java.lang.String["Hello","world!"]);
+//FontStyle begin
+//FontStyle complete
+FontStyle FontStyle27 = createNode("FontStyle");
+FontStyle27.justify = new MFString(new java.lang.String["MIDDLE","MIDDLE"]);
+Text26.fontStyle = FontStyle27;
 
-Shape24.appearance = Appearance25;
+Shape25.geometry = Text26;
 
-Text Text27 = createNode("Text");
-Text27.DEF = "TextMessage";
-Text27.string = new MFString(new java.lang.String["Hello","world!"]);
-FontStyle FontStyle28 = createNode("FontStyle");
-FontStyle28.justify = new MFString(new java.lang.String["MIDDLE","MIDDLE"]);
-Text27.fontStyle = FontStyle28;
+Appearance Appearance28 = createNode("Appearance");
+//Material begin
+//Material complete
+Material Material29 = createNode("Material");
+Material29.USE = "MaterialLightBlue";
+Appearance28.material = Material29;
 
-Shape24.geometry = Text27;
+Shape25.appearance = Appearance28;
 
-Transform23.child = new undefined();
+Transform24.child = new undefined();
 
-Transform23.child[0] = Shape24;
+Transform24.child[0] = Shape25;
 
-Group15.children[2] = Transform23;
+//Shape complete
+Group16.children[2] = Transform24;
 
-children[1] = Group15;
+//Transform complete
+children[1] = Group16;
 
+//Group complete
 }

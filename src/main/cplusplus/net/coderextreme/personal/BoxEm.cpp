@@ -4,7 +4,7 @@
 #define WINAPI
 #define AFX_EXT_CLASS
 #define EXPORT32
-#include "/c/x3d-code/www.web3d.org/x3d/languages/cpp/X3DLib/X3DLib.h"
+#include "C:/x3d-code/www.web3d.org/x3d/stylesheets/cpp/concretes.h"
 int main(int argc, char ** argv) {
 CX3DScene m_pScene;
 CBrowser browser = X3D.getBrowser();
@@ -12,7 +12,7 @@ CX3D* X3D0 = new CX3D();
 CGroup* group = (CGroup*)(m_pScene.createNode("Group"));
 group->addChildren(X3D0);
 X3D0->setProfile("Immersive");
-X3D0->setVersion("4.0");
+X3D0->setVersion("3.3");
 Chead* head1 = new Chead();
 Cmeta* meta2 = new Cmeta();
 meta2->setName("title");
@@ -31,7 +31,7 @@ head1->addMeta(*meta4);
 
 Cmeta* meta5 = new Cmeta();
 meta5->setName("identifier");
-meta5->setContent("https://coderextreme.net/X3DJSONLD/box.x3d");
+meta5->setContent("https://coderextreme.net/X3DJSONLD/src/main/data/box.x3d");
 head1->addMeta(*meta5);
 
 Cmeta* meta6 = new Cmeta();
@@ -54,8 +54,8 @@ group->addChildren(*Viewpoint9);
 CProtoDeclare ProtoDeclare10 = browser.createX3DFromString(R"foo(<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="anyShape" ><ProtoInterface><field name="xtranslation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
-<field name="myShape" accessType="inputOutput" type="MFNode"><Shape><Sphere containerField="geometry"></Sphere>
-<Appearance><Material diffuseColor="1 1 1"></Material>
+<field name="myShape" accessType="inputOutput" type="MFNode"><Shape><Sphere></Sphere>
+<Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 1 1"></Material>
 </Appearance>
 </Shape>
 </field>
@@ -120,8 +120,8 @@ group->addChildren(*ProtoDeclare10);
 CProtoDeclare ProtoDeclare23 = browser.createX3DFromString(R"foo(<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="three" ><ProtoInterface><field name="ytranslation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
-<field name="myShape" accessType="inputOutput" type="MFNode"><Shape><Cylinder containerField="geometry"></Cylinder>
-<Appearance><Material diffuseColor="1 1 1"></Material>
+<field name="myShape" accessType="inputOutput" type="MFNode"><Shape><Cylinder></Cylinder>
+<Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 1 1"></Material>
 </Appearance>
 </Shape>
 </field>
@@ -273,7 +273,7 @@ CTransform* Transform54 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform54->setTranslation(new float[3]{0,2,0});
 CShape* Shape55 = (CShape *)(m_pScene.createNode("Shape"));
 Shape55->setUSE("box");
-Transform54->addChildren(*Shape55);
+Transform54->addChild(*Shape55);
 
 group->addChildren(*Transform54);
 

@@ -36,13 +36,22 @@ import org.web3d.x3d.jsail.Texturing.*;
 import org.web3d.x3d.jsail.Time.*;
 import org.web3d.x3d.jsail.VolumeRendering.*;
 import org.web3d.x3d.jsail.fields.*;
-public class InlineSoundSource {
+import java.util.ArrayList;
+import java.util.List;
+import net.coderextreme.X3DRoots;
+public class InlineSoundSource implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    X3D model = new InlineSoundSource().initialize();
+    X3D model = new InlineSoundSource().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
+    model.toFileX3D("../data/InlineSoundSource.new.java.x3d");
     model.toFileJSON("../data/InlineSoundSource.new.json");
+    }
+    public List<X3D> getRootNodeList() {
+    	List<X3D> list = new ArrayList<X3D>(1);
+    	list.add(initialize());
+    	return list;
     }
     public X3D initialize() {
       X3D X3D0 =  new X3D().setProfile("Full").setVersion("4.0")
@@ -63,11 +72,11 @@ public class InlineSoundSource {
         .addChild(new WorldInfo().setTitle("InlineSoundSource.x3d"))
         .addChild(new NavigationInfo().setDEF("NAV"))
         .addChild(new Background().setBackUrl(new MFString0().getArray()).setBottomUrl(new MFString1().getArray()).setFrontUrl(new MFString2().getArray()).setLeftUrl(new MFString3().getArray()).setRightUrl(new MFString4().getArray()).setTopUrl(new MFString5().getArray()))
-        .addChild(new Viewpoint().setDEF("Camera001").setDescription("Camera001").setFarDistance(0f ).setNearDistance(1f ).setOrientation(new float[] {1f ,0f ,0f ,-0.523599f }).setPosition(new float[] {0f ,2000f ,3500f }))
-        .addChild(new Transform().setDEF("Floor").setTranslation(new float[] {1.241f ,0f ,0.358f })
+        .addChild(new Viewpoint().setDEF("Camera001").setDescription("Camera001").setFarDistance(0).setNearDistance(1).setOrientation(new double[] {1,0,0,-0.523599}).setPosition(new double[] {0,2000,3500}))
+        .addChild(new Transform().setDEF("Floor").setTranslation(new double[] {1.241,0,0.358})
           .addChild(new Shape()
             .setAppearance(new Appearance().setDEF("WireColor")
-              .setMaterial(new Material().setDiffuseColor(new float[] {0.122f ,0.114f ,0.125f })))
+              .setMaterial(new Material().setDiffuseColor(new double[] {0.122,0.114,0.125})))
             .setGeometry(new IndexedFaceSet().setDEF("Box001-GEOMETRY").setCoordIndex(new MFInt326().getArray()).setSolid(false)
               .setCoord(new Coordinate().setPoint(new MFVec3f7().getArray()))
               .setNormal(new Normal().setVector(new MFVec3f8().getArray())))))
@@ -112,12 +121,12 @@ private class MFInt326 {
 }
 private class MFVec3f7 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-1000f ,0f ,1000f ,-1000f ,0f ,-1000f ,1000f ,0f ,-1000f ,1000f ,0f ,-1000f ,1000f ,0f ,1000f ,-1000f ,0f ,1000f ,-1000f ,8.031588f ,1000f ,1000f ,8.031588f ,1000f ,1000f ,8.031588f ,-1000f ,1000f ,8.031588f ,-1000f ,-1000f ,8.031588f ,-1000f ,-1000f ,8.031588f ,1000f ,-1000f ,0f ,1000f ,1000f ,0f ,1000f ,1000f ,8.031588f ,1000f ,1000f ,8.031588f ,1000f ,-1000f ,8.031588f ,1000f ,-1000f ,0f ,1000f ,1000f ,0f ,1000f ,1000f ,0f ,-1000f ,1000f ,8.031588f ,-1000f ,1000f ,8.031588f ,-1000f ,1000f ,8.031588f ,1000f ,1000f ,0f ,1000f ,1000f ,0f ,-1000f ,-1000f ,0f ,-1000f ,-1000f ,8.031588f ,-1000f ,-1000f ,8.031588f ,-1000f ,1000f ,8.031588f ,-1000f ,1000f ,0f ,-1000f ,-1000f ,0f ,-1000f ,-1000f ,0f ,1000f ,-1000f ,8.031588f ,1000f ,-1000f ,8.031588f ,1000f ,-1000f ,8.031588f ,-1000f ,-1000f ,0f ,-1000f });
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {-1000,0,1000,-1000,0,-1000,1000,0,-1000,1000,0,-1000,1000,0,1000,-1000,0,1000,-1000,8.031588,1000,1000,8.031588,1000,1000,8.031588,-1000,1000,8.031588,-1000,-1000,8.031588,-1000,-1000,8.031588,1000,-1000,0,1000,1000,0,1000,1000,8.031588,1000,1000,8.031588,1000,-1000,8.031588,1000,-1000,0,1000,1000,0,1000,1000,0,-1000,1000,8.031588,-1000,1000,8.031588,-1000,1000,8.031588,1000,1000,0,1000,1000,0,-1000,-1000,0,-1000,-1000,8.031588,-1000,-1000,8.031588,-1000,1000,8.031588,-1000,1000,0,-1000,-1000,0,-1000,-1000,0,1000,-1000,8.031588,1000,-1000,8.031588,1000,-1000,8.031588,-1000,-1000,0,-1000});
   }
 }
 private class MFVec3f8 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f ,-1f ,0f ,0f ,-1f ,0f ,0f ,-1f ,0f ,0f ,-1f ,0f ,0f ,-1f ,0f ,0f ,-1f ,0f ,0f ,1f ,0f ,0f ,1f ,0f ,0f ,1f ,0f ,0f ,1f ,0f ,0f ,1f ,0f ,0f ,1f ,0f ,0f ,0f ,1f ,0f ,0f ,1f ,0f ,0f ,1f ,0f ,0f ,1f ,0f ,0f ,1f ,0f ,0f ,1f ,1f ,0f ,0f ,1f ,0f ,0f ,1f ,0f ,0f ,1f ,0f ,0f ,1f ,0f ,0f ,1f ,0f ,0f ,0f ,0f ,-1f ,0f ,0f ,-1f ,0f ,0f ,-1f ,0f ,0f ,-1f ,0f ,0f ,-1f ,0f ,0f ,-1f ,-1f ,0f ,0f ,-1f ,0f ,0f ,-1f ,0f ,0f ,-1f ,0f ,0f ,-1f ,0f ,0f ,-1f ,0f ,0f });
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0,-1,0,0,-1,0,0,-1,0,0,-1,0,0,-1,0,0,-1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,0,1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,1,1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,0,0,-1,0,0,-1,0,0,-1,0,0,-1,0,0,-1,0,0,-1,-1,0,0,-1,0,0,-1,0,0,-1,0,0,-1,0,0,-1,0,0});
   }
 }
 private class MFString9 {

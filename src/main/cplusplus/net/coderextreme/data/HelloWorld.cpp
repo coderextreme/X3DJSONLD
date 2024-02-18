@@ -12,8 +12,9 @@ CX3D* X3D0 = new CX3D();
 CGroup* group = (CGroup*)(m_pScene.createNode("Group"));
 group->addChildren(X3D0);
 X3D0->setProfile("Immersive");
-X3D0->setVersion("4.0");
+X3D0->setVersion("3.3");
 Chead* head1 = new Chead();
+//Alternate encodings: VRML97, X3D ClassicVRML Encoding, X3D Compressed Binary Encoding (CBE), X3DOM, JSON
 Cmeta* meta2 = new Cmeta();
 meta2->setName("title");
 meta2->setContent("HelloWorld.x3d");
@@ -90,105 +91,111 @@ meta16->setContent("http://X3dGraphics.com/examples/X3dForAdvancedModeling/Hello
 head1->addMeta(*meta16);
 
 Cmeta* meta17 = new Cmeta();
-meta17->setName("reference");
-meta17->setContent("HelloWorld.wrl");
+meta17->setName("identifier");
+meta17->setContent("http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter01TechnicalOverview/HelloWorld.x3d");
 head1->addMeta(*meta17);
 
 Cmeta* meta18 = new Cmeta();
-meta18->setName("reference");
-meta18->setContent("HelloWorld.x3dv");
+meta18->setName("license");
+meta18->setContent("https://www.web3d.org/x3d/content/examples/license.html");
 head1->addMeta(*meta18);
 
 Cmeta* meta19 = new Cmeta();
-meta19->setName("reference");
-meta19->setContent("HelloWorld.x3db");
+meta19->setName("generator");
+meta19->setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit");
 head1->addMeta(*meta19);
 
 Cmeta* meta20 = new Cmeta();
 meta20->setName("reference");
-meta20->setContent("HelloWorld.xhtml");
+meta20->setContent("HelloWorld.wrl");
 head1->addMeta(*meta20);
 
 Cmeta* meta21 = new Cmeta();
 meta21->setName("reference");
-meta21->setContent("HelloWorld.json");
+meta21->setContent("HelloWorld.x3dv");
 head1->addMeta(*meta21);
 
 Cmeta* meta22 = new Cmeta();
-meta22->setName("identifier");
-meta22->setContent("http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter01TechnicalOverview/HelloWorld.x3d");
+meta22->setName("reference");
+meta22->setContent("HelloWorld.x3db");
 head1->addMeta(*meta22);
 
 Cmeta* meta23 = new Cmeta();
-meta23->setName("license");
-meta23->setContent("https://www.web3d.org/x3d/content/examples/license.html");
+meta23->setName("reference");
+meta23->setContent("HelloWorld.xhtml");
 head1->addMeta(*meta23);
+
+Cmeta* meta24 = new Cmeta();
+meta24->setName("reference");
+meta24->setContent("HelloWorld.json");
+head1->addMeta(*meta24);
 
 X3D0->setHead(*head1);
 
-CScene* Scene24 = new CScene();
-CWorldInfo* WorldInfo25 = (CWorldInfo *)(m_pScene.createNode("WorldInfo"));
-WorldInfo25->setTitle("Hello World!");
-WorldInfo25->setInfo(new CString[1]{"Example scene to illustrate a simple X3D model"}, 1);
-group->addChildren(*WorldInfo25);
+CScene* Scene25 = new CScene();
+//Example scene to illustrate X3D nodes and fields (XML elements and attributes)
+CWorldInfo* WorldInfo26 = (CWorldInfo *)(m_pScene.createNode("WorldInfo"));
+WorldInfo26->setInfo(new CString[1]{"Example scene to illustrate a simple X3D model"}, 1);
+WorldInfo26->setTitle("Hello World!");
+group->addChildren(*WorldInfo26);
 
-CGroup* Group26 = (CGroup *)(m_pScene.createNode("Group"));
-CViewpoint* Viewpoint27 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
-Viewpoint27->setDEF("ViewUpClose");
-Viewpoint27->setDescription("Hello world!");
-Viewpoint27->setPosition(new float[3]{0,-1,7});
-Viewpoint27->setCenterOfRotation(new float[3]{0,-1,0});
-Group26->addChildren(*Viewpoint27);
+CGroup* Group27 = (CGroup *)(m_pScene.createNode("Group"));
+CViewpoint* Viewpoint28 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
+Viewpoint28->setDEF("ViewUpClose");
+Viewpoint28->setCenterOfRotation(new float[3]{0,-1,0});
+Viewpoint28->setDescription("Hello world!");
+Viewpoint28->setPosition(new float[3]{0,-1,7});
+Group27->addChildren(*Viewpoint28);
 
-CTransform* Transform28 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform28->setRotation(new float[4]{0,1,0,3});
-CShape* Shape29 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance30 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material31 = (CMaterial *)(m_pScene.createNode("Material"));
-Material31->setDEF("MaterialLightBlue");
-Material31->setDiffuseColor(new float[3]{0.1,0.5,1});
-Appearance30->setMaterial(*Material31);
+CTransform* Transform29 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform29->setRotation(new float[4]{0,1,0,3});
+CShape* Shape30 = (CShape *)(m_pScene.createNode("Shape"));
+CSphere* Sphere31 = (CSphere *)(m_pScene.createNode("Sphere"));
+Shape30->setGeometry(Sphere31);
 
-CImageTexture* ImageTexture32 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
-ImageTexture32->setDEF("ImageCloudlessEarth");
-ImageTexture32->setUrl(new CString[6]{"earth-topo.png","earth-topo.jpg","earth-topo-small.gif","https://www.web3d.org/x3d/content/examples/Basic/earth-topo.png","https://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg","https://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif"}, 6);
-Appearance30->setTexture(*ImageTexture32);
+CAppearance* Appearance32 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material33 = (CMaterial *)(m_pScene.createNode("Material"));
+Material33->setDEF("MaterialLightBlue");
+Material33->setDiffuseColor(new float[3]{0.1,0.5,1});
+Appearance32->setMaterial(*Material33);
 
-Shape29->setAppearance(*Appearance30);
+CImageTexture* ImageTexture34 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture34->setDEF("ImageCloudlessEarth");
+ImageTexture34->setUrl(new CString[6]{"earth-topo.png","earth-topo.jpg","earth-topo-small.gif","https://www.web3d.org/x3d/content/examples/Basic/earth-topo.png","https://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg","https://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif"}, 6);
+Appearance32->setTexture(*ImageTexture34);
 
-CSphere* Sphere33 = (CSphere *)(m_pScene.createNode("Sphere"));
-Shape29->setGeometry(Sphere33);
+Shape30->setAppearance(*Appearance32);
 
-Transform28->addChild(*Shape29);
+Transform29->addChild(*Shape30);
 
-Group26->addChildren(*Transform28);
+Group27->addChildren(*Transform29);
 
-CTransform* Transform34 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform34->setTranslation(new float[3]{0,-2,0});
-CShape* Shape35 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance36 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material37 = (CMaterial *)(m_pScene.createNode("Material"));
-Material37->setUSE("MaterialLightBlue");
-Appearance36->setMaterial(*Material37);
+CTransform* Transform35 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform35->setTranslation(new float[3]{0,-2,0});
+CShape* Shape36 = (CShape *)(m_pScene.createNode("Shape"));
+CText* Text37 = (CText *)(m_pScene.createNode("Text"));
+Text37->setDEF("TextMessage");
+Text37->setString(new CString[2]{"Hello","world!"}, 2);
+CFontStyle* FontStyle38 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
+FontStyle38->setJustify(new CString[2]{"MIDDLE","MIDDLE"}, 2);
+Text37->setFontStyle(*FontStyle38);
 
-Shape35->setAppearance(*Appearance36);
+Shape36->setGeometry(Text37);
 
-CText* Text38 = (CText *)(m_pScene.createNode("Text"));
-Text38->setDEF("TextMessage");
-Text38->setString(new CString[2]{"Hello","world!"}, 2);
-CFontStyle* FontStyle39 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
-FontStyle39->setJustify(new CString[2]{"MIDDLE","MIDDLE"}, 2);
-Text38->setFontStyle(*FontStyle39);
+CAppearance* Appearance39 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material40 = (CMaterial *)(m_pScene.createNode("Material"));
+Material40->setUSE("MaterialLightBlue");
+Appearance39->setMaterial(*Material40);
 
-Shape35->setGeometry(Text38);
+Shape36->setAppearance(*Appearance39);
 
-Transform34->addChild(*Shape35);
+Transform35->addChild(*Shape36);
 
-Group26->addChildren(*Transform34);
+Group27->addChildren(*Transform35);
 
-group->addChildren(*Group26);
+group->addChildren(*Group27);
 
-X3D0->setScene(*Scene24);
+X3D0->setScene(*Scene25);
 
 m_pScene.addRootNode(group);
 X3D0->toXMLString();

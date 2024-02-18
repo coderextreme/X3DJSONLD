@@ -12,7 +12,7 @@ CX3D* X3D0 = new CX3D();
 CGroup* group = (CGroup*)(m_pScene.createNode("Group"));
 group->addChildren(X3D0);
 X3D0->setProfile("Immersive");
-X3D0->setVersion("4.0");
+X3D0->setVersion("3.3");
 Chead* head1 = new Chead();
 Cmeta* meta2 = new Cmeta();
 meta2->setName("title");
@@ -34,12 +34,17 @@ meta5->setName("identifier");
 meta5->setContent("https://coderextreme.net/X3DJSONLD/src/main/data/asteroids.x3d");
 head1->addMeta(*meta5);
 
+Cmeta* meta6 = new Cmeta();
+meta6->setName("description");
+meta6->setContent("asteroids");
+head1->addMeta(*meta6);
+
 X3D0->setHead(*head1);
 
-CScene* Scene6 = new CScene();
-CProtoDeclare ProtoDeclare7 = browser.createX3DFromString(R"foo(<?xml version="1.0" encoding="undefined"?>
+CScene* Scene7 = new CScene();
+CProtoDeclare ProtoDeclare8 = browser.createX3DFromString(R"foo(<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
-<ProtoDeclare name="anyShape" ><ProtoInterface><field accessType="inputOutput" type="MFNode" name="myShape"><Shape DEF="_1"><Sphere></Sphere>
+<ProtoDeclare name="anyShape" ><ProtoInterface><field name="myShape" accessType="inputOutput" type="MFNode"><Shape><Sphere></Sphere>
 </Shape>
 </field>
 </ProtoInterface>
@@ -48,44 +53,43 @@ CProtoDeclare ProtoDeclare7 = browser.createX3DFromString(R"foo(<?xml version="1
 </Transform>
 </ProtoBody>
 </ProtoDeclare>)foo");
-ProtoDeclare7->setName("anyShape");
-CProtoInterface* ProtoInterface8 = new CProtoInterface();
-Cfield* field9 = new Cfield();
-field9->setAccessType("inputOutput");
-field9->setType("MFNode");
-field9->setName("myShape");
-CShape* Shape10 = (CShape *)(m_pScene.createNode("Shape"));
-Shape10->setDEF("_1");
-CSphere* Sphere11 = (CSphere *)(m_pScene.createNode("Sphere"));
-Shape10->setGeometry(Sphere11);
+ProtoDeclare8->setName("anyShape");
+CProtoInterface* ProtoInterface9 = new CProtoInterface();
+Cfield* field10 = new Cfield();
+field10->setName("myShape");
+field10->setAccessType("inputOutput");
+field10->setType("MFNode");
+CShape* Shape11 = (CShape *)(m_pScene.createNode("Shape"));
+CSphere* Sphere12 = (CSphere *)(m_pScene.createNode("Sphere"));
+Shape11->setGeometry(Sphere12);
 
-field9->addChildren(*Shape10);
+field10->addChildren(*Shape11);
 
-ProtoInterface8->addField(*field9);
+ProtoInterface9->addField(*field10);
 
-ProtoDeclare7->setProtoInterface(*ProtoInterface8);
+ProtoDeclare8->setProtoInterface(*ProtoInterface9);
 
-CProtoBody* ProtoBody12 = new CProtoBody();
-CTransform* Transform13 = (CTransform *)(m_pScene.createNode("Transform"));
-CIS* IS14 = new CIS();
-Cconnect* connect15 = new Cconnect();
-connect15->setNodeField("children");
-connect15->setProtoField("myShape");
-IS14->addConnect(*connect15);
+CProtoBody* ProtoBody13 = new CProtoBody();
+CTransform* Transform14 = (CTransform *)(m_pScene.createNode("Transform"));
+CIS* IS15 = new CIS();
+Cconnect* connect16 = new Cconnect();
+connect16->setNodeField("children");
+connect16->setProtoField("myShape");
+IS15->addConnect(*connect16);
 
-Transform13->setIS(*IS14);
+Transform14->setIS(*IS15);
 
-ProtoBody12->addChildren(*Transform13);
+ProtoBody13->addChildren(*Transform14);
 
-ProtoDeclare7->setProtoBody(*ProtoBody12);
+ProtoDeclare8->setProtoBody(*ProtoBody13);
 
-group->addChildren(*ProtoDeclare7);
+group->addChildren(*ProtoDeclare8);
 
-CProtoInstance* ProtoInstance16 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
-ProtoInstance16->setName("anyShape");
-group->addChildren(*ProtoInstance16);
+CProtoInstance* ProtoInstance17 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
+ProtoInstance17->setName("anyShape");
+group->addChildren(*ProtoInstance17);
 
-X3D0->setScene(*Scene6);
+X3D0->setScene(*Scene7);
 
 m_pScene.addRootNode(group);
 X3D0->toXMLString();

@@ -36,13 +36,22 @@ import org.web3d.x3d.jsail.Texturing.*;
 import org.web3d.x3d.jsail.Time.*;
 import org.web3d.x3d.jsail.VolumeRendering.*;
 import org.web3d.x3d.jsail.fields.*;
-public class fors2 {
+import java.util.ArrayList;
+import java.util.List;
+import net.coderextreme.X3DRoots;
+public class fors2 implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    X3D model = new fors2().initialize();
+    X3D model = new fors2().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
+    model.toFileX3D("../personal/fors2.new.java.x3d");
     model.toFileJSON("../personal/fors2.new.json");
+    }
+    public List<X3D> getRootNodeList() {
+    	List<X3D> list = new ArrayList<X3D>(1);
+    	list.add(initialize());
+    	return list;
     }
     public X3D initialize() {
 ProtoInstance ProtoInstance0 = null;
@@ -73,7 +82,7 @@ ProtoInstance ProtoInstance2 = null;
                 .setAppearance(new Appearance()
                   .addComments("comment before Material")
                   .addComments("comment after Material")
-                  .setMaterial(new Material().setDiffuseColor(new float[] {1f ,0f ,0f })))))
+                  .setMaterial(new Material().setDiffuseColor(new double[] {1,0,0})))))
             .addChild(new PositionInterpolator().setDEF("NodePosition").setKey(new MFFloat0().getArray()).setKeyValue(new MFVec3f1().getArray()))
             .addChild(new Script().setDEF("MoveBall")
               .addField(new field().setType("SFVec3f").setName("translation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("50 50 0"))
@@ -87,7 +96,7 @@ ProtoInstance ProtoInstance2 = null;
 "                                                keyValue = new MFVec3f([old, translation]);\n"+
 "						// Browser.println(translation);\n"+
 "					}"))
-            .addChild(new TimeSensor().setDEF("nodeClock").setCycleInterval(3d).setLoop(true))
+            .addChild(new TimeSensor().setDEF("nodeClock").setCycleInterval(3).setLoop(true))
             .addChild(new ROUTE().setFromNode("nodeClock").setFromField("cycleTime").setToNode("MoveBall").setToField("set_cycle"))
             .addChild(new ROUTE().setFromNode("nodeClock").setFromField("fraction_changed").setToNode("NodePosition").setToField("set_fraction"))
             .addChild(new ROUTE().setFromNode("MoveBall").setFromField("keyValue").setToNode("NodePosition").setToField("keyValue"))
@@ -98,9 +107,9 @@ ProtoInstance ProtoInstance2 = null;
             .addField(new field().setType("SFVec3f").setName("positionB").setAccessType(field.ACCESSTYPE_INPUTONLY)))
           .setProtoBody(new ProtoBody()
             .addChild(new Shape()
-              .setGeometry(new Extrusion().setDEF("extrusion").setCreaseAngle(0.785f ).setCrossSection(new MFVec2f2().getArray()).setSpine(new MFVec3f3().getArray()))
+              .setGeometry(new Extrusion().setDEF("extrusion").setCreaseAngle(0.785).setCrossSection(new MFVec2f2().getArray()).setSpine(new MFVec3f3().getArray()))
               .setAppearance(new Appearance()
-                .setMaterial(new Material().setDiffuseColor(new float[] {0f ,1f ,0f }))))
+                .setMaterial(new Material().setDiffuseColor(new double[] {0,1,0}))))
             .addChild(new Script().setDEF("MoveCylinder")
               .addField(new field().setType("MFVec3f").setName("spine").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 -50 0 0 0 0 0 50 0"))
               .addField(new field().setType("SFVec3f").setName("set_endA").setAccessType(field.ACCESSTYPE_INPUTONLY))
@@ -131,7 +140,7 @@ ProtoInstance ProtoInstance2 = null;
 "                    spine = value;\n"+
 "                }"))
             .addChild(new ROUTE().setFromNode("MoveCylinder").setFromField("spine").setToNode("extrusion").setToField("set_spine"))))
-        .addChild(new Transform().setScale(new float[] {0.1f ,0.1f ,0.1f })
+        .addChild(new Transform().setScale(new double[] {0.1,0.1,0.1})
           .addChild(ProtoInstance0 = new ProtoInstance().setName("node").setDEF("nodeA"))
           .addChild(ProtoInstance1 = new ProtoInstance().setName("node").setDEF("nodeB"))
           .addChild(ProtoInstance2 = new ProtoInstance().setName("cylinder").setDEF("linkA")))
@@ -149,22 +158,22 @@ ProtoInstance2
     }
 private class MFFloat0 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,1f });
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,1});
   }
 }
 private class MFVec3f1 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f ,0f ,0f ,0f ,5f ,0f });
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0,0,0,0,5,0});
   }
 }
 private class MFVec2f2 {
   private org.web3d.x3d.jsail.fields.MFVec2f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec2f(new float[] {1f ,0f ,0.92f ,-0.38f ,0.71f ,-0.71f ,0.38f ,-0.92f ,0f ,-1f ,-0.38f ,-0.92f ,-0.71f ,-0.71f ,-0.92f ,-0.38f ,-1f ,0f ,-0.92f ,0.38f ,-0.71f ,0.71f ,-0.38f ,0.92f ,0f ,1f ,0.38f ,0.92f ,0.71f ,0.71f ,0.92f ,0.38f ,1f ,0f });
+    return new org.web3d.x3d.jsail.fields.MFVec2f(new double[] {1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0});
   }
 }
 private class MFVec3f3 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f ,-50f ,0f ,0f ,0f ,0f ,0f ,50f ,0f });
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0,-50,0,0,0,0,0,50,0});
   }
 }
 }

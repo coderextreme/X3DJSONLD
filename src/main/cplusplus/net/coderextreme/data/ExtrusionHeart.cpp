@@ -12,7 +12,7 @@ CX3D* X3D0 = new CX3D();
 CGroup* group = (CGroup*)(m_pScene.createNode("Group"));
 group->addChildren(X3D0);
 X3D0->setProfile("Immersive");
-X3D0->setVersion("4.0");
+X3D0->setVersion("3.0");
 Chead* head1 = new Chead();
 Cmeta* meta2 = new Cmeta();
 meta2->setName("title");
@@ -49,38 +49,43 @@ meta8->setName("generator");
 meta8->setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit");
 head1->addMeta(*meta8);
 
+Cmeta* meta9 = new Cmeta();
+meta9->setName("license");
+meta9->setContent("../license.html");
+head1->addMeta(*meta9);
+
 X3D0->setHead(*head1);
 
-CScene* Scene9 = new CScene();
-CViewpoint* Viewpoint10 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
-Viewpoint10->setDescription("Extrusion Heart");
-Viewpoint10->setPosition(new float[3]{0,-4,0});
-Viewpoint10->setOrientation(new float[4]{1,0,0,1.57});
-group->addChildren(*Viewpoint10);
+CScene* Scene10 = new CScene();
+CViewpoint* Viewpoint11 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
+Viewpoint11->setDescription("Extrusion Heart");
+Viewpoint11->setOrientation(new float[4]{1,0,0,1.57});
+Viewpoint11->setPosition(new float[3]{0,-4,0});
+group->addChildren(*Viewpoint11);
 
-CTransform* Transform11 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform11->setTranslation(new float[3]{0,-0.5,0});
-CShape* Shape12 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance13 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material14 = (CMaterial *)(m_pScene.createNode("Material"));
-Material14->setDiffuseColor(new float[3]{0.8,0.3,0.3});
-Appearance13->setMaterial(*Material14);
+CTransform* Transform12 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform12->setTranslation(new float[3]{0,-0.5,0});
+CShape* Shape13 = (CShape *)(m_pScene.createNode("Shape"));
+CExtrusion* Extrusion14 = (CExtrusion *)(m_pScene.createNode("Extrusion"));
+Extrusion14->setCreaseAngle(3.14159);
+Extrusion14->setCrossSection(new float[26]{0,0.8,0.2,1,0.7,0.95,1,0.5,0.8,0,0.5,-0.3,0,-0.7,-0.5,-0.3,-0.8,0,-1,0.5,-0.7,0.95,-0.2,1,0,0.8});
+Extrusion14->setScale(new float[10]{0.01,0.01,0.8,0.8,1,1,0.8,0.8,0.01,0.01});
+Extrusion14->setSolid(False);
+Extrusion14->setSpine(new float[15]{0,0,0,0,0.1,0,0,0.5,0,0,0.9,0,0,1,0});
+Shape13->setGeometry(Extrusion14);
 
-Shape12->setAppearance(*Appearance13);
+CAppearance* Appearance15 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material16 = (CMaterial *)(m_pScene.createNode("Material"));
+Material16->setDiffuseColor(new float[3]{0.8,0.3,0.3});
+Appearance15->setMaterial(*Material16);
 
-CExtrusion* Extrusion15 = (CExtrusion *)(m_pScene.createNode("Extrusion"));
-Extrusion15->setSolid(False);
-Extrusion15->setCreaseAngle(3.14159);
-Extrusion15->setCrossSection(new float[26]{0,0.8,0.2,1,0.7,0.95,1,0.5,0.8,0,0.5,-0.3,0,-0.7,-0.5,-0.3,-0.8,0,-1,0.5,-0.7,0.95,-0.2,1,0,0.8});
-Extrusion15->setScale(new float[10]{0.01,0.01,0.8,0.8,1,1,0.8,0.8,0.01,0.01});
-Extrusion15->setSpine(new float[15]{0,0,0,0,0.1,0,0,0.5,0,0,0.9,0,0,1,0});
-Shape12->setGeometry(Extrusion15);
+Shape13->setAppearance(*Appearance15);
 
-Transform11->addChild(*Shape12);
+Transform12->addChild(*Shape13);
 
-group->addChildren(*Transform11);
+group->addChildren(*Transform12);
 
-X3D0->setScene(*Scene9);
+X3D0->setScene(*Scene10);
 
 m_pScene.addRootNode(group);
 X3D0->toXMLString();

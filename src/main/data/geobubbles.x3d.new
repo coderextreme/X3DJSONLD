@@ -10,7 +10,7 @@
 <Scene><!--Viewpoint DEF='Tour' position='0 0 4' orientation='1 0 0 0' description='Tour Views'/--><!--PositionInterpolator DEF='TourPosition' key='0 1' keyValue='-0.5 -0.5 4 -0.5 0.5 4'/--><GeoViewpoint DEF="Tour" position="0 0 4" orientation="1 0 0 0" description="Tour Views"></GeoViewpoint>
 <Background backUrl="&quot;../resources/images/BK.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/BK.png&quot;" bottomUrl="&quot;../resources/images/BT.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/BT.png&quot;" frontUrl="&quot;../resources/images/FR.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/FR.png&quot;" leftUrl="&quot;../resources/images/LF.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/LF.png&quot;" rightUrl="&quot;../resources/images/RT.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/RT.png&quot;" topUrl="&quot;../resources/images/TP.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/TP.png&quot;"></Background>
 <Transform><Shape><Sphere></Sphere>
-<Appearance><Material diffuseColor="0.7 0.7 0.7" specularColor="0.5 0.5 0.5"></Material>
+<Appearance containerField="appearance"><Material containerField="material" diffuseColor="0.7 0.7 0.7" specularColor="0.5 0.5 0.5"></Material>
 </Appearance>
 </Shape>
 </Transform>

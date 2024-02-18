@@ -5,20 +5,20 @@ print("-->")
 import json
 model = (
 X3D(profile="Interchange", version="3.3", 
-head=head(
+head=Pyhead(
 children=[
-meta(name="title", content="cube.x3d"),
-meta(name="description", content="Template for an Indexed Face Set"),
-meta(name="creator", content="John Carlson"),
-meta(name="created", content="4 April 2017"),
-meta(name="generator", content="manual"),
-meta(name="license", content="../license.html"),
-meta(name="identifier", content="https://coderextreme.net/X3DJSONLD/src/main/data/cube.x3d"),
-meta(name="translated", content="02 September 2023"),
-meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
-meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
+Pymeta(name="title", content="cube.x3d"),
+Pymeta(name="description", content="Template for an Indexed Face Set"),
+Pymeta(name="creator", content="John Carlson"),
+Pymeta(name="created", content="4 April 2017"),
+Pymeta(name="generator", content="manual"),
+Pymeta(name="license", content="../license.html"),
+Pymeta(name="identifier", content="https://coderextreme.net/X3DJSONLD/src/main/data/cube.x3d"),
+Pymeta(name="translated", content="30 December 2023"),
+Pymeta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
+Pymeta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
-Scene=Scene(children=[
+Scene=PyScene(children=[
 Group(children=[
 Shape(
 geometry=

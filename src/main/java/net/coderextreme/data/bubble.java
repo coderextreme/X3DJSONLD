@@ -36,131 +36,98 @@ import org.web3d.x3d.jsail.Texturing.*;
 import org.web3d.x3d.jsail.Time.*;
 import org.web3d.x3d.jsail.VolumeRendering.*;
 import org.web3d.x3d.jsail.fields.*;
-public class bubble {
+import java.util.ArrayList;
+import java.util.List;
+import net.coderextreme.X3DRoots;
+public class bubble implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    X3D model = new bubble().initialize();
+    X3D model = new bubble().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
+    model.toFileX3D("../data/bubble.new.java.x3d");
     model.toFileJSON("../data/bubble.new.json");
+    }
+    public List<X3D> getRootNodeList() {
+    	List<X3D> list = new ArrayList<X3D>(1);
+    	list.add(initialize());
+    	return list;
     }
     public X3D initialize() {
 ProtoInstance ProtoInstance0 = null;
-      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
+      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
       .setHead(new head()
         .addMeta(new meta().setName("title").setContent("bubble.x3d"))
         .addMeta(new meta().setName("creator").setContent("John Carlson"))
         .addMeta(new meta().setName("description").setContent("Tour around a prismatic sphere"))
-        .addMeta(new meta().setName("generator").setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit")))
+        .addMeta(new meta().setName("generator").setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit"))
+        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/bubble.x3d")))
       .setScene(new Scene()
+        .addChild(new NavigationInfo().setType("\"EXAMINE\""))
+        .addChild(new Viewpoint().setPosition(new double[] {0,0,4}).setOrientation(new double[] {1,0,0,0}).setDescription("Bubble in action"))
         .addChild(new ProtoDeclare().setName("Bubble")
-          .setProtoInterface(new ProtoInterface())
           .setProtoBody(new ProtoBody()
             .addChild(new Transform().setDEF("transform")
               .addChild(new Shape()
+                .setGeometry(new Sphere().setRadius(0.25))
                 .setAppearance(new Appearance()
-                  .setMaterial(new Material().setDiffuseColor(new float[] {1f,0f,0f}).setTransparency(0.2f)))
-                .setGeometry(new Sphere().setRadius(0.25f)))
+                  .setMaterial(new Material().setDiffuseColor(new double[] {1,0,0}).setTransparency(0.2))))
               .addChild(new Script().setDEF("bounce")
-                .addField(new field().setType("SFVec3f").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setName("scale").setValue("1 1 1"))
-                .addField(new field().setType("SFVec3f").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setName("translation"))
-                .addField(new field().setType("SFVec3f").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setName("velocity"))
-                .addField(new field().setType("SFVec3f").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setName("scalvel"))
-                .addField(new field().setType("SFFloat").setAccessType(field.ACCESSTYPE_INPUTONLY).setName("set_fraction"))
+                .addField(new field().setType("SFVec3f").setName("scale").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("1 1 1"))
+                .addField(new field().setType("SFVec3f").setName("translation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
+                .addField(new field().setType("SFVec3f").setName("velocity").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
+                .addField(new field().setType("SFVec3f").setName("scalvel").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
+                .addField(new field().setType("SFFloat").setName("set_fraction").setAccessType(field.ACCESSTYPE_INPUTONLY))
                 .setSourceCode("ecmascript:\n"+
-"\n"+
 "function initialize() {\n"+
-"\n"+
 "    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);\n"+
 "\n"+
-"\n"+
 "    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);\n"+
-"\n"+
 "}\n"+
 "\n"+
-"\n"+
 "function set_fraction(value) {\n"+
-"\n"+
 "	translation = new SFVec3f(\n"+
-"\n"+
 "		translation.x + velocity.x,\n"+
-"\n"+
 "		translation.y + velocity.y,\n"+
-"\n"+
 "		translation.z + velocity.z);\n"+
-"\n"+
 "	scale = new SFVec3f(\n"+
-"\n"+
 "		scale.x + scalvel.x,\n"+
-"\n"+
 "		scale.y + scalvel.y,\n"+
-"\n"+
 "		scale.z + scalvel.z);\n"+
-"\n"+
 "        // if you get to far away or too big, explode\n"+
-"\n"+
 "        if ( Math.abs(translation.x) > 256) {\n"+
-"\n"+
 "		translation.x = 0;\n"+
-"\n"+
 "		initialize();\n"+
-"\n"+
 "	}\n"+
-"\n"+
 "        if ( Math.abs(translation.y) > 256) {\n"+
-"\n"+
 "		translation.y = 0;\n"+
-"\n"+
 "		initialize();\n"+
-"\n"+
 "	}\n"+
-"\n"+
 "        if ( Math.abs(translation.z) > 256) {\n"+
-"\n"+
 "		translation.z = 0;\n"+
-"\n"+
 "		initialize();\n"+
-"\n"+
 "	}\n"+
-"\n"+
 "	if (Math.abs(scale.x) > 20) {\n"+
-"\n"+
 "		scale.x = scale.x/2;\n"+
-"\n"+
 "		translation.x = 0;\n"+
-"\n"+
 "		initialize();\n"+
-"\n"+
 "	}\n"+
-"\n"+
 "	if (Math.abs(scale.y) > 20) {\n"+
-"\n"+
 "		scale.y = scale.y/2;\n"+
-"\n"+
 "		translation.y = 0;\n"+
-"\n"+
 "		initialize();\n"+
-"\n"+
 "	}\n"+
-"\n"+
 "	if (Math.abs(scale.z) > 20) {\n"+
-"\n"+
 "		scale.z = scale.z/2;\n"+
-"\n"+
 "		translation.z = 0;\n"+
-"\n"+
 "		initialize();\n"+
-"\n"+
 "	}\n"+
-"\n"+
 "}"))
-              .addChild(new TimeSensor().setDEF("bubbleClock").setCycleInterval(10d).setLoop(true)))
-            .addChild(new ROUTE().setFromNode("bounce").setFromField("translation").setToNode("transform").setToField("translation"))
-            .addChild(new ROUTE().setFromNode("bounce").setFromField("scale").setToNode("transform").setToField("scale"))
-            .addChild(new ROUTE().setFromNode("bubbleClock").setFromField("fraction_changed").setToNode("bounce").setToField("set_fraction"))))
-        .addChild(new NavigationInfo().setType("\"EXAMINE\""))
-        .addChild(new Viewpoint().setDescription("Bubble in action").setPosition(new float[] {0f,0f,4f}))
-        .addChild(ProtoInstance0 = new ProtoInstance().setDEF("bubbleA").setName("Bubble")))      ;
+              .addChild(new TimeSensor().setDEF("bubbleClock").setCycleInterval(10).setLoop(true))
+              .addChild(new ROUTE().setFromNode("bounce").setFromField("translation_changed").setToNode("transform").setToField("set_translation"))
+              .addChild(new ROUTE().setFromNode("bounce").setFromField("scale_changed").setToNode("transform").setToField("set_scale"))
+              .addChild(new ROUTE().setFromNode("bubbleClock").setFromField("fraction_changed").setToNode("bounce").setToField("set_fraction")))))
+        .addChild(ProtoInstance0 = new ProtoInstance().setName("Bubble").setDEF("bubbleA")))      ;
     return X3D0;
     }
 }

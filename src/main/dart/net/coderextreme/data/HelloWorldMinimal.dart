@@ -4,7 +4,9 @@ import '../x3d.dart';
 var X3D0 =  X3D(
 
       profile_ : SFString('Immersive'),
-      version_ : SFString('4.0'),
+      version_ : SFString('3.3'),
+      /*All head/meta tags are optional, WorldInfo is also optional*/
+      /*Text node not supported by X3D Interchange profile, use Immersive profile or Text component level 1*/
       head_ : 
         head(
           meta_ : [
@@ -62,7 +64,11 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('generator'),
-              content_ : SFString('X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit'))]),
+              content_ : SFString('X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit')),
+
+            meta(
+              name_ : SFString('license'),
+              content_ : SFString('../license.html'))]),
       Scene_ : 
         Scene(
           children_ : [

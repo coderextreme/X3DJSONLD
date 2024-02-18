@@ -2,9 +2,47 @@
   "X3D": {
     "@profile": "Immersive",
     "@version": "4.0",
-    "@xsd:noNamespaceSchemaLocation": "https://www.web3d.org/specifications/x3d-4.0.xsd",
+    "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-4.0.xsd",
     "head": {
+      "meta": [
+        {
+          "@name": "title",
+          "@content": "bub.x3d"
+        },
+        {
+          "@name": "creator",
+          "@content": "John Carlson"
+        },
+        {
+          "@name": "description",
+          "@content": "3 prismatic spheres"
+        },
+        {
+          "@name": "generator",
+          "@content": "X3D-Edit, https://savage.nps.edu/X3D-Edit"
+        },
+        {
+          "@name": "translated",
+          "@content": "15 December 2023"
+        },
+        {
+          "@name": "generator",
+          "@content": "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"
+        },
+        {
+          "@name": "reference",
+          "@content": "X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+        }
+      ],
       "component": [
+        {
+          "@name": "Scripting",
+          "@level": 1
+        },
+        {
+          "@name": "EnvironmentalEffects",
+          "@level": 3
+        },
         {
           "@name": "Shaders",
           "@level": 1
@@ -28,89 +66,19 @@
         {
           "@name": "Grouping",
           "@level": 3
-        }
-      ],
-      "meta": [
-        {
-          "@name": "title",
-          "@content": "bub.x3d"
         },
         {
-          "@name": "creator",
-          "@content": "John Carlson"
-        },
-        {
-          "@name": "description",
-          "@content": "3 prismatic spheres"
-        },
-        {
-          "@name": "generator",
-          "@content": "X3D-Edit, https://savage.nps.edu/X3D-Edit"
-        },
-        {
-          "@name": "identifier",
-          "@content": "https://coderextreme.net/X3DJSONLD/bub.x3d"
-        },
-        {
-          "@name": "translated",
-          "@content": "17 January 2022"
-        },
-        {
-          "@name": "generator",
-          "@content": "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"
-        },
-        {
-          "@name": "reference",
-          "@content": "X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          "@name": "Core",
+          "@level": 1
         }
       ]
     },
     "Scene": {
       "-children": [
         {
-          "NavigationInfo": {}
-        },
-        {
-          "Background": {
-            "@backUrl": [
-              "../resources/images/all_probes/stpeters_cross/stpeters_back.png",
-              "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"
-            ],
-            "@bottomUrl": [
-              "../resources/images/all_probes/stpeters_cross/stpeters_bottom.png",
-              "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"
-            ],
-            "@frontUrl": [
-              "../resources/images/all_probes/stpeters_cross/stpeters_front.png",
-              "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"
-            ],
-            "@leftUrl": [
-              "../resources/images/all_probes/stpeters_cross/stpeters_left.png",
-              "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"
-            ],
-            "@rightUrl": [
-              "../resources/images/all_probes/stpeters_cross/stpeters_right.png",
-              "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"
-            ],
-            "@topUrl": [
-              "../resources/images/all_probes/stpeters_cross/stpeters_top.png",
-              "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"
-            ]
-          }
-        },
-        {
-          "Viewpoint": {
-            "@position": [
-              0,
-              0,
-              20
-            ],
-            "@description": "Look at the bubbles flying"
-          }
-        },
-        {
           "ProtoDeclare": {
             "@name": "Bubble",
+            "ProtoInterface": {},
             "ProtoBody": {
               "-children": [
                 {
@@ -139,26 +107,38 @@
                                     }
                                   },
                                   {
-                                    "#comment": "<ComposedShader DEF='gl' language=\"GLSL\"> <field name='cube' type='SFInt32' accessType=\"inputOutput\" value='0'/> <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/> <field name='bias' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/> <ShaderPart url='\"../shaders/gl.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/gl.vs\"' type='VERTEX'></ShaderPart> <ShaderPart url='\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart> </ComposedShader> <ComposedShader DEF='freewrl' language=\"GLSL\"> <field name='fw_textureCoodGenType' type='SFInt32' accessType=\"inputOutput\" value='0'/> <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/> <field name='bias' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/> <ShaderPart url='\"../shaders/freewrl.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.vs\"' type='VERTEX'></ShaderPart> <ShaderPart url='\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart> </ComposedShader>"
-                                  },
-                                  {
-                                    "#comment": "<ComposedShader DEF='instant' language=\"GLSL\"> <field name='cube' type='SFInt32' accessType=\"inputOutput\" value='0'/> <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/> <field name='bias' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/> <ShaderPart url='\"../shaders/instant.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/instant.vs\"' type='VERTEX'></ShaderPart> <ShaderPart url='\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart> </ComposedShader>"
-                                  },
-                                  {
                                     "ComposedShader": {
                                       "@DEF": "x3dom",
                                       "@language": "GLSL",
-                                      "field": [
+                                      "-children": [
                                         {
-                                          "@name": "cube",
-                                          "@type": "SFInt32",
-                                          "@accessType": "inputOutput",
-                                          "@value": 0
+                                          "ShaderPart": {
+                                            "@url": [
+                                              "../shaders/x3dom.vs",
+                                              "https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"
+                                            ]
+                                          }
                                         },
                                         {
-                                          "@name": "chromaticDispertion",
-                                          "@type": "SFVec3f",
+                                          "ShaderPart": {
+                                            "@type": "FRAGMENT",
+                                            "@url": [
+                                              "../shaders/pc_bubbles.fs",
+                                              "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"
+                                            ]
+                                          }
+                                        }
+                                      ],
+                                      "field": [
+                                        {
                                           "@accessType": "inputOutput",
+                                          "@type": "SFInt32",
+                                          "@name": "cube"
+                                        },
+                                        {
+                                          "@accessType": "inputOutput",
+                                          "@type": "SFVec3f",
+                                          "@name": "chromaticDispertion",
                                           "@value": [
                                             0.98,
                                             1,
@@ -166,42 +146,22 @@
                                           ]
                                         },
                                         {
+                                          "@accessType": "inputOutput",
+                                          "@type": "SFFloat",
                                           "@name": "bias",
-                                          "@type": "SFFloat",
-                                          "@accessType": "inputOutput",
                                           "@value": 0.5
                                         },
                                         {
+                                          "@accessType": "inputOutput",
+                                          "@type": "SFFloat",
                                           "@name": "scale",
-                                          "@type": "SFFloat",
-                                          "@accessType": "inputOutput",
                                           "@value": 0.5
                                         },
                                         {
-                                          "@name": "power",
-                                          "@type": "SFFloat",
                                           "@accessType": "inputOutput",
+                                          "@type": "SFFloat",
+                                          "@name": "power",
                                           "@value": 2
-                                        }
-                                      ],
-                                      "-children": [
-                                        {
-                                          "ShaderPart": {
-                                            "@url": [
-                                              "../shaders/x3dom.vs",
-                                              "https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"
-                                            ],
-                                            "@type": "VERTEX"
-                                          }
-                                        },
-                                        {
-                                          "ShaderPart": {
-                                            "@url": [
-                                              "../shaders/pc_bubbles.fs",
-                                              "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"
-                                            ],
-                                            "@type": "FRAGMENT"
-                                          }
                                         }
                                       ]
                                     }
@@ -210,11 +170,30 @@
                                     "ComposedShader": {
                                       "@DEF": "x_ite",
                                       "@language": "GLSL",
+                                      "-children": [
+                                        {
+                                          "ShaderPart": {
+                                            "@url": [
+                                              "../shaders/x_ite.vs",
+                                              "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"
+                                            ]
+                                          }
+                                        },
+                                        {
+                                          "ShaderPart": {
+                                            "@type": "FRAGMENT",
+                                            "@url": [
+                                              "../shaders/x_itebubbles.fs",
+                                              "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs"
+                                            ]
+                                          }
+                                        }
+                                      ],
                                       "field": [
                                         {
-                                          "@name": "cube",
-                                          "@type": "SFNode",
                                           "@accessType": "inputOutput",
+                                          "@type": "SFNode",
+                                          "@name": "cube",
                                           "-children": [
                                             {
                                               "ComposedCubeMapTexture": {
@@ -224,9 +203,9 @@
                                           ]
                                         },
                                         {
-                                          "@name": "chromaticDispertion",
-                                          "@type": "SFVec3f",
                                           "@accessType": "inputOutput",
+                                          "@type": "SFVec3f",
+                                          "@name": "chromaticDispertion",
                                           "@value": [
                                             0.98,
                                             1,
@@ -234,42 +213,22 @@
                                           ]
                                         },
                                         {
+                                          "@accessType": "inputOutput",
+                                          "@type": "SFFloat",
                                           "@name": "bias",
-                                          "@type": "SFFloat",
-                                          "@accessType": "inputOutput",
                                           "@value": 0.5
                                         },
                                         {
+                                          "@accessType": "inputOutput",
+                                          "@type": "SFFloat",
                                           "@name": "scale",
-                                          "@type": "SFFloat",
-                                          "@accessType": "inputOutput",
                                           "@value": 0.5
                                         },
                                         {
-                                          "@name": "power",
-                                          "@type": "SFFloat",
                                           "@accessType": "inputOutput",
+                                          "@type": "SFFloat",
+                                          "@name": "power",
                                           "@value": 2
-                                        }
-                                      ],
-                                      "-children": [
-                                        {
-                                          "ShaderPart": {
-                                            "@url": [
-                                              "../shaders/x_ite.vs",
-                                              "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"
-                                            ],
-                                            "@type": "VERTEX"
-                                          }
-                                        },
-                                        {
-                                          "ShaderPart": {
-                                            "@url": [
-                                              "../shaders/x_itebubbles.fs",
-                                              "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs"
-                                            ],
-                                            "@type": "FRAGMENT"
-                                          }
                                         }
                                       ]
                                     }
@@ -277,63 +236,15 @@
                                 ],
                                 "-texture": {
                                   "ComposedCubeMapTexture": {
-                                    "@DEF": "texture",
-                                    "-back": {
-                                      "ImageTexture": {
-                                        "@url": [
-                                          "../resources/images/all_probes/stpeters_cross/stpeters_back.png",
-                                          "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"
-                                        ]
-                                      }
-                                    },
-                                    "-bottom": {
-                                      "ImageTexture": {
-                                        "@url": [
-                                          "../resources/images/all_probes/stpeters_cross/stpeters_bottom.png",
-                                          "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"
-                                        ]
-                                      }
-                                    },
-                                    "-front": {
-                                      "ImageTexture": {
-                                        "@url": [
-                                          "../resources/images/all_probes/stpeters_cross/stpeters_front.png",
-                                          "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"
-                                        ]
-                                      }
-                                    },
-                                    "-left": {
-                                      "ImageTexture": {
-                                        "@url": [
-                                          "../resources/images/all_probes/stpeters_cross/stpeters_left.png",
-                                          "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"
-                                        ]
-                                      }
-                                    },
-                                    "-right": {
-                                      "ImageTexture": {
-                                        "@url": [
-                                          "../resources/images/all_probes/stpeters_cross/stpeters_right.png",
-                                          "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"
-                                        ]
-                                      }
-                                    },
-                                    "-top": {
-                                      "ImageTexture": {
-                                        "@url": [
-                                          "../resources/images/all_probes/stpeters_cross/stpeters_top.png",
-                                          "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"
-                                        ]
-                                      }
-                                    }
+                                    "@DEF": "texture"
                                   }
                                 }
                               }
+                            },
+                            {
+                              "Sphere": {}
                             }
-                          ],
-                          "-geometry": {
-                            "Sphere": {}
-                          }
+                          ]
                         }
                       }
                     ]
@@ -344,56 +255,46 @@
                     "@DEF": "Bounce",
                     "field": [
                       {
-                        "@name": "translation",
                         "@accessType": "inputOutput",
                         "@type": "SFVec3f",
-                        "@value": [
-                          0,
-                          0,
-                          0
-                        ]
+                        "@name": "translation"
                       },
                       {
-                        "@name": "velocity",
                         "@accessType": "inputOutput",
                         "@type": "SFVec3f",
-                        "@value": [
-                          0,
-                          0,
-                          0
-                        ]
+                        "@name": "velocity"
                       },
                       {
-                        "@name": "set_fraction",
                         "@accessType": "inputOnly",
-                        "@type": "SFTime"
+                        "@type": "SFTime",
+                        "@name": "set_fraction"
                       }
                     ],
                     "#sourceCode": [
-                      "ecmascript:",
-                      "\t\t\tfunction initialize() {",
-                      "\t\t\t    translation = new SFVec3f(0, 0, 0);",
-                      "\t\t\t    velocity = new SFVec3f(",
-                      "\t\t\t    \tMath.random() - 0.5,",
-                      "\t\t\t\tMath.random() - 0.5,",
-                      "\t\t\t\tMath.random() - 0.5);",
-                      "\t\t\t}",
-                      "\t\t\tfunction set_fraction() {",
-                      "\t\t\t    translation = new SFVec3f(",
-                      "\t\t\t    \ttranslation.x + velocity.x,",
-                      "\t\t\t\ttranslation.y + velocity.y,",
-                      "\t\t\t\ttranslation.z + velocity.z);",
-                      "\t\t\t    if (Math.abs(translation.x) > 10) {",
-                      "\t\t\t\tinitialize();",
-                      "\t\t\t    } else if (Math.abs(translation.y) > 10) {",
-                      "\t\t\t\tinitialize();",
-                      "\t\t\t    } else if (Math.abs(translation.z) > 10) {",
-                      "\t\t\t\tinitialize();",
-                      "\t\t\t    } else {",
-                      "\t\t\t\tvelocity.x += Math.random() * 0.2 - 0.1;",
-                      "\t\t\t\tvelocity.y += Math.random() * 0.2 - 0.1;",
-                      "\t\t\t\tvelocity.z += Math.random() * 0.2 - 0.1;",
-                      "\t\t\t    }",
+                      "ecmascript:\r",
+                      "\t\t\tfunction initialize() {\r",
+                      "\t\t\t    translation = new SFVec3f(0, 0, 0);\r",
+                      "\t\t\t    velocity = new SFVec3f(\r",
+                      "\t\t\t    \tMath.random() - 0.5,\r",
+                      "\t\t\t\tMath.random() - 0.5,\r",
+                      "\t\t\t\tMath.random() - 0.5);\r",
+                      "\t\t\t}\r",
+                      "\t\t\tfunction set_fraction() {\r",
+                      "\t\t\t    translation = new SFVec3f(\r",
+                      "\t\t\t    \ttranslation.x + velocity.x,\r",
+                      "\t\t\t\ttranslation.y + velocity.y,\r",
+                      "\t\t\t\ttranslation.z + velocity.z);\r",
+                      "\t\t\t    if (Math.abs(translation.x) > 10) {\r",
+                      "\t\t\t\tinitialize();\r",
+                      "\t\t\t    } else if (Math.abs(translation.y) > 10) {\r",
+                      "\t\t\t\tinitialize();\r",
+                      "\t\t\t    } else if (Math.abs(translation.z) > 10) {\r",
+                      "\t\t\t\tinitialize();\r",
+                      "\t\t\t    } else {\r",
+                      "\t\t\t\tvelocity.x += Math.random() * 0.2 - 0.1;\r",
+                      "\t\t\t\tvelocity.y += Math.random() * 0.2 - 0.1;\r",
+                      "\t\t\t\tvelocity.z += Math.random() * 0.2 - 0.1;\r",
+                      "\t\t\t    }\r",
                       "\t\t\t}"
                     ]
                   }
@@ -416,13 +317,54 @@
                 {
                   "ROUTE": {
                     "@fromNode": "Bounce",
-                    "@fromField": "translation_changed",
+                    "@fromField": "translation",
                     "@toNode": "transform",
-                    "@toField": "set_translation"
+                    "@toField": "translation"
                   }
                 }
               ]
             }
+          }
+        },
+        {
+          "NavigationInfo": {}
+        },
+        {
+          "Background": {
+            "@frontUrl": [
+              "../resources/images/all_probes/stpeters_cross/stpeters_front.png",
+              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"
+            ],
+            "@backUrl": [
+              "../resources/images/all_probes/stpeters_cross/stpeters_back.png",
+              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"
+            ],
+            "@leftUrl": [
+              "../resources/images/all_probes/stpeters_cross/stpeters_left.png",
+              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"
+            ],
+            "@rightUrl": [
+              "../resources/images/all_probes/stpeters_cross/stpeters_right.png",
+              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"
+            ],
+            "@topUrl": [
+              "../resources/images/all_probes/stpeters_cross/stpeters_top.png",
+              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"
+            ],
+            "@bottomUrl": [
+              "../resources/images/all_probes/stpeters_cross/stpeters_bottom.png",
+              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"
+            ]
+          }
+        },
+        {
+          "Viewpoint": {
+            "@description": "Look at the bubbles flying",
+            "@position": [
+              0,
+              0,
+              20
+            ]
           }
         },
         {

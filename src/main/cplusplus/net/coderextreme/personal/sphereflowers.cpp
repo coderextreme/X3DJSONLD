@@ -65,54 +65,64 @@ meta11->setContent("John Carlson");
 head1->addMeta(*meta11);
 
 Cmeta* meta12 = new Cmeta();
-meta12->setName("description");
-meta12->setContent("5 or more prismatic flowers");
+meta12->setName("created");
+meta12->setContent("Jan 17 2022");
 head1->addMeta(*meta12);
 
 Cmeta* meta13 = new Cmeta();
-meta13->setName("generator");
-meta13->setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit");
+meta13->setName("modified");
+meta13->setContent("Sep 3 2023");
 head1->addMeta(*meta13);
 
 Cmeta* meta14 = new Cmeta();
-meta14->setName("identifier");
-meta14->setContent("https://coderextreme.net/X3DJSONLD/src/main/data/sphereflowers.x3d");
+meta14->setName("description");
+meta14->setContent("5 or more prismatic flowers");
 head1->addMeta(*meta14);
+
+Cmeta* meta15 = new Cmeta();
+meta15->setName("generator");
+meta15->setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit");
+head1->addMeta(*meta15);
+
+Cmeta* meta16 = new Cmeta();
+meta16->setName("identifier");
+meta16->setContent("https://coderextreme.net/X3DJSONLD/src/main/data/sphereflowers.x3d");
+head1->addMeta(*meta16);
 
 X3D0->setHead(*head1);
 
-CScene* Scene15 = new CScene();
-CNavigationInfo* NavigationInfo16 = (CNavigationInfo *)(m_pScene.createNode("NavigationInfo"));
-group->addChildren(*NavigationInfo16);
+CScene* Scene17 = new CScene();
+CNavigationInfo* NavigationInfo18 = (CNavigationInfo *)(m_pScene.createNode("NavigationInfo"));
+group->addChildren(*NavigationInfo18);
 
-CBackground* Background17 = (CBackground *)(m_pScene.createNode("Background"));
-Background17->setBackUrl(new CString[3]{"../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://localhost:3000/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"}, 3);
-Background17->setBottomUrl(new CString[3]{"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://localhost:3000/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"}, 3);
-Background17->setFrontUrl(new CString[3]{"../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://localhost:3000/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"}, 3);
-Background17->setLeftUrl(new CString[3]{"../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://localhost:3000/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"}, 3);
-Background17->setRightUrl(new CString[3]{"../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://localhost:3000/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"}, 3);
-Background17->setTopUrl(new CString[3]{"../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://localhost:3000/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/src/main/resourcesall_probes/stpeters_cross/stpeters_top.png"}, 3);
-group->addChildren(*Background17);
+CBackground* Background19 = (CBackground *)(m_pScene.createNode("Background"));
+Background19->setBackUrl(new CString[1]{"../resources/images/all_probes/stpeters_cross/stpeters_back.png"}, 1);
+Background19->setBottomUrl(new CString[1]{"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"}, 1);
+Background19->setFrontUrl(new CString[1]{"../resources/images/all_probes/stpeters_cross/stpeters_front.png"}, 1);
+Background19->setLeftUrl(new CString[1]{"../resources/images/all_probes/stpeters_cross/stpeters_left.png"}, 1);
+Background19->setRightUrl(new CString[1]{"../resources/images/all_probes/stpeters_cross/stpeters_right.png"}, 1);
+Background19->setTopUrl(new CString[1]{"../resources/images/all_probes/stpeters_cross/stpeters_top.png"}, 1);
+group->addChildren(*Background19);
 
-CGroup* Group18 = (CGroup *)(m_pScene.createNode("Group"));
-CExternProtoDeclare* ExternProtoDeclare19 = new CExternProtoDeclare();
-ExternProtoDeclare19->setName("FlowerProto");
-ExternProtoDeclare19->setUrl(new CString[3]{"../personal/flowerproto.json#FlowerProto","https://localhost:3000/src/main/personal/flowerproto.json#FlowerProto","https://coderextreme.net/X3DJSONLD/src/main/personal/flowerproto.json#FlowerProto"}, 3);
-Cfield* field20 = new Cfield();
-field20->setName("vertex");
-field20->setAccessType("inputOutput");
-field20->setType("MFString");
-ExternProtoDeclare19->addField(*field20);
+CGroup* Group20 = (CGroup *)(m_pScene.createNode("Group"));
+CExternProtoDeclare* ExternProtoDeclare21 = new CExternProtoDeclare();
+ExternProtoDeclare21->setName("FlowerProto");
+ExternProtoDeclare21->setUrl(new CString[1]{"../personal/flowerproto.json#FlowerProto"}, 1);
+Cfield* field22 = new Cfield();
+field22->setName("vertex");
+field22->setAccessType("inputOutput");
+field22->setType("MFString");
+ExternProtoDeclare21->addField(*field22);
 
-Cfield* field21 = new Cfield();
-field21->setName("fragment");
-field21->setAccessType("inputOutput");
-field21->setType("MFString");
-ExternProtoDeclare19->addField(*field21);
+Cfield* field23 = new Cfield();
+field23->setName("fragment");
+field23->setAccessType("inputOutput");
+field23->setType("MFString");
+ExternProtoDeclare21->addField(*field23);
 
-Group18->addChildren(*ExternProtoDeclare19);
+Group20->addChildren(*ExternProtoDeclare21);
 
-CProtoDeclare ProtoDeclare22 = browser.createX3DFromString(R"foo(<?xml version="1.0" encoding="undefined"?>
+CProtoDeclare ProtoDeclare24 = browser.createX3DFromString(R"foo(<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="flower" ><ProtoBody><Group><ProtoInstance name="FlowerProto"><fieldValue name="vertex" value="&quot;../shaders/x_ite_flowers_chromatic.vs&quot;"></fieldValue>
 <fieldValue name="fragment" value="&quot;../shaders/x_ite.fs&quot;"></fieldValue>
@@ -120,81 +130,82 @@ CProtoDeclare ProtoDeclare22 = browser.createX3DFromString(R"foo(<?xml version="
 </Group>
 </ProtoBody>
 </ProtoDeclare>)foo");
-ProtoDeclare22->setName("flower");
-CProtoBody* ProtoBody23 = new CProtoBody();
-CGroup* Group24 = (CGroup *)(m_pScene.createNode("Group"));
-CProtoInstance* ProtoInstance25 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
-ProtoInstance25->setName("FlowerProto");
-CfieldValue* fieldValue26 = new CfieldValue();
-fieldValue26->setName("vertex");
-fieldValue26->setValue("\"../shaders/x_ite_flowers_chromatic.vs\"");
-ProtoInstance25->addFieldValue(*fieldValue26);
+ProtoDeclare24->setName("flower");
+CProtoBody* ProtoBody25 = new CProtoBody();
+CGroup* Group26 = (CGroup *)(m_pScene.createNode("Group"));
+CProtoInstance* ProtoInstance27 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
+ProtoInstance27->setName("FlowerProto");
+CfieldValue* fieldValue28 = new CfieldValue();
+fieldValue28->setName("vertex");
+fieldValue28->setValue("\"../shaders/x_ite_flowers_chromatic.vs\"");
+ProtoInstance27->addFieldValue(*fieldValue28);
 
-CfieldValue* fieldValue27 = new CfieldValue();
-fieldValue27->setName("fragment");
-fieldValue27->setValue("\"../shaders/x_ite.fs\"");
-ProtoInstance25->addFieldValue(*fieldValue27);
+CfieldValue* fieldValue29 = new CfieldValue();
+fieldValue29->setName("fragment");
+fieldValue29->setValue("\"../shaders/x_ite.fs\"");
+ProtoInstance27->addFieldValue(*fieldValue29);
 
-Group24->addChildren(*ProtoInstance25);
+Group26->addChildren(*ProtoInstance27);
 
-ProtoBody23->addChildren(*Group24);
+ProtoBody25->addChildren(*Group26);
 
-ProtoDeclare22->setProtoBody(*ProtoBody23);
+ProtoDeclare24->setProtoBody(*ProtoBody25);
 
-Group18->addChildren(*ProtoDeclare22);
-
-CProtoInstance* ProtoInstance28 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
-ProtoInstance28->setName("flower");
-Group18->addChildren(*ProtoInstance28);
-
-CProtoInstance* ProtoInstance29 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
-ProtoInstance29->setName("flower");
-Group18->addChildren(*ProtoInstance29);
+Group20->addChildren(*ProtoDeclare24);
 
 CProtoInstance* ProtoInstance30 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
 ProtoInstance30->setName("flower");
-Group18->addChildren(*ProtoInstance30);
+Group20->addChildren(*ProtoInstance30);
 
 CProtoInstance* ProtoInstance31 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
 ProtoInstance31->setName("flower");
-Group18->addChildren(*ProtoInstance31);
+Group20->addChildren(*ProtoInstance31);
 
 CProtoInstance* ProtoInstance32 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
 ProtoInstance32->setName("flower");
-Group18->addChildren(*ProtoInstance32);
+Group20->addChildren(*ProtoInstance32);
 
 CProtoInstance* ProtoInstance33 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
 ProtoInstance33->setName("flower");
-Group18->addChildren(*ProtoInstance33);
+Group20->addChildren(*ProtoInstance33);
 
-CTimeSensor* TimeSensor34 = (CTimeSensor *)(m_pScene.createNode("TimeSensor"));
-TimeSensor34->setDEF("SongTime");
-TimeSensor34->setLoop(True);
-Group18->addChildren(*TimeSensor34);
+CProtoInstance* ProtoInstance34 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
+ProtoInstance34->setName("flower");
+Group20->addChildren(*ProtoInstance34);
 
-CSound* Sound35 = (CSound *)(m_pScene.createNode("Sound"));
-Sound35->setMaxBack(100);
-Sound35->setMaxFront(100);
-Sound35->setMinBack(20);
-Sound35->setMinFront(20);
-CAudioClip* AudioClip36 = (CAudioClip *)(m_pScene.createNode("AudioClip"));
-AudioClip36->setDEF("AudioClip");
-AudioClip36->setDescription("Chandubabamusic #1");
-AudioClip36->setUrl(new CString[3]{"../resources/chandubabamusic1.wav","https://localhost:3000/src/main/resources/chandubabamusic1.wav","https://coderextreme.net/X3DJSONLD/src/main/resources/chandubabamusic1.wav"}, 3);
-Sound35->setSource(*AudioClip36);
+CProtoInstance* ProtoInstance35 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
+ProtoInstance35->setName("flower");
+Group20->addChildren(*ProtoInstance35);
 
-Group18->addChildren(*Sound35);
+CTimeSensor* TimeSensor36 = (CTimeSensor *)(m_pScene.createNode("TimeSensor"));
+TimeSensor36->setDEF("SongTime");
+TimeSensor36->setLoop(True);
+Group20->addChildren(*TimeSensor36);
 
-CROUTE* ROUTE37 = new CROUTE();
-ROUTE37->setFromField("cycleTime");
-ROUTE37->setFromNode("SongTime");
-ROUTE37->setToField("startTime");
-ROUTE37->setToNode("AudioClip");
-Group18->addChildren(*ROUTE37);
+CSound* Sound37 = (CSound *)(m_pScene.createNode("Sound"));
+Sound37->setMaxBack(100);
+Sound37->setMaxFront(100);
+Sound37->setMinBack(20);
+Sound37->setMinFront(20);
+Sound37->setLocation(new float[3]{0,1,0});
+CAudioClip* AudioClip38 = (CAudioClip *)(m_pScene.createNode("AudioClip"));
+AudioClip38->setDEF("AudioClip");
+AudioClip38->setDescription("Chandubabamusic #1");
+AudioClip38->setUrl(new CString[1]{"../resources/chandubabamusic1.wav"}, 1);
+Sound37->setSource(*AudioClip38);
 
-group->addChildren(*Group18);
+Group20->addChildren(*Sound37);
 
-X3D0->setScene(*Scene15);
+CROUTE* ROUTE39 = new CROUTE();
+ROUTE39->setFromField("cycleTime");
+ROUTE39->setFromNode("SongTime");
+ROUTE39->setToField("startTime");
+ROUTE39->setToNode("AudioClip");
+Group20->addChildren(*ROUTE39);
+
+group->addChildren(*Group20);
+
+X3D0->setScene(*Scene17);
 
 m_pScene.addRootNode(group);
 X3D0->toXMLString();

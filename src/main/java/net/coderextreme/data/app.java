@@ -36,13 +36,22 @@ import org.web3d.x3d.jsail.Texturing.*;
 import org.web3d.x3d.jsail.Time.*;
 import org.web3d.x3d.jsail.VolumeRendering.*;
 import org.web3d.x3d.jsail.fields.*;
-public class app {
+import java.util.ArrayList;
+import java.util.List;
+import net.coderextreme.X3DRoots;
+public class app implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    X3D model = new app().initialize();
+    X3D model = new app().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
+    model.toFileX3D("../data/app.new.java.x3d");
     model.toFileJSON("../data/app.new.json");
+    }
+    public List<X3D> getRootNodeList() {
+    	List<X3D> list = new ArrayList<X3D>(1);
+    	list.add(initialize());
+    	return list;
     }
     public X3D initialize() {
       X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
@@ -55,9 +64,9 @@ public class app {
         .addChild(new Group()
           .addChild(new Shape()
             .setAppearance(new Appearance()
-              .setMaterial(new Material().setDiffuseColor(new float[] {1f ,0f ,0f })))
+              .setMaterial(new Material().setDiffuseColor(new double[] {1,0,0})))
             .setGeometry(new Box())))
-        .addChild(new Transform().setRotation(new float[] {7f ,8f ,9f ,3.14f }).setScale(new float[] {4f ,5f ,6f }).setTranslation(new float[] {1f ,2f ,3f })))      ;
+        .addChild(new Transform().setRotation(new double[] {7,8,9,3.14}).setScale(new double[] {4,5,6}).setTranslation(new double[] {1,2,3})))      ;
     return X3D0;
     }
 }

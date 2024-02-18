@@ -54,7 +54,7 @@ import org.web3d.x3d.jsail.Time.*;
 
  */
 
-public class Leif4_5Final
+import net.coderextreme.X3DRoots;import java.util.List;import java.util.ArrayList;public class Leif4_5Final implements X3DRoots 
 {
 	/** Default constructor to create this object. */
 	public Leif4_5Final ()
@@ -85,7 +85,7 @@ public class Leif4_5Final
         .addChild(new Inline().setUrl(new String[] {"JointCoordinateAxes.x3d"})))
       .addChild(new Group("LeifHumanoid")
         .addChild(new HAnimHumanoid("Leif").setVersion("2.0")
-          .addSkeleton(new HAnimJoint("Leif_HumanoidRoot").setName("HumanoidRoot").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
+          .addSkeleton(new HAnimJoint("Leif_humanoid_root").setName("humanoid_root").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
             .addChild(new Viewpoint("LeifRootView").setDescription(" Root View ").setPosition(0.0,0.5,1.5))
             .addChild(new HAnimJoint("Leif_sacroiliac").setName("sacroiliac").setCenter(0.0001,0.448,-0.0007).setLlimit(new double[] {0.0,0.0,0.0}).setSkinCoordIndex(getLeif_sacroiliac_7_16_skinCoordIndex()).setSkinCoordWeight(getLeif_sacroiliac_7_16_skinCoordWeight()).setUlimit(new double[] {0.0,0.0,0.0})
               .addChild(new HAnimJoint("Leif_l_hip").setName("l_hip").setCenter(0.048,0.42,-0.0002).setLlimit(new double[] {0.0,0.0,0.0}).setSkinCoordIndex(getLeif_l_hip_8_16_skinCoordIndex()).setSkinCoordWeight(getLeif_l_hip_8_16_skinCoordWeight()).setUlimit(new double[] {0.0,0.0,0.0})
@@ -255,7 +255,7 @@ public class Leif4_5Final
                 .setMaterial(new Material().setUSE("Clear")))
               .setGeometry(new IndexedFaceSet().setUSE("Backing")))))))
     .addChild(new TimeSensor("z100sTimer").setCycleInterval(10).setLoop(true))
-    .addChild(new PositionInterpolator("Leif_HumanoidRoot_TranslationInterpolator").setKey(new double[] {0.0,0.09,0.11,0.223,0.043,0.55,0.63,0.73,0.85,0.86,1.0}).setKeyValue(new MFVec3f(new double[] {-7.9962,0.4,3.0,-7.9962,0.4,3.0,-7.9962,0.4,3.0,-7.9962,0.4,3.0,9.004,0.475,3.4999,11.5048,0.475,3.3699,16.0038,0.475,7.8699,18.5038,0.475,14.8699,23.0038,0.475,24.3699,23.0038,0.475,24.3699,23.0038,0.475,24.3699})))
+    .addChild(new PositionInterpolator("Leif_humanoid_root_TranslationInterpolator").setKey(new double[] {0.0,0.09,0.11,0.223,0.043,0.55,0.63,0.73,0.85,0.86,1.0}).setKeyValue(new MFVec3f(new double[] {-7.9962,0.4,3.0,-7.9962,0.4,3.0,-7.9962,0.4,3.0,-7.9962,0.4,3.0,9.004,0.475,3.4999,11.5048,0.475,3.3699,16.0038,0.475,7.8699,18.5038,0.475,14.8699,23.0038,0.475,24.3699,23.0038,0.475,24.3699,23.0038,0.475,24.3699})))
     .addChild(new OrientationInterpolator("Leif_Pitch2Interpolator").setKey(new double[] {0.0,0.1,0.16,0.25,0.33,0.38,0.46,0.6,0.69,0.77,0.84,0.9,1.0}).setKeyValue(new MFRotation(new double[] {0.0,0.0,1.0,0.0,1.0,0.0,0.0,0.8,0.0,0.0,1.0,0.0,1.0,0.0,0.0,2.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,0.8,0.0,0.0,1.0,0.0,1.0,0.0,0.0,-0.8,0.0,0.0,1.0,0.0,1.0,0.0,0.0,-2.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0})))
     .addChild(new OrientationInterpolator("Leif_RotationInterpolator").setKey(new double[] {0.0,0.23,0.54,0.75,1.0}).setKeyValue(new MFRotation(new double[] {0.0,0.0,1.0,0.0,0.0,5.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,-5.0,0.0,1.0,0.0,0.0,1.0,0.0})))
     .addChild(new OrientationInterpolator("Leif_RollLeftFingers2").setKey(new double[] {0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0}).setKeyValue(new MFRotation(new double[] {0.0,0.0,1.0,0.0,0.0,0.0,0.1,-1.0,0.0,0.0,0.2,-1.0,0.0,0.0,0.3,-1.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.1,-1.0,0.0,0.0,0.2,-1.0,0.0,0.0,0.2,1.0,0.0,0.0,0.4,-1.0,0.0,0.0,1.0,0.0})))
@@ -487,8 +487,8 @@ public class Leif4_5Final
       .addChild(new OrientationInterpolator("Kick_neckRotInterp").setKey(new double[] {0.0,0.25,0.55,1.0}).setKeyValue(new MFRotation(new double[] {0.0,0.0,1.0,0.0,1.0,0.0,0.0,0.7,1.0,0.0,0.0,0.5,0.0,0.0,1.0,0.0}))))
     .addChild(new Group("StopAnimation")
       .addChild(new TimeSensor("StopTimer").setCycleInterval(5.73).setLoop(true))
-      .addChild(new PositionInterpolator("Stop_HumanoidRootTransInterp").setKey(new double[] {0.0,0.5,1.0}).setKeyValue(new MFVec3f(new double[] {0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0})))
-      .addChild(new OrientationInterpolator("Stop_HumanoidRootRotInterp").setKey(new double[] {0.0,0.5,1.0}).setKeyValue(new MFRotation(new double[] {0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0})))
+      .addChild(new PositionInterpolator("Stop_humanoid_rootTransInterp").setKey(new double[] {0.0,0.5,1.0}).setKeyValue(new MFVec3f(new double[] {0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0})))
+      .addChild(new OrientationInterpolator("Stop_humanoid_rootRotInterp").setKey(new double[] {0.0,0.5,1.0}).setKeyValue(new MFRotation(new double[] {0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0})))
       .addChild(new OrientationInterpolator("Stop_sacroiliacRotInterp").setKey(new double[] {0.0,0.5,1.0}).setKeyValue(new MFRotation(new double[] {0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0})))
       .addChild(new OrientationInterpolator("Stop_l_hipRotInterp").setKey(new double[] {0.0,0.5,1.0}).setKeyValue(new MFRotation(new double[] {0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0})))
       .addChild(new OrientationInterpolator("Stop_l_kneeRotInterp").setKey(new double[] {0.0,0.5,1.0}).setKeyValue(new MFRotation(new double[] {0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0})))
@@ -591,8 +591,8 @@ public class Leif4_5Final
     .addChild(new ROUTE().setFromNode("Stand_l_shoulderRotInterp").setFromField("value_changed").setToNode("Leif_l_shoulder").setToField("set_rotation"))
     .addChild(new ROUTE().setFromNode("Stand_headRotInterp").setFromField("value_changed").setToNode("Leif_skullbase").setToField("set_rotation"))
     .addChild(new ROUTE().setFromNode("Stand_lower_bodyRotInterp").setFromField("value_changed").setToNode("Leif_sacroiliac").setToField("set_rotation"))
-    .addChild(new ROUTE().setFromNode("Stand_whole_bodyRotInterp").setFromField("value_changed").setToNode("Leif_HumanoidRoot").setToField("set_rotation"))
-    .addChild(new ROUTE().setFromNode("Stand_whole_bodyTransInterp").setFromField("value_changed").setToNode("Leif_HumanoidRoot").setToField("set_translation"))
+    .addChild(new ROUTE().setFromNode("Stand_whole_bodyRotInterp").setFromField("value_changed").setToNode("Leif_humanoid_root").setToField("set_rotation"))
+    .addChild(new ROUTE().setFromNode("Stand_whole_bodyTransInterp").setFromField("value_changed").setToNode("Leif_humanoid_root").setToField("set_translation"))
     .addChild(new ROUTE().setFromNode("Stand_l_sternoclavicularRoll").setFromField("value_changed").setToNode("Leif_l_sternoclavicular").setToField("set_rotation"))
     .addChild(new ROUTE().setFromNode("Stand_r_sternoclavicularRoll").setFromField("value_changed").setToNode("Leif_r_sternoclavicular").setToField("set_rotation"))
     .addChild(new ROUTE().setFromNode("Stand_r_metatarsophalangeal_2Pitch").setFromField("value_changed").setToNode("Leif_l_metatarsophalangeal_1").setToField("set_rotation"))
@@ -654,7 +654,7 @@ public class Leif4_5Final
     .addChild(new ROUTE().setFromNode("Pitches_l_shoulderRotInterp").setFromField("value_changed").setToNode("Leif_l_shoulder").setToField("set_rotation"))
     .addChild(new ROUTE().setFromNode("Pitches_headRotInterp").setFromField("value_changed").setToNode("Leif_skullbase").setToField("set_rotation"))
     .addChild(new ROUTE().setFromNode("Pitches_neckRotInterp").setFromField("value_changed").setToNode("Leif_vc4").setToField("set_rotation"))
-    .addChild(new ROUTE().setFromNode("Pitches_whole_bodyTransInterp").setFromField("value_changed").setToNode("Leif_HumanoidRoot").setToField("set_translation"))
+    .addChild(new ROUTE().setFromNode("Pitches_whole_bodyTransInterp").setFromField("value_changed").setToNode("Leif_humanoid_root").setToField("set_translation"))
     .addChild(new ROUTE().setFromNode("Pitch_l_sternoclavicularRoll").setFromField("value_changed").setToNode("Leif_l_sternoclavicular").setToField("set_rotation"))
     .addChild(new ROUTE().setFromNode("Pitch_r_sternoclavicularRoll").setFromField("value_changed").setToNode("Leif_r_sternoclavicular").setToField("set_rotation"))
     .addChild(new ROUTE().setFromNode("Pitch_r_metatarsophalangeal_2Pitch").setFromField("value_changed").setToNode("Leif_l_metatarsophalangeal_1").setToField("set_rotation"))
@@ -704,8 +704,8 @@ public class Leif4_5Final
     .addChild(new ROUTE().setFromNode("Yaws_l_shoulderRotInterp").setFromField("value_changed").setToNode("Leif_l_shoulder").setToField("set_rotation"))
     .addChild(new ROUTE().setFromNode("Yaws_headRotInterp").setFromField("value_changed").setToNode("Leif_skullbase").setToField("set_rotation"))
     .addChild(new ROUTE().setFromNode("Yaws_neckRotInterp").setFromField("value_changed").setToNode("Leif_vc4").setToField("set_rotation"))
-    .addChild(new ROUTE().setFromNode("Yaws_whole_bodyRotInterp").setFromField("value_changed").setToNode("Leif_HumanoidRoot").setToField("set_rotation"))
-    .addChild(new ROUTE().setFromNode("Yaws_whole_bodyTransInterp").setFromField("value_changed").setToNode("Leif_HumanoidRoot").setToField("set_translation"))
+    .addChild(new ROUTE().setFromNode("Yaws_whole_bodyRotInterp").setFromField("value_changed").setToNode("Leif_humanoid_root").setToField("set_rotation"))
+    .addChild(new ROUTE().setFromNode("Yaws_whole_bodyTransInterp").setFromField("value_changed").setToNode("Leif_humanoid_root").setToField("set_translation"))
     .addChild(new ROUTE().setFromNode("Yaw_l_sternoclavicularRoll").setFromField("value_changed").setToNode("Leif_l_sternoclavicular").setToField("set_rotation"))
     .addChild(new ROUTE().setFromNode("Yaw_r_sternoclavicularRoll").setFromField("value_changed").setToNode("Leif_r_sternoclavicular").setToField("set_rotation"))
     .addChild(new ROUTE().setFromNode("Yaw_r_metatarsophalangeal_2Pitch").setFromField("value_changed").setToNode("Leif_l_metatarsophalangeal_1").setToField("set_rotation"))
@@ -755,8 +755,8 @@ public class Leif4_5Final
     .addChild(new ROUTE().setFromNode("Rolls_l_shoulderRotInterp").setFromField("value_changed").setToNode("Leif_l_shoulder").setToField("set_rotation"))
     .addChild(new ROUTE().setFromNode("Rolls_headRotInterp").setFromField("value_changed").setToNode("Leif_skullbase").setToField("set_rotation"))
     .addChild(new ROUTE().setFromNode("Rolls_neckRotInterp").setFromField("value_changed").setToNode("Leif_vc4").setToField("set_rotation"))
-    .addChild(new ROUTE().setFromNode("Rolls_whole_bodyRotInterp").setFromField("value_changed").setToNode("Leif_HumanoidRoot").setToField("set_rotation"))
-    .addChild(new ROUTE().setFromNode("Rolls_whole_bodyTransInterp").setFromField("value_changed").setToNode("Leif_HumanoidRoot").setToField("set_translation"))
+    .addChild(new ROUTE().setFromNode("Rolls_whole_bodyRotInterp").setFromField("value_changed").setToNode("Leif_humanoid_root").setToField("set_rotation"))
+    .addChild(new ROUTE().setFromNode("Rolls_whole_bodyTransInterp").setFromField("value_changed").setToNode("Leif_humanoid_root").setToField("set_translation"))
     .addChild(new ROUTE().setFromNode("Roll_l_sternoclavicularRoll").setFromField("value_changed").setToNode("Leif_l_sternoclavicular").setToField("set_rotation"))
     .addChild(new ROUTE().setFromNode("Roll_r_sternoclavicularRoll").setFromField("value_changed").setToNode("Leif_r_sternoclavicular").setToField("set_rotation"))
     .addChild(new ROUTE().setFromNode("Roll_r_metatarsophalangeal_2Pitch").setFromField("value_changed").setToNode("Leif_l_metatarsophalangeal_1").setToField("set_rotation"))
@@ -806,8 +806,8 @@ public class Leif4_5Final
     .addChild(new ROUTE().setFromNode("Walk_l_shoulderRotInterp").setFromField("value_changed").setToNode("Leif_l_shoulder").setToField("set_rotation"))
     .addChild(new ROUTE().setFromNode("Walk_headRotInterp").setFromField("value_changed").setToNode("Leif_skullbase").setToField("set_rotation"))
     .addChild(new ROUTE().setFromNode("Walk_neckRotInterp").setFromField("value_changed").setToNode("Leif_vc4").setToField("set_rotation"))
-    .addChild(new ROUTE().setFromNode("Walk_whole_bodyRotInterp").setFromField("value_changed").setToNode("Leif_HumanoidRoot").setToField("set_rotation"))
-    .addChild(new ROUTE().setFromNode("Walk_whole_bodyTranInterp").setFromField("value_changed").setToNode("Leif_HumanoidRoot").setToField("set_translation"))
+    .addChild(new ROUTE().setFromNode("Walk_whole_bodyRotInterp").setFromField("value_changed").setToNode("Leif_humanoid_root").setToField("set_rotation"))
+    .addChild(new ROUTE().setFromNode("Walk_whole_bodyTranInterp").setFromField("value_changed").setToNode("Leif_humanoid_root").setToField("set_translation"))
     .addChild(new ROUTE().setFromNode("Walk_l_sternoclavicularRoll").setFromField("value_changed").setToNode("Leif_l_sternoclavicular").setToField("set_rotation"))
     .addChild(new ROUTE().setFromNode("Walk_r_sternoclavicularRoll").setFromField("value_changed").setToNode("Leif_r_sternoclavicular").setToField("set_rotation"))
     .addChild(new ROUTE().setFromNode("Walk_r_metatarsophalangeal_2Pitch").setFromField("value_changed").setToNode("Leif_l_metatarsophalangeal_1").setToField("set_rotation"))
@@ -857,8 +857,8 @@ public class Leif4_5Final
     .addChild(new ROUTE().setFromNode("Run_lower_bodyRotInterp_Run").setFromField("value_changed").setToNode("Leif_sacroiliac").setToField("set_rotation"))
     .addChild(new ROUTE().setFromNode("Run_headRotInterp_Run").setFromField("value_changed").setToNode("Leif_skullbase").setToField("set_rotation"))
     .addChild(new ROUTE().setFromNode("Run_neckRotInterp_Run").setFromField("value_changed").setToNode("Leif_vc4").setToField("set_rotation"))
-    .addChild(new ROUTE().setFromNode("Run_whole_bodyRotInterp_Run").setFromField("value_changed").setToNode("Leif_HumanoidRoot").setToField("set_rotation"))
-    .addChild(new ROUTE().setFromNode("Run_whole_bodyTranInterp_Run").setFromField("value_changed").setToNode("Leif_HumanoidRoot").setToField("set_translation"))
+    .addChild(new ROUTE().setFromNode("Run_whole_bodyRotInterp_Run").setFromField("value_changed").setToNode("Leif_humanoid_root").setToField("set_rotation"))
+    .addChild(new ROUTE().setFromNode("Run_whole_bodyTranInterp_Run").setFromField("value_changed").setToNode("Leif_humanoid_root").setToField("set_translation"))
     .addChild(new ROUTE().setFromNode("Run_l_sternoclavicularRoll").setFromField("value_changed").setToNode("Leif_l_sternoclavicular").setToField("set_rotation"))
     .addChild(new ROUTE().setFromNode("Run_r_sternoclavicularRoll").setFromField("value_changed").setToNode("Leif_r_sternoclavicular").setToField("set_rotation"))
     .addChild(new ROUTE().setFromNode("Run_r_metatarsophalangeal_2Pitch").setFromField("value_changed").setToNode("Leif_l_metatarsophalangeal_1").setToField("set_rotation"))
@@ -908,8 +908,8 @@ public class Leif4_5Final
     .addChild(new ROUTE().setFromNode("Jump_l_shoulderRotInterp").setFromField("value_changed").setToNode("Leif_l_shoulder").setToField("set_rotation"))
     .addChild(new ROUTE().setFromNode("Jump_headRotInterp").setFromField("value_changed").setToNode("Leif_skullbase").setToField("set_rotation"))
     .addChild(new ROUTE().setFromNode("Jump_neckRotInterp").setFromField("value_changed").setToNode("Leif_vc4").setToField("set_rotation"))
-    .addChild(new ROUTE().setFromNode("Jump_whole_bodyRotInterp").setFromField("value_changed").setToNode("Leif_HumanoidRoot").setToField("set_rotation"))
-    .addChild(new ROUTE().setFromNode("Jump_whole_bodyTranInterp").setFromField("value_changed").setToNode("Leif_HumanoidRoot").setToField("set_translation"))
+    .addChild(new ROUTE().setFromNode("Jump_whole_bodyRotInterp").setFromField("value_changed").setToNode("Leif_humanoid_root").setToField("set_rotation"))
+    .addChild(new ROUTE().setFromNode("Jump_whole_bodyTranInterp").setFromField("value_changed").setToNode("Leif_humanoid_root").setToField("set_translation"))
     .addChild(new ROUTE().setFromNode("Jump_l_sternoclavicularRoll").setFromField("value_changed").setToNode("Leif_l_sternoclavicular").setToField("set_rotation"))
     .addChild(new ROUTE().setFromNode("Jump_r_sternoclavicularRoll").setFromField("value_changed").setToNode("Leif_r_sternoclavicular").setToField("set_rotation"))
     .addChild(new ROUTE().setFromNode("Jump_r_metatarsophalangeal_2Pitch").setFromField("value_changed").setToNode("Leif_l_metatarsophalangeal_1").setToField("set_rotation"))
@@ -963,11 +963,11 @@ public class Leif4_5Final
     .addChild(new ROUTE().setFromNode("Kick_sacroiliacYaw").setFromField("value_changed").setToNode("Leif_sacroiliac").setToField("set_rotation"))
     .addChild(new ROUTE().setFromNode("Kick_vl5Yaw").setFromField("value_changed").setToNode("Leif_vl5").setToField("set_rotation"))
     .addChild(new ROUTE().setFromNode("Kick_lower_bodyRotInterp").setFromField("value_changed").setToNode("Leif_sacroiliac").setToField("set_rotation"))
-    .addChild(new ROUTE().setFromNode("Kick_whole_bodyRotInterp").setFromField("value_changed").setToNode("Leif_HumanoidRoot").setToField("set_rotation"))
-    .addChild(new ROUTE().setFromNode("Kick_whole_bodyTransInterp").setFromField("value_changed").setToNode("Leif_HumanoidRoot").setToField("set_translation"))
+    .addChild(new ROUTE().setFromNode("Kick_whole_bodyRotInterp").setFromField("value_changed").setToNode("Leif_humanoid_root").setToField("set_rotation"))
+    .addChild(new ROUTE().setFromNode("Kick_whole_bodyTransInterp").setFromField("value_changed").setToNode("Leif_humanoid_root").setToField("set_translation"))
     .addChild(new ROUTE().setFromNode("Kick_neckRotInterp").setFromField("value_changed").setToNode("Leif_vc4").setToField("set_rotation"))
-    .addChild(new ROUTE().setFromNode("StopTimer").setFromField("fraction_changed").setToNode("Stop_HumanoidRootTransInterp").setToField("set_fraction"))
-    .addChild(new ROUTE().setFromNode("StopTimer").setFromField("fraction_changed").setToNode("Stop_HumanoidRootRotInterp").setToField("set_fraction"))
+    .addChild(new ROUTE().setFromNode("StopTimer").setFromField("fraction_changed").setToNode("Stop_humanoid_rootTransInterp").setToField("set_fraction"))
+    .addChild(new ROUTE().setFromNode("StopTimer").setFromField("fraction_changed").setToNode("Stop_humanoid_rootRotInterp").setToField("set_fraction"))
     .addChild(new ROUTE().setFromNode("StopTimer").setFromField("fraction_changed").setToNode("Stop_sacroiliacRotInterp").setToField("set_fraction"))
     .addChild(new ROUTE().setFromNode("StopTimer").setFromField("fraction_changed").setToNode("Stop_l_hipRotInterp").setToField("set_fraction"))
     .addChild(new ROUTE().setFromNode("StopTimer").setFromField("fraction_changed").setToNode("Stop_l_kneeRotInterp").setToField("set_fraction"))
@@ -1022,8 +1022,8 @@ public class Leif4_5Final
     .addChild(new ROUTE().setFromNode("StopTimer").setFromField("fraction_changed").setToNode("Stop_r_carpal_proximal_interphalangeal_5RotInterp").setToField("set_fraction"))
     .addChild(new ROUTE().setFromNode("StopTimer").setFromField("fraction_changed").setToNode("Stop_r_metacarpophalangeal_5RotInterp").setToField("set_fraction"))
     .addChild(new ROUTE().setFromNode("StopTimer").setFromField("fraction_changed").setToNode("Stop_r_carpal_distal_interphalangeal_5RotInterp").setToField("set_fraction"))
-    .addChild(new ROUTE().setFromNode("Stop_HumanoidRootTransInterp").setFromField("value_changed").setToNode("Leif_HumanoidRoot").setToField("set_translation"))
-    .addChild(new ROUTE().setFromNode("Stop_HumanoidRootRotInterp").setFromField("value_changed").setToNode("Leif_HumanoidRoot").setToField("set_rotation"))
+    .addChild(new ROUTE().setFromNode("Stop_humanoid_rootTransInterp").setFromField("value_changed").setToNode("Leif_humanoid_root").setToField("set_translation"))
+    .addChild(new ROUTE().setFromNode("Stop_humanoid_rootRotInterp").setFromField("value_changed").setToNode("Leif_humanoid_root").setToField("set_rotation"))
     .addChild(new ROUTE().setFromNode("Stop_sacroiliacRotInterp").setFromField("value_changed").setToNode("Leif_sacroiliac").setToField("set_rotation"))
     .addChild(new ROUTE().setFromNode("Stop_l_hipRotInterp").setFromField("value_changed").setToNode("Leif_l_hip").setToField("set_rotation"))
     .addChild(new ROUTE().setFromNode("Stop_l_kneeRotInterp").setFromField("value_changed").setToNode("Leif_l_knee").setToField("set_rotation"))
@@ -9618,6 +9618,11 @@ public class Leif4_5Final
 	{	  
 		return x3dModel;
 	}
+	public List<X3D> getRootNodeList() {
+		List<X3D> list = new ArrayList<X3D>(1);
+		list.add(x3dModel);
+		return list;
+	}
 	   
     /** 
      * Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
@@ -9630,7 +9635,7 @@ public class Leif4_5Final
      */
     public static void main(String args[])
     {
-        System.out.println("Build this X3D model, showing diagnostics...");
+        System.out.println("Build this X3D model, showing validation diagnostics...");
         X3D thisExampleX3dModel = new Leif4_5Final().getX3dModel();
 //      System.out.println("X3D model construction complete.");
 	

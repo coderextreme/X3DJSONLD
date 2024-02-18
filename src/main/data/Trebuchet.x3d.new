@@ -21,46 +21,46 @@
 <Sound maxBack="1000" maxFront="1000"><AudioClip containerField="source" DEF="HolyGrail" description="HolyGrail" loop="true" url="&quot;holygral.mp3&quot; &quot;http://www.nps.navy.mil/code32/vrml/holygral.mp3&quot;"></AudioClip>
 </Sound>
 <Shape><Box size="10000 1 10000"></Box>
-<Appearance><ImageTexture containerField="texture" url="&quot;grass.jpg&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/StudentProjects/grass.jpg&quot;"></ImageTexture>
+<Appearance containerField="appearance"><ImageTexture containerField="texture" url="&quot;grass.jpg&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/StudentProjects/grass.jpg&quot;"></ImageTexture>
 </Appearance>
 </Shape>
-<Transform rotation="0 1 0 1.57" scale="0.5 0.5 0.5" translation="10.5 6.5 4.5"><Shape><Appearance DEF="TextAppearance"><Material diffuseColor="1 0 0" emissiveColor="1 1 0"></Material>
+<Transform rotation="0 1 0 1.57" scale="0.5 0.5 0.5" translation="10.5 6.5 4.5"><Shape><Appearance containerField="appearance" DEF="TextAppearance"><Material containerField="material" diffuseColor="1 0 0" emissiveColor="1 1 0"></Material>
 </Appearance>
-<Text string="&quot;Click Sling to Select Projectile&quot;"><FontStyle></FontStyle>
+<Text string="&quot;Click Sling to Select Projectile&quot;"><FontStyle containerField="fontStyle"></FontStyle>
 </Text>
 </Shape>
 </Transform>
-<Transform rotation="0 1 0 1.57" scale="0.5 0.5 0.5" translation="11 5.5 6"><Switch DEF="Weight" whichChoice="0"><Group><Shape><Appearance USE="TextAppearance"></Appearance>
+<Transform rotation="0 1 0 1.57" scale="0.5 0.5 0.5" translation="11 5.5 6"><Switch DEF="Weight" whichChoice="0"><Group><Shape><Appearance containerField="appearance" USE="TextAppearance"></Appearance>
 <Text string="&quot;Click Here to Change Counter Weight (50 lbs)&quot;"></Text>
 </Shape>
 </Group>
-<Group><Shape><Appearance USE="TextAppearance"></Appearance>
+<Group><Shape><Appearance containerField="appearance" USE="TextAppearance"></Appearance>
 <Text string="&quot;Click Here to Change Counter Weight (500 lbs)&quot;"></Text>
 </Shape>
 </Group>
-<Group><Shape><Appearance USE="TextAppearance"></Appearance>
+<Group><Shape><Appearance containerField="appearance" USE="TextAppearance"></Appearance>
 <Text string="&quot;Click Here to Change Counter Weight (1000 lbs)&quot;"></Text>
 </Shape>
 </Group>
-<Group><Shape><Appearance USE="TextAppearance"></Appearance>
+<Group><Shape><Appearance containerField="appearance" USE="TextAppearance"></Appearance>
 <Text string="&quot;Click Here to Change Counter Weight (10000 lbs)&quot;"></Text>
 </Shape>
 </Group>
 </Switch>
 <TouchSensor DEF="weightselector" description="weight selector"></TouchSensor>
 <Transform translation="8 0 0"><Shape><Box size="20 1 1"></Box>
-<Appearance><Material transparency="1"></Material>
+<Appearance containerField="appearance"><Material containerField="material" transparency="1"></Material>
 </Appearance>
 </Shape>
 </Transform>
 </Transform>
-<Transform rotation="0 1 0 1.57" translation="10 0.5 4.5"><Transform DEF="launch" translation="0 2 5"><Billboard><Shape><Appearance><Material diffuseColor="1 0 0"></Material>
+<Transform rotation="0 1 0 1.57" translation="10 0.5 4.5"><Transform DEF="launch" translation="0 2 5"><Billboard><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 0 0"></Material>
 </Appearance>
-<Text string="&quot;LAUNCH&quot;"><FontStyle></FontStyle>
+<Text string="&quot;LAUNCH&quot;"><FontStyle containerField="fontStyle"></FontStyle>
 </Text>
 </Shape>
 <Transform translation="2 0.3 0"><Shape><Box size="5 1 1"></Box>
-<Appearance><Material transparency="1"></Material>
+<Appearance containerField="appearance"><Material containerField="material" transparency="1"></Material>
 </Appearance>
 </Shape>
 </Transform>
@@ -74,22 +74,22 @@
 </Billboard>
 <TouchSensor DEF="Launch" description="launch!"></TouchSensor>
 </Transform>
-<Transform><Switch DEF="projectilename" whichChoice="0"><Group><Shape><Appearance USE="TextAppearance"></Appearance>
-<Text string="&quot;Bowling Ball (10 lbs)&quot;"><FontStyle size="0.5"></FontStyle>
+<Transform><Switch DEF="projectilename" whichChoice="0"><Group><Shape><Appearance containerField="appearance" USE="TextAppearance"></Appearance>
+<Text string="&quot;Bowling Ball (10 lbs)&quot;"><FontStyle containerField="fontStyle" size="0.5"></FontStyle>
 </Text>
 </Shape>
 <Sound maxBack="1000" maxFront="1000" priority="1"><AudioClip containerField="source" DEF="HolyHandGrenadeSound" description="HolyHandGrenadeSound" url="&quot;grenade.wav&quot; &quot;http://www.nps.navy.mil/code32/vrml/grenade.wav&quot;"></AudioClip>
 </Sound>
 </Group>
-<Group><Shape><Appearance USE="TextAppearance"></Appearance>
-<Text string="&quot;Cow (1000 lbs)&quot;"><FontStyle size="0.5"></FontStyle>
+<Group><Shape><Appearance containerField="appearance" USE="TextAppearance"></Appearance>
+<Text string="&quot;Cow (1000 lbs)&quot;"><FontStyle containerField="fontStyle" size="0.5"></FontStyle>
 </Text>
 </Shape>
 <Sound maxBack="1000" maxFront="1000"><AudioClip containerField="source" DEF="CowSound" description="CowSound" url="&quot;lavache.wav&quot; &quot;http://www.nps.navy.mil/code32/vrml/lavache.wav&quot;"></AudioClip>
 </Sound>
 </Group>
-<Group><Shape><Appearance USE="TextAppearance"></Appearance>
-<Text string="&quot;Chicken (5 lbs)&quot;"><FontStyle size="0.5"></FontStyle>
+<Group><Shape><Appearance containerField="appearance" USE="TextAppearance"></Appearance>
+<Text string="&quot;Chicken (5 lbs)&quot;"><FontStyle containerField="fontStyle" size="0.5"></FontStyle>
 </Text>
 </Shape>
 <Sound maxBack="1000" maxFront="1000" priority="1"><AudioClip containerField="source" DEF="HamsterSound" description="HamsterSound" url="&quot;hamster.wav&quot; &quot;http://www.nps.navy.mil/code32/vrml/hamster.wav&quot;"></AudioClip>
@@ -103,7 +103,7 @@
 </Transform>
 </Transform>
 <Transform translation="0 3 0"><Shape DEF="plank"><Box size="25 1 1"></Box>
-<Appearance DEF="wood"><ImageTexture containerField="texture" DEF="woodTexture" url="&quot;wood.gif&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/StudentProjects/wood.gif&quot;"></ImageTexture>
+<Appearance containerField="appearance" DEF="wood"><ImageTexture containerField="texture" DEF="woodTexture" url="&quot;wood.gif&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/StudentProjects/wood.gif&quot;"></ImageTexture>
 </Appearance>
 </Shape>
 <Transform DEF="angledsupport" rotation="0 0 1 1" translation="-5 10 0"><Shape USE="plank"></Shape>
@@ -118,43 +118,43 @@
 </Transform>
 </Transform>
 <Transform DEF="panel" translation="0 18.2 -0.3"><Shape><Box size="5 5 0.5"></Box>
-<Appearance USE="wood"></Appearance>
+<Appearance containerField="appearance" USE="wood"></Appearance>
 </Shape>
 </Transform>
 <Transform rotation="1 0 0 -1.57" translation="0 0.6 2.5"><Transform rotation="0 0 1 1.57"><Shape><Extrusion beginCap="false" crossSection="1 -0.38 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 -0.38 -1 -1.1 1 -1.1 1 -0.38" endCap="false" solid="false" spine="0 6 0 0 -11 0"></Extrusion>
-<Appearance USE="wood"></Appearance>
+<Appearance containerField="appearance" USE="wood"></Appearance>
 </Shape>
 </Transform>
 </Transform>
 <Transform DEF="flinger" center="7 0 0" rotation="0 0 1 0.82" scale="0.9 1 1" translation="-7 18 2.5"><Transform><Shape><Box size="35 1 1"></Box>
-<Appearance USE="wood"></Appearance>
+<Appearance containerField="appearance" USE="wood"></Appearance>
 </Shape>
 <Transform translation="7 0 0"><Shape><Box size="8 2 2"></Box>
-<Appearance USE="wood"></Appearance>
+<Appearance containerField="appearance" USE="wood"></Appearance>
 </Shape>
 </Transform>
 </Transform>
-<Transform rotation="1 0 0 1.57" scale="0.2 0.2 0.2" translation="-15 -1 0"><Shape DEF="Torus"><Appearance><Material specularColor="1 1 1"></Material>
+<Transform rotation="1 0 0 1.57" scale="0.2 0.2 0.2" translation="-15 -1 0"><Shape DEF="Torus"><Appearance containerField="appearance"><Material containerField="material" specularColor="1 1 1"></Material>
 </Appearance>
 <Extrusion beginCap="false" convex="false" creaseAngle="1.57" crossSection="0.9 0 0.81 -0.34 0.63 -0.63 0.34 -0.83 0 -0.9 -0.34 -0.81 -0.63 -0.63 -0.81 -0.34 -0.9 0 -0.81 0.34 -0.63 0.63 -0.34 0.81 0 0.9 0.38 0.81 0.63 0.63 0.81 0.34 0.9 0" endCap="false" spine="2 0 0 1.85 0 0.77 1.41 0 1.41 0.77 0 1.85 0 0 2 -0.77 0 1.85 -1.41 0 1.41 -1.85 0 0.77 -2 0 0 -1.85 0 -0.77 -1.41 0 -1.41 -0.77 0 -1.85 0 0 -2 0.77 0 -1.85 1.41 0 -1.41 1.85 0 -0.77 2 0 0"></Extrusion>
 </Shape>
-<Transform translation="1 0 2"><Shape><Appearance DEF="rope"><ImageTexture containerField="texture" USE="woodTexture"></ImageTexture>
+<Transform translation="1 0 2"><Shape><Appearance containerField="appearance" DEF="rope"><ImageTexture containerField="texture" USE="woodTexture"></ImageTexture>
 </Appearance>
 <Sphere radius="1.5"></Sphere>
 </Shape>
 <!--knott--></Transform>
 </Transform>
 <!--The Unicorn--><Transform rotation="0 0 1 1.2" scale="0.2 0.2 0.2" translation="-18.3 0.3 0"><Shape><Cylinder height="10"></Cylinder>
-<Appearance><Material specularColor="1 1 1"></Material>
+<Appearance containerField="appearance"><Material containerField="material" specularColor="1 1 1"></Material>
 </Appearance>
 </Shape>
 <Transform translation="0 -2.5 0"><Shape USE="Torus"></Shape>
 <!--The Unicorn--><Transform translation="-2 0 0"><Shape><Sphere radius="1.5"></Sphere>
-<Appearance USE="rope"></Appearance>
+<Appearance containerField="appearance" USE="rope"></Appearance>
 </Shape>
 <!--Knott--></Transform>
 </Transform>
-<Transform rotation="0 0 1 1.2" translation="15 55 -11"><Transform scale="5 5 5"><Shape><Appearance USE="rope"></Appearance>
+<Transform rotation="0 0 1 1.2" translation="15 55 -11"><Transform scale="5 5 5"><Shape><Appearance containerField="appearance" USE="rope"></Appearance>
 <Extrusion beginCap="false" creaseAngle="0.76" crossSection="0.1 0 0.092 -0.038 0.071 -0.071 0.038 -0.092 0 -0.1 -0.038 -0.092 -0.071 -0.071 -0.092 -0.038 -0.1 0 -0.092 0.038 -0.071 0.071 -0.038 0.092 0 0.1 0.038 0.092 0.071 0.071 0.092 0.038 0.1 0" endCap="false" solid="false" spine="-15.2 1.4 2.2 -12 -0.8 2.2"></Extrusion>
 </Shape>
 </Transform>
@@ -162,25 +162,25 @@
 </Transform>
 <Transform rotation="1 0 0 -1.7" translation="-17 -4.5 0"><Transform scale="0.2 0.2 0.2"><Shape USE="Torus"><!--Knot--></Shape>
 <Transform translation="-1 0 1.7"><Shape><Sphere radius="1.5"></Sphere>
-<Appearance USE="rope"></Appearance>
+<Appearance containerField="appearance" USE="rope"></Appearance>
 </Shape>
 </Transform>
 </Transform>
 </Transform>
-<Transform DEF="RnS"><Transform DEF="ropes"><Transform rotation="0 0 1 -0.82" translation="7 -26 -2.5"><Shape><Appearance USE="rope"></Appearance>
+<Transform DEF="RnS"><Transform DEF="ropes"><Transform rotation="0 0 1 -0.82" translation="7 -26 -2.5"><Shape><Appearance containerField="appearance" USE="rope"></Appearance>
 <Extrusion beginCap="false" creaseAngle="0.76" crossSection="0.1 0 0.092 -0.038 0.071 -0.071 0.038 -0.092 0 -0.1 -0.038 -0.092 -0.071 -0.071 -0.092 -0.038 -0.1 0 -0.092 0.038 -0.071 0.071 -0.038 0.092 0 0.1 0.038 0.092 0.071 0.071 0.092 0.038 0.1 0" endCap="false" solid="false" spine="-33 0.9 2.5 -18.5 1.9 2.55"></Extrusion>
 </Shape>
-<Shape><Appearance USE="rope"></Appearance>
+<Shape><Appearance containerField="appearance" USE="rope"></Appearance>
 <Extrusion beginCap="false" creaseAngle="0.76" crossSection="0.1 0 0.092 -0.038 0.071 -0.071 0.038 -0.092 0 -0.1 -0.038 -0.092 -0.071 -0.071 -0.092 -0.038 -0.1 0 -0.092 0.038 -0.071 0.071 -0.038 0.092 0 0.1 0.038 0.092 0.071 0.071 0.092 0.038 0.1 0" endCap="false" solid="false" spine="-35.7 -0.8 2.5 -18.8 -0.8 2.55"></Extrusion>
 </Shape>
 </Transform>
 </Transform>
-<Transform DEF="sling" rotation="0 0 1 -0.82" translation="-4 -15.3 0"><Transform><Transform rotation="0 1 0 -1.57" scale="1 1.3 1" translation="0.5 0 -1"><Transform rotation="0 0 1 1.57"><Transform scale="0.3 0.3 0.3"><Shape DEF="halfsling"><Appearance DEF="clear"><Material transparency="0.5"></Material>
+<Transform DEF="sling" rotation="0 0 1 -0.82" translation="-4 -15.3 0"><Transform><Transform rotation="0 1 0 -1.57" scale="1 1.3 1" translation="0.5 0 -1"><Transform rotation="0 0 1 1.57"><Transform scale="0.3 0.3 0.3"><Shape DEF="halfsling"><Appearance containerField="appearance" DEF="clear"><Material containerField="material" transparency="0.5"></Material>
 </Appearance>
 <Extrusion crossSection="0 0 0 5 0.5 7 1 8 2 9 3 11 3.5 11.2 4 11 5 9 6 8 6.5 7 6.7 5 6.7 0 0 0" spine="0 0 0 0.1 0 0"></Extrusion>
 </Shape>
 <Transform scale="0.3 0.3 0.3" translation="0 -3.5 11.5"><Shape USE="Torus"></Shape>
-<Transform translation="0 0 2"><Shape><Appearance USE="rope"></Appearance>
+<Transform translation="0 0 2"><Shape><Appearance containerField="appearance" USE="rope"></Appearance>
 <Sphere radius="1.5"></Sphere>
 </Shape>
 </Transform>
@@ -188,21 +188,21 @@
 </Transform>
 <Transform scale="0.3 0.3 0.3" translation="2 0 0"><Shape USE="halfsling"></Shape>
 <Transform scale="0.3 0.3 0.3" translation="0 -3.5 11.3"><Shape USE="Torus"></Shape>
-<Transform translation="0 0 2"><Shape><Appearance USE="rope"></Appearance>
+<Transform translation="0 0 2"><Shape><Appearance containerField="appearance" USE="rope"></Appearance>
 <Sphere radius="1.5"></Sphere>
 </Shape>
 </Transform>
 </Transform>
 </Transform>
 <Transform translation="1 -1 0"><Shape><Extrusion beginCap="false" creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0" endCap="false" solid="false" spine="0 -1 0 0 1 0"></Extrusion>
-<Appearance USE="clear"></Appearance>
+<Appearance containerField="appearance" USE="clear"></Appearance>
 </Shape>
 </Transform>
 </Transform>
 <TouchSensor DEF="LauncheeChoice" description="launcher choice"></TouchSensor>
 </Transform>
 <Transform DEF="projectiletransform" scale="0.01 0.01 0.01"><Switch DEF="projectile" whichChoice="0"><Group><Transform translation="0 0.7 0"><Shape><Sphere radius="0.7"></Sphere>
-<Appearance DEF="black"><Material diffuseColor="0 0 0" specularColor="1 1 1"></Material>
+<Appearance containerField="appearance" DEF="black"><Material containerField="material" diffuseColor="0 0 0" specularColor="1 1 1"></Material>
 </Appearance>
 </Shape>
 </Transform>
@@ -220,32 +220,32 @@
 </Transform>
 </Transform>
 <Transform rotation="1 0 0 1.57" translation="0 18 2.5"><Shape><Cylinder height="8" radius="0.4"></Cylinder>
-<Appearance><Material diffuseColor="0 0 0" specularColor="1 1 1"></Material>
+<Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 0 0" specularColor="1 1 1"></Material>
 </Appearance>
 </Shape>
 <!--Top Pivot--></Transform>
 <Transform DEF="verticalweight"><Transform translation="4 18 1.8"><Shape><Box size="1 10 0.5"></Box>
-<Appearance USE="wood"></Appearance>
+<Appearance containerField="appearance" USE="wood"></Appearance>
 </Shape>
 </Transform>
 <Transform translation="4 18 3.2"><Shape><Box size="1 10 0.5"></Box>
-<Appearance USE="wood"></Appearance>
+<Appearance containerField="appearance" USE="wood"></Appearance>
 </Shape>
 </Transform>
 <Transform translation="4 14 2.5"><!--CounterWeight--><Shape><Cylinder height="4" radius="1.5"></Cylinder>
-<Appearance><Material diffuseColor="0 0 0" specularColor="1 1 1"></Material>
+<Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 0 0" specularColor="1 1 1"></Material>
 </Appearance>
 </Shape>
 </Transform>
 <Transform rotation="1 0 0 1.57" translation="4 22 2.5"><Shape><Cylinder height="2.5" radius="0.3"></Cylinder>
-<Appearance><Material diffuseColor="0 0 0" specularColor="1 1 1"></Material>
+<Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 0 0" specularColor="1 1 1"></Material>
 </Appearance>
 </Shape>
 </Transform>
 </Transform>
 <Transform rotation="0 0 1 1.57" scale="0.2 0.2 0.2" translation="-11.5 -1 2"><Transform DEF="screw" rotation="1 0 0 1.57"><Shape USE="Torus"></Shape>
 <Transform rotation="1 0 0 -1.57" translation="0 0 7"><Shape><Cylinder height="10" radius="0.7"></Cylinder>
-<Appearance><Material specularColor="1 1 1"></Material>
+<Appearance containerField="appearance"><Material containerField="material" specularColor="1 1 1"></Material>
 </Appearance>
 </Shape>
 </Transform>
@@ -269,16 +269,16 @@
 </Transform>
 </Transform>
 <Transform translation="10 -1 2.5"><Shape DEF="Axle"><Box size="1 1 8"></Box>
-<Appearance USE="wood"></Appearance>
+<Appearance containerField="appearance" USE="wood"></Appearance>
 </Shape>
 <Transform rotation="1 0 0 1.57" translation="0 0 4.5"><Shape DEF="wheel"><Cylinder radius="2"></Cylinder>
-<Appearance USE="wood"></Appearance>
+<Appearance containerField="appearance" USE="wood"></Appearance>
 </Shape>
 <Shape DEF="tracks"><Sphere radius="1.5"></Sphere>
-<Appearance USE="black"></Appearance>
+<Appearance containerField="appearance" USE="black"></Appearance>
 </Shape>
 <Transform translation="0 0.55 0"><Shape DEF="hub"><Sphere radius="1.5"></Sphere>
-<Appearance USE="black"></Appearance>
+<Appearance containerField="appearance" USE="black"></Appearance>
 </Shape>
 </Transform>
 </Transform>
@@ -305,7 +305,7 @@
 <Transform><TouchSensor USE="LauncheeChoice"></TouchSensor>
 <Switch USE="projectilename"></Switch>
 <Transform translation="2.5 0 0"><Shape><Box size="5 0.5 0.5"></Box>
-<Appearance><Material transparency="1"></Material>
+<Appearance containerField="appearance"><Material containerField="material" transparency="1"></Material>
 </Appearance>
 </Shape>
 </Transform>
@@ -313,7 +313,7 @@
 <Transform scale="0.5 0.5 0.5" translation="0 -1 0"><TouchSensor USE="weightselector"></TouchSensor>
 <Switch USE="Weight"></Switch>
 <Transform translation="8 0 0"><Shape><Box size="17 1 0.5"></Box>
-<Appearance><Material transparency="1"></Material>
+<Appearance containerField="appearance"><Material containerField="material" transparency="1"></Material>
 </Appearance>
 </Shape>
 </Transform>

@@ -13,7 +13,7 @@
 <Viewpoint position="0 0 4" orientation="1 0 0 0" description="Bubbles in action"></Viewpoint>
 <Background backUrl="&quot;../resources/images/BK.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/BK.png&quot;" bottomUrl="&quot;../resources/images/BT.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/BT.png&quot;" frontUrl="&quot;../resources/images/FR.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/FR.png&quot;" leftUrl="&quot;../resources/images/LF.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/LF.png&quot;" rightUrl="&quot;../resources/images/RT.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/RT.png&quot;" topUrl="&quot;../resources/images/TP.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/TP.png&quot;"></Background>
 <ProtoDeclare name="Bubble"><ProtoBody><Transform DEF="body_trans"><Shape><Sphere radius="0.25"></Sphere>
-<Appearance><Material diffuseColor="1 0 0" transparency="0.2"></Material>
+<Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 0 0" transparency="0.2"></Material>
 </Appearance>
 </Shape>
 <Script DEF="bounce"><field name="scale" accessType="inputOutput" type="SFVec3f" value="1 1 1"></field>

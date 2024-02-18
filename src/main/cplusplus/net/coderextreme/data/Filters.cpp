@@ -50,13 +50,13 @@ meta8->setContent("CHANGELOG.txt");
 head1->addMeta(*meta8);
 
 Cmeta* meta9 = new Cmeta();
-meta9->setName("reference");
-meta9->setContent("https://www.medialab.hmu.gr/minipages/x3domAudio");
+meta9->setName("TODO");
+meta9->setContent("credit for audio files");
 head1->addMeta(*meta9);
 
 Cmeta* meta10 = new Cmeta();
-meta10->setName("TODO");
-meta10->setContent("credit for audio files");
+meta10->setName("reference");
+meta10->setContent("https://www.medialab.hmu.gr/minipages/x3domAudio");
 head1->addMeta(*meta10);
 
 Cmeta* meta11 = new Cmeta();
@@ -69,225 +69,230 @@ meta12->setName("generator");
 meta12->setContent("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit");
 head1->addMeta(*meta12);
 
+Cmeta* meta13 = new Cmeta();
+meta13->setName("license");
+meta13->setContent("../license.html");
+head1->addMeta(*meta13);
+
 X3D0->setHead(*head1);
 
-CScene* Scene13 = new CScene();
-CWorldInfo* WorldInfo14 = (CWorldInfo *)(m_pScene.createNode("WorldInfo"));
-WorldInfo14->setTitle("Filters.x3d");
-group->addChildren(*WorldInfo14);
+CScene* Scene14 = new CScene();
+CWorldInfo* WorldInfo15 = (CWorldInfo *)(m_pScene.createNode("WorldInfo"));
+WorldInfo15->setTitle("Filters.x3d");
+group->addChildren(*WorldInfo15);
 
-CNavigationInfo* NavigationInfo15 = (CNavigationInfo *)(m_pScene.createNode("NavigationInfo"));
-group->addChildren(*NavigationInfo15);
+CNavigationInfo* NavigationInfo16 = (CNavigationInfo *)(m_pScene.createNode("NavigationInfo"));
+group->addChildren(*NavigationInfo16);
 
-CBackground* Background16 = (CBackground *)(m_pScene.createNode("Background"));
-Background16->setSkyColor(new float[3]{0.2,0.2,0.2});
-group->addChildren(*Background16);
+CBackground* Background17 = (CBackground *)(m_pScene.createNode("Background"));
+Background17->setSkyColor(new float[3]{0.2,0.2,0.2});
+group->addChildren(*Background17);
 
-CViewpoint* Viewpoint17 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
-Viewpoint17->setDescription("View entire audio model");
-Viewpoint17->setPosition(new float[3]{0,500,600});
-Viewpoint17->setOrientation(new float[4]{1,0,0,-0.5});
-Viewpoint17->setRetainUserOffsets(True);
-group->addChildren(*Viewpoint17);
+CViewpoint* Viewpoint18 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
+Viewpoint18->setDescription("View entire audio model");
+Viewpoint18->setOrientation(new float[4]{1,0,0,-0.5});
+Viewpoint18->setPosition(new float[3]{0,500,600});
+Viewpoint18->setRetainUserOffsets(True);
+group->addChildren(*Viewpoint18);
 
-CTransform* Transform18 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform18->setDEF("TransformAudio1");
-Transform18->setTranslation(new float[3]{-200,50,0});
-CShape* Shape19 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance20 = (CAppearance *)(m_pScene.createNode("Appearance"));
-Appearance20->setDEF("audio_emit");
-CMaterial* Material21 = (CMaterial *)(m_pScene.createNode("Material"));
-Material21->setDiffuseColor(new float[3]{0.1,0.1,0.1});
-Material21->setSpecularColor(new float[3]{0.01,0.01,0.01});
-Material21->setEmissiveColor(new float[3]{0.8,0.8,0.8});
-Appearance20->setMaterial(*Material21);
+CTransform* Transform19 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform19->setDEF("TransformAudio1");
+Transform19->setTranslation(new float[3]{-200,50,0});
+CShape* Shape20 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance21 = (CAppearance *)(m_pScene.createNode("Appearance"));
+Appearance21->setDEF("audio_emit");
+CMaterial* Material22 = (CMaterial *)(m_pScene.createNode("Material"));
+Material22->setDiffuseColor(new float[3]{0.1,0.1,0.1});
+Material22->setEmissiveColor(new float[3]{0.8,0.8,0.8});
+Material22->setSpecularColor(new float[3]{0.01,0.01,0.01});
+Appearance21->setMaterial(*Material22);
 
-Shape19->setAppearance(*Appearance20);
+Shape20->setAppearance(*Appearance21);
 
-CSphere* Sphere22 = (CSphere *)(m_pScene.createNode("Sphere"));
-Sphere22->setRadius(30);
-Shape19->setGeometry(Sphere22);
+CSphere* Sphere23 = (CSphere *)(m_pScene.createNode("Sphere"));
+Sphere23->setRadius(30);
+Shape20->setGeometry(Sphere23);
 
-Transform18->addChild(*Shape19);
+Transform19->addChild(*Shape20);
 
-group->addChildren(*Transform18);
+group->addChildren(*Transform19);
 
-CTransform* Transform23 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform23->setDEF("TransformAudio2");
-Transform23->setTranslation(new float[3]{0,50,0});
-CShape* Shape24 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance25 = (CAppearance *)(m_pScene.createNode("Appearance"));
-Appearance25->setDEF("audio_emit2");
-CMaterial* Material26 = (CMaterial *)(m_pScene.createNode("Material"));
-Material26->setDiffuseColor(new float[3]{0.1,0.1,0.1});
-Material26->setSpecularColor(new float[3]{0.01,0.01,0.01});
-Material26->setEmissiveColor(new float[3]{0.8,0.8,0.8});
-Appearance25->setMaterial(*Material26);
+CTransform* Transform24 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform24->setDEF("TransformAudio2");
+Transform24->setTranslation(new float[3]{0,50,0});
+CShape* Shape25 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance26 = (CAppearance *)(m_pScene.createNode("Appearance"));
+Appearance26->setDEF("audio_emit2");
+CMaterial* Material27 = (CMaterial *)(m_pScene.createNode("Material"));
+Material27->setDiffuseColor(new float[3]{0.1,0.1,0.1});
+Material27->setEmissiveColor(new float[3]{0.8,0.8,0.8});
+Material27->setSpecularColor(new float[3]{0.01,0.01,0.01});
+Appearance26->setMaterial(*Material27);
 
-Shape24->setAppearance(*Appearance25);
+Shape25->setAppearance(*Appearance26);
 
-CSphere* Sphere27 = (CSphere *)(m_pScene.createNode("Sphere"));
-Sphere27->setRadius(30);
-Shape24->setGeometry(Sphere27);
+CSphere* Sphere28 = (CSphere *)(m_pScene.createNode("Sphere"));
+Sphere28->setRadius(30);
+Shape25->setGeometry(Sphere28);
 
-Transform23->addChild(*Shape24);
+Transform24->addChild(*Shape25);
 
-group->addChildren(*Transform23);
+group->addChildren(*Transform24);
 
-CTransform* Transform28 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform28->setDEF("TransformAudio3");
-Transform28->setTranslation(new float[3]{200,50,0});
-CShape* Shape29 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance30 = (CAppearance *)(m_pScene.createNode("Appearance"));
-Appearance30->setDEF("audio_emit3");
-CMaterial* Material31 = (CMaterial *)(m_pScene.createNode("Material"));
-Material31->setDiffuseColor(new float[3]{0.1,0.1,0.1});
-Material31->setSpecularColor(new float[3]{0.01,0.01,0.01});
-Material31->setEmissiveColor(new float[3]{0.8,0.8,0.8});
-Appearance30->setMaterial(*Material31);
+CTransform* Transform29 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform29->setDEF("TransformAudio3");
+Transform29->setTranslation(new float[3]{200,50,0});
+CShape* Shape30 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance31 = (CAppearance *)(m_pScene.createNode("Appearance"));
+Appearance31->setDEF("audio_emit3");
+CMaterial* Material32 = (CMaterial *)(m_pScene.createNode("Material"));
+Material32->setDiffuseColor(new float[3]{0.1,0.1,0.1});
+Material32->setEmissiveColor(new float[3]{0.8,0.8,0.8});
+Material32->setSpecularColor(new float[3]{0.01,0.01,0.01});
+Appearance31->setMaterial(*Material32);
 
-Shape29->setAppearance(*Appearance30);
+Shape30->setAppearance(*Appearance31);
 
-CSphere* Sphere32 = (CSphere *)(m_pScene.createNode("Sphere"));
-Sphere32->setRadius(30);
-Shape29->setGeometry(Sphere32);
+CSphere* Sphere33 = (CSphere *)(m_pScene.createNode("Sphere"));
+Sphere33->setRadius(30);
+Shape30->setGeometry(Sphere33);
 
-Transform28->addChild(*Shape29);
+Transform29->addChild(*Shape30);
 
-group->addChildren(*Transform28);
-
-CTransform* Transform33 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform33->setDEF("AnimData");
-Transform33->setTranslation(new float[3]{0,50,0});
-group->addChildren(*Transform33);
+group->addChildren(*Transform29);
 
 CTransform* Transform34 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform34->setDEF("AnimDataBoxH");
-Transform34->setTranslation(new float[3]{0,100,0});
+Transform34->setDEF("AnimData");
+Transform34->setTranslation(new float[3]{0,50,0});
 group->addChildren(*Transform34);
 
 CTransform* Transform35 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform35->setDEF("AnimDataBoxM");
-Transform35->setTranslation(new float[3]{15,100,0});
+Transform35->setDEF("AnimDataBoxH");
+Transform35->setTranslation(new float[3]{0,100,0});
 group->addChildren(*Transform35);
 
 CTransform* Transform36 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform36->setDEF("AnimDataBoxL");
-Transform36->setTranslation(new float[3]{30,100,0});
+Transform36->setDEF("AnimDataBoxM");
+Transform36->setTranslation(new float[3]{15,100,0});
 group->addChildren(*Transform36);
 
 CTransform* Transform37 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform37->setDEF("AnimDataBoxMM");
-Transform37->setTranslation(new float[3]{-15,100,0});
+Transform37->setDEF("AnimDataBoxL");
+Transform37->setTranslation(new float[3]{30,100,0});
 group->addChildren(*Transform37);
 
 CTransform* Transform38 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform38->setDEF("AnimDataBoxLM");
-Transform38->setTranslation(new float[3]{-30,100,0});
+Transform38->setDEF("AnimDataBoxMM");
+Transform38->setTranslation(new float[3]{-15,100,0});
 group->addChildren(*Transform38);
 
 CTransform* Transform39 = (CTransform *)(m_pScene.createNode("Transform"));
-CShape* Shape40 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance41 = (CAppearance *)(m_pScene.createNode("Appearance"));
-Appearance41->setDEF("floor");
-CMaterial* Material42 = (CMaterial *)(m_pScene.createNode("Material"));
-Material42->setDiffuseColor(new float[3]{0.1,0.1,0.1});
-Material42->setSpecularColor(new float[3]{0.5,0.6,0.7});
-Material42->setShininess(0.8);
-Appearance41->setMaterial(*Material42);
-
-Shape40->setAppearance(*Appearance41);
-
-CCylinder* Cylinder43 = (CCylinder *)(m_pScene.createNode("Cylinder"));
-Cylinder43->setRadius(500);
-Shape40->setGeometry(Cylinder43);
-
-Transform39->addChild(*Shape40);
-
+Transform39->setDEF("AnimDataBoxLM");
+Transform39->setTranslation(new float[3]{-30,100,0});
 group->addChildren(*Transform39);
 
-CListenerPointSource* ListenerPointSource44 = (CListenerPointSource *)(m_pScene.createNode("ListenerPointSource"));
-ListenerPointSource44->setTrackCurrentView(True);
-group->addChildren(*ListenerPointSource44);
+CTransform* Transform40 = (CTransform *)(m_pScene.createNode("Transform"));
+CShape* Shape41 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance42 = (CAppearance *)(m_pScene.createNode("Appearance"));
+Appearance42->setDEF("floor");
+CMaterial* Material43 = (CMaterial *)(m_pScene.createNode("Material"));
+Material43->setDiffuseColor(new float[3]{0.1,0.1,0.1});
+Material43->setShininess(0.8);
+Material43->setSpecularColor(new float[3]{0.5,0.6,0.7});
+Appearance42->setMaterial(*Material43);
 
-CStreamAudioDestination* StreamAudioDestination45 = (CStreamAudioDestination *)(m_pScene.createNode("StreamAudioDestination"));
-CDynamicsCompressor* DynamicsCompressor46 = (CDynamicsCompressor *)(m_pScene.createNode("DynamicsCompressor"));
-CGain* Gain47 = (CGain *)(m_pScene.createNode("Gain"));
-CSpatialSound* SpatialSound48 = (CSpatialSound *)(m_pScene.createNode("SpatialSound"));
-SpatialSound48->setDEF("Audio1");
-CGain* Gain49 = (CGain *)(m_pScene.createNode("Gain"));
-CAnalyser* Analyser50 = (CAnalyser *)(m_pScene.createNode("Analyser"));
-CBiquadFilter* BiquadFilter51 = (CBiquadFilter *)(m_pScene.createNode("BiquadFilter"));
-BiquadFilter51->setDetune(50);
-BiquadFilter51->setFrequency(600);
-BiquadFilter51->setQualityFactor(30);
-BiquadFilter51->setType("ALLPASS");
-CAudioClip* AudioClip52 = (CAudioClip *)(m_pScene.createNode("AudioClip"));
-AudioClip52->setDescription("Techno beat");
-AudioClip52->setUrl(new CString[2]{"sound/techno_beat.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/techno_beat.mp3"}, 2);
-AudioClip52->setLoop(True);
-BiquadFilter51->addChildren(*AudioClip52);
+Shape41->setAppearance(*Appearance42);
 
-Analyser50->addChildren(*BiquadFilter51);
+CCylinder* Cylinder44 = (CCylinder *)(m_pScene.createNode("Cylinder"));
+Cylinder44->setRadius(500);
+Shape41->setGeometry(Cylinder44);
 
-Gain49->addChildren(*Analyser50);
+Transform40->addChild(*Shape41);
 
-SpatialSound48->addChildren(*Gain49);
+group->addChildren(*Transform40);
 
-Gain47->addChildren(*SpatialSound48);
+CListenerPointSource* ListenerPointSource45 = (CListenerPointSource *)(m_pScene.createNode("ListenerPointSource"));
+ListenerPointSource45->setTrackCurrentView(True);
+group->addChildren(*ListenerPointSource45);
 
-CSpatialSound* SpatialSound53 = (CSpatialSound *)(m_pScene.createNode("SpatialSound"));
-SpatialSound53->setDEF("Audio2");
-CGain* Gain54 = (CGain *)(m_pScene.createNode("Gain"));
-CAnalyser* Analyser55 = (CAnalyser *)(m_pScene.createNode("Analyser"));
-CBiquadFilter* BiquadFilter56 = (CBiquadFilter *)(m_pScene.createNode("BiquadFilter"));
-BiquadFilter56->setDetune(15);
-BiquadFilter56->setFrequency(600);
-BiquadFilter56->setQualityFactor(15);
-BiquadFilter56->setType("ALLPASS");
-CAudioClip* AudioClip57 = (CAudioClip *)(m_pScene.createNode("AudioClip"));
-AudioClip57->setDescription("Simple beat");
-AudioClip57->setUrl(new CString[2]{"sound/beat.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/beat.mp3"}, 2);
-AudioClip57->setLoop(True);
-BiquadFilter56->addChildren(*AudioClip57);
+CStreamAudioDestination* StreamAudioDestination46 = (CStreamAudioDestination *)(m_pScene.createNode("StreamAudioDestination"));
+CDynamicsCompressor* DynamicsCompressor47 = (CDynamicsCompressor *)(m_pScene.createNode("DynamicsCompressor"));
+CGain* Gain48 = (CGain *)(m_pScene.createNode("Gain"));
+CSpatialSound* SpatialSound49 = (CSpatialSound *)(m_pScene.createNode("SpatialSound"));
+SpatialSound49->setDEF("Audio1");
+CGain* Gain50 = (CGain *)(m_pScene.createNode("Gain"));
+CAnalyser* Analyser51 = (CAnalyser *)(m_pScene.createNode("Analyser"));
+CBiquadFilter* BiquadFilter52 = (CBiquadFilter *)(m_pScene.createNode("BiquadFilter"));
+BiquadFilter52->setDetune(50);
+BiquadFilter52->setFrequency(600);
+BiquadFilter52->setQualityFactor(30);
+BiquadFilter52->setType("ALLPASS");
+CAudioClip* AudioClip53 = (CAudioClip *)(m_pScene.createNode("AudioClip"));
+AudioClip53->setDescription("Techno beat");
+AudioClip53->setLoop(True);
+AudioClip53->setUrl(new CString[2]{"sound/techno_beat.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/techno_beat.mp3"}, 2);
+BiquadFilter52->addChildren(*AudioClip53);
 
-Analyser55->addChildren(*BiquadFilter56);
+Analyser51->addChildren(*BiquadFilter52);
 
-Gain54->addChildren(*Analyser55);
+Gain50->addChildren(*Analyser51);
 
-SpatialSound53->addChildren(*Gain54);
+SpatialSound49->addChildren(*Gain50);
 
-Gain47->addChildren(*SpatialSound53);
+Gain48->addChildren(*SpatialSound49);
 
-CSpatialSound* SpatialSound58 = (CSpatialSound *)(m_pScene.createNode("SpatialSound"));
-SpatialSound58->setDEF("Audio3");
-CGain* Gain59 = (CGain *)(m_pScene.createNode("Gain"));
-CAnalyser* Analyser60 = (CAnalyser *)(m_pScene.createNode("Analyser"));
-CBiquadFilter* BiquadFilter61 = (CBiquadFilter *)(m_pScene.createNode("BiquadFilter"));
-BiquadFilter61->setFrequency(1000);
-BiquadFilter61->setQualityFactor(0);
-BiquadFilter61->setType("ALLPASS");
-CAudioClip* AudioClip62 = (CAudioClip *)(m_pScene.createNode("AudioClip"));
-AudioClip62->setDescription("Wobble loop");
-AudioClip62->setUrl(new CString[2]{"sound/wobble_loop.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/wobble_loop.mp3"}, 2);
-AudioClip62->setLoop(True);
-BiquadFilter61->addChildren(*AudioClip62);
+CSpatialSound* SpatialSound54 = (CSpatialSound *)(m_pScene.createNode("SpatialSound"));
+SpatialSound54->setDEF("Audio2");
+CGain* Gain55 = (CGain *)(m_pScene.createNode("Gain"));
+CAnalyser* Analyser56 = (CAnalyser *)(m_pScene.createNode("Analyser"));
+CBiquadFilter* BiquadFilter57 = (CBiquadFilter *)(m_pScene.createNode("BiquadFilter"));
+BiquadFilter57->setDetune(15);
+BiquadFilter57->setFrequency(600);
+BiquadFilter57->setQualityFactor(15);
+BiquadFilter57->setType("ALLPASS");
+CAudioClip* AudioClip58 = (CAudioClip *)(m_pScene.createNode("AudioClip"));
+AudioClip58->setDescription("Simple beat");
+AudioClip58->setLoop(True);
+AudioClip58->setUrl(new CString[2]{"sound/beat.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/beat.mp3"}, 2);
+BiquadFilter57->addChildren(*AudioClip58);
 
-Analyser60->addChildren(*BiquadFilter61);
+Analyser56->addChildren(*BiquadFilter57);
 
-Gain59->addChildren(*Analyser60);
+Gain55->addChildren(*Analyser56);
 
-SpatialSound58->addChildren(*Gain59);
+SpatialSound54->addChildren(*Gain55);
 
-Gain47->addChildren(*SpatialSound58);
+Gain48->addChildren(*SpatialSound54);
 
-DynamicsCompressor46->addChildren(*Gain47);
+CSpatialSound* SpatialSound59 = (CSpatialSound *)(m_pScene.createNode("SpatialSound"));
+SpatialSound59->setDEF("Audio3");
+CGain* Gain60 = (CGain *)(m_pScene.createNode("Gain"));
+CAnalyser* Analyser61 = (CAnalyser *)(m_pScene.createNode("Analyser"));
+CBiquadFilter* BiquadFilter62 = (CBiquadFilter *)(m_pScene.createNode("BiquadFilter"));
+BiquadFilter62->setFrequency(1000);
+BiquadFilter62->setQualityFactor(0);
+BiquadFilter62->setType("ALLPASS");
+CAudioClip* AudioClip63 = (CAudioClip *)(m_pScene.createNode("AudioClip"));
+AudioClip63->setDescription("Wobble loop");
+AudioClip63->setLoop(True);
+AudioClip63->setUrl(new CString[2]{"sound/wobble_loop.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/wobble_loop.mp3"}, 2);
+BiquadFilter62->addChildren(*AudioClip63);
 
-StreamAudioDestination45->addChildren(*DynamicsCompressor46);
+Analyser61->addChildren(*BiquadFilter62);
 
-group->addChildren(*StreamAudioDestination45);
+Gain60->addChildren(*Analyser61);
 
-X3D0->setScene(*Scene13);
+SpatialSound59->addChildren(*Gain60);
+
+Gain48->addChildren(*SpatialSound59);
+
+DynamicsCompressor47->addChildren(*Gain48);
+
+StreamAudioDestination46->addChildren(*DynamicsCompressor47);
+
+group->addChildren(*StreamAudioDestination46);
+
+X3D0->setScene(*Scene14);
 
 m_pScene.addRootNode(group);
 X3D0->toXMLString();

@@ -50,13 +50,13 @@ meta8->setContent("CHANGELOG.txt");
 head1->addMeta(*meta8);
 
 Cmeta* meta9 = new Cmeta();
-meta9->setName("reference");
-meta9->setContent("https://medialab.hmu.gr/minipages/x3domAudio");
+meta9->setName("TODO");
+meta9->setContent("credit for audio files");
 head1->addMeta(*meta9);
 
 Cmeta* meta10 = new Cmeta();
-meta10->setName("TODO");
-meta10->setContent("credit for audio files");
+meta10->setName("reference");
+meta10->setContent("https://medialab.hmu.gr/minipages/x3domAudio");
 head1->addMeta(*meta10);
 
 Cmeta* meta11 = new Cmeta();
@@ -69,75 +69,80 @@ meta12->setName("generator");
 meta12->setContent("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit");
 head1->addMeta(*meta12);
 
+Cmeta* meta13 = new Cmeta();
+meta13->setName("license");
+meta13->setContent("../license.html");
+head1->addMeta(*meta13);
+
 X3D0->setHead(*head1);
 
-CScene* Scene13 = new CScene();
-CWorldInfo* WorldInfo14 = (CWorldInfo *)(m_pScene.createNode("WorldInfo"));
-WorldInfo14->setTitle("InlineSoundSource.x3d");
-group->addChildren(*WorldInfo14);
+CScene* Scene14 = new CScene();
+CWorldInfo* WorldInfo15 = (CWorldInfo *)(m_pScene.createNode("WorldInfo"));
+WorldInfo15->setTitle("InlineSoundSource.x3d");
+group->addChildren(*WorldInfo15);
 
-CNavigationInfo* NavigationInfo15 = (CNavigationInfo *)(m_pScene.createNode("NavigationInfo"));
-NavigationInfo15->setDEF("NAV");
-group->addChildren(*NavigationInfo15);
+CNavigationInfo* NavigationInfo16 = (CNavigationInfo *)(m_pScene.createNode("NavigationInfo"));
+NavigationInfo16->setDEF("NAV");
+group->addChildren(*NavigationInfo16);
 
-CBackground* Background16 = (CBackground *)(m_pScene.createNode("Background"));
-Background16->setFrontUrl(new CString[2]{"images/generic/FR1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/FR1.png"}, 2);
-Background16->setBackUrl(new CString[2]{"images/generic/BK1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/BK1.png"}, 2);
-Background16->setLeftUrl(new CString[2]{"images/generic/LF1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/LF1.png"}, 2);
-Background16->setRightUrl(new CString[2]{"images/generic/RT1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/RT1.png"}, 2);
-Background16->setTopUrl(new CString[2]{"images/generic/UP1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/UP1.png"}, 2);
-Background16->setBottomUrl(new CString[2]{"images/generic/DN1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/DN1.png"}, 2);
-group->addChildren(*Background16);
+CBackground* Background17 = (CBackground *)(m_pScene.createNode("Background"));
+Background17->setBackUrl(new CString[2]{"images/generic/BK1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/BK1.png"}, 2);
+Background17->setBottomUrl(new CString[2]{"images/generic/DN1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/DN1.png"}, 2);
+Background17->setFrontUrl(new CString[2]{"images/generic/FR1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/FR1.png"}, 2);
+Background17->setLeftUrl(new CString[2]{"images/generic/LF1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/LF1.png"}, 2);
+Background17->setRightUrl(new CString[2]{"images/generic/RT1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/RT1.png"}, 2);
+Background17->setTopUrl(new CString[2]{"images/generic/UP1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/UP1.png"}, 2);
+group->addChildren(*Background17);
 
-CViewpoint* Viewpoint17 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
-Viewpoint17->setDEF("Camera001");
-Viewpoint17->setDescription("Camera001");
-Viewpoint17->setPosition(new float[3]{0,2000,3500});
-Viewpoint17->setOrientation(new float[4]{1,0,0,-0.523599});
-Viewpoint17->setNearDistance(1);
-Viewpoint17->setFarDistance(0);
-group->addChildren(*Viewpoint17);
+CViewpoint* Viewpoint18 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
+Viewpoint18->setDEF("Camera001");
+Viewpoint18->setDescription("Camera001");
+Viewpoint18->setFarDistance(0);
+Viewpoint18->setNearDistance(1);
+Viewpoint18->setOrientation(new float[4]{1,0,0,-0.523599});
+Viewpoint18->setPosition(new float[3]{0,2000,3500});
+group->addChildren(*Viewpoint18);
 
-CTransform* Transform18 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform18->setDEF("Floor");
-Transform18->setTranslation(new float[3]{1.241,0,0.358});
-CShape* Shape19 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance20 = (CAppearance *)(m_pScene.createNode("Appearance"));
-Appearance20->setDEF("WireColor");
-CMaterial* Material21 = (CMaterial *)(m_pScene.createNode("Material"));
-Material21->setDiffuseColor(new float[3]{0.122,0.114,0.125});
-Appearance20->setMaterial(*Material21);
+CTransform* Transform19 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform19->setDEF("Floor");
+Transform19->setTranslation(new float[3]{1.241,0,0.358});
+CShape* Shape20 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance21 = (CAppearance *)(m_pScene.createNode("Appearance"));
+Appearance21->setDEF("WireColor");
+CMaterial* Material22 = (CMaterial *)(m_pScene.createNode("Material"));
+Material22->setDiffuseColor(new float[3]{0.122,0.114,0.125});
+Appearance21->setMaterial(*Material22);
 
-Shape19->setAppearance(*Appearance20);
+Shape20->setAppearance(*Appearance21);
 
-CIndexedFaceSet* IndexedFaceSet22 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
-IndexedFaceSet22->setDEF("Box001-GEOMETRY");
-IndexedFaceSet22->setSolid(False);
-IndexedFaceSet22->setCoordIndex(new int[48]{0,1,2,-1,3,4,5,-1,6,7,8,-1,9,10,11,-1,12,13,14,-1,15,16,17,-1,18,19,20,-1,21,22,23,-1,24,25,26,-1,27,28,29,-1,30,31,32,-1,33,34,35,-1});
-CNormal* Normal23 = (CNormal *)(m_pScene.createNode("Normal"));
-Normal23->setVector(new float[108]{0,-1,0,0,-1,0,0,-1,0,0,-1,0,0,-1,0,0,-1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,0,1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,1,1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,0,0,-1,0,0,-1,0,0,-1,0,0,-1,0,0,-1,0,0,-1,-1,0,0,-1,0,0,-1,0,0,-1,0,0,-1,0,0,-1,0,0});
-IndexedFaceSet22->setNormal(*Normal23);
-
+CIndexedFaceSet* IndexedFaceSet23 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet23->setDEF("Box001-GEOMETRY");
+IndexedFaceSet23->setCoordIndex(new int[48]{0,1,2,-1,3,4,5,-1,6,7,8,-1,9,10,11,-1,12,13,14,-1,15,16,17,-1,18,19,20,-1,21,22,23,-1,24,25,26,-1,27,28,29,-1,30,31,32,-1,33,34,35,-1});
+IndexedFaceSet23->setSolid(False);
 CCoordinate* Coordinate24 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
 Coordinate24->setPoint(new float[108]{-1000,0,1000,-1000,0,-1000,1000,0,-1000,1000,0,-1000,1000,0,1000,-1000,0,1000,-1000,8.031588,1000,1000,8.031588,1000,1000,8.031588,-1000,1000,8.031588,-1000,-1000,8.031588,-1000,-1000,8.031588,1000,-1000,0,1000,1000,0,1000,1000,8.031588,1000,1000,8.031588,1000,-1000,8.031588,1000,-1000,0,1000,1000,0,1000,1000,0,-1000,1000,8.031588,-1000,1000,8.031588,-1000,1000,8.031588,1000,1000,0,1000,1000,0,-1000,-1000,0,-1000,-1000,8.031588,-1000,-1000,8.031588,-1000,1000,8.031588,-1000,1000,0,-1000,-1000,0,-1000,-1000,0,1000,-1000,8.031588,1000,-1000,8.031588,1000,-1000,8.031588,-1000,-1000,0,-1000});
-IndexedFaceSet22->setCoord(*Coordinate24);
+IndexedFaceSet23->setCoord(*Coordinate24);
 
-Shape19->setGeometry(IndexedFaceSet22);
+CNormal* Normal25 = (CNormal *)(m_pScene.createNode("Normal"));
+Normal25->setVector(new float[108]{0,-1,0,0,-1,0,0,-1,0,0,-1,0,0,-1,0,0,-1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,0,1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,1,1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,0,0,-1,0,0,-1,0,0,-1,0,0,-1,0,0,-1,0,0,-1,-1,0,0,-1,0,0,-1,0,0,-1,0,0,-1,0,0,-1,0,0});
+IndexedFaceSet23->setNormal(*Normal25);
 
-Transform18->addChild(*Shape19);
+Shape20->setGeometry(IndexedFaceSet23);
 
-group->addChildren(*Transform18);
+Transform19->addChild(*Shape20);
 
-CTransform* Transform25 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform25->setDEF("InlineScene");
-CInline* Inline26 = (CInline *)(m_pScene.createNode("Inline"));
-Inline26->setDEF("inline");
-Inline26->setUrl(new CString[4]{"x3d/example1.x3d","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/x3d/example1.x3d","x3d/example1.wrl","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/x3d/example1.wrl"}, 4);
-Transform25->addChildren(*Inline26);
+group->addChildren(*Transform19);
 
-group->addChildren(*Transform25);
+CTransform* Transform26 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform26->setDEF("InlineScene");
+CInline* Inline27 = (CInline *)(m_pScene.createNode("Inline"));
+Inline27->setDEF("inline");
+Inline27->setUrl(new CString[4]{"x3d/example1.x3d","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/x3d/example1.x3d","x3d/example1.wrl","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/x3d/example1.wrl"}, 4);
+Transform26->addChildren(*Inline27);
 
-X3D0->setScene(*Scene13);
+group->addChildren(*Transform26);
+
+X3D0->setScene(*Scene14);
 
 m_pScene.addRootNode(group);
 X3D0->toXMLString();

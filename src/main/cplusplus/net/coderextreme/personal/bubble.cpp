@@ -4,7 +4,7 @@
 #define WINAPI
 #define AFX_EXT_CLASS
 #define EXPORT32
-#include "/c/x3d-code/www.web3d.org/x3d/languages/cpp/X3DLib/X3DLib.h"
+#include "C:/x3d-code/www.web3d.org/x3d/stylesheets/cpp/concretes.h"
 int main(int argc, char ** argv) {
 CX3DScene m_pScene;
 CBrowser browser = X3D.getBrowser();
@@ -12,7 +12,7 @@ CX3D* X3D0 = new CX3D();
 CGroup* group = (CGroup*)(m_pScene.createNode("Group"));
 group->addChildren(X3D0);
 X3D0->setProfile("Immersive");
-X3D0->setVersion("4.0");
+X3D0->setVersion("3.3");
 Chead* head1 = new Chead();
 Cmeta* meta2 = new Cmeta();
 meta2->setName("title");
@@ -36,7 +36,7 @@ head1->addMeta(*meta5);
 
 Cmeta* meta6 = new Cmeta();
 meta6->setName("identifier");
-meta6->setContent("https://coderextreme.net/X3DJSONLD/bubble.x3d");
+meta6->setContent("https://coderextreme.net/X3DJSONLD/src/main/data/bubble.x3d");
 head1->addMeta(*meta6);
 
 X3D0->setHead(*head1);
@@ -54,8 +54,8 @@ group->addChildren(*Viewpoint9);
 
 CProtoDeclare ProtoDeclare10 = browser.createX3DFromString(R"foo(<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
-<ProtoDeclare name="Bubble" ><ProtoBody><Transform DEF="transform"><Shape><Sphere containerField="geometry" radius="0.25"></Sphere>
-<Appearance><Material diffuseColor="1 0 0" transparency="0.2"></Material>
+<ProtoDeclare name="Bubble" ><ProtoBody><Transform DEF="transform"><Shape><Sphere radius="0.25"></Sphere>
+<Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 0 0" transparency="0.2"></Material>
 </Appearance>
 </Shape>
 <Script DEF="bounce"><field name="scale" accessType="inputOutput" type="SFVec3f" value="1 1 1"></field>
@@ -132,7 +132,7 @@ Appearance15->setMaterial(*Material16);
 
 Shape13->setAppearance(*Appearance15);
 
-Transform12->addChildren(*Shape13);
+Transform12->addChild(*Shape13);
 
 CScript* Script17 = (CScript *)(m_pScene.createNode("Script"));
 Script17->setDEF("bounce");

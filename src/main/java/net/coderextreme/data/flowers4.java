@@ -36,13 +36,22 @@ import org.web3d.x3d.jsail.Texturing.*;
 import org.web3d.x3d.jsail.Time.*;
 import org.web3d.x3d.jsail.VolumeRendering.*;
 import org.web3d.x3d.jsail.fields.*;
-public class flowers4 {
+import java.util.ArrayList;
+import java.util.List;
+import net.coderextreme.X3DRoots;
+public class flowers4 implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    X3D model = new flowers4().initialize();
+    X3D model = new flowers4().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
+    model.toFileX3D("../data/flowers4.new.java.x3d");
     model.toFileJSON("../data/flowers4.new.json");
+    }
+    public List<X3D> getRootNodeList() {
+    	List<X3D> list = new ArrayList<X3D>(1);
+    	list.add(initialize());
+    	return list;
     }
     public X3D initialize() {
       X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
@@ -53,9 +62,9 @@ public class flowers4 {
         .addComponent(new component().setName("CubeMapTexturing").setLevel(1))
         .addComponent(new component().setName("Texturing").setLevel(1))
         .addComponent(new component().setName("Rendering").setLevel(1))
-        .addComponent(new component().setName("Shape").setLevel(4))
         .addComponent(new component().setName("Grouping").setLevel(3))
         .addComponent(new component().setName("Core").setLevel(1))
+        .addComments("<component name='Shape' level='4'></component>")
         .addMeta(new meta().setName("title").setContent("flowers4.x3d"))
         .addMeta(new meta().setName("creator").setContent("John Carlson"))
         .addMeta(new meta().setName("generator").setContent("manual"))
@@ -67,13 +76,13 @@ public class flowers4 {
         .addChild(new Transform().setDEF("transform")
           .addChild(new Shape()
             .setAppearance(new Appearance()
-              .setMaterial(new Material().setDiffuseColor(new float[] {0.7f ,0.7f ,0.7f }).setSpecularColor(new float[] {0.5f ,0.5f ,0.5f }))
+              .setMaterial(new Material().setDiffuseColor(new double[] {0.7,0.7,0.7}).setSpecularColor(new double[] {0.5,0.5,0.5}))
               .setTexture(new ComposedCubeMapTexture()
-                .setTopTexture(new ImageTexture().setUrl(new MFString6().getArray()))
-                .setTopTexture(new ImageTexture().setUrl(new MFString7().getArray()))
-                .setTopTexture(new ImageTexture().setUrl(new MFString8().getArray()))
-                .setTopTexture(new ImageTexture().setUrl(new MFString9().getArray()))
-                .setTopTexture(new ImageTexture().setUrl(new MFString10().getArray()))
+                .setBackTexture(new ImageTexture().setUrl(new MFString6().getArray()))
+                .setBottomTexture(new ImageTexture().setUrl(new MFString7().getArray()))
+                .setFrontTexture(new ImageTexture().setUrl(new MFString8().getArray()))
+                .setLeftTexture(new ImageTexture().setUrl(new MFString9().getArray()))
+                .setRightTexture(new ImageTexture().setUrl(new MFString10().getArray()))
                 .setTopTexture(new ImageTexture().setUrl(new MFString11().getArray())))
               .addShaders(new ComposedShader().setDEF("shader").setLanguage("GLSL")
                 .addField(new field().setType("SFInt32").setName("cube").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
@@ -161,7 +170,7 @@ public class flowers4 {
 "	var resolution = 100;\n"+
 "	updateCoordinates(resolution);\n"+
 "}"))
-        .addChild(new TimeSensor().setDEF("Clock").setCycleInterval(16d).setLoop(true))
+        .addChild(new TimeSensor().setDEF("Clock").setCycleInterval(16).setLoop(true))
         .addChild(new ROUTE().setFromField("coordIndexes").setFromNode("OrbitScript").setToField("set_coordIndex").setToNode("Orbit"))
         .addChild(new ROUTE().setFromField("coordinates").setFromNode("OrbitScript").setToField("set_point").setToNode("OrbitCoordinates"))
         .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("Clock").setToField("set_fraction").setToNode("OrbitScript")))      ;

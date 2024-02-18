@@ -12,7 +12,7 @@ CX3D* X3D0 = new CX3D();
 CGroup* group = (CGroup*)(m_pScene.createNode("Group"));
 group->addChildren(X3D0);
 X3D0->setProfile("Immersive");
-X3D0->setVersion("4.0");
+X3D0->setVersion("3.3");
 Chead* head1 = new Chead();
 Cmeta* meta2 = new Cmeta();
 meta2->setName("title");
@@ -80,78 +80,78 @@ meta14->setContent("https://en.wikipedia.org/wiki/Oblique_Strategies");
 head1->addMeta(*meta14);
 
 Cmeta* meta15 = new Cmeta();
-meta15->setName("reference");
-meta15->setContent("http://stackoverflow.com/questions/9163988/download-mp3-from-google-translate-text-to-speech");
+meta15->setName("subject");
+meta15->setContent("Brian Eno, Oblique Strategies");
 head1->addMeta(*meta15);
 
 Cmeta* meta16 = new Cmeta();
-meta16->setName("reference");
-meta16->setContent("http://www.greenbot.com/article/2105862/how-to-get-started-with-google-text-to-speech.html");
+meta16->setName("Image");
+meta16->setContent("images/ObliqueStrategiesEntryScreen.png");
 head1->addMeta(*meta16);
 
 Cmeta* meta17 = new Cmeta();
-meta17->setName("reference");
-meta17->setContent("https://gist.github.com/alotaiba/1728771");
+meta17->setName("Sound");
+meta17->setContent("http://translate.google.com/translate_tts?tl=en&q=hello%20X3D");
 head1->addMeta(*meta17);
 
 Cmeta* meta18 = new Cmeta();
-meta18->setName("reference");
-meta18->setContent("https://stackoverflow.com/questions/35002003/how-to-use-google-translate-tts-with-the-new-v2-api");
+meta18->setName("Sound");
+meta18->setContent("translate_tts_HelloX3D.mp3");
 head1->addMeta(*meta18);
 
 Cmeta* meta19 = new Cmeta();
-meta19->setName("reference");
-meta19->setContent("https://cloud.google.com/translate/docs/basic/translating-text");
+meta19->setName("Sound");
+meta19->setContent("translate_tts_HelloX3D.wav");
 head1->addMeta(*meta19);
 
 Cmeta* meta20 = new Cmeta();
-meta20->setName("subject");
-meta20->setContent("Brian Eno, Oblique Strategies");
+meta20->setName("TODO");
+meta20->setContent("multiliingual translation parameter");
 head1->addMeta(*meta20);
 
 Cmeta* meta21 = new Cmeta();
-meta21->setName("Image");
-meta21->setContent("images/ObliqueStrategiesEntryScreen.png");
+meta21->setName("reference");
+meta21->setContent("http://stackoverflow.com/questions/9163988/download-mp3-from-google-translate-text-to-speech");
 head1->addMeta(*meta21);
 
 Cmeta* meta22 = new Cmeta();
-meta22->setName("Sound");
-meta22->setContent("http://translate.google.com/translate_tts?tl=en&q=hello%20X3D");
+meta22->setName("reference");
+meta22->setContent("http://www.greenbot.com/article/2105862/how-to-get-started-with-google-text-to-speech.html");
 head1->addMeta(*meta22);
 
 Cmeta* meta23 = new Cmeta();
-meta23->setName("Sound");
-meta23->setContent("translate_tts_HelloX3D.mp3");
+meta23->setName("warning");
+meta23->setContent("under development, scene Sound/AudioClip triggering (or retrieved file format) not working");
 head1->addMeta(*meta23);
 
 Cmeta* meta24 = new Cmeta();
-meta24->setName("Sound");
-meta24->setContent("translate_tts_HelloX3D.wav");
+meta24->setName("warning");
+meta24->setContent("TODO resolve potential error in Script node TextScript: parse problem line 15 \" var strategy = [];");
 head1->addMeta(*meta24);
 
 Cmeta* meta25 = new Cmeta();
-meta25->setName("Sound");
-meta25->setContent("https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=en&q=Hello+X3D4");
+meta25->setName("reference");
+meta25->setContent("https://gist.github.com/alotaiba/1728771");
 head1->addMeta(*meta25);
 
 Cmeta* meta26 = new Cmeta();
-meta26->setName("Sound");
-meta26->setContent("translate_tts_HelloX3D4.mp3");
+meta26->setName("reference");
+meta26->setContent("https://stackoverflow.com/questions/35002003/how-to-use-google-translate-tts-with-the-new-v2-api");
 head1->addMeta(*meta26);
 
 Cmeta* meta27 = new Cmeta();
-meta27->setName("TODO");
-meta27->setContent("multiliingual translation parameter");
+meta27->setName("Sound");
+meta27->setContent("https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=en&q=Hello+X3D4");
 head1->addMeta(*meta27);
 
 Cmeta* meta28 = new Cmeta();
-meta28->setName("warning");
-meta28->setContent("under development, scene Sound/AudioClip triggering (or retrieved file format) not working");
+meta28->setName("Sound");
+meta28->setContent("translate_tts_HelloX3D4.mp3");
 head1->addMeta(*meta28);
 
 Cmeta* meta29 = new Cmeta();
-meta29->setName("warning");
-meta29->setContent("TODO resolve potential error in Script node TextScript: parse problem line 15 \" var strategy = [];");
+meta29->setName("reference");
+meta29->setContent("https://cloud.google.com/translate/docs/basic/translating-text");
 head1->addMeta(*meta29);
 
 Cmeta* meta30 = new Cmeta();
@@ -164,378 +164,395 @@ meta31->setName("generator");
 meta31->setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit");
 head1->addMeta(*meta31);
 
+Cmeta* meta32 = new Cmeta();
+meta32->setName("license");
+meta32->setContent("../license.html");
+head1->addMeta(*meta32);
+
 X3D0->setHead(*head1);
 
-CScene* Scene32 = new CScene();
-CWorldInfo* WorldInfo33 = (CWorldInfo *)(m_pScene.createNode("WorldInfo"));
-WorldInfo33->setTitle("ObliqueStrategies.x3d");
-group->addChildren(*WorldInfo33);
+CScene* Scene33 = new CScene();
+CWorldInfo* WorldInfo34 = (CWorldInfo *)(m_pScene.createNode("WorldInfo"));
+WorldInfo34->setTitle("ObliqueStrategies.x3d");
+group->addChildren(*WorldInfo34);
 
-CNavigationInfo* NavigationInfo34 = (CNavigationInfo *)(m_pScene.createNode("NavigationInfo"));
-NavigationInfo34->setType(new CString[1]{"NONE"}, 1);
-group->addChildren(*NavigationInfo34);
+CNavigationInfo* NavigationInfo35 = (CNavigationInfo *)(m_pScene.createNode("NavigationInfo"));
+NavigationInfo35->setType(new CString[1]{"NONE"}, 1);
+group->addChildren(*NavigationInfo35);
 
-CBackground* Background35 = (CBackground *)(m_pScene.createNode("Background"));
-Background35->setSkyColor(new float[3]{0.419608,0.427451,1});
-group->addChildren(*Background35);
+CBackground* Background36 = (CBackground *)(m_pScene.createNode("Background"));
+Background36->setSkyColor(new float[3]{0.419608,0.427451,1});
+group->addChildren(*Background36);
 
-CTransform* Transform36 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform36->setTranslation(new float[3]{0,1,0});
-Transform36->setScale(new float[3]{0.4,0.4,0.4});
-CTouchSensor* TouchSensor37 = (CTouchSensor *)(m_pScene.createNode("TouchSensor"));
-TouchSensor37->setDEF("RandomTextClickedSensor");
-TouchSensor37->setDescription("Select to see a new strategy");
-Transform36->addChildren(*TouchSensor37);
+CTransform* Transform37 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform37->setScale(new float[3]{0.4,0.4,0.4});
+Transform37->setTranslation(new float[3]{0,1,0});
+CTouchSensor* TouchSensor38 = (CTouchSensor *)(m_pScene.createNode("TouchSensor"));
+TouchSensor38->setDEF("RandomTextClickedSensor");
+TouchSensor38->setDescription("Select to see a new strategy");
+Transform37->addChildren(*TouchSensor38);
 
-CShape* Shape38 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance39 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material40 = (CMaterial *)(m_pScene.createNode("Material"));
-Material40->setDiffuseColor(new float[3]{1,1,1});
-Appearance39->setMaterial(*Material40);
+CShape* Shape39 = (CShape *)(m_pScene.createNode("Shape"));
+CText* Text40 = (CText *)(m_pScene.createNode("Text"));
+Text40->setString(new CString[5]{"Oblique Strategies","","(Over One Hundred Worthwhile Dilemmas)","","by Brian Eno and Peter Schmidt"}, 5);
+CFontStyle* FontStyle41 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
+FontStyle41->setDEF("MessageFont");
+FontStyle41->setFamily(new CString[1]{"SANS"}, 1);
+FontStyle41->setJustify(new CString[2]{"MIDDLE","MIDDLE"}, 2);
+FontStyle41->setStyle("BOLD");
+Text40->setFontStyle(*FontStyle41);
 
-Shape38->setAppearance(*Appearance39);
+Shape39->setGeometry(Text40);
 
-CText* Text41 = (CText *)(m_pScene.createNode("Text"));
-Text41->setString(new CString[5]{"Oblique Strategies","","(Over One Hundred Worthwhile Dilemmas)","","by Brian Eno and Peter Schmidt"}, 5);
-CFontStyle* FontStyle42 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
-FontStyle42->setDEF("MessageFont");
-FontStyle42->setFamily(new CString[1]{"SANS"}, 1);
-FontStyle42->setStyle("BOLD");
-FontStyle42->setJustify(new CString[2]{"MIDDLE","MIDDLE"}, 2);
-Text41->setFontStyle(*FontStyle42);
+CAppearance* Appearance42 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material43 = (CMaterial *)(m_pScene.createNode("Material"));
+Material43->setDiffuseColor(new float[3]{1,1,1});
+Appearance42->setMaterial(*Material43);
 
-Shape38->setGeometry(Text41);
+Shape39->setAppearance(*Appearance42);
 
-Transform36->addChild(*Shape38);
+Transform37->addChild(*Shape39);
 
-CTransform* Transform43 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform43->setScale(new float[3]{10,3,1});
-CShape* Shape44 = (CShape *)(m_pScene.createNode("Shape"));
-Shape44->setDEF("HeadlineClickSurface");
-CAppearance* Appearance45 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material46 = (CMaterial *)(m_pScene.createNode("Material"));
-Material46->setAmbientIntensity(0.245763);
-Material46->setDiffuseColor(new float[3]{0.34773,0.090909,0.005289});
-Material46->setSpecularColor(new float[3]{0.336735,0.051091,0.051091});
-Material46->setShininess(0.07);
-Material46->setTransparency(0.8);
-Appearance45->setMaterial(*Material46);
+CTransform* Transform44 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform44->setScale(new float[3]{10,3,1});
+CShape* Shape45 = (CShape *)(m_pScene.createNode("Shape"));
+Shape45->setDEF("HeadlineClickSurface");
+CIndexedFaceSet* IndexedFaceSet46 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet46->setCoordIndex(new int[5]{0,1,2,3,-1});
+IndexedFaceSet46->setSolid(False);
+CCoordinate* Coordinate47 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate47->setPoint(new float[12]{1,1,0,1,-1,0,-1,-1,0,-1,1,0});
+IndexedFaceSet46->setCoord(*Coordinate47);
 
-Shape44->setAppearance(*Appearance45);
+Shape45->setGeometry(IndexedFaceSet46);
 
-CIndexedFaceSet* IndexedFaceSet47 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
-IndexedFaceSet47->setSolid(False);
-IndexedFaceSet47->setCoordIndex(new int[5]{0,1,2,3,-1});
-CCoordinate* Coordinate48 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
-Coordinate48->setPoint(new float[12]{1,1,0,1,-1,0,-1,-1,0,-1,1,0});
-IndexedFaceSet47->setCoord(*Coordinate48);
+CAppearance* Appearance48 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material49 = (CMaterial *)(m_pScene.createNode("Material"));
+Material49->setAmbientIntensity(0.245763);
+Material49->setDiffuseColor(new float[3]{0.34773,0.090909,0.005289});
+Material49->setShininess(0.07);
+Material49->setSpecularColor(new float[3]{0.336735,0.051091,0.051091});
+Material49->setTransparency(0.8);
+Appearance48->setMaterial(*Material49);
 
-Shape44->setGeometry(IndexedFaceSet47);
+Shape45->setAppearance(*Appearance48);
 
-Transform43->addChild(*Shape44);
+Transform44->addChild(*Shape45);
 
-Transform36->addChildren(*Transform43);
+Transform37->addChildren(*Transform44);
 
-group->addChildren(*Transform36);
+group->addChildren(*Transform37);
 
-CScript* Script49 = (CScript *)(m_pScene.createNode("Script"));
-Script49->setDEF("TextScript");
-Script49->setUrl(new CString[2]{"ObliqueStrategiesScript.js","https://x3dgraphics.com/examples/X3dForAdvancedModeling/Inspiration/ObliqueStrategiesScript.js"}, 2);
-Cfield* field50 = new Cfield();
-field50->setAccessType("initializeOnly");
-field50->setType("SFInt32");
-field50->setName("index");
-Script49->addField(*field50);
-
+CScript* Script50 = (CScript *)(m_pScene.createNode("Script"));
+Script50->setDEF("TextScript");
+Script50->setUrl(new CString[2]{"ObliqueStrategiesScript.js","https://x3dgraphics.com/examples/X3dForAdvancedModeling/Inspiration/ObliqueStrategiesScript.js"}, 2);
+//initialize() method includes unit test to printAllStrategies() to console
+//TODO insert field definitions here (index string_changed previous next random) and then animate!
 Cfield* field51 = new Cfield();
-field51->setAccessType("outputOnly");
-field51->setType("MFString");
-field51->setName("string_changed");
-Script49->addField(*field51);
+field51->setName("index");
+field51->setAccessType("initializeOnly");
+field51->setAppinfo("index for active strategy card, -1 means no selection");
+field51->setType("SFInt32");
+field51->setValue("0");
+Script50->addField(*field51);
 
 Cfield* field52 = new Cfield();
+field52->setName("string_changed");
 field52->setAccessType("outputOnly");
+field52->setAppinfo("latest strategy card value");
 field52->setType("MFString");
-field52->setName("textToSpeechUrl");
-Script49->addField(*field52);
+Script50->addField(*field52);
 
 Cfield* field53 = new Cfield();
+field53->setName("textToSpeechUrl");
 field53->setAccessType("outputOnly");
-field53->setType("SFTime");
-field53->setName("newCardTime");
-Script49->addField(*field53);
+field53->setAppinfo("\"url to invoke Google Translate\"");
+field53->setType("MFString");
+Script50->addField(*field53);
 
 Cfield* field54 = new Cfield();
-field54->setAccessType("inputOnly");
-field54->setType("SFBool");
-field54->setName("selectPreviousCard");
-Script49->addField(*field54);
+field54->setName("newCardTime");
+field54->setAccessType("outputOnly");
+field54->setAppinfo("activate Sound node");
+field54->setType("SFTime");
+Script50->addField(*field54);
 
 Cfield* field55 = new Cfield();
+field55->setName("selectPreviousCard");
 field55->setAccessType("inputOnly");
 field55->setType("SFBool");
-field55->setName("selectNextCard");
-Script49->addField(*field55);
+Script50->addField(*field55);
 
 Cfield* field56 = new Cfield();
+field56->setName("selectNextCard");
 field56->setAccessType("inputOnly");
 field56->setType("SFBool");
-field56->setName("selectRandomCard");
-Script49->addField(*field56);
+Script50->addField(*field56);
 
 Cfield* field57 = new Cfield();
-field57->setAccessType("initializeOnly");
+field57->setName("selectRandomCard");
+field57->setAccessType("inputOnly");
 field57->setType("SFBool");
-field57->setName("traceEnabled");
-field57->setValue("true");
-Script49->addField(*field57);
+Script50->addField(*field57);
 
-group->addChildren(*Script49);
+Cfield* field58 = new Cfield();
+field58->setName("traceEnabled");
+field58->setAccessType("initializeOnly");
+field58->setAppinfo("controls console tracing");
+field58->setType("SFBool");
+field58->setValue("true");
+Script50->addField(*field58);
 
-CTransform* Transform58 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform58->setDEF("CardTransform");
-Transform58->setTranslation(new float[3]{0,-1.5,0});
-Transform58->setScale(new float[3]{0.4,0.4,0.4});
-CShape* Shape59 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance60 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material61 = (CMaterial *)(m_pScene.createNode("Material"));
-Material61->setDiffuseColor(new float[3]{1,1,1});
-Appearance60->setMaterial(*Material61);
+group->addChildren(*Script50);
 
-Shape59->setAppearance(*Appearance60);
+CTransform* Transform59 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform59->setDEF("CardTransform");
+Transform59->setScale(new float[3]{0.4,0.4,0.4});
+Transform59->setTranslation(new float[3]{0,-1.5,0});
+CShape* Shape60 = (CShape *)(m_pScene.createNode("Shape"));
+CText* Text61 = (CText *)(m_pScene.createNode("Text"));
+Text61->setDEF("CardText");
+CFontStyle* FontStyle62 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
+FontStyle62->setFamily(new CString[1]{"SANS"}, 1);
+FontStyle62->setJustify(new CString[2]{"MIDDLE","MIDDLE"}, 2);
+FontStyle62->setStyle("BOLD");
+Text61->setFontStyle(*FontStyle62);
 
-CText* Text62 = (CText *)(m_pScene.createNode("Text"));
-Text62->setDEF("CardText");
-Text62->setString(new CString[1]{"Remove specifics and convert to ambiguities"}, 1);
-CFontStyle* FontStyle63 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
-FontStyle63->setFamily(new CString[1]{"SANS"}, 1);
-FontStyle63->setStyle("BOLD");
-FontStyle63->setJustify(new CString[2]{"MIDDLE","MIDDLE"}, 2);
-Text62->setFontStyle(*FontStyle63);
+Shape60->setGeometry(Text61);
 
-Shape59->setGeometry(Text62);
+CAppearance* Appearance63 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material64 = (CMaterial *)(m_pScene.createNode("Material"));
+Material64->setDiffuseColor(new float[3]{1,1,1});
+Appearance63->setMaterial(*Material64);
 
-Transform58->addChild(*Shape59);
+Shape60->setAppearance(*Appearance63);
 
-CSound* Sound64 = (CSound *)(m_pScene.createNode("Sound"));
-Sound64->setDEF("CardSoundSpatialization");
-Sound64->setMinBack(20);
-Sound64->setMinFront(20);
-Sound64->setMaxBack(100);
-Sound64->setMaxFront(100);
-CAudioClip* AudioClip65 = (CAudioClip *)(m_pScene.createNode("AudioClip"));
-AudioClip65->setDEF("TextToSpeechAudioClip");
-AudioClip65->setDescription("sends strategy text google translate");
-AudioClip65->setUrl(new CString[1]{"http://translate.google.com/translate_tts?tl=en&q=Remove%20specifics%20and%20convert%20to%20ambiguities"}, 1);
-Sound64->setSource(*AudioClip65);
+Transform59->addChild(*Shape60);
 
-Transform58->addChildren(*Sound64);
+CROUTE* ROUTE65 = new CROUTE();
+ROUTE65->setFromField("string_changed");
+ROUTE65->setFromNode("TextScript");
+ROUTE65->setToField("string");
+ROUTE65->setToNode("CardText");
+Transform59->addChildren(*ROUTE65);
 
-group->addChildren(*Transform58);
+CSound* Sound66 = (CSound *)(m_pScene.createNode("Sound"));
+Sound66->setDEF("CardSoundSpatialization");
+Sound66->setMaxBack(100);
+Sound66->setMaxFront(100);
+Sound66->setMinBack(20);
+Sound66->setMinFront(20);
+//Make sure the sound source AudioClip is audible at the user location
+//Not all X3D players seem to use the .mp3
+//&#38; is ampersand character, avoids escaping problems and inconsistencies in browsers and X3D players
+//%20 is space character used in uri/url encoding
+CAudioClip* AudioClip67 = (CAudioClip *)(m_pScene.createNode("AudioClip"));
+AudioClip67->setDEF("TextToSpeechAudioClip");
+AudioClip67->setDescription("sends strategy text google translate");
+AudioClip67->setUrl(new CString[3]{"http://translate.google.com/translate_tts?tl=en&amp;q=Feed%20the%20recording%20back%20out%20of%20the%20medium","translate_tts_mp3FileFormatNotSupported.wav","https://x3dgraphics.com/examples/X3dForAdvancedModeling/Inspiration/translate_tts_mp3FileFormatNotSupported.wav"}, 3);
+Sound66->setSource(*AudioClip67);
 
-CTransform* Transform66 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform66->setTranslation(new float[3]{-3.2,2.5,0});
-Transform66->setScale(new float[3]{0.4,0.4,0.4});
-CTouchSensor* TouchSensor67 = (CTouchSensor *)(m_pScene.createNode("TouchSensor"));
-TouchSensor67->setDEF("PreviousTextClickedSensor");
-TouchSensor67->setDescription("Select to see previous strategy");
-Transform66->addChildren(*TouchSensor67);
+Transform59->addChildren(*Sound66);
 
-CShape* Shape68 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance69 = (CAppearance *)(m_pScene.createNode("Appearance"));
-Appearance69->setDEF("InterfaceAppearance");
-CMaterial* Material70 = (CMaterial *)(m_pScene.createNode("Material"));
-Material70->setDiffuseColor(new float[3]{1,0,0.6});
-Appearance69->setMaterial(*Material70);
+CROUTE* ROUTE68 = new CROUTE();
+ROUTE68->setFromField("textToSpeechUrl");
+ROUTE68->setFromNode("TextScript");
+ROUTE68->setToField("url");
+ROUTE68->setToNode("TextToSpeechAudioClip");
+Transform59->addChildren(*ROUTE68);
 
-Shape68->setAppearance(*Appearance69);
+CROUTE* ROUTE69 = new CROUTE();
+ROUTE69->setFromField("newCardTime");
+ROUTE69->setFromNode("TextScript");
+ROUTE69->setToField("startTime");
+ROUTE69->setToNode("TextToSpeechAudioClip");
+Transform59->addChildren(*ROUTE69);
 
-CText* Text71 = (CText *)(m_pScene.createNode("Text"));
-Text71->setString(new CString[1]{"previous"}, 1);
-CFontStyle* FontStyle72 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
-FontStyle72->setUSE("MessageFont");
-Text71->setFontStyle(*FontStyle72);
+group->addChildren(*Transform59);
 
-Shape68->setGeometry(Text71);
+CTransform* Transform70 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform70->setScale(new float[3]{0.4,0.4,0.4});
+Transform70->setTranslation(new float[3]{-3.2,2.5,0});
+CTouchSensor* TouchSensor71 = (CTouchSensor *)(m_pScene.createNode("TouchSensor"));
+TouchSensor71->setDEF("PreviousTextClickedSensor");
+TouchSensor71->setDescription("Select to see previous strategy");
+Transform70->addChildren(*TouchSensor71);
 
-Transform66->addChild(*Shape68);
+CROUTE* ROUTE72 = new CROUTE();
+ROUTE72->setFromField("isActive");
+ROUTE72->setFromNode("PreviousTextClickedSensor");
+ROUTE72->setToField("selectPreviousCard");
+ROUTE72->setToNode("TextScript");
+Transform70->addChildren(*ROUTE72);
 
-CTransform* Transform73 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform73->setScale(new float[3]{2,0.6,1});
-CShape* Shape74 = (CShape *)(m_pScene.createNode("Shape"));
-Shape74->setDEF("TransparentClickSurface");
-CAppearance* Appearance75 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material76 = (CMaterial *)(m_pScene.createNode("Material"));
-Material76->setTransparency(1);
-Appearance75->setMaterial(*Material76);
+CShape* Shape73 = (CShape *)(m_pScene.createNode("Shape"));
+CText* Text74 = (CText *)(m_pScene.createNode("Text"));
+Text74->setString(new CString[1]{"previous"}, 1);
+CFontStyle* FontStyle75 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
+FontStyle75->setUSE("MessageFont");
+Text74->setFontStyle(*FontStyle75);
 
-Shape74->setAppearance(*Appearance75);
+Shape73->setGeometry(Text74);
 
-CIndexedFaceSet* IndexedFaceSet77 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
-IndexedFaceSet77->setSolid(False);
-IndexedFaceSet77->setCoordIndex(new int[5]{0,1,2,3,-1});
-CCoordinate* Coordinate78 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
-Coordinate78->setPoint(new float[12]{1,1,0,1,-1,0,-1,-1,0,-1,1,0});
-IndexedFaceSet77->setCoord(*Coordinate78);
+CAppearance* Appearance76 = (CAppearance *)(m_pScene.createNode("Appearance"));
+Appearance76->setDEF("InterfaceAppearance");
+CMaterial* Material77 = (CMaterial *)(m_pScene.createNode("Material"));
+Material77->setDiffuseColor(new float[3]{1,0,0.6});
+Appearance76->setMaterial(*Material77);
 
-Shape74->setGeometry(IndexedFaceSet77);
+Shape73->setAppearance(*Appearance76);
 
-Transform73->addChild(*Shape74);
+Transform70->addChild(*Shape73);
 
-Transform66->addChildren(*Transform73);
+CTransform* Transform78 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform78->setScale(new float[3]{2,0.6,1});
+CShape* Shape79 = (CShape *)(m_pScene.createNode("Shape"));
+Shape79->setDEF("TransparentClickSurface");
+//support Selectable Text with a scalable IFS
+CIndexedFaceSet* IndexedFaceSet80 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet80->setCoordIndex(new int[5]{0,1,2,3,-1});
+IndexedFaceSet80->setSolid(False);
+CCoordinate* Coordinate81 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate81->setPoint(new float[12]{1,1,0,1,-1,0,-1,-1,0,-1,1,0});
+IndexedFaceSet80->setCoord(*Coordinate81);
 
-group->addChildren(*Transform66);
+Shape79->setGeometry(IndexedFaceSet80);
 
-CTransform* Transform79 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform79->setTranslation(new float[3]{3.5,2.5,0});
-Transform79->setScale(new float[3]{0.4,0.4,0.4});
-CTouchSensor* TouchSensor80 = (CTouchSensor *)(m_pScene.createNode("TouchSensor"));
-TouchSensor80->setDEF("NextTextClickedSensor");
-TouchSensor80->setDescription("Select to see next strategy");
-Transform79->addChildren(*TouchSensor80);
-
-CShape* Shape81 = (CShape *)(m_pScene.createNode("Shape"));
 CAppearance* Appearance82 = (CAppearance *)(m_pScene.createNode("Appearance"));
-Appearance82->setUSE("InterfaceAppearance");
-Shape81->setAppearance(*Appearance82);
+CMaterial* Material83 = (CMaterial *)(m_pScene.createNode("Material"));
+Material83->setTransparency(1);
+Appearance82->setMaterial(*Material83);
 
-CText* Text83 = (CText *)(m_pScene.createNode("Text"));
-Text83->setString(new CString[1]{"next"}, 1);
-CFontStyle* FontStyle84 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
-FontStyle84->setUSE("MessageFont");
-Text83->setFontStyle(*FontStyle84);
+Shape79->setAppearance(*Appearance82);
 
-Shape81->setGeometry(Text83);
+Transform78->addChild(*Shape79);
 
-Transform79->addChild(*Shape81);
+Transform70->addChildren(*Transform78);
 
-CTransform* Transform85 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform85->setScale(new float[3]{1.2,0.6,1});
-CShape* Shape86 = (CShape *)(m_pScene.createNode("Shape"));
-Shape86->setUSE("TransparentClickSurface");
-Transform85->addChild(*Shape86);
+group->addChildren(*Transform70);
 
-Transform79->addChildren(*Transform85);
+CTransform* Transform84 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform84->setScale(new float[3]{0.4,0.4,0.4});
+Transform84->setTranslation(new float[3]{3.5,2.5,0});
+CTouchSensor* TouchSensor85 = (CTouchSensor *)(m_pScene.createNode("TouchSensor"));
+TouchSensor85->setDEF("NextTextClickedSensor");
+TouchSensor85->setDescription("Select to see next strategy");
+Transform84->addChildren(*TouchSensor85);
 
-group->addChildren(*Transform79);
+CROUTE* ROUTE86 = new CROUTE();
+ROUTE86->setFromField("isActive");
+ROUTE86->setFromNode("NextTextClickedSensor");
+ROUTE86->setToField("selectNextCard");
+ROUTE86->setToNode("TextScript");
+Transform84->addChildren(*ROUTE86);
 
-CTransform* Transform87 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform87->setTranslation(new float[3]{-3.3,-0.5,0});
-Transform87->setScale(new float[3]{0.4,0.4,0.4});
-CTouchSensor* TouchSensor88 = (CTouchSensor *)(m_pScene.createNode("TouchSensor"));
-TouchSensor88->setUSE("RandomTextClickedSensor");
-Transform87->addChildren(*TouchSensor88);
+CShape* Shape87 = (CShape *)(m_pScene.createNode("Shape"));
+CText* Text88 = (CText *)(m_pScene.createNode("Text"));
+Text88->setString(new CString[1]{"next"}, 1);
+CFontStyle* FontStyle89 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
+FontStyle89->setUSE("MessageFont");
+Text88->setFontStyle(*FontStyle89);
 
-CShape* Shape89 = (CShape *)(m_pScene.createNode("Shape"));
+Shape87->setGeometry(Text88);
+
 CAppearance* Appearance90 = (CAppearance *)(m_pScene.createNode("Appearance"));
 Appearance90->setUSE("InterfaceAppearance");
-Shape89->setAppearance(*Appearance90);
+Shape87->setAppearance(*Appearance90);
 
-CText* Text91 = (CText *)(m_pScene.createNode("Text"));
-Text91->setString(new CString[1]{"random"}, 1);
-CFontStyle* FontStyle92 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
-FontStyle92->setUSE("MessageFont");
-Text91->setFontStyle(*FontStyle92);
+Transform84->addChild(*Shape87);
 
-Shape89->setGeometry(Text91);
+CTransform* Transform91 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform91->setScale(new float[3]{1.2,0.6,1});
+CShape* Shape92 = (CShape *)(m_pScene.createNode("Shape"));
+Shape92->setUSE("TransparentClickSurface");
+Transform91->addChild(*Shape92);
 
-Transform87->addChild(*Shape89);
+Transform84->addChildren(*Transform91);
+
+group->addChildren(*Transform84);
 
 CTransform* Transform93 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform93->setScale(new float[3]{1.8,0.6,1});
-CShape* Shape94 = (CShape *)(m_pScene.createNode("Shape"));
-Shape94->setUSE("TransparentClickSurface");
-Transform93->addChild(*Shape94);
+Transform93->setScale(new float[3]{0.4,0.4,0.4});
+Transform93->setTranslation(new float[3]{-3.3,-0.5,0});
+CTouchSensor* TouchSensor94 = (CTouchSensor *)(m_pScene.createNode("TouchSensor"));
+TouchSensor94->setUSE("RandomTextClickedSensor");
+Transform93->addChildren(*TouchSensor94);
 
-Transform87->addChildren(*Transform93);
+CROUTE* ROUTE95 = new CROUTE();
+ROUTE95->setFromField("isActive");
+ROUTE95->setFromNode("RandomTextClickedSensor");
+ROUTE95->setToField("selectRandomCard");
+ROUTE95->setToNode("TextScript");
+Transform93->addChildren(*ROUTE95);
 
-group->addChildren(*Transform87);
+CShape* Shape96 = (CShape *)(m_pScene.createNode("Shape"));
+CText* Text97 = (CText *)(m_pScene.createNode("Text"));
+Text97->setString(new CString[1]{"random"}, 1);
+CFontStyle* FontStyle98 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
+FontStyle98->setUSE("MessageFont");
+Text97->setFontStyle(*FontStyle98);
 
-CTransform* Transform95 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform95->setTranslation(new float[3]{3.3,-0.5,0});
-Transform95->setScale(new float[3]{0.4,0.4,0.4});
-CAnchor* Anchor96 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor96->setDEF("TextToSpeechAnchor");
-Anchor96->setDescription("text to speech in browser");
-Anchor96->setUrl(new CString[1]{"http://translate.google.com/translate_tts?tl=en&q=Remove%20specifics%20and%20convert%20to%20ambiguities"}, 1);
-Anchor96->setParameter(new CString[1]{"target=_blank"}, 1);
-CShape* Shape97 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance98 = (CAppearance *)(m_pScene.createNode("Appearance"));
-Appearance98->setUSE("InterfaceAppearance");
-Shape97->setAppearance(*Appearance98);
+Shape96->setGeometry(Text97);
 
-CText* Text99 = (CText *)(m_pScene.createNode("Text"));
-Text99->setString(new CString[1]{"speech"}, 1);
-CFontStyle* FontStyle100 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
-FontStyle100->setUSE("MessageFont");
-Text99->setFontStyle(*FontStyle100);
+CAppearance* Appearance99 = (CAppearance *)(m_pScene.createNode("Appearance"));
+Appearance99->setUSE("InterfaceAppearance");
+Shape96->setAppearance(*Appearance99);
 
-Shape97->setGeometry(Text99);
+Transform93->addChild(*Shape96);
 
-Anchor96->addChildren(*Shape97);
+CTransform* Transform100 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform100->setScale(new float[3]{1.8,0.6,1});
+CShape* Shape101 = (CShape *)(m_pScene.createNode("Shape"));
+Shape101->setUSE("TransparentClickSurface");
+Transform100->addChild(*Shape101);
 
-CTransform* Transform101 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform101->setScale(new float[3]{1.8,0.6,1});
-CShape* Shape102 = (CShape *)(m_pScene.createNode("Shape"));
-Shape102->setUSE("TransparentClickSurface");
-Transform101->addChild(*Shape102);
+Transform93->addChildren(*Transform100);
 
-Anchor96->addChildren(*Transform101);
+group->addChildren(*Transform93);
 
-Transform95->addChildren(*Anchor96);
-
-group->addChildren(*Transform95);
-
-CROUTE* ROUTE103 = new CROUTE();
-ROUTE103->setFromNode("TextScript");
-ROUTE103->setFromField("string_changed");
-ROUTE103->setToNode("CardText");
-ROUTE103->setToField("string");
-group->addChildren(*ROUTE103);
-
+CTransform* Transform102 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform102->setScale(new float[3]{0.4,0.4,0.4});
+Transform102->setTranslation(new float[3]{3.3,-0.5,0});
+CAnchor* Anchor103 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor103->setDEF("TextToSpeechAnchor");
+Anchor103->setDescription("text to speech in browser");
+Anchor103->setParameter(new CString[1]{"target=_blank"}, 1);
+Anchor103->setUrl(new CString[1]{"http://translate.google.com/translate_tts?tl=en&amp;q=Overtly%20resist%20change"}, 1);
 CROUTE* ROUTE104 = new CROUTE();
-ROUTE104->setFromNode("TextScript");
 ROUTE104->setFromField("textToSpeechUrl");
-ROUTE104->setToNode("TextToSpeechAudioClip");
+ROUTE104->setFromNode("TextScript");
 ROUTE104->setToField("url");
-group->addChildren(*ROUTE104);
+ROUTE104->setToNode("TextToSpeechAnchor");
+Anchor103->addChildren(*ROUTE104);
 
-CROUTE* ROUTE105 = new CROUTE();
-ROUTE105->setFromNode("TextScript");
-ROUTE105->setFromField("newCardTime");
-ROUTE105->setToNode("TextToSpeechAudioClip");
-ROUTE105->setToField("startTime");
-group->addChildren(*ROUTE105);
+CShape* Shape105 = (CShape *)(m_pScene.createNode("Shape"));
+CText* Text106 = (CText *)(m_pScene.createNode("Text"));
+Text106->setString(new CString[1]{"speech"}, 1);
+CFontStyle* FontStyle107 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
+FontStyle107->setUSE("MessageFont");
+Text106->setFontStyle(*FontStyle107);
 
-CROUTE* ROUTE106 = new CROUTE();
-ROUTE106->setFromNode("PreviousTextClickedSensor");
-ROUTE106->setFromField("isActive");
-ROUTE106->setToNode("TextScript");
-ROUTE106->setToField("selectPreviousCard");
-group->addChildren(*ROUTE106);
+Shape105->setGeometry(Text106);
 
-CROUTE* ROUTE107 = new CROUTE();
-ROUTE107->setFromNode("NextTextClickedSensor");
-ROUTE107->setFromField("isActive");
-ROUTE107->setToNode("TextScript");
-ROUTE107->setToField("selectNextCard");
-group->addChildren(*ROUTE107);
+CAppearance* Appearance108 = (CAppearance *)(m_pScene.createNode("Appearance"));
+Appearance108->setUSE("InterfaceAppearance");
+Shape105->setAppearance(*Appearance108);
 
-CROUTE* ROUTE108 = new CROUTE();
-ROUTE108->setFromNode("RandomTextClickedSensor");
-ROUTE108->setFromField("isActive");
-ROUTE108->setToNode("TextScript");
-ROUTE108->setToField("selectRandomCard");
-group->addChildren(*ROUTE108);
+Anchor103->addChildren(*Shape105);
 
-CROUTE* ROUTE109 = new CROUTE();
-ROUTE109->setFromNode("TextScript");
-ROUTE109->setFromField("textToSpeechUrl");
-ROUTE109->setToNode("TextToSpeechAnchor");
-ROUTE109->setToField("url");
-group->addChildren(*ROUTE109);
+CTransform* Transform109 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform109->setScale(new float[3]{1.8,0.6,1});
+CShape* Shape110 = (CShape *)(m_pScene.createNode("Shape"));
+Shape110->setUSE("TransparentClickSurface");
+Transform109->addChild(*Shape110);
 
-X3D0->setScene(*Scene32);
+Anchor103->addChildren(*Transform109);
+
+Transform102->addChildren(*Anchor103);
+
+group->addChildren(*Transform102);
+
+X3D0->setScene(*Scene33);
 
 m_pScene.addRootNode(group);
 X3D0->toXMLString();

@@ -1,9 +1,9 @@
-#include "/c/x3d-code/www.web3d.org/x3d/languages/c/X3DLib/X3DLib.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/c/Concretes.h"
 void main(int argc, char ** argv) {
 Browser browser = X3D.getBrowser();
 X3D X3D0;
 X3D0.profile = "Immersive";
-X3D0.version = "4.0";
+X3D0.version = "3.3";
 head head1 = createNode("head");
 meta meta2 = createNode("meta");
 meta2.name = "creator";
@@ -29,7 +29,7 @@ head1.meta[3] = meta5;
 
 meta meta6 = createNode("meta");
 meta6.name = "identifier";
-meta6.content = "https://coderextreme.net/X3DJSONLD/fors2.x3d";
+meta6.content = "https://coderextreme.net/X3DJSONLD/src/main/data/fors2.x3d";
 head1.meta[4] = meta6;
 
 meta meta7 = createNode("meta");
@@ -50,8 +50,8 @@ ProtoDeclare ProtoDeclare10 = browser.createX3DFromString(`<?xml version="1.0" e
 </ProtoInterface>
 <ProtoBody><Transform DEF="transform"><IS><connect nodeField="translation" protoField="position"></connect>
 </IS>
-<Shape><!--comment before Sphere--><!--comment after Sphere--><!--comment after Appearance--><Sphere containerField="geometry"></Sphere>
-<Appearance><!--comment before Material--><!--comment after Material--><Material diffuseColor="1 0 0"></Material>
+<Shape><!--comment before Sphere--><!--comment after Sphere--><!--comment after Appearance--><Sphere></Sphere>
+<Appearance containerField="appearance"><!--comment before Material--><!--comment after Material--><Material containerField="material" diffuseColor="1 0 0"></Material>
 </Appearance>
 </Shape>
 </Transform>
@@ -116,9 +116,9 @@ Appearance19.material = Material20;
 
 Shape17.appearance = Appearance19;
 
-Transform14.children = new MFNode();
+Transform14.child = new undefined();
 
-Transform14.children[0] = Shape17;
+Transform14.child[0] = Shape17;
 
 ProtoBody13.children = new MFNode();
 
@@ -215,8 +215,8 @@ ProtoDeclare ProtoDeclare32 = browser.createX3DFromString(`<?xml version="1.0" e
 <ProtoDeclare name="cylinder" ><ProtoInterface><field name="positionA" accessType="inputOnly" type="SFVec3f"></field>
 <field name="positionB" accessType="inputOnly" type="SFVec3f"></field>
 </ProtoInterface>
-<ProtoBody><Shape><Extrusion containerField="geometry" DEF="extrusion" creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0" spine="0 -50 0 0 0 0 0 50 0"></Extrusion>
-<Appearance><Material diffuseColor="0 1 0"></Material>
+<ProtoBody><Shape><Extrusion DEF="extrusion" creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0" spine="0 -50 0 0 0 0 0 50 0"></Extrusion>
+<Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 1 0"></Material>
 </Appearance>
 </Shape>
 <Script DEF="MoveCylinder"><field name="spine" accessType="inputOutput" type="MFVec3f" value="0 -50 0 0 0 0 0 50 0"></field>

@@ -1,9 +1,9 @@
-#include "/c/x3d-code/www.web3d.org/x3d/languages/c/X3DLib/X3DLib.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/c/Concretes.h"
 void main(int argc, char ** argv) {
 Browser browser = X3D.getBrowser();
 X3D X3D0;
 X3D0.profile = "Immersive";
-X3D0.version = "4.0";
+X3D0.version = "3.3";
 head head1 = createNode("head");
 meta meta2 = createNode("meta");
 meta2.name = "title";
@@ -24,7 +24,7 @@ head1.meta[2] = meta4;
 
 meta meta5 = createNode("meta");
 meta5.name = "identifier";
-meta5.content = "https://coderextreme.net/X3DJSONLD/rubikOnFire.x3d";
+meta5.content = "https://coderextreme.net/X3DJSONLD/src/main/data/rubikOnFire.x3d";
 head1.meta[3] = meta5;
 
 meta meta6 = createNode("meta");
@@ -55,7 +55,7 @@ ProtoDeclare ProtoDeclare10 = browser.createX3DFromString(`<?xml version="1.0" e
 </IS>
 <Shape><IS><connect nodeField="geometry" protoField="myShape"></connect>
 </IS>
-<Appearance><Material diffuseColor="1 1 1"></Material>
+<Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 1 1"></Material>
 </Appearance>
 </Shape>
 </Transform>
@@ -115,9 +115,9 @@ Appearance22.material = Material23;
 
 Shape19.appearance = Appearance22;
 
-Transform16.children = new MFNode();
+Transform16.child = new undefined();
 
-Transform16.children[0] = Shape19;
+Transform16.child[0] = Shape19;
 
 ProtoBody15.children = new MFNode();
 

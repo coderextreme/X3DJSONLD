@@ -26,7 +26,7 @@ import org.web3d.x3d.jsail.Time.*;
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="KoreanCharacterMotionAnnexB01Jin.x3d">KoreanCharacterMotionAnnexB01Jin.x3d</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/KoreanCharacterAnnexB01Jin.x3d">KoreanCharacterAnnexB01Jin.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> creator </i> </td>
@@ -46,7 +46,7 @@ import org.web3d.x3d.jsail.Time.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
-			<td> 8 January 2023 </td>
+			<td> 14 October 2023 </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
@@ -58,11 +58,11 @@ import org.web3d.x3d.jsail.Time.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="KoreanCharacterHumanMotion_Infotech2014_140706.pdf">KoreanCharacterHumanMotion_Infotech2014_140706.pdf</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/KoreanCharacterHumanMotion_Infotech2014_140706.pdf">KoreanCharacterHumanMotion_Infotech2014_140706.pdf</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="KoreanCharactersIllustrated.pdf">KoreanCharactersIllustrated.pdf</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/KoreanCharactersIllustrated.pdf">KoreanCharactersIllustrated.pdf</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> specificationSection </i> </td>
@@ -90,11 +90,11 @@ import org.web3d.x3d.jsail.Time.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
-			<td> X3D-Edit 3.3, <a href="https://savage.nps.edu/X3D-Edit" target="_blank">https://savage.nps.edu/X3D-Edit</a> </td>
+			<td> X3D-Edit 4.0, <a href="https://savage.nps.edu/X3D-Edit" target="_blank">https://savage.nps.edu/X3D-Edit</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> license </i> </td>
-			<td> <a href="../license.html">../license.html</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/../license.html">../license.html</a> </td>
 		</tr>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center;" colspan="2">  &nbsp; </td>
@@ -114,7 +114,7 @@ import org.web3d.x3d.jsail.Time.*;
 	* @author Jin Hoon Lee and Min Joo Lee
  */
 
-public class KoreanCharacterMotionAnnexB01Jin
+import net.coderextreme.X3DRoots;import java.util.List;import java.util.ArrayList;public class KoreanCharacterMotionAnnexB01Jin implements X3DRoots 
 {
 	/** Default constructor to create this object. */
 	public KoreanCharacterMotionAnnexB01Jin ()
@@ -129,12 +129,12 @@ public class KoreanCharacterMotionAnnexB01Jin
   x3dModel = new X3D().setProfile(X3D.PROFILE_IMMERSIVE).setVersion(X3D.VERSION_4_0)
   .setHead(new head()
     .addComponent(new component().setName("HAnim").setLevel(1))
-    .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("KoreanCharacterMotionAnnexB01Jin.x3d"))
+    .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("KoreanCharacterAnnexB01Jin.x3d"))
     .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("Jin Hoon Lee and Min Joo Lee"))
     .addMeta(new meta().setName(meta.NAME_TRANSLATOR ).setContent("Chul Hee Jung and Myeong Won Lee"))
     .addMeta(new meta().setName(meta.NAME_CREATED    ).setContent("31 March 2011"))
     .addMeta(new meta().setName(meta.NAME_TRANSLATED ).setContent("1 November 2014"))
-    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("8 January 2023"))
+    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("14 October 2023"))
     .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("Articulated 3D game character designed with a general graphics tool, then converted into an X3D HAnim model."))
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("KoreanCharacter00ReadMe.txt"))
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("KoreanCharacterHumanMotion_Infotech2014_140706.pdf"))
@@ -145,19 +145,19 @@ public class KoreanCharacterMotionAnnexB01Jin
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("3DS MAX, http://www.autodesk.com/products/autodesk-3ds-max/overview"))
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("Suwon HAnim Converter"))
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("Gnu Image Manipulation Program, http://www.gimp.org"))
-    .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
+    .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"))
     .addMeta(new meta().setName(meta.NAME_LICENSE    ).setContent("../license.html")))
   .setScene(new Scene()
     .addChild(new NavigationInfo().setSpeed(1.5))
     .addChild(new Viewpoint().setDescription("AnnexB01Jin").setCenterOfRotation(0.0,1.0,0.0).setPosition(0.0,1.0,3.0))
     .addChild(new HAnimHumanoid("hanim_AnnexB01Jin").setName("AnnexB01Jin").setInfo(new String[] {"humanoidVersion=2.0"}).setScale(0.0225,0.0225,0.0225).setVersion("2.0")
-      .addSkeleton(new HAnimJoint("hanim_HumanoidRoot").setName("HumanoidRoot").setCenter(0.0,30.53,-0.7076).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
+      .addSkeleton(new HAnimJoint("hanim_HumanoidRoot").setName("humanoid_root").setCenter(0.0,30.53,-0.7076).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
         .addChild(new HAnimSegment("hanim_sacrum").setName("sacrum")
           .addChild(new Transform().setTranslation(0.0,30.53,-0.7076)
             .addChild(new Shape()
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setDiffuseColor(0.588,0.588,0.588))
-                .setTexture(new ImageTexture("Annex01JinTextureAtlas").setUrl(new String[] {"Jin.png","http://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/Jin.png"})))
+                .setTexture(new ImageTexture("Annex01JinTextureAtlas").setUrl(new String[] {"Jin.png","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/Jin.png"})))
               .setGeometry(new IndexedFaceSet().setCreaseAngle(3.14159).setCoordIndex(getIndexedFaceSet_8_26_coordIndex()).setTexCoordIndex(getIndexedFaceSet_8_26_texCoordIndex())
                 .setCoord(new Coordinate().setPoint(getCoordinate_9_26_point()))
                 .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.6211,0.5754,0.7851,0.572,0.7614,0.572,0.6907,0.5698,0.62,0.5698,0.6158,0.5702,0.5451,0.5702,0.4167,0.5698,0.5451,0.5702,0.6158,0.5702,0.62,0.5698,0.6907,0.5698,0.7614,0.572,0.8036,0.5346,0.7761,0.5346,0.6989,0.4838,0.6219,0.4428,0.6154,0.4438,0.5492,0.4639,0.4166,0.5346,0.5492,0.4639,0.6154,0.4438,0.6219,0.4428,0.6989,0.4838,0.7761,0.5346,0.7912,0.4044,0.7635,0.4044,0.7042,0.3925,0.6194,0.3907,0.6148,0.3907,0.545,0.3974,0.4163,0.4938,0.545,0.3974,0.6148,0.3907,0.6194,0.3907,0.7042,0.3925,0.7635,0.4044,0.795,0.3772,0.7662,0.3772,0.6945,0.3645,0.6236,0.3695,0.616,0.3695,0.5438,0.378,0.416,0.453,0.5438,0.378,0.616,0.3695,0.6236,0.3695,0.6945,0.3645,0.7662,0.3772,0.7887,0.3451,0.7635,0.3451,0.698,0.3508,0.6262,0.3508,0.6297,0.3503,0.5389,0.3503,0.4181,0.3884,0.5389,0.3503,0.6297,0.3503,0.6262,0.3508,0.698,0.3508,0.7635,0.3451,0.6237,0.3398})))))))
@@ -333,8 +333,8 @@ public class KoreanCharacterMotionAnnexB01Jin
                           .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.8107,0.9924,0.8122,0.9033,0.7694,0.9912,0.7683,0.9026,0.1329,0.0347,0.0307,0.0051,0.0134,0.0353,0.1366,0.0058,0.1249,0.1081,0.0147,0.117,0.1349,0.1856,0.0462,0.1842,0.1559,0.0454,0.148,0.1033,0.3244,0.0096,0.1758,0.0039,0.1759,0.011,0.3241,0.0033,0.173,0.1764,0.3074,0.1757,0.1732,0.1519,0.3074,0.1513,0.1756,0.032,0.2159,0.0368,0.1791,0.0165,0.3169,0.0458,0.3158,0.0193,0.172,0.0594,0.2087,0.0476,0.1736,0.0504,0.2073,0.064,0.2362,0.0821,0.3267,0.0796,0.1717,0.0822,0.1726,0.1297,0.3077,0.1289,0.3074,0.1865,0.1742,0.184,0.0061,0.1086,0.1366,0.0368,0.1241,0.1189,0.0168,0.0309,0.0211,0.1882,0.14,0.1857}))))))))))))))
     .addChild(new Group("KeyframeAnimation")
       .addChild(new TimeSensor("KeyframeTimer").setCycleInterval(8.033494).setLoop(true))
-      .addChild(new PositionInterpolator("Keyframe_HumanoidRoot").setKey(new double[] {0.0,1.0}).setKeyValue(new MFVec3f(new double[] {0.0,0.0,0.0,0.0,0.0,0.0})))
-      .addChild(new OrientationInterpolator("Keyframe_HumanoidRoot").setKey(new double[] {0.0,1.0}).setKeyValue(new MFRotation(new double[] {0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0})))
+      .addChild(new PositionInterpolator("Keyframe_HumanoidRootTranslation").setKey(new double[] {0.0,1.0}).setKeyValue(new MFVec3f(new double[] {0.0,0.0,0.0,0.0,0.0,0.0})))
+      .addChild(new OrientationInterpolator("Keyframe_HumanoidRootOrientation").setKey(new double[] {0.0,1.0}).setKeyValue(new MFRotation(new double[] {0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0})))
       .addChild(new OrientationInterpolator("Keyframe_sacroiliac").setKey(new double[] {0.0,1.0}).setKeyValue(new MFRotation(new double[] {0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0})))
       .addChild(new OrientationInterpolator("Keyframe_l_shoulder").setKey(new double[] {0.0,0.5,1.0}).setKeyValue(new MFRotation(new double[] {0.0,0.0,0.0,0.0,-1.0,0.0,0.0,3.0,0.0,0.0,0.0,0.0})))
       .addChild(new OrientationInterpolator("Keyframe_l_elbow").setKey(new double[] {0.0,1.0}).setKeyValue(new MFRotation(new double[] {0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0})))
@@ -352,8 +352,8 @@ public class KoreanCharacterMotionAnnexB01Jin
       .addChild(new OrientationInterpolator("Keyframe_r_knee").setKey(new double[] {0.0,1.0}).setKeyValue(new MFRotation(new double[] {0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0})))
       .addChild(new OrientationInterpolator("Keyframe_r_talocrural").setKey(new double[] {0.0,1.0}).setKeyValue(new MFRotation(new double[] {0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0})))
       .addChild(new OrientationInterpolator("Keyframe_r_metatarsophalangeal").setKey(new double[] {0.0,1.0}).setKeyValue(new MFRotation(new double[] {0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0})))
-      .addChild(new ROUTE().setFromNode("KeyframeTimer").setFromField("fraction_changed").setToNode("Keyframe_HumanoidRoot").setToField("set_fraction"))
-      .addChild(new ROUTE().setFromNode("KeyframeTimer").setFromField("fraction_changed").setToNode("Keyframe_HumanoidRoot").setToField("set_fraction"))
+      .addChild(new ROUTE().setFromNode("KeyframeTimer").setFromField("fraction_changed").setToNode("Keyframe_HumanoidRootTranslation").setToField("set_fraction"))
+      .addChild(new ROUTE().setFromNode("KeyframeTimer").setFromField("fraction_changed").setToNode("Keyframe_HumanoidRootOrientation").setToField("set_fraction"))
       .addChild(new ROUTE().setFromNode("KeyframeTimer").setFromField("fraction_changed").setToNode("Keyframe_sacroiliac").setToField("set_fraction"))
       .addChild(new ROUTE().setFromNode("KeyframeTimer").setFromField("fraction_changed").setToNode("Keyframe_l_shoulder").setToField("set_fraction"))
       .addChild(new ROUTE().setFromNode("KeyframeTimer").setFromField("fraction_changed").setToNode("Keyframe_l_elbow").setToField("set_fraction"))
@@ -371,8 +371,8 @@ public class KoreanCharacterMotionAnnexB01Jin
       .addChild(new ROUTE().setFromNode("KeyframeTimer").setFromField("fraction_changed").setToNode("Keyframe_r_knee").setToField("set_fraction"))
       .addChild(new ROUTE().setFromNode("KeyframeTimer").setFromField("fraction_changed").setToNode("Keyframe_r_talocrural").setToField("set_fraction"))
       .addChild(new ROUTE().setFromNode("KeyframeTimer").setFromField("fraction_changed").setToNode("Keyframe_r_metatarsophalangeal").setToField("set_fraction"))
-      .addChild(new ROUTE().setFromNode("Keyframe_HumanoidRoot").setFromField("value_changed").setToNode("hanim_HumanoidRoot").setToField("translation"))
-      .addChild(new ROUTE().setFromNode("Keyframe_HumanoidRoot").setFromField("value_changed").setToNode("hanim_HumanoidRoot").setToField("rotation"))
+      .addChild(new ROUTE().setFromNode("Keyframe_HumanoidRootTranslation").setFromField("value_changed").setToNode("hanim_HumanoidRoot").setToField("translation"))
+      .addChild(new ROUTE().setFromNode("Keyframe_HumanoidRootOrientation").setFromField("value_changed").setToNode("hanim_HumanoidRoot").setToField("rotation"))
       .addChild(new ROUTE().setFromNode("Keyframe_sacroiliac").setFromField("value_changed").setToNode("hanim_sacroiliac").setToField("rotation"))
       .addChild(new ROUTE().setFromNode("Keyframe_l_shoulder").setFromField("value_changed").setToNode("hanim_l_shoulder").setToField("rotation"))
       .addChild(new ROUTE().setFromNode("Keyframe_l_elbow").setFromField("value_changed").setToNode("hanim_l_elbow").setToField("rotation"))
@@ -1002,6 +1002,11 @@ public class KoreanCharacterMotionAnnexB01Jin
 	{	  
 		return x3dModel;
 	}
+	public List<X3D> getRootNodeList() {
+		List<X3D> list = new ArrayList<X3D>(1);
+		list.add(x3dModel);
+		return list;
+	}
 	   
     /** 
      * Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
@@ -1014,7 +1019,7 @@ public class KoreanCharacterMotionAnnexB01Jin
      */
     public static void main(String args[])
     {
-        System.out.println("Build this X3D model, showing diagnostics...");
+        System.out.println("Build this X3D model, showing validation diagnostics...");
         X3D thisExampleX3dModel = new KoreanCharacterMotionAnnexB01Jin().getX3dModel();
 //      System.out.println("X3D model construction complete.");
 	

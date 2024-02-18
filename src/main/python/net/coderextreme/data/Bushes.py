@@ -5,24 +5,24 @@ print("-->")
 import json
 model = (
 X3D(profile="Interchange", version="4.0", 
-head=head(
+head=Pyhead(
 children=[
-meta(name="title", content="Bushes.x3d"),
-meta(name="description", content="Bushes for HAnim scene Winter and Spring."),
-meta(name="creator", content="Carol McDonald"),
-meta(name="translator", content="Joe Williams and Don Brutzman"),
-meta(name="created", content="27 May 2023"),
-meta(name="modified", content="27 May 2023"),
-meta(name="TODO", content="DEF/USE for all duplicated nodes to ensure consistency"),
-meta(name="reference", content="originals/Bushes.x3dv"),
-meta(name="identifier", content="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/WinterAndSpring/Bushes.x3d"),
-meta(name="generator", content="X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"),
-meta(name="license", content="../license.html"),
-meta(name="translated", content="02 September 2023"),
-meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
-meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
+Pymeta(name="title", content="Bushes.x3d"),
+Pymeta(name="description", content="Bushes for HAnim scene Winter and Spring."),
+Pymeta(name="creator", content="Carol McDonald"),
+Pymeta(name="translator", content="Joe Williams and Don Brutzman"),
+Pymeta(name="created", content="27 May 2023"),
+Pymeta(name="modified", content="27 May 2023"),
+Pymeta(name="TODO", content="DEF/USE for all duplicated nodes to ensure consistency"),
+Pymeta(name="reference", content="originals/Bushes.x3dv"),
+Pymeta(name="identifier", content="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/WinterAndSpring/Bushes.x3d"),
+Pymeta(name="generator", content="X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"),
+Pymeta(name="license", content="../license.html"),
+Pymeta(name="translated", content="30 December 2023"),
+Pymeta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
+Pymeta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
-Scene=Scene(children=[
+Scene=PyScene(children=[
 WorldInfo(title="Bushes.x3d"),
 Shape(
 appearance=

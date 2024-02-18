@@ -4,9 +4,9 @@
     <head>
         <meta name='creator' content='John W Carlson'/>
         <meta name='created' content='December 13 2015'/>
-        <meta name='title' content='text.x3d'/>
-	<meta name='identifier' content='https://coderextreme.net/X3DJSONLD/src/main/data/text.x3d'/>
-        <meta name='description' content='test \n text'/>
+        <meta name='title' content='text3shapes.x3d'/>
+	<meta name='identifier' content='https://coderextreme.net/X3DJSONLD/src/main/data/text3shapes.x3d'/>
+        <meta name='description' content='3 text shapes'/>
         <meta name='generator' content='Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit'/>
     </head>
     <Scene>

@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Interchange" version="4.0" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-4.0.xsd" ><head><meta name="title" content="ifscubeworks.x3d"></meta>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Interchange" version="3.3" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-3.3.xsd" ><head><meta name="title" content="ifscubeworks.x3d"></meta>
 <meta name="identifier" content="http://coderextreme.net/X3DJSONLD/src/main/data/ifscubeworks.x3d"></meta>
 <meta name="description" content="Template for an Indexed Face Set"></meta>
 <meta name="creator" content="John Carlson"></meta>
 <meta name="created" content="4 April 2017"></meta>
 <meta name="license" content="https://www.web3d.org/x3d/content/examples/license.html"></meta>
+<meta name="generator" content="X3D-Edit, https://savage.nps.edu/X3D-Edit"></meta>
 </head>
 <Scene><WorldInfo title="ifscubeworks.x3d"></WorldInfo>
-<Group><Shape><IndexedFaceSet DEF="IndexedFaceSet" normalPerVertex="false" colorIndex="0 0 0 -1 0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1" normalIndex="0 0 1 2 3 4 5" coordIndex="0 0 1 -1 0 1 1 -1 2 2 3 3 -1 0 3 3 0 -1 0 3 2 1 -1 1 2 2 1 -1 1 2 3 0 -1"><Color color="0 1 0"></Color>
-<Normal vector="1 0 0 -1 0 0 0 1 0 0 0 -1 0 -1 0 0 0 1"></Normal>
-<Coordinate containerField="coord" point="0 0 1 0 1 1 1 1 1 1 0 1"></Coordinate>
+<Group><Shape><IndexedFaceSet DEF="IndexedFaceSet" coordIndex="0 0 1 -1 0 1 1 -1 2 2 3 3 -1 0 3 3 0 -1 0 3 2 1 -1 1 2 2 1 -1 1 2 3 0 -1" normalIndex="0 0 1 2 3 4 5" normalPerVertex="false" colorIndex="0 0 0 -1 0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1"><Coordinate point="0 0 1 0 1 1 1 1 1 1 0 1"></Coordinate>
+<Normal containerField="normal" vector="1 0 0 -1 0 0 0 1 0 0 0 -1 0 -1 0 0 0 1"></Normal>
+<Color containerField="color" color="0 1 0"></Color>
 </IndexedFaceSet>
 </Shape>
 </Group>

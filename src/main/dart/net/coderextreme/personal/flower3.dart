@@ -22,7 +22,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('identifier'),
-              content_ : SFString('https://coderextreme.net/X3DJSONLD/src/main/personal/flower3.x3d')),
+              content_ : SFString('https://coderextreme.net/X3DJSONLD/src/main/data/flower3.x3d')),
 
             meta(
               name_ : SFString('description'),
@@ -46,7 +46,7 @@ var X3D0 =  X3D(
             Transform(
               DEF_ : SFString('OrbitTransform'),
               translation_ : SFVec3f([SFDouble(8), SFDouble(0), SFDouble(0)]),
-              children_ : [
+              child_ : 
                 Shape(
                   appearance_ : 
                     Appearance(
@@ -60,7 +60,7 @@ var X3D0 =  X3D(
                       DEF_ : SFString('Orbit'),
                       coord_ : 
                         Coordinate(
-                          DEF_ : SFString('OrbitCoordinates'))))]),
+                          DEF_ : SFString('OrbitCoordinates'))))),
 
             Script(
               DEF_ : SFString('OrbitScript'),
@@ -103,7 +103,7 @@ var p = 0;
 	     localci.push(-1);
 	}
     }
-    coordIndexes = new MFInt32(localci);
+    coordIndexes = new MFInt32(...localci);
 }
 
 , function generateCoordinates(resolution) {
@@ -123,7 +123,7 @@ var p = 0;
 	}
 	phi += delta;
      }
-     coordinates = new MFVec3f(localc);
+     coordinates = new MFVec3f(...localc);
 }
 
 , function set_fraction(fraction, eventTime) {

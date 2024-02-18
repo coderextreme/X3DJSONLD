@@ -14,6 +14,7 @@
     <meta content='John Carlson' name='creator'/>
     <meta content='manual' name='generator'/>
     <meta content='https://coderextreme.net/X3DJSONLD/src/main/data/ball.x3d' name='identifier'/>
+    <meta content='a prismatic sphere' name='description'/>
   </head>
   <Scene>
     <WorldInfo title='ball.x3d'/>
