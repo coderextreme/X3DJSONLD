@@ -12,7 +12,7 @@ CX3D* X3D0 = new CX3D();
 CGroup* group = (CGroup*)(m_pScene.createNode("Group"));
 group->addChildren(X3D0);
 X3D0->setProfile("Immersive");
-X3D0->setVersion("4.0");
+X3D0->setVersion("3.3");
 Chead* head1 = new Chead();
 Cmeta* meta2 = new Cmeta();
 meta2->setName("title");
@@ -49,265 +49,270 @@ meta8->setName("generator");
 meta8->setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit");
 head1->addMeta(*meta8);
 
+Cmeta* meta9 = new Cmeta();
+meta9->setName("license");
+meta9->setContent("../license.html");
+head1->addMeta(*meta9);
+
 X3D0->setHead(*head1);
 
-CScene* Scene9 = new CScene();
-CWorldInfo* WorldInfo10 = (CWorldInfo *)(m_pScene.createNode("WorldInfo"));
-WorldInfo10->setTitle("MaskAndSnorkel.x3d");
-group->addChildren(*WorldInfo10);
+CScene* Scene10 = new CScene();
+CWorldInfo* WorldInfo11 = (CWorldInfo *)(m_pScene.createNode("WorldInfo"));
+WorldInfo11->setTitle("MaskAndSnorkel.x3d");
+group->addChildren(*WorldInfo11);
 
-CBackground* Background11 = (CBackground *)(m_pScene.createNode("Background"));
-Background11->setSkyColor(new float[3]{0,0,0.9});
-group->addChildren(*Background11);
+CBackground* Background12 = (CBackground *)(m_pScene.createNode("Background"));
+Background12->setSkyColor(new float[3]{0,0,0.9});
+group->addChildren(*Background12);
 
-CTransform* Transform12 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform12->setDEF("maskAndSnorkel");
 CTransform* Transform13 = (CTransform *)(m_pScene.createNode("Transform"));
-CShape* Shape14 = (CShape *)(m_pScene.createNode("Shape"));
-Shape14->setDEF("maskFrame");
-CAppearance* Appearance15 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material16 = (CMaterial *)(m_pScene.createNode("Material"));
-Material16->setDEF("frameColor");
-Material16->setDiffuseColor(new float[3]{0,0,0});
-Appearance15->setMaterial(*Material16);
+Transform13->setDEF("maskAndSnorkel");
+CTransform* Transform14 = (CTransform *)(m_pScene.createNode("Transform"));
+CShape* Shape15 = (CShape *)(m_pScene.createNode("Shape"));
+Shape15->setDEF("maskFrame");
+CAppearance* Appearance16 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material17 = (CMaterial *)(m_pScene.createNode("Material"));
+Material17->setDEF("frameColor");
+Material17->setDiffuseColor(new float[3]{0,0,0});
+Appearance16->setMaterial(*Material17);
 
-Shape14->setAppearance(*Appearance15);
+Shape15->setAppearance(*Appearance16);
 
-CIndexedFaceSet* IndexedFaceSet17 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
-IndexedFaceSet17->setSolid(False);
-IndexedFaceSet17->setCreaseAngle(1.45);
-IndexedFaceSet17->setCoordIndex(new int[80]{0,1,13,12,0,-1,1,2,14,13,1,-1,2,3,15,14,2,-1,3,4,16,15,3,-1,4,5,17,16,4,-1,5,6,18,17,5,-1,18,6,25,19,0,12,18,-1,0,19,20,11,0,-1,10,11,20,21,10,-1,9,10,21,22,9,-1,8,9,22,23,8,-1,23,24,7,8,23,-1,6,7,24,25,6,-1});
-CCoordinate* Coordinate18 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
-Coordinate18->setPoint(new float[78]{0,0.08,0,0.02,0.05,0,0.05,0.05,0,0.06,0.06,0,0.06,0.09,0,0.05,0.1,0,0,0.1,0,-0.05,0.1,0,-0.06,0.09,0,-0.06,0.06,0,-0.05,0.05,0,-0.02,0.05,0,0.005,0.08,0,0.02,0.055,0,0.05,0.055,0,0.055,0.06,0,0.055,0.09,0,0.045,0.095,0,0.005,0.095,0,-0.005,0.08,0,-0.02,0.055,0,-0.05,0.055,0,-0.055,0.06,0,-0.055,0.09,0,-0.045,0.095,0,-0.005,0.095,0});
-IndexedFaceSet17->setCoord(*Coordinate18);
+CIndexedFaceSet* IndexedFaceSet18 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet18->setCoordIndex(new int[80]{0,1,13,12,0,-1,1,2,14,13,1,-1,2,3,15,14,2,-1,3,4,16,15,3,-1,4,5,17,16,4,-1,5,6,18,17,5,-1,18,6,25,19,0,12,18,-1,0,19,20,11,0,-1,10,11,20,21,10,-1,9,10,21,22,9,-1,8,9,22,23,8,-1,23,24,7,8,23,-1,6,7,24,25,6,-1});
+IndexedFaceSet18->setCreaseAngle(1.45);
+IndexedFaceSet18->setSolid(False);
+CCoordinate* Coordinate19 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate19->setPoint(new float[78]{0,0.08,0,0.02,0.05,0,0.05,0.05,0,0.06,0.06,0,0.06,0.09,0,0.05,0.1,0,0,0.1,0,-0.05,0.1,0,-0.06,0.09,0,-0.06,0.06,0,-0.05,0.05,0,-0.02,0.05,0,0.005,0.08,0,0.02,0.055,0,0.05,0.055,0,0.055,0.06,0,0.055,0.09,0,0.045,0.095,0,0.005,0.095,0,-0.005,0.08,0,-0.02,0.055,0,-0.05,0.055,0,-0.055,0.06,0,-0.055,0.09,0,-0.045,0.095,0,-0.005,0.095,0});
+IndexedFaceSet18->setCoord(*Coordinate19);
 
-Shape14->setGeometry(IndexedFaceSet17);
+Shape15->setGeometry(IndexedFaceSet18);
 
-Transform13->addChild(*Shape14);
+Transform14->addChild(*Shape15);
 
-Transform12->addChildren(*Transform13);
+Transform13->addChildren(*Transform14);
 
-CTransform* Transform19 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform19->setDEF("snorkelHoldRing");
-Transform19->setTranslation(new float[3]{0.075,0.075,-0.02});
-CShape* Shape20 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance21 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material22 = (CMaterial *)(m_pScene.createNode("Material"));
-Material22->setUSE("frameColor");
-Appearance21->setMaterial(*Material22);
+CTransform* Transform20 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform20->setDEF("snorkelHoldRing");
+Transform20->setTranslation(new float[3]{0.075,0.075,-0.02});
+CShape* Shape21 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance22 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material23 = (CMaterial *)(m_pScene.createNode("Material"));
+Material23->setUSE("frameColor");
+Appearance22->setMaterial(*Material23);
 
-Shape20->setAppearance(*Appearance21);
+Shape21->setAppearance(*Appearance22);
 
-CCylinder* Cylinder23 = (CCylinder *)(m_pScene.createNode("Cylinder"));
-Cylinder23->setHeight(0.003);
-Cylinder23->setRadius(0.015);
-Shape20->setGeometry(Cylinder23);
+CCylinder* Cylinder24 = (CCylinder *)(m_pScene.createNode("Cylinder"));
+Cylinder24->setHeight(0.003);
+Cylinder24->setRadius(0.015);
+Shape21->setGeometry(Cylinder24);
 
-Transform19->addChild(*Shape20);
+Transform20->addChild(*Shape21);
 
-Transform12->addChildren(*Transform19);
+Transform13->addChildren(*Transform20);
 
-CGroup* Group24 = (CGroup *)(m_pScene.createNode("Group"));
-Group24->setDEF("snorkel");
-CTransform* Transform25 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform25->setTranslation(new float[3]{0,-0.02,0});
+CGroup* Group25 = (CGroup *)(m_pScene.createNode("Group"));
+Group25->setDEF("snorkel");
 CTransform* Transform26 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform26->setTranslation(new float[3]{0.035,-0.07,-0.02});
-Transform26->setScale(new float[3]{0.9,0.9,0.9});
-CShape* Shape27 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance28 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material29 = (CMaterial *)(m_pScene.createNode("Material"));
-Material29->setDEF("snorkelTube");
-Material29->setDiffuseColor(new float[3]{0.678,1,0.184});
-Material29->setTransparency(0.4);
-Appearance28->setMaterial(*Material29);
+Transform26->setTranslation(new float[3]{0,-0.02,0});
+CTransform* Transform27 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform27->setScale(new float[3]{0.9,0.9,0.9});
+Transform27->setTranslation(new float[3]{0.035,-0.07,-0.02});
+CShape* Shape28 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance29 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material30 = (CMaterial *)(m_pScene.createNode("Material"));
+Material30->setDEF("snorkelTube");
+Material30->setDiffuseColor(new float[3]{0.678,1,0.184});
+Material30->setTransparency(0.4);
+Appearance29->setMaterial(*Material30);
 
-Shape27->setAppearance(*Appearance28);
+Shape28->setAppearance(*Appearance29);
 
-CExtrusion* Extrusion30 = (CExtrusion *)(m_pScene.createNode("Extrusion"));
-Extrusion30->setCrossSection(new float[34]{0,0.013,0.00494,0.01196,0.00923,0.00923,0.01196,0.00494,0.013,0,0.01196,-0.00494,0.00923,-0.00923,0.00494,-0.01196,0,0.013,-0.00494,-0.01196,-0.00923,-0.00923,-0.01196,-0.00494,-0.013,0,-0.01196,0.00494,-0.00923,0.00923,-0.00494,0.01196,0,0.013});
-Extrusion30->setSpine(new float[15]{-0.01,-0.04,0,0,0,0,0.03,0.05,0,0.05,0.2,0,0.03,0.4,0.03});
-Shape27->setGeometry(Extrusion30);
+CExtrusion* Extrusion31 = (CExtrusion *)(m_pScene.createNode("Extrusion"));
+Extrusion31->setCrossSection(new float[34]{0,0.013,0.00494,0.01196,0.00923,0.00923,0.01196,0.00494,0.013,0,0.01196,-0.00494,0.00923,-0.00923,0.00494,-0.01196,0,0.013,-0.00494,-0.01196,-0.00923,-0.00923,-0.01196,-0.00494,-0.013,0,-0.01196,0.00494,-0.00923,0.00923,-0.00494,0.01196,0,0.013});
+Extrusion31->setSpine(new float[15]{-0.01,-0.04,0,0,0,0,0.03,0.05,0,0.05,0.2,0,0.03,0.4,0.03});
+Shape28->setGeometry(Extrusion31);
 
-Transform26->addChild(*Shape27);
+Transform27->addChild(*Shape28);
 
-Transform25->addChildren(*Transform26);
+Transform26->addChildren(*Transform27);
 
-CTransform* Transform31 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform31->setTranslation(new float[3]{0.01,-0.04,-0.02});
-Transform31->setRotation(new float[4]{0,0,1,1.57});
-Transform31->setScale(new float[3]{0.9,0.9,0.9});
-CShape* Shape32 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance33 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material34 = (CMaterial *)(m_pScene.createNode("Material"));
-Material34->setDEF("Mouthpiece");
-Material34->setDiffuseColor(new float[3]{0.678,1,0.8});
-Material34->setTransparency(0.4);
-Appearance33->setMaterial(*Material34);
+CTransform* Transform32 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform32->setRotation(new float[4]{0,0,1,1.57});
+Transform32->setScale(new float[3]{0.9,0.9,0.9});
+Transform32->setTranslation(new float[3]{0.01,-0.04,-0.02});
+CShape* Shape33 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance34 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material35 = (CMaterial *)(m_pScene.createNode("Material"));
+Material35->setDEF("Mouthpiece");
+Material35->setDiffuseColor(new float[3]{0.678,1,0.8});
+Material35->setTransparency(0.4);
+Appearance34->setMaterial(*Material35);
 
-Shape32->setAppearance(*Appearance33);
+Shape33->setAppearance(*Appearance34);
 
-CExtrusion* Extrusion35 = (CExtrusion *)(m_pScene.createNode("Extrusion"));
-Extrusion35->setCrossSection(new float[34]{0,0.013,0.00494,0.01196,0.00923,0.00923,0.01196,0.00494,0.013,0,0.01196,-0.00494,0.00923,-0.00923,0.00494,-0.01196,0,0.013,-0.00494,-0.01196,-0.00923,-0.00923,-0.01196,-0.00494,-0.013,0,-0.01196,0.00494,-0.00923,0.00923,-0.00494,0.01196,0,0.013});
-Extrusion35->setSpine(new float[9]{-0.01,-0.03,0,0,0,0,0.02,0.01,0});
-Shape32->setGeometry(Extrusion35);
+CExtrusion* Extrusion36 = (CExtrusion *)(m_pScene.createNode("Extrusion"));
+Extrusion36->setCrossSection(new float[34]{0,0.013,0.00494,0.01196,0.00923,0.00923,0.01196,0.00494,0.013,0,0.01196,-0.00494,0.00923,-0.00923,0.00494,-0.01196,0,0.013,-0.00494,-0.01196,-0.00923,-0.00923,-0.01196,-0.00494,-0.013,0,-0.01196,0.00494,-0.00923,0.00923,-0.00494,0.01196,0,0.013});
+Extrusion36->setSpine(new float[9]{-0.01,-0.03,0,0,0,0,0.02,0.01,0});
+Shape33->setGeometry(Extrusion36);
 
-Transform31->addChild(*Shape32);
+Transform32->addChild(*Shape33);
 
-Transform25->addChildren(*Transform31);
+Transform26->addChildren(*Transform32);
 
-CTransform* Transform36 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform36->setTranslation(new float[3]{0.005,-0.01,-0.02});
-Transform36->setRotation(new float[4]{0,0,1,-0.85});
-Transform36->setScale(new float[3]{0.9,0.9,0.9});
-CShape* Shape37 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance38 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material39 = (CMaterial *)(m_pScene.createNode("Material"));
-Material39->setUSE("Mouthpiece");
-Appearance38->setMaterial(*Material39);
+CTransform* Transform37 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform37->setRotation(new float[4]{0,0,1,-0.85});
+Transform37->setScale(new float[3]{0.9,0.9,0.9});
+Transform37->setTranslation(new float[3]{0.005,-0.01,-0.02});
+CShape* Shape38 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance39 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material40 = (CMaterial *)(m_pScene.createNode("Material"));
+Material40->setUSE("Mouthpiece");
+Appearance39->setMaterial(*Material40);
 
-Shape37->setAppearance(*Appearance38);
+Shape38->setAppearance(*Appearance39);
 
-CExtrusion* Extrusion40 = (CExtrusion *)(m_pScene.createNode("Extrusion"));
-Extrusion40->setCrossSection(new float[18]{0,0.013,0.00494,0.01196,0.00923,0.00923,0.01196,0.00494,0.013,0,0.01196,-0.00494,0.00923,-0.00923,0.00494,-0.01196,0,0.013});
-Extrusion40->setSpine(new float[18]{-0.02,-0.03,0,-0.01,-0.03,0,0,-0.0175,0,0,-0.0135,0,-0.01,0,0,-0.02,0,0});
-Shape37->setGeometry(Extrusion40);
+CExtrusion* Extrusion41 = (CExtrusion *)(m_pScene.createNode("Extrusion"));
+Extrusion41->setCrossSection(new float[18]{0,0.013,0.00494,0.01196,0.00923,0.00923,0.01196,0.00494,0.013,0,0.01196,-0.00494,0.00923,-0.00923,0.00494,-0.01196,0,0.013});
+Extrusion41->setSpine(new float[18]{-0.02,-0.03,0,-0.01,-0.03,0,0,-0.0175,0,0,-0.0135,0,-0.01,0,0,-0.02,0,0});
+Shape38->setGeometry(Extrusion41);
 
-Transform36->addChild(*Shape37);
+Transform37->addChild(*Shape38);
 
-Transform25->addChildren(*Transform36);
+Transform26->addChildren(*Transform37);
 
-Group24->addChildren(*Transform25);
+Group25->addChildren(*Transform26);
 
-Transform12->addChildren(*Group24);
+Transform13->addChildren(*Group25);
 
-CTransform* Transform41 = (CTransform *)(m_pScene.createNode("Transform"));
-CShape* Shape42 = (CShape *)(m_pScene.createNode("Shape"));
-Shape42->setDEF("maskLensR");
-CAppearance* Appearance43 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material44 = (CMaterial *)(m_pScene.createNode("Material"));
-Material44->setDEF("plastic");
-Material44->setDiffuseColor(new float[3]{0.941,0.973,1});
-Material44->setTransparency(0.8);
-Appearance43->setMaterial(*Material44);
+CTransform* Transform42 = (CTransform *)(m_pScene.createNode("Transform"));
+CShape* Shape43 = (CShape *)(m_pScene.createNode("Shape"));
+Shape43->setDEF("maskLensR");
+CAppearance* Appearance44 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material45 = (CMaterial *)(m_pScene.createNode("Material"));
+Material45->setDEF("plastic");
+Material45->setDiffuseColor(new float[3]{0.941,0.973,1});
+Material45->setTransparency(0.8);
+Appearance44->setMaterial(*Material45);
 
-Shape42->setAppearance(*Appearance43);
+Shape43->setAppearance(*Appearance44);
 
-CIndexedFaceSet* IndexedFaceSet45 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
-IndexedFaceSet45->setSolid(False);
-IndexedFaceSet45->setCreaseAngle(1.45);
-IndexedFaceSet45->setCoordIndex(new int[9]{12,13,14,15,16,17,18,12,-1});
-CCoordinate* Coordinate46 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
-Coordinate46->setPoint(new float[78]{0,0.08,0,0.02,0.05,0,0.05,0.05,0,0.06,0.06,0,0.06,0.09,0,0.05,0.1,0,0,0.1,0,-0.05,0.1,0,-0.06,0.09,0,-0.06,0.06,0,-0.05,0.05,0,-0.02,0.05,0,0.005,0.08,0,0.02,0.055,0,0.05,0.055,0,0.055,0.06,0,0.055,0.09,0,0.045,0.095,0,0.005,0.095,0,-0.005,0.08,0,-0.02,0.055,0,-0.05,0.055,0,-0.055,0.06,0,-0.055,0.09,0,-0.045,0.095,0,-0.005,0.095,0});
-IndexedFaceSet45->setCoord(*Coordinate46);
+CIndexedFaceSet* IndexedFaceSet46 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet46->setCoordIndex(new int[9]{12,13,14,15,16,17,18,12,-1});
+IndexedFaceSet46->setCreaseAngle(1.45);
+IndexedFaceSet46->setSolid(False);
+CCoordinate* Coordinate47 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate47->setPoint(new float[78]{0,0.08,0,0.02,0.05,0,0.05,0.05,0,0.06,0.06,0,0.06,0.09,0,0.05,0.1,0,0,0.1,0,-0.05,0.1,0,-0.06,0.09,0,-0.06,0.06,0,-0.05,0.05,0,-0.02,0.05,0,0.005,0.08,0,0.02,0.055,0,0.05,0.055,0,0.055,0.06,0,0.055,0.09,0,0.045,0.095,0,0.005,0.095,0,-0.005,0.08,0,-0.02,0.055,0,-0.05,0.055,0,-0.055,0.06,0,-0.055,0.09,0,-0.045,0.095,0,-0.005,0.095,0});
+IndexedFaceSet46->setCoord(*Coordinate47);
 
-Shape42->setGeometry(IndexedFaceSet45);
+Shape43->setGeometry(IndexedFaceSet46);
 
-Transform41->addChild(*Shape42);
+Transform42->addChild(*Shape43);
 
-Transform12->addChildren(*Transform41);
+Transform13->addChildren(*Transform42);
 
-CTransform* Transform47 = (CTransform *)(m_pScene.createNode("Transform"));
-CShape* Shape48 = (CShape *)(m_pScene.createNode("Shape"));
-Shape48->setDEF("maskLensL");
-CAppearance* Appearance49 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material50 = (CMaterial *)(m_pScene.createNode("Material"));
-Material50->setUSE("plastic");
-Appearance49->setMaterial(*Material50);
+CTransform* Transform48 = (CTransform *)(m_pScene.createNode("Transform"));
+CShape* Shape49 = (CShape *)(m_pScene.createNode("Shape"));
+Shape49->setDEF("maskLensL");
+CAppearance* Appearance50 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material51 = (CMaterial *)(m_pScene.createNode("Material"));
+Material51->setUSE("plastic");
+Appearance50->setMaterial(*Material51);
 
-Shape48->setAppearance(*Appearance49);
+Shape49->setAppearance(*Appearance50);
 
-CIndexedFaceSet* IndexedFaceSet51 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
-IndexedFaceSet51->setSolid(False);
-IndexedFaceSet51->setCreaseAngle(1.45);
-IndexedFaceSet51->setCoordIndex(new int[9]{19,20,21,22,23,24,25,19,-1});
-CCoordinate* Coordinate52 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
-Coordinate52->setPoint(new float[78]{0,0.08,0,0.02,0.05,0,0.05,0.05,0,0.06,0.06,0,0.06,0.09,0,0.05,0.1,0,0,0.1,0,-0.05,0.1,0,-0.06,0.09,0,-0.06,0.06,0,-0.05,0.05,0,-0.02,0.05,0,0.005,0.08,0,0.02,0.055,0,0.05,0.055,0,0.055,0.06,0,0.055,0.09,0,0.045,0.095,0,0.005,0.095,0,-0.005,0.08,0,-0.02,0.055,0,-0.05,0.055,0,-0.055,0.06,0,-0.055,0.09,0,-0.045,0.095,0,-0.005,0.095,0});
-IndexedFaceSet51->setCoord(*Coordinate52);
+CIndexedFaceSet* IndexedFaceSet52 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet52->setCoordIndex(new int[9]{19,20,21,22,23,24,25,19,-1});
+IndexedFaceSet52->setCreaseAngle(1.45);
+IndexedFaceSet52->setSolid(False);
+CCoordinate* Coordinate53 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate53->setPoint(new float[78]{0,0.08,0,0.02,0.05,0,0.05,0.05,0,0.06,0.06,0,0.06,0.09,0,0.05,0.1,0,0,0.1,0,-0.05,0.1,0,-0.06,0.09,0,-0.06,0.06,0,-0.05,0.05,0,-0.02,0.05,0,0.005,0.08,0,0.02,0.055,0,0.05,0.055,0,0.055,0.06,0,0.055,0.09,0,0.045,0.095,0,0.005,0.095,0,-0.005,0.08,0,-0.02,0.055,0,-0.05,0.055,0,-0.055,0.06,0,-0.055,0.09,0,-0.045,0.095,0,-0.005,0.095,0});
+IndexedFaceSet52->setCoord(*Coordinate53);
 
-Shape48->setGeometry(IndexedFaceSet51);
+Shape49->setGeometry(IndexedFaceSet52);
 
-Transform47->addChild(*Shape48);
+Transform48->addChild(*Shape49);
 
-Transform12->addChildren(*Transform47);
+Transform13->addChildren(*Transform48);
 
-CTransform* Transform53 = (CTransform *)(m_pScene.createNode("Transform"));
-CShape* Shape54 = (CShape *)(m_pScene.createNode("Shape"));
-Shape54->setDEF("nose");
-CAppearance* Appearance55 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material56 = (CMaterial *)(m_pScene.createNode("Material"));
-Material56->setDEF("plasticFit");
-Material56->setDiffuseColor(new float[3]{0.678,1,0.184});
-Material56->setTransparency(0.7);
-Appearance55->setMaterial(*Material56);
+CTransform* Transform54 = (CTransform *)(m_pScene.createNode("Transform"));
+CShape* Shape55 = (CShape *)(m_pScene.createNode("Shape"));
+Shape55->setDEF("nose");
+CAppearance* Appearance56 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material57 = (CMaterial *)(m_pScene.createNode("Material"));
+Material57->setDEF("plasticFit");
+Material57->setDiffuseColor(new float[3]{0.678,1,0.184});
+Material57->setTransparency(0.7);
+Appearance56->setMaterial(*Material57);
 
-Shape54->setAppearance(*Appearance55);
+Shape55->setAppearance(*Appearance56);
 
-CIndexedFaceSet* IndexedFaceSet57 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
-IndexedFaceSet57->setSolid(False);
-IndexedFaceSet57->setCreaseAngle(1.45);
-IndexedFaceSet57->setCoordIndex(new int[25]{0,37,26,0,-1,0,36,26,0,-1,36,37,26,36,-1,0,1,37,0,-1,0,11,36,0,-1});
-CCoordinate* Coordinate58 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
-Coordinate58->setPoint(new float[114]{0,0.08,0,0.02,0.05,0,0.05,0.05,0,0.06,0.06,0,0.06,0.09,0,0.05,0.1,0,0,0.1,0,-0.05,0.1,0,-0.06,0.09,0,-0.06,0.06,0,-0.05,0.05,0,-0.02,0.05,0,0.005,0.08,0,0.02,0.055,0,0.05,0.055,0,0.055,0.06,0,0.055,0.09,0,0.045,0.095,0,0.005,0.095,0,-0.005,0.08,0,-0.02,0.055,0,-0.05,0.055,0,-0.055,0.06,0,-0.055,0.09,0,-0.045,0.095,0,-0.005,0.095,0,0,0.04,0.015,0.05,0.04,-0.03,0.06,0.05,-0.03,0.07,0.095,-0.03,0.055,0.11,-0.03,0,0.11,-0.02,-0.055,0.11,-0.03,-0.07,0.095,-0.03,-0.06,0.05,-0.03,-0.05,0.04,-0.03,-0.02,0.04,-0.02,0.02,0.04,-0.02});
-IndexedFaceSet57->setCoord(*Coordinate58);
+CIndexedFaceSet* IndexedFaceSet58 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet58->setCoordIndex(new int[25]{0,37,26,0,-1,0,36,26,0,-1,36,37,26,36,-1,0,1,37,0,-1,0,11,36,0,-1});
+IndexedFaceSet58->setCreaseAngle(1.45);
+IndexedFaceSet58->setSolid(False);
+CCoordinate* Coordinate59 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate59->setPoint(new float[114]{0,0.08,0,0.02,0.05,0,0.05,0.05,0,0.06,0.06,0,0.06,0.09,0,0.05,0.1,0,0,0.1,0,-0.05,0.1,0,-0.06,0.09,0,-0.06,0.06,0,-0.05,0.05,0,-0.02,0.05,0,0.005,0.08,0,0.02,0.055,0,0.05,0.055,0,0.055,0.06,0,0.055,0.09,0,0.045,0.095,0,0.005,0.095,0,-0.005,0.08,0,-0.02,0.055,0,-0.05,0.055,0,-0.055,0.06,0,-0.055,0.09,0,-0.045,0.095,0,-0.005,0.095,0,0,0.04,0.015,0.05,0.04,-0.03,0.06,0.05,-0.03,0.07,0.095,-0.03,0.055,0.11,-0.03,0,0.11,-0.02,-0.055,0.11,-0.03,-0.07,0.095,-0.03,-0.06,0.05,-0.03,-0.05,0.04,-0.03,-0.02,0.04,-0.02,0.02,0.04,-0.02});
+IndexedFaceSet58->setCoord(*Coordinate59);
 
-Shape54->setGeometry(IndexedFaceSet57);
+Shape55->setGeometry(IndexedFaceSet58);
 
-Transform53->addChild(*Shape54);
+Transform54->addChild(*Shape55);
 
-Transform12->addChildren(*Transform53);
+Transform13->addChildren(*Transform54);
 
-CTransform* Transform59 = (CTransform *)(m_pScene.createNode("Transform"));
-CShape* Shape60 = (CShape *)(m_pScene.createNode("Shape"));
-Shape60->setDEF("faceFit");
-CAppearance* Appearance61 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material62 = (CMaterial *)(m_pScene.createNode("Material"));
-Material62->setUSE("plasticFit");
-Appearance61->setMaterial(*Material62);
+CTransform* Transform60 = (CTransform *)(m_pScene.createNode("Transform"));
+CShape* Shape61 = (CShape *)(m_pScene.createNode("Shape"));
+Shape61->setDEF("faceFit");
+CAppearance* Appearance62 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material63 = (CMaterial *)(m_pScene.createNode("Material"));
+Material63->setUSE("plasticFit");
+Appearance62->setMaterial(*Material63);
 
-Shape60->setAppearance(*Appearance61);
+Shape61->setAppearance(*Appearance62);
 
-CIndexedFaceSet* IndexedFaceSet63 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
-IndexedFaceSet63->setSolid(False);
-IndexedFaceSet63->setCreaseAngle(1.45);
-IndexedFaceSet63->setCoordIndex(new int[60]{1,2,27,37,1,-1,2,3,28,27,2,-1,3,4,29,28,3,-1,4,5,30,29,4,-1,5,6,31,30,5,-1,6,7,32,31,6,-1,7,8,33,32,7,-1,8,9,34,33,8,-1,9,10,35,34,9,-1,10,11,36,35,10,-1});
-CCoordinate* Coordinate64 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
-Coordinate64->setPoint(new float[114]{0,0.08,0,0.02,0.05,0,0.05,0.05,0,0.06,0.06,0,0.06,0.09,0,0.05,0.1,0,0,0.1,0,-0.05,0.1,0,-0.06,0.09,0,-0.06,0.06,0,-0.05,0.05,0,-0.02,0.05,0,0.005,0.08,0,0.02,0.055,0,0.05,0.055,0,0.055,0.06,0,0.055,0.09,0,0.045,0.095,0,0.005,0.095,0,-0.005,0.08,0,-0.02,0.055,0,-0.05,0.055,0,-0.055,0.06,0,-0.055,0.09,0,-0.045,0.095,0,-0.005,0.095,0,0,0.05,0.015,0.05,0.04,-0.03,0.06,0.05,-0.03,0.07,0.095,-0.03,0.055,0.11,-0.03,0,0.11,-0.02,-0.055,0.11,-0.03,-0.07,0.095,-0.03,-0.06,0.05,-0.03,-0.05,0.04,-0.03,-0.02,0.04,-0.02,0.02,0.04,-0.02});
-IndexedFaceSet63->setCoord(*Coordinate64);
+CIndexedFaceSet* IndexedFaceSet64 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet64->setCoordIndex(new int[60]{1,2,27,37,1,-1,2,3,28,27,2,-1,3,4,29,28,3,-1,4,5,30,29,4,-1,5,6,31,30,5,-1,6,7,32,31,6,-1,7,8,33,32,7,-1,8,9,34,33,8,-1,9,10,35,34,9,-1,10,11,36,35,10,-1});
+IndexedFaceSet64->setCreaseAngle(1.45);
+IndexedFaceSet64->setSolid(False);
+CCoordinate* Coordinate65 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate65->setPoint(new float[114]{0,0.08,0,0.02,0.05,0,0.05,0.05,0,0.06,0.06,0,0.06,0.09,0,0.05,0.1,0,0,0.1,0,-0.05,0.1,0,-0.06,0.09,0,-0.06,0.06,0,-0.05,0.05,0,-0.02,0.05,0,0.005,0.08,0,0.02,0.055,0,0.05,0.055,0,0.055,0.06,0,0.055,0.09,0,0.045,0.095,0,0.005,0.095,0,-0.005,0.08,0,-0.02,0.055,0,-0.05,0.055,0,-0.055,0.06,0,-0.055,0.09,0,-0.045,0.095,0,-0.005,0.095,0,0,0.05,0.015,0.05,0.04,-0.03,0.06,0.05,-0.03,0.07,0.095,-0.03,0.055,0.11,-0.03,0,0.11,-0.02,-0.055,0.11,-0.03,-0.07,0.095,-0.03,-0.06,0.05,-0.03,-0.05,0.04,-0.03,-0.02,0.04,-0.02,0.02,0.04,-0.02});
+IndexedFaceSet64->setCoord(*Coordinate65);
 
-Shape60->setGeometry(IndexedFaceSet63);
+Shape61->setGeometry(IndexedFaceSet64);
 
-Transform59->addChild(*Shape60);
+Transform60->addChild(*Shape61);
 
-Transform12->addChildren(*Transform59);
+Transform13->addChildren(*Transform60);
 
-CTransform* Transform65 = (CTransform *)(m_pScene.createNode("Transform"));
-CShape* Shape66 = (CShape *)(m_pScene.createNode("Shape"));
-Shape66->setDEF("belt");
-CAppearance* Appearance67 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material68 = (CMaterial *)(m_pScene.createNode("Material"));
-Material68->setUSE("plastic");
-Appearance67->setMaterial(*Material68);
+CTransform* Transform66 = (CTransform *)(m_pScene.createNode("Transform"));
+CShape* Shape67 = (CShape *)(m_pScene.createNode("Shape"));
+Shape67->setDEF("belt");
+CAppearance* Appearance68 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material69 = (CMaterial *)(m_pScene.createNode("Material"));
+Material69->setUSE("plastic");
+Appearance68->setMaterial(*Material69);
 
-Shape66->setAppearance(*Appearance67);
+Shape67->setAppearance(*Appearance68);
 
-CIndexedFaceSet* IndexedFaceSet69 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
-IndexedFaceSet69->setSolid(False);
-IndexedFaceSet69->setCreaseAngle(1.45);
-IndexedFaceSet69->setCoordIndex(new int[36]{3,4,39,38,3,-1,8,9,40,41,8,-1,38,39,42,43,38,-1,40,41,44,45,40,-1,42,43,47,46,42,-1,44,45,47,46,44,-1});
-CCoordinate* Coordinate70 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
-Coordinate70->setPoint(new float[144]{0,0.08,0,0.02,0.05,0,0.05,0.05,0,0.06,0.06,0,0.06,0.09,0,0.05,0.1,0,0,0.1,0,-0.05,0.1,0,-0.06,0.09,0,-0.06,0.06,0,-0.05,0.05,0,-0.02,0.05,0,0.005,0.08,0,0.02,0.055,0,0.05,0.055,0,0.055,0.06,0,0.055,0.09,0,0.045,0.095,0,0.005,0.095,0,-0.005,0.08,0,-0.02,0.055,0,-0.05,0.055,0,-0.055,0.06,0,-0.055,0.09,0,-0.045,0.095,0,-0.005,0.095,0,0,0.05,0.015,0.05,0.04,-0.03,0.06,0.05,-0.03,0.07,0.095,-0.03,0.055,0.11,-0.03,0,0.11,-0.02,-0.055,0.11,-0.03,-0.07,0.095,-0.03,-0.06,0.05,-0.03,-0.05,0.04,-0.03,-0.02,0.04,-0.02,0.02,0.04,-0.02,0.075,0.06,-0.135,0.075,0.09,-0.135,-0.075,0.06,-0.135,-0.075,0.09,-0.135,0.06,0.09,-0.165,0.06,0.06,-0.165,-0.06,0.09,-0.165,-0.06,0.06,-0.165,0,0.09,-0.2,0,0.06,-0.175});
-IndexedFaceSet69->setCoord(*Coordinate70);
+CIndexedFaceSet* IndexedFaceSet70 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet70->setCoordIndex(new int[36]{3,4,39,38,3,-1,8,9,40,41,8,-1,38,39,42,43,38,-1,40,41,44,45,40,-1,42,43,47,46,42,-1,44,45,47,46,44,-1});
+IndexedFaceSet70->setCreaseAngle(1.45);
+IndexedFaceSet70->setSolid(False);
+CCoordinate* Coordinate71 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate71->setPoint(new float[144]{0,0.08,0,0.02,0.05,0,0.05,0.05,0,0.06,0.06,0,0.06,0.09,0,0.05,0.1,0,0,0.1,0,-0.05,0.1,0,-0.06,0.09,0,-0.06,0.06,0,-0.05,0.05,0,-0.02,0.05,0,0.005,0.08,0,0.02,0.055,0,0.05,0.055,0,0.055,0.06,0,0.055,0.09,0,0.045,0.095,0,0.005,0.095,0,-0.005,0.08,0,-0.02,0.055,0,-0.05,0.055,0,-0.055,0.06,0,-0.055,0.09,0,-0.045,0.095,0,-0.005,0.095,0,0,0.05,0.015,0.05,0.04,-0.03,0.06,0.05,-0.03,0.07,0.095,-0.03,0.055,0.11,-0.03,0,0.11,-0.02,-0.055,0.11,-0.03,-0.07,0.095,-0.03,-0.06,0.05,-0.03,-0.05,0.04,-0.03,-0.02,0.04,-0.02,0.02,0.04,-0.02,0.075,0.06,-0.135,0.075,0.09,-0.135,-0.075,0.06,-0.135,-0.075,0.09,-0.135,0.06,0.09,-0.165,0.06,0.06,-0.165,-0.06,0.09,-0.165,-0.06,0.06,-0.165,0,0.09,-0.2,0,0.06,-0.175});
+IndexedFaceSet70->setCoord(*Coordinate71);
 
-Shape66->setGeometry(IndexedFaceSet69);
+Shape67->setGeometry(IndexedFaceSet70);
 
-Transform65->addChild(*Shape66);
+Transform66->addChild(*Shape67);
 
-Transform12->addChildren(*Transform65);
+Transform13->addChildren(*Transform66);
 
-group->addChildren(*Transform12);
+group->addChildren(*Transform13);
 
-X3D0->setScene(*Scene9);
+X3D0->setScene(*Scene10);
 
 m_pScene.addRootNode(group);
 X3D0->toXMLString();

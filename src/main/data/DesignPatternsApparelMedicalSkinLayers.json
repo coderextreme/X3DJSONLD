@@ -68,7 +68,7 @@
           },
           {
             "@name":"translated",
-            "@content":"14 September 2023"
+            "@content":"18 February 2024"
           },
           {
             "@name":"generator",
@@ -95,15 +95,14 @@
           { "Group":
             {
               "@DEF":"MultipleHumanoids",
-              "-value":[
+              "-metadata":
                 { "MetadataString":
                   {
                     "@name":"HAnimArchitecture",
                     "@reference":"https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/Guidelines.html#MultipleHumanoidsPerFile",
                     "@value":["E.4 Multiple humanoids per file"]
                   }
-                }
-              ],
+                },
               "-children":[
                 {
                   "#comment":"=============================="

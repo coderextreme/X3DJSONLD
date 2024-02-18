@@ -1,8 +1,8 @@
 {
   "X3D": {
     "@profile": "Immersive",
-    "@version": "3.3",
-    "@xsd:noNamespaceSchemaLocation": "https://www.web3d.org/specifications/x3d-3.3.xsd",
+    "@version": "4.0",
+    "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-4.0.xsd",
     "head": {
       "meta": [
         {
@@ -19,19 +19,15 @@
         },
         {
           "@name": "identifier",
-          "@content": "https://coderextreme.net/X3DJSONLD/force.x3d"
+          "@content": "https://coderextreme.net/X3DJSONLD/src/main/data/force.x3d"
         },
         {
           "@name": "description",
           "@content": "beginnings of a force directed graph in 3D"
         },
         {
-          "@name": "generator",
-          "@content": "Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit"
-        },
-        {
           "@name": "translated",
-          "@content": "16 January 2021"
+          "@content": "15 December 2023"
         },
         {
           "@name": "generator",
@@ -50,56 +46,6 @@
             "-children": [
               {
                 "Shape": {
-                  "-geometry": {
-                    "Extrusion": {
-                      "@DEF": "extrusion",
-                      "@spine": [
-                        -50,
-                        -50,
-                        0,
-                        50,
-                        50,
-                        0
-                      ],
-                      "@creaseAngle": 0.785,
-                      "@crossSection": [
-                        1,
-                        0,
-                        0.92,
-                        -0.38,
-                        0.71,
-                        -0.71,
-                        0.38,
-                        -0.92,
-                        0,
-                        -1,
-                        -0.38,
-                        -0.92,
-                        -0.71,
-                        -0.71,
-                        -0.92,
-                        -0.38,
-                        -1,
-                        0,
-                        -0.92,
-                        0.38,
-                        -0.71,
-                        0.71,
-                        -0.38,
-                        0.92,
-                        0,
-                        1,
-                        0.38,
-                        0.92,
-                        0.71,
-                        0.71,
-                        0.92,
-                        0.38,
-                        1,
-                        0
-                      ]
-                    }
-                  },
                   "-children": [
                     {
                       "Appearance": {
@@ -113,6 +59,56 @@
                               ]
                             }
                           }
+                        ]
+                      }
+                    },
+                    {
+                      "Extrusion": {
+                        "@DEF": "extrusion",
+                        "@creaseAngle": 0.785,
+                        "@crossSection": [
+                          1,
+                          0,
+                          0.92,
+                          -0.38,
+                          0.71,
+                          -0.71,
+                          0.38,
+                          -0.92,
+                          0,
+                          -1,
+                          -0.38,
+                          -0.92,
+                          -0.71,
+                          -0.71,
+                          -0.92,
+                          -0.38,
+                          -1,
+                          0,
+                          -0.92,
+                          0.38,
+                          -0.71,
+                          0.71,
+                          -0.38,
+                          0.92,
+                          0,
+                          1,
+                          0.38,
+                          0.92,
+                          0.71,
+                          0.71,
+                          0.92,
+                          0.38,
+                          1,
+                          0
+                        ],
+                        "@spine": [
+                          -50,
+                          -50,
+                          0,
+                          50,
+                          50,
+                          0
                         ]
                       }
                     }
@@ -130,14 +126,14 @@
                   "@DEF": "MoveCylinder",
                   "field": [
                     {
-                      "@name": "set_cycle",
                       "@accessType": "inputOnly",
-                      "@type": "SFTime"
+                      "@type": "SFTime",
+                      "@name": "set_cycle"
                     },
                     {
-                      "@name": "spine",
                       "@accessType": "inputOutput",
                       "@type": "MFVec3f",
+                      "@name": "spine",
                       "@value": [
                         -50,
                         -50,
@@ -149,34 +145,34 @@
                     }
                   ],
                   "#sourceCode": [
-                    "ecmascript:",
-                    "",
-                    "                function set_cycle(value) {",
-                    "                        Browser.print(value);",
-                    "                        var endA = new SFVec3f(spine[0].x*Math.random()*2, spine[0].y*Math.random()*2, spine[0].z*Math.random()*2);",
-                    "                        var endB = new SFVec3f(spine[1].x*Math.random()*2, spine[1].y*Math.random()*2, spine[1].z*Math.random()*2);",
-                    "\t\t        spine = new MFVec3f([endA, endB]);",
+                    "ecmascript:\r",
+                    "\r",
+                    "                function set_cycle(value) {\r",
+                    "                        Browser.print(value);\r",
+                    "                        var endA = new SFVec3f(spine[0].x*Math.random()*2, spine[0].y*Math.random()*2, spine[0].z*Math.random()*2);\r",
+                    "                        var endB = new SFVec3f(spine[1].x*Math.random()*2, spine[1].y*Math.random()*2, spine[1].z*Math.random()*2);\r",
+                    "\t\t        spine = new MFVec3f([endA, endB]);\r",
                     "                }"
                   ]
                 }
-              },
-              {
-                "ROUTE": {
-                  "@fromNode": "TourTime",
-                  "@fromField": "cycleTime",
-                  "@toNode": "MoveCylinder",
-                  "@toField": "set_cycle"
-                }
-              },
-              {
-                "ROUTE": {
-                  "@fromNode": "MoveCylinder",
-                  "@fromField": "spine_changed",
-                  "@toNode": "extrusion",
-                  "@toField": "spine"
-                }
               }
             ]
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "TourTime",
+            "@fromField": "cycleTime",
+            "@toNode": "MoveCylinder",
+            "@toField": "set_cycle"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "MoveCylinder",
+            "@fromField": "spine",
+            "@toNode": "extrusion",
+            "@toField": "set_spine"
           }
         }
       ]

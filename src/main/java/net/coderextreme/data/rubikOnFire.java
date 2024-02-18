@@ -36,13 +36,22 @@ import org.web3d.x3d.jsail.Texturing.*;
 import org.web3d.x3d.jsail.Time.*;
 import org.web3d.x3d.jsail.VolumeRendering.*;
 import org.web3d.x3d.jsail.fields.*;
-public class rubikOnFire {
+import java.util.ArrayList;
+import java.util.List;
+import net.coderextreme.X3DRoots;
+public class rubikOnFire implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    X3D model = new rubikOnFire().initialize();
+    X3D model = new rubikOnFire().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
+    model.toFileX3D("../data/rubikOnFire.new.java.x3d");
     model.toFileJSON("../data/rubikOnFire.new.json");
+    }
+    public List<X3D> getRootNodeList() {
+    	List<X3D> list = new ArrayList<X3D>(1);
+    	list.add(initialize());
+    	return list;
     }
     public X3D initialize() {
 ProtoInstance ProtoInstance0 = null;
@@ -55,34 +64,39 @@ ProtoInstance ProtoInstance6 = null;
 ProtoInstance ProtoInstance7 = null;
 ProtoInstance ProtoInstance8 = null;
 ProtoInstance ProtoInstance9 = null;
-      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
+      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
       .setHead(new head()
         .addMeta(new meta().setName("title").setContent("rubikOnFire.x3d"))
         .addMeta(new meta().setName("creator").setContent("John Carlson"))
         .addMeta(new meta().setName("generator").setContent("manual"))
-        .addMeta(new meta().setName("generator").setContent("x3d-tidy V1.0.118, https://www.npmjs.com/package/x3d-tidy")))
+        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/rubikOnFire.x3d"))
+        .addMeta(new meta().setName("description").setContent("a white rubik cube")))
       .setScene(new Scene()
+        .addChild(new NavigationInfo().setType("\"EXAMINE\""))
+        .addChild(new Viewpoint().setDescription("Rubiks Cube on Fire").setPosition(new double[] {0,0,12}))
         .addChild(new ProtoDeclare().setName("anyShape")
           .setProtoInterface(new ProtoInterface()
-            .addField(new field().setType("SFVec3f").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setName("xtranslation"))
-            .addField(new field().setType("SFNode").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setName("myShape")
+            .addField(new field().setType("SFVec3f").setName("xtranslation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
+            .addField(new field().setType("SFNode").setName("myShape").setAccessType(field.ACCESSTYPE_INPUTOUTPUT)
               .addChild(new Sphere())))
           .setProtoBody(new ProtoBody()
             .addChild(new Transform()
-              .addChild(new Shape()
-                .setAppearance(new Appearance()
-                  .setMaterial(new Material().setDiffuseColor(new float[] {1f,1f,1f})))
-                .setIS(new IS()
-                  .addConnect(new connect().setNodeField("geometry").setProtoField("myShape"))))
               .setIS(new IS()
-                .addConnect(new connect().setNodeField("translation").setProtoField("xtranslation"))))))
+                .addConnect(new connect().setNodeField("translation").setProtoField("xtranslation")))
+              .addChild(new Shape()
+                .setIS(new IS()
+                  .addConnect(new connect().setNodeField("geometry").setProtoField("myShape")))
+                .setAppearance(new Appearance()
+                  .setMaterial(new Material().setDiffuseColor(new double[] {1,1,1})))))))
         .addChild(new ProtoDeclare().setName("three")
           .setProtoInterface(new ProtoInterface()
-            .addField(new field().setType("SFVec3f").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setName("ytranslation"))
-            .addField(new field().setType("SFNode").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setName("myShape")
-              .addChild(new Sphere().setDEF("_1"))))
+            .addField(new field().setType("SFVec3f").setName("ytranslation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
+            .addField(new field().setType("SFNode").setName("myShape").setAccessType(field.ACCESSTYPE_INPUTOUTPUT)
+              .addChild(new Sphere())))
           .setProtoBody(new ProtoBody()
             .addChild(new Transform()
+              .setIS(new IS()
+                .addConnect(new connect().setNodeField("translation").setProtoField("ytranslation")))
               .addChild(ProtoInstance0 = new ProtoInstance().setName("anyShape")
                 .setIS(new IS()
                   .addConnect(new connect().setNodeField("myShape").setProtoField("myShape"))))
@@ -91,16 +105,16 @@ ProtoInstance ProtoInstance9 = null;
                   .addConnect(new connect().setNodeField("myShape").setProtoField("myShape"))))
               .addChild(ProtoInstance2 = new ProtoInstance().setName("anyShape")
                 .setIS(new IS()
-                  .addConnect(new connect().setNodeField("myShape").setProtoField("myShape"))))
-              .setIS(new IS()
-                .addConnect(new connect().setNodeField("translation").setProtoField("ytranslation"))))))
+                  .addConnect(new connect().setNodeField("myShape").setProtoField("myShape")))))))
         .addChild(new ProtoDeclare().setName("nine")
           .setProtoInterface(new ProtoInterface()
-            .addField(new field().setType("SFVec3f").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setName("ztranslation"))
-            .addField(new field().setType("SFNode").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setName("myShape")
-              .addChild(new Sphere().setDEF("_2"))))
+            .addField(new field().setType("SFVec3f").setName("ztranslation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
+            .addField(new field().setType("SFNode").setName("myShape").setAccessType(field.ACCESSTYPE_INPUTOUTPUT)
+              .addChild(new Sphere())))
           .setProtoBody(new ProtoBody()
             .addChild(new Transform()
+              .setIS(new IS()
+                .addConnect(new connect().setNodeField("translation").setProtoField("ztranslation")))
               .addChild(ProtoInstance3 = new ProtoInstance().setName("three")
                 .setIS(new IS()
                   .addConnect(new connect().setNodeField("myShape").setProtoField("myShape"))))
@@ -109,16 +123,16 @@ ProtoInstance ProtoInstance9 = null;
                   .addConnect(new connect().setNodeField("myShape").setProtoField("myShape"))))
               .addChild(ProtoInstance5 = new ProtoInstance().setName("three")
                 .setIS(new IS()
-                  .addConnect(new connect().setNodeField("myShape").setProtoField("myShape"))))
-              .setIS(new IS()
-                .addConnect(new connect().setNodeField("translation").setProtoField("ztranslation"))))))
+                  .addConnect(new connect().setNodeField("myShape").setProtoField("myShape")))))))
         .addChild(new ProtoDeclare().setName("twentyseven")
           .setProtoInterface(new ProtoInterface()
-            .addField(new field().setType("SFVec3f").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setName("ttranslation"))
-            .addField(new field().setType("SFNode").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setName("myShape")
-              .addChild(new Sphere().setDEF("_3"))))
+            .addField(new field().setType("SFVec3f").setName("ttranslation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
+            .addField(new field().setType("SFNode").setName("myShape").setAccessType(field.ACCESSTYPE_INPUTOUTPUT)
+              .addChild(new Sphere())))
           .setProtoBody(new ProtoBody()
             .addChild(new Transform()
+              .setIS(new IS()
+                .addConnect(new connect().setNodeField("translation").setProtoField("ttranslation")))
               .addChild(ProtoInstance6 = new ProtoInstance().setName("nine")
                 .setIS(new IS()
                   .addConnect(new connect().setNodeField("myShape").setProtoField("myShape"))))
@@ -127,27 +141,31 @@ ProtoInstance ProtoInstance9 = null;
                   .addConnect(new connect().setNodeField("myShape").setProtoField("myShape"))))
               .addChild(ProtoInstance8 = new ProtoInstance().setName("nine")
                 .setIS(new IS()
-                  .addConnect(new connect().setNodeField("myShape").setProtoField("myShape"))))
-              .setIS(new IS()
-                .addConnect(new connect().setNodeField("translation").setProtoField("ttranslation"))))))
-        .addChild(new NavigationInfo().setType("\"EXAMINE\""))
-        .addChild(new Viewpoint().setDescription("Rubiks Cube on Fire").setPosition(new float[] {0f,0f,12f}))
+                  .addConnect(new connect().setNodeField("myShape").setProtoField("myShape")))))))
         .addChild(ProtoInstance9 = new ProtoInstance().setName("twentyseven")))      ;
+ProtoInstance0
+                .addFieldValue(new fieldValue().setName("xtranslation").setValue("0 0 0"));
 ProtoInstance1
                 .addFieldValue(new fieldValue().setName("xtranslation").setValue("2 0 0"));
 ProtoInstance2
                 .addFieldValue(new fieldValue().setName("xtranslation").setValue("-2 0 0"));
+ProtoInstance3
+                .addFieldValue(new fieldValue().setName("ytranslation").setValue("0 0 0"));
 ProtoInstance4
                 .addFieldValue(new fieldValue().setName("ytranslation").setValue("0 2 0"));
 ProtoInstance5
                 .addFieldValue(new fieldValue().setName("ytranslation").setValue("0 -2 0"));
+ProtoInstance6
+                .addFieldValue(new fieldValue().setName("ztranslation").setValue("0 0 0"));
 ProtoInstance7
                 .addFieldValue(new fieldValue().setName("ztranslation").setValue("0 0 2"));
 ProtoInstance8
                 .addFieldValue(new fieldValue().setName("ztranslation").setValue("0 0 -2"));
 ProtoInstance9
+          .addFieldValue(new fieldValue().setName("ttranslation").setValue("0 0 0"));
+ProtoInstance9
           .addFieldValue(new fieldValue().setName("myShape")
-            .addChild(new Box().setDEF("_4").setSize(new float[] {1f,1f,1f})));
+            .addChild(new Box().setSize(new double[] {1,1,1})));
     return X3D0;
     }
 }

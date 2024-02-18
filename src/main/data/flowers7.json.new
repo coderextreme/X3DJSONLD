@@ -1,10 +1,48 @@
 {
   "X3D": {
     "@profile": "Immersive",
-    "@version": "3.3",
-    "@xsd:noNamespaceSchemaLocation": "https://www.web3d.org/specifications/x3d-3.3.xsd",
+    "@version": "4.0",
+    "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-4.0.xsd",
     "head": {
+      "meta": [
+        {
+          "@name": "title",
+          "@content": "flowers7.x3d"
+        },
+        {
+          "@name": "creator",
+          "@content": "John Carlson"
+        },
+        {
+          "@name": "generator",
+          "@content": "manual"
+        },
+        {
+          "@name": "generator",
+          "@content": "x3d-tidy V1.0.117, https://www.npmjs.com/package/x3d-tidy"
+        },
+        {
+          "@name": "translated",
+          "@content": "15 December 2023"
+        },
+        {
+          "@name": "generator",
+          "@content": "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"
+        },
+        {
+          "@name": "reference",
+          "@content": "X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+        }
+      ],
       "component": [
+        {
+          "@name": "Scripting",
+          "@level": 1
+        },
+        {
+          "@name": "EnvironmentalEffects",
+          "@level": 3
+        },
         {
           "@name": "Shaders",
           "@level": 1
@@ -28,40 +66,10 @@
         {
           "@name": "Grouping",
           "@level": 3
-        }
-      ],
-      "meta": [
-        {
-          "@name": "title",
-          "@content": "flowers7.x3d"
         },
         {
-          "@name": "creator",
-          "@content": "John Carlson"
-        },
-        {
-          "@name": "generator",
-          "@content": "manual"
-        },
-        {
-          "@name": "identifier",
-          "@content": "https://coderextreme.net/X3DJSONLD/flowers7.x3d"
-        },
-        {
-          "@name": "description",
-          "@content": "a flower"
-        },
-        {
-          "@name": "translated",
-          "@content": "16 January 2021"
-        },
-        {
-          "@name": "generator",
-          "@content": "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"
-        },
-        {
-          "@name": "reference",
-          "@content": "X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          "@name": "Core",
+          "@level": 1
         }
       ]
     },
@@ -71,45 +79,42 @@
           "NavigationInfo": {}
         },
         {
-          "#comment": "Images courtesy of Paul Debevec's Light Probe Image Gallery"
-        },
-        {
           "Background": {
             "@DEF": "background",
-            "@backUrl": [
-              "../resources/images/all_probes/beach_cross/beach_back.png",
-              "https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_back.png"
-            ],
-            "@bottomUrl": [
-              "../resources/images/all_probes/beach_cross/beach_bottom.png",
-              "https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_bottom.png"
-            ],
             "@frontUrl": [
               "../resources/images/all_probes/beach_cross/beach_front.png",
-              "https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_front.png"
+              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png"
+            ],
+            "@backUrl": [
+              "../resources/images/all_probes/beach_cross/beach_back.png",
+              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png"
             ],
             "@leftUrl": [
               "../resources/images/all_probes/beach_cross/beach_left.png",
-              "https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_left.png"
+              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png"
             ],
             "@rightUrl": [
               "../resources/images/all_probes/beach_cross/beach_right.png",
-              "https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_right.png"
+              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png"
             ],
             "@topUrl": [
               "../resources/images/all_probes/beach_cross/beach_top.png",
-              "https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_top.png"
+              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png"
+            ],
+            "@bottomUrl": [
+              "../resources/images/all_probes/beach_cross/beach_bottom.png",
+              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"
             ]
           }
         },
         {
           "Viewpoint": {
+            "@description": "Transparent rose",
             "@position": [
               0,
               0,
               40
-            ],
-            "@description": "Transparent rose"
+            ]
           }
         },
         {
@@ -139,17 +144,35 @@
                             "ComposedShader": {
                               "@DEF": "x3dom",
                               "@language": "GLSL",
-                              "field": [
+                              "-children": [
                                 {
-                                  "@name": "cube",
-                                  "@type": "SFInt32",
-                                  "@accessType": "inputOutput",
-                                  "@value": 0
+                                  "ShaderPart": {
+                                    "@url": [
+                                      "../shaders/x3dom_flowers_chromatic.vs",
+                                      "https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs"
+                                    ]
+                                  }
                                 },
                                 {
-                                  "@name": "chromaticDispertion",
+                                  "ShaderPart": {
+                                    "@type": "FRAGMENT",
+                                    "@url": [
+                                      "../shaders/common.fs",
+                                      "https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"
+                                    ]
+                                  }
+                                }
+                              ],
+                              "field": [
+                                {
+                                  "@accessType": "inputOutput",
+                                  "@type": "SFInt32",
+                                  "@name": "cube"
+                                },
+                                {
                                   "@accessType": "initializeOnly",
                                   "@type": "SFVec3f",
+                                  "@name": "chromaticDispertion",
                                   "@value": [
                                     0.98,
                                     1,
@@ -157,81 +180,56 @@
                                   ]
                                 },
                                 {
+                                  "@accessType": "inputOutput",
+                                  "@type": "SFFloat",
                                   "@name": "bias",
-                                  "@type": "SFFloat",
-                                  "@accessType": "inputOutput",
                                   "@value": 0.5
                                 },
                                 {
+                                  "@accessType": "inputOutput",
+                                  "@type": "SFFloat",
                                   "@name": "scale",
-                                  "@type": "SFFloat",
-                                  "@accessType": "inputOutput",
                                   "@value": 0.5
                                 },
                                 {
-                                  "@name": "power",
-                                  "@type": "SFFloat",
                                   "@accessType": "inputOutput",
+                                  "@type": "SFFloat",
+                                  "@name": "power",
                                   "@value": 2
                                 },
                                 {
-                                  "@name": "a",
-                                  "@type": "SFFloat",
                                   "@accessType": "inputOutput",
+                                  "@type": "SFFloat",
+                                  "@name": "a",
                                   "@value": 10
                                 },
                                 {
-                                  "@name": "b",
-                                  "@type": "SFFloat",
                                   "@accessType": "inputOutput",
+                                  "@type": "SFFloat",
+                                  "@name": "b",
                                   "@value": 1
                                 },
                                 {
+                                  "@accessType": "inputOutput",
+                                  "@type": "SFFloat",
                                   "@name": "c",
-                                  "@type": "SFFloat",
-                                  "@accessType": "inputOutput",
                                   "@value": 20
                                 },
                                 {
+                                  "@accessType": "inputOutput",
+                                  "@type": "SFFloat",
                                   "@name": "d",
-                                  "@type": "SFFloat",
-                                  "@accessType": "inputOutput",
                                   "@value": 20
                                 },
                                 {
-                                  "@name": "tdelta",
-                                  "@type": "SFFloat",
                                   "@accessType": "inputOutput",
-                                  "@value": 0
-                                },
-                                {
-                                  "@name": "pdelta",
                                   "@type": "SFFloat",
+                                  "@name": "tdelta"
+                                },
+                                {
                                   "@accessType": "inputOutput",
-                                  "@value": 0
-                                }
-                              ],
-                              "-children": [
-                                {
-                                  "#comment": "<field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field>"
-                                },
-                                {
-                                  "ShaderPart": {
-                                    "@url": [
-                                      "../shaders/x3dom_flowers_chromatic.vs",
-                                      "https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs"
-                                    ],
-                                    "@type": "VERTEX"
-                                  }
-                                },
-                                {
-                                  "ShaderPart": {
-                                    "@url": [
-                                      "../shaders/common.fs",
-                                      "https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"
-                                    ],
-                                    "@type": "FRAGMENT"
-                                  }
+                                  "@type": "SFFloat",
+                                  "@name": "pdelta"
                                 }
                               ]
                             }
@@ -240,11 +238,30 @@
                             "ComposedShader": {
                               "@DEF": "x_ite",
                               "@language": "GLSL",
+                              "-children": [
+                                {
+                                  "ShaderPart": {
+                                    "@url": [
+                                      "../shaders/x_ite_flowers_chromatic.vs",
+                                      "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs"
+                                    ]
+                                  }
+                                },
+                                {
+                                  "ShaderPart": {
+                                    "@type": "FRAGMENT",
+                                    "@url": [
+                                      "../shaders/x_ite.fs",
+                                      "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"
+                                    ]
+                                  }
+                                }
+                              ],
                               "field": [
                                 {
-                                  "@name": "cube",
-                                  "@type": "SFNode",
                                   "@accessType": "inputOutput",
+                                  "@type": "SFNode",
+                                  "@name": "cube",
                                   "-children": [
                                     {
                                       "ComposedCubeMapTexture": {
@@ -254,9 +271,9 @@
                                   ]
                                 },
                                 {
-                                  "@name": "chromaticDispertion",
                                   "@accessType": "initializeOnly",
                                   "@type": "SFVec3f",
+                                  "@name": "chromaticDispertion",
                                   "@value": [
                                     0.98,
                                     1,
@@ -264,78 +281,49 @@
                                   ]
                                 },
                                 {
-                                  "@name": "bias",
-                                  "@type": "SFFloat",
                                   "@accessType": "inputOnly",
-                                  "@value": 0.5
+                                  "@type": "SFFloat",
+                                  "@name": "bias"
                                 },
                                 {
-                                  "@name": "scale",
-                                  "@type": "SFFloat",
                                   "@accessType": "inputOnly",
-                                  "@value": 0.5
+                                  "@type": "SFFloat",
+                                  "@name": "scale"
                                 },
                                 {
-                                  "@name": "power",
-                                  "@type": "SFFloat",
                                   "@accessType": "inputOnly",
-                                  "@value": 2
+                                  "@type": "SFFloat",
+                                  "@name": "power"
                                 },
                                 {
-                                  "@name": "a",
-                                  "@type": "SFFloat",
                                   "@accessType": "inputOnly",
-                                  "@value": 10
+                                  "@type": "SFFloat",
+                                  "@name": "a"
                                 },
                                 {
-                                  "@name": "b",
-                                  "@type": "SFFloat",
                                   "@accessType": "inputOnly",
-                                  "@value": 1
+                                  "@type": "SFFloat",
+                                  "@name": "b"
                                 },
                                 {
-                                  "@name": "c",
-                                  "@type": "SFFloat",
                                   "@accessType": "inputOnly",
-                                  "@value": 20
+                                  "@type": "SFFloat",
+                                  "@name": "c"
                                 },
                                 {
-                                  "@name": "d",
-                                  "@type": "SFFloat",
                                   "@accessType": "inputOnly",
-                                  "@value": 20
+                                  "@type": "SFFloat",
+                                  "@name": "d"
                                 },
                                 {
-                                  "@name": "tdelta",
-                                  "@type": "SFFloat",
                                   "@accessType": "inputOnly",
-                                  "@value": 0
+                                  "@type": "SFFloat",
+                                  "@name": "tdelta"
                                 },
                                 {
-                                  "@name": "pdelta",
-                                  "@type": "SFFloat",
                                   "@accessType": "inputOnly",
-                                  "@value": 0
-                                }
-                              ],
-                              "-children": [
-                                {
-                                  "ShaderPart": {
-                                    "@url": [
-                                      "../shaders/x_ite_flowers_chromatic.vs",
-                                      "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs"
-                                    ],
-                                    "@type": "VERTEX"
-                                  }
-                                },
-                                {
-                                  "ShaderPart": {
-                                    "@url": [
-                                      "../shaders/common.fs",
-                                      "https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"
-                                    ],
-                                    "@type": "FRAGMENT"
-                                  }
+                                  "@type": "SFFloat",
+                                  "@name": "pdelta"
                                 }
                               ]
                             }
@@ -343,69 +331,15 @@
                         ],
                         "-texture": {
                           "ComposedCubeMapTexture": {
-                            "@DEF": "texture",
-                            "-backTexture": {
-                              "ImageTexture": {
-                                "@DEF": "backShader",
-                                "@url": [
-                                  "../resources/images/all_probes/beach_cross/beach_back.png",
-                                  "https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_back.png"
-                                ]
-                              }
-                            },
-                            "-bottomTexture": {
-                              "ImageTexture": {
-                                "@DEF": "bottomShader",
-                                "@url": [
-                                  "../resources/images/all_probes/beach_cross/beach_bottom.png",
-                                  "https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_bottom.png"
-                                ]
-                              }
-                            },
-                            "-frontTexture": {
-                              "ImageTexture": {
-                                "@DEF": "frontShader",
-                                "@url": [
-                                  "../resources/images/all_probes/beach_cross/beach_front.png",
-                                  "https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_front.png"
-                                ]
-                              }
-                            },
-                            "-leftTexture": {
-                              "ImageTexture": {
-                                "@DEF": "leftShader",
-                                "@url": [
-                                  "../resources/images/all_probes/beach_cross/beach_left.png",
-                                  "https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_left.png"
-                                ]
-                              }
-                            },
-                            "-rightTexture": {
-                              "ImageTexture": {
-                                "@DEF": "rightShader",
-                                "@url": [
-                                  "../resources/images/all_probes/beach_cross/beach_right.png",
-                                  "https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_right.png"
-                                ]
-                              }
-                            },
-                            "-topTexture": {
-                              "ImageTexture": {
-                                "@DEF": "topShader",
-                                "@url": [
-                                  "../resources/images/all_probes/beach_cross/beach_top.png",
-                                  "https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_top.png"
-                                ]
-                              }
-                            }
+                            "@DEF": "texture"
                           }
                         }
                       }
+                    },
+                    {
+                      "Sphere": {}
                     }
-                  ],
-                  "-geometry": {
-                    "Sphere": {}
-                  }
+                  ]
                 }
               }
             ]
@@ -417,9 +351,9 @@
             "@directOutput": true,
             "field": [
               {
-                "@name": "frontUrls",
-                "@type": "MFString",
                 "@accessType": "initializeOnly",
+                "@type": "MFString",
+                "@name": "frontUrls",
                 "@value": [
                   "../resources/images/all_probes/beach_cross/beach_front.png",
                   "../resources/images/all_probes/building_cross/building_front.png",
@@ -433,9 +367,9 @@
                 ]
               },
               {
-                "@name": "backUrls",
-                "@type": "MFString",
                 "@accessType": "initializeOnly",
+                "@type": "MFString",
+                "@name": "backUrls",
                 "@value": [
                   "../resources/images/all_probes/beach_cross/beach_back.png",
                   "../resources/images/all_probes/building_cross/building_back.png",
@@ -449,9 +383,9 @@
                 ]
               },
               {
-                "@name": "leftUrls",
-                "@type": "MFString",
                 "@accessType": "initializeOnly",
+                "@type": "MFString",
+                "@name": "leftUrls",
                 "@value": [
                   "../resources/images/all_probes/beach_cross/beach_left.png",
                   "../resources/images/all_probes/building_cross/building_left.png",
@@ -465,9 +399,9 @@
                 ]
               },
               {
-                "@name": "rightUrls",
-                "@type": "MFString",
                 "@accessType": "initializeOnly",
+                "@type": "MFString",
+                "@name": "rightUrls",
                 "@value": [
                   "../resources/images/all_probes/beach_cross/beach_right.png",
                   "../resources/images/all_probes/building_cross/building_right.png",
@@ -481,9 +415,9 @@
                 ]
               },
               {
-                "@name": "topUrls",
-                "@type": "MFString",
                 "@accessType": "initializeOnly",
+                "@type": "MFString",
+                "@name": "topUrls",
                 "@value": [
                   "../resources/images/all_probes/beach_cross/beach_top.png",
                   "../resources/images/all_probes/building_cross/building_top.png",
@@ -497,9 +431,9 @@
                 ]
               },
               {
-                "@name": "bottomUrls",
-                "@type": "MFString",
                 "@accessType": "initializeOnly",
+                "@type": "MFString",
+                "@name": "bottomUrls",
                 "@value": [
                   "../resources/images/all_probes/beach_cross/beach_bottom.png",
                   "../resources/images/all_probes/building_cross/building_bottom.png",
@@ -513,69 +447,66 @@
                 ]
               },
               {
-                "@name": "front",
-                "@type": "MFString",
-                "@accessType": "inputOutput"
-              },
-              {
-                "@name": "back",
-                "@type": "MFString",
-                "@accessType": "inputOutput"
-              },
-              {
-                "@name": "left",
-                "@type": "MFString",
-                "@accessType": "inputOutput"
-              },
-              {
-                "@name": "right",
-                "@type": "MFString",
-                "@accessType": "inputOutput"
-              },
-              {
-                "@name": "top",
-                "@type": "MFString",
-                "@accessType": "inputOutput"
-              },
-              {
-                "@name": "bottom",
-                "@type": "MFString",
-                "@accessType": "inputOutput"
-              },
-              {
-                "@name": "set_fraction",
-                "@type": "SFFloat",
-                "@accessType": "inputOnly"
-              },
-              {
-                "@name": "old",
-                "@type": "SFInt32",
                 "@accessType": "inputOutput",
+                "@type": "MFString",
+                "@name": "front"
+              },
+              {
+                "@accessType": "inputOutput",
+                "@type": "MFString",
+                "@name": "back"
+              },
+              {
+                "@accessType": "inputOutput",
+                "@type": "MFString",
+                "@name": "left"
+              },
+              {
+                "@accessType": "inputOutput",
+                "@type": "MFString",
+                "@name": "right"
+              },
+              {
+                "@accessType": "inputOutput",
+                "@type": "MFString",
+                "@name": "top"
+              },
+              {
+                "@accessType": "inputOutput",
+                "@type": "MFString",
+                "@name": "bottom"
+              },
+              {
+                "@accessType": "inputOnly",
+                "@type": "SFFloat",
+                "@name": "set_fraction"
+              },
+              {
+                "@accessType": "inputOutput",
+                "@type": "SFInt32",
+                "@name": "old",
                 "@value": -1
               }
             ],
             "#sourceCode": [
-              "ecmascript:",
-              "        function set_fraction( f, tm ) {",
-              "            var side = Math.floor(f*frontUrls.length);",
-              "            if (side > frontUrls.length-1) {",
-              "                side = 0;",
-              "            }",
-              "            if (side != old) {",
-              "                    old = side;",
-              "                    front[0] = frontUrls[side];",
-              "                    back[0] = backUrls[side];",
-              "                    left[0] = leftUrls[side];",
-              "                    right[0] = rightUrls[side];",
-              "                    top[0] = topUrls[side];",
-              "                    bottom[0] = bottomUrls[side];",
-              "            }",
+              "ecmascript:\r",
+              "        function set_fraction( f, tm ) {\r",
+              "            var side = Math.floor(f*frontUrls.length);\r",
+              "            if (side > frontUrls.length-1) {\r",
+              "                side = 0;\r",
+              "            }\r",
+              "            if (side != old) {\r",
+              "                    old = side;\r",
+              "                    front[0] = frontUrls[side];\r",
+              "                    back[0] = backUrls[side];\r",
+              "                    left[0] = leftUrls[side];\r",
+              "                    right[0] = rightUrls[side];\r",
+              "                    top[0] = topUrls[side];\r",
+              "                    bottom[0] = bottomUrls[side];\r",
+              "            }\r",
               "        }"
             ]
           }
-        },
-        {
-          "#comment": "<TimeSensor DEF=\"Clock\" cycleInterval=\"45\" loop='true'/> <ROUTE fromNode='Clock' fromField='fraction_changed' toNode='UrlSelector' toField='set_fraction'/> <ROUTE fromNode='UrlSelector' fromField='front' toNode='background' toField='frontUrl'/> <ROUTE fromNode='UrlSelector' fromField='back' toNode='background' toField='backUrl'/> <ROUTE fromNode='UrlSelector' fromField='left' toNode='background' toField='leftUrl'/> <ROUTE fromNode='UrlSelector' fromField='right' toNode='background' toField='rightUrl'/> <ROUTE fromNode='UrlSelector' fromField='top' toNode='background' toField='topUrl'/> <ROUTE fromNode='UrlSelector' fromField='bottom' toNode='background' toField='bottomUrl'/> <ROUTE fromNode='UrlSelector' fromField='front' toNode='frontShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='back' toNode='backShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='left' toNode='leftShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='right' toNode='rightShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='top' toNode='topShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='bottom' toNode='bottomShader' toField='url'/>"
         },
         {
           "Script": {
@@ -583,86 +514,84 @@
             "@directOutput": true,
             "field": [
               {
-                "@name": "set_fraction",
+                "@accessType": "inputOnly",
                 "@type": "SFFloat",
-                "@accessType": "inputOnly"
+                "@name": "set_fraction"
               },
               {
-                "@name": "a",
-                "@type": "SFFloat",
                 "@accessType": "inputOutput",
+                "@type": "SFFloat",
+                "@name": "a",
                 "@value": 10
               },
               {
-                "@name": "b",
-                "@type": "SFFloat",
                 "@accessType": "inputOutput",
+                "@type": "SFFloat",
+                "@name": "b",
                 "@value": 1
               },
               {
+                "@accessType": "inputOutput",
+                "@type": "SFFloat",
                 "@name": "c",
-                "@type": "SFFloat",
-                "@accessType": "inputOutput",
                 "@value": 20
               },
               {
+                "@accessType": "inputOutput",
+                "@type": "SFFloat",
                 "@name": "d",
-                "@type": "SFFloat",
-                "@accessType": "inputOutput",
                 "@value": 20
               },
               {
-                "@name": "tdelta",
-                "@type": "SFFloat",
                 "@accessType": "inputOutput",
-                "@value": 0
+                "@type": "SFFloat",
+                "@name": "tdelta"
               },
               {
-                "@name": "pdelta",
-                "@type": "SFFloat",
                 "@accessType": "inputOutput",
-                "@value": 0
+                "@type": "SFFloat",
+                "@name": "pdelta"
               }
             ],
             "#sourceCode": [
-              "ecmascript:",
-              "",
-              "function set_fraction() {",
-              "\tvar choice = Math.floor(Math.random() * 4);",
-              "\tswitch (choice) {",
-              "\tcase 0:",
-              "\t\ta = a + Math.floor(Math.random() * 2) * 2 - 1;",
-              "\t\tbreak;",
-              "\tcase 1:",
-              "\t\tb = b + Math.floor(Math.random() * 2) * 2 - 1;",
-              "\t\tbreak;",
-              "\tcase 2:",
-              "\t\tc = c + Math.floor(Math.random() * 2) * 2 - 1;",
-              "\t\tbreak;",
-              "\tcase 3:",
-              "\t\td = d + Math.floor(Math.random() * 2) * 2 - 1;",
-              "\t\tbreak;",
-              "\t}",
-              "\ttdelta = tdelta + 0.5;",
-              "\tpdelta = pdelta + 0.5;",
-              "\tif (a < 1) {",
-              "\t\ta = 10;",
-              "\t}",
-              "\tif (b < 1) {",
-              "\t\tb = 10;",
-              "\t}",
-              "\tif (c < 1) {",
-              "\t\tc = 4;",
-              "\t}",
-              "\tif (c > 20) {",
-              "\t\tc = 4;",
-              "\t}",
-              "\tif (d < 1) {",
-              "\t\td = 4;",
-              "\t}",
-              "\tif (d > 20) {",
-              "\t\td = 4;",
-              "\t}",
+              "ecmascript:\r",
+              "\r",
+              "function set_fraction() {\r",
+              "\tvar choice = Math.floor(Math.random() * 4);\r",
+              "\tswitch (choice) {\r",
+              "\tcase 0:\r",
+              "\t\ta = a + Math.floor(Math.random() * 2) * 2 - 1;\r",
+              "\t\tbreak;\r",
+              "\tcase 1:\r",
+              "\t\tb = b + Math.floor(Math.random() * 2) * 2 - 1;\r",
+              "\t\tbreak;\r",
+              "\tcase 2:\r",
+              "\t\tc = c + Math.floor(Math.random() * 2) * 2 - 1;\r",
+              "\t\tbreak;\r",
+              "\tcase 3:\r",
+              "\t\td = d + Math.floor(Math.random() * 2) * 2 - 1;\r",
+              "\t\tbreak;\r",
+              "\t}\r",
+              "\ttdelta = tdelta + 0.5;\r",
+              "\tpdelta = pdelta + 0.5;\r",
+              "\tif (a < 1) {\r",
+              "\t\ta = 10;\r",
+              "\t}\r",
+              "\tif (b < 1) {\r",
+              "\t\tb = 10;\r",
+              "\t}\r",
+              "\tif (c < 1) {\r",
+              "\t\tc = 4;\r",
+              "\t}\r",
+              "\tif (c > 20) {\r",
+              "\t\tc = 4;\r",
+              "\t}\r",
+              "\tif (d < 1) {\r",
+              "\t\td = 4;\r",
+              "\t}\r",
+              "\tif (d > 20) {\r",
+              "\t\td = 4;\r",
+              "\t}\r",
               "}"
             ]
           }

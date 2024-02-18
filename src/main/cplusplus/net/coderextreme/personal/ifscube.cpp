@@ -4,7 +4,7 @@
 #define WINAPI
 #define AFX_EXT_CLASS
 #define EXPORT32
-#include "/c/x3d-code/www.web3d.org/x3d/languages/cpp/X3DLib/X3DLib.h"
+#include "C:/x3d-code/www.web3d.org/x3d/stylesheets/cpp/concretes.h"
 int main(int argc, char ** argv) {
 CX3DScene m_pScene;
 CBrowser browser = X3D.getBrowser();
@@ -12,7 +12,7 @@ CX3D* X3D0 = new CX3D();
 CGroup* group = (CGroup*)(m_pScene.createNode("Group"));
 group->addChildren(X3D0);
 X3D0->setProfile("Interchange");
-X3D0->setVersion("4.0");
+X3D0->setVersion("3.3");
 Chead* head1 = new Chead();
 Cmeta* meta2 = new Cmeta();
 meta2->setName("title");
@@ -21,7 +21,7 @@ head1->addMeta(*meta2);
 
 Cmeta* meta3 = new Cmeta();
 meta3->setName("identifier");
-meta3->setContent("http://coderextreme.net/X3DJSONLD/src/main/personal/ifscube.x3d");
+meta3->setContent("http://coderextreme.net/X3DJSONLD/src/main/data/ifscube.x3d");
 head1->addMeta(*meta3);
 
 Cmeta* meta4 = new Cmeta();

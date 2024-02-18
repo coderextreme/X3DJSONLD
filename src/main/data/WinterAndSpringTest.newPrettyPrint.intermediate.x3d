@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+  <head>
+    <component name='HAnim' level='1'/>
+    <meta content='WinterAndSpringTest.x3d' name='title'/>
+    <meta content='3D Male Scan combined with JoeKick, 3 Korean characters Ru,Mi,Min from HAnim, CCBYSA music plus designs from Rhino. MaleScan modified in Cinema4D for articulation and translations, geometric values from Rhino, txt file for centers. Models vary. HAnim version 2 LOA-3 Humanoids with textured skin, 3 Korean characters, plus scan. Math for lines and intersections.' name='description'/>
+    <meta content='Carol McDonald, Katy Schildmeyer, Joe D. Williams and Don Brutzman' name='creator'/>
+    <meta content='May through September 2023' name='created'/>
+    <meta content='2 June 2023' name='modified'/>
+    <meta content='https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/KoreanCharacter09Ru.x3d' name='reference'/>
+    <meta content='https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/KoreanCharacter10Mi.x3d' name='reference'/>
+    <meta content='https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/KoreanCharacter11Min.x3d' name='reference'/>
+    <meta content='https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/WinterAndSpringTest.x3d' name='identifier'/>
+    <meta content='../license.html' name='license'/>
+  </head>
+  <Scene>
+    <WorldInfo info='"X3D Humanoid LOA3 skeleton plus others" "Lots points"' title='X3D HANIM LOA3 (modified) Skeleton, Lots points Skin, texcoords, Displacer, translations'/>
+    <NavigationInfo DEF='Start_NavigationInfo' avatarSize='0.25 1.6 0.75' headlight='false' transitionType='"LINEAR"' type='"EXAMINE" "ANY"'/>
+    <Viewpoint centerOfRotation='0 1 0' description='Male' position='0 1 -2'/>
+    <Background DEF='gray_Background'/>
+    <Background DEF='dark_gray_Background'/>
+    <Background DEF='black_Background'/>
+    <Background DEF='blue_Background'/>
+    <SpotLight DEF='light1' ambientIntensity='0.7' beamWidth='1.5' color='0.8 0.8 1' cutOffAngle='0.6' direction='0 0 0' location='0 3 3' radius='10.0'/>
+    <PointLight DEF='light2' ambientIntensity='0.7' color='0.8 0.8 1' location='0 10 -7'/>
+    <!-- External from the Humanoid viewpoints -->
+    <Viewpoint DEF='Scene_InclinedView' centerOfRotation='0 0.85 0' description='Scene_Inclined View' orientation='-0.113 0.993 0.0347 0.671' position='1.62 1.05 3.06'/>
+    <Viewpoint DEF='Scene_IFrontView' centerOfRotation='0 0.8 0' description='Scene_Front View' position='0 0.8 2.58'/>
+    <Viewpoint DEF='Scene_OldMan_ISideView' centerOfRotation='0 0.8 0' description='Scene_Side View' orientation='0 1 0 1.5708' position='-2.6 1.5 1'/>
+    <Viewpoint DEF='Scene_ISideView' centerOfRotation='0 0.8 0' description='Scene_Side View' orientation='0 1 0 1.5708' position='-5 1.5 1'/>
+    <Viewpoint DEF='Scene_Full_ISideView' centerOfRotation='0 0.8 0' description='Scene_Side View' orientation='0 1 0 1.5708' position='-10 1.5 1'/>
+    <Viewpoint DEF='Scene_OneBush_ISideView' centerOfRotation='0 0.8 0' description='Scene_Side View' orientation='0 1 0 1.5708' position='-20 1.5 1'/>
+    <Viewpoint DEF='Scene_TwoBush_ISideView' centerOfRotation='0 0.8 0' description='Scene_Side View' orientation='0 1 0 1.5708' position='-10 1.5 1'/>
+    <Viewpoint DEF='Scene_BackView' centerOfRotation='0 1.5 0' description='Scene_Back View' orientation='0 1 0 3.14' position='0 1.5 -5'/>
+    <Viewpoint DEF='Scene_OldMan_BackView' centerOfRotation='0 1.5 0' description='Scene_Back View' orientation='0 1 0 3.14' position='0 1.5 -2.5'/>
+    <Viewpoint DEF='Scene_Full_BackView' centerOfRotation='0 1.5 0' description='Scene_Back View' orientation='0 1 15 3.14' position='0 1.5 -20'/>
+    <Viewpoint DEF='Scene_TopView' centerOfRotation='0 1.5 0' description='Scene_Top View' orientation='1 0 0 -1.5708' position='0 3.5 0'/>
+    <Group DEF='OldMan_Humanoid'>
+      <HAnimHumanoid DEF='OldMan' name='Walk' loa='3' version='2.0'>
+        <MetadataSet name='warnings' containerField='metadata' reference='HAnim'>
+          <MetadataString name='SymmetricalLeftRight' reference='correction options: ignore, warn, average, left, right, largest, smallest' value='"ignore"'/>
+        </MetadataSet>
+        <HAnimJoint DEF='OldMan_humanoid_root' name='humanoid_root' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+          <!-- TODO center='x 0.9155 z' -->
+          <HAnimSegment DEF='OldMan_sacrum' name='sacrum' momentsOfInertia='0 0 0 0 0 0 0 0 0'>
+            <HAnimSite DEF='OldMan_RootBack_view' name='RootBack_view'>
+              <Transform DEF='hanimcordsys' scale='0.175 0.175 0.175'>
+                <Viewpoint DEF='ViewBodyRootAxes' description='Joe_HAnim Root HAnimSite Coordinate Axes View'/>
+                <Shape DEF='AxisLinesShape'>
+                  <!-- RGB lines showing XYZ axes -->
+                  <IndexedLineSet colorIndex='0 1 2' colorPerVertex='false' coordIndex='0 1 -1 0 2 -1 0 3 -1'>
+                    <Color color='1 0 0 0 0.6 0 0 0 1'/>
+                    <Coordinate point='0 0 0 1 0 0 0 1 0 0 0 1'/>
+                  </IndexedLineSet>
+                </Shape>
+                <Shape DEF='OldMan_Shape'>
+                  <Appearance DEF='OldMan_skin_Appearance'>
+                    <Material DEF='OldMan_skin_Material' diffuseColor='0.3 0.3 0.6' emissiveColor='0.3 0.3 0.6'/>
+                    <ImageTexture DEF='OldManSkinImageTexture' url='"OldManBodyTexture29.png" "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/JoeBodyTexture29.png"'/>
+                    <TextureTransform DEF='KickTextureTransform'/>
+                  </Appearance>
+                  <IndexedFaceSet DEF='OldMan_skin_IndexedFaceSet'/>
+                </Shape>
+              </Transform>
+            </HAnimSite>
+          </HAnimSegment>
+          <HAnimJoint DEF='OldMan_sacroiliac' name='sacroiliac' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+            <!-- TODO center='x 0.952 z' -->
+            <!-- High hip -->
+            <HAnimJoint DEF='OldMan_l_hip' name='l_hip' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+              <!-- TODO center='x 0.879 z' Low hip -->
+              <HAnimJoint DEF='OldMan_l_knee' name='l_knee' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+                <!-- center='x 0.461 z' -->
+                <HAnimJoint DEF='OldMan_l_talocrural' name='l_talocrural' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+                  <!-- Ankle -->
+                  <HAnimJoint DEF='Joe_l_tarsometatarsal_2' name='l_tarsometatarsal_2' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+                    <HAnimJoint DEF='Joe_l_metatarsophalangeal_2' name='l_metatarsophalangeal_2' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+                      <HAnimJoint DEF='Joe_l_tarsal_distal_interphalangeal_2' name='l_tarsal_distal_interphalangeal_2' center='0.115 0.02 0.122' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'/>
+                    </HAnimJoint>
+                  </HAnimJoint>
+                </HAnimJoint>
+              </HAnimJoint>
+              <HAnimJoint DEF='OldMan_r_hip' name='l_hip' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+                <!-- Low hip -->
+                <HAnimJoint DEF='OldMan_r_knee' name='l_knee' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'/>
+                <HAnimJoint DEF='OldMan_r_talocrural' name='l_talocrural' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+                  <!-- Ankle -->
+                  <HAnimJoint DEF='Joe_r_tarsometatarsal_2' name='r_tarsometatarsal_2' center='-0.1 0.015 -0.01' llimit='0 0 0' skinCoordIndex='374 375 376' skinCoordWeight='1 1 1' stiffness='0 0 0' ulimit='0 0 0'>
+                    <HAnimJoint DEF='Joe_r_metatarsophalangeal_2' name='r_metatarsophalangeal_2' center='-0.115 0.037 0.09' llimit='0 0 0' skinCoordIndex='377 378 379 380' skinCoordWeight='1 1 1 1' stiffness='0 0 0' ulimit='0 0 0'>
+                      <HAnimJoint DEF='Joe_r_tarsal_distal_interphalangeal_2' name='r_tarsal_distal_interphalangeal_2' center='-0.1 0.01 0.14' llimit='0 0 0' skinCoordIndex='381 382 383 384 385 386 387 388 389' skinCoordWeight='1 1 1 1 1 1 1 1 1' stiffness='0 0 0' ulimit='0 0 0'/>
+                    </HAnimJoint>
+                  </HAnimJoint>
+                </HAnimJoint>
+              </HAnimJoint>
+            </HAnimJoint>
+            <HAnimJoint DEF='OldMan_vl5' name='vl5' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+              <!-- Abdomen -->
+              <HAnimJoint DEF='MeshName_vl4' name='vl4' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+                <HAnimJoint DEF='OldMan_vl3' name='vl3' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+                  <!-- center='x 1.098 z' -->
+                  <!-- Low=' ist=' -->
+                  <HAnimJoint DEF='MeshName_vl2' name='vl2' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+                    <HAnimJoint DEF='OldMan_vl1' name='vl1' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+                      <!-- center='x 1.171 z' -->
+                      <!-- High waist -->
+                      <HAnimJoint DEF='MeshName_vt12' name='vt12' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+                        <HAnimJoint DEF='OldMan_vt11' name='vt11' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+                          <!-- Ribcage=' -->
+                          <HAnimJoint DEF='MeshName_vt10' name='vt10' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+                            <HAnimJoint DEF='MeshName_vt9' name='vt9' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+                              <HAnimJoint DEF='MeshName_vt8' name='vt8' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+                                <HAnimJoint DEF='OldMan_vt7' name='vt7' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+                                  <!-- Sternum=' -->
+                                  <HAnimJoint DEF='MeshName_vt6' name='vt6' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+                                    <HAnimJoint DEF='MeshName_vt5' name='vt5' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+                                      <HAnimJoint DEF='OldMan_vt4' name='vt4' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+                                        <!-- Chest -->
+                                        <HAnimJoint DEF='MeshName_vt3' name='vt3' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+                                          <HAnimJoint DEF='OldMan_vt2' name='vt2' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+                                            <!-- High Chest -->
+                                            <HAnimJoint DEF='MeshName_vt1' name='vt1' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+                                              <HAnimJoint DEF='OldMan_vc7' name='vc7' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+                                                <!-- Low neck -->
+                                                <HAnimJoint DEF='MeshName_vc6' name='vc6' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+                                                  <HAnimJoint DEF='MeshName_vc5' name='vc5' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+                                                    <HAnimJoint DEF='OldMan_vc4' name='vc4' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+                                                      <!-- Mid=' ck=' -->
+                                                      <HAnimJoint DEF='MeshName_vc3' name='vc3' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+                                                        <HAnimJoint DEF='MeshName_vc2' name='vc2' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+                                                          <HAnimJoint DEF='OldMan_vc1' name='vc1' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+                                                            <!-- High=' ck=' -->
+                                                            <HAnimJoint DEF='OldMan_skullbase' name='skullbase' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+                                                              <HAnimJoint DEF='OldMan_l_eyelid_joint' name='l_eyelid_joint' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'/>
+                                                              <HAnimJoint DEF='OldMan_l_eyeball_joint' name='l_eyeball_joint' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'/>
+                                                              <HAnimJoint DEF='OldMan_l_eyebrow_joint' name='l_eyebrow_joint' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'/>
+                                                              <HAnimJoint DEF='OldMan_r_eyelid_joint' name='r_eyelid_joint' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'/>
+                                                              <HAnimJoint DEF='OldMan_r_eyeball_joint' name='r_eyeball_joint' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'/>
+                                                              <HAnimJoint DEF='OldMan_r_eyebrow_joint' name='r_eyebrow_joint' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'/>
+                                                              <HAnimJoint DEF='OldMan_temporomandibular' name='temporomandibular' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'/>
+                                                              <HAnimDisplacer DEF='Joe_skull_tip_raiser_action' name='skull_tip_raiser_action' coordIndex='0 1 2 3 4 5 6 7 8 9' displacements='0 0.15 0 0 0 0.15 -0.1 0 0.15 0.1 0 0.05 0 -0.02 0.05 -0.15 0 0 -0.05 0 0 0.15 0 0 0.05 0 0 0 0 -0.15'/>
+                                                            </HAnimJoint>
+                                                          </HAnimJoint>
+                                                        </HAnimJoint>
+                                                      </HAnimJoint>
+                                                    </HAnimJoint>
+                                                  </HAnimJoint>
+                                                </HAnimJoint>
+                                              </HAnimJoint>
+                                              <HAnimJoint DEF='OldMan_l_acromioclavicular' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+                                                <HAnimJoint DEF='OldMan_l_sternoclavicular' name='l_acromioclavicular' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+                                                  <HAnimJoint DEF='OldMan_l_shoulder' name='l_shoulder' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+                                                    <HAnimJoint DEF='OldMan_l_elbow' name='l_elbow' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+                                                      <HAnimJoint DEF='OldMan_l_radiocarpal' name='l_radiocarpal' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+                                                        <HAnimJoint DEF='OldMan_l_carpometacarpal_1' name='l_carpometacarpal_1' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+                                                          <HAnimJoint DEF='OldMan_l_metacarpophalangeal_1' name='l_metacarpophalangeal_1' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+                                                            <HAnimJoint DEF='OldMan_l_carpal_interphalangeal_1' name='l_carpal_interphalangeal_1' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'/>
+                                                          </HAnimJoint>
+                                                          <HAnimJoint DEF='OldMan_l_carpometacarpal_2' name='l_carpometacarpal_2' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+                                                            <HAnimJoint DEF='OldMan_l_metacarpophalangeal_2' name='l_metacarpophalangeal_2' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+                                                              <HAnimJoint DEF='OldMan_l_carpal_proximal_interphalangeal_2' name='l_carpal_proximal_interphalangeal_2' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+                                                                <HAnimJoint DEF='OldMan_l_carpal_distal_interphalangeal_2' name='l_carpal_distal_interphalangeal_2' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'/>
+                                                              </HAnimJoint>
+                                                            </HAnimJoint>
+                                                            <HAnimJoint DEF='OldMan_l_carpometacarpal_3' name='l_carpometacarpal_3' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+                                                              <HAnimJoint DEF='OldMan_l_metacarpophalangeal_3' name='l_metacarpophalangeal_3' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+                                                                <HAnimJoint DEF='OldMan_l_carpal_proximal_interphalangeal_3' name='l_carpal_proximal_interphalangeal_3' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+                                                                  <HAnimJoint DEF='OldMan_l_carpal_distal_interphalangeal_3' name='l_carpal_distal_interphalangeal_3' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'/>
+                                                                </HAnimJoint>
+                                                              </HAnimJoint>
+                                                              <HAnimJoint DEF='OldMan_l_carpometacarpal_4' name='l_carpometacarpal_4' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+                                                                <HAnimJoint DEF='OldMan_l_metacarpophalangeal_4' name='l_metacarpophalangeal_4' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+                                                                  <HAnimJoint DEF='OldMan_l_carpal_proximal_interphalangeal_4' name='l_carpal_proximal_interphalangeal_4' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+                                                                    <HAnimJoint DEF='OldMan_l_carpal_distal_interphalangeal_4' name='l_carpal_distal_interphalangeal_4' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'/>
+                                                                  </HAnimJoint>
+                                                                </HAnimJoint>
+                                                                <HAnimJoint DEF='OldMan_l_carpometacarpal_5' name='l_carpometacarpal_5' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+                                                                  <HAnimJoint DEF='OldMan_l_metacarpophalangeal_5' name='l_metacarpophalangeal_5' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+                                                                    <HAnimJoint DEF='OldMan_l_carpal_proximal_interphalangeal_5' name='l_carpal_proximal_interphalangeal_5' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+                                                                      <HAnimJoint DEF='OldMan_l_carpal_distal_interphalangeal_5' name='l_carpal_distal_interphalangeal_5' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'/>
+                                                                    </HAnimJoint>
+                                                                  </HAnimJoint>
+                                                                </HAnimJoint>
+                                                              </HAnimJoint>
+                                                            </HAnimJoint>
+                                                          </HAnimJoint>
+                                                        </HAnimJoint>
+                                                        <HAnimJoint DEF='OldMan_r_sternoclavicular' name='r_sternoclavicular' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+                                                          <HAnimJoint DEF='OldMan_r_acromioclavicular' name='r_acromioclavicular' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+                                                            <HAnimJoint DEF='OldMan_r_shoulder' name='r_shoulder' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+                                                              <HAnimJoint DEF='OldMan_r_elbow' name='r_elbow' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+                                                                <HAnimJoint DEF='OldMan_r_radiocarpal' name='r_radiocarpal' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+                                                                  <HAnimJoint DEF='OldMan_r_carpometacarpal_1' name='r_carpometacarpal_1' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+                                                                    <HAnimJoint DEF='OldMan_r_metacarpophalangeal_1' name='r_metacarpophalangeal_1' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+                                                                      <HAnimJoint DEF='OldMan_r_carpal_interphalangeal_1' name='r_carpal_interphalangeal_1' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'/>
+                                                                    </HAnimJoint>
+                                                                    <HAnimJoint DEF='OldMan_r_carpometacarpal_2' name='r_carpometacarpal_2' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+                                                                      <HAnimJoint DEF='OldMan_r_metacarpophalangeal_2' name='r_metacarpophalangeal_2' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+                                                                        <HAnimJoint DEF='OldMan_r_carpal_proximal_interphalangeal_2' name='r_carpal_proximal_interphalangeal_2' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+                                                                          <HAnimJoint DEF='OldMan_r_carpal_distal_interphalangeal_2' name='r_carpal_distal_interphalangeal_2' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'/>
+                                                                        </HAnimJoint>
+                                                                      </HAnimJoint>
+                                                                      <HAnimJoint DEF='OldMan_r_carpometacarpal_3' name='r_carpometacarpal_3' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+                                                                        <HAnimJoint DEF='OldMan_r_metacarpophalangeal_3' name='r_metacarpophalangeal_3' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+                                                                          <HAnimJoint DEF='OldMan_r_carpal_proximal_interphalangeal_3' name='r_carpal_proximal_interphalangeal_3' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+                                                                            <HAnimJoint DEF='OldMan_r_carpal_distal_interphalangeal_3' name='r_carpal_distal_interphalangeal_3' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'/>
+                                                                          </HAnimJoint>
+                                                                        </HAnimJoint>
+                                                                        <HAnimJoint DEF='OldMan_r_carpometacarpal_4' name='r_carpometacarpal_4' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+                                                                          <HAnimJoint DEF='OldMan_r_metacarpophalangeal_4' name='r_metacarpophalangeal_4' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+                                                                            <HAnimJoint DEF='OldMan_r_carpal_proximal_interphalangeal_4' name='r_carpal_proximal_interphalangeal_4' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+                                                                              <HAnimJoint DEF='OldMan_r_carpal_distal_interphalangeal_4' name='r_carpal_distal_interphalangeal_4' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'/>
+                                                                            </HAnimJoint>
+                                                                          </HAnimJoint>
+                                                                          <HAnimJoint DEF='OldMan_r_carpometacarpal_5' name='r_carpometacarpal_5' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+                                                                            <HAnimJoint DEF='OldMan_r_metacarpophalangeal_5' name='r_metacarpophalangeal_5' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+                                                                              <HAnimJoint DEF='OldMan_r_carpal_proximal_interphalangeal_5' name='r_carpal_proximal_interphalangeal_5' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+                                                                                <HAnimJoint DEF='OldMan_r_carpal_distal_interphalangeal_5' name='r_carpal_distal_interphalangeal_5' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'/>
+                                                                              </HAnimJoint>
+                                                                            </HAnimJoint>
+                                                                          </HAnimJoint>
+                                                                        </HAnimJoint>
+                                                                      </HAnimJoint>
+                                                                    </HAnimJoint>
+                                                                  </HAnimJoint>
+                                                                </HAnimJoint>
+                                                              </HAnimJoint>
+                                                            </HAnimJoint>
+                                                          </HAnimJoint>
+                                                        </HAnimJoint>
+                                                      </HAnimJoint>
+                                                    </HAnimJoint>
+                                                  </HAnimJoint>
+                                                </HAnimJoint>
+                                              </HAnimJoint>
+                                            </HAnimJoint>
+                                          </HAnimJoint>
+                                        </HAnimJoint>
+                                      </HAnimJoint>
+                                    </HAnimJoint>
+                                  </HAnimJoint>
+                                </HAnimJoint>
+                              </HAnimJoint>
+                            </HAnimJoint>
+                          </HAnimJoint>
+                        </HAnimJoint>
+                      </HAnimJoint>
+                    </HAnimJoint>
+                  </HAnimJoint>
+                </HAnimJoint>
+              </HAnimJoint>
+            </HAnimJoint>
+          </HAnimJoint>
+        </HAnimJoint>
+      </HAnimHumanoid>
+    </Group>
+  </Scene>
+</X3D>

@@ -4,7 +4,7 @@ import '../x3d.dart';
 var X3D0 =  X3D(
 
       profile_ : SFString('Immersive'),
-      version_ : SFString('4.0'),
+      version_ : SFString('3.3'),
       head_ : 
         head(
           meta_ : [
@@ -34,18 +34,21 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('identifier'),
-              content_ : SFString('https://coderextreme.net/x3d/qq3.x3d'))]),
+              content_ : SFString('https://coderextreme.net/x3d/qq3.x3d')),
+
+            meta(
+              name_ : SFString('generator'),
+              content_ : SFString('manual'))]),
       Scene_ : 
         Scene(
           children_ : [
             ProtoDeclare(
               name_ : SFString('Process'),
-              ProtoInterface_ : 
-                ProtoInterface(),
               ProtoBody_ : 
                 ProtoBody(
                   children_ : [
                     Group(
+                      /*left*/
                       children_ : [
                         Transform(
                           scale_ : SFVec3f([SFDouble(0.5), SFDouble(0.5), SFDouble(0.5)]),
@@ -59,9 +62,10 @@ var X3D0 =  X3D(
                                       diffuseColor_ : SFColor([SFDouble(0.7), SFDouble(1), SFDouble(0)]))),
                               geometry_ : 
                                 Extrusion(
+                                  spine_ : MFVec3f([SFVec3f([-2.5,0,0]),SFVec3f([-1.5,0,0])]),
                                   creaseAngle_ : 0.785,
-                                  crossSection_ : MFVec2f([SFVec2f([1,0]),SFVec2f([0.92,-0.38]),SFVec2f([0.71,-0.71]),SFVec2f([0.38,-0.92]),SFVec2f([0,-1]),SFVec2f([-0.38,-0.92]),SFVec2f([-0.71,-0.71]),SFVec2f([-0.92,-0.38]),SFVec2f([-1,0]),SFVec2f([-0.92,0.38]),SFVec2f([-0.71,0.71]),SFVec2f([-0.38,0.92]),SFVec2f([0,1]),SFVec2f([0.38,0.92]),SFVec2f([0.71,0.71]),SFVec2f([0.92,0.38]),SFVec2f([1,0])]),
-                                  spine_ : MFVec3f([SFVec3f([-2.5,0,0]),SFVec3f([-1.5,0,0])])))),
+                                  crossSection_ : MFVec2f([SFVec2f([1,0]),SFVec2f([0.92,-0.38]),SFVec2f([0.71,-0.71]),SFVec2f([0.38,-0.92]),SFVec2f([0,-1]),SFVec2f([-0.38,-0.92]),SFVec2f([-0.71,-0.71]),SFVec2f([-0.92,-0.38]),SFVec2f([-1,0]),SFVec2f([-0.92,0.38]),SFVec2f([-0.71,0.71]),SFVec2f([-0.38,0.92]),SFVec2f([0,1]),SFVec2f([0.38,0.92]),SFVec2f([0.71,0.71]),SFVec2f([0.92,0.38]),SFVec2f([1,0])])))),
+                      /*right*/
 
                         Transform(
                           scale_ : SFVec3f([SFDouble(0.5), SFDouble(0.5), SFDouble(0.5)]),
@@ -75,15 +79,17 @@ var X3D0 =  X3D(
                                       diffuseColor_ : SFColor([SFDouble(0), SFDouble(0.7), SFDouble(1)]))),
                               geometry_ : 
                                 Extrusion(
+                                  spine_ : MFVec3f([SFVec3f([1.5,0,0]),SFVec3f([2.5,0,0])]),
                                   creaseAngle_ : 0.785,
-                                  crossSection_ : MFVec2f([SFVec2f([1,0]),SFVec2f([0.92,-0.38]),SFVec2f([0.71,-0.71]),SFVec2f([0.38,-0.92]),SFVec2f([0,-1]),SFVec2f([-0.38,-0.92]),SFVec2f([-0.71,-0.71]),SFVec2f([-0.92,-0.38]),SFVec2f([-1,0]),SFVec2f([-0.92,0.38]),SFVec2f([-0.71,0.71]),SFVec2f([-0.38,0.92]),SFVec2f([0,1]),SFVec2f([0.38,0.92]),SFVec2f([0.71,0.71]),SFVec2f([0.92,0.38]),SFVec2f([1,0])]),
-                                  spine_ : MFVec3f([SFVec3f([1.5,0,0]),SFVec3f([2.5,0,0])])))),
+                                  crossSection_ : MFVec2f([SFVec2f([1,0]),SFVec2f([0.92,-0.38]),SFVec2f([0.71,-0.71]),SFVec2f([0.38,-0.92]),SFVec2f([0,-1]),SFVec2f([-0.38,-0.92]),SFVec2f([-0.71,-0.71]),SFVec2f([-0.92,-0.38]),SFVec2f([-1,0]),SFVec2f([-0.92,0.38]),SFVec2f([-0.71,0.71]),SFVec2f([-0.38,0.92]),SFVec2f([0,1]),SFVec2f([0.38,0.92]),SFVec2f([0.71,0.71]),SFVec2f([0.92,0.38]),SFVec2f([1,0])])))),
+                      /*up*/
 
                         Transform(
                           scale_ : SFVec3f([SFDouble(0.5), SFDouble(0.5), SFDouble(0.5)]),
                           child_ : 
                             Shape(
                               USE_ : SFString('ShapeUpRight'))),
+                      /*down*/
 
                         Transform(
                           scale_ : SFVec3f([SFDouble(0.5), SFDouble(0.5), SFDouble(0.5)]),
@@ -93,8 +99,8 @@ var X3D0 =  X3D(
 
             Viewpoint(
               description_ : SFString('Process pipes'),
-              position_ : SFVec3f([SFDouble(0), SFDouble(5), SFDouble(12)]),
-              orientation_ : SFRotation([SFDouble(1), SFDouble(0), SFDouble(0), SFDouble(-0.4)])),
+              orientation_ : SFRotation([SFDouble(1), SFDouble(0), SFDouble(0), SFDouble(-0.4)]),
+              position_ : SFVec3f([SFDouble(0), SFDouble(5), SFDouble(12)])),
 
             Transform(
               translation_ : SFVec3f([SFDouble(0), SFDouble(-2.5), SFDouble(0)]),

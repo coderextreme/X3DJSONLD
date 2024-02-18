@@ -4,29 +4,30 @@ from x3d import *
 print("-->")
 import json
 model = (
-X3D(profile="Immersive", version="4.0", 
-head=head(
+X3D(profile="Immersive", version="4.0", (Pycomponent(name="HAnim", level=2),
+), 
+head=Pyhead(
 children=[
-meta(name="title", content="DesignPatternsApparelMedicalSkinLayers.x3d"),
-meta(name="description", content="Design patterns for skin and apparel using HAnim2 standard in X3D4"),
-meta(name="creator", content="Don Brutzman"),
-meta(name="creator", content="Joe D. Williams"),
-meta(name="creator", content="Dick Puk"),
-meta(name="created", content="23 December 2022"),
-meta(name="modified", content="2 July 2023"),
-meta(name="reference", content="DesignPatternsApparelVariations.txt"),
-meta(name="reference", content="HAnim2 Part 1, HAnim architecture, 4.3 Humanoid object https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/concepts.html#HumanoidObject"),
-meta(name="reference", content="HAnim2 Part 1, HAnim architecture, E.4 Multiple humanoids per file https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/Guidelines.html#MultipleHumanoidsPerFile"),
-meta(name="reference", content="X3D4 Architecture, clause 26 HAnim component, 26.3.2 HAnimHumanoid https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-DIS/Part01/components/hanim.html#HAnimHumanoid"),
-meta(name="warning", content="Under development. This template example does not produce renderable HAnim models."),
-meta(name="identifier", content="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/DesignPatternsApparelMedicalSkinLayers.x3d"),
-meta(name="generator", content="X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"),
-meta(name="license", content="../license.html"),
-meta(name="translated", content="02 September 2023"),
-meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
-meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
+Pymeta(name="title", content="DesignPatternsApparelMedicalSkinLayers.x3d"),
+Pymeta(name="description", content="Design patterns for skin and apparel using HAnim2 standard in X3D4"),
+Pymeta(name="creator", content="Don Brutzman"),
+Pymeta(name="creator", content="Joe D. Williams"),
+Pymeta(name="creator", content="Dick Puk"),
+Pymeta(name="created", content="23 December 2022"),
+Pymeta(name="modified", content="2 July 2023"),
+Pymeta(name="reference", content="DesignPatternsApparelVariations.txt"),
+Pymeta(name="reference", content="HAnim2 Part 1, HAnim architecture, 4.3 Humanoid object https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/concepts.html#HumanoidObject"),
+Pymeta(name="reference", content="HAnim2 Part 1, HAnim architecture, E.4 Multiple humanoids per file https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/Guidelines.html#MultipleHumanoidsPerFile"),
+Pymeta(name="reference", content="X3D4 Architecture, clause 26 HAnim component, 26.3.2 HAnimHumanoid https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-DIS/Part01/components/hanim.html#HAnimHumanoid"),
+Pymeta(name="warning", content="Under development. This template example does not produce renderable HAnim models."),
+Pymeta(name="identifier", content="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/DesignPatternsApparelMedicalSkinLayers.x3d"),
+Pymeta(name="generator", content="X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"),
+Pymeta(name="license", content="../license.html"),
+Pymeta(name="translated", content="30 December 2023"),
+Pymeta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
+Pymeta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
-Scene=Scene(children=[
+Scene=PyScene(children=[
 WorldInfo(title="HAnimHumanoid skin design patterns for apparel, medical"),
 Background(skyColor=[(0,0.6,0.6)]),
 Group(DEF="MultipleHumanoids", value=[

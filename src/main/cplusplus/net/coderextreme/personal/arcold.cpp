@@ -4,7 +4,7 @@
 #define WINAPI
 #define AFX_EXT_CLASS
 #define EXPORT32
-#include "/c/x3d-code/www.web3d.org/x3d/languages/cpp/X3DLib/X3DLib.h"
+#include "C:/x3d-code/www.web3d.org/x3d/stylesheets/cpp/concretes.h"
 int main(int argc, char ** argv) {
 CX3DScene m_pScene;
 CBrowser browser = X3D.getBrowser();
@@ -12,7 +12,7 @@ CX3D* X3D0 = new CX3D();
 CGroup* group = (CGroup*)(m_pScene.createNode("Group"));
 group->addChildren(X3D0);
 X3D0->setProfile("Immersive");
-X3D0->setVersion("4.0");
+X3D0->setVersion("3.3");
 Chead* head1 = new Chead();
 Cmeta* meta2 = new Cmeta();
 meta2->setName("title");
@@ -31,7 +31,7 @@ head1->addMeta(*meta4);
 
 Cmeta* meta5 = new Cmeta();
 meta5->setName("identifier");
-meta5->setContent("https://coderextreme.net/X3DJSONLD/arc.x3d");
+meta5->setContent("https://coderextreme.net/X3DJSONLD/src/main/data/arc.x3d");
 head1->addMeta(*meta5);
 
 Cmeta* meta6 = new Cmeta();
@@ -67,7 +67,7 @@ CCylinder* Cylinder15 = (CCylinder *)(m_pScene.createNode("Cylinder"));
 Cylinder15->setRadius(0.1);
 Shape12->setGeometry(Cylinder15);
 
-Transform11->addChildren(*Shape12);
+Transform11->addChild(*Shape12);
 
 Transform10->addChildren(*Transform11);
 
@@ -89,7 +89,7 @@ CCylinder* Cylinder21 = (CCylinder *)(m_pScene.createNode("Cylinder"));
 Cylinder21->setRadius(0.1);
 Shape18->setGeometry(Cylinder21);
 
-Transform17->addChildren(*Shape18);
+Transform17->addChild(*Shape18);
 
 Transform16->addChildren(*Transform17);
 
@@ -111,7 +111,7 @@ CCylinder* Cylinder27 = (CCylinder *)(m_pScene.createNode("Cylinder"));
 Cylinder27->setRadius(0.1);
 Shape24->setGeometry(Cylinder27);
 
-Transform23->addChildren(*Shape24);
+Transform23->addChild(*Shape24);
 
 Transform22->addChildren(*Transform23);
 
@@ -123,8 +123,8 @@ CProtoDeclare ProtoDeclare28 = browser.createX3DFromString(R"foo(<?xml version="
 </ProtoInterface>
 <ProtoBody><Transform DEF="node"><IS><connect nodeField="translation" protoField="translation"></connect>
 </IS>
-<Shape><Sphere containerField="geometry" radius="0.1"></Sphere>
-<Appearance><Material diffuseColor="1 0 0"></Material>
+<Shape><Sphere radius="0.1"></Sphere>
+<Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 0 0"></Material>
 </Appearance>
 </Shape>
 <PositionInterpolator DEF="PI1" key="0 1" keyValue="0 0 0 0 5 0"></PositionInterpolator>
@@ -181,7 +181,7 @@ Appearance37->setMaterial(*Material38);
 
 Shape35->setAppearance(*Appearance37);
 
-Transform32->addChildren(*Shape35);
+Transform32->addChild(*Shape35);
 
 CPositionInterpolator* PositionInterpolator39 = (CPositionInterpolator *)(m_pScene.createNode("PositionInterpolator"));
 PositionInterpolator39->setDEF("PI1");

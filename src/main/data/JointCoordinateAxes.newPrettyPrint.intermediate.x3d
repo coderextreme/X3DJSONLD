@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
 <X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
-  <head/>
+  <head>
+    <meta content='x3d-tidy V1.0.56, https://www.npmjs.com/package/x3d-tidy' name='converter'/>
+    <meta content='Mon, 31 Jul 2023 03:48:04 GMT' name='converted'/>
+  </head>
   <Scene>
     <NavigationInfo avatarSize='0.25 1.6 0.75' headlight='false' transitionType='"LINEAR"' type='"EXAMINE" "ANY"'/>
     <Group>

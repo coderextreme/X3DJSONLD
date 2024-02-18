@@ -4,7 +4,7 @@ import '../x3d.dart';
 var X3D0 =  X3D(
 
       profile_ : SFString('Interchange'),
-      version_ : SFString('4.0'),
+      version_ : SFString('3.3'),
       head_ : 
         head(
           meta_ : [
@@ -34,7 +34,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('identifier'),
-              content_ : SFString('https://coderextreme.net/X3DJSONLD/cube.x3d'))]),
+              content_ : SFString('https://coderextreme.net/X3DJSONLD/src/main/data/cube.x3d'))]),
       Scene_ : 
         Scene(
           children_ : [

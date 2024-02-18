@@ -4,6 +4,10 @@ ConfigurationProperties.showDefaultAttributes = false;
 ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;
 ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
+function doubleToFloat(d) {
+    if (Float32Array)
+	return new Float32Array([d])[0];
+}
 var ProtoInstance0 = null;
 var ProtoInstance1 = null;
 var ProtoInstance2 = null;
@@ -25,25 +29,25 @@ var ProtoInstance12 = null;
         .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/arc.x3d"))
         .addMeta(new meta().setName("description").setContent("an attempt to implement an arc in a graph")))
       .setScene(new Scene()
-        .addChild(new Viewpoint().setPosition(Java.to([0,0,5], Java.type("double[]"))).setDescription("a moving graph"))
-        .addChild(new Background().setSkyColor(Java.to([0.4,0.4,0.4], Java.type("double[]"))))
+        .addChild(new Viewpoint().setPosition(Java.to([doubleToFloat(0),doubleToFloat(0),doubleToFloat(5)], Java.type("float[]"))).setDescription("a moving graph"))
+        .addChild(new Background().setSkyColor(Java.to([doubleToFloat(0.4),doubleToFloat(0.4),doubleToFloat(0.4)], Java.type("float[]"))))
         .addChild(new Transform().setDEF("trans1")
           .addChild(new Transform().setDEF("rotscale1")
             .addChild(new Shape()
               .setAppearance(new Appearance()
-                .setMaterial(new Material().setDiffuseColor(Java.to([0.2,0.7,0.7], Java.type("double[]")))))
+                .setMaterial(new Material().setDiffuseColor(Java.to([doubleToFloat(0.2),doubleToFloat(0.7),doubleToFloat(0.7)], Java.type("float[]")))))
               .setGeometry(new Cylinder().setRadius(0.1)))))
         .addChild(new Transform().setDEF("trans2")
           .addChild(new Transform().setDEF("rotscale2")
             .addChild(new Shape()
               .setAppearance(new Appearance()
-                .setMaterial(new Material().setDiffuseColor(Java.to([0.2,0.7,0.7], Java.type("double[]")))))
+                .setMaterial(new Material().setDiffuseColor(Java.to([doubleToFloat(0.2),doubleToFloat(0.7),doubleToFloat(0.7)], Java.type("float[]")))))
               .setGeometry(new Cylinder().setRadius(0.1)))))
         .addChild(new Transform().setDEF("trans3")
           .addChild(new Transform().setDEF("rotscale3")
             .addChild(new Shape()
               .setAppearance(new Appearance()
-                .setMaterial(new Material().setDiffuseColor(Java.to([0.2,0.7,0.7], Java.type("double[]")))))
+                .setMaterial(new Material().setDiffuseColor(Java.to([doubleToFloat(0.2),doubleToFloat(0.7),doubleToFloat(0.7)], Java.type("float[]")))))
               .setGeometry(new Cylinder().setRadius(0.1)))))
         .addChild(new ProtoDeclare().setName("point")
           .setProtoInterface(new ProtoInterface()
@@ -55,8 +59,8 @@ var ProtoInstance12 = null;
               .addChild(new Shape()
                 .setGeometry(new Sphere().setRadius(0.1))
                 .setAppearance(new Appearance()
-                  .setMaterial(new Material().setDiffuseColor(Java.to([1,0,0], Java.type("double[]"))))))
-              .addChild(new PositionInterpolator().setDEF("PI1").setKey(Java.to([0,1], Java.type("double[]"))).setKeyValue(Java.to([0,0,0,0,5,0], Java.type("double[]"))))
+                  .setMaterial(new Material().setDiffuseColor(Java.to([doubleToFloat(1),doubleToFloat(0),doubleToFloat(0)], Java.type("float[]"))))))
+              .addChild(new PositionInterpolator().setDEF("PI1").setKey(Java.to([doubleToFloat(0),doubleToFloat(1)], Java.type("float[]"))).setKeyValue(Java.to([doubleToFloat(0),doubleToFloat(0),doubleToFloat(0),doubleToFloat(0),doubleToFloat(5),doubleToFloat(0)], Java.type("float[]"))))
               .addChild(new Script().setDEF("MB1")
                 .addField(new field().setType(field.TYPE_SFVEC3F).setName("translation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("50 50 0"))
                 .addField(new field().setType(field.TYPE_SFVEC3F).setName("old").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))

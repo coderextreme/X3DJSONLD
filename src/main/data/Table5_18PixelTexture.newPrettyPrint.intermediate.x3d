@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
+<X3D profile='Interchange' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.3.xsd'>
+  <head>
+    <meta content='Table5_18PixelTexture' name='title'/>
+    <meta content='PixelTexture example for Table 5.18' name='description'/>
+    <meta content='Leonard Daly and Don Brutzman' name='creator'/>
+    <meta content='18 December 2006' name='created'/>
+    <meta content='2 April 2017' name='modified'/>
+    <meta content='http://X3dGraphics.com' name='reference'/>
+    <meta content='https://www.web3d.org/x3d/content/examples/X3dResources.html' name='reference'/>
+    <meta content='Copyright 2006, Daly Realism and Don Brutzman' name='rights'/>
+    <meta content='X3D, PixelTexture' name='subject'/>
+    <meta content='http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter05AppearanceMaterialTextures/Table5_18PixelTexture' name='identifier'/>
+    <meta content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' name='generator'/>
+    <meta content='../license.html' name='license'/>
+  </head>
+  <Scene>
+    <Background skyColor='0 0 1'/>
+    <Transform DEF='Checkerboard' translation='0 0 -10'>
+      <Shape>
+        <Appearance>
+          <PixelTexture image='3 2 4 -16776961 16711935 65535 -16777089 16711807 65407'/>
+          <TextureTransform scale='500 500'/>
+        </Appearance>
+        <Box size='1000 1000 0.01'/>
+      </Shape>
+    </Transform>
+    <Viewpoint description='View All' position='0 0 20'/>
+    <Viewpoint description='Empty Image' position='0 5 5'/>
+    <Transform DEF='EmptyImage' rotation='1 1 0 1' translation='0 5 0'>
+      <Shape>
+        <Appearance>
+          <PixelTexture image='3 2 4 -16776961 16711935 65535 -16777089 16711807 65407'/>
+        </Appearance>
+        <Box DEF='StandardBox'/>
+      </Shape>
+    </Transform>
+    <Viewpoint description='Black and white PixelTexture' position='-5 0 5'/>
+    <Transform DEF='BW' rotation='1 1 0 1' translation='-5 0 0'>
+      <Shape>
+        <Appearance>
+          <PixelTexture image='3 2 4 -16776961 16711935 65535 -16777089 16711807 65407'/>
+        </Appearance>
+        <Box USE='StandardBox'/>
+      </Shape>
+    </Transform>
+    <Viewpoint description='Black and white with Alpha PixelTexture' position='5 0 5'/>
+    <Transform DEF='AlphaBW' rotation='1 1 0 1' translation='5 0 0'>
+      <Shape>
+        <Appearance>
+          <PixelTexture image='3 2 4 -16776961 16711935 65535 -16777089 16711807 65407'/>
+        </Appearance>
+        <Box USE='StandardBox'/>
+      </Shape>
+    </Transform>
+    <Viewpoint description='RGB PixelTexture' position='-5 -5 5'/>
+    <Transform DEF='RGB' rotation='1 1 0 1' translation='-5 -5 0'>
+      <Shape>
+        <Appearance>
+          <PixelTexture image='3 2 4 -16776961 16711935 65535 -16777089 16711807 65407'/>
+        </Appearance>
+        <Box USE='StandardBox'/>
+      </Shape>
+    </Transform>
+    <Viewpoint description='RGB with Alpha PixelTexture' position='5 -5 5'/>
+    <Transform DEF='AlphaRGB' rotation='1 1 0 1' translation='5 -5 0'>
+      <Shape>
+        <Appearance>
+          <PixelTexture image='3 2 4 -16776961 16711935 65535 -16777089 16711807 65407'/>
+        </Appearance>
+        <Box USE='StandardBox'/>
+      </Shape>
+    </Transform>
+  </Scene>
+</X3D>

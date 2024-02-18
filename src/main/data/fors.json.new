@@ -1,8 +1,8 @@
 {
   "X3D": {
     "@profile": "Immersive",
-    "@version": "3.3",
-    "@xsd:noNamespaceSchemaLocation": "https://www.web3d.org/specifications/x3d-3.3.xsd",
+    "@version": "4.0",
+    "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-4.0.xsd",
     "head": {
       "meta": [
         {
@@ -19,19 +19,15 @@
         },
         {
           "@name": "identifier",
-          "@content": "https://coderextreme.net/X3DJSONLD/force.x3d"
+          "@content": "https://coderextreme.net/X3DJSONLD/src/main/data/force.x3d"
         },
         {
           "@name": "description",
           "@content": "beginnings of a force directed graph in 3D"
         },
         {
-          "@name": "generator",
-          "@content": "Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit"
-        },
-        {
           "@name": "translated",
-          "@content": "16 January 2021"
+          "@content": "15 December 2023"
         },
         {
           "@name": "generator",
@@ -51,14 +47,9 @@
             "ProtoInterface": {
               "field": [
                 {
-                  "@name": "position",
                   "@accessType": "inputOutput",
                   "@type": "SFVec3f",
-                  "@value": [
-                    0,
-                    0,
-                    0
-                  ]
+                  "@name": "position"
                 }
               ]
             },
@@ -67,20 +58,9 @@
                 {
                   "Transform": {
                     "@DEF": "transform",
-                    "IS": {
-                      "connect": [
-                        {
-                          "@nodeField": "translation",
-                          "@protoField": "position"
-                        }
-                      ]
-                    },
                     "-children": [
                       {
                         "Shape": {
-                          "-geometry": {
-                            "Sphere": {}
-                          },
                           "-children": [
                             {
                               "Appearance": {
@@ -96,6 +76,9 @@
                                   }
                                 ]
                               }
+                            },
+                            {
+                              "Sphere": {}
                             }
                           ]
                         }
@@ -110,24 +93,6 @@
                           "-children": [
                             {
                               "Shape": {
-                                "-geometry": {
-                                  "Text": {
-                                    "@string": [
-                                      "Node"
-                                    ],
-                                    "-children": [
-                                      {
-                                        "FontStyle": {
-                                          "@justify": [
-                                            "MIDDLE",
-                                            "MIDDLE"
-                                          ],
-                                          "@size": 5
-                                        }
-                                      }
-                                    ]
-                                  }
-                                },
                                 "-children": [
                                   {
                                     "Appearance": {
@@ -143,6 +108,24 @@
                                         }
                                       ]
                                     }
+                                  },
+                                  {
+                                    "Text": {
+                                      "@string": [
+                                        "Node"
+                                      ],
+                                      "-children": [
+                                        {
+                                          "FontStyle": {
+                                            "@size": 5,
+                                            "@justify": [
+                                              "MIDDLE",
+                                              "MIDDLE"
+                                            ]
+                                          }
+                                        }
+                                      ]
+                                    }
                                   }
                                 ]
                               }
@@ -150,7 +133,15 @@
                           ]
                         }
                       }
-                    ]
+                    ],
+                    "IS": {
+                      "connect": [
+                        {
+                          "@nodeField": "translation",
+                          "@protoField": "position"
+                        }
+                      ]
+                    }
                   }
                 },
                 {
@@ -175,9 +166,9 @@
                     "@DEF": "MoveBall",
                     "field": [
                       {
+                        "@accessType": "inputOutput",
+                        "@type": "SFVec3f",
                         "@name": "translation",
-                        "@accessType": "inputOutput",
-                        "@type": "SFVec3f",
                         "@value": [
                           50,
                           50,
@@ -185,33 +176,28 @@
                         ]
                       },
                       {
-                        "@name": "old",
                         "@accessType": "inputOutput",
                         "@type": "SFVec3f",
-                        "@value": [
-                          0,
-                          0,
-                          0
-                        ]
+                        "@name": "old"
                       },
                       {
-                        "@name": "set_cycle",
                         "@accessType": "inputOnly",
-                        "@type": "SFTime"
+                        "@type": "SFTime",
+                        "@name": "set_cycle"
                       },
                       {
-                        "@name": "keyValue",
                         "@accessType": "outputOnly",
-                        "@type": "MFVec3f"
+                        "@type": "MFVec3f",
+                        "@name": "keyValue"
                       }
                     ],
                     "#sourceCode": [
-                      "ecmascript:",
-                      "\t\t\t\t\tfunction set_cycle(value) {",
-                      "                                                old = translation;",
-                      "\t\t\t\t\t\ttranslation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);",
-                      "                                                keyValue = new MFVec3f([old, translation]);",
-                      "\t\t\t\t\t\t// Browser.println(translation);",
+                      "ecmascript:\r",
+                      "\t\t\t\t\tfunction set_cycle(value) {\r",
+                      "                                                old = translation;\r",
+                      "\t\t\t\t\t\ttranslation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);\r",
+                      "                                                keyValue = new MFVec3f([old, translation]);\r",
+                      "\t\t\t\t\t\t// Browser.println(translation);\r",
                       "\t\t\t\t\t}"
                     ]
                   }
@@ -252,7 +238,7 @@
                     "@fromNode": "NodePosition",
                     "@fromField": "value_changed",
                     "@toNode": "transform",
-                    "@toField": "set_translation"
+                    "@toField": "translation"
                   }
                 }
               ]
@@ -261,18 +247,18 @@
         },
         {
           "ProtoDeclare": {
-            "@name": "cylinder",
+            "@name": "cyl",
             "ProtoInterface": {
               "field": [
                 {
-                  "@name": "set_positionA",
                   "@accessType": "inputOnly",
-                  "@type": "SFVec3f"
+                  "@type": "SFVec3f",
+                  "@name": "set_positionA"
                 },
                 {
-                  "@name": "set_positionB",
                   "@accessType": "inputOnly",
-                  "@type": "SFVec3f"
+                  "@type": "SFVec3f",
+                  "@name": "set_positionB"
                 }
               ]
             },
@@ -280,56 +266,6 @@
               "-children": [
                 {
                   "Shape": {
-                    "-geometry": {
-                      "Extrusion": {
-                        "@DEF": "extrusion",
-                        "@creaseAngle": 0.785,
-                        "@crossSection": [
-                          1,
-                          0,
-                          0.92,
-                          -0.38,
-                          0.71,
-                          -0.71,
-                          0.38,
-                          -0.92,
-                          0,
-                          -1,
-                          -0.38,
-                          -0.92,
-                          -0.71,
-                          -0.71,
-                          -0.92,
-                          -0.38,
-                          -1,
-                          0,
-                          -0.92,
-                          0.38,
-                          -0.71,
-                          0.71,
-                          -0.38,
-                          0.92,
-                          0,
-                          1,
-                          0.38,
-                          0.92,
-                          0.71,
-                          0.71,
-                          0.92,
-                          0.38,
-                          1,
-                          0
-                        ],
-                        "@spine": [
-                          0,
-                          -50,
-                          0,
-                          0,
-                          50,
-                          0
-                        ]
-                      }
-                    },
                     "-children": [
                       {
                         "Appearance": {
@@ -345,6 +281,56 @@
                             }
                           ]
                         }
+                      },
+                      {
+                        "Extrusion": {
+                          "@DEF": "extrusion",
+                          "@creaseAngle": 0.785,
+                          "@crossSection": [
+                            1,
+                            0,
+                            0.92,
+                            -0.38,
+                            0.71,
+                            -0.71,
+                            0.38,
+                            -0.92,
+                            0,
+                            -1,
+                            -0.38,
+                            -0.92,
+                            -0.71,
+                            -0.71,
+                            -0.92,
+                            -0.38,
+                            -1,
+                            0,
+                            -0.92,
+                            0.38,
+                            -0.71,
+                            0.71,
+                            -0.38,
+                            0.92,
+                            0,
+                            1,
+                            0.38,
+                            0.92,
+                            0.71,
+                            0.71,
+                            0.92,
+                            0.38,
+                            1,
+                            0
+                          ],
+                          "@spine": [
+                            0,
+                            -50,
+                            0,
+                            0,
+                            50,
+                            0
+                          ]
+                        }
                       }
                     ]
                   }
@@ -354,9 +340,9 @@
                     "@DEF": "MoveCylinder",
                     "field": [
                       {
-                        "@name": "spine",
                         "@accessType": "inputOutput",
                         "@type": "MFVec3f",
+                        "@name": "spine",
                         "@value": [
                           0,
                           -50,
@@ -367,15 +353,38 @@
                         ]
                       },
                       {
-                        "@name": "set_endA",
                         "@accessType": "inputOnly",
-                        "@type": "SFVec3f"
+                        "@type": "SFVec3f",
+                        "@name": "set_endA"
                       },
                       {
-                        "@name": "set_endB",
                         "@accessType": "inputOnly",
-                        "@type": "SFVec3f"
+                        "@type": "SFVec3f",
+                        "@name": "set_endB"
                       }
+                    ],
+                    "#sourceCode": [
+                      "ecmascript:\r",
+                      "\r",
+                      "                function set_endA(value) {\r",
+                      "\t\t    if (typeof spine === 'undefined') {\r",
+                      "\t\t        spine = new MFVec3f([value, value]);\r",
+                      "\t\t    } else {\r",
+                      "\t\t        spine = new MFVec3f([value, spine[1]]);\r",
+                      "\t\t    }\r",
+                      "                }\r",
+                      "                \r",
+                      "                function set_endB(value) {\r",
+                      "\t\t    if (typeof spine === 'undefined') {\r",
+                      "\t\t        spine = new MFVec3f([value, value]);\r",
+                      "\t\t    } else {\r",
+                      "\t\t        spine = new MFVec3f([spine[0], value]);\r",
+                      "\t\t    }\r",
+                      "                }\r",
+                      "                \r",
+                      "                function set_spine(value) {\r",
+                      "                    spine = value;\r",
+                      "                }"
                     ],
                     "IS": {
                       "connect": [
@@ -388,30 +397,7 @@
                           "@protoField": "set_positionB"
                         }
                       ]
-                    },
-                    "#sourceCode": [
-                      "ecmascript:",
-                      "",
-                      "                function set_endA(value) {",
-                      "\t\t    if (typeof spine === 'undefined') {",
-                      "\t\t        spine = new MFVec3f([value, value]);",
-                      "\t\t    } else {",
-                      "\t\t        spine = new MFVec3f([value, spine[1]]);",
-                      "\t\t    }",
-                      "                }",
-                      "",
-                      "                function set_endB(value) {",
-                      "\t\t    if (typeof spine === 'undefined') {",
-                      "\t\t        spine = new MFVec3f([value, value]);",
-                      "\t\t    } else {",
-                      "\t\t        spine = new MFVec3f([spine[0], value]);",
-                      "\t\t    }",
-                      "                }",
-                      "",
-                      "                function set_spine(value) {",
-                      "                    spine = value;",
-                      "                }"
-                    ]
+                    }
                   }
                 },
                 {
@@ -438,6 +424,7 @@
               {
                 "PlaneSensor": {
                   "@DEF": "clickGenerator",
+                  "@description": "click on background to add nodes, click on nodes to add links",
                   "@minPosition": [
                     -50,
                     -50
@@ -445,37 +432,20 @@
                   "@maxPosition": [
                     50,
                     50
-                  ],
-                  "@description": "click on background to add nodes, click on nodes to add links"
+                  ]
                 }
               },
               {
                 "ProtoInstance": {
-                  "@name": "node",
                   "@DEF": "nodeA",
-                  "fieldValue": [
-                    {
-                      "@name": "position",
-                      "@value": [
-                        0,
-                        0,
-                        0
-                      ]
-                    }
-                  ]
-                }
-              },
-              {
-                "ProtoInstance": {
                   "@name": "node",
-                  "@DEF": "nodeB",
                   "fieldValue": [
                     {
                       "@name": "position",
                       "@value": [
-                        50,
-                        50,
-                        50
+                        0,
+                        1.78,
+                        0
                       ]
                     }
                   ]
@@ -483,26 +453,24 @@
               },
               {
                 "ProtoInstance": {
-                  "@name": "cylinder",
-                  "@DEF": "linkA",
+                  "@DEF": "nodeB",
+                  "@name": "node",
                   "fieldValue": [
                     {
-                      "@name": "set_positionA",
+                      "@name": "position",
                       "@value": [
                         0,
-                        0,
+                        1.78,
                         0
-                      ]
-                    },
-                    {
-                      "@name": "set_positionB",
-                      "@value": [
-                        50,
-                        50,
-                        50
                       ]
                     }
                   ]
+                }
+              },
+              {
+                "ProtoInstance": {
+                  "@DEF": "linkA",
+                  "@name": "cyl"
                 }
               }
             ]

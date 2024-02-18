@@ -47,7 +47,7 @@ newModel=X3D(profile='Immersive',version='4.0',
     WorldInfo(title='ball.x3d'),
     NavigationInfo(type='"ANY" "EXAMINE" "FLY" "LOOKAT"'),
     Viewpoint(description='Tour Views'),
-    Background(backUrl=["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"],bottomUrl=["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"],frontUrl=["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"],leftUrl=["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"],rightUrl=["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"],topUrl=["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]),
+    Background(backUrl=["../resources/images/all_probes/stpeters_cross/stpeters_back.png"],bottomUrl=["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"],frontUrl=["../resources/images/all_probes/stpeters_cross/stpeters_front.png"],leftUrl=["../resources/images/all_probes/stpeters_cross/stpeters_left.png"],rightUrl=["../resources/images/all_probes/stpeters_cross/stpeters_right.png"],topUrl=["../resources/images/all_probes/stpeters_cross/stpeters_top.png"]),
     Transform(
       children=[
       Shape(
@@ -55,21 +55,21 @@ newModel=X3D(profile='Immersive',version='4.0',
         appearance=Appearance(
           material=Material(diffuseColor=(0.7,0.7,0.7),specularColor=(0.5,0.5,0.5)),
           texture=ComposedCubeMapTexture(DEF='texture',
-            backTexture=ImageTexture(url=["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]),
-            bottomTexture=ImageTexture(url=["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]),
-            frontTexture=ImageTexture(url=["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"]),
-            leftTexture=ImageTexture(url=["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]),
-            rightTexture=ImageTexture(url=["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]),
-            topTexture=ImageTexture(url=["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"])),
+            backTexture=ImageTexture(url=["../resources/images/all_probes/stpeters_cross/stpeters_back.png"]),
+            bottomTexture=ImageTexture(url=["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]),
+            frontTexture=ImageTexture(url=["../resources/images/all_probes/stpeters_cross/stpeters_front.png"]),
+            leftTexture=ImageTexture(url=["../resources/images/all_probes/stpeters_cross/stpeters_left.png"]),
+            rightTexture=ImageTexture(url=["../resources/images/all_probes/stpeters_cross/stpeters_right.png"]),
+            topTexture=ImageTexture(url=["../resources/images/all_probes/stpeters_cross/stpeters_top.png"])),
           # 
                     <ProgramShader DEF='ProgramShader' containerField='shaders' language='GLSL'>
-			<ShaderProgram url='"../shaders/freewrl.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.vs"' containerField='programs' type='VERTEX'>
+			<ShaderProgram url='"../shaders/freewrl.vs"' containerField='programs' type='VERTEX'>
                         <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1 1.033'/>
                         <field name='bias' accessType='initializeOnly' type='SFFloat' value='0.5'/>
                         <field name='scale' accessType='initializeOnly' type='SFFloat' value='0.5'/>
                         <field name='power' accessType='initializeOnly' type='SFFloat' value='2'/>
                         </ShaderProgram>
-			<ShaderProgram url='"../shaders/freewrl.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.fs"' containerField='programs' type='FRAGMENT'/>
+			<ShaderProgram url='"../shaders/freewrl.fs"' containerField='programs' type='FRAGMENT'/>
 		    </ProgramShader>
 		
           # 
@@ -81,8 +81,8 @@ newModel=X3D(profile='Immersive',version='4.0',
 		  <field name='bias' accessType='initializeOnly' type='SFFloat' value='0.5'></field>
 		  <field name='scale' accessType='initializeOnly' type='SFFloat' value='0.5'></field>
 		  <field name='power' accessType='initializeOnly' type='SFFloat' value='2'></field>
-		  <ShaderPart url='"../shaders/contact.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/contact.vs"' type="VERTEX" containerField='parts'></ShaderPart>
-		  <ShaderPart url='"../shaders/common.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"' containerField='parts' type='FRAGMENT'></ShaderPart>
+		  <ShaderPart url='"../shaders/contact.vs"' type="VERTEX" containerField='parts'></ShaderPart>
+		  <ShaderPart url='"../shaders/common.fs"' containerField='parts' type='FRAGMENT'></ShaderPart>
                 </ComposedShader>
 		
           # 
@@ -94,8 +94,8 @@ newModel=X3D(profile='Immersive',version='4.0',
 		  <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'></field>
 		  <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'></field>
 		  <field name='power' accessType='inputOutput' type='SFFloat' value='2'></field>
-		  <ShaderPart url='"../shaders/octaga.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/octaga.vs"' type="VERTEX" containerField='parts'></ShaderPart>
-		  <ShaderPart url='"../shaders/common.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"' containerField='parts' type='FRAGMENT'></ShaderPart>
+		  <ShaderPart url='"../shaders/octaga.vs"' type="VERTEX" containerField='parts'></ShaderPart>
+		  <ShaderPart url='"../shaders/common.fs"' containerField='parts' type='FRAGMENT'></ShaderPart>
                 </ComposedShader>
 		
           # 
@@ -105,8 +105,8 @@ newModel=X3D(profile='Immersive',version='4.0',
 		  <field name='bias' accessType='initializeOnly' type='SFFloat' value='0.5'></field>
 		  <field name='scale' accessType='initializeOnly' type='SFFloat' value='0.5'></field>
 		  <field name='power' accessType='initializeOnly' type='SFFloat' value='2'></field>
-		  <ShaderPart url='"../shaders/instant.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/instant.vs"' type="VERTEX" containerField='parts'></ShaderPart>
-		  <ShaderPart url='"../shaders/common.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"' containerField='parts' type='FRAGMENT'></ShaderPart>
+		  <ShaderPart url='"../shaders/instant.vs"' type="VERTEX" containerField='parts'></ShaderPart>
+		  <ShaderPart url='"../shaders/common.fs"' containerField='parts' type='FRAGMENT'></ShaderPart>
                 </ComposedShader>
 		
           # 
@@ -122,8 +122,8 @@ newModel=X3D(profile='Immersive',version='4.0',
             field(name='scale',accessType='inputOutput',type='SFFloat',value=0.5),
             field(name='power',accessType='inputOutput',type='SFFloat',value=2)],
             parts=[
-            ShaderPart(url=["../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"]),
-            ShaderPart(DEF='common',url=["../shaders/common.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"],type='FRAGMENT')]),
+            ShaderPart(url=["../shaders/x3dom.vs"]),
+            ShaderPart(DEF='common',url=["../shaders/common.fs"],type='FRAGMENT')]),
           ComposedShader(language='GLSL',
             field=[
             field(name='chromaticDispertion',accessType='initializeOnly',type='SFVec3f',value=(0.98,1,1.033)),
@@ -134,8 +134,8 @@ newModel=X3D(profile='Immersive',version='4.0',
             field(name='scale',accessType='initializeOnly',type='SFFloat',value=0.5),
             field(name='power',accessType='initializeOnly',type='SFFloat',value=2)],
             parts=[
-            ShaderPart(url=["../shaders/x_ite.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"]),
-            ShaderPart(url=["../shaders/x_itebubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs"],type='FRAGMENT')])]))])])
+            ShaderPart(url=["../shaders/x_ite.vs"]),
+            ShaderPart(url=["../shaders/x_itebubbles.fs"],type='FRAGMENT')])]))])])
 ) # X3D model complete
 
 ####################################################################################################

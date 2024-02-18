@@ -5,24 +5,24 @@ print("-->")
 import json
 model = (
 X3D(profile="Immersive", version="3.0", 
-head=head(
+head=Pyhead(
 children=[
-meta(name="title", content="ArtDecoExamples.x3d"),
-meta(name="description", content="Example ExternProtoDeclare/ProtoInstance usage of X3D/VRML materials, originally converted from SGI's Open Inventor material examples."),
-meta(name="creator", content="David Roussel"),
-meta(name="translator", content="James Harney, Don Brutzman NPS"),
-meta(name="created", content="7 April 2002"),
-meta(name="modified", content="20 October 2019"),
-meta(name="reference", content="http://vrmlstuff.free.fr/materials"),
-meta(name="subject", content="Universal Media Material Library"),
-meta(name="identifier", content="https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoExamples.x3d"),
-meta(name="generator", content="Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"),
-meta(name="license", content="../license.html"),
-meta(name="translated", content="02 September 2023"),
-meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
-meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
+Pymeta(name="title", content="ArtDecoExamples.x3d"),
+Pymeta(name="description", content="Example ExternProtoDeclare/ProtoInstance usage of X3D/VRML materials, originally converted from SGI's Open Inventor material examples."),
+Pymeta(name="creator", content="David Roussel"),
+Pymeta(name="translator", content="James Harney, Don Brutzman NPS"),
+Pymeta(name="created", content="7 April 2002"),
+Pymeta(name="modified", content="20 October 2019"),
+Pymeta(name="reference", content="http://vrmlstuff.free.fr/materials"),
+Pymeta(name="subject", content="Universal Media Material Library"),
+Pymeta(name="identifier", content="https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoExamples.x3d"),
+Pymeta(name="generator", content="Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"),
+Pymeta(name="license", content="../license.html"),
+Pymeta(name="translated", content="31 December 2023"),
+Pymeta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
+Pymeta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
-Scene=Scene(children=[
+Scene=PyScene(children=[
 WorldInfo(title="ArtDecoExamples.x3d"),
 ExternProtoDeclare(name="ArtDeco00", appinfo="UniversalMediaMaterials prototype", documentation="https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials", url=["ArtDecoPrototypes.x3d#ArtDeco00","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco00","ArtDecoPrototypes.wrl#ArtDeco00","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco00"]),
 ExternProtoDeclare(name="ArtDeco01", appinfo="UniversalMediaMaterials prototype", documentation="https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials", url=["ArtDecoPrototypes.x3d#ArtDeco01","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco01","ArtDecoPrototypes.wrl#ArtDeco01","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco01"]),

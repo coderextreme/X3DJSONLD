@@ -9,7 +9,7 @@
 <Scene><Viewpoint position="0 0 5" description="Only Viewpoint"></Viewpoint>
 <Background skyColor="0.4 0.4 0.4"></Background>
 <Transform DEF="DECLpoint_G1_node"><Shape><Sphere radius="0.1"></Sphere>
-<Appearance><Material diffuseColor="1 0 0"></Material>
+<Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 0 0"></Material>
 </Appearance>
 </Shape>
 <PositionInterpolator DEF="DECLpoint_G1_PI1" key="0 1" keyValue="0 0 0 0 5 0"></PositionInterpolator>
@@ -31,7 +31,7 @@
 <ROUTE fromNode="DECLpoint_G1_PI1" fromField="value_changed" toNode="DECLpoint_G1_node" toField="set_translation"></ROUTE>
 </Transform>
 <Transform DEF="DECLpoint_G2_node"><Shape><Sphere radius="0.1"></Sphere>
-<Appearance><Material diffuseColor="1 0 0"></Material>
+<Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 0 0"></Material>
 </Appearance>
 </Shape>
 <PositionInterpolator DEF="DECLpoint_G2_PI1" key="0 1" keyValue="0 0 0 0 5 0"></PositionInterpolator>
@@ -52,7 +52,7 @@
 <ROUTE fromNode="DECLpoint_G2_MB1" fromField="keyValue" toNode="DECLpoint_G2_PI1" toField="keyValue"></ROUTE>
 <ROUTE fromNode="DECLpoint_G2_PI1" fromField="value_changed" toNode="DECLpoint_G2_node" toField="set_translation"></ROUTE>
 </Transform>
-<Group><Transform DEF="DECLx3dconnector_connector1_trans"><Transform DEF="DECLx3dconnector_connector1_rotscale"><Shape><Appearance><Material diffuseColor="0.2 0.7 0.7" transparency="0.5"></Material>
+<Group><Transform DEF="DECLx3dconnector_connector1_trans"><Transform DEF="DECLx3dconnector_connector1_rotscale"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0.2 0.7 0.7" transparency="0.5"></Material>
 </Appearance>
 <Cylinder radius="0.05"></Cylinder>
 </Shape>

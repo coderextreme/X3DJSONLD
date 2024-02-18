@@ -1,15 +1,9 @@
 {
   "X3D": {
     "@profile": "Immersive",
-    "@version": "3.3",
-    "@xsd:noNamespaceSchemaLocation": "https://www.web3d.org/specifications/x3d-3.3.xsd",
+    "@version": "4.0",
+    "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-4.0.xsd",
     "head": {
-      "component": [
-        {
-          "@name": "Geospatial",
-          "@level": 1
-        }
-      ],
       "meta": [
         {
           "@name": "title",
@@ -24,16 +18,12 @@
           "@content": "manual"
         },
         {
-          "@name": "identifier",
-          "@content": "https://coderextreme.net/X3DJSONLD/geobubbles.x3d"
-        },
-        {
-          "@name": "description",
-          "@content": "geo bubbles"
+          "@name": "generator",
+          "@content": "x3d-tidy V1.0.117, https://www.npmjs.com/package/x3d-tidy"
         },
         {
           "@name": "translated",
-          "@content": "16 January 2021"
+          "@content": "15 December 2023"
         },
         {
           "@name": "generator",
@@ -43,58 +33,52 @@
           "@name": "reference",
           "@content": "X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
         }
+      ],
+      "component": [
+        {
+          "@name": "Geospatial",
+          "@level": 1
+        }
       ]
     },
     "Scene": {
       "-children": [
         {
-          "#comment": "Viewpoint DEF='Tour' position='0 0 4' orientation='1 0 0 0' description='Tour Views'/"
-        },
-        {
-          "#comment": "PositionInterpolator DEF='TourPosition' key='0 1' keyValue='-0.5 -0.5 4 -0.5 0.5 4'/"
-        },
-        {
           "GeoViewpoint": {
             "@DEF": "Tour",
+            "@description": "Tour Views",
             "@position": [
-              0,
-              0,
-              4
-            ],
-            "@orientation": [
-              1,
-              0,
-              0,
-              0
-            ],
-            "@description": "Tour Views"
+              0.000419089512255189,
+              0.0011517104878911,
+              3.99999688193202
+            ]
           }
         },
         {
           "Background": {
-            "@backUrl": [
-              "../resources/images/BK.png",
-              "https://coderextreme.net/X3DJSONLD/images/BK.png"
-            ],
-            "@bottomUrl": [
-              "../resources/images/BT.png",
-              "https://coderextreme.net/X3DJSONLD/images/BT.png"
-            ],
             "@frontUrl": [
               "../resources/images/FR.png",
-              "https://coderextreme.net/X3DJSONLD/images/FR.png"
+              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/FR.png"
+            ],
+            "@backUrl": [
+              "../resources/images/BK.png",
+              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/BK.png"
             ],
             "@leftUrl": [
               "../resources/images/LF.png",
-              "https://coderextreme.net/X3DJSONLD/images/LF.png"
+              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/LF.png"
             ],
             "@rightUrl": [
               "../resources/images/RT.png",
-              "https://coderextreme.net/X3DJSONLD/images/RT.png"
+              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/RT.png"
             ],
             "@topUrl": [
               "../resources/images/TP.png",
-              "https://coderextreme.net/X3DJSONLD/images/TP.png"
+              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/TP.png"
+            ],
+            "@bottomUrl": [
+              "../resources/images/BT.png",
+              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/BT.png"
             ]
           }
         },
@@ -103,9 +87,6 @@
             "-children": [
               {
                 "Shape": {
-                  "-geometry": {
-                    "Sphere": {}
-                  },
                   "-children": [
                     {
                       "Appearance": {
@@ -126,6 +107,9 @@
                           }
                         ]
                       }
+                    },
+                    {
+                      "Sphere": {}
                     }
                   ]
                 }
@@ -162,20 +146,19 @@
             "@DEF": "RandomTourTime",
             "field": [
               {
-                "@name": "set_cycle",
                 "@accessType": "inputOnly",
-                "@type": "SFTime"
+                "@type": "SFTime",
+                "@name": "set_cycle"
               },
               {
-                "@name": "val",
                 "@accessType": "inputOutput",
                 "@type": "SFFloat",
-                "@value": 0
+                "@name": "val"
               },
               {
-                "@name": "positions",
                 "@accessType": "inputOutput",
                 "@type": "MFVec3d",
+                "@name": "positions",
                 "@value": [
                   0.0015708,
                   0,
@@ -186,9 +169,9 @@
                 ]
               },
               {
-                "@name": "position",
                 "@accessType": "inputOutput",
                 "@type": "MFVec3d",
+                "@name": "position",
                 "@value": [
                   0.0015708,
                   0,
@@ -200,22 +183,22 @@
               }
             ],
             "#sourceCode": [
-              "ecmascript:",
-              "",
-              "               function set_cycle(value) {",
-              "                        var cartesianMult = -150;  // -150 if cartesian, 1 if geo",
-              "                        var ov = val;",
-              "\t\t\t// Browser.print('old '+ov);",
-              "                        do {",
-              "                                val = Math.floor(Math.random()*2);",
-              "                                var vc = val;",
-              "                                positions[vc] = new SFVec3d(Math.round(Math.random()*2)*0.0015708*cartesianMult, Math.round(Math.random()*2)*0.0015708*cartesianMult, 4);",
-              "                        } while ( positions[ov][0] === positions[vc][0] && positions[ov][1] === positions[vc][1] && positions[ov][2] === positions[vc][2]);",
-              "\t\t\t// Browser.println(positions[ov]);",
-              "\t\t\t// Browser.println(positions[vc]);",
-              "                        position = new MFVec3d();",
-              "                        position[0] = new SFVec3d(positions[ov][0],positions[ov][1],positions[ov][2]);",
-              "                        position[1] = new SFVec3d(positions[vc][0],positions[vc][1],positions[vc][2]);",
+              "ecmascript:\r",
+              "\r",
+              "               function set_cycle(value) {\r",
+              "                        var cartesianMult = -150;  // -150 if cartesian, 1 if geo\r",
+              "                        var ov = val;\r",
+              "\t\t\t// Browser.print('old '+ov);\r",
+              "                        do {\r",
+              "                                val = Math.floor(Math.random()*2);\r",
+              "                                var vc = val;\r",
+              "                                positions[vc] = new SFVec3d(Math.round(Math.random()*2)*0.0015708*cartesianMult, Math.round(Math.random()*2)*0.0015708*cartesianMult, 4);\r",
+              "                        } while ( positions[ov][0] === positions[vc][0] && positions[ov][1] === positions[vc][1] && positions[ov][2] === positions[vc][2]);\r",
+              "\t\t\t// Browser.println(positions[ov]);\r",
+              "\t\t\t// Browser.println(positions[vc]);\r",
+              "                        position = new MFVec3d();\r",
+              "                        position[0] = new SFVec3d(positions[ov][0],positions[ov][1],positions[ov][2]);\r",
+              "                        position[1] = new SFVec3d(positions[vc][0],positions[vc][1],positions[vc][2]);\r",
               "               }"
             ]
           }
@@ -249,7 +232,7 @@
             "@fromNode": "TourPosition",
             "@fromField": "geovalue_changed",
             "@toNode": "Tour",
-            "@toField": "set_position"
+            "@toField": "position"
           }
         }
       ]

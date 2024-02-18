@@ -12,7 +12,7 @@ CX3D* X3D0 = new CX3D();
 CGroup* group = (CGroup*)(m_pScene.createNode("Group"));
 group->addChildren(X3D0);
 X3D0->setProfile("Immersive");
-X3D0->setVersion("4.0");
+X3D0->setVersion("3.3");
 Chead* head1 = new Chead();
 Cmeta* meta2 = new Cmeta();
 meta2->setName("title");
@@ -49,35 +49,37 @@ meta8->setName("identifier");
 meta8->setContent("https://coderextreme.net/x3d/qq3.x3d");
 head1->addMeta(*meta8);
 
+Cmeta* meta9 = new Cmeta();
+meta9->setName("generator");
+meta9->setContent("manual");
+head1->addMeta(*meta9);
+
 X3D0->setHead(*head1);
 
-CScene* Scene9 = new CScene();
-CProtoDeclare ProtoDeclare10 = browser.createX3DFromString(R"foo(<?xml version="1.0" encoding="undefined"?>
+CScene* Scene10 = new CScene();
+CProtoDeclare ProtoDeclare11 = browser.createX3DFromString(R"foo(<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
-<ProtoDeclare name="Process" ><ProtoInterface></ProtoInterface>
-<ProtoBody><Group><Transform scale="0.5 0.5 0.5"><Shape DEF="ShapeLeftDown"><Appearance><Material diffuseColor="0.7 1 0"></Material>
+<ProtoDeclare name="Process" ><ProtoBody><Group><!--left--><Transform scale="0.5 0.5 0.5"><Shape DEF="ShapeLeftDown"><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0.7 1 0"></Material>
 </Appearance>
-<Extrusion creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0" spine="-2.5 0 0 -1.5 0 0"></Extrusion>
+<Extrusion spine="-2.5 0 0 -1.5 0 0" creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0"></Extrusion>
 </Shape>
 </Transform>
-<Transform scale="0.5 0.5 0.5"><Shape DEF="ShapeUpRight"><Appearance><Material diffuseColor="0 0.7 1"></Material>
+<!--right--><Transform scale="0.5 0.5 0.5"><Shape DEF="ShapeUpRight"><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 0.7 1"></Material>
 </Appearance>
-<Extrusion creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0" spine="1.5 0 0 2.5 0 0"></Extrusion>
+<Extrusion spine="1.5 0 0 2.5 0 0" creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0"></Extrusion>
 </Shape>
 </Transform>
-<Transform scale="0.5 0.5 0.5"><Shape USE="ShapeUpRight"></Shape>
+<!--up--><Transform scale="0.5 0.5 0.5"><Shape USE="ShapeUpRight"></Shape>
 </Transform>
-<Transform scale="0.5 0.5 0.5"><Shape USE="ShapeLeftDown"></Shape>
+<!--down--><Transform scale="0.5 0.5 0.5"><Shape USE="ShapeLeftDown"></Shape>
 </Transform>
 </Group>
 </ProtoBody>
 </ProtoDeclare>)foo");
-ProtoDeclare10->setName("Process");
-CProtoInterface* ProtoInterface11 = new CProtoInterface();
-ProtoDeclare10->setProtoInterface(*ProtoInterface11);
-
+ProtoDeclare11->setName("Process");
 CProtoBody* ProtoBody12 = new CProtoBody();
 CGroup* Group13 = (CGroup *)(m_pScene.createNode("Group"));
+//left
 CTransform* Transform14 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform14->setScale(new float[3]{0.5,0.5,0.5});
 CShape* Shape15 = (CShape *)(m_pScene.createNode("Shape"));
@@ -90,15 +92,16 @@ Appearance16->setMaterial(*Material17);
 Shape15->setAppearance(*Appearance16);
 
 CExtrusion* Extrusion18 = (CExtrusion *)(m_pScene.createNode("Extrusion"));
+Extrusion18->setSpine(new float[6]{-2.5,0,0,-1.5,0,0});
 Extrusion18->setCreaseAngle(0.785);
 Extrusion18->setCrossSection(new float[34]{1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0});
-Extrusion18->setSpine(new float[6]{-2.5,0,0,-1.5,0,0});
 Shape15->setGeometry(Extrusion18);
 
 Transform14->addChild(*Shape15);
 
 Group13->addChildren(*Transform14);
 
+//right
 CTransform* Transform19 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform19->setScale(new float[3]{0.5,0.5,0.5});
 CShape* Shape20 = (CShape *)(m_pScene.createNode("Shape"));
@@ -111,15 +114,16 @@ Appearance21->setMaterial(*Material22);
 Shape20->setAppearance(*Appearance21);
 
 CExtrusion* Extrusion23 = (CExtrusion *)(m_pScene.createNode("Extrusion"));
+Extrusion23->setSpine(new float[6]{1.5,0,0,2.5,0,0});
 Extrusion23->setCreaseAngle(0.785);
 Extrusion23->setCrossSection(new float[34]{1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0});
-Extrusion23->setSpine(new float[6]{1.5,0,0,2.5,0,0});
 Shape20->setGeometry(Extrusion23);
 
 Transform19->addChild(*Shape20);
 
 Group13->addChildren(*Transform19);
 
+//up
 CTransform* Transform24 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform24->setScale(new float[3]{0.5,0.5,0.5});
 CShape* Shape25 = (CShape *)(m_pScene.createNode("Shape"));
@@ -128,6 +132,7 @@ Transform24->addChild(*Shape25);
 
 Group13->addChildren(*Transform24);
 
+//down
 CTransform* Transform26 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform26->setScale(new float[3]{0.5,0.5,0.5});
 CShape* Shape27 = (CShape *)(m_pScene.createNode("Shape"));
@@ -138,14 +143,14 @@ Group13->addChildren(*Transform26);
 
 ProtoBody12->addChildren(*Group13);
 
-ProtoDeclare10->setProtoBody(*ProtoBody12);
+ProtoDeclare11->setProtoBody(*ProtoBody12);
 
-group->addChildren(*ProtoDeclare10);
+group->addChildren(*ProtoDeclare11);
 
 CViewpoint* Viewpoint28 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
 Viewpoint28->setDescription("Process pipes");
-Viewpoint28->setPosition(new float[3]{0,5,12});
 Viewpoint28->setOrientation(new float[4]{1,0,0,-0.4});
+Viewpoint28->setPosition(new float[3]{0,5,12});
 group->addChildren(*Viewpoint28);
 
 CTransform* Transform29 = (CTransform *)(m_pScene.createNode("Transform"));
@@ -171,7 +176,7 @@ Transform33->addChildren(*ProtoInstance34);
 
 group->addChildren(*Transform33);
 
-X3D0->setScene(*Scene9);
+X3D0->setScene(*Scene10);
 
 m_pScene.addRootNode(group);
 X3D0->toXMLString();

@@ -1,9 +1,9 @@
-#include "/c/x3d-code/www.web3d.org/x3d/languages/c/X3DLib/X3DLib.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/c/Concretes.h"
 void main(int argc, char ** argv) {
 Browser browser = X3D.getBrowser();
 X3D X3D0;
 X3D0.profile = "Immersive";
-X3D0.version = "3.0";
+X3D0.version = "4.0";
 head head1 = createNode("head");
 component component2 = createNode("component");
 component2.name = "Scripting";
@@ -44,7 +44,7 @@ head1.meta[6] = meta8;
 
 meta meta9 = createNode("meta");
 meta9.name = "identifier";
-meta9.content = "https://coderextreme.net/X3DJSONLD/src/main/personal/flowers2.x3d";
+meta9.content = "https://coderextreme.net/X3DJSONLD/src/main/data/flowers2.x3d";
 head1.meta[7] = meta9;
 
 meta meta10 = createNode("meta");
@@ -87,19 +87,19 @@ ProtoDeclare ProtoDeclare17 = browser.createX3DFromString(`<?xml version="1.0" e
 <OrientationInterpolator DEF="OrbitPath" key="0 0.5 1" keyValue="1 0 0 0 1 0 0 3.14 1 0 0 6.28"></OrientationInterpolator>
 <Transform DEF="OrbitTransform"><IS><connect nodeField="translation" protoField="translation"></connect>
 </IS>
-<Shape><Appearance><Material><IS><connect nodeField="diffuseColor" protoField="diffuseColor"></connect>
+<Shape><Appearance containerField="appearance"><Material containerField="material"><IS><connect nodeField="diffuseColor" protoField="diffuseColor"></connect>
 <connect nodeField="specularColor" protoField="specularColor"></connect>
 <connect nodeField="transparency" protoField="transparency"></connect>
 </IS>
 </Material>
 </Appearance>
-<!--<IndexedFaceSet DEF="Orbit" creaseAngle="0"> <Coordinate DEF="OrbitCoordinates"></Coordinate> </IndexedFaceSet>--><IndexedFaceSet containerField="geometry" ccw="false" convex="false" coordIndex="0 1 2 -1" DEF="Orbit"><Coordinate containerField="coord" DEF="OrbitCoordinates" point="0 0 1 0 1 0 1 0 0"></Coordinate>
+<!--<IndexedFaceSet DEF="Orbit" creaseAngle="0"> <Coordinate DEF="OrbitCoordinates"></Coordinate> </IndexedFaceSet>--><IndexedFaceSet ccw="false" convex="false" coordIndex="0 1 2 -1" DEF="Orbit"><Coordinate DEF="OrbitCoordinates" point="0 0 1 0 1 0 1 0 0"></Coordinate>
 </IndexedFaceSet>
 </Shape>
 </Transform>
 <Script DEF="OrbitScript"><field name="set_fraction" accessType="inputOnly" type="SFFloat"></field>
-<field name="coordinates" accessType="outputOnly" type="MFVec3f"></field>
-<field name="coordIndexes" accessType="outputOnly" type="MFInt32"></field>
+<field name="coordinates" accessType="inputOutput" type="MFVec3f"></field>
+<field name="coordIndexes" accessType="inputOutput" type="MFInt32"></field>
 <field name="e" accessType="inputOutput" type="SFFloat" value="5"></field>
 <field name="f" accessType="inputOutput" type="SFFloat" value="5"></field>
 <field name="g" accessType="inputOutput" type="SFFloat" value="5"></field>
@@ -107,46 +107,37 @@ ProtoDeclare ProtoDeclare17 = browser.createX3DFromString(`<?xml version="1.0" e
 <field name="resolution" accessType="inputOutput" type="SFInt32" value="50"></field>
 <![CDATA[ecmascript:
 
-			var e = 5;
-			var f = 5;
-			var g = 5;
-			var h = 5;
-			var resolution = 100;
-
 			function initialize() {
 			     generateCoordinates();
-			     var localci = [];
+			     var arrIndex = 0;
 			     for (var i = 0; i < resolution-1; i++) {
 				for (var j = 0; j < resolution-1; j++) {
-				     localci.push(i*resolution+j);
-				     localci.push(i*resolution+j+1);
-				     localci.push((i+1)*resolution+j+1);
-				     localci.push((i+1)*resolution+j);
-				     localci.push(-1);
+				     coordIndexes[arrIndex++] = i*resolution+j;
+				     coordIndexes[arrIndex++] = i*resolution+j+1;
+				     coordIndexes[arrIndex++] = (i+1)*resolution+j+1;
+				     coordIndexes[arrIndex++] = (i+1)*resolution+j;
+				     coordIndexes[arrIndex++] = -1;
 				}
 			    }
-			    coordIndexes = new MFInt32(localci);
 			}
 
 			function generateCoordinates() {
 			     var theta = 0.0;
 			     var phi = 0.0;
 			     var delta = (2 * 3.141592653) / (resolution-1);
-			     var localc = [];
+			     var arrIndex = 0;
 			     for (var i = 0; i < resolution; i++) {
 				for (var j = 0; j < resolution; j++) {
 					var rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);
-					localc.push(new SFVec3f(
+					coordinates[arrIndex++] = new SFVec3f(
 						rho * Math.cos(phi) * Math.cos(theta),
 						rho * Math.cos(phi) * Math.sin(theta),
 						rho * Math.sin(phi)
-					));
+					);
 					theta += delta;
 				}
 				phi += delta;
 			     }
-			     
-			     coordinates = new MFVec3f(localc);
 			}
 
 			function set_fraction(fraction, eventTime) {
@@ -289,9 +280,9 @@ IndexedFaceSet37.coord = Coordinate38;
 
 Shape30.geometry = IndexedFaceSet37;
 
-Transform27.children = new MFNode();
+Transform27.child = new undefined();
 
-Transform27.children[0] = Shape30;
+Transform27.child[0] = Shape30;
 
 Group24.children[2] = Transform27;
 
@@ -307,13 +298,13 @@ Script39.field[0] = field40;
 
 field field41 = createNode("field");
 field41.name = "coordinates";
-field41.accessType = "outputOnly";
+field41.accessType = "inputOutput";
 field41.type = "MFVec3f";
 Script39.field[1] = field41;
 
 field field42 = createNode("field");
 field42.name = "coordIndexes";
-field42.accessType = "outputOnly";
+field42.accessType = "inputOutput";
 field42.type = "MFInt32";
 Script39.field[2] = field42;
 
@@ -355,46 +346,37 @@ Script39.field[7] = field47;
 
 Script39.setSourceCode(`ecmascript:\n"+
 "\n"+
-"			var e = 5;\n"+
-"			var f = 5;\n"+
-"			var g = 5;\n"+
-"			var h = 5;\n"+
-"			var resolution = 100;\n"+
-"\n"+
 "			function initialize() {\n"+
 "			     generateCoordinates();\n"+
-"			     var localci = [];\n"+
+"			     var arrIndex = 0;\n"+
 "			     for (var i = 0; i < resolution-1; i++) {\n"+
 "				for (var j = 0; j < resolution-1; j++) {\n"+
-"				     localci.push(i*resolution+j);\n"+
-"				     localci.push(i*resolution+j+1);\n"+
-"				     localci.push((i+1)*resolution+j+1);\n"+
-"				     localci.push((i+1)*resolution+j);\n"+
-"				     localci.push(-1);\n"+
+"				     coordIndexes[arrIndex++] = i*resolution+j;\n"+
+"				     coordIndexes[arrIndex++] = i*resolution+j+1;\n"+
+"				     coordIndexes[arrIndex++] = (i+1)*resolution+j+1;\n"+
+"				     coordIndexes[arrIndex++] = (i+1)*resolution+j;\n"+
+"				     coordIndexes[arrIndex++] = -1;\n"+
 "				}\n"+
 "			    }\n"+
-"			    coordIndexes = new MFInt32(localci);\n"+
 "			}\n"+
 "\n"+
 "			function generateCoordinates() {\n"+
 "			     var theta = 0.0;\n"+
 "			     var phi = 0.0;\n"+
 "			     var delta = (2 * 3.141592653) / (resolution-1);\n"+
-"			     var localc = [];\n"+
+"			     var arrIndex = 0;\n"+
 "			     for (var i = 0; i < resolution; i++) {\n"+
 "				for (var j = 0; j < resolution; j++) {\n"+
 "					var rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);\n"+
-"					localc.push(new SFVec3f(\n"+
+"					coordinates[arrIndex++] = new SFVec3f(\n"+
 "						rho * Math.cos(phi) * Math.cos(theta),\n"+
 "						rho * Math.cos(phi) * Math.sin(theta),\n"+
 "						rho * Math.sin(phi)\n"+
-"					));\n"+
+"					);\n"+
 "					theta += delta;\n"+
 "				}\n"+
 "				phi += delta;\n"+
 "			     }\n"+
-"			     \n"+
-"			     coordinates = new MFVec3f(localc);\n"+
 "			}\n"+
 "\n"+
 "			function set_fraction(fraction, eventTime) {\n"+

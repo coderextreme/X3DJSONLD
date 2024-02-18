@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/TR/xhtml1/strict"
+       xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
+       xmlns:saxon="http://icl.com/saxon">
+   <head>
+      <title>ball.x3d (X3dToXhtml listing)</title>
+      <!-- I18N -->
+      <meta http-equiv="X-UA-Compatible" content="chrome=1,IE=edge"/>
+      <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+      <style type="text/css">
+span.element   {color: navy}
+span.attribute {color: green}
+span.value     {color: teal}
+span.plain     {color: black}
+span.gray      {color: gray}
+span.idName    {color: maroon}
+span.addedDocumentation {background-color:#EEEEEE;} /* slightly darker for html page contrast */
+span.behaviorNode       {background-color:#DDEEFF;} /*      light blue for html page contrast */
+span.extensibilityNode  {background-color:#FFEEFF;} /*    lighter blue for html page contrast */
+a.idName {color: maroon}
+div.boxedBlock          {border: 1px solid grey;  }
+div.center {text-align: center}
+div.indented {margin-left: 25px}
+
+span.prototype {color: purple}
+a.prototype {color: purple}
+a.prototype:visited {color: black}
+span.route {color: red}
+b.warning {color: #CC5500}
+b.error {color: #CC0000}
+
+/* https://stackoverflow.com/questions/10769016/display-image-on-text-link-hover-css-only 
+    position: relative;
+    left: 20px;*/
+.child {
+    float: right;
+    height: 0px;
+}
+.parent:hover {
+    background-color: lightyellow;
+}
+.parent:hover .child {
+    background-color: lightyellow;
+    height: 200px;
+}
+
+                </style>
+      <style type="text/css">
+table.curvedEdges { border:10px solid RoyalBlue;-webkit-border-radius:13px;-moz-border-radius:13px;-ms-border-radius:13px;-o-border-radius:13px;border-radius:13px; }
+table.curvedEdges td, table.curvedEdges th { border-bottom:1px dotted black;padding:5px; }
+</style>
+      <meta name="generator" content="XSLT processor Saxonica"/>
+      <meta name="generator"
+             content="https://www.web3d.org/x3d/stylesheets/X3dToXhtml.xslt"/>
+      <meta name="generator"
+             content="https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/X3dToXhtml.xslt"/>
+      <link rel="shortcut icon"
+             href="https://www.web3d.org/x3d/content/icons/X3DtextIcon16.png"
+             title="X3D"/>
+   </head>
+   <body>
+      <code title="XML declaration">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</code>
+      <br/>
+      <code title="Document Type Declaration (DTD) for X3D validation">&lt;!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "<a href="https://www.web3d.org/specifications/x3d-3.3.dtd">https://www.web3d.org/specifications/x3d-4.0.dtd</a>"&gt;</code>
+      <div>
+<span title="X3D is the top-most XML element for an Extensible 3D (X3D) Graphics file">&lt;<span class="element">X3D</span>&#160;<span title="X3D Immersive Profile supports most nodes, similar to VRML97"><span class="attribute">profile</span>='<span class="value">Immersive</span>'</span>
+&#160;<span class="attribute">version</span>='<span class="value">4.0</span>'&#160;<span title="XML namespace for X3D Graphics schema validation"><span title="XML namespace for XML Schema validation">
+            <span class="attribute">xmlns:xsd</span>='<a href="http://www.w3.org/2001/XMLSchema-instance" target="_blank">http://www.w3.org/2001/XMLSchema-instance</a>'
+</span>
+         <span title="XML namespace for X3D Graphics schema validation">
+            <span class="attribute">xsd:noNamespaceSchemaLocation</span>
+         </span>='
+<a href="https://www.web3d.org/specifications/x3d-4.0.xsd" target="_blank">https://www.web3d.org/specifications/x3d-4.0.xsd</a>
+'</span>
+&gt;
+</span>
+<div class="indented">
+<span title="head can contain component, unit, and author-defined metadata (meta) tags">&lt;<span class="element">head</span>&gt;
+</span>
+<div class="indented">
+<span title="X3D component name and level indicate any additional scene functionality needed above the given X3D profile">&lt;<span class="element">component</span>&#160;<span class="attribute">level</span>='<span class="value">1</span>'&#160;<span class="attribute">name</span>='<span class="value">Scripting</span>'/&gt;
+</span><br />
+
+<span title="X3D component name and level indicate any additional scene functionality needed above the given X3D profile">&lt;<span class="element">component</span>&#160;<span class="attribute">name</span>='<span class="value">EnvironmentalEffects</span>'&#160;<span class="attribute">level</span>='<span class="value">3</span>'/&gt;
+</span><br />
+
+<span title="X3D component name and level indicate any additional scene functionality needed above the given X3D profile">&lt;<span class="element">component</span>&#160;<span class="attribute">name</span>='<span class="value">Shaders</span>'&#160;<span class="attribute">level</span>='<span class="value">1</span>'/&gt;
+</span><br />
+
+<span title="X3D component name and level indicate any additional scene functionality needed above the given X3D profile">&lt;<span class="element">component</span>&#160;<span class="attribute">name</span>='<span class="value">CubeMapTexturing</span>'&#160;<span class="attribute">level</span>='<span class="value">1</span>'/&gt;
+</span><br />
+
+<span title="X3D component name and level indicate any additional scene functionality needed above the given X3D profile">&lt;<span class="element">component</span>&#160;<span class="attribute">name</span>='<span class="value">Texturing</span>'&#160;<span class="attribute">level</span>='<span class="value">1</span>'/&gt;
+</span><br />
+
+<span title="X3D component name and level indicate any additional scene functionality needed above the given X3D profile">&lt;<span class="element">component</span>&#160;<span class="attribute">name</span>='<span class="value">Rendering</span>'&#160;<span class="attribute">level</span>='<span class="value">1</span>'/&gt;
+</span><br />
+
+<span title="X3D component name and level indicate any additional scene functionality needed above the given X3D profile">&lt;<span class="element">component</span>&#160;<span class="attribute">name</span>='<span class="value">Grouping</span>'&#160;<span class="attribute">level</span>='<span class="value">3</span>'/&gt;
+</span><br />
+
+<span title="X3D component name and level indicate any additional scene functionality needed above the given X3D profile">&lt;<span class="element">component</span>&#160;<span class="attribute">name</span>='<span class="value">Core</span>'&#160;<span class="attribute">level</span>='<span class="value">1</span>'/&gt;
+</span><br />
+
+<span title="meta 'title' provides file name for this resource">&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">title</span>'&#160;<span class="attribute">content</span>='<a href="ball.x3d">ball.x3d</a>'/&gt;
+</span><br />
+
+<span title="meta 'creator' provides name of original author">&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">creator</span>'&#160;<span class="attribute">content</span>='<span class="value">John Carlson</span>'/&gt;
+</span><br />
+
+<span title="meta 'generator' provides name of authoring tool or translation tool producing this scene">&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">generator</span>'&#160;<span class="attribute">content</span>='<span class="value">manual</span>'/&gt;
+</span><br />
+
+<span title="meta 'identifier' provides the unique Uniform Resource Identifier (URI) or url address for this resource">&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">identifier</span>'&#160;<span class="attribute">content</span>='
+<a href="https://coderextreme.net/X3DJSONLD/src/main/data/ball.x3d"
+                   target="_blank">https://coderextreme.net/X3DJSONLD/src/main/data/ball.x3d</a>
+'/&gt;
+</span><br />
+
+<span title="meta 'description' provides summary overview describing this resource">&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">description</span>'&#160;<span class="attribute">content</span>='<span class="plain">a prismatic sphere</span>'/&gt;
+</span></div><span title="head can contain component, unit, and author-defined metadata (meta) tags">&lt;/<span class="element">head</span>&gt;
+</span>
+<br /><span style="color:white">&lt;!--</span>
+            <div class="center">
+               <hr style="width:100%"/>
+               <b>
+                  <i>Index for DEF nodes: </i>
+               </b>
+               <a title="go to this ShaderPart node" href="#common" class="idName">common</a>,
+<a title="go to this ComposedCubeMapTexture node"
+                   href="#texture"
+                   class="idName">texture</a>
+               <hr style="width:100%"/>
+            </div>
+            <span style="color:white">--&gt;</span>
+<br />
+
+<span title="Scene is the root node that contains an X3D scene graph">&lt;<span class="element">Scene</span>&gt;
+</span>
+<div class="indented">
+<span title="WorldInfo contains persistent documentation information about the 3D world">&lt;<span class="element">WorldInfo</span>&#160;<span class="attribute">title</span>='<span class="value">ball.x3d</span>'/&gt;
+</span><br />
+
+<span title="NavigationInfo describes the viewing model and physical characteristics of the viewer's avatar">&lt;<span class="element">NavigationInfo</span>&#160;<span class="attribute">type</span>='<span class="value">"ANY" "EXAMINE" "FLY" "LOOKAT"</span>'/&gt;
+</span><br />
+<a name="Viewpoint_1"> </a> 
+<span title="Viewpoint provides a specific location and direction where the user may view the scene">&lt;<span class="element">Viewpoint</span>&#160;<span class="attribute">description</span>='<span class="value">Tour Views</span>'/&gt;
+</span><br />
+
+<span title="Background simulates ground and sky, using vertical arrays of wraparound color values or backdrop textures on all six sides">&lt;<span class="element">Background</span>
+<br />
+&#160;&#160;<span title="uniform resource locator (url) list of relative or absolute file addresses, performed in order until resource retrieval succeeds"><span class="attribute">backUrl</span>='
+"<a href="../resources/images/all_probes/stpeters_cross/stpeters_back.png"
+                   target="_blank"
+                   class="parent">../resources/images/all_probes/stpeters_cross/stpeters_back.png<img class="child"
+                        src="../resources/images/all_probes/stpeters_cross/stpeters_back.png"/>
+               </a>"
+'</span>
+
+<br />
+&#160;&#160;<span title="uniform resource locator (url) list of relative or absolute file addresses, performed in order until resource retrieval succeeds"><span class="attribute">bottomUrl</span>='
+"<a href="../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"
+                   target="_blank"
+                   class="parent">../resources/images/all_probes/stpeters_cross/stpeters_bottom.png<img class="child"
+                        src="../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"/>
+               </a>"
+'</span>
+
+<br />
+&#160;&#160;<span title="uniform resource locator (url) list of relative or absolute file addresses, performed in order until resource retrieval succeeds"><span class="attribute">frontUrl</span>='
+"<a href="../resources/images/all_probes/stpeters_cross/stpeters_front.png"
+                   target="_blank"
+                   class="parent">../resources/images/all_probes/stpeters_cross/stpeters_front.png<img class="child"
+                        src="../resources/images/all_probes/stpeters_cross/stpeters_front.png"/>
+               </a>"
+'</span>
+
+<br />
+&#160;&#160;<span title="uniform resource locator (url) list of relative or absolute file addresses, performed in order until resource retrieval succeeds"><span class="attribute">leftUrl</span>='
+"<a href="../resources/images/all_probes/stpeters_cross/stpeters_left.png"
+                   target="_blank"
+                   class="parent">../resources/images/all_probes/stpeters_cross/stpeters_left.png<img class="child"
+                        src="../resources/images/all_probes/stpeters_cross/stpeters_left.png"/>
+               </a>"
+'</span>
+
+<br />
+&#160;&#160;<span title="uniform resource locator (url) list of relative or absolute file addresses, performed in order until resource retrieval succeeds"><span class="attribute">rightUrl</span>='
+"<a href="../resources/images/all_probes/stpeters_cross/stpeters_right.png"
+                   target="_blank"
+                   class="parent">../resources/images/all_probes/stpeters_cross/stpeters_right.png<img class="child"
+                        src="../resources/images/all_probes/stpeters_cross/stpeters_right.png"/>
+               </a>"
+'</span>
+
+<br />
+&#160;&#160;<span title="uniform resource locator (url) list of relative or absolute file addresses, performed in order until resource retrieval succeeds"><span class="attribute">topUrl</span>='
+"<a href="../resources/images/all_probes/stpeters_cross/stpeters_top.png"
+                   target="_blank"
+                   class="parent">../resources/images/all_probes/stpeters_cross/stpeters_top.png<img class="child"
+                        src="../resources/images/all_probes/stpeters_cross/stpeters_top.png"/>
+               </a>"
+'</span>
+/&gt;
+</span><br />
+
+<span title="Transform translates, orients and scales child geometry within the local world coordinate system">&lt;<span class="element">Transform</span>&gt;
+</span>
+<div class="indented">
+<span title="Shape contains geometry and optional corresponding Appearance">&lt;<span class="element">Shape</span>&gt;
+</span>
+<div class="indented">
+<span title="Sphere is a geometry primitive node">&lt;<span class="element">Sphere</span>/&gt;
+</span><br />
+
+<span title="Appearance specifies visual properties of geometry by containing Material, texture and TextureTransform nodes">&lt;<span class="element">Appearance</span>&gt;
+</span>
+<div class="indented">
+<span title="Material specifies surface rendering properties for associated geometry">&lt;<span class="element">Material</span>&#160;<span class="attribute">diffuseColor</span>='<span class="value">0.7 0.7 0.7</span>'&#160;<span class="attribute">specularColor</span>='<span class="value">0.5 0.5 0.5</span>'/&gt;
+</span><br />
+<a name="texture"> </a> 
+&lt;<span class="element">ComposedCubeMapTexture</span>&#160;<span class="attribute">DEF</span>='<a title="bookmark link to texture" href="#texture" class="idName">texture</a>'&#160;<span class="attribute">containerField</span>='<span class="value">texture</span>'&gt;
+<div class="indented">
+<span title="ImageTexture maps a 2D-image file onto a geometric shape">&lt;<span class="element">ImageTexture</span>&#160;<span class="attribute">containerField</span>='<span class="value">backTexture</span>'
+<br />
+&#160;&#160;<span title="uniform resource locator (url) list of relative or absolute file addresses, performed in order until resource retrieval succeeds"><span class="attribute">url</span>='
+"<a href="../resources/images/all_probes/stpeters_cross/stpeters_back.png"
+                               target="_blank"
+                               class="parent">../resources/images/all_probes/stpeters_cross/stpeters_back.png<img class="child"
+                                    src="../resources/images/all_probes/stpeters_cross/stpeters_back.png"/>
+                           </a>"
+'</span>
+/&gt;
+</span><br />
+
+<span title="ImageTexture maps a 2D-image file onto a geometric shape">&lt;<span class="element">ImageTexture</span>&#160;<span class="attribute">containerField</span>='<span class="value">bottomTexture</span>'
+<br />
+&#160;&#160;<span title="uniform resource locator (url) list of relative or absolute file addresses, performed in order until resource retrieval succeeds"><span class="attribute">url</span>='
+"<a href="../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"
+                               target="_blank"
+                               class="parent">../resources/images/all_probes/stpeters_cross/stpeters_bottom.png<img class="child"
+                                    src="../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"/>
+                           </a>"
+'</span>
+/&gt;
+</span><br />
+
+<span title="ImageTexture maps a 2D-image file onto a geometric shape">&lt;<span class="element">ImageTexture</span>&#160;<span class="attribute">containerField</span>='<span class="value">frontTexture</span>'
+<br />
+&#160;&#160;<span title="uniform resource locator (url) list of relative or absolute file addresses, performed in order until resource retrieval succeeds"><span class="attribute">url</span>='
+"<a href="../resources/images/all_probes/stpeters_cross/stpeters_front.png"
+                               target="_blank"
+                               class="parent">../resources/images/all_probes/stpeters_cross/stpeters_front.png<img class="child"
+                                    src="../resources/images/all_probes/stpeters_cross/stpeters_front.png"/>
+                           </a>"
+'</span>
+/&gt;
+</span><br />
+
+<span title="ImageTexture maps a 2D-image file onto a geometric shape">&lt;<span class="element">ImageTexture</span>&#160;<span class="attribute">containerField</span>='<span class="value">leftTexture</span>'
+<br />
+&#160;&#160;<span title="uniform resource locator (url) list of relative or absolute file addresses, performed in order until resource retrieval succeeds"><span class="attribute">url</span>='
+"<a href="../resources/images/all_probes/stpeters_cross/stpeters_left.png"
+                               target="_blank"
+                               class="parent">../resources/images/all_probes/stpeters_cross/stpeters_left.png<img class="child"
+                                    src="../resources/images/all_probes/stpeters_cross/stpeters_left.png"/>
+                           </a>"
+'</span>
+/&gt;
+</span><br />
+
+<span title="ImageTexture maps a 2D-image file onto a geometric shape">&lt;<span class="element">ImageTexture</span>&#160;<span class="attribute">containerField</span>='<span class="value">rightTexture</span>'
+<br />
+&#160;&#160;<span title="uniform resource locator (url) list of relative or absolute file addresses, performed in order until resource retrieval succeeds"><span class="attribute">url</span>='
+"<a href="../resources/images/all_probes/stpeters_cross/stpeters_right.png"
+                               target="_blank"
+                               class="parent">../resources/images/all_probes/stpeters_cross/stpeters_right.png<img class="child"
+                                    src="../resources/images/all_probes/stpeters_cross/stpeters_right.png"/>
+                           </a>"
+'</span>
+/&gt;
+</span><br />
+
+<span title="ImageTexture maps a 2D-image file onto a geometric shape">&lt;<span class="element">ImageTexture</span>&#160;<span class="attribute">containerField</span>='<span class="value">topTexture</span>'
+<br />
+&#160;&#160;<span title="uniform resource locator (url) list of relative or absolute file addresses, performed in order until resource retrieval succeeds"><span class="attribute">url</span>='
+"<a href="../resources/images/all_probes/stpeters_cross/stpeters_top.png"
+                               target="_blank"
+                               class="parent">../resources/images/all_probes/stpeters_cross/stpeters_top.png<img class="child"
+                                    src="../resources/images/all_probes/stpeters_cross/stpeters_top.png"/>
+                           </a>"
+'</span>
+/&gt;
+</span></div>&lt;/<span class="element">ComposedCubeMapTexture</span>&gt;
+<br /><span title="XML comment">&lt;!--  &lt;ProgramShader  DEF='ProgramShader'  containerField='shaders'  language='GLSL'&gt;  &lt;ShaderProgram  url='"../shaders/freewrl.vs"'  containerField='programs'  type='VERTEX'&gt;  &lt;field  name='chromaticDispertion'  accessType='initializeOnly'  type='SFVec3f'  value='0.98  1  1.033'/&gt;  &lt;field  name='bias'  accessType='initializeOnly'  type='SFFloat'  value='0.5'/&gt;  &lt;field  name='scale'  accessType='initializeOnly'  type='SFFloat'  value='0.5'/&gt;  &lt;field  name='power'  accessType='initializeOnly'  type='SFFloat'  value='2'/&gt;  &lt;/ShaderProgram&gt;  &lt;ShaderProgram  url='"../shaders/freewrl.fs"'  containerField='programs'  type='FRAGMENT'/&gt;  &lt;/ProgramShader&gt;  here!!! --&gt;</span>
+<br /><span title="XML comment">&lt;!--  &lt;ComposedShader  language='GLSL'&gt;  &lt;field  name='chromaticDispertion'  accessType='initializeOnly'  type='SFVec3f'  value='0.98  1  1.033'&gt;&lt;/field&gt;  &lt;field  name='fw_Texture_unit0'  type='SFNode'  accessType="initializeOnly"&gt;  &lt;ComposedCubeMapTexture  USE="texture"&gt;&lt;/ComposedCubeMapTexture&gt;  &lt;/field&gt;  &lt;field  name='bias'  accessType='initializeOnly'  type='SFFloat'  value='0.5'&gt;&lt;/field&gt;  &lt;field  name='scale'  accessType='initializeOnly'  type='SFFloat'  value='0.5'&gt;&lt;/field&gt;  &lt;field  name='power'  accessType='initializeOnly'  type='SFFloat'  value='2'&gt;&lt;/field&gt;  &lt;ShaderPart  url='"../shaders/contact.vs"'  type="VERTEX" <br /> containerField='parts'&gt;&lt;/ShaderPart&gt;  &lt;ShaderPart  url='"../shaders/common.fs"'  containerField='parts'  type='FRAGMENT'&gt;&lt;/ShaderPart&gt;  &lt;/ComposedShader&gt;  here!!! --&gt;</span>
+<br /><span title="XML comment">&lt;!--  &lt;ComposedShader  language='GLSL'&gt;  &lt;field  name='chromaticDispertion'  accessType='inputOutput'  type='SFVec3f'  value='0.98  1  1.033'&gt;&lt;/field&gt;  &lt;field  name='cube'  type='SFNode'  accessType="inputOutput"&gt;  &lt;ComposedCubeMapTexture  USE="texture"&gt;&lt;/ComposedCubeMapTexture&gt;  &lt;/field&gt;  &lt;field  name='bias'  accessType='inputOutput'  type='SFFloat'  value='0.5'&gt;&lt;/field&gt;  &lt;field  name='scale'  accessType='inputOutput'  type='SFFloat'  value='0.5'&gt;&lt;/field&gt;  &lt;field  name='power'  accessType='inputOutput'  type='SFFloat'  value='2'&gt;&lt;/field&gt;  &lt;ShaderPart  url='"../shaders/octaga.vs"'  type="VERTEX" <br /> containerField='parts'&gt;&lt;/ShaderPart&gt;  &lt;ShaderPart  url='"../shaders/common.fs"'  containerField='parts'  type='FRAGMENT'&gt;&lt;/ShaderPart&gt;  &lt;/ComposedShader&gt;  here!!! --&gt;</span>
+<br /><span title="XML comment">&lt;!--  &lt;ComposedShader  language='GLSL'&gt;  &lt;field  name='chromaticDispertion'  accessType='initializeOnly'  type='SFVec3f'  value='0.98  1  1.033'&gt;&lt;/field&gt;  &lt;field  name='cube'  accessType='initializeOnly'  type='SFInt32'  value='0'&gt;&lt;/field&gt;  &lt;field  name='bias'  accessType='initializeOnly'  type='SFFloat'  value='0.5'&gt;&lt;/field&gt;  &lt;field  name='scale'  accessType='initializeOnly'  type='SFFloat'  value='0.5'&gt;&lt;/field&gt;  &lt;field  name='power'  accessType='initializeOnly'  type='SFFloat'  value='2'&gt;&lt;/field&gt;  &lt;ShaderPart  url='"../shaders/instant.vs"'  type="VERTEX" <br /> containerField='parts'&gt;&lt;/ShaderPart&gt;  &lt;ShaderPart  url='"../shaders/common.fs"'  containerField='parts'  type='FRAGMENT'&gt;&lt;/ShaderPart&gt;  &lt;/ComposedShader&gt;  here!!! --&gt;</span>
+<br /><span title="XML comment">&lt;!--  here!!! --&gt;</span>
+<br />
+
+&lt;<span class="element">ComposedShader</span>&#160;<span class="attribute">language</span>='<span class="value">GLSL</span>'&#160;<span class="attribute">containerField</span>='<span class="value">shaders</span>'&gt;
+<div class="indented">
+<span title="A field element defines an interface attribute or node">&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">chromaticDispertion</span>'&#160;<span class="attribute">type</span>='<span class="value">SFVec3f</span>'&#160;<span class="attribute">value</span>='<span class="value">0.98 1 1.033</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'/&gt;
+</span><br />
+
+<span title="A field element defines an interface attribute or node">&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">cube</span>'&#160;<span class="attribute">type</span>='<span class="value">SFNode</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'&gt;
+</span>
+<div class="indented">
+&lt;<span class="element">ComposedCubeMapTexture</span>&#160;<span class="attribute">USE</span>='
+<a title="go to the original DEF node definition"
+                                  href="#texture"
+                                  class="idName">texture</a>'&#160;<span class="attribute">containerField</span>='<span class="value">texture</span>'/&gt;
+</div><span title="A field element defines an interface attribute or node">&lt;/<span class="prototype">field</span>&gt;
+</span>
+<br />
+
+<span title="A field element defines an interface attribute or node">&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">bias</span>'&#160;<span class="attribute">type</span>='<span class="value">SFFloat</span>'&#160;<span class="attribute">value</span>='<span class="value">0.5</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'/&gt;
+</span><br />
+
+<span title="A field element defines an interface attribute or node">&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">scale</span>'&#160;<span class="attribute">type</span>='<span class="value">SFFloat</span>'&#160;<span class="attribute">value</span>='<span class="value">0.5</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'/&gt;
+</span><br />
+
+<span title="A field element defines an interface attribute or node">&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">power</span>'&#160;<span class="attribute">type</span>='<span class="value">SFFloat</span>'&#160;<span class="attribute">value</span>='<span class="value">2</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'/&gt;
+</span><br />
+
+&lt;<span class="element">ShaderPart</span>&#160;<span class="attribute">containerField</span>='<span class="value">parts</span>'
+<br />
+&#160;&#160;<span title="uniform resource locator (url) list of relative or absolute file addresses, performed in order until resource retrieval succeeds"><span class="attribute">url</span>='
+"<a href="../shaders/x3dom.vs" target="_blank">../shaders/x3dom.vs</a>"
+'</span>
+&gt;
+<div class="indented"/>&lt;/<span class="element">ShaderPart</span>&gt;
+<br />
+<a name="common"> </a> 
+&lt;<span class="element">ShaderPart</span>&#160;<span class="attribute">DEF</span>='<a title="bookmark link to common" href="#common" class="idName">common</a>'&#160;<span class="attribute">containerField</span>='<span class="value">parts</span>'&#160;<span class="attribute">type</span>='<span class="value">FRAGMENT</span>'
+<br />
+&#160;&#160;<span title="uniform resource locator (url) list of relative or absolute file addresses, performed in order until resource retrieval succeeds"><span class="attribute">url</span>='
+"<a href="../shaders/common.fs" target="_blank">../shaders/common.fs</a>"
+'</span>
+&gt;
+<div class="indented"/>&lt;/<span class="element">ShaderPart</span>&gt;
+</div>&lt;/<span class="element">ComposedShader</span>&gt;
+<br />
+
+&lt;<span class="element">ComposedShader</span>&#160;<span class="attribute">language</span>='<span class="value">GLSL</span>'&#160;<span class="attribute">containerField</span>='<span class="value">shaders</span>'&gt;
+<div class="indented">
+<span title="A field element defines an interface attribute or node">&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">chromaticDispertion</span>'&#160;<span class="attribute">type</span>='<span class="value">SFVec3f</span>'&#160;<span class="attribute">value</span>='<span class="value">0.98 1 1.033</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+</span><br />
+
+<span title="A field element defines an interface attribute or node">&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">cube</span>'&#160;<span class="attribute">type</span>='<span class="value">SFNode</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'&gt;
+</span>
+<div class="indented">
+&lt;<span class="element">ComposedCubeMapTexture</span>&#160;<span class="attribute">USE</span>='
+<a title="go to the original DEF node definition"
+                                  href="#texture"
+                                  class="idName">texture</a>'&#160;<span class="attribute">containerField</span>='<span class="value">texture</span>'/&gt;
+</div><span title="A field element defines an interface attribute or node">&lt;/<span class="prototype">field</span>&gt;
+</span>
+<br />
+
+<span title="A field element defines an interface attribute or node">&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">bias</span>'&#160;<span class="attribute">type</span>='<span class="value">SFFloat</span>'&#160;<span class="attribute">value</span>='<span class="value">0.5</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+</span><br />
+
+<span title="A field element defines an interface attribute or node">&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">scale</span>'&#160;<span class="attribute">type</span>='<span class="value">SFFloat</span>'&#160;<span class="attribute">value</span>='<span class="value">0.5</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+</span><br />
+
+<span title="A field element defines an interface attribute or node">&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">power</span>'&#160;<span class="attribute">type</span>='<span class="value">SFFloat</span>'&#160;<span class="attribute">value</span>='<span class="value">2</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+</span><br />
+
+&lt;<span class="element">ShaderPart</span>&#160;<span class="attribute">containerField</span>='<span class="value">parts</span>'
+<br />
+&#160;&#160;<span title="uniform resource locator (url) list of relative or absolute file addresses, performed in order until resource retrieval succeeds"><span class="attribute">url</span>='
+"<a href="../shaders/x_ite.vs" target="_blank">../shaders/x_ite.vs</a>"
+'</span>
+&gt;
+<div class="indented"/>&lt;/<span class="element">ShaderPart</span>&gt;
+<br />
+
+&lt;<span class="element">ShaderPart</span>&#160;<span class="attribute">containerField</span>='<span class="value">parts</span>'&#160;<span class="attribute">type</span>='<span class="value">FRAGMENT</span>'
+<br />
+&#160;&#160;<span title="uniform resource locator (url) list of relative or absolute file addresses, performed in order until resource retrieval succeeds"><span class="attribute">url</span>='
+"<a href="../shaders/x_itebubbles.fs" target="_blank">../shaders/x_itebubbles.fs</a>"
+'</span>
+&gt;
+<div class="indented"/>&lt;/<span class="element">ShaderPart</span>&gt;
+</div>&lt;/<span class="element">ComposedShader</span>&gt;
+</div><span title="Appearance specifies visual properties of geometry by containing Material, texture and TextureTransform nodes">&lt;/<span class="element">Appearance</span>&gt;
+</span>
+</div><span title="Shape contains geometry and optional corresponding Appearance">&lt;/<span class="element">Shape</span>&gt;
+</span>
+</div><span title="Transform translates, orients and scales child geometry within the local world coordinate system">&lt;/<span class="element">Transform</span>&gt;
+</span>
+</div><span title="Scene is the root node that contains an X3D scene graph">&lt;/<span class="element">Scene</span>&gt;
+</span>
+</div><span title="X3D is the top-most XML element for an Extensible 3D (X3D) Graphics file">&lt;/<span class="element">X3D</span>&gt;
+</span>
+<br /><span style="color:white">&lt;!--</span>
+         <div class="center">
+            <hr style="width:100%"/>
+            <b>
+               <i>Index for DEF nodes: </i>
+            </b>
+            <a title="go to this ShaderPart node" href="#common" class="idName">common</a>,
+<a title="go to this ComposedCubeMapTexture node"
+                href="#texture"
+                class="idName">texture</a>
+            <hr style="width:100%"/>
+         </div>
+         <span style="color:white">--&gt;</span>
+         <!-- apply-templates * | comment() complete -->
+      </div>
+      <span style="color:white">--&gt;</span>
+      <p style="text-align:center;">
+         <span style="color:white">&lt;!--</span>
+Color legend: X3D terminology <!--(matching X3D and XML terminology) -->
+&lt;<span class="element">X3dNode</span>
+         <span class="idName"> DEF</span>='<span class="idName">idName</span>' <span class="attribute">field</span>='<span class="value">value</span>'/&gt; 
+ matches XML terminology 
+&lt;<span class="element">XmlElement</span>
+         <span class="idName"> DEF</span>='<span class="idName">idName</span>' <span class="attribute">attribute</span>='<span class="value">value</span>'/&gt; <br/>
+<span title="behavior node" style="background-color:#DDEEFF;" >(Light-blue background: event-based behavior node or statement)</span>
+<span title="inserted documentation about ROUTE connections" style="background-color:#EEEEEE;">(Grey background inside box: inserted documentation)</span>
+<span title="X3D Extensibility" style="background-color:#FFEEFF;">(Magenta background: X3D Extensibility)</span><br/>
+         <span style="color:white"> --&gt;</span>
+      </p>
+      <p style="text-align:center; background-color:white">
+         <span style="color:white">&lt;!--</span>
+For additional help information about X3D scenes, please see <a href="https://www.web3d.org/x3d/content/X3dTooltips.html"
+             title="Summary descriptions and authoring hints for each X3D node (element) and field (attribute)"
+             target="_blank">X3D Tooltips</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html"
+             title="Numerous resources that support X3D graphics"
+             target="_blank">X3D Resources</a>, and <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html"
+             title="Style guidelines, authoring tips, and best practices"
+             target="_blank">X3D Scene Authoring Hints</a>.
+<span style="color:white">--&gt;</span>
+      </p>
+   </body>
+</html>

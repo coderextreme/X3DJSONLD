@@ -19,7 +19,7 @@
       if (unlocked) vaultUnlocked = value;
 
       }]]></Script>
-<Shape><Appearance><Material diffuseColor="1 0 0"></Material>
+<Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 0 0"></Material>
 </Appearance>
 <Sphere></Sphere>
 </Shape>

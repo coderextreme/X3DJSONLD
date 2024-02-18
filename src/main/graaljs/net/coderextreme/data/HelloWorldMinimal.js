@@ -4,6 +4,10 @@ ConfigurationProperties.showDefaultAttributes = false;
 ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;
 ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
+function doubleToFloat(d) {
+    if (Float32Array)
+	return new Float32Array([d])[0];
+}
       var X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
       .addComments(new CommentsBlock("All head/meta tags are optional, WorldInfo is also optional"))
       .addComments(new CommentsBlock("Text node not supported by X3D Interchange profile, use Immersive profile or Text component level 1"))

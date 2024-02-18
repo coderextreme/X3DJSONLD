@@ -12,7 +12,7 @@ CX3D* X3D0 = new CX3D();
 CGroup* group = (CGroup*)(m_pScene.createNode("Group"));
 group->addChildren(X3D0);
 X3D0->setProfile("Immersive");
-X3D0->setVersion("3.3");
+X3D0->setVersion("4.0");
 Chead* head1 = new Chead();
 Ccomponent* component2 = new Ccomponent();
 component2->setName("Scripting");
@@ -59,12 +59,12 @@ CProtoDeclare ProtoDeclare10 = browser.createX3DFromString(R"foo(<?xml version="
 <ProtoBody><Group><Transform DEF="transform"><IS><connect nodeField="translation" protoField="position"></connect>
 </IS>
 <Shape><Sphere></Sphere>
-<Appearance><Material diffuseColor="1 0 0"></Material>
+<Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 0 0"></Material>
 </Appearance>
 </Shape>
-<Transform translation="1 0 0"><Shape><Text string="&quot;Node&quot;"><FontStyle justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" size="5"></FontStyle>
+<Transform translation="1 0 0"><Shape><Text string="&quot;Node&quot;"><FontStyle containerField="fontStyle" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" size="5"></FontStyle>
 </Text>
-<Appearance><Material diffuseColor="0 0 1"></Material>
+<Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 0 1"></Material>
 </Appearance>
 </Shape>
 </Transform>
@@ -236,11 +236,11 @@ group->addChildren(*ProtoDeclare10);
 
 CProtoDeclare ProtoDeclare39 = browser.createX3DFromString(R"foo(<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
-<ProtoDeclare name="cylinder" ><ProtoInterface><field name="set_positionA" accessType="inputOnly" type="SFVec3f"></field>
+<ProtoDeclare name="cyl" ><ProtoInterface><field name="set_positionA" accessType="inputOnly" type="SFVec3f"></field>
 <field name="set_positionB" accessType="inputOnly" type="SFVec3f"></field>
 </ProtoInterface>
 <ProtoBody><Group><Shape><Extrusion DEF="extrusion" creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0" spine="0 -50 0 0 50 0"></Extrusion>
-<Appearance><Material diffuseColor="0 1 0"></Material>
+<Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 1 0"></Material>
 </Appearance>
 </Shape>
 <Script DEF="MoveCylinder"><field name="spine" accessType="inputOutput" type="MFVec3f" value="0 -50 0 0 50 0"></field>
@@ -274,7 +274,7 @@ CProtoDeclare ProtoDeclare39 = browser.createX3DFromString(R"foo(<?xml version="
 </Group>
 </ProtoBody>
 </ProtoDeclare>)foo");
-ProtoDeclare39->setName("cylinder");
+ProtoDeclare39->setName("cyl");
 CProtoInterface* ProtoInterface40 = new CProtoInterface();
 Cfield* field41 = new Cfield();
 field41->setName("set_positionA");
@@ -431,7 +431,7 @@ ProtoInstance65->addFieldValue(*fieldValue66);
 Transform57->addChildren(*ProtoInstance65);
 
 CProtoInstance* ProtoInstance67 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
-ProtoInstance67->setName("cylinder");
+ProtoInstance67->setName("cyl");
 ProtoInstance67->setDEF("linkA");
 CfieldValue* fieldValue68 = new CfieldValue();
 fieldValue68->setName("set_positionA");
@@ -446,7 +446,7 @@ ProtoInstance67->addFieldValue(*fieldValue69);
 Transform57->addChildren(*ProtoInstance67);
 
 CProtoInstance* ProtoInstance70 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
-ProtoInstance70->setName("cylinder");
+ProtoInstance70->setName("cyl");
 ProtoInstance70->setDEF("linkB");
 CfieldValue* fieldValue71 = new CfieldValue();
 fieldValue71->setName("set_positionA");
@@ -461,7 +461,7 @@ ProtoInstance70->addFieldValue(*fieldValue72);
 Transform57->addChildren(*ProtoInstance70);
 
 CProtoInstance* ProtoInstance73 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
-ProtoInstance73->setName("cylinder");
+ProtoInstance73->setName("cyl");
 ProtoInstance73->setDEF("linkC");
 CfieldValue* fieldValue74 = new CfieldValue();
 fieldValue74->setName("set_positionA");

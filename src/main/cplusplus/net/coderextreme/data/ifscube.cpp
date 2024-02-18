@@ -12,7 +12,7 @@ CX3D* X3D0 = new CX3D();
 CGroup* group = (CGroup*)(m_pScene.createNode("Group"));
 group->addChildren(X3D0);
 X3D0->setProfile("Interchange");
-X3D0->setVersion("4.0");
+X3D0->setVersion("3.3");
 Chead* head1 = new Chead();
 Cmeta* meta2 = new Cmeta();
 meta2->setName("title");
@@ -34,37 +34,42 @@ meta5->setName("creator");
 meta5->setContent("John Carlson");
 head1->addMeta(*meta5);
 
+Cmeta* meta6 = new Cmeta();
+meta6->setName("created");
+meta6->setContent("4 April 2017");
+head1->addMeta(*meta6);
+
 X3D0->setHead(*head1);
 
-CScene* Scene6 = new CScene();
-CGroup* Group7 = (CGroup *)(m_pScene.createNode("Group"));
-CShape* Shape8 = (CShape *)(m_pScene.createNode("Shape"));
-CIndexedFaceSet* IndexedFaceSet9 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
-IndexedFaceSet9->setDEF("IndexedFaceSet");
-IndexedFaceSet9->setCreaseAngle(1.57);
-IndexedFaceSet9->setNormalPerVertex(False);
-IndexedFaceSet9->setColorIndex(new int[33]{0,0,0,-1,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1});
-IndexedFaceSet9->setNormalIndex(new int[14]{0,-1,0,-1,1,-1,2,-1,3,-1,4,-1,5,-1});
-IndexedFaceSet9->setCoordIndex(new int[33]{0,0,1,-1,0,1,1,-1,2,2,3,3,-1,0,3,3,0,-1,0,3,2,1,-1,1,2,2,1,-1,1,2,3,0,-1});
-CColor* Color10 = (CColor *)(m_pScene.createNode("Color"));
-Color10->setColor(new float[3]{0,1,0});
-IndexedFaceSet9->setColor(*Color10);
+CScene* Scene7 = new CScene();
+CGroup* Group8 = (CGroup *)(m_pScene.createNode("Group"));
+CShape* Shape9 = (CShape *)(m_pScene.createNode("Shape"));
+CIndexedFaceSet* IndexedFaceSet10 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet10->setCreaseAngle(1.57);
+IndexedFaceSet10->setDEF("IndexedFaceSet");
+IndexedFaceSet10->setCoordIndex(new int[33]{0,0,1,-1,0,1,1,-1,2,2,3,3,-1,0,3,3,0,-1,0,3,2,1,-1,1,2,2,1,-1,1,2,3,0,-1});
+IndexedFaceSet10->setNormalIndex(new int[14]{0,-1,0,-1,1,-1,2,-1,3,-1,4,-1,5,-1});
+IndexedFaceSet10->setNormalPerVertex(False);
+IndexedFaceSet10->setColorIndex(new int[33]{0,0,0,-1,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1});
+CCoordinate* Coordinate11 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate11->setPoint(new float[12]{0,0,1,0,1,1,1,1,1,1,0,1});
+IndexedFaceSet10->setCoord(*Coordinate11);
 
-CNormal* Normal11 = (CNormal *)(m_pScene.createNode("Normal"));
-Normal11->setVector(new float[18]{1,0,0,-1,0,0,0,1,0,0,0,-1,0,-1,0,0,0,1});
-IndexedFaceSet9->setNormal(*Normal11);
+CNormal* Normal12 = (CNormal *)(m_pScene.createNode("Normal"));
+Normal12->setVector(new float[18]{1,0,0,-1,0,0,0,1,0,0,0,-1,0,-1,0,0,0,1});
+IndexedFaceSet10->setNormal(*Normal12);
 
-CCoordinate* Coordinate12 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
-Coordinate12->setPoint(new float[12]{0,0,1,0,1,1,1,1,1,1,0,1});
-IndexedFaceSet9->setCoord(*Coordinate12);
+CColor* Color13 = (CColor *)(m_pScene.createNode("Color"));
+Color13->setColor(new float[3]{0,1,0});
+IndexedFaceSet10->setColor(*Color13);
 
-Shape8->setGeometry(IndexedFaceSet9);
+Shape9->setGeometry(IndexedFaceSet10);
 
-Group7->addChildren(*Shape8);
+Group8->addChildren(*Shape9);
 
-group->addChildren(*Group7);
+group->addChildren(*Group8);
 
-X3D0->setScene(*Scene6);
+X3D0->setScene(*Scene7);
 
 m_pScene.addRootNode(group);
 X3D0->toXMLString();

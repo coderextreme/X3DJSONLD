@@ -14,6 +14,7 @@
     <meta content='John Carlson' name='creator'/>
     <meta content='manual' name='generator'/>
     <meta content='https://coderextreme.net/X3DJSONLD/src/main/data/ball.x3d' name='identifier'/>
+    <meta content='a prismatic sphere' name='description'/>
   </head>
   <Scene>
     <WorldInfo title='ball.x3d'/>
@@ -35,7 +36,14 @@
             <ShaderPart url='"../shaders/x3dom.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"'/>
             <ShaderPart DEF='common' type='FRAGMENT' url='"../shaders/common.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"'/>
           </ComposedShader>
-          <ComposedCubeMapTexture DEF='texture'/>
+          <ComposedCubeMapTexture DEF='texture'>
+            <ImageTexture containerField='backTexture' url='"../resources/images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"'/>
+            <ImageTexture containerField='bottomTexture' url='"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"'/>
+            <ImageTexture containerField='frontTexture' url='"../resources/images/all_probes/stpeters_cross/stpeters_front.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"'/>
+            <ImageTexture containerField='leftTexture' url='"../resources/images/all_probes/stpeters_cross/stpeters_left.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"'/>
+            <ImageTexture containerField='rightTexture' url='"../resources/images/all_probes/stpeters_cross/stpeters_right.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"'/>
+            <ImageTexture containerField='topTexture' url='"../resources/images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"'/>
+          </ComposedCubeMapTexture>
         </Appearance>
         <Sphere/>
       </Shape>

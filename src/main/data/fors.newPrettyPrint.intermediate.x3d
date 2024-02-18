@@ -59,7 +59,7 @@ ecmascript:
         <ROUTE fromField='value_changed' fromNode='NodePosition' toField='set_translation' toNode='transform'/>
       </ProtoBody>
     </ProtoDeclare>
-    <ProtoDeclare name='cylinder'>
+    <ProtoDeclare name='cyl'>
       <ProtoInterface>
         <field name='set_positionA' accessType='inputOnly' type='SFVec3f'/>
         <field name='set_positionB' accessType='inputOnly' type='SFVec3f'/>
@@ -114,7 +114,7 @@ ecmascript:
       <ProtoInstance DEF='nodeB' name='node'>
         <fieldValue name='position' value='50 50 50'/>
       </ProtoInstance>
-      <ProtoInstance DEF='linkA' name='cylinder'>
+      <ProtoInstance DEF='linkA' name='cyl'>
         <fieldValue name='set_positionA' value='0 0 0'/>
         <fieldValue name='set_positionB' value='50 50 50'/>
       </ProtoInstance>

@@ -68,7 +68,7 @@ import org.web3d.x3d.jsail.Shape.*;
 	* @author Class participants in course Introduction to VRML/X3D.
  */
 
-public class ExtrusionHeart
+import net.coderextreme.X3DRoots;import java.util.List;import java.util.ArrayList;public class ExtrusionHeart implements X3DRoots 
 {
 	/** Default constructor to create this object. */
 	public ExtrusionHeart ()
@@ -121,6 +121,11 @@ public class ExtrusionHeart
 	{	  
 		return x3dModel;
 	}
+	public List<X3D> getRootNodeList() {
+		List<X3D> list = new ArrayList<X3D>(1);
+		list.add(x3dModel);
+		return list;
+	}
 	   
     /** 
      * Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
@@ -133,7 +138,7 @@ public class ExtrusionHeart
      */
     public static void main(String args[])
     {
-        System.out.println("Build this X3D model, showing diagnostics...");
+        System.out.println("Build this X3D model, showing validation diagnostics...");
         X3D thisExampleX3dModel = new ExtrusionHeart().getX3dModel();
 //      System.out.println("X3D model construction complete.");
 	

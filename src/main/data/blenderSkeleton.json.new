@@ -1,0 +1,208 @@
+{
+  "X3D": {
+    "@profile": "Immersive",
+    "@version": "4.0",
+    "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-4.0.xsd",
+    "head": {
+      "meta": [
+        {
+          "@name": "filename",
+          "@content": "blenderSkeleton.x3d"
+        },
+        {
+          "@name": "reference",
+          "@content": "http://www.web3D.org"
+        },
+        {
+          "@name": "generator",
+          "@content": "Blender 3.6.4"
+        },
+        {
+          "@name": "translated",
+          "@content": "15 December 2023"
+        },
+        {
+          "@name": "generator",
+          "@content": "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"
+        },
+        {
+          "@name": "reference",
+          "@content": "X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+        }
+      ],
+      "component": [
+        {
+          "@name": "HAnim",
+          "@level": 3
+        }
+      ]
+    },
+    "Scene": {
+      "-children": [
+        {
+          "NavigationInfo": {}
+        },
+        {
+          "Background": {
+            "@DEF": "WO_World",
+            "@skyColor": [
+              0.05087609,
+              0.05087609,
+              0.05087609
+            ],
+            "@groundColor": [
+              0.05087609,
+              0.05087609,
+              0.05087609
+            ]
+          }
+        },
+        {
+          "Transform": {
+            "-children": [
+              {
+                "Shape": {
+                  "@DEF": "SiteShape",
+                  "-children": [
+                    {
+                      "Appearance": {
+                        "-children": [
+                          {
+                            "Material": {
+                              "@diffuseColor": [
+                                0,
+                                0,
+                                1
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "Box": {
+                        "@size": [
+                          0.05,
+                          0.05,
+                          0.05
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "Transform": {
+            "-children": [
+              {
+                "Shape": {
+                  "@DEF": "JointShape",
+                  "-children": [
+                    {
+                      "Appearance": {
+                        "@DEF": "JointAppearance",
+                        "-children": [
+                          {
+                            "Material": {
+                              "@diffuseColor": [
+                                1,
+                                0.5,
+                                0
+                              ],
+                              "@transparency": 0.5
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "Sphere": {
+                        "@radius": 0.06
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "Transform": {
+            "@DEF": "Light_TRANSFORM",
+            "@translation": [
+              4.07625,
+              1.00545,
+              5.90386
+            ],
+            "@rotation": [
+              0.20594,
+              0.33152,
+              0.9207,
+              1.92627
+            ],
+            "-children": [
+              {
+                "PointLight": {
+                  "@DEF": "LA_Light",
+                  "@location": [
+                    -8.940697e-8,
+                    -3.576279e-7,
+                    4.61936e-7
+                  ],
+                  "@radius": 29.99998
+                }
+              }
+            ]
+          }
+        },
+        {
+          "Transform": {
+            "@DEF": "Camera_TRANSFORM",
+            "@translation": [
+              7.35889,
+              -6.92579,
+              4.95831
+            ],
+            "@rotation": [
+              0.77344,
+              0.33383,
+              0.53884,
+              1.35072
+            ],
+            "-children": [
+              {
+                "Viewpoint": {
+                  "@DEF": "CA_Camera",
+                  "@position": [
+                    -3.92708e-7,
+                    -2.123415e-7,
+                    2.384186e-7
+                  ],
+                  "@fieldOfView": 0.6911112
+                }
+              }
+            ]
+          }
+        },
+        {
+          "Transform": {
+            "@DEF": "Humanoid_collection_TRANSFORM",
+            "-children": [
+              {
+                "HAnimHumanoid": {
+                  "@DEF": "hanim_armature_Humanoid_collection",
+                  "@name": "armature_Humanoid_collection"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "encoding": "UTF-8",
+    "JSON schema": "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json"
+  }
+}

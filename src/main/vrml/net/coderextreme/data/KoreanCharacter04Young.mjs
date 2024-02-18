@@ -3,1166 +3,1218 @@ let X3D0 = {};
 X3D0.profile = "Immersive";
 X3D0.version = "4.0";
 let head1 = browser.currentScene.createNode("head");
-let meta2 = browser.currentScene.createNode("meta");
-meta2.name = "title";
-meta2.content = "KoreanCharacter04Young.x3d";
-head1.meta = new MFNode();
+let component2 = browser.currentScene.createNode("component");
+component2.name = "HAnim";
+component2.level = 1;
+head1.component = new MFNode();
 
-head1.meta[0] = meta2;
+head1.component[0] = component2;
 
 let meta3 = browser.currentScene.createNode("meta");
-meta3.name = "creator";
-meta3.content = "Jin Hoon Lee and Min Joo Lee";
+meta3.name = "title";
+meta3.content = "KoreanCharacter04Young.x3d";
 head1.meta[1] = meta3;
 
 let meta4 = browser.currentScene.createNode("meta");
-meta4.name = "translator";
-meta4.content = "Chul Hee Jung and Myeong Won Lee";
+meta4.name = "creator";
+meta4.content = "Jin Hoon Lee and Min Joo Lee";
 head1.meta[2] = meta4;
 
 let meta5 = browser.currentScene.createNode("meta");
-meta5.name = "created";
-meta5.content = "31 March 2011";
+meta5.name = "translator";
+meta5.content = "Chul Hee Jung and Myeong Won Lee";
 head1.meta[3] = meta5;
 
 let meta6 = browser.currentScene.createNode("meta");
-meta6.name = "translated";
-meta6.content = "1 November 2014";
+meta6.name = "created";
+meta6.content = "31 March 2011";
 head1.meta[4] = meta6;
 
 let meta7 = browser.currentScene.createNode("meta");
-meta7.name = "modified";
-meta7.content = "Sat, 30 Dec 2023 07:50:46 GMT";
+meta7.name = "translated";
+meta7.content = "1 November 2014";
 head1.meta[5] = meta7;
 
 let meta8 = browser.currentScene.createNode("meta");
-meta8.name = "description";
-meta8.content = "Articulated 3D game character designed with a general graphics tool, then converted into an X3D HAnim model.";
+meta8.name = "modified";
+meta8.content = "23 December 2021";
 head1.meta[6] = meta8;
 
 let meta9 = browser.currentScene.createNode("meta");
-meta9.name = "reference";
-meta9.content = "KoreanCharacter00ReadMe.txt";
+meta9.name = "description";
+meta9.content = "Articulated 3D game character designed with a general graphics tool, then converted into an X3D HAnim model.";
 head1.meta[7] = meta9;
 
 let meta10 = browser.currentScene.createNode("meta");
 meta10.name = "reference";
-meta10.content = "KoreanCharacterHumanMotion_Infotech2014_140706.pdf";
+meta10.content = "KoreanCharacter00ReadMe.txt";
 head1.meta[8] = meta10;
 
 let meta11 = browser.currentScene.createNode("meta");
 meta11.name = "reference";
-meta11.content = "KoreanCharactersIllustrated.pdf";
+meta11.content = "KoreanCharacterHumanMotion_Infotech2014_140706.pdf";
 head1.meta[9] = meta11;
 
 let meta12 = browser.currentScene.createNode("meta");
-meta12.name = "identifier";
-meta12.content = "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/KoreanCharacter04Young.x3d";
+meta12.name = "reference";
+meta12.content = "KoreanCharactersIllustrated.pdf";
 head1.meta[10] = meta12;
 
 let meta13 = browser.currentScene.createNode("meta");
-meta13.name = "generator";
-meta13.content = "3DS MAX, http://www.autodesk.com/products/autodesk-3ds-max/overview";
+meta13.name = "identifier";
+meta13.content = "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/KoreanCharacter04Young.x3d";
 head1.meta[11] = meta13;
 
 let meta14 = browser.currentScene.createNode("meta");
 meta14.name = "generator";
-meta14.content = "Suwon University HAnim Editor";
+meta14.content = "3DS MAX, http://www.autodesk.com/products/autodesk-3ds-max/overview";
 head1.meta[12] = meta14;
 
 let meta15 = browser.currentScene.createNode("meta");
 meta15.name = "generator";
-meta15.content = "Gnu Image Manipulation Program, http://www.gimp.org";
+meta15.content = "Suwon University HAnim Editor";
 head1.meta[13] = meta15;
 
-let component16 = browser.currentScene.createNode("component");
-component16.name = "HAnim";
-component16.level = 1;
-head1.component[14] = component16;
+let meta16 = browser.currentScene.createNode("meta");
+meta16.name = "generator";
+meta16.content = "Gnu Image Manipulation Program, http://www.gimp.org";
+head1.meta[14] = meta16;
+
+let meta17 = browser.currentScene.createNode("meta");
+meta17.name = "generator";
+meta17.content = "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit";
+head1.meta[15] = meta17;
+
+let meta18 = browser.currentScene.createNode("meta");
+meta18.name = "license";
+meta18.content = "../license.html";
+head1.meta[16] = meta18;
 
 head = head1;
 
-let WorldInfo18 = browser.currentScene.createNode("WorldInfo");
-WorldInfo18.title = "KoreanCharacter04Young.x3d";
+let WorldInfo20 = browser.currentScene.createNode("WorldInfo");
+WorldInfo20.title = "KoreanCharacter04Young.x3d";
 browser.currentScene.children = new MFNode();
 
-browser.currentScene.children[0] = WorldInfo18;
+browser.currentScene.children[0] = WorldInfo20;
 
-let NavigationInfo19 = browser.currentScene.createNode("NavigationInfo");
-NavigationInfo19.speed = 1.5;
-browser.currentScene.children[1] = NavigationInfo19;
+let NavigationInfo21 = browser.currentScene.createNode("NavigationInfo");
+NavigationInfo21.speed = 1.5;
+browser.currentScene.children[1] = NavigationInfo21;
 
-let Viewpoint20 = browser.currentScene.createNode("Viewpoint");
-Viewpoint20.description = "Young";
-Viewpoint20.position = new SFVec3f(new float[0,1,3]);
-Viewpoint20.centerOfRotation = new SFVec3f(new float[0,1,0]);
-browser.currentScene.children[2] = Viewpoint20;
+let Viewpoint22 = browser.currentScene.createNode("Viewpoint");
+Viewpoint22.centerOfRotation = new SFVec3f(new float[0,1,0]);
+Viewpoint22.description = "Young";
+Viewpoint22.position = new SFVec3f(new float[0,1,3]);
+browser.currentScene.children[2] = Viewpoint22;
 
-let HAnimHumanoid21 = browser.currentScene.createNode("HAnimHumanoid");
-HAnimHumanoid21.DEF = "hanim_Young";
-HAnimHumanoid21.name = "Young";
-HAnimHumanoid21.scale = new SFVec3f(new float[0.0225,0.0225,0.0225]);
-let MetadataSet22 = browser.currentScene.createNode("MetadataSet");
-MetadataSet22.name = "HAnimHumanoid.info";
-MetadataSet22.reference = "https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid";
-let MetadataString23 = browser.currentScene.createNode("MetadataString");
-MetadataString23.name = "authorName";
-MetadataSet22.value = new MFNode();
-
-MetadataSet22.value[0] = MetadataString23;
-
-let MetadataString24 = browser.currentScene.createNode("MetadataString");
-MetadataString24.name = "authorEmail";
-MetadataSet22.value[1] = MetadataString24;
-
+let HAnimHumanoid23 = browser.currentScene.createNode("HAnimHumanoid");
+HAnimHumanoid23.name = "Young";
+HAnimHumanoid23.DEF = "hanim_Young";
+HAnimHumanoid23.scale = new SFVec3f(new float[0.0225,0.0225,0.0225]);
+HAnimHumanoid23.version = "2.0";
+//original HAnimHumanoid info='\"authorName=Chul Hee Jung and Myeong Won Lee\" \"authorEmail=myeongwonlee@gmail.com\" \"creationDate=31 March 2011\" \"humanoidVersion=2.0\" \"gender=female\" \"height=1.5\"'
+let MetadataSet24 = browser.currentScene.createNode("MetadataSet");
+MetadataSet24.name = "HAnimHumanoid.info";
+MetadataSet24.reference = "https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid";
 let MetadataString25 = browser.currentScene.createNode("MetadataString");
-MetadataString25.name = "creationDate";
-MetadataSet22.value[2] = MetadataString25;
+MetadataString25.name = "authorName";
+MetadataString25.value = new MFString(new java.lang.String["Chul Hee Jung and Myeong Won Lee"]);
+MetadataSet24.value = new MFNode();
+
+MetadataSet24.value[0] = MetadataString25;
 
 let MetadataString26 = browser.currentScene.createNode("MetadataString");
-MetadataString26.name = "gender";
-MetadataSet22.value[3] = MetadataString26;
+MetadataString26.name = "authorEmail";
+MetadataString26.value = new MFString(new java.lang.String["myeongwonlee@gmail.com"]);
+MetadataSet24.value[1] = MetadataString26;
 
-let MetadataFloat27 = browser.currentScene.createNode("MetadataFloat");
-MetadataFloat27.name = "height";
-MetadataFloat27.value = new MFFloat(new float[1.5]);
-MetadataSet22.value[4] = MetadataFloat27;
+let MetadataString27 = browser.currentScene.createNode("MetadataString");
+MetadataString27.name = "creationDate";
+MetadataString27.value = new MFString(new java.lang.String["31 March 2011"]);
+MetadataSet24.value[2] = MetadataString27;
 
 let MetadataString28 = browser.currentScene.createNode("MetadataString");
-MetadataString28.name = "humanoidVersion";
-MetadataString28.value = new MFString(new java.lang.String["2.0"]);
-MetadataSet22.value[5] = MetadataString28;
+MetadataString28.name = "gender";
+MetadataString28.value = new MFString(new java.lang.String["female"]);
+MetadataSet24.value[3] = MetadataString28;
+
+let MetadataFloat29 = browser.currentScene.createNode("MetadataFloat");
+MetadataFloat29.name = "height";
+MetadataFloat29.value = new MFFloat(new float[1.5]);
+MetadataSet24.value[4] = MetadataFloat29;
+
+let MetadataString30 = browser.currentScene.createNode("MetadataString");
+MetadataString30.name = "humanoidVersion";
+MetadataString30.value = new MFString(new java.lang.String["2.0"]);
+MetadataSet24.value[5] = MetadataString30;
+
+HAnimHumanoid23.metadata = new SFNode();
+
+HAnimHumanoid23.metadata[0] = MetadataSet24;
+
+let HAnimJoint31 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint31.name = "humanoid_root";
+HAnimJoint31.DEF = "hanim_humanoid_root";
+HAnimJoint31.center = new SFVec3f(new float[0,31.540001,-0.3172]);
+HAnimJoint31.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint31.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment32 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment32.name = "sacrum";
+HAnimSegment32.DEF = "hanim_sacrum";
+let Transform33 = browser.currentScene.createNode("Transform");
+Transform33.translation = new SFVec3f(new float[0,31.540001,-0.3172]);
+let Shape34 = browser.currentScene.createNode("Shape");
+let Appearance35 = browser.currentScene.createNode("Appearance");
+let Material36 = browser.currentScene.createNode("Material");
+Material36.diffuseColor = new SFColor(new float[0.588,0.588,0.588]);
+Appearance35.material = Material36;
+
+let ImageTexture37 = browser.currentScene.createNode("ImageTexture");
+ImageTexture37.DEF = "YoungTextureAtlas";
+ImageTexture37.url = new MFString(new java.lang.String["images/Young.png","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/images/Young.png"]);
+Appearance35.texture = ImageTexture37;
+
+Shape34.appearance = Appearance35;
+
+let IndexedFaceSet38 = browser.currentScene.createNode("IndexedFaceSet");
+IndexedFaceSet38.coordIndex = new MFInt32(new int[0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,5,-1,0,5,6,-1,0,6,7,-1,0,7,8,-1,0,8,9,-1,0,9,10,-1,0,10,11,-1,0,11,12,-1,0,12,1,-1,14,2,1,-1,1,13,14,-1,15,3,2,-1,2,14,15,-1,16,4,3,-1,3,15,16,-1,17,5,4,-1,4,16,17,-1,18,6,5,-1,5,17,18,-1,19,7,6,-1,6,18,19,-1,20,8,7,-1,7,19,20,-1,21,9,8,-1,8,20,21,-1,22,10,9,-1,9,21,22,-1,23,11,10,-1,10,22,23,-1,24,12,11,-1,11,23,24,-1,13,1,12,-1,12,24,13,-1,26,14,13,-1,13,25,26,-1,27,15,14,-1,14,26,27,-1,28,16,15,-1,15,27,28,-1,29,17,16,-1,16,28,29,-1,30,18,17,-1,17,29,30,-1,31,19,18,-1,18,30,31,-1,32,20,19,-1,19,31,32,-1,33,21,20,-1,20,32,33,-1,34,22,21,-1,21,33,34,-1,35,23,22,-1,22,34,35,-1,36,24,23,-1,23,35,36,-1,25,13,24,-1,24,36,25,-1,38,26,25,-1,25,37,38,-1,39,27,26,-1,26,38,39,-1,40,28,27,-1,27,39,40,-1,41,29,28,-1,28,40,41,-1,42,30,29,-1,29,41,42,-1,43,31,30,-1,30,42,43,-1,44,32,31,-1,31,43,44,-1,45,33,32,-1,32,44,45,-1,46,34,33,-1,33,45,46,-1,47,35,34,-1,34,46,47,-1,48,36,35,-1,35,47,48,-1,37,25,36,-1,36,48,37,-1,50,38,37,-1,37,49,50,-1,51,39,38,-1,38,50,51,-1,52,40,39,-1,39,51,52,-1,53,41,40,-1,40,52,53,-1,54,42,41,-1,41,53,54,-1,55,43,42,-1,42,54,55,-1,56,44,43,-1,43,55,56,-1,57,45,44,-1,44,56,57,-1,58,46,45,-1,45,57,58,-1,59,47,46,-1,46,58,59,-1,60,48,47,-1,47,59,60,-1,49,37,48,-1,48,60,49,-1,61,50,49,-1,61,51,50,-1,61,52,51,-1,61,53,52,-1,61,54,53,-1,61,55,54,-1,61,56,55,-1,61,57,56,-1,61,58,57,-1,61,59,58,-1,61,60,59,-1,61,49,60,-1]);
+IndexedFaceSet38.creaseAngle = 1.57;
+IndexedFaceSet38.texCoordIndex = new MFInt32(new int[0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,5,-1,0,5,6,-1,0,6,7,-1,0,7,8,-1,0,8,9,-1,0,9,10,-1,0,10,11,-1,0,11,12,-1,0,12,1,-1,14,2,1,-1,1,13,14,-1,15,3,2,-1,2,14,15,-1,16,4,3,-1,3,15,16,-1,17,5,4,-1,4,16,17,-1,18,6,5,-1,5,17,18,-1,19,7,6,-1,6,18,19,-1,20,8,7,-1,7,19,20,-1,21,9,8,-1,8,20,21,-1,22,10,9,-1,9,21,22,-1,23,11,10,-1,10,22,23,-1,24,12,11,-1,11,23,24,-1,13,1,12,-1,12,24,13,-1,26,14,13,-1,13,25,26,-1,27,15,14,-1,14,26,27,-1,28,16,15,-1,15,27,28,-1,29,17,16,-1,16,28,29,-1,30,18,17,-1,17,29,30,-1,31,19,18,-1,18,30,31,-1,32,20,19,-1,19,31,32,-1,33,21,20,-1,20,32,33,-1,34,22,21,-1,21,33,34,-1,35,23,22,-1,22,34,35,-1,36,24,23,-1,23,35,36,-1,25,13,24,-1,24,36,25,-1,38,26,25,-1,25,37,38,-1,39,27,26,-1,26,38,39,-1,40,28,27,-1,27,39,40,-1,41,29,28,-1,28,40,41,-1,42,30,29,-1,29,41,42,-1,43,31,30,-1,30,42,43,-1,44,32,31,-1,31,43,44,-1,45,33,32,-1,32,44,45,-1,46,34,33,-1,33,45,46,-1,47,35,34,-1,34,46,47,-1,48,36,35,-1,35,47,48,-1,37,25,36,-1,36,48,37,-1,50,38,37,-1,37,49,50,-1,51,39,38,-1,38,50,51,-1,52,40,39,-1,39,51,52,-1,53,41,40,-1,40,52,53,-1,54,42,41,-1,41,53,54,-1,55,43,42,-1,42,54,55,-1,56,44,43,-1,43,55,56,-1,57,45,44,-1,44,56,57,-1,58,46,45,-1,45,57,58,-1,59,47,46,-1,46,58,59,-1,60,48,47,-1,47,59,60,-1,49,37,48,-1,48,60,49,-1,61,50,49,-1,61,51,50,-1,61,52,51,-1,61,53,52,-1,61,54,53,-1,61,55,54,-1,61,56,55,-1,61,57,56,-1,61,58,57,-1,61,59,58,-1,61,60,59,-1,61,49,60,-1]);
+let Coordinate39 = browser.currentScene.createNode("Coordinate");
+Coordinate39.point = new MFVec3f(new float[0,0.9084,0.0235,0,0.7867,-0.4669,-0.3773,0.7867,-0.4012,-0.6534,0.7867,-0.3219,-0.7545,0.7867,0.0235,-0.6534,0.7867,0.369,-0.3773,0.7867,0.4482,0,0.7867,0.5139,0.3773,0.7867,0.4482,0.6534,0.7867,0.369,0.7545,0.7867,0.0235,0.6534,0.7867,-0.3219,0.3773,0.7867,-0.4012,0,0.4542,-0.7625,-0.4879,0.4542,-0.6572,-0.8451,0.4542,-0.3695,-0.9758,0.4542,0.0235,-0.8451,0.4542,0.4165,-0.4879,0.4542,0.6023,0,0.4542,0.7076,0.4879,0.4542,0.6023,0.8451,0.4542,0.4165,0.9758,0.4542,0.0235,0.8451,0.4542,-0.3695,0.4879,0.4542,-0.6572,0,0,-0.8292,-0.5634,0,-0.7076,-0.9758,0,-0.3754,-1.127,0,0.0235,-0.9758,0,0.4773,-0.5634,0,0.7076,0,0,0.8292,0.5634,0,0.7076,0.9758,0,0.4773,1.127,0,0.0235,0.9758,0,-0.3754,0.5634,0,-0.7076,0,-0.4542,-0.7076,-0.4879,-0.4542,-0.6023,-0.8451,-0.4542,-0.3146,-0.9758,-0.4542,0.0235,-0.8451,-0.4542,0.4165,-0.4879,-0.4542,0.6023,0,-0.4542,0.7076,0.4879,-0.4542,0.6023,0.8451,-0.4542,0.4165,0.9758,-0.4542,0.0235,0.8451,-0.4542,-0.3146,0.4879,-0.4542,-0.6023,0,-0.7867,-0.3754,-0.2817,-0.7867,-0.3146,-0.4879,-0.7867,-0.2034,-0.5634,-0.7867,0.0235,-0.4879,-0.7867,0.2504,-0.2817,-0.7867,0.4165,0,-0.7867,0.4773,0.2817,-0.7867,0.4165,0.4879,-0.7867,0.2504,0.5634,-0.7867,0.0235,0.4879,-0.7867,-0.2034,0.2817,-0.7867,-0.3146,0,-0.9084,0.0235]);
+IndexedFaceSet38.coord = Coordinate39;
+
+let TextureCoordinate40 = browser.currentScene.createNode("TextureCoordinate");
+TextureCoordinate40.point = new MFVec2f(new float[0.6211,0.5754,0.7851,0.572,0.7614,0.572,0.6907,0.5698,0.62,0.5698,0.6158,0.5702,0.5451,0.5702,0.4167,0.5698,0.5451,0.5702,0.6158,0.5702,0.62,0.5698,0.6907,0.5698,0.7614,0.572,0.8036,0.5346,0.7761,0.5346,0.6989,0.4838,0.6219,0.4428,0.6154,0.4438,0.5492,0.4639,0.4166,0.5346,0.5492,0.4639,0.6154,0.4438,0.6219,0.4428,0.6989,0.4838,0.7761,0.5346,0.7912,0.4044,0.7635,0.4044,0.7042,0.3925,0.6194,0.3907,0.6148,0.3907,0.545,0.3974,0.4163,0.4938,0.545,0.3974,0.6148,0.3907,0.6194,0.3907,0.7042,0.3925,0.7635,0.4044,0.795,0.3772,0.7662,0.3772,0.6945,0.3645,0.6236,0.3695,0.616,0.3695,0.5438,0.378,0.416,0.453,0.5438,0.378,0.616,0.3695,0.6236,0.3695,0.6945,0.3645,0.7662,0.3772,0.7887,0.3451,0.7635,0.3451,0.698,0.3508,0.6262,0.3508,0.6297,0.3503,0.5389,0.3503,0.4181,0.3884,0.5389,0.3503,0.6297,0.3503,0.6262,0.3508,0.698,0.3508,0.7635,0.3451,0.6237,0.3398]);
+IndexedFaceSet38.texCoord = TextureCoordinate40;
+
+Shape34.geometry = IndexedFaceSet38;
+
+Transform33.child = new undefined();
+
+Transform33.child[0] = Shape34;
+
+HAnimSegment32.children = new MFNode();
+
+HAnimSegment32.children[0] = Transform33;
+
+HAnimJoint31.children = new MFNode();
+
+HAnimJoint31.children[0] = HAnimSegment32;
+
+let HAnimJoint41 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint41.name = "l_hip";
+HAnimJoint41.DEF = "hanim_l_hip";
+HAnimJoint41.center = new SFVec3f(new float[3.504,29.040001,-0.4027]);
+HAnimJoint41.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint41.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment42 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment42.name = "l_thigh";
+HAnimSegment42.DEF = "hanim_l_thigh";
+let Transform43 = browser.currentScene.createNode("Transform");
+Transform43.translation = new SFVec3f(new float[3.504,29.040001,-0.4027]);
+let Shape44 = browser.currentScene.createNode("Shape");
+let Appearance45 = browser.currentScene.createNode("Appearance");
+let Material46 = browser.currentScene.createNode("Material");
+Material46.diffuseColor = new SFColor(new float[0.588,0.588,0.588]);
+Appearance45.material = Material46;
+
+let ImageTexture47 = browser.currentScene.createNode("ImageTexture");
+ImageTexture47.USE = "YoungTextureAtlas";
+Appearance45.texture = ImageTexture47;
+
+Shape44.appearance = Appearance45;
+
+let IndexedFaceSet48 = browser.currentScene.createNode("IndexedFaceSet");
+IndexedFaceSet48.coordIndex = new MFInt32(new int[47,46,45,-1,45,44,43,-1,45,43,42,-1,47,45,42,-1,48,47,42,-1,0,1,8,-1,8,7,0,-1,1,2,9,-1,9,8,1,-1,2,3,10,-1,10,9,2,-1,3,4,11,-1,11,10,3,-1,4,5,12,-1,12,11,4,-1,5,6,13,-1,13,12,5,-1,6,0,7,-1,7,13,6,-1,7,8,15,-1,15,14,7,-1,8,9,16,-1,16,15,8,-1,9,10,17,-1,17,16,9,-1,10,11,18,-1,18,17,10,-1,11,12,19,-1,19,18,11,-1,12,13,20,-1,20,19,12,-1,13,7,14,-1,14,20,13,-1,14,15,22,-1,22,21,14,-1,15,16,23,-1,23,22,15,-1,16,17,24,-1,24,23,16,-1,17,18,25,-1,25,24,17,-1,18,19,26,-1,26,25,18,-1,19,20,27,-1,27,26,19,-1,20,14,21,-1,21,27,20,-1,56,57,58,-1,58,59,60,-1,56,58,60,-1,56,60,61,-1,62,56,61,-1,29,28,21,-1,21,22,29,-1,30,29,22,-1,22,23,30,-1,31,30,23,-1,23,24,31,-1,32,31,24,-1,24,25,32,-1,33,32,25,-1,25,26,33,-1,34,33,26,-1,26,27,34,-1,28,34,27,-1,27,21,28,-1,36,35,28,-1,28,29,36,-1,37,36,29,-1,29,30,37,-1,38,37,30,-1,30,31,38,-1,39,38,31,-1,31,32,39,-1,40,39,32,-1,32,33,40,-1,41,40,33,-1,33,34,41,-1,35,41,34,-1,34,28,35,-1,42,43,1,-1,1,0,42,-1,43,44,2,-1,2,1,43,-1,44,45,3,-1,3,2,44,-1,45,46,4,-1,4,3,45,-1,46,47,5,-1,5,4,46,-1,47,48,6,-1,6,5,47,-1,48,42,0,-1,0,6,48,-1,50,49,35,-1,35,36,50,-1,51,50,36,-1,36,37,51,-1,52,51,37,-1,37,38,52,-1,53,52,38,-1,38,39,53,-1,54,53,39,-1,39,40,54,-1,55,54,40,-1,40,41,55,-1,49,55,41,-1,41,35,49,-1,57,56,49,-1,49,50,57,-1,58,57,50,-1,50,51,58,-1,59,58,51,-1,51,52,59,-1,60,59,52,-1,52,53,60,-1,61,60,53,-1,53,54,61,-1,62,61,54,-1,54,55,62,-1,56,62,55,-1,55,49,56,-1]);
+IndexedFaceSet48.creaseAngle = 1.57;
+IndexedFaceSet48.texCoordIndex = new MFInt32(new int[5,4,3,-1,3,2,0,-1,3,0,1,-1,5,3,1,-1,6,5,1,-1,7,10,8,-1,8,9,7,-1,10,12,11,-1,11,8,10,-1,12,14,13,-1,13,11,12,-1,14,16,15,-1,15,13,14,-1,16,18,17,-1,17,15,16,-1,18,20,19,-1,19,17,18,-1,20,7,9,-1,9,19,20,-1,9,8,21,-1,21,22,9,-1,8,11,23,-1,23,21,8,-1,11,13,24,-1,24,23,11,-1,13,15,25,-1,25,24,13,-1,15,17,26,-1,26,25,15,-1,17,19,27,-1,27,26,17,-1,19,9,22,-1,22,27,19,-1,22,21,28,-1,28,29,22,-1,21,23,30,-1,30,28,21,-1,23,24,31,-1,31,30,23,-1,24,25,32,-1,32,31,24,-1,25,26,33,-1,33,32,25,-1,26,27,34,-1,34,33,26,-1,27,22,29,-1,29,34,27,-1,42,43,44,-1,44,45,46,-1,42,44,46,-1,42,46,47,-1,48,42,47,-1,35,36,29,-1,29,28,35,-1,37,35,28,-1,28,30,37,-1,38,37,30,-1,30,31,38,-1,39,38,31,-1,31,32,39,-1,40,39,32,-1,32,33,40,-1,41,40,33,-1,33,34,41,-1,36,41,34,-1,34,29,36,-1,51,52,49,-1,49,50,51,-1,54,51,50,-1,50,53,54,-1,56,54,53,-1,53,55,56,-1,58,56,55,-1,55,57,58,-1,60,58,57,-1,57,59,60,-1,62,60,59,-1,59,61,62,-1,52,62,61,-1,61,49,52,-1,1,0,10,-1,10,7,1,-1,0,2,12,-1,12,10,0,-1,2,3,14,-1,14,12,2,-1,3,4,16,-1,16,14,3,-1,4,5,18,-1,18,16,4,-1,5,6,20,-1,20,18,5,-1,6,1,7,-1,7,20,6,-1,63,64,52,-1,52,51,63,-1,65,63,51,-1,51,54,65,-1,66,65,54,-1,54,56,66,-1,67,66,56,-1,56,58,67,-1,68,67,58,-1,58,60,68,-1,69,68,60,-1,60,62,69,-1,64,69,62,-1,62,52,64,-1,43,42,64,-1,64,63,43,-1,44,43,63,-1,63,65,44,-1,45,44,65,-1,65,66,45,-1,46,45,66,-1,66,67,46,-1,47,46,67,-1,67,68,47,-1,48,47,68,-1,68,69,48,-1,42,48,69,-1,69,64,42,-1]);
+let Coordinate49 = browser.currentScene.createNode("Coordinate");
+Coordinate49.point = new MFVec3f(new float[2.61,2.495,-0.0096,1.449,2.495,2.82,-1.16,2.495,3.518,-2.968,2.495,1.56,-2.968,2.495,-1.58,-1.16,2.495,-3.537,1.449,2.495,-2.839,2.61,-0.8104,-0.0096,1.449,-0.8104,2.819,-1.16,-0.8104,3.518,-2.968,-0.8104,1.56,-2.968,-0.8104,-1.58,-1.16,-0.8104,-3.537,1.449,-0.8104,-2.839,2.61,-3.375,-0.0096,1.449,-3.375,2.819,-1.16,-3.375,3.518,-2.968,-3.375,1.56,-2.968,-3.375,-1.58,-1.16,-3.375,-3.537,1.449,-3.375,-2.839,2.968,-6.68,-0.0096,1.672,-6.68,3.148,-1.24,-6.68,3.928,-2.957,-6.68,1.743,-2.957,-6.68,-1.762,-1.24,-6.68,-3.947,1.672,-6.68,-3.167,1.892,-5.194,-0.0096,1.001,-5.194,2.161,-1.001,-5.194,2.697,-2.321,-5.194,1.195,-2.321,-5.194,-1.214,-1.001,-5.194,-2.716,1.001,-5.194,-2.18,1.9,-10.89,-0.0096,1.08,-10.89,1.714,-0.7636,-10.89,2.14,-2.242,-10.89,0.9472,-2.242,-10.89,-0.9663,-0.7636,-10.89,-2.159,1.08,-10.89,-1.734,1.807,4.249,-0.0096,0.9484,4.249,2.084,-0.982,4.249,2.601,-2.53,4.249,1.152,-2.53,4.249,-1.171,-0.982,4.249,-2.62,0.9484,4.249,-2.103,1.624,-14.13,-0.0096,0.9076,-14.13,1.641,-0.7021,-14.13,2.013,-1.993,-14.13,0.9715,-1.993,-14.13,-0.8451,-0.7021,-14.13,-1.887,0.9076,-14.13,-1.515,0.5533,-14.99,-0.0096,0.2401,-14.99,0.7943,-0.4639,-14.99,0.9569,-1.028,-14.99,0.5013,-1.028,-14.99,-0.3749,-0.4639,-14.99,-0.8305,0.2401,-14.99,-0.6679]);
+IndexedFaceSet48.coord = Coordinate49;
+
+let TextureCoordinate50 = browser.currentScene.createNode("TextureCoordinate");
+TextureCoordinate50.point = new MFVec2f(new float[0.719,0.5576,0.6284,0.5576,0.7414,0.5576,0.6787,0.5576,0.5781,0.5576,0.5154,0.5576,0.5378,0.5576,0.6284,0.5029,0.7509,0.3997,0.6284,0.3997,0.7509,0.5029,0.7811,0.3997,0.7811,0.5029,0.6964,0.3997,0.6964,0.5029,0.5604,0.3997,0.5604,0.5029,0.4756,0.3997,0.4756,0.5029,0.5059,0.3997,0.5059,0.5029,0.7509,0.3197,0.6284,0.3197,0.7811,0.3197,0.6964,0.3197,0.5604,0.3197,0.4756,0.3197,0.5059,0.3197,0.7651,0.2166,0.6284,0.2166,0.7989,0.2166,0.7043,0.2166,0.5525,0.2166,0.4579,0.2166,0.4917,0.2166,0.7224,0.263,0.6284,0.263,0.7456,0.263,0.6805,0.263,0.5762,0.263,0.5112,0.263,0.5344,0.263,0.8705,0.5452,0.8705,0.5383,0.8705,0.5369,0.8705,0.5408,0.8705,0.5483,0.8705,0.5522,0.8705,0.5509,0.917,0.5452,0.917,0.5266,0.89,0.5304,0.89,0.5452,0.917,0.522,0.89,0.5268,0.917,0.5349,0.89,0.537,0.917,0.5555,0.89,0.5534,0.917,0.5684,0.89,0.5636,0.917,0.5638,0.89,0.56,0.8746,0.531,0.8746,0.5452,0.8746,0.5279,0.8746,0.5368,0.8746,0.5524,0.8746,0.5613,0.8746,0.5581]);
+IndexedFaceSet48.texCoord = TextureCoordinate50;
+
+Shape44.geometry = IndexedFaceSet48;
 
-HAnimHumanoid21.metadata = new SFNode();
+Transform43.child = new undefined();
 
-HAnimHumanoid21.metadata[0] = MetadataSet22;
+Transform43.child[0] = Shape44;
 
-let HAnimJoint29 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint29.DEF = "hanim_humanoid_root";
-HAnimJoint29.name = "humanoid_root";
-HAnimJoint29.center = new SFVec3f(new float[0,31.54,-0.3172]);
-let HAnimSegment30 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment30.DEF = "hanim_sacrum";
-HAnimSegment30.name = "sacrum";
-let Transform31 = browser.currentScene.createNode("Transform");
-Transform31.translation = new SFVec3f(new float[0,31.54,-0.3172]);
-let Shape32 = browser.currentScene.createNode("Shape");
-let Appearance33 = browser.currentScene.createNode("Appearance");
-let Material34 = browser.currentScene.createNode("Material");
-Material34.diffuseColor = new SFColor(new float[0.588,0.588,0.588]);
-Appearance33.material = Material34;
-
-let ImageTexture35 = browser.currentScene.createNode("ImageTexture");
-ImageTexture35.DEF = "YoungTextureAtlas";
-ImageTexture35.url = new MFString(new java.lang.String["images/Young.png","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/images/Young.png"]);
-Appearance33.texture = ImageTexture35;
-
-Shape32.appearance = Appearance33;
-
-let IndexedFaceSet36 = browser.currentScene.createNode("IndexedFaceSet");
-IndexedFaceSet36.creaseAngle = 1.57;
-IndexedFaceSet36.texCoordIndex = new MFInt32(new int[0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,5,-1,0,5,6,-1,0,6,7,-1,0,7,8,-1,0,8,9,-1,0,9,10,-1,0,10,11,-1,0,11,12,-1,0,12,1,-1,14,2,1,-1,1,13,14,-1,15,3,2,-1,2,14,15,-1,16,4,3,-1,3,15,16,-1,17,5,4,-1,4,16,17,-1,18,6,5,-1,5,17,18,-1,19,7,6,-1,6,18,19,-1,20,8,7,-1,7,19,20,-1,21,9,8,-1,8,20,21,-1,22,10,9,-1,9,21,22,-1,23,11,10,-1,10,22,23,-1,24,12,11,-1,11,23,24,-1,13,1,12,-1,12,24,13,-1,26,14,13,-1,13,25,26,-1,27,15,14,-1,14,26,27,-1,28,16,15,-1,15,27,28,-1,29,17,16,-1,16,28,29,-1,30,18,17,-1,17,29,30,-1,31,19,18,-1,18,30,31,-1,32,20,19,-1,19,31,32,-1,33,21,20,-1,20,32,33,-1,34,22,21,-1,21,33,34,-1,35,23,22,-1,22,34,35,-1,36,24,23,-1,23,35,36,-1,25,13,24,-1,24,36,25,-1,38,26,25,-1,25,37,38,-1,39,27,26,-1,26,38,39,-1,40,28,27,-1,27,39,40,-1,41,29,28,-1,28,40,41,-1,42,30,29,-1,29,41,42,-1,43,31,30,-1,30,42,43,-1,44,32,31,-1,31,43,44,-1,45,33,32,-1,32,44,45,-1,46,34,33,-1,33,45,46,-1,47,35,34,-1,34,46,47,-1,48,36,35,-1,35,47,48,-1,37,25,36,-1,36,48,37,-1,50,38,37,-1,37,49,50,-1,51,39,38,-1,38,50,51,-1,52,40,39,-1,39,51,52,-1,53,41,40,-1,40,52,53,-1,54,42,41,-1,41,53,54,-1,55,43,42,-1,42,54,55,-1,56,44,43,-1,43,55,56,-1,57,45,44,-1,44,56,57,-1,58,46,45,-1,45,57,58,-1,59,47,46,-1,46,58,59,-1,60,48,47,-1,47,59,60,-1,49,37,48,-1,48,60,49,-1,61,50,49,-1,61,51,50,-1,61,52,51,-1,61,53,52,-1,61,54,53,-1,61,55,54,-1,61,56,55,-1,61,57,56,-1,61,58,57,-1,61,59,58,-1,61,60,59,-1,61,49,60,-1]);
-IndexedFaceSet36.coordIndex = new MFInt32(new int[0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,5,-1,0,5,6,-1,0,6,7,-1,0,7,8,-1,0,8,9,-1,0,9,10,-1,0,10,11,-1,0,11,12,-1,0,12,1,-1,14,2,1,-1,1,13,14,-1,15,3,2,-1,2,14,15,-1,16,4,3,-1,3,15,16,-1,17,5,4,-1,4,16,17,-1,18,6,5,-1,5,17,18,-1,19,7,6,-1,6,18,19,-1,20,8,7,-1,7,19,20,-1,21,9,8,-1,8,20,21,-1,22,10,9,-1,9,21,22,-1,23,11,10,-1,10,22,23,-1,24,12,11,-1,11,23,24,-1,13,1,12,-1,12,24,13,-1,26,14,13,-1,13,25,26,-1,27,15,14,-1,14,26,27,-1,28,16,15,-1,15,27,28,-1,29,17,16,-1,16,28,29,-1,30,18,17,-1,17,29,30,-1,31,19,18,-1,18,30,31,-1,32,20,19,-1,19,31,32,-1,33,21,20,-1,20,32,33,-1,34,22,21,-1,21,33,34,-1,35,23,22,-1,22,34,35,-1,36,24,23,-1,23,35,36,-1,25,13,24,-1,24,36,25,-1,38,26,25,-1,25,37,38,-1,39,27,26,-1,26,38,39,-1,40,28,27,-1,27,39,40,-1,41,29,28,-1,28,40,41,-1,42,30,29,-1,29,41,42,-1,43,31,30,-1,30,42,43,-1,44,32,31,-1,31,43,44,-1,45,33,32,-1,32,44,45,-1,46,34,33,-1,33,45,46,-1,47,35,34,-1,34,46,47,-1,48,36,35,-1,35,47,48,-1,37,25,36,-1,36,48,37,-1,50,38,37,-1,37,49,50,-1,51,39,38,-1,38,50,51,-1,52,40,39,-1,39,51,52,-1,53,41,40,-1,40,52,53,-1,54,42,41,-1,41,53,54,-1,55,43,42,-1,42,54,55,-1,56,44,43,-1,43,55,56,-1,57,45,44,-1,44,56,57,-1,58,46,45,-1,45,57,58,-1,59,47,46,-1,46,58,59,-1,60,48,47,-1,47,59,60,-1,49,37,48,-1,48,60,49,-1,61,50,49,-1,61,51,50,-1,61,52,51,-1,61,53,52,-1,61,54,53,-1,61,55,54,-1,61,56,55,-1,61,57,56,-1,61,58,57,-1,61,59,58,-1,61,60,59,-1,61,49,60,-1]);
-let TextureCoordinate37 = browser.currentScene.createNode("TextureCoordinate");
-TextureCoordinate37.point = new MFVec2f(new float[0.6211,0.5754,0.7851,0.572,0.7614,0.572,0.6907,0.5698,0.62,0.5698,0.6158,0.5702,0.5451,0.5702,0.4167,0.5698,0.5451,0.5702,0.6158,0.5702,0.62,0.5698,0.6907,0.5698,0.7614,0.572,0.8036,0.5346,0.7761,0.5346,0.6989,0.4838,0.6219,0.4428,0.6154,0.4438,0.5492,0.4639,0.4166,0.5346,0.5492,0.4639,0.6154,0.4438,0.6219,0.4428,0.6989,0.4838,0.7761,0.5346,0.7912,0.4044,0.7635,0.4044,0.7042,0.3925,0.6194,0.3907,0.6148,0.3907,0.545,0.3974,0.4163,0.4938,0.545,0.3974,0.6148,0.3907,0.6194,0.3907,0.7042,0.3925,0.7635,0.4044,0.795,0.3772,0.7662,0.3772,0.6945,0.3645,0.6236,0.3695,0.616,0.3695,0.5438,0.378,0.416,0.453,0.5438,0.378,0.616,0.3695,0.6236,0.3695,0.6945,0.3645,0.7662,0.3772,0.7887,0.3451,0.7635,0.3451,0.698,0.3508,0.6262,0.3508,0.6297,0.3503,0.5389,0.3503,0.4181,0.3884,0.5389,0.3503,0.6297,0.3503,0.6262,0.3508,0.698,0.3508,0.7635,0.3451,0.6237,0.3398]);
-IndexedFaceSet36.texCoord = TextureCoordinate37;
-
-let Coordinate38 = browser.currentScene.createNode("Coordinate");
-Coordinate38.point = new MFVec3f(new float[0,0.9084,0.0235,0,0.7867,-0.4669,-0.3773,0.7867,-0.4012,-0.6534,0.7867,-0.3219,-0.7545,0.7867,0.0235,-0.6534,0.7867,0.369,-0.3773,0.7867,0.4482,0,0.7867,0.5139,0.3773,0.7867,0.4482,0.6534,0.7867,0.369,0.7545,0.7867,0.0235,0.6534,0.7867,-0.3219,0.3773,0.7867,-0.4012,0,0.4542,-0.7625,-0.4879,0.4542,-0.6572,-0.8451,0.4542,-0.3695,-0.9758,0.4542,0.0235,-0.8451,0.4542,0.4165,-0.4879,0.4542,0.6023,0,0.4542,0.7076,0.4879,0.4542,0.6023,0.8451,0.4542,0.4165,0.9758,0.4542,0.0235,0.8451,0.4542,-0.3695,0.4879,0.4542,-0.6572,0,0,-0.8292,-0.5634,0,-0.7076,-0.9758,0,-0.3754,-1.127,0,0.0235,-0.9758,0,0.4773,-0.5634,0,0.7076,0,0,0.8292,0.5634,0,0.7076,0.9758,0,0.4773,1.127,0,0.0235,0.9758,0,-0.3754,0.5634,0,-0.7076,0,-0.4542,-0.7076,-0.4879,-0.4542,-0.6023,-0.8451,-0.4542,-0.3146,-0.9758,-0.4542,0.0235,-0.8451,-0.4542,0.4165,-0.4879,-0.4542,0.6023,0,-0.4542,0.7076,0.4879,-0.4542,0.6023,0.8451,-0.4542,0.4165,0.9758,-0.4542,0.0235,0.8451,-0.4542,-0.3146,0.4879,-0.4542,-0.6023,0,-0.7867,-0.3754,-0.2817,-0.7867,-0.3146,-0.4879,-0.7867,-0.2034,-0.5634,-0.7867,0.0235,-0.4879,-0.7867,0.2504,-0.2817,-0.7867,0.4165,0,-0.7867,0.4773,0.2817,-0.7867,0.4165,0.4879,-0.7867,0.2504,0.5634,-0.7867,0.0235,0.4879,-0.7867,-0.2034,0.2817,-0.7867,-0.3146,0,-0.9084,0.0235]);
-IndexedFaceSet36.coord = Coordinate38;
-
-Shape32.geometry = IndexedFaceSet36;
-
-Transform31.child = new undefined();
-
-Transform31.child[0] = Shape32;
+HAnimSegment42.children = new MFNode();
 
-HAnimSegment30.children = new MFNode();
+HAnimSegment42.children[0] = Transform43;
 
-HAnimSegment30.children[0] = Transform31;
+HAnimJoint41.children = new MFNode();
 
-HAnimJoint29.children = new MFNode();
+HAnimJoint41.children[0] = HAnimSegment42;
 
-HAnimJoint29.children[0] = HAnimSegment30;
+let HAnimJoint51 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint51.name = "l_knee";
+HAnimJoint51.DEF = "hanim_l_knee";
+HAnimJoint51.center = new SFVec3f(new float[3.414,14.95,-0.4549]);
+HAnimJoint51.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint51.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment52 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment52.name = "l_calf";
+HAnimSegment52.DEF = "hanim_l_calf";
+let Transform53 = browser.currentScene.createNode("Transform");
+Transform53.translation = new SFVec3f(new float[3.414,14.95,-0.4549]);
+let Shape54 = browser.currentScene.createNode("Shape");
+let Appearance55 = browser.currentScene.createNode("Appearance");
+let Material56 = browser.currentScene.createNode("Material");
+Material56.diffuseColor = new SFColor(new float[0.588,0.588,0.588]);
+Appearance55.material = Material56;
+
+let ImageTexture57 = browser.currentScene.createNode("ImageTexture");
+ImageTexture57.USE = "YoungTextureAtlas";
+Appearance55.texture = ImageTexture57;
+
+Shape54.appearance = Appearance55;
 
-let HAnimJoint39 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint39.DEF = "hanim_l_hip";
-HAnimJoint39.name = "l_hip";
-HAnimJoint39.center = new SFVec3f(new float[3.504,29.04,-0.4027]);
-let HAnimSegment40 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment40.DEF = "hanim_l_thigh";
-HAnimSegment40.name = "l_thigh";
-let Transform41 = browser.currentScene.createNode("Transform");
-Transform41.translation = new SFVec3f(new float[3.504,29.04,-0.4027]);
-let Shape42 = browser.currentScene.createNode("Shape");
-let Appearance43 = browser.currentScene.createNode("Appearance");
-let Material44 = browser.currentScene.createNode("Material");
-Material44.diffuseColor = new SFColor(new float[0.588,0.588,0.588]);
-Appearance43.material = Material44;
-
-let ImageTexture45 = browser.currentScene.createNode("ImageTexture");
-ImageTexture45.USE = "YoungTextureAtlas";
-Appearance43.texture = ImageTexture45;
-
-Shape42.appearance = Appearance43;
-
-let IndexedFaceSet46 = browser.currentScene.createNode("IndexedFaceSet");
-IndexedFaceSet46.creaseAngle = 1.57;
-IndexedFaceSet46.texCoordIndex = new MFInt32(new int[5,4,3,-1,3,2,0,-1,3,0,1,-1,5,3,1,-1,6,5,1,-1,7,10,8,-1,8,9,7,-1,10,12,11,-1,11,8,10,-1,12,14,13,-1,13,11,12,-1,14,16,15,-1,15,13,14,-1,16,18,17,-1,17,15,16,-1,18,20,19,-1,19,17,18,-1,20,7,9,-1,9,19,20,-1,9,8,21,-1,21,22,9,-1,8,11,23,-1,23,21,8,-1,11,13,24,-1,24,23,11,-1,13,15,25,-1,25,24,13,-1,15,17,26,-1,26,25,15,-1,17,19,27,-1,27,26,17,-1,19,9,22,-1,22,27,19,-1,22,21,28,-1,28,29,22,-1,21,23,30,-1,30,28,21,-1,23,24,31,-1,31,30,23,-1,24,25,32,-1,32,31,24,-1,25,26,33,-1,33,32,25,-1,26,27,34,-1,34,33,26,-1,27,22,29,-1,29,34,27,-1,42,43,44,-1,44,45,46,-1,42,44,46,-1,42,46,47,-1,48,42,47,-1,35,36,29,-1,29,28,35,-1,37,35,28,-1,28,30,37,-1,38,37,30,-1,30,31,38,-1,39,38,31,-1,31,32,39,-1,40,39,32,-1,32,33,40,-1,41,40,33,-1,33,34,41,-1,36,41,34,-1,34,29,36,-1,51,52,49,-1,49,50,51,-1,54,51,50,-1,50,53,54,-1,56,54,53,-1,53,55,56,-1,58,56,55,-1,55,57,58,-1,60,58,57,-1,57,59,60,-1,62,60,59,-1,59,61,62,-1,52,62,61,-1,61,49,52,-1,1,0,10,-1,10,7,1,-1,0,2,12,-1,12,10,0,-1,2,3,14,-1,14,12,2,-1,3,4,16,-1,16,14,3,-1,4,5,18,-1,18,16,4,-1,5,6,20,-1,20,18,5,-1,6,1,7,-1,7,20,6,-1,63,64,52,-1,52,51,63,-1,65,63,51,-1,51,54,65,-1,66,65,54,-1,54,56,66,-1,67,66,56,-1,56,58,67,-1,68,67,58,-1,58,60,68,-1,69,68,60,-1,60,62,69,-1,64,69,62,-1,62,52,64,-1,43,42,64,-1,64,63,43,-1,44,43,63,-1,63,65,44,-1,45,44,65,-1,65,66,45,-1,46,45,66,-1,66,67,46,-1,47,46,67,-1,67,68,47,-1,48,47,68,-1,68,69,48,-1,42,48,69,-1,69,64,42,-1]);
-IndexedFaceSet46.coordIndex = new MFInt32(new int[47,46,45,-1,45,44,43,-1,45,43,42,-1,47,45,42,-1,48,47,42,-1,0,1,8,-1,8,7,0,-1,1,2,9,-1,9,8,1,-1,2,3,10,-1,10,9,2,-1,3,4,11,-1,11,10,3,-1,4,5,12,-1,12,11,4,-1,5,6,13,-1,13,12,5,-1,6,0,7,-1,7,13,6,-1,7,8,15,-1,15,14,7,-1,8,9,16,-1,16,15,8,-1,9,10,17,-1,17,16,9,-1,10,11,18,-1,18,17,10,-1,11,12,19,-1,19,18,11,-1,12,13,20,-1,20,19,12,-1,13,7,14,-1,14,20,13,-1,14,15,22,-1,22,21,14,-1,15,16,23,-1,23,22,15,-1,16,17,24,-1,24,23,16,-1,17,18,25,-1,25,24,17,-1,18,19,26,-1,26,25,18,-1,19,20,27,-1,27,26,19,-1,20,14,21,-1,21,27,20,-1,56,57,58,-1,58,59,60,-1,56,58,60,-1,56,60,61,-1,62,56,61,-1,29,28,21,-1,21,22,29,-1,30,29,22,-1,22,23,30,-1,31,30,23,-1,23,24,31,-1,32,31,24,-1,24,25,32,-1,33,32,25,-1,25,26,33,-1,34,33,26,-1,26,27,34,-1,28,34,27,-1,27,21,28,-1,36,35,28,-1,28,29,36,-1,37,36,29,-1,29,30,37,-1,38,37,30,-1,30,31,38,-1,39,38,31,-1,31,32,39,-1,40,39,32,-1,32,33,40,-1,41,40,33,-1,33,34,41,-1,35,41,34,-1,34,28,35,-1,42,43,1,-1,1,0,42,-1,43,44,2,-1,2,1,43,-1,44,45,3,-1,3,2,44,-1,45,46,4,-1,4,3,45,-1,46,47,5,-1,5,4,46,-1,47,48,6,-1,6,5,47,-1,48,42,0,-1,0,6,48,-1,50,49,35,-1,35,36,50,-1,51,50,36,-1,36,37,51,-1,52,51,37,-1,37,38,52,-1,53,52,38,-1,38,39,53,-1,54,53,39,-1,39,40,54,-1,55,54,40,-1,40,41,55,-1,49,55,41,-1,41,35,49,-1,57,56,49,-1,49,50,57,-1,58,57,50,-1,50,51,58,-1,59,58,51,-1,51,52,59,-1,60,59,52,-1,52,53,60,-1,61,60,53,-1,53,54,61,-1,62,61,54,-1,54,55,62,-1,56,62,55,-1,55,49,56,-1]);
-let TextureCoordinate47 = browser.currentScene.createNode("TextureCoordinate");
-TextureCoordinate47.point = new MFVec2f(new float[0.719,0.5576,0.6284,0.5576,0.7414,0.5576,0.6787,0.5576,0.5781,0.5576,0.5154,0.5576,0.5378,0.5576,0.6284,0.5029,0.7509,0.3997,0.6284,0.3997,0.7509,0.5029,0.7811,0.3997,0.7811,0.5029,0.6964,0.3997,0.6964,0.5029,0.5604,0.3997,0.5604,0.5029,0.4756,0.3997,0.4756,0.5029,0.5059,0.3997,0.5059,0.5029,0.7509,0.3197,0.6284,0.3197,0.7811,0.3197,0.6964,0.3197,0.5604,0.3197,0.4756,0.3197,0.5059,0.3197,0.7651,0.2166,0.6284,0.2166,0.7989,0.2166,0.7043,0.2166,0.5525,0.2166,0.4579,0.2166,0.4917,0.2166,0.7224,0.263,0.6284,0.263,0.7456,0.263,0.6805,0.263,0.5762,0.263,0.5112,0.263,0.5344,0.263,0.8705,0.5452,0.8705,0.5383,0.8705,0.5369,0.8705,0.5408,0.8705,0.5483,0.8705,0.5522,0.8705,0.5509,0.917,0.5452,0.917,0.5266,0.89,0.5304,0.89,0.5452,0.917,0.522,0.89,0.5268,0.917,0.5349,0.89,0.537,0.917,0.5555,0.89,0.5534,0.917,0.5684,0.89,0.5636,0.917,0.5638,0.89,0.56,0.8746,0.531,0.8746,0.5452,0.8746,0.5279,0.8746,0.5368,0.8746,0.5524,0.8746,0.5613,0.8746,0.5581]);
-IndexedFaceSet46.texCoord = TextureCoordinate47;
-
-let Coordinate48 = browser.currentScene.createNode("Coordinate");
-Coordinate48.point = new MFVec3f(new float[2.61,2.495,-0.0096,1.449,2.495,2.82,-1.16,2.495,3.518,-2.968,2.495,1.56,-2.968,2.495,-1.58,-1.16,2.495,-3.537,1.449,2.495,-2.839,2.61,-0.8104,-0.0096,1.449,-0.8104,2.819,-1.16,-0.8104,3.518,-2.968,-0.8104,1.56,-2.968,-0.8104,-1.58,-1.16,-0.8104,-3.537,1.449,-0.8104,-2.839,2.61,-3.375,-0.0096,1.449,-3.375,2.819,-1.16,-3.375,3.518,-2.968,-3.375,1.56,-2.968,-3.375,-1.58,-1.16,-3.375,-3.537,1.449,-3.375,-2.839,2.968,-6.68,-0.0096,1.672,-6.68,3.148,-1.24,-6.68,3.928,-2.957,-6.68,1.743,-2.957,-6.68,-1.762,-1.24,-6.68,-3.947,1.672,-6.68,-3.167,1.892,-5.194,-0.0096,1.001,-5.194,2.161,-1.001,-5.194,2.697,-2.321,-5.194,1.195,-2.321,-5.194,-1.214,-1.001,-5.194,-2.716,1.001,-5.194,-2.18,1.9,-10.89,-0.0096,1.08,-10.89,1.714,-0.7636,-10.89,2.14,-2.242,-10.89,0.9472,-2.242,-10.89,-0.9663,-0.7636,-10.89,-2.159,1.08,-10.89,-1.734,1.807,4.249,-0.0096,0.9484,4.249,2.084,-0.982,4.249,2.601,-2.53,4.249,1.152,-2.53,4.249,-1.171,-0.982,4.249,-2.62,0.9484,4.249,-2.103,1.624,-14.13,-0.0096,0.9076,-14.13,1.641,-0.7021,-14.13,2.013,-1.993,-14.13,0.9715,-1.993,-14.13,-0.8451,-0.7021,-14.13,-1.887,0.9076,-14.13,-1.515,0.5533,-14.99,-0.0096,0.2401,-14.99,0.7943,-0.4639,-14.99,0.9569,-1.028,-14.99,0.5013,-1.028,-14.99,-0.3749,-0.4639,-14.99,-0.8305,0.2401,-14.99,-0.6679]);
-IndexedFaceSet46.coord = Coordinate48;
-
-Shape42.geometry = IndexedFaceSet46;
-
-Transform41.child = new undefined();
+let IndexedFaceSet58 = browser.currentScene.createNode("IndexedFaceSet");
+IndexedFaceSet58.coordIndex = new MFInt32(new int[4,3,2,-1,2,1,0,-1,4,2,0,-1,5,4,0,-1,6,5,0,-1,9,8,7,-1,7,10,9,-1,12,11,8,-1,8,9,12,-1,14,13,11,-1,11,12,14,-1,16,15,13,-1,13,14,16,-1,18,17,15,-1,15,16,18,-1,20,19,17,-1,17,18,20,-1,10,7,19,-1,19,20,10,-1,21,9,10,-1,10,22,21,-1,23,12,9,-1,9,21,23,-1,24,14,12,-1,12,23,24,-1,25,16,14,-1,14,24,25,-1,26,18,16,-1,16,25,26,-1,27,20,18,-1,18,26,27,-1,22,10,20,-1,20,27,22,-1,1,21,22,-1,22,0,1,-1,2,23,21,-1,21,1,2,-1,3,24,23,-1,23,2,3,-1,4,25,24,-1,24,3,4,-1,5,26,25,-1,25,4,5,-1,6,27,26,-1,26,5,6,-1,0,22,27,-1,27,6,0,-1,8,29,28,-1,28,7,8,-1,11,30,29,-1,29,8,11,-1,13,31,30,-1,30,11,13,-1,15,32,31,-1,31,13,15,-1,17,33,32,-1,32,15,17,-1,19,34,33,-1,33,17,19,-1,7,28,34,-1,34,19,7,-1,29,36,35,-1,35,28,29,-1,30,37,36,-1,36,29,30,-1,31,38,37,-1,37,30,31,-1,32,39,38,-1,38,31,32,-1,33,40,39,-1,39,32,33,-1,34,41,40,-1,40,33,34,-1,28,35,41,-1,41,34,28,-1]);
+IndexedFaceSet58.creaseAngle = 1.57;
+IndexedFaceSet58.texCoordIndex = new MFInt32(new int[4,3,2,-1,2,1,0,-1,4,2,0,-1,5,4,0,-1,6,5,0,-1,9,8,7,-1,7,10,9,-1,12,11,8,-1,8,9,12,-1,14,13,11,-1,11,12,14,-1,16,15,13,-1,13,14,16,-1,18,17,15,-1,15,16,18,-1,20,19,17,-1,17,18,20,-1,10,7,19,-1,19,20,10,-1,21,9,10,-1,10,22,21,-1,23,12,9,-1,9,21,23,-1,24,14,12,-1,12,23,24,-1,25,16,14,-1,14,24,25,-1,26,18,16,-1,16,25,26,-1,27,20,18,-1,18,26,27,-1,22,10,20,-1,20,27,22,-1,1,21,22,-1,22,0,1,-1,2,23,21,-1,21,1,2,-1,3,24,23,-1,23,2,3,-1,4,25,24,-1,24,3,4,-1,5,26,25,-1,25,4,5,-1,6,27,26,-1,26,5,6,-1,0,22,27,-1,27,6,0,-1,8,29,28,-1,28,7,8,-1,11,30,29,-1,29,8,11,-1,13,31,30,-1,30,11,13,-1,15,32,31,-1,31,13,15,-1,17,33,32,-1,32,15,17,-1,19,34,33,-1,33,17,19,-1,7,28,34,-1,34,19,7,-1,29,36,35,-1,35,28,29,-1,30,37,36,-1,36,29,30,-1,31,38,37,-1,37,30,31,-1,32,39,38,-1,38,31,32,-1,33,40,39,-1,39,32,33,-1,34,41,40,-1,40,33,34,-1,28,35,41,-1,41,34,28,-1]);
+let Coordinate59 = browser.currentScene.createNode("Coordinate");
+Coordinate59.point = new MFVec3f(new float[0.6335,1.142,0.0206,0.3202,1.142,0.8245,-0.3837,1.142,0.9871,-0.9483,1.142,0.5315,-0.9483,1.142,-0.3447,-0.3837,1.142,-0.8003,0.3202,1.142,-0.6377,2.06,-3.778,0.0206,1.287,-2.905,1.78,1.089,-1.147,2.133,1.867,-1.397,0.0206,-0.715,-2.905,2.263,-0.6583,-1.147,2.559,-1.987,-3.778,1.106,-2.06,-1.397,0.8632,-1.987,-4.457,-1.205,-2.06,-1.397,-0.822,-0.715,-4.457,-2.559,-0.6583,-1.397,-2.087,1.287,-4.457,-2.076,1.089,-1.397,-1.661,0.9877,0.2851,1.672,1.704,0.2851,0.0206,-0.622,0.2851,2.043,-1.913,0.2851,1.002,-1.913,0.2851,-0.8149,-0.622,0.2851,-1.817,0.9877,0.2851,-1.445,1.417,-11.1,0.0028,0.8123,-11.09,1.38,-0.5457,-11.09,1.72,-1.635,-11.1,0.767,-1.635,-11.11,-0.8605,-0.5457,-11.11,-1.535,0.8123,-11.11,-1.195,0.6234,-12.52,0.021,0.3177,-12.52,0.7175,-0.3691,-12.52,0.8896,-0.9199,-12.52,0.4076,-0.9199,-12.53,-0.4156,-0.3691,-12.53,-0.7569,0.3177,-12.53,-0.5849]);
+IndexedFaceSet58.coord = Coordinate59;
+
+let TextureCoordinate60 = browser.currentScene.createNode("TextureCoordinate");
+TextureCoordinate60.point = new MFVec2f(new float[0.9309,0.5848,0.919,0.5848,0.8921,0.5848,0.8706,0.5848,0.8706,0.5848,0.8921,0.5848,0.919,0.5848,0.9845,0.5321,0.955,0.5475,0.9491,0.5599,0.9788,0.5571,0.8787,0.5475,0.8825,0.5599,0.8302,0.5321,0.8291,0.5571,0.8302,0.52,0.8291,0.5571,0.8787,0.52,0.8825,0.5571,0.955,0.52,0.9491,0.5571,0.9444,0.5755,0.9717,0.5755,0.8831,0.5755,0.8339,0.5755,0.8339,0.5755,0.8831,0.5755,0.9444,0.5755,0.9679,0.2444,0.9449,0.2445,0.8931,0.2445,0.8516,0.2444,0.8516,0.2442,0.8931,0.2442,0.9449,0.2442,0.9372,0.2243,0.9255,0.2244,0.8993,0.2244,0.8783,0.2243,0.8783,0.2243,0.8993,0.2243,0.9255,0.2243]);
+IndexedFaceSet58.texCoord = TextureCoordinate60;
+
+Shape54.geometry = IndexedFaceSet58;
+
+Transform53.child = new undefined();
 
-Transform41.child[0] = Shape42;
+Transform53.child[0] = Shape54;
 
-HAnimSegment40.children = new MFNode();
+HAnimSegment52.children = new MFNode();
 
-HAnimSegment40.children[0] = Transform41;
+HAnimSegment52.children[0] = Transform53;
 
-HAnimJoint39.children = new MFNode();
+HAnimJoint51.children = new MFNode();
 
-HAnimJoint39.children[0] = HAnimSegment40;
+HAnimJoint51.children[0] = HAnimSegment52;
 
-let HAnimJoint49 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint49.DEF = "hanim_l_knee";
-HAnimJoint49.name = "l_knee";
-HAnimJoint49.center = new SFVec3f(new float[3.414,14.95,-0.4549]);
-let HAnimSegment50 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment50.DEF = "hanim_l_calf";
-HAnimSegment50.name = "l_calf";
-let Transform51 = browser.currentScene.createNode("Transform");
-Transform51.translation = new SFVec3f(new float[3.414,14.95,-0.4549]);
-let Shape52 = browser.currentScene.createNode("Shape");
-let Appearance53 = browser.currentScene.createNode("Appearance");
-let Material54 = browser.currentScene.createNode("Material");
-Material54.diffuseColor = new SFColor(new float[0.588,0.588,0.588]);
-Appearance53.material = Material54;
-
-let ImageTexture55 = browser.currentScene.createNode("ImageTexture");
-ImageTexture55.USE = "YoungTextureAtlas";
-Appearance53.texture = ImageTexture55;
-
-Shape52.appearance = Appearance53;
-
-let IndexedFaceSet56 = browser.currentScene.createNode("IndexedFaceSet");
-IndexedFaceSet56.creaseAngle = 1.57;
-IndexedFaceSet56.texCoordIndex = new MFInt32(new int[4,3,2,-1,2,1,0,-1,4,2,0,-1,5,4,0,-1,6,5,0,-1,9,8,7,-1,7,10,9,-1,12,11,8,-1,8,9,12,-1,14,13,11,-1,11,12,14,-1,16,15,13,-1,13,14,16,-1,18,17,15,-1,15,16,18,-1,20,19,17,-1,17,18,20,-1,10,7,19,-1,19,20,10,-1,21,9,10,-1,10,22,21,-1,23,12,9,-1,9,21,23,-1,24,14,12,-1,12,23,24,-1,25,16,14,-1,14,24,25,-1,26,18,16,-1,16,25,26,-1,27,20,18,-1,18,26,27,-1,22,10,20,-1,20,27,22,-1,1,21,22,-1,22,0,1,-1,2,23,21,-1,21,1,2,-1,3,24,23,-1,23,2,3,-1,4,25,24,-1,24,3,4,-1,5,26,25,-1,25,4,5,-1,6,27,26,-1,26,5,6,-1,0,22,27,-1,27,6,0,-1,8,29,28,-1,28,7,8,-1,11,30,29,-1,29,8,11,-1,13,31,30,-1,30,11,13,-1,15,32,31,-1,31,13,15,-1,17,33,32,-1,32,15,17,-1,19,34,33,-1,33,17,19,-1,7,28,34,-1,34,19,7,-1,29,36,35,-1,35,28,29,-1,30,37,36,-1,36,29,30,-1,31,38,37,-1,37,30,31,-1,32,39,38,-1,38,31,32,-1,33,40,39,-1,39,32,33,-1,34,41,40,-1,40,33,34,-1,28,35,41,-1,41,34,28,-1]);
-IndexedFaceSet56.coordIndex = new MFInt32(new int[4,3,2,-1,2,1,0,-1,4,2,0,-1,5,4,0,-1,6,5,0,-1,9,8,7,-1,7,10,9,-1,12,11,8,-1,8,9,12,-1,14,13,11,-1,11,12,14,-1,16,15,13,-1,13,14,16,-1,18,17,15,-1,15,16,18,-1,20,19,17,-1,17,18,20,-1,10,7,19,-1,19,20,10,-1,21,9,10,-1,10,22,21,-1,23,12,9,-1,9,21,23,-1,24,14,12,-1,12,23,24,-1,25,16,14,-1,14,24,25,-1,26,18,16,-1,16,25,26,-1,27,20,18,-1,18,26,27,-1,22,10,20,-1,20,27,22,-1,1,21,22,-1,22,0,1,-1,2,23,21,-1,21,1,2,-1,3,24,23,-1,23,2,3,-1,4,25,24,-1,24,3,4,-1,5,26,25,-1,25,4,5,-1,6,27,26,-1,26,5,6,-1,0,22,27,-1,27,6,0,-1,8,29,28,-1,28,7,8,-1,11,30,29,-1,29,8,11,-1,13,31,30,-1,30,11,13,-1,15,32,31,-1,31,13,15,-1,17,33,32,-1,32,15,17,-1,19,34,33,-1,33,17,19,-1,7,28,34,-1,34,19,7,-1,29,36,35,-1,35,28,29,-1,30,37,36,-1,36,29,30,-1,31,38,37,-1,37,30,31,-1,32,39,38,-1,38,31,32,-1,33,40,39,-1,39,32,33,-1,34,41,40,-1,40,33,34,-1,28,35,41,-1,41,34,28,-1]);
-let TextureCoordinate57 = browser.currentScene.createNode("TextureCoordinate");
-TextureCoordinate57.point = new MFVec2f(new float[0.9309,0.5848,0.919,0.5848,0.8921,0.5848,0.8706,0.5848,0.8706,0.5848,0.8921,0.5848,0.919,0.5848,0.9845,0.5321,0.955,0.5475,0.9491,0.5599,0.9788,0.5571,0.8787,0.5475,0.8825,0.5599,0.8302,0.5321,0.8291,0.5571,0.8302,0.52,0.8291,0.5571,0.8787,0.52,0.8825,0.5571,0.955,0.52,0.9491,0.5571,0.9444,0.5755,0.9717,0.5755,0.8831,0.5755,0.8339,0.5755,0.8339,0.5755,0.8831,0.5755,0.9444,0.5755,0.9679,0.2444,0.9449,0.2445,0.8931,0.2445,0.8516,0.2444,0.8516,0.2442,0.8931,0.2442,0.9449,0.2442,0.9372,0.2243,0.9255,0.2244,0.8993,0.2244,0.8783,0.2243,0.8783,0.2243,0.8993,0.2243,0.9255,0.2243]);
-IndexedFaceSet56.texCoord = TextureCoordinate57;
-
-let Coordinate58 = browser.currentScene.createNode("Coordinate");
-Coordinate58.point = new MFVec3f(new float[0.6335,1.142,0.0206,0.3202,1.142,0.8245,-0.3837,1.142,0.9871,-0.9483,1.142,0.5315,-0.9483,1.142,-0.3447,-0.3837,1.142,-0.8003,0.3202,1.142,-0.6377,2.06,-3.778,0.0206,1.287,-2.905,1.78,1.089,-1.147,2.133,1.867,-1.397,0.0206,-0.715,-2.905,2.263,-0.6583,-1.147,2.559,-1.987,-3.778,1.106,-2.06,-1.397,0.8632,-1.987,-4.457,-1.205,-2.06,-1.397,-0.822,-0.715,-4.457,-2.559,-0.6583,-1.397,-2.087,1.287,-4.457,-2.076,1.089,-1.397,-1.661,0.9877,0.2851,1.672,1.704,0.2851,0.0206,-0.622,0.2851,2.043,-1.913,0.2851,1.002,-1.913,0.2851,-0.8149,-0.622,0.2851,-1.817,0.9877,0.2851,-1.445,1.417,-11.1,0.0028,0.8123,-11.09,1.38,-0.5457,-11.09,1.72,-1.635,-11.1,0.767,-1.635,-11.11,-0.8605,-0.5457,-11.11,-1.535,0.8123,-11.11,-1.195,0.6234,-12.52,0.021,0.3177,-12.52,0.7175,-0.3691,-12.52,0.8896,-0.9199,-12.52,0.4076,-0.9199,-12.53,-0.4156,-0.3691,-12.53,-0.7569,0.3177,-12.53,-0.5849]);
-IndexedFaceSet56.coord = Coordinate58;
-
-Shape52.geometry = IndexedFaceSet56;
-
-Transform51.child = new undefined();
+let HAnimJoint61 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint61.name = "l_talocrural";
+HAnimJoint61.DEF = "hanim_l_talocrural";
+HAnimJoint61.center = new SFVec3f(new float[3.18,3.449,-0.3088]);
+HAnimJoint61.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint61.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment62 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment62.name = "l_talus";
+HAnimSegment62.DEF = "hanim_l_talus";
+let Transform63 = browser.currentScene.createNode("Transform");
+Transform63.translation = new SFVec3f(new float[3.18,3.449,-0.3088]);
+let Shape64 = browser.currentScene.createNode("Shape");
+let Appearance65 = browser.currentScene.createNode("Appearance");
+let Material66 = browser.currentScene.createNode("Material");
+Material66.diffuseColor = new SFColor(new float[0.588,0.588,0.588]);
+Appearance65.material = Material66;
 
-Transform51.child[0] = Shape52;
+let ImageTexture67 = browser.currentScene.createNode("ImageTexture");
+ImageTexture67.USE = "YoungTextureAtlas";
+Appearance65.texture = ImageTexture67;
 
-HAnimSegment50.children = new MFNode();
+Shape64.appearance = Appearance65;
 
-HAnimSegment50.children[0] = Transform51;
+let IndexedFaceSet68 = browser.currentScene.createNode("IndexedFaceSet");
+IndexedFaceSet68.coordIndex = new MFInt32(new int[1,11,12,-1,3,4,5,-1,5,6,3,-1,1,0,4,-1,4,3,1,-1,0,2,5,-1,5,4,0,-1,11,1,3,-1,3,6,11,-1,18,2,0,-1,0,17,18,-1,0,1,25,-1,25,17,0,-1,25,1,12,-1,7,13,11,-1,8,6,5,-1,5,9,8,-1,7,8,9,-1,9,10,7,-1,10,9,5,-1,5,2,10,-1,11,6,8,-1,8,7,11,-1,18,21,10,-1,10,2,18,-1,10,21,27,-1,27,7,10,-1,27,13,7,-1,12,11,37,-1,37,35,12,-1,11,13,36,-1,36,37,11,-1,20,18,17,-1,17,14,20,-1,23,14,17,-1,17,25,23,-1,16,20,14,-1,14,15,16,-1,24,15,14,-1,14,23,24,-1,15,24,29,-1,29,16,15,-1,20,19,21,-1,21,18,20,-1,26,27,21,-1,21,19,26,-1,16,22,19,-1,19,20,16,-1,28,26,19,-1,19,22,28,-1,22,16,29,-1,29,28,22,-1,36,32,33,-1,34,30,31,-1,33,34,31,-1,36,33,31,-1,36,31,35,-1,24,23,31,-1,31,30,24,-1,23,25,35,-1,35,31,23,-1,27,26,32,-1,32,36,27,-1,26,28,33,-1,33,32,26,-1,28,29,34,-1,34,33,28,-1,29,24,30,-1,30,34,29,-1,36,35,37,-1,12,35,25,-1,27,36,13,-1]);
+IndexedFaceSet68.creaseAngle = 1.57;
+IndexedFaceSet68.texCoordIndex = new MFInt32(new int[1,14,18,-1,3,4,5,-1,5,6,3,-1,1,0,4,-1,4,3,1,-1,0,2,5,-1,5,4,0,-1,14,1,3,-1,3,6,14,-1,19,2,0,-1,0,16,19,-1,0,1,17,-1,17,16,0,-1,17,1,18,-1,7,23,15,-1,9,8,11,-1,11,10,9,-1,7,9,10,-1,10,12,7,-1,12,10,11,-1,11,13,12,-1,15,8,9,-1,9,7,15,-1,20,21,12,-1,12,13,20,-1,12,21,22,-1,22,7,12,-1,22,23,7,-1,18,14,25,-1,25,24,18,-1,15,23,26,-1,26,25,15,-1,29,33,32,-1,32,27,29,-1,41,27,32,-1,32,43,41,-1,30,29,27,-1,27,28,30,-1,42,28,27,-1,27,41,42,-1,28,42,48,-1,48,31,28,-1,35,34,37,-1,37,36,35,-1,44,45,37,-1,37,34,44,-1,39,38,34,-1,34,35,39,-1,46,44,34,-1,34,38,46,-1,38,40,47,-1,47,46,38,-1,52,53,54,-1,55,49,50,-1,54,55,50,-1,52,54,50,-1,52,50,51,-1,42,41,50,-1,50,49,42,-1,41,43,51,-1,51,50,41,-1,45,44,53,-1,53,52,45,-1,44,46,54,-1,54,53,44,-1,46,47,55,-1,55,54,46,-1,48,42,49,-1,49,55,48,-1,52,51,56,-1,18,24,43,-1,22,52,23,-1]);
+let Coordinate69 = browser.currentScene.createNode("Coordinate");
+Coordinate69.point = new MFVec3f(new float[0.8503,-0.0167,-1.492,1.443,-0.0167,0.3823,0,-0.0167,-1.492,1.221,0.6369,0.3141,0.7115,0.6369,-1.298,0,0.6369,-1.298,0,0.6368,1.305,-1.443,-0.0167,0.3823,-1.221,0.6369,0.3141,-0.7115,0.6369,-1.298,-0.8503,-0.0167,-1.492,0,-0.0167,1.553,1.476,-0.2577,1.268,-1.476,-0.2577,1.268,1.226,-1.676,-2.553,1.226,-3.436,-1.492,0,-3.436,-1.492,0.965,-0.5229,-1.815,0,-0.5229,-1.815,-1.226,-1.676,-2.553,0,-1.676,-2.553,-0.965,-0.5229,-1.815,-1.226,-3.436,-1.492,2.548,-1.676,0.3823,1.819,-3.436,0.3823,1.78,-0.5229,0.3823,-2.548,-1.676,0.3823,-1.78,-0.5229,0.3823,-1.819,-3.436,0.3823,0,-3.436,0.3823,1.619,-3.302,1.21,2.212,-1.709,1.21,-2.212,-1.709,1.21,-1.619,-3.302,1.21,0,-3.302,1.21,1.393,-0.8117,1.248,-1.393,-0.8117,1.248,0,-0.573,1.515]);
+IndexedFaceSet68.coord = Coordinate69;
 
-HAnimJoint49.children = new MFNode();
+let TextureCoordinate70 = browser.currentScene.createNode("TextureCoordinate");
+TextureCoordinate70.point = new MFVec2f(new float[0.3819,0.171,0.4216,0.1651,0.3819,0.171,0.4216,0.1651,0.3819,0.171,0.3819,0.171,0.4637,0.1714,0.4216,0.1651,0.4637,0.1714,0.4216,0.1651,0.3819,0.171,0.3819,0.171,0.3819,0.171,0.3819,0.171,0.4637,0.1714,0.4637,0.1714,0.3861,0.1398,0.4244,0.1312,0.4394,0.1472,0.3836,0.1404,0.3836,0.1404,0.3861,0.1398,0.4244,0.1312,0.4394,0.1472,0.4394,0.1472,0.4637,0.1714,0.4394,0.1472,0.3873,0.0706,0.3871,0.0221,0.3873,0.0706,0.3871,0.0221,0.3871,0.0221,0.3861,0.1398,0.3836,0.1404,0.3873,0.0706,0.3873,0.0706,0.3836,0.1404,0.3861,0.1398,0.3871,0.0221,0.3871,0.0221,0.3871,0.0221,0.433,0.0595,0.4411,0.0186,0.4244,0.1312,0.433,0.0595,0.4244,0.1312,0.4411,0.0186,0.4411,0.0186,0.4411,0.0186,0.4411,0.0186,0.433,0.0595,0.4244,0.1312,0.4244,0.1312,0.433,0.0595,0.4411,0.0186,0.4411,0.0186,0.4244,0.1312]);
+IndexedFaceSet68.texCoord = TextureCoordinate70;
 
-HAnimJoint49.children[0] = HAnimSegment50;
+Shape64.geometry = IndexedFaceSet68;
 
-let HAnimJoint59 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint59.DEF = "hanim_l_talocrural";
-HAnimJoint59.name = "l_talocrural";
-HAnimJoint59.center = new SFVec3f(new float[3.18,3.449,-0.3088]);
-let HAnimSegment60 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment60.DEF = "hanim_l_talus";
-HAnimSegment60.name = "l_talus";
-let Transform61 = browser.currentScene.createNode("Transform");
-Transform61.translation = new SFVec3f(new float[3.18,3.449,-0.3088]);
-let Shape62 = browser.currentScene.createNode("Shape");
-let Appearance63 = browser.currentScene.createNode("Appearance");
-let Material64 = browser.currentScene.createNode("Material");
-Material64.diffuseColor = new SFColor(new float[0.588,0.588,0.588]);
-Appearance63.material = Material64;
+Transform63.child = new undefined();
 
-let ImageTexture65 = browser.currentScene.createNode("ImageTexture");
-ImageTexture65.USE = "YoungTextureAtlas";
-Appearance63.texture = ImageTexture65;
+Transform63.child[0] = Shape64;
 
-Shape62.appearance = Appearance63;
+HAnimSegment62.children = new MFNode();
 
-let IndexedFaceSet66 = browser.currentScene.createNode("IndexedFaceSet");
-IndexedFaceSet66.creaseAngle = 1.57;
-IndexedFaceSet66.texCoordIndex = new MFInt32(new int[1,14,18,-1,3,4,5,-1,5,6,3,-1,1,0,4,-1,4,3,1,-1,0,2,5,-1,5,4,0,-1,14,1,3,-1,3,6,14,-1,19,2,0,-1,0,16,19,-1,0,1,17,-1,17,16,0,-1,17,1,18,-1,7,23,15,-1,9,8,11,-1,11,10,9,-1,7,9,10,-1,10,12,7,-1,12,10,11,-1,11,13,12,-1,15,8,9,-1,9,7,15,-1,20,21,12,-1,12,13,20,-1,12,21,22,-1,22,7,12,-1,22,23,7,-1,18,14,25,-1,25,24,18,-1,15,23,26,-1,26,25,15,-1,29,33,32,-1,32,27,29,-1,41,27,32,-1,32,43,41,-1,30,29,27,-1,27,28,30,-1,42,28,27,-1,27,41,42,-1,28,42,48,-1,48,31,28,-1,35,34,37,-1,37,36,35,-1,44,45,37,-1,37,34,44,-1,39,38,34,-1,34,35,39,-1,46,44,34,-1,34,38,46,-1,38,40,47,-1,47,46,38,-1,52,53,54,-1,55,49,50,-1,54,55,50,-1,52,54,50,-1,52,50,51,-1,42,41,50,-1,50,49,42,-1,41,43,51,-1,51,50,41,-1,45,44,53,-1,53,52,45,-1,44,46,54,-1,54,53,44,-1,46,47,55,-1,55,54,46,-1,48,42,49,-1,49,55,48,-1,52,51,56,-1,18,24,43,-1,22,52,23,-1]);
-IndexedFaceSet66.coordIndex = new MFInt32(new int[1,11,12,-1,3,4,5,-1,5,6,3,-1,1,0,4,-1,4,3,1,-1,0,2,5,-1,5,4,0,-1,11,1,3,-1,3,6,11,-1,18,2,0,-1,0,17,18,-1,0,1,25,-1,25,17,0,-1,25,1,12,-1,7,13,11,-1,8,6,5,-1,5,9,8,-1,7,8,9,-1,9,10,7,-1,10,9,5,-1,5,2,10,-1,11,6,8,-1,8,7,11,-1,18,21,10,-1,10,2,18,-1,10,21,27,-1,27,7,10,-1,27,13,7,-1,12,11,37,-1,37,35,12,-1,11,13,36,-1,36,37,11,-1,20,18,17,-1,17,14,20,-1,23,14,17,-1,17,25,23,-1,16,20,14,-1,14,15,16,-1,24,15,14,-1,14,23,24,-1,15,24,29,-1,29,16,15,-1,20,19,21,-1,21,18,20,-1,26,27,21,-1,21,19,26,-1,16,22,19,-1,19,20,16,-1,28,26,19,-1,19,22,28,-1,22,16,29,-1,29,28,22,-1,36,32,33,-1,34,30,31,-1,33,34,31,-1,36,33,31,-1,36,31,35,-1,24,23,31,-1,31,30,24,-1,23,25,35,-1,35,31,23,-1,27,26,32,-1,32,36,27,-1,26,28,33,-1,33,32,26,-1,28,29,34,-1,34,33,28,-1,29,24,30,-1,30,34,29,-1,36,35,37,-1,12,35,25,-1,27,36,13,-1]);
-let TextureCoordinate67 = browser.currentScene.createNode("TextureCoordinate");
-TextureCoordinate67.point = new MFVec2f(new float[0.3819,0.171,0.4216,0.1651,0.3819,0.171,0.4216,0.1651,0.3819,0.171,0.3819,0.171,0.4637,0.1714,0.4216,0.1651,0.4637,0.1714,0.4216,0.1651,0.3819,0.171,0.3819,0.171,0.3819,0.171,0.3819,0.171,0.4637,0.1714,0.4637,0.1714,0.3861,0.1398,0.4244,0.1312,0.4394,0.1472,0.3836,0.1404,0.3836,0.1404,0.3861,0.1398,0.4244,0.1312,0.4394,0.1472,0.4394,0.1472,0.4637,0.1714,0.4394,0.1472,0.3873,0.0706,0.3871,0.0221,0.3873,0.0706,0.3871,0.0221,0.3871,0.0221,0.3861,0.1398,0.3836,0.1404,0.3873,0.0706,0.3873,0.0706,0.3836,0.1404,0.3861,0.1398,0.3871,0.0221,0.3871,0.0221,0.3871,0.0221,0.433,0.0595,0.4411,0.0186,0.4244,0.1312,0.433,0.0595,0.4244,0.1312,0.4411,0.0186,0.4411,0.0186,0.4411,0.0186,0.4411,0.0186,0.433,0.0595,0.4244,0.1312,0.4244,0.1312,0.433,0.0595,0.4411,0.0186,0.4411,0.0186,0.4244,0.1312]);
-IndexedFaceSet66.texCoord = TextureCoordinate67;
+HAnimSegment62.children[0] = Transform63;
 
-let Coordinate68 = browser.currentScene.createNode("Coordinate");
-Coordinate68.point = new MFVec3f(new float[0.8503,-0.0167,-1.492,1.443,-0.0167,0.3823,0,-0.0167,-1.492,1.221,0.6369,0.3141,0.7115,0.6369,-1.298,0,0.6369,-1.298,0,0.6368,1.305,-1.443,-0.0167,0.3823,-1.221,0.6369,0.3141,-0.7115,0.6369,-1.298,-0.8503,-0.0167,-1.492,0,-0.0167,1.553,1.476,-0.2577,1.268,-1.476,-0.2577,1.268,1.226,-1.676,-2.553,1.226,-3.436,-1.492,0,-3.436,-1.492,0.965,-0.5229,-1.815,0,-0.5229,-1.815,-1.226,-1.676,-2.553,0,-1.676,-2.553,-0.965,-0.5229,-1.815,-1.226,-3.436,-1.492,2.548,-1.676,0.3823,1.819,-3.436,0.3823,1.78,-0.5229,0.3823,-2.548,-1.676,0.3823,-1.78,-0.5229,0.3823,-1.819,-3.436,0.3823,0,-3.436,0.3823,1.619,-3.302,1.21,2.212,-1.709,1.21,-2.212,-1.709,1.21,-1.619,-3.302,1.21,0,-3.302,1.21,1.393,-0.8117,1.248,-1.393,-0.8117,1.248,0,-0.573,1.515]);
-IndexedFaceSet66.coord = Coordinate68;
+HAnimJoint61.children = new MFNode();
 
-Shape62.geometry = IndexedFaceSet66;
+HAnimJoint61.children[0] = HAnimSegment62;
 
-Transform61.child = new undefined();
+let HAnimJoint71 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint71.name = "l_metatarsophalangeal_2";
+HAnimJoint71.DEF = "hanim_l_metatarsophalangeal_2";
+HAnimJoint71.center = new SFVec3f(new float[3.18,3.189,0.9724]);
+HAnimJoint71.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint71.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment72 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment72.name = "l_tarsal_proximal_phalanx_2";
+HAnimSegment72.DEF = "hanim_l_tarsal_proximal_phalanx_2";
+let Transform73 = browser.currentScene.createNode("Transform");
+Transform73.translation = new SFVec3f(new float[3.18,3.189,0.9724]);
+let Shape74 = browser.currentScene.createNode("Shape");
+let Appearance75 = browser.currentScene.createNode("Appearance");
+let Material76 = browser.currentScene.createNode("Material");
+Material76.diffuseColor = new SFColor(new float[0.588,0.588,0.588]);
+Appearance75.material = Material76;
 
-Transform61.child[0] = Shape62;
+let ImageTexture77 = browser.currentScene.createNode("ImageTexture");
+ImageTexture77.USE = "YoungTextureAtlas";
+Appearance75.texture = ImageTexture77;
 
-HAnimSegment60.children = new MFNode();
+Shape74.appearance = Appearance75;
 
-HAnimSegment60.children[0] = Transform61;
+let IndexedFaceSet78 = browser.currentScene.createNode("IndexedFaceSet");
+IndexedFaceSet78.coordIndex = new MFInt32(new int[3,4,25,-1,3,25,26,-1,0,3,26,-1,1,0,26,-1,26,10,1,-1,1,10,12,-1,12,9,1,-1,2,34,25,-1,25,4,2,-1,31,8,6,-1,32,31,6,-1,5,32,6,-1,7,11,32,-1,32,5,7,-1,7,9,12,-1,12,11,7,-1,2,8,31,-1,31,34,2,-1,15,16,17,-1,15,17,18,-1,15,18,19,-1,14,15,19,-1,14,19,13,-1,0,1,14,-1,14,13,0,-1,1,9,15,-1,15,14,1,-1,9,7,16,-1,16,15,9,-1,7,5,17,-1,17,16,7,-1,5,6,18,-1,18,17,5,-1,6,3,19,-1,19,18,6,-1,3,0,13,-1,13,19,3,-1,6,8,2,-1,3,6,2,-1,4,3,2,-1,23,21,20,-1,20,24,23,-1,29,22,21,-1,21,23,29,-1,22,29,33,-1,20,21,26,-1,26,25,20,-1,26,21,22,-1,22,10,26,-1,10,22,33,-1,33,12,10,-1,34,24,20,-1,20,25,34,-1,23,24,28,-1,28,27,23,-1,29,23,27,-1,27,30,29,-1,30,33,29,-1,28,31,32,-1,32,27,28,-1,32,11,30,-1,30,27,32,-1,11,12,33,-1,33,30,11,-1,34,31,28,-1,28,24,34,-1]);
+IndexedFaceSet78.creaseAngle = 1.57;
+IndexedFaceSet78.texCoordIndex = new MFInt32(new int[4,5,12,-1,4,12,13,-1,0,4,13,-1,1,0,13,-1,13,14,1,-1,1,14,19,-1,19,3,1,-1,2,21,12,-1,12,5,2,-1,15,10,7,-1,16,15,7,-1,6,16,7,-1,8,17,16,-1,16,6,8,-1,8,11,18,-1,18,17,8,-1,9,10,15,-1,15,20,9,-1,24,25,26,-1,24,26,27,-1,24,27,28,-1,23,24,28,-1,23,28,22,-1,0,1,23,-1,23,22,0,-1,1,3,24,-1,24,23,1,-1,11,8,25,-1,25,24,11,-1,8,6,26,-1,26,25,8,-1,6,7,27,-1,27,26,6,-1,7,4,28,-1,28,27,7,-1,4,0,22,-1,22,28,4,-1,7,10,9,-1,4,7,9,-1,5,4,9,-1,30,32,31,-1,31,29,30,-1,33,34,32,-1,32,30,33,-1,34,33,35,-1,31,32,37,-1,37,36,31,-1,37,32,34,-1,34,38,37,-1,38,34,35,-1,35,39,38,-1,40,29,31,-1,31,36,40,-1,41,44,43,-1,43,42,41,-1,45,41,42,-1,42,46,45,-1,46,50,45,-1,43,47,48,-1,48,42,43,-1,48,49,46,-1,46,42,48,-1,49,51,50,-1,50,46,49,-1,52,47,43,-1,43,44,52,-1]);
+let Coordinate79 = browser.currentScene.createNode("Coordinate");
+Coordinate79.point = new MFVec3f(new float[2.548,-1.416,-0.8988,1.819,-3.176,-0.8988,0,0.2435,0.2718,1.78,-0.2627,-0.8989,1.476,0.0025,-0.0134,-2.548,-1.416,-0.8988,-1.78,-0.2627,-0.8989,-1.819,-3.176,-0.8988,-1.476,0.0025,-0.0134,0,-3.176,-0.8988,1.863,-3.176,0.8155,-1.863,-3.176,0.8155,0,-3.176,0.8155,2.094,-1.441,-1.699,1.524,-2.561,-1.699,0,-2.561,-1.699,-1.524,-2.561,-1.699,-2.094,-1.441,-1.699,-1.516,-0.4945,-1.699,1.516,-0.4945,-1.699,1.553,-0.5642,2.069,1.929,-1.973,3.676,1.929,-3.176,3.35,0,-1.973,4.847,0,-0.4757,3.505,1.514,-0.2808,1.028,2.316,-1.625,0.8155,-1.929,-1.973,3.676,-1.553,-0.5642,2.069,0,-3.176,4.521,-1.929,-3.176,3.35,-1.514,-0.2808,1.028,-2.316,-1.625,0.8155,0,-3.176,3.35,0,-0.0239,1.474]);
+IndexedFaceSet78.coord = Coordinate79;
 
-HAnimJoint59.children = new MFNode();
+let TextureCoordinate80 = browser.currentScene.createNode("TextureCoordinate");
+TextureCoordinate80.point = new MFVec2f(new float[0.433,0.0595,0.4411,0.0186,0.4637,0.1714,0.4411,0.0186,0.4244,0.1312,0.4394,0.1472,0.433,0.0595,0.4244,0.1312,0.4411,0.0186,0.4637,0.1714,0.4394,0.1472,0.4411,0.0186,0.464,0.1246,0.4607,0.0558,0.4904,0.0166,0.464,0.1246,0.4607,0.0558,0.4904,0.0166,0.4949,0.0186,0.4949,0.0186,0.4868,0.1432,0.4868,0.1432,0.433,0.0595,0.4411,0.0186,0.4411,0.0186,0.4411,0.0186,0.433,0.0595,0.4244,0.1312,0.4244,0.1312,0.532,0.098,0.5645,0.0707,0.4885,0.102,0.5026,0.044,0.5945,0.0186,0.5487,0.0186,0.5487,0.0186,0.464,0.1246,0.4607,0.0558,0.4904,0.0166,0.4949,0.0186,0.4868,0.1432,0.5645,0.0707,0.5026,0.044,0.4885,0.102,0.532,0.098,0.5945,0.0186,0.5487,0.0186,0.464,0.1246,0.4607,0.0558,0.4904,0.0166,0.5487,0.0186,0.4949,0.0186,0.4868,0.1432]);
+IndexedFaceSet78.texCoord = TextureCoordinate80;
 
-HAnimJoint59.children[0] = HAnimSegment60;
+Shape74.geometry = IndexedFaceSet78;
 
-let HAnimJoint69 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint69.DEF = "hanim_l_metatarsophalangeal_2";
-HAnimJoint69.name = "l_metatarsophalangeal_2";
-HAnimJoint69.center = new SFVec3f(new float[3.18,3.189,0.9724]);
-let HAnimSegment70 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment70.DEF = "hanim_l_tarsal_proximal_phalanx_2";
-HAnimSegment70.name = "l_tarsal_proximal_phalanx_2";
-let Transform71 = browser.currentScene.createNode("Transform");
-Transform71.translation = new SFVec3f(new float[3.18,3.189,0.9724]);
-let Shape72 = browser.currentScene.createNode("Shape");
-let Appearance73 = browser.currentScene.createNode("Appearance");
-let Material74 = browser.currentScene.createNode("Material");
-Material74.diffuseColor = new SFColor(new float[0.588,0.588,0.588]);
-Appearance73.material = Material74;
+Transform73.child = new undefined();
 
-let ImageTexture75 = browser.currentScene.createNode("ImageTexture");
-ImageTexture75.USE = "YoungTextureAtlas";
-Appearance73.texture = ImageTexture75;
+Transform73.child[0] = Shape74;
 
-Shape72.appearance = Appearance73;
+HAnimSegment72.children = new MFNode();
 
-let IndexedFaceSet76 = browser.currentScene.createNode("IndexedFaceSet");
-IndexedFaceSet76.creaseAngle = 1.57;
-IndexedFaceSet76.texCoordIndex = new MFInt32(new int[4,5,12,-1,4,12,13,-1,0,4,13,-1,1,0,13,-1,13,14,1,-1,1,14,19,-1,19,3,1,-1,2,21,12,-1,12,5,2,-1,15,10,7,-1,16,15,7,-1,6,16,7,-1,8,17,16,-1,16,6,8,-1,8,11,18,-1,18,17,8,-1,9,10,15,-1,15,20,9,-1,24,25,26,-1,24,26,27,-1,24,27,28,-1,23,24,28,-1,23,28,22,-1,0,1,23,-1,23,22,0,-1,1,3,24,-1,24,23,1,-1,11,8,25,-1,25,24,11,-1,8,6,26,-1,26,25,8,-1,6,7,27,-1,27,26,6,-1,7,4,28,-1,28,27,7,-1,4,0,22,-1,22,28,4,-1,7,10,9,-1,4,7,9,-1,5,4,9,-1,30,32,31,-1,31,29,30,-1,33,34,32,-1,32,30,33,-1,34,33,35,-1,31,32,37,-1,37,36,31,-1,37,32,34,-1,34,38,37,-1,38,34,35,-1,35,39,38,-1,40,29,31,-1,31,36,40,-1,41,44,43,-1,43,42,41,-1,45,41,42,-1,42,46,45,-1,46,50,45,-1,43,47,48,-1,48,42,43,-1,48,49,46,-1,46,42,48,-1,49,51,50,-1,50,46,49,-1,52,47,43,-1,43,44,52,-1]);
-IndexedFaceSet76.coordIndex = new MFInt32(new int[3,4,25,-1,3,25,26,-1,0,3,26,-1,1,0,26,-1,26,10,1,-1,1,10,12,-1,12,9,1,-1,2,34,25,-1,25,4,2,-1,31,8,6,-1,32,31,6,-1,5,32,6,-1,7,11,32,-1,32,5,7,-1,7,9,12,-1,12,11,7,-1,2,8,31,-1,31,34,2,-1,15,16,17,-1,15,17,18,-1,15,18,19,-1,14,15,19,-1,14,19,13,-1,0,1,14,-1,14,13,0,-1,1,9,15,-1,15,14,1,-1,9,7,16,-1,16,15,9,-1,7,5,17,-1,17,16,7,-1,5,6,18,-1,18,17,5,-1,6,3,19,-1,19,18,6,-1,3,0,13,-1,13,19,3,-1,6,8,2,-1,3,6,2,-1,4,3,2,-1,23,21,20,-1,20,24,23,-1,29,22,21,-1,21,23,29,-1,22,29,33,-1,20,21,26,-1,26,25,20,-1,26,21,22,-1,22,10,26,-1,10,22,33,-1,33,12,10,-1,34,24,20,-1,20,25,34,-1,23,24,28,-1,28,27,23,-1,29,23,27,-1,27,30,29,-1,30,33,29,-1,28,31,32,-1,32,27,28,-1,32,11,30,-1,30,27,32,-1,11,12,33,-1,33,30,11,-1,34,31,28,-1,28,24,34,-1]);
-let TextureCoordinate77 = browser.currentScene.createNode("TextureCoordinate");
-TextureCoordinate77.point = new MFVec2f(new float[0.433,0.0595,0.4411,0.0186,0.4637,0.1714,0.4411,0.0186,0.4244,0.1312,0.4394,0.1472,0.433,0.0595,0.4244,0.1312,0.4411,0.0186,0.4637,0.1714,0.4394,0.1472,0.4411,0.0186,0.464,0.1246,0.4607,0.0558,0.4904,0.0166,0.464,0.1246,0.4607,0.0558,0.4904,0.0166,0.4949,0.0186,0.4949,0.0186,0.4868,0.1432,0.4868,0.1432,0.433,0.0595,0.4411,0.0186,0.4411,0.0186,0.4411,0.0186,0.433,0.0595,0.4244,0.1312,0.4244,0.1312,0.532,0.098,0.5645,0.0707,0.4885,0.102,0.5026,0.044,0.5945,0.0186,0.5487,0.0186,0.5487,0.0186,0.464,0.1246,0.4607,0.0558,0.4904,0.0166,0.4949,0.0186,0.4868,0.1432,0.5645,0.0707,0.5026,0.044,0.4885,0.102,0.532,0.098,0.5945,0.0186,0.5487,0.0186,0.464,0.1246,0.4607,0.0558,0.4904,0.0166,0.5487,0.0186,0.4949,0.0186,0.4868,0.1432]);
-IndexedFaceSet76.texCoord = TextureCoordinate77;
+HAnimSegment72.children[0] = Transform73;
 
-let Coordinate78 = browser.currentScene.createNode("Coordinate");
-Coordinate78.point = new MFVec3f(new float[2.548,-1.416,-0.8988,1.819,-3.176,-0.8988,0,0.2435,0.2718,1.78,-0.2627,-0.8989,1.476,0.0025,-0.0134,-2.548,-1.416,-0.8988,-1.78,-0.2627,-0.8989,-1.819,-3.176,-0.8988,-1.476,0.0025,-0.0134,0,-3.176,-0.8988,1.863,-3.176,0.8155,-1.863,-3.176,0.8155,0,-3.176,0.8155,2.094,-1.441,-1.699,1.524,-2.561,-1.699,0,-2.561,-1.699,-1.524,-2.561,-1.699,-2.094,-1.441,-1.699,-1.516,-0.4945,-1.699,1.516,-0.4945,-1.699,1.553,-0.5642,2.069,1.929,-1.973,3.676,1.929,-3.176,3.35,0,-1.973,4.847,0,-0.4757,3.505,1.514,-0.2808,1.028,2.316,-1.625,0.8155,-1.929,-1.973,3.676,-1.553,-0.5642,2.069,0,-3.176,4.521,-1.929,-3.176,3.35,-1.514,-0.2808,1.028,-2.316,-1.625,0.8155,0,-3.176,3.35,0,-0.0239,1.474]);
-IndexedFaceSet76.coord = Coordinate78;
+HAnimJoint71.children = new MFNode();
 
-Shape72.geometry = IndexedFaceSet76;
+HAnimJoint71.children[0] = HAnimSegment72;
 
-Transform71.child = new undefined();
+HAnimJoint61.children[1] = HAnimJoint71;
 
-Transform71.child[0] = Shape72;
+HAnimJoint51.children[1] = HAnimJoint61;
 
-HAnimSegment70.children = new MFNode();
+HAnimJoint41.children[1] = HAnimJoint51;
 
-HAnimSegment70.children[0] = Transform71;
+HAnimJoint31.children[1] = HAnimJoint41;
 
-HAnimJoint69.children = new MFNode();
+let HAnimJoint81 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint81.name = "r_hip";
+HAnimJoint81.DEF = "hanim_r_hip";
+HAnimJoint81.center = new SFVec3f(new float[-3.504,29.040001,-0.4027]);
+HAnimJoint81.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint81.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment82 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment82.name = "r_thigh";
+HAnimSegment82.DEF = "hanim_r_thigh";
+let Transform83 = browser.currentScene.createNode("Transform");
+Transform83.translation = new SFVec3f(new float[-3.504,29.040001,-0.4027]);
+let Shape84 = browser.currentScene.createNode("Shape");
+let Appearance85 = browser.currentScene.createNode("Appearance");
+let Material86 = browser.currentScene.createNode("Material");
+Material86.diffuseColor = new SFColor(new float[0.588,0.588,0.588]);
+Appearance85.material = Material86;
 
-HAnimJoint69.children[0] = HAnimSegment70;
+let ImageTexture87 = browser.currentScene.createNode("ImageTexture");
+ImageTexture87.USE = "YoungTextureAtlas";
+Appearance85.texture = ImageTexture87;
 
-HAnimJoint59.children[1] = HAnimJoint69;
+Shape84.appearance = Appearance85;
 
-HAnimJoint49.children[1] = HAnimJoint59;
+let IndexedFaceSet88 = browser.currentScene.createNode("IndexedFaceSet");
+IndexedFaceSet88.coordIndex = new MFInt32(new int[43,44,45,-1,42,43,45,-1,45,46,47,-1,42,45,47,-1,48,42,47,-1,0,7,8,-1,8,1,0,-1,1,8,9,-1,9,2,1,-1,2,9,10,-1,10,3,2,-1,3,10,11,-1,11,4,3,-1,4,11,12,-1,12,5,4,-1,5,12,13,-1,13,6,5,-1,6,13,7,-1,7,0,6,-1,7,14,15,-1,15,8,7,-1,8,15,16,-1,16,9,8,-1,9,16,17,-1,17,10,9,-1,10,17,18,-1,18,11,10,-1,11,18,19,-1,19,12,11,-1,12,19,20,-1,20,13,12,-1,13,20,14,-1,14,7,13,-1,14,21,22,-1,22,15,14,-1,15,22,23,-1,23,16,15,-1,16,23,24,-1,24,17,16,-1,17,24,25,-1,25,18,17,-1,18,25,26,-1,26,19,18,-1,19,26,27,-1,27,20,19,-1,20,27,21,-1,21,14,20,-1,60,59,58,-1,58,57,56,-1,60,58,56,-1,61,60,56,-1,62,61,56,-1,29,22,21,-1,21,28,29,-1,30,23,22,-1,22,29,30,-1,31,24,23,-1,23,30,31,-1,32,25,24,-1,24,31,32,-1,33,26,25,-1,25,32,33,-1,34,27,26,-1,26,33,34,-1,28,21,27,-1,27,34,28,-1,36,29,28,-1,28,35,36,-1,37,30,29,-1,29,36,37,-1,38,31,30,-1,30,37,38,-1,39,32,31,-1,31,38,39,-1,40,33,32,-1,32,39,40,-1,41,34,33,-1,33,40,41,-1,35,28,34,-1,34,41,35,-1,42,0,1,-1,1,43,42,-1,43,1,2,-1,2,44,43,-1,44,2,3,-1,3,45,44,-1,45,3,4,-1,4,46,45,-1,46,4,5,-1,5,47,46,-1,47,5,6,-1,6,48,47,-1,48,6,0,-1,0,42,48,-1,50,36,35,-1,35,49,50,-1,51,37,36,-1,36,50,51,-1,52,38,37,-1,37,51,52,-1,53,39,38,-1,38,52,53,-1,54,40,39,-1,39,53,54,-1,55,41,40,-1,40,54,55,-1,49,35,41,-1,41,55,49,-1,57,50,49,-1,49,56,57,-1,58,51,50,-1,50,57,58,-1,59,52,51,-1,51,58,59,-1,60,53,52,-1,52,59,60,-1,61,54,53,-1,53,60,61,-1,62,55,54,-1,54,61,62,-1,56,49,55,-1,55,62,56,-1]);
+IndexedFaceSet88.creaseAngle = 1.57;
+IndexedFaceSet88.texCoordIndex = new MFInt32(new int[0,2,3,-1,1,0,3,-1,3,4,5,-1,1,3,5,-1,6,1,5,-1,7,9,8,-1,8,10,7,-1,10,8,11,-1,11,12,10,-1,12,11,13,-1,13,14,12,-1,14,13,15,-1,15,16,14,-1,16,15,17,-1,17,18,16,-1,18,17,19,-1,19,20,18,-1,20,19,9,-1,9,7,20,-1,9,22,21,-1,21,8,9,-1,8,21,23,-1,23,11,8,-1,11,23,24,-1,24,13,11,-1,13,24,25,-1,25,15,13,-1,15,25,26,-1,26,17,15,-1,17,26,27,-1,27,19,17,-1,19,27,22,-1,22,9,19,-1,22,29,28,-1,28,21,22,-1,21,28,30,-1,30,23,21,-1,23,30,31,-1,31,24,23,-1,24,31,32,-1,32,25,24,-1,25,32,33,-1,33,26,25,-1,26,33,34,-1,34,27,26,-1,27,34,29,-1,29,22,27,-1,46,45,44,-1,44,43,42,-1,46,44,42,-1,47,46,42,-1,48,47,42,-1,35,28,29,-1,29,36,35,-1,37,30,28,-1,28,35,37,-1,38,31,30,-1,30,37,38,-1,39,32,31,-1,31,38,39,-1,40,33,32,-1,32,39,40,-1,41,34,33,-1,33,40,41,-1,36,29,34,-1,34,41,36,-1,51,50,49,-1,49,52,51,-1,54,53,50,-1,50,51,54,-1,56,55,53,-1,53,54,56,-1,58,57,55,-1,55,56,58,-1,60,59,57,-1,57,58,60,-1,62,61,59,-1,59,60,62,-1,52,49,61,-1,61,62,52,-1,1,7,10,-1,10,0,1,-1,0,10,12,-1,12,2,0,-1,2,12,14,-1,14,3,2,-1,3,14,16,-1,16,4,3,-1,4,16,18,-1,18,5,4,-1,5,18,20,-1,20,6,5,-1,6,20,7,-1,7,1,6,-1,63,51,52,-1,52,64,63,-1,65,54,51,-1,51,63,65,-1,66,56,54,-1,54,65,66,-1,67,58,56,-1,56,66,67,-1,68,60,58,-1,58,67,68,-1,69,62,60,-1,60,68,69,-1,64,52,62,-1,62,69,64,-1,43,63,64,-1,64,42,43,-1,44,65,63,-1,63,43,44,-1,45,66,65,-1,65,44,45,-1,46,67,66,-1,66,45,46,-1,47,68,67,-1,67,46,47,-1,48,69,68,-1,68,47,48,-1,42,64,69,-1,69,48,42,-1]);
+let Coordinate89 = browser.currentScene.createNode("Coordinate");
+Coordinate89.point = new MFVec3f(new float[-2.61,2.495,-0.0096,-1.449,2.495,2.819,1.16,2.495,3.518,2.968,2.495,1.56,2.968,2.495,-1.58,1.16,2.495,-3.537,-1.449,2.495,-2.839,-2.61,-0.8104,-0.0096,-1.449,-0.8104,2.819,1.16,-0.8104,3.518,2.968,-0.8104,1.56,2.968,-0.8104,-1.58,1.16,-0.8104,-3.537,-1.449,-0.8104,-2.839,-2.61,-3.375,-0.0096,-1.449,-3.375,2.819,1.16,-3.375,3.518,2.968,-3.375,1.56,2.968,-3.375,-1.58,1.16,-3.375,-3.537,-1.449,-3.375,-2.839,-2.968,-6.68,-0.0096,-1.672,-6.68,3.148,1.24,-6.68,3.928,2.957,-6.68,1.743,2.957,-6.68,-1.762,1.24,-6.68,-3.947,-1.672,-6.68,-3.167,-1.892,-5.194,-0.0096,-1.001,-5.194,2.161,1.001,-5.194,2.697,2.321,-5.194,1.195,2.321,-5.194,-1.214,1.001,-5.194,-2.716,-1.001,-5.194,-2.18,-1.9,-10.89,-0.0096,-1.08,-10.89,1.714,0.7636,-10.89,2.14,2.242,-10.89,0.9472,2.242,-10.89,-0.9663,0.7636,-10.89,-2.159,-1.08,-10.89,-1.734,-1.807,4.249,-0.0096,-0.9484,4.249,2.084,0.982,4.249,2.601,2.53,4.249,1.152,2.53,4.249,-1.171,0.982,4.249,-2.62,-0.9484,4.249,-2.103,-1.624,-14.13,-0.0096,-0.9076,-14.13,1.641,0.7021,-14.13,2.013,1.993,-14.13,0.9715,1.993,-14.13,-0.8451,0.7021,-14.13,-1.887,-0.9076,-14.13,-1.515,-0.5533,-14.99,-0.0096,-0.2401,-14.99,0.7943,0.4639,-14.99,0.9569,1.028,-14.99,0.5013,1.028,-14.99,-0.3749,0.4639,-14.99,-0.8305,-0.2401,-14.99,-0.6679]);
+IndexedFaceSet88.coord = Coordinate89;
 
-HAnimJoint39.children[1] = HAnimJoint49;
+let TextureCoordinate90 = browser.currentScene.createNode("TextureCoordinate");
+TextureCoordinate90.point = new MFVec2f(new float[0.719,0.5576,0.6284,0.5576,0.7414,0.5576,0.6787,0.5576,0.5781,0.5576,0.5154,0.5576,0.5378,0.5576,0.6284,0.5029,0.7509,0.3997,0.6284,0.3997,0.7509,0.5029,0.7811,0.3997,0.7811,0.5029,0.6964,0.3997,0.6964,0.5029,0.5604,0.3997,0.5604,0.5029,0.4756,0.3997,0.4756,0.5029,0.5059,0.3997,0.5059,0.5029,0.7509,0.3197,0.6284,0.3197,0.7811,0.3197,0.6964,0.3197,0.5604,0.3197,0.4756,0.3197,0.5059,0.3197,0.7651,0.2166,0.6284,0.2166,0.7989,0.2166,0.7043,0.2166,0.5525,0.2166,0.4579,0.2166,0.4917,0.2166,0.7224,0.263,0.6284,0.263,0.7456,0.263,0.6805,0.263,0.5762,0.263,0.5112,0.263,0.5344,0.263,0.8705,0.5452,0.8705,0.5383,0.8705,0.5369,0.8705,0.5408,0.8705,0.5483,0.8705,0.5522,0.8705,0.5509,0.917,0.5452,0.917,0.5266,0.89,0.5304,0.89,0.5452,0.917,0.522,0.89,0.5268,0.917,0.5349,0.89,0.537,0.917,0.5555,0.89,0.5534,0.917,0.5684,0.89,0.5636,0.917,0.5638,0.89,0.56,0.8746,0.531,0.8746,0.5452,0.8746,0.5279,0.8746,0.5368,0.8746,0.5524,0.8746,0.5613,0.8746,0.5581]);
+IndexedFaceSet88.texCoord = TextureCoordinate90;
 
-HAnimJoint29.children[1] = HAnimJoint39;
+Shape84.geometry = IndexedFaceSet88;
 
-let HAnimJoint79 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint79.DEF = "hanim_r_hip";
-HAnimJoint79.name = "r_hip";
-HAnimJoint79.center = new SFVec3f(new float[-3.504,29.04,-0.4027]);
-let HAnimSegment80 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment80.DEF = "hanim_r_thigh";
-HAnimSegment80.name = "r_thigh";
-let Transform81 = browser.currentScene.createNode("Transform");
-Transform81.translation = new SFVec3f(new float[-3.504,29.04,-0.4027]);
-let Shape82 = browser.currentScene.createNode("Shape");
-let Appearance83 = browser.currentScene.createNode("Appearance");
-let Material84 = browser.currentScene.createNode("Material");
-Material84.diffuseColor = new SFColor(new float[0.588,0.588,0.588]);
-Appearance83.material = Material84;
+Transform83.child = new undefined();
 
-let ImageTexture85 = browser.currentScene.createNode("ImageTexture");
-ImageTexture85.USE = "YoungTextureAtlas";
-Appearance83.texture = ImageTexture85;
+Transform83.child[0] = Shape84;
 
-Shape82.appearance = Appearance83;
+HAnimSegment82.children = new MFNode();
 
-let IndexedFaceSet86 = browser.currentScene.createNode("IndexedFaceSet");
-IndexedFaceSet86.creaseAngle = 1.57;
-IndexedFaceSet86.texCoordIndex = new MFInt32(new int[0,2,3,-1,1,0,3,-1,3,4,5,-1,1,3,5,-1,6,1,5,-1,7,9,8,-1,8,10,7,-1,10,8,11,-1,11,12,10,-1,12,11,13,-1,13,14,12,-1,14,13,15,-1,15,16,14,-1,16,15,17,-1,17,18,16,-1,18,17,19,-1,19,20,18,-1,20,19,9,-1,9,7,20,-1,9,22,21,-1,21,8,9,-1,8,21,23,-1,23,11,8,-1,11,23,24,-1,24,13,11,-1,13,24,25,-1,25,15,13,-1,15,25,26,-1,26,17,15,-1,17,26,27,-1,27,19,17,-1,19,27,22,-1,22,9,19,-1,22,29,28,-1,28,21,22,-1,21,28,30,-1,30,23,21,-1,23,30,31,-1,31,24,23,-1,24,31,32,-1,32,25,24,-1,25,32,33,-1,33,26,25,-1,26,33,34,-1,34,27,26,-1,27,34,29,-1,29,22,27,-1,46,45,44,-1,44,43,42,-1,46,44,42,-1,47,46,42,-1,48,47,42,-1,35,28,29,-1,29,36,35,-1,37,30,28,-1,28,35,37,-1,38,31,30,-1,30,37,38,-1,39,32,31,-1,31,38,39,-1,40,33,32,-1,32,39,40,-1,41,34,33,-1,33,40,41,-1,36,29,34,-1,34,41,36,-1,51,50,49,-1,49,52,51,-1,54,53,50,-1,50,51,54,-1,56,55,53,-1,53,54,56,-1,58,57,55,-1,55,56,58,-1,60,59,57,-1,57,58,60,-1,62,61,59,-1,59,60,62,-1,52,49,61,-1,61,62,52,-1,1,7,10,-1,10,0,1,-1,0,10,12,-1,12,2,0,-1,2,12,14,-1,14,3,2,-1,3,14,16,-1,16,4,3,-1,4,16,18,-1,18,5,4,-1,5,18,20,-1,20,6,5,-1,6,20,7,-1,7,1,6,-1,63,51,52,-1,52,64,63,-1,65,54,51,-1,51,63,65,-1,66,56,54,-1,54,65,66,-1,67,58,56,-1,56,66,67,-1,68,60,58,-1,58,67,68,-1,69,62,60,-1,60,68,69,-1,64,52,62,-1,62,69,64,-1,43,63,64,-1,64,42,43,-1,44,65,63,-1,63,43,44,-1,45,66,65,-1,65,44,45,-1,46,67,66,-1,66,45,46,-1,47,68,67,-1,67,46,47,-1,48,69,68,-1,68,47,48,-1,42,64,69,-1,69,48,42,-1]);
-IndexedFaceSet86.coordIndex = new MFInt32(new int[43,44,45,-1,42,43,45,-1,45,46,47,-1,42,45,47,-1,48,42,47,-1,0,7,8,-1,8,1,0,-1,1,8,9,-1,9,2,1,-1,2,9,10,-1,10,3,2,-1,3,10,11,-1,11,4,3,-1,4,11,12,-1,12,5,4,-1,5,12,13,-1,13,6,5,-1,6,13,7,-1,7,0,6,-1,7,14,15,-1,15,8,7,-1,8,15,16,-1,16,9,8,-1,9,16,17,-1,17,10,9,-1,10,17,18,-1,18,11,10,-1,11,18,19,-1,19,12,11,-1,12,19,20,-1,20,13,12,-1,13,20,14,-1,14,7,13,-1,14,21,22,-1,22,15,14,-1,15,22,23,-1,23,16,15,-1,16,23,24,-1,24,17,16,-1,17,24,25,-1,25,18,17,-1,18,25,26,-1,26,19,18,-1,19,26,27,-1,27,20,19,-1,20,27,21,-1,21,14,20,-1,60,59,58,-1,58,57,56,-1,60,58,56,-1,61,60,56,-1,62,61,56,-1,29,22,21,-1,21,28,29,-1,30,23,22,-1,22,29,30,-1,31,24,23,-1,23,30,31,-1,32,25,24,-1,24,31,32,-1,33,26,25,-1,25,32,33,-1,34,27,26,-1,26,33,34,-1,28,21,27,-1,27,34,28,-1,36,29,28,-1,28,35,36,-1,37,30,29,-1,29,36,37,-1,38,31,30,-1,30,37,38,-1,39,32,31,-1,31,38,39,-1,40,33,32,-1,32,39,40,-1,41,34,33,-1,33,40,41,-1,35,28,34,-1,34,41,35,-1,42,0,1,-1,1,43,42,-1,43,1,2,-1,2,44,43,-1,44,2,3,-1,3,45,44,-1,45,3,4,-1,4,46,45,-1,46,4,5,-1,5,47,46,-1,47,5,6,-1,6,48,47,-1,48,6,0,-1,0,42,48,-1,50,36,35,-1,35,49,50,-1,51,37,36,-1,36,50,51,-1,52,38,37,-1,37,51,52,-1,53,39,38,-1,38,52,53,-1,54,40,39,-1,39,53,54,-1,55,41,40,-1,40,54,55,-1,49,35,41,-1,41,55,49,-1,57,50,49,-1,49,56,57,-1,58,51,50,-1,50,57,58,-1,59,52,51,-1,51,58,59,-1,60,53,52,-1,52,59,60,-1,61,54,53,-1,53,60,61,-1,62,55,54,-1,54,61,62,-1,56,49,55,-1,55,62,56,-1]);
-let TextureCoordinate87 = browser.currentScene.createNode("TextureCoordinate");
-TextureCoordinate87.point = new MFVec2f(new float[0.719,0.5576,0.6284,0.5576,0.7414,0.5576,0.6787,0.5576,0.5781,0.5576,0.5154,0.5576,0.5378,0.5576,0.6284,0.5029,0.7509,0.3997,0.6284,0.3997,0.7509,0.5029,0.7811,0.3997,0.7811,0.5029,0.6964,0.3997,0.6964,0.5029,0.5604,0.3997,0.5604,0.5029,0.4756,0.3997,0.4756,0.5029,0.5059,0.3997,0.5059,0.5029,0.7509,0.3197,0.6284,0.3197,0.7811,0.3197,0.6964,0.3197,0.5604,0.3197,0.4756,0.3197,0.5059,0.3197,0.7651,0.2166,0.6284,0.2166,0.7989,0.2166,0.7043,0.2166,0.5525,0.2166,0.4579,0.2166,0.4917,0.2166,0.7224,0.263,0.6284,0.263,0.7456,0.263,0.6805,0.263,0.5762,0.263,0.5112,0.263,0.5344,0.263,0.8705,0.5452,0.8705,0.5383,0.8705,0.5369,0.8705,0.5408,0.8705,0.5483,0.8705,0.5522,0.8705,0.5509,0.917,0.5452,0.917,0.5266,0.89,0.5304,0.89,0.5452,0.917,0.522,0.89,0.5268,0.917,0.5349,0.89,0.537,0.917,0.5555,0.89,0.5534,0.917,0.5684,0.89,0.5636,0.917,0.5638,0.89,0.56,0.8746,0.531,0.8746,0.5452,0.8746,0.5279,0.8746,0.5368,0.8746,0.5524,0.8746,0.5613,0.8746,0.5581]);
-IndexedFaceSet86.texCoord = TextureCoordinate87;
+HAnimSegment82.children[0] = Transform83;
 
-let Coordinate88 = browser.currentScene.createNode("Coordinate");
-Coordinate88.point = new MFVec3f(new float[-2.61,2.495,-0.0096,-1.449,2.495,2.819,1.16,2.495,3.518,2.968,2.495,1.56,2.968,2.495,-1.58,1.16,2.495,-3.537,-1.449,2.495,-2.839,-2.61,-0.8104,-0.0096,-1.449,-0.8104,2.819,1.16,-0.8104,3.518,2.968,-0.8104,1.56,2.968,-0.8104,-1.58,1.16,-0.8104,-3.537,-1.449,-0.8104,-2.839,-2.61,-3.375,-0.0096,-1.449,-3.375,2.819,1.16,-3.375,3.518,2.968,-3.375,1.56,2.968,-3.375,-1.58,1.16,-3.375,-3.537,-1.449,-3.375,-2.839,-2.968,-6.68,-0.0096,-1.672,-6.68,3.148,1.24,-6.68,3.928,2.957,-6.68,1.743,2.957,-6.68,-1.762,1.24,-6.68,-3.947,-1.672,-6.68,-3.167,-1.892,-5.194,-0.0096,-1.001,-5.194,2.161,1.001,-5.194,2.697,2.321,-5.194,1.195,2.321,-5.194,-1.214,1.001,-5.194,-2.716,-1.001,-5.194,-2.18,-1.9,-10.89,-0.0096,-1.08,-10.89,1.714,0.7636,-10.89,2.14,2.242,-10.89,0.9472,2.242,-10.89,-0.9663,0.7636,-10.89,-2.159,-1.08,-10.89,-1.734,-1.807,4.249,-0.0096,-0.9484,4.249,2.084,0.982,4.249,2.601,2.53,4.249,1.152,2.53,4.249,-1.171,0.982,4.249,-2.62,-0.9484,4.249,-2.103,-1.624,-14.13,-0.0096,-0.9076,-14.13,1.641,0.7021,-14.13,2.013,1.993,-14.13,0.9715,1.993,-14.13,-0.8451,0.7021,-14.13,-1.887,-0.9076,-14.13,-1.515,-0.5533,-14.99,-0.0096,-0.2401,-14.99,0.7943,0.4639,-14.99,0.9569,1.028,-14.99,0.5013,1.028,-14.99,-0.3749,0.4639,-14.99,-0.8305,-0.2401,-14.99,-0.6679]);
-IndexedFaceSet86.coord = Coordinate88;
+HAnimJoint81.children = new MFNode();
 
-Shape82.geometry = IndexedFaceSet86;
+HAnimJoint81.children[0] = HAnimSegment82;
 
-Transform81.child = new undefined();
+let HAnimJoint91 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint91.name = "r_knee";
+HAnimJoint91.DEF = "hanim_r_knee";
+HAnimJoint91.center = new SFVec3f(new float[-3.414,14.95,-0.4549]);
+HAnimJoint91.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint91.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment92 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment92.name = "r_calf";
+HAnimSegment92.DEF = "hanim_r_calf";
+let Transform93 = browser.currentScene.createNode("Transform");
+Transform93.translation = new SFVec3f(new float[-3.414,14.95,-0.4549]);
+let Shape94 = browser.currentScene.createNode("Shape");
+let Appearance95 = browser.currentScene.createNode("Appearance");
+let Material96 = browser.currentScene.createNode("Material");
+Material96.diffuseColor = new SFColor(new float[0.588,0.588,0.588]);
+Appearance95.material = Material96;
 
-Transform81.child[0] = Shape82;
+let ImageTexture97 = browser.currentScene.createNode("ImageTexture");
+ImageTexture97.USE = "YoungTextureAtlas";
+Appearance95.texture = ImageTexture97;
 
-HAnimSegment80.children = new MFNode();
+Shape94.appearance = Appearance95;
 
-HAnimSegment80.children[0] = Transform81;
+let IndexedFaceSet98 = browser.currentScene.createNode("IndexedFaceSet");
+IndexedFaceSet98.coordIndex = new MFInt32(new int[0,1,2,-1,2,3,4,-1,0,2,4,-1,0,4,5,-1,6,0,5,-1,9,10,7,-1,7,8,9,-1,12,9,8,-1,8,11,12,-1,14,12,11,-1,11,13,14,-1,16,14,13,-1,13,15,16,-1,18,16,15,-1,15,17,18,-1,20,18,17,-1,17,19,20,-1,10,20,19,-1,19,7,10,-1,21,22,10,-1,10,9,21,-1,23,21,9,-1,9,12,23,-1,24,23,12,-1,12,14,24,-1,25,24,14,-1,14,16,25,-1,26,25,16,-1,16,18,26,-1,27,26,18,-1,18,20,27,-1,22,27,20,-1,20,10,22,-1,1,0,22,-1,22,21,1,-1,2,1,21,-1,21,23,2,-1,3,2,23,-1,23,24,3,-1,4,3,24,-1,24,25,4,-1,5,4,25,-1,25,26,5,-1,6,5,26,-1,26,27,6,-1,0,6,27,-1,27,22,0,-1,8,7,28,-1,28,29,8,-1,11,8,29,-1,29,30,11,-1,13,11,30,-1,30,31,13,-1,15,13,31,-1,31,32,15,-1,17,15,32,-1,32,33,17,-1,19,17,33,-1,33,34,19,-1,7,19,34,-1,34,28,7,-1,29,28,35,-1,35,36,29,-1,30,29,36,-1,36,37,30,-1,31,30,37,-1,37,38,31,-1,32,31,38,-1,38,39,32,-1,33,32,39,-1,39,40,33,-1,34,33,40,-1,40,41,34,-1,28,34,41,-1,41,35,28,-1]);
+IndexedFaceSet98.creaseAngle = 1.57;
+IndexedFaceSet98.texCoordIndex = new MFInt32(new int[0,1,2,-1,2,3,4,-1,0,2,4,-1,0,4,5,-1,6,0,5,-1,9,10,7,-1,7,8,9,-1,12,9,8,-1,8,11,12,-1,14,12,11,-1,11,13,14,-1,16,14,13,-1,13,15,16,-1,18,16,15,-1,15,17,18,-1,20,18,17,-1,17,19,20,-1,10,20,19,-1,19,7,10,-1,21,22,10,-1,10,9,21,-1,23,21,9,-1,9,12,23,-1,24,23,12,-1,12,14,24,-1,25,24,14,-1,14,16,25,-1,26,25,16,-1,16,18,26,-1,27,26,18,-1,18,20,27,-1,22,27,20,-1,20,10,22,-1,1,0,22,-1,22,21,1,-1,2,1,21,-1,21,23,2,-1,3,2,23,-1,23,24,3,-1,4,3,24,-1,24,25,4,-1,5,4,25,-1,25,26,5,-1,6,5,26,-1,26,27,6,-1,0,6,27,-1,27,22,0,-1,8,7,28,-1,28,29,8,-1,11,8,29,-1,29,30,11,-1,13,11,30,-1,30,31,13,-1,15,13,31,-1,31,32,15,-1,17,15,32,-1,32,33,17,-1,19,17,33,-1,33,34,19,-1,7,19,34,-1,34,28,7,-1,29,28,35,-1,35,36,29,-1,30,29,36,-1,36,37,30,-1,31,30,37,-1,37,38,31,-1,32,31,38,-1,38,39,32,-1,33,32,39,-1,39,40,33,-1,34,33,40,-1,40,41,34,-1,28,34,41,-1,41,35,28,-1]);
+let Coordinate99 = browser.currentScene.createNode("Coordinate");
+Coordinate99.point = new MFVec3f(new float[-0.6335,1.142,0.0206,-0.3202,1.142,0.8245,0.3837,1.142,0.9871,0.9483,1.142,0.5315,0.9483,1.142,-0.3447,0.3837,1.142,-0.8003,-0.3202,1.142,-0.6377,-2.06,-3.778,0.0206,-1.287,-2.905,1.78,-1.089,-1.147,2.133,-1.867,-1.397,0.0206,0.715,-2.905,2.263,0.6583,-1.147,2.559,1.987,-3.778,1.106,2.06,-1.397,0.8632,1.987,-4.457,-1.205,2.06,-1.397,-0.822,0.715,-4.457,-2.559,0.6583,-1.397,-2.087,-1.287,-4.457,-2.076,-1.089,-1.397,-1.661,-0.9877,0.2851,1.672,-1.704,0.2851,0.0206,0.622,0.2851,2.043,1.913,0.2851,1.002,1.913,0.2851,-0.8149,0.622,0.2851,-1.817,-0.9877,0.2851,-1.445,-1.417,-11.1,0.0028,-0.8123,-11.09,1.38,0.5457,-11.09,1.72,1.635,-11.1,0.767,1.635,-11.11,-0.8605,0.5457,-11.11,-1.535,-0.8123,-11.11,-1.195,-0.6234,-12.52,0.021,-0.3177,-12.52,0.7175,0.3691,-12.52,0.8896,0.9199,-12.52,0.4076,0.9199,-12.53,-0.4156,0.3691,-12.53,-0.7569,-0.3177,-12.53,-0.5849]);
+IndexedFaceSet98.coord = Coordinate99;
 
-HAnimJoint79.children = new MFNode();
+let TextureCoordinate100 = browser.currentScene.createNode("TextureCoordinate");
+TextureCoordinate100.point = new MFVec2f(new float[0.9309,0.5848,0.919,0.5848,0.8921,0.5848,0.8706,0.5848,0.8706,0.5848,0.8921,0.5848,0.919,0.5848,0.9845,0.5321,0.955,0.5475,0.9491,0.5599,0.9788,0.5571,0.8787,0.5475,0.8825,0.5599,0.8302,0.5321,0.8291,0.5571,0.8302,0.52,0.8291,0.5571,0.8787,0.52,0.8825,0.5571,0.955,0.52,0.9491,0.5571,0.9444,0.5755,0.9717,0.5755,0.8831,0.5755,0.8339,0.5755,0.8339,0.5755,0.8831,0.5755,0.9444,0.5755,0.9679,0.2444,0.9449,0.2445,0.8931,0.2445,0.8516,0.2444,0.8516,0.2442,0.8931,0.2442,0.9449,0.2442,0.9372,0.2243,0.9255,0.2244,0.8993,0.2244,0.8783,0.2243,0.8783,0.2243,0.8993,0.2243,0.9255,0.2243]);
+IndexedFaceSet98.texCoord = TextureCoordinate100;
 
-HAnimJoint79.children[0] = HAnimSegment80;
+Shape94.geometry = IndexedFaceSet98;
 
-let HAnimJoint89 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint89.DEF = "hanim_r_knee";
-HAnimJoint89.name = "r_knee";
-HAnimJoint89.center = new SFVec3f(new float[-3.414,14.95,-0.4549]);
-let HAnimSegment90 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment90.DEF = "hanim_r_calf";
-HAnimSegment90.name = "r_calf";
-let Transform91 = browser.currentScene.createNode("Transform");
-Transform91.translation = new SFVec3f(new float[-3.414,14.95,-0.4549]);
-let Shape92 = browser.currentScene.createNode("Shape");
-let Appearance93 = browser.currentScene.createNode("Appearance");
-let Material94 = browser.currentScene.createNode("Material");
-Material94.diffuseColor = new SFColor(new float[0.588,0.588,0.588]);
-Appearance93.material = Material94;
+Transform93.child = new undefined();
 
-let ImageTexture95 = browser.currentScene.createNode("ImageTexture");
-ImageTexture95.USE = "YoungTextureAtlas";
-Appearance93.texture = ImageTexture95;
+Transform93.child[0] = Shape94;
 
-Shape92.appearance = Appearance93;
+HAnimSegment92.children = new MFNode();
 
-let IndexedFaceSet96 = browser.currentScene.createNode("IndexedFaceSet");
-IndexedFaceSet96.creaseAngle = 1.57;
-IndexedFaceSet96.texCoordIndex = new MFInt32(new int[0,1,2,-1,2,3,4,-1,0,2,4,-1,0,4,5,-1,6,0,5,-1,9,10,7,-1,7,8,9,-1,12,9,8,-1,8,11,12,-1,14,12,11,-1,11,13,14,-1,16,14,13,-1,13,15,16,-1,18,16,15,-1,15,17,18,-1,20,18,17,-1,17,19,20,-1,10,20,19,-1,19,7,10,-1,21,22,10,-1,10,9,21,-1,23,21,9,-1,9,12,23,-1,24,23,12,-1,12,14,24,-1,25,24,14,-1,14,16,25,-1,26,25,16,-1,16,18,26,-1,27,26,18,-1,18,20,27,-1,22,27,20,-1,20,10,22,-1,1,0,22,-1,22,21,1,-1,2,1,21,-1,21,23,2,-1,3,2,23,-1,23,24,3,-1,4,3,24,-1,24,25,4,-1,5,4,25,-1,25,26,5,-1,6,5,26,-1,26,27,6,-1,0,6,27,-1,27,22,0,-1,8,7,28,-1,28,29,8,-1,11,8,29,-1,29,30,11,-1,13,11,30,-1,30,31,13,-1,15,13,31,-1,31,32,15,-1,17,15,32,-1,32,33,17,-1,19,17,33,-1,33,34,19,-1,7,19,34,-1,34,28,7,-1,29,28,35,-1,35,36,29,-1,30,29,36,-1,36,37,30,-1,31,30,37,-1,37,38,31,-1,32,31,38,-1,38,39,32,-1,33,32,39,-1,39,40,33,-1,34,33,40,-1,40,41,34,-1,28,34,41,-1,41,35,28,-1]);
-IndexedFaceSet96.coordIndex = new MFInt32(new int[0,1,2,-1,2,3,4,-1,0,2,4,-1,0,4,5,-1,6,0,5,-1,9,10,7,-1,7,8,9,-1,12,9,8,-1,8,11,12,-1,14,12,11,-1,11,13,14,-1,16,14,13,-1,13,15,16,-1,18,16,15,-1,15,17,18,-1,20,18,17,-1,17,19,20,-1,10,20,19,-1,19,7,10,-1,21,22,10,-1,10,9,21,-1,23,21,9,-1,9,12,23,-1,24,23,12,-1,12,14,24,-1,25,24,14,-1,14,16,25,-1,26,25,16,-1,16,18,26,-1,27,26,18,-1,18,20,27,-1,22,27,20,-1,20,10,22,-1,1,0,22,-1,22,21,1,-1,2,1,21,-1,21,23,2,-1,3,2,23,-1,23,24,3,-1,4,3,24,-1,24,25,4,-1,5,4,25,-1,25,26,5,-1,6,5,26,-1,26,27,6,-1,0,6,27,-1,27,22,0,-1,8,7,28,-1,28,29,8,-1,11,8,29,-1,29,30,11,-1,13,11,30,-1,30,31,13,-1,15,13,31,-1,31,32,15,-1,17,15,32,-1,32,33,17,-1,19,17,33,-1,33,34,19,-1,7,19,34,-1,34,28,7,-1,29,28,35,-1,35,36,29,-1,30,29,36,-1,36,37,30,-1,31,30,37,-1,37,38,31,-1,32,31,38,-1,38,39,32,-1,33,32,39,-1,39,40,33,-1,34,33,40,-1,40,41,34,-1,28,34,41,-1,41,35,28,-1]);
-let TextureCoordinate97 = browser.currentScene.createNode("TextureCoordinate");
-TextureCoordinate97.point = new MFVec2f(new float[0.9309,0.5848,0.919,0.5848,0.8921,0.5848,0.8706,0.5848,0.8706,0.5848,0.8921,0.5848,0.919,0.5848,0.9845,0.5321,0.955,0.5475,0.9491,0.5599,0.9788,0.5571,0.8787,0.5475,0.8825,0.5599,0.8302,0.5321,0.8291,0.5571,0.8302,0.52,0.8291,0.5571,0.8787,0.52,0.8825,0.5571,0.955,0.52,0.9491,0.5571,0.9444,0.5755,0.9717,0.5755,0.8831,0.5755,0.8339,0.5755,0.8339,0.5755,0.8831,0.5755,0.9444,0.5755,0.9679,0.2444,0.9449,0.2445,0.8931,0.2445,0.8516,0.2444,0.8516,0.2442,0.8931,0.2442,0.9449,0.2442,0.9372,0.2243,0.9255,0.2244,0.8993,0.2244,0.8783,0.2243,0.8783,0.2243,0.8993,0.2243,0.9255,0.2243]);
-IndexedFaceSet96.texCoord = TextureCoordinate97;
+HAnimSegment92.children[0] = Transform93;
 
-let Coordinate98 = browser.currentScene.createNode("Coordinate");
-Coordinate98.point = new MFVec3f(new float[-0.6335,1.142,0.0206,-0.3202,1.142,0.8245,0.3837,1.142,0.9871,0.9483,1.142,0.5315,0.9483,1.142,-0.3447,0.3837,1.142,-0.8003,-0.3202,1.142,-0.6377,-2.06,-3.778,0.0206,-1.287,-2.905,1.78,-1.089,-1.147,2.133,-1.867,-1.397,0.0206,0.715,-2.905,2.263,0.6583,-1.147,2.559,1.987,-3.778,1.106,2.06,-1.397,0.8632,1.987,-4.457,-1.205,2.06,-1.397,-0.822,0.715,-4.457,-2.559,0.6583,-1.397,-2.087,-1.287,-4.457,-2.076,-1.089,-1.397,-1.661,-0.9877,0.2851,1.672,-1.704,0.2851,0.0206,0.622,0.2851,2.043,1.913,0.2851,1.002,1.913,0.2851,-0.8149,0.622,0.2851,-1.817,-0.9877,0.2851,-1.445,-1.417,-11.1,0.0028,-0.8123,-11.09,1.38,0.5457,-11.09,1.72,1.635,-11.1,0.767,1.635,-11.11,-0.8605,0.5457,-11.11,-1.535,-0.8123,-11.11,-1.195,-0.6234,-12.52,0.021,-0.3177,-12.52,0.7175,0.3691,-12.52,0.8896,0.9199,-12.52,0.4076,0.9199,-12.53,-0.4156,0.3691,-12.53,-0.7569,-0.3177,-12.53,-0.5849]);
-IndexedFaceSet96.coord = Coordinate98;
+HAnimJoint91.children = new MFNode();
 
-Shape92.geometry = IndexedFaceSet96;
+HAnimJoint91.children[0] = HAnimSegment92;
 
-Transform91.child = new undefined();
+let HAnimJoint101 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint101.name = "r_talocrural";
+HAnimJoint101.DEF = "hanim_r_talocrural";
+HAnimJoint101.center = new SFVec3f(new float[-3.18,3.449,-0.3088]);
+HAnimJoint101.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint101.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment102 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment102.name = "r_talus";
+HAnimSegment102.DEF = "hanim_r_talus";
+let Transform103 = browser.currentScene.createNode("Transform");
+Transform103.translation = new SFVec3f(new float[-3.18,3.449,-0.3088]);
+let Shape104 = browser.currentScene.createNode("Shape");
+let Appearance105 = browser.currentScene.createNode("Appearance");
+let Material106 = browser.currentScene.createNode("Material");
+Material106.diffuseColor = new SFColor(new float[0.588,0.588,0.588]);
+Appearance105.material = Material106;
 
-Transform91.child[0] = Shape92;
+let ImageTexture107 = browser.currentScene.createNode("ImageTexture");
+ImageTexture107.USE = "YoungTextureAtlas";
+Appearance105.texture = ImageTexture107;
 
-HAnimSegment90.children = new MFNode();
+Shape104.appearance = Appearance105;
 
-HAnimSegment90.children[0] = Transform91;
+let IndexedFaceSet108 = browser.currentScene.createNode("IndexedFaceSet");
+IndexedFaceSet108.coordIndex = new MFInt32(new int[1,12,11,-1,3,6,5,-1,5,4,3,-1,1,3,4,-1,4,0,1,-1,0,4,5,-1,5,2,0,-1,11,6,3,-1,3,1,11,-1,18,17,0,-1,0,2,18,-1,0,17,25,-1,25,1,0,-1,25,12,1,-1,7,11,13,-1,8,9,5,-1,5,6,8,-1,7,10,9,-1,9,8,7,-1,10,2,5,-1,5,9,10,-1,11,7,8,-1,8,6,11,-1,18,2,10,-1,10,21,18,-1,10,7,27,-1,27,21,10,-1,27,7,13,-1,12,35,37,-1,37,11,12,-1,11,37,36,-1,36,13,11,-1,20,14,17,-1,17,18,20,-1,23,25,17,-1,17,14,23,-1,16,15,14,-1,14,20,16,-1,24,23,14,-1,14,15,24,-1,15,16,29,-1,29,24,15,-1,20,18,21,-1,21,19,20,-1,26,19,21,-1,21,27,26,-1,16,20,19,-1,19,22,16,-1,28,22,19,-1,19,26,28,-1,22,28,29,-1,29,16,22,-1,36,35,31,-1,31,30,34,-1,31,34,33,-1,36,31,33,-1,36,33,32,-1,24,30,31,-1,31,23,24,-1,23,31,35,-1,35,25,23,-1,27,36,32,-1,32,26,27,-1,26,32,33,-1,33,28,26,-1,28,33,34,-1,34,29,28,-1,29,34,30,-1,30,24,29,-1,36,37,35,-1,12,25,35,-1,27,13,36,-1]);
+IndexedFaceSet108.creaseAngle = 1.57;
+IndexedFaceSet108.texCoordIndex = new MFInt32(new int[1,18,14,-1,3,6,5,-1,5,4,3,-1,1,3,4,-1,4,0,1,-1,0,4,5,-1,5,2,0,-1,14,6,3,-1,3,1,14,-1,19,16,0,-1,0,2,19,-1,0,16,17,-1,17,1,0,-1,17,18,1,-1,7,15,23,-1,9,10,11,-1,11,8,9,-1,7,12,10,-1,10,9,7,-1,12,13,11,-1,11,10,12,-1,15,7,9,-1,9,8,15,-1,20,13,12,-1,12,21,20,-1,12,7,22,-1,22,21,12,-1,22,7,23,-1,18,24,25,-1,25,14,18,-1,15,25,26,-1,26,23,15,-1,29,27,32,-1,32,33,29,-1,41,43,32,-1,32,27,41,-1,30,28,27,-1,27,29,30,-1,42,41,27,-1,27,28,42,-1,28,31,48,-1,48,42,28,-1,35,36,37,-1,37,34,35,-1,44,34,37,-1,37,45,44,-1,39,35,34,-1,34,38,39,-1,46,38,34,-1,34,44,46,-1,38,46,47,-1,47,40,38,-1,52,51,50,-1,50,49,55,-1,50,55,54,-1,52,50,54,-1,52,54,53,-1,42,49,50,-1,50,41,42,-1,41,50,51,-1,51,43,41,-1,45,52,53,-1,53,44,45,-1,44,53,54,-1,54,46,44,-1,46,54,55,-1,55,47,46,-1,48,55,49,-1,49,42,48,-1,52,56,51,-1,18,43,24,-1,22,23,52,-1]);
+let Coordinate109 = browser.currentScene.createNode("Coordinate");
+Coordinate109.point = new MFVec3f(new float[-0.8503,-0.0167,-1.492,-1.443,-0.0167,0.3823,0,-0.0167,-1.492,-1.221,0.6369,0.3141,-0.7115,0.6369,-1.298,0,0.6369,-1.298,0,0.6368,1.305,1.443,-0.0167,0.3823,1.221,0.6369,0.3141,0.7115,0.6369,-1.298,0.8503,-0.0167,-1.492,0,-0.0167,1.553,-1.476,-0.2577,1.268,1.476,-0.2577,1.268,-1.226,-1.676,-2.553,-1.226,-3.436,-1.492,0,-3.436,-1.492,-0.965,-0.5229,-1.815,0,-0.5229,-1.815,1.226,-1.676,-2.553,0,-1.676,-2.553,0.965,-0.5229,-1.815,1.226,-3.436,-1.492,-2.548,-1.676,0.3823,-1.819,-3.436,0.3823,-1.78,-0.5229,0.3823,2.548,-1.676,0.3823,1.78,-0.5229,0.3823,1.819,-3.436,0.3823,0,-3.436,0.3823,-1.619,-3.302,1.21,-2.212,-1.709,1.21,2.212,-1.709,1.21,1.619,-3.302,1.21,0,-3.302,1.21,-1.393,-0.8117,1.248,1.393,-0.8117,1.248,0,-0.573,1.515]);
+IndexedFaceSet108.coord = Coordinate109;
 
-HAnimJoint89.children = new MFNode();
+let TextureCoordinate110 = browser.currentScene.createNode("TextureCoordinate");
+TextureCoordinate110.point = new MFVec2f(new float[0.3819,0.171,0.4216,0.1651,0.3819,0.171,0.4216,0.1651,0.3819,0.171,0.3819,0.171,0.4637,0.1714,0.4216,0.1651,0.4637,0.1714,0.4216,0.1651,0.3819,0.171,0.3819,0.171,0.3819,0.171,0.3819,0.171,0.4637,0.1714,0.4637,0.1714,0.3861,0.1398,0.4244,0.1312,0.4394,0.1472,0.3836,0.1404,0.3836,0.1404,0.3861,0.1398,0.4244,0.1312,0.4394,0.1472,0.4394,0.1472,0.4637,0.1714,0.4394,0.1472,0.3873,0.0706,0.3871,0.0221,0.3873,0.0706,0.3871,0.0221,0.3871,0.0221,0.3861,0.1398,0.3836,0.1404,0.3873,0.0706,0.3873,0.0706,0.3836,0.1404,0.3861,0.1398,0.3871,0.0221,0.3871,0.0221,0.3871,0.0221,0.433,0.0595,0.4411,0.0186,0.4244,0.1312,0.433,0.0595,0.4244,0.1312,0.4411,0.0186,0.4411,0.0186,0.4411,0.0186,0.4411,0.0186,0.433,0.0595,0.4244,0.1312,0.4244,0.1312,0.433,0.0595,0.4411,0.0186,0.4411,0.0186,0.4244,0.1312]);
+IndexedFaceSet108.texCoord = TextureCoordinate110;
 
-HAnimJoint89.children[0] = HAnimSegment90;
+Shape104.geometry = IndexedFaceSet108;
 
-let HAnimJoint99 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint99.DEF = "hanim_r_talocrural";
-HAnimJoint99.name = "r_talocrural";
-HAnimJoint99.center = new SFVec3f(new float[-3.18,3.449,-0.3088]);
-let HAnimSegment100 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment100.DEF = "hanim_r_talus";
-HAnimSegment100.name = "r_talus";
-let Transform101 = browser.currentScene.createNode("Transform");
-Transform101.translation = new SFVec3f(new float[-3.18,3.449,-0.3088]);
-let Shape102 = browser.currentScene.createNode("Shape");
-let Appearance103 = browser.currentScene.createNode("Appearance");
-let Material104 = browser.currentScene.createNode("Material");
-Material104.diffuseColor = new SFColor(new float[0.588,0.588,0.588]);
-Appearance103.material = Material104;
+Transform103.child = new undefined();
 
-let ImageTexture105 = browser.currentScene.createNode("ImageTexture");
-ImageTexture105.USE = "YoungTextureAtlas";
-Appearance103.texture = ImageTexture105;
+Transform103.child[0] = Shape104;
 
-Shape102.appearance = Appearance103;
+HAnimSegment102.children = new MFNode();
 
-let IndexedFaceSet106 = browser.currentScene.createNode("IndexedFaceSet");
-IndexedFaceSet106.creaseAngle = 1.57;
-IndexedFaceSet106.texCoordIndex = new MFInt32(new int[1,18,14,-1,3,6,5,-1,5,4,3,-1,1,3,4,-1,4,0,1,-1,0,4,5,-1,5,2,0,-1,14,6,3,-1,3,1,14,-1,19,16,0,-1,0,2,19,-1,0,16,17,-1,17,1,0,-1,17,18,1,-1,7,15,23,-1,9,10,11,-1,11,8,9,-1,7,12,10,-1,10,9,7,-1,12,13,11,-1,11,10,12,-1,15,7,9,-1,9,8,15,-1,20,13,12,-1,12,21,20,-1,12,7,22,-1,22,21,12,-1,22,7,23,-1,18,24,25,-1,25,14,18,-1,15,25,26,-1,26,23,15,-1,29,27,32,-1,32,33,29,-1,41,43,32,-1,32,27,41,-1,30,28,27,-1,27,29,30,-1,42,41,27,-1,27,28,42,-1,28,31,48,-1,48,42,28,-1,35,36,37,-1,37,34,35,-1,44,34,37,-1,37,45,44,-1,39,35,34,-1,34,38,39,-1,46,38,34,-1,34,44,46,-1,38,46,47,-1,47,40,38,-1,52,51,50,-1,50,49,55,-1,50,55,54,-1,52,50,54,-1,52,54,53,-1,42,49,50,-1,50,41,42,-1,41,50,51,-1,51,43,41,-1,45,52,53,-1,53,44,45,-1,44,53,54,-1,54,46,44,-1,46,54,55,-1,55,47,46,-1,48,55,49,-1,49,42,48,-1,52,56,51,-1,18,43,24,-1,22,23,52,-1]);
-IndexedFaceSet106.coordIndex = new MFInt32(new int[1,12,11,-1,3,6,5,-1,5,4,3,-1,1,3,4,-1,4,0,1,-1,0,4,5,-1,5,2,0,-1,11,6,3,-1,3,1,11,-1,18,17,0,-1,0,2,18,-1,0,17,25,-1,25,1,0,-1,25,12,1,-1,7,11,13,-1,8,9,5,-1,5,6,8,-1,7,10,9,-1,9,8,7,-1,10,2,5,-1,5,9,10,-1,11,7,8,-1,8,6,11,-1,18,2,10,-1,10,21,18,-1,10,7,27,-1,27,21,10,-1,27,7,13,-1,12,35,37,-1,37,11,12,-1,11,37,36,-1,36,13,11,-1,20,14,17,-1,17,18,20,-1,23,25,17,-1,17,14,23,-1,16,15,14,-1,14,20,16,-1,24,23,14,-1,14,15,24,-1,15,16,29,-1,29,24,15,-1,20,18,21,-1,21,19,20,-1,26,19,21,-1,21,27,26,-1,16,20,19,-1,19,22,16,-1,28,22,19,-1,19,26,28,-1,22,28,29,-1,29,16,22,-1,36,35,31,-1,31,30,34,-1,31,34,33,-1,36,31,33,-1,36,33,32,-1,24,30,31,-1,31,23,24,-1,23,31,35,-1,35,25,23,-1,27,36,32,-1,32,26,27,-1,26,32,33,-1,33,28,26,-1,28,33,34,-1,34,29,28,-1,29,34,30,-1,30,24,29,-1,36,37,35,-1,12,25,35,-1,27,13,36,-1]);
-let TextureCoordinate107 = browser.currentScene.createNode("TextureCoordinate");
-TextureCoordinate107.point = new MFVec2f(new float[0.3819,0.171,0.4216,0.1651,0.3819,0.171,0.4216,0.1651,0.3819,0.171,0.3819,0.171,0.4637,0.1714,0.4216,0.1651,0.4637,0.1714,0.4216,0.1651,0.3819,0.171,0.3819,0.171,0.3819,0.171,0.3819,0.171,0.4637,0.1714,0.4637,0.1714,0.3861,0.1398,0.4244,0.1312,0.4394,0.1472,0.3836,0.1404,0.3836,0.1404,0.3861,0.1398,0.4244,0.1312,0.4394,0.1472,0.4394,0.1472,0.4637,0.1714,0.4394,0.1472,0.3873,0.0706,0.3871,0.0221,0.3873,0.0706,0.3871,0.0221,0.3871,0.0221,0.3861,0.1398,0.3836,0.1404,0.3873,0.0706,0.3873,0.0706,0.3836,0.1404,0.3861,0.1398,0.3871,0.0221,0.3871,0.0221,0.3871,0.0221,0.433,0.0595,0.4411,0.0186,0.4244,0.1312,0.433,0.0595,0.4244,0.1312,0.4411,0.0186,0.4411,0.0186,0.4411,0.0186,0.4411,0.0186,0.433,0.0595,0.4244,0.1312,0.4244,0.1312,0.433,0.0595,0.4411,0.0186,0.4411,0.0186,0.4244,0.1312]);
-IndexedFaceSet106.texCoord = TextureCoordinate107;
+HAnimSegment102.children[0] = Transform103;
 
-let Coordinate108 = browser.currentScene.createNode("Coordinate");
-Coordinate108.point = new MFVec3f(new float[-0.8503,-0.0167,-1.492,-1.443,-0.0167,0.3823,0,-0.0167,-1.492,-1.221,0.6369,0.3141,-0.7115,0.6369,-1.298,0,0.6369,-1.298,0,0.6368,1.305,1.443,-0.0167,0.3823,1.221,0.6369,0.3141,0.7115,0.6369,-1.298,0.8503,-0.0167,-1.492,0,-0.0167,1.553,-1.476,-0.2577,1.268,1.476,-0.2577,1.268,-1.226,-1.676,-2.553,-1.226,-3.436,-1.492,0,-3.436,-1.492,-0.965,-0.5229,-1.815,0,-0.5229,-1.815,1.226,-1.676,-2.553,0,-1.676,-2.553,0.965,-0.5229,-1.815,1.226,-3.436,-1.492,-2.548,-1.676,0.3823,-1.819,-3.436,0.3823,-1.78,-0.5229,0.3823,2.548,-1.676,0.3823,1.78,-0.5229,0.3823,1.819,-3.436,0.3823,0,-3.436,0.3823,-1.619,-3.302,1.21,-2.212,-1.709,1.21,2.212,-1.709,1.21,1.619,-3.302,1.21,0,-3.302,1.21,-1.393,-0.8117,1.248,1.393,-0.8117,1.248,0,-0.573,1.515]);
-IndexedFaceSet106.coord = Coordinate108;
+HAnimJoint101.children = new MFNode();
 
-Shape102.geometry = IndexedFaceSet106;
+HAnimJoint101.children[0] = HAnimSegment102;
 
-Transform101.child = new undefined();
+let HAnimJoint111 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint111.name = "r_metatarsophalangeal_2";
+HAnimJoint111.DEF = "hanim_r_metatarsophalangeal_2";
+HAnimJoint111.center = new SFVec3f(new float[-3.18,3.189,0.9724]);
+HAnimJoint111.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint111.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment112 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment112.name = "r_tarsal_proximal_phalanx_2";
+HAnimSegment112.DEF = "hanim_r_tarsal_proximal_phalanx_2";
+let Transform113 = browser.currentScene.createNode("Transform");
+Transform113.translation = new SFVec3f(new float[-3.18,3.189,0.9724]);
+let Shape114 = browser.currentScene.createNode("Shape");
+let Appearance115 = browser.currentScene.createNode("Appearance");
+let Material116 = browser.currentScene.createNode("Material");
+Material116.diffuseColor = new SFColor(new float[0.588,0.588,0.588]);
+Appearance115.material = Material116;
 
-Transform101.child[0] = Shape102;
+let ImageTexture117 = browser.currentScene.createNode("ImageTexture");
+ImageTexture117.USE = "YoungTextureAtlas";
+Appearance115.texture = ImageTexture117;
 
-HAnimSegment100.children = new MFNode();
+Shape114.appearance = Appearance115;
 
-HAnimSegment100.children[0] = Transform101;
+let IndexedFaceSet118 = browser.currentScene.createNode("IndexedFaceSet");
+IndexedFaceSet118.coordIndex = new MFInt32(new int[25,4,3,-1,26,25,3,-1,0,26,3,-1,1,10,26,-1,26,0,1,-1,1,9,12,-1,12,10,1,-1,2,4,25,-1,25,34,2,-1,6,8,31,-1,6,31,32,-1,5,6,32,-1,7,5,32,-1,32,11,7,-1,7,11,12,-1,12,9,7,-1,2,34,31,-1,31,8,2,-1,14,13,19,-1,17,16,15,-1,18,17,15,-1,19,18,15,-1,14,19,15,-1,0,13,14,-1,14,1,0,-1,1,14,15,-1,15,9,1,-1,9,15,16,-1,16,7,9,-1,7,16,17,-1,17,5,7,-1,5,17,18,-1,18,6,5,-1,6,18,19,-1,19,3,6,-1,3,19,13,-1,13,0,3,-1,2,8,6,-1,2,6,3,-1,4,2,3,-1,23,24,20,-1,20,21,23,-1,29,23,21,-1,21,22,29,-1,22,33,29,-1,20,25,26,-1,26,21,20,-1,26,10,22,-1,22,21,26,-1,10,12,33,-1,33,22,10,-1,34,25,20,-1,20,24,34,-1,23,27,28,-1,28,24,23,-1,29,30,27,-1,27,23,29,-1,30,29,33,-1,28,27,32,-1,32,31,28,-1,32,27,30,-1,30,11,32,-1,11,30,33,-1,33,12,11,-1,34,24,28,-1,28,31,34,-1]);
+IndexedFaceSet118.creaseAngle = 1.57;
+IndexedFaceSet118.texCoordIndex = new MFInt32(new int[12,5,4,-1,13,12,4,-1,0,13,4,-1,1,14,13,-1,13,0,1,-1,1,3,19,-1,19,14,1,-1,2,5,12,-1,12,21,2,-1,7,10,15,-1,7,15,16,-1,6,7,16,-1,8,6,16,-1,16,17,8,-1,8,17,18,-1,18,11,8,-1,9,20,15,-1,15,10,9,-1,23,22,28,-1,26,25,24,-1,27,26,24,-1,28,27,24,-1,23,28,24,-1,0,22,23,-1,23,1,0,-1,1,23,24,-1,24,3,1,-1,11,24,25,-1,25,8,11,-1,8,25,26,-1,26,6,8,-1,6,26,27,-1,27,7,6,-1,7,27,28,-1,28,4,7,-1,4,28,22,-1,22,0,4,-1,9,10,7,-1,9,7,4,-1,5,9,4,-1,30,29,31,-1,31,32,30,-1,33,30,32,-1,32,34,33,-1,34,35,33,-1,31,36,37,-1,37,32,31,-1,37,38,34,-1,34,32,37,-1,38,39,35,-1,35,34,38,-1,40,36,31,-1,31,29,40,-1,41,42,43,-1,43,44,41,-1,45,46,42,-1,42,41,45,-1,46,45,50,-1,43,42,48,-1,48,47,43,-1,48,42,46,-1,46,49,48,-1,49,46,50,-1,50,51,49,-1,52,44,43,-1,43,47,52,-1]);
+let Coordinate119 = browser.currentScene.createNode("Coordinate");
+Coordinate119.point = new MFVec3f(new float[-2.548,-1.416,-0.8988,-1.819,-3.176,-0.8988,0,0.2435,0.2718,-1.78,-0.2627,-0.8989,-1.476,0.0025,-0.0134,2.548,-1.416,-0.8988,1.78,-0.2627,-0.8989,1.819,-3.176,-0.8988,1.476,0.0025,-0.0134,0,-3.176,-0.8988,-1.863,-3.176,0.8155,1.863,-3.176,0.8155,0,-3.176,0.8155,-2.094,-1.441,-1.699,-1.524,-2.561,-1.699,0,-2.561,-1.699,1.524,-2.561,-1.699,2.094,-1.441,-1.699,1.516,-0.4945,-1.699,-1.516,-0.4945,-1.699,-1.553,-0.5642,2.069,-1.929,-1.973,3.676,-1.929,-3.176,3.35,0,-1.973,4.847,0,-0.4757,3.505,-1.514,-0.2808,1.028,-2.316,-1.625,0.8155,1.929,-1.973,3.676,1.553,-0.5642,2.069,0,-3.176,4.521,1.929,-3.176,3.35,1.514,-0.2808,1.028,2.316,-1.625,0.8155,0,-3.176,3.35,0,-0.0239,1.474]);
+IndexedFaceSet118.coord = Coordinate119;
 
-HAnimJoint99.children = new MFNode();
+let TextureCoordinate120 = browser.currentScene.createNode("TextureCoordinate");
+TextureCoordinate120.point = new MFVec2f(new float[0.433,0.0595,0.4411,0.0186,0.4637,0.1714,0.4411,0.0186,0.4244,0.1312,0.4394,0.1472,0.433,0.0595,0.4244,0.1312,0.4411,0.0186,0.4637,0.1714,0.4394,0.1472,0.4411,0.0186,0.464,0.1246,0.4607,0.0558,0.4904,0.0166,0.464,0.1246,0.4607,0.0558,0.4904,0.0166,0.4949,0.0186,0.4949,0.0186,0.4868,0.1432,0.4868,0.1432,0.433,0.0595,0.4411,0.0186,0.4411,0.0186,0.4411,0.0186,0.433,0.0595,0.4244,0.1312,0.4244,0.1312,0.532,0.098,0.5645,0.0707,0.4885,0.102,0.5026,0.044,0.5945,0.0186,0.5487,0.0186,0.5487,0.0186,0.464,0.1246,0.4607,0.0558,0.4904,0.0166,0.4949,0.0186,0.4868,0.1432,0.5645,0.0707,0.5026,0.044,0.4885,0.102,0.532,0.098,0.5945,0.0186,0.5487,0.0186,0.464,0.1246,0.4607,0.0558,0.4904,0.0166,0.5487,0.0186,0.4949,0.0186,0.4868,0.1432]);
+IndexedFaceSet118.texCoord = TextureCoordinate120;
 
-HAnimJoint99.children[0] = HAnimSegment100;
+Shape114.geometry = IndexedFaceSet118;
 
-let HAnimJoint109 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint109.DEF = "hanim_r_metatarsophalangeal_2";
-HAnimJoint109.name = "r_metatarsophalangeal_2";
-HAnimJoint109.center = new SFVec3f(new float[-3.18,3.189,0.9724]);
-let HAnimSegment110 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment110.DEF = "hanim_r_tarsal_proximal_phalanx_2";
-HAnimSegment110.name = "r_tarsal_proximal_phalanx_2";
-let Transform111 = browser.currentScene.createNode("Transform");
-Transform111.translation = new SFVec3f(new float[-3.18,3.189,0.9724]);
-let Shape112 = browser.currentScene.createNode("Shape");
-let Appearance113 = browser.currentScene.createNode("Appearance");
-let Material114 = browser.currentScene.createNode("Material");
-Material114.diffuseColor = new SFColor(new float[0.588,0.588,0.588]);
-Appearance113.material = Material114;
+Transform113.child = new undefined();
 
-let ImageTexture115 = browser.currentScene.createNode("ImageTexture");
-ImageTexture115.USE = "YoungTextureAtlas";
-Appearance113.texture = ImageTexture115;
+Transform113.child[0] = Shape114;
 
-Shape112.appearance = Appearance113;
+HAnimSegment112.children = new MFNode();
 
-let IndexedFaceSet116 = browser.currentScene.createNode("IndexedFaceSet");
-IndexedFaceSet116.creaseAngle = 1.57;
-IndexedFaceSet116.texCoordIndex = new MFInt32(new int[12,5,4,-1,13,12,4,-1,0,13,4,-1,1,14,13,-1,13,0,1,-1,1,3,19,-1,19,14,1,-1,2,5,12,-1,12,21,2,-1,7,10,15,-1,7,15,16,-1,6,7,16,-1,8,6,16,-1,16,17,8,-1,8,17,18,-1,18,11,8,-1,9,20,15,-1,15,10,9,-1,23,22,28,-1,26,25,24,-1,27,26,24,-1,28,27,24,-1,23,28,24,-1,0,22,23,-1,23,1,0,-1,1,23,24,-1,24,3,1,-1,11,24,25,-1,25,8,11,-1,8,25,26,-1,26,6,8,-1,6,26,27,-1,27,7,6,-1,7,27,28,-1,28,4,7,-1,4,28,22,-1,22,0,4,-1,9,10,7,-1,9,7,4,-1,5,9,4,-1,30,29,31,-1,31,32,30,-1,33,30,32,-1,32,34,33,-1,34,35,33,-1,31,36,37,-1,37,32,31,-1,37,38,34,-1,34,32,37,-1,38,39,35,-1,35,34,38,-1,40,36,31,-1,31,29,40,-1,41,42,43,-1,43,44,41,-1,45,46,42,-1,42,41,45,-1,46,45,50,-1,43,42,48,-1,48,47,43,-1,48,42,46,-1,46,49,48,-1,49,46,50,-1,50,51,49,-1,52,44,43,-1,43,47,52,-1]);
-IndexedFaceSet116.coordIndex = new MFInt32(new int[25,4,3,-1,26,25,3,-1,0,26,3,-1,1,10,26,-1,26,0,1,-1,1,9,12,-1,12,10,1,-1,2,4,25,-1,25,34,2,-1,6,8,31,-1,6,31,32,-1,5,6,32,-1,7,5,32,-1,32,11,7,-1,7,11,12,-1,12,9,7,-1,2,34,31,-1,31,8,2,-1,14,13,19,-1,17,16,15,-1,18,17,15,-1,19,18,15,-1,14,19,15,-1,0,13,14,-1,14,1,0,-1,1,14,15,-1,15,9,1,-1,9,15,16,-1,16,7,9,-1,7,16,17,-1,17,5,7,-1,5,17,18,-1,18,6,5,-1,6,18,19,-1,19,3,6,-1,3,19,13,-1,13,0,3,-1,2,8,6,-1,2,6,3,-1,4,2,3,-1,23,24,20,-1,20,21,23,-1,29,23,21,-1,21,22,29,-1,22,33,29,-1,20,25,26,-1,26,21,20,-1,26,10,22,-1,22,21,26,-1,10,12,33,-1,33,22,10,-1,34,25,20,-1,20,24,34,-1,23,27,28,-1,28,24,23,-1,29,30,27,-1,27,23,29,-1,30,29,33,-1,28,27,32,-1,32,31,28,-1,32,27,30,-1,30,11,32,-1,11,30,33,-1,33,12,11,-1,34,24,28,-1,28,31,34,-1]);
-let TextureCoordinate117 = browser.currentScene.createNode("TextureCoordinate");
-TextureCoordinate117.point = new MFVec2f(new float[0.433,0.0595,0.4411,0.0186,0.4637,0.1714,0.4411,0.0186,0.4244,0.1312,0.4394,0.1472,0.433,0.0595,0.4244,0.1312,0.4411,0.0186,0.4637,0.1714,0.4394,0.1472,0.4411,0.0186,0.464,0.1246,0.4607,0.0558,0.4904,0.0166,0.464,0.1246,0.4607,0.0558,0.4904,0.0166,0.4949,0.0186,0.4949,0.0186,0.4868,0.1432,0.4868,0.1432,0.433,0.0595,0.4411,0.0186,0.4411,0.0186,0.4411,0.0186,0.433,0.0595,0.4244,0.1312,0.4244,0.1312,0.532,0.098,0.5645,0.0707,0.4885,0.102,0.5026,0.044,0.5945,0.0186,0.5487,0.0186,0.5487,0.0186,0.464,0.1246,0.4607,0.0558,0.4904,0.0166,0.4949,0.0186,0.4868,0.1432,0.5645,0.0707,0.5026,0.044,0.4885,0.102,0.532,0.098,0.5945,0.0186,0.5487,0.0186,0.464,0.1246,0.4607,0.0558,0.4904,0.0166,0.5487,0.0186,0.4949,0.0186,0.4868,0.1432]);
-IndexedFaceSet116.texCoord = TextureCoordinate117;
+HAnimSegment112.children[0] = Transform113;
 
-let Coordinate118 = browser.currentScene.createNode("Coordinate");
-Coordinate118.point = new MFVec3f(new float[-2.548,-1.416,-0.8988,-1.819,-3.176,-0.8988,0,0.2435,0.2718,-1.78,-0.2627,-0.8989,-1.476,0.0025,-0.0134,2.548,-1.416,-0.8988,1.78,-0.2627,-0.8989,1.819,-3.176,-0.8988,1.476,0.0025,-0.0134,0,-3.176,-0.8988,-1.863,-3.176,0.8155,1.863,-3.176,0.8155,0,-3.176,0.8155,-2.094,-1.441,-1.699,-1.524,-2.561,-1.699,0,-2.561,-1.699,1.524,-2.561,-1.699,2.094,-1.441,-1.699,1.516,-0.4945,-1.699,-1.516,-0.4945,-1.699,-1.553,-0.5642,2.069,-1.929,-1.973,3.676,-1.929,-3.176,3.35,0,-1.973,4.847,0,-0.4757,3.505,-1.514,-0.2808,1.028,-2.316,-1.625,0.8155,1.929,-1.973,3.676,1.553,-0.5642,2.069,0,-3.176,4.521,1.929,-3.176,3.35,1.514,-0.2808,1.028,2.316,-1.625,0.8155,0,-3.176,3.35,0,-0.0239,1.474]);
-IndexedFaceSet116.coord = Coordinate118;
+HAnimJoint111.children = new MFNode();
 
-Shape112.geometry = IndexedFaceSet116;
+HAnimJoint111.children[0] = HAnimSegment112;
 
-Transform111.child = new undefined();
+HAnimJoint101.children[1] = HAnimJoint111;
 
-Transform111.child[0] = Shape112;
+HAnimJoint91.children[1] = HAnimJoint101;
 
-HAnimSegment110.children = new MFNode();
+HAnimJoint81.children[1] = HAnimJoint91;
 
-HAnimSegment110.children[0] = Transform111;
+HAnimJoint31.children[2] = HAnimJoint81;
 
-HAnimJoint109.children = new MFNode();
+let HAnimJoint121 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint121.name = "sacroiliac";
+HAnimJoint121.DEF = "hanim_sacroiliac";
+HAnimJoint121.center = new SFVec3f(new float[0,27.07,-0.3172]);
+HAnimJoint121.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint121.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment122 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment122.name = "pelvis";
+HAnimSegment122.DEF = "hanim_pelvis";
+let Transform123 = browser.currentScene.createNode("Transform");
+Transform123.translation = new SFVec3f(new float[0,27.07,-0.3172]);
+let Shape124 = browser.currentScene.createNode("Shape");
+let Appearance125 = browser.currentScene.createNode("Appearance");
+let Material126 = browser.currentScene.createNode("Material");
+Material126.diffuseColor = new SFColor(new float[0.588,0.588,0.588]);
+Appearance125.material = Material126;
 
-HAnimJoint109.children[0] = HAnimSegment110;
+let ImageTexture127 = browser.currentScene.createNode("ImageTexture");
+ImageTexture127.USE = "YoungTextureAtlas";
+Appearance125.texture = ImageTexture127;
 
-HAnimJoint99.children[1] = HAnimJoint109;
+Shape124.appearance = Appearance125;
 
-HAnimJoint89.children[1] = HAnimJoint99;
+let IndexedFaceSet128 = browser.currentScene.createNode("IndexedFaceSet");
+IndexedFaceSet128.coordIndex = new MFInt32(new int[0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,5,-1,0,5,6,-1,0,6,7,-1,0,7,8,-1,0,8,9,-1,0,9,10,-1,0,10,11,-1,0,11,12,-1,0,12,1,-1,14,2,1,-1,1,13,14,-1,15,3,2,-1,2,14,15,-1,16,4,3,-1,3,15,16,-1,17,5,4,-1,4,16,17,-1,18,6,5,-1,5,17,18,-1,19,7,6,-1,6,18,19,-1,20,8,7,-1,7,19,20,-1,21,9,8,-1,8,20,21,-1,22,10,9,-1,9,21,22,-1,23,11,10,-1,10,22,23,-1,24,12,11,-1,11,23,24,-1,13,1,12,-1,12,24,13,-1,26,14,13,-1,13,25,26,-1,27,15,14,-1,14,26,27,-1,28,16,15,-1,15,27,28,-1,29,17,16,-1,16,28,29,-1,30,18,17,-1,17,29,30,-1,31,19,18,-1,18,30,31,-1,32,20,19,-1,19,31,32,-1,33,21,20,-1,20,32,33,-1,34,22,21,-1,21,33,34,-1,35,23,22,-1,22,34,35,-1,36,24,23,-1,23,35,36,-1,25,13,24,-1,24,36,25,-1,38,26,25,-1,25,37,38,-1,39,27,26,-1,26,38,39,-1,40,28,27,-1,27,39,40,-1,41,29,28,-1,28,40,41,-1,42,30,29,-1,29,41,42,-1,43,31,30,-1,30,42,43,-1,44,32,31,-1,31,43,44,-1,45,33,32,-1,32,44,45,-1,46,34,33,-1,33,45,46,-1,47,35,34,-1,34,46,47,-1,48,36,35,-1,35,47,48,-1,37,25,36,-1,36,48,37,-1,50,38,37,-1,37,49,50,-1,51,39,38,-1,38,50,51,-1,52,40,39,-1,39,51,52,-1,53,41,40,-1,40,52,53,-1,54,42,41,-1,41,53,54,-1,55,43,42,-1,42,54,55,-1,56,44,43,-1,43,55,56,-1,57,45,44,-1,44,56,57,-1,58,46,45,-1,45,57,58,-1,59,47,46,-1,46,58,59,-1,60,48,47,-1,47,59,60,-1,49,37,48,-1,48,60,49,-1,61,50,49,-1,61,51,50,-1,61,52,51,-1,61,53,52,-1,61,54,53,-1,61,55,54,-1,61,56,55,-1,61,57,56,-1,61,58,57,-1,61,59,58,-1,61,60,59,-1,61,49,60,-1]);
+IndexedFaceSet128.creaseAngle = 1.57;
+IndexedFaceSet128.texCoordIndex = new MFInt32(new int[0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,5,-1,0,5,6,-1,0,6,7,-1,0,7,8,-1,0,8,9,-1,0,9,10,-1,0,10,11,-1,0,11,12,-1,0,12,1,-1,14,2,1,-1,1,13,14,-1,15,3,2,-1,2,14,15,-1,16,4,3,-1,3,15,16,-1,17,5,4,-1,4,16,17,-1,18,6,5,-1,5,17,18,-1,19,7,6,-1,6,18,19,-1,20,8,7,-1,7,19,20,-1,21,9,8,-1,8,20,21,-1,22,10,9,-1,9,21,22,-1,23,11,10,-1,10,22,23,-1,24,12,11,-1,11,23,24,-1,13,1,12,-1,12,24,13,-1,26,14,13,-1,13,25,26,-1,27,15,14,-1,14,26,27,-1,28,16,15,-1,15,27,28,-1,29,17,16,-1,16,28,29,-1,30,18,17,-1,17,29,30,-1,31,19,18,-1,18,30,31,-1,32,20,19,-1,19,31,32,-1,33,21,20,-1,20,32,33,-1,34,22,21,-1,21,33,34,-1,35,23,22,-1,22,34,35,-1,36,24,23,-1,23,35,36,-1,25,13,24,-1,24,36,25,-1,38,26,25,-1,25,37,38,-1,39,27,26,-1,26,38,39,-1,40,28,27,-1,27,39,40,-1,41,29,28,-1,28,40,41,-1,42,30,29,-1,29,41,42,-1,43,31,30,-1,30,42,43,-1,44,32,31,-1,31,43,44,-1,45,33,32,-1,32,44,45,-1,46,34,33,-1,33,45,46,-1,47,35,34,-1,34,46,47,-1,48,36,35,-1,35,47,48,-1,37,25,36,-1,36,48,37,-1,50,38,37,-1,37,49,50,-1,51,39,38,-1,38,50,51,-1,52,40,39,-1,39,51,52,-1,53,41,40,-1,40,52,53,-1,54,42,41,-1,41,53,54,-1,55,43,42,-1,42,54,55,-1,56,44,43,-1,43,55,56,-1,57,45,44,-1,44,56,57,-1,58,46,45,-1,45,57,58,-1,59,47,46,-1,46,58,59,-1,60,48,47,-1,47,59,60,-1,49,37,48,-1,48,60,49,-1,61,50,49,-1,61,51,50,-1,61,52,51,-1,61,53,52,-1,61,54,53,-1,61,55,54,-1,61,56,55,-1,61,57,56,-1,61,58,57,-1,61,59,58,-1,61,60,59,-1,61,49,60,-1]);
+let Coordinate129 = browser.currentScene.createNode("Coordinate");
+Coordinate129.point = new MFVec3f(new float[0,9.369,0.1256,0,8.719,-2.49,-2.012,8.719,-2.14,-3.486,8.719,-1.717,-4.025,8.719,0.1256,-3.486,8.719,1.968,-2.012,8.719,2.391,0,8.719,2.741,2.012,8.719,2.391,3.486,8.719,1.968,4.025,8.719,0.1256,3.486,8.719,-1.717,2.012,8.719,-2.14,0,6.946,-4.067,-2.603,6.946,-3.506,-4.508,6.946,-1.971,-5.205,6.946,0.1256,-4.508,6.946,2.222,-2.603,6.946,3.213,0,6.946,3.775,2.603,6.946,3.213,4.508,6.946,2.222,5.205,6.946,0.1256,4.508,6.946,-1.971,2.603,6.946,-3.506,0,4.523,-4.423,-3.005,4.523,-3.775,-5.205,4.523,-2.003,-6.011,4.523,0.1256,-5.205,4.523,2.546,-3.005,4.523,3.775,0,4.523,4.423,3.005,4.523,3.775,5.205,4.523,2.546,6.011,4.523,0.1256,5.205,4.523,-2.003,3.005,4.523,-3.775,0,2.1,-3.775,-2.603,2.1,-3.213,-4.508,2.1,-1.678,-5.205,2.1,0.1256,-4.508,2.1,2.222,-2.603,2.1,3.213,0,2.1,3.775,2.603,2.1,3.213,4.508,2.1,2.222,5.205,2.1,0.1255,4.508,2.1,-1.678,2.603,2.1,-3.213,0,0.3265,-2.003,-1.503,0.3265,-1.678,-2.603,0.3265,-1.085,-3.005,0.3265,0.1255,-2.603,0.3265,1.336,-1.503,0.3265,2.222,0,0.3265,2.546,1.503,0.3265,2.222,2.603,0.3265,1.336,3.005,0.3265,0.1255,2.603,0.3265,-1.085,1.503,0.3265,-1.678,0,-0.3227,0.1255]);
+IndexedFaceSet128.coord = Coordinate129;
 
-HAnimJoint79.children[1] = HAnimJoint89;
+let TextureCoordinate130 = browser.currentScene.createNode("TextureCoordinate");
+TextureCoordinate130.point = new MFVec2f(new float[0.6211,0.5754,0.7851,0.572,0.7614,0.572,0.6907,0.5698,0.62,0.5698,0.6158,0.5702,0.5451,0.5702,0.4167,0.5698,0.5451,0.5702,0.6158,0.5702,0.62,0.5698,0.6907,0.5698,0.7614,0.572,0.8036,0.5346,0.7761,0.5346,0.6989,0.4838,0.6219,0.4428,0.6154,0.4438,0.5492,0.4639,0.4166,0.5346,0.5492,0.4639,0.6154,0.4438,0.6219,0.4428,0.6989,0.4838,0.7761,0.5346,0.7912,0.4044,0.7635,0.4044,0.7042,0.3925,0.6194,0.3907,0.6148,0.3907,0.545,0.3974,0.4163,0.4938,0.545,0.3974,0.6148,0.3907,0.6194,0.3907,0.7042,0.3925,0.7635,0.4044,0.795,0.3772,0.7662,0.3772,0.6945,0.3645,0.6236,0.3695,0.616,0.3695,0.5438,0.378,0.416,0.453,0.5438,0.378,0.616,0.3695,0.6236,0.3695,0.6945,0.3645,0.7662,0.3772,0.7887,0.3451,0.7635,0.3451,0.698,0.3508,0.6262,0.3508,0.6297,0.3503,0.5389,0.3503,0.4181,0.3884,0.5389,0.3503,0.6297,0.3503,0.6262,0.3508,0.698,0.3508,0.7635,0.3451,0.6237,0.3398]);
+IndexedFaceSet128.texCoord = TextureCoordinate130;
 
-HAnimJoint29.children[2] = HAnimJoint79;
+Shape124.geometry = IndexedFaceSet128;
 
-let HAnimJoint119 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint119.DEF = "hanim_sacroiliac";
-HAnimJoint119.name = "sacroiliac";
-HAnimJoint119.center = new SFVec3f(new float[0,27.07,-0.3172]);
-let HAnimSegment120 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment120.DEF = "hanim_pelvis";
-HAnimSegment120.name = "pelvis";
-let Transform121 = browser.currentScene.createNode("Transform");
-Transform121.translation = new SFVec3f(new float[0,27.07,-0.3172]);
-let Shape122 = browser.currentScene.createNode("Shape");
-let Appearance123 = browser.currentScene.createNode("Appearance");
-let Material124 = browser.currentScene.createNode("Material");
-Material124.diffuseColor = new SFColor(new float[0.588,0.588,0.588]);
-Appearance123.material = Material124;
+Transform123.child = new undefined();
 
-let ImageTexture125 = browser.currentScene.createNode("ImageTexture");
-ImageTexture125.USE = "YoungTextureAtlas";
-Appearance123.texture = ImageTexture125;
+Transform123.child[0] = Shape124;
 
-Shape122.appearance = Appearance123;
+HAnimSegment122.children = new MFNode();
 
-let IndexedFaceSet126 = browser.currentScene.createNode("IndexedFaceSet");
-IndexedFaceSet126.creaseAngle = 1.57;
-IndexedFaceSet126.texCoordIndex = new MFInt32(new int[0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,5,-1,0,5,6,-1,0,6,7,-1,0,7,8,-1,0,8,9,-1,0,9,10,-1,0,10,11,-1,0,11,12,-1,0,12,1,-1,14,2,1,-1,1,13,14,-1,15,3,2,-1,2,14,15,-1,16,4,3,-1,3,15,16,-1,17,5,4,-1,4,16,17,-1,18,6,5,-1,5,17,18,-1,19,7,6,-1,6,18,19,-1,20,8,7,-1,7,19,20,-1,21,9,8,-1,8,20,21,-1,22,10,9,-1,9,21,22,-1,23,11,10,-1,10,22,23,-1,24,12,11,-1,11,23,24,-1,13,1,12,-1,12,24,13,-1,26,14,13,-1,13,25,26,-1,27,15,14,-1,14,26,27,-1,28,16,15,-1,15,27,28,-1,29,17,16,-1,16,28,29,-1,30,18,17,-1,17,29,30,-1,31,19,18,-1,18,30,31,-1,32,20,19,-1,19,31,32,-1,33,21,20,-1,20,32,33,-1,34,22,21,-1,21,33,34,-1,35,23,22,-1,22,34,35,-1,36,24,23,-1,23,35,36,-1,25,13,24,-1,24,36,25,-1,38,26,25,-1,25,37,38,-1,39,27,26,-1,26,38,39,-1,40,28,27,-1,27,39,40,-1,41,29,28,-1,28,40,41,-1,42,30,29,-1,29,41,42,-1,43,31,30,-1,30,42,43,-1,44,32,31,-1,31,43,44,-1,45,33,32,-1,32,44,45,-1,46,34,33,-1,33,45,46,-1,47,35,34,-1,34,46,47,-1,48,36,35,-1,35,47,48,-1,37,25,36,-1,36,48,37,-1,50,38,37,-1,37,49,50,-1,51,39,38,-1,38,50,51,-1,52,40,39,-1,39,51,52,-1,53,41,40,-1,40,52,53,-1,54,42,41,-1,41,53,54,-1,55,43,42,-1,42,54,55,-1,56,44,43,-1,43,55,56,-1,57,45,44,-1,44,56,57,-1,58,46,45,-1,45,57,58,-1,59,47,46,-1,46,58,59,-1,60,48,47,-1,47,59,60,-1,49,37,48,-1,48,60,49,-1,61,50,49,-1,61,51,50,-1,61,52,51,-1,61,53,52,-1,61,54,53,-1,61,55,54,-1,61,56,55,-1,61,57,56,-1,61,58,57,-1,61,59,58,-1,61,60,59,-1,61,49,60,-1]);
-IndexedFaceSet126.coordIndex = new MFInt32(new int[0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,5,-1,0,5,6,-1,0,6,7,-1,0,7,8,-1,0,8,9,-1,0,9,10,-1,0,10,11,-1,0,11,12,-1,0,12,1,-1,14,2,1,-1,1,13,14,-1,15,3,2,-1,2,14,15,-1,16,4,3,-1,3,15,16,-1,17,5,4,-1,4,16,17,-1,18,6,5,-1,5,17,18,-1,19,7,6,-1,6,18,19,-1,20,8,7,-1,7,19,20,-1,21,9,8,-1,8,20,21,-1,22,10,9,-1,9,21,22,-1,23,11,10,-1,10,22,23,-1,24,12,11,-1,11,23,24,-1,13,1,12,-1,12,24,13,-1,26,14,13,-1,13,25,26,-1,27,15,14,-1,14,26,27,-1,28,16,15,-1,15,27,28,-1,29,17,16,-1,16,28,29,-1,30,18,17,-1,17,29,30,-1,31,19,18,-1,18,30,31,-1,32,20,19,-1,19,31,32,-1,33,21,20,-1,20,32,33,-1,34,22,21,-1,21,33,34,-1,35,23,22,-1,22,34,35,-1,36,24,23,-1,23,35,36,-1,25,13,24,-1,24,36,25,-1,38,26,25,-1,25,37,38,-1,39,27,26,-1,26,38,39,-1,40,28,27,-1,27,39,40,-1,41,29,28,-1,28,40,41,-1,42,30,29,-1,29,41,42,-1,43,31,30,-1,30,42,43,-1,44,32,31,-1,31,43,44,-1,45,33,32,-1,32,44,45,-1,46,34,33,-1,33,45,46,-1,47,35,34,-1,34,46,47,-1,48,36,35,-1,35,47,48,-1,37,25,36,-1,36,48,37,-1,50,38,37,-1,37,49,50,-1,51,39,38,-1,38,50,51,-1,52,40,39,-1,39,51,52,-1,53,41,40,-1,40,52,53,-1,54,42,41,-1,41,53,54,-1,55,43,42,-1,42,54,55,-1,56,44,43,-1,43,55,56,-1,57,45,44,-1,44,56,57,-1,58,46,45,-1,45,57,58,-1,59,47,46,-1,46,58,59,-1,60,48,47,-1,47,59,60,-1,49,37,48,-1,48,60,49,-1,61,50,49,-1,61,51,50,-1,61,52,51,-1,61,53,52,-1,61,54,53,-1,61,55,54,-1,61,56,55,-1,61,57,56,-1,61,58,57,-1,61,59,58,-1,61,60,59,-1,61,49,60,-1]);
-let TextureCoordinate127 = browser.currentScene.createNode("TextureCoordinate");
-TextureCoordinate127.point = new MFVec2f(new float[0.6211,0.5754,0.7851,0.572,0.7614,0.572,0.6907,0.5698,0.62,0.5698,0.6158,0.5702,0.5451,0.5702,0.4167,0.5698,0.5451,0.5702,0.6158,0.5702,0.62,0.5698,0.6907,0.5698,0.7614,0.572,0.8036,0.5346,0.7761,0.5346,0.6989,0.4838,0.6219,0.4428,0.6154,0.4438,0.5492,0.4639,0.4166,0.5346,0.5492,0.4639,0.6154,0.4438,0.6219,0.4428,0.6989,0.4838,0.7761,0.5346,0.7912,0.4044,0.7635,0.4044,0.7042,0.3925,0.6194,0.3907,0.6148,0.3907,0.545,0.3974,0.4163,0.4938,0.545,0.3974,0.6148,0.3907,0.6194,0.3907,0.7042,0.3925,0.7635,0.4044,0.795,0.3772,0.7662,0.3772,0.6945,0.3645,0.6236,0.3695,0.616,0.3695,0.5438,0.378,0.416,0.453,0.5438,0.378,0.616,0.3695,0.6236,0.3695,0.6945,0.3645,0.7662,0.3772,0.7887,0.3451,0.7635,0.3451,0.698,0.3508,0.6262,0.3508,0.6297,0.3503,0.5389,0.3503,0.4181,0.3884,0.5389,0.3503,0.6297,0.3503,0.6262,0.3508,0.698,0.3508,0.7635,0.3451,0.6237,0.3398]);
-IndexedFaceSet126.texCoord = TextureCoordinate127;
+HAnimSegment122.children[0] = Transform123;
 
-let Coordinate128 = browser.currentScene.createNode("Coordinate");
-Coordinate128.point = new MFVec3f(new float[0,9.369,0.1256,0,8.719,-2.49,-2.012,8.719,-2.14,-3.486,8.719,-1.717,-4.025,8.719,0.1256,-3.486,8.719,1.968,-2.012,8.719,2.391,0,8.719,2.741,2.012,8.719,2.391,3.486,8.719,1.968,4.025,8.719,0.1256,3.486,8.719,-1.717,2.012,8.719,-2.14,0,6.946,-4.067,-2.603,6.946,-3.506,-4.508,6.946,-1.971,-5.205,6.946,0.1256,-4.508,6.946,2.222,-2.603,6.946,3.213,0,6.946,3.775,2.603,6.946,3.213,4.508,6.946,2.222,5.205,6.946,0.1256,4.508,6.946,-1.971,2.603,6.946,-3.506,0,4.523,-4.423,-3.005,4.523,-3.775,-5.205,4.523,-2.003,-6.011,4.523,0.1256,-5.205,4.523,2.546,-3.005,4.523,3.775,0,4.523,4.423,3.005,4.523,3.775,5.205,4.523,2.546,6.011,4.523,0.1256,5.205,4.523,-2.003,3.005,4.523,-3.775,0,2.1,-3.775,-2.603,2.1,-3.213,-4.508,2.1,-1.678,-5.205,2.1,0.1256,-4.508,2.1,2.222,-2.603,2.1,3.213,0,2.1,3.775,2.603,2.1,3.213,4.508,2.1,2.222,5.205,2.1,0.1255,4.508,2.1,-1.678,2.603,2.1,-3.213,0,0.3265,-2.003,-1.503,0.3265,-1.678,-2.603,0.3265,-1.085,-3.005,0.3265,0.1255,-2.603,0.3265,1.336,-1.503,0.3265,2.222,0,0.3265,2.546,1.503,0.3265,2.222,2.603,0.3265,1.336,3.005,0.3265,0.1255,2.603,0.3265,-1.085,1.503,0.3265,-1.678,0,-0.3227,0.1255]);
-IndexedFaceSet126.coord = Coordinate128;
+HAnimJoint121.children = new MFNode();
 
-Shape122.geometry = IndexedFaceSet126;
+HAnimJoint121.children[0] = HAnimSegment122;
 
-Transform121.child = new undefined();
+let HAnimJoint131 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint131.name = "l_shoulder";
+HAnimJoint131.DEF = "hanim_l_shoulder";
+HAnimJoint131.center = new SFVec3f(new float[5.441,45.830002,0.1786]);
+HAnimJoint131.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint131.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment132 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment132.name = "l_upperarm";
+HAnimSegment132.DEF = "hanim_l_upperarm";
+let Transform133 = browser.currentScene.createNode("Transform");
+Transform133.translation = new SFVec3f(new float[5.441,45.830002,0.1786]);
+let Shape134 = browser.currentScene.createNode("Shape");
+let Appearance135 = browser.currentScene.createNode("Appearance");
+let Material136 = browser.currentScene.createNode("Material");
+Material136.diffuseColor = new SFColor(new float[0.588,0.588,0.588]);
+Appearance135.material = Material136;
 
-Transform121.child[0] = Shape122;
+let ImageTexture137 = browser.currentScene.createNode("ImageTexture");
+ImageTexture137.USE = "YoungTextureAtlas";
+Appearance135.texture = ImageTexture137;
 
-HAnimSegment120.children = new MFNode();
+Shape134.appearance = Appearance135;
 
-HAnimSegment120.children[0] = Transform121;
+let IndexedFaceSet138 = browser.currentScene.createNode("IndexedFaceSet");
+IndexedFaceSet138.coordIndex = new MFInt32(new int[2,1,0,-1,3,2,0,-1,4,3,0,-1,0,1,6,-1,6,5,0,-1,1,2,7,-1,7,6,1,-1,2,3,8,-1,8,7,2,-1,3,4,9,-1,9,8,3,-1,4,0,5,-1,5,9,4,-1,5,6,11,-1,11,10,5,-1,6,7,12,-1,12,11,6,-1,7,8,13,-1,13,12,7,-1,8,9,14,-1,14,13,8,-1,9,5,10,-1,10,14,9,-1,10,11,16,-1,16,15,10,-1,11,12,17,-1,17,16,11,-1,12,13,18,-1,18,17,12,-1,13,14,19,-1,19,18,13,-1,14,10,15,-1,15,19,14,-1,36,37,38,-1,35,36,38,-1,39,35,38,-1,21,20,15,-1,15,16,21,-1,22,21,16,-1,16,17,22,-1,23,22,17,-1,17,18,23,-1,24,23,18,-1,18,19,24,-1,20,24,19,-1,19,15,20,-1,26,25,20,-1,20,21,26,-1,27,26,21,-1,21,22,27,-1,28,27,22,-1,22,23,28,-1,29,28,23,-1,23,24,29,-1,25,29,24,-1,24,20,25,-1,31,30,25,-1,25,26,31,-1,32,31,26,-1,26,27,32,-1,33,32,27,-1,27,28,33,-1,34,33,28,-1,28,29,34,-1,30,34,29,-1,29,25,30,-1,36,35,30,-1,30,31,36,-1,37,36,31,-1,31,32,37,-1,38,37,32,-1,32,33,38,-1,39,38,33,-1,33,34,39,-1,35,39,34,-1,34,30,35,-1]);
+IndexedFaceSet138.creaseAngle = 1.57;
+IndexedFaceSet138.texCoordIndex = new MFInt32(new int[2,0,1,-1,3,2,1,-1,61,3,1,-1,1,0,5,-1,5,6,1,-1,0,2,7,-1,7,5,0,-1,2,3,8,-1,8,7,2,-1,25,4,9,-1,9,26,25,-1,4,1,6,-1,6,9,4,-1,6,5,10,-1,10,11,6,-1,5,7,12,-1,12,10,5,-1,7,8,13,-1,13,12,7,-1,27,9,14,-1,14,28,27,-1,9,6,11,-1,11,14,9,-1,11,10,15,-1,15,16,11,-1,10,12,17,-1,17,15,10,-1,12,13,18,-1,18,17,12,-1,29,14,19,-1,19,30,29,-1,14,11,16,-1,16,19,14,-1,54,35,36,-1,53,54,36,-1,37,53,36,-1,20,21,16,-1,16,15,20,-1,22,20,15,-1,15,17,22,-1,23,22,17,-1,17,18,23,-1,24,32,31,-1,31,19,24,-1,21,24,19,-1,19,16,21,-1,40,41,38,-1,38,39,40,-1,43,56,55,-1,55,42,43,-1,45,43,42,-1,42,44,45,-1,47,45,44,-1,44,46,47,-1,41,47,46,-1,46,38,41,-1,48,49,41,-1,41,40,48,-1,50,58,57,-1,57,43,50,-1,51,50,43,-1,43,45,51,-1,52,51,45,-1,45,47,52,-1,49,52,47,-1,47,41,49,-1,34,33,49,-1,49,48,34,-1,35,60,59,-1,59,50,35,-1,36,35,50,-1,50,51,36,-1,37,36,51,-1,51,52,37,-1,33,37,52,-1,52,49,33,-1]);
+let Coordinate139 = browser.currentScene.createNode("Coordinate");
+Coordinate139.point = new MFVec3f(new float[1.592,1.817,-1.481,2.611,1.817,0.0297,1.489,1.817,1.466,-0.2232,1.817,0.8423,-0.1596,1.817,-0.9787,1.794,0.7023,-2.036,3.201,0.7023,0.0503,1.652,0.7023,2.033,-0.7128,0.7023,1.173,-0.625,0.7023,-1.342,1.794,-1.513,-2.036,3.201,-1.513,0.0503,1.652,-1.513,2.033,-0.7128,-1.513,1.173,-0.625,-1.513,-1.342,1.836,-2.461,-2.153,3.325,-2.461,0.0546,1.686,-2.461,2.153,-0.8158,-2.461,1.242,-0.7229,-2.461,-1.419,1.369,-0.8329,-1.709,2.445,-0.8329,-0.4004,1.888,-0.8329,1.436,0.4682,-0.8329,1.262,0.1476,-0.8329,-0.6818,1.431,-5.952,-1.383,2.548,-5.952,-0.3332,1.97,-5.952,1.14,0.495,-5.952,1,0.162,-5.952,-0.5588,1.466,-9.522,-1.332,2.541,-9.522,-0.3218,1.985,-9.522,1.096,0.565,-9.522,0.9618,0.2445,-9.522,-0.539,1.422,-10.01,-0.792,2.053,-10.01,-0.1998,1.726,-10.01,0.6312,0.8942,-10.01,0.5525,0.7063,-10.01,-0.3271]);
+IndexedFaceSet138.coord = Coordinate139;
 
-HAnimJoint119.children = new MFNode();
+let TextureCoordinate140 = browser.currentScene.createNode("TextureCoordinate");
+TextureCoordinate140.point = new MFVec2f(new float[0.2986,0.2114,0.2726,0.2114,0.3201,0.2114,0.3415,0.2114,0.2466,0.2114,0.2979,0.2417,0.2726,0.2417,0.3197,0.2417,0.3418,0.2417,0.2473,0.2417,0.2979,0.3018,0.2726,0.3018,0.3197,0.3018,0.3418,0.3018,0.2473,0.3018,0.2978,0.3276,0.2726,0.3276,0.3197,0.3276,0.3419,0.3276,0.2474,0.3276,0.2932,0.2834,0.2689,0.2834,0.316,0.2834,0.3322,0.2834,0.245,0.2834,0.2251,0.2114,0.2255,0.2417,0.2255,0.2417,0.2255,0.3018,0.2255,0.3018,0.2255,0.3276,0.2255,0.3276,0.2159,0.2834,0.4315,0.6736,0.442,0.6736,0.3947,0.6736,0.4041,0.6736,0.418,0.6736,0.4296,0.6167,0.4409,0.6167,0.4415,0.6485,0.4303,0.6485,0.3965,0.6167,0.3953,0.6485,0.4047,0.6167,0.4053,0.6485,0.4189,0.6167,0.418,0.6485,0.4415,0.6706,0.4306,0.6706,0.395,0.6706,0.4051,0.6706,0.4182,0.6706,0.3746,0.6736,0.3851,0.6736,0.384,0.6167,0.3845,0.6485,0.3845,0.6485,0.3846,0.6706,0.3846,0.6706,0.3851,0.6736,0.3481,0.2114]);
+IndexedFaceSet138.texCoord = TextureCoordinate140;
 
-HAnimJoint119.children[0] = HAnimSegment120;
+Shape134.geometry = IndexedFaceSet138;
 
-let HAnimJoint129 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint129.DEF = "hanim_l_shoulder";
-HAnimJoint129.name = "l_shoulder";
-HAnimJoint129.center = new SFVec3f(new float[5.441,45.83,0.1786]);
-let HAnimSegment130 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment130.DEF = "hanim_l_upperarm";
-HAnimSegment130.name = "l_upperarm";
-let Transform131 = browser.currentScene.createNode("Transform");
-Transform131.translation = new SFVec3f(new float[5.441,45.83,0.1786]);
-let Shape132 = browser.currentScene.createNode("Shape");
-let Appearance133 = browser.currentScene.createNode("Appearance");
-let Material134 = browser.currentScene.createNode("Material");
-Material134.diffuseColor = new SFColor(new float[0.588,0.588,0.588]);
-Appearance133.material = Material134;
+Transform133.child = new undefined();
 
-let ImageTexture135 = browser.currentScene.createNode("ImageTexture");
-ImageTexture135.USE = "YoungTextureAtlas";
-Appearance133.texture = ImageTexture135;
+Transform133.child[0] = Shape134;
 
-Shape132.appearance = Appearance133;
+HAnimSegment132.children = new MFNode();
 
-let IndexedFaceSet136 = browser.currentScene.createNode("IndexedFaceSet");
-IndexedFaceSet136.creaseAngle = 1.57;
-IndexedFaceSet136.texCoordIndex = new MFInt32(new int[2,0,1,-1,3,2,1,-1,61,3,1,-1,1,0,5,-1,5,6,1,-1,0,2,7,-1,7,5,0,-1,2,3,8,-1,8,7,2,-1,25,4,9,-1,9,26,25,-1,4,1,6,-1,6,9,4,-1,6,5,10,-1,10,11,6,-1,5,7,12,-1,12,10,5,-1,7,8,13,-1,13,12,7,-1,27,9,14,-1,14,28,27,-1,9,6,11,-1,11,14,9,-1,11,10,15,-1,15,16,11,-1,10,12,17,-1,17,15,10,-1,12,13,18,-1,18,17,12,-1,29,14,19,-1,19,30,29,-1,14,11,16,-1,16,19,14,-1,54,35,36,-1,53,54,36,-1,37,53,36,-1,20,21,16,-1,16,15,20,-1,22,20,15,-1,15,17,22,-1,23,22,17,-1,17,18,23,-1,24,32,31,-1,31,19,24,-1,21,24,19,-1,19,16,21,-1,40,41,38,-1,38,39,40,-1,43,56,55,-1,55,42,43,-1,45,43,42,-1,42,44,45,-1,47,45,44,-1,44,46,47,-1,41,47,46,-1,46,38,41,-1,48,49,41,-1,41,40,48,-1,50,58,57,-1,57,43,50,-1,51,50,43,-1,43,45,51,-1,52,51,45,-1,45,47,52,-1,49,52,47,-1,47,41,49,-1,34,33,49,-1,49,48,34,-1,35,60,59,-1,59,50,35,-1,36,35,50,-1,50,51,36,-1,37,36,51,-1,51,52,37,-1,33,37,52,-1,52,49,33,-1]);
-IndexedFaceSet136.coordIndex = new MFInt32(new int[2,1,0,-1,3,2,0,-1,4,3,0,-1,0,1,6,-1,6,5,0,-1,1,2,7,-1,7,6,1,-1,2,3,8,-1,8,7,2,-1,3,4,9,-1,9,8,3,-1,4,0,5,-1,5,9,4,-1,5,6,11,-1,11,10,5,-1,6,7,12,-1,12,11,6,-1,7,8,13,-1,13,12,7,-1,8,9,14,-1,14,13,8,-1,9,5,10,-1,10,14,9,-1,10,11,16,-1,16,15,10,-1,11,12,17,-1,17,16,11,-1,12,13,18,-1,18,17,12,-1,13,14,19,-1,19,18,13,-1,14,10,15,-1,15,19,14,-1,36,37,38,-1,35,36,38,-1,39,35,38,-1,21,20,15,-1,15,16,21,-1,22,21,16,-1,16,17,22,-1,23,22,17,-1,17,18,23,-1,24,23,18,-1,18,19,24,-1,20,24,19,-1,19,15,20,-1,26,25,20,-1,20,21,26,-1,27,26,21,-1,21,22,27,-1,28,27,22,-1,22,23,28,-1,29,28,23,-1,23,24,29,-1,25,29,24,-1,24,20,25,-1,31,30,25,-1,25,26,31,-1,32,31,26,-1,26,27,32,-1,33,32,27,-1,27,28,33,-1,34,33,28,-1,28,29,34,-1,30,34,29,-1,29,25,30,-1,36,35,30,-1,30,31,36,-1,37,36,31,-1,31,32,37,-1,38,37,32,-1,32,33,38,-1,39,38,33,-1,33,34,39,-1,35,39,34,-1,34,30,35,-1]);
-let TextureCoordinate137 = browser.currentScene.createNode("TextureCoordinate");
-TextureCoordinate137.point = new MFVec2f(new float[0.2986,0.2114,0.2726,0.2114,0.3201,0.2114,0.3415,0.2114,0.2466,0.2114,0.2979,0.2417,0.2726,0.2417,0.3197,0.2417,0.3418,0.2417,0.2473,0.2417,0.2979,0.3018,0.2726,0.3018,0.3197,0.3018,0.3418,0.3018,0.2473,0.3018,0.2978,0.3276,0.2726,0.3276,0.3197,0.3276,0.3419,0.3276,0.2474,0.3276,0.2932,0.2834,0.2689,0.2834,0.316,0.2834,0.3322,0.2834,0.245,0.2834,0.2251,0.2114,0.2255,0.2417,0.2255,0.2417,0.2255,0.3018,0.2255,0.3018,0.2255,0.3276,0.2255,0.3276,0.2159,0.2834,0.4315,0.6736,0.442,0.6736,0.3947,0.6736,0.4041,0.6736,0.418,0.6736,0.4296,0.6167,0.4409,0.6167,0.4415,0.6485,0.4303,0.6485,0.3965,0.6167,0.3953,0.6485,0.4047,0.6167,0.4053,0.6485,0.4189,0.6167,0.418,0.6485,0.4415,0.6706,0.4306,0.6706,0.395,0.6706,0.4051,0.6706,0.4182,0.6706,0.3746,0.6736,0.3851,0.6736,0.384,0.6167,0.3845,0.6485,0.3845,0.6485,0.3846,0.6706,0.3846,0.6706,0.3851,0.6736,0.3481,0.2114]);
-IndexedFaceSet136.texCoord = TextureCoordinate137;
+HAnimSegment132.children[0] = Transform133;
 
-let Coordinate138 = browser.currentScene.createNode("Coordinate");
-Coordinate138.point = new MFVec3f(new float[1.592,1.817,-1.481,2.611,1.817,0.0297,1.489,1.817,1.466,-0.2232,1.817,0.8423,-0.1596,1.817,-0.9787,1.794,0.7023,-2.036,3.201,0.7023,0.0503,1.652,0.7023,2.033,-0.7128,0.7023,1.173,-0.625,0.7023,-1.342,1.794,-1.513,-2.036,3.201,-1.513,0.0503,1.652,-1.513,2.033,-0.7128,-1.513,1.173,-0.625,-1.513,-1.342,1.836,-2.461,-2.153,3.325,-2.461,0.0546,1.686,-2.461,2.153,-0.8158,-2.461,1.242,-0.7229,-2.461,-1.419,1.369,-0.8329,-1.709,2.445,-0.8329,-0.4004,1.888,-0.8329,1.436,0.4682,-0.8329,1.262,0.1476,-0.8329,-0.6818,1.431,-5.952,-1.383,2.548,-5.952,-0.3332,1.97,-5.952,1.14,0.495,-5.952,1,0.162,-5.952,-0.5588,1.466,-9.522,-1.332,2.541,-9.522,-0.3218,1.985,-9.522,1.096,0.565,-9.522,0.9618,0.2445,-9.522,-0.539,1.422,-10.01,-0.792,2.053,-10.01,-0.1998,1.726,-10.01,0.6312,0.8942,-10.01,0.5525,0.7063,-10.01,-0.3271]);
-IndexedFaceSet136.coord = Coordinate138;
+HAnimJoint131.children = new MFNode();
 
-Shape132.geometry = IndexedFaceSet136;
+HAnimJoint131.children[0] = HAnimSegment132;
 
-Transform131.child = new undefined();
+let HAnimJoint141 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint141.name = "l_elbow";
+HAnimJoint141.DEF = "hanim_l_elbow";
+HAnimJoint141.center = new SFVec3f(new float[6.823,36.080002,0.08607]);
+HAnimJoint141.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint141.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment142 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment142.name = "l_forearm";
+HAnimSegment142.DEF = "hanim_l_forearm";
+let Transform143 = browser.currentScene.createNode("Transform");
+Transform143.translation = new SFVec3f(new float[6.823,36.080002,0.08607]);
+let Shape144 = browser.currentScene.createNode("Shape");
+let Appearance145 = browser.currentScene.createNode("Appearance");
+let Material146 = browser.currentScene.createNode("Material");
+Material146.diffuseColor = new SFColor(new float[0.588,0.588,0.588]);
+Appearance145.material = Material146;
 
-Transform131.child[0] = Shape132;
+let ImageTexture147 = browser.currentScene.createNode("ImageTexture");
+ImageTexture147.USE = "YoungTextureAtlas";
+Appearance145.texture = ImageTexture147;
 
-HAnimSegment130.children = new MFNode();
+Shape144.appearance = Appearance145;
 
-HAnimSegment130.children[0] = Transform131;
+let IndexedFaceSet148 = browser.currentScene.createNode("IndexedFaceSet");
+IndexedFaceSet148.coordIndex = new MFInt32(new int[3,2,1,-1,3,1,0,-1,4,3,0,-1,0,1,6,-1,6,5,0,-1,1,2,7,-1,7,6,1,-1,2,3,8,-1,8,7,2,-1,3,4,9,-1,9,8,3,-1,4,0,5,-1,5,9,4,-1,5,6,11,-1,11,10,5,-1,6,7,12,-1,12,11,6,-1,7,8,13,-1,13,12,7,-1,8,9,14,-1,14,13,8,-1,9,5,10,-1,10,14,9,-1,10,11,16,-1,16,15,10,-1,11,12,17,-1,17,16,11,-1,12,13,18,-1,18,17,12,-1,13,14,19,-1,19,18,13,-1,14,10,15,-1,15,19,14,-1,21,22,23,-1,20,21,23,-1,24,20,23,-1,21,20,15,-1,15,16,21,-1,22,21,16,-1,16,17,22,-1,23,22,17,-1,17,18,23,-1,24,23,18,-1,18,19,24,-1,20,24,19,-1,19,15,20,-1]);
+IndexedFaceSet148.creaseAngle = 1.57;
+IndexedFaceSet148.texCoordIndex = new MFInt32(new int[3,2,25,-1,3,25,26,-1,4,3,26,-1,0,1,6,-1,6,5,0,-1,27,2,7,-1,7,28,27,-1,2,3,8,-1,8,7,2,-1,3,4,9,-1,9,8,3,-1,4,0,5,-1,5,9,4,-1,5,6,11,-1,11,10,5,-1,29,7,12,-1,12,30,29,-1,7,8,13,-1,13,12,7,-1,8,9,14,-1,14,13,8,-1,9,5,10,-1,10,14,9,-1,10,11,16,-1,16,15,10,-1,31,12,17,-1,17,32,31,-1,12,13,18,-1,18,17,12,-1,13,14,19,-1,19,18,13,-1,14,10,15,-1,15,19,14,-1,34,22,23,-1,33,34,23,-1,24,33,23,-1,21,20,15,-1,15,16,21,-1,22,36,35,-1,35,17,22,-1,23,22,17,-1,17,18,23,-1,24,23,18,-1,18,19,24,-1,20,24,19,-1,19,15,20,-1]);
+let Coordinate149 = browser.currentScene.createNode("Coordinate");
+Coordinate149.point = new MFVec3f(new float[0.1597,0.4908,-1.015,0.9881,0.4908,-0.2281,0.5166,0.4908,0.9165,-0.6033,0.4908,0.8366,-0.8239,0.4908,-0.3574,0.1063,-0.5229,-1.433,1.277,-0.5229,-0.3764,0.6107,-0.5229,1.433,-0.972,-0.5229,1.306,-1.284,-0.5229,-0.5807,0.117,-2.864,-1.416,1.367,-2.864,-0.3724,0.6839,-2.352,1.419,-1.006,-2.352,1.294,-1.367,-2.864,-0.5747,0.0931,-7.459,-1.267,1.005,-7.459,-0.1128,0.4859,-7.459,1.331,-0.7465,-7.459,1.214,-0.9892,-7.459,-0.3022,0.0539,-8.009,-0.7805,0.6765,-8.009,0.0074,0.3221,-8.009,0.919,-0.5194,-8.009,0.8391,-0.6852,-8.009,-0.1219]);
+IndexedFaceSet148.coord = Coordinate149;
 
-HAnimJoint129.children = new MFNode();
+let TextureCoordinate150 = browser.currentScene.createNode("TextureCoordinate");
+TextureCoordinate150.point = new MFVec2f(new float[0.4222,0.6201,0.4327,0.6201,0.3884,0.6201,0.3987,0.6201,0.4103,0.6201,0.4213,0.6265,0.4321,0.6265,0.3894,0.6265,0.399,0.6265,0.4105,0.6265,0.4214,0.6413,0.4323,0.6413,0.389,0.6381,0.3992,0.6381,0.4103,0.6413,0.4213,0.6705,0.4336,0.6705,0.3899,0.6705,0.3981,0.6705,0.4094,0.6705,0.4215,0.674,0.4346,0.674,0.3899,0.674,0.398,0.674,0.4083,0.674,0.3787,0.6201,0.3682,0.6201,0.3787,0.6201,0.3782,0.6265,0.3782,0.6265,0.3783,0.6413,0.3783,0.6413,0.3796,0.6705,0.3676,0.674,0.3806,0.674,0.3796,0.6705,0.3806,0.674]);
+IndexedFaceSet148.texCoord = TextureCoordinate150;
 
-HAnimJoint129.children[0] = HAnimSegment130;
+Shape144.geometry = IndexedFaceSet148;
 
-let HAnimJoint139 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint139.DEF = "hanim_l_elbow";
-HAnimJoint139.name = "l_elbow";
-HAnimJoint139.center = new SFVec3f(new float[6.823,36.08,0.08607]);
-let HAnimSegment140 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment140.DEF = "hanim_l_forearm";
-HAnimSegment140.name = "l_forearm";
-let Transform141 = browser.currentScene.createNode("Transform");
-Transform141.translation = new SFVec3f(new float[6.823,36.08,0.08607]);
-let Shape142 = browser.currentScene.createNode("Shape");
-let Appearance143 = browser.currentScene.createNode("Appearance");
-let Material144 = browser.currentScene.createNode("Material");
-Material144.diffuseColor = new SFColor(new float[0.588,0.588,0.588]);
-Appearance143.material = Material144;
+Transform143.child = new undefined();
 
-let ImageTexture145 = browser.currentScene.createNode("ImageTexture");
-ImageTexture145.USE = "YoungTextureAtlas";
-Appearance143.texture = ImageTexture145;
+Transform143.child[0] = Shape144;
 
-Shape142.appearance = Appearance143;
+HAnimSegment142.children = new MFNode();
 
-let IndexedFaceSet146 = browser.currentScene.createNode("IndexedFaceSet");
-IndexedFaceSet146.creaseAngle = 1.57;
-IndexedFaceSet146.texCoordIndex = new MFInt32(new int[3,2,25,-1,3,25,26,-1,4,3,26,-1,0,1,6,-1,6,5,0,-1,27,2,7,-1,7,28,27,-1,2,3,8,-1,8,7,2,-1,3,4,9,-1,9,8,3,-1,4,0,5,-1,5,9,4,-1,5,6,11,-1,11,10,5,-1,29,7,12,-1,12,30,29,-1,7,8,13,-1,13,12,7,-1,8,9,14,-1,14,13,8,-1,9,5,10,-1,10,14,9,-1,10,11,16,-1,16,15,10,-1,31,12,17,-1,17,32,31,-1,12,13,18,-1,18,17,12,-1,13,14,19,-1,19,18,13,-1,14,10,15,-1,15,19,14,-1,34,22,23,-1,33,34,23,-1,24,33,23,-1,21,20,15,-1,15,16,21,-1,22,36,35,-1,35,17,22,-1,23,22,17,-1,17,18,23,-1,24,23,18,-1,18,19,24,-1,20,24,19,-1,19,15,20,-1]);
-IndexedFaceSet146.coordIndex = new MFInt32(new int[3,2,1,-1,3,1,0,-1,4,3,0,-1,0,1,6,-1,6,5,0,-1,1,2,7,-1,7,6,1,-1,2,3,8,-1,8,7,2,-1,3,4,9,-1,9,8,3,-1,4,0,5,-1,5,9,4,-1,5,6,11,-1,11,10,5,-1,6,7,12,-1,12,11,6,-1,7,8,13,-1,13,12,7,-1,8,9,14,-1,14,13,8,-1,9,5,10,-1,10,14,9,-1,10,11,16,-1,16,15,10,-1,11,12,17,-1,17,16,11,-1,12,13,18,-1,18,17,12,-1,13,14,19,-1,19,18,13,-1,14,10,15,-1,15,19,14,-1,21,22,23,-1,20,21,23,-1,24,20,23,-1,21,20,15,-1,15,16,21,-1,22,21,16,-1,16,17,22,-1,23,22,17,-1,17,18,23,-1,24,23,18,-1,18,19,24,-1,20,24,19,-1,19,15,20,-1]);
-let TextureCoordinate147 = browser.currentScene.createNode("TextureCoordinate");
-TextureCoordinate147.point = new MFVec2f(new float[0.4222,0.6201,0.4327,0.6201,0.3884,0.6201,0.3987,0.6201,0.4103,0.6201,0.4213,0.6265,0.4321,0.6265,0.3894,0.6265,0.399,0.6265,0.4105,0.6265,0.4214,0.6413,0.4323,0.6413,0.389,0.6381,0.3992,0.6381,0.4103,0.6413,0.4213,0.6705,0.4336,0.6705,0.3899,0.6705,0.3981,0.6705,0.4094,0.6705,0.4215,0.674,0.4346,0.674,0.3899,0.674,0.398,0.674,0.4083,0.674,0.3787,0.6201,0.3682,0.6201,0.3787,0.6201,0.3782,0.6265,0.3782,0.6265,0.3783,0.6413,0.3783,0.6413,0.3796,0.6705,0.3676,0.674,0.3806,0.674,0.3796,0.6705,0.3806,0.674]);
-IndexedFaceSet146.texCoord = TextureCoordinate147;
+HAnimSegment142.children[0] = Transform143;
 
-let Coordinate148 = browser.currentScene.createNode("Coordinate");
-Coordinate148.point = new MFVec3f(new float[0.1597,0.4908,-1.015,0.9881,0.4908,-0.2281,0.5166,0.4908,0.9165,-0.6033,0.4908,0.8366,-0.8239,0.4908,-0.3574,0.1063,-0.5229,-1.433,1.277,-0.5229,-0.3764,0.6107,-0.5229,1.433,-0.972,-0.5229,1.306,-1.284,-0.5229,-0.5807,0.117,-2.864,-1.416,1.367,-2.864,-0.3724,0.6839,-2.352,1.419,-1.006,-2.352,1.294,-1.367,-2.864,-0.5747,0.0931,-7.459,-1.267,1.005,-7.459,-0.1128,0.4859,-7.459,1.331,-0.7465,-7.459,1.214,-0.9892,-7.459,-0.3022,0.0539,-8.009,-0.7805,0.6765,-8.009,0.0074,0.3221,-8.009,0.919,-0.5194,-8.009,0.8391,-0.6852,-8.009,-0.1219]);
-IndexedFaceSet146.coord = Coordinate148;
+HAnimJoint141.children = new MFNode();
 
-Shape142.geometry = IndexedFaceSet146;
+HAnimJoint141.children[0] = HAnimSegment142;
 
-Transform141.child = new undefined();
+let HAnimJoint151 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint151.name = "l_radiocarpal";
+HAnimJoint151.DEF = "hanim_l_radiocarpal";
+HAnimJoint151.center = new SFVec3f(new float[6.915,28.41,0.3752]);
+HAnimJoint151.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint151.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment152 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment152.name = "l_carpal";
+HAnimSegment152.DEF = "hanim_l_carpal";
+let Transform153 = browser.currentScene.createNode("Transform");
+Transform153.translation = new SFVec3f(new float[6.915,28.41,0.3752]);
+let Shape154 = browser.currentScene.createNode("Shape");
+let Appearance155 = browser.currentScene.createNode("Appearance");
+let Material156 = browser.currentScene.createNode("Material");
+Material156.diffuseColor = new SFColor(new float[0.588,0.588,0.588]);
+Appearance155.material = Material156;
 
-Transform141.child[0] = Shape142;
+let ImageTexture157 = browser.currentScene.createNode("ImageTexture");
+ImageTexture157.USE = "YoungTextureAtlas";
+Appearance155.texture = ImageTexture157;
 
-HAnimSegment140.children = new MFNode();
+Shape154.appearance = Appearance155;
 
-HAnimSegment140.children[0] = Transform141;
+let IndexedFaceSet158 = browser.currentScene.createNode("IndexedFaceSet");
+IndexedFaceSet158.coordIndex = new MFInt32(new int[4,5,0,-1,0,2,4,-1,6,7,3,-1,3,1,6,-1,1,0,5,-1,5,6,1,-1,8,9,5,-1,5,4,8,-1,10,11,7,-1,7,6,10,-1,9,10,6,-1,6,5,9,-1,12,13,9,-1,9,8,12,-1,14,15,11,-1,11,10,14,-1,13,14,10,-1,10,9,13,-1,4,2,16,-1,2,3,7,-1,7,16,2,-1,17,19,18,-1,18,20,17,-1,21,16,7,-1,7,11,21,-1,8,21,12,-1,12,21,11,-1,11,15,12,-1,13,12,15,-1,15,14,13,-1,8,4,19,-1,19,17,8,-1,4,16,18,-1,18,19,4,-1,16,21,20,-1,20,18,16,-1,21,8,17,-1,17,20,21,-1,22,27,23,-1,26,25,24,-1]);
+IndexedFaceSet158.creaseAngle = 1.57;
+IndexedFaceSet158.texCoordIndex = new MFInt32(new int[4,6,5,-1,5,7,4,-1,2,3,1,-1,1,0,2,-1,14,16,15,-1,15,17,14,-1,8,9,6,-1,6,4,8,-1,38,40,39,-1,39,41,38,-1,18,19,36,-1,36,37,18,-1,10,11,9,-1,9,8,10,-1,42,43,40,-1,40,38,42,-1,20,21,19,-1,19,18,20,-1,22,24,23,-1,24,26,25,-1,25,23,24,-1,27,29,28,-1,28,30,27,-1,31,23,25,-1,25,32,31,-1,33,31,34,-1,34,31,32,-1,32,35,34,-1,20,34,35,-1,35,21,20,-1,8,4,12,-1,12,13,8,-1,22,23,28,-1,28,29,22,-1,23,31,30,-1,30,28,23,-1,31,33,27,-1,27,30,31,-1,14,24,26,-1,14,16,24,-1]);
+let Coordinate159 = browser.currentScene.createNode("Coordinate");
+Coordinate159.point = new MFVec3f(new float[0.6237,0.0984,0.703,0.5903,0.1133,-1.189,-1.101,0.02,0.7856,-1.108,0.0215,-1.131,-1.289,-0.5207,1.303,0.9805,-0.3349,1.224,0.9287,-0.3062,-1.753,-1.391,-0.5055,-1.749,-1.18,-2.202,2.123,1.263,-2.015,1.834,1.211,-1.986,-2.123,-1.505,-2.287,-1.981,-0.9466,-3.466,1.493,0.3369,-3.669,1.543,0.2851,-3.64,-1.826,-1.135,-3.477,-1.705,-1.385,-0.5072,-0.165,-1.903,-2.244,1.711,-2.187,-0.825,0.0512,-2.154,-0.8839,1.662,-1.908,-2.242,0.1214,-1.394,-2.282,-0.1776,0.5903,0.1133,-1.189,-1.108,0.0215,-1.131,-1.101,0.02,0.7856,0.6237,0.0984,0.703,0.5903,0.1133,-1.189,-1.101,0.02,0.7856]);
+IndexedFaceSet158.coord = Coordinate159;
 
-HAnimJoint139.children = new MFNode();
+let TextureCoordinate160 = browser.currentScene.createNode("TextureCoordinate");
+TextureCoordinate160.point = new MFVec2f(new float[0.8107,0.9924,0.8122,0.9033,0.7694,0.9912,0.7683,0.9026,0.1329,0.0347,0.0307,0.0051,0.0134,0.0353,0.1366,0.0058,0.1249,0.1081,0.0147,0.117,0.1349,0.1856,0.0462,0.1842,0.1559,0.0454,0.148,0.1033,0.3244,0.0096,0.1758,0.0039,0.1759,0.011,0.3241,0.0033,0.173,0.1764,0.3074,0.1757,0.1732,0.1519,0.3074,0.1513,0.1756,0.032,0.2159,0.0368,0.1791,0.0165,0.3169,0.0458,0.3158,0.0193,0.172,0.0594,0.2087,0.0476,0.1736,0.0504,0.2073,0.064,0.2362,0.0821,0.3267,0.0796,0.1717,0.0822,0.1726,0.1297,0.3077,0.1289,0.3074,0.1865,0.1742,0.184,0.0061,0.1086,0.1366,0.0368,0.1241,0.1189,0.0168,0.0309,0.0211,0.1882,0.14,0.1857]);
+IndexedFaceSet158.texCoord = TextureCoordinate160;
 
-HAnimJoint139.children[0] = HAnimSegment140;
+Shape154.geometry = IndexedFaceSet158;
 
-let HAnimJoint149 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint149.DEF = "hanim_l_radiocarpal";
-HAnimJoint149.name = "l_radiocarpal";
-HAnimJoint149.center = new SFVec3f(new float[6.915,28.41,0.3752]);
-let HAnimSegment150 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment150.DEF = "hanim_l_carpal";
-HAnimSegment150.name = "l_carpal";
-let Transform151 = browser.currentScene.createNode("Transform");
-Transform151.translation = new SFVec3f(new float[6.915,28.41,0.3752]);
-let Shape152 = browser.currentScene.createNode("Shape");
-let Appearance153 = browser.currentScene.createNode("Appearance");
-let Material154 = browser.currentScene.createNode("Material");
-Material154.diffuseColor = new SFColor(new float[0.588,0.588,0.588]);
-Appearance153.material = Material154;
+Transform153.child = new undefined();
 
-let ImageTexture155 = browser.currentScene.createNode("ImageTexture");
-ImageTexture155.USE = "YoungTextureAtlas";
-Appearance153.texture = ImageTexture155;
+Transform153.child[0] = Shape154;
 
-Shape152.appearance = Appearance153;
+HAnimSegment152.children = new MFNode();
 
-let IndexedFaceSet156 = browser.currentScene.createNode("IndexedFaceSet");
-IndexedFaceSet156.creaseAngle = 1.57;
-IndexedFaceSet156.texCoordIndex = new MFInt32(new int[4,6,5,-1,5,7,4,-1,2,3,1,-1,1,0,2,-1,14,16,15,-1,15,17,14,-1,8,9,6,-1,6,4,8,-1,38,40,39,-1,39,41,38,-1,18,19,36,-1,36,37,18,-1,10,11,9,-1,9,8,10,-1,42,43,40,-1,40,38,42,-1,20,21,19,-1,19,18,20,-1,22,24,23,-1,24,26,25,-1,25,23,24,-1,27,29,28,-1,28,30,27,-1,31,23,25,-1,25,32,31,-1,33,31,34,-1,34,31,32,-1,32,35,34,-1,20,34,35,-1,35,21,20,-1,8,4,12,-1,12,13,8,-1,22,23,28,-1,28,29,22,-1,23,31,30,-1,30,28,23,-1,31,33,27,-1,27,30,31,-1,14,24,26,-1,14,16,24,-1]);
-IndexedFaceSet156.coordIndex = new MFInt32(new int[4,5,0,-1,0,2,4,-1,6,7,3,-1,3,1,6,-1,1,0,5,-1,5,6,1,-1,8,9,5,-1,5,4,8,-1,10,11,7,-1,7,6,10,-1,9,10,6,-1,6,5,9,-1,12,13,9,-1,9,8,12,-1,14,15,11,-1,11,10,14,-1,13,14,10,-1,10,9,13,-1,4,2,16,-1,2,3,7,-1,7,16,2,-1,17,19,18,-1,18,20,17,-1,21,16,7,-1,7,11,21,-1,8,21,12,-1,12,21,11,-1,11,15,12,-1,13,12,15,-1,15,14,13,-1,8,4,19,-1,19,17,8,-1,4,16,18,-1,18,19,4,-1,16,21,20,-1,20,18,16,-1,21,8,17,-1,17,20,21,-1,22,27,23,-1,26,25,24,-1]);
-let TextureCoordinate157 = browser.currentScene.createNode("TextureCoordinate");
-TextureCoordinate157.point = new MFVec2f(new float[0.8107,0.9924,0.8122,0.9033,0.7694,0.9912,0.7683,0.9026,0.1329,0.0347,0.0307,0.0051,0.0134,0.0353,0.1366,0.0058,0.1249,0.1081,0.0147,0.117,0.1349,0.1856,0.0462,0.1842,0.1559,0.0454,0.148,0.1033,0.3244,0.0096,0.1758,0.0039,0.1759,0.011,0.3241,0.0033,0.173,0.1764,0.3074,0.1757,0.1732,0.1519,0.3074,0.1513,0.1756,0.032,0.2159,0.0368,0.1791,0.0165,0.3169,0.0458,0.3158,0.0193,0.172,0.0594,0.2087,0.0476,0.1736,0.0504,0.2073,0.064,0.2362,0.0821,0.3267,0.0796,0.1717,0.0822,0.1726,0.1297,0.3077,0.1289,0.3074,0.1865,0.1742,0.184,0.0061,0.1086,0.1366,0.0368,0.1241,0.1189,0.0168,0.0309,0.0211,0.1882,0.14,0.1857]);
-IndexedFaceSet156.texCoord = TextureCoordinate157;
+HAnimSegment152.children[0] = Transform153;
 
-let Coordinate158 = browser.currentScene.createNode("Coordinate");
-Coordinate158.point = new MFVec3f(new float[0.6237,0.0984,0.703,0.5903,0.1133,-1.189,-1.101,0.02,0.7856,-1.108,0.0215,-1.131,-1.289,-0.5207,1.303,0.9805,-0.3349,1.224,0.9287,-0.3062,-1.753,-1.391,-0.5055,-1.749,-1.18,-2.202,2.123,1.263,-2.015,1.834,1.211,-1.986,-2.123,-1.505,-2.287,-1.981,-0.9466,-3.466,1.493,0.3369,-3.669,1.543,0.2851,-3.64,-1.826,-1.135,-3.477,-1.705,-1.385,-0.5072,-0.165,-1.903,-2.244,1.711,-2.187,-0.825,0.0512,-2.154,-0.8839,1.662,-1.908,-2.242,0.1214,-1.394,-2.282,-0.1776,0.5903,0.1133,-1.189,-1.108,0.0215,-1.131,-1.101,0.02,0.7856,0.6237,0.0984,0.703,0.5903,0.1133,-1.189,-1.101,0.02,0.7856]);
-IndexedFaceSet156.coord = Coordinate158;
+HAnimJoint151.children = new MFNode();
 
-Shape152.geometry = IndexedFaceSet156;
+HAnimJoint151.children[0] = HAnimSegment152;
 
-Transform151.child = new undefined();
+HAnimJoint141.children[1] = HAnimJoint151;
 
-Transform151.child[0] = Shape152;
+HAnimJoint131.children[1] = HAnimJoint141;
 
-HAnimSegment150.children = new MFNode();
+HAnimJoint121.children[1] = HAnimJoint131;
 
-HAnimSegment150.children[0] = Transform151;
+let HAnimJoint161 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint161.name = "r_shoulder";
+HAnimJoint161.DEF = "hanim_r_shoulder";
+HAnimJoint161.center = new SFVec3f(new float[-5.441,45.830002,0.1786]);
+HAnimJoint161.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint161.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment162 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment162.name = "r_upperarm";
+HAnimSegment162.DEF = "hanim_r_upperarm";
+let Transform163 = browser.currentScene.createNode("Transform");
+Transform163.translation = new SFVec3f(new float[-5.441,45.830002,0.1786]);
+let Shape164 = browser.currentScene.createNode("Shape");
+let Appearance165 = browser.currentScene.createNode("Appearance");
+let Material166 = browser.currentScene.createNode("Material");
+Material166.diffuseColor = new SFColor(new float[0.588,0.588,0.588]);
+Appearance165.material = Material166;
 
-HAnimJoint149.children = new MFNode();
+let ImageTexture167 = browser.currentScene.createNode("ImageTexture");
+ImageTexture167.USE = "YoungTextureAtlas";
+Appearance165.texture = ImageTexture167;
 
-HAnimJoint149.children[0] = HAnimSegment150;
+Shape164.appearance = Appearance165;
 
-HAnimJoint139.children[1] = HAnimJoint149;
+let IndexedFaceSet168 = browser.currentScene.createNode("IndexedFaceSet");
+IndexedFaceSet168.coordIndex = new MFInt32(new int[0,1,2,-1,0,2,3,-1,4,0,3,-1,0,5,6,-1,6,1,0,-1,1,6,7,-1,7,2,1,-1,2,7,8,-1,8,3,2,-1,3,8,9,-1,9,4,3,-1,4,9,5,-1,5,0,4,-1,5,10,11,-1,11,6,5,-1,6,11,12,-1,12,7,6,-1,7,12,13,-1,13,8,7,-1,8,13,14,-1,14,9,8,-1,9,14,10,-1,10,5,9,-1,10,15,16,-1,16,11,10,-1,11,16,17,-1,17,12,11,-1,12,17,18,-1,18,13,12,-1,13,18,19,-1,19,14,13,-1,14,19,15,-1,15,10,14,-1,38,37,36,-1,38,36,35,-1,39,38,35,-1,21,16,15,-1,15,20,21,-1,22,17,16,-1,16,21,22,-1,23,18,17,-1,17,22,23,-1,24,19,18,-1,18,23,24,-1,20,15,19,-1,19,24,20,-1,26,21,20,-1,20,25,26,-1,27,22,21,-1,21,26,27,-1,28,23,22,-1,22,27,28,-1,29,24,23,-1,23,28,29,-1,25,20,24,-1,24,29,25,-1,31,26,25,-1,25,30,31,-1,32,27,26,-1,26,31,32,-1,33,28,27,-1,27,32,33,-1,34,29,28,-1,28,33,34,-1,30,25,29,-1,29,34,30,-1,36,31,30,-1,30,35,36,-1,37,32,31,-1,31,36,37,-1,38,33,32,-1,32,37,38,-1,39,34,33,-1,33,38,39,-1,35,30,34,-1,34,39,35,-1]);
+IndexedFaceSet168.creaseAngle = 1.57;
+IndexedFaceSet168.texCoordIndex = new MFInt32(new int[1,0,2,-1,1,2,3,-1,61,1,3,-1,1,6,5,-1,5,0,1,-1,0,5,7,-1,7,2,0,-1,2,7,8,-1,8,3,2,-1,25,26,9,-1,9,4,25,-1,4,9,6,-1,6,1,4,-1,6,11,10,-1,10,5,6,-1,5,10,12,-1,12,7,5,-1,7,12,13,-1,13,8,7,-1,27,28,14,-1,14,9,27,-1,9,14,11,-1,11,6,9,-1,11,16,15,-1,15,10,11,-1,10,15,17,-1,17,12,10,-1,12,17,18,-1,18,13,12,-1,29,30,19,-1,19,14,29,-1,14,19,16,-1,16,11,14,-1,36,35,54,-1,36,54,53,-1,37,36,53,-1,20,15,16,-1,16,21,20,-1,22,17,15,-1,15,20,22,-1,23,18,17,-1,17,22,23,-1,24,19,31,-1,31,32,24,-1,21,16,19,-1,19,24,21,-1,40,39,38,-1,38,41,40,-1,43,42,55,-1,55,56,43,-1,45,44,42,-1,42,43,45,-1,47,46,44,-1,44,45,47,-1,41,38,46,-1,46,47,41,-1,48,40,41,-1,41,49,48,-1,50,43,57,-1,57,58,50,-1,51,45,43,-1,43,50,51,-1,52,47,45,-1,45,51,52,-1,49,41,47,-1,47,52,49,-1,34,48,49,-1,49,33,34,-1,35,50,59,-1,59,60,35,-1,36,51,50,-1,50,35,36,-1,37,52,51,-1,51,36,37,-1,33,49,52,-1,52,37,33,-1]);
+let Coordinate169 = browser.currentScene.createNode("Coordinate");
+Coordinate169.point = new MFVec3f(new float[-1.592,1.817,-1.481,-2.611,1.817,0.0297,-1.489,1.817,1.466,0.2232,1.817,0.8423,0.1596,1.817,-0.9787,-1.794,0.7023,-2.036,-3.201,0.7023,0.0503,-1.652,0.7023,2.033,0.7128,0.7023,1.173,0.625,0.7023,-1.342,-1.794,-1.513,-2.036,-3.201,-1.513,0.0503,-1.652,-1.513,2.033,0.7128,-1.513,1.173,0.625,-1.513,-1.342,-1.836,-2.461,-2.153,-3.325,-2.461,0.0546,-1.686,-2.461,2.153,0.8158,-2.461,1.242,0.7229,-2.461,-1.419,-1.369,-0.8329,-1.709,-2.445,-0.8329,-0.4004,-1.888,-0.8329,1.436,-0.4682,-0.8329,1.262,-0.1476,-0.8329,-0.6818,-1.431,-5.952,-1.383,-2.548,-5.952,-0.3332,-1.97,-5.952,1.14,-0.495,-5.952,1,-0.162,-5.952,-0.5588,-1.466,-9.522,-1.332,-2.541,-9.522,-0.3218,-1.985,-9.522,1.096,-0.565,-9.522,0.9618,-0.2445,-9.522,-0.539,-1.422,-10.01,-0.792,-2.053,-10.01,-0.1998,-1.726,-10.01,0.6312,-0.8942,-10.01,0.5525,-0.7063,-10.01,-0.3271]);
+IndexedFaceSet168.coord = Coordinate169;
 
-HAnimJoint129.children[1] = HAnimJoint139;
+let TextureCoordinate170 = browser.currentScene.createNode("TextureCoordinate");
+TextureCoordinate170.point = new MFVec2f(new float[0.2986,0.2114,0.2726,0.2114,0.3201,0.2114,0.3415,0.2114,0.2466,0.2114,0.2979,0.2417,0.2726,0.2417,0.3197,0.2417,0.3418,0.2417,0.2473,0.2417,0.2979,0.3018,0.2726,0.3018,0.3197,0.3018,0.3418,0.3018,0.2473,0.3018,0.2978,0.3276,0.2726,0.3276,0.3197,0.3276,0.3419,0.3276,0.2474,0.3276,0.2932,0.2834,0.2689,0.2834,0.316,0.2834,0.3322,0.2834,0.245,0.2834,0.2251,0.2114,0.2255,0.2417,0.2255,0.2417,0.2255,0.3018,0.2255,0.3018,0.2255,0.3276,0.2255,0.3276,0.2159,0.2834,0.4315,0.6736,0.442,0.6736,0.3947,0.6736,0.4041,0.6736,0.418,0.6736,0.4296,0.6167,0.4409,0.6167,0.4415,0.6485,0.4303,0.6485,0.3965,0.6167,0.3953,0.6485,0.4047,0.6167,0.4053,0.6485,0.4189,0.6167,0.418,0.6485,0.4415,0.6706,0.4306,0.6706,0.395,0.6706,0.4051,0.6706,0.4182,0.6706,0.3746,0.6736,0.3851,0.6736,0.384,0.6167,0.3845,0.6485,0.3845,0.6485,0.3846,0.6706,0.3846,0.6706,0.3851,0.6736,0.3481,0.2114]);
+IndexedFaceSet168.texCoord = TextureCoordinate170;
 
-HAnimJoint119.children[1] = HAnimJoint129;
+Shape164.geometry = IndexedFaceSet168;
 
-let HAnimJoint159 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint159.DEF = "hanim_r_shoulder";
-HAnimJoint159.name = "r_shoulder";
-HAnimJoint159.center = new SFVec3f(new float[-5.441,45.83,0.1786]);
-let HAnimSegment160 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment160.DEF = "hanim_r_upperarm";
-HAnimSegment160.name = "r_upperarm";
-let Transform161 = browser.currentScene.createNode("Transform");
-Transform161.translation = new SFVec3f(new float[-5.441,45.83,0.1786]);
-let Shape162 = browser.currentScene.createNode("Shape");
-let Appearance163 = browser.currentScene.createNode("Appearance");
-let Material164 = browser.currentScene.createNode("Material");
-Material164.diffuseColor = new SFColor(new float[0.588,0.588,0.588]);
-Appearance163.material = Material164;
+Transform163.child = new undefined();
 
-let ImageTexture165 = browser.currentScene.createNode("ImageTexture");
-ImageTexture165.USE = "YoungTextureAtlas";
-Appearance163.texture = ImageTexture165;
+Transform163.child[0] = Shape164;
 
-Shape162.appearance = Appearance163;
+HAnimSegment162.children = new MFNode();
 
-let IndexedFaceSet166 = browser.currentScene.createNode("IndexedFaceSet");
-IndexedFaceSet166.creaseAngle = 1.57;
-IndexedFaceSet166.texCoordIndex = new MFInt32(new int[1,0,2,-1,1,2,3,-1,61,1,3,-1,1,6,5,-1,5,0,1,-1,0,5,7,-1,7,2,0,-1,2,7,8,-1,8,3,2,-1,25,26,9,-1,9,4,25,-1,4,9,6,-1,6,1,4,-1,6,11,10,-1,10,5,6,-1,5,10,12,-1,12,7,5,-1,7,12,13,-1,13,8,7,-1,27,28,14,-1,14,9,27,-1,9,14,11,-1,11,6,9,-1,11,16,15,-1,15,10,11,-1,10,15,17,-1,17,12,10,-1,12,17,18,-1,18,13,12,-1,29,30,19,-1,19,14,29,-1,14,19,16,-1,16,11,14,-1,36,35,54,-1,36,54,53,-1,37,36,53,-1,20,15,16,-1,16,21,20,-1,22,17,15,-1,15,20,22,-1,23,18,17,-1,17,22,23,-1,24,19,31,-1,31,32,24,-1,21,16,19,-1,19,24,21,-1,40,39,38,-1,38,41,40,-1,43,42,55,-1,55,56,43,-1,45,44,42,-1,42,43,45,-1,47,46,44,-1,44,45,47,-1,41,38,46,-1,46,47,41,-1,48,40,41,-1,41,49,48,-1,50,43,57,-1,57,58,50,-1,51,45,43,-1,43,50,51,-1,52,47,45,-1,45,51,52,-1,49,41,47,-1,47,52,49,-1,34,48,49,-1,49,33,34,-1,35,50,59,-1,59,60,35,-1,36,51,50,-1,50,35,36,-1,37,52,51,-1,51,36,37,-1,33,49,52,-1,52,37,33,-1]);
-IndexedFaceSet166.coordIndex = new MFInt32(new int[0,1,2,-1,0,2,3,-1,4,0,3,-1,0,5,6,-1,6,1,0,-1,1,6,7,-1,7,2,1,-1,2,7,8,-1,8,3,2,-1,3,8,9,-1,9,4,3,-1,4,9,5,-1,5,0,4,-1,5,10,11,-1,11,6,5,-1,6,11,12,-1,12,7,6,-1,7,12,13,-1,13,8,7,-1,8,13,14,-1,14,9,8,-1,9,14,10,-1,10,5,9,-1,10,15,16,-1,16,11,10,-1,11,16,17,-1,17,12,11,-1,12,17,18,-1,18,13,12,-1,13,18,19,-1,19,14,13,-1,14,19,15,-1,15,10,14,-1,38,37,36,-1,38,36,35,-1,39,38,35,-1,21,16,15,-1,15,20,21,-1,22,17,16,-1,16,21,22,-1,23,18,17,-1,17,22,23,-1,24,19,18,-1,18,23,24,-1,20,15,19,-1,19,24,20,-1,26,21,20,-1,20,25,26,-1,27,22,21,-1,21,26,27,-1,28,23,22,-1,22,27,28,-1,29,24,23,-1,23,28,29,-1,25,20,24,-1,24,29,25,-1,31,26,25,-1,25,30,31,-1,32,27,26,-1,26,31,32,-1,33,28,27,-1,27,32,33,-1,34,29,28,-1,28,33,34,-1,30,25,29,-1,29,34,30,-1,36,31,30,-1,30,35,36,-1,37,32,31,-1,31,36,37,-1,38,33,32,-1,32,37,38,-1,39,34,33,-1,33,38,39,-1,35,30,34,-1,34,39,35,-1]);
-let TextureCoordinate167 = browser.currentScene.createNode("TextureCoordinate");
-TextureCoordinate167.point = new MFVec2f(new float[0.2986,0.2114,0.2726,0.2114,0.3201,0.2114,0.3415,0.2114,0.2466,0.2114,0.2979,0.2417,0.2726,0.2417,0.3197,0.2417,0.3418,0.2417,0.2473,0.2417,0.2979,0.3018,0.2726,0.3018,0.3197,0.3018,0.3418,0.3018,0.2473,0.3018,0.2978,0.3276,0.2726,0.3276,0.3197,0.3276,0.3419,0.3276,0.2474,0.3276,0.2932,0.2834,0.2689,0.2834,0.316,0.2834,0.3322,0.2834,0.245,0.2834,0.2251,0.2114,0.2255,0.2417,0.2255,0.2417,0.2255,0.3018,0.2255,0.3018,0.2255,0.3276,0.2255,0.3276,0.2159,0.2834,0.4315,0.6736,0.442,0.6736,0.3947,0.6736,0.4041,0.6736,0.418,0.6736,0.4296,0.6167,0.4409,0.6167,0.4415,0.6485,0.4303,0.6485,0.3965,0.6167,0.3953,0.6485,0.4047,0.6167,0.4053,0.6485,0.4189,0.6167,0.418,0.6485,0.4415,0.6706,0.4306,0.6706,0.395,0.6706,0.4051,0.6706,0.4182,0.6706,0.3746,0.6736,0.3851,0.6736,0.384,0.6167,0.3845,0.6485,0.3845,0.6485,0.3846,0.6706,0.3846,0.6706,0.3851,0.6736,0.3481,0.2114]);
-IndexedFaceSet166.texCoord = TextureCoordinate167;
+HAnimSegment162.children[0] = Transform163;
 
-let Coordinate168 = browser.currentScene.createNode("Coordinate");
-Coordinate168.point = new MFVec3f(new float[-1.592,1.817,-1.481,-2.611,1.817,0.0297,-1.489,1.817,1.466,0.2232,1.817,0.8423,0.1596,1.817,-0.9787,-1.794,0.7023,-2.036,-3.201,0.7023,0.0503,-1.652,0.7023,2.033,0.7128,0.7023,1.173,0.625,0.7023,-1.342,-1.794,-1.513,-2.036,-3.201,-1.513,0.0503,-1.652,-1.513,2.033,0.7128,-1.513,1.173,0.625,-1.513,-1.342,-1.836,-2.461,-2.153,-3.325,-2.461,0.0546,-1.686,-2.461,2.153,0.8158,-2.461,1.242,0.7229,-2.461,-1.419,-1.369,-0.8329,-1.709,-2.445,-0.8329,-0.4004,-1.888,-0.8329,1.436,-0.4682,-0.8329,1.262,-0.1476,-0.8329,-0.6818,-1.431,-5.952,-1.383,-2.548,-5.952,-0.3332,-1.97,-5.952,1.14,-0.495,-5.952,1,-0.162,-5.952,-0.5588,-1.466,-9.522,-1.332,-2.541,-9.522,-0.3218,-1.985,-9.522,1.096,-0.565,-9.522,0.9618,-0.2445,-9.522,-0.539,-1.422,-10.01,-0.792,-2.053,-10.01,-0.1998,-1.726,-10.01,0.6312,-0.8942,-10.01,0.5525,-0.7063,-10.01,-0.3271]);
-IndexedFaceSet166.coord = Coordinate168;
+HAnimJoint161.children = new MFNode();
 
-Shape162.geometry = IndexedFaceSet166;
+HAnimJoint161.children[0] = HAnimSegment162;
 
-Transform161.child = new undefined();
+let HAnimJoint171 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint171.name = "r_elbow";
+HAnimJoint171.DEF = "hanim_r_elbow";
+HAnimJoint171.center = new SFVec3f(new float[-6.823,36.080002,0.08607]);
+HAnimJoint171.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint171.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment172 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment172.name = "r_forearm";
+HAnimSegment172.DEF = "hanim_r_forearm";
+let Transform173 = browser.currentScene.createNode("Transform");
+Transform173.translation = new SFVec3f(new float[-6.823,36.080002,0.08607]);
+let Shape174 = browser.currentScene.createNode("Shape");
+let Appearance175 = browser.currentScene.createNode("Appearance");
+let Material176 = browser.currentScene.createNode("Material");
+Material176.diffuseColor = new SFColor(new float[0.588,0.588,0.588]);
+Appearance175.material = Material176;
 
-Transform161.child[0] = Shape162;
+let ImageTexture177 = browser.currentScene.createNode("ImageTexture");
+ImageTexture177.USE = "YoungTextureAtlas";
+Appearance175.texture = ImageTexture177;
 
-HAnimSegment160.children = new MFNode();
+Shape174.appearance = Appearance175;
 
-HAnimSegment160.children[0] = Transform161;
+let IndexedFaceSet178 = browser.currentScene.createNode("IndexedFaceSet");
+IndexedFaceSet178.coordIndex = new MFInt32(new int[1,2,3,-1,0,1,3,-1,4,0,3,-1,0,5,6,-1,6,1,0,-1,1,6,7,-1,7,2,1,-1,2,7,8,-1,8,3,2,-1,3,8,9,-1,9,4,3,-1,4,9,5,-1,5,0,4,-1,5,10,11,-1,11,6,5,-1,6,11,12,-1,12,7,6,-1,7,12,13,-1,13,8,7,-1,8,13,14,-1,14,9,8,-1,9,14,10,-1,10,5,9,-1,10,15,16,-1,16,11,10,-1,11,16,17,-1,17,12,11,-1,12,17,18,-1,18,13,12,-1,13,18,19,-1,19,14,13,-1,14,19,15,-1,15,10,14,-1,23,22,21,-1,23,21,20,-1,24,23,20,-1,21,16,15,-1,15,20,21,-1,22,17,16,-1,16,21,22,-1,23,18,17,-1,17,22,23,-1,24,19,18,-1,18,23,24,-1,20,15,19,-1,19,24,20,-1]);
+IndexedFaceSet178.creaseAngle = 1.57;
+IndexedFaceSet178.texCoordIndex = new MFInt32(new int[25,2,3,-1,26,25,3,-1,4,26,3,-1,0,5,6,-1,6,1,0,-1,27,28,7,-1,7,2,27,-1,2,7,8,-1,8,3,2,-1,3,8,9,-1,9,4,3,-1,4,9,5,-1,5,0,4,-1,5,10,11,-1,11,6,5,-1,29,30,12,-1,12,7,29,-1,7,12,13,-1,13,8,7,-1,8,13,14,-1,14,9,8,-1,9,14,10,-1,10,5,9,-1,10,15,16,-1,16,11,10,-1,31,32,17,-1,17,12,31,-1,12,17,18,-1,18,13,12,-1,13,18,19,-1,19,14,13,-1,14,19,15,-1,15,10,14,-1,23,22,34,-1,23,34,33,-1,24,23,33,-1,21,16,15,-1,15,20,21,-1,22,17,35,-1,35,36,22,-1,23,18,17,-1,17,22,23,-1,24,19,18,-1,18,23,24,-1,20,15,19,-1,19,24,20,-1]);
+let Coordinate179 = browser.currentScene.createNode("Coordinate");
+Coordinate179.point = new MFVec3f(new float[-0.1597,0.4908,-1.015,-0.9881,0.4908,-0.2281,-0.5166,0.4908,0.9165,0.6033,0.4908,0.8366,0.8239,0.4908,-0.3574,-0.1063,-0.5229,-1.433,-1.277,-0.5229,-0.3764,-0.6107,-0.5229,1.433,0.972,-0.5229,1.306,1.284,-0.5229,-0.5807,-0.117,-2.864,-1.416,-1.367,-2.864,-0.3724,-0.6839,-2.352,1.419,1.006,-2.352,1.294,1.367,-2.864,-0.5747,-0.0931,-7.459,-1.267,-1.005,-7.459,-0.1128,-0.4859,-7.459,1.331,0.7465,-7.459,1.214,0.9892,-7.459,-0.3022,-0.054,-8.009,-0.7805,-0.6765,-8.009,0.0074,-0.3221,-8.009,0.919,0.5194,-8.009,0.8391,0.6852,-8.009,-0.1219]);
+IndexedFaceSet178.coord = Coordinate179;
 
-HAnimJoint159.children = new MFNode();
+let TextureCoordinate180 = browser.currentScene.createNode("TextureCoordinate");
+TextureCoordinate180.point = new MFVec2f(new float[0.4222,0.6201,0.4327,0.6201,0.3884,0.6201,0.3987,0.6201,0.4103,0.6201,0.4213,0.6265,0.4321,0.6265,0.3894,0.6265,0.399,0.6265,0.4105,0.6265,0.4214,0.6413,0.4323,0.6413,0.389,0.6381,0.3992,0.6381,0.4103,0.6413,0.4213,0.6705,0.4336,0.6705,0.3899,0.6705,0.3981,0.6705,0.4094,0.6705,0.4215,0.674,0.4346,0.674,0.3899,0.674,0.398,0.674,0.4083,0.674,0.3787,0.6201,0.3682,0.6201,0.3787,0.6201,0.3782,0.6265,0.3782,0.6265,0.3783,0.6413,0.3783,0.6413,0.3796,0.6705,0.3676,0.674,0.3806,0.674,0.3796,0.6705,0.3806,0.674]);
+IndexedFaceSet178.texCoord = TextureCoordinate180;
 
-HAnimJoint159.children[0] = HAnimSegment160;
+Shape174.geometry = IndexedFaceSet178;
 
-let HAnimJoint169 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint169.DEF = "hanim_r_elbow";
-HAnimJoint169.name = "r_elbow";
-HAnimJoint169.center = new SFVec3f(new float[-6.823,36.08,0.08607]);
-let HAnimSegment170 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment170.DEF = "hanim_r_forearm";
-HAnimSegment170.name = "r_forearm";
-let Transform171 = browser.currentScene.createNode("Transform");
-Transform171.translation = new SFVec3f(new float[-6.823,36.08,0.08607]);
-let Shape172 = browser.currentScene.createNode("Shape");
-let Appearance173 = browser.currentScene.createNode("Appearance");
-let Material174 = browser.currentScene.createNode("Material");
-Material174.diffuseColor = new SFColor(new float[0.588,0.588,0.588]);
-Appearance173.material = Material174;
+Transform173.child = new undefined();
 
-let ImageTexture175 = browser.currentScene.createNode("ImageTexture");
-ImageTexture175.USE = "YoungTextureAtlas";
-Appearance173.texture = ImageTexture175;
+Transform173.child[0] = Shape174;
 
-Shape172.appearance = Appearance173;
+HAnimSegment172.children = new MFNode();
 
-let IndexedFaceSet176 = browser.currentScene.createNode("IndexedFaceSet");
-IndexedFaceSet176.creaseAngle = 1.57;
-IndexedFaceSet176.texCoordIndex = new MFInt32(new int[25,2,3,-1,26,25,3,-1,4,26,3,-1,0,5,6,-1,6,1,0,-1,27,28,7,-1,7,2,27,-1,2,7,8,-1,8,3,2,-1,3,8,9,-1,9,4,3,-1,4,9,5,-1,5,0,4,-1,5,10,11,-1,11,6,5,-1,29,30,12,-1,12,7,29,-1,7,12,13,-1,13,8,7,-1,8,13,14,-1,14,9,8,-1,9,14,10,-1,10,5,9,-1,10,15,16,-1,16,11,10,-1,31,32,17,-1,17,12,31,-1,12,17,18,-1,18,13,12,-1,13,18,19,-1,19,14,13,-1,14,19,15,-1,15,10,14,-1,23,22,34,-1,23,34,33,-1,24,23,33,-1,21,16,15,-1,15,20,21,-1,22,17,35,-1,35,36,22,-1,23,18,17,-1,17,22,23,-1,24,19,18,-1,18,23,24,-1,20,15,19,-1,19,24,20,-1]);
-IndexedFaceSet176.coordIndex = new MFInt32(new int[1,2,3,-1,0,1,3,-1,4,0,3,-1,0,5,6,-1,6,1,0,-1,1,6,7,-1,7,2,1,-1,2,7,8,-1,8,3,2,-1,3,8,9,-1,9,4,3,-1,4,9,5,-1,5,0,4,-1,5,10,11,-1,11,6,5,-1,6,11,12,-1,12,7,6,-1,7,12,13,-1,13,8,7,-1,8,13,14,-1,14,9,8,-1,9,14,10,-1,10,5,9,-1,10,15,16,-1,16,11,10,-1,11,16,17,-1,17,12,11,-1,12,17,18,-1,18,13,12,-1,13,18,19,-1,19,14,13,-1,14,19,15,-1,15,10,14,-1,23,22,21,-1,23,21,20,-1,24,23,20,-1,21,16,15,-1,15,20,21,-1,22,17,16,-1,16,21,22,-1,23,18,17,-1,17,22,23,-1,24,19,18,-1,18,23,24,-1,20,15,19,-1,19,24,20,-1]);
-let TextureCoordinate177 = browser.currentScene.createNode("TextureCoordinate");
-TextureCoordinate177.point = new MFVec2f(new float[0.4222,0.6201,0.4327,0.6201,0.3884,0.6201,0.3987,0.6201,0.4103,0.6201,0.4213,0.6265,0.4321,0.6265,0.3894,0.6265,0.399,0.6265,0.4105,0.6265,0.4214,0.6413,0.4323,0.6413,0.389,0.6381,0.3992,0.6381,0.4103,0.6413,0.4213,0.6705,0.4336,0.6705,0.3899,0.6705,0.3981,0.6705,0.4094,0.6705,0.4215,0.674,0.4346,0.674,0.3899,0.674,0.398,0.674,0.4083,0.674,0.3787,0.6201,0.3682,0.6201,0.3787,0.6201,0.3782,0.6265,0.3782,0.6265,0.3783,0.6413,0.3783,0.6413,0.3796,0.6705,0.3676,0.674,0.3806,0.674,0.3796,0.6705,0.3806,0.674]);
-IndexedFaceSet176.texCoord = TextureCoordinate177;
+HAnimSegment172.children[0] = Transform173;
 
-let Coordinate178 = browser.currentScene.createNode("Coordinate");
-Coordinate178.point = new MFVec3f(new float[-0.1597,0.4908,-1.015,-0.9881,0.4908,-0.2281,-0.5166,0.4908,0.9165,0.6033,0.4908,0.8366,0.8239,0.4908,-0.3574,-0.1063,-0.5229,-1.433,-1.277,-0.5229,-0.3764,-0.6107,-0.5229,1.433,0.972,-0.5229,1.306,1.284,-0.5229,-0.5807,-0.117,-2.864,-1.416,-1.367,-2.864,-0.3724,-0.6839,-2.352,1.419,1.006,-2.352,1.294,1.367,-2.864,-0.5747,-0.0931,-7.459,-1.267,-1.005,-7.459,-0.1128,-0.4859,-7.459,1.331,0.7465,-7.459,1.214,0.9892,-7.459,-0.3022,-0.054,-8.009,-0.7805,-0.6765,-8.009,0.0074,-0.3221,-8.009,0.919,0.5194,-8.009,0.8391,0.6852,-8.009,-0.1219]);
-IndexedFaceSet176.coord = Coordinate178;
+HAnimJoint171.children = new MFNode();
 
-Shape172.geometry = IndexedFaceSet176;
+HAnimJoint171.children[0] = HAnimSegment172;
 
-Transform171.child = new undefined();
+let HAnimJoint181 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint181.name = "r_radiocarpal";
+HAnimJoint181.DEF = "hanim_r_radiocarpal";
+HAnimJoint181.center = new SFVec3f(new float[-6.915,28.41,0.3752]);
+HAnimJoint181.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint181.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment182 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment182.name = "r_carpal";
+HAnimSegment182.DEF = "hanim_r_carpal";
+let Transform183 = browser.currentScene.createNode("Transform");
+Transform183.translation = new SFVec3f(new float[-6.915,28.41,0.3752]);
+let Shape184 = browser.currentScene.createNode("Shape");
+let Appearance185 = browser.currentScene.createNode("Appearance");
+let Material186 = browser.currentScene.createNode("Material");
+Material186.diffuseColor = new SFColor(new float[0.588,0.588,0.588]);
+Appearance185.material = Material186;
 
-Transform171.child[0] = Shape172;
+let ImageTexture187 = browser.currentScene.createNode("ImageTexture");
+ImageTexture187.USE = "YoungTextureAtlas";
+Appearance185.texture = ImageTexture187;
 
-HAnimSegment170.children = new MFNode();
+Shape184.appearance = Appearance185;
 
-HAnimSegment170.children[0] = Transform171;
+let IndexedFaceSet188 = browser.currentScene.createNode("IndexedFaceSet");
+IndexedFaceSet188.coordIndex = new MFInt32(new int[4,2,0,-1,0,5,4,-1,6,1,3,-1,3,7,6,-1,1,6,5,-1,5,0,1,-1,8,4,5,-1,5,9,8,-1,10,6,7,-1,7,11,10,-1,9,5,6,-1,6,10,9,-1,12,8,9,-1,9,13,12,-1,14,10,11,-1,11,15,14,-1,13,9,10,-1,10,14,13,-1,4,16,2,-1,2,16,7,-1,7,3,2,-1,17,20,18,-1,18,19,17,-1,21,11,7,-1,7,16,21,-1,8,12,21,-1,12,15,11,-1,11,21,12,-1,13,14,15,-1,15,12,13,-1,8,17,19,-1,19,4,8,-1,4,19,18,-1,18,16,4,-1,16,18,20,-1,20,21,16,-1,21,20,17,-1,17,8,21,-1,22,23,27,-1,26,24,25,-1]);
+IndexedFaceSet188.creaseAngle = 1.57;
+IndexedFaceSet188.texCoordIndex = new MFInt32(new int[4,7,5,-1,5,6,4,-1,2,0,1,-1,1,3,2,-1,14,17,15,-1,15,16,14,-1,8,4,6,-1,6,9,8,-1,38,41,39,-1,39,40,38,-1,18,37,36,-1,36,19,18,-1,10,8,9,-1,9,11,10,-1,42,38,40,-1,40,43,42,-1,20,18,19,-1,19,21,20,-1,22,23,24,-1,24,23,25,-1,25,26,24,-1,27,30,28,-1,28,29,27,-1,31,32,25,-1,25,23,31,-1,33,34,31,-1,34,35,32,-1,32,31,34,-1,20,21,35,-1,35,34,20,-1,8,13,12,-1,12,4,8,-1,22,29,28,-1,28,23,22,-1,23,28,30,-1,30,31,23,-1,31,30,27,-1,27,33,31,-1,14,26,24,-1,14,24,16,-1]);
+let Coordinate189 = browser.currentScene.createNode("Coordinate");
+Coordinate189.point = new MFVec3f(new float[-0.6237,0.0984,0.703,-0.5903,0.1133,-1.189,1.101,0.02,0.7856,1.108,0.0215,-1.131,1.289,-0.5207,1.303,-0.9805,-0.3349,1.224,-0.9287,-0.3062,-1.753,1.391,-0.5055,-1.749,1.18,-2.202,2.123,-1.263,-2.015,1.834,-1.211,-1.986,-2.123,1.505,-2.287,-1.981,0.9466,-3.466,1.493,-0.3369,-3.669,1.543,-0.2851,-3.64,-1.826,1.135,-3.477,-1.705,1.385,-0.5072,-0.165,1.903,-2.244,1.711,2.187,-0.825,0.0512,2.154,-0.8839,1.662,1.908,-2.242,0.1214,1.394,-2.282,-0.1776,-0.5903,0.1133,-1.189,1.108,0.0215,-1.131,1.101,0.02,0.7856,-0.6237,0.0984,0.703,-0.5903,0.1133,-1.189,1.101,0.02,0.7856]);
+IndexedFaceSet188.coord = Coordinate189;
 
-HAnimJoint169.children = new MFNode();
+let TextureCoordinate190 = browser.currentScene.createNode("TextureCoordinate");
+TextureCoordinate190.point = new MFVec2f(new float[0.8107,0.9924,0.8122,0.9033,0.7694,0.9912,0.7683,0.9026,0.1329,0.0347,0.0307,0.0051,0.0134,0.0353,0.1366,0.0058,0.1249,0.1081,0.0147,0.117,0.1349,0.1856,0.0462,0.1842,0.1559,0.0454,0.148,0.1033,0.3244,0.0096,0.1758,0.0039,0.1759,0.011,0.3241,0.0033,0.173,0.1764,0.3074,0.1757,0.1732,0.1519,0.3074,0.1513,0.1756,0.032,0.2159,0.0368,0.1791,0.0165,0.3169,0.0458,0.3158,0.0193,0.172,0.0594,0.2087,0.0476,0.1736,0.0504,0.2073,0.064,0.2362,0.0821,0.3267,0.0796,0.1717,0.0822,0.1726,0.1297,0.3077,0.1289,0.3074,0.1865,0.1742,0.184,0.0061,0.1086,0.1366,0.0368,0.1241,0.1189,0.0168,0.0309,0.0211,0.1882,0.14,0.1857]);
+IndexedFaceSet188.texCoord = TextureCoordinate190;
 
-HAnimJoint169.children[0] = HAnimSegment170;
+Shape184.geometry = IndexedFaceSet188;
 
-let HAnimJoint179 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint179.DEF = "hanim_r_radiocarpal";
-HAnimJoint179.name = "r_radiocarpal";
-HAnimJoint179.center = new SFVec3f(new float[-6.915,28.41,0.3752]);
-let HAnimSegment180 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment180.DEF = "hanim_r_carpal";
-HAnimSegment180.name = "r_carpal";
-let Transform181 = browser.currentScene.createNode("Transform");
-Transform181.translation = new SFVec3f(new float[-6.915,28.41,0.3752]);
-let Shape182 = browser.currentScene.createNode("Shape");
-let Appearance183 = browser.currentScene.createNode("Appearance");
-let Material184 = browser.currentScene.createNode("Material");
-Material184.diffuseColor = new SFColor(new float[0.588,0.588,0.588]);
-Appearance183.material = Material184;
+Transform183.child = new undefined();
 
-let ImageTexture185 = browser.currentScene.createNode("ImageTexture");
-ImageTexture185.USE = "YoungTextureAtlas";
-Appearance183.texture = ImageTexture185;
+Transform183.child[0] = Shape184;
 
-Shape182.appearance = Appearance183;
+HAnimSegment182.children = new MFNode();
 
-let IndexedFaceSet186 = browser.currentScene.createNode("IndexedFaceSet");
-IndexedFaceSet186.creaseAngle = 1.57;
-IndexedFaceSet186.texCoordIndex = new MFInt32(new int[4,7,5,-1,5,6,4,-1,2,0,1,-1,1,3,2,-1,14,17,15,-1,15,16,14,-1,8,4,6,-1,6,9,8,-1,38,41,39,-1,39,40,38,-1,18,37,36,-1,36,19,18,-1,10,8,9,-1,9,11,10,-1,42,38,40,-1,40,43,42,-1,20,18,19,-1,19,21,20,-1,22,23,24,-1,24,23,25,-1,25,26,24,-1,27,30,28,-1,28,29,27,-1,31,32,25,-1,25,23,31,-1,33,34,31,-1,34,35,32,-1,32,31,34,-1,20,21,35,-1,35,34,20,-1,8,13,12,-1,12,4,8,-1,22,29,28,-1,28,23,22,-1,23,28,30,-1,30,31,23,-1,31,30,27,-1,27,33,31,-1,14,26,24,-1,14,24,16,-1]);
-IndexedFaceSet186.coordIndex = new MFInt32(new int[4,2,0,-1,0,5,4,-1,6,1,3,-1,3,7,6,-1,1,6,5,-1,5,0,1,-1,8,4,5,-1,5,9,8,-1,10,6,7,-1,7,11,10,-1,9,5,6,-1,6,10,9,-1,12,8,9,-1,9,13,12,-1,14,10,11,-1,11,15,14,-1,13,9,10,-1,10,14,13,-1,4,16,2,-1,2,16,7,-1,7,3,2,-1,17,20,18,-1,18,19,17,-1,21,11,7,-1,7,16,21,-1,8,12,21,-1,12,15,11,-1,11,21,12,-1,13,14,15,-1,15,12,13,-1,8,17,19,-1,19,4,8,-1,4,19,18,-1,18,16,4,-1,16,18,20,-1,20,21,16,-1,21,20,17,-1,17,8,21,-1,22,23,27,-1,26,24,25,-1]);
-let TextureCoordinate187 = browser.currentScene.createNode("TextureCoordinate");
-TextureCoordinate187.point = new MFVec2f(new float[0.8107,0.9924,0.8122,0.9033,0.7694,0.9912,0.7683,0.9026,0.1329,0.0347,0.0307,0.0051,0.0134,0.0353,0.1366,0.0058,0.1249,0.1081,0.0147,0.117,0.1349,0.1856,0.0462,0.1842,0.1559,0.0454,0.148,0.1033,0.3244,0.0096,0.1758,0.0039,0.1759,0.011,0.3241,0.0033,0.173,0.1764,0.3074,0.1757,0.1732,0.1519,0.3074,0.1513,0.1756,0.032,0.2159,0.0368,0.1791,0.0165,0.3169,0.0458,0.3158,0.0193,0.172,0.0594,0.2087,0.0476,0.1736,0.0504,0.2073,0.064,0.2362,0.0821,0.3267,0.0796,0.1717,0.0822,0.1726,0.1297,0.3077,0.1289,0.3074,0.1865,0.1742,0.184,0.0061,0.1086,0.1366,0.0368,0.1241,0.1189,0.0168,0.0309,0.0211,0.1882,0.14,0.1857]);
-IndexedFaceSet186.texCoord = TextureCoordinate187;
+HAnimSegment182.children[0] = Transform183;
 
-let Coordinate188 = browser.currentScene.createNode("Coordinate");
-Coordinate188.point = new MFVec3f(new float[-0.6237,0.0984,0.703,-0.5903,0.1133,-1.189,1.101,0.02,0.7856,1.108,0.0215,-1.131,1.289,-0.5207,1.303,-0.9805,-0.3349,1.224,-0.9287,-0.3062,-1.753,1.391,-0.5055,-1.749,1.18,-2.202,2.123,-1.263,-2.015,1.834,-1.211,-1.986,-2.123,1.505,-2.287,-1.981,0.9466,-3.466,1.493,-0.3369,-3.669,1.543,-0.2851,-3.64,-1.826,1.135,-3.477,-1.705,1.385,-0.5072,-0.165,1.903,-2.244,1.711,2.187,-0.825,0.0512,2.154,-0.8839,1.662,1.908,-2.242,0.1214,1.394,-2.282,-0.1776,-0.5903,0.1133,-1.189,1.108,0.0215,-1.131,1.101,0.02,0.7856,-0.6237,0.0984,0.703,-0.5903,0.1133,-1.189,1.101,0.02,0.7856]);
-IndexedFaceSet186.coord = Coordinate188;
+HAnimJoint181.children = new MFNode();
 
-Shape182.geometry = IndexedFaceSet186;
+HAnimJoint181.children[0] = HAnimSegment182;
 
-Transform181.child = new undefined();
+HAnimJoint171.children[1] = HAnimJoint181;
 
-Transform181.child[0] = Shape182;
+HAnimJoint161.children[1] = HAnimJoint171;
 
-HAnimSegment180.children = new MFNode();
+HAnimJoint121.children[2] = HAnimJoint161;
 
-HAnimSegment180.children[0] = Transform181;
+let HAnimJoint191 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint191.name = "vl5";
+HAnimJoint191.DEF = "hanim_vl5";
+HAnimJoint191.center = new SFVec3f(new float[0,35.75,-0.445]);
+HAnimJoint191.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint191.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment192 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment192.name = "l5";
+HAnimSegment192.DEF = "hanim_l5";
+let Transform193 = browser.currentScene.createNode("Transform");
+Transform193.translation = new SFVec3f(new float[0,35.75,-0.445]);
+let Shape194 = browser.currentScene.createNode("Shape");
+let Appearance195 = browser.currentScene.createNode("Appearance");
+let Material196 = browser.currentScene.createNode("Material");
+Material196.diffuseColor = new SFColor(new float[0.588,0.588,0.588]);
+Appearance195.material = Material196;
 
-HAnimJoint179.children = new MFNode();
+let ImageTexture197 = browser.currentScene.createNode("ImageTexture");
+ImageTexture197.USE = "YoungTextureAtlas";
+Appearance195.texture = ImageTexture197;
 
-HAnimJoint179.children[0] = HAnimSegment180;
+Shape194.appearance = Appearance195;
 
-HAnimJoint169.children[1] = HAnimJoint179;
+let IndexedFaceSet198 = browser.currentScene.createNode("IndexedFaceSet");
+IndexedFaceSet198.coordIndex = new MFInt32(new int[3,4,7,-1,7,5,3,-1,4,66,68,-1,68,8,4,-1,4,8,7,-1,1,0,9,-1,9,10,1,-1,0,2,11,-1,11,9,0,-1,15,71,73,-1,73,16,15,-1,14,15,16,-1,16,17,14,-1,71,15,8,-1,8,68,71,-1,15,14,7,-1,7,8,15,-1,73,72,69,-1,69,70,73,-1,16,73,70,-1,70,12,16,-1,16,12,13,-1,13,17,16,-1,21,20,22,-1,22,23,21,-1,20,14,17,-1,17,22,20,-1,20,21,6,-1,6,5,20,-1,14,20,5,-1,5,7,14,-1,23,22,18,-1,18,19,23,-1,22,17,13,-1,13,18,22,-1,2,6,11,-1,28,27,30,-1,30,31,28,-1,27,29,32,-1,32,30,27,-1,29,21,23,-1,23,32,29,-1,27,28,10,-1,10,9,27,-1,29,27,9,-1,9,11,29,-1,21,29,11,-1,11,6,21,-1,31,30,24,-1,24,25,31,-1,30,32,26,-1,26,24,30,-1,32,23,19,-1,19,26,32,-1,12,70,74,-1,74,33,12,-1,24,26,36,-1,36,35,24,-1,33,74,75,-1,75,37,33,-1,34,33,37,-1,37,38,34,-1,39,12,33,-1,33,34,39,-1,19,40,26,-1,26,40,41,-1,41,36,26,-1,39,34,41,-1,41,40,39,-1,35,36,43,-1,43,42,35,-1,36,41,44,-1,44,43,36,-1,41,34,38,-1,38,44,41,-1,37,75,76,-1,76,45,37,-1,38,37,45,-1,45,46,38,-1,42,43,48,-1,48,47,42,-1,44,38,46,-1,46,49,44,-1,45,76,77,-1,77,50,45,-1,46,45,50,-1,50,51,46,-1,47,48,53,-1,53,52,47,-1,48,49,54,-1,54,53,48,-1,49,46,51,-1,51,54,49,-1,50,77,78,-1,78,55,50,-1,51,50,55,-1,55,56,51,-1,52,53,58,-1,58,57,52,-1,53,54,59,-1,59,58,53,-1,54,51,56,-1,56,59,54,-1,19,18,60,-1,60,61,19,-1,18,13,62,-1,62,60,18,-1,13,39,63,-1,63,62,13,-1,40,19,61,-1,61,64,40,-1,39,40,64,-1,64,63,39,-1,2,3,5,-1,2,5,6,-1,13,12,39,-1,25,24,35,-1,70,69,74,-1,67,68,66,-1,66,65,67,-1,79,71,68,-1,68,67,79,-1,72,73,71,-1,71,79,72,-1,49,48,43,-1,43,44,49,-1,63,64,60,-1,60,62,63,-1,60,64,61,-1,86,83,82,-1,82,84,86,-1,141,140,83,-1,83,87,141,-1,83,86,87,-1,88,80,1,-1,1,10,88,-1,89,81,80,-1,80,88,89,-1,144,143,93,-1,93,94,144,-1,94,93,92,-1,92,95,94,-1,87,93,143,-1,143,141,87,-1,86,92,93,-1,93,87,86,-1,69,72,144,-1,144,142,69,-1,142,144,94,-1,94,90,142,-1,91,90,94,-1,94,95,91,-1,100,98,99,-1,99,101,100,-1,95,92,98,-1,98,100,95,-1,85,99,98,-1,98,84,85,-1,84,98,92,-1,92,86,84,-1,96,100,101,-1,101,97,96,-1,91,95,100,-1,100,96,91,-1,81,89,85,-1,106,104,28,-1,28,31,106,-1,107,105,104,-1,104,106,107,-1,101,99,105,-1,105,107,101,-1,10,28,104,-1,104,88,10,-1,88,104,105,-1,105,89,88,-1,89,105,99,-1,99,85,89,-1,102,106,31,-1,31,25,102,-1,103,107,106,-1,106,102,103,-1,97,101,107,-1,107,103,97,-1,145,142,90,-1,90,108,145,-1,111,103,102,-1,102,110,111,-1,146,145,108,-1,108,112,146,-1,112,108,109,-1,109,113,112,-1,108,90,114,-1,114,109,108,-1,97,103,115,-1,116,115,103,-1,103,111,116,-1,116,109,114,-1,114,115,116,-1,118,111,110,-1,110,117,118,-1,119,116,111,-1,111,118,119,-1,113,109,116,-1,116,119,113,-1,147,146,112,-1,112,120,147,-1,120,112,113,-1,113,121,120,-1,123,118,117,-1,117,122,123,-1,121,113,119,-1,119,124,121,-1,148,147,120,-1,120,125,148,-1,125,120,121,-1,121,126,125,-1,128,123,122,-1,122,127,128,-1,129,124,123,-1,123,128,129,-1,126,121,124,-1,124,129,126,-1,149,148,125,-1,125,130,149,-1,130,125,126,-1,126,131,130,-1,133,128,127,-1,127,132,133,-1,134,129,128,-1,128,133,134,-1,131,126,129,-1,129,134,131,-1,135,96,97,-1,97,136,135,-1,137,91,96,-1,96,135,137,-1,138,114,91,-1,91,137,138,-1,136,97,115,-1,115,139,136,-1,139,115,114,-1,114,138,139,-1,81,84,82,-1,81,85,84,-1,91,114,90,-1,25,110,102,-1,142,145,69,-1,140,141,67,-1,67,65,140,-1,141,143,79,-1,79,67,141,-1,143,144,72,-1,72,79,143,-1,118,123,124,-1,124,119,118,-1,135,139,138,-1,138,137,135,-1,135,136,139,-1,25,35,110,-1,117,110,35,-1,35,42,117,-1,47,122,117,-1,117,42,47,-1,127,122,47,-1,47,52,127,-1,132,127,52,-1,52,57,132,-1,69,145,74,-1,75,74,145,-1,145,146,75,-1,76,75,146,-1,146,147,76,-1,77,76,147,-1,147,148,77,-1,78,77,148,-1,148,149,78,-1,57,78,149,-1,149,132,57,-1,58,55,78,-1,78,57,58,-1,59,56,55,-1,55,58,59,-1,132,149,130,-1,130,133,132,-1,133,130,131,-1,131,134,133,-1,151,150,155,-1,155,156,151,-1,150,152,157,-1,157,155,150,-1,152,153,158,-1,158,157,152,-1,153,154,159,-1,159,158,153,-1,160,161,162,-1,162,163,160,-1,154,160,163,-1,163,159,154,-1,168,164,151,-1,151,156,168,-1,169,165,164,-1,164,168,169,-1,170,166,165,-1,165,169,170,-1,171,167,166,-1,166,170,171,-1,162,161,172,-1,172,173,162,-1,173,172,167,-1,167,171,173,-1]);
+IndexedFaceSet198.creaseAngle = 1.57;
+IndexedFaceSet198.texCoordIndex = new MFInt32(new int[2,3,0,-1,0,1,2,-1,3,6,4,-1,4,5,3,-1,3,5,0,-1,20,21,18,-1,18,19,20,-1,21,23,22,-1,22,18,21,-1,26,27,24,-1,24,25,26,-1,29,26,25,-1,25,28,29,-1,27,26,30,-1,30,31,27,-1,26,29,32,-1,32,30,26,-1,24,35,33,-1,33,34,24,-1,25,24,34,-1,34,36,25,-1,25,36,37,-1,37,28,25,-1,40,41,38,-1,38,39,40,-1,41,29,28,-1,28,38,41,-1,41,40,42,-1,42,43,41,-1,29,41,43,-1,43,32,29,-1,39,38,44,-1,44,45,39,-1,38,28,37,-1,37,44,38,-1,23,42,22,-1,48,162,161,-1,161,47,48,-1,49,51,50,-1,50,46,49,-1,51,40,39,-1,39,50,51,-1,163,48,164,-1,164,181,163,-1,51,49,18,-1,18,22,51,-1,40,51,22,-1,22,42,40,-1,47,166,165,-1,165,53,47,-1,46,50,54,-1,54,52,46,-1,50,39,45,-1,45,54,50,-1,36,34,55,-1,55,56,36,-1,52,54,57,-1,57,58,52,-1,56,55,59,-1,59,60,56,-1,62,56,60,-1,60,61,62,-1,63,36,56,-1,56,62,63,-1,45,64,54,-1,54,64,65,-1,65,57,54,-1,63,62,65,-1,65,64,63,-1,58,57,66,-1,66,67,58,-1,57,65,68,-1,68,66,57,-1,65,62,61,-1,61,68,65,-1,60,59,69,-1,69,70,60,-1,61,60,70,-1,70,71,61,-1,67,66,72,-1,72,73,67,-1,68,61,71,-1,71,74,68,-1,70,69,75,-1,75,76,70,-1,71,70,76,-1,76,77,71,-1,73,72,78,-1,78,79,73,-1,72,74,80,-1,80,78,72,-1,74,71,77,-1,77,80,74,-1,76,75,81,-1,81,82,76,-1,77,76,82,-1,82,83,77,-1,79,78,84,-1,84,85,79,-1,78,80,86,-1,86,84,78,-1,80,77,83,-1,83,86,80,-1,45,44,87,-1,87,88,45,-1,44,37,89,-1,89,87,44,-1,37,63,90,-1,90,89,37,-1,64,45,88,-1,88,91,64,-1,63,64,91,-1,91,90,63,-1,7,2,1,-1,23,43,42,-1,37,36,63,-1,53,167,168,-1,34,33,55,-1,9,4,6,-1,6,8,9,-1,93,27,31,-1,31,92,93,-1,35,24,27,-1,27,93,35,-1,74,72,66,-1,66,68,74,-1,90,91,87,-1,87,89,90,-1,87,91,88,-1,10,13,11,-1,11,12,10,-1,14,16,13,-1,13,15,14,-1,13,10,15,-1,94,95,169,-1,169,170,94,-1,96,97,95,-1,95,94,96,-1,98,101,99,-1,99,100,98,-1,100,99,102,-1,102,103,100,-1,104,99,101,-1,101,105,104,-1,106,102,99,-1,99,104,106,-1,33,35,98,-1,98,107,33,-1,107,98,100,-1,100,108,107,-1,109,108,100,-1,100,103,109,-1,110,113,111,-1,111,112,110,-1,103,102,113,-1,113,110,103,-1,114,111,113,-1,113,115,114,-1,115,113,102,-1,102,106,115,-1,116,110,112,-1,112,117,116,-1,109,103,110,-1,110,116,109,-1,97,96,114,-1,118,119,48,-1,48,47,118,-1,120,121,119,-1,119,118,120,-1,112,111,121,-1,121,120,112,-1,171,48,119,-1,119,94,171,-1,94,119,121,-1,121,96,94,-1,96,121,111,-1,111,114,96,-1,122,118,47,-1,47,53,122,-1,123,120,118,-1,118,122,123,-1,117,112,120,-1,120,123,117,-1,124,107,108,-1,108,125,124,-1,126,123,122,-1,122,127,126,-1,128,124,125,-1,125,129,128,-1,129,125,130,-1,130,131,129,-1,125,108,132,-1,132,130,125,-1,117,123,133,-1,134,133,123,-1,123,126,134,-1,134,130,132,-1,132,133,134,-1,135,126,127,-1,127,136,135,-1,137,134,126,-1,126,135,137,-1,131,130,134,-1,134,137,131,-1,138,128,129,-1,129,139,138,-1,139,129,131,-1,131,140,139,-1,141,135,136,-1,136,142,141,-1,140,131,137,-1,137,143,140,-1,144,138,139,-1,139,145,144,-1,145,139,140,-1,140,146,145,-1,147,141,142,-1,142,148,147,-1,149,143,141,-1,141,147,149,-1,146,140,143,-1,143,149,146,-1,150,144,145,-1,145,151,150,-1,151,145,146,-1,146,152,151,-1,153,147,148,-1,148,154,153,-1,155,149,147,-1,147,153,155,-1,152,146,149,-1,149,155,152,-1,156,116,117,-1,117,157,156,-1,158,109,116,-1,116,156,158,-1,159,132,109,-1,109,158,159,-1,157,117,133,-1,133,160,157,-1,160,133,132,-1,132,159,160,-1,17,12,11,-1,97,114,115,-1,109,132,108,-1,53,127,122,-1,107,124,33,-1,16,14,9,-1,9,8,16,-1,105,101,93,-1,93,92,105,-1,101,98,35,-1,35,93,101,-1,135,141,143,-1,143,137,135,-1,156,160,159,-1,159,158,156,-1,156,157,160,-1,53,172,127,-1,136,127,173,-1,173,174,136,-1,176,142,136,-1,136,175,176,-1,148,142,177,-1,177,178,148,-1,154,148,179,-1,179,180,154,-1,33,124,55,-1,59,55,124,-1,124,128,59,-1,69,59,128,-1,128,138,69,-1,75,69,138,-1,138,144,75,-1,81,75,144,-1,144,150,81,-1,85,81,150,-1,150,182,85,-1,84,82,81,-1,81,85,84,-1,86,83,82,-1,82,84,86,-1,154,150,151,-1,151,153,154,-1,153,151,152,-1,152,155,153,-1,184,183,188,-1,188,189,184,-1,183,185,190,-1,190,188,183,-1,185,186,191,-1,191,190,185,-1,186,187,192,-1,192,191,186,-1,193,194,195,-1,195,196,193,-1,187,193,196,-1,196,192,187,-1,201,197,184,-1,184,189,201,-1,202,198,197,-1,197,201,202,-1,203,199,198,-1,198,202,203,-1,204,200,199,-1,199,203,204,-1,195,194,205,-1,205,206,195,-1,206,205,200,-1,200,204,206,-1]);
+let Coordinate199 = browser.currentScene.createNode("Coordinate");
+Coordinate199.point = new MFVec3f(new float[0.6107,12.56,-1.113,0,12.61,-1.194,1.295,12.75,-0.8021,1.777,12.73,0.248,1.387,12.47,0.9786,2.569,12.34,0.2936,2.291,13.13,-1.24,2.809,11.57,1.36,1.974,11.38,2.848,0.8488,13.15,-2.779,0,13.13,-2.924,1.794,13.17,-2.481,2.923,10.45,2.618,4.483,11.16,1.773,2.628,12.14,1.922,1.979,11.38,3.368,2.76,10.73,3.438,3.896,11.87,1.856,4.938,11.69,0.1642,4.823,11.1,-1.28,3.031,13.07,0.3237,3.485,12.31,-1.963,4.472,12.61,0.3237,4.103,11.48,-1.569,1.597,8.259,-2.142,0,7.991,-2.26,3.738,9.105,-1.801,0.9095,10.64,-3.903,0,10.65,-4.021,2.106,10.98,-3.451,1.479,7.69,-2.774,0,7.406,-2.879,3.632,9.027,-2.673,3.766,6.756,3.69,5.601,7.314,1.36,1.886,7.153,-2.082,3.79,7.244,-1.629,3.257,4.51,2.44,4.479,4.543,1.327,5.374,8.636,1.472,5.204,8.627,-0.2911,4.877,7.273,-0.6872,1.251,4.413,-1.956,3.156,4.461,-1.264,4.225,4.505,-0.2194,3.245,2.754,2.489,4.476,2.788,1.346,1.13,2.499,-2.085,3.161,2.674,-1.267,4.224,2.739,-0.2643,3.683,0.6999,3.482,5.077,0.7315,1.758,1.34,0.562,-3.242,3.482,0.5706,-2.236,4.68,0.6632,-0.6521,3.34,-0.2471,2.828,4.554,-0.2191,1.485,1.405,-0.3523,-2.359,3.174,-0.3325,-1.628,4.268,-0.2911,-0.3915,6.522,11.45,0.1642,6.152,10.73,-1.28,6.169,10.78,1.674,5.552,8.771,1.472,5.546,8.764,-0.2911,0,12.23,1.525,0.688,12.24,1.418,0,10.3,3.439,1.21,10.77,3.233,0,9.33,3.389,1.51,9.991,3.233,1.216,10.77,3.647,0,9.677,3.844,1.404,10.27,3.824,1.392,7.29,3.597,1.139,4.483,2.845,1.129,2.572,2.941,1.441,0.673,4.021,1.406,-0.2812,3.213,0,10.35,3.579,-0.6107,12.56,-1.113,-1.295,12.75,-0.8021,-1.777,12.73,0.248,-1.387,12.47,0.9786,-2.569,12.34,0.2936,-2.291,13.13,-1.24,-2.809,11.57,1.36,-1.974,11.38,2.848,-0.8488,13.15,-2.779,-1.794,13.17,-2.481,-2.923,10.45,2.618,-4.483,11.16,1.773,-2.628,12.14,1.922,-1.979,11.38,3.368,-2.76,10.73,3.438,-3.896,11.87,1.856,-4.938,11.69,0.1642,-4.823,11.1,-1.28,-3.031,13.07,0.3237,-3.485,12.31,-1.963,-4.472,12.61,0.3237,-4.103,11.48,-1.569,-1.597,8.259,-2.142,-3.738,9.105,-1.801,-0.9095,10.64,-3.903,-2.106,10.98,-3.451,-1.479,7.69,-2.774,-3.632,9.027,-2.673,-3.766,6.756,3.69,-5.601,7.314,1.36,-1.886,7.153,-2.082,-3.79,7.244,-1.629,-3.257,4.51,2.44,-4.479,4.543,1.327,-5.374,8.636,1.472,-5.204,8.627,-0.2911,-4.877,7.273,-0.6872,-1.251,4.413,-1.956,-3.156,4.461,-1.264,-4.225,4.505,-0.2194,-3.245,2.754,2.489,-4.476,2.788,1.346,-1.13,2.499,-2.085,-3.161,2.674,-1.267,-4.224,2.739,-0.2643,-3.683,0.6999,3.482,-5.077,0.7315,1.758,-1.34,0.562,-3.242,-3.482,0.5706,-2.236,-4.68,0.6632,-0.6521,-3.34,-0.2471,2.828,-4.554,-0.2191,1.485,-1.405,-0.3523,-2.359,-3.174,-0.3325,-1.628,-4.268,-0.2911,-0.3915,-6.522,11.45,0.1642,-6.152,10.73,-1.28,-6.169,10.78,1.674,-5.552,8.771,1.472,-5.546,8.764,-0.2911,-0.688,12.24,1.418,-1.21,10.77,3.233,-1.51,9.991,3.233,-1.216,10.77,3.647,-1.404,10.27,3.824,-1.392,7.29,3.597,-1.139,4.483,2.845,-1.129,2.572,2.941,-1.441,0.673,4.021,-1.406,-0.2812,3.213,0.6107,15.68,-1.113,0,15.68,-1.194,1.295,15.68,-0.8021,1.777,15.68,0.2481,1.387,15.68,0.9786,0.6107,11.94,-1.113,0,12.01,-1.194,1.295,12.24,-0.8021,1.777,12.21,0.248,1.387,11.79,0.9786,0.6881,15.83,1.418,0,15.19,1.525,0,11.42,1.525,0.6881,11.43,1.418,-0.6107,15.68,-1.113,-1.295,15.68,-0.8021,-1.777,15.68,0.2481,-1.387,15.68,0.9786,-0.6107,11.94,-1.113,-1.295,12.24,-0.8021,-1.777,12.21,0.2481,-1.387,11.79,0.9786,-0.6881,15.83,1.418,-0.688,11.43,1.418]);
+IndexedFaceSet198.coord = Coordinate199;
 
-HAnimJoint159.children[1] = HAnimJoint169;
+let TextureCoordinate200 = browser.currentScene.createNode("TextureCoordinate");
+TextureCoordinate200.point = new MFVec2f(new float[0.4134,0.6454,0.4115,0.6346,0.4055,0.6342,0.4025,0.6415,0.4012,0.6643,0.407,0.6604,0.3972,0.646,0.4018,0.6236,0.3919,0.6471,0.3919,0.6664,0.3705,0.6454,0.3784,0.6342,0.3723,0.6346,0.3814,0.6415,0.3827,0.6643,0.3769,0.6604,0.3867,0.646,0.3821,0.6236,0.2661,0.5914,0.3505,0.5919,0.3554,0.5911,0.2505,0.5754,0.241,0.592,0.2112,0.5805,0.0763,0.4945,0.1025,0.5076,0.0865,0.5614,0.0652,0.5465,0.1412,0.5207,0.1108,0.5655,0.0786,0.5849,0.0516,0.5759,0.1073,0.5839,0.0639,0.4488,0.0877,0.4617,0.0525,0.4715,0.1185,0.4741,0.1474,0.4856,0.1724,0.5255,0.2089,0.5196,0.2133,0.556,0.1645,0.5709,0.2067,0.5908,0.1632,0.5887,0.1708,0.4854,0.1963,0.4863,0.2708,0.4736,0.347,0.4316,0.3616,0.5328,0.2733,0.5359,0.238,0.493,0.249,0.5451,0.2638,0.4568,0.3214,0.4203,0.2252,0.4828,0.042,0.406,0.0909,0.398,0.2183,0.385,0.3504,0.3844,0.0206,0.3452,0.0903,0.3446,0.1491,0.3449,0.1525,0.3869,0.1538,0.4251,0.1784,0.4249,0.1911,0.3858,0.2175,0.3427,0.3608,0.3469,0.1838,0.3438,0.0177,0.3051,0.0982,0.302,0.1487,0.2975,0.2175,0.2944,0.3621,0.2922,0.1849,0.2961,0.019,0.2349,0.1011,0.241,0.1445,0.2419,0.2369,0.2375,0.3561,0.2404,0.1927,0.24,0.0206,0.2122,0.1067,0.2154,0.1463,0.2162,0.227,0.2131,0.3536,0.2151,0.1879,0.2143,0.1715,0.4655,0.1797,0.4646,0.1569,0.4642,0.1544,0.4288,0.1782,0.4286,0.0346,0.5664,0.0399,0.5407,0.2661,0.5914,0.2505,0.5754,0.241,0.592,0.2112,0.5805,0.0763,0.4945,0.0865,0.5614,0.1025,0.5076,0.0652,0.5465,0.1108,0.5655,0.1412,0.5207,0.0786,0.5849,0.0516,0.5759,0.1073,0.5839,0.0877,0.4617,0.1185,0.4741,0.1474,0.4857,0.1724,0.5255,0.2133,0.556,0.2089,0.5196,0.1645,0.5709,0.2067,0.5908,0.1632,0.5887,0.1708,0.4854,0.1963,0.4863,0.2708,0.4736,0.2733,0.5359,0.238,0.493,0.249,0.5451,0.2638,0.4568,0.2252,0.4828,0.042,0.406,0.0909,0.398,0.2183,0.385,0.3504,0.3844,0.0206,0.3452,0.0903,0.3446,0.1525,0.3869,0.1491,0.3449,0.1538,0.4251,0.1784,0.4249,0.1911,0.3858,0.2175,0.3427,0.3608,0.3469,0.1838,0.3438,0.0177,0.3051,0.0982,0.302,0.1487,0.2975,0.2175,0.2944,0.3621,0.2922,0.1849,0.2961,0.019,0.2349,0.1011,0.241,0.1445,0.2419,0.2369,0.2375,0.3561,0.2404,0.1927,0.24,0.0206,0.2122,0.1067,0.2154,0.1463,0.2162,0.227,0.2131,0.3536,0.2151,0.1879,0.2143,0.1715,0.4655,0.1797,0.4646,0.1569,0.4642,0.1544,0.4288,0.1782,0.4286,0.3477,0.431,0.3623,0.5333,0.3623,0.5333,0.3505,0.5919,0.3223,0.4192,0.3477,0.431,0.3223,0.4192,0.3518,0.3851,0.3554,0.5911,0.3505,0.5919,0.3505,0.5919,0.3518,0.3851,0.3518,0.3851,0.3629,0.3439,0.3629,0.3439,0.3633,0.2922,0.3633,0.2922,0.3553,0.2398,0.3553,0.2398,0.3555,0.2151,0.3511,0.5932,0.3536,0.2151,0.3995,0.6721,0.3906,0.6721,0.4094,0.6721,0.4164,0.6721,0.4107,0.6721,0.3995,0.6285,0.3906,0.6293,0.4094,0.632,0.4164,0.6316,0.4107,0.6267,0.4006,0.6738,0.3906,0.6664,0.3906,0.6224,0.4006,0.6225,0.3818,0.6721,0.3719,0.6721,0.3649,0.6721,0.3706,0.6721,0.3818,0.6285,0.3719,0.632,0.3649,0.6316,0.3706,0.6267,0.3807,0.6738,0.3807,0.6225]);
+IndexedFaceSet198.texCoord = TextureCoordinate200;
 
-HAnimJoint119.children[2] = HAnimJoint159;
+Shape194.geometry = IndexedFaceSet198;
 
-let HAnimJoint189 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint189.DEF = "hanim_vl5";
-HAnimJoint189.name = "vl5";
-HAnimJoint189.center = new SFVec3f(new float[0,35.75,-0.445]);
-let HAnimSegment190 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment190.DEF = "hanim_l5";
-HAnimSegment190.name = "l5";
-let Transform191 = browser.currentScene.createNode("Transform");
-Transform191.translation = new SFVec3f(new float[0,35.75,-0.445]);
-let Shape192 = browser.currentScene.createNode("Shape");
-let Appearance193 = browser.currentScene.createNode("Appearance");
-let Material194 = browser.currentScene.createNode("Material");
-Material194.diffuseColor = new SFColor(new float[0.588,0.588,0.588]);
-Appearance193.material = Material194;
+Transform193.child = new undefined();
 
-let ImageTexture195 = browser.currentScene.createNode("ImageTexture");
-ImageTexture195.USE = "YoungTextureAtlas";
-Appearance193.texture = ImageTexture195;
+Transform193.child[0] = Shape194;
 
-Shape192.appearance = Appearance193;
+HAnimSegment192.children = new MFNode();
 
-let IndexedFaceSet196 = browser.currentScene.createNode("IndexedFaceSet");
-IndexedFaceSet196.creaseAngle = 1.57;
-IndexedFaceSet196.texCoordIndex = new MFInt32(new int[2,3,0,-1,0,1,2,-1,3,6,4,-1,4,5,3,-1,3,5,0,-1,20,21,18,-1,18,19,20,-1,21,23,22,-1,22,18,21,-1,26,27,24,-1,24,25,26,-1,29,26,25,-1,25,28,29,-1,27,26,30,-1,30,31,27,-1,26,29,32,-1,32,30,26,-1,24,35,33,-1,33,34,24,-1,25,24,34,-1,34,36,25,-1,25,36,37,-1,37,28,25,-1,40,41,38,-1,38,39,40,-1,41,29,28,-1,28,38,41,-1,41,40,42,-1,42,43,41,-1,29,41,43,-1,43,32,29,-1,39,38,44,-1,44,45,39,-1,38,28,37,-1,37,44,38,-1,23,42,22,-1,48,162,161,-1,161,47,48,-1,49,51,50,-1,50,46,49,-1,51,40,39,-1,39,50,51,-1,163,48,164,-1,164,181,163,-1,51,49,18,-1,18,22,51,-1,40,51,22,-1,22,42,40,-1,47,166,165,-1,165,53,47,-1,46,50,54,-1,54,52,46,-1,50,39,45,-1,45,54,50,-1,36,34,55,-1,55,56,36,-1,52,54,57,-1,57,58,52,-1,56,55,59,-1,59,60,56,-1,62,56,60,-1,60,61,62,-1,63,36,56,-1,56,62,63,-1,45,64,54,-1,54,64,65,-1,65,57,54,-1,63,62,65,-1,65,64,63,-1,58,57,66,-1,66,67,58,-1,57,65,68,-1,68,66,57,-1,65,62,61,-1,61,68,65,-1,60,59,69,-1,69,70,60,-1,61,60,70,-1,70,71,61,-1,67,66,72,-1,72,73,67,-1,68,61,71,-1,71,74,68,-1,70,69,75,-1,75,76,70,-1,71,70,76,-1,76,77,71,-1,73,72,78,-1,78,79,73,-1,72,74,80,-1,80,78,72,-1,74,71,77,-1,77,80,74,-1,76,75,81,-1,81,82,76,-1,77,76,82,-1,82,83,77,-1,79,78,84,-1,84,85,79,-1,78,80,86,-1,86,84,78,-1,80,77,83,-1,83,86,80,-1,45,44,87,-1,87,88,45,-1,44,37,89,-1,89,87,44,-1,37,63,90,-1,90,89,37,-1,64,45,88,-1,88,91,64,-1,63,64,91,-1,91,90,63,-1,7,2,1,-1,23,43,42,-1,37,36,63,-1,53,167,168,-1,34,33,55,-1,9,4,6,-1,6,8,9,-1,93,27,31,-1,31,92,93,-1,35,24,27,-1,27,93,35,-1,74,72,66,-1,66,68,74,-1,90,91,87,-1,87,89,90,-1,87,91,88,-1,10,13,11,-1,11,12,10,-1,14,16,13,-1,13,15,14,-1,13,10,15,-1,94,95,169,-1,169,170,94,-1,96,97,95,-1,95,94,96,-1,98,101,99,-1,99,100,98,-1,100,99,102,-1,102,103,100,-1,104,99,101,-1,101,105,104,-1,106,102,99,-1,99,104,106,-1,33,35,98,-1,98,107,33,-1,107,98,100,-1,100,108,107,-1,109,108,100,-1,100,103,109,-1,110,113,111,-1,111,112,110,-1,103,102,113,-1,113,110,103,-1,114,111,113,-1,113,115,114,-1,115,113,102,-1,102,106,115,-1,116,110,112,-1,112,117,116,-1,109,103,110,-1,110,116,109,-1,97,96,114,-1,118,119,48,-1,48,47,118,-1,120,121,119,-1,119,118,120,-1,112,111,121,-1,121,120,112,-1,171,48,119,-1,119,94,171,-1,94,119,121,-1,121,96,94,-1,96,121,111,-1,111,114,96,-1,122,118,47,-1,47,53,122,-1,123,120,118,-1,118,122,123,-1,117,112,120,-1,120,123,117,-1,124,107,108,-1,108,125,124,-1,126,123,122,-1,122,127,126,-1,128,124,125,-1,125,129,128,-1,129,125,130,-1,130,131,129,-1,125,108,132,-1,132,130,125,-1,117,123,133,-1,134,133,123,-1,123,126,134,-1,134,130,132,-1,132,133,134,-1,135,126,127,-1,127,136,135,-1,137,134,126,-1,126,135,137,-1,131,130,134,-1,134,137,131,-1,138,128,129,-1,129,139,138,-1,139,129,131,-1,131,140,139,-1,141,135,136,-1,136,142,141,-1,140,131,137,-1,137,143,140,-1,144,138,139,-1,139,145,144,-1,145,139,140,-1,140,146,145,-1,147,141,142,-1,142,148,147,-1,149,143,141,-1,141,147,149,-1,146,140,143,-1,143,149,146,-1,150,144,145,-1,145,151,150,-1,151,145,146,-1,146,152,151,-1,153,147,148,-1,148,154,153,-1,155,149,147,-1,147,153,155,-1,152,146,149,-1,149,155,152,-1,156,116,117,-1,117,157,156,-1,158,109,116,-1,116,156,158,-1,159,132,109,-1,109,158,159,-1,157,117,133,-1,133,160,157,-1,160,133,132,-1,132,159,160,-1,17,12,11,-1,97,114,115,-1,109,132,108,-1,53,127,122,-1,107,124,33,-1,16,14,9,-1,9,8,16,-1,105,101,93,-1,93,92,105,-1,101,98,35,-1,35,93,101,-1,135,141,143,-1,143,137,135,-1,156,160,159,-1,159,158,156,-1,156,157,160,-1,53,172,127,-1,136,127,173,-1,173,174,136,-1,176,142,136,-1,136,175,176,-1,148,142,177,-1,177,178,148,-1,154,148,179,-1,179,180,154,-1,33,124,55,-1,59,55,124,-1,124,128,59,-1,69,59,128,-1,128,138,69,-1,75,69,138,-1,138,144,75,-1,81,75,144,-1,144,150,81,-1,85,81,150,-1,150,182,85,-1,84,82,81,-1,81,85,84,-1,86,83,82,-1,82,84,86,-1,154,150,151,-1,151,153,154,-1,153,151,152,-1,152,155,153,-1,184,183,188,-1,188,189,184,-1,183,185,190,-1,190,188,183,-1,185,186,191,-1,191,190,185,-1,186,187,192,-1,192,191,186,-1,193,194,195,-1,195,196,193,-1,187,193,196,-1,196,192,187,-1,201,197,184,-1,184,189,201,-1,202,198,197,-1,197,201,202,-1,203,199,198,-1,198,202,203,-1,204,200,199,-1,199,203,204,-1,195,194,205,-1,205,206,195,-1,206,205,200,-1,200,204,206,-1]);
-IndexedFaceSet196.coordIndex = new MFInt32(new int[3,4,7,-1,7,5,3,-1,4,66,68,-1,68,8,4,-1,4,8,7,-1,1,0,9,-1,9,10,1,-1,0,2,11,-1,11,9,0,-1,15,71,73,-1,73,16,15,-1,14,15,16,-1,16,17,14,-1,71,15,8,-1,8,68,71,-1,15,14,7,-1,7,8,15,-1,73,72,69,-1,69,70,73,-1,16,73,70,-1,70,12,16,-1,16,12,13,-1,13,17,16,-1,21,20,22,-1,22,23,21,-1,20,14,17,-1,17,22,20,-1,20,21,6,-1,6,5,20,-1,14,20,5,-1,5,7,14,-1,23,22,18,-1,18,19,23,-1,22,17,13,-1,13,18,22,-1,2,6,11,-1,28,27,30,-1,30,31,28,-1,27,29,32,-1,32,30,27,-1,29,21,23,-1,23,32,29,-1,27,28,10,-1,10,9,27,-1,29,27,9,-1,9,11,29,-1,21,29,11,-1,11,6,21,-1,31,30,24,-1,24,25,31,-1,30,32,26,-1,26,24,30,-1,32,23,19,-1,19,26,32,-1,12,70,74,-1,74,33,12,-1,24,26,36,-1,36,35,24,-1,33,74,75,-1,75,37,33,-1,34,33,37,-1,37,38,34,-1,39,12,33,-1,33,34,39,-1,19,40,26,-1,26,40,41,-1,41,36,26,-1,39,34,41,-1,41,40,39,-1,35,36,43,-1,43,42,35,-1,36,41,44,-1,44,43,36,-1,41,34,38,-1,38,44,41,-1,37,75,76,-1,76,45,37,-1,38,37,45,-1,45,46,38,-1,42,43,48,-1,48,47,42,-1,44,38,46,-1,46,49,44,-1,45,76,77,-1,77,50,45,-1,46,45,50,-1,50,51,46,-1,47,48,53,-1,53,52,47,-1,48,49,54,-1,54,53,48,-1,49,46,51,-1,51,54,49,-1,50,77,78,-1,78,55,50,-1,51,50,55,-1,55,56,51,-1,52,53,58,-1,58,57,52,-1,53,54,59,-1,59,58,53,-1,54,51,56,-1,56,59,54,-1,19,18,60,-1,60,61,19,-1,18,13,62,-1,62,60,18,-1,13,39,63,-1,63,62,13,-1,40,19,61,-1,61,64,40,-1,39,40,64,-1,64,63,39,-1,2,3,5,-1,2,5,6,-1,13,12,39,-1,25,24,35,-1,70,69,74,-1,67,68,66,-1,66,65,67,-1,79,71,68,-1,68,67,79,-1,72,73,71,-1,71,79,72,-1,49,48,43,-1,43,44,49,-1,63,64,60,-1,60,62,63,-1,60,64,61,-1,86,83,82,-1,82,84,86,-1,141,140,83,-1,83,87,141,-1,83,86,87,-1,88,80,1,-1,1,10,88,-1,89,81,80,-1,80,88,89,-1,144,143,93,-1,93,94,144,-1,94,93,92,-1,92,95,94,-1,87,93,143,-1,143,141,87,-1,86,92,93,-1,93,87,86,-1,69,72,144,-1,144,142,69,-1,142,144,94,-1,94,90,142,-1,91,90,94,-1,94,95,91,-1,100,98,99,-1,99,101,100,-1,95,92,98,-1,98,100,95,-1,85,99,98,-1,98,84,85,-1,84,98,92,-1,92,86,84,-1,96,100,101,-1,101,97,96,-1,91,95,100,-1,100,96,91,-1,81,89,85,-1,106,104,28,-1,28,31,106,-1,107,105,104,-1,104,106,107,-1,101,99,105,-1,105,107,101,-1,10,28,104,-1,104,88,10,-1,88,104,105,-1,105,89,88,-1,89,105,99,-1,99,85,89,-1,102,106,31,-1,31,25,102,-1,103,107,106,-1,106,102,103,-1,97,101,107,-1,107,103,97,-1,145,142,90,-1,90,108,145,-1,111,103,102,-1,102,110,111,-1,146,145,108,-1,108,112,146,-1,112,108,109,-1,109,113,112,-1,108,90,114,-1,114,109,108,-1,97,103,115,-1,116,115,103,-1,103,111,116,-1,116,109,114,-1,114,115,116,-1,118,111,110,-1,110,117,118,-1,119,116,111,-1,111,118,119,-1,113,109,116,-1,116,119,113,-1,147,146,112,-1,112,120,147,-1,120,112,113,-1,113,121,120,-1,123,118,117,-1,117,122,123,-1,121,113,119,-1,119,124,121,-1,148,147,120,-1,120,125,148,-1,125,120,121,-1,121,126,125,-1,128,123,122,-1,122,127,128,-1,129,124,123,-1,123,128,129,-1,126,121,124,-1,124,129,126,-1,149,148,125,-1,125,130,149,-1,130,125,126,-1,126,131,130,-1,133,128,127,-1,127,132,133,-1,134,129,128,-1,128,133,134,-1,131,126,129,-1,129,134,131,-1,135,96,97,-1,97,136,135,-1,137,91,96,-1,96,135,137,-1,138,114,91,-1,91,137,138,-1,136,97,115,-1,115,139,136,-1,139,115,114,-1,114,138,139,-1,81,84,82,-1,81,85,84,-1,91,114,90,-1,25,110,102,-1,142,145,69,-1,140,141,67,-1,67,65,140,-1,141,143,79,-1,79,67,141,-1,143,144,72,-1,72,79,143,-1,118,123,124,-1,124,119,118,-1,135,139,138,-1,138,137,135,-1,135,136,139,-1,25,35,110,-1,117,110,35,-1,35,42,117,-1,47,122,117,-1,117,42,47,-1,127,122,47,-1,47,52,127,-1,132,127,52,-1,52,57,132,-1,69,145,74,-1,75,74,145,-1,145,146,75,-1,76,75,146,-1,146,147,76,-1,77,76,147,-1,147,148,77,-1,78,77,148,-1,148,149,78,-1,57,78,149,-1,149,132,57,-1,58,55,78,-1,78,57,58,-1,59,56,55,-1,55,58,59,-1,132,149,130,-1,130,133,132,-1,133,130,131,-1,131,134,133,-1,151,150,155,-1,155,156,151,-1,150,152,157,-1,157,155,150,-1,152,153,158,-1,158,157,152,-1,153,154,159,-1,159,158,153,-1,160,161,162,-1,162,163,160,-1,154,160,163,-1,163,159,154,-1,168,164,151,-1,151,156,168,-1,169,165,164,-1,164,168,169,-1,170,166,165,-1,165,169,170,-1,171,167,166,-1,166,170,171,-1,162,161,172,-1,172,173,162,-1,173,172,167,-1,167,171,173,-1]);
-let TextureCoordinate197 = browser.currentScene.createNode("TextureCoordinate");
-TextureCoordinate197.point = new MFVec2f(new float[0.4134,0.6454,0.4115,0.6346,0.4055,0.6342,0.4025,0.6415,0.4012,0.6643,0.407,0.6604,0.3972,0.646,0.4018,0.6236,0.3919,0.6471,0.3919,0.6664,0.3705,0.6454,0.3784,0.6342,0.3723,0.6346,0.3814,0.6415,0.3827,0.6643,0.3769,0.6604,0.3867,0.646,0.3821,0.6236,0.2661,0.5914,0.3505,0.5919,0.3554,0.5911,0.2505,0.5754,0.241,0.592,0.2112,0.5805,0.0763,0.4945,0.1025,0.5076,0.0865,0.5614,0.0652,0.5465,0.1412,0.5207,0.1108,0.5655,0.0786,0.5849,0.0516,0.5759,0.1073,0.5839,0.0639,0.4488,0.0877,0.4617,0.0525,0.4715,0.1185,0.4741,0.1474,0.4856,0.1724,0.5255,0.2089,0.5196,0.2133,0.556,0.1645,0.5709,0.2067,0.5908,0.1632,0.5887,0.1708,0.4854,0.1963,0.4863,0.2708,0.4736,0.347,0.4316,0.3616,0.5328,0.2733,0.5359,0.238,0.493,0.249,0.5451,0.2638,0.4568,0.3214,0.4203,0.2252,0.4828,0.042,0.406,0.0909,0.398,0.2183,0.385,0.3504,0.3844,0.0206,0.3452,0.0903,0.3446,0.1491,0.3449,0.1525,0.3869,0.1538,0.4251,0.1784,0.4249,0.1911,0.3858,0.2175,0.3427,0.3608,0.3469,0.1838,0.3438,0.0177,0.3051,0.0982,0.302,0.1487,0.2975,0.2175,0.2944,0.3621,0.2922,0.1849,0.2961,0.019,0.2349,0.1011,0.241,0.1445,0.2419,0.2369,0.2375,0.3561,0.2404,0.1927,0.24,0.0206,0.2122,0.1067,0.2154,0.1463,0.2162,0.227,0.2131,0.3536,0.2151,0.1879,0.2143,0.1715,0.4655,0.1797,0.4646,0.1569,0.4642,0.1544,0.4288,0.1782,0.4286,0.0346,0.5664,0.0399,0.5407,0.2661,0.5914,0.2505,0.5754,0.241,0.592,0.2112,0.5805,0.0763,0.4945,0.0865,0.5614,0.1025,0.5076,0.0652,0.5465,0.1108,0.5655,0.1412,0.5207,0.0786,0.5849,0.0516,0.5759,0.1073,0.5839,0.0877,0.4617,0.1185,0.4741,0.1474,0.4857,0.1724,0.5255,0.2133,0.556,0.2089,0.5196,0.1645,0.5709,0.2067,0.5908,0.1632,0.5887,0.1708,0.4854,0.1963,0.4863,0.2708,0.4736,0.2733,0.5359,0.238,0.493,0.249,0.5451,0.2638,0.4568,0.2252,0.4828,0.042,0.406,0.0909,0.398,0.2183,0.385,0.3504,0.3844,0.0206,0.3452,0.0903,0.3446,0.1525,0.3869,0.1491,0.3449,0.1538,0.4251,0.1784,0.4249,0.1911,0.3858,0.2175,0.3427,0.3608,0.3469,0.1838,0.3438,0.0177,0.3051,0.0982,0.302,0.1487,0.2975,0.2175,0.2944,0.3621,0.2922,0.1849,0.2961,0.019,0.2349,0.1011,0.241,0.1445,0.2419,0.2369,0.2375,0.3561,0.2404,0.1927,0.24,0.0206,0.2122,0.1067,0.2154,0.1463,0.2162,0.227,0.2131,0.3536,0.2151,0.1879,0.2143,0.1715,0.4655,0.1797,0.4646,0.1569,0.4642,0.1544,0.4288,0.1782,0.4286,0.3477,0.431,0.3623,0.5333,0.3623,0.5333,0.3505,0.5919,0.3223,0.4192,0.3477,0.431,0.3223,0.4192,0.3518,0.3851,0.3554,0.5911,0.3505,0.5919,0.3505,0.5919,0.3518,0.3851,0.3518,0.3851,0.3629,0.3439,0.3629,0.3439,0.3633,0.2922,0.3633,0.2922,0.3553,0.2398,0.3553,0.2398,0.3555,0.2151,0.3511,0.5932,0.3536,0.2151,0.3995,0.6721,0.3906,0.6721,0.4094,0.6721,0.4164,0.6721,0.4107,0.6721,0.3995,0.6285,0.3906,0.6293,0.4094,0.632,0.4164,0.6316,0.4107,0.6267,0.4006,0.6738,0.3906,0.6664,0.3906,0.6224,0.4006,0.6225,0.3818,0.6721,0.3719,0.6721,0.3649,0.6721,0.3706,0.6721,0.3818,0.6285,0.3719,0.632,0.3649,0.6316,0.3706,0.6267,0.3807,0.6738,0.3807,0.6225]);
-IndexedFaceSet196.texCoord = TextureCoordinate197;
+HAnimSegment192.children[0] = Transform193;
 
-let Coordinate198 = browser.currentScene.createNode("Coordinate");
-Coordinate198.point = new MFVec3f(new float[0.6107,12.56,-1.113,0,12.61,-1.194,1.295,12.75,-0.8021,1.777,12.73,0.248,1.387,12.47,0.9786,2.569,12.34,0.2936,2.291,13.13,-1.24,2.809,11.57,1.36,1.974,11.38,2.848,0.8488,13.15,-2.779,0,13.13,-2.924,1.794,13.17,-2.481,2.923,10.45,2.618,4.483,11.16,1.773,2.628,12.14,1.922,1.979,11.38,3.368,2.76,10.73,3.438,3.896,11.87,1.856,4.938,11.69,0.1642,4.823,11.1,-1.28,3.031,13.07,0.3237,3.485,12.31,-1.963,4.472,12.61,0.3237,4.103,11.48,-1.569,1.597,8.259,-2.142,0,7.991,-2.26,3.738,9.105,-1.801,0.9095,10.64,-3.903,0,10.65,-4.021,2.106,10.98,-3.451,1.479,7.69,-2.774,0,7.406,-2.879,3.632,9.027,-2.673,3.766,6.756,3.69,5.601,7.314,1.36,1.886,7.153,-2.082,3.79,7.244,-1.629,3.257,4.51,2.44,4.479,4.543,1.327,5.374,8.636,1.472,5.204,8.627,-0.2911,4.877,7.273,-0.6872,1.251,4.413,-1.956,3.156,4.461,-1.264,4.225,4.505,-0.2194,3.245,2.754,2.489,4.476,2.788,1.346,1.13,2.499,-2.085,3.161,2.674,-1.267,4.224,2.739,-0.2643,3.683,0.6999,3.482,5.077,0.7315,1.758,1.34,0.562,-3.242,3.482,0.5706,-2.236,4.68,0.6632,-0.6521,3.34,-0.2471,2.828,4.554,-0.2191,1.485,1.405,-0.3523,-2.359,3.174,-0.3325,-1.628,4.268,-0.2911,-0.3915,6.522,11.45,0.1642,6.152,10.73,-1.28,6.169,10.78,1.674,5.552,8.771,1.472,5.546,8.764,-0.2911,0,12.23,1.525,0.688,12.24,1.418,0,10.3,3.439,1.21,10.77,3.233,0,9.33,3.389,1.51,9.991,3.233,1.216,10.77,3.647,0,9.677,3.844,1.404,10.27,3.824,1.392,7.29,3.597,1.139,4.483,2.845,1.129,2.572,2.941,1.441,0.673,4.021,1.406,-0.2812,3.213,0,10.35,3.579,-0.6107,12.56,-1.113,-1.295,12.75,-0.8021,-1.777,12.73,0.248,-1.387,12.47,0.9786,-2.569,12.34,0.2936,-2.291,13.13,-1.24,-2.809,11.57,1.36,-1.974,11.38,2.848,-0.8488,13.15,-2.779,-1.794,13.17,-2.481,-2.923,10.45,2.618,-4.483,11.16,1.773,-2.628,12.14,1.922,-1.979,11.38,3.368,-2.76,10.73,3.438,-3.896,11.87,1.856,-4.938,11.69,0.1642,-4.823,11.1,-1.28,-3.031,13.07,0.3237,-3.485,12.31,-1.963,-4.472,12.61,0.3237,-4.103,11.48,-1.569,-1.597,8.259,-2.142,-3.738,9.105,-1.801,-0.9095,10.64,-3.903,-2.106,10.98,-3.451,-1.479,7.69,-2.774,-3.632,9.027,-2.673,-3.766,6.756,3.69,-5.601,7.314,1.36,-1.886,7.153,-2.082,-3.79,7.244,-1.629,-3.257,4.51,2.44,-4.479,4.543,1.327,-5.374,8.636,1.472,-5.204,8.627,-0.2911,-4.877,7.273,-0.6872,-1.251,4.413,-1.956,-3.156,4.461,-1.264,-4.225,4.505,-0.2194,-3.245,2.754,2.489,-4.476,2.788,1.346,-1.13,2.499,-2.085,-3.161,2.674,-1.267,-4.224,2.739,-0.2643,-3.683,0.6999,3.482,-5.077,0.7315,1.758,-1.34,0.562,-3.242,-3.482,0.5706,-2.236,-4.68,0.6632,-0.6521,-3.34,-0.2471,2.828,-4.554,-0.2191,1.485,-1.405,-0.3523,-2.359,-3.174,-0.3325,-1.628,-4.268,-0.2911,-0.3915,-6.522,11.45,0.1642,-6.152,10.73,-1.28,-6.169,10.78,1.674,-5.552,8.771,1.472,-5.546,8.764,-0.2911,-0.688,12.24,1.418,-1.21,10.77,3.233,-1.51,9.991,3.233,-1.216,10.77,3.647,-1.404,10.27,3.824,-1.392,7.29,3.597,-1.139,4.483,2.845,-1.129,2.572,2.941,-1.441,0.673,4.021,-1.406,-0.2812,3.213,0.6107,15.68,-1.113,0,15.68,-1.194,1.295,15.68,-0.8021,1.777,15.68,0.2481,1.387,15.68,0.9786,0.6107,11.94,-1.113,0,12.01,-1.194,1.295,12.24,-0.8021,1.777,12.21,0.248,1.387,11.79,0.9786,0.6881,15.83,1.418,0,15.19,1.525,0,11.42,1.525,0.6881,11.43,1.418,-0.6107,15.68,-1.113,-1.295,15.68,-0.8021,-1.777,15.68,0.2481,-1.387,15.68,0.9786,-0.6107,11.94,-1.113,-1.295,12.24,-0.8021,-1.777,12.21,0.2481,-1.387,11.79,0.9786,-0.6881,15.83,1.418,-0.688,11.43,1.418]);
-IndexedFaceSet196.coord = Coordinate198;
+HAnimJoint191.children = new MFNode();
 
-Shape192.geometry = IndexedFaceSet196;
+HAnimJoint191.children[0] = HAnimSegment192;
 
-Transform191.child = new undefined();
+let HAnimJoint201 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint201.name = "skullbase";
+HAnimJoint201.DEF = "hanim_skullbase";
+HAnimJoint201.center = new SFVec3f(new float[0,50.470001,-0.1481]);
+HAnimJoint201.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint201.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment202 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment202.name = "skull";
+HAnimSegment202.DEF = "hanim_skull";
+let Transform203 = browser.currentScene.createNode("Transform");
+Transform203.translation = new SFVec3f(new float[0,50.470001,-0.1481]);
+let Shape204 = browser.currentScene.createNode("Shape");
+let Appearance205 = browser.currentScene.createNode("Appearance");
+let Material206 = browser.currentScene.createNode("Material");
+Material206.diffuseColor = new SFColor(new float[0.588,0.588,0.588]);
+Appearance205.material = Material206;
 
-Transform191.child[0] = Shape192;
+let ImageTexture207 = browser.currentScene.createNode("ImageTexture");
+ImageTexture207.USE = "YoungTextureAtlas";
+Appearance205.texture = ImageTexture207;
 
-HAnimSegment190.children = new MFNode();
+Shape204.appearance = Appearance205;
 
-HAnimSegment190.children[0] = Transform191;
+let IndexedFaceSet208 = browser.currentScene.createNode("IndexedFaceSet");
+IndexedFaceSet208.coordIndex = new MFInt32(new int[1,0,2,-1,72,2,73,-1,73,74,72,-1,2,0,75,-1,75,73,2,-1,72,74,76,-1,76,3,72,-1,74,73,77,-1,77,78,74,-1,73,75,79,-1,79,77,73,-1,76,74,78,-1,78,80,76,-1,78,77,81,-1,81,16,78,-1,77,79,82,-1,82,81,77,-1,80,78,16,-1,16,14,80,-1,3,76,5,-1,76,80,83,-1,83,5,76,-1,80,14,12,-1,12,83,80,-1,75,84,85,-1,85,79,75,-1,79,85,86,-1,86,82,79,-1,85,84,87,-1,87,88,85,-1,86,85,88,-1,88,89,86,-1,0,87,84,-1,84,75,0,-1,81,82,91,-1,91,90,81,-1,82,86,92,-1,92,91,82,-1,86,89,93,-1,93,92,86,-1,90,91,94,-1,94,33,90,-1,91,92,95,-1,95,94,91,-1,92,93,96,-1,96,95,92,-1,179,185,4,-1,8,6,10,-1,10,11,8,-1,6,12,13,-1,13,10,6,-1,12,14,15,-1,15,13,12,-1,15,14,16,-1,16,17,15,-1,17,16,18,-1,18,19,17,-1,19,18,20,-1,20,21,19,-1,11,10,22,-1,22,23,11,-1,10,13,24,-1,24,22,10,-1,13,15,25,-1,25,24,13,-1,15,17,26,-1,26,25,15,-1,17,19,27,-1,27,26,17,-1,21,27,19,-1,23,22,28,-1,28,29,23,-1,22,24,30,-1,30,28,22,-1,25,31,30,-1,30,24,25,-1,25,26,32,-1,32,31,25,-1,26,27,33,-1,33,32,26,-1,27,21,34,-1,34,33,27,-1,9,8,35,-1,35,36,9,-1,8,11,23,-1,23,35,8,-1,23,29,37,-1,37,35,23,-1,31,32,39,-1,39,40,31,-1,40,39,41,-1,41,42,40,-1,31,40,43,-1,32,44,39,-1,42,41,45,-1,45,46,42,-1,40,42,46,-1,46,43,40,-1,41,39,44,-1,44,45,41,-1,47,48,50,-1,50,49,47,-1,50,51,52,-1,52,49,50,-1,52,51,53,-1,53,54,52,-1,54,53,55,-1,55,56,54,-1,56,55,57,-1,57,58,56,-1,50,48,59,-1,59,60,50,-1,51,50,60,-1,60,61,51,-1,53,51,61,-1,61,62,53,-1,55,53,62,-1,62,63,55,-1,57,55,63,-1,63,64,57,-1,62,61,65,-1,65,66,62,-1,63,62,66,-1,66,67,63,-1,64,63,67,-1,67,68,64,-1,28,30,65,-1,67,66,45,-1,45,69,67,-1,68,67,69,-1,69,70,68,-1,30,31,43,-1,65,30,43,-1,43,46,65,-1,66,65,46,-1,46,45,66,-1,48,47,38,-1,38,37,48,-1,59,48,37,-1,37,29,59,-1,33,94,97,-1,97,71,33,-1,94,95,98,-1,98,97,94,-1,95,96,99,-1,99,98,95,-1,32,33,71,-1,71,44,32,-1,71,69,45,-1,45,44,71,-1,97,70,69,-1,69,71,97,-1,97,98,70,-1,83,12,6,-1,6,5,83,-1,21,20,81,-1,81,90,21,-1,34,21,90,-1,90,33,34,-1,1,100,0,-1,158,100,72,-1,72,159,158,-1,160,0,100,-1,100,158,160,-1,161,159,72,-1,72,3,161,-1,162,158,159,-1,159,163,162,-1,164,160,158,-1,158,162,164,-1,163,159,161,-1,161,165,163,-1,166,162,163,-1,163,110,166,-1,167,164,162,-1,162,166,167,-1,110,163,165,-1,165,108,110,-1,3,195,101,-1,101,161,3,-1,168,165,161,-1,161,101,168,-1,106,108,165,-1,165,168,106,-1,170,169,160,-1,160,164,170,-1,171,170,164,-1,164,167,171,-1,87,169,170,-1,170,88,87,-1,88,170,171,-1,171,89,88,-1,169,87,0,-1,0,160,169,-1,173,167,166,-1,166,172,173,-1,174,171,167,-1,167,173,174,-1,93,89,171,-1,171,174,93,-1,175,173,172,-1,172,127,175,-1,176,174,173,-1,173,175,176,-1,96,93,174,-1,174,176,96,-1,104,102,103,-1,103,105,104,-1,107,106,102,-1,102,104,107,-1,109,108,106,-1,106,107,109,-1,110,108,109,-1,109,111,110,-1,112,110,111,-1,111,113,112,-1,114,112,113,-1,113,115,114,-1,116,104,105,-1,105,117,116,-1,118,107,104,-1,104,116,118,-1,119,109,107,-1,107,118,119,-1,120,111,109,-1,109,119,120,-1,121,113,111,-1,111,120,121,-1,115,113,121,-1,122,116,117,-1,117,123,122,-1,124,118,116,-1,116,122,124,-1,124,125,119,-1,119,118,124,-1,126,120,119,-1,119,125,126,-1,127,121,120,-1,120,126,127,-1,128,115,121,-1,121,127,128,-1,129,103,9,-1,9,36,129,-1,117,105,103,-1,103,129,117,-1,130,123,117,-1,117,129,130,-1,131,126,125,-1,125,132,131,-1,133,131,132,-1,132,134,133,-1,125,135,132,-1,126,131,136,-1,137,133,134,-1,134,138,137,-1,138,134,132,-1,132,135,138,-1,136,131,133,-1,133,137,136,-1,140,139,47,-1,47,49,140,-1,52,141,140,-1,140,49,52,-1,142,141,52,-1,52,54,142,-1,143,142,54,-1,54,56,143,-1,144,143,56,-1,56,58,144,-1,145,139,140,-1,140,146,145,-1,146,140,141,-1,141,147,146,-1,147,141,142,-1,142,148,147,-1,148,142,143,-1,143,149,148,-1,149,143,144,-1,144,150,149,-1,148,152,151,-1,151,147,148,-1,152,148,149,-1,149,153,152,-1,153,149,150,-1,150,154,153,-1,122,151,124,-1,137,152,153,-1,153,155,137,-1,155,153,154,-1,154,156,155,-1,124,135,125,-1,135,124,151,-1,151,138,135,-1,138,151,152,-1,152,137,138,-1,38,47,139,-1,139,130,38,-1,130,139,145,-1,145,123,130,-1,177,175,127,-1,127,157,177,-1,178,176,175,-1,175,177,178,-1,99,96,176,-1,176,178,99,-1,157,127,126,-1,126,136,157,-1,137,155,157,-1,157,136,137,-1,155,156,177,-1,177,157,155,-1,177,156,178,-1,102,106,168,-1,168,101,102,-1,166,114,115,-1,115,172,166,-1,172,115,128,-1,128,127,172,-1,182,187,188,-1,189,190,194,-1,191,192,193,-1,5,6,183,-1,183,195,5,-1,102,101,195,-1,195,183,102,-1,9,103,7,-1,7,8,9,-1,103,102,7,-1,8,7,6,-1,65,61,60,-1,60,28,65,-1,147,151,122,-1,122,146,147,-1,180,6,7,-1,7,184,180,-1,186,184,7,-1,7,102,186,-1,4,185,180,-1,180,184,4,-1,181,4,184,-1,184,186,181,-1,72,1,2,-1,72,100,1,-1,129,36,38,-1,38,130,129,-1,35,37,38,-1,38,36,35,-1,181,179,4,-1,123,145,146,-1,146,122,123,-1,60,59,29,-1,29,28,60,-1]);
+IndexedFaceSet208.creaseAngle = 1.57;
+IndexedFaceSet208.texCoordIndex = new MFInt32(new int[0,1,2,-1,5,2,3,-1,3,4,5,-1,2,1,6,-1,6,3,2,-1,5,4,7,-1,7,8,5,-1,4,3,9,-1,9,10,4,-1,3,6,11,-1,11,9,3,-1,7,4,10,-1,10,12,7,-1,10,9,13,-1,13,14,10,-1,9,11,15,-1,15,13,9,-1,12,10,14,-1,14,16,12,-1,8,7,17,-1,7,12,18,-1,18,17,7,-1,12,16,19,-1,19,18,12,-1,6,21,20,-1,20,11,6,-1,11,20,22,-1,22,15,11,-1,20,21,23,-1,23,24,20,-1,22,20,24,-1,24,25,22,-1,1,23,21,-1,21,6,1,-1,13,15,26,-1,26,27,13,-1,15,22,28,-1,28,26,15,-1,22,25,29,-1,29,28,22,-1,27,26,30,-1,30,31,27,-1,26,28,32,-1,32,30,26,-1,28,29,33,-1,33,32,28,-1,94,95,96,-1,99,100,97,-1,97,98,99,-1,100,102,101,-1,101,97,100,-1,102,104,103,-1,103,101,102,-1,103,104,105,-1,105,106,103,-1,106,105,107,-1,107,108,106,-1,108,107,109,-1,109,110,108,-1,98,97,111,-1,111,112,98,-1,97,101,113,-1,113,111,97,-1,101,103,114,-1,114,113,101,-1,103,106,115,-1,115,114,103,-1,106,108,116,-1,116,115,106,-1,110,116,108,-1,112,111,117,-1,117,118,112,-1,111,113,119,-1,119,117,111,-1,114,120,119,-1,119,113,114,-1,114,115,121,-1,121,120,114,-1,115,116,122,-1,122,121,115,-1,116,110,123,-1,123,122,116,-1,126,99,124,-1,124,125,126,-1,99,98,112,-1,112,124,99,-1,112,118,127,-1,127,124,112,-1,36,37,34,-1,34,35,36,-1,35,34,38,-1,38,39,35,-1,36,35,40,-1,37,41,34,-1,39,38,42,-1,42,43,39,-1,35,39,43,-1,43,40,35,-1,38,34,41,-1,41,42,38,-1,129,131,130,-1,130,128,129,-1,130,135,132,-1,132,128,130,-1,132,135,133,-1,133,134,132,-1,134,133,136,-1,136,137,134,-1,137,136,138,-1,138,139,137,-1,130,131,140,-1,140,141,130,-1,135,130,141,-1,141,142,135,-1,133,135,142,-1,142,143,133,-1,136,133,143,-1,143,144,136,-1,138,136,144,-1,144,145,138,-1,143,142,146,-1,146,147,143,-1,144,143,147,-1,147,148,144,-1,145,144,148,-1,148,149,145,-1,117,119,146,-1,148,147,150,-1,150,151,148,-1,149,148,151,-1,151,152,149,-1,44,36,40,-1,146,119,153,-1,153,154,146,-1,147,146,154,-1,154,150,147,-1,131,129,155,-1,155,127,131,-1,140,131,127,-1,127,118,140,-1,31,30,45,-1,45,46,31,-1,30,32,47,-1,47,45,30,-1,32,33,48,-1,48,47,32,-1,37,31,46,-1,46,41,37,-1,157,151,150,-1,150,156,157,-1,158,152,151,-1,151,157,158,-1,45,47,49,-1,18,19,50,-1,50,17,18,-1,110,109,159,-1,159,160,110,-1,123,110,160,-1,160,122,123,-1,0,51,1,-1,52,51,5,-1,5,53,52,-1,54,1,51,-1,51,52,54,-1,55,53,5,-1,5,8,55,-1,56,52,53,-1,53,57,56,-1,58,54,52,-1,52,56,58,-1,57,53,55,-1,55,59,57,-1,60,56,57,-1,57,61,60,-1,62,58,56,-1,56,60,62,-1,61,57,59,-1,59,63,61,-1,8,92,64,-1,64,55,8,-1,65,59,55,-1,55,64,65,-1,66,63,59,-1,59,65,66,-1,67,68,54,-1,54,58,67,-1,69,67,58,-1,58,62,69,-1,23,68,67,-1,67,24,23,-1,24,67,69,-1,69,25,24,-1,68,23,1,-1,1,54,68,-1,70,62,60,-1,60,71,70,-1,72,69,62,-1,62,70,72,-1,29,25,69,-1,69,72,29,-1,73,70,71,-1,71,74,73,-1,75,72,70,-1,70,73,75,-1,33,29,72,-1,72,75,33,-1,161,164,162,-1,162,163,161,-1,165,166,164,-1,164,161,165,-1,167,168,166,-1,166,165,167,-1,169,168,167,-1,167,170,169,-1,171,169,170,-1,170,172,171,-1,173,171,172,-1,172,174,173,-1,175,161,163,-1,163,176,175,-1,177,165,161,-1,161,175,177,-1,178,167,165,-1,165,177,178,-1,179,170,167,-1,167,178,179,-1,180,172,170,-1,170,179,180,-1,174,172,180,-1,181,175,176,-1,176,182,181,-1,183,177,175,-1,175,181,183,-1,183,184,178,-1,178,177,183,-1,185,179,178,-1,178,184,185,-1,186,180,179,-1,179,185,186,-1,187,174,180,-1,180,186,187,-1,188,162,126,-1,126,125,188,-1,176,163,162,-1,162,188,176,-1,189,182,176,-1,176,188,189,-1,76,79,77,-1,77,78,76,-1,80,76,78,-1,78,81,80,-1,77,82,78,-1,79,76,83,-1,84,80,81,-1,81,85,84,-1,85,81,78,-1,78,82,85,-1,83,76,80,-1,80,84,83,-1,190,191,129,-1,129,128,190,-1,132,193,190,-1,190,128,132,-1,192,193,132,-1,132,134,192,-1,194,192,134,-1,134,137,194,-1,195,194,137,-1,137,139,195,-1,196,191,190,-1,190,197,196,-1,197,190,193,-1,193,198,197,-1,198,193,192,-1,192,199,198,-1,199,192,194,-1,194,200,199,-1,200,194,195,-1,195,201,200,-1,199,203,202,-1,202,198,199,-1,203,199,200,-1,200,204,203,-1,204,200,201,-1,201,205,204,-1,181,202,183,-1,206,203,204,-1,204,207,206,-1,207,204,205,-1,205,208,207,-1,86,82,77,-1,210,183,202,-1,202,209,210,-1,209,202,203,-1,203,206,209,-1,155,129,191,-1,191,189,155,-1,189,191,196,-1,196,182,189,-1,87,73,74,-1,74,88,87,-1,89,75,73,-1,73,87,89,-1,48,33,75,-1,75,89,48,-1,88,74,79,-1,79,83,88,-1,206,207,211,-1,211,212,206,-1,207,208,213,-1,213,211,207,-1,87,90,89,-1,91,66,65,-1,65,64,91,-1,214,173,174,-1,174,215,214,-1,215,174,187,-1,187,186,215,-1,92,8,7,-1,7,17,92,-1,64,55,8,-1,17,50,93,-1,93,92,17,-1,91,64,92,-1,92,93,91,-1,126,162,216,-1,216,99,126,-1,162,164,216,-1,99,216,100,-1,146,142,141,-1,141,117,146,-1,198,202,181,-1,181,197,198,-1,218,100,216,-1,216,217,218,-1,219,217,216,-1,216,164,219,-1,96,95,218,-1,218,217,96,-1,220,96,217,-1,217,219,220,-1,5,0,2,-1,5,51,0,-1,188,125,155,-1,155,189,188,-1,124,127,155,-1,155,125,124,-1,220,94,96,-1,182,196,197,-1,197,181,182,-1,141,140,118,-1,118,117,141,-1]);
+let Coordinate209 = browser.currentScene.createNode("Coordinate");
+Coordinate209.point = new MFVec3f(new float[0.0166,1.591,6.024,0.0166,2.016,6.639,0.7299,2.016,6.11,0.0209,4.487,5.454,0.0165,5.97,6.794,1.921,6.193,5.758,2.695,8.151,5.208,0.0166,9.51,6.044,2.3,11.24,3.736,0.0166,11.46,3.982,5.164,9.407,3.779,4.307,10.79,3.033,3.82,6.132,4.763,5.906,6.626,3.937,3.93,4.843,4.125,5.995,4.599,3.361,3.774,3.004,4.212,5.738,3.055,3.208,3.653,1.816,4.647,5.075,1.716,3.573,3.373,0.4292,5.256,3.73,0.4456,4.303,5.818,9.407,1.639,4.426,11.17,1.703,6.693,6.853,1.603,6.69,4.599,1.37,6.325,3.055,1.755,5.136,1.716,2.106,4.756,8.951,-1.064,3.294,10.69,-1.162,5.624,6.637,0.1137,5.042,4.599,0.3258,4.844,3.055,0.5342,4.061,1.72,1.233,3.44,0.483,3.308,2.306,12.15,1.922,0.0166,11.87,2.256,1.253,11.35,-0.9965,0.0166,11.28,-1.036,5.368,2.823,-0.2563,5.506,4.831,-0.3854,5.709,3.084,-1.039,5.986,4.571,-1.165,5.164,4.831,-0.3854,4.502,2.839,-0.2487,5.285,3.081,-1.044,5.51,4.571,-1.165,0.0166,10.98,-2.872,0.8853,10.98,-2.828,0.0166,9.431,-4.658,1.4,9.426,-4.596,1.764,6.815,-5.634,0.0166,6.815,-5.724,2.188,2.854,-5.779,0.0166,2.854,-5.877,2.64,-0.9086,-7.389,0.0166,-0.9086,-7.605,0.337,-0.2691,-1.013,0.0166,-0.2691,-1.08,1.806,10.98,-2.622,2.963,9.446,-3.86,3.907,6.815,-4.527,4.17,2.854,-4.609,4.781,-0.9086,-5.634,0.6963,-0.2691,-0.7539,5.077,6.815,-2.044,5.153,2.854,-2.244,6.034,-0.9086,-2.656,1.061,-0.2691,-0.377,6.158,-0.9086,-0.7305,1.169,-0.2691,0.2302,4.061,1.742,0.1251,0.0166,2.929,5.407,1.728,1.985,5.991,1.219,3.07,5.291,1.523,1.24,6.024,1.506,4.891,5.446,2.813,1.939,5.692,2.994,3.047,4.872,2.236,1.042,5.747,3.075,4.957,5.14,3.653,1.816,4.647,2.831,0.8449,4.999,2.989,6.171,5.406,0.8003,0.7396,5.803,1.267,0.229,5.305,1.568,-0.1326,4.693,0.0166,0.5157,5.803,0.0166,-0.1207,5.579,0.0166,-0.8641,5.143,4.05,1.82,2.905,3.099,0.752,3.012,1.743,-0.1026,3.554,0.0166,-0.7393,3.994,3.099,0.8508,1.273,1.222,0.0724,1.917,0.0166,-0.3447,1.985,3.099,0.8479,0.3903,0.5884,-0.1912,0.5953,0.0166,-0.5266,0.684,-0.6968,2.016,6.11,-1.888,6.193,5.758,-2.662,8.151,5.208,-2.267,11.24,3.736,-5.131,9.407,3.779,-4.273,10.79,3.033,-3.787,6.132,4.763,-5.873,6.626,3.937,-3.897,4.843,4.125,-5.962,4.599,3.361,-3.741,3.004,4.212,-5.705,3.055,3.208,-3.62,1.816,4.647,-5.042,1.716,3.573,-3.429,0.4292,5.256,-3.787,0.4456,4.303,-5.785,9.407,1.639,-4.393,11.17,1.703,-6.66,6.853,1.603,-6.657,4.599,1.37,-6.292,3.055,1.755,-5.103,1.716,2.106,-4.722,8.951,-1.064,-3.261,10.69,-1.162,-5.591,6.637,0.1137,-5.009,4.599,0.3258,-4.811,3.055,0.5342,-4.028,1.72,1.233,-3.497,0.483,3.308,-2.273,12.15,1.922,-1.219,11.35,-0.9964,-5.335,2.823,-0.2563,-5.473,4.831,-0.3854,-5.676,3.084,-1.039,-5.953,4.571,-1.165,-5.131,4.831,-0.3854,-4.469,2.839,-0.2487,-5.252,3.081,-1.044,-5.477,4.571,-1.165,-0.8522,10.98,-2.828,-1.367,9.426,-4.596,-1.731,6.815,-5.634,-2.155,2.854,-5.779,-2.607,-0.9086,-7.389,-0.3039,-0.2691,-1.013,-1.773,10.98,-2.622,-2.929,9.446,-3.86,-3.873,6.815,-4.527,-4.137,2.854,-4.609,-4.748,-0.9086,-5.634,-0.6632,-0.2691,-0.7539,-5.044,6.815,-2.044,-5.12,2.854,-2.244,-6.001,-0.9086,-2.656,-1.028,-0.2691,-0.377,-6.124,-0.9086,-0.7305,-1.136,-0.2691,0.2302,-4.028,1.742,0.1251,-1.695,1.985,5.991,-1.186,3.07,5.291,-1.49,1.24,6.024,-1.473,4.891,5.446,-2.779,1.939,5.692,-2.961,3.047,4.872,-2.203,1.042,5.747,-3.042,4.957,5.14,-3.62,1.816,4.647,-2.798,0.8449,4.999,-2.956,6.171,5.406,-0.7672,0.7396,5.803,-1.234,0.229,5.305,-1.535,-0.1326,4.693,-4.017,1.82,2.905,-3.066,0.752,3.012,-1.71,-0.1026,3.554,-3.066,0.8508,1.273,-1.189,0.0724,1.917,-3.066,0.8479,0.3903,-0.5553,-0.1912,0.5953,0.0166,4.813,6.019,2.213,7.219,5.73,-1.664,6.175,5.956,0.0252,6.322,5.758,0.0251,9.022,5.208,0.0177,7.455,6.86,1.684,6.175,5.956,-2.193,7.219,5.73,0.0209,4.487,5.454,1.506,4.891,5.446,1.506,4.891,5.446,1.921,6.193,5.758,-1.888,6.193,5.758,-1.473,4.891,5.446,0.0209,4.487,5.454,0.0252,6.322,5.758,0.0252,6.322,5.758]);
+IndexedFaceSet208.coord = Coordinate209;
 
-HAnimJoint189.children = new MFNode();
+let TextureCoordinate210 = browser.currentScene.createNode("TextureCoordinate");
+TextureCoordinate210.point = new MFVec2f(new float[0.2306,0.7219,0.2306,0.7038,0.2614,0.7219,0.3044,0.7206,0.2825,0.7668,0.2306,0.7608,0.2956,0.6889,0.2948,0.8444,0.2308,0.8272,0.3511,0.7186,0.3589,0.7658,0.3263,0.6804,0.3624,0.8472,0.3873,0.7134,0.3925,0.764,0.3519,0.6721,0.3993,0.8423,0.3127,0.8998,0.3587,0.8989,0.3945,0.8972,0.2845,0.6612,0.2644,0.6676,0.2975,0.6458,0.2306,0.658,0.2306,0.6463,0.2306,0.6147,0.3634,0.6681,0.4044,0.7136,0.305,0.6471,0.2306,0.62,0.3634,0.6723,0.4049,0.7093,0.2826,0.6545,0.2306,0.6368,0.4277,0.7563,0.4328,0.8418,0.4157,0.8319,0.4084,0.7662,0.4403,0.7674,0.4505,0.8307,0.4202,0.8418,0.3958,0.757,0.4247,0.7673,0.4329,0.8307,0.4371,0.9187,0.3634,0.6722,0.4049,0.7103,0.2553,0.6433,0.2306,0.629,0.2803,0.64,0.3461,0.9832,0.1999,0.7219,0.1569,0.7206,0.1788,0.7668,0.1657,0.6889,0.1665,0.8444,0.1102,0.7186,0.1024,0.7658,0.135,0.6804,0.0989,0.8472,0.074,0.7134,0.0688,0.764,0.1094,0.6721,0.062,0.8423,0.1486,0.8998,0.1026,0.8989,0.0668,0.8972,0.1768,0.6612,0.1969,0.6676,0.1638,0.6458,0.0979,0.6681,0.0569,0.7136,0.1563,0.6471,0.0979,0.6723,0.0564,0.7093,0.1787,0.6545,0.0336,0.7563,0.0456,0.8319,0.0285,0.8418,0.0529,0.7662,0.021,0.7674,0.0109,0.8307,0.0411,0.8418,0.0655,0.757,0.0366,0.7673,0.0283,0.8307,0.0242,0.9187,0.0979,0.6722,0.0564,0.7103,0.206,0.6433,0.181,0.64,0.1152,0.9832,0.231,0.9053,0.231,1.02,0.5118,0.6048,0.565,0.6951,0.5291,0.7326,0.6281,0.9347,0.6515,0.9447,0.6279,0.9576,0.5936,0.9053,0.6287,0.8085,0.5933,0.8105,0.7035,0.7808,0.6735,0.7785,0.6727,0.7204,0.6961,0.7287,0.6747,0.6734,0.6972,0.6739,0.6706,0.6045,0.7158,0.6049,0.7002,0.9347,0.6963,0.9556,0.7074,0.8151,0.7314,0.7774,0.7331,0.7218,0.7466,0.6739,0.7913,0.9215,0.7929,0.9417,0.7576,0.8089,0.764,0.7714,0.7698,0.7218,0.7675,0.674,0.7631,0.606,0.689,0.9839,0.6777,0.9757,0.6196,0.9641,0.7873,0.9608,0.9124,0.9353,0.8505,0.9502,0.9103,0.9352,0.849,0.9502,0.9456,0.8068,0.8961,0.7182,0.9432,0.7178,0.8875,0.8087,0.9136,0.6076,0.9472,0.6076,0.827,0.6244,0.8293,0.6244,0.8421,0.9502,0.8855,0.9358,0.8749,0.8121,0.8851,0.7175,0.8861,0.6085,0.8183,0.6244,0.8422,0.814,0.8574,0.7152,0.8432,0.6076,0.8056,0.6244,0.8187,0.7234,0.8175,0.6059,0.7937,0.6244,0.7965,0.7739,0.8228,0.7664,0.7886,0.9589,0.8004,0.7165,0.7972,0.6823,0.7883,0.6565,0.6747,0.6734,0.7163,0.6616,0.6281,0.9347,0.6279,0.9576,0.6515,0.9447,0.5936,0.9053,0.6287,0.8085,0.5933,0.8105,0.7035,0.7808,0.6735,0.7785,0.6727,0.7204,0.6961,0.7287,0.6747,0.6734,0.6972,0.6739,0.6706,0.6045,0.7158,0.6049,0.7002,0.9347,0.6963,0.9556,0.7074,0.8151,0.7314,0.7774,0.7331,0.7218,0.7466,0.6739,0.7913,0.9215,0.7929,0.9417,0.7576,0.8089,0.764,0.7714,0.7698,0.7218,0.7675,0.674,0.7631,0.606,0.689,0.9839,0.7873,0.9608,0.9103,0.9352,0.849,0.9502,0.8961,0.7182,0.8875,0.8087,0.9136,0.6076,0.827,0.6244,0.8421,0.9502,0.8855,0.9358,0.8749,0.8121,0.8851,0.7175,0.8861,0.6085,0.8183,0.6244,0.8422,0.814,0.8574,0.7152,0.8432,0.6076,0.8056,0.6244,0.8187,0.7234,0.8175,0.6059,0.7937,0.6244,0.8228,0.7664,0.7965,0.7739,0.7972,0.6823,0.8004,0.7165,0.7883,0.6565,0.6747,0.6734,0.7163,0.6616,0.5663,0.9104,0.5499,0.8086,0.5896,0.7882,0.5896,0.7882,0.565,0.6951]);
+IndexedFaceSet208.texCoord = TextureCoordinate210;
 
-HAnimJoint189.children[0] = HAnimSegment190;
+Shape204.geometry = IndexedFaceSet208;
 
-let HAnimJoint199 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint199.DEF = "hanim_skullbase";
-HAnimJoint199.name = "skullbase";
-HAnimJoint199.center = new SFVec3f(new float[0,50.47,-0.1481]);
-let HAnimSegment200 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment200.DEF = "hanim_skull";
-HAnimSegment200.name = "skull";
-let Transform201 = browser.currentScene.createNode("Transform");
-Transform201.translation = new SFVec3f(new float[0,50.47,-0.1481]);
-let Shape202 = browser.currentScene.createNode("Shape");
-let Appearance203 = browser.currentScene.createNode("Appearance");
-let Material204 = browser.currentScene.createNode("Material");
-Material204.diffuseColor = new SFColor(new float[0.588,0.588,0.588]);
-Appearance203.material = Material204;
+Transform203.child = new undefined();
 
-let ImageTexture205 = browser.currentScene.createNode("ImageTexture");
-ImageTexture205.USE = "YoungTextureAtlas";
-Appearance203.texture = ImageTexture205;
+Transform203.child[0] = Shape204;
 
-Shape202.appearance = Appearance203;
+HAnimSegment202.children = new MFNode();
 
-let IndexedFaceSet206 = browser.currentScene.createNode("IndexedFaceSet");
-IndexedFaceSet206.creaseAngle = 1.57;
-IndexedFaceSet206.texCoordIndex = new MFInt32(new int[0,1,2,-1,5,2,3,-1,3,4,5,-1,2,1,6,-1,6,3,2,-1,5,4,7,-1,7,8,5,-1,4,3,9,-1,9,10,4,-1,3,6,11,-1,11,9,3,-1,7,4,10,-1,10,12,7,-1,10,9,13,-1,13,14,10,-1,9,11,15,-1,15,13,9,-1,12,10,14,-1,14,16,12,-1,8,7,17,-1,7,12,18,-1,18,17,7,-1,12,16,19,-1,19,18,12,-1,6,21,20,-1,20,11,6,-1,11,20,22,-1,22,15,11,-1,20,21,23,-1,23,24,20,-1,22,20,24,-1,24,25,22,-1,1,23,21,-1,21,6,1,-1,13,15,26,-1,26,27,13,-1,15,22,28,-1,28,26,15,-1,22,25,29,-1,29,28,22,-1,27,26,30,-1,30,31,27,-1,26,28,32,-1,32,30,26,-1,28,29,33,-1,33,32,28,-1,94,95,96,-1,99,100,97,-1,97,98,99,-1,100,102,101,-1,101,97,100,-1,102,104,103,-1,103,101,102,-1,103,104,105,-1,105,106,103,-1,106,105,107,-1,107,108,106,-1,108,107,109,-1,109,110,108,-1,98,97,111,-1,111,112,98,-1,97,101,113,-1,113,111,97,-1,101,103,114,-1,114,113,101,-1,103,106,115,-1,115,114,103,-1,106,108,116,-1,116,115,106,-1,110,116,108,-1,112,111,117,-1,117,118,112,-1,111,113,119,-1,119,117,111,-1,114,120,119,-1,119,113,114,-1,114,115,121,-1,121,120,114,-1,115,116,122,-1,122,121,115,-1,116,110,123,-1,123,122,116,-1,126,99,124,-1,124,125,126,-1,99,98,112,-1,112,124,99,-1,112,118,127,-1,127,124,112,-1,36,37,34,-1,34,35,36,-1,35,34,38,-1,38,39,35,-1,36,35,40,-1,37,41,34,-1,39,38,42,-1,42,43,39,-1,35,39,43,-1,43,40,35,-1,38,34,41,-1,41,42,38,-1,129,131,130,-1,130,128,129,-1,130,135,132,-1,132,128,130,-1,132,135,133,-1,133,134,132,-1,134,133,136,-1,136,137,134,-1,137,136,138,-1,138,139,137,-1,130,131,140,-1,140,141,130,-1,135,130,141,-1,141,142,135,-1,133,135,142,-1,142,143,133,-1,136,133,143,-1,143,144,136,-1,138,136,144,-1,144,145,138,-1,143,142,146,-1,146,147,143,-1,144,143,147,-1,147,148,144,-1,145,144,148,-1,148,149,145,-1,117,119,146,-1,148,147,150,-1,150,151,148,-1,149,148,151,-1,151,152,149,-1,44,36,40,-1,146,119,153,-1,153,154,146,-1,147,146,154,-1,154,150,147,-1,131,129,155,-1,155,127,131,-1,140,131,127,-1,127,118,140,-1,31,30,45,-1,45,46,31,-1,30,32,47,-1,47,45,30,-1,32,33,48,-1,48,47,32,-1,37,31,46,-1,46,41,37,-1,157,151,150,-1,150,156,157,-1,158,152,151,-1,151,157,158,-1,45,47,49,-1,18,19,50,-1,50,17,18,-1,110,109,159,-1,159,160,110,-1,123,110,160,-1,160,122,123,-1,0,51,1,-1,52,51,5,-1,5,53,52,-1,54,1,51,-1,51,52,54,-1,55,53,5,-1,5,8,55,-1,56,52,53,-1,53,57,56,-1,58,54,52,-1,52,56,58,-1,57,53,55,-1,55,59,57,-1,60,56,57,-1,57,61,60,-1,62,58,56,-1,56,60,62,-1,61,57,59,-1,59,63,61,-1,8,92,64,-1,64,55,8,-1,65,59,55,-1,55,64,65,-1,66,63,59,-1,59,65,66,-1,67,68,54,-1,54,58,67,-1,69,67,58,-1,58,62,69,-1,23,68,67,-1,67,24,23,-1,24,67,69,-1,69,25,24,-1,68,23,1,-1,1,54,68,-1,70,62,60,-1,60,71,70,-1,72,69,62,-1,62,70,72,-1,29,25,69,-1,69,72,29,-1,73,70,71,-1,71,74,73,-1,75,72,70,-1,70,73,75,-1,33,29,72,-1,72,75,33,-1,161,164,162,-1,162,163,161,-1,165,166,164,-1,164,161,165,-1,167,168,166,-1,166,165,167,-1,169,168,167,-1,167,170,169,-1,171,169,170,-1,170,172,171,-1,173,171,172,-1,172,174,173,-1,175,161,163,-1,163,176,175,-1,177,165,161,-1,161,175,177,-1,178,167,165,-1,165,177,178,-1,179,170,167,-1,167,178,179,-1,180,172,170,-1,170,179,180,-1,174,172,180,-1,181,175,176,-1,176,182,181,-1,183,177,175,-1,175,181,183,-1,183,184,178,-1,178,177,183,-1,185,179,178,-1,178,184,185,-1,186,180,179,-1,179,185,186,-1,187,174,180,-1,180,186,187,-1,188,162,126,-1,126,125,188,-1,176,163,162,-1,162,188,176,-1,189,182,176,-1,176,188,189,-1,76,79,77,-1,77,78,76,-1,80,76,78,-1,78,81,80,-1,77,82,78,-1,79,76,83,-1,84,80,81,-1,81,85,84,-1,85,81,78,-1,78,82,85,-1,83,76,80,-1,80,84,83,-1,190,191,129,-1,129,128,190,-1,132,193,190,-1,190,128,132,-1,192,193,132,-1,132,134,192,-1,194,192,134,-1,134,137,194,-1,195,194,137,-1,137,139,195,-1,196,191,190,-1,190,197,196,-1,197,190,193,-1,193,198,197,-1,198,193,192,-1,192,199,198,-1,199,192,194,-1,194,200,199,-1,200,194,195,-1,195,201,200,-1,199,203,202,-1,202,198,199,-1,203,199,200,-1,200,204,203,-1,204,200,201,-1,201,205,204,-1,181,202,183,-1,206,203,204,-1,204,207,206,-1,207,204,205,-1,205,208,207,-1,86,82,77,-1,210,183,202,-1,202,209,210,-1,209,202,203,-1,203,206,209,-1,155,129,191,-1,191,189,155,-1,189,191,196,-1,196,182,189,-1,87,73,74,-1,74,88,87,-1,89,75,73,-1,73,87,89,-1,48,33,75,-1,75,89,48,-1,88,74,79,-1,79,83,88,-1,206,207,211,-1,211,212,206,-1,207,208,213,-1,213,211,207,-1,87,90,89,-1,91,66,65,-1,65,64,91,-1,214,173,174,-1,174,215,214,-1,215,174,187,-1,187,186,215,-1,92,8,7,-1,7,17,92,-1,64,55,8,-1,17,50,93,-1,93,92,17,-1,91,64,92,-1,92,93,91,-1,126,162,216,-1,216,99,126,-1,162,164,216,-1,99,216,100,-1,146,142,141,-1,141,117,146,-1,198,202,181,-1,181,197,198,-1,218,100,216,-1,216,217,218,-1,219,217,216,-1,216,164,219,-1,96,95,218,-1,218,217,96,-1,220,96,217,-1,217,219,220,-1,5,0,2,-1,5,51,0,-1,188,125,155,-1,155,189,188,-1,124,127,155,-1,155,125,124,-1,220,94,96,-1,182,196,197,-1,197,181,182,-1,141,140,118,-1,118,117,141,-1]);
-IndexedFaceSet206.coordIndex = new MFInt32(new int[1,0,2,-1,72,2,73,-1,73,74,72,-1,2,0,75,-1,75,73,2,-1,72,74,76,-1,76,3,72,-1,74,73,77,-1,77,78,74,-1,73,75,79,-1,79,77,73,-1,76,74,78,-1,78,80,76,-1,78,77,81,-1,81,16,78,-1,77,79,82,-1,82,81,77,-1,80,78,16,-1,16,14,80,-1,3,76,5,-1,76,80,83,-1,83,5,76,-1,80,14,12,-1,12,83,80,-1,75,84,85,-1,85,79,75,-1,79,85,86,-1,86,82,79,-1,85,84,87,-1,87,88,85,-1,86,85,88,-1,88,89,86,-1,0,87,84,-1,84,75,0,-1,81,82,91,-1,91,90,81,-1,82,86,92,-1,92,91,82,-1,86,89,93,-1,93,92,86,-1,90,91,94,-1,94,33,90,-1,91,92,95,-1,95,94,91,-1,92,93,96,-1,96,95,92,-1,179,185,4,-1,8,6,10,-1,10,11,8,-1,6,12,13,-1,13,10,6,-1,12,14,15,-1,15,13,12,-1,15,14,16,-1,16,17,15,-1,17,16,18,-1,18,19,17,-1,19,18,20,-1,20,21,19,-1,11,10,22,-1,22,23,11,-1,10,13,24,-1,24,22,10,-1,13,15,25,-1,25,24,13,-1,15,17,26,-1,26,25,15,-1,17,19,27,-1,27,26,17,-1,21,27,19,-1,23,22,28,-1,28,29,23,-1,22,24,30,-1,30,28,22,-1,25,31,30,-1,30,24,25,-1,25,26,32,-1,32,31,25,-1,26,27,33,-1,33,32,26,-1,27,21,34,-1,34,33,27,-1,9,8,35,-1,35,36,9,-1,8,11,23,-1,23,35,8,-1,23,29,37,-1,37,35,23,-1,31,32,39,-1,39,40,31,-1,40,39,41,-1,41,42,40,-1,31,40,43,-1,32,44,39,-1,42,41,45,-1,45,46,42,-1,40,42,46,-1,46,43,40,-1,41,39,44,-1,44,45,41,-1,47,48,50,-1,50,49,47,-1,50,51,52,-1,52,49,50,-1,52,51,53,-1,53,54,52,-1,54,53,55,-1,55,56,54,-1,56,55,57,-1,57,58,56,-1,50,48,59,-1,59,60,50,-1,51,50,60,-1,60,61,51,-1,53,51,61,-1,61,62,53,-1,55,53,62,-1,62,63,55,-1,57,55,63,-1,63,64,57,-1,62,61,65,-1,65,66,62,-1,63,62,66,-1,66,67,63,-1,64,63,67,-1,67,68,64,-1,28,30,65,-1,67,66,45,-1,45,69,67,-1,68,67,69,-1,69,70,68,-1,30,31,43,-1,65,30,43,-1,43,46,65,-1,66,65,46,-1,46,45,66,-1,48,47,38,-1,38,37,48,-1,59,48,37,-1,37,29,59,-1,33,94,97,-1,97,71,33,-1,94,95,98,-1,98,97,94,-1,95,96,99,-1,99,98,95,-1,32,33,71,-1,71,44,32,-1,71,69,45,-1,45,44,71,-1,97,70,69,-1,69,71,97,-1,97,98,70,-1,83,12,6,-1,6,5,83,-1,21,20,81,-1,81,90,21,-1,34,21,90,-1,90,33,34,-1,1,100,0,-1,158,100,72,-1,72,159,158,-1,160,0,100,-1,100,158,160,-1,161,159,72,-1,72,3,161,-1,162,158,159,-1,159,163,162,-1,164,160,158,-1,158,162,164,-1,163,159,161,-1,161,165,163,-1,166,162,163,-1,163,110,166,-1,167,164,162,-1,162,166,167,-1,110,163,165,-1,165,108,110,-1,3,195,101,-1,101,161,3,-1,168,165,161,-1,161,101,168,-1,106,108,165,-1,165,168,106,-1,170,169,160,-1,160,164,170,-1,171,170,164,-1,164,167,171,-1,87,169,170,-1,170,88,87,-1,88,170,171,-1,171,89,88,-1,169,87,0,-1,0,160,169,-1,173,167,166,-1,166,172,173,-1,174,171,167,-1,167,173,174,-1,93,89,171,-1,171,174,93,-1,175,173,172,-1,172,127,175,-1,176,174,173,-1,173,175,176,-1,96,93,174,-1,174,176,96,-1,104,102,103,-1,103,105,104,-1,107,106,102,-1,102,104,107,-1,109,108,106,-1,106,107,109,-1,110,108,109,-1,109,111,110,-1,112,110,111,-1,111,113,112,-1,114,112,113,-1,113,115,114,-1,116,104,105,-1,105,117,116,-1,118,107,104,-1,104,116,118,-1,119,109,107,-1,107,118,119,-1,120,111,109,-1,109,119,120,-1,121,113,111,-1,111,120,121,-1,115,113,121,-1,122,116,117,-1,117,123,122,-1,124,118,116,-1,116,122,124,-1,124,125,119,-1,119,118,124,-1,126,120,119,-1,119,125,126,-1,127,121,120,-1,120,126,127,-1,128,115,121,-1,121,127,128,-1,129,103,9,-1,9,36,129,-1,117,105,103,-1,103,129,117,-1,130,123,117,-1,117,129,130,-1,131,126,125,-1,125,132,131,-1,133,131,132,-1,132,134,133,-1,125,135,132,-1,126,131,136,-1,137,133,134,-1,134,138,137,-1,138,134,132,-1,132,135,138,-1,136,131,133,-1,133,137,136,-1,140,139,47,-1,47,49,140,-1,52,141,140,-1,140,49,52,-1,142,141,52,-1,52,54,142,-1,143,142,54,-1,54,56,143,-1,144,143,56,-1,56,58,144,-1,145,139,140,-1,140,146,145,-1,146,140,141,-1,141,147,146,-1,147,141,142,-1,142,148,147,-1,148,142,143,-1,143,149,148,-1,149,143,144,-1,144,150,149,-1,148,152,151,-1,151,147,148,-1,152,148,149,-1,149,153,152,-1,153,149,150,-1,150,154,153,-1,122,151,124,-1,137,152,153,-1,153,155,137,-1,155,153,154,-1,154,156,155,-1,124,135,125,-1,135,124,151,-1,151,138,135,-1,138,151,152,-1,152,137,138,-1,38,47,139,-1,139,130,38,-1,130,139,145,-1,145,123,130,-1,177,175,127,-1,127,157,177,-1,178,176,175,-1,175,177,178,-1,99,96,176,-1,176,178,99,-1,157,127,126,-1,126,136,157,-1,137,155,157,-1,157,136,137,-1,155,156,177,-1,177,157,155,-1,177,156,178,-1,102,106,168,-1,168,101,102,-1,166,114,115,-1,115,172,166,-1,172,115,128,-1,128,127,172,-1,182,187,188,-1,189,190,194,-1,191,192,193,-1,5,6,183,-1,183,195,5,-1,102,101,195,-1,195,183,102,-1,9,103,7,-1,7,8,9,-1,103,102,7,-1,8,7,6,-1,65,61,60,-1,60,28,65,-1,147,151,122,-1,122,146,147,-1,180,6,7,-1,7,184,180,-1,186,184,7,-1,7,102,186,-1,4,185,180,-1,180,184,4,-1,181,4,184,-1,184,186,181,-1,72,1,2,-1,72,100,1,-1,129,36,38,-1,38,130,129,-1,35,37,38,-1,38,36,35,-1,181,179,4,-1,123,145,146,-1,146,122,123,-1,60,59,29,-1,29,28,60,-1]);
-let TextureCoordinate207 = browser.currentScene.createNode("TextureCoordinate");
-TextureCoordinate207.point = new MFVec2f(new float[0.2306,0.7219,0.2306,0.7038,0.2614,0.7219,0.3044,0.7206,0.2825,0.7668,0.2306,0.7608,0.2956,0.6889,0.2948,0.8444,0.2308,0.8272,0.3511,0.7186,0.3589,0.7658,0.3263,0.6804,0.3624,0.8472,0.3873,0.7134,0.3925,0.764,0.3519,0.6721,0.3993,0.8423,0.3127,0.8998,0.3587,0.8989,0.3945,0.8972,0.2845,0.6612,0.2644,0.6676,0.2975,0.6458,0.2306,0.658,0.2306,0.6463,0.2306,0.6147,0.3634,0.6681,0.4044,0.7136,0.305,0.6471,0.2306,0.62,0.3634,0.6723,0.4049,0.7093,0.2826,0.6545,0.2306,0.6368,0.4277,0.7563,0.4328,0.8418,0.4157,0.8319,0.4084,0.7662,0.4403,0.7674,0.4505,0.8307,0.4202,0.8418,0.3958,0.757,0.4247,0.7673,0.4329,0.8307,0.4371,0.9187,0.3634,0.6722,0.4049,0.7103,0.2553,0.6433,0.2306,0.629,0.2803,0.64,0.3461,0.9832,0.1999,0.7219,0.1569,0.7206,0.1788,0.7668,0.1657,0.6889,0.1665,0.8444,0.1102,0.7186,0.1024,0.7658,0.135,0.6804,0.0989,0.8472,0.074,0.7134,0.0688,0.764,0.1094,0.6721,0.062,0.8423,0.1486,0.8998,0.1026,0.8989,0.0668,0.8972,0.1768,0.6612,0.1969,0.6676,0.1638,0.6458,0.0979,0.6681,0.0569,0.7136,0.1563,0.6471,0.0979,0.6723,0.0564,0.7093,0.1787,0.6545,0.0336,0.7563,0.0456,0.8319,0.0285,0.8418,0.0529,0.7662,0.021,0.7674,0.0109,0.8307,0.0411,0.8418,0.0655,0.757,0.0366,0.7673,0.0283,0.8307,0.0242,0.9187,0.0979,0.6722,0.0564,0.7103,0.206,0.6433,0.181,0.64,0.1152,0.9832,0.231,0.9053,0.231,1.02,0.5118,0.6048,0.565,0.6951,0.5291,0.7326,0.6281,0.9347,0.6515,0.9447,0.6279,0.9576,0.5936,0.9053,0.6287,0.8085,0.5933,0.8105,0.7035,0.7808,0.6735,0.7785,0.6727,0.7204,0.6961,0.7287,0.6747,0.6734,0.6972,0.6739,0.6706,0.6045,0.7158,0.6049,0.7002,0.9347,0.6963,0.9556,0.7074,0.8151,0.7314,0.7774,0.7331,0.7218,0.7466,0.6739,0.7913,0.9215,0.7929,0.9417,0.7576,0.8089,0.764,0.7714,0.7698,0.7218,0.7675,0.674,0.7631,0.606,0.689,0.9839,0.6777,0.9757,0.6196,0.9641,0.7873,0.9608,0.9124,0.9353,0.8505,0.9502,0.9103,0.9352,0.849,0.9502,0.9456,0.8068,0.8961,0.7182,0.9432,0.7178,0.8875,0.8087,0.9136,0.6076,0.9472,0.6076,0.827,0.6244,0.8293,0.6244,0.8421,0.9502,0.8855,0.9358,0.8749,0.8121,0.8851,0.7175,0.8861,0.6085,0.8183,0.6244,0.8422,0.814,0.8574,0.7152,0.8432,0.6076,0.8056,0.6244,0.8187,0.7234,0.8175,0.6059,0.7937,0.6244,0.7965,0.7739,0.8228,0.7664,0.7886,0.9589,0.8004,0.7165,0.7972,0.6823,0.7883,0.6565,0.6747,0.6734,0.7163,0.6616,0.6281,0.9347,0.6279,0.9576,0.6515,0.9447,0.5936,0.9053,0.6287,0.8085,0.5933,0.8105,0.7035,0.7808,0.6735,0.7785,0.6727,0.7204,0.6961,0.7287,0.6747,0.6734,0.6972,0.6739,0.6706,0.6045,0.7158,0.6049,0.7002,0.9347,0.6963,0.9556,0.7074,0.8151,0.7314,0.7774,0.7331,0.7218,0.7466,0.6739,0.7913,0.9215,0.7929,0.9417,0.7576,0.8089,0.764,0.7714,0.7698,0.7218,0.7675,0.674,0.7631,0.606,0.689,0.9839,0.7873,0.9608,0.9103,0.9352,0.849,0.9502,0.8961,0.7182,0.8875,0.8087,0.9136,0.6076,0.827,0.6244,0.8421,0.9502,0.8855,0.9358,0.8749,0.8121,0.8851,0.7175,0.8861,0.6085,0.8183,0.6244,0.8422,0.814,0.8574,0.7152,0.8432,0.6076,0.8056,0.6244,0.8187,0.7234,0.8175,0.6059,0.7937,0.6244,0.8228,0.7664,0.7965,0.7739,0.7972,0.6823,0.8004,0.7165,0.7883,0.6565,0.6747,0.6734,0.7163,0.6616,0.5663,0.9104,0.5499,0.8086,0.5896,0.7882,0.5896,0.7882,0.565,0.6951]);
-IndexedFaceSet206.texCoord = TextureCoordinate207;
+HAnimSegment202.children[0] = Transform203;
 
-let Coordinate208 = browser.currentScene.createNode("Coordinate");
-Coordinate208.point = new MFVec3f(new float[0.0166,1.591,6.024,0.0166,2.016,6.639,0.7299,2.016,6.11,0.0209,4.487,5.454,0.0165,5.97,6.794,1.921,6.193,5.758,2.695,8.151,5.208,0.0166,9.51,6.044,2.3,11.24,3.736,0.0166,11.46,3.982,5.164,9.407,3.779,4.307,10.79,3.033,3.82,6.132,4.763,5.906,6.626,3.937,3.93,4.843,4.125,5.995,4.599,3.361,3.774,3.004,4.212,5.738,3.055,3.208,3.653,1.816,4.647,5.075,1.716,3.573,3.373,0.4292,5.256,3.73,0.4456,4.303,5.818,9.407,1.639,4.426,11.17,1.703,6.693,6.853,1.603,6.69,4.599,1.37,6.325,3.055,1.755,5.136,1.716,2.106,4.756,8.951,-1.064,3.294,10.69,-1.162,5.624,6.637,0.1137,5.042,4.599,0.3258,4.844,3.055,0.5342,4.061,1.72,1.233,3.44,0.483,3.308,2.306,12.15,1.922,0.0166,11.87,2.256,1.253,11.35,-0.9965,0.0166,11.28,-1.036,5.368,2.823,-0.2563,5.506,4.831,-0.3854,5.709,3.084,-1.039,5.986,4.571,-1.165,5.164,4.831,-0.3854,4.502,2.839,-0.2487,5.285,3.081,-1.044,5.51,4.571,-1.165,0.0166,10.98,-2.872,0.8853,10.98,-2.828,0.0166,9.431,-4.658,1.4,9.426,-4.596,1.764,6.815,-5.634,0.0166,6.815,-5.724,2.188,2.854,-5.779,0.0166,2.854,-5.877,2.64,-0.9086,-7.389,0.0166,-0.9086,-7.605,0.337,-0.2691,-1.013,0.0166,-0.2691,-1.08,1.806,10.98,-2.622,2.963,9.446,-3.86,3.907,6.815,-4.527,4.17,2.854,-4.609,4.781,-0.9086,-5.634,0.6963,-0.2691,-0.7539,5.077,6.815,-2.044,5.153,2.854,-2.244,6.034,-0.9086,-2.656,1.061,-0.2691,-0.377,6.158,-0.9086,-0.7305,1.169,-0.2691,0.2302,4.061,1.742,0.1251,0.0166,2.929,5.407,1.728,1.985,5.991,1.219,3.07,5.291,1.523,1.24,6.024,1.506,4.891,5.446,2.813,1.939,5.692,2.994,3.047,4.872,2.236,1.042,5.747,3.075,4.957,5.14,3.653,1.816,4.647,2.831,0.8449,4.999,2.989,6.171,5.406,0.8003,0.7396,5.803,1.267,0.229,5.305,1.568,-0.1326,4.693,0.0166,0.5157,5.803,0.0166,-0.1207,5.579,0.0166,-0.8641,5.143,4.05,1.82,2.905,3.099,0.752,3.012,1.743,-0.1026,3.554,0.0166,-0.7393,3.994,3.099,0.8508,1.273,1.222,0.0724,1.917,0.0166,-0.3447,1.985,3.099,0.8479,0.3903,0.5884,-0.1912,0.5953,0.0166,-0.5266,0.684,-0.6968,2.016,6.11,-1.888,6.193,5.758,-2.662,8.151,5.208,-2.267,11.24,3.736,-5.131,9.407,3.779,-4.273,10.79,3.033,-3.787,6.132,4.763,-5.873,6.626,3.937,-3.897,4.843,4.125,-5.962,4.599,3.361,-3.741,3.004,4.212,-5.705,3.055,3.208,-3.62,1.816,4.647,-5.042,1.716,3.573,-3.429,0.4292,5.256,-3.787,0.4456,4.303,-5.785,9.407,1.639,-4.393,11.17,1.703,-6.66,6.853,1.603,-6.657,4.599,1.37,-6.292,3.055,1.755,-5.103,1.716,2.106,-4.722,8.951,-1.064,-3.261,10.69,-1.162,-5.591,6.637,0.1137,-5.009,4.599,0.3258,-4.811,3.055,0.5342,-4.028,1.72,1.233,-3.497,0.483,3.308,-2.273,12.15,1.922,-1.219,11.35,-0.9964,-5.335,2.823,-0.2563,-5.473,4.831,-0.3854,-5.676,3.084,-1.039,-5.953,4.571,-1.165,-5.131,4.831,-0.3854,-4.469,2.839,-0.2487,-5.252,3.081,-1.044,-5.477,4.571,-1.165,-0.8522,10.98,-2.828,-1.367,9.426,-4.596,-1.731,6.815,-5.634,-2.155,2.854,-5.779,-2.607,-0.9086,-7.389,-0.3039,-0.2691,-1.013,-1.773,10.98,-2.622,-2.929,9.446,-3.86,-3.873,6.815,-4.527,-4.137,2.854,-4.609,-4.748,-0.9086,-5.634,-0.6632,-0.2691,-0.7539,-5.044,6.815,-2.044,-5.12,2.854,-2.244,-6.001,-0.9086,-2.656,-1.028,-0.2691,-0.377,-6.124,-0.9086,-0.7305,-1.136,-0.2691,0.2302,-4.028,1.742,0.1251,-1.695,1.985,5.991,-1.186,3.07,5.291,-1.49,1.24,6.024,-1.473,4.891,5.446,-2.779,1.939,5.692,-2.961,3.047,4.872,-2.203,1.042,5.747,-3.042,4.957,5.14,-3.62,1.816,4.647,-2.798,0.8449,4.999,-2.956,6.171,5.406,-0.7672,0.7396,5.803,-1.234,0.229,5.305,-1.535,-0.1326,4.693,-4.017,1.82,2.905,-3.066,0.752,3.012,-1.71,-0.1026,3.554,-3.066,0.8508,1.273,-1.189,0.0724,1.917,-3.066,0.8479,0.3903,-0.5553,-0.1912,0.5953,0.0166,4.813,6.019,2.213,7.219,5.73,-1.664,6.175,5.956,0.0252,6.322,5.758,0.0251,9.022,5.208,0.0177,7.455,6.86,1.684,6.175,5.956,-2.193,7.219,5.73,0.0209,4.487,5.454,1.506,4.891,5.446,1.506,4.891,5.446,1.921,6.193,5.758,-1.888,6.193,5.758,-1.473,4.891,5.446,0.0209,4.487,5.454,0.0252,6.322,5.758,0.0252,6.322,5.758]);
-IndexedFaceSet206.coord = Coordinate208;
+HAnimJoint201.children = new MFNode();
 
-Shape202.geometry = IndexedFaceSet206;
+HAnimJoint201.children[0] = HAnimSegment202;
 
-Transform201.child = new undefined();
+HAnimJoint191.children[1] = HAnimJoint201;
 
-Transform201.child[0] = Shape202;
+HAnimJoint121.children[3] = HAnimJoint191;
 
-HAnimSegment200.children = new MFNode();
+HAnimJoint31.children[3] = HAnimJoint121;
 
-HAnimSegment200.children[0] = Transform201;
+HAnimHumanoid23.joints[1] = HAnimJoint31;
 
-HAnimJoint199.children = new MFNode();
+let HAnimJoint211 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint211.USE = "hanim_humanoid_root";
+HAnimHumanoid23.joints[2] = HAnimJoint211;
 
-HAnimJoint199.children[0] = HAnimSegment200;
+let HAnimJoint212 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint212.USE = "hanim_sacroiliac";
+HAnimHumanoid23.joints[3] = HAnimJoint212;
 
-HAnimJoint189.children[1] = HAnimJoint199;
+let HAnimJoint213 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint213.USE = "hanim_skullbase";
+HAnimHumanoid23.joints[4] = HAnimJoint213;
 
-HAnimJoint119.children[3] = HAnimJoint189;
+let HAnimJoint214 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint214.USE = "hanim_vl5";
+HAnimHumanoid23.joints[5] = HAnimJoint214;
 
-HAnimJoint29.children[3] = HAnimJoint119;
+let HAnimJoint215 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint215.USE = "hanim_l_elbow";
+HAnimHumanoid23.joints[6] = HAnimJoint215;
 
-HAnimHumanoid21.joints[1] = HAnimJoint29;
+let HAnimJoint216 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint216.USE = "hanim_r_elbow";
+HAnimHumanoid23.joints[7] = HAnimJoint216;
 
-let HAnimSegment209 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment209.USE = "hanim_l5";
-HAnimHumanoid21.segments[2] = HAnimSegment209;
+let HAnimJoint217 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint217.USE = "hanim_l_hip";
+HAnimHumanoid23.joints[8] = HAnimJoint217;
 
-let HAnimSegment210 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment210.USE = "hanim_pelvis";
-HAnimHumanoid21.segments[3] = HAnimSegment210;
+let HAnimJoint218 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint218.USE = "hanim_r_hip";
+HAnimHumanoid23.joints[9] = HAnimJoint218;
 
-let HAnimSegment211 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment211.USE = "hanim_sacrum";
-HAnimHumanoid21.segments[4] = HAnimSegment211;
+let HAnimJoint219 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint219.USE = "hanim_l_knee";
+HAnimHumanoid23.joints[10] = HAnimJoint219;
 
-let HAnimSegment212 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment212.USE = "hanim_skull";
-HAnimHumanoid21.segments[5] = HAnimSegment212;
+let HAnimJoint220 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint220.USE = "hanim_r_knee";
+HAnimHumanoid23.joints[11] = HAnimJoint220;
 
-let HAnimSegment213 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment213.USE = "hanim_l_calf";
-HAnimHumanoid21.segments[6] = HAnimSegment213;
+let HAnimJoint221 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint221.USE = "hanim_l_metatarsophalangeal_2";
+HAnimHumanoid23.joints[12] = HAnimJoint221;
 
-let HAnimSegment214 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment214.USE = "hanim_r_calf";
-HAnimHumanoid21.segments[7] = HAnimSegment214;
+let HAnimJoint222 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint222.USE = "hanim_r_metatarsophalangeal_2";
+HAnimHumanoid23.joints[13] = HAnimJoint222;
 
-let HAnimSegment215 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment215.USE = "hanim_l_carpal";
-HAnimHumanoid21.segments[8] = HAnimSegment215;
+let HAnimJoint223 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint223.USE = "hanim_l_radiocarpal";
+HAnimHumanoid23.joints[14] = HAnimJoint223;
 
-let HAnimSegment216 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment216.USE = "hanim_r_carpal";
-HAnimHumanoid21.segments[9] = HAnimSegment216;
+let HAnimJoint224 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint224.USE = "hanim_r_radiocarpal";
+HAnimHumanoid23.joints[15] = HAnimJoint224;
 
-let HAnimSegment217 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment217.USE = "hanim_l_forearm";
-HAnimHumanoid21.segments[10] = HAnimSegment217;
+let HAnimJoint225 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint225.USE = "hanim_l_shoulder";
+HAnimHumanoid23.joints[16] = HAnimJoint225;
 
-let HAnimSegment218 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment218.USE = "hanim_r_forearm";
-HAnimHumanoid21.segments[11] = HAnimSegment218;
-
-let HAnimSegment219 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment219.USE = "hanim_l_talus";
-HAnimHumanoid21.segments[12] = HAnimSegment219;
-
-let HAnimSegment220 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment220.USE = "hanim_r_talus";
-HAnimHumanoid21.segments[13] = HAnimSegment220;
-
-let HAnimSegment221 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment221.USE = "hanim_l_tarsal_proximal_phalanx_2";
-HAnimHumanoid21.segments[14] = HAnimSegment221;
-
-let HAnimSegment222 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment222.USE = "hanim_r_tarsal_proximal_phalanx_2";
-HAnimHumanoid21.segments[15] = HAnimSegment222;
-
-let HAnimSegment223 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment223.USE = "hanim_l_thigh";
-HAnimHumanoid21.segments[16] = HAnimSegment223;
-
-let HAnimSegment224 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment224.USE = "hanim_r_thigh";
-HAnimHumanoid21.segments[17] = HAnimSegment224;
-
-let HAnimSegment225 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment225.USE = "hanim_l_upperarm";
-HAnimHumanoid21.segments[18] = HAnimSegment225;
-
-let HAnimSegment226 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment226.USE = "hanim_r_upperarm";
-HAnimHumanoid21.segments[19] = HAnimSegment226;
+let HAnimJoint226 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint226.USE = "hanim_r_shoulder";
+HAnimHumanoid23.joints[17] = HAnimJoint226;
 
 let HAnimJoint227 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint227.USE = "hanim_humanoid_root";
-HAnimHumanoid21.joints[20] = HAnimJoint227;
+HAnimJoint227.USE = "hanim_l_talocrural";
+HAnimHumanoid23.joints[18] = HAnimJoint227;
 
 let HAnimJoint228 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint228.USE = "hanim_sacroiliac";
-HAnimHumanoid21.joints[21] = HAnimJoint228;
+HAnimJoint228.USE = "hanim_r_talocrural";
+HAnimHumanoid23.joints[19] = HAnimJoint228;
 
-let HAnimJoint229 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint229.USE = "hanim_skullbase";
-HAnimHumanoid21.joints[22] = HAnimJoint229;
+let HAnimSegment229 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment229.USE = "hanim_l5";
+HAnimHumanoid23.segments[20] = HAnimSegment229;
 
-let HAnimJoint230 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint230.USE = "hanim_vl5";
-HAnimHumanoid21.joints[23] = HAnimJoint230;
+let HAnimSegment230 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment230.USE = "hanim_pelvis";
+HAnimHumanoid23.segments[21] = HAnimSegment230;
 
-let HAnimJoint231 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint231.USE = "hanim_l_elbow";
-HAnimHumanoid21.joints[24] = HAnimJoint231;
+let HAnimSegment231 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment231.USE = "hanim_sacrum";
+HAnimHumanoid23.segments[22] = HAnimSegment231;
 
-let HAnimJoint232 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint232.USE = "hanim_r_elbow";
-HAnimHumanoid21.joints[25] = HAnimJoint232;
+let HAnimSegment232 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment232.USE = "hanim_skull";
+HAnimHumanoid23.segments[23] = HAnimSegment232;
 
-let HAnimJoint233 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint233.USE = "hanim_l_hip";
-HAnimHumanoid21.joints[26] = HAnimJoint233;
+let HAnimSegment233 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment233.USE = "hanim_l_calf";
+HAnimHumanoid23.segments[24] = HAnimSegment233;
 
-let HAnimJoint234 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint234.USE = "hanim_r_hip";
-HAnimHumanoid21.joints[27] = HAnimJoint234;
+let HAnimSegment234 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment234.USE = "hanim_r_calf";
+HAnimHumanoid23.segments[25] = HAnimSegment234;
 
-let HAnimJoint235 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint235.USE = "hanim_l_knee";
-HAnimHumanoid21.joints[28] = HAnimJoint235;
+let HAnimSegment235 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment235.USE = "hanim_l_carpal";
+HAnimHumanoid23.segments[26] = HAnimSegment235;
 
-let HAnimJoint236 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint236.USE = "hanim_r_knee";
-HAnimHumanoid21.joints[29] = HAnimJoint236;
+let HAnimSegment236 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment236.USE = "hanim_r_carpal";
+HAnimHumanoid23.segments[27] = HAnimSegment236;
 
-let HAnimJoint237 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint237.USE = "hanim_l_metatarsophalangeal_2";
-HAnimHumanoid21.joints[30] = HAnimJoint237;
+let HAnimSegment237 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment237.USE = "hanim_l_forearm";
+HAnimHumanoid23.segments[28] = HAnimSegment237;
 
-let HAnimJoint238 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint238.USE = "hanim_r_metatarsophalangeal_2";
-HAnimHumanoid21.joints[31] = HAnimJoint238;
+let HAnimSegment238 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment238.USE = "hanim_r_forearm";
+HAnimHumanoid23.segments[29] = HAnimSegment238;
 
-let HAnimJoint239 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint239.USE = "hanim_l_radiocarpal";
-HAnimHumanoid21.joints[32] = HAnimJoint239;
+let HAnimSegment239 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment239.USE = "hanim_l_talus";
+HAnimHumanoid23.segments[30] = HAnimSegment239;
 
-let HAnimJoint240 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint240.USE = "hanim_r_radiocarpal";
-HAnimHumanoid21.joints[33] = HAnimJoint240;
+let HAnimSegment240 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment240.USE = "hanim_r_talus";
+HAnimHumanoid23.segments[31] = HAnimSegment240;
 
-let HAnimJoint241 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint241.USE = "hanim_l_shoulder";
-HAnimHumanoid21.joints[34] = HAnimJoint241;
+let HAnimSegment241 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment241.USE = "hanim_l_tarsal_proximal_phalanx_2";
+HAnimHumanoid23.segments[32] = HAnimSegment241;
 
-let HAnimJoint242 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint242.USE = "hanim_r_shoulder";
-HAnimHumanoid21.joints[35] = HAnimJoint242;
+let HAnimSegment242 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment242.USE = "hanim_r_tarsal_proximal_phalanx_2";
+HAnimHumanoid23.segments[33] = HAnimSegment242;
 
-let HAnimJoint243 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint243.USE = "hanim_l_talocrural";
-HAnimHumanoid21.joints[36] = HAnimJoint243;
+let HAnimSegment243 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment243.USE = "hanim_l_thigh";
+HAnimHumanoid23.segments[34] = HAnimSegment243;
 
-let HAnimJoint244 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint244.USE = "hanim_r_talocrural";
-HAnimHumanoid21.joints[37] = HAnimJoint244;
+let HAnimSegment244 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment244.USE = "hanim_r_thigh";
+HAnimHumanoid23.segments[35] = HAnimSegment244;
 
-browser.currentScene.children[3] = HAnimHumanoid21;
+let HAnimSegment245 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment245.USE = "hanim_l_upperarm";
+HAnimHumanoid23.segments[36] = HAnimSegment245;
+
+let HAnimSegment246 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment246.USE = "hanim_r_upperarm";
+HAnimHumanoid23.segments[37] = HAnimSegment246;
+
+browser.currentScene.children[3] = HAnimHumanoid23;
 

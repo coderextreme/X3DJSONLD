@@ -108,7 +108,7 @@ import org.web3d.x3d.jsail.Time.*;
 	* @author Allen Dutton
  */
 
-public class AllenDutton
+import net.coderextreme.X3DRoots;import java.util.List;import java.util.ArrayList;public class AllenDutton implements X3DRoots 
 {
 	/** Default constructor to create this object. */
 	public AllenDutton ()
@@ -3523,6 +3523,11 @@ public class AllenDutton
 	{	  
 		return x3dModel;
 	}
+	public List<X3D> getRootNodeList() {
+		List<X3D> list = new ArrayList<X3D>(1);
+		list.add(x3dModel);
+		return list;
+	}
 	   
     /** 
      * Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
@@ -3535,7 +3540,7 @@ public class AllenDutton
      */
     public static void main(String args[])
     {
-        System.out.println("Build this X3D model, showing diagnostics...");
+        System.out.println("Build this X3D model, showing validation diagnostics...");
         X3D thisExampleX3dModel = new AllenDutton().getX3dModel();
 //      System.out.println("X3D model construction complete.");
 	

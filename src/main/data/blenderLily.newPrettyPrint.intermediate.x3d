@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+  <head>
+    <component name='HAnim' level='3'/>
+    <meta content='blenderLily.x3d' name='filename'/>
+    <meta content='2023' name='copyright'/>
+    <meta content='http://www.web3D.org' name='reference'/>
+    <meta content='Blender 3.6.4' name='generator'/>
+  </head>
+  <Scene>
+    <NavigationInfo avatarSize='0.25 1.6 0.75' transitionType='"LINEAR"' type='"EXAMINE" "ANY"'/>
+    <Background DEF='WO_World' groundColor='0.05087609 0.05087609 0.05087609' skyColor='0.05087609 0.05087609 0.05087609'/>
+    <Transform>
+      <Shape DEF='SiteShape'>
+        <Appearance>
+          <Material diffuseColor='0 0 1'/>
+        </Appearance>
+        <Box size='0.05 0.05 0.05'/>
+      </Shape>
+    </Transform>
+    <Transform>
+      <Shape DEF='JointShape'>
+        <Appearance DEF='JointAppearance'>
+          <Material diffuseColor='1 0.5 0' transparency='0.5'/>
+        </Appearance>
+        <Sphere radius='0.06'/>
+      </Shape>
+    </Transform>
+    <Transform DEF='Light_TRANSFORM' rotation='0.20594 0.33152 0.9207 1.92627' translation='4.07625 1.00545 5.90386'>
+      <PointLight DEF='LA_Light' location='-8.940697E-8 -3.576279E-7 4.61936E-7' radius='29.99998'/>
+    </Transform>
+    <Transform DEF='Camera_TRANSFORM' rotation='0.77344 0.33383 0.53884 1.35072' translation='7.35889 -6.92579 4.95831'>
+      <Viewpoint DEF='CA_Camera' fieldOfView='0.6911112' position='-3.92708E-7 -2.123415E-7 2.384186E-7'/>
+    </Transform>
+    <Transform DEF='Light_001_TRANSFORM' rotation='0.20594 0.33152 0.9207 1.92627' translation='4.07625 1.00545 5.90386'>
+      <PointLight DEF='LA_Light_001' location='2.980232E-8 -4.023314E-7 1.043081E-7' radius='29.99998'/>
+    </Transform>
+    <Transform DEF='Camera_001_TRANSFORM' rotation='0.77344 0.33383 0.53884 1.35072' translation='7.35889 -6.92579 4.95831'>
+      <Viewpoint DEF='CA_Camera_001' fieldOfView='0.6911112' position='-2.421449E-7 4.991889E-7 -7.152557E-7'/>
+    </Transform>
+    <Transform DEF='World_TRANSFORM' rotation='1 0 0 1.5708' scale='0.01 0.01 0.01'>
+      <Transform DEF='World_001_TRANSFORM'>
+        <Transform DEF='lily_7_3_animate_TRANSFORM'>
+          <Transform DEF='CINEMA_4D_Editor_TRANSFORM' rotation='0.03965 0.99809 0.04742 1.39469' translation='-2.3832 26.84083 170.6878'>
+            <Transform DEF='CINEMA_4D_Editor_001_TRANSFORM' rotation='0 -1 0 3.14159' translation='1.0E-5 0 0'>
+              <Viewpoint DEF='CA_CINEMA_4D_Editor_001' fieldOfView='0.9272952' position='-2.747774E-5 4.980713E-6 -3.484735E-6'/>
+            </Transform>
+          </Transform>
+          <Transform DEF='node_t_Lily_RV7_Shape_TRANSFORM'>
+            <Transform DEF='humanoid_root_TRANSFORM' rotation='0 -1 0 1.5708' translation='0 -0.91969 0'>
+              <HAnimHumanoid DEF='hanim_armature_humanoid_root' name='armature_humanoid_root' version='2.0'/>
+            </Transform>
+          </Transform>
+        </Transform>
+      </Transform>
+      <Transform DEF='Environment_TRANSFORM'>
+        <Transform DEF='Sky_TRANSFORM' rotation='1 0 0 3.14159' translation='0 305 0'>
+          <PointLight DEF='LA_Sky' intensity='0.005714286' location='-9.59824E-19 -3.051758E-5 -9.094947E-12' radius='0.25'/>
+        </Transform>
+        <Transform DEF='DistantLight_TRANSFORM' rotation='-0.99144 0.13053 0 3.14159' translation='0 305 0'>
+          <DirectionalLight DEF='LA_DistantLight' ambientIntensity='0.07' direction='5.329071E-15 -3.552714E-15 -1' global='true' intensity='0.005714286'/>
+        </Transform>
+      </Transform>
+    </Transform>
+    <Transform DEF='SkinnedMeshes_TRANSFORM' rotation='1 0 0 1.5708' scale='0.01 0.01 0.01'/>
+  </Scene>
+</X3D>

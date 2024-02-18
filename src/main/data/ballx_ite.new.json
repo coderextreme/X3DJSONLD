@@ -57,8 +57,12 @@
             "@content":"https://coderextreme.net/X3DJSONLD/src/main/data/ball.x3d"
           },
           {
+            "@name":"description",
+            "@content":"a prismatic sphere"
+          },
+          {
             "@name":"translated",
-            "@content":"08 September 2023"
+            "@content":"18 February 2024"
           },
           {
             "@name":"generator",

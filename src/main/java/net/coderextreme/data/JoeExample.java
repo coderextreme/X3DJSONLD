@@ -36,13 +36,22 @@ import org.web3d.x3d.jsail.Texturing.*;
 import org.web3d.x3d.jsail.Time.*;
 import org.web3d.x3d.jsail.VolumeRendering.*;
 import org.web3d.x3d.jsail.fields.*;
-public class JoeExample {
+import java.util.ArrayList;
+import java.util.List;
+import net.coderextreme.X3DRoots;
+public class JoeExample implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    X3D model = new JoeExample().initialize();
+    X3D model = new JoeExample().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
+    model.toFileX3D("../data/JoeExample.new.java.x3d");
     model.toFileJSON("../data/JoeExample.new.json");
+    }
+    public List<X3D> getRootNodeList() {
+    	List<X3D> list = new ArrayList<X3D>(1);
+    	list.add(initialize());
+    	return list;
     }
     public X3D initialize() {
       X3D X3D0 =  new X3D().setVersion("3.0").setProfile("Immersive")
@@ -69,10 +78,10 @@ public class JoeExample {
 "      }"))
         .addChild(new Shape()
           .setAppearance(new Appearance()
-            .setMaterial(new Material().setDiffuseColor(new float[] {1f ,0f ,0f })))
+            .setMaterial(new Material().setDiffuseColor(new double[] {1,0,0})))
           .setGeometry(new Sphere()))
-        .addChild(new Sound().setMaxBack(1000f ).setMaxFront(1000f ).setMinBack(1000f ).setMinFront(1000f )
-          .setSource(new AudioClip().setDEF("Click").setStopTime(1d).setDescription("clicking sound").setUrl(new MFString0().getArray())))
+        .addChild(new Sound().setMaxBack(1000).setMaxFront(1000).setMinBack(1000).setMinFront(1000)
+          .setSource(new AudioClip().setDEF("Click").setStopTime(1).setDescription("clicking sound").setUrl(new MFString0().getArray())))
         .addChild(new TouchSensor().setDEF("TS"))
         .addChild(new ROUTE().setFromNode("TS").setFromField("isOver").setToNode("OpenVault").setToField("combinationEntered"))
         .addChild(new ROUTE().setFromNode("TS").setFromField("touchTime").setToNode("OpenVault").setToField("openVault"))

@@ -4,7 +4,11 @@ ConfigurationProperties.showDefaultAttributes = false;
 ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;
 ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
-      var X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
+function doubleToFloat(d) {
+    if (Float32Array)
+	return new Float32Array([d])[0];
+}
+      var X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
       .setHead(new head()
         .addMeta(new meta().setName("creator").setContent("John W Carlson"))
         .addMeta(new meta().setName("created").setContent("December 13 2015"))
@@ -15,9 +19,9 @@ ConfigurationProperties.setStripTrailingZeroes(true);
       .setScene(new Scene()
         .addChild(new Group()
           .addChild(new Shape()
-            .setGeometry(new Extrusion().setDEF("extrusion").setSpine(Java.to([-50,-50,0,50,50,0], Java.type("double[]"))).setCreaseAngle(0.785).setCrossSection(Java.to([1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0], Java.type("double[]"))))
+            .setGeometry(new Extrusion().setDEF("extrusion").setSpine(Java.to([doubleToFloat(-50),doubleToFloat(-50),doubleToFloat(0),doubleToFloat(50),doubleToFloat(50),doubleToFloat(0)], Java.type("float[]"))).setCreaseAngle(0.785).setCrossSection(Java.to([doubleToFloat(1),doubleToFloat(0),doubleToFloat(0.92),doubleToFloat(-0.38),doubleToFloat(0.71),doubleToFloat(-0.71),doubleToFloat(0.38),doubleToFloat(-0.92),doubleToFloat(0),doubleToFloat(-1),doubleToFloat(-0.38),doubleToFloat(-0.92),doubleToFloat(-0.71),doubleToFloat(-0.71),doubleToFloat(-0.92),doubleToFloat(-0.38),doubleToFloat(-1),doubleToFloat(0),doubleToFloat(-0.92),doubleToFloat(0.38),doubleToFloat(-0.71),doubleToFloat(0.71),doubleToFloat(-0.38),doubleToFloat(0.92),doubleToFloat(0),doubleToFloat(1),doubleToFloat(0.38),doubleToFloat(0.92),doubleToFloat(0.71),doubleToFloat(0.71),doubleToFloat(0.92),doubleToFloat(0.38),doubleToFloat(1),doubleToFloat(0)], Java.type("float[]"))))
             .setAppearance(new Appearance()
-              .setMaterial(new Material().setDiffuseColor(Java.to([0,1,0], Java.type("double[]"))))))
+              .setMaterial(new Material().setDiffuseColor(Java.to([doubleToFloat(0),doubleToFloat(1),doubleToFloat(0)], Java.type("float[]"))))))
           .addChild(new TimeSensor().setDEF("TourTime").setLoop(true))
           .addChild(new Script().setDEF("MoveCylinder")
             .addField(new field().setType(field.TYPE_SFTIME).setName("set_cycle").setAccessType(field.ACCESSTYPE_INPUTONLY))

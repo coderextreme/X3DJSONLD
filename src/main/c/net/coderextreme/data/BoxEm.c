@@ -3,7 +3,7 @@ void main(int argc, char ** argv) {
 Browser browser = X3D.getBrowser();
 X3D X3D0;
 X3D0.profile = "Immersive";
-X3D0.version = "4.0";
+X3D0.version = "3.3";
 head head1 = createNode("head");
 meta meta2 = createNode("meta");
 meta2.name = "title";
@@ -27,14 +27,30 @@ meta5.name = "identifier";
 meta5.content = "https://coderextreme.net/X3DJSONLD/src/main/data/box.x3d";
 head1.meta[3] = meta5;
 
+meta meta6 = createNode("meta");
+meta6.name = "description";
+meta6.content = "3 boxes";
+head1.meta[4] = meta6;
+
 head = head1;
 
-ProtoDeclare ProtoDeclare7 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
+NavigationInfo NavigationInfo8 = createNode("NavigationInfo");
+NavigationInfo8.type = new MFString(new java.lang.String["EXAMINE"]);
+children = new MFNode();
+
+children[0] = NavigationInfo8;
+
+Viewpoint Viewpoint9 = createNode("Viewpoint");
+Viewpoint9.description = "Cubes on Fire";
+Viewpoint9.position = new SFVec3f(new float[0,0,12]);
+children[1] = Viewpoint9;
+
+ProtoDeclare ProtoDeclare10 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
-<ProtoDeclare name="anyShape" ><ProtoInterface><field accessType="inputOutput" type="SFVec3f" name="xtranslation"></field>
-<field accessType="inputOutput" type="MFNode" name="myShape"><Shape><Appearance><Material diffuseColor="1 1 1"></Material>
+<ProtoDeclare name="anyShape" ><ProtoInterface><field name="xtranslation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
+<field name="myShape" accessType="inputOutput" type="MFNode"><Shape><Sphere></Sphere>
+<Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 1 1"></Material>
 </Appearance>
-<Sphere></Sphere>
 </Shape>
 </field>
 </ProtoInterface>
@@ -44,76 +60,78 @@ ProtoDeclare ProtoDeclare7 = browser.createX3DFromString(`<?xml version="1.0" en
 </Transform>
 </ProtoBody>
 </ProtoDeclare>`);
-ProtoDeclare7.name = "anyShape";
-ProtoInterface ProtoInterface8 = createNode("ProtoInterface");
-field field9 = createNode("field");
-field9.accessType = "inputOutput";
-field9.type = "SFVec3f";
-field9.name = "xtranslation";
-ProtoInterface8.field = new MFNode();
+ProtoDeclare10.name = "anyShape";
+ProtoInterface ProtoInterface11 = createNode("ProtoInterface");
+field field12 = createNode("field");
+field12.name = "xtranslation";
+field12.accessType = "inputOutput";
+field12.type = "SFVec3f";
+field12.value = "0 0 0";
+ProtoInterface11.field = new MFNode();
 
-ProtoInterface8.field[0] = field9;
+ProtoInterface11.field[0] = field12;
 
-field field10 = createNode("field");
-field10.accessType = "inputOutput";
-field10.type = "MFNode";
-field10.name = "myShape";
-Shape Shape11 = createNode("Shape");
-Appearance Appearance12 = createNode("Appearance");
-Material Material13 = createNode("Material");
-Material13.diffuseColor = new SFColor(new float[1,1,1]);
-Appearance12.material = Material13;
+field field13 = createNode("field");
+field13.name = "myShape";
+field13.accessType = "inputOutput";
+field13.type = "MFNode";
+Shape Shape14 = createNode("Shape");
+Sphere Sphere15 = createNode("Sphere");
+Shape14.geometry = Sphere15;
 
-Shape11.appearance = Appearance12;
+Appearance Appearance16 = createNode("Appearance");
+Material Material17 = createNode("Material");
+Material17.diffuseColor = new SFColor(new float[1,1,1]);
+Appearance16.material = Material17;
 
-Sphere Sphere14 = createNode("Sphere");
-Shape11.geometry = Sphere14;
+Shape14.appearance = Appearance16;
 
-field10.children = new MFNode();
+field13.children = new MFNode();
 
-field10.children[0] = Shape11;
+field13.children[0] = Shape14;
 
-ProtoInterface8.field[1] = field10;
+ProtoInterface11.field[1] = field13;
 
-ProtoDeclare7.protoInterface = ProtoInterface8;
+ProtoDeclare10.protoInterface = ProtoInterface11;
 
-ProtoBody ProtoBody15 = createNode("ProtoBody");
-Transform Transform16 = createNode("Transform");
-IS IS17 = createNode("IS");
-connect connect18 = createNode("connect");
-connect18.nodeField = "translation";
-connect18.protoField = "xtranslation";
-IS17.connect = new MFNode();
+ProtoBody ProtoBody18 = createNode("ProtoBody");
+Transform Transform19 = createNode("Transform");
+IS IS20 = createNode("IS");
+connect connect21 = createNode("connect");
+connect21.nodeField = "translation";
+connect21.protoField = "xtranslation";
+IS20.connect = new MFNode();
 
-IS17.connect[0] = connect18;
+IS20.connect[0] = connect21;
 
-connect connect19 = createNode("connect");
-connect19.nodeField = "children";
-connect19.protoField = "myShape";
-IS17.connect[1] = connect19;
+connect connect22 = createNode("connect");
+connect22.nodeField = "children";
+connect22.protoField = "myShape";
+IS20.connect[1] = connect22;
 
-Transform16.iS = IS17;
+Transform19.iS = IS20;
 
-ProtoBody15.children = new MFNode();
+ProtoBody18.children = new MFNode();
 
-ProtoBody15.children[0] = Transform16;
+ProtoBody18.children[0] = Transform19;
 
-ProtoDeclare7.protoBody = ProtoBody15;
+ProtoDeclare10.protoBody = ProtoBody18;
 
-children = new MFNode();
+children[2] = ProtoDeclare10;
 
-children[0] = ProtoDeclare7;
-
-ProtoDeclare ProtoDeclare20 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
+ProtoDeclare ProtoDeclare23 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
-<ProtoDeclare name="three" ><ProtoInterface><field accessType="inputOutput" type="SFVec3f" name="ytranslation"></field>
-<field accessType="inputOutput" type="MFNode" name="myShape"><Shape DEF="_1"><Appearance><Material diffuseColor="1 1 1"></Material>
+<ProtoDeclare name="three" ><ProtoInterface><field name="ytranslation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
+<field name="myShape" accessType="inputOutput" type="MFNode"><Shape><Cylinder></Cylinder>
+<Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 1 1"></Material>
 </Appearance>
-<Cylinder></Cylinder>
 </Shape>
 </field>
 </ProtoInterface>
-<ProtoBody><Transform><ProtoInstance name="anyShape"><IS><connect nodeField="myShape" protoField="myShape"></connect>
+<ProtoBody><Transform><IS><connect nodeField="translation" protoField="ytranslation"></connect>
+</IS>
+<ProtoInstance name="anyShape"><fieldValue name="xtranslation" value="0 0 0"></fieldValue>
+<IS><connect nodeField="myShape" protoField="myShape"></connect>
 </IS>
 </ProtoInstance>
 <ProtoInstance name="anyShape"><fieldValue name="xtranslation" value="2 0 0"></fieldValue>
@@ -124,168 +142,169 @@ ProtoDeclare ProtoDeclare20 = browser.createX3DFromString(`<?xml version="1.0" e
 <IS><connect nodeField="myShape" protoField="myShape"></connect>
 </IS>
 </ProtoInstance>
-<IS><connect nodeField="translation" protoField="ytranslation"></connect>
-</IS>
 </Transform>
 </ProtoBody>
 </ProtoDeclare>`);
-ProtoDeclare20.name = "three";
-ProtoInterface ProtoInterface21 = createNode("ProtoInterface");
-field field22 = createNode("field");
-field22.accessType = "inputOutput";
-field22.type = "SFVec3f";
-field22.name = "ytranslation";
-ProtoInterface21.field = new MFNode();
+ProtoDeclare23.name = "three";
+ProtoInterface ProtoInterface24 = createNode("ProtoInterface");
+field field25 = createNode("field");
+field25.name = "ytranslation";
+field25.accessType = "inputOutput";
+field25.type = "SFVec3f";
+field25.value = "0 0 0";
+ProtoInterface24.field = new MFNode();
 
-ProtoInterface21.field[0] = field22;
+ProtoInterface24.field[0] = field25;
 
-field field23 = createNode("field");
-field23.accessType = "inputOutput";
-field23.type = "MFNode";
-field23.name = "myShape";
-Shape Shape24 = createNode("Shape");
-Shape24.DEF = "_1";
-Appearance Appearance25 = createNode("Appearance");
-Material Material26 = createNode("Material");
-Material26.diffuseColor = new SFColor(new float[1,1,1]);
-Appearance25.material = Material26;
+field field26 = createNode("field");
+field26.name = "myShape";
+field26.accessType = "inputOutput";
+field26.type = "MFNode";
+Shape Shape27 = createNode("Shape");
+Cylinder Cylinder28 = createNode("Cylinder");
+Shape27.geometry = Cylinder28;
 
-Shape24.appearance = Appearance25;
+Appearance Appearance29 = createNode("Appearance");
+Material Material30 = createNode("Material");
+Material30.diffuseColor = new SFColor(new float[1,1,1]);
+Appearance29.material = Material30;
 
-Cylinder Cylinder27 = createNode("Cylinder");
-Shape24.geometry = Cylinder27;
+Shape27.appearance = Appearance29;
 
-field23.children = new MFNode();
+field26.children = new MFNode();
 
-field23.children[0] = Shape24;
+field26.children[0] = Shape27;
 
-ProtoInterface21.field[1] = field23;
+ProtoInterface24.field[1] = field26;
 
-ProtoDeclare20.protoInterface = ProtoInterface21;
+ProtoDeclare23.protoInterface = ProtoInterface24;
 
-ProtoBody ProtoBody28 = createNode("ProtoBody");
-Transform Transform29 = createNode("Transform");
-ProtoInstance ProtoInstance30 = createNode("ProtoInstance");
-ProtoInstance30.name = "anyShape";
-IS IS31 = createNode("IS");
-connect connect32 = createNode("connect");
-connect32.nodeField = "myShape";
-connect32.protoField = "myShape";
-IS31.connect = new MFNode();
+ProtoBody ProtoBody31 = createNode("ProtoBody");
+Transform Transform32 = createNode("Transform");
+IS IS33 = createNode("IS");
+connect connect34 = createNode("connect");
+connect34.nodeField = "translation";
+connect34.protoField = "ytranslation";
+IS33.connect = new MFNode();
 
-IS31.connect[0] = connect32;
+IS33.connect[0] = connect34;
 
-ProtoInstance30.iS = IS31;
+Transform32.iS = IS33;
 
-Transform29.children = new MFNode();
+ProtoInstance ProtoInstance35 = createNode("ProtoInstance");
+ProtoInstance35.name = "anyShape";
+fieldValue fieldValue36 = createNode("fieldValue");
+fieldValue36.name = "xtranslation";
+fieldValue36.value = "0 0 0";
+ProtoInstance35.fieldValue = new MFNode();
 
-Transform29.children[0] = ProtoInstance30;
+ProtoInstance35.fieldValue[0] = fieldValue36;
 
-ProtoInstance ProtoInstance33 = createNode("ProtoInstance");
-ProtoInstance33.name = "anyShape";
-fieldValue fieldValue34 = createNode("fieldValue");
-fieldValue34.name = "xtranslation";
-fieldValue34.value = "2 0 0";
-ProtoInstance33.fieldValue = new MFNode();
+IS IS37 = createNode("IS");
+connect connect38 = createNode("connect");
+connect38.nodeField = "myShape";
+connect38.protoField = "myShape";
+IS37.connect = new MFNode();
 
-ProtoInstance33.fieldValue[0] = fieldValue34;
+IS37.connect[0] = connect38;
 
-IS IS35 = createNode("IS");
-connect connect36 = createNode("connect");
-connect36.nodeField = "myShape";
-connect36.protoField = "myShape";
-IS35.connect = new MFNode();
+ProtoInstance35.iS = IS37;
 
-IS35.connect[0] = connect36;
+Transform32.children = new MFNode();
 
-ProtoInstance33.iS = IS35;
+Transform32.children[0] = ProtoInstance35;
 
-Transform29.children[1] = ProtoInstance33;
+ProtoInstance ProtoInstance39 = createNode("ProtoInstance");
+ProtoInstance39.name = "anyShape";
+fieldValue fieldValue40 = createNode("fieldValue");
+fieldValue40.name = "xtranslation";
+fieldValue40.value = "2 0 0";
+ProtoInstance39.fieldValue = new MFNode();
 
-ProtoInstance ProtoInstance37 = createNode("ProtoInstance");
-ProtoInstance37.name = "anyShape";
-fieldValue fieldValue38 = createNode("fieldValue");
-fieldValue38.name = "xtranslation";
-fieldValue38.value = "-2 0 0";
-ProtoInstance37.fieldValue = new MFNode();
-
-ProtoInstance37.fieldValue[0] = fieldValue38;
-
-IS IS39 = createNode("IS");
-connect connect40 = createNode("connect");
-connect40.nodeField = "myShape";
-connect40.protoField = "myShape";
-IS39.connect = new MFNode();
-
-IS39.connect[0] = connect40;
-
-ProtoInstance37.iS = IS39;
-
-Transform29.children[2] = ProtoInstance37;
+ProtoInstance39.fieldValue[0] = fieldValue40;
 
 IS IS41 = createNode("IS");
 connect connect42 = createNode("connect");
-connect42.nodeField = "translation";
-connect42.protoField = "ytranslation";
+connect42.nodeField = "myShape";
+connect42.protoField = "myShape";
 IS41.connect = new MFNode();
 
 IS41.connect[0] = connect42;
 
-Transform29.iS = IS41;
+ProtoInstance39.iS = IS41;
 
-ProtoBody28.children = new MFNode();
+Transform32.children[1] = ProtoInstance39;
 
-ProtoBody28.children[0] = Transform29;
+ProtoInstance ProtoInstance43 = createNode("ProtoInstance");
+ProtoInstance43.name = "anyShape";
+fieldValue fieldValue44 = createNode("fieldValue");
+fieldValue44.name = "xtranslation";
+fieldValue44.value = "-2 0 0";
+ProtoInstance43.fieldValue = new MFNode();
 
-ProtoDeclare20.protoBody = ProtoBody28;
+ProtoInstance43.fieldValue[0] = fieldValue44;
 
-children[1] = ProtoDeclare20;
+IS IS45 = createNode("IS");
+connect connect46 = createNode("connect");
+connect46.nodeField = "myShape";
+connect46.protoField = "myShape";
+IS45.connect = new MFNode();
 
-NavigationInfo NavigationInfo43 = createNode("NavigationInfo");
-NavigationInfo43.type = new MFString(new java.lang.String["EXAMINE"]);
-children[2] = NavigationInfo43;
+IS45.connect[0] = connect46;
 
-Viewpoint Viewpoint44 = createNode("Viewpoint");
-Viewpoint44.description = "Cubes on Fire";
-Viewpoint44.position = new SFVec3f(new float[0,0,12]);
-children[3] = Viewpoint44;
+ProtoInstance43.iS = IS45;
 
-ProtoInstance ProtoInstance45 = createNode("ProtoInstance");
-ProtoInstance45.DEF = "threepi";
-ProtoInstance45.name = "three";
-fieldValue fieldValue46 = createNode("fieldValue");
-fieldValue46.name = "myShape";
-Shape Shape47 = createNode("Shape");
-Shape47.DEF = "box";
-Appearance Appearance48 = createNode("Appearance");
-Material Material49 = createNode("Material");
-Material49.diffuseColor = new SFColor(new float[0,1,0]);
-Appearance48.material = Material49;
+Transform32.children[2] = ProtoInstance43;
 
-Shape47.appearance = Appearance48;
+ProtoBody31.children = new MFNode();
 
-Box Box50 = createNode("Box");
-Box50.size = new SFVec3f(new float[1,1,1]);
-Shape47.geometry = Box50;
+ProtoBody31.children[0] = Transform32;
 
-fieldValue46.children = new MFNode();
+ProtoDeclare23.protoBody = ProtoBody31;
 
-fieldValue46.children[0] = Shape47;
+children[3] = ProtoDeclare23;
 
-ProtoInstance45.fieldValue = new MFNode();
+ProtoInstance ProtoInstance47 = createNode("ProtoInstance");
+ProtoInstance47.name = "three";
+ProtoInstance47.DEF = "threepi";
+fieldValue fieldValue48 = createNode("fieldValue");
+fieldValue48.name = "ytranslation";
+fieldValue48.value = "0 0 0";
+ProtoInstance47.fieldValue = new MFNode();
 
-ProtoInstance45.fieldValue[0] = fieldValue46;
+ProtoInstance47.fieldValue[0] = fieldValue48;
 
-children[4] = ProtoInstance45;
+fieldValue fieldValue49 = createNode("fieldValue");
+fieldValue49.name = "myShape";
+Shape Shape50 = createNode("Shape");
+Shape50.DEF = "box";
+Box Box51 = createNode("Box");
+Box51.size = new SFVec3f(new float[1,1,1]);
+Shape50.geometry = Box51;
 
-Transform Transform51 = createNode("Transform");
-Transform51.translation = new SFVec3f(new float[0,2,0]);
-Shape Shape52 = createNode("Shape");
-Shape52.USE = "box";
-Transform51.child = new undefined();
+Appearance Appearance52 = createNode("Appearance");
+Material Material53 = createNode("Material");
+Material53.diffuseColor = new SFColor(new float[0,1,0]);
+Appearance52.material = Material53;
 
-Transform51.child[0] = Shape52;
+Shape50.appearance = Appearance52;
 
-children[5] = Transform51;
+fieldValue49.children = new MFNode();
+
+fieldValue49.children[0] = Shape50;
+
+ProtoInstance47.fieldValue[1] = fieldValue49;
+
+children[4] = ProtoInstance47;
+
+Transform Transform54 = createNode("Transform");
+Transform54.translation = new SFVec3f(new float[0,2,0]);
+Shape Shape55 = createNode("Shape");
+Shape55.USE = "box";
+Transform54.child = new undefined();
+
+Transform54.child[0] = Shape55;
+
+children[5] = Transform54;
 
 }

@@ -4,7 +4,7 @@ import '../x3d.dart';
 var X3D0 =  X3D(
 
       profile_ : SFString('Immersive'),
-      version_ : SFString('4.0'),
+      version_ : SFString('3.3'),
       head_ : 
         head(
           meta_ : [
@@ -22,7 +22,11 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('identifier'),
-              content_ : SFString('https://coderextreme.net/X3DJSONLD/src/main/data/asteroids.x3d'))]),
+              content_ : SFString('https://coderextreme.net/X3DJSONLD/src/main/data/asteroids.x3d')),
+
+            meta(
+              name_ : SFString('description'),
+              content_ : SFString('asteroids'))]),
       Scene_ : 
         Scene(
           children_ : [
@@ -33,11 +37,10 @@ var X3D0 =  X3D(
                   field_ : [
                     field(
                       type_ : SFString("MFNode"),
-                      accessType_ : SFString("inputOutput"),
                       name_ : SFString('myShape'),
+                      accessType_ : SFString("inputOutput"),
                       children_ : [
                         Shape(
-                          DEF_ : SFString('_1'),
                           geometry_ : 
                             Sphere())])]),
               ProtoBody_ : 

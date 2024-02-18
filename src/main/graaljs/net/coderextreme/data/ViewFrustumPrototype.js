@@ -4,6 +4,10 @@ ConfigurationProperties.showDefaultAttributes = false;
 ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;
 ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
+function doubleToFloat(d) {
+    if (Float32Array)
+	return new Float32Array([d])[0];
+}
       var X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
       .setHead(new head()
         .addMeta(new meta().setName("title").setContent("ViewFrustumPrototype.x3d"))
@@ -35,11 +39,11 @@ ConfigurationProperties.setStripTrailingZeroes(true);
             .addField(new field().setType(field.TYPE_SFBOOL).setName("trace").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("debug support, default false").setValue("false")))
           .setProtoBody(new ProtoBody()
             .addChild(new Switch().setDEF("VisibilitySwitch").setWhichChoice(-1)
-              .addChild(new Transform().setDEF("PositionTransform").setRotation(Java.to([0,1,0,3.14159], Java.type("double[]")))
+              .addChild(new Transform().setDEF("PositionTransform").setRotation(Java.to([doubleToFloat(0),doubleToFloat(1),doubleToFloat(0),doubleToFloat(3.14159)], Java.type("float[]")))
                 .addChild(new Transform().setDEF("OrientationTransform")
                   .addChild(new Shape()
                     .setGeometry(new IndexedLineSet().setDEF("FrustumLines").setCoordIndex(Java.to([0,1,2,3,0,-1,4,5,6,7,4,-1,0,4,-1,1,5,-1,2,6,-1,3,7,-1], Java.type("int[]")))
-                      .setCoord(new Coordinate().setDEF("FrustumCoordinate").setPoint(Java.to([0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], Java.type("double[]")))))
+                      .setCoord(new Coordinate().setDEF("FrustumCoordinate").setPoint(Java.to([doubleToFloat(0),doubleToFloat(0),doubleToFloat(0),doubleToFloat(0),doubleToFloat(0),doubleToFloat(0),doubleToFloat(0),doubleToFloat(0),doubleToFloat(0),doubleToFloat(0),doubleToFloat(0),doubleToFloat(0),doubleToFloat(0),doubleToFloat(0),doubleToFloat(0),doubleToFloat(0),doubleToFloat(0),doubleToFloat(0),doubleToFloat(0),doubleToFloat(0),doubleToFloat(0),doubleToFloat(0),doubleToFloat(0),doubleToFloat(0)], Java.type("float[]")))))
                     .setAppearance(new Appearance()
                       .setMaterial(new Material()
                         .setIS(new IS()
@@ -89,7 +93,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addChild(new Anchor().setDescription("ViewFrustum Example").setUrl(Java.to(["ViewFrustumExample.x3d"], Java.type("java.lang.String[]")))
           .addChild(new Shape()
             .setAppearance(new Appearance()
-              .setMaterial(new Material().setDiffuseColor(Java.to([0.8,0.4,0], Java.type("double[]")))))
+              .setMaterial(new Material().setDiffuseColor(Java.to([doubleToFloat(0.8),doubleToFloat(0.4),doubleToFloat(0)], Java.type("float[]")))))
             .setGeometry(new Text().setString(Java.to(["ViewFrustumPrototype.x3d","is a Prototype declaration file.","For an example scene using the prototype,","click this text and view","ViewFrustumExample.x3d"], Java.type("java.lang.String[]")))
               .setFontStyle(new FontStyle().setJustify(Java.to(["MIDDLE","MIDDLE"], Java.type("java.lang.String[]"))).setSize(0.8))))))      ;
     X3D0.toFileX3D("../data/ViewFrustumPrototype.new.graal.x3d");

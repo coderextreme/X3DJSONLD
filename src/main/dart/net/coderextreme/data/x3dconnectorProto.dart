@@ -10,7 +10,7 @@ var X3D0 =  X3D(
           meta_ : [
             meta(
               name_ : SFString('title'),
-              content_ : SFString('x3dconnectorProto')),
+              content_ : SFString('x3dconnectorProto.x3d')),
 
             meta(
               name_ : SFString('creator'),
@@ -304,11 +304,11 @@ ecmascript:eval (0
 	    if (typeof endpoint === 'undefined') {
 		return;
 	    }
-            let dif = endpoint.subtract(startpoint);
-            let dist = dif.length()*0.5;
-            let dif2 = dif.multiply(0.5);
-            let norm = dif.normalize();
-            let transl = startpoint.add(dif2);
+            var dif = endpoint.subtract(startpoint);
+            var dist = dif.length()*0.5;
+            var dif2 = dif.multiply(0.5);
+            var norm = dif.normalize();
+            var transl = startpoint.add(dif2);
 	    if (typeof Quaternion !== 'undefined') {
 		    return {
 			    scale : new SFVec3f(1.0,dist,1.0),
@@ -324,7 +324,7 @@ ecmascript:eval (0
 	    }
 	}
 	, function recompute_and_route(startpoint, endpoint) {
-	      let trafo = recompute(startpoint, endpoint);
+	      var trafo = recompute(startpoint, endpoint);
 	      if (trafo) {
 		      transnode.translation = trafo.translation;
 		      rotscalenode.rotation = trafo.rotation;

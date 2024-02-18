@@ -4,6 +4,10 @@ ConfigurationProperties.showDefaultAttributes = false;
 ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;
 ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
+function doubleToFloat(d) {
+    if (Float32Array)
+	return new Float32Array([d])[0];
+}
 var ProtoInstance0 = null;
 var ProtoInstance1 = null;
 var ProtoInstance2 = null;
@@ -22,29 +26,29 @@ var ProtoInstance2 = null;
           .setProtoBody(new ProtoBody()
             .addChild(new Group()
               .addComments(new CommentsBlock("left"))
-              .addChild(new Transform().setScale(Java.to([0.5,0.5,0.5], Java.type("double[]")))
+              .addChild(new Transform().setScale(Java.to([doubleToFloat(0.5),doubleToFloat(0.5),doubleToFloat(0.5)], Java.type("float[]")))
                 .addChild(new Shape().setDEF("ShapeLeftDown")
                   .setAppearance(new Appearance()
-                    .setMaterial(new Material().setDiffuseColor(Java.to([0.7,1,0], Java.type("double[]")))))
-                  .setGeometry(new Extrusion().setSpine(Java.to([-2.5,0,0,-1.5,0,0], Java.type("double[]"))).setCreaseAngle(0.785).setCrossSection(Java.to([1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0], Java.type("double[]"))))))
+                    .setMaterial(new Material().setDiffuseColor(Java.to([doubleToFloat(0.7),doubleToFloat(1),doubleToFloat(0)], Java.type("float[]")))))
+                  .setGeometry(new Extrusion().setSpine(Java.to([doubleToFloat(-2.5),doubleToFloat(0),doubleToFloat(0),doubleToFloat(-1.5),doubleToFloat(0),doubleToFloat(0)], Java.type("float[]"))).setCreaseAngle(0.785).setCrossSection(Java.to([doubleToFloat(1),doubleToFloat(0),doubleToFloat(0.92),doubleToFloat(-0.38),doubleToFloat(0.71),doubleToFloat(-0.71),doubleToFloat(0.38),doubleToFloat(-0.92),doubleToFloat(0),doubleToFloat(-1),doubleToFloat(-0.38),doubleToFloat(-0.92),doubleToFloat(-0.71),doubleToFloat(-0.71),doubleToFloat(-0.92),doubleToFloat(-0.38),doubleToFloat(-1),doubleToFloat(0),doubleToFloat(-0.92),doubleToFloat(0.38),doubleToFloat(-0.71),doubleToFloat(0.71),doubleToFloat(-0.38),doubleToFloat(0.92),doubleToFloat(0),doubleToFloat(1),doubleToFloat(0.38),doubleToFloat(0.92),doubleToFloat(0.71),doubleToFloat(0.71),doubleToFloat(0.92),doubleToFloat(0.38),doubleToFloat(1),doubleToFloat(0)], Java.type("float[]"))))))
               .addComments(new CommentsBlock("right"))
-              .addChild(new Transform().setScale(Java.to([0.5,0.5,0.5], Java.type("double[]")))
+              .addChild(new Transform().setScale(Java.to([doubleToFloat(0.5),doubleToFloat(0.5),doubleToFloat(0.5)], Java.type("float[]")))
                 .addChild(new Shape().setDEF("ShapeUpRight")
                   .setAppearance(new Appearance()
-                    .setMaterial(new Material().setDiffuseColor(Java.to([0,0.7,1], Java.type("double[]")))))
-                  .setGeometry(new Extrusion().setSpine(Java.to([1.5,0,0,2.5,0,0], Java.type("double[]"))).setCreaseAngle(0.785).setCrossSection(Java.to([1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0], Java.type("double[]"))))))
+                    .setMaterial(new Material().setDiffuseColor(Java.to([doubleToFloat(0),doubleToFloat(0.7),doubleToFloat(1)], Java.type("float[]")))))
+                  .setGeometry(new Extrusion().setSpine(Java.to([doubleToFloat(1.5),doubleToFloat(0),doubleToFloat(0),doubleToFloat(2.5),doubleToFloat(0),doubleToFloat(0)], Java.type("float[]"))).setCreaseAngle(0.785).setCrossSection(Java.to([doubleToFloat(1),doubleToFloat(0),doubleToFloat(0.92),doubleToFloat(-0.38),doubleToFloat(0.71),doubleToFloat(-0.71),doubleToFloat(0.38),doubleToFloat(-0.92),doubleToFloat(0),doubleToFloat(-1),doubleToFloat(-0.38),doubleToFloat(-0.92),doubleToFloat(-0.71),doubleToFloat(-0.71),doubleToFloat(-0.92),doubleToFloat(-0.38),doubleToFloat(-1),doubleToFloat(0),doubleToFloat(-0.92),doubleToFloat(0.38),doubleToFloat(-0.71),doubleToFloat(0.71),doubleToFloat(-0.38),doubleToFloat(0.92),doubleToFloat(0),doubleToFloat(1),doubleToFloat(0.38),doubleToFloat(0.92),doubleToFloat(0.71),doubleToFloat(0.71),doubleToFloat(0.92),doubleToFloat(0.38),doubleToFloat(1),doubleToFloat(0)], Java.type("float[]"))))))
               .addComments(new CommentsBlock("up"))
-              .addChild(new Transform().setScale(Java.to([0.5,0.5,0.5], Java.type("double[]")))
+              .addChild(new Transform().setScale(Java.to([doubleToFloat(0.5),doubleToFloat(0.5),doubleToFloat(0.5)], Java.type("float[]")))
                 .addChild(new Shape().setUSE("ShapeUpRight")))
               .addComments(new CommentsBlock("down"))
-              .addChild(new Transform().setScale(Java.to([0.5,0.5,0.5], Java.type("double[]")))
+              .addChild(new Transform().setScale(Java.to([doubleToFloat(0.5),doubleToFloat(0.5),doubleToFloat(0.5)], Java.type("float[]")))
                 .addChild(new Shape().setUSE("ShapeLeftDown"))))))
-        .addChild(new Viewpoint().setDescription("Process pipes").setOrientation(Java.to([1,0,0,-0.4], Java.type("double[]"))).setPosition(Java.to([0,5,12], Java.type("double[]"))))
-        .addChild(new Transform().setTranslation(Java.to([0,-2.5,0], Java.type("double[]")))
+        .addChild(new Viewpoint().setDescription("Process pipes").setOrientation(Java.to([doubleToFloat(1),doubleToFloat(0),doubleToFloat(0),doubleToFloat(-0.4)], Java.type("float[]"))).setPosition(Java.to([doubleToFloat(0),doubleToFloat(5),doubleToFloat(12)], Java.type("float[]"))))
+        .addChild(new Transform().setTranslation(Java.to([doubleToFloat(0),doubleToFloat(-2.5),doubleToFloat(0)], Java.type("float[]")))
           .addChild(ProtoInstance0 = new ProtoInstance().setName("Process")))
         .addChild(new Transform()
           .addChild(ProtoInstance1 = new ProtoInstance().setName("Process")))
-        .addChild(new Transform().setTranslation(Java.to([0,2.5,0], Java.type("double[]")))
+        .addChild(new Transform().setTranslation(Java.to([doubleToFloat(0),doubleToFloat(2.5),doubleToFloat(0)], Java.type("float[]")))
           .addChild(ProtoInstance2 = new ProtoInstance().setName("Process"))))      ;
     X3D0.toFileX3D("../data/qq3.new.graal.x3d");
     X3D0.toFileJSON("../data/qq3.new.graal.json");

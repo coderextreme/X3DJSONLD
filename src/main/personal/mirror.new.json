@@ -7,6 +7,10 @@
     "head": {
         "component": [
           {
+            "@name":"Scripting",
+            "@level":1
+          },
+          {
             "@name":"EnvironmentalEffects",
             "@level":3
           },
@@ -28,10 +32,14 @@
           },
           {
             "@name":"Shape",
-            "@level":1
+            "@level":4
           },
           {
             "@name":"Grouping",
+            "@level":3
+          },
+          {
+            "@name":"Core",
             "@level":1
           }
         ],
@@ -50,7 +58,7 @@
           },
           {
             "@name":"identifier",
-            "@content":"https://coderextreme.net/X3DJSONLD/mirror.x3d"
+            "@content":"https://coderextreme.net/X3DJSONLD/src/main/data/mirror.x3d"
           },
           {
             "@name":"description",
@@ -58,7 +66,7 @@
           },
           {
             "@name":"translated",
-            "@content":"27 October 2023"
+            "@content":"18 February 2024"
           },
           {
             "@name":"generator",
@@ -83,42 +91,42 @@
               "-backTexture":
                 { "ImageTexture":
                   {
-                    "@DEF":"backBack",
+                    "@DEF":"backBackgroundTexture",
                     "@url":["../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_back.png"]
                   }
                 },
               "-bottomTexture":
                 { "ImageTexture":
                   {
-                    "@DEF":"bottomBack",
+                    "@DEF":"bottomBackgroundTexture",
                     "@url":["../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"]
                   }
                 },
               "-frontTexture":
                 { "ImageTexture":
                   {
-                    "@DEF":"frontBack",
+                    "@DEF":"frontBackgroundTexture",
                     "@url":["../resources/images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_front.png"]
                   }
                 },
               "-leftTexture":
                 { "ImageTexture":
                   {
-                    "@DEF":"leftBack",
+                    "@DEF":"leftBackgroundTexture",
                     "@url":["../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_left.png"]
                   }
                 },
               "-rightTexture":
                 { "ImageTexture":
                   {
-                    "@DEF":"rightBack",
+                    "@DEF":"rightBackgroundTexture",
                     "@url":["../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_right.png"]
                   }
                 },
               "-topTexture":
                 { "ImageTexture":
                   {
-                    "@DEF":"topBack",
+                    "@DEF":"topBackgroundTexture",
                     "@url":["../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_top.png"]
                   }
                 }
@@ -435,7 +443,7 @@
                     "@fromField":"front_changed",
                     "@fromNode":"UrlSelector",
                     "@toField":"url",
-                    "@toNode":"frontBack"
+                    "@toNode":"frontBackgroundTexture"
                   }
                 },
                 { "ROUTE":
@@ -443,7 +451,7 @@
                     "@fromField":"back_changed",
                     "@fromNode":"UrlSelector",
                     "@toField":"url",
-                    "@toNode":"backBack"
+                    "@toNode":"backBackgroundTexture"
                   }
                 },
                 { "ROUTE":
@@ -451,7 +459,7 @@
                     "@fromField":"left_changed",
                     "@fromNode":"UrlSelector",
                     "@toField":"url",
-                    "@toNode":"leftBack"
+                    "@toNode":"leftBackgroundTexture"
                   }
                 },
                 { "ROUTE":
@@ -459,7 +467,7 @@
                     "@fromField":"right_changed",
                     "@fromNode":"UrlSelector",
                     "@toField":"url",
-                    "@toNode":"rightBack"
+                    "@toNode":"rightBackgroundTexture"
                   }
                 },
                 { "ROUTE":
@@ -467,7 +475,7 @@
                     "@fromField":"top_changed",
                     "@fromNode":"UrlSelector",
                     "@toField":"url",
-                    "@toNode":"topBack"
+                    "@toNode":"topBackgroundTexture"
                   }
                 },
                 { "ROUTE":
@@ -475,7 +483,7 @@
                     "@fromField":"bottom_changed",
                     "@fromNode":"UrlSelector",
                     "@toField":"url",
-                    "@toNode":"bottomBack"
+                    "@toNode":"bottomBackgroundTexture"
                   }
                 },
                 { "ROUTE":

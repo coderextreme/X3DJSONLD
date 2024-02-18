@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
+<X3D profile='Immersive' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.3.xsd'>
   <head>
     <meta content='rubikOnFire.x3d' name='title'/>
     <meta content='John Carlson' name='creator'/>
     <meta content='manual' name='generator'/>
     <meta content='https://coderextreme.net/X3DJSONLD/src/main/data/rubikOnFire.x3d' name='identifier'/>
+    <meta content='a white rubik cube' name='description'/>
   </head>
   <Scene>
+    <NavigationInfo avatarSize='0.25 1.6 0.75' transitionType='"LINEAR"' type='"EXAMINE"'/>
+    <Viewpoint description='Rubiks Cube on Fire' position='0 0 12'/>
     <ProtoDeclare name='anyShape'>
       <ProtoInterface>
-        <field name='xtranslation' accessType='inputOutput' type='SFVec3f'/>
+        <field name='xtranslation' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
         <field name='myShape' accessType='inputOutput' type='SFNode'>
           <Sphere/>
         </field>
@@ -33,9 +36,9 @@
     </ProtoDeclare>
     <ProtoDeclare name='three'>
       <ProtoInterface>
-        <field name='ytranslation' accessType='inputOutput' type='SFVec3f'/>
+        <field name='ytranslation' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
         <field name='myShape' accessType='inputOutput' type='SFNode'>
-          <Sphere DEF='_1'/>
+          <Sphere/>
         </field>
       </ProtoInterface>
       <ProtoBody>
@@ -47,6 +50,7 @@
             <IS>
               <connect nodeField='myShape' protoField='myShape'/>
             </IS>
+            <fieldValue name='xtranslation' value='0 0 0'/>
           </ProtoInstance>
           <ProtoInstance name='anyShape'>
             <IS>
@@ -65,9 +69,9 @@
     </ProtoDeclare>
     <ProtoDeclare name='nine'>
       <ProtoInterface>
-        <field name='ztranslation' accessType='inputOutput' type='SFVec3f'/>
+        <field name='ztranslation' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
         <field name='myShape' accessType='inputOutput' type='SFNode'>
-          <Sphere DEF='_2'/>
+          <Sphere/>
         </field>
       </ProtoInterface>
       <ProtoBody>
@@ -79,6 +83,7 @@
             <IS>
               <connect nodeField='myShape' protoField='myShape'/>
             </IS>
+            <fieldValue name='ytranslation' value='0 0 0'/>
           </ProtoInstance>
           <ProtoInstance name='three'>
             <IS>
@@ -97,9 +102,9 @@
     </ProtoDeclare>
     <ProtoDeclare name='twentyseven'>
       <ProtoInterface>
-        <field name='ttranslation' accessType='inputOutput' type='SFVec3f'/>
+        <field name='ttranslation' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
         <field name='myShape' accessType='inputOutput' type='SFNode'>
-          <Sphere DEF='_3'/>
+          <Sphere/>
         </field>
       </ProtoInterface>
       <ProtoBody>
@@ -111,6 +116,7 @@
             <IS>
               <connect nodeField='myShape' protoField='myShape'/>
             </IS>
+            <fieldValue name='ztranslation' value='0 0 0'/>
           </ProtoInstance>
           <ProtoInstance name='nine'>
             <IS>
@@ -127,11 +133,10 @@
         </Transform>
       </ProtoBody>
     </ProtoDeclare>
-    <NavigationInfo avatarSize='0.25 1.6 0.75' transitionType='"LINEAR"' type='"EXAMINE"'/>
-    <Viewpoint description='Rubiks Cube on Fire' position='0 0 12'/>
     <ProtoInstance name='twentyseven'>
+      <fieldValue name='ttranslation' value='0 0 0'/>
       <fieldValue name='myShape'>
-        <Box DEF='_4' size='1 1 1'/>
+        <Box size='1 1 1'/>
       </fieldValue>
     </ProtoInstance>
   </Scene>

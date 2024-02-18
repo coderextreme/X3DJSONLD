@@ -3,8 +3,8 @@
 <X3D profile="Immersive" version="4.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd">
 <head>
   <component level='1' name='HAnim'/>
-  <meta content='Humanoid4.x3d' name='title'/>
-  <meta name='identifier' content='http://www.web3d.org/x3d/content/examples/HumanoidAnimation/Humanoid4.x3d'/>
+  <meta content='JohnBoy.x3d' name='title'/>
+  <meta name='identifier' content='http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d'/>
   <meta name='description' content='An attempt at a standard LOA-4 skeleton'/>
   <meta name='generator' content='h2.pl'/>
   <meta name='modified' content="14 Jan 2023"/>
@@ -82,7 +82,7 @@
           <!-- </LOD> -->
           <Coordinate USE='TheSkinCoord' containerField='skinCoord'/>
 <HAnimJoint DEF='hanim_humanoid_root' name='humanoid_root' containerField='skeleton' center='0.0000 0.8240 0.0277'>
-  <HAnimSegment DEF='hanim_sacrum' name='sacrum'>
+  <HAnimSegment DEF='hanim_sacrum' name='sacrum'>
    <Transform translation='0.0000 0.8240 0.0277'>
    <Transform> <!-- Empty Transform -->
     <Shape USE='HAnimJointShape'/>
@@ -94,67 +94,15 @@
      <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
     </LineSet>
    </Shape>
-   <HAnimSite DEF='hanim_buttocks_standing_wall_contact_point_pt' name='buttocks_standing_wall_contact_point_pt'>
-    <TouchSensor description='HAnimSite buttocks_standing_wall_contact_point_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
-   <HAnimSite DEF='hanim_crotch_pt' name='crotch_pt' translation='0.0034 0.8266 0.0257'>
-    <TouchSensor description='HAnimSite crotch_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
-   <HAnimSite DEF='hanim_l_asis_pt' name='l_asis_pt' translation='0.0925 0.9983 0.1052'>
-    <TouchSensor description='HAnimSite l_asis_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
-   <HAnimSite DEF='hanim_l_iliocristale_pt' name='l_iliocristale_pt' translation='0.1612 1.0537 0.0008'>
-    <TouchSensor description='HAnimSite l_iliocristale_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
-   <HAnimSite DEF='hanim_l_psis_pt' name='l_psis_pt' translation='0.0774 1.0190 -0.1151'>
-    <TouchSensor description='HAnimSite l_psis_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
-   <HAnimSite DEF='hanim_l_trochanterion_pt' name='l_trochanterion_pt' translation='0.1677 0.8336 0.0303'>
-    <TouchSensor description='HAnimSite l_trochanterion_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
-   <HAnimSite DEF='hanim_r_asis_pt' name='r_asis_pt' translation='-0.0887 1.0021 0.1112'>
-    <TouchSensor description='HAnimSite r_asis_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
-   <HAnimSite DEF='hanim_r_iliocristale_pt' name='r_iliocristale_pt' translation='-0.1525 1.0628 0.0035'>
-    <TouchSensor description='HAnimSite r_iliocristale_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
-   <HAnimSite DEF='hanim_r_psis_pt' name='r_psis_pt' translation='-0.0716 1.0190 -0.1138'>
-    <TouchSensor description='HAnimSite r_psis_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
-   <HAnimSite DEF='hanim_r_trochanterion_pt' name='r_trochanterion_pt' translation='-0.1689 0.8419 0.0352'>
-    <TouchSensor description='HAnimSite r_trochanterion_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
    <Shape>
     <LineSet vertexCount='2'>
      <Coordinate point='0.0000 0.8240 0.0277 0.0028 1.0568 -0.0776'/> <!-- from humanoid_root to vl5 vertices 2-->
      <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
     </LineSet>
    </Shape>
-   <HAnimSite DEF='hanim_navel_pt' name='navel_pt' translation='0.0069 1.0966 0.1017'>
-    <TouchSensor description='HAnimSite navel_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
-   <HAnimSite DEF='hanim_waist_preferred_anterior_pt' name='waist_preferred_anterior_pt'>
-    <TouchSensor description='HAnimSite waist_preferred_anterior_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
-   <HAnimSite DEF='hanim_waist_preferred_posterior_pt' name='waist_preferred_posterior_pt' translation='0.2900 1.0915 -0.1091'>
-    <TouchSensor description='HAnimSite waist_preferred_posterior_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
   </HAnimSegment>
   <HAnimJoint DEF='hanim_sacroiliac' name='sacroiliac' center='0.0000 0.9149 0.0016'>
-    <HAnimSegment DEF='hanim_pelvis' name='pelvis'>
+    <HAnimSegment DEF='hanim_pelvis' name='pelvis'>
      <Transform translation='0.0000 0.9149 0.0016'>
      <Transform> <!-- Empty Transform -->
       <Shape USE='HAnimJointShape'/>
@@ -166,47 +114,15 @@
        <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
       </LineSet>
      </Shape>
-   <HAnimSite DEF='hanim_l_femoral_lateral_epicondyles_pt' name='l_femoral_lateral_epicondyles_pt' translation='0.1598 0.4967 0.0297'>
-    <TouchSensor description='HAnimSite l_femoral_lateral_epicondyles_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
-   <HAnimSite DEF='hanim_l_femoral_medial_epicondyles_pt' name='l_femoral_medial_epicondyles_pt' translation='0.0398 0.4946 0.0303'>
-    <TouchSensor description='HAnimSite l_femoral_medial_epicondyles_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
-   <HAnimSite DEF='hanim_l_knee_crease_pt' name='l_knee_crease_pt' translation='0.0993 0.4881 -0.0309'>
-    <TouchSensor description='HAnimSite l_knee_crease_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
-   <HAnimSite DEF='hanim_l_suprapatella_pt' name='l_suprapatella_pt'>
-    <TouchSensor description='HAnimSite l_suprapatella_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
      <Shape>
       <LineSet vertexCount='2'>
        <Coordinate point='0.0000 0.9149 0.0016 -0.0950 0.9171 0.0029'/> <!-- from sacroiliac to r_hip vertices 2-->
        <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
       </LineSet>
      </Shape>
-   <HAnimSite DEF='hanim_r_femoral_lateral_epicondyles_pt' name='r_femoral_lateral_epicondyles_pt' translation='-0.1421 0.4992 0.0310'>
-    <TouchSensor description='HAnimSite r_femoral_lateral_epicondyles_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
-   <HAnimSite DEF='hanim_r_femoral_medial_epicondyles_pt' name='r_femoral_medial_epicondyles_pt' translation='-0.0221 0.5014 0.0289'>
-    <TouchSensor description='HAnimSite r_femoral_medial_epicondyles_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
-   <HAnimSite DEF='hanim_r_knee_crease_pt' name='r_knee_crease_pt' translation='-0.0825 0.4932 -0.0326'>
-    <TouchSensor description='HAnimSite r_knee_crease_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
-   <HAnimSite DEF='hanim_r_suprapatella_pt' name='r_suprapatella_pt'>
-    <TouchSensor description='HAnimSite r_suprapatella_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
     </HAnimSegment>
     <HAnimJoint DEF='hanim_l_hip' name='l_hip' center='0.0961 0.9124 -0.0001'>
-      <HAnimSegment DEF='hanim_l_thigh' name='l_thigh'>
+      <HAnimSegment DEF='hanim_l_thigh' name='l_thigh'>
        <Transform translation='0.0961 0.9124 -0.0001'>
        <Transform> <!-- Empty Transform -->
         <Shape USE='HAnimJointShape'/>
@@ -218,21 +134,9 @@
          <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
         </LineSet>
        </Shape>
-   <HAnimSite DEF='hanim_l_lateral_malleolus_pt' name='l_lateral_malleolus_pt' translation='0.1308 0.0597 -0.1032'>
-    <TouchSensor description='HAnimSite l_lateral_malleolus_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
-   <HAnimSite DEF='hanim_l_medial_malleolus_pt' name='l_medial_malleolus_pt' translation='0.0890 0.0716 -0.0881'>
-    <TouchSensor description='HAnimSite l_medial_malleolus_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
-   <HAnimSite DEF='hanim_l_tibiale_pt' name='l_tibiale_pt'>
-    <TouchSensor description='HAnimSite l_tibiale_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
       </HAnimSegment>
       <HAnimJoint DEF='hanim_l_knee' name='l_knee' center='0.1040 0.4867 0.0308'>
-        <HAnimSegment DEF='hanim_l_calf' name='l_calf'>
+        <HAnimSegment DEF='hanim_l_calf' name='l_calf'>
          <Transform translation='0.1040 0.4867 0.0308'>
          <Transform> <!-- Empty Transform -->
           <Shape USE='HAnimJointShape'/>
@@ -244,17 +148,9 @@
            <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
           </LineSet>
          </Shape>
-   <HAnimSite DEF='hanim_l_calcaneus_posterior_pt' name='l_calcaneus_posterior_pt' translation='0.0974 0.0259 -0.1171'>
-    <TouchSensor description='HAnimSite l_calcaneus_posterior_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
-   <HAnimSite DEF='hanim_l_sphyrion_pt' name='l_sphyrion_pt' translation='0.0890 0.0575 -0.0943'>
-    <TouchSensor description='HAnimSite l_sphyrion_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
         </HAnimSegment>
         <HAnimJoint DEF='hanim_l_talocrural' name='l_talocrural' center='0.1101 0.0656 -0.0736'>
-          <HAnimSegment DEF='hanim_l_talus' name='l_talus'>
+          <HAnimSegment DEF='hanim_l_talus' name='l_talus'>
            <Transform scale='0.15 0.15 0.15' translation='0.08 0.06 -0.025' rotation='1 0 0 -1.57'> <!-- Transform left foot -->
 <Transform> <!-- Empty Transform left foot -->
 
@@ -275,7 +171,7 @@
            </Shape>
           </HAnimSegment>
           <HAnimJoint DEF='hanim_l_talocalcaneonavicular' name='l_talocalcaneonavicular' center='0.0781 0.0283 -0.0970'>
-            <HAnimSegment DEF='hanim_l_navicular' name='l_navicular'>
+            <HAnimSegment DEF='hanim_l_navicular' name='l_navicular'>
              <Transform translation='0.0781 0.0283 -0.0970'>
              <Transform> <!-- Empty Transform -->
               <Shape USE='HAnimJointShape'/>
@@ -301,7 +197,7 @@
              </Shape>
             </HAnimSegment>
             <HAnimJoint DEF='hanim_l_cuneonavicular_1' name='l_cuneonavicular_1' center='0.0672 0.0235 -0.0835'>
-              <HAnimSegment DEF='hanim_l_cuneiform_1' name='l_cuneiform_1'>
+              <HAnimSegment DEF='hanim_l_cuneiform_1' name='l_cuneiform_1'>
                <Transform translation='0.0672 0.0235 -0.0835'>
                <Transform> <!-- Empty Transform -->
                 <Shape USE='HAnimJointShape'/>
@@ -315,7 +211,7 @@
                </Shape>
               </HAnimSegment>
               <HAnimJoint DEF='hanim_l_tarsometatarsal_1' name='l_tarsometatarsal_1' center='0.0644 0.0147 -0.0577'>
-                <HAnimSegment DEF='hanim_l_metatarsal_1' name='l_metatarsal_1'>
+                <HAnimSegment DEF='hanim_l_metatarsal_1' name='l_metatarsal_1'>
                  <Transform translation='0.0644 0.0147 -0.0577'>
                  <Transform> <!-- Empty Transform -->
                   <Shape USE='HAnimJointShape'/>
@@ -327,13 +223,9 @@
                    <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                   </LineSet>
                  </Shape>
-   <HAnimSite DEF='hanim_l_metatarsal_phalanx_1_pt' name='l_metatarsal_phalanx_1_pt'>
-    <TouchSensor description='HAnimSite l_metatarsal_phalanx_1_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
                 </HAnimSegment>
                 <HAnimJoint DEF='hanim_l_metatarsophalangeal_1' name='l_metatarsophalangeal_1' center='0.0619 0.0059 -0.0083'>
-                  <HAnimSegment DEF='hanim_l_tarsal_proximal_phalanx_1' name='l_tarsal_proximal_phalanx_1'>
+                  <HAnimSegment DEF='hanim_l_tarsal_proximal_phalanx_1' name='l_tarsal_proximal_phalanx_1'>
                    <Transform translation='0.0619 0.0059 -0.0083'>
                    <Transform> <!-- Empty Transform -->
                     <Shape USE='HAnimJointShape'/>
@@ -345,10 +237,6 @@
                      <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                     </LineSet>
                    </Shape>
-   <HAnimSite DEF='hanim_l_tarsal_distal_phalanx_1_tip' name='l_tarsal_distal_phalanx_1_tip'>
-    <TouchSensor description='HAnimSite l_tarsal_distal_phalanx_1_tip'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
                   </HAnimSegment>
                   <HAnimJoint DEF='hanim_l_tarsal_interphalangeal_1' name='l_tarsal_interphalangeal_1'>
                   </HAnimJoint>
@@ -356,7 +244,7 @@
               </HAnimJoint>
             </HAnimJoint>
             <HAnimJoint DEF='hanim_l_cuneonavicular_2' name='l_cuneonavicular_2' center='0.0812 0.0250 -0.0805'>
-              <HAnimSegment DEF='hanim_l_cuneiform_2' name='l_cuneiform_2'>
+              <HAnimSegment DEF='hanim_l_cuneiform_2' name='l_cuneiform_2'>
                <Transform translation='0.0812 0.0250 -0.0805'>
                <Transform> <!-- Empty Transform -->
                 <Shape USE='HAnimJointShape'/>
@@ -370,7 +258,7 @@
                </Shape>
               </HAnimSegment>
               <HAnimJoint DEF='hanim_l_tarsometatarsal_2' name='l_tarsometatarsal_2' center='0.0800 0.0175 -0.0608'>
-                <HAnimSegment DEF='hanim_l_metatarsal_2' name='l_metatarsal_2'>
+                <HAnimSegment DEF='hanim_l_metatarsal_2' name='l_metatarsal_2'>
                  <Transform translation='0.0800 0.0175 -0.0608'>
                  <Transform> <!-- Empty Transform -->
                   <Shape USE='HAnimJointShape'/>
@@ -384,7 +272,7 @@
                  </Shape>
                 </HAnimSegment>
                 <HAnimJoint DEF='hanim_l_metatarsophalangeal_2' name='l_metatarsophalangeal_2' center='0.0824 0.0064 -0.0040'>
-                  <HAnimSegment DEF='hanim_l_tarsal_proximal_phalanx_2' name='l_tarsal_proximal_phalanx_2'>
+                  <HAnimSegment DEF='hanim_l_tarsal_proximal_phalanx_2' name='l_tarsal_proximal_phalanx_2'>
                    <Transform translation='0.0824 0.0064 -0.0040'>
                    <Transform> <!-- Empty Transform -->
                     <Shape USE='HAnimJointShape'/>
@@ -398,7 +286,7 @@
                    </Shape>
                   </HAnimSegment>
                   <HAnimJoint DEF='hanim_l_tarsal_proximal_interphalangeal_2' name='l_tarsal_proximal_interphalangeal_2' center='0.0841 0.0041 0.0121'>
-                    <HAnimSegment DEF='hanim_l_tarsal_middle_phalanx_2' name='l_tarsal_middle_phalanx_2'>
+                    <HAnimSegment DEF='hanim_l_tarsal_middle_phalanx_2' name='l_tarsal_middle_phalanx_2'>
                      <Transform translation='0.0841 0.0041 0.0121'>
                      <Transform> <!-- Empty Transform -->
                       <Shape USE='HAnimJointShape'/>
@@ -410,10 +298,6 @@
                        <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                       </LineSet>
                      </Shape>
-   <HAnimSite DEF='hanim_l_tarsal_distal_phalanx_2_tip' name='l_tarsal_distal_phalanx_2_tip' translation='0.1195 0.0079 0.1433'>
-    <TouchSensor description='HAnimSite l_tarsal_distal_phalanx_2_tip'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
                     </HAnimSegment>
                     <HAnimJoint DEF='hanim_l_tarsal_distal_interphalangeal_2' name='l_tarsal_distal_interphalangeal_2' center='0.0841 0.0013 0.0216'>
                     </HAnimJoint>
@@ -422,7 +306,7 @@
               </HAnimJoint>
             </HAnimJoint>
             <HAnimJoint DEF='hanim_l_cuneonavicular_3' name='l_cuneonavicular_3' center='0.0928 0.0248 -0.0821'>
-              <HAnimSegment DEF='hanim_l_cuneiform_3' name='l_cuneiform_3'>
+              <HAnimSegment DEF='hanim_l_cuneiform_3' name='l_cuneiform_3'>
                <Transform translation='0.0928 0.0248 -0.0821'>
                <Transform> <!-- Empty Transform -->
                 <Shape USE='HAnimJointShape'/>
@@ -430,27 +314,27 @@
                </Transform>
                <Shape>
                 <LineSet vertexCount='2'>
-                 <Coordinate point='0.0928 0.0248 -0.0821 0.0841 0.0013 0.0216'/> <!-- from l_cuneonavicular_3 to l_tarsometatarsal_3  vertices 2-->
+                 <Coordinate point='0.0928 0.0248 -0.0821 0.0944 0.0175 -0.0625'/> <!-- from l_cuneonavicular_3 to l_tarsometatarsal_3 vertices 2-->
                  <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                 </LineSet>
                </Shape>
               </HAnimSegment>
-              <HAnimJoint DEF='hanim_l_tarsometatarsal_3 ' name='l_tarsometatarsal_3 '>
-                <HAnimSegment DEF='hanim_l_metatarsal_3' name='l_metatarsal_3'>
-                 <Transform translation='0.0928 0.0248 -0.0821'>
+              <HAnimJoint DEF='hanim_l_tarsometatarsal_3' name='l_tarsometatarsal_3' center='0.0944 0.0175 -0.0625'>
+                <HAnimSegment DEF='hanim_l_metatarsal_3' name='l_metatarsal_3'>
+                 <Transform translation='0.0944 0.0175 -0.0625'>
                  <Transform> <!-- Empty Transform -->
                   <Shape USE='HAnimJointShape'/>
                  </Transform>
                  </Transform>
                  <Shape>
                   <LineSet vertexCount='2'>
-                   <Coordinate point=' 0.0963 0.0065 -0.0065'/> <!-- from l_tarsometatarsal_3  to l_metatarsophalangeal_3 vertices 1-->
+                   <Coordinate point='0.0944 0.0175 -0.0625 0.0963 0.0065 -0.0065'/> <!-- from l_tarsometatarsal_3 to l_metatarsophalangeal_3 vertices 2-->
                    <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                   </LineSet>
                  </Shape>
                 </HAnimSegment>
                 <HAnimJoint DEF='hanim_l_metatarsophalangeal_3' name='l_metatarsophalangeal_3' center='0.0963 0.0065 -0.0065'>
-                  <HAnimSegment DEF='hanim_l_tarsal_proximal_phalanx_3' name='l_tarsal_proximal_phalanx_3'>
+                  <HAnimSegment DEF='hanim_l_tarsal_proximal_phalanx_3' name='l_tarsal_proximal_phalanx_3'>
                    <Transform translation='0.0963 0.0065 -0.0065'>
                    <Transform> <!-- Empty Transform -->
                     <Shape USE='HAnimJointShape'/>
@@ -464,7 +348,7 @@
                    </Shape>
                   </HAnimSegment>
                   <HAnimJoint DEF='hanim_l_tarsal_proximal_interphalangeal_3' name='l_tarsal_proximal_interphalangeal_3' center='0.0987 0.0034 0.0086'>
-                    <HAnimSegment DEF='hanim_l_tarsal_middle_phalanx_3' name='l_tarsal_middle_phalanx_3'>
+                    <HAnimSegment DEF='hanim_l_tarsal_middle_phalanx_3' name='l_tarsal_middle_phalanx_3'>
                      <Transform translation='0.0987 0.0034 0.0086'>
                      <Transform> <!-- Empty Transform -->
                       <Shape USE='HAnimJointShape'/>
@@ -476,10 +360,6 @@
                        <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                       </LineSet>
                      </Shape>
-   <HAnimSite DEF='hanim_l_tarsal_distal_phalanx_3_tip' name='l_tarsal_distal_phalanx_3_tip'>
-    <TouchSensor description='HAnimSite l_tarsal_distal_phalanx_3_tip'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
                     </HAnimSegment>
                     <HAnimJoint DEF='hanim_l_tarsal_distal_interphalangeal_3' name='l_tarsal_distal_interphalangeal_3' center='0.1002 0.0013 0.0178'>
                     </HAnimJoint>
@@ -489,7 +369,7 @@
             </HAnimJoint>
           </HAnimJoint>
           <HAnimJoint DEF='hanim_l_calcaneocuboid' name='l_calcaneocuboid' center='0.0889 0.0494 -0.1278'>
-            <HAnimSegment DEF='hanim_l_calcaneus' name='l_calcaneus'>
+            <HAnimSegment DEF='hanim_l_calcaneus' name='l_calcaneus'>
              <Transform translation='0.0889 0.0494 -0.1278'>
              <Transform> <!-- Empty Transform -->
               <Shape USE='HAnimJointShape'/>
@@ -503,7 +383,7 @@
              </Shape>
             </HAnimSegment>
             <HAnimJoint DEF='hanim_l_transversetarsal' name='l_transversetarsal' center='0.1105 0.0267 -0.0998'>
-              <HAnimSegment DEF='hanim_l_cuboid' name='l_cuboid'>
+              <HAnimSegment DEF='hanim_l_cuboid' name='l_cuboid'>
                <Transform translation='0.1105 0.0267 -0.0998'>
                <Transform> <!-- Empty Transform -->
                 <Shape USE='HAnimJointShape'/>
@@ -523,7 +403,7 @@
                </Shape>
               </HAnimSegment>
               <HAnimJoint DEF='hanim_l_tarsometatarsal_4' name='l_tarsometatarsal_4' center='0.1063 0.0160 -0.0634'>
-                <HAnimSegment DEF='hanim_l_metatarsal_4' name='l_metatarsal_4'>
+                <HAnimSegment DEF='hanim_l_metatarsal_4' name='l_metatarsal_4'>
                  <Transform translation='0.1063 0.0160 -0.0634'>
                  <Transform> <!-- Empty Transform -->
                   <Shape USE='HAnimJointShape'/>
@@ -537,7 +417,7 @@
                  </Shape>
                 </HAnimSegment>
                 <HAnimJoint DEF='hanim_l_metatarsophalangeal_4' name='l_metatarsophalangeal_4' center='0.1097 0.0058 -0.0107'>
-                  <HAnimSegment DEF='hanim_l_tarsal_proximal_phalanx_4' name='l_tarsal_proximal_phalanx_4'>
+                  <HAnimSegment DEF='hanim_l_tarsal_proximal_phalanx_4' name='l_tarsal_proximal_phalanx_4'>
                    <Transform translation='0.1097 0.0058 -0.0107'>
                    <Transform> <!-- Empty Transform -->
                     <Shape USE='HAnimJointShape'/>
@@ -551,7 +431,7 @@
                    </Shape>
                   </HAnimSegment>
                   <HAnimJoint DEF='hanim_l_tarsal_proximal_interphalangeal_4' name='l_tarsal_proximal_interphalangeal_4' center='0.1140 0.0037 0.0044'>
-                    <HAnimSegment DEF='hanim_l_tarsal_middle_phalanx_4' name='l_tarsal_middle_phalanx_4'>
+                    <HAnimSegment DEF='hanim_l_tarsal_middle_phalanx_4' name='l_tarsal_middle_phalanx_4'>
                      <Transform translation='0.1140 0.0037 0.0044'>
                      <Transform> <!-- Empty Transform -->
                       <Shape USE='HAnimJointShape'/>
@@ -563,10 +443,6 @@
                        <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                       </LineSet>
                      </Shape>
-   <HAnimSite DEF='hanim_l_tarsal_distal_phalanx_4_tip' name='l_tarsal_distal_phalanx_4_tip'>
-    <TouchSensor description='HAnimSite l_tarsal_distal_phalanx_4_tip'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
                     </HAnimSegment>
                     <HAnimJoint DEF='hanim_l_tarsal_distal_interphalangeal_4' name='l_tarsal_distal_interphalangeal_4' center='0.1155 0.0008 0.0118'>
                     </HAnimJoint>
@@ -574,7 +450,7 @@
                 </HAnimJoint>
               </HAnimJoint>
               <HAnimJoint DEF='hanim_l_tarsometatarsal_5' name='l_tarsometatarsal_5' center='0.1206 0.0124 -0.0671'>
-                <HAnimSegment DEF='hanim_l_metatarsal_5' name='l_metatarsal_5'>
+                <HAnimSegment DEF='hanim_l_metatarsal_5' name='l_metatarsal_5'>
                  <Transform translation='0.1206 0.0124 -0.0671'>
                  <Transform> <!-- Empty Transform -->
                   <Shape USE='HAnimJointShape'/>
@@ -586,13 +462,9 @@
                    <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                   </LineSet>
                  </Shape>
-   <HAnimSite DEF='hanim_l_metatarsal_phalanx_5_pt' name='l_metatarsal_phalanx_5_pt'>
-    <TouchSensor description='HAnimSite l_metatarsal_phalanx_5_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
                 </HAnimSegment>
                 <HAnimJoint DEF='hanim_l_metatarsophalangeal_5' name='l_metatarsophalangeal_5' center='0.1239 0.0051 -0.0153'>
-                  <HAnimSegment DEF='hanim_l_tarsal_proximal_phalanx_5' name='l_tarsal_proximal_phalanx_5'>
+                  <HAnimSegment DEF='hanim_l_tarsal_proximal_phalanx_5' name='l_tarsal_proximal_phalanx_5'>
                    <Transform translation='0.1239 0.0051 -0.0153'>
                    <Transform> <!-- Empty Transform -->
                     <Shape USE='HAnimJointShape'/>
@@ -606,7 +478,7 @@
                    </Shape>
                   </HAnimSegment>
                   <HAnimJoint DEF='hanim_l_tarsal_proximal_interphalangeal_5' name='l_tarsal_proximal_interphalangeal_5' center='0.1262 0.0023 -0.0077'>
-                    <HAnimSegment DEF='hanim_l_tarsal_middle_phalanx_5' name='l_tarsal_middle_phalanx_5'>
+                    <HAnimSegment DEF='hanim_l_tarsal_middle_phalanx_5' name='l_tarsal_middle_phalanx_5'>
                      <Transform translation='0.1262 0.0023 -0.0077'>
                      <Transform> <!-- Empty Transform -->
                       <Shape USE='HAnimJointShape'/>
@@ -618,10 +490,6 @@
                        <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                       </LineSet>
                      </Shape>
-   <HAnimSite DEF='hanim_l_tarsal_distal_phalanx_5_tip' name='l_tarsal_distal_phalanx_5_tip'>
-    <TouchSensor description='HAnimSite l_tarsal_distal_phalanx_5_tip'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
                     </HAnimSegment>
                     <HAnimJoint DEF='hanim_l_tarsal_distal_interphalangeal_5' name='l_tarsal_distal_interphalangeal_5' center='0.1271 0.0000 0.0000'>
                     </HAnimJoint>
@@ -634,7 +502,7 @@
       </HAnimJoint>
     </HAnimJoint>
     <HAnimJoint DEF='hanim_r_hip' name='r_hip' center='-0.0950 0.9171 0.0029'>
-      <HAnimSegment DEF='hanim_r_thigh' name='r_thigh'>
+      <HAnimSegment DEF='hanim_r_thigh' name='r_thigh'>
        <Transform translation='-0.0950 0.9171 0.0029'>
        <Transform> <!-- Empty Transform -->
         <Shape USE='HAnimJointShape'/>
@@ -646,21 +514,9 @@
          <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
         </LineSet>
        </Shape>
-   <HAnimSite DEF='hanim_r_lateral_malleolus_pt' name='r_lateral_malleolus_pt' translation='-0.1006 0.0658 -0.1075'>
-    <TouchSensor description='HAnimSite r_lateral_malleolus_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
-   <HAnimSite DEF='hanim_r_medial_malleolus_pt' name='r_medial_malleolus_pt' translation='-0.0591 0.0760 -0.0928'>
-    <TouchSensor description='HAnimSite r_medial_malleolus_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
-   <HAnimSite DEF='hanim_r_tibiale_pt' name='r_tibiale_pt'>
-    <TouchSensor description='HAnimSite r_tibiale_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
       </HAnimSegment>
       <HAnimJoint DEF='hanim_r_knee' name='r_knee' center='-0.0867 0.4913 0.0318'>
-        <HAnimSegment DEF='hanim_r_calf' name='r_calf'>
+        <HAnimSegment DEF='hanim_r_calf' name='r_calf'>
          <Transform translation='-0.0867 0.4913 0.0318'>
          <Transform> <!-- Empty Transform -->
           <Shape USE='HAnimJointShape'/>
@@ -672,17 +528,9 @@
            <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
           </LineSet>
          </Shape>
-   <HAnimSite DEF='hanim_r_calcaneus_posterior_pt' name='r_calcaneus_posterior_pt' translation='-0.0692 0.0297 -0.1221'>
-    <TouchSensor description='HAnimSite r_calcaneus_posterior_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
-   <HAnimSite DEF='hanim_r_sphyrion_pt' name='r_sphyrion_pt' translation='-0.0603 0.0610 -0.1002'>
-    <TouchSensor description='HAnimSite r_sphyrion_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
         </HAnimSegment>
         <HAnimJoint DEF='hanim_r_talocrural' name='r_talocrural' center='-0.0801 0.0712 -0.0766'>
-          <HAnimSegment DEF='hanim_r_talus' name='r_talus'>
+          <HAnimSegment DEF='hanim_r_talus' name='r_talus'>
            <Transform scale='0.15 0.15 0.15' translation='-0.05 0.06 -0.025' rotation='1 0 0 -1.57'><!-- Transform right foot -->
 <Transform> <!-- Empty Transform right foot -->
 
@@ -703,7 +551,7 @@
            </Shape>
           </HAnimSegment>
           <HAnimJoint DEF='hanim_r_talocalcaneonavicular' name='r_talocalcaneonavicular' center='-0.0781 0.0283 -0.0970'>
-            <HAnimSegment DEF='hanim_r_navicular' name='r_navicular'>
+            <HAnimSegment DEF='hanim_r_navicular' name='r_navicular'>
              <Transform translation='-0.0781 0.0283 -0.0970'>
              <Transform> <!-- Empty Transform -->
               <Shape USE='HAnimJointShape'/>
@@ -729,7 +577,7 @@
              </Shape>
             </HAnimSegment>
             <HAnimJoint DEF='hanim_r_cuneonavicular_1' name='r_cuneonavicular_1' center='-0.0672 0.0235 -0.0835'>
-              <HAnimSegment DEF='hanim_r_cuneiform_1' name='r_cuneiform_1'>
+              <HAnimSegment DEF='hanim_r_cuneiform_1' name='r_cuneiform_1'>
                <Transform translation='-0.0672 0.0235 -0.0835'>
                <Transform> <!-- Empty Transform -->
                 <Shape USE='HAnimJointShape'/>
@@ -743,7 +591,7 @@
                </Shape>
               </HAnimSegment>
               <HAnimJoint DEF='hanim_r_tarsometatarsal_1' name='r_tarsometatarsal_1' center='-0.0644 0.0147 -0.0577'>
-                <HAnimSegment DEF='hanim_r_metatarsal_1' name='r_metatarsal_1'>
+                <HAnimSegment DEF='hanim_r_metatarsal_1' name='r_metatarsal_1'>
                  <Transform translation='-0.0644 0.0147 -0.0577'>
                  <Transform> <!-- Empty Transform -->
                   <Shape USE='HAnimJointShape'/>
@@ -755,13 +603,9 @@
                    <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                   </LineSet>
                  </Shape>
-   <HAnimSite DEF='hanim_r_metatarsal_phalanx_1_pt' name='r_metatarsal_phalanx_1_pt'>
-    <TouchSensor description='HAnimSite r_metatarsal_phalanx_1_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
                 </HAnimSegment>
                 <HAnimJoint DEF='hanim_r_metatarsophalangeal_1' name='r_metatarsophalangeal_1' center='-0.0619 0.0059 -0.0083'>
-                  <HAnimSegment DEF='hanim_r_tarsal_proximal_phalanx_1' name='r_tarsal_proximal_phalanx_1'>
+                  <HAnimSegment DEF='hanim_r_tarsal_proximal_phalanx_1' name='r_tarsal_proximal_phalanx_1'>
                    <Transform translation='-0.0619 0.0059 -0.0083'>
                    <Transform> <!-- Empty Transform -->
                     <Shape USE='HAnimJointShape'/>
@@ -773,10 +617,6 @@
                      <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                     </LineSet>
                    </Shape>
-   <HAnimSite DEF='hanim_r_tarsal_distal_phalanx_1_tip' name='r_tarsal_distal_phalanx_1_tip'>
-    <TouchSensor description='HAnimSite r_tarsal_distal_phalanx_1_tip'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
                   </HAnimSegment>
                   <HAnimJoint DEF='hanim_r_tarsal_interphalangeal_1' name='r_tarsal_interphalangeal_1'>
                   </HAnimJoint>
@@ -784,7 +624,7 @@
               </HAnimJoint>
             </HAnimJoint>
             <HAnimJoint DEF='hanim_r_cuneonavicular_2' name='r_cuneonavicular_2' center='-0.0812 0.0250 -0.0805'>
-              <HAnimSegment DEF='hanim_r_cuneiform_2' name='r_cuneiform_2'>
+              <HAnimSegment DEF='hanim_r_cuneiform_2' name='r_cuneiform_2'>
                <Transform translation='-0.0812 0.0250 -0.0805'>
                <Transform> <!-- Empty Transform -->
                 <Shape USE='HAnimJointShape'/>
@@ -798,7 +638,7 @@
                </Shape>
               </HAnimSegment>
               <HAnimJoint DEF='hanim_r_tarsometatarsal_2' name='r_tarsometatarsal_2' center='-0.0800 0.0175 -0.0608'>
-                <HAnimSegment DEF='hanim_r_metatarsal_2' name='r_metatarsal_2'>
+                <HAnimSegment DEF='hanim_r_metatarsal_2' name='r_metatarsal_2'>
                  <Transform translation='-0.0800 0.0175 -0.0608'>
                  <Transform> <!-- Empty Transform -->
                   <Shape USE='HAnimJointShape'/>
@@ -812,7 +652,7 @@
                  </Shape>
                 </HAnimSegment>
                 <HAnimJoint DEF='hanim_r_metatarsophalangeal_2' name='r_metatarsophalangeal_2' center='-0.0823 0.0064 -0.0040'>
-                  <HAnimSegment DEF='hanim_r_tarsal_proximal_phalanx_2' name='r_tarsal_proximal_phalanx_2'>
+                  <HAnimSegment DEF='hanim_r_tarsal_proximal_phalanx_2' name='r_tarsal_proximal_phalanx_2'>
                    <Transform translation='-0.0823 0.0064 -0.0040'>
                    <Transform> <!-- Empty Transform -->
                     <Shape USE='HAnimJointShape'/>
@@ -826,7 +666,7 @@
                    </Shape>
                   </HAnimSegment>
                   <HAnimJoint DEF='hanim_r_tarsal_proximal_interphalangeal_2' name='r_tarsal_proximal_interphalangeal_2' center='-0.0841 0.0041 0.0121'>
-                    <HAnimSegment DEF='hanim_r_tarsal_middle_phalanx_2' name='r_tarsal_middle_phalanx_2'>
+                    <HAnimSegment DEF='hanim_r_tarsal_middle_phalanx_2' name='r_tarsal_middle_phalanx_2'>
                      <Transform translation='-0.0841 0.0041 0.0121'>
                      <Transform> <!-- Empty Transform -->
                       <Shape USE='HAnimJointShape'/>
@@ -838,10 +678,6 @@
                        <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                       </LineSet>
                      </Shape>
-   <HAnimSite DEF='hanim_r_tarsal_distal_phalanx_2_tip' name='r_tarsal_distal_phalanx_2_tip' translation='-0.0883 0.0134 0.1383'>
-    <TouchSensor description='HAnimSite r_tarsal_distal_phalanx_2_tip'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
                     </HAnimSegment>
                     <HAnimJoint DEF='hanim_r_tarsal_distal_interphalangeal_2' name='r_tarsal_distal_interphalangeal_2' center='-0.0841 0.0013 0.0216'>
                     </HAnimJoint>
@@ -850,7 +686,7 @@
               </HAnimJoint>
             </HAnimJoint>
             <HAnimJoint DEF='hanim_r_cuneonavicular_3' name='r_cuneonavicular_3' center='-0.0928 0.0248 -0.0821'>
-              <HAnimSegment DEF='hanim_r_cuneiform_3' name='r_cuneiform_3'>
+              <HAnimSegment DEF='hanim_r_cuneiform_3' name='r_cuneiform_3'>
                <Transform translation='-0.0928 0.0248 -0.0821'>
                <Transform> <!-- Empty Transform -->
                 <Shape USE='HAnimJointShape'/>
@@ -858,27 +694,27 @@
                </Transform>
                <Shape>
                 <LineSet vertexCount='2'>
-                 <Coordinate point='-0.0928 0.0248 -0.0821 -0.0841 0.0013 0.0216'/> <!-- from r_cuneonavicular_3 to r_tarsometatarsal_3  vertices 2-->
+                 <Coordinate point='-0.0928 0.0248 -0.0821 -0.0944 0.0175 -0.0625'/> <!-- from r_cuneonavicular_3 to r_tarsometatarsal_3 vertices 2-->
                  <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                 </LineSet>
                </Shape>
               </HAnimSegment>
-              <HAnimJoint DEF='hanim_r_tarsometatarsal_3 ' name='r_tarsometatarsal_3 '>
-                <HAnimSegment DEF='hanim_r_metatarsal_3' name='r_metatarsal_3'>
-                 <Transform translation='-0.0928 0.0248 -0.0821'>
+              <HAnimJoint DEF='hanim_r_tarsometatarsal_3' name='r_tarsometatarsal_3' center='-0.0944 0.0175 -0.0625'>
+                <HAnimSegment DEF='hanim_r_metatarsal_3' name='r_metatarsal_3'>
+                 <Transform translation='-0.0944 0.0175 -0.0625'>
                  <Transform> <!-- Empty Transform -->
                   <Shape USE='HAnimJointShape'/>
                  </Transform>
                  </Transform>
                  <Shape>
                   <LineSet vertexCount='2'>
-                   <Coordinate point=' -0.0963 0.0065 -0.0065'/> <!-- from r_tarsometatarsal_3  to r_metatarsophalangeal_3 vertices 1-->
+                   <Coordinate point='-0.0944 0.0175 -0.0625 -0.0963 0.0065 -0.0065'/> <!-- from r_tarsometatarsal_3 to r_metatarsophalangeal_3 vertices 2-->
                    <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                   </LineSet>
                  </Shape>
                 </HAnimSegment>
                 <HAnimJoint DEF='hanim_r_metatarsophalangeal_3' name='r_metatarsophalangeal_3' center='-0.0963 0.0065 -0.0065'>
-                  <HAnimSegment DEF='hanim_r_tarsal_proximal_phalanx_3' name='r_tarsal_proximal_phalanx_3'>
+                  <HAnimSegment DEF='hanim_r_tarsal_proximal_phalanx_3' name='r_tarsal_proximal_phalanx_3'>
                    <Transform translation='-0.0963 0.0065 -0.0065'>
                    <Transform> <!-- Empty Transform -->
                     <Shape USE='HAnimJointShape'/>
@@ -892,7 +728,7 @@
                    </Shape>
                   </HAnimSegment>
                   <HAnimJoint DEF='hanim_r_tarsal_proximal_interphalangeal_3' name='r_tarsal_proximal_interphalangeal_3' center='-0.0987 0.0034 0.0086'>
-                    <HAnimSegment DEF='hanim_r_tarsal_middle_phalanx_3' name='r_tarsal_middle_phalanx_3'>
+                    <HAnimSegment DEF='hanim_r_tarsal_middle_phalanx_3' name='r_tarsal_middle_phalanx_3'>
                      <Transform translation='-0.0987 0.0034 0.0086'>
                      <Transform> <!-- Empty Transform -->
                       <Shape USE='HAnimJointShape'/>
@@ -904,10 +740,6 @@
                        <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                       </LineSet>
                      </Shape>
-   <HAnimSite DEF='hanim_r_tarsal_distal_phalanx_3_tip' name='r_tarsal_distal_phalanx_3_tip'>
-    <TouchSensor description='HAnimSite r_tarsal_distal_phalanx_3_tip'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
                     </HAnimSegment>
                     <HAnimJoint DEF='hanim_r_tarsal_distal_interphalangeal_3' name='r_tarsal_distal_interphalangeal_3' center='-0.1002 0.0013 0.0178'>
                     </HAnimJoint>
@@ -917,7 +749,7 @@
             </HAnimJoint>
           </HAnimJoint>
           <HAnimJoint DEF='hanim_r_calcaneocuboid' name='r_calcaneocuboid' center='-0.0889 0.0494 -0.1278'>
-            <HAnimSegment DEF='hanim_r_calcaneus' name='r_calcaneus'>
+            <HAnimSegment DEF='hanim_r_calcaneus' name='r_calcaneus'>
              <Transform translation='-0.0889 0.0494 -0.1278'>
              <Transform> <!-- Empty Transform -->
               <Shape USE='HAnimJointShape'/>
@@ -931,7 +763,7 @@
              </Shape>
             </HAnimSegment>
             <HAnimJoint DEF='hanim_r_transversetarsal' name='r_transversetarsal' center='-0.1105 0.0267 -0.0998'>
-              <HAnimSegment DEF='hanim_r_cuboid' name='r_cuboid'>
+              <HAnimSegment DEF='hanim_r_cuboid' name='r_cuboid'>
                <Transform translation='-0.1105 0.0267 -0.0998'>
                <Transform> <!-- Empty Transform -->
                 <Shape USE='HAnimJointShape'/>
@@ -951,7 +783,7 @@
                </Shape>
               </HAnimSegment>
               <HAnimJoint DEF='hanim_r_tarsometatarsal_4' name='r_tarsometatarsal_4' center='-0.1063 0.0160 -0.0634'>
-                <HAnimSegment DEF='hanim_r_metatarsal_4' name='r_metatarsal_4'>
+                <HAnimSegment DEF='hanim_r_metatarsal_4' name='r_metatarsal_4'>
                  <Transform translation='-0.1063 0.0160 -0.0634'>
                  <Transform> <!-- Empty Transform -->
                   <Shape USE='HAnimJointShape'/>
@@ -965,7 +797,7 @@
                  </Shape>
                 </HAnimSegment>
                 <HAnimJoint DEF='hanim_r_metatarsophalangeal_4' name='r_metatarsophalangeal_4' center='-0.1097 0.0058 -0.0107'>
-                  <HAnimSegment DEF='hanim_r_tarsal_proximal_phalanx_4' name='r_tarsal_proximal_phalanx_4'>
+                  <HAnimSegment DEF='hanim_r_tarsal_proximal_phalanx_4' name='r_tarsal_proximal_phalanx_4'>
                    <Transform translation='-0.1097 0.0058 -0.0107'>
                    <Transform> <!-- Empty Transform -->
                     <Shape USE='HAnimJointShape'/>
@@ -979,7 +811,7 @@
                    </Shape>
                   </HAnimSegment>
                   <HAnimJoint DEF='hanim_r_tarsal_proximal_interphalangeal_4' name='r_tarsal_proximal_interphalangeal_4' center='-0.1140 0.0037 0.0044'>
-                    <HAnimSegment DEF='hanim_r_tarsal_middle_phalanx_4' name='r_tarsal_middle_phalanx_4'>
+                    <HAnimSegment DEF='hanim_r_tarsal_middle_phalanx_4' name='r_tarsal_middle_phalanx_4'>
                      <Transform translation='-0.1140 0.0037 0.0044'>
                      <Transform> <!-- Empty Transform -->
                       <Shape USE='HAnimJointShape'/>
@@ -991,10 +823,6 @@
                        <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                       </LineSet>
                      </Shape>
-   <HAnimSite DEF='hanim_r_tarsal_distal_phalanx_4_tip' name='r_tarsal_distal_phalanx_4_tip'>
-    <TouchSensor description='HAnimSite r_tarsal_distal_phalanx_4_tip'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
                     </HAnimSegment>
                     <HAnimJoint DEF='hanim_r_tarsal_distal_interphalangeal_4' name='r_tarsal_distal_interphalangeal_4' center='-0.1155 0.0008 0.0118'>
                     </HAnimJoint>
@@ -1002,7 +830,7 @@
                 </HAnimJoint>
               </HAnimJoint>
               <HAnimJoint DEF='hanim_r_tarsometatarsal_5' name='r_tarsometatarsal_5' center='-0.1206 0.0124 -0.0671'>
-                <HAnimSegment DEF='hanim_r_metatarsal_5' name='r_metatarsal_5'>
+                <HAnimSegment DEF='hanim_r_metatarsal_5' name='r_metatarsal_5'>
                  <Transform translation='-0.1206 0.0124 -0.0671'>
                  <Transform> <!-- Empty Transform -->
                   <Shape USE='HAnimJointShape'/>
@@ -1014,13 +842,9 @@
                    <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                   </LineSet>
                  </Shape>
-   <HAnimSite DEF='hanim_r_metatarsal_phalanx_5_pt' name='r_metatarsal_phalanx_5_pt'>
-    <TouchSensor description='HAnimSite r_metatarsal_phalanx_5_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
                 </HAnimSegment>
                 <HAnimJoint DEF='hanim_r_metatarsophalangeal_5' name='r_metatarsophalangeal_5' center='-0.1239 0.0051 -0.0153'>
-                  <HAnimSegment DEF='hanim_r_tarsal_proximal_phalanx_5' name='r_tarsal_proximal_phalanx_5'>
+                  <HAnimSegment DEF='hanim_r_tarsal_proximal_phalanx_5' name='r_tarsal_proximal_phalanx_5'>
                    <Transform translation='-0.1239 0.0051 -0.0153'>
                    <Transform> <!-- Empty Transform -->
                     <Shape USE='HAnimJointShape'/>
@@ -1034,7 +858,7 @@
                    </Shape>
                   </HAnimSegment>
                   <HAnimJoint DEF='hanim_r_tarsal_proximal_interphalangeal_5' name='r_tarsal_proximal_interphalangeal_5' center='-0.1262 0.0023 -0.0077'>
-                    <HAnimSegment DEF='hanim_r_tarsal_middle_phalanx_5' name='r_tarsal_middle_phalanx_5'>
+                    <HAnimSegment DEF='hanim_r_tarsal_middle_phalanx_5' name='r_tarsal_middle_phalanx_5'>
                      <Transform translation='-0.1262 0.0023 -0.0077'>
                      <Transform> <!-- Empty Transform -->
                       <Shape USE='HAnimJointShape'/>
@@ -1046,10 +870,6 @@
                        <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                       </LineSet>
                      </Shape>
-   <HAnimSite DEF='hanim_r_tarsal_distal_phalanx_5_tip' name='r_tarsal_distal_phalanx_5_tip'>
-    <TouchSensor description='HAnimSite r_tarsal_distal_phalanx_5_tip'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
                     </HAnimSegment>
                     <HAnimJoint DEF='hanim_r_tarsal_distal_interphalangeal_5' name='r_tarsal_distal_interphalangeal_5' center='-0.1271 0.0000 0.0000'>
                     </HAnimJoint>
@@ -1063,7 +883,7 @@
     </HAnimJoint>
   </HAnimJoint>
   <HAnimJoint DEF='hanim_vl5' name='vl5' center='0.0028 1.0568 -0.0776'>
-    <HAnimSegment DEF='hanim_l5' name='l5'>
+    <HAnimSegment DEF='hanim_l5' name='l5'>
      <Transform translation='0.0028 1.0568 -0.0776'>
      <Transform> <!-- Empty Transform -->
       <Shape USE='HAnimJointShape'/>
@@ -1077,7 +897,7 @@
      </Shape>
     </HAnimSegment>
    <HAnimJoint DEF='hanim_vl4' name='vl4' center='0.0035 1.0925 -0.0787'>
-     <HAnimSegment DEF='hanim_l4' name='l4'>
+     <HAnimSegment DEF='hanim_l4' name='l4'>
       <Transform translation='0.0035 1.0925 -0.0787'>
       <Transform> <!-- Empty Transform -->
        <Shape USE='HAnimJointShape'/>
@@ -1091,7 +911,7 @@
       </Shape>
      </HAnimSegment>
      <HAnimJoint DEF='hanim_vl3' name='vl3' center='0.0041 1.1276 -0.0796'>
-       <HAnimSegment DEF='hanim_l3' name='l3'>
+       <HAnimSegment DEF='hanim_l3' name='l3'>
         <Transform translation='0.0041 1.1276 -0.0796'>
         <Transform> <!-- Empty Transform -->
          <Shape USE='HAnimJointShape'/>
@@ -1103,21 +923,9 @@
           <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
          </LineSet>
         </Shape>
-   <HAnimSite DEF='hanim_l_rib10_pt' name='l_rib10_pt' translation='0.0871 1.1925 0.0992'>
-    <TouchSensor description='HAnimSite l_rib10_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
-   <HAnimSite DEF='hanim_r_rib10_pt' name='r_rib10_pt' translation='-0.0711 1.1941 0.1016'>
-    <TouchSensor description='HAnimSite r_rib10_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
-   <HAnimSite DEF='hanim_spine_2_middle_back_pt' name='spine_2_middle_back_pt'>
-    <TouchSensor description='HAnimSite spine_2_middle_back_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
        </HAnimSegment>
        <HAnimJoint DEF='hanim_vl2' name='vl2' center='0.0045 1.1546 -0.0800'>
-         <HAnimSegment DEF='hanim_l2' name='l2'>
+         <HAnimSegment DEF='hanim_l2' name='l2'>
           <Transform translation='0.0045 1.1546 -0.0800'>
           <Transform> <!-- Empty Transform -->
            <Shape USE='HAnimJointShape'/>
@@ -1131,7 +939,7 @@
           </Shape>
          </HAnimSegment>
          <HAnimJoint DEF='hanim_vl1' name='vl1' center='0.0048 1.1912 -0.0805'>
-           <HAnimSegment DEF='hanim_l1' name='l1'>
+           <HAnimSegment DEF='hanim_l1' name='l1'>
             <Transform translation='0.0048 1.1912 -0.0805'>
             <Transform> <!-- Empty Transform -->
              <Shape USE='HAnimJointShape'/>
@@ -1145,7 +953,7 @@
             </Shape>
            </HAnimSegment>
            <HAnimJoint DEF='hanim_vt12' name='vt12' center='0.0051 1.2278 -0.0808'>
-             <HAnimSegment DEF='hanim_t12' name='t12'>
+             <HAnimSegment DEF='hanim_t12' name='t12'>
               <Transform translation='0.0051 1.2278 -0.0808'>
               <Transform> <!-- Empty Transform -->
                <Shape USE='HAnimJointShape'/>
@@ -1159,7 +967,7 @@
               </Shape>
              </HAnimSegment>
              <HAnimJoint DEF='hanim_vt11' name='vt11' center='0.0053 1.2679 -0.0810'>
-               <HAnimSegment DEF='hanim_t11' name='t11'>
+               <HAnimSegment DEF='hanim_t11' name='t11'>
                 <Transform translation='0.0053 1.2679 -0.0810'>
                 <Transform> <!-- Empty Transform -->
                  <Shape USE='HAnimJointShape'/>
@@ -1171,13 +979,9 @@
                   <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                  </LineSet>
                 </Shape>
-   <HAnimSite DEF='hanim_substernale_pt' name='substernale_pt' translation='0.0085 1.2995 0.1147'>
-    <TouchSensor description='HAnimSite substernale_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
                </HAnimSegment>
                <HAnimJoint DEF='hanim_vt10' name='vt10' center='0.0056 1.2848 -0.0822'>
-                 <HAnimSegment DEF='hanim_t10' name='t10'>
+                 <HAnimSegment DEF='hanim_t10' name='t10'>
                   <Transform translation='0.0056 1.2848 -0.0822'>
                   <Transform> <!-- Empty Transform -->
                    <Shape USE='HAnimJointShape'/>
@@ -1189,17 +993,9 @@
                     <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                    </LineSet>
                   </Shape>
-   <HAnimSite DEF='hanim_l_thelion_pt' name='l_thelion_pt' translation='0.0918 1.3382 0.1192'>
-    <TouchSensor description='HAnimSite l_thelion_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
-   <HAnimSite DEF='hanim_r_thelion_pt' name='r_thelion_pt' translation='-0.0736 1.3385 0.1217'>
-    <TouchSensor description='HAnimSite r_thelion_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
                  </HAnimSegment>
                  <HAnimJoint DEF='hanim_vt9' name='vt9' center='0.0057 1.3126 -0.0838'>
-                   <HAnimSegment DEF='hanim_t9' name='t9'>
+                   <HAnimSegment DEF='hanim_t9' name='t9'>
                     <Transform translation='0.0057 1.3126 -0.0838'>
                     <Transform> <!-- Empty Transform -->
                      <Shape USE='HAnimJointShape'/>
@@ -1213,7 +1009,7 @@
                     </Shape>
                    </HAnimSegment>
                    <HAnimJoint DEF='hanim_vt8' name='vt8' center='0.0057 1.3382 -0.0845'>
-                     <HAnimSegment DEF='hanim_t8' name='t8'>
+                     <HAnimSegment DEF='hanim_t8' name='t8'>
                       <Transform translation='0.0057 1.3382 -0.0845'>
                       <Transform> <!-- Empty Transform -->
                        <Shape USE='HAnimJointShape'/>
@@ -1227,7 +1023,7 @@
                       </Shape>
                      </HAnimSegment>
                      <HAnimJoint DEF='hanim_vt7' name='vt7' center='0.0058 1.3625 -0.0833'>
-                       <HAnimSegment DEF='hanim_t7' name='t7'>
+                       <HAnimSegment DEF='hanim_t7' name='t7'>
                         <Transform translation='0.0058 1.3625 -0.0833'>
                         <Transform> <!-- Empty Transform -->
                          <Shape USE='HAnimJointShape'/>
@@ -1239,25 +1035,9 @@
                           <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                          </LineSet>
                         </Shape>
-   <HAnimSite DEF='hanim_l_chest_midsagittal_plane_pt' name='l_chest_midsagittal_plane_pt'>
-    <TouchSensor description='HAnimSite l_chest_midsagittal_plane_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
-   <HAnimSite DEF='hanim_mesosternale_pt' name='mesosternale_pt'>
-    <TouchSensor description='HAnimSite mesosternale_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
-   <HAnimSite DEF='hanim_r_chest_midsagittal_plane_pt' name='r_chest_midsagittal_plane_pt'>
-    <TouchSensor description='HAnimSite r_chest_midsagittal_plane_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
-   <HAnimSite DEF='hanim_rear_center_midsagittal_plane_pt' name='rear_center_midsagittal_plane_pt'>
-    <TouchSensor description='HAnimSite rear_center_midsagittal_plane_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
                        </HAnimSegment>
                        <HAnimJoint DEF='hanim_vt6' name='vt6' center='0.0059 1.3866 -0.0800'>
-                         <HAnimSegment DEF='hanim_t6' name='t6'>
+                         <HAnimSegment DEF='hanim_t6' name='t6'>
                           <Transform translation='0.0059 1.3866 -0.0800'>
                           <Transform> <!-- Empty Transform -->
                            <Shape USE='HAnimJointShape'/>
@@ -1269,13 +1049,9 @@
                             <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                            </LineSet>
                           </Shape>
-   <HAnimSite DEF='hanim_spine_1_middle_back_pt' name='spine_1_middle_back_pt'>
-    <TouchSensor description='HAnimSite spine_1_middle_back_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
                          </HAnimSegment>
                          <HAnimJoint DEF='hanim_vt5' name='vt5' center='0.0060 1.4102 -0.0745'>
-                           <HAnimSegment DEF='hanim_t5' name='t5'>
+                           <HAnimSegment DEF='hanim_t5' name='t5'>
                             <Transform translation='0.0060 1.4102 -0.0745'>
                             <Transform> <!-- Empty Transform -->
                              <Shape USE='HAnimJointShape'/>
@@ -1289,7 +1065,7 @@
                             </Shape>
                            </HAnimSegment>
                            <HAnimJoint DEF='hanim_vt4' name='vt4' center='0.0061 1.4320 -0.0675'>
-                             <HAnimSegment DEF='hanim_t4' name='t4'>
+                             <HAnimSegment DEF='hanim_t4' name='t4'>
                               <Transform translation='0.0061 1.4320 -0.0675'>
                               <Transform> <!-- Empty Transform -->
                                <Shape USE='HAnimJointShape'/>
@@ -1303,7 +1079,7 @@
                               </Shape>
                              </HAnimSegment>
                              <HAnimJoint DEF='hanim_vt3' name='vt3' center='0.0062 1.4583 -0.0570'>
-                               <HAnimSegment DEF='hanim_t3' name='t3'>
+                               <HAnimSegment DEF='hanim_t3' name='t3'>
                                 <Transform translation='0.0062 1.4583 -0.0570'>
                                 <Transform> <!-- Empty Transform -->
                                  <Shape USE='HAnimJointShape'/>
@@ -1317,7 +1093,7 @@
                                 </Shape>
                                </HAnimSegment>
                                <HAnimJoint DEF='hanim_vt2' name='vt2' center='0.0063 1.4761 -0.0484'>
-                                 <HAnimSegment DEF='hanim_t2' name='t2'>
+                                 <HAnimSegment DEF='hanim_t2' name='t2'>
                                   <Transform translation='0.0063 1.4761 -0.0484'>
                                   <Transform> <!-- Empty Transform -->
                                    <Shape USE='HAnimJointShape'/>
@@ -1329,17 +1105,9 @@
                                     <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                                    </LineSet>
                                   </Shape>
-   <HAnimSite DEF='hanim_cervicale_pt' name='cervicale_pt' translation='0.0064 1.520 -0.0815'>
-    <TouchSensor description='HAnimSite cervicale_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
-   <HAnimSite DEF='hanim_suprasternale_pt' name='suprasternale_pt' translation='0.0084 1.4714 0.0551'>
-    <TouchSensor description='HAnimSite suprasternale_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
                                  </HAnimSegment>
                                  <HAnimJoint DEF='hanim_vt1' name='vt1' center='0.0065 1.4951 -0.0387'>
-                                   <HAnimSegment DEF='hanim_t1' name='t1'>
+                                   <HAnimSegment DEF='hanim_t1' name='t1'>
                                     <Transform translation='0.0065 1.4951 -0.0387'>
                                     <Transform> <!-- Empty Transform -->
                                      <Shape USE='HAnimJointShape'/>
@@ -1351,69 +1119,21 @@
                                       <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                                      </LineSet>
                                     </Shape>
-   <HAnimSite DEF='hanim_l_neck_base_pt' name='l_neck_base_pt' translation='0.0646 1.5141 -0.0380'>
-    <TouchSensor description='HAnimSite l_neck_base_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
-   <HAnimSite DEF='hanim_r_neck_base_pt' name='r_neck_base_pt' translation='-0.0419 1.5149 -0.0220'>
-    <TouchSensor description='HAnimSite r_neck_base_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
                                     <Shape>
                                      <LineSet vertexCount='2'>
                                       <Coordinate point='0.0065 1.4951 -0.0387 0.0820 1.4488 -0.0353'/> <!-- from vt1 to l_sternoclavicular vertices 2-->
                                       <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                                      </LineSet>
                                     </Shape>
-   <HAnimSite DEF='hanim_l_acromion_pt' name='l_acromion_pt' translation='0.2032 1.4760 -0.0490'>
-    <TouchSensor description='HAnimSite l_acromion_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
-   <HAnimSite DEF='hanim_l_axilla_distal_pt' name='l_axilla_distal_pt' translation='0.1706 1.4072 -0.0875'>
-    <TouchSensor description='HAnimSite l_axilla_distal_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
-   <HAnimSite DEF='hanim_l_axilla_posterior_folds_pt' name='l_axilla_posterior_folds_pt'>
-    <TouchSensor description='HAnimSite l_axilla_posterior_folds_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
-   <HAnimSite DEF='hanim_l_axilla_proximal_pt' name='l_axilla_proximal_pt' translation='0.1777 1.4065 -0.0075'>
-    <TouchSensor description='HAnimSite l_axilla_proximal_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
-   <HAnimSite DEF='hanim_l_clavicale_pt' name='l_clavicale_pt' translation='0.0271 1.4943 0.0394'>
-    <TouchSensor description='HAnimSite l_clavicale_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
                                     <Shape>
                                      <LineSet vertexCount='2'>
                                       <Coordinate point='0.0065 1.4951 -0.0387 -0.0694 1.4600 -0.0330'/> <!-- from vt1 to r_sternoclavicular vertices 2-->
                                       <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                                      </LineSet>
                                     </Shape>
-   <HAnimSite DEF='hanim_r_acromion_pt' name='r_acromion_pt' translation='-0.1905 1.4791 -0.0431'>
-    <TouchSensor description='HAnimSite r_acromion_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
-   <HAnimSite DEF='hanim_r_axilla_distal_pt' name='r_axilla_distal_pt' translation='-0.1603 1.4098 -0.0826'>
-    <TouchSensor description='HAnimSite r_axilla_distal_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
-   <HAnimSite DEF='hanim_r_axilla_posterior_folds_pt' name='r_axilla_posterior_folds_pt'>
-    <TouchSensor description='HAnimSite r_axilla_posterior_folds_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
-   <HAnimSite DEF='hanim_r_axilla_proximal_pt' name='r_axilla_proximal_pt' translation='-0.1626 1.4072 -0.0031'>
-    <TouchSensor description='HAnimSite r_axilla_proximal_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
-   <HAnimSite DEF='hanim_r_clavicale_pt' name='r_clavicale_pt' translation='-0.0115 1.4943 0.0400'>
-    <TouchSensor description='HAnimSite r_clavicale_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
                                    </HAnimSegment>
                                    <HAnimJoint DEF='hanim_vc7' name='vc7' center='0.0066 1.5132 -0.0301'>
-                                     <HAnimSegment DEF='hanim_c7' name='c7'>
+                                     <HAnimSegment DEF='hanim_c7' name='c7'>
                                       <Transform translation='0.0066 1.5132 -0.0301'>
                                       <Transform> <!-- Empty Transform -->
                                        <Shape USE='HAnimJointShape'/>
@@ -1427,7 +1147,7 @@
                                       </Shape>
                                      </HAnimSegment>
                                       <HAnimJoint DEF='hanim_vc6' name='vc6' center='0.0066 1.5357 -0.0143'>
-                                        <HAnimSegment DEF='hanim_c6' name='c6'>
+                                        <HAnimSegment DEF='hanim_c6' name='c6'>
                                          <Transform translation='0.0066 1.5357 -0.0143'>
                                          <Transform> <!-- Empty Transform -->
                                           <Shape USE='HAnimJointShape'/>
@@ -1441,7 +1161,7 @@
                                          </Shape>
                                         </HAnimSegment>
                                        <HAnimJoint DEF='hanim_vc5' name='vc5' center='0.0066 1.5520 -0.0082'>
-                                         <HAnimSegment DEF='hanim_c5' name='c5'>
+                                         <HAnimSegment DEF='hanim_c5' name='c5'>
                                           <Transform translation='0.0066 1.5520 -0.0082'>
                                           <Transform> <!-- Empty Transform -->
                                            <Shape USE='HAnimJointShape'/>
@@ -1455,7 +1175,7 @@
                                           </Shape>
                                          </HAnimSegment>
                                          <HAnimJoint DEF='hanim_vc4' name='vc4' center='0.0066 1.5662 -0.0084'>
-                                           <HAnimSegment DEF='hanim_c4' name='c4'>
+                                           <HAnimSegment DEF='hanim_c4' name='c4'>
                                             <Transform translation='0.0066 1.5662 -0.0084'>
                                             <Transform> <!-- Empty Transform -->
                                              <Shape USE='HAnimJointShape'/>
@@ -1469,7 +1189,7 @@
                                             </Shape>
                                            </HAnimSegment>
                                            <HAnimJoint DEF='hanim_vc3' name='vc3' center='0.0066 1.5800 -0.0103'>
-                                             <HAnimSegment DEF='hanim_c3' name='c3'>
+                                             <HAnimSegment DEF='hanim_c3' name='c3'>
                                               <Transform translation='0.0066 1.5800 -0.0103'>
                                               <Transform> <!-- Empty Transform -->
                                                <Shape USE='HAnimJointShape'/>
@@ -1481,13 +1201,9 @@
                                                 <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                                                </LineSet>
                                               </Shape>
-   <HAnimSite DEF='hanim_adams_apple_pt' name='adams_apple_pt'>
-    <TouchSensor description='HAnimSite adams_apple_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
                                              </HAnimSegment>
                                              <HAnimJoint DEF='hanim_vc2' name='vc2' center='0.0066 1.5928 -0.0103'>
-                                               <HAnimSegment DEF='hanim_c2' name='c2'>
+                                               <HAnimSegment DEF='hanim_c2' name='c2'>
                                                 <Transform translation='0.0066 1.5928 -0.0103'>
                                                 <Transform> <!-- Empty Transform -->
                                                  <Shape USE='HAnimJointShape'/>
@@ -1501,7 +1217,7 @@
                                                 </Shape>
                                                </HAnimSegment>
                                                <HAnimJoint DEF='hanim_vc1' name='vc1' center='0.0066 1.6144 -0.0034'>
-                                                 <HAnimSegment DEF='hanim_c1' name='c1'>
+                                                 <HAnimSegment DEF='hanim_c1' name='c1'>
                                                   <Transform translation='0.0066 1.6144 -0.0034'>
                                                   <Transform> <!-- Empty Transform -->
                                                    <Shape USE='HAnimJointShape'/>
@@ -1513,53 +1229,9 @@
                                                     <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                                                    </LineSet>
                                                   </Shape>
-   <HAnimSite DEF='hanim_glabella_pt' name='glabella_pt'>
-    <TouchSensor description='HAnimSite glabella_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
-   <HAnimSite DEF='hanim_l_ectocanthus_pt' name='l_ectocanthus_pt'>
-    <TouchSensor description='HAnimSite l_ectocanthus_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
-   <HAnimSite DEF='hanim_l_infraorbitale_pt' name='l_infraorbitale_pt' translation='0.0341 1.6171 0.0752'>
-    <TouchSensor description='HAnimSite l_infraorbitale_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
-   <HAnimSite DEF='hanim_l_tragion_pt' name='l_tragion_pt' translation='0.0739 1.6348 0.0282'>
-    <TouchSensor description='HAnimSite l_tragion_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
-   <HAnimSite DEF='hanim_nuchale_pt' name='nuchale_pt' translation='0.0039 1.5972 -0.0796'>
-    <TouchSensor description='HAnimSite nuchale_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
-   <HAnimSite DEF='hanim_opisthocranion_pt' name='opisthocranion_pt'>
-    <TouchSensor description='HAnimSite opisthocranion_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
-   <HAnimSite DEF='hanim_r_ectocanthus_pt' name='r_ectocanthus_pt'>
-    <TouchSensor description='HAnimSite r_ectocanthus_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
-   <HAnimSite DEF='hanim_r_infraorbitale_pt' name='r_infraorbitale_pt' translation='-0.0237 1.6171 0.0752'>
-    <TouchSensor description='HAnimSite r_infraorbitale_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
-   <HAnimSite DEF='hanim_r_tragion_pt' name='r_tragion_pt' translation='-0.0646 1.6347 0.0302'>
-    <TouchSensor description='HAnimSite r_tragion_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
-   <HAnimSite DEF='hanim_sellion_pt' name='sellion_pt' translation='0.0058 1.6316 0.0852'>
-    <TouchSensor description='HAnimSite sellion_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
-   <HAnimSite DEF='hanim_skull_vertex_pt' name='skull_vertex_pt' translation='0.0050 1.7504 0.0055'>
-    <TouchSensor description='HAnimSite skull_vertex_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
                                                  </HAnimSegment>
                                                  <HAnimJoint DEF='hanim_skullbase' name='skullbase' center='0.0044 1.6209 0.0236'>
-                                                   <HAnimSegment DEF='hanim_skull' name='skull'>
+                                                   <HAnimSegment DEF='hanim_skull' name='skull'>
                                                     <Transform translation='0.0044 1.6209 0.0236'>
                                                     <Transform> <!-- Empty Transform -->
                                                      <Shape USE='HAnimJointShape'/>
@@ -1607,22 +1279,6 @@
                                                       <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                                                      </LineSet>
                                                     </Shape>
-   <HAnimSite DEF='hanim_l_gonion_pt' name='l_gonion_pt' translation='0.0631 1.5530 0.0330'>
-    <TouchSensor description='HAnimSite l_gonion_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
-   <HAnimSite DEF='hanim_menton_pt' name='menton_pt'>
-    <TouchSensor description='HAnimSite menton_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
-   <HAnimSite DEF='hanim_r_gonion_pt' name='r_gonion_pt' translation='-0.0520 1.5529 0.0347'>
-    <TouchSensor description='HAnimSite r_gonion_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
-   <HAnimSite DEF='hanim_supramenton_pt' name='supramenton_pt' translation='0.0061 1.5410 0.0805'>
-    <TouchSensor description='HAnimSite supramenton_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
                                                    </HAnimSegment>
                                                    <HAnimJoint DEF='hanim_l_eyelid_joint' name='l_eyelid_joint' center='0.0503 1.4157 -0.0689'>
                                                    </HAnimJoint>
@@ -1647,7 +1303,7 @@
                                       </HAnimJoint>
                                    </HAnimJoint>
                                    <HAnimJoint DEF='hanim_l_sternoclavicular' name='l_sternoclavicular' center='0.0820 1.4488 -0.0353'>
-                                     <HAnimSegment DEF='hanim_l_clavicle' name='l_clavicle'>
+                                     <HAnimSegment DEF='hanim_l_clavicle' name='l_clavicle'>
                                       <Transform translation='0.0820 1.4488 -0.0353'>
                                       <Transform> <!-- Empty Transform -->
                                        <Shape USE='HAnimJointShape'/>
@@ -1661,7 +1317,7 @@
                                       </Shape>
                                      </HAnimSegment>
                                      <HAnimJoint DEF='hanim_l_acromioclavicular' name='l_acromioclavicular' center='0.0962 1.4269 -0.0424'>
-                                       <HAnimSegment DEF='hanim_l_scapula' name='l_scapula'>
+                                       <HAnimSegment DEF='hanim_l_scapula' name='l_scapula'>
                                         <Transform translation='0.0962 1.4269 -0.0424'>
                                         <Transform> <!-- Empty Transform -->
                                          <Shape USE='HAnimJointShape'/>
@@ -1673,17 +1329,9 @@
                                           <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                                          </LineSet>
                                         </Shape>
-   <HAnimSite DEF='hanim_l_bideltoid_pt' name='l_bideltoid_pt'>
-    <TouchSensor description='HAnimSite l_bideltoid_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
-   <HAnimSite DEF='hanim_l_humeral_lateral_epicondyles_pt' name='l_humeral_lateral_epicondyles_pt' translation='0.2280 1.1482 -0.1100'>
-    <TouchSensor description='HAnimSite l_humeral_lateral_epicondyles_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
                                        </HAnimSegment>
                                        <HAnimJoint DEF='hanim_l_shoulder' name='l_shoulder' center='0.2029 1.4376 -0.0387'>
-                                         <HAnimSegment DEF='hanim_l_upperarm' name='l_upperarm'>
+                                         <HAnimSegment DEF='hanim_l_upperarm' name='l_upperarm'>
                                           <Transform translation='0.2029 1.4376 -0.0387'>
                                           <Transform> <!-- Empty Transform -->
                                            <Shape USE='HAnimJointShape'/>
@@ -1695,25 +1343,9 @@
                                             <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                                            </LineSet>
                                           </Shape>
-   <HAnimSite DEF='hanim_l_humeral_medial_epicondyles_pt' name='l_humeral_medial_epicondyles_pt' translation='0.1735 1.1272 -0.1113'>
-    <TouchSensor description='HAnimSite l_humeral_medial_epicondyles_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
-   <HAnimSite DEF='hanim_l_olecranon_pt' name='l_olecranon_pt' translation='-0.1962 1.1375 -0.1123'>
-    <TouchSensor description='HAnimSite l_olecranon_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
-   <HAnimSite DEF='hanim_l_radial_styloid_pt' name='l_radial_styloid_pt' translation='0.1901 0.8645 -0.0415'>
-    <TouchSensor description='HAnimSite l_radial_styloid_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
-   <HAnimSite DEF='hanim_l_radiale_pt' name='l_radiale_pt' translation='0.2182 1.1212 -0.1167'>
-    <TouchSensor description='HAnimSite l_radiale_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
                                          </HAnimSegment>
                                          <HAnimJoint DEF='hanim_l_elbow' name='l_elbow' center='0.2014 1.1357 -0.0682'>
-                                           <HAnimSegment DEF='hanim_l_forearm' name='l_forearm'>
+                                           <HAnimSegment DEF='hanim_l_forearm' name='l_forearm'>
                                             <Transform translation='0.2014 1.1357 -0.0682'>
                                             <Transform> <!-- Empty Transform -->
                                              <Shape USE='HAnimJointShape'/>
@@ -1725,13 +1357,9 @@
                                               <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                                              </LineSet>
                                             </Shape>
-   <HAnimSite DEF='hanim_l_ulnar_styloid_pt' name='l_ulnar_styloid_pt' translation='-0.2142 0.8529 -0.0648'>
-    <TouchSensor description='HAnimSite l_ulnar_styloid_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
                                            </HAnimSegment>
                                            <HAnimJoint DEF='hanim_l_radiocarpal' name='l_radiocarpal' center='0.1984 0.8663 -0.0583'>
-                                             <HAnimSegment DEF='hanim_l_carpal' name='l_carpal'>
+                                             <HAnimSegment DEF='hanim_l_carpal' name='l_carpal'>
                                               <Transform scale='0.2 0.2 0.2' translation='0.20 0.85 -0.05' rotation='0 0 1 -3.14'> <!-- Transform left hand -->
 <Transform rotation='0 1 0 -1.57'> <!-- Transform left hand -->
 
@@ -1764,7 +1392,7 @@
                                               </Shape>
                                              </HAnimSegment>
                                              <HAnimJoint DEF='hanim_l_midcarpal_1' name='l_midcarpal_1' center='0.1811 0.6975 -0.0826'>
-                                               <HAnimSegment DEF='hanim_l_trapezium' name='l_trapezium'>
+                                               <HAnimSegment DEF='hanim_l_trapezium' name='l_trapezium'>
                                                 <Transform translation='0.1811 0.6975 -0.0826'>
                                                 <Transform> <!-- Empty Transform -->
                                                  <Shape USE='HAnimJointShape'/>
@@ -1778,7 +1406,7 @@
                                                 </Shape>
                                                </HAnimSegment>
                                                <HAnimJoint DEF='hanim_l_carpometacarpal_1' name='l_carpometacarpal_1' center='0.1924 0.8472 -0.0534'>
-                                                 <HAnimSegment DEF='hanim_l_metacarpal_1' name='l_metacarpal_1'>
+                                                 <HAnimSegment DEF='hanim_l_metacarpal_1' name='l_metacarpal_1'>
                                                   <Transform translation='0.1924 0.8472 -0.0534'>
                                                   <Transform> <!-- Empty Transform -->
                                                    <Shape USE='HAnimJointShape'/>
@@ -1792,7 +1420,7 @@
                                                   </Shape>
                                                  </HAnimSegment>
                                                  <HAnimJoint DEF='hanim_l_metacarpophalangeal_1' name='l_metacarpophalangeal_1' center='0.1951 0.8226 0.0246'>
-                                                   <HAnimSegment DEF='hanim_l_carpal_proximal_phalanx_1' name='l_carpal_proximal_phalanx_1'>
+                                                   <HAnimSegment DEF='hanim_l_carpal_proximal_phalanx_1' name='l_carpal_proximal_phalanx_1'>
                                                     <Transform translation='0.1951 0.8226 0.0246'>
                                                     <Transform> <!-- Empty Transform -->
                                                      <Shape USE='HAnimJointShape'/>
@@ -1804,10 +1432,6 @@
                                                       <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                                                      </LineSet>
                                                     </Shape>
-   <HAnimSite DEF='hanim_l_carpal_distal_phalanx_1_tip' name='l_carpal_distal_phalanx_1_tip'>
-    <TouchSensor description='HAnimSite l_carpal_distal_phalanx_1_tip'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
                                                    </HAnimSegment>
                                                    <HAnimJoint DEF='hanim_l_carpal_interphalangeal_1' name='l_carpal_interphalangeal_1' center='0.1955 0.8159 0.0464'>
                                                    </HAnimJoint>
@@ -1815,7 +1439,7 @@
                                                </HAnimJoint>
                                              </HAnimJoint>
                                              <HAnimJoint DEF='hanim_l_midcarpal_2' name='l_midcarpal_2' center='0.1811 0.6984 -0.0935'>
-                                               <HAnimSegment DEF='hanim_l_trapezoid' name='l_trapezoid'>
+                                               <HAnimSegment DEF='hanim_l_trapezoid' name='l_trapezoid'>
                                                 <Transform translation='0.1811 0.6984 -0.0935'>
                                                 <Transform> <!-- Empty Transform -->
                                                  <Shape USE='HAnimJointShape'/>
@@ -1827,13 +1451,9 @@
                                                   <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                                                  </LineSet>
                                                 </Shape>
-   <HAnimSite DEF='hanim_l_metacarpal_phalanx_2_pt' name='l_metacarpal_phalanx_2_pt' translation='0.2009 0.8139 -0.0237'>
-    <TouchSensor description='HAnimSite l_metacarpal_phalanx_2_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
                                                </HAnimSegment>
                                                <HAnimJoint DEF='hanim_l_carpometacarpal_2' name='l_carpometacarpal_2' center='0.1983 0.8024 -0.0280'>
-                                                 <HAnimSegment DEF='hanim_l_metacarpal_2' name='l_metacarpal_2'>
+                                                 <HAnimSegment DEF='hanim_l_metacarpal_2' name='l_metacarpal_2'>
                                                   <Transform translation='0.1983 0.8024 -0.0280'>
                                                   <Transform> <!-- Empty Transform -->
                                                    <Shape USE='HAnimJointShape'/>
@@ -1847,7 +1467,7 @@
                                                   </Shape>
                                                  </HAnimSegment>
                                                  <HAnimJoint DEF='hanim_l_metacarpophalangeal_2' name='l_metacarpophalangeal_2' center='0.1983 0.7815 -0.0280'>
-                                                   <HAnimSegment DEF='hanim_l_carpal_proximal_phalanx_2 ' name='l_carpal_proximal_phalanx_2 '>
+                                                   <HAnimSegment DEF='hanim_l_carpal_proximal_phalanx_2 ' name='l_carpal_proximal_phalanx_2 '>
                                                     <Transform translation='0.1983 0.7815 -0.0280'>
                                                     <Transform> <!-- Empty Transform -->
                                                      <Shape USE='HAnimJointShape'/>
@@ -1861,7 +1481,7 @@
                                                     </Shape>
                                                    </HAnimSegment>
                                                    <HAnimJoint DEF='hanim_l_carpal_proximal_interphalangeal_2' name='l_carpal_proximal_interphalangeal_2' center='0.2017 0.7363 -0.0248'>
-                                                     <HAnimSegment DEF='hanim_l_carpal_middle_phalanx_2' name='l_carpal_middle_phalanx_2'>
+                                                     <HAnimSegment DEF='hanim_l_carpal_middle_phalanx_2' name='l_carpal_middle_phalanx_2'>
                                                       <Transform translation='0.2017 0.7363 -0.0248'>
                                                       <Transform> <!-- Empty Transform -->
                                                        <Shape USE='HAnimJointShape'/>
@@ -1873,14 +1493,6 @@
                                                         <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                                                        </LineSet>
                                                       </Shape>
-   <HAnimSite DEF='hanim_l_carpal_distal_phalanx_2_tip' name='l_carpal_distal_phalanx_2_tip'>
-    <TouchSensor description='HAnimSite l_carpal_distal_phalanx_2_tip'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
-   <HAnimSite DEF='hanim_l_dactylion_pt' name='l_dactylion_pt' translation='0.2056 0.6743 -0.0482'>
-    <TouchSensor description='HAnimSite l_dactylion_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
                                                      </HAnimSegment>
                                                      <HAnimJoint DEF='hanim_l_carpal_distal_interphalangeal_2' name='l_carpal_distal_interphalangeal_2' center='0.2028 0.7139 -0.0236'>
                                                      </HAnimJoint>
@@ -1889,7 +1501,7 @@
                                                </HAnimJoint>
                                              </HAnimJoint>
                                              <HAnimJoint DEF='hanim_l_midcarpal_3' name='l_midcarpal_3' center='0.1809 0.7000 -0.1067'>
-                                               <HAnimSegment DEF='hanim_l_capitate' name='l_capitate'>
+                                               <HAnimSegment DEF='hanim_l_capitate' name='l_capitate'>
                                                 <Transform translation='0.1809 0.7000 -0.1067'>
                                                 <Transform> <!-- Empty Transform -->
                                                  <Shape USE='HAnimJointShape'/>
@@ -1901,13 +1513,9 @@
                                                   <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                                                  </LineSet>
                                                 </Shape>
-   <HAnimSite DEF='hanim_l_metacarpal_phalanx_3_pt' name='l_metacarpal_phalanx_3_pt'>
-    <TouchSensor description='HAnimSite l_metacarpal_phalanx_3_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
                                                </HAnimSegment>
                                                <HAnimJoint DEF='hanim_l_carpometacarpal_3' name='l_carpometacarpal_3' center='0.1987 0.8029 -0.0530'>
-                                                 <HAnimSegment DEF='hanim_l_metacarpal_3' name='l_metacarpal_3'>
+                                                 <HAnimSegment DEF='hanim_l_metacarpal_3' name='l_metacarpal_3'>
                                                   <Transform translation='0.1987 0.8029 -0.0530'>
                                                   <Transform> <!-- Empty Transform -->
                                                    <Shape USE='HAnimJointShape'/>
@@ -1921,7 +1529,7 @@
                                                   </Shape>
                                                  </HAnimSegment>
                                                  <HAnimJoint DEF='hanim_l_metacarpophalangeal_3' name='l_metacarpophalangeal_3' center='0.1987 0.7818 -0.0530'>
-                                                   <HAnimSegment DEF='hanim_l_carpal_proximal_phalanx_3' name='l_carpal_proximal_phalanx_3'>
+                                                   <HAnimSegment DEF='hanim_l_carpal_proximal_phalanx_3' name='l_carpal_proximal_phalanx_3'>
                                                     <Transform translation='0.1987 0.7818 -0.0530'>
                                                     <Transform> <!-- Empty Transform -->
                                                      <Shape USE='HAnimJointShape'/>
@@ -1935,7 +1543,7 @@
                                                     </Shape>
                                                    </HAnimSegment>
                                                    <HAnimJoint DEF='hanim_l_carpal_proximal_interphalangeal_3' name='l_carpal_proximal_interphalangeal_3' center='0.2013 0.7273 -0.0503'>
-                                                     <HAnimSegment DEF='hanim_l_carpal_middle_phalanx_3' name='l_carpal_middle_phalanx_3'>
+                                                     <HAnimSegment DEF='hanim_l_carpal_middle_phalanx_3' name='l_carpal_middle_phalanx_3'>
                                                       <Transform translation='0.2013 0.7273 -0.0503'>
                                                       <Transform> <!-- Empty Transform -->
                                                        <Shape USE='HAnimJointShape'/>
@@ -1947,10 +1555,6 @@
                                                         <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                                                        </LineSet>
                                                       </Shape>
-   <HAnimSite DEF='hanim_l_carpal_distal_phalanx_3_tip' name='l_carpal_distal_phalanx_3_tip'>
-    <TouchSensor description='HAnimSite l_carpal_distal_phalanx_3_tip'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
                                                      </HAnimSegment>
                                                      <HAnimJoint DEF='hanim_l_carpal_distal_interphalangeal_3' name='l_carpal_distal_interphalangeal_3' center='0.2026 0.7011 -0.0494'>
                                                      </HAnimJoint>
@@ -1959,7 +1563,7 @@
                                                </HAnimJoint>
                                              </HAnimJoint>
                                              <HAnimJoint DEF='hanim_l_midcarpal_4_5' name='l_midcarpal_4_5' center='0.1809 0.6973 -0.1276'>
-                                               <HAnimSegment DEF='hanim_l_hamate' name='l_hamate'>
+                                               <HAnimSegment DEF='hanim_l_hamate' name='l_hamate'>
                                                 <Transform translation='0.1809 0.6973 -0.1276'>
                                                 <Transform> <!-- Empty Transform -->
                                                  <Shape USE='HAnimJointShape'/>
@@ -1977,13 +1581,9 @@
                                                   <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                                                  </LineSet>
                                                 </Shape>
-   <HAnimSite DEF='hanim_l_metacarpal_phalanx_5_pt' name='l_metacarpal_phalanx_5_pt' translation='0.1929 0.7860 -0.1122'>
-    <TouchSensor description='HAnimSite l_metacarpal_phalanx_5_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
                                                </HAnimSegment>
                                                <HAnimJoint DEF='hanim_l_carpometacarpal_4' name='l_carpometacarpal_4' center='0.1956 0.8019 -0.0794'>
-                                                 <HAnimSegment DEF='hanim_l_metacarpal_4' name='l_metacarpal_4'>
+                                                 <HAnimSegment DEF='hanim_l_metacarpal_4' name='l_metacarpal_4'>
                                                   <Transform translation='0.1956 0.8019 -0.0794'>
                                                   <Transform> <!-- Empty Transform -->
                                                    <Shape USE='HAnimJointShape'/>
@@ -1997,7 +1597,7 @@
                                                   </Shape>
                                                  </HAnimSegment>
                                                  <HAnimJoint DEF='hanim_l_metacarpophalangeal_4' name='l_metacarpophalangeal_4' center='0.1956 0.7815 -0.0794'>
-                                                   <HAnimSegment DEF='hanim_l_carpal_proximal_phalanx_4' name='l_carpal_proximal_phalanx_4'>
+                                                   <HAnimSegment DEF='hanim_l_carpal_proximal_phalanx_4' name='l_carpal_proximal_phalanx_4'>
                                                     <Transform translation='0.1956 0.7815 -0.0794'>
                                                     <Transform> <!-- Empty Transform -->
                                                      <Shape USE='HAnimJointShape'/>
@@ -2011,7 +1611,7 @@
                                                     </Shape>
                                                    </HAnimSegment>
                                                    <HAnimJoint DEF='hanim_l_carpal_proximal_interphalangeal_4' name='l_carpal_proximal_interphalangeal_4' center='0.1973 0.7287 -0.0777'>
-                                                     <HAnimSegment DEF='hanim_l_carpal_middle_phalanx_4' name='l_carpal_middle_phalanx_4'>
+                                                     <HAnimSegment DEF='hanim_l_carpal_middle_phalanx_4' name='l_carpal_middle_phalanx_4'>
                                                       <Transform translation='0.1973 0.7287 -0.0777'>
                                                       <Transform> <!-- Empty Transform -->
                                                        <Shape USE='HAnimJointShape'/>
@@ -2023,10 +1623,6 @@
                                                         <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                                                        </LineSet>
                                                       </Shape>
-   <HAnimSite DEF='hanim_l_carpal_distal_phalanx_4_tip' name='l_carpal_distal_phalanx_4_tip'>
-    <TouchSensor description='HAnimSite l_carpal_distal_phalanx_4_tip'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
                                                      </HAnimSegment>
                                                      <HAnimJoint DEF='hanim_l_carpal_distal_interphalangeal_4' name='l_carpal_distal_interphalangeal_4' center='0.1983 0.7045 -0.0767'>
                                                      </HAnimJoint>
@@ -2034,7 +1630,7 @@
                                                  </HAnimJoint>
                                                </HAnimJoint>
                                                <HAnimJoint DEF='hanim_l_carpometacarpal_5' name='l_carpometacarpal_5' center='0.1925 0.8066 -0.1036'>
-                                                 <HAnimSegment DEF='hanim_l_metacarpal_5' name='l_metacarpal_5'>
+                                                 <HAnimSegment DEF='hanim_l_metacarpal_5' name='l_metacarpal_5'>
                                                   <Transform translation='0.1925 0.8066 -0.1036'>
                                                   <Transform> <!-- Empty Transform -->
                                                    <Shape USE='HAnimJointShape'/>
@@ -2048,7 +1644,7 @@
                                                   </Shape>
                                                  </HAnimSegment>
                                                  <HAnimJoint DEF='hanim_l_metacarpophalangeal_5' name='l_metacarpophalangeal_5' center='0.1925 0.7866 -0.1036'>
-                                                   <HAnimSegment DEF='hanim_l_carpal_proximal_phalanx_5' name='l_carpal_proximal_phalanx_5'>
+                                                   <HAnimSegment DEF='hanim_l_carpal_proximal_phalanx_5' name='l_carpal_proximal_phalanx_5'>
                                                     <Transform translation='0.1925 0.7866 -0.1036'>
                                                     <Transform> <!-- Empty Transform -->
                                                      <Shape USE='HAnimJointShape'/>
@@ -2062,7 +1658,7 @@
                                                     </Shape>
                                                    </HAnimSegment>
                                                    <HAnimJoint DEF='hanim_l_carpal_proximal_interphalangeal_5' name='l_carpal_proximal_interphalangeal_5' center='0.1938 0.7452 -0.1024'>
-                                                     <HAnimSegment DEF='hanim_l_carpal_middle_phalanx_5' name='l_carpal_middle_phalanx_5'>
+                                                     <HAnimSegment DEF='hanim_l_carpal_middle_phalanx_5' name='l_carpal_middle_phalanx_5'>
                                                       <Transform translation='0.1938 0.7452 -0.1024'>
                                                       <Transform> <!-- Empty Transform -->
                                                        <Shape USE='HAnimJointShape'/>
@@ -2074,10 +1670,6 @@
                                                         <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                                                        </LineSet>
                                                       </Shape>
-   <HAnimSite DEF='hanim_l_carpal_distal_phalanx_5_tip' name='l_carpal_distal_phalanx_5_tip'>
-    <TouchSensor description='HAnimSite l_carpal_distal_phalanx_5_tip'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
                                                      </HAnimSegment>
                                                      <HAnimJoint DEF='hanim_l_carpal_distal_interphalangeal_5' name='l_carpal_distal_interphalangeal_5' center='0.1948 0.7277 -0.1017'>
                                                      </HAnimJoint>
@@ -2091,7 +1683,7 @@
                                      </HAnimJoint>
                                    </HAnimJoint>
                                    <HAnimJoint DEF='hanim_r_sternoclavicular' name='r_sternoclavicular' center='-0.0694 1.4600 -0.0330'>
-                                     <HAnimSegment DEF='hanim_r_clavicle' name='r_clavicle'>
+                                     <HAnimSegment DEF='hanim_r_clavicle' name='r_clavicle'>
                                       <Transform translation='-0.0694 1.4600 -0.0330'>
                                       <Transform> <!-- Empty Transform -->
                                        <Shape USE='HAnimJointShape'/>
@@ -2105,7 +1697,7 @@
                                       </Shape>
                                      </HAnimSegment>
                                      <HAnimJoint DEF='hanim_r_acromioclavicular' name='r_acromioclavicular' center='-0.0836 1.4281 -0.0401'>
-                                       <HAnimSegment DEF='hanim_r_scapula' name='r_scapula'>
+                                       <HAnimSegment DEF='hanim_r_scapula' name='r_scapula'>
                                         <Transform translation='-0.0836 1.4281 -0.0401'>
                                         <Transform> <!-- Empty Transform -->
                                          <Shape USE='HAnimJointShape'/>
@@ -2117,17 +1709,9 @@
                                           <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                                          </LineSet>
                                         </Shape>
-   <HAnimSite DEF='hanim_r_bideltoid_pt' name='r_bideltoid_pt'>
-    <TouchSensor description='HAnimSite r_bideltoid_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
-   <HAnimSite DEF='hanim_r_humeral_lateral_epicondyles_pt' name='r_humeral_lateral_epicondyles_pt' translation='-0.2224 1.1517 -0.1033'>
-    <TouchSensor description='HAnimSite r_humeral_lateral_epicondyles_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
                                        </HAnimSegment>
                                        <HAnimJoint DEF='hanim_r_shoulder' name='r_shoulder' center='-0.1907 1.4407 -0.0325'>
-                                         <HAnimSegment DEF='hanim_r_upperarm' name='r_upperarm'>
+                                         <HAnimSegment DEF='hanim_r_upperarm' name='r_upperarm'>
                                           <Transform translation='-0.1907 1.4407 -0.0325'>
                                           <Transform> <!-- Empty Transform -->
                                            <Shape USE='HAnimJointShape'/>
@@ -2139,25 +1723,9 @@
                                             <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                                            </LineSet>
                                           </Shape>
-   <HAnimSite DEF='hanim_r_humeral_medial_epicondyles_pt' name='r_humeral_medial_epicondyles_pt' translation='-0.1680 1.1298 -0.1062'>
-    <TouchSensor description='HAnimSite r_humeral_medial_epicondyles_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
-   <HAnimSite DEF='hanim_r_olecranon_pt' name='r_olecranon_pt' translation='-0.1907 1.1405 -0.1065'>
-    <TouchSensor description='HAnimSite r_olecranon_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
-   <HAnimSite DEF='hanim_r_radial_styloid_pt' name='r_radial_styloid_pt' translation='-0.1884 0.8676 -0.0360'>
-    <TouchSensor description='HAnimSite r_radial_styloid_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
-   <HAnimSite DEF='hanim_r_radiale_pt' name='r_radiale_pt' translation='-0.2130 1.1305 -0.1091'>
-    <TouchSensor description='HAnimSite r_radiale_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
                                          </HAnimSegment>
                                          <HAnimJoint DEF='hanim_r_elbow' name='r_elbow' center='-0.1949 1.1388 -0.0620'>
-                                           <HAnimSegment DEF='hanim_r_forearm' name='r_forearm'>
+                                           <HAnimSegment DEF='hanim_r_forearm' name='r_forearm'>
                                             <Transform translation='-0.1949 1.1388 -0.0620'>
                                             <Transform> <!-- Empty Transform -->
                                              <Shape USE='HAnimJointShape'/>
@@ -2169,13 +1737,9 @@
                                               <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                                              </LineSet>
                                             </Shape>
-   <HAnimSite DEF='hanim_r_ulnar_styloid_pt' name='r_ulnar_styloid_pt' translation='-0.2117 0.8562 -0.0584'>
-    <TouchSensor description='HAnimSite r_ulnar_styloid_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
                                            </HAnimSegment>
                                            <HAnimJoint DEF='hanim_r_radiocarpal' name='r_radiocarpal' center='-0.1959 0.8694 -0.0521'>
-                                             <HAnimSegment DEF='hanim_r_carpal' name='r_carpal'>
+                                             <HAnimSegment DEF='hanim_r_carpal' name='r_carpal'>
                                               <Transform scale='0.2 0.2 0.2' translation='-0.20 0.85 -0.05' rotation='0 0 1 -3.14'> <!-- Transform right hand -->
 <Transform rotation='0 1 0 1.57'> <!-- Transform right hand -->
 
@@ -2208,7 +1772,7 @@
                                               </Shape>
                                              </HAnimSegment>
                                              <HAnimJoint DEF='hanim_r_midcarpal_1' name='r_midcarpal_1' center='-0.1811 0.6975 -0.0826'>
-                                               <HAnimSegment DEF='hanim_r_trapezium' name='r_trapezium'>
+                                               <HAnimSegment DEF='hanim_r_trapezium' name='r_trapezium'>
                                                 <Transform translation='-0.1811 0.6975 -0.0826'>
                                                 <Transform> <!-- Empty Transform -->
                                                  <Shape USE='HAnimJointShape'/>
@@ -2222,7 +1786,7 @@
                                                 </Shape>
                                                </HAnimSegment>
                                                <HAnimJoint DEF='hanim_r_carpometacarpal_1' name='r_carpometacarpal_1' center='-0.1899 0.8502 -0.0473'>
-                                                 <HAnimSegment DEF='hanim_r_metacarpal_1' name='r_metacarpal_1'>
+                                                 <HAnimSegment DEF='hanim_r_metacarpal_1' name='r_metacarpal_1'>
                                                   <Transform translation='-0.1899 0.8502 -0.0473'>
                                                   <Transform> <!-- Empty Transform -->
                                                    <Shape USE='HAnimJointShape'/>
@@ -2236,7 +1800,7 @@
                                                   </Shape>
                                                  </HAnimSegment>
                                                  <HAnimJoint DEF='hanim_r_metacarpophalangeal_1' name='r_metacarpophalangeal_1' center='-0.1874 0.8256 0.0306'>
-                                                   <HAnimSegment DEF='hanim_r_carpal_proximal_phalanx_1' name='r_carpal_proximal_phalanx_1'>
+                                                   <HAnimSegment DEF='hanim_r_carpal_proximal_phalanx_1' name='r_carpal_proximal_phalanx_1'>
                                                     <Transform translation='-0.1874 0.8256 0.0306'>
                                                     <Transform> <!-- Empty Transform -->
                                                      <Shape USE='HAnimJointShape'/>
@@ -2248,10 +1812,6 @@
                                                       <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                                                      </LineSet>
                                                     </Shape>
-   <HAnimSite DEF='hanim_r_carpal_distal_phalanx_1_tip' name='r_carpal_distal_phalanx_1_tip'>
-    <TouchSensor description='HAnimSite r_carpal_distal_phalanx_1_tip'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
                                                    </HAnimSegment>
                                                    <HAnimJoint DEF='hanim_r_carpal_interphalangeal_1' name='r_carpal_interphalangeal_1' center='-0.1864 0.8190 0.0506'>
                                                    </HAnimJoint>
@@ -2259,7 +1819,7 @@
                                                </HAnimJoint>
                                              </HAnimJoint>
                                              <HAnimJoint DEF='hanim_r_midcarpal_2' name='r_midcarpal_2' center='-0.1811 0.6984 -0.0935'>
-                                               <HAnimSegment DEF='hanim_r_trapezoid' name='r_trapezoid'>
+                                               <HAnimSegment DEF='hanim_r_trapezoid' name='r_trapezoid'>
                                                 <Transform translation='-0.1811 0.6984 -0.0935'>
                                                 <Transform> <!-- Empty Transform -->
                                                  <Shape USE='HAnimJointShape'/>
@@ -2271,13 +1831,9 @@
                                                   <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                                                  </LineSet>
                                                 </Shape>
-   <HAnimSite DEF='hanim_r_metacarpal_phalanx_2_pt' name='r_metacarpal_phalanx_2_pt' translation='-0.1977 0.8169 -0.0177'>
-    <TouchSensor description='HAnimSite r_metacarpal_phalanx_2_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
                                                </HAnimSegment>
                                                <HAnimJoint DEF='hanim_r_carpometacarpal_2' name='r_carpometacarpal_2' center='-0.1961 0.8055 -0.0218'>
-                                                 <HAnimSegment DEF='hanim_r_metacarpal_2' name='r_metacarpal_2'>
+                                                 <HAnimSegment DEF='hanim_r_metacarpal_2' name='r_metacarpal_2'>
                                                   <Transform translation='-0.1961 0.8055 -0.0218'>
                                                   <Transform> <!-- Empty Transform -->
                                                    <Shape USE='HAnimJointShape'/>
@@ -2291,7 +1847,7 @@
                                                   </Shape>
                                                  </HAnimSegment>
                                                  <HAnimJoint DEF='hanim_r_metacarpophalangeal_2' name='r_metacarpophalangeal_2' center='-0.1961 0.7846 -0.0218'>
-                                                   <HAnimSegment DEF='hanim_r_carpal_proximal_phalanx_2 ' name='r_carpal_proximal_phalanx_2 '>
+                                                   <HAnimSegment DEF='hanim_r_carpal_proximal_phalanx_2 ' name='r_carpal_proximal_phalanx_2 '>
                                                     <Transform translation='-0.1961 0.7846 -0.0218'>
                                                     <Transform> <!-- Empty Transform -->
                                                      <Shape USE='HAnimJointShape'/>
@@ -2305,7 +1861,7 @@
                                                     </Shape>
                                                    </HAnimSegment>
                                                    <HAnimJoint DEF='hanim_r_carpal_proximal_interphalangeal_2' name='r_carpal_proximal_interphalangeal_2' center='-0.1954 0.7393 -0.0185'>
-                                                     <HAnimSegment DEF='hanim_r_carpal_middle_phalanx_2' name='r_carpal_middle_phalanx_2'>
+                                                     <HAnimSegment DEF='hanim_r_carpal_middle_phalanx_2' name='r_carpal_middle_phalanx_2'>
                                                       <Transform translation='-0.1954 0.7393 -0.0185'>
                                                       <Transform> <!-- Empty Transform -->
                                                        <Shape USE='HAnimJointShape'/>
@@ -2317,14 +1873,6 @@
                                                         <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                                                        </LineSet>
                                                       </Shape>
-   <HAnimSite DEF='hanim_r_carpal_distal_phalanx_2_tip' name='r_carpal_distal_phalanx_2_tip'>
-    <TouchSensor description='HAnimSite r_carpal_distal_phalanx_2_tip'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
-   <HAnimSite DEF='hanim_r_dactylion_pt' name='r_dactylion_pt' translation='-0.1941 0.6772 -0.0423'>
-    <TouchSensor description='HAnimSite r_dactylion_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
                                                      </HAnimSegment>
                                                      <HAnimJoint DEF='hanim_r_carpal_distal_interphalangeal_2' name='r_carpal_distal_interphalangeal_2' center='-0.1945 0.7169 -0.0173'>
                                                      </HAnimJoint>
@@ -2333,7 +1881,7 @@
                                                </HAnimJoint>
                                              </HAnimJoint>
                                              <HAnimJoint DEF='hanim_r_midcarpal_3' name='r_midcarpal_3' center='-0.1809 0.7000 -0.1067'>
-                                               <HAnimSegment DEF='hanim_r_capitate' name='r_capitate'>
+                                               <HAnimSegment DEF='hanim_r_capitate' name='r_capitate'>
                                                 <Transform translation='-0.1809 0.7000 -0.1067'>
                                                 <Transform> <!-- Empty Transform -->
                                                  <Shape USE='HAnimJointShape'/>
@@ -2345,13 +1893,9 @@
                                                   <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                                                  </LineSet>
                                                 </Shape>
-   <HAnimSite DEF='hanim_r_metacarpal_phalanx_3_pt' name='r_metacarpal_phalanx_3_pt'>
-    <TouchSensor description='HAnimSite r_metacarpal_phalanx_3_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
                                                </HAnimSegment>
                                                <HAnimJoint DEF='hanim_r_carpometacarpal_3' name='r_carpometacarpal_3' center='-0.1972 0.8060 -0.0468'>
-                                                 <HAnimSegment DEF='hanim_r_metacarpal_3' name='r_metacarpal_3'>
+                                                 <HAnimSegment DEF='hanim_r_metacarpal_3' name='r_metacarpal_3'>
                                                   <Transform translation='-0.1972 0.8060 -0.0468'>
                                                   <Transform> <!-- Empty Transform -->
                                                    <Shape USE='HAnimJointShape'/>
@@ -2365,7 +1909,7 @@
                                                   </Shape>
                                                  </HAnimSegment>
                                                  <HAnimJoint DEF='hanim_r_metacarpophalangeal_3' name='r_metacarpophalangeal_3' center='-0.1972 0.7849 -0.0468'>
-                                                   <HAnimSegment DEF='hanim_r_carpal_proximal_phalanx_3' name='r_carpal_proximal_phalanx_3'>
+                                                   <HAnimSegment DEF='hanim_r_carpal_proximal_phalanx_3' name='r_carpal_proximal_phalanx_3'>
                                                     <Transform translation='-0.1972 0.7849 -0.0468'>
                                                     <Transform> <!-- Empty Transform -->
                                                      <Shape USE='HAnimJointShape'/>
@@ -2379,7 +1923,7 @@
                                                     </Shape>
                                                    </HAnimSegment>
                                                    <HAnimJoint DEF='hanim_r_carpal_proximal_interphalangeal_3' name='r_carpal_proximal_interphalangeal_3' center='-0.1950 0.7304 -0.0441'>
-                                                     <HAnimSegment DEF='hanim_r_carpal_middle_phalanx_3' name='r_carpal_middle_phalanx_3'>
+                                                     <HAnimSegment DEF='hanim_r_carpal_middle_phalanx_3' name='r_carpal_middle_phalanx_3'>
                                                       <Transform translation='-0.1950 0.7304 -0.0441'>
                                                       <Transform> <!-- Empty Transform -->
                                                        <Shape USE='HAnimJointShape'/>
@@ -2391,10 +1935,6 @@
                                                         <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                                                        </LineSet>
                                                       </Shape>
-   <HAnimSite DEF='hanim_r_carpal_distal_phalanx_3_tip' name='r_carpal_distal_phalanx_3_tip'>
-    <TouchSensor description='HAnimSite r_carpal_distal_phalanx_3_tip'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
                                                      </HAnimSegment>
                                                      <HAnimJoint DEF='hanim_r_carpal_distal_interphalangeal_3' name='r_carpal_distal_interphalangeal_3' center='-0.1939 0.7042 -0.0432'>
                                                      </HAnimJoint>
@@ -2403,7 +1943,7 @@
                                                </HAnimJoint>
                                              </HAnimJoint>
                                              <HAnimJoint DEF='hanim_r_midcarpal_4_5' name='r_midcarpal_4_5' center='-0.1809 0.6973 -0.1276'>
-                                               <HAnimSegment DEF='hanim_r_hamate' name='r_hamate'>
+                                               <HAnimSegment DEF='hanim_r_hamate' name='r_hamate'>
                                                 <Transform translation='-0.1809 0.6973 -0.1276'>
                                                 <Transform> <!-- Empty Transform -->
                                                  <Shape USE='HAnimJointShape'/>
@@ -2421,13 +1961,9 @@
                                                   <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                                                  </LineSet>
                                                 </Shape>
-   <HAnimSite DEF='hanim_r_metacarpal_phalanx_5_pt' name='r_metacarpal_phalanx_5_pt' translation='-0.1929 0.7890 -0.1064'>
-    <TouchSensor description='HAnimSite r_metacarpal_phalanx_5_pt'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
                                                </HAnimSegment>
                                                <HAnimJoint DEF='hanim_r_carpometacarpal_4' name='r_carpometacarpal_4' center='-0.1951 0.8049 -0.0732'>
-                                                 <HAnimSegment DEF='hanim_r_metacarpal_4' name='r_metacarpal_4'>
+                                                 <HAnimSegment DEF='hanim_r_metacarpal_4' name='r_metacarpal_4'>
                                                   <Transform translation='-0.1951 0.8049 -0.0732'>
                                                   <Transform> <!-- Empty Transform -->
                                                    <Shape USE='HAnimJointShape'/>
@@ -2441,7 +1977,7 @@
                                                   </Shape>
                                                  </HAnimSegment>
                                                  <HAnimJoint DEF='hanim_r_metacarpophalangeal_4' name='r_metacarpophalangeal_4' center='-0.1951 0.7845 -0.0732'>
-                                                   <HAnimSegment DEF='hanim_r_carpal_proximal_phalanx_4' name='r_carpal_proximal_phalanx_4'>
+                                                   <HAnimSegment DEF='hanim_r_carpal_proximal_phalanx_4' name='r_carpal_proximal_phalanx_4'>
                                                     <Transform translation='-0.1951 0.7845 -0.0732'>
                                                     <Transform> <!-- Empty Transform -->
                                                      <Shape USE='HAnimJointShape'/>
@@ -2455,7 +1991,7 @@
                                                     </Shape>
                                                    </HAnimSegment>
                                                    <HAnimJoint DEF='hanim_r_carpal_proximal_interphalangeal_4' name='r_carpal_proximal_interphalangeal_4' center='-0.1920 0.7318 -0.0716'>
-                                                     <HAnimSegment DEF='hanim_r_carpal_middle_phalanx_4' name='r_carpal_middle_phalanx_4'>
+                                                     <HAnimSegment DEF='hanim_r_carpal_middle_phalanx_4' name='r_carpal_middle_phalanx_4'>
                                                       <Transform translation='-0.1920 0.7318 -0.0716'>
                                                       <Transform> <!-- Empty Transform -->
                                                        <Shape USE='HAnimJointShape'/>
@@ -2467,10 +2003,6 @@
                                                         <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                                                        </LineSet>
                                                       </Shape>
-   <HAnimSite DEF='hanim_r_carpal_distal_phalanx_4_tip' name='r_carpal_distal_phalanx_4_tip'>
-    <TouchSensor description='HAnimSite r_carpal_distal_phalanx_4_tip'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
                                                      </HAnimSegment>
                                                      <HAnimJoint DEF='hanim_r_carpal_distal_interphalangeal_4' name='r_carpal_distal_interphalangeal_4' center='-0.1908 0.7077 -0.0706'>
                                                      </HAnimJoint>
@@ -2478,7 +2010,7 @@
                                                  </HAnimJoint>
                                                </HAnimJoint>
                                                <HAnimJoint DEF='hanim_r_carpometacarpal_5' name='r_carpometacarpal_5' center='-0.1926 0.8096 -0.0975'>
-                                                 <HAnimSegment DEF='hanim_r_metacarpal_5' name='r_metacarpal_5'>
+                                                 <HAnimSegment DEF='hanim_r_metacarpal_5' name='r_metacarpal_5'>
                                                   <Transform translation='-0.1926 0.8096 -0.0975'>
                                                   <Transform> <!-- Empty Transform -->
                                                    <Shape USE='HAnimJointShape'/>
@@ -2492,7 +2024,7 @@
                                                   </Shape>
                                                  </HAnimSegment>
                                                  <HAnimJoint DEF='hanim_r_metacarpophalangeal_5' name='r_metacarpophalangeal_5' center='-0.1926 0.7896 -0.0975'>
-                                                   <HAnimSegment DEF='hanim_r_carpal_proximal_phalanx_5' name='r_carpal_proximal_phalanx_5'>
+                                                   <HAnimSegment DEF='hanim_r_carpal_proximal_phalanx_5' name='r_carpal_proximal_phalanx_5'>
                                                     <Transform translation='-0.1926 0.7896 -0.0975'>
                                                     <Transform> <!-- Empty Transform -->
                                                      <Shape USE='HAnimJointShape'/>
@@ -2506,7 +2038,7 @@
                                                     </Shape>
                                                    </HAnimSegment>
                                                    <HAnimJoint DEF='hanim_r_carpal_proximal_interphalangeal_5' name='r_carpal_proximal_interphalangeal_5' center='-0.1902 0.7483 -0.0963'>
-                                                     <HAnimSegment DEF='hanim_r_carpal_middle_phalanx_5' name='r_carpal_middle_phalanx_5'>
+                                                     <HAnimSegment DEF='hanim_r_carpal_middle_phalanx_5' name='r_carpal_middle_phalanx_5'>
                                                       <Transform translation='-0.1902 0.7483 -0.0963'>
                                                       <Transform> <!-- Empty Transform -->
                                                        <Shape USE='HAnimJointShape'/>
@@ -2518,10 +2050,6 @@
                                                         <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                                                        </LineSet>
                                                       </Shape>
-   <HAnimSite DEF='hanim_r_carpal_distal_phalanx_5_tip' name='r_carpal_distal_phalanx_5_tip'>
-    <TouchSensor description='HAnimSite r_carpal_distal_phalanx_5_tip'/>
-    <Shape USE='HAnimSiteShape'/>
-   </HAnimSite>
                                                      </HAnimSegment>
                                                      <HAnimJoint DEF='hanim_r_carpal_distal_interphalangeal_5' name='r_carpal_distal_interphalangeal_5' center='-0.1908 0.7540 -0.0960'>
                                                      </HAnimJoint>
@@ -2568,7 +2096,7 @@
 <HAnimJoint USE='hanim_l_tarsal_proximal_interphalangeal_2' containerField='joints'/>
 <HAnimJoint USE='hanim_l_tarsal_distal_interphalangeal_2' containerField='joints'/>
 <HAnimJoint USE='hanim_l_cuneonavicular_3' containerField='joints'/>
-<HAnimJoint USE='hanim_l_tarsometatarsal_3 ' containerField='joints'/>
+<HAnimJoint USE='hanim_l_tarsometatarsal_3' containerField='joints'/>
 <HAnimJoint USE='hanim_l_metatarsophalangeal_3' containerField='joints'/>
 <HAnimJoint USE='hanim_l_tarsal_proximal_interphalangeal_3' containerField='joints'/>
 <HAnimJoint USE='hanim_l_tarsal_distal_interphalangeal_3' containerField='joints'/>
@@ -2596,7 +2124,7 @@
 <HAnimJoint USE='hanim_r_tarsal_proximal_interphalangeal_2' containerField='joints'/>
 <HAnimJoint USE='hanim_r_tarsal_distal_interphalangeal_2' containerField='joints'/>
 <HAnimJoint USE='hanim_r_cuneonavicular_3' containerField='joints'/>
-<HAnimJoint USE='hanim_r_tarsometatarsal_3 ' containerField='joints'/>
+<HAnimJoint USE='hanim_r_tarsometatarsal_3' containerField='joints'/>
 <HAnimJoint USE='hanim_r_metatarsophalangeal_3' containerField='joints'/>
 <HAnimJoint USE='hanim_r_tarsal_proximal_interphalangeal_3' containerField='joints'/>
 <HAnimJoint USE='hanim_r_tarsal_distal_interphalangeal_3' containerField='joints'/>
@@ -2698,243 +2226,125 @@
 <HAnimJoint USE='hanim_r_metacarpophalangeal_5' containerField='joints'/>
 <HAnimJoint USE='hanim_r_carpal_proximal_interphalangeal_5' containerField='joints'/>
 <HAnimJoint USE='hanim_r_carpal_distal_interphalangeal_5' containerField='joints'/>
-<HAnimSegment USE='hanim_sacrum' containerField='segments'/>
-<HAnimSegment USE='hanim_pelvis' containerField='segments'/>
-<HAnimSegment USE='hanim_l_thigh' containerField='segments'/>
-<HAnimSegment USE='hanim_l_calf' containerField='segments'/>
-<HAnimSegment USE='hanim_l_talus' containerField='segments'/>
-<HAnimSegment USE='hanim_l_navicular' containerField='segments'/>
-<HAnimSegment USE='hanim_l_cuneiform_1' containerField='segments'/>
-<HAnimSegment USE='hanim_l_metatarsal_1' containerField='segments'/>
-<HAnimSegment USE='hanim_l_tarsal_proximal_phalanx_1' containerField='segments'/>
-<HAnimSegment USE='hanim_l_cuneiform_2' containerField='segments'/>
-<HAnimSegment USE='hanim_l_metatarsal_2' containerField='segments'/>
-<HAnimSegment USE='hanim_l_tarsal_proximal_phalanx_2' containerField='segments'/>
-<HAnimSegment USE='hanim_l_tarsal_middle_phalanx_2' containerField='segments'/>
-<HAnimSegment USE='hanim_l_cuneiform_3' containerField='segments'/>
-<HAnimSegment USE='hanim_l_metatarsal_3' containerField='segments'/>
-<HAnimSegment USE='hanim_l_tarsal_proximal_phalanx_3' containerField='segments'/>
-<HAnimSegment USE='hanim_l_tarsal_middle_phalanx_3' containerField='segments'/>
-<HAnimSegment USE='hanim_l_calcaneus' containerField='segments'/>
-<HAnimSegment USE='hanim_l_cuboid' containerField='segments'/>
-<HAnimSegment USE='hanim_l_metatarsal_4' containerField='segments'/>
-<HAnimSegment USE='hanim_l_tarsal_proximal_phalanx_4' containerField='segments'/>
-<HAnimSegment USE='hanim_l_tarsal_middle_phalanx_4' containerField='segments'/>
-<HAnimSegment USE='hanim_l_metatarsal_5' containerField='segments'/>
-<HAnimSegment USE='hanim_l_tarsal_proximal_phalanx_5' containerField='segments'/>
-<HAnimSegment USE='hanim_l_tarsal_middle_phalanx_5' containerField='segments'/>
-<HAnimSegment USE='hanim_r_thigh' containerField='segments'/>
-<HAnimSegment USE='hanim_r_calf' containerField='segments'/>
-<HAnimSegment USE='hanim_r_talus' containerField='segments'/>
-<HAnimSegment USE='hanim_r_navicular' containerField='segments'/>
-<HAnimSegment USE='hanim_r_cuneiform_1' containerField='segments'/>
-<HAnimSegment USE='hanim_r_metatarsal_1' containerField='segments'/>
-<HAnimSegment USE='hanim_r_tarsal_proximal_phalanx_1' containerField='segments'/>
-<HAnimSegment USE='hanim_r_cuneiform_2' containerField='segments'/>
-<HAnimSegment USE='hanim_r_metatarsal_2' containerField='segments'/>
-<HAnimSegment USE='hanim_r_tarsal_proximal_phalanx_2' containerField='segments'/>
-<HAnimSegment USE='hanim_r_tarsal_middle_phalanx_2' containerField='segments'/>
-<HAnimSegment USE='hanim_r_cuneiform_3' containerField='segments'/>
-<HAnimSegment USE='hanim_r_metatarsal_3' containerField='segments'/>
-<HAnimSegment USE='hanim_r_tarsal_proximal_phalanx_3' containerField='segments'/>
-<HAnimSegment USE='hanim_r_tarsal_middle_phalanx_3' containerField='segments'/>
-<HAnimSegment USE='hanim_r_calcaneus' containerField='segments'/>
-<HAnimSegment USE='hanim_r_cuboid' containerField='segments'/>
-<HAnimSegment USE='hanim_r_metatarsal_4' containerField='segments'/>
-<HAnimSegment USE='hanim_r_tarsal_proximal_phalanx_4' containerField='segments'/>
-<HAnimSegment USE='hanim_r_tarsal_middle_phalanx_4' containerField='segments'/>
-<HAnimSegment USE='hanim_r_metatarsal_5' containerField='segments'/>
-<HAnimSegment USE='hanim_r_tarsal_proximal_phalanx_5' containerField='segments'/>
-<HAnimSegment USE='hanim_r_tarsal_middle_phalanx_5' containerField='segments'/>
-<HAnimSegment USE='hanim_l5' containerField='segments'/>
-<HAnimSegment USE='hanim_l4' containerField='segments'/>
-<HAnimSegment USE='hanim_l3' containerField='segments'/>
-<HAnimSegment USE='hanim_l2' containerField='segments'/>
-<HAnimSegment USE='hanim_l1' containerField='segments'/>
-<HAnimSegment USE='hanim_t12' containerField='segments'/>
-<HAnimSegment USE='hanim_t11' containerField='segments'/>
-<HAnimSegment USE='hanim_t10' containerField='segments'/>
-<HAnimSegment USE='hanim_t9' containerField='segments'/>
-<HAnimSegment USE='hanim_t8' containerField='segments'/>
-<HAnimSegment USE='hanim_t7' containerField='segments'/>
-<HAnimSegment USE='hanim_t6' containerField='segments'/>
-<HAnimSegment USE='hanim_t5' containerField='segments'/>
-<HAnimSegment USE='hanim_t4' containerField='segments'/>
-<HAnimSegment USE='hanim_t3' containerField='segments'/>
-<HAnimSegment USE='hanim_t2' containerField='segments'/>
-<HAnimSegment USE='hanim_t1' containerField='segments'/>
-<HAnimSegment USE='hanim_c7' containerField='segments'/>
-<HAnimSegment USE='hanim_c6' containerField='segments'/>
-<HAnimSegment USE='hanim_c5' containerField='segments'/>
-<HAnimSegment USE='hanim_c4' containerField='segments'/>
-<HAnimSegment USE='hanim_c3' containerField='segments'/>
-<HAnimSegment USE='hanim_c2' containerField='segments'/>
-<HAnimSegment USE='hanim_c1' containerField='segments'/>
-<HAnimSegment USE='hanim_skull' containerField='segments'/>
-<HAnimSegment USE='hanim_l_clavicle' containerField='segments'/>
-<HAnimSegment USE='hanim_l_scapula' containerField='segments'/>
-<HAnimSegment USE='hanim_l_upperarm' containerField='segments'/>
-<HAnimSegment USE='hanim_l_forearm' containerField='segments'/>
-<HAnimSegment USE='hanim_l_carpal' containerField='segments'/>
-<HAnimSegment USE='hanim_l_trapezium' containerField='segments'/>
-<HAnimSegment USE='hanim_l_metacarpal_1' containerField='segments'/>
-<HAnimSegment USE='hanim_l_carpal_proximal_phalanx_1' containerField='segments'/>
-<HAnimSegment USE='hanim_l_trapezoid' containerField='segments'/>
-<HAnimSegment USE='hanim_l_metacarpal_2' containerField='segments'/>
-<HAnimSegment USE='hanim_l_carpal_proximal_phalanx_2 ' containerField='segments'/>
-<HAnimSegment USE='hanim_l_carpal_middle_phalanx_2' containerField='segments'/>
-<HAnimSegment USE='hanim_l_capitate' containerField='segments'/>
-<HAnimSegment USE='hanim_l_metacarpal_3' containerField='segments'/>
-<HAnimSegment USE='hanim_l_carpal_proximal_phalanx_3' containerField='segments'/>
-<HAnimSegment USE='hanim_l_carpal_middle_phalanx_3' containerField='segments'/>
-<HAnimSegment USE='hanim_l_hamate' containerField='segments'/>
-<HAnimSegment USE='hanim_l_metacarpal_4' containerField='segments'/>
-<HAnimSegment USE='hanim_l_carpal_proximal_phalanx_4' containerField='segments'/>
-<HAnimSegment USE='hanim_l_carpal_middle_phalanx_4' containerField='segments'/>
-<HAnimSegment USE='hanim_l_metacarpal_5' containerField='segments'/>
-<HAnimSegment USE='hanim_l_carpal_proximal_phalanx_5' containerField='segments'/>
-<HAnimSegment USE='hanim_l_carpal_middle_phalanx_5' containerField='segments'/>
-<HAnimSegment USE='hanim_r_clavicle' containerField='segments'/>
-<HAnimSegment USE='hanim_r_scapula' containerField='segments'/>
-<HAnimSegment USE='hanim_r_upperarm' containerField='segments'/>
-<HAnimSegment USE='hanim_r_forearm' containerField='segments'/>
-<HAnimSegment USE='hanim_r_carpal' containerField='segments'/>
-<HAnimSegment USE='hanim_r_trapezium' containerField='segments'/>
-<HAnimSegment USE='hanim_r_metacarpal_1' containerField='segments'/>
-<HAnimSegment USE='hanim_r_carpal_proximal_phalanx_1' containerField='segments'/>
-<HAnimSegment USE='hanim_r_trapezoid' containerField='segments'/>
-<HAnimSegment USE='hanim_r_metacarpal_2' containerField='segments'/>
-<HAnimSegment USE='hanim_r_carpal_proximal_phalanx_2 ' containerField='segments'/>
-<HAnimSegment USE='hanim_r_carpal_middle_phalanx_2' containerField='segments'/>
-<HAnimSegment USE='hanim_r_capitate' containerField='segments'/>
-<HAnimSegment USE='hanim_r_metacarpal_3' containerField='segments'/>
-<HAnimSegment USE='hanim_r_carpal_proximal_phalanx_3' containerField='segments'/>
-<HAnimSegment USE='hanim_r_carpal_middle_phalanx_3' containerField='segments'/>
-<HAnimSegment USE='hanim_r_hamate' containerField='segments'/>
-<HAnimSegment USE='hanim_r_metacarpal_4' containerField='segments'/>
-<HAnimSegment USE='hanim_r_carpal_proximal_phalanx_4' containerField='segments'/>
-<HAnimSegment USE='hanim_r_carpal_middle_phalanx_4' containerField='segments'/>
-<HAnimSegment USE='hanim_r_metacarpal_5' containerField='segments'/>
-<HAnimSegment USE='hanim_r_carpal_proximal_phalanx_5' containerField='segments'/>
-<HAnimSegment USE='hanim_r_carpal_middle_phalanx_5' containerField='segments'/>
-<HAnimSite USE='hanim_buttocks_standing_wall_contact_point_pt' containerField='sites'/>
-<HAnimSite USE='hanim_crotch_pt' containerField='sites'/>
-<HAnimSite USE='hanim_l_asis_pt' containerField='sites'/>
-<HAnimSite USE='hanim_l_iliocristale_pt' containerField='sites'/>
-<HAnimSite USE='hanim_l_psis_pt' containerField='sites'/>
-<HAnimSite USE='hanim_l_trochanterion_pt' containerField='sites'/>
-<HAnimSite USE='hanim_r_asis_pt' containerField='sites'/>
-<HAnimSite USE='hanim_r_iliocristale_pt' containerField='sites'/>
-<HAnimSite USE='hanim_r_psis_pt' containerField='sites'/>
-<HAnimSite USE='hanim_r_trochanterion_pt' containerField='sites'/>
-<HAnimSite USE='hanim_navel_pt' containerField='sites'/>
-<HAnimSite USE='hanim_waist_preferred_anterior_pt' containerField='sites'/>
-<HAnimSite USE='hanim_waist_preferred_posterior_pt' containerField='sites'/>
-<HAnimSite USE='hanim_l_femoral_lateral_epicondyles_pt' containerField='sites'/>
-<HAnimSite USE='hanim_l_femoral_medial_epicondyles_pt' containerField='sites'/>
-<HAnimSite USE='hanim_l_knee_crease_pt' containerField='sites'/>
-<HAnimSite USE='hanim_l_suprapatella_pt' containerField='sites'/>
-<HAnimSite USE='hanim_r_femoral_lateral_epicondyles_pt' containerField='sites'/>
-<HAnimSite USE='hanim_r_femoral_medial_epicondyles_pt' containerField='sites'/>
-<HAnimSite USE='hanim_r_knee_crease_pt' containerField='sites'/>
-<HAnimSite USE='hanim_r_suprapatella_pt' containerField='sites'/>
-<HAnimSite USE='hanim_l_lateral_malleolus_pt' containerField='sites'/>
-<HAnimSite USE='hanim_l_medial_malleolus_pt' containerField='sites'/>
-<HAnimSite USE='hanim_l_tibiale_pt' containerField='sites'/>
-<HAnimSite USE='hanim_l_calcaneus_posterior_pt' containerField='sites'/>
-<HAnimSite USE='hanim_l_sphyrion_pt' containerField='sites'/>
-<HAnimSite USE='hanim_l_metatarsal_phalanx_1_pt' containerField='sites'/>
-<HAnimSite USE='hanim_l_tarsal_distal_phalanx_1_tip' containerField='sites'/>
-<HAnimSite USE='hanim_l_tarsal_distal_phalanx_2_tip' containerField='sites'/>
-<HAnimSite USE='hanim_l_tarsal_distal_phalanx_3_tip' containerField='sites'/>
-<HAnimSite USE='hanim_l_tarsal_distal_phalanx_4_tip' containerField='sites'/>
-<HAnimSite USE='hanim_l_metatarsal_phalanx_5_pt' containerField='sites'/>
-<HAnimSite USE='hanim_l_tarsal_distal_phalanx_5_tip' containerField='sites'/>
-<HAnimSite USE='hanim_r_lateral_malleolus_pt' containerField='sites'/>
-<HAnimSite USE='hanim_r_medial_malleolus_pt' containerField='sites'/>
-<HAnimSite USE='hanim_r_tibiale_pt' containerField='sites'/>
-<HAnimSite USE='hanim_r_calcaneus_posterior_pt' containerField='sites'/>
-<HAnimSite USE='hanim_r_sphyrion_pt' containerField='sites'/>
-<HAnimSite USE='hanim_r_metatarsal_phalanx_1_pt' containerField='sites'/>
-<HAnimSite USE='hanim_r_tarsal_distal_phalanx_1_tip' containerField='sites'/>
-<HAnimSite USE='hanim_r_tarsal_distal_phalanx_2_tip' containerField='sites'/>
-<HAnimSite USE='hanim_r_tarsal_distal_phalanx_3_tip' containerField='sites'/>
-<HAnimSite USE='hanim_r_tarsal_distal_phalanx_4_tip' containerField='sites'/>
-<HAnimSite USE='hanim_r_metatarsal_phalanx_5_pt' containerField='sites'/>
-<HAnimSite USE='hanim_r_tarsal_distal_phalanx_5_tip' containerField='sites'/>
-<HAnimSite USE='hanim_l_rib10_pt' containerField='sites'/>
-<HAnimSite USE='hanim_r_rib10_pt' containerField='sites'/>
-<HAnimSite USE='hanim_spine_2_middle_back_pt' containerField='sites'/>
-<HAnimSite USE='hanim_substernale_pt' containerField='sites'/>
-<HAnimSite USE='hanim_l_thelion_pt' containerField='sites'/>
-<HAnimSite USE='hanim_r_thelion_pt' containerField='sites'/>
-<HAnimSite USE='hanim_l_chest_midsagittal_plane_pt' containerField='sites'/>
-<HAnimSite USE='hanim_mesosternale_pt' containerField='sites'/>
-<HAnimSite USE='hanim_r_chest_midsagittal_plane_pt' containerField='sites'/>
-<HAnimSite USE='hanim_rear_center_midsagittal_plane_pt' containerField='sites'/>
-<HAnimSite USE='hanim_spine_1_middle_back_pt' containerField='sites'/>
-<HAnimSite USE='hanim_cervicale_pt' containerField='sites'/>
-<HAnimSite USE='hanim_suprasternale_pt' containerField='sites'/>
-<HAnimSite USE='hanim_l_neck_base_pt' containerField='sites'/>
-<HAnimSite USE='hanim_r_neck_base_pt' containerField='sites'/>
-<HAnimSite USE='hanim_l_acromion_pt' containerField='sites'/>
-<HAnimSite USE='hanim_l_axilla_distal_pt' containerField='sites'/>
-<HAnimSite USE='hanim_l_axilla_posterior_folds_pt' containerField='sites'/>
-<HAnimSite USE='hanim_l_axilla_proximal_pt' containerField='sites'/>
-<HAnimSite USE='hanim_l_clavicale_pt' containerField='sites'/>
-<HAnimSite USE='hanim_r_acromion_pt' containerField='sites'/>
-<HAnimSite USE='hanim_r_axilla_distal_pt' containerField='sites'/>
-<HAnimSite USE='hanim_r_axilla_posterior_folds_pt' containerField='sites'/>
-<HAnimSite USE='hanim_r_axilla_proximal_pt' containerField='sites'/>
-<HAnimSite USE='hanim_r_clavicale_pt' containerField='sites'/>
-<HAnimSite USE='hanim_adams_apple_pt' containerField='sites'/>
-<HAnimSite USE='hanim_glabella_pt' containerField='sites'/>
-<HAnimSite USE='hanim_l_ectocanthus_pt' containerField='sites'/>
-<HAnimSite USE='hanim_l_infraorbitale_pt' containerField='sites'/>
-<HAnimSite USE='hanim_l_tragion_pt' containerField='sites'/>
-<HAnimSite USE='hanim_nuchale_pt' containerField='sites'/>
-<HAnimSite USE='hanim_opisthocranion_pt' containerField='sites'/>
-<HAnimSite USE='hanim_r_ectocanthus_pt' containerField='sites'/>
-<HAnimSite USE='hanim_r_infraorbitale_pt' containerField='sites'/>
-<HAnimSite USE='hanim_r_tragion_pt' containerField='sites'/>
-<HAnimSite USE='hanim_sellion_pt' containerField='sites'/>
-<HAnimSite USE='hanim_skull_vertex_pt' containerField='sites'/>
-<HAnimSite USE='hanim_l_gonion_pt' containerField='sites'/>
-<HAnimSite USE='hanim_menton_pt' containerField='sites'/>
-<HAnimSite USE='hanim_r_gonion_pt' containerField='sites'/>
-<HAnimSite USE='hanim_supramenton_pt' containerField='sites'/>
-<HAnimSite USE='hanim_l_bideltoid_pt' containerField='sites'/>
-<HAnimSite USE='hanim_l_humeral_lateral_epicondyles_pt' containerField='sites'/>
-<HAnimSite USE='hanim_l_humeral_medial_epicondyles_pt' containerField='sites'/>
-<HAnimSite USE='hanim_l_olecranon_pt' containerField='sites'/>
-<HAnimSite USE='hanim_l_radial_styloid_pt' containerField='sites'/>
-<HAnimSite USE='hanim_l_radiale_pt' containerField='sites'/>
-<HAnimSite USE='hanim_l_ulnar_styloid_pt' containerField='sites'/>
-<HAnimSite USE='hanim_l_carpal_distal_phalanx_1_tip' containerField='sites'/>
-<HAnimSite USE='hanim_l_metacarpal_phalanx_2_pt' containerField='sites'/>
-<HAnimSite USE='hanim_l_carpal_distal_phalanx_2_tip' containerField='sites'/>
-<HAnimSite USE='hanim_l_dactylion_pt' containerField='sites'/>
-<HAnimSite USE='hanim_l_metacarpal_phalanx_3_pt' containerField='sites'/>
-<HAnimSite USE='hanim_l_carpal_distal_phalanx_3_tip' containerField='sites'/>
-<HAnimSite USE='hanim_l_metacarpal_phalanx_5_pt' containerField='sites'/>
-<HAnimSite USE='hanim_l_carpal_distal_phalanx_4_tip' containerField='sites'/>
-<HAnimSite USE='hanim_l_carpal_distal_phalanx_5_tip' containerField='sites'/>
-<HAnimSite USE='hanim_r_bideltoid_pt' containerField='sites'/>
-<HAnimSite USE='hanim_r_humeral_lateral_epicondyles_pt' containerField='sites'/>
-<HAnimSite USE='hanim_r_humeral_medial_epicondyles_pt' containerField='sites'/>
-<HAnimSite USE='hanim_r_olecranon_pt' containerField='sites'/>
-<HAnimSite USE='hanim_r_radial_styloid_pt' containerField='sites'/>
-<HAnimSite USE='hanim_r_radiale_pt' containerField='sites'/>
-<HAnimSite USE='hanim_r_ulnar_styloid_pt' containerField='sites'/>
-<HAnimSite USE='hanim_r_carpal_distal_phalanx_1_tip' containerField='sites'/>
-<HAnimSite USE='hanim_r_metacarpal_phalanx_2_pt' containerField='sites'/>
-<HAnimSite USE='hanim_r_carpal_distal_phalanx_2_tip' containerField='sites'/>
-<HAnimSite USE='hanim_r_dactylion_pt' containerField='sites'/>
-<HAnimSite USE='hanim_r_metacarpal_phalanx_3_pt' containerField='sites'/>
-<HAnimSite USE='hanim_r_carpal_distal_phalanx_3_tip' containerField='sites'/>
-<HAnimSite USE='hanim_r_metacarpal_phalanx_5_pt' containerField='sites'/>
-<HAnimSite USE='hanim_r_carpal_distal_phalanx_4_tip' containerField='sites'/>
-<HAnimSite USE='hanim_r_carpal_distal_phalanx_5_tip' containerField='sites'/>
+<HAnimSegment USE='hanim_sacrum' containerField='segments'/>
+<HAnimSegment USE='hanim_pelvis' containerField='segments'/>
+<HAnimSegment USE='hanim_l_thigh' containerField='segments'/>
+<HAnimSegment USE='hanim_l_calf' containerField='segments'/>
+<HAnimSegment USE='hanim_l_talus' containerField='segments'/>
+<HAnimSegment USE='hanim_l_navicular' containerField='segments'/>
+<HAnimSegment USE='hanim_l_cuneiform_1' containerField='segments'/>
+<HAnimSegment USE='hanim_l_metatarsal_1' containerField='segments'/>
+<HAnimSegment USE='hanim_l_tarsal_proximal_phalanx_1' containerField='segments'/>
+<HAnimSegment USE='hanim_l_cuneiform_2' containerField='segments'/>
+<HAnimSegment USE='hanim_l_metatarsal_2' containerField='segments'/>
+<HAnimSegment USE='hanim_l_tarsal_proximal_phalanx_2' containerField='segments'/>
+<HAnimSegment USE='hanim_l_tarsal_middle_phalanx_2' containerField='segments'/>
+<HAnimSegment USE='hanim_l_cuneiform_3' containerField='segments'/>
+<HAnimSegment USE='hanim_l_metatarsal_3' containerField='segments'/>
+<HAnimSegment USE='hanim_l_tarsal_proximal_phalanx_3' containerField='segments'/>
+<HAnimSegment USE='hanim_l_tarsal_middle_phalanx_3' containerField='segments'/>
+<HAnimSegment USE='hanim_l_calcaneus' containerField='segments'/>
+<HAnimSegment USE='hanim_l_cuboid' containerField='segments'/>
+<HAnimSegment USE='hanim_l_metatarsal_4' containerField='segments'/>
+<HAnimSegment USE='hanim_l_tarsal_proximal_phalanx_4' containerField='segments'/>
+<HAnimSegment USE='hanim_l_tarsal_middle_phalanx_4' containerField='segments'/>
+<HAnimSegment USE='hanim_l_metatarsal_5' containerField='segments'/>
+<HAnimSegment USE='hanim_l_tarsal_proximal_phalanx_5' containerField='segments'/>
+<HAnimSegment USE='hanim_l_tarsal_middle_phalanx_5' containerField='segments'/>
+<HAnimSegment USE='hanim_r_thigh' containerField='segments'/>
+<HAnimSegment USE='hanim_r_calf' containerField='segments'/>
+<HAnimSegment USE='hanim_r_talus' containerField='segments'/>
+<HAnimSegment USE='hanim_r_navicular' containerField='segments'/>
+<HAnimSegment USE='hanim_r_cuneiform_1' containerField='segments'/>
+<HAnimSegment USE='hanim_r_metatarsal_1' containerField='segments'/>
+<HAnimSegment USE='hanim_r_tarsal_proximal_phalanx_1' containerField='segments'/>
+<HAnimSegment USE='hanim_r_cuneiform_2' containerField='segments'/>
+<HAnimSegment USE='hanim_r_metatarsal_2' containerField='segments'/>
+<HAnimSegment USE='hanim_r_tarsal_proximal_phalanx_2' containerField='segments'/>
+<HAnimSegment USE='hanim_r_tarsal_middle_phalanx_2' containerField='segments'/>
+<HAnimSegment USE='hanim_r_cuneiform_3' containerField='segments'/>
+<HAnimSegment USE='hanim_r_metatarsal_3' containerField='segments'/>
+<HAnimSegment USE='hanim_r_tarsal_proximal_phalanx_3' containerField='segments'/>
+<HAnimSegment USE='hanim_r_tarsal_middle_phalanx_3' containerField='segments'/>
+<HAnimSegment USE='hanim_r_calcaneus' containerField='segments'/>
+<HAnimSegment USE='hanim_r_cuboid' containerField='segments'/>
+<HAnimSegment USE='hanim_r_metatarsal_4' containerField='segments'/>
+<HAnimSegment USE='hanim_r_tarsal_proximal_phalanx_4' containerField='segments'/>
+<HAnimSegment USE='hanim_r_tarsal_middle_phalanx_4' containerField='segments'/>
+<HAnimSegment USE='hanim_r_metatarsal_5' containerField='segments'/>
+<HAnimSegment USE='hanim_r_tarsal_proximal_phalanx_5' containerField='segments'/>
+<HAnimSegment USE='hanim_r_tarsal_middle_phalanx_5' containerField='segments'/>
+<HAnimSegment USE='hanim_l5' containerField='segments'/>
+<HAnimSegment USE='hanim_l4' containerField='segments'/>
+<HAnimSegment USE='hanim_l3' containerField='segments'/>
+<HAnimSegment USE='hanim_l2' containerField='segments'/>
+<HAnimSegment USE='hanim_l1' containerField='segments'/>
+<HAnimSegment USE='hanim_t12' containerField='segments'/>
+<HAnimSegment USE='hanim_t11' containerField='segments'/>
+<HAnimSegment USE='hanim_t10' containerField='segments'/>
+<HAnimSegment USE='hanim_t9' containerField='segments'/>
+<HAnimSegment USE='hanim_t8' containerField='segments'/>
+<HAnimSegment USE='hanim_t7' containerField='segments'/>
+<HAnimSegment USE='hanim_t6' containerField='segments'/>
+<HAnimSegment USE='hanim_t5' containerField='segments'/>
+<HAnimSegment USE='hanim_t4' containerField='segments'/>
+<HAnimSegment USE='hanim_t3' containerField='segments'/>
+<HAnimSegment USE='hanim_t2' containerField='segments'/>
+<HAnimSegment USE='hanim_t1' containerField='segments'/>
+<HAnimSegment USE='hanim_c7' containerField='segments'/>
+<HAnimSegment USE='hanim_c6' containerField='segments'/>
+<HAnimSegment USE='hanim_c5' containerField='segments'/>
+<HAnimSegment USE='hanim_c4' containerField='segments'/>
+<HAnimSegment USE='hanim_c3' containerField='segments'/>
+<HAnimSegment USE='hanim_c2' containerField='segments'/>
+<HAnimSegment USE='hanim_c1' containerField='segments'/>
+<HAnimSegment USE='hanim_skull' containerField='segments'/>
+<HAnimSegment USE='hanim_l_clavicle' containerField='segments'/>
+<HAnimSegment USE='hanim_l_scapula' containerField='segments'/>
+<HAnimSegment USE='hanim_l_upperarm' containerField='segments'/>
+<HAnimSegment USE='hanim_l_forearm' containerField='segments'/>
+<HAnimSegment USE='hanim_l_carpal' containerField='segments'/>
+<HAnimSegment USE='hanim_l_trapezium' containerField='segments'/>
+<HAnimSegment USE='hanim_l_metacarpal_1' containerField='segments'/>
+<HAnimSegment USE='hanim_l_carpal_proximal_phalanx_1' containerField='segments'/>
+<HAnimSegment USE='hanim_l_trapezoid' containerField='segments'/>
+<HAnimSegment USE='hanim_l_metacarpal_2' containerField='segments'/>
+<HAnimSegment USE='hanim_l_carpal_proximal_phalanx_2 ' containerField='segments'/>
+<HAnimSegment USE='hanim_l_carpal_middle_phalanx_2' containerField='segments'/>
+<HAnimSegment USE='hanim_l_capitate' containerField='segments'/>
+<HAnimSegment USE='hanim_l_metacarpal_3' containerField='segments'/>
+<HAnimSegment USE='hanim_l_carpal_proximal_phalanx_3' containerField='segments'/>
+<HAnimSegment USE='hanim_l_carpal_middle_phalanx_3' containerField='segments'/>
+<HAnimSegment USE='hanim_l_hamate' containerField='segments'/>
+<HAnimSegment USE='hanim_l_metacarpal_4' containerField='segments'/>
+<HAnimSegment USE='hanim_l_carpal_proximal_phalanx_4' containerField='segments'/>
+<HAnimSegment USE='hanim_l_carpal_middle_phalanx_4' containerField='segments'/>
+<HAnimSegment USE='hanim_l_metacarpal_5' containerField='segments'/>
+<HAnimSegment USE='hanim_l_carpal_proximal_phalanx_5' containerField='segments'/>
+<HAnimSegment USE='hanim_l_carpal_middle_phalanx_5' containerField='segments'/>
+<HAnimSegment USE='hanim_r_clavicle' containerField='segments'/>
+<HAnimSegment USE='hanim_r_scapula' containerField='segments'/>
+<HAnimSegment USE='hanim_r_upperarm' containerField='segments'/>
+<HAnimSegment USE='hanim_r_forearm' containerField='segments'/>
+<HAnimSegment USE='hanim_r_carpal' containerField='segments'/>
+<HAnimSegment USE='hanim_r_trapezium' containerField='segments'/>
+<HAnimSegment USE='hanim_r_metacarpal_1' containerField='segments'/>
+<HAnimSegment USE='hanim_r_carpal_proximal_phalanx_1' containerField='segments'/>
+<HAnimSegment USE='hanim_r_trapezoid' containerField='segments'/>
+<HAnimSegment USE='hanim_r_metacarpal_2' containerField='segments'/>
+<HAnimSegment USE='hanim_r_carpal_proximal_phalanx_2 ' containerField='segments'/>
+<HAnimSegment USE='hanim_r_carpal_middle_phalanx_2' containerField='segments'/>
+<HAnimSegment USE='hanim_r_capitate' containerField='segments'/>
+<HAnimSegment USE='hanim_r_metacarpal_3' containerField='segments'/>
+<HAnimSegment USE='hanim_r_carpal_proximal_phalanx_3' containerField='segments'/>
+<HAnimSegment USE='hanim_r_carpal_middle_phalanx_3' containerField='segments'/>
+<HAnimSegment USE='hanim_r_hamate' containerField='segments'/>
+<HAnimSegment USE='hanim_r_metacarpal_4' containerField='segments'/>
+<HAnimSegment USE='hanim_r_carpal_proximal_phalanx_4' containerField='segments'/>
+<HAnimSegment USE='hanim_r_carpal_middle_phalanx_4' containerField='segments'/>
+<HAnimSegment USE='hanim_r_metacarpal_5' containerField='segments'/>
+<HAnimSegment USE='hanim_r_carpal_proximal_phalanx_5' containerField='segments'/>
+<HAnimSegment USE='hanim_r_carpal_middle_phalanx_5' containerField='segments'/>
 </HAnimHumanoid>
 </Scene>
 </X3D>

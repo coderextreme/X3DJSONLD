@@ -31,16 +31,17 @@
             "@level":1
           },
           {
-            "@name":"Shape",
-            "@level":4
-          },
-          {
             "@name":"Grouping",
             "@level":3
           },
           {
             "@name":"Core",
             "@level":1
+          }
+        ],
+        "-children":[
+          {
+            "#comment":"<component name='Shape' level='4'></component>"
           }
         ],
         "meta": [
@@ -66,7 +67,7 @@
           },
           {
             "@name":"translated",
-            "@content":"14 September 2023"
+            "@content":"18 February 2024"
           },
           {
             "@name":"generator",

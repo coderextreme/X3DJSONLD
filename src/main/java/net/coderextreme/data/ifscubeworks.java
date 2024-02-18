@@ -36,13 +36,22 @@ import org.web3d.x3d.jsail.Texturing.*;
 import org.web3d.x3d.jsail.Time.*;
 import org.web3d.x3d.jsail.VolumeRendering.*;
 import org.web3d.x3d.jsail.fields.*;
-public class ifscubeworks {
+import java.util.ArrayList;
+import java.util.List;
+import net.coderextreme.X3DRoots;
+public class ifscubeworks implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    X3D model = new ifscubeworks().initialize();
+    X3D model = new ifscubeworks().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
+    model.toFileX3D("../data/ifscubeworks.new.java.x3d");
     model.toFileJSON("../data/ifscubeworks.new.json");
+    }
+    public List<X3D> getRootNodeList() {
+    	List<X3D> list = new ArrayList<X3D>(1);
+    	list.add(initialize());
+    	return list;
     }
     public X3D initialize() {
       X3D X3D0 =  new X3D().setProfile("Interchange").setVersion("3.3")
@@ -81,17 +90,17 @@ private class MFInt322 {
 }
 private class MFVec3f3 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f ,0f ,1f ,0f ,1f ,1f ,1f ,1f ,1f ,1f ,0f ,1f });
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0,0,1,0,1,1,1,1,1,1,0,1});
   }
 }
 private class MFVec3f4 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {1f ,0f ,0f ,-1f ,0f ,0f ,0f ,1f ,0f ,0f ,0f ,-1f ,0f ,-1f ,0f ,0f ,0f ,1f });
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {1,0,0,-1,0,0,0,1,0,0,0,-1,0,-1,0,0,0,1});
   }
 }
 private class MFColor5 {
   private org.web3d.x3d.jsail.fields.MFColor getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0f ,1f ,0f });
+    return new org.web3d.x3d.jsail.fields.MFColor(new double[] {0,1,0});
   }
 }
 }

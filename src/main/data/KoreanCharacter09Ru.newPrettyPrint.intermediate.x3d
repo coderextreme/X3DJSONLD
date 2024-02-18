@@ -18,14 +18,17 @@
     <meta content='Suwon University HAnim Editor' name='generator'/>
     <meta content='Gnu Image Manipulation Program, http://www.gimp.org' name='generator'/>
     <meta content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' name='generator'/>
+    <meta content='../license.html' name='license'/>
   </head>
   <Scene>
     <WorldInfo title='KoreanCharacter09Ru.x3d'/>
     <NavigationInfo avatarSize='0.25 1.6 0.75' speed='1.5' transitionType='"LINEAR"' type='"EXAMINE" "ANY"'/>
     <Viewpoint centerOfRotation='0 1 0' description='Ru' position='0 1 3'/>
     <HAnimHumanoid DEF='hanim_Ru' name='Ru' scale='0.0225 0.0225 0.0225' version='2.0'>
+      <!-- original HAnimHumanoid info='"authorName=Chul Hee Jung and Myeong Won Lee" "authorEmail=myeongwonlee@gmail.com" "creationDate=31 March 2011" "humanoidVersion=2.0" "gender=male" "height=1.5"' -->
       <MetadataSet name='HAnimHumanoid.info' containerField='metadata' reference='https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid'>
         <MetadataString name='humanoidVersion' value='"2.0"'/>
+        <MetadataFloat name='height' value='1.5'/>
       </MetadataSet>
       <HAnimJoint USE='hanim_humanoid_root'/>
       <HAnimJoint USE='hanim_sacroiliac'/>
@@ -37,8 +40,8 @@
       <HAnimJoint USE='hanim_r_hip'/>
       <HAnimJoint USE='hanim_l_knee'/>
       <HAnimJoint USE='hanim_r_knee'/>
-      <HAnimJoint USE='hanim_l_metatarsophalangeal_1'/>
-      <HAnimJoint USE='hanim_r_metatarsophalangeal_1'/>
+      <HAnimJoint USE='hanim_l_metatarsophalangeal_2'/>
+      <HAnimJoint USE='hanim_r_metatarsophalangeal_2'/>
       <HAnimJoint USE='hanim_l_radiocarpal'/>
       <HAnimJoint USE='hanim_r_radiocarpal'/>
       <HAnimJoint USE='hanim_l_shoulder'/>
@@ -57,8 +60,8 @@
       <HAnimSegment USE='hanim_r_forearm'/>
       <HAnimSegment USE='hanim_l_talus'/>
       <HAnimSegment USE='hanim_r_talus'/>
-      <HAnimSegment USE='hanim_l_tarsal_proximal_phalanx_1'/>
-      <HAnimSegment USE='hanim_r_tarsal_proximal_phalanx_1'/>
+      <HAnimSegment USE='hanim_l_tarsal_proximal_phalanx_2'/>
+      <HAnimSegment USE='hanim_r_tarsal_proximal_phalanx_2'/>
       <HAnimSegment USE='hanim_l_thigh'/>
       <HAnimSegment USE='hanim_r_thigh'/>
       <HAnimSegment USE='hanim_l_upperarm'/>
@@ -94,6 +97,7 @@
             </Transform>
           </HAnimSegment>
           <HAnimJoint DEF='hanim_l_knee' name='l_knee' center='3.931 18.23 -1.935' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+            <!-- weight values go here in HAnimJoint, or within animating HAnimDisplacer -->
             <HAnimSegment DEF='hanim_l_calf' name='l_calf' momentsOfInertia='0 0 0 0 0 0 0 0 0'>
               <Transform translation='3.931 18.23 -1.935'>
                 <Shape>
@@ -123,8 +127,8 @@
                   </Shape>
                 </Transform>
               </HAnimSegment>
-              <HAnimJoint DEF='hanim_l_metatarsophalangeal_1' name='l_metatarsophalangeal_2' center='4.077 3.104 -0.9239' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
-                <HAnimSegment DEF='hanim_l_tarsal_proximal_phalanx_1' name='l_tarsal_proximal_phalanx_2' momentsOfInertia='0 0 0 0 0 0 0 0 0'>
+              <HAnimJoint DEF='hanim_l_metatarsophalangeal_2' name='l_metatarsophalangeal_2' center='4.077 3.104 -0.9239' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+                <HAnimSegment DEF='hanim_l_tarsal_proximal_phalanx_2' name='l_tarsal_proximal_phalanx_2' momentsOfInertia='0 0 0 0 0 0 0 0 0'>
                   <Transform translation='4.077 3.104 -0.9239'>
                     <Shape>
                       <Appearance>
@@ -187,8 +191,8 @@
                   </Shape>
                 </Transform>
               </HAnimSegment>
-              <HAnimJoint DEF='hanim_r_metatarsophalangeal_1' name='r_metatarsophalangeal_2' center='-4.077 3.104 -0.9239' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
-                <HAnimSegment DEF='hanim_r_tarsal_proximal_phalanx_1' name='r_tarsal_proximal_phalanx_2' momentsOfInertia='0 0 0 0 0 0 0 0 0'>
+              <HAnimJoint DEF='hanim_r_metatarsophalangeal_2' name='r_metatarsophalangeal_2' center='-4.077 3.104 -0.9239' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+                <HAnimSegment DEF='hanim_r_tarsal_proximal_phalanx_2' name='r_tarsal_proximal_phalanx_2' momentsOfInertia='0 0 0 0 0 0 0 0 0'>
                   <Transform translation='-4.077 3.104 -0.9239'>
                     <Shape>
                       <Appearance>

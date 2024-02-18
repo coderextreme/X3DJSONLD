@@ -9,7 +9,7 @@
 <Scene><Viewpoint position="0 0 5" description="Only Viewpoint"></Viewpoint>
 <Background skyColor="0.4 0.4 0.4"></Background>
 <Transform DEF="G1"><Transform DEF="DECLpoint_INSTANCE_node"><Shape><Sphere radius="0.1"></Sphere>
-<Appearance><Material diffuseColor="1 0 0"></Material>
+<Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 0 0"></Material>
 </Appearance>
 </Shape>
 <PositionInterpolator DEF="DECLpoint_INSTANCE_PI1" key="0 1" keyValue="0 0 0 0 5 0"></PositionInterpolator>
@@ -32,7 +32,7 @@
 </Transform>
 </Transform>
 <Transform DEF="G2"><Transform DEF="DECLpoint_INSTANCE1000_node"><Shape><Sphere radius="0.1"></Sphere>
-<Appearance><Material diffuseColor="1 0 0"></Material>
+<Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 0 0"></Material>
 </Appearance>
 </Shape>
 <PositionInterpolator DEF="DECLpoint_INSTANCE1000_PI1" key="0 1" keyValue="0 0 0 0 5 0"></PositionInterpolator>
@@ -54,7 +54,7 @@
 <ROUTE fromNode="DECLpoint_INSTANCE1000_MB1" fromField="translation_changed" toNode="DECLpoint_INSTANCE1000_node" toField="set_translation"></ROUTE>
 </Transform>
 </Transform>
-<Transform DEF="transC1"><Transform DEF="rotscaleC1"><Shape><Appearance><Material diffuseColor="0.2 0.7 0.7" transparency="0.5"></Material>
+<Transform DEF="transC1"><Transform DEF="rotscaleC1"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0.2 0.7 0.7" transparency="0.5"></Material>
 </Appearance>
 <Cylinder radius="0.05"></Cylinder>
 </Shape>

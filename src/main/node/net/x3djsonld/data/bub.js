@@ -75,7 +75,7 @@ bub.prototype = {
     .addComponent((new autoclass.component()).setName("CubeMapTexturing").setLevel(1))
     .addComponent((new autoclass.component()).setName("Texturing").setLevel(1))
     .addComponent((new autoclass.component()).setName("Rendering").setLevel(1))
-    .addComponent((new autoclass.component()).setName("Shape").setLevel(4))
+    .addComments("<component name='Shape' level='4'></component>")
     .addComponent((new autoclass.component()).setName("Grouping").setLevel(3))
     .addComponent((new autoclass.component()).setName("Core").setLevel(1))
     .addMeta((new autoclass.meta()).setName("title").setContent("bub.x3d"))

@@ -4,24 +4,24 @@ from x3d import *
 print("-->")
 import json
 model = (
-X3D(profile="Immersive", version="3.3", 
-head=head(
+X3D(profile="Immersive", version="4.0", 
+head=Pyhead(
 children=[
-meta(name="title", content="BoxEm.x3d"),
-meta(name="creator", content="John Carlson"),
-meta(name="generator", content="manual"),
-meta(name="identifier", content="https://coderextreme.net/X3DJSONLD/src/main/data/box.x3d"),
-meta(name="description", content="3 boxes"),
-meta(name="translated", content="02 September 2023"),
-meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
-meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
+Pymeta(name="title", content="BoxEm.x3d"),
+Pymeta(name="creator", content="John Carlson"),
+Pymeta(name="generator", content="manual"),
+Pymeta(name="identifier", content="https://coderextreme.net/X3DJSONLD/src/main/data/box.x3d"),
+Pymeta(name="description", content="3 boxes"),
+Pymeta(name="translated", content="30 December 2023"),
+Pymeta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
+Pymeta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
-Scene=Scene(children=[
+Scene=PyScene(children=[
 NavigationInfo(type="\"EXAMINE\""),
 Viewpoint(description="Cubes on Fire", position=((0,0,12))),
 ProtoDeclare(name="anyShape", 
-ProtoInterface=ProtoInterface(field=[field(name="xtranslation", accessType="inputOutput", type="SFVec3f", value=(0,0,0)),
-field(name="myShape", accessType="inputOutput", type="MFNode", children=[
+ProtoInterface=PyProtoInterface(field=[Pyfield(name="xtranslation", accessType="inputOutput", type="SFVec3f", value=(0,0,0)),
+Pyfield(name="myShape", accessType="inputOutput", type="MFNode", children=[
 Shape(
 geometry=
 Sphere(), 
@@ -30,14 +30,14 @@ Appearance(
 material=
 Material(diffuseColor=((1,1,1)))))])
 ]), 
-ProtoBody=ProtoBody(children=[
+ProtoBody=PyProtoBody(children=[
 Transform(
-IS=IS(connect=[connect(nodeField="translation", protoField="xtranslation"),
-connect(nodeField="children", protoField="myShape")
+IS=PyIS(connect=[Pyconnect(nodeField="translation", protoField="xtranslation"),
+Pyconnect(nodeField="children", protoField="myShape")
 ]))])),
 ProtoDeclare(name="three", 
-ProtoInterface=ProtoInterface(field=[field(name="ytranslation", accessType="inputOutput", type="SFVec3f", value=(0,0,0)),
-field(name="myShape", accessType="inputOutput", type="MFNode", children=[
+ProtoInterface=PyProtoInterface(field=[Pyfield(name="ytranslation", accessType="inputOutput", type="SFVec3f", value=(0,0,0)),
+Pyfield(name="myShape", accessType="inputOutput", type="MFNode", children=[
 Shape(
 geometry=
 Cylinder(), 
@@ -46,24 +46,24 @@ Appearance(
 material=
 Material(diffuseColor=((1,1,1)))))])
 ]), 
-ProtoBody=ProtoBody(children=[
+ProtoBody=PyProtoBody(children=[
 Transform(
-IS=IS(connect=[connect(nodeField="translation", protoField="ytranslation")
+IS=PyIS(connect=[Pyconnect(nodeField="translation", protoField="ytranslation")
 ]), children=[
-ProtoInstance(name="anyShape", fieldValue=[fieldValue(name="xtranslation", value=[0,0,0])
+ProtoInstance(name="anyShape", fieldValue=[PyfieldValue(name="xtranslation", value=[0,0,0])
 ], 
-IS=IS(connect=[connect(nodeField="myShape", protoField="myShape")
+IS=PyIS(connect=[Pyconnect(nodeField="myShape", protoField="myShape")
 ])),
-ProtoInstance(name="anyShape", fieldValue=[fieldValue(name="xtranslation", value=[2,0,0])
+ProtoInstance(name="anyShape", fieldValue=[PyfieldValue(name="xtranslation", value=[2,0,0])
 ], 
-IS=IS(connect=[connect(nodeField="myShape", protoField="myShape")
+IS=PyIS(connect=[Pyconnect(nodeField="myShape", protoField="myShape")
 ])),
-ProtoInstance(name="anyShape", fieldValue=[fieldValue(name="xtranslation", value=[-2,0,0])
+ProtoInstance(name="anyShape", fieldValue=[PyfieldValue(name="xtranslation", value=[-2,0,0])
 ], 
-IS=IS(connect=[connect(nodeField="myShape", protoField="myShape")
+IS=PyIS(connect=[Pyconnect(nodeField="myShape", protoField="myShape")
 ]))])])),
-ProtoInstance(name="three", DEF="threepi", fieldValue=[fieldValue(name="ytranslation", value=[0,0,0]),
-fieldValue(name="myShape", children=[
+ProtoInstance(name="three", DEF="threepi", fieldValue=[PyfieldValue(name="ytranslation", value=[0,0,0]),
+PyfieldValue(name="myShape", children=[
 Shape(DEF="box", 
 geometry=
 Box(size=((1,1,1))), 

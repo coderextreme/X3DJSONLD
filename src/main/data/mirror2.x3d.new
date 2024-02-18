@@ -6,10 +6,9 @@
 <component name="CubeMapTexturing" level="1"></component>
 <component name="Texturing" level="1"></component>
 <component name="Rendering" level="1"></component>
-<component name="Shape" level="4"></component>
 <component name="Grouping" level="3"></component>
 <component name="Core" level="1"></component>
-<meta name="title" content="mirror2.x3d"></meta>
+<!--<component name='Shape' level='4'></component>--><meta name="title" content="mirror2.x3d"></meta>
 <meta name="creator" content="John Carlson"></meta>
 <meta name="generator" content="manual"></meta>
 <meta name="identifier" content="https://coderextreme.net/X3DJSONLD/src/main/data/mirror2.x3d"></meta>
@@ -17,7 +16,7 @@
 </head>
 <Scene><Viewpoint position="0 5 100" description="Switch background and images texture"></Viewpoint>
 <Background DEF="cube" leftUrl="&quot;../resources/images/all_probes/beach_cross/beach_left.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png&quot;" rightUrl="&quot;../resources/images/all_probes/beach_cross/beach_right.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png&quot;" frontUrl="&quot;../resources/images/all_probes/beach_cross/beach_front.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png&quot;" backUrl="&quot;../resources/images/all_probes/beach_cross/beach_back.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png&quot;" topUrl="&quot;../resources/images/all_probes/beach_cross/beach_top.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png&quot;" bottomUrl="&quot;../resources/images/all_probes/beach_cross/beach_bottom.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png&quot;"></Background>
-<Transform><Shape><Appearance><Material diffuseColor="0.7 0.7 0.7" specularColor="0.5 0.5 0.5"></Material>
+<Transform><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0.7 0.7 0.7" specularColor="0.5 0.5 0.5"></Material>
 <ComposedCubeMapTexture containerField="texture"><ImageTexture containerField="back" DEF="backShader" url="&quot;../resources/images/all_probes/beach_cross/beach_back.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png&quot;"></ImageTexture>
 <ImageTexture containerField="bottom" DEF="bottomShader" url="&quot;../resources/images/all_probes/beach_cross/beach_bottom.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png&quot;"></ImageTexture>
 <ImageTexture containerField="front" DEF="frontShader" url="&quot;../resources/images/all_probes/beach_cross/beach_front.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png&quot;"></ImageTexture>

@@ -1,9 +1,9 @@
-#include "/c/x3d-code/www.web3d.org/x3d/languages/c/X3DLib/X3DLib.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/c/Concretes.h"
 void main(int argc, char ** argv) {
 Browser browser = X3D.getBrowser();
 X3D X3D0;
 X3D0.profile = "Immersive";
-X3D0.version = "4.0";
+X3D0.version = "3.3";
 head head1 = createNode("head");
 meta meta2 = createNode("meta");
 meta2.name = "creator";
@@ -24,7 +24,7 @@ head1.meta[2] = meta4;
 
 meta meta5 = createNode("meta");
 meta5.name = "identifier";
-meta5.content = "https://coderextreme.net/X3DJSONLD/text.x3d";
+meta5.content = "https://coderextreme.net/X3DJSONLD/src/main/data/text.x3d";
 head1.meta[3] = meta5;
 
 meta meta6 = createNode("meta");
@@ -54,9 +54,9 @@ Appearance13.material = Material14;
 
 Shape10.appearance = Appearance13;
 
-Transform9.children = new MFNode();
+Transform9.child = new undefined();
 
-Transform9.children[0] = Shape10;
+Transform9.child[0] = Shape10;
 
 Shape Shape15 = createNode("Shape");
 Text Text16 = createNode("Text");
@@ -72,7 +72,7 @@ Appearance18.material = Material19;
 
 Shape15.appearance = Appearance18;
 
-Transform9.children[1] = Shape15;
+Transform9.child[1] = Shape15;
 
 Shape Shape20 = createNode("Shape");
 Text Text21 = createNode("Text");
@@ -88,7 +88,7 @@ Appearance23.material = Material24;
 
 Shape20.appearance = Appearance23;
 
-Transform9.children[2] = Shape20;
+Transform9.child[2] = Shape20;
 
 Script Script25 = createNode("Script");
 field field26 = createNode("field");

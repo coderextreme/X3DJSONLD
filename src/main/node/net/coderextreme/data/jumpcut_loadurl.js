@@ -13,7 +13,7 @@ ConfigurationProperties.showDefaultAttributes = false;
 ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;
 ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
-      var X3D0 =  (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
+      var X3D0 =  (new autoclass.X3D()).setProfile("Immersive").setVersion("3.0")
       .setHead((new autoclass.head())
         .addMeta((new autoclass.meta()).setName("title").setContent("jumpcut_loadurl.x3d"))
         .addMeta((new autoclass.meta()).setName("reference").setContent("http://www.nist.gov/vrml.html"))
@@ -23,16 +23,18 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addMeta((new autoclass.meta()).setName("info").setContent("Correct definition and compliance of this conformance scene is maintained by the X3D Working Group, https://www.web3d.org/working-groups/x3d"))
         .addMeta((new autoclass.meta()).setName("translator").setContent("Michael Kass NIST, Don Brutzman NPS"))
         .addMeta((new autoclass.meta()).setName("translated").setContent("21 January 2001"))
-        .addMeta((new autoclass.meta()).setName("modified").setContent("Sat, 30 Dec 2023 07:50:03 GMT"))
+        .addMeta((new autoclass.meta()).setName("modified").setContent("20 October 2019"))
         .addMeta((new autoclass.meta()).setName("description").setContent("Test jumpcut Viewpoint transition using Script loadUrl method. A NavigationInfo type of ANY is NOT included in the NavigationInfo node field in this world. Consequently, a Script node with a call to the \"loadURL\" method, with a url corresponding to the MFString \"Top_View\" (the name of a Viewpoint in this world) should create a \"jump cut\" transition of views when the Box geometry in this world is indicated by the pointing device. As a result, indicating the Box geometry should result in a Viewpoint transition to the top view of the Box geometry."))
         .addMeta((new autoclass.meta()).setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.x3d"))
-        .addMeta((new autoclass.meta()).setName("generator").setContent("Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html")))
+        .addMeta((new autoclass.meta()).setName("generator").setContent("Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"))
+        .addMeta((new autoclass.meta()).setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
+        .addMeta((new autoclass.meta()).setName("license").setContent("../../license.html")))
       .setScene((new autoclass.Scene())
         .addChild((new autoclass.WorldInfo()).setTitle("jumpcut_loadurl.x3d"))
-        .addChild((new autoclass.Background()).setSkyColor(java.newArray("float", [java.newFloat(0f), java.newFloat(0f), java.newFloat(1f)])).setGroundAngle(java.newArray("float", [java.newFloat(1.57f)])).setGroundColor(java.newArray("float", [java.newFloat(0f), java.newFloat(0.5f), java.newFloat(0f), java.newFloat(0f), java.newFloat(0.5f), java.newFloat(0f)])))
+        .addChild((new autoclass.Background()).setGroundAngle(java.newArray("float", [java.newFloat(1.57)])).setGroundColor(java.newArray("float", [java.newFloat(0), java.newFloat(0.5), java.newFloat(0), java.newFloat(0), java.newFloat(0.5), java.newFloat(0)])).setSkyColor(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(1)])))
         .addChild((new autoclass.NavigationInfo()).setType(java.newArray("java.lang.String", ["EXAMINE","WALK","FLY","ANY"])))
         .addChild((new autoclass.Viewpoint()).setDEF("Front_View").setDescription("Front View"))
-        .addChild((new autoclass.Viewpoint()).setDEF("Top_View").setDescription("Top View").setPosition(java.newArray("float", [java.newFloat(0f), java.newFloat(10f), java.newFloat(0f)])).setOrientation(java.newArray("float", [java.newFloat(1f), java.newFloat(0f), java.newFloat(0f), java.newFloat(-1.57f)])))
+        .addChild((new autoclass.Viewpoint()).setDEF("Top_View").setDescription("Top View").setOrientation(java.newArray("float", [java.newFloat(1), java.newFloat(0), java.newFloat(0), java.newFloat(-1.57)])).setPosition(java.newArray("float", [java.newFloat(0), java.newFloat(10), java.newFloat(0)])))
         .addChild((new autoclass.TouchSensor()).setDEF("STARTER").setDescription("touch to activate"))
         .addChild((new autoclass.Transform()).setDEF("ROOT")
           .addChild((new autoclass.Shape())
@@ -40,9 +42,9 @@ ConfigurationProperties.setStripTrailingZeroes(true);
               .setMaterial((new autoclass.Material())))
             .setGeometry((new autoclass.Box()))))
         .addChild((new autoclass.Script()).setDEF("MYSCRIPT").setUrl(java.newArray("java.lang.String", ["jumpcut_loadurl.js","https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.js"]))
-          .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFSTRING).setAccessType(autoclass.field.ACCESSTYPE_INITIALIZEONLY).setName("myParameter").setValue("\"Top_View\""))
-          .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFSTRING).setAccessType(autoclass.field.ACCESSTYPE_INITIALIZEONLY).setName("myUrl").setValue("\"jumpcut_loadurl.x3d#Top_View\" \"https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.x3d#Top_View\" \"jumpcut_loadurl.wrl#Top_View\" \"https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.wrl#Top_View\""))
-          .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFBOOL).setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY).setName("trigger_event")))
-        .addChild((new autoclass.ROUTE()).setFromNode("STARTER").setFromField("isActive").setToNode("MYSCRIPT").setToField("trigger_event")))      ;
+          .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFSTRING).setName("myParameter").setAccessType(autoclass.field.ACCESSTYPE_INITIALIZEONLY).setValue("\"Top_View\""))
+          .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFSTRING).setName("myUrl").setAccessType(autoclass.field.ACCESSTYPE_INITIALIZEONLY).setValue("\"jumpcut_loadurl.x3d#Top_View\" \"https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.x3d#Top_View\" \"jumpcut_loadurl.wrl#Top_View\" \"https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.wrl#Top_View\""))
+          .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFBOOL).setName("trigger_event").setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY)))
+        .addChild((new autoclass.ROUTE()).setFromField("isActive").setFromNode("STARTER").setToField("trigger_event").setToNode("MYSCRIPT")))      ;
     X3D0.toFileX3D("../data/jumpcut_loadurl.new.node.x3d");
     process.exit(0);

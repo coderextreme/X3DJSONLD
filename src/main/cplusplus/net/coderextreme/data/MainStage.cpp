@@ -14,253 +14,258 @@ group->addChildren(X3D0);
 X3D0->setProfile("Interchange");
 X3D0->setVersion("4.0");
 Chead* head1 = new Chead();
-Cmeta* meta2 = new Cmeta();
-meta2->setName("title");
-meta2->setContent("MainStage.x3d");
-head1->addMeta(*meta2);
+Ccomponent* component2 = new Ccomponent();
+component2->setName("HAnim");
+component2->setLevel(1);
+head1->addComponent(*component2);
 
 Cmeta* meta3 = new Cmeta();
-meta3->setName("description");
-meta3->setContent("Main stage for HAnim scene Winter and Spring.");
+meta3->setName("title");
+meta3->setContent("MainStage.x3d");
 head1->addMeta(*meta3);
 
 Cmeta* meta4 = new Cmeta();
-meta4->setName("creator");
-meta4->setContent("Joe Williams");
+meta4->setName("description");
+meta4->setContent("Main stage for HAnim scene Winter and Spring.");
 head1->addMeta(*meta4);
 
 Cmeta* meta5 = new Cmeta();
-meta5->setName("translator");
-meta5->setContent("Joe Williams and Don Brutzman");
+meta5->setName("creator");
+meta5->setContent("Joe Williams");
 head1->addMeta(*meta5);
 
 Cmeta* meta6 = new Cmeta();
-meta6->setName("created");
-meta6->setContent("25 May 2023");
+meta6->setName("translator");
+meta6->setContent("Joe Williams and Don Brutzman");
 head1->addMeta(*meta6);
 
 Cmeta* meta7 = new Cmeta();
-meta7->setName("modified");
-meta7->setContent("27 May 2023");
+meta7->setName("created");
+meta7->setContent("25 May 2023");
 head1->addMeta(*meta7);
 
 Cmeta* meta8 = new Cmeta();
-meta8->setName("reference");
-meta8->setContent("originals/0MainStageScene0525.x3dv");
+meta8->setName("modified");
+meta8->setContent("27 May 2023");
 head1->addMeta(*meta8);
 
 Cmeta* meta9 = new Cmeta();
-meta9->setName("identifier");
-meta9->setContent("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/WinterAndSpring/MainStage.x3d");
+meta9->setName("reference");
+meta9->setContent("originals/0MainStageScene0525.x3dv");
 head1->addMeta(*meta9);
 
 Cmeta* meta10 = new Cmeta();
-meta10->setName("generator");
-meta10->setContent("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit");
+meta10->setName("identifier");
+meta10->setContent("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/WinterAndSpring/MainStage.x3d");
 head1->addMeta(*meta10);
 
-Ccomponent* component11 = new Ccomponent();
-component11->setName("HAnim");
-component11->setLevel(1);
-head1->addComponent(*component11);
+Cmeta* meta11 = new Cmeta();
+meta11->setName("generator");
+meta11->setContent("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit");
+head1->addMeta(*meta11);
+
+Cmeta* meta12 = new Cmeta();
+meta12->setName("license");
+meta12->setContent("../license.html");
+head1->addMeta(*meta12);
 
 X3D0->setHead(*head1);
 
-CScene* Scene12 = new CScene();
-CWorldInfo* WorldInfo13 = (CWorldInfo *)(m_pScene.createNode("WorldInfo"));
-WorldInfo13->setTitle("MainStage.x3d");
-group->addChildren(*WorldInfo13);
+CScene* Scene13 = new CScene();
+CWorldInfo* WorldInfo14 = (CWorldInfo *)(m_pScene.createNode("WorldInfo"));
+WorldInfo14->setTitle("MainStage.x3d");
+group->addChildren(*WorldInfo14);
 
-CNavigationInfo* NavigationInfo14 = (CNavigationInfo *)(m_pScene.createNode("NavigationInfo"));
-NavigationInfo14->setHeadlight(False);
-group->addChildren(*NavigationInfo14);
-
-CDirectionalLight* DirectionalLight15 = (CDirectionalLight *)(m_pScene.createNode("DirectionalLight"));
-DirectionalLight15->setGlobal(True);
-DirectionalLight15->setAmbientIntensity(1);
-DirectionalLight15->setDirection(new float[3]{-0.5,-0.5,-0.5});
-group->addChildren(*DirectionalLight15);
+CNavigationInfo* NavigationInfo15 = (CNavigationInfo *)(m_pScene.createNode("NavigationInfo"));
+NavigationInfo15->setHeadlight(False);
+group->addChildren(*NavigationInfo15);
 
 CDirectionalLight* DirectionalLight16 = (CDirectionalLight *)(m_pScene.createNode("DirectionalLight"));
-DirectionalLight16->setGlobal(True);
 DirectionalLight16->setAmbientIntensity(1);
-DirectionalLight16->setDirection(new float[3]{-1,-1,-1});
+DirectionalLight16->setDirection(new float[3]{-0.5,-0.5,-0.5});
+DirectionalLight16->setGlobal(True);
 group->addChildren(*DirectionalLight16);
 
 CDirectionalLight* DirectionalLight17 = (CDirectionalLight *)(m_pScene.createNode("DirectionalLight"));
-DirectionalLight17->setGlobal(True);
-DirectionalLight17->setIntensity(0.5);
 DirectionalLight17->setAmbientIntensity(1);
-DirectionalLight17->setDirection(new float[3]{1,1,-1});
+DirectionalLight17->setDirection(new float[3]{-1,-1,-1});
+DirectionalLight17->setGlobal(True);
 group->addChildren(*DirectionalLight17);
 
-CViewpoint* Viewpoint18 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
-Viewpoint18->setDEF("Scene_StageFrontViewFar");
-Viewpoint18->setDescription("hanim_Stage Front View");
-Viewpoint18->setPosition(new float[3]{0,4,10});
-Viewpoint18->setOrientation(new float[4]{1,0,0,-0.449999988});
-group->addChildren(*Viewpoint18);
+CDirectionalLight* DirectionalLight18 = (CDirectionalLight *)(m_pScene.createNode("DirectionalLight"));
+DirectionalLight18->setAmbientIntensity(1);
+DirectionalLight18->setDirection(new float[3]{1,1,-1});
+DirectionalLight18->setGlobal(True);
+DirectionalLight18->setIntensity(0.5);
+group->addChildren(*DirectionalLight18);
 
 CViewpoint* Viewpoint19 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
-Viewpoint19->setDEF("Scene_InclinedView");
-Viewpoint19->setDescription("hanim_Inclined View");
-Viewpoint19->setPosition(new float[3]{2.62,1.05,4.06});
-Viewpoint19->setOrientation(new float[4]{-0.112999998,0.992999971,0.034699999,0.671000004});
+Viewpoint19->setDEF("Scene_StageFrontViewFar");
+Viewpoint19->setDescription("hanim_Stage Front View");
+Viewpoint19->setOrientation(new float[4]{1,0,0,-0.449999988});
+Viewpoint19->setPosition(new float[3]{0,4,10});
 group->addChildren(*Viewpoint19);
 
 CViewpoint* Viewpoint20 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
-Viewpoint20->setDEF("Scene_StageFrontView");
-Viewpoint20->setDescription("hanim_Stage Front View");
-Viewpoint20->setPosition(new float[3]{0,1,5});
+Viewpoint20->setDEF("Scene_InclinedView");
+Viewpoint20->setDescription("hanim_Inclined View");
+Viewpoint20->setOrientation(new float[4]{-0.112999998,0.992999971,0.034699999,0.671000004});
+Viewpoint20->setPosition(new float[3]{2.619999886,1.049999952,4.059999943});
 group->addChildren(*Viewpoint20);
 
 CViewpoint* Viewpoint21 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
-Viewpoint21->setDEF("Scene_FeetStageBottomView");
-Viewpoint21->setDescription("hanim_feet View");
-Viewpoint21->setPosition(new float[3]{0,-10,0});
-Viewpoint21->setOrientation(new float[4]{1,0,0,1.570000052});
+Viewpoint21->setDEF("Scene_StageFrontView");
+Viewpoint21->setDescription("hanim_Stage Front View");
+Viewpoint21->setPosition(new float[3]{0,1,5});
 group->addChildren(*Viewpoint21);
 
 CViewpoint* Viewpoint22 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
-Viewpoint22->setDEF("Scene_HeadTopView");
-Viewpoint22->setDescription("hanim_Head Top View");
-Viewpoint22->setPosition(new float[3]{0,15,0});
-Viewpoint22->setOrientation(new float[4]{1,0,0,-1.570000052});
+Viewpoint22->setDEF("Scene_FeetStageBottomView");
+Viewpoint22->setDescription("hanim_feet View");
+Viewpoint22->setOrientation(new float[4]{1,0,0,1.570000052});
+Viewpoint22->setPosition(new float[3]{0,-10,0});
 group->addChildren(*Viewpoint22);
 
 CViewpoint* Viewpoint23 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
-Viewpoint23->setDEF("Scene_TopFrontCloseView");
+Viewpoint23->setDEF("Scene_HeadTopView");
 Viewpoint23->setDescription("hanim_Head Top View");
-Viewpoint23->setPosition(new float[3]{0,8,3});
-Viewpoint23->setOrientation(new float[4]{1,0,0,-1.100000024});
+Viewpoint23->setOrientation(new float[4]{1,0,0,-1.570000052});
+Viewpoint23->setPosition(new float[3]{0,15,0});
 group->addChildren(*Viewpoint23);
 
-CGroup* Group24 = (CGroup *)(m_pScene.createNode("Group"));
-Group24->setDEF("HAnimStage");
-CTransform* Transform25 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform25->setDEF("cordsysfloor");
-Transform25->setScale(new float[3]{0.175,0.175,0.175});
-CInline* Inline26 = (CInline *)(m_pScene.createNode("Inline"));
-Inline26->setUrl(new CString[1]{"JointCoordinateAxes.x3dv"}, 1);
-Transform25->addChildren(*Inline26);
+CViewpoint* Viewpoint24 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
+Viewpoint24->setDEF("Scene_TopFrontCloseView");
+Viewpoint24->setDescription("hanim_Head Top View");
+Viewpoint24->setOrientation(new float[4]{1,0,0,-1.100000024});
+Viewpoint24->setPosition(new float[3]{0,8,3});
+group->addChildren(*Viewpoint24);
 
-Group24->addChildren(*Transform25);
+CGroup* Group25 = (CGroup *)(m_pScene.createNode("Group"));
+Group25->setDEF("HAnimStage");
+CTransform* Transform26 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform26->setDEF("cordsysfloor");
+Transform26->setScale(new float[3]{0.174999997,0.174999997,0.174999997});
+CInline* Inline27 = (CInline *)(m_pScene.createNode("Inline"));
+Inline27->setUrl(new CString[1]{"JointCoordinateAxes.x3dv"}, 1);
+Transform26->addChildren(*Inline27);
 
-CTransform* Transform27 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform27->setDEF("StageGeometry");
-Transform27->setTranslation(new float[3]{0,-0.01,0});
-Transform27->setScale(new float[3]{1,0.01,1});
-CShape* Shape28 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance29 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material30 = (CMaterial *)(m_pScene.createNode("Material"));
-Material30->setTransparency(0.6);
-Appearance29->setMaterial(*Material30);
+Group25->addChildren(*Transform26);
 
-Shape28->setAppearance(*Appearance29);
+CTransform* Transform28 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform28->setDEF("StageGeometry");
+Transform28->setScale(new float[3]{1,0.01,1});
+Transform28->setTranslation(new float[3]{0,-0.01,0});
+CShape* Shape29 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance30 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material31 = (CMaterial *)(m_pScene.createNode("Material"));
+Material31->setTransparency(0.6);
+Appearance30->setMaterial(*Material31);
 
-CBox* Box31 = (CBox *)(m_pScene.createNode("Box"));
-Box31->setSize(new float[3]{9,1,9});
-Shape28->setGeometry(Box31);
+Shape29->setAppearance(*Appearance30);
 
-Transform27->addChild(*Shape28);
+CBox* Box32 = (CBox *)(m_pScene.createNode("Box"));
+Box32->setSize(new float[3]{9,1,9});
+Shape29->setGeometry(Box32);
 
-CTransform* Transform32 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform32->setDEF("Circle0");
-CShape* Shape33 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance34 = (CAppearance *)(m_pScene.createNode("Appearance"));
-Appearance34->setDEF("LineColor");
-CMaterial* Material35 = (CMaterial *)(m_pScene.createNode("Material"));
-Material35->setAmbientIntensity(1);
-Material35->setDiffuseColor(new float[3]{0.7,0,0.9});
-Material35->setSpecularColor(new float[3]{0,0,1});
-Material35->setEmissiveColor(new float[3]{0.45,0.45,1});
-Material35->setShininess(1);
-Appearance34->setMaterial(*Material35);
+Transform28->addChild(*Shape29);
 
-Shape33->setAppearance(*Appearance34);
+CTransform* Transform33 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform33->setDEF("Circle0");
+CShape* Shape34 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance35 = (CAppearance *)(m_pScene.createNode("Appearance"));
+Appearance35->setDEF("LineColor");
+CMaterial* Material36 = (CMaterial *)(m_pScene.createNode("Material"));
+Material36->setAmbientIntensity(1);
+Material36->setDiffuseColor(new float[3]{0.699999988,0,0.899999976});
+Material36->setEmissiveColor(new float[3]{0.449999988,0.449999988,1});
+Material36->setShininess(1);
+Material36->setSpecularColor(new float[3]{0,0,1});
+Appearance35->setMaterial(*Material36);
 
-CIndexedLineSet* IndexedLineSet36 = (CIndexedLineSet *)(m_pScene.createNode("IndexedLineSet"));
-IndexedLineSet36->setDEF("Orbit1");
-IndexedLineSet36->setCoordIndex(new int[62]{0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,-1});
-CCoordinate* Coordinate37 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
-Coordinate37->setPoint(new float[183]{1,0,0,0.995,0,-0.105,0.979,0,-0.208,0.951,0,-0.309,0.914,0,-0.407,0.866,0,-0.5,0.809,0,-0.588,0.743,0,-0.669,0.669,0,-0.743,0.588,0,-0.809,0.5,0,-0.866,0.407,0,-0.914,0.309,0,-0.951,0.208,0,-0.978,0.105,0,-0.995,0,0,-1,-0.105,0,-0.994522,-0.208,0,-0.978,-0.309,0,-0.951,-0.407,0,-0.914,-0.5,0,-0.866,-0.588,0,-0.809,-0.669,0,-0.743,-0.743,0,-0.669,-0.809,0,-0.588,-0.866,0,-0.5,-0.914,0,-0.407,-0.951,0,-0.309,-0.978,0,-0.208,-0.995,0,-0.105,-1,0,0,-0.995,0,0.105,-0.978,0,0.208,-0.951,0,0.309,-0.914,0,0.407,-0.866,0,0.5,-0.809,0,0.588,-0.743,0,0.669,-0.669,0,0.743,-0.588,0,0.809,-0.5,0,0.866,-0.407,0,0.914,-0.309,0,0.951,-0.208,0,0.978,-0.105,0,0.995,0,0,1,0.105,0,0.995,0.208,0,0.978,0.309,0,0.951,0.407,0,0.914,0.5,0,0.866,0.588,0,0.809,0.669,0,0.743,0.743,0,0.669,0.809,0,0.588,0.866,0,0.5,0.914,0,0.407,0.951,0,0.309,0.978,0,0.208,0.995,0,0.104,1,0,0});
-IndexedLineSet36->setCoord(*Coordinate37);
+Shape34->setAppearance(*Appearance35);
 
-Shape33->setGeometry(IndexedLineSet36);
+CIndexedLineSet* IndexedLineSet37 = (CIndexedLineSet *)(m_pScene.createNode("IndexedLineSet"));
+IndexedLineSet37->setDEF("Orbit1");
+IndexedLineSet37->setCoordIndex(new int[62]{0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,-1});
+CCoordinate* Coordinate38 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate38->setPoint(new float[183]{1,0,0,0.995000005,0,-0.104999997,0.978999972,0,-0.208000004,0.950999975,0,-0.308999985,0.913999975,0,-0.407000005,0.865999997,0,-0.5,0.809000015,0,-0.588,0.742999971,0,-0.66900003,0.66900003,0,-0.742999971,0.588,0,-0.809000015,0.5,0,-0.865999997,0.407000005,0,-0.913999975,0.308999985,0,-0.950999975,0.208000004,0,-0.977999985,0.104999997,0,-0.995000005,0,0,-1,-0.104999997,0,-0.994521976,-0.208000004,0,-0.977999985,-0.308999985,0,-0.950999975,-0.407000005,0,-0.913999975,-0.5,0,-0.865999997,-0.588,0,-0.809000015,-0.66900003,0,-0.742999971,-0.742999971,0,-0.66900003,-0.809000015,0,-0.588,-0.865999997,0,-0.5,-0.913999975,0,-0.407000005,-0.950999975,0,-0.308999985,-0.977999985,0,-0.208000004,-0.995000005,0,-0.104999997,-1,0,0,-0.995000005,0,0.104999997,-0.977999985,0,0.208000004,-0.950999975,0,0.308999985,-0.913999975,0,0.407000005,-0.865999997,0,0.5,-0.809000015,0,0.588,-0.742999971,0,0.66900003,-0.66900003,0,0.742999971,-0.588,0,0.809000015,-0.5,0,0.865999997,-0.407000005,0,0.913999975,-0.308999985,0,0.950999975,-0.208000004,0,0.977999985,-0.104999997,0,0.995000005,0,0,1,0.104999997,0,0.995000005,0.208000004,0,0.977999985,0.308999985,0,0.950999975,0.407000005,0,0.913999975,0.5,0,0.865999997,0.588,0,0.809000015,0.66900003,0,0.742999971,0.742999971,0,0.66900003,0.809000015,0,0.588,0.865999997,0,0.5,0.913999975,0,0.407000005,0.950999975,0,0.308999985,0.977999985,0,0.208000004,0.995000005,0,0.104000002,1,0,0});
+IndexedLineSet37->setCoord(*Coordinate38);
 
-Transform32->addChild(*Shape33);
+Shape34->setGeometry(IndexedLineSet37);
 
-Transform27->addChildren(*Transform32);
+Transform33->addChild(*Shape34);
 
-CTransform* Transform38 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform38->setDEF("Circle1");
-Transform38->setScale(new float[3]{0.5,1,0.5});
-CShape* Shape39 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance40 = (CAppearance *)(m_pScene.createNode("Appearance"));
-Appearance40->setUSE("LineColor");
-Shape39->setAppearance(*Appearance40);
+Transform28->addChildren(*Transform33);
 
-CIndexedLineSet* IndexedLineSet41 = (CIndexedLineSet *)(m_pScene.createNode("IndexedLineSet"));
-IndexedLineSet41->setUSE("Orbit1");
-Shape39->setGeometry(IndexedLineSet41);
+CTransform* Transform39 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform39->setDEF("Circle1");
+Transform39->setScale(new float[3]{0.5,1,0.5});
+CShape* Shape40 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance41 = (CAppearance *)(m_pScene.createNode("Appearance"));
+Appearance41->setUSE("LineColor");
+Shape40->setAppearance(*Appearance41);
 
-Transform38->addChild(*Shape39);
+CIndexedLineSet* IndexedLineSet42 = (CIndexedLineSet *)(m_pScene.createNode("IndexedLineSet"));
+IndexedLineSet42->setUSE("Orbit1");
+Shape40->setGeometry(IndexedLineSet42);
 
-Transform27->addChildren(*Transform38);
+Transform39->addChild(*Shape40);
 
-CTransform* Transform42 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform42->setDEF("Circle2");
-Transform42->setScale(new float[3]{0.25,1,0.25});
-CShape* Shape43 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance44 = (CAppearance *)(m_pScene.createNode("Appearance"));
-Appearance44->setUSE("LineColor");
-Shape43->setAppearance(*Appearance44);
+Transform28->addChildren(*Transform39);
 
-CIndexedLineSet* IndexedLineSet45 = (CIndexedLineSet *)(m_pScene.createNode("IndexedLineSet"));
-IndexedLineSet45->setUSE("Orbit1");
-Shape43->setGeometry(IndexedLineSet45);
+CTransform* Transform43 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform43->setDEF("Circle2");
+Transform43->setScale(new float[3]{0.25,1,0.25});
+CShape* Shape44 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance45 = (CAppearance *)(m_pScene.createNode("Appearance"));
+Appearance45->setUSE("LineColor");
+Shape44->setAppearance(*Appearance45);
 
-Transform42->addChild(*Shape43);
+CIndexedLineSet* IndexedLineSet46 = (CIndexedLineSet *)(m_pScene.createNode("IndexedLineSet"));
+IndexedLineSet46->setUSE("Orbit1");
+Shape44->setGeometry(IndexedLineSet46);
 
-Transform27->addChildren(*Transform42);
+Transform43->addChild(*Shape44);
 
-CTransform* Transform46 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform46->setDEF("Circle3");
-Transform46->setScale(new float[3]{2,1,2});
-CShape* Shape47 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance48 = (CAppearance *)(m_pScene.createNode("Appearance"));
-Appearance48->setUSE("LineColor");
-Shape47->setAppearance(*Appearance48);
+Transform28->addChildren(*Transform43);
 
-CIndexedLineSet* IndexedLineSet49 = (CIndexedLineSet *)(m_pScene.createNode("IndexedLineSet"));
-IndexedLineSet49->setUSE("Orbit1");
-Shape47->setGeometry(IndexedLineSet49);
+CTransform* Transform47 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform47->setDEF("Circle3");
+Transform47->setScale(new float[3]{2,1,2});
+CShape* Shape48 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance49 = (CAppearance *)(m_pScene.createNode("Appearance"));
+Appearance49->setUSE("LineColor");
+Shape48->setAppearance(*Appearance49);
 
-Transform46->addChild(*Shape47);
+CIndexedLineSet* IndexedLineSet50 = (CIndexedLineSet *)(m_pScene.createNode("IndexedLineSet"));
+IndexedLineSet50->setUSE("Orbit1");
+Shape48->setGeometry(IndexedLineSet50);
 
-Transform27->addChildren(*Transform46);
+Transform47->addChild(*Shape48);
 
-CTransform* Transform50 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform50->setDEF("Circle4");
-Transform50->setScale(new float[3]{3,1,3});
-CShape* Shape51 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance52 = (CAppearance *)(m_pScene.createNode("Appearance"));
-Appearance52->setUSE("LineColor");
-Shape51->setAppearance(*Appearance52);
+Transform28->addChildren(*Transform47);
 
-CIndexedLineSet* IndexedLineSet53 = (CIndexedLineSet *)(m_pScene.createNode("IndexedLineSet"));
-IndexedLineSet53->setUSE("Orbit1");
-Shape51->setGeometry(IndexedLineSet53);
+CTransform* Transform51 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform51->setDEF("Circle4");
+Transform51->setScale(new float[3]{3,1,3});
+CShape* Shape52 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance53 = (CAppearance *)(m_pScene.createNode("Appearance"));
+Appearance53->setUSE("LineColor");
+Shape52->setAppearance(*Appearance53);
 
-Transform50->addChild(*Shape51);
+CIndexedLineSet* IndexedLineSet54 = (CIndexedLineSet *)(m_pScene.createNode("IndexedLineSet"));
+IndexedLineSet54->setUSE("Orbit1");
+Shape52->setGeometry(IndexedLineSet54);
 
-Transform27->addChildren(*Transform50);
+Transform51->addChild(*Shape52);
 
-Group24->addChildren(*Transform27);
+Transform28->addChildren(*Transform51);
 
-group->addChildren(*Group24);
+Group25->addChildren(*Transform28);
 
-X3D0->setScene(*Scene12);
+group->addChildren(*Group25);
+
+X3D0->setScene(*Scene13);
 
 m_pScene.addRootNode(group);
 X3D0->toXMLString();

@@ -36,13 +36,22 @@ import org.web3d.x3d.jsail.Texturing.*;
 import org.web3d.x3d.jsail.Time.*;
 import org.web3d.x3d.jsail.VolumeRendering.*;
 import org.web3d.x3d.jsail.fields.*;
-public class arc {
+import java.util.ArrayList;
+import java.util.List;
+import net.coderextreme.X3DRoots;
+public class arc implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    X3D model = new arc().initialize();
+    X3D model = new arc().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
+    model.toFileX3D("../data/arc.new.java.x3d");
     model.toFileJSON("../data/arc.new.json");
+    }
+    public List<X3D> getRootNodeList() {
+    	List<X3D> list = new ArrayList<X3D>(1);
+    	list.add(initialize());
+    	return list;
     }
     public X3D initialize() {
 ProtoInstance ProtoInstance0 = null;
@@ -60,13 +69,13 @@ ProtoInstance ProtoInstance11 = null;
 ProtoInstance ProtoInstance12 = null;
       X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
       .setHead(new head()
-        .addMeta(new meta().setName("title").setContent("arc"))
+        .addMeta(new meta().setName("title").setContent("arc.x3d"))
         .addMeta(new meta().setName("creator").setContent("Lost, Doug Sanden I think"))
         .addMeta(new meta().setName("generator").setContent("manual"))
-        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/x3dconnectorProto.x3d"))
+        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/arc.x3d"))
         .addMeta(new meta().setName("description").setContent("a generic proto to connect two objects")))
       .setScene(new Scene()
-        .addChild(new Viewpoint().setPosition(new float[] {0f ,0f ,5f }).setDescription("Only Viewpoint"))
+        .addChild(new Viewpoint().setPosition(new double[] {0,0,5}).setDescription("Only Viewpoint"))
         .addChild(new Background().setSkyColor(new MFColor0().getArray()))
         .addChild(new ProtoDeclare().setName("point")
           .setProtoInterface(new ProtoInterface()
@@ -76,9 +85,9 @@ ProtoInstance ProtoInstance12 = null;
               .setIS(new IS()
                 .addConnect(new connect().setNodeField("translation").setProtoField("translation")))
               .addChild(new Shape()
-                .setGeometry(new Sphere().setRadius(0.1f ))
+                .setGeometry(new Sphere().setRadius(0.1))
                 .setAppearance(new Appearance()
-                  .setMaterial(new Material().setDiffuseColor(new float[] {1f ,0f ,0f }))))
+                  .setMaterial(new Material().setDiffuseColor(new double[] {1,0,0}))))
               .addChild(new PositionInterpolator().setDEF("PI1").setKey(new MFFloat1().getArray()).setKeyValue(new MFVec3f2().getArray()))
               .addChild(new Script().setDEF("MB1")
                 .addField(new field().setType("SFVec3f").setName("translation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("50 50 0"))
@@ -92,7 +101,7 @@ ProtoInstance ProtoInstance12 = null;
 "                    keyValue = new MFVec3f([old, translation]);\n"+
 "		    // Browser.println(keyValue);\n"+
 "		}"))
-              .addChild(new TimeSensor().setDEF("CL1").setCycleInterval(3d).setLoop(true))
+              .addChild(new TimeSensor().setDEF("CL1").setCycleInterval(3).setLoop(true))
               .addChild(new ROUTE().setFromNode("CL1").setFromField("cycleTime").setToNode("MB1").setToField("set_location"))
               .addChild(new ROUTE().setFromNode("CL1").setFromField("fraction_changed").setToNode("PI1").setToField("set_fraction"))
               .addChild(new ROUTE().setFromNode("MB1").setFromField("keyValue").setToNode("PI1").setToField("keyValue"))
@@ -109,8 +118,8 @@ ProtoInstance ProtoInstance12 = null;
                 .addChild(new Transform().setDEF("rotscale")
                   .addChild(new Shape()
                     .setAppearance(new Appearance()
-                      .setMaterial(new Material().setDiffuseColor(new float[] {0.2f ,0.7f ,0.7f }).setTransparency(0.5f )))
-                    .setGeometry(new Cylinder().setRadius(0.05f )))))
+                      .setMaterial(new Material().setDiffuseColor(new double[] {0.2,0.7,0.7}).setTransparency(0.5)))
+                    .setGeometry(new Cylinder().setRadius(0.05)))))
               .addChild(new Script().setDEF("S1")
                 .addField(new field().setType("SFNode").setName("startnode").setAccessType(field.ACCESSTYPE_INITIALIZEONLY))
                 .addField(new field().setType("SFNode").setName("endnode").setAccessType(field.ACCESSTYPE_INITIALIZEONLY))
@@ -218,17 +227,17 @@ ProtoInstance10
     }
 private class MFColor0 {
   private org.web3d.x3d.jsail.fields.MFColor getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0.4f ,0.4f ,0.4f });
+    return new org.web3d.x3d.jsail.fields.MFColor(new double[] {0.4,0.4,0.4});
   }
 }
 private class MFFloat1 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,1f });
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,1});
   }
 }
 private class MFVec3f2 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f ,0f ,0f ,0f ,5f ,0f });
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0,0,0,0,5,0});
   }
 }
 }

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+  <head>
+    <!-- component name='Shaders' level='1'></component -->
+    <!-- component name='CubeMapTexturing' level='1'></component -->
+    <component name='Scripting' level='1'/>
+    <component name='EnvironmentalEffects' level='3'/>
+    <component name='Texturing' level='1'/>
+    <component name='Rendering' level='1'/>
+    <component name='Grouping' level='3'/>
+    <component name='Core' level='1'/>
+    <meta content='ball.x3d' name='title'/>
+    <meta content='John Carlson' name='creator'/>
+    <meta content='manual' name='generator'/>
+    <meta content='https://coderextreme.net/X3DJSONLD/src/main/data/ball.x3d' name='identifier'/>
+    <meta content='a prismatic sphere' name='description'/>
+  </head>
+  <Scene>
+    <WorldInfo title='ball.x3d'/>
+    <NavigationInfo avatarSize='0.25 1.6 0.75' transitionType='"LINEAR"' type='"ANY" "EXAMINE" "FLY" "LOOKAT"'/>
+    <Viewpoint description='Tour Views' position='0 0 12'/>
+    <Background backUrl='"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"' bottomUrl='"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"' frontUrl='"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"' leftUrl='"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"' rightUrl='"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"' topUrl='"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"'/>
+    <Transform>
+      <Shape>
+        <Appearance>
+          <Material diffuseColor='0.7 0.7 0.7' specularColor='0.5 0.5 0.5'/>
+          <ComposedShader language='GLSL'>
+            <field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'/>
+            <field name='cube' accessType='inputOutput' type='SFNode'>
+              <ComposedCubeMapTexture USE='texture'/>
+            </field>
+            <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'/>
+            <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'/>
+            <field name='power' accessType='inputOutput' type='SFFloat' value='2.0'/>
+            <ShaderPart url='"../shaders/castle.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.vs"'/>
+            <ShaderPart DEF='commonfs' type='FRAGMENT' url='"../shaders/castle.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.fs"'/>
+          </ComposedShader>
+          <ComposedCubeMapTexture DEF='texture'>
+            <ImageTexture containerField='backTexture' url='"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"'/>
+            <ImageTexture containerField='bottomTexture' url='"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"'/>
+            <ImageTexture containerField='frontTexture' url='"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"'/>
+            <ImageTexture containerField='leftTexture' url='"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"'/>
+            <ImageTexture containerField='rightTexture' url='"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"'/>
+            <ImageTexture containerField='topTexture' url='"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"'/>
+          </ComposedCubeMapTexture>
+        </Appearance>
+        <Sphere/>
+      </Shape>
+    </Transform>
+  </Scene>
+</X3D>

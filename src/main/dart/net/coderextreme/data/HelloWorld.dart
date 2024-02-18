@@ -4,9 +4,10 @@ import '../x3d.dart';
 var X3D0 =  X3D(
 
       profile_ : SFString('Immersive'),
-      version_ : SFString('4.0'),
+      version_ : SFString('3.3'),
       head_ : 
         head(
+          /*Alternate encodings: VRML97, X3D ClassicVRML Encoding, X3D Compressed Binary Encoding (CBE), X3DOM, JSON*/
           meta_ : [
             meta(
               name_ : SFString('title'),
@@ -69,6 +70,18 @@ var X3D0 =  X3D(
               content_ : SFString('http://X3dGraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloWorld.x3d')),
 
             meta(
+              name_ : SFString('identifier'),
+              content_ : SFString('http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter01TechnicalOverview/HelloWorld.x3d')),
+
+            meta(
+              name_ : SFString('license'),
+              content_ : SFString('https://www.web3d.org/x3d/content/examples/license.html')),
+
+            meta(
+              name_ : SFString('generator'),
+              content_ : SFString('X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit')),
+
+            meta(
               name_ : SFString('reference'),
               content_ : SFString('HelloWorld.wrl')),
 
@@ -86,34 +99,29 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('reference'),
-              content_ : SFString('HelloWorld.json')),
-
-            meta(
-              name_ : SFString('identifier'),
-              content_ : SFString('http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter01TechnicalOverview/HelloWorld.x3d')),
-
-            meta(
-              name_ : SFString('license'),
-              content_ : SFString('https://www.web3d.org/x3d/content/examples/license.html'))]),
+              content_ : SFString('HelloWorld.json'))]),
       Scene_ : 
         Scene(
+          /*Example scene to illustrate X3D nodes and fields (XML elements and attributes)*/
           children_ : [
             WorldInfo(
-              title_ : SFString('Hello World!'),
-              info_ : MFString([SFString("Example scene to illustrate a simple X3D model")])),
+              info_ : MFString([SFString("Example scene to illustrate a simple X3D model")]),
+              title_ : SFString('Hello World!')),
 
             Group(
               children_ : [
                 Viewpoint(
                   DEF_ : SFString('ViewUpClose'),
+                  centerOfRotation_ : SFVec3f([SFDouble(0), SFDouble(-1), SFDouble(0)]),
                   description_ : SFString('Hello world!'),
-                  position_ : SFVec3f([SFDouble(0), SFDouble(-1), SFDouble(7)]),
-                  centerOfRotation_ : SFVec3f([SFDouble(0), SFDouble(-1), SFDouble(0)])),
+                  position_ : SFVec3f([SFDouble(0), SFDouble(-1), SFDouble(7)])),
 
                 Transform(
                   rotation_ : SFRotation([SFDouble(0), SFDouble(1), SFDouble(0), SFDouble(3)]),
                   child_ : 
                     Shape(
+                      geometry_ : 
+                        Sphere(),
                       appearance_ : 
                         Appearance(
                           material_ : 
@@ -123,24 +131,22 @@ var X3D0 =  X3D(
                           texture_ : 
                             ImageTexture(
                               DEF_ : SFString('ImageCloudlessEarth'),
-                              url_ : MFString([SFString("earth-topo.png"), SFString("earth-topo.jpg"), SFString("earth-topo-small.gif"), SFString("https://www.web3d.org/x3d/content/examples/Basic/earth-topo.png"), SFString("https://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg"), SFString("https://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif")]))),
-                      geometry_ : 
-                        Sphere())),
+                              url_ : MFString([SFString("earth-topo.png"), SFString("earth-topo.jpg"), SFString("earth-topo-small.gif"), SFString("https://www.web3d.org/x3d/content/examples/Basic/earth-topo.png"), SFString("https://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg"), SFString("https://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif")]))))),
 
                 Transform(
                   translation_ : SFVec3f([SFDouble(0), SFDouble(-2), SFDouble(0)]),
                   child_ : 
                     Shape(
-                      appearance_ : 
-                        Appearance(
-                          material_ : 
-                            Material(
-                              USE_ : SFString('MaterialLightBlue'))),
                       geometry_ : 
                         Text(
                           DEF_ : SFString('TextMessage'),
                           string_ : MFString([SFString("Hello"), SFString("world!")]),
                           fontStyle_ : 
                             FontStyle(
-                              justify_ : MFString([SFString("MIDDLE"), SFString("MIDDLE")])))))])]));
+                              justify_ : MFString([SFString("MIDDLE"), SFString("MIDDLE")]))),
+                      appearance_ : 
+                        Appearance(
+                          material_ : 
+                            Material(
+                              USE_ : SFString('MaterialLightBlue')))))])]));
 void main() { exit(0); }

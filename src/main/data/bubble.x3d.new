@@ -9,7 +9,7 @@
 <Scene><NavigationInfo type="&quot;EXAMINE&quot;"></NavigationInfo>
 <Viewpoint position="0 0 4" orientation="1 0 0 0" description="Bubble in action"></Viewpoint>
 <ProtoDeclare name="Bubble"><ProtoBody><Transform DEF="transform"><Shape><Sphere radius="0.25"></Sphere>
-<Appearance><Material diffuseColor="1 0 0" transparency="0.2"></Material>
+<Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 0 0" transparency="0.2"></Material>
 </Appearance>
 </Shape>
 <Script DEF="bounce"><field name="scale" accessType="inputOutput" type="SFVec3f" value="1 1 1"></field>

@@ -3,7 +3,7 @@ void main(int argc, char ** argv) {
 Browser browser = X3D.getBrowser();
 X3D X3D0;
 X3D0.profile = "Immersive";
-X3D0.version = "4.0";
+X3D0.version = "3.0";
 head head1 = createNode("head");
 meta meta2 = createNode("meta");
 meta2.name = "title";
@@ -52,77 +52,82 @@ meta10.name = "generator";
 meta10.content = "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit";
 head1.meta[8] = meta10;
 
+meta meta11 = createNode("meta");
+meta11.name = "license";
+meta11.content = "../license.html";
+head1.meta[9] = meta11;
+
 head = head1;
 
-Transform Transform12 = createNode("Transform");
-Transform12.translation = new SFVec3f(new float[0,2,0]);
-Shape Shape13 = createNode("Shape");
-Appearance Appearance14 = createNode("Appearance");
-Appearance14.DEF = "LightBlueAppearance";
-Material Material15 = createNode("Material");
-Material15.diffuseColor = new SFColor(new float[0.1,0.7,0.7]);
-Appearance14.material = Material15;
+Transform Transform13 = createNode("Transform");
+Transform13.translation = new SFVec3f(new float[0,2,0]);
+Shape Shape14 = createNode("Shape");
+Text Text15 = createNode("Text");
+Text15.string = new MFString(new java.lang.String["Compare special character escaping"]);
+FontStyle FontStyle16 = createNode("FontStyle");
+FontStyle16.DEF = "testFontStyle";
+FontStyle16.justify = new MFString(new java.lang.String["MIDDLE","MIDDLE"]);
+FontStyle16.size = 0.8;
+Text15.fontStyle = FontStyle16;
 
-Shape13.appearance = Appearance14;
+Shape14.geometry = Text15;
 
-Text Text16 = createNode("Text");
-Text16.string = new MFString(new java.lang.String["Compare special character escaping"]);
-FontStyle FontStyle17 = createNode("FontStyle");
-FontStyle17.DEF = "testFontStyle";
-FontStyle17.size = 0.8;
-FontStyle17.justify = new MFString(new java.lang.String["MIDDLE","MIDDLE"]);
-Text16.fontStyle = FontStyle17;
+Appearance Appearance17 = createNode("Appearance");
+Appearance17.DEF = "LightBlueAppearance";
+Material Material18 = createNode("Material");
+Material18.diffuseColor = new SFColor(new float[0.1,0.7,0.7]);
+Appearance17.material = Material18;
 
-Shape13.geometry = Text16;
+Shape14.appearance = Appearance17;
 
-Transform12.child = new undefined();
+Transform13.child = new undefined();
 
-Transform12.child[0] = Shape13;
+Transform13.child[0] = Shape14;
 
 children = new MFNode();
 
-children[0] = Transform12;
+children[0] = Transform13;
 
-Transform Transform18 = createNode("Transform");
-Transform18.translation = new SFVec3f(new float[-3,0,0]);
-Shape Shape19 = createNode("Shape");
-Appearance Appearance20 = createNode("Appearance");
-Appearance20.USE = "LightBlueAppearance";
-Shape19.appearance = Appearance20;
-
+Transform Transform19 = createNode("Transform");
+Transform19.translation = new SFVec3f(new float[-3,0,0]);
+Shape Shape20 = createNode("Shape");
 Text Text21 = createNode("Text");
 Text21.string = new MFString(new java.lang.String["I don't think so","","he said \"Hi\""]);
 FontStyle FontStyle22 = createNode("FontStyle");
 FontStyle22.USE = "testFontStyle";
 Text21.fontStyle = FontStyle22;
 
-Shape19.geometry = Text21;
+Shape20.geometry = Text21;
 
-Transform18.child = new undefined();
+Appearance Appearance23 = createNode("Appearance");
+Appearance23.USE = "LightBlueAppearance";
+Shape20.appearance = Appearance23;
 
-Transform18.child[0] = Shape19;
+Transform19.child = new undefined();
 
-children[1] = Transform18;
+Transform19.child[0] = Shape20;
 
-Transform Transform23 = createNode("Transform");
-Transform23.translation = new SFVec3f(new float[3,0,0]);
-Shape Shape24 = createNode("Shape");
-Appearance Appearance25 = createNode("Appearance");
-Appearance25.USE = "LightBlueAppearance";
-Shape24.appearance = Appearance25;
+children[1] = Transform19;
 
+Transform Transform24 = createNode("Transform");
+Transform24.translation = new SFVec3f(new float[3,0,0]);
+Shape Shape25 = createNode("Shape");
 Text Text26 = createNode("Text");
 Text26.string = new MFString(new java.lang.String["I don't think so","","he said \"Hi\""]);
 FontStyle FontStyle27 = createNode("FontStyle");
 FontStyle27.USE = "testFontStyle";
 Text26.fontStyle = FontStyle27;
 
-Shape24.geometry = Text26;
+Shape25.geometry = Text26;
 
-Transform23.child = new undefined();
+Appearance Appearance28 = createNode("Appearance");
+Appearance28.USE = "LightBlueAppearance";
+Shape25.appearance = Appearance28;
 
-Transform23.child[0] = Shape24;
+Transform24.child = new undefined();
 
-children[2] = Transform23;
+Transform24.child[0] = Shape25;
+
+children[2] = Transform24;
 
 }

@@ -4,17 +4,13 @@ import '../x3d.dart';
 var X3D0 =  X3D(
 
       profile_ : SFString('Immersive'),
-      version_ : SFString('4.0'),
+      version_ : SFString('3.3'),
       head_ : 
         head(
           meta_ : [
             meta(
               name_ : SFString('generator'),
               content_ : SFString('hand conversion from http://www.x3dom.org/x3dom/test/functional/flipper.html')),
-
-            meta(
-              name_ : SFString('generator'),
-              content_ : SFString('X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html')),
 
             meta(
               name_ : SFString('title'),
@@ -30,7 +26,15 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('creator'),
-              content_ : SFString('Yvonne Jung, metadata by John Carlson'))]),
+              content_ : SFString('Yvonne Jung, metadata by John Carlson')),
+
+            meta(
+              name_ : SFString('translated'),
+              content_ : SFString('13 March 2016')),
+
+            meta(
+              name_ : SFString('generator'),
+              content_ : SFString('X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html'))]),
       Scene_ : 
         Scene(
           children_ : [
@@ -50,10 +54,10 @@ var X3D0 =  X3D(
               position_ : SFVec3f([SFDouble(0), SFDouble(200), SFDouble(1000)])),
 
             Background(
-              skyAngle_ : MFFloat([SFFloat(0.9), SFFloat(1.5), SFFloat(1.57)]),
-              skyColor_ : MFColor([SFColor(0.21), SFColor(0.18), SFColor(0.66), SFColor(0.2), SFColor(0.44), SFColor(0.85), SFColor(0.51), SFColor(0.81), SFColor(0.95), SFColor(0.51), SFColor(0.81), SFColor(0.95)]),
               groundAngle_ : MFFloat([SFFloat(0.9), SFFloat(1.5), SFFloat(1.57)]),
-              groundColor_ : MFColor([SFColor(0.21), SFColor(0.18), SFColor(0.66), SFColor(0.2), SFColor(0.44), SFColor(0.85), SFColor(0.51), SFColor(0.81), SFColor(0.95), SFColor(0.51), SFColor(0.81), SFColor(0.95)])),
+              groundColor_ : MFColor([SFColor(0.21), SFColor(0.18), SFColor(0.66), SFColor(0.2), SFColor(0.44), SFColor(0.85), SFColor(0.51), SFColor(0.81), SFColor(0.95), SFColor(0.51), SFColor(0.81), SFColor(0.95)]),
+              skyAngle_ : MFFloat([SFFloat(0.9), SFFloat(1.5), SFFloat(1.57)]),
+              skyColor_ : MFColor([SFColor(0.21), SFColor(0.18), SFColor(0.66), SFColor(0.2), SFColor(0.44), SFColor(0.85), SFColor(0.51), SFColor(0.81), SFColor(0.95), SFColor(0.51), SFColor(0.81), SFColor(0.95)])),
 
             NavigationInfo(
               DEF_ : SFString('user01'),
@@ -102,7 +106,7 @@ var X3D0 =  X3D(
               fromNode_ : SFString('ci'),
               fromField_ : SFString('value_changed'),
               toNode_ : SFString('pointList'),
-              toField_ : SFString('point')),
+              toField_ : SFString('set_point')),
 
             ROUTE(
               fromNode_ : SFString('si'),

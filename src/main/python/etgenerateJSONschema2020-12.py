@@ -450,6 +450,15 @@ class ClassPrinter:
 					"type": "object",
 					"properties": {
 						"@class": { "type": "string" },
+'''
+            if self.name == 'ProtoInstance':
+                str += '''\
+                           "@name": {
+                              "$comment": "SFString inputOutput",
+                              "type": "string"
+                           },
+'''
+            str += '''\
                            "@USE": { "type": "string" },
                             "-children": {
                                     "type": "array",
@@ -584,55 +593,56 @@ class ClassPrinter:
 
                     if field.get("name") == "address" or (not field.get("name").startswith("add") and not field.get("name").startswith("remove")):
                         if field.get("type") == "MFNode" or field.get("type") == "SFNode":
-                            try:
-                                if classes[field.get("name")] != None and field.get("name") != "X3D":
-                                    str += '\t\t\t\t\t"' + field.get("name") + '" : {\n'
-                                    str += '\t\t\t\t\t\t"$ref":"#/$defs/'+ field.get("name") +'"\n'
-                                    str += '\t\t\t\t\t},\n'
-
-                                    if field.get("synonym") != None:
-                                        str += '\t\t\t\t\t"' + field.get("synonym") + '" : {\n'
-                                        str += '\t\t\t\t\t\t"$ref":"#/$defs/'+ field.get("synonym") +'"\n'
-                                        str += '\t\t\t\t\t},\n'
-                            except:
-                                str += '\t\t\t\t\t"-' + field.get("name") + '" : {\n'
-                                str += '\t\t\t\t\t\t"$ref":"#/$defs/-'+ field.get("acceptableNodeTypes").replace("|", "-") + field.get("type") +'"\n'
+                            if field.get("name") in classes and classes[field.get("name")] != None and field.get("name") != "X3D":
+                                str += '\t\t\t\t\t"' + field.get("name") + '" : {\n'
+                                str += '\t\t\t\t\t\t"$ref":"#/$defs/'+ field.get("name") +'"\n'
                                 str += '\t\t\t\t\t},\n'
+
+                                if field.get("synonym") != None:
+                                    str += '\t\t\t\t\t"' + field.get("synonym") + '" : {\n'
+                                    str += '\t\t\t\t\t\t"$ref":"#/$defs/'+ field.get("synonym") +'"\n'
+                                    str += '\t\t\t\t\t},\n'
+                            else:
+                                if field.get("acceptableNodeTypes"):
+                                    str += '\t\t\t\t\t"-' + field.get("name") + '" : {\n'
+                                    str += '\t\t\t\t\t\t"$ref":"#/$defs/-'+ field.get("acceptableNodeTypes").replace("|", "-") + field.get("type") +'"\n'
+                                    str += '\t\t\t\t\t},\n'
 
                                 if field.get("synonym") != None:
                                     str += '\t\t\t\t\t"-' + field.get("synonym") + '" : {\n'
                                     str += '\t\t\t\t\t\t"$ref":"#/$defs/-'+ field.get("acceptableNodeTypes").replace("|", "-") + field.get("type") +'"\n'
                                     str += '\t\t\t\t\t},\n'
                                 # container fields
-                                cf = '\t\t\t\t\t"-' + field.get("acceptableNodeTypes").replace("|", "-") + field.get("type") + '" : {\n'
-                                if field.get("type") == "MFNode":
-                                    cf += '\t\t\t\t\t\t"$comment":"'+field.get("type")+' '+field.get("accessType")+'",\n'
-                                    cf += '\t\t\t\t\t\t"type": "array",\n'
-                                    cf += '\t\t\t\t\t\t"minItems": 1,\n'
-                                    cf += '\t\t\t\t\t\t"items": {\n'
-                                cf += '\t\t\t\t\t\t\t"type": "object",\n'
-                                cf += '\t\t\t\t\t\t\t"properties": {\n'
-                                if field.get("type") == "MFNode":
-                                    cf += '\t\t\t\t\t\t\t\t"#comment": {\n'
-                                    cf += '\t\t\t\t\t\t\t\t\t"type": "string"\n'
-                                    cf += '\t\t\t\t\t\t\t\t},\n'
-                                acnts = field.get("acceptableNodeTypes").split("|")
-                                # add properties that appear in all SFNode, MFNode
-                                acnts.append("ProtoInstance")
-                                doList = {}
-                                for acnt in acnts:
-                                    doList = classes[acnt].listChildren(doList)
-                                cf += self.printList(doList)
-                                    #str += "___________PARENTS____________\n"
-                                    #str += classes[acnt].listParents()
-                                if cf[-2] == ',':
-                                     cf = cf[:-2] + '\n' # strip off comma
-                                cf += '\t\t\t\t\t\t\t},\n'
-                                cf += '\t\t\t\t\t\t\t"additionalProperties": false\n'
-                                if field.get("type") == "MFNode":
-                                    cf += '\t\t\t\t\t\t}\n'
-                                cf += '\t\t\t\t\t},\n'
-                                containerFields[field.get("acceptableNodeTypes").replace("|", "-") + field.get("type")] = cf
+                                if field.get("acceptableNodeTypes"):
+                                    cf = '\t\t\t\t\t"-' + field.get("acceptableNodeTypes").replace("|", "-") + field.get("type") + '" : {\n'
+                                    if field.get("type") == "MFNode":
+                                        cf += '\t\t\t\t\t\t"$comment":"'+field.get("type")+' '+field.get("accessType")+'",\n'
+                                        cf += '\t\t\t\t\t\t"type": "array",\n'
+                                        cf += '\t\t\t\t\t\t"minItems": 1,\n'
+                                        cf += '\t\t\t\t\t\t"items": {\n'
+                                    cf += '\t\t\t\t\t\t\t"type": "object",\n'
+                                    cf += '\t\t\t\t\t\t\t"properties": {\n'
+                                    if field.get("type") == "MFNode":
+                                        cf += '\t\t\t\t\t\t\t\t"#comment": {\n'
+                                        cf += '\t\t\t\t\t\t\t\t\t"type": "string"\n'
+                                        cf += '\t\t\t\t\t\t\t\t},\n'
+                                    acnts = field.get("acceptableNodeTypes").split("|")
+                                    # add properties that appear in all SFNode, MFNode
+                                    acnts.append("ProtoInstance")
+                                    doList = {}
+                                    for acnt in acnts:
+                                        doList = classes[acnt].listChildren(doList)
+                                    cf += self.printList(doList)
+                                        #str += "___________PARENTS____________\n"
+                                        #str += classes[acnt].listParents()
+                                    if cf[-2] == ',':
+                                         cf = cf[:-2] + '\n' # strip off comma
+                                    cf += '\t\t\t\t\t\t\t},\n'
+                                    cf += '\t\t\t\t\t\t\t"additionalProperties": false\n'
+                                    if field.get("type") == "MFNode":
+                                        cf += '\t\t\t\t\t\t}\n'
+                                    cf += '\t\t\t\t\t},\n'
+                                    containerFields[field.get("acceptableNodeTypes").replace("|", "-") + field.get("type")] = cf
                         elif field.get("name") != "USE":
                             str += self.printField(field, "name")
                             if field.get("synonym") != None:

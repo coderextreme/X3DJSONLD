@@ -28,7 +28,7 @@
           },
           {
             "@name":"translated",
-            "@content":"27 October 2023"
+            "@content":"18 February 2024"
           },
           {
             "@name":"generator",
@@ -156,7 +156,7 @@
 "\t     localci.push(-1);",
 "\t}",
 "    }",
-"    coordIndexes = new MFInt32(localci);",
+"    coordIndexes = new MFInt32(...localci);",
 "}",
 "",
 "function generateCoordinates(resolution) {",
@@ -176,7 +176,7 @@
 "\t}",
 "\tphi += delta;",
 "     }",
-"     coordinates = new MFVec3f(localc);",
+"     coordinates = new MFVec3f(...localc);",
 "}",
 "",
 "function set_fraction(fraction, eventTime) {",
