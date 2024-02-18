@@ -8,10 +8,10 @@ console.log("Problems loading fs. On browser?",e);
 var SFString = require('./x3d.mjs');
 var SFNode = require('./x3d.mjs');
 var head = require('./x3d.mjs');
-var MFNode = require('./x3d.mjs');
-var meta = require('./x3d.mjs');
 var component = require('./x3d.mjs');
 var SFInt32 = require('./x3d.mjs');
+var MFNode = require('./x3d.mjs');
+var meta = require('./x3d.mjs');
 var Scene = require('./x3d.mjs');
 var WorldInfo = require('./x3d.mjs');
 var MFString = require('./x3d.mjs');
@@ -23,16 +23,17 @@ var HAnimHumanoid = require('./x3d.mjs');
 var MetadataSet = require('./x3d.mjs');
 var MetadataString = require('./x3d.mjs');
 var HAnimJoint = require('./x3d.mjs');
+var MFFloat = require('./x3d.mjs');
 var HAnimSegment = require('./x3d.mjs');
 var Transform = require('./x3d.mjs');
 var Shape = require('./x3d.mjs');
-var Appearance = require('./x3d.mjs');
-var Material = require('./x3d.mjs');
-var SFColor = require('./x3d.mjs');
 var IndexedFaceSet = require('./x3d.mjs');
 var MFInt32 = require('./x3d.mjs');
 var Coordinate = require('./x3d.mjs');
 var MFVec3f = require('./x3d.mjs');
+var Appearance = require('./x3d.mjs');
+var Material = require('./x3d.mjs');
+var SFColor = require('./x3d.mjs');
 var HAnimSite = require('./x3d.mjs');
 var SFRotation = require('./x3d.mjs');
 var X3D0 =  new X3D({
@@ -41,6 +42,10 @@ var X3D0 =  new X3D({
       version : new SFString("4.0"),
       head : new SFNode(
         new head({
+          component : new SFNode(
+            new component({
+              name : new SFString("HAnim"),
+              level : new SFInt32(1)})),
           meta : new MFNode([
             new meta({
               name : new SFString("title"),
@@ -64,7 +69,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("modified"),
-              content : new SFString("Sat, 30 Dec 2023 07:36:14 GMT")}),
+              content : new SFString("2 November 2023")}),
 
             new meta({
               name : new SFString("motto"),
@@ -125,29 +130,35 @@ var X3D0 =  new X3D({
             new meta({
               name : new SFString("identifier"),
               content : new SFString("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Templates/DiamondManLOA0.x3d")}),
-          component : new SFNode(
-            new component({
-              name : new SFString("HAnim"),
-              level : new SFInt32(1)})])})),
+
+            new meta({
+              name : new SFString("generator"),
+              content : new SFString("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit")}),
+
+            new meta({
+              name : new SFString("license"),
+              content : new SFString("../license.html")})])})),
       Scene : new SFNode(
         new Scene({
           children : new MFNode([
             new WorldInfo({
-              title : new SFString("HANIM 2.0 Default Joint Centers, LOA0"),
-              info : new MFString(["HAnim 2.0 Default Joint Centers, Level Of Articulation (LOA) 0 -------------------------------------------------------- HANIM 1.1 (VRML 2.0) Author name: eMpTy (a.k.a. Matthew T. Beitler) HANIM 1.1 (VRML 2.0) Author email: beitler@graphics.cis.upenn.edu or beitler@acm.org HANIM 1.1 (VRML 2.0) Author homepage: http://www.cis.upenn.edu/~beitler HANIM 1.1 (VRML 2.0) Compliance Date: May 12, 1999 HANIM 1.1 Compliance Information: http://ece.uwaterloo.ca/~HAnim/ Construction Info (joint centers): The joint centers of this figure are based on the work of Norman Badler, director of the Center for Human Modeling and Simulation at the University of Pennsylvania. The original document which these joint centers are based on can be found at: http://www.cis.upenn.edu/~badler/anthro/89-71.ps, .pdf"])}),
+              info : new MFString(["HAnim 2.0 Default Joint Centers, Level Of Articulation (LOA) 0 -------------------------------------------------------- HANIM 1.1 (VRML 2.0) Author name: eMpTy (a.k.a. Matthew T. Beitler) HANIM 1.1 (VRML 2.0) Author email: beitler@graphics.cis.upenn.edu or beitler@acm.org HANIM 1.1 (VRML 2.0) Author homepage: http://www.cis.upenn.edu/~beitler HANIM 1.1 (VRML 2.0) Compliance Date: May 12, 1999 HANIM 1.1 Compliance Information: http://ece.uwaterloo.ca/~HAnim/ Construction Info (joint centers): The joint centers of this figure are based on the work of Norman Badler, director of the Center for Human Modeling and Simulation at the University of Pennsylvania. The original document which these joint centers are based on can be found at: http://www.cis.upenn.edu/~badler/anthro/89-71.ps, .pdf"]),
+              title : new SFString("HANIM 2.0 Default Joint Centers, LOA0")}),
 
             new NavigationInfo({
               speed : new SFFloat(1.5)}),
 
             new Viewpoint({
+              centerOfRotation : new SFVec3f([0,1,0]),
               description : new SFString("Diamond Man, LOA 0"),
-              position : new SFVec3f([0,1,3]),
-              centerOfRotation : new SFVec3f([0,1,0])}),
+              position : new SFVec3f([0,1,3])}),
 
             new HAnimHumanoid({
-              DEF : new SFString("hanim_humanoid"),
               name : new SFString("humanoid"),
+              DEF : new SFString("hanim_humanoid"),
               loa : new SFInt32(0),
+              version : new SFString("2.0"),
+              /*original HAnimHumanoid info='\"authorEmail=beitler@graphics.cis.upenn.edu beitler@acm.org\" \"authorName=Matthew T. Beitler\" \"copyright=Copyright 1999 Matthew T. Beitler\" \"creationDate=05/12/99\" \"humanoidVersion=JointCenters 1.1 LOA0\" \"usageRestrictions=PERMISSION TO FULLY USE THIS SCENE GRAPH IS GRANTED PROVIDED THIS COPYRIGHT INFORMATION AND DOCUMENTATION OF THE ORIGINAL AUTHOR IS INCLUDED. This humanoid scene graph is provided _as-is_ and without warranty of any kind express implied or otherwise including without limitation any warranty of merchantability or fitness for a particular purpose.\"'*/
               metadata : new MFNode([
                 new MetadataSet({
                   name : new SFString("HAnimHumanoid.info"),
@@ -178,46 +189,50 @@ var X3D0 =  new X3D({
                       value : new MFString(["PERMISSION TO FULLY USE THIS SCENE GRAPH IS GRANTED PROVIDED THIS COPYRIGHT INFORMATION AND DOCUMENTATION OF THE ORIGINAL AUTHOR IS INCLUDED. This humanoid scene graph is provided _as-is_ and without warranty of any kind express implied or otherwise including without limitation any warranty of merchantability or fitness for a particular purpose."])}))}),
               joints : new MFNode([
                 new HAnimJoint({
-                  DEF : new SFString("hanim_humanoid_root"),
                   name : new SFString("humanoid_root"),
+                  DEF : new SFString("hanim_humanoid_root"),
                   center : new SFVec3f([0,0.824,0.0277]),
+                  ulimit : new MFFloat([0,0,0]),
+                  llimit : new MFFloat([0,0,0]),
                   children : new MFNode([
                     new HAnimJoint({
-                      DEF : new SFString("hanim_sacroiliac"),
                       name : new SFString("sacroiliac"),
+                      DEF : new SFString("hanim_sacroiliac"),
                       center : new SFVec3f([0,0.9149,0.0016]),
+                      ulimit : new MFFloat([0,0,0]),
+                      llimit : new MFFloat([0,0,0]),
                       children : new MFNode([
                         new HAnimSegment({
-                          DEF : new SFString("hanim_pelvis"),
                           name : new SFString("pelvis"),
+                          DEF : new SFString("hanim_pelvis"),
                           children : new MFNode([
                             new Transform({
                               translation : new SFVec3f([0,0.9149,0.0016]),
                               child : new SFNode(
                                 new Shape({
                                   DEF : new SFString("DiamondShape"),
+                                  geometry : new SFNode(
+                                    new IndexedFaceSet({
+                                      coordIndex : new MFInt32([0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1]),
+                                      creaseAngle : new SFFloat(0.5),
+                                      coord : new SFNode(
+                                        new Coordinate({
+                                          point : new MFVec3f([0,0.01,0,-0.01,0,0,0,0,0.01,0.01,0,0,0,0,-0.01,0,-0.01,0])}))})),
                                   appearance : new SFNode(
                                     new Appearance({
                                       material : new SFNode(
                                         new Material({
-                                          diffuseColor : new SFColor([1,1,0])}))})),
-                                  geometry : new SFNode(
-                                    new IndexedFaceSet({
-                                      creaseAngle : new SFFloat(0.5),
-                                      coordIndex : new MFInt32([0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1]),
-                                      coord : new SFNode(
-                                        new Coordinate({
-                                          point : new MFVec3f([0,0.01,0,-0.01,0,0,0,0,0.01,0.01,0,0,0,0,-0.01,0,-0.01,0])}))}))}))})])})])})])}),
+                                          diffuseColor : new SFColor([1,1,0])}))}))}))})])})])})])}),
               viewpoints : new SFNode(
                 new HAnimSite({
-                  DEF : new SFString("hanim_site_view"),
                   name : new SFString("site_view"),
+                  DEF : new SFString("hanim_site_view"),
                   children : new MFNode([
                     new Viewpoint({
                       DEF : new SFString("InclinedView"),
                       description : new SFString("Inclined View"),
-                      position : new SFVec3f([1.62,1.05,2.06]),
-                      orientation : new SFRotation([-0.113,0.993,0.0347,0.671])}),
+                      orientation : new SFRotation([-0.113,0.993,0.0347,0.671]),
+                      position : new SFVec3f([1.62,1.05,2.06])}),
 
                     new Viewpoint({
                       DEF : new SFString("FrontView"),
@@ -227,21 +242,21 @@ var X3D0 =  new X3D({
                     new Viewpoint({
                       DEF : new SFString("SideView"),
                       description : new SFString("Side View"),
-                      position : new SFVec3f([2.5929,0.854,0]),
-                      orientation : new SFRotation([0,1,0,1.57079])}),
+                      orientation : new SFRotation([0,1,0,1.57079]),
+                      position : new SFVec3f([2.5929,0.854,0])}),
 
                     new Viewpoint({
                       DEF : new SFString("TopView"),
                       description : new SFString("Top View"),
-                      position : new SFVec3f([0,3.4495,0]),
-                      orientation : new SFRotation([1,0,0,-1.57079])})])})]),
-              segments : new MFNode([
-                new HAnimSegment({
-                  USE : new SFString("hanim_pelvis")}),
+                      orientation : new SFRotation([1,0,0,-1.57079]),
+                      position : new SFVec3f([0,3.4495,0])})])})]),
 
                 new HAnimJoint({
                   USE : new SFString("hanim_humanoid_root")}),
 
                 new HAnimJoint({
-                  USE : new SFString("hanim_sacroiliac")})])})])}))});
+                  USE : new SFString("hanim_sacroiliac")}),
+              segments : new MFNode([
+                new HAnimSegment({
+                  USE : new SFString("hanim_pelvis")})])})])}))});
 console.log(X3D0.toXMLNode());

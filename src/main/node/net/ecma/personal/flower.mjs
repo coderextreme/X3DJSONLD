@@ -142,7 +142,7 @@ var p = 0;
 	     localci.push(-1);
 	}
     }
-    coordIndexes = new MFInt32(localci);
+    coordIndexes = new MFInt32(...localci);
 }
 
 , function generateCoordinates(resolution) {
@@ -162,7 +162,7 @@ var p = 0;
 	}
 	phi += delta;
      }
-     coordinates = new MFVec3f(localc);
+     coordinates = new MFVec3f(...localc);
 }
 
 , function set_fraction(fraction, eventTime) {

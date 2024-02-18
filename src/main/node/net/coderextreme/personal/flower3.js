@@ -13,7 +13,7 @@ ConfigurationProperties.showDefaultAttributes = false;
 ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;
 ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
-      var X3D0 =  (new autoclass.X3D()).setProfile("Immersive").setVersion("3.3")
+      var X3D0 =  (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
       .setHead((new autoclass.head())
         .addMeta((new autoclass.meta()).setName("title").setContent("flower3.x3d"))
         .addMeta((new autoclass.meta()).setName("creator").setContent("John Carlson"))
@@ -58,7 +58,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 "	     localci.push(-1);\n"+
 "	}\n"+
 "    }\n"+
-"    coordIndexes = new MFInt32(localci);\n"+
+"    coordIndexes = new MFInt32(...localci);\n"+
 "}\n"+
 "\n"+
 "function generateCoordinates(resolution) {\n"+
@@ -78,7 +78,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 "	}\n"+
 "	phi += delta;\n"+
 "     }\n"+
-"     coordinates = new MFVec3f(localc);\n"+
+"     coordinates = new MFVec3f(...localc);\n"+
 "}\n"+
 "\n"+
 "function set_fraction(fraction, eventTime) {\n"+

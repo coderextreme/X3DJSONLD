@@ -15,7 +15,7 @@ ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
 var ProtoInstance0 = null;
 var ProtoInstance1 = null;
-      var X3D0 =  (new autoclass.X3D()).setProfile("Immersive").setVersion("3.0")
+      var X3D0 =  (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
       .setHead((new autoclass.head())
         .addComponent((new autoclass.component()).setName("Scripting").setLevel(1))
         .addMeta((new autoclass.meta()).setName("title").setContent("flowers2.x3d"))
@@ -84,7 +84,7 @@ var ProtoInstance1 = null;
 "				     localci.push(-1);\n"+
 "				}\n"+
 "			    }\n"+
-"			    coordIndexes = new MFInt32(localci);\n"+
+"			    coordIndexes = new MFInt32(...localci);\n"+
 "			}\n"+
 "\n"+
 "			function generateCoordinates() {\n"+
@@ -105,7 +105,7 @@ var ProtoInstance1 = null;
 "				phi += delta;\n"+
 "			     }\n"+
 "			     \n"+
-"			     coordinates = new MFVec3f(localc);\n"+
+"			     coordinates = new MFVec3f(...localc);\n"+
 "			}\n"+
 "\n"+
 "			function set_fraction(fraction, eventTime) {\n"+

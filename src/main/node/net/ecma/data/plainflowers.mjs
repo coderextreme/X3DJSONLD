@@ -11,21 +11,20 @@ var head = require('./x3d.mjs');
 var MFNode = require('./x3d.mjs');
 var meta = require('./x3d.mjs');
 var Scene = require('./x3d.mjs');
-var ExternProtoDeclare = require('./x3d.mjs');
-var MFString = require('./x3d.mjs');
-var field = require('./x3d.mjs');
-var ProtoDeclare = require('./x3d.mjs');
-var ProtoInterface = require('./x3d.mjs');
-var ProtoBody = require('./x3d.mjs');
-var Group = require('./x3d.mjs');
-var ProtoInstance = require('./x3d.mjs');
-var fieldValue = require('./x3d.mjs');
 var NavigationInfo = require('./x3d.mjs');
 var Background = require('./x3d.mjs');
+var MFString = require('./x3d.mjs');
+var Group = require('./x3d.mjs');
+var ExternProtoDeclare = require('./x3d.mjs');
+var field = require('./x3d.mjs');
+var ProtoDeclare = require('./x3d.mjs');
+var ProtoBody = require('./x3d.mjs');
+var ProtoInstance = require('./x3d.mjs');
+var fieldValue = require('./x3d.mjs');
 var X3D0 =  new X3D({
 
       profile : new SFString("Immersive"),
-      version : new SFString("4.0"),
+      version : new SFString("3.3"),
       head : new SFNode(
         new head({
           meta : new MFNode([
@@ -43,56 +42,58 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("generator"),
-              content : new SFString("X3D-Edit, https://savage.nps.edu/X3D-Edit")})])})),
+              content : new SFString("X3D-Edit, https://savage.nps.edu/X3D-Edit")}),
+
+            new meta({
+              name : new SFString("identifier"),
+              content : new SFString("https://coderextreme.net/X3DJSONLD/src/main/data/plainflowers.x3d")})])})),
       Scene : new SFNode(
         new Scene({
           children : new MFNode([
-            new ExternProtoDeclare({
-              name : new SFString("FlowerProto"),
-              url : new MFString(["../data/flowerproto.x3d#FlowerProto"]),
-              field : new MFNode([
-                new field({
-                  type : field.TYPE_MFSTRING,
-                  accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                  name : new SFString("vertex")}),
-
-                new field({
-                  type : field.TYPE_MFSTRING,
-                  accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                  name : new SFString("fragment")})])}),
-
-            new ProtoDeclare({
-              name : new SFString("flower"),
-              ProtoInterface : new SFNode(
-                new ProtoInterface({})),
-              ProtoBody : new SFNode(
-                new ProtoBody({
-                  children : new MFNode([
-                    new Group({
-                      children : new MFNode([
-                        new ProtoInstance({
-                          name : new SFString("FlowerProto"),
-                          fieldValue : new MFNode([
-                            new fieldValue({
-                              name : new SFString("vertex"),
-                              value : new SFString("\"../shaders/x_ite_flowers_plain.vs\"")}),
-
-                            new fieldValue({
-                              name : new SFString("fragment"),
-                              value : new SFString("\"../shaders/plain.fs\"")})])})])})])}))}),
-
             new NavigationInfo({}),
 
             new Background({
-              frontUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"]),
               backUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]),
+              bottomUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]),
+              frontUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"]),
               leftUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]),
               rightUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]),
-              topUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]),
-              bottomUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"])}),
+              topUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"])}),
 
             new Group({
               children : new MFNode([
+                new ExternProtoDeclare({
+                  name : new SFString("FlowerProto"),
+                  url : new MFString(["../data/flowerproto.x3d#FlowerProto"]),
+                  field : new MFNode([
+                    new field({
+                      type : field.TYPE_MFSTRING,
+                      name : new SFString("vertex"),
+                      accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT)}),
+
+                    new field({
+                      type : field.TYPE_MFSTRING,
+                      name : new SFString("fragment"),
+                      accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT)})])}),
+
+                new ProtoDeclare({
+                  name : new SFString("flower"),
+                  ProtoBody : new SFNode(
+                    new ProtoBody({
+                      children : new MFNode([
+                        new Group({
+                          children : new MFNode([
+                            new ProtoInstance({
+                              name : new SFString("FlowerProto"),
+                              fieldValue : new MFNode([
+                                new fieldValue({
+                                  name : new SFString("vertex"),
+                                  value : new SFString("\"../shaders/x_ite_flowers_plain.vs\"")}),
+
+                                new fieldValue({
+                                  name : new SFString("fragment"),
+                                  value : new SFString("\"../shaders/plain.fs\"")})])})])})])}))}),
+
                 new ProtoInstance({
                   name : new SFString("flower")}),
 

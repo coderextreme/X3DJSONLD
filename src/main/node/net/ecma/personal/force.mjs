@@ -48,7 +48,7 @@ var fieldValue = require('./x3d.mjs');
 var X3D0 =  new X3D({
 
       profile : new SFString("Immersive"),
-      version : new SFString("3.3"),
+      version : new SFString("4.0"),
       head : new SFNode(
         new head({
           component : new SFNode(
@@ -166,7 +166,11 @@ ecmascript:eval (0
 					, function set_cycle(value) {
                                                 old = translation;
 						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);
-                                                keyValue = new MFVec3f([old, translation]);
+                                                var tmpkeyValue = new MFVec3f();
+			    			tmpkeyValue[0] = old;
+			    			tmpkeyValue[1] = translation;
+                                                keyValue = tmpkeyValue;
+			    		
 						// Browser.println(translation);
 					})}),
 
@@ -200,7 +204,7 @@ ecmascript:eval (0
                           toField : new SFString("set_translation")})])})])}))}),
 
             new ProtoDeclare({
-              name : new SFString("cylinder"),
+              name : new SFString("cyl"),
               ProtoInterface : new SFNode(
                 new ProtoInterface({
                   field : new MFNode([
@@ -264,17 +268,29 @@ ecmascript:eval (0
 
                 , function set_endA(value) {
 		    if (typeof spine === 'undefined') {
-		        spine = new MFVec3f([value, value]);
+		        var tmpspine = new MFVec3f();
+			tmpspine[0] = value;
+			tmpspine[1] = value;
+			spine = tmpspine;
 		    } else {
-		        spine = new MFVec3f([value, spine[1]]);
+		        var tmpspine = new MFVec3f();
+			tmpspine[0] = value;
+			tmpspine[1] = spine[1];
+			spine = tmpspine;
 		    }
                 }
 
                 , function set_endB(value) {
 		    if (typeof spine === 'undefined') {
-		        spine = new MFVec3f([value, value]);
+		        var tmpspine = new MFVec3f();
+			tmpspine[0] = value;
+			tmpspine[1] = value;
+			spine = tmpspine;
 		    } else {
-		        spine = new MFVec3f([spine[0], value]);
+		        var tmpspine = new MFVec3f();
+			tmpspine[0] = spine[0];
+			tmpspine[1] = value;
+			spine = tmpspine;
 		    }
                 }
 
@@ -331,7 +347,7 @@ ecmascript:eval (0
                       value : new SFString("50 50 -50")})])}),
 
                 new ProtoInstance({
-                  name : new SFString("cylinder"),
+                  name : new SFString("cyl"),
                   DEF : new SFString("linkA"),
                   fieldValue : new MFNode([
                     new fieldValue({
@@ -343,7 +359,7 @@ ecmascript:eval (0
                       value : new SFString("50 50 50")})])}),
 
                 new ProtoInstance({
-                  name : new SFString("cylinder"),
+                  name : new SFString("cyl"),
                   DEF : new SFString("linkB"),
                   fieldValue : new MFNode([
                     new fieldValue({
@@ -355,7 +371,7 @@ ecmascript:eval (0
                       value : new SFString("-50 -50 -50")})])}),
 
                 new ProtoInstance({
-                  name : new SFString("cylinder"),
+                  name : new SFString("cyl"),
                   DEF : new SFString("linkC"),
                   fieldValue : new MFNode([
                     new fieldValue({

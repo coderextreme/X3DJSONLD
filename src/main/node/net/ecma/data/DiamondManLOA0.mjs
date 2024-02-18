@@ -1,41 +1,41 @@
 'use strict';
-var X3D = require('./x3d.js');
+var X3D = require('./x3d.mjs');
 try {
 	var fs = require('fs');
 } catch (e) {
 console.log("Problems loading fs. On browser?",e);
 }
-var SFString = require('./x3d.js');
-var SFNode = require('./x3d.js');
-var head = require('./x3d.js');
-var component = require('./x3d.js');
-var SFInt32 = require('./x3d.js');
-var MFNode = require('./x3d.js');
-var meta = require('./x3d.js');
-var Scene = require('./x3d.js');
-var WorldInfo = require('./x3d.js');
-var MFString = require('./x3d.js');
-var NavigationInfo = require('./x3d.js');
-var SFFloat = require('./x3d.js');
-var Viewpoint = require('./x3d.js');
-var SFVec3f = require('./x3d.js');
-var HAnimHumanoid = require('./x3d.js');
-var MetadataSet = require('./x3d.js');
-var MetadataString = require('./x3d.js');
-var HAnimJoint = require('./x3d.js');
-var MFFloat = require('./x3d.js');
-var HAnimSegment = require('./x3d.js');
-var Transform = require('./x3d.js');
-var Shape = require('./x3d.js');
-var IndexedFaceSet = require('./x3d.js');
-var MFInt32 = require('./x3d.js');
-var Coordinate = require('./x3d.js');
-var MFVec3f = require('./x3d.js');
-var Appearance = require('./x3d.js');
-var Material = require('./x3d.js');
-var SFColor = require('./x3d.js');
-var HAnimSite = require('./x3d.js');
-var SFRotation = require('./x3d.js');
+var SFString = require('./x3d.mjs');
+var SFNode = require('./x3d.mjs');
+var head = require('./x3d.mjs');
+var component = require('./x3d.mjs');
+var SFInt32 = require('./x3d.mjs');
+var MFNode = require('./x3d.mjs');
+var meta = require('./x3d.mjs');
+var Scene = require('./x3d.mjs');
+var WorldInfo = require('./x3d.mjs');
+var MFString = require('./x3d.mjs');
+var NavigationInfo = require('./x3d.mjs');
+var SFFloat = require('./x3d.mjs');
+var Viewpoint = require('./x3d.mjs');
+var SFVec3f = require('./x3d.mjs');
+var HAnimHumanoid = require('./x3d.mjs');
+var MetadataSet = require('./x3d.mjs');
+var MetadataString = require('./x3d.mjs');
+var HAnimJoint = require('./x3d.mjs');
+var MFFloat = require('./x3d.mjs');
+var HAnimSegment = require('./x3d.mjs');
+var Transform = require('./x3d.mjs');
+var Shape = require('./x3d.mjs');
+var IndexedFaceSet = require('./x3d.mjs');
+var MFInt32 = require('./x3d.mjs');
+var Coordinate = require('./x3d.mjs');
+var MFVec3f = require('./x3d.mjs');
+var Appearance = require('./x3d.mjs');
+var Material = require('./x3d.mjs');
+var SFColor = require('./x3d.mjs');
+var HAnimSite = require('./x3d.mjs');
+var SFRotation = require('./x3d.mjs');
 var X3D0 =  new X3D({
 
       profile : new SFString("Immersive"),
@@ -208,7 +208,7 @@ var X3D0 =  new X3D({
                           children : new MFNode([
                             new Transform({
                               translation : new SFVec3f([0,0.9149,0.0016]),
-                              children : new MFNode([
+                              child : new SFNode(
                                 new Shape({
                                   DEF : new SFString("DiamondShape"),
                                   geometry : new SFNode(
@@ -222,7 +222,7 @@ var X3D0 =  new X3D({
                                     new Appearance({
                                       material : new SFNode(
                                         new Material({
-                                          diffuseColor : new SFColor([1,1,0])}))}))})])})])})])})])}),
+                                          diffuseColor : new SFColor([1,1,0])}))}))}))})])})])})])}),
               viewpoints : new SFNode(
                 new HAnimSite({
                   name : new SFString("site_view"),

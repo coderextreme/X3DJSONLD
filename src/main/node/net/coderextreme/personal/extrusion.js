@@ -13,12 +13,12 @@ ConfigurationProperties.showDefaultAttributes = false;
 ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;
 ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
-      var X3D0 =  (new autoclass.X3D()).setProfile("Immersive").setVersion("3.3")
+      var X3D0 =  (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
       .setHead((new autoclass.head())
         .addMeta((new autoclass.meta()).setName("creator").setContent("John W Carlson"))
         .addMeta((new autoclass.meta()).setName("created").setContent("December 13 2015"))
         .addMeta((new autoclass.meta()).setName("title").setContent("extrusion.x3d"))
-        .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/force.x3d"))
+        .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/extrusion.x3d"))
         .addMeta((new autoclass.meta()).setName("description").setContent("beginnings of a force directed graph in 3D"))
         .addMeta((new autoclass.meta()).setName("generator").setContent("Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit")))
       .setScene((new autoclass.Scene())
@@ -37,7 +37,10 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 "                        Browser.print(value);\n"+
 "                        var endA = new SFVec3f(spine[0].x*Math.random()*2, spine[0].y*Math.random()*2, spine[0].z*Math.random()*2);\n"+
 "                        var endB = new SFVec3f(spine[1].x*Math.random()*2, spine[1].y*Math.random()*2, spine[1].z*Math.random()*2);\n"+
-"		        spine = new MFVec3f([endA, endB]);\n"+
+"                        var tmpspine = new MFVec3f();\n"+
+"			tmpspine[0] = endA;\n"+
+"			tmpspine[1] = endB;\n"+
+"                        spine = tmpspine;\n"+
 "                }"))
           .addChild((new autoclass.ROUTE()).setFromNode("TourTime").setFromField("cycleTime").setToNode("MoveCylinder").setToField("set_cycle"))
           .addChild((new autoclass.ROUTE()).setFromNode("MoveCylinder").setFromField("spine_changed").setToNode("extrusion").setToField("set_spine"))))      ;

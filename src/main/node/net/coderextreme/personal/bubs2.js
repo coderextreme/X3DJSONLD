@@ -1,9 +1,10 @@
 var java = require('java');
+var util = require('util');
 java.asyncOptions = {
   asyncSuffix: undefined,     // Don't generate node-style methods taking callbacks
   syncSuffix: "",              // Sync methods use the base name(!!)
   promiseSuffix: "Promise",   // Generate methods returning promises, using the suffix Promise.
-  promisify: require('util').promisify, // Needs Node.js version 8 or greater, see comment below
+  promisify: util.promisify, // Needs Node.js version 8 or greater, see comment below
   ifReadOnlySuffix: "_alt"
 };
 var autoclass = require('../../../X3Dautoclass');
@@ -16,19 +17,20 @@ var ProtoInstance0 = null;
 var ProtoInstance1 = null;
 var ProtoInstance2 = null;
 var ProtoInstance3 = null;
-      var X3D0 =  (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
+      var X3D0 =  (new autoclass.X3D()).setProfile("Immersive").setVersion("3.3")
       .setHead((new autoclass.head())
         .addMeta((new autoclass.meta()).setName("title").setContent("bubs2.x3d"))
         .addMeta((new autoclass.meta()).setName("creator").setContent("John Carlson"))
         .addMeta((new autoclass.meta()).setName("description").setContent("Tour around a prismatic sphere"))
         .addMeta((new autoclass.meta()).setName("generator").setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit"))
-        .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/geo.x3d"))
+        .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/geo.x3d"))
         .addMeta((new autoclass.meta()).setName("translated").setContent("13 March 2016"))
-        .addMeta((new autoclass.meta()).setName("generator").setContent("X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html")))
+        .addMeta((new autoclass.meta()).setName("generator").setContent("X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"))
+        .addComponent((new autoclass.component()).setName("Scripting").setLevel(1)))
       .setScene((new autoclass.Scene())
         .addChild((new autoclass.NavigationInfo()).setType(java.newArray("java.lang.String", ["EXAMINE"])))
         .addChild((new autoclass.Viewpoint()).setPosition(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(4)])).setOrientation(java.newArray("float", [java.newFloat(1), java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setDescription("Bubbles in action"))
-        .addChild((new autoclass.Background()).setBackUrl(java.newArray("java.lang.String", ["../resources/images/BK.png","https://coderextreme.net/X3DJSONLD/images/BK.png"])).setBottomUrl(java.newArray("java.lang.String", ["../resources/images/BT.png","https://coderextreme.net/X3DJSONLD/images/BT.png"])).setFrontUrl(java.newArray("java.lang.String", ["../resources/images/FR.png","https://coderextreme.net/X3DJSONLD/images/FR.png"])).setLeftUrl(java.newArray("java.lang.String", ["../resources/images/LF.png","https://coderextreme.net/X3DJSONLD/images/LF.png"])).setRightUrl(java.newArray("java.lang.String", ["../resources/images/RT.png","https://coderextreme.net/X3DJSONLD/images/RT.png"])).setTopUrl(java.newArray("java.lang.String", ["../resources/images/TP.png","https://coderextreme.net/X3DJSONLD/images/TP.png"])))
+        .addChild((new autoclass.Background()).setBackUrl(java.newArray("java.lang.String", ["../resources/images/BK.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/BK.png"])).setBottomUrl(java.newArray("java.lang.String", ["../resources/images/BT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/BT.png"])).setFrontUrl(java.newArray("java.lang.String", ["../resources/images/FR.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/FR.png"])).setLeftUrl(java.newArray("java.lang.String", ["../resources/images/LF.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/LF.png"])).setRightUrl(java.newArray("java.lang.String", ["../resources/images/RT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/RT.png"])).setTopUrl(java.newArray("java.lang.String", ["../resources/images/TP.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/TP.png"])))
         .addChild((new autoclass.ProtoDeclare()).setName("Bubble")
           .setProtoBody((new autoclass.ProtoBody())
             .addChild((new autoclass.Transform()).setDEF("body_trans")
@@ -101,5 +103,5 @@ var ProtoInstance3 = null;
         .addChild(ProtoInstance1 = (new autoclass.ProtoInstance()).setName("Bubble").setDEF("bubbleB"))
         .addChild(ProtoInstance2 = (new autoclass.ProtoInstance()).setName("Bubble").setDEF("bubbleC"))
         .addChild(ProtoInstance3 = (new autoclass.ProtoInstance()).setName("Bubble").setDEF("bubbleD")))      ;
-    X3D0.toFileX3D("../personal/bubs2.new.x3d");
+    X3D0.toFileX3D("../personal/bubs2.new.node.x3d");
     process.exit(0);
