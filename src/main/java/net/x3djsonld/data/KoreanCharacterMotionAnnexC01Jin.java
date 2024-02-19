@@ -114,7 +114,7 @@ import org.web3d.x3d.jsail.Time.*;
 	* @author Jin Hoon Lee and Min Joo Lee
  */
 
-import net.coderextreme.X3DRoots;import java.util.List;import java.util.ArrayList;public class KoreanCharacterMotionAnnexC01Jin implements X3DRoots 
+public class KoreanCharacterMotionAnnexC01Jin
 {
 	/** Default constructor to create this object. */
 	public KoreanCharacterMotionAnnexC01Jin ()
@@ -2295,11 +2295,6 @@ import net.coderextreme.X3DRoots;import java.util.List;import java.util.ArrayLis
 	public X3D getX3dModel()
 	{	  
 		return x3dModel;
-	}
-	public List<X3D> getRootNodeList() {
-		List<X3D> list = new ArrayList<X3D>(1);
-		list.add(x3dModel);
-		return list;
 	}
 	   
     /** 

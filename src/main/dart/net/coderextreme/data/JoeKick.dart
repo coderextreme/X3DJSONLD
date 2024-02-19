@@ -34,15 +34,23 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('modified'),
-              content_ : SFString('29 January 2023')),
+              content_ : SFString('1 July 2023')),
 
             meta(
               name_ : SFString('TODO'),
               content_ : SFString('Record information about skin coordinates (found in comment at end of scene) as a structured MetadataSet containing MetadataString nodes')),
 
             meta(
-              name_ : SFString('translators'),
-              content_ : SFString('Roy Walmsley, Don Brutzman, John Carlson')),
+              name_ : SFString('translator'),
+              content_ : SFString('Roy Walmsley')),
+
+            meta(
+              name_ : SFString('translator'),
+              content_ : SFString('Don Brutzman')),
+
+            meta(
+              name_ : SFString('translator'),
+              content_ : SFString('John Carlson')),
 
             meta(
               name_ : SFString('reference'),
@@ -72,7 +80,6 @@ var X3D0 =  X3D(
 
             NavigationInfo(
               DEF_ : SFString('Start_NavigationInfo'),
-              headlight_ : false,
               speed_ : 2.5),
 
             Background(
@@ -135,7 +142,7 @@ var X3D0 =  X3D(
                 HAnimHumanoid(
                   name_ : SFString('Kick'),
                   DEF_ : SFString('Joe_Kick'),
-                  loa_ : 3,
+                  loa_ : 4,
                   version_ : SFString('2.0'),
                   metadata_ : [
                     MetadataSet(

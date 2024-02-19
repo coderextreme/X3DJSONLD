@@ -60,7 +60,7 @@ import org.web3d.x3d.jsail.Time.*;
 	* @author Lost, Doug Sanden I think
  */
 
-import net.coderextreme.X3DRoots;import java.util.List;import java.util.ArrayList;public class arc3 implements X3DRoots 
+public class arc3
 {
 	/** Default constructor to create this object. */
 	public arc3 ()
@@ -220,11 +220,6 @@ ecmascript:
 	public X3D getX3dModel()
 	{	  
 		return x3dModel;
-	}
-	public List<X3D> getRootNodeList() {
-		List<X3D> list = new ArrayList<X3D>(1);
-		list.add(x3dModel);
-		return list;
 	}
 	   
     /** 

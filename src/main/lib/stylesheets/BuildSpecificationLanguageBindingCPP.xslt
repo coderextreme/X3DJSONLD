@@ -58,7 +58,7 @@ TODO:
 	</xsl:variable>
 
 	<xsl:variable name="specificationIndexUrl">
-		<xsl:text>https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-IS.proof/Part01/</xsl:text>
+		<xsl:text>https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/</xsl:text>
 	</xsl:variable>
 
 	<xsl:variable name="includeAbstractSpecLinks" select="false()"/>

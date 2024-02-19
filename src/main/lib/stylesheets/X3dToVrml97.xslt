@@ -18,7 +18,7 @@
 	<xsl:param name="disableIndent"><xsl:text>false</xsl:text></xsl:param>
 
 <!--
-Copyright (c) 2000-2023 held by the author(s). All rights reserved.
+Copyright (c) 2000-2024 held by the author(s). All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -2297,7 +2297,7 @@ EXTERNPROTO TransmitterPdu [
   -->
 </xsl:template>
 
-<!-- ****** unit: https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-IS.proof/Part01/components/core.html#UNITStatement ****** -->
+<!-- ****** unit: https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/components/core.html#UNITStatement ****** -->
 <xsl:template match="unit">
   <xsl:if test="$fileEncoding!='ClassicVRML'"><xsl:text># </xsl:text></xsl:if>
   <xsl:text>UNIT </xsl:text>
@@ -3683,7 +3683,7 @@ EXTERNPROTO TransmitterPdu [
             <xsl:text> ### here2 </xsl:text>
             <xsl:value-of select="count(*[not(@containerField='proxy')])"/>
             <xsl:text>&#10;</xsl:text> -->
-            <xsl:if             test="(count(*[not(@containerField='proxy') and not(local-name()='IS') and not(starts-with(local-name(),'Metadata'))]) + count(comment()) gt 0)">
+            <xsl:if             test="(count(*[not(@containerField='proxy') and not(local-name()='IS') and not(starts-with(local-name(),'Metadata'))]) + count(comment()) > 0)">
                 <xsl:text>  children [&#10;</xsl:text>
                 <xsl:apply-templates select="*[not(@containerField='proxy') and not(local-name()='IS') and not(starts-with(local-name(),'Metadata'))] | comment()">
                     <xsl:with-param name="indent" select="$indent + 4"/>
@@ -3692,16 +3692,16 @@ EXTERNPROTO TransmitterPdu [
             </xsl:if>
           </xsl:when>
           <!-- backup proxy test, put proxy after children because a referencing USE is employed -->
-          <xsl:when test="*[@containerField='proxy'][string-length(@USE) gt 0]">
+          <xsl:when test="*[@containerField='proxy'][string-length(@USE) > 0]">
         <!--<xsl:text> ### here3&#10;</xsl:text> -->
-            <xsl:if             test="(count(*[not(@containerField='proxy') and not(local-name()='IS') and not(starts-with(local-name(),'Metadata'))]) + count(comment()) gt 0)">
+            <xsl:if             test="(count(*[not(@containerField='proxy') and not(local-name()='IS') and not(starts-with(local-name(),'Metadata'))]) + count(comment()) > 0)">
                 <xsl:text>  children [&#10;</xsl:text>
                 <xsl:apply-templates select="*[not(@containerField='proxy') and not(local-name()='IS') and not(starts-with(local-name(),'Metadata'))] | comment()">
                   <xsl:with-param name="indent" select="$indent + 4"/>
                 </xsl:apply-templates>
                 <xsl:text> ]&#10;</xsl:text>
             </xsl:if>
-            <xsl:if test="(count(*[@containerField='proxy'][string-length(@USE) gt 0]) gt 0)">
+            <xsl:if test="(count(*[@containerField='proxy'][string-length(@USE) > 0]) > 0)">
                 <xsl:text>  proxy&#10;</xsl:text>
                 <xsl:apply-templates select="*[@containerField='proxy']">
                   <xsl:with-param name="indent" select="$indent + 4"/>
@@ -3709,7 +3709,7 @@ EXTERNPROTO TransmitterPdu [
             </xsl:if>
           </xsl:when>
           <!-- otherwise no proxy found -->
-          <xsl:when         test="(count(*[not(@containerField='proxy') and not(local-name()='IS') and not(starts-with(local-name(),'Metadata'))]) + count(comment()) gt 0)">
+          <xsl:when         test="(count(*[not(@containerField='proxy') and not(local-name()='IS') and not(starts-with(local-name(),'Metadata'))]) + count(comment()) > 0)">
             <xsl:text>  children [&#10;</xsl:text>
             <xsl:apply-templates select="*[not(@containerField='proxy') and not(local-name()='IS') and not(starts-with(local-name(),'Metadata'))] | comment()">
               <xsl:with-param name="indent" select="$indent + 4"/>
@@ -3759,7 +3759,7 @@ EXTERNPROTO TransmitterPdu [
             <!-- debug <xsl:message><xsl:value-of select="local-name()"/><xsl:text> node, processing unwrapped children...</xsl:text></xsl:message> -->
             <xsl:call-template name="print-indent"><xsl:with-param name="indent" select="$indent + 2"/></xsl:call-template>
             <!-- ensure HAnimDisplacer child nodes handled separately from children nodes -->
-            <xsl:if test="(local-name()='HAnimJoint' or local-name()='HAnimSegment') and (count(HAnimDisplacer) gt 0)">
+            <xsl:if test="(local-name()='HAnimJoint' or local-name()='HAnimSegment') and (count(HAnimDisplacer) > 0)">
                 <xsl:text>displacers [&#10;</xsl:text>
                 <xsl:apply-templates select="*[local-name()='HAnimDisplacer']"><xsl:with-param name="indent" select="$indent + 4"/></xsl:apply-templates>
                 <xsl:text>]</xsl:text>
@@ -3988,7 +3988,7 @@ EXTERNPROTO TransmitterPdu [
           <xsl:apply-templates select="*[@containerField='skin']"><xsl:with-param name="indent" select="$indent + 2"/></xsl:apply-templates>
           <xsl:text>]&#10;</xsl:text>
         </xsl:if>
-        <xsl:if test="*[contains(local-name(),'Coordinate')][@containerField='skinCoord'][string-length(@USE) gt 0]">
+        <xsl:if test="*[contains(local-name(),'Coordinate')][@containerField='skinCoord'][string-length(@USE) > 0]">
           <xsl:apply-templates select="*[contains(local-name(),'Coordinate')][@containerField='skinCoord']"><xsl:with-param name="indent" select="$indent + 2"/></xsl:apply-templates>
         </xsl:if>
         <xsl:if test="Normal[@containerField='skinNormal']">
@@ -9853,7 +9853,7 @@ EXTERNPROTO TransmitterPdu [
         <xsl:when test="($nodeName='IndexedFaceSet') and (($shortFieldName='convex') or ($shortFieldName='normalPerVertex'))">
           <xsl:text>SFBool</xsl:text>
         </xsl:when>
-        <xsl:when test="($nodeName='IndexedFaceSet') and (($shortFieldName='color') or ($shortFieldName='coord') or ($shortFieldName='texCoord') or ($shortFieldName='fogCoord'))">
+        <xsl:when test="(($nodeName='IndexedFaceSet') or contains($nodeName,'QuadSet')) and (($shortFieldName='color') or ($shortFieldName='coord') or ($shortFieldName='texCoord') or ($shortFieldName='fogCoord'))">
           <xsl:text>SFNode</xsl:text>
         </xsl:when>
         <xsl:when test="($nodeName='TextureProperties') and (($shortFieldName='textureProperties'))">

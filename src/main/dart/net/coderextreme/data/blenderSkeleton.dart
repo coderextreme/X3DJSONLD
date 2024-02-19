@@ -11,17 +11,14 @@ var X3D0 =  X3D(
             component(
               name_ : SFString('HAnim'),
               level_ : 3),
-          unit_ : 
-            unit(
-              name_ : SFString('METERS'),
-              category_ : SFString('length')),
           meta_ : [
             meta(
-              name_ : SFString('filename'),
+              name_ : SFString('title'),
               content_ : SFString('blenderSkeleton.x3d')),
 
             meta(
-              name_ : SFString('copyright')),
+              name_ : SFString('copyright'),
+              content_ : SFString('2023')),
 
             meta(
               name_ : SFString('reference'),
@@ -29,11 +26,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('generator'),
-              content_ : SFString('Blender 4.0.1')),
-
-            meta(
-              name_ : SFString('exporter'),
-              content_ : SFString('io_scene_x3dv'))]),
+              content_ : SFString('Blender 4.0.1'))]),
       Scene_ : 
         Scene(
           children_ : [

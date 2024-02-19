@@ -6,9 +6,11 @@
 <meta name="creator" content="Joe D. Williams"></meta>
 <meta name="created" content="9 January 2004"></meta>
 <meta name="translated" content="12 January 2017"></meta>
-<meta name="modified" content="29 January 2023"></meta>
+<meta name="modified" content="1 July 2023"></meta>
 <meta name="TODO" content="Record information about skin coordinates (found in comment at end of scene) as a structured MetadataSet containing MetadataString nodes"></meta>
-<meta name="translators" content="Roy Walmsley, Don Brutzman, John Carlson"></meta>
+<meta name="translator" content="Roy Walmsley"></meta>
+<meta name="translator" content="Don Brutzman"></meta>
+<meta name="translator" content="John Carlson"></meta>
 <meta name="reference" content="../Characters/JoeSkinTexcoordDisplacerKick.x3d"></meta>
 <meta name="identifier" content="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/JoeKick.x3d"></meta>
 <meta name="generator" content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"></meta>
@@ -16,7 +18,7 @@
 <meta name="license" content="../license.html"></meta>
 </head>
 <Scene><WorldInfo info="&quot;X3D Humanoid LOA3 skeleton&quot; &quot;skin from hanim sites, surface features, and some added points&quot; &quot;390 points&quot;" title="X3D HANIM LOA3 Skeleton, 390 point Skin, texcoords, Displacer, teTrans for Joe_ by Joe"></WorldInfo>
-<NavigationInfo DEF="Start_NavigationInfo" headlight="false" speed="2.5"></NavigationInfo>
+<NavigationInfo DEF="Start_NavigationInfo" speed="2.5"></NavigationInfo>
 <Background DEF="blue_Background"></Background>
 <SpotLight DEF="light1" ambientIntensity="0.7" beamWidth="1.5" color="0.8 0.8 1" cutOffAngle="0.6" direction="0 0 0" location="0 3 3" radius="10"></SpotLight>
 <PointLight DEF="light2" ambientIntensity="0.7" color="0.8 0.8 1" location="0 10 -7"></PointLight>
@@ -25,7 +27,7 @@
 <Viewpoint DEF="Scene_ISideView" centerOfRotation="0 0.8 0" description="Scene_Side View" orientation="0 1 0 1.5708" position="2.6 0.8 0"></Viewpoint>
 <Viewpoint DEF="Scene_BackView" centerOfRotation="0 1.5 0" description="Scene_Back View" orientation="0 1 0 3.14" position="0 1.5 -3"></Viewpoint>
 <Viewpoint DEF="Scene_TopView" centerOfRotation="0 1.5 0" description="Scene_Top View" orientation="1 0 0 -1.5708" position="0 3.5 0"></Viewpoint>
-<Group DEF="Joe_Humanoid"><HAnimHumanoid name="Kick" DEF="Joe_Kick" loa="3" version="2.0"><MetadataSet containerField="metadata" name="warnings" reference="HAnim"><MetadataString name="SymmetricalLeftRight" reference="correction options: ignore, warn, average, left, right, largest, smallest" value="&quot;ignore&quot;" containerField="value"></MetadataString>
+<Group DEF="Joe_Humanoid"><HAnimHumanoid name="Kick" DEF="Joe_Kick" loa="4" version="2.0"><MetadataSet containerField="metadata" name="warnings" reference="HAnim"><MetadataString name="SymmetricalLeftRight" reference="correction options: ignore, warn, average, left, right, largest, smallest" value="&quot;ignore&quot;" containerField="value"></MetadataString>
 </MetadataSet>
 <HAnimJoint name="humanoid_root" DEF="Joe_humanoid_root" center="0 0.875 0" ulimit="0 0 0" llimit="0 0 0" containerField="skeleton"><HAnimSegment name="sacrum" DEF="Joe_sacrum"><HAnimSite name="RootFront_view" DEF="Joe_RootFront_view"><Transform DEF="hanimcordsys" scale="0.175 0.175 0.175"><Viewpoint DEF="ViewBodyRootAxes" description="Joe_HAnim Root HAnimSite Coordinate Axes View"></Viewpoint>
 <Shape DEF="AxisLinesShape"><!--RGB lines showing XYZ axes--><IndexedLineSet colorIndex="0 1 2" colorPerVertex="false" coordIndex="0 1 -1 0 2 -1 0 3 -1"><Coordinate point="0 0 0 1 0 0 0 1 0 0 0 1"></Coordinate>

@@ -10,7 +10,7 @@ function doubleToFloat(d) {
 }
       var X3D0 =  new X3D().setVersion("3.0").setProfile("Immersive")
       .setHead(new head()
-        .addMeta(new meta().setName("filename").setContent("Scripting.x3d")))
+        .addMeta(new meta().setName("title").setContent("Scripting.x3d")))
       .setScene(new Scene()
         .addChild(new Script().setDEF("OpenVault")
           .addField(new field().setType(field.TYPE_SFTIME).setName("openVault").setAccessType(field.ACCESSTYPE_INPUTONLY))

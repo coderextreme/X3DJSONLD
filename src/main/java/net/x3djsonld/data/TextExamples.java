@@ -75,7 +75,7 @@ import org.web3d.x3d.jsail.Text.*;
 	* @author Don Brutzman
  */
 
-import net.coderextreme.X3DRoots;import java.util.List;import java.util.ArrayList;public class TextExamples implements X3DRoots 
+public class TextExamples
 {
 	/** Default constructor to create this object. */
 	public TextExamples ()
@@ -139,11 +139,6 @@ import net.coderextreme.X3DRoots;import java.util.List;import java.util.ArrayLis
 	public X3D getX3dModel()
 	{	  
 		return x3dModel;
-	}
-	public List<X3D> getRootNodeList() {
-		List<X3D> list = new ArrayList<X3D>(1);
-		list.add(x3dModel);
-		return list;
 	}
 	   
     /** 

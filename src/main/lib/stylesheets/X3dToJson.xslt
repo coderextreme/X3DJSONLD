@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-Copyright (c) 2001-2023 held by the author(s).  All rights reserved.
+Copyright (c) 2001-2024 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -3618,10 +3618,12 @@ POSSIBILITY OF SUCH DAMAGE.
 					($attributeName='next')     or
 					($attributeName='previous') or
 					($attributeName='normalizeVelocity') or
+					($attributeName='pickable')          or
 					($attributeName='rtpHeaderExpected') or
 					($attributeName='shadows') or
 					($attributeName='solid') or
 					($attributeName='uClosed') or ($attributeName='vClosed') or
+					($attributeName='useFiniteRotation') or ($attributeName='useGlobalGravity') or
 					($attributeName='viewAll') or
 					($attributeName='visible') or
 					($parentElementName='AudioClip' and $attributeName='loop') or
@@ -3650,7 +3652,6 @@ POSSIBILITY OF SUCH DAMAGE.
 					($parentElementName='NurbsPatchSurface' and $attributeName='closedSurface') or
 					($parentElementName='ParticleSystem' and $attributeName='createParticles') or
 					($parentElementName='VolumeEmitter' and $attributeName='internal') or
-					($parentElementName='PickableGroup' and $attributeName='pickable') or
 					($parentElementName='PixelTexture' and ($attributeName='repeatS' or $attributeName='repeatT')) or
 					($parentElementName='NavigationInfo' and $attributeName='headlight') or
 					($parentElementName='PlaneSensor' and $attributeName='autoOffset') or
@@ -3742,17 +3743,35 @@ POSSIBILITY OF SUCH DAMAGE.
                                         ($attributeName='absorption')       or
                                         ($attributeName='ambientIntensity') or
 					($attributeName='attack')           or
+                                        ($attributeName='axis1Angle')       or ($attributeName='axis2Angle')  or ($attributeName='axis3Angle')  or	
+					($attributeName='axis1Torque')      or ($attributeName='axis2Torque') or ($attributeName='axis3Torque') or	
+					($attributeName='bounce')           or ($attributeName='minBounceSpeed')  or
                                         ($attributeName='coneInnerAngle')   or ($attributeName='coneOuterAngle')  or ($attributeName='coneOuterGain')    or
+					($attributeName='constantForceMix') or ($attributeName='contactSurfaceThickness')      or 
 					($attributeName='creaseAngle')      or
-					($attributeName='detune')           or
+                                        ($attributeName='desiredAngularVelocity1') or ($attributeName='desiredAngularVelocity2')  or
+                                        ($attributeName='disabledAngularSpeed') or ($attributeName='disabledLinearSpeed') or ($attributeName='disabledTime')  or	
+                                        ($attributeName='detune')           or
                                         ($attributeName='diffuse')          or
+					($attributeName='errorCorrection')  or
 					($attributeName='farDistance')      or ($attributeName='nearDistance')    or
 					($attributeName='frequency')        or
 					($attributeName='gain')             or
+					($attributeName='hinge1Angle')      or ($attributeName='hinge2Angle')       or
+					($attributeName='hinge1AngleRate')  or ($attributeName='hinge2AngleRate')   or
 					($attributeName='intensity')        or
 					($attributeName='interauralDistance') or
 					($attributeName='knee')             or
-					($attributeName='maxDistance')      or
+					($attributeName='linearDampingFactor') or ($attributeName='linearVelocity') or
+					($attributeName='loopEnd')          or ($attributeName='loopStart')       or
+					($attributeName='mass')             or
+					($attributeName='maxAngle1')        or ($attributeName='maxAngle2')       or
+					($attributeName='maxTorque1')       or ($attributeName='maxTorque2')      or
+					($attributeName='maxAngle')         or ($attributeName='minAngle1')       or
+					($attributeName='maxCorrectionSpeed') or
+					($attributeName='motor1Angle')      or ($attributeName='motor2Angle')     or
+                                        ($attributeName='motor1AngleRate')  or ($attributeName='motor2AngleRate') or
+                                        ($attributeName='maxDistance')      or
 					($attributeName='minDecibels')      or ($attributeName='maxDecibels')     or
                                         starts-with($attributeName,'pointSize') or
 					($attributeName='priority')         or
@@ -3762,10 +3781,16 @@ POSSIBILITY OF SUCH DAMAGE.
 					($attributeName='referenceDistance') or
                                         ($attributeName='refraction')       or
                                         ($attributeName='rolloffFactor')    or
+					($attributeName='separation')       or ($attributeName='separationRate')     or
 					($attributeName='shadowIntensity')  or
 					($attributeName='smoothingTimeConstant')  or
                                         ($attributeName='specular')         or
                                         ($attributeName='startAngle')       or ($attributeName='endAngle') or
+					($attributeName='stopBounce')       or ($attributeName='stopErrorCorrection') or
+                                        ($attributeName='stop1Bounce')      or ($attributeName='stop1ConstantForceMix ') or ($attributeName='stop1ErrorCorrection') or 
+                                        ($attributeName='stop2Bounce')      or ($attributeName='stop2ConstantForceMix ') or ($attributeName='stop2ErrorCorrection') or 
+                                        ($attributeName='stop3Bounce')      or ($attributeName='stop3ConstantForceMix ') or ($attributeName='stop3ErrorCorrection') or 
+                                        ($attributeName='suspensionErrorCorrection') or ($attributeName='suspensionForce') or 
 					($attributeName='threshold')        or
                                         ($attributeName='tolerance')        or
 					($attributeName='transparency')     or
@@ -3946,6 +3971,8 @@ POSSIBILITY OF SUCH DAMAGE.
 					($attributeName='center')      or
 					($attributeName='scale')       or
 					($attributeName='translation') or
+					($attributeName='body1AnchorPoint') or ($attributeName='body2AnchorPoint') or
+					($attributeName='body1Axis')   or ($attributeName='body2Axis') or
 					($parentElementName='Billboard' and $attributeName='axisOfRotation') or
 					($parentElementName='Box' and $attributeName='size') or
 					(ends-with($parentElementName,'Emitter') and ($attributeName='direction' or $attributeName='position')) or
@@ -3993,6 +4020,7 @@ POSSIBILITY OF SUCH DAMAGE.
 					($parentElementName='NormalInterpolator'         and $attributeName='keyValue') or
 					($parentElementName='PositionInterpolator'       and $attributeName='keyValue') or
 					($parentElementName='SplinePositionInterpolator' and ($attributeName='keyValue' or $attributeName='keyVelocity')) or
+					($parentElementName='RigidBody'                  and ($attributeName='forces'   or $attributeName='torques')) or
 					(contains($parentElementName,'Coordinate') and $attributeName='point') or
 					($parentElementName='Extrusion' and $attributeName='spine') or
 					($parentElementName='Normal' and $attributeName='vector') or
@@ -4057,6 +4085,36 @@ POSSIBILITY OF SUCH DAMAGE.
                     ($parentElementName='Matrix4VertexAttribute' and $attributeName='value')">
 			  <xsl:text>MFMatrix4f</xsl:text>
 		  </xsl:when>
+		  <!-- SFNode and MFNode are needed for type lookup when checking ROUTE connections -->
+		  <!-- SFNode -->
+		  <xsl:when test="
+                    ($localFieldType='SFNode')    or 
+                    ($attributeName='attrib') or ($attributeName='color') or ($attributeName='coord') or ($attributeName='normal') or ($attributeName='texCoord') or 
+                    ($attributeName='body1')  or ($attributeName='body2') or ($attributeName='geometry1')  or ($attributeName='geometry2') or 
+                    (($parentElementName='MetadataSet')         and  $attributeName='metadata') or
+                    (($parentElementName='CollidableOffset')    and  $attributeName='collidable') or
+                    (($parentElementName='CollidableShape')     and  $attributeName='shape') or
+                    ((($parentElementName='CollisionSensor') or ($parentElementName='RigidBodyCollection'))  and  $attributeName='collider') or
+                    (($parentElementName='RigidBody')           and  $attributeName='massDensityModel') or
+                    (($parentElementName='RigidBodyCollection') and  $attributeName='joints') or
+                    ($parentElementName='Shape'                 and (($attributeName='appearance')     or ($attributeName='geometry'))) or
+                    ($parentElementName='Appearance'            and (($attributeName='material')       or ($attributeName='texture')          or ($attributeName='textureTransform') or ($attributeName='acousticProperties') or
+                    ($attributeName='fillProperties') or ($attributeName='lineProperties')  or ($attributeName='pointProperties'))) or
+                    ($parentElementName='PhysicalMaterial'      and (($attributeName='baseTexture')    or ($attributeName='emissiveTexture') or ($attributeName='metallicRoughnessTexture') or ($attributeName='normalTexture') or ($attributeName='occlusionTexture'))) or
+                    ($parentElementName='UnlitMaterial'         and (($attributeName='baseTexture')    or ($attributeName='emissiveTexture')                                                or ($attributeName='normalTexture')))">
+			  <xsl:text>SFNode</xsl:text>
+		  </xsl:when>
+		  <!-- MFNode -->
+		  <xsl:when test="
+                    ($localFieldType='MFNode')  or 
+                    ($attributeName='children') or ($attributeName='addChildren') or ($attributeName='removeChildren') or 
+                    (ends-with($parentElementName,'LOD') and  ($attributeName='level')) or
+                    ($attributeName='bodies') or ($attributeName='collidables') or ($attributeName='contacts') or
+                    (($parentElementName='RigidBodyCollection') and  $attributeName='joints') or
+                    ($parentElementName='MetadataSet' and $attributeName='metadata') or
+                    ($parentElementName='Appearance'  and $attributeName='shaders')">
+			  <xsl:text>MFNode</xsl:text>
+		  </xsl:when>
 		  <!-- MFInt32 --> <!-- must precede MFInt32 -->
 		  <xsl:when test="
 					($localFieldType='MFInt32')    or 
@@ -4085,12 +4143,18 @@ POSSIBILITY OF SUCH DAMAGE.
 		  </xsl:when>
 		  <!-- SFInt32 --> <!-- Note that other DIS attibutes must get tested before this, including MFInt32 -->
 		  <xsl:when test="
-                    ($localFieldType='SFInt32')    or 
-                     ends-with($attributeName,'ID')             or
-                    ($attributeName='farClippingPlane')         or
-                    ($attributeName='nearClippingPlane')        or
-                    ($attributeName='order')                    or
+                                        ($parentElementName='IntegerSequencer' and $attributeName='value') or
+                                        ($localFieldType='SFInt32')    or 
+                                         ends-with($attributeName,'ID')             or
+                                        ($attributeName='farClippingPlane')         or
+                                        ($attributeName='nearClippingPlane')        or
+                                        ($attributeName='bufferLength')             or
 					($attributeName='channelSelection')         or
+					($attributeName='enabledAxes')              or
+					($attributeName='fftSize')                  or
+					($attributeName='frequencyBinCount')        or
+					($attributeName='maxChannelCount')          or
+                                        ($attributeName='order')                    or
 					($attributeName='uOrder')                   or
 					($attributeName='vOrder')                   or
 					($attributeName='uDimension')               or
@@ -4108,8 +4172,8 @@ POSSIBILITY OF SUCH DAMAGE.
 					($parentElementName='FloatVertexAttribute' and $attributeName='numComponents') or
 					($parentElementName='GeneratedCubeMapTexture' and $attributeName='size') or
 					(starts-with($parentElementName,'HAnim') and $attributeName='loa') or
-                    ($parentElementName='HAnimMotion' and (($attributeName='frameIncrement') or ($attributeName='frameIndex') or ($attributeName='startFrame') or ($attributeName='endFrame'))) or
-                    ($parentElementName='IntegerTrigger' and $attributeName='integerKey') or
+                                        ($parentElementName='HAnimMotion' and (($attributeName='frameIncrement') or ($attributeName='frameIndex') or ($attributeName='startFrame') or ($attributeName='endFrame'))) or
+                                        ($parentElementName='IntegerTrigger' and $attributeName='integerKey') or
 					($parentElementName='LayerSet' and ($attributeName='activeLayer')) or
 					($parentElementName='LineProperties' and ($attributeName='linetype')) or
 					($parentElementName='MotorJoint' and $attributeName='enabledAxe') or

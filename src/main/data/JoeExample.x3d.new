@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.0//EN" "https://www.web3d.org/specifications/x3d-3.0.dtd">
-<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" version="3.0" profile="Immersive" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-3.0.xsd" ><head><meta name="filename" content="Scripting.x3d"></meta>
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" version="3.0" profile="Immersive" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-3.0.xsd" ><head><meta name="title" content="Scripting.x3d"></meta>
 </head>
 <Scene><Script DEF="OpenVault"><field name="openVault" type="SFTime" accessType="inputOnly"></field>
 <field name="combinationEntered" type="SFBool" accessType="inputOnly"></field>
