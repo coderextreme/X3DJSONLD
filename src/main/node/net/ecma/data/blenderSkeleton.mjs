@@ -10,7 +10,6 @@ var SFNode = require('./x3d.mjs');
 var head = require('./x3d.mjs');
 var component = require('./x3d.mjs');
 var SFInt32 = require('./x3d.mjs');
-var unit = require('./x3d.mjs');
 var MFNode = require('./x3d.mjs');
 var meta = require('./x3d.mjs');
 var Scene = require('./x3d.mjs');
@@ -52,17 +51,14 @@ var X3D0 =  new X3D({
             new component({
               name : new SFString("HAnim"),
               level : new SFInt32(3)})),
-          unit : new SFNode(
-            new unit({
-              name : new SFString("METERS"),
-              category : new SFString("length")})),
           meta : new MFNode([
             new meta({
-              name : new SFString("filename"),
+              name : new SFString("title"),
               content : new SFString("blenderSkeleton.x3d")}),
 
             new meta({
-              name : new SFString("copyright")}),
+              name : new SFString("copyright"),
+              content : new SFString("2023")}),
 
             new meta({
               name : new SFString("reference"),
@@ -70,11 +66,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("generator"),
-              content : new SFString("Blender 4.0.1")}),
-
-            new meta({
-              name : new SFString("exporter"),
-              content : new SFString("io_scene_x3dv")})])})),
+              content : new SFString("Blender 4.0.1")})])})),
       Scene : new SFNode(
         new Scene({
           children : new MFNode([

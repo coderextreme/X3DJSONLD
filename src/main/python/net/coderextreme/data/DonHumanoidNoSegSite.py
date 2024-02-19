@@ -8,8 +8,8 @@ X3D(profile="Immersive", version="4.0",
 head=Pyhead(
 children=[
 Pycomponent(name="HAnim", level=1),
-Pymeta(name="title", content="JohnBoy.x3d"),
-Pymeta(name="identifier", content="http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d"),
+Pymeta(name="title", content="DonHumanoidNoSegSite.x3d"),
+Pymeta(name="identifier", content="http://www.web3d.org/x3d/content/examples/HumanoidAnimation/DonHumanoidNoSegSite.x3d"),
 Pymeta(name="description", content="An attempt at a standard LOA-4 skeleton"),
 Pymeta(name="generator", content="h2.pl"),
 Pymeta(name="modified", content="14 Jan 2023"),

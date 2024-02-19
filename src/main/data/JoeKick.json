@@ -34,15 +34,23 @@
           },
           {
             "@name":"modified",
-            "@content":"29 January 2023"
+            "@content":"1 July 2023"
           },
           {
             "@name":"TODO",
             "@content":"Record information about skin coordinates (found in comment at end of scene) as a structured MetadataSet containing MetadataString nodes"
           },
           {
-            "@name":"translators",
-            "@content":"Roy Walmsley, Don Brutzman, John Carlson"
+            "@name":"translator",
+            "@content":"Roy Walmsley"
+          },
+          {
+            "@name":"translator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"translator",
+            "@content":"John Carlson"
           },
           {
             "@name":"reference",
@@ -66,7 +74,7 @@
           },
           {
             "@name":"translated",
-            "@content":"18 February 2024"
+            "@content":"19 February 2024"
           },
           {
             "@name":"generator",
@@ -89,7 +97,6 @@
           { "NavigationInfo":
             {
               "@DEF":"Start_NavigationInfo",
-              "@headlight":false,
               "@speed":2.5
             }
           },
@@ -173,7 +180,7 @@
                   {
                     "@name":"Kick",
                     "@DEF":"Joe_Kick",
-                    "@loa":3,
+                    "@loa":4,
                     "@version":"2.0",
                     "-metadata":
                       { "MetadataSet":

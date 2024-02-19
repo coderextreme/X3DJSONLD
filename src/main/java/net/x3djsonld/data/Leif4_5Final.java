@@ -20,7 +20,7 @@ import org.web3d.x3d.jsail.Time.*;
 
 // Javadoc metadata annotations follow, see below for X3DJSAIL Java source code.
 /**
- * <p> Example scene Leif4_5Final. </p>
+ * <p> Example scene . </p>
  <p> Related links: Leif4_5Final.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;">
         <caption>Scene Meta Information</caption>
@@ -54,7 +54,7 @@ import org.web3d.x3d.jsail.Time.*;
 
  */
 
-import net.coderextreme.X3DRoots;import java.util.List;import java.util.ArrayList;public class Leif4_5Final implements X3DRoots 
+public class Leif4_5Final
 {
 	/** Default constructor to create this object. */
 	public Leif4_5Final ()
@@ -9617,11 +9617,6 @@ import net.coderextreme.X3DRoots;import java.util.List;import java.util.ArrayLis
 	public X3D getX3dModel()
 	{	  
 		return x3dModel;
-	}
-	public List<X3D> getRootNodeList() {
-		List<X3D> list = new ArrayList<X3D>(1);
-		list.add(x3dModel);
-		return list;
 	}
 	   
     /** 

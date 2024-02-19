@@ -16,12 +16,12 @@ import org.web3d.x3d.jsail.Time.*;
 // Javadoc metadata annotations follow, see below for X3DJSAIL Java source code.
 /**
  * <p> Articulated 3D game character designed with a general graphics tool, then converted into an X3D HAnim model. </p>
- <p> Related links: KoreanCharacterMotionAnnexB01Jin.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ <p> Related links: KoreanCharacterAnnexB01Jin.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;">
         <caption>Scene Meta Information</caption>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
-			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.KoreanCharacterMotionAnnexB01Jin&nbsp; Document Metadata </td>
+			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.KoreanCharacterAnnexB01Jin&nbsp; Document Metadata </td>
 		</tr>
 
 		<tr>
@@ -114,10 +114,10 @@ import org.web3d.x3d.jsail.Time.*;
 	* @author Jin Hoon Lee and Min Joo Lee
  */
 
-import net.coderextreme.X3DRoots;import java.util.List;import java.util.ArrayList;public class KoreanCharacterMotionAnnexB01Jin implements X3DRoots 
+public class KoreanCharacterAnnexB01Jin
 {
 	/** Default constructor to create this object. */
-	public KoreanCharacterMotionAnnexB01Jin ()
+	public KoreanCharacterAnnexB01Jin ()
 	{
 	  initialize();
 	}
@@ -996,16 +996,11 @@ import net.coderextreme.X3DRoots;import java.util.List;import java.util.ArrayLis
 	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
 	 * of the X3D model.
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html">X3D</a>
-	 * @return KoreanCharacterMotionAnnexB01Jin model
+	 * @return KoreanCharacterAnnexB01Jin model
 	 */
 	public X3D getX3dModel()
 	{	  
 		return x3dModel;
-	}
-	public List<X3D> getRootNodeList() {
-		List<X3D> list = new ArrayList<X3D>(1);
-		list.add(x3dModel);
-		return list;
 	}
 	   
     /** 
@@ -1020,7 +1015,7 @@ import net.coderextreme.X3DRoots;import java.util.List;import java.util.ArrayLis
     public static void main(String args[])
     {
         System.out.println("Build this X3D model, showing validation diagnostics...");
-        X3D thisExampleX3dModel = new KoreanCharacterMotionAnnexB01Jin().getX3dModel();
+        X3D thisExampleX3dModel = new KoreanCharacterAnnexB01Jin().getX3dModel();
 //      System.out.println("X3D model construction complete.");
 	
         // next handle command line arguments
@@ -1053,7 +1048,7 @@ import net.coderextreme.X3DRoots;import java.util.List;import java.util.ArrayLis
                 }
         }
         if      (argumentsLoadNewModel)
-                System.out.println("WARNING: \"net.x3djsonld.data.KoreanCharacterMotionAnnexB01Jin\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
+                System.out.println("WARNING: \"net.x3djsonld.data.KoreanCharacterAnnexB01Jin\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
         else if (hasArguments) // if no arguments provided, this method produces usage warning
                 thisExampleX3dModel.handleArguments(args);
 	
@@ -1062,7 +1057,7 @@ import net.coderextreme.X3DRoots;import java.util.List;import java.util.ArrayLis
             //  System.out.println("--- TODO fix duplicated outputs ---"); // omit when duplicated outputs problem is solved/refactored
 		String validationResults = thisExampleX3dModel.validationReport();
             //  System.out.println("-----------------------------------"); // omit when duplicated outputs problem is solved/refactored
-                System.out.print("net.x3djsonld.data.KoreanCharacterMotionAnnexB01Jin self-validation test results: ");
+                System.out.print("net.x3djsonld.data.KoreanCharacterAnnexB01Jin self-validation test results: ");
                 if (!validationResults.equals("success"))
                     System.out.println();
                 System.out.println(validationResults.trim());

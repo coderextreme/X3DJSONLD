@@ -9,7 +9,7 @@ var convertJSON = require('./convertJSON.js').convertJSON;
 
 convertJSON([{ 
 	serializer : './JavaScriptSerializer.js',
-	folder : "../nashorn/net/coderextreme/",
+	folder : "../graaljs/net/coderextreme/",
 	extension : ".js",
 	codeOutput : "../",
 	}]);

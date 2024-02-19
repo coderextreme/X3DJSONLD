@@ -2,7 +2,7 @@
 #
 # Invoking X3D model self-test:
 #
-#   $ python .py
+#   $ python arc.py
 #
 # Python package x3d.py package is available on PyPI for import.
 #   This approach simplifies Python X3D deployment and use.
@@ -29,10 +29,10 @@ from x3d import *
 newModel=X3D(profile='Immersive',version='3.3',
   head=head(
     children=[
-    meta(name='title',content='arc'),
+    meta(name='title',content='arc.x3d'),
     meta(name='creator',content='Lost, Doug Sanden I think'),
     meta(name='generator',content='manual'),
-    meta(name='identifier',content='https://coderextreme.net/X3DJSONLD/src/main/data/x3dconnectorProto.x3d'),
+    meta(name='identifier',content='https://coderextreme.net/X3DJSONLD/src/main/data/arc.x3d'),
     meta(name='description',content='a generic proto to connect two objects')]),
   Scene=Scene(
     children=[
@@ -207,7 +207,7 @@ ecmascript:
 # Self-test diagnostics
 ####################################################################################################
 
-print('Self-test diagnostics for .py:')
+print('Self-test diagnostics for arc.py:')
 if        metaDiagnostics(newModel): # built-in utility method in X3D class
     print(metaDiagnostics(newModel)) # display meta info, hint, warning, error, TODO values in this model
 # print('check newModel.XML() serialization...')
@@ -236,4 +236,4 @@ except Exception as err: # usually SyntaxError
     if newModelJSON: # may have failed to generate
         print(prependLineNumbers(newModelJSON,err.lineno))
 
-print("python .py load and self-test diagnostics complete.")
+print("python arc.py load and self-test diagnostics complete.")

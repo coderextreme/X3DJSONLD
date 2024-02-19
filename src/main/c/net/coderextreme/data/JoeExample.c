@@ -6,7 +6,7 @@ X3D0.version = "3.0";
 X3D0.profile = "Immersive";
 head head1 = createNode("head");
 meta meta2 = createNode("meta");
-meta2.name = "filename";
+meta2.name = "title";
 meta2.content = "Scripting.x3d";
 head1.meta = new MFNode();
 

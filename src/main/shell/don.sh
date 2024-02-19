@@ -52,7 +52,7 @@ export CLASSPATH=".;C:/Users/john/pythonSAI/saxon-he-12.1.jar;C:/Users/john/pyth
 popd
 echo running jjs
 pushd ../graaljs
-find ./net/x3djsonld/data -name "${X3D}.js" | xargs -L 1 -P $PROCESSORS jjs -J-Xss1g -J-Xmx4g -cp "${GRAAL_CLASSPATH}"
+find ./net/x3djsonld/data -name "${X3D}.js" | xargs -L 1 -P $PROCESSORS C:/graaljs-community-jvm-23.1.2-windows-amd64/graaljs-community-23.1.2-windows-amd64/bin/js.exe --vm.Xss1g --vm.Xmx4g --jvm --vm.classpath="${GRAAL_CLASSPATH}"
 popd
 echo running python
 pushd ../python

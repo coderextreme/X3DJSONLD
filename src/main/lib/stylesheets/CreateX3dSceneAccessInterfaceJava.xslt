@@ -57,7 +57,7 @@ Additional references of interest:
 
 	<xsl:variable name="saiJavaSpecificationRootUrl"><xsl:text>https://www.web3d.org/documents/specifications/19777-2/V3.3/Part2</xsl:text></xsl:variable>
 	<xsl:variable name="saiAbstractSpecificationRootUrl"><xsl:text>https://www.web3d.org/documents/specifications/19775-2/V3.3/Part02</xsl:text></xsl:variable>
-	<xsl:variable name="x3dAbstractSpecificationRootUrl"><xsl:text>https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-IS.proof/Part01</xsl:text></xsl:variable><!-- TODO X3D4 -->
+	<xsl:variable name="x3dAbstractSpecificationRootUrl"><xsl:text>https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01</xsl:text></xsl:variable><!-- TODO X3D4 -->
 	
 	<xsl:variable name="newValue"><xsl:text>newValue</xsl:text></xsl:variable><!-- default parameter name -->
 	<xsl:variable name="x3d.tooltips.path">
@@ -1507,7 +1507,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 			
 			<xsl:if test="($name = 'unit')">
 				<xsl:text>&#10;</xsl:text>`
-				<xsl:text disable-output-escaping="yes"> * &lt;a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-IS.proof/Part01/concepts.html#Standardunitscoordinates" target="_blank"&gt;X3D specification: 4.3.6 Standard units and coordinate system&lt;/a&gt; &#10;</xsl:text>
+				<xsl:text disable-output-escaping="yes"> * &lt;a href="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/concepts.html#Standardunitscoordinates" target="_blank"&gt;X3D specification: 4.3.6 Standard units and coordinate system&lt;/a&gt; &#10;</xsl:text>
 				<xsl:text disable-output-escaping="yes"> defines how scale factors can modify an entire scene.</xsl:text>
 				<xsl:text>&#10;</xsl:text>
 				<xsl:text disable-output-escaping="yes"> * Scale-conversion constants provide correct names and values for common conversion factors. References:</xsl:text>
@@ -2341,7 +2341,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 									<xsl:text disable-output-escaping="yes"><![CDATA[
 	/**  
 	 * <b>]]></xsl:text><xsl:value-of select="@value"/><xsl:text disable-output-escaping="yes"><![CDATA[</b>: ]]></xsl:text><xsl:value-of select="translate(@appinfo,'#','')"/><xsl:text disable-output-escaping="yes"><![CDATA[
-	 * @see <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-IS.proof/Part01/glossary.html#]]></xsl:text>
+	 * @see <a href="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#]]></xsl:text>
                                                                         <xsl:value-of select="$camelCaseEnumerationName"/>
                                                                         <xsl:text>" target="_blank"&gt;X3D 4.0 Architecture - Definitions, acronyms, and abbreviated terms: </xsl:text>
                                                                         <xsl:value-of select="@value"/>
@@ -3842,7 +3842,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 												<xsl:text>, "segments" /*HAnimHumanoid parent*/</xsl:text>
 											</xsl:when>
 											<xsl:when test="starts-with($name,'HAnimSite')">
-												<xsl:text>, "sites" /*HAnimHumanoid parent*/, "skeleton" /*HAnimHumanoid parent*/</xsl:text>
+												<xsl:text>, "sites" /*HAnimHumanoid parent*/, "viewpoints" /*HAnimHumanoid parent*/, "skeleton" /*HAnimHumanoid parent*/</xsl:text>
 											</xsl:when>
 											<xsl:when test="starts-with($name,'HAnimMotion')">
 												<xsl:text>, "motions" /*HAnimHumanoid parent*/</xsl:text>
@@ -10886,7 +10886,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 ////	/**
 ////	 * Assign typed object value to SFString cssClass field, similar to {@link #setCssStyle(String)}.
 ////	 * This attribute is only functional if the X3D model is loaded within an HTML page.
-////	 * @see <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-IS.proof/Part01/htmlGuidelines.html#CSS">X3D Architecture Annex L - HTML authoring guidelines, CSS considerations</a>
+////	 * @see <a href="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/htmlGuidelines.html#CSS">X3D Architecture Annex L - HTML authoring guidelines, CSS considerations</a>
 ////	 * @param newValue is new value for the style field.
 ////	 * @return {@link ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
 ////	 */
@@ -10915,7 +10915,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 	/**
 	 * Assign typed object value to SFString cssClass field, similar to {@link #setCssStyle(String)}.
 	 * This attribute is only functional if the X3D model is loaded within an HTML page.
-	 * @see <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-IS.proof/Part01/htmlGuidelines.html#CSS">X3D Architecture Annex L - HTML authoring guidelines, CSS considerations</a>
+	 * @see <a href="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/htmlGuidelines.html#CSS">X3D Architecture Annex L - HTML authoring guidelines, CSS considerations</a>
 	 * @param newValue is new value for the style field.
 	 * @return {@link ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
 	 */
@@ -12814,7 +12814,7 @@ setAttribute method invocations).
 		 <xsl:text disable-output-escaping="yes"><![CDATA[, where local copy is maintained in ProtoBody <i>primaryNode</i>]]></xsl:text>
 	 </xsl:if>
 	 <xsl:text disable-output-escaping="yes"><![CDATA[.
-	 * @see <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-IS.proof/Part01/concepts.html#PROTOdefinitionsemantics">X3D Abstract Specification: 4.4.4.3 PROTO definition semantics</a>]]></xsl:text>
+	 * @see <a href="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/concepts.html#PROTOdefinitionsemantics">X3D Abstract Specification: 4.4.4.3 PROTO definition semantics</a>]]></xsl:text>
 	 <xsl:choose>
 		 <xsl:when test="($name = 'ProtoDeclare')">
 			 <xsl:text disable-output-escaping="yes"><![CDATA[
@@ -12990,7 +12990,7 @@ setAttribute method invocations).
 								<xsl:text disable-output-escaping="yes"><![CDATA[
 	/**
 	 * First node within ProtoDeclare ProtoBody determines node type of corresponding ProtoInstance, local reference maintained in member variable named <i>primaryNode</i>.
-	 * @see <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-IS.proof/Part01/concepts.html#PROTOdefinitionsemantics">X3D Abstract Specification: 4.4.4.3 PROTO definition semantics</a>
+	 * @see <a href="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/concepts.html#PROTOdefinitionsemantics">X3D Abstract Specification: 4.4.4.3 PROTO definition semantics</a>
 	 * @see ProtoDeclare#getNodeType()
 	 * @see ExternProtoDeclare#getNodeType()
 	 * @see ProtoInstance#getNodeType()
@@ -13248,7 +13248,7 @@ setAttribute method invocations).	 */
 	/**
 	 * Add comment as String to contained commentsList.
 	 * @param newComment initial value
-	 * @see <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-IS.proof/Part01/components/core.html#Organization">X3D Architecture, clause 7.2.5.1 Organization</a>
+	 * @see <a href="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/components/core.html#Organization">X3D Architecture, clause 7.2.5.1 Organization</a>
 	 * @return {@link ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
 	 */
 	/* @Override */
@@ -13828,11 +13828,12 @@ setAttribute method invocations).
 															((@accessType='initializeOnly') or (@accessType='inputOutput')) and
                                                             not(@name = 'meta')]">
 				<!-- order is essential for elements, xsl:sort results in reverse order -->
-				<xsl:sort select="@name[not((. = 'head') or (. = 'Scene') or (. = 'ProtoBody') or (. = 'ProtoInterface') or (. = 'IS') or (. = 'field') or (. = 'metadata'))]"/>
+				<xsl:sort select="@name[not((. = 'head') or (. = 'skeleton') or (. = 'Scene') or (. = 'ProtoBody') or (. = 'ProtoInterface') or (. = 'IS') or (. = 'field') or (. = 'metadata'))]"/>
 				<!-- special order for head elements: meta comes last -->
 				<!-- sort head before Scene in X3D -->
 				<xsl:sort select="(@name = 'Scene')"/>
 				<xsl:sort select="(@name = 'head')"/>
+				<xsl:sort select="(@name = 'skeleton')"/>
 				<!-- sort ProtoInterface before ProtoBody in ProtoDeclare -->
 				<xsl:sort select="(@name = 'ProtoBody')"/>
 				<xsl:sort select="(@name = 'ProtoInterface')"/>
@@ -15271,6 +15272,7 @@ setAttribute method invocations).
 	/**
 	 * Recursive method to validate this element plus all contained nodes and statements, 
 	 * using both datatype-specification value checks and regular expression (regex) checking of corresponding string values.
+         * TODO document specific validation methods.
 	 * @return validation results (if any)
 	 */
 	@Override
@@ -23280,7 +23282,7 @@ TODO: also MFColor.
 				<xsl:text disable-output-escaping="yes"><![CDATA[
 	 * @see SFString#toStringX3D
 	 * @see MFString#toStringX3D
-	 * @see <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-IS.proof/Part01/fieldsDef.html#SFStringAndMFString">X3D Abstract Specification: 5.3.14 SFString and MFString</a>
+	 * @see <a href="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/fieldsDef.html#SFStringAndMFString">X3D Abstract Specification: 5.3.14 SFString and MFString</a>
 	 * @see <a href="https://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/EncodingOfFields.html#SFString">X3D XML Encoding: 5.15 SFString and MFString</a>
 	 * @see <a href="https://www.web3d.org/x3d/content/X3dTooltips.html#Text">X3D Tooltips: Text</a>
 	 * @see <a href="https://www.web3d.org/x3d/tooltips/X3dTooltips.html#type">X3D Tooltips: type</a>
@@ -23367,7 +23369,7 @@ TODO: also MFColor.
 	 * @param value The value to convert to an escaped String
 	 * @see SFString#toStringX3D
 	 * @see MFString#toStringX3D
-	 * @see <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-IS.proof/Part01/fieldsDef.html#SFStringAndMFString">X3D Abstract Specification: 5.3.14 SFString and MFString</a>
+	 * @see <a href="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/fieldsDef.html#SFStringAndMFString">X3D Abstract Specification: 5.3.14 SFString and MFString</a>
 	 * @see <a href="https://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/EncodingOfFields.html#SFString">X3D XML Encoding: 5.15 SFString and MFString</a>
 	 * @see <a href="https://www.web3d.org/x3d/content/X3dTooltips.html#Text">X3D Tooltips: Text</a>
 	 * @see <a href="https://www.web3d.org/x3d/tooltips/X3dTooltips.html#type">X3D Tooltips: type</a>
@@ -27201,6 +27203,7 @@ import org.web3d.x3d.jsail.Core.*;</xsl:text>
 	}
 
 	/* Validation is handled by concrete subclasses
+         * TODO is this commented-out funcion block needed ?
 	@Override
 	public String validate()
 	{
@@ -31852,7 +31855,7 @@ package org.web3d.x3d.jsail.tests;
 	<xsl:template name="ConcreteNodeObjectDefinitions">
 		
 		<!-- TODO X3D Java Language Binding specification section on concrete classes that match X3D Abstract Specification -->
-		<!-- https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-IS.proof/Part01/nodeIndex.html -->
+		<!-- https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/nodeIndex.html -->
 		
 		<!-- Concrete classes for X3D nodes - - - - - - - - - -->
 		
@@ -32117,7 +32120,7 @@ package org.web3d.x3d.jsail;
  *     and 
  *     <a href="https://www.web3d.org/specifications/java/javadoc/index.html" target="_blank">X3DJSAIL Javadoc</a>
  * </p>
- * @see <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-IS.proof/Part01/fieldTypes.html">X3D Architecture: Field type reference</a>
+ * @see <a href="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/fieldTypes.html">X3D Architecture: Field type reference</a>
  * @see <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html">X3D Resources</a>
  * @see <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html">X3D Scene Authoring Hints</a>
  * @see <a href="https://www.web3d.org/x3d/tooltips/X3dTooltips.html#type">X3D Tooltips: type Definitions</a>
@@ -34882,7 +34885,7 @@ showing default attribute values, and other custom settings.</p>
 	/** Protected internal superclass method to keep cssClass private, scene authors should use method setCssClass(newValue) instead.
 	 * This attribute is only functional if the X3D model is loaded within an HTML page.
 	 * <i>Tooltip:</i> The class attribute is a space-separated list of classes, reserved for use by CSS cascading stylesheets.
-	 * @see <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-IS.proof/Part01/htmlGuidelines.html#CSS">X3D Architecture Annex L - HTML authoring guidelines, CSS considerations</a>
+	 * @see <a href="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/htmlGuidelines.html#CSS">X3D Architecture Annex L - HTML authoring guidelines, CSS considerations</a>
 	 * @see <a href="https://www.w3.org/Style/CSS">W3C Cascading Style Sheets</a>
 	 * @see <a href="https://www.w3.org/TR/css-2018">W3C CSS Snapshot</a>
 	 * @see <a href="https://en.wikibooks.org/wiki/XML_-_Managing_Data_Exchange/XSLT_and_Style_Sheets">Wikibooks: XML - Managing Data Exchange/XSLT and Style Sheets</a>
@@ -34898,10 +34901,10 @@ showing default attribute values, and other custom settings.</p>
 	/** Protected internal superclass method to keep HTML id private, scene authors should use method setHtmlID(newValue) instead.
 	 * This attribute is only functional if the X3D model is loaded within an HTML page.
 	 * <i>Tooltip:</i> the id attribute on each X3D node is considered a unique identifier when used as part of an encompassing HTML/DOM context.
-	 * @see <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-IS.proof/Part01/htmlGuidelines.html#CSS">X3D Architecture Annex L - HTML authoring guidelines, CSS considerations</a>
+	 * @see <a href="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/htmlGuidelines.html#CSS">X3D Architecture Annex L - HTML authoring guidelines, CSS considerations</a>
      * <br />
      * <i>Warning:</i> the id attribute is in a distinct separate namespace from DEF identifiers and thus not applicable for USE nodes, ROUTE statements, or Script references.
-	 * @see <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-IS.proof/Part01/htmlGuidelines.html#ContentDefinitionPagePresentation">X3D Architecture Annex L - HTML authoring guidelines, L.3.1 Content definition and page presentation</a>
+	 * @see <a href="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/htmlGuidelines.html#ContentDefinitionPagePresentation">X3D Architecture Annex L - HTML authoring guidelines, L.3.1 Content definition and page presentation</a>
 	 * @see <a href="https://www.w3.org/TR/html52">HTML 5.2</a> W3C Recommendation
 	 * @see <a href="https://www.w3.org/DOM/DOMTR">Document Object Model (DOM) Technical Reports</a>
 	 * @see <a href="https://en.wikibooks.org/wiki/XML_-_Managing_Data_Exchange/XSLT_and_Style_Sheets">Wikibooks: XML - Managing Data Exchange/XSLT and Style Sheets</a>
@@ -34917,7 +34920,7 @@ showing default attribute values, and other custom settings.</p>
 	/** Protected internal superclass method to keep cssStyles private, scene authors should use method setCssStyle(newValue) instead.
 	 * This attribute is only functional if the X3D model is loaded within an HTML page.
 	 * <i>Tooltip:</i> The style attribute is a space-separated list of classes, reserved for use by CSS cascading stylesheets.
-	 * @see <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-IS.proof/Part01/htmlGuidelines.html#CSS">X3D Architecture Annex L - HTML authoring guidelines, CSS considerations</a>
+	 * @see <a href="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/htmlGuidelines.html#CSS">X3D Architecture Annex L - HTML authoring guidelines, CSS considerations</a>
 	 * @see <a href="https://www.w3.org/Style/CSS">W3C Cascading Style Sheets</a>
 	 * @see <a href="https://www.w3.org/TR/css-2018">W3C CSS Snapshot</a>
 	 * @see <a href="https://en.wikibooks.org/wiki/XML_-_Managing_Data_Exchange/XSLT_and_Style_Sheets">Wikibooks: XML - Managing Data Exchange/XSLT and Style Sheets</a>
@@ -34934,7 +34937,7 @@ showing default attribute values, and other custom settings.</p>
 	 * Provide String value from inputOutput SFString field named <i>id</i>.
 	 * <br><br>
 	 * <i>Tooltip:</i> the id attribute on each X3D node is considered a unique identifier when used as part of an encompassing HTML/DOM context.The class field is a space-separated list of classes, reserved for use by CSS cascading stylesheets.
-	 * @see <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-IS.proof/Part01/htmlGuidelines.html#CSS">X3D Architecture Annex L - HTML authoring guidelines, CSS considerations</a>
+	 * @see <a href="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/htmlGuidelines.html#CSS">X3D Architecture Annex L - HTML authoring guidelines, CSS considerations</a>
 	 * @see <a href="https://www.w3.org/Style/CSS">W3C Cascading Style Sheets</a>
 	 * @see <a href="https://www.w3.org/TR/css-2018">W3C CSS Snapshot</a>
 	 * @see <a href="https://en.wikibooks.org/wiki/XML_-_Managing_Data_Exchange/XSLT_and_Style_Sheets">Wikibooks: XML - Managing Data Exchange/XSLT and Style Sheets</a>
@@ -34948,7 +34951,7 @@ showing default attribute values, and other custom settings.</p>
 	 * Provide String value from inputOutput SFString field named <i>class</i>.
 	 * <br><br>
 	 * <i>Tooltip:</i> The class field is a space-separated list of classes, reserved for use by CSS cascading stylesheets.
-	 * @see <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-IS.proof/Part01/htmlGuidelines.html#CSS">X3D Architecture Annex L - HTML authoring guidelines, CSS considerations</a>
+	 * @see <a href="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/htmlGuidelines.html#CSS">X3D Architecture Annex L - HTML authoring guidelines, CSS considerations</a>
 	 * @see <a href="https://www.w3.org/Style/CSS">W3C Cascading Style Sheets</a>
 	 * @see <a href="https://www.w3.org/TR/css-2018">W3C CSS Snapshot</a>
 	 * @see <a href="https://en.wikibooks.org/wiki/XML_-_Managing_Data_Exchange/XSLT_and_Style_Sheets">Wikibooks: XML - Managing Data Exchange/XSLT and Style Sheets</a>
@@ -34962,7 +34965,7 @@ showing default attribute values, and other custom settings.</p>
 	 * Provide String value from inputOutput SFString field named <i>style</i>.
 	 * <br><br>
 	 * <i>Tooltip:</i> The style field provides an inline block of CSS for element styling, reserved for use by CSS cascading stylesheets.
-	 * @see <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-IS.proof/Part01/htmlGuidelines.html#CSS">X3D Architecture Annex L - HTML authoring guidelines, CSS considerations</a>
+	 * @see <a href="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/htmlGuidelines.html#CSS">X3D Architecture Annex L - HTML authoring guidelines, CSS considerations</a>
 	 * @see <a href="https://www.w3.org/Style/CSS">W3C Cascading Style Sheets</a>
 	 * @see <a href="https://www.w3.org/TR/css-2018">W3C CSS Snapshot</a>
 	 * @see <a href="https://en.wikibooks.org/wiki/XML_-_Managing_Data_Exchange/XSLT_and_Style_Sheets">Wikibooks: XML - Managing Data Exchange/XSLT and Style Sheets</a>
@@ -35100,9 +35103,10 @@ showing default attribute values, and other custom settings.</p>
 	/**
 	 * Recursive method to validate this element plus all contained nodes and statements, 
 	 * using both datatype-specification value checks and regular expression (regex) checking of corresponding string values.
+         * This method must be overridden, ensuring that a concrete method is provided for each class.
 	 * @return validation results (if any)
 	 */
-	abstract public String validate(); // must be overridden
+	abstract public String validate();
 ]]></xsl:text>
 		</xsl:with-param>
 	</xsl:call-template>
@@ -35137,7 +35141,7 @@ showing default attribute values, and other custom settings.</p>
 	 * Utility method to indicate whether this element is an X3D Graphics node (implementing X3DConcreteNode), returns <i>true</i>.
 	 * <br><br>
 	 * @see X3DConcreteNode
-	 * @see <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-IS.proof/Part01/glossary.html#Node">X3D Abstract Specification, Terms and definitions: node</a>
+	 * @see <a href="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#Node">X3D Abstract Specification, Terms and definitions: node</a>
 	 * @return whether this element is an X3D Graphics node: true
 	 */
 	public static final boolean isNode()
@@ -35150,7 +35154,7 @@ showing default attribute values, and other custom settings.</p>
 	 * <br><br>
 	 * @see X3DConcreteStatement
 	 * @see CommentsBlock
-	 * @see <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-IS.proof/Part01/components/core.html#AbstractX3DStructure">X3D Abstract Specification: 7.2.5 Abstract X3D structure</a>
+	 * @see <a href="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/components/core.html#AbstractX3DStructure">X3D Abstract Specification: 7.2.5 Abstract X3D structure</a>
 	 * @return whether this element is an X3D Graphics statement: false
 	 */
 	public static final boolean isStatement()
@@ -35351,7 +35355,7 @@ showing default attribute values, and other custom settings.</p>
 	/** Each concrete class must independently override this abstract method to enable object-specific method pipelining.
 	 * This attribute is only functional if the X3D model is loaded within an HTML page.
 	 * <i>Tooltip:</i> The class attribute is a space-separated list of classes, reserved for use by CSS cascading stylesheets.
-	 * @see <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-IS.proof/Part01/htmlGuidelines.html#CSS">X3D Architecture Annex L - HTML authoring guidelines, CSS considerations</a>
+	 * @see <a href="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/htmlGuidelines.html#CSS">X3D Architecture Annex L - HTML authoring guidelines, CSS considerations</a>
 	 * @see <a href="https://www.w3.org/Style/CSS">W3C Cascading Style Sheets</a>
 	 * @see <a href="https://www.w3.org/TR/css-2018">W3C CSS Snapshot</a>
 	 * @see <a href="https://en.wikibooks.org/wiki/XML_-_Managing_Data_Exchange/XSLT_and_Style_Sheets">Wikibooks: XML - Managing Data Exchange/XSLT and Style Sheets</a>
@@ -35362,10 +35366,10 @@ showing default attribute values, and other custom settings.</p>
 	/** Each concrete class must independently override this abstract method to enable object-specific method pipelining.
 	 * This attribute is only functional if the X3D model is loaded within an HTML page.
 	 * <i>Tooltip:</i> the id attribute on each X3D node is considered a unique identifier when used as part of an encompassing HTML/DOM context.
-	 * @see <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-IS.proof/Part01/htmlGuidelines.html#CSS">X3D Architecture Annex L - HTML authoring guidelines, CSS considerations</a>
+	 * @see <a href="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/htmlGuidelines.html#CSS">X3D Architecture Annex L - HTML authoring guidelines, CSS considerations</a>
      * <br />
      * <i>Warning:</i> the id attribute is in a distinct separate namespace from DEF identifiers and thus not applicable for USE nodes, ROUTE statements, or Script references.
-	 * @see <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-IS.proof/Part01/htmlGuidelines.html#ContentDefinitionPagePresentation">X3D Architecture Annex L - HTML authoring guidelines, L.3.1 Content definition and page presentation</a>
+	 * @see <a href="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/htmlGuidelines.html#ContentDefinitionPagePresentation">X3D Architecture Annex L - HTML authoring guidelines, L.3.1 Content definition and page presentation</a>
 	 * @see <a href="https://www.w3.org/TR/html52">HTML 5.2</a> W3C Recommendation
 	 * @see <a href="https://www.w3.org/DOM/DOMTR">Document Object Model (DOM) Technical Reports</a>
 	 * @see <a href="https://en.wikibooks.org/wiki/XML_-_Managing_Data_Exchange/XSLT_and_Style_Sheets">Wikibooks: XML - Managing Data Exchange/XSLT and Style Sheets</a>
@@ -35376,7 +35380,7 @@ showing default attribute values, and other custom settings.</p>
 	/** Each concrete class must independently override this abstract method to enable object-specific method pipelining.
 	 * This attribute is only functional if the X3D model is loaded within an HTML page.
 	 * <i>Tooltip:</i> The style attribute provides an inline block of CSS source for element styling, reserved for use by CSS cascading stylesheets.
-	 * @see <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-IS.proof/Part01/htmlGuidelines.html#CSS">X3D Architecture Annex L - HTML authoring guidelines, CSS considerations</a>
+	 * @see <a href="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/htmlGuidelines.html#CSS">X3D Architecture Annex L - HTML authoring guidelines, CSS considerations</a>
 	 * @see <a href="https://www.w3.org/Style/CSS">W3C Cascading Style Sheets</a>
 	 * @see <a href="https://www.w3.org/TR/css-2018">W3C CSS Snapshot</a>
 	 * @see <a href="https://en.wikibooks.org/wiki/XML_-_Managing_Data_Exchange/XSLT_and_Style_Sheets">Wikibooks: XML - Managing Data Exchange/XSLT and Style Sheets</a>
@@ -35522,8 +35526,8 @@ ProtoBody nodes.
 	/**
 	 * Utility method to indicate whether this element is an X3D Graphics node (implementing X3DConcreteNode), returns <i>false</i>.
 	 * <br><br>
-	 * @see <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-IS.proof/Part01/components/core.html#AbstractX3DStructure">X3D Abstract Specification: 7.2.5 Abstract X3D structure</a>
-	 * @see <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-IS.proof/Part01/glossary.html#Node">X3D Abstract Specification, Terms and definitions: node</a>
+	 * @see <a href="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/components/core.html#AbstractX3DStructure">X3D Abstract Specification: 7.2.5 Abstract X3D structure</a>
+	 * @see <a href="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#Node">X3D Abstract Specification, Terms and definitions: node</a>
 	 * @return whether this element is an X3D Graphics node: false
 	 */
 	public static final boolean isNode()
@@ -35535,7 +35539,7 @@ ProtoBody nodes.
 	 * Utility method to indicate whether this element is an X3D Graphics statement (implementing X3DConcreteStatement), returns <i>true</i>.  (Does not include CommentsBlock objects.)
 	 * <br><br>
 	 * @see CommentsBlock
-	 * @see <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-IS.proof/Part01/components/core.html#AbstractX3DStructure">X3D Abstract Specification: 7.2.5 Abstract X3D structure</a>
+	 * @see <a href="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/components/core.html#AbstractX3DStructure">X3D Abstract Specification: 7.2.5 Abstract X3D structure</a>
 	 * @return whether this element is an X3D Graphics statement: true
 	 */
 	public static final boolean isStatement()
@@ -35675,7 +35679,7 @@ import org.web3d.x3d.sai.X3DException;
 			<xsl:text disable-output-escaping="yes"><![CDATA[
 	@see <a href="https://docs.oracle.com/javase/tutorial/jaxp/dom/index.html">Java Tutorials: Document Object Model (DOM)</a>
 	@see <a href="https://docs.oracle.com/javase/tutorial/jaxp/dom/readingXML.html">Java Tutorials: Reading XML Data into a DOM</a>
-	@see <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-IS.proof/Part01/components/core.html#AbstractX3DStructure">X3D Abstract Specification: 7.2.5 Abstract X3D structure</a>
+	@see <a href="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/components/core.html#AbstractX3DStructure">X3D Abstract Specification: 7.2.5 Abstract X3D structure</a>
 ]]></xsl:text>
 		</xsl:with-param>
 		<xsl:with-param name="interfaceBlock">
