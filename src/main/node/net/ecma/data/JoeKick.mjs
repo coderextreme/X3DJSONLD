@@ -16,7 +16,6 @@ var Scene = require('./x3d.mjs');
 var WorldInfo = require('./x3d.mjs');
 var MFString = require('./x3d.mjs');
 var NavigationInfo = require('./x3d.mjs');
-var SFBool = require('./x3d.mjs');
 var SFFloat = require('./x3d.mjs');
 var Background = require('./x3d.mjs');
 var SpotLight = require('./x3d.mjs');
@@ -37,6 +36,7 @@ var Transform = require('./x3d.mjs');
 var Shape = require('./x3d.mjs');
 var IndexedLineSet = require('./x3d.mjs');
 var MFInt32 = require('./x3d.mjs');
+var SFBool = require('./x3d.mjs');
 var Coordinate = require('./x3d.mjs');
 var MFVec3f = require('./x3d.mjs');
 var Color = require('./x3d.mjs');
@@ -89,15 +89,23 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("modified"),
-              content : new SFString("29 January 2023")}),
+              content : new SFString("1 July 2023")}),
 
             new meta({
               name : new SFString("TODO"),
               content : new SFString("Record information about skin coordinates (found in comment at end of scene) as a structured MetadataSet containing MetadataString nodes")}),
 
             new meta({
-              name : new SFString("translators"),
-              content : new SFString("Roy Walmsley, Don Brutzman, John Carlson")}),
+              name : new SFString("translator"),
+              content : new SFString("Roy Walmsley")}),
+
+            new meta({
+              name : new SFString("translator"),
+              content : new SFString("Don Brutzman")}),
+
+            new meta({
+              name : new SFString("translator"),
+              content : new SFString("John Carlson")}),
 
             new meta({
               name : new SFString("reference"),
@@ -127,7 +135,6 @@ var X3D0 =  new X3D({
 
             new NavigationInfo({
               DEF : new SFString("Start_NavigationInfo"),
-              headlight : new SFBool(false),
               speed : new SFFloat(2.5)}),
 
             new Background({
@@ -190,7 +197,7 @@ var X3D0 =  new X3D({
                 new HAnimHumanoid({
                   name : new SFString("Kick"),
                   DEF : new SFString("Joe_Kick"),
-                  loa : new SFInt32(3),
+                  loa : new SFInt32(4),
                   version : new SFString("2.0"),
                   metadata : new MFNode([
                     new MetadataSet({

@@ -33,7 +33,7 @@ var X3D0 =  new X3D({
         new head({
           meta : new MFNode([
             new meta({
-              name : new SFString("filename"),
+              name : new SFString("title"),
               content : new SFString("Scripting.x3d")})])})),
       Scene : new SFNode(
         new Scene({

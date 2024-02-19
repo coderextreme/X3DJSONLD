@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
 <X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd" ><head><component name="HAnim" level="3"></component>
-<unit name="METERS" category="length"></unit>
-<meta name="filename" content="blenderSkeleton.x3d"></meta>
-<meta name="copyright"></meta>
+<meta name="title" content="blenderSkeleton.x3d"></meta>
+<meta name="copyright" content="2023"></meta>
 <meta name="reference" content="http://www.web3D.org"></meta>
 <meta name="generator" content="Blender 4.0.1"></meta>
-<meta name="exporter" content="io_scene_x3dv"></meta>
 </head>
 <Scene><NavigationInfo></NavigationInfo>
 <Background DEF="WO_World" groundColor="0.05087608844041824 0.05087608844041824 0.05087608844041824" skyColor="0.05087608844041824 0.05087608844041824 0.05087608844041824"></Background>

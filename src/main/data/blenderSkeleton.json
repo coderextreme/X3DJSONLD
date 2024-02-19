@@ -11,19 +11,14 @@
             "@level":3
           }
         ],
-        "unit": [
-          {
-            "@name":"METERS",
-            "@category":"length"
-          }
-        ],
         "meta": [
           {
-            "@name":"filename",
+            "@name":"title",
             "@content":"blenderSkeleton.x3d"
           },
           {
-            "@name":"copyright"
+            "@name":"copyright",
+            "@content":"2023"
           },
           {
             "@name":"reference",
@@ -34,12 +29,8 @@
             "@content":"Blender 4.0.1"
           },
           {
-            "@name":"exporter",
-            "@content":"io_scene_x3dv"
-          },
-          {
             "@name":"translated",
-            "@content":"18 February 2024"
+            "@content":"19 February 2024"
           },
           {
             "@name":"generator",

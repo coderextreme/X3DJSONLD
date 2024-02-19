@@ -104,7 +104,7 @@ import org.web3d.x3d.jsail.Texturing.*;
 	* @author Jin Hoon Lee and Min Joo Lee
  */
 
-import net.coderextreme.X3DRoots;import java.util.List;import java.util.ArrayList;public class KoreanCharacter11Min implements X3DRoots 
+public class KoreanCharacter11Min
 {
 	/** Default constructor to create this object. */
 	public KoreanCharacter11Min ()
@@ -1335,11 +1335,6 @@ import net.coderextreme.X3DRoots;import java.util.List;import java.util.ArrayLis
 	public X3D getX3dModel()
 	{	  
 		return x3dModel;
-	}
-	public List<X3D> getRootNodeList() {
-		List<X3D> list = new ArrayList<X3D>(1);
-		list.add(x3dModel);
-		return list;
 	}
 	   
     /** 

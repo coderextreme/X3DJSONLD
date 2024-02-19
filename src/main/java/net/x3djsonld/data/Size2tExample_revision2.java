@@ -90,7 +90,7 @@ import org.web3d.x3d.jsail.Time.*;
 	* @author Katy Schildmeyer
  */
 
-import net.coderextreme.X3DRoots;import java.util.List;import java.util.ArrayList;public class Size2tExample_revision2 implements X3DRoots 
+public class Size2tExample_revision2
 {
 	/** Default constructor to create this object. */
 	public Size2tExample_revision2 ()
@@ -6207,11 +6207,6 @@ import net.coderextreme.X3DRoots;import java.util.List;import java.util.ArrayLis
 	public X3D getX3dModel()
 	{	  
 		return x3dModel;
-	}
-	public List<X3D> getRootNodeList() {
-		List<X3D> list = new ArrayList<X3D>(1);
-		list.add(x3dModel);
-		return list;
 	}
 	   
     /** 

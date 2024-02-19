@@ -3,12 +3,10 @@
 <X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
     <component name='HAnim' level='3'/>
-    <unit name='METERS' category='length' conversionFactor='1.0'/>
-    <meta content='blenderSkeleton.x3d' name='filename'/>
-    <meta name='copyright'/>
+    <meta content='blenderSkeleton.x3d' name='title'/>
+    <meta content='2023' name='copyright'/>
     <meta content='http://www.web3D.org' name='reference'/>
     <meta content='Blender 4.0.1' name='generator'/>
-    <meta content='io_scene_x3dv' name='exporter'/>
   </head>
   <Scene>
     <NavigationInfo avatarSize='0.25 1.6 0.75' transitionType='"LINEAR"' type='"EXAMINE" "ANY"'/>

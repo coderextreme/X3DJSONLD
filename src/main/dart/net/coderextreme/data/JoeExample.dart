@@ -9,7 +9,7 @@ var X3D0 =  X3D(
         head(
           meta_ : [
             meta(
-              name_ : SFString('filename'),
+              name_ : SFString('title'),
               content_ : SFString('Scripting.x3d'))]),
       Scene_ : 
         Scene(

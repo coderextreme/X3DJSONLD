@@ -380,7 +380,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 "        if ( whichchoice ==4 ) { whichchoice = 0; CounterWeight=50; }\n"+
 "\n"+
 "\n"+
-"        Browser.print ('CounterWeight ='+CounterWeight);\n"+
+"        Browser.println ('CounterWeight ='+CounterWeight);\n"+
 "}"))
             .addChild((new autoclass.Script()).setDEF("LauncheeScript")
               .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFBOOL).setName("set_boolean").setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY))
@@ -397,7 +397,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 "	if (whichchoice == 2)ProjectileWeight=5;\n"+
 "\n"+
 "	if ( whichchoice ==3 ) { whichchoice = 0; ProjectileWeight=10.00; }\n"+
-"	Browser.print ('Projectile Weight'+ProjectileWeight);\n"+
+"	Browser.println ('Projectile Weight'+ProjectileWeight);\n"+
 "}"))
             .addChild((new autoclass.Script()).setDEF("PigdogMonkScript")
               .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFBOOL).setName("set_boolean").setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY))
@@ -428,19 +428,19 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 "{\n"+
 "	MassCounterWeight=100;\n"+
 "	MassProjectileWeight=10;\n"+
-"	Browser.print ('MassCounterWeight =' + MassCounterWeight);\n"+
-"	Browser.print ('MassProjectileWeight =' + MassProjectileWeight);\n"+
+"	Browser.println ('MassCounterWeight =' + MassCounterWeight);\n"+
+"	Browser.println ('MassProjectileWeight =' + MassProjectileWeight);\n"+
 "}\n"+
 "\n"+
 "function set_MassProjectileWeight (value, timestamp)\n"+
 "{\n"+
 "	MassProjectileWeight = value;\n"+
-"	Browser.print ('new MassProjectileWeight =' + MassProjectileWeight);\n"+
+"	Browser.println ('new MassProjectileWeight =' + MassProjectileWeight);\n"+
 "}\n"+
 "function set_MassCounterWeight (value2, timestamp)\n"+
 "{\n"+
 "	MassCounterWeight = value2;\n"+
-"	Browser.print ('new MassCounterWeight =' + MassCounterWeight);\n"+
+"	Browser.println ('new MassCounterWeight =' + MassCounterWeight);\n"+
 "}\n"+
 "\n"+
 "\n"+
@@ -461,7 +461,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 "			}\n"+
 "\n"+
 "	value_changed = new SFVec3f (x, y, z);\n"+
-"	Browser.print ('x=' + value_changed[0] + ' y=' + value_changed[1] + ' z=' + value_changed[2]);\n"+
+"	Browser.println ('x=' + value_changed[0] + ' y=' + value_changed[1] + ' z=' + value_changed[2]);\n"+
 "}"))))
         .addChild((new autoclass.TimeSensor()).setDEF("clock").setCycleInterval(10))
         .addChild((new autoclass.PositionInterpolator()).setDEF("verticalweightpath").setKey(java.newArray("float", [java.newFloat(0), java.newFloat(0.1), java.newFloat(0.2), java.newFloat(0.2), java.newFloat(0.3), java.newFloat(0.9)])).setKeyValue(java.newArray("float", [java.newFloat(1.4), java.newFloat(1.6), java.newFloat(0), java.newFloat(1), java.newFloat(-8), java.newFloat(0), java.newFloat(-3.5), java.newFloat(-12), java.newFloat(0), java.newFloat(-3.5), java.newFloat(-12), java.newFloat(0), java.newFloat(1.2), java.newFloat(-8), java.newFloat(0), java.newFloat(1.4), java.newFloat(1.6), java.newFloat(0)])))

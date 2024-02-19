@@ -15,7 +15,7 @@ ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
       var X3D0 =  (new autoclass.X3D()).setVersion("3.0").setProfile("Immersive")
       .setHead((new autoclass.head())
-        .addMeta((new autoclass.meta()).setName("filename").setContent("Scripting.x3d")))
+        .addMeta((new autoclass.meta()).setName("title").setContent("Scripting.x3d")))
       .setScene((new autoclass.Scene())
         .addChild((new autoclass.Script()).setDEF("OpenVault")
           .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFTIME).setName("openVault").setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY))

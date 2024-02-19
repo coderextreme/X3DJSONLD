@@ -179,7 +179,7 @@ function doubleToFloat(d) {
                     .setGeometry(new Extrusion().setBeginCap(false).setCreaseAngle(0.76).setCrossSection(Java.to([doubleToFloat(0.1),doubleToFloat(0),doubleToFloat(0.092),doubleToFloat(-0.038),doubleToFloat(0.071),doubleToFloat(-0.071),doubleToFloat(0.038),doubleToFloat(-0.092),doubleToFloat(0),doubleToFloat(-0.1),doubleToFloat(-0.038),doubleToFloat(-0.092),doubleToFloat(-0.071),doubleToFloat(-0.071),doubleToFloat(-0.092),doubleToFloat(-0.038),doubleToFloat(-0.1),doubleToFloat(0),doubleToFloat(-0.092),doubleToFloat(0.038),doubleToFloat(-0.071),doubleToFloat(0.071),doubleToFloat(-0.038),doubleToFloat(0.092),doubleToFloat(0),doubleToFloat(0.1),doubleToFloat(0.038),doubleToFloat(0.092),doubleToFloat(0.071),doubleToFloat(0.071),doubleToFloat(0.092),doubleToFloat(0.038),doubleToFloat(0.1),doubleToFloat(0)], Java.type("float[]"))).setEndCap(false).setSolid(false).setSpine(Java.to([doubleToFloat(-15.2),doubleToFloat(1.4),doubleToFloat(2.2),doubleToFloat(-12),doubleToFloat(-0.8),doubleToFloat(2.2)], Java.type("float[]"))))))))
             .addChild(new Transform().setRotation(Java.to([doubleToFloat(1),doubleToFloat(0),doubleToFloat(0),doubleToFloat(-1.7)], Java.type("float[]"))).setTranslation(Java.to([doubleToFloat(-17),doubleToFloat(-4.5),doubleToFloat(0)], Java.type("float[]")))
               .addChild(new Transform().setScale(Java.to([doubleToFloat(0.2),doubleToFloat(0.2),doubleToFloat(0.2)], Java.type("float[]")))
-                .addChild(new Shape().setUSE("Torus")
+                .addChild(new Shape().setUSE("Torus"))
                   .addComments(new CommentsBlock("Knot")))
                 .addChild(new Transform().setTranslation(Java.to([doubleToFloat(-1),doubleToFloat(0),doubleToFloat(1.7)], Java.type("float[]")))
                   .addChild(new Shape()
@@ -375,7 +375,7 @@ function set_boolean ( boolean_input, eventTime)
         if ( whichchoice ==4 ) { whichchoice = 0; CounterWeight=50; }
 
 
-        Browser.print ('CounterWeight ='+CounterWeight);
+        Browser.println ('CounterWeight ='+CounterWeight);
 }`))
             .addChild(new Script().setDEF("LauncheeScript")
               .addField(new field().setType(field.TYPE_SFBOOL).setName("set_boolean").setAccessType(field.ACCESSTYPE_INPUTONLY))
@@ -392,7 +392,7 @@ function set_boolean (boolean_input, eventTime)
 	if (whichchoice == 2)ProjectileWeight=5;
 
 	if ( whichchoice ==3 ) { whichchoice = 0; ProjectileWeight=10.00; }
-	Browser.print ('Projectile Weight'+ProjectileWeight);
+	Browser.println ('Projectile Weight'+ProjectileWeight);
 }`))
             .addChild(new Script().setDEF("PigdogMonkScript")
               .addField(new field().setType(field.TYPE_SFBOOL).setName("set_boolean").setAccessType(field.ACCESSTYPE_INPUTONLY))
@@ -423,19 +423,19 @@ function initialize ()
 {
 	MassCounterWeight=100;
 	MassProjectileWeight=10;
-	Browser.print ('MassCounterWeight =' + MassCounterWeight);
-	Browser.print ('MassProjectileWeight =' + MassProjectileWeight);
+	Browser.println ('MassCounterWeight =' + MassCounterWeight);
+	Browser.println ('MassProjectileWeight =' + MassProjectileWeight);
 }
 
 function set_MassProjectileWeight (value, timestamp)
 {
 	MassProjectileWeight = value;
-	Browser.print ('new MassProjectileWeight =' + MassProjectileWeight);
+	Browser.println ('new MassProjectileWeight =' + MassProjectileWeight);
 }
 function set_MassCounterWeight (value2, timestamp)
 {
 	MassCounterWeight = value2;
-	Browser.print ('new MassCounterWeight =' + MassCounterWeight);
+	Browser.println ('new MassCounterWeight =' + MassCounterWeight);
 }
 
 
@@ -456,7 +456,7 @@ function set_fraction ( fraction, eventTime )
 			}
 
 	value_changed = new SFVec3f (x, y, z);
-	Browser.print ('x=' + value_changed[0] + ' y=' + value_changed[1] + ' z=' + value_changed[2]);
+	Browser.println ('x=' + value_changed[0] + ' y=' + value_changed[1] + ' z=' + value_changed[2]);
 }`))))
         .addChild(new TimeSensor().setDEF("clock").setCycleInterval(10))
         .addChild(new PositionInterpolator().setDEF("verticalweightpath").setKey(Java.to([doubleToFloat(0),doubleToFloat(0.1),doubleToFloat(0.2),doubleToFloat(0.2),doubleToFloat(0.3),doubleToFloat(0.9)], Java.type("float[]"))).setKeyValue(Java.to([doubleToFloat(1.4),doubleToFloat(1.6),doubleToFloat(0),doubleToFloat(1),doubleToFloat(-8),doubleToFloat(0),doubleToFloat(-3.5),doubleToFloat(-12),doubleToFloat(0),doubleToFloat(-3.5),doubleToFloat(-12),doubleToFloat(0),doubleToFloat(1.2),doubleToFloat(-8),doubleToFloat(0),doubleToFloat(1.4),doubleToFloat(1.6),doubleToFloat(0)], Java.type("float[]"))))

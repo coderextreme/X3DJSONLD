@@ -4,7 +4,7 @@ X3D0.version = "3.0";
 X3D0.profile = "Immersive";
 let head1 = browser.currentScene.createNode("head");
 let meta2 = browser.currentScene.createNode("meta");
-meta2.name = "filename";
+meta2.name = "title";
 meta2.content = "Scripting.x3d";
 head1.meta = new MFNode();
 
