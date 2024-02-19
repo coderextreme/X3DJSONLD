@@ -39,9 +39,9 @@ app.use(express.static('src/main/lib'));
 app.use(express.static('src/main/html'));
 app.use(express.static('src/main'));
 
-function convertX3dToJson(res, infile, outfile, next) {
+async function convertX3dToJson(res, infile, outfile, next) {
 	try {
-		var data = fs.readFileSync(infile);
+		var data = await fs.promises.readFile(infile);
 		var doc = null;
 		var domParser = new DOMParser();
 		doc = domParser.parseFromString (data.toString(), 'application/xml');
@@ -76,6 +76,7 @@ function sendNoNext(res, data, type) {
 		if (!type.startsWith("image/")) {
 			res.header("Content-Type", type);
 		}
+		res.header("Content-Type-Options", "nosniff");
 	} catch (e) {
 		console.error(e);
 	}
@@ -136,7 +137,7 @@ app.get("/www.web3d.org/*.x3d", function(req, res, next) {
 });
 */
 
-app.get("/www.web3d.org/*.wrl", function(req, res, next) {
+app.get("/www.web3d.org/*.wrl", async function(req, res, next) {
 	var url = req._parsedUrl.pathname;
 	var hash = url.indexOf("#");
 	var infile = url;
@@ -144,7 +145,7 @@ app.get("/www.web3d.org/*.wrl", function(req, res, next) {
 	       infile = url.substring(0, hash);
 	}
 	infile = www + "/" + infile;
-	var data = fs.readFileSync(infile);
+	var data = await fs.promises.readFile(infile);
 	sendNoNext(res, data.toString(), "model/vrml");
 });
 
@@ -220,7 +221,15 @@ app.get("/files", function(req, res, next) {
 });
 
 function magic(path, type) {
-    app.get(path, function(req, res, next) {
+    query = path.indexOf("?");
+    if (query >= 0) {
+	    path = path.substr(query);
+    }
+    var hash = path.indexOf("#");
+    if (hash > 0) {
+		path = path.substr(hash);
+    }
+    app.get(path, async function(req, res, next) {
 	var url = req._parsedUrl.pathname;
 	try {
 		while (url.startsWith("/")) {
@@ -237,7 +246,7 @@ function magic(path, type) {
 		}
 		if (fs.existsSync(url)) {
 			console.error("Reading", url);
-			var data = fs.readFileSync(url);
+			var data = await fs.promises.readFile(url);
 			if (type.startsWith("image") || type.startsWith("audio") || type.startsWith("video")) {
 				sendNoNext(res, data, type);
 			} else {
@@ -311,7 +320,7 @@ magic("*.xml", "text/xml");
 */
 
 
-app.get("*.json", function(req, res, next) {
+app.get("*.json", async function(req, res, next) {
 	var url = req._parsedUrl.pathname.substr(1);
 	console.error(req.ip+":  Requested JSON File", url);
 	var file = url;
@@ -328,7 +337,7 @@ app.get("*.json", function(req, res, next) {
 	/*
 	if (fs.existsSync(outfile)) {
 	*/
-		var data = fs.readFileSync(outfile);
+		var data = await fs.promises.readFile(outfile);
 		// console.error("Data", data.toString());
 		var json = JSON.parse(data.toString());
 		// console.error(JSON.stringify(json));
@@ -349,7 +358,7 @@ app.get("*.json", function(req, res, next) {
 	}
 });
 
-app.get("*.x3dj", function(req, res, next) {
+app.get("*.x3dj", async function(req, res, next) {
 	var url = req._parsedUrl.pathname.substr(1);
 	console.error(req.ip+":  Requested JSON File", url);
 	var file = url;
@@ -366,7 +375,7 @@ app.get("*.x3dj", function(req, res, next) {
 	/*
 	if (fs.existsSync(outfile)) {
 	*/
-		var data = fs.readFileSync(outfile);
+		var data = await fs.promises.readFile(outfile);
 		// console.error("Data", data.toString());
 		var json = JSON.parse(data.toString());
 		// console.error(JSON.stringify(json));
