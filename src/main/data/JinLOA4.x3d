@@ -2662,5 +2662,1335 @@
       <HAnimSegment USE='hanim_l_upperarm' containerField='segments'/>
       <HAnimSegment USE='hanim_r_upperarm' containerField='segments'/>
     </HAnimHumanoid>
+    <Script><field name='dummy' type='MFInt32' accessType='initializeOnly' value='0'/><![CDATA[ecmascript:
+	function HAnimScale() {
+            this.x = 0;
+            this.y = 0;
+            this.l_x = 0;
+            this.l_z = 0;
+            this.r_x = 0;
+            this.r_z = 0;
+            this.maxy = 0;
+            this.z = 0;
+            this.scale = [1, 1, 1];
+            this.yscale = 1;
+            this.X3D0 = document.querySelector("X3D");
+            this.humanoids = [];
+            this.traverseChildrenSceneGraph(X3D.Scene.children, humanoids);
+            for (let h = 0; h < humanoids.length; h++) {
+                    let humanoid = humanoids[h];
+                    this.scale = humanoid.getScale();
+                    humanoid.setScale([ 1, 1, 1 ]);
+                    let root = humanoid.skeleton;
+                    let center = root.center;
+                    this.x = center[0];
+                    this.y = center[1];
+                    this.maxy = center[1];
+                    this.z = center[2];
+                    let translation = [0, 0, 0];
+                    this.centering(root);
+                    this.x = (this.l_x + this.r_x) / 2;
+                    this.z = (this.l_z + this.r_z) / 2;
+                    this.yscale = this.maxy - this.y;
+                    this.transform(root, translation);
+                    this.x = 0;
+                    this.y = 0;
+                    this.l_x = 0;
+                    this.l_z = 0;
+                    this.r_x = 0;
+                    this.r_z = 0;
+                    this.maxy = 0;
+                    this.z = 0;
+                    this.scale = [ 1, 1, 1 ];
+                    this.yscale = 1;
+            }
+            this.humanoids = [];
+    }
+
+    HAnimScale.prototype = {
+        traverseChildrenSceneGraph: function(children, humanoids) {
+                if (children !== null) {
+                        for (let ch = 0; ch < children.length; ch++) {
+                                let child = children[ch];
+                                if (!this.traverseChildSceneGraph(child, humanoids)) {
+                                        console.error("Unpacking child in", child, "failed");
+                                }
+                        }
+                        return true;
+                }
+                return false;
+        },
+
+        traverseChildSceneGraph: function(child, humanoids) {
+                let children = null;
+                if (typeof child === 'HAnimJoint') {
+                        let joint = child;
+                        let children = joint.getChildrenList();
+                        this.traverseChildrenSceneGraph(children, humanoids);
+                } else if (typeof child === 'HAnimSite') {
+                        let site = child;
+                        let children = site.getChildrenList();
+                        this.traverseChildrenSceneGraph(children, humanoids);
+                } else if (typeof child === 'HAnimSegment') {
+                        let segment = child;
+                        let children = segment.getChildrenList();
+                        this.traverseChildrenSceneGraph(children, humanoids);
+                } else if (typeof child === 'Group') {
+                        let group = child;
+                        let children = group.getChildrenList();
+                        this.traverseChildrenSceneGraph(children, humanoids);
+                } else if (typeof child === 'Transform') {
+                        let trans = child;
+                        let children = trans.getChildrenList();
+                        this.traverseChildrenSceneGraph(children, humanoids);
+                } else if (typeof child === 'Shape') {
+                        let shape = child;
+                        let appearance = shape.getAppearance();
+                        if (!this.traverseChildSceneGraph(appearance, humanoids)) {
+                                console.error("Unpacking appearance in Shape failed");
+                        }
+                        let geometry = shape.getGeometry();
+                        if (!this.traverseChildSceneGraph(geometry, humanoids)) {
+                                console.error("Unpacking geometry in Shape failed");
+                        }
+                } else if (typeof child === 'IndexedFaceSet') {
+                        let ifs = child;
+                        let coord = ifs.getCoord();
+                        if (!this.traverseChildSceneGraph(coord, humanoids)) {
+                                console.error("Unpacking coord in IndexedFaceSet failed");
+                        }
+                } else if (typeof child === 'Appearance') {
+                } else if (typeof child === 'Coordinate') {
+                } else if (typeof child === 'WorldInfo') {
+                } else if (typeof child === 'NavigationInfo') {
+                } else if (typeof child === 'Viewpoint') {
+                } else if (typeof child === 'HAnimHumanoid') {
+                        humanoids.add(child);
+                } else if (child !== null) {
+                        console.error("Unhandled is", child);
+                } else {
+                        console.error("Node is", child);
+                        return false;
+                }
+                return true;
+        },
+        centering: function(joint) {
+                let center = joint.getCenter();
+                let name = joint.getName();
+                switch (name) {
+                        case "l_tarsal_distal_interphalangeal_5":
+                                this.l_x = center[0];
+                                this.l_z = center[2];
+                                break;
+                        case "r_tarsal_distal_interphalangeal_5":
+                                this.r_x = center[0];
+                                this.r_z = center[2];
+                                break;
+                }
+                if (center[1] > this.maxy) {
+                        this.maxy = center[1];
+                }
+                if (center[1] < this.y) {
+                        this.y = center[1];
+                }
+                let children = joint.getChildrenList();
+                for (let ch = 0; ch < children.size(); ch++) {
+                        let child = children[ch];
+                        if (typeof child === 'HAnimJoint') {
+                                centering(child);
+                        }
+                }
+        },
+        transformPoint: function(point, point_offset, translation) {
+                /// console.error("OLD "+point[point_offset+0]+" "+point[point_offset+1]+" "+point[point_offset+2]+" ");
+                point[point_offset+0] -= this.x;
+                point[point_offset+1] -= this.y;
+                point[point_offset+2] -= this.z;
+
+                point[point_offset+0] *= this.scale[0];
+                point[point_offset+1] *= this.scale[1];
+                point[point_offset+2] *= this.scale[2];
+
+                point[point_offset+0] += translation[0];
+                point[point_offset+1] += translation[1];
+                point[point_offset+2] += translation[2];
+                // console.error("NEW "+point[point_offset+0]+" "+point[point_offset+1]+" "+point[point_offset+2]+" ");
+        },
+        transform: function(node, parentTranslation) {
+                let translation = [parentTranslation[0], parentTranslation[1], parentTranslation[2]];
+                let children = null;
+                if (typeof node === 'HAnimJoint') {
+                        let joint = node;
+
+                        let field = joint.getTranslation();
+                        this.transformPoint(field, 0, [ 0, 0, 0 ]);
+                        this.transformPoint(translation, 0, field);
+                        joint.setTranslation([ 0, 0, 0 ]);
+
+                        let center = joint.getCenter();
+                        this.transformPoint(center, 0, translation);
+                        joint.setCenter(center);
+                        children = joint.getChildrenList();
+                } else if (typeof node === 'HAnimSite') {
+                        let site = node;
+
+                        let field = site.getTranslation();
+                        this.transformPoint(field, 0, [ 0, 0, 0]);
+                        this.transformPoint(translation, 0, field);
+                        site.setTranslation([0, 0, 0]);
+
+                        let center = site.getCenter();
+                        this.transformPoint(center, 0, translation);
+                        site.setCenter(center);
+
+                        children = site.getChildrenList();
+                } else if (typeof node === 'HAnimSegment') {
+                        let segment = node;
+                        let coord = segment.getCoord();
+                        if (coord !== null) {
+                                if (!this.transform(coord, translation)) {
+                                        console.error("Unpacking coord in HAnimSegment failed");
+                                }
+                        }
+                        let displacers = segment.getDisplacersList();
+                        if (displacers !== null) {
+                                for (let di = 0; di < displacers.size(); di++) {
+                                        let displacer = displacers.get(di);
+                                        if (!this.transform(displacer, translation)) {
+                                                console.error("Unpacking displacer in HAnimSegment failed");
+                                        }
+                                }
+                        }
+                        children = segment.getChildrenList();
+                } else if (typeof node === 'Transform') {
+                        let trans = node;
+                        let field = trans.getTranslation();
+                        this.transformPoint(field, 0, [0,0,0]);
+                        this.transformPoint(translation, 0, field);
+                        trans.setTranslation([0,0,0]);
+                        children = trans.getChildrenList();
+                } else if (typeof node === 'Shape') {
+                        let shape = node;
+                        let appearance = shape.getAppearance();
+                        if (!this.transform(appearance, translation)) {
+                                console.error("Unpacking appearance in Shape failed");
+                        }
+                        let geometry = shape.getGeometry();
+                        if (!this.transform(geometry, translation)) {
+                                console.error("Unpacking geometry in Shape failed");
+                        }
+                } else if (typeof node === 'IndexedFaceSet') {
+                        let ifs = node;
+                        let coord = ifs.getCoord();
+                        let coordIndex = ifs.getCoordIndex();
+                        if (coordIndex.length > 700) {
+                                console.error("coordIndex", coordIndex.length);
+                                let texCoordIndex = ifs.getTexCoordIndex();
+                                console.error("texCoordIndex", texCoordIndex.length);
+                        }
+                        if (!this.transform(coord, translation)) {
+                                console.error("Unpacking coord in IndexedFaceSet failed");
+                        }
+                } else if (typeof node === 'Appearance') {
+                } else if (typeof node === 'Coordinate') {
+                        let coordinate = node;
+                        let point = coordinate.getPoint();
+                        // console.error("point ", point.length);
+                        for (let p = 0; p < point.length; p += 3) {
+                                this.transformPoint(point, p, translation);
+                        }
+                        coordinate.setPoint(point);
+                } else if (node !== null) {
+                        console.error("Unhandled is", node);
+                } else {
+                        console.error("Node is", node);
+                        return false;
+                }
+                if (children !== null) {
+                        for (let ch = 0; ch < children.size(); ch++) {
+                                let child = children.get(ch);
+                                if (!this.transform(child, translation)) {
+                                        console.error("Unpacking child in", node, "failed");
+                                }
+                        }
+                }
+                return true;
+        }
+    }
+    function initialize() {
+        new HAnimScale();
+    }
+    ]]></Script>
+    <Group DEF='StopAnimation'>
+      <TimeSensor DEF='StopTimer' cycleInterval='5.73' loop='true'/>
+      <PositionInterpolator DEF='Stop_humanoid_root_TranslationInterpolator' key='0 0.5 1' keyValue='0 0 0 0 0 0 0 0 0'/>
+      <OrientationInterpolator DEF='Stop_humanoid_root_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_sacroiliac_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_l_hip_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_l_knee_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_l_ankle_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_l_subtalar_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_l_midtarsal_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_l_metatarsal_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_r_hip_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_r_knee_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_r_ankle_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_r_subtalar_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_r_midtarsal_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_r_metatarsal_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_vl5_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_vl4_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_vl3_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_vl2_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_vl1_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_vt12_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_vt11_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_vt10_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_vt9_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_vt8_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_vt7_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_vt6_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_vt5_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_vt4_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_vt3_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_vt2_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_vt1_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_vc7_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_vc6_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_vc5_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_vc4_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_vc3_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_vc2_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_vc1_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_skullbase_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_l_eyeball_joint_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_r_eyeball_joint_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_l_sternoclavicular_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_l_acromioclavicular_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_l_shoulder_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_l_elbow_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_l_wrist_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_l_thumb1_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_l_thumb2_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_l_thumb3_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_l_index0_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_l_index1_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_l_index2_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_l_index3_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_l_middle0_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_l_middle1_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_l_middle2_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_l_middle3_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_l_ring0_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_l_ring1_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_l_ring2_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_l_ring3_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_l_pinky0_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_l_pinky1_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_l_pinky2_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_l_pinky3_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_r_sternoclavicular_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_r_acromioclavicular_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_r_shoulder_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_r_elbow_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_r_wrist_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_r_thumb1_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_r_thumb2_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_r_thumb3_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_r_index0_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_r_index1_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_r_index2_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_r_index3_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_r_middle0_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_r_middle1_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_r_middle2_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_r_middle3_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_r_ring0_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_r_ring1_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_r_ring2_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_r_ring3_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_r_pinky0_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_r_pinky1_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_r_pinky2_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stop_r_pinky3_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+    </Group>
+    <Group DEF='StandAnimation'>
+      <TimeSensor DEF='StandTimer' cycleInterval='5.73' loop='true'/>
+      <OrientationInterpolator DEF='Stand_r_metatarsal_PitchInterpolator' key='0 0.2 0.4 0.6 0.7 1' keyValue='1 0 0 0 -1 0 0 0.015 1 0 0 0.17 -1 0 0 0.025 1 0 0 0.01 1 0 0 0'/>
+      <OrientationInterpolator DEF='Stand_r_ankle_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stand_r_knee_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stand_r_hip_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stand_l_ankle_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stand_l_knee_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stand_l_hip_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stand_r_wrist_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 -1 0.25 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stand_r_elbow_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stand_r_shoulder_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stand_l_wrist_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stand_l_elbow_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stand_l_shoulder_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stand_head_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stand_neck_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 -1 0 0 0.5 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stand_l_eyeball_RotationInterpolator' key='0 0.4 0.7 1' keyValue='0 0 1 0 -1 0 0 0.5 1 0 0 0.45 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stand_r_eyeball_RotationInterpolator' key='0 0.4 0.7 1' keyValue='0 0 1 0 -1 0 0 0.5 1 0 0 0.45 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stand_lower_body_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stand_upper_body_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stand_whole_body_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <PositionInterpolator DEF='Stand_whole_body_TranslationInterpolator' key='0 0.5 1' keyValue='0 0 0 0 0 0 0 0 0'/>
+      <OrientationInterpolator DEF='Stand_l_sternoclavicular_RollInterpolator' key='0 0.2 0.4 0.6 0.8 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stand_l_acromioclavicular_RollInterpolator' key='0 0.2 0.4 0.6 0.8 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stand_r_sternoclavicular_RollInterpolator' key='0 0.2 0.4 0.6 0.8 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stand_r_acromioclavicular_RollInterpolator' key='0 0.2 0.4 0.6 0.8 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stand_sacroiliac_YawInterpolator' key='0 0.2 0.4 0.6 0.8 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stand_vl5_YawInterpolator' key='0 0.2 0.4 0.5 0.6 0.8 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stand_vc6_YawInterpolator' key='0 0.2 0.4 0.5 0.6 0.8 1' keyValue='0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 -1 0 0 0 0 -1 0 0 0 1 0 0'/>
+      <OrientationInterpolator DEF='Stand_l_thumb1_PitchInterpolator' key='0 0.2 0.4 0.6 0.8 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stand_r_thumb1_PitchInterpolator' key='0 0.2 0.4 0.6 0.8 1' keyValue='1 0 0 0 1 0 0 0.5 1 0 0 0.1 1 0 0 0.27 1 0 0 0.2 1 0 0 0'/>
+      <OrientationInterpolator DEF='Stand_r_index1_RollInterpolator' key='0 0.2 0.4 0.5 0.8 1' keyValue='0 0 1 0 0 0 1 0.1 0 0 1 0.2 0 0 1 0.3 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stand_r_index2_RollInterpolator' key='0 0.2 0.4 0.5 0.8 1' keyValue='0 0 1 0 0 0 1 0.4 0 0 1 0.32 0 0 1 0.25 0 0 1 0.2 0 0 1 0'/>
+      <OrientationInterpolator DEF='Stand_r_index3_RollInterpolator' key='0 0.2 0.4 0.5 0.8 1' keyValue='0 0 1 0 0 0 1 0.2 0 0 1 0.3 0 0 1 0.35 0 0 1 0.2 0 0 1 0'/>
+    </Group>
+    <Group DEF='PitchesAnimation'>
+      <TimeSensor DEF='PitchTimer' cycleInterval='5.73' loop='true'/>
+      <OrientationInterpolator DEF='Pitch_r_metatarsal_PitchInterpolator' key='0 0.2 0.4 0.6 0.7 1' keyValue='1 0 0 0 -1 0 0 0.5 -1 0 0 0.7 1 0 0 0.75 -1 0 0 0.2 1 0 0 0'/>
+      <OrientationInterpolator DEF='Pitches_r_ankle_RotationInterpolator' key='0 0.25 0.5 0.75 1' keyValue='0 0 1 0 1 0 0 1.5 0 0 1 0 -1 0 0 1.5 0 0 1 0'/>
+      <OrientationInterpolator DEF='Pitches_r_knee_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Pitches_r_hip_RotationInterpolator' key='0 0.25 0.5 0.75 1' keyValue='0 0 1 0 -1 0 0 1.5 0 0 1 0 1 0 0 1.5 0 0 1 0'/>
+      <OrientationInterpolator DEF='Pitches_l_ankle_RotationInterpolator' key='0 0.25 0.5 0.75 1' keyValue='0 0 1 0 -1 0 0 1.5 0 0 1 0 1 0 0 1.5 0 0 1 0'/>
+      <OrientationInterpolator DEF='Pitches_l_knee_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Pitches_l_hip_RotationInterpolator' key='0 0.25 0.5 0.75 1' keyValue='0 0 1 0 1 0 0 1.5 0 0 1 0 -1 0 0 1.5 0 0 1 0'/>
+      <OrientationInterpolator DEF='Pitches_r_wrist_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Pitches_r_elbow_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Pitches_r_shoulder_RotationInterpolator' key='0 0.25 0.5 0.75 1' keyValue='0 0 1 0 1 0 0 1.5 0 0 1 0 -1 0 0 1.5 0 0 1 0'/>
+      <OrientationInterpolator DEF='Pitches_l_wrist_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Pitches_l_elbow_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Pitches_l_shoulder_RotationInterpolator' key='0 0.25 0.5 0.75 1' keyValue='0 0 1 0 -1 0 0 1.5 0 0 1 0 1 0 0 1.5 0 0 1 0'/>
+      <OrientationInterpolator DEF='Pitches_head_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Pitches_neck_RotationInterpolator' key='0 0.25 0.55 1' keyValue='0 0 1 0 1 0 0 0.55 -1 0 0 1.05 0 0 1 0'/>
+      <OrientationInterpolator DEF='Pitches_lower_body_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Pitches_upper_body_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Pitches_whole_body_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <PositionInterpolator DEF='Pitches_whole_body_TranslationInterpolator' key='0 0.125 0.25 0.375 0.5 0.625 0.75 0.875 1' keyValue='0 0 0 0 -0.15 0 0 -0.7 0 0 -0.15 0 0 0 0 0 -0.15 0 0 -0.7 0 0 -0.15 0 0 0 0'/>
+      <OrientationInterpolator DEF='Pitch_l_sternoclavicular_RollInterpolator' key='0 0.2 0.4 0.6 0.8 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Pitch_l_acromioclavicular_RollInterpolator' key='0 0.2 0.4 0.6 0.8 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Pitch_r_sternoclavicular_RollInterpolator' key='0 0.2 0.4 0.6 0.8 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Pitch_r_acromioclavicular_RollInterpolator' key='0 0.2 0.4 0.6 0.8 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Pitch_sacroiliac_YawInterpolator' key='0 0.2 0.4 0.6 0.8 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Pitch_vl5_YawInterpolator' key='0 0.2 0.4 0.5 0.6 0.8 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Pitch_vc6_YawInterpolator' key='0 0.2 0.4 0.5 0.6 0.8 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Pitch_l_thumb1_PitchInterpolator' key='0 0.2 0.4 0.6 0.8 1' keyValue='1 0 0 0 1 0 0 0.25 1 0 0 0.3 1 0 0 0.27 1 0 0 0.2 1 0 0 0'/>
+      <OrientationInterpolator DEF='Pitch_r_thumb1_PitchInterpolator' key='0 0.2 0.4 0.6 0.8 1' keyValue='1 0 0 0 1 0 0 0.25 1 0 0 0.3 1 0 0 0.27 1 0 0 0.2 1 0 0 0'/>
+    </Group>
+    <Group DEF='YawsAnimation'>
+      <TimeSensor DEF='YawTimer' cycleInterval='5.73' loop='true'/>
+      <OrientationInterpolator DEF='Yaw_r_metatarsal_PitchInterpolator' key='0 0.2 0.4 0.6 0.7 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Yaws_r_ankle_RotationInterpolator' key='0 0.25 0.5 0.75 1' keyValue='0 0 1 0 0 -1 0 1.5 0 0 1 0 0 1 0 1.5 0 0 1 0'/>
+      <OrientationInterpolator DEF='Yaws_r_knee_RotationInterpolator' key='0 0.25 0.5 0.75 1' keyValue='0 0 1 0 0 1 0 1.5 0 0 1 0 0 -1 0 1.5 0 0 1 0'/>
+      <OrientationInterpolator DEF='Yaws_r_hip_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Yaws_l_ankle_RotationInterpolator' key='0 0.25 0.5 0.75 1' keyValue='0 0 1 0 0 1 0 1.5 0 0 1 0 0 -1 0 1.5 0 0 1 0'/>
+      <OrientationInterpolator DEF='Yaws_l_knee_RotationInterpolator' key='0 0.25 0.5 0.75 1' keyValue='0 0 1 0 0 -1 0 1.5 0 0 1 0 0 1 0 1.5 0 0 1 0'/>
+      <OrientationInterpolator DEF='Yaws_l_hip_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Yaws_r_wrist_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Yaws_r_elbow_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Yaws_r_shoulder_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Yaws_l_wrist_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Yaws_l_elbow_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Yaws_l_shoulder_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Yaws_head_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Yaws_neck_RotationInterpolator' key='0 0.25 0.5 0.75 1' keyValue='0 0 1 0 0 1 0 1.5 0 0 1 0 0 -1 0 1.5 0 0 1 0'/>
+      <OrientationInterpolator DEF='Yaws_upper_body_RotationInterpolator' key='0 0.25 0.5 0.75 1' keyValue='0 0 1 0 0 -1 0 1.5 0 0 1 0 0 1 0 1.5 0 0 1 0'/>
+      <OrientationInterpolator DEF='Yaws_lower_body_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Yaws_whole_body_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <PositionInterpolator DEF='Yaws_whole_body_TranslationInterpolator' key='0 0.5 1' keyValue='0 0 0 0 0 0 0 0 0'/>
+      <OrientationInterpolator DEF='Yaw_l_sternoclavicular_RollInterpolator' key='0 0.2 0.4 0.6 0.8 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Yaw_l_acromioclavicular_RollInterpolator' key='0 0.2 0.4 0.6 0.8 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Yaw_r_sternoclavicular_RollInterpolator' key='0 0.2 0.4 0.6 0.8 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Yaw_r_acromioclavicular_RollInterpolator' key='0 0.2 0.4 0.6 0.8 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Yaw_sacroiliac_YawInterpolator' key='0 0.2 0.4 0.6 0.8 1' keyValue='0 1 0 0 0 -1 0 0.1 0 1 0 0 0 1 0 0.24 0 -1 0 0.4 0 1 0 0'/>
+      <OrientationInterpolator DEF='Yaw_vl5_YawInterpolator' key='0 0.2 0.4 0.5 0.6 0.8 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Yaw_vc6_YawInterpolator' key='0 0.2 0.4 0.5 0.6 0.8 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Yaw_l_thumb1_PitchInterpolator' key='0 0.2 0.4 0.6 0.8 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Yaw_r_thumb1_PitchInterpolator' key='0 0.2 0.4 0.6 0.8 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0'/>
+    </Group>
+    <Group DEF='RollsAnimation'>
+      <TimeSensor DEF='RollTimer' cycleInterval='5.73' loop='true'/>
+      <OrientationInterpolator DEF='Roll_r_metatarsal_PitchInterpolator' key='0 0.2 0.4 0.6 0.7 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Rolls_r_ankle_RotationInterpolator' key='0 0.25 0.5 0.75 1' keyValue='0 0 1 0 0 0 1 1.5 0 0 1 0 0 0 1 1.5 0 0 1 0'/>
+      <OrientationInterpolator DEF='Rolls_r_knee_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Rolls_r_hip_RotationInterpolator' key='0 0.25 0.5 0.75 1' keyValue='0 0 -1 0 0 0 -1 1.5 0 0 1 0 0 0 -1 1.5 0 0 1 0'/>
+      <OrientationInterpolator DEF='Rolls_l_ankle_RotationInterpolator' key='0 0.25 0.5 0.75 1' keyValue='0 0 1 0 0 0 -1 1.5 0 0 1 0 0 0 -1 1.5 0 0 1 0'/>
+      <OrientationInterpolator DEF='Rolls_l_knee_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Rolls_l_hip_RotationInterpolator' key='0 0.25 0.5 0.75 1' keyValue='0 0 1 0 0 0 1 1.5 0 0 1 0 0 0 1 1.5 0 0 1 0'/>
+      <OrientationInterpolator DEF='Rolls_r_wrist_RotationInterpolator' key='0 0.25 0.5 0.75 1' keyValue='0 0 1 0 0 0 -1 1.5 0 0 1 0 0 0 1 1.5 0 0 1 0'/>
+      <OrientationInterpolator DEF='Rolls_r_elbow_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Rolls_r_shoulder_RotationInterpolator' key='0 0.25 0.5 0.75 1' keyValue='0 0 1 0 0 0 -1 1.5 0 0 -1 3 0 0 -1 1.5 0 0 1 0'/>
+      <OrientationInterpolator DEF='Rolls_l_wrist_RotationInterpolator' key='0 0.25 0.5 0.75 1' keyValue='0 0 1 0 0 0 1 1.5 0 0 1 0 0 0 -1 1.5 0 0 1 0'/>
+      <OrientationInterpolator DEF='Rolls_l_elbow_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Rolls_l_shoulder_RotationInterpolator' key='0 0.25 0.5 0.75 1' keyValue='0 0 1 0 0 0 1 1.5 0 0 1 3 0 0 1 1.5 0 0 1 0'/>
+      <OrientationInterpolator DEF='Rolls_head_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Rolls_neck_RotationInterpolator' key='0 0.25 0.5 0.75 1' keyValue='0 0 1 0 0 0 1 1.25 0 0 1 0 0 0 -1 1.25 0 0 1 0'/>
+      <OrientationInterpolator DEF='Rolls_lower_body_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Rolls_upper_body_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Rolls_whole_body_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <PositionInterpolator DEF='Rolls_whole_body_TranslationInterpolator' key='0 0.125 0.25 0.375 0.5 0.625 0.75 0.875 1' keyValue='0 0 0 0 -0.25 0 0 -0.8 0 0 -0.25 0 0 0 0 0 -0.25 0 0 -0.8 0 0 -0.25 0 0 0 0'/>
+      <OrientationInterpolator DEF='Roll_l_sternoclavicular_RollInterpolator' key='0 0.2 0.4 0.6 0.8 1' keyValue='0 0 1 0 0 0 1 0.2 0 0 1 0.22 0 0 1 0.2 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Roll_l_acromioclavicular_RollInterpolator' key='0 0.2 0.4 0.6 0.8 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0.05 0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Roll_r_sternoclavicular_RollInterpolator' key='0 0.2 0.4 0.6 0.8 1' keyValue='0 0 1 0 0 0 1 -0.2 0 0 1 -0.22 0 0 1 -0.2 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Roll_r_acromioclavicular_RollInterpolator' key='0 0.2 0.4 0.6 0.8 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 -0.05 0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Roll_sacroiliac_YawInterpolator' key='0 0.2 0.4 0.6 0.8 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Roll_vl5_YawInterpolator' key='0 0.2 0.4 0.5 0.6 0.8 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Roll_vc6_YawInterpolator' key='0 0.2 0.4 0.5 0.6 0.8 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Roll_l_thumb1_PitchInterpolator' key='0 0.2 0.4 0.6 0.8 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Roll_r_thumb1_PitchInterpolator' key='0 0.2 0.4 0.6 0.8 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0'/>
+    </Group>
+    <Group DEF='WalkAnimation'>
+      <TimeSensor DEF='WalkTimer' cycleInterval='1.73' loop='true'/>
+      <OrientationInterpolator DEF='Walk_r_metatarsal_PitchInterpolator' key='0 0.2 0.4 0.6 0.7 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Walk_r_ankle_RotationInterpolator' key='0 0.125 0.2083 0.375 0.4583 0.5 0.6667 0.75 0.7917 0.9167 1' keyValue='0 0 1 0 -1 0 0 0.3533 -1 0 0 0.1072 1 0 0 0.2612 1 0 0 0.1268 -1 0 0 0.01793 -1 0 0 0.05824 -1 0 0 0.2398 -1 0 0 0.35 -1 0 0 0.3322 0 0 1 0'/>
+      <OrientationInterpolator DEF='Walk_r_knee_RotationInterpolator' key='0 0.125 0.2083 0.2917 0.375 0.5 0.6667 0.7917 0.9167 1' keyValue='1 0 0 0.8573 1 0 0 0.8926 1 0 0 0.5351 1 0 0 0.1756 1 0 0 0.1194 1 0 0 0.3153 1 0 0 0.09354 1 0 0 0.08558 1 0 0 0.2475 1 0 0 0.8573'/>
+      <OrientationInterpolator DEF='Walk_r_hip_RotationInterpolator' key='0 0.125 0.2083 0.2917 0.375 0.5 0.6667 0.7917 0.9167 1' keyValue='-0.5831 0.03511 0.8116 0.1481 -0.995 0.02296 0.09674 0.4683 -1 0.00192 0.007964 0.4732 -0.998 -0.0158 -0.06102 0.5079 -0.9911 -0.03541 -0.1286 0.5419 -0.9131 -0.06243 -0.403 0.3361 -0.4306 -0.07962 -0.899 0.07038 1 0 0 0.2571 0.9891 -0.02805 0.1444 0.3879 -0.5831 0.03511 0.8116 0.1481'/>
+      <OrientationInterpolator DEF='Walk_l_ankle_RotationInterpolator' key='0 0.125 0.2083 0.375 0.6667 0.9167 1' keyValue='-1 0 0 0.06714 -1 0 0 0.2152 -1 0 0 0.3184 -1 0 0 0.4717 -1 0 0 0.2912 1 0 0 0.1222 -1 0 0 0.06714'/>
+      <OrientationInterpolator DEF='Walk_l_knee_RotationInterpolator' key='0 0.2083 0.375 0.5 0.6667 0.7917 0.9167 1' keyValue='1 0 0 0.3226 1 0 0 0.1556 1 0 0 0.08678 1 0 0 0.8751 1 0 0 1.131 1 0 0 0.09961 1 0 0 0.3942 1 0 0 0.3226'/>
+      <OrientationInterpolator DEF='Walk_l_hip_RotationInterpolator' key='0 0.25 0.375 0.5 0.6667 0.7917 0.9167 1' keyValue='-0.873 0.06094 0.484 0.2865 0.9963 -0.01057 0.08481 0.2488 0.9965 0.01591 -0.08222 0.3836 -0.7018 -0.03223 -0.7117 0.1289 -1 0 0 0.5518 -0.9964 0.02231 0.0817 0.5351 -0.9809 0.04912 0.1881 0.5204 -0.873 0.06094 0.484 0.2865'/>
+      <OrientationInterpolator DEF='Walk_lower_body_RotationInterpolator' key='0 0.5 1' keyValue='0 0 -1 0.1056 0 0 1 0.09018 0 0 -1 0.1056'/>
+      <OrientationInterpolator DEF='Walk_r_wrist_RotationInterpolator' key='0 0.375 0.9167 1' keyValue='-0.8129 0.4759 -0.3357 0.1346 0.1533 -0.9878 0.02582 0.3902 -0.5701 0.7604 -0.311 0.366 -0.8129 0.4759 -0.3357 0.1346'/>
+      <OrientationInterpolator DEF='Walk_r_elbow_RotationInterpolator' key='0 0.375 0.9167 1' keyValue='-1 0 0 0.411508 -1 0 0 0.0925011 -1 0 0 0.572568 -1 0 0 0.411508'/>
+      <OrientationInterpolator DEF='Walk_r_shoulder_RotationInterpolator' key='0 0.375 0.9167 1' keyValue='-1 0 0 0.09346 1 0 0 0.3197 -1 0 0 0.1564 -1 0 0 0.09346'/>
+      <OrientationInterpolator DEF='Walk_l_wrist_RotationInterpolator' key='0 0.375 0.9167 1' keyValue='0 -1 0 0.461076 -0.330195 -0.927451 0.175516 0.538852 0.0327774 -0.999314 -0.0172185 0.492033 0 -1 0 0.461076'/>
+      <OrientationInterpolator DEF='Walk_l_elbow_RotationInterpolator' key='0 0.375 0.9167 1' keyValue='-1 0 0 0.0659878 -1 0 0 0.488383 -1 0 0 0.0177536 -1 0 0 0.0659878'/>
+      <OrientationInterpolator DEF='Walk_l_shoulder_RotationInterpolator' key='0 0.375 0.9167 1' keyValue='1 0 0 0.1189 -1 0 0 0.1861 1 0 0 0.3357 1 0 0 0.1189'/>
+      <OrientationInterpolator DEF='Walk_head_RotationInterpolator' key='0 0.375 0.4167 0.5 0.5833 0.6667 0.75 0.8333 0.9167 1' keyValue='0 -1 0 0.08642 0 1 0 0.1825 0 1 0 0.1505 0 1 0 0.1053 0 1 0 0.04391 0 -1 0 0.03119 0 -1 0 0.07936 0 -1 0 0.1616 0 -1 0 0.155 0 -1 0 0.08642'/>
+      <OrientationInterpolator DEF='Walk_neck_RotationInterpolator' key='0 1' keyValue='0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Walk_upper_body_RotationInterpolator' key='0 0.2083 0.375 0.75 0.8333 1' keyValue='0 1 0 0.0826 -0.01972 -0.5974 0.8017 0.08231 0.009296 -0.9648 0.2627 0.1734 -0.01238 0.9549 -0.2968 0.08732 -0.008125 0.9691 -0.2463 0.158 0 1 0 0.0826'/>
+      <OrientationInterpolator DEF='Walk_whole_body_RotationInterpolator' key='0 1' keyValue='0 0 1 0 0 0 1 0'/>
+      <PositionInterpolator DEF='Walk_whole_body_TranslationInterpolator' key='0 0.04167 0.125 0.1667 0.2083 0.25 0.2917 0.375 0.4583 0.5 0.5417 0.5833 0.625 0.7083 0.75 0.7917 0.875 0.9167 1' keyValue='0 -0.00928 0 0 -0.003858 0 0 -0.008847 0 0 -0.01486 0 0 -0.02641 0 0 -0.03934 0 0 -0.0502 0 0 -0.07469 0 0 -0.02732 0 0 -0.01608 0 0 -0.01129 0 0 -0.005819 0 0 -0.002004 0 0 -0.002579 0 0 -0.0143 0 0 -0.03799 0 0 -0.05648 0 0 -0.045 0 0 -0.00928 0'/>
+      <OrientationInterpolator DEF='Walk_l_sternoclavicular_RollInterpolator' key='0 0.2 0.4 0.6 0.8 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Walk_l_acromioclavicular_RollInterpolator' key='0 0.2 0.4 0.6 0.8 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Walk_r_sternoclavicular_RollInterpolator' key='0 0.2 0.4 0.6 0.8 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Walk_r_acromioclavicular_RollInterpolator' key='0 0.2 0.4 0.6 0.8 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Walk_sacroiliac_YawInterpolator' key='0 0.2 0.4 0.6 0.8 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Walk_vl5_YawInterpolator' key='0 0.2 0.4 0.5 0.6 0.8 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Walk_vc6_YawInterpolator' key='0 0.2 0.4 0.5 0.6 0.8 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Walk_l_thumb1_PitchInterpolator' key='0 0.2 0.4 0.6 0.8 1' keyValue='1 0 0 0 1 0 0 0.25 1 0 0 0.5 1 0 0 0.7 1 0 0 0.2 1 0 0 0'/>
+      <OrientationInterpolator DEF='Walk_r_thumb1_PitchInterpolator' key='0 0.2 0.4 0.6 0.8 1' keyValue='1 0 0 0 1 0 0 0.25 1 0 0 0.5 1 0 0 0.7 1 0 0 0.2 1 0 0 0'/>
+    </Group>
+    <Group DEF='RunAnimation'>
+      <TimeSensor DEF='RunTimer' cycleInterval='0.9' loop='true'/>
+      <OrientationInterpolator DEF='Run_r_metatarsal_PitchInterpolator' key='0 0.2 0.4 0.6 0.7 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Run_l_hip_RotationInterpolator_Run' key='0 0.2182 0.4909 0.7455 1' keyValue='-0.99 0.033 0.04 1.42 -0.99 0.1328 0.067 0.42 0.99 0.014 0.009 0.9 -0.99 0.0703 0.05 0.7 -0.99 0.033 0.04 1.42'/>
+      <OrientationInterpolator DEF='Run_l_knee_RotationInterpolator_Run' key='0 0.2182 0.4909 0.7455 1' keyValue='1 0 0 1.01 1 0 0 0.426 1 0 0 0.705 1 0 0 2.179 1 0 0 1.01'/>
+      <OrientationInterpolator DEF='Run_l_ankle_RotationInterpolator_Run' key='0 0.22 0.3 0.4 1' keyValue='1 0 0 0.0374 -1 0 0 0.1037 -1 0 0 0.4328 1 0 0 0.1929 1 0 0 0.03574'/>
+      <OrientationInterpolator DEF='Run_r_hip_RotationInterpolator_Run' key='0 0.2545 0.4909 0.7091 1' keyValue='0.99 -0.014 0.009 0.9 -0.99 -0.0703 -0.05 0.7 -0.99 -0.033 0.04 1.42 -0.99 -0.1328 -0.067 0.42 0.99 -0.014 0.009 0.9'/>
+      <OrientationInterpolator DEF='Run_r_knee_RotationInterpolator_Run' key='0 0.2545 0.4909 0.7091 1' keyValue='1 0 0 0.705 1 0 0 2.179 1 0 0 1.01 1 0 0 0.426 1 0 0 0.705'/>
+      <OrientationInterpolator DEF='Run_r_ankle_RotationInterpolator_Run' key='0 0.4 0.71 0.8 0.82 1' keyValue='1 0 0 0.2323 -1 0 0 0.07843 -1 0 0 0.32 -1 0 0 0.374 -1 0 0 0.3478 1 0 0 0.2323'/>
+      <OrientationInterpolator DEF='Run_l_shoulder_RotationInterpolator_Run' key='0 0.2182 0.4909 0.7455 1' keyValue='0.99 -0.074 0.25 1.5 0.99 -0.092 0.44 0.3 -0.99 0.136 0.25 0.85 0.99 -0.081 0.38 0.4 0.99 -0.074 0.25 1.5'/>
+      <OrientationInterpolator DEF='Run_l_elbow_RotationInterpolator_Run' key='0 0.2182 0.4909 0.7455 1' keyValue='-1 0 0 1.85 -0.99 -0.19 0.18 1.35 -1 0 0 0.975 -0.99 -0.09 -0.02 1.55 -1 0 0 1.85'/>
+      <OrientationInterpolator DEF='Run_l_wrist_RotationInterpolator_Run' key='0 0.25 0.5 0.75 1' keyValue='-0.25 -1 0.08 0.14 0.25 1 0.08 0.14 0 0 1 0 -0.25 1 0.08 -0.14 -0.25 1 0.08 0.14'/>
+      <OrientationInterpolator DEF='Run_r_shoulder_RotationInterpolator_Run' key='0 0.2545 0.4909 0.7091 1' keyValue='-0.99 -0.136 -0.25 0.85 0.99 0.081 -0.38 0.4 0.99 0.074 -0.25 1.5 0.99 0.081 -0.38 0.4 -0.99 -0.136 -0.25 0.85'/>
+      <OrientationInterpolator DEF='Run_r_elbow_RotationInterpolator_Run' key='0 0.2545 0.4909 0.7091 1' keyValue='-1 0 0 0.975 -0.99 0.09 0.02 1.55 -1 0 0 1.85 -0.99 0.19 -0.18 1.35 -1 0 0 0.975'/>
+      <OrientationInterpolator DEF='Run_r_wrist_RotationInterpolator_Run' key='0 1' keyValue='-0.917742 -0.237244 -0.318536 0.214273 -0.917742 -0.237244 -0.318536 0.214273'/>
+      <OrientationInterpolator DEF='Run_lower_body_RotationInterpolator_Run' key='0 0.2182 0.4909 0.7455 1' keyValue='0 -1 0 0.125 0 0 1 0 0 1 0 0.125 0 0 1 0 0 -1 0 0.125'/>
+      <OrientationInterpolator DEF='Run_head_RotationInterpolator_Run' key='0 0.2545 0.4909 0.7091 1' keyValue='1 0 0 0.08 1 0 0 0.12 1 0 0 0.3 1 0 0 0.3 1 0 0 0.08'/>
+      <OrientationInterpolator DEF='Run_neck_RotationInterpolator_Run' key='0 0.2545 0.4909 0.7091 1' keyValue='0.7 0 0 0.4 -0.7 -0.7 0 0.4 0 0 0 0.4 -0.7 0.7 0 0.4 0.7 0 0 0.4'/>
+      <OrientationInterpolator DEF='Run_upper_body_RotationInterpolator_Run' key='0 0.2545 0.4909 0.7636 1' keyValue='0.97 0.65 0.086 0.5 0.9 0.003 -0.02 0.38 0.95 -0.68 -0.086 0.5 0.9 0.004 -0.025 0.4 0.97 0.65 0.086 0.5'/>
+      <OrientationInterpolator DEF='Run_whole_body_RotationInterpolator_Run' key='0 0.25 0.5 0.75 1' keyValue='1 0 0 0.06 1 0 0 0.167 1 0 0 0.06 1 0 0 0.168 1 0 0 0.06'/>
+      <PositionInterpolator DEF='Run_whole_body_TranslationInterpolator_Run' key='0 0.22 0.3 0.31 0.5 0.69 0.7 0.78 1' keyValue='0 -0.01 0 0 -0.037 0 0 -0.049 0 0 -0.037 0 0 -0.01 0 0 -0.037 0 0 -0.049 0 0 -0.037 0 0 -0.01 0'/>
+      <OrientationInterpolator DEF='Run_l_sternoclavicular_RollInterpolator' key='0 0.2 0.4 0.6 0.8 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Run_l_acromioclavicular_RollInterpolator' key='0 0.2 0.4 0.6 0.8 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Run_r_sternoclavicular_RollInterpolator' key='0 0.2 0.4 0.6 0.8 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Run_r_acromioclavicular_RollInterpolator' key='0 0.2 0.4 0.6 0.8 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Run_sacroiliac_YawInterpolator' key='0 0.2 0.4 0.6 0.8 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Run_vl5_YawInterpolator' key='0 0.2 0.4 0.5 0.6 0.8 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Run_vc6_YawInterpolator' key='0 0.2 0.4 0.5 0.6 0.8 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Run_l_thumb1_PitchInterpolator' key='0 0.2 0.4 0.6 0.8 1' keyValue='1 0 0 0 1 0 0 0.25 1 0 0 0.7 1 0 0 0.27 1 0 0 0.2 1 0 0 0'/>
+      <OrientationInterpolator DEF='Run_r_thumb1_PitchInterpolator' key='0 0.2 0.4 0.6 0.8 1' keyValue='1 0 0 0 1 0 0 0.25 1 0 0 0.7 1 0 0 0.27 1 0 0 0.2 1 0 0 0'/>
+    </Group>
+    <Group DEF='JumpAnimation'>
+      <TimeSensor DEF='JumpTimer' cycleInterval='3.73' loop='true'/>
+      <OrientationInterpolator DEF='Jump_r_metatarsal_PitchInterpolator' key='0 0.2 0.4 0.6 0.7 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Jump_r_ankle_RotationInterpolator' key='0 0.1 0.15 0.25 0.28 0.32 0.35 0.64 0.76 0.84 0.88 0.92 0.96 1' keyValue='0 0 1 0 -1 0 0 0.6735 -1 0 0 0.6735 -1 0 0 0.3527 -1 0 0 0.3038 -1 0 0 0.07964 1 0 0 1.3 1 0 0 0.6509 1 0 0 0.3001 -1 0 0 0.2087 -1 0 0 0.3756 -1 0 0 0.3279 -1 0 0 0.1193 0 0 1 0'/>
+      <OrientationInterpolator DEF='Jump_r_knee_RotationInterpolator' key='0 0.2 0.25 0.3 0.64 0.76 0.88 1' keyValue='0 0 1 0 1 0 0 2.5 1 0 0 1.7 0 0 1 0 1 0 0 0.9507 1 0 0 0.5845 1 0 0 0.9054 0 0 1 0'/>
+      <OrientationInterpolator DEF='Jump_r_hip_RotationInterpolator' key='0 0.18 0.24 0.26 0.28 0.32 0.48 0.64 0.76 0.88 1' keyValue='0 0 1 0 -1 0 0 1.63 -1 0 0 1.7 -1 0 0 1.55 -1 0 0 0.8943 -1 0 0 0.3698 0 0 1 0 -1 0 0 0.4963 -1 0 0 0.3829 -1 0 0 0.5169 0 0 1 0'/>
+      <OrientationInterpolator DEF='Jump_l_ankle_RotationInterpolator' key='0 0.28 0.32 0.36 0.4 0.44 0.48 0.64 0.76 0.84 0.88 0.92 0.96 1' keyValue='0 0 1 0 -1 0 0 0.625 -1 0 0 0.625 -1 0 0 0.3364 -1 0 0 0.2742 -1 0 0 0.05078 1 0 0 0.2833 1 0 0 0.6667 1 0 0 0.2833 -1 0 0 0.2108 -1 0 0 0.375 -1 0 0 0.3146 -1 0 0 0.1174 0 0 1 0'/>
+      <OrientationInterpolator DEF='Jump_l_knee_RotationInterpolator' key='0 0.28 0.32 0.48 0.64 0.76 0.88 1' keyValue='0 0 1 0 1 0 0 2.047 1 0 0 2.047 0 0 1 0 1 0 0 1.566 1 0 0 0.5913 1 0 0 0.9235 0 0 1 0'/>
+      <OrientationInterpolator DEF='Jump_l_hip_RotationInterpolator' key='0 0.28 0.32 0.36 0.4 0.44 0.48 0.64 0.76 0.88 1' keyValue='0 0 1 0 1 0 0 4.349 1 0 0 4.349 1 0 0 4.615 -1 0 0 0.9136 -1 0 0 0.3614 0 0 1 0 -1 0 0 0.7869 -1 0 0 0.3918 -1 0 0 0.5433 0 0 1 0'/>
+      <OrientationInterpolator DEF='Jump_lower_body_RotationInterpolator' key='0 0.28 0.32 0.48 0.76 1' keyValue='0 0 1 0 1 0 0 0.1892 1 0 0 0.1892 0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Jump_r_wrist_RotationInterpolator' key='0 0.28 0.32 0.64 0.76 1' keyValue='0 0 1 0 -0.0585279 0.983903 -0.168849 1.85956 -0.0585279 0.983903 -0.168849 1.85956 -0.00222418 0.99801 -0.0630095 1.46072 0 1 0 0.497349 0 0 1 0'/>
+      <OrientationInterpolator DEF='Jump_r_elbow_RotationInterpolator' key='0 0.28 0.32 0.64 0.76 1' keyValue='0 0 1 0 -1 0 0 0.04151 -1 0 0 0.04151 -1 0 0 0.5855 -1 0 0 0.5852 0 0 1 0'/>
+      <OrientationInterpolator DEF='Jump_r_shoulder_RotationInterpolator' key='0 0.28 0.32 0.64 0.76 0.88 1' keyValue='0 0 1 0 0.9992 0.02042 0.03558 4.688 0.9992 0.02042 0.03558 4.688 0.9989 -0.04623 0.005159 4.079 -0.8687 -0.2525 -0.4261 1.501 -0.941 -0.2893 -0.1754 0.4788 0 0 1 0'/>
+      <OrientationInterpolator DEF='Jump_l_wrist_RotationInterpolator' key='0 0.48 0.52 0.64 0.76 0.88 1' keyValue='0 0 1 0 0.0672928 0.989475 -0.128107 4.15574 0.0672928 0.989475 -0.128107 4.15574 0.00364942 0.999901 0.0135896 4.5822 0 -1 0 0.655922 -0.00050618 -0.999999 0.0012782 1.28397 0 0 1 0'/>
+      <OrientationInterpolator DEF='Jump_l_elbow_RotationInterpolator' key='0 0.28 0.32 0.58 0.72 1' keyValue='0 0 1 0 -1 0 0 1.13 -1 0 0 1.7 -1 0 0 1.7 -1 0 0 0.4 0 0 1 0'/>
+      <OrientationInterpolator DEF='Jump_l_shoulder_RotationInterpolator' key='0 0.28 0.32 0.64 0.76 0.88 1' keyValue='0 0 1 0 -0.9987 0.02554 0.04498 1.57 -0.9987 0.02554 0.04498 1.57 1 0.0004113 0.003055 4.114 -0.8413 0.3238 0.4329 1.453 -0.877 0.4198 0.2337 0.6009 0 0 1 0'/>
+      <OrientationInterpolator DEF='Jump_head_RotationInterpolator' key='0 0.28 0.32 0.48 0.76 1' keyValue='0 0 1 0 -1 0 0 0.5989 -1 0 0 0.5989 -1 0 0 0.3216 1 0 0 0.06503 0 0 1 0'/>
+      <OrientationInterpolator DEF='Jump_neck_RotationInterpolator' key='0 0.28 0.32 0.48 0.76 1' keyValue='0 0 1 0 -1 0 0 0.1942 -1 0 0 0.1942 0 0 1 0 1 0 0 0.2284 0 0 1 0'/>
+      <OrientationInterpolator DEF='Jump_upper_body_RotationInterpolator' key='0 0.22 0.28 0.34 0.71 0.88 1' keyValue='0 0 1 0 1 0 0 1.05 1 0 0 1.051 -1 0 0 0.257 1 0 0 0.2171 1 0 0 0.3465 0 0 1 0'/>
+      <OrientationInterpolator DEF='Jump_whole_body_RotationInterpolator' key='0 0.28 0.32 0.48 0.64 0.76 1' keyValue='0 0 1 0 1 0 0 0.3273 1 0 0 0.3273 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <PositionInterpolator DEF='Jump_whole_body_TranslationInterpolator' key='0 0.04 0.07 0.11 0.15 0.19 0.22 0.25 0.27 0.31 0.33 0.35 0.38 0.53 0.544 0.76 0.8 0.84 0.88 0.92 0.96 1' keyValue='0 0 0 0 -0.01264 -0.01289 0 -0.04712 -0.03738 -0.0003345 -0.1049 -0.05353 -0.0005712 -0.1892 -0.06561 -0.0008233 -0.286 -0.06276 -0.0009591 -0.3795 -0.05148 -0.00106 -0.4484 -0.03656 -0.00106 -0.4484 -0.03656 -0.001122 -0.25 -0.1499 -0.0008616 -0.05 -0.06358 -0.0005128 0.15 -0.05488 0.0004779 0.55 0.02732 0.0001728 1.385 0.006873 0.00017 1.395 0.0069 0 0.35 0.02148 0 -0.01299 -0.01057 0 -0.06932 -0.01064 0.0001365 -0.1037 -0.005059 0.0001279 -0.07198 -0.007596 0.000141 -0.01626 -0.004935 0 0 0'/>
+      <OrientationInterpolator DEF='Jump_l_sternoclavicular_RollInterpolator' key='0 0.2 0.4 0.6 0.8 1' keyValue='0 0 1 0 0 0 1 0.2 0 0 1 0.22 0 0 1 0.2 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Jump_l_acromioclavicular_RollInterpolator' key='0 0.2 0.4 0.6 0.8 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0.05 0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Jump_r_sternoclavicular_RollInterpolator' key='0 0.2 0.4 0.6 0.8 1' keyValue='0 0 1 0 0 0 1 -0.2 0 0 1 -0.22 0 0 1 -0.2 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Jump_r_acromioclavicular_RollInterpolator' key='0 0.2 0.4 0.6 0.8 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 -0.05 0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Jump_sacroiliac_YawInterpolator' key='0 0.2 0.4 0.6 0.8 1' keyValue='0 1 0 0 0 -1 0 0.1 0 1 0 0 0 1 -1 0.24 0 -1 0 0.4 0 1 0 0'/>
+      <OrientationInterpolator DEF='Jump_vl5_YawInterpolator' key='0 0.2 0.4 0.5 0.6 0.8 1' keyValue='0 1 0 0 0 1 0 -0.1 0 1 0 0 0 1 0 0 1 0 0 0.6 0 1 0 0.1 0 1 0 0'/>
+      <OrientationInterpolator DEF='Jump_vc6_YawInterpolator' key='0 0.2 0.4 0.5 0.6 0.8 1' keyValue='0 1 0 0 0 1 0 0.8 0 1 0 0 0 1 0 0 -1 0 0 0.6 0 -1 0 0.8 0 1 0 0'/>
+      <OrientationInterpolator DEF='Jump_l_thumb1_PitchInterpolator' key='0 0.2 0.4 0.6 0.8 1' keyValue='1 0 0 0 1 0 0 0.5 1 0 0 1.1 1 0 0 0.7 1 0 0 0.2 1 0 0 0'/>
+      <OrientationInterpolator DEF='Jump_r_thumb1_PitchInterpolator' key='0 0.2 0.4 0.6 0.8 1' keyValue='1 0 0 0 1 0 0 0.5 1 0 0 1.1 1 0 0 0.7 1 0 0 0.2 1 0 0 0'/>
+    </Group>
+    <Group DEF='KickAnimation'>
+      <TimeSensor DEF='KickTimer' cycleInterval='3.73' loop='true'/>
+      <OrientationInterpolator DEF='Kick_l_sternoclavicular_RollInterpolator' key='0 0.2 0.4 0.6 0.8 1' keyValue='0 0 1 0 0 0 1 0.2 0 0 1 0.22 0 0 1 0.2 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Kick_l_acromioclavicular_RollInterpolator' key='0 0.2 0.4 0.6 0.8 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0.05 0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Kick_l_shoulder_RollInterpolator' key='0 0.2 0.4 0.6 0.8 1' keyValue='0 0 1 0 0 0 1 1.76 -0.25 0 1 1.76 0 0 1 1.256 0 0 1 0.05 0 0 1 0'/>
+      <OrientationInterpolator DEF='Kick_l_ForeArm_PitchInterpolator' key='0 0.2 0.4 0.6 0.8 1' keyValue='1 0 0 0 1 0 0 -0.55 -1 0.25 0 2.55 1 0 0 0 1 0 0 0 1 0 0 0'/>
+      <OrientationInterpolator DEF='Kick_l_wrist_RollInterpolator' key='0 0.2 0.4 0.6 0.8 1' keyValue='0 0 1 0 0 0 1 0 0 1 0 0.55 0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Kick_l_thumb1_PitchInterpolator' key='0 0.2 0.4 0.6 0.8 1' keyValue='1 0 0 0 1 0 0 0.5 1 0 0 1.1 1 0 0 0.7 1 0 0 0.2 1 0 0 0'/>
+      <OrientationInterpolator DEF='Kick_r_sternoclavicular_RollInterpolator' key='0 0.2 0.4 0.6 0.8 1' keyValue='0 0 1 0 0 0 1 -0.2 0 0 1 -0.22 0 0 1 -0.2 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Kick_r_acromioclavicular_RollInterpolator' key='0 0.2 0.4 0.6 0.8 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 -0.05 0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Kick_r_shoulder_RollInterpolator' key='0 0.2 0.4 0.6 0.8 1' keyValue='0 0 1 0 0 0 1 -1.76 0.25 0 1 -1.76 0 0 1 -1.256 0 0 1 -0.05 0 0 1 0'/>
+      <OrientationInterpolator DEF='Kick_r_ForeArm_PitchInterpolator' key='0 0.2 0.4 0.6 0.8 1' keyValue='1 0 0 0 1 0 0 -0.55 1 0.25 0 -2.55 1 0 0 0 1 0 0 0 1 0 0 0'/>
+      <OrientationInterpolator DEF='Kick_r_wrist_RollInterpolator' key='0 0.2 0.4 0.6 0.8 1' keyValue='0 0 1 0 0 0 1 0 0 1 0 -0.55 0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Kick_r_thumb1_PitchInterpolator' key='0 0.2 0.4 0.6 0.8 1' keyValue='1 0 0 0 1 0 0 0.5 1 0 0 1.1 1 0 0 0.7 1 0 0 0.2 1 0 0 0'/>
+      <OrientationInterpolator DEF='Kick_r_hip_PitchInterpolator' key='0 0.2 0.3 0.5 0.6 0.9 1' keyValue='1 0 0 0 1 0 0 0.9 -1 0 0 1.75 -1 0 0 2.25 -1 0 0 2 1 0 0 0 1 0 0 0'/>
+      <OrientationInterpolator DEF='Kick_r_knee_PitchInterpolator' key='0 0.2 0.4 0.6 0.8 1' keyValue='0 0 1 0 1 0 0 1.95 1 0 0 1.75 -1 0 0 0.28 1 0 0 0 1 0 0 0'/>
+      <OrientationInterpolator DEF='Kick_l_hip_PitchInterpolator' key='0 0.2 0.3 0.5 0.6 0.9 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Kick_l_knee_PitchInterpolator' key='0 0.2 0.4 0.6 0.8 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Kick_r_ankle_PitchInterpolator' key='0 0.2 0.4 0.6 0.7 1' keyValue='0 0 1 0 -1 0 0 0.9 -1 0 0 0.95 1 0 0 0.75 -1 0 0 0.05 1 0 0 0'/>
+      <OrientationInterpolator DEF='Kick_r_metatarsal_PitchInterpolator' key='0 0.2 0.4 0.6 0.7 1' keyValue='1 0 0 0 -1 0 0 0.5 -1 0 0 0.7 1 0 0 0.75 -1 0 0 0.2 1 0 0 0'/>
+      <OrientationInterpolator DEF='Kick_sacroiliac_YawInterpolator' key='0 0.2 0.4 0.6 0.8 1' keyValue='0 1 0 0 0 -1 0 0.1 0 1 0 0 0 1 -1 0.24 0 -1 0 0.4 0 1 0 0'/>
+      <OrientationInterpolator DEF='Kick_vl5_YawInterpolator' key='0 0.2 0.4 0.5 0.6 0.8 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Kick_vc6_YawInterpolator' key='0 0.2 0.4 0.5 0.6 0.8 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Kick_lower_body_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Kick_upper_body_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <OrientationInterpolator DEF='Kick_whole_body_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+      <PositionInterpolator DEF='Kick_whole_body_TranslationInterpolator' key='0 0.5 1' keyValue='0 0 0 0 0 0 0 0 0'/>
+      <OrientationInterpolator DEF='Kick_neck_RotationInterpolator' key='0 0.25 0.55 1' keyValue='0 0 1 0 1 0 0 0.7 1 0 0 0.5 0 0 1 0'/>
+    </Group>
+    <Group DEF='Interface'>
+      <Transform DEF='CoordinateSystemFloor' scale='0.1 0.1 0.1'>
+        <Shape DEF='AxisLinesShape'>
+          <!-- RGB lines showing XYZ axes -->
+          <IndexedLineSet colorIndex='0 1 2' colorPerVertex='false' coordIndex='0 1 -1 0 2 -1 0 3 -1'>
+            <Coordinate point='0 0 0 1.0 0 0 0 1.0 0 0 0 1.0'/>
+            <Color color='1 0 0 0 0.6 0 0 0 1'/>
+          </IndexedLineSet>
+        </Shape>
+      </Transform>
+      <ProximitySensor DEF='HudProx' size='50 50 50'/>
+      <Transform DEF='HudXform' rotation='0 1 0 0.78' translation='2 1 2'>
+        <Transform scale='0.02 0.02 0.02' translation='-0.4 -0.01 -0.75'>
+          <Transform DEF='Stand_Text' translation='0 -0.9 0'>
+            <TouchSensor DEF='Stand_Touch'/>
+            <Shape DEF='StandText'>
+              <Appearance>
+                <Material DEF='text_color' ambientIntensity='1' diffuseColor='0.819 0.521 0.169' emissiveColor='0.819 0.521 0.169' specularColor='0.819 0.521 0.169'/>
+              </Appearance>
+              <Text string='"Stand"'>
+                <FontStyle family='"SANS"'/>
+              </Text>
+            </Shape>
+            <Shape DEF='Stand_Back'>
+              <Appearance>
+                <Material DEF='Clear' ambientIntensity='1' diffuseColor='0 0.5 0' emissiveColor='0 0.5 0' transparency='0.8'/>
+              </Appearance>
+              <IndexedFaceSet DEF='Backing' coordIndex='0 1 2 3 -1'>
+                <Coordinate point='-0.2 -0.25 -0.01 3 -0.25 -0.01 3 1 -0.01 -0.2 1 -0.01'/>
+              </IndexedFaceSet>
+            </Shape>
+          </Transform>
+          <Transform DEF='Pitch_Text' translation='0 -2.4 0'>
+            <TouchSensor DEF='Pitch_Touch'/>
+            <Shape DEF='PitchText'>
+              <Appearance>
+                <Material USE='text_color'/>
+              </Appearance>
+              <Text string='"Pitch"'>
+                <FontStyle family='"SANS"'/>
+              </Text>
+            </Shape>
+            <Shape DEF='Pitch_Back'>
+              <Appearance>
+                <Material USE='Clear'/>
+              </Appearance>
+              <IndexedFaceSet USE='Backing'/>
+            </Shape>
+          </Transform>
+          <Transform DEF='Yaw_Text' translation='0 -3.8 0'>
+            <TouchSensor DEF='Yaw_Touch'/>
+            <Shape DEF='YawText'>
+              <Appearance>
+                <Material USE='text_color'/>
+              </Appearance>
+              <Text string='"Yaw"'>
+                <FontStyle family='"SANS"'/>
+              </Text>
+            </Shape>
+            <Shape DEF='Yaw_Back'>
+              <Appearance>
+                <Material USE='Clear'/>
+              </Appearance>
+              <IndexedFaceSet USE='Backing'/>
+            </Shape>
+          </Transform>
+          <Transform DEF='Roll_Text' translation='0 -5.2 0'>
+            <TouchSensor DEF='Roll_Touch'/>
+            <Shape DEF='RollText'>
+              <Appearance>
+                <Material USE='text_color'/>
+              </Appearance>
+              <Text string='"Roll"'>
+                <FontStyle family='"SANS"'/>
+              </Text>
+            </Shape>
+            <Shape DEF='Roll_Back'>
+              <Appearance>
+                <Material USE='Clear'/>
+              </Appearance>
+              <IndexedFaceSet USE='Backing'/>
+            </Shape>
+          </Transform>
+          <Transform DEF='Walk_Text' translation='0 -6.6 0'>
+            <TouchSensor DEF='Walk_Touch'/>
+            <Shape DEF='WalkText'>
+              <Appearance>
+                <Material USE='text_color'/>
+              </Appearance>
+              <Text string='"Walk"'>
+                <FontStyle family='"SANS"'/>
+              </Text>
+            </Shape>
+            <Shape DEF='Walk_Back'>
+              <Appearance>
+                <Material USE='Clear'/>
+              </Appearance>
+              <IndexedFaceSet USE='Backing'/>
+            </Shape>
+          </Transform>
+          <Transform DEF='Run_Text' translation='0 -8 0'>
+            <TouchSensor DEF='Run_Touch'/>
+            <Shape DEF='RunText'>
+              <Appearance>
+                <Material USE='text_color'/>
+              </Appearance>
+              <Text string='"Run"'>
+                <FontStyle family='"SANS"'/>
+              </Text>
+            </Shape>
+            <Shape DEF='Run_Back'>
+              <Appearance>
+                <Material USE='Clear'/>
+              </Appearance>
+              <IndexedFaceSet USE='Backing'/>
+            </Shape>
+          </Transform>
+          <Transform DEF='Jump_Text' translation='0 -9.4 0'>
+            <TouchSensor DEF='Jump_Touch'/>
+            <Shape DEF='JumpText'>
+              <Appearance>
+                <Material USE='text_color'/>
+              </Appearance>
+              <Text string='"Jump"'>
+                <FontStyle family='"SANS"'/>
+              </Text>
+            </Shape>
+            <Shape DEF='Jump_Back'>
+              <Appearance>
+                <Material USE='Clear'/>
+              </Appearance>
+              <IndexedFaceSet USE='Backing'/>
+            </Shape>
+          </Transform>
+          <Transform DEF='Kick_Text' translation='0 -10.8 0'>
+            <TouchSensor DEF='Kick_Touch'/>
+            <Shape DEF='KickText'>
+              <Appearance>
+                <Material USE='text_color'/>
+              </Appearance>
+              <Text string='"Kick"'>
+                <FontStyle family='"SANS"'/>
+              </Text>
+            </Shape>
+            <Shape DEF='Kick_Back'>
+              <Appearance>
+                <Material USE='Clear'/>
+              </Appearance>
+              <IndexedFaceSet USE='Backing'/>
+            </Shape>
+          </Transform>
+          <Transform DEF='Stop_Text' translation='0 0.4 0'>
+            <TouchSensor DEF='Stop_Touch'/>
+            <Shape DEF='StopText'>
+              <Appearance>
+                <Material USE='text_color'/>
+              </Appearance>
+              <Text string='"Default"'>
+                <FontStyle family='"SANS"'/>
+              </Text>
+            </Shape>
+            <Shape DEF='Stop_Back'>
+              <Appearance>
+                <Material USE='Clear'/>
+              </Appearance>
+              <IndexedFaceSet USE='Backing'/>
+            </Shape>
+          </Transform>
+          <Transform DEF='SceneLabel' translation='1.3 3 0'>
+            <Shape DEF='SceneLabelText'>
+              <Appearance>
+                <Material USE='text_color'/>
+              </Appearance>
+              <Text string='"BoxMan4" "Animation"'>
+                <FontStyle family='"SANS"' justify='"MIDDLE" "MIDDLE"'/>
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+      </Transform>
+    </Group>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_humanoid_root_TranslationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_humanoid_root_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_sacroiliac_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_l_hip_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_l_knee_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_l_ankle_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_l_subtalar_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_l_midtarsal_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_l_metatarsal_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_r_hip_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_r_knee_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_r_ankle_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_r_subtalar_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_r_midtarsal_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_r_metatarsal_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_vl5_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_vl4_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_vl3_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_vl2_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_vl1_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_vt12_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_vt11_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_vt10_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_vt9_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_vt8_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_vt7_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_vt6_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_vt5_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_vt4_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_vt3_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_vt2_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_vt1_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_vc7_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_vc6_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_vc5_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_vc4_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_vc3_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_vc2_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_vc1_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_skullbase_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_l_eyeball_joint_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_r_eyeball_joint_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_l_sternoclavicular_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_l_acromioclavicular_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_l_shoulder_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_l_elbow_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_l_wrist_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_l_thumb1_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_l_thumb2_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_l_thumb3_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_l_index0_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_l_index1_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_l_index2_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_l_index3_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_l_middle0_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_l_middle1_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_l_middle2_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_l_middle3_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_l_ring0_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_l_ring1_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_l_ring2_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_l_ring3_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_l_pinky0_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_l_pinky1_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_l_pinky2_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_l_pinky3_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_r_sternoclavicular_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_r_acromioclavicular_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_r_shoulder_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_r_elbow_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_r_wrist_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_r_thumb1_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_r_thumb2_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_r_thumb3_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_r_index0_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_r_index1_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_r_index2_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_r_index3_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_r_middle0_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_r_middle1_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_r_middle2_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_r_middle3_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_r_ring0_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_r_ring1_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_r_ring2_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_r_ring3_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_r_pinky0_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_r_pinky1_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_r_pinky2_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_r_pinky3_RotationInterpolator'/>
+    <ROUTE fromField='value_changed' fromNode='Stop_humanoid_root_TranslationInterpolator' toField='set_translation' toNode='hanim_humanoid_root'/>
+    <ROUTE fromField='value_changed' fromNode='Stop_humanoid_root_RotationInterpolator' toField='set_rotation' toNode='hanim_humanoid_root'/>
+    <ROUTE fromField='value_changed' fromNode='Stop_l_hip_RotationInterpolator' toField='set_rotation' toNode='hanim_l_hip'/>
+    <ROUTE fromField='value_changed' fromNode='Stop_l_knee_RotationInterpolator' toField='set_rotation' toNode='hanim_l_knee'/>
+    <ROUTE fromField='value_changed' fromNode='Stop_l_ankle_RotationInterpolator' toField='set_rotation' toNode='hanim_l_ankle'/>
+    <ROUTE fromField='value_changed' fromNode='Stop_l_midtarsal_RotationInterpolator' toField='set_rotation' toNode='hanim_l_midtarsal'/>
+    <ROUTE fromField='value_changed' fromNode='Stop_r_hip_RotationInterpolator' toField='set_rotation' toNode='hanim_r_hip'/>
+    <ROUTE fromField='value_changed' fromNode='Stop_r_knee_RotationInterpolator' toField='set_rotation' toNode='hanim_r_knee'/>
+    <ROUTE fromField='value_changed' fromNode='Stop_r_ankle_RotationInterpolator' toField='set_rotation' toNode='hanim_r_ankle'/>
+    <ROUTE fromField='value_changed' fromNode='Stop_r_midtarsal_RotationInterpolator' toField='set_rotation' toNode='hanim_r_midtarsal'/>
+    <ROUTE fromField='value_changed' fromNode='Stop_vl5_RotationInterpolator' toField='set_rotation' toNode='hanim_vl5'/>
+    <ROUTE fromField='value_changed' fromNode='Stop_skullbase_RotationInterpolator' toField='set_rotation' toNode='hanim_skullbase'/>
+    <ROUTE fromField='value_changed' fromNode='Stop_l_shoulder_RotationInterpolator' toField='set_rotation' toNode='hanim_l_shoulder'/>
+    <ROUTE fromField='value_changed' fromNode='Stop_l_elbow_RotationInterpolator' toField='set_rotation' toNode='hanim_l_elbow'/>
+    <ROUTE fromField='value_changed' fromNode='Stop_l_wrist_RotationInterpolator' toField='set_rotation' toNode='hanim_l_wrist'/>
+    <ROUTE fromField='value_changed' fromNode='Stop_r_shoulder_RotationInterpolator' toField='set_rotation' toNode='hanim_r_shoulder'/>
+    <ROUTE fromField='value_changed' fromNode='Stop_r_elbow_RotationInterpolator' toField='set_rotation' toNode='hanim_r_elbow'/>
+    <ROUTE fromField='value_changed' fromNode='Stop_r_wrist_RotationInterpolator' toField='set_rotation' toNode='hanim_r_wrist'/>
+    <ROUTE fromField='fraction_changed' fromNode='StandTimer' toField='set_fraction' toNode='Stand_r_ankle_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StandTimer' toField='set_fraction' toNode='Stand_r_knee_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StandTimer' toField='set_fraction' toNode='Stand_r_hip_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StandTimer' toField='set_fraction' toNode='Stand_l_ankle_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StandTimer' toField='set_fraction' toNode='Stand_l_knee_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StandTimer' toField='set_fraction' toNode='Stand_l_hip_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StandTimer' toField='set_fraction' toNode='Stand_lower_body_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StandTimer' toField='set_fraction' toNode='Stand_r_wrist_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StandTimer' toField='set_fraction' toNode='Stand_r_elbow_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StandTimer' toField='set_fraction' toNode='Stand_r_shoulder_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StandTimer' toField='set_fraction' toNode='Stand_l_wrist_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StandTimer' toField='set_fraction' toNode='Stand_l_elbow_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StandTimer' toField='set_fraction' toNode='Stand_l_shoulder_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StandTimer' toField='set_fraction' toNode='Stand_head_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StandTimer' toField='set_fraction' toNode='Stand_neck_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StandTimer' toField='set_fraction' toNode='Stand_l_eyeball_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StandTimer' toField='set_fraction' toNode='Stand_r_eyeball_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StandTimer' toField='set_fraction' toNode='Stand_upper_body_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StandTimer' toField='set_fraction' toNode='Stand_whole_body_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StandTimer' toField='set_fraction' toNode='Stand_whole_body_TranslationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StandTimer' toField='set_fraction' toNode='Stand_l_sternoclavicular_RollInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StandTimer' toField='set_fraction' toNode='Stand_l_acromioclavicular_RollInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StandTimer' toField='set_fraction' toNode='Stand_r_sternoclavicular_RollInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StandTimer' toField='set_fraction' toNode='Stand_r_acromioclavicular_RollInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StandTimer' toField='set_fraction' toNode='Stand_r_metatarsal_PitchInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StandTimer' toField='set_fraction' toNode='Stand_sacroiliac_YawInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StandTimer' toField='set_fraction' toNode='Stand_vl5_YawInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StandTimer' toField='set_fraction' toNode='Stand_vc6_YawInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StandTimer' toField='set_fraction' toNode='Stand_l_thumb1_PitchInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StandTimer' toField='set_fraction' toNode='Stand_r_thumb1_PitchInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StandTimer' toField='set_fraction' toNode='Stand_r_index1_RollInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StandTimer' toField='set_fraction' toNode='Stand_r_index2_RollInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='StandTimer' toField='set_fraction' toNode='Stand_r_index3_RollInterpolator'/>
+    <ROUTE fromField='value_changed' fromNode='Stand_r_ankle_RotationInterpolator' toField='set_rotation' toNode='hanim_r_ankle'/>
+    <ROUTE fromField='value_changed' fromNode='Stand_r_knee_RotationInterpolator' toField='set_rotation' toNode='hanim_r_knee'/>
+    <ROUTE fromField='value_changed' fromNode='Stand_r_hip_RotationInterpolator' toField='set_rotation' toNode='hanim_r_hip'/>
+    <ROUTE fromField='value_changed' fromNode='Stand_l_ankle_RotationInterpolator' toField='set_rotation' toNode='hanim_l_ankle'/>
+    <ROUTE fromField='value_changed' fromNode='Stand_l_knee_RotationInterpolator' toField='set_rotation' toNode='hanim_l_knee'/>
+    <ROUTE fromField='value_changed' fromNode='Stand_l_hip_RotationInterpolator' toField='set_rotation' toNode='hanim_l_hip'/>
+    <ROUTE fromField='value_changed' fromNode='Stand_r_wrist_RotationInterpolator' toField='set_rotation' toNode='hanim_r_wrist'/>
+    <ROUTE fromField='value_changed' fromNode='Stand_r_elbow_RotationInterpolator' toField='set_rotation' toNode='hanim_r_elbow'/>
+    <ROUTE fromField='value_changed' fromNode='Stand_r_shoulder_RotationInterpolator' toField='set_rotation' toNode='hanim_r_shoulder'/>
+    <ROUTE fromField='value_changed' fromNode='Stand_l_wrist_RotationInterpolator' toField='set_rotation' toNode='hanim_l_wrist'/>
+    <ROUTE fromField='value_changed' fromNode='Stand_l_elbow_RotationInterpolator' toField='set_rotation' toNode='hanim_l_elbow'/>
+    <ROUTE fromField='value_changed' fromNode='Stand_l_shoulder_RotationInterpolator' toField='set_rotation' toNode='hanim_l_shoulder'/>
+    <ROUTE fromField='value_changed' fromNode='Stand_head_RotationInterpolator' toField='set_rotation' toNode='hanim_skullbase'/>
+    <ROUTE fromField='value_changed' fromNode='Stand_whole_body_RotationInterpolator' toField='set_rotation' toNode='hanim_humanoid_root'/>
+    <ROUTE fromField='value_changed' fromNode='Stand_whole_body_TranslationInterpolator' toField='set_translation' toNode='hanim_humanoid_root'/>
+    <ROUTE fromField='value_changed' fromNode='Stand_vl5_YawInterpolator' toField='set_rotation' toNode='hanim_vl5'/>
+    <ROUTE fromField='fraction_changed' fromNode='PitchTimer' toField='set_fraction' toNode='Pitches_r_ankle_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='PitchTimer' toField='set_fraction' toNode='Pitches_r_knee_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='PitchTimer' toField='set_fraction' toNode='Pitches_r_hip_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='PitchTimer' toField='set_fraction' toNode='Pitches_l_ankle_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='PitchTimer' toField='set_fraction' toNode='Pitches_l_knee_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='PitchTimer' toField='set_fraction' toNode='Pitches_l_hip_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='PitchTimer' toField='set_fraction' toNode='Pitches_lower_body_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='PitchTimer' toField='set_fraction' toNode='Pitches_r_wrist_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='PitchTimer' toField='set_fraction' toNode='Pitches_r_elbow_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='PitchTimer' toField='set_fraction' toNode='Pitches_r_shoulder_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='PitchTimer' toField='set_fraction' toNode='Pitches_l_wrist_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='PitchTimer' toField='set_fraction' toNode='Pitches_l_elbow_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='PitchTimer' toField='set_fraction' toNode='Pitches_l_shoulder_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='PitchTimer' toField='set_fraction' toNode='Pitches_head_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='PitchTimer' toField='set_fraction' toNode='Pitches_neck_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='PitchTimer' toField='set_fraction' toNode='Pitches_upper_body_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='PitchTimer' toField='set_fraction' toNode='Pitches_whole_body_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='PitchTimer' toField='set_fraction' toNode='Pitches_whole_body_TranslationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='PitchTimer' toField='set_fraction' toNode='Pitch_l_sternoclavicular_RollInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='PitchTimer' toField='set_fraction' toNode='Pitch_l_acromioclavicular_RollInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='PitchTimer' toField='set_fraction' toNode='Pitch_r_sternoclavicular_RollInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='PitchTimer' toField='set_fraction' toNode='Pitch_r_acromioclavicular_RollInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='PitchTimer' toField='set_fraction' toNode='Pitch_r_metatarsal_PitchInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='PitchTimer' toField='set_fraction' toNode='Pitch_sacroiliac_YawInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='PitchTimer' toField='set_fraction' toNode='Pitch_vl5_YawInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='PitchTimer' toField='set_fraction' toNode='Pitch_vc6_YawInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='PitchTimer' toField='set_fraction' toNode='Pitch_l_thumb1_PitchInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='PitchTimer' toField='set_fraction' toNode='Pitch_r_thumb1_PitchInterpolator'/>
+    <ROUTE fromField='value_changed' fromNode='Pitches_r_ankle_RotationInterpolator' toField='set_rotation' toNode='hanim_r_ankle'/>
+    <ROUTE fromField='value_changed' fromNode='Pitches_r_knee_RotationInterpolator' toField='set_rotation' toNode='hanim_r_knee'/>
+    <ROUTE fromField='value_changed' fromNode='Pitches_r_hip_RotationInterpolator' toField='set_rotation' toNode='hanim_r_hip'/>
+    <ROUTE fromField='value_changed' fromNode='Pitches_l_ankle_RotationInterpolator' toField='set_rotation' toNode='hanim_l_ankle'/>
+    <ROUTE fromField='value_changed' fromNode='Pitches_l_knee_RotationInterpolator' toField='set_rotation' toNode='hanim_l_knee'/>
+    <ROUTE fromField='value_changed' fromNode='Pitches_l_hip_RotationInterpolator' toField='set_rotation' toNode='hanim_l_hip'/>
+    <ROUTE fromField='value_changed' fromNode='Pitches_r_wrist_RotationInterpolator' toField='set_rotation' toNode='hanim_r_wrist'/>
+    <ROUTE fromField='value_changed' fromNode='Pitches_r_elbow_RotationInterpolator' toField='set_rotation' toNode='hanim_r_elbow'/>
+    <ROUTE fromField='value_changed' fromNode='Pitches_r_shoulder_RotationInterpolator' toField='set_rotation' toNode='hanim_r_shoulder'/>
+    <ROUTE fromField='value_changed' fromNode='Pitches_l_wrist_RotationInterpolator' toField='set_rotation' toNode='hanim_l_wrist'/>
+    <ROUTE fromField='value_changed' fromNode='Pitches_l_elbow_RotationInterpolator' toField='set_rotation' toNode='hanim_l_elbow'/>
+    <ROUTE fromField='value_changed' fromNode='Pitches_l_shoulder_RotationInterpolator' toField='set_rotation' toNode='hanim_l_shoulder'/>
+    <ROUTE fromField='value_changed' fromNode='Pitches_head_RotationInterpolator' toField='set_rotation' toNode='hanim_skullbase'/>
+    <ROUTE fromField='value_changed' fromNode='Pitches_whole_body_RotationInterpolator' toField='set_rotation' toNode='hanim_humanoid_root'/>
+    <ROUTE fromField='value_changed' fromNode='Pitches_whole_body_TranslationInterpolator' toField='set_translation' toNode='hanim_humanoid_root'/>
+    <ROUTE fromField='value_changed' fromNode='Pitch_vl5_YawInterpolator' toField='set_rotation' toNode='hanim_vl5'/>
+    <ROUTE fromField='fraction_changed' fromNode='YawTimer' toField='set_fraction' toNode='Yaws_r_ankle_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='YawTimer' toField='set_fraction' toNode='Yaws_r_knee_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='YawTimer' toField='set_fraction' toNode='Yaws_r_hip_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='YawTimer' toField='set_fraction' toNode='Yaws_l_ankle_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='YawTimer' toField='set_fraction' toNode='Yaws_l_knee_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='YawTimer' toField='set_fraction' toNode='Yaws_l_hip_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='YawTimer' toField='set_fraction' toNode='Yaws_lower_body_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='YawTimer' toField='set_fraction' toNode='Yaws_r_wrist_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='YawTimer' toField='set_fraction' toNode='Yaws_r_elbow_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='YawTimer' toField='set_fraction' toNode='Yaws_r_shoulder_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='YawTimer' toField='set_fraction' toNode='Yaws_l_wrist_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='YawTimer' toField='set_fraction' toNode='Yaws_l_elbow_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='YawTimer' toField='set_fraction' toNode='Yaws_l_shoulder_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='YawTimer' toField='set_fraction' toNode='Yaws_head_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='YawTimer' toField='set_fraction' toNode='Yaws_neck_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='YawTimer' toField='set_fraction' toNode='Yaws_upper_body_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='YawTimer' toField='set_fraction' toNode='Yaws_whole_body_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='YawTimer' toField='set_fraction' toNode='Yaws_whole_body_TranslationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='YawTimer' toField='set_fraction' toNode='Yaw_l_sternoclavicular_RollInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='YawTimer' toField='set_fraction' toNode='Yaw_l_acromioclavicular_RollInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='YawTimer' toField='set_fraction' toNode='Yaw_r_sternoclavicular_RollInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='YawTimer' toField='set_fraction' toNode='Yaw_r_acromioclavicular_RollInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='YawTimer' toField='set_fraction' toNode='Yaw_r_metatarsal_PitchInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='YawTimer' toField='set_fraction' toNode='Yaw_sacroiliac_YawInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='YawTimer' toField='set_fraction' toNode='Yaw_vl5_YawInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='YawTimer' toField='set_fraction' toNode='Yaw_vc6_YawInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='YawTimer' toField='set_fraction' toNode='Yaw_l_thumb1_PitchInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='YawTimer' toField='set_fraction' toNode='Yaw_r_thumb1_PitchInterpolator'/>
+    <ROUTE fromField='value_changed' fromNode='Yaws_r_ankle_RotationInterpolator' toField='set_rotation' toNode='hanim_r_ankle'/>
+    <ROUTE fromField='value_changed' fromNode='Yaws_r_knee_RotationInterpolator' toField='set_rotation' toNode='hanim_r_knee'/>
+    <ROUTE fromField='value_changed' fromNode='Yaws_r_hip_RotationInterpolator' toField='set_rotation' toNode='hanim_r_hip'/>
+    <ROUTE fromField='value_changed' fromNode='Yaws_l_ankle_RotationInterpolator' toField='set_rotation' toNode='hanim_l_ankle'/>
+    <ROUTE fromField='value_changed' fromNode='Yaws_l_knee_RotationInterpolator' toField='set_rotation' toNode='hanim_l_knee'/>
+    <ROUTE fromField='value_changed' fromNode='Yaws_l_hip_RotationInterpolator' toField='set_rotation' toNode='hanim_l_hip'/>
+    <ROUTE fromField='value_changed' fromNode='Yaws_r_wrist_RotationInterpolator' toField='set_rotation' toNode='hanim_r_wrist'/>
+    <ROUTE fromField='value_changed' fromNode='Yaws_r_elbow_RotationInterpolator' toField='set_rotation' toNode='hanim_r_elbow'/>
+    <ROUTE fromField='value_changed' fromNode='Yaws_r_shoulder_RotationInterpolator' toField='set_rotation' toNode='hanim_r_shoulder'/>
+    <ROUTE fromField='value_changed' fromNode='Yaws_l_wrist_RotationInterpolator' toField='set_rotation' toNode='hanim_l_wrist'/>
+    <ROUTE fromField='value_changed' fromNode='Yaws_l_elbow_RotationInterpolator' toField='set_rotation' toNode='hanim_l_elbow'/>
+    <ROUTE fromField='value_changed' fromNode='Yaws_l_shoulder_RotationInterpolator' toField='set_rotation' toNode='hanim_l_shoulder'/>
+    <ROUTE fromField='value_changed' fromNode='Yaws_head_RotationInterpolator' toField='set_rotation' toNode='hanim_skullbase'/>
+    <ROUTE fromField='value_changed' fromNode='Yaws_whole_body_RotationInterpolator' toField='set_rotation' toNode='hanim_humanoid_root'/>
+    <ROUTE fromField='value_changed' fromNode='Yaws_whole_body_TranslationInterpolator' toField='set_translation' toNode='hanim_humanoid_root'/>
+    <ROUTE fromField='value_changed' fromNode='Yaw_vl5_YawInterpolator' toField='set_rotation' toNode='hanim_vl5'/>
+    <ROUTE fromField='fraction_changed' fromNode='RollTimer' toField='set_fraction' toNode='Rolls_r_ankle_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='RollTimer' toField='set_fraction' toNode='Rolls_r_knee_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='RollTimer' toField='set_fraction' toNode='Rolls_r_hip_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='RollTimer' toField='set_fraction' toNode='Rolls_l_ankle_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='RollTimer' toField='set_fraction' toNode='Rolls_l_knee_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='RollTimer' toField='set_fraction' toNode='Rolls_l_hip_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='RollTimer' toField='set_fraction' toNode='Rolls_lower_body_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='RollTimer' toField='set_fraction' toNode='Rolls_r_wrist_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='RollTimer' toField='set_fraction' toNode='Rolls_r_elbow_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='RollTimer' toField='set_fraction' toNode='Rolls_r_shoulder_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='RollTimer' toField='set_fraction' toNode='Rolls_l_wrist_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='RollTimer' toField='set_fraction' toNode='Rolls_l_elbow_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='RollTimer' toField='set_fraction' toNode='Rolls_l_shoulder_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='RollTimer' toField='set_fraction' toNode='Rolls_head_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='RollTimer' toField='set_fraction' toNode='Rolls_neck_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='RollTimer' toField='set_fraction' toNode='Rolls_upper_body_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='RollTimer' toField='set_fraction' toNode='Rolls_whole_body_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='RollTimer' toField='set_fraction' toNode='Rolls_whole_body_TranslationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='RollTimer' toField='set_fraction' toNode='Roll_l_sternoclavicular_RollInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='RollTimer' toField='set_fraction' toNode='Roll_l_acromioclavicular_RollInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='RollTimer' toField='set_fraction' toNode='Roll_r_sternoclavicular_RollInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='RollTimer' toField='set_fraction' toNode='Roll_r_acromioclavicular_RollInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='RollTimer' toField='set_fraction' toNode='Roll_r_metatarsal_PitchInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='RollTimer' toField='set_fraction' toNode='Roll_sacroiliac_YawInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='RollTimer' toField='set_fraction' toNode='Roll_vl5_YawInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='RollTimer' toField='set_fraction' toNode='Roll_vc6_YawInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='RollTimer' toField='set_fraction' toNode='Roll_l_thumb1_PitchInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='RollTimer' toField='set_fraction' toNode='Roll_r_thumb1_PitchInterpolator'/>
+    <ROUTE fromField='value_changed' fromNode='Rolls_r_ankle_RotationInterpolator' toField='set_rotation' toNode='hanim_r_ankle'/>
+    <ROUTE fromField='value_changed' fromNode='Rolls_r_knee_RotationInterpolator' toField='set_rotation' toNode='hanim_r_knee'/>
+    <ROUTE fromField='value_changed' fromNode='Rolls_r_hip_RotationInterpolator' toField='set_rotation' toNode='hanim_r_hip'/>
+    <ROUTE fromField='value_changed' fromNode='Rolls_l_ankle_RotationInterpolator' toField='set_rotation' toNode='hanim_l_ankle'/>
+    <ROUTE fromField='value_changed' fromNode='Rolls_l_knee_RotationInterpolator' toField='set_rotation' toNode='hanim_l_knee'/>
+    <ROUTE fromField='value_changed' fromNode='Rolls_l_hip_RotationInterpolator' toField='set_rotation' toNode='hanim_l_hip'/>
+    <ROUTE fromField='value_changed' fromNode='Rolls_r_wrist_RotationInterpolator' toField='set_rotation' toNode='hanim_r_wrist'/>
+    <ROUTE fromField='value_changed' fromNode='Rolls_r_elbow_RotationInterpolator' toField='set_rotation' toNode='hanim_r_elbow'/>
+    <ROUTE fromField='value_changed' fromNode='Rolls_r_shoulder_RotationInterpolator' toField='set_rotation' toNode='hanim_r_shoulder'/>
+    <ROUTE fromField='value_changed' fromNode='Rolls_l_wrist_RotationInterpolator' toField='set_rotation' toNode='hanim_l_wrist'/>
+    <ROUTE fromField='value_changed' fromNode='Rolls_l_elbow_RotationInterpolator' toField='set_rotation' toNode='hanim_l_elbow'/>
+    <ROUTE fromField='value_changed' fromNode='Rolls_l_shoulder_RotationInterpolator' toField='set_rotation' toNode='hanim_l_shoulder'/>
+    <ROUTE fromField='value_changed' fromNode='Rolls_head_RotationInterpolator' toField='set_rotation' toNode='hanim_skullbase'/>
+    <ROUTE fromField='value_changed' fromNode='Rolls_whole_body_RotationInterpolator' toField='set_rotation' toNode='hanim_humanoid_root'/>
+    <ROUTE fromField='value_changed' fromNode='Rolls_whole_body_TranslationInterpolator' toField='set_translation' toNode='hanim_humanoid_root'/>
+    <ROUTE fromField='value_changed' fromNode='Roll_vl5_YawInterpolator' toField='set_rotation' toNode='hanim_vl5'/>
+    <ROUTE fromField='fraction_changed' fromNode='WalkTimer' toField='set_fraction' toNode='Walk_r_ankle_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='WalkTimer' toField='set_fraction' toNode='Walk_r_knee_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='WalkTimer' toField='set_fraction' toNode='Walk_r_hip_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='WalkTimer' toField='set_fraction' toNode='Walk_l_ankle_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='WalkTimer' toField='set_fraction' toNode='Walk_l_knee_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='WalkTimer' toField='set_fraction' toNode='Walk_l_hip_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='WalkTimer' toField='set_fraction' toNode='Walk_lower_body_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='WalkTimer' toField='set_fraction' toNode='Walk_r_wrist_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='WalkTimer' toField='set_fraction' toNode='Walk_r_elbow_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='WalkTimer' toField='set_fraction' toNode='Walk_r_shoulder_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='WalkTimer' toField='set_fraction' toNode='Walk_l_wrist_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='WalkTimer' toField='set_fraction' toNode='Walk_l_elbow_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='WalkTimer' toField='set_fraction' toNode='Walk_l_shoulder_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='WalkTimer' toField='set_fraction' toNode='Walk_head_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='WalkTimer' toField='set_fraction' toNode='Walk_neck_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='WalkTimer' toField='set_fraction' toNode='Walk_upper_body_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='WalkTimer' toField='set_fraction' toNode='Walk_whole_body_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='WalkTimer' toField='set_fraction' toNode='Walk_whole_body_TranslationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='WalkTimer' toField='set_fraction' toNode='Walk_l_sternoclavicular_RollInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='WalkTimer' toField='set_fraction' toNode='Walk_l_acromioclavicular_RollInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='WalkTimer' toField='set_fraction' toNode='Walk_r_sternoclavicular_RollInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='WalkTimer' toField='set_fraction' toNode='Walk_r_acromioclavicular_RollInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='WalkTimer' toField='set_fraction' toNode='Walk_r_metatarsal_PitchInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='WalkTimer' toField='set_fraction' toNode='Walk_sacroiliac_YawInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='WalkTimer' toField='set_fraction' toNode='Walk_vl5_YawInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='WalkTimer' toField='set_fraction' toNode='Walk_vc6_YawInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='WalkTimer' toField='set_fraction' toNode='Walk_l_thumb1_PitchInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='WalkTimer' toField='set_fraction' toNode='Walk_r_thumb1_PitchInterpolator'/>
+    <ROUTE fromField='value_changed' fromNode='Walk_r_ankle_RotationInterpolator' toField='set_rotation' toNode='hanim_r_ankle'/>
+    <ROUTE fromField='value_changed' fromNode='Walk_r_knee_RotationInterpolator' toField='set_rotation' toNode='hanim_r_knee'/>
+    <ROUTE fromField='value_changed' fromNode='Walk_r_hip_RotationInterpolator' toField='set_rotation' toNode='hanim_r_hip'/>
+    <ROUTE fromField='value_changed' fromNode='Walk_l_ankle_RotationInterpolator' toField='set_rotation' toNode='hanim_l_ankle'/>
+    <ROUTE fromField='value_changed' fromNode='Walk_l_knee_RotationInterpolator' toField='set_rotation' toNode='hanim_l_knee'/>
+    <ROUTE fromField='value_changed' fromNode='Walk_l_hip_RotationInterpolator' toField='set_rotation' toNode='hanim_l_hip'/>
+    <ROUTE fromField='value_changed' fromNode='Walk_r_wrist_RotationInterpolator' toField='set_rotation' toNode='hanim_r_wrist'/>
+    <ROUTE fromField='value_changed' fromNode='Walk_r_elbow_RotationInterpolator' toField='set_rotation' toNode='hanim_r_elbow'/>
+    <ROUTE fromField='value_changed' fromNode='Walk_r_shoulder_RotationInterpolator' toField='set_rotation' toNode='hanim_r_shoulder'/>
+    <ROUTE fromField='value_changed' fromNode='Walk_l_wrist_RotationInterpolator' toField='set_rotation' toNode='hanim_l_wrist'/>
+    <ROUTE fromField='value_changed' fromNode='Walk_l_elbow_RotationInterpolator' toField='set_rotation' toNode='hanim_l_elbow'/>
+    <ROUTE fromField='value_changed' fromNode='Walk_l_shoulder_RotationInterpolator' toField='set_rotation' toNode='hanim_l_shoulder'/>
+    <ROUTE fromField='value_changed' fromNode='Walk_head_RotationInterpolator' toField='set_rotation' toNode='hanim_skullbase'/>
+    <ROUTE fromField='value_changed' fromNode='Walk_whole_body_RotationInterpolator' toField='set_rotation' toNode='hanim_humanoid_root'/>
+    <ROUTE fromField='value_changed' fromNode='Walk_whole_body_TranslationInterpolator' toField='set_translation' toNode='hanim_humanoid_root'/>
+    <ROUTE fromField='value_changed' fromNode='Walk_vl5_YawInterpolator' toField='set_rotation' toNode='hanim_vl5'/>
+    <ROUTE fromField='fraction_changed' fromNode='RunTimer' toField='set_fraction' toNode='Run_r_ankle_RotationInterpolator_Run'/>
+    <ROUTE fromField='fraction_changed' fromNode='RunTimer' toField='set_fraction' toNode='Run_r_knee_RotationInterpolator_Run'/>
+    <ROUTE fromField='fraction_changed' fromNode='RunTimer' toField='set_fraction' toNode='Run_r_hip_RotationInterpolator_Run'/>
+    <ROUTE fromField='fraction_changed' fromNode='RunTimer' toField='set_fraction' toNode='Run_l_ankle_RotationInterpolator_Run'/>
+    <ROUTE fromField='fraction_changed' fromNode='RunTimer' toField='set_fraction' toNode='Run_l_knee_RotationInterpolator_Run'/>
+    <ROUTE fromField='fraction_changed' fromNode='RunTimer' toField='set_fraction' toNode='Run_l_hip_RotationInterpolator_Run'/>
+    <ROUTE fromField='fraction_changed' fromNode='RunTimer' toField='set_fraction' toNode='Run_lower_body_RotationInterpolator_Run'/>
+    <ROUTE fromField='fraction_changed' fromNode='RunTimer' toField='set_fraction' toNode='Run_r_wrist_RotationInterpolator_Run'/>
+    <ROUTE fromField='fraction_changed' fromNode='RunTimer' toField='set_fraction' toNode='Run_r_elbow_RotationInterpolator_Run'/>
+    <ROUTE fromField='fraction_changed' fromNode='RunTimer' toField='set_fraction' toNode='Run_r_shoulder_RotationInterpolator_Run'/>
+    <ROUTE fromField='fraction_changed' fromNode='RunTimer' toField='set_fraction' toNode='Run_l_wrist_RotationInterpolator_Run'/>
+    <ROUTE fromField='fraction_changed' fromNode='RunTimer' toField='set_fraction' toNode='Run_l_elbow_RotationInterpolator_Run'/>
+    <ROUTE fromField='fraction_changed' fromNode='RunTimer' toField='set_fraction' toNode='Run_l_shoulder_RotationInterpolator_Run'/>
+    <ROUTE fromField='fraction_changed' fromNode='RunTimer' toField='set_fraction' toNode='Run_head_RotationInterpolator_Run'/>
+    <ROUTE fromField='fraction_changed' fromNode='RunTimer' toField='set_fraction' toNode='Run_neck_RotationInterpolator_Run'/>
+    <ROUTE fromField='fraction_changed' fromNode='RunTimer' toField='set_fraction' toNode='Run_upper_body_RotationInterpolator_Run'/>
+    <ROUTE fromField='fraction_changed' fromNode='RunTimer' toField='set_fraction' toNode='Run_whole_body_RotationInterpolator_Run'/>
+    <ROUTE fromField='fraction_changed' fromNode='RunTimer' toField='set_fraction' toNode='Run_whole_body_TranslationInterpolator_Run'/>
+    <ROUTE fromField='fraction_changed' fromNode='RunTimer' toField='set_fraction' toNode='Run_l_sternoclavicular_RollInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='RunTimer' toField='set_fraction' toNode='Run_l_acromioclavicular_RollInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='RunTimer' toField='set_fraction' toNode='Run_r_sternoclavicular_RollInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='RunTimer' toField='set_fraction' toNode='Run_r_acromioclavicular_RollInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='RunTimer' toField='set_fraction' toNode='Run_r_metatarsal_PitchInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='RunTimer' toField='set_fraction' toNode='Run_sacroiliac_YawInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='RunTimer' toField='set_fraction' toNode='Run_vl5_YawInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='RunTimer' toField='set_fraction' toNode='Run_vc6_YawInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='RunTimer' toField='set_fraction' toNode='Run_l_thumb1_PitchInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='RunTimer' toField='set_fraction' toNode='Run_r_thumb1_PitchInterpolator'/>
+    <ROUTE fromField='value_changed' fromNode='Run_r_ankle_RotationInterpolator_Run' toField='set_rotation' toNode='hanim_r_ankle'/>
+    <ROUTE fromField='value_changed' fromNode='Run_r_knee_RotationInterpolator_Run' toField='set_rotation' toNode='hanim_r_knee'/>
+    <ROUTE fromField='value_changed' fromNode='Run_r_hip_RotationInterpolator_Run' toField='set_rotation' toNode='hanim_r_hip'/>
+    <ROUTE fromField='value_changed' fromNode='Run_l_ankle_RotationInterpolator_Run' toField='set_rotation' toNode='hanim_l_ankle'/>
+    <ROUTE fromField='value_changed' fromNode='Run_l_knee_RotationInterpolator_Run' toField='set_rotation' toNode='hanim_l_knee'/>
+    <ROUTE fromField='value_changed' fromNode='Run_l_hip_RotationInterpolator_Run' toField='set_rotation' toNode='hanim_l_hip'/>
+    <ROUTE fromField='value_changed' fromNode='Run_r_wrist_RotationInterpolator_Run' toField='set_rotation' toNode='hanim_r_wrist'/>
+    <ROUTE fromField='value_changed' fromNode='Run_r_elbow_RotationInterpolator_Run' toField='set_rotation' toNode='hanim_r_elbow'/>
+    <ROUTE fromField='value_changed' fromNode='Run_r_shoulder_RotationInterpolator_Run' toField='set_rotation' toNode='hanim_r_shoulder'/>
+    <ROUTE fromField='value_changed' fromNode='Run_l_wrist_RotationInterpolator_Run' toField='set_rotation' toNode='hanim_l_wrist'/>
+    <ROUTE fromField='value_changed' fromNode='Run_l_elbow_RotationInterpolator_Run' toField='set_rotation' toNode='hanim_l_elbow'/>
+    <ROUTE fromField='value_changed' fromNode='Run_l_shoulder_RotationInterpolator_Run' toField='set_rotation' toNode='hanim_l_shoulder'/>
+    <ROUTE fromField='value_changed' fromNode='Run_head_RotationInterpolator_Run' toField='set_rotation' toNode='hanim_skullbase'/>
+    <ROUTE fromField='value_changed' fromNode='Run_whole_body_RotationInterpolator_Run' toField='set_rotation' toNode='hanim_humanoid_root'/>
+    <ROUTE fromField='value_changed' fromNode='Run_whole_body_TranslationInterpolator_Run' toField='set_translation' toNode='hanim_humanoid_root'/>
+    <ROUTE fromField='value_changed' fromNode='Run_vl5_YawInterpolator' toField='set_rotation' toNode='hanim_vl5'/>
+    <ROUTE fromField='fraction_changed' fromNode='JumpTimer' toField='set_fraction' toNode='Jump_r_ankle_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='JumpTimer' toField='set_fraction' toNode='Jump_r_knee_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='JumpTimer' toField='set_fraction' toNode='Jump_r_hip_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='JumpTimer' toField='set_fraction' toNode='Jump_l_ankle_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='JumpTimer' toField='set_fraction' toNode='Jump_l_knee_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='JumpTimer' toField='set_fraction' toNode='Jump_l_hip_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='JumpTimer' toField='set_fraction' toNode='Jump_lower_body_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='JumpTimer' toField='set_fraction' toNode='Jump_r_wrist_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='JumpTimer' toField='set_fraction' toNode='Jump_r_elbow_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='JumpTimer' toField='set_fraction' toNode='Jump_r_shoulder_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='JumpTimer' toField='set_fraction' toNode='Jump_l_wrist_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='JumpTimer' toField='set_fraction' toNode='Jump_l_elbow_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='JumpTimer' toField='set_fraction' toNode='Jump_l_shoulder_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='JumpTimer' toField='set_fraction' toNode='Jump_head_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='JumpTimer' toField='set_fraction' toNode='Jump_neck_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='JumpTimer' toField='set_fraction' toNode='Jump_upper_body_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='JumpTimer' toField='set_fraction' toNode='Jump_whole_body_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='JumpTimer' toField='set_fraction' toNode='Jump_whole_body_TranslationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='JumpTimer' toField='set_fraction' toNode='Jump_l_sternoclavicular_RollInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='JumpTimer' toField='set_fraction' toNode='Jump_l_acromioclavicular_RollInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='JumpTimer' toField='set_fraction' toNode='Jump_r_sternoclavicular_RollInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='JumpTimer' toField='set_fraction' toNode='Jump_r_acromioclavicular_RollInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='JumpTimer' toField='set_fraction' toNode='Jump_r_metatarsal_PitchInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='JumpTimer' toField='set_fraction' toNode='Jump_sacroiliac_YawInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='JumpTimer' toField='set_fraction' toNode='Jump_vl5_YawInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='JumpTimer' toField='set_fraction' toNode='Jump_vc6_YawInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='JumpTimer' toField='set_fraction' toNode='Jump_l_thumb1_PitchInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='JumpTimer' toField='set_fraction' toNode='Jump_r_thumb1_PitchInterpolator'/>
+    <ROUTE fromField='value_changed' fromNode='Jump_r_ankle_RotationInterpolator' toField='set_rotation' toNode='hanim_r_ankle'/>
+    <ROUTE fromField='value_changed' fromNode='Jump_r_knee_RotationInterpolator' toField='set_rotation' toNode='hanim_r_knee'/>
+    <ROUTE fromField='value_changed' fromNode='Jump_r_hip_RotationInterpolator' toField='set_rotation' toNode='hanim_r_hip'/>
+    <ROUTE fromField='value_changed' fromNode='Jump_l_ankle_RotationInterpolator' toField='set_rotation' toNode='hanim_l_ankle'/>
+    <ROUTE fromField='value_changed' fromNode='Jump_l_knee_RotationInterpolator' toField='set_rotation' toNode='hanim_l_knee'/>
+    <ROUTE fromField='value_changed' fromNode='Jump_l_hip_RotationInterpolator' toField='set_rotation' toNode='hanim_l_hip'/>
+    <ROUTE fromField='value_changed' fromNode='Jump_r_wrist_RotationInterpolator' toField='set_rotation' toNode='hanim_r_wrist'/>
+    <ROUTE fromField='value_changed' fromNode='Jump_r_elbow_RotationInterpolator' toField='set_rotation' toNode='hanim_r_elbow'/>
+    <ROUTE fromField='value_changed' fromNode='Jump_r_shoulder_RotationInterpolator' toField='set_rotation' toNode='hanim_r_shoulder'/>
+    <ROUTE fromField='value_changed' fromNode='Jump_l_wrist_RotationInterpolator' toField='set_rotation' toNode='hanim_l_wrist'/>
+    <ROUTE fromField='value_changed' fromNode='Jump_l_elbow_RotationInterpolator' toField='set_rotation' toNode='hanim_l_elbow'/>
+    <ROUTE fromField='value_changed' fromNode='Jump_l_shoulder_RotationInterpolator' toField='set_rotation' toNode='hanim_l_shoulder'/>
+    <ROUTE fromField='value_changed' fromNode='Jump_head_RotationInterpolator' toField='set_rotation' toNode='hanim_skullbase'/>
+    <ROUTE fromField='value_changed' fromNode='Jump_whole_body_RotationInterpolator' toField='set_rotation' toNode='hanim_humanoid_root'/>
+    <ROUTE fromField='value_changed' fromNode='Jump_whole_body_TranslationInterpolator' toField='set_translation' toNode='hanim_humanoid_root'/>
+    <ROUTE fromField='value_changed' fromNode='Jump_vl5_YawInterpolator' toField='set_rotation' toNode='hanim_vl5'/>
+    <ROUTE fromField='fraction_changed' fromNode='KickTimer' toField='set_fraction' toNode='Kick_l_sternoclavicular_RollInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='KickTimer' toField='set_fraction' toNode='Kick_l_acromioclavicular_RollInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='KickTimer' toField='set_fraction' toNode='Kick_l_shoulder_RollInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='KickTimer' toField='set_fraction' toNode='Kick_l_ForeArm_PitchInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='KickTimer' toField='set_fraction' toNode='Kick_l_wrist_RollInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='KickTimer' toField='set_fraction' toNode='Kick_l_thumb1_PitchInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='KickTimer' toField='set_fraction' toNode='Kick_r_sternoclavicular_RollInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='KickTimer' toField='set_fraction' toNode='Kick_r_acromioclavicular_RollInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='KickTimer' toField='set_fraction' toNode='Kick_r_shoulder_RollInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='KickTimer' toField='set_fraction' toNode='Kick_r_ForeArm_PitchInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='KickTimer' toField='set_fraction' toNode='Kick_r_wrist_RollInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='KickTimer' toField='set_fraction' toNode='Kick_r_thumb1_PitchInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='KickTimer' toField='set_fraction' toNode='Kick_r_hip_PitchInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='KickTimer' toField='set_fraction' toNode='Kick_r_knee_PitchInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='KickTimer' toField='set_fraction' toNode='Kick_l_hip_PitchInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='KickTimer' toField='set_fraction' toNode='Kick_l_knee_PitchInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='KickTimer' toField='set_fraction' toNode='Kick_r_ankle_PitchInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='KickTimer' toField='set_fraction' toNode='Kick_r_metatarsal_PitchInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='KickTimer' toField='set_fraction' toNode='Kick_sacroiliac_YawInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='KickTimer' toField='set_fraction' toNode='Kick_vl5_YawInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='KickTimer' toField='set_fraction' toNode='Kick_vc6_YawInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='KickTimer' toField='set_fraction' toNode='Kick_lower_body_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='KickTimer' toField='set_fraction' toNode='Kick_upper_body_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='KickTimer' toField='set_fraction' toNode='Kick_whole_body_RotationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='KickTimer' toField='set_fraction' toNode='Kick_whole_body_TranslationInterpolator'/>
+    <ROUTE fromField='fraction_changed' fromNode='KickTimer' toField='set_fraction' toNode='Kick_neck_RotationInterpolator'/>
+    <ROUTE fromField='value_changed' fromNode='Kick_l_shoulder_RollInterpolator' toField='set_rotation' toNode='hanim_l_shoulder'/>
+    <ROUTE fromField='value_changed' fromNode='Kick_l_ForeArm_PitchInterpolator' toField='set_rotation' toNode='hanim_l_elbow'/>
+    <ROUTE fromField='value_changed' fromNode='Kick_l_wrist_RollInterpolator' toField='set_rotation' toNode='hanim_l_wrist'/>
+    <ROUTE fromField='value_changed' fromNode='Kick_r_shoulder_RollInterpolator' toField='set_rotation' toNode='hanim_r_shoulder'/>
+    <ROUTE fromField='value_changed' fromNode='Kick_r_ForeArm_PitchInterpolator' toField='set_rotation' toNode='hanim_r_elbow'/>
+    <ROUTE fromField='value_changed' fromNode='Kick_r_wrist_RollInterpolator' toField='set_rotation' toNode='hanim_r_wrist'/>
+    <ROUTE fromField='value_changed' fromNode='Kick_r_hip_PitchInterpolator' toField='set_rotation' toNode='hanim_r_hip'/>
+    <ROUTE fromField='value_changed' fromNode='Kick_r_knee_PitchInterpolator' toField='set_rotation' toNode='hanim_r_knee'/>
+    <ROUTE fromField='value_changed' fromNode='Kick_r_ankle_PitchInterpolator' toField='set_rotation' toNode='hanim_r_ankle'/>
+    <ROUTE fromField='value_changed' fromNode='Kick_l_hip_PitchInterpolator' toField='set_rotation' toNode='hanim_l_hip'/>
+    <ROUTE fromField='value_changed' fromNode='Kick_l_knee_PitchInterpolator' toField='set_rotation' toNode='hanim_l_knee'/>
+    <ROUTE fromField='value_changed' fromNode='Kick_r_ankle_PitchInterpolator' toField='set_rotation' toNode='hanim_l_ankle'/>
+    <ROUTE fromField='value_changed' fromNode='Kick_vl5_YawInterpolator' toField='set_rotation' toNode='hanim_vl5'/>
+    <ROUTE fromField='value_changed' fromNode='Kick_whole_body_RotationInterpolator' toField='set_rotation' toNode='hanim_humanoid_root'/>
+    <ROUTE fromField='value_changed' fromNode='Kick_whole_body_TranslationInterpolator' toField='set_translation' toNode='hanim_humanoid_root'/>
+    <ROUTE fromField='position_changed' fromNode='HudProx' toField='set_translation' toNode='HudXform'/>
+    <ROUTE fromField='orientation_changed' fromNode='HudProx' toField='set_rotation' toNode='HudXform'/>
+    <ROUTE fromField='touchTime' fromNode='Stand_Touch' toField='set_stopTime' toNode='PitchTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Stand_Touch' toField='set_stopTime' toNode='YawTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Stand_Touch' toField='set_stopTime' toNode='RollTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Stand_Touch' toField='set_stopTime' toNode='WalkTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Stand_Touch' toField='set_stopTime' toNode='RunTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Stand_Touch' toField='set_stopTime' toNode='JumpTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Stand_Touch' toField='set_stopTime' toNode='KickTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Stand_Touch' toField='set_stopTime' toNode='StopTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Stand_Touch' toField='set_startTime' toNode='StandTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Pitch_Touch' toField='set_stopTime' toNode='StandTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Pitch_Touch' toField='set_stopTime' toNode='YawTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Pitch_Touch' toField='set_stopTime' toNode='RollTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Pitch_Touch' toField='set_stopTime' toNode='WalkTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Pitch_Touch' toField='set_stopTime' toNode='RunTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Pitch_Touch' toField='set_stopTime' toNode='JumpTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Pitch_Touch' toField='set_stopTime' toNode='KickTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Pitch_Touch' toField='set_stopTime' toNode='StopTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Pitch_Touch' toField='set_startTime' toNode='PitchTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Yaw_Touch' toField='set_stopTime' toNode='StandTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Yaw_Touch' toField='set_stopTime' toNode='PitchTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Yaw_Touch' toField='set_stopTime' toNode='RollTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Yaw_Touch' toField='set_stopTime' toNode='WalkTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Yaw_Touch' toField='set_stopTime' toNode='RunTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Yaw_Touch' toField='set_stopTime' toNode='JumpTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Yaw_Touch' toField='set_stopTime' toNode='KickTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Yaw_Touch' toField='set_stopTime' toNode='StopTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Yaw_Touch' toField='set_startTime' toNode='YawTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Walk_Touch' toField='set_stopTime' toNode='StandTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Walk_Touch' toField='set_stopTime' toNode='PitchTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Walk_Touch' toField='set_stopTime' toNode='YawTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Walk_Touch' toField='set_stopTime' toNode='RollTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Walk_Touch' toField='set_stopTime' toNode='RunTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Walk_Touch' toField='set_stopTime' toNode='JumpTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Walk_Touch' toField='set_stopTime' toNode='KickTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Walk_Touch' toField='set_stopTime' toNode='StopTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Walk_Touch' toField='set_startTime' toNode='WalkTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Roll_Touch' toField='set_stopTime' toNode='StandTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Roll_Touch' toField='set_stopTime' toNode='PitchTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Roll_Touch' toField='set_stopTime' toNode='YawTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Roll_Touch' toField='set_stopTime' toNode='WalkTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Roll_Touch' toField='set_stopTime' toNode='RunTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Roll_Touch' toField='set_stopTime' toNode='JumpTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Roll_Touch' toField='set_stopTime' toNode='KickTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Roll_Touch' toField='set_stopTime' toNode='StopTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Roll_Touch' toField='set_startTime' toNode='RollTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Run_Touch' toField='set_stopTime' toNode='StandTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Run_Touch' toField='set_stopTime' toNode='PitchTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Run_Touch' toField='set_stopTime' toNode='YawTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Run_Touch' toField='set_stopTime' toNode='RollTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Run_Touch' toField='set_stopTime' toNode='WalkTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Run_Touch' toField='set_stopTime' toNode='JumpTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Run_Touch' toField='set_stopTime' toNode='KickTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Run_Touch' toField='set_stopTime' toNode='StopTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Run_Touch' toField='set_startTime' toNode='RunTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Jump_Touch' toField='set_stopTime' toNode='StandTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Jump_Touch' toField='set_stopTime' toNode='PitchTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Jump_Touch' toField='set_stopTime' toNode='YawTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Jump_Touch' toField='set_stopTime' toNode='RollTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Jump_Touch' toField='set_stopTime' toNode='WalkTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Jump_Touch' toField='set_stopTime' toNode='RunTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Jump_Touch' toField='set_stopTime' toNode='KickTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Jump_Touch' toField='set_stopTime' toNode='StopTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Jump_Touch' toField='set_startTime' toNode='JumpTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Kick_Touch' toField='set_stopTime' toNode='StandTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Kick_Touch' toField='set_stopTime' toNode='PitchTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Kick_Touch' toField='set_stopTime' toNode='YawTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Kick_Touch' toField='set_stopTime' toNode='RollTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Kick_Touch' toField='set_stopTime' toNode='WalkTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Kick_Touch' toField='set_stopTime' toNode='RunTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Kick_Touch' toField='set_stopTime' toNode='JumpTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Kick_Touch' toField='set_stopTime' toNode='StopTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Kick_Touch' toField='set_startTime' toNode='KickTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Stop_Touch' toField='set_stopTime' toNode='StandTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Stop_Touch' toField='set_stopTime' toNode='PitchTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Stop_Touch' toField='set_stopTime' toNode='YawTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Stop_Touch' toField='set_stopTime' toNode='RollTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Stop_Touch' toField='set_stopTime' toNode='WalkTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Stop_Touch' toField='set_stopTime' toNode='RunTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Stop_Touch' toField='set_stopTime' toNode='JumpTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Stop_Touch' toField='set_stopTime' toNode='KickTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Stop_Touch' toField='set_startTime' toNode='StopTimer'/>
+    <Script DEF='Scale' src='../node/jinloa4.js'></Script>
   </Scene>
 </X3D>

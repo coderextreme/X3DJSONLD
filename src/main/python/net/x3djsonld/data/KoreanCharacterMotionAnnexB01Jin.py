@@ -2,7 +2,7 @@
 #
 # Invoking X3D model self-test:
 #
-#   $ python KoreanCharacterMotionAnnexB01Jin.py
+#   $ python KoreanCharacterAnnexB01Jin.py
 #
 # Python package x3d.py package is available on PyPI for import.
 #   This approach simplifies Python X3D deployment and use.
@@ -30,12 +30,12 @@ newModel=X3D(profile='Immersive',version='4.0',
   head=head(
     children=[
     component(level=1,name='HAnim'),
-    meta(content='KoreanCharacterMotionAnnexB01Jin.x3d',name='title'),
+    meta(content='KoreanCharacterAnnexB01Jin.x3d',name='title'),
     meta(content='Jin Hoon Lee and Min Joo Lee',name='creator'),
     meta(content='Chul Hee Jung and Myeong Won Lee',name='translator'),
     meta(content='31 March 2011',name='created'),
     meta(content='1 November 2014',name='translated'),
-    meta(content='8 January 2023',name='modified'),
+    meta(content='14 October 2023',name='modified'),
     meta(content='Articulated 3D game character designed with a general graphics tool, then converted into an X3D HAnim model.',name='description'),
     meta(content='KoreanCharacter00ReadMe.txt',name='reference'),
     meta(content='KoreanCharacterHumanMotion_Infotech2014_140706.pdf',name='reference'),
@@ -46,7 +46,7 @@ newModel=X3D(profile='Immersive',version='4.0',
     meta(content='3DS MAX, http://www.autodesk.com/products/autodesk-3ds-max/overview',name='generator'),
     meta(content='Suwon HAnim Converter',name='generator'),
     meta(content='Gnu Image Manipulation Program, http://www.gimp.org',name='generator'),
-    meta(content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit',name='generator'),
+    meta(content='X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit',name='generator'),
     meta(content='../license.html',name='license')]),
   Scene=Scene(
     children=[
@@ -54,7 +54,7 @@ newModel=X3D(profile='Immersive',version='4.0',
     Viewpoint(centerOfRotation=(0,1,0),description='AnnexB01Jin',position=(0,1,3)),
     HAnimHumanoid(DEF='hanim_AnnexB01Jin',info=["humanoidVersion=2.0"],name='AnnexB01Jin',scale=(0.0225,0.0225,0.0225),version='2.0',
       skeleton=[
-      HAnimJoint(DEF='hanim_HumanoidRoot',center=(0,30.53,-0.7076),name='HumanoidRoot',ulimit=[0,0,0],llimit=[0,0,0],
+      HAnimJoint(DEF='hanim_HumanoidRoot',center=(0,30.53,-0.7076),name='humanoid_root',ulimit=[0,0,0],llimit=[0,0,0],
         children=[
         HAnimSegment(DEF='hanim_sacrum',name='sacrum',
           children=[
@@ -63,7 +63,7 @@ newModel=X3D(profile='Immersive',version='4.0',
             Shape(
               appearance=Appearance(
                 material=Material(diffuseColor=(0.588,0.588,0.588)),
-                texture=ImageTexture(DEF='Annex01JinTextureAtlas',url=["Jin.png","http://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/Jin.png"])),
+                texture=ImageTexture(DEF='Annex01JinTextureAtlas',url=["Jin.png","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/Jin.png"])),
               geometry=IndexedFaceSet(coordIndex=[0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,5,-1,0,5,6,-1,0,6,7,-1,0,7,8,-1,0,8,9,-1,0,9,10,-1,0,10,11,-1,0,11,12,-1,0,12,1,-1,14,2,1,-1,1,13,14,-1,15,3,2,-1,2,14,15,-1,16,4,3,-1,3,15,16,-1,17,5,4,-1,4,16,17,-1,18,6,5,-1,5,17,18,-1,19,7,6,-1,6,18,19,-1,20,8,7,-1,7,19,20,-1,21,9,8,-1,8,20,21,-1,22,10,9,-1,9,21,22,-1,23,11,10,-1,10,22,23,-1,24,12,11,-1,11,23,24,-1,13,1,12,-1,12,24,13,-1,26,14,13,-1,13,25,26,-1,27,15,14,-1,14,26,27,-1,28,16,15,-1,15,27,28,-1,29,17,16,-1,16,28,29,-1,30,18,17,-1,17,29,30,-1,31,19,18,-1,18,30,31,-1,32,20,19,-1,19,31,32,-1,33,21,20,-1,20,32,33,-1,34,22,21,-1,21,33,34,-1,35,23,22,-1,22,34,35,-1,36,24,23,-1,23,35,36,-1,25,13,24,-1,24,36,25,-1,38,26,25,-1,25,37,38,-1,39,27,26,-1,26,38,39,-1,40,28,27,-1,27,39,40,-1,41,29,28,-1,28,40,41,-1,42,30,29,-1,29,41,42,-1,43,31,30,-1,30,42,43,-1,44,32,31,-1,31,43,44,-1,45,33,32,-1,32,44,45,-1,46,34,33,-1,33,45,46,-1,47,35,34,-1,34,46,47,-1,48,36,35,-1,35,47,48,-1,37,25,36,-1,36,48,37,-1,50,38,37,-1,37,49,50,-1,51,39,38,-1,38,50,51,-1,52,40,39,-1,39,51,52,-1,53,41,40,-1,40,52,53,-1,54,42,41,-1,41,53,54,-1,55,43,42,-1,42,54,55,-1,56,44,43,-1,43,55,56,-1,57,45,44,-1,44,56,57,-1,58,46,45,-1,45,57,58,-1,59,47,46,-1,46,58,59,-1,60,48,47,-1,47,59,60,-1,49,37,48,-1,48,60,49,-1,61,50,49,-1,61,51,50,-1,61,52,51,-1,61,53,52,-1,61,54,53,-1,61,55,54,-1,61,56,55,-1,61,57,56,-1,61,58,57,-1,61,59,58,-1,61,60,59,-1,61,49,60,-1],creaseAngle=3.14159,texCoordIndex=[0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,5,-1,0,5,6,-1,0,6,7,-1,0,7,8,-1,0,8,9,-1,0,9,10,-1,0,10,11,-1,0,11,12,-1,0,12,1,-1,14,2,1,-1,1,13,14,-1,15,3,2,-1,2,14,15,-1,16,4,3,-1,3,15,16,-1,17,5,4,-1,4,16,17,-1,18,6,5,-1,5,17,18,-1,19,7,6,-1,6,18,19,-1,20,8,7,-1,7,19,20,-1,21,9,8,-1,8,20,21,-1,22,10,9,-1,9,21,22,-1,23,11,10,-1,10,22,23,-1,24,12,11,-1,11,23,24,-1,13,1,12,-1,12,24,13,-1,26,14,13,-1,13,25,26,-1,27,15,14,-1,14,26,27,-1,28,16,15,-1,15,27,28,-1,29,17,16,-1,16,28,29,-1,30,18,17,-1,17,29,30,-1,31,19,18,-1,18,30,31,-1,32,20,19,-1,19,31,32,-1,33,21,20,-1,20,32,33,-1,34,22,21,-1,21,33,34,-1,35,23,22,-1,22,34,35,-1,36,24,23,-1,23,35,36,-1,25,13,24,-1,24,36,25,-1,38,26,25,-1,25,37,38,-1,39,27,26,-1,26,38,39,-1,40,28,27,-1,27,39,40,-1,41,29,28,-1,28,40,41,-1,42,30,29,-1,29,41,42,-1,43,31,30,-1,30,42,43,-1,44,32,31,-1,31,43,44,-1,45,33,32,-1,32,44,45,-1,46,34,33,-1,33,45,46,-1,47,35,34,-1,34,46,47,-1,48,36,35,-1,35,47,48,-1,37,25,36,-1,36,48,37,-1,50,38,37,-1,37,49,50,-1,51,39,38,-1,38,50,51,-1,52,40,39,-1,39,51,52,-1,53,41,40,-1,40,52,53,-1,54,42,41,-1,41,53,54,-1,55,43,42,-1,42,54,55,-1,56,44,43,-1,43,55,56,-1,57,45,44,-1,44,56,57,-1,58,46,45,-1,45,57,58,-1,59,47,46,-1,46,58,59,-1,60,48,47,-1,47,59,60,-1,49,37,48,-1,48,60,49,-1,61,50,49,-1,61,51,50,-1,61,52,51,-1,61,53,52,-1,61,54,53,-1,61,55,54,-1,61,56,55,-1,61,57,56,-1,61,58,57,-1,61,59,58,-1,61,60,59,-1,61,49,60,-1],
                 coord=Coordinate(point=[(0,10.79,0.1424),(0,10.06,-2.825),(-2.283,10.06,-2.428),(-3.954,10.06,-1.948),(-4.566,10.06,0.1424),(-3.954,10.06,2.233),(-2.283,10.06,2.712),(0,10.06,3.11),(2.283,10.06,2.712),(3.954,10.06,2.233),(4.566,10.06,0.1424),(3.954,10.06,-1.948),(2.283,10.06,-2.428),(0,8.045,-4.614),(-2.953,8.045,-3.977),(-5.114,8.045,-2.236),(-5.905,8.045,0.1424),(-5.114,8.045,2.521),(-2.953,8.045,3.645),(0,8.045,4.282),(2.953,8.045,3.645),(5.114,8.045,2.521),(5.905,8.045,0.1424),(5.114,8.045,-2.236),(2.953,8.045,-3.977),(0,5.297,-5.018),(-3.409,5.297,-4.282),(-5.905,5.297,-2.272),(-6.819,5.297,0.1424),(-5.905,5.297,2.889),(-3.409,5.297,4.282),(0,5.297,5.018),(3.409,5.297,4.282),(5.905,5.297,2.889),(6.819,5.297,0.1424),(5.905,5.297,-2.272),(3.409,5.297,-4.282),(0,2.548,-4.282),(-2.953,2.548,-3.645),(-5.114,2.548,-1.904),(-5.905,2.548,0.1424),(-5.114,2.548,2.521),(-2.953,2.548,3.645),(0,2.548,4.282),(2.953,2.548,3.645),(5.114,2.548,2.521),(5.905,2.548,0.1424),(5.114,2.548,-1.904),(2.953,2.548,-3.645),(0,0.5362,-2.272),(-1.705,0.5362,-1.904),(-2.953,0.5362,-1.231),(-3.409,0.5362,0.1424),(-2.953,0.5362,1.516),(-1.705,0.5362,2.521),(0,0.5362,2.889),(1.705,0.5362,2.521),(2.953,0.5362,1.516),(3.409,0.5362,0.1424),(2.953,0.5362,-1.231),(1.705,0.5362,-1.904),(0,-0.2003,0.1424)]),
                 texCoord=TextureCoordinate(point=[(0.6211,0.5754),(0.7851,0.572),(0.7614,0.572),(0.6907,0.5698),(0.62,0.5698),(0.6158,0.5702),(0.5451,0.5702),(0.4167,0.5698),(0.5451,0.5702),(0.6158,0.5702),(0.62,0.5698),(0.6907,0.5698),(0.7614,0.572),(0.8036,0.5346),(0.7761,0.5346),(0.6989,0.4838),(0.6219,0.4428),(0.6154,0.4438),(0.5492,0.4639),(0.4166,0.5346),(0.5492,0.4639),(0.6154,0.4438),(0.6219,0.4428),(0.6989,0.4838),(0.7761,0.5346),(0.7912,0.4044),(0.7635,0.4044),(0.7042,0.3925),(0.6194,0.3907),(0.6148,0.3907),(0.545,0.3974),(0.4163,0.4938),(0.545,0.3974),(0.6148,0.3907),(0.6194,0.3907),(0.7042,0.3925),(0.7635,0.4044),(0.795,0.3772),(0.7662,0.3772),(0.6945,0.3645),(0.6236,0.3695),(0.616,0.3695),(0.5438,0.378),(0.416,0.453),(0.5438,0.378),(0.616,0.3695),(0.6236,0.3695),(0.6945,0.3645),(0.7662,0.3772),(0.7887,0.3451),(0.7635,0.3451),(0.698,0.3508),(0.6262,0.3508),(0.6297,0.3503),(0.5389,0.3503),(0.4181,0.3884),(0.5389,0.3503),(0.6297,0.3503),(0.6262,0.3508),(0.698,0.3508),(0.7635,0.3451),(0.6237,0.3398)])))])]),
@@ -291,8 +291,8 @@ newModel=X3D(profile='Immersive',version='4.0',
     Group(DEF='KeyframeAnimation',
       children=[
       TimeSensor(DEF='KeyframeTimer',cycleInterval=8.033494,loop=True),
-      PositionInterpolator(DEF='Keyframe_HumanoidRoot',key=[0,1],keyValue=[(0,0,0),(0,0,0)]),
-      OrientationInterpolator(DEF='Keyframe_HumanoidRoot',key=[0,1],keyValue=[(0,0,0,0),(0,0,0,0)]),
+      PositionInterpolator(DEF='Keyframe_HumanoidRootTranslation',key=[0,1],keyValue=[(0,0,0),(0,0,0)]),
+      OrientationInterpolator(DEF='Keyframe_HumanoidRootOrientation',key=[0,1],keyValue=[(0,0,0,0),(0,0,0,0)]),
       OrientationInterpolator(DEF='Keyframe_sacroiliac',key=[0,1],keyValue=[(0,0,0,0),(0,0,0,0)]),
       OrientationInterpolator(DEF='Keyframe_l_shoulder',key=[0,0.5,1],keyValue=[(0,0,0,0),(-1,0,0,3),(0,0,0,0)]),
       OrientationInterpolator(DEF='Keyframe_l_elbow',key=[0,1],keyValue=[(0,0,0,0),(0,0,0,0)]),
@@ -310,8 +310,8 @@ newModel=X3D(profile='Immersive',version='4.0',
       OrientationInterpolator(DEF='Keyframe_r_knee',key=[0,1],keyValue=[(0,0,0,0),(0,0,0,0)]),
       OrientationInterpolator(DEF='Keyframe_r_talocrural',key=[0,1],keyValue=[(0,0,0,0),(0,0,0,0)]),
       OrientationInterpolator(DEF='Keyframe_r_metatarsophalangeal',key=[0,1],keyValue=[(0,0,0,0),(0,0,0,0)]),
-      ROUTE(fromField='fraction_changed',fromNode='KeyframeTimer',toField='set_fraction',toNode='Keyframe_HumanoidRoot'),
-      ROUTE(fromField='fraction_changed',fromNode='KeyframeTimer',toField='set_fraction',toNode='Keyframe_HumanoidRoot'),
+      ROUTE(fromField='fraction_changed',fromNode='KeyframeTimer',toField='set_fraction',toNode='Keyframe_HumanoidRootTranslation'),
+      ROUTE(fromField='fraction_changed',fromNode='KeyframeTimer',toField='set_fraction',toNode='Keyframe_HumanoidRootOrientation'),
       ROUTE(fromField='fraction_changed',fromNode='KeyframeTimer',toField='set_fraction',toNode='Keyframe_sacroiliac'),
       ROUTE(fromField='fraction_changed',fromNode='KeyframeTimer',toField='set_fraction',toNode='Keyframe_l_shoulder'),
       ROUTE(fromField='fraction_changed',fromNode='KeyframeTimer',toField='set_fraction',toNode='Keyframe_l_elbow'),
@@ -329,8 +329,8 @@ newModel=X3D(profile='Immersive',version='4.0',
       ROUTE(fromField='fraction_changed',fromNode='KeyframeTimer',toField='set_fraction',toNode='Keyframe_r_knee'),
       ROUTE(fromField='fraction_changed',fromNode='KeyframeTimer',toField='set_fraction',toNode='Keyframe_r_talocrural'),
       ROUTE(fromField='fraction_changed',fromNode='KeyframeTimer',toField='set_fraction',toNode='Keyframe_r_metatarsophalangeal'),
-      ROUTE(fromField='value_changed',fromNode='Keyframe_HumanoidRoot',toField='translation',toNode='hanim_HumanoidRoot'),
-      ROUTE(fromField='value_changed',fromNode='Keyframe_HumanoidRoot',toField='rotation',toNode='hanim_HumanoidRoot'),
+      ROUTE(fromField='value_changed',fromNode='Keyframe_HumanoidRootTranslation',toField='translation',toNode='hanim_HumanoidRoot'),
+      ROUTE(fromField='value_changed',fromNode='Keyframe_HumanoidRootOrientation',toField='rotation',toNode='hanim_HumanoidRoot'),
       ROUTE(fromField='value_changed',fromNode='Keyframe_sacroiliac',toField='rotation',toNode='hanim_sacroiliac'),
       ROUTE(fromField='value_changed',fromNode='Keyframe_l_shoulder',toField='rotation',toNode='hanim_l_shoulder'),
       ROUTE(fromField='value_changed',fromNode='Keyframe_l_elbow',toField='rotation',toNode='hanim_l_elbow'),
@@ -354,7 +354,7 @@ newModel=X3D(profile='Immersive',version='4.0',
 # Self-test diagnostics
 ####################################################################################################
 
-print('Self-test diagnostics for KoreanCharacterMotionAnnexB01Jin.py:')
+print('Self-test diagnostics for KoreanCharacterAnnexB01Jin.py:')
 if        metaDiagnostics(newModel): # built-in utility method in X3D class
     print(metaDiagnostics(newModel)) # display meta info, hint, warning, error, TODO values in this model
 # print('check newModel.XML() serialization...')
@@ -383,4 +383,4 @@ except Exception as err: # usually SyntaxError
     if newModelJSON: # may have failed to generate
         print(prependLineNumbers(newModelJSON,err.lineno))
 
-print("python KoreanCharacterMotionAnnexB01Jin.py load and self-test diagnostics complete.")
+print("python KoreanCharacterAnnexB01Jin.py load and self-test diagnostics complete.")

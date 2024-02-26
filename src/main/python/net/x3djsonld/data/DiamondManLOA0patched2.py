@@ -2,7 +2,7 @@
 #
 # Invoking X3D model self-test:
 #
-#   $ python DiamondManLOA0.py
+#   $ python DiamondManLOA0patched2.py
 #
 # Python package x3d.py package is available on PyPI for import.
 #   This approach simplifies Python X3D deployment and use.
@@ -30,7 +30,7 @@ newModel=X3D(profile='Immersive',version='4.0',
   head=head(
     children=[
     component(level=1,name='HAnim'),
-    meta(content='DiamondManLOA0.x3d',name='title'),
+    meta(content='DiamondManLOA0patched2.x3d',name='title'),
     meta(content='HAnim skeletal structure for Level of Action (LOA) zero, with one diamond at the base node for the structure. HumanoidRoot only, so this is the minimum legal HAnim humanoid.',name='description'),
     meta(content='Matthew T. Beitler',name='creator'),
     meta(content='Joel S. Pawloski',name='translator'),
@@ -100,7 +100,7 @@ newModel=X3D(profile='Immersive',version='4.0',
 # Self-test diagnostics
 ####################################################################################################
 
-print('Self-test diagnostics for DiamondManLOA0.py:')
+print('Self-test diagnostics for DiamondManLOA0patched2.py:')
 if        metaDiagnostics(newModel): # built-in utility method in X3D class
     print(metaDiagnostics(newModel)) # display meta info, hint, warning, error, TODO values in this model
 # print('check newModel.XML() serialization...')
@@ -129,4 +129,4 @@ except Exception as err: # usually SyntaxError
     if newModelJSON: # may have failed to generate
         print(prependLineNumbers(newModelJSON,err.lineno))
 
-print("python DiamondManLOA0.py load and self-test diagnostics complete.")
+print("python DiamondManLOA0patched2.py load and self-test diagnostics complete.")

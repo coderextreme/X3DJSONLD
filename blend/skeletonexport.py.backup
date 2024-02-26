@@ -1,0 +1,43 @@
+import bpy;
+
+armature = None
+for obj in bpy.context.scene.objects:
+    if obj.type == 'ARMATURE':
+        armature = obj
+        break
+
+if armature:
+    for bone in armature.pose.bones:
+        # Access bone name, location, rotation, and scale
+        bone_name = bone.name
+        bone_location = bone.location
+        bone_rotation = bone.rotation_euler
+        bone_scale = bone.scale
+        # Do something with this bone information
+        print(f"Bone: {bone_name}")
+        print(f"Location: {bone_location}")
+        print(f"Rotation: {bone_rotation}")
+        print(f"Scale: {bone_scale}")
+
+if armature:
+    for obj in bpy.context.selected_objects:
+        if obj.type == 'MESH':
+            mesh = obj.data
+            for vertex in mesh.vertices:
+                    # Access vertex coordinates  
+                    vertex_coords = vertex.co
+                    # Do something with this vertex information
+                    print(f"Vertex Coordinates {vertex_coords}")
+
+# Additionally,  getting skin coord information
+
+# Replace 'YourMeshObjectName' with the actual name of your mesh object
+
+#mesh_obj = bpy.data.objects['YourMeshObjectName']
+
+#vertex_groups = mesh_obj.vertex_groups
+#for group in vertex_groups: l
+#    group_name = group.name
+#    for index, weight in group.weight_paint:
+#        # 'index' is the vertex index, and 'weight' is the weight value
+#        print(f"Group: {group_name}, Vertex Index: {index}, Weight: {weight}")

@@ -108,7 +108,7 @@ ECMAScriptSerializer.prototype = {
 			var attrs = element.attributes;
 			try {
 				parseInt(a);
-				if (attrs.hasOwnProperty(a) && attrs[a].nodeType == 2) {
+				if (attrs.hasOwnProperty(a) && attrs[a].nodeType === 2) {
 					var attr = attrs[a].nodeName;
 					if (attr === "type") {
 						fieldAttrType = attrs[a].nodeValue;
@@ -156,7 +156,7 @@ ECMAScriptSerializer.prototype = {
 			var attrs = element.attributes;
 			try {
 				parseInt(a);
-				if (attrs.hasOwnProperty(a) && attrs[a].nodeType == 2) {
+				if (attrs.hasOwnProperty(a) && attrs[a].nodeType === 2) {
 					var attr = attrs[a].nodeName;
 					if (attr === "xmlns:xsd" || attr === "xsd:noNamespaceSchemaLocation" || attr === 'containerField' || attr === 'type') {
 						continue;
@@ -296,7 +296,7 @@ ECMAScriptSerializer.prototype = {
 		var closeMFNode = false;
 		for (var cn in element.childNodes) {
 			var node = element.childNodes[cn];
-			if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 1) {
+			if (element.childNodes.hasOwnProperty(cn) && node.nodeType === 1) {
 				var ch = this.printParentChild(element, node, cn, mapToMethod, n);
 				var ppc = ch.trim();
 				if (ppc.indexOf("children") >= 0
@@ -339,7 +339,7 @@ ECMAScriptSerializer.prototype = {
 					ch += ")";
 				}
 				childs.push(ch);
-			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 8) {
+			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType === 8) {
 				var y = node.nodeValue.
 					replace(/\\/g, '\\\\').
 					replace(/"/g, '\\"');
@@ -348,7 +348,7 @@ ECMAScriptSerializer.prototype = {
 				if (y !== node.nodeValue) {
 					// console.error("ECMAScript Comment Replacing "+node.nodeValue+" with "+y);
 				}
-			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 4) {
+			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType === 4) {
 				let source = "";
 				if (closeMFNode) {
 					source += "]),";

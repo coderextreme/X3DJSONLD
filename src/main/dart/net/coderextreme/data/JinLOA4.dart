@@ -6109,5 +6109,5553 @@ var X3D0 =  X3D(
                   USE_ : SFString('hanim_l_upperarm')),
 
                 HAnimSegment(
-                  USE_ : SFString('hanim_r_upperarm'))])]));
+                  USE_ : SFString('hanim_r_upperarm'))]),
+
+            Script(
+              field_ : [
+                field(
+                  type_ : SFString("MFInt32"),
+                  name_ : SFString('dummy'),
+                  accessType_ : SFString("initializeOnly"),
+                  value_ : SFString('0')),
+              ],
+ecmascript:eval (0
+	, function HAnimScale() {
+            this.x = 0;
+            this.y = 0;
+            this.l_x = 0;
+            this.l_z = 0;
+            this.r_x = 0;
+            this.r_z = 0;
+            this.maxy = 0;
+            this.z = 0;
+            this.scale = [1, 1, 1];
+            this.yscale = 1;
+            this.X3D0 = document.querySelector("X3D");
+            this.humanoids = [];
+            this.traverseChildrenSceneGraph(X3D.Scene.children, humanoids);
+            for (let h = 0; h < humanoids.length; h++) {
+                    let humanoid = humanoids[h];
+                    this.scale = humanoid.getScale();
+                    humanoid.setScale([ 1, 1, 1 ]);
+                    let root = humanoid.skeleton;
+                    let center = root.center;
+                    this.x = center[0];
+                    this.y = center[1];
+                    this.maxy = center[1];
+                    this.z = center[2];
+                    let translation = [0, 0, 0];
+                    this.centering(root);
+                    this.x = (this.l_x + this.r_x) / 2;
+                    this.z = (this.l_z + this.r_z) / 2;
+                    this.yscale = this.maxy - this.y;
+                    this.transform(root, translation);
+                    this.x = 0;
+                    this.y = 0;
+                    this.l_x = 0;
+                    this.l_z = 0;
+                    this.r_x = 0;
+                    this.r_z = 0;
+                    this.maxy = 0;
+                    this.z = 0;
+                    this.scale = [ 1, 1, 1 ];
+                    this.yscale = 1;
+            }
+            this.humanoids = [];
+    }
+
+    HAnimScale.prototype = {
+        traverseChildrenSceneGraph: , function(children, humanoids) {
+                if (children !== null) {
+                        for (let ch = 0; ch < children.length; ch++) {
+                                let child = children[ch];
+                                if (!this.traverseChildSceneGraph(child, humanoids)) {
+                                        console.error("Unpacking child in", child, "failed");
+                                }
+                        }
+                        return true;
+                }
+                return false;
+        },
+
+        traverseChildSceneGraph: , function(child, humanoids) {
+                let children = null;
+                if (typeof child === 'HAnimJoint') {
+                        let joint = child;
+                        let children = joint.getChildrenList();
+                        this.traverseChildrenSceneGraph(children, humanoids);
+                } else if (typeof child === 'HAnimSite') {
+                        let site = child;
+                        let children = site.getChildrenList();
+                        this.traverseChildrenSceneGraph(children, humanoids);
+                } else if (typeof child === 'HAnimSegment') {
+                        let segment = child;
+                        let children = segment.getChildrenList();
+                        this.traverseChildrenSceneGraph(children, humanoids);
+                } else if (typeof child === 'Group') {
+                        let group = child;
+                        let children = group.getChildrenList();
+                        this.traverseChildrenSceneGraph(children, humanoids);
+                } else if (typeof child === 'Transform') {
+                        let trans = child;
+                        let children = trans.getChildrenList();
+                        this.traverseChildrenSceneGraph(children, humanoids);
+                } else if (typeof child === 'Shape') {
+                        let shape = child;
+                        let appearance = shape.getAppearance();
+                        if (!this.traverseChildSceneGraph(appearance, humanoids)) {
+                                console.error("Unpacking appearance in Shape failed");
+                        }
+                        let geometry = shape.getGeometry();
+                        if (!this.traverseChildSceneGraph(geometry, humanoids)) {
+                                console.error("Unpacking geometry in Shape failed");
+                        }
+                } else if (typeof child === 'IndexedFaceSet') {
+                        let ifs = child;
+                        let coord = ifs.getCoord();
+                        if (!this.traverseChildSceneGraph(coord, humanoids)) {
+                                console.error("Unpacking coord in IndexedFaceSet failed");
+                        }
+                } else if (typeof child === 'Appearance') {
+                } else if (typeof child === 'Coordinate') {
+                } else if (typeof child === 'WorldInfo') {
+                } else if (typeof child === 'NavigationInfo') {
+                } else if (typeof child === 'Viewpoint') {
+                } else if (typeof child === 'HAnimHumanoid') {
+                        humanoids.add(child);
+                } else if (child !== null) {
+                        console.error("Unhandled is", child);
+                } else {
+                        console.error("Node is", child);
+                        return false;
+                }
+                return true;
+        },
+        centering: , function(joint) {
+                let center = joint.getCenter();
+                let name = joint.getName();
+                switch (name) {
+                        case "l_tarsal_distal_interphalangeal_5":
+                                this.l_x = center[0];
+                                this.l_z = center[2];
+                                break;
+                        case "r_tarsal_distal_interphalangeal_5":
+                                this.r_x = center[0];
+                                this.r_z = center[2];
+                                break;
+                }
+                if (center[1] > this.maxy) {
+                        this.maxy = center[1];
+                }
+                if (center[1] < this.y) {
+                        this.y = center[1];
+                }
+                let children = joint.getChildrenList();
+                for (let ch = 0; ch < children.size(); ch++) {
+                        let child = children[ch];
+                        if (typeof child === 'HAnimJoint') {
+                                centering(child);
+                        }
+                }
+        },
+        transformPoint: , function(point, point_offset, translation) {
+                /// console.error("OLD "+point[point_offset+0]+" "+point[point_offset+1]+" "+point[point_offset+2]+" ");
+                point[point_offset+0] -= this.x;
+                point[point_offset+1] -= this.y;
+                point[point_offset+2] -= this.z;
+
+                point[point_offset+0] *= this.scale[0];
+                point[point_offset+1] *= this.scale[1];
+                point[point_offset+2] *= this.scale[2];
+
+                point[point_offset+0] += translation[0];
+                point[point_offset+1] += translation[1];
+                point[point_offset+2] += translation[2];
+                // console.error("NEW "+point[point_offset+0]+" "+point[point_offset+1]+" "+point[point_offset+2]+" ");
+        },
+        transform: , function(node, parentTranslation) {
+                let translation = [parentTranslation[0], parentTranslation[1], parentTranslation[2]];
+                let children = null;
+                if (typeof node === 'HAnimJoint') {
+                        let joint = node;
+
+                        let field = joint.getTranslation();
+                        this.transformPoint(field, 0, [ 0, 0, 0 ]);
+                        this.transformPoint(translation, 0, field);
+                        joint.setTranslation([ 0, 0, 0 ]);
+
+                        let center = joint.getCenter();
+                        this.transformPoint(center, 0, translation);
+                        joint.setCenter(center);
+                        children = joint.getChildrenList();
+                } else if (typeof node === 'HAnimSite') {
+                        let site = node;
+
+                        let field = site.getTranslation();
+                        this.transformPoint(field, 0, [ 0, 0, 0]);
+                        this.transformPoint(translation, 0, field);
+                        site.setTranslation([0, 0, 0]);
+
+                        let center = site.getCenter();
+                        this.transformPoint(center, 0, translation);
+                        site.setCenter(center);
+
+                        children = site.getChildrenList();
+                } else if (typeof node === 'HAnimSegment') {
+                        let segment = node;
+                        let coord = segment.getCoord();
+                        if (coord !== null) {
+                                if (!this.transform(coord, translation)) {
+                                        console.error("Unpacking coord in HAnimSegment failed");
+                                }
+                        }
+                        let displacers = segment.getDisplacersList();
+                        if (displacers !== null) {
+                                for (let di = 0; di < displacers.size(); di++) {
+                                        let displacer = displacers.get(di);
+                                        if (!this.transform(displacer, translation)) {
+                                                console.error("Unpacking displacer in HAnimSegment failed");
+                                        }
+                                }
+                        }
+                        children = segment.getChildrenList();
+                } else if (typeof node === 'Transform') {
+                        let trans = node;
+                        let field = trans.getTranslation();
+                        this.transformPoint(field, 0, [0,0,0]);
+                        this.transformPoint(translation, 0, field);
+                        trans.setTranslation([0,0,0]);
+                        children = trans.getChildrenList();
+                } else if (typeof node === 'Shape') {
+                        let shape = node;
+                        let appearance = shape.getAppearance();
+                        if (!this.transform(appearance, translation)) {
+                                console.error("Unpacking appearance in Shape failed");
+                        }
+                        let geometry = shape.getGeometry();
+                        if (!this.transform(geometry, translation)) {
+                                console.error("Unpacking geometry in Shape failed");
+                        }
+                } else if (typeof node === 'IndexedFaceSet') {
+                        let ifs = node;
+                        let coord = ifs.getCoord();
+                        let coordIndex = ifs.getCoordIndex();
+                        if (coordIndex.length > 700) {
+                                console.error("coordIndex", coordIndex.length);
+                                let texCoordIndex = ifs.getTexCoordIndex();
+                                console.error("texCoordIndex", texCoordIndex.length);
+                        }
+                        if (!this.transform(coord, translation)) {
+                                console.error("Unpacking coord in IndexedFaceSet failed");
+                        }
+                } else if (typeof node === 'Appearance') {
+                } else if (typeof node === 'Coordinate') {
+                        let coordinate = node;
+                        let point = coordinate.getPoint();
+                        // console.error("point ", point.length);
+                        for (let p = 0; p < point.length; p += 3) {
+                                this.transformPoint(point, p, translation);
+                        }
+                        coordinate.setPoint(point);
+                } else if (node !== null) {
+                        console.error("Unhandled is", node);
+                } else {
+                        console.error("Node is", node);
+                        return false;
+                }
+                if (children !== null) {
+                        for (let ch = 0; ch < children.size(); ch++) {
+                                let child = children.get(ch);
+                                if (!this.transform(child, translation)) {
+                                        console.error("Unpacking child in", node, "failed");
+                                }
+                        }
+                }
+                return true;
+        }
+    }
+    , function intialize() {
+        new HAnimScale();
+    })),
+
+            Group(
+              DEF_ : SFString('StopAnimation'),
+              children_ : [
+                TimeSensor(
+                  DEF_ : SFString('StopTimer'),
+                  cycleInterval_ : 5.73,
+                  loop_ : true),
+
+                PositionInterpolator(
+                  DEF_ : SFString('Stop_humanoid_root_TranslationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFVec3f([SFVec3f([0,0,0]),SFVec3f([0,0,0]),SFVec3f([0,0,0])])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_humanoid_root_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_sacroiliac_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_l_hip_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_l_knee_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_l_ankle_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_l_subtalar_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_l_midtarsal_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_l_metatarsal_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_r_hip_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_r_knee_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_r_ankle_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_r_subtalar_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_r_midtarsal_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_r_metatarsal_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_vl5_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_vl4_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_vl3_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_vl2_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_vl1_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_vt12_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_vt11_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_vt10_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_vt9_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_vt8_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_vt7_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_vt6_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_vt5_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_vt4_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_vt3_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_vt2_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_vt1_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_vc7_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_vc6_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_vc5_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_vc4_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_vc3_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_vc2_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_vc1_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_skullbase_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_l_eyeball_joint_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_r_eyeball_joint_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_l_sternoclavicular_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_l_acromioclavicular_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_l_shoulder_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_l_elbow_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_l_wrist_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_l_thumb1_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_l_thumb2_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_l_thumb3_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_l_index0_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_l_index1_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_l_index2_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_l_index3_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_l_middle0_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_l_middle1_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_l_middle2_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_l_middle3_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_l_ring0_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_l_ring1_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_l_ring2_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_l_ring3_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_l_pinky0_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_l_pinky1_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_l_pinky2_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_l_pinky3_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_r_sternoclavicular_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_r_acromioclavicular_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_r_shoulder_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_r_elbow_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_r_wrist_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_r_thumb1_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_r_thumb2_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_r_thumb3_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_r_index0_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_r_index1_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_r_index2_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_r_index3_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_r_middle0_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_r_middle1_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_r_middle2_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_r_middle3_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_r_ring0_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_r_ring1_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_r_ring2_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_r_ring3_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_r_pinky0_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_r_pinky1_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_r_pinky2_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stop_r_pinky3_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)]))]),
+
+            Group(
+              DEF_ : SFString('StandAnimation'),
+              children_ : [
+                TimeSensor(
+                  DEF_ : SFString('StandTimer'),
+                  cycleInterval_ : 5.73,
+                  loop_ : true),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stand_r_metatarsal_PitchInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.6), SFFloat(0.7), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.015), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.17), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.025), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.01), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stand_r_ankle_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stand_r_knee_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stand_r_hip_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stand_l_ankle_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stand_l_knee_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stand_l_hip_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stand_r_wrist_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(-1), SFRotation(0.25), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stand_r_elbow_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stand_r_shoulder_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stand_l_wrist_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stand_l_elbow_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stand_l_shoulder_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stand_head_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stand_neck_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.5), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stand_l_eyeball_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.4), SFFloat(0.7), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.5), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.45), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stand_r_eyeball_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.4), SFFloat(0.7), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.5), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.45), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stand_lower_body_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stand_upper_body_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stand_whole_body_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                PositionInterpolator(
+                  DEF_ : SFString('Stand_whole_body_TranslationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFVec3f([SFVec3f([0,0,0]),SFVec3f([0,0,0]),SFVec3f([0,0,0])])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stand_l_sternoclavicular_RollInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stand_l_acromioclavicular_RollInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stand_r_sternoclavicular_RollInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stand_r_acromioclavicular_RollInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stand_sacroiliac_YawInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stand_vl5_YawInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.5), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stand_vc6_YawInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.5), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stand_l_thumb1_PitchInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stand_r_thumb1_PitchInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.5), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.1), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.27), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.2), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stand_r_index1_RollInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.5), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0.1), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0.2), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0.3), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stand_r_index2_RollInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.5), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0.4), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0.32), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0.25), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0.2), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Stand_r_index3_RollInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.5), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0.2), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0.3), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0.35), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0.2), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)]))]),
+
+            Group(
+              DEF_ : SFString('PitchesAnimation'),
+              children_ : [
+                TimeSensor(
+                  DEF_ : SFString('PitchTimer'),
+                  cycleInterval_ : 5.73,
+                  loop_ : true),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Pitch_r_metatarsal_PitchInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.6), SFFloat(0.7), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.5), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.7), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.75), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.2), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Pitches_r_ankle_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.25), SFFloat(0.5), SFFloat(0.75), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(1.5), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(1.5), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Pitches_r_knee_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Pitches_r_hip_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.25), SFFloat(0.5), SFFloat(0.75), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(1.5), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(1.5), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Pitches_l_ankle_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.25), SFFloat(0.5), SFFloat(0.75), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(1.5), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(1.5), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Pitches_l_knee_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Pitches_l_hip_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.25), SFFloat(0.5), SFFloat(0.75), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(1.5), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(1.5), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Pitches_r_wrist_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Pitches_r_elbow_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Pitches_r_shoulder_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.25), SFFloat(0.5), SFFloat(0.75), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(1.5), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(1.5), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Pitches_l_wrist_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Pitches_l_elbow_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Pitches_l_shoulder_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.25), SFFloat(0.5), SFFloat(0.75), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(1.5), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(1.5), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Pitches_head_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Pitches_neck_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.25), SFFloat(0.55), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.55), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(1.05), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Pitches_lower_body_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Pitches_upper_body_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Pitches_whole_body_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                PositionInterpolator(
+                  DEF_ : SFString('Pitches_whole_body_TranslationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.125), SFFloat(0.25), SFFloat(0.375), SFFloat(0.5), SFFloat(0.625), SFFloat(0.75), SFFloat(0.875), SFFloat(1)]),
+                  keyValue_ : MFVec3f([SFVec3f([0,0,0]),SFVec3f([0,-0.15,0]),SFVec3f([0,-0.7,0]),SFVec3f([0,-0.15,0]),SFVec3f([0,0,0]),SFVec3f([0,-0.15,0]),SFVec3f([0,-0.7,0]),SFVec3f([0,-0.15,0]),SFVec3f([0,0,0])])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Pitch_l_sternoclavicular_RollInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Pitch_l_acromioclavicular_RollInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Pitch_r_sternoclavicular_RollInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Pitch_r_acromioclavicular_RollInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Pitch_sacroiliac_YawInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Pitch_vl5_YawInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.5), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Pitch_vc6_YawInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.5), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Pitch_l_thumb1_PitchInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.25), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.3), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.27), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.2), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Pitch_r_thumb1_PitchInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.25), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.3), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.27), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.2), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0)]))]),
+
+            Group(
+              DEF_ : SFString('YawsAnimation'),
+              children_ : [
+                TimeSensor(
+                  DEF_ : SFString('YawTimer'),
+                  cycleInterval_ : 5.73,
+                  loop_ : true),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Yaw_r_metatarsal_PitchInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.6), SFFloat(0.7), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Yaws_r_ankle_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.25), SFFloat(0.5), SFFloat(0.75), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(-1), SFRotation(0), SFRotation(1.5), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(1.5), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Yaws_r_knee_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.25), SFFloat(0.5), SFFloat(0.75), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(1.5), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(-1), SFRotation(0), SFRotation(1.5), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Yaws_r_hip_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Yaws_l_ankle_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.25), SFFloat(0.5), SFFloat(0.75), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(1.5), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(-1), SFRotation(0), SFRotation(1.5), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Yaws_l_knee_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.25), SFFloat(0.5), SFFloat(0.75), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(-1), SFRotation(0), SFRotation(1.5), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(1.5), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Yaws_l_hip_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Yaws_r_wrist_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Yaws_r_elbow_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Yaws_r_shoulder_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Yaws_l_wrist_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Yaws_l_elbow_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Yaws_l_shoulder_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Yaws_head_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Yaws_neck_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.25), SFFloat(0.5), SFFloat(0.75), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(1.5), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(-1), SFRotation(0), SFRotation(1.5), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Yaws_upper_body_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.25), SFFloat(0.5), SFFloat(0.75), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(-1), SFRotation(0), SFRotation(1.5), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(1.5), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Yaws_lower_body_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Yaws_whole_body_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                PositionInterpolator(
+                  DEF_ : SFString('Yaws_whole_body_TranslationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFVec3f([SFVec3f([0,0,0]),SFVec3f([0,0,0]),SFVec3f([0,0,0])])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Yaw_l_sternoclavicular_RollInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Yaw_l_acromioclavicular_RollInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Yaw_r_sternoclavicular_RollInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Yaw_r_acromioclavicular_RollInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Yaw_sacroiliac_YawInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(-1), SFRotation(0), SFRotation(0.1), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0.24), SFRotation(0), SFRotation(-1), SFRotation(0), SFRotation(0.4), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Yaw_vl5_YawInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.5), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Yaw_vc6_YawInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.5), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Yaw_l_thumb1_PitchInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Yaw_r_thumb1_PitchInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)]))]),
+
+            Group(
+              DEF_ : SFString('RollsAnimation'),
+              children_ : [
+                TimeSensor(
+                  DEF_ : SFString('RollTimer'),
+                  cycleInterval_ : 5.73,
+                  loop_ : true),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Roll_r_metatarsal_PitchInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.6), SFFloat(0.7), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Rolls_r_ankle_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.25), SFFloat(0.5), SFFloat(0.75), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(1.5), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(1.5), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Rolls_r_knee_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Rolls_r_hip_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.25), SFFloat(0.5), SFFloat(0.75), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(-1), SFRotation(1.5), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(-1), SFRotation(1.5), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Rolls_l_ankle_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.25), SFFloat(0.5), SFFloat(0.75), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(-1), SFRotation(1.5), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(-1), SFRotation(1.5), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Rolls_l_knee_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Rolls_l_hip_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.25), SFFloat(0.5), SFFloat(0.75), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(1.5), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(1.5), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Rolls_r_wrist_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.25), SFFloat(0.5), SFFloat(0.75), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(-1), SFRotation(1.5), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(1.5), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Rolls_r_elbow_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Rolls_r_shoulder_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.25), SFFloat(0.5), SFFloat(0.75), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(-1), SFRotation(1.5), SFRotation(0), SFRotation(0), SFRotation(-1), SFRotation(3), SFRotation(0), SFRotation(0), SFRotation(-1), SFRotation(1.5), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Rolls_l_wrist_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.25), SFFloat(0.5), SFFloat(0.75), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(1.5), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(-1), SFRotation(1.5), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Rolls_l_elbow_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Rolls_l_shoulder_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.25), SFFloat(0.5), SFFloat(0.75), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(1.5), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(3), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(1.5), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Rolls_head_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Rolls_neck_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.25), SFFloat(0.5), SFFloat(0.75), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(1.25), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(-1), SFRotation(1.25), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Rolls_lower_body_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Rolls_upper_body_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Rolls_whole_body_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                PositionInterpolator(
+                  DEF_ : SFString('Rolls_whole_body_TranslationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.125), SFFloat(0.25), SFFloat(0.375), SFFloat(0.5), SFFloat(0.625), SFFloat(0.75), SFFloat(0.875), SFFloat(1)]),
+                  keyValue_ : MFVec3f([SFVec3f([0,0,0]),SFVec3f([0,-0.25,0]),SFVec3f([0,-0.8,0]),SFVec3f([0,-0.25,0]),SFVec3f([0,0,0]),SFVec3f([0,-0.25,0]),SFVec3f([0,-0.8,0]),SFVec3f([0,-0.25,0]),SFVec3f([0,0,0])])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Roll_l_sternoclavicular_RollInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0.2), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0.22), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0.2), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Roll_l_acromioclavicular_RollInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0.05), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Roll_r_sternoclavicular_RollInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(-0.2), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(-0.22), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(-0.2), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Roll_r_acromioclavicular_RollInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(-0.05), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Roll_sacroiliac_YawInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Roll_vl5_YawInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.5), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Roll_vc6_YawInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.5), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Roll_l_thumb1_PitchInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Roll_r_thumb1_PitchInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)]))]),
+
+            Group(
+              DEF_ : SFString('WalkAnimation'),
+              children_ : [
+                TimeSensor(
+                  DEF_ : SFString('WalkTimer'),
+                  cycleInterval_ : 1.73,
+                  loop_ : true),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Walk_r_metatarsal_PitchInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.6), SFFloat(0.7), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Walk_r_ankle_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.125), SFFloat(0.2083), SFFloat(0.375), SFFloat(0.4583), SFFloat(0.5), SFFloat(0.6667), SFFloat(0.75), SFFloat(0.7917), SFFloat(0.9167), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.3533), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.1072), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.2612), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.1268), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.01793), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.05824), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.2398), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.35), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.3322), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Walk_r_knee_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.125), SFFloat(0.2083), SFFloat(0.2917), SFFloat(0.375), SFFloat(0.5), SFFloat(0.6667), SFFloat(0.7917), SFFloat(0.9167), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.8573), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.8926), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.5351), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.1756), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.1194), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.3153), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.09354), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.08558), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.2475), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.8573)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Walk_r_hip_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.125), SFFloat(0.2083), SFFloat(0.2917), SFFloat(0.375), SFFloat(0.5), SFFloat(0.6667), SFFloat(0.7917), SFFloat(0.9167), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(-0.5831), SFRotation(0.03511), SFRotation(0.8116), SFRotation(0.1481), SFRotation(-0.995), SFRotation(0.02296), SFRotation(0.09674), SFRotation(0.4683), SFRotation(-1), SFRotation(0.00192), SFRotation(0.007964), SFRotation(0.4732), SFRotation(-0.998), SFRotation(-0.0158), SFRotation(-0.06102), SFRotation(0.5079), SFRotation(-0.9911), SFRotation(-0.03541), SFRotation(-0.1286), SFRotation(0.5419), SFRotation(-0.9131), SFRotation(-0.06243), SFRotation(-0.403), SFRotation(0.3361), SFRotation(-0.4306), SFRotation(-0.07962), SFRotation(-0.899), SFRotation(0.07038), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.2571), SFRotation(0.9891), SFRotation(-0.02805), SFRotation(0.1444), SFRotation(0.3879), SFRotation(-0.5831), SFRotation(0.03511), SFRotation(0.8116), SFRotation(0.1481)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Walk_l_ankle_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.125), SFFloat(0.2083), SFFloat(0.375), SFFloat(0.6667), SFFloat(0.9167), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.06714), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.2152), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.3184), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.4717), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.2912), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.1222), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.06714)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Walk_l_knee_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2083), SFFloat(0.375), SFFloat(0.5), SFFloat(0.6667), SFFloat(0.7917), SFFloat(0.9167), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.3226), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.1556), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.08678), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.8751), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(1.131), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.09961), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.3942), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.3226)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Walk_l_hip_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.25), SFFloat(0.375), SFFloat(0.5), SFFloat(0.6667), SFFloat(0.7917), SFFloat(0.9167), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(-0.873), SFRotation(0.06094), SFRotation(0.484), SFRotation(0.2865), SFRotation(0.9963), SFRotation(-0.01057), SFRotation(0.08481), SFRotation(0.2488), SFRotation(0.9965), SFRotation(0.01591), SFRotation(-0.08222), SFRotation(0.3836), SFRotation(-0.7018), SFRotation(-0.03223), SFRotation(-0.7117), SFRotation(0.1289), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.5518), SFRotation(-0.9964), SFRotation(0.02231), SFRotation(0.0817), SFRotation(0.5351), SFRotation(-0.9809), SFRotation(0.04912), SFRotation(0.1881), SFRotation(0.5204), SFRotation(-0.873), SFRotation(0.06094), SFRotation(0.484), SFRotation(0.2865)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Walk_lower_body_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(-1), SFRotation(0.1056), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0.09018), SFRotation(0), SFRotation(0), SFRotation(-1), SFRotation(0.1056)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Walk_r_wrist_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.375), SFFloat(0.9167), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(-0.8129), SFRotation(0.4759), SFRotation(-0.3357), SFRotation(0.1346), SFRotation(0.1533), SFRotation(-0.9878), SFRotation(0.02582), SFRotation(0.3902), SFRotation(-0.5701), SFRotation(0.7604), SFRotation(-0.311), SFRotation(0.366), SFRotation(-0.8129), SFRotation(0.4759), SFRotation(-0.3357), SFRotation(0.1346)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Walk_r_elbow_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.375), SFFloat(0.9167), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.411508), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.0925011), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.572568), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.411508)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Walk_r_shoulder_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.375), SFFloat(0.9167), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.09346), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.3197), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.1564), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.09346)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Walk_l_wrist_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.375), SFFloat(0.9167), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(-1), SFRotation(0), SFRotation(0.461076), SFRotation(-0.330195), SFRotation(-0.927451), SFRotation(0.175516), SFRotation(0.538852), SFRotation(0.0327774), SFRotation(-0.999314), SFRotation(-0.0172185), SFRotation(0.492033), SFRotation(0), SFRotation(-1), SFRotation(0), SFRotation(0.461076)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Walk_l_elbow_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.375), SFFloat(0.9167), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.0659878), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.488383), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.0177536), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.0659878)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Walk_l_shoulder_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.375), SFFloat(0.9167), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.1189), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.1861), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.3357), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.1189)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Walk_head_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.375), SFFloat(0.4167), SFFloat(0.5), SFFloat(0.5833), SFFloat(0.6667), SFFloat(0.75), SFFloat(0.8333), SFFloat(0.9167), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(-1), SFRotation(0), SFRotation(0.08642), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0.1825), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0.1505), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0.1053), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0.04391), SFRotation(0), SFRotation(-1), SFRotation(0), SFRotation(0.03119), SFRotation(0), SFRotation(-1), SFRotation(0), SFRotation(0.07936), SFRotation(0), SFRotation(-1), SFRotation(0), SFRotation(0.1616), SFRotation(0), SFRotation(-1), SFRotation(0), SFRotation(0.155), SFRotation(0), SFRotation(-1), SFRotation(0), SFRotation(0.08642)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Walk_neck_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Walk_upper_body_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2083), SFFloat(0.375), SFFloat(0.75), SFFloat(0.8333), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0.0826), SFRotation(-0.01972), SFRotation(-0.5974), SFRotation(0.8017), SFRotation(0.08231), SFRotation(0.009296), SFRotation(-0.9648), SFRotation(0.2627), SFRotation(0.1734), SFRotation(-0.01238), SFRotation(0.9549), SFRotation(-0.2968), SFRotation(0.08732), SFRotation(-0.008125), SFRotation(0.9691), SFRotation(-0.2463), SFRotation(0.158), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0.0826)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Walk_whole_body_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                PositionInterpolator(
+                  DEF_ : SFString('Walk_whole_body_TranslationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.04167), SFFloat(0.125), SFFloat(0.1667), SFFloat(0.2083), SFFloat(0.25), SFFloat(0.2917), SFFloat(0.375), SFFloat(0.4583), SFFloat(0.5), SFFloat(0.5417), SFFloat(0.5833), SFFloat(0.625), SFFloat(0.7083), SFFloat(0.75), SFFloat(0.7917), SFFloat(0.875), SFFloat(0.9167), SFFloat(1)]),
+                  keyValue_ : MFVec3f([SFVec3f([0,-0.00928,0]),SFVec3f([0,-0.003858,0]),SFVec3f([0,-0.008847,0]),SFVec3f([0,-0.01486,0]),SFVec3f([0,-0.02641,0]),SFVec3f([0,-0.03934,0]),SFVec3f([0,-0.0502,0]),SFVec3f([0,-0.07469,0]),SFVec3f([0,-0.02732,0]),SFVec3f([0,-0.01608,0]),SFVec3f([0,-0.01129,0]),SFVec3f([0,-0.005819,0]),SFVec3f([0,-0.002004,0]),SFVec3f([0,-0.002579,0]),SFVec3f([0,-0.0143,0]),SFVec3f([0,-0.03799,0]),SFVec3f([0,-0.05648,0]),SFVec3f([0,-0.045,0]),SFVec3f([0,-0.00928,0])])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Walk_l_sternoclavicular_RollInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Walk_l_acromioclavicular_RollInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Walk_r_sternoclavicular_RollInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Walk_r_acromioclavicular_RollInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Walk_sacroiliac_YawInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Walk_vl5_YawInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.5), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Walk_vc6_YawInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.5), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Walk_l_thumb1_PitchInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.25), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.5), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.7), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.2), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Walk_r_thumb1_PitchInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.25), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.5), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.7), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.2), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0)]))]),
+
+            Group(
+              DEF_ : SFString('RunAnimation'),
+              children_ : [
+                TimeSensor(
+                  DEF_ : SFString('RunTimer'),
+                  cycleInterval_ : 0.9,
+                  loop_ : true),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Run_r_metatarsal_PitchInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.6), SFFloat(0.7), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Run_l_hip_RotationInterpolator_Run'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2182), SFFloat(0.4909), SFFloat(0.7455), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(-0.99), SFRotation(0.033), SFRotation(0.04), SFRotation(1.42), SFRotation(-0.99), SFRotation(0.1328), SFRotation(0.067), SFRotation(0.42), SFRotation(0.99), SFRotation(0.014), SFRotation(0.009), SFRotation(0.9), SFRotation(-0.99), SFRotation(0.0703), SFRotation(0.05), SFRotation(0.7), SFRotation(-0.99), SFRotation(0.033), SFRotation(0.04), SFRotation(1.42)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Run_l_knee_RotationInterpolator_Run'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2182), SFFloat(0.4909), SFFloat(0.7455), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(1.01), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.426), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.705), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(2.179), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(1.01)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Run_l_ankle_RotationInterpolator_Run'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.22), SFFloat(0.3), SFFloat(0.4), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.0374), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.1037), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.4328), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.1929), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.03574)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Run_r_hip_RotationInterpolator_Run'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2545), SFFloat(0.4909), SFFloat(0.7091), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0.99), SFRotation(-0.014), SFRotation(0.009), SFRotation(0.9), SFRotation(-0.99), SFRotation(-0.0703), SFRotation(-0.05), SFRotation(0.7), SFRotation(-0.99), SFRotation(-0.033), SFRotation(0.04), SFRotation(1.42), SFRotation(-0.99), SFRotation(-0.1328), SFRotation(-0.067), SFRotation(0.42), SFRotation(0.99), SFRotation(-0.014), SFRotation(0.009), SFRotation(0.9)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Run_r_knee_RotationInterpolator_Run'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2545), SFFloat(0.4909), SFFloat(0.7091), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.705), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(2.179), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(1.01), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.426), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.705)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Run_r_ankle_RotationInterpolator_Run'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.4), SFFloat(0.71), SFFloat(0.8), SFFloat(0.82), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.2323), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.07843), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.32), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.374), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.3478), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.2323)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Run_l_shoulder_RotationInterpolator_Run'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2182), SFFloat(0.4909), SFFloat(0.7455), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0.99), SFRotation(-0.074), SFRotation(0.25), SFRotation(1.5), SFRotation(0.99), SFRotation(-0.092), SFRotation(0.44), SFRotation(0.3), SFRotation(-0.99), SFRotation(0.136), SFRotation(0.25), SFRotation(0.85), SFRotation(0.99), SFRotation(-0.081), SFRotation(0.38), SFRotation(0.4), SFRotation(0.99), SFRotation(-0.074), SFRotation(0.25), SFRotation(1.5)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Run_l_elbow_RotationInterpolator_Run'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2182), SFFloat(0.4909), SFFloat(0.7455), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(1.85), SFRotation(-0.99), SFRotation(-0.19), SFRotation(0.18), SFRotation(1.35), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.975), SFRotation(-0.99), SFRotation(-0.09), SFRotation(-0.02), SFRotation(1.55), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(1.85)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Run_l_wrist_RotationInterpolator_Run'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.25), SFFloat(0.5), SFFloat(0.75), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(-0.25), SFRotation(-1), SFRotation(0.08), SFRotation(0.14), SFRotation(0.25), SFRotation(1), SFRotation(0.08), SFRotation(0.14), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(-0.25), SFRotation(1), SFRotation(0.08), SFRotation(-0.14), SFRotation(-0.25), SFRotation(1), SFRotation(0.08), SFRotation(0.14)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Run_r_shoulder_RotationInterpolator_Run'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2545), SFFloat(0.4909), SFFloat(0.7091), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(-0.99), SFRotation(-0.136), SFRotation(-0.25), SFRotation(0.85), SFRotation(0.99), SFRotation(0.081), SFRotation(-0.38), SFRotation(0.4), SFRotation(0.99), SFRotation(0.074), SFRotation(-0.25), SFRotation(1.5), SFRotation(0.99), SFRotation(0.081), SFRotation(-0.38), SFRotation(0.4), SFRotation(-0.99), SFRotation(-0.136), SFRotation(-0.25), SFRotation(0.85)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Run_r_elbow_RotationInterpolator_Run'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2545), SFFloat(0.4909), SFFloat(0.7091), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.975), SFRotation(-0.99), SFRotation(0.09), SFRotation(0.02), SFRotation(1.55), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(1.85), SFRotation(-0.99), SFRotation(0.19), SFRotation(-0.18), SFRotation(1.35), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.975)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Run_r_wrist_RotationInterpolator_Run'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(-0.917742), SFRotation(-0.237244), SFRotation(-0.318536), SFRotation(0.214273), SFRotation(-0.917742), SFRotation(-0.237244), SFRotation(-0.318536), SFRotation(0.214273)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Run_lower_body_RotationInterpolator_Run'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2182), SFFloat(0.4909), SFFloat(0.7455), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(-1), SFRotation(0), SFRotation(0.125), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0.125), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(-1), SFRotation(0), SFRotation(0.125)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Run_head_RotationInterpolator_Run'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2545), SFFloat(0.4909), SFFloat(0.7091), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.08), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.12), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.3), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.3), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.08)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Run_neck_RotationInterpolator_Run'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2545), SFFloat(0.4909), SFFloat(0.7091), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0.7), SFRotation(0), SFRotation(0), SFRotation(0.4), SFRotation(-0.7), SFRotation(-0.7), SFRotation(0), SFRotation(0.4), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(0.4), SFRotation(-0.7), SFRotation(0.7), SFRotation(0), SFRotation(0.4), SFRotation(0.7), SFRotation(0), SFRotation(0), SFRotation(0.4)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Run_upper_body_RotationInterpolator_Run'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2545), SFFloat(0.4909), SFFloat(0.7636), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0.97), SFRotation(0.65), SFRotation(0.086), SFRotation(0.5), SFRotation(0.9), SFRotation(0.003), SFRotation(-0.02), SFRotation(0.38), SFRotation(0.95), SFRotation(-0.68), SFRotation(-0.086), SFRotation(0.5), SFRotation(0.9), SFRotation(0.004), SFRotation(-0.025), SFRotation(0.4), SFRotation(0.97), SFRotation(0.65), SFRotation(0.086), SFRotation(0.5)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Run_whole_body_RotationInterpolator_Run'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.25), SFFloat(0.5), SFFloat(0.75), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.06), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.167), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.06), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.168), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.06)])),
+
+                PositionInterpolator(
+                  DEF_ : SFString('Run_whole_body_TranslationInterpolator_Run'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.22), SFFloat(0.3), SFFloat(0.31), SFFloat(0.5), SFFloat(0.69), SFFloat(0.7), SFFloat(0.78), SFFloat(1)]),
+                  keyValue_ : MFVec3f([SFVec3f([0,-0.01,0]),SFVec3f([0,-0.037,0]),SFVec3f([0,-0.049,0]),SFVec3f([0,-0.037,0]),SFVec3f([0,-0.01,0]),SFVec3f([0,-0.037,0]),SFVec3f([0,-0.049,0]),SFVec3f([0,-0.037,0]),SFVec3f([0,-0.01,0])])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Run_l_sternoclavicular_RollInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Run_l_acromioclavicular_RollInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Run_r_sternoclavicular_RollInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Run_r_acromioclavicular_RollInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Run_sacroiliac_YawInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Run_vl5_YawInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.5), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Run_vc6_YawInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.5), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Run_l_thumb1_PitchInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.25), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.7), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.27), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.2), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Run_r_thumb1_PitchInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.25), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.7), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.27), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.2), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0)]))]),
+
+            Group(
+              DEF_ : SFString('JumpAnimation'),
+              children_ : [
+                TimeSensor(
+                  DEF_ : SFString('JumpTimer'),
+                  cycleInterval_ : 3.73,
+                  loop_ : true),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Jump_r_metatarsal_PitchInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.6), SFFloat(0.7), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Jump_r_ankle_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.1), SFFloat(0.15), SFFloat(0.25), SFFloat(0.28), SFFloat(0.32), SFFloat(0.35), SFFloat(0.64), SFFloat(0.76), SFFloat(0.84), SFFloat(0.88), SFFloat(0.92), SFFloat(0.96), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.6735), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.6735), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.3527), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.3038), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.07964), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(1.3), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.6509), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.3001), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.2087), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.3756), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.3279), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.1193), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Jump_r_knee_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.25), SFFloat(0.3), SFFloat(0.64), SFFloat(0.76), SFFloat(0.88), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(2.5), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(1.7), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.9507), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.5845), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.9054), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Jump_r_hip_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.18), SFFloat(0.24), SFFloat(0.26), SFFloat(0.28), SFFloat(0.32), SFFloat(0.48), SFFloat(0.64), SFFloat(0.76), SFFloat(0.88), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(1.63), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(1.7), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(1.55), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.8943), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.3698), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.4963), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.3829), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.5169), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Jump_l_ankle_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.28), SFFloat(0.32), SFFloat(0.36), SFFloat(0.4), SFFloat(0.44), SFFloat(0.48), SFFloat(0.64), SFFloat(0.76), SFFloat(0.84), SFFloat(0.88), SFFloat(0.92), SFFloat(0.96), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.625), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.625), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.3364), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.2742), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.05078), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.2833), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.6667), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.2833), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.2108), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.375), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.3146), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.1174), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Jump_l_knee_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.28), SFFloat(0.32), SFFloat(0.48), SFFloat(0.64), SFFloat(0.76), SFFloat(0.88), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(2.047), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(2.047), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(1.566), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.5913), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.9235), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Jump_l_hip_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.28), SFFloat(0.32), SFFloat(0.36), SFFloat(0.4), SFFloat(0.44), SFFloat(0.48), SFFloat(0.64), SFFloat(0.76), SFFloat(0.88), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(4.349), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(4.349), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(4.615), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.9136), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.3614), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.7869), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.3918), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.5433), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Jump_lower_body_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.28), SFFloat(0.32), SFFloat(0.48), SFFloat(0.76), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.1892), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.1892), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Jump_r_wrist_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.28), SFFloat(0.32), SFFloat(0.64), SFFloat(0.76), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(-0.0585279), SFRotation(0.983903), SFRotation(-0.168849), SFRotation(1.85956), SFRotation(-0.0585279), SFRotation(0.983903), SFRotation(-0.168849), SFRotation(1.85956), SFRotation(-0.00222418), SFRotation(0.99801), SFRotation(-0.0630095), SFRotation(1.46072), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0.497349), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Jump_r_elbow_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.28), SFFloat(0.32), SFFloat(0.64), SFFloat(0.76), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.04151), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.04151), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.5855), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.5852), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Jump_r_shoulder_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.28), SFFloat(0.32), SFFloat(0.64), SFFloat(0.76), SFFloat(0.88), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0.9992), SFRotation(0.02042), SFRotation(0.03558), SFRotation(4.688), SFRotation(0.9992), SFRotation(0.02042), SFRotation(0.03558), SFRotation(4.688), SFRotation(0.9989), SFRotation(-0.04623), SFRotation(0.005159), SFRotation(4.079), SFRotation(-0.8687), SFRotation(-0.2525), SFRotation(-0.4261), SFRotation(1.501), SFRotation(-0.941), SFRotation(-0.2893), SFRotation(-0.1754), SFRotation(0.4788), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Jump_l_wrist_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.48), SFFloat(0.52), SFFloat(0.64), SFFloat(0.76), SFFloat(0.88), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0.0672928), SFRotation(0.989475), SFRotation(-0.128107), SFRotation(4.15574), SFRotation(0.0672928), SFRotation(0.989475), SFRotation(-0.128107), SFRotation(4.15574), SFRotation(0.00364942), SFRotation(0.999901), SFRotation(0.0135896), SFRotation(4.5822), SFRotation(0), SFRotation(-1), SFRotation(0), SFRotation(0.655922), SFRotation(-0.00050618), SFRotation(-0.999999), SFRotation(0.0012782), SFRotation(1.28397), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Jump_l_elbow_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.28), SFFloat(0.32), SFFloat(0.58), SFFloat(0.72), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(1.13), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(1.7), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(1.7), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.4), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Jump_l_shoulder_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.28), SFFloat(0.32), SFFloat(0.64), SFFloat(0.76), SFFloat(0.88), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(-0.9987), SFRotation(0.02554), SFRotation(0.04498), SFRotation(1.57), SFRotation(-0.9987), SFRotation(0.02554), SFRotation(0.04498), SFRotation(1.57), SFRotation(1), SFRotation(0.0004113), SFRotation(0.003055), SFRotation(4.114), SFRotation(-0.8413), SFRotation(0.3238), SFRotation(0.4329), SFRotation(1.453), SFRotation(-0.877), SFRotation(0.4198), SFRotation(0.2337), SFRotation(0.6009), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Jump_head_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.28), SFFloat(0.32), SFFloat(0.48), SFFloat(0.76), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.5989), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.5989), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.3216), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.06503), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Jump_neck_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.28), SFFloat(0.32), SFFloat(0.48), SFFloat(0.76), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.1942), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.1942), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.2284), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Jump_upper_body_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.22), SFFloat(0.28), SFFloat(0.34), SFFloat(0.71), SFFloat(0.88), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(1.05), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(1.051), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.257), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.2171), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.3465), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Jump_whole_body_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.28), SFFloat(0.32), SFFloat(0.48), SFFloat(0.64), SFFloat(0.76), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.3273), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.3273), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                PositionInterpolator(
+                  DEF_ : SFString('Jump_whole_body_TranslationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.04), SFFloat(0.07), SFFloat(0.11), SFFloat(0.15), SFFloat(0.19), SFFloat(0.22), SFFloat(0.25), SFFloat(0.27), SFFloat(0.31), SFFloat(0.33), SFFloat(0.35), SFFloat(0.38), SFFloat(0.53), SFFloat(0.544), SFFloat(0.76), SFFloat(0.8), SFFloat(0.84), SFFloat(0.88), SFFloat(0.92), SFFloat(0.96), SFFloat(1)]),
+                  keyValue_ : MFVec3f([SFVec3f([0,0,0]),SFVec3f([0,-0.01264,-0.01289]),SFVec3f([0,-0.04712,-0.03738]),SFVec3f([-0.0003345,-0.1049,-0.05353]),SFVec3f([-0.0005712,-0.1892,-0.06561]),SFVec3f([-0.0008233,-0.286,-0.06276]),SFVec3f([-0.0009591,-0.3795,-0.05148]),SFVec3f([-0.00106,-0.4484,-0.03656]),SFVec3f([-0.00106,-0.4484,-0.03656]),SFVec3f([-0.001122,-0.25,-0.1499]),SFVec3f([-0.0008616,-0.05,-0.06358]),SFVec3f([-0.0005128,0.15,-0.05488]),SFVec3f([0.0004779,0.55,0.02732]),SFVec3f([0.0001728,1.385,0.006873]),SFVec3f([0.00017,1.395,0.0069]),SFVec3f([0,0.35,0.02148]),SFVec3f([0,-0.01299,-0.01057]),SFVec3f([0,-0.06932,-0.01064]),SFVec3f([0.0001365,-0.1037,-0.005059]),SFVec3f([0.0001279,-0.07198,-0.007596]),SFVec3f([0.000141,-0.01626,-0.004935]),SFVec3f([0,0,0])])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Jump_l_sternoclavicular_RollInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0.2), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0.22), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0.2), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Jump_l_acromioclavicular_RollInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0.05), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Jump_r_sternoclavicular_RollInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(-0.2), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(-0.22), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(-0.2), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Jump_r_acromioclavicular_RollInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(-0.05), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Jump_sacroiliac_YawInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(-1), SFRotation(0), SFRotation(0.1), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(-1), SFRotation(0.24), SFRotation(0), SFRotation(-1), SFRotation(0), SFRotation(0.4), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Jump_vl5_YawInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.5), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(-0.1), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.6), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0.1), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Jump_vc6_YawInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.5), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0.8), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.6), SFRotation(0), SFRotation(-1), SFRotation(0), SFRotation(0.8), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Jump_l_thumb1_PitchInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.5), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(1.1), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.7), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.2), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Jump_r_thumb1_PitchInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.5), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(1.1), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.7), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.2), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0)]))]),
+
+            Group(
+              DEF_ : SFString('KickAnimation'),
+              children_ : [
+                TimeSensor(
+                  DEF_ : SFString('KickTimer'),
+                  cycleInterval_ : 3.73,
+                  loop_ : true),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Kick_l_sternoclavicular_RollInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0.2), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0.22), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0.2), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Kick_l_acromioclavicular_RollInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0.05), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Kick_l_shoulder_RollInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(1.76), SFRotation(-0.25), SFRotation(0), SFRotation(1), SFRotation(1.76), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(1.256), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0.05), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Kick_l_ForeArm_PitchInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(-0.55), SFRotation(-1), SFRotation(0.25), SFRotation(0), SFRotation(2.55), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Kick_l_wrist_RollInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0.55), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Kick_l_thumb1_PitchInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.5), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(1.1), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.7), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.2), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Kick_r_sternoclavicular_RollInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(-0.2), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(-0.22), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(-0.2), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Kick_r_acromioclavicular_RollInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(-0.05), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Kick_r_shoulder_RollInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(-1.76), SFRotation(0.25), SFRotation(0), SFRotation(1), SFRotation(-1.76), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(-1.256), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(-0.05), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Kick_r_ForeArm_PitchInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(-0.55), SFRotation(1), SFRotation(0.25), SFRotation(0), SFRotation(-2.55), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Kick_r_wrist_RollInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(-0.55), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Kick_r_thumb1_PitchInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.5), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(1.1), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.7), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.2), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Kick_r_hip_PitchInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.3), SFFloat(0.5), SFFloat(0.6), SFFloat(0.9), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.9), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(1.75), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(2.25), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(2), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Kick_r_knee_PitchInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(1.95), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(1.75), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.28), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Kick_l_hip_PitchInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.3), SFFloat(0.5), SFFloat(0.6), SFFloat(0.9), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Kick_l_knee_PitchInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Kick_r_ankle_PitchInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.6), SFFloat(0.7), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.9), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.95), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.75), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.05), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Kick_r_metatarsal_PitchInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.6), SFFloat(0.7), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.5), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.7), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.75), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.2), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Kick_sacroiliac_YawInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(-1), SFRotation(0), SFRotation(0.1), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(-1), SFRotation(0.24), SFRotation(0), SFRotation(-1), SFRotation(0), SFRotation(0.4), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Kick_vl5_YawInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.5), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Kick_vc6_YawInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.5), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Kick_lower_body_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Kick_upper_body_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Kick_whole_body_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
+
+                PositionInterpolator(
+                  DEF_ : SFString('Kick_whole_body_TranslationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
+                  keyValue_ : MFVec3f([SFVec3f([0,0,0]),SFVec3f([0,0,0]),SFVec3f([0,0,0])])),
+
+                OrientationInterpolator(
+                  DEF_ : SFString('Kick_neck_RotationInterpolator'),
+                  key_ : MFFloat([SFFloat(0), SFFloat(0.25), SFFloat(0.55), SFFloat(1)]),
+                  keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.7), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.5), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)]))]),
+
+            Group(
+              DEF_ : SFString('Interface'),
+              children_ : [
+                Transform(
+                  DEF_ : SFString('CoordinateSystemFloor'),
+                  scale_ : SFVec3f([SFDouble(0.1), SFDouble(0.1), SFDouble(0.1)]),
+                  child_ : 
+                    Shape(
+                      DEF_ : SFString('AxisLinesShape'),
+                      /*RGB lines showing XYZ axes*/
+                      geometry_ : 
+                        IndexedLineSet(
+                          colorIndex_ : MFInt32([SFInt32(0), SFInt32(1), SFInt32(2)]),
+                          colorPerVertex_ : false,
+                          coordIndex_ : MFInt32([SFInt32(0), SFInt32(1), SFInt32(-1), SFInt32(0), SFInt32(2), SFInt32(-1), SFInt32(0), SFInt32(3), SFInt32(-1)]),
+                          coord_ : 
+                            Coordinate(
+                              point_ : MFVec3f([SFVec3f([0,0,0]),SFVec3f([1,0,0]),SFVec3f([0,1,0]),SFVec3f([0,0,1])])),
+                          color_ : 
+                            Color(
+                              color_ : MFColor([SFColor(1), SFColor(0), SFColor(0), SFColor(0), SFColor(0.6), SFColor(0), SFColor(0), SFColor(0), SFColor(1)]))))),
+
+                ProximitySensor(
+                  DEF_ : SFString('HudProx'),
+                  size_ : SFVec3f([SFDouble(50), SFDouble(50), SFDouble(50)])),
+
+                Transform(
+                  DEF_ : SFString('HudXform'),
+                  rotation_ : SFRotation([SFDouble(0), SFDouble(1), SFDouble(0), SFDouble(0.78)]),
+                  translation_ : SFVec3f([SFDouble(2), SFDouble(1), SFDouble(2)]),
+                  children_ : [
+                    Transform(
+                      scale_ : SFVec3f([SFDouble(0.02), SFDouble(0.02), SFDouble(0.02)]),
+                      translation_ : SFVec3f([SFDouble(-0.4), SFDouble(-0.01), SFDouble(-0.75)]),
+                      children_ : [
+                        Transform(
+                          DEF_ : SFString('Stand_Text'),
+                          translation_ : SFVec3f([SFDouble(0), SFDouble(-0.9), SFDouble(0)]),
+                          children_ : [
+                            TouchSensor(
+                              DEF_ : SFString('Stand_Touch')),
+                          child_ : 
+                            Shape(
+                              DEF_ : SFString('StandText'),
+                              appearance_ : 
+                                Appearance(
+                                  material_ : 
+                                    Material(
+                                      DEF_ : SFString('text_color'),
+                                      ambientIntensity_ : 1,
+                                      diffuseColor_ : SFColor([SFDouble(0.819), SFDouble(0.521), SFDouble(0.169)]),
+                                      emissiveColor_ : SFColor([SFDouble(0.819), SFDouble(0.521), SFDouble(0.169)]),
+                                      specularColor_ : SFColor([SFDouble(0.819), SFDouble(0.521), SFDouble(0.169)]))),
+                              geometry_ : 
+                                Text(
+                                  string_ : MFString([SFString("Stand")]),
+                                  fontStyle_ : 
+                                    FontStyle(
+                                      family_ : MFString([SFString("SANS")]))))],
+                          child_ : 
+                            Shape(
+                              DEF_ : SFString('Stand_Back'),
+                              appearance_ : 
+                                Appearance(
+                                  material_ : 
+                                    Material(
+                                      DEF_ : SFString('Clear'),
+                                      ambientIntensity_ : 1,
+                                      diffuseColor_ : SFColor([SFDouble(0), SFDouble(0.5), SFDouble(0)]),
+                                      emissiveColor_ : SFColor([SFDouble(0), SFDouble(0.5), SFDouble(0)]),
+                                      transparency_ : 0.8)),
+                              geometry_ : 
+                                IndexedFaceSet(
+                                  DEF_ : SFString('Backing'),
+                                  coordIndex_ : MFInt32([SFInt32(0), SFInt32(1), SFInt32(2), SFInt32(3), SFInt32(-1)]),
+                                  coord_ : 
+                                    Coordinate(
+                                      point_ : MFVec3f([SFVec3f([-0.2,-0.25,-0.01]),SFVec3f([3,-0.25,-0.01]),SFVec3f([3,1,-0.01]),SFVec3f([-0.2,1,-0.01])]))))),
+
+                        Transform(
+                          DEF_ : SFString('Pitch_Text'),
+                          translation_ : SFVec3f([SFDouble(0), SFDouble(-2.4), SFDouble(0)]),
+                          children_ : [
+                            TouchSensor(
+                              DEF_ : SFString('Pitch_Touch')),
+                          child_ : 
+                            Shape(
+                              DEF_ : SFString('PitchText'),
+                              appearance_ : 
+                                Appearance(
+                                  material_ : 
+                                    Material(
+                                      USE_ : SFString('text_color'))),
+                              geometry_ : 
+                                Text(
+                                  string_ : MFString([SFString("Pitch")]),
+                                  fontStyle_ : 
+                                    FontStyle(
+                                      family_ : MFString([SFString("SANS")]))))],
+                          child_ : 
+                            Shape(
+                              DEF_ : SFString('Pitch_Back'),
+                              appearance_ : 
+                                Appearance(
+                                  material_ : 
+                                    Material(
+                                      USE_ : SFString('Clear'))),
+                              geometry_ : 
+                                IndexedFaceSet(
+                                  USE_ : SFString('Backing')))),
+
+                        Transform(
+                          DEF_ : SFString('Yaw_Text'),
+                          translation_ : SFVec3f([SFDouble(0), SFDouble(-3.8), SFDouble(0)]),
+                          children_ : [
+                            TouchSensor(
+                              DEF_ : SFString('Yaw_Touch')),
+                          child_ : 
+                            Shape(
+                              DEF_ : SFString('YawText'),
+                              appearance_ : 
+                                Appearance(
+                                  material_ : 
+                                    Material(
+                                      USE_ : SFString('text_color'))),
+                              geometry_ : 
+                                Text(
+                                  string_ : MFString([SFString("Yaw")]),
+                                  fontStyle_ : 
+                                    FontStyle(
+                                      family_ : MFString([SFString("SANS")]))))],
+                          child_ : 
+                            Shape(
+                              DEF_ : SFString('Yaw_Back'),
+                              appearance_ : 
+                                Appearance(
+                                  material_ : 
+                                    Material(
+                                      USE_ : SFString('Clear'))),
+                              geometry_ : 
+                                IndexedFaceSet(
+                                  USE_ : SFString('Backing')))),
+
+                        Transform(
+                          DEF_ : SFString('Roll_Text'),
+                          translation_ : SFVec3f([SFDouble(0), SFDouble(-5.2), SFDouble(0)]),
+                          children_ : [
+                            TouchSensor(
+                              DEF_ : SFString('Roll_Touch')),
+                          child_ : 
+                            Shape(
+                              DEF_ : SFString('RollText'),
+                              appearance_ : 
+                                Appearance(
+                                  material_ : 
+                                    Material(
+                                      USE_ : SFString('text_color'))),
+                              geometry_ : 
+                                Text(
+                                  string_ : MFString([SFString("Roll")]),
+                                  fontStyle_ : 
+                                    FontStyle(
+                                      family_ : MFString([SFString("SANS")]))))],
+                          child_ : 
+                            Shape(
+                              DEF_ : SFString('Roll_Back'),
+                              appearance_ : 
+                                Appearance(
+                                  material_ : 
+                                    Material(
+                                      USE_ : SFString('Clear'))),
+                              geometry_ : 
+                                IndexedFaceSet(
+                                  USE_ : SFString('Backing')))),
+
+                        Transform(
+                          DEF_ : SFString('Walk_Text'),
+                          translation_ : SFVec3f([SFDouble(0), SFDouble(-6.6), SFDouble(0)]),
+                          children_ : [
+                            TouchSensor(
+                              DEF_ : SFString('Walk_Touch')),
+                          child_ : 
+                            Shape(
+                              DEF_ : SFString('WalkText'),
+                              appearance_ : 
+                                Appearance(
+                                  material_ : 
+                                    Material(
+                                      USE_ : SFString('text_color'))),
+                              geometry_ : 
+                                Text(
+                                  string_ : MFString([SFString("Walk")]),
+                                  fontStyle_ : 
+                                    FontStyle(
+                                      family_ : MFString([SFString("SANS")]))))],
+                          child_ : 
+                            Shape(
+                              DEF_ : SFString('Walk_Back'),
+                              appearance_ : 
+                                Appearance(
+                                  material_ : 
+                                    Material(
+                                      USE_ : SFString('Clear'))),
+                              geometry_ : 
+                                IndexedFaceSet(
+                                  USE_ : SFString('Backing')))),
+
+                        Transform(
+                          DEF_ : SFString('Run_Text'),
+                          translation_ : SFVec3f([SFDouble(0), SFDouble(-8), SFDouble(0)]),
+                          children_ : [
+                            TouchSensor(
+                              DEF_ : SFString('Run_Touch')),
+                          child_ : 
+                            Shape(
+                              DEF_ : SFString('RunText'),
+                              appearance_ : 
+                                Appearance(
+                                  material_ : 
+                                    Material(
+                                      USE_ : SFString('text_color'))),
+                              geometry_ : 
+                                Text(
+                                  string_ : MFString([SFString("Run")]),
+                                  fontStyle_ : 
+                                    FontStyle(
+                                      family_ : MFString([SFString("SANS")]))))],
+                          child_ : 
+                            Shape(
+                              DEF_ : SFString('Run_Back'),
+                              appearance_ : 
+                                Appearance(
+                                  material_ : 
+                                    Material(
+                                      USE_ : SFString('Clear'))),
+                              geometry_ : 
+                                IndexedFaceSet(
+                                  USE_ : SFString('Backing')))),
+
+                        Transform(
+                          DEF_ : SFString('Jump_Text'),
+                          translation_ : SFVec3f([SFDouble(0), SFDouble(-9.4), SFDouble(0)]),
+                          children_ : [
+                            TouchSensor(
+                              DEF_ : SFString('Jump_Touch')),
+                          child_ : 
+                            Shape(
+                              DEF_ : SFString('JumpText'),
+                              appearance_ : 
+                                Appearance(
+                                  material_ : 
+                                    Material(
+                                      USE_ : SFString('text_color'))),
+                              geometry_ : 
+                                Text(
+                                  string_ : MFString([SFString("Jump")]),
+                                  fontStyle_ : 
+                                    FontStyle(
+                                      family_ : MFString([SFString("SANS")]))))],
+                          child_ : 
+                            Shape(
+                              DEF_ : SFString('Jump_Back'),
+                              appearance_ : 
+                                Appearance(
+                                  material_ : 
+                                    Material(
+                                      USE_ : SFString('Clear'))),
+                              geometry_ : 
+                                IndexedFaceSet(
+                                  USE_ : SFString('Backing')))),
+
+                        Transform(
+                          DEF_ : SFString('Kick_Text'),
+                          translation_ : SFVec3f([SFDouble(0), SFDouble(-10.8), SFDouble(0)]),
+                          children_ : [
+                            TouchSensor(
+                              DEF_ : SFString('Kick_Touch')),
+                          child_ : 
+                            Shape(
+                              DEF_ : SFString('KickText'),
+                              appearance_ : 
+                                Appearance(
+                                  material_ : 
+                                    Material(
+                                      USE_ : SFString('text_color'))),
+                              geometry_ : 
+                                Text(
+                                  string_ : MFString([SFString("Kick")]),
+                                  fontStyle_ : 
+                                    FontStyle(
+                                      family_ : MFString([SFString("SANS")]))))],
+                          child_ : 
+                            Shape(
+                              DEF_ : SFString('Kick_Back'),
+                              appearance_ : 
+                                Appearance(
+                                  material_ : 
+                                    Material(
+                                      USE_ : SFString('Clear'))),
+                              geometry_ : 
+                                IndexedFaceSet(
+                                  USE_ : SFString('Backing')))),
+
+                        Transform(
+                          DEF_ : SFString('Stop_Text'),
+                          translation_ : SFVec3f([SFDouble(0), SFDouble(0.4), SFDouble(0)]),
+                          children_ : [
+                            TouchSensor(
+                              DEF_ : SFString('Stop_Touch')),
+                          child_ : 
+                            Shape(
+                              DEF_ : SFString('StopText'),
+                              appearance_ : 
+                                Appearance(
+                                  material_ : 
+                                    Material(
+                                      USE_ : SFString('text_color'))),
+                              geometry_ : 
+                                Text(
+                                  string_ : MFString([SFString("Default")]),
+                                  fontStyle_ : 
+                                    FontStyle(
+                                      family_ : MFString([SFString("SANS")]))))],
+                          child_ : 
+                            Shape(
+                              DEF_ : SFString('Stop_Back'),
+                              appearance_ : 
+                                Appearance(
+                                  material_ : 
+                                    Material(
+                                      USE_ : SFString('Clear'))),
+                              geometry_ : 
+                                IndexedFaceSet(
+                                  USE_ : SFString('Backing')))),
+
+                        Transform(
+                          DEF_ : SFString('SceneLabel'),
+                          translation_ : SFVec3f([SFDouble(1.3), SFDouble(3), SFDouble(0)]),
+                          child_ : 
+                            Shape(
+                              DEF_ : SFString('SceneLabelText'),
+                              appearance_ : 
+                                Appearance(
+                                  material_ : 
+                                    Material(
+                                      USE_ : SFString('text_color'))),
+                              geometry_ : 
+                                Text(
+                                  string_ : MFString([SFString("BoxMan4"), SFString("Animation")]),
+                                  fontStyle_ : 
+                                    FontStyle(
+                                      family_ : MFString([SFString("SANS")]),
+                                      justify_ : MFString([SFString("MIDDLE"), SFString("MIDDLE")])))))])])]),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_humanoid_root_TranslationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_humanoid_root_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_sacroiliac_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_l_hip_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_l_knee_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_l_ankle_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_l_subtalar_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_l_midtarsal_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_l_metatarsal_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_r_hip_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_r_knee_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_r_ankle_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_r_subtalar_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_r_midtarsal_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_r_metatarsal_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_vl5_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_vl4_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_vl3_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_vl2_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_vl1_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_vt12_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_vt11_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_vt10_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_vt9_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_vt8_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_vt7_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_vt6_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_vt5_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_vt4_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_vt3_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_vt2_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_vt1_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_vc7_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_vc6_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_vc5_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_vc4_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_vc3_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_vc2_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_vc1_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_skullbase_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_l_eyeball_joint_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_r_eyeball_joint_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_l_sternoclavicular_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_l_acromioclavicular_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_l_shoulder_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_l_elbow_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_l_wrist_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_l_thumb1_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_l_thumb2_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_l_thumb3_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_l_index0_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_l_index1_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_l_index2_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_l_index3_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_l_middle0_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_l_middle1_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_l_middle2_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_l_middle3_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_l_ring0_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_l_ring1_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_l_ring2_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_l_ring3_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_l_pinky0_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_l_pinky1_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_l_pinky2_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_l_pinky3_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_r_sternoclavicular_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_r_acromioclavicular_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_r_shoulder_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_r_elbow_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_r_wrist_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_r_thumb1_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_r_thumb2_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_r_thumb3_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_r_index0_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_r_index1_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_r_index2_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_r_index3_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_r_middle0_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_r_middle1_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_r_middle2_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_r_middle3_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_r_ring0_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_r_ring1_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_r_ring2_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_r_ring3_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_r_pinky0_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_r_pinky1_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_r_pinky2_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StopTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stop_r_pinky3_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Stop_humanoid_root_TranslationInterpolator'),
+              toField_ : SFString('set_translation'),
+              toNode_ : SFString('hanim_humanoid_root')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Stop_humanoid_root_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_humanoid_root')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Stop_l_hip_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_l_hip')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Stop_l_knee_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_l_knee')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Stop_l_ankle_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_l_ankle')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Stop_l_midtarsal_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_l_midtarsal')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Stop_r_hip_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_r_hip')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Stop_r_knee_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_r_knee')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Stop_r_ankle_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_r_ankle')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Stop_r_midtarsal_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_r_midtarsal')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Stop_vl5_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_vl5')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Stop_skullbase_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_skullbase')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Stop_l_shoulder_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_l_shoulder')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Stop_l_elbow_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_l_elbow')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Stop_l_wrist_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_l_wrist')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Stop_r_shoulder_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_r_shoulder')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Stop_r_elbow_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_r_elbow')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Stop_r_wrist_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_r_wrist')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StandTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stand_r_ankle_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StandTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stand_r_knee_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StandTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stand_r_hip_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StandTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stand_l_ankle_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StandTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stand_l_knee_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StandTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stand_l_hip_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StandTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stand_lower_body_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StandTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stand_r_wrist_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StandTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stand_r_elbow_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StandTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stand_r_shoulder_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StandTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stand_l_wrist_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StandTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stand_l_elbow_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StandTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stand_l_shoulder_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StandTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stand_head_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StandTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stand_neck_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StandTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stand_l_eyeball_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StandTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stand_r_eyeball_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StandTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stand_upper_body_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StandTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stand_whole_body_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StandTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stand_whole_body_TranslationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StandTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stand_l_sternoclavicular_RollInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StandTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stand_l_acromioclavicular_RollInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StandTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stand_r_sternoclavicular_RollInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StandTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stand_r_acromioclavicular_RollInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StandTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stand_r_metatarsal_PitchInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StandTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stand_sacroiliac_YawInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StandTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stand_vl5_YawInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StandTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stand_vc6_YawInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StandTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stand_l_thumb1_PitchInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StandTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stand_r_thumb1_PitchInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StandTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stand_r_index1_RollInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StandTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stand_r_index2_RollInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('StandTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Stand_r_index3_RollInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Stand_r_ankle_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_r_ankle')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Stand_r_knee_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_r_knee')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Stand_r_hip_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_r_hip')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Stand_l_ankle_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_l_ankle')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Stand_l_knee_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_l_knee')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Stand_l_hip_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_l_hip')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Stand_r_wrist_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_r_wrist')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Stand_r_elbow_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_r_elbow')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Stand_r_shoulder_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_r_shoulder')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Stand_l_wrist_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_l_wrist')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Stand_l_elbow_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_l_elbow')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Stand_l_shoulder_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_l_shoulder')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Stand_head_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_skullbase')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Stand_whole_body_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_humanoid_root')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Stand_whole_body_TranslationInterpolator'),
+              toField_ : SFString('set_translation'),
+              toNode_ : SFString('hanim_humanoid_root')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Stand_vl5_YawInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_vl5')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('PitchTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Pitches_r_ankle_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('PitchTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Pitches_r_knee_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('PitchTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Pitches_r_hip_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('PitchTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Pitches_l_ankle_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('PitchTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Pitches_l_knee_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('PitchTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Pitches_l_hip_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('PitchTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Pitches_lower_body_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('PitchTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Pitches_r_wrist_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('PitchTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Pitches_r_elbow_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('PitchTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Pitches_r_shoulder_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('PitchTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Pitches_l_wrist_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('PitchTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Pitches_l_elbow_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('PitchTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Pitches_l_shoulder_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('PitchTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Pitches_head_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('PitchTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Pitches_neck_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('PitchTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Pitches_upper_body_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('PitchTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Pitches_whole_body_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('PitchTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Pitches_whole_body_TranslationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('PitchTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Pitch_l_sternoclavicular_RollInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('PitchTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Pitch_l_acromioclavicular_RollInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('PitchTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Pitch_r_sternoclavicular_RollInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('PitchTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Pitch_r_acromioclavicular_RollInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('PitchTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Pitch_r_metatarsal_PitchInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('PitchTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Pitch_sacroiliac_YawInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('PitchTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Pitch_vl5_YawInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('PitchTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Pitch_vc6_YawInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('PitchTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Pitch_l_thumb1_PitchInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('PitchTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Pitch_r_thumb1_PitchInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Pitches_r_ankle_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_r_ankle')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Pitches_r_knee_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_r_knee')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Pitches_r_hip_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_r_hip')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Pitches_l_ankle_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_l_ankle')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Pitches_l_knee_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_l_knee')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Pitches_l_hip_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_l_hip')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Pitches_r_wrist_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_r_wrist')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Pitches_r_elbow_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_r_elbow')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Pitches_r_shoulder_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_r_shoulder')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Pitches_l_wrist_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_l_wrist')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Pitches_l_elbow_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_l_elbow')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Pitches_l_shoulder_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_l_shoulder')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Pitches_head_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_skullbase')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Pitches_whole_body_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_humanoid_root')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Pitches_whole_body_TranslationInterpolator'),
+              toField_ : SFString('set_translation'),
+              toNode_ : SFString('hanim_humanoid_root')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Pitch_vl5_YawInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_vl5')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('YawTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Yaws_r_ankle_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('YawTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Yaws_r_knee_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('YawTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Yaws_r_hip_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('YawTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Yaws_l_ankle_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('YawTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Yaws_l_knee_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('YawTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Yaws_l_hip_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('YawTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Yaws_lower_body_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('YawTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Yaws_r_wrist_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('YawTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Yaws_r_elbow_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('YawTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Yaws_r_shoulder_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('YawTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Yaws_l_wrist_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('YawTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Yaws_l_elbow_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('YawTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Yaws_l_shoulder_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('YawTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Yaws_head_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('YawTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Yaws_neck_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('YawTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Yaws_upper_body_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('YawTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Yaws_whole_body_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('YawTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Yaws_whole_body_TranslationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('YawTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Yaw_l_sternoclavicular_RollInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('YawTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Yaw_l_acromioclavicular_RollInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('YawTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Yaw_r_sternoclavicular_RollInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('YawTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Yaw_r_acromioclavicular_RollInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('YawTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Yaw_r_metatarsal_PitchInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('YawTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Yaw_sacroiliac_YawInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('YawTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Yaw_vl5_YawInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('YawTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Yaw_vc6_YawInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('YawTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Yaw_l_thumb1_PitchInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('YawTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Yaw_r_thumb1_PitchInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Yaws_r_ankle_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_r_ankle')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Yaws_r_knee_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_r_knee')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Yaws_r_hip_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_r_hip')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Yaws_l_ankle_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_l_ankle')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Yaws_l_knee_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_l_knee')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Yaws_l_hip_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_l_hip')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Yaws_r_wrist_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_r_wrist')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Yaws_r_elbow_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_r_elbow')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Yaws_r_shoulder_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_r_shoulder')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Yaws_l_wrist_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_l_wrist')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Yaws_l_elbow_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_l_elbow')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Yaws_l_shoulder_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_l_shoulder')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Yaws_head_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_skullbase')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Yaws_whole_body_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_humanoid_root')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Yaws_whole_body_TranslationInterpolator'),
+              toField_ : SFString('set_translation'),
+              toNode_ : SFString('hanim_humanoid_root')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Yaw_vl5_YawInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_vl5')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('RollTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Rolls_r_ankle_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('RollTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Rolls_r_knee_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('RollTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Rolls_r_hip_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('RollTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Rolls_l_ankle_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('RollTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Rolls_l_knee_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('RollTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Rolls_l_hip_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('RollTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Rolls_lower_body_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('RollTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Rolls_r_wrist_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('RollTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Rolls_r_elbow_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('RollTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Rolls_r_shoulder_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('RollTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Rolls_l_wrist_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('RollTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Rolls_l_elbow_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('RollTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Rolls_l_shoulder_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('RollTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Rolls_head_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('RollTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Rolls_neck_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('RollTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Rolls_upper_body_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('RollTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Rolls_whole_body_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('RollTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Rolls_whole_body_TranslationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('RollTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Roll_l_sternoclavicular_RollInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('RollTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Roll_l_acromioclavicular_RollInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('RollTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Roll_r_sternoclavicular_RollInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('RollTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Roll_r_acromioclavicular_RollInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('RollTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Roll_r_metatarsal_PitchInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('RollTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Roll_sacroiliac_YawInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('RollTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Roll_vl5_YawInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('RollTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Roll_vc6_YawInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('RollTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Roll_l_thumb1_PitchInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('RollTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Roll_r_thumb1_PitchInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Rolls_r_ankle_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_r_ankle')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Rolls_r_knee_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_r_knee')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Rolls_r_hip_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_r_hip')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Rolls_l_ankle_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_l_ankle')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Rolls_l_knee_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_l_knee')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Rolls_l_hip_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_l_hip')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Rolls_r_wrist_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_r_wrist')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Rolls_r_elbow_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_r_elbow')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Rolls_r_shoulder_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_r_shoulder')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Rolls_l_wrist_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_l_wrist')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Rolls_l_elbow_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_l_elbow')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Rolls_l_shoulder_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_l_shoulder')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Rolls_head_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_skullbase')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Rolls_whole_body_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_humanoid_root')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Rolls_whole_body_TranslationInterpolator'),
+              toField_ : SFString('set_translation'),
+              toNode_ : SFString('hanim_humanoid_root')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Roll_vl5_YawInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_vl5')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('WalkTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Walk_r_ankle_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('WalkTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Walk_r_knee_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('WalkTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Walk_r_hip_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('WalkTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Walk_l_ankle_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('WalkTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Walk_l_knee_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('WalkTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Walk_l_hip_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('WalkTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Walk_lower_body_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('WalkTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Walk_r_wrist_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('WalkTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Walk_r_elbow_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('WalkTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Walk_r_shoulder_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('WalkTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Walk_l_wrist_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('WalkTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Walk_l_elbow_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('WalkTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Walk_l_shoulder_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('WalkTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Walk_head_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('WalkTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Walk_neck_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('WalkTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Walk_upper_body_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('WalkTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Walk_whole_body_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('WalkTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Walk_whole_body_TranslationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('WalkTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Walk_l_sternoclavicular_RollInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('WalkTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Walk_l_acromioclavicular_RollInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('WalkTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Walk_r_sternoclavicular_RollInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('WalkTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Walk_r_acromioclavicular_RollInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('WalkTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Walk_r_metatarsal_PitchInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('WalkTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Walk_sacroiliac_YawInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('WalkTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Walk_vl5_YawInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('WalkTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Walk_vc6_YawInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('WalkTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Walk_l_thumb1_PitchInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('WalkTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Walk_r_thumb1_PitchInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Walk_r_ankle_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_r_ankle')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Walk_r_knee_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_r_knee')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Walk_r_hip_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_r_hip')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Walk_l_ankle_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_l_ankle')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Walk_l_knee_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_l_knee')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Walk_l_hip_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_l_hip')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Walk_r_wrist_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_r_wrist')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Walk_r_elbow_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_r_elbow')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Walk_r_shoulder_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_r_shoulder')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Walk_l_wrist_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_l_wrist')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Walk_l_elbow_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_l_elbow')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Walk_l_shoulder_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_l_shoulder')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Walk_head_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_skullbase')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Walk_whole_body_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_humanoid_root')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Walk_whole_body_TranslationInterpolator'),
+              toField_ : SFString('set_translation'),
+              toNode_ : SFString('hanim_humanoid_root')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Walk_vl5_YawInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_vl5')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('RunTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Run_r_ankle_RotationInterpolator_Run')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('RunTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Run_r_knee_RotationInterpolator_Run')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('RunTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Run_r_hip_RotationInterpolator_Run')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('RunTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Run_l_ankle_RotationInterpolator_Run')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('RunTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Run_l_knee_RotationInterpolator_Run')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('RunTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Run_l_hip_RotationInterpolator_Run')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('RunTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Run_lower_body_RotationInterpolator_Run')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('RunTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Run_r_wrist_RotationInterpolator_Run')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('RunTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Run_r_elbow_RotationInterpolator_Run')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('RunTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Run_r_shoulder_RotationInterpolator_Run')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('RunTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Run_l_wrist_RotationInterpolator_Run')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('RunTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Run_l_elbow_RotationInterpolator_Run')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('RunTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Run_l_shoulder_RotationInterpolator_Run')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('RunTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Run_head_RotationInterpolator_Run')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('RunTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Run_neck_RotationInterpolator_Run')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('RunTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Run_upper_body_RotationInterpolator_Run')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('RunTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Run_whole_body_RotationInterpolator_Run')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('RunTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Run_whole_body_TranslationInterpolator_Run')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('RunTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Run_l_sternoclavicular_RollInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('RunTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Run_l_acromioclavicular_RollInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('RunTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Run_r_sternoclavicular_RollInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('RunTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Run_r_acromioclavicular_RollInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('RunTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Run_r_metatarsal_PitchInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('RunTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Run_sacroiliac_YawInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('RunTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Run_vl5_YawInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('RunTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Run_vc6_YawInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('RunTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Run_l_thumb1_PitchInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('RunTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Run_r_thumb1_PitchInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Run_r_ankle_RotationInterpolator_Run'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_r_ankle')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Run_r_knee_RotationInterpolator_Run'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_r_knee')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Run_r_hip_RotationInterpolator_Run'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_r_hip')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Run_l_ankle_RotationInterpolator_Run'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_l_ankle')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Run_l_knee_RotationInterpolator_Run'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_l_knee')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Run_l_hip_RotationInterpolator_Run'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_l_hip')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Run_r_wrist_RotationInterpolator_Run'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_r_wrist')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Run_r_elbow_RotationInterpolator_Run'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_r_elbow')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Run_r_shoulder_RotationInterpolator_Run'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_r_shoulder')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Run_l_wrist_RotationInterpolator_Run'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_l_wrist')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Run_l_elbow_RotationInterpolator_Run'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_l_elbow')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Run_l_shoulder_RotationInterpolator_Run'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_l_shoulder')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Run_head_RotationInterpolator_Run'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_skullbase')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Run_whole_body_RotationInterpolator_Run'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_humanoid_root')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Run_whole_body_TranslationInterpolator_Run'),
+              toField_ : SFString('set_translation'),
+              toNode_ : SFString('hanim_humanoid_root')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Run_vl5_YawInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_vl5')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('JumpTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Jump_r_ankle_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('JumpTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Jump_r_knee_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('JumpTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Jump_r_hip_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('JumpTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Jump_l_ankle_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('JumpTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Jump_l_knee_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('JumpTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Jump_l_hip_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('JumpTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Jump_lower_body_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('JumpTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Jump_r_wrist_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('JumpTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Jump_r_elbow_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('JumpTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Jump_r_shoulder_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('JumpTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Jump_l_wrist_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('JumpTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Jump_l_elbow_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('JumpTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Jump_l_shoulder_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('JumpTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Jump_head_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('JumpTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Jump_neck_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('JumpTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Jump_upper_body_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('JumpTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Jump_whole_body_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('JumpTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Jump_whole_body_TranslationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('JumpTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Jump_l_sternoclavicular_RollInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('JumpTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Jump_l_acromioclavicular_RollInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('JumpTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Jump_r_sternoclavicular_RollInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('JumpTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Jump_r_acromioclavicular_RollInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('JumpTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Jump_r_metatarsal_PitchInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('JumpTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Jump_sacroiliac_YawInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('JumpTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Jump_vl5_YawInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('JumpTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Jump_vc6_YawInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('JumpTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Jump_l_thumb1_PitchInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('JumpTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Jump_r_thumb1_PitchInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Jump_r_ankle_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_r_ankle')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Jump_r_knee_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_r_knee')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Jump_r_hip_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_r_hip')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Jump_l_ankle_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_l_ankle')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Jump_l_knee_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_l_knee')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Jump_l_hip_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_l_hip')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Jump_r_wrist_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_r_wrist')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Jump_r_elbow_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_r_elbow')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Jump_r_shoulder_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_r_shoulder')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Jump_l_wrist_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_l_wrist')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Jump_l_elbow_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_l_elbow')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Jump_l_shoulder_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_l_shoulder')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Jump_head_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_skullbase')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Jump_whole_body_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_humanoid_root')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Jump_whole_body_TranslationInterpolator'),
+              toField_ : SFString('set_translation'),
+              toNode_ : SFString('hanim_humanoid_root')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Jump_vl5_YawInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_vl5')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('KickTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Kick_l_sternoclavicular_RollInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('KickTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Kick_l_acromioclavicular_RollInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('KickTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Kick_l_shoulder_RollInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('KickTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Kick_l_ForeArm_PitchInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('KickTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Kick_l_wrist_RollInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('KickTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Kick_l_thumb1_PitchInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('KickTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Kick_r_sternoclavicular_RollInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('KickTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Kick_r_acromioclavicular_RollInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('KickTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Kick_r_shoulder_RollInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('KickTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Kick_r_ForeArm_PitchInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('KickTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Kick_r_wrist_RollInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('KickTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Kick_r_thumb1_PitchInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('KickTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Kick_r_hip_PitchInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('KickTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Kick_r_knee_PitchInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('KickTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Kick_l_hip_PitchInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('KickTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Kick_l_knee_PitchInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('KickTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Kick_r_ankle_PitchInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('KickTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Kick_r_metatarsal_PitchInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('KickTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Kick_sacroiliac_YawInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('KickTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Kick_vl5_YawInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('KickTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Kick_vc6_YawInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('KickTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Kick_lower_body_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('KickTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Kick_upper_body_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('KickTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Kick_whole_body_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('KickTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Kick_whole_body_TranslationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('fraction_changed'),
+              fromNode_ : SFString('KickTimer'),
+              toField_ : SFString('set_fraction'),
+              toNode_ : SFString('Kick_neck_RotationInterpolator')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Kick_l_shoulder_RollInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_l_shoulder')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Kick_l_ForeArm_PitchInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_l_elbow')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Kick_l_wrist_RollInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_l_wrist')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Kick_r_shoulder_RollInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_r_shoulder')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Kick_r_ForeArm_PitchInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_r_elbow')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Kick_r_wrist_RollInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_r_wrist')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Kick_r_hip_PitchInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_r_hip')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Kick_r_knee_PitchInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_r_knee')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Kick_r_ankle_PitchInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_r_ankle')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Kick_l_hip_PitchInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_l_hip')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Kick_l_knee_PitchInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_l_knee')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Kick_r_ankle_PitchInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_l_ankle')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Kick_vl5_YawInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_vl5')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Kick_whole_body_RotationInterpolator'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('hanim_humanoid_root')),
+
+            ROUTE(
+              fromField_ : SFString('value_changed'),
+              fromNode_ : SFString('Kick_whole_body_TranslationInterpolator'),
+              toField_ : SFString('set_translation'),
+              toNode_ : SFString('hanim_humanoid_root')),
+
+            ROUTE(
+              fromField_ : SFString('position_changed'),
+              fromNode_ : SFString('HudProx'),
+              toField_ : SFString('set_translation'),
+              toNode_ : SFString('HudXform')),
+
+            ROUTE(
+              fromField_ : SFString('orientation_changed'),
+              fromNode_ : SFString('HudProx'),
+              toField_ : SFString('set_rotation'),
+              toNode_ : SFString('HudXform')),
+
+            ROUTE(
+              fromField_ : SFString('touchTime'),
+              fromNode_ : SFString('Stand_Touch'),
+              toField_ : SFString('set_stopTime'),
+              toNode_ : SFString('PitchTimer')),
+
+            ROUTE(
+              fromField_ : SFString('touchTime'),
+              fromNode_ : SFString('Stand_Touch'),
+              toField_ : SFString('set_stopTime'),
+              toNode_ : SFString('YawTimer')),
+
+            ROUTE(
+              fromField_ : SFString('touchTime'),
+              fromNode_ : SFString('Stand_Touch'),
+              toField_ : SFString('set_stopTime'),
+              toNode_ : SFString('RollTimer')),
+
+            ROUTE(
+              fromField_ : SFString('touchTime'),
+              fromNode_ : SFString('Stand_Touch'),
+              toField_ : SFString('set_stopTime'),
+              toNode_ : SFString('WalkTimer')),
+
+            ROUTE(
+              fromField_ : SFString('touchTime'),
+              fromNode_ : SFString('Stand_Touch'),
+              toField_ : SFString('set_stopTime'),
+              toNode_ : SFString('RunTimer')),
+
+            ROUTE(
+              fromField_ : SFString('touchTime'),
+              fromNode_ : SFString('Stand_Touch'),
+              toField_ : SFString('set_stopTime'),
+              toNode_ : SFString('JumpTimer')),
+
+            ROUTE(
+              fromField_ : SFString('touchTime'),
+              fromNode_ : SFString('Stand_Touch'),
+              toField_ : SFString('set_stopTime'),
+              toNode_ : SFString('KickTimer')),
+
+            ROUTE(
+              fromField_ : SFString('touchTime'),
+              fromNode_ : SFString('Stand_Touch'),
+              toField_ : SFString('set_stopTime'),
+              toNode_ : SFString('StopTimer')),
+
+            ROUTE(
+              fromField_ : SFString('touchTime'),
+              fromNode_ : SFString('Stand_Touch'),
+              toField_ : SFString('set_startTime'),
+              toNode_ : SFString('StandTimer')),
+
+            ROUTE(
+              fromField_ : SFString('touchTime'),
+              fromNode_ : SFString('Pitch_Touch'),
+              toField_ : SFString('set_stopTime'),
+              toNode_ : SFString('StandTimer')),
+
+            ROUTE(
+              fromField_ : SFString('touchTime'),
+              fromNode_ : SFString('Pitch_Touch'),
+              toField_ : SFString('set_stopTime'),
+              toNode_ : SFString('YawTimer')),
+
+            ROUTE(
+              fromField_ : SFString('touchTime'),
+              fromNode_ : SFString('Pitch_Touch'),
+              toField_ : SFString('set_stopTime'),
+              toNode_ : SFString('RollTimer')),
+
+            ROUTE(
+              fromField_ : SFString('touchTime'),
+              fromNode_ : SFString('Pitch_Touch'),
+              toField_ : SFString('set_stopTime'),
+              toNode_ : SFString('WalkTimer')),
+
+            ROUTE(
+              fromField_ : SFString('touchTime'),
+              fromNode_ : SFString('Pitch_Touch'),
+              toField_ : SFString('set_stopTime'),
+              toNode_ : SFString('RunTimer')),
+
+            ROUTE(
+              fromField_ : SFString('touchTime'),
+              fromNode_ : SFString('Pitch_Touch'),
+              toField_ : SFString('set_stopTime'),
+              toNode_ : SFString('JumpTimer')),
+
+            ROUTE(
+              fromField_ : SFString('touchTime'),
+              fromNode_ : SFString('Pitch_Touch'),
+              toField_ : SFString('set_stopTime'),
+              toNode_ : SFString('KickTimer')),
+
+            ROUTE(
+              fromField_ : SFString('touchTime'),
+              fromNode_ : SFString('Pitch_Touch'),
+              toField_ : SFString('set_stopTime'),
+              toNode_ : SFString('StopTimer')),
+
+            ROUTE(
+              fromField_ : SFString('touchTime'),
+              fromNode_ : SFString('Pitch_Touch'),
+              toField_ : SFString('set_startTime'),
+              toNode_ : SFString('PitchTimer')),
+
+            ROUTE(
+              fromField_ : SFString('touchTime'),
+              fromNode_ : SFString('Yaw_Touch'),
+              toField_ : SFString('set_stopTime'),
+              toNode_ : SFString('StandTimer')),
+
+            ROUTE(
+              fromField_ : SFString('touchTime'),
+              fromNode_ : SFString('Yaw_Touch'),
+              toField_ : SFString('set_stopTime'),
+              toNode_ : SFString('PitchTimer')),
+
+            ROUTE(
+              fromField_ : SFString('touchTime'),
+              fromNode_ : SFString('Yaw_Touch'),
+              toField_ : SFString('set_stopTime'),
+              toNode_ : SFString('RollTimer')),
+
+            ROUTE(
+              fromField_ : SFString('touchTime'),
+              fromNode_ : SFString('Yaw_Touch'),
+              toField_ : SFString('set_stopTime'),
+              toNode_ : SFString('WalkTimer')),
+
+            ROUTE(
+              fromField_ : SFString('touchTime'),
+              fromNode_ : SFString('Yaw_Touch'),
+              toField_ : SFString('set_stopTime'),
+              toNode_ : SFString('RunTimer')),
+
+            ROUTE(
+              fromField_ : SFString('touchTime'),
+              fromNode_ : SFString('Yaw_Touch'),
+              toField_ : SFString('set_stopTime'),
+              toNode_ : SFString('JumpTimer')),
+
+            ROUTE(
+              fromField_ : SFString('touchTime'),
+              fromNode_ : SFString('Yaw_Touch'),
+              toField_ : SFString('set_stopTime'),
+              toNode_ : SFString('KickTimer')),
+
+            ROUTE(
+              fromField_ : SFString('touchTime'),
+              fromNode_ : SFString('Yaw_Touch'),
+              toField_ : SFString('set_stopTime'),
+              toNode_ : SFString('StopTimer')),
+
+            ROUTE(
+              fromField_ : SFString('touchTime'),
+              fromNode_ : SFString('Yaw_Touch'),
+              toField_ : SFString('set_startTime'),
+              toNode_ : SFString('YawTimer')),
+
+            ROUTE(
+              fromField_ : SFString('touchTime'),
+              fromNode_ : SFString('Walk_Touch'),
+              toField_ : SFString('set_stopTime'),
+              toNode_ : SFString('StandTimer')),
+
+            ROUTE(
+              fromField_ : SFString('touchTime'),
+              fromNode_ : SFString('Walk_Touch'),
+              toField_ : SFString('set_stopTime'),
+              toNode_ : SFString('PitchTimer')),
+
+            ROUTE(
+              fromField_ : SFString('touchTime'),
+              fromNode_ : SFString('Walk_Touch'),
+              toField_ : SFString('set_stopTime'),
+              toNode_ : SFString('YawTimer')),
+
+            ROUTE(
+              fromField_ : SFString('touchTime'),
+              fromNode_ : SFString('Walk_Touch'),
+              toField_ : SFString('set_stopTime'),
+              toNode_ : SFString('RollTimer')),
+
+            ROUTE(
+              fromField_ : SFString('touchTime'),
+              fromNode_ : SFString('Walk_Touch'),
+              toField_ : SFString('set_stopTime'),
+              toNode_ : SFString('RunTimer')),
+
+            ROUTE(
+              fromField_ : SFString('touchTime'),
+              fromNode_ : SFString('Walk_Touch'),
+              toField_ : SFString('set_stopTime'),
+              toNode_ : SFString('JumpTimer')),
+
+            ROUTE(
+              fromField_ : SFString('touchTime'),
+              fromNode_ : SFString('Walk_Touch'),
+              toField_ : SFString('set_stopTime'),
+              toNode_ : SFString('KickTimer')),
+
+            ROUTE(
+              fromField_ : SFString('touchTime'),
+              fromNode_ : SFString('Walk_Touch'),
+              toField_ : SFString('set_stopTime'),
+              toNode_ : SFString('StopTimer')),
+
+            ROUTE(
+              fromField_ : SFString('touchTime'),
+              fromNode_ : SFString('Walk_Touch'),
+              toField_ : SFString('set_startTime'),
+              toNode_ : SFString('WalkTimer')),
+
+            ROUTE(
+              fromField_ : SFString('touchTime'),
+              fromNode_ : SFString('Roll_Touch'),
+              toField_ : SFString('set_stopTime'),
+              toNode_ : SFString('StandTimer')),
+
+            ROUTE(
+              fromField_ : SFString('touchTime'),
+              fromNode_ : SFString('Roll_Touch'),
+              toField_ : SFString('set_stopTime'),
+              toNode_ : SFString('PitchTimer')),
+
+            ROUTE(
+              fromField_ : SFString('touchTime'),
+              fromNode_ : SFString('Roll_Touch'),
+              toField_ : SFString('set_stopTime'),
+              toNode_ : SFString('YawTimer')),
+
+            ROUTE(
+              fromField_ : SFString('touchTime'),
+              fromNode_ : SFString('Roll_Touch'),
+              toField_ : SFString('set_stopTime'),
+              toNode_ : SFString('WalkTimer')),
+
+            ROUTE(
+              fromField_ : SFString('touchTime'),
+              fromNode_ : SFString('Roll_Touch'),
+              toField_ : SFString('set_stopTime'),
+              toNode_ : SFString('RunTimer')),
+
+            ROUTE(
+              fromField_ : SFString('touchTime'),
+              fromNode_ : SFString('Roll_Touch'),
+              toField_ : SFString('set_stopTime'),
+              toNode_ : SFString('JumpTimer')),
+
+            ROUTE(
+              fromField_ : SFString('touchTime'),
+              fromNode_ : SFString('Roll_Touch'),
+              toField_ : SFString('set_stopTime'),
+              toNode_ : SFString('KickTimer')),
+
+            ROUTE(
+              fromField_ : SFString('touchTime'),
+              fromNode_ : SFString('Roll_Touch'),
+              toField_ : SFString('set_stopTime'),
+              toNode_ : SFString('StopTimer')),
+
+            ROUTE(
+              fromField_ : SFString('touchTime'),
+              fromNode_ : SFString('Roll_Touch'),
+              toField_ : SFString('set_startTime'),
+              toNode_ : SFString('RollTimer')),
+
+            ROUTE(
+              fromField_ : SFString('touchTime'),
+              fromNode_ : SFString('Run_Touch'),
+              toField_ : SFString('set_stopTime'),
+              toNode_ : SFString('StandTimer')),
+
+            ROUTE(
+              fromField_ : SFString('touchTime'),
+              fromNode_ : SFString('Run_Touch'),
+              toField_ : SFString('set_stopTime'),
+              toNode_ : SFString('PitchTimer')),
+
+            ROUTE(
+              fromField_ : SFString('touchTime'),
+              fromNode_ : SFString('Run_Touch'),
+              toField_ : SFString('set_stopTime'),
+              toNode_ : SFString('YawTimer')),
+
+            ROUTE(
+              fromField_ : SFString('touchTime'),
+              fromNode_ : SFString('Run_Touch'),
+              toField_ : SFString('set_stopTime'),
+              toNode_ : SFString('RollTimer')),
+
+            ROUTE(
+              fromField_ : SFString('touchTime'),
+              fromNode_ : SFString('Run_Touch'),
+              toField_ : SFString('set_stopTime'),
+              toNode_ : SFString('WalkTimer')),
+
+            ROUTE(
+              fromField_ : SFString('touchTime'),
+              fromNode_ : SFString('Run_Touch'),
+              toField_ : SFString('set_stopTime'),
+              toNode_ : SFString('JumpTimer')),
+
+            ROUTE(
+              fromField_ : SFString('touchTime'),
+              fromNode_ : SFString('Run_Touch'),
+              toField_ : SFString('set_stopTime'),
+              toNode_ : SFString('KickTimer')),
+
+            ROUTE(
+              fromField_ : SFString('touchTime'),
+              fromNode_ : SFString('Run_Touch'),
+              toField_ : SFString('set_stopTime'),
+              toNode_ : SFString('StopTimer')),
+
+            ROUTE(
+              fromField_ : SFString('touchTime'),
+              fromNode_ : SFString('Run_Touch'),
+              toField_ : SFString('set_startTime'),
+              toNode_ : SFString('RunTimer')),
+
+            ROUTE(
+              fromField_ : SFString('touchTime'),
+              fromNode_ : SFString('Jump_Touch'),
+              toField_ : SFString('set_stopTime'),
+              toNode_ : SFString('StandTimer')),
+
+            ROUTE(
+              fromField_ : SFString('touchTime'),
+              fromNode_ : SFString('Jump_Touch'),
+              toField_ : SFString('set_stopTime'),
+              toNode_ : SFString('PitchTimer')),
+
+            ROUTE(
+              fromField_ : SFString('touchTime'),
+              fromNode_ : SFString('Jump_Touch'),
+              toField_ : SFString('set_stopTime'),
+              toNode_ : SFString('YawTimer')),
+
+            ROUTE(
+              fromField_ : SFString('touchTime'),
+              fromNode_ : SFString('Jump_Touch'),
+              toField_ : SFString('set_stopTime'),
+              toNode_ : SFString('RollTimer')),
+
+            ROUTE(
+              fromField_ : SFString('touchTime'),
+              fromNode_ : SFString('Jump_Touch'),
+              toField_ : SFString('set_stopTime'),
+              toNode_ : SFString('WalkTimer')),
+
+            ROUTE(
+              fromField_ : SFString('touchTime'),
+              fromNode_ : SFString('Jump_Touch'),
+              toField_ : SFString('set_stopTime'),
+              toNode_ : SFString('RunTimer')),
+
+            ROUTE(
+              fromField_ : SFString('touchTime'),
+              fromNode_ : SFString('Jump_Touch'),
+              toField_ : SFString('set_stopTime'),
+              toNode_ : SFString('KickTimer')),
+
+            ROUTE(
+              fromField_ : SFString('touchTime'),
+              fromNode_ : SFString('Jump_Touch'),
+              toField_ : SFString('set_stopTime'),
+              toNode_ : SFString('StopTimer')),
+
+            ROUTE(
+              fromField_ : SFString('touchTime'),
+              fromNode_ : SFString('Jump_Touch'),
+              toField_ : SFString('set_startTime'),
+              toNode_ : SFString('JumpTimer')),
+
+            ROUTE(
+              fromField_ : SFString('touchTime'),
+              fromNode_ : SFString('Kick_Touch'),
+              toField_ : SFString('set_stopTime'),
+              toNode_ : SFString('StandTimer')),
+
+            ROUTE(
+              fromField_ : SFString('touchTime'),
+              fromNode_ : SFString('Kick_Touch'),
+              toField_ : SFString('set_stopTime'),
+              toNode_ : SFString('PitchTimer')),
+
+            ROUTE(
+              fromField_ : SFString('touchTime'),
+              fromNode_ : SFString('Kick_Touch'),
+              toField_ : SFString('set_stopTime'),
+              toNode_ : SFString('YawTimer')),
+
+            ROUTE(
+              fromField_ : SFString('touchTime'),
+              fromNode_ : SFString('Kick_Touch'),
+              toField_ : SFString('set_stopTime'),
+              toNode_ : SFString('RollTimer')),
+
+            ROUTE(
+              fromField_ : SFString('touchTime'),
+              fromNode_ : SFString('Kick_Touch'),
+              toField_ : SFString('set_stopTime'),
+              toNode_ : SFString('WalkTimer')),
+
+            ROUTE(
+              fromField_ : SFString('touchTime'),
+              fromNode_ : SFString('Kick_Touch'),
+              toField_ : SFString('set_stopTime'),
+              toNode_ : SFString('RunTimer')),
+
+            ROUTE(
+              fromField_ : SFString('touchTime'),
+              fromNode_ : SFString('Kick_Touch'),
+              toField_ : SFString('set_stopTime'),
+              toNode_ : SFString('JumpTimer')),
+
+            ROUTE(
+              fromField_ : SFString('touchTime'),
+              fromNode_ : SFString('Kick_Touch'),
+              toField_ : SFString('set_stopTime'),
+              toNode_ : SFString('StopTimer')),
+
+            ROUTE(
+              fromField_ : SFString('touchTime'),
+              fromNode_ : SFString('Kick_Touch'),
+              toField_ : SFString('set_startTime'),
+              toNode_ : SFString('KickTimer')),
+
+            ROUTE(
+              fromField_ : SFString('touchTime'),
+              fromNode_ : SFString('Stop_Touch'),
+              toField_ : SFString('set_stopTime'),
+              toNode_ : SFString('StandTimer')),
+
+            ROUTE(
+              fromField_ : SFString('touchTime'),
+              fromNode_ : SFString('Stop_Touch'),
+              toField_ : SFString('set_stopTime'),
+              toNode_ : SFString('PitchTimer')),
+
+            ROUTE(
+              fromField_ : SFString('touchTime'),
+              fromNode_ : SFString('Stop_Touch'),
+              toField_ : SFString('set_stopTime'),
+              toNode_ : SFString('YawTimer')),
+
+            ROUTE(
+              fromField_ : SFString('touchTime'),
+              fromNode_ : SFString('Stop_Touch'),
+              toField_ : SFString('set_stopTime'),
+              toNode_ : SFString('RollTimer')),
+
+            ROUTE(
+              fromField_ : SFString('touchTime'),
+              fromNode_ : SFString('Stop_Touch'),
+              toField_ : SFString('set_stopTime'),
+              toNode_ : SFString('WalkTimer')),
+
+            ROUTE(
+              fromField_ : SFString('touchTime'),
+              fromNode_ : SFString('Stop_Touch'),
+              toField_ : SFString('set_stopTime'),
+              toNode_ : SFString('RunTimer')),
+
+            ROUTE(
+              fromField_ : SFString('touchTime'),
+              fromNode_ : SFString('Stop_Touch'),
+              toField_ : SFString('set_stopTime'),
+              toNode_ : SFString('JumpTimer')),
+
+            ROUTE(
+              fromField_ : SFString('touchTime'),
+              fromNode_ : SFString('Stop_Touch'),
+              toField_ : SFString('set_stopTime'),
+              toNode_ : SFString('KickTimer')),
+
+            ROUTE(
+              fromField_ : SFString('touchTime'),
+              fromNode_ : SFString('Stop_Touch'),
+              toField_ : SFString('set_startTime'),
+              toNode_ : SFString('StopTimer'))]));
 void main() { exit(0); }

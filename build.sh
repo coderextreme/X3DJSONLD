@@ -1,7 +1,7 @@
 #!/bin/bash
 
 export PATH=${PATH}:~/apache-maven-3.6.3/bin:~/apache-ant-1.10.9/bin
-export MAVEN_OPTS="-Xmx16g -XX:MaxPermSize=128m"
+export MAVEN_OPTS="-Xmx16g" # " -XX:MaxPermSize=128m"
 export JAVA_HOME="C:/Users/john/Downloads/openjdk-21_windows-x64_bin/jdk-21"
 # export PYTHONPATH=${PYTHONPATH}:/usr/lib/python3/dist-packages/pkg_resources/:/usr/lib/python3/dist-packages
 # source venv/Scripts/activate

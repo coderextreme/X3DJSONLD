@@ -469,7 +469,7 @@ function proxySetAction(fromNode, fromField, toNode, toField, property, value) {
 	debug("property is "+property);
 	var toProperty = MFStringToProperty(toField);
 	debug("toProperty is "+toProperty);
-	if (toNode == fromNode && fromField == toField) {
+	if (toNode === fromNode && fromField === toField) {
 		warning("We don't need to set the same value twice!");
 	} else {
 		setInternalField(toNode, toProperty, value);

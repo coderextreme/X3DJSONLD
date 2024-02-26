@@ -7898,6 +7898,6551 @@ HAnimHumanoid23->setSegments(*HAnimSegment1782);
 
 group->addChildren(*HAnimHumanoid23);
 
+CScript* Script1783 = (CScript *)(m_pScene.createNode("Script"));
+Cfield* field1784 = new Cfield();
+field1784->setName("dummy");
+field1784->setType("MFInt32");
+field1784->setAccessType("initializeOnly");
+field1784->setValue("0");
+Script1783->addField(*field1784);
+
+
+Script1783.setSourceCode(`ecmascript:\n"+
+"	function HAnimScale() {\n"+
+"            this.x = 0;\n"+
+"            this.y = 0;\n"+
+"            this.l_x = 0;\n"+
+"            this.l_z = 0;\n"+
+"            this.r_x = 0;\n"+
+"            this.r_z = 0;\n"+
+"            this.maxy = 0;\n"+
+"            this.z = 0;\n"+
+"            this.scale = [1, 1, 1];\n"+
+"            this.yscale = 1;\n"+
+"            this.X3D0 = document.querySelector(\"X3D\");\n"+
+"            this.humanoids = [];\n"+
+"            this.traverseChildrenSceneGraph(X3D.Scene.children, humanoids);\n"+
+"            for (let h = 0; h < humanoids.length; h++) {\n"+
+"                    let humanoid = humanoids[h];\n"+
+"                    this.scale = humanoid.getScale();\n"+
+"                    humanoid.setScale([ 1, 1, 1 ]);\n"+
+"                    let root = humanoid.skeleton;\n"+
+"                    let center = root.center;\n"+
+"                    this.x = center[0];\n"+
+"                    this.y = center[1];\n"+
+"                    this.maxy = center[1];\n"+
+"                    this.z = center[2];\n"+
+"                    let translation = [0, 0, 0];\n"+
+"                    this.centering(root);\n"+
+"                    this.x = (this.l_x + this.r_x) / 2;\n"+
+"                    this.z = (this.l_z + this.r_z) / 2;\n"+
+"                    this.yscale = this.maxy - this.y;\n"+
+"                    this.transform(root, translation);\n"+
+"                    this.x = 0;\n"+
+"                    this.y = 0;\n"+
+"                    this.l_x = 0;\n"+
+"                    this.l_z = 0;\n"+
+"                    this.r_x = 0;\n"+
+"                    this.r_z = 0;\n"+
+"                    this.maxy = 0;\n"+
+"                    this.z = 0;\n"+
+"                    this.scale = [ 1, 1, 1 ];\n"+
+"                    this.yscale = 1;\n"+
+"            }\n"+
+"            this.humanoids = [];\n"+
+"    }\n"+
+"\n"+
+"    HAnimScale.prototype = {\n"+
+"        traverseChildrenSceneGraph: function(children, humanoids) {\n"+
+"                if (children !== null) {\n"+
+"                        for (let ch = 0; ch < children.length; ch++) {\n"+
+"                                let child = children[ch];\n"+
+"                                if (!this.traverseChildSceneGraph(child, humanoids)) {\n"+
+"                                        console.error(\"Unpacking child in\", child, \"failed\");\n"+
+"                                }\n"+
+"                        }\n"+
+"                        return true;\n"+
+"                }\n"+
+"                return false;\n"+
+"        },\n"+
+"\n"+
+"        traverseChildSceneGraph: function(child, humanoids) {\n"+
+"                let children = null;\n"+
+"                if (typeof child === 'HAnimJoint') {\n"+
+"                        let joint = child;\n"+
+"                        let children = joint.getChildrenList();\n"+
+"                        this.traverseChildrenSceneGraph(children, humanoids);\n"+
+"                } else if (typeof child === 'HAnimSite') {\n"+
+"                        let site = child;\n"+
+"                        let children = site.getChildrenList();\n"+
+"                        this.traverseChildrenSceneGraph(children, humanoids);\n"+
+"                } else if (typeof child === 'HAnimSegment') {\n"+
+"                        let segment = child;\n"+
+"                        let children = segment.getChildrenList();\n"+
+"                        this.traverseChildrenSceneGraph(children, humanoids);\n"+
+"                } else if (typeof child === 'Group') {\n"+
+"                        let group = child;\n"+
+"                        let children = group.getChildrenList();\n"+
+"                        this.traverseChildrenSceneGraph(children, humanoids);\n"+
+"                } else if (typeof child === 'Transform') {\n"+
+"                        let trans = child;\n"+
+"                        let children = trans.getChildrenList();\n"+
+"                        this.traverseChildrenSceneGraph(children, humanoids);\n"+
+"                } else if (typeof child === 'Shape') {\n"+
+"                        let shape = child;\n"+
+"                        let appearance = shape.getAppearance();\n"+
+"                        if (!this.traverseChildSceneGraph(appearance, humanoids)) {\n"+
+"                                console.error(\"Unpacking appearance in Shape failed\");\n"+
+"                        }\n"+
+"                        let geometry = shape.getGeometry();\n"+
+"                        if (!this.traverseChildSceneGraph(geometry, humanoids)) {\n"+
+"                                console.error(\"Unpacking geometry in Shape failed\");\n"+
+"                        }\n"+
+"                } else if (typeof child === 'IndexedFaceSet') {\n"+
+"                        let ifs = child;\n"+
+"                        let coord = ifs.getCoord();\n"+
+"                        if (!this.traverseChildSceneGraph(coord, humanoids)) {\n"+
+"                                console.error(\"Unpacking coord in IndexedFaceSet failed\");\n"+
+"                        }\n"+
+"                } else if (typeof child === 'Appearance') {\n"+
+"                } else if (typeof child === 'Coordinate') {\n"+
+"                } else if (typeof child === 'WorldInfo') {\n"+
+"                } else if (typeof child === 'NavigationInfo') {\n"+
+"                } else if (typeof child === 'Viewpoint') {\n"+
+"                } else if (typeof child === 'HAnimHumanoid') {\n"+
+"                        humanoids.add(child);\n"+
+"                } else if (child !== null) {\n"+
+"                        console.error(\"Unhandled is\", child);\n"+
+"                } else {\n"+
+"                        console.error(\"Node is\", child);\n"+
+"                        return false;\n"+
+"                }\n"+
+"                return true;\n"+
+"        },\n"+
+"        centering: function(joint) {\n"+
+"                let center = joint.getCenter();\n"+
+"                let name = joint.getName();\n"+
+"                switch (name) {\n"+
+"                        case \"l_tarsal_distal_interphalangeal_5\":\n"+
+"                                this.l_x = center[0];\n"+
+"                                this.l_z = center[2];\n"+
+"                                break;\n"+
+"                        case \"r_tarsal_distal_interphalangeal_5\":\n"+
+"                                this.r_x = center[0];\n"+
+"                                this.r_z = center[2];\n"+
+"                                break;\n"+
+"                }\n"+
+"                if (center[1] > this.maxy) {\n"+
+"                        this.maxy = center[1];\n"+
+"                }\n"+
+"                if (center[1] < this.y) {\n"+
+"                        this.y = center[1];\n"+
+"                }\n"+
+"                let children = joint.getChildrenList();\n"+
+"                for (let ch = 0; ch < children.size(); ch++) {\n"+
+"                        let child = children[ch];\n"+
+"                        if (typeof child === 'HAnimJoint') {\n"+
+"                                centering(child);\n"+
+"                        }\n"+
+"                }\n"+
+"        },\n"+
+"        transformPoint: function(point, point_offset, translation) {\n"+
+"                /// console.error(\"OLD \"+point[point_offset+0]+\" \"+point[point_offset+1]+\" \"+point[point_offset+2]+\" \");\n"+
+"                point[point_offset+0] -= this.x;\n"+
+"                point[point_offset+1] -= this.y;\n"+
+"                point[point_offset+2] -= this.z;\n"+
+"\n"+
+"                point[point_offset+0] *= this.scale[0];\n"+
+"                point[point_offset+1] *= this.scale[1];\n"+
+"                point[point_offset+2] *= this.scale[2];\n"+
+"\n"+
+"                point[point_offset+0] += translation[0];\n"+
+"                point[point_offset+1] += translation[1];\n"+
+"                point[point_offset+2] += translation[2];\n"+
+"                // console.error(\"NEW \"+point[point_offset+0]+\" \"+point[point_offset+1]+\" \"+point[point_offset+2]+\" \");\n"+
+"        },\n"+
+"        transform: function(node, parentTranslation) {\n"+
+"                let translation = [parentTranslation[0], parentTranslation[1], parentTranslation[2]];\n"+
+"                let children = null;\n"+
+"                if (typeof node === 'HAnimJoint') {\n"+
+"                        let joint = node;\n"+
+"\n"+
+"                        let field = joint.getTranslation();\n"+
+"                        this.transformPoint(field, 0, [ 0, 0, 0 ]);\n"+
+"                        this.transformPoint(translation, 0, field);\n"+
+"                        joint.setTranslation([ 0, 0, 0 ]);\n"+
+"\n"+
+"                        let center = joint.getCenter();\n"+
+"                        this.transformPoint(center, 0, translation);\n"+
+"                        joint.setCenter(center);\n"+
+"                        children = joint.getChildrenList();\n"+
+"                } else if (typeof node === 'HAnimSite') {\n"+
+"                        let site = node;\n"+
+"\n"+
+"                        let field = site.getTranslation();\n"+
+"                        this.transformPoint(field, 0, [ 0, 0, 0]);\n"+
+"                        this.transformPoint(translation, 0, field);\n"+
+"                        site.setTranslation([0, 0, 0]);\n"+
+"\n"+
+"                        let center = site.getCenter();\n"+
+"                        this.transformPoint(center, 0, translation);\n"+
+"                        site.setCenter(center);\n"+
+"\n"+
+"                        children = site.getChildrenList();\n"+
+"                } else if (typeof node === 'HAnimSegment') {\n"+
+"                        let segment = node;\n"+
+"                        let coord = segment.getCoord();\n"+
+"                        if (coord !== null) {\n"+
+"                                if (!this.transform(coord, translation)) {\n"+
+"                                        console.error(\"Unpacking coord in HAnimSegment failed\");\n"+
+"                                }\n"+
+"                        }\n"+
+"                        let displacers = segment.getDisplacersList();\n"+
+"                        if (displacers !== null) {\n"+
+"                                for (let di = 0; di < displacers.size(); di++) {\n"+
+"                                        let displacer = displacers.get(di);\n"+
+"                                        if (!this.transform(displacer, translation)) {\n"+
+"                                                console.error(\"Unpacking displacer in HAnimSegment failed\");\n"+
+"                                        }\n"+
+"                                }\n"+
+"                        }\n"+
+"                        children = segment.getChildrenList();\n"+
+"                } else if (typeof node === 'Transform') {\n"+
+"                        let trans = node;\n"+
+"                        let field = trans.getTranslation();\n"+
+"                        this.transformPoint(field, 0, [0,0,0]);\n"+
+"                        this.transformPoint(translation, 0, field);\n"+
+"                        trans.setTranslation([0,0,0]);\n"+
+"                        children = trans.getChildrenList();\n"+
+"                } else if (typeof node === 'Shape') {\n"+
+"                        let shape = node;\n"+
+"                        let appearance = shape.getAppearance();\n"+
+"                        if (!this.transform(appearance, translation)) {\n"+
+"                                console.error(\"Unpacking appearance in Shape failed\");\n"+
+"                        }\n"+
+"                        let geometry = shape.getGeometry();\n"+
+"                        if (!this.transform(geometry, translation)) {\n"+
+"                                console.error(\"Unpacking geometry in Shape failed\");\n"+
+"                        }\n"+
+"                } else if (typeof node === 'IndexedFaceSet') {\n"+
+"                        let ifs = node;\n"+
+"                        let coord = ifs.getCoord();\n"+
+"                        let coordIndex = ifs.getCoordIndex();\n"+
+"                        if (coordIndex.length > 700) {\n"+
+"                                console.error(\"coordIndex\", coordIndex.length);\n"+
+"                                let texCoordIndex = ifs.getTexCoordIndex();\n"+
+"                                console.error(\"texCoordIndex\", texCoordIndex.length);\n"+
+"                        }\n"+
+"                        if (!this.transform(coord, translation)) {\n"+
+"                                console.error(\"Unpacking coord in IndexedFaceSet failed\");\n"+
+"                        }\n"+
+"                } else if (typeof node === 'Appearance') {\n"+
+"                } else if (typeof node === 'Coordinate') {\n"+
+"                        let coordinate = node;\n"+
+"                        let point = coordinate.getPoint();\n"+
+"                        // console.error(\"point \", point.length);\n"+
+"                        for (let p = 0; p < point.length; p += 3) {\n"+
+"                                this.transformPoint(point, p, translation);\n"+
+"                        }\n"+
+"                        coordinate.setPoint(point);\n"+
+"                } else if (node !== null) {\n"+
+"                        console.error(\"Unhandled is\", node);\n"+
+"                } else {\n"+
+"                        console.error(\"Node is\", node);\n"+
+"                        return false;\n"+
+"                }\n"+
+"                if (children !== null) {\n"+
+"                        for (let ch = 0; ch < children.size(); ch++) {\n"+
+"                                let child = children.get(ch);\n"+
+"                                if (!this.transform(child, translation)) {\n"+
+"                                        console.error(\"Unpacking child in\", node, \"failed\");\n"+
+"                                }\n"+
+"                        }\n"+
+"                }\n"+
+"                return true;\n"+
+"        }\n"+
+"    }\n"+
+"    function intialize() {\n"+
+"        new HAnimScale();\n"+
+"    }`)
+group->addChildren(*Script1783);
+
+CGroup* Group1785 = (CGroup *)(m_pScene.createNode("Group"));
+Group1785->setDEF("StopAnimation");
+CTimeSensor* TimeSensor1786 = (CTimeSensor *)(m_pScene.createNode("TimeSensor"));
+TimeSensor1786->setDEF("StopTimer");
+TimeSensor1786->setCycleInterval(5.73);
+TimeSensor1786->setLoop(True);
+Group1785->addChildren(*TimeSensor1786);
+
+CPositionInterpolator* PositionInterpolator1787 = (CPositionInterpolator *)(m_pScene.createNode("PositionInterpolator"));
+PositionInterpolator1787->setDEF("Stop_humanoid_root_TranslationInterpolator");
+PositionInterpolator1787->setKey(new float[3]{0,0.5,1}, 3);
+PositionInterpolator1787->setKeyValue(new float[9]{0,0,0,0,0,0,0,0,0});
+Group1785->addChildren(*PositionInterpolator1787);
+
+COrientationInterpolator* OrientationInterpolator1788 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1788->setDEF("Stop_humanoid_root_RotationInterpolator");
+OrientationInterpolator1788->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1788->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1788);
+
+COrientationInterpolator* OrientationInterpolator1789 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1789->setDEF("Stop_sacroiliac_RotationInterpolator");
+OrientationInterpolator1789->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1789->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1789);
+
+COrientationInterpolator* OrientationInterpolator1790 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1790->setDEF("Stop_l_hip_RotationInterpolator");
+OrientationInterpolator1790->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1790->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1790);
+
+COrientationInterpolator* OrientationInterpolator1791 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1791->setDEF("Stop_l_knee_RotationInterpolator");
+OrientationInterpolator1791->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1791->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1791);
+
+COrientationInterpolator* OrientationInterpolator1792 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1792->setDEF("Stop_l_ankle_RotationInterpolator");
+OrientationInterpolator1792->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1792->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1792);
+
+COrientationInterpolator* OrientationInterpolator1793 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1793->setDEF("Stop_l_subtalar_RotationInterpolator");
+OrientationInterpolator1793->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1793->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1793);
+
+COrientationInterpolator* OrientationInterpolator1794 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1794->setDEF("Stop_l_midtarsal_RotationInterpolator");
+OrientationInterpolator1794->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1794->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1794);
+
+COrientationInterpolator* OrientationInterpolator1795 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1795->setDEF("Stop_l_metatarsal_RotationInterpolator");
+OrientationInterpolator1795->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1795->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1795);
+
+COrientationInterpolator* OrientationInterpolator1796 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1796->setDEF("Stop_r_hip_RotationInterpolator");
+OrientationInterpolator1796->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1796->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1796);
+
+COrientationInterpolator* OrientationInterpolator1797 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1797->setDEF("Stop_r_knee_RotationInterpolator");
+OrientationInterpolator1797->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1797->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1797);
+
+COrientationInterpolator* OrientationInterpolator1798 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1798->setDEF("Stop_r_ankle_RotationInterpolator");
+OrientationInterpolator1798->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1798->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1798);
+
+COrientationInterpolator* OrientationInterpolator1799 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1799->setDEF("Stop_r_subtalar_RotationInterpolator");
+OrientationInterpolator1799->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1799->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1799);
+
+COrientationInterpolator* OrientationInterpolator1800 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1800->setDEF("Stop_r_midtarsal_RotationInterpolator");
+OrientationInterpolator1800->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1800->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1800);
+
+COrientationInterpolator* OrientationInterpolator1801 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1801->setDEF("Stop_r_metatarsal_RotationInterpolator");
+OrientationInterpolator1801->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1801->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1801);
+
+COrientationInterpolator* OrientationInterpolator1802 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1802->setDEF("Stop_vl5_RotationInterpolator");
+OrientationInterpolator1802->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1802->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1802);
+
+COrientationInterpolator* OrientationInterpolator1803 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1803->setDEF("Stop_vl4_RotationInterpolator");
+OrientationInterpolator1803->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1803->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1803);
+
+COrientationInterpolator* OrientationInterpolator1804 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1804->setDEF("Stop_vl3_RotationInterpolator");
+OrientationInterpolator1804->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1804->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1804);
+
+COrientationInterpolator* OrientationInterpolator1805 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1805->setDEF("Stop_vl2_RotationInterpolator");
+OrientationInterpolator1805->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1805->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1805);
+
+COrientationInterpolator* OrientationInterpolator1806 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1806->setDEF("Stop_vl1_RotationInterpolator");
+OrientationInterpolator1806->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1806->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1806);
+
+COrientationInterpolator* OrientationInterpolator1807 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1807->setDEF("Stop_vt12_RotationInterpolator");
+OrientationInterpolator1807->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1807->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1807);
+
+COrientationInterpolator* OrientationInterpolator1808 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1808->setDEF("Stop_vt11_RotationInterpolator");
+OrientationInterpolator1808->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1808->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1808);
+
+COrientationInterpolator* OrientationInterpolator1809 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1809->setDEF("Stop_vt10_RotationInterpolator");
+OrientationInterpolator1809->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1809->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1809);
+
+COrientationInterpolator* OrientationInterpolator1810 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1810->setDEF("Stop_vt9_RotationInterpolator");
+OrientationInterpolator1810->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1810->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1810);
+
+COrientationInterpolator* OrientationInterpolator1811 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1811->setDEF("Stop_vt8_RotationInterpolator");
+OrientationInterpolator1811->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1811->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1811);
+
+COrientationInterpolator* OrientationInterpolator1812 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1812->setDEF("Stop_vt7_RotationInterpolator");
+OrientationInterpolator1812->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1812->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1812);
+
+COrientationInterpolator* OrientationInterpolator1813 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1813->setDEF("Stop_vt6_RotationInterpolator");
+OrientationInterpolator1813->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1813->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1813);
+
+COrientationInterpolator* OrientationInterpolator1814 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1814->setDEF("Stop_vt5_RotationInterpolator");
+OrientationInterpolator1814->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1814->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1814);
+
+COrientationInterpolator* OrientationInterpolator1815 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1815->setDEF("Stop_vt4_RotationInterpolator");
+OrientationInterpolator1815->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1815->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1815);
+
+COrientationInterpolator* OrientationInterpolator1816 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1816->setDEF("Stop_vt3_RotationInterpolator");
+OrientationInterpolator1816->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1816->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1816);
+
+COrientationInterpolator* OrientationInterpolator1817 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1817->setDEF("Stop_vt2_RotationInterpolator");
+OrientationInterpolator1817->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1817->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1817);
+
+COrientationInterpolator* OrientationInterpolator1818 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1818->setDEF("Stop_vt1_RotationInterpolator");
+OrientationInterpolator1818->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1818->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1818);
+
+COrientationInterpolator* OrientationInterpolator1819 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1819->setDEF("Stop_vc7_RotationInterpolator");
+OrientationInterpolator1819->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1819->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1819);
+
+COrientationInterpolator* OrientationInterpolator1820 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1820->setDEF("Stop_vc6_RotationInterpolator");
+OrientationInterpolator1820->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1820->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1820);
+
+COrientationInterpolator* OrientationInterpolator1821 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1821->setDEF("Stop_vc5_RotationInterpolator");
+OrientationInterpolator1821->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1821->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1821);
+
+COrientationInterpolator* OrientationInterpolator1822 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1822->setDEF("Stop_vc4_RotationInterpolator");
+OrientationInterpolator1822->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1822->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1822);
+
+COrientationInterpolator* OrientationInterpolator1823 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1823->setDEF("Stop_vc3_RotationInterpolator");
+OrientationInterpolator1823->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1823->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1823);
+
+COrientationInterpolator* OrientationInterpolator1824 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1824->setDEF("Stop_vc2_RotationInterpolator");
+OrientationInterpolator1824->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1824->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1824);
+
+COrientationInterpolator* OrientationInterpolator1825 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1825->setDEF("Stop_vc1_RotationInterpolator");
+OrientationInterpolator1825->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1825->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1825);
+
+COrientationInterpolator* OrientationInterpolator1826 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1826->setDEF("Stop_skullbase_RotationInterpolator");
+OrientationInterpolator1826->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1826->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1826);
+
+COrientationInterpolator* OrientationInterpolator1827 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1827->setDEF("Stop_l_eyeball_joint_RotationInterpolator");
+OrientationInterpolator1827->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1827->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1827);
+
+COrientationInterpolator* OrientationInterpolator1828 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1828->setDEF("Stop_r_eyeball_joint_RotationInterpolator");
+OrientationInterpolator1828->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1828->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1828);
+
+COrientationInterpolator* OrientationInterpolator1829 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1829->setDEF("Stop_l_sternoclavicular_RotationInterpolator");
+OrientationInterpolator1829->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1829->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1829);
+
+COrientationInterpolator* OrientationInterpolator1830 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1830->setDEF("Stop_l_acromioclavicular_RotationInterpolator");
+OrientationInterpolator1830->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1830->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1830);
+
+COrientationInterpolator* OrientationInterpolator1831 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1831->setDEF("Stop_l_shoulder_RotationInterpolator");
+OrientationInterpolator1831->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1831->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1831);
+
+COrientationInterpolator* OrientationInterpolator1832 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1832->setDEF("Stop_l_elbow_RotationInterpolator");
+OrientationInterpolator1832->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1832->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1832);
+
+COrientationInterpolator* OrientationInterpolator1833 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1833->setDEF("Stop_l_wrist_RotationInterpolator");
+OrientationInterpolator1833->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1833->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1833);
+
+COrientationInterpolator* OrientationInterpolator1834 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1834->setDEF("Stop_l_thumb1_RotationInterpolator");
+OrientationInterpolator1834->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1834->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1834);
+
+COrientationInterpolator* OrientationInterpolator1835 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1835->setDEF("Stop_l_thumb2_RotationInterpolator");
+OrientationInterpolator1835->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1835->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1835);
+
+COrientationInterpolator* OrientationInterpolator1836 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1836->setDEF("Stop_l_thumb3_RotationInterpolator");
+OrientationInterpolator1836->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1836->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1836);
+
+COrientationInterpolator* OrientationInterpolator1837 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1837->setDEF("Stop_l_index0_RotationInterpolator");
+OrientationInterpolator1837->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1837->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1837);
+
+COrientationInterpolator* OrientationInterpolator1838 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1838->setDEF("Stop_l_index1_RotationInterpolator");
+OrientationInterpolator1838->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1838->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1838);
+
+COrientationInterpolator* OrientationInterpolator1839 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1839->setDEF("Stop_l_index2_RotationInterpolator");
+OrientationInterpolator1839->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1839->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1839);
+
+COrientationInterpolator* OrientationInterpolator1840 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1840->setDEF("Stop_l_index3_RotationInterpolator");
+OrientationInterpolator1840->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1840->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1840);
+
+COrientationInterpolator* OrientationInterpolator1841 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1841->setDEF("Stop_l_middle0_RotationInterpolator");
+OrientationInterpolator1841->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1841->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1841);
+
+COrientationInterpolator* OrientationInterpolator1842 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1842->setDEF("Stop_l_middle1_RotationInterpolator");
+OrientationInterpolator1842->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1842->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1842);
+
+COrientationInterpolator* OrientationInterpolator1843 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1843->setDEF("Stop_l_middle2_RotationInterpolator");
+OrientationInterpolator1843->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1843->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1843);
+
+COrientationInterpolator* OrientationInterpolator1844 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1844->setDEF("Stop_l_middle3_RotationInterpolator");
+OrientationInterpolator1844->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1844->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1844);
+
+COrientationInterpolator* OrientationInterpolator1845 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1845->setDEF("Stop_l_ring0_RotationInterpolator");
+OrientationInterpolator1845->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1845->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1845);
+
+COrientationInterpolator* OrientationInterpolator1846 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1846->setDEF("Stop_l_ring1_RotationInterpolator");
+OrientationInterpolator1846->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1846->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1846);
+
+COrientationInterpolator* OrientationInterpolator1847 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1847->setDEF("Stop_l_ring2_RotationInterpolator");
+OrientationInterpolator1847->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1847->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1847);
+
+COrientationInterpolator* OrientationInterpolator1848 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1848->setDEF("Stop_l_ring3_RotationInterpolator");
+OrientationInterpolator1848->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1848->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1848);
+
+COrientationInterpolator* OrientationInterpolator1849 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1849->setDEF("Stop_l_pinky0_RotationInterpolator");
+OrientationInterpolator1849->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1849->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1849);
+
+COrientationInterpolator* OrientationInterpolator1850 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1850->setDEF("Stop_l_pinky1_RotationInterpolator");
+OrientationInterpolator1850->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1850->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1850);
+
+COrientationInterpolator* OrientationInterpolator1851 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1851->setDEF("Stop_l_pinky2_RotationInterpolator");
+OrientationInterpolator1851->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1851->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1851);
+
+COrientationInterpolator* OrientationInterpolator1852 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1852->setDEF("Stop_l_pinky3_RotationInterpolator");
+OrientationInterpolator1852->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1852->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1852);
+
+COrientationInterpolator* OrientationInterpolator1853 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1853->setDEF("Stop_r_sternoclavicular_RotationInterpolator");
+OrientationInterpolator1853->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1853->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1853);
+
+COrientationInterpolator* OrientationInterpolator1854 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1854->setDEF("Stop_r_acromioclavicular_RotationInterpolator");
+OrientationInterpolator1854->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1854->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1854);
+
+COrientationInterpolator* OrientationInterpolator1855 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1855->setDEF("Stop_r_shoulder_RotationInterpolator");
+OrientationInterpolator1855->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1855->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1855);
+
+COrientationInterpolator* OrientationInterpolator1856 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1856->setDEF("Stop_r_elbow_RotationInterpolator");
+OrientationInterpolator1856->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1856->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1856);
+
+COrientationInterpolator* OrientationInterpolator1857 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1857->setDEF("Stop_r_wrist_RotationInterpolator");
+OrientationInterpolator1857->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1857->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1857);
+
+COrientationInterpolator* OrientationInterpolator1858 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1858->setDEF("Stop_r_thumb1_RotationInterpolator");
+OrientationInterpolator1858->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1858->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1858);
+
+COrientationInterpolator* OrientationInterpolator1859 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1859->setDEF("Stop_r_thumb2_RotationInterpolator");
+OrientationInterpolator1859->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1859->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1859);
+
+COrientationInterpolator* OrientationInterpolator1860 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1860->setDEF("Stop_r_thumb3_RotationInterpolator");
+OrientationInterpolator1860->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1860->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1860);
+
+COrientationInterpolator* OrientationInterpolator1861 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1861->setDEF("Stop_r_index0_RotationInterpolator");
+OrientationInterpolator1861->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1861->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1861);
+
+COrientationInterpolator* OrientationInterpolator1862 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1862->setDEF("Stop_r_index1_RotationInterpolator");
+OrientationInterpolator1862->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1862->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1862);
+
+COrientationInterpolator* OrientationInterpolator1863 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1863->setDEF("Stop_r_index2_RotationInterpolator");
+OrientationInterpolator1863->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1863->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1863);
+
+COrientationInterpolator* OrientationInterpolator1864 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1864->setDEF("Stop_r_index3_RotationInterpolator");
+OrientationInterpolator1864->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1864->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1864);
+
+COrientationInterpolator* OrientationInterpolator1865 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1865->setDEF("Stop_r_middle0_RotationInterpolator");
+OrientationInterpolator1865->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1865->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1865);
+
+COrientationInterpolator* OrientationInterpolator1866 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1866->setDEF("Stop_r_middle1_RotationInterpolator");
+OrientationInterpolator1866->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1866->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1866);
+
+COrientationInterpolator* OrientationInterpolator1867 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1867->setDEF("Stop_r_middle2_RotationInterpolator");
+OrientationInterpolator1867->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1867->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1867);
+
+COrientationInterpolator* OrientationInterpolator1868 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1868->setDEF("Stop_r_middle3_RotationInterpolator");
+OrientationInterpolator1868->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1868->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1868);
+
+COrientationInterpolator* OrientationInterpolator1869 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1869->setDEF("Stop_r_ring0_RotationInterpolator");
+OrientationInterpolator1869->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1869->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1869);
+
+COrientationInterpolator* OrientationInterpolator1870 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1870->setDEF("Stop_r_ring1_RotationInterpolator");
+OrientationInterpolator1870->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1870->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1870);
+
+COrientationInterpolator* OrientationInterpolator1871 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1871->setDEF("Stop_r_ring2_RotationInterpolator");
+OrientationInterpolator1871->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1871->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1871);
+
+COrientationInterpolator* OrientationInterpolator1872 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1872->setDEF("Stop_r_ring3_RotationInterpolator");
+OrientationInterpolator1872->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1872->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1872);
+
+COrientationInterpolator* OrientationInterpolator1873 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1873->setDEF("Stop_r_pinky0_RotationInterpolator");
+OrientationInterpolator1873->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1873->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1873);
+
+COrientationInterpolator* OrientationInterpolator1874 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1874->setDEF("Stop_r_pinky1_RotationInterpolator");
+OrientationInterpolator1874->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1874->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1874);
+
+COrientationInterpolator* OrientationInterpolator1875 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1875->setDEF("Stop_r_pinky2_RotationInterpolator");
+OrientationInterpolator1875->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1875->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1875);
+
+COrientationInterpolator* OrientationInterpolator1876 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1876->setDEF("Stop_r_pinky3_RotationInterpolator");
+OrientationInterpolator1876->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1876->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1785->addChildren(*OrientationInterpolator1876);
+
+group->addChildren(*Group1785);
+
+CGroup* Group1877 = (CGroup *)(m_pScene.createNode("Group"));
+Group1877->setDEF("StandAnimation");
+CTimeSensor* TimeSensor1878 = (CTimeSensor *)(m_pScene.createNode("TimeSensor"));
+TimeSensor1878->setDEF("StandTimer");
+TimeSensor1878->setCycleInterval(5.73);
+TimeSensor1878->setLoop(True);
+Group1877->addChildren(*TimeSensor1878);
+
+COrientationInterpolator* OrientationInterpolator1879 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1879->setDEF("Stand_r_metatarsal_PitchInterpolator");
+OrientationInterpolator1879->setKey(new float[6]{0,0.2,0.4,0.6,0.7,1}, 6);
+OrientationInterpolator1879->setKeyValue(new float[24]{1,0,0,0,-1,0,0,0.015,1,0,0,0.17,-1,0,0,0.025,1,0,0,0.01,1,0,0,0});
+Group1877->addChildren(*OrientationInterpolator1879);
+
+COrientationInterpolator* OrientationInterpolator1880 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1880->setDEF("Stand_r_ankle_RotationInterpolator");
+OrientationInterpolator1880->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1880->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1877->addChildren(*OrientationInterpolator1880);
+
+COrientationInterpolator* OrientationInterpolator1881 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1881->setDEF("Stand_r_knee_RotationInterpolator");
+OrientationInterpolator1881->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1881->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1877->addChildren(*OrientationInterpolator1881);
+
+COrientationInterpolator* OrientationInterpolator1882 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1882->setDEF("Stand_r_hip_RotationInterpolator");
+OrientationInterpolator1882->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1882->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1877->addChildren(*OrientationInterpolator1882);
+
+COrientationInterpolator* OrientationInterpolator1883 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1883->setDEF("Stand_l_ankle_RotationInterpolator");
+OrientationInterpolator1883->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1883->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1877->addChildren(*OrientationInterpolator1883);
+
+COrientationInterpolator* OrientationInterpolator1884 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1884->setDEF("Stand_l_knee_RotationInterpolator");
+OrientationInterpolator1884->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1884->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1877->addChildren(*OrientationInterpolator1884);
+
+COrientationInterpolator* OrientationInterpolator1885 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1885->setDEF("Stand_l_hip_RotationInterpolator");
+OrientationInterpolator1885->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1885->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1877->addChildren(*OrientationInterpolator1885);
+
+COrientationInterpolator* OrientationInterpolator1886 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1886->setDEF("Stand_r_wrist_RotationInterpolator");
+OrientationInterpolator1886->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1886->setKeyValue(new float[12]{0,0,1,0,0,0,-1,0.25,0,0,1,0});
+Group1877->addChildren(*OrientationInterpolator1886);
+
+COrientationInterpolator* OrientationInterpolator1887 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1887->setDEF("Stand_r_elbow_RotationInterpolator");
+OrientationInterpolator1887->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1887->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1877->addChildren(*OrientationInterpolator1887);
+
+COrientationInterpolator* OrientationInterpolator1888 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1888->setDEF("Stand_r_shoulder_RotationInterpolator");
+OrientationInterpolator1888->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1888->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1877->addChildren(*OrientationInterpolator1888);
+
+COrientationInterpolator* OrientationInterpolator1889 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1889->setDEF("Stand_l_wrist_RotationInterpolator");
+OrientationInterpolator1889->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1889->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1877->addChildren(*OrientationInterpolator1889);
+
+COrientationInterpolator* OrientationInterpolator1890 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1890->setDEF("Stand_l_elbow_RotationInterpolator");
+OrientationInterpolator1890->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1890->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1877->addChildren(*OrientationInterpolator1890);
+
+COrientationInterpolator* OrientationInterpolator1891 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1891->setDEF("Stand_l_shoulder_RotationInterpolator");
+OrientationInterpolator1891->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1891->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1877->addChildren(*OrientationInterpolator1891);
+
+COrientationInterpolator* OrientationInterpolator1892 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1892->setDEF("Stand_head_RotationInterpolator");
+OrientationInterpolator1892->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1892->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1877->addChildren(*OrientationInterpolator1892);
+
+COrientationInterpolator* OrientationInterpolator1893 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1893->setDEF("Stand_neck_RotationInterpolator");
+OrientationInterpolator1893->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1893->setKeyValue(new float[12]{0,0,1,0,-1,0,0,0.5,0,0,1,0});
+Group1877->addChildren(*OrientationInterpolator1893);
+
+COrientationInterpolator* OrientationInterpolator1894 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1894->setDEF("Stand_l_eyeball_RotationInterpolator");
+OrientationInterpolator1894->setKey(new float[4]{0,0.4,0.7,1}, 4);
+OrientationInterpolator1894->setKeyValue(new float[16]{0,0,1,0,-1,0,0,0.5,1,0,0,0.45,0,0,1,0});
+Group1877->addChildren(*OrientationInterpolator1894);
+
+COrientationInterpolator* OrientationInterpolator1895 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1895->setDEF("Stand_r_eyeball_RotationInterpolator");
+OrientationInterpolator1895->setKey(new float[4]{0,0.4,0.7,1}, 4);
+OrientationInterpolator1895->setKeyValue(new float[16]{0,0,1,0,-1,0,0,0.5,1,0,0,0.45,0,0,1,0});
+Group1877->addChildren(*OrientationInterpolator1895);
+
+COrientationInterpolator* OrientationInterpolator1896 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1896->setDEF("Stand_lower_body_RotationInterpolator");
+OrientationInterpolator1896->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1896->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1877->addChildren(*OrientationInterpolator1896);
+
+COrientationInterpolator* OrientationInterpolator1897 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1897->setDEF("Stand_upper_body_RotationInterpolator");
+OrientationInterpolator1897->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1897->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1877->addChildren(*OrientationInterpolator1897);
+
+COrientationInterpolator* OrientationInterpolator1898 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1898->setDEF("Stand_whole_body_RotationInterpolator");
+OrientationInterpolator1898->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1898->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1877->addChildren(*OrientationInterpolator1898);
+
+CPositionInterpolator* PositionInterpolator1899 = (CPositionInterpolator *)(m_pScene.createNode("PositionInterpolator"));
+PositionInterpolator1899->setDEF("Stand_whole_body_TranslationInterpolator");
+PositionInterpolator1899->setKey(new float[3]{0,0.5,1}, 3);
+PositionInterpolator1899->setKeyValue(new float[9]{0,0,0,0,0,0,0,0,0});
+Group1877->addChildren(*PositionInterpolator1899);
+
+COrientationInterpolator* OrientationInterpolator1900 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1900->setDEF("Stand_l_sternoclavicular_RollInterpolator");
+OrientationInterpolator1900->setKey(new float[6]{0,0.2,0.4,0.6,0.8,1}, 6);
+OrientationInterpolator1900->setKeyValue(new float[24]{0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+Group1877->addChildren(*OrientationInterpolator1900);
+
+COrientationInterpolator* OrientationInterpolator1901 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1901->setDEF("Stand_l_acromioclavicular_RollInterpolator");
+OrientationInterpolator1901->setKey(new float[6]{0,0.2,0.4,0.6,0.8,1}, 6);
+OrientationInterpolator1901->setKeyValue(new float[24]{0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+Group1877->addChildren(*OrientationInterpolator1901);
+
+COrientationInterpolator* OrientationInterpolator1902 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1902->setDEF("Stand_r_sternoclavicular_RollInterpolator");
+OrientationInterpolator1902->setKey(new float[6]{0,0.2,0.4,0.6,0.8,1}, 6);
+OrientationInterpolator1902->setKeyValue(new float[24]{0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+Group1877->addChildren(*OrientationInterpolator1902);
+
+COrientationInterpolator* OrientationInterpolator1903 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1903->setDEF("Stand_r_acromioclavicular_RollInterpolator");
+OrientationInterpolator1903->setKey(new float[6]{0,0.2,0.4,0.6,0.8,1}, 6);
+OrientationInterpolator1903->setKeyValue(new float[24]{0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+Group1877->addChildren(*OrientationInterpolator1903);
+
+COrientationInterpolator* OrientationInterpolator1904 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1904->setDEF("Stand_sacroiliac_YawInterpolator");
+OrientationInterpolator1904->setKey(new float[6]{0,0.2,0.4,0.6,0.8,1}, 6);
+OrientationInterpolator1904->setKeyValue(new float[24]{0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+Group1877->addChildren(*OrientationInterpolator1904);
+
+COrientationInterpolator* OrientationInterpolator1905 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1905->setDEF("Stand_vl5_YawInterpolator");
+OrientationInterpolator1905->setKey(new float[7]{0,0.2,0.4,0.5,0.6,0.8,1}, 7);
+OrientationInterpolator1905->setKeyValue(new float[28]{0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+Group1877->addChildren(*OrientationInterpolator1905);
+
+COrientationInterpolator* OrientationInterpolator1906 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1906->setDEF("Stand_vc6_YawInterpolator");
+OrientationInterpolator1906->setKey(new float[7]{0,0.2,0.4,0.5,0.6,0.8,1}, 7);
+OrientationInterpolator1906->setKeyValue(new float[28]{0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,-1,0,0,0,0,-1,0,0,0,1,0,0});
+Group1877->addChildren(*OrientationInterpolator1906);
+
+COrientationInterpolator* OrientationInterpolator1907 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1907->setDEF("Stand_l_thumb1_PitchInterpolator");
+OrientationInterpolator1907->setKey(new float[6]{0,0.2,0.4,0.6,0.8,1}, 6);
+OrientationInterpolator1907->setKeyValue(new float[24]{0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+Group1877->addChildren(*OrientationInterpolator1907);
+
+COrientationInterpolator* OrientationInterpolator1908 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1908->setDEF("Stand_r_thumb1_PitchInterpolator");
+OrientationInterpolator1908->setKey(new float[6]{0,0.2,0.4,0.6,0.8,1}, 6);
+OrientationInterpolator1908->setKeyValue(new float[24]{1,0,0,0,1,0,0,0.5,1,0,0,0.1,1,0,0,0.27,1,0,0,0.2,1,0,0,0});
+Group1877->addChildren(*OrientationInterpolator1908);
+
+COrientationInterpolator* OrientationInterpolator1909 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1909->setDEF("Stand_r_index1_RollInterpolator");
+OrientationInterpolator1909->setKey(new float[6]{0,0.2,0.4,0.5,0.8,1}, 6);
+OrientationInterpolator1909->setKeyValue(new float[24]{0,0,1,0,0,0,1,0.1,0,0,1,0.2,0,0,1,0.3,0,0,1,0,0,0,1,0});
+Group1877->addChildren(*OrientationInterpolator1909);
+
+COrientationInterpolator* OrientationInterpolator1910 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1910->setDEF("Stand_r_index2_RollInterpolator");
+OrientationInterpolator1910->setKey(new float[6]{0,0.2,0.4,0.5,0.8,1}, 6);
+OrientationInterpolator1910->setKeyValue(new float[24]{0,0,1,0,0,0,1,0.4,0,0,1,0.32,0,0,1,0.25,0,0,1,0.2,0,0,1,0});
+Group1877->addChildren(*OrientationInterpolator1910);
+
+COrientationInterpolator* OrientationInterpolator1911 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1911->setDEF("Stand_r_index3_RollInterpolator");
+OrientationInterpolator1911->setKey(new float[6]{0,0.2,0.4,0.5,0.8,1}, 6);
+OrientationInterpolator1911->setKeyValue(new float[24]{0,0,1,0,0,0,1,0.2,0,0,1,0.3,0,0,1,0.35,0,0,1,0.2,0,0,1,0});
+Group1877->addChildren(*OrientationInterpolator1911);
+
+group->addChildren(*Group1877);
+
+CGroup* Group1912 = (CGroup *)(m_pScene.createNode("Group"));
+Group1912->setDEF("PitchesAnimation");
+CTimeSensor* TimeSensor1913 = (CTimeSensor *)(m_pScene.createNode("TimeSensor"));
+TimeSensor1913->setDEF("PitchTimer");
+TimeSensor1913->setCycleInterval(5.73);
+TimeSensor1913->setLoop(True);
+Group1912->addChildren(*TimeSensor1913);
+
+COrientationInterpolator* OrientationInterpolator1914 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1914->setDEF("Pitch_r_metatarsal_PitchInterpolator");
+OrientationInterpolator1914->setKey(new float[6]{0,0.2,0.4,0.6,0.7,1}, 6);
+OrientationInterpolator1914->setKeyValue(new float[24]{1,0,0,0,-1,0,0,0.5,-1,0,0,0.7,1,0,0,0.75,-1,0,0,0.2,1,0,0,0});
+Group1912->addChildren(*OrientationInterpolator1914);
+
+COrientationInterpolator* OrientationInterpolator1915 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1915->setDEF("Pitches_r_ankle_RotationInterpolator");
+OrientationInterpolator1915->setKey(new float[5]{0,0.25,0.5,0.75,1}, 5);
+OrientationInterpolator1915->setKeyValue(new float[20]{0,0,1,0,1,0,0,1.5,0,0,1,0,-1,0,0,1.5,0,0,1,0});
+Group1912->addChildren(*OrientationInterpolator1915);
+
+COrientationInterpolator* OrientationInterpolator1916 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1916->setDEF("Pitches_r_knee_RotationInterpolator");
+OrientationInterpolator1916->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1916->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1912->addChildren(*OrientationInterpolator1916);
+
+COrientationInterpolator* OrientationInterpolator1917 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1917->setDEF("Pitches_r_hip_RotationInterpolator");
+OrientationInterpolator1917->setKey(new float[5]{0,0.25,0.5,0.75,1}, 5);
+OrientationInterpolator1917->setKeyValue(new float[20]{0,0,1,0,-1,0,0,1.5,0,0,1,0,1,0,0,1.5,0,0,1,0});
+Group1912->addChildren(*OrientationInterpolator1917);
+
+COrientationInterpolator* OrientationInterpolator1918 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1918->setDEF("Pitches_l_ankle_RotationInterpolator");
+OrientationInterpolator1918->setKey(new float[5]{0,0.25,0.5,0.75,1}, 5);
+OrientationInterpolator1918->setKeyValue(new float[20]{0,0,1,0,-1,0,0,1.5,0,0,1,0,1,0,0,1.5,0,0,1,0});
+Group1912->addChildren(*OrientationInterpolator1918);
+
+COrientationInterpolator* OrientationInterpolator1919 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1919->setDEF("Pitches_l_knee_RotationInterpolator");
+OrientationInterpolator1919->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1919->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1912->addChildren(*OrientationInterpolator1919);
+
+COrientationInterpolator* OrientationInterpolator1920 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1920->setDEF("Pitches_l_hip_RotationInterpolator");
+OrientationInterpolator1920->setKey(new float[5]{0,0.25,0.5,0.75,1}, 5);
+OrientationInterpolator1920->setKeyValue(new float[20]{0,0,1,0,1,0,0,1.5,0,0,1,0,-1,0,0,1.5,0,0,1,0});
+Group1912->addChildren(*OrientationInterpolator1920);
+
+COrientationInterpolator* OrientationInterpolator1921 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1921->setDEF("Pitches_r_wrist_RotationInterpolator");
+OrientationInterpolator1921->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1921->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1912->addChildren(*OrientationInterpolator1921);
+
+COrientationInterpolator* OrientationInterpolator1922 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1922->setDEF("Pitches_r_elbow_RotationInterpolator");
+OrientationInterpolator1922->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1922->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1912->addChildren(*OrientationInterpolator1922);
+
+COrientationInterpolator* OrientationInterpolator1923 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1923->setDEF("Pitches_r_shoulder_RotationInterpolator");
+OrientationInterpolator1923->setKey(new float[5]{0,0.25,0.5,0.75,1}, 5);
+OrientationInterpolator1923->setKeyValue(new float[20]{0,0,1,0,1,0,0,1.5,0,0,1,0,-1,0,0,1.5,0,0,1,0});
+Group1912->addChildren(*OrientationInterpolator1923);
+
+COrientationInterpolator* OrientationInterpolator1924 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1924->setDEF("Pitches_l_wrist_RotationInterpolator");
+OrientationInterpolator1924->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1924->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1912->addChildren(*OrientationInterpolator1924);
+
+COrientationInterpolator* OrientationInterpolator1925 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1925->setDEF("Pitches_l_elbow_RotationInterpolator");
+OrientationInterpolator1925->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1925->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1912->addChildren(*OrientationInterpolator1925);
+
+COrientationInterpolator* OrientationInterpolator1926 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1926->setDEF("Pitches_l_shoulder_RotationInterpolator");
+OrientationInterpolator1926->setKey(new float[5]{0,0.25,0.5,0.75,1}, 5);
+OrientationInterpolator1926->setKeyValue(new float[20]{0,0,1,0,-1,0,0,1.5,0,0,1,0,1,0,0,1.5,0,0,1,0});
+Group1912->addChildren(*OrientationInterpolator1926);
+
+COrientationInterpolator* OrientationInterpolator1927 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1927->setDEF("Pitches_head_RotationInterpolator");
+OrientationInterpolator1927->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1927->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1912->addChildren(*OrientationInterpolator1927);
+
+COrientationInterpolator* OrientationInterpolator1928 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1928->setDEF("Pitches_neck_RotationInterpolator");
+OrientationInterpolator1928->setKey(new float[4]{0,0.25,0.55,1}, 4);
+OrientationInterpolator1928->setKeyValue(new float[16]{0,0,1,0,1,0,0,0.55,-1,0,0,1.05,0,0,1,0});
+Group1912->addChildren(*OrientationInterpolator1928);
+
+COrientationInterpolator* OrientationInterpolator1929 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1929->setDEF("Pitches_lower_body_RotationInterpolator");
+OrientationInterpolator1929->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1929->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1912->addChildren(*OrientationInterpolator1929);
+
+COrientationInterpolator* OrientationInterpolator1930 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1930->setDEF("Pitches_upper_body_RotationInterpolator");
+OrientationInterpolator1930->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1930->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1912->addChildren(*OrientationInterpolator1930);
+
+COrientationInterpolator* OrientationInterpolator1931 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1931->setDEF("Pitches_whole_body_RotationInterpolator");
+OrientationInterpolator1931->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1931->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1912->addChildren(*OrientationInterpolator1931);
+
+CPositionInterpolator* PositionInterpolator1932 = (CPositionInterpolator *)(m_pScene.createNode("PositionInterpolator"));
+PositionInterpolator1932->setDEF("Pitches_whole_body_TranslationInterpolator");
+PositionInterpolator1932->setKey(new float[9]{0,0.125,0.25,0.375,0.5,0.625,0.75,0.875,1}, 9);
+PositionInterpolator1932->setKeyValue(new float[27]{0,0,0,0,-0.15,0,0,-0.7,0,0,-0.15,0,0,0,0,0,-0.15,0,0,-0.7,0,0,-0.15,0,0,0,0});
+Group1912->addChildren(*PositionInterpolator1932);
+
+COrientationInterpolator* OrientationInterpolator1933 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1933->setDEF("Pitch_l_sternoclavicular_RollInterpolator");
+OrientationInterpolator1933->setKey(new float[6]{0,0.2,0.4,0.6,0.8,1}, 6);
+OrientationInterpolator1933->setKeyValue(new float[24]{0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+Group1912->addChildren(*OrientationInterpolator1933);
+
+COrientationInterpolator* OrientationInterpolator1934 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1934->setDEF("Pitch_l_acromioclavicular_RollInterpolator");
+OrientationInterpolator1934->setKey(new float[6]{0,0.2,0.4,0.6,0.8,1}, 6);
+OrientationInterpolator1934->setKeyValue(new float[24]{0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+Group1912->addChildren(*OrientationInterpolator1934);
+
+COrientationInterpolator* OrientationInterpolator1935 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1935->setDEF("Pitch_r_sternoclavicular_RollInterpolator");
+OrientationInterpolator1935->setKey(new float[6]{0,0.2,0.4,0.6,0.8,1}, 6);
+OrientationInterpolator1935->setKeyValue(new float[24]{0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+Group1912->addChildren(*OrientationInterpolator1935);
+
+COrientationInterpolator* OrientationInterpolator1936 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1936->setDEF("Pitch_r_acromioclavicular_RollInterpolator");
+OrientationInterpolator1936->setKey(new float[6]{0,0.2,0.4,0.6,0.8,1}, 6);
+OrientationInterpolator1936->setKeyValue(new float[24]{0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+Group1912->addChildren(*OrientationInterpolator1936);
+
+COrientationInterpolator* OrientationInterpolator1937 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1937->setDEF("Pitch_sacroiliac_YawInterpolator");
+OrientationInterpolator1937->setKey(new float[6]{0,0.2,0.4,0.6,0.8,1}, 6);
+OrientationInterpolator1937->setKeyValue(new float[24]{0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+Group1912->addChildren(*OrientationInterpolator1937);
+
+COrientationInterpolator* OrientationInterpolator1938 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1938->setDEF("Pitch_vl5_YawInterpolator");
+OrientationInterpolator1938->setKey(new float[7]{0,0.2,0.4,0.5,0.6,0.8,1}, 7);
+OrientationInterpolator1938->setKeyValue(new float[28]{0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+Group1912->addChildren(*OrientationInterpolator1938);
+
+COrientationInterpolator* OrientationInterpolator1939 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1939->setDEF("Pitch_vc6_YawInterpolator");
+OrientationInterpolator1939->setKey(new float[7]{0,0.2,0.4,0.5,0.6,0.8,1}, 7);
+OrientationInterpolator1939->setKeyValue(new float[28]{0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+Group1912->addChildren(*OrientationInterpolator1939);
+
+COrientationInterpolator* OrientationInterpolator1940 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1940->setDEF("Pitch_l_thumb1_PitchInterpolator");
+OrientationInterpolator1940->setKey(new float[6]{0,0.2,0.4,0.6,0.8,1}, 6);
+OrientationInterpolator1940->setKeyValue(new float[24]{1,0,0,0,1,0,0,0.25,1,0,0,0.3,1,0,0,0.27,1,0,0,0.2,1,0,0,0});
+Group1912->addChildren(*OrientationInterpolator1940);
+
+COrientationInterpolator* OrientationInterpolator1941 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1941->setDEF("Pitch_r_thumb1_PitchInterpolator");
+OrientationInterpolator1941->setKey(new float[6]{0,0.2,0.4,0.6,0.8,1}, 6);
+OrientationInterpolator1941->setKeyValue(new float[24]{1,0,0,0,1,0,0,0.25,1,0,0,0.3,1,0,0,0.27,1,0,0,0.2,1,0,0,0});
+Group1912->addChildren(*OrientationInterpolator1941);
+
+group->addChildren(*Group1912);
+
+CGroup* Group1942 = (CGroup *)(m_pScene.createNode("Group"));
+Group1942->setDEF("YawsAnimation");
+CTimeSensor* TimeSensor1943 = (CTimeSensor *)(m_pScene.createNode("TimeSensor"));
+TimeSensor1943->setDEF("YawTimer");
+TimeSensor1943->setCycleInterval(5.73);
+TimeSensor1943->setLoop(True);
+Group1942->addChildren(*TimeSensor1943);
+
+COrientationInterpolator* OrientationInterpolator1944 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1944->setDEF("Yaw_r_metatarsal_PitchInterpolator");
+OrientationInterpolator1944->setKey(new float[6]{0,0.2,0.4,0.6,0.7,1}, 6);
+OrientationInterpolator1944->setKeyValue(new float[24]{0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+Group1942->addChildren(*OrientationInterpolator1944);
+
+COrientationInterpolator* OrientationInterpolator1945 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1945->setDEF("Yaws_r_ankle_RotationInterpolator");
+OrientationInterpolator1945->setKey(new float[5]{0,0.25,0.5,0.75,1}, 5);
+OrientationInterpolator1945->setKeyValue(new float[20]{0,0,1,0,0,-1,0,1.5,0,0,1,0,0,1,0,1.5,0,0,1,0});
+Group1942->addChildren(*OrientationInterpolator1945);
+
+COrientationInterpolator* OrientationInterpolator1946 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1946->setDEF("Yaws_r_knee_RotationInterpolator");
+OrientationInterpolator1946->setKey(new float[5]{0,0.25,0.5,0.75,1}, 5);
+OrientationInterpolator1946->setKeyValue(new float[20]{0,0,1,0,0,1,0,1.5,0,0,1,0,0,-1,0,1.5,0,0,1,0});
+Group1942->addChildren(*OrientationInterpolator1946);
+
+COrientationInterpolator* OrientationInterpolator1947 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1947->setDEF("Yaws_r_hip_RotationInterpolator");
+OrientationInterpolator1947->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1947->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1942->addChildren(*OrientationInterpolator1947);
+
+COrientationInterpolator* OrientationInterpolator1948 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1948->setDEF("Yaws_l_ankle_RotationInterpolator");
+OrientationInterpolator1948->setKey(new float[5]{0,0.25,0.5,0.75,1}, 5);
+OrientationInterpolator1948->setKeyValue(new float[20]{0,0,1,0,0,1,0,1.5,0,0,1,0,0,-1,0,1.5,0,0,1,0});
+Group1942->addChildren(*OrientationInterpolator1948);
+
+COrientationInterpolator* OrientationInterpolator1949 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1949->setDEF("Yaws_l_knee_RotationInterpolator");
+OrientationInterpolator1949->setKey(new float[5]{0,0.25,0.5,0.75,1}, 5);
+OrientationInterpolator1949->setKeyValue(new float[20]{0,0,1,0,0,-1,0,1.5,0,0,1,0,0,1,0,1.5,0,0,1,0});
+Group1942->addChildren(*OrientationInterpolator1949);
+
+COrientationInterpolator* OrientationInterpolator1950 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1950->setDEF("Yaws_l_hip_RotationInterpolator");
+OrientationInterpolator1950->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1950->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1942->addChildren(*OrientationInterpolator1950);
+
+COrientationInterpolator* OrientationInterpolator1951 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1951->setDEF("Yaws_r_wrist_RotationInterpolator");
+OrientationInterpolator1951->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1951->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1942->addChildren(*OrientationInterpolator1951);
+
+COrientationInterpolator* OrientationInterpolator1952 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1952->setDEF("Yaws_r_elbow_RotationInterpolator");
+OrientationInterpolator1952->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1952->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1942->addChildren(*OrientationInterpolator1952);
+
+COrientationInterpolator* OrientationInterpolator1953 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1953->setDEF("Yaws_r_shoulder_RotationInterpolator");
+OrientationInterpolator1953->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1953->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1942->addChildren(*OrientationInterpolator1953);
+
+COrientationInterpolator* OrientationInterpolator1954 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1954->setDEF("Yaws_l_wrist_RotationInterpolator");
+OrientationInterpolator1954->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1954->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1942->addChildren(*OrientationInterpolator1954);
+
+COrientationInterpolator* OrientationInterpolator1955 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1955->setDEF("Yaws_l_elbow_RotationInterpolator");
+OrientationInterpolator1955->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1955->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1942->addChildren(*OrientationInterpolator1955);
+
+COrientationInterpolator* OrientationInterpolator1956 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1956->setDEF("Yaws_l_shoulder_RotationInterpolator");
+OrientationInterpolator1956->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1956->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1942->addChildren(*OrientationInterpolator1956);
+
+COrientationInterpolator* OrientationInterpolator1957 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1957->setDEF("Yaws_head_RotationInterpolator");
+OrientationInterpolator1957->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1957->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1942->addChildren(*OrientationInterpolator1957);
+
+COrientationInterpolator* OrientationInterpolator1958 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1958->setDEF("Yaws_neck_RotationInterpolator");
+OrientationInterpolator1958->setKey(new float[5]{0,0.25,0.5,0.75,1}, 5);
+OrientationInterpolator1958->setKeyValue(new float[20]{0,0,1,0,0,1,0,1.5,0,0,1,0,0,-1,0,1.5,0,0,1,0});
+Group1942->addChildren(*OrientationInterpolator1958);
+
+COrientationInterpolator* OrientationInterpolator1959 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1959->setDEF("Yaws_upper_body_RotationInterpolator");
+OrientationInterpolator1959->setKey(new float[5]{0,0.25,0.5,0.75,1}, 5);
+OrientationInterpolator1959->setKeyValue(new float[20]{0,0,1,0,0,-1,0,1.5,0,0,1,0,0,1,0,1.5,0,0,1,0});
+Group1942->addChildren(*OrientationInterpolator1959);
+
+COrientationInterpolator* OrientationInterpolator1960 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1960->setDEF("Yaws_lower_body_RotationInterpolator");
+OrientationInterpolator1960->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1960->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1942->addChildren(*OrientationInterpolator1960);
+
+COrientationInterpolator* OrientationInterpolator1961 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1961->setDEF("Yaws_whole_body_RotationInterpolator");
+OrientationInterpolator1961->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1961->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1942->addChildren(*OrientationInterpolator1961);
+
+CPositionInterpolator* PositionInterpolator1962 = (CPositionInterpolator *)(m_pScene.createNode("PositionInterpolator"));
+PositionInterpolator1962->setDEF("Yaws_whole_body_TranslationInterpolator");
+PositionInterpolator1962->setKey(new float[3]{0,0.5,1}, 3);
+PositionInterpolator1962->setKeyValue(new float[9]{0,0,0,0,0,0,0,0,0});
+Group1942->addChildren(*PositionInterpolator1962);
+
+COrientationInterpolator* OrientationInterpolator1963 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1963->setDEF("Yaw_l_sternoclavicular_RollInterpolator");
+OrientationInterpolator1963->setKey(new float[6]{0,0.2,0.4,0.6,0.8,1}, 6);
+OrientationInterpolator1963->setKeyValue(new float[24]{0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+Group1942->addChildren(*OrientationInterpolator1963);
+
+COrientationInterpolator* OrientationInterpolator1964 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1964->setDEF("Yaw_l_acromioclavicular_RollInterpolator");
+OrientationInterpolator1964->setKey(new float[6]{0,0.2,0.4,0.6,0.8,1}, 6);
+OrientationInterpolator1964->setKeyValue(new float[24]{0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+Group1942->addChildren(*OrientationInterpolator1964);
+
+COrientationInterpolator* OrientationInterpolator1965 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1965->setDEF("Yaw_r_sternoclavicular_RollInterpolator");
+OrientationInterpolator1965->setKey(new float[6]{0,0.2,0.4,0.6,0.8,1}, 6);
+OrientationInterpolator1965->setKeyValue(new float[24]{0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+Group1942->addChildren(*OrientationInterpolator1965);
+
+COrientationInterpolator* OrientationInterpolator1966 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1966->setDEF("Yaw_r_acromioclavicular_RollInterpolator");
+OrientationInterpolator1966->setKey(new float[6]{0,0.2,0.4,0.6,0.8,1}, 6);
+OrientationInterpolator1966->setKeyValue(new float[24]{0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+Group1942->addChildren(*OrientationInterpolator1966);
+
+COrientationInterpolator* OrientationInterpolator1967 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1967->setDEF("Yaw_sacroiliac_YawInterpolator");
+OrientationInterpolator1967->setKey(new float[6]{0,0.2,0.4,0.6,0.8,1}, 6);
+OrientationInterpolator1967->setKeyValue(new float[24]{0,1,0,0,0,-1,0,0.1,0,1,0,0,0,1,0,0.24,0,-1,0,0.4,0,1,0,0});
+Group1942->addChildren(*OrientationInterpolator1967);
+
+COrientationInterpolator* OrientationInterpolator1968 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1968->setDEF("Yaw_vl5_YawInterpolator");
+OrientationInterpolator1968->setKey(new float[7]{0,0.2,0.4,0.5,0.6,0.8,1}, 7);
+OrientationInterpolator1968->setKeyValue(new float[28]{0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+Group1942->addChildren(*OrientationInterpolator1968);
+
+COrientationInterpolator* OrientationInterpolator1969 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1969->setDEF("Yaw_vc6_YawInterpolator");
+OrientationInterpolator1969->setKey(new float[7]{0,0.2,0.4,0.5,0.6,0.8,1}, 7);
+OrientationInterpolator1969->setKeyValue(new float[28]{0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+Group1942->addChildren(*OrientationInterpolator1969);
+
+COrientationInterpolator* OrientationInterpolator1970 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1970->setDEF("Yaw_l_thumb1_PitchInterpolator");
+OrientationInterpolator1970->setKey(new float[6]{0,0.2,0.4,0.6,0.8,1}, 6);
+OrientationInterpolator1970->setKeyValue(new float[24]{0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+Group1942->addChildren(*OrientationInterpolator1970);
+
+COrientationInterpolator* OrientationInterpolator1971 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1971->setDEF("Yaw_r_thumb1_PitchInterpolator");
+OrientationInterpolator1971->setKey(new float[6]{0,0.2,0.4,0.6,0.8,1}, 6);
+OrientationInterpolator1971->setKeyValue(new float[24]{0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+Group1942->addChildren(*OrientationInterpolator1971);
+
+group->addChildren(*Group1942);
+
+CGroup* Group1972 = (CGroup *)(m_pScene.createNode("Group"));
+Group1972->setDEF("RollsAnimation");
+CTimeSensor* TimeSensor1973 = (CTimeSensor *)(m_pScene.createNode("TimeSensor"));
+TimeSensor1973->setDEF("RollTimer");
+TimeSensor1973->setCycleInterval(5.73);
+TimeSensor1973->setLoop(True);
+Group1972->addChildren(*TimeSensor1973);
+
+COrientationInterpolator* OrientationInterpolator1974 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1974->setDEF("Roll_r_metatarsal_PitchInterpolator");
+OrientationInterpolator1974->setKey(new float[6]{0,0.2,0.4,0.6,0.7,1}, 6);
+OrientationInterpolator1974->setKeyValue(new float[24]{0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+Group1972->addChildren(*OrientationInterpolator1974);
+
+COrientationInterpolator* OrientationInterpolator1975 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1975->setDEF("Rolls_r_ankle_RotationInterpolator");
+OrientationInterpolator1975->setKey(new float[5]{0,0.25,0.5,0.75,1}, 5);
+OrientationInterpolator1975->setKeyValue(new float[20]{0,0,1,0,0,0,1,1.5,0,0,1,0,0,0,1,1.5,0,0,1,0});
+Group1972->addChildren(*OrientationInterpolator1975);
+
+COrientationInterpolator* OrientationInterpolator1976 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1976->setDEF("Rolls_r_knee_RotationInterpolator");
+OrientationInterpolator1976->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1976->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1972->addChildren(*OrientationInterpolator1976);
+
+COrientationInterpolator* OrientationInterpolator1977 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1977->setDEF("Rolls_r_hip_RotationInterpolator");
+OrientationInterpolator1977->setKey(new float[5]{0,0.25,0.5,0.75,1}, 5);
+OrientationInterpolator1977->setKeyValue(new float[20]{0,0,-1,0,0,0,-1,1.5,0,0,1,0,0,0,-1,1.5,0,0,1,0});
+Group1972->addChildren(*OrientationInterpolator1977);
+
+COrientationInterpolator* OrientationInterpolator1978 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1978->setDEF("Rolls_l_ankle_RotationInterpolator");
+OrientationInterpolator1978->setKey(new float[5]{0,0.25,0.5,0.75,1}, 5);
+OrientationInterpolator1978->setKeyValue(new float[20]{0,0,1,0,0,0,-1,1.5,0,0,1,0,0,0,-1,1.5,0,0,1,0});
+Group1972->addChildren(*OrientationInterpolator1978);
+
+COrientationInterpolator* OrientationInterpolator1979 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1979->setDEF("Rolls_l_knee_RotationInterpolator");
+OrientationInterpolator1979->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1979->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1972->addChildren(*OrientationInterpolator1979);
+
+COrientationInterpolator* OrientationInterpolator1980 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1980->setDEF("Rolls_l_hip_RotationInterpolator");
+OrientationInterpolator1980->setKey(new float[5]{0,0.25,0.5,0.75,1}, 5);
+OrientationInterpolator1980->setKeyValue(new float[20]{0,0,1,0,0,0,1,1.5,0,0,1,0,0,0,1,1.5,0,0,1,0});
+Group1972->addChildren(*OrientationInterpolator1980);
+
+COrientationInterpolator* OrientationInterpolator1981 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1981->setDEF("Rolls_r_wrist_RotationInterpolator");
+OrientationInterpolator1981->setKey(new float[5]{0,0.25,0.5,0.75,1}, 5);
+OrientationInterpolator1981->setKeyValue(new float[20]{0,0,1,0,0,0,-1,1.5,0,0,1,0,0,0,1,1.5,0,0,1,0});
+Group1972->addChildren(*OrientationInterpolator1981);
+
+COrientationInterpolator* OrientationInterpolator1982 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1982->setDEF("Rolls_r_elbow_RotationInterpolator");
+OrientationInterpolator1982->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1982->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1972->addChildren(*OrientationInterpolator1982);
+
+COrientationInterpolator* OrientationInterpolator1983 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1983->setDEF("Rolls_r_shoulder_RotationInterpolator");
+OrientationInterpolator1983->setKey(new float[5]{0,0.25,0.5,0.75,1}, 5);
+OrientationInterpolator1983->setKeyValue(new float[20]{0,0,1,0,0,0,-1,1.5,0,0,-1,3,0,0,-1,1.5,0,0,1,0});
+Group1972->addChildren(*OrientationInterpolator1983);
+
+COrientationInterpolator* OrientationInterpolator1984 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1984->setDEF("Rolls_l_wrist_RotationInterpolator");
+OrientationInterpolator1984->setKey(new float[5]{0,0.25,0.5,0.75,1}, 5);
+OrientationInterpolator1984->setKeyValue(new float[20]{0,0,1,0,0,0,1,1.5,0,0,1,0,0,0,-1,1.5,0,0,1,0});
+Group1972->addChildren(*OrientationInterpolator1984);
+
+COrientationInterpolator* OrientationInterpolator1985 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1985->setDEF("Rolls_l_elbow_RotationInterpolator");
+OrientationInterpolator1985->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1985->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1972->addChildren(*OrientationInterpolator1985);
+
+COrientationInterpolator* OrientationInterpolator1986 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1986->setDEF("Rolls_l_shoulder_RotationInterpolator");
+OrientationInterpolator1986->setKey(new float[5]{0,0.25,0.5,0.75,1}, 5);
+OrientationInterpolator1986->setKeyValue(new float[20]{0,0,1,0,0,0,1,1.5,0,0,1,3,0,0,1,1.5,0,0,1,0});
+Group1972->addChildren(*OrientationInterpolator1986);
+
+COrientationInterpolator* OrientationInterpolator1987 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1987->setDEF("Rolls_head_RotationInterpolator");
+OrientationInterpolator1987->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1987->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1972->addChildren(*OrientationInterpolator1987);
+
+COrientationInterpolator* OrientationInterpolator1988 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1988->setDEF("Rolls_neck_RotationInterpolator");
+OrientationInterpolator1988->setKey(new float[5]{0,0.25,0.5,0.75,1}, 5);
+OrientationInterpolator1988->setKeyValue(new float[20]{0,0,1,0,0,0,1,1.25,0,0,1,0,0,0,-1,1.25,0,0,1,0});
+Group1972->addChildren(*OrientationInterpolator1988);
+
+COrientationInterpolator* OrientationInterpolator1989 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1989->setDEF("Rolls_lower_body_RotationInterpolator");
+OrientationInterpolator1989->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1989->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1972->addChildren(*OrientationInterpolator1989);
+
+COrientationInterpolator* OrientationInterpolator1990 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1990->setDEF("Rolls_upper_body_RotationInterpolator");
+OrientationInterpolator1990->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1990->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1972->addChildren(*OrientationInterpolator1990);
+
+COrientationInterpolator* OrientationInterpolator1991 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1991->setDEF("Rolls_whole_body_RotationInterpolator");
+OrientationInterpolator1991->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator1991->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group1972->addChildren(*OrientationInterpolator1991);
+
+CPositionInterpolator* PositionInterpolator1992 = (CPositionInterpolator *)(m_pScene.createNode("PositionInterpolator"));
+PositionInterpolator1992->setDEF("Rolls_whole_body_TranslationInterpolator");
+PositionInterpolator1992->setKey(new float[9]{0,0.125,0.25,0.375,0.5,0.625,0.75,0.875,1}, 9);
+PositionInterpolator1992->setKeyValue(new float[27]{0,0,0,0,-0.25,0,0,-0.8,0,0,-0.25,0,0,0,0,0,-0.25,0,0,-0.8,0,0,-0.25,0,0,0,0});
+Group1972->addChildren(*PositionInterpolator1992);
+
+COrientationInterpolator* OrientationInterpolator1993 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1993->setDEF("Roll_l_sternoclavicular_RollInterpolator");
+OrientationInterpolator1993->setKey(new float[6]{0,0.2,0.4,0.6,0.8,1}, 6);
+OrientationInterpolator1993->setKeyValue(new float[24]{0,0,1,0,0,0,1,0.2,0,0,1,0.22,0,0,1,0.2,0,0,1,0,0,0,1,0});
+Group1972->addChildren(*OrientationInterpolator1993);
+
+COrientationInterpolator* OrientationInterpolator1994 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1994->setDEF("Roll_l_acromioclavicular_RollInterpolator");
+OrientationInterpolator1994->setKey(new float[6]{0,0.2,0.4,0.6,0.8,1}, 6);
+OrientationInterpolator1994->setKeyValue(new float[24]{0,0,1,0,0,0,1,0,0,0,1,0.05,0,0,1,0,0,0,1,0,0,0,1,0});
+Group1972->addChildren(*OrientationInterpolator1994);
+
+COrientationInterpolator* OrientationInterpolator1995 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1995->setDEF("Roll_r_sternoclavicular_RollInterpolator");
+OrientationInterpolator1995->setKey(new float[6]{0,0.2,0.4,0.6,0.8,1}, 6);
+OrientationInterpolator1995->setKeyValue(new float[24]{0,0,1,0,0,0,1,-0.2,0,0,1,-0.22,0,0,1,-0.2,0,0,1,0,0,0,1,0});
+Group1972->addChildren(*OrientationInterpolator1995);
+
+COrientationInterpolator* OrientationInterpolator1996 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1996->setDEF("Roll_r_acromioclavicular_RollInterpolator");
+OrientationInterpolator1996->setKey(new float[6]{0,0.2,0.4,0.6,0.8,1}, 6);
+OrientationInterpolator1996->setKeyValue(new float[24]{0,0,1,0,0,0,1,0,0,0,1,-0.05,0,0,1,0,0,0,1,0,0,0,1,0});
+Group1972->addChildren(*OrientationInterpolator1996);
+
+COrientationInterpolator* OrientationInterpolator1997 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1997->setDEF("Roll_sacroiliac_YawInterpolator");
+OrientationInterpolator1997->setKey(new float[6]{0,0.2,0.4,0.6,0.8,1}, 6);
+OrientationInterpolator1997->setKeyValue(new float[24]{0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+Group1972->addChildren(*OrientationInterpolator1997);
+
+COrientationInterpolator* OrientationInterpolator1998 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1998->setDEF("Roll_vl5_YawInterpolator");
+OrientationInterpolator1998->setKey(new float[7]{0,0.2,0.4,0.5,0.6,0.8,1}, 7);
+OrientationInterpolator1998->setKeyValue(new float[28]{0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+Group1972->addChildren(*OrientationInterpolator1998);
+
+COrientationInterpolator* OrientationInterpolator1999 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator1999->setDEF("Roll_vc6_YawInterpolator");
+OrientationInterpolator1999->setKey(new float[7]{0,0.2,0.4,0.5,0.6,0.8,1}, 7);
+OrientationInterpolator1999->setKeyValue(new float[28]{0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+Group1972->addChildren(*OrientationInterpolator1999);
+
+COrientationInterpolator* OrientationInterpolator2000 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2000->setDEF("Roll_l_thumb1_PitchInterpolator");
+OrientationInterpolator2000->setKey(new float[6]{0,0.2,0.4,0.6,0.8,1}, 6);
+OrientationInterpolator2000->setKeyValue(new float[24]{0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+Group1972->addChildren(*OrientationInterpolator2000);
+
+COrientationInterpolator* OrientationInterpolator2001 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2001->setDEF("Roll_r_thumb1_PitchInterpolator");
+OrientationInterpolator2001->setKey(new float[6]{0,0.2,0.4,0.6,0.8,1}, 6);
+OrientationInterpolator2001->setKeyValue(new float[24]{0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+Group1972->addChildren(*OrientationInterpolator2001);
+
+group->addChildren(*Group1972);
+
+CGroup* Group2002 = (CGroup *)(m_pScene.createNode("Group"));
+Group2002->setDEF("WalkAnimation");
+CTimeSensor* TimeSensor2003 = (CTimeSensor *)(m_pScene.createNode("TimeSensor"));
+TimeSensor2003->setDEF("WalkTimer");
+TimeSensor2003->setCycleInterval(1.73);
+TimeSensor2003->setLoop(True);
+Group2002->addChildren(*TimeSensor2003);
+
+COrientationInterpolator* OrientationInterpolator2004 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2004->setDEF("Walk_r_metatarsal_PitchInterpolator");
+OrientationInterpolator2004->setKey(new float[6]{0,0.2,0.4,0.6,0.7,1}, 6);
+OrientationInterpolator2004->setKeyValue(new float[24]{0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+Group2002->addChildren(*OrientationInterpolator2004);
+
+COrientationInterpolator* OrientationInterpolator2005 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2005->setDEF("Walk_r_ankle_RotationInterpolator");
+OrientationInterpolator2005->setKey(new float[11]{0,0.125,0.2083,0.375,0.4583,0.5,0.6667,0.75,0.7917,0.9167,1}, 11);
+OrientationInterpolator2005->setKeyValue(new float[44]{0,0,1,0,-1,0,0,0.3533,-1,0,0,0.1072,1,0,0,0.2612,1,0,0,0.1268,-1,0,0,0.01793,-1,0,0,0.05824,-1,0,0,0.2398,-1,0,0,0.35,-1,0,0,0.3322,0,0,1,0});
+Group2002->addChildren(*OrientationInterpolator2005);
+
+COrientationInterpolator* OrientationInterpolator2006 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2006->setDEF("Walk_r_knee_RotationInterpolator");
+OrientationInterpolator2006->setKey(new float[10]{0,0.125,0.2083,0.2917,0.375,0.5,0.6667,0.7917,0.9167,1}, 10);
+OrientationInterpolator2006->setKeyValue(new float[40]{1,0,0,0.8573,1,0,0,0.8926,1,0,0,0.5351,1,0,0,0.1756,1,0,0,0.1194,1,0,0,0.3153,1,0,0,0.09354,1,0,0,0.08558,1,0,0,0.2475,1,0,0,0.8573});
+Group2002->addChildren(*OrientationInterpolator2006);
+
+COrientationInterpolator* OrientationInterpolator2007 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2007->setDEF("Walk_r_hip_RotationInterpolator");
+OrientationInterpolator2007->setKey(new float[10]{0,0.125,0.2083,0.2917,0.375,0.5,0.6667,0.7917,0.9167,1}, 10);
+OrientationInterpolator2007->setKeyValue(new float[40]{-0.5831,0.03511,0.8116,0.1481,-0.995,0.02296,0.09674,0.4683,-1,0.00192,0.007964,0.4732,-0.998,-0.0158,-0.06102,0.5079,-0.9911,-0.03541,-0.1286,0.5419,-0.9131,-0.06243,-0.403,0.3361,-0.4306,-0.07962,-0.899,0.07038,1,0,0,0.2571,0.9891,-0.02805,0.1444,0.3879,-0.5831,0.03511,0.8116,0.1481});
+Group2002->addChildren(*OrientationInterpolator2007);
+
+COrientationInterpolator* OrientationInterpolator2008 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2008->setDEF("Walk_l_ankle_RotationInterpolator");
+OrientationInterpolator2008->setKey(new float[7]{0,0.125,0.2083,0.375,0.6667,0.9167,1}, 7);
+OrientationInterpolator2008->setKeyValue(new float[28]{-1,0,0,0.06714,-1,0,0,0.2152,-1,0,0,0.3184,-1,0,0,0.4717,-1,0,0,0.2912,1,0,0,0.1222,-1,0,0,0.06714});
+Group2002->addChildren(*OrientationInterpolator2008);
+
+COrientationInterpolator* OrientationInterpolator2009 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2009->setDEF("Walk_l_knee_RotationInterpolator");
+OrientationInterpolator2009->setKey(new float[8]{0,0.2083,0.375,0.5,0.6667,0.7917,0.9167,1}, 8);
+OrientationInterpolator2009->setKeyValue(new float[32]{1,0,0,0.3226,1,0,0,0.1556,1,0,0,0.08678,1,0,0,0.8751,1,0,0,1.131,1,0,0,0.09961,1,0,0,0.3942,1,0,0,0.3226});
+Group2002->addChildren(*OrientationInterpolator2009);
+
+COrientationInterpolator* OrientationInterpolator2010 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2010->setDEF("Walk_l_hip_RotationInterpolator");
+OrientationInterpolator2010->setKey(new float[8]{0,0.25,0.375,0.5,0.6667,0.7917,0.9167,1}, 8);
+OrientationInterpolator2010->setKeyValue(new float[32]{-0.873,0.06094,0.484,0.2865,0.9963,-0.01057,0.08481,0.2488,0.9965,0.01591,-0.08222,0.3836,-0.7018,-0.03223,-0.7117,0.1289,-1,0,0,0.5518,-0.9964,0.02231,0.0817,0.5351,-0.9809,0.04912,0.1881,0.5204,-0.873,0.06094,0.484,0.2865});
+Group2002->addChildren(*OrientationInterpolator2010);
+
+COrientationInterpolator* OrientationInterpolator2011 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2011->setDEF("Walk_lower_body_RotationInterpolator");
+OrientationInterpolator2011->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator2011->setKeyValue(new float[12]{0,0,-1,0.1056,0,0,1,0.09018,0,0,-1,0.1056});
+Group2002->addChildren(*OrientationInterpolator2011);
+
+COrientationInterpolator* OrientationInterpolator2012 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2012->setDEF("Walk_r_wrist_RotationInterpolator");
+OrientationInterpolator2012->setKey(new float[4]{0,0.375,0.9167,1}, 4);
+OrientationInterpolator2012->setKeyValue(new float[16]{-0.8129,0.4759,-0.3357,0.1346,0.1533,-0.9878,0.02582,0.3902,-0.5701,0.7604,-0.311,0.366,-0.8129,0.4759,-0.3357,0.1346});
+Group2002->addChildren(*OrientationInterpolator2012);
+
+COrientationInterpolator* OrientationInterpolator2013 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2013->setDEF("Walk_r_elbow_RotationInterpolator");
+OrientationInterpolator2013->setKey(new float[4]{0,0.375,0.9167,1}, 4);
+OrientationInterpolator2013->setKeyValue(new float[16]{-1,0,0,0.411508,-1,0,0,0.0925011,-1,0,0,0.572568,-1,0,0,0.411508});
+Group2002->addChildren(*OrientationInterpolator2013);
+
+COrientationInterpolator* OrientationInterpolator2014 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2014->setDEF("Walk_r_shoulder_RotationInterpolator");
+OrientationInterpolator2014->setKey(new float[4]{0,0.375,0.9167,1}, 4);
+OrientationInterpolator2014->setKeyValue(new float[16]{-1,0,0,0.09346,1,0,0,0.3197,-1,0,0,0.1564,-1,0,0,0.09346});
+Group2002->addChildren(*OrientationInterpolator2014);
+
+COrientationInterpolator* OrientationInterpolator2015 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2015->setDEF("Walk_l_wrist_RotationInterpolator");
+OrientationInterpolator2015->setKey(new float[4]{0,0.375,0.9167,1}, 4);
+OrientationInterpolator2015->setKeyValue(new float[16]{0,-1,0,0.461076,-0.330195,-0.927451,0.175516,0.538852,0.0327774,-0.999314,-0.0172185,0.492033,0,-1,0,0.461076});
+Group2002->addChildren(*OrientationInterpolator2015);
+
+COrientationInterpolator* OrientationInterpolator2016 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2016->setDEF("Walk_l_elbow_RotationInterpolator");
+OrientationInterpolator2016->setKey(new float[4]{0,0.375,0.9167,1}, 4);
+OrientationInterpolator2016->setKeyValue(new float[16]{-1,0,0,0.0659878,-1,0,0,0.488383,-1,0,0,0.0177536,-1,0,0,0.0659878});
+Group2002->addChildren(*OrientationInterpolator2016);
+
+COrientationInterpolator* OrientationInterpolator2017 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2017->setDEF("Walk_l_shoulder_RotationInterpolator");
+OrientationInterpolator2017->setKey(new float[4]{0,0.375,0.9167,1}, 4);
+OrientationInterpolator2017->setKeyValue(new float[16]{1,0,0,0.1189,-1,0,0,0.1861,1,0,0,0.3357,1,0,0,0.1189});
+Group2002->addChildren(*OrientationInterpolator2017);
+
+COrientationInterpolator* OrientationInterpolator2018 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2018->setDEF("Walk_head_RotationInterpolator");
+OrientationInterpolator2018->setKey(new float[10]{0,0.375,0.4167,0.5,0.5833,0.6667,0.75,0.8333,0.9167,1}, 10);
+OrientationInterpolator2018->setKeyValue(new float[40]{0,-1,0,0.08642,0,1,0,0.1825,0,1,0,0.1505,0,1,0,0.1053,0,1,0,0.04391,0,-1,0,0.03119,0,-1,0,0.07936,0,-1,0,0.1616,0,-1,0,0.155,0,-1,0,0.08642});
+Group2002->addChildren(*OrientationInterpolator2018);
+
+COrientationInterpolator* OrientationInterpolator2019 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2019->setDEF("Walk_neck_RotationInterpolator");
+OrientationInterpolator2019->setKey(new float[2]{0,1}, 2);
+OrientationInterpolator2019->setKeyValue(new float[8]{0,0,1,0,0,0,1,0});
+Group2002->addChildren(*OrientationInterpolator2019);
+
+COrientationInterpolator* OrientationInterpolator2020 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2020->setDEF("Walk_upper_body_RotationInterpolator");
+OrientationInterpolator2020->setKey(new float[6]{0,0.2083,0.375,0.75,0.8333,1}, 6);
+OrientationInterpolator2020->setKeyValue(new float[24]{0,1,0,0.0826,-0.01972,-0.5974,0.8017,0.08231,0.009296,-0.9648,0.2627,0.1734,-0.01238,0.9549,-0.2968,0.08732,-0.008125,0.9691,-0.2463,0.158,0,1,0,0.0826});
+Group2002->addChildren(*OrientationInterpolator2020);
+
+COrientationInterpolator* OrientationInterpolator2021 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2021->setDEF("Walk_whole_body_RotationInterpolator");
+OrientationInterpolator2021->setKey(new float[2]{0,1}, 2);
+OrientationInterpolator2021->setKeyValue(new float[8]{0,0,1,0,0,0,1,0});
+Group2002->addChildren(*OrientationInterpolator2021);
+
+CPositionInterpolator* PositionInterpolator2022 = (CPositionInterpolator *)(m_pScene.createNode("PositionInterpolator"));
+PositionInterpolator2022->setDEF("Walk_whole_body_TranslationInterpolator");
+PositionInterpolator2022->setKey(new float[19]{0,0.04167,0.125,0.1667,0.2083,0.25,0.2917,0.375,0.4583,0.5,0.5417,0.5833,0.625,0.7083,0.75,0.7917,0.875,0.9167,1}, 19);
+PositionInterpolator2022->setKeyValue(new float[57]{0,-0.00928,0,0,-0.003858,0,0,-0.008847,0,0,-0.01486,0,0,-0.02641,0,0,-0.03934,0,0,-0.0502,0,0,-0.07469,0,0,-0.02732,0,0,-0.01608,0,0,-0.01129,0,0,-0.005819,0,0,-0.002004,0,0,-0.002579,0,0,-0.0143,0,0,-0.03799,0,0,-0.05648,0,0,-0.045,0,0,-0.00928,0});
+Group2002->addChildren(*PositionInterpolator2022);
+
+COrientationInterpolator* OrientationInterpolator2023 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2023->setDEF("Walk_l_sternoclavicular_RollInterpolator");
+OrientationInterpolator2023->setKey(new float[6]{0,0.2,0.4,0.6,0.8,1}, 6);
+OrientationInterpolator2023->setKeyValue(new float[24]{0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+Group2002->addChildren(*OrientationInterpolator2023);
+
+COrientationInterpolator* OrientationInterpolator2024 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2024->setDEF("Walk_l_acromioclavicular_RollInterpolator");
+OrientationInterpolator2024->setKey(new float[6]{0,0.2,0.4,0.6,0.8,1}, 6);
+OrientationInterpolator2024->setKeyValue(new float[24]{0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+Group2002->addChildren(*OrientationInterpolator2024);
+
+COrientationInterpolator* OrientationInterpolator2025 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2025->setDEF("Walk_r_sternoclavicular_RollInterpolator");
+OrientationInterpolator2025->setKey(new float[6]{0,0.2,0.4,0.6,0.8,1}, 6);
+OrientationInterpolator2025->setKeyValue(new float[24]{0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+Group2002->addChildren(*OrientationInterpolator2025);
+
+COrientationInterpolator* OrientationInterpolator2026 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2026->setDEF("Walk_r_acromioclavicular_RollInterpolator");
+OrientationInterpolator2026->setKey(new float[6]{0,0.2,0.4,0.6,0.8,1}, 6);
+OrientationInterpolator2026->setKeyValue(new float[24]{0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+Group2002->addChildren(*OrientationInterpolator2026);
+
+COrientationInterpolator* OrientationInterpolator2027 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2027->setDEF("Walk_sacroiliac_YawInterpolator");
+OrientationInterpolator2027->setKey(new float[6]{0,0.2,0.4,0.6,0.8,1}, 6);
+OrientationInterpolator2027->setKeyValue(new float[24]{0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+Group2002->addChildren(*OrientationInterpolator2027);
+
+COrientationInterpolator* OrientationInterpolator2028 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2028->setDEF("Walk_vl5_YawInterpolator");
+OrientationInterpolator2028->setKey(new float[7]{0,0.2,0.4,0.5,0.6,0.8,1}, 7);
+OrientationInterpolator2028->setKeyValue(new float[28]{0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+Group2002->addChildren(*OrientationInterpolator2028);
+
+COrientationInterpolator* OrientationInterpolator2029 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2029->setDEF("Walk_vc6_YawInterpolator");
+OrientationInterpolator2029->setKey(new float[7]{0,0.2,0.4,0.5,0.6,0.8,1}, 7);
+OrientationInterpolator2029->setKeyValue(new float[28]{0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+Group2002->addChildren(*OrientationInterpolator2029);
+
+COrientationInterpolator* OrientationInterpolator2030 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2030->setDEF("Walk_l_thumb1_PitchInterpolator");
+OrientationInterpolator2030->setKey(new float[6]{0,0.2,0.4,0.6,0.8,1}, 6);
+OrientationInterpolator2030->setKeyValue(new float[24]{1,0,0,0,1,0,0,0.25,1,0,0,0.5,1,0,0,0.7,1,0,0,0.2,1,0,0,0});
+Group2002->addChildren(*OrientationInterpolator2030);
+
+COrientationInterpolator* OrientationInterpolator2031 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2031->setDEF("Walk_r_thumb1_PitchInterpolator");
+OrientationInterpolator2031->setKey(new float[6]{0,0.2,0.4,0.6,0.8,1}, 6);
+OrientationInterpolator2031->setKeyValue(new float[24]{1,0,0,0,1,0,0,0.25,1,0,0,0.5,1,0,0,0.7,1,0,0,0.2,1,0,0,0});
+Group2002->addChildren(*OrientationInterpolator2031);
+
+group->addChildren(*Group2002);
+
+CGroup* Group2032 = (CGroup *)(m_pScene.createNode("Group"));
+Group2032->setDEF("RunAnimation");
+CTimeSensor* TimeSensor2033 = (CTimeSensor *)(m_pScene.createNode("TimeSensor"));
+TimeSensor2033->setDEF("RunTimer");
+TimeSensor2033->setCycleInterval(0.9);
+TimeSensor2033->setLoop(True);
+Group2032->addChildren(*TimeSensor2033);
+
+COrientationInterpolator* OrientationInterpolator2034 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2034->setDEF("Run_r_metatarsal_PitchInterpolator");
+OrientationInterpolator2034->setKey(new float[6]{0,0.2,0.4,0.6,0.7,1}, 6);
+OrientationInterpolator2034->setKeyValue(new float[24]{0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+Group2032->addChildren(*OrientationInterpolator2034);
+
+COrientationInterpolator* OrientationInterpolator2035 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2035->setDEF("Run_l_hip_RotationInterpolator_Run");
+OrientationInterpolator2035->setKey(new float[5]{0,0.2182,0.4909,0.7455,1}, 5);
+OrientationInterpolator2035->setKeyValue(new float[20]{-0.99,0.033,0.04,1.42,-0.99,0.1328,0.067,0.42,0.99,0.014,0.009,0.9,-0.99,0.0703,0.05,0.7,-0.99,0.033,0.04,1.42});
+Group2032->addChildren(*OrientationInterpolator2035);
+
+COrientationInterpolator* OrientationInterpolator2036 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2036->setDEF("Run_l_knee_RotationInterpolator_Run");
+OrientationInterpolator2036->setKey(new float[5]{0,0.2182,0.4909,0.7455,1}, 5);
+OrientationInterpolator2036->setKeyValue(new float[20]{1,0,0,1.01,1,0,0,0.426,1,0,0,0.705,1,0,0,2.179,1,0,0,1.01});
+Group2032->addChildren(*OrientationInterpolator2036);
+
+COrientationInterpolator* OrientationInterpolator2037 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2037->setDEF("Run_l_ankle_RotationInterpolator_Run");
+OrientationInterpolator2037->setKey(new float[5]{0,0.22,0.3,0.4,1}, 5);
+OrientationInterpolator2037->setKeyValue(new float[20]{1,0,0,0.0374,-1,0,0,0.1037,-1,0,0,0.4328,1,0,0,0.1929,1,0,0,0.03574});
+Group2032->addChildren(*OrientationInterpolator2037);
+
+COrientationInterpolator* OrientationInterpolator2038 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2038->setDEF("Run_r_hip_RotationInterpolator_Run");
+OrientationInterpolator2038->setKey(new float[5]{0,0.2545,0.4909,0.7091,1}, 5);
+OrientationInterpolator2038->setKeyValue(new float[20]{0.99,-0.014,0.009,0.9,-0.99,-0.0703,-0.05,0.7,-0.99,-0.033,0.04,1.42,-0.99,-0.1328,-0.067,0.42,0.99,-0.014,0.009,0.9});
+Group2032->addChildren(*OrientationInterpolator2038);
+
+COrientationInterpolator* OrientationInterpolator2039 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2039->setDEF("Run_r_knee_RotationInterpolator_Run");
+OrientationInterpolator2039->setKey(new float[5]{0,0.2545,0.4909,0.7091,1}, 5);
+OrientationInterpolator2039->setKeyValue(new float[20]{1,0,0,0.705,1,0,0,2.179,1,0,0,1.01,1,0,0,0.426,1,0,0,0.705});
+Group2032->addChildren(*OrientationInterpolator2039);
+
+COrientationInterpolator* OrientationInterpolator2040 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2040->setDEF("Run_r_ankle_RotationInterpolator_Run");
+OrientationInterpolator2040->setKey(new float[6]{0,0.4,0.71,0.8,0.82,1}, 6);
+OrientationInterpolator2040->setKeyValue(new float[24]{1,0,0,0.2323,-1,0,0,0.07843,-1,0,0,0.32,-1,0,0,0.374,-1,0,0,0.3478,1,0,0,0.2323});
+Group2032->addChildren(*OrientationInterpolator2040);
+
+COrientationInterpolator* OrientationInterpolator2041 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2041->setDEF("Run_l_shoulder_RotationInterpolator_Run");
+OrientationInterpolator2041->setKey(new float[5]{0,0.2182,0.4909,0.7455,1}, 5);
+OrientationInterpolator2041->setKeyValue(new float[20]{0.99,-0.074,0.25,1.5,0.99,-0.092,0.44,0.3,-0.99,0.136,0.25,0.85,0.99,-0.081,0.38,0.4,0.99,-0.074,0.25,1.5});
+Group2032->addChildren(*OrientationInterpolator2041);
+
+COrientationInterpolator* OrientationInterpolator2042 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2042->setDEF("Run_l_elbow_RotationInterpolator_Run");
+OrientationInterpolator2042->setKey(new float[5]{0,0.2182,0.4909,0.7455,1}, 5);
+OrientationInterpolator2042->setKeyValue(new float[20]{-1,0,0,1.85,-0.99,-0.19,0.18,1.35,-1,0,0,0.975,-0.99,-0.09,-0.02,1.55,-1,0,0,1.85});
+Group2032->addChildren(*OrientationInterpolator2042);
+
+COrientationInterpolator* OrientationInterpolator2043 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2043->setDEF("Run_l_wrist_RotationInterpolator_Run");
+OrientationInterpolator2043->setKey(new float[5]{0,0.25,0.5,0.75,1}, 5);
+OrientationInterpolator2043->setKeyValue(new float[20]{-0.25,-1,0.08,0.14,0.25,1,0.08,0.14,0,0,1,0,-0.25,1,0.08,-0.14,-0.25,1,0.08,0.14});
+Group2032->addChildren(*OrientationInterpolator2043);
+
+COrientationInterpolator* OrientationInterpolator2044 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2044->setDEF("Run_r_shoulder_RotationInterpolator_Run");
+OrientationInterpolator2044->setKey(new float[5]{0,0.2545,0.4909,0.7091,1}, 5);
+OrientationInterpolator2044->setKeyValue(new float[20]{-0.99,-0.136,-0.25,0.85,0.99,0.081,-0.38,0.4,0.99,0.074,-0.25,1.5,0.99,0.081,-0.38,0.4,-0.99,-0.136,-0.25,0.85});
+Group2032->addChildren(*OrientationInterpolator2044);
+
+COrientationInterpolator* OrientationInterpolator2045 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2045->setDEF("Run_r_elbow_RotationInterpolator_Run");
+OrientationInterpolator2045->setKey(new float[5]{0,0.2545,0.4909,0.7091,1}, 5);
+OrientationInterpolator2045->setKeyValue(new float[20]{-1,0,0,0.975,-0.99,0.09,0.02,1.55,-1,0,0,1.85,-0.99,0.19,-0.18,1.35,-1,0,0,0.975});
+Group2032->addChildren(*OrientationInterpolator2045);
+
+COrientationInterpolator* OrientationInterpolator2046 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2046->setDEF("Run_r_wrist_RotationInterpolator_Run");
+OrientationInterpolator2046->setKey(new float[2]{0,1}, 2);
+OrientationInterpolator2046->setKeyValue(new float[8]{-0.917742,-0.237244,-0.318536,0.214273,-0.917742,-0.237244,-0.318536,0.214273});
+Group2032->addChildren(*OrientationInterpolator2046);
+
+COrientationInterpolator* OrientationInterpolator2047 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2047->setDEF("Run_lower_body_RotationInterpolator_Run");
+OrientationInterpolator2047->setKey(new float[5]{0,0.2182,0.4909,0.7455,1}, 5);
+OrientationInterpolator2047->setKeyValue(new float[20]{0,-1,0,0.125,0,0,1,0,0,1,0,0.125,0,0,1,0,0,-1,0,0.125});
+Group2032->addChildren(*OrientationInterpolator2047);
+
+COrientationInterpolator* OrientationInterpolator2048 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2048->setDEF("Run_head_RotationInterpolator_Run");
+OrientationInterpolator2048->setKey(new float[5]{0,0.2545,0.4909,0.7091,1}, 5);
+OrientationInterpolator2048->setKeyValue(new float[20]{1,0,0,0.08,1,0,0,0.12,1,0,0,0.3,1,0,0,0.3,1,0,0,0.08});
+Group2032->addChildren(*OrientationInterpolator2048);
+
+COrientationInterpolator* OrientationInterpolator2049 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2049->setDEF("Run_neck_RotationInterpolator_Run");
+OrientationInterpolator2049->setKey(new float[5]{0,0.2545,0.4909,0.7091,1}, 5);
+OrientationInterpolator2049->setKeyValue(new float[20]{0.7,0,0,0.4,-0.7,-0.7,0,0.4,0,0,0,0.4,-0.7,0.7,0,0.4,0.7,0,0,0.4});
+Group2032->addChildren(*OrientationInterpolator2049);
+
+COrientationInterpolator* OrientationInterpolator2050 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2050->setDEF("Run_upper_body_RotationInterpolator_Run");
+OrientationInterpolator2050->setKey(new float[5]{0,0.2545,0.4909,0.7636,1}, 5);
+OrientationInterpolator2050->setKeyValue(new float[20]{0.97,0.65,0.086,0.5,0.9,0.003,-0.02,0.38,0.95,-0.68,-0.086,0.5,0.9,0.004,-0.025,0.4,0.97,0.65,0.086,0.5});
+Group2032->addChildren(*OrientationInterpolator2050);
+
+COrientationInterpolator* OrientationInterpolator2051 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2051->setDEF("Run_whole_body_RotationInterpolator_Run");
+OrientationInterpolator2051->setKey(new float[5]{0,0.25,0.5,0.75,1}, 5);
+OrientationInterpolator2051->setKeyValue(new float[20]{1,0,0,0.06,1,0,0,0.167,1,0,0,0.06,1,0,0,0.168,1,0,0,0.06});
+Group2032->addChildren(*OrientationInterpolator2051);
+
+CPositionInterpolator* PositionInterpolator2052 = (CPositionInterpolator *)(m_pScene.createNode("PositionInterpolator"));
+PositionInterpolator2052->setDEF("Run_whole_body_TranslationInterpolator_Run");
+PositionInterpolator2052->setKey(new float[9]{0,0.22,0.3,0.31,0.5,0.69,0.7,0.78,1}, 9);
+PositionInterpolator2052->setKeyValue(new float[27]{0,-0.01,0,0,-0.037,0,0,-0.049,0,0,-0.037,0,0,-0.01,0,0,-0.037,0,0,-0.049,0,0,-0.037,0,0,-0.01,0});
+Group2032->addChildren(*PositionInterpolator2052);
+
+COrientationInterpolator* OrientationInterpolator2053 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2053->setDEF("Run_l_sternoclavicular_RollInterpolator");
+OrientationInterpolator2053->setKey(new float[6]{0,0.2,0.4,0.6,0.8,1}, 6);
+OrientationInterpolator2053->setKeyValue(new float[24]{0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+Group2032->addChildren(*OrientationInterpolator2053);
+
+COrientationInterpolator* OrientationInterpolator2054 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2054->setDEF("Run_l_acromioclavicular_RollInterpolator");
+OrientationInterpolator2054->setKey(new float[6]{0,0.2,0.4,0.6,0.8,1}, 6);
+OrientationInterpolator2054->setKeyValue(new float[24]{0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+Group2032->addChildren(*OrientationInterpolator2054);
+
+COrientationInterpolator* OrientationInterpolator2055 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2055->setDEF("Run_r_sternoclavicular_RollInterpolator");
+OrientationInterpolator2055->setKey(new float[6]{0,0.2,0.4,0.6,0.8,1}, 6);
+OrientationInterpolator2055->setKeyValue(new float[24]{0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+Group2032->addChildren(*OrientationInterpolator2055);
+
+COrientationInterpolator* OrientationInterpolator2056 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2056->setDEF("Run_r_acromioclavicular_RollInterpolator");
+OrientationInterpolator2056->setKey(new float[6]{0,0.2,0.4,0.6,0.8,1}, 6);
+OrientationInterpolator2056->setKeyValue(new float[24]{0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+Group2032->addChildren(*OrientationInterpolator2056);
+
+COrientationInterpolator* OrientationInterpolator2057 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2057->setDEF("Run_sacroiliac_YawInterpolator");
+OrientationInterpolator2057->setKey(new float[6]{0,0.2,0.4,0.6,0.8,1}, 6);
+OrientationInterpolator2057->setKeyValue(new float[24]{0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+Group2032->addChildren(*OrientationInterpolator2057);
+
+COrientationInterpolator* OrientationInterpolator2058 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2058->setDEF("Run_vl5_YawInterpolator");
+OrientationInterpolator2058->setKey(new float[7]{0,0.2,0.4,0.5,0.6,0.8,1}, 7);
+OrientationInterpolator2058->setKeyValue(new float[28]{0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+Group2032->addChildren(*OrientationInterpolator2058);
+
+COrientationInterpolator* OrientationInterpolator2059 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2059->setDEF("Run_vc6_YawInterpolator");
+OrientationInterpolator2059->setKey(new float[7]{0,0.2,0.4,0.5,0.6,0.8,1}, 7);
+OrientationInterpolator2059->setKeyValue(new float[28]{0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+Group2032->addChildren(*OrientationInterpolator2059);
+
+COrientationInterpolator* OrientationInterpolator2060 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2060->setDEF("Run_l_thumb1_PitchInterpolator");
+OrientationInterpolator2060->setKey(new float[6]{0,0.2,0.4,0.6,0.8,1}, 6);
+OrientationInterpolator2060->setKeyValue(new float[24]{1,0,0,0,1,0,0,0.25,1,0,0,0.7,1,0,0,0.27,1,0,0,0.2,1,0,0,0});
+Group2032->addChildren(*OrientationInterpolator2060);
+
+COrientationInterpolator* OrientationInterpolator2061 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2061->setDEF("Run_r_thumb1_PitchInterpolator");
+OrientationInterpolator2061->setKey(new float[6]{0,0.2,0.4,0.6,0.8,1}, 6);
+OrientationInterpolator2061->setKeyValue(new float[24]{1,0,0,0,1,0,0,0.25,1,0,0,0.7,1,0,0,0.27,1,0,0,0.2,1,0,0,0});
+Group2032->addChildren(*OrientationInterpolator2061);
+
+group->addChildren(*Group2032);
+
+CGroup* Group2062 = (CGroup *)(m_pScene.createNode("Group"));
+Group2062->setDEF("JumpAnimation");
+CTimeSensor* TimeSensor2063 = (CTimeSensor *)(m_pScene.createNode("TimeSensor"));
+TimeSensor2063->setDEF("JumpTimer");
+TimeSensor2063->setCycleInterval(3.73);
+TimeSensor2063->setLoop(True);
+Group2062->addChildren(*TimeSensor2063);
+
+COrientationInterpolator* OrientationInterpolator2064 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2064->setDEF("Jump_r_metatarsal_PitchInterpolator");
+OrientationInterpolator2064->setKey(new float[6]{0,0.2,0.4,0.6,0.7,1}, 6);
+OrientationInterpolator2064->setKeyValue(new float[24]{0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+Group2062->addChildren(*OrientationInterpolator2064);
+
+COrientationInterpolator* OrientationInterpolator2065 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2065->setDEF("Jump_r_ankle_RotationInterpolator");
+OrientationInterpolator2065->setKey(new float[14]{0,0.1,0.15,0.25,0.28,0.32,0.35,0.64,0.76,0.84,0.88,0.92,0.96,1}, 14);
+OrientationInterpolator2065->setKeyValue(new float[56]{0,0,1,0,-1,0,0,0.6735,-1,0,0,0.6735,-1,0,0,0.3527,-1,0,0,0.3038,-1,0,0,0.07964,1,0,0,1.3,1,0,0,0.6509,1,0,0,0.3001,-1,0,0,0.2087,-1,0,0,0.3756,-1,0,0,0.3279,-1,0,0,0.1193,0,0,1,0});
+Group2062->addChildren(*OrientationInterpolator2065);
+
+COrientationInterpolator* OrientationInterpolator2066 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2066->setDEF("Jump_r_knee_RotationInterpolator");
+OrientationInterpolator2066->setKey(new float[8]{0,0.2,0.25,0.3,0.64,0.76,0.88,1}, 8);
+OrientationInterpolator2066->setKeyValue(new float[32]{0,0,1,0,1,0,0,2.5,1,0,0,1.7,0,0,1,0,1,0,0,0.9507,1,0,0,0.5845,1,0,0,0.9054,0,0,1,0});
+Group2062->addChildren(*OrientationInterpolator2066);
+
+COrientationInterpolator* OrientationInterpolator2067 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2067->setDEF("Jump_r_hip_RotationInterpolator");
+OrientationInterpolator2067->setKey(new float[11]{0,0.18,0.24,0.26,0.28,0.32,0.48,0.64,0.76,0.88,1}, 11);
+OrientationInterpolator2067->setKeyValue(new float[44]{0,0,1,0,-1,0,0,1.63,-1,0,0,1.7,-1,0,0,1.55,-1,0,0,0.8943,-1,0,0,0.3698,0,0,1,0,-1,0,0,0.4963,-1,0,0,0.3829,-1,0,0,0.5169,0,0,1,0});
+Group2062->addChildren(*OrientationInterpolator2067);
+
+COrientationInterpolator* OrientationInterpolator2068 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2068->setDEF("Jump_l_ankle_RotationInterpolator");
+OrientationInterpolator2068->setKey(new float[14]{0,0.28,0.32,0.36,0.4,0.44,0.48,0.64,0.76,0.84,0.88,0.92,0.96,1}, 14);
+OrientationInterpolator2068->setKeyValue(new float[56]{0,0,1,0,-1,0,0,0.625,-1,0,0,0.625,-1,0,0,0.3364,-1,0,0,0.2742,-1,0,0,0.05078,1,0,0,0.2833,1,0,0,0.6667,1,0,0,0.2833,-1,0,0,0.2108,-1,0,0,0.375,-1,0,0,0.3146,-1,0,0,0.1174,0,0,1,0});
+Group2062->addChildren(*OrientationInterpolator2068);
+
+COrientationInterpolator* OrientationInterpolator2069 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2069->setDEF("Jump_l_knee_RotationInterpolator");
+OrientationInterpolator2069->setKey(new float[8]{0,0.28,0.32,0.48,0.64,0.76,0.88,1}, 8);
+OrientationInterpolator2069->setKeyValue(new float[32]{0,0,1,0,1,0,0,2.047,1,0,0,2.047,0,0,1,0,1,0,0,1.566,1,0,0,0.5913,1,0,0,0.9235,0,0,1,0});
+Group2062->addChildren(*OrientationInterpolator2069);
+
+COrientationInterpolator* OrientationInterpolator2070 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2070->setDEF("Jump_l_hip_RotationInterpolator");
+OrientationInterpolator2070->setKey(new float[11]{0,0.28,0.32,0.36,0.4,0.44,0.48,0.64,0.76,0.88,1}, 11);
+OrientationInterpolator2070->setKeyValue(new float[44]{0,0,1,0,1,0,0,4.349,1,0,0,4.349,1,0,0,4.615,-1,0,0,0.9136,-1,0,0,0.3614,0,0,1,0,-1,0,0,0.7869,-1,0,0,0.3918,-1,0,0,0.5433,0,0,1,0});
+Group2062->addChildren(*OrientationInterpolator2070);
+
+COrientationInterpolator* OrientationInterpolator2071 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2071->setDEF("Jump_lower_body_RotationInterpolator");
+OrientationInterpolator2071->setKey(new float[6]{0,0.28,0.32,0.48,0.76,1}, 6);
+OrientationInterpolator2071->setKeyValue(new float[24]{0,0,1,0,1,0,0,0.1892,1,0,0,0.1892,0,0,1,0,0,0,1,0,0,0,1,0});
+Group2062->addChildren(*OrientationInterpolator2071);
+
+COrientationInterpolator* OrientationInterpolator2072 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2072->setDEF("Jump_r_wrist_RotationInterpolator");
+OrientationInterpolator2072->setKey(new float[6]{0,0.28,0.32,0.64,0.76,1}, 6);
+OrientationInterpolator2072->setKeyValue(new float[24]{0,0,1,0,-0.0585279,0.983903,-0.168849,1.85956,-0.0585279,0.983903,-0.168849,1.85956,-0.00222418,0.99801,-0.0630095,1.46072,0,1,0,0.497349,0,0,1,0});
+Group2062->addChildren(*OrientationInterpolator2072);
+
+COrientationInterpolator* OrientationInterpolator2073 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2073->setDEF("Jump_r_elbow_RotationInterpolator");
+OrientationInterpolator2073->setKey(new float[6]{0,0.28,0.32,0.64,0.76,1}, 6);
+OrientationInterpolator2073->setKeyValue(new float[24]{0,0,1,0,-1,0,0,0.04151,-1,0,0,0.04151,-1,0,0,0.5855,-1,0,0,0.5852,0,0,1,0});
+Group2062->addChildren(*OrientationInterpolator2073);
+
+COrientationInterpolator* OrientationInterpolator2074 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2074->setDEF("Jump_r_shoulder_RotationInterpolator");
+OrientationInterpolator2074->setKey(new float[7]{0,0.28,0.32,0.64,0.76,0.88,1}, 7);
+OrientationInterpolator2074->setKeyValue(new float[28]{0,0,1,0,0.9992,0.02042,0.03558,4.688,0.9992,0.02042,0.03558,4.688,0.9989,-0.04623,0.005159,4.079,-0.8687,-0.2525,-0.4261,1.501,-0.941,-0.2893,-0.1754,0.4788,0,0,1,0});
+Group2062->addChildren(*OrientationInterpolator2074);
+
+COrientationInterpolator* OrientationInterpolator2075 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2075->setDEF("Jump_l_wrist_RotationInterpolator");
+OrientationInterpolator2075->setKey(new float[7]{0,0.48,0.52,0.64,0.76,0.88,1}, 7);
+OrientationInterpolator2075->setKeyValue(new float[28]{0,0,1,0,0.0672928,0.989475,-0.128107,4.15574,0.0672928,0.989475,-0.128107,4.15574,0.00364942,0.999901,0.0135896,4.5822,0,-1,0,0.655922,-0.00050618,-0.999999,0.0012782,1.28397,0,0,1,0});
+Group2062->addChildren(*OrientationInterpolator2075);
+
+COrientationInterpolator* OrientationInterpolator2076 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2076->setDEF("Jump_l_elbow_RotationInterpolator");
+OrientationInterpolator2076->setKey(new float[6]{0,0.28,0.32,0.58,0.72,1}, 6);
+OrientationInterpolator2076->setKeyValue(new float[24]{0,0,1,0,-1,0,0,1.13,-1,0,0,1.7,-1,0,0,1.7,-1,0,0,0.4,0,0,1,0});
+Group2062->addChildren(*OrientationInterpolator2076);
+
+COrientationInterpolator* OrientationInterpolator2077 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2077->setDEF("Jump_l_shoulder_RotationInterpolator");
+OrientationInterpolator2077->setKey(new float[7]{0,0.28,0.32,0.64,0.76,0.88,1}, 7);
+OrientationInterpolator2077->setKeyValue(new float[28]{0,0,1,0,-0.9987,0.02554,0.04498,1.57,-0.9987,0.02554,0.04498,1.57,1,0.0004113,0.003055,4.114,-0.8413,0.3238,0.4329,1.453,-0.877,0.4198,0.2337,0.6009,0,0,1,0});
+Group2062->addChildren(*OrientationInterpolator2077);
+
+COrientationInterpolator* OrientationInterpolator2078 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2078->setDEF("Jump_head_RotationInterpolator");
+OrientationInterpolator2078->setKey(new float[6]{0,0.28,0.32,0.48,0.76,1}, 6);
+OrientationInterpolator2078->setKeyValue(new float[24]{0,0,1,0,-1,0,0,0.5989,-1,0,0,0.5989,-1,0,0,0.3216,1,0,0,0.06503,0,0,1,0});
+Group2062->addChildren(*OrientationInterpolator2078);
+
+COrientationInterpolator* OrientationInterpolator2079 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2079->setDEF("Jump_neck_RotationInterpolator");
+OrientationInterpolator2079->setKey(new float[6]{0,0.28,0.32,0.48,0.76,1}, 6);
+OrientationInterpolator2079->setKeyValue(new float[24]{0,0,1,0,-1,0,0,0.1942,-1,0,0,0.1942,0,0,1,0,1,0,0,0.2284,0,0,1,0});
+Group2062->addChildren(*OrientationInterpolator2079);
+
+COrientationInterpolator* OrientationInterpolator2080 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2080->setDEF("Jump_upper_body_RotationInterpolator");
+OrientationInterpolator2080->setKey(new float[7]{0,0.22,0.28,0.34,0.71,0.88,1}, 7);
+OrientationInterpolator2080->setKeyValue(new float[28]{0,0,1,0,1,0,0,1.05,1,0,0,1.051,-1,0,0,0.257,1,0,0,0.2171,1,0,0,0.3465,0,0,1,0});
+Group2062->addChildren(*OrientationInterpolator2080);
+
+COrientationInterpolator* OrientationInterpolator2081 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2081->setDEF("Jump_whole_body_RotationInterpolator");
+OrientationInterpolator2081->setKey(new float[7]{0,0.28,0.32,0.48,0.64,0.76,1}, 7);
+OrientationInterpolator2081->setKeyValue(new float[28]{0,0,1,0,1,0,0,0.3273,1,0,0,0.3273,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+Group2062->addChildren(*OrientationInterpolator2081);
+
+CPositionInterpolator* PositionInterpolator2082 = (CPositionInterpolator *)(m_pScene.createNode("PositionInterpolator"));
+PositionInterpolator2082->setDEF("Jump_whole_body_TranslationInterpolator");
+PositionInterpolator2082->setKey(new float[22]{0,0.04,0.07,0.11,0.15,0.19,0.22,0.25,0.27,0.31,0.33,0.35,0.38,0.53,0.544,0.76,0.8,0.84,0.88,0.92,0.96,1}, 22);
+PositionInterpolator2082->setKeyValue(new float[66]{0,0,0,0,-0.01264,-0.01289,0,-0.04712,-0.03738,-0.0003345,-0.1049,-0.05353,-0.0005712,-0.1892,-0.06561,-0.0008233,-0.286,-0.06276,-0.0009591,-0.3795,-0.05148,-0.00106,-0.4484,-0.03656,-0.00106,-0.4484,-0.03656,-0.001122,-0.25,-0.1499,-0.0008616,-0.05,-0.06358,-0.0005128,0.15,-0.05488,0.0004779,0.55,0.02732,0.0001728,1.385,0.006873,0.00017,1.395,0.0069,0,0.35,0.02148,0,-0.01299,-0.01057,0,-0.06932,-0.01064,0.0001365,-0.1037,-0.005059,0.0001279,-0.07198,-0.007596,0.000141,-0.01626,-0.004935,0,0,0});
+Group2062->addChildren(*PositionInterpolator2082);
+
+COrientationInterpolator* OrientationInterpolator2083 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2083->setDEF("Jump_l_sternoclavicular_RollInterpolator");
+OrientationInterpolator2083->setKey(new float[6]{0,0.2,0.4,0.6,0.8,1}, 6);
+OrientationInterpolator2083->setKeyValue(new float[24]{0,0,1,0,0,0,1,0.2,0,0,1,0.22,0,0,1,0.2,0,0,1,0,0,0,1,0});
+Group2062->addChildren(*OrientationInterpolator2083);
+
+COrientationInterpolator* OrientationInterpolator2084 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2084->setDEF("Jump_l_acromioclavicular_RollInterpolator");
+OrientationInterpolator2084->setKey(new float[6]{0,0.2,0.4,0.6,0.8,1}, 6);
+OrientationInterpolator2084->setKeyValue(new float[24]{0,0,1,0,0,0,1,0,0,0,1,0.05,0,0,1,0,0,0,1,0,0,0,1,0});
+Group2062->addChildren(*OrientationInterpolator2084);
+
+COrientationInterpolator* OrientationInterpolator2085 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2085->setDEF("Jump_r_sternoclavicular_RollInterpolator");
+OrientationInterpolator2085->setKey(new float[6]{0,0.2,0.4,0.6,0.8,1}, 6);
+OrientationInterpolator2085->setKeyValue(new float[24]{0,0,1,0,0,0,1,-0.2,0,0,1,-0.22,0,0,1,-0.2,0,0,1,0,0,0,1,0});
+Group2062->addChildren(*OrientationInterpolator2085);
+
+COrientationInterpolator* OrientationInterpolator2086 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2086->setDEF("Jump_r_acromioclavicular_RollInterpolator");
+OrientationInterpolator2086->setKey(new float[6]{0,0.2,0.4,0.6,0.8,1}, 6);
+OrientationInterpolator2086->setKeyValue(new float[24]{0,0,1,0,0,0,1,0,0,0,1,-0.05,0,0,1,0,0,0,1,0,0,0,1,0});
+Group2062->addChildren(*OrientationInterpolator2086);
+
+COrientationInterpolator* OrientationInterpolator2087 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2087->setDEF("Jump_sacroiliac_YawInterpolator");
+OrientationInterpolator2087->setKey(new float[6]{0,0.2,0.4,0.6,0.8,1}, 6);
+OrientationInterpolator2087->setKeyValue(new float[24]{0,1,0,0,0,-1,0,0.1,0,1,0,0,0,1,-1,0.24,0,-1,0,0.4,0,1,0,0});
+Group2062->addChildren(*OrientationInterpolator2087);
+
+COrientationInterpolator* OrientationInterpolator2088 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2088->setDEF("Jump_vl5_YawInterpolator");
+OrientationInterpolator2088->setKey(new float[7]{0,0.2,0.4,0.5,0.6,0.8,1}, 7);
+OrientationInterpolator2088->setKeyValue(new float[28]{0,1,0,0,0,1,0,-0.1,0,1,0,0,0,1,0,0,1,0,0,0.6,0,1,0,0.1,0,1,0,0});
+Group2062->addChildren(*OrientationInterpolator2088);
+
+COrientationInterpolator* OrientationInterpolator2089 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2089->setDEF("Jump_vc6_YawInterpolator");
+OrientationInterpolator2089->setKey(new float[7]{0,0.2,0.4,0.5,0.6,0.8,1}, 7);
+OrientationInterpolator2089->setKeyValue(new float[28]{0,1,0,0,0,1,0,0.8,0,1,0,0,0,1,0,0,-1,0,0,0.6,0,-1,0,0.8,0,1,0,0});
+Group2062->addChildren(*OrientationInterpolator2089);
+
+COrientationInterpolator* OrientationInterpolator2090 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2090->setDEF("Jump_l_thumb1_PitchInterpolator");
+OrientationInterpolator2090->setKey(new float[6]{0,0.2,0.4,0.6,0.8,1}, 6);
+OrientationInterpolator2090->setKeyValue(new float[24]{1,0,0,0,1,0,0,0.5,1,0,0,1.1,1,0,0,0.7,1,0,0,0.2,1,0,0,0});
+Group2062->addChildren(*OrientationInterpolator2090);
+
+COrientationInterpolator* OrientationInterpolator2091 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2091->setDEF("Jump_r_thumb1_PitchInterpolator");
+OrientationInterpolator2091->setKey(new float[6]{0,0.2,0.4,0.6,0.8,1}, 6);
+OrientationInterpolator2091->setKeyValue(new float[24]{1,0,0,0,1,0,0,0.5,1,0,0,1.1,1,0,0,0.7,1,0,0,0.2,1,0,0,0});
+Group2062->addChildren(*OrientationInterpolator2091);
+
+group->addChildren(*Group2062);
+
+CGroup* Group2092 = (CGroup *)(m_pScene.createNode("Group"));
+Group2092->setDEF("KickAnimation");
+CTimeSensor* TimeSensor2093 = (CTimeSensor *)(m_pScene.createNode("TimeSensor"));
+TimeSensor2093->setDEF("KickTimer");
+TimeSensor2093->setCycleInterval(3.73);
+TimeSensor2093->setLoop(True);
+Group2092->addChildren(*TimeSensor2093);
+
+COrientationInterpolator* OrientationInterpolator2094 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2094->setDEF("Kick_l_sternoclavicular_RollInterpolator");
+OrientationInterpolator2094->setKey(new float[6]{0,0.2,0.4,0.6,0.8,1}, 6);
+OrientationInterpolator2094->setKeyValue(new float[24]{0,0,1,0,0,0,1,0.2,0,0,1,0.22,0,0,1,0.2,0,0,1,0,0,0,1,0});
+Group2092->addChildren(*OrientationInterpolator2094);
+
+COrientationInterpolator* OrientationInterpolator2095 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2095->setDEF("Kick_l_acromioclavicular_RollInterpolator");
+OrientationInterpolator2095->setKey(new float[6]{0,0.2,0.4,0.6,0.8,1}, 6);
+OrientationInterpolator2095->setKeyValue(new float[24]{0,0,1,0,0,0,1,0,0,0,1,0.05,0,0,1,0,0,0,1,0,0,0,1,0});
+Group2092->addChildren(*OrientationInterpolator2095);
+
+COrientationInterpolator* OrientationInterpolator2096 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2096->setDEF("Kick_l_shoulder_RollInterpolator");
+OrientationInterpolator2096->setKey(new float[6]{0,0.2,0.4,0.6,0.8,1}, 6);
+OrientationInterpolator2096->setKeyValue(new float[24]{0,0,1,0,0,0,1,1.76,-0.25,0,1,1.76,0,0,1,1.256,0,0,1,0.05,0,0,1,0});
+Group2092->addChildren(*OrientationInterpolator2096);
+
+COrientationInterpolator* OrientationInterpolator2097 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2097->setDEF("Kick_l_ForeArm_PitchInterpolator");
+OrientationInterpolator2097->setKey(new float[6]{0,0.2,0.4,0.6,0.8,1}, 6);
+OrientationInterpolator2097->setKeyValue(new float[24]{1,0,0,0,1,0,0,-0.55,-1,0.25,0,2.55,1,0,0,0,1,0,0,0,1,0,0,0});
+Group2092->addChildren(*OrientationInterpolator2097);
+
+COrientationInterpolator* OrientationInterpolator2098 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2098->setDEF("Kick_l_wrist_RollInterpolator");
+OrientationInterpolator2098->setKey(new float[6]{0,0.2,0.4,0.6,0.8,1}, 6);
+OrientationInterpolator2098->setKeyValue(new float[24]{0,0,1,0,0,0,1,0,0,1,0,0.55,0,0,1,0,0,0,1,0,0,0,1,0});
+Group2092->addChildren(*OrientationInterpolator2098);
+
+COrientationInterpolator* OrientationInterpolator2099 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2099->setDEF("Kick_l_thumb1_PitchInterpolator");
+OrientationInterpolator2099->setKey(new float[6]{0,0.2,0.4,0.6,0.8,1}, 6);
+OrientationInterpolator2099->setKeyValue(new float[24]{1,0,0,0,1,0,0,0.5,1,0,0,1.1,1,0,0,0.7,1,0,0,0.2,1,0,0,0});
+Group2092->addChildren(*OrientationInterpolator2099);
+
+COrientationInterpolator* OrientationInterpolator2100 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2100->setDEF("Kick_r_sternoclavicular_RollInterpolator");
+OrientationInterpolator2100->setKey(new float[6]{0,0.2,0.4,0.6,0.8,1}, 6);
+OrientationInterpolator2100->setKeyValue(new float[24]{0,0,1,0,0,0,1,-0.2,0,0,1,-0.22,0,0,1,-0.2,0,0,1,0,0,0,1,0});
+Group2092->addChildren(*OrientationInterpolator2100);
+
+COrientationInterpolator* OrientationInterpolator2101 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2101->setDEF("Kick_r_acromioclavicular_RollInterpolator");
+OrientationInterpolator2101->setKey(new float[6]{0,0.2,0.4,0.6,0.8,1}, 6);
+OrientationInterpolator2101->setKeyValue(new float[24]{0,0,1,0,0,0,1,0,0,0,1,-0.05,0,0,1,0,0,0,1,0,0,0,1,0});
+Group2092->addChildren(*OrientationInterpolator2101);
+
+COrientationInterpolator* OrientationInterpolator2102 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2102->setDEF("Kick_r_shoulder_RollInterpolator");
+OrientationInterpolator2102->setKey(new float[6]{0,0.2,0.4,0.6,0.8,1}, 6);
+OrientationInterpolator2102->setKeyValue(new float[24]{0,0,1,0,0,0,1,-1.76,0.25,0,1,-1.76,0,0,1,-1.256,0,0,1,-0.05,0,0,1,0});
+Group2092->addChildren(*OrientationInterpolator2102);
+
+COrientationInterpolator* OrientationInterpolator2103 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2103->setDEF("Kick_r_ForeArm_PitchInterpolator");
+OrientationInterpolator2103->setKey(new float[6]{0,0.2,0.4,0.6,0.8,1}, 6);
+OrientationInterpolator2103->setKeyValue(new float[24]{1,0,0,0,1,0,0,-0.55,1,0.25,0,-2.55,1,0,0,0,1,0,0,0,1,0,0,0});
+Group2092->addChildren(*OrientationInterpolator2103);
+
+COrientationInterpolator* OrientationInterpolator2104 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2104->setDEF("Kick_r_wrist_RollInterpolator");
+OrientationInterpolator2104->setKey(new float[6]{0,0.2,0.4,0.6,0.8,1}, 6);
+OrientationInterpolator2104->setKeyValue(new float[24]{0,0,1,0,0,0,1,0,0,1,0,-0.55,0,0,1,0,0,0,1,0,0,0,1,0});
+Group2092->addChildren(*OrientationInterpolator2104);
+
+COrientationInterpolator* OrientationInterpolator2105 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2105->setDEF("Kick_r_thumb1_PitchInterpolator");
+OrientationInterpolator2105->setKey(new float[6]{0,0.2,0.4,0.6,0.8,1}, 6);
+OrientationInterpolator2105->setKeyValue(new float[24]{1,0,0,0,1,0,0,0.5,1,0,0,1.1,1,0,0,0.7,1,0,0,0.2,1,0,0,0});
+Group2092->addChildren(*OrientationInterpolator2105);
+
+COrientationInterpolator* OrientationInterpolator2106 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2106->setDEF("Kick_r_hip_PitchInterpolator");
+OrientationInterpolator2106->setKey(new float[7]{0,0.2,0.3,0.5,0.6,0.9,1}, 7);
+OrientationInterpolator2106->setKeyValue(new float[28]{1,0,0,0,1,0,0,0.9,-1,0,0,1.75,-1,0,0,2.25,-1,0,0,2,1,0,0,0,1,0,0,0});
+Group2092->addChildren(*OrientationInterpolator2106);
+
+COrientationInterpolator* OrientationInterpolator2107 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2107->setDEF("Kick_r_knee_PitchInterpolator");
+OrientationInterpolator2107->setKey(new float[6]{0,0.2,0.4,0.6,0.8,1}, 6);
+OrientationInterpolator2107->setKeyValue(new float[24]{0,0,1,0,1,0,0,1.95,1,0,0,1.75,-1,0,0,0.28,1,0,0,0,1,0,0,0});
+Group2092->addChildren(*OrientationInterpolator2107);
+
+COrientationInterpolator* OrientationInterpolator2108 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2108->setDEF("Kick_l_hip_PitchInterpolator");
+OrientationInterpolator2108->setKey(new float[7]{0,0.2,0.3,0.5,0.6,0.9,1}, 7);
+OrientationInterpolator2108->setKeyValue(new float[28]{0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+Group2092->addChildren(*OrientationInterpolator2108);
+
+COrientationInterpolator* OrientationInterpolator2109 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2109->setDEF("Kick_l_knee_PitchInterpolator");
+OrientationInterpolator2109->setKey(new float[6]{0,0.2,0.4,0.6,0.8,1}, 6);
+OrientationInterpolator2109->setKeyValue(new float[24]{0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+Group2092->addChildren(*OrientationInterpolator2109);
+
+COrientationInterpolator* OrientationInterpolator2110 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2110->setDEF("Kick_r_ankle_PitchInterpolator");
+OrientationInterpolator2110->setKey(new float[6]{0,0.2,0.4,0.6,0.7,1}, 6);
+OrientationInterpolator2110->setKeyValue(new float[24]{0,0,1,0,-1,0,0,0.9,-1,0,0,0.95,1,0,0,0.75,-1,0,0,0.05,1,0,0,0});
+Group2092->addChildren(*OrientationInterpolator2110);
+
+COrientationInterpolator* OrientationInterpolator2111 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2111->setDEF("Kick_r_metatarsal_PitchInterpolator");
+OrientationInterpolator2111->setKey(new float[6]{0,0.2,0.4,0.6,0.7,1}, 6);
+OrientationInterpolator2111->setKeyValue(new float[24]{1,0,0,0,-1,0,0,0.5,-1,0,0,0.7,1,0,0,0.75,-1,0,0,0.2,1,0,0,0});
+Group2092->addChildren(*OrientationInterpolator2111);
+
+COrientationInterpolator* OrientationInterpolator2112 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2112->setDEF("Kick_sacroiliac_YawInterpolator");
+OrientationInterpolator2112->setKey(new float[6]{0,0.2,0.4,0.6,0.8,1}, 6);
+OrientationInterpolator2112->setKeyValue(new float[24]{0,1,0,0,0,-1,0,0.1,0,1,0,0,0,1,-1,0.24,0,-1,0,0.4,0,1,0,0});
+Group2092->addChildren(*OrientationInterpolator2112);
+
+COrientationInterpolator* OrientationInterpolator2113 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2113->setDEF("Kick_vl5_YawInterpolator");
+OrientationInterpolator2113->setKey(new float[7]{0,0.2,0.4,0.5,0.6,0.8,1}, 7);
+OrientationInterpolator2113->setKeyValue(new float[28]{0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+Group2092->addChildren(*OrientationInterpolator2113);
+
+COrientationInterpolator* OrientationInterpolator2114 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2114->setDEF("Kick_vc6_YawInterpolator");
+OrientationInterpolator2114->setKey(new float[7]{0,0.2,0.4,0.5,0.6,0.8,1}, 7);
+OrientationInterpolator2114->setKeyValue(new float[28]{0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+Group2092->addChildren(*OrientationInterpolator2114);
+
+COrientationInterpolator* OrientationInterpolator2115 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2115->setDEF("Kick_lower_body_RotationInterpolator");
+OrientationInterpolator2115->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator2115->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group2092->addChildren(*OrientationInterpolator2115);
+
+COrientationInterpolator* OrientationInterpolator2116 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2116->setDEF("Kick_upper_body_RotationInterpolator");
+OrientationInterpolator2116->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator2116->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group2092->addChildren(*OrientationInterpolator2116);
+
+COrientationInterpolator* OrientationInterpolator2117 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2117->setDEF("Kick_whole_body_RotationInterpolator");
+OrientationInterpolator2117->setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator2117->setKeyValue(new float[12]{0,0,1,0,0,0,1,0,0,0,1,0});
+Group2092->addChildren(*OrientationInterpolator2117);
+
+CPositionInterpolator* PositionInterpolator2118 = (CPositionInterpolator *)(m_pScene.createNode("PositionInterpolator"));
+PositionInterpolator2118->setDEF("Kick_whole_body_TranslationInterpolator");
+PositionInterpolator2118->setKey(new float[3]{0,0.5,1}, 3);
+PositionInterpolator2118->setKeyValue(new float[9]{0,0,0,0,0,0,0,0,0});
+Group2092->addChildren(*PositionInterpolator2118);
+
+COrientationInterpolator* OrientationInterpolator2119 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator2119->setDEF("Kick_neck_RotationInterpolator");
+OrientationInterpolator2119->setKey(new float[4]{0,0.25,0.55,1}, 4);
+OrientationInterpolator2119->setKeyValue(new float[16]{0,0,1,0,1,0,0,0.7,1,0,0,0.5,0,0,1,0});
+Group2092->addChildren(*OrientationInterpolator2119);
+
+group->addChildren(*Group2092);
+
+CGroup* Group2120 = (CGroup *)(m_pScene.createNode("Group"));
+Group2120->setDEF("Interface");
+CTransform* Transform2121 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform2121->setDEF("CoordinateSystemFloor");
+Transform2121->setScale(new float[3]{0.1,0.1,0.1});
+CShape* Shape2122 = (CShape *)(m_pScene.createNode("Shape"));
+Shape2122->setDEF("AxisLinesShape");
+//RGB lines showing XYZ axes
+CIndexedLineSet* IndexedLineSet2123 = (CIndexedLineSet *)(m_pScene.createNode("IndexedLineSet"));
+IndexedLineSet2123->setColorIndex(new int[3]{0,1,2});
+IndexedLineSet2123->setColorPerVertex(False);
+IndexedLineSet2123->setCoordIndex(new int[9]{0,1,-1,0,2,-1,0,3,-1});
+CCoordinate* Coordinate2124 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate2124->setPoint(new float[12]{0,0,0,1,0,0,0,1,0,0,0,1});
+IndexedLineSet2123->setCoord(*Coordinate2124);
+
+CColor* Color2125 = (CColor *)(m_pScene.createNode("Color"));
+Color2125->setColor(new float[9]{1,0,0,0,0.6,0,0,0,1});
+IndexedLineSet2123->setColor(*Color2125);
+
+Shape2122->setGeometry(IndexedLineSet2123);
+
+Transform2121->addChild(*Shape2122);
+
+Group2120->addChildren(*Transform2121);
+
+CProximitySensor* ProximitySensor2126 = (CProximitySensor *)(m_pScene.createNode("ProximitySensor"));
+ProximitySensor2126->setDEF("HudProx");
+ProximitySensor2126->setSize(new float[3]{50,50,50});
+Group2120->addChildren(*ProximitySensor2126);
+
+CTransform* Transform2127 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform2127->setDEF("HudXform");
+Transform2127->setRotation(new float[4]{0,1,0,0.78});
+Transform2127->setTranslation(new float[3]{2,1,2});
+CTransform* Transform2128 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform2128->setScale(new float[3]{0.02,0.02,0.02});
+Transform2128->setTranslation(new float[3]{-0.4,-0.01,-0.75});
+CTransform* Transform2129 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform2129->setDEF("Stand_Text");
+Transform2129->setTranslation(new float[3]{0,-0.9,0});
+CTouchSensor* TouchSensor2130 = (CTouchSensor *)(m_pScene.createNode("TouchSensor"));
+TouchSensor2130->setDEF("Stand_Touch");
+Transform2129->addChildren(*TouchSensor2130);
+
+CShape* Shape2131 = (CShape *)(m_pScene.createNode("Shape"));
+Shape2131->setDEF("StandText");
+CAppearance* Appearance2132 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material2133 = (CMaterial *)(m_pScene.createNode("Material"));
+Material2133->setDEF("text_color");
+Material2133->setAmbientIntensity(1);
+Material2133->setDiffuseColor(new float[3]{0.819,0.521,0.169});
+Material2133->setEmissiveColor(new float[3]{0.819,0.521,0.169});
+Material2133->setSpecularColor(new float[3]{0.819,0.521,0.169});
+Appearance2132->setMaterial(*Material2133);
+
+Shape2131->setAppearance(*Appearance2132);
+
+CText* Text2134 = (CText *)(m_pScene.createNode("Text"));
+Text2134->setString(new CString[1]{"Stand"}, 1);
+CFontStyle* FontStyle2135 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
+FontStyle2135->setFamily(new CString[1]{"SANS"}, 1);
+Text2134->setFontStyle(*FontStyle2135);
+
+Shape2131->setGeometry(Text2134);
+
+Transform2129->addChild(*Shape2131);
+
+CShape* Shape2136 = (CShape *)(m_pScene.createNode("Shape"));
+Shape2136->setDEF("Stand_Back");
+CAppearance* Appearance2137 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material2138 = (CMaterial *)(m_pScene.createNode("Material"));
+Material2138->setDEF("Clear");
+Material2138->setAmbientIntensity(1);
+Material2138->setDiffuseColor(new float[3]{0,0.5,0});
+Material2138->setEmissiveColor(new float[3]{0,0.5,0});
+Material2138->setTransparency(0.8);
+Appearance2137->setMaterial(*Material2138);
+
+Shape2136->setAppearance(*Appearance2137);
+
+CIndexedFaceSet* IndexedFaceSet2139 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet2139->setDEF("Backing");
+IndexedFaceSet2139->setCoordIndex(new int[5]{0,1,2,3,-1});
+CCoordinate* Coordinate2140 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate2140->setPoint(new float[12]{-0.2,-0.25,-0.01,3,-0.25,-0.01,3,1,-0.01,-0.2,1,-0.01});
+IndexedFaceSet2139->setCoord(*Coordinate2140);
+
+Shape2136->setGeometry(IndexedFaceSet2139);
+
+Transform2129->addChild(*Shape2136);
+
+Transform2128->addChildren(*Transform2129);
+
+CTransform* Transform2141 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform2141->setDEF("Pitch_Text");
+Transform2141->setTranslation(new float[3]{0,-2.4,0});
+CTouchSensor* TouchSensor2142 = (CTouchSensor *)(m_pScene.createNode("TouchSensor"));
+TouchSensor2142->setDEF("Pitch_Touch");
+Transform2141->addChildren(*TouchSensor2142);
+
+CShape* Shape2143 = (CShape *)(m_pScene.createNode("Shape"));
+Shape2143->setDEF("PitchText");
+CAppearance* Appearance2144 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material2145 = (CMaterial *)(m_pScene.createNode("Material"));
+Material2145->setUSE("text_color");
+Appearance2144->setMaterial(*Material2145);
+
+Shape2143->setAppearance(*Appearance2144);
+
+CText* Text2146 = (CText *)(m_pScene.createNode("Text"));
+Text2146->setString(new CString[1]{"Pitch"}, 1);
+CFontStyle* FontStyle2147 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
+FontStyle2147->setFamily(new CString[1]{"SANS"}, 1);
+Text2146->setFontStyle(*FontStyle2147);
+
+Shape2143->setGeometry(Text2146);
+
+Transform2141->addChild(*Shape2143);
+
+CShape* Shape2148 = (CShape *)(m_pScene.createNode("Shape"));
+Shape2148->setDEF("Pitch_Back");
+CAppearance* Appearance2149 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material2150 = (CMaterial *)(m_pScene.createNode("Material"));
+Material2150->setUSE("Clear");
+Appearance2149->setMaterial(*Material2150);
+
+Shape2148->setAppearance(*Appearance2149);
+
+CIndexedFaceSet* IndexedFaceSet2151 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet2151->setUSE("Backing");
+Shape2148->setGeometry(IndexedFaceSet2151);
+
+Transform2141->addChild(*Shape2148);
+
+Transform2128->addChildren(*Transform2141);
+
+CTransform* Transform2152 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform2152->setDEF("Yaw_Text");
+Transform2152->setTranslation(new float[3]{0,-3.8,0});
+CTouchSensor* TouchSensor2153 = (CTouchSensor *)(m_pScene.createNode("TouchSensor"));
+TouchSensor2153->setDEF("Yaw_Touch");
+Transform2152->addChildren(*TouchSensor2153);
+
+CShape* Shape2154 = (CShape *)(m_pScene.createNode("Shape"));
+Shape2154->setDEF("YawText");
+CAppearance* Appearance2155 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material2156 = (CMaterial *)(m_pScene.createNode("Material"));
+Material2156->setUSE("text_color");
+Appearance2155->setMaterial(*Material2156);
+
+Shape2154->setAppearance(*Appearance2155);
+
+CText* Text2157 = (CText *)(m_pScene.createNode("Text"));
+Text2157->setString(new CString[1]{"Yaw"}, 1);
+CFontStyle* FontStyle2158 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
+FontStyle2158->setFamily(new CString[1]{"SANS"}, 1);
+Text2157->setFontStyle(*FontStyle2158);
+
+Shape2154->setGeometry(Text2157);
+
+Transform2152->addChild(*Shape2154);
+
+CShape* Shape2159 = (CShape *)(m_pScene.createNode("Shape"));
+Shape2159->setDEF("Yaw_Back");
+CAppearance* Appearance2160 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material2161 = (CMaterial *)(m_pScene.createNode("Material"));
+Material2161->setUSE("Clear");
+Appearance2160->setMaterial(*Material2161);
+
+Shape2159->setAppearance(*Appearance2160);
+
+CIndexedFaceSet* IndexedFaceSet2162 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet2162->setUSE("Backing");
+Shape2159->setGeometry(IndexedFaceSet2162);
+
+Transform2152->addChild(*Shape2159);
+
+Transform2128->addChildren(*Transform2152);
+
+CTransform* Transform2163 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform2163->setDEF("Roll_Text");
+Transform2163->setTranslation(new float[3]{0,-5.2,0});
+CTouchSensor* TouchSensor2164 = (CTouchSensor *)(m_pScene.createNode("TouchSensor"));
+TouchSensor2164->setDEF("Roll_Touch");
+Transform2163->addChildren(*TouchSensor2164);
+
+CShape* Shape2165 = (CShape *)(m_pScene.createNode("Shape"));
+Shape2165->setDEF("RollText");
+CAppearance* Appearance2166 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material2167 = (CMaterial *)(m_pScene.createNode("Material"));
+Material2167->setUSE("text_color");
+Appearance2166->setMaterial(*Material2167);
+
+Shape2165->setAppearance(*Appearance2166);
+
+CText* Text2168 = (CText *)(m_pScene.createNode("Text"));
+Text2168->setString(new CString[1]{"Roll"}, 1);
+CFontStyle* FontStyle2169 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
+FontStyle2169->setFamily(new CString[1]{"SANS"}, 1);
+Text2168->setFontStyle(*FontStyle2169);
+
+Shape2165->setGeometry(Text2168);
+
+Transform2163->addChild(*Shape2165);
+
+CShape* Shape2170 = (CShape *)(m_pScene.createNode("Shape"));
+Shape2170->setDEF("Roll_Back");
+CAppearance* Appearance2171 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material2172 = (CMaterial *)(m_pScene.createNode("Material"));
+Material2172->setUSE("Clear");
+Appearance2171->setMaterial(*Material2172);
+
+Shape2170->setAppearance(*Appearance2171);
+
+CIndexedFaceSet* IndexedFaceSet2173 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet2173->setUSE("Backing");
+Shape2170->setGeometry(IndexedFaceSet2173);
+
+Transform2163->addChild(*Shape2170);
+
+Transform2128->addChildren(*Transform2163);
+
+CTransform* Transform2174 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform2174->setDEF("Walk_Text");
+Transform2174->setTranslation(new float[3]{0,-6.6,0});
+CTouchSensor* TouchSensor2175 = (CTouchSensor *)(m_pScene.createNode("TouchSensor"));
+TouchSensor2175->setDEF("Walk_Touch");
+Transform2174->addChildren(*TouchSensor2175);
+
+CShape* Shape2176 = (CShape *)(m_pScene.createNode("Shape"));
+Shape2176->setDEF("WalkText");
+CAppearance* Appearance2177 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material2178 = (CMaterial *)(m_pScene.createNode("Material"));
+Material2178->setUSE("text_color");
+Appearance2177->setMaterial(*Material2178);
+
+Shape2176->setAppearance(*Appearance2177);
+
+CText* Text2179 = (CText *)(m_pScene.createNode("Text"));
+Text2179->setString(new CString[1]{"Walk"}, 1);
+CFontStyle* FontStyle2180 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
+FontStyle2180->setFamily(new CString[1]{"SANS"}, 1);
+Text2179->setFontStyle(*FontStyle2180);
+
+Shape2176->setGeometry(Text2179);
+
+Transform2174->addChild(*Shape2176);
+
+CShape* Shape2181 = (CShape *)(m_pScene.createNode("Shape"));
+Shape2181->setDEF("Walk_Back");
+CAppearance* Appearance2182 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material2183 = (CMaterial *)(m_pScene.createNode("Material"));
+Material2183->setUSE("Clear");
+Appearance2182->setMaterial(*Material2183);
+
+Shape2181->setAppearance(*Appearance2182);
+
+CIndexedFaceSet* IndexedFaceSet2184 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet2184->setUSE("Backing");
+Shape2181->setGeometry(IndexedFaceSet2184);
+
+Transform2174->addChild(*Shape2181);
+
+Transform2128->addChildren(*Transform2174);
+
+CTransform* Transform2185 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform2185->setDEF("Run_Text");
+Transform2185->setTranslation(new float[3]{0,-8,0});
+CTouchSensor* TouchSensor2186 = (CTouchSensor *)(m_pScene.createNode("TouchSensor"));
+TouchSensor2186->setDEF("Run_Touch");
+Transform2185->addChildren(*TouchSensor2186);
+
+CShape* Shape2187 = (CShape *)(m_pScene.createNode("Shape"));
+Shape2187->setDEF("RunText");
+CAppearance* Appearance2188 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material2189 = (CMaterial *)(m_pScene.createNode("Material"));
+Material2189->setUSE("text_color");
+Appearance2188->setMaterial(*Material2189);
+
+Shape2187->setAppearance(*Appearance2188);
+
+CText* Text2190 = (CText *)(m_pScene.createNode("Text"));
+Text2190->setString(new CString[1]{"Run"}, 1);
+CFontStyle* FontStyle2191 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
+FontStyle2191->setFamily(new CString[1]{"SANS"}, 1);
+Text2190->setFontStyle(*FontStyle2191);
+
+Shape2187->setGeometry(Text2190);
+
+Transform2185->addChild(*Shape2187);
+
+CShape* Shape2192 = (CShape *)(m_pScene.createNode("Shape"));
+Shape2192->setDEF("Run_Back");
+CAppearance* Appearance2193 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material2194 = (CMaterial *)(m_pScene.createNode("Material"));
+Material2194->setUSE("Clear");
+Appearance2193->setMaterial(*Material2194);
+
+Shape2192->setAppearance(*Appearance2193);
+
+CIndexedFaceSet* IndexedFaceSet2195 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet2195->setUSE("Backing");
+Shape2192->setGeometry(IndexedFaceSet2195);
+
+Transform2185->addChild(*Shape2192);
+
+Transform2128->addChildren(*Transform2185);
+
+CTransform* Transform2196 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform2196->setDEF("Jump_Text");
+Transform2196->setTranslation(new float[3]{0,-9.4,0});
+CTouchSensor* TouchSensor2197 = (CTouchSensor *)(m_pScene.createNode("TouchSensor"));
+TouchSensor2197->setDEF("Jump_Touch");
+Transform2196->addChildren(*TouchSensor2197);
+
+CShape* Shape2198 = (CShape *)(m_pScene.createNode("Shape"));
+Shape2198->setDEF("JumpText");
+CAppearance* Appearance2199 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material2200 = (CMaterial *)(m_pScene.createNode("Material"));
+Material2200->setUSE("text_color");
+Appearance2199->setMaterial(*Material2200);
+
+Shape2198->setAppearance(*Appearance2199);
+
+CText* Text2201 = (CText *)(m_pScene.createNode("Text"));
+Text2201->setString(new CString[1]{"Jump"}, 1);
+CFontStyle* FontStyle2202 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
+FontStyle2202->setFamily(new CString[1]{"SANS"}, 1);
+Text2201->setFontStyle(*FontStyle2202);
+
+Shape2198->setGeometry(Text2201);
+
+Transform2196->addChild(*Shape2198);
+
+CShape* Shape2203 = (CShape *)(m_pScene.createNode("Shape"));
+Shape2203->setDEF("Jump_Back");
+CAppearance* Appearance2204 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material2205 = (CMaterial *)(m_pScene.createNode("Material"));
+Material2205->setUSE("Clear");
+Appearance2204->setMaterial(*Material2205);
+
+Shape2203->setAppearance(*Appearance2204);
+
+CIndexedFaceSet* IndexedFaceSet2206 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet2206->setUSE("Backing");
+Shape2203->setGeometry(IndexedFaceSet2206);
+
+Transform2196->addChild(*Shape2203);
+
+Transform2128->addChildren(*Transform2196);
+
+CTransform* Transform2207 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform2207->setDEF("Kick_Text");
+Transform2207->setTranslation(new float[3]{0,-10.8,0});
+CTouchSensor* TouchSensor2208 = (CTouchSensor *)(m_pScene.createNode("TouchSensor"));
+TouchSensor2208->setDEF("Kick_Touch");
+Transform2207->addChildren(*TouchSensor2208);
+
+CShape* Shape2209 = (CShape *)(m_pScene.createNode("Shape"));
+Shape2209->setDEF("KickText");
+CAppearance* Appearance2210 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material2211 = (CMaterial *)(m_pScene.createNode("Material"));
+Material2211->setUSE("text_color");
+Appearance2210->setMaterial(*Material2211);
+
+Shape2209->setAppearance(*Appearance2210);
+
+CText* Text2212 = (CText *)(m_pScene.createNode("Text"));
+Text2212->setString(new CString[1]{"Kick"}, 1);
+CFontStyle* FontStyle2213 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
+FontStyle2213->setFamily(new CString[1]{"SANS"}, 1);
+Text2212->setFontStyle(*FontStyle2213);
+
+Shape2209->setGeometry(Text2212);
+
+Transform2207->addChild(*Shape2209);
+
+CShape* Shape2214 = (CShape *)(m_pScene.createNode("Shape"));
+Shape2214->setDEF("Kick_Back");
+CAppearance* Appearance2215 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material2216 = (CMaterial *)(m_pScene.createNode("Material"));
+Material2216->setUSE("Clear");
+Appearance2215->setMaterial(*Material2216);
+
+Shape2214->setAppearance(*Appearance2215);
+
+CIndexedFaceSet* IndexedFaceSet2217 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet2217->setUSE("Backing");
+Shape2214->setGeometry(IndexedFaceSet2217);
+
+Transform2207->addChild(*Shape2214);
+
+Transform2128->addChildren(*Transform2207);
+
+CTransform* Transform2218 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform2218->setDEF("Stop_Text");
+Transform2218->setTranslation(new float[3]{0,0.4,0});
+CTouchSensor* TouchSensor2219 = (CTouchSensor *)(m_pScene.createNode("TouchSensor"));
+TouchSensor2219->setDEF("Stop_Touch");
+Transform2218->addChildren(*TouchSensor2219);
+
+CShape* Shape2220 = (CShape *)(m_pScene.createNode("Shape"));
+Shape2220->setDEF("StopText");
+CAppearance* Appearance2221 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material2222 = (CMaterial *)(m_pScene.createNode("Material"));
+Material2222->setUSE("text_color");
+Appearance2221->setMaterial(*Material2222);
+
+Shape2220->setAppearance(*Appearance2221);
+
+CText* Text2223 = (CText *)(m_pScene.createNode("Text"));
+Text2223->setString(new CString[1]{"Default"}, 1);
+CFontStyle* FontStyle2224 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
+FontStyle2224->setFamily(new CString[1]{"SANS"}, 1);
+Text2223->setFontStyle(*FontStyle2224);
+
+Shape2220->setGeometry(Text2223);
+
+Transform2218->addChild(*Shape2220);
+
+CShape* Shape2225 = (CShape *)(m_pScene.createNode("Shape"));
+Shape2225->setDEF("Stop_Back");
+CAppearance* Appearance2226 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material2227 = (CMaterial *)(m_pScene.createNode("Material"));
+Material2227->setUSE("Clear");
+Appearance2226->setMaterial(*Material2227);
+
+Shape2225->setAppearance(*Appearance2226);
+
+CIndexedFaceSet* IndexedFaceSet2228 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet2228->setUSE("Backing");
+Shape2225->setGeometry(IndexedFaceSet2228);
+
+Transform2218->addChild(*Shape2225);
+
+Transform2128->addChildren(*Transform2218);
+
+CTransform* Transform2229 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform2229->setDEF("SceneLabel");
+Transform2229->setTranslation(new float[3]{1.3,3,0});
+CShape* Shape2230 = (CShape *)(m_pScene.createNode("Shape"));
+Shape2230->setDEF("SceneLabelText");
+CAppearance* Appearance2231 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material2232 = (CMaterial *)(m_pScene.createNode("Material"));
+Material2232->setUSE("text_color");
+Appearance2231->setMaterial(*Material2232);
+
+Shape2230->setAppearance(*Appearance2231);
+
+CText* Text2233 = (CText *)(m_pScene.createNode("Text"));
+Text2233->setString(new CString[2]{"BoxMan4","Animation"}, 2);
+CFontStyle* FontStyle2234 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
+FontStyle2234->setFamily(new CString[1]{"SANS"}, 1);
+FontStyle2234->setJustify(new CString[2]{"MIDDLE","MIDDLE"}, 2);
+Text2233->setFontStyle(*FontStyle2234);
+
+Shape2230->setGeometry(Text2233);
+
+Transform2229->addChild(*Shape2230);
+
+Transform2128->addChildren(*Transform2229);
+
+Transform2127->addChildren(*Transform2128);
+
+Group2120->addChildren(*Transform2127);
+
+group->addChildren(*Group2120);
+
+CROUTE* ROUTE2235 = new CROUTE();
+ROUTE2235->setFromField("fraction_changed");
+ROUTE2235->setFromNode("StopTimer");
+ROUTE2235->setToField("set_fraction");
+ROUTE2235->setToNode("Stop_humanoid_root_TranslationInterpolator");
+group->addChildren(*ROUTE2235);
+
+CROUTE* ROUTE2236 = new CROUTE();
+ROUTE2236->setFromField("fraction_changed");
+ROUTE2236->setFromNode("StopTimer");
+ROUTE2236->setToField("set_fraction");
+ROUTE2236->setToNode("Stop_humanoid_root_RotationInterpolator");
+group->addChildren(*ROUTE2236);
+
+CROUTE* ROUTE2237 = new CROUTE();
+ROUTE2237->setFromField("fraction_changed");
+ROUTE2237->setFromNode("StopTimer");
+ROUTE2237->setToField("set_fraction");
+ROUTE2237->setToNode("Stop_sacroiliac_RotationInterpolator");
+group->addChildren(*ROUTE2237);
+
+CROUTE* ROUTE2238 = new CROUTE();
+ROUTE2238->setFromField("fraction_changed");
+ROUTE2238->setFromNode("StopTimer");
+ROUTE2238->setToField("set_fraction");
+ROUTE2238->setToNode("Stop_l_hip_RotationInterpolator");
+group->addChildren(*ROUTE2238);
+
+CROUTE* ROUTE2239 = new CROUTE();
+ROUTE2239->setFromField("fraction_changed");
+ROUTE2239->setFromNode("StopTimer");
+ROUTE2239->setToField("set_fraction");
+ROUTE2239->setToNode("Stop_l_knee_RotationInterpolator");
+group->addChildren(*ROUTE2239);
+
+CROUTE* ROUTE2240 = new CROUTE();
+ROUTE2240->setFromField("fraction_changed");
+ROUTE2240->setFromNode("StopTimer");
+ROUTE2240->setToField("set_fraction");
+ROUTE2240->setToNode("Stop_l_ankle_RotationInterpolator");
+group->addChildren(*ROUTE2240);
+
+CROUTE* ROUTE2241 = new CROUTE();
+ROUTE2241->setFromField("fraction_changed");
+ROUTE2241->setFromNode("StopTimer");
+ROUTE2241->setToField("set_fraction");
+ROUTE2241->setToNode("Stop_l_subtalar_RotationInterpolator");
+group->addChildren(*ROUTE2241);
+
+CROUTE* ROUTE2242 = new CROUTE();
+ROUTE2242->setFromField("fraction_changed");
+ROUTE2242->setFromNode("StopTimer");
+ROUTE2242->setToField("set_fraction");
+ROUTE2242->setToNode("Stop_l_midtarsal_RotationInterpolator");
+group->addChildren(*ROUTE2242);
+
+CROUTE* ROUTE2243 = new CROUTE();
+ROUTE2243->setFromField("fraction_changed");
+ROUTE2243->setFromNode("StopTimer");
+ROUTE2243->setToField("set_fraction");
+ROUTE2243->setToNode("Stop_l_metatarsal_RotationInterpolator");
+group->addChildren(*ROUTE2243);
+
+CROUTE* ROUTE2244 = new CROUTE();
+ROUTE2244->setFromField("fraction_changed");
+ROUTE2244->setFromNode("StopTimer");
+ROUTE2244->setToField("set_fraction");
+ROUTE2244->setToNode("Stop_r_hip_RotationInterpolator");
+group->addChildren(*ROUTE2244);
+
+CROUTE* ROUTE2245 = new CROUTE();
+ROUTE2245->setFromField("fraction_changed");
+ROUTE2245->setFromNode("StopTimer");
+ROUTE2245->setToField("set_fraction");
+ROUTE2245->setToNode("Stop_r_knee_RotationInterpolator");
+group->addChildren(*ROUTE2245);
+
+CROUTE* ROUTE2246 = new CROUTE();
+ROUTE2246->setFromField("fraction_changed");
+ROUTE2246->setFromNode("StopTimer");
+ROUTE2246->setToField("set_fraction");
+ROUTE2246->setToNode("Stop_r_ankle_RotationInterpolator");
+group->addChildren(*ROUTE2246);
+
+CROUTE* ROUTE2247 = new CROUTE();
+ROUTE2247->setFromField("fraction_changed");
+ROUTE2247->setFromNode("StopTimer");
+ROUTE2247->setToField("set_fraction");
+ROUTE2247->setToNode("Stop_r_subtalar_RotationInterpolator");
+group->addChildren(*ROUTE2247);
+
+CROUTE* ROUTE2248 = new CROUTE();
+ROUTE2248->setFromField("fraction_changed");
+ROUTE2248->setFromNode("StopTimer");
+ROUTE2248->setToField("set_fraction");
+ROUTE2248->setToNode("Stop_r_midtarsal_RotationInterpolator");
+group->addChildren(*ROUTE2248);
+
+CROUTE* ROUTE2249 = new CROUTE();
+ROUTE2249->setFromField("fraction_changed");
+ROUTE2249->setFromNode("StopTimer");
+ROUTE2249->setToField("set_fraction");
+ROUTE2249->setToNode("Stop_r_metatarsal_RotationInterpolator");
+group->addChildren(*ROUTE2249);
+
+CROUTE* ROUTE2250 = new CROUTE();
+ROUTE2250->setFromField("fraction_changed");
+ROUTE2250->setFromNode("StopTimer");
+ROUTE2250->setToField("set_fraction");
+ROUTE2250->setToNode("Stop_vl5_RotationInterpolator");
+group->addChildren(*ROUTE2250);
+
+CROUTE* ROUTE2251 = new CROUTE();
+ROUTE2251->setFromField("fraction_changed");
+ROUTE2251->setFromNode("StopTimer");
+ROUTE2251->setToField("set_fraction");
+ROUTE2251->setToNode("Stop_vl4_RotationInterpolator");
+group->addChildren(*ROUTE2251);
+
+CROUTE* ROUTE2252 = new CROUTE();
+ROUTE2252->setFromField("fraction_changed");
+ROUTE2252->setFromNode("StopTimer");
+ROUTE2252->setToField("set_fraction");
+ROUTE2252->setToNode("Stop_vl3_RotationInterpolator");
+group->addChildren(*ROUTE2252);
+
+CROUTE* ROUTE2253 = new CROUTE();
+ROUTE2253->setFromField("fraction_changed");
+ROUTE2253->setFromNode("StopTimer");
+ROUTE2253->setToField("set_fraction");
+ROUTE2253->setToNode("Stop_vl2_RotationInterpolator");
+group->addChildren(*ROUTE2253);
+
+CROUTE* ROUTE2254 = new CROUTE();
+ROUTE2254->setFromField("fraction_changed");
+ROUTE2254->setFromNode("StopTimer");
+ROUTE2254->setToField("set_fraction");
+ROUTE2254->setToNode("Stop_vl1_RotationInterpolator");
+group->addChildren(*ROUTE2254);
+
+CROUTE* ROUTE2255 = new CROUTE();
+ROUTE2255->setFromField("fraction_changed");
+ROUTE2255->setFromNode("StopTimer");
+ROUTE2255->setToField("set_fraction");
+ROUTE2255->setToNode("Stop_vt12_RotationInterpolator");
+group->addChildren(*ROUTE2255);
+
+CROUTE* ROUTE2256 = new CROUTE();
+ROUTE2256->setFromField("fraction_changed");
+ROUTE2256->setFromNode("StopTimer");
+ROUTE2256->setToField("set_fraction");
+ROUTE2256->setToNode("Stop_vt11_RotationInterpolator");
+group->addChildren(*ROUTE2256);
+
+CROUTE* ROUTE2257 = new CROUTE();
+ROUTE2257->setFromField("fraction_changed");
+ROUTE2257->setFromNode("StopTimer");
+ROUTE2257->setToField("set_fraction");
+ROUTE2257->setToNode("Stop_vt10_RotationInterpolator");
+group->addChildren(*ROUTE2257);
+
+CROUTE* ROUTE2258 = new CROUTE();
+ROUTE2258->setFromField("fraction_changed");
+ROUTE2258->setFromNode("StopTimer");
+ROUTE2258->setToField("set_fraction");
+ROUTE2258->setToNode("Stop_vt9_RotationInterpolator");
+group->addChildren(*ROUTE2258);
+
+CROUTE* ROUTE2259 = new CROUTE();
+ROUTE2259->setFromField("fraction_changed");
+ROUTE2259->setFromNode("StopTimer");
+ROUTE2259->setToField("set_fraction");
+ROUTE2259->setToNode("Stop_vt8_RotationInterpolator");
+group->addChildren(*ROUTE2259);
+
+CROUTE* ROUTE2260 = new CROUTE();
+ROUTE2260->setFromField("fraction_changed");
+ROUTE2260->setFromNode("StopTimer");
+ROUTE2260->setToField("set_fraction");
+ROUTE2260->setToNode("Stop_vt7_RotationInterpolator");
+group->addChildren(*ROUTE2260);
+
+CROUTE* ROUTE2261 = new CROUTE();
+ROUTE2261->setFromField("fraction_changed");
+ROUTE2261->setFromNode("StopTimer");
+ROUTE2261->setToField("set_fraction");
+ROUTE2261->setToNode("Stop_vt6_RotationInterpolator");
+group->addChildren(*ROUTE2261);
+
+CROUTE* ROUTE2262 = new CROUTE();
+ROUTE2262->setFromField("fraction_changed");
+ROUTE2262->setFromNode("StopTimer");
+ROUTE2262->setToField("set_fraction");
+ROUTE2262->setToNode("Stop_vt5_RotationInterpolator");
+group->addChildren(*ROUTE2262);
+
+CROUTE* ROUTE2263 = new CROUTE();
+ROUTE2263->setFromField("fraction_changed");
+ROUTE2263->setFromNode("StopTimer");
+ROUTE2263->setToField("set_fraction");
+ROUTE2263->setToNode("Stop_vt4_RotationInterpolator");
+group->addChildren(*ROUTE2263);
+
+CROUTE* ROUTE2264 = new CROUTE();
+ROUTE2264->setFromField("fraction_changed");
+ROUTE2264->setFromNode("StopTimer");
+ROUTE2264->setToField("set_fraction");
+ROUTE2264->setToNode("Stop_vt3_RotationInterpolator");
+group->addChildren(*ROUTE2264);
+
+CROUTE* ROUTE2265 = new CROUTE();
+ROUTE2265->setFromField("fraction_changed");
+ROUTE2265->setFromNode("StopTimer");
+ROUTE2265->setToField("set_fraction");
+ROUTE2265->setToNode("Stop_vt2_RotationInterpolator");
+group->addChildren(*ROUTE2265);
+
+CROUTE* ROUTE2266 = new CROUTE();
+ROUTE2266->setFromField("fraction_changed");
+ROUTE2266->setFromNode("StopTimer");
+ROUTE2266->setToField("set_fraction");
+ROUTE2266->setToNode("Stop_vt1_RotationInterpolator");
+group->addChildren(*ROUTE2266);
+
+CROUTE* ROUTE2267 = new CROUTE();
+ROUTE2267->setFromField("fraction_changed");
+ROUTE2267->setFromNode("StopTimer");
+ROUTE2267->setToField("set_fraction");
+ROUTE2267->setToNode("Stop_vc7_RotationInterpolator");
+group->addChildren(*ROUTE2267);
+
+CROUTE* ROUTE2268 = new CROUTE();
+ROUTE2268->setFromField("fraction_changed");
+ROUTE2268->setFromNode("StopTimer");
+ROUTE2268->setToField("set_fraction");
+ROUTE2268->setToNode("Stop_vc6_RotationInterpolator");
+group->addChildren(*ROUTE2268);
+
+CROUTE* ROUTE2269 = new CROUTE();
+ROUTE2269->setFromField("fraction_changed");
+ROUTE2269->setFromNode("StopTimer");
+ROUTE2269->setToField("set_fraction");
+ROUTE2269->setToNode("Stop_vc5_RotationInterpolator");
+group->addChildren(*ROUTE2269);
+
+CROUTE* ROUTE2270 = new CROUTE();
+ROUTE2270->setFromField("fraction_changed");
+ROUTE2270->setFromNode("StopTimer");
+ROUTE2270->setToField("set_fraction");
+ROUTE2270->setToNode("Stop_vc4_RotationInterpolator");
+group->addChildren(*ROUTE2270);
+
+CROUTE* ROUTE2271 = new CROUTE();
+ROUTE2271->setFromField("fraction_changed");
+ROUTE2271->setFromNode("StopTimer");
+ROUTE2271->setToField("set_fraction");
+ROUTE2271->setToNode("Stop_vc3_RotationInterpolator");
+group->addChildren(*ROUTE2271);
+
+CROUTE* ROUTE2272 = new CROUTE();
+ROUTE2272->setFromField("fraction_changed");
+ROUTE2272->setFromNode("StopTimer");
+ROUTE2272->setToField("set_fraction");
+ROUTE2272->setToNode("Stop_vc2_RotationInterpolator");
+group->addChildren(*ROUTE2272);
+
+CROUTE* ROUTE2273 = new CROUTE();
+ROUTE2273->setFromField("fraction_changed");
+ROUTE2273->setFromNode("StopTimer");
+ROUTE2273->setToField("set_fraction");
+ROUTE2273->setToNode("Stop_vc1_RotationInterpolator");
+group->addChildren(*ROUTE2273);
+
+CROUTE* ROUTE2274 = new CROUTE();
+ROUTE2274->setFromField("fraction_changed");
+ROUTE2274->setFromNode("StopTimer");
+ROUTE2274->setToField("set_fraction");
+ROUTE2274->setToNode("Stop_skullbase_RotationInterpolator");
+group->addChildren(*ROUTE2274);
+
+CROUTE* ROUTE2275 = new CROUTE();
+ROUTE2275->setFromField("fraction_changed");
+ROUTE2275->setFromNode("StopTimer");
+ROUTE2275->setToField("set_fraction");
+ROUTE2275->setToNode("Stop_l_eyeball_joint_RotationInterpolator");
+group->addChildren(*ROUTE2275);
+
+CROUTE* ROUTE2276 = new CROUTE();
+ROUTE2276->setFromField("fraction_changed");
+ROUTE2276->setFromNode("StopTimer");
+ROUTE2276->setToField("set_fraction");
+ROUTE2276->setToNode("Stop_r_eyeball_joint_RotationInterpolator");
+group->addChildren(*ROUTE2276);
+
+CROUTE* ROUTE2277 = new CROUTE();
+ROUTE2277->setFromField("fraction_changed");
+ROUTE2277->setFromNode("StopTimer");
+ROUTE2277->setToField("set_fraction");
+ROUTE2277->setToNode("Stop_l_sternoclavicular_RotationInterpolator");
+group->addChildren(*ROUTE2277);
+
+CROUTE* ROUTE2278 = new CROUTE();
+ROUTE2278->setFromField("fraction_changed");
+ROUTE2278->setFromNode("StopTimer");
+ROUTE2278->setToField("set_fraction");
+ROUTE2278->setToNode("Stop_l_acromioclavicular_RotationInterpolator");
+group->addChildren(*ROUTE2278);
+
+CROUTE* ROUTE2279 = new CROUTE();
+ROUTE2279->setFromField("fraction_changed");
+ROUTE2279->setFromNode("StopTimer");
+ROUTE2279->setToField("set_fraction");
+ROUTE2279->setToNode("Stop_l_shoulder_RotationInterpolator");
+group->addChildren(*ROUTE2279);
+
+CROUTE* ROUTE2280 = new CROUTE();
+ROUTE2280->setFromField("fraction_changed");
+ROUTE2280->setFromNode("StopTimer");
+ROUTE2280->setToField("set_fraction");
+ROUTE2280->setToNode("Stop_l_elbow_RotationInterpolator");
+group->addChildren(*ROUTE2280);
+
+CROUTE* ROUTE2281 = new CROUTE();
+ROUTE2281->setFromField("fraction_changed");
+ROUTE2281->setFromNode("StopTimer");
+ROUTE2281->setToField("set_fraction");
+ROUTE2281->setToNode("Stop_l_wrist_RotationInterpolator");
+group->addChildren(*ROUTE2281);
+
+CROUTE* ROUTE2282 = new CROUTE();
+ROUTE2282->setFromField("fraction_changed");
+ROUTE2282->setFromNode("StopTimer");
+ROUTE2282->setToField("set_fraction");
+ROUTE2282->setToNode("Stop_l_thumb1_RotationInterpolator");
+group->addChildren(*ROUTE2282);
+
+CROUTE* ROUTE2283 = new CROUTE();
+ROUTE2283->setFromField("fraction_changed");
+ROUTE2283->setFromNode("StopTimer");
+ROUTE2283->setToField("set_fraction");
+ROUTE2283->setToNode("Stop_l_thumb2_RotationInterpolator");
+group->addChildren(*ROUTE2283);
+
+CROUTE* ROUTE2284 = new CROUTE();
+ROUTE2284->setFromField("fraction_changed");
+ROUTE2284->setFromNode("StopTimer");
+ROUTE2284->setToField("set_fraction");
+ROUTE2284->setToNode("Stop_l_thumb3_RotationInterpolator");
+group->addChildren(*ROUTE2284);
+
+CROUTE* ROUTE2285 = new CROUTE();
+ROUTE2285->setFromField("fraction_changed");
+ROUTE2285->setFromNode("StopTimer");
+ROUTE2285->setToField("set_fraction");
+ROUTE2285->setToNode("Stop_l_index0_RotationInterpolator");
+group->addChildren(*ROUTE2285);
+
+CROUTE* ROUTE2286 = new CROUTE();
+ROUTE2286->setFromField("fraction_changed");
+ROUTE2286->setFromNode("StopTimer");
+ROUTE2286->setToField("set_fraction");
+ROUTE2286->setToNode("Stop_l_index1_RotationInterpolator");
+group->addChildren(*ROUTE2286);
+
+CROUTE* ROUTE2287 = new CROUTE();
+ROUTE2287->setFromField("fraction_changed");
+ROUTE2287->setFromNode("StopTimer");
+ROUTE2287->setToField("set_fraction");
+ROUTE2287->setToNode("Stop_l_index2_RotationInterpolator");
+group->addChildren(*ROUTE2287);
+
+CROUTE* ROUTE2288 = new CROUTE();
+ROUTE2288->setFromField("fraction_changed");
+ROUTE2288->setFromNode("StopTimer");
+ROUTE2288->setToField("set_fraction");
+ROUTE2288->setToNode("Stop_l_index3_RotationInterpolator");
+group->addChildren(*ROUTE2288);
+
+CROUTE* ROUTE2289 = new CROUTE();
+ROUTE2289->setFromField("fraction_changed");
+ROUTE2289->setFromNode("StopTimer");
+ROUTE2289->setToField("set_fraction");
+ROUTE2289->setToNode("Stop_l_middle0_RotationInterpolator");
+group->addChildren(*ROUTE2289);
+
+CROUTE* ROUTE2290 = new CROUTE();
+ROUTE2290->setFromField("fraction_changed");
+ROUTE2290->setFromNode("StopTimer");
+ROUTE2290->setToField("set_fraction");
+ROUTE2290->setToNode("Stop_l_middle1_RotationInterpolator");
+group->addChildren(*ROUTE2290);
+
+CROUTE* ROUTE2291 = new CROUTE();
+ROUTE2291->setFromField("fraction_changed");
+ROUTE2291->setFromNode("StopTimer");
+ROUTE2291->setToField("set_fraction");
+ROUTE2291->setToNode("Stop_l_middle2_RotationInterpolator");
+group->addChildren(*ROUTE2291);
+
+CROUTE* ROUTE2292 = new CROUTE();
+ROUTE2292->setFromField("fraction_changed");
+ROUTE2292->setFromNode("StopTimer");
+ROUTE2292->setToField("set_fraction");
+ROUTE2292->setToNode("Stop_l_middle3_RotationInterpolator");
+group->addChildren(*ROUTE2292);
+
+CROUTE* ROUTE2293 = new CROUTE();
+ROUTE2293->setFromField("fraction_changed");
+ROUTE2293->setFromNode("StopTimer");
+ROUTE2293->setToField("set_fraction");
+ROUTE2293->setToNode("Stop_l_ring0_RotationInterpolator");
+group->addChildren(*ROUTE2293);
+
+CROUTE* ROUTE2294 = new CROUTE();
+ROUTE2294->setFromField("fraction_changed");
+ROUTE2294->setFromNode("StopTimer");
+ROUTE2294->setToField("set_fraction");
+ROUTE2294->setToNode("Stop_l_ring1_RotationInterpolator");
+group->addChildren(*ROUTE2294);
+
+CROUTE* ROUTE2295 = new CROUTE();
+ROUTE2295->setFromField("fraction_changed");
+ROUTE2295->setFromNode("StopTimer");
+ROUTE2295->setToField("set_fraction");
+ROUTE2295->setToNode("Stop_l_ring2_RotationInterpolator");
+group->addChildren(*ROUTE2295);
+
+CROUTE* ROUTE2296 = new CROUTE();
+ROUTE2296->setFromField("fraction_changed");
+ROUTE2296->setFromNode("StopTimer");
+ROUTE2296->setToField("set_fraction");
+ROUTE2296->setToNode("Stop_l_ring3_RotationInterpolator");
+group->addChildren(*ROUTE2296);
+
+CROUTE* ROUTE2297 = new CROUTE();
+ROUTE2297->setFromField("fraction_changed");
+ROUTE2297->setFromNode("StopTimer");
+ROUTE2297->setToField("set_fraction");
+ROUTE2297->setToNode("Stop_l_pinky0_RotationInterpolator");
+group->addChildren(*ROUTE2297);
+
+CROUTE* ROUTE2298 = new CROUTE();
+ROUTE2298->setFromField("fraction_changed");
+ROUTE2298->setFromNode("StopTimer");
+ROUTE2298->setToField("set_fraction");
+ROUTE2298->setToNode("Stop_l_pinky1_RotationInterpolator");
+group->addChildren(*ROUTE2298);
+
+CROUTE* ROUTE2299 = new CROUTE();
+ROUTE2299->setFromField("fraction_changed");
+ROUTE2299->setFromNode("StopTimer");
+ROUTE2299->setToField("set_fraction");
+ROUTE2299->setToNode("Stop_l_pinky2_RotationInterpolator");
+group->addChildren(*ROUTE2299);
+
+CROUTE* ROUTE2300 = new CROUTE();
+ROUTE2300->setFromField("fraction_changed");
+ROUTE2300->setFromNode("StopTimer");
+ROUTE2300->setToField("set_fraction");
+ROUTE2300->setToNode("Stop_l_pinky3_RotationInterpolator");
+group->addChildren(*ROUTE2300);
+
+CROUTE* ROUTE2301 = new CROUTE();
+ROUTE2301->setFromField("fraction_changed");
+ROUTE2301->setFromNode("StopTimer");
+ROUTE2301->setToField("set_fraction");
+ROUTE2301->setToNode("Stop_r_sternoclavicular_RotationInterpolator");
+group->addChildren(*ROUTE2301);
+
+CROUTE* ROUTE2302 = new CROUTE();
+ROUTE2302->setFromField("fraction_changed");
+ROUTE2302->setFromNode("StopTimer");
+ROUTE2302->setToField("set_fraction");
+ROUTE2302->setToNode("Stop_r_acromioclavicular_RotationInterpolator");
+group->addChildren(*ROUTE2302);
+
+CROUTE* ROUTE2303 = new CROUTE();
+ROUTE2303->setFromField("fraction_changed");
+ROUTE2303->setFromNode("StopTimer");
+ROUTE2303->setToField("set_fraction");
+ROUTE2303->setToNode("Stop_r_shoulder_RotationInterpolator");
+group->addChildren(*ROUTE2303);
+
+CROUTE* ROUTE2304 = new CROUTE();
+ROUTE2304->setFromField("fraction_changed");
+ROUTE2304->setFromNode("StopTimer");
+ROUTE2304->setToField("set_fraction");
+ROUTE2304->setToNode("Stop_r_elbow_RotationInterpolator");
+group->addChildren(*ROUTE2304);
+
+CROUTE* ROUTE2305 = new CROUTE();
+ROUTE2305->setFromField("fraction_changed");
+ROUTE2305->setFromNode("StopTimer");
+ROUTE2305->setToField("set_fraction");
+ROUTE2305->setToNode("Stop_r_wrist_RotationInterpolator");
+group->addChildren(*ROUTE2305);
+
+CROUTE* ROUTE2306 = new CROUTE();
+ROUTE2306->setFromField("fraction_changed");
+ROUTE2306->setFromNode("StopTimer");
+ROUTE2306->setToField("set_fraction");
+ROUTE2306->setToNode("Stop_r_thumb1_RotationInterpolator");
+group->addChildren(*ROUTE2306);
+
+CROUTE* ROUTE2307 = new CROUTE();
+ROUTE2307->setFromField("fraction_changed");
+ROUTE2307->setFromNode("StopTimer");
+ROUTE2307->setToField("set_fraction");
+ROUTE2307->setToNode("Stop_r_thumb2_RotationInterpolator");
+group->addChildren(*ROUTE2307);
+
+CROUTE* ROUTE2308 = new CROUTE();
+ROUTE2308->setFromField("fraction_changed");
+ROUTE2308->setFromNode("StopTimer");
+ROUTE2308->setToField("set_fraction");
+ROUTE2308->setToNode("Stop_r_thumb3_RotationInterpolator");
+group->addChildren(*ROUTE2308);
+
+CROUTE* ROUTE2309 = new CROUTE();
+ROUTE2309->setFromField("fraction_changed");
+ROUTE2309->setFromNode("StopTimer");
+ROUTE2309->setToField("set_fraction");
+ROUTE2309->setToNode("Stop_r_index0_RotationInterpolator");
+group->addChildren(*ROUTE2309);
+
+CROUTE* ROUTE2310 = new CROUTE();
+ROUTE2310->setFromField("fraction_changed");
+ROUTE2310->setFromNode("StopTimer");
+ROUTE2310->setToField("set_fraction");
+ROUTE2310->setToNode("Stop_r_index1_RotationInterpolator");
+group->addChildren(*ROUTE2310);
+
+CROUTE* ROUTE2311 = new CROUTE();
+ROUTE2311->setFromField("fraction_changed");
+ROUTE2311->setFromNode("StopTimer");
+ROUTE2311->setToField("set_fraction");
+ROUTE2311->setToNode("Stop_r_index2_RotationInterpolator");
+group->addChildren(*ROUTE2311);
+
+CROUTE* ROUTE2312 = new CROUTE();
+ROUTE2312->setFromField("fraction_changed");
+ROUTE2312->setFromNode("StopTimer");
+ROUTE2312->setToField("set_fraction");
+ROUTE2312->setToNode("Stop_r_index3_RotationInterpolator");
+group->addChildren(*ROUTE2312);
+
+CROUTE* ROUTE2313 = new CROUTE();
+ROUTE2313->setFromField("fraction_changed");
+ROUTE2313->setFromNode("StopTimer");
+ROUTE2313->setToField("set_fraction");
+ROUTE2313->setToNode("Stop_r_middle0_RotationInterpolator");
+group->addChildren(*ROUTE2313);
+
+CROUTE* ROUTE2314 = new CROUTE();
+ROUTE2314->setFromField("fraction_changed");
+ROUTE2314->setFromNode("StopTimer");
+ROUTE2314->setToField("set_fraction");
+ROUTE2314->setToNode("Stop_r_middle1_RotationInterpolator");
+group->addChildren(*ROUTE2314);
+
+CROUTE* ROUTE2315 = new CROUTE();
+ROUTE2315->setFromField("fraction_changed");
+ROUTE2315->setFromNode("StopTimer");
+ROUTE2315->setToField("set_fraction");
+ROUTE2315->setToNode("Stop_r_middle2_RotationInterpolator");
+group->addChildren(*ROUTE2315);
+
+CROUTE* ROUTE2316 = new CROUTE();
+ROUTE2316->setFromField("fraction_changed");
+ROUTE2316->setFromNode("StopTimer");
+ROUTE2316->setToField("set_fraction");
+ROUTE2316->setToNode("Stop_r_middle3_RotationInterpolator");
+group->addChildren(*ROUTE2316);
+
+CROUTE* ROUTE2317 = new CROUTE();
+ROUTE2317->setFromField("fraction_changed");
+ROUTE2317->setFromNode("StopTimer");
+ROUTE2317->setToField("set_fraction");
+ROUTE2317->setToNode("Stop_r_ring0_RotationInterpolator");
+group->addChildren(*ROUTE2317);
+
+CROUTE* ROUTE2318 = new CROUTE();
+ROUTE2318->setFromField("fraction_changed");
+ROUTE2318->setFromNode("StopTimer");
+ROUTE2318->setToField("set_fraction");
+ROUTE2318->setToNode("Stop_r_ring1_RotationInterpolator");
+group->addChildren(*ROUTE2318);
+
+CROUTE* ROUTE2319 = new CROUTE();
+ROUTE2319->setFromField("fraction_changed");
+ROUTE2319->setFromNode("StopTimer");
+ROUTE2319->setToField("set_fraction");
+ROUTE2319->setToNode("Stop_r_ring2_RotationInterpolator");
+group->addChildren(*ROUTE2319);
+
+CROUTE* ROUTE2320 = new CROUTE();
+ROUTE2320->setFromField("fraction_changed");
+ROUTE2320->setFromNode("StopTimer");
+ROUTE2320->setToField("set_fraction");
+ROUTE2320->setToNode("Stop_r_ring3_RotationInterpolator");
+group->addChildren(*ROUTE2320);
+
+CROUTE* ROUTE2321 = new CROUTE();
+ROUTE2321->setFromField("fraction_changed");
+ROUTE2321->setFromNode("StopTimer");
+ROUTE2321->setToField("set_fraction");
+ROUTE2321->setToNode("Stop_r_pinky0_RotationInterpolator");
+group->addChildren(*ROUTE2321);
+
+CROUTE* ROUTE2322 = new CROUTE();
+ROUTE2322->setFromField("fraction_changed");
+ROUTE2322->setFromNode("StopTimer");
+ROUTE2322->setToField("set_fraction");
+ROUTE2322->setToNode("Stop_r_pinky1_RotationInterpolator");
+group->addChildren(*ROUTE2322);
+
+CROUTE* ROUTE2323 = new CROUTE();
+ROUTE2323->setFromField("fraction_changed");
+ROUTE2323->setFromNode("StopTimer");
+ROUTE2323->setToField("set_fraction");
+ROUTE2323->setToNode("Stop_r_pinky2_RotationInterpolator");
+group->addChildren(*ROUTE2323);
+
+CROUTE* ROUTE2324 = new CROUTE();
+ROUTE2324->setFromField("fraction_changed");
+ROUTE2324->setFromNode("StopTimer");
+ROUTE2324->setToField("set_fraction");
+ROUTE2324->setToNode("Stop_r_pinky3_RotationInterpolator");
+group->addChildren(*ROUTE2324);
+
+CROUTE* ROUTE2325 = new CROUTE();
+ROUTE2325->setFromField("value_changed");
+ROUTE2325->setFromNode("Stop_humanoid_root_TranslationInterpolator");
+ROUTE2325->setToField("set_translation");
+ROUTE2325->setToNode("hanim_humanoid_root");
+group->addChildren(*ROUTE2325);
+
+CROUTE* ROUTE2326 = new CROUTE();
+ROUTE2326->setFromField("value_changed");
+ROUTE2326->setFromNode("Stop_humanoid_root_RotationInterpolator");
+ROUTE2326->setToField("set_rotation");
+ROUTE2326->setToNode("hanim_humanoid_root");
+group->addChildren(*ROUTE2326);
+
+CROUTE* ROUTE2327 = new CROUTE();
+ROUTE2327->setFromField("value_changed");
+ROUTE2327->setFromNode("Stop_l_hip_RotationInterpolator");
+ROUTE2327->setToField("set_rotation");
+ROUTE2327->setToNode("hanim_l_hip");
+group->addChildren(*ROUTE2327);
+
+CROUTE* ROUTE2328 = new CROUTE();
+ROUTE2328->setFromField("value_changed");
+ROUTE2328->setFromNode("Stop_l_knee_RotationInterpolator");
+ROUTE2328->setToField("set_rotation");
+ROUTE2328->setToNode("hanim_l_knee");
+group->addChildren(*ROUTE2328);
+
+CROUTE* ROUTE2329 = new CROUTE();
+ROUTE2329->setFromField("value_changed");
+ROUTE2329->setFromNode("Stop_l_ankle_RotationInterpolator");
+ROUTE2329->setToField("set_rotation");
+ROUTE2329->setToNode("hanim_l_ankle");
+group->addChildren(*ROUTE2329);
+
+CROUTE* ROUTE2330 = new CROUTE();
+ROUTE2330->setFromField("value_changed");
+ROUTE2330->setFromNode("Stop_l_midtarsal_RotationInterpolator");
+ROUTE2330->setToField("set_rotation");
+ROUTE2330->setToNode("hanim_l_midtarsal");
+group->addChildren(*ROUTE2330);
+
+CROUTE* ROUTE2331 = new CROUTE();
+ROUTE2331->setFromField("value_changed");
+ROUTE2331->setFromNode("Stop_r_hip_RotationInterpolator");
+ROUTE2331->setToField("set_rotation");
+ROUTE2331->setToNode("hanim_r_hip");
+group->addChildren(*ROUTE2331);
+
+CROUTE* ROUTE2332 = new CROUTE();
+ROUTE2332->setFromField("value_changed");
+ROUTE2332->setFromNode("Stop_r_knee_RotationInterpolator");
+ROUTE2332->setToField("set_rotation");
+ROUTE2332->setToNode("hanim_r_knee");
+group->addChildren(*ROUTE2332);
+
+CROUTE* ROUTE2333 = new CROUTE();
+ROUTE2333->setFromField("value_changed");
+ROUTE2333->setFromNode("Stop_r_ankle_RotationInterpolator");
+ROUTE2333->setToField("set_rotation");
+ROUTE2333->setToNode("hanim_r_ankle");
+group->addChildren(*ROUTE2333);
+
+CROUTE* ROUTE2334 = new CROUTE();
+ROUTE2334->setFromField("value_changed");
+ROUTE2334->setFromNode("Stop_r_midtarsal_RotationInterpolator");
+ROUTE2334->setToField("set_rotation");
+ROUTE2334->setToNode("hanim_r_midtarsal");
+group->addChildren(*ROUTE2334);
+
+CROUTE* ROUTE2335 = new CROUTE();
+ROUTE2335->setFromField("value_changed");
+ROUTE2335->setFromNode("Stop_vl5_RotationInterpolator");
+ROUTE2335->setToField("set_rotation");
+ROUTE2335->setToNode("hanim_vl5");
+group->addChildren(*ROUTE2335);
+
+CROUTE* ROUTE2336 = new CROUTE();
+ROUTE2336->setFromField("value_changed");
+ROUTE2336->setFromNode("Stop_skullbase_RotationInterpolator");
+ROUTE2336->setToField("set_rotation");
+ROUTE2336->setToNode("hanim_skullbase");
+group->addChildren(*ROUTE2336);
+
+CROUTE* ROUTE2337 = new CROUTE();
+ROUTE2337->setFromField("value_changed");
+ROUTE2337->setFromNode("Stop_l_shoulder_RotationInterpolator");
+ROUTE2337->setToField("set_rotation");
+ROUTE2337->setToNode("hanim_l_shoulder");
+group->addChildren(*ROUTE2337);
+
+CROUTE* ROUTE2338 = new CROUTE();
+ROUTE2338->setFromField("value_changed");
+ROUTE2338->setFromNode("Stop_l_elbow_RotationInterpolator");
+ROUTE2338->setToField("set_rotation");
+ROUTE2338->setToNode("hanim_l_elbow");
+group->addChildren(*ROUTE2338);
+
+CROUTE* ROUTE2339 = new CROUTE();
+ROUTE2339->setFromField("value_changed");
+ROUTE2339->setFromNode("Stop_l_wrist_RotationInterpolator");
+ROUTE2339->setToField("set_rotation");
+ROUTE2339->setToNode("hanim_l_wrist");
+group->addChildren(*ROUTE2339);
+
+CROUTE* ROUTE2340 = new CROUTE();
+ROUTE2340->setFromField("value_changed");
+ROUTE2340->setFromNode("Stop_r_shoulder_RotationInterpolator");
+ROUTE2340->setToField("set_rotation");
+ROUTE2340->setToNode("hanim_r_shoulder");
+group->addChildren(*ROUTE2340);
+
+CROUTE* ROUTE2341 = new CROUTE();
+ROUTE2341->setFromField("value_changed");
+ROUTE2341->setFromNode("Stop_r_elbow_RotationInterpolator");
+ROUTE2341->setToField("set_rotation");
+ROUTE2341->setToNode("hanim_r_elbow");
+group->addChildren(*ROUTE2341);
+
+CROUTE* ROUTE2342 = new CROUTE();
+ROUTE2342->setFromField("value_changed");
+ROUTE2342->setFromNode("Stop_r_wrist_RotationInterpolator");
+ROUTE2342->setToField("set_rotation");
+ROUTE2342->setToNode("hanim_r_wrist");
+group->addChildren(*ROUTE2342);
+
+CROUTE* ROUTE2343 = new CROUTE();
+ROUTE2343->setFromField("fraction_changed");
+ROUTE2343->setFromNode("StandTimer");
+ROUTE2343->setToField("set_fraction");
+ROUTE2343->setToNode("Stand_r_ankle_RotationInterpolator");
+group->addChildren(*ROUTE2343);
+
+CROUTE* ROUTE2344 = new CROUTE();
+ROUTE2344->setFromField("fraction_changed");
+ROUTE2344->setFromNode("StandTimer");
+ROUTE2344->setToField("set_fraction");
+ROUTE2344->setToNode("Stand_r_knee_RotationInterpolator");
+group->addChildren(*ROUTE2344);
+
+CROUTE* ROUTE2345 = new CROUTE();
+ROUTE2345->setFromField("fraction_changed");
+ROUTE2345->setFromNode("StandTimer");
+ROUTE2345->setToField("set_fraction");
+ROUTE2345->setToNode("Stand_r_hip_RotationInterpolator");
+group->addChildren(*ROUTE2345);
+
+CROUTE* ROUTE2346 = new CROUTE();
+ROUTE2346->setFromField("fraction_changed");
+ROUTE2346->setFromNode("StandTimer");
+ROUTE2346->setToField("set_fraction");
+ROUTE2346->setToNode("Stand_l_ankle_RotationInterpolator");
+group->addChildren(*ROUTE2346);
+
+CROUTE* ROUTE2347 = new CROUTE();
+ROUTE2347->setFromField("fraction_changed");
+ROUTE2347->setFromNode("StandTimer");
+ROUTE2347->setToField("set_fraction");
+ROUTE2347->setToNode("Stand_l_knee_RotationInterpolator");
+group->addChildren(*ROUTE2347);
+
+CROUTE* ROUTE2348 = new CROUTE();
+ROUTE2348->setFromField("fraction_changed");
+ROUTE2348->setFromNode("StandTimer");
+ROUTE2348->setToField("set_fraction");
+ROUTE2348->setToNode("Stand_l_hip_RotationInterpolator");
+group->addChildren(*ROUTE2348);
+
+CROUTE* ROUTE2349 = new CROUTE();
+ROUTE2349->setFromField("fraction_changed");
+ROUTE2349->setFromNode("StandTimer");
+ROUTE2349->setToField("set_fraction");
+ROUTE2349->setToNode("Stand_lower_body_RotationInterpolator");
+group->addChildren(*ROUTE2349);
+
+CROUTE* ROUTE2350 = new CROUTE();
+ROUTE2350->setFromField("fraction_changed");
+ROUTE2350->setFromNode("StandTimer");
+ROUTE2350->setToField("set_fraction");
+ROUTE2350->setToNode("Stand_r_wrist_RotationInterpolator");
+group->addChildren(*ROUTE2350);
+
+CROUTE* ROUTE2351 = new CROUTE();
+ROUTE2351->setFromField("fraction_changed");
+ROUTE2351->setFromNode("StandTimer");
+ROUTE2351->setToField("set_fraction");
+ROUTE2351->setToNode("Stand_r_elbow_RotationInterpolator");
+group->addChildren(*ROUTE2351);
+
+CROUTE* ROUTE2352 = new CROUTE();
+ROUTE2352->setFromField("fraction_changed");
+ROUTE2352->setFromNode("StandTimer");
+ROUTE2352->setToField("set_fraction");
+ROUTE2352->setToNode("Stand_r_shoulder_RotationInterpolator");
+group->addChildren(*ROUTE2352);
+
+CROUTE* ROUTE2353 = new CROUTE();
+ROUTE2353->setFromField("fraction_changed");
+ROUTE2353->setFromNode("StandTimer");
+ROUTE2353->setToField("set_fraction");
+ROUTE2353->setToNode("Stand_l_wrist_RotationInterpolator");
+group->addChildren(*ROUTE2353);
+
+CROUTE* ROUTE2354 = new CROUTE();
+ROUTE2354->setFromField("fraction_changed");
+ROUTE2354->setFromNode("StandTimer");
+ROUTE2354->setToField("set_fraction");
+ROUTE2354->setToNode("Stand_l_elbow_RotationInterpolator");
+group->addChildren(*ROUTE2354);
+
+CROUTE* ROUTE2355 = new CROUTE();
+ROUTE2355->setFromField("fraction_changed");
+ROUTE2355->setFromNode("StandTimer");
+ROUTE2355->setToField("set_fraction");
+ROUTE2355->setToNode("Stand_l_shoulder_RotationInterpolator");
+group->addChildren(*ROUTE2355);
+
+CROUTE* ROUTE2356 = new CROUTE();
+ROUTE2356->setFromField("fraction_changed");
+ROUTE2356->setFromNode("StandTimer");
+ROUTE2356->setToField("set_fraction");
+ROUTE2356->setToNode("Stand_head_RotationInterpolator");
+group->addChildren(*ROUTE2356);
+
+CROUTE* ROUTE2357 = new CROUTE();
+ROUTE2357->setFromField("fraction_changed");
+ROUTE2357->setFromNode("StandTimer");
+ROUTE2357->setToField("set_fraction");
+ROUTE2357->setToNode("Stand_neck_RotationInterpolator");
+group->addChildren(*ROUTE2357);
+
+CROUTE* ROUTE2358 = new CROUTE();
+ROUTE2358->setFromField("fraction_changed");
+ROUTE2358->setFromNode("StandTimer");
+ROUTE2358->setToField("set_fraction");
+ROUTE2358->setToNode("Stand_l_eyeball_RotationInterpolator");
+group->addChildren(*ROUTE2358);
+
+CROUTE* ROUTE2359 = new CROUTE();
+ROUTE2359->setFromField("fraction_changed");
+ROUTE2359->setFromNode("StandTimer");
+ROUTE2359->setToField("set_fraction");
+ROUTE2359->setToNode("Stand_r_eyeball_RotationInterpolator");
+group->addChildren(*ROUTE2359);
+
+CROUTE* ROUTE2360 = new CROUTE();
+ROUTE2360->setFromField("fraction_changed");
+ROUTE2360->setFromNode("StandTimer");
+ROUTE2360->setToField("set_fraction");
+ROUTE2360->setToNode("Stand_upper_body_RotationInterpolator");
+group->addChildren(*ROUTE2360);
+
+CROUTE* ROUTE2361 = new CROUTE();
+ROUTE2361->setFromField("fraction_changed");
+ROUTE2361->setFromNode("StandTimer");
+ROUTE2361->setToField("set_fraction");
+ROUTE2361->setToNode("Stand_whole_body_RotationInterpolator");
+group->addChildren(*ROUTE2361);
+
+CROUTE* ROUTE2362 = new CROUTE();
+ROUTE2362->setFromField("fraction_changed");
+ROUTE2362->setFromNode("StandTimer");
+ROUTE2362->setToField("set_fraction");
+ROUTE2362->setToNode("Stand_whole_body_TranslationInterpolator");
+group->addChildren(*ROUTE2362);
+
+CROUTE* ROUTE2363 = new CROUTE();
+ROUTE2363->setFromField("fraction_changed");
+ROUTE2363->setFromNode("StandTimer");
+ROUTE2363->setToField("set_fraction");
+ROUTE2363->setToNode("Stand_l_sternoclavicular_RollInterpolator");
+group->addChildren(*ROUTE2363);
+
+CROUTE* ROUTE2364 = new CROUTE();
+ROUTE2364->setFromField("fraction_changed");
+ROUTE2364->setFromNode("StandTimer");
+ROUTE2364->setToField("set_fraction");
+ROUTE2364->setToNode("Stand_l_acromioclavicular_RollInterpolator");
+group->addChildren(*ROUTE2364);
+
+CROUTE* ROUTE2365 = new CROUTE();
+ROUTE2365->setFromField("fraction_changed");
+ROUTE2365->setFromNode("StandTimer");
+ROUTE2365->setToField("set_fraction");
+ROUTE2365->setToNode("Stand_r_sternoclavicular_RollInterpolator");
+group->addChildren(*ROUTE2365);
+
+CROUTE* ROUTE2366 = new CROUTE();
+ROUTE2366->setFromField("fraction_changed");
+ROUTE2366->setFromNode("StandTimer");
+ROUTE2366->setToField("set_fraction");
+ROUTE2366->setToNode("Stand_r_acromioclavicular_RollInterpolator");
+group->addChildren(*ROUTE2366);
+
+CROUTE* ROUTE2367 = new CROUTE();
+ROUTE2367->setFromField("fraction_changed");
+ROUTE2367->setFromNode("StandTimer");
+ROUTE2367->setToField("set_fraction");
+ROUTE2367->setToNode("Stand_r_metatarsal_PitchInterpolator");
+group->addChildren(*ROUTE2367);
+
+CROUTE* ROUTE2368 = new CROUTE();
+ROUTE2368->setFromField("fraction_changed");
+ROUTE2368->setFromNode("StandTimer");
+ROUTE2368->setToField("set_fraction");
+ROUTE2368->setToNode("Stand_sacroiliac_YawInterpolator");
+group->addChildren(*ROUTE2368);
+
+CROUTE* ROUTE2369 = new CROUTE();
+ROUTE2369->setFromField("fraction_changed");
+ROUTE2369->setFromNode("StandTimer");
+ROUTE2369->setToField("set_fraction");
+ROUTE2369->setToNode("Stand_vl5_YawInterpolator");
+group->addChildren(*ROUTE2369);
+
+CROUTE* ROUTE2370 = new CROUTE();
+ROUTE2370->setFromField("fraction_changed");
+ROUTE2370->setFromNode("StandTimer");
+ROUTE2370->setToField("set_fraction");
+ROUTE2370->setToNode("Stand_vc6_YawInterpolator");
+group->addChildren(*ROUTE2370);
+
+CROUTE* ROUTE2371 = new CROUTE();
+ROUTE2371->setFromField("fraction_changed");
+ROUTE2371->setFromNode("StandTimer");
+ROUTE2371->setToField("set_fraction");
+ROUTE2371->setToNode("Stand_l_thumb1_PitchInterpolator");
+group->addChildren(*ROUTE2371);
+
+CROUTE* ROUTE2372 = new CROUTE();
+ROUTE2372->setFromField("fraction_changed");
+ROUTE2372->setFromNode("StandTimer");
+ROUTE2372->setToField("set_fraction");
+ROUTE2372->setToNode("Stand_r_thumb1_PitchInterpolator");
+group->addChildren(*ROUTE2372);
+
+CROUTE* ROUTE2373 = new CROUTE();
+ROUTE2373->setFromField("fraction_changed");
+ROUTE2373->setFromNode("StandTimer");
+ROUTE2373->setToField("set_fraction");
+ROUTE2373->setToNode("Stand_r_index1_RollInterpolator");
+group->addChildren(*ROUTE2373);
+
+CROUTE* ROUTE2374 = new CROUTE();
+ROUTE2374->setFromField("fraction_changed");
+ROUTE2374->setFromNode("StandTimer");
+ROUTE2374->setToField("set_fraction");
+ROUTE2374->setToNode("Stand_r_index2_RollInterpolator");
+group->addChildren(*ROUTE2374);
+
+CROUTE* ROUTE2375 = new CROUTE();
+ROUTE2375->setFromField("fraction_changed");
+ROUTE2375->setFromNode("StandTimer");
+ROUTE2375->setToField("set_fraction");
+ROUTE2375->setToNode("Stand_r_index3_RollInterpolator");
+group->addChildren(*ROUTE2375);
+
+CROUTE* ROUTE2376 = new CROUTE();
+ROUTE2376->setFromField("value_changed");
+ROUTE2376->setFromNode("Stand_r_ankle_RotationInterpolator");
+ROUTE2376->setToField("set_rotation");
+ROUTE2376->setToNode("hanim_r_ankle");
+group->addChildren(*ROUTE2376);
+
+CROUTE* ROUTE2377 = new CROUTE();
+ROUTE2377->setFromField("value_changed");
+ROUTE2377->setFromNode("Stand_r_knee_RotationInterpolator");
+ROUTE2377->setToField("set_rotation");
+ROUTE2377->setToNode("hanim_r_knee");
+group->addChildren(*ROUTE2377);
+
+CROUTE* ROUTE2378 = new CROUTE();
+ROUTE2378->setFromField("value_changed");
+ROUTE2378->setFromNode("Stand_r_hip_RotationInterpolator");
+ROUTE2378->setToField("set_rotation");
+ROUTE2378->setToNode("hanim_r_hip");
+group->addChildren(*ROUTE2378);
+
+CROUTE* ROUTE2379 = new CROUTE();
+ROUTE2379->setFromField("value_changed");
+ROUTE2379->setFromNode("Stand_l_ankle_RotationInterpolator");
+ROUTE2379->setToField("set_rotation");
+ROUTE2379->setToNode("hanim_l_ankle");
+group->addChildren(*ROUTE2379);
+
+CROUTE* ROUTE2380 = new CROUTE();
+ROUTE2380->setFromField("value_changed");
+ROUTE2380->setFromNode("Stand_l_knee_RotationInterpolator");
+ROUTE2380->setToField("set_rotation");
+ROUTE2380->setToNode("hanim_l_knee");
+group->addChildren(*ROUTE2380);
+
+CROUTE* ROUTE2381 = new CROUTE();
+ROUTE2381->setFromField("value_changed");
+ROUTE2381->setFromNode("Stand_l_hip_RotationInterpolator");
+ROUTE2381->setToField("set_rotation");
+ROUTE2381->setToNode("hanim_l_hip");
+group->addChildren(*ROUTE2381);
+
+CROUTE* ROUTE2382 = new CROUTE();
+ROUTE2382->setFromField("value_changed");
+ROUTE2382->setFromNode("Stand_r_wrist_RotationInterpolator");
+ROUTE2382->setToField("set_rotation");
+ROUTE2382->setToNode("hanim_r_wrist");
+group->addChildren(*ROUTE2382);
+
+CROUTE* ROUTE2383 = new CROUTE();
+ROUTE2383->setFromField("value_changed");
+ROUTE2383->setFromNode("Stand_r_elbow_RotationInterpolator");
+ROUTE2383->setToField("set_rotation");
+ROUTE2383->setToNode("hanim_r_elbow");
+group->addChildren(*ROUTE2383);
+
+CROUTE* ROUTE2384 = new CROUTE();
+ROUTE2384->setFromField("value_changed");
+ROUTE2384->setFromNode("Stand_r_shoulder_RotationInterpolator");
+ROUTE2384->setToField("set_rotation");
+ROUTE2384->setToNode("hanim_r_shoulder");
+group->addChildren(*ROUTE2384);
+
+CROUTE* ROUTE2385 = new CROUTE();
+ROUTE2385->setFromField("value_changed");
+ROUTE2385->setFromNode("Stand_l_wrist_RotationInterpolator");
+ROUTE2385->setToField("set_rotation");
+ROUTE2385->setToNode("hanim_l_wrist");
+group->addChildren(*ROUTE2385);
+
+CROUTE* ROUTE2386 = new CROUTE();
+ROUTE2386->setFromField("value_changed");
+ROUTE2386->setFromNode("Stand_l_elbow_RotationInterpolator");
+ROUTE2386->setToField("set_rotation");
+ROUTE2386->setToNode("hanim_l_elbow");
+group->addChildren(*ROUTE2386);
+
+CROUTE* ROUTE2387 = new CROUTE();
+ROUTE2387->setFromField("value_changed");
+ROUTE2387->setFromNode("Stand_l_shoulder_RotationInterpolator");
+ROUTE2387->setToField("set_rotation");
+ROUTE2387->setToNode("hanim_l_shoulder");
+group->addChildren(*ROUTE2387);
+
+CROUTE* ROUTE2388 = new CROUTE();
+ROUTE2388->setFromField("value_changed");
+ROUTE2388->setFromNode("Stand_head_RotationInterpolator");
+ROUTE2388->setToField("set_rotation");
+ROUTE2388->setToNode("hanim_skullbase");
+group->addChildren(*ROUTE2388);
+
+CROUTE* ROUTE2389 = new CROUTE();
+ROUTE2389->setFromField("value_changed");
+ROUTE2389->setFromNode("Stand_whole_body_RotationInterpolator");
+ROUTE2389->setToField("set_rotation");
+ROUTE2389->setToNode("hanim_humanoid_root");
+group->addChildren(*ROUTE2389);
+
+CROUTE* ROUTE2390 = new CROUTE();
+ROUTE2390->setFromField("value_changed");
+ROUTE2390->setFromNode("Stand_whole_body_TranslationInterpolator");
+ROUTE2390->setToField("set_translation");
+ROUTE2390->setToNode("hanim_humanoid_root");
+group->addChildren(*ROUTE2390);
+
+CROUTE* ROUTE2391 = new CROUTE();
+ROUTE2391->setFromField("value_changed");
+ROUTE2391->setFromNode("Stand_vl5_YawInterpolator");
+ROUTE2391->setToField("set_rotation");
+ROUTE2391->setToNode("hanim_vl5");
+group->addChildren(*ROUTE2391);
+
+CROUTE* ROUTE2392 = new CROUTE();
+ROUTE2392->setFromField("fraction_changed");
+ROUTE2392->setFromNode("PitchTimer");
+ROUTE2392->setToField("set_fraction");
+ROUTE2392->setToNode("Pitches_r_ankle_RotationInterpolator");
+group->addChildren(*ROUTE2392);
+
+CROUTE* ROUTE2393 = new CROUTE();
+ROUTE2393->setFromField("fraction_changed");
+ROUTE2393->setFromNode("PitchTimer");
+ROUTE2393->setToField("set_fraction");
+ROUTE2393->setToNode("Pitches_r_knee_RotationInterpolator");
+group->addChildren(*ROUTE2393);
+
+CROUTE* ROUTE2394 = new CROUTE();
+ROUTE2394->setFromField("fraction_changed");
+ROUTE2394->setFromNode("PitchTimer");
+ROUTE2394->setToField("set_fraction");
+ROUTE2394->setToNode("Pitches_r_hip_RotationInterpolator");
+group->addChildren(*ROUTE2394);
+
+CROUTE* ROUTE2395 = new CROUTE();
+ROUTE2395->setFromField("fraction_changed");
+ROUTE2395->setFromNode("PitchTimer");
+ROUTE2395->setToField("set_fraction");
+ROUTE2395->setToNode("Pitches_l_ankle_RotationInterpolator");
+group->addChildren(*ROUTE2395);
+
+CROUTE* ROUTE2396 = new CROUTE();
+ROUTE2396->setFromField("fraction_changed");
+ROUTE2396->setFromNode("PitchTimer");
+ROUTE2396->setToField("set_fraction");
+ROUTE2396->setToNode("Pitches_l_knee_RotationInterpolator");
+group->addChildren(*ROUTE2396);
+
+CROUTE* ROUTE2397 = new CROUTE();
+ROUTE2397->setFromField("fraction_changed");
+ROUTE2397->setFromNode("PitchTimer");
+ROUTE2397->setToField("set_fraction");
+ROUTE2397->setToNode("Pitches_l_hip_RotationInterpolator");
+group->addChildren(*ROUTE2397);
+
+CROUTE* ROUTE2398 = new CROUTE();
+ROUTE2398->setFromField("fraction_changed");
+ROUTE2398->setFromNode("PitchTimer");
+ROUTE2398->setToField("set_fraction");
+ROUTE2398->setToNode("Pitches_lower_body_RotationInterpolator");
+group->addChildren(*ROUTE2398);
+
+CROUTE* ROUTE2399 = new CROUTE();
+ROUTE2399->setFromField("fraction_changed");
+ROUTE2399->setFromNode("PitchTimer");
+ROUTE2399->setToField("set_fraction");
+ROUTE2399->setToNode("Pitches_r_wrist_RotationInterpolator");
+group->addChildren(*ROUTE2399);
+
+CROUTE* ROUTE2400 = new CROUTE();
+ROUTE2400->setFromField("fraction_changed");
+ROUTE2400->setFromNode("PitchTimer");
+ROUTE2400->setToField("set_fraction");
+ROUTE2400->setToNode("Pitches_r_elbow_RotationInterpolator");
+group->addChildren(*ROUTE2400);
+
+CROUTE* ROUTE2401 = new CROUTE();
+ROUTE2401->setFromField("fraction_changed");
+ROUTE2401->setFromNode("PitchTimer");
+ROUTE2401->setToField("set_fraction");
+ROUTE2401->setToNode("Pitches_r_shoulder_RotationInterpolator");
+group->addChildren(*ROUTE2401);
+
+CROUTE* ROUTE2402 = new CROUTE();
+ROUTE2402->setFromField("fraction_changed");
+ROUTE2402->setFromNode("PitchTimer");
+ROUTE2402->setToField("set_fraction");
+ROUTE2402->setToNode("Pitches_l_wrist_RotationInterpolator");
+group->addChildren(*ROUTE2402);
+
+CROUTE* ROUTE2403 = new CROUTE();
+ROUTE2403->setFromField("fraction_changed");
+ROUTE2403->setFromNode("PitchTimer");
+ROUTE2403->setToField("set_fraction");
+ROUTE2403->setToNode("Pitches_l_elbow_RotationInterpolator");
+group->addChildren(*ROUTE2403);
+
+CROUTE* ROUTE2404 = new CROUTE();
+ROUTE2404->setFromField("fraction_changed");
+ROUTE2404->setFromNode("PitchTimer");
+ROUTE2404->setToField("set_fraction");
+ROUTE2404->setToNode("Pitches_l_shoulder_RotationInterpolator");
+group->addChildren(*ROUTE2404);
+
+CROUTE* ROUTE2405 = new CROUTE();
+ROUTE2405->setFromField("fraction_changed");
+ROUTE2405->setFromNode("PitchTimer");
+ROUTE2405->setToField("set_fraction");
+ROUTE2405->setToNode("Pitches_head_RotationInterpolator");
+group->addChildren(*ROUTE2405);
+
+CROUTE* ROUTE2406 = new CROUTE();
+ROUTE2406->setFromField("fraction_changed");
+ROUTE2406->setFromNode("PitchTimer");
+ROUTE2406->setToField("set_fraction");
+ROUTE2406->setToNode("Pitches_neck_RotationInterpolator");
+group->addChildren(*ROUTE2406);
+
+CROUTE* ROUTE2407 = new CROUTE();
+ROUTE2407->setFromField("fraction_changed");
+ROUTE2407->setFromNode("PitchTimer");
+ROUTE2407->setToField("set_fraction");
+ROUTE2407->setToNode("Pitches_upper_body_RotationInterpolator");
+group->addChildren(*ROUTE2407);
+
+CROUTE* ROUTE2408 = new CROUTE();
+ROUTE2408->setFromField("fraction_changed");
+ROUTE2408->setFromNode("PitchTimer");
+ROUTE2408->setToField("set_fraction");
+ROUTE2408->setToNode("Pitches_whole_body_RotationInterpolator");
+group->addChildren(*ROUTE2408);
+
+CROUTE* ROUTE2409 = new CROUTE();
+ROUTE2409->setFromField("fraction_changed");
+ROUTE2409->setFromNode("PitchTimer");
+ROUTE2409->setToField("set_fraction");
+ROUTE2409->setToNode("Pitches_whole_body_TranslationInterpolator");
+group->addChildren(*ROUTE2409);
+
+CROUTE* ROUTE2410 = new CROUTE();
+ROUTE2410->setFromField("fraction_changed");
+ROUTE2410->setFromNode("PitchTimer");
+ROUTE2410->setToField("set_fraction");
+ROUTE2410->setToNode("Pitch_l_sternoclavicular_RollInterpolator");
+group->addChildren(*ROUTE2410);
+
+CROUTE* ROUTE2411 = new CROUTE();
+ROUTE2411->setFromField("fraction_changed");
+ROUTE2411->setFromNode("PitchTimer");
+ROUTE2411->setToField("set_fraction");
+ROUTE2411->setToNode("Pitch_l_acromioclavicular_RollInterpolator");
+group->addChildren(*ROUTE2411);
+
+CROUTE* ROUTE2412 = new CROUTE();
+ROUTE2412->setFromField("fraction_changed");
+ROUTE2412->setFromNode("PitchTimer");
+ROUTE2412->setToField("set_fraction");
+ROUTE2412->setToNode("Pitch_r_sternoclavicular_RollInterpolator");
+group->addChildren(*ROUTE2412);
+
+CROUTE* ROUTE2413 = new CROUTE();
+ROUTE2413->setFromField("fraction_changed");
+ROUTE2413->setFromNode("PitchTimer");
+ROUTE2413->setToField("set_fraction");
+ROUTE2413->setToNode("Pitch_r_acromioclavicular_RollInterpolator");
+group->addChildren(*ROUTE2413);
+
+CROUTE* ROUTE2414 = new CROUTE();
+ROUTE2414->setFromField("fraction_changed");
+ROUTE2414->setFromNode("PitchTimer");
+ROUTE2414->setToField("set_fraction");
+ROUTE2414->setToNode("Pitch_r_metatarsal_PitchInterpolator");
+group->addChildren(*ROUTE2414);
+
+CROUTE* ROUTE2415 = new CROUTE();
+ROUTE2415->setFromField("fraction_changed");
+ROUTE2415->setFromNode("PitchTimer");
+ROUTE2415->setToField("set_fraction");
+ROUTE2415->setToNode("Pitch_sacroiliac_YawInterpolator");
+group->addChildren(*ROUTE2415);
+
+CROUTE* ROUTE2416 = new CROUTE();
+ROUTE2416->setFromField("fraction_changed");
+ROUTE2416->setFromNode("PitchTimer");
+ROUTE2416->setToField("set_fraction");
+ROUTE2416->setToNode("Pitch_vl5_YawInterpolator");
+group->addChildren(*ROUTE2416);
+
+CROUTE* ROUTE2417 = new CROUTE();
+ROUTE2417->setFromField("fraction_changed");
+ROUTE2417->setFromNode("PitchTimer");
+ROUTE2417->setToField("set_fraction");
+ROUTE2417->setToNode("Pitch_vc6_YawInterpolator");
+group->addChildren(*ROUTE2417);
+
+CROUTE* ROUTE2418 = new CROUTE();
+ROUTE2418->setFromField("fraction_changed");
+ROUTE2418->setFromNode("PitchTimer");
+ROUTE2418->setToField("set_fraction");
+ROUTE2418->setToNode("Pitch_l_thumb1_PitchInterpolator");
+group->addChildren(*ROUTE2418);
+
+CROUTE* ROUTE2419 = new CROUTE();
+ROUTE2419->setFromField("fraction_changed");
+ROUTE2419->setFromNode("PitchTimer");
+ROUTE2419->setToField("set_fraction");
+ROUTE2419->setToNode("Pitch_r_thumb1_PitchInterpolator");
+group->addChildren(*ROUTE2419);
+
+CROUTE* ROUTE2420 = new CROUTE();
+ROUTE2420->setFromField("value_changed");
+ROUTE2420->setFromNode("Pitches_r_ankle_RotationInterpolator");
+ROUTE2420->setToField("set_rotation");
+ROUTE2420->setToNode("hanim_r_ankle");
+group->addChildren(*ROUTE2420);
+
+CROUTE* ROUTE2421 = new CROUTE();
+ROUTE2421->setFromField("value_changed");
+ROUTE2421->setFromNode("Pitches_r_knee_RotationInterpolator");
+ROUTE2421->setToField("set_rotation");
+ROUTE2421->setToNode("hanim_r_knee");
+group->addChildren(*ROUTE2421);
+
+CROUTE* ROUTE2422 = new CROUTE();
+ROUTE2422->setFromField("value_changed");
+ROUTE2422->setFromNode("Pitches_r_hip_RotationInterpolator");
+ROUTE2422->setToField("set_rotation");
+ROUTE2422->setToNode("hanim_r_hip");
+group->addChildren(*ROUTE2422);
+
+CROUTE* ROUTE2423 = new CROUTE();
+ROUTE2423->setFromField("value_changed");
+ROUTE2423->setFromNode("Pitches_l_ankle_RotationInterpolator");
+ROUTE2423->setToField("set_rotation");
+ROUTE2423->setToNode("hanim_l_ankle");
+group->addChildren(*ROUTE2423);
+
+CROUTE* ROUTE2424 = new CROUTE();
+ROUTE2424->setFromField("value_changed");
+ROUTE2424->setFromNode("Pitches_l_knee_RotationInterpolator");
+ROUTE2424->setToField("set_rotation");
+ROUTE2424->setToNode("hanim_l_knee");
+group->addChildren(*ROUTE2424);
+
+CROUTE* ROUTE2425 = new CROUTE();
+ROUTE2425->setFromField("value_changed");
+ROUTE2425->setFromNode("Pitches_l_hip_RotationInterpolator");
+ROUTE2425->setToField("set_rotation");
+ROUTE2425->setToNode("hanim_l_hip");
+group->addChildren(*ROUTE2425);
+
+CROUTE* ROUTE2426 = new CROUTE();
+ROUTE2426->setFromField("value_changed");
+ROUTE2426->setFromNode("Pitches_r_wrist_RotationInterpolator");
+ROUTE2426->setToField("set_rotation");
+ROUTE2426->setToNode("hanim_r_wrist");
+group->addChildren(*ROUTE2426);
+
+CROUTE* ROUTE2427 = new CROUTE();
+ROUTE2427->setFromField("value_changed");
+ROUTE2427->setFromNode("Pitches_r_elbow_RotationInterpolator");
+ROUTE2427->setToField("set_rotation");
+ROUTE2427->setToNode("hanim_r_elbow");
+group->addChildren(*ROUTE2427);
+
+CROUTE* ROUTE2428 = new CROUTE();
+ROUTE2428->setFromField("value_changed");
+ROUTE2428->setFromNode("Pitches_r_shoulder_RotationInterpolator");
+ROUTE2428->setToField("set_rotation");
+ROUTE2428->setToNode("hanim_r_shoulder");
+group->addChildren(*ROUTE2428);
+
+CROUTE* ROUTE2429 = new CROUTE();
+ROUTE2429->setFromField("value_changed");
+ROUTE2429->setFromNode("Pitches_l_wrist_RotationInterpolator");
+ROUTE2429->setToField("set_rotation");
+ROUTE2429->setToNode("hanim_l_wrist");
+group->addChildren(*ROUTE2429);
+
+CROUTE* ROUTE2430 = new CROUTE();
+ROUTE2430->setFromField("value_changed");
+ROUTE2430->setFromNode("Pitches_l_elbow_RotationInterpolator");
+ROUTE2430->setToField("set_rotation");
+ROUTE2430->setToNode("hanim_l_elbow");
+group->addChildren(*ROUTE2430);
+
+CROUTE* ROUTE2431 = new CROUTE();
+ROUTE2431->setFromField("value_changed");
+ROUTE2431->setFromNode("Pitches_l_shoulder_RotationInterpolator");
+ROUTE2431->setToField("set_rotation");
+ROUTE2431->setToNode("hanim_l_shoulder");
+group->addChildren(*ROUTE2431);
+
+CROUTE* ROUTE2432 = new CROUTE();
+ROUTE2432->setFromField("value_changed");
+ROUTE2432->setFromNode("Pitches_head_RotationInterpolator");
+ROUTE2432->setToField("set_rotation");
+ROUTE2432->setToNode("hanim_skullbase");
+group->addChildren(*ROUTE2432);
+
+CROUTE* ROUTE2433 = new CROUTE();
+ROUTE2433->setFromField("value_changed");
+ROUTE2433->setFromNode("Pitches_whole_body_RotationInterpolator");
+ROUTE2433->setToField("set_rotation");
+ROUTE2433->setToNode("hanim_humanoid_root");
+group->addChildren(*ROUTE2433);
+
+CROUTE* ROUTE2434 = new CROUTE();
+ROUTE2434->setFromField("value_changed");
+ROUTE2434->setFromNode("Pitches_whole_body_TranslationInterpolator");
+ROUTE2434->setToField("set_translation");
+ROUTE2434->setToNode("hanim_humanoid_root");
+group->addChildren(*ROUTE2434);
+
+CROUTE* ROUTE2435 = new CROUTE();
+ROUTE2435->setFromField("value_changed");
+ROUTE2435->setFromNode("Pitch_vl5_YawInterpolator");
+ROUTE2435->setToField("set_rotation");
+ROUTE2435->setToNode("hanim_vl5");
+group->addChildren(*ROUTE2435);
+
+CROUTE* ROUTE2436 = new CROUTE();
+ROUTE2436->setFromField("fraction_changed");
+ROUTE2436->setFromNode("YawTimer");
+ROUTE2436->setToField("set_fraction");
+ROUTE2436->setToNode("Yaws_r_ankle_RotationInterpolator");
+group->addChildren(*ROUTE2436);
+
+CROUTE* ROUTE2437 = new CROUTE();
+ROUTE2437->setFromField("fraction_changed");
+ROUTE2437->setFromNode("YawTimer");
+ROUTE2437->setToField("set_fraction");
+ROUTE2437->setToNode("Yaws_r_knee_RotationInterpolator");
+group->addChildren(*ROUTE2437);
+
+CROUTE* ROUTE2438 = new CROUTE();
+ROUTE2438->setFromField("fraction_changed");
+ROUTE2438->setFromNode("YawTimer");
+ROUTE2438->setToField("set_fraction");
+ROUTE2438->setToNode("Yaws_r_hip_RotationInterpolator");
+group->addChildren(*ROUTE2438);
+
+CROUTE* ROUTE2439 = new CROUTE();
+ROUTE2439->setFromField("fraction_changed");
+ROUTE2439->setFromNode("YawTimer");
+ROUTE2439->setToField("set_fraction");
+ROUTE2439->setToNode("Yaws_l_ankle_RotationInterpolator");
+group->addChildren(*ROUTE2439);
+
+CROUTE* ROUTE2440 = new CROUTE();
+ROUTE2440->setFromField("fraction_changed");
+ROUTE2440->setFromNode("YawTimer");
+ROUTE2440->setToField("set_fraction");
+ROUTE2440->setToNode("Yaws_l_knee_RotationInterpolator");
+group->addChildren(*ROUTE2440);
+
+CROUTE* ROUTE2441 = new CROUTE();
+ROUTE2441->setFromField("fraction_changed");
+ROUTE2441->setFromNode("YawTimer");
+ROUTE2441->setToField("set_fraction");
+ROUTE2441->setToNode("Yaws_l_hip_RotationInterpolator");
+group->addChildren(*ROUTE2441);
+
+CROUTE* ROUTE2442 = new CROUTE();
+ROUTE2442->setFromField("fraction_changed");
+ROUTE2442->setFromNode("YawTimer");
+ROUTE2442->setToField("set_fraction");
+ROUTE2442->setToNode("Yaws_lower_body_RotationInterpolator");
+group->addChildren(*ROUTE2442);
+
+CROUTE* ROUTE2443 = new CROUTE();
+ROUTE2443->setFromField("fraction_changed");
+ROUTE2443->setFromNode("YawTimer");
+ROUTE2443->setToField("set_fraction");
+ROUTE2443->setToNode("Yaws_r_wrist_RotationInterpolator");
+group->addChildren(*ROUTE2443);
+
+CROUTE* ROUTE2444 = new CROUTE();
+ROUTE2444->setFromField("fraction_changed");
+ROUTE2444->setFromNode("YawTimer");
+ROUTE2444->setToField("set_fraction");
+ROUTE2444->setToNode("Yaws_r_elbow_RotationInterpolator");
+group->addChildren(*ROUTE2444);
+
+CROUTE* ROUTE2445 = new CROUTE();
+ROUTE2445->setFromField("fraction_changed");
+ROUTE2445->setFromNode("YawTimer");
+ROUTE2445->setToField("set_fraction");
+ROUTE2445->setToNode("Yaws_r_shoulder_RotationInterpolator");
+group->addChildren(*ROUTE2445);
+
+CROUTE* ROUTE2446 = new CROUTE();
+ROUTE2446->setFromField("fraction_changed");
+ROUTE2446->setFromNode("YawTimer");
+ROUTE2446->setToField("set_fraction");
+ROUTE2446->setToNode("Yaws_l_wrist_RotationInterpolator");
+group->addChildren(*ROUTE2446);
+
+CROUTE* ROUTE2447 = new CROUTE();
+ROUTE2447->setFromField("fraction_changed");
+ROUTE2447->setFromNode("YawTimer");
+ROUTE2447->setToField("set_fraction");
+ROUTE2447->setToNode("Yaws_l_elbow_RotationInterpolator");
+group->addChildren(*ROUTE2447);
+
+CROUTE* ROUTE2448 = new CROUTE();
+ROUTE2448->setFromField("fraction_changed");
+ROUTE2448->setFromNode("YawTimer");
+ROUTE2448->setToField("set_fraction");
+ROUTE2448->setToNode("Yaws_l_shoulder_RotationInterpolator");
+group->addChildren(*ROUTE2448);
+
+CROUTE* ROUTE2449 = new CROUTE();
+ROUTE2449->setFromField("fraction_changed");
+ROUTE2449->setFromNode("YawTimer");
+ROUTE2449->setToField("set_fraction");
+ROUTE2449->setToNode("Yaws_head_RotationInterpolator");
+group->addChildren(*ROUTE2449);
+
+CROUTE* ROUTE2450 = new CROUTE();
+ROUTE2450->setFromField("fraction_changed");
+ROUTE2450->setFromNode("YawTimer");
+ROUTE2450->setToField("set_fraction");
+ROUTE2450->setToNode("Yaws_neck_RotationInterpolator");
+group->addChildren(*ROUTE2450);
+
+CROUTE* ROUTE2451 = new CROUTE();
+ROUTE2451->setFromField("fraction_changed");
+ROUTE2451->setFromNode("YawTimer");
+ROUTE2451->setToField("set_fraction");
+ROUTE2451->setToNode("Yaws_upper_body_RotationInterpolator");
+group->addChildren(*ROUTE2451);
+
+CROUTE* ROUTE2452 = new CROUTE();
+ROUTE2452->setFromField("fraction_changed");
+ROUTE2452->setFromNode("YawTimer");
+ROUTE2452->setToField("set_fraction");
+ROUTE2452->setToNode("Yaws_whole_body_RotationInterpolator");
+group->addChildren(*ROUTE2452);
+
+CROUTE* ROUTE2453 = new CROUTE();
+ROUTE2453->setFromField("fraction_changed");
+ROUTE2453->setFromNode("YawTimer");
+ROUTE2453->setToField("set_fraction");
+ROUTE2453->setToNode("Yaws_whole_body_TranslationInterpolator");
+group->addChildren(*ROUTE2453);
+
+CROUTE* ROUTE2454 = new CROUTE();
+ROUTE2454->setFromField("fraction_changed");
+ROUTE2454->setFromNode("YawTimer");
+ROUTE2454->setToField("set_fraction");
+ROUTE2454->setToNode("Yaw_l_sternoclavicular_RollInterpolator");
+group->addChildren(*ROUTE2454);
+
+CROUTE* ROUTE2455 = new CROUTE();
+ROUTE2455->setFromField("fraction_changed");
+ROUTE2455->setFromNode("YawTimer");
+ROUTE2455->setToField("set_fraction");
+ROUTE2455->setToNode("Yaw_l_acromioclavicular_RollInterpolator");
+group->addChildren(*ROUTE2455);
+
+CROUTE* ROUTE2456 = new CROUTE();
+ROUTE2456->setFromField("fraction_changed");
+ROUTE2456->setFromNode("YawTimer");
+ROUTE2456->setToField("set_fraction");
+ROUTE2456->setToNode("Yaw_r_sternoclavicular_RollInterpolator");
+group->addChildren(*ROUTE2456);
+
+CROUTE* ROUTE2457 = new CROUTE();
+ROUTE2457->setFromField("fraction_changed");
+ROUTE2457->setFromNode("YawTimer");
+ROUTE2457->setToField("set_fraction");
+ROUTE2457->setToNode("Yaw_r_acromioclavicular_RollInterpolator");
+group->addChildren(*ROUTE2457);
+
+CROUTE* ROUTE2458 = new CROUTE();
+ROUTE2458->setFromField("fraction_changed");
+ROUTE2458->setFromNode("YawTimer");
+ROUTE2458->setToField("set_fraction");
+ROUTE2458->setToNode("Yaw_r_metatarsal_PitchInterpolator");
+group->addChildren(*ROUTE2458);
+
+CROUTE* ROUTE2459 = new CROUTE();
+ROUTE2459->setFromField("fraction_changed");
+ROUTE2459->setFromNode("YawTimer");
+ROUTE2459->setToField("set_fraction");
+ROUTE2459->setToNode("Yaw_sacroiliac_YawInterpolator");
+group->addChildren(*ROUTE2459);
+
+CROUTE* ROUTE2460 = new CROUTE();
+ROUTE2460->setFromField("fraction_changed");
+ROUTE2460->setFromNode("YawTimer");
+ROUTE2460->setToField("set_fraction");
+ROUTE2460->setToNode("Yaw_vl5_YawInterpolator");
+group->addChildren(*ROUTE2460);
+
+CROUTE* ROUTE2461 = new CROUTE();
+ROUTE2461->setFromField("fraction_changed");
+ROUTE2461->setFromNode("YawTimer");
+ROUTE2461->setToField("set_fraction");
+ROUTE2461->setToNode("Yaw_vc6_YawInterpolator");
+group->addChildren(*ROUTE2461);
+
+CROUTE* ROUTE2462 = new CROUTE();
+ROUTE2462->setFromField("fraction_changed");
+ROUTE2462->setFromNode("YawTimer");
+ROUTE2462->setToField("set_fraction");
+ROUTE2462->setToNode("Yaw_l_thumb1_PitchInterpolator");
+group->addChildren(*ROUTE2462);
+
+CROUTE* ROUTE2463 = new CROUTE();
+ROUTE2463->setFromField("fraction_changed");
+ROUTE2463->setFromNode("YawTimer");
+ROUTE2463->setToField("set_fraction");
+ROUTE2463->setToNode("Yaw_r_thumb1_PitchInterpolator");
+group->addChildren(*ROUTE2463);
+
+CROUTE* ROUTE2464 = new CROUTE();
+ROUTE2464->setFromField("value_changed");
+ROUTE2464->setFromNode("Yaws_r_ankle_RotationInterpolator");
+ROUTE2464->setToField("set_rotation");
+ROUTE2464->setToNode("hanim_r_ankle");
+group->addChildren(*ROUTE2464);
+
+CROUTE* ROUTE2465 = new CROUTE();
+ROUTE2465->setFromField("value_changed");
+ROUTE2465->setFromNode("Yaws_r_knee_RotationInterpolator");
+ROUTE2465->setToField("set_rotation");
+ROUTE2465->setToNode("hanim_r_knee");
+group->addChildren(*ROUTE2465);
+
+CROUTE* ROUTE2466 = new CROUTE();
+ROUTE2466->setFromField("value_changed");
+ROUTE2466->setFromNode("Yaws_r_hip_RotationInterpolator");
+ROUTE2466->setToField("set_rotation");
+ROUTE2466->setToNode("hanim_r_hip");
+group->addChildren(*ROUTE2466);
+
+CROUTE* ROUTE2467 = new CROUTE();
+ROUTE2467->setFromField("value_changed");
+ROUTE2467->setFromNode("Yaws_l_ankle_RotationInterpolator");
+ROUTE2467->setToField("set_rotation");
+ROUTE2467->setToNode("hanim_l_ankle");
+group->addChildren(*ROUTE2467);
+
+CROUTE* ROUTE2468 = new CROUTE();
+ROUTE2468->setFromField("value_changed");
+ROUTE2468->setFromNode("Yaws_l_knee_RotationInterpolator");
+ROUTE2468->setToField("set_rotation");
+ROUTE2468->setToNode("hanim_l_knee");
+group->addChildren(*ROUTE2468);
+
+CROUTE* ROUTE2469 = new CROUTE();
+ROUTE2469->setFromField("value_changed");
+ROUTE2469->setFromNode("Yaws_l_hip_RotationInterpolator");
+ROUTE2469->setToField("set_rotation");
+ROUTE2469->setToNode("hanim_l_hip");
+group->addChildren(*ROUTE2469);
+
+CROUTE* ROUTE2470 = new CROUTE();
+ROUTE2470->setFromField("value_changed");
+ROUTE2470->setFromNode("Yaws_r_wrist_RotationInterpolator");
+ROUTE2470->setToField("set_rotation");
+ROUTE2470->setToNode("hanim_r_wrist");
+group->addChildren(*ROUTE2470);
+
+CROUTE* ROUTE2471 = new CROUTE();
+ROUTE2471->setFromField("value_changed");
+ROUTE2471->setFromNode("Yaws_r_elbow_RotationInterpolator");
+ROUTE2471->setToField("set_rotation");
+ROUTE2471->setToNode("hanim_r_elbow");
+group->addChildren(*ROUTE2471);
+
+CROUTE* ROUTE2472 = new CROUTE();
+ROUTE2472->setFromField("value_changed");
+ROUTE2472->setFromNode("Yaws_r_shoulder_RotationInterpolator");
+ROUTE2472->setToField("set_rotation");
+ROUTE2472->setToNode("hanim_r_shoulder");
+group->addChildren(*ROUTE2472);
+
+CROUTE* ROUTE2473 = new CROUTE();
+ROUTE2473->setFromField("value_changed");
+ROUTE2473->setFromNode("Yaws_l_wrist_RotationInterpolator");
+ROUTE2473->setToField("set_rotation");
+ROUTE2473->setToNode("hanim_l_wrist");
+group->addChildren(*ROUTE2473);
+
+CROUTE* ROUTE2474 = new CROUTE();
+ROUTE2474->setFromField("value_changed");
+ROUTE2474->setFromNode("Yaws_l_elbow_RotationInterpolator");
+ROUTE2474->setToField("set_rotation");
+ROUTE2474->setToNode("hanim_l_elbow");
+group->addChildren(*ROUTE2474);
+
+CROUTE* ROUTE2475 = new CROUTE();
+ROUTE2475->setFromField("value_changed");
+ROUTE2475->setFromNode("Yaws_l_shoulder_RotationInterpolator");
+ROUTE2475->setToField("set_rotation");
+ROUTE2475->setToNode("hanim_l_shoulder");
+group->addChildren(*ROUTE2475);
+
+CROUTE* ROUTE2476 = new CROUTE();
+ROUTE2476->setFromField("value_changed");
+ROUTE2476->setFromNode("Yaws_head_RotationInterpolator");
+ROUTE2476->setToField("set_rotation");
+ROUTE2476->setToNode("hanim_skullbase");
+group->addChildren(*ROUTE2476);
+
+CROUTE* ROUTE2477 = new CROUTE();
+ROUTE2477->setFromField("value_changed");
+ROUTE2477->setFromNode("Yaws_whole_body_RotationInterpolator");
+ROUTE2477->setToField("set_rotation");
+ROUTE2477->setToNode("hanim_humanoid_root");
+group->addChildren(*ROUTE2477);
+
+CROUTE* ROUTE2478 = new CROUTE();
+ROUTE2478->setFromField("value_changed");
+ROUTE2478->setFromNode("Yaws_whole_body_TranslationInterpolator");
+ROUTE2478->setToField("set_translation");
+ROUTE2478->setToNode("hanim_humanoid_root");
+group->addChildren(*ROUTE2478);
+
+CROUTE* ROUTE2479 = new CROUTE();
+ROUTE2479->setFromField("value_changed");
+ROUTE2479->setFromNode("Yaw_vl5_YawInterpolator");
+ROUTE2479->setToField("set_rotation");
+ROUTE2479->setToNode("hanim_vl5");
+group->addChildren(*ROUTE2479);
+
+CROUTE* ROUTE2480 = new CROUTE();
+ROUTE2480->setFromField("fraction_changed");
+ROUTE2480->setFromNode("RollTimer");
+ROUTE2480->setToField("set_fraction");
+ROUTE2480->setToNode("Rolls_r_ankle_RotationInterpolator");
+group->addChildren(*ROUTE2480);
+
+CROUTE* ROUTE2481 = new CROUTE();
+ROUTE2481->setFromField("fraction_changed");
+ROUTE2481->setFromNode("RollTimer");
+ROUTE2481->setToField("set_fraction");
+ROUTE2481->setToNode("Rolls_r_knee_RotationInterpolator");
+group->addChildren(*ROUTE2481);
+
+CROUTE* ROUTE2482 = new CROUTE();
+ROUTE2482->setFromField("fraction_changed");
+ROUTE2482->setFromNode("RollTimer");
+ROUTE2482->setToField("set_fraction");
+ROUTE2482->setToNode("Rolls_r_hip_RotationInterpolator");
+group->addChildren(*ROUTE2482);
+
+CROUTE* ROUTE2483 = new CROUTE();
+ROUTE2483->setFromField("fraction_changed");
+ROUTE2483->setFromNode("RollTimer");
+ROUTE2483->setToField("set_fraction");
+ROUTE2483->setToNode("Rolls_l_ankle_RotationInterpolator");
+group->addChildren(*ROUTE2483);
+
+CROUTE* ROUTE2484 = new CROUTE();
+ROUTE2484->setFromField("fraction_changed");
+ROUTE2484->setFromNode("RollTimer");
+ROUTE2484->setToField("set_fraction");
+ROUTE2484->setToNode("Rolls_l_knee_RotationInterpolator");
+group->addChildren(*ROUTE2484);
+
+CROUTE* ROUTE2485 = new CROUTE();
+ROUTE2485->setFromField("fraction_changed");
+ROUTE2485->setFromNode("RollTimer");
+ROUTE2485->setToField("set_fraction");
+ROUTE2485->setToNode("Rolls_l_hip_RotationInterpolator");
+group->addChildren(*ROUTE2485);
+
+CROUTE* ROUTE2486 = new CROUTE();
+ROUTE2486->setFromField("fraction_changed");
+ROUTE2486->setFromNode("RollTimer");
+ROUTE2486->setToField("set_fraction");
+ROUTE2486->setToNode("Rolls_lower_body_RotationInterpolator");
+group->addChildren(*ROUTE2486);
+
+CROUTE* ROUTE2487 = new CROUTE();
+ROUTE2487->setFromField("fraction_changed");
+ROUTE2487->setFromNode("RollTimer");
+ROUTE2487->setToField("set_fraction");
+ROUTE2487->setToNode("Rolls_r_wrist_RotationInterpolator");
+group->addChildren(*ROUTE2487);
+
+CROUTE* ROUTE2488 = new CROUTE();
+ROUTE2488->setFromField("fraction_changed");
+ROUTE2488->setFromNode("RollTimer");
+ROUTE2488->setToField("set_fraction");
+ROUTE2488->setToNode("Rolls_r_elbow_RotationInterpolator");
+group->addChildren(*ROUTE2488);
+
+CROUTE* ROUTE2489 = new CROUTE();
+ROUTE2489->setFromField("fraction_changed");
+ROUTE2489->setFromNode("RollTimer");
+ROUTE2489->setToField("set_fraction");
+ROUTE2489->setToNode("Rolls_r_shoulder_RotationInterpolator");
+group->addChildren(*ROUTE2489);
+
+CROUTE* ROUTE2490 = new CROUTE();
+ROUTE2490->setFromField("fraction_changed");
+ROUTE2490->setFromNode("RollTimer");
+ROUTE2490->setToField("set_fraction");
+ROUTE2490->setToNode("Rolls_l_wrist_RotationInterpolator");
+group->addChildren(*ROUTE2490);
+
+CROUTE* ROUTE2491 = new CROUTE();
+ROUTE2491->setFromField("fraction_changed");
+ROUTE2491->setFromNode("RollTimer");
+ROUTE2491->setToField("set_fraction");
+ROUTE2491->setToNode("Rolls_l_elbow_RotationInterpolator");
+group->addChildren(*ROUTE2491);
+
+CROUTE* ROUTE2492 = new CROUTE();
+ROUTE2492->setFromField("fraction_changed");
+ROUTE2492->setFromNode("RollTimer");
+ROUTE2492->setToField("set_fraction");
+ROUTE2492->setToNode("Rolls_l_shoulder_RotationInterpolator");
+group->addChildren(*ROUTE2492);
+
+CROUTE* ROUTE2493 = new CROUTE();
+ROUTE2493->setFromField("fraction_changed");
+ROUTE2493->setFromNode("RollTimer");
+ROUTE2493->setToField("set_fraction");
+ROUTE2493->setToNode("Rolls_head_RotationInterpolator");
+group->addChildren(*ROUTE2493);
+
+CROUTE* ROUTE2494 = new CROUTE();
+ROUTE2494->setFromField("fraction_changed");
+ROUTE2494->setFromNode("RollTimer");
+ROUTE2494->setToField("set_fraction");
+ROUTE2494->setToNode("Rolls_neck_RotationInterpolator");
+group->addChildren(*ROUTE2494);
+
+CROUTE* ROUTE2495 = new CROUTE();
+ROUTE2495->setFromField("fraction_changed");
+ROUTE2495->setFromNode("RollTimer");
+ROUTE2495->setToField("set_fraction");
+ROUTE2495->setToNode("Rolls_upper_body_RotationInterpolator");
+group->addChildren(*ROUTE2495);
+
+CROUTE* ROUTE2496 = new CROUTE();
+ROUTE2496->setFromField("fraction_changed");
+ROUTE2496->setFromNode("RollTimer");
+ROUTE2496->setToField("set_fraction");
+ROUTE2496->setToNode("Rolls_whole_body_RotationInterpolator");
+group->addChildren(*ROUTE2496);
+
+CROUTE* ROUTE2497 = new CROUTE();
+ROUTE2497->setFromField("fraction_changed");
+ROUTE2497->setFromNode("RollTimer");
+ROUTE2497->setToField("set_fraction");
+ROUTE2497->setToNode("Rolls_whole_body_TranslationInterpolator");
+group->addChildren(*ROUTE2497);
+
+CROUTE* ROUTE2498 = new CROUTE();
+ROUTE2498->setFromField("fraction_changed");
+ROUTE2498->setFromNode("RollTimer");
+ROUTE2498->setToField("set_fraction");
+ROUTE2498->setToNode("Roll_l_sternoclavicular_RollInterpolator");
+group->addChildren(*ROUTE2498);
+
+CROUTE* ROUTE2499 = new CROUTE();
+ROUTE2499->setFromField("fraction_changed");
+ROUTE2499->setFromNode("RollTimer");
+ROUTE2499->setToField("set_fraction");
+ROUTE2499->setToNode("Roll_l_acromioclavicular_RollInterpolator");
+group->addChildren(*ROUTE2499);
+
+CROUTE* ROUTE2500 = new CROUTE();
+ROUTE2500->setFromField("fraction_changed");
+ROUTE2500->setFromNode("RollTimer");
+ROUTE2500->setToField("set_fraction");
+ROUTE2500->setToNode("Roll_r_sternoclavicular_RollInterpolator");
+group->addChildren(*ROUTE2500);
+
+CROUTE* ROUTE2501 = new CROUTE();
+ROUTE2501->setFromField("fraction_changed");
+ROUTE2501->setFromNode("RollTimer");
+ROUTE2501->setToField("set_fraction");
+ROUTE2501->setToNode("Roll_r_acromioclavicular_RollInterpolator");
+group->addChildren(*ROUTE2501);
+
+CROUTE* ROUTE2502 = new CROUTE();
+ROUTE2502->setFromField("fraction_changed");
+ROUTE2502->setFromNode("RollTimer");
+ROUTE2502->setToField("set_fraction");
+ROUTE2502->setToNode("Roll_r_metatarsal_PitchInterpolator");
+group->addChildren(*ROUTE2502);
+
+CROUTE* ROUTE2503 = new CROUTE();
+ROUTE2503->setFromField("fraction_changed");
+ROUTE2503->setFromNode("RollTimer");
+ROUTE2503->setToField("set_fraction");
+ROUTE2503->setToNode("Roll_sacroiliac_YawInterpolator");
+group->addChildren(*ROUTE2503);
+
+CROUTE* ROUTE2504 = new CROUTE();
+ROUTE2504->setFromField("fraction_changed");
+ROUTE2504->setFromNode("RollTimer");
+ROUTE2504->setToField("set_fraction");
+ROUTE2504->setToNode("Roll_vl5_YawInterpolator");
+group->addChildren(*ROUTE2504);
+
+CROUTE* ROUTE2505 = new CROUTE();
+ROUTE2505->setFromField("fraction_changed");
+ROUTE2505->setFromNode("RollTimer");
+ROUTE2505->setToField("set_fraction");
+ROUTE2505->setToNode("Roll_vc6_YawInterpolator");
+group->addChildren(*ROUTE2505);
+
+CROUTE* ROUTE2506 = new CROUTE();
+ROUTE2506->setFromField("fraction_changed");
+ROUTE2506->setFromNode("RollTimer");
+ROUTE2506->setToField("set_fraction");
+ROUTE2506->setToNode("Roll_l_thumb1_PitchInterpolator");
+group->addChildren(*ROUTE2506);
+
+CROUTE* ROUTE2507 = new CROUTE();
+ROUTE2507->setFromField("fraction_changed");
+ROUTE2507->setFromNode("RollTimer");
+ROUTE2507->setToField("set_fraction");
+ROUTE2507->setToNode("Roll_r_thumb1_PitchInterpolator");
+group->addChildren(*ROUTE2507);
+
+CROUTE* ROUTE2508 = new CROUTE();
+ROUTE2508->setFromField("value_changed");
+ROUTE2508->setFromNode("Rolls_r_ankle_RotationInterpolator");
+ROUTE2508->setToField("set_rotation");
+ROUTE2508->setToNode("hanim_r_ankle");
+group->addChildren(*ROUTE2508);
+
+CROUTE* ROUTE2509 = new CROUTE();
+ROUTE2509->setFromField("value_changed");
+ROUTE2509->setFromNode("Rolls_r_knee_RotationInterpolator");
+ROUTE2509->setToField("set_rotation");
+ROUTE2509->setToNode("hanim_r_knee");
+group->addChildren(*ROUTE2509);
+
+CROUTE* ROUTE2510 = new CROUTE();
+ROUTE2510->setFromField("value_changed");
+ROUTE2510->setFromNode("Rolls_r_hip_RotationInterpolator");
+ROUTE2510->setToField("set_rotation");
+ROUTE2510->setToNode("hanim_r_hip");
+group->addChildren(*ROUTE2510);
+
+CROUTE* ROUTE2511 = new CROUTE();
+ROUTE2511->setFromField("value_changed");
+ROUTE2511->setFromNode("Rolls_l_ankle_RotationInterpolator");
+ROUTE2511->setToField("set_rotation");
+ROUTE2511->setToNode("hanim_l_ankle");
+group->addChildren(*ROUTE2511);
+
+CROUTE* ROUTE2512 = new CROUTE();
+ROUTE2512->setFromField("value_changed");
+ROUTE2512->setFromNode("Rolls_l_knee_RotationInterpolator");
+ROUTE2512->setToField("set_rotation");
+ROUTE2512->setToNode("hanim_l_knee");
+group->addChildren(*ROUTE2512);
+
+CROUTE* ROUTE2513 = new CROUTE();
+ROUTE2513->setFromField("value_changed");
+ROUTE2513->setFromNode("Rolls_l_hip_RotationInterpolator");
+ROUTE2513->setToField("set_rotation");
+ROUTE2513->setToNode("hanim_l_hip");
+group->addChildren(*ROUTE2513);
+
+CROUTE* ROUTE2514 = new CROUTE();
+ROUTE2514->setFromField("value_changed");
+ROUTE2514->setFromNode("Rolls_r_wrist_RotationInterpolator");
+ROUTE2514->setToField("set_rotation");
+ROUTE2514->setToNode("hanim_r_wrist");
+group->addChildren(*ROUTE2514);
+
+CROUTE* ROUTE2515 = new CROUTE();
+ROUTE2515->setFromField("value_changed");
+ROUTE2515->setFromNode("Rolls_r_elbow_RotationInterpolator");
+ROUTE2515->setToField("set_rotation");
+ROUTE2515->setToNode("hanim_r_elbow");
+group->addChildren(*ROUTE2515);
+
+CROUTE* ROUTE2516 = new CROUTE();
+ROUTE2516->setFromField("value_changed");
+ROUTE2516->setFromNode("Rolls_r_shoulder_RotationInterpolator");
+ROUTE2516->setToField("set_rotation");
+ROUTE2516->setToNode("hanim_r_shoulder");
+group->addChildren(*ROUTE2516);
+
+CROUTE* ROUTE2517 = new CROUTE();
+ROUTE2517->setFromField("value_changed");
+ROUTE2517->setFromNode("Rolls_l_wrist_RotationInterpolator");
+ROUTE2517->setToField("set_rotation");
+ROUTE2517->setToNode("hanim_l_wrist");
+group->addChildren(*ROUTE2517);
+
+CROUTE* ROUTE2518 = new CROUTE();
+ROUTE2518->setFromField("value_changed");
+ROUTE2518->setFromNode("Rolls_l_elbow_RotationInterpolator");
+ROUTE2518->setToField("set_rotation");
+ROUTE2518->setToNode("hanim_l_elbow");
+group->addChildren(*ROUTE2518);
+
+CROUTE* ROUTE2519 = new CROUTE();
+ROUTE2519->setFromField("value_changed");
+ROUTE2519->setFromNode("Rolls_l_shoulder_RotationInterpolator");
+ROUTE2519->setToField("set_rotation");
+ROUTE2519->setToNode("hanim_l_shoulder");
+group->addChildren(*ROUTE2519);
+
+CROUTE* ROUTE2520 = new CROUTE();
+ROUTE2520->setFromField("value_changed");
+ROUTE2520->setFromNode("Rolls_head_RotationInterpolator");
+ROUTE2520->setToField("set_rotation");
+ROUTE2520->setToNode("hanim_skullbase");
+group->addChildren(*ROUTE2520);
+
+CROUTE* ROUTE2521 = new CROUTE();
+ROUTE2521->setFromField("value_changed");
+ROUTE2521->setFromNode("Rolls_whole_body_RotationInterpolator");
+ROUTE2521->setToField("set_rotation");
+ROUTE2521->setToNode("hanim_humanoid_root");
+group->addChildren(*ROUTE2521);
+
+CROUTE* ROUTE2522 = new CROUTE();
+ROUTE2522->setFromField("value_changed");
+ROUTE2522->setFromNode("Rolls_whole_body_TranslationInterpolator");
+ROUTE2522->setToField("set_translation");
+ROUTE2522->setToNode("hanim_humanoid_root");
+group->addChildren(*ROUTE2522);
+
+CROUTE* ROUTE2523 = new CROUTE();
+ROUTE2523->setFromField("value_changed");
+ROUTE2523->setFromNode("Roll_vl5_YawInterpolator");
+ROUTE2523->setToField("set_rotation");
+ROUTE2523->setToNode("hanim_vl5");
+group->addChildren(*ROUTE2523);
+
+CROUTE* ROUTE2524 = new CROUTE();
+ROUTE2524->setFromField("fraction_changed");
+ROUTE2524->setFromNode("WalkTimer");
+ROUTE2524->setToField("set_fraction");
+ROUTE2524->setToNode("Walk_r_ankle_RotationInterpolator");
+group->addChildren(*ROUTE2524);
+
+CROUTE* ROUTE2525 = new CROUTE();
+ROUTE2525->setFromField("fraction_changed");
+ROUTE2525->setFromNode("WalkTimer");
+ROUTE2525->setToField("set_fraction");
+ROUTE2525->setToNode("Walk_r_knee_RotationInterpolator");
+group->addChildren(*ROUTE2525);
+
+CROUTE* ROUTE2526 = new CROUTE();
+ROUTE2526->setFromField("fraction_changed");
+ROUTE2526->setFromNode("WalkTimer");
+ROUTE2526->setToField("set_fraction");
+ROUTE2526->setToNode("Walk_r_hip_RotationInterpolator");
+group->addChildren(*ROUTE2526);
+
+CROUTE* ROUTE2527 = new CROUTE();
+ROUTE2527->setFromField("fraction_changed");
+ROUTE2527->setFromNode("WalkTimer");
+ROUTE2527->setToField("set_fraction");
+ROUTE2527->setToNode("Walk_l_ankle_RotationInterpolator");
+group->addChildren(*ROUTE2527);
+
+CROUTE* ROUTE2528 = new CROUTE();
+ROUTE2528->setFromField("fraction_changed");
+ROUTE2528->setFromNode("WalkTimer");
+ROUTE2528->setToField("set_fraction");
+ROUTE2528->setToNode("Walk_l_knee_RotationInterpolator");
+group->addChildren(*ROUTE2528);
+
+CROUTE* ROUTE2529 = new CROUTE();
+ROUTE2529->setFromField("fraction_changed");
+ROUTE2529->setFromNode("WalkTimer");
+ROUTE2529->setToField("set_fraction");
+ROUTE2529->setToNode("Walk_l_hip_RotationInterpolator");
+group->addChildren(*ROUTE2529);
+
+CROUTE* ROUTE2530 = new CROUTE();
+ROUTE2530->setFromField("fraction_changed");
+ROUTE2530->setFromNode("WalkTimer");
+ROUTE2530->setToField("set_fraction");
+ROUTE2530->setToNode("Walk_lower_body_RotationInterpolator");
+group->addChildren(*ROUTE2530);
+
+CROUTE* ROUTE2531 = new CROUTE();
+ROUTE2531->setFromField("fraction_changed");
+ROUTE2531->setFromNode("WalkTimer");
+ROUTE2531->setToField("set_fraction");
+ROUTE2531->setToNode("Walk_r_wrist_RotationInterpolator");
+group->addChildren(*ROUTE2531);
+
+CROUTE* ROUTE2532 = new CROUTE();
+ROUTE2532->setFromField("fraction_changed");
+ROUTE2532->setFromNode("WalkTimer");
+ROUTE2532->setToField("set_fraction");
+ROUTE2532->setToNode("Walk_r_elbow_RotationInterpolator");
+group->addChildren(*ROUTE2532);
+
+CROUTE* ROUTE2533 = new CROUTE();
+ROUTE2533->setFromField("fraction_changed");
+ROUTE2533->setFromNode("WalkTimer");
+ROUTE2533->setToField("set_fraction");
+ROUTE2533->setToNode("Walk_r_shoulder_RotationInterpolator");
+group->addChildren(*ROUTE2533);
+
+CROUTE* ROUTE2534 = new CROUTE();
+ROUTE2534->setFromField("fraction_changed");
+ROUTE2534->setFromNode("WalkTimer");
+ROUTE2534->setToField("set_fraction");
+ROUTE2534->setToNode("Walk_l_wrist_RotationInterpolator");
+group->addChildren(*ROUTE2534);
+
+CROUTE* ROUTE2535 = new CROUTE();
+ROUTE2535->setFromField("fraction_changed");
+ROUTE2535->setFromNode("WalkTimer");
+ROUTE2535->setToField("set_fraction");
+ROUTE2535->setToNode("Walk_l_elbow_RotationInterpolator");
+group->addChildren(*ROUTE2535);
+
+CROUTE* ROUTE2536 = new CROUTE();
+ROUTE2536->setFromField("fraction_changed");
+ROUTE2536->setFromNode("WalkTimer");
+ROUTE2536->setToField("set_fraction");
+ROUTE2536->setToNode("Walk_l_shoulder_RotationInterpolator");
+group->addChildren(*ROUTE2536);
+
+CROUTE* ROUTE2537 = new CROUTE();
+ROUTE2537->setFromField("fraction_changed");
+ROUTE2537->setFromNode("WalkTimer");
+ROUTE2537->setToField("set_fraction");
+ROUTE2537->setToNode("Walk_head_RotationInterpolator");
+group->addChildren(*ROUTE2537);
+
+CROUTE* ROUTE2538 = new CROUTE();
+ROUTE2538->setFromField("fraction_changed");
+ROUTE2538->setFromNode("WalkTimer");
+ROUTE2538->setToField("set_fraction");
+ROUTE2538->setToNode("Walk_neck_RotationInterpolator");
+group->addChildren(*ROUTE2538);
+
+CROUTE* ROUTE2539 = new CROUTE();
+ROUTE2539->setFromField("fraction_changed");
+ROUTE2539->setFromNode("WalkTimer");
+ROUTE2539->setToField("set_fraction");
+ROUTE2539->setToNode("Walk_upper_body_RotationInterpolator");
+group->addChildren(*ROUTE2539);
+
+CROUTE* ROUTE2540 = new CROUTE();
+ROUTE2540->setFromField("fraction_changed");
+ROUTE2540->setFromNode("WalkTimer");
+ROUTE2540->setToField("set_fraction");
+ROUTE2540->setToNode("Walk_whole_body_RotationInterpolator");
+group->addChildren(*ROUTE2540);
+
+CROUTE* ROUTE2541 = new CROUTE();
+ROUTE2541->setFromField("fraction_changed");
+ROUTE2541->setFromNode("WalkTimer");
+ROUTE2541->setToField("set_fraction");
+ROUTE2541->setToNode("Walk_whole_body_TranslationInterpolator");
+group->addChildren(*ROUTE2541);
+
+CROUTE* ROUTE2542 = new CROUTE();
+ROUTE2542->setFromField("fraction_changed");
+ROUTE2542->setFromNode("WalkTimer");
+ROUTE2542->setToField("set_fraction");
+ROUTE2542->setToNode("Walk_l_sternoclavicular_RollInterpolator");
+group->addChildren(*ROUTE2542);
+
+CROUTE* ROUTE2543 = new CROUTE();
+ROUTE2543->setFromField("fraction_changed");
+ROUTE2543->setFromNode("WalkTimer");
+ROUTE2543->setToField("set_fraction");
+ROUTE2543->setToNode("Walk_l_acromioclavicular_RollInterpolator");
+group->addChildren(*ROUTE2543);
+
+CROUTE* ROUTE2544 = new CROUTE();
+ROUTE2544->setFromField("fraction_changed");
+ROUTE2544->setFromNode("WalkTimer");
+ROUTE2544->setToField("set_fraction");
+ROUTE2544->setToNode("Walk_r_sternoclavicular_RollInterpolator");
+group->addChildren(*ROUTE2544);
+
+CROUTE* ROUTE2545 = new CROUTE();
+ROUTE2545->setFromField("fraction_changed");
+ROUTE2545->setFromNode("WalkTimer");
+ROUTE2545->setToField("set_fraction");
+ROUTE2545->setToNode("Walk_r_acromioclavicular_RollInterpolator");
+group->addChildren(*ROUTE2545);
+
+CROUTE* ROUTE2546 = new CROUTE();
+ROUTE2546->setFromField("fraction_changed");
+ROUTE2546->setFromNode("WalkTimer");
+ROUTE2546->setToField("set_fraction");
+ROUTE2546->setToNode("Walk_r_metatarsal_PitchInterpolator");
+group->addChildren(*ROUTE2546);
+
+CROUTE* ROUTE2547 = new CROUTE();
+ROUTE2547->setFromField("fraction_changed");
+ROUTE2547->setFromNode("WalkTimer");
+ROUTE2547->setToField("set_fraction");
+ROUTE2547->setToNode("Walk_sacroiliac_YawInterpolator");
+group->addChildren(*ROUTE2547);
+
+CROUTE* ROUTE2548 = new CROUTE();
+ROUTE2548->setFromField("fraction_changed");
+ROUTE2548->setFromNode("WalkTimer");
+ROUTE2548->setToField("set_fraction");
+ROUTE2548->setToNode("Walk_vl5_YawInterpolator");
+group->addChildren(*ROUTE2548);
+
+CROUTE* ROUTE2549 = new CROUTE();
+ROUTE2549->setFromField("fraction_changed");
+ROUTE2549->setFromNode("WalkTimer");
+ROUTE2549->setToField("set_fraction");
+ROUTE2549->setToNode("Walk_vc6_YawInterpolator");
+group->addChildren(*ROUTE2549);
+
+CROUTE* ROUTE2550 = new CROUTE();
+ROUTE2550->setFromField("fraction_changed");
+ROUTE2550->setFromNode("WalkTimer");
+ROUTE2550->setToField("set_fraction");
+ROUTE2550->setToNode("Walk_l_thumb1_PitchInterpolator");
+group->addChildren(*ROUTE2550);
+
+CROUTE* ROUTE2551 = new CROUTE();
+ROUTE2551->setFromField("fraction_changed");
+ROUTE2551->setFromNode("WalkTimer");
+ROUTE2551->setToField("set_fraction");
+ROUTE2551->setToNode("Walk_r_thumb1_PitchInterpolator");
+group->addChildren(*ROUTE2551);
+
+CROUTE* ROUTE2552 = new CROUTE();
+ROUTE2552->setFromField("value_changed");
+ROUTE2552->setFromNode("Walk_r_ankle_RotationInterpolator");
+ROUTE2552->setToField("set_rotation");
+ROUTE2552->setToNode("hanim_r_ankle");
+group->addChildren(*ROUTE2552);
+
+CROUTE* ROUTE2553 = new CROUTE();
+ROUTE2553->setFromField("value_changed");
+ROUTE2553->setFromNode("Walk_r_knee_RotationInterpolator");
+ROUTE2553->setToField("set_rotation");
+ROUTE2553->setToNode("hanim_r_knee");
+group->addChildren(*ROUTE2553);
+
+CROUTE* ROUTE2554 = new CROUTE();
+ROUTE2554->setFromField("value_changed");
+ROUTE2554->setFromNode("Walk_r_hip_RotationInterpolator");
+ROUTE2554->setToField("set_rotation");
+ROUTE2554->setToNode("hanim_r_hip");
+group->addChildren(*ROUTE2554);
+
+CROUTE* ROUTE2555 = new CROUTE();
+ROUTE2555->setFromField("value_changed");
+ROUTE2555->setFromNode("Walk_l_ankle_RotationInterpolator");
+ROUTE2555->setToField("set_rotation");
+ROUTE2555->setToNode("hanim_l_ankle");
+group->addChildren(*ROUTE2555);
+
+CROUTE* ROUTE2556 = new CROUTE();
+ROUTE2556->setFromField("value_changed");
+ROUTE2556->setFromNode("Walk_l_knee_RotationInterpolator");
+ROUTE2556->setToField("set_rotation");
+ROUTE2556->setToNode("hanim_l_knee");
+group->addChildren(*ROUTE2556);
+
+CROUTE* ROUTE2557 = new CROUTE();
+ROUTE2557->setFromField("value_changed");
+ROUTE2557->setFromNode("Walk_l_hip_RotationInterpolator");
+ROUTE2557->setToField("set_rotation");
+ROUTE2557->setToNode("hanim_l_hip");
+group->addChildren(*ROUTE2557);
+
+CROUTE* ROUTE2558 = new CROUTE();
+ROUTE2558->setFromField("value_changed");
+ROUTE2558->setFromNode("Walk_r_wrist_RotationInterpolator");
+ROUTE2558->setToField("set_rotation");
+ROUTE2558->setToNode("hanim_r_wrist");
+group->addChildren(*ROUTE2558);
+
+CROUTE* ROUTE2559 = new CROUTE();
+ROUTE2559->setFromField("value_changed");
+ROUTE2559->setFromNode("Walk_r_elbow_RotationInterpolator");
+ROUTE2559->setToField("set_rotation");
+ROUTE2559->setToNode("hanim_r_elbow");
+group->addChildren(*ROUTE2559);
+
+CROUTE* ROUTE2560 = new CROUTE();
+ROUTE2560->setFromField("value_changed");
+ROUTE2560->setFromNode("Walk_r_shoulder_RotationInterpolator");
+ROUTE2560->setToField("set_rotation");
+ROUTE2560->setToNode("hanim_r_shoulder");
+group->addChildren(*ROUTE2560);
+
+CROUTE* ROUTE2561 = new CROUTE();
+ROUTE2561->setFromField("value_changed");
+ROUTE2561->setFromNode("Walk_l_wrist_RotationInterpolator");
+ROUTE2561->setToField("set_rotation");
+ROUTE2561->setToNode("hanim_l_wrist");
+group->addChildren(*ROUTE2561);
+
+CROUTE* ROUTE2562 = new CROUTE();
+ROUTE2562->setFromField("value_changed");
+ROUTE2562->setFromNode("Walk_l_elbow_RotationInterpolator");
+ROUTE2562->setToField("set_rotation");
+ROUTE2562->setToNode("hanim_l_elbow");
+group->addChildren(*ROUTE2562);
+
+CROUTE* ROUTE2563 = new CROUTE();
+ROUTE2563->setFromField("value_changed");
+ROUTE2563->setFromNode("Walk_l_shoulder_RotationInterpolator");
+ROUTE2563->setToField("set_rotation");
+ROUTE2563->setToNode("hanim_l_shoulder");
+group->addChildren(*ROUTE2563);
+
+CROUTE* ROUTE2564 = new CROUTE();
+ROUTE2564->setFromField("value_changed");
+ROUTE2564->setFromNode("Walk_head_RotationInterpolator");
+ROUTE2564->setToField("set_rotation");
+ROUTE2564->setToNode("hanim_skullbase");
+group->addChildren(*ROUTE2564);
+
+CROUTE* ROUTE2565 = new CROUTE();
+ROUTE2565->setFromField("value_changed");
+ROUTE2565->setFromNode("Walk_whole_body_RotationInterpolator");
+ROUTE2565->setToField("set_rotation");
+ROUTE2565->setToNode("hanim_humanoid_root");
+group->addChildren(*ROUTE2565);
+
+CROUTE* ROUTE2566 = new CROUTE();
+ROUTE2566->setFromField("value_changed");
+ROUTE2566->setFromNode("Walk_whole_body_TranslationInterpolator");
+ROUTE2566->setToField("set_translation");
+ROUTE2566->setToNode("hanim_humanoid_root");
+group->addChildren(*ROUTE2566);
+
+CROUTE* ROUTE2567 = new CROUTE();
+ROUTE2567->setFromField("value_changed");
+ROUTE2567->setFromNode("Walk_vl5_YawInterpolator");
+ROUTE2567->setToField("set_rotation");
+ROUTE2567->setToNode("hanim_vl5");
+group->addChildren(*ROUTE2567);
+
+CROUTE* ROUTE2568 = new CROUTE();
+ROUTE2568->setFromField("fraction_changed");
+ROUTE2568->setFromNode("RunTimer");
+ROUTE2568->setToField("set_fraction");
+ROUTE2568->setToNode("Run_r_ankle_RotationInterpolator_Run");
+group->addChildren(*ROUTE2568);
+
+CROUTE* ROUTE2569 = new CROUTE();
+ROUTE2569->setFromField("fraction_changed");
+ROUTE2569->setFromNode("RunTimer");
+ROUTE2569->setToField("set_fraction");
+ROUTE2569->setToNode("Run_r_knee_RotationInterpolator_Run");
+group->addChildren(*ROUTE2569);
+
+CROUTE* ROUTE2570 = new CROUTE();
+ROUTE2570->setFromField("fraction_changed");
+ROUTE2570->setFromNode("RunTimer");
+ROUTE2570->setToField("set_fraction");
+ROUTE2570->setToNode("Run_r_hip_RotationInterpolator_Run");
+group->addChildren(*ROUTE2570);
+
+CROUTE* ROUTE2571 = new CROUTE();
+ROUTE2571->setFromField("fraction_changed");
+ROUTE2571->setFromNode("RunTimer");
+ROUTE2571->setToField("set_fraction");
+ROUTE2571->setToNode("Run_l_ankle_RotationInterpolator_Run");
+group->addChildren(*ROUTE2571);
+
+CROUTE* ROUTE2572 = new CROUTE();
+ROUTE2572->setFromField("fraction_changed");
+ROUTE2572->setFromNode("RunTimer");
+ROUTE2572->setToField("set_fraction");
+ROUTE2572->setToNode("Run_l_knee_RotationInterpolator_Run");
+group->addChildren(*ROUTE2572);
+
+CROUTE* ROUTE2573 = new CROUTE();
+ROUTE2573->setFromField("fraction_changed");
+ROUTE2573->setFromNode("RunTimer");
+ROUTE2573->setToField("set_fraction");
+ROUTE2573->setToNode("Run_l_hip_RotationInterpolator_Run");
+group->addChildren(*ROUTE2573);
+
+CROUTE* ROUTE2574 = new CROUTE();
+ROUTE2574->setFromField("fraction_changed");
+ROUTE2574->setFromNode("RunTimer");
+ROUTE2574->setToField("set_fraction");
+ROUTE2574->setToNode("Run_lower_body_RotationInterpolator_Run");
+group->addChildren(*ROUTE2574);
+
+CROUTE* ROUTE2575 = new CROUTE();
+ROUTE2575->setFromField("fraction_changed");
+ROUTE2575->setFromNode("RunTimer");
+ROUTE2575->setToField("set_fraction");
+ROUTE2575->setToNode("Run_r_wrist_RotationInterpolator_Run");
+group->addChildren(*ROUTE2575);
+
+CROUTE* ROUTE2576 = new CROUTE();
+ROUTE2576->setFromField("fraction_changed");
+ROUTE2576->setFromNode("RunTimer");
+ROUTE2576->setToField("set_fraction");
+ROUTE2576->setToNode("Run_r_elbow_RotationInterpolator_Run");
+group->addChildren(*ROUTE2576);
+
+CROUTE* ROUTE2577 = new CROUTE();
+ROUTE2577->setFromField("fraction_changed");
+ROUTE2577->setFromNode("RunTimer");
+ROUTE2577->setToField("set_fraction");
+ROUTE2577->setToNode("Run_r_shoulder_RotationInterpolator_Run");
+group->addChildren(*ROUTE2577);
+
+CROUTE* ROUTE2578 = new CROUTE();
+ROUTE2578->setFromField("fraction_changed");
+ROUTE2578->setFromNode("RunTimer");
+ROUTE2578->setToField("set_fraction");
+ROUTE2578->setToNode("Run_l_wrist_RotationInterpolator_Run");
+group->addChildren(*ROUTE2578);
+
+CROUTE* ROUTE2579 = new CROUTE();
+ROUTE2579->setFromField("fraction_changed");
+ROUTE2579->setFromNode("RunTimer");
+ROUTE2579->setToField("set_fraction");
+ROUTE2579->setToNode("Run_l_elbow_RotationInterpolator_Run");
+group->addChildren(*ROUTE2579);
+
+CROUTE* ROUTE2580 = new CROUTE();
+ROUTE2580->setFromField("fraction_changed");
+ROUTE2580->setFromNode("RunTimer");
+ROUTE2580->setToField("set_fraction");
+ROUTE2580->setToNode("Run_l_shoulder_RotationInterpolator_Run");
+group->addChildren(*ROUTE2580);
+
+CROUTE* ROUTE2581 = new CROUTE();
+ROUTE2581->setFromField("fraction_changed");
+ROUTE2581->setFromNode("RunTimer");
+ROUTE2581->setToField("set_fraction");
+ROUTE2581->setToNode("Run_head_RotationInterpolator_Run");
+group->addChildren(*ROUTE2581);
+
+CROUTE* ROUTE2582 = new CROUTE();
+ROUTE2582->setFromField("fraction_changed");
+ROUTE2582->setFromNode("RunTimer");
+ROUTE2582->setToField("set_fraction");
+ROUTE2582->setToNode("Run_neck_RotationInterpolator_Run");
+group->addChildren(*ROUTE2582);
+
+CROUTE* ROUTE2583 = new CROUTE();
+ROUTE2583->setFromField("fraction_changed");
+ROUTE2583->setFromNode("RunTimer");
+ROUTE2583->setToField("set_fraction");
+ROUTE2583->setToNode("Run_upper_body_RotationInterpolator_Run");
+group->addChildren(*ROUTE2583);
+
+CROUTE* ROUTE2584 = new CROUTE();
+ROUTE2584->setFromField("fraction_changed");
+ROUTE2584->setFromNode("RunTimer");
+ROUTE2584->setToField("set_fraction");
+ROUTE2584->setToNode("Run_whole_body_RotationInterpolator_Run");
+group->addChildren(*ROUTE2584);
+
+CROUTE* ROUTE2585 = new CROUTE();
+ROUTE2585->setFromField("fraction_changed");
+ROUTE2585->setFromNode("RunTimer");
+ROUTE2585->setToField("set_fraction");
+ROUTE2585->setToNode("Run_whole_body_TranslationInterpolator_Run");
+group->addChildren(*ROUTE2585);
+
+CROUTE* ROUTE2586 = new CROUTE();
+ROUTE2586->setFromField("fraction_changed");
+ROUTE2586->setFromNode("RunTimer");
+ROUTE2586->setToField("set_fraction");
+ROUTE2586->setToNode("Run_l_sternoclavicular_RollInterpolator");
+group->addChildren(*ROUTE2586);
+
+CROUTE* ROUTE2587 = new CROUTE();
+ROUTE2587->setFromField("fraction_changed");
+ROUTE2587->setFromNode("RunTimer");
+ROUTE2587->setToField("set_fraction");
+ROUTE2587->setToNode("Run_l_acromioclavicular_RollInterpolator");
+group->addChildren(*ROUTE2587);
+
+CROUTE* ROUTE2588 = new CROUTE();
+ROUTE2588->setFromField("fraction_changed");
+ROUTE2588->setFromNode("RunTimer");
+ROUTE2588->setToField("set_fraction");
+ROUTE2588->setToNode("Run_r_sternoclavicular_RollInterpolator");
+group->addChildren(*ROUTE2588);
+
+CROUTE* ROUTE2589 = new CROUTE();
+ROUTE2589->setFromField("fraction_changed");
+ROUTE2589->setFromNode("RunTimer");
+ROUTE2589->setToField("set_fraction");
+ROUTE2589->setToNode("Run_r_acromioclavicular_RollInterpolator");
+group->addChildren(*ROUTE2589);
+
+CROUTE* ROUTE2590 = new CROUTE();
+ROUTE2590->setFromField("fraction_changed");
+ROUTE2590->setFromNode("RunTimer");
+ROUTE2590->setToField("set_fraction");
+ROUTE2590->setToNode("Run_r_metatarsal_PitchInterpolator");
+group->addChildren(*ROUTE2590);
+
+CROUTE* ROUTE2591 = new CROUTE();
+ROUTE2591->setFromField("fraction_changed");
+ROUTE2591->setFromNode("RunTimer");
+ROUTE2591->setToField("set_fraction");
+ROUTE2591->setToNode("Run_sacroiliac_YawInterpolator");
+group->addChildren(*ROUTE2591);
+
+CROUTE* ROUTE2592 = new CROUTE();
+ROUTE2592->setFromField("fraction_changed");
+ROUTE2592->setFromNode("RunTimer");
+ROUTE2592->setToField("set_fraction");
+ROUTE2592->setToNode("Run_vl5_YawInterpolator");
+group->addChildren(*ROUTE2592);
+
+CROUTE* ROUTE2593 = new CROUTE();
+ROUTE2593->setFromField("fraction_changed");
+ROUTE2593->setFromNode("RunTimer");
+ROUTE2593->setToField("set_fraction");
+ROUTE2593->setToNode("Run_vc6_YawInterpolator");
+group->addChildren(*ROUTE2593);
+
+CROUTE* ROUTE2594 = new CROUTE();
+ROUTE2594->setFromField("fraction_changed");
+ROUTE2594->setFromNode("RunTimer");
+ROUTE2594->setToField("set_fraction");
+ROUTE2594->setToNode("Run_l_thumb1_PitchInterpolator");
+group->addChildren(*ROUTE2594);
+
+CROUTE* ROUTE2595 = new CROUTE();
+ROUTE2595->setFromField("fraction_changed");
+ROUTE2595->setFromNode("RunTimer");
+ROUTE2595->setToField("set_fraction");
+ROUTE2595->setToNode("Run_r_thumb1_PitchInterpolator");
+group->addChildren(*ROUTE2595);
+
+CROUTE* ROUTE2596 = new CROUTE();
+ROUTE2596->setFromField("value_changed");
+ROUTE2596->setFromNode("Run_r_ankle_RotationInterpolator_Run");
+ROUTE2596->setToField("set_rotation");
+ROUTE2596->setToNode("hanim_r_ankle");
+group->addChildren(*ROUTE2596);
+
+CROUTE* ROUTE2597 = new CROUTE();
+ROUTE2597->setFromField("value_changed");
+ROUTE2597->setFromNode("Run_r_knee_RotationInterpolator_Run");
+ROUTE2597->setToField("set_rotation");
+ROUTE2597->setToNode("hanim_r_knee");
+group->addChildren(*ROUTE2597);
+
+CROUTE* ROUTE2598 = new CROUTE();
+ROUTE2598->setFromField("value_changed");
+ROUTE2598->setFromNode("Run_r_hip_RotationInterpolator_Run");
+ROUTE2598->setToField("set_rotation");
+ROUTE2598->setToNode("hanim_r_hip");
+group->addChildren(*ROUTE2598);
+
+CROUTE* ROUTE2599 = new CROUTE();
+ROUTE2599->setFromField("value_changed");
+ROUTE2599->setFromNode("Run_l_ankle_RotationInterpolator_Run");
+ROUTE2599->setToField("set_rotation");
+ROUTE2599->setToNode("hanim_l_ankle");
+group->addChildren(*ROUTE2599);
+
+CROUTE* ROUTE2600 = new CROUTE();
+ROUTE2600->setFromField("value_changed");
+ROUTE2600->setFromNode("Run_l_knee_RotationInterpolator_Run");
+ROUTE2600->setToField("set_rotation");
+ROUTE2600->setToNode("hanim_l_knee");
+group->addChildren(*ROUTE2600);
+
+CROUTE* ROUTE2601 = new CROUTE();
+ROUTE2601->setFromField("value_changed");
+ROUTE2601->setFromNode("Run_l_hip_RotationInterpolator_Run");
+ROUTE2601->setToField("set_rotation");
+ROUTE2601->setToNode("hanim_l_hip");
+group->addChildren(*ROUTE2601);
+
+CROUTE* ROUTE2602 = new CROUTE();
+ROUTE2602->setFromField("value_changed");
+ROUTE2602->setFromNode("Run_r_wrist_RotationInterpolator_Run");
+ROUTE2602->setToField("set_rotation");
+ROUTE2602->setToNode("hanim_r_wrist");
+group->addChildren(*ROUTE2602);
+
+CROUTE* ROUTE2603 = new CROUTE();
+ROUTE2603->setFromField("value_changed");
+ROUTE2603->setFromNode("Run_r_elbow_RotationInterpolator_Run");
+ROUTE2603->setToField("set_rotation");
+ROUTE2603->setToNode("hanim_r_elbow");
+group->addChildren(*ROUTE2603);
+
+CROUTE* ROUTE2604 = new CROUTE();
+ROUTE2604->setFromField("value_changed");
+ROUTE2604->setFromNode("Run_r_shoulder_RotationInterpolator_Run");
+ROUTE2604->setToField("set_rotation");
+ROUTE2604->setToNode("hanim_r_shoulder");
+group->addChildren(*ROUTE2604);
+
+CROUTE* ROUTE2605 = new CROUTE();
+ROUTE2605->setFromField("value_changed");
+ROUTE2605->setFromNode("Run_l_wrist_RotationInterpolator_Run");
+ROUTE2605->setToField("set_rotation");
+ROUTE2605->setToNode("hanim_l_wrist");
+group->addChildren(*ROUTE2605);
+
+CROUTE* ROUTE2606 = new CROUTE();
+ROUTE2606->setFromField("value_changed");
+ROUTE2606->setFromNode("Run_l_elbow_RotationInterpolator_Run");
+ROUTE2606->setToField("set_rotation");
+ROUTE2606->setToNode("hanim_l_elbow");
+group->addChildren(*ROUTE2606);
+
+CROUTE* ROUTE2607 = new CROUTE();
+ROUTE2607->setFromField("value_changed");
+ROUTE2607->setFromNode("Run_l_shoulder_RotationInterpolator_Run");
+ROUTE2607->setToField("set_rotation");
+ROUTE2607->setToNode("hanim_l_shoulder");
+group->addChildren(*ROUTE2607);
+
+CROUTE* ROUTE2608 = new CROUTE();
+ROUTE2608->setFromField("value_changed");
+ROUTE2608->setFromNode("Run_head_RotationInterpolator_Run");
+ROUTE2608->setToField("set_rotation");
+ROUTE2608->setToNode("hanim_skullbase");
+group->addChildren(*ROUTE2608);
+
+CROUTE* ROUTE2609 = new CROUTE();
+ROUTE2609->setFromField("value_changed");
+ROUTE2609->setFromNode("Run_whole_body_RotationInterpolator_Run");
+ROUTE2609->setToField("set_rotation");
+ROUTE2609->setToNode("hanim_humanoid_root");
+group->addChildren(*ROUTE2609);
+
+CROUTE* ROUTE2610 = new CROUTE();
+ROUTE2610->setFromField("value_changed");
+ROUTE2610->setFromNode("Run_whole_body_TranslationInterpolator_Run");
+ROUTE2610->setToField("set_translation");
+ROUTE2610->setToNode("hanim_humanoid_root");
+group->addChildren(*ROUTE2610);
+
+CROUTE* ROUTE2611 = new CROUTE();
+ROUTE2611->setFromField("value_changed");
+ROUTE2611->setFromNode("Run_vl5_YawInterpolator");
+ROUTE2611->setToField("set_rotation");
+ROUTE2611->setToNode("hanim_vl5");
+group->addChildren(*ROUTE2611);
+
+CROUTE* ROUTE2612 = new CROUTE();
+ROUTE2612->setFromField("fraction_changed");
+ROUTE2612->setFromNode("JumpTimer");
+ROUTE2612->setToField("set_fraction");
+ROUTE2612->setToNode("Jump_r_ankle_RotationInterpolator");
+group->addChildren(*ROUTE2612);
+
+CROUTE* ROUTE2613 = new CROUTE();
+ROUTE2613->setFromField("fraction_changed");
+ROUTE2613->setFromNode("JumpTimer");
+ROUTE2613->setToField("set_fraction");
+ROUTE2613->setToNode("Jump_r_knee_RotationInterpolator");
+group->addChildren(*ROUTE2613);
+
+CROUTE* ROUTE2614 = new CROUTE();
+ROUTE2614->setFromField("fraction_changed");
+ROUTE2614->setFromNode("JumpTimer");
+ROUTE2614->setToField("set_fraction");
+ROUTE2614->setToNode("Jump_r_hip_RotationInterpolator");
+group->addChildren(*ROUTE2614);
+
+CROUTE* ROUTE2615 = new CROUTE();
+ROUTE2615->setFromField("fraction_changed");
+ROUTE2615->setFromNode("JumpTimer");
+ROUTE2615->setToField("set_fraction");
+ROUTE2615->setToNode("Jump_l_ankle_RotationInterpolator");
+group->addChildren(*ROUTE2615);
+
+CROUTE* ROUTE2616 = new CROUTE();
+ROUTE2616->setFromField("fraction_changed");
+ROUTE2616->setFromNode("JumpTimer");
+ROUTE2616->setToField("set_fraction");
+ROUTE2616->setToNode("Jump_l_knee_RotationInterpolator");
+group->addChildren(*ROUTE2616);
+
+CROUTE* ROUTE2617 = new CROUTE();
+ROUTE2617->setFromField("fraction_changed");
+ROUTE2617->setFromNode("JumpTimer");
+ROUTE2617->setToField("set_fraction");
+ROUTE2617->setToNode("Jump_l_hip_RotationInterpolator");
+group->addChildren(*ROUTE2617);
+
+CROUTE* ROUTE2618 = new CROUTE();
+ROUTE2618->setFromField("fraction_changed");
+ROUTE2618->setFromNode("JumpTimer");
+ROUTE2618->setToField("set_fraction");
+ROUTE2618->setToNode("Jump_lower_body_RotationInterpolator");
+group->addChildren(*ROUTE2618);
+
+CROUTE* ROUTE2619 = new CROUTE();
+ROUTE2619->setFromField("fraction_changed");
+ROUTE2619->setFromNode("JumpTimer");
+ROUTE2619->setToField("set_fraction");
+ROUTE2619->setToNode("Jump_r_wrist_RotationInterpolator");
+group->addChildren(*ROUTE2619);
+
+CROUTE* ROUTE2620 = new CROUTE();
+ROUTE2620->setFromField("fraction_changed");
+ROUTE2620->setFromNode("JumpTimer");
+ROUTE2620->setToField("set_fraction");
+ROUTE2620->setToNode("Jump_r_elbow_RotationInterpolator");
+group->addChildren(*ROUTE2620);
+
+CROUTE* ROUTE2621 = new CROUTE();
+ROUTE2621->setFromField("fraction_changed");
+ROUTE2621->setFromNode("JumpTimer");
+ROUTE2621->setToField("set_fraction");
+ROUTE2621->setToNode("Jump_r_shoulder_RotationInterpolator");
+group->addChildren(*ROUTE2621);
+
+CROUTE* ROUTE2622 = new CROUTE();
+ROUTE2622->setFromField("fraction_changed");
+ROUTE2622->setFromNode("JumpTimer");
+ROUTE2622->setToField("set_fraction");
+ROUTE2622->setToNode("Jump_l_wrist_RotationInterpolator");
+group->addChildren(*ROUTE2622);
+
+CROUTE* ROUTE2623 = new CROUTE();
+ROUTE2623->setFromField("fraction_changed");
+ROUTE2623->setFromNode("JumpTimer");
+ROUTE2623->setToField("set_fraction");
+ROUTE2623->setToNode("Jump_l_elbow_RotationInterpolator");
+group->addChildren(*ROUTE2623);
+
+CROUTE* ROUTE2624 = new CROUTE();
+ROUTE2624->setFromField("fraction_changed");
+ROUTE2624->setFromNode("JumpTimer");
+ROUTE2624->setToField("set_fraction");
+ROUTE2624->setToNode("Jump_l_shoulder_RotationInterpolator");
+group->addChildren(*ROUTE2624);
+
+CROUTE* ROUTE2625 = new CROUTE();
+ROUTE2625->setFromField("fraction_changed");
+ROUTE2625->setFromNode("JumpTimer");
+ROUTE2625->setToField("set_fraction");
+ROUTE2625->setToNode("Jump_head_RotationInterpolator");
+group->addChildren(*ROUTE2625);
+
+CROUTE* ROUTE2626 = new CROUTE();
+ROUTE2626->setFromField("fraction_changed");
+ROUTE2626->setFromNode("JumpTimer");
+ROUTE2626->setToField("set_fraction");
+ROUTE2626->setToNode("Jump_neck_RotationInterpolator");
+group->addChildren(*ROUTE2626);
+
+CROUTE* ROUTE2627 = new CROUTE();
+ROUTE2627->setFromField("fraction_changed");
+ROUTE2627->setFromNode("JumpTimer");
+ROUTE2627->setToField("set_fraction");
+ROUTE2627->setToNode("Jump_upper_body_RotationInterpolator");
+group->addChildren(*ROUTE2627);
+
+CROUTE* ROUTE2628 = new CROUTE();
+ROUTE2628->setFromField("fraction_changed");
+ROUTE2628->setFromNode("JumpTimer");
+ROUTE2628->setToField("set_fraction");
+ROUTE2628->setToNode("Jump_whole_body_RotationInterpolator");
+group->addChildren(*ROUTE2628);
+
+CROUTE* ROUTE2629 = new CROUTE();
+ROUTE2629->setFromField("fraction_changed");
+ROUTE2629->setFromNode("JumpTimer");
+ROUTE2629->setToField("set_fraction");
+ROUTE2629->setToNode("Jump_whole_body_TranslationInterpolator");
+group->addChildren(*ROUTE2629);
+
+CROUTE* ROUTE2630 = new CROUTE();
+ROUTE2630->setFromField("fraction_changed");
+ROUTE2630->setFromNode("JumpTimer");
+ROUTE2630->setToField("set_fraction");
+ROUTE2630->setToNode("Jump_l_sternoclavicular_RollInterpolator");
+group->addChildren(*ROUTE2630);
+
+CROUTE* ROUTE2631 = new CROUTE();
+ROUTE2631->setFromField("fraction_changed");
+ROUTE2631->setFromNode("JumpTimer");
+ROUTE2631->setToField("set_fraction");
+ROUTE2631->setToNode("Jump_l_acromioclavicular_RollInterpolator");
+group->addChildren(*ROUTE2631);
+
+CROUTE* ROUTE2632 = new CROUTE();
+ROUTE2632->setFromField("fraction_changed");
+ROUTE2632->setFromNode("JumpTimer");
+ROUTE2632->setToField("set_fraction");
+ROUTE2632->setToNode("Jump_r_sternoclavicular_RollInterpolator");
+group->addChildren(*ROUTE2632);
+
+CROUTE* ROUTE2633 = new CROUTE();
+ROUTE2633->setFromField("fraction_changed");
+ROUTE2633->setFromNode("JumpTimer");
+ROUTE2633->setToField("set_fraction");
+ROUTE2633->setToNode("Jump_r_acromioclavicular_RollInterpolator");
+group->addChildren(*ROUTE2633);
+
+CROUTE* ROUTE2634 = new CROUTE();
+ROUTE2634->setFromField("fraction_changed");
+ROUTE2634->setFromNode("JumpTimer");
+ROUTE2634->setToField("set_fraction");
+ROUTE2634->setToNode("Jump_r_metatarsal_PitchInterpolator");
+group->addChildren(*ROUTE2634);
+
+CROUTE* ROUTE2635 = new CROUTE();
+ROUTE2635->setFromField("fraction_changed");
+ROUTE2635->setFromNode("JumpTimer");
+ROUTE2635->setToField("set_fraction");
+ROUTE2635->setToNode("Jump_sacroiliac_YawInterpolator");
+group->addChildren(*ROUTE2635);
+
+CROUTE* ROUTE2636 = new CROUTE();
+ROUTE2636->setFromField("fraction_changed");
+ROUTE2636->setFromNode("JumpTimer");
+ROUTE2636->setToField("set_fraction");
+ROUTE2636->setToNode("Jump_vl5_YawInterpolator");
+group->addChildren(*ROUTE2636);
+
+CROUTE* ROUTE2637 = new CROUTE();
+ROUTE2637->setFromField("fraction_changed");
+ROUTE2637->setFromNode("JumpTimer");
+ROUTE2637->setToField("set_fraction");
+ROUTE2637->setToNode("Jump_vc6_YawInterpolator");
+group->addChildren(*ROUTE2637);
+
+CROUTE* ROUTE2638 = new CROUTE();
+ROUTE2638->setFromField("fraction_changed");
+ROUTE2638->setFromNode("JumpTimer");
+ROUTE2638->setToField("set_fraction");
+ROUTE2638->setToNode("Jump_l_thumb1_PitchInterpolator");
+group->addChildren(*ROUTE2638);
+
+CROUTE* ROUTE2639 = new CROUTE();
+ROUTE2639->setFromField("fraction_changed");
+ROUTE2639->setFromNode("JumpTimer");
+ROUTE2639->setToField("set_fraction");
+ROUTE2639->setToNode("Jump_r_thumb1_PitchInterpolator");
+group->addChildren(*ROUTE2639);
+
+CROUTE* ROUTE2640 = new CROUTE();
+ROUTE2640->setFromField("value_changed");
+ROUTE2640->setFromNode("Jump_r_ankle_RotationInterpolator");
+ROUTE2640->setToField("set_rotation");
+ROUTE2640->setToNode("hanim_r_ankle");
+group->addChildren(*ROUTE2640);
+
+CROUTE* ROUTE2641 = new CROUTE();
+ROUTE2641->setFromField("value_changed");
+ROUTE2641->setFromNode("Jump_r_knee_RotationInterpolator");
+ROUTE2641->setToField("set_rotation");
+ROUTE2641->setToNode("hanim_r_knee");
+group->addChildren(*ROUTE2641);
+
+CROUTE* ROUTE2642 = new CROUTE();
+ROUTE2642->setFromField("value_changed");
+ROUTE2642->setFromNode("Jump_r_hip_RotationInterpolator");
+ROUTE2642->setToField("set_rotation");
+ROUTE2642->setToNode("hanim_r_hip");
+group->addChildren(*ROUTE2642);
+
+CROUTE* ROUTE2643 = new CROUTE();
+ROUTE2643->setFromField("value_changed");
+ROUTE2643->setFromNode("Jump_l_ankle_RotationInterpolator");
+ROUTE2643->setToField("set_rotation");
+ROUTE2643->setToNode("hanim_l_ankle");
+group->addChildren(*ROUTE2643);
+
+CROUTE* ROUTE2644 = new CROUTE();
+ROUTE2644->setFromField("value_changed");
+ROUTE2644->setFromNode("Jump_l_knee_RotationInterpolator");
+ROUTE2644->setToField("set_rotation");
+ROUTE2644->setToNode("hanim_l_knee");
+group->addChildren(*ROUTE2644);
+
+CROUTE* ROUTE2645 = new CROUTE();
+ROUTE2645->setFromField("value_changed");
+ROUTE2645->setFromNode("Jump_l_hip_RotationInterpolator");
+ROUTE2645->setToField("set_rotation");
+ROUTE2645->setToNode("hanim_l_hip");
+group->addChildren(*ROUTE2645);
+
+CROUTE* ROUTE2646 = new CROUTE();
+ROUTE2646->setFromField("value_changed");
+ROUTE2646->setFromNode("Jump_r_wrist_RotationInterpolator");
+ROUTE2646->setToField("set_rotation");
+ROUTE2646->setToNode("hanim_r_wrist");
+group->addChildren(*ROUTE2646);
+
+CROUTE* ROUTE2647 = new CROUTE();
+ROUTE2647->setFromField("value_changed");
+ROUTE2647->setFromNode("Jump_r_elbow_RotationInterpolator");
+ROUTE2647->setToField("set_rotation");
+ROUTE2647->setToNode("hanim_r_elbow");
+group->addChildren(*ROUTE2647);
+
+CROUTE* ROUTE2648 = new CROUTE();
+ROUTE2648->setFromField("value_changed");
+ROUTE2648->setFromNode("Jump_r_shoulder_RotationInterpolator");
+ROUTE2648->setToField("set_rotation");
+ROUTE2648->setToNode("hanim_r_shoulder");
+group->addChildren(*ROUTE2648);
+
+CROUTE* ROUTE2649 = new CROUTE();
+ROUTE2649->setFromField("value_changed");
+ROUTE2649->setFromNode("Jump_l_wrist_RotationInterpolator");
+ROUTE2649->setToField("set_rotation");
+ROUTE2649->setToNode("hanim_l_wrist");
+group->addChildren(*ROUTE2649);
+
+CROUTE* ROUTE2650 = new CROUTE();
+ROUTE2650->setFromField("value_changed");
+ROUTE2650->setFromNode("Jump_l_elbow_RotationInterpolator");
+ROUTE2650->setToField("set_rotation");
+ROUTE2650->setToNode("hanim_l_elbow");
+group->addChildren(*ROUTE2650);
+
+CROUTE* ROUTE2651 = new CROUTE();
+ROUTE2651->setFromField("value_changed");
+ROUTE2651->setFromNode("Jump_l_shoulder_RotationInterpolator");
+ROUTE2651->setToField("set_rotation");
+ROUTE2651->setToNode("hanim_l_shoulder");
+group->addChildren(*ROUTE2651);
+
+CROUTE* ROUTE2652 = new CROUTE();
+ROUTE2652->setFromField("value_changed");
+ROUTE2652->setFromNode("Jump_head_RotationInterpolator");
+ROUTE2652->setToField("set_rotation");
+ROUTE2652->setToNode("hanim_skullbase");
+group->addChildren(*ROUTE2652);
+
+CROUTE* ROUTE2653 = new CROUTE();
+ROUTE2653->setFromField("value_changed");
+ROUTE2653->setFromNode("Jump_whole_body_RotationInterpolator");
+ROUTE2653->setToField("set_rotation");
+ROUTE2653->setToNode("hanim_humanoid_root");
+group->addChildren(*ROUTE2653);
+
+CROUTE* ROUTE2654 = new CROUTE();
+ROUTE2654->setFromField("value_changed");
+ROUTE2654->setFromNode("Jump_whole_body_TranslationInterpolator");
+ROUTE2654->setToField("set_translation");
+ROUTE2654->setToNode("hanim_humanoid_root");
+group->addChildren(*ROUTE2654);
+
+CROUTE* ROUTE2655 = new CROUTE();
+ROUTE2655->setFromField("value_changed");
+ROUTE2655->setFromNode("Jump_vl5_YawInterpolator");
+ROUTE2655->setToField("set_rotation");
+ROUTE2655->setToNode("hanim_vl5");
+group->addChildren(*ROUTE2655);
+
+CROUTE* ROUTE2656 = new CROUTE();
+ROUTE2656->setFromField("fraction_changed");
+ROUTE2656->setFromNode("KickTimer");
+ROUTE2656->setToField("set_fraction");
+ROUTE2656->setToNode("Kick_l_sternoclavicular_RollInterpolator");
+group->addChildren(*ROUTE2656);
+
+CROUTE* ROUTE2657 = new CROUTE();
+ROUTE2657->setFromField("fraction_changed");
+ROUTE2657->setFromNode("KickTimer");
+ROUTE2657->setToField("set_fraction");
+ROUTE2657->setToNode("Kick_l_acromioclavicular_RollInterpolator");
+group->addChildren(*ROUTE2657);
+
+CROUTE* ROUTE2658 = new CROUTE();
+ROUTE2658->setFromField("fraction_changed");
+ROUTE2658->setFromNode("KickTimer");
+ROUTE2658->setToField("set_fraction");
+ROUTE2658->setToNode("Kick_l_shoulder_RollInterpolator");
+group->addChildren(*ROUTE2658);
+
+CROUTE* ROUTE2659 = new CROUTE();
+ROUTE2659->setFromField("fraction_changed");
+ROUTE2659->setFromNode("KickTimer");
+ROUTE2659->setToField("set_fraction");
+ROUTE2659->setToNode("Kick_l_ForeArm_PitchInterpolator");
+group->addChildren(*ROUTE2659);
+
+CROUTE* ROUTE2660 = new CROUTE();
+ROUTE2660->setFromField("fraction_changed");
+ROUTE2660->setFromNode("KickTimer");
+ROUTE2660->setToField("set_fraction");
+ROUTE2660->setToNode("Kick_l_wrist_RollInterpolator");
+group->addChildren(*ROUTE2660);
+
+CROUTE* ROUTE2661 = new CROUTE();
+ROUTE2661->setFromField("fraction_changed");
+ROUTE2661->setFromNode("KickTimer");
+ROUTE2661->setToField("set_fraction");
+ROUTE2661->setToNode("Kick_l_thumb1_PitchInterpolator");
+group->addChildren(*ROUTE2661);
+
+CROUTE* ROUTE2662 = new CROUTE();
+ROUTE2662->setFromField("fraction_changed");
+ROUTE2662->setFromNode("KickTimer");
+ROUTE2662->setToField("set_fraction");
+ROUTE2662->setToNode("Kick_r_sternoclavicular_RollInterpolator");
+group->addChildren(*ROUTE2662);
+
+CROUTE* ROUTE2663 = new CROUTE();
+ROUTE2663->setFromField("fraction_changed");
+ROUTE2663->setFromNode("KickTimer");
+ROUTE2663->setToField("set_fraction");
+ROUTE2663->setToNode("Kick_r_acromioclavicular_RollInterpolator");
+group->addChildren(*ROUTE2663);
+
+CROUTE* ROUTE2664 = new CROUTE();
+ROUTE2664->setFromField("fraction_changed");
+ROUTE2664->setFromNode("KickTimer");
+ROUTE2664->setToField("set_fraction");
+ROUTE2664->setToNode("Kick_r_shoulder_RollInterpolator");
+group->addChildren(*ROUTE2664);
+
+CROUTE* ROUTE2665 = new CROUTE();
+ROUTE2665->setFromField("fraction_changed");
+ROUTE2665->setFromNode("KickTimer");
+ROUTE2665->setToField("set_fraction");
+ROUTE2665->setToNode("Kick_r_ForeArm_PitchInterpolator");
+group->addChildren(*ROUTE2665);
+
+CROUTE* ROUTE2666 = new CROUTE();
+ROUTE2666->setFromField("fraction_changed");
+ROUTE2666->setFromNode("KickTimer");
+ROUTE2666->setToField("set_fraction");
+ROUTE2666->setToNode("Kick_r_wrist_RollInterpolator");
+group->addChildren(*ROUTE2666);
+
+CROUTE* ROUTE2667 = new CROUTE();
+ROUTE2667->setFromField("fraction_changed");
+ROUTE2667->setFromNode("KickTimer");
+ROUTE2667->setToField("set_fraction");
+ROUTE2667->setToNode("Kick_r_thumb1_PitchInterpolator");
+group->addChildren(*ROUTE2667);
+
+CROUTE* ROUTE2668 = new CROUTE();
+ROUTE2668->setFromField("fraction_changed");
+ROUTE2668->setFromNode("KickTimer");
+ROUTE2668->setToField("set_fraction");
+ROUTE2668->setToNode("Kick_r_hip_PitchInterpolator");
+group->addChildren(*ROUTE2668);
+
+CROUTE* ROUTE2669 = new CROUTE();
+ROUTE2669->setFromField("fraction_changed");
+ROUTE2669->setFromNode("KickTimer");
+ROUTE2669->setToField("set_fraction");
+ROUTE2669->setToNode("Kick_r_knee_PitchInterpolator");
+group->addChildren(*ROUTE2669);
+
+CROUTE* ROUTE2670 = new CROUTE();
+ROUTE2670->setFromField("fraction_changed");
+ROUTE2670->setFromNode("KickTimer");
+ROUTE2670->setToField("set_fraction");
+ROUTE2670->setToNode("Kick_l_hip_PitchInterpolator");
+group->addChildren(*ROUTE2670);
+
+CROUTE* ROUTE2671 = new CROUTE();
+ROUTE2671->setFromField("fraction_changed");
+ROUTE2671->setFromNode("KickTimer");
+ROUTE2671->setToField("set_fraction");
+ROUTE2671->setToNode("Kick_l_knee_PitchInterpolator");
+group->addChildren(*ROUTE2671);
+
+CROUTE* ROUTE2672 = new CROUTE();
+ROUTE2672->setFromField("fraction_changed");
+ROUTE2672->setFromNode("KickTimer");
+ROUTE2672->setToField("set_fraction");
+ROUTE2672->setToNode("Kick_r_ankle_PitchInterpolator");
+group->addChildren(*ROUTE2672);
+
+CROUTE* ROUTE2673 = new CROUTE();
+ROUTE2673->setFromField("fraction_changed");
+ROUTE2673->setFromNode("KickTimer");
+ROUTE2673->setToField("set_fraction");
+ROUTE2673->setToNode("Kick_r_metatarsal_PitchInterpolator");
+group->addChildren(*ROUTE2673);
+
+CROUTE* ROUTE2674 = new CROUTE();
+ROUTE2674->setFromField("fraction_changed");
+ROUTE2674->setFromNode("KickTimer");
+ROUTE2674->setToField("set_fraction");
+ROUTE2674->setToNode("Kick_sacroiliac_YawInterpolator");
+group->addChildren(*ROUTE2674);
+
+CROUTE* ROUTE2675 = new CROUTE();
+ROUTE2675->setFromField("fraction_changed");
+ROUTE2675->setFromNode("KickTimer");
+ROUTE2675->setToField("set_fraction");
+ROUTE2675->setToNode("Kick_vl5_YawInterpolator");
+group->addChildren(*ROUTE2675);
+
+CROUTE* ROUTE2676 = new CROUTE();
+ROUTE2676->setFromField("fraction_changed");
+ROUTE2676->setFromNode("KickTimer");
+ROUTE2676->setToField("set_fraction");
+ROUTE2676->setToNode("Kick_vc6_YawInterpolator");
+group->addChildren(*ROUTE2676);
+
+CROUTE* ROUTE2677 = new CROUTE();
+ROUTE2677->setFromField("fraction_changed");
+ROUTE2677->setFromNode("KickTimer");
+ROUTE2677->setToField("set_fraction");
+ROUTE2677->setToNode("Kick_lower_body_RotationInterpolator");
+group->addChildren(*ROUTE2677);
+
+CROUTE* ROUTE2678 = new CROUTE();
+ROUTE2678->setFromField("fraction_changed");
+ROUTE2678->setFromNode("KickTimer");
+ROUTE2678->setToField("set_fraction");
+ROUTE2678->setToNode("Kick_upper_body_RotationInterpolator");
+group->addChildren(*ROUTE2678);
+
+CROUTE* ROUTE2679 = new CROUTE();
+ROUTE2679->setFromField("fraction_changed");
+ROUTE2679->setFromNode("KickTimer");
+ROUTE2679->setToField("set_fraction");
+ROUTE2679->setToNode("Kick_whole_body_RotationInterpolator");
+group->addChildren(*ROUTE2679);
+
+CROUTE* ROUTE2680 = new CROUTE();
+ROUTE2680->setFromField("fraction_changed");
+ROUTE2680->setFromNode("KickTimer");
+ROUTE2680->setToField("set_fraction");
+ROUTE2680->setToNode("Kick_whole_body_TranslationInterpolator");
+group->addChildren(*ROUTE2680);
+
+CROUTE* ROUTE2681 = new CROUTE();
+ROUTE2681->setFromField("fraction_changed");
+ROUTE2681->setFromNode("KickTimer");
+ROUTE2681->setToField("set_fraction");
+ROUTE2681->setToNode("Kick_neck_RotationInterpolator");
+group->addChildren(*ROUTE2681);
+
+CROUTE* ROUTE2682 = new CROUTE();
+ROUTE2682->setFromField("value_changed");
+ROUTE2682->setFromNode("Kick_l_shoulder_RollInterpolator");
+ROUTE2682->setToField("set_rotation");
+ROUTE2682->setToNode("hanim_l_shoulder");
+group->addChildren(*ROUTE2682);
+
+CROUTE* ROUTE2683 = new CROUTE();
+ROUTE2683->setFromField("value_changed");
+ROUTE2683->setFromNode("Kick_l_ForeArm_PitchInterpolator");
+ROUTE2683->setToField("set_rotation");
+ROUTE2683->setToNode("hanim_l_elbow");
+group->addChildren(*ROUTE2683);
+
+CROUTE* ROUTE2684 = new CROUTE();
+ROUTE2684->setFromField("value_changed");
+ROUTE2684->setFromNode("Kick_l_wrist_RollInterpolator");
+ROUTE2684->setToField("set_rotation");
+ROUTE2684->setToNode("hanim_l_wrist");
+group->addChildren(*ROUTE2684);
+
+CROUTE* ROUTE2685 = new CROUTE();
+ROUTE2685->setFromField("value_changed");
+ROUTE2685->setFromNode("Kick_r_shoulder_RollInterpolator");
+ROUTE2685->setToField("set_rotation");
+ROUTE2685->setToNode("hanim_r_shoulder");
+group->addChildren(*ROUTE2685);
+
+CROUTE* ROUTE2686 = new CROUTE();
+ROUTE2686->setFromField("value_changed");
+ROUTE2686->setFromNode("Kick_r_ForeArm_PitchInterpolator");
+ROUTE2686->setToField("set_rotation");
+ROUTE2686->setToNode("hanim_r_elbow");
+group->addChildren(*ROUTE2686);
+
+CROUTE* ROUTE2687 = new CROUTE();
+ROUTE2687->setFromField("value_changed");
+ROUTE2687->setFromNode("Kick_r_wrist_RollInterpolator");
+ROUTE2687->setToField("set_rotation");
+ROUTE2687->setToNode("hanim_r_wrist");
+group->addChildren(*ROUTE2687);
+
+CROUTE* ROUTE2688 = new CROUTE();
+ROUTE2688->setFromField("value_changed");
+ROUTE2688->setFromNode("Kick_r_hip_PitchInterpolator");
+ROUTE2688->setToField("set_rotation");
+ROUTE2688->setToNode("hanim_r_hip");
+group->addChildren(*ROUTE2688);
+
+CROUTE* ROUTE2689 = new CROUTE();
+ROUTE2689->setFromField("value_changed");
+ROUTE2689->setFromNode("Kick_r_knee_PitchInterpolator");
+ROUTE2689->setToField("set_rotation");
+ROUTE2689->setToNode("hanim_r_knee");
+group->addChildren(*ROUTE2689);
+
+CROUTE* ROUTE2690 = new CROUTE();
+ROUTE2690->setFromField("value_changed");
+ROUTE2690->setFromNode("Kick_r_ankle_PitchInterpolator");
+ROUTE2690->setToField("set_rotation");
+ROUTE2690->setToNode("hanim_r_ankle");
+group->addChildren(*ROUTE2690);
+
+CROUTE* ROUTE2691 = new CROUTE();
+ROUTE2691->setFromField("value_changed");
+ROUTE2691->setFromNode("Kick_l_hip_PitchInterpolator");
+ROUTE2691->setToField("set_rotation");
+ROUTE2691->setToNode("hanim_l_hip");
+group->addChildren(*ROUTE2691);
+
+CROUTE* ROUTE2692 = new CROUTE();
+ROUTE2692->setFromField("value_changed");
+ROUTE2692->setFromNode("Kick_l_knee_PitchInterpolator");
+ROUTE2692->setToField("set_rotation");
+ROUTE2692->setToNode("hanim_l_knee");
+group->addChildren(*ROUTE2692);
+
+CROUTE* ROUTE2693 = new CROUTE();
+ROUTE2693->setFromField("value_changed");
+ROUTE2693->setFromNode("Kick_r_ankle_PitchInterpolator");
+ROUTE2693->setToField("set_rotation");
+ROUTE2693->setToNode("hanim_l_ankle");
+group->addChildren(*ROUTE2693);
+
+CROUTE* ROUTE2694 = new CROUTE();
+ROUTE2694->setFromField("value_changed");
+ROUTE2694->setFromNode("Kick_vl5_YawInterpolator");
+ROUTE2694->setToField("set_rotation");
+ROUTE2694->setToNode("hanim_vl5");
+group->addChildren(*ROUTE2694);
+
+CROUTE* ROUTE2695 = new CROUTE();
+ROUTE2695->setFromField("value_changed");
+ROUTE2695->setFromNode("Kick_whole_body_RotationInterpolator");
+ROUTE2695->setToField("set_rotation");
+ROUTE2695->setToNode("hanim_humanoid_root");
+group->addChildren(*ROUTE2695);
+
+CROUTE* ROUTE2696 = new CROUTE();
+ROUTE2696->setFromField("value_changed");
+ROUTE2696->setFromNode("Kick_whole_body_TranslationInterpolator");
+ROUTE2696->setToField("set_translation");
+ROUTE2696->setToNode("hanim_humanoid_root");
+group->addChildren(*ROUTE2696);
+
+CROUTE* ROUTE2697 = new CROUTE();
+ROUTE2697->setFromField("position_changed");
+ROUTE2697->setFromNode("HudProx");
+ROUTE2697->setToField("set_translation");
+ROUTE2697->setToNode("HudXform");
+group->addChildren(*ROUTE2697);
+
+CROUTE* ROUTE2698 = new CROUTE();
+ROUTE2698->setFromField("orientation_changed");
+ROUTE2698->setFromNode("HudProx");
+ROUTE2698->setToField("set_rotation");
+ROUTE2698->setToNode("HudXform");
+group->addChildren(*ROUTE2698);
+
+CROUTE* ROUTE2699 = new CROUTE();
+ROUTE2699->setFromField("touchTime");
+ROUTE2699->setFromNode("Stand_Touch");
+ROUTE2699->setToField("set_stopTime");
+ROUTE2699->setToNode("PitchTimer");
+group->addChildren(*ROUTE2699);
+
+CROUTE* ROUTE2700 = new CROUTE();
+ROUTE2700->setFromField("touchTime");
+ROUTE2700->setFromNode("Stand_Touch");
+ROUTE2700->setToField("set_stopTime");
+ROUTE2700->setToNode("YawTimer");
+group->addChildren(*ROUTE2700);
+
+CROUTE* ROUTE2701 = new CROUTE();
+ROUTE2701->setFromField("touchTime");
+ROUTE2701->setFromNode("Stand_Touch");
+ROUTE2701->setToField("set_stopTime");
+ROUTE2701->setToNode("RollTimer");
+group->addChildren(*ROUTE2701);
+
+CROUTE* ROUTE2702 = new CROUTE();
+ROUTE2702->setFromField("touchTime");
+ROUTE2702->setFromNode("Stand_Touch");
+ROUTE2702->setToField("set_stopTime");
+ROUTE2702->setToNode("WalkTimer");
+group->addChildren(*ROUTE2702);
+
+CROUTE* ROUTE2703 = new CROUTE();
+ROUTE2703->setFromField("touchTime");
+ROUTE2703->setFromNode("Stand_Touch");
+ROUTE2703->setToField("set_stopTime");
+ROUTE2703->setToNode("RunTimer");
+group->addChildren(*ROUTE2703);
+
+CROUTE* ROUTE2704 = new CROUTE();
+ROUTE2704->setFromField("touchTime");
+ROUTE2704->setFromNode("Stand_Touch");
+ROUTE2704->setToField("set_stopTime");
+ROUTE2704->setToNode("JumpTimer");
+group->addChildren(*ROUTE2704);
+
+CROUTE* ROUTE2705 = new CROUTE();
+ROUTE2705->setFromField("touchTime");
+ROUTE2705->setFromNode("Stand_Touch");
+ROUTE2705->setToField("set_stopTime");
+ROUTE2705->setToNode("KickTimer");
+group->addChildren(*ROUTE2705);
+
+CROUTE* ROUTE2706 = new CROUTE();
+ROUTE2706->setFromField("touchTime");
+ROUTE2706->setFromNode("Stand_Touch");
+ROUTE2706->setToField("set_stopTime");
+ROUTE2706->setToNode("StopTimer");
+group->addChildren(*ROUTE2706);
+
+CROUTE* ROUTE2707 = new CROUTE();
+ROUTE2707->setFromField("touchTime");
+ROUTE2707->setFromNode("Stand_Touch");
+ROUTE2707->setToField("set_startTime");
+ROUTE2707->setToNode("StandTimer");
+group->addChildren(*ROUTE2707);
+
+CROUTE* ROUTE2708 = new CROUTE();
+ROUTE2708->setFromField("touchTime");
+ROUTE2708->setFromNode("Pitch_Touch");
+ROUTE2708->setToField("set_stopTime");
+ROUTE2708->setToNode("StandTimer");
+group->addChildren(*ROUTE2708);
+
+CROUTE* ROUTE2709 = new CROUTE();
+ROUTE2709->setFromField("touchTime");
+ROUTE2709->setFromNode("Pitch_Touch");
+ROUTE2709->setToField("set_stopTime");
+ROUTE2709->setToNode("YawTimer");
+group->addChildren(*ROUTE2709);
+
+CROUTE* ROUTE2710 = new CROUTE();
+ROUTE2710->setFromField("touchTime");
+ROUTE2710->setFromNode("Pitch_Touch");
+ROUTE2710->setToField("set_stopTime");
+ROUTE2710->setToNode("RollTimer");
+group->addChildren(*ROUTE2710);
+
+CROUTE* ROUTE2711 = new CROUTE();
+ROUTE2711->setFromField("touchTime");
+ROUTE2711->setFromNode("Pitch_Touch");
+ROUTE2711->setToField("set_stopTime");
+ROUTE2711->setToNode("WalkTimer");
+group->addChildren(*ROUTE2711);
+
+CROUTE* ROUTE2712 = new CROUTE();
+ROUTE2712->setFromField("touchTime");
+ROUTE2712->setFromNode("Pitch_Touch");
+ROUTE2712->setToField("set_stopTime");
+ROUTE2712->setToNode("RunTimer");
+group->addChildren(*ROUTE2712);
+
+CROUTE* ROUTE2713 = new CROUTE();
+ROUTE2713->setFromField("touchTime");
+ROUTE2713->setFromNode("Pitch_Touch");
+ROUTE2713->setToField("set_stopTime");
+ROUTE2713->setToNode("JumpTimer");
+group->addChildren(*ROUTE2713);
+
+CROUTE* ROUTE2714 = new CROUTE();
+ROUTE2714->setFromField("touchTime");
+ROUTE2714->setFromNode("Pitch_Touch");
+ROUTE2714->setToField("set_stopTime");
+ROUTE2714->setToNode("KickTimer");
+group->addChildren(*ROUTE2714);
+
+CROUTE* ROUTE2715 = new CROUTE();
+ROUTE2715->setFromField("touchTime");
+ROUTE2715->setFromNode("Pitch_Touch");
+ROUTE2715->setToField("set_stopTime");
+ROUTE2715->setToNode("StopTimer");
+group->addChildren(*ROUTE2715);
+
+CROUTE* ROUTE2716 = new CROUTE();
+ROUTE2716->setFromField("touchTime");
+ROUTE2716->setFromNode("Pitch_Touch");
+ROUTE2716->setToField("set_startTime");
+ROUTE2716->setToNode("PitchTimer");
+group->addChildren(*ROUTE2716);
+
+CROUTE* ROUTE2717 = new CROUTE();
+ROUTE2717->setFromField("touchTime");
+ROUTE2717->setFromNode("Yaw_Touch");
+ROUTE2717->setToField("set_stopTime");
+ROUTE2717->setToNode("StandTimer");
+group->addChildren(*ROUTE2717);
+
+CROUTE* ROUTE2718 = new CROUTE();
+ROUTE2718->setFromField("touchTime");
+ROUTE2718->setFromNode("Yaw_Touch");
+ROUTE2718->setToField("set_stopTime");
+ROUTE2718->setToNode("PitchTimer");
+group->addChildren(*ROUTE2718);
+
+CROUTE* ROUTE2719 = new CROUTE();
+ROUTE2719->setFromField("touchTime");
+ROUTE2719->setFromNode("Yaw_Touch");
+ROUTE2719->setToField("set_stopTime");
+ROUTE2719->setToNode("RollTimer");
+group->addChildren(*ROUTE2719);
+
+CROUTE* ROUTE2720 = new CROUTE();
+ROUTE2720->setFromField("touchTime");
+ROUTE2720->setFromNode("Yaw_Touch");
+ROUTE2720->setToField("set_stopTime");
+ROUTE2720->setToNode("WalkTimer");
+group->addChildren(*ROUTE2720);
+
+CROUTE* ROUTE2721 = new CROUTE();
+ROUTE2721->setFromField("touchTime");
+ROUTE2721->setFromNode("Yaw_Touch");
+ROUTE2721->setToField("set_stopTime");
+ROUTE2721->setToNode("RunTimer");
+group->addChildren(*ROUTE2721);
+
+CROUTE* ROUTE2722 = new CROUTE();
+ROUTE2722->setFromField("touchTime");
+ROUTE2722->setFromNode("Yaw_Touch");
+ROUTE2722->setToField("set_stopTime");
+ROUTE2722->setToNode("JumpTimer");
+group->addChildren(*ROUTE2722);
+
+CROUTE* ROUTE2723 = new CROUTE();
+ROUTE2723->setFromField("touchTime");
+ROUTE2723->setFromNode("Yaw_Touch");
+ROUTE2723->setToField("set_stopTime");
+ROUTE2723->setToNode("KickTimer");
+group->addChildren(*ROUTE2723);
+
+CROUTE* ROUTE2724 = new CROUTE();
+ROUTE2724->setFromField("touchTime");
+ROUTE2724->setFromNode("Yaw_Touch");
+ROUTE2724->setToField("set_stopTime");
+ROUTE2724->setToNode("StopTimer");
+group->addChildren(*ROUTE2724);
+
+CROUTE* ROUTE2725 = new CROUTE();
+ROUTE2725->setFromField("touchTime");
+ROUTE2725->setFromNode("Yaw_Touch");
+ROUTE2725->setToField("set_startTime");
+ROUTE2725->setToNode("YawTimer");
+group->addChildren(*ROUTE2725);
+
+CROUTE* ROUTE2726 = new CROUTE();
+ROUTE2726->setFromField("touchTime");
+ROUTE2726->setFromNode("Walk_Touch");
+ROUTE2726->setToField("set_stopTime");
+ROUTE2726->setToNode("StandTimer");
+group->addChildren(*ROUTE2726);
+
+CROUTE* ROUTE2727 = new CROUTE();
+ROUTE2727->setFromField("touchTime");
+ROUTE2727->setFromNode("Walk_Touch");
+ROUTE2727->setToField("set_stopTime");
+ROUTE2727->setToNode("PitchTimer");
+group->addChildren(*ROUTE2727);
+
+CROUTE* ROUTE2728 = new CROUTE();
+ROUTE2728->setFromField("touchTime");
+ROUTE2728->setFromNode("Walk_Touch");
+ROUTE2728->setToField("set_stopTime");
+ROUTE2728->setToNode("YawTimer");
+group->addChildren(*ROUTE2728);
+
+CROUTE* ROUTE2729 = new CROUTE();
+ROUTE2729->setFromField("touchTime");
+ROUTE2729->setFromNode("Walk_Touch");
+ROUTE2729->setToField("set_stopTime");
+ROUTE2729->setToNode("RollTimer");
+group->addChildren(*ROUTE2729);
+
+CROUTE* ROUTE2730 = new CROUTE();
+ROUTE2730->setFromField("touchTime");
+ROUTE2730->setFromNode("Walk_Touch");
+ROUTE2730->setToField("set_stopTime");
+ROUTE2730->setToNode("RunTimer");
+group->addChildren(*ROUTE2730);
+
+CROUTE* ROUTE2731 = new CROUTE();
+ROUTE2731->setFromField("touchTime");
+ROUTE2731->setFromNode("Walk_Touch");
+ROUTE2731->setToField("set_stopTime");
+ROUTE2731->setToNode("JumpTimer");
+group->addChildren(*ROUTE2731);
+
+CROUTE* ROUTE2732 = new CROUTE();
+ROUTE2732->setFromField("touchTime");
+ROUTE2732->setFromNode("Walk_Touch");
+ROUTE2732->setToField("set_stopTime");
+ROUTE2732->setToNode("KickTimer");
+group->addChildren(*ROUTE2732);
+
+CROUTE* ROUTE2733 = new CROUTE();
+ROUTE2733->setFromField("touchTime");
+ROUTE2733->setFromNode("Walk_Touch");
+ROUTE2733->setToField("set_stopTime");
+ROUTE2733->setToNode("StopTimer");
+group->addChildren(*ROUTE2733);
+
+CROUTE* ROUTE2734 = new CROUTE();
+ROUTE2734->setFromField("touchTime");
+ROUTE2734->setFromNode("Walk_Touch");
+ROUTE2734->setToField("set_startTime");
+ROUTE2734->setToNode("WalkTimer");
+group->addChildren(*ROUTE2734);
+
+CROUTE* ROUTE2735 = new CROUTE();
+ROUTE2735->setFromField("touchTime");
+ROUTE2735->setFromNode("Roll_Touch");
+ROUTE2735->setToField("set_stopTime");
+ROUTE2735->setToNode("StandTimer");
+group->addChildren(*ROUTE2735);
+
+CROUTE* ROUTE2736 = new CROUTE();
+ROUTE2736->setFromField("touchTime");
+ROUTE2736->setFromNode("Roll_Touch");
+ROUTE2736->setToField("set_stopTime");
+ROUTE2736->setToNode("PitchTimer");
+group->addChildren(*ROUTE2736);
+
+CROUTE* ROUTE2737 = new CROUTE();
+ROUTE2737->setFromField("touchTime");
+ROUTE2737->setFromNode("Roll_Touch");
+ROUTE2737->setToField("set_stopTime");
+ROUTE2737->setToNode("YawTimer");
+group->addChildren(*ROUTE2737);
+
+CROUTE* ROUTE2738 = new CROUTE();
+ROUTE2738->setFromField("touchTime");
+ROUTE2738->setFromNode("Roll_Touch");
+ROUTE2738->setToField("set_stopTime");
+ROUTE2738->setToNode("WalkTimer");
+group->addChildren(*ROUTE2738);
+
+CROUTE* ROUTE2739 = new CROUTE();
+ROUTE2739->setFromField("touchTime");
+ROUTE2739->setFromNode("Roll_Touch");
+ROUTE2739->setToField("set_stopTime");
+ROUTE2739->setToNode("RunTimer");
+group->addChildren(*ROUTE2739);
+
+CROUTE* ROUTE2740 = new CROUTE();
+ROUTE2740->setFromField("touchTime");
+ROUTE2740->setFromNode("Roll_Touch");
+ROUTE2740->setToField("set_stopTime");
+ROUTE2740->setToNode("JumpTimer");
+group->addChildren(*ROUTE2740);
+
+CROUTE* ROUTE2741 = new CROUTE();
+ROUTE2741->setFromField("touchTime");
+ROUTE2741->setFromNode("Roll_Touch");
+ROUTE2741->setToField("set_stopTime");
+ROUTE2741->setToNode("KickTimer");
+group->addChildren(*ROUTE2741);
+
+CROUTE* ROUTE2742 = new CROUTE();
+ROUTE2742->setFromField("touchTime");
+ROUTE2742->setFromNode("Roll_Touch");
+ROUTE2742->setToField("set_stopTime");
+ROUTE2742->setToNode("StopTimer");
+group->addChildren(*ROUTE2742);
+
+CROUTE* ROUTE2743 = new CROUTE();
+ROUTE2743->setFromField("touchTime");
+ROUTE2743->setFromNode("Roll_Touch");
+ROUTE2743->setToField("set_startTime");
+ROUTE2743->setToNode("RollTimer");
+group->addChildren(*ROUTE2743);
+
+CROUTE* ROUTE2744 = new CROUTE();
+ROUTE2744->setFromField("touchTime");
+ROUTE2744->setFromNode("Run_Touch");
+ROUTE2744->setToField("set_stopTime");
+ROUTE2744->setToNode("StandTimer");
+group->addChildren(*ROUTE2744);
+
+CROUTE* ROUTE2745 = new CROUTE();
+ROUTE2745->setFromField("touchTime");
+ROUTE2745->setFromNode("Run_Touch");
+ROUTE2745->setToField("set_stopTime");
+ROUTE2745->setToNode("PitchTimer");
+group->addChildren(*ROUTE2745);
+
+CROUTE* ROUTE2746 = new CROUTE();
+ROUTE2746->setFromField("touchTime");
+ROUTE2746->setFromNode("Run_Touch");
+ROUTE2746->setToField("set_stopTime");
+ROUTE2746->setToNode("YawTimer");
+group->addChildren(*ROUTE2746);
+
+CROUTE* ROUTE2747 = new CROUTE();
+ROUTE2747->setFromField("touchTime");
+ROUTE2747->setFromNode("Run_Touch");
+ROUTE2747->setToField("set_stopTime");
+ROUTE2747->setToNode("RollTimer");
+group->addChildren(*ROUTE2747);
+
+CROUTE* ROUTE2748 = new CROUTE();
+ROUTE2748->setFromField("touchTime");
+ROUTE2748->setFromNode("Run_Touch");
+ROUTE2748->setToField("set_stopTime");
+ROUTE2748->setToNode("WalkTimer");
+group->addChildren(*ROUTE2748);
+
+CROUTE* ROUTE2749 = new CROUTE();
+ROUTE2749->setFromField("touchTime");
+ROUTE2749->setFromNode("Run_Touch");
+ROUTE2749->setToField("set_stopTime");
+ROUTE2749->setToNode("JumpTimer");
+group->addChildren(*ROUTE2749);
+
+CROUTE* ROUTE2750 = new CROUTE();
+ROUTE2750->setFromField("touchTime");
+ROUTE2750->setFromNode("Run_Touch");
+ROUTE2750->setToField("set_stopTime");
+ROUTE2750->setToNode("KickTimer");
+group->addChildren(*ROUTE2750);
+
+CROUTE* ROUTE2751 = new CROUTE();
+ROUTE2751->setFromField("touchTime");
+ROUTE2751->setFromNode("Run_Touch");
+ROUTE2751->setToField("set_stopTime");
+ROUTE2751->setToNode("StopTimer");
+group->addChildren(*ROUTE2751);
+
+CROUTE* ROUTE2752 = new CROUTE();
+ROUTE2752->setFromField("touchTime");
+ROUTE2752->setFromNode("Run_Touch");
+ROUTE2752->setToField("set_startTime");
+ROUTE2752->setToNode("RunTimer");
+group->addChildren(*ROUTE2752);
+
+CROUTE* ROUTE2753 = new CROUTE();
+ROUTE2753->setFromField("touchTime");
+ROUTE2753->setFromNode("Jump_Touch");
+ROUTE2753->setToField("set_stopTime");
+ROUTE2753->setToNode("StandTimer");
+group->addChildren(*ROUTE2753);
+
+CROUTE* ROUTE2754 = new CROUTE();
+ROUTE2754->setFromField("touchTime");
+ROUTE2754->setFromNode("Jump_Touch");
+ROUTE2754->setToField("set_stopTime");
+ROUTE2754->setToNode("PitchTimer");
+group->addChildren(*ROUTE2754);
+
+CROUTE* ROUTE2755 = new CROUTE();
+ROUTE2755->setFromField("touchTime");
+ROUTE2755->setFromNode("Jump_Touch");
+ROUTE2755->setToField("set_stopTime");
+ROUTE2755->setToNode("YawTimer");
+group->addChildren(*ROUTE2755);
+
+CROUTE* ROUTE2756 = new CROUTE();
+ROUTE2756->setFromField("touchTime");
+ROUTE2756->setFromNode("Jump_Touch");
+ROUTE2756->setToField("set_stopTime");
+ROUTE2756->setToNode("RollTimer");
+group->addChildren(*ROUTE2756);
+
+CROUTE* ROUTE2757 = new CROUTE();
+ROUTE2757->setFromField("touchTime");
+ROUTE2757->setFromNode("Jump_Touch");
+ROUTE2757->setToField("set_stopTime");
+ROUTE2757->setToNode("WalkTimer");
+group->addChildren(*ROUTE2757);
+
+CROUTE* ROUTE2758 = new CROUTE();
+ROUTE2758->setFromField("touchTime");
+ROUTE2758->setFromNode("Jump_Touch");
+ROUTE2758->setToField("set_stopTime");
+ROUTE2758->setToNode("RunTimer");
+group->addChildren(*ROUTE2758);
+
+CROUTE* ROUTE2759 = new CROUTE();
+ROUTE2759->setFromField("touchTime");
+ROUTE2759->setFromNode("Jump_Touch");
+ROUTE2759->setToField("set_stopTime");
+ROUTE2759->setToNode("KickTimer");
+group->addChildren(*ROUTE2759);
+
+CROUTE* ROUTE2760 = new CROUTE();
+ROUTE2760->setFromField("touchTime");
+ROUTE2760->setFromNode("Jump_Touch");
+ROUTE2760->setToField("set_stopTime");
+ROUTE2760->setToNode("StopTimer");
+group->addChildren(*ROUTE2760);
+
+CROUTE* ROUTE2761 = new CROUTE();
+ROUTE2761->setFromField("touchTime");
+ROUTE2761->setFromNode("Jump_Touch");
+ROUTE2761->setToField("set_startTime");
+ROUTE2761->setToNode("JumpTimer");
+group->addChildren(*ROUTE2761);
+
+CROUTE* ROUTE2762 = new CROUTE();
+ROUTE2762->setFromField("touchTime");
+ROUTE2762->setFromNode("Kick_Touch");
+ROUTE2762->setToField("set_stopTime");
+ROUTE2762->setToNode("StandTimer");
+group->addChildren(*ROUTE2762);
+
+CROUTE* ROUTE2763 = new CROUTE();
+ROUTE2763->setFromField("touchTime");
+ROUTE2763->setFromNode("Kick_Touch");
+ROUTE2763->setToField("set_stopTime");
+ROUTE2763->setToNode("PitchTimer");
+group->addChildren(*ROUTE2763);
+
+CROUTE* ROUTE2764 = new CROUTE();
+ROUTE2764->setFromField("touchTime");
+ROUTE2764->setFromNode("Kick_Touch");
+ROUTE2764->setToField("set_stopTime");
+ROUTE2764->setToNode("YawTimer");
+group->addChildren(*ROUTE2764);
+
+CROUTE* ROUTE2765 = new CROUTE();
+ROUTE2765->setFromField("touchTime");
+ROUTE2765->setFromNode("Kick_Touch");
+ROUTE2765->setToField("set_stopTime");
+ROUTE2765->setToNode("RollTimer");
+group->addChildren(*ROUTE2765);
+
+CROUTE* ROUTE2766 = new CROUTE();
+ROUTE2766->setFromField("touchTime");
+ROUTE2766->setFromNode("Kick_Touch");
+ROUTE2766->setToField("set_stopTime");
+ROUTE2766->setToNode("WalkTimer");
+group->addChildren(*ROUTE2766);
+
+CROUTE* ROUTE2767 = new CROUTE();
+ROUTE2767->setFromField("touchTime");
+ROUTE2767->setFromNode("Kick_Touch");
+ROUTE2767->setToField("set_stopTime");
+ROUTE2767->setToNode("RunTimer");
+group->addChildren(*ROUTE2767);
+
+CROUTE* ROUTE2768 = new CROUTE();
+ROUTE2768->setFromField("touchTime");
+ROUTE2768->setFromNode("Kick_Touch");
+ROUTE2768->setToField("set_stopTime");
+ROUTE2768->setToNode("JumpTimer");
+group->addChildren(*ROUTE2768);
+
+CROUTE* ROUTE2769 = new CROUTE();
+ROUTE2769->setFromField("touchTime");
+ROUTE2769->setFromNode("Kick_Touch");
+ROUTE2769->setToField("set_stopTime");
+ROUTE2769->setToNode("StopTimer");
+group->addChildren(*ROUTE2769);
+
+CROUTE* ROUTE2770 = new CROUTE();
+ROUTE2770->setFromField("touchTime");
+ROUTE2770->setFromNode("Kick_Touch");
+ROUTE2770->setToField("set_startTime");
+ROUTE2770->setToNode("KickTimer");
+group->addChildren(*ROUTE2770);
+
+CROUTE* ROUTE2771 = new CROUTE();
+ROUTE2771->setFromField("touchTime");
+ROUTE2771->setFromNode("Stop_Touch");
+ROUTE2771->setToField("set_stopTime");
+ROUTE2771->setToNode("StandTimer");
+group->addChildren(*ROUTE2771);
+
+CROUTE* ROUTE2772 = new CROUTE();
+ROUTE2772->setFromField("touchTime");
+ROUTE2772->setFromNode("Stop_Touch");
+ROUTE2772->setToField("set_stopTime");
+ROUTE2772->setToNode("PitchTimer");
+group->addChildren(*ROUTE2772);
+
+CROUTE* ROUTE2773 = new CROUTE();
+ROUTE2773->setFromField("touchTime");
+ROUTE2773->setFromNode("Stop_Touch");
+ROUTE2773->setToField("set_stopTime");
+ROUTE2773->setToNode("YawTimer");
+group->addChildren(*ROUTE2773);
+
+CROUTE* ROUTE2774 = new CROUTE();
+ROUTE2774->setFromField("touchTime");
+ROUTE2774->setFromNode("Stop_Touch");
+ROUTE2774->setToField("set_stopTime");
+ROUTE2774->setToNode("RollTimer");
+group->addChildren(*ROUTE2774);
+
+CROUTE* ROUTE2775 = new CROUTE();
+ROUTE2775->setFromField("touchTime");
+ROUTE2775->setFromNode("Stop_Touch");
+ROUTE2775->setToField("set_stopTime");
+ROUTE2775->setToNode("WalkTimer");
+group->addChildren(*ROUTE2775);
+
+CROUTE* ROUTE2776 = new CROUTE();
+ROUTE2776->setFromField("touchTime");
+ROUTE2776->setFromNode("Stop_Touch");
+ROUTE2776->setToField("set_stopTime");
+ROUTE2776->setToNode("RunTimer");
+group->addChildren(*ROUTE2776);
+
+CROUTE* ROUTE2777 = new CROUTE();
+ROUTE2777->setFromField("touchTime");
+ROUTE2777->setFromNode("Stop_Touch");
+ROUTE2777->setToField("set_stopTime");
+ROUTE2777->setToNode("JumpTimer");
+group->addChildren(*ROUTE2777);
+
+CROUTE* ROUTE2778 = new CROUTE();
+ROUTE2778->setFromField("touchTime");
+ROUTE2778->setFromNode("Stop_Touch");
+ROUTE2778->setToField("set_stopTime");
+ROUTE2778->setToNode("KickTimer");
+group->addChildren(*ROUTE2778);
+
+CROUTE* ROUTE2779 = new CROUTE();
+ROUTE2779->setFromField("touchTime");
+ROUTE2779->setFromNode("Stop_Touch");
+ROUTE2779->setToField("set_startTime");
+ROUTE2779->setToNode("StopTimer");
+group->addChildren(*ROUTE2779);
+
 X3D0->setScene(*Scene19);
 
 m_pScene.addRootNode(group);

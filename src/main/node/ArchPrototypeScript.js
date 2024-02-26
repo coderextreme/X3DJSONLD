@@ -50,7 +50,7 @@ function initialize () {
     
 	for (d = 0; d <69; d++) {                        
             for (e = 0; e <3; e++) {       
-                if (e == 2){
+                if (e === 2){
 		    p[a] = depth;
  		} 
    		a++;
@@ -80,7 +80,7 @@ function initialize () {
     }
 
 
-    if (archHalf == true){  
+    if (archHalf === true){  
     
         for (k = 0; k < 33; k++) {       
             i[k] = 0;
@@ -126,7 +126,7 @@ function initialize () {
     }
 
 
-    if (onlyIntrados == true){     
+    if (onlyIntrados === true){     
 
         for (m = 0; m <215; m++) {       
             i[m] = null;
@@ -138,7 +138,7 @@ function initialize () {
     }
 
 
-    if (archFilled == true){     
+    if (archFilled === true){     
 
 	for (g = 78; g <107; g++) {       
             i[g] = null;
@@ -157,7 +157,7 @@ function initialize () {
     }
 
 
-    if (archHalfFilled == true){     
+    if (archHalfFilled === true){     
 
 	for (t = 0; t <33; t++) {       
             i[t] = null;
@@ -181,7 +181,7 @@ function initialize () {
     }
 
 
-    if (lintel == true){  
+    if (lintel === true){  
    
 	for (r = 0; r <67; r++) {       
             i[r] = 0;
