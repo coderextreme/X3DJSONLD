@@ -2053,7 +2053,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 "                return true;\n"+
 "        }\n"+
 "    }\n"+
-"    function intialize() {\n"+
+"    function initialize() {\n"+
 "        new HAnimScale();\n"+
 "    }"))
         .addChild((new autoclass.Group()).setDEF("StopAnimation")
@@ -3051,6 +3051,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addChild((new autoclass.ROUTE()).setFromField("touchTime").setFromNode("Stop_Touch").setToField("set_stopTime").setToNode("RunTimer"))
         .addChild((new autoclass.ROUTE()).setFromField("touchTime").setFromNode("Stop_Touch").setToField("set_stopTime").setToNode("JumpTimer"))
         .addChild((new autoclass.ROUTE()).setFromField("touchTime").setFromNode("Stop_Touch").setToField("set_stopTime").setToNode("KickTimer"))
-        .addChild((new autoclass.ROUTE()).setFromField("touchTime").setFromNode("Stop_Touch").setToField("set_startTime").setToNode("StopTimer")))      ;
+        .addChild((new autoclass.ROUTE()).setFromField("touchTime").setFromNode("Stop_Touch").setToField("set_startTime").setToNode("StopTimer"))
+        .addChild((new autoclass.Script()).setDEF("Scale").setUrl(java.newArray("java.lang.String", ["../node/jinloa4.js"]))))      ;
     X3D0.toFileX3D("../data/JinLOA4.new.node.x3d");
     process.exit(0);

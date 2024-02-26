@@ -8162,7 +8162,7 @@ Script1783.setSourceCode(`ecmascript:\n"+
 "                return true;\n"+
 "        }\n"+
 "    }\n"+
-"    function intialize() {\n"+
+"    function initialize() {\n"+
 "        new HAnimScale();\n"+
 "    }`)
 group->addChildren(*Script1783);
@@ -14442,6 +14442,11 @@ ROUTE2779->setFromNode("Stop_Touch");
 ROUTE2779->setToField("set_startTime");
 ROUTE2779->setToNode("StopTimer");
 group->addChildren(*ROUTE2779);
+
+CScript* Script2780 = (CScript *)(m_pScene.createNode("Script"));
+Script2780->setDEF("Scale");
+Script2780->setUrl(new CString[1]{"../node/jinloa4.js"}, 1);
+group->addChildren(*Script2780);
 
 X3D0->setScene(*Scene19);
 

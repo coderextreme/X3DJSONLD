@@ -2094,7 +2094,7 @@ public class JinLOA4 implements X3DRoots {
 "                return true;\n"+
 "        }\n"+
 "    }\n"+
-"    function intialize() {\n"+
+"    function initialize() {\n"+
 "        new HAnimScale();\n"+
 "    }"))
         .addChild(new Group().setDEF("StopAnimation")
@@ -3092,7 +3092,8 @@ public class JinLOA4 implements X3DRoots {
         .addChild(new ROUTE().setFromField("touchTime").setFromNode("Stop_Touch").setToField("set_stopTime").setToNode("RunTimer"))
         .addChild(new ROUTE().setFromField("touchTime").setFromNode("Stop_Touch").setToField("set_stopTime").setToNode("JumpTimer"))
         .addChild(new ROUTE().setFromField("touchTime").setFromNode("Stop_Touch").setToField("set_stopTime").setToNode("KickTimer"))
-        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Stop_Touch").setToField("set_startTime").setToNode("StopTimer")))      ;
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Stop_Touch").setToField("set_startTime").setToNode("StopTimer"))
+        .addChild(new Script().setDEF("Scale").setUrl(new MFString1550().getArray())))      ;
     return X3D0;
     }
 private class MFString0 {
@@ -10843,6 +10844,11 @@ private class MFString1548 {
 private class MFString1549 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"MIDDLE","MIDDLE"});
+  }
+}
+private class MFString1550 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../node/jinloa4.js"});
   }
 }
 }

@@ -9038,7 +9038,7 @@ Script1783.setSourceCode(`ecmascript:\n"+
 "                return true;\n"+
 "        }\n"+
 "    }\n"+
-"    function intialize() {\n"+
+"    function initialize() {\n"+
 "        new HAnimScale();\n"+
 "    }`)
 children[4] = Script1783;
@@ -15364,5 +15364,10 @@ ROUTE2779.fromNode = "Stop_Touch";
 ROUTE2779.toField = "set_startTime";
 ROUTE2779.toNode = "StopTimer";
 children[559] = ROUTE2779;
+
+Script Script2780 = createNode("Script");
+Script2780.DEF = "Scale";
+Script2780.url = new MFString(new java.lang.String["../node/jinloa4.js"]);
+children[560] = Script2780;
 
 }

@@ -2037,7 +2037,7 @@
                 return true;
         }
     }
-    function intialize() {
+    function initialize() {
         new HAnimScale();
     }]]></Script>
 <Group DEF="StopAnimation"><TimeSensor DEF="StopTimer" cycleInterval="5.73" loop="true"></TimeSensor>
@@ -3035,5 +3035,6 @@
 <ROUTE fromField="touchTime" fromNode="Stop_Touch" toField="set_stopTime" toNode="JumpTimer"></ROUTE>
 <ROUTE fromField="touchTime" fromNode="Stop_Touch" toField="set_stopTime" toNode="KickTimer"></ROUTE>
 <ROUTE fromField="touchTime" fromNode="Stop_Touch" toField="set_startTime" toNode="StopTimer"></ROUTE>
+<Script DEF="Scale" url="&quot;../node/jinloa4.js&quot;"></Script>
 </Scene>
 </X3D>

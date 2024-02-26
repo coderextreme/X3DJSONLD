@@ -2920,7 +2920,7 @@ ecmascript:
                 return true;
         }
     }
-    function intialize() {
+    function initialize() {
         new HAnimScale();
     }
 ]]>
@@ -3995,5 +3995,6 @@ ecmascript:
     <ROUTE fromField='touchTime' fromNode='Stop_Touch' toField='set_stopTime' toNode='JumpTimer'/>
     <ROUTE fromField='touchTime' fromNode='Stop_Touch' toField='set_stopTime' toNode='KickTimer'/>
     <ROUTE fromField='touchTime' fromNode='Stop_Touch' toField='set_startTime' toNode='StopTimer'/>
+    <Script DEF='Scale' url='"../node/jinloa4.js"'/>
   </Scene>
 </X3D>
