@@ -1836,7 +1836,1263 @@ public class JinLOA4 implements X3DRoots {
           .addSegments(((HAnimSegment)new HAnimSegment("hanim_JinLOA4").setContainerFieldOverride("segments")).setUSE("hanim_l_trapezoid"))
           .addSegments(((HAnimSegment)new HAnimSegment("hanim_JinLOA4").setContainerFieldOverride("segments")).setUSE("hanim_r_trapezoid"))
           .addSegments(((HAnimSegment)new HAnimSegment("hanim_JinLOA4").setContainerFieldOverride("segments")).setUSE("hanim_l_upperarm"))
-          .addSegments(((HAnimSegment)new HAnimSegment("hanim_JinLOA4").setContainerFieldOverride("segments")).setUSE("hanim_r_upperarm"))))      ;
+          .addSegments(((HAnimSegment)new HAnimSegment("hanim_JinLOA4").setContainerFieldOverride("segments")).setUSE("hanim_r_upperarm")))
+        .addChild(new Script()
+          .addField(new field().setType("MFInt32").setName("dummy").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue("0"))
+          .setSourceCode("ecmascript:\n"+
+"	function HAnimScale() {\n"+
+"            this.x = 0;\n"+
+"            this.y = 0;\n"+
+"            this.l_x = 0;\n"+
+"            this.l_z = 0;\n"+
+"            this.r_x = 0;\n"+
+"            this.r_z = 0;\n"+
+"            this.maxy = 0;\n"+
+"            this.z = 0;\n"+
+"            this.scale = [1, 1, 1];\n"+
+"            this.yscale = 1;\n"+
+"            this.X3D0 = document.querySelector(\"X3D\");\n"+
+"            this.humanoids = [];\n"+
+"            this.traverseChildrenSceneGraph(X3D.Scene.children, humanoids);\n"+
+"            for (let h = 0; h < humanoids.length; h++) {\n"+
+"                    let humanoid = humanoids[h];\n"+
+"                    this.scale = humanoid.getScale();\n"+
+"                    humanoid.setScale([ 1, 1, 1 ]);\n"+
+"                    let root = humanoid.skeleton;\n"+
+"                    let center = root.center;\n"+
+"                    this.x = center[0];\n"+
+"                    this.y = center[1];\n"+
+"                    this.maxy = center[1];\n"+
+"                    this.z = center[2];\n"+
+"                    let translation = [0, 0, 0];\n"+
+"                    this.centering(root);\n"+
+"                    this.x = (this.l_x + this.r_x) / 2;\n"+
+"                    this.z = (this.l_z + this.r_z) / 2;\n"+
+"                    this.yscale = this.maxy - this.y;\n"+
+"                    this.transform(root, translation);\n"+
+"                    this.x = 0;\n"+
+"                    this.y = 0;\n"+
+"                    this.l_x = 0;\n"+
+"                    this.l_z = 0;\n"+
+"                    this.r_x = 0;\n"+
+"                    this.r_z = 0;\n"+
+"                    this.maxy = 0;\n"+
+"                    this.z = 0;\n"+
+"                    this.scale = [ 1, 1, 1 ];\n"+
+"                    this.yscale = 1;\n"+
+"            }\n"+
+"            this.humanoids = [];\n"+
+"    }\n"+
+"\n"+
+"    HAnimScale.prototype = {\n"+
+"        traverseChildrenSceneGraph: function(children, humanoids) {\n"+
+"                if (children !== null) {\n"+
+"                        for (let ch = 0; ch < children.length; ch++) {\n"+
+"                                let child = children[ch];\n"+
+"                                if (!this.traverseChildSceneGraph(child, humanoids)) {\n"+
+"                                        console.error(\"Unpacking child in\", child, \"failed\");\n"+
+"                                }\n"+
+"                        }\n"+
+"                        return true;\n"+
+"                }\n"+
+"                return false;\n"+
+"        },\n"+
+"\n"+
+"        traverseChildSceneGraph: function(child, humanoids) {\n"+
+"                let children = null;\n"+
+"                if (typeof child === 'HAnimJoint') {\n"+
+"                        let joint = child;\n"+
+"                        let children = joint.getChildrenList();\n"+
+"                        this.traverseChildrenSceneGraph(children, humanoids);\n"+
+"                } else if (typeof child === 'HAnimSite') {\n"+
+"                        let site = child;\n"+
+"                        let children = site.getChildrenList();\n"+
+"                        this.traverseChildrenSceneGraph(children, humanoids);\n"+
+"                } else if (typeof child === 'HAnimSegment') {\n"+
+"                        let segment = child;\n"+
+"                        let children = segment.getChildrenList();\n"+
+"                        this.traverseChildrenSceneGraph(children, humanoids);\n"+
+"                } else if (typeof child === 'Group') {\n"+
+"                        let group = child;\n"+
+"                        let children = group.getChildrenList();\n"+
+"                        this.traverseChildrenSceneGraph(children, humanoids);\n"+
+"                } else if (typeof child === 'Transform') {\n"+
+"                        let trans = child;\n"+
+"                        let children = trans.getChildrenList();\n"+
+"                        this.traverseChildrenSceneGraph(children, humanoids);\n"+
+"                } else if (typeof child === 'Shape') {\n"+
+"                        let shape = child;\n"+
+"                        let appearance = shape.getAppearance();\n"+
+"                        if (!this.traverseChildSceneGraph(appearance, humanoids)) {\n"+
+"                                console.error(\"Unpacking appearance in Shape failed\");\n"+
+"                        }\n"+
+"                        let geometry = shape.getGeometry();\n"+
+"                        if (!this.traverseChildSceneGraph(geometry, humanoids)) {\n"+
+"                                console.error(\"Unpacking geometry in Shape failed\");\n"+
+"                        }\n"+
+"                } else if (typeof child === 'IndexedFaceSet') {\n"+
+"                        let ifs = child;\n"+
+"                        let coord = ifs.getCoord();\n"+
+"                        if (!this.traverseChildSceneGraph(coord, humanoids)) {\n"+
+"                                console.error(\"Unpacking coord in IndexedFaceSet failed\");\n"+
+"                        }\n"+
+"                } else if (typeof child === 'Appearance') {\n"+
+"                } else if (typeof child === 'Coordinate') {\n"+
+"                } else if (typeof child === 'WorldInfo') {\n"+
+"                } else if (typeof child === 'NavigationInfo') {\n"+
+"                } else if (typeof child === 'Viewpoint') {\n"+
+"                } else if (typeof child === 'HAnimHumanoid') {\n"+
+"                        humanoids.add(child);\n"+
+"                } else if (child !== null) {\n"+
+"                        console.error(\"Unhandled is\", child);\n"+
+"                } else {\n"+
+"                        console.error(\"Node is\", child);\n"+
+"                        return false;\n"+
+"                }\n"+
+"                return true;\n"+
+"        },\n"+
+"        centering: function(joint) {\n"+
+"                let center = joint.getCenter();\n"+
+"                let name = joint.getName();\n"+
+"                switch (name) {\n"+
+"                        case \"l_tarsal_distal_interphalangeal_5\":\n"+
+"                                this.l_x = center[0];\n"+
+"                                this.l_z = center[2];\n"+
+"                                break;\n"+
+"                        case \"r_tarsal_distal_interphalangeal_5\":\n"+
+"                                this.r_x = center[0];\n"+
+"                                this.r_z = center[2];\n"+
+"                                break;\n"+
+"                }\n"+
+"                if (center[1] > this.maxy) {\n"+
+"                        this.maxy = center[1];\n"+
+"                }\n"+
+"                if (center[1] < this.y) {\n"+
+"                        this.y = center[1];\n"+
+"                }\n"+
+"                let children = joint.getChildrenList();\n"+
+"                for (let ch = 0; ch < children.size(); ch++) {\n"+
+"                        let child = children[ch];\n"+
+"                        if (typeof child === 'HAnimJoint') {\n"+
+"                                centering(child);\n"+
+"                        }\n"+
+"                }\n"+
+"        },\n"+
+"        transformPoint: function(point, point_offset, translation) {\n"+
+"                /// console.error(\"OLD \"+point[point_offset+0]+\" \"+point[point_offset+1]+\" \"+point[point_offset+2]+\" \");\n"+
+"                point[point_offset+0] -= this.x;\n"+
+"                point[point_offset+1] -= this.y;\n"+
+"                point[point_offset+2] -= this.z;\n"+
+"\n"+
+"                point[point_offset+0] *= this.scale[0];\n"+
+"                point[point_offset+1] *= this.scale[1];\n"+
+"                point[point_offset+2] *= this.scale[2];\n"+
+"\n"+
+"                point[point_offset+0] += translation[0];\n"+
+"                point[point_offset+1] += translation[1];\n"+
+"                point[point_offset+2] += translation[2];\n"+
+"                // console.error(\"NEW \"+point[point_offset+0]+\" \"+point[point_offset+1]+\" \"+point[point_offset+2]+\" \");\n"+
+"        },\n"+
+"        transform: function(node, parentTranslation) {\n"+
+"                let translation = [parentTranslation[0], parentTranslation[1], parentTranslation[2]];\n"+
+"                let children = null;\n"+
+"                if (typeof node === 'HAnimJoint') {\n"+
+"                        let joint = node;\n"+
+"\n"+
+"                        let field = joint.getTranslation();\n"+
+"                        this.transformPoint(field, 0, [ 0, 0, 0 ]);\n"+
+"                        this.transformPoint(translation, 0, field);\n"+
+"                        joint.setTranslation([ 0, 0, 0 ]);\n"+
+"\n"+
+"                        let center = joint.getCenter();\n"+
+"                        this.transformPoint(center, 0, translation);\n"+
+"                        joint.setCenter(center);\n"+
+"                        children = joint.getChildrenList();\n"+
+"                } else if (typeof node === 'HAnimSite') {\n"+
+"                        let site = node;\n"+
+"\n"+
+"                        let field = site.getTranslation();\n"+
+"                        this.transformPoint(field, 0, [ 0, 0, 0]);\n"+
+"                        this.transformPoint(translation, 0, field);\n"+
+"                        site.setTranslation([0, 0, 0]);\n"+
+"\n"+
+"                        let center = site.getCenter();\n"+
+"                        this.transformPoint(center, 0, translation);\n"+
+"                        site.setCenter(center);\n"+
+"\n"+
+"                        children = site.getChildrenList();\n"+
+"                } else if (typeof node === 'HAnimSegment') {\n"+
+"                        let segment = node;\n"+
+"                        let coord = segment.getCoord();\n"+
+"                        if (coord !== null) {\n"+
+"                                if (!this.transform(coord, translation)) {\n"+
+"                                        console.error(\"Unpacking coord in HAnimSegment failed\");\n"+
+"                                }\n"+
+"                        }\n"+
+"                        let displacers = segment.getDisplacersList();\n"+
+"                        if (displacers !== null) {\n"+
+"                                for (let di = 0; di < displacers.size(); di++) {\n"+
+"                                        let displacer = displacers.get(di);\n"+
+"                                        if (!this.transform(displacer, translation)) {\n"+
+"                                                console.error(\"Unpacking displacer in HAnimSegment failed\");\n"+
+"                                        }\n"+
+"                                }\n"+
+"                        }\n"+
+"                        children = segment.getChildrenList();\n"+
+"                } else if (typeof node === 'Transform') {\n"+
+"                        let trans = node;\n"+
+"                        let field = trans.getTranslation();\n"+
+"                        this.transformPoint(field, 0, [0,0,0]);\n"+
+"                        this.transformPoint(translation, 0, field);\n"+
+"                        trans.setTranslation([0,0,0]);\n"+
+"                        children = trans.getChildrenList();\n"+
+"                } else if (typeof node === 'Shape') {\n"+
+"                        let shape = node;\n"+
+"                        let appearance = shape.getAppearance();\n"+
+"                        if (!this.transform(appearance, translation)) {\n"+
+"                                console.error(\"Unpacking appearance in Shape failed\");\n"+
+"                        }\n"+
+"                        let geometry = shape.getGeometry();\n"+
+"                        if (!this.transform(geometry, translation)) {\n"+
+"                                console.error(\"Unpacking geometry in Shape failed\");\n"+
+"                        }\n"+
+"                } else if (typeof node === 'IndexedFaceSet') {\n"+
+"                        let ifs = node;\n"+
+"                        let coord = ifs.getCoord();\n"+
+"                        let coordIndex = ifs.getCoordIndex();\n"+
+"                        if (coordIndex.length > 700) {\n"+
+"                                console.error(\"coordIndex\", coordIndex.length);\n"+
+"                                let texCoordIndex = ifs.getTexCoordIndex();\n"+
+"                                console.error(\"texCoordIndex\", texCoordIndex.length);\n"+
+"                        }\n"+
+"                        if (!this.transform(coord, translation)) {\n"+
+"                                console.error(\"Unpacking coord in IndexedFaceSet failed\");\n"+
+"                        }\n"+
+"                } else if (typeof node === 'Appearance') {\n"+
+"                } else if (typeof node === 'Coordinate') {\n"+
+"                        let coordinate = node;\n"+
+"                        let point = coordinate.getPoint();\n"+
+"                        // console.error(\"point \", point.length);\n"+
+"                        for (let p = 0; p < point.length; p += 3) {\n"+
+"                                this.transformPoint(point, p, translation);\n"+
+"                        }\n"+
+"                        coordinate.setPoint(point);\n"+
+"                } else if (node !== null) {\n"+
+"                        console.error(\"Unhandled is\", node);\n"+
+"                } else {\n"+
+"                        console.error(\"Node is\", node);\n"+
+"                        return false;\n"+
+"                }\n"+
+"                if (children !== null) {\n"+
+"                        for (let ch = 0; ch < children.size(); ch++) {\n"+
+"                                let child = children.get(ch);\n"+
+"                                if (!this.transform(child, translation)) {\n"+
+"                                        console.error(\"Unpacking child in\", node, \"failed\");\n"+
+"                                }\n"+
+"                        }\n"+
+"                }\n"+
+"                return true;\n"+
+"        }\n"+
+"    }\n"+
+"    function intialize() {\n"+
+"        new HAnimScale();\n"+
+"    }"))
+        .addChild(new Group().setDEF("StopAnimation")
+          .addChild(new TimeSensor().setDEF("StopTimer").setCycleInterval(5.73).setLoop(true))
+          .addChild(new PositionInterpolator().setDEF("Stop_humanoid_root_TranslationInterpolator").setKey(new MFFloat889().getArray()).setKeyValue(new MFVec3f890().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_humanoid_root_RotationInterpolator").setKey(new MFFloat891().getArray()).setKeyValue(new MFRotation892().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_sacroiliac_RotationInterpolator").setKey(new MFFloat893().getArray()).setKeyValue(new MFRotation894().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_l_hip_RotationInterpolator").setKey(new MFFloat895().getArray()).setKeyValue(new MFRotation896().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_l_knee_RotationInterpolator").setKey(new MFFloat897().getArray()).setKeyValue(new MFRotation898().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_l_ankle_RotationInterpolator").setKey(new MFFloat899().getArray()).setKeyValue(new MFRotation900().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_l_subtalar_RotationInterpolator").setKey(new MFFloat901().getArray()).setKeyValue(new MFRotation902().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_l_midtarsal_RotationInterpolator").setKey(new MFFloat903().getArray()).setKeyValue(new MFRotation904().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_l_metatarsal_RotationInterpolator").setKey(new MFFloat905().getArray()).setKeyValue(new MFRotation906().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_r_hip_RotationInterpolator").setKey(new MFFloat907().getArray()).setKeyValue(new MFRotation908().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_r_knee_RotationInterpolator").setKey(new MFFloat909().getArray()).setKeyValue(new MFRotation910().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_r_ankle_RotationInterpolator").setKey(new MFFloat911().getArray()).setKeyValue(new MFRotation912().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_r_subtalar_RotationInterpolator").setKey(new MFFloat913().getArray()).setKeyValue(new MFRotation914().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_r_midtarsal_RotationInterpolator").setKey(new MFFloat915().getArray()).setKeyValue(new MFRotation916().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_r_metatarsal_RotationInterpolator").setKey(new MFFloat917().getArray()).setKeyValue(new MFRotation918().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_vl5_RotationInterpolator").setKey(new MFFloat919().getArray()).setKeyValue(new MFRotation920().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_vl4_RotationInterpolator").setKey(new MFFloat921().getArray()).setKeyValue(new MFRotation922().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_vl3_RotationInterpolator").setKey(new MFFloat923().getArray()).setKeyValue(new MFRotation924().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_vl2_RotationInterpolator").setKey(new MFFloat925().getArray()).setKeyValue(new MFRotation926().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_vl1_RotationInterpolator").setKey(new MFFloat927().getArray()).setKeyValue(new MFRotation928().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_vt12_RotationInterpolator").setKey(new MFFloat929().getArray()).setKeyValue(new MFRotation930().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_vt11_RotationInterpolator").setKey(new MFFloat931().getArray()).setKeyValue(new MFRotation932().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_vt10_RotationInterpolator").setKey(new MFFloat933().getArray()).setKeyValue(new MFRotation934().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_vt9_RotationInterpolator").setKey(new MFFloat935().getArray()).setKeyValue(new MFRotation936().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_vt8_RotationInterpolator").setKey(new MFFloat937().getArray()).setKeyValue(new MFRotation938().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_vt7_RotationInterpolator").setKey(new MFFloat939().getArray()).setKeyValue(new MFRotation940().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_vt6_RotationInterpolator").setKey(new MFFloat941().getArray()).setKeyValue(new MFRotation942().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_vt5_RotationInterpolator").setKey(new MFFloat943().getArray()).setKeyValue(new MFRotation944().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_vt4_RotationInterpolator").setKey(new MFFloat945().getArray()).setKeyValue(new MFRotation946().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_vt3_RotationInterpolator").setKey(new MFFloat947().getArray()).setKeyValue(new MFRotation948().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_vt2_RotationInterpolator").setKey(new MFFloat949().getArray()).setKeyValue(new MFRotation950().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_vt1_RotationInterpolator").setKey(new MFFloat951().getArray()).setKeyValue(new MFRotation952().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_vc7_RotationInterpolator").setKey(new MFFloat953().getArray()).setKeyValue(new MFRotation954().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_vc6_RotationInterpolator").setKey(new MFFloat955().getArray()).setKeyValue(new MFRotation956().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_vc5_RotationInterpolator").setKey(new MFFloat957().getArray()).setKeyValue(new MFRotation958().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_vc4_RotationInterpolator").setKey(new MFFloat959().getArray()).setKeyValue(new MFRotation960().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_vc3_RotationInterpolator").setKey(new MFFloat961().getArray()).setKeyValue(new MFRotation962().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_vc2_RotationInterpolator").setKey(new MFFloat963().getArray()).setKeyValue(new MFRotation964().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_vc1_RotationInterpolator").setKey(new MFFloat965().getArray()).setKeyValue(new MFRotation966().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_skullbase_RotationInterpolator").setKey(new MFFloat967().getArray()).setKeyValue(new MFRotation968().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_l_eyeball_joint_RotationInterpolator").setKey(new MFFloat969().getArray()).setKeyValue(new MFRotation970().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_r_eyeball_joint_RotationInterpolator").setKey(new MFFloat971().getArray()).setKeyValue(new MFRotation972().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_l_sternoclavicular_RotationInterpolator").setKey(new MFFloat973().getArray()).setKeyValue(new MFRotation974().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_l_acromioclavicular_RotationInterpolator").setKey(new MFFloat975().getArray()).setKeyValue(new MFRotation976().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_l_shoulder_RotationInterpolator").setKey(new MFFloat977().getArray()).setKeyValue(new MFRotation978().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_l_elbow_RotationInterpolator").setKey(new MFFloat979().getArray()).setKeyValue(new MFRotation980().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_l_wrist_RotationInterpolator").setKey(new MFFloat981().getArray()).setKeyValue(new MFRotation982().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_l_thumb1_RotationInterpolator").setKey(new MFFloat983().getArray()).setKeyValue(new MFRotation984().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_l_thumb2_RotationInterpolator").setKey(new MFFloat985().getArray()).setKeyValue(new MFRotation986().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_l_thumb3_RotationInterpolator").setKey(new MFFloat987().getArray()).setKeyValue(new MFRotation988().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_l_index0_RotationInterpolator").setKey(new MFFloat989().getArray()).setKeyValue(new MFRotation990().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_l_index1_RotationInterpolator").setKey(new MFFloat991().getArray()).setKeyValue(new MFRotation992().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_l_index2_RotationInterpolator").setKey(new MFFloat993().getArray()).setKeyValue(new MFRotation994().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_l_index3_RotationInterpolator").setKey(new MFFloat995().getArray()).setKeyValue(new MFRotation996().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_l_middle0_RotationInterpolator").setKey(new MFFloat997().getArray()).setKeyValue(new MFRotation998().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_l_middle1_RotationInterpolator").setKey(new MFFloat999().getArray()).setKeyValue(new MFRotation1000().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_l_middle2_RotationInterpolator").setKey(new MFFloat1001().getArray()).setKeyValue(new MFRotation1002().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_l_middle3_RotationInterpolator").setKey(new MFFloat1003().getArray()).setKeyValue(new MFRotation1004().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_l_ring0_RotationInterpolator").setKey(new MFFloat1005().getArray()).setKeyValue(new MFRotation1006().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_l_ring1_RotationInterpolator").setKey(new MFFloat1007().getArray()).setKeyValue(new MFRotation1008().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_l_ring2_RotationInterpolator").setKey(new MFFloat1009().getArray()).setKeyValue(new MFRotation1010().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_l_ring3_RotationInterpolator").setKey(new MFFloat1011().getArray()).setKeyValue(new MFRotation1012().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_l_pinky0_RotationInterpolator").setKey(new MFFloat1013().getArray()).setKeyValue(new MFRotation1014().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_l_pinky1_RotationInterpolator").setKey(new MFFloat1015().getArray()).setKeyValue(new MFRotation1016().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_l_pinky2_RotationInterpolator").setKey(new MFFloat1017().getArray()).setKeyValue(new MFRotation1018().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_l_pinky3_RotationInterpolator").setKey(new MFFloat1019().getArray()).setKeyValue(new MFRotation1020().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_r_sternoclavicular_RotationInterpolator").setKey(new MFFloat1021().getArray()).setKeyValue(new MFRotation1022().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_r_acromioclavicular_RotationInterpolator").setKey(new MFFloat1023().getArray()).setKeyValue(new MFRotation1024().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_r_shoulder_RotationInterpolator").setKey(new MFFloat1025().getArray()).setKeyValue(new MFRotation1026().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_r_elbow_RotationInterpolator").setKey(new MFFloat1027().getArray()).setKeyValue(new MFRotation1028().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_r_wrist_RotationInterpolator").setKey(new MFFloat1029().getArray()).setKeyValue(new MFRotation1030().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_r_thumb1_RotationInterpolator").setKey(new MFFloat1031().getArray()).setKeyValue(new MFRotation1032().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_r_thumb2_RotationInterpolator").setKey(new MFFloat1033().getArray()).setKeyValue(new MFRotation1034().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_r_thumb3_RotationInterpolator").setKey(new MFFloat1035().getArray()).setKeyValue(new MFRotation1036().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_r_index0_RotationInterpolator").setKey(new MFFloat1037().getArray()).setKeyValue(new MFRotation1038().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_r_index1_RotationInterpolator").setKey(new MFFloat1039().getArray()).setKeyValue(new MFRotation1040().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_r_index2_RotationInterpolator").setKey(new MFFloat1041().getArray()).setKeyValue(new MFRotation1042().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_r_index3_RotationInterpolator").setKey(new MFFloat1043().getArray()).setKeyValue(new MFRotation1044().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_r_middle0_RotationInterpolator").setKey(new MFFloat1045().getArray()).setKeyValue(new MFRotation1046().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_r_middle1_RotationInterpolator").setKey(new MFFloat1047().getArray()).setKeyValue(new MFRotation1048().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_r_middle2_RotationInterpolator").setKey(new MFFloat1049().getArray()).setKeyValue(new MFRotation1050().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_r_middle3_RotationInterpolator").setKey(new MFFloat1051().getArray()).setKeyValue(new MFRotation1052().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_r_ring0_RotationInterpolator").setKey(new MFFloat1053().getArray()).setKeyValue(new MFRotation1054().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_r_ring1_RotationInterpolator").setKey(new MFFloat1055().getArray()).setKeyValue(new MFRotation1056().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_r_ring2_RotationInterpolator").setKey(new MFFloat1057().getArray()).setKeyValue(new MFRotation1058().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_r_ring3_RotationInterpolator").setKey(new MFFloat1059().getArray()).setKeyValue(new MFRotation1060().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_r_pinky0_RotationInterpolator").setKey(new MFFloat1061().getArray()).setKeyValue(new MFRotation1062().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_r_pinky1_RotationInterpolator").setKey(new MFFloat1063().getArray()).setKeyValue(new MFRotation1064().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_r_pinky2_RotationInterpolator").setKey(new MFFloat1065().getArray()).setKeyValue(new MFRotation1066().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stop_r_pinky3_RotationInterpolator").setKey(new MFFloat1067().getArray()).setKeyValue(new MFRotation1068().getArray())))
+        .addChild(new Group().setDEF("StandAnimation")
+          .addChild(new TimeSensor().setDEF("StandTimer").setCycleInterval(5.73).setLoop(true))
+          .addChild(new OrientationInterpolator().setDEF("Stand_r_metatarsal_PitchInterpolator").setKey(new MFFloat1069().getArray()).setKeyValue(new MFRotation1070().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stand_r_ankle_RotationInterpolator").setKey(new MFFloat1071().getArray()).setKeyValue(new MFRotation1072().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stand_r_knee_RotationInterpolator").setKey(new MFFloat1073().getArray()).setKeyValue(new MFRotation1074().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stand_r_hip_RotationInterpolator").setKey(new MFFloat1075().getArray()).setKeyValue(new MFRotation1076().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stand_l_ankle_RotationInterpolator").setKey(new MFFloat1077().getArray()).setKeyValue(new MFRotation1078().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stand_l_knee_RotationInterpolator").setKey(new MFFloat1079().getArray()).setKeyValue(new MFRotation1080().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stand_l_hip_RotationInterpolator").setKey(new MFFloat1081().getArray()).setKeyValue(new MFRotation1082().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stand_r_wrist_RotationInterpolator").setKey(new MFFloat1083().getArray()).setKeyValue(new MFRotation1084().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stand_r_elbow_RotationInterpolator").setKey(new MFFloat1085().getArray()).setKeyValue(new MFRotation1086().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stand_r_shoulder_RotationInterpolator").setKey(new MFFloat1087().getArray()).setKeyValue(new MFRotation1088().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stand_l_wrist_RotationInterpolator").setKey(new MFFloat1089().getArray()).setKeyValue(new MFRotation1090().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stand_l_elbow_RotationInterpolator").setKey(new MFFloat1091().getArray()).setKeyValue(new MFRotation1092().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stand_l_shoulder_RotationInterpolator").setKey(new MFFloat1093().getArray()).setKeyValue(new MFRotation1094().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stand_head_RotationInterpolator").setKey(new MFFloat1095().getArray()).setKeyValue(new MFRotation1096().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stand_neck_RotationInterpolator").setKey(new MFFloat1097().getArray()).setKeyValue(new MFRotation1098().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stand_l_eyeball_RotationInterpolator").setKey(new MFFloat1099().getArray()).setKeyValue(new MFRotation1100().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stand_r_eyeball_RotationInterpolator").setKey(new MFFloat1101().getArray()).setKeyValue(new MFRotation1102().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stand_lower_body_RotationInterpolator").setKey(new MFFloat1103().getArray()).setKeyValue(new MFRotation1104().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stand_upper_body_RotationInterpolator").setKey(new MFFloat1105().getArray()).setKeyValue(new MFRotation1106().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stand_whole_body_RotationInterpolator").setKey(new MFFloat1107().getArray()).setKeyValue(new MFRotation1108().getArray()))
+          .addChild(new PositionInterpolator().setDEF("Stand_whole_body_TranslationInterpolator").setKey(new MFFloat1109().getArray()).setKeyValue(new MFVec3f1110().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stand_l_sternoclavicular_RollInterpolator").setKey(new MFFloat1111().getArray()).setKeyValue(new MFRotation1112().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stand_l_acromioclavicular_RollInterpolator").setKey(new MFFloat1113().getArray()).setKeyValue(new MFRotation1114().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stand_r_sternoclavicular_RollInterpolator").setKey(new MFFloat1115().getArray()).setKeyValue(new MFRotation1116().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stand_r_acromioclavicular_RollInterpolator").setKey(new MFFloat1117().getArray()).setKeyValue(new MFRotation1118().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stand_sacroiliac_YawInterpolator").setKey(new MFFloat1119().getArray()).setKeyValue(new MFRotation1120().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stand_vl5_YawInterpolator").setKey(new MFFloat1121().getArray()).setKeyValue(new MFRotation1122().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stand_vc6_YawInterpolator").setKey(new MFFloat1123().getArray()).setKeyValue(new MFRotation1124().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stand_l_thumb1_PitchInterpolator").setKey(new MFFloat1125().getArray()).setKeyValue(new MFRotation1126().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stand_r_thumb1_PitchInterpolator").setKey(new MFFloat1127().getArray()).setKeyValue(new MFRotation1128().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stand_r_index1_RollInterpolator").setKey(new MFFloat1129().getArray()).setKeyValue(new MFRotation1130().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stand_r_index2_RollInterpolator").setKey(new MFFloat1131().getArray()).setKeyValue(new MFRotation1132().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Stand_r_index3_RollInterpolator").setKey(new MFFloat1133().getArray()).setKeyValue(new MFRotation1134().getArray())))
+        .addChild(new Group().setDEF("PitchesAnimation")
+          .addChild(new TimeSensor().setDEF("PitchTimer").setCycleInterval(5.73).setLoop(true))
+          .addChild(new OrientationInterpolator().setDEF("Pitch_r_metatarsal_PitchInterpolator").setKey(new MFFloat1135().getArray()).setKeyValue(new MFRotation1136().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Pitches_r_ankle_RotationInterpolator").setKey(new MFFloat1137().getArray()).setKeyValue(new MFRotation1138().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Pitches_r_knee_RotationInterpolator").setKey(new MFFloat1139().getArray()).setKeyValue(new MFRotation1140().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Pitches_r_hip_RotationInterpolator").setKey(new MFFloat1141().getArray()).setKeyValue(new MFRotation1142().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Pitches_l_ankle_RotationInterpolator").setKey(new MFFloat1143().getArray()).setKeyValue(new MFRotation1144().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Pitches_l_knee_RotationInterpolator").setKey(new MFFloat1145().getArray()).setKeyValue(new MFRotation1146().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Pitches_l_hip_RotationInterpolator").setKey(new MFFloat1147().getArray()).setKeyValue(new MFRotation1148().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Pitches_r_wrist_RotationInterpolator").setKey(new MFFloat1149().getArray()).setKeyValue(new MFRotation1150().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Pitches_r_elbow_RotationInterpolator").setKey(new MFFloat1151().getArray()).setKeyValue(new MFRotation1152().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Pitches_r_shoulder_RotationInterpolator").setKey(new MFFloat1153().getArray()).setKeyValue(new MFRotation1154().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Pitches_l_wrist_RotationInterpolator").setKey(new MFFloat1155().getArray()).setKeyValue(new MFRotation1156().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Pitches_l_elbow_RotationInterpolator").setKey(new MFFloat1157().getArray()).setKeyValue(new MFRotation1158().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Pitches_l_shoulder_RotationInterpolator").setKey(new MFFloat1159().getArray()).setKeyValue(new MFRotation1160().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Pitches_head_RotationInterpolator").setKey(new MFFloat1161().getArray()).setKeyValue(new MFRotation1162().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Pitches_neck_RotationInterpolator").setKey(new MFFloat1163().getArray()).setKeyValue(new MFRotation1164().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Pitches_lower_body_RotationInterpolator").setKey(new MFFloat1165().getArray()).setKeyValue(new MFRotation1166().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Pitches_upper_body_RotationInterpolator").setKey(new MFFloat1167().getArray()).setKeyValue(new MFRotation1168().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Pitches_whole_body_RotationInterpolator").setKey(new MFFloat1169().getArray()).setKeyValue(new MFRotation1170().getArray()))
+          .addChild(new PositionInterpolator().setDEF("Pitches_whole_body_TranslationInterpolator").setKey(new MFFloat1171().getArray()).setKeyValue(new MFVec3f1172().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Pitch_l_sternoclavicular_RollInterpolator").setKey(new MFFloat1173().getArray()).setKeyValue(new MFRotation1174().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Pitch_l_acromioclavicular_RollInterpolator").setKey(new MFFloat1175().getArray()).setKeyValue(new MFRotation1176().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Pitch_r_sternoclavicular_RollInterpolator").setKey(new MFFloat1177().getArray()).setKeyValue(new MFRotation1178().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Pitch_r_acromioclavicular_RollInterpolator").setKey(new MFFloat1179().getArray()).setKeyValue(new MFRotation1180().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Pitch_sacroiliac_YawInterpolator").setKey(new MFFloat1181().getArray()).setKeyValue(new MFRotation1182().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Pitch_vl5_YawInterpolator").setKey(new MFFloat1183().getArray()).setKeyValue(new MFRotation1184().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Pitch_vc6_YawInterpolator").setKey(new MFFloat1185().getArray()).setKeyValue(new MFRotation1186().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Pitch_l_thumb1_PitchInterpolator").setKey(new MFFloat1187().getArray()).setKeyValue(new MFRotation1188().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Pitch_r_thumb1_PitchInterpolator").setKey(new MFFloat1189().getArray()).setKeyValue(new MFRotation1190().getArray())))
+        .addChild(new Group().setDEF("YawsAnimation")
+          .addChild(new TimeSensor().setDEF("YawTimer").setCycleInterval(5.73).setLoop(true))
+          .addChild(new OrientationInterpolator().setDEF("Yaw_r_metatarsal_PitchInterpolator").setKey(new MFFloat1191().getArray()).setKeyValue(new MFRotation1192().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Yaws_r_ankle_RotationInterpolator").setKey(new MFFloat1193().getArray()).setKeyValue(new MFRotation1194().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Yaws_r_knee_RotationInterpolator").setKey(new MFFloat1195().getArray()).setKeyValue(new MFRotation1196().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Yaws_r_hip_RotationInterpolator").setKey(new MFFloat1197().getArray()).setKeyValue(new MFRotation1198().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Yaws_l_ankle_RotationInterpolator").setKey(new MFFloat1199().getArray()).setKeyValue(new MFRotation1200().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Yaws_l_knee_RotationInterpolator").setKey(new MFFloat1201().getArray()).setKeyValue(new MFRotation1202().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Yaws_l_hip_RotationInterpolator").setKey(new MFFloat1203().getArray()).setKeyValue(new MFRotation1204().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Yaws_r_wrist_RotationInterpolator").setKey(new MFFloat1205().getArray()).setKeyValue(new MFRotation1206().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Yaws_r_elbow_RotationInterpolator").setKey(new MFFloat1207().getArray()).setKeyValue(new MFRotation1208().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Yaws_r_shoulder_RotationInterpolator").setKey(new MFFloat1209().getArray()).setKeyValue(new MFRotation1210().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Yaws_l_wrist_RotationInterpolator").setKey(new MFFloat1211().getArray()).setKeyValue(new MFRotation1212().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Yaws_l_elbow_RotationInterpolator").setKey(new MFFloat1213().getArray()).setKeyValue(new MFRotation1214().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Yaws_l_shoulder_RotationInterpolator").setKey(new MFFloat1215().getArray()).setKeyValue(new MFRotation1216().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Yaws_head_RotationInterpolator").setKey(new MFFloat1217().getArray()).setKeyValue(new MFRotation1218().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Yaws_neck_RotationInterpolator").setKey(new MFFloat1219().getArray()).setKeyValue(new MFRotation1220().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Yaws_upper_body_RotationInterpolator").setKey(new MFFloat1221().getArray()).setKeyValue(new MFRotation1222().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Yaws_lower_body_RotationInterpolator").setKey(new MFFloat1223().getArray()).setKeyValue(new MFRotation1224().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Yaws_whole_body_RotationInterpolator").setKey(new MFFloat1225().getArray()).setKeyValue(new MFRotation1226().getArray()))
+          .addChild(new PositionInterpolator().setDEF("Yaws_whole_body_TranslationInterpolator").setKey(new MFFloat1227().getArray()).setKeyValue(new MFVec3f1228().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Yaw_l_sternoclavicular_RollInterpolator").setKey(new MFFloat1229().getArray()).setKeyValue(new MFRotation1230().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Yaw_l_acromioclavicular_RollInterpolator").setKey(new MFFloat1231().getArray()).setKeyValue(new MFRotation1232().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Yaw_r_sternoclavicular_RollInterpolator").setKey(new MFFloat1233().getArray()).setKeyValue(new MFRotation1234().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Yaw_r_acromioclavicular_RollInterpolator").setKey(new MFFloat1235().getArray()).setKeyValue(new MFRotation1236().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Yaw_sacroiliac_YawInterpolator").setKey(new MFFloat1237().getArray()).setKeyValue(new MFRotation1238().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Yaw_vl5_YawInterpolator").setKey(new MFFloat1239().getArray()).setKeyValue(new MFRotation1240().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Yaw_vc6_YawInterpolator").setKey(new MFFloat1241().getArray()).setKeyValue(new MFRotation1242().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Yaw_l_thumb1_PitchInterpolator").setKey(new MFFloat1243().getArray()).setKeyValue(new MFRotation1244().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Yaw_r_thumb1_PitchInterpolator").setKey(new MFFloat1245().getArray()).setKeyValue(new MFRotation1246().getArray())))
+        .addChild(new Group().setDEF("RollsAnimation")
+          .addChild(new TimeSensor().setDEF("RollTimer").setCycleInterval(5.73).setLoop(true))
+          .addChild(new OrientationInterpolator().setDEF("Roll_r_metatarsal_PitchInterpolator").setKey(new MFFloat1247().getArray()).setKeyValue(new MFRotation1248().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Rolls_r_ankle_RotationInterpolator").setKey(new MFFloat1249().getArray()).setKeyValue(new MFRotation1250().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Rolls_r_knee_RotationInterpolator").setKey(new MFFloat1251().getArray()).setKeyValue(new MFRotation1252().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Rolls_r_hip_RotationInterpolator").setKey(new MFFloat1253().getArray()).setKeyValue(new MFRotation1254().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Rolls_l_ankle_RotationInterpolator").setKey(new MFFloat1255().getArray()).setKeyValue(new MFRotation1256().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Rolls_l_knee_RotationInterpolator").setKey(new MFFloat1257().getArray()).setKeyValue(new MFRotation1258().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Rolls_l_hip_RotationInterpolator").setKey(new MFFloat1259().getArray()).setKeyValue(new MFRotation1260().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Rolls_r_wrist_RotationInterpolator").setKey(new MFFloat1261().getArray()).setKeyValue(new MFRotation1262().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Rolls_r_elbow_RotationInterpolator").setKey(new MFFloat1263().getArray()).setKeyValue(new MFRotation1264().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Rolls_r_shoulder_RotationInterpolator").setKey(new MFFloat1265().getArray()).setKeyValue(new MFRotation1266().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Rolls_l_wrist_RotationInterpolator").setKey(new MFFloat1267().getArray()).setKeyValue(new MFRotation1268().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Rolls_l_elbow_RotationInterpolator").setKey(new MFFloat1269().getArray()).setKeyValue(new MFRotation1270().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Rolls_l_shoulder_RotationInterpolator").setKey(new MFFloat1271().getArray()).setKeyValue(new MFRotation1272().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Rolls_head_RotationInterpolator").setKey(new MFFloat1273().getArray()).setKeyValue(new MFRotation1274().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Rolls_neck_RotationInterpolator").setKey(new MFFloat1275().getArray()).setKeyValue(new MFRotation1276().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Rolls_lower_body_RotationInterpolator").setKey(new MFFloat1277().getArray()).setKeyValue(new MFRotation1278().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Rolls_upper_body_RotationInterpolator").setKey(new MFFloat1279().getArray()).setKeyValue(new MFRotation1280().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Rolls_whole_body_RotationInterpolator").setKey(new MFFloat1281().getArray()).setKeyValue(new MFRotation1282().getArray()))
+          .addChild(new PositionInterpolator().setDEF("Rolls_whole_body_TranslationInterpolator").setKey(new MFFloat1283().getArray()).setKeyValue(new MFVec3f1284().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Roll_l_sternoclavicular_RollInterpolator").setKey(new MFFloat1285().getArray()).setKeyValue(new MFRotation1286().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Roll_l_acromioclavicular_RollInterpolator").setKey(new MFFloat1287().getArray()).setKeyValue(new MFRotation1288().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Roll_r_sternoclavicular_RollInterpolator").setKey(new MFFloat1289().getArray()).setKeyValue(new MFRotation1290().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Roll_r_acromioclavicular_RollInterpolator").setKey(new MFFloat1291().getArray()).setKeyValue(new MFRotation1292().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Roll_sacroiliac_YawInterpolator").setKey(new MFFloat1293().getArray()).setKeyValue(new MFRotation1294().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Roll_vl5_YawInterpolator").setKey(new MFFloat1295().getArray()).setKeyValue(new MFRotation1296().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Roll_vc6_YawInterpolator").setKey(new MFFloat1297().getArray()).setKeyValue(new MFRotation1298().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Roll_l_thumb1_PitchInterpolator").setKey(new MFFloat1299().getArray()).setKeyValue(new MFRotation1300().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Roll_r_thumb1_PitchInterpolator").setKey(new MFFloat1301().getArray()).setKeyValue(new MFRotation1302().getArray())))
+        .addChild(new Group().setDEF("WalkAnimation")
+          .addChild(new TimeSensor().setDEF("WalkTimer").setCycleInterval(1.73).setLoop(true))
+          .addChild(new OrientationInterpolator().setDEF("Walk_r_metatarsal_PitchInterpolator").setKey(new MFFloat1303().getArray()).setKeyValue(new MFRotation1304().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Walk_r_ankle_RotationInterpolator").setKey(new MFFloat1305().getArray()).setKeyValue(new MFRotation1306().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Walk_r_knee_RotationInterpolator").setKey(new MFFloat1307().getArray()).setKeyValue(new MFRotation1308().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Walk_r_hip_RotationInterpolator").setKey(new MFFloat1309().getArray()).setKeyValue(new MFRotation1310().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Walk_l_ankle_RotationInterpolator").setKey(new MFFloat1311().getArray()).setKeyValue(new MFRotation1312().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Walk_l_knee_RotationInterpolator").setKey(new MFFloat1313().getArray()).setKeyValue(new MFRotation1314().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Walk_l_hip_RotationInterpolator").setKey(new MFFloat1315().getArray()).setKeyValue(new MFRotation1316().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Walk_lower_body_RotationInterpolator").setKey(new MFFloat1317().getArray()).setKeyValue(new MFRotation1318().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Walk_r_wrist_RotationInterpolator").setKey(new MFFloat1319().getArray()).setKeyValue(new MFRotation1320().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Walk_r_elbow_RotationInterpolator").setKey(new MFFloat1321().getArray()).setKeyValue(new MFRotation1322().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Walk_r_shoulder_RotationInterpolator").setKey(new MFFloat1323().getArray()).setKeyValue(new MFRotation1324().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Walk_l_wrist_RotationInterpolator").setKey(new MFFloat1325().getArray()).setKeyValue(new MFRotation1326().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Walk_l_elbow_RotationInterpolator").setKey(new MFFloat1327().getArray()).setKeyValue(new MFRotation1328().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Walk_l_shoulder_RotationInterpolator").setKey(new MFFloat1329().getArray()).setKeyValue(new MFRotation1330().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Walk_head_RotationInterpolator").setKey(new MFFloat1331().getArray()).setKeyValue(new MFRotation1332().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Walk_neck_RotationInterpolator").setKey(new MFFloat1333().getArray()).setKeyValue(new MFRotation1334().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Walk_upper_body_RotationInterpolator").setKey(new MFFloat1335().getArray()).setKeyValue(new MFRotation1336().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Walk_whole_body_RotationInterpolator").setKey(new MFFloat1337().getArray()).setKeyValue(new MFRotation1338().getArray()))
+          .addChild(new PositionInterpolator().setDEF("Walk_whole_body_TranslationInterpolator").setKey(new MFFloat1339().getArray()).setKeyValue(new MFVec3f1340().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Walk_l_sternoclavicular_RollInterpolator").setKey(new MFFloat1341().getArray()).setKeyValue(new MFRotation1342().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Walk_l_acromioclavicular_RollInterpolator").setKey(new MFFloat1343().getArray()).setKeyValue(new MFRotation1344().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Walk_r_sternoclavicular_RollInterpolator").setKey(new MFFloat1345().getArray()).setKeyValue(new MFRotation1346().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Walk_r_acromioclavicular_RollInterpolator").setKey(new MFFloat1347().getArray()).setKeyValue(new MFRotation1348().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Walk_sacroiliac_YawInterpolator").setKey(new MFFloat1349().getArray()).setKeyValue(new MFRotation1350().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Walk_vl5_YawInterpolator").setKey(new MFFloat1351().getArray()).setKeyValue(new MFRotation1352().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Walk_vc6_YawInterpolator").setKey(new MFFloat1353().getArray()).setKeyValue(new MFRotation1354().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Walk_l_thumb1_PitchInterpolator").setKey(new MFFloat1355().getArray()).setKeyValue(new MFRotation1356().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Walk_r_thumb1_PitchInterpolator").setKey(new MFFloat1357().getArray()).setKeyValue(new MFRotation1358().getArray())))
+        .addChild(new Group().setDEF("RunAnimation")
+          .addChild(new TimeSensor().setDEF("RunTimer").setCycleInterval(0.9).setLoop(true))
+          .addChild(new OrientationInterpolator().setDEF("Run_r_metatarsal_PitchInterpolator").setKey(new MFFloat1359().getArray()).setKeyValue(new MFRotation1360().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Run_l_hip_RotationInterpolator_Run").setKey(new MFFloat1361().getArray()).setKeyValue(new MFRotation1362().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Run_l_knee_RotationInterpolator_Run").setKey(new MFFloat1363().getArray()).setKeyValue(new MFRotation1364().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Run_l_ankle_RotationInterpolator_Run").setKey(new MFFloat1365().getArray()).setKeyValue(new MFRotation1366().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Run_r_hip_RotationInterpolator_Run").setKey(new MFFloat1367().getArray()).setKeyValue(new MFRotation1368().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Run_r_knee_RotationInterpolator_Run").setKey(new MFFloat1369().getArray()).setKeyValue(new MFRotation1370().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Run_r_ankle_RotationInterpolator_Run").setKey(new MFFloat1371().getArray()).setKeyValue(new MFRotation1372().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Run_l_shoulder_RotationInterpolator_Run").setKey(new MFFloat1373().getArray()).setKeyValue(new MFRotation1374().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Run_l_elbow_RotationInterpolator_Run").setKey(new MFFloat1375().getArray()).setKeyValue(new MFRotation1376().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Run_l_wrist_RotationInterpolator_Run").setKey(new MFFloat1377().getArray()).setKeyValue(new MFRotation1378().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Run_r_shoulder_RotationInterpolator_Run").setKey(new MFFloat1379().getArray()).setKeyValue(new MFRotation1380().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Run_r_elbow_RotationInterpolator_Run").setKey(new MFFloat1381().getArray()).setKeyValue(new MFRotation1382().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Run_r_wrist_RotationInterpolator_Run").setKey(new MFFloat1383().getArray()).setKeyValue(new MFRotation1384().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Run_lower_body_RotationInterpolator_Run").setKey(new MFFloat1385().getArray()).setKeyValue(new MFRotation1386().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Run_head_RotationInterpolator_Run").setKey(new MFFloat1387().getArray()).setKeyValue(new MFRotation1388().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Run_neck_RotationInterpolator_Run").setKey(new MFFloat1389().getArray()).setKeyValue(new MFRotation1390().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Run_upper_body_RotationInterpolator_Run").setKey(new MFFloat1391().getArray()).setKeyValue(new MFRotation1392().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Run_whole_body_RotationInterpolator_Run").setKey(new MFFloat1393().getArray()).setKeyValue(new MFRotation1394().getArray()))
+          .addChild(new PositionInterpolator().setDEF("Run_whole_body_TranslationInterpolator_Run").setKey(new MFFloat1395().getArray()).setKeyValue(new MFVec3f1396().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Run_l_sternoclavicular_RollInterpolator").setKey(new MFFloat1397().getArray()).setKeyValue(new MFRotation1398().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Run_l_acromioclavicular_RollInterpolator").setKey(new MFFloat1399().getArray()).setKeyValue(new MFRotation1400().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Run_r_sternoclavicular_RollInterpolator").setKey(new MFFloat1401().getArray()).setKeyValue(new MFRotation1402().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Run_r_acromioclavicular_RollInterpolator").setKey(new MFFloat1403().getArray()).setKeyValue(new MFRotation1404().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Run_sacroiliac_YawInterpolator").setKey(new MFFloat1405().getArray()).setKeyValue(new MFRotation1406().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Run_vl5_YawInterpolator").setKey(new MFFloat1407().getArray()).setKeyValue(new MFRotation1408().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Run_vc6_YawInterpolator").setKey(new MFFloat1409().getArray()).setKeyValue(new MFRotation1410().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Run_l_thumb1_PitchInterpolator").setKey(new MFFloat1411().getArray()).setKeyValue(new MFRotation1412().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Run_r_thumb1_PitchInterpolator").setKey(new MFFloat1413().getArray()).setKeyValue(new MFRotation1414().getArray())))
+        .addChild(new Group().setDEF("JumpAnimation")
+          .addChild(new TimeSensor().setDEF("JumpTimer").setCycleInterval(3.73).setLoop(true))
+          .addChild(new OrientationInterpolator().setDEF("Jump_r_metatarsal_PitchInterpolator").setKey(new MFFloat1415().getArray()).setKeyValue(new MFRotation1416().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Jump_r_ankle_RotationInterpolator").setKey(new MFFloat1417().getArray()).setKeyValue(new MFRotation1418().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Jump_r_knee_RotationInterpolator").setKey(new MFFloat1419().getArray()).setKeyValue(new MFRotation1420().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Jump_r_hip_RotationInterpolator").setKey(new MFFloat1421().getArray()).setKeyValue(new MFRotation1422().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Jump_l_ankle_RotationInterpolator").setKey(new MFFloat1423().getArray()).setKeyValue(new MFRotation1424().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Jump_l_knee_RotationInterpolator").setKey(new MFFloat1425().getArray()).setKeyValue(new MFRotation1426().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Jump_l_hip_RotationInterpolator").setKey(new MFFloat1427().getArray()).setKeyValue(new MFRotation1428().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Jump_lower_body_RotationInterpolator").setKey(new MFFloat1429().getArray()).setKeyValue(new MFRotation1430().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Jump_r_wrist_RotationInterpolator").setKey(new MFFloat1431().getArray()).setKeyValue(new MFRotation1432().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Jump_r_elbow_RotationInterpolator").setKey(new MFFloat1433().getArray()).setKeyValue(new MFRotation1434().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Jump_r_shoulder_RotationInterpolator").setKey(new MFFloat1435().getArray()).setKeyValue(new MFRotation1436().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Jump_l_wrist_RotationInterpolator").setKey(new MFFloat1437().getArray()).setKeyValue(new MFRotation1438().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Jump_l_elbow_RotationInterpolator").setKey(new MFFloat1439().getArray()).setKeyValue(new MFRotation1440().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Jump_l_shoulder_RotationInterpolator").setKey(new MFFloat1441().getArray()).setKeyValue(new MFRotation1442().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Jump_head_RotationInterpolator").setKey(new MFFloat1443().getArray()).setKeyValue(new MFRotation1444().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Jump_neck_RotationInterpolator").setKey(new MFFloat1445().getArray()).setKeyValue(new MFRotation1446().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Jump_upper_body_RotationInterpolator").setKey(new MFFloat1447().getArray()).setKeyValue(new MFRotation1448().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Jump_whole_body_RotationInterpolator").setKey(new MFFloat1449().getArray()).setKeyValue(new MFRotation1450().getArray()))
+          .addChild(new PositionInterpolator().setDEF("Jump_whole_body_TranslationInterpolator").setKey(new MFFloat1451().getArray()).setKeyValue(new MFVec3f1452().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Jump_l_sternoclavicular_RollInterpolator").setKey(new MFFloat1453().getArray()).setKeyValue(new MFRotation1454().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Jump_l_acromioclavicular_RollInterpolator").setKey(new MFFloat1455().getArray()).setKeyValue(new MFRotation1456().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Jump_r_sternoclavicular_RollInterpolator").setKey(new MFFloat1457().getArray()).setKeyValue(new MFRotation1458().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Jump_r_acromioclavicular_RollInterpolator").setKey(new MFFloat1459().getArray()).setKeyValue(new MFRotation1460().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Jump_sacroiliac_YawInterpolator").setKey(new MFFloat1461().getArray()).setKeyValue(new MFRotation1462().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Jump_vl5_YawInterpolator").setKey(new MFFloat1463().getArray()).setKeyValue(new MFRotation1464().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Jump_vc6_YawInterpolator").setKey(new MFFloat1465().getArray()).setKeyValue(new MFRotation1466().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Jump_l_thumb1_PitchInterpolator").setKey(new MFFloat1467().getArray()).setKeyValue(new MFRotation1468().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Jump_r_thumb1_PitchInterpolator").setKey(new MFFloat1469().getArray()).setKeyValue(new MFRotation1470().getArray())))
+        .addChild(new Group().setDEF("KickAnimation")
+          .addChild(new TimeSensor().setDEF("KickTimer").setCycleInterval(3.73).setLoop(true))
+          .addChild(new OrientationInterpolator().setDEF("Kick_l_sternoclavicular_RollInterpolator").setKey(new MFFloat1471().getArray()).setKeyValue(new MFRotation1472().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Kick_l_acromioclavicular_RollInterpolator").setKey(new MFFloat1473().getArray()).setKeyValue(new MFRotation1474().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Kick_l_shoulder_RollInterpolator").setKey(new MFFloat1475().getArray()).setKeyValue(new MFRotation1476().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Kick_l_ForeArm_PitchInterpolator").setKey(new MFFloat1477().getArray()).setKeyValue(new MFRotation1478().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Kick_l_wrist_RollInterpolator").setKey(new MFFloat1479().getArray()).setKeyValue(new MFRotation1480().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Kick_l_thumb1_PitchInterpolator").setKey(new MFFloat1481().getArray()).setKeyValue(new MFRotation1482().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Kick_r_sternoclavicular_RollInterpolator").setKey(new MFFloat1483().getArray()).setKeyValue(new MFRotation1484().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Kick_r_acromioclavicular_RollInterpolator").setKey(new MFFloat1485().getArray()).setKeyValue(new MFRotation1486().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Kick_r_shoulder_RollInterpolator").setKey(new MFFloat1487().getArray()).setKeyValue(new MFRotation1488().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Kick_r_ForeArm_PitchInterpolator").setKey(new MFFloat1489().getArray()).setKeyValue(new MFRotation1490().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Kick_r_wrist_RollInterpolator").setKey(new MFFloat1491().getArray()).setKeyValue(new MFRotation1492().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Kick_r_thumb1_PitchInterpolator").setKey(new MFFloat1493().getArray()).setKeyValue(new MFRotation1494().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Kick_r_hip_PitchInterpolator").setKey(new MFFloat1495().getArray()).setKeyValue(new MFRotation1496().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Kick_r_knee_PitchInterpolator").setKey(new MFFloat1497().getArray()).setKeyValue(new MFRotation1498().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Kick_l_hip_PitchInterpolator").setKey(new MFFloat1499().getArray()).setKeyValue(new MFRotation1500().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Kick_l_knee_PitchInterpolator").setKey(new MFFloat1501().getArray()).setKeyValue(new MFRotation1502().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Kick_r_ankle_PitchInterpolator").setKey(new MFFloat1503().getArray()).setKeyValue(new MFRotation1504().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Kick_r_metatarsal_PitchInterpolator").setKey(new MFFloat1505().getArray()).setKeyValue(new MFRotation1506().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Kick_sacroiliac_YawInterpolator").setKey(new MFFloat1507().getArray()).setKeyValue(new MFRotation1508().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Kick_vl5_YawInterpolator").setKey(new MFFloat1509().getArray()).setKeyValue(new MFRotation1510().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Kick_vc6_YawInterpolator").setKey(new MFFloat1511().getArray()).setKeyValue(new MFRotation1512().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Kick_lower_body_RotationInterpolator").setKey(new MFFloat1513().getArray()).setKeyValue(new MFRotation1514().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Kick_upper_body_RotationInterpolator").setKey(new MFFloat1515().getArray()).setKeyValue(new MFRotation1516().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Kick_whole_body_RotationInterpolator").setKey(new MFFloat1517().getArray()).setKeyValue(new MFRotation1518().getArray()))
+          .addChild(new PositionInterpolator().setDEF("Kick_whole_body_TranslationInterpolator").setKey(new MFFloat1519().getArray()).setKeyValue(new MFVec3f1520().getArray()))
+          .addChild(new OrientationInterpolator().setDEF("Kick_neck_RotationInterpolator").setKey(new MFFloat1521().getArray()).setKeyValue(new MFRotation1522().getArray())))
+        .addChild(new Group().setDEF("Interface")
+          .addChild(new Transform().setDEF("CoordinateSystemFloor").setScale(new double[] {0.1,0.1,0.1})
+            .addChild(new Shape().setDEF("AxisLinesShape")
+              .addComments("RGB lines showing XYZ axes")
+              .setGeometry(new IndexedLineSet().setColorIndex(new MFInt321523().getArray()).setColorPerVertex(false).setCoordIndex(new MFInt321524().getArray())
+                .setCoord(new Coordinate().setPoint(new MFVec3f1525().getArray()))
+                .setColor(new Color().setColor(new MFColor1526().getArray())))))
+          .addChild(new ProximitySensor().setDEF("HudProx").setSize(new double[] {50,50,50}))
+          .addChild(new Transform().setDEF("HudXform").setRotation(new double[] {0,1,0,0.78}).setTranslation(new double[] {2,1,2})
+            .addChild(new Transform().setScale(new double[] {0.02,0.02,0.02}).setTranslation(new double[] {-0.4,-0.01,-0.75})
+              .addChild(new Transform().setDEF("Stand_Text").setTranslation(new double[] {0,-0.9,0})
+                .addChild(new TouchSensor().setDEF("Stand_Touch"))
+                .addChild(new Shape().setDEF("StandText")
+                  .setAppearance(new Appearance()
+                    .setMaterial(new Material().setDEF("text_color").setAmbientIntensity(1).setDiffuseColor(new double[] {0.819,0.521,0.169}).setEmissiveColor(new double[] {0.819,0.521,0.169}).setSpecularColor(new double[] {0.819,0.521,0.169})))
+                  .setGeometry(new Text().setString(new MFString1527().getArray())
+                    .setFontStyle(new FontStyle().setFamily(new MFString1528().getArray()))))
+                .addChild(new Shape().setDEF("Stand_Back")
+                  .setAppearance(new Appearance()
+                    .setMaterial(new Material().setDEF("Clear").setAmbientIntensity(1).setDiffuseColor(new double[] {0,0.5,0}).setEmissiveColor(new double[] {0,0.5,0}).setTransparency(0.8)))
+                  .setGeometry(new IndexedFaceSet().setDEF("Backing").setCoordIndex(new MFInt321529().getArray())
+                    .setCoord(new Coordinate().setPoint(new MFVec3f1530().getArray())))))
+              .addChild(new Transform().setDEF("Pitch_Text").setTranslation(new double[] {0,-2.4,0})
+                .addChild(new TouchSensor().setDEF("Pitch_Touch"))
+                .addChild(new Shape().setDEF("PitchText")
+                  .setAppearance(new Appearance()
+                    .setMaterial(new Material().setUSE("text_color")))
+                  .setGeometry(new Text().setString(new MFString1531().getArray())
+                    .setFontStyle(new FontStyle().setFamily(new MFString1532().getArray()))))
+                .addChild(new Shape().setDEF("Pitch_Back")
+                  .setAppearance(new Appearance()
+                    .setMaterial(new Material().setUSE("Clear")))
+                  .setGeometry(new IndexedFaceSet().setUSE("Backing"))))
+              .addChild(new Transform().setDEF("Yaw_Text").setTranslation(new double[] {0,-3.8,0})
+                .addChild(new TouchSensor().setDEF("Yaw_Touch"))
+                .addChild(new Shape().setDEF("YawText")
+                  .setAppearance(new Appearance()
+                    .setMaterial(new Material().setUSE("text_color")))
+                  .setGeometry(new Text().setString(new MFString1533().getArray())
+                    .setFontStyle(new FontStyle().setFamily(new MFString1534().getArray()))))
+                .addChild(new Shape().setDEF("Yaw_Back")
+                  .setAppearance(new Appearance()
+                    .setMaterial(new Material().setUSE("Clear")))
+                  .setGeometry(new IndexedFaceSet().setUSE("Backing"))))
+              .addChild(new Transform().setDEF("Roll_Text").setTranslation(new double[] {0,-5.2,0})
+                .addChild(new TouchSensor().setDEF("Roll_Touch"))
+                .addChild(new Shape().setDEF("RollText")
+                  .setAppearance(new Appearance()
+                    .setMaterial(new Material().setUSE("text_color")))
+                  .setGeometry(new Text().setString(new MFString1535().getArray())
+                    .setFontStyle(new FontStyle().setFamily(new MFString1536().getArray()))))
+                .addChild(new Shape().setDEF("Roll_Back")
+                  .setAppearance(new Appearance()
+                    .setMaterial(new Material().setUSE("Clear")))
+                  .setGeometry(new IndexedFaceSet().setUSE("Backing"))))
+              .addChild(new Transform().setDEF("Walk_Text").setTranslation(new double[] {0,-6.6,0})
+                .addChild(new TouchSensor().setDEF("Walk_Touch"))
+                .addChild(new Shape().setDEF("WalkText")
+                  .setAppearance(new Appearance()
+                    .setMaterial(new Material().setUSE("text_color")))
+                  .setGeometry(new Text().setString(new MFString1537().getArray())
+                    .setFontStyle(new FontStyle().setFamily(new MFString1538().getArray()))))
+                .addChild(new Shape().setDEF("Walk_Back")
+                  .setAppearance(new Appearance()
+                    .setMaterial(new Material().setUSE("Clear")))
+                  .setGeometry(new IndexedFaceSet().setUSE("Backing"))))
+              .addChild(new Transform().setDEF("Run_Text").setTranslation(new double[] {0,-8,0})
+                .addChild(new TouchSensor().setDEF("Run_Touch"))
+                .addChild(new Shape().setDEF("RunText")
+                  .setAppearance(new Appearance()
+                    .setMaterial(new Material().setUSE("text_color")))
+                  .setGeometry(new Text().setString(new MFString1539().getArray())
+                    .setFontStyle(new FontStyle().setFamily(new MFString1540().getArray()))))
+                .addChild(new Shape().setDEF("Run_Back")
+                  .setAppearance(new Appearance()
+                    .setMaterial(new Material().setUSE("Clear")))
+                  .setGeometry(new IndexedFaceSet().setUSE("Backing"))))
+              .addChild(new Transform().setDEF("Jump_Text").setTranslation(new double[] {0,-9.4,0})
+                .addChild(new TouchSensor().setDEF("Jump_Touch"))
+                .addChild(new Shape().setDEF("JumpText")
+                  .setAppearance(new Appearance()
+                    .setMaterial(new Material().setUSE("text_color")))
+                  .setGeometry(new Text().setString(new MFString1541().getArray())
+                    .setFontStyle(new FontStyle().setFamily(new MFString1542().getArray()))))
+                .addChild(new Shape().setDEF("Jump_Back")
+                  .setAppearance(new Appearance()
+                    .setMaterial(new Material().setUSE("Clear")))
+                  .setGeometry(new IndexedFaceSet().setUSE("Backing"))))
+              .addChild(new Transform().setDEF("Kick_Text").setTranslation(new double[] {0,-10.8,0})
+                .addChild(new TouchSensor().setDEF("Kick_Touch"))
+                .addChild(new Shape().setDEF("KickText")
+                  .setAppearance(new Appearance()
+                    .setMaterial(new Material().setUSE("text_color")))
+                  .setGeometry(new Text().setString(new MFString1543().getArray())
+                    .setFontStyle(new FontStyle().setFamily(new MFString1544().getArray()))))
+                .addChild(new Shape().setDEF("Kick_Back")
+                  .setAppearance(new Appearance()
+                    .setMaterial(new Material().setUSE("Clear")))
+                  .setGeometry(new IndexedFaceSet().setUSE("Backing"))))
+              .addChild(new Transform().setDEF("Stop_Text").setTranslation(new double[] {0,0.4,0})
+                .addChild(new TouchSensor().setDEF("Stop_Touch"))
+                .addChild(new Shape().setDEF("StopText")
+                  .setAppearance(new Appearance()
+                    .setMaterial(new Material().setUSE("text_color")))
+                  .setGeometry(new Text().setString(new MFString1545().getArray())
+                    .setFontStyle(new FontStyle().setFamily(new MFString1546().getArray()))))
+                .addChild(new Shape().setDEF("Stop_Back")
+                  .setAppearance(new Appearance()
+                    .setMaterial(new Material().setUSE("Clear")))
+                  .setGeometry(new IndexedFaceSet().setUSE("Backing"))))
+              .addChild(new Transform().setDEF("SceneLabel").setTranslation(new double[] {1.3,3,0})
+                .addChild(new Shape().setDEF("SceneLabelText")
+                  .setAppearance(new Appearance()
+                    .setMaterial(new Material().setUSE("text_color")))
+                  .setGeometry(new Text().setString(new MFString1547().getArray())
+                    .setFontStyle(new FontStyle().setFamily(new MFString1548().getArray()).setJustify(new MFString1549().getArray()))))))))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_humanoid_root_TranslationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_humanoid_root_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_sacroiliac_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_l_hip_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_l_knee_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_l_ankle_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_l_subtalar_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_l_midtarsal_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_l_metatarsal_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_r_hip_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_r_knee_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_r_ankle_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_r_subtalar_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_r_midtarsal_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_r_metatarsal_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_vl5_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_vl4_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_vl3_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_vl2_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_vl1_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_vt12_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_vt11_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_vt10_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_vt9_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_vt8_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_vt7_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_vt6_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_vt5_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_vt4_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_vt3_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_vt2_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_vt1_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_vc7_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_vc6_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_vc5_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_vc4_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_vc3_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_vc2_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_vc1_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_skullbase_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_l_eyeball_joint_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_r_eyeball_joint_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_l_sternoclavicular_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_l_acromioclavicular_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_l_shoulder_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_l_elbow_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_l_wrist_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_l_thumb1_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_l_thumb2_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_l_thumb3_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_l_index0_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_l_index1_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_l_index2_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_l_index3_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_l_middle0_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_l_middle1_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_l_middle2_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_l_middle3_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_l_ring0_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_l_ring1_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_l_ring2_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_l_ring3_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_l_pinky0_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_l_pinky1_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_l_pinky2_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_l_pinky3_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_r_sternoclavicular_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_r_acromioclavicular_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_r_shoulder_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_r_elbow_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_r_wrist_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_r_thumb1_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_r_thumb2_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_r_thumb3_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_r_index0_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_r_index1_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_r_index2_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_r_index3_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_r_middle0_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_r_middle1_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_r_middle2_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_r_middle3_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_r_ring0_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_r_ring1_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_r_ring2_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_r_ring3_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_r_pinky0_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_r_pinky1_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_r_pinky2_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_r_pinky3_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Stop_humanoid_root_TranslationInterpolator").setToField("set_translation").setToNode("hanim_humanoid_root"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Stop_humanoid_root_RotationInterpolator").setToField("set_rotation").setToNode("hanim_humanoid_root"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Stop_l_hip_RotationInterpolator").setToField("set_rotation").setToNode("hanim_l_hip"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Stop_l_knee_RotationInterpolator").setToField("set_rotation").setToNode("hanim_l_knee"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Stop_l_ankle_RotationInterpolator").setToField("set_rotation").setToNode("hanim_l_ankle"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Stop_l_midtarsal_RotationInterpolator").setToField("set_rotation").setToNode("hanim_l_midtarsal"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Stop_r_hip_RotationInterpolator").setToField("set_rotation").setToNode("hanim_r_hip"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Stop_r_knee_RotationInterpolator").setToField("set_rotation").setToNode("hanim_r_knee"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Stop_r_ankle_RotationInterpolator").setToField("set_rotation").setToNode("hanim_r_ankle"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Stop_r_midtarsal_RotationInterpolator").setToField("set_rotation").setToNode("hanim_r_midtarsal"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Stop_vl5_RotationInterpolator").setToField("set_rotation").setToNode("hanim_vl5"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Stop_skullbase_RotationInterpolator").setToField("set_rotation").setToNode("hanim_skullbase"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Stop_l_shoulder_RotationInterpolator").setToField("set_rotation").setToNode("hanim_l_shoulder"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Stop_l_elbow_RotationInterpolator").setToField("set_rotation").setToNode("hanim_l_elbow"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Stop_l_wrist_RotationInterpolator").setToField("set_rotation").setToNode("hanim_l_wrist"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Stop_r_shoulder_RotationInterpolator").setToField("set_rotation").setToNode("hanim_r_shoulder"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Stop_r_elbow_RotationInterpolator").setToField("set_rotation").setToNode("hanim_r_elbow"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Stop_r_wrist_RotationInterpolator").setToField("set_rotation").setToNode("hanim_r_wrist"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StandTimer").setToField("set_fraction").setToNode("Stand_r_ankle_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StandTimer").setToField("set_fraction").setToNode("Stand_r_knee_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StandTimer").setToField("set_fraction").setToNode("Stand_r_hip_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StandTimer").setToField("set_fraction").setToNode("Stand_l_ankle_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StandTimer").setToField("set_fraction").setToNode("Stand_l_knee_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StandTimer").setToField("set_fraction").setToNode("Stand_l_hip_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StandTimer").setToField("set_fraction").setToNode("Stand_lower_body_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StandTimer").setToField("set_fraction").setToNode("Stand_r_wrist_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StandTimer").setToField("set_fraction").setToNode("Stand_r_elbow_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StandTimer").setToField("set_fraction").setToNode("Stand_r_shoulder_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StandTimer").setToField("set_fraction").setToNode("Stand_l_wrist_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StandTimer").setToField("set_fraction").setToNode("Stand_l_elbow_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StandTimer").setToField("set_fraction").setToNode("Stand_l_shoulder_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StandTimer").setToField("set_fraction").setToNode("Stand_head_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StandTimer").setToField("set_fraction").setToNode("Stand_neck_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StandTimer").setToField("set_fraction").setToNode("Stand_l_eyeball_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StandTimer").setToField("set_fraction").setToNode("Stand_r_eyeball_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StandTimer").setToField("set_fraction").setToNode("Stand_upper_body_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StandTimer").setToField("set_fraction").setToNode("Stand_whole_body_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StandTimer").setToField("set_fraction").setToNode("Stand_whole_body_TranslationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StandTimer").setToField("set_fraction").setToNode("Stand_l_sternoclavicular_RollInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StandTimer").setToField("set_fraction").setToNode("Stand_l_acromioclavicular_RollInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StandTimer").setToField("set_fraction").setToNode("Stand_r_sternoclavicular_RollInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StandTimer").setToField("set_fraction").setToNode("Stand_r_acromioclavicular_RollInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StandTimer").setToField("set_fraction").setToNode("Stand_r_metatarsal_PitchInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StandTimer").setToField("set_fraction").setToNode("Stand_sacroiliac_YawInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StandTimer").setToField("set_fraction").setToNode("Stand_vl5_YawInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StandTimer").setToField("set_fraction").setToNode("Stand_vc6_YawInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StandTimer").setToField("set_fraction").setToNode("Stand_l_thumb1_PitchInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StandTimer").setToField("set_fraction").setToNode("Stand_r_thumb1_PitchInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StandTimer").setToField("set_fraction").setToNode("Stand_r_index1_RollInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StandTimer").setToField("set_fraction").setToNode("Stand_r_index2_RollInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StandTimer").setToField("set_fraction").setToNode("Stand_r_index3_RollInterpolator"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Stand_r_ankle_RotationInterpolator").setToField("set_rotation").setToNode("hanim_r_ankle"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Stand_r_knee_RotationInterpolator").setToField("set_rotation").setToNode("hanim_r_knee"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Stand_r_hip_RotationInterpolator").setToField("set_rotation").setToNode("hanim_r_hip"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Stand_l_ankle_RotationInterpolator").setToField("set_rotation").setToNode("hanim_l_ankle"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Stand_l_knee_RotationInterpolator").setToField("set_rotation").setToNode("hanim_l_knee"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Stand_l_hip_RotationInterpolator").setToField("set_rotation").setToNode("hanim_l_hip"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Stand_r_wrist_RotationInterpolator").setToField("set_rotation").setToNode("hanim_r_wrist"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Stand_r_elbow_RotationInterpolator").setToField("set_rotation").setToNode("hanim_r_elbow"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Stand_r_shoulder_RotationInterpolator").setToField("set_rotation").setToNode("hanim_r_shoulder"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Stand_l_wrist_RotationInterpolator").setToField("set_rotation").setToNode("hanim_l_wrist"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Stand_l_elbow_RotationInterpolator").setToField("set_rotation").setToNode("hanim_l_elbow"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Stand_l_shoulder_RotationInterpolator").setToField("set_rotation").setToNode("hanim_l_shoulder"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Stand_head_RotationInterpolator").setToField("set_rotation").setToNode("hanim_skullbase"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Stand_whole_body_RotationInterpolator").setToField("set_rotation").setToNode("hanim_humanoid_root"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Stand_whole_body_TranslationInterpolator").setToField("set_translation").setToNode("hanim_humanoid_root"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Stand_vl5_YawInterpolator").setToField("set_rotation").setToNode("hanim_vl5"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("PitchTimer").setToField("set_fraction").setToNode("Pitches_r_ankle_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("PitchTimer").setToField("set_fraction").setToNode("Pitches_r_knee_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("PitchTimer").setToField("set_fraction").setToNode("Pitches_r_hip_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("PitchTimer").setToField("set_fraction").setToNode("Pitches_l_ankle_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("PitchTimer").setToField("set_fraction").setToNode("Pitches_l_knee_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("PitchTimer").setToField("set_fraction").setToNode("Pitches_l_hip_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("PitchTimer").setToField("set_fraction").setToNode("Pitches_lower_body_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("PitchTimer").setToField("set_fraction").setToNode("Pitches_r_wrist_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("PitchTimer").setToField("set_fraction").setToNode("Pitches_r_elbow_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("PitchTimer").setToField("set_fraction").setToNode("Pitches_r_shoulder_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("PitchTimer").setToField("set_fraction").setToNode("Pitches_l_wrist_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("PitchTimer").setToField("set_fraction").setToNode("Pitches_l_elbow_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("PitchTimer").setToField("set_fraction").setToNode("Pitches_l_shoulder_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("PitchTimer").setToField("set_fraction").setToNode("Pitches_head_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("PitchTimer").setToField("set_fraction").setToNode("Pitches_neck_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("PitchTimer").setToField("set_fraction").setToNode("Pitches_upper_body_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("PitchTimer").setToField("set_fraction").setToNode("Pitches_whole_body_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("PitchTimer").setToField("set_fraction").setToNode("Pitches_whole_body_TranslationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("PitchTimer").setToField("set_fraction").setToNode("Pitch_l_sternoclavicular_RollInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("PitchTimer").setToField("set_fraction").setToNode("Pitch_l_acromioclavicular_RollInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("PitchTimer").setToField("set_fraction").setToNode("Pitch_r_sternoclavicular_RollInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("PitchTimer").setToField("set_fraction").setToNode("Pitch_r_acromioclavicular_RollInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("PitchTimer").setToField("set_fraction").setToNode("Pitch_r_metatarsal_PitchInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("PitchTimer").setToField("set_fraction").setToNode("Pitch_sacroiliac_YawInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("PitchTimer").setToField("set_fraction").setToNode("Pitch_vl5_YawInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("PitchTimer").setToField("set_fraction").setToNode("Pitch_vc6_YawInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("PitchTimer").setToField("set_fraction").setToNode("Pitch_l_thumb1_PitchInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("PitchTimer").setToField("set_fraction").setToNode("Pitch_r_thumb1_PitchInterpolator"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Pitches_r_ankle_RotationInterpolator").setToField("set_rotation").setToNode("hanim_r_ankle"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Pitches_r_knee_RotationInterpolator").setToField("set_rotation").setToNode("hanim_r_knee"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Pitches_r_hip_RotationInterpolator").setToField("set_rotation").setToNode("hanim_r_hip"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Pitches_l_ankle_RotationInterpolator").setToField("set_rotation").setToNode("hanim_l_ankle"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Pitches_l_knee_RotationInterpolator").setToField("set_rotation").setToNode("hanim_l_knee"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Pitches_l_hip_RotationInterpolator").setToField("set_rotation").setToNode("hanim_l_hip"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Pitches_r_wrist_RotationInterpolator").setToField("set_rotation").setToNode("hanim_r_wrist"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Pitches_r_elbow_RotationInterpolator").setToField("set_rotation").setToNode("hanim_r_elbow"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Pitches_r_shoulder_RotationInterpolator").setToField("set_rotation").setToNode("hanim_r_shoulder"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Pitches_l_wrist_RotationInterpolator").setToField("set_rotation").setToNode("hanim_l_wrist"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Pitches_l_elbow_RotationInterpolator").setToField("set_rotation").setToNode("hanim_l_elbow"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Pitches_l_shoulder_RotationInterpolator").setToField("set_rotation").setToNode("hanim_l_shoulder"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Pitches_head_RotationInterpolator").setToField("set_rotation").setToNode("hanim_skullbase"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Pitches_whole_body_RotationInterpolator").setToField("set_rotation").setToNode("hanim_humanoid_root"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Pitches_whole_body_TranslationInterpolator").setToField("set_translation").setToNode("hanim_humanoid_root"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Pitch_vl5_YawInterpolator").setToField("set_rotation").setToNode("hanim_vl5"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("YawTimer").setToField("set_fraction").setToNode("Yaws_r_ankle_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("YawTimer").setToField("set_fraction").setToNode("Yaws_r_knee_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("YawTimer").setToField("set_fraction").setToNode("Yaws_r_hip_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("YawTimer").setToField("set_fraction").setToNode("Yaws_l_ankle_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("YawTimer").setToField("set_fraction").setToNode("Yaws_l_knee_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("YawTimer").setToField("set_fraction").setToNode("Yaws_l_hip_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("YawTimer").setToField("set_fraction").setToNode("Yaws_lower_body_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("YawTimer").setToField("set_fraction").setToNode("Yaws_r_wrist_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("YawTimer").setToField("set_fraction").setToNode("Yaws_r_elbow_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("YawTimer").setToField("set_fraction").setToNode("Yaws_r_shoulder_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("YawTimer").setToField("set_fraction").setToNode("Yaws_l_wrist_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("YawTimer").setToField("set_fraction").setToNode("Yaws_l_elbow_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("YawTimer").setToField("set_fraction").setToNode("Yaws_l_shoulder_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("YawTimer").setToField("set_fraction").setToNode("Yaws_head_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("YawTimer").setToField("set_fraction").setToNode("Yaws_neck_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("YawTimer").setToField("set_fraction").setToNode("Yaws_upper_body_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("YawTimer").setToField("set_fraction").setToNode("Yaws_whole_body_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("YawTimer").setToField("set_fraction").setToNode("Yaws_whole_body_TranslationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("YawTimer").setToField("set_fraction").setToNode("Yaw_l_sternoclavicular_RollInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("YawTimer").setToField("set_fraction").setToNode("Yaw_l_acromioclavicular_RollInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("YawTimer").setToField("set_fraction").setToNode("Yaw_r_sternoclavicular_RollInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("YawTimer").setToField("set_fraction").setToNode("Yaw_r_acromioclavicular_RollInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("YawTimer").setToField("set_fraction").setToNode("Yaw_r_metatarsal_PitchInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("YawTimer").setToField("set_fraction").setToNode("Yaw_sacroiliac_YawInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("YawTimer").setToField("set_fraction").setToNode("Yaw_vl5_YawInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("YawTimer").setToField("set_fraction").setToNode("Yaw_vc6_YawInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("YawTimer").setToField("set_fraction").setToNode("Yaw_l_thumb1_PitchInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("YawTimer").setToField("set_fraction").setToNode("Yaw_r_thumb1_PitchInterpolator"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Yaws_r_ankle_RotationInterpolator").setToField("set_rotation").setToNode("hanim_r_ankle"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Yaws_r_knee_RotationInterpolator").setToField("set_rotation").setToNode("hanim_r_knee"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Yaws_r_hip_RotationInterpolator").setToField("set_rotation").setToNode("hanim_r_hip"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Yaws_l_ankle_RotationInterpolator").setToField("set_rotation").setToNode("hanim_l_ankle"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Yaws_l_knee_RotationInterpolator").setToField("set_rotation").setToNode("hanim_l_knee"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Yaws_l_hip_RotationInterpolator").setToField("set_rotation").setToNode("hanim_l_hip"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Yaws_r_wrist_RotationInterpolator").setToField("set_rotation").setToNode("hanim_r_wrist"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Yaws_r_elbow_RotationInterpolator").setToField("set_rotation").setToNode("hanim_r_elbow"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Yaws_r_shoulder_RotationInterpolator").setToField("set_rotation").setToNode("hanim_r_shoulder"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Yaws_l_wrist_RotationInterpolator").setToField("set_rotation").setToNode("hanim_l_wrist"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Yaws_l_elbow_RotationInterpolator").setToField("set_rotation").setToNode("hanim_l_elbow"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Yaws_l_shoulder_RotationInterpolator").setToField("set_rotation").setToNode("hanim_l_shoulder"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Yaws_head_RotationInterpolator").setToField("set_rotation").setToNode("hanim_skullbase"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Yaws_whole_body_RotationInterpolator").setToField("set_rotation").setToNode("hanim_humanoid_root"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Yaws_whole_body_TranslationInterpolator").setToField("set_translation").setToNode("hanim_humanoid_root"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Yaw_vl5_YawInterpolator").setToField("set_rotation").setToNode("hanim_vl5"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("RollTimer").setToField("set_fraction").setToNode("Rolls_r_ankle_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("RollTimer").setToField("set_fraction").setToNode("Rolls_r_knee_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("RollTimer").setToField("set_fraction").setToNode("Rolls_r_hip_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("RollTimer").setToField("set_fraction").setToNode("Rolls_l_ankle_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("RollTimer").setToField("set_fraction").setToNode("Rolls_l_knee_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("RollTimer").setToField("set_fraction").setToNode("Rolls_l_hip_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("RollTimer").setToField("set_fraction").setToNode("Rolls_lower_body_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("RollTimer").setToField("set_fraction").setToNode("Rolls_r_wrist_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("RollTimer").setToField("set_fraction").setToNode("Rolls_r_elbow_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("RollTimer").setToField("set_fraction").setToNode("Rolls_r_shoulder_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("RollTimer").setToField("set_fraction").setToNode("Rolls_l_wrist_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("RollTimer").setToField("set_fraction").setToNode("Rolls_l_elbow_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("RollTimer").setToField("set_fraction").setToNode("Rolls_l_shoulder_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("RollTimer").setToField("set_fraction").setToNode("Rolls_head_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("RollTimer").setToField("set_fraction").setToNode("Rolls_neck_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("RollTimer").setToField("set_fraction").setToNode("Rolls_upper_body_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("RollTimer").setToField("set_fraction").setToNode("Rolls_whole_body_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("RollTimer").setToField("set_fraction").setToNode("Rolls_whole_body_TranslationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("RollTimer").setToField("set_fraction").setToNode("Roll_l_sternoclavicular_RollInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("RollTimer").setToField("set_fraction").setToNode("Roll_l_acromioclavicular_RollInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("RollTimer").setToField("set_fraction").setToNode("Roll_r_sternoclavicular_RollInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("RollTimer").setToField("set_fraction").setToNode("Roll_r_acromioclavicular_RollInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("RollTimer").setToField("set_fraction").setToNode("Roll_r_metatarsal_PitchInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("RollTimer").setToField("set_fraction").setToNode("Roll_sacroiliac_YawInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("RollTimer").setToField("set_fraction").setToNode("Roll_vl5_YawInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("RollTimer").setToField("set_fraction").setToNode("Roll_vc6_YawInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("RollTimer").setToField("set_fraction").setToNode("Roll_l_thumb1_PitchInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("RollTimer").setToField("set_fraction").setToNode("Roll_r_thumb1_PitchInterpolator"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Rolls_r_ankle_RotationInterpolator").setToField("set_rotation").setToNode("hanim_r_ankle"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Rolls_r_knee_RotationInterpolator").setToField("set_rotation").setToNode("hanim_r_knee"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Rolls_r_hip_RotationInterpolator").setToField("set_rotation").setToNode("hanim_r_hip"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Rolls_l_ankle_RotationInterpolator").setToField("set_rotation").setToNode("hanim_l_ankle"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Rolls_l_knee_RotationInterpolator").setToField("set_rotation").setToNode("hanim_l_knee"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Rolls_l_hip_RotationInterpolator").setToField("set_rotation").setToNode("hanim_l_hip"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Rolls_r_wrist_RotationInterpolator").setToField("set_rotation").setToNode("hanim_r_wrist"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Rolls_r_elbow_RotationInterpolator").setToField("set_rotation").setToNode("hanim_r_elbow"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Rolls_r_shoulder_RotationInterpolator").setToField("set_rotation").setToNode("hanim_r_shoulder"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Rolls_l_wrist_RotationInterpolator").setToField("set_rotation").setToNode("hanim_l_wrist"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Rolls_l_elbow_RotationInterpolator").setToField("set_rotation").setToNode("hanim_l_elbow"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Rolls_l_shoulder_RotationInterpolator").setToField("set_rotation").setToNode("hanim_l_shoulder"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Rolls_head_RotationInterpolator").setToField("set_rotation").setToNode("hanim_skullbase"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Rolls_whole_body_RotationInterpolator").setToField("set_rotation").setToNode("hanim_humanoid_root"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Rolls_whole_body_TranslationInterpolator").setToField("set_translation").setToNode("hanim_humanoid_root"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Roll_vl5_YawInterpolator").setToField("set_rotation").setToNode("hanim_vl5"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("WalkTimer").setToField("set_fraction").setToNode("Walk_r_ankle_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("WalkTimer").setToField("set_fraction").setToNode("Walk_r_knee_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("WalkTimer").setToField("set_fraction").setToNode("Walk_r_hip_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("WalkTimer").setToField("set_fraction").setToNode("Walk_l_ankle_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("WalkTimer").setToField("set_fraction").setToNode("Walk_l_knee_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("WalkTimer").setToField("set_fraction").setToNode("Walk_l_hip_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("WalkTimer").setToField("set_fraction").setToNode("Walk_lower_body_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("WalkTimer").setToField("set_fraction").setToNode("Walk_r_wrist_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("WalkTimer").setToField("set_fraction").setToNode("Walk_r_elbow_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("WalkTimer").setToField("set_fraction").setToNode("Walk_r_shoulder_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("WalkTimer").setToField("set_fraction").setToNode("Walk_l_wrist_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("WalkTimer").setToField("set_fraction").setToNode("Walk_l_elbow_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("WalkTimer").setToField("set_fraction").setToNode("Walk_l_shoulder_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("WalkTimer").setToField("set_fraction").setToNode("Walk_head_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("WalkTimer").setToField("set_fraction").setToNode("Walk_neck_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("WalkTimer").setToField("set_fraction").setToNode("Walk_upper_body_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("WalkTimer").setToField("set_fraction").setToNode("Walk_whole_body_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("WalkTimer").setToField("set_fraction").setToNode("Walk_whole_body_TranslationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("WalkTimer").setToField("set_fraction").setToNode("Walk_l_sternoclavicular_RollInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("WalkTimer").setToField("set_fraction").setToNode("Walk_l_acromioclavicular_RollInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("WalkTimer").setToField("set_fraction").setToNode("Walk_r_sternoclavicular_RollInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("WalkTimer").setToField("set_fraction").setToNode("Walk_r_acromioclavicular_RollInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("WalkTimer").setToField("set_fraction").setToNode("Walk_r_metatarsal_PitchInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("WalkTimer").setToField("set_fraction").setToNode("Walk_sacroiliac_YawInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("WalkTimer").setToField("set_fraction").setToNode("Walk_vl5_YawInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("WalkTimer").setToField("set_fraction").setToNode("Walk_vc6_YawInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("WalkTimer").setToField("set_fraction").setToNode("Walk_l_thumb1_PitchInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("WalkTimer").setToField("set_fraction").setToNode("Walk_r_thumb1_PitchInterpolator"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Walk_r_ankle_RotationInterpolator").setToField("set_rotation").setToNode("hanim_r_ankle"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Walk_r_knee_RotationInterpolator").setToField("set_rotation").setToNode("hanim_r_knee"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Walk_r_hip_RotationInterpolator").setToField("set_rotation").setToNode("hanim_r_hip"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Walk_l_ankle_RotationInterpolator").setToField("set_rotation").setToNode("hanim_l_ankle"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Walk_l_knee_RotationInterpolator").setToField("set_rotation").setToNode("hanim_l_knee"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Walk_l_hip_RotationInterpolator").setToField("set_rotation").setToNode("hanim_l_hip"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Walk_r_wrist_RotationInterpolator").setToField("set_rotation").setToNode("hanim_r_wrist"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Walk_r_elbow_RotationInterpolator").setToField("set_rotation").setToNode("hanim_r_elbow"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Walk_r_shoulder_RotationInterpolator").setToField("set_rotation").setToNode("hanim_r_shoulder"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Walk_l_wrist_RotationInterpolator").setToField("set_rotation").setToNode("hanim_l_wrist"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Walk_l_elbow_RotationInterpolator").setToField("set_rotation").setToNode("hanim_l_elbow"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Walk_l_shoulder_RotationInterpolator").setToField("set_rotation").setToNode("hanim_l_shoulder"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Walk_head_RotationInterpolator").setToField("set_rotation").setToNode("hanim_skullbase"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Walk_whole_body_RotationInterpolator").setToField("set_rotation").setToNode("hanim_humanoid_root"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Walk_whole_body_TranslationInterpolator").setToField("set_translation").setToNode("hanim_humanoid_root"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Walk_vl5_YawInterpolator").setToField("set_rotation").setToNode("hanim_vl5"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("RunTimer").setToField("set_fraction").setToNode("Run_r_ankle_RotationInterpolator_Run"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("RunTimer").setToField("set_fraction").setToNode("Run_r_knee_RotationInterpolator_Run"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("RunTimer").setToField("set_fraction").setToNode("Run_r_hip_RotationInterpolator_Run"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("RunTimer").setToField("set_fraction").setToNode("Run_l_ankle_RotationInterpolator_Run"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("RunTimer").setToField("set_fraction").setToNode("Run_l_knee_RotationInterpolator_Run"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("RunTimer").setToField("set_fraction").setToNode("Run_l_hip_RotationInterpolator_Run"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("RunTimer").setToField("set_fraction").setToNode("Run_lower_body_RotationInterpolator_Run"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("RunTimer").setToField("set_fraction").setToNode("Run_r_wrist_RotationInterpolator_Run"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("RunTimer").setToField("set_fraction").setToNode("Run_r_elbow_RotationInterpolator_Run"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("RunTimer").setToField("set_fraction").setToNode("Run_r_shoulder_RotationInterpolator_Run"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("RunTimer").setToField("set_fraction").setToNode("Run_l_wrist_RotationInterpolator_Run"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("RunTimer").setToField("set_fraction").setToNode("Run_l_elbow_RotationInterpolator_Run"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("RunTimer").setToField("set_fraction").setToNode("Run_l_shoulder_RotationInterpolator_Run"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("RunTimer").setToField("set_fraction").setToNode("Run_head_RotationInterpolator_Run"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("RunTimer").setToField("set_fraction").setToNode("Run_neck_RotationInterpolator_Run"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("RunTimer").setToField("set_fraction").setToNode("Run_upper_body_RotationInterpolator_Run"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("RunTimer").setToField("set_fraction").setToNode("Run_whole_body_RotationInterpolator_Run"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("RunTimer").setToField("set_fraction").setToNode("Run_whole_body_TranslationInterpolator_Run"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("RunTimer").setToField("set_fraction").setToNode("Run_l_sternoclavicular_RollInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("RunTimer").setToField("set_fraction").setToNode("Run_l_acromioclavicular_RollInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("RunTimer").setToField("set_fraction").setToNode("Run_r_sternoclavicular_RollInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("RunTimer").setToField("set_fraction").setToNode("Run_r_acromioclavicular_RollInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("RunTimer").setToField("set_fraction").setToNode("Run_r_metatarsal_PitchInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("RunTimer").setToField("set_fraction").setToNode("Run_sacroiliac_YawInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("RunTimer").setToField("set_fraction").setToNode("Run_vl5_YawInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("RunTimer").setToField("set_fraction").setToNode("Run_vc6_YawInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("RunTimer").setToField("set_fraction").setToNode("Run_l_thumb1_PitchInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("RunTimer").setToField("set_fraction").setToNode("Run_r_thumb1_PitchInterpolator"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Run_r_ankle_RotationInterpolator_Run").setToField("set_rotation").setToNode("hanim_r_ankle"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Run_r_knee_RotationInterpolator_Run").setToField("set_rotation").setToNode("hanim_r_knee"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Run_r_hip_RotationInterpolator_Run").setToField("set_rotation").setToNode("hanim_r_hip"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Run_l_ankle_RotationInterpolator_Run").setToField("set_rotation").setToNode("hanim_l_ankle"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Run_l_knee_RotationInterpolator_Run").setToField("set_rotation").setToNode("hanim_l_knee"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Run_l_hip_RotationInterpolator_Run").setToField("set_rotation").setToNode("hanim_l_hip"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Run_r_wrist_RotationInterpolator_Run").setToField("set_rotation").setToNode("hanim_r_wrist"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Run_r_elbow_RotationInterpolator_Run").setToField("set_rotation").setToNode("hanim_r_elbow"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Run_r_shoulder_RotationInterpolator_Run").setToField("set_rotation").setToNode("hanim_r_shoulder"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Run_l_wrist_RotationInterpolator_Run").setToField("set_rotation").setToNode("hanim_l_wrist"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Run_l_elbow_RotationInterpolator_Run").setToField("set_rotation").setToNode("hanim_l_elbow"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Run_l_shoulder_RotationInterpolator_Run").setToField("set_rotation").setToNode("hanim_l_shoulder"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Run_head_RotationInterpolator_Run").setToField("set_rotation").setToNode("hanim_skullbase"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Run_whole_body_RotationInterpolator_Run").setToField("set_rotation").setToNode("hanim_humanoid_root"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Run_whole_body_TranslationInterpolator_Run").setToField("set_translation").setToNode("hanim_humanoid_root"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Run_vl5_YawInterpolator").setToField("set_rotation").setToNode("hanim_vl5"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("JumpTimer").setToField("set_fraction").setToNode("Jump_r_ankle_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("JumpTimer").setToField("set_fraction").setToNode("Jump_r_knee_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("JumpTimer").setToField("set_fraction").setToNode("Jump_r_hip_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("JumpTimer").setToField("set_fraction").setToNode("Jump_l_ankle_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("JumpTimer").setToField("set_fraction").setToNode("Jump_l_knee_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("JumpTimer").setToField("set_fraction").setToNode("Jump_l_hip_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("JumpTimer").setToField("set_fraction").setToNode("Jump_lower_body_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("JumpTimer").setToField("set_fraction").setToNode("Jump_r_wrist_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("JumpTimer").setToField("set_fraction").setToNode("Jump_r_elbow_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("JumpTimer").setToField("set_fraction").setToNode("Jump_r_shoulder_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("JumpTimer").setToField("set_fraction").setToNode("Jump_l_wrist_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("JumpTimer").setToField("set_fraction").setToNode("Jump_l_elbow_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("JumpTimer").setToField("set_fraction").setToNode("Jump_l_shoulder_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("JumpTimer").setToField("set_fraction").setToNode("Jump_head_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("JumpTimer").setToField("set_fraction").setToNode("Jump_neck_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("JumpTimer").setToField("set_fraction").setToNode("Jump_upper_body_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("JumpTimer").setToField("set_fraction").setToNode("Jump_whole_body_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("JumpTimer").setToField("set_fraction").setToNode("Jump_whole_body_TranslationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("JumpTimer").setToField("set_fraction").setToNode("Jump_l_sternoclavicular_RollInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("JumpTimer").setToField("set_fraction").setToNode("Jump_l_acromioclavicular_RollInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("JumpTimer").setToField("set_fraction").setToNode("Jump_r_sternoclavicular_RollInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("JumpTimer").setToField("set_fraction").setToNode("Jump_r_acromioclavicular_RollInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("JumpTimer").setToField("set_fraction").setToNode("Jump_r_metatarsal_PitchInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("JumpTimer").setToField("set_fraction").setToNode("Jump_sacroiliac_YawInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("JumpTimer").setToField("set_fraction").setToNode("Jump_vl5_YawInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("JumpTimer").setToField("set_fraction").setToNode("Jump_vc6_YawInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("JumpTimer").setToField("set_fraction").setToNode("Jump_l_thumb1_PitchInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("JumpTimer").setToField("set_fraction").setToNode("Jump_r_thumb1_PitchInterpolator"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Jump_r_ankle_RotationInterpolator").setToField("set_rotation").setToNode("hanim_r_ankle"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Jump_r_knee_RotationInterpolator").setToField("set_rotation").setToNode("hanim_r_knee"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Jump_r_hip_RotationInterpolator").setToField("set_rotation").setToNode("hanim_r_hip"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Jump_l_ankle_RotationInterpolator").setToField("set_rotation").setToNode("hanim_l_ankle"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Jump_l_knee_RotationInterpolator").setToField("set_rotation").setToNode("hanim_l_knee"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Jump_l_hip_RotationInterpolator").setToField("set_rotation").setToNode("hanim_l_hip"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Jump_r_wrist_RotationInterpolator").setToField("set_rotation").setToNode("hanim_r_wrist"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Jump_r_elbow_RotationInterpolator").setToField("set_rotation").setToNode("hanim_r_elbow"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Jump_r_shoulder_RotationInterpolator").setToField("set_rotation").setToNode("hanim_r_shoulder"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Jump_l_wrist_RotationInterpolator").setToField("set_rotation").setToNode("hanim_l_wrist"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Jump_l_elbow_RotationInterpolator").setToField("set_rotation").setToNode("hanim_l_elbow"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Jump_l_shoulder_RotationInterpolator").setToField("set_rotation").setToNode("hanim_l_shoulder"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Jump_head_RotationInterpolator").setToField("set_rotation").setToNode("hanim_skullbase"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Jump_whole_body_RotationInterpolator").setToField("set_rotation").setToNode("hanim_humanoid_root"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Jump_whole_body_TranslationInterpolator").setToField("set_translation").setToNode("hanim_humanoid_root"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Jump_vl5_YawInterpolator").setToField("set_rotation").setToNode("hanim_vl5"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("KickTimer").setToField("set_fraction").setToNode("Kick_l_sternoclavicular_RollInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("KickTimer").setToField("set_fraction").setToNode("Kick_l_acromioclavicular_RollInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("KickTimer").setToField("set_fraction").setToNode("Kick_l_shoulder_RollInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("KickTimer").setToField("set_fraction").setToNode("Kick_l_ForeArm_PitchInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("KickTimer").setToField("set_fraction").setToNode("Kick_l_wrist_RollInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("KickTimer").setToField("set_fraction").setToNode("Kick_l_thumb1_PitchInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("KickTimer").setToField("set_fraction").setToNode("Kick_r_sternoclavicular_RollInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("KickTimer").setToField("set_fraction").setToNode("Kick_r_acromioclavicular_RollInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("KickTimer").setToField("set_fraction").setToNode("Kick_r_shoulder_RollInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("KickTimer").setToField("set_fraction").setToNode("Kick_r_ForeArm_PitchInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("KickTimer").setToField("set_fraction").setToNode("Kick_r_wrist_RollInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("KickTimer").setToField("set_fraction").setToNode("Kick_r_thumb1_PitchInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("KickTimer").setToField("set_fraction").setToNode("Kick_r_hip_PitchInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("KickTimer").setToField("set_fraction").setToNode("Kick_r_knee_PitchInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("KickTimer").setToField("set_fraction").setToNode("Kick_l_hip_PitchInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("KickTimer").setToField("set_fraction").setToNode("Kick_l_knee_PitchInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("KickTimer").setToField("set_fraction").setToNode("Kick_r_ankle_PitchInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("KickTimer").setToField("set_fraction").setToNode("Kick_r_metatarsal_PitchInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("KickTimer").setToField("set_fraction").setToNode("Kick_sacroiliac_YawInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("KickTimer").setToField("set_fraction").setToNode("Kick_vl5_YawInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("KickTimer").setToField("set_fraction").setToNode("Kick_vc6_YawInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("KickTimer").setToField("set_fraction").setToNode("Kick_lower_body_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("KickTimer").setToField("set_fraction").setToNode("Kick_upper_body_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("KickTimer").setToField("set_fraction").setToNode("Kick_whole_body_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("KickTimer").setToField("set_fraction").setToNode("Kick_whole_body_TranslationInterpolator"))
+        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("KickTimer").setToField("set_fraction").setToNode("Kick_neck_RotationInterpolator"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Kick_l_shoulder_RollInterpolator").setToField("set_rotation").setToNode("hanim_l_shoulder"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Kick_l_ForeArm_PitchInterpolator").setToField("set_rotation").setToNode("hanim_l_elbow"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Kick_l_wrist_RollInterpolator").setToField("set_rotation").setToNode("hanim_l_wrist"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Kick_r_shoulder_RollInterpolator").setToField("set_rotation").setToNode("hanim_r_shoulder"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Kick_r_ForeArm_PitchInterpolator").setToField("set_rotation").setToNode("hanim_r_elbow"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Kick_r_wrist_RollInterpolator").setToField("set_rotation").setToNode("hanim_r_wrist"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Kick_r_hip_PitchInterpolator").setToField("set_rotation").setToNode("hanim_r_hip"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Kick_r_knee_PitchInterpolator").setToField("set_rotation").setToNode("hanim_r_knee"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Kick_r_ankle_PitchInterpolator").setToField("set_rotation").setToNode("hanim_r_ankle"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Kick_l_hip_PitchInterpolator").setToField("set_rotation").setToNode("hanim_l_hip"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Kick_l_knee_PitchInterpolator").setToField("set_rotation").setToNode("hanim_l_knee"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Kick_r_ankle_PitchInterpolator").setToField("set_rotation").setToNode("hanim_l_ankle"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Kick_vl5_YawInterpolator").setToField("set_rotation").setToNode("hanim_vl5"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Kick_whole_body_RotationInterpolator").setToField("set_rotation").setToNode("hanim_humanoid_root"))
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Kick_whole_body_TranslationInterpolator").setToField("set_translation").setToNode("hanim_humanoid_root"))
+        .addChild(new ROUTE().setFromField("position_changed").setFromNode("HudProx").setToField("set_translation").setToNode("HudXform"))
+        .addChild(new ROUTE().setFromField("orientation_changed").setFromNode("HudProx").setToField("set_rotation").setToNode("HudXform"))
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Stand_Touch").setToField("set_stopTime").setToNode("PitchTimer"))
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Stand_Touch").setToField("set_stopTime").setToNode("YawTimer"))
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Stand_Touch").setToField("set_stopTime").setToNode("RollTimer"))
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Stand_Touch").setToField("set_stopTime").setToNode("WalkTimer"))
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Stand_Touch").setToField("set_stopTime").setToNode("RunTimer"))
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Stand_Touch").setToField("set_stopTime").setToNode("JumpTimer"))
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Stand_Touch").setToField("set_stopTime").setToNode("KickTimer"))
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Stand_Touch").setToField("set_stopTime").setToNode("StopTimer"))
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Stand_Touch").setToField("set_startTime").setToNode("StandTimer"))
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Pitch_Touch").setToField("set_stopTime").setToNode("StandTimer"))
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Pitch_Touch").setToField("set_stopTime").setToNode("YawTimer"))
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Pitch_Touch").setToField("set_stopTime").setToNode("RollTimer"))
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Pitch_Touch").setToField("set_stopTime").setToNode("WalkTimer"))
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Pitch_Touch").setToField("set_stopTime").setToNode("RunTimer"))
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Pitch_Touch").setToField("set_stopTime").setToNode("JumpTimer"))
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Pitch_Touch").setToField("set_stopTime").setToNode("KickTimer"))
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Pitch_Touch").setToField("set_stopTime").setToNode("StopTimer"))
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Pitch_Touch").setToField("set_startTime").setToNode("PitchTimer"))
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Yaw_Touch").setToField("set_stopTime").setToNode("StandTimer"))
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Yaw_Touch").setToField("set_stopTime").setToNode("PitchTimer"))
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Yaw_Touch").setToField("set_stopTime").setToNode("RollTimer"))
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Yaw_Touch").setToField("set_stopTime").setToNode("WalkTimer"))
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Yaw_Touch").setToField("set_stopTime").setToNode("RunTimer"))
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Yaw_Touch").setToField("set_stopTime").setToNode("JumpTimer"))
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Yaw_Touch").setToField("set_stopTime").setToNode("KickTimer"))
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Yaw_Touch").setToField("set_stopTime").setToNode("StopTimer"))
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Yaw_Touch").setToField("set_startTime").setToNode("YawTimer"))
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Walk_Touch").setToField("set_stopTime").setToNode("StandTimer"))
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Walk_Touch").setToField("set_stopTime").setToNode("PitchTimer"))
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Walk_Touch").setToField("set_stopTime").setToNode("YawTimer"))
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Walk_Touch").setToField("set_stopTime").setToNode("RollTimer"))
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Walk_Touch").setToField("set_stopTime").setToNode("RunTimer"))
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Walk_Touch").setToField("set_stopTime").setToNode("JumpTimer"))
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Walk_Touch").setToField("set_stopTime").setToNode("KickTimer"))
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Walk_Touch").setToField("set_stopTime").setToNode("StopTimer"))
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Walk_Touch").setToField("set_startTime").setToNode("WalkTimer"))
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Roll_Touch").setToField("set_stopTime").setToNode("StandTimer"))
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Roll_Touch").setToField("set_stopTime").setToNode("PitchTimer"))
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Roll_Touch").setToField("set_stopTime").setToNode("YawTimer"))
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Roll_Touch").setToField("set_stopTime").setToNode("WalkTimer"))
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Roll_Touch").setToField("set_stopTime").setToNode("RunTimer"))
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Roll_Touch").setToField("set_stopTime").setToNode("JumpTimer"))
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Roll_Touch").setToField("set_stopTime").setToNode("KickTimer"))
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Roll_Touch").setToField("set_stopTime").setToNode("StopTimer"))
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Roll_Touch").setToField("set_startTime").setToNode("RollTimer"))
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Run_Touch").setToField("set_stopTime").setToNode("StandTimer"))
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Run_Touch").setToField("set_stopTime").setToNode("PitchTimer"))
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Run_Touch").setToField("set_stopTime").setToNode("YawTimer"))
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Run_Touch").setToField("set_stopTime").setToNode("RollTimer"))
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Run_Touch").setToField("set_stopTime").setToNode("WalkTimer"))
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Run_Touch").setToField("set_stopTime").setToNode("JumpTimer"))
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Run_Touch").setToField("set_stopTime").setToNode("KickTimer"))
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Run_Touch").setToField("set_stopTime").setToNode("StopTimer"))
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Run_Touch").setToField("set_startTime").setToNode("RunTimer"))
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Jump_Touch").setToField("set_stopTime").setToNode("StandTimer"))
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Jump_Touch").setToField("set_stopTime").setToNode("PitchTimer"))
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Jump_Touch").setToField("set_stopTime").setToNode("YawTimer"))
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Jump_Touch").setToField("set_stopTime").setToNode("RollTimer"))
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Jump_Touch").setToField("set_stopTime").setToNode("WalkTimer"))
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Jump_Touch").setToField("set_stopTime").setToNode("RunTimer"))
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Jump_Touch").setToField("set_stopTime").setToNode("KickTimer"))
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Jump_Touch").setToField("set_stopTime").setToNode("StopTimer"))
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Jump_Touch").setToField("set_startTime").setToNode("JumpTimer"))
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Kick_Touch").setToField("set_stopTime").setToNode("StandTimer"))
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Kick_Touch").setToField("set_stopTime").setToNode("PitchTimer"))
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Kick_Touch").setToField("set_stopTime").setToNode("YawTimer"))
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Kick_Touch").setToField("set_stopTime").setToNode("RollTimer"))
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Kick_Touch").setToField("set_stopTime").setToNode("WalkTimer"))
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Kick_Touch").setToField("set_stopTime").setToNode("RunTimer"))
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Kick_Touch").setToField("set_stopTime").setToNode("JumpTimer"))
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Kick_Touch").setToField("set_stopTime").setToNode("StopTimer"))
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Kick_Touch").setToField("set_startTime").setToNode("KickTimer"))
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Stop_Touch").setToField("set_stopTime").setToNode("StandTimer"))
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Stop_Touch").setToField("set_stopTime").setToNode("PitchTimer"))
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Stop_Touch").setToField("set_stopTime").setToNode("YawTimer"))
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Stop_Touch").setToField("set_stopTime").setToNode("RollTimer"))
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Stop_Touch").setToField("set_stopTime").setToNode("WalkTimer"))
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Stop_Touch").setToField("set_stopTime").setToNode("RunTimer"))
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Stop_Touch").setToField("set_stopTime").setToNode("JumpTimer"))
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Stop_Touch").setToField("set_stopTime").setToNode("KickTimer"))
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Stop_Touch").setToField("set_startTime").setToNode("StopTimer")))      ;
     return X3D0;
     }
 private class MFString0 {
@@ -6282,6 +7538,3311 @@ private class MFVec3f887 {
 private class MFVec2f888 {
   private org.web3d.x3d.jsail.fields.MFVec2f getArray() {
     return new org.web3d.x3d.jsail.fields.MFVec2f(new double[] {0.7505,0.1465,0.7541,0.1444,0.7513,0.1418,0.7384,0.1404,0.7355,0.1424,0.7377,0.1451,0.7372,0.1554,0.7483,0.1563,0.7507,0.1564,0.9726,0.1318,0.9727,0.1441,0.9847,0.1302,0.9851,0.1424,0.7347,0.1548,0.7409,0.1641,0.7434,0.1641,0.7455,0.1632,0.7469,0.164,0.9746,0.124,0.9828,0.1229,0.9766,0.1225,0.9807,0.1219,0.7351,0.1625,0.7369,0.1626,0.7443,0.165,0.7408,0.1649,0.7387,0.1637,0.7379,0.1643,0.9788,0.1219,0.7512,0.1402,0.7392,0.1389,0.7512,0.14,0.7393,0.1388,0.9694,0.1441,0.988,0.1416,0.9705,0.1317,0.9868,0.1295,0.9727,0.1237,0.9848,0.1221,0.9756,0.1218,0.9787,0.1209,0.9817,0.1209,0.973,0.1475,0.9849,0.146});
+  }
+}
+private class MFFloat889 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFVec3f890 {
+  private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0,0,0,0,0,0,0,0,0});
+  }
+}
+private class MFFloat891 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation892 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat893 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation894 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat895 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation896 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat897 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation898 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat899 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation900 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat901 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation902 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat903 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation904 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat905 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation906 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat907 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation908 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat909 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation910 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat911 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation912 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat913 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation914 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat915 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation916 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat917 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation918 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat919 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation920 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat921 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation922 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat923 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation924 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat925 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation926 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat927 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation928 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat929 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation930 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat931 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation932 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat933 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation934 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat935 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation936 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat937 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation938 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat939 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation940 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat941 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation942 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat943 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation944 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat945 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation946 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat947 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation948 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat949 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation950 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat951 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation952 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat953 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation954 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat955 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation956 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat957 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation958 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat959 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation960 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat961 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation962 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat963 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation964 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat965 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation966 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat967 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation968 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat969 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation970 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat971 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation972 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat973 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation974 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat975 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation976 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat977 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation978 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat979 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation980 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat981 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation982 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat983 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation984 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat985 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation986 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat987 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation988 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat989 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation990 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat991 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation992 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat993 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation994 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat995 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation996 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat997 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation998 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat999 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1000 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1001 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1002 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1003 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1004 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1005 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1006 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1007 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1008 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1009 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1010 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1011 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1012 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1013 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1014 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1015 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1016 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1017 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1018 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1019 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1020 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1021 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1022 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1023 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1024 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1025 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1026 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1027 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1028 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1029 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1030 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1031 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1032 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1033 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1034 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1035 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1036 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1037 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1038 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1039 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1040 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1041 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1042 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1043 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1044 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1045 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1046 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1047 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1048 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1049 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1050 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1051 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1052 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1053 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1054 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1055 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1056 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1057 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1058 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1059 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1060 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1061 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1062 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1063 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1064 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1065 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1066 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1067 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1068 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1069 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.6,0.7,1});
+  }
+}
+private class MFRotation1070 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {1,0,0,0,-1,0,0,0.015,1,0,0,0.17,-1,0,0,0.025,1,0,0,0.01,1,0,0,0});
+  }
+}
+private class MFFloat1071 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1072 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1073 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1074 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1075 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1076 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1077 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1078 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1079 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1080 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1081 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1082 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1083 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1084 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,-1,0.25,0,0,1,0});
+  }
+}
+private class MFFloat1085 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1086 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1087 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1088 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1089 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1090 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1091 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1092 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1093 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1094 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1095 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1096 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1097 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1098 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,-1,0,0,0.5,0,0,1,0});
+  }
+}
+private class MFFloat1099 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.4,0.7,1});
+  }
+}
+private class MFRotation1100 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,-1,0,0,0.5,1,0,0,0.45,0,0,1,0});
+  }
+}
+private class MFFloat1101 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.4,0.7,1});
+  }
+}
+private class MFRotation1102 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,-1,0,0,0.5,1,0,0,0.45,0,0,1,0});
+  }
+}
+private class MFFloat1103 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1104 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1105 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1106 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1107 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1108 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1109 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFVec3f1110 {
+  private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0,0,0,0,0,0,0,0,0});
+  }
+}
+private class MFFloat1111 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.6,0.8,1});
+  }
+}
+private class MFRotation1112 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1113 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.6,0.8,1});
+  }
+}
+private class MFRotation1114 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1115 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.6,0.8,1});
+  }
+}
+private class MFRotation1116 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1117 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.6,0.8,1});
+  }
+}
+private class MFRotation1118 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1119 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.6,0.8,1});
+  }
+}
+private class MFRotation1120 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1121 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.5,0.6,0.8,1});
+  }
+}
+private class MFRotation1122 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1123 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.5,0.6,0.8,1});
+  }
+}
+private class MFRotation1124 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,-1,0,0,0,0,-1,0,0,0,1,0,0});
+  }
+}
+private class MFFloat1125 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.6,0.8,1});
+  }
+}
+private class MFRotation1126 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1127 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.6,0.8,1});
+  }
+}
+private class MFRotation1128 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {1,0,0,0,1,0,0,0.5,1,0,0,0.1,1,0,0,0.27,1,0,0,0.2,1,0,0,0});
+  }
+}
+private class MFFloat1129 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.5,0.8,1});
+  }
+}
+private class MFRotation1130 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0.1,0,0,1,0.2,0,0,1,0.3,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1131 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.5,0.8,1});
+  }
+}
+private class MFRotation1132 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0.4,0,0,1,0.32,0,0,1,0.25,0,0,1,0.2,0,0,1,0});
+  }
+}
+private class MFFloat1133 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.5,0.8,1});
+  }
+}
+private class MFRotation1134 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0.2,0,0,1,0.3,0,0,1,0.35,0,0,1,0.2,0,0,1,0});
+  }
+}
+private class MFFloat1135 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.6,0.7,1});
+  }
+}
+private class MFRotation1136 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {1,0,0,0,-1,0,0,0.5,-1,0,0,0.7,1,0,0,0.75,-1,0,0,0.2,1,0,0,0});
+  }
+}
+private class MFFloat1137 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.25,0.5,0.75,1});
+  }
+}
+private class MFRotation1138 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,1,0,0,1.5,0,0,1,0,-1,0,0,1.5,0,0,1,0});
+  }
+}
+private class MFFloat1139 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1140 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1141 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.25,0.5,0.75,1});
+  }
+}
+private class MFRotation1142 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,-1,0,0,1.5,0,0,1,0,1,0,0,1.5,0,0,1,0});
+  }
+}
+private class MFFloat1143 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.25,0.5,0.75,1});
+  }
+}
+private class MFRotation1144 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,-1,0,0,1.5,0,0,1,0,1,0,0,1.5,0,0,1,0});
+  }
+}
+private class MFFloat1145 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1146 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1147 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.25,0.5,0.75,1});
+  }
+}
+private class MFRotation1148 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,1,0,0,1.5,0,0,1,0,-1,0,0,1.5,0,0,1,0});
+  }
+}
+private class MFFloat1149 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1150 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1151 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1152 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1153 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.25,0.5,0.75,1});
+  }
+}
+private class MFRotation1154 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,1,0,0,1.5,0,0,1,0,-1,0,0,1.5,0,0,1,0});
+  }
+}
+private class MFFloat1155 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1156 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1157 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1158 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1159 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.25,0.5,0.75,1});
+  }
+}
+private class MFRotation1160 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,-1,0,0,1.5,0,0,1,0,1,0,0,1.5,0,0,1,0});
+  }
+}
+private class MFFloat1161 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1162 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1163 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.25,0.55,1});
+  }
+}
+private class MFRotation1164 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,1,0,0,0.55,-1,0,0,1.05,0,0,1,0});
+  }
+}
+private class MFFloat1165 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1166 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1167 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1168 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1169 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1170 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1171 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.125,0.25,0.375,0.5,0.625,0.75,0.875,1});
+  }
+}
+private class MFVec3f1172 {
+  private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0,0,0,0,-0.15,0,0,-0.7,0,0,-0.15,0,0,0,0,0,-0.15,0,0,-0.7,0,0,-0.15,0,0,0,0});
+  }
+}
+private class MFFloat1173 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.6,0.8,1});
+  }
+}
+private class MFRotation1174 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1175 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.6,0.8,1});
+  }
+}
+private class MFRotation1176 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1177 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.6,0.8,1});
+  }
+}
+private class MFRotation1178 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1179 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.6,0.8,1});
+  }
+}
+private class MFRotation1180 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1181 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.6,0.8,1});
+  }
+}
+private class MFRotation1182 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1183 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.5,0.6,0.8,1});
+  }
+}
+private class MFRotation1184 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1185 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.5,0.6,0.8,1});
+  }
+}
+private class MFRotation1186 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1187 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.6,0.8,1});
+  }
+}
+private class MFRotation1188 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {1,0,0,0,1,0,0,0.25,1,0,0,0.3,1,0,0,0.27,1,0,0,0.2,1,0,0,0});
+  }
+}
+private class MFFloat1189 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.6,0.8,1});
+  }
+}
+private class MFRotation1190 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {1,0,0,0,1,0,0,0.25,1,0,0,0.3,1,0,0,0.27,1,0,0,0.2,1,0,0,0});
+  }
+}
+private class MFFloat1191 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.6,0.7,1});
+  }
+}
+private class MFRotation1192 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1193 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.25,0.5,0.75,1});
+  }
+}
+private class MFRotation1194 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,-1,0,1.5,0,0,1,0,0,1,0,1.5,0,0,1,0});
+  }
+}
+private class MFFloat1195 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.25,0.5,0.75,1});
+  }
+}
+private class MFRotation1196 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,1,0,1.5,0,0,1,0,0,-1,0,1.5,0,0,1,0});
+  }
+}
+private class MFFloat1197 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1198 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1199 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.25,0.5,0.75,1});
+  }
+}
+private class MFRotation1200 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,1,0,1.5,0,0,1,0,0,-1,0,1.5,0,0,1,0});
+  }
+}
+private class MFFloat1201 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.25,0.5,0.75,1});
+  }
+}
+private class MFRotation1202 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,-1,0,1.5,0,0,1,0,0,1,0,1.5,0,0,1,0});
+  }
+}
+private class MFFloat1203 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1204 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1205 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1206 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1207 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1208 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1209 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1210 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1211 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1212 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1213 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1214 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1215 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1216 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1217 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1218 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1219 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.25,0.5,0.75,1});
+  }
+}
+private class MFRotation1220 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,1,0,1.5,0,0,1,0,0,-1,0,1.5,0,0,1,0});
+  }
+}
+private class MFFloat1221 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.25,0.5,0.75,1});
+  }
+}
+private class MFRotation1222 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,-1,0,1.5,0,0,1,0,0,1,0,1.5,0,0,1,0});
+  }
+}
+private class MFFloat1223 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1224 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1225 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1226 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1227 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFVec3f1228 {
+  private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0,0,0,0,0,0,0,0,0});
+  }
+}
+private class MFFloat1229 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.6,0.8,1});
+  }
+}
+private class MFRotation1230 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1231 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.6,0.8,1});
+  }
+}
+private class MFRotation1232 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1233 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.6,0.8,1});
+  }
+}
+private class MFRotation1234 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1235 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.6,0.8,1});
+  }
+}
+private class MFRotation1236 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1237 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.6,0.8,1});
+  }
+}
+private class MFRotation1238 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,1,0,0,0,-1,0,0.1,0,1,0,0,0,1,0,0.24,0,-1,0,0.4,0,1,0,0});
+  }
+}
+private class MFFloat1239 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.5,0.6,0.8,1});
+  }
+}
+private class MFRotation1240 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1241 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.5,0.6,0.8,1});
+  }
+}
+private class MFRotation1242 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1243 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.6,0.8,1});
+  }
+}
+private class MFRotation1244 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1245 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.6,0.8,1});
+  }
+}
+private class MFRotation1246 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1247 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.6,0.7,1});
+  }
+}
+private class MFRotation1248 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1249 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.25,0.5,0.75,1});
+  }
+}
+private class MFRotation1250 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,1.5,0,0,1,0,0,0,1,1.5,0,0,1,0});
+  }
+}
+private class MFFloat1251 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1252 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1253 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.25,0.5,0.75,1});
+  }
+}
+private class MFRotation1254 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,-1,0,0,0,-1,1.5,0,0,1,0,0,0,-1,1.5,0,0,1,0});
+  }
+}
+private class MFFloat1255 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.25,0.5,0.75,1});
+  }
+}
+private class MFRotation1256 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,-1,1.5,0,0,1,0,0,0,-1,1.5,0,0,1,0});
+  }
+}
+private class MFFloat1257 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1258 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1259 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.25,0.5,0.75,1});
+  }
+}
+private class MFRotation1260 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,1.5,0,0,1,0,0,0,1,1.5,0,0,1,0});
+  }
+}
+private class MFFloat1261 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.25,0.5,0.75,1});
+  }
+}
+private class MFRotation1262 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,-1,1.5,0,0,1,0,0,0,1,1.5,0,0,1,0});
+  }
+}
+private class MFFloat1263 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1264 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1265 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.25,0.5,0.75,1});
+  }
+}
+private class MFRotation1266 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,-1,1.5,0,0,-1,3,0,0,-1,1.5,0,0,1,0});
+  }
+}
+private class MFFloat1267 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.25,0.5,0.75,1});
+  }
+}
+private class MFRotation1268 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,1.5,0,0,1,0,0,0,-1,1.5,0,0,1,0});
+  }
+}
+private class MFFloat1269 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1270 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1271 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.25,0.5,0.75,1});
+  }
+}
+private class MFRotation1272 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,1.5,0,0,1,3,0,0,1,1.5,0,0,1,0});
+  }
+}
+private class MFFloat1273 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1274 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1275 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.25,0.5,0.75,1});
+  }
+}
+private class MFRotation1276 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,1.25,0,0,1,0,0,0,-1,1.25,0,0,1,0});
+  }
+}
+private class MFFloat1277 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1278 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1279 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1280 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1281 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1282 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1283 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.125,0.25,0.375,0.5,0.625,0.75,0.875,1});
+  }
+}
+private class MFVec3f1284 {
+  private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0,0,0,0,-0.25,0,0,-0.8,0,0,-0.25,0,0,0,0,0,-0.25,0,0,-0.8,0,0,-0.25,0,0,0,0});
+  }
+}
+private class MFFloat1285 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.6,0.8,1});
+  }
+}
+private class MFRotation1286 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0.2,0,0,1,0.22,0,0,1,0.2,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1287 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.6,0.8,1});
+  }
+}
+private class MFRotation1288 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0.05,0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1289 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.6,0.8,1});
+  }
+}
+private class MFRotation1290 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,-0.2,0,0,1,-0.22,0,0,1,-0.2,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1291 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.6,0.8,1});
+  }
+}
+private class MFRotation1292 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,-0.05,0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1293 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.6,0.8,1});
+  }
+}
+private class MFRotation1294 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1295 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.5,0.6,0.8,1});
+  }
+}
+private class MFRotation1296 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1297 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.5,0.6,0.8,1});
+  }
+}
+private class MFRotation1298 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1299 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.6,0.8,1});
+  }
+}
+private class MFRotation1300 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1301 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.6,0.8,1});
+  }
+}
+private class MFRotation1302 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1303 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.6,0.7,1});
+  }
+}
+private class MFRotation1304 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1305 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.125,0.2083,0.375,0.4583,0.5,0.6667,0.75,0.7917,0.9167,1});
+  }
+}
+private class MFRotation1306 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,-1,0,0,0.3533,-1,0,0,0.1072,1,0,0,0.2612,1,0,0,0.1268,-1,0,0,0.01793,-1,0,0,0.05824,-1,0,0,0.2398,-1,0,0,0.35,-1,0,0,0.3322,0,0,1,0});
+  }
+}
+private class MFFloat1307 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.125,0.2083,0.2917,0.375,0.5,0.6667,0.7917,0.9167,1});
+  }
+}
+private class MFRotation1308 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {1,0,0,0.8573,1,0,0,0.8926,1,0,0,0.5351,1,0,0,0.1756,1,0,0,0.1194,1,0,0,0.3153,1,0,0,0.09354,1,0,0,0.08558,1,0,0,0.2475,1,0,0,0.8573});
+  }
+}
+private class MFFloat1309 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.125,0.2083,0.2917,0.375,0.5,0.6667,0.7917,0.9167,1});
+  }
+}
+private class MFRotation1310 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {-0.5831,0.03511,0.8116,0.1481,-0.995,0.02296,0.09674,0.4683,-1,0.00192,0.007964,0.4732,-0.998,-0.0158,-0.06102,0.5079,-0.9911,-0.03541,-0.1286,0.5419,-0.9131,-0.06243,-0.403,0.3361,-0.4306,-0.07962,-0.899,0.07038,1,0,0,0.2571,0.9891,-0.02805,0.1444,0.3879,-0.5831,0.03511,0.8116,0.1481});
+  }
+}
+private class MFFloat1311 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.125,0.2083,0.375,0.6667,0.9167,1});
+  }
+}
+private class MFRotation1312 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {-1,0,0,0.06714,-1,0,0,0.2152,-1,0,0,0.3184,-1,0,0,0.4717,-1,0,0,0.2912,1,0,0,0.1222,-1,0,0,0.06714});
+  }
+}
+private class MFFloat1313 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2083,0.375,0.5,0.6667,0.7917,0.9167,1});
+  }
+}
+private class MFRotation1314 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {1,0,0,0.3226,1,0,0,0.1556,1,0,0,0.08678,1,0,0,0.8751,1,0,0,1.131,1,0,0,0.09961,1,0,0,0.3942,1,0,0,0.3226});
+  }
+}
+private class MFFloat1315 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.25,0.375,0.5,0.6667,0.7917,0.9167,1});
+  }
+}
+private class MFRotation1316 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {-0.873,0.06094,0.484,0.2865,0.9963,-0.01057,0.08481,0.2488,0.9965,0.01591,-0.08222,0.3836,-0.7018,-0.03223,-0.7117,0.1289,-1,0,0,0.5518,-0.9964,0.02231,0.0817,0.5351,-0.9809,0.04912,0.1881,0.5204,-0.873,0.06094,0.484,0.2865});
+  }
+}
+private class MFFloat1317 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1318 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,-1,0.1056,0,0,1,0.09018,0,0,-1,0.1056});
+  }
+}
+private class MFFloat1319 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.375,0.9167,1});
+  }
+}
+private class MFRotation1320 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {-0.8129,0.4759,-0.3357,0.1346,0.1533,-0.9878,0.02582,0.3902,-0.5701,0.7604,-0.311,0.366,-0.8129,0.4759,-0.3357,0.1346});
+  }
+}
+private class MFFloat1321 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.375,0.9167,1});
+  }
+}
+private class MFRotation1322 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {-1,0,0,0.411508,-1,0,0,0.0925011,-1,0,0,0.572568,-1,0,0,0.411508});
+  }
+}
+private class MFFloat1323 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.375,0.9167,1});
+  }
+}
+private class MFRotation1324 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {-1,0,0,0.09346,1,0,0,0.3197,-1,0,0,0.1564,-1,0,0,0.09346});
+  }
+}
+private class MFFloat1325 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.375,0.9167,1});
+  }
+}
+private class MFRotation1326 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,-1,0,0.461076,-0.330195,-0.927451,0.175516,0.538852,0.0327774,-0.999314,-0.0172185,0.492033,0,-1,0,0.461076});
+  }
+}
+private class MFFloat1327 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.375,0.9167,1});
+  }
+}
+private class MFRotation1328 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {-1,0,0,0.0659878,-1,0,0,0.488383,-1,0,0,0.0177536,-1,0,0,0.0659878});
+  }
+}
+private class MFFloat1329 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.375,0.9167,1});
+  }
+}
+private class MFRotation1330 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {1,0,0,0.1189,-1,0,0,0.1861,1,0,0,0.3357,1,0,0,0.1189});
+  }
+}
+private class MFFloat1331 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.375,0.4167,0.5,0.5833,0.6667,0.75,0.8333,0.9167,1});
+  }
+}
+private class MFRotation1332 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,-1,0,0.08642,0,1,0,0.1825,0,1,0,0.1505,0,1,0,0.1053,0,1,0,0.04391,0,-1,0,0.03119,0,-1,0,0.07936,0,-1,0,0.1616,0,-1,0,0.155,0,-1,0,0.08642});
+  }
+}
+private class MFFloat1333 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,1});
+  }
+}
+private class MFRotation1334 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1335 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2083,0.375,0.75,0.8333,1});
+  }
+}
+private class MFRotation1336 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,1,0,0.0826,-0.01972,-0.5974,0.8017,0.08231,0.009296,-0.9648,0.2627,0.1734,-0.01238,0.9549,-0.2968,0.08732,-0.008125,0.9691,-0.2463,0.158,0,1,0,0.0826});
+  }
+}
+private class MFFloat1337 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,1});
+  }
+}
+private class MFRotation1338 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1339 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.04167,0.125,0.1667,0.2083,0.25,0.2917,0.375,0.4583,0.5,0.5417,0.5833,0.625,0.7083,0.75,0.7917,0.875,0.9167,1});
+  }
+}
+private class MFVec3f1340 {
+  private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0,-0.00928,0,0,-0.003858,0,0,-0.008847,0,0,-0.01486,0,0,-0.02641,0,0,-0.03934,0,0,-0.0502,0,0,-0.07469,0,0,-0.02732,0,0,-0.01608,0,0,-0.01129,0,0,-0.005819,0,0,-0.002004,0,0,-0.002579,0,0,-0.0143,0,0,-0.03799,0,0,-0.05648,0,0,-0.045,0,0,-0.00928,0});
+  }
+}
+private class MFFloat1341 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.6,0.8,1});
+  }
+}
+private class MFRotation1342 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1343 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.6,0.8,1});
+  }
+}
+private class MFRotation1344 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1345 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.6,0.8,1});
+  }
+}
+private class MFRotation1346 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1347 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.6,0.8,1});
+  }
+}
+private class MFRotation1348 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1349 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.6,0.8,1});
+  }
+}
+private class MFRotation1350 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1351 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.5,0.6,0.8,1});
+  }
+}
+private class MFRotation1352 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1353 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.5,0.6,0.8,1});
+  }
+}
+private class MFRotation1354 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1355 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.6,0.8,1});
+  }
+}
+private class MFRotation1356 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {1,0,0,0,1,0,0,0.25,1,0,0,0.5,1,0,0,0.7,1,0,0,0.2,1,0,0,0});
+  }
+}
+private class MFFloat1357 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.6,0.8,1});
+  }
+}
+private class MFRotation1358 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {1,0,0,0,1,0,0,0.25,1,0,0,0.5,1,0,0,0.7,1,0,0,0.2,1,0,0,0});
+  }
+}
+private class MFFloat1359 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.6,0.7,1});
+  }
+}
+private class MFRotation1360 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1361 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2182,0.4909,0.7455,1});
+  }
+}
+private class MFRotation1362 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {-0.99,0.033,0.04,1.42,-0.99,0.1328,0.067,0.42,0.99,0.014,0.009,0.9,-0.99,0.0703,0.05,0.7,-0.99,0.033,0.04,1.42});
+  }
+}
+private class MFFloat1363 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2182,0.4909,0.7455,1});
+  }
+}
+private class MFRotation1364 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {1,0,0,1.01,1,0,0,0.426,1,0,0,0.705,1,0,0,2.179,1,0,0,1.01});
+  }
+}
+private class MFFloat1365 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.22,0.3,0.4,1});
+  }
+}
+private class MFRotation1366 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {1,0,0,0.0374,-1,0,0,0.1037,-1,0,0,0.4328,1,0,0,0.1929,1,0,0,0.03574});
+  }
+}
+private class MFFloat1367 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2545,0.4909,0.7091,1});
+  }
+}
+private class MFRotation1368 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0.99,-0.014,0.009,0.9,-0.99,-0.0703,-0.05,0.7,-0.99,-0.033,0.04,1.42,-0.99,-0.1328,-0.067,0.42,0.99,-0.014,0.009,0.9});
+  }
+}
+private class MFFloat1369 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2545,0.4909,0.7091,1});
+  }
+}
+private class MFRotation1370 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {1,0,0,0.705,1,0,0,2.179,1,0,0,1.01,1,0,0,0.426,1,0,0,0.705});
+  }
+}
+private class MFFloat1371 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.4,0.71,0.8,0.82,1});
+  }
+}
+private class MFRotation1372 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {1,0,0,0.2323,-1,0,0,0.07843,-1,0,0,0.32,-1,0,0,0.374,-1,0,0,0.3478,1,0,0,0.2323});
+  }
+}
+private class MFFloat1373 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2182,0.4909,0.7455,1});
+  }
+}
+private class MFRotation1374 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0.99,-0.074,0.25,1.5,0.99,-0.092,0.44,0.3,-0.99,0.136,0.25,0.85,0.99,-0.081,0.38,0.4,0.99,-0.074,0.25,1.5});
+  }
+}
+private class MFFloat1375 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2182,0.4909,0.7455,1});
+  }
+}
+private class MFRotation1376 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {-1,0,0,1.85,-0.99,-0.19,0.18,1.35,-1,0,0,0.975,-0.99,-0.09,-0.02,1.55,-1,0,0,1.85});
+  }
+}
+private class MFFloat1377 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.25,0.5,0.75,1});
+  }
+}
+private class MFRotation1378 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {-0.25,-1,0.08,0.14,0.25,1,0.08,0.14,0,0,1,0,-0.25,1,0.08,-0.14,-0.25,1,0.08,0.14});
+  }
+}
+private class MFFloat1379 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2545,0.4909,0.7091,1});
+  }
+}
+private class MFRotation1380 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {-0.99,-0.136,-0.25,0.85,0.99,0.081,-0.38,0.4,0.99,0.074,-0.25,1.5,0.99,0.081,-0.38,0.4,-0.99,-0.136,-0.25,0.85});
+  }
+}
+private class MFFloat1381 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2545,0.4909,0.7091,1});
+  }
+}
+private class MFRotation1382 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {-1,0,0,0.975,-0.99,0.09,0.02,1.55,-1,0,0,1.85,-0.99,0.19,-0.18,1.35,-1,0,0,0.975});
+  }
+}
+private class MFFloat1383 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,1});
+  }
+}
+private class MFRotation1384 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {-0.917742,-0.237244,-0.318536,0.214273,-0.917742,-0.237244,-0.318536,0.214273});
+  }
+}
+private class MFFloat1385 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2182,0.4909,0.7455,1});
+  }
+}
+private class MFRotation1386 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,-1,0,0.125,0,0,1,0,0,1,0,0.125,0,0,1,0,0,-1,0,0.125});
+  }
+}
+private class MFFloat1387 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2545,0.4909,0.7091,1});
+  }
+}
+private class MFRotation1388 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {1,0,0,0.08,1,0,0,0.12,1,0,0,0.3,1,0,0,0.3,1,0,0,0.08});
+  }
+}
+private class MFFloat1389 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2545,0.4909,0.7091,1});
+  }
+}
+private class MFRotation1390 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0.7,0,0,0.4,-0.7,-0.7,0,0.4,0,0,0,0.4,-0.7,0.7,0,0.4,0.7,0,0,0.4});
+  }
+}
+private class MFFloat1391 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2545,0.4909,0.7636,1});
+  }
+}
+private class MFRotation1392 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0.97,0.65,0.086,0.5,0.9,0.003,-0.02,0.38,0.95,-0.68,-0.086,0.5,0.9,0.004,-0.025,0.4,0.97,0.65,0.086,0.5});
+  }
+}
+private class MFFloat1393 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.25,0.5,0.75,1});
+  }
+}
+private class MFRotation1394 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {1,0,0,0.06,1,0,0,0.167,1,0,0,0.06,1,0,0,0.168,1,0,0,0.06});
+  }
+}
+private class MFFloat1395 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.22,0.3,0.31,0.5,0.69,0.7,0.78,1});
+  }
+}
+private class MFVec3f1396 {
+  private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0,-0.01,0,0,-0.037,0,0,-0.049,0,0,-0.037,0,0,-0.01,0,0,-0.037,0,0,-0.049,0,0,-0.037,0,0,-0.01,0});
+  }
+}
+private class MFFloat1397 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.6,0.8,1});
+  }
+}
+private class MFRotation1398 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1399 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.6,0.8,1});
+  }
+}
+private class MFRotation1400 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1401 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.6,0.8,1});
+  }
+}
+private class MFRotation1402 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1403 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.6,0.8,1});
+  }
+}
+private class MFRotation1404 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1405 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.6,0.8,1});
+  }
+}
+private class MFRotation1406 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1407 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.5,0.6,0.8,1});
+  }
+}
+private class MFRotation1408 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1409 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.5,0.6,0.8,1});
+  }
+}
+private class MFRotation1410 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1411 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.6,0.8,1});
+  }
+}
+private class MFRotation1412 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {1,0,0,0,1,0,0,0.25,1,0,0,0.7,1,0,0,0.27,1,0,0,0.2,1,0,0,0});
+  }
+}
+private class MFFloat1413 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.6,0.8,1});
+  }
+}
+private class MFRotation1414 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {1,0,0,0,1,0,0,0.25,1,0,0,0.7,1,0,0,0.27,1,0,0,0.2,1,0,0,0});
+  }
+}
+private class MFFloat1415 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.6,0.7,1});
+  }
+}
+private class MFRotation1416 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1417 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.1,0.15,0.25,0.28,0.32,0.35,0.64,0.76,0.84,0.88,0.92,0.96,1});
+  }
+}
+private class MFRotation1418 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,-1,0,0,0.6735,-1,0,0,0.6735,-1,0,0,0.3527,-1,0,0,0.3038,-1,0,0,0.07964,1,0,0,1.3,1,0,0,0.6509,1,0,0,0.3001,-1,0,0,0.2087,-1,0,0,0.3756,-1,0,0,0.3279,-1,0,0,0.1193,0,0,1,0});
+  }
+}
+private class MFFloat1419 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.25,0.3,0.64,0.76,0.88,1});
+  }
+}
+private class MFRotation1420 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,1,0,0,2.5,1,0,0,1.7,0,0,1,0,1,0,0,0.9507,1,0,0,0.5845,1,0,0,0.9054,0,0,1,0});
+  }
+}
+private class MFFloat1421 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.18,0.24,0.26,0.28,0.32,0.48,0.64,0.76,0.88,1});
+  }
+}
+private class MFRotation1422 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,-1,0,0,1.63,-1,0,0,1.7,-1,0,0,1.55,-1,0,0,0.8943,-1,0,0,0.3698,0,0,1,0,-1,0,0,0.4963,-1,0,0,0.3829,-1,0,0,0.5169,0,0,1,0});
+  }
+}
+private class MFFloat1423 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.28,0.32,0.36,0.4,0.44,0.48,0.64,0.76,0.84,0.88,0.92,0.96,1});
+  }
+}
+private class MFRotation1424 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,-1,0,0,0.625,-1,0,0,0.625,-1,0,0,0.3364,-1,0,0,0.2742,-1,0,0,0.05078,1,0,0,0.2833,1,0,0,0.6667,1,0,0,0.2833,-1,0,0,0.2108,-1,0,0,0.375,-1,0,0,0.3146,-1,0,0,0.1174,0,0,1,0});
+  }
+}
+private class MFFloat1425 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.28,0.32,0.48,0.64,0.76,0.88,1});
+  }
+}
+private class MFRotation1426 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,1,0,0,2.047,1,0,0,2.047,0,0,1,0,1,0,0,1.566,1,0,0,0.5913,1,0,0,0.9235,0,0,1,0});
+  }
+}
+private class MFFloat1427 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.28,0.32,0.36,0.4,0.44,0.48,0.64,0.76,0.88,1});
+  }
+}
+private class MFRotation1428 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,1,0,0,4.349,1,0,0,4.349,1,0,0,4.615,-1,0,0,0.9136,-1,0,0,0.3614,0,0,1,0,-1,0,0,0.7869,-1,0,0,0.3918,-1,0,0,0.5433,0,0,1,0});
+  }
+}
+private class MFFloat1429 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.28,0.32,0.48,0.76,1});
+  }
+}
+private class MFRotation1430 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,1,0,0,0.1892,1,0,0,0.1892,0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1431 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.28,0.32,0.64,0.76,1});
+  }
+}
+private class MFRotation1432 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,-0.0585279,0.983903,-0.168849,1.85956,-0.0585279,0.983903,-0.168849,1.85956,-0.00222418,0.99801,-0.0630095,1.46072,0,1,0,0.497349,0,0,1,0});
+  }
+}
+private class MFFloat1433 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.28,0.32,0.64,0.76,1});
+  }
+}
+private class MFRotation1434 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,-1,0,0,0.04151,-1,0,0,0.04151,-1,0,0,0.5855,-1,0,0,0.5852,0,0,1,0});
+  }
+}
+private class MFFloat1435 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.28,0.32,0.64,0.76,0.88,1});
+  }
+}
+private class MFRotation1436 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0.9992,0.02042,0.03558,4.688,0.9992,0.02042,0.03558,4.688,0.9989,-0.04623,0.005159,4.079,-0.8687,-0.2525,-0.4261,1.501,-0.941,-0.2893,-0.1754,0.4788,0,0,1,0});
+  }
+}
+private class MFFloat1437 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.48,0.52,0.64,0.76,0.88,1});
+  }
+}
+private class MFRotation1438 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0.0672928,0.989475,-0.128107,4.15574,0.0672928,0.989475,-0.128107,4.15574,0.00364942,0.999901,0.0135896,4.5822,0,-1,0,0.655922,-0.00050618,-0.999999,0.0012782,1.28397,0,0,1,0});
+  }
+}
+private class MFFloat1439 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.28,0.32,0.58,0.72,1});
+  }
+}
+private class MFRotation1440 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,-1,0,0,1.13,-1,0,0,1.7,-1,0,0,1.7,-1,0,0,0.4,0,0,1,0});
+  }
+}
+private class MFFloat1441 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.28,0.32,0.64,0.76,0.88,1});
+  }
+}
+private class MFRotation1442 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,-0.9987,0.02554,0.04498,1.57,-0.9987,0.02554,0.04498,1.57,1,0.0004113,0.003055,4.114,-0.8413,0.3238,0.4329,1.453,-0.877,0.4198,0.2337,0.6009,0,0,1,0});
+  }
+}
+private class MFFloat1443 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.28,0.32,0.48,0.76,1});
+  }
+}
+private class MFRotation1444 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,-1,0,0,0.5989,-1,0,0,0.5989,-1,0,0,0.3216,1,0,0,0.06503,0,0,1,0});
+  }
+}
+private class MFFloat1445 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.28,0.32,0.48,0.76,1});
+  }
+}
+private class MFRotation1446 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,-1,0,0,0.1942,-1,0,0,0.1942,0,0,1,0,1,0,0,0.2284,0,0,1,0});
+  }
+}
+private class MFFloat1447 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.22,0.28,0.34,0.71,0.88,1});
+  }
+}
+private class MFRotation1448 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,1,0,0,1.05,1,0,0,1.051,-1,0,0,0.257,1,0,0,0.2171,1,0,0,0.3465,0,0,1,0});
+  }
+}
+private class MFFloat1449 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.28,0.32,0.48,0.64,0.76,1});
+  }
+}
+private class MFRotation1450 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,1,0,0,0.3273,1,0,0,0.3273,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1451 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.04,0.07,0.11,0.15,0.19,0.22,0.25,0.27,0.31,0.33,0.35,0.38,0.53,0.544,0.76,0.8,0.84,0.88,0.92,0.96,1});
+  }
+}
+private class MFVec3f1452 {
+  private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0,0,0,0,-0.01264,-0.01289,0,-0.04712,-0.03738,-0.0003345,-0.1049,-0.05353,-0.0005712,-0.1892,-0.06561,-0.0008233,-0.286,-0.06276,-0.0009591,-0.3795,-0.05148,-0.00106,-0.4484,-0.03656,-0.00106,-0.4484,-0.03656,-0.001122,-0.25,-0.1499,-0.0008616,-0.05,-0.06358,-0.0005128,0.15,-0.05488,0.0004779,0.55,0.02732,0.0001728,1.385,0.006873,0.00017,1.395,0.0069,0,0.35,0.02148,0,-0.01299,-0.01057,0,-0.06932,-0.01064,0.0001365,-0.1037,-0.005059,0.0001279,-0.07198,-0.007596,0.000141,-0.01626,-0.004935,0,0,0});
+  }
+}
+private class MFFloat1453 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.6,0.8,1});
+  }
+}
+private class MFRotation1454 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0.2,0,0,1,0.22,0,0,1,0.2,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1455 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.6,0.8,1});
+  }
+}
+private class MFRotation1456 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0.05,0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1457 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.6,0.8,1});
+  }
+}
+private class MFRotation1458 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,-0.2,0,0,1,-0.22,0,0,1,-0.2,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1459 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.6,0.8,1});
+  }
+}
+private class MFRotation1460 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,-0.05,0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1461 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.6,0.8,1});
+  }
+}
+private class MFRotation1462 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,1,0,0,0,-1,0,0.1,0,1,0,0,0,1,-1,0.24,0,-1,0,0.4,0,1,0,0});
+  }
+}
+private class MFFloat1463 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.5,0.6,0.8,1});
+  }
+}
+private class MFRotation1464 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,1,0,0,0,1,0,-0.1,0,1,0,0,0,1,0,0,1,0,0,0.6,0,1,0,0.1,0,1,0,0});
+  }
+}
+private class MFFloat1465 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.5,0.6,0.8,1});
+  }
+}
+private class MFRotation1466 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,1,0,0,0,1,0,0.8,0,1,0,0,0,1,0,0,-1,0,0,0.6,0,-1,0,0.8,0,1,0,0});
+  }
+}
+private class MFFloat1467 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.6,0.8,1});
+  }
+}
+private class MFRotation1468 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {1,0,0,0,1,0,0,0.5,1,0,0,1.1,1,0,0,0.7,1,0,0,0.2,1,0,0,0});
+  }
+}
+private class MFFloat1469 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.6,0.8,1});
+  }
+}
+private class MFRotation1470 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {1,0,0,0,1,0,0,0.5,1,0,0,1.1,1,0,0,0.7,1,0,0,0.2,1,0,0,0});
+  }
+}
+private class MFFloat1471 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.6,0.8,1});
+  }
+}
+private class MFRotation1472 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0.2,0,0,1,0.22,0,0,1,0.2,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1473 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.6,0.8,1});
+  }
+}
+private class MFRotation1474 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0.05,0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1475 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.6,0.8,1});
+  }
+}
+private class MFRotation1476 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,1.76,-0.25,0,1,1.76,0,0,1,1.256,0,0,1,0.05,0,0,1,0});
+  }
+}
+private class MFFloat1477 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.6,0.8,1});
+  }
+}
+private class MFRotation1478 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {1,0,0,0,1,0,0,-0.55,-1,0.25,0,2.55,1,0,0,0,1,0,0,0,1,0,0,0});
+  }
+}
+private class MFFloat1479 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.6,0.8,1});
+  }
+}
+private class MFRotation1480 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,1,0,0.55,0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1481 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.6,0.8,1});
+  }
+}
+private class MFRotation1482 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {1,0,0,0,1,0,0,0.5,1,0,0,1.1,1,0,0,0.7,1,0,0,0.2,1,0,0,0});
+  }
+}
+private class MFFloat1483 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.6,0.8,1});
+  }
+}
+private class MFRotation1484 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,-0.2,0,0,1,-0.22,0,0,1,-0.2,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1485 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.6,0.8,1});
+  }
+}
+private class MFRotation1486 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,-0.05,0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1487 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.6,0.8,1});
+  }
+}
+private class MFRotation1488 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,-1.76,0.25,0,1,-1.76,0,0,1,-1.256,0,0,1,-0.05,0,0,1,0});
+  }
+}
+private class MFFloat1489 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.6,0.8,1});
+  }
+}
+private class MFRotation1490 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {1,0,0,0,1,0,0,-0.55,1,0.25,0,-2.55,1,0,0,0,1,0,0,0,1,0,0,0});
+  }
+}
+private class MFFloat1491 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.6,0.8,1});
+  }
+}
+private class MFRotation1492 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,1,0,-0.55,0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1493 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.6,0.8,1});
+  }
+}
+private class MFRotation1494 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {1,0,0,0,1,0,0,0.5,1,0,0,1.1,1,0,0,0.7,1,0,0,0.2,1,0,0,0});
+  }
+}
+private class MFFloat1495 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.3,0.5,0.6,0.9,1});
+  }
+}
+private class MFRotation1496 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {1,0,0,0,1,0,0,0.9,-1,0,0,1.75,-1,0,0,2.25,-1,0,0,2,1,0,0,0,1,0,0,0});
+  }
+}
+private class MFFloat1497 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.6,0.8,1});
+  }
+}
+private class MFRotation1498 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,1,0,0,1.95,1,0,0,1.75,-1,0,0,0.28,1,0,0,0,1,0,0,0});
+  }
+}
+private class MFFloat1499 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.3,0.5,0.6,0.9,1});
+  }
+}
+private class MFRotation1500 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1501 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.6,0.8,1});
+  }
+}
+private class MFRotation1502 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1503 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.6,0.7,1});
+  }
+}
+private class MFRotation1504 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,-1,0,0,0.9,-1,0,0,0.95,1,0,0,0.75,-1,0,0,0.05,1,0,0,0});
+  }
+}
+private class MFFloat1505 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.6,0.7,1});
+  }
+}
+private class MFRotation1506 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {1,0,0,0,-1,0,0,0.5,-1,0,0,0.7,1,0,0,0.75,-1,0,0,0.2,1,0,0,0});
+  }
+}
+private class MFFloat1507 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.6,0.8,1});
+  }
+}
+private class MFRotation1508 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,1,0,0,0,-1,0,0.1,0,1,0,0,0,1,-1,0.24,0,-1,0,0.4,0,1,0,0});
+  }
+}
+private class MFFloat1509 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.5,0.6,0.8,1});
+  }
+}
+private class MFRotation1510 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1511 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2,0.4,0.5,0.6,0.8,1});
+  }
+}
+private class MFRotation1512 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1513 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1514 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1515 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1516 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1517 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFRotation1518 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,0,0,1,0,0,0,1,0});
+  }
+}
+private class MFFloat1519 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+  }
+}
+private class MFVec3f1520 {
+  private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0,0,0,0,0,0,0,0,0});
+  }
+}
+private class MFFloat1521 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.25,0.55,1});
+  }
+}
+private class MFRotation1522 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,0,1,0,1,0,0,0.7,1,0,0,0.5,0,0,1,0});
+  }
+}
+private class MFInt321523 {
+  private org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2});
+  }
+}
+private class MFInt321524 {
+  private org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,-1,0,2,-1,0,3,-1});
+  }
+}
+private class MFVec3f1525 {
+  private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0,0,0,1,0,0,0,1,0,0,0,1});
+  }
+}
+private class MFColor1526 {
+  private org.web3d.x3d.jsail.fields.MFColor getArray() {
+    return new org.web3d.x3d.jsail.fields.MFColor(new double[] {1,0,0,0,0.6,0,0,0,1});
+  }
+}
+private class MFString1527 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"Stand"});
+  }
+}
+private class MFString1528 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"SANS"});
+  }
+}
+private class MFInt321529 {
+  private org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,3,-1});
+  }
+}
+private class MFVec3f1530 {
+  private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {-0.2,-0.25,-0.01,3,-0.25,-0.01,3,1,-0.01,-0.2,1,-0.01});
+  }
+}
+private class MFString1531 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"Pitch"});
+  }
+}
+private class MFString1532 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"SANS"});
+  }
+}
+private class MFString1533 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"Yaw"});
+  }
+}
+private class MFString1534 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"SANS"});
+  }
+}
+private class MFString1535 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"Roll"});
+  }
+}
+private class MFString1536 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"SANS"});
+  }
+}
+private class MFString1537 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"Walk"});
+  }
+}
+private class MFString1538 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"SANS"});
+  }
+}
+private class MFString1539 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"Run"});
+  }
+}
+private class MFString1540 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"SANS"});
+  }
+}
+private class MFString1541 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"Jump"});
+  }
+}
+private class MFString1542 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"SANS"});
+  }
+}
+private class MFString1543 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"Kick"});
+  }
+}
+private class MFString1544 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"SANS"});
+  }
+}
+private class MFString1545 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"Default"});
+  }
+}
+private class MFString1546 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"SANS"});
+  }
+}
+private class MFString1547 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"BoxMan4","Animation"});
+  }
+}
+private class MFString1548 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"SANS"});
+  }
+}
+private class MFString1549 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"MIDDLE","MIDDLE"});
   }
 }
 }

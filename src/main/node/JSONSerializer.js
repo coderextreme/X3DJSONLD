@@ -28,7 +28,7 @@ function printMethod(node, fieldTypes, par, n) {
 		var attrs = node.attributes;
 		try {
 			parseInt(a);
-			if (attrs.hasOwnProperty(a) && attrs[a].nodeType == 2) {
+			if (attrs.hasOwnProperty(a) && attrs[a].nodeType === 2) {
 				if (attr === 'containerField') {
 					str += '  '.repeat(n)+'"-'+attrs[a].nodeValue+'" : {\n';
 					cf = true;
@@ -90,9 +90,9 @@ JSONSerializer.subSerializeToString = function(element, fieldTypes, n) {
 		var attrs = element.attributes;
 		try {
 			parseInt(a);
-			if (attrs.hasOwnProperty(a) && attrs[a].nodeType == 2) {
+			if (attrs.hasOwnProperty(a) && attrs[a].nodeType === 2) {
 				var attr = attrs[a].nodeName;
-				if (attr == "type") {
+				if (attr === "type") {
 					fieldAttrType = attrs[a].nodeValue;
 				}
 			}
@@ -106,7 +106,7 @@ JSONSerializer.subSerializeToString = function(element, fieldTypes, n) {
 		var attrs = element.attributes;
 		try {
 			parseInt(a);
-			if (attrs.hasOwnProperty(a) && attrs[a].nodeType == 2) {
+			if (attrs.hasOwnProperty(a) && attrs[a].nodeType === 2) {
 				var attr = attrs[a].nodeName;
 				var method = attr;
 				if (attr === 'containerField') {
@@ -216,7 +216,7 @@ JSONSerializer.subSerializeToString = function(element, fieldTypes, n) {
 	var route = [];
 	for (var cn in element.childNodes) {
 		var node = element.childNodes[cn];
-		if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 1) {
+		if (element.childNodes.hasOwnProperty(cn) && node.nodeType === 1) {
 			if (par !== node.nodeName && (
 				par === "meta" ||
 				par === "field" ||
@@ -240,9 +240,9 @@ JSONSerializer.subSerializeToString = function(element, fieldTypes, n) {
 			} else {
 				chillins.push(printMethod(node, fieldTypes, childpar ? "-children" : "", n+1));
 			}
-		} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 8) {
+		} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType === 8) {
 			chillins.push(printComment(node, childpar ? "-children" : "", n+1));
-		} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 4) {
+		} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType === 4) {
 			chillins.push(printSourceText(node, childpar ? "-children" : "", n+1));
 		}
 	}

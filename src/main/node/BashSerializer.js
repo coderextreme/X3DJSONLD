@@ -102,7 +102,7 @@ BashSerializer.prototype = {
 				parseInt(a);
 				let attrsa = attrs[a];
 				let attr = attrsa.nodeName;
-				if (attrs.hasOwnProperty(a) && attrsa.nodeType == 2) {
+				if (attrs.hasOwnProperty(a) && attrsa.nodeType === 2) {
 					if (attr === "containerField") {
 						if (method.charAt(0) < 'a') {
 							method = attrsa.nodeValue.charAt(0).toUpperCase() + attrsa.nodeValue.slice(1);
@@ -238,7 +238,7 @@ BashSerializer.prototype = {
 			try {
 				parseInt(a);
 				let attrsa = attrs[a];
-				if (attrs.hasOwnProperty(a) && attrsa.nodeType == 2) {
+				if (attrs.hasOwnProperty(a) && attrsa.nodeType === 2) {
 					let attr = attrsa.nodeName;
 					if (attr === "xmlns:xsd") {
 						continue;
@@ -288,7 +288,7 @@ BashSerializer.prototype = {
 		let ai = 0;
 		for (let cn in element.childNodes) {
 			let node = element.childNodes[cn];
-			if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 1) {
+			if (element.childNodes.hasOwnProperty(cn) && node.nodeType === 1) {
 /*
 				if (node.nodeName === "head") {
 					continue;
@@ -373,7 +373,7 @@ BashSerializer.prototype = {
 				}
 				str += ch;
 				stack.shift();
-			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 8) {
+			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType === 8) {
 				let y = node.nodeValue.
 					replace(/\\/g, '\\\\').
 					replace(/"/g, '\\"');
@@ -385,7 +385,7 @@ BashSerializer.prototype = {
 				if (y !== node.nodeValue) {
 					// console.error("VRML Comment Replacing "+node.nodeValue+" with "+y);
 				}
-			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 4) {
+			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType === 4) {
 				str += "\n"+element.nodeName+stack[0];
 				str += ".setSourceCode(`"+node.nodeValue.split(/\r?\n/).map(function(x) {
 					return x.

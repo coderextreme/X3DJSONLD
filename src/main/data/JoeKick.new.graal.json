@@ -35,7 +35,7 @@ based on the original HAnim Specification and data from CAESAR models."
 },
 {
 "@name":"modified",
-"@content":"29 January 2023"
+"@content":"1 July 2023"
 },
 {
 "@name":"TODO",
@@ -43,8 +43,16 @@ based on the original HAnim Specification and data from CAESAR models."
 scene) as a structured MetadataSet containing MetadataString nodes"
 },
 {
-"@name":"translators",
-"@content":"Roy Walmsley, Don Brutzman, John Carlson"
+"@name":"translator",
+"@content":"Roy Walmsley"
+},
+{
+"@name":"translator",
+"@content":"Don Brutzman"
+},
+{
+"@name":"translator",
+"@content":"John Carlson"
 },
 {
 "@name":"reference",
@@ -93,7 +101,6 @@ Joe_ by Joe"
 { "NavigationInfo":
 {
 "@DEF":"Start_NavigationInfo",
-"@headlight":false,
 "@speed":2.5
 }
 },
@@ -177,7 +184,7 @@ Joe_ by Joe"
 {
 "@name":"Kick",
 "@DEF":"Joe_Kick",
-"@loa":3,
+"@loa":4,
 "@version":"2.0",
 "-metadata":
 { "MetadataSet":

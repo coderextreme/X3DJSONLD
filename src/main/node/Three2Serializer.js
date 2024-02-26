@@ -70,7 +70,7 @@ Three2Serializer.prototype = {
 			var newArray = [];
 			var i = 0;
 			for (var j = 0; j < values.length;) {
-				if (values[j] == -1) {
+				if (values[j] === -1) {
 					newArrays.push(newArray);
 					newArray = [];
 					j++;
@@ -101,7 +101,7 @@ Three2Serializer.prototype = {
 		obj.children = [];
 		for (var field in json) {
 			if (field.startsWith("@")) {
-				if (field == "@xmlns:xsd" || field == "@xsd:noNamespaceSchemaLocation") {
+				if (field === "@xmlns:xsd" || field === "@xsd:noNamespaceSchemaLocation") {
 					continue;
 				}
 				var attr = field.substr(1);

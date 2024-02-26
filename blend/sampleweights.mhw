@@ -1,0 +1,8 @@
+{
+    "copyright": "(c) the guy who clicked the save weights button",
+    "description": "Weights for a rig",
+    "license": "CC0",
+    "name": "MakeHuman weights",
+    "version": 110,
+    "weights": {}
+}

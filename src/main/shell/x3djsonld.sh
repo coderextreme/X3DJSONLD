@@ -1,4 +1,6 @@
 #!/bin/bash
+set -euo pipefail
+IFS=$'\n\t'
 
 # Run the Test Suite
 
@@ -8,7 +10,8 @@ export PROCESSORS="${PROCESSORS-8}"
 . ./classpath
 
 function jjs() {
-	C:/graalvm-jdk-20_windows-x64_bin/graalvm-jdk-20.0.2+9.1/bin/js.cmd "$@"
+	# C:/graalvm-jdk-20_windows-x64_bin/graalvm-jdk-20.0.2+9.1/bin/js.cmd "$@"
+	C:/graaljs-community-jvm-23.1.2-windows-amd64/graaljs-community-23.1.2-windows-amd64/bin/js.exe "$@"
 }
 
 # py ../python/classes.py
@@ -18,20 +21,20 @@ STYLESHEETDIR=../lib/stylesheets
 DATATOJAVA='s/\/data\//\/java\/net\/coderextreme\/data\//' 
 DATATONODE='s/\/data\//\/node\/net\/coderextreme\/data\//' 
 DATATOPYTHON='s/\/data\//\/python\/net\/coderextreme\/data\//' 
-DATATONASH='s/\/data\//\/nashorn\/net\/coderextreme\/data\//' 
+DATATOGRAAL='s/\/data\//\/graaljs\/net\/coderextreme\/data\//' 
 
 PERSONALTOJAVA='s/\/personal\//\/java\/net\/coderextreme\/personal\//' 
 PERSONALTONODE='s/\/personal\//\/node\/net\/coderextreme\/personal\//' 
 PERSONALTOPYTHON='s/\/personal\//\/python\/net\/coderextreme\/personal\//' 
-PERSONALTONASH='s/\/personal\//\/nashorn\/net\/coderextreme\/personal\//' 
+PERSONALTOGRAAL='s/\/personal\//\/graaljs\/net\/coderextreme\/personal\//' 
 
 EXTOJAVA='s/\/Library\//\/java\/net\/coderextreme\/Library\//' 
 EXTONODE='s/\/Library\//\/node\/net\/coderextreme\/Library\//' 
-EXTONASH='s/\/Library\//\/nashorn\/net\/coderextreme\/Library\//' 
+EXTOGRAAL='s/\/Library\//\/graaljs\/net\/coderextreme\/Library\//' 
 ROOTTOJAVA='s/\/x3d_code\/www.web3d.org\//\/java\/net\/coderextreme\/x3d_code\/www_web3d_org\//' 
 ROOTTONODE='s/\/x3d_code\/www.web3d.org\//\/node\/net\/coderextreme\/x3d_code\/www_web3d_org\//' 
 ROOTTOPYTHON='s/\/x3d_code\/www.web3d.org\//\/python\/net\/coderextreme\/x3d_code\/www_web3d_org\//' 
-ROOTTONASH='s/\/x3d_code\/www.web3d.org\//\/nashorn\/net\/coderextreme\/x3d_code\/www_web3d_org\//' 
+ROOTTOGRAAL='s/\/x3d_code\/www.web3d.org\//\/graaljs\/net\/coderextreme\/x3d_code\/www_web3d_org\//' 
 # OVERWRITE=
 OVERWRITE=---overwrite
 LOCALTOROOT='s/^\.\.\/x3d-code/\/c\/x3d-code/'

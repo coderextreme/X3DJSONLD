@@ -100,7 +100,7 @@ NodeSerializer.prototype = {
 			var attrs = node.attributes;
 			try {
 				parseInt(a);
-				if (attrs.hasOwnProperty(a) && attrs[a].nodeType == 2) {
+				if (attrs.hasOwnProperty(a) && attrs[a].nodeType === 2) {
 					var attr = attrs[a].nodeName;
 					if (attr === "containerField") {
 						if (method === "setShaders") {
@@ -108,9 +108,9 @@ NodeSerializer.prototype = {
 							addpre = "";
 						} else if (method === "addValue") {
 						} else {
-							if (attrs[a].nodeValue == "joints" 
-								|| attrs[a].nodeValue == "sites" 
-								|| attrs[a].nodeValue == "segments" 
+							if (attrs[a].nodeValue === "joints" 
+								|| attrs[a].nodeValue === "sites" 
+								|| attrs[a].nodeValue === "segments" 
 							) {
 								method = "add"+attrs[a].nodeValue.charAt(0).toUpperCase() + attrs[a].nodeValue.slice(1);
 							} else {
@@ -198,7 +198,7 @@ NodeSerializer.prototype = {
 			var attrs = element.attributes;
 			try {
 				parseInt(a);
-				if (attrs.hasOwnProperty(a) && attrs[a].nodeType == 2) {
+				if (attrs.hasOwnProperty(a) && attrs[a].nodeType === 2) {
 					var attr = attrs[a].nodeName;
 					if (attr === "type") {
 						fieldAttrType = attrs[a].nodeValue;
@@ -242,7 +242,7 @@ NodeSerializer.prototype = {
 			var attrs = element.attributes;
 			try {
 				parseInt(a);
-				if (attrs.hasOwnProperty(a) && attrs[a].nodeType == 2) {
+				if (attrs.hasOwnProperty(a) && attrs[a].nodeType === 2) {
 					var attr = attrs[a].nodeName;
 					if (attr === "xmlns:xsd" || attr === "xsd:noNamespaceSchemaLocation" || attr === "containerField" || attr === 'type') {
 						continue;
@@ -384,7 +384,7 @@ NodeSerializer.prototype = {
 		}
 		for (var cn in element.childNodes) {
 			var node = element.childNodes[cn];
-			if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 1) {
+			if (element.childNodes.hasOwnProperty(cn) && node.nodeType === 1) {
 				if (node.nodeName === "ProtoInstance") {
 					stack.unshift(this.preno);
 					this.preno++;
@@ -421,7 +421,7 @@ NodeSerializer.prototype = {
 				if (node.nodeName === "ProtoInstance") {
 					stack.shift();
 				}
-			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 8) {
+			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType === 8) {
 				var y = node.nodeValue.
 					replace(/\\/g, '\\\\').
 					replace(/"/g, '\\"');
@@ -429,7 +429,7 @@ NodeSerializer.prototype = {
 				if (y !== node.nodeValue) {
 					// console.error("JavaScript Comment Replacing "+node.nodeValue+" with "+y);
 				}
-			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 4) {
+			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType === 4) {
 				str += "\n"+("  ".repeat(n))+'.setSourceCode("'+node.nodeValue.split("\r\n").map(function(x) {
 					return x.
 					        replace(/\\/g, '\\\\').

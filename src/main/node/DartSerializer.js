@@ -319,7 +319,7 @@ DartSerializer.prototype = {
 		var closeMFNode = false;
 		for (var cn in element.childNodes) {
 			var node = element.childNodes[cn];
-			if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 1) {
+			if (element.childNodes.hasOwnProperty(cn) && node.nodeType === 1) {
 				var ch = this.printParentChild(element, node, cn, mapToMethod, n);
 				if (ch.indexOf("IS_") >= 0) {
 					if (closeMFNode) {
@@ -364,7 +364,7 @@ DartSerializer.prototype = {
 					}
 				}
 				childs.push(ch);
-			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 8) {
+			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType === 8) {
 				var y = node.nodeValue.
 					replace(/\\/g, '\\\\').
 					replace(/"/g, '\\"');
@@ -372,7 +372,7 @@ DartSerializer.prototype = {
 				if (y !== node.nodeValue) {
 					// console.error("Dart Comment Replacing "+node.nodeValue+" with "+y);
 				}
-			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 4) {
+			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType === 4) {
 				let source = "";
 				if (closeMFNode) {
 					source += "]";

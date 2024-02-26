@@ -154,7 +154,7 @@ function renderX3D(THREE, x3d, scene, useImageTexture, useJson) {
 
                 var defineKey = /USE\s+?(\w+)/.exec(data)[1];
 
-                if (undefined == defines[defineKey]) {
+                if (typeof defines[defineKey] === 'undefined') {
 
                     console.warn(defineKey + ' is not defined.');
 
@@ -697,7 +697,7 @@ function renderX3D(THREE, x3d, scene, useImageTexture, useJson) {
             node[this.recordingFieldname] = this.indexes;
 
         } else if (this.isRecordingPoints) {
-            if (node.nodeType == 'coordinate') {
+            if (node.nodeType === 'coordinate') {
                 while (null !== (parts = float3_pattern.exec(value))) {
                     this.points.push({
                         x: parseFloat(parts[1]),
@@ -707,7 +707,7 @@ function renderX3D(THREE, x3d, scene, useImageTexture, useJson) {
                 }
             }
 
-            if (node.nodeType == 'texturecoordinate') {
+            if (node.nodeType === 'texturecoordinate') {
                 while (null !== (parts = float2_pattern.exec(value))) {
                     this.points.push({
                         x: parseFloat(parts[1]),

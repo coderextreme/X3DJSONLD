@@ -103,16 +103,16 @@ PythonSerializer.prototype = {
 				parseInt(a);
 				var attrsa = attrs[a];
 				var attr = attrsa.nodeName;
-				if (attrs.hasOwnProperty(a) && attrsa.nodeType == 2) {
+				if (attrs.hasOwnProperty(a) && attrsa.nodeType === 2) {
 					if (attr === "containerField") {
 						method = attrsa.nodeValue.charAt(0).toUpperCase() + attrsa.nodeValue.slice(1);
 						if (method === "Shaders") {
 							addpre = "add";
 							method = "Child";
 						} else {
-							if (attrs[a].nodeValue == "joints" 
-								|| attrs[a].nodeValue == "sites" 
-								|| attrs[a].nodeValue == "segments" 
+							if (attrs[a].nodeValue === "joints" 
+								|| attrs[a].nodeValue === "sites" 
+								|| attrs[a].nodeValue === "segments" 
 							) {
 								method = "add"+attrs[a].nodeValue.charAt(0).toUpperCase() + attrs[a].nodeValue.slice(1);
 							} else {
@@ -249,7 +249,7 @@ PythonSerializer.prototype = {
 			try {
 				parseInt(a);
 				var attrsa = attrs[a];
-				if (attrs.hasOwnProperty(a) && attrsa.nodeType == 2) {
+				if (attrs.hasOwnProperty(a) && attrsa.nodeType === 2) {
 					var attr = attrsa.nodeName;
 					if (attr === "xmlns:xsd") {
 						continue;
@@ -296,7 +296,7 @@ PythonSerializer.prototype = {
 		}
 		for (var cn in element.childNodes) {
 			var node = element.childNodes[cn];
-			if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 1) {
+			if (element.childNodes.hasOwnProperty(cn) && node.nodeType === 1) {
 				stack.unshift(this.preno);
 				this.preno++;
 				var ch = "";
@@ -310,7 +310,7 @@ PythonSerializer.prototype = {
 				ch += element.nodeName+stack[1]+method+"("+node.nodeName+stack[0]+")\n";
 				str += ch;
 				stack.shift();
-			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 8) {
+			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType === 8) {
 				var y = node.nodeValue.
 					replace(/\\/g, '\\\\').
 					replace(/"/g, '\\"');
@@ -322,7 +322,7 @@ PythonSerializer.prototype = {
 				if (y !== node.nodeValue) {
 					// console.error("Java Comment Replacing "+node.nodeValue+" with "+y);
 				}
-			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 4) {
+			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType === 4) {
 				str += "\n"+element.nodeName+stack[0];
 				str += ".setSourceCode('''"+node.nodeValue.split(/\r?\n/).map(function(x) {
 					return x.

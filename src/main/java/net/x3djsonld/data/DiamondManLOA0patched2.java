@@ -13,17 +13,17 @@ import org.web3d.x3d.jsail.Shape.*;
 // Javadoc metadata annotations follow, see below for X3DJSAIL Java source code.
 /**
  * <p> HAnim skeletal structure for Level of Action (LOA) zero, with one diamond at the base node for the structure. HumanoidRoot only, so this is the minimum legal HAnim humanoid. </p>
- <p> Related links: DiamondManLOA0.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ <p> Related links: DiamondManLOA0patched2.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;">
         <caption>Scene Meta Information</caption>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
-			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.DiamondManLOA0&nbsp; Document Metadata </td>
+			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.DiamondManLOA0patched2&nbsp; Document Metadata </td>
 		</tr>
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Templates/DiamondManLOA0.x3d">DiamondManLOA0.x3d</a> </td>
+			<td> <a href="DiamondManLOA0patched2.x3d">DiamondManLOA0patched2.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
@@ -95,7 +95,7 @@ import org.web3d.x3d.jsail.Shape.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> Image </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Templates/humanoid_landmark_locations.gif">humanoid_landmark_locations.gif</a> </td>
+			<td> <a href="humanoid_landmark_locations.gif">humanoid_landmark_locations.gif</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> Image </i> </td>
@@ -111,7 +111,7 @@ import org.web3d.x3d.jsail.Shape.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> license </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Templates/../license.html">../license.html</a> </td>
+			<td> <a href="../license.html">../license.html</a> </td>
 		</tr>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center;" colspan="2">  &nbsp; </td>
@@ -131,13 +131,18 @@ import org.web3d.x3d.jsail.Shape.*;
 	* @author Matthew T. Beitler
  */
 
-public class DiamondManLOA0
+import net.coderextreme.X3DRoots;import java.util.List;import java.util.ArrayList;public class DiamondManLOA0patched2 implements X3DRoots
 {
 	/** Default constructor to create this object. */
-	public DiamondManLOA0 ()
+	public DiamondManLOA0patched2 ()
 	{
 	  initialize();
 	}
+        public List<X3D> getRootNodeList() {
+                List<X3D> list = new ArrayList<X3D>(1);
+                list.add(x3dModel);
+                return list;
+        }
 
 	/** Create and initialize the X3D model for this object. */
 	public final void initialize()
@@ -146,7 +151,7 @@ public class DiamondManLOA0
   x3dModel = new X3D().setProfile(X3D.PROFILE_IMMERSIVE).setVersion(X3D.VERSION_4_0)
   .setHead(new head()
     .addComponent(new component().setName("HAnim").setLevel(1))
-    .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("DiamondManLOA0.x3d"))
+    .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("DiamondManLOA0patched2.x3d"))
     .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("HAnim skeletal structure for Level of Action (LOA) zero, with one diamond at the base node for the structure. HumanoidRoot only, so this is the minimum legal HAnim humanoid."))
     .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("Matthew T. Beitler"))
     .addMeta(new meta().setName(meta.NAME_TRANSLATOR ).setContent("Joel S. Pawloski"))
@@ -217,7 +222,7 @@ public class DiamondManLOA0
 	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
 	 * of the X3D model.
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html">X3D</a>
-	 * @return DiamondManLOA0 model
+	 * @return DiamondManLOA0patched2 model
 	 */
 	public X3D getX3dModel()
 	{	  
@@ -236,7 +241,7 @@ public class DiamondManLOA0
     public static void main(String args[])
     {
         System.out.println("Build this X3D model, showing validation diagnostics...");
-        X3D thisExampleX3dModel = new DiamondManLOA0().getX3dModel();
+        X3D thisExampleX3dModel = new DiamondManLOA0patched2().getX3dModel();
 //      System.out.println("X3D model construction complete.");
 	
         // next handle command line arguments
@@ -269,7 +274,7 @@ public class DiamondManLOA0
                 }
         }
         if      (argumentsLoadNewModel)
-                System.out.println("WARNING: \"net.x3djsonld.data.DiamondManLOA0\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
+                System.out.println("WARNING: \"net.x3djsonld.data.DiamondManLOA0patched2\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
         else if (hasArguments) // if no arguments provided, this method produces usage warning
                 thisExampleX3dModel.handleArguments(args);
 	
@@ -278,7 +283,7 @@ public class DiamondManLOA0
             //  System.out.println("--- TODO fix duplicated outputs ---"); // omit when duplicated outputs problem is solved/refactored
 		String validationResults = thisExampleX3dModel.validationReport();
             //  System.out.println("-----------------------------------"); // omit when duplicated outputs problem is solved/refactored
-                System.out.print("net.x3djsonld.data.DiamondManLOA0 self-validation test results: ");
+                System.out.print("net.x3djsonld.data.DiamondManLOA0patched2 self-validation test results: ");
                 if (!validationResults.equals("success"))
                     System.out.println();
                 System.out.println(validationResults.trim());

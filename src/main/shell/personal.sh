@@ -1,5 +1,5 @@
 #!/bin/bash
-set -euo pipefail
+# set -euo pipefail
 IFS=$'\n\t'
 
 # Run the Test Suite
@@ -14,13 +14,13 @@ export PROCESSORS=${PROCESSORS-8}
 STYLESHEETDIR=../lib/stylesheets
 DATATOJAVA='s/\/personal\//\/java\/net\/coderextreme\/personal\//' 
 DATATONODE='s/\/personal\//\/node\/net\/coderextreme\/personal\//' 
-DATATONASH='s/\/personal\//\/graaljs\/net\/coderextreme\/personal\//' 
+DATATOGRAAL='s/\/personal\//\/graaljs\/net\/coderextreme\/personal\//' 
 EXTOJAVA='s/\/Library\//\/java\/net\/coderextreme\/Library\//' 
 EXTONODE='s/\/Library\//\/node\/net\/coderextreme\/Library\//' 
-EXTONASH='s/\/Library\//\/graaljs\/net\/coderextreme\/Library\//' 
+EXTOGRAAL='s/\/Library\//\/graaljs\/net\/coderextreme\/Library\//' 
 ROOTTOJAVA='s/\/x3d_code\/www.web3d.org\//\/java\/net\/coderextreme\/x3d_code\/www_web3d_org\//' 
 ROOTTONODE='s/\/x3d_code\/www.web3d.org\//\/node\/net\/coderextreme\/x3d_code\/www_web3d_org\//' 
-ROOTTONASH='s/\/x3d_code\/www.web3d.org\//\/graaljs\/net\/coderextreme\/x3d_code\/www_web3d_org\//' 
+ROOTTOGRAAL='s/\/x3d_code\/www.web3d.org\//\/graaljs\/net\/coderextreme\/x3d_code\/www_web3d_org\//' 
 # OVERWRITE=
 OVERWRITE=---overwrite
 LOCALTOROOT='s/^\.\.\/x3d-code/\/c\/x3d-code/'
@@ -44,7 +44,7 @@ for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d$
 do
 	pushd `dirname $i`
 	echo $i
- 	javac -J-Xss1g -J-Xmx4g `basename $i`
+ 	javac -proc:full -J-Xss1g -J-Xmx4g `basename $i`
 	popd
 done
 
@@ -68,15 +68,15 @@ do
 	${NODE} ${NODEDIR}/xmldiff.js $X3D $i
 done
 
-#for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d$/.mjs/' -e 's/-/_/g' -e 's/^\/c/../' -e $EXTONASH -e $DATATONASH -e $ROOTTONASH | xargs ls -d`
+#for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d$/.mjs/' -e 's/-/_/g' -e 's/^\/c/../' -e $EXTOGRAAL -e $DATATOGRAAL -e $ROOTTOGRAAL | xargs ls -d`
 #do
 #	pushd ../graaljs
-#	echo 	jjs -J-Xss1g -J-Xmx4g -J-Djava.class.path="${NASHORN_CLASSPATH}" $i
-#	jjs -J-Xss1g -J-Xmx4g -J-Djava.class.path="${NASHORN_CLASSPATH}" $i
+#	echo 	jjs -J-Xss1g -J-Xmx4g -J-Djava.class.path="${GRAAL_CLASSPATH}" $i
+#	jjs -J-Xss1g -J-Xmx4g -J-Djava.class.path="${GRAAL_CLASSPATH}" $i
 #	popd
 #done
 
-for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d$/.mjs/' -e 's/-/_/g' -e 's/^\/c/../' -e $EXTONODE -e $DATATONODE -e $ROOTTONODE| xargs ls -d`
+for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d$/.js/' -e 's/-/_/g' -e 's/^\/c/../' -e $EXTONODE -e $DATATONODE -e $ROOTTONODE| xargs ls -d`
 do
 	pushd ../node
 	echo $i
