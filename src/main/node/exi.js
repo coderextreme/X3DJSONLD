@@ -2,13 +2,13 @@ function writeUint18ArrayBufferToEXIEditor(uint8Array, uint8ArrayLength) {
 	var hex = "";
 	for(var i=0; i<uint8ArrayLength; i++) {
 		var sh = uint8Array[i].toString(16); // base 16 (hex)
-		if(sh.length == 1) {
+		if(sh.length === 1) {
 			sh = "0" + sh;
 		}
 		// hex +=	"0x" + sh + " ";
 		hex +=	sh + " ";			
 		/*
-		if((i+1) % 16 == 0) {
+		if((i+1) % 16 === 0) {
 			hex += "\n"
 		}
 		*/
@@ -19,7 +19,7 @@ function writeUint18ArrayBufferToEXIEditor(uint8Array, uint8ArrayLength) {
 
 function encodeJSON() {
 	var textJSON = $("#json").val(); // JSON text input
-	if(textJSON.trim().length == 0) {
+	if(textJSON.trim().length === 0) {
 		alert("No JSON provided");
 	} else {
 		try {
@@ -39,7 +39,7 @@ function decodeEXI4JSON() {
 	var textEXI = $("#exi").val(); // EXIforJSON input data
 
 	textEXI = textEXI.trim();
-	if(textEXI.length == 0) {
+	if(textEXI.length === 0) {
 		alert("No EXI provided");
 	} else {
 		try {

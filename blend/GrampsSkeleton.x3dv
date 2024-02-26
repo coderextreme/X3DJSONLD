@@ -1,0 +1,532 @@
+#X3D V4.0 utf8
+
+PROFILE Immersive
+
+COMPONENT HAnim:2
+COMPONENT Texturing:3
+
+NavigationInfo { type [ "EXAMINE" "ANY"] headlight FALSE }
+
+PointLight { location 0 10 0 }
+DirectionalLight { }
+DirectionalLight { direction 0 0 1 }
+
+DEF ToddlerView Transform { children [
+ Transform { translation -1 0.924 0 children [ ]}
+  DEF ViewToddler Viewpoint { description "Toddler Front View"
+   position 0 1.5 2 orientation 0.5 0 0 -0.5 centerOfRotation 0 0.5 0 }
+  DEF SceneCoordSystem Transform { scale 0.175 0.175 0.175 children [
+   Inline { url ["JointCoordinateAxes.x3dv"] } ]}
+
+Transform {
+    children [
+	    DEF HAnimSiteShape Shape {
+		     geometry DEF DiamondBox Box {
+		     	size 0.02 0.02 0.02
+		     }
+		     appearance Appearance {
+			material Material {
+				diffuseColor 1 1 0
+				transparency 0.3
+			}
+		     }
+	    }
+    ]
+}
+
+DEF ToddlerHumanoid Group { children [
+
+DEF Toddler HAnimHumanoid {
+  skeleton [
+DEF Toddler_humanoid_root HAnimJoint { name "humanoid_root" center 0 0 0 skinCoordIndex [ ] skinCoordWeight [ ] children [
+DEF Toddler_sacrum HAnimSegment { name "sacrum" children [ TouchSensor { description "Joint humanoid_root" } Transform { translation 0 0 0 children USE HAnimSiteShape } Shape { geometry LineSet { vertexCount 2 coord Coordinate { point [ 0 0 0] } } } ] }
+  DEF Toddler_sacrum_pt HAnimSite { name "sacrum_pt" children [  ] }  DEF Toddler_sacroiliac HAnimJoint { name "sacroiliac" center 0 0.97241 0 skinCoordIndex [ ] skinCoordWeight [ ] children [
+  DEF Toddler_pelvis HAnimSegment { name "pelvis" children [ TouchSensor { description "Joint sacroiliac" } Transform { translation 0 0.97241 0 children USE HAnimSiteShape } Shape { geometry LineSet { vertexCount 2 coord Coordinate { point [0 0 0 0 0.97241 0] } } } ] }
+    DEF Toddler_pelvis_pt HAnimSite { name "pelvis_pt" children [  ] }      DEF Toddler_l_hip HAnimJoint { name "l_hip" center 0.1265 0.975 0.0001 skinCoordIndex [ ] skinCoordWeight [ ] children [
+      DEF Toddler_l_thigh HAnimSegment { name "l_thigh" children [ TouchSensor { description "Joint l_hip" } Transform { translation 0.1265 0.975 0.0001 children USE HAnimSiteShape } Shape { geometry LineSet { vertexCount 2 coord Coordinate { point [0 0.97241 0 0.1265 0.975 0.0001] } } } ] }
+        DEF Toddler_l_thigh_pt HAnimSite { name "l_thigh_pt" children [  ] }        DEF Toddler_l_knee HAnimJoint { name "l_knee" center 0.126 0.5604 -0.0707 skinCoordIndex [ ] skinCoordWeight [ ] children [
+        DEF Toddler_l_calf HAnimSegment { name "l_calf" children [ TouchSensor { description "Joint l_knee" } Transform { translation 0.126 0.5604 -0.0707 children USE HAnimSiteShape } Shape { geometry LineSet { vertexCount 2 coord Coordinate { point [0.1265 0.975 0.0001 0.126 0.5604 -0.0707] } } } ] }
+          DEF Toddler_l_calf_pt HAnimSite { name "l_calf_pt" children [  ] }          DEF Toddler_l_talocrural HAnimJoint { name "l_talocrural" center 0.1215 0.0711 -0.0798 skinCoordIndex [ ] skinCoordWeight [ ] children [
+          DEF Toddler_l_talus HAnimSegment { name "l_talus" children [ TouchSensor { description "Joint l_talocrural" } Transform { translation 0.1215 0.0711 -0.0798 children USE HAnimSiteShape } Shape { geometry LineSet { vertexCount 2 coord Coordinate { point [0.126 0.5604 -0.0707 0.1215 0.0711 -0.0798] } } } ] }
+            DEF Toddler_l_talus_pt HAnimSite { name "l_talus_pt" children [  ] }            DEF Toddler_l_metatarsophalangeal_2 HAnimJoint { name "l_metatarsophalangeal_2" center 0.1404 0.0436 0.0227 skinCoordIndex [ ] skinCoordWeight [ ] children [
+            DEF Toddler_l_tarsal_proximal_phalanx_2 HAnimSegment { name "l_tarsal_proximal_phalanx_2" children [ TouchSensor { description "Joint l_metatarsophalangeal_2" } Transform { translation 0.1404 0.0436 0.0227 children USE HAnimSiteShape } Shape { geometry LineSet { vertexCount 2 coord Coordinate { point [0.1215 0.0711 -0.0798 0.1404 0.0436 0.0227] } } } ] }
+              DEF Toddler_l_tarsal_proximal_phalanx_2_pt HAnimSite { name "l_tarsal_proximal_phalanx_2_pt" children [  ] }              DEF Toddler_l_tarsal_distal_interphalangeal_2 HAnimJoint { name "l_tarsal_distal_interphalangeal_2" center 0.155 0.0312 0.0899 skinCoordIndex [ ] skinCoordWeight [ ] children [
+              DEF Toddler_l_tarsal_distal_phalanx_2 HAnimSegment { name "l_tarsal_distal_phalanx_2" children [ TouchSensor { description "Joint l_tarsal_distal_interphalangeal_2" } Transform { translation 0.155 0.0312 0.0899 children USE HAnimSiteShape } Shape { geometry LineSet { vertexCount 2 coord Coordinate { point [0.1404 0.0436 0.0227 0.155 0.0312 0.0899] } } } ] }
+                DEF Toddler_l_tarsal_distal_phalanx_2_pt HAnimSite { name "l_tarsal_distal_phalanx_2_pt" children [  ] }              ]}
+            ]}
+          ]}
+        ]}
+      ]}
+      DEF Toddler_r_hip HAnimJoint { name "r_hip" center -0.1087 0.9778 0.0011 skinCoordIndex [ ] skinCoordWeight [ ] children [
+      DEF Toddler_r_thigh HAnimSegment { name "r_thigh" children [ TouchSensor { description "Joint r_hip" } Transform { translation -0.1087 0.9778 0.0011 children USE HAnimSiteShape } Shape { geometry LineSet { vertexCount 2 coord Coordinate { point [0 0.97241 0 -0.1087 0.9778 0.0011] } } } ] }
+        DEF Toddler_r_thigh_pt HAnimSite { name "r_thigh_pt" children [  ] }        DEF Toddler_r_knee HAnimJoint { name "r_knee" center -0.1361 0.5768 -0.0299 skinCoordIndex [ ] skinCoordWeight [ ] children [
+        DEF Toddler_r_calf HAnimSegment { name "r_calf" children [ TouchSensor { description "Joint r_knee" } Transform { translation -0.1361 0.5768 -0.0299 children USE HAnimSiteShape } Shape { geometry LineSet { vertexCount 2 coord Coordinate { point [-0.1087 0.9778 0.0011 -0.1361 0.5768 -0.0299] } } } ] }
+          DEF Toddler_r_calf_pt HAnimSite { name "r_calf_pt" children [  ] }          DEF Toddler_r_talocrural HAnimJoint { name "r_talocrural" center -0.1568 0.0933 -0.05 skinCoordIndex [ ] skinCoordWeight [ ] children [
+          DEF Toddler_r_talus HAnimSegment { name "r_talus" children [ TouchSensor { description "Joint r_talocrural" } Transform { translation -0.1568 0.0933 -0.05 children USE HAnimSiteShape } Shape { geometry LineSet { vertexCount 2 coord Coordinate { point [-0.1361 0.5768 -0.0299 -0.1568 0.0933 -0.05] } } } ] }
+            DEF Toddler_r_talus_pt HAnimSite { name "r_talus_pt" children [  ] }            DEF Toddler_r_metatarsophalangeal_2 HAnimJoint { name "r_metatarsophalangeal_2" center -0.1739 0.0421 0.0317 skinCoordIndex [ ] skinCoordWeight [ ] children [
+            DEF Toddler_r_tarsal_proximal_phalanx_2 HAnimSegment { name "r_tarsal_proximal_phalanx_2" children [ TouchSensor { description "Joint r_metatarsophalangeal_2" } Transform { translation -0.1739 0.0421 0.0317 children USE HAnimSiteShape } Shape { geometry LineSet { vertexCount 2 coord Coordinate { point [-0.1568 0.0933 -0.05 -0.1739 0.0421 0.0317] } } } ] }
+              DEF Toddler_r_tarsal_proximal_phalanx_2_pt HAnimSite { name "r_tarsal_proximal_phalanx_2_pt" children [  ] }              DEF Toddler_r_tarsal_distal_interphalangeal_2 HAnimJoint { name "r_tarsal_distal_interphalangeal_2" center -0.1868 0.0296 0.14 skinCoordIndex [ ] skinCoordWeight [ ] children [
+              DEF Toddler_r_tarsal_distal_phalanx_2 HAnimSegment { name "r_tarsal_distal_phalanx_2" children [ TouchSensor { description "Joint r_tarsal_distal_interphalangeal_2" } Transform { translation -0.1868 0.0296 0.14 children USE HAnimSiteShape } Shape { geometry LineSet { vertexCount 2 coord Coordinate { point [-0.1739 0.0421 0.0317 -0.1868 0.0296 0.14] } } } ] }
+                DEF Toddler_r_tarsal_distal_phalanx_2_pt HAnimSite { name "r_tarsal_distal_phalanx_2_pt" children [  ] }              ]}
+            ]}
+          ]}
+        ]}
+      ]}
+  ]}
+  DEF Toddler_vl5 HAnimJoint { name "vl5" center 0.00133 1.07967 -0.00574 skinCoordIndex [ ] skinCoordWeight [ ] children [
+  DEF Toddler_l5 HAnimSegment { name "l5" children [ TouchSensor { description "Joint vl5" } Transform { translation 0.00133 1.07967 -0.00574 children USE HAnimSiteShape } Shape { geometry LineSet { vertexCount 2 coord Coordinate { point [0 0 0 0.00133 1.07967 -0.00574] } } } ] }
+    DEF Toddler_l5_pt HAnimSite { name "l5_pt" children [  ] }    DEF Toddler_vl3 HAnimJoint { name "vl3" center 0.00138 1.1687 -0.01072 skinCoordIndex [ ] skinCoordWeight [ ] children [
+    DEF Toddler_l3 HAnimSegment { name "l3" children [ TouchSensor { description "Joint vl3" } Transform { translation 0.00138 1.1687 -0.01072 children USE HAnimSiteShape } Shape { geometry LineSet { vertexCount 2 coord Coordinate { point [0.00133 1.07967 -0.00574 0.00138 1.1687 -0.01072] } } } ] }
+      DEF Toddler_l3_pt HAnimSite { name "l3_pt" children [  ] }      DEF Toddler_vt12 HAnimJoint { name "vt12" center 0.00198 1.257 -0.01566 skinCoordIndex [ ] skinCoordWeight [ ] children [
+      DEF Toddler_t12 HAnimSegment { name "t12" children [ TouchSensor { description "Joint vt12" } Transform { translation 0.00198 1.257 -0.01566 children USE HAnimSiteShape } Shape { geometry LineSet { vertexCount 2 coord Coordinate { point [0.00138 1.1687 -0.01072 0.00198 1.257 -0.01566] } } } ] }
+        DEF Toddler_t12_pt HAnimSite { name "t12_pt" children [  ] }        DEF Toddler_vt9 HAnimJoint { name "vt9" center 0.0026 1.3455 -0.0164 skinCoordIndex [ ] skinCoordWeight [ ] children [
+        DEF Toddler_t9 HAnimSegment { name "t9" children [ TouchSensor { description "Joint vt9" } Transform { translation 0.0026 1.3455 -0.0164 children USE HAnimSiteShape } Shape { geometry LineSet { vertexCount 2 coord Coordinate { point [0.00198 1.257 -0.01566 0.0026 1.3455 -0.0164] } } } ] }
+          DEF Toddler_t9_pt HAnimSite { name "t9_pt" children [  ] }          DEF Toddler_vt4 HAnimJoint { name "vt4" center 0.00164 1.436 -0.0284 skinCoordIndex [ ] skinCoordWeight [ ] children [
+          DEF Toddler_t4 HAnimSegment { name "t4" children [ TouchSensor { description "Joint vt4" } Transform { translation 0.00164 1.436 -0.0284 children USE HAnimSiteShape } Shape { geometry LineSet { vertexCount 2 coord Coordinate { point [0.0026 1.3455 -0.0164 0.00164 1.436 -0.0284] } } } ] }
+            DEF Toddler_t4_pt HAnimSite { name "t4_pt" children [  ] }              DEF Toddler_vc7 HAnimJoint { name "vc7" center 0.0003 1.551 -0.0564 skinCoordIndex [ ] skinCoordWeight [ ] children [
+              DEF Toddler_c7 HAnimSegment { name "c7" children [ TouchSensor { description "Joint vc7" } Transform { translation 0.0003 1.551 -0.0564 children USE HAnimSiteShape } Shape { geometry LineSet { vertexCount 2 coord Coordinate { point [0.00164 1.436 -0.0284 0.0003 1.551 -0.0564] } } } ] }
+                DEF Toddler_c7_pt HAnimSite { name "c7_pt" children [  ] }                DEF Toddler_vc3 HAnimJoint { name "vc3" center -0.0018 1.62 -0.0542 skinCoordIndex [ ] skinCoordWeight [ ] children [
+                DEF Toddler_c3 HAnimSegment { name "c3" children [ TouchSensor { description "Joint vc3" } Transform { translation -0.0018 1.62 -0.0542 children USE HAnimSiteShape } Shape { geometry LineSet { vertexCount 2 coord Coordinate { point [0.0003 1.551 -0.0564 -0.0018 1.62 -0.0542] } } } ] }
+                  DEF Toddler_c3_pt HAnimSite { name "c3_pt" children [  ] }                  DEF Toddler_skullbase HAnimJoint { name "skullbase" center -0.0017 1.821 -0.0412 skinCoordIndex [ ] skinCoordWeight [ ] children [
+                  DEF Toddler_skull HAnimSegment { name "skull" children [ TouchSensor { description "Joint skullbase" } Transform { translation -0.0017 1.821 -0.0412 children USE HAnimSiteShape } Shape { geometry LineSet { vertexCount 2 coord Coordinate { point [-0.0018 1.62 -0.0542 -0.0017 1.821 -0.0412] } } } ] }
+                    DEF Toddler_skull_pt HAnimSite { name "skull_pt" children [  ] }                  ]}
+                ]}
+              ]}
+              DEF Toddler_l_sternoclavicular HAnimJoint { name "l_sternoclavicular" center 0.0916 1.4588 -0.0519 skinCoordIndex [ ] skinCoordWeight [ ] children [
+              DEF Toddler_l_clavicle HAnimSegment { name "l_clavicle" children [ TouchSensor { description "Joint l_sternoclavicular" } Transform { translation 0.0916 1.4588 -0.0519 children USE HAnimSiteShape } Shape { geometry LineSet { vertexCount 2 coord Coordinate { point [0.00164 1.436 -0.0284 0.0916 1.4588 -0.0519] } } } ] }
+                DEF Toddler_l_clavicle_pt HAnimSite { name "l_clavicle_pt" children [  ] }                DEF Toddler_l_shoulder HAnimJoint { name "l_shoulder" center 0.2614 1.4468 -0.0513 skinCoordIndex [ ] skinCoordWeight [ ] children [
+                DEF Toddler_l_upperarm HAnimSegment { name "l_upperarm" children [ TouchSensor { description "Joint l_shoulder" } Transform { translation 0.2614 1.4468 -0.0513 children USE HAnimSiteShape } Shape { geometry LineSet { vertexCount 2 coord Coordinate { point [0.0916 1.4588 -0.0519 0.2614 1.4468 -0.0513] } } } ] }
+                  DEF Toddler_l_upperarm_pt HAnimSite { name "l_upperarm_pt" children [  ] }                  DEF Toddler_l_elbow HAnimJoint { name "l_elbow" center 0.2806 1.204 -0.0782 skinCoordIndex [ ] skinCoordWeight [ ] children [
+                  DEF Toddler_l_forearm HAnimSegment { name "l_forearm" children [ TouchSensor { description "Joint l_elbow" } Transform { translation 0.2806 1.204 -0.0782 children USE HAnimSiteShape } Shape { geometry LineSet { vertexCount 2 coord Coordinate { point [0.2614 1.4468 -0.0513 0.2806 1.204 -0.0782] } } } ] }
+                    DEF Toddler_l_forearm_pt HAnimSite { name "l_forearm_pt" children [  ] }                    DEF Toddler_l_radiocarpal HAnimJoint { name "l_radiocarpal" center 0.3207 0.966 -0.0607 skinCoordIndex [ ] skinCoordWeight [ ] children [
+                    DEF Toddler_l_carpal HAnimSegment { name "l_carpal" children [ TouchSensor { description "Joint l_radiocarpal" } Transform { translation 0.3207 0.966 -0.0607 children USE HAnimSiteShape } Shape { geometry LineSet { vertexCount 2 coord Coordinate { point [0.2806 1.204 -0.0782 0.3207 0.966 -0.0607] } } } ] }
+                      DEF Toddler_l_carpal_pt HAnimSite { name "l_carpal_pt" children [  ] }                        DEF Toddler_l_carpometacarpal_1 HAnimJoint { name "l_carpometacarpal_1" center 0.3138 0.9566 -0.03519 skinCoordIndex [ ] skinCoordWeight [ ] children [
+                        DEF Toddler_l_metacarpal_1 HAnimSegment { name "l_metacarpal_1" children [ TouchSensor { description "Joint l_carpometacarpal_1" } Transform { translation 0.3138 0.9566 -0.03519 children USE HAnimSiteShape } Shape { geometry LineSet { vertexCount 2 coord Coordinate { point [0.3207 0.966 -0.0607 0.3138 0.9566 -0.03519] } } } ] }
+                          DEF Toddler_l_metacarpal_1_pt HAnimSite { name "l_metacarpal_1_pt" children [  ] }                          DEF Toddler_l_metacarpophalangeal_1 HAnimJoint { name "l_metacarpophalangeal_1" center 0.2971 0.93 -0.02176 skinCoordIndex [ ] skinCoordWeight [ ] children [
+                          DEF Toddler_l_carpal_proximal_phalanx_1 HAnimSegment { name "l_carpal_proximal_phalanx_1" children [ TouchSensor { description "Joint l_metacarpophalangeal_1" } Transform { translation 0.2971 0.93 -0.02176 children USE HAnimSiteShape } Shape { geometry LineSet { vertexCount 2 coord Coordinate { point [0.3138 0.9566 -0.03519 0.2971 0.93 -0.02176] } } } ] }
+                            DEF Toddler_l_carpal_proximal_phalanx_1_pt HAnimSite { name "l_carpal_proximal_phalanx_1_pt" children [  ] }                            DEF Toddler_l_carpal_interphalangeal_1 HAnimJoint { name "l_carpal_interphalangeal_1" center 0.2955 0.8924 -0.0138 skinCoordIndex [ ] skinCoordWeight [ ] children [
+                            DEF Toddler_l_carpal_distal_phalanx_1 HAnimSegment { name "l_carpal_distal_phalanx_1" children [ TouchSensor { description "Joint l_carpal_interphalangeal_1" } Transform { translation 0.2955 0.8924 -0.0138 children USE HAnimSiteShape } Shape { geometry LineSet { vertexCount 2 coord Coordinate { point [0.2971 0.93 -0.02176 0.2955 0.8924 -0.0138] } } } ] }
+                              DEF Toddler_l_carpal_distal_phalanx_1_pt HAnimSite { name "l_carpal_distal_phalanx_1_pt" children [  ] }                            ]}
+                          ]}
+                        ]}
+                        DEF Toddler_l_carpometacarpal_2 HAnimJoint { name "l_carpometacarpal_2" center 0.3292 0.9474 -0.0422 skinCoordIndex [ ] skinCoordWeight [ ] children [
+                        DEF Toddler_l_metacarpal_2 HAnimSegment { name "l_metacarpal_2" children [ TouchSensor { description "Joint l_carpometacarpal_2" } Transform { translation 0.3292 0.9474 -0.0422 children USE HAnimSiteShape } Shape { geometry LineSet { vertexCount 2 coord Coordinate { point [0.3207 0.966 -0.0607 0.3292 0.9474 -0.0422] } } } ] }
+                          DEF Toddler_l_metacarpal_2_pt HAnimSite { name "l_metacarpal_2_pt" children [  ] }                          DEF Toddler_l_metacarpophalangeal_2 HAnimJoint { name "l_metacarpophalangeal_2" center 0.3416 0.8905 -0.0361 skinCoordIndex [ ] skinCoordWeight [ ] children [
+                          DEF Toddler_l_carpal_proximal_phalanx_2 HAnimSegment { name "l_carpal_proximal_phalanx_2" children [ TouchSensor { description "Joint l_metacarpophalangeal_2" } Transform { translation 0.3416 0.8905 -0.0361 children USE HAnimSiteShape } Shape { geometry LineSet { vertexCount 2 coord Coordinate { point [0.3292 0.9474 -0.0422 0.3416 0.8905 -0.0361] } } } ] }
+                            DEF Toddler_l_carpal_proximal_phalanx_2_pt HAnimSite { name "l_carpal_proximal_phalanx_2_pt" children [  ] }                            DEF Toddler_l_carpal_proximal_interphalangeal_2 HAnimJoint { name "l_carpal_proximal_interphalangeal_2" center 0.3487 0.8258 -0.0484 skinCoordIndex [ ] skinCoordWeight [ ] children [
+                            DEF Toddler_l_carpal_middle_phalanx_2 HAnimSegment { name "l_carpal_middle_phalanx_2" children [ TouchSensor { description "Joint l_carpal_proximal_interphalangeal_2" } Transform { translation 0.3487 0.8258 -0.0484 children USE HAnimSiteShape } Shape { geometry LineSet { vertexCount 2 coord Coordinate { point [0.3416 0.8905 -0.0361 0.3487 0.8258 -0.0484] } } } ] }
+                              DEF Toddler_l_carpal_middle_phalanx_2_pt HAnimSite { name "l_carpal_middle_phalanx_2_pt" children [  ] }                              DEF Toddler_l_carpal_distal_interphalangeal_2 HAnimJoint { name "l_carpal_distal_interphalangeal_2" center 0.3471 0.843 -0.0451 skinCoordIndex [ ] skinCoordWeight [ ] children [
+                              DEF Toddler_l_carpal_distal_phalanx_2 HAnimSegment { name "l_carpal_distal_phalanx_2" children [ TouchSensor { description "Joint l_carpal_distal_interphalangeal_2" } Transform { translation 0.3471 0.843 -0.0451 children USE HAnimSiteShape } Shape { geometry LineSet { vertexCount 2 coord Coordinate { point [0.3487 0.8258 -0.0484 0.3471 0.843 -0.0451] } } } ] }
+                                DEF Toddler_l_carpal_distal_phalanx_2_pt HAnimSite { name "l_carpal_distal_phalanx_2_pt" children [  ] }                              ]}
+                            ]}
+                          ]}
+                        ]}
+                        DEF Toddler_l_carpometacarpal_3 HAnimJoint { name "l_carpometacarpal_3" center 0.328 0.9515 -0.0569 skinCoordIndex [ ] skinCoordWeight [ ] children [
+                        DEF Toddler_l_metacarpal_3 HAnimSegment { name "l_metacarpal_3" children [ TouchSensor { description "Joint l_carpometacarpal_3" } Transform { translation 0.328 0.9515 -0.0569 children USE HAnimSiteShape } Shape { geometry LineSet { vertexCount 2 coord Coordinate { point [0.3207 0.966 -0.0607 0.328 0.9515 -0.0569] } } } ] }
+                          DEF Toddler_l_metacarpal_3_pt HAnimSite { name "l_metacarpal_3_pt" children [  ] }                          DEF Toddler_l_metacarpophalangeal_3 HAnimJoint { name "l_metacarpophalangeal_3" center 0.3501 0.8826 -0.0622 skinCoordIndex [ ] skinCoordWeight [ ] children [
+                          DEF Toddler_l_carpal_proximal_phalanx_3 HAnimSegment { name "l_carpal_proximal_phalanx_3" children [ TouchSensor { description "Joint l_metacarpophalangeal_3" } Transform { translation 0.3501 0.8826 -0.0622 children USE HAnimSiteShape } Shape { geometry LineSet { vertexCount 2 coord Coordinate { point [0.328 0.9515 -0.0569 0.3501 0.8826 -0.0622] } } } ] }
+                            DEF Toddler_l_carpal_proximal_phalanx_3_pt HAnimSite { name "l_carpal_proximal_phalanx_3_pt" children [  ] }                            DEF Toddler_l_carpal_proximal_interphalangeal_3 HAnimJoint { name "l_carpal_proximal_interphalangeal_3" center 0.3665 0.8101 -0.0759 skinCoordIndex [ ] skinCoordWeight [ ] children [
+                            DEF Toddler_l_carpal_middle_phalanx_3 HAnimSegment { name "l_carpal_middle_phalanx_3" children [ TouchSensor { description "Joint l_carpal_proximal_interphalangeal_3" } Transform { translation 0.3665 0.8101 -0.0759 children USE HAnimSiteShape } Shape { geometry LineSet { vertexCount 2 coord Coordinate { point [0.3501 0.8826 -0.0622 0.3665 0.8101 -0.0759] } } } ] }
+                              DEF Toddler_l_carpal_middle_phalanx_3_pt HAnimSite { name "l_carpal_middle_phalanx_3_pt" children [  ] }                              DEF Toddler_l_carpal_distal_interphalangeal_3 HAnimJoint { name "l_carpal_distal_interphalangeal_3" center 0.3592 0.8441 -0.0688 skinCoordIndex [ ] skinCoordWeight [ ] children [
+                              DEF Toddler_l_carpal_distal_phalanx_3 HAnimSegment { name "l_carpal_distal_phalanx_3" children [ TouchSensor { description "Joint l_carpal_distal_interphalangeal_3" } Transform { translation 0.3592 0.8441 -0.0688 children USE HAnimSiteShape } Shape { geometry LineSet { vertexCount 2 coord Coordinate { point [0.3665 0.8101 -0.0759 0.3592 0.8441 -0.0688] } } } ] }
+                                DEF Toddler_l_carpal_distal_phalanx_3_pt HAnimSite { name "l_carpal_distal_phalanx_3_pt" children [  ] }                              ]}
+                            ]}
+                          ]}
+                        ]}
+                        DEF Toddler_l_carpometacarpal_4 HAnimJoint { name "l_carpometacarpal_4" center 0.3361 0.9535 -0.0749 skinCoordIndex [ ] skinCoordWeight [ ] children [
+                        DEF Toddler_l_metacarpal_4 HAnimSegment { name "l_metacarpal_4" children [ TouchSensor { description "Joint l_carpometacarpal_4" } Transform { translation 0.3361 0.9535 -0.0749 children USE HAnimSiteShape } Shape { geometry LineSet { vertexCount 2 coord Coordinate { point [0.3207 0.966 -0.0607 0.3361 0.9535 -0.0749] } } } ] }
+                          DEF Toddler_l_metacarpal_4_pt HAnimSite { name "l_metacarpal_4_pt" children [  ] }                          DEF Toddler_l_metacarpophalangeal_4 HAnimJoint { name "l_metacarpophalangeal_4" center 0.3563 0.9004 -0.0863 skinCoordIndex [ ] skinCoordWeight [ ] children [
+                          DEF Toddler_l_carpal_proximal_phalanx_4 HAnimSegment { name "l_carpal_proximal_phalanx_4" children [ TouchSensor { description "Joint l_metacarpophalangeal_4" } Transform { translation 0.3563 0.9004 -0.0863 children USE HAnimSiteShape } Shape { geometry LineSet { vertexCount 2 coord Coordinate { point [0.3361 0.9535 -0.0749 0.3563 0.9004 -0.0863] } } } ] }
+                            DEF Toddler_l_carpal_proximal_phalanx_4_pt HAnimSite { name "l_carpal_proximal_phalanx_4_pt" children [  ] }                            DEF Toddler_l_carpal_proximal_interphalangeal_4 HAnimJoint { name "l_carpal_proximal_interphalangeal_4" center 0.3656 0.8534 -0.0974 skinCoordIndex [ ] skinCoordWeight [ ] children [
+                            DEF Toddler_l_carpal_middle_phalanx_4 HAnimSegment { name "l_carpal_middle_phalanx_4" children [ TouchSensor { description "Joint l_carpal_proximal_interphalangeal_4" } Transform { translation 0.3656 0.8534 -0.0974 children USE HAnimSiteShape } Shape { geometry LineSet { vertexCount 2 coord Coordinate { point [0.3563 0.9004 -0.0863 0.3656 0.8534 -0.0974] } } } ] }
+                              DEF Toddler_l_carpal_middle_phalanx_4_pt HAnimSite { name "l_carpal_middle_phalanx_4_pt" children [  ] }                              DEF Toddler_l_carpal_distal_interphalangeal_4 HAnimJoint { name "l_carpal_distal_interphalangeal_4" center 0.3655 0.8302 -0.1001 skinCoordIndex [ ] skinCoordWeight [ ] children [
+                              DEF Toddler_l_carpal_distal_phalanx_4 HAnimSegment { name "l_carpal_distal_phalanx_4" children [ TouchSensor { description "Joint l_carpal_distal_interphalangeal_4" } Transform { translation 0.3655 0.8302 -0.1001 children USE HAnimSiteShape } Shape { geometry LineSet { vertexCount 2 coord Coordinate { point [0.3656 0.8534 -0.0974 0.3655 0.8302 -0.1001] } } } ] }
+                                DEF Toddler_l_carpal_distal_phalanx_4_pt HAnimSite { name "l_carpal_distal_phalanx_4_pt" children [  ] }                              ]}
+                            ]}
+                          ]}
+                        ]}
+                        DEF Toddler_l_carpometacarpal_5 HAnimJoint { name "l_carpometacarpal_5" center 0.3287 0.9554 -0.0918 skinCoordIndex [ ] skinCoordWeight [ ] children [
+                        DEF Toddler_l_metacarpal_5 HAnimSegment { name "l_metacarpal_5" children [ TouchSensor { description "Joint l_carpometacarpal_5" } Transform { translation 0.3287 0.9554 -0.0918 children USE HAnimSiteShape } Shape { geometry LineSet { vertexCount 2 coord Coordinate { point [0.3207 0.966 -0.0607 0.3287 0.9554 -0.0918] } } } ] }
+                          DEF Toddler_l_metacarpal_5_pt HAnimSite { name "l_metacarpal_5_pt" children [  ] }                          DEF Toddler_l_metacarpophalangeal_5 HAnimJoint { name "l_metacarpophalangeal_5" center 0.3522 0.9029 -0.1043 skinCoordIndex [ ] skinCoordWeight [ ] children [
+                          DEF Toddler_l_carpal_proximal_phalanx_5 HAnimSegment { name "l_carpal_proximal_phalanx_5" children [ TouchSensor { description "Joint l_metacarpophalangeal_5" } Transform { translation 0.3522 0.9029 -0.1043 children USE HAnimSiteShape } Shape { geometry LineSet { vertexCount 2 coord Coordinate { point [0.3287 0.9554 -0.0918 0.3522 0.9029 -0.1043] } } } ] }
+                            DEF Toddler_l_carpal_proximal_phalanx_5_pt HAnimSite { name "l_carpal_proximal_phalanx_5_pt" children [  ] }                            DEF Toddler_l_carpal_proximal_interphalangeal_5 HAnimJoint { name "l_carpal_proximal_interphalangeal_5" center 0.3615 0.8729 -0.1143 skinCoordIndex [ ] skinCoordWeight [ ] children [
+                            DEF Toddler_l_carpal_middle_phalanx_5 HAnimSegment { name "l_carpal_middle_phalanx_5" children [ TouchSensor { description "Joint l_carpal_proximal_interphalangeal_5" } Transform { translation 0.3615 0.8729 -0.1143 children USE HAnimSiteShape } Shape { geometry LineSet { vertexCount 2 coord Coordinate { point [0.3522 0.9029 -0.1043 0.3615 0.8729 -0.1143] } } } ] }
+                              DEF Toddler_l_carpal_middle_phalanx_5_pt HAnimSite { name "l_carpal_middle_phalanx_5_pt" children [  ] }                              DEF Toddler_l_carpal_distal_interphalangeal_5 HAnimJoint { name "l_carpal_distal_interphalangeal_5" center 0.365 0.857 -0.1195 skinCoordIndex [ ] skinCoordWeight [ ] children [
+                              DEF Toddler_l_carpal_distal_phalanx_5 HAnimSegment { name "l_carpal_distal_phalanx_5" children [ TouchSensor { description "Joint l_carpal_distal_interphalangeal_5" } Transform { translation 0.365 0.857 -0.1195 children USE HAnimSiteShape } Shape { geometry LineSet { vertexCount 2 coord Coordinate { point [0.3615 0.8729 -0.1143 0.365 0.857 -0.1195] } } } ] }
+                                DEF Toddler_l_carpal_distal_phalanx_5_pt HAnimSite { name "l_carpal_distal_phalanx_5_pt" children [  ] }                              ]}
+                            ]}
+                          ]}
+                        ]}
+                    ]}
+                  ]}
+                ]}
+              ]}
+              DEF Toddler_r_sternoclavicular HAnimJoint { name "r_sternoclavicular" center -0.0945 1.465 -0.0456 skinCoordIndex [ ] skinCoordWeight [ ] children [
+              DEF Toddler_r_clavicle HAnimSegment { name "r_clavicle" children [ TouchSensor { description "Joint r_sternoclavicular" } Transform { translation -0.0945 1.465 -0.0456 children USE HAnimSiteShape } Shape { geometry LineSet { vertexCount 2 coord Coordinate { point [0.00164 1.436 -0.0284 -0.0945 1.465 -0.0456] } } } ] }
+                DEF Toddler_r_clavicle_pt HAnimSite { name "r_clavicle_pt" children [  ] }                DEF Toddler_r_shoulder HAnimJoint { name "r_shoulder" center -0.2545 1.4669 -0.0428 skinCoordIndex [ ] skinCoordWeight [ ] children [
+                DEF Toddler_r_upperarm HAnimSegment { name "r_upperarm" children [ TouchSensor { description "Joint r_shoulder" } Transform { translation -0.2545 1.4669 -0.0428 children USE HAnimSiteShape } Shape { geometry LineSet { vertexCount 2 coord Coordinate { point [-0.0945 1.465 -0.0456 -0.2545 1.4669 -0.0428] } } } ] }
+                  DEF Toddler_r_upperarm_pt HAnimSite { name "r_upperarm_pt" children [  ] }                  DEF Toddler_r_elbow HAnimJoint { name "r_elbow" center -0.2652 1.236 -0.0826 skinCoordIndex [ ] skinCoordWeight [ ] children [
+                  DEF Toddler_r_forearm HAnimSegment { name "r_forearm" children [ TouchSensor { description "Joint r_elbow" } Transform { translation -0.2652 1.236 -0.0826 children USE HAnimSiteShape } Shape { geometry LineSet { vertexCount 2 coord Coordinate { point [-0.2545 1.4669 -0.0428 -0.2652 1.236 -0.0826] } } } ] }
+                    DEF Toddler_r_forearm_pt HAnimSite { name "r_forearm_pt" children [  ] }                    DEF Toddler_r_radiocarpal HAnimJoint { name "r_radiocarpal" center -0.3195 0.988 -0.054 skinCoordIndex [ ] skinCoordWeight [ ] children [
+                    DEF Toddler_r_carpal HAnimSegment { name "r_carpal" children [ TouchSensor { description "Joint r_radiocarpal" } Transform { translation -0.3195 0.988 -0.054 children USE HAnimSiteShape } Shape { geometry LineSet { vertexCount 2 coord Coordinate { point [-0.2652 1.236 -0.0826 -0.3195 0.988 -0.054] } } } ] }
+                      DEF Toddler_r_carpal_pt HAnimSite { name "r_carpal_pt" children [  ] }                        DEF Toddler_r_carpometacarpal_1 HAnimJoint { name "r_carpometacarpal_1" center -0.3106 0.9603 -0.0245 skinCoordIndex [ ] skinCoordWeight [ ] children [
+                        DEF Toddler_r_metacarpal_1 HAnimSegment { name "r_metacarpal_1" children [ TouchSensor { description "Joint r_carpometacarpal_1" } Transform { translation -0.3106 0.9603 -0.0245 children USE HAnimSiteShape } Shape { geometry LineSet { vertexCount 2 coord Coordinate { point [-0.3195 0.988 -0.054 -0.3106 0.9603 -0.0245] } } } ] }
+                          DEF Toddler_r_metacarpal_1_pt HAnimSite { name "r_metacarpal_1_pt" children [  ] }                          DEF Toddler_r_metacarpophalangeal_1 HAnimJoint { name "r_metacarpophalangeal_1" center -0.3004 0.9283 -0.0022 skinCoordIndex [ ] skinCoordWeight [ ] children [
+                          DEF Toddler_r_carpal_proximal_phalanx_1 HAnimSegment { name "r_carpal_proximal_phalanx_1" children [ TouchSensor { description "Joint r_metacarpophalangeal_1" } Transform { translation -0.3004 0.9283 -0.0022 children USE HAnimSiteShape } Shape { geometry LineSet { vertexCount 2 coord Coordinate { point [-0.3106 0.9603 -0.0245 -0.3004 0.9283 -0.0022] } } } ] }
+                            DEF Toddler_r_carpal_proximal_phalanx_1_pt HAnimSite { name "r_carpal_proximal_phalanx_1_pt" children [  ] }                            DEF Toddler_r_carpal_interphalangeal_1 HAnimJoint { name "r_carpal_interphalangeal_1" center -0.2978 0.8873 -0.0136 skinCoordIndex [ ] skinCoordWeight [ ] children [
+                            DEF Toddler_r_carpal_distal_phalanx_1 HAnimSegment { name "r_carpal_distal_phalanx_1" children [ TouchSensor { description "Joint r_carpal_interphalangeal_1" } Transform { translation -0.2978 0.8873 -0.0136 children USE HAnimSiteShape } Shape { geometry LineSet { vertexCount 2 coord Coordinate { point [-0.3004 0.9283 -0.0022 -0.2978 0.8873 -0.0136] } } } ] }
+                              DEF Toddler_r_carpal_distal_phalanx_1_pt HAnimSite { name "r_carpal_distal_phalanx_1_pt" children [  ] }                            ]}
+                          ]}
+                        ]}
+                        DEF Toddler_r_carpometacarpal_2 HAnimJoint { name "r_carpometacarpal_2" center -0.3229 0.9597 -0.0344 skinCoordIndex [ ] skinCoordWeight [ ] children [
+                        DEF Toddler_r_metacarpal_2 HAnimSegment { name "r_metacarpal_2" children [ TouchSensor { description "Joint r_carpometacarpal_2" } Transform { translation -0.3229 0.9597 -0.0344 children USE HAnimSiteShape } Shape { geometry LineSet { vertexCount 2 coord Coordinate { point [-0.3195 0.988 -0.054 -0.3229 0.9597 -0.0344] } } } ] }
+                          DEF Toddler_r_metacarpal_2_pt HAnimSite { name "r_metacarpal_2_pt" children [  ] }                          DEF Toddler_r_metacarpophalangeal_2 HAnimJoint { name "r_metacarpophalangeal_2" center -0.3452 0.8828 -0.0362 skinCoordIndex [ ] skinCoordWeight [ ] children [
+                          DEF Toddler_r_carpal_proximal_phalanx_2 HAnimSegment { name "r_carpal_proximal_phalanx_2" children [ TouchSensor { description "Joint r_metacarpophalangeal_2" } Transform { translation -0.3452 0.8828 -0.0362 children USE HAnimSiteShape } Shape { geometry LineSet { vertexCount 2 coord Coordinate { point [-0.3229 0.9597 -0.0344 -0.3452 0.8828 -0.0362] } } } ] }
+                            DEF Toddler_r_carpal_proximal_phalanx_2_pt HAnimSite { name "r_carpal_proximal_phalanx_2_pt" children [  ] }                            DEF Toddler_r_carpal_proximal_interphalangeal_2 HAnimJoint { name "r_carpal_proximal_interphalangeal_2" center -0.354 0.8454 -0.0406 skinCoordIndex [ ] skinCoordWeight [ ] children [
+                            DEF Toddler_r_carpal_middle_phalanx_2 HAnimSegment { name "r_carpal_middle_phalanx_2" children [ TouchSensor { description "Joint r_carpal_proximal_interphalangeal_2" } Transform { translation -0.354 0.8454 -0.0406 children USE HAnimSiteShape } Shape { geometry LineSet { vertexCount 2 coord Coordinate { point [-0.3452 0.8828 -0.0362 -0.354 0.8454 -0.0406] } } } ] }
+                              DEF Toddler_r_carpal_middle_phalanx_2_pt HAnimSite { name "r_carpal_middle_phalanx_2_pt" children [  ] }                              DEF Toddler_r_carpal_distal_interphalangeal_2 HAnimJoint { name "r_carpal_distal_interphalangeal_2" center -0.3553 0.8218 -0.0439 skinCoordIndex [ ] skinCoordWeight [ ] children [
+                              DEF Toddler_r_carpal_distal_phalanx_2 HAnimSegment { name "r_carpal_distal_phalanx_2" children [ TouchSensor { description "Joint r_carpal_distal_interphalangeal_2" } Transform { translation -0.3553 0.8218 -0.0439 children USE HAnimSiteShape } Shape { geometry LineSet { vertexCount 2 coord Coordinate { point [-0.354 0.8454 -0.0406 -0.3553 0.8218 -0.0439] } } } ] }
+                                DEF Toddler_r_carpal_distal_phalanx_2_pt HAnimSite { name "r_carpal_distal_phalanx_2_pt" children [  ] }                              ]}
+                            ]}
+                          ]}
+                        ]}
+                        DEF Toddler_r_carpometacarpal_3 HAnimJoint { name "r_carpometacarpal_3" center -0.3294 0.9674 -0.0476 skinCoordIndex [ ] skinCoordWeight [ ] children [
+                        DEF Toddler_r_metacarpal_3 HAnimSegment { name "r_metacarpal_3" children [ TouchSensor { description "Joint r_carpometacarpal_3" } Transform { translation -0.3294 0.9674 -0.0476 children USE HAnimSiteShape } Shape { geometry LineSet { vertexCount 2 coord Coordinate { point [-0.3195 0.988 -0.054 -0.3294 0.9674 -0.0476] } } } ] }
+                          DEF Toddler_r_metacarpal_3_pt HAnimSite { name "r_metacarpal_3_pt" children [  ] }                          DEF Toddler_r_metacarpophalangeal_3 HAnimJoint { name "r_metacarpophalangeal_3" center -0.3526 0.8886 -0.0609 skinCoordIndex [ ] skinCoordWeight [ ] children [
+                          DEF Toddler_r_carpal_proximal_phalanx_3 HAnimSegment { name "r_carpal_proximal_phalanx_3" children [ TouchSensor { description "Joint r_metacarpophalangeal_3" } Transform { translation -0.3526 0.8886 -0.0609 children USE HAnimSiteShape } Shape { geometry LineSet { vertexCount 2 coord Coordinate { point [-0.3294 0.9674 -0.0476 -0.3526 0.8886 -0.0609] } } } ] }
+                            DEF Toddler_r_carpal_proximal_phalanx_3_pt HAnimSite { name "r_carpal_proximal_phalanx_3_pt" children [  ] }                            DEF Toddler_r_carpal_proximal_interphalangeal_3 HAnimJoint { name "r_carpal_proximal_interphalangeal_3" center -0.3623 0.8459 -0.068 skinCoordIndex [ ] skinCoordWeight [ ] children [
+                            DEF Toddler_r_carpal_middle_phalanx_3 HAnimSegment { name "r_carpal_middle_phalanx_3" children [ TouchSensor { description "Joint r_carpal_proximal_interphalangeal_3" } Transform { translation -0.3623 0.8459 -0.068 children USE HAnimSiteShape } Shape { geometry LineSet { vertexCount 2 coord Coordinate { point [-0.3526 0.8886 -0.0609 -0.3623 0.8459 -0.068] } } } ] }
+                              DEF Toddler_r_carpal_middle_phalanx_3_pt HAnimSite { name "r_carpal_middle_phalanx_3_pt" children [  ] }                              DEF Toddler_r_carpal_distal_interphalangeal_3 HAnimJoint { name "r_carpal_distal_interphalangeal_3" center -0.3693 0.817 -0.0733 skinCoordIndex [ ] skinCoordWeight [ ] children [
+                              DEF Toddler_r_carpal_distal_phalanx_3 HAnimSegment { name "r_carpal_distal_phalanx_3" children [ TouchSensor { description "Joint r_carpal_distal_interphalangeal_3" } Transform { translation -0.3693 0.817 -0.0733 children USE HAnimSiteShape } Shape { geometry LineSet { vertexCount 2 coord Coordinate { point [-0.3623 0.8459 -0.068 -0.3693 0.817 -0.0733] } } } ] }
+                                DEF Toddler_r_carpal_distal_phalanx_3_pt HAnimSite { name "r_carpal_distal_phalanx_3_pt" children [  ] }                              ]}
+                            ]}
+                          ]}
+                        ]}
+                        DEF Toddler_r_carpometacarpal_4 HAnimJoint { name "r_carpometacarpal_4" center -0.3329 0.9656 -0.0634 skinCoordIndex [ ] skinCoordWeight [ ] children [
+                        DEF Toddler_r_metacarpal_4 HAnimSegment { name "r_metacarpal_4" children [ TouchSensor { description "Joint r_carpometacarpal_4" } Transform { translation -0.3329 0.9656 -0.0634 children USE HAnimSiteShape } Shape { geometry LineSet { vertexCount 2 coord Coordinate { point [-0.3195 0.988 -0.054 -0.3329 0.9656 -0.0634] } } } ] }
+                          DEF Toddler_r_metacarpal_4_pt HAnimSite { name "r_metacarpal_4_pt" children [  ] }                          DEF Toddler_r_metacarpophalangeal_4 HAnimJoint { name "r_metacarpophalangeal_4" center -0.3531 0.8977 -0.0794 skinCoordIndex [ ] skinCoordWeight [ ] children [
+                          DEF Toddler_r_carpal_proximal_phalanx_4 HAnimSegment { name "r_carpal_proximal_phalanx_4" children [ TouchSensor { description "Joint r_metacarpophalangeal_4" } Transform { translation -0.3531 0.8977 -0.0794 children USE HAnimSiteShape } Shape { geometry LineSet { vertexCount 2 coord Coordinate { point [-0.3329 0.9656 -0.0634 -0.3531 0.8977 -0.0794] } } } ] }
+                            DEF Toddler_r_carpal_proximal_phalanx_4_pt HAnimSite { name "r_carpal_proximal_phalanx_4_pt" children [  ] }                            DEF Toddler_r_carpal_proximal_interphalangeal_4 HAnimJoint { name "r_carpal_proximal_interphalangeal_4" center -0.3642 0.8561 -0.0915 skinCoordIndex [ ] skinCoordWeight [ ] children [
+                            DEF Toddler_r_carpal_middle_phalanx_4 HAnimSegment { name "r_carpal_middle_phalanx_4" children [ TouchSensor { description "Joint r_carpal_proximal_interphalangeal_4" } Transform { translation -0.3642 0.8561 -0.0915 children USE HAnimSiteShape } Shape { geometry LineSet { vertexCount 2 coord Coordinate { point [-0.3531 0.8977 -0.0794 -0.3642 0.8561 -0.0915] } } } ] }
+                              DEF Toddler_r_carpal_middle_phalanx_4_pt HAnimSite { name "r_carpal_middle_phalanx_4_pt" children [  ] }                              DEF Toddler_r_carpal_distal_interphalangeal_4 HAnimJoint { name "r_carpal_distal_interphalangeal_4" center -0.3718 0.8341 -0.0951 skinCoordIndex [ ] skinCoordWeight [ ] children [
+                              DEF Toddler_r_carpal_distal_phalanx_4 HAnimSegment { name "r_carpal_distal_phalanx_4" children [ TouchSensor { description "Joint r_carpal_distal_interphalangeal_4" } Transform { translation -0.3718 0.8341 -0.0951 children USE HAnimSiteShape } Shape { geometry LineSet { vertexCount 2 coord Coordinate { point [-0.3642 0.8561 -0.0915 -0.3718 0.8341 -0.0951] } } } ] }
+                                DEF Toddler_r_carpal_distal_phalanx_4_pt HAnimSite { name "r_carpal_distal_phalanx_4_pt" children [  ] }                              ]}
+                            ]}
+                          ]}
+                        ]}
+                        DEF Toddler_r_carpometacarpal_5 HAnimJoint { name "r_carpometacarpal_5" center -0.3312 0.9537 -0.0918 skinCoordIndex [ ] skinCoordWeight [ ] children [
+                        DEF Toddler_r_metacarpal_5 HAnimSegment { name "r_metacarpal_5" children [ TouchSensor { description "Joint r_carpometacarpal_5" } Transform { translation -0.3312 0.9537 -0.0918 children USE HAnimSiteShape } Shape { geometry LineSet { vertexCount 2 coord Coordinate { point [-0.3195 0.988 -0.054 -0.3312 0.9537 -0.0918] } } } ] }
+                          DEF Toddler_r_metacarpal_5_pt HAnimSite { name "r_metacarpal_5_pt" children [  ] }                          DEF Toddler_r_metacarpophalangeal_5 HAnimJoint { name "r_metacarpophalangeal_5" center -0.3511 0.9031 -0.1039 skinCoordIndex [ ] skinCoordWeight [ ] children [
+                          DEF Toddler_r_carpal_proximal_phalanx_5 HAnimSegment { name "r_carpal_proximal_phalanx_5" children [ TouchSensor { description "Joint r_metacarpophalangeal_5" } Transform { translation -0.3511 0.9031 -0.1039 children USE HAnimSiteShape } Shape { geometry LineSet { vertexCount 2 coord Coordinate { point [-0.3312 0.9537 -0.0918 -0.3511 0.9031 -0.1039] } } } ] }
+                            DEF Toddler_r_carpal_proximal_phalanx_5_pt HAnimSite { name "r_carpal_proximal_phalanx_5_pt" children [  ] }                            DEF Toddler_r_carpal_proximal_interphalangeal_5 HAnimJoint { name "r_carpal_proximal_interphalangeal_5" center -0.3558 0.8844 -0.1093 skinCoordIndex [ ] skinCoordWeight [ ] children [
+                            DEF Toddler_r_carpal_middle_phalanx_5 HAnimSegment { name "r_carpal_middle_phalanx_5" children [ TouchSensor { description "Joint r_carpal_proximal_interphalangeal_5" } Transform { translation -0.3558 0.8844 -0.1093 children USE HAnimSiteShape } Shape { geometry LineSet { vertexCount 2 coord Coordinate { point [-0.3511 0.9031 -0.1039 -0.3558 0.8844 -0.1093] } } } ] }
+                              DEF Toddler_r_carpal_middle_phalanx_5_pt HAnimSite { name "r_carpal_middle_phalanx_5_pt" children [  ] }                              DEF Toddler_r_carpal_distal_interphalangeal_5 HAnimJoint { name "r_carpal_distal_interphalangeal_5" center -0.3619 0.8635 -0.1157 skinCoordIndex [ ] skinCoordWeight [ ] children [
+                              DEF Toddler_r_carpal_distal_phalanx_5 HAnimSegment { name "r_carpal_distal_phalanx_5" children [ TouchSensor { description "Joint r_carpal_distal_interphalangeal_5" } Transform { translation -0.3619 0.8635 -0.1157 children USE HAnimSiteShape } Shape { geometry LineSet { vertexCount 2 coord Coordinate { point [-0.3558 0.8844 -0.1093 -0.3619 0.8635 -0.1157] } } } ] }
+                                DEF Toddler_r_carpal_distal_phalanx_5_pt HAnimSite { name "r_carpal_distal_phalanx_5_pt" children [  ] }                              ]}
+                            ]}
+                          ]}
+                        ]}
+                    ]}
+                  ]}
+                ]}
+              ]}
+          ]}
+        ]}
+      ]}
+    ]}
+  ]}
+]}
+
+]
+joints [
+USE Toddler_humanoid_root
+  USE Toddler_sacroiliac
+      USE Toddler_l_hip
+        USE Toddler_l_knee
+          USE Toddler_l_talocrural
+            USE Toddler_l_metatarsophalangeal_2
+              USE Toddler_l_tarsal_distal_interphalangeal_2
+      USE Toddler_r_hip
+        USE Toddler_r_knee
+          USE Toddler_r_talocrural
+            USE Toddler_r_metatarsophalangeal_2
+              USE Toddler_r_tarsal_distal_interphalangeal_2
+  USE Toddler_vl5
+    USE Toddler_vl3
+      USE Toddler_vt12
+        USE Toddler_vt9
+          USE Toddler_vt4
+              USE Toddler_vc7
+                USE Toddler_vc3
+                  USE Toddler_skullbase
+              USE Toddler_l_sternoclavicular
+                USE Toddler_l_shoulder
+                  USE Toddler_l_elbow
+                    USE Toddler_l_radiocarpal
+                        USE Toddler_l_carpometacarpal_1
+                          USE Toddler_l_metacarpophalangeal_1
+                            USE Toddler_l_carpal_interphalangeal_1
+                        USE Toddler_l_carpometacarpal_2
+                          USE Toddler_l_metacarpophalangeal_2
+                            USE Toddler_l_carpal_proximal_interphalangeal_2
+                              USE Toddler_l_carpal_distal_interphalangeal_2
+                        USE Toddler_l_carpometacarpal_3
+                          USE Toddler_l_metacarpophalangeal_3
+                            USE Toddler_l_carpal_proximal_interphalangeal_3
+                              USE Toddler_l_carpal_distal_interphalangeal_3
+                        USE Toddler_l_carpometacarpal_4
+                          USE Toddler_l_metacarpophalangeal_4
+                            USE Toddler_l_carpal_proximal_interphalangeal_4
+                              USE Toddler_l_carpal_distal_interphalangeal_4
+                        USE Toddler_l_carpometacarpal_5
+                          USE Toddler_l_metacarpophalangeal_5
+                            USE Toddler_l_carpal_proximal_interphalangeal_5
+                              USE Toddler_l_carpal_distal_interphalangeal_5
+              USE Toddler_r_sternoclavicular
+                USE Toddler_r_shoulder
+                  USE Toddler_r_elbow
+                    USE Toddler_r_radiocarpal
+                        USE Toddler_r_carpometacarpal_1
+                          USE Toddler_r_metacarpophalangeal_1
+                            USE Toddler_r_carpal_interphalangeal_1
+                        USE Toddler_r_carpometacarpal_2
+                          USE Toddler_r_metacarpophalangeal_2
+                            USE Toddler_r_carpal_proximal_interphalangeal_2
+                              USE Toddler_r_carpal_distal_interphalangeal_2
+                        USE Toddler_r_carpometacarpal_3
+                          USE Toddler_r_metacarpophalangeal_3
+                            USE Toddler_r_carpal_proximal_interphalangeal_3
+                              USE Toddler_r_carpal_distal_interphalangeal_3
+                        USE Toddler_r_carpometacarpal_4
+                          USE Toddler_r_metacarpophalangeal_4
+                            USE Toddler_r_carpal_proximal_interphalangeal_4
+                              USE Toddler_r_carpal_distal_interphalangeal_4
+                        USE Toddler_r_carpometacarpal_5
+                          USE Toddler_r_metacarpophalangeal_5
+                            USE Toddler_r_carpal_proximal_interphalangeal_5
+                              USE Toddler_r_carpal_distal_interphalangeal_5
+
+]
+segments [
+USE Toddler_sacrum
+  USE Toddler_pelvis
+      USE Toddler_l_thigh
+        USE Toddler_l_calf
+          USE Toddler_l_talus
+            USE Toddler_l_tarsal_proximal_phalanx_2
+              USE Toddler_l_tarsal_distal_phalanx_2
+      USE Toddler_r_thigh
+        USE Toddler_r_calf
+          USE Toddler_r_talus
+            USE Toddler_r_tarsal_proximal_phalanx_2
+              USE Toddler_r_tarsal_distal_phalanx_2
+  USE Toddler_l5
+    USE Toddler_l3
+      USE Toddler_t12
+        USE Toddler_t9
+          USE Toddler_t4
+              USE Toddler_c7
+                USE Toddler_c3
+                  USE Toddler_skull
+              USE Toddler_l_clavicle
+                USE Toddler_l_upperarm
+                  USE Toddler_l_forearm
+                    USE Toddler_l_carpal
+                        USE Toddler_l_metacarpal_1
+                          USE Toddler_l_carpal_proximal_phalanx_1
+                            USE Toddler_l_carpal_distal_phalanx_1
+                        USE Toddler_l_metacarpal_2
+                          USE Toddler_l_carpal_proximal_phalanx_2
+                            USE Toddler_l_carpal_middle_phalanx_2
+                              USE Toddler_l_carpal_distal_phalanx_2
+                        USE Toddler_l_metacarpal_3
+                          USE Toddler_l_carpal_proximal_phalanx_3
+                            USE Toddler_l_carpal_middle_phalanx_3
+                              USE Toddler_l_carpal_distal_phalanx_3
+                        USE Toddler_l_metacarpal_4
+                          USE Toddler_l_carpal_proximal_phalanx_4
+                            USE Toddler_l_carpal_middle_phalanx_4
+                              USE Toddler_l_carpal_distal_phalanx_4
+                        USE Toddler_l_metacarpal_5
+                          USE Toddler_l_carpal_proximal_phalanx_5
+                            USE Toddler_l_carpal_middle_phalanx_5
+                              USE Toddler_l_carpal_distal_phalanx_5
+              USE Toddler_r_clavicle
+                USE Toddler_r_upperarm
+                  USE Toddler_r_forearm
+                    USE Toddler_r_carpal
+                        USE Toddler_r_metacarpal_1
+                          USE Toddler_r_carpal_proximal_phalanx_1
+                            USE Toddler_r_carpal_distal_phalanx_1
+                        USE Toddler_r_metacarpal_2
+                          USE Toddler_r_carpal_proximal_phalanx_2
+                            USE Toddler_r_carpal_middle_phalanx_2
+                              USE Toddler_r_carpal_distal_phalanx_2
+                        USE Toddler_r_metacarpal_3
+                          USE Toddler_r_carpal_proximal_phalanx_3
+                            USE Toddler_r_carpal_middle_phalanx_3
+                              USE Toddler_r_carpal_distal_phalanx_3
+                        USE Toddler_r_metacarpal_4
+                          USE Toddler_r_carpal_proximal_phalanx_4
+                            USE Toddler_r_carpal_middle_phalanx_4
+                              USE Toddler_r_carpal_distal_phalanx_4
+                        USE Toddler_r_metacarpal_5
+                          USE Toddler_r_carpal_proximal_phalanx_5
+                            USE Toddler_r_carpal_middle_phalanx_5
+                              USE Toddler_r_carpal_distal_phalanx_5
+
+]
+sites [
+USE Toddler_sacrum_pt
+  USE Toddler_pelvis_pt
+      USE Toddler_l_thigh_pt
+        USE Toddler_l_calf_pt
+          USE Toddler_l_talus_pt
+            USE Toddler_l_tarsal_proximal_phalanx_2_pt
+              USE Toddler_l_tarsal_distal_phalanx_2_pt
+      USE Toddler_r_thigh_pt
+        USE Toddler_r_calf_pt
+          USE Toddler_r_talus_pt
+            USE Toddler_r_tarsal_proximal_phalanx_2_pt
+              USE Toddler_r_tarsal_distal_phalanx_2_pt
+  USE Toddler_l5_pt
+    USE Toddler_l3_pt
+      USE Toddler_t12_pt
+        USE Toddler_t9_pt
+          USE Toddler_t4_pt
+              USE Toddler_c7_pt
+                USE Toddler_c3_pt
+                  USE Toddler_skull_pt
+              USE Toddler_l_clavicle_pt
+                USE Toddler_l_upperarm_pt
+                  USE Toddler_l_forearm_pt
+                    USE Toddler_l_carpal_pt
+                        USE Toddler_l_metacarpal_1_pt
+                          USE Toddler_l_carpal_proximal_phalanx_1_pt
+                            USE Toddler_l_carpal_distal_phalanx_1_pt
+                        USE Toddler_l_metacarpal_2_pt
+                          USE Toddler_l_carpal_proximal_phalanx_2_pt
+                            USE Toddler_l_carpal_middle_phalanx_2_pt
+                              USE Toddler_l_carpal_distal_phalanx_2_pt
+                        USE Toddler_l_metacarpal_3_pt
+                          USE Toddler_l_carpal_proximal_phalanx_3_pt
+                            USE Toddler_l_carpal_middle_phalanx_3_pt
+                              USE Toddler_l_carpal_distal_phalanx_3_pt
+                        USE Toddler_l_metacarpal_4_pt
+                          USE Toddler_l_carpal_proximal_phalanx_4_pt
+                            USE Toddler_l_carpal_middle_phalanx_4_pt
+                              USE Toddler_l_carpal_distal_phalanx_4_pt
+                        USE Toddler_l_metacarpal_5_pt
+                          USE Toddler_l_carpal_proximal_phalanx_5_pt
+                            USE Toddler_l_carpal_middle_phalanx_5_pt
+                              USE Toddler_l_carpal_distal_phalanx_5_pt
+              USE Toddler_r_clavicle_pt
+                USE Toddler_r_upperarm_pt
+                  USE Toddler_r_forearm_pt
+                    USE Toddler_r_carpal_pt
+                        USE Toddler_r_metacarpal_1_pt
+                          USE Toddler_r_carpal_proximal_phalanx_1_pt
+                            USE Toddler_r_carpal_distal_phalanx_1_pt
+                        USE Toddler_r_metacarpal_2_pt
+                          USE Toddler_r_carpal_proximal_phalanx_2_pt
+                            USE Toddler_r_carpal_middle_phalanx_2_pt
+                              USE Toddler_r_carpal_distal_phalanx_2_pt
+                        USE Toddler_r_metacarpal_3_pt
+                          USE Toddler_r_carpal_proximal_phalanx_3_pt
+                            USE Toddler_r_carpal_middle_phalanx_3_pt
+                              USE Toddler_r_carpal_distal_phalanx_3_pt
+                        USE Toddler_r_metacarpal_4_pt
+                          USE Toddler_r_carpal_proximal_phalanx_4_pt
+                            USE Toddler_r_carpal_middle_phalanx_4_pt
+                              USE Toddler_r_carpal_distal_phalanx_4_pt
+                        USE Toddler_r_metacarpal_5_pt
+                          USE Toddler_r_carpal_proximal_phalanx_5_pt
+                            USE Toddler_r_carpal_middle_phalanx_5_pt
+                              USE Toddler_r_carpal_distal_phalanx_5_pt
+]
+  skin [ 
+DEF babyskin Shape { # 
+ appearance Appearance {
+   texture ImageTexture { url [ "IMAGE.png" ] }
+
+   material Material {
+emissiveColor 0 0 0 
+specularColor 0 0 0
+shininess 0.5
+transparency 0 
+		}
+	} # appearance
+	geometry DEF ToddlerSkin IndexedFaceSet { # triangle mesh
+                creaseAngle 0 
+		ccw    TRUE
+		convex TRUE
+		solid  TRUE
+		coord DEF ToddlerSkinCoord Coordinate {
+		    point [ ]
+		}
+		coordIndex [
+		]
+		texCoordIndex [
+		]
+                texCoord TextureCoordinate {
+                    point [ ]
+                }
+	} # geometry
+   } # Shape 
+ ]  # skin 
+ skinCoord USE ToddlerSkinCoord
+}
+]}   # Added by John
+]}   # ToddlerView
+
+DEF Toddler_z100sTimer TimeSensor { cycleInterval 100 loop TRUE enabled TRUE }
+DEF Toddler_ActivateSensor ProximitySensor { size 1000000 1000000 1000000 }
+ROUTE Toddler_ActivateSensor.enterTime TO Toddler_z100sTimer.startTime
+
+DEF SkipAnimation Group {
+ children [
+DEF SkipTimer TimeSensor { cycleInterval 1.73 loop TRUE enabled FALSE }
+DEF Skip_r_kneeRotInterp OrientationInterpolator { key [ 0, 0.125, 0.2083, 0.2917, 0.375, 0.5, 0.6667, 0.7917, 0.9167, 1 ] 
+      keyValue [
+      		 -1 0 0 -0.1,
+      		 -1 0 0 -0.3,
+		 -1 0 0 -0.5,
+		 -1 0 0 -0.7,
+		 -1 0 0 -0.9, 
+                 -1 0 0 -1.0,
+		 -1 0 0 -0.75,
+		 1 0 0 -0.5,
+		 1 0 0 -0.25,
+		 -1 0 0 -0.1
+		] }
+DEF Skip_r_hipRotInterp OrientationInterpolator { key [ 0, 0.125, 0.2083, 0.2917, 0.375, 0.5, 0.6667, 0.7917, 0.9167, 1 ] 
+      keyValue [
+      		 1 0 0 -0.1,
+      		 1 0 0 -0.3,
+		 1 0 0 -0.5,
+		 1 0 0 -0.7,
+		 1 0 0 -0.9, 
+                 1 0 0 -1.0,
+		 1 0 0 -0.75,
+		 -1 0 0 -0.5,
+		 -1 0 0 -0.25,
+		 1 0 0 -0.1
+		 ] }
+
+#DEF Skip_l_kneeRotInterp OrientationInterpolator { key [ 0, 0.2083, 0.375, 0.5, 0.6667, 0.7917, 0.9167, 1 ] 
+#      keyValue [ 1 0 0 -0.3226, 1 0 0 -0.1556, 1 0 0 -0.08678, 1 0 0 -0.8751, 1 0 0 -1.131, 1 0 0 -0.09961, 1 0 0 -0.3942, 1 0 0 -0.3226 ] }
+
+#DEF Skip_l_hipRotInterp OrientationInterpolator { key [ 0, 0.25, 0.375, 0.5, 0.6667, 0.7917, 0.9167, 1 ] 
+#      keyValue [ -0.873 0.06094 0.484 -0.2865, 0.9963 -0.01057 0.08481 -0.2488, 0.9965 0.01591 -0.08222 -0.3836, -0.7018 -0.03223 -0.7117 -0.1289, -1 0 0 -0.5518, -0.9964 0.02231 0.0817 -0.5351, -0.9809 0.04912 0.1881 -0.5204, -0.873 0.06094 0.484 -0.2865 ] }
+
+] }
+
+ROUTE SkipTimer.fraction_changed TO Skip_r_kneeRotInterp.set_fraction
+ROUTE SkipTimer.fraction_changed TO Skip_r_hipRotInterp.set_fraction
+#ROUTE SkipTimer.fraction_changed TO Skip_l_kneeRotInterp.set_fraction
+#ROUTE SkipTimer.fraction_changed TO Skip_l_hipRotInterp.set_fraction
+
+ROUTE Skip_r_kneeRotInterp.value_changed TO Toddler_r_knee.rotation
+ROUTE Skip_r_hipRotInterp.value_changed TO Toddler_r_hip.rotation
+#ROUTE Skip_l_kneeRotInterp.value_changed TO Toddler_l_knee.rotation
+#ROUTE Skip_l_hipRotInterp.value_changed TO Toddler_l_hip.rotation

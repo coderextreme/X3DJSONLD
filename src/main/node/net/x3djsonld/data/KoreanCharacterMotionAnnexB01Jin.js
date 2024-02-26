@@ -20,7 +20,7 @@ var autoclass = require('./X3Dautoclass');
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="KoreanCharacterMotionAnnexB01Jin.x3d">KoreanCharacterMotionAnnexB01Jin.x3d</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/KoreanCharacterAnnexB01Jin.x3d">KoreanCharacterAnnexB01Jin.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> creator </i> </td>
@@ -40,7 +40,7 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
-			<td> 8 January 2023 </td>
+			<td> 14 October 2023 </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
@@ -52,11 +52,11 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="KoreanCharacterHumanMotion_Infotech2014_140706.pdf">KoreanCharacterHumanMotion_Infotech2014_140706.pdf</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/KoreanCharacterHumanMotion_Infotech2014_140706.pdf">KoreanCharacterHumanMotion_Infotech2014_140706.pdf</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="KoreanCharactersIllustrated.pdf">KoreanCharactersIllustrated.pdf</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/KoreanCharactersIllustrated.pdf">KoreanCharactersIllustrated.pdf</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> specificationSection </i> </td>
@@ -84,11 +84,11 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
-			<td> X3D-Edit 3.3, <a href="https://savage.nps.edu/X3D-Edit" target="_blank">https://savage.nps.edu/X3D-Edit</a> </td>
+			<td> X3D-Edit 4.0, <a href="https://savage.nps.edu/X3D-Edit" target="_blank">https://savage.nps.edu/X3D-Edit</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> license </i> </td>
-			<td> <a href="../license.html">../license.html</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/../license.html">../license.html</a> </td>
 		</tr>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center;" colspan="2">  &nbsp; </td>
@@ -628,12 +628,12 @@ KoreanCharacterMotionAnnexB01Jin.prototype = {
   this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
   .setHead((new autoclass.head())
     .addComponent((new autoclass.component()).setName("HAnim").setLevel(1))
-    .addMeta((new autoclass.meta()).setName("title").setContent("KoreanCharacterMotionAnnexB01Jin.x3d"))
+    .addMeta((new autoclass.meta()).setName("title").setContent("KoreanCharacterAnnexB01Jin.x3d"))
     .addMeta((new autoclass.meta()).setName("creator").setContent("Jin Hoon Lee and Min Joo Lee"))
     .addMeta((new autoclass.meta()).setName("translator").setContent("Chul Hee Jung and Myeong Won Lee"))
     .addMeta((new autoclass.meta()).setName("created").setContent("31 March 2011"))
     .addMeta((new autoclass.meta()).setName("translated").setContent("1 November 2014"))
-    .addMeta((new autoclass.meta()).setName("modified").setContent("8 January 2023"))
+    .addMeta((new autoclass.meta()).setName("modified").setContent("14 October 2023"))
     .addMeta((new autoclass.meta()).setName("description").setContent("Articulated 3D game character designed with a general graphics tool, then converted into an X3D HAnim model."))
     .addMeta((new autoclass.meta()).setName("reference").setContent("KoreanCharacter00ReadMe.txt"))
     .addMeta((new autoclass.meta()).setName("reference").setContent("KoreanCharacterHumanMotion_Infotech2014_140706.pdf"))
@@ -644,19 +644,19 @@ KoreanCharacterMotionAnnexB01Jin.prototype = {
     .addMeta((new autoclass.meta()).setName("generator").setContent("3DS MAX, http://www.autodesk.com/products/autodesk-3ds-max/overview"))
     .addMeta((new autoclass.meta()).setName("generator").setContent("Suwon HAnim Converter"))
     .addMeta((new autoclass.meta()).setName("generator").setContent("Gnu Image Manipulation Program, http://www.gimp.org"))
-    .addMeta((new autoclass.meta()).setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
+    .addMeta((new autoclass.meta()).setName("generator").setContent("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"))
     .addMeta((new autoclass.meta()).setName("license").setContent("../license.html")))
   .setScene((new autoclass.Scene())
     .addChild((new autoclass.NavigationInfo()).setSpeed(1.5))
     .addChild((new autoclass.Viewpoint()).setDescription("AnnexB01Jin").setCenterOfRotation(0.0,1.0,0.0).setPosition(0.0,1.0,3.0))
     .addChild((new autoclass.HAnimHumanoid("hanim_AnnexB01Jin")).setName("AnnexB01Jin").setInfo(new autoclass.MFString("\"humanoidVersion=2.0\"")).setScale(0.0225,0.0225,0.0225).setVersion("2.0")
-      .addSkeleton((new autoclass.HAnimJoint("hanim_HumanoidRoot")).setName("HumanoidRoot").setCenter(0.0,30.53,-0.7076).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
+      .addSkeleton((new autoclass.HAnimJoint("hanim_HumanoidRoot")).setName("humanoid_root").setCenter(0.0,30.53,-0.7076).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
         .addChild((new autoclass.HAnimSegment("hanim_sacrum")).setName("sacrum")
           .addChild((new autoclass.Transform()).setTranslation(0.0,30.53,-0.7076)
             .addChild((new autoclass.Shape())
               .setAppearance((new autoclass.Appearance())
                 .setMaterial((new autoclass.Material()).setDiffuseColor(0.588,0.588,0.588))
-                .setTexture((new autoclass.ImageTexture("Annex01JinTextureAtlas")).setUrl(new autoclass.MFString("\"Jin.png\" \"http://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/Jin.png\""))))
+                .setTexture((new autoclass.ImageTexture("Annex01JinTextureAtlas")).setUrl(new autoclass.MFString("\"Jin.png\" \"https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/Jin.png\""))))
               .setGeometry((new autoclass.IndexedFaceSet()).setCreaseAngle(3.14159).setCoordIndex(this.IndexedFaceSet_8_26_coordIndex).setTexCoordIndex(this.IndexedFaceSet_8_26_texCoordIndex)
                 .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_9_26_point))
                 .setTexCoord((new autoclass.TextureCoordinate()).setPoint(this.TextureCoordinate_9_27_point))))))
@@ -832,8 +832,8 @@ KoreanCharacterMotionAnnexB01Jin.prototype = {
                           .setTexCoord((new autoclass.TextureCoordinate()).setPoint(this.TextureCoordinate_14_192_point)))))))))))))
     .addChild((new autoclass.Group("KeyframeAnimation"))
       .addChild((new autoclass.TimeSensor("KeyframeTimer")).setCycleInterval(8.033494).setLoop(true))
-      .addChild((new autoclass.PositionInterpolator("Keyframe_HumanoidRoot")).setKey(java.newArray("float", [0.0,1.0])).setKeyValue(new autoclass.MFVec3f(java.newArray("float", [0.0,0.0,0.0,0.0,0.0,0.0]))))
-      .addChild((new autoclass.OrientationInterpolator("Keyframe_HumanoidRoot")).setKey(java.newArray("float", [0.0,1.0])).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]))))
+      .addChild((new autoclass.PositionInterpolator("Keyframe_HumanoidRootTranslation")).setKey(java.newArray("float", [0.0,1.0])).setKeyValue(new autoclass.MFVec3f(java.newArray("float", [0.0,0.0,0.0,0.0,0.0,0.0]))))
+      .addChild((new autoclass.OrientationInterpolator("Keyframe_HumanoidRootOrientation")).setKey(java.newArray("float", [0.0,1.0])).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]))))
       .addChild((new autoclass.OrientationInterpolator("Keyframe_sacroiliac")).setKey(java.newArray("float", [0.0,1.0])).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]))))
       .addChild((new autoclass.OrientationInterpolator("Keyframe_l_shoulder")).setKey(java.newArray("float", [0.0,0.5,1.0])).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,0.0,0.0,-1.0,0.0,0.0,3.0,0.0,0.0,0.0,0.0]))))
       .addChild((new autoclass.OrientationInterpolator("Keyframe_l_elbow")).setKey(java.newArray("float", [0.0,1.0])).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]))))
@@ -851,8 +851,8 @@ KoreanCharacterMotionAnnexB01Jin.prototype = {
       .addChild((new autoclass.OrientationInterpolator("Keyframe_r_knee")).setKey(java.newArray("float", [0.0,1.0])).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]))))
       .addChild((new autoclass.OrientationInterpolator("Keyframe_r_talocrural")).setKey(java.newArray("float", [0.0,1.0])).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]))))
       .addChild((new autoclass.OrientationInterpolator("Keyframe_r_metatarsophalangeal")).setKey(java.newArray("float", [0.0,1.0])).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]))))
-      .addChild((new autoclass.ROUTE()).setFromNode("KeyframeTimer").setFromField("fraction_changed").setToNode("Keyframe_HumanoidRoot").setToField("set_fraction"))
-      .addChild((new autoclass.ROUTE()).setFromNode("KeyframeTimer").setFromField("fraction_changed").setToNode("Keyframe_HumanoidRoot").setToField("set_fraction"))
+      .addChild((new autoclass.ROUTE()).setFromNode("KeyframeTimer").setFromField("fraction_changed").setToNode("Keyframe_HumanoidRootTranslation").setToField("set_fraction"))
+      .addChild((new autoclass.ROUTE()).setFromNode("KeyframeTimer").setFromField("fraction_changed").setToNode("Keyframe_HumanoidRootOrientation").setToField("set_fraction"))
       .addChild((new autoclass.ROUTE()).setFromNode("KeyframeTimer").setFromField("fraction_changed").setToNode("Keyframe_sacroiliac").setToField("set_fraction"))
       .addChild((new autoclass.ROUTE()).setFromNode("KeyframeTimer").setFromField("fraction_changed").setToNode("Keyframe_l_shoulder").setToField("set_fraction"))
       .addChild((new autoclass.ROUTE()).setFromNode("KeyframeTimer").setFromField("fraction_changed").setToNode("Keyframe_l_elbow").setToField("set_fraction"))
@@ -870,8 +870,8 @@ KoreanCharacterMotionAnnexB01Jin.prototype = {
       .addChild((new autoclass.ROUTE()).setFromNode("KeyframeTimer").setFromField("fraction_changed").setToNode("Keyframe_r_knee").setToField("set_fraction"))
       .addChild((new autoclass.ROUTE()).setFromNode("KeyframeTimer").setFromField("fraction_changed").setToNode("Keyframe_r_talocrural").setToField("set_fraction"))
       .addChild((new autoclass.ROUTE()).setFromNode("KeyframeTimer").setFromField("fraction_changed").setToNode("Keyframe_r_metatarsophalangeal").setToField("set_fraction"))
-      .addChild((new autoclass.ROUTE()).setFromNode("Keyframe_HumanoidRoot").setFromField("value_changed").setToNode("hanim_HumanoidRoot").setToField("translation"))
-      .addChild((new autoclass.ROUTE()).setFromNode("Keyframe_HumanoidRoot").setFromField("value_changed").setToNode("hanim_HumanoidRoot").setToField("rotation"))
+      .addChild((new autoclass.ROUTE()).setFromNode("Keyframe_HumanoidRootTranslation").setFromField("value_changed").setToNode("hanim_HumanoidRoot").setToField("translation"))
+      .addChild((new autoclass.ROUTE()).setFromNode("Keyframe_HumanoidRootOrientation").setFromField("value_changed").setToNode("hanim_HumanoidRoot").setToField("rotation"))
       .addChild((new autoclass.ROUTE()).setFromNode("Keyframe_sacroiliac").setFromField("value_changed").setToNode("hanim_sacroiliac").setToField("rotation"))
       .addChild((new autoclass.ROUTE()).setFromNode("Keyframe_l_shoulder").setFromField("value_changed").setToNode("hanim_l_shoulder").setToField("rotation"))
       .addChild((new autoclass.ROUTE()).setFromNode("Keyframe_l_elbow").setFromField("value_changed").setToNode("hanim_l_elbow").setToField("rotation"))

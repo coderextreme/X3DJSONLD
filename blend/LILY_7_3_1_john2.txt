@@ -1,0 +1,14 @@
+Blender 3.6.2 (hash e53e55951e7a built 2023-08-16 23:35:13)
+Read prefs: "C:\Users\john\AppData\Roaming\Blender Foundation\Blender\3.6\config\userpref.blend"
+Read blend: "C:\Users\john\X3DJSONLD\blend\LILY_7_3_BLEND.blend"
+Error: Python: Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "C:\Users\john\X3DJSONLD\blend\skinweights2.py", line 40, in <module>
+    get_skinning_weights(obj)
+  File "C:\Users\john\X3DJSONLD\blend\skinweights2.py", line 21, in get_skinning_weights
+    for vertex in mesh.vertices: ##in each vertex of the mesh
+AttributeError: 'NoneType' object has no attribute 'vertices'
+Universal Material Map: Registered Converter classes.
+Armature SkinnedMeshes
+
+Blender quit

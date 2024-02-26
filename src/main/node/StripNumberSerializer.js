@@ -38,7 +38,7 @@ StripNumberSerializer.prototype = {
 		for (var a in element.attributes) {
 			try {
 				parseInt(a);
-				if (element.attributes.hasOwnProperty(a) && element.attributes[a].nodeType == 2) {
+				if (element.attributes.hasOwnProperty(a) && element.attributes[a].nodeType === 2) {
 					var attr = element.attributes[a].nodeName;
 					var method = attr;
 					// look at object model
@@ -125,7 +125,7 @@ StripNumberSerializer.prototype = {
 		for (var a in element.attributes) {
 			try {
 				parseInt(a);
-				if (element.attributes.hasOwnProperty(a) && element.attributes[a].nodeType == 2) {
+				if (element.attributes.hasOwnProperty(a) && element.attributes[a].nodeType === 2) {
 					var attr = element.attributes[a].nodeName;
 					if (attr === at) {
 						value = element.attributes[a].nodeValue;

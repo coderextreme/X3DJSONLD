@@ -460,23 +460,14 @@ JavaScriptSerializer.prototype = {
 					}
 				}
 				let construct = "new "+node.nodeName+"("+DEFpar+")";
-				if (hAnimListFound) {
-					// construct = "("+construct+")";
-				}
 				construct += this.subSerializeToString(node, mapToMethod, fieldTypes, n+1, stack);
-				if (hAnimListFound) {
-					//if (!node.nodeName.startsWith("HAnimHumanoid")) {
-						// ch += "(";
-					//}
-					// ch += "("+node.nodeName+")";
-				}
 				ch += construct;
 				if (element.nodeName === "Appearance" && node.NodeName === "ComposedShader") {
 					ch += "}";
 				}
 				ch += ")";
-				if (node.nodeName.startsWith("Scene") && this.foundHumanoid) {
-					// ch += "))";
+				if (!node.nodeName.startsWith("Scene")) {
+					// ch += ")";
 				}
 				if (element.nodeName === "ProtoInstance" && node.nodeName === "fieldValue") {
 					// ch goes to end of body
@@ -492,6 +483,9 @@ JavaScriptSerializer.prototype = {
 				var y = node.nodeValue.
 					replace(/\\/g, '\\\\').
 					replace(/"/g, '\\"');
+				if (typeof USE !== 'undefined') {
+					str += ")";
+				}
 				str += "\n"+("  ".repeat(n))+'.addComments(new CommentsBlock("'+y.split("\n").join('\\n\"+\n\"')+'"))';
 				if (y !== node.nodeValue) {
 					// console.error("JavaScript Comment Replacing "+node.nodeValue+" with "+y);
@@ -508,9 +502,6 @@ JavaScriptSerializer.prototype = {
 					}).join('\\n\"+\n\"')+'`)';
 			}
 		}
-		//if (node.nodeName.startsWith("head")) {
-			// str += ")";
-		//}
 		return str;
 	}
 };

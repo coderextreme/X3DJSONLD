@@ -8772,4 +8772,6597 @@ HAnimHumanoid23.segments[293] = HAnimSegment1782;
 
 children[3] = HAnimHumanoid23;
 
+Script Script1783 = createNode("Script");
+field field1784 = createNode("field");
+field1784.name = "dummy";
+field1784.type = "MFInt32";
+field1784.accessType = "initializeOnly";
+field1784.value = "0";
+Script1783.field = new MFNode();
+
+Script1783.field[0] = field1784;
+
+
+Script1783.setSourceCode(`ecmascript:\n"+
+"	function HAnimScale() {\n"+
+"            this.x = 0;\n"+
+"            this.y = 0;\n"+
+"            this.l_x = 0;\n"+
+"            this.l_z = 0;\n"+
+"            this.r_x = 0;\n"+
+"            this.r_z = 0;\n"+
+"            this.maxy = 0;\n"+
+"            this.z = 0;\n"+
+"            this.scale = [1, 1, 1];\n"+
+"            this.yscale = 1;\n"+
+"            this.X3D0 = document.querySelector(\"X3D\");\n"+
+"            this.humanoids = [];\n"+
+"            this.traverseChildrenSceneGraph(X3D.Scene.children, humanoids);\n"+
+"            for (let h = 0; h < humanoids.length; h++) {\n"+
+"                    let humanoid = humanoids[h];\n"+
+"                    this.scale = humanoid.getScale();\n"+
+"                    humanoid.setScale([ 1, 1, 1 ]);\n"+
+"                    let root = humanoid.skeleton;\n"+
+"                    let center = root.center;\n"+
+"                    this.x = center[0];\n"+
+"                    this.y = center[1];\n"+
+"                    this.maxy = center[1];\n"+
+"                    this.z = center[2];\n"+
+"                    let translation = [0, 0, 0];\n"+
+"                    this.centering(root);\n"+
+"                    this.x = (this.l_x + this.r_x) / 2;\n"+
+"                    this.z = (this.l_z + this.r_z) / 2;\n"+
+"                    this.yscale = this.maxy - this.y;\n"+
+"                    this.transform(root, translation);\n"+
+"                    this.x = 0;\n"+
+"                    this.y = 0;\n"+
+"                    this.l_x = 0;\n"+
+"                    this.l_z = 0;\n"+
+"                    this.r_x = 0;\n"+
+"                    this.r_z = 0;\n"+
+"                    this.maxy = 0;\n"+
+"                    this.z = 0;\n"+
+"                    this.scale = [ 1, 1, 1 ];\n"+
+"                    this.yscale = 1;\n"+
+"            }\n"+
+"            this.humanoids = [];\n"+
+"    }\n"+
+"\n"+
+"    HAnimScale.prototype = {\n"+
+"        traverseChildrenSceneGraph: function(children, humanoids) {\n"+
+"                if (children !== null) {\n"+
+"                        for (let ch = 0; ch < children.length; ch++) {\n"+
+"                                let child = children[ch];\n"+
+"                                if (!this.traverseChildSceneGraph(child, humanoids)) {\n"+
+"                                        console.error(\"Unpacking child in\", child, \"failed\");\n"+
+"                                }\n"+
+"                        }\n"+
+"                        return true;\n"+
+"                }\n"+
+"                return false;\n"+
+"        },\n"+
+"\n"+
+"        traverseChildSceneGraph: function(child, humanoids) {\n"+
+"                let children = null;\n"+
+"                if (typeof child === 'HAnimJoint') {\n"+
+"                        let joint = child;\n"+
+"                        let children = joint.getChildrenList();\n"+
+"                        this.traverseChildrenSceneGraph(children, humanoids);\n"+
+"                } else if (typeof child === 'HAnimSite') {\n"+
+"                        let site = child;\n"+
+"                        let children = site.getChildrenList();\n"+
+"                        this.traverseChildrenSceneGraph(children, humanoids);\n"+
+"                } else if (typeof child === 'HAnimSegment') {\n"+
+"                        let segment = child;\n"+
+"                        let children = segment.getChildrenList();\n"+
+"                        this.traverseChildrenSceneGraph(children, humanoids);\n"+
+"                } else if (typeof child === 'Group') {\n"+
+"                        let group = child;\n"+
+"                        let children = group.getChildrenList();\n"+
+"                        this.traverseChildrenSceneGraph(children, humanoids);\n"+
+"                } else if (typeof child === 'Transform') {\n"+
+"                        let trans = child;\n"+
+"                        let children = trans.getChildrenList();\n"+
+"                        this.traverseChildrenSceneGraph(children, humanoids);\n"+
+"                } else if (typeof child === 'Shape') {\n"+
+"                        let shape = child;\n"+
+"                        let appearance = shape.getAppearance();\n"+
+"                        if (!this.traverseChildSceneGraph(appearance, humanoids)) {\n"+
+"                                console.error(\"Unpacking appearance in Shape failed\");\n"+
+"                        }\n"+
+"                        let geometry = shape.getGeometry();\n"+
+"                        if (!this.traverseChildSceneGraph(geometry, humanoids)) {\n"+
+"                                console.error(\"Unpacking geometry in Shape failed\");\n"+
+"                        }\n"+
+"                } else if (typeof child === 'IndexedFaceSet') {\n"+
+"                        let ifs = child;\n"+
+"                        let coord = ifs.getCoord();\n"+
+"                        if (!this.traverseChildSceneGraph(coord, humanoids)) {\n"+
+"                                console.error(\"Unpacking coord in IndexedFaceSet failed\");\n"+
+"                        }\n"+
+"                } else if (typeof child === 'Appearance') {\n"+
+"                } else if (typeof child === 'Coordinate') {\n"+
+"                } else if (typeof child === 'WorldInfo') {\n"+
+"                } else if (typeof child === 'NavigationInfo') {\n"+
+"                } else if (typeof child === 'Viewpoint') {\n"+
+"                } else if (typeof child === 'HAnimHumanoid') {\n"+
+"                        humanoids.add(child);\n"+
+"                } else if (child !== null) {\n"+
+"                        console.error(\"Unhandled is\", child);\n"+
+"                } else {\n"+
+"                        console.error(\"Node is\", child);\n"+
+"                        return false;\n"+
+"                }\n"+
+"                return true;\n"+
+"        },\n"+
+"        centering: function(joint) {\n"+
+"                let center = joint.getCenter();\n"+
+"                let name = joint.getName();\n"+
+"                switch (name) {\n"+
+"                        case \"l_tarsal_distal_interphalangeal_5\":\n"+
+"                                this.l_x = center[0];\n"+
+"                                this.l_z = center[2];\n"+
+"                                break;\n"+
+"                        case \"r_tarsal_distal_interphalangeal_5\":\n"+
+"                                this.r_x = center[0];\n"+
+"                                this.r_z = center[2];\n"+
+"                                break;\n"+
+"                }\n"+
+"                if (center[1] > this.maxy) {\n"+
+"                        this.maxy = center[1];\n"+
+"                }\n"+
+"                if (center[1] < this.y) {\n"+
+"                        this.y = center[1];\n"+
+"                }\n"+
+"                let children = joint.getChildrenList();\n"+
+"                for (let ch = 0; ch < children.size(); ch++) {\n"+
+"                        let child = children[ch];\n"+
+"                        if (typeof child === 'HAnimJoint') {\n"+
+"                                centering(child);\n"+
+"                        }\n"+
+"                }\n"+
+"        },\n"+
+"        transformPoint: function(point, point_offset, translation) {\n"+
+"                /// console.error(\"OLD \"+point[point_offset+0]+\" \"+point[point_offset+1]+\" \"+point[point_offset+2]+\" \");\n"+
+"                point[point_offset+0] -= this.x;\n"+
+"                point[point_offset+1] -= this.y;\n"+
+"                point[point_offset+2] -= this.z;\n"+
+"\n"+
+"                point[point_offset+0] *= this.scale[0];\n"+
+"                point[point_offset+1] *= this.scale[1];\n"+
+"                point[point_offset+2] *= this.scale[2];\n"+
+"\n"+
+"                point[point_offset+0] += translation[0];\n"+
+"                point[point_offset+1] += translation[1];\n"+
+"                point[point_offset+2] += translation[2];\n"+
+"                // console.error(\"NEW \"+point[point_offset+0]+\" \"+point[point_offset+1]+\" \"+point[point_offset+2]+\" \");\n"+
+"        },\n"+
+"        transform: function(node, parentTranslation) {\n"+
+"                let translation = [parentTranslation[0], parentTranslation[1], parentTranslation[2]];\n"+
+"                let children = null;\n"+
+"                if (typeof node === 'HAnimJoint') {\n"+
+"                        let joint = node;\n"+
+"\n"+
+"                        let field = joint.getTranslation();\n"+
+"                        this.transformPoint(field, 0, [ 0, 0, 0 ]);\n"+
+"                        this.transformPoint(translation, 0, field);\n"+
+"                        joint.setTranslation([ 0, 0, 0 ]);\n"+
+"\n"+
+"                        let center = joint.getCenter();\n"+
+"                        this.transformPoint(center, 0, translation);\n"+
+"                        joint.setCenter(center);\n"+
+"                        children = joint.getChildrenList();\n"+
+"                } else if (typeof node === 'HAnimSite') {\n"+
+"                        let site = node;\n"+
+"\n"+
+"                        let field = site.getTranslation();\n"+
+"                        this.transformPoint(field, 0, [ 0, 0, 0]);\n"+
+"                        this.transformPoint(translation, 0, field);\n"+
+"                        site.setTranslation([0, 0, 0]);\n"+
+"\n"+
+"                        let center = site.getCenter();\n"+
+"                        this.transformPoint(center, 0, translation);\n"+
+"                        site.setCenter(center);\n"+
+"\n"+
+"                        children = site.getChildrenList();\n"+
+"                } else if (typeof node === 'HAnimSegment') {\n"+
+"                        let segment = node;\n"+
+"                        let coord = segment.getCoord();\n"+
+"                        if (coord !== null) {\n"+
+"                                if (!this.transform(coord, translation)) {\n"+
+"                                        console.error(\"Unpacking coord in HAnimSegment failed\");\n"+
+"                                }\n"+
+"                        }\n"+
+"                        let displacers = segment.getDisplacersList();\n"+
+"                        if (displacers !== null) {\n"+
+"                                for (let di = 0; di < displacers.size(); di++) {\n"+
+"                                        let displacer = displacers.get(di);\n"+
+"                                        if (!this.transform(displacer, translation)) {\n"+
+"                                                console.error(\"Unpacking displacer in HAnimSegment failed\");\n"+
+"                                        }\n"+
+"                                }\n"+
+"                        }\n"+
+"                        children = segment.getChildrenList();\n"+
+"                } else if (typeof node === 'Transform') {\n"+
+"                        let trans = node;\n"+
+"                        let field = trans.getTranslation();\n"+
+"                        this.transformPoint(field, 0, [0,0,0]);\n"+
+"                        this.transformPoint(translation, 0, field);\n"+
+"                        trans.setTranslation([0,0,0]);\n"+
+"                        children = trans.getChildrenList();\n"+
+"                } else if (typeof node === 'Shape') {\n"+
+"                        let shape = node;\n"+
+"                        let appearance = shape.getAppearance();\n"+
+"                        if (!this.transform(appearance, translation)) {\n"+
+"                                console.error(\"Unpacking appearance in Shape failed\");\n"+
+"                        }\n"+
+"                        let geometry = shape.getGeometry();\n"+
+"                        if (!this.transform(geometry, translation)) {\n"+
+"                                console.error(\"Unpacking geometry in Shape failed\");\n"+
+"                        }\n"+
+"                } else if (typeof node === 'IndexedFaceSet') {\n"+
+"                        let ifs = node;\n"+
+"                        let coord = ifs.getCoord();\n"+
+"                        let coordIndex = ifs.getCoordIndex();\n"+
+"                        if (coordIndex.length > 700) {\n"+
+"                                console.error(\"coordIndex\", coordIndex.length);\n"+
+"                                let texCoordIndex = ifs.getTexCoordIndex();\n"+
+"                                console.error(\"texCoordIndex\", texCoordIndex.length);\n"+
+"                        }\n"+
+"                        if (!this.transform(coord, translation)) {\n"+
+"                                console.error(\"Unpacking coord in IndexedFaceSet failed\");\n"+
+"                        }\n"+
+"                } else if (typeof node === 'Appearance') {\n"+
+"                } else if (typeof node === 'Coordinate') {\n"+
+"                        let coordinate = node;\n"+
+"                        let point = coordinate.getPoint();\n"+
+"                        // console.error(\"point \", point.length);\n"+
+"                        for (let p = 0; p < point.length; p += 3) {\n"+
+"                                this.transformPoint(point, p, translation);\n"+
+"                        }\n"+
+"                        coordinate.setPoint(point);\n"+
+"                } else if (node !== null) {\n"+
+"                        console.error(\"Unhandled is\", node);\n"+
+"                } else {\n"+
+"                        console.error(\"Node is\", node);\n"+
+"                        return false;\n"+
+"                }\n"+
+"                if (children !== null) {\n"+
+"                        for (let ch = 0; ch < children.size(); ch++) {\n"+
+"                                let child = children.get(ch);\n"+
+"                                if (!this.transform(child, translation)) {\n"+
+"                                        console.error(\"Unpacking child in\", node, \"failed\");\n"+
+"                                }\n"+
+"                        }\n"+
+"                }\n"+
+"                return true;\n"+
+"        }\n"+
+"    }\n"+
+"    function intialize() {\n"+
+"        new HAnimScale();\n"+
+"    }`)
+children[4] = Script1783;
+
+Group Group1785 = createNode("Group");
+Group1785.DEF = "StopAnimation";
+TimeSensor TimeSensor1786 = createNode("TimeSensor");
+TimeSensor1786.DEF = "StopTimer";
+TimeSensor1786.cycleInterval = 5.73;
+TimeSensor1786.loop = True;
+Group1785.children = new MFNode();
+
+Group1785.children[0] = TimeSensor1786;
+
+PositionInterpolator PositionInterpolator1787 = createNode("PositionInterpolator");
+PositionInterpolator1787.DEF = "Stop_humanoid_root_TranslationInterpolator";
+PositionInterpolator1787.key = new MFFloat(new float[0,0.5,1]);
+PositionInterpolator1787.keyValue = new MFVec3f(new float[0,0,0,0,0,0,0,0,0]);
+Group1785.children[1] = PositionInterpolator1787;
+
+OrientationInterpolator OrientationInterpolator1788 = createNode("OrientationInterpolator");
+OrientationInterpolator1788.DEF = "Stop_humanoid_root_RotationInterpolator";
+OrientationInterpolator1788.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1788.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[2] = OrientationInterpolator1788;
+
+OrientationInterpolator OrientationInterpolator1789 = createNode("OrientationInterpolator");
+OrientationInterpolator1789.DEF = "Stop_sacroiliac_RotationInterpolator";
+OrientationInterpolator1789.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1789.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[3] = OrientationInterpolator1789;
+
+OrientationInterpolator OrientationInterpolator1790 = createNode("OrientationInterpolator");
+OrientationInterpolator1790.DEF = "Stop_l_hip_RotationInterpolator";
+OrientationInterpolator1790.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1790.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[4] = OrientationInterpolator1790;
+
+OrientationInterpolator OrientationInterpolator1791 = createNode("OrientationInterpolator");
+OrientationInterpolator1791.DEF = "Stop_l_knee_RotationInterpolator";
+OrientationInterpolator1791.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1791.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[5] = OrientationInterpolator1791;
+
+OrientationInterpolator OrientationInterpolator1792 = createNode("OrientationInterpolator");
+OrientationInterpolator1792.DEF = "Stop_l_ankle_RotationInterpolator";
+OrientationInterpolator1792.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1792.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[6] = OrientationInterpolator1792;
+
+OrientationInterpolator OrientationInterpolator1793 = createNode("OrientationInterpolator");
+OrientationInterpolator1793.DEF = "Stop_l_subtalar_RotationInterpolator";
+OrientationInterpolator1793.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1793.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[7] = OrientationInterpolator1793;
+
+OrientationInterpolator OrientationInterpolator1794 = createNode("OrientationInterpolator");
+OrientationInterpolator1794.DEF = "Stop_l_midtarsal_RotationInterpolator";
+OrientationInterpolator1794.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1794.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[8] = OrientationInterpolator1794;
+
+OrientationInterpolator OrientationInterpolator1795 = createNode("OrientationInterpolator");
+OrientationInterpolator1795.DEF = "Stop_l_metatarsal_RotationInterpolator";
+OrientationInterpolator1795.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1795.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[9] = OrientationInterpolator1795;
+
+OrientationInterpolator OrientationInterpolator1796 = createNode("OrientationInterpolator");
+OrientationInterpolator1796.DEF = "Stop_r_hip_RotationInterpolator";
+OrientationInterpolator1796.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1796.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[10] = OrientationInterpolator1796;
+
+OrientationInterpolator OrientationInterpolator1797 = createNode("OrientationInterpolator");
+OrientationInterpolator1797.DEF = "Stop_r_knee_RotationInterpolator";
+OrientationInterpolator1797.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1797.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[11] = OrientationInterpolator1797;
+
+OrientationInterpolator OrientationInterpolator1798 = createNode("OrientationInterpolator");
+OrientationInterpolator1798.DEF = "Stop_r_ankle_RotationInterpolator";
+OrientationInterpolator1798.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1798.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[12] = OrientationInterpolator1798;
+
+OrientationInterpolator OrientationInterpolator1799 = createNode("OrientationInterpolator");
+OrientationInterpolator1799.DEF = "Stop_r_subtalar_RotationInterpolator";
+OrientationInterpolator1799.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1799.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[13] = OrientationInterpolator1799;
+
+OrientationInterpolator OrientationInterpolator1800 = createNode("OrientationInterpolator");
+OrientationInterpolator1800.DEF = "Stop_r_midtarsal_RotationInterpolator";
+OrientationInterpolator1800.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1800.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[14] = OrientationInterpolator1800;
+
+OrientationInterpolator OrientationInterpolator1801 = createNode("OrientationInterpolator");
+OrientationInterpolator1801.DEF = "Stop_r_metatarsal_RotationInterpolator";
+OrientationInterpolator1801.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1801.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[15] = OrientationInterpolator1801;
+
+OrientationInterpolator OrientationInterpolator1802 = createNode("OrientationInterpolator");
+OrientationInterpolator1802.DEF = "Stop_vl5_RotationInterpolator";
+OrientationInterpolator1802.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1802.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[16] = OrientationInterpolator1802;
+
+OrientationInterpolator OrientationInterpolator1803 = createNode("OrientationInterpolator");
+OrientationInterpolator1803.DEF = "Stop_vl4_RotationInterpolator";
+OrientationInterpolator1803.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1803.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[17] = OrientationInterpolator1803;
+
+OrientationInterpolator OrientationInterpolator1804 = createNode("OrientationInterpolator");
+OrientationInterpolator1804.DEF = "Stop_vl3_RotationInterpolator";
+OrientationInterpolator1804.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1804.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[18] = OrientationInterpolator1804;
+
+OrientationInterpolator OrientationInterpolator1805 = createNode("OrientationInterpolator");
+OrientationInterpolator1805.DEF = "Stop_vl2_RotationInterpolator";
+OrientationInterpolator1805.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1805.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[19] = OrientationInterpolator1805;
+
+OrientationInterpolator OrientationInterpolator1806 = createNode("OrientationInterpolator");
+OrientationInterpolator1806.DEF = "Stop_vl1_RotationInterpolator";
+OrientationInterpolator1806.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1806.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[20] = OrientationInterpolator1806;
+
+OrientationInterpolator OrientationInterpolator1807 = createNode("OrientationInterpolator");
+OrientationInterpolator1807.DEF = "Stop_vt12_RotationInterpolator";
+OrientationInterpolator1807.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1807.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[21] = OrientationInterpolator1807;
+
+OrientationInterpolator OrientationInterpolator1808 = createNode("OrientationInterpolator");
+OrientationInterpolator1808.DEF = "Stop_vt11_RotationInterpolator";
+OrientationInterpolator1808.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1808.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[22] = OrientationInterpolator1808;
+
+OrientationInterpolator OrientationInterpolator1809 = createNode("OrientationInterpolator");
+OrientationInterpolator1809.DEF = "Stop_vt10_RotationInterpolator";
+OrientationInterpolator1809.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1809.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[23] = OrientationInterpolator1809;
+
+OrientationInterpolator OrientationInterpolator1810 = createNode("OrientationInterpolator");
+OrientationInterpolator1810.DEF = "Stop_vt9_RotationInterpolator";
+OrientationInterpolator1810.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1810.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[24] = OrientationInterpolator1810;
+
+OrientationInterpolator OrientationInterpolator1811 = createNode("OrientationInterpolator");
+OrientationInterpolator1811.DEF = "Stop_vt8_RotationInterpolator";
+OrientationInterpolator1811.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1811.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[25] = OrientationInterpolator1811;
+
+OrientationInterpolator OrientationInterpolator1812 = createNode("OrientationInterpolator");
+OrientationInterpolator1812.DEF = "Stop_vt7_RotationInterpolator";
+OrientationInterpolator1812.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1812.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[26] = OrientationInterpolator1812;
+
+OrientationInterpolator OrientationInterpolator1813 = createNode("OrientationInterpolator");
+OrientationInterpolator1813.DEF = "Stop_vt6_RotationInterpolator";
+OrientationInterpolator1813.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1813.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[27] = OrientationInterpolator1813;
+
+OrientationInterpolator OrientationInterpolator1814 = createNode("OrientationInterpolator");
+OrientationInterpolator1814.DEF = "Stop_vt5_RotationInterpolator";
+OrientationInterpolator1814.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1814.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[28] = OrientationInterpolator1814;
+
+OrientationInterpolator OrientationInterpolator1815 = createNode("OrientationInterpolator");
+OrientationInterpolator1815.DEF = "Stop_vt4_RotationInterpolator";
+OrientationInterpolator1815.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1815.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[29] = OrientationInterpolator1815;
+
+OrientationInterpolator OrientationInterpolator1816 = createNode("OrientationInterpolator");
+OrientationInterpolator1816.DEF = "Stop_vt3_RotationInterpolator";
+OrientationInterpolator1816.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1816.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[30] = OrientationInterpolator1816;
+
+OrientationInterpolator OrientationInterpolator1817 = createNode("OrientationInterpolator");
+OrientationInterpolator1817.DEF = "Stop_vt2_RotationInterpolator";
+OrientationInterpolator1817.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1817.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[31] = OrientationInterpolator1817;
+
+OrientationInterpolator OrientationInterpolator1818 = createNode("OrientationInterpolator");
+OrientationInterpolator1818.DEF = "Stop_vt1_RotationInterpolator";
+OrientationInterpolator1818.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1818.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[32] = OrientationInterpolator1818;
+
+OrientationInterpolator OrientationInterpolator1819 = createNode("OrientationInterpolator");
+OrientationInterpolator1819.DEF = "Stop_vc7_RotationInterpolator";
+OrientationInterpolator1819.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1819.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[33] = OrientationInterpolator1819;
+
+OrientationInterpolator OrientationInterpolator1820 = createNode("OrientationInterpolator");
+OrientationInterpolator1820.DEF = "Stop_vc6_RotationInterpolator";
+OrientationInterpolator1820.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1820.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[34] = OrientationInterpolator1820;
+
+OrientationInterpolator OrientationInterpolator1821 = createNode("OrientationInterpolator");
+OrientationInterpolator1821.DEF = "Stop_vc5_RotationInterpolator";
+OrientationInterpolator1821.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1821.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[35] = OrientationInterpolator1821;
+
+OrientationInterpolator OrientationInterpolator1822 = createNode("OrientationInterpolator");
+OrientationInterpolator1822.DEF = "Stop_vc4_RotationInterpolator";
+OrientationInterpolator1822.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1822.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[36] = OrientationInterpolator1822;
+
+OrientationInterpolator OrientationInterpolator1823 = createNode("OrientationInterpolator");
+OrientationInterpolator1823.DEF = "Stop_vc3_RotationInterpolator";
+OrientationInterpolator1823.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1823.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[37] = OrientationInterpolator1823;
+
+OrientationInterpolator OrientationInterpolator1824 = createNode("OrientationInterpolator");
+OrientationInterpolator1824.DEF = "Stop_vc2_RotationInterpolator";
+OrientationInterpolator1824.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1824.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[38] = OrientationInterpolator1824;
+
+OrientationInterpolator OrientationInterpolator1825 = createNode("OrientationInterpolator");
+OrientationInterpolator1825.DEF = "Stop_vc1_RotationInterpolator";
+OrientationInterpolator1825.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1825.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[39] = OrientationInterpolator1825;
+
+OrientationInterpolator OrientationInterpolator1826 = createNode("OrientationInterpolator");
+OrientationInterpolator1826.DEF = "Stop_skullbase_RotationInterpolator";
+OrientationInterpolator1826.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1826.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[40] = OrientationInterpolator1826;
+
+OrientationInterpolator OrientationInterpolator1827 = createNode("OrientationInterpolator");
+OrientationInterpolator1827.DEF = "Stop_l_eyeball_joint_RotationInterpolator";
+OrientationInterpolator1827.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1827.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[41] = OrientationInterpolator1827;
+
+OrientationInterpolator OrientationInterpolator1828 = createNode("OrientationInterpolator");
+OrientationInterpolator1828.DEF = "Stop_r_eyeball_joint_RotationInterpolator";
+OrientationInterpolator1828.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1828.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[42] = OrientationInterpolator1828;
+
+OrientationInterpolator OrientationInterpolator1829 = createNode("OrientationInterpolator");
+OrientationInterpolator1829.DEF = "Stop_l_sternoclavicular_RotationInterpolator";
+OrientationInterpolator1829.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1829.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[43] = OrientationInterpolator1829;
+
+OrientationInterpolator OrientationInterpolator1830 = createNode("OrientationInterpolator");
+OrientationInterpolator1830.DEF = "Stop_l_acromioclavicular_RotationInterpolator";
+OrientationInterpolator1830.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1830.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[44] = OrientationInterpolator1830;
+
+OrientationInterpolator OrientationInterpolator1831 = createNode("OrientationInterpolator");
+OrientationInterpolator1831.DEF = "Stop_l_shoulder_RotationInterpolator";
+OrientationInterpolator1831.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1831.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[45] = OrientationInterpolator1831;
+
+OrientationInterpolator OrientationInterpolator1832 = createNode("OrientationInterpolator");
+OrientationInterpolator1832.DEF = "Stop_l_elbow_RotationInterpolator";
+OrientationInterpolator1832.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1832.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[46] = OrientationInterpolator1832;
+
+OrientationInterpolator OrientationInterpolator1833 = createNode("OrientationInterpolator");
+OrientationInterpolator1833.DEF = "Stop_l_wrist_RotationInterpolator";
+OrientationInterpolator1833.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1833.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[47] = OrientationInterpolator1833;
+
+OrientationInterpolator OrientationInterpolator1834 = createNode("OrientationInterpolator");
+OrientationInterpolator1834.DEF = "Stop_l_thumb1_RotationInterpolator";
+OrientationInterpolator1834.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1834.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[48] = OrientationInterpolator1834;
+
+OrientationInterpolator OrientationInterpolator1835 = createNode("OrientationInterpolator");
+OrientationInterpolator1835.DEF = "Stop_l_thumb2_RotationInterpolator";
+OrientationInterpolator1835.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1835.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[49] = OrientationInterpolator1835;
+
+OrientationInterpolator OrientationInterpolator1836 = createNode("OrientationInterpolator");
+OrientationInterpolator1836.DEF = "Stop_l_thumb3_RotationInterpolator";
+OrientationInterpolator1836.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1836.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[50] = OrientationInterpolator1836;
+
+OrientationInterpolator OrientationInterpolator1837 = createNode("OrientationInterpolator");
+OrientationInterpolator1837.DEF = "Stop_l_index0_RotationInterpolator";
+OrientationInterpolator1837.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1837.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[51] = OrientationInterpolator1837;
+
+OrientationInterpolator OrientationInterpolator1838 = createNode("OrientationInterpolator");
+OrientationInterpolator1838.DEF = "Stop_l_index1_RotationInterpolator";
+OrientationInterpolator1838.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1838.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[52] = OrientationInterpolator1838;
+
+OrientationInterpolator OrientationInterpolator1839 = createNode("OrientationInterpolator");
+OrientationInterpolator1839.DEF = "Stop_l_index2_RotationInterpolator";
+OrientationInterpolator1839.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1839.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[53] = OrientationInterpolator1839;
+
+OrientationInterpolator OrientationInterpolator1840 = createNode("OrientationInterpolator");
+OrientationInterpolator1840.DEF = "Stop_l_index3_RotationInterpolator";
+OrientationInterpolator1840.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1840.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[54] = OrientationInterpolator1840;
+
+OrientationInterpolator OrientationInterpolator1841 = createNode("OrientationInterpolator");
+OrientationInterpolator1841.DEF = "Stop_l_middle0_RotationInterpolator";
+OrientationInterpolator1841.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1841.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[55] = OrientationInterpolator1841;
+
+OrientationInterpolator OrientationInterpolator1842 = createNode("OrientationInterpolator");
+OrientationInterpolator1842.DEF = "Stop_l_middle1_RotationInterpolator";
+OrientationInterpolator1842.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1842.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[56] = OrientationInterpolator1842;
+
+OrientationInterpolator OrientationInterpolator1843 = createNode("OrientationInterpolator");
+OrientationInterpolator1843.DEF = "Stop_l_middle2_RotationInterpolator";
+OrientationInterpolator1843.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1843.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[57] = OrientationInterpolator1843;
+
+OrientationInterpolator OrientationInterpolator1844 = createNode("OrientationInterpolator");
+OrientationInterpolator1844.DEF = "Stop_l_middle3_RotationInterpolator";
+OrientationInterpolator1844.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1844.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[58] = OrientationInterpolator1844;
+
+OrientationInterpolator OrientationInterpolator1845 = createNode("OrientationInterpolator");
+OrientationInterpolator1845.DEF = "Stop_l_ring0_RotationInterpolator";
+OrientationInterpolator1845.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1845.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[59] = OrientationInterpolator1845;
+
+OrientationInterpolator OrientationInterpolator1846 = createNode("OrientationInterpolator");
+OrientationInterpolator1846.DEF = "Stop_l_ring1_RotationInterpolator";
+OrientationInterpolator1846.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1846.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[60] = OrientationInterpolator1846;
+
+OrientationInterpolator OrientationInterpolator1847 = createNode("OrientationInterpolator");
+OrientationInterpolator1847.DEF = "Stop_l_ring2_RotationInterpolator";
+OrientationInterpolator1847.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1847.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[61] = OrientationInterpolator1847;
+
+OrientationInterpolator OrientationInterpolator1848 = createNode("OrientationInterpolator");
+OrientationInterpolator1848.DEF = "Stop_l_ring3_RotationInterpolator";
+OrientationInterpolator1848.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1848.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[62] = OrientationInterpolator1848;
+
+OrientationInterpolator OrientationInterpolator1849 = createNode("OrientationInterpolator");
+OrientationInterpolator1849.DEF = "Stop_l_pinky0_RotationInterpolator";
+OrientationInterpolator1849.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1849.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[63] = OrientationInterpolator1849;
+
+OrientationInterpolator OrientationInterpolator1850 = createNode("OrientationInterpolator");
+OrientationInterpolator1850.DEF = "Stop_l_pinky1_RotationInterpolator";
+OrientationInterpolator1850.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1850.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[64] = OrientationInterpolator1850;
+
+OrientationInterpolator OrientationInterpolator1851 = createNode("OrientationInterpolator");
+OrientationInterpolator1851.DEF = "Stop_l_pinky2_RotationInterpolator";
+OrientationInterpolator1851.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1851.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[65] = OrientationInterpolator1851;
+
+OrientationInterpolator OrientationInterpolator1852 = createNode("OrientationInterpolator");
+OrientationInterpolator1852.DEF = "Stop_l_pinky3_RotationInterpolator";
+OrientationInterpolator1852.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1852.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[66] = OrientationInterpolator1852;
+
+OrientationInterpolator OrientationInterpolator1853 = createNode("OrientationInterpolator");
+OrientationInterpolator1853.DEF = "Stop_r_sternoclavicular_RotationInterpolator";
+OrientationInterpolator1853.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1853.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[67] = OrientationInterpolator1853;
+
+OrientationInterpolator OrientationInterpolator1854 = createNode("OrientationInterpolator");
+OrientationInterpolator1854.DEF = "Stop_r_acromioclavicular_RotationInterpolator";
+OrientationInterpolator1854.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1854.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[68] = OrientationInterpolator1854;
+
+OrientationInterpolator OrientationInterpolator1855 = createNode("OrientationInterpolator");
+OrientationInterpolator1855.DEF = "Stop_r_shoulder_RotationInterpolator";
+OrientationInterpolator1855.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1855.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[69] = OrientationInterpolator1855;
+
+OrientationInterpolator OrientationInterpolator1856 = createNode("OrientationInterpolator");
+OrientationInterpolator1856.DEF = "Stop_r_elbow_RotationInterpolator";
+OrientationInterpolator1856.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1856.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[70] = OrientationInterpolator1856;
+
+OrientationInterpolator OrientationInterpolator1857 = createNode("OrientationInterpolator");
+OrientationInterpolator1857.DEF = "Stop_r_wrist_RotationInterpolator";
+OrientationInterpolator1857.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1857.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[71] = OrientationInterpolator1857;
+
+OrientationInterpolator OrientationInterpolator1858 = createNode("OrientationInterpolator");
+OrientationInterpolator1858.DEF = "Stop_r_thumb1_RotationInterpolator";
+OrientationInterpolator1858.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1858.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[72] = OrientationInterpolator1858;
+
+OrientationInterpolator OrientationInterpolator1859 = createNode("OrientationInterpolator");
+OrientationInterpolator1859.DEF = "Stop_r_thumb2_RotationInterpolator";
+OrientationInterpolator1859.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1859.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[73] = OrientationInterpolator1859;
+
+OrientationInterpolator OrientationInterpolator1860 = createNode("OrientationInterpolator");
+OrientationInterpolator1860.DEF = "Stop_r_thumb3_RotationInterpolator";
+OrientationInterpolator1860.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1860.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[74] = OrientationInterpolator1860;
+
+OrientationInterpolator OrientationInterpolator1861 = createNode("OrientationInterpolator");
+OrientationInterpolator1861.DEF = "Stop_r_index0_RotationInterpolator";
+OrientationInterpolator1861.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1861.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[75] = OrientationInterpolator1861;
+
+OrientationInterpolator OrientationInterpolator1862 = createNode("OrientationInterpolator");
+OrientationInterpolator1862.DEF = "Stop_r_index1_RotationInterpolator";
+OrientationInterpolator1862.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1862.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[76] = OrientationInterpolator1862;
+
+OrientationInterpolator OrientationInterpolator1863 = createNode("OrientationInterpolator");
+OrientationInterpolator1863.DEF = "Stop_r_index2_RotationInterpolator";
+OrientationInterpolator1863.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1863.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[77] = OrientationInterpolator1863;
+
+OrientationInterpolator OrientationInterpolator1864 = createNode("OrientationInterpolator");
+OrientationInterpolator1864.DEF = "Stop_r_index3_RotationInterpolator";
+OrientationInterpolator1864.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1864.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[78] = OrientationInterpolator1864;
+
+OrientationInterpolator OrientationInterpolator1865 = createNode("OrientationInterpolator");
+OrientationInterpolator1865.DEF = "Stop_r_middle0_RotationInterpolator";
+OrientationInterpolator1865.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1865.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[79] = OrientationInterpolator1865;
+
+OrientationInterpolator OrientationInterpolator1866 = createNode("OrientationInterpolator");
+OrientationInterpolator1866.DEF = "Stop_r_middle1_RotationInterpolator";
+OrientationInterpolator1866.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1866.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[80] = OrientationInterpolator1866;
+
+OrientationInterpolator OrientationInterpolator1867 = createNode("OrientationInterpolator");
+OrientationInterpolator1867.DEF = "Stop_r_middle2_RotationInterpolator";
+OrientationInterpolator1867.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1867.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[81] = OrientationInterpolator1867;
+
+OrientationInterpolator OrientationInterpolator1868 = createNode("OrientationInterpolator");
+OrientationInterpolator1868.DEF = "Stop_r_middle3_RotationInterpolator";
+OrientationInterpolator1868.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1868.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[82] = OrientationInterpolator1868;
+
+OrientationInterpolator OrientationInterpolator1869 = createNode("OrientationInterpolator");
+OrientationInterpolator1869.DEF = "Stop_r_ring0_RotationInterpolator";
+OrientationInterpolator1869.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1869.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[83] = OrientationInterpolator1869;
+
+OrientationInterpolator OrientationInterpolator1870 = createNode("OrientationInterpolator");
+OrientationInterpolator1870.DEF = "Stop_r_ring1_RotationInterpolator";
+OrientationInterpolator1870.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1870.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[84] = OrientationInterpolator1870;
+
+OrientationInterpolator OrientationInterpolator1871 = createNode("OrientationInterpolator");
+OrientationInterpolator1871.DEF = "Stop_r_ring2_RotationInterpolator";
+OrientationInterpolator1871.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1871.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[85] = OrientationInterpolator1871;
+
+OrientationInterpolator OrientationInterpolator1872 = createNode("OrientationInterpolator");
+OrientationInterpolator1872.DEF = "Stop_r_ring3_RotationInterpolator";
+OrientationInterpolator1872.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1872.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[86] = OrientationInterpolator1872;
+
+OrientationInterpolator OrientationInterpolator1873 = createNode("OrientationInterpolator");
+OrientationInterpolator1873.DEF = "Stop_r_pinky0_RotationInterpolator";
+OrientationInterpolator1873.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1873.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[87] = OrientationInterpolator1873;
+
+OrientationInterpolator OrientationInterpolator1874 = createNode("OrientationInterpolator");
+OrientationInterpolator1874.DEF = "Stop_r_pinky1_RotationInterpolator";
+OrientationInterpolator1874.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1874.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[88] = OrientationInterpolator1874;
+
+OrientationInterpolator OrientationInterpolator1875 = createNode("OrientationInterpolator");
+OrientationInterpolator1875.DEF = "Stop_r_pinky2_RotationInterpolator";
+OrientationInterpolator1875.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1875.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[89] = OrientationInterpolator1875;
+
+OrientationInterpolator OrientationInterpolator1876 = createNode("OrientationInterpolator");
+OrientationInterpolator1876.DEF = "Stop_r_pinky3_RotationInterpolator";
+OrientationInterpolator1876.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1876.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1785.children[90] = OrientationInterpolator1876;
+
+children[5] = Group1785;
+
+Group Group1877 = createNode("Group");
+Group1877.DEF = "StandAnimation";
+TimeSensor TimeSensor1878 = createNode("TimeSensor");
+TimeSensor1878.DEF = "StandTimer";
+TimeSensor1878.cycleInterval = 5.73;
+TimeSensor1878.loop = True;
+Group1877.children = new MFNode();
+
+Group1877.children[0] = TimeSensor1878;
+
+OrientationInterpolator OrientationInterpolator1879 = createNode("OrientationInterpolator");
+OrientationInterpolator1879.DEF = "Stand_r_metatarsal_PitchInterpolator";
+OrientationInterpolator1879.key = new MFFloat(new float[0,0.2,0.4,0.6,0.7,1]);
+OrientationInterpolator1879.keyValue = new MFRotation(new float[1,0,0,0,-1,0,0,0.015,1,0,0,0.17,-1,0,0,0.025,1,0,0,0.01,1,0,0,0]);
+Group1877.children[1] = OrientationInterpolator1879;
+
+OrientationInterpolator OrientationInterpolator1880 = createNode("OrientationInterpolator");
+OrientationInterpolator1880.DEF = "Stand_r_ankle_RotationInterpolator";
+OrientationInterpolator1880.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1880.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1877.children[2] = OrientationInterpolator1880;
+
+OrientationInterpolator OrientationInterpolator1881 = createNode("OrientationInterpolator");
+OrientationInterpolator1881.DEF = "Stand_r_knee_RotationInterpolator";
+OrientationInterpolator1881.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1881.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1877.children[3] = OrientationInterpolator1881;
+
+OrientationInterpolator OrientationInterpolator1882 = createNode("OrientationInterpolator");
+OrientationInterpolator1882.DEF = "Stand_r_hip_RotationInterpolator";
+OrientationInterpolator1882.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1882.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1877.children[4] = OrientationInterpolator1882;
+
+OrientationInterpolator OrientationInterpolator1883 = createNode("OrientationInterpolator");
+OrientationInterpolator1883.DEF = "Stand_l_ankle_RotationInterpolator";
+OrientationInterpolator1883.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1883.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1877.children[5] = OrientationInterpolator1883;
+
+OrientationInterpolator OrientationInterpolator1884 = createNode("OrientationInterpolator");
+OrientationInterpolator1884.DEF = "Stand_l_knee_RotationInterpolator";
+OrientationInterpolator1884.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1884.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1877.children[6] = OrientationInterpolator1884;
+
+OrientationInterpolator OrientationInterpolator1885 = createNode("OrientationInterpolator");
+OrientationInterpolator1885.DEF = "Stand_l_hip_RotationInterpolator";
+OrientationInterpolator1885.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1885.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1877.children[7] = OrientationInterpolator1885;
+
+OrientationInterpolator OrientationInterpolator1886 = createNode("OrientationInterpolator");
+OrientationInterpolator1886.DEF = "Stand_r_wrist_RotationInterpolator";
+OrientationInterpolator1886.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1886.keyValue = new MFRotation(new float[0,0,1,0,0,0,-1,0.25,0,0,1,0]);
+Group1877.children[8] = OrientationInterpolator1886;
+
+OrientationInterpolator OrientationInterpolator1887 = createNode("OrientationInterpolator");
+OrientationInterpolator1887.DEF = "Stand_r_elbow_RotationInterpolator";
+OrientationInterpolator1887.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1887.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1877.children[9] = OrientationInterpolator1887;
+
+OrientationInterpolator OrientationInterpolator1888 = createNode("OrientationInterpolator");
+OrientationInterpolator1888.DEF = "Stand_r_shoulder_RotationInterpolator";
+OrientationInterpolator1888.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1888.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1877.children[10] = OrientationInterpolator1888;
+
+OrientationInterpolator OrientationInterpolator1889 = createNode("OrientationInterpolator");
+OrientationInterpolator1889.DEF = "Stand_l_wrist_RotationInterpolator";
+OrientationInterpolator1889.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1889.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1877.children[11] = OrientationInterpolator1889;
+
+OrientationInterpolator OrientationInterpolator1890 = createNode("OrientationInterpolator");
+OrientationInterpolator1890.DEF = "Stand_l_elbow_RotationInterpolator";
+OrientationInterpolator1890.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1890.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1877.children[12] = OrientationInterpolator1890;
+
+OrientationInterpolator OrientationInterpolator1891 = createNode("OrientationInterpolator");
+OrientationInterpolator1891.DEF = "Stand_l_shoulder_RotationInterpolator";
+OrientationInterpolator1891.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1891.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1877.children[13] = OrientationInterpolator1891;
+
+OrientationInterpolator OrientationInterpolator1892 = createNode("OrientationInterpolator");
+OrientationInterpolator1892.DEF = "Stand_head_RotationInterpolator";
+OrientationInterpolator1892.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1892.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1877.children[14] = OrientationInterpolator1892;
+
+OrientationInterpolator OrientationInterpolator1893 = createNode("OrientationInterpolator");
+OrientationInterpolator1893.DEF = "Stand_neck_RotationInterpolator";
+OrientationInterpolator1893.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1893.keyValue = new MFRotation(new float[0,0,1,0,-1,0,0,0.5,0,0,1,0]);
+Group1877.children[15] = OrientationInterpolator1893;
+
+OrientationInterpolator OrientationInterpolator1894 = createNode("OrientationInterpolator");
+OrientationInterpolator1894.DEF = "Stand_l_eyeball_RotationInterpolator";
+OrientationInterpolator1894.key = new MFFloat(new float[0,0.4,0.7,1]);
+OrientationInterpolator1894.keyValue = new MFRotation(new float[0,0,1,0,-1,0,0,0.5,1,0,0,0.45,0,0,1,0]);
+Group1877.children[16] = OrientationInterpolator1894;
+
+OrientationInterpolator OrientationInterpolator1895 = createNode("OrientationInterpolator");
+OrientationInterpolator1895.DEF = "Stand_r_eyeball_RotationInterpolator";
+OrientationInterpolator1895.key = new MFFloat(new float[0,0.4,0.7,1]);
+OrientationInterpolator1895.keyValue = new MFRotation(new float[0,0,1,0,-1,0,0,0.5,1,0,0,0.45,0,0,1,0]);
+Group1877.children[17] = OrientationInterpolator1895;
+
+OrientationInterpolator OrientationInterpolator1896 = createNode("OrientationInterpolator");
+OrientationInterpolator1896.DEF = "Stand_lower_body_RotationInterpolator";
+OrientationInterpolator1896.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1896.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1877.children[18] = OrientationInterpolator1896;
+
+OrientationInterpolator OrientationInterpolator1897 = createNode("OrientationInterpolator");
+OrientationInterpolator1897.DEF = "Stand_upper_body_RotationInterpolator";
+OrientationInterpolator1897.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1897.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1877.children[19] = OrientationInterpolator1897;
+
+OrientationInterpolator OrientationInterpolator1898 = createNode("OrientationInterpolator");
+OrientationInterpolator1898.DEF = "Stand_whole_body_RotationInterpolator";
+OrientationInterpolator1898.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1898.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1877.children[20] = OrientationInterpolator1898;
+
+PositionInterpolator PositionInterpolator1899 = createNode("PositionInterpolator");
+PositionInterpolator1899.DEF = "Stand_whole_body_TranslationInterpolator";
+PositionInterpolator1899.key = new MFFloat(new float[0,0.5,1]);
+PositionInterpolator1899.keyValue = new MFVec3f(new float[0,0,0,0,0,0,0,0,0]);
+Group1877.children[21] = PositionInterpolator1899;
+
+OrientationInterpolator OrientationInterpolator1900 = createNode("OrientationInterpolator");
+OrientationInterpolator1900.DEF = "Stand_l_sternoclavicular_RollInterpolator";
+OrientationInterpolator1900.key = new MFFloat(new float[0,0.2,0.4,0.6,0.8,1]);
+OrientationInterpolator1900.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1877.children[22] = OrientationInterpolator1900;
+
+OrientationInterpolator OrientationInterpolator1901 = createNode("OrientationInterpolator");
+OrientationInterpolator1901.DEF = "Stand_l_acromioclavicular_RollInterpolator";
+OrientationInterpolator1901.key = new MFFloat(new float[0,0.2,0.4,0.6,0.8,1]);
+OrientationInterpolator1901.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1877.children[23] = OrientationInterpolator1901;
+
+OrientationInterpolator OrientationInterpolator1902 = createNode("OrientationInterpolator");
+OrientationInterpolator1902.DEF = "Stand_r_sternoclavicular_RollInterpolator";
+OrientationInterpolator1902.key = new MFFloat(new float[0,0.2,0.4,0.6,0.8,1]);
+OrientationInterpolator1902.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1877.children[24] = OrientationInterpolator1902;
+
+OrientationInterpolator OrientationInterpolator1903 = createNode("OrientationInterpolator");
+OrientationInterpolator1903.DEF = "Stand_r_acromioclavicular_RollInterpolator";
+OrientationInterpolator1903.key = new MFFloat(new float[0,0.2,0.4,0.6,0.8,1]);
+OrientationInterpolator1903.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1877.children[25] = OrientationInterpolator1903;
+
+OrientationInterpolator OrientationInterpolator1904 = createNode("OrientationInterpolator");
+OrientationInterpolator1904.DEF = "Stand_sacroiliac_YawInterpolator";
+OrientationInterpolator1904.key = new MFFloat(new float[0,0.2,0.4,0.6,0.8,1]);
+OrientationInterpolator1904.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1877.children[26] = OrientationInterpolator1904;
+
+OrientationInterpolator OrientationInterpolator1905 = createNode("OrientationInterpolator");
+OrientationInterpolator1905.DEF = "Stand_vl5_YawInterpolator";
+OrientationInterpolator1905.key = new MFFloat(new float[0,0.2,0.4,0.5,0.6,0.8,1]);
+OrientationInterpolator1905.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1877.children[27] = OrientationInterpolator1905;
+
+OrientationInterpolator OrientationInterpolator1906 = createNode("OrientationInterpolator");
+OrientationInterpolator1906.DEF = "Stand_vc6_YawInterpolator";
+OrientationInterpolator1906.key = new MFFloat(new float[0,0.2,0.4,0.5,0.6,0.8,1]);
+OrientationInterpolator1906.keyValue = new MFRotation(new float[0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,-1,0,0,0,0,-1,0,0,0,1,0,0]);
+Group1877.children[28] = OrientationInterpolator1906;
+
+OrientationInterpolator OrientationInterpolator1907 = createNode("OrientationInterpolator");
+OrientationInterpolator1907.DEF = "Stand_l_thumb1_PitchInterpolator";
+OrientationInterpolator1907.key = new MFFloat(new float[0,0.2,0.4,0.6,0.8,1]);
+OrientationInterpolator1907.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1877.children[29] = OrientationInterpolator1907;
+
+OrientationInterpolator OrientationInterpolator1908 = createNode("OrientationInterpolator");
+OrientationInterpolator1908.DEF = "Stand_r_thumb1_PitchInterpolator";
+OrientationInterpolator1908.key = new MFFloat(new float[0,0.2,0.4,0.6,0.8,1]);
+OrientationInterpolator1908.keyValue = new MFRotation(new float[1,0,0,0,1,0,0,0.5,1,0,0,0.1,1,0,0,0.27,1,0,0,0.2,1,0,0,0]);
+Group1877.children[30] = OrientationInterpolator1908;
+
+OrientationInterpolator OrientationInterpolator1909 = createNode("OrientationInterpolator");
+OrientationInterpolator1909.DEF = "Stand_r_index1_RollInterpolator";
+OrientationInterpolator1909.key = new MFFloat(new float[0,0.2,0.4,0.5,0.8,1]);
+OrientationInterpolator1909.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0.1,0,0,1,0.2,0,0,1,0.3,0,0,1,0,0,0,1,0]);
+Group1877.children[31] = OrientationInterpolator1909;
+
+OrientationInterpolator OrientationInterpolator1910 = createNode("OrientationInterpolator");
+OrientationInterpolator1910.DEF = "Stand_r_index2_RollInterpolator";
+OrientationInterpolator1910.key = new MFFloat(new float[0,0.2,0.4,0.5,0.8,1]);
+OrientationInterpolator1910.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0.4,0,0,1,0.32,0,0,1,0.25,0,0,1,0.2,0,0,1,0]);
+Group1877.children[32] = OrientationInterpolator1910;
+
+OrientationInterpolator OrientationInterpolator1911 = createNode("OrientationInterpolator");
+OrientationInterpolator1911.DEF = "Stand_r_index3_RollInterpolator";
+OrientationInterpolator1911.key = new MFFloat(new float[0,0.2,0.4,0.5,0.8,1]);
+OrientationInterpolator1911.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0.2,0,0,1,0.3,0,0,1,0.35,0,0,1,0.2,0,0,1,0]);
+Group1877.children[33] = OrientationInterpolator1911;
+
+children[6] = Group1877;
+
+Group Group1912 = createNode("Group");
+Group1912.DEF = "PitchesAnimation";
+TimeSensor TimeSensor1913 = createNode("TimeSensor");
+TimeSensor1913.DEF = "PitchTimer";
+TimeSensor1913.cycleInterval = 5.73;
+TimeSensor1913.loop = True;
+Group1912.children = new MFNode();
+
+Group1912.children[0] = TimeSensor1913;
+
+OrientationInterpolator OrientationInterpolator1914 = createNode("OrientationInterpolator");
+OrientationInterpolator1914.DEF = "Pitch_r_metatarsal_PitchInterpolator";
+OrientationInterpolator1914.key = new MFFloat(new float[0,0.2,0.4,0.6,0.7,1]);
+OrientationInterpolator1914.keyValue = new MFRotation(new float[1,0,0,0,-1,0,0,0.5,-1,0,0,0.7,1,0,0,0.75,-1,0,0,0.2,1,0,0,0]);
+Group1912.children[1] = OrientationInterpolator1914;
+
+OrientationInterpolator OrientationInterpolator1915 = createNode("OrientationInterpolator");
+OrientationInterpolator1915.DEF = "Pitches_r_ankle_RotationInterpolator";
+OrientationInterpolator1915.key = new MFFloat(new float[0,0.25,0.5,0.75,1]);
+OrientationInterpolator1915.keyValue = new MFRotation(new float[0,0,1,0,1,0,0,1.5,0,0,1,0,-1,0,0,1.5,0,0,1,0]);
+Group1912.children[2] = OrientationInterpolator1915;
+
+OrientationInterpolator OrientationInterpolator1916 = createNode("OrientationInterpolator");
+OrientationInterpolator1916.DEF = "Pitches_r_knee_RotationInterpolator";
+OrientationInterpolator1916.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1916.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1912.children[3] = OrientationInterpolator1916;
+
+OrientationInterpolator OrientationInterpolator1917 = createNode("OrientationInterpolator");
+OrientationInterpolator1917.DEF = "Pitches_r_hip_RotationInterpolator";
+OrientationInterpolator1917.key = new MFFloat(new float[0,0.25,0.5,0.75,1]);
+OrientationInterpolator1917.keyValue = new MFRotation(new float[0,0,1,0,-1,0,0,1.5,0,0,1,0,1,0,0,1.5,0,0,1,0]);
+Group1912.children[4] = OrientationInterpolator1917;
+
+OrientationInterpolator OrientationInterpolator1918 = createNode("OrientationInterpolator");
+OrientationInterpolator1918.DEF = "Pitches_l_ankle_RotationInterpolator";
+OrientationInterpolator1918.key = new MFFloat(new float[0,0.25,0.5,0.75,1]);
+OrientationInterpolator1918.keyValue = new MFRotation(new float[0,0,1,0,-1,0,0,1.5,0,0,1,0,1,0,0,1.5,0,0,1,0]);
+Group1912.children[5] = OrientationInterpolator1918;
+
+OrientationInterpolator OrientationInterpolator1919 = createNode("OrientationInterpolator");
+OrientationInterpolator1919.DEF = "Pitches_l_knee_RotationInterpolator";
+OrientationInterpolator1919.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1919.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1912.children[6] = OrientationInterpolator1919;
+
+OrientationInterpolator OrientationInterpolator1920 = createNode("OrientationInterpolator");
+OrientationInterpolator1920.DEF = "Pitches_l_hip_RotationInterpolator";
+OrientationInterpolator1920.key = new MFFloat(new float[0,0.25,0.5,0.75,1]);
+OrientationInterpolator1920.keyValue = new MFRotation(new float[0,0,1,0,1,0,0,1.5,0,0,1,0,-1,0,0,1.5,0,0,1,0]);
+Group1912.children[7] = OrientationInterpolator1920;
+
+OrientationInterpolator OrientationInterpolator1921 = createNode("OrientationInterpolator");
+OrientationInterpolator1921.DEF = "Pitches_r_wrist_RotationInterpolator";
+OrientationInterpolator1921.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1921.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1912.children[8] = OrientationInterpolator1921;
+
+OrientationInterpolator OrientationInterpolator1922 = createNode("OrientationInterpolator");
+OrientationInterpolator1922.DEF = "Pitches_r_elbow_RotationInterpolator";
+OrientationInterpolator1922.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1922.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1912.children[9] = OrientationInterpolator1922;
+
+OrientationInterpolator OrientationInterpolator1923 = createNode("OrientationInterpolator");
+OrientationInterpolator1923.DEF = "Pitches_r_shoulder_RotationInterpolator";
+OrientationInterpolator1923.key = new MFFloat(new float[0,0.25,0.5,0.75,1]);
+OrientationInterpolator1923.keyValue = new MFRotation(new float[0,0,1,0,1,0,0,1.5,0,0,1,0,-1,0,0,1.5,0,0,1,0]);
+Group1912.children[10] = OrientationInterpolator1923;
+
+OrientationInterpolator OrientationInterpolator1924 = createNode("OrientationInterpolator");
+OrientationInterpolator1924.DEF = "Pitches_l_wrist_RotationInterpolator";
+OrientationInterpolator1924.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1924.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1912.children[11] = OrientationInterpolator1924;
+
+OrientationInterpolator OrientationInterpolator1925 = createNode("OrientationInterpolator");
+OrientationInterpolator1925.DEF = "Pitches_l_elbow_RotationInterpolator";
+OrientationInterpolator1925.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1925.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1912.children[12] = OrientationInterpolator1925;
+
+OrientationInterpolator OrientationInterpolator1926 = createNode("OrientationInterpolator");
+OrientationInterpolator1926.DEF = "Pitches_l_shoulder_RotationInterpolator";
+OrientationInterpolator1926.key = new MFFloat(new float[0,0.25,0.5,0.75,1]);
+OrientationInterpolator1926.keyValue = new MFRotation(new float[0,0,1,0,-1,0,0,1.5,0,0,1,0,1,0,0,1.5,0,0,1,0]);
+Group1912.children[13] = OrientationInterpolator1926;
+
+OrientationInterpolator OrientationInterpolator1927 = createNode("OrientationInterpolator");
+OrientationInterpolator1927.DEF = "Pitches_head_RotationInterpolator";
+OrientationInterpolator1927.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1927.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1912.children[14] = OrientationInterpolator1927;
+
+OrientationInterpolator OrientationInterpolator1928 = createNode("OrientationInterpolator");
+OrientationInterpolator1928.DEF = "Pitches_neck_RotationInterpolator";
+OrientationInterpolator1928.key = new MFFloat(new float[0,0.25,0.55,1]);
+OrientationInterpolator1928.keyValue = new MFRotation(new float[0,0,1,0,1,0,0,0.55,-1,0,0,1.05,0,0,1,0]);
+Group1912.children[15] = OrientationInterpolator1928;
+
+OrientationInterpolator OrientationInterpolator1929 = createNode("OrientationInterpolator");
+OrientationInterpolator1929.DEF = "Pitches_lower_body_RotationInterpolator";
+OrientationInterpolator1929.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1929.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1912.children[16] = OrientationInterpolator1929;
+
+OrientationInterpolator OrientationInterpolator1930 = createNode("OrientationInterpolator");
+OrientationInterpolator1930.DEF = "Pitches_upper_body_RotationInterpolator";
+OrientationInterpolator1930.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1930.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1912.children[17] = OrientationInterpolator1930;
+
+OrientationInterpolator OrientationInterpolator1931 = createNode("OrientationInterpolator");
+OrientationInterpolator1931.DEF = "Pitches_whole_body_RotationInterpolator";
+OrientationInterpolator1931.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1931.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1912.children[18] = OrientationInterpolator1931;
+
+PositionInterpolator PositionInterpolator1932 = createNode("PositionInterpolator");
+PositionInterpolator1932.DEF = "Pitches_whole_body_TranslationInterpolator";
+PositionInterpolator1932.key = new MFFloat(new float[0,0.125,0.25,0.375,0.5,0.625,0.75,0.875,1]);
+PositionInterpolator1932.keyValue = new MFVec3f(new float[0,0,0,0,-0.15,0,0,-0.7,0,0,-0.15,0,0,0,0,0,-0.15,0,0,-0.7,0,0,-0.15,0,0,0,0]);
+Group1912.children[19] = PositionInterpolator1932;
+
+OrientationInterpolator OrientationInterpolator1933 = createNode("OrientationInterpolator");
+OrientationInterpolator1933.DEF = "Pitch_l_sternoclavicular_RollInterpolator";
+OrientationInterpolator1933.key = new MFFloat(new float[0,0.2,0.4,0.6,0.8,1]);
+OrientationInterpolator1933.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1912.children[20] = OrientationInterpolator1933;
+
+OrientationInterpolator OrientationInterpolator1934 = createNode("OrientationInterpolator");
+OrientationInterpolator1934.DEF = "Pitch_l_acromioclavicular_RollInterpolator";
+OrientationInterpolator1934.key = new MFFloat(new float[0,0.2,0.4,0.6,0.8,1]);
+OrientationInterpolator1934.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1912.children[21] = OrientationInterpolator1934;
+
+OrientationInterpolator OrientationInterpolator1935 = createNode("OrientationInterpolator");
+OrientationInterpolator1935.DEF = "Pitch_r_sternoclavicular_RollInterpolator";
+OrientationInterpolator1935.key = new MFFloat(new float[0,0.2,0.4,0.6,0.8,1]);
+OrientationInterpolator1935.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1912.children[22] = OrientationInterpolator1935;
+
+OrientationInterpolator OrientationInterpolator1936 = createNode("OrientationInterpolator");
+OrientationInterpolator1936.DEF = "Pitch_r_acromioclavicular_RollInterpolator";
+OrientationInterpolator1936.key = new MFFloat(new float[0,0.2,0.4,0.6,0.8,1]);
+OrientationInterpolator1936.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1912.children[23] = OrientationInterpolator1936;
+
+OrientationInterpolator OrientationInterpolator1937 = createNode("OrientationInterpolator");
+OrientationInterpolator1937.DEF = "Pitch_sacroiliac_YawInterpolator";
+OrientationInterpolator1937.key = new MFFloat(new float[0,0.2,0.4,0.6,0.8,1]);
+OrientationInterpolator1937.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1912.children[24] = OrientationInterpolator1937;
+
+OrientationInterpolator OrientationInterpolator1938 = createNode("OrientationInterpolator");
+OrientationInterpolator1938.DEF = "Pitch_vl5_YawInterpolator";
+OrientationInterpolator1938.key = new MFFloat(new float[0,0.2,0.4,0.5,0.6,0.8,1]);
+OrientationInterpolator1938.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1912.children[25] = OrientationInterpolator1938;
+
+OrientationInterpolator OrientationInterpolator1939 = createNode("OrientationInterpolator");
+OrientationInterpolator1939.DEF = "Pitch_vc6_YawInterpolator";
+OrientationInterpolator1939.key = new MFFloat(new float[0,0.2,0.4,0.5,0.6,0.8,1]);
+OrientationInterpolator1939.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1912.children[26] = OrientationInterpolator1939;
+
+OrientationInterpolator OrientationInterpolator1940 = createNode("OrientationInterpolator");
+OrientationInterpolator1940.DEF = "Pitch_l_thumb1_PitchInterpolator";
+OrientationInterpolator1940.key = new MFFloat(new float[0,0.2,0.4,0.6,0.8,1]);
+OrientationInterpolator1940.keyValue = new MFRotation(new float[1,0,0,0,1,0,0,0.25,1,0,0,0.3,1,0,0,0.27,1,0,0,0.2,1,0,0,0]);
+Group1912.children[27] = OrientationInterpolator1940;
+
+OrientationInterpolator OrientationInterpolator1941 = createNode("OrientationInterpolator");
+OrientationInterpolator1941.DEF = "Pitch_r_thumb1_PitchInterpolator";
+OrientationInterpolator1941.key = new MFFloat(new float[0,0.2,0.4,0.6,0.8,1]);
+OrientationInterpolator1941.keyValue = new MFRotation(new float[1,0,0,0,1,0,0,0.25,1,0,0,0.3,1,0,0,0.27,1,0,0,0.2,1,0,0,0]);
+Group1912.children[28] = OrientationInterpolator1941;
+
+children[7] = Group1912;
+
+Group Group1942 = createNode("Group");
+Group1942.DEF = "YawsAnimation";
+TimeSensor TimeSensor1943 = createNode("TimeSensor");
+TimeSensor1943.DEF = "YawTimer";
+TimeSensor1943.cycleInterval = 5.73;
+TimeSensor1943.loop = True;
+Group1942.children = new MFNode();
+
+Group1942.children[0] = TimeSensor1943;
+
+OrientationInterpolator OrientationInterpolator1944 = createNode("OrientationInterpolator");
+OrientationInterpolator1944.DEF = "Yaw_r_metatarsal_PitchInterpolator";
+OrientationInterpolator1944.key = new MFFloat(new float[0,0.2,0.4,0.6,0.7,1]);
+OrientationInterpolator1944.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1942.children[1] = OrientationInterpolator1944;
+
+OrientationInterpolator OrientationInterpolator1945 = createNode("OrientationInterpolator");
+OrientationInterpolator1945.DEF = "Yaws_r_ankle_RotationInterpolator";
+OrientationInterpolator1945.key = new MFFloat(new float[0,0.25,0.5,0.75,1]);
+OrientationInterpolator1945.keyValue = new MFRotation(new float[0,0,1,0,0,-1,0,1.5,0,0,1,0,0,1,0,1.5,0,0,1,0]);
+Group1942.children[2] = OrientationInterpolator1945;
+
+OrientationInterpolator OrientationInterpolator1946 = createNode("OrientationInterpolator");
+OrientationInterpolator1946.DEF = "Yaws_r_knee_RotationInterpolator";
+OrientationInterpolator1946.key = new MFFloat(new float[0,0.25,0.5,0.75,1]);
+OrientationInterpolator1946.keyValue = new MFRotation(new float[0,0,1,0,0,1,0,1.5,0,0,1,0,0,-1,0,1.5,0,0,1,0]);
+Group1942.children[3] = OrientationInterpolator1946;
+
+OrientationInterpolator OrientationInterpolator1947 = createNode("OrientationInterpolator");
+OrientationInterpolator1947.DEF = "Yaws_r_hip_RotationInterpolator";
+OrientationInterpolator1947.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1947.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1942.children[4] = OrientationInterpolator1947;
+
+OrientationInterpolator OrientationInterpolator1948 = createNode("OrientationInterpolator");
+OrientationInterpolator1948.DEF = "Yaws_l_ankle_RotationInterpolator";
+OrientationInterpolator1948.key = new MFFloat(new float[0,0.25,0.5,0.75,1]);
+OrientationInterpolator1948.keyValue = new MFRotation(new float[0,0,1,0,0,1,0,1.5,0,0,1,0,0,-1,0,1.5,0,0,1,0]);
+Group1942.children[5] = OrientationInterpolator1948;
+
+OrientationInterpolator OrientationInterpolator1949 = createNode("OrientationInterpolator");
+OrientationInterpolator1949.DEF = "Yaws_l_knee_RotationInterpolator";
+OrientationInterpolator1949.key = new MFFloat(new float[0,0.25,0.5,0.75,1]);
+OrientationInterpolator1949.keyValue = new MFRotation(new float[0,0,1,0,0,-1,0,1.5,0,0,1,0,0,1,0,1.5,0,0,1,0]);
+Group1942.children[6] = OrientationInterpolator1949;
+
+OrientationInterpolator OrientationInterpolator1950 = createNode("OrientationInterpolator");
+OrientationInterpolator1950.DEF = "Yaws_l_hip_RotationInterpolator";
+OrientationInterpolator1950.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1950.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1942.children[7] = OrientationInterpolator1950;
+
+OrientationInterpolator OrientationInterpolator1951 = createNode("OrientationInterpolator");
+OrientationInterpolator1951.DEF = "Yaws_r_wrist_RotationInterpolator";
+OrientationInterpolator1951.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1951.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1942.children[8] = OrientationInterpolator1951;
+
+OrientationInterpolator OrientationInterpolator1952 = createNode("OrientationInterpolator");
+OrientationInterpolator1952.DEF = "Yaws_r_elbow_RotationInterpolator";
+OrientationInterpolator1952.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1952.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1942.children[9] = OrientationInterpolator1952;
+
+OrientationInterpolator OrientationInterpolator1953 = createNode("OrientationInterpolator");
+OrientationInterpolator1953.DEF = "Yaws_r_shoulder_RotationInterpolator";
+OrientationInterpolator1953.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1953.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1942.children[10] = OrientationInterpolator1953;
+
+OrientationInterpolator OrientationInterpolator1954 = createNode("OrientationInterpolator");
+OrientationInterpolator1954.DEF = "Yaws_l_wrist_RotationInterpolator";
+OrientationInterpolator1954.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1954.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1942.children[11] = OrientationInterpolator1954;
+
+OrientationInterpolator OrientationInterpolator1955 = createNode("OrientationInterpolator");
+OrientationInterpolator1955.DEF = "Yaws_l_elbow_RotationInterpolator";
+OrientationInterpolator1955.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1955.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1942.children[12] = OrientationInterpolator1955;
+
+OrientationInterpolator OrientationInterpolator1956 = createNode("OrientationInterpolator");
+OrientationInterpolator1956.DEF = "Yaws_l_shoulder_RotationInterpolator";
+OrientationInterpolator1956.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1956.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1942.children[13] = OrientationInterpolator1956;
+
+OrientationInterpolator OrientationInterpolator1957 = createNode("OrientationInterpolator");
+OrientationInterpolator1957.DEF = "Yaws_head_RotationInterpolator";
+OrientationInterpolator1957.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1957.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1942.children[14] = OrientationInterpolator1957;
+
+OrientationInterpolator OrientationInterpolator1958 = createNode("OrientationInterpolator");
+OrientationInterpolator1958.DEF = "Yaws_neck_RotationInterpolator";
+OrientationInterpolator1958.key = new MFFloat(new float[0,0.25,0.5,0.75,1]);
+OrientationInterpolator1958.keyValue = new MFRotation(new float[0,0,1,0,0,1,0,1.5,0,0,1,0,0,-1,0,1.5,0,0,1,0]);
+Group1942.children[15] = OrientationInterpolator1958;
+
+OrientationInterpolator OrientationInterpolator1959 = createNode("OrientationInterpolator");
+OrientationInterpolator1959.DEF = "Yaws_upper_body_RotationInterpolator";
+OrientationInterpolator1959.key = new MFFloat(new float[0,0.25,0.5,0.75,1]);
+OrientationInterpolator1959.keyValue = new MFRotation(new float[0,0,1,0,0,-1,0,1.5,0,0,1,0,0,1,0,1.5,0,0,1,0]);
+Group1942.children[16] = OrientationInterpolator1959;
+
+OrientationInterpolator OrientationInterpolator1960 = createNode("OrientationInterpolator");
+OrientationInterpolator1960.DEF = "Yaws_lower_body_RotationInterpolator";
+OrientationInterpolator1960.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1960.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1942.children[17] = OrientationInterpolator1960;
+
+OrientationInterpolator OrientationInterpolator1961 = createNode("OrientationInterpolator");
+OrientationInterpolator1961.DEF = "Yaws_whole_body_RotationInterpolator";
+OrientationInterpolator1961.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1961.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1942.children[18] = OrientationInterpolator1961;
+
+PositionInterpolator PositionInterpolator1962 = createNode("PositionInterpolator");
+PositionInterpolator1962.DEF = "Yaws_whole_body_TranslationInterpolator";
+PositionInterpolator1962.key = new MFFloat(new float[0,0.5,1]);
+PositionInterpolator1962.keyValue = new MFVec3f(new float[0,0,0,0,0,0,0,0,0]);
+Group1942.children[19] = PositionInterpolator1962;
+
+OrientationInterpolator OrientationInterpolator1963 = createNode("OrientationInterpolator");
+OrientationInterpolator1963.DEF = "Yaw_l_sternoclavicular_RollInterpolator";
+OrientationInterpolator1963.key = new MFFloat(new float[0,0.2,0.4,0.6,0.8,1]);
+OrientationInterpolator1963.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1942.children[20] = OrientationInterpolator1963;
+
+OrientationInterpolator OrientationInterpolator1964 = createNode("OrientationInterpolator");
+OrientationInterpolator1964.DEF = "Yaw_l_acromioclavicular_RollInterpolator";
+OrientationInterpolator1964.key = new MFFloat(new float[0,0.2,0.4,0.6,0.8,1]);
+OrientationInterpolator1964.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1942.children[21] = OrientationInterpolator1964;
+
+OrientationInterpolator OrientationInterpolator1965 = createNode("OrientationInterpolator");
+OrientationInterpolator1965.DEF = "Yaw_r_sternoclavicular_RollInterpolator";
+OrientationInterpolator1965.key = new MFFloat(new float[0,0.2,0.4,0.6,0.8,1]);
+OrientationInterpolator1965.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1942.children[22] = OrientationInterpolator1965;
+
+OrientationInterpolator OrientationInterpolator1966 = createNode("OrientationInterpolator");
+OrientationInterpolator1966.DEF = "Yaw_r_acromioclavicular_RollInterpolator";
+OrientationInterpolator1966.key = new MFFloat(new float[0,0.2,0.4,0.6,0.8,1]);
+OrientationInterpolator1966.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1942.children[23] = OrientationInterpolator1966;
+
+OrientationInterpolator OrientationInterpolator1967 = createNode("OrientationInterpolator");
+OrientationInterpolator1967.DEF = "Yaw_sacroiliac_YawInterpolator";
+OrientationInterpolator1967.key = new MFFloat(new float[0,0.2,0.4,0.6,0.8,1]);
+OrientationInterpolator1967.keyValue = new MFRotation(new float[0,1,0,0,0,-1,0,0.1,0,1,0,0,0,1,0,0.24,0,-1,0,0.4,0,1,0,0]);
+Group1942.children[24] = OrientationInterpolator1967;
+
+OrientationInterpolator OrientationInterpolator1968 = createNode("OrientationInterpolator");
+OrientationInterpolator1968.DEF = "Yaw_vl5_YawInterpolator";
+OrientationInterpolator1968.key = new MFFloat(new float[0,0.2,0.4,0.5,0.6,0.8,1]);
+OrientationInterpolator1968.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1942.children[25] = OrientationInterpolator1968;
+
+OrientationInterpolator OrientationInterpolator1969 = createNode("OrientationInterpolator");
+OrientationInterpolator1969.DEF = "Yaw_vc6_YawInterpolator";
+OrientationInterpolator1969.key = new MFFloat(new float[0,0.2,0.4,0.5,0.6,0.8,1]);
+OrientationInterpolator1969.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1942.children[26] = OrientationInterpolator1969;
+
+OrientationInterpolator OrientationInterpolator1970 = createNode("OrientationInterpolator");
+OrientationInterpolator1970.DEF = "Yaw_l_thumb1_PitchInterpolator";
+OrientationInterpolator1970.key = new MFFloat(new float[0,0.2,0.4,0.6,0.8,1]);
+OrientationInterpolator1970.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1942.children[27] = OrientationInterpolator1970;
+
+OrientationInterpolator OrientationInterpolator1971 = createNode("OrientationInterpolator");
+OrientationInterpolator1971.DEF = "Yaw_r_thumb1_PitchInterpolator";
+OrientationInterpolator1971.key = new MFFloat(new float[0,0.2,0.4,0.6,0.8,1]);
+OrientationInterpolator1971.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1942.children[28] = OrientationInterpolator1971;
+
+children[8] = Group1942;
+
+Group Group1972 = createNode("Group");
+Group1972.DEF = "RollsAnimation";
+TimeSensor TimeSensor1973 = createNode("TimeSensor");
+TimeSensor1973.DEF = "RollTimer";
+TimeSensor1973.cycleInterval = 5.73;
+TimeSensor1973.loop = True;
+Group1972.children = new MFNode();
+
+Group1972.children[0] = TimeSensor1973;
+
+OrientationInterpolator OrientationInterpolator1974 = createNode("OrientationInterpolator");
+OrientationInterpolator1974.DEF = "Roll_r_metatarsal_PitchInterpolator";
+OrientationInterpolator1974.key = new MFFloat(new float[0,0.2,0.4,0.6,0.7,1]);
+OrientationInterpolator1974.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1972.children[1] = OrientationInterpolator1974;
+
+OrientationInterpolator OrientationInterpolator1975 = createNode("OrientationInterpolator");
+OrientationInterpolator1975.DEF = "Rolls_r_ankle_RotationInterpolator";
+OrientationInterpolator1975.key = new MFFloat(new float[0,0.25,0.5,0.75,1]);
+OrientationInterpolator1975.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,1.5,0,0,1,0,0,0,1,1.5,0,0,1,0]);
+Group1972.children[2] = OrientationInterpolator1975;
+
+OrientationInterpolator OrientationInterpolator1976 = createNode("OrientationInterpolator");
+OrientationInterpolator1976.DEF = "Rolls_r_knee_RotationInterpolator";
+OrientationInterpolator1976.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1976.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1972.children[3] = OrientationInterpolator1976;
+
+OrientationInterpolator OrientationInterpolator1977 = createNode("OrientationInterpolator");
+OrientationInterpolator1977.DEF = "Rolls_r_hip_RotationInterpolator";
+OrientationInterpolator1977.key = new MFFloat(new float[0,0.25,0.5,0.75,1]);
+OrientationInterpolator1977.keyValue = new MFRotation(new float[0,0,-1,0,0,0,-1,1.5,0,0,1,0,0,0,-1,1.5,0,0,1,0]);
+Group1972.children[4] = OrientationInterpolator1977;
+
+OrientationInterpolator OrientationInterpolator1978 = createNode("OrientationInterpolator");
+OrientationInterpolator1978.DEF = "Rolls_l_ankle_RotationInterpolator";
+OrientationInterpolator1978.key = new MFFloat(new float[0,0.25,0.5,0.75,1]);
+OrientationInterpolator1978.keyValue = new MFRotation(new float[0,0,1,0,0,0,-1,1.5,0,0,1,0,0,0,-1,1.5,0,0,1,0]);
+Group1972.children[5] = OrientationInterpolator1978;
+
+OrientationInterpolator OrientationInterpolator1979 = createNode("OrientationInterpolator");
+OrientationInterpolator1979.DEF = "Rolls_l_knee_RotationInterpolator";
+OrientationInterpolator1979.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1979.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1972.children[6] = OrientationInterpolator1979;
+
+OrientationInterpolator OrientationInterpolator1980 = createNode("OrientationInterpolator");
+OrientationInterpolator1980.DEF = "Rolls_l_hip_RotationInterpolator";
+OrientationInterpolator1980.key = new MFFloat(new float[0,0.25,0.5,0.75,1]);
+OrientationInterpolator1980.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,1.5,0,0,1,0,0,0,1,1.5,0,0,1,0]);
+Group1972.children[7] = OrientationInterpolator1980;
+
+OrientationInterpolator OrientationInterpolator1981 = createNode("OrientationInterpolator");
+OrientationInterpolator1981.DEF = "Rolls_r_wrist_RotationInterpolator";
+OrientationInterpolator1981.key = new MFFloat(new float[0,0.25,0.5,0.75,1]);
+OrientationInterpolator1981.keyValue = new MFRotation(new float[0,0,1,0,0,0,-1,1.5,0,0,1,0,0,0,1,1.5,0,0,1,0]);
+Group1972.children[8] = OrientationInterpolator1981;
+
+OrientationInterpolator OrientationInterpolator1982 = createNode("OrientationInterpolator");
+OrientationInterpolator1982.DEF = "Rolls_r_elbow_RotationInterpolator";
+OrientationInterpolator1982.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1982.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1972.children[9] = OrientationInterpolator1982;
+
+OrientationInterpolator OrientationInterpolator1983 = createNode("OrientationInterpolator");
+OrientationInterpolator1983.DEF = "Rolls_r_shoulder_RotationInterpolator";
+OrientationInterpolator1983.key = new MFFloat(new float[0,0.25,0.5,0.75,1]);
+OrientationInterpolator1983.keyValue = new MFRotation(new float[0,0,1,0,0,0,-1,1.5,0,0,-1,3,0,0,-1,1.5,0,0,1,0]);
+Group1972.children[10] = OrientationInterpolator1983;
+
+OrientationInterpolator OrientationInterpolator1984 = createNode("OrientationInterpolator");
+OrientationInterpolator1984.DEF = "Rolls_l_wrist_RotationInterpolator";
+OrientationInterpolator1984.key = new MFFloat(new float[0,0.25,0.5,0.75,1]);
+OrientationInterpolator1984.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,1.5,0,0,1,0,0,0,-1,1.5,0,0,1,0]);
+Group1972.children[11] = OrientationInterpolator1984;
+
+OrientationInterpolator OrientationInterpolator1985 = createNode("OrientationInterpolator");
+OrientationInterpolator1985.DEF = "Rolls_l_elbow_RotationInterpolator";
+OrientationInterpolator1985.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1985.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1972.children[12] = OrientationInterpolator1985;
+
+OrientationInterpolator OrientationInterpolator1986 = createNode("OrientationInterpolator");
+OrientationInterpolator1986.DEF = "Rolls_l_shoulder_RotationInterpolator";
+OrientationInterpolator1986.key = new MFFloat(new float[0,0.25,0.5,0.75,1]);
+OrientationInterpolator1986.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,1.5,0,0,1,3,0,0,1,1.5,0,0,1,0]);
+Group1972.children[13] = OrientationInterpolator1986;
+
+OrientationInterpolator OrientationInterpolator1987 = createNode("OrientationInterpolator");
+OrientationInterpolator1987.DEF = "Rolls_head_RotationInterpolator";
+OrientationInterpolator1987.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1987.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1972.children[14] = OrientationInterpolator1987;
+
+OrientationInterpolator OrientationInterpolator1988 = createNode("OrientationInterpolator");
+OrientationInterpolator1988.DEF = "Rolls_neck_RotationInterpolator";
+OrientationInterpolator1988.key = new MFFloat(new float[0,0.25,0.5,0.75,1]);
+OrientationInterpolator1988.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,1.25,0,0,1,0,0,0,-1,1.25,0,0,1,0]);
+Group1972.children[15] = OrientationInterpolator1988;
+
+OrientationInterpolator OrientationInterpolator1989 = createNode("OrientationInterpolator");
+OrientationInterpolator1989.DEF = "Rolls_lower_body_RotationInterpolator";
+OrientationInterpolator1989.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1989.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1972.children[16] = OrientationInterpolator1989;
+
+OrientationInterpolator OrientationInterpolator1990 = createNode("OrientationInterpolator");
+OrientationInterpolator1990.DEF = "Rolls_upper_body_RotationInterpolator";
+OrientationInterpolator1990.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1990.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1972.children[17] = OrientationInterpolator1990;
+
+OrientationInterpolator OrientationInterpolator1991 = createNode("OrientationInterpolator");
+OrientationInterpolator1991.DEF = "Rolls_whole_body_RotationInterpolator";
+OrientationInterpolator1991.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator1991.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1972.children[18] = OrientationInterpolator1991;
+
+PositionInterpolator PositionInterpolator1992 = createNode("PositionInterpolator");
+PositionInterpolator1992.DEF = "Rolls_whole_body_TranslationInterpolator";
+PositionInterpolator1992.key = new MFFloat(new float[0,0.125,0.25,0.375,0.5,0.625,0.75,0.875,1]);
+PositionInterpolator1992.keyValue = new MFVec3f(new float[0,0,0,0,-0.25,0,0,-0.8,0,0,-0.25,0,0,0,0,0,-0.25,0,0,-0.8,0,0,-0.25,0,0,0,0]);
+Group1972.children[19] = PositionInterpolator1992;
+
+OrientationInterpolator OrientationInterpolator1993 = createNode("OrientationInterpolator");
+OrientationInterpolator1993.DEF = "Roll_l_sternoclavicular_RollInterpolator";
+OrientationInterpolator1993.key = new MFFloat(new float[0,0.2,0.4,0.6,0.8,1]);
+OrientationInterpolator1993.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0.2,0,0,1,0.22,0,0,1,0.2,0,0,1,0,0,0,1,0]);
+Group1972.children[20] = OrientationInterpolator1993;
+
+OrientationInterpolator OrientationInterpolator1994 = createNode("OrientationInterpolator");
+OrientationInterpolator1994.DEF = "Roll_l_acromioclavicular_RollInterpolator";
+OrientationInterpolator1994.key = new MFFloat(new float[0,0.2,0.4,0.6,0.8,1]);
+OrientationInterpolator1994.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0.05,0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1972.children[21] = OrientationInterpolator1994;
+
+OrientationInterpolator OrientationInterpolator1995 = createNode("OrientationInterpolator");
+OrientationInterpolator1995.DEF = "Roll_r_sternoclavicular_RollInterpolator";
+OrientationInterpolator1995.key = new MFFloat(new float[0,0.2,0.4,0.6,0.8,1]);
+OrientationInterpolator1995.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,-0.2,0,0,1,-0.22,0,0,1,-0.2,0,0,1,0,0,0,1,0]);
+Group1972.children[22] = OrientationInterpolator1995;
+
+OrientationInterpolator OrientationInterpolator1996 = createNode("OrientationInterpolator");
+OrientationInterpolator1996.DEF = "Roll_r_acromioclavicular_RollInterpolator";
+OrientationInterpolator1996.key = new MFFloat(new float[0,0.2,0.4,0.6,0.8,1]);
+OrientationInterpolator1996.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,-0.05,0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1972.children[23] = OrientationInterpolator1996;
+
+OrientationInterpolator OrientationInterpolator1997 = createNode("OrientationInterpolator");
+OrientationInterpolator1997.DEF = "Roll_sacroiliac_YawInterpolator";
+OrientationInterpolator1997.key = new MFFloat(new float[0,0.2,0.4,0.6,0.8,1]);
+OrientationInterpolator1997.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1972.children[24] = OrientationInterpolator1997;
+
+OrientationInterpolator OrientationInterpolator1998 = createNode("OrientationInterpolator");
+OrientationInterpolator1998.DEF = "Roll_vl5_YawInterpolator";
+OrientationInterpolator1998.key = new MFFloat(new float[0,0.2,0.4,0.5,0.6,0.8,1]);
+OrientationInterpolator1998.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1972.children[25] = OrientationInterpolator1998;
+
+OrientationInterpolator OrientationInterpolator1999 = createNode("OrientationInterpolator");
+OrientationInterpolator1999.DEF = "Roll_vc6_YawInterpolator";
+OrientationInterpolator1999.key = new MFFloat(new float[0,0.2,0.4,0.5,0.6,0.8,1]);
+OrientationInterpolator1999.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1972.children[26] = OrientationInterpolator1999;
+
+OrientationInterpolator OrientationInterpolator2000 = createNode("OrientationInterpolator");
+OrientationInterpolator2000.DEF = "Roll_l_thumb1_PitchInterpolator";
+OrientationInterpolator2000.key = new MFFloat(new float[0,0.2,0.4,0.6,0.8,1]);
+OrientationInterpolator2000.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1972.children[27] = OrientationInterpolator2000;
+
+OrientationInterpolator OrientationInterpolator2001 = createNode("OrientationInterpolator");
+OrientationInterpolator2001.DEF = "Roll_r_thumb1_PitchInterpolator";
+OrientationInterpolator2001.key = new MFFloat(new float[0,0.2,0.4,0.6,0.8,1]);
+OrientationInterpolator2001.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]);
+Group1972.children[28] = OrientationInterpolator2001;
+
+children[9] = Group1972;
+
+Group Group2002 = createNode("Group");
+Group2002.DEF = "WalkAnimation";
+TimeSensor TimeSensor2003 = createNode("TimeSensor");
+TimeSensor2003.DEF = "WalkTimer";
+TimeSensor2003.cycleInterval = 1.73;
+TimeSensor2003.loop = True;
+Group2002.children = new MFNode();
+
+Group2002.children[0] = TimeSensor2003;
+
+OrientationInterpolator OrientationInterpolator2004 = createNode("OrientationInterpolator");
+OrientationInterpolator2004.DEF = "Walk_r_metatarsal_PitchInterpolator";
+OrientationInterpolator2004.key = new MFFloat(new float[0,0.2,0.4,0.6,0.7,1]);
+OrientationInterpolator2004.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]);
+Group2002.children[1] = OrientationInterpolator2004;
+
+OrientationInterpolator OrientationInterpolator2005 = createNode("OrientationInterpolator");
+OrientationInterpolator2005.DEF = "Walk_r_ankle_RotationInterpolator";
+OrientationInterpolator2005.key = new MFFloat(new float[0,0.125,0.2083,0.375,0.4583,0.5,0.6667,0.75,0.7917,0.9167,1]);
+OrientationInterpolator2005.keyValue = new MFRotation(new float[0,0,1,0,-1,0,0,0.3533,-1,0,0,0.1072,1,0,0,0.2612,1,0,0,0.1268,-1,0,0,0.01793,-1,0,0,0.05824,-1,0,0,0.2398,-1,0,0,0.35,-1,0,0,0.3322,0,0,1,0]);
+Group2002.children[2] = OrientationInterpolator2005;
+
+OrientationInterpolator OrientationInterpolator2006 = createNode("OrientationInterpolator");
+OrientationInterpolator2006.DEF = "Walk_r_knee_RotationInterpolator";
+OrientationInterpolator2006.key = new MFFloat(new float[0,0.125,0.2083,0.2917,0.375,0.5,0.6667,0.7917,0.9167,1]);
+OrientationInterpolator2006.keyValue = new MFRotation(new float[1,0,0,0.8573,1,0,0,0.8926,1,0,0,0.5351,1,0,0,0.1756,1,0,0,0.1194,1,0,0,0.3153,1,0,0,0.09354,1,0,0,0.08558,1,0,0,0.2475,1,0,0,0.8573]);
+Group2002.children[3] = OrientationInterpolator2006;
+
+OrientationInterpolator OrientationInterpolator2007 = createNode("OrientationInterpolator");
+OrientationInterpolator2007.DEF = "Walk_r_hip_RotationInterpolator";
+OrientationInterpolator2007.key = new MFFloat(new float[0,0.125,0.2083,0.2917,0.375,0.5,0.6667,0.7917,0.9167,1]);
+OrientationInterpolator2007.keyValue = new MFRotation(new float[-0.5831,0.03511,0.8116,0.1481,-0.995,0.02296,0.09674,0.4683,-1,0.00192,0.007964,0.4732,-0.998,-0.0158,-0.06102,0.5079,-0.9911,-0.03541,-0.1286,0.5419,-0.9131,-0.06243,-0.403,0.3361,-0.4306,-0.07962,-0.899,0.07038,1,0,0,0.2571,0.9891,-0.02805,0.1444,0.3879,-0.5831,0.03511,0.8116,0.1481]);
+Group2002.children[4] = OrientationInterpolator2007;
+
+OrientationInterpolator OrientationInterpolator2008 = createNode("OrientationInterpolator");
+OrientationInterpolator2008.DEF = "Walk_l_ankle_RotationInterpolator";
+OrientationInterpolator2008.key = new MFFloat(new float[0,0.125,0.2083,0.375,0.6667,0.9167,1]);
+OrientationInterpolator2008.keyValue = new MFRotation(new float[-1,0,0,0.06714,-1,0,0,0.2152,-1,0,0,0.3184,-1,0,0,0.4717,-1,0,0,0.2912,1,0,0,0.1222,-1,0,0,0.06714]);
+Group2002.children[5] = OrientationInterpolator2008;
+
+OrientationInterpolator OrientationInterpolator2009 = createNode("OrientationInterpolator");
+OrientationInterpolator2009.DEF = "Walk_l_knee_RotationInterpolator";
+OrientationInterpolator2009.key = new MFFloat(new float[0,0.2083,0.375,0.5,0.6667,0.7917,0.9167,1]);
+OrientationInterpolator2009.keyValue = new MFRotation(new float[1,0,0,0.3226,1,0,0,0.1556,1,0,0,0.08678,1,0,0,0.8751,1,0,0,1.131,1,0,0,0.09961,1,0,0,0.3942,1,0,0,0.3226]);
+Group2002.children[6] = OrientationInterpolator2009;
+
+OrientationInterpolator OrientationInterpolator2010 = createNode("OrientationInterpolator");
+OrientationInterpolator2010.DEF = "Walk_l_hip_RotationInterpolator";
+OrientationInterpolator2010.key = new MFFloat(new float[0,0.25,0.375,0.5,0.6667,0.7917,0.9167,1]);
+OrientationInterpolator2010.keyValue = new MFRotation(new float[-0.873,0.06094,0.484,0.2865,0.9963,-0.01057,0.08481,0.2488,0.9965,0.01591,-0.08222,0.3836,-0.7018,-0.03223,-0.7117,0.1289,-1,0,0,0.5518,-0.9964,0.02231,0.0817,0.5351,-0.9809,0.04912,0.1881,0.5204,-0.873,0.06094,0.484,0.2865]);
+Group2002.children[7] = OrientationInterpolator2010;
+
+OrientationInterpolator OrientationInterpolator2011 = createNode("OrientationInterpolator");
+OrientationInterpolator2011.DEF = "Walk_lower_body_RotationInterpolator";
+OrientationInterpolator2011.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator2011.keyValue = new MFRotation(new float[0,0,-1,0.1056,0,0,1,0.09018,0,0,-1,0.1056]);
+Group2002.children[8] = OrientationInterpolator2011;
+
+OrientationInterpolator OrientationInterpolator2012 = createNode("OrientationInterpolator");
+OrientationInterpolator2012.DEF = "Walk_r_wrist_RotationInterpolator";
+OrientationInterpolator2012.key = new MFFloat(new float[0,0.375,0.9167,1]);
+OrientationInterpolator2012.keyValue = new MFRotation(new float[-0.8129,0.4759,-0.3357,0.1346,0.1533,-0.9878,0.02582,0.3902,-0.5701,0.7604,-0.311,0.366,-0.8129,0.4759,-0.3357,0.1346]);
+Group2002.children[9] = OrientationInterpolator2012;
+
+OrientationInterpolator OrientationInterpolator2013 = createNode("OrientationInterpolator");
+OrientationInterpolator2013.DEF = "Walk_r_elbow_RotationInterpolator";
+OrientationInterpolator2013.key = new MFFloat(new float[0,0.375,0.9167,1]);
+OrientationInterpolator2013.keyValue = new MFRotation(new float[-1,0,0,0.411508,-1,0,0,0.0925011,-1,0,0,0.572568,-1,0,0,0.411508]);
+Group2002.children[10] = OrientationInterpolator2013;
+
+OrientationInterpolator OrientationInterpolator2014 = createNode("OrientationInterpolator");
+OrientationInterpolator2014.DEF = "Walk_r_shoulder_RotationInterpolator";
+OrientationInterpolator2014.key = new MFFloat(new float[0,0.375,0.9167,1]);
+OrientationInterpolator2014.keyValue = new MFRotation(new float[-1,0,0,0.09346,1,0,0,0.3197,-1,0,0,0.1564,-1,0,0,0.09346]);
+Group2002.children[11] = OrientationInterpolator2014;
+
+OrientationInterpolator OrientationInterpolator2015 = createNode("OrientationInterpolator");
+OrientationInterpolator2015.DEF = "Walk_l_wrist_RotationInterpolator";
+OrientationInterpolator2015.key = new MFFloat(new float[0,0.375,0.9167,1]);
+OrientationInterpolator2015.keyValue = new MFRotation(new float[0,-1,0,0.461076,-0.330195,-0.927451,0.175516,0.538852,0.0327774,-0.999314,-0.0172185,0.492033,0,-1,0,0.461076]);
+Group2002.children[12] = OrientationInterpolator2015;
+
+OrientationInterpolator OrientationInterpolator2016 = createNode("OrientationInterpolator");
+OrientationInterpolator2016.DEF = "Walk_l_elbow_RotationInterpolator";
+OrientationInterpolator2016.key = new MFFloat(new float[0,0.375,0.9167,1]);
+OrientationInterpolator2016.keyValue = new MFRotation(new float[-1,0,0,0.0659878,-1,0,0,0.488383,-1,0,0,0.0177536,-1,0,0,0.0659878]);
+Group2002.children[13] = OrientationInterpolator2016;
+
+OrientationInterpolator OrientationInterpolator2017 = createNode("OrientationInterpolator");
+OrientationInterpolator2017.DEF = "Walk_l_shoulder_RotationInterpolator";
+OrientationInterpolator2017.key = new MFFloat(new float[0,0.375,0.9167,1]);
+OrientationInterpolator2017.keyValue = new MFRotation(new float[1,0,0,0.1189,-1,0,0,0.1861,1,0,0,0.3357,1,0,0,0.1189]);
+Group2002.children[14] = OrientationInterpolator2017;
+
+OrientationInterpolator OrientationInterpolator2018 = createNode("OrientationInterpolator");
+OrientationInterpolator2018.DEF = "Walk_head_RotationInterpolator";
+OrientationInterpolator2018.key = new MFFloat(new float[0,0.375,0.4167,0.5,0.5833,0.6667,0.75,0.8333,0.9167,1]);
+OrientationInterpolator2018.keyValue = new MFRotation(new float[0,-1,0,0.08642,0,1,0,0.1825,0,1,0,0.1505,0,1,0,0.1053,0,1,0,0.04391,0,-1,0,0.03119,0,-1,0,0.07936,0,-1,0,0.1616,0,-1,0,0.155,0,-1,0,0.08642]);
+Group2002.children[15] = OrientationInterpolator2018;
+
+OrientationInterpolator OrientationInterpolator2019 = createNode("OrientationInterpolator");
+OrientationInterpolator2019.DEF = "Walk_neck_RotationInterpolator";
+OrientationInterpolator2019.key = new MFFloat(new float[0,1]);
+OrientationInterpolator2019.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0]);
+Group2002.children[16] = OrientationInterpolator2019;
+
+OrientationInterpolator OrientationInterpolator2020 = createNode("OrientationInterpolator");
+OrientationInterpolator2020.DEF = "Walk_upper_body_RotationInterpolator";
+OrientationInterpolator2020.key = new MFFloat(new float[0,0.2083,0.375,0.75,0.8333,1]);
+OrientationInterpolator2020.keyValue = new MFRotation(new float[0,1,0,0.0826,-0.01972,-0.5974,0.8017,0.08231,0.009296,-0.9648,0.2627,0.1734,-0.01238,0.9549,-0.2968,0.08732,-0.008125,0.9691,-0.2463,0.158,0,1,0,0.0826]);
+Group2002.children[17] = OrientationInterpolator2020;
+
+OrientationInterpolator OrientationInterpolator2021 = createNode("OrientationInterpolator");
+OrientationInterpolator2021.DEF = "Walk_whole_body_RotationInterpolator";
+OrientationInterpolator2021.key = new MFFloat(new float[0,1]);
+OrientationInterpolator2021.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0]);
+Group2002.children[18] = OrientationInterpolator2021;
+
+PositionInterpolator PositionInterpolator2022 = createNode("PositionInterpolator");
+PositionInterpolator2022.DEF = "Walk_whole_body_TranslationInterpolator";
+PositionInterpolator2022.key = new MFFloat(new float[0,0.04167,0.125,0.1667,0.2083,0.25,0.2917,0.375,0.4583,0.5,0.5417,0.5833,0.625,0.7083,0.75,0.7917,0.875,0.9167,1]);
+PositionInterpolator2022.keyValue = new MFVec3f(new float[0,-0.00928,0,0,-0.003858,0,0,-0.008847,0,0,-0.01486,0,0,-0.02641,0,0,-0.03934,0,0,-0.0502,0,0,-0.07469,0,0,-0.02732,0,0,-0.01608,0,0,-0.01129,0,0,-0.005819,0,0,-0.002004,0,0,-0.002579,0,0,-0.0143,0,0,-0.03799,0,0,-0.05648,0,0,-0.045,0,0,-0.00928,0]);
+Group2002.children[19] = PositionInterpolator2022;
+
+OrientationInterpolator OrientationInterpolator2023 = createNode("OrientationInterpolator");
+OrientationInterpolator2023.DEF = "Walk_l_sternoclavicular_RollInterpolator";
+OrientationInterpolator2023.key = new MFFloat(new float[0,0.2,0.4,0.6,0.8,1]);
+OrientationInterpolator2023.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]);
+Group2002.children[20] = OrientationInterpolator2023;
+
+OrientationInterpolator OrientationInterpolator2024 = createNode("OrientationInterpolator");
+OrientationInterpolator2024.DEF = "Walk_l_acromioclavicular_RollInterpolator";
+OrientationInterpolator2024.key = new MFFloat(new float[0,0.2,0.4,0.6,0.8,1]);
+OrientationInterpolator2024.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]);
+Group2002.children[21] = OrientationInterpolator2024;
+
+OrientationInterpolator OrientationInterpolator2025 = createNode("OrientationInterpolator");
+OrientationInterpolator2025.DEF = "Walk_r_sternoclavicular_RollInterpolator";
+OrientationInterpolator2025.key = new MFFloat(new float[0,0.2,0.4,0.6,0.8,1]);
+OrientationInterpolator2025.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]);
+Group2002.children[22] = OrientationInterpolator2025;
+
+OrientationInterpolator OrientationInterpolator2026 = createNode("OrientationInterpolator");
+OrientationInterpolator2026.DEF = "Walk_r_acromioclavicular_RollInterpolator";
+OrientationInterpolator2026.key = new MFFloat(new float[0,0.2,0.4,0.6,0.8,1]);
+OrientationInterpolator2026.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]);
+Group2002.children[23] = OrientationInterpolator2026;
+
+OrientationInterpolator OrientationInterpolator2027 = createNode("OrientationInterpolator");
+OrientationInterpolator2027.DEF = "Walk_sacroiliac_YawInterpolator";
+OrientationInterpolator2027.key = new MFFloat(new float[0,0.2,0.4,0.6,0.8,1]);
+OrientationInterpolator2027.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]);
+Group2002.children[24] = OrientationInterpolator2027;
+
+OrientationInterpolator OrientationInterpolator2028 = createNode("OrientationInterpolator");
+OrientationInterpolator2028.DEF = "Walk_vl5_YawInterpolator";
+OrientationInterpolator2028.key = new MFFloat(new float[0,0.2,0.4,0.5,0.6,0.8,1]);
+OrientationInterpolator2028.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]);
+Group2002.children[25] = OrientationInterpolator2028;
+
+OrientationInterpolator OrientationInterpolator2029 = createNode("OrientationInterpolator");
+OrientationInterpolator2029.DEF = "Walk_vc6_YawInterpolator";
+OrientationInterpolator2029.key = new MFFloat(new float[0,0.2,0.4,0.5,0.6,0.8,1]);
+OrientationInterpolator2029.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]);
+Group2002.children[26] = OrientationInterpolator2029;
+
+OrientationInterpolator OrientationInterpolator2030 = createNode("OrientationInterpolator");
+OrientationInterpolator2030.DEF = "Walk_l_thumb1_PitchInterpolator";
+OrientationInterpolator2030.key = new MFFloat(new float[0,0.2,0.4,0.6,0.8,1]);
+OrientationInterpolator2030.keyValue = new MFRotation(new float[1,0,0,0,1,0,0,0.25,1,0,0,0.5,1,0,0,0.7,1,0,0,0.2,1,0,0,0]);
+Group2002.children[27] = OrientationInterpolator2030;
+
+OrientationInterpolator OrientationInterpolator2031 = createNode("OrientationInterpolator");
+OrientationInterpolator2031.DEF = "Walk_r_thumb1_PitchInterpolator";
+OrientationInterpolator2031.key = new MFFloat(new float[0,0.2,0.4,0.6,0.8,1]);
+OrientationInterpolator2031.keyValue = new MFRotation(new float[1,0,0,0,1,0,0,0.25,1,0,0,0.5,1,0,0,0.7,1,0,0,0.2,1,0,0,0]);
+Group2002.children[28] = OrientationInterpolator2031;
+
+children[10] = Group2002;
+
+Group Group2032 = createNode("Group");
+Group2032.DEF = "RunAnimation";
+TimeSensor TimeSensor2033 = createNode("TimeSensor");
+TimeSensor2033.DEF = "RunTimer";
+TimeSensor2033.cycleInterval = 0.9;
+TimeSensor2033.loop = True;
+Group2032.children = new MFNode();
+
+Group2032.children[0] = TimeSensor2033;
+
+OrientationInterpolator OrientationInterpolator2034 = createNode("OrientationInterpolator");
+OrientationInterpolator2034.DEF = "Run_r_metatarsal_PitchInterpolator";
+OrientationInterpolator2034.key = new MFFloat(new float[0,0.2,0.4,0.6,0.7,1]);
+OrientationInterpolator2034.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]);
+Group2032.children[1] = OrientationInterpolator2034;
+
+OrientationInterpolator OrientationInterpolator2035 = createNode("OrientationInterpolator");
+OrientationInterpolator2035.DEF = "Run_l_hip_RotationInterpolator_Run";
+OrientationInterpolator2035.key = new MFFloat(new float[0,0.2182,0.4909,0.7455,1]);
+OrientationInterpolator2035.keyValue = new MFRotation(new float[-0.99,0.033,0.04,1.42,-0.99,0.1328,0.067,0.42,0.99,0.014,0.009,0.9,-0.99,0.0703,0.05,0.7,-0.99,0.033,0.04,1.42]);
+Group2032.children[2] = OrientationInterpolator2035;
+
+OrientationInterpolator OrientationInterpolator2036 = createNode("OrientationInterpolator");
+OrientationInterpolator2036.DEF = "Run_l_knee_RotationInterpolator_Run";
+OrientationInterpolator2036.key = new MFFloat(new float[0,0.2182,0.4909,0.7455,1]);
+OrientationInterpolator2036.keyValue = new MFRotation(new float[1,0,0,1.01,1,0,0,0.426,1,0,0,0.705,1,0,0,2.179,1,0,0,1.01]);
+Group2032.children[3] = OrientationInterpolator2036;
+
+OrientationInterpolator OrientationInterpolator2037 = createNode("OrientationInterpolator");
+OrientationInterpolator2037.DEF = "Run_l_ankle_RotationInterpolator_Run";
+OrientationInterpolator2037.key = new MFFloat(new float[0,0.22,0.3,0.4,1]);
+OrientationInterpolator2037.keyValue = new MFRotation(new float[1,0,0,0.0374,-1,0,0,0.1037,-1,0,0,0.4328,1,0,0,0.1929,1,0,0,0.03574]);
+Group2032.children[4] = OrientationInterpolator2037;
+
+OrientationInterpolator OrientationInterpolator2038 = createNode("OrientationInterpolator");
+OrientationInterpolator2038.DEF = "Run_r_hip_RotationInterpolator_Run";
+OrientationInterpolator2038.key = new MFFloat(new float[0,0.2545,0.4909,0.7091,1]);
+OrientationInterpolator2038.keyValue = new MFRotation(new float[0.99,-0.014,0.009,0.9,-0.99,-0.0703,-0.05,0.7,-0.99,-0.033,0.04,1.42,-0.99,-0.1328,-0.067,0.42,0.99,-0.014,0.009,0.9]);
+Group2032.children[5] = OrientationInterpolator2038;
+
+OrientationInterpolator OrientationInterpolator2039 = createNode("OrientationInterpolator");
+OrientationInterpolator2039.DEF = "Run_r_knee_RotationInterpolator_Run";
+OrientationInterpolator2039.key = new MFFloat(new float[0,0.2545,0.4909,0.7091,1]);
+OrientationInterpolator2039.keyValue = new MFRotation(new float[1,0,0,0.705,1,0,0,2.179,1,0,0,1.01,1,0,0,0.426,1,0,0,0.705]);
+Group2032.children[6] = OrientationInterpolator2039;
+
+OrientationInterpolator OrientationInterpolator2040 = createNode("OrientationInterpolator");
+OrientationInterpolator2040.DEF = "Run_r_ankle_RotationInterpolator_Run";
+OrientationInterpolator2040.key = new MFFloat(new float[0,0.4,0.71,0.8,0.82,1]);
+OrientationInterpolator2040.keyValue = new MFRotation(new float[1,0,0,0.2323,-1,0,0,0.07843,-1,0,0,0.32,-1,0,0,0.374,-1,0,0,0.3478,1,0,0,0.2323]);
+Group2032.children[7] = OrientationInterpolator2040;
+
+OrientationInterpolator OrientationInterpolator2041 = createNode("OrientationInterpolator");
+OrientationInterpolator2041.DEF = "Run_l_shoulder_RotationInterpolator_Run";
+OrientationInterpolator2041.key = new MFFloat(new float[0,0.2182,0.4909,0.7455,1]);
+OrientationInterpolator2041.keyValue = new MFRotation(new float[0.99,-0.074,0.25,1.5,0.99,-0.092,0.44,0.3,-0.99,0.136,0.25,0.85,0.99,-0.081,0.38,0.4,0.99,-0.074,0.25,1.5]);
+Group2032.children[8] = OrientationInterpolator2041;
+
+OrientationInterpolator OrientationInterpolator2042 = createNode("OrientationInterpolator");
+OrientationInterpolator2042.DEF = "Run_l_elbow_RotationInterpolator_Run";
+OrientationInterpolator2042.key = new MFFloat(new float[0,0.2182,0.4909,0.7455,1]);
+OrientationInterpolator2042.keyValue = new MFRotation(new float[-1,0,0,1.85,-0.99,-0.19,0.18,1.35,-1,0,0,0.975,-0.99,-0.09,-0.02,1.55,-1,0,0,1.85]);
+Group2032.children[9] = OrientationInterpolator2042;
+
+OrientationInterpolator OrientationInterpolator2043 = createNode("OrientationInterpolator");
+OrientationInterpolator2043.DEF = "Run_l_wrist_RotationInterpolator_Run";
+OrientationInterpolator2043.key = new MFFloat(new float[0,0.25,0.5,0.75,1]);
+OrientationInterpolator2043.keyValue = new MFRotation(new float[-0.25,-1,0.08,0.14,0.25,1,0.08,0.14,0,0,1,0,-0.25,1,0.08,-0.14,-0.25,1,0.08,0.14]);
+Group2032.children[10] = OrientationInterpolator2043;
+
+OrientationInterpolator OrientationInterpolator2044 = createNode("OrientationInterpolator");
+OrientationInterpolator2044.DEF = "Run_r_shoulder_RotationInterpolator_Run";
+OrientationInterpolator2044.key = new MFFloat(new float[0,0.2545,0.4909,0.7091,1]);
+OrientationInterpolator2044.keyValue = new MFRotation(new float[-0.99,-0.136,-0.25,0.85,0.99,0.081,-0.38,0.4,0.99,0.074,-0.25,1.5,0.99,0.081,-0.38,0.4,-0.99,-0.136,-0.25,0.85]);
+Group2032.children[11] = OrientationInterpolator2044;
+
+OrientationInterpolator OrientationInterpolator2045 = createNode("OrientationInterpolator");
+OrientationInterpolator2045.DEF = "Run_r_elbow_RotationInterpolator_Run";
+OrientationInterpolator2045.key = new MFFloat(new float[0,0.2545,0.4909,0.7091,1]);
+OrientationInterpolator2045.keyValue = new MFRotation(new float[-1,0,0,0.975,-0.99,0.09,0.02,1.55,-1,0,0,1.85,-0.99,0.19,-0.18,1.35,-1,0,0,0.975]);
+Group2032.children[12] = OrientationInterpolator2045;
+
+OrientationInterpolator OrientationInterpolator2046 = createNode("OrientationInterpolator");
+OrientationInterpolator2046.DEF = "Run_r_wrist_RotationInterpolator_Run";
+OrientationInterpolator2046.key = new MFFloat(new float[0,1]);
+OrientationInterpolator2046.keyValue = new MFRotation(new float[-0.917742,-0.237244,-0.318536,0.214273,-0.917742,-0.237244,-0.318536,0.214273]);
+Group2032.children[13] = OrientationInterpolator2046;
+
+OrientationInterpolator OrientationInterpolator2047 = createNode("OrientationInterpolator");
+OrientationInterpolator2047.DEF = "Run_lower_body_RotationInterpolator_Run";
+OrientationInterpolator2047.key = new MFFloat(new float[0,0.2182,0.4909,0.7455,1]);
+OrientationInterpolator2047.keyValue = new MFRotation(new float[0,-1,0,0.125,0,0,1,0,0,1,0,0.125,0,0,1,0,0,-1,0,0.125]);
+Group2032.children[14] = OrientationInterpolator2047;
+
+OrientationInterpolator OrientationInterpolator2048 = createNode("OrientationInterpolator");
+OrientationInterpolator2048.DEF = "Run_head_RotationInterpolator_Run";
+OrientationInterpolator2048.key = new MFFloat(new float[0,0.2545,0.4909,0.7091,1]);
+OrientationInterpolator2048.keyValue = new MFRotation(new float[1,0,0,0.08,1,0,0,0.12,1,0,0,0.3,1,0,0,0.3,1,0,0,0.08]);
+Group2032.children[15] = OrientationInterpolator2048;
+
+OrientationInterpolator OrientationInterpolator2049 = createNode("OrientationInterpolator");
+OrientationInterpolator2049.DEF = "Run_neck_RotationInterpolator_Run";
+OrientationInterpolator2049.key = new MFFloat(new float[0,0.2545,0.4909,0.7091,1]);
+OrientationInterpolator2049.keyValue = new MFRotation(new float[0.7,0,0,0.4,-0.7,-0.7,0,0.4,0,0,0,0.4,-0.7,0.7,0,0.4,0.7,0,0,0.4]);
+Group2032.children[16] = OrientationInterpolator2049;
+
+OrientationInterpolator OrientationInterpolator2050 = createNode("OrientationInterpolator");
+OrientationInterpolator2050.DEF = "Run_upper_body_RotationInterpolator_Run";
+OrientationInterpolator2050.key = new MFFloat(new float[0,0.2545,0.4909,0.7636,1]);
+OrientationInterpolator2050.keyValue = new MFRotation(new float[0.97,0.65,0.086,0.5,0.9,0.003,-0.02,0.38,0.95,-0.68,-0.086,0.5,0.9,0.004,-0.025,0.4,0.97,0.65,0.086,0.5]);
+Group2032.children[17] = OrientationInterpolator2050;
+
+OrientationInterpolator OrientationInterpolator2051 = createNode("OrientationInterpolator");
+OrientationInterpolator2051.DEF = "Run_whole_body_RotationInterpolator_Run";
+OrientationInterpolator2051.key = new MFFloat(new float[0,0.25,0.5,0.75,1]);
+OrientationInterpolator2051.keyValue = new MFRotation(new float[1,0,0,0.06,1,0,0,0.167,1,0,0,0.06,1,0,0,0.168,1,0,0,0.06]);
+Group2032.children[18] = OrientationInterpolator2051;
+
+PositionInterpolator PositionInterpolator2052 = createNode("PositionInterpolator");
+PositionInterpolator2052.DEF = "Run_whole_body_TranslationInterpolator_Run";
+PositionInterpolator2052.key = new MFFloat(new float[0,0.22,0.3,0.31,0.5,0.69,0.7,0.78,1]);
+PositionInterpolator2052.keyValue = new MFVec3f(new float[0,-0.01,0,0,-0.037,0,0,-0.049,0,0,-0.037,0,0,-0.01,0,0,-0.037,0,0,-0.049,0,0,-0.037,0,0,-0.01,0]);
+Group2032.children[19] = PositionInterpolator2052;
+
+OrientationInterpolator OrientationInterpolator2053 = createNode("OrientationInterpolator");
+OrientationInterpolator2053.DEF = "Run_l_sternoclavicular_RollInterpolator";
+OrientationInterpolator2053.key = new MFFloat(new float[0,0.2,0.4,0.6,0.8,1]);
+OrientationInterpolator2053.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]);
+Group2032.children[20] = OrientationInterpolator2053;
+
+OrientationInterpolator OrientationInterpolator2054 = createNode("OrientationInterpolator");
+OrientationInterpolator2054.DEF = "Run_l_acromioclavicular_RollInterpolator";
+OrientationInterpolator2054.key = new MFFloat(new float[0,0.2,0.4,0.6,0.8,1]);
+OrientationInterpolator2054.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]);
+Group2032.children[21] = OrientationInterpolator2054;
+
+OrientationInterpolator OrientationInterpolator2055 = createNode("OrientationInterpolator");
+OrientationInterpolator2055.DEF = "Run_r_sternoclavicular_RollInterpolator";
+OrientationInterpolator2055.key = new MFFloat(new float[0,0.2,0.4,0.6,0.8,1]);
+OrientationInterpolator2055.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]);
+Group2032.children[22] = OrientationInterpolator2055;
+
+OrientationInterpolator OrientationInterpolator2056 = createNode("OrientationInterpolator");
+OrientationInterpolator2056.DEF = "Run_r_acromioclavicular_RollInterpolator";
+OrientationInterpolator2056.key = new MFFloat(new float[0,0.2,0.4,0.6,0.8,1]);
+OrientationInterpolator2056.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]);
+Group2032.children[23] = OrientationInterpolator2056;
+
+OrientationInterpolator OrientationInterpolator2057 = createNode("OrientationInterpolator");
+OrientationInterpolator2057.DEF = "Run_sacroiliac_YawInterpolator";
+OrientationInterpolator2057.key = new MFFloat(new float[0,0.2,0.4,0.6,0.8,1]);
+OrientationInterpolator2057.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]);
+Group2032.children[24] = OrientationInterpolator2057;
+
+OrientationInterpolator OrientationInterpolator2058 = createNode("OrientationInterpolator");
+OrientationInterpolator2058.DEF = "Run_vl5_YawInterpolator";
+OrientationInterpolator2058.key = new MFFloat(new float[0,0.2,0.4,0.5,0.6,0.8,1]);
+OrientationInterpolator2058.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]);
+Group2032.children[25] = OrientationInterpolator2058;
+
+OrientationInterpolator OrientationInterpolator2059 = createNode("OrientationInterpolator");
+OrientationInterpolator2059.DEF = "Run_vc6_YawInterpolator";
+OrientationInterpolator2059.key = new MFFloat(new float[0,0.2,0.4,0.5,0.6,0.8,1]);
+OrientationInterpolator2059.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]);
+Group2032.children[26] = OrientationInterpolator2059;
+
+OrientationInterpolator OrientationInterpolator2060 = createNode("OrientationInterpolator");
+OrientationInterpolator2060.DEF = "Run_l_thumb1_PitchInterpolator";
+OrientationInterpolator2060.key = new MFFloat(new float[0,0.2,0.4,0.6,0.8,1]);
+OrientationInterpolator2060.keyValue = new MFRotation(new float[1,0,0,0,1,0,0,0.25,1,0,0,0.7,1,0,0,0.27,1,0,0,0.2,1,0,0,0]);
+Group2032.children[27] = OrientationInterpolator2060;
+
+OrientationInterpolator OrientationInterpolator2061 = createNode("OrientationInterpolator");
+OrientationInterpolator2061.DEF = "Run_r_thumb1_PitchInterpolator";
+OrientationInterpolator2061.key = new MFFloat(new float[0,0.2,0.4,0.6,0.8,1]);
+OrientationInterpolator2061.keyValue = new MFRotation(new float[1,0,0,0,1,0,0,0.25,1,0,0,0.7,1,0,0,0.27,1,0,0,0.2,1,0,0,0]);
+Group2032.children[28] = OrientationInterpolator2061;
+
+children[11] = Group2032;
+
+Group Group2062 = createNode("Group");
+Group2062.DEF = "JumpAnimation";
+TimeSensor TimeSensor2063 = createNode("TimeSensor");
+TimeSensor2063.DEF = "JumpTimer";
+TimeSensor2063.cycleInterval = 3.73;
+TimeSensor2063.loop = True;
+Group2062.children = new MFNode();
+
+Group2062.children[0] = TimeSensor2063;
+
+OrientationInterpolator OrientationInterpolator2064 = createNode("OrientationInterpolator");
+OrientationInterpolator2064.DEF = "Jump_r_metatarsal_PitchInterpolator";
+OrientationInterpolator2064.key = new MFFloat(new float[0,0.2,0.4,0.6,0.7,1]);
+OrientationInterpolator2064.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]);
+Group2062.children[1] = OrientationInterpolator2064;
+
+OrientationInterpolator OrientationInterpolator2065 = createNode("OrientationInterpolator");
+OrientationInterpolator2065.DEF = "Jump_r_ankle_RotationInterpolator";
+OrientationInterpolator2065.key = new MFFloat(new float[0,0.1,0.15,0.25,0.28,0.32,0.35,0.64,0.76,0.84,0.88,0.92,0.96,1]);
+OrientationInterpolator2065.keyValue = new MFRotation(new float[0,0,1,0,-1,0,0,0.6735,-1,0,0,0.6735,-1,0,0,0.3527,-1,0,0,0.3038,-1,0,0,0.07964,1,0,0,1.3,1,0,0,0.6509,1,0,0,0.3001,-1,0,0,0.2087,-1,0,0,0.3756,-1,0,0,0.3279,-1,0,0,0.1193,0,0,1,0]);
+Group2062.children[2] = OrientationInterpolator2065;
+
+OrientationInterpolator OrientationInterpolator2066 = createNode("OrientationInterpolator");
+OrientationInterpolator2066.DEF = "Jump_r_knee_RotationInterpolator";
+OrientationInterpolator2066.key = new MFFloat(new float[0,0.2,0.25,0.3,0.64,0.76,0.88,1]);
+OrientationInterpolator2066.keyValue = new MFRotation(new float[0,0,1,0,1,0,0,2.5,1,0,0,1.7,0,0,1,0,1,0,0,0.9507,1,0,0,0.5845,1,0,0,0.9054,0,0,1,0]);
+Group2062.children[3] = OrientationInterpolator2066;
+
+OrientationInterpolator OrientationInterpolator2067 = createNode("OrientationInterpolator");
+OrientationInterpolator2067.DEF = "Jump_r_hip_RotationInterpolator";
+OrientationInterpolator2067.key = new MFFloat(new float[0,0.18,0.24,0.26,0.28,0.32,0.48,0.64,0.76,0.88,1]);
+OrientationInterpolator2067.keyValue = new MFRotation(new float[0,0,1,0,-1,0,0,1.63,-1,0,0,1.7,-1,0,0,1.55,-1,0,0,0.8943,-1,0,0,0.3698,0,0,1,0,-1,0,0,0.4963,-1,0,0,0.3829,-1,0,0,0.5169,0,0,1,0]);
+Group2062.children[4] = OrientationInterpolator2067;
+
+OrientationInterpolator OrientationInterpolator2068 = createNode("OrientationInterpolator");
+OrientationInterpolator2068.DEF = "Jump_l_ankle_RotationInterpolator";
+OrientationInterpolator2068.key = new MFFloat(new float[0,0.28,0.32,0.36,0.4,0.44,0.48,0.64,0.76,0.84,0.88,0.92,0.96,1]);
+OrientationInterpolator2068.keyValue = new MFRotation(new float[0,0,1,0,-1,0,0,0.625,-1,0,0,0.625,-1,0,0,0.3364,-1,0,0,0.2742,-1,0,0,0.05078,1,0,0,0.2833,1,0,0,0.6667,1,0,0,0.2833,-1,0,0,0.2108,-1,0,0,0.375,-1,0,0,0.3146,-1,0,0,0.1174,0,0,1,0]);
+Group2062.children[5] = OrientationInterpolator2068;
+
+OrientationInterpolator OrientationInterpolator2069 = createNode("OrientationInterpolator");
+OrientationInterpolator2069.DEF = "Jump_l_knee_RotationInterpolator";
+OrientationInterpolator2069.key = new MFFloat(new float[0,0.28,0.32,0.48,0.64,0.76,0.88,1]);
+OrientationInterpolator2069.keyValue = new MFRotation(new float[0,0,1,0,1,0,0,2.047,1,0,0,2.047,0,0,1,0,1,0,0,1.566,1,0,0,0.5913,1,0,0,0.9235,0,0,1,0]);
+Group2062.children[6] = OrientationInterpolator2069;
+
+OrientationInterpolator OrientationInterpolator2070 = createNode("OrientationInterpolator");
+OrientationInterpolator2070.DEF = "Jump_l_hip_RotationInterpolator";
+OrientationInterpolator2070.key = new MFFloat(new float[0,0.28,0.32,0.36,0.4,0.44,0.48,0.64,0.76,0.88,1]);
+OrientationInterpolator2070.keyValue = new MFRotation(new float[0,0,1,0,1,0,0,4.349,1,0,0,4.349,1,0,0,4.615,-1,0,0,0.9136,-1,0,0,0.3614,0,0,1,0,-1,0,0,0.7869,-1,0,0,0.3918,-1,0,0,0.5433,0,0,1,0]);
+Group2062.children[7] = OrientationInterpolator2070;
+
+OrientationInterpolator OrientationInterpolator2071 = createNode("OrientationInterpolator");
+OrientationInterpolator2071.DEF = "Jump_lower_body_RotationInterpolator";
+OrientationInterpolator2071.key = new MFFloat(new float[0,0.28,0.32,0.48,0.76,1]);
+OrientationInterpolator2071.keyValue = new MFRotation(new float[0,0,1,0,1,0,0,0.1892,1,0,0,0.1892,0,0,1,0,0,0,1,0,0,0,1,0]);
+Group2062.children[8] = OrientationInterpolator2071;
+
+OrientationInterpolator OrientationInterpolator2072 = createNode("OrientationInterpolator");
+OrientationInterpolator2072.DEF = "Jump_r_wrist_RotationInterpolator";
+OrientationInterpolator2072.key = new MFFloat(new float[0,0.28,0.32,0.64,0.76,1]);
+OrientationInterpolator2072.keyValue = new MFRotation(new float[0,0,1,0,-0.0585279,0.983903,-0.168849,1.85956,-0.0585279,0.983903,-0.168849,1.85956,-0.00222418,0.99801,-0.0630095,1.46072,0,1,0,0.497349,0,0,1,0]);
+Group2062.children[9] = OrientationInterpolator2072;
+
+OrientationInterpolator OrientationInterpolator2073 = createNode("OrientationInterpolator");
+OrientationInterpolator2073.DEF = "Jump_r_elbow_RotationInterpolator";
+OrientationInterpolator2073.key = new MFFloat(new float[0,0.28,0.32,0.64,0.76,1]);
+OrientationInterpolator2073.keyValue = new MFRotation(new float[0,0,1,0,-1,0,0,0.04151,-1,0,0,0.04151,-1,0,0,0.5855,-1,0,0,0.5852,0,0,1,0]);
+Group2062.children[10] = OrientationInterpolator2073;
+
+OrientationInterpolator OrientationInterpolator2074 = createNode("OrientationInterpolator");
+OrientationInterpolator2074.DEF = "Jump_r_shoulder_RotationInterpolator";
+OrientationInterpolator2074.key = new MFFloat(new float[0,0.28,0.32,0.64,0.76,0.88,1]);
+OrientationInterpolator2074.keyValue = new MFRotation(new float[0,0,1,0,0.9992,0.02042,0.03558,4.688,0.9992,0.02042,0.03558,4.688,0.9989,-0.04623,0.005159,4.079,-0.8687,-0.2525,-0.4261,1.501,-0.941,-0.2893,-0.1754,0.4788,0,0,1,0]);
+Group2062.children[11] = OrientationInterpolator2074;
+
+OrientationInterpolator OrientationInterpolator2075 = createNode("OrientationInterpolator");
+OrientationInterpolator2075.DEF = "Jump_l_wrist_RotationInterpolator";
+OrientationInterpolator2075.key = new MFFloat(new float[0,0.48,0.52,0.64,0.76,0.88,1]);
+OrientationInterpolator2075.keyValue = new MFRotation(new float[0,0,1,0,0.0672928,0.989475,-0.128107,4.15574,0.0672928,0.989475,-0.128107,4.15574,0.00364942,0.999901,0.0135896,4.5822,0,-1,0,0.655922,-0.00050618,-0.999999,0.0012782,1.28397,0,0,1,0]);
+Group2062.children[12] = OrientationInterpolator2075;
+
+OrientationInterpolator OrientationInterpolator2076 = createNode("OrientationInterpolator");
+OrientationInterpolator2076.DEF = "Jump_l_elbow_RotationInterpolator";
+OrientationInterpolator2076.key = new MFFloat(new float[0,0.28,0.32,0.58,0.72,1]);
+OrientationInterpolator2076.keyValue = new MFRotation(new float[0,0,1,0,-1,0,0,1.13,-1,0,0,1.7,-1,0,0,1.7,-1,0,0,0.4,0,0,1,0]);
+Group2062.children[13] = OrientationInterpolator2076;
+
+OrientationInterpolator OrientationInterpolator2077 = createNode("OrientationInterpolator");
+OrientationInterpolator2077.DEF = "Jump_l_shoulder_RotationInterpolator";
+OrientationInterpolator2077.key = new MFFloat(new float[0,0.28,0.32,0.64,0.76,0.88,1]);
+OrientationInterpolator2077.keyValue = new MFRotation(new float[0,0,1,0,-0.9987,0.02554,0.04498,1.57,-0.9987,0.02554,0.04498,1.57,1,0.0004113,0.003055,4.114,-0.8413,0.3238,0.4329,1.453,-0.877,0.4198,0.2337,0.6009,0,0,1,0]);
+Group2062.children[14] = OrientationInterpolator2077;
+
+OrientationInterpolator OrientationInterpolator2078 = createNode("OrientationInterpolator");
+OrientationInterpolator2078.DEF = "Jump_head_RotationInterpolator";
+OrientationInterpolator2078.key = new MFFloat(new float[0,0.28,0.32,0.48,0.76,1]);
+OrientationInterpolator2078.keyValue = new MFRotation(new float[0,0,1,0,-1,0,0,0.5989,-1,0,0,0.5989,-1,0,0,0.3216,1,0,0,0.06503,0,0,1,0]);
+Group2062.children[15] = OrientationInterpolator2078;
+
+OrientationInterpolator OrientationInterpolator2079 = createNode("OrientationInterpolator");
+OrientationInterpolator2079.DEF = "Jump_neck_RotationInterpolator";
+OrientationInterpolator2079.key = new MFFloat(new float[0,0.28,0.32,0.48,0.76,1]);
+OrientationInterpolator2079.keyValue = new MFRotation(new float[0,0,1,0,-1,0,0,0.1942,-1,0,0,0.1942,0,0,1,0,1,0,0,0.2284,0,0,1,0]);
+Group2062.children[16] = OrientationInterpolator2079;
+
+OrientationInterpolator OrientationInterpolator2080 = createNode("OrientationInterpolator");
+OrientationInterpolator2080.DEF = "Jump_upper_body_RotationInterpolator";
+OrientationInterpolator2080.key = new MFFloat(new float[0,0.22,0.28,0.34,0.71,0.88,1]);
+OrientationInterpolator2080.keyValue = new MFRotation(new float[0,0,1,0,1,0,0,1.05,1,0,0,1.051,-1,0,0,0.257,1,0,0,0.2171,1,0,0,0.3465,0,0,1,0]);
+Group2062.children[17] = OrientationInterpolator2080;
+
+OrientationInterpolator OrientationInterpolator2081 = createNode("OrientationInterpolator");
+OrientationInterpolator2081.DEF = "Jump_whole_body_RotationInterpolator";
+OrientationInterpolator2081.key = new MFFloat(new float[0,0.28,0.32,0.48,0.64,0.76,1]);
+OrientationInterpolator2081.keyValue = new MFRotation(new float[0,0,1,0,1,0,0,0.3273,1,0,0,0.3273,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]);
+Group2062.children[18] = OrientationInterpolator2081;
+
+PositionInterpolator PositionInterpolator2082 = createNode("PositionInterpolator");
+PositionInterpolator2082.DEF = "Jump_whole_body_TranslationInterpolator";
+PositionInterpolator2082.key = new MFFloat(new float[0,0.04,0.07,0.11,0.15,0.19,0.22,0.25,0.27,0.31,0.33,0.35,0.38,0.53,0.544,0.76,0.8,0.84,0.88,0.92,0.96,1]);
+PositionInterpolator2082.keyValue = new MFVec3f(new float[0,0,0,0,-0.01264,-0.01289,0,-0.04712,-0.03738,-0.0003345,-0.1049,-0.05353,-0.0005712,-0.1892,-0.06561,-0.0008233,-0.286,-0.06276,-0.0009591,-0.3795,-0.05148,-0.00106,-0.4484,-0.03656,-0.00106,-0.4484,-0.03656,-0.001122,-0.25,-0.1499,-0.0008616,-0.05,-0.06358,-0.0005128,0.15,-0.05488,0.0004779,0.55,0.02732,0.0001728,1.385,0.006873,0.00017,1.395,0.0069,0,0.35,0.02148,0,-0.01299,-0.01057,0,-0.06932,-0.01064,0.0001365,-0.1037,-0.005059,0.0001279,-0.07198,-0.007596,0.000141,-0.01626,-0.004935,0,0,0]);
+Group2062.children[19] = PositionInterpolator2082;
+
+OrientationInterpolator OrientationInterpolator2083 = createNode("OrientationInterpolator");
+OrientationInterpolator2083.DEF = "Jump_l_sternoclavicular_RollInterpolator";
+OrientationInterpolator2083.key = new MFFloat(new float[0,0.2,0.4,0.6,0.8,1]);
+OrientationInterpolator2083.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0.2,0,0,1,0.22,0,0,1,0.2,0,0,1,0,0,0,1,0]);
+Group2062.children[20] = OrientationInterpolator2083;
+
+OrientationInterpolator OrientationInterpolator2084 = createNode("OrientationInterpolator");
+OrientationInterpolator2084.DEF = "Jump_l_acromioclavicular_RollInterpolator";
+OrientationInterpolator2084.key = new MFFloat(new float[0,0.2,0.4,0.6,0.8,1]);
+OrientationInterpolator2084.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0.05,0,0,1,0,0,0,1,0,0,0,1,0]);
+Group2062.children[21] = OrientationInterpolator2084;
+
+OrientationInterpolator OrientationInterpolator2085 = createNode("OrientationInterpolator");
+OrientationInterpolator2085.DEF = "Jump_r_sternoclavicular_RollInterpolator";
+OrientationInterpolator2085.key = new MFFloat(new float[0,0.2,0.4,0.6,0.8,1]);
+OrientationInterpolator2085.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,-0.2,0,0,1,-0.22,0,0,1,-0.2,0,0,1,0,0,0,1,0]);
+Group2062.children[22] = OrientationInterpolator2085;
+
+OrientationInterpolator OrientationInterpolator2086 = createNode("OrientationInterpolator");
+OrientationInterpolator2086.DEF = "Jump_r_acromioclavicular_RollInterpolator";
+OrientationInterpolator2086.key = new MFFloat(new float[0,0.2,0.4,0.6,0.8,1]);
+OrientationInterpolator2086.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,-0.05,0,0,1,0,0,0,1,0,0,0,1,0]);
+Group2062.children[23] = OrientationInterpolator2086;
+
+OrientationInterpolator OrientationInterpolator2087 = createNode("OrientationInterpolator");
+OrientationInterpolator2087.DEF = "Jump_sacroiliac_YawInterpolator";
+OrientationInterpolator2087.key = new MFFloat(new float[0,0.2,0.4,0.6,0.8,1]);
+OrientationInterpolator2087.keyValue = new MFRotation(new float[0,1,0,0,0,-1,0,0.1,0,1,0,0,0,1,-1,0.24,0,-1,0,0.4,0,1,0,0]);
+Group2062.children[24] = OrientationInterpolator2087;
+
+OrientationInterpolator OrientationInterpolator2088 = createNode("OrientationInterpolator");
+OrientationInterpolator2088.DEF = "Jump_vl5_YawInterpolator";
+OrientationInterpolator2088.key = new MFFloat(new float[0,0.2,0.4,0.5,0.6,0.8,1]);
+OrientationInterpolator2088.keyValue = new MFRotation(new float[0,1,0,0,0,1,0,-0.1,0,1,0,0,0,1,0,0,1,0,0,0.6,0,1,0,0.1,0,1,0,0]);
+Group2062.children[25] = OrientationInterpolator2088;
+
+OrientationInterpolator OrientationInterpolator2089 = createNode("OrientationInterpolator");
+OrientationInterpolator2089.DEF = "Jump_vc6_YawInterpolator";
+OrientationInterpolator2089.key = new MFFloat(new float[0,0.2,0.4,0.5,0.6,0.8,1]);
+OrientationInterpolator2089.keyValue = new MFRotation(new float[0,1,0,0,0,1,0,0.8,0,1,0,0,0,1,0,0,-1,0,0,0.6,0,-1,0,0.8,0,1,0,0]);
+Group2062.children[26] = OrientationInterpolator2089;
+
+OrientationInterpolator OrientationInterpolator2090 = createNode("OrientationInterpolator");
+OrientationInterpolator2090.DEF = "Jump_l_thumb1_PitchInterpolator";
+OrientationInterpolator2090.key = new MFFloat(new float[0,0.2,0.4,0.6,0.8,1]);
+OrientationInterpolator2090.keyValue = new MFRotation(new float[1,0,0,0,1,0,0,0.5,1,0,0,1.1,1,0,0,0.7,1,0,0,0.2,1,0,0,0]);
+Group2062.children[27] = OrientationInterpolator2090;
+
+OrientationInterpolator OrientationInterpolator2091 = createNode("OrientationInterpolator");
+OrientationInterpolator2091.DEF = "Jump_r_thumb1_PitchInterpolator";
+OrientationInterpolator2091.key = new MFFloat(new float[0,0.2,0.4,0.6,0.8,1]);
+OrientationInterpolator2091.keyValue = new MFRotation(new float[1,0,0,0,1,0,0,0.5,1,0,0,1.1,1,0,0,0.7,1,0,0,0.2,1,0,0,0]);
+Group2062.children[28] = OrientationInterpolator2091;
+
+children[12] = Group2062;
+
+Group Group2092 = createNode("Group");
+Group2092.DEF = "KickAnimation";
+TimeSensor TimeSensor2093 = createNode("TimeSensor");
+TimeSensor2093.DEF = "KickTimer";
+TimeSensor2093.cycleInterval = 3.73;
+TimeSensor2093.loop = True;
+Group2092.children = new MFNode();
+
+Group2092.children[0] = TimeSensor2093;
+
+OrientationInterpolator OrientationInterpolator2094 = createNode("OrientationInterpolator");
+OrientationInterpolator2094.DEF = "Kick_l_sternoclavicular_RollInterpolator";
+OrientationInterpolator2094.key = new MFFloat(new float[0,0.2,0.4,0.6,0.8,1]);
+OrientationInterpolator2094.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0.2,0,0,1,0.22,0,0,1,0.2,0,0,1,0,0,0,1,0]);
+Group2092.children[1] = OrientationInterpolator2094;
+
+OrientationInterpolator OrientationInterpolator2095 = createNode("OrientationInterpolator");
+OrientationInterpolator2095.DEF = "Kick_l_acromioclavicular_RollInterpolator";
+OrientationInterpolator2095.key = new MFFloat(new float[0,0.2,0.4,0.6,0.8,1]);
+OrientationInterpolator2095.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0.05,0,0,1,0,0,0,1,0,0,0,1,0]);
+Group2092.children[2] = OrientationInterpolator2095;
+
+OrientationInterpolator OrientationInterpolator2096 = createNode("OrientationInterpolator");
+OrientationInterpolator2096.DEF = "Kick_l_shoulder_RollInterpolator";
+OrientationInterpolator2096.key = new MFFloat(new float[0,0.2,0.4,0.6,0.8,1]);
+OrientationInterpolator2096.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,1.76,-0.25,0,1,1.76,0,0,1,1.256,0,0,1,0.05,0,0,1,0]);
+Group2092.children[3] = OrientationInterpolator2096;
+
+OrientationInterpolator OrientationInterpolator2097 = createNode("OrientationInterpolator");
+OrientationInterpolator2097.DEF = "Kick_l_ForeArm_PitchInterpolator";
+OrientationInterpolator2097.key = new MFFloat(new float[0,0.2,0.4,0.6,0.8,1]);
+OrientationInterpolator2097.keyValue = new MFRotation(new float[1,0,0,0,1,0,0,-0.55,-1,0.25,0,2.55,1,0,0,0,1,0,0,0,1,0,0,0]);
+Group2092.children[4] = OrientationInterpolator2097;
+
+OrientationInterpolator OrientationInterpolator2098 = createNode("OrientationInterpolator");
+OrientationInterpolator2098.DEF = "Kick_l_wrist_RollInterpolator";
+OrientationInterpolator2098.key = new MFFloat(new float[0,0.2,0.4,0.6,0.8,1]);
+OrientationInterpolator2098.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,1,0,0.55,0,0,1,0,0,0,1,0,0,0,1,0]);
+Group2092.children[5] = OrientationInterpolator2098;
+
+OrientationInterpolator OrientationInterpolator2099 = createNode("OrientationInterpolator");
+OrientationInterpolator2099.DEF = "Kick_l_thumb1_PitchInterpolator";
+OrientationInterpolator2099.key = new MFFloat(new float[0,0.2,0.4,0.6,0.8,1]);
+OrientationInterpolator2099.keyValue = new MFRotation(new float[1,0,0,0,1,0,0,0.5,1,0,0,1.1,1,0,0,0.7,1,0,0,0.2,1,0,0,0]);
+Group2092.children[6] = OrientationInterpolator2099;
+
+OrientationInterpolator OrientationInterpolator2100 = createNode("OrientationInterpolator");
+OrientationInterpolator2100.DEF = "Kick_r_sternoclavicular_RollInterpolator";
+OrientationInterpolator2100.key = new MFFloat(new float[0,0.2,0.4,0.6,0.8,1]);
+OrientationInterpolator2100.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,-0.2,0,0,1,-0.22,0,0,1,-0.2,0,0,1,0,0,0,1,0]);
+Group2092.children[7] = OrientationInterpolator2100;
+
+OrientationInterpolator OrientationInterpolator2101 = createNode("OrientationInterpolator");
+OrientationInterpolator2101.DEF = "Kick_r_acromioclavicular_RollInterpolator";
+OrientationInterpolator2101.key = new MFFloat(new float[0,0.2,0.4,0.6,0.8,1]);
+OrientationInterpolator2101.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,-0.05,0,0,1,0,0,0,1,0,0,0,1,0]);
+Group2092.children[8] = OrientationInterpolator2101;
+
+OrientationInterpolator OrientationInterpolator2102 = createNode("OrientationInterpolator");
+OrientationInterpolator2102.DEF = "Kick_r_shoulder_RollInterpolator";
+OrientationInterpolator2102.key = new MFFloat(new float[0,0.2,0.4,0.6,0.8,1]);
+OrientationInterpolator2102.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,-1.76,0.25,0,1,-1.76,0,0,1,-1.256,0,0,1,-0.05,0,0,1,0]);
+Group2092.children[9] = OrientationInterpolator2102;
+
+OrientationInterpolator OrientationInterpolator2103 = createNode("OrientationInterpolator");
+OrientationInterpolator2103.DEF = "Kick_r_ForeArm_PitchInterpolator";
+OrientationInterpolator2103.key = new MFFloat(new float[0,0.2,0.4,0.6,0.8,1]);
+OrientationInterpolator2103.keyValue = new MFRotation(new float[1,0,0,0,1,0,0,-0.55,1,0.25,0,-2.55,1,0,0,0,1,0,0,0,1,0,0,0]);
+Group2092.children[10] = OrientationInterpolator2103;
+
+OrientationInterpolator OrientationInterpolator2104 = createNode("OrientationInterpolator");
+OrientationInterpolator2104.DEF = "Kick_r_wrist_RollInterpolator";
+OrientationInterpolator2104.key = new MFFloat(new float[0,0.2,0.4,0.6,0.8,1]);
+OrientationInterpolator2104.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,1,0,-0.55,0,0,1,0,0,0,1,0,0,0,1,0]);
+Group2092.children[11] = OrientationInterpolator2104;
+
+OrientationInterpolator OrientationInterpolator2105 = createNode("OrientationInterpolator");
+OrientationInterpolator2105.DEF = "Kick_r_thumb1_PitchInterpolator";
+OrientationInterpolator2105.key = new MFFloat(new float[0,0.2,0.4,0.6,0.8,1]);
+OrientationInterpolator2105.keyValue = new MFRotation(new float[1,0,0,0,1,0,0,0.5,1,0,0,1.1,1,0,0,0.7,1,0,0,0.2,1,0,0,0]);
+Group2092.children[12] = OrientationInterpolator2105;
+
+OrientationInterpolator OrientationInterpolator2106 = createNode("OrientationInterpolator");
+OrientationInterpolator2106.DEF = "Kick_r_hip_PitchInterpolator";
+OrientationInterpolator2106.key = new MFFloat(new float[0,0.2,0.3,0.5,0.6,0.9,1]);
+OrientationInterpolator2106.keyValue = new MFRotation(new float[1,0,0,0,1,0,0,0.9,-1,0,0,1.75,-1,0,0,2.25,-1,0,0,2,1,0,0,0,1,0,0,0]);
+Group2092.children[13] = OrientationInterpolator2106;
+
+OrientationInterpolator OrientationInterpolator2107 = createNode("OrientationInterpolator");
+OrientationInterpolator2107.DEF = "Kick_r_knee_PitchInterpolator";
+OrientationInterpolator2107.key = new MFFloat(new float[0,0.2,0.4,0.6,0.8,1]);
+OrientationInterpolator2107.keyValue = new MFRotation(new float[0,0,1,0,1,0,0,1.95,1,0,0,1.75,-1,0,0,0.28,1,0,0,0,1,0,0,0]);
+Group2092.children[14] = OrientationInterpolator2107;
+
+OrientationInterpolator OrientationInterpolator2108 = createNode("OrientationInterpolator");
+OrientationInterpolator2108.DEF = "Kick_l_hip_PitchInterpolator";
+OrientationInterpolator2108.key = new MFFloat(new float[0,0.2,0.3,0.5,0.6,0.9,1]);
+OrientationInterpolator2108.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]);
+Group2092.children[15] = OrientationInterpolator2108;
+
+OrientationInterpolator OrientationInterpolator2109 = createNode("OrientationInterpolator");
+OrientationInterpolator2109.DEF = "Kick_l_knee_PitchInterpolator";
+OrientationInterpolator2109.key = new MFFloat(new float[0,0.2,0.4,0.6,0.8,1]);
+OrientationInterpolator2109.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]);
+Group2092.children[16] = OrientationInterpolator2109;
+
+OrientationInterpolator OrientationInterpolator2110 = createNode("OrientationInterpolator");
+OrientationInterpolator2110.DEF = "Kick_r_ankle_PitchInterpolator";
+OrientationInterpolator2110.key = new MFFloat(new float[0,0.2,0.4,0.6,0.7,1]);
+OrientationInterpolator2110.keyValue = new MFRotation(new float[0,0,1,0,-1,0,0,0.9,-1,0,0,0.95,1,0,0,0.75,-1,0,0,0.05,1,0,0,0]);
+Group2092.children[17] = OrientationInterpolator2110;
+
+OrientationInterpolator OrientationInterpolator2111 = createNode("OrientationInterpolator");
+OrientationInterpolator2111.DEF = "Kick_r_metatarsal_PitchInterpolator";
+OrientationInterpolator2111.key = new MFFloat(new float[0,0.2,0.4,0.6,0.7,1]);
+OrientationInterpolator2111.keyValue = new MFRotation(new float[1,0,0,0,-1,0,0,0.5,-1,0,0,0.7,1,0,0,0.75,-1,0,0,0.2,1,0,0,0]);
+Group2092.children[18] = OrientationInterpolator2111;
+
+OrientationInterpolator OrientationInterpolator2112 = createNode("OrientationInterpolator");
+OrientationInterpolator2112.DEF = "Kick_sacroiliac_YawInterpolator";
+OrientationInterpolator2112.key = new MFFloat(new float[0,0.2,0.4,0.6,0.8,1]);
+OrientationInterpolator2112.keyValue = new MFRotation(new float[0,1,0,0,0,-1,0,0.1,0,1,0,0,0,1,-1,0.24,0,-1,0,0.4,0,1,0,0]);
+Group2092.children[19] = OrientationInterpolator2112;
+
+OrientationInterpolator OrientationInterpolator2113 = createNode("OrientationInterpolator");
+OrientationInterpolator2113.DEF = "Kick_vl5_YawInterpolator";
+OrientationInterpolator2113.key = new MFFloat(new float[0,0.2,0.4,0.5,0.6,0.8,1]);
+OrientationInterpolator2113.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]);
+Group2092.children[20] = OrientationInterpolator2113;
+
+OrientationInterpolator OrientationInterpolator2114 = createNode("OrientationInterpolator");
+OrientationInterpolator2114.DEF = "Kick_vc6_YawInterpolator";
+OrientationInterpolator2114.key = new MFFloat(new float[0,0.2,0.4,0.5,0.6,0.8,1]);
+OrientationInterpolator2114.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]);
+Group2092.children[21] = OrientationInterpolator2114;
+
+OrientationInterpolator OrientationInterpolator2115 = createNode("OrientationInterpolator");
+OrientationInterpolator2115.DEF = "Kick_lower_body_RotationInterpolator";
+OrientationInterpolator2115.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator2115.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group2092.children[22] = OrientationInterpolator2115;
+
+OrientationInterpolator OrientationInterpolator2116 = createNode("OrientationInterpolator");
+OrientationInterpolator2116.DEF = "Kick_upper_body_RotationInterpolator";
+OrientationInterpolator2116.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator2116.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group2092.children[23] = OrientationInterpolator2116;
+
+OrientationInterpolator OrientationInterpolator2117 = createNode("OrientationInterpolator");
+OrientationInterpolator2117.DEF = "Kick_whole_body_RotationInterpolator";
+OrientationInterpolator2117.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator2117.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group2092.children[24] = OrientationInterpolator2117;
+
+PositionInterpolator PositionInterpolator2118 = createNode("PositionInterpolator");
+PositionInterpolator2118.DEF = "Kick_whole_body_TranslationInterpolator";
+PositionInterpolator2118.key = new MFFloat(new float[0,0.5,1]);
+PositionInterpolator2118.keyValue = new MFVec3f(new float[0,0,0,0,0,0,0,0,0]);
+Group2092.children[25] = PositionInterpolator2118;
+
+OrientationInterpolator OrientationInterpolator2119 = createNode("OrientationInterpolator");
+OrientationInterpolator2119.DEF = "Kick_neck_RotationInterpolator";
+OrientationInterpolator2119.key = new MFFloat(new float[0,0.25,0.55,1]);
+OrientationInterpolator2119.keyValue = new MFRotation(new float[0,0,1,0,1,0,0,0.7,1,0,0,0.5,0,0,1,0]);
+Group2092.children[26] = OrientationInterpolator2119;
+
+children[13] = Group2092;
+
+Group Group2120 = createNode("Group");
+Group2120.DEF = "Interface";
+Transform Transform2121 = createNode("Transform");
+Transform2121.DEF = "CoordinateSystemFloor";
+Transform2121.scale = new SFVec3f(new float[0.1,0.1,0.1]);
+Shape Shape2122 = createNode("Shape");
+Shape2122.DEF = "AxisLinesShape";
+//RGB lines showing XYZ axes
+IndexedLineSet IndexedLineSet2123 = createNode("IndexedLineSet");
+IndexedLineSet2123.colorIndex = new MFInt32(new int[0,1,2]);
+IndexedLineSet2123.colorPerVertex = False;
+IndexedLineSet2123.coordIndex = new MFInt32(new int[0,1,-1,0,2,-1,0,3,-1]);
+Coordinate Coordinate2124 = createNode("Coordinate");
+Coordinate2124.point = new MFVec3f(new float[0,0,0,1,0,0,0,1,0,0,0,1]);
+IndexedLineSet2123.coord = Coordinate2124;
+
+Color Color2125 = createNode("Color");
+Color2125.color = new MFColor(new float[1,0,0,0,0.6,0,0,0,1]);
+IndexedLineSet2123.color = Color2125;
+
+Shape2122.geometry = IndexedLineSet2123;
+
+Transform2121.child = new undefined();
+
+Transform2121.child[0] = Shape2122;
+
+Group2120.children = new MFNode();
+
+Group2120.children[0] = Transform2121;
+
+ProximitySensor ProximitySensor2126 = createNode("ProximitySensor");
+ProximitySensor2126.DEF = "HudProx";
+ProximitySensor2126.size = new SFVec3f(new float[50,50,50]);
+Group2120.children[1] = ProximitySensor2126;
+
+Transform Transform2127 = createNode("Transform");
+Transform2127.DEF = "HudXform";
+Transform2127.rotation = new SFRotation(new float[0,1,0,0.78]);
+Transform2127.translation = new SFVec3f(new float[2,1,2]);
+Transform Transform2128 = createNode("Transform");
+Transform2128.scale = new SFVec3f(new float[0.02,0.02,0.02]);
+Transform2128.translation = new SFVec3f(new float[-0.4,-0.01,-0.75]);
+Transform Transform2129 = createNode("Transform");
+Transform2129.DEF = "Stand_Text";
+Transform2129.translation = new SFVec3f(new float[0,-0.9,0]);
+TouchSensor TouchSensor2130 = createNode("TouchSensor");
+TouchSensor2130.DEF = "Stand_Touch";
+Transform2129.children = new MFNode();
+
+Transform2129.children[0] = TouchSensor2130;
+
+Shape Shape2131 = createNode("Shape");
+Shape2131.DEF = "StandText";
+Appearance Appearance2132 = createNode("Appearance");
+Material Material2133 = createNode("Material");
+Material2133.DEF = "text_color";
+Material2133.ambientIntensity = 1;
+Material2133.diffuseColor = new SFColor(new float[0.819,0.521,0.169]);
+Material2133.emissiveColor = new SFColor(new float[0.819,0.521,0.169]);
+Material2133.specularColor = new SFColor(new float[0.819,0.521,0.169]);
+Appearance2132.material = Material2133;
+
+Shape2131.appearance = Appearance2132;
+
+Text Text2134 = createNode("Text");
+Text2134.string = new MFString(new java.lang.String["Stand"]);
+FontStyle FontStyle2135 = createNode("FontStyle");
+FontStyle2135.family = new MFString(new java.lang.String["SANS"]);
+Text2134.fontStyle = FontStyle2135;
+
+Shape2131.geometry = Text2134;
+
+Transform2129.child[1] = Shape2131;
+
+Shape Shape2136 = createNode("Shape");
+Shape2136.DEF = "Stand_Back";
+Appearance Appearance2137 = createNode("Appearance");
+Material Material2138 = createNode("Material");
+Material2138.DEF = "Clear";
+Material2138.ambientIntensity = 1;
+Material2138.diffuseColor = new SFColor(new float[0,0.5,0]);
+Material2138.emissiveColor = new SFColor(new float[0,0.5,0]);
+Material2138.transparency = 0.8;
+Appearance2137.material = Material2138;
+
+Shape2136.appearance = Appearance2137;
+
+IndexedFaceSet IndexedFaceSet2139 = createNode("IndexedFaceSet");
+IndexedFaceSet2139.DEF = "Backing";
+IndexedFaceSet2139.coordIndex = new MFInt32(new int[0,1,2,3,-1]);
+Coordinate Coordinate2140 = createNode("Coordinate");
+Coordinate2140.point = new MFVec3f(new float[-0.2,-0.25,-0.01,3,-0.25,-0.01,3,1,-0.01,-0.2,1,-0.01]);
+IndexedFaceSet2139.coord = Coordinate2140;
+
+Shape2136.geometry = IndexedFaceSet2139;
+
+Transform2129.child[2] = Shape2136;
+
+Transform2128.children = new MFNode();
+
+Transform2128.children[0] = Transform2129;
+
+Transform Transform2141 = createNode("Transform");
+Transform2141.DEF = "Pitch_Text";
+Transform2141.translation = new SFVec3f(new float[0,-2.4,0]);
+TouchSensor TouchSensor2142 = createNode("TouchSensor");
+TouchSensor2142.DEF = "Pitch_Touch";
+Transform2141.children = new MFNode();
+
+Transform2141.children[0] = TouchSensor2142;
+
+Shape Shape2143 = createNode("Shape");
+Shape2143.DEF = "PitchText";
+Appearance Appearance2144 = createNode("Appearance");
+Material Material2145 = createNode("Material");
+Material2145.USE = "text_color";
+Appearance2144.material = Material2145;
+
+Shape2143.appearance = Appearance2144;
+
+Text Text2146 = createNode("Text");
+Text2146.string = new MFString(new java.lang.String["Pitch"]);
+FontStyle FontStyle2147 = createNode("FontStyle");
+FontStyle2147.family = new MFString(new java.lang.String["SANS"]);
+Text2146.fontStyle = FontStyle2147;
+
+Shape2143.geometry = Text2146;
+
+Transform2141.child[1] = Shape2143;
+
+Shape Shape2148 = createNode("Shape");
+Shape2148.DEF = "Pitch_Back";
+Appearance Appearance2149 = createNode("Appearance");
+Material Material2150 = createNode("Material");
+Material2150.USE = "Clear";
+Appearance2149.material = Material2150;
+
+Shape2148.appearance = Appearance2149;
+
+IndexedFaceSet IndexedFaceSet2151 = createNode("IndexedFaceSet");
+IndexedFaceSet2151.USE = "Backing";
+Shape2148.geometry = IndexedFaceSet2151;
+
+Transform2141.child[2] = Shape2148;
+
+Transform2128.children[1] = Transform2141;
+
+Transform Transform2152 = createNode("Transform");
+Transform2152.DEF = "Yaw_Text";
+Transform2152.translation = new SFVec3f(new float[0,-3.8,0]);
+TouchSensor TouchSensor2153 = createNode("TouchSensor");
+TouchSensor2153.DEF = "Yaw_Touch";
+Transform2152.children = new MFNode();
+
+Transform2152.children[0] = TouchSensor2153;
+
+Shape Shape2154 = createNode("Shape");
+Shape2154.DEF = "YawText";
+Appearance Appearance2155 = createNode("Appearance");
+Material Material2156 = createNode("Material");
+Material2156.USE = "text_color";
+Appearance2155.material = Material2156;
+
+Shape2154.appearance = Appearance2155;
+
+Text Text2157 = createNode("Text");
+Text2157.string = new MFString(new java.lang.String["Yaw"]);
+FontStyle FontStyle2158 = createNode("FontStyle");
+FontStyle2158.family = new MFString(new java.lang.String["SANS"]);
+Text2157.fontStyle = FontStyle2158;
+
+Shape2154.geometry = Text2157;
+
+Transform2152.child[1] = Shape2154;
+
+Shape Shape2159 = createNode("Shape");
+Shape2159.DEF = "Yaw_Back";
+Appearance Appearance2160 = createNode("Appearance");
+Material Material2161 = createNode("Material");
+Material2161.USE = "Clear";
+Appearance2160.material = Material2161;
+
+Shape2159.appearance = Appearance2160;
+
+IndexedFaceSet IndexedFaceSet2162 = createNode("IndexedFaceSet");
+IndexedFaceSet2162.USE = "Backing";
+Shape2159.geometry = IndexedFaceSet2162;
+
+Transform2152.child[2] = Shape2159;
+
+Transform2128.children[2] = Transform2152;
+
+Transform Transform2163 = createNode("Transform");
+Transform2163.DEF = "Roll_Text";
+Transform2163.translation = new SFVec3f(new float[0,-5.2,0]);
+TouchSensor TouchSensor2164 = createNode("TouchSensor");
+TouchSensor2164.DEF = "Roll_Touch";
+Transform2163.children = new MFNode();
+
+Transform2163.children[0] = TouchSensor2164;
+
+Shape Shape2165 = createNode("Shape");
+Shape2165.DEF = "RollText";
+Appearance Appearance2166 = createNode("Appearance");
+Material Material2167 = createNode("Material");
+Material2167.USE = "text_color";
+Appearance2166.material = Material2167;
+
+Shape2165.appearance = Appearance2166;
+
+Text Text2168 = createNode("Text");
+Text2168.string = new MFString(new java.lang.String["Roll"]);
+FontStyle FontStyle2169 = createNode("FontStyle");
+FontStyle2169.family = new MFString(new java.lang.String["SANS"]);
+Text2168.fontStyle = FontStyle2169;
+
+Shape2165.geometry = Text2168;
+
+Transform2163.child[1] = Shape2165;
+
+Shape Shape2170 = createNode("Shape");
+Shape2170.DEF = "Roll_Back";
+Appearance Appearance2171 = createNode("Appearance");
+Material Material2172 = createNode("Material");
+Material2172.USE = "Clear";
+Appearance2171.material = Material2172;
+
+Shape2170.appearance = Appearance2171;
+
+IndexedFaceSet IndexedFaceSet2173 = createNode("IndexedFaceSet");
+IndexedFaceSet2173.USE = "Backing";
+Shape2170.geometry = IndexedFaceSet2173;
+
+Transform2163.child[2] = Shape2170;
+
+Transform2128.children[3] = Transform2163;
+
+Transform Transform2174 = createNode("Transform");
+Transform2174.DEF = "Walk_Text";
+Transform2174.translation = new SFVec3f(new float[0,-6.6,0]);
+TouchSensor TouchSensor2175 = createNode("TouchSensor");
+TouchSensor2175.DEF = "Walk_Touch";
+Transform2174.children = new MFNode();
+
+Transform2174.children[0] = TouchSensor2175;
+
+Shape Shape2176 = createNode("Shape");
+Shape2176.DEF = "WalkText";
+Appearance Appearance2177 = createNode("Appearance");
+Material Material2178 = createNode("Material");
+Material2178.USE = "text_color";
+Appearance2177.material = Material2178;
+
+Shape2176.appearance = Appearance2177;
+
+Text Text2179 = createNode("Text");
+Text2179.string = new MFString(new java.lang.String["Walk"]);
+FontStyle FontStyle2180 = createNode("FontStyle");
+FontStyle2180.family = new MFString(new java.lang.String["SANS"]);
+Text2179.fontStyle = FontStyle2180;
+
+Shape2176.geometry = Text2179;
+
+Transform2174.child[1] = Shape2176;
+
+Shape Shape2181 = createNode("Shape");
+Shape2181.DEF = "Walk_Back";
+Appearance Appearance2182 = createNode("Appearance");
+Material Material2183 = createNode("Material");
+Material2183.USE = "Clear";
+Appearance2182.material = Material2183;
+
+Shape2181.appearance = Appearance2182;
+
+IndexedFaceSet IndexedFaceSet2184 = createNode("IndexedFaceSet");
+IndexedFaceSet2184.USE = "Backing";
+Shape2181.geometry = IndexedFaceSet2184;
+
+Transform2174.child[2] = Shape2181;
+
+Transform2128.children[4] = Transform2174;
+
+Transform Transform2185 = createNode("Transform");
+Transform2185.DEF = "Run_Text";
+Transform2185.translation = new SFVec3f(new float[0,-8,0]);
+TouchSensor TouchSensor2186 = createNode("TouchSensor");
+TouchSensor2186.DEF = "Run_Touch";
+Transform2185.children = new MFNode();
+
+Transform2185.children[0] = TouchSensor2186;
+
+Shape Shape2187 = createNode("Shape");
+Shape2187.DEF = "RunText";
+Appearance Appearance2188 = createNode("Appearance");
+Material Material2189 = createNode("Material");
+Material2189.USE = "text_color";
+Appearance2188.material = Material2189;
+
+Shape2187.appearance = Appearance2188;
+
+Text Text2190 = createNode("Text");
+Text2190.string = new MFString(new java.lang.String["Run"]);
+FontStyle FontStyle2191 = createNode("FontStyle");
+FontStyle2191.family = new MFString(new java.lang.String["SANS"]);
+Text2190.fontStyle = FontStyle2191;
+
+Shape2187.geometry = Text2190;
+
+Transform2185.child[1] = Shape2187;
+
+Shape Shape2192 = createNode("Shape");
+Shape2192.DEF = "Run_Back";
+Appearance Appearance2193 = createNode("Appearance");
+Material Material2194 = createNode("Material");
+Material2194.USE = "Clear";
+Appearance2193.material = Material2194;
+
+Shape2192.appearance = Appearance2193;
+
+IndexedFaceSet IndexedFaceSet2195 = createNode("IndexedFaceSet");
+IndexedFaceSet2195.USE = "Backing";
+Shape2192.geometry = IndexedFaceSet2195;
+
+Transform2185.child[2] = Shape2192;
+
+Transform2128.children[5] = Transform2185;
+
+Transform Transform2196 = createNode("Transform");
+Transform2196.DEF = "Jump_Text";
+Transform2196.translation = new SFVec3f(new float[0,-9.4,0]);
+TouchSensor TouchSensor2197 = createNode("TouchSensor");
+TouchSensor2197.DEF = "Jump_Touch";
+Transform2196.children = new MFNode();
+
+Transform2196.children[0] = TouchSensor2197;
+
+Shape Shape2198 = createNode("Shape");
+Shape2198.DEF = "JumpText";
+Appearance Appearance2199 = createNode("Appearance");
+Material Material2200 = createNode("Material");
+Material2200.USE = "text_color";
+Appearance2199.material = Material2200;
+
+Shape2198.appearance = Appearance2199;
+
+Text Text2201 = createNode("Text");
+Text2201.string = new MFString(new java.lang.String["Jump"]);
+FontStyle FontStyle2202 = createNode("FontStyle");
+FontStyle2202.family = new MFString(new java.lang.String["SANS"]);
+Text2201.fontStyle = FontStyle2202;
+
+Shape2198.geometry = Text2201;
+
+Transform2196.child[1] = Shape2198;
+
+Shape Shape2203 = createNode("Shape");
+Shape2203.DEF = "Jump_Back";
+Appearance Appearance2204 = createNode("Appearance");
+Material Material2205 = createNode("Material");
+Material2205.USE = "Clear";
+Appearance2204.material = Material2205;
+
+Shape2203.appearance = Appearance2204;
+
+IndexedFaceSet IndexedFaceSet2206 = createNode("IndexedFaceSet");
+IndexedFaceSet2206.USE = "Backing";
+Shape2203.geometry = IndexedFaceSet2206;
+
+Transform2196.child[2] = Shape2203;
+
+Transform2128.children[6] = Transform2196;
+
+Transform Transform2207 = createNode("Transform");
+Transform2207.DEF = "Kick_Text";
+Transform2207.translation = new SFVec3f(new float[0,-10.8,0]);
+TouchSensor TouchSensor2208 = createNode("TouchSensor");
+TouchSensor2208.DEF = "Kick_Touch";
+Transform2207.children = new MFNode();
+
+Transform2207.children[0] = TouchSensor2208;
+
+Shape Shape2209 = createNode("Shape");
+Shape2209.DEF = "KickText";
+Appearance Appearance2210 = createNode("Appearance");
+Material Material2211 = createNode("Material");
+Material2211.USE = "text_color";
+Appearance2210.material = Material2211;
+
+Shape2209.appearance = Appearance2210;
+
+Text Text2212 = createNode("Text");
+Text2212.string = new MFString(new java.lang.String["Kick"]);
+FontStyle FontStyle2213 = createNode("FontStyle");
+FontStyle2213.family = new MFString(new java.lang.String["SANS"]);
+Text2212.fontStyle = FontStyle2213;
+
+Shape2209.geometry = Text2212;
+
+Transform2207.child[1] = Shape2209;
+
+Shape Shape2214 = createNode("Shape");
+Shape2214.DEF = "Kick_Back";
+Appearance Appearance2215 = createNode("Appearance");
+Material Material2216 = createNode("Material");
+Material2216.USE = "Clear";
+Appearance2215.material = Material2216;
+
+Shape2214.appearance = Appearance2215;
+
+IndexedFaceSet IndexedFaceSet2217 = createNode("IndexedFaceSet");
+IndexedFaceSet2217.USE = "Backing";
+Shape2214.geometry = IndexedFaceSet2217;
+
+Transform2207.child[2] = Shape2214;
+
+Transform2128.children[7] = Transform2207;
+
+Transform Transform2218 = createNode("Transform");
+Transform2218.DEF = "Stop_Text";
+Transform2218.translation = new SFVec3f(new float[0,0.4,0]);
+TouchSensor TouchSensor2219 = createNode("TouchSensor");
+TouchSensor2219.DEF = "Stop_Touch";
+Transform2218.children = new MFNode();
+
+Transform2218.children[0] = TouchSensor2219;
+
+Shape Shape2220 = createNode("Shape");
+Shape2220.DEF = "StopText";
+Appearance Appearance2221 = createNode("Appearance");
+Material Material2222 = createNode("Material");
+Material2222.USE = "text_color";
+Appearance2221.material = Material2222;
+
+Shape2220.appearance = Appearance2221;
+
+Text Text2223 = createNode("Text");
+Text2223.string = new MFString(new java.lang.String["Default"]);
+FontStyle FontStyle2224 = createNode("FontStyle");
+FontStyle2224.family = new MFString(new java.lang.String["SANS"]);
+Text2223.fontStyle = FontStyle2224;
+
+Shape2220.geometry = Text2223;
+
+Transform2218.child[1] = Shape2220;
+
+Shape Shape2225 = createNode("Shape");
+Shape2225.DEF = "Stop_Back";
+Appearance Appearance2226 = createNode("Appearance");
+Material Material2227 = createNode("Material");
+Material2227.USE = "Clear";
+Appearance2226.material = Material2227;
+
+Shape2225.appearance = Appearance2226;
+
+IndexedFaceSet IndexedFaceSet2228 = createNode("IndexedFaceSet");
+IndexedFaceSet2228.USE = "Backing";
+Shape2225.geometry = IndexedFaceSet2228;
+
+Transform2218.child[2] = Shape2225;
+
+Transform2128.children[8] = Transform2218;
+
+Transform Transform2229 = createNode("Transform");
+Transform2229.DEF = "SceneLabel";
+Transform2229.translation = new SFVec3f(new float[1.3,3,0]);
+Shape Shape2230 = createNode("Shape");
+Shape2230.DEF = "SceneLabelText";
+Appearance Appearance2231 = createNode("Appearance");
+Material Material2232 = createNode("Material");
+Material2232.USE = "text_color";
+Appearance2231.material = Material2232;
+
+Shape2230.appearance = Appearance2231;
+
+Text Text2233 = createNode("Text");
+Text2233.string = new MFString(new java.lang.String["BoxMan4","Animation"]);
+FontStyle FontStyle2234 = createNode("FontStyle");
+FontStyle2234.family = new MFString(new java.lang.String["SANS"]);
+FontStyle2234.justify = new MFString(new java.lang.String["MIDDLE","MIDDLE"]);
+Text2233.fontStyle = FontStyle2234;
+
+Shape2230.geometry = Text2233;
+
+Transform2229.child = new undefined();
+
+Transform2229.child[0] = Shape2230;
+
+Transform2128.children[9] = Transform2229;
+
+Transform2127.children = new MFNode();
+
+Transform2127.children[0] = Transform2128;
+
+Group2120.children[2] = Transform2127;
+
+children[14] = Group2120;
+
+ROUTE ROUTE2235 = createNode("ROUTE");
+ROUTE2235.fromField = "fraction_changed";
+ROUTE2235.fromNode = "StopTimer";
+ROUTE2235.toField = "set_fraction";
+ROUTE2235.toNode = "Stop_humanoid_root_TranslationInterpolator";
+children[15] = ROUTE2235;
+
+ROUTE ROUTE2236 = createNode("ROUTE");
+ROUTE2236.fromField = "fraction_changed";
+ROUTE2236.fromNode = "StopTimer";
+ROUTE2236.toField = "set_fraction";
+ROUTE2236.toNode = "Stop_humanoid_root_RotationInterpolator";
+children[16] = ROUTE2236;
+
+ROUTE ROUTE2237 = createNode("ROUTE");
+ROUTE2237.fromField = "fraction_changed";
+ROUTE2237.fromNode = "StopTimer";
+ROUTE2237.toField = "set_fraction";
+ROUTE2237.toNode = "Stop_sacroiliac_RotationInterpolator";
+children[17] = ROUTE2237;
+
+ROUTE ROUTE2238 = createNode("ROUTE");
+ROUTE2238.fromField = "fraction_changed";
+ROUTE2238.fromNode = "StopTimer";
+ROUTE2238.toField = "set_fraction";
+ROUTE2238.toNode = "Stop_l_hip_RotationInterpolator";
+children[18] = ROUTE2238;
+
+ROUTE ROUTE2239 = createNode("ROUTE");
+ROUTE2239.fromField = "fraction_changed";
+ROUTE2239.fromNode = "StopTimer";
+ROUTE2239.toField = "set_fraction";
+ROUTE2239.toNode = "Stop_l_knee_RotationInterpolator";
+children[19] = ROUTE2239;
+
+ROUTE ROUTE2240 = createNode("ROUTE");
+ROUTE2240.fromField = "fraction_changed";
+ROUTE2240.fromNode = "StopTimer";
+ROUTE2240.toField = "set_fraction";
+ROUTE2240.toNode = "Stop_l_ankle_RotationInterpolator";
+children[20] = ROUTE2240;
+
+ROUTE ROUTE2241 = createNode("ROUTE");
+ROUTE2241.fromField = "fraction_changed";
+ROUTE2241.fromNode = "StopTimer";
+ROUTE2241.toField = "set_fraction";
+ROUTE2241.toNode = "Stop_l_subtalar_RotationInterpolator";
+children[21] = ROUTE2241;
+
+ROUTE ROUTE2242 = createNode("ROUTE");
+ROUTE2242.fromField = "fraction_changed";
+ROUTE2242.fromNode = "StopTimer";
+ROUTE2242.toField = "set_fraction";
+ROUTE2242.toNode = "Stop_l_midtarsal_RotationInterpolator";
+children[22] = ROUTE2242;
+
+ROUTE ROUTE2243 = createNode("ROUTE");
+ROUTE2243.fromField = "fraction_changed";
+ROUTE2243.fromNode = "StopTimer";
+ROUTE2243.toField = "set_fraction";
+ROUTE2243.toNode = "Stop_l_metatarsal_RotationInterpolator";
+children[23] = ROUTE2243;
+
+ROUTE ROUTE2244 = createNode("ROUTE");
+ROUTE2244.fromField = "fraction_changed";
+ROUTE2244.fromNode = "StopTimer";
+ROUTE2244.toField = "set_fraction";
+ROUTE2244.toNode = "Stop_r_hip_RotationInterpolator";
+children[24] = ROUTE2244;
+
+ROUTE ROUTE2245 = createNode("ROUTE");
+ROUTE2245.fromField = "fraction_changed";
+ROUTE2245.fromNode = "StopTimer";
+ROUTE2245.toField = "set_fraction";
+ROUTE2245.toNode = "Stop_r_knee_RotationInterpolator";
+children[25] = ROUTE2245;
+
+ROUTE ROUTE2246 = createNode("ROUTE");
+ROUTE2246.fromField = "fraction_changed";
+ROUTE2246.fromNode = "StopTimer";
+ROUTE2246.toField = "set_fraction";
+ROUTE2246.toNode = "Stop_r_ankle_RotationInterpolator";
+children[26] = ROUTE2246;
+
+ROUTE ROUTE2247 = createNode("ROUTE");
+ROUTE2247.fromField = "fraction_changed";
+ROUTE2247.fromNode = "StopTimer";
+ROUTE2247.toField = "set_fraction";
+ROUTE2247.toNode = "Stop_r_subtalar_RotationInterpolator";
+children[27] = ROUTE2247;
+
+ROUTE ROUTE2248 = createNode("ROUTE");
+ROUTE2248.fromField = "fraction_changed";
+ROUTE2248.fromNode = "StopTimer";
+ROUTE2248.toField = "set_fraction";
+ROUTE2248.toNode = "Stop_r_midtarsal_RotationInterpolator";
+children[28] = ROUTE2248;
+
+ROUTE ROUTE2249 = createNode("ROUTE");
+ROUTE2249.fromField = "fraction_changed";
+ROUTE2249.fromNode = "StopTimer";
+ROUTE2249.toField = "set_fraction";
+ROUTE2249.toNode = "Stop_r_metatarsal_RotationInterpolator";
+children[29] = ROUTE2249;
+
+ROUTE ROUTE2250 = createNode("ROUTE");
+ROUTE2250.fromField = "fraction_changed";
+ROUTE2250.fromNode = "StopTimer";
+ROUTE2250.toField = "set_fraction";
+ROUTE2250.toNode = "Stop_vl5_RotationInterpolator";
+children[30] = ROUTE2250;
+
+ROUTE ROUTE2251 = createNode("ROUTE");
+ROUTE2251.fromField = "fraction_changed";
+ROUTE2251.fromNode = "StopTimer";
+ROUTE2251.toField = "set_fraction";
+ROUTE2251.toNode = "Stop_vl4_RotationInterpolator";
+children[31] = ROUTE2251;
+
+ROUTE ROUTE2252 = createNode("ROUTE");
+ROUTE2252.fromField = "fraction_changed";
+ROUTE2252.fromNode = "StopTimer";
+ROUTE2252.toField = "set_fraction";
+ROUTE2252.toNode = "Stop_vl3_RotationInterpolator";
+children[32] = ROUTE2252;
+
+ROUTE ROUTE2253 = createNode("ROUTE");
+ROUTE2253.fromField = "fraction_changed";
+ROUTE2253.fromNode = "StopTimer";
+ROUTE2253.toField = "set_fraction";
+ROUTE2253.toNode = "Stop_vl2_RotationInterpolator";
+children[33] = ROUTE2253;
+
+ROUTE ROUTE2254 = createNode("ROUTE");
+ROUTE2254.fromField = "fraction_changed";
+ROUTE2254.fromNode = "StopTimer";
+ROUTE2254.toField = "set_fraction";
+ROUTE2254.toNode = "Stop_vl1_RotationInterpolator";
+children[34] = ROUTE2254;
+
+ROUTE ROUTE2255 = createNode("ROUTE");
+ROUTE2255.fromField = "fraction_changed";
+ROUTE2255.fromNode = "StopTimer";
+ROUTE2255.toField = "set_fraction";
+ROUTE2255.toNode = "Stop_vt12_RotationInterpolator";
+children[35] = ROUTE2255;
+
+ROUTE ROUTE2256 = createNode("ROUTE");
+ROUTE2256.fromField = "fraction_changed";
+ROUTE2256.fromNode = "StopTimer";
+ROUTE2256.toField = "set_fraction";
+ROUTE2256.toNode = "Stop_vt11_RotationInterpolator";
+children[36] = ROUTE2256;
+
+ROUTE ROUTE2257 = createNode("ROUTE");
+ROUTE2257.fromField = "fraction_changed";
+ROUTE2257.fromNode = "StopTimer";
+ROUTE2257.toField = "set_fraction";
+ROUTE2257.toNode = "Stop_vt10_RotationInterpolator";
+children[37] = ROUTE2257;
+
+ROUTE ROUTE2258 = createNode("ROUTE");
+ROUTE2258.fromField = "fraction_changed";
+ROUTE2258.fromNode = "StopTimer";
+ROUTE2258.toField = "set_fraction";
+ROUTE2258.toNode = "Stop_vt9_RotationInterpolator";
+children[38] = ROUTE2258;
+
+ROUTE ROUTE2259 = createNode("ROUTE");
+ROUTE2259.fromField = "fraction_changed";
+ROUTE2259.fromNode = "StopTimer";
+ROUTE2259.toField = "set_fraction";
+ROUTE2259.toNode = "Stop_vt8_RotationInterpolator";
+children[39] = ROUTE2259;
+
+ROUTE ROUTE2260 = createNode("ROUTE");
+ROUTE2260.fromField = "fraction_changed";
+ROUTE2260.fromNode = "StopTimer";
+ROUTE2260.toField = "set_fraction";
+ROUTE2260.toNode = "Stop_vt7_RotationInterpolator";
+children[40] = ROUTE2260;
+
+ROUTE ROUTE2261 = createNode("ROUTE");
+ROUTE2261.fromField = "fraction_changed";
+ROUTE2261.fromNode = "StopTimer";
+ROUTE2261.toField = "set_fraction";
+ROUTE2261.toNode = "Stop_vt6_RotationInterpolator";
+children[41] = ROUTE2261;
+
+ROUTE ROUTE2262 = createNode("ROUTE");
+ROUTE2262.fromField = "fraction_changed";
+ROUTE2262.fromNode = "StopTimer";
+ROUTE2262.toField = "set_fraction";
+ROUTE2262.toNode = "Stop_vt5_RotationInterpolator";
+children[42] = ROUTE2262;
+
+ROUTE ROUTE2263 = createNode("ROUTE");
+ROUTE2263.fromField = "fraction_changed";
+ROUTE2263.fromNode = "StopTimer";
+ROUTE2263.toField = "set_fraction";
+ROUTE2263.toNode = "Stop_vt4_RotationInterpolator";
+children[43] = ROUTE2263;
+
+ROUTE ROUTE2264 = createNode("ROUTE");
+ROUTE2264.fromField = "fraction_changed";
+ROUTE2264.fromNode = "StopTimer";
+ROUTE2264.toField = "set_fraction";
+ROUTE2264.toNode = "Stop_vt3_RotationInterpolator";
+children[44] = ROUTE2264;
+
+ROUTE ROUTE2265 = createNode("ROUTE");
+ROUTE2265.fromField = "fraction_changed";
+ROUTE2265.fromNode = "StopTimer";
+ROUTE2265.toField = "set_fraction";
+ROUTE2265.toNode = "Stop_vt2_RotationInterpolator";
+children[45] = ROUTE2265;
+
+ROUTE ROUTE2266 = createNode("ROUTE");
+ROUTE2266.fromField = "fraction_changed";
+ROUTE2266.fromNode = "StopTimer";
+ROUTE2266.toField = "set_fraction";
+ROUTE2266.toNode = "Stop_vt1_RotationInterpolator";
+children[46] = ROUTE2266;
+
+ROUTE ROUTE2267 = createNode("ROUTE");
+ROUTE2267.fromField = "fraction_changed";
+ROUTE2267.fromNode = "StopTimer";
+ROUTE2267.toField = "set_fraction";
+ROUTE2267.toNode = "Stop_vc7_RotationInterpolator";
+children[47] = ROUTE2267;
+
+ROUTE ROUTE2268 = createNode("ROUTE");
+ROUTE2268.fromField = "fraction_changed";
+ROUTE2268.fromNode = "StopTimer";
+ROUTE2268.toField = "set_fraction";
+ROUTE2268.toNode = "Stop_vc6_RotationInterpolator";
+children[48] = ROUTE2268;
+
+ROUTE ROUTE2269 = createNode("ROUTE");
+ROUTE2269.fromField = "fraction_changed";
+ROUTE2269.fromNode = "StopTimer";
+ROUTE2269.toField = "set_fraction";
+ROUTE2269.toNode = "Stop_vc5_RotationInterpolator";
+children[49] = ROUTE2269;
+
+ROUTE ROUTE2270 = createNode("ROUTE");
+ROUTE2270.fromField = "fraction_changed";
+ROUTE2270.fromNode = "StopTimer";
+ROUTE2270.toField = "set_fraction";
+ROUTE2270.toNode = "Stop_vc4_RotationInterpolator";
+children[50] = ROUTE2270;
+
+ROUTE ROUTE2271 = createNode("ROUTE");
+ROUTE2271.fromField = "fraction_changed";
+ROUTE2271.fromNode = "StopTimer";
+ROUTE2271.toField = "set_fraction";
+ROUTE2271.toNode = "Stop_vc3_RotationInterpolator";
+children[51] = ROUTE2271;
+
+ROUTE ROUTE2272 = createNode("ROUTE");
+ROUTE2272.fromField = "fraction_changed";
+ROUTE2272.fromNode = "StopTimer";
+ROUTE2272.toField = "set_fraction";
+ROUTE2272.toNode = "Stop_vc2_RotationInterpolator";
+children[52] = ROUTE2272;
+
+ROUTE ROUTE2273 = createNode("ROUTE");
+ROUTE2273.fromField = "fraction_changed";
+ROUTE2273.fromNode = "StopTimer";
+ROUTE2273.toField = "set_fraction";
+ROUTE2273.toNode = "Stop_vc1_RotationInterpolator";
+children[53] = ROUTE2273;
+
+ROUTE ROUTE2274 = createNode("ROUTE");
+ROUTE2274.fromField = "fraction_changed";
+ROUTE2274.fromNode = "StopTimer";
+ROUTE2274.toField = "set_fraction";
+ROUTE2274.toNode = "Stop_skullbase_RotationInterpolator";
+children[54] = ROUTE2274;
+
+ROUTE ROUTE2275 = createNode("ROUTE");
+ROUTE2275.fromField = "fraction_changed";
+ROUTE2275.fromNode = "StopTimer";
+ROUTE2275.toField = "set_fraction";
+ROUTE2275.toNode = "Stop_l_eyeball_joint_RotationInterpolator";
+children[55] = ROUTE2275;
+
+ROUTE ROUTE2276 = createNode("ROUTE");
+ROUTE2276.fromField = "fraction_changed";
+ROUTE2276.fromNode = "StopTimer";
+ROUTE2276.toField = "set_fraction";
+ROUTE2276.toNode = "Stop_r_eyeball_joint_RotationInterpolator";
+children[56] = ROUTE2276;
+
+ROUTE ROUTE2277 = createNode("ROUTE");
+ROUTE2277.fromField = "fraction_changed";
+ROUTE2277.fromNode = "StopTimer";
+ROUTE2277.toField = "set_fraction";
+ROUTE2277.toNode = "Stop_l_sternoclavicular_RotationInterpolator";
+children[57] = ROUTE2277;
+
+ROUTE ROUTE2278 = createNode("ROUTE");
+ROUTE2278.fromField = "fraction_changed";
+ROUTE2278.fromNode = "StopTimer";
+ROUTE2278.toField = "set_fraction";
+ROUTE2278.toNode = "Stop_l_acromioclavicular_RotationInterpolator";
+children[58] = ROUTE2278;
+
+ROUTE ROUTE2279 = createNode("ROUTE");
+ROUTE2279.fromField = "fraction_changed";
+ROUTE2279.fromNode = "StopTimer";
+ROUTE2279.toField = "set_fraction";
+ROUTE2279.toNode = "Stop_l_shoulder_RotationInterpolator";
+children[59] = ROUTE2279;
+
+ROUTE ROUTE2280 = createNode("ROUTE");
+ROUTE2280.fromField = "fraction_changed";
+ROUTE2280.fromNode = "StopTimer";
+ROUTE2280.toField = "set_fraction";
+ROUTE2280.toNode = "Stop_l_elbow_RotationInterpolator";
+children[60] = ROUTE2280;
+
+ROUTE ROUTE2281 = createNode("ROUTE");
+ROUTE2281.fromField = "fraction_changed";
+ROUTE2281.fromNode = "StopTimer";
+ROUTE2281.toField = "set_fraction";
+ROUTE2281.toNode = "Stop_l_wrist_RotationInterpolator";
+children[61] = ROUTE2281;
+
+ROUTE ROUTE2282 = createNode("ROUTE");
+ROUTE2282.fromField = "fraction_changed";
+ROUTE2282.fromNode = "StopTimer";
+ROUTE2282.toField = "set_fraction";
+ROUTE2282.toNode = "Stop_l_thumb1_RotationInterpolator";
+children[62] = ROUTE2282;
+
+ROUTE ROUTE2283 = createNode("ROUTE");
+ROUTE2283.fromField = "fraction_changed";
+ROUTE2283.fromNode = "StopTimer";
+ROUTE2283.toField = "set_fraction";
+ROUTE2283.toNode = "Stop_l_thumb2_RotationInterpolator";
+children[63] = ROUTE2283;
+
+ROUTE ROUTE2284 = createNode("ROUTE");
+ROUTE2284.fromField = "fraction_changed";
+ROUTE2284.fromNode = "StopTimer";
+ROUTE2284.toField = "set_fraction";
+ROUTE2284.toNode = "Stop_l_thumb3_RotationInterpolator";
+children[64] = ROUTE2284;
+
+ROUTE ROUTE2285 = createNode("ROUTE");
+ROUTE2285.fromField = "fraction_changed";
+ROUTE2285.fromNode = "StopTimer";
+ROUTE2285.toField = "set_fraction";
+ROUTE2285.toNode = "Stop_l_index0_RotationInterpolator";
+children[65] = ROUTE2285;
+
+ROUTE ROUTE2286 = createNode("ROUTE");
+ROUTE2286.fromField = "fraction_changed";
+ROUTE2286.fromNode = "StopTimer";
+ROUTE2286.toField = "set_fraction";
+ROUTE2286.toNode = "Stop_l_index1_RotationInterpolator";
+children[66] = ROUTE2286;
+
+ROUTE ROUTE2287 = createNode("ROUTE");
+ROUTE2287.fromField = "fraction_changed";
+ROUTE2287.fromNode = "StopTimer";
+ROUTE2287.toField = "set_fraction";
+ROUTE2287.toNode = "Stop_l_index2_RotationInterpolator";
+children[67] = ROUTE2287;
+
+ROUTE ROUTE2288 = createNode("ROUTE");
+ROUTE2288.fromField = "fraction_changed";
+ROUTE2288.fromNode = "StopTimer";
+ROUTE2288.toField = "set_fraction";
+ROUTE2288.toNode = "Stop_l_index3_RotationInterpolator";
+children[68] = ROUTE2288;
+
+ROUTE ROUTE2289 = createNode("ROUTE");
+ROUTE2289.fromField = "fraction_changed";
+ROUTE2289.fromNode = "StopTimer";
+ROUTE2289.toField = "set_fraction";
+ROUTE2289.toNode = "Stop_l_middle0_RotationInterpolator";
+children[69] = ROUTE2289;
+
+ROUTE ROUTE2290 = createNode("ROUTE");
+ROUTE2290.fromField = "fraction_changed";
+ROUTE2290.fromNode = "StopTimer";
+ROUTE2290.toField = "set_fraction";
+ROUTE2290.toNode = "Stop_l_middle1_RotationInterpolator";
+children[70] = ROUTE2290;
+
+ROUTE ROUTE2291 = createNode("ROUTE");
+ROUTE2291.fromField = "fraction_changed";
+ROUTE2291.fromNode = "StopTimer";
+ROUTE2291.toField = "set_fraction";
+ROUTE2291.toNode = "Stop_l_middle2_RotationInterpolator";
+children[71] = ROUTE2291;
+
+ROUTE ROUTE2292 = createNode("ROUTE");
+ROUTE2292.fromField = "fraction_changed";
+ROUTE2292.fromNode = "StopTimer";
+ROUTE2292.toField = "set_fraction";
+ROUTE2292.toNode = "Stop_l_middle3_RotationInterpolator";
+children[72] = ROUTE2292;
+
+ROUTE ROUTE2293 = createNode("ROUTE");
+ROUTE2293.fromField = "fraction_changed";
+ROUTE2293.fromNode = "StopTimer";
+ROUTE2293.toField = "set_fraction";
+ROUTE2293.toNode = "Stop_l_ring0_RotationInterpolator";
+children[73] = ROUTE2293;
+
+ROUTE ROUTE2294 = createNode("ROUTE");
+ROUTE2294.fromField = "fraction_changed";
+ROUTE2294.fromNode = "StopTimer";
+ROUTE2294.toField = "set_fraction";
+ROUTE2294.toNode = "Stop_l_ring1_RotationInterpolator";
+children[74] = ROUTE2294;
+
+ROUTE ROUTE2295 = createNode("ROUTE");
+ROUTE2295.fromField = "fraction_changed";
+ROUTE2295.fromNode = "StopTimer";
+ROUTE2295.toField = "set_fraction";
+ROUTE2295.toNode = "Stop_l_ring2_RotationInterpolator";
+children[75] = ROUTE2295;
+
+ROUTE ROUTE2296 = createNode("ROUTE");
+ROUTE2296.fromField = "fraction_changed";
+ROUTE2296.fromNode = "StopTimer";
+ROUTE2296.toField = "set_fraction";
+ROUTE2296.toNode = "Stop_l_ring3_RotationInterpolator";
+children[76] = ROUTE2296;
+
+ROUTE ROUTE2297 = createNode("ROUTE");
+ROUTE2297.fromField = "fraction_changed";
+ROUTE2297.fromNode = "StopTimer";
+ROUTE2297.toField = "set_fraction";
+ROUTE2297.toNode = "Stop_l_pinky0_RotationInterpolator";
+children[77] = ROUTE2297;
+
+ROUTE ROUTE2298 = createNode("ROUTE");
+ROUTE2298.fromField = "fraction_changed";
+ROUTE2298.fromNode = "StopTimer";
+ROUTE2298.toField = "set_fraction";
+ROUTE2298.toNode = "Stop_l_pinky1_RotationInterpolator";
+children[78] = ROUTE2298;
+
+ROUTE ROUTE2299 = createNode("ROUTE");
+ROUTE2299.fromField = "fraction_changed";
+ROUTE2299.fromNode = "StopTimer";
+ROUTE2299.toField = "set_fraction";
+ROUTE2299.toNode = "Stop_l_pinky2_RotationInterpolator";
+children[79] = ROUTE2299;
+
+ROUTE ROUTE2300 = createNode("ROUTE");
+ROUTE2300.fromField = "fraction_changed";
+ROUTE2300.fromNode = "StopTimer";
+ROUTE2300.toField = "set_fraction";
+ROUTE2300.toNode = "Stop_l_pinky3_RotationInterpolator";
+children[80] = ROUTE2300;
+
+ROUTE ROUTE2301 = createNode("ROUTE");
+ROUTE2301.fromField = "fraction_changed";
+ROUTE2301.fromNode = "StopTimer";
+ROUTE2301.toField = "set_fraction";
+ROUTE2301.toNode = "Stop_r_sternoclavicular_RotationInterpolator";
+children[81] = ROUTE2301;
+
+ROUTE ROUTE2302 = createNode("ROUTE");
+ROUTE2302.fromField = "fraction_changed";
+ROUTE2302.fromNode = "StopTimer";
+ROUTE2302.toField = "set_fraction";
+ROUTE2302.toNode = "Stop_r_acromioclavicular_RotationInterpolator";
+children[82] = ROUTE2302;
+
+ROUTE ROUTE2303 = createNode("ROUTE");
+ROUTE2303.fromField = "fraction_changed";
+ROUTE2303.fromNode = "StopTimer";
+ROUTE2303.toField = "set_fraction";
+ROUTE2303.toNode = "Stop_r_shoulder_RotationInterpolator";
+children[83] = ROUTE2303;
+
+ROUTE ROUTE2304 = createNode("ROUTE");
+ROUTE2304.fromField = "fraction_changed";
+ROUTE2304.fromNode = "StopTimer";
+ROUTE2304.toField = "set_fraction";
+ROUTE2304.toNode = "Stop_r_elbow_RotationInterpolator";
+children[84] = ROUTE2304;
+
+ROUTE ROUTE2305 = createNode("ROUTE");
+ROUTE2305.fromField = "fraction_changed";
+ROUTE2305.fromNode = "StopTimer";
+ROUTE2305.toField = "set_fraction";
+ROUTE2305.toNode = "Stop_r_wrist_RotationInterpolator";
+children[85] = ROUTE2305;
+
+ROUTE ROUTE2306 = createNode("ROUTE");
+ROUTE2306.fromField = "fraction_changed";
+ROUTE2306.fromNode = "StopTimer";
+ROUTE2306.toField = "set_fraction";
+ROUTE2306.toNode = "Stop_r_thumb1_RotationInterpolator";
+children[86] = ROUTE2306;
+
+ROUTE ROUTE2307 = createNode("ROUTE");
+ROUTE2307.fromField = "fraction_changed";
+ROUTE2307.fromNode = "StopTimer";
+ROUTE2307.toField = "set_fraction";
+ROUTE2307.toNode = "Stop_r_thumb2_RotationInterpolator";
+children[87] = ROUTE2307;
+
+ROUTE ROUTE2308 = createNode("ROUTE");
+ROUTE2308.fromField = "fraction_changed";
+ROUTE2308.fromNode = "StopTimer";
+ROUTE2308.toField = "set_fraction";
+ROUTE2308.toNode = "Stop_r_thumb3_RotationInterpolator";
+children[88] = ROUTE2308;
+
+ROUTE ROUTE2309 = createNode("ROUTE");
+ROUTE2309.fromField = "fraction_changed";
+ROUTE2309.fromNode = "StopTimer";
+ROUTE2309.toField = "set_fraction";
+ROUTE2309.toNode = "Stop_r_index0_RotationInterpolator";
+children[89] = ROUTE2309;
+
+ROUTE ROUTE2310 = createNode("ROUTE");
+ROUTE2310.fromField = "fraction_changed";
+ROUTE2310.fromNode = "StopTimer";
+ROUTE2310.toField = "set_fraction";
+ROUTE2310.toNode = "Stop_r_index1_RotationInterpolator";
+children[90] = ROUTE2310;
+
+ROUTE ROUTE2311 = createNode("ROUTE");
+ROUTE2311.fromField = "fraction_changed";
+ROUTE2311.fromNode = "StopTimer";
+ROUTE2311.toField = "set_fraction";
+ROUTE2311.toNode = "Stop_r_index2_RotationInterpolator";
+children[91] = ROUTE2311;
+
+ROUTE ROUTE2312 = createNode("ROUTE");
+ROUTE2312.fromField = "fraction_changed";
+ROUTE2312.fromNode = "StopTimer";
+ROUTE2312.toField = "set_fraction";
+ROUTE2312.toNode = "Stop_r_index3_RotationInterpolator";
+children[92] = ROUTE2312;
+
+ROUTE ROUTE2313 = createNode("ROUTE");
+ROUTE2313.fromField = "fraction_changed";
+ROUTE2313.fromNode = "StopTimer";
+ROUTE2313.toField = "set_fraction";
+ROUTE2313.toNode = "Stop_r_middle0_RotationInterpolator";
+children[93] = ROUTE2313;
+
+ROUTE ROUTE2314 = createNode("ROUTE");
+ROUTE2314.fromField = "fraction_changed";
+ROUTE2314.fromNode = "StopTimer";
+ROUTE2314.toField = "set_fraction";
+ROUTE2314.toNode = "Stop_r_middle1_RotationInterpolator";
+children[94] = ROUTE2314;
+
+ROUTE ROUTE2315 = createNode("ROUTE");
+ROUTE2315.fromField = "fraction_changed";
+ROUTE2315.fromNode = "StopTimer";
+ROUTE2315.toField = "set_fraction";
+ROUTE2315.toNode = "Stop_r_middle2_RotationInterpolator";
+children[95] = ROUTE2315;
+
+ROUTE ROUTE2316 = createNode("ROUTE");
+ROUTE2316.fromField = "fraction_changed";
+ROUTE2316.fromNode = "StopTimer";
+ROUTE2316.toField = "set_fraction";
+ROUTE2316.toNode = "Stop_r_middle3_RotationInterpolator";
+children[96] = ROUTE2316;
+
+ROUTE ROUTE2317 = createNode("ROUTE");
+ROUTE2317.fromField = "fraction_changed";
+ROUTE2317.fromNode = "StopTimer";
+ROUTE2317.toField = "set_fraction";
+ROUTE2317.toNode = "Stop_r_ring0_RotationInterpolator";
+children[97] = ROUTE2317;
+
+ROUTE ROUTE2318 = createNode("ROUTE");
+ROUTE2318.fromField = "fraction_changed";
+ROUTE2318.fromNode = "StopTimer";
+ROUTE2318.toField = "set_fraction";
+ROUTE2318.toNode = "Stop_r_ring1_RotationInterpolator";
+children[98] = ROUTE2318;
+
+ROUTE ROUTE2319 = createNode("ROUTE");
+ROUTE2319.fromField = "fraction_changed";
+ROUTE2319.fromNode = "StopTimer";
+ROUTE2319.toField = "set_fraction";
+ROUTE2319.toNode = "Stop_r_ring2_RotationInterpolator";
+children[99] = ROUTE2319;
+
+ROUTE ROUTE2320 = createNode("ROUTE");
+ROUTE2320.fromField = "fraction_changed";
+ROUTE2320.fromNode = "StopTimer";
+ROUTE2320.toField = "set_fraction";
+ROUTE2320.toNode = "Stop_r_ring3_RotationInterpolator";
+children[100] = ROUTE2320;
+
+ROUTE ROUTE2321 = createNode("ROUTE");
+ROUTE2321.fromField = "fraction_changed";
+ROUTE2321.fromNode = "StopTimer";
+ROUTE2321.toField = "set_fraction";
+ROUTE2321.toNode = "Stop_r_pinky0_RotationInterpolator";
+children[101] = ROUTE2321;
+
+ROUTE ROUTE2322 = createNode("ROUTE");
+ROUTE2322.fromField = "fraction_changed";
+ROUTE2322.fromNode = "StopTimer";
+ROUTE2322.toField = "set_fraction";
+ROUTE2322.toNode = "Stop_r_pinky1_RotationInterpolator";
+children[102] = ROUTE2322;
+
+ROUTE ROUTE2323 = createNode("ROUTE");
+ROUTE2323.fromField = "fraction_changed";
+ROUTE2323.fromNode = "StopTimer";
+ROUTE2323.toField = "set_fraction";
+ROUTE2323.toNode = "Stop_r_pinky2_RotationInterpolator";
+children[103] = ROUTE2323;
+
+ROUTE ROUTE2324 = createNode("ROUTE");
+ROUTE2324.fromField = "fraction_changed";
+ROUTE2324.fromNode = "StopTimer";
+ROUTE2324.toField = "set_fraction";
+ROUTE2324.toNode = "Stop_r_pinky3_RotationInterpolator";
+children[104] = ROUTE2324;
+
+ROUTE ROUTE2325 = createNode("ROUTE");
+ROUTE2325.fromField = "value_changed";
+ROUTE2325.fromNode = "Stop_humanoid_root_TranslationInterpolator";
+ROUTE2325.toField = "set_translation";
+ROUTE2325.toNode = "hanim_humanoid_root";
+children[105] = ROUTE2325;
+
+ROUTE ROUTE2326 = createNode("ROUTE");
+ROUTE2326.fromField = "value_changed";
+ROUTE2326.fromNode = "Stop_humanoid_root_RotationInterpolator";
+ROUTE2326.toField = "set_rotation";
+ROUTE2326.toNode = "hanim_humanoid_root";
+children[106] = ROUTE2326;
+
+ROUTE ROUTE2327 = createNode("ROUTE");
+ROUTE2327.fromField = "value_changed";
+ROUTE2327.fromNode = "Stop_l_hip_RotationInterpolator";
+ROUTE2327.toField = "set_rotation";
+ROUTE2327.toNode = "hanim_l_hip";
+children[107] = ROUTE2327;
+
+ROUTE ROUTE2328 = createNode("ROUTE");
+ROUTE2328.fromField = "value_changed";
+ROUTE2328.fromNode = "Stop_l_knee_RotationInterpolator";
+ROUTE2328.toField = "set_rotation";
+ROUTE2328.toNode = "hanim_l_knee";
+children[108] = ROUTE2328;
+
+ROUTE ROUTE2329 = createNode("ROUTE");
+ROUTE2329.fromField = "value_changed";
+ROUTE2329.fromNode = "Stop_l_ankle_RotationInterpolator";
+ROUTE2329.toField = "set_rotation";
+ROUTE2329.toNode = "hanim_l_ankle";
+children[109] = ROUTE2329;
+
+ROUTE ROUTE2330 = createNode("ROUTE");
+ROUTE2330.fromField = "value_changed";
+ROUTE2330.fromNode = "Stop_l_midtarsal_RotationInterpolator";
+ROUTE2330.toField = "set_rotation";
+ROUTE2330.toNode = "hanim_l_midtarsal";
+children[110] = ROUTE2330;
+
+ROUTE ROUTE2331 = createNode("ROUTE");
+ROUTE2331.fromField = "value_changed";
+ROUTE2331.fromNode = "Stop_r_hip_RotationInterpolator";
+ROUTE2331.toField = "set_rotation";
+ROUTE2331.toNode = "hanim_r_hip";
+children[111] = ROUTE2331;
+
+ROUTE ROUTE2332 = createNode("ROUTE");
+ROUTE2332.fromField = "value_changed";
+ROUTE2332.fromNode = "Stop_r_knee_RotationInterpolator";
+ROUTE2332.toField = "set_rotation";
+ROUTE2332.toNode = "hanim_r_knee";
+children[112] = ROUTE2332;
+
+ROUTE ROUTE2333 = createNode("ROUTE");
+ROUTE2333.fromField = "value_changed";
+ROUTE2333.fromNode = "Stop_r_ankle_RotationInterpolator";
+ROUTE2333.toField = "set_rotation";
+ROUTE2333.toNode = "hanim_r_ankle";
+children[113] = ROUTE2333;
+
+ROUTE ROUTE2334 = createNode("ROUTE");
+ROUTE2334.fromField = "value_changed";
+ROUTE2334.fromNode = "Stop_r_midtarsal_RotationInterpolator";
+ROUTE2334.toField = "set_rotation";
+ROUTE2334.toNode = "hanim_r_midtarsal";
+children[114] = ROUTE2334;
+
+ROUTE ROUTE2335 = createNode("ROUTE");
+ROUTE2335.fromField = "value_changed";
+ROUTE2335.fromNode = "Stop_vl5_RotationInterpolator";
+ROUTE2335.toField = "set_rotation";
+ROUTE2335.toNode = "hanim_vl5";
+children[115] = ROUTE2335;
+
+ROUTE ROUTE2336 = createNode("ROUTE");
+ROUTE2336.fromField = "value_changed";
+ROUTE2336.fromNode = "Stop_skullbase_RotationInterpolator";
+ROUTE2336.toField = "set_rotation";
+ROUTE2336.toNode = "hanim_skullbase";
+children[116] = ROUTE2336;
+
+ROUTE ROUTE2337 = createNode("ROUTE");
+ROUTE2337.fromField = "value_changed";
+ROUTE2337.fromNode = "Stop_l_shoulder_RotationInterpolator";
+ROUTE2337.toField = "set_rotation";
+ROUTE2337.toNode = "hanim_l_shoulder";
+children[117] = ROUTE2337;
+
+ROUTE ROUTE2338 = createNode("ROUTE");
+ROUTE2338.fromField = "value_changed";
+ROUTE2338.fromNode = "Stop_l_elbow_RotationInterpolator";
+ROUTE2338.toField = "set_rotation";
+ROUTE2338.toNode = "hanim_l_elbow";
+children[118] = ROUTE2338;
+
+ROUTE ROUTE2339 = createNode("ROUTE");
+ROUTE2339.fromField = "value_changed";
+ROUTE2339.fromNode = "Stop_l_wrist_RotationInterpolator";
+ROUTE2339.toField = "set_rotation";
+ROUTE2339.toNode = "hanim_l_wrist";
+children[119] = ROUTE2339;
+
+ROUTE ROUTE2340 = createNode("ROUTE");
+ROUTE2340.fromField = "value_changed";
+ROUTE2340.fromNode = "Stop_r_shoulder_RotationInterpolator";
+ROUTE2340.toField = "set_rotation";
+ROUTE2340.toNode = "hanim_r_shoulder";
+children[120] = ROUTE2340;
+
+ROUTE ROUTE2341 = createNode("ROUTE");
+ROUTE2341.fromField = "value_changed";
+ROUTE2341.fromNode = "Stop_r_elbow_RotationInterpolator";
+ROUTE2341.toField = "set_rotation";
+ROUTE2341.toNode = "hanim_r_elbow";
+children[121] = ROUTE2341;
+
+ROUTE ROUTE2342 = createNode("ROUTE");
+ROUTE2342.fromField = "value_changed";
+ROUTE2342.fromNode = "Stop_r_wrist_RotationInterpolator";
+ROUTE2342.toField = "set_rotation";
+ROUTE2342.toNode = "hanim_r_wrist";
+children[122] = ROUTE2342;
+
+ROUTE ROUTE2343 = createNode("ROUTE");
+ROUTE2343.fromField = "fraction_changed";
+ROUTE2343.fromNode = "StandTimer";
+ROUTE2343.toField = "set_fraction";
+ROUTE2343.toNode = "Stand_r_ankle_RotationInterpolator";
+children[123] = ROUTE2343;
+
+ROUTE ROUTE2344 = createNode("ROUTE");
+ROUTE2344.fromField = "fraction_changed";
+ROUTE2344.fromNode = "StandTimer";
+ROUTE2344.toField = "set_fraction";
+ROUTE2344.toNode = "Stand_r_knee_RotationInterpolator";
+children[124] = ROUTE2344;
+
+ROUTE ROUTE2345 = createNode("ROUTE");
+ROUTE2345.fromField = "fraction_changed";
+ROUTE2345.fromNode = "StandTimer";
+ROUTE2345.toField = "set_fraction";
+ROUTE2345.toNode = "Stand_r_hip_RotationInterpolator";
+children[125] = ROUTE2345;
+
+ROUTE ROUTE2346 = createNode("ROUTE");
+ROUTE2346.fromField = "fraction_changed";
+ROUTE2346.fromNode = "StandTimer";
+ROUTE2346.toField = "set_fraction";
+ROUTE2346.toNode = "Stand_l_ankle_RotationInterpolator";
+children[126] = ROUTE2346;
+
+ROUTE ROUTE2347 = createNode("ROUTE");
+ROUTE2347.fromField = "fraction_changed";
+ROUTE2347.fromNode = "StandTimer";
+ROUTE2347.toField = "set_fraction";
+ROUTE2347.toNode = "Stand_l_knee_RotationInterpolator";
+children[127] = ROUTE2347;
+
+ROUTE ROUTE2348 = createNode("ROUTE");
+ROUTE2348.fromField = "fraction_changed";
+ROUTE2348.fromNode = "StandTimer";
+ROUTE2348.toField = "set_fraction";
+ROUTE2348.toNode = "Stand_l_hip_RotationInterpolator";
+children[128] = ROUTE2348;
+
+ROUTE ROUTE2349 = createNode("ROUTE");
+ROUTE2349.fromField = "fraction_changed";
+ROUTE2349.fromNode = "StandTimer";
+ROUTE2349.toField = "set_fraction";
+ROUTE2349.toNode = "Stand_lower_body_RotationInterpolator";
+children[129] = ROUTE2349;
+
+ROUTE ROUTE2350 = createNode("ROUTE");
+ROUTE2350.fromField = "fraction_changed";
+ROUTE2350.fromNode = "StandTimer";
+ROUTE2350.toField = "set_fraction";
+ROUTE2350.toNode = "Stand_r_wrist_RotationInterpolator";
+children[130] = ROUTE2350;
+
+ROUTE ROUTE2351 = createNode("ROUTE");
+ROUTE2351.fromField = "fraction_changed";
+ROUTE2351.fromNode = "StandTimer";
+ROUTE2351.toField = "set_fraction";
+ROUTE2351.toNode = "Stand_r_elbow_RotationInterpolator";
+children[131] = ROUTE2351;
+
+ROUTE ROUTE2352 = createNode("ROUTE");
+ROUTE2352.fromField = "fraction_changed";
+ROUTE2352.fromNode = "StandTimer";
+ROUTE2352.toField = "set_fraction";
+ROUTE2352.toNode = "Stand_r_shoulder_RotationInterpolator";
+children[132] = ROUTE2352;
+
+ROUTE ROUTE2353 = createNode("ROUTE");
+ROUTE2353.fromField = "fraction_changed";
+ROUTE2353.fromNode = "StandTimer";
+ROUTE2353.toField = "set_fraction";
+ROUTE2353.toNode = "Stand_l_wrist_RotationInterpolator";
+children[133] = ROUTE2353;
+
+ROUTE ROUTE2354 = createNode("ROUTE");
+ROUTE2354.fromField = "fraction_changed";
+ROUTE2354.fromNode = "StandTimer";
+ROUTE2354.toField = "set_fraction";
+ROUTE2354.toNode = "Stand_l_elbow_RotationInterpolator";
+children[134] = ROUTE2354;
+
+ROUTE ROUTE2355 = createNode("ROUTE");
+ROUTE2355.fromField = "fraction_changed";
+ROUTE2355.fromNode = "StandTimer";
+ROUTE2355.toField = "set_fraction";
+ROUTE2355.toNode = "Stand_l_shoulder_RotationInterpolator";
+children[135] = ROUTE2355;
+
+ROUTE ROUTE2356 = createNode("ROUTE");
+ROUTE2356.fromField = "fraction_changed";
+ROUTE2356.fromNode = "StandTimer";
+ROUTE2356.toField = "set_fraction";
+ROUTE2356.toNode = "Stand_head_RotationInterpolator";
+children[136] = ROUTE2356;
+
+ROUTE ROUTE2357 = createNode("ROUTE");
+ROUTE2357.fromField = "fraction_changed";
+ROUTE2357.fromNode = "StandTimer";
+ROUTE2357.toField = "set_fraction";
+ROUTE2357.toNode = "Stand_neck_RotationInterpolator";
+children[137] = ROUTE2357;
+
+ROUTE ROUTE2358 = createNode("ROUTE");
+ROUTE2358.fromField = "fraction_changed";
+ROUTE2358.fromNode = "StandTimer";
+ROUTE2358.toField = "set_fraction";
+ROUTE2358.toNode = "Stand_l_eyeball_RotationInterpolator";
+children[138] = ROUTE2358;
+
+ROUTE ROUTE2359 = createNode("ROUTE");
+ROUTE2359.fromField = "fraction_changed";
+ROUTE2359.fromNode = "StandTimer";
+ROUTE2359.toField = "set_fraction";
+ROUTE2359.toNode = "Stand_r_eyeball_RotationInterpolator";
+children[139] = ROUTE2359;
+
+ROUTE ROUTE2360 = createNode("ROUTE");
+ROUTE2360.fromField = "fraction_changed";
+ROUTE2360.fromNode = "StandTimer";
+ROUTE2360.toField = "set_fraction";
+ROUTE2360.toNode = "Stand_upper_body_RotationInterpolator";
+children[140] = ROUTE2360;
+
+ROUTE ROUTE2361 = createNode("ROUTE");
+ROUTE2361.fromField = "fraction_changed";
+ROUTE2361.fromNode = "StandTimer";
+ROUTE2361.toField = "set_fraction";
+ROUTE2361.toNode = "Stand_whole_body_RotationInterpolator";
+children[141] = ROUTE2361;
+
+ROUTE ROUTE2362 = createNode("ROUTE");
+ROUTE2362.fromField = "fraction_changed";
+ROUTE2362.fromNode = "StandTimer";
+ROUTE2362.toField = "set_fraction";
+ROUTE2362.toNode = "Stand_whole_body_TranslationInterpolator";
+children[142] = ROUTE2362;
+
+ROUTE ROUTE2363 = createNode("ROUTE");
+ROUTE2363.fromField = "fraction_changed";
+ROUTE2363.fromNode = "StandTimer";
+ROUTE2363.toField = "set_fraction";
+ROUTE2363.toNode = "Stand_l_sternoclavicular_RollInterpolator";
+children[143] = ROUTE2363;
+
+ROUTE ROUTE2364 = createNode("ROUTE");
+ROUTE2364.fromField = "fraction_changed";
+ROUTE2364.fromNode = "StandTimer";
+ROUTE2364.toField = "set_fraction";
+ROUTE2364.toNode = "Stand_l_acromioclavicular_RollInterpolator";
+children[144] = ROUTE2364;
+
+ROUTE ROUTE2365 = createNode("ROUTE");
+ROUTE2365.fromField = "fraction_changed";
+ROUTE2365.fromNode = "StandTimer";
+ROUTE2365.toField = "set_fraction";
+ROUTE2365.toNode = "Stand_r_sternoclavicular_RollInterpolator";
+children[145] = ROUTE2365;
+
+ROUTE ROUTE2366 = createNode("ROUTE");
+ROUTE2366.fromField = "fraction_changed";
+ROUTE2366.fromNode = "StandTimer";
+ROUTE2366.toField = "set_fraction";
+ROUTE2366.toNode = "Stand_r_acromioclavicular_RollInterpolator";
+children[146] = ROUTE2366;
+
+ROUTE ROUTE2367 = createNode("ROUTE");
+ROUTE2367.fromField = "fraction_changed";
+ROUTE2367.fromNode = "StandTimer";
+ROUTE2367.toField = "set_fraction";
+ROUTE2367.toNode = "Stand_r_metatarsal_PitchInterpolator";
+children[147] = ROUTE2367;
+
+ROUTE ROUTE2368 = createNode("ROUTE");
+ROUTE2368.fromField = "fraction_changed";
+ROUTE2368.fromNode = "StandTimer";
+ROUTE2368.toField = "set_fraction";
+ROUTE2368.toNode = "Stand_sacroiliac_YawInterpolator";
+children[148] = ROUTE2368;
+
+ROUTE ROUTE2369 = createNode("ROUTE");
+ROUTE2369.fromField = "fraction_changed";
+ROUTE2369.fromNode = "StandTimer";
+ROUTE2369.toField = "set_fraction";
+ROUTE2369.toNode = "Stand_vl5_YawInterpolator";
+children[149] = ROUTE2369;
+
+ROUTE ROUTE2370 = createNode("ROUTE");
+ROUTE2370.fromField = "fraction_changed";
+ROUTE2370.fromNode = "StandTimer";
+ROUTE2370.toField = "set_fraction";
+ROUTE2370.toNode = "Stand_vc6_YawInterpolator";
+children[150] = ROUTE2370;
+
+ROUTE ROUTE2371 = createNode("ROUTE");
+ROUTE2371.fromField = "fraction_changed";
+ROUTE2371.fromNode = "StandTimer";
+ROUTE2371.toField = "set_fraction";
+ROUTE2371.toNode = "Stand_l_thumb1_PitchInterpolator";
+children[151] = ROUTE2371;
+
+ROUTE ROUTE2372 = createNode("ROUTE");
+ROUTE2372.fromField = "fraction_changed";
+ROUTE2372.fromNode = "StandTimer";
+ROUTE2372.toField = "set_fraction";
+ROUTE2372.toNode = "Stand_r_thumb1_PitchInterpolator";
+children[152] = ROUTE2372;
+
+ROUTE ROUTE2373 = createNode("ROUTE");
+ROUTE2373.fromField = "fraction_changed";
+ROUTE2373.fromNode = "StandTimer";
+ROUTE2373.toField = "set_fraction";
+ROUTE2373.toNode = "Stand_r_index1_RollInterpolator";
+children[153] = ROUTE2373;
+
+ROUTE ROUTE2374 = createNode("ROUTE");
+ROUTE2374.fromField = "fraction_changed";
+ROUTE2374.fromNode = "StandTimer";
+ROUTE2374.toField = "set_fraction";
+ROUTE2374.toNode = "Stand_r_index2_RollInterpolator";
+children[154] = ROUTE2374;
+
+ROUTE ROUTE2375 = createNode("ROUTE");
+ROUTE2375.fromField = "fraction_changed";
+ROUTE2375.fromNode = "StandTimer";
+ROUTE2375.toField = "set_fraction";
+ROUTE2375.toNode = "Stand_r_index3_RollInterpolator";
+children[155] = ROUTE2375;
+
+ROUTE ROUTE2376 = createNode("ROUTE");
+ROUTE2376.fromField = "value_changed";
+ROUTE2376.fromNode = "Stand_r_ankle_RotationInterpolator";
+ROUTE2376.toField = "set_rotation";
+ROUTE2376.toNode = "hanim_r_ankle";
+children[156] = ROUTE2376;
+
+ROUTE ROUTE2377 = createNode("ROUTE");
+ROUTE2377.fromField = "value_changed";
+ROUTE2377.fromNode = "Stand_r_knee_RotationInterpolator";
+ROUTE2377.toField = "set_rotation";
+ROUTE2377.toNode = "hanim_r_knee";
+children[157] = ROUTE2377;
+
+ROUTE ROUTE2378 = createNode("ROUTE");
+ROUTE2378.fromField = "value_changed";
+ROUTE2378.fromNode = "Stand_r_hip_RotationInterpolator";
+ROUTE2378.toField = "set_rotation";
+ROUTE2378.toNode = "hanim_r_hip";
+children[158] = ROUTE2378;
+
+ROUTE ROUTE2379 = createNode("ROUTE");
+ROUTE2379.fromField = "value_changed";
+ROUTE2379.fromNode = "Stand_l_ankle_RotationInterpolator";
+ROUTE2379.toField = "set_rotation";
+ROUTE2379.toNode = "hanim_l_ankle";
+children[159] = ROUTE2379;
+
+ROUTE ROUTE2380 = createNode("ROUTE");
+ROUTE2380.fromField = "value_changed";
+ROUTE2380.fromNode = "Stand_l_knee_RotationInterpolator";
+ROUTE2380.toField = "set_rotation";
+ROUTE2380.toNode = "hanim_l_knee";
+children[160] = ROUTE2380;
+
+ROUTE ROUTE2381 = createNode("ROUTE");
+ROUTE2381.fromField = "value_changed";
+ROUTE2381.fromNode = "Stand_l_hip_RotationInterpolator";
+ROUTE2381.toField = "set_rotation";
+ROUTE2381.toNode = "hanim_l_hip";
+children[161] = ROUTE2381;
+
+ROUTE ROUTE2382 = createNode("ROUTE");
+ROUTE2382.fromField = "value_changed";
+ROUTE2382.fromNode = "Stand_r_wrist_RotationInterpolator";
+ROUTE2382.toField = "set_rotation";
+ROUTE2382.toNode = "hanim_r_wrist";
+children[162] = ROUTE2382;
+
+ROUTE ROUTE2383 = createNode("ROUTE");
+ROUTE2383.fromField = "value_changed";
+ROUTE2383.fromNode = "Stand_r_elbow_RotationInterpolator";
+ROUTE2383.toField = "set_rotation";
+ROUTE2383.toNode = "hanim_r_elbow";
+children[163] = ROUTE2383;
+
+ROUTE ROUTE2384 = createNode("ROUTE");
+ROUTE2384.fromField = "value_changed";
+ROUTE2384.fromNode = "Stand_r_shoulder_RotationInterpolator";
+ROUTE2384.toField = "set_rotation";
+ROUTE2384.toNode = "hanim_r_shoulder";
+children[164] = ROUTE2384;
+
+ROUTE ROUTE2385 = createNode("ROUTE");
+ROUTE2385.fromField = "value_changed";
+ROUTE2385.fromNode = "Stand_l_wrist_RotationInterpolator";
+ROUTE2385.toField = "set_rotation";
+ROUTE2385.toNode = "hanim_l_wrist";
+children[165] = ROUTE2385;
+
+ROUTE ROUTE2386 = createNode("ROUTE");
+ROUTE2386.fromField = "value_changed";
+ROUTE2386.fromNode = "Stand_l_elbow_RotationInterpolator";
+ROUTE2386.toField = "set_rotation";
+ROUTE2386.toNode = "hanim_l_elbow";
+children[166] = ROUTE2386;
+
+ROUTE ROUTE2387 = createNode("ROUTE");
+ROUTE2387.fromField = "value_changed";
+ROUTE2387.fromNode = "Stand_l_shoulder_RotationInterpolator";
+ROUTE2387.toField = "set_rotation";
+ROUTE2387.toNode = "hanim_l_shoulder";
+children[167] = ROUTE2387;
+
+ROUTE ROUTE2388 = createNode("ROUTE");
+ROUTE2388.fromField = "value_changed";
+ROUTE2388.fromNode = "Stand_head_RotationInterpolator";
+ROUTE2388.toField = "set_rotation";
+ROUTE2388.toNode = "hanim_skullbase";
+children[168] = ROUTE2388;
+
+ROUTE ROUTE2389 = createNode("ROUTE");
+ROUTE2389.fromField = "value_changed";
+ROUTE2389.fromNode = "Stand_whole_body_RotationInterpolator";
+ROUTE2389.toField = "set_rotation";
+ROUTE2389.toNode = "hanim_humanoid_root";
+children[169] = ROUTE2389;
+
+ROUTE ROUTE2390 = createNode("ROUTE");
+ROUTE2390.fromField = "value_changed";
+ROUTE2390.fromNode = "Stand_whole_body_TranslationInterpolator";
+ROUTE2390.toField = "set_translation";
+ROUTE2390.toNode = "hanim_humanoid_root";
+children[170] = ROUTE2390;
+
+ROUTE ROUTE2391 = createNode("ROUTE");
+ROUTE2391.fromField = "value_changed";
+ROUTE2391.fromNode = "Stand_vl5_YawInterpolator";
+ROUTE2391.toField = "set_rotation";
+ROUTE2391.toNode = "hanim_vl5";
+children[171] = ROUTE2391;
+
+ROUTE ROUTE2392 = createNode("ROUTE");
+ROUTE2392.fromField = "fraction_changed";
+ROUTE2392.fromNode = "PitchTimer";
+ROUTE2392.toField = "set_fraction";
+ROUTE2392.toNode = "Pitches_r_ankle_RotationInterpolator";
+children[172] = ROUTE2392;
+
+ROUTE ROUTE2393 = createNode("ROUTE");
+ROUTE2393.fromField = "fraction_changed";
+ROUTE2393.fromNode = "PitchTimer";
+ROUTE2393.toField = "set_fraction";
+ROUTE2393.toNode = "Pitches_r_knee_RotationInterpolator";
+children[173] = ROUTE2393;
+
+ROUTE ROUTE2394 = createNode("ROUTE");
+ROUTE2394.fromField = "fraction_changed";
+ROUTE2394.fromNode = "PitchTimer";
+ROUTE2394.toField = "set_fraction";
+ROUTE2394.toNode = "Pitches_r_hip_RotationInterpolator";
+children[174] = ROUTE2394;
+
+ROUTE ROUTE2395 = createNode("ROUTE");
+ROUTE2395.fromField = "fraction_changed";
+ROUTE2395.fromNode = "PitchTimer";
+ROUTE2395.toField = "set_fraction";
+ROUTE2395.toNode = "Pitches_l_ankle_RotationInterpolator";
+children[175] = ROUTE2395;
+
+ROUTE ROUTE2396 = createNode("ROUTE");
+ROUTE2396.fromField = "fraction_changed";
+ROUTE2396.fromNode = "PitchTimer";
+ROUTE2396.toField = "set_fraction";
+ROUTE2396.toNode = "Pitches_l_knee_RotationInterpolator";
+children[176] = ROUTE2396;
+
+ROUTE ROUTE2397 = createNode("ROUTE");
+ROUTE2397.fromField = "fraction_changed";
+ROUTE2397.fromNode = "PitchTimer";
+ROUTE2397.toField = "set_fraction";
+ROUTE2397.toNode = "Pitches_l_hip_RotationInterpolator";
+children[177] = ROUTE2397;
+
+ROUTE ROUTE2398 = createNode("ROUTE");
+ROUTE2398.fromField = "fraction_changed";
+ROUTE2398.fromNode = "PitchTimer";
+ROUTE2398.toField = "set_fraction";
+ROUTE2398.toNode = "Pitches_lower_body_RotationInterpolator";
+children[178] = ROUTE2398;
+
+ROUTE ROUTE2399 = createNode("ROUTE");
+ROUTE2399.fromField = "fraction_changed";
+ROUTE2399.fromNode = "PitchTimer";
+ROUTE2399.toField = "set_fraction";
+ROUTE2399.toNode = "Pitches_r_wrist_RotationInterpolator";
+children[179] = ROUTE2399;
+
+ROUTE ROUTE2400 = createNode("ROUTE");
+ROUTE2400.fromField = "fraction_changed";
+ROUTE2400.fromNode = "PitchTimer";
+ROUTE2400.toField = "set_fraction";
+ROUTE2400.toNode = "Pitches_r_elbow_RotationInterpolator";
+children[180] = ROUTE2400;
+
+ROUTE ROUTE2401 = createNode("ROUTE");
+ROUTE2401.fromField = "fraction_changed";
+ROUTE2401.fromNode = "PitchTimer";
+ROUTE2401.toField = "set_fraction";
+ROUTE2401.toNode = "Pitches_r_shoulder_RotationInterpolator";
+children[181] = ROUTE2401;
+
+ROUTE ROUTE2402 = createNode("ROUTE");
+ROUTE2402.fromField = "fraction_changed";
+ROUTE2402.fromNode = "PitchTimer";
+ROUTE2402.toField = "set_fraction";
+ROUTE2402.toNode = "Pitches_l_wrist_RotationInterpolator";
+children[182] = ROUTE2402;
+
+ROUTE ROUTE2403 = createNode("ROUTE");
+ROUTE2403.fromField = "fraction_changed";
+ROUTE2403.fromNode = "PitchTimer";
+ROUTE2403.toField = "set_fraction";
+ROUTE2403.toNode = "Pitches_l_elbow_RotationInterpolator";
+children[183] = ROUTE2403;
+
+ROUTE ROUTE2404 = createNode("ROUTE");
+ROUTE2404.fromField = "fraction_changed";
+ROUTE2404.fromNode = "PitchTimer";
+ROUTE2404.toField = "set_fraction";
+ROUTE2404.toNode = "Pitches_l_shoulder_RotationInterpolator";
+children[184] = ROUTE2404;
+
+ROUTE ROUTE2405 = createNode("ROUTE");
+ROUTE2405.fromField = "fraction_changed";
+ROUTE2405.fromNode = "PitchTimer";
+ROUTE2405.toField = "set_fraction";
+ROUTE2405.toNode = "Pitches_head_RotationInterpolator";
+children[185] = ROUTE2405;
+
+ROUTE ROUTE2406 = createNode("ROUTE");
+ROUTE2406.fromField = "fraction_changed";
+ROUTE2406.fromNode = "PitchTimer";
+ROUTE2406.toField = "set_fraction";
+ROUTE2406.toNode = "Pitches_neck_RotationInterpolator";
+children[186] = ROUTE2406;
+
+ROUTE ROUTE2407 = createNode("ROUTE");
+ROUTE2407.fromField = "fraction_changed";
+ROUTE2407.fromNode = "PitchTimer";
+ROUTE2407.toField = "set_fraction";
+ROUTE2407.toNode = "Pitches_upper_body_RotationInterpolator";
+children[187] = ROUTE2407;
+
+ROUTE ROUTE2408 = createNode("ROUTE");
+ROUTE2408.fromField = "fraction_changed";
+ROUTE2408.fromNode = "PitchTimer";
+ROUTE2408.toField = "set_fraction";
+ROUTE2408.toNode = "Pitches_whole_body_RotationInterpolator";
+children[188] = ROUTE2408;
+
+ROUTE ROUTE2409 = createNode("ROUTE");
+ROUTE2409.fromField = "fraction_changed";
+ROUTE2409.fromNode = "PitchTimer";
+ROUTE2409.toField = "set_fraction";
+ROUTE2409.toNode = "Pitches_whole_body_TranslationInterpolator";
+children[189] = ROUTE2409;
+
+ROUTE ROUTE2410 = createNode("ROUTE");
+ROUTE2410.fromField = "fraction_changed";
+ROUTE2410.fromNode = "PitchTimer";
+ROUTE2410.toField = "set_fraction";
+ROUTE2410.toNode = "Pitch_l_sternoclavicular_RollInterpolator";
+children[190] = ROUTE2410;
+
+ROUTE ROUTE2411 = createNode("ROUTE");
+ROUTE2411.fromField = "fraction_changed";
+ROUTE2411.fromNode = "PitchTimer";
+ROUTE2411.toField = "set_fraction";
+ROUTE2411.toNode = "Pitch_l_acromioclavicular_RollInterpolator";
+children[191] = ROUTE2411;
+
+ROUTE ROUTE2412 = createNode("ROUTE");
+ROUTE2412.fromField = "fraction_changed";
+ROUTE2412.fromNode = "PitchTimer";
+ROUTE2412.toField = "set_fraction";
+ROUTE2412.toNode = "Pitch_r_sternoclavicular_RollInterpolator";
+children[192] = ROUTE2412;
+
+ROUTE ROUTE2413 = createNode("ROUTE");
+ROUTE2413.fromField = "fraction_changed";
+ROUTE2413.fromNode = "PitchTimer";
+ROUTE2413.toField = "set_fraction";
+ROUTE2413.toNode = "Pitch_r_acromioclavicular_RollInterpolator";
+children[193] = ROUTE2413;
+
+ROUTE ROUTE2414 = createNode("ROUTE");
+ROUTE2414.fromField = "fraction_changed";
+ROUTE2414.fromNode = "PitchTimer";
+ROUTE2414.toField = "set_fraction";
+ROUTE2414.toNode = "Pitch_r_metatarsal_PitchInterpolator";
+children[194] = ROUTE2414;
+
+ROUTE ROUTE2415 = createNode("ROUTE");
+ROUTE2415.fromField = "fraction_changed";
+ROUTE2415.fromNode = "PitchTimer";
+ROUTE2415.toField = "set_fraction";
+ROUTE2415.toNode = "Pitch_sacroiliac_YawInterpolator";
+children[195] = ROUTE2415;
+
+ROUTE ROUTE2416 = createNode("ROUTE");
+ROUTE2416.fromField = "fraction_changed";
+ROUTE2416.fromNode = "PitchTimer";
+ROUTE2416.toField = "set_fraction";
+ROUTE2416.toNode = "Pitch_vl5_YawInterpolator";
+children[196] = ROUTE2416;
+
+ROUTE ROUTE2417 = createNode("ROUTE");
+ROUTE2417.fromField = "fraction_changed";
+ROUTE2417.fromNode = "PitchTimer";
+ROUTE2417.toField = "set_fraction";
+ROUTE2417.toNode = "Pitch_vc6_YawInterpolator";
+children[197] = ROUTE2417;
+
+ROUTE ROUTE2418 = createNode("ROUTE");
+ROUTE2418.fromField = "fraction_changed";
+ROUTE2418.fromNode = "PitchTimer";
+ROUTE2418.toField = "set_fraction";
+ROUTE2418.toNode = "Pitch_l_thumb1_PitchInterpolator";
+children[198] = ROUTE2418;
+
+ROUTE ROUTE2419 = createNode("ROUTE");
+ROUTE2419.fromField = "fraction_changed";
+ROUTE2419.fromNode = "PitchTimer";
+ROUTE2419.toField = "set_fraction";
+ROUTE2419.toNode = "Pitch_r_thumb1_PitchInterpolator";
+children[199] = ROUTE2419;
+
+ROUTE ROUTE2420 = createNode("ROUTE");
+ROUTE2420.fromField = "value_changed";
+ROUTE2420.fromNode = "Pitches_r_ankle_RotationInterpolator";
+ROUTE2420.toField = "set_rotation";
+ROUTE2420.toNode = "hanim_r_ankle";
+children[200] = ROUTE2420;
+
+ROUTE ROUTE2421 = createNode("ROUTE");
+ROUTE2421.fromField = "value_changed";
+ROUTE2421.fromNode = "Pitches_r_knee_RotationInterpolator";
+ROUTE2421.toField = "set_rotation";
+ROUTE2421.toNode = "hanim_r_knee";
+children[201] = ROUTE2421;
+
+ROUTE ROUTE2422 = createNode("ROUTE");
+ROUTE2422.fromField = "value_changed";
+ROUTE2422.fromNode = "Pitches_r_hip_RotationInterpolator";
+ROUTE2422.toField = "set_rotation";
+ROUTE2422.toNode = "hanim_r_hip";
+children[202] = ROUTE2422;
+
+ROUTE ROUTE2423 = createNode("ROUTE");
+ROUTE2423.fromField = "value_changed";
+ROUTE2423.fromNode = "Pitches_l_ankle_RotationInterpolator";
+ROUTE2423.toField = "set_rotation";
+ROUTE2423.toNode = "hanim_l_ankle";
+children[203] = ROUTE2423;
+
+ROUTE ROUTE2424 = createNode("ROUTE");
+ROUTE2424.fromField = "value_changed";
+ROUTE2424.fromNode = "Pitches_l_knee_RotationInterpolator";
+ROUTE2424.toField = "set_rotation";
+ROUTE2424.toNode = "hanim_l_knee";
+children[204] = ROUTE2424;
+
+ROUTE ROUTE2425 = createNode("ROUTE");
+ROUTE2425.fromField = "value_changed";
+ROUTE2425.fromNode = "Pitches_l_hip_RotationInterpolator";
+ROUTE2425.toField = "set_rotation";
+ROUTE2425.toNode = "hanim_l_hip";
+children[205] = ROUTE2425;
+
+ROUTE ROUTE2426 = createNode("ROUTE");
+ROUTE2426.fromField = "value_changed";
+ROUTE2426.fromNode = "Pitches_r_wrist_RotationInterpolator";
+ROUTE2426.toField = "set_rotation";
+ROUTE2426.toNode = "hanim_r_wrist";
+children[206] = ROUTE2426;
+
+ROUTE ROUTE2427 = createNode("ROUTE");
+ROUTE2427.fromField = "value_changed";
+ROUTE2427.fromNode = "Pitches_r_elbow_RotationInterpolator";
+ROUTE2427.toField = "set_rotation";
+ROUTE2427.toNode = "hanim_r_elbow";
+children[207] = ROUTE2427;
+
+ROUTE ROUTE2428 = createNode("ROUTE");
+ROUTE2428.fromField = "value_changed";
+ROUTE2428.fromNode = "Pitches_r_shoulder_RotationInterpolator";
+ROUTE2428.toField = "set_rotation";
+ROUTE2428.toNode = "hanim_r_shoulder";
+children[208] = ROUTE2428;
+
+ROUTE ROUTE2429 = createNode("ROUTE");
+ROUTE2429.fromField = "value_changed";
+ROUTE2429.fromNode = "Pitches_l_wrist_RotationInterpolator";
+ROUTE2429.toField = "set_rotation";
+ROUTE2429.toNode = "hanim_l_wrist";
+children[209] = ROUTE2429;
+
+ROUTE ROUTE2430 = createNode("ROUTE");
+ROUTE2430.fromField = "value_changed";
+ROUTE2430.fromNode = "Pitches_l_elbow_RotationInterpolator";
+ROUTE2430.toField = "set_rotation";
+ROUTE2430.toNode = "hanim_l_elbow";
+children[210] = ROUTE2430;
+
+ROUTE ROUTE2431 = createNode("ROUTE");
+ROUTE2431.fromField = "value_changed";
+ROUTE2431.fromNode = "Pitches_l_shoulder_RotationInterpolator";
+ROUTE2431.toField = "set_rotation";
+ROUTE2431.toNode = "hanim_l_shoulder";
+children[211] = ROUTE2431;
+
+ROUTE ROUTE2432 = createNode("ROUTE");
+ROUTE2432.fromField = "value_changed";
+ROUTE2432.fromNode = "Pitches_head_RotationInterpolator";
+ROUTE2432.toField = "set_rotation";
+ROUTE2432.toNode = "hanim_skullbase";
+children[212] = ROUTE2432;
+
+ROUTE ROUTE2433 = createNode("ROUTE");
+ROUTE2433.fromField = "value_changed";
+ROUTE2433.fromNode = "Pitches_whole_body_RotationInterpolator";
+ROUTE2433.toField = "set_rotation";
+ROUTE2433.toNode = "hanim_humanoid_root";
+children[213] = ROUTE2433;
+
+ROUTE ROUTE2434 = createNode("ROUTE");
+ROUTE2434.fromField = "value_changed";
+ROUTE2434.fromNode = "Pitches_whole_body_TranslationInterpolator";
+ROUTE2434.toField = "set_translation";
+ROUTE2434.toNode = "hanim_humanoid_root";
+children[214] = ROUTE2434;
+
+ROUTE ROUTE2435 = createNode("ROUTE");
+ROUTE2435.fromField = "value_changed";
+ROUTE2435.fromNode = "Pitch_vl5_YawInterpolator";
+ROUTE2435.toField = "set_rotation";
+ROUTE2435.toNode = "hanim_vl5";
+children[215] = ROUTE2435;
+
+ROUTE ROUTE2436 = createNode("ROUTE");
+ROUTE2436.fromField = "fraction_changed";
+ROUTE2436.fromNode = "YawTimer";
+ROUTE2436.toField = "set_fraction";
+ROUTE2436.toNode = "Yaws_r_ankle_RotationInterpolator";
+children[216] = ROUTE2436;
+
+ROUTE ROUTE2437 = createNode("ROUTE");
+ROUTE2437.fromField = "fraction_changed";
+ROUTE2437.fromNode = "YawTimer";
+ROUTE2437.toField = "set_fraction";
+ROUTE2437.toNode = "Yaws_r_knee_RotationInterpolator";
+children[217] = ROUTE2437;
+
+ROUTE ROUTE2438 = createNode("ROUTE");
+ROUTE2438.fromField = "fraction_changed";
+ROUTE2438.fromNode = "YawTimer";
+ROUTE2438.toField = "set_fraction";
+ROUTE2438.toNode = "Yaws_r_hip_RotationInterpolator";
+children[218] = ROUTE2438;
+
+ROUTE ROUTE2439 = createNode("ROUTE");
+ROUTE2439.fromField = "fraction_changed";
+ROUTE2439.fromNode = "YawTimer";
+ROUTE2439.toField = "set_fraction";
+ROUTE2439.toNode = "Yaws_l_ankle_RotationInterpolator";
+children[219] = ROUTE2439;
+
+ROUTE ROUTE2440 = createNode("ROUTE");
+ROUTE2440.fromField = "fraction_changed";
+ROUTE2440.fromNode = "YawTimer";
+ROUTE2440.toField = "set_fraction";
+ROUTE2440.toNode = "Yaws_l_knee_RotationInterpolator";
+children[220] = ROUTE2440;
+
+ROUTE ROUTE2441 = createNode("ROUTE");
+ROUTE2441.fromField = "fraction_changed";
+ROUTE2441.fromNode = "YawTimer";
+ROUTE2441.toField = "set_fraction";
+ROUTE2441.toNode = "Yaws_l_hip_RotationInterpolator";
+children[221] = ROUTE2441;
+
+ROUTE ROUTE2442 = createNode("ROUTE");
+ROUTE2442.fromField = "fraction_changed";
+ROUTE2442.fromNode = "YawTimer";
+ROUTE2442.toField = "set_fraction";
+ROUTE2442.toNode = "Yaws_lower_body_RotationInterpolator";
+children[222] = ROUTE2442;
+
+ROUTE ROUTE2443 = createNode("ROUTE");
+ROUTE2443.fromField = "fraction_changed";
+ROUTE2443.fromNode = "YawTimer";
+ROUTE2443.toField = "set_fraction";
+ROUTE2443.toNode = "Yaws_r_wrist_RotationInterpolator";
+children[223] = ROUTE2443;
+
+ROUTE ROUTE2444 = createNode("ROUTE");
+ROUTE2444.fromField = "fraction_changed";
+ROUTE2444.fromNode = "YawTimer";
+ROUTE2444.toField = "set_fraction";
+ROUTE2444.toNode = "Yaws_r_elbow_RotationInterpolator";
+children[224] = ROUTE2444;
+
+ROUTE ROUTE2445 = createNode("ROUTE");
+ROUTE2445.fromField = "fraction_changed";
+ROUTE2445.fromNode = "YawTimer";
+ROUTE2445.toField = "set_fraction";
+ROUTE2445.toNode = "Yaws_r_shoulder_RotationInterpolator";
+children[225] = ROUTE2445;
+
+ROUTE ROUTE2446 = createNode("ROUTE");
+ROUTE2446.fromField = "fraction_changed";
+ROUTE2446.fromNode = "YawTimer";
+ROUTE2446.toField = "set_fraction";
+ROUTE2446.toNode = "Yaws_l_wrist_RotationInterpolator";
+children[226] = ROUTE2446;
+
+ROUTE ROUTE2447 = createNode("ROUTE");
+ROUTE2447.fromField = "fraction_changed";
+ROUTE2447.fromNode = "YawTimer";
+ROUTE2447.toField = "set_fraction";
+ROUTE2447.toNode = "Yaws_l_elbow_RotationInterpolator";
+children[227] = ROUTE2447;
+
+ROUTE ROUTE2448 = createNode("ROUTE");
+ROUTE2448.fromField = "fraction_changed";
+ROUTE2448.fromNode = "YawTimer";
+ROUTE2448.toField = "set_fraction";
+ROUTE2448.toNode = "Yaws_l_shoulder_RotationInterpolator";
+children[228] = ROUTE2448;
+
+ROUTE ROUTE2449 = createNode("ROUTE");
+ROUTE2449.fromField = "fraction_changed";
+ROUTE2449.fromNode = "YawTimer";
+ROUTE2449.toField = "set_fraction";
+ROUTE2449.toNode = "Yaws_head_RotationInterpolator";
+children[229] = ROUTE2449;
+
+ROUTE ROUTE2450 = createNode("ROUTE");
+ROUTE2450.fromField = "fraction_changed";
+ROUTE2450.fromNode = "YawTimer";
+ROUTE2450.toField = "set_fraction";
+ROUTE2450.toNode = "Yaws_neck_RotationInterpolator";
+children[230] = ROUTE2450;
+
+ROUTE ROUTE2451 = createNode("ROUTE");
+ROUTE2451.fromField = "fraction_changed";
+ROUTE2451.fromNode = "YawTimer";
+ROUTE2451.toField = "set_fraction";
+ROUTE2451.toNode = "Yaws_upper_body_RotationInterpolator";
+children[231] = ROUTE2451;
+
+ROUTE ROUTE2452 = createNode("ROUTE");
+ROUTE2452.fromField = "fraction_changed";
+ROUTE2452.fromNode = "YawTimer";
+ROUTE2452.toField = "set_fraction";
+ROUTE2452.toNode = "Yaws_whole_body_RotationInterpolator";
+children[232] = ROUTE2452;
+
+ROUTE ROUTE2453 = createNode("ROUTE");
+ROUTE2453.fromField = "fraction_changed";
+ROUTE2453.fromNode = "YawTimer";
+ROUTE2453.toField = "set_fraction";
+ROUTE2453.toNode = "Yaws_whole_body_TranslationInterpolator";
+children[233] = ROUTE2453;
+
+ROUTE ROUTE2454 = createNode("ROUTE");
+ROUTE2454.fromField = "fraction_changed";
+ROUTE2454.fromNode = "YawTimer";
+ROUTE2454.toField = "set_fraction";
+ROUTE2454.toNode = "Yaw_l_sternoclavicular_RollInterpolator";
+children[234] = ROUTE2454;
+
+ROUTE ROUTE2455 = createNode("ROUTE");
+ROUTE2455.fromField = "fraction_changed";
+ROUTE2455.fromNode = "YawTimer";
+ROUTE2455.toField = "set_fraction";
+ROUTE2455.toNode = "Yaw_l_acromioclavicular_RollInterpolator";
+children[235] = ROUTE2455;
+
+ROUTE ROUTE2456 = createNode("ROUTE");
+ROUTE2456.fromField = "fraction_changed";
+ROUTE2456.fromNode = "YawTimer";
+ROUTE2456.toField = "set_fraction";
+ROUTE2456.toNode = "Yaw_r_sternoclavicular_RollInterpolator";
+children[236] = ROUTE2456;
+
+ROUTE ROUTE2457 = createNode("ROUTE");
+ROUTE2457.fromField = "fraction_changed";
+ROUTE2457.fromNode = "YawTimer";
+ROUTE2457.toField = "set_fraction";
+ROUTE2457.toNode = "Yaw_r_acromioclavicular_RollInterpolator";
+children[237] = ROUTE2457;
+
+ROUTE ROUTE2458 = createNode("ROUTE");
+ROUTE2458.fromField = "fraction_changed";
+ROUTE2458.fromNode = "YawTimer";
+ROUTE2458.toField = "set_fraction";
+ROUTE2458.toNode = "Yaw_r_metatarsal_PitchInterpolator";
+children[238] = ROUTE2458;
+
+ROUTE ROUTE2459 = createNode("ROUTE");
+ROUTE2459.fromField = "fraction_changed";
+ROUTE2459.fromNode = "YawTimer";
+ROUTE2459.toField = "set_fraction";
+ROUTE2459.toNode = "Yaw_sacroiliac_YawInterpolator";
+children[239] = ROUTE2459;
+
+ROUTE ROUTE2460 = createNode("ROUTE");
+ROUTE2460.fromField = "fraction_changed";
+ROUTE2460.fromNode = "YawTimer";
+ROUTE2460.toField = "set_fraction";
+ROUTE2460.toNode = "Yaw_vl5_YawInterpolator";
+children[240] = ROUTE2460;
+
+ROUTE ROUTE2461 = createNode("ROUTE");
+ROUTE2461.fromField = "fraction_changed";
+ROUTE2461.fromNode = "YawTimer";
+ROUTE2461.toField = "set_fraction";
+ROUTE2461.toNode = "Yaw_vc6_YawInterpolator";
+children[241] = ROUTE2461;
+
+ROUTE ROUTE2462 = createNode("ROUTE");
+ROUTE2462.fromField = "fraction_changed";
+ROUTE2462.fromNode = "YawTimer";
+ROUTE2462.toField = "set_fraction";
+ROUTE2462.toNode = "Yaw_l_thumb1_PitchInterpolator";
+children[242] = ROUTE2462;
+
+ROUTE ROUTE2463 = createNode("ROUTE");
+ROUTE2463.fromField = "fraction_changed";
+ROUTE2463.fromNode = "YawTimer";
+ROUTE2463.toField = "set_fraction";
+ROUTE2463.toNode = "Yaw_r_thumb1_PitchInterpolator";
+children[243] = ROUTE2463;
+
+ROUTE ROUTE2464 = createNode("ROUTE");
+ROUTE2464.fromField = "value_changed";
+ROUTE2464.fromNode = "Yaws_r_ankle_RotationInterpolator";
+ROUTE2464.toField = "set_rotation";
+ROUTE2464.toNode = "hanim_r_ankle";
+children[244] = ROUTE2464;
+
+ROUTE ROUTE2465 = createNode("ROUTE");
+ROUTE2465.fromField = "value_changed";
+ROUTE2465.fromNode = "Yaws_r_knee_RotationInterpolator";
+ROUTE2465.toField = "set_rotation";
+ROUTE2465.toNode = "hanim_r_knee";
+children[245] = ROUTE2465;
+
+ROUTE ROUTE2466 = createNode("ROUTE");
+ROUTE2466.fromField = "value_changed";
+ROUTE2466.fromNode = "Yaws_r_hip_RotationInterpolator";
+ROUTE2466.toField = "set_rotation";
+ROUTE2466.toNode = "hanim_r_hip";
+children[246] = ROUTE2466;
+
+ROUTE ROUTE2467 = createNode("ROUTE");
+ROUTE2467.fromField = "value_changed";
+ROUTE2467.fromNode = "Yaws_l_ankle_RotationInterpolator";
+ROUTE2467.toField = "set_rotation";
+ROUTE2467.toNode = "hanim_l_ankle";
+children[247] = ROUTE2467;
+
+ROUTE ROUTE2468 = createNode("ROUTE");
+ROUTE2468.fromField = "value_changed";
+ROUTE2468.fromNode = "Yaws_l_knee_RotationInterpolator";
+ROUTE2468.toField = "set_rotation";
+ROUTE2468.toNode = "hanim_l_knee";
+children[248] = ROUTE2468;
+
+ROUTE ROUTE2469 = createNode("ROUTE");
+ROUTE2469.fromField = "value_changed";
+ROUTE2469.fromNode = "Yaws_l_hip_RotationInterpolator";
+ROUTE2469.toField = "set_rotation";
+ROUTE2469.toNode = "hanim_l_hip";
+children[249] = ROUTE2469;
+
+ROUTE ROUTE2470 = createNode("ROUTE");
+ROUTE2470.fromField = "value_changed";
+ROUTE2470.fromNode = "Yaws_r_wrist_RotationInterpolator";
+ROUTE2470.toField = "set_rotation";
+ROUTE2470.toNode = "hanim_r_wrist";
+children[250] = ROUTE2470;
+
+ROUTE ROUTE2471 = createNode("ROUTE");
+ROUTE2471.fromField = "value_changed";
+ROUTE2471.fromNode = "Yaws_r_elbow_RotationInterpolator";
+ROUTE2471.toField = "set_rotation";
+ROUTE2471.toNode = "hanim_r_elbow";
+children[251] = ROUTE2471;
+
+ROUTE ROUTE2472 = createNode("ROUTE");
+ROUTE2472.fromField = "value_changed";
+ROUTE2472.fromNode = "Yaws_r_shoulder_RotationInterpolator";
+ROUTE2472.toField = "set_rotation";
+ROUTE2472.toNode = "hanim_r_shoulder";
+children[252] = ROUTE2472;
+
+ROUTE ROUTE2473 = createNode("ROUTE");
+ROUTE2473.fromField = "value_changed";
+ROUTE2473.fromNode = "Yaws_l_wrist_RotationInterpolator";
+ROUTE2473.toField = "set_rotation";
+ROUTE2473.toNode = "hanim_l_wrist";
+children[253] = ROUTE2473;
+
+ROUTE ROUTE2474 = createNode("ROUTE");
+ROUTE2474.fromField = "value_changed";
+ROUTE2474.fromNode = "Yaws_l_elbow_RotationInterpolator";
+ROUTE2474.toField = "set_rotation";
+ROUTE2474.toNode = "hanim_l_elbow";
+children[254] = ROUTE2474;
+
+ROUTE ROUTE2475 = createNode("ROUTE");
+ROUTE2475.fromField = "value_changed";
+ROUTE2475.fromNode = "Yaws_l_shoulder_RotationInterpolator";
+ROUTE2475.toField = "set_rotation";
+ROUTE2475.toNode = "hanim_l_shoulder";
+children[255] = ROUTE2475;
+
+ROUTE ROUTE2476 = createNode("ROUTE");
+ROUTE2476.fromField = "value_changed";
+ROUTE2476.fromNode = "Yaws_head_RotationInterpolator";
+ROUTE2476.toField = "set_rotation";
+ROUTE2476.toNode = "hanim_skullbase";
+children[256] = ROUTE2476;
+
+ROUTE ROUTE2477 = createNode("ROUTE");
+ROUTE2477.fromField = "value_changed";
+ROUTE2477.fromNode = "Yaws_whole_body_RotationInterpolator";
+ROUTE2477.toField = "set_rotation";
+ROUTE2477.toNode = "hanim_humanoid_root";
+children[257] = ROUTE2477;
+
+ROUTE ROUTE2478 = createNode("ROUTE");
+ROUTE2478.fromField = "value_changed";
+ROUTE2478.fromNode = "Yaws_whole_body_TranslationInterpolator";
+ROUTE2478.toField = "set_translation";
+ROUTE2478.toNode = "hanim_humanoid_root";
+children[258] = ROUTE2478;
+
+ROUTE ROUTE2479 = createNode("ROUTE");
+ROUTE2479.fromField = "value_changed";
+ROUTE2479.fromNode = "Yaw_vl5_YawInterpolator";
+ROUTE2479.toField = "set_rotation";
+ROUTE2479.toNode = "hanim_vl5";
+children[259] = ROUTE2479;
+
+ROUTE ROUTE2480 = createNode("ROUTE");
+ROUTE2480.fromField = "fraction_changed";
+ROUTE2480.fromNode = "RollTimer";
+ROUTE2480.toField = "set_fraction";
+ROUTE2480.toNode = "Rolls_r_ankle_RotationInterpolator";
+children[260] = ROUTE2480;
+
+ROUTE ROUTE2481 = createNode("ROUTE");
+ROUTE2481.fromField = "fraction_changed";
+ROUTE2481.fromNode = "RollTimer";
+ROUTE2481.toField = "set_fraction";
+ROUTE2481.toNode = "Rolls_r_knee_RotationInterpolator";
+children[261] = ROUTE2481;
+
+ROUTE ROUTE2482 = createNode("ROUTE");
+ROUTE2482.fromField = "fraction_changed";
+ROUTE2482.fromNode = "RollTimer";
+ROUTE2482.toField = "set_fraction";
+ROUTE2482.toNode = "Rolls_r_hip_RotationInterpolator";
+children[262] = ROUTE2482;
+
+ROUTE ROUTE2483 = createNode("ROUTE");
+ROUTE2483.fromField = "fraction_changed";
+ROUTE2483.fromNode = "RollTimer";
+ROUTE2483.toField = "set_fraction";
+ROUTE2483.toNode = "Rolls_l_ankle_RotationInterpolator";
+children[263] = ROUTE2483;
+
+ROUTE ROUTE2484 = createNode("ROUTE");
+ROUTE2484.fromField = "fraction_changed";
+ROUTE2484.fromNode = "RollTimer";
+ROUTE2484.toField = "set_fraction";
+ROUTE2484.toNode = "Rolls_l_knee_RotationInterpolator";
+children[264] = ROUTE2484;
+
+ROUTE ROUTE2485 = createNode("ROUTE");
+ROUTE2485.fromField = "fraction_changed";
+ROUTE2485.fromNode = "RollTimer";
+ROUTE2485.toField = "set_fraction";
+ROUTE2485.toNode = "Rolls_l_hip_RotationInterpolator";
+children[265] = ROUTE2485;
+
+ROUTE ROUTE2486 = createNode("ROUTE");
+ROUTE2486.fromField = "fraction_changed";
+ROUTE2486.fromNode = "RollTimer";
+ROUTE2486.toField = "set_fraction";
+ROUTE2486.toNode = "Rolls_lower_body_RotationInterpolator";
+children[266] = ROUTE2486;
+
+ROUTE ROUTE2487 = createNode("ROUTE");
+ROUTE2487.fromField = "fraction_changed";
+ROUTE2487.fromNode = "RollTimer";
+ROUTE2487.toField = "set_fraction";
+ROUTE2487.toNode = "Rolls_r_wrist_RotationInterpolator";
+children[267] = ROUTE2487;
+
+ROUTE ROUTE2488 = createNode("ROUTE");
+ROUTE2488.fromField = "fraction_changed";
+ROUTE2488.fromNode = "RollTimer";
+ROUTE2488.toField = "set_fraction";
+ROUTE2488.toNode = "Rolls_r_elbow_RotationInterpolator";
+children[268] = ROUTE2488;
+
+ROUTE ROUTE2489 = createNode("ROUTE");
+ROUTE2489.fromField = "fraction_changed";
+ROUTE2489.fromNode = "RollTimer";
+ROUTE2489.toField = "set_fraction";
+ROUTE2489.toNode = "Rolls_r_shoulder_RotationInterpolator";
+children[269] = ROUTE2489;
+
+ROUTE ROUTE2490 = createNode("ROUTE");
+ROUTE2490.fromField = "fraction_changed";
+ROUTE2490.fromNode = "RollTimer";
+ROUTE2490.toField = "set_fraction";
+ROUTE2490.toNode = "Rolls_l_wrist_RotationInterpolator";
+children[270] = ROUTE2490;
+
+ROUTE ROUTE2491 = createNode("ROUTE");
+ROUTE2491.fromField = "fraction_changed";
+ROUTE2491.fromNode = "RollTimer";
+ROUTE2491.toField = "set_fraction";
+ROUTE2491.toNode = "Rolls_l_elbow_RotationInterpolator";
+children[271] = ROUTE2491;
+
+ROUTE ROUTE2492 = createNode("ROUTE");
+ROUTE2492.fromField = "fraction_changed";
+ROUTE2492.fromNode = "RollTimer";
+ROUTE2492.toField = "set_fraction";
+ROUTE2492.toNode = "Rolls_l_shoulder_RotationInterpolator";
+children[272] = ROUTE2492;
+
+ROUTE ROUTE2493 = createNode("ROUTE");
+ROUTE2493.fromField = "fraction_changed";
+ROUTE2493.fromNode = "RollTimer";
+ROUTE2493.toField = "set_fraction";
+ROUTE2493.toNode = "Rolls_head_RotationInterpolator";
+children[273] = ROUTE2493;
+
+ROUTE ROUTE2494 = createNode("ROUTE");
+ROUTE2494.fromField = "fraction_changed";
+ROUTE2494.fromNode = "RollTimer";
+ROUTE2494.toField = "set_fraction";
+ROUTE2494.toNode = "Rolls_neck_RotationInterpolator";
+children[274] = ROUTE2494;
+
+ROUTE ROUTE2495 = createNode("ROUTE");
+ROUTE2495.fromField = "fraction_changed";
+ROUTE2495.fromNode = "RollTimer";
+ROUTE2495.toField = "set_fraction";
+ROUTE2495.toNode = "Rolls_upper_body_RotationInterpolator";
+children[275] = ROUTE2495;
+
+ROUTE ROUTE2496 = createNode("ROUTE");
+ROUTE2496.fromField = "fraction_changed";
+ROUTE2496.fromNode = "RollTimer";
+ROUTE2496.toField = "set_fraction";
+ROUTE2496.toNode = "Rolls_whole_body_RotationInterpolator";
+children[276] = ROUTE2496;
+
+ROUTE ROUTE2497 = createNode("ROUTE");
+ROUTE2497.fromField = "fraction_changed";
+ROUTE2497.fromNode = "RollTimer";
+ROUTE2497.toField = "set_fraction";
+ROUTE2497.toNode = "Rolls_whole_body_TranslationInterpolator";
+children[277] = ROUTE2497;
+
+ROUTE ROUTE2498 = createNode("ROUTE");
+ROUTE2498.fromField = "fraction_changed";
+ROUTE2498.fromNode = "RollTimer";
+ROUTE2498.toField = "set_fraction";
+ROUTE2498.toNode = "Roll_l_sternoclavicular_RollInterpolator";
+children[278] = ROUTE2498;
+
+ROUTE ROUTE2499 = createNode("ROUTE");
+ROUTE2499.fromField = "fraction_changed";
+ROUTE2499.fromNode = "RollTimer";
+ROUTE2499.toField = "set_fraction";
+ROUTE2499.toNode = "Roll_l_acromioclavicular_RollInterpolator";
+children[279] = ROUTE2499;
+
+ROUTE ROUTE2500 = createNode("ROUTE");
+ROUTE2500.fromField = "fraction_changed";
+ROUTE2500.fromNode = "RollTimer";
+ROUTE2500.toField = "set_fraction";
+ROUTE2500.toNode = "Roll_r_sternoclavicular_RollInterpolator";
+children[280] = ROUTE2500;
+
+ROUTE ROUTE2501 = createNode("ROUTE");
+ROUTE2501.fromField = "fraction_changed";
+ROUTE2501.fromNode = "RollTimer";
+ROUTE2501.toField = "set_fraction";
+ROUTE2501.toNode = "Roll_r_acromioclavicular_RollInterpolator";
+children[281] = ROUTE2501;
+
+ROUTE ROUTE2502 = createNode("ROUTE");
+ROUTE2502.fromField = "fraction_changed";
+ROUTE2502.fromNode = "RollTimer";
+ROUTE2502.toField = "set_fraction";
+ROUTE2502.toNode = "Roll_r_metatarsal_PitchInterpolator";
+children[282] = ROUTE2502;
+
+ROUTE ROUTE2503 = createNode("ROUTE");
+ROUTE2503.fromField = "fraction_changed";
+ROUTE2503.fromNode = "RollTimer";
+ROUTE2503.toField = "set_fraction";
+ROUTE2503.toNode = "Roll_sacroiliac_YawInterpolator";
+children[283] = ROUTE2503;
+
+ROUTE ROUTE2504 = createNode("ROUTE");
+ROUTE2504.fromField = "fraction_changed";
+ROUTE2504.fromNode = "RollTimer";
+ROUTE2504.toField = "set_fraction";
+ROUTE2504.toNode = "Roll_vl5_YawInterpolator";
+children[284] = ROUTE2504;
+
+ROUTE ROUTE2505 = createNode("ROUTE");
+ROUTE2505.fromField = "fraction_changed";
+ROUTE2505.fromNode = "RollTimer";
+ROUTE2505.toField = "set_fraction";
+ROUTE2505.toNode = "Roll_vc6_YawInterpolator";
+children[285] = ROUTE2505;
+
+ROUTE ROUTE2506 = createNode("ROUTE");
+ROUTE2506.fromField = "fraction_changed";
+ROUTE2506.fromNode = "RollTimer";
+ROUTE2506.toField = "set_fraction";
+ROUTE2506.toNode = "Roll_l_thumb1_PitchInterpolator";
+children[286] = ROUTE2506;
+
+ROUTE ROUTE2507 = createNode("ROUTE");
+ROUTE2507.fromField = "fraction_changed";
+ROUTE2507.fromNode = "RollTimer";
+ROUTE2507.toField = "set_fraction";
+ROUTE2507.toNode = "Roll_r_thumb1_PitchInterpolator";
+children[287] = ROUTE2507;
+
+ROUTE ROUTE2508 = createNode("ROUTE");
+ROUTE2508.fromField = "value_changed";
+ROUTE2508.fromNode = "Rolls_r_ankle_RotationInterpolator";
+ROUTE2508.toField = "set_rotation";
+ROUTE2508.toNode = "hanim_r_ankle";
+children[288] = ROUTE2508;
+
+ROUTE ROUTE2509 = createNode("ROUTE");
+ROUTE2509.fromField = "value_changed";
+ROUTE2509.fromNode = "Rolls_r_knee_RotationInterpolator";
+ROUTE2509.toField = "set_rotation";
+ROUTE2509.toNode = "hanim_r_knee";
+children[289] = ROUTE2509;
+
+ROUTE ROUTE2510 = createNode("ROUTE");
+ROUTE2510.fromField = "value_changed";
+ROUTE2510.fromNode = "Rolls_r_hip_RotationInterpolator";
+ROUTE2510.toField = "set_rotation";
+ROUTE2510.toNode = "hanim_r_hip";
+children[290] = ROUTE2510;
+
+ROUTE ROUTE2511 = createNode("ROUTE");
+ROUTE2511.fromField = "value_changed";
+ROUTE2511.fromNode = "Rolls_l_ankle_RotationInterpolator";
+ROUTE2511.toField = "set_rotation";
+ROUTE2511.toNode = "hanim_l_ankle";
+children[291] = ROUTE2511;
+
+ROUTE ROUTE2512 = createNode("ROUTE");
+ROUTE2512.fromField = "value_changed";
+ROUTE2512.fromNode = "Rolls_l_knee_RotationInterpolator";
+ROUTE2512.toField = "set_rotation";
+ROUTE2512.toNode = "hanim_l_knee";
+children[292] = ROUTE2512;
+
+ROUTE ROUTE2513 = createNode("ROUTE");
+ROUTE2513.fromField = "value_changed";
+ROUTE2513.fromNode = "Rolls_l_hip_RotationInterpolator";
+ROUTE2513.toField = "set_rotation";
+ROUTE2513.toNode = "hanim_l_hip";
+children[293] = ROUTE2513;
+
+ROUTE ROUTE2514 = createNode("ROUTE");
+ROUTE2514.fromField = "value_changed";
+ROUTE2514.fromNode = "Rolls_r_wrist_RotationInterpolator";
+ROUTE2514.toField = "set_rotation";
+ROUTE2514.toNode = "hanim_r_wrist";
+children[294] = ROUTE2514;
+
+ROUTE ROUTE2515 = createNode("ROUTE");
+ROUTE2515.fromField = "value_changed";
+ROUTE2515.fromNode = "Rolls_r_elbow_RotationInterpolator";
+ROUTE2515.toField = "set_rotation";
+ROUTE2515.toNode = "hanim_r_elbow";
+children[295] = ROUTE2515;
+
+ROUTE ROUTE2516 = createNode("ROUTE");
+ROUTE2516.fromField = "value_changed";
+ROUTE2516.fromNode = "Rolls_r_shoulder_RotationInterpolator";
+ROUTE2516.toField = "set_rotation";
+ROUTE2516.toNode = "hanim_r_shoulder";
+children[296] = ROUTE2516;
+
+ROUTE ROUTE2517 = createNode("ROUTE");
+ROUTE2517.fromField = "value_changed";
+ROUTE2517.fromNode = "Rolls_l_wrist_RotationInterpolator";
+ROUTE2517.toField = "set_rotation";
+ROUTE2517.toNode = "hanim_l_wrist";
+children[297] = ROUTE2517;
+
+ROUTE ROUTE2518 = createNode("ROUTE");
+ROUTE2518.fromField = "value_changed";
+ROUTE2518.fromNode = "Rolls_l_elbow_RotationInterpolator";
+ROUTE2518.toField = "set_rotation";
+ROUTE2518.toNode = "hanim_l_elbow";
+children[298] = ROUTE2518;
+
+ROUTE ROUTE2519 = createNode("ROUTE");
+ROUTE2519.fromField = "value_changed";
+ROUTE2519.fromNode = "Rolls_l_shoulder_RotationInterpolator";
+ROUTE2519.toField = "set_rotation";
+ROUTE2519.toNode = "hanim_l_shoulder";
+children[299] = ROUTE2519;
+
+ROUTE ROUTE2520 = createNode("ROUTE");
+ROUTE2520.fromField = "value_changed";
+ROUTE2520.fromNode = "Rolls_head_RotationInterpolator";
+ROUTE2520.toField = "set_rotation";
+ROUTE2520.toNode = "hanim_skullbase";
+children[300] = ROUTE2520;
+
+ROUTE ROUTE2521 = createNode("ROUTE");
+ROUTE2521.fromField = "value_changed";
+ROUTE2521.fromNode = "Rolls_whole_body_RotationInterpolator";
+ROUTE2521.toField = "set_rotation";
+ROUTE2521.toNode = "hanim_humanoid_root";
+children[301] = ROUTE2521;
+
+ROUTE ROUTE2522 = createNode("ROUTE");
+ROUTE2522.fromField = "value_changed";
+ROUTE2522.fromNode = "Rolls_whole_body_TranslationInterpolator";
+ROUTE2522.toField = "set_translation";
+ROUTE2522.toNode = "hanim_humanoid_root";
+children[302] = ROUTE2522;
+
+ROUTE ROUTE2523 = createNode("ROUTE");
+ROUTE2523.fromField = "value_changed";
+ROUTE2523.fromNode = "Roll_vl5_YawInterpolator";
+ROUTE2523.toField = "set_rotation";
+ROUTE2523.toNode = "hanim_vl5";
+children[303] = ROUTE2523;
+
+ROUTE ROUTE2524 = createNode("ROUTE");
+ROUTE2524.fromField = "fraction_changed";
+ROUTE2524.fromNode = "WalkTimer";
+ROUTE2524.toField = "set_fraction";
+ROUTE2524.toNode = "Walk_r_ankle_RotationInterpolator";
+children[304] = ROUTE2524;
+
+ROUTE ROUTE2525 = createNode("ROUTE");
+ROUTE2525.fromField = "fraction_changed";
+ROUTE2525.fromNode = "WalkTimer";
+ROUTE2525.toField = "set_fraction";
+ROUTE2525.toNode = "Walk_r_knee_RotationInterpolator";
+children[305] = ROUTE2525;
+
+ROUTE ROUTE2526 = createNode("ROUTE");
+ROUTE2526.fromField = "fraction_changed";
+ROUTE2526.fromNode = "WalkTimer";
+ROUTE2526.toField = "set_fraction";
+ROUTE2526.toNode = "Walk_r_hip_RotationInterpolator";
+children[306] = ROUTE2526;
+
+ROUTE ROUTE2527 = createNode("ROUTE");
+ROUTE2527.fromField = "fraction_changed";
+ROUTE2527.fromNode = "WalkTimer";
+ROUTE2527.toField = "set_fraction";
+ROUTE2527.toNode = "Walk_l_ankle_RotationInterpolator";
+children[307] = ROUTE2527;
+
+ROUTE ROUTE2528 = createNode("ROUTE");
+ROUTE2528.fromField = "fraction_changed";
+ROUTE2528.fromNode = "WalkTimer";
+ROUTE2528.toField = "set_fraction";
+ROUTE2528.toNode = "Walk_l_knee_RotationInterpolator";
+children[308] = ROUTE2528;
+
+ROUTE ROUTE2529 = createNode("ROUTE");
+ROUTE2529.fromField = "fraction_changed";
+ROUTE2529.fromNode = "WalkTimer";
+ROUTE2529.toField = "set_fraction";
+ROUTE2529.toNode = "Walk_l_hip_RotationInterpolator";
+children[309] = ROUTE2529;
+
+ROUTE ROUTE2530 = createNode("ROUTE");
+ROUTE2530.fromField = "fraction_changed";
+ROUTE2530.fromNode = "WalkTimer";
+ROUTE2530.toField = "set_fraction";
+ROUTE2530.toNode = "Walk_lower_body_RotationInterpolator";
+children[310] = ROUTE2530;
+
+ROUTE ROUTE2531 = createNode("ROUTE");
+ROUTE2531.fromField = "fraction_changed";
+ROUTE2531.fromNode = "WalkTimer";
+ROUTE2531.toField = "set_fraction";
+ROUTE2531.toNode = "Walk_r_wrist_RotationInterpolator";
+children[311] = ROUTE2531;
+
+ROUTE ROUTE2532 = createNode("ROUTE");
+ROUTE2532.fromField = "fraction_changed";
+ROUTE2532.fromNode = "WalkTimer";
+ROUTE2532.toField = "set_fraction";
+ROUTE2532.toNode = "Walk_r_elbow_RotationInterpolator";
+children[312] = ROUTE2532;
+
+ROUTE ROUTE2533 = createNode("ROUTE");
+ROUTE2533.fromField = "fraction_changed";
+ROUTE2533.fromNode = "WalkTimer";
+ROUTE2533.toField = "set_fraction";
+ROUTE2533.toNode = "Walk_r_shoulder_RotationInterpolator";
+children[313] = ROUTE2533;
+
+ROUTE ROUTE2534 = createNode("ROUTE");
+ROUTE2534.fromField = "fraction_changed";
+ROUTE2534.fromNode = "WalkTimer";
+ROUTE2534.toField = "set_fraction";
+ROUTE2534.toNode = "Walk_l_wrist_RotationInterpolator";
+children[314] = ROUTE2534;
+
+ROUTE ROUTE2535 = createNode("ROUTE");
+ROUTE2535.fromField = "fraction_changed";
+ROUTE2535.fromNode = "WalkTimer";
+ROUTE2535.toField = "set_fraction";
+ROUTE2535.toNode = "Walk_l_elbow_RotationInterpolator";
+children[315] = ROUTE2535;
+
+ROUTE ROUTE2536 = createNode("ROUTE");
+ROUTE2536.fromField = "fraction_changed";
+ROUTE2536.fromNode = "WalkTimer";
+ROUTE2536.toField = "set_fraction";
+ROUTE2536.toNode = "Walk_l_shoulder_RotationInterpolator";
+children[316] = ROUTE2536;
+
+ROUTE ROUTE2537 = createNode("ROUTE");
+ROUTE2537.fromField = "fraction_changed";
+ROUTE2537.fromNode = "WalkTimer";
+ROUTE2537.toField = "set_fraction";
+ROUTE2537.toNode = "Walk_head_RotationInterpolator";
+children[317] = ROUTE2537;
+
+ROUTE ROUTE2538 = createNode("ROUTE");
+ROUTE2538.fromField = "fraction_changed";
+ROUTE2538.fromNode = "WalkTimer";
+ROUTE2538.toField = "set_fraction";
+ROUTE2538.toNode = "Walk_neck_RotationInterpolator";
+children[318] = ROUTE2538;
+
+ROUTE ROUTE2539 = createNode("ROUTE");
+ROUTE2539.fromField = "fraction_changed";
+ROUTE2539.fromNode = "WalkTimer";
+ROUTE2539.toField = "set_fraction";
+ROUTE2539.toNode = "Walk_upper_body_RotationInterpolator";
+children[319] = ROUTE2539;
+
+ROUTE ROUTE2540 = createNode("ROUTE");
+ROUTE2540.fromField = "fraction_changed";
+ROUTE2540.fromNode = "WalkTimer";
+ROUTE2540.toField = "set_fraction";
+ROUTE2540.toNode = "Walk_whole_body_RotationInterpolator";
+children[320] = ROUTE2540;
+
+ROUTE ROUTE2541 = createNode("ROUTE");
+ROUTE2541.fromField = "fraction_changed";
+ROUTE2541.fromNode = "WalkTimer";
+ROUTE2541.toField = "set_fraction";
+ROUTE2541.toNode = "Walk_whole_body_TranslationInterpolator";
+children[321] = ROUTE2541;
+
+ROUTE ROUTE2542 = createNode("ROUTE");
+ROUTE2542.fromField = "fraction_changed";
+ROUTE2542.fromNode = "WalkTimer";
+ROUTE2542.toField = "set_fraction";
+ROUTE2542.toNode = "Walk_l_sternoclavicular_RollInterpolator";
+children[322] = ROUTE2542;
+
+ROUTE ROUTE2543 = createNode("ROUTE");
+ROUTE2543.fromField = "fraction_changed";
+ROUTE2543.fromNode = "WalkTimer";
+ROUTE2543.toField = "set_fraction";
+ROUTE2543.toNode = "Walk_l_acromioclavicular_RollInterpolator";
+children[323] = ROUTE2543;
+
+ROUTE ROUTE2544 = createNode("ROUTE");
+ROUTE2544.fromField = "fraction_changed";
+ROUTE2544.fromNode = "WalkTimer";
+ROUTE2544.toField = "set_fraction";
+ROUTE2544.toNode = "Walk_r_sternoclavicular_RollInterpolator";
+children[324] = ROUTE2544;
+
+ROUTE ROUTE2545 = createNode("ROUTE");
+ROUTE2545.fromField = "fraction_changed";
+ROUTE2545.fromNode = "WalkTimer";
+ROUTE2545.toField = "set_fraction";
+ROUTE2545.toNode = "Walk_r_acromioclavicular_RollInterpolator";
+children[325] = ROUTE2545;
+
+ROUTE ROUTE2546 = createNode("ROUTE");
+ROUTE2546.fromField = "fraction_changed";
+ROUTE2546.fromNode = "WalkTimer";
+ROUTE2546.toField = "set_fraction";
+ROUTE2546.toNode = "Walk_r_metatarsal_PitchInterpolator";
+children[326] = ROUTE2546;
+
+ROUTE ROUTE2547 = createNode("ROUTE");
+ROUTE2547.fromField = "fraction_changed";
+ROUTE2547.fromNode = "WalkTimer";
+ROUTE2547.toField = "set_fraction";
+ROUTE2547.toNode = "Walk_sacroiliac_YawInterpolator";
+children[327] = ROUTE2547;
+
+ROUTE ROUTE2548 = createNode("ROUTE");
+ROUTE2548.fromField = "fraction_changed";
+ROUTE2548.fromNode = "WalkTimer";
+ROUTE2548.toField = "set_fraction";
+ROUTE2548.toNode = "Walk_vl5_YawInterpolator";
+children[328] = ROUTE2548;
+
+ROUTE ROUTE2549 = createNode("ROUTE");
+ROUTE2549.fromField = "fraction_changed";
+ROUTE2549.fromNode = "WalkTimer";
+ROUTE2549.toField = "set_fraction";
+ROUTE2549.toNode = "Walk_vc6_YawInterpolator";
+children[329] = ROUTE2549;
+
+ROUTE ROUTE2550 = createNode("ROUTE");
+ROUTE2550.fromField = "fraction_changed";
+ROUTE2550.fromNode = "WalkTimer";
+ROUTE2550.toField = "set_fraction";
+ROUTE2550.toNode = "Walk_l_thumb1_PitchInterpolator";
+children[330] = ROUTE2550;
+
+ROUTE ROUTE2551 = createNode("ROUTE");
+ROUTE2551.fromField = "fraction_changed";
+ROUTE2551.fromNode = "WalkTimer";
+ROUTE2551.toField = "set_fraction";
+ROUTE2551.toNode = "Walk_r_thumb1_PitchInterpolator";
+children[331] = ROUTE2551;
+
+ROUTE ROUTE2552 = createNode("ROUTE");
+ROUTE2552.fromField = "value_changed";
+ROUTE2552.fromNode = "Walk_r_ankle_RotationInterpolator";
+ROUTE2552.toField = "set_rotation";
+ROUTE2552.toNode = "hanim_r_ankle";
+children[332] = ROUTE2552;
+
+ROUTE ROUTE2553 = createNode("ROUTE");
+ROUTE2553.fromField = "value_changed";
+ROUTE2553.fromNode = "Walk_r_knee_RotationInterpolator";
+ROUTE2553.toField = "set_rotation";
+ROUTE2553.toNode = "hanim_r_knee";
+children[333] = ROUTE2553;
+
+ROUTE ROUTE2554 = createNode("ROUTE");
+ROUTE2554.fromField = "value_changed";
+ROUTE2554.fromNode = "Walk_r_hip_RotationInterpolator";
+ROUTE2554.toField = "set_rotation";
+ROUTE2554.toNode = "hanim_r_hip";
+children[334] = ROUTE2554;
+
+ROUTE ROUTE2555 = createNode("ROUTE");
+ROUTE2555.fromField = "value_changed";
+ROUTE2555.fromNode = "Walk_l_ankle_RotationInterpolator";
+ROUTE2555.toField = "set_rotation";
+ROUTE2555.toNode = "hanim_l_ankle";
+children[335] = ROUTE2555;
+
+ROUTE ROUTE2556 = createNode("ROUTE");
+ROUTE2556.fromField = "value_changed";
+ROUTE2556.fromNode = "Walk_l_knee_RotationInterpolator";
+ROUTE2556.toField = "set_rotation";
+ROUTE2556.toNode = "hanim_l_knee";
+children[336] = ROUTE2556;
+
+ROUTE ROUTE2557 = createNode("ROUTE");
+ROUTE2557.fromField = "value_changed";
+ROUTE2557.fromNode = "Walk_l_hip_RotationInterpolator";
+ROUTE2557.toField = "set_rotation";
+ROUTE2557.toNode = "hanim_l_hip";
+children[337] = ROUTE2557;
+
+ROUTE ROUTE2558 = createNode("ROUTE");
+ROUTE2558.fromField = "value_changed";
+ROUTE2558.fromNode = "Walk_r_wrist_RotationInterpolator";
+ROUTE2558.toField = "set_rotation";
+ROUTE2558.toNode = "hanim_r_wrist";
+children[338] = ROUTE2558;
+
+ROUTE ROUTE2559 = createNode("ROUTE");
+ROUTE2559.fromField = "value_changed";
+ROUTE2559.fromNode = "Walk_r_elbow_RotationInterpolator";
+ROUTE2559.toField = "set_rotation";
+ROUTE2559.toNode = "hanim_r_elbow";
+children[339] = ROUTE2559;
+
+ROUTE ROUTE2560 = createNode("ROUTE");
+ROUTE2560.fromField = "value_changed";
+ROUTE2560.fromNode = "Walk_r_shoulder_RotationInterpolator";
+ROUTE2560.toField = "set_rotation";
+ROUTE2560.toNode = "hanim_r_shoulder";
+children[340] = ROUTE2560;
+
+ROUTE ROUTE2561 = createNode("ROUTE");
+ROUTE2561.fromField = "value_changed";
+ROUTE2561.fromNode = "Walk_l_wrist_RotationInterpolator";
+ROUTE2561.toField = "set_rotation";
+ROUTE2561.toNode = "hanim_l_wrist";
+children[341] = ROUTE2561;
+
+ROUTE ROUTE2562 = createNode("ROUTE");
+ROUTE2562.fromField = "value_changed";
+ROUTE2562.fromNode = "Walk_l_elbow_RotationInterpolator";
+ROUTE2562.toField = "set_rotation";
+ROUTE2562.toNode = "hanim_l_elbow";
+children[342] = ROUTE2562;
+
+ROUTE ROUTE2563 = createNode("ROUTE");
+ROUTE2563.fromField = "value_changed";
+ROUTE2563.fromNode = "Walk_l_shoulder_RotationInterpolator";
+ROUTE2563.toField = "set_rotation";
+ROUTE2563.toNode = "hanim_l_shoulder";
+children[343] = ROUTE2563;
+
+ROUTE ROUTE2564 = createNode("ROUTE");
+ROUTE2564.fromField = "value_changed";
+ROUTE2564.fromNode = "Walk_head_RotationInterpolator";
+ROUTE2564.toField = "set_rotation";
+ROUTE2564.toNode = "hanim_skullbase";
+children[344] = ROUTE2564;
+
+ROUTE ROUTE2565 = createNode("ROUTE");
+ROUTE2565.fromField = "value_changed";
+ROUTE2565.fromNode = "Walk_whole_body_RotationInterpolator";
+ROUTE2565.toField = "set_rotation";
+ROUTE2565.toNode = "hanim_humanoid_root";
+children[345] = ROUTE2565;
+
+ROUTE ROUTE2566 = createNode("ROUTE");
+ROUTE2566.fromField = "value_changed";
+ROUTE2566.fromNode = "Walk_whole_body_TranslationInterpolator";
+ROUTE2566.toField = "set_translation";
+ROUTE2566.toNode = "hanim_humanoid_root";
+children[346] = ROUTE2566;
+
+ROUTE ROUTE2567 = createNode("ROUTE");
+ROUTE2567.fromField = "value_changed";
+ROUTE2567.fromNode = "Walk_vl5_YawInterpolator";
+ROUTE2567.toField = "set_rotation";
+ROUTE2567.toNode = "hanim_vl5";
+children[347] = ROUTE2567;
+
+ROUTE ROUTE2568 = createNode("ROUTE");
+ROUTE2568.fromField = "fraction_changed";
+ROUTE2568.fromNode = "RunTimer";
+ROUTE2568.toField = "set_fraction";
+ROUTE2568.toNode = "Run_r_ankle_RotationInterpolator_Run";
+children[348] = ROUTE2568;
+
+ROUTE ROUTE2569 = createNode("ROUTE");
+ROUTE2569.fromField = "fraction_changed";
+ROUTE2569.fromNode = "RunTimer";
+ROUTE2569.toField = "set_fraction";
+ROUTE2569.toNode = "Run_r_knee_RotationInterpolator_Run";
+children[349] = ROUTE2569;
+
+ROUTE ROUTE2570 = createNode("ROUTE");
+ROUTE2570.fromField = "fraction_changed";
+ROUTE2570.fromNode = "RunTimer";
+ROUTE2570.toField = "set_fraction";
+ROUTE2570.toNode = "Run_r_hip_RotationInterpolator_Run";
+children[350] = ROUTE2570;
+
+ROUTE ROUTE2571 = createNode("ROUTE");
+ROUTE2571.fromField = "fraction_changed";
+ROUTE2571.fromNode = "RunTimer";
+ROUTE2571.toField = "set_fraction";
+ROUTE2571.toNode = "Run_l_ankle_RotationInterpolator_Run";
+children[351] = ROUTE2571;
+
+ROUTE ROUTE2572 = createNode("ROUTE");
+ROUTE2572.fromField = "fraction_changed";
+ROUTE2572.fromNode = "RunTimer";
+ROUTE2572.toField = "set_fraction";
+ROUTE2572.toNode = "Run_l_knee_RotationInterpolator_Run";
+children[352] = ROUTE2572;
+
+ROUTE ROUTE2573 = createNode("ROUTE");
+ROUTE2573.fromField = "fraction_changed";
+ROUTE2573.fromNode = "RunTimer";
+ROUTE2573.toField = "set_fraction";
+ROUTE2573.toNode = "Run_l_hip_RotationInterpolator_Run";
+children[353] = ROUTE2573;
+
+ROUTE ROUTE2574 = createNode("ROUTE");
+ROUTE2574.fromField = "fraction_changed";
+ROUTE2574.fromNode = "RunTimer";
+ROUTE2574.toField = "set_fraction";
+ROUTE2574.toNode = "Run_lower_body_RotationInterpolator_Run";
+children[354] = ROUTE2574;
+
+ROUTE ROUTE2575 = createNode("ROUTE");
+ROUTE2575.fromField = "fraction_changed";
+ROUTE2575.fromNode = "RunTimer";
+ROUTE2575.toField = "set_fraction";
+ROUTE2575.toNode = "Run_r_wrist_RotationInterpolator_Run";
+children[355] = ROUTE2575;
+
+ROUTE ROUTE2576 = createNode("ROUTE");
+ROUTE2576.fromField = "fraction_changed";
+ROUTE2576.fromNode = "RunTimer";
+ROUTE2576.toField = "set_fraction";
+ROUTE2576.toNode = "Run_r_elbow_RotationInterpolator_Run";
+children[356] = ROUTE2576;
+
+ROUTE ROUTE2577 = createNode("ROUTE");
+ROUTE2577.fromField = "fraction_changed";
+ROUTE2577.fromNode = "RunTimer";
+ROUTE2577.toField = "set_fraction";
+ROUTE2577.toNode = "Run_r_shoulder_RotationInterpolator_Run";
+children[357] = ROUTE2577;
+
+ROUTE ROUTE2578 = createNode("ROUTE");
+ROUTE2578.fromField = "fraction_changed";
+ROUTE2578.fromNode = "RunTimer";
+ROUTE2578.toField = "set_fraction";
+ROUTE2578.toNode = "Run_l_wrist_RotationInterpolator_Run";
+children[358] = ROUTE2578;
+
+ROUTE ROUTE2579 = createNode("ROUTE");
+ROUTE2579.fromField = "fraction_changed";
+ROUTE2579.fromNode = "RunTimer";
+ROUTE2579.toField = "set_fraction";
+ROUTE2579.toNode = "Run_l_elbow_RotationInterpolator_Run";
+children[359] = ROUTE2579;
+
+ROUTE ROUTE2580 = createNode("ROUTE");
+ROUTE2580.fromField = "fraction_changed";
+ROUTE2580.fromNode = "RunTimer";
+ROUTE2580.toField = "set_fraction";
+ROUTE2580.toNode = "Run_l_shoulder_RotationInterpolator_Run";
+children[360] = ROUTE2580;
+
+ROUTE ROUTE2581 = createNode("ROUTE");
+ROUTE2581.fromField = "fraction_changed";
+ROUTE2581.fromNode = "RunTimer";
+ROUTE2581.toField = "set_fraction";
+ROUTE2581.toNode = "Run_head_RotationInterpolator_Run";
+children[361] = ROUTE2581;
+
+ROUTE ROUTE2582 = createNode("ROUTE");
+ROUTE2582.fromField = "fraction_changed";
+ROUTE2582.fromNode = "RunTimer";
+ROUTE2582.toField = "set_fraction";
+ROUTE2582.toNode = "Run_neck_RotationInterpolator_Run";
+children[362] = ROUTE2582;
+
+ROUTE ROUTE2583 = createNode("ROUTE");
+ROUTE2583.fromField = "fraction_changed";
+ROUTE2583.fromNode = "RunTimer";
+ROUTE2583.toField = "set_fraction";
+ROUTE2583.toNode = "Run_upper_body_RotationInterpolator_Run";
+children[363] = ROUTE2583;
+
+ROUTE ROUTE2584 = createNode("ROUTE");
+ROUTE2584.fromField = "fraction_changed";
+ROUTE2584.fromNode = "RunTimer";
+ROUTE2584.toField = "set_fraction";
+ROUTE2584.toNode = "Run_whole_body_RotationInterpolator_Run";
+children[364] = ROUTE2584;
+
+ROUTE ROUTE2585 = createNode("ROUTE");
+ROUTE2585.fromField = "fraction_changed";
+ROUTE2585.fromNode = "RunTimer";
+ROUTE2585.toField = "set_fraction";
+ROUTE2585.toNode = "Run_whole_body_TranslationInterpolator_Run";
+children[365] = ROUTE2585;
+
+ROUTE ROUTE2586 = createNode("ROUTE");
+ROUTE2586.fromField = "fraction_changed";
+ROUTE2586.fromNode = "RunTimer";
+ROUTE2586.toField = "set_fraction";
+ROUTE2586.toNode = "Run_l_sternoclavicular_RollInterpolator";
+children[366] = ROUTE2586;
+
+ROUTE ROUTE2587 = createNode("ROUTE");
+ROUTE2587.fromField = "fraction_changed";
+ROUTE2587.fromNode = "RunTimer";
+ROUTE2587.toField = "set_fraction";
+ROUTE2587.toNode = "Run_l_acromioclavicular_RollInterpolator";
+children[367] = ROUTE2587;
+
+ROUTE ROUTE2588 = createNode("ROUTE");
+ROUTE2588.fromField = "fraction_changed";
+ROUTE2588.fromNode = "RunTimer";
+ROUTE2588.toField = "set_fraction";
+ROUTE2588.toNode = "Run_r_sternoclavicular_RollInterpolator";
+children[368] = ROUTE2588;
+
+ROUTE ROUTE2589 = createNode("ROUTE");
+ROUTE2589.fromField = "fraction_changed";
+ROUTE2589.fromNode = "RunTimer";
+ROUTE2589.toField = "set_fraction";
+ROUTE2589.toNode = "Run_r_acromioclavicular_RollInterpolator";
+children[369] = ROUTE2589;
+
+ROUTE ROUTE2590 = createNode("ROUTE");
+ROUTE2590.fromField = "fraction_changed";
+ROUTE2590.fromNode = "RunTimer";
+ROUTE2590.toField = "set_fraction";
+ROUTE2590.toNode = "Run_r_metatarsal_PitchInterpolator";
+children[370] = ROUTE2590;
+
+ROUTE ROUTE2591 = createNode("ROUTE");
+ROUTE2591.fromField = "fraction_changed";
+ROUTE2591.fromNode = "RunTimer";
+ROUTE2591.toField = "set_fraction";
+ROUTE2591.toNode = "Run_sacroiliac_YawInterpolator";
+children[371] = ROUTE2591;
+
+ROUTE ROUTE2592 = createNode("ROUTE");
+ROUTE2592.fromField = "fraction_changed";
+ROUTE2592.fromNode = "RunTimer";
+ROUTE2592.toField = "set_fraction";
+ROUTE2592.toNode = "Run_vl5_YawInterpolator";
+children[372] = ROUTE2592;
+
+ROUTE ROUTE2593 = createNode("ROUTE");
+ROUTE2593.fromField = "fraction_changed";
+ROUTE2593.fromNode = "RunTimer";
+ROUTE2593.toField = "set_fraction";
+ROUTE2593.toNode = "Run_vc6_YawInterpolator";
+children[373] = ROUTE2593;
+
+ROUTE ROUTE2594 = createNode("ROUTE");
+ROUTE2594.fromField = "fraction_changed";
+ROUTE2594.fromNode = "RunTimer";
+ROUTE2594.toField = "set_fraction";
+ROUTE2594.toNode = "Run_l_thumb1_PitchInterpolator";
+children[374] = ROUTE2594;
+
+ROUTE ROUTE2595 = createNode("ROUTE");
+ROUTE2595.fromField = "fraction_changed";
+ROUTE2595.fromNode = "RunTimer";
+ROUTE2595.toField = "set_fraction";
+ROUTE2595.toNode = "Run_r_thumb1_PitchInterpolator";
+children[375] = ROUTE2595;
+
+ROUTE ROUTE2596 = createNode("ROUTE");
+ROUTE2596.fromField = "value_changed";
+ROUTE2596.fromNode = "Run_r_ankle_RotationInterpolator_Run";
+ROUTE2596.toField = "set_rotation";
+ROUTE2596.toNode = "hanim_r_ankle";
+children[376] = ROUTE2596;
+
+ROUTE ROUTE2597 = createNode("ROUTE");
+ROUTE2597.fromField = "value_changed";
+ROUTE2597.fromNode = "Run_r_knee_RotationInterpolator_Run";
+ROUTE2597.toField = "set_rotation";
+ROUTE2597.toNode = "hanim_r_knee";
+children[377] = ROUTE2597;
+
+ROUTE ROUTE2598 = createNode("ROUTE");
+ROUTE2598.fromField = "value_changed";
+ROUTE2598.fromNode = "Run_r_hip_RotationInterpolator_Run";
+ROUTE2598.toField = "set_rotation";
+ROUTE2598.toNode = "hanim_r_hip";
+children[378] = ROUTE2598;
+
+ROUTE ROUTE2599 = createNode("ROUTE");
+ROUTE2599.fromField = "value_changed";
+ROUTE2599.fromNode = "Run_l_ankle_RotationInterpolator_Run";
+ROUTE2599.toField = "set_rotation";
+ROUTE2599.toNode = "hanim_l_ankle";
+children[379] = ROUTE2599;
+
+ROUTE ROUTE2600 = createNode("ROUTE");
+ROUTE2600.fromField = "value_changed";
+ROUTE2600.fromNode = "Run_l_knee_RotationInterpolator_Run";
+ROUTE2600.toField = "set_rotation";
+ROUTE2600.toNode = "hanim_l_knee";
+children[380] = ROUTE2600;
+
+ROUTE ROUTE2601 = createNode("ROUTE");
+ROUTE2601.fromField = "value_changed";
+ROUTE2601.fromNode = "Run_l_hip_RotationInterpolator_Run";
+ROUTE2601.toField = "set_rotation";
+ROUTE2601.toNode = "hanim_l_hip";
+children[381] = ROUTE2601;
+
+ROUTE ROUTE2602 = createNode("ROUTE");
+ROUTE2602.fromField = "value_changed";
+ROUTE2602.fromNode = "Run_r_wrist_RotationInterpolator_Run";
+ROUTE2602.toField = "set_rotation";
+ROUTE2602.toNode = "hanim_r_wrist";
+children[382] = ROUTE2602;
+
+ROUTE ROUTE2603 = createNode("ROUTE");
+ROUTE2603.fromField = "value_changed";
+ROUTE2603.fromNode = "Run_r_elbow_RotationInterpolator_Run";
+ROUTE2603.toField = "set_rotation";
+ROUTE2603.toNode = "hanim_r_elbow";
+children[383] = ROUTE2603;
+
+ROUTE ROUTE2604 = createNode("ROUTE");
+ROUTE2604.fromField = "value_changed";
+ROUTE2604.fromNode = "Run_r_shoulder_RotationInterpolator_Run";
+ROUTE2604.toField = "set_rotation";
+ROUTE2604.toNode = "hanim_r_shoulder";
+children[384] = ROUTE2604;
+
+ROUTE ROUTE2605 = createNode("ROUTE");
+ROUTE2605.fromField = "value_changed";
+ROUTE2605.fromNode = "Run_l_wrist_RotationInterpolator_Run";
+ROUTE2605.toField = "set_rotation";
+ROUTE2605.toNode = "hanim_l_wrist";
+children[385] = ROUTE2605;
+
+ROUTE ROUTE2606 = createNode("ROUTE");
+ROUTE2606.fromField = "value_changed";
+ROUTE2606.fromNode = "Run_l_elbow_RotationInterpolator_Run";
+ROUTE2606.toField = "set_rotation";
+ROUTE2606.toNode = "hanim_l_elbow";
+children[386] = ROUTE2606;
+
+ROUTE ROUTE2607 = createNode("ROUTE");
+ROUTE2607.fromField = "value_changed";
+ROUTE2607.fromNode = "Run_l_shoulder_RotationInterpolator_Run";
+ROUTE2607.toField = "set_rotation";
+ROUTE2607.toNode = "hanim_l_shoulder";
+children[387] = ROUTE2607;
+
+ROUTE ROUTE2608 = createNode("ROUTE");
+ROUTE2608.fromField = "value_changed";
+ROUTE2608.fromNode = "Run_head_RotationInterpolator_Run";
+ROUTE2608.toField = "set_rotation";
+ROUTE2608.toNode = "hanim_skullbase";
+children[388] = ROUTE2608;
+
+ROUTE ROUTE2609 = createNode("ROUTE");
+ROUTE2609.fromField = "value_changed";
+ROUTE2609.fromNode = "Run_whole_body_RotationInterpolator_Run";
+ROUTE2609.toField = "set_rotation";
+ROUTE2609.toNode = "hanim_humanoid_root";
+children[389] = ROUTE2609;
+
+ROUTE ROUTE2610 = createNode("ROUTE");
+ROUTE2610.fromField = "value_changed";
+ROUTE2610.fromNode = "Run_whole_body_TranslationInterpolator_Run";
+ROUTE2610.toField = "set_translation";
+ROUTE2610.toNode = "hanim_humanoid_root";
+children[390] = ROUTE2610;
+
+ROUTE ROUTE2611 = createNode("ROUTE");
+ROUTE2611.fromField = "value_changed";
+ROUTE2611.fromNode = "Run_vl5_YawInterpolator";
+ROUTE2611.toField = "set_rotation";
+ROUTE2611.toNode = "hanim_vl5";
+children[391] = ROUTE2611;
+
+ROUTE ROUTE2612 = createNode("ROUTE");
+ROUTE2612.fromField = "fraction_changed";
+ROUTE2612.fromNode = "JumpTimer";
+ROUTE2612.toField = "set_fraction";
+ROUTE2612.toNode = "Jump_r_ankle_RotationInterpolator";
+children[392] = ROUTE2612;
+
+ROUTE ROUTE2613 = createNode("ROUTE");
+ROUTE2613.fromField = "fraction_changed";
+ROUTE2613.fromNode = "JumpTimer";
+ROUTE2613.toField = "set_fraction";
+ROUTE2613.toNode = "Jump_r_knee_RotationInterpolator";
+children[393] = ROUTE2613;
+
+ROUTE ROUTE2614 = createNode("ROUTE");
+ROUTE2614.fromField = "fraction_changed";
+ROUTE2614.fromNode = "JumpTimer";
+ROUTE2614.toField = "set_fraction";
+ROUTE2614.toNode = "Jump_r_hip_RotationInterpolator";
+children[394] = ROUTE2614;
+
+ROUTE ROUTE2615 = createNode("ROUTE");
+ROUTE2615.fromField = "fraction_changed";
+ROUTE2615.fromNode = "JumpTimer";
+ROUTE2615.toField = "set_fraction";
+ROUTE2615.toNode = "Jump_l_ankle_RotationInterpolator";
+children[395] = ROUTE2615;
+
+ROUTE ROUTE2616 = createNode("ROUTE");
+ROUTE2616.fromField = "fraction_changed";
+ROUTE2616.fromNode = "JumpTimer";
+ROUTE2616.toField = "set_fraction";
+ROUTE2616.toNode = "Jump_l_knee_RotationInterpolator";
+children[396] = ROUTE2616;
+
+ROUTE ROUTE2617 = createNode("ROUTE");
+ROUTE2617.fromField = "fraction_changed";
+ROUTE2617.fromNode = "JumpTimer";
+ROUTE2617.toField = "set_fraction";
+ROUTE2617.toNode = "Jump_l_hip_RotationInterpolator";
+children[397] = ROUTE2617;
+
+ROUTE ROUTE2618 = createNode("ROUTE");
+ROUTE2618.fromField = "fraction_changed";
+ROUTE2618.fromNode = "JumpTimer";
+ROUTE2618.toField = "set_fraction";
+ROUTE2618.toNode = "Jump_lower_body_RotationInterpolator";
+children[398] = ROUTE2618;
+
+ROUTE ROUTE2619 = createNode("ROUTE");
+ROUTE2619.fromField = "fraction_changed";
+ROUTE2619.fromNode = "JumpTimer";
+ROUTE2619.toField = "set_fraction";
+ROUTE2619.toNode = "Jump_r_wrist_RotationInterpolator";
+children[399] = ROUTE2619;
+
+ROUTE ROUTE2620 = createNode("ROUTE");
+ROUTE2620.fromField = "fraction_changed";
+ROUTE2620.fromNode = "JumpTimer";
+ROUTE2620.toField = "set_fraction";
+ROUTE2620.toNode = "Jump_r_elbow_RotationInterpolator";
+children[400] = ROUTE2620;
+
+ROUTE ROUTE2621 = createNode("ROUTE");
+ROUTE2621.fromField = "fraction_changed";
+ROUTE2621.fromNode = "JumpTimer";
+ROUTE2621.toField = "set_fraction";
+ROUTE2621.toNode = "Jump_r_shoulder_RotationInterpolator";
+children[401] = ROUTE2621;
+
+ROUTE ROUTE2622 = createNode("ROUTE");
+ROUTE2622.fromField = "fraction_changed";
+ROUTE2622.fromNode = "JumpTimer";
+ROUTE2622.toField = "set_fraction";
+ROUTE2622.toNode = "Jump_l_wrist_RotationInterpolator";
+children[402] = ROUTE2622;
+
+ROUTE ROUTE2623 = createNode("ROUTE");
+ROUTE2623.fromField = "fraction_changed";
+ROUTE2623.fromNode = "JumpTimer";
+ROUTE2623.toField = "set_fraction";
+ROUTE2623.toNode = "Jump_l_elbow_RotationInterpolator";
+children[403] = ROUTE2623;
+
+ROUTE ROUTE2624 = createNode("ROUTE");
+ROUTE2624.fromField = "fraction_changed";
+ROUTE2624.fromNode = "JumpTimer";
+ROUTE2624.toField = "set_fraction";
+ROUTE2624.toNode = "Jump_l_shoulder_RotationInterpolator";
+children[404] = ROUTE2624;
+
+ROUTE ROUTE2625 = createNode("ROUTE");
+ROUTE2625.fromField = "fraction_changed";
+ROUTE2625.fromNode = "JumpTimer";
+ROUTE2625.toField = "set_fraction";
+ROUTE2625.toNode = "Jump_head_RotationInterpolator";
+children[405] = ROUTE2625;
+
+ROUTE ROUTE2626 = createNode("ROUTE");
+ROUTE2626.fromField = "fraction_changed";
+ROUTE2626.fromNode = "JumpTimer";
+ROUTE2626.toField = "set_fraction";
+ROUTE2626.toNode = "Jump_neck_RotationInterpolator";
+children[406] = ROUTE2626;
+
+ROUTE ROUTE2627 = createNode("ROUTE");
+ROUTE2627.fromField = "fraction_changed";
+ROUTE2627.fromNode = "JumpTimer";
+ROUTE2627.toField = "set_fraction";
+ROUTE2627.toNode = "Jump_upper_body_RotationInterpolator";
+children[407] = ROUTE2627;
+
+ROUTE ROUTE2628 = createNode("ROUTE");
+ROUTE2628.fromField = "fraction_changed";
+ROUTE2628.fromNode = "JumpTimer";
+ROUTE2628.toField = "set_fraction";
+ROUTE2628.toNode = "Jump_whole_body_RotationInterpolator";
+children[408] = ROUTE2628;
+
+ROUTE ROUTE2629 = createNode("ROUTE");
+ROUTE2629.fromField = "fraction_changed";
+ROUTE2629.fromNode = "JumpTimer";
+ROUTE2629.toField = "set_fraction";
+ROUTE2629.toNode = "Jump_whole_body_TranslationInterpolator";
+children[409] = ROUTE2629;
+
+ROUTE ROUTE2630 = createNode("ROUTE");
+ROUTE2630.fromField = "fraction_changed";
+ROUTE2630.fromNode = "JumpTimer";
+ROUTE2630.toField = "set_fraction";
+ROUTE2630.toNode = "Jump_l_sternoclavicular_RollInterpolator";
+children[410] = ROUTE2630;
+
+ROUTE ROUTE2631 = createNode("ROUTE");
+ROUTE2631.fromField = "fraction_changed";
+ROUTE2631.fromNode = "JumpTimer";
+ROUTE2631.toField = "set_fraction";
+ROUTE2631.toNode = "Jump_l_acromioclavicular_RollInterpolator";
+children[411] = ROUTE2631;
+
+ROUTE ROUTE2632 = createNode("ROUTE");
+ROUTE2632.fromField = "fraction_changed";
+ROUTE2632.fromNode = "JumpTimer";
+ROUTE2632.toField = "set_fraction";
+ROUTE2632.toNode = "Jump_r_sternoclavicular_RollInterpolator";
+children[412] = ROUTE2632;
+
+ROUTE ROUTE2633 = createNode("ROUTE");
+ROUTE2633.fromField = "fraction_changed";
+ROUTE2633.fromNode = "JumpTimer";
+ROUTE2633.toField = "set_fraction";
+ROUTE2633.toNode = "Jump_r_acromioclavicular_RollInterpolator";
+children[413] = ROUTE2633;
+
+ROUTE ROUTE2634 = createNode("ROUTE");
+ROUTE2634.fromField = "fraction_changed";
+ROUTE2634.fromNode = "JumpTimer";
+ROUTE2634.toField = "set_fraction";
+ROUTE2634.toNode = "Jump_r_metatarsal_PitchInterpolator";
+children[414] = ROUTE2634;
+
+ROUTE ROUTE2635 = createNode("ROUTE");
+ROUTE2635.fromField = "fraction_changed";
+ROUTE2635.fromNode = "JumpTimer";
+ROUTE2635.toField = "set_fraction";
+ROUTE2635.toNode = "Jump_sacroiliac_YawInterpolator";
+children[415] = ROUTE2635;
+
+ROUTE ROUTE2636 = createNode("ROUTE");
+ROUTE2636.fromField = "fraction_changed";
+ROUTE2636.fromNode = "JumpTimer";
+ROUTE2636.toField = "set_fraction";
+ROUTE2636.toNode = "Jump_vl5_YawInterpolator";
+children[416] = ROUTE2636;
+
+ROUTE ROUTE2637 = createNode("ROUTE");
+ROUTE2637.fromField = "fraction_changed";
+ROUTE2637.fromNode = "JumpTimer";
+ROUTE2637.toField = "set_fraction";
+ROUTE2637.toNode = "Jump_vc6_YawInterpolator";
+children[417] = ROUTE2637;
+
+ROUTE ROUTE2638 = createNode("ROUTE");
+ROUTE2638.fromField = "fraction_changed";
+ROUTE2638.fromNode = "JumpTimer";
+ROUTE2638.toField = "set_fraction";
+ROUTE2638.toNode = "Jump_l_thumb1_PitchInterpolator";
+children[418] = ROUTE2638;
+
+ROUTE ROUTE2639 = createNode("ROUTE");
+ROUTE2639.fromField = "fraction_changed";
+ROUTE2639.fromNode = "JumpTimer";
+ROUTE2639.toField = "set_fraction";
+ROUTE2639.toNode = "Jump_r_thumb1_PitchInterpolator";
+children[419] = ROUTE2639;
+
+ROUTE ROUTE2640 = createNode("ROUTE");
+ROUTE2640.fromField = "value_changed";
+ROUTE2640.fromNode = "Jump_r_ankle_RotationInterpolator";
+ROUTE2640.toField = "set_rotation";
+ROUTE2640.toNode = "hanim_r_ankle";
+children[420] = ROUTE2640;
+
+ROUTE ROUTE2641 = createNode("ROUTE");
+ROUTE2641.fromField = "value_changed";
+ROUTE2641.fromNode = "Jump_r_knee_RotationInterpolator";
+ROUTE2641.toField = "set_rotation";
+ROUTE2641.toNode = "hanim_r_knee";
+children[421] = ROUTE2641;
+
+ROUTE ROUTE2642 = createNode("ROUTE");
+ROUTE2642.fromField = "value_changed";
+ROUTE2642.fromNode = "Jump_r_hip_RotationInterpolator";
+ROUTE2642.toField = "set_rotation";
+ROUTE2642.toNode = "hanim_r_hip";
+children[422] = ROUTE2642;
+
+ROUTE ROUTE2643 = createNode("ROUTE");
+ROUTE2643.fromField = "value_changed";
+ROUTE2643.fromNode = "Jump_l_ankle_RotationInterpolator";
+ROUTE2643.toField = "set_rotation";
+ROUTE2643.toNode = "hanim_l_ankle";
+children[423] = ROUTE2643;
+
+ROUTE ROUTE2644 = createNode("ROUTE");
+ROUTE2644.fromField = "value_changed";
+ROUTE2644.fromNode = "Jump_l_knee_RotationInterpolator";
+ROUTE2644.toField = "set_rotation";
+ROUTE2644.toNode = "hanim_l_knee";
+children[424] = ROUTE2644;
+
+ROUTE ROUTE2645 = createNode("ROUTE");
+ROUTE2645.fromField = "value_changed";
+ROUTE2645.fromNode = "Jump_l_hip_RotationInterpolator";
+ROUTE2645.toField = "set_rotation";
+ROUTE2645.toNode = "hanim_l_hip";
+children[425] = ROUTE2645;
+
+ROUTE ROUTE2646 = createNode("ROUTE");
+ROUTE2646.fromField = "value_changed";
+ROUTE2646.fromNode = "Jump_r_wrist_RotationInterpolator";
+ROUTE2646.toField = "set_rotation";
+ROUTE2646.toNode = "hanim_r_wrist";
+children[426] = ROUTE2646;
+
+ROUTE ROUTE2647 = createNode("ROUTE");
+ROUTE2647.fromField = "value_changed";
+ROUTE2647.fromNode = "Jump_r_elbow_RotationInterpolator";
+ROUTE2647.toField = "set_rotation";
+ROUTE2647.toNode = "hanim_r_elbow";
+children[427] = ROUTE2647;
+
+ROUTE ROUTE2648 = createNode("ROUTE");
+ROUTE2648.fromField = "value_changed";
+ROUTE2648.fromNode = "Jump_r_shoulder_RotationInterpolator";
+ROUTE2648.toField = "set_rotation";
+ROUTE2648.toNode = "hanim_r_shoulder";
+children[428] = ROUTE2648;
+
+ROUTE ROUTE2649 = createNode("ROUTE");
+ROUTE2649.fromField = "value_changed";
+ROUTE2649.fromNode = "Jump_l_wrist_RotationInterpolator";
+ROUTE2649.toField = "set_rotation";
+ROUTE2649.toNode = "hanim_l_wrist";
+children[429] = ROUTE2649;
+
+ROUTE ROUTE2650 = createNode("ROUTE");
+ROUTE2650.fromField = "value_changed";
+ROUTE2650.fromNode = "Jump_l_elbow_RotationInterpolator";
+ROUTE2650.toField = "set_rotation";
+ROUTE2650.toNode = "hanim_l_elbow";
+children[430] = ROUTE2650;
+
+ROUTE ROUTE2651 = createNode("ROUTE");
+ROUTE2651.fromField = "value_changed";
+ROUTE2651.fromNode = "Jump_l_shoulder_RotationInterpolator";
+ROUTE2651.toField = "set_rotation";
+ROUTE2651.toNode = "hanim_l_shoulder";
+children[431] = ROUTE2651;
+
+ROUTE ROUTE2652 = createNode("ROUTE");
+ROUTE2652.fromField = "value_changed";
+ROUTE2652.fromNode = "Jump_head_RotationInterpolator";
+ROUTE2652.toField = "set_rotation";
+ROUTE2652.toNode = "hanim_skullbase";
+children[432] = ROUTE2652;
+
+ROUTE ROUTE2653 = createNode("ROUTE");
+ROUTE2653.fromField = "value_changed";
+ROUTE2653.fromNode = "Jump_whole_body_RotationInterpolator";
+ROUTE2653.toField = "set_rotation";
+ROUTE2653.toNode = "hanim_humanoid_root";
+children[433] = ROUTE2653;
+
+ROUTE ROUTE2654 = createNode("ROUTE");
+ROUTE2654.fromField = "value_changed";
+ROUTE2654.fromNode = "Jump_whole_body_TranslationInterpolator";
+ROUTE2654.toField = "set_translation";
+ROUTE2654.toNode = "hanim_humanoid_root";
+children[434] = ROUTE2654;
+
+ROUTE ROUTE2655 = createNode("ROUTE");
+ROUTE2655.fromField = "value_changed";
+ROUTE2655.fromNode = "Jump_vl5_YawInterpolator";
+ROUTE2655.toField = "set_rotation";
+ROUTE2655.toNode = "hanim_vl5";
+children[435] = ROUTE2655;
+
+ROUTE ROUTE2656 = createNode("ROUTE");
+ROUTE2656.fromField = "fraction_changed";
+ROUTE2656.fromNode = "KickTimer";
+ROUTE2656.toField = "set_fraction";
+ROUTE2656.toNode = "Kick_l_sternoclavicular_RollInterpolator";
+children[436] = ROUTE2656;
+
+ROUTE ROUTE2657 = createNode("ROUTE");
+ROUTE2657.fromField = "fraction_changed";
+ROUTE2657.fromNode = "KickTimer";
+ROUTE2657.toField = "set_fraction";
+ROUTE2657.toNode = "Kick_l_acromioclavicular_RollInterpolator";
+children[437] = ROUTE2657;
+
+ROUTE ROUTE2658 = createNode("ROUTE");
+ROUTE2658.fromField = "fraction_changed";
+ROUTE2658.fromNode = "KickTimer";
+ROUTE2658.toField = "set_fraction";
+ROUTE2658.toNode = "Kick_l_shoulder_RollInterpolator";
+children[438] = ROUTE2658;
+
+ROUTE ROUTE2659 = createNode("ROUTE");
+ROUTE2659.fromField = "fraction_changed";
+ROUTE2659.fromNode = "KickTimer";
+ROUTE2659.toField = "set_fraction";
+ROUTE2659.toNode = "Kick_l_ForeArm_PitchInterpolator";
+children[439] = ROUTE2659;
+
+ROUTE ROUTE2660 = createNode("ROUTE");
+ROUTE2660.fromField = "fraction_changed";
+ROUTE2660.fromNode = "KickTimer";
+ROUTE2660.toField = "set_fraction";
+ROUTE2660.toNode = "Kick_l_wrist_RollInterpolator";
+children[440] = ROUTE2660;
+
+ROUTE ROUTE2661 = createNode("ROUTE");
+ROUTE2661.fromField = "fraction_changed";
+ROUTE2661.fromNode = "KickTimer";
+ROUTE2661.toField = "set_fraction";
+ROUTE2661.toNode = "Kick_l_thumb1_PitchInterpolator";
+children[441] = ROUTE2661;
+
+ROUTE ROUTE2662 = createNode("ROUTE");
+ROUTE2662.fromField = "fraction_changed";
+ROUTE2662.fromNode = "KickTimer";
+ROUTE2662.toField = "set_fraction";
+ROUTE2662.toNode = "Kick_r_sternoclavicular_RollInterpolator";
+children[442] = ROUTE2662;
+
+ROUTE ROUTE2663 = createNode("ROUTE");
+ROUTE2663.fromField = "fraction_changed";
+ROUTE2663.fromNode = "KickTimer";
+ROUTE2663.toField = "set_fraction";
+ROUTE2663.toNode = "Kick_r_acromioclavicular_RollInterpolator";
+children[443] = ROUTE2663;
+
+ROUTE ROUTE2664 = createNode("ROUTE");
+ROUTE2664.fromField = "fraction_changed";
+ROUTE2664.fromNode = "KickTimer";
+ROUTE2664.toField = "set_fraction";
+ROUTE2664.toNode = "Kick_r_shoulder_RollInterpolator";
+children[444] = ROUTE2664;
+
+ROUTE ROUTE2665 = createNode("ROUTE");
+ROUTE2665.fromField = "fraction_changed";
+ROUTE2665.fromNode = "KickTimer";
+ROUTE2665.toField = "set_fraction";
+ROUTE2665.toNode = "Kick_r_ForeArm_PitchInterpolator";
+children[445] = ROUTE2665;
+
+ROUTE ROUTE2666 = createNode("ROUTE");
+ROUTE2666.fromField = "fraction_changed";
+ROUTE2666.fromNode = "KickTimer";
+ROUTE2666.toField = "set_fraction";
+ROUTE2666.toNode = "Kick_r_wrist_RollInterpolator";
+children[446] = ROUTE2666;
+
+ROUTE ROUTE2667 = createNode("ROUTE");
+ROUTE2667.fromField = "fraction_changed";
+ROUTE2667.fromNode = "KickTimer";
+ROUTE2667.toField = "set_fraction";
+ROUTE2667.toNode = "Kick_r_thumb1_PitchInterpolator";
+children[447] = ROUTE2667;
+
+ROUTE ROUTE2668 = createNode("ROUTE");
+ROUTE2668.fromField = "fraction_changed";
+ROUTE2668.fromNode = "KickTimer";
+ROUTE2668.toField = "set_fraction";
+ROUTE2668.toNode = "Kick_r_hip_PitchInterpolator";
+children[448] = ROUTE2668;
+
+ROUTE ROUTE2669 = createNode("ROUTE");
+ROUTE2669.fromField = "fraction_changed";
+ROUTE2669.fromNode = "KickTimer";
+ROUTE2669.toField = "set_fraction";
+ROUTE2669.toNode = "Kick_r_knee_PitchInterpolator";
+children[449] = ROUTE2669;
+
+ROUTE ROUTE2670 = createNode("ROUTE");
+ROUTE2670.fromField = "fraction_changed";
+ROUTE2670.fromNode = "KickTimer";
+ROUTE2670.toField = "set_fraction";
+ROUTE2670.toNode = "Kick_l_hip_PitchInterpolator";
+children[450] = ROUTE2670;
+
+ROUTE ROUTE2671 = createNode("ROUTE");
+ROUTE2671.fromField = "fraction_changed";
+ROUTE2671.fromNode = "KickTimer";
+ROUTE2671.toField = "set_fraction";
+ROUTE2671.toNode = "Kick_l_knee_PitchInterpolator";
+children[451] = ROUTE2671;
+
+ROUTE ROUTE2672 = createNode("ROUTE");
+ROUTE2672.fromField = "fraction_changed";
+ROUTE2672.fromNode = "KickTimer";
+ROUTE2672.toField = "set_fraction";
+ROUTE2672.toNode = "Kick_r_ankle_PitchInterpolator";
+children[452] = ROUTE2672;
+
+ROUTE ROUTE2673 = createNode("ROUTE");
+ROUTE2673.fromField = "fraction_changed";
+ROUTE2673.fromNode = "KickTimer";
+ROUTE2673.toField = "set_fraction";
+ROUTE2673.toNode = "Kick_r_metatarsal_PitchInterpolator";
+children[453] = ROUTE2673;
+
+ROUTE ROUTE2674 = createNode("ROUTE");
+ROUTE2674.fromField = "fraction_changed";
+ROUTE2674.fromNode = "KickTimer";
+ROUTE2674.toField = "set_fraction";
+ROUTE2674.toNode = "Kick_sacroiliac_YawInterpolator";
+children[454] = ROUTE2674;
+
+ROUTE ROUTE2675 = createNode("ROUTE");
+ROUTE2675.fromField = "fraction_changed";
+ROUTE2675.fromNode = "KickTimer";
+ROUTE2675.toField = "set_fraction";
+ROUTE2675.toNode = "Kick_vl5_YawInterpolator";
+children[455] = ROUTE2675;
+
+ROUTE ROUTE2676 = createNode("ROUTE");
+ROUTE2676.fromField = "fraction_changed";
+ROUTE2676.fromNode = "KickTimer";
+ROUTE2676.toField = "set_fraction";
+ROUTE2676.toNode = "Kick_vc6_YawInterpolator";
+children[456] = ROUTE2676;
+
+ROUTE ROUTE2677 = createNode("ROUTE");
+ROUTE2677.fromField = "fraction_changed";
+ROUTE2677.fromNode = "KickTimer";
+ROUTE2677.toField = "set_fraction";
+ROUTE2677.toNode = "Kick_lower_body_RotationInterpolator";
+children[457] = ROUTE2677;
+
+ROUTE ROUTE2678 = createNode("ROUTE");
+ROUTE2678.fromField = "fraction_changed";
+ROUTE2678.fromNode = "KickTimer";
+ROUTE2678.toField = "set_fraction";
+ROUTE2678.toNode = "Kick_upper_body_RotationInterpolator";
+children[458] = ROUTE2678;
+
+ROUTE ROUTE2679 = createNode("ROUTE");
+ROUTE2679.fromField = "fraction_changed";
+ROUTE2679.fromNode = "KickTimer";
+ROUTE2679.toField = "set_fraction";
+ROUTE2679.toNode = "Kick_whole_body_RotationInterpolator";
+children[459] = ROUTE2679;
+
+ROUTE ROUTE2680 = createNode("ROUTE");
+ROUTE2680.fromField = "fraction_changed";
+ROUTE2680.fromNode = "KickTimer";
+ROUTE2680.toField = "set_fraction";
+ROUTE2680.toNode = "Kick_whole_body_TranslationInterpolator";
+children[460] = ROUTE2680;
+
+ROUTE ROUTE2681 = createNode("ROUTE");
+ROUTE2681.fromField = "fraction_changed";
+ROUTE2681.fromNode = "KickTimer";
+ROUTE2681.toField = "set_fraction";
+ROUTE2681.toNode = "Kick_neck_RotationInterpolator";
+children[461] = ROUTE2681;
+
+ROUTE ROUTE2682 = createNode("ROUTE");
+ROUTE2682.fromField = "value_changed";
+ROUTE2682.fromNode = "Kick_l_shoulder_RollInterpolator";
+ROUTE2682.toField = "set_rotation";
+ROUTE2682.toNode = "hanim_l_shoulder";
+children[462] = ROUTE2682;
+
+ROUTE ROUTE2683 = createNode("ROUTE");
+ROUTE2683.fromField = "value_changed";
+ROUTE2683.fromNode = "Kick_l_ForeArm_PitchInterpolator";
+ROUTE2683.toField = "set_rotation";
+ROUTE2683.toNode = "hanim_l_elbow";
+children[463] = ROUTE2683;
+
+ROUTE ROUTE2684 = createNode("ROUTE");
+ROUTE2684.fromField = "value_changed";
+ROUTE2684.fromNode = "Kick_l_wrist_RollInterpolator";
+ROUTE2684.toField = "set_rotation";
+ROUTE2684.toNode = "hanim_l_wrist";
+children[464] = ROUTE2684;
+
+ROUTE ROUTE2685 = createNode("ROUTE");
+ROUTE2685.fromField = "value_changed";
+ROUTE2685.fromNode = "Kick_r_shoulder_RollInterpolator";
+ROUTE2685.toField = "set_rotation";
+ROUTE2685.toNode = "hanim_r_shoulder";
+children[465] = ROUTE2685;
+
+ROUTE ROUTE2686 = createNode("ROUTE");
+ROUTE2686.fromField = "value_changed";
+ROUTE2686.fromNode = "Kick_r_ForeArm_PitchInterpolator";
+ROUTE2686.toField = "set_rotation";
+ROUTE2686.toNode = "hanim_r_elbow";
+children[466] = ROUTE2686;
+
+ROUTE ROUTE2687 = createNode("ROUTE");
+ROUTE2687.fromField = "value_changed";
+ROUTE2687.fromNode = "Kick_r_wrist_RollInterpolator";
+ROUTE2687.toField = "set_rotation";
+ROUTE2687.toNode = "hanim_r_wrist";
+children[467] = ROUTE2687;
+
+ROUTE ROUTE2688 = createNode("ROUTE");
+ROUTE2688.fromField = "value_changed";
+ROUTE2688.fromNode = "Kick_r_hip_PitchInterpolator";
+ROUTE2688.toField = "set_rotation";
+ROUTE2688.toNode = "hanim_r_hip";
+children[468] = ROUTE2688;
+
+ROUTE ROUTE2689 = createNode("ROUTE");
+ROUTE2689.fromField = "value_changed";
+ROUTE2689.fromNode = "Kick_r_knee_PitchInterpolator";
+ROUTE2689.toField = "set_rotation";
+ROUTE2689.toNode = "hanim_r_knee";
+children[469] = ROUTE2689;
+
+ROUTE ROUTE2690 = createNode("ROUTE");
+ROUTE2690.fromField = "value_changed";
+ROUTE2690.fromNode = "Kick_r_ankle_PitchInterpolator";
+ROUTE2690.toField = "set_rotation";
+ROUTE2690.toNode = "hanim_r_ankle";
+children[470] = ROUTE2690;
+
+ROUTE ROUTE2691 = createNode("ROUTE");
+ROUTE2691.fromField = "value_changed";
+ROUTE2691.fromNode = "Kick_l_hip_PitchInterpolator";
+ROUTE2691.toField = "set_rotation";
+ROUTE2691.toNode = "hanim_l_hip";
+children[471] = ROUTE2691;
+
+ROUTE ROUTE2692 = createNode("ROUTE");
+ROUTE2692.fromField = "value_changed";
+ROUTE2692.fromNode = "Kick_l_knee_PitchInterpolator";
+ROUTE2692.toField = "set_rotation";
+ROUTE2692.toNode = "hanim_l_knee";
+children[472] = ROUTE2692;
+
+ROUTE ROUTE2693 = createNode("ROUTE");
+ROUTE2693.fromField = "value_changed";
+ROUTE2693.fromNode = "Kick_r_ankle_PitchInterpolator";
+ROUTE2693.toField = "set_rotation";
+ROUTE2693.toNode = "hanim_l_ankle";
+children[473] = ROUTE2693;
+
+ROUTE ROUTE2694 = createNode("ROUTE");
+ROUTE2694.fromField = "value_changed";
+ROUTE2694.fromNode = "Kick_vl5_YawInterpolator";
+ROUTE2694.toField = "set_rotation";
+ROUTE2694.toNode = "hanim_vl5";
+children[474] = ROUTE2694;
+
+ROUTE ROUTE2695 = createNode("ROUTE");
+ROUTE2695.fromField = "value_changed";
+ROUTE2695.fromNode = "Kick_whole_body_RotationInterpolator";
+ROUTE2695.toField = "set_rotation";
+ROUTE2695.toNode = "hanim_humanoid_root";
+children[475] = ROUTE2695;
+
+ROUTE ROUTE2696 = createNode("ROUTE");
+ROUTE2696.fromField = "value_changed";
+ROUTE2696.fromNode = "Kick_whole_body_TranslationInterpolator";
+ROUTE2696.toField = "set_translation";
+ROUTE2696.toNode = "hanim_humanoid_root";
+children[476] = ROUTE2696;
+
+ROUTE ROUTE2697 = createNode("ROUTE");
+ROUTE2697.fromField = "position_changed";
+ROUTE2697.fromNode = "HudProx";
+ROUTE2697.toField = "set_translation";
+ROUTE2697.toNode = "HudXform";
+children[477] = ROUTE2697;
+
+ROUTE ROUTE2698 = createNode("ROUTE");
+ROUTE2698.fromField = "orientation_changed";
+ROUTE2698.fromNode = "HudProx";
+ROUTE2698.toField = "set_rotation";
+ROUTE2698.toNode = "HudXform";
+children[478] = ROUTE2698;
+
+ROUTE ROUTE2699 = createNode("ROUTE");
+ROUTE2699.fromField = "touchTime";
+ROUTE2699.fromNode = "Stand_Touch";
+ROUTE2699.toField = "set_stopTime";
+ROUTE2699.toNode = "PitchTimer";
+children[479] = ROUTE2699;
+
+ROUTE ROUTE2700 = createNode("ROUTE");
+ROUTE2700.fromField = "touchTime";
+ROUTE2700.fromNode = "Stand_Touch";
+ROUTE2700.toField = "set_stopTime";
+ROUTE2700.toNode = "YawTimer";
+children[480] = ROUTE2700;
+
+ROUTE ROUTE2701 = createNode("ROUTE");
+ROUTE2701.fromField = "touchTime";
+ROUTE2701.fromNode = "Stand_Touch";
+ROUTE2701.toField = "set_stopTime";
+ROUTE2701.toNode = "RollTimer";
+children[481] = ROUTE2701;
+
+ROUTE ROUTE2702 = createNode("ROUTE");
+ROUTE2702.fromField = "touchTime";
+ROUTE2702.fromNode = "Stand_Touch";
+ROUTE2702.toField = "set_stopTime";
+ROUTE2702.toNode = "WalkTimer";
+children[482] = ROUTE2702;
+
+ROUTE ROUTE2703 = createNode("ROUTE");
+ROUTE2703.fromField = "touchTime";
+ROUTE2703.fromNode = "Stand_Touch";
+ROUTE2703.toField = "set_stopTime";
+ROUTE2703.toNode = "RunTimer";
+children[483] = ROUTE2703;
+
+ROUTE ROUTE2704 = createNode("ROUTE");
+ROUTE2704.fromField = "touchTime";
+ROUTE2704.fromNode = "Stand_Touch";
+ROUTE2704.toField = "set_stopTime";
+ROUTE2704.toNode = "JumpTimer";
+children[484] = ROUTE2704;
+
+ROUTE ROUTE2705 = createNode("ROUTE");
+ROUTE2705.fromField = "touchTime";
+ROUTE2705.fromNode = "Stand_Touch";
+ROUTE2705.toField = "set_stopTime";
+ROUTE2705.toNode = "KickTimer";
+children[485] = ROUTE2705;
+
+ROUTE ROUTE2706 = createNode("ROUTE");
+ROUTE2706.fromField = "touchTime";
+ROUTE2706.fromNode = "Stand_Touch";
+ROUTE2706.toField = "set_stopTime";
+ROUTE2706.toNode = "StopTimer";
+children[486] = ROUTE2706;
+
+ROUTE ROUTE2707 = createNode("ROUTE");
+ROUTE2707.fromField = "touchTime";
+ROUTE2707.fromNode = "Stand_Touch";
+ROUTE2707.toField = "set_startTime";
+ROUTE2707.toNode = "StandTimer";
+children[487] = ROUTE2707;
+
+ROUTE ROUTE2708 = createNode("ROUTE");
+ROUTE2708.fromField = "touchTime";
+ROUTE2708.fromNode = "Pitch_Touch";
+ROUTE2708.toField = "set_stopTime";
+ROUTE2708.toNode = "StandTimer";
+children[488] = ROUTE2708;
+
+ROUTE ROUTE2709 = createNode("ROUTE");
+ROUTE2709.fromField = "touchTime";
+ROUTE2709.fromNode = "Pitch_Touch";
+ROUTE2709.toField = "set_stopTime";
+ROUTE2709.toNode = "YawTimer";
+children[489] = ROUTE2709;
+
+ROUTE ROUTE2710 = createNode("ROUTE");
+ROUTE2710.fromField = "touchTime";
+ROUTE2710.fromNode = "Pitch_Touch";
+ROUTE2710.toField = "set_stopTime";
+ROUTE2710.toNode = "RollTimer";
+children[490] = ROUTE2710;
+
+ROUTE ROUTE2711 = createNode("ROUTE");
+ROUTE2711.fromField = "touchTime";
+ROUTE2711.fromNode = "Pitch_Touch";
+ROUTE2711.toField = "set_stopTime";
+ROUTE2711.toNode = "WalkTimer";
+children[491] = ROUTE2711;
+
+ROUTE ROUTE2712 = createNode("ROUTE");
+ROUTE2712.fromField = "touchTime";
+ROUTE2712.fromNode = "Pitch_Touch";
+ROUTE2712.toField = "set_stopTime";
+ROUTE2712.toNode = "RunTimer";
+children[492] = ROUTE2712;
+
+ROUTE ROUTE2713 = createNode("ROUTE");
+ROUTE2713.fromField = "touchTime";
+ROUTE2713.fromNode = "Pitch_Touch";
+ROUTE2713.toField = "set_stopTime";
+ROUTE2713.toNode = "JumpTimer";
+children[493] = ROUTE2713;
+
+ROUTE ROUTE2714 = createNode("ROUTE");
+ROUTE2714.fromField = "touchTime";
+ROUTE2714.fromNode = "Pitch_Touch";
+ROUTE2714.toField = "set_stopTime";
+ROUTE2714.toNode = "KickTimer";
+children[494] = ROUTE2714;
+
+ROUTE ROUTE2715 = createNode("ROUTE");
+ROUTE2715.fromField = "touchTime";
+ROUTE2715.fromNode = "Pitch_Touch";
+ROUTE2715.toField = "set_stopTime";
+ROUTE2715.toNode = "StopTimer";
+children[495] = ROUTE2715;
+
+ROUTE ROUTE2716 = createNode("ROUTE");
+ROUTE2716.fromField = "touchTime";
+ROUTE2716.fromNode = "Pitch_Touch";
+ROUTE2716.toField = "set_startTime";
+ROUTE2716.toNode = "PitchTimer";
+children[496] = ROUTE2716;
+
+ROUTE ROUTE2717 = createNode("ROUTE");
+ROUTE2717.fromField = "touchTime";
+ROUTE2717.fromNode = "Yaw_Touch";
+ROUTE2717.toField = "set_stopTime";
+ROUTE2717.toNode = "StandTimer";
+children[497] = ROUTE2717;
+
+ROUTE ROUTE2718 = createNode("ROUTE");
+ROUTE2718.fromField = "touchTime";
+ROUTE2718.fromNode = "Yaw_Touch";
+ROUTE2718.toField = "set_stopTime";
+ROUTE2718.toNode = "PitchTimer";
+children[498] = ROUTE2718;
+
+ROUTE ROUTE2719 = createNode("ROUTE");
+ROUTE2719.fromField = "touchTime";
+ROUTE2719.fromNode = "Yaw_Touch";
+ROUTE2719.toField = "set_stopTime";
+ROUTE2719.toNode = "RollTimer";
+children[499] = ROUTE2719;
+
+ROUTE ROUTE2720 = createNode("ROUTE");
+ROUTE2720.fromField = "touchTime";
+ROUTE2720.fromNode = "Yaw_Touch";
+ROUTE2720.toField = "set_stopTime";
+ROUTE2720.toNode = "WalkTimer";
+children[500] = ROUTE2720;
+
+ROUTE ROUTE2721 = createNode("ROUTE");
+ROUTE2721.fromField = "touchTime";
+ROUTE2721.fromNode = "Yaw_Touch";
+ROUTE2721.toField = "set_stopTime";
+ROUTE2721.toNode = "RunTimer";
+children[501] = ROUTE2721;
+
+ROUTE ROUTE2722 = createNode("ROUTE");
+ROUTE2722.fromField = "touchTime";
+ROUTE2722.fromNode = "Yaw_Touch";
+ROUTE2722.toField = "set_stopTime";
+ROUTE2722.toNode = "JumpTimer";
+children[502] = ROUTE2722;
+
+ROUTE ROUTE2723 = createNode("ROUTE");
+ROUTE2723.fromField = "touchTime";
+ROUTE2723.fromNode = "Yaw_Touch";
+ROUTE2723.toField = "set_stopTime";
+ROUTE2723.toNode = "KickTimer";
+children[503] = ROUTE2723;
+
+ROUTE ROUTE2724 = createNode("ROUTE");
+ROUTE2724.fromField = "touchTime";
+ROUTE2724.fromNode = "Yaw_Touch";
+ROUTE2724.toField = "set_stopTime";
+ROUTE2724.toNode = "StopTimer";
+children[504] = ROUTE2724;
+
+ROUTE ROUTE2725 = createNode("ROUTE");
+ROUTE2725.fromField = "touchTime";
+ROUTE2725.fromNode = "Yaw_Touch";
+ROUTE2725.toField = "set_startTime";
+ROUTE2725.toNode = "YawTimer";
+children[505] = ROUTE2725;
+
+ROUTE ROUTE2726 = createNode("ROUTE");
+ROUTE2726.fromField = "touchTime";
+ROUTE2726.fromNode = "Walk_Touch";
+ROUTE2726.toField = "set_stopTime";
+ROUTE2726.toNode = "StandTimer";
+children[506] = ROUTE2726;
+
+ROUTE ROUTE2727 = createNode("ROUTE");
+ROUTE2727.fromField = "touchTime";
+ROUTE2727.fromNode = "Walk_Touch";
+ROUTE2727.toField = "set_stopTime";
+ROUTE2727.toNode = "PitchTimer";
+children[507] = ROUTE2727;
+
+ROUTE ROUTE2728 = createNode("ROUTE");
+ROUTE2728.fromField = "touchTime";
+ROUTE2728.fromNode = "Walk_Touch";
+ROUTE2728.toField = "set_stopTime";
+ROUTE2728.toNode = "YawTimer";
+children[508] = ROUTE2728;
+
+ROUTE ROUTE2729 = createNode("ROUTE");
+ROUTE2729.fromField = "touchTime";
+ROUTE2729.fromNode = "Walk_Touch";
+ROUTE2729.toField = "set_stopTime";
+ROUTE2729.toNode = "RollTimer";
+children[509] = ROUTE2729;
+
+ROUTE ROUTE2730 = createNode("ROUTE");
+ROUTE2730.fromField = "touchTime";
+ROUTE2730.fromNode = "Walk_Touch";
+ROUTE2730.toField = "set_stopTime";
+ROUTE2730.toNode = "RunTimer";
+children[510] = ROUTE2730;
+
+ROUTE ROUTE2731 = createNode("ROUTE");
+ROUTE2731.fromField = "touchTime";
+ROUTE2731.fromNode = "Walk_Touch";
+ROUTE2731.toField = "set_stopTime";
+ROUTE2731.toNode = "JumpTimer";
+children[511] = ROUTE2731;
+
+ROUTE ROUTE2732 = createNode("ROUTE");
+ROUTE2732.fromField = "touchTime";
+ROUTE2732.fromNode = "Walk_Touch";
+ROUTE2732.toField = "set_stopTime";
+ROUTE2732.toNode = "KickTimer";
+children[512] = ROUTE2732;
+
+ROUTE ROUTE2733 = createNode("ROUTE");
+ROUTE2733.fromField = "touchTime";
+ROUTE2733.fromNode = "Walk_Touch";
+ROUTE2733.toField = "set_stopTime";
+ROUTE2733.toNode = "StopTimer";
+children[513] = ROUTE2733;
+
+ROUTE ROUTE2734 = createNode("ROUTE");
+ROUTE2734.fromField = "touchTime";
+ROUTE2734.fromNode = "Walk_Touch";
+ROUTE2734.toField = "set_startTime";
+ROUTE2734.toNode = "WalkTimer";
+children[514] = ROUTE2734;
+
+ROUTE ROUTE2735 = createNode("ROUTE");
+ROUTE2735.fromField = "touchTime";
+ROUTE2735.fromNode = "Roll_Touch";
+ROUTE2735.toField = "set_stopTime";
+ROUTE2735.toNode = "StandTimer";
+children[515] = ROUTE2735;
+
+ROUTE ROUTE2736 = createNode("ROUTE");
+ROUTE2736.fromField = "touchTime";
+ROUTE2736.fromNode = "Roll_Touch";
+ROUTE2736.toField = "set_stopTime";
+ROUTE2736.toNode = "PitchTimer";
+children[516] = ROUTE2736;
+
+ROUTE ROUTE2737 = createNode("ROUTE");
+ROUTE2737.fromField = "touchTime";
+ROUTE2737.fromNode = "Roll_Touch";
+ROUTE2737.toField = "set_stopTime";
+ROUTE2737.toNode = "YawTimer";
+children[517] = ROUTE2737;
+
+ROUTE ROUTE2738 = createNode("ROUTE");
+ROUTE2738.fromField = "touchTime";
+ROUTE2738.fromNode = "Roll_Touch";
+ROUTE2738.toField = "set_stopTime";
+ROUTE2738.toNode = "WalkTimer";
+children[518] = ROUTE2738;
+
+ROUTE ROUTE2739 = createNode("ROUTE");
+ROUTE2739.fromField = "touchTime";
+ROUTE2739.fromNode = "Roll_Touch";
+ROUTE2739.toField = "set_stopTime";
+ROUTE2739.toNode = "RunTimer";
+children[519] = ROUTE2739;
+
+ROUTE ROUTE2740 = createNode("ROUTE");
+ROUTE2740.fromField = "touchTime";
+ROUTE2740.fromNode = "Roll_Touch";
+ROUTE2740.toField = "set_stopTime";
+ROUTE2740.toNode = "JumpTimer";
+children[520] = ROUTE2740;
+
+ROUTE ROUTE2741 = createNode("ROUTE");
+ROUTE2741.fromField = "touchTime";
+ROUTE2741.fromNode = "Roll_Touch";
+ROUTE2741.toField = "set_stopTime";
+ROUTE2741.toNode = "KickTimer";
+children[521] = ROUTE2741;
+
+ROUTE ROUTE2742 = createNode("ROUTE");
+ROUTE2742.fromField = "touchTime";
+ROUTE2742.fromNode = "Roll_Touch";
+ROUTE2742.toField = "set_stopTime";
+ROUTE2742.toNode = "StopTimer";
+children[522] = ROUTE2742;
+
+ROUTE ROUTE2743 = createNode("ROUTE");
+ROUTE2743.fromField = "touchTime";
+ROUTE2743.fromNode = "Roll_Touch";
+ROUTE2743.toField = "set_startTime";
+ROUTE2743.toNode = "RollTimer";
+children[523] = ROUTE2743;
+
+ROUTE ROUTE2744 = createNode("ROUTE");
+ROUTE2744.fromField = "touchTime";
+ROUTE2744.fromNode = "Run_Touch";
+ROUTE2744.toField = "set_stopTime";
+ROUTE2744.toNode = "StandTimer";
+children[524] = ROUTE2744;
+
+ROUTE ROUTE2745 = createNode("ROUTE");
+ROUTE2745.fromField = "touchTime";
+ROUTE2745.fromNode = "Run_Touch";
+ROUTE2745.toField = "set_stopTime";
+ROUTE2745.toNode = "PitchTimer";
+children[525] = ROUTE2745;
+
+ROUTE ROUTE2746 = createNode("ROUTE");
+ROUTE2746.fromField = "touchTime";
+ROUTE2746.fromNode = "Run_Touch";
+ROUTE2746.toField = "set_stopTime";
+ROUTE2746.toNode = "YawTimer";
+children[526] = ROUTE2746;
+
+ROUTE ROUTE2747 = createNode("ROUTE");
+ROUTE2747.fromField = "touchTime";
+ROUTE2747.fromNode = "Run_Touch";
+ROUTE2747.toField = "set_stopTime";
+ROUTE2747.toNode = "RollTimer";
+children[527] = ROUTE2747;
+
+ROUTE ROUTE2748 = createNode("ROUTE");
+ROUTE2748.fromField = "touchTime";
+ROUTE2748.fromNode = "Run_Touch";
+ROUTE2748.toField = "set_stopTime";
+ROUTE2748.toNode = "WalkTimer";
+children[528] = ROUTE2748;
+
+ROUTE ROUTE2749 = createNode("ROUTE");
+ROUTE2749.fromField = "touchTime";
+ROUTE2749.fromNode = "Run_Touch";
+ROUTE2749.toField = "set_stopTime";
+ROUTE2749.toNode = "JumpTimer";
+children[529] = ROUTE2749;
+
+ROUTE ROUTE2750 = createNode("ROUTE");
+ROUTE2750.fromField = "touchTime";
+ROUTE2750.fromNode = "Run_Touch";
+ROUTE2750.toField = "set_stopTime";
+ROUTE2750.toNode = "KickTimer";
+children[530] = ROUTE2750;
+
+ROUTE ROUTE2751 = createNode("ROUTE");
+ROUTE2751.fromField = "touchTime";
+ROUTE2751.fromNode = "Run_Touch";
+ROUTE2751.toField = "set_stopTime";
+ROUTE2751.toNode = "StopTimer";
+children[531] = ROUTE2751;
+
+ROUTE ROUTE2752 = createNode("ROUTE");
+ROUTE2752.fromField = "touchTime";
+ROUTE2752.fromNode = "Run_Touch";
+ROUTE2752.toField = "set_startTime";
+ROUTE2752.toNode = "RunTimer";
+children[532] = ROUTE2752;
+
+ROUTE ROUTE2753 = createNode("ROUTE");
+ROUTE2753.fromField = "touchTime";
+ROUTE2753.fromNode = "Jump_Touch";
+ROUTE2753.toField = "set_stopTime";
+ROUTE2753.toNode = "StandTimer";
+children[533] = ROUTE2753;
+
+ROUTE ROUTE2754 = createNode("ROUTE");
+ROUTE2754.fromField = "touchTime";
+ROUTE2754.fromNode = "Jump_Touch";
+ROUTE2754.toField = "set_stopTime";
+ROUTE2754.toNode = "PitchTimer";
+children[534] = ROUTE2754;
+
+ROUTE ROUTE2755 = createNode("ROUTE");
+ROUTE2755.fromField = "touchTime";
+ROUTE2755.fromNode = "Jump_Touch";
+ROUTE2755.toField = "set_stopTime";
+ROUTE2755.toNode = "YawTimer";
+children[535] = ROUTE2755;
+
+ROUTE ROUTE2756 = createNode("ROUTE");
+ROUTE2756.fromField = "touchTime";
+ROUTE2756.fromNode = "Jump_Touch";
+ROUTE2756.toField = "set_stopTime";
+ROUTE2756.toNode = "RollTimer";
+children[536] = ROUTE2756;
+
+ROUTE ROUTE2757 = createNode("ROUTE");
+ROUTE2757.fromField = "touchTime";
+ROUTE2757.fromNode = "Jump_Touch";
+ROUTE2757.toField = "set_stopTime";
+ROUTE2757.toNode = "WalkTimer";
+children[537] = ROUTE2757;
+
+ROUTE ROUTE2758 = createNode("ROUTE");
+ROUTE2758.fromField = "touchTime";
+ROUTE2758.fromNode = "Jump_Touch";
+ROUTE2758.toField = "set_stopTime";
+ROUTE2758.toNode = "RunTimer";
+children[538] = ROUTE2758;
+
+ROUTE ROUTE2759 = createNode("ROUTE");
+ROUTE2759.fromField = "touchTime";
+ROUTE2759.fromNode = "Jump_Touch";
+ROUTE2759.toField = "set_stopTime";
+ROUTE2759.toNode = "KickTimer";
+children[539] = ROUTE2759;
+
+ROUTE ROUTE2760 = createNode("ROUTE");
+ROUTE2760.fromField = "touchTime";
+ROUTE2760.fromNode = "Jump_Touch";
+ROUTE2760.toField = "set_stopTime";
+ROUTE2760.toNode = "StopTimer";
+children[540] = ROUTE2760;
+
+ROUTE ROUTE2761 = createNode("ROUTE");
+ROUTE2761.fromField = "touchTime";
+ROUTE2761.fromNode = "Jump_Touch";
+ROUTE2761.toField = "set_startTime";
+ROUTE2761.toNode = "JumpTimer";
+children[541] = ROUTE2761;
+
+ROUTE ROUTE2762 = createNode("ROUTE");
+ROUTE2762.fromField = "touchTime";
+ROUTE2762.fromNode = "Kick_Touch";
+ROUTE2762.toField = "set_stopTime";
+ROUTE2762.toNode = "StandTimer";
+children[542] = ROUTE2762;
+
+ROUTE ROUTE2763 = createNode("ROUTE");
+ROUTE2763.fromField = "touchTime";
+ROUTE2763.fromNode = "Kick_Touch";
+ROUTE2763.toField = "set_stopTime";
+ROUTE2763.toNode = "PitchTimer";
+children[543] = ROUTE2763;
+
+ROUTE ROUTE2764 = createNode("ROUTE");
+ROUTE2764.fromField = "touchTime";
+ROUTE2764.fromNode = "Kick_Touch";
+ROUTE2764.toField = "set_stopTime";
+ROUTE2764.toNode = "YawTimer";
+children[544] = ROUTE2764;
+
+ROUTE ROUTE2765 = createNode("ROUTE");
+ROUTE2765.fromField = "touchTime";
+ROUTE2765.fromNode = "Kick_Touch";
+ROUTE2765.toField = "set_stopTime";
+ROUTE2765.toNode = "RollTimer";
+children[545] = ROUTE2765;
+
+ROUTE ROUTE2766 = createNode("ROUTE");
+ROUTE2766.fromField = "touchTime";
+ROUTE2766.fromNode = "Kick_Touch";
+ROUTE2766.toField = "set_stopTime";
+ROUTE2766.toNode = "WalkTimer";
+children[546] = ROUTE2766;
+
+ROUTE ROUTE2767 = createNode("ROUTE");
+ROUTE2767.fromField = "touchTime";
+ROUTE2767.fromNode = "Kick_Touch";
+ROUTE2767.toField = "set_stopTime";
+ROUTE2767.toNode = "RunTimer";
+children[547] = ROUTE2767;
+
+ROUTE ROUTE2768 = createNode("ROUTE");
+ROUTE2768.fromField = "touchTime";
+ROUTE2768.fromNode = "Kick_Touch";
+ROUTE2768.toField = "set_stopTime";
+ROUTE2768.toNode = "JumpTimer";
+children[548] = ROUTE2768;
+
+ROUTE ROUTE2769 = createNode("ROUTE");
+ROUTE2769.fromField = "touchTime";
+ROUTE2769.fromNode = "Kick_Touch";
+ROUTE2769.toField = "set_stopTime";
+ROUTE2769.toNode = "StopTimer";
+children[549] = ROUTE2769;
+
+ROUTE ROUTE2770 = createNode("ROUTE");
+ROUTE2770.fromField = "touchTime";
+ROUTE2770.fromNode = "Kick_Touch";
+ROUTE2770.toField = "set_startTime";
+ROUTE2770.toNode = "KickTimer";
+children[550] = ROUTE2770;
+
+ROUTE ROUTE2771 = createNode("ROUTE");
+ROUTE2771.fromField = "touchTime";
+ROUTE2771.fromNode = "Stop_Touch";
+ROUTE2771.toField = "set_stopTime";
+ROUTE2771.toNode = "StandTimer";
+children[551] = ROUTE2771;
+
+ROUTE ROUTE2772 = createNode("ROUTE");
+ROUTE2772.fromField = "touchTime";
+ROUTE2772.fromNode = "Stop_Touch";
+ROUTE2772.toField = "set_stopTime";
+ROUTE2772.toNode = "PitchTimer";
+children[552] = ROUTE2772;
+
+ROUTE ROUTE2773 = createNode("ROUTE");
+ROUTE2773.fromField = "touchTime";
+ROUTE2773.fromNode = "Stop_Touch";
+ROUTE2773.toField = "set_stopTime";
+ROUTE2773.toNode = "YawTimer";
+children[553] = ROUTE2773;
+
+ROUTE ROUTE2774 = createNode("ROUTE");
+ROUTE2774.fromField = "touchTime";
+ROUTE2774.fromNode = "Stop_Touch";
+ROUTE2774.toField = "set_stopTime";
+ROUTE2774.toNode = "RollTimer";
+children[554] = ROUTE2774;
+
+ROUTE ROUTE2775 = createNode("ROUTE");
+ROUTE2775.fromField = "touchTime";
+ROUTE2775.fromNode = "Stop_Touch";
+ROUTE2775.toField = "set_stopTime";
+ROUTE2775.toNode = "WalkTimer";
+children[555] = ROUTE2775;
+
+ROUTE ROUTE2776 = createNode("ROUTE");
+ROUTE2776.fromField = "touchTime";
+ROUTE2776.fromNode = "Stop_Touch";
+ROUTE2776.toField = "set_stopTime";
+ROUTE2776.toNode = "RunTimer";
+children[556] = ROUTE2776;
+
+ROUTE ROUTE2777 = createNode("ROUTE");
+ROUTE2777.fromField = "touchTime";
+ROUTE2777.fromNode = "Stop_Touch";
+ROUTE2777.toField = "set_stopTime";
+ROUTE2777.toNode = "JumpTimer";
+children[557] = ROUTE2777;
+
+ROUTE ROUTE2778 = createNode("ROUTE");
+ROUTE2778.fromField = "touchTime";
+ROUTE2778.fromNode = "Stop_Touch";
+ROUTE2778.toField = "set_stopTime";
+ROUTE2778.toNode = "KickTimer";
+children[558] = ROUTE2778;
+
+ROUTE ROUTE2779 = createNode("ROUTE");
+ROUTE2779.fromField = "touchTime";
+ROUTE2779.fromNode = "Stop_Touch";
+ROUTE2779.toField = "set_startTime";
+ROUTE2779.toNode = "StopTimer";
+children[559] = ROUTE2779;
+
 }

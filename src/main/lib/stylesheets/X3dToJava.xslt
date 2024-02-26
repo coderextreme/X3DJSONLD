@@ -252,8 +252,11 @@ POSSIBILITY OF SUCH DAMAGE.
 		-->
 		
 		<xsl:text>import net.coderextreme.X3DRoots;</xsl:text>
+			<xsl:text>&#10;</xsl:text>
 		<xsl:text>import java.util.List;</xsl:text>
+			<xsl:text>&#10;</xsl:text>
 		<xsl:text>import java.util.ArrayList;</xsl:text>
+			<xsl:text>&#10;</xsl:text>
 		<xsl:text>public class </xsl:text>
 		<xsl:value-of select="$newClassName"/>
 		<xsl:text> implements X3DRoots<![CDATA[

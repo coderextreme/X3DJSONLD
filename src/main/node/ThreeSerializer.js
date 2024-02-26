@@ -72,11 +72,11 @@ function printObject(element, fieldTypes) {
 		var attrs = element.attributes;
 		try {
 			parseInt(a);
-			if (attrs.hasOwnProperty(a) && attrs[a].nodeType == 2) {
+			if (attrs.hasOwnProperty(a) && attrs[a].nodeType === 2) {
 				var attr = attrs[a].nodeName;
-				if (attr == "type") {
+				if (attr === "type") {
 					fieldAttrType = attrs[a].nodeValue;
-				} else if (attr == "containerField") {
+				} else if (attr === "containerField") {
 					obj["string"] = attrs[a].nodeValue.toLowerCase()+obj["string"].toLowerCase();
 				}
 			}
@@ -89,9 +89,9 @@ function printObject(element, fieldTypes) {
 		var attrs = element.attributes;
 		try {
 			parseInt(a);
-			if (attrs.hasOwnProperty(a) && attrs[a].nodeType == 2) {
+			if (attrs.hasOwnProperty(a) && attrs[a].nodeType === 2) {
 				var attr = attrs[a].nodeName;
-				if (attr == "xmlns:xsd" || attr == "xsd:noNamespaceSchemaLocation") {
+				if (attr === "xmlns:xsd" || attr === "xsd:noNamespaceSchemaLocation") {
 					continue;
 				}
 				if (attr !== 'containerField') {
@@ -185,11 +185,11 @@ function printObject(element, fieldTypes) {
 	var array = [];
 	for (var cn in element.childNodes) {
 		var node = element.childNodes[cn];
-		if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 1) {
+		if (element.childNodes.hasOwnProperty(cn) && node.nodeType === 1) {
 			array.push(printObject(node, fieldTypes));
-		} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 8) {
+		} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType === 8) {
 			array.push("/*"+node.nodeValue.replace(/"/g, '\\"')+"*/");
-		} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 4) {
+		} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType === 4) {
 			array.push("<script>"+node.nodeValue.split("\r\n").map(function(x) {
 				return x.replace(/\\"/g, '\\\\"').
 					replace(/"/g, '\\"').
