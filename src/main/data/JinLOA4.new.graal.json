@@ -11692,7 +11692,7 @@ failed\");",
 "                return true;",
 "        }",
 "    }",
-"    function intialize() {",
+"    function initialize() {",
 "        new HAnimScale();",
 "    }",
 "",
@@ -19090,6 +19090,12 @@ failed\");",
 "@fromNode":"Stop_Touch",
 "@toField":"set_startTime",
 "@toNode":"StopTimer"
+}
+},
+{ "Script":
+{
+"@DEF":"Scale",
+"@url":["../node/jinloa4.js"]
 }
 }
 ]
