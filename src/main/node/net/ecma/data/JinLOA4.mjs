@@ -6429,7 +6429,7 @@ ecmascript:eval (0
                 return true;
         }
     }
-    , function intialize() {
+    , function initialize() {
         new HAnimScale();
     })}),
 
@@ -11712,5 +11712,9 @@ ecmascript:eval (0
               fromField : new SFString("touchTime"),
               fromNode : new SFString("Stop_Touch"),
               toField : new SFString("set_startTime"),
-              toNode : new SFString("StopTimer")})])}))});
+              toNode : new SFString("StopTimer")}),
+
+            new Script({
+              DEF : new SFString("Scale"),
+              url : new MFString(["../node/jinloa4.js"])})])}))});
 console.log(X3D0.toXMLNode());

@@ -2048,7 +2048,7 @@ function doubleToFloat(d) {
                 return true;
         }
     }
-    function intialize() {
+    function initialize() {
         new HAnimScale();
     }`))
         .addChild(new Group().setDEF("StopAnimation")
@@ -3046,6 +3046,7 @@ function doubleToFloat(d) {
         .addChild(new ROUTE().setFromField("touchTime").setFromNode("Stop_Touch").setToField("set_stopTime").setToNode("RunTimer"))
         .addChild(new ROUTE().setFromField("touchTime").setFromNode("Stop_Touch").setToField("set_stopTime").setToNode("JumpTimer"))
         .addChild(new ROUTE().setFromField("touchTime").setFromNode("Stop_Touch").setToField("set_stopTime").setToNode("KickTimer"))
-        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Stop_Touch").setToField("set_startTime").setToNode("StopTimer")))      ;
+        .addChild(new ROUTE().setFromField("touchTime").setFromNode("Stop_Touch").setToField("set_startTime").setToNode("StopTimer"))
+        .addChild(new Script().setDEF("Scale").setUrl(Java.to(["../node/jinloa4.js"], Java.type("java.lang.String[]")))))      ;
     X3D0.toFileX3D("../data/JinLOA4.new.graal.x3d");
     X3D0.toFileJSON("../data/JinLOA4.new.graal.json");

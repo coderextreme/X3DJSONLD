@@ -6374,7 +6374,7 @@ ecmascript:eval (0
                 return true;
         }
     }
-    , function intialize() {
+    , function initialize() {
         new HAnimScale();
     })),
 
@@ -11657,5 +11657,9 @@ ecmascript:eval (0
               fromField_ : SFString('touchTime'),
               fromNode_ : SFString('Stop_Touch'),
               toField_ : SFString('set_startTime'),
-              toNode_ : SFString('StopTimer'))]));
+              toNode_ : SFString('StopTimer')),
+
+            Script(
+              DEF_ : SFString('Scale'),
+              url_ : MFString([SFString("../node/jinloa4.js")]))]));
 void main() { exit(0); }
