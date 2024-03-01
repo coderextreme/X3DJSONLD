@@ -251,26 +251,15 @@ POSSIBILITY OF SUCH DAMAGE.
 		</xsl:message>
 		-->
 		
-		<xsl:text>import net.coderextreme.X3DRoots;</xsl:text>
-			<xsl:text>&#10;</xsl:text>
-		<xsl:text>import java.util.List;</xsl:text>
-			<xsl:text>&#10;</xsl:text>
-		<xsl:text>import java.util.ArrayList;</xsl:text>
-			<xsl:text>&#10;</xsl:text>
 		<xsl:text>public class </xsl:text>
 		<xsl:value-of select="$newClassName"/>
-		<xsl:text> implements X3DRoots<![CDATA[
+		<xsl:text><![CDATA[
 {
 	/** Default constructor to create this object. */
 	public ]]></xsl:text><xsl:value-of select="$newClassName"/><xsl:text><![CDATA[ ()
 	{
 	  initialize();
 	}
-        public List<X3D> getRootNodeList() {
-                List<X3D> list = new ArrayList<X3D>(1);
-                list.add(x3dModel);
-                return list;
-        }
 
 	/** Create and initialize the X3D model for this object. */
 	public final void initialize()
