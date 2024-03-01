@@ -55,4 +55,5 @@ ConfigurationProperties.setStripTrailingZeroes(true);
                 .addParts((new autoclass.ShaderPart()).setType("VERTEX").setUrl(java.newArray("java.lang.String", ["https://coderextreme.net/X3DJSONLD/src/main/shaders/octaga.vs"])))
                 .addParts((new autoclass.ShaderPart()).setType("FRAGMENT").setDEF("commonfs").setUrl(java.newArray("java.lang.String", ["../shaders/common.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"]))))))))      ;
     X3D0.toFileX3D("../personal/octball.new.node.x3d");
+    X3D0.toFileJSON("../personal/octball.new.node.json");
     process.exit(0);

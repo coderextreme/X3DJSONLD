@@ -241,4 +241,5 @@ ConfigurationProperties.setStripTrailingZeroes(true);
           .addChild((new autoclass.ROUTE()).setFromNode("DECLBubble_bubbleD_bounce").setFromField("scale_changed").setToNode("DECLBubble_transform").setToField("set_scale"))
           .addChild((new autoclass.ROUTE()).setFromNode("DECLBubble_bubbleD_bubbleClock").setFromField("fraction_changed").setToNode("DECLBubble_bubbleD_bounce").setToField("set_fraction"))))      ;
     X3D0.toFileX3D("../personal/bubs3.new.node.x3d");
+    X3D0.toFileJSON("../personal/bubs3.new.node.json");
     process.exit(0);

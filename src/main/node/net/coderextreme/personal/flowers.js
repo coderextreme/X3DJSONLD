@@ -157,4 +157,5 @@ var ProtoInstance2 = null;
         .addChild(ProtoInstance1 = (new autoclass.ProtoInstance()).setName("flower"))
         .addChild(ProtoInstance2 = (new autoclass.ProtoInstance()).setName("flower")))      ;
     X3D0.toFileX3D("../personal/flowers.new.node.x3d");
+    X3D0.toFileJSON("../personal/flowers.new.node.json");
     process.exit(0);

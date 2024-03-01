@@ -31,4 +31,5 @@ ConfigurationProperties.setStripTrailingZeroes(true);
               .setNormal((new autoclass.Normal()).setVector(java.newArray("float", [java.newFloat(1), java.newFloat(0), java.newFloat(0), java.newFloat(-1), java.newFloat(0), java.newFloat(0), java.newFloat(0), java.newFloat(1), java.newFloat(0), java.newFloat(0), java.newFloat(0), java.newFloat(-1), java.newFloat(0), java.newFloat(-1), java.newFloat(0), java.newFloat(0), java.newFloat(0), java.newFloat(1)])))
               .setColor((new autoclass.Color()).setColor(java.newArray("float", [java.newFloat(0), java.newFloat(1), java.newFloat(0)])))))))      ;
     X3D0.toFileX3D("../personal/ifscubeworks.new.node.x3d");
+    X3D0.toFileJSON("../personal/ifscubeworks.new.node.json");
     process.exit(0);

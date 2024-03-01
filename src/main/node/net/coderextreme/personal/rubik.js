@@ -96,4 +96,5 @@ ProtoInstance8
 ProtoInstance9
           .addFieldValue((new autoclass.fieldValue()).setName("ttranslation").setValue("0 0 0"));
     X3D0.toFileX3D("../personal/rubik.new.node.x3d");
+    X3D0.toFileJSON("../personal/rubik.new.node.json");
     process.exit(0);

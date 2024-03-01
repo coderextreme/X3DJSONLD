@@ -46,7 +46,7 @@ public class bub implements X3DRoots {
     X3D model = new bub().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
     model.toFileX3D("../personal/bub.new.java.x3d");
-    model.toFileJSON("../personal/bub.new.json");
+    model.toFileJSON("../personal/bub.new.java.json");
     }
     public List<X3D> getRootNodeList() {
     	List<X3D> list = new ArrayList<X3D>(1);
