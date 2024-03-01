@@ -231,9 +231,9 @@ function assert(modifiedNode, goldenNode) {
 	var testcase = stringify(goldenNode);
 	if (mod !== testcase) {
 		fatal("Node "+mod)
-		fatal("        != "+testcase);
+		fatal("        !== "+testcase);
 	} else {
-		info("Node "+mod+" == "+testcase);
+		info("Node "+mod+" === "+testcase);
 		info("TEST PASSED");
 	}
 }

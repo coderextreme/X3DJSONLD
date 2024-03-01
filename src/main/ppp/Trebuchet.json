@@ -69,7 +69,7 @@
         },
         {
           "@name": "translated",
-          "@content": "02 July 2023"
+          "@content": "01 March 2024"
         },
         {
           "@name": "generator",
@@ -3063,7 +3063,7 @@
                           "        if ( whichchoice ==4 ) { whichchoice = 0; CounterWeight=50; }",
                           "",
                           "",
-                          "        Browser.print ('CounterWeight ='+CounterWeight);",
+                          "        Browser.println ('CounterWeight ='+CounterWeight);",
                           "}",
                           "",
                           ""
@@ -3104,7 +3104,7 @@
                           "\tif (whichchoice == 2)ProjectileWeight=5;",
                           "",
                           "\tif ( whichchoice ==3 ) { whichchoice = 0; ProjectileWeight=10.00; }",
-                          "\tBrowser.print ('Projectile Weight'+ProjectileWeight);",
+                          "\tBrowser.println ('Projectile Weight'+ProjectileWeight);",
                           "}",
                           "",
                           ""
@@ -3197,19 +3197,19 @@
                           "{",
                           "\tMassCounterWeight=100;",
                           "\tMassProjectileWeight=10;",
-                          "\tBrowser.print ('MassCounterWeight =' + MassCounterWeight);",
-                          "\tBrowser.print ('MassProjectileWeight =' + MassProjectileWeight);",
+                          "\tBrowser.println ('MassCounterWeight =' + MassCounterWeight);",
+                          "\tBrowser.println ('MassProjectileWeight =' + MassProjectileWeight);",
                           "}",
                           "",
                           "function set_MassProjectileWeight (value, timestamp)",
                           "{",
                           "\tMassProjectileWeight = value;",
-                          "\tBrowser.print ('new MassProjectileWeight =' + MassProjectileWeight);",
+                          "\tBrowser.println ('new MassProjectileWeight =' + MassProjectileWeight);",
                           "}",
                           "function set_MassCounterWeight (value2, timestamp)",
                           "{",
                           "\tMassCounterWeight = value2;",
-                          "\tBrowser.print ('new MassCounterWeight =' + MassCounterWeight);",
+                          "\tBrowser.println ('new MassCounterWeight =' + MassCounterWeight);",
                           "}",
                           "",
                           "",
@@ -3230,7 +3230,7 @@
                           "\t\t\t}",
                           "",
                           "\tvalue_changed = new SFVec3f (x, y, z);",
-                          "\tBrowser.print ('x=' + value_changed[0] + ' y=' + value_changed[1] + ' z=' + value_changed[2]);",
+                          "\tBrowser.println ('x=' + value_changed[0] + ' y=' + value_changed[1] + ' z=' + value_changed[2]);",
                           "}",
                           "",
                           ""

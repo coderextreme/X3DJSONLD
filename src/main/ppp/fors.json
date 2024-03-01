@@ -21,7 +21,7 @@
         },
         {
           "@name": "identifier",
-          "@content": "https://coderextreme.net/X3DJSONLD/force.x3d"
+          "@content": "https://coderextreme.net/X3DJSONLD/src/main/data/force.x3d"
         },
         {
           "@name": "description",
@@ -33,7 +33,7 @@
         },
         {
           "@name": "translated",
-          "@content": "02 July 2023"
+          "@content": "01 March 2024"
         },
         {
           "@name": "generator",
@@ -440,7 +440,7 @@
                 "Shape": {
                   "-geometry": {
                     "Extrusion": {
-                      "@DEF": "DECLcylinder_linkA_extrusion",
+                      "@DEF": "DECLcyl_linkA_extrusion",
                       "@creaseAngle": 0.785,
                       "@crossSection": [
                         1,
@@ -505,7 +505,7 @@
               },
               {
                 "Script": {
-                  "@DEF": "DECLcylinder_linkA_MoveCylinder",
+                  "@DEF": "DECLcyl_linkA_MoveCylinder",
                   "field": [
                     {
                       "@name": "spine",
@@ -572,9 +572,9 @@
               },
               {
                 "ROUTE": {
-                  "@fromNode": "DECLcylinder_linkA_MoveCylinder",
+                  "@fromNode": "DECLcyl_linkA_MoveCylinder",
                   "@fromField": "spine",
-                  "@toNode": "DECLcylinder_linkA_extrusion",
+                  "@toNode": "DECLcyl_linkA_extrusion",
                   "@toField": "set_spine"
                 }
               }
@@ -585,7 +585,7 @@
           "ROUTE": {
             "@fromNode": "DECLnode_nodeA_transform",
             "@fromField": "translation",
-            "@toNode": "DECLcylinder_linkA_MoveCylinder",
+            "@toNode": "DECLcyl_linkA_MoveCylinder",
             "@toField": "set_endA"
           }
         },
@@ -593,7 +593,7 @@
           "ROUTE": {
             "@fromNode": "DECLnode_nodeB_transform",
             "@fromField": "translation",
-            "@toNode": "DECLcylinder_linkA_MoveCylinder",
+            "@toNode": "DECLcyl_linkA_MoveCylinder",
             "@toField": "set_endB"
           }
         }

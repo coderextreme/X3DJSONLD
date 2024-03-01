@@ -57,7 +57,7 @@
         },
         {
           "@name": "translated",
-          "@content": "02 July 2023"
+          "@content": "01 March 2024"
         },
         {
           "@name": "generator",
@@ -342,33 +342,22 @@
         },
         {
           "StreamAudioDestination": {
-            "@channelCountMode": "MAX",
-            "@channelInterpretation": "SPEAKERS",
             "-children": [
               {
                 "DynamicsCompressor": {
-                  "@channelCountMode": "MAX",
-                  "@channelInterpretation": "SPEAKERS",
                   "-children": [
                     {
                       "Gain": {
-                        "@channelCountMode": "MAX",
-                        "@channelInterpretation": "SPEAKERS",
                         "-children": [
                           {
                             "SpatialSound": {
                               "@DEF": "Audio1",
-                              "@distanceModel": "INVERSE",
                               "-children": [
                                 {
                                   "Gain": {
-                                    "@channelCountMode": "MAX",
-                                    "@channelInterpretation": "SPEAKERS",
                                     "-children": [
                                       {
                                         "Analyser": {
-                                          "@channelCountMode": "MAX",
-                                          "@channelInterpretation": "SPEAKERS",
                                           "-children": [
                                             {
                                               "BiquadFilter": {
@@ -376,8 +365,6 @@
                                                 "@frequency": 600,
                                                 "@qualityFactor": 30,
                                                 "@type": "ALLPASS",
-                                                "@channelCountMode": "MAX",
-                                                "@channelInterpretation": "SPEAKERS",
                                                 "-children": [
                                                   {
                                                     "AudioClip": {
@@ -404,17 +391,12 @@
                           {
                             "SpatialSound": {
                               "@DEF": "Audio2",
-                              "@distanceModel": "INVERSE",
                               "-children": [
                                 {
                                   "Gain": {
-                                    "@channelCountMode": "MAX",
-                                    "@channelInterpretation": "SPEAKERS",
                                     "-children": [
                                       {
                                         "Analyser": {
-                                          "@channelCountMode": "MAX",
-                                          "@channelInterpretation": "SPEAKERS",
                                           "-children": [
                                             {
                                               "BiquadFilter": {
@@ -422,8 +404,6 @@
                                                 "@frequency": 600,
                                                 "@qualityFactor": 15,
                                                 "@type": "ALLPASS",
-                                                "@channelCountMode": "MAX",
-                                                "@channelInterpretation": "SPEAKERS",
                                                 "-children": [
                                                   {
                                                     "AudioClip": {
@@ -450,25 +430,18 @@
                           {
                             "SpatialSound": {
                               "@DEF": "Audio3",
-                              "@distanceModel": "INVERSE",
                               "-children": [
                                 {
                                   "Gain": {
-                                    "@channelCountMode": "MAX",
-                                    "@channelInterpretation": "SPEAKERS",
                                     "-children": [
                                       {
                                         "Analyser": {
-                                          "@channelCountMode": "MAX",
-                                          "@channelInterpretation": "SPEAKERS",
                                           "-children": [
                                             {
                                               "BiquadFilter": {
                                                 "@frequency": 1000,
                                                 "@qualityFactor": 0,
                                                 "@type": "ALLPASS",
-                                                "@channelCountMode": "MAX",
-                                                "@channelInterpretation": "SPEAKERS",
                                                 "-children": [
                                                   {
                                                     "AudioClip": {

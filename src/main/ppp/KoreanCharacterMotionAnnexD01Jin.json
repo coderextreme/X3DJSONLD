@@ -35,7 +35,7 @@
         },
         {
           "@name": "modified",
-          "@content": "7 January 2023"
+          "@content": "2 July 2023"
         },
         {
           "@name": "description",
@@ -87,7 +87,7 @@
         },
         {
           "@name": "translated",
-          "@content": "02 July 2023"
+          "@content": "01 March 2024"
         },
         {
           "@name": "generator",
@@ -139,6 +139,9 @@
             "-children": [
               {
                 "#comment": "original HAnimHumanoid info='\"humanoidVersion=2.0\"'"
+              },
+              {
+                "#comment": "expected outputOnly event frameCount='392'"
               }
             ],
             "-metadata": {
@@ -26318,7 +26321,6 @@
                   "@DEF": "hanim_motion_animation",
                   "@channels": "6 Xposition Yposition Zposition Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation",
                   "@enabled": false,
-                  "@totalFrameCount": 392,
                   "@joints": "HumanoidRoot l_hip l_knee l_talocrural r_hip r_knee r_talocrural vl5 IGNORED l_shoulder l_elbow l_radiocarpal IGNORED r_shoulder r_elbow r_radiocarpal IGNORED skullbase",
                   "@values": [
                     102.2373,
@@ -48665,8 +48667,7 @@
                     8.51,
                     13.49,
                     -10.77
-                  ],
-                  "@skeletalConfiguration": "BASIC"
+                  ]
                 }
               }
             ]
