@@ -55,4 +55,5 @@ ConfigurationProperties.setStripTrailingZeroes(true);
                 .addParts((new autoclass.ShaderPart()).setType("VERTEX").setUrl(java.newArray("java.lang.String", ["../shaders/castle.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.vs"])))
                 .addParts((new autoclass.ShaderPart()).setType("FRAGMENT").setDEF("commonfs").setUrl(java.newArray("java.lang.String", ["../shaders/castle.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.fs"]))))))))      ;
     X3D0.toFileX3D("../personal/cgeball.new.node.x3d");
+    X3D0.toFileJSON("../personal/cgeball.new.node.json");
     process.exit(0);

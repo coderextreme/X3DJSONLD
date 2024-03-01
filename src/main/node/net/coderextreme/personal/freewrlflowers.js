@@ -49,4 +49,5 @@ ProtoInstance0
 ProtoInstance0
                   .addFieldValue((new autoclass.fieldValue()).setName("fragment").setValue("\"../shaders/freewrl.fs\""));
     X3D0.toFileX3D("../personal/freewrlflowers.new.node.x3d");
+    X3D0.toFileJSON("../personal/freewrlflowers.new.node.json");
     process.exit(0);

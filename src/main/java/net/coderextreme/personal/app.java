@@ -46,7 +46,7 @@ public class app implements X3DRoots {
     X3D model = new app().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
     model.toFileX3D("../personal/app.new.java.x3d");
-    model.toFileJSON("../personal/app.new.json");
+    model.toFileJSON("../personal/app.new.java.json");
     }
     public List<X3D> getRootNodeList() {
     	List<X3D> list = new ArrayList<X3D>(1);

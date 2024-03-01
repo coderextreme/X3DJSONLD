@@ -46,7 +46,7 @@ public class flowers implements X3DRoots {
     X3D model = new flowers().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
     model.toFileX3D("../personal/flowers.new.java.x3d");
-    model.toFileJSON("../personal/flowers.new.json");
+    model.toFileJSON("../personal/flowers.new.java.json");
     }
     public List<X3D> getRootNodeList() {
     	List<X3D> list = new ArrayList<X3D>(1);

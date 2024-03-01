@@ -49,4 +49,5 @@ ProtoInstance0
 ProtoInstance0
                   .addFieldValue((new autoclass.fieldValue()).setName("fragment").setValue("\"../shaders/plain.fs\""));
     X3D0.toFileX3D("../personal/plainflowers.new.node.x3d");
+    X3D0.toFileJSON("../personal/plainflowers.new.node.json");
     process.exit(0);

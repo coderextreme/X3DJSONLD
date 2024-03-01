@@ -58,4 +58,5 @@ ConfigurationProperties.setStripTrailingZeroes(true);
                 .addParts((new autoclass.ShaderPart()).setType("FRAGMENT").setDEF("commonfs").setUrl(java.newArray("java.lang.String", ["../shaders/commonnew.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/commonnew.fs"])))
                 .addComments((new autoclass.CommentsBlock("<ShaderPart USE=\"commonfs\"></ShaderPart>"))))))))      ;
     X3D0.toFileX3D("../personal/ball.new.node.x3d");
+    X3D0.toFileJSON("../personal/ball.new.node.json");
     process.exit(0);

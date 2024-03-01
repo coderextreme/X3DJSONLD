@@ -55,4 +55,5 @@ ConfigurationProperties.setStripTrailingZeroes(true);
                 .addParts((new autoclass.ShaderPart()).setType("VERTEX").setUrl(java.newArray("java.lang.String", ["../shaders/freewrl.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.vs"])))
                 .addParts((new autoclass.ShaderPart()).setType("FRAGMENT").setUrl(java.newArray("java.lang.String", ["../shaders/freewrl.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.fs"]))))))))      ;
     X3D0.toFileX3D("../personal/fwball.new.node.x3d");
+    X3D0.toFileJSON("../personal/fwball.new.node.json");
     process.exit(0);
