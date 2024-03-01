@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+  <head>
+    <meta content='John W Carlson' name='creator'/>
+    <meta content='December 13 2015' name='created'/>
+    <meta content='extrusion.x3d' name='title'/>
+    <meta content='https://coderextreme.net/X3DJSONLD/src/main/data/extrusion.x3d' name='identifier'/>
+    <meta content='beginnings of a force directed graph in 3D' name='description'/>
+    <meta content='Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit' name='generator'/>
+  </head>
+  <Scene>
+    <Group>
+      <Shape>
+        <Appearance>
+          <Material diffuseColor='0 1 0'/>
+        </Appearance>
+        <Extrusion DEF='extrusion' creaseAngle='0.785' crossSection='1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0' spine='-50 -50 0 50 50 0'/>
+      </Shape>
+      <TimeSensor DEF='TourTime' loop='true'/>
+      <Script DEF='MoveCylinder'>
+        <field name='set_cycle' accessType='inputOnly' type='SFTime'/>
+        <field name='spine' accessType='inputOutput' type='MFVec3f' value='-50 -50 0 50 50 0'/>
+<![CDATA[
+ecmascript:
+
+                function set_cycle(value) {
+                        Browser.print(value);
+                        var endA = new SFVec3f(spine[0].x*Math.random()*2, spine[0].y*Math.random()*2, spine[0].z*Math.random()*2);
+                        var endB = new SFVec3f(spine[1].x*Math.random()*2, spine[1].y*Math.random()*2, spine[1].z*Math.random()*2);
+                        var tmpspine = new MFVec3f();
+			tmpspine[0] = endA;
+			tmpspine[1] = endB;
+                        spine = tmpspine;
+                }
+]]>
+      </Script>
+      <ROUTE fromField='cycleTime' fromNode='TourTime' toField='set_cycle' toNode='MoveCylinder'/>
+      <ROUTE fromField='spine_changed' fromNode='MoveCylinder' toField='set_spine' toNode='extrusion'/>
+    </Group>
+  </Scene>
+</X3D>
