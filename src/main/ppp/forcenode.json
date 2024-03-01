@@ -21,7 +21,7 @@
         },
         {
           "@name": "identifier",
-          "@content": "https://coderextreme.net/X3DJSONLD/force.x3d"
+          "@content": "https://coderextreme.net/X3DJSONLD/src/main/data/force.x3d"
         },
         {
           "@name": "description",
@@ -33,7 +33,7 @@
         },
         {
           "@name": "translated",
-          "@content": "02 July 2023"
+          "@content": "01 March 2024"
         },
         {
           "@name": "generator",
@@ -831,7 +831,7 @@
                       "Shape": {
                         "-geometry": {
                           "Extrusion": {
-                            "@DEF": "DECLcylinder_linkA_extrusion",
+                            "@DEF": "DECLcyl_linkA_extrusion",
                             "@creaseAngle": 0.785,
                             "@crossSection": [
                               1,
@@ -896,7 +896,7 @@
                     },
                     {
                       "Script": {
-                        "@DEF": "DECLcylinder_linkA_MoveCylinder",
+                        "@DEF": "DECLcyl_linkA_MoveCylinder",
                         "field": [
                           {
                             "@name": "spine",
@@ -963,9 +963,9 @@
                     },
                     {
                       "ROUTE": {
-                        "@fromNode": "DECLcylinder_linkA_MoveCylinder",
+                        "@fromNode": "DECLcyl_linkA_MoveCylinder",
                         "@fromField": "spine",
-                        "@toNode": "DECLcylinder_linkA_extrusion",
+                        "@toNode": "DECLcyl_linkA_extrusion",
                         "@toField": "set_spine"
                       }
                     }
@@ -979,7 +979,7 @@
                       "Shape": {
                         "-geometry": {
                           "Extrusion": {
-                            "@DEF": "DECLcylinder_linkB_extrusion",
+                            "@DEF": "DECLcyl_linkB_extrusion",
                             "@creaseAngle": 0.785,
                             "@crossSection": [
                               1,
@@ -1044,7 +1044,7 @@
                     },
                     {
                       "Script": {
-                        "@DEF": "DECLcylinder_linkB_MoveCylinder",
+                        "@DEF": "DECLcyl_linkB_MoveCylinder",
                         "field": [
                           {
                             "@name": "spine",
@@ -1111,9 +1111,9 @@
                     },
                     {
                       "ROUTE": {
-                        "@fromNode": "DECLcylinder_linkB_MoveCylinder",
+                        "@fromNode": "DECLcyl_linkB_MoveCylinder",
                         "@fromField": "spine",
-                        "@toNode": "DECLcylinder_linkB_extrusion",
+                        "@toNode": "DECLcyl_linkB_extrusion",
                         "@toField": "set_spine"
                       }
                     }
@@ -1127,7 +1127,7 @@
                       "Shape": {
                         "-geometry": {
                           "Extrusion": {
-                            "@DEF": "DECLcylinder_linkC_extrusion",
+                            "@DEF": "DECLcyl_linkC_extrusion",
                             "@creaseAngle": 0.785,
                             "@crossSection": [
                               1,
@@ -1192,7 +1192,7 @@
                     },
                     {
                       "Script": {
-                        "@DEF": "DECLcylinder_linkC_MoveCylinder",
+                        "@DEF": "DECLcyl_linkC_MoveCylinder",
                         "field": [
                           {
                             "@name": "spine",
@@ -1259,9 +1259,9 @@
                     },
                     {
                       "ROUTE": {
-                        "@fromNode": "DECLcylinder_linkC_MoveCylinder",
+                        "@fromNode": "DECLcyl_linkC_MoveCylinder",
                         "@fromField": "spine",
-                        "@toNode": "DECLcylinder_linkC_extrusion",
+                        "@toNode": "DECLcyl_linkC_extrusion",
                         "@toField": "set_spine"
                       }
                     }
@@ -1336,7 +1336,7 @@
           "ROUTE": {
             "@fromNode": "DECLnode_nodeA_transform",
             "@fromField": "translation",
-            "@toNode": "DECLcylinder_linkA_MoveCylinder",
+            "@toNode": "DECLcyl_linkA_MoveCylinder",
             "@toField": "set_endA"
           }
         },
@@ -1344,7 +1344,7 @@
           "ROUTE": {
             "@fromNode": "DECLnode_nodeB_transform",
             "@fromField": "translation",
-            "@toNode": "DECLcylinder_linkA_MoveCylinder",
+            "@toNode": "DECLcyl_linkA_MoveCylinder",
             "@toField": "set_endB"
           }
         },
@@ -1352,7 +1352,7 @@
           "ROUTE": {
             "@fromNode": "DECLnode_nodeA_transform",
             "@fromField": "translation",
-            "@toNode": "DECLcylinder_linkB_MoveCylinder",
+            "@toNode": "DECLcyl_linkB_MoveCylinder",
             "@toField": "set_endA"
           }
         },
@@ -1360,7 +1360,7 @@
           "ROUTE": {
             "@fromNode": "DECLnode_nodeC_transform",
             "@fromField": "translation",
-            "@toNode": "DECLcylinder_linkB_MoveCylinder",
+            "@toNode": "DECLcyl_linkB_MoveCylinder",
             "@toField": "set_endB"
           }
         },
@@ -1368,7 +1368,7 @@
           "ROUTE": {
             "@fromNode": "DECLnode_nodeA_transform",
             "@fromField": "translation",
-            "@toNode": "DECLcylinder_linkC_MoveCylinder",
+            "@toNode": "DECLcyl_linkC_MoveCylinder",
             "@toField": "set_endA"
           }
         },
@@ -1376,7 +1376,7 @@
           "ROUTE": {
             "@fromNode": "DECLnode_nodeD_transform",
             "@fromField": "translation",
-            "@toNode": "DECLcylinder_linkC_MoveCylinder",
+            "@toNode": "DECLcyl_linkC_MoveCylinder",
             "@toField": "set_endB"
           }
         }
