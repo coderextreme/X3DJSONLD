@@ -26,7 +26,7 @@
 
 from x3d import *
 
-newModel=X3D(profile='Immersive',version='3.3',
+newModel=X3D(profile='Immersive',version='4.0',
   head=head(
     children=[
     component(level=1,name='Scripting'),
@@ -84,7 +84,7 @@ ecmascript:
           ROUTE(fromNode='nodeClock',fromField='fraction_changed',toNode='NodePosition',toField='set_fraction'),
           ROUTE(fromNode='MoveBall',fromField='keyValue',toNode='NodePosition',toField='keyValue'),
           ROUTE(fromNode='NodePosition',fromField='value_changed',toNode='transform',toField='set_translation')])])),
-    ProtoDeclare(name='cylinder',
+    ProtoDeclare(name='cyl',
       ProtoInterface=ProtoInterface(
         field=[
         field(name='set_positionA',accessType='inputOnly',type='SFVec3f'),
@@ -146,15 +146,15 @@ ecmascript:
       ProtoInstance(DEF='nodeD',name='node',
         fieldValue=[
         fieldValue(name='position',value=(50.0,50.0,-50.0))]),
-      ProtoInstance(DEF='linkA',name='cylinder',
+      ProtoInstance(DEF='linkA',name='cyl',
         fieldValue=[
         fieldValue(name='set_positionA',value=(0,0,0)),
         fieldValue(name='set_positionB',value=(50,50,50))]),
-      ProtoInstance(DEF='linkB',name='cylinder',
+      ProtoInstance(DEF='linkB',name='cyl',
         fieldValue=[
         fieldValue(name='set_positionA',value=(0,0,0)),
         fieldValue(name='set_positionB',value=(-50,-50,-50))]),
-      ProtoInstance(DEF='linkC',name='cylinder',
+      ProtoInstance(DEF='linkC',name='cyl',
         fieldValue=[
         fieldValue(name='set_positionA',value=(50,50,50)),
         fieldValue(name='set_positionB',value=(50,50,-50))])]),
