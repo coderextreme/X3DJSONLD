@@ -113,7 +113,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                           HAnimJoint(DEF='hanim_l_tarsal_distal_interphalangeal_2',name='l_tarsal_distal_interphalangeal_2',center=(0.0841,0.0013,0.0216),skinCoordIndex=[0],skinCoordWeight=[0],ulimit=[0,0,0],llimit=[0,0,0])])])])]),
                   HAnimJoint(DEF='hanim_l_cuneonavicular_3',name='l_cuneonavicular_3',center=(0.0928,0.0248,-0.0821),skinCoordIndex=[0],skinCoordWeight=[0],ulimit=[0,0,0],llimit=[0,0,0],
                     children=[
-                    HAnimJoint(DEF='hanim_l_tarsometatarsal_3',name='l_tarsometatarsal_3',ulimit=[0,0,0],llimit=[0,0,0],
+                    HAnimJoint(DEF='hanim_l_tarsometatarsal_3',name='l_tarsometatarsal_3',center=(0.0944,0.0175,-0.0625),skinCoordIndex=[0],skinCoordWeight=[0],ulimit=[0,0,0],llimit=[0,0,0],
                       children=[
                       HAnimJoint(DEF='hanim_l_metatarsophalangeal_3',name='l_metatarsophalangeal_3',center=(0.0963,0.0065,-0.0065),skinCoordIndex=[0],skinCoordWeight=[0],ulimit=[0,0,0],llimit=[0,0,0],
                         children=[
@@ -164,7 +164,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                           HAnimJoint(DEF='hanim_r_tarsal_distal_interphalangeal_2',name='r_tarsal_distal_interphalangeal_2',center=(-0.0841,0.0013,0.0216),skinCoordIndex=[0],skinCoordWeight=[0],ulimit=[0,0,0],llimit=[0,0,0])])])])]),
                   HAnimJoint(DEF='hanim_r_cuneonavicular_3',name='r_cuneonavicular_3',center=(-0.0928,0.0248,-0.0821),skinCoordIndex=[0],skinCoordWeight=[0],ulimit=[0,0,0],llimit=[0,0,0],
                     children=[
-                    HAnimJoint(DEF='hanim_r_tarsometatarsal_3',name='r_tarsometatarsal_3',ulimit=[0,0,0],llimit=[0,0,0],
+                    HAnimJoint(DEF='hanim_r_tarsometatarsal_3',name='r_tarsometatarsal_3',center=(-0.0944,0.0175,-0.0625),skinCoordIndex=[0],skinCoordWeight=[0],ulimit=[0,0,0],llimit=[0,0,0],
                       children=[
                       HAnimJoint(DEF='hanim_r_metatarsophalangeal_3',name='r_metatarsophalangeal_3',center=(-0.0963,0.0065,-0.0065),skinCoordIndex=[0],skinCoordWeight=[0],ulimit=[0,0,0],llimit=[0,0,0],
                         children=[

@@ -2,7 +2,7 @@
 #
 # Invoking X3D model self-test:
 #
-#   $ python 
+#   $ python Scripting.py
 #
 # Python package x3d.py package is available on PyPI for import.
 #   This approach simplifies Python X3D deployment and use.
@@ -29,7 +29,7 @@ from x3d import *
 newModel=X3D(version='3.0',profile='Immersive',
   head=head(
     children=[
-    meta(name='filename',content='Scripting.x3d')]),
+    meta(name='title',content='Scripting.x3d')]),
   Scene=Scene(
     children=[
     Script(DEF='OpenVault',
@@ -70,7 +70,7 @@ ecmascript:
 # Self-test diagnostics
 ####################################################################################################
 
-print('Self-test diagnostics:')
+print('Self-test diagnostics for Scripting.py:')
 if        metaDiagnostics(newModel): # built-in utility method in X3D class
     print(metaDiagnostics(newModel)) # display meta info, hint, warning, error, TODO values in this model
 # print('check newModel.XML() serialization...')
@@ -99,4 +99,4 @@ except Exception as err: # usually SyntaxError
     if newModelJSON: # may have failed to generate
         print(prependLineNumbers(newModelJSON,err.lineno))
 
-print("python load and self-test diagnostics complete.")
+print("python Scripting.py load and self-test diagnostics complete.")
