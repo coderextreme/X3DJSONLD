@@ -46,7 +46,7 @@ public class HAnimBehaviorPrototypes implements X3DRoots {
     X3D model = new HAnimBehaviorPrototypes().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
     model.toFileX3D("../data/HAnimBehaviorPrototypes.new.java.x3d");
-    model.toFileJSON("../data/HAnimBehaviorPrototypes.new.json");
+    model.toFileJSON("../data/HAnimBehaviorPrototypes.new.java.json");
     }
     public List<X3D> getRootNodeList() {
     	List<X3D> list = new ArrayList<X3D>(1);

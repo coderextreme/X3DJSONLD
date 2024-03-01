@@ -46,7 +46,7 @@ public class fors implements X3DRoots {
     X3D model = new fors().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
     model.toFileX3D("../data/fors.new.java.x3d");
-    model.toFileJSON("../data/fors.new.json");
+    model.toFileJSON("../data/fors.new.java.json");
     }
     public List<X3D> getRootNodeList() {
     	List<X3D> list = new ArrayList<X3D>(1);

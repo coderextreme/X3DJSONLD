@@ -12,7 +12,7 @@ head1.component[0] = component2;
 
 let meta3 = browser.currentScene.createNode("meta");
 meta3.name = "title";
-meta3.content = "DiamondManLOA0.x3d";
+meta3.content = "DiamondManLOA0patched2.x3d";
 head1.meta[1] = meta3;
 
 let meta4 = browser.currentScene.createNode("meta");

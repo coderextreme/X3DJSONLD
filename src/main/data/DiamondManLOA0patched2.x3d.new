@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
 <X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd" ><head><component name="HAnim" level="1"></component>
-<meta name="title" content="DiamondManLOA0.x3d"></meta>
+<meta name="title" content="DiamondManLOA0patched2.x3d"></meta>
 <meta name="description" content="HAnim skeletal structure for Level of Action (LOA) zero, with one diamond at the base node for the structure. HumanoidRoot only, so this is the minimum legal HAnim humanoid."></meta>
 <meta name="creator" content="Matthew T. Beitler"></meta>
 <meta name="translator" content="Joel S. Pawloski"></meta>

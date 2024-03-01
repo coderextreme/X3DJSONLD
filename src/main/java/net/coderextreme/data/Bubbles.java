@@ -46,7 +46,7 @@ public class Bubbles implements X3DRoots {
     X3D model = new Bubbles().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
     model.toFileX3D("../data/Bubbles.new.java.x3d");
-    model.toFileJSON("../data/Bubbles.new.json");
+    model.toFileJSON("../data/Bubbles.new.java.json");
     }
     public List<X3D> getRootNodeList() {
     	List<X3D> list = new ArrayList<X3D>(1);

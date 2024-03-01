@@ -46,7 +46,7 @@ public class DiamondManLOA0patched2 implements X3DRoots {
     X3D model = new DiamondManLOA0patched2().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
     model.toFileX3D("../data/DiamondManLOA0patched2.new.java.x3d");
-    model.toFileJSON("../data/DiamondManLOA0patched2.new.json");
+    model.toFileJSON("../data/DiamondManLOA0patched2.new.java.json");
     }
     public List<X3D> getRootNodeList() {
     	List<X3D> list = new ArrayList<X3D>(1);
@@ -57,7 +57,7 @@ public class DiamondManLOA0patched2 implements X3DRoots {
       X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
       .setHead(new head()
         .addComponent(new component().setName("HAnim").setLevel(1))
-        .addMeta(new meta().setName("title").setContent("DiamondManLOA0.x3d"))
+        .addMeta(new meta().setName("title").setContent("DiamondManLOA0patched2.x3d"))
         .addMeta(new meta().setName("description").setContent("HAnim skeletal structure for Level of Action (LOA) zero, with one diamond at the base node for the structure. HumanoidRoot only, so this is the minimum legal HAnim humanoid."))
         .addMeta(new meta().setName("creator").setContent("Matthew T. Beitler"))
         .addMeta(new meta().setName("translator").setContent("Joel S. Pawloski"))
