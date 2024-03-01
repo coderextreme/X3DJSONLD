@@ -77,4 +77,5 @@ ConfigurationProperties.setStripTrailingZeroes(true);
             .addChild((new autoclass.Gain())
               .addChild((new autoclass.AudioClip()).setDescription("Saxophone").setLoop(true).setUrl(java.newArray("java.lang.String", ["sound/saxophone.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/saxophone.mp3"])))))))      ;
     X3D0.toFileX3D("../data/SpatialAudioCameraAnimation.new.node.x3d");
+    X3D0.toFileJSON("../data/SpatialAudioCameraAnimation.new.node.json");
     process.exit(0);

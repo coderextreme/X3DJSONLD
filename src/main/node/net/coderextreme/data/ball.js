@@ -69,4 +69,5 @@ ConfigurationProperties.setStripTrailingZeroes(true);
                 .addParts((new autoclass.ShaderPart()).setType("VERTEX").setUrl(java.newArray("java.lang.String", ["../shaders/x_ite.vs"])))
                 .addParts((new autoclass.ShaderPart()).setType("FRAGMENT").setUrl(java.newArray("java.lang.String", ["../shaders/x_itebubbles.fs"]))))))))      ;
     X3D0.toFileX3D("../data/ball.new.node.x3d");
+    X3D0.toFileJSON("../data/ball.new.node.json");
     process.exit(0);

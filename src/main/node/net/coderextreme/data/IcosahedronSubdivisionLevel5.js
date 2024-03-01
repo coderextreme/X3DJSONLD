@@ -39,4 +39,5 @@ ConfigurationProperties.setStripTrailingZeroes(true);
           .setAppearance((new autoclass.Appearance())
             .setMaterial((new autoclass.Material()).setDiffuseColor(java.newArray("float", [java.newFloat(0.2), java.newFloat(0.5), java.newFloat(0.8)]))))))      ;
     X3D0.toFileX3D("../data/IcosahedronSubdivisionLevel5.new.node.x3d");
+    X3D0.toFileJSON("../data/IcosahedronSubdivisionLevel5.new.node.json");
     process.exit(0);

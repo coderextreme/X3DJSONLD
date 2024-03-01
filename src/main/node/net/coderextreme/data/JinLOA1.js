@@ -265,4 +265,5 @@ ConfigurationProperties.setStripTrailingZeroes(true);
           .addSegments((new autoclass.HAnimSegment()).setUSE("hanim_l_upperarm"))
           .addSegments((new autoclass.HAnimSegment()).setUSE("hanim_r_upperarm"))))      ;
     X3D0.toFileX3D("../data/JinLOA1.new.node.x3d");
+    X3D0.toFileJSON("../data/JinLOA1.new.node.json");
     process.exit(0);

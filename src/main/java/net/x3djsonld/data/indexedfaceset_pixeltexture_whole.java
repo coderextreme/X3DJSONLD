@@ -121,13 +121,21 @@ import org.web3d.x3d.jsail.Texturing.*;
 	* @author http://www.itl.nist.gov/div897/ctg/vrml/members.html
  */
 
-public class indexedfaceset_pixeltexture_whole
+import net.coderextreme.X3DRoots;
+import java.util.List;
+import java.util.ArrayList;
+public class indexedfaceset_pixeltexture_whole implements X3DRoots
 {
 	/** Default constructor to create this object. */
 	public indexedfaceset_pixeltexture_whole ()
 	{
 	  initialize();
 	}
+        public List<X3D> getRootNodeList() {
+                List<X3D> list = new ArrayList<X3D>(1);
+                list.add(x3dModel);
+                return list;
+        }
 
 	/** Create and initialize the X3D model for this object. */
 	public final void initialize()

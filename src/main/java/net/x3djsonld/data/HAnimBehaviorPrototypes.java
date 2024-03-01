@@ -97,13 +97,21 @@ import org.web3d.x3d.jsail.Time.*;
 	* @author Don Brutzman, Jeff Weekley, MV4205 Advanced X3D Authoring class, and Keith Victor
  */
 
-public class HAnimBehaviorPrototypes
+import net.coderextreme.X3DRoots;
+import java.util.List;
+import java.util.ArrayList;
+public class HAnimBehaviorPrototypes implements X3DRoots
 {
 	/** Default constructor to create this object. */
 	public HAnimBehaviorPrototypes ()
 	{
 	  initialize();
 	}
+        public List<X3D> getRootNodeList() {
+                List<X3D> list = new ArrayList<X3D>(1);
+                list.add(x3dModel);
+                return list;
+        }
 
 	/** Create and initialize the X3D model for this object. */
 	public final void initialize()

@@ -152,4 +152,5 @@ ConfigurationProperties.setStripTrailingZeroes(true);
               .addChild((new autoclass.ROUTE()).setFromNode("Animate").setFromField("tdelta").setToNode("shader").setToField("tdelta"))
               .addChild((new autoclass.ROUTE()).setFromNode("Animate").setFromField("pdelta").setToNode("shader").setToField("pdelta"))))))      ;
     X3D0.toFileX3D("../data/flowerproto.new.node.x3d");
+    X3D0.toFileJSON("../data/flowerproto.new.node.json");
     process.exit(0);

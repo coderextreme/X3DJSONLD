@@ -105,4 +105,5 @@ ConfigurationProperties.setStripTrailingZeroes(true);
             .setAppearance((new autoclass.Appearance())
               .setMaterial((new autoclass.Material()).setTransparency(java.newFloat(1)))))))      ;
     X3D0.toFileX3D("../data/DesignPatternsApparelMedicalSkinLayers.new.node.x3d");
+    X3D0.toFileJSON("../data/DesignPatternsApparelMedicalSkinLayers.new.node.json");
     process.exit(0);

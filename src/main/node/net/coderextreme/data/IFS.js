@@ -37,4 +37,5 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addChild((new autoclass.NavigationInfo()).setSpeed(java.newFloat(1.5)))
         .addChild((new autoclass.Viewpoint()).setDescription("default")))      ;
     X3D0.toFileX3D("../data/IFS.new.node.x3d");
+    X3D0.toFileJSON("../data/IFS.new.node.json");
     process.exit(0);

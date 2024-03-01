@@ -33,4 +33,5 @@ var ProtoInstance0 = null;
                 .addConnect((new autoclass.connect()).setNodeField("children").setProtoField("myShape"))))))
         .addChild(ProtoInstance0 = (new autoclass.ProtoInstance()).setName("anyShape")))      ;
     X3D0.toFileX3D("../data/asteroids.new.node.x3d");
+    X3D0.toFileJSON("../data/asteroids.new.node.json");
     process.exit(0);

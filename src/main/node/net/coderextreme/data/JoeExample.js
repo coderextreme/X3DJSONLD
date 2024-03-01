@@ -46,4 +46,5 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addChild((new autoclass.ROUTE()).setFromNode("TS").setFromField("touchTime").setToNode("OpenVault").setToField("openVault"))
         .addChild((new autoclass.ROUTE()).setFromNode("OpenVault").setFromField("vaultUnlocked").setToNode("Click").setToField("startTime")))      ;
     X3D0.toFileX3D("../data/JoeExample.new.node.x3d");
+    X3D0.toFileJSON("../data/JoeExample.new.node.json");
     process.exit(0);

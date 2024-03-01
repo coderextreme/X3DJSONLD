@@ -70,4 +70,5 @@ var ProtoInstance0 = null;
               .addValue((new autoclass.MetadataDouble()).setName("centerOfRotation").setDEF("centerOfRotation").setReference("http://titania.create3000.de").setValue(java.newArray("double", [-0.808320198626341,-0.358072370409949,0.22817191560906]))))))
         .addChild(ProtoInstance0 = (new autoclass.ProtoInstance()).setName("myPrototype")))      ;
     X3D0.toFileX3D("../data/SimpleShader.new.node.x3d");
+    X3D0.toFileJSON("../data/SimpleShader.new.node.json");
     process.exit(0);
