@@ -80,7 +80,7 @@ ecmascript:
         ROUTE(fromNode='nodeClock',fromField='fraction_changed',toNode='NodePosition',toField='set_fraction'),
         ROUTE(fromNode='MoveBall',fromField='keyValue',toNode='NodePosition',toField='keyValue'),
         ROUTE(fromNode='NodePosition',fromField='value_changed',toNode='transform',toField='set_translation')])),
-    ProtoDeclare(name='cylinder',
+    ProtoDeclare(name='cyl',
       ProtoInterface=ProtoInterface(
         field=[
         field(name='positionA',accessType='inputOnly',type='SFVec3f'),
@@ -134,7 +134,7 @@ ecmascript:
       ProtoInstance(name='node',DEF='nodeB',
         fieldValue=[
         fieldValue(name='position',value=(50,50,50))]),
-      ProtoInstance(name='cylinder',DEF='linkA',
+      ProtoInstance(name='cyl',DEF='linkA',
         fieldValue=[
         fieldValue(name='positionA',value=(0,0,0)),
         fieldValue(name='positionB',value=(50,50,50))])]),

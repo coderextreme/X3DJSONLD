@@ -35,7 +35,7 @@ newModel=X3D(profile='Immersive',version='4.0',
     component(name='CubeMapTexturing',level=1),
     component(name='Texturing',level=1),
     component(name='Rendering',level=1),
-    component(name='Shape',level=4),
+    # <component name='Shape' level='4'></component>
     component(name='Grouping',level=3),
     component(name='Core',level=1),
     meta(name='title',content='flowers4.x3d'),

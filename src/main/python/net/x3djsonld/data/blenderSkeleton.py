@@ -2,7 +2,7 @@
 #
 # Invoking X3D model self-test:
 #
-#   $ python 
+#   $ python blenderSkeleton.py
 #
 # Python package x3d.py package is available on PyPI for import.
 #   This approach simplifies Python X3D deployment and use.
@@ -30,12 +30,10 @@ newModel=X3D(profile='Immersive',version='4.0',
   head=head(
     children=[
     component(level=3,name='HAnim'),
-    unit(category='length',name='METERS'),
-    meta(content='blenderSkeleton.x3d',name='filename'),
-    meta(name='copyright'),
+    meta(content='blenderSkeleton.x3d',name='title'),
+    meta(content='2023',name='copyright'),
     meta(content='http://www.web3D.org',name='reference'),
-    meta(content='Blender 4.0.1',name='generator'),
-    meta(content='io_scene_x3dv',name='exporter')]),
+    meta(content='Blender 4.0.1',name='generator')]),
   Scene=Scene(
     children=[
     NavigationInfo(),
@@ -2567,7 +2565,7 @@ newModel=X3D(profile='Immersive',version='4.0',
 # Self-test diagnostics
 ####################################################################################################
 
-print('Self-test diagnostics:')
+print('Self-test diagnostics for blenderSkeleton.py:')
 if        metaDiagnostics(newModel): # built-in utility method in X3D class
     print(metaDiagnostics(newModel)) # display meta info, hint, warning, error, TODO values in this model
 # print('check newModel.XML() serialization...')
@@ -2596,4 +2594,4 @@ except Exception as err: # usually SyntaxError
     if newModelJSON: # may have failed to generate
         print(prependLineNumbers(newModelJSON,err.lineno))
 
-print("python load and self-test diagnostics complete.")
+print("python blenderSkeleton.py load and self-test diagnostics complete.")
