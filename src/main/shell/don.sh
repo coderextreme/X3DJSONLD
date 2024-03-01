@@ -1,5 +1,5 @@
 #!/bin/bash
-set -euo pipefail
+# set -euo pipefail
 IFS=$'\n\t'
 
 # Run the Test Suite
@@ -22,8 +22,8 @@ echo translating to java
 (ls "$@" | grep -v intermediate | grep -v "\.new") | xargs -P $PROCESSORS java -Xss1g -Xmx4g net.coderextreme.RunSaxon ---overwrite ---silent --../lib/stylesheets/X3dToJava.xslt -java ---../java/net/x3djsonld/data/
 echo translating to json
 (ls "$@" | grep -v intermediate | grep -v "\.new") | xargs -P $PROCESSORS java -Xss1g -Xmx4g net.coderextreme.RunSaxon ---overwrite ---silent --../lib/stylesheets/X3dToJson.xslt ---
-# echo translating to graaljs
-# (ls "$@" | grep -v intermediate | grep -v "\.new") | xargs -P $PROCESSORS java -Xss1g -Xmx4g net.coderextreme.RunSaxon ---overwrite ---silent --../lib/stylesheets/X3dToES5.xslt -js ---../graaljs/net/x3djsonld/data/
+echo translating to graaljs
+#(ls "$@" | grep -v intermediate | grep -v "\.new") | xargs -P $PROCESSORS java -Xss1g -Xmx4g net.coderextreme.RunSaxon ---overwrite ---silent --../lib/stylesheets/X3dToES5.xslt -js ---../graaljs/net/x3djsonld/data/
 echo translating to node.js
 (ls "$@" | grep -v intermediate | grep -v "\.new") | xargs -P $PROCESSORS java -Xss1g -Xmx4g net.coderextreme.RunSaxon ---overwrite ---silent --../lib/stylesheets/X3dToNodeJS.xslt -js ---../node/net/x3djsonld/data/
 echo translating to python
@@ -50,17 +50,22 @@ export CLASSPATH=".;C:/Users/john/pythonSAI/saxon-he-12.1.jar;C:/Users/john/pyth
 	java -Xss1g -Xmx4g -cp ".;C:/Users/john/pythonSAI/saxon-he-12.1.jar;C:/Users/john/pythonSAI/X3DJSAIL.4.0.full.jar" net/x3djsonld/data/${X3D}
 #done
 popd
-echo running jjs
+
+
+echo running ../shell/jjs.sh
 pushd ../graaljs
-find ./net/x3djsonld/data -name "${X3D}.js" | xargs -L 1 -P $PROCESSORS C:/graaljs-community-jvm-23.1.2-windows-amd64/graaljs-community-23.1.2-windows-amd64/bin/js.exe --vm.Xss1g --vm.Xmx4g --jvm --vm.classpath="${GRAAL_CLASSPATH}"
+echo "find ./net/x3djsonld/data -name ${X3D}.js | xargs -L 1 -P $PROCESSORS ../shell/jjs.sh"
+find ./net/x3djsonld/data -name "${X3D}.js" | xargs -L 1 -P $PROCESSORS ../shell/jjs.sh
 popd
 echo running python
 pushd ../python
 find ./net/x3djsonld/data -name "${X3D}.py" | xargs -L 1 -P $PROCESSORS py
 popd
-echo running node
-pushd ../node
-find ./net/x3djsonld/data -name "${X3D}.mjs" | xargs -L 1 -P $PROCESSORS node
-popd
+
+#echo running node
+#pushd ../node
+#echo "find ./net/x3djsonld/data -name ${X3D}.js | xargs -L 1 -P $PROCESSORS node"
+#find ./net/x3djsonld/data -name "${X3D}.js" | xargs -L 1 -P $PROCESSORS node
+#popd
 
 done

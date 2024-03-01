@@ -9,11 +9,6 @@ export PROCESSORS="${PROCESSORS-8}"
 
 . ./classpath
 
-function jjs() {
-	# C:/graalvm-jdk-20_windows-x64_bin/graalvm-jdk-20.0.2+9.1/bin/js.cmd "$@"
-	C:/graaljs-community-jvm-23.1.2-windows-amd64/graaljs-community-23.1.2-windows-amd64/bin/js.exe "$@"
-}
-
 # py ../python/classes.py
 
 STYLESHEETDIR=../lib/stylesheets
@@ -110,10 +105,10 @@ do
 done
 
 echo Comparing JSON
-# ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d/.new.json/' -e "$ROOTTOLOCAL" -e 's/^\/c/../' | sed -e 's/ /$/g' # | tr '\n' '\0' | while read -d $'\0' -r i
-ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d/.new.json/' -e "$ROOTTOLOCAL" -e 's/^\/c/../' | sed -e 's/ /$/g' | tr '\n' '\0' | while read -d $'\0' -r i
+# ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d/.new.java.json/' -e "$ROOTTOLOCAL" -e 's/^\/c/../' | sed -e 's/ /$/g' # | tr '\n' '\0' | while read -d $'\0' -r i
+ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d/.new.java.json/' -e "$ROOTTOLOCAL" -e 's/^\/c/../' | sed -e 's/ /$/g' | tr '\n' '\0' | while read -d $'\0' -r i
 do
-	OLDJSON=`mydirname "$i" | sed -e "$LOCALTOROOT" `/`mybasename "$i" .new.json`.${JSONEXT}
+	OLDJSON=`mydirname "$i" | sed -e "$LOCALTOROOT" `/`mybasename "$i" .new.java.json`.${JSONEXT}
 	# echo OLDJSON $OLDJSON
 	# echo NEWJSON $i
 	echo "${NODE}" --trace-warnings "${NODEDIR}/jsondiff.js" "$OLDJSON" "$i"
@@ -129,13 +124,12 @@ do
 	"${NODE}" --trace-warnings "${NODEDIR}/xmldiff.js" "$X3D" "$i"
 done
 
+echo Running Graal JavaScript
 for i in `ls -d "$@" | sed 's/\(.*\)/"\1"/' | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d/.js/' -e 's/^\/c/../' -e "$EXTOGRAAL" -e "$DATATOGRAAL" -e "$ROOTTOGRAAL" -e "$PERSONALTOGRAAL" | xargs ls -d`
 do
 	pushd ../graaljs
-	#echo jjs -J-Xss1g -J-Xmx4g -J-Djava.class.path="${GRAAL_CLASSPATH}" "$i"
-	#jjs -J-Xss1g -J-Xmx4g -J-Djava.class.path="${GRAAL_CLASSPATH}" "$i"
-	echo "jjs --vm.Xss1g --vm.Xmx4g --jvm --vm.classpath=${GRAAL_CLASSPATH} $i"
-	      jjs --vm.Xss1g --vm.Xmx4g --jvm --vm.classpath="${GRAAL_CLASSPATH}" "$i"
+	echo "../shell/jjs.sh $i"
+	      ../shell/jjs.sh "$i"
 	popd
 done
 
@@ -147,15 +141,15 @@ do
 	"${NODE}" --trace-warnings "${NODEDIR}/xmldiff.js" "$X3D" "$i"
 done
 
-#echo Running JavaScript
-#ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d/.js/' -e 's/^\/c/../' -e "$EXTONODE" -e "$DATATONODE" -e "$PERSONALTONODE" -e "$ROOTTONODE" | tr '\n' '\0' | while read -d $'\0' -r i
-#do
-#	pushd ../node
-#	# We don't have a node.js java module
-#	echo Not done: "${NODE}" --trace-warnings "$i"
-#	# "${NODE}" --trace-warnings "$i"
-#	popd
-#done
+echo Running Node JavaScript
+ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d/.js/' -e 's/^\/c/../' -e "$EXTONODE" -e "$DATATONODE" -e "$PERSONALTONODE" -e "$ROOTTONODE" | tr '\n' '\0' | while read -d $'\0' -r i
+do
+	pushd ../node
+	# We do have a node.js java module
+	echo "${NODE}" --trace-warnings "$i"
+	"${NODE}" --trace-warnings "$i"
+	popd
+done
 
 #echo comparing SAXON and XSLT outputs
 #ls -d "$@" | grep -v intermediate | grep -v "\.new"| tr '\n' '\0' | while read -d $'\0' -r i

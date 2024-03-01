@@ -9,11 +9,6 @@ export PROCESSORS="${PROCESSORS-8}"
 
 . ./classpath
 
-function jjs() {
-	# C:/graalvm-jdk-20_windows-x64_bin/graalvm-jdk-20.0.2+9.1/bin/js.cmd "$@"
-	C:/graaljs-community-jvm-23.1.2-windows-amd64/graaljs-community-23.1.2-windows-amd64/bin/js.exe "$@"
-}
-
 # py ../python/classes.py
 
 STYLESHEETDIR=../lib/stylesheets
