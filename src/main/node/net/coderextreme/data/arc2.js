@@ -130,4 +130,5 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addChild((new autoclass.ROUTE()).setFromNode("G1").setFromField("translation_changed").setToNode("DECLx3dconnector_connector1_S1").setToField("set_startpoint"))
         .addChild((new autoclass.ROUTE()).setFromNode("G2").setFromField("translation_changed").setToNode("DECLx3dconnector_connector1_S1").setToField("set_endpoint")))      ;
     X3D0.toFileX3D("../data/arc2.new.node.x3d");
+    X3D0.toFileJSON("../data/arc2.new.node.json");
     process.exit(0);

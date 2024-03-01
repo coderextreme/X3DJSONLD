@@ -2270,4 +2270,5 @@ ConfigurationProperties.setStripTrailingZeroes(true);
           .addSites((new autoclass.HAnimSite()).setUSE("hanim_r_carpal_distal_phalanx_4_tip"))
           .addSites((new autoclass.HAnimSite()).setUSE("hanim_r_carpal_distal_phalanx_5_tip"))))      ;
     X3D0.toFileX3D("../data/Humanoid4_1.new.node.x3d");
+    X3D0.toFileJSON("../data/Humanoid4_1.new.node.json");
     process.exit(0);

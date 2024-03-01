@@ -98,13 +98,21 @@ import org.web3d.x3d.jsail.Time.*;
 	* @author Cindy Ballreich cindy@ballreich.net 3Name3D
  */
 
-public class LOA1_JumpAnimation
+import net.coderextreme.X3DRoots;
+import java.util.List;
+import java.util.ArrayList;
+public class LOA1_JumpAnimation implements X3DRoots
 {
 	/** Default constructor to create this object. */
 	public LOA1_JumpAnimation ()
 	{
 	  initialize();
 	}
+        public List<X3D> getRootNodeList() {
+                List<X3D> list = new ArrayList<X3D>(1);
+                list.add(x3dModel);
+                return list;
+        }
 
 	/** Create and initialize the X3D model for this object. */
 	public final void initialize()

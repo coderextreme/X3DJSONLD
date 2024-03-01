@@ -55,7 +55,10 @@ import org.web3d.x3d.jsail.Shape.*;
 	* @author John Carlson
  */
 
-import net.coderextreme.X3DRoots;import java.util.List;import java.util.ArrayList;public class abox implements X3DRoots
+import net.coderextreme.X3DRoots;
+import java.util.List;
+import java.util.ArrayList;
+public class abox implements X3DRoots
 {
 	/** Default constructor to create this object. */
 	public abox ()

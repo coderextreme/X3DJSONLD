@@ -1803,4 +1803,5 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addChild((new autoclass.ROUTE()).setFromField("fraction_changed").setFromNode("Armature_Clock").setToField("set_fraction").setToNode("Armature_OI_r_carpal_distal_phalanx_5"))
         .addChild((new autoclass.ROUTE()).setFromField("value_changed").setFromNode("Armature_OI_r_carpal_distal_phalanx_5").setToField("rotation").setToNode("hanim_r_carpal_distal_phalanx_5")))      ;
     X3D0.toFileX3D("../data/blenderSkeleton.new.node.x3d");
+    X3D0.toFileJSON("../data/blenderSkeleton.new.node.json");
     process.exit(0);

@@ -111,4 +111,5 @@ ConfigurationProperties.setStripTrailingZeroes(true);
               .addChild((new autoclass.ROUTE()).setFromField("value_changed").setFromNode("BubblePath10").setToField("set_translation").setToNode("bubble10")))))
         .addChild((new autoclass.Background()).setSkyColor(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0.6)]))))      ;
     X3D0.toFileX3D("../data/Bubbles.new.node.x3d");
+    X3D0.toFileJSON("../data/Bubbles.new.node.json");
     process.exit(0);

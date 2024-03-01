@@ -17,22 +17,22 @@ import org.web3d.x3d.jsail.Time.*;
 
 // Javadoc metadata annotations follow, see below for X3DJSAIL Java source code.
 /**
- * <p> Example scene . </p>
+ * <p> Example scene blenderSkeleton. </p>
  <p> Related links: blenderSkeleton.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;">
         <caption>Scene Meta Information</caption>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
-			<td style="text-align:left;   padding:10px 0px;">&nbsp; Document Metadata </td>
+			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.blenderSkeleton&nbsp; Document Metadata </td>
 		</tr>
 
 		<tr>
-			<td style="text-align:right; vertical-align: text-top;"> <i> filename </i> </td>
-			<td> blenderSkeleton.x3d </td>
+			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
+			<td> <a href="blenderSkeleton.x3d">blenderSkeleton.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> copyright </i> </td>
-			<td>  </td>
+			<td> 2023 </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
@@ -41,10 +41,6 @@ import org.web3d.x3d.jsail.Time.*;
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
 			<td> Blender 4.0.1 </td>
-		</tr>
-		<tr>
-			<td style="text-align:right; vertical-align: text-top;"> <i> exporter </i> </td>
-			<td> io_scene_x3dv </td>
 		</tr>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center;" colspan="2">  &nbsp; </td>
@@ -63,13 +59,21 @@ import org.web3d.x3d.jsail.Time.*;
 
  */
 
-public class blenderSkeleton
+import net.coderextreme.X3DRoots;
+import java.util.List;
+import java.util.ArrayList;
+public class blenderSkeleton implements X3DRoots
 {
 	/** Default constructor to create this object. */
 	public blenderSkeleton ()
 	{
 	  initialize();
 	}
+        public List<X3D> getRootNodeList() {
+                List<X3D> list = new ArrayList<X3D>(1);
+                list.add(x3dModel);
+                return list;
+        }
 
 	/** Create and initialize the X3D model for this object. */
 	public final void initialize()
@@ -78,12 +82,10 @@ public class blenderSkeleton
   x3dModel = new X3D().setProfile(X3D.PROFILE_IMMERSIVE).setVersion(X3D.VERSION_4_0)
   .setHead(new head()
     .addComponent(new component().setName("HAnim").setLevel(3))
-    .addUnit(new unit().setName("METERS").setCategory("length"))
-    .addMeta(new meta().setName("filename").setContent("blenderSkeleton.x3d"))
-    .addMeta(new meta().setName("copyright"))
+    .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("blenderSkeleton.x3d"))
+    .addMeta(new meta().setName("copyright").setContent("2023"))
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("http://www.web3D.org"))
-    .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("Blender 4.0.1"))
-    .addMeta(new meta().setName("exporter").setContent("io_scene_x3dv")))
+    .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("Blender 4.0.1")))
   .setScene(new Scene()
     .addChild(new NavigationInfo())
     .addChild(new Background("WO_World").setGroundColor(new MFColor(new double[] {0.05087608844041824,0.05087608844041824,0.05087608844041824})).setSkyColor(new MFColor(new double[] {0.05087608844041824,0.05087608844041824,0.05087608844041824})))

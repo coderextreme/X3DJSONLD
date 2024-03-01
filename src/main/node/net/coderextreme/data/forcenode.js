@@ -164,4 +164,5 @@ ProtoInstance6
 ProtoInstance6
             .addFieldValue((new autoclass.fieldValue()).setName("set_positionB").setValue("50 50 -50"));
     X3D0.toFileX3D("../data/forcenode.new.node.x3d");
+    X3D0.toFileJSON("../data/forcenode.new.node.json");
     process.exit(0);

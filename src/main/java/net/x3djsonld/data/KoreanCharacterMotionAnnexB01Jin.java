@@ -114,7 +114,10 @@ import org.web3d.x3d.jsail.Time.*;
 	* @author Jin Hoon Lee and Min Joo Lee
  */
 
-import net.coderextreme.X3DRoots;import java.util.List;import java.util.ArrayList;public class KoreanCharacterMotionAnnexB01Jin implements X3DRoots
+import net.coderextreme.X3DRoots;
+import java.util.List;
+import java.util.ArrayList;
+public class KoreanCharacterMotionAnnexB01Jin implements X3DRoots
 {
 	/** Default constructor to create this object. */
 	public KoreanCharacterMotionAnnexB01Jin ()

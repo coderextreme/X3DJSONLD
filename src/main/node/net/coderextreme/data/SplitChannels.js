@@ -90,4 +90,5 @@ ConfigurationProperties.setStripTrailingZeroes(true);
               .setTexture((new autoclass.ImageTexture()).setUrl(java.newArray("java.lang.String", ["images/loudspeaker.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/loudspeaker.png"]))))
             .setGeometry((new autoclass.Box()).setSize(java.newArray("float", [java.newFloat(100), java.newFloat(100), java.newFloat(0.001)]))))))      ;
     X3D0.toFileX3D("../data/SplitChannels.new.node.x3d");
+    X3D0.toFileJSON("../data/SplitChannels.new.node.json");
     process.exit(0);

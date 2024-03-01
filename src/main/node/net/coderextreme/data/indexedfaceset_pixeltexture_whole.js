@@ -53,4 +53,5 @@ ConfigurationProperties.setStripTrailingZeroes(true);
             .setCoord((new autoclass.Coordinate()).setPoint(java.newArray("float", [java.newFloat(-2), java.newFloat(1), java.newFloat(1), java.newFloat(-2), java.newFloat(-1), java.newFloat(1), java.newFloat(2), java.newFloat(1), java.newFloat(1), java.newFloat(2), java.newFloat(-1), java.newFloat(1), java.newFloat(2), java.newFloat(1), java.newFloat(-1), java.newFloat(2), java.newFloat(-1), java.newFloat(-1), java.newFloat(-2), java.newFloat(1), java.newFloat(-1), java.newFloat(-2), java.newFloat(-1), java.newFloat(-1)])))
             .setTexCoord((new autoclass.TextureCoordinate()).setPoint(java.newArray("float", [java.newFloat(0), java.newFloat(1), java.newFloat(0), java.newFloat(0), java.newFloat(1), java.newFloat(1), java.newFloat(1), java.newFloat(0)]))))))      ;
     X3D0.toFileX3D("../data/indexedfaceset_pixeltexture_whole.new.node.x3d");
+    X3D0.toFileJSON("../data/indexedfaceset_pixeltexture_whole.new.node.json");
     process.exit(0);

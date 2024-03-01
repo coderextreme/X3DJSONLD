@@ -2396,4 +2396,5 @@ ConfigurationProperties.setStripTrailingZeroes(true);
           .addSites((new autoclass.HAnimSite()).setUSE("hanim_r_carpal_distal_phalanx_4_tip"))
           .addSites((new autoclass.HAnimSite()).setUSE("hanim_r_carpal_distal_phalanx_5_tip"))))      ;
     X3D0.toFileX3D("../data/JohnJoint20.new.node.x3d");
+    X3D0.toFileJSON("../data/JohnJoint20.new.node.json");
     process.exit(0);

@@ -346,4 +346,5 @@ ConfigurationProperties.setStripTrailingZeroes(true);
           .addSegments((new autoclass.HAnimSegment()).setUSE("hanim_l_trapezium"))
           .addSegments((new autoclass.HAnimSegment()).setUSE("hanim_l_trapezoid"))))      ;
     X3D0.toFileX3D("../data/HAnimModelHandLeft.new.node.x3d");
+    X3D0.toFileJSON("../data/HAnimModelHandLeft.new.node.json");
     process.exit(0);

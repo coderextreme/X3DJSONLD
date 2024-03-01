@@ -88,13 +88,21 @@ import org.web3d.x3d.jsail.Texturing.*;
 	* @author Efi Lakka, Athanasios Malamos, Dick Puk, Don Brutzman
  */
 
-public class SplitChannels
+import net.coderextreme.X3DRoots;
+import java.util.List;
+import java.util.ArrayList;
+public class SplitChannels implements X3DRoots
 {
 	/** Default constructor to create this object. */
 	public SplitChannels ()
 	{
 	  initialize();
 	}
+        public List<X3D> getRootNodeList() {
+                List<X3D> list = new ArrayList<X3D>(1);
+                list.add(x3dModel);
+                return list;
+        }
 
 	/** Create and initialize the X3D model for this object. */
 	public final void initialize()

@@ -38,4 +38,5 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 "\n"+
 "}")))      ;
     X3D0.toFileX3D("../data/browser.new.node.x3d");
+    X3D0.toFileJSON("../data/browser.new.node.json");
     process.exit(0);

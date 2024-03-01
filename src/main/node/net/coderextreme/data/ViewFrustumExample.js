@@ -71,4 +71,5 @@ ProtoInstance0
 ProtoInstance0
           .addFieldValue((new autoclass.fieldValue()).setName("trace").setValue("true"));
     X3D0.toFileX3D("../data/ViewFrustumExample.new.node.x3d");
+    X3D0.toFileJSON("../data/ViewFrustumExample.new.node.json");
     process.exit(0);
