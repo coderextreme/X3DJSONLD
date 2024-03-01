@@ -14,7 +14,7 @@ head1.component[0] = component2;
 
 meta meta3 = createNode("meta");
 meta3.name = "title";
-meta3.content = "DiamondManLOA0.x3d";
+meta3.content = "DiamondManLOA0patched2.x3d";
 head1.meta[1] = meta3;
 
 meta meta4 = createNode("meta");

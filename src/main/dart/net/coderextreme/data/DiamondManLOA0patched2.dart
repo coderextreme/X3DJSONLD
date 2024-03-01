@@ -14,7 +14,7 @@ var X3D0 =  X3D(
           meta_ : [
             meta(
               name_ : SFString('title'),
-              content_ : SFString('DiamondManLOA0.x3d')),
+              content_ : SFString('DiamondManLOA0patched2.x3d')),
 
             meta(
               name_ : SFString('description'),

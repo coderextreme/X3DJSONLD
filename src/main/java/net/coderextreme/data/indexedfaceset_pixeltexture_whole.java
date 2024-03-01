@@ -46,7 +46,7 @@ public class indexedfaceset_pixeltexture_whole implements X3DRoots {
     X3D model = new indexedfaceset_pixeltexture_whole().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
     model.toFileX3D("../data/indexedfaceset_pixeltexture_whole.new.java.x3d");
-    model.toFileJSON("../data/indexedfaceset_pixeltexture_whole.new.json");
+    model.toFileJSON("../data/indexedfaceset_pixeltexture_whole.new.java.json");
     }
     public List<X3D> getRootNodeList() {
     	List<X3D> list = new ArrayList<X3D>(1);

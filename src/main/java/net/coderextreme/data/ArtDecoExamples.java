@@ -46,7 +46,7 @@ public class ArtDecoExamples implements X3DRoots {
     X3D model = new ArtDecoExamples().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
     model.toFileX3D("../data/ArtDecoExamples.new.java.x3d");
-    model.toFileJSON("../data/ArtDecoExamples.new.json");
+    model.toFileJSON("../data/ArtDecoExamples.new.java.json");
     }
     public List<X3D> getRootNodeList() {
     	List<X3D> list = new ArrayList<X3D>(1);

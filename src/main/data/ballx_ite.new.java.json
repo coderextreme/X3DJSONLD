@@ -62,7 +62,7 @@
           },
           {
             "@name":"translated",
-            "@content":"19 February 2024"
+            "@content":"29 February 2024"
           },
           {
             "@name":"generator",
@@ -161,8 +161,8 @@
                                 "-parts":[
                                   { "ShaderPart":
                                     {
-                                      "@url":["../shaders/x_ite.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"],
-                                      "@type":"VERTEX"
+                                      "@type":"VERTEX",
+                                      "@url":["../shaders/x_ite.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"]
                                     }
                                   },
                                   { "ShaderPart":

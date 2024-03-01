@@ -46,7 +46,7 @@ public class ballx3dom implements X3DRoots {
     X3D model = new ballx3dom().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
     model.toFileX3D("../data/ballx3dom.new.java.x3d");
-    model.toFileJSON("../data/ballx3dom.new.json");
+    model.toFileJSON("../data/ballx3dom.new.java.json");
     }
     public List<X3D> getRootNodeList() {
     	List<X3D> list = new ArrayList<X3D>(1);

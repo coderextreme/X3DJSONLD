@@ -46,7 +46,7 @@ public class JoeExample implements X3DRoots {
     X3D model = new JoeExample().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
     model.toFileX3D("../data/JoeExample.new.java.x3d");
-    model.toFileJSON("../data/JoeExample.new.json");
+    model.toFileJSON("../data/JoeExample.new.java.json");
     }
     public List<X3D> getRootNodeList() {
     	List<X3D> list = new ArrayList<X3D>(1);
