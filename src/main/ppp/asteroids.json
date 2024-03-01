@@ -21,7 +21,7 @@
         },
         {
           "@name": "identifier",
-          "@content": "https://coderextreme.net/X3DJSONLD/asteroids.x3d"
+          "@content": "https://coderextreme.net/X3DJSONLD/src/main/data/asteroids.x3d"
         },
         {
           "@name": "description",
@@ -29,7 +29,7 @@
         },
         {
           "@name": "translated",
-          "@content": "02 July 2023"
+          "@content": "01 March 2024"
         },
         {
           "@name": "generator",

@@ -15,11 +15,11 @@
       "meta": [
         {
           "@name": "title",
-          "@content": "JohnBoy.x3d"
+          "@content": "JohnJoint20.x3d"
         },
         {
           "@name": "identifier",
-          "@content": "http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d"
+          "@content": "http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnJoint20.x3d"
         },
         {
           "@name": "description",
@@ -47,7 +47,7 @@
         },
         {
           "@name": "translated",
-          "@content": "02 July 2023"
+          "@content": "01 March 2024"
         },
         {
           "@name": "generator",
@@ -6484,6 +6484,7 @@
                           "@DEF": "zBlueSpiralBkg2",
                           "@url": [
                             "../resources/images/zBlueSpiralBkg2.gif",
+                            "../data/zBlueSpiralBkg2.gif",
                             "zBlueSpiralBkg2.gif",
                             "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/zBlueSpiralBkg2.gif"
                           ]

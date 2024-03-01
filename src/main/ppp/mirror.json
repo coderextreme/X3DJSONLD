@@ -32,16 +32,17 @@
           "@level": 1
         },
         {
-          "@name": "Shape",
-          "@level": 4
-        },
-        {
           "@name": "Grouping",
           "@level": 3
         },
         {
           "@name": "Core",
           "@level": 1
+        }
+      ],
+      "-children": [
+        {
+          "#comment": "<component name='Shape' level='4'></component>"
         }
       ],
       "meta": [
@@ -59,7 +60,7 @@
         },
         {
           "@name": "identifier",
-          "@content": "https://coderextreme.net/X3DJSONLD/mirror.x3d"
+          "@content": "https://coderextreme.net/X3DJSONLD/src/main/data/mirror.x3d"
         },
         {
           "@name": "description",
@@ -67,7 +68,7 @@
         },
         {
           "@name": "translated",
-          "@content": "02 July 2023"
+          "@content": "01 March 2024"
         },
         {
           "@name": "generator",
@@ -93,7 +94,7 @@
         },
         {
           "TextureBackground": {
-            "-left": {
+            "-leftTexture": {
               "ImageTexture": {
                 "@DEF": "leftBackgroundTexture",
                 "@url": [
@@ -102,7 +103,7 @@
                 ]
               }
             },
-            "-right": {
+            "-rightTexture": {
               "ImageTexture": {
                 "@DEF": "rightBackgroundTexture",
                 "@url": [
@@ -111,7 +112,7 @@
                 ]
               }
             },
-            "-front": {
+            "-frontTexture": {
               "ImageTexture": {
                 "@DEF": "frontBackgroundTexture",
                 "@url": [
@@ -120,7 +121,7 @@
                 ]
               }
             },
-            "-back": {
+            "-backTexture": {
               "ImageTexture": {
                 "@DEF": "backBackgroundTexture",
                 "@url": [
@@ -129,7 +130,7 @@
                 ]
               }
             },
-            "-top": {
+            "-topTexture": {
               "ImageTexture": {
                 "@DEF": "topBackgroundTexture",
                 "@url": [
@@ -138,7 +139,7 @@
                 ]
               }
             },
-            "-bottom": {
+            "-bottomTexture": {
               "ImageTexture": {
                 "@DEF": "bottomBackgroundTexture",
                 "@url": [

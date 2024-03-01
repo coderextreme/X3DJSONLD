@@ -57,7 +57,7 @@
         },
         {
           "@name": "translated",
-          "@content": "02 July 2023"
+          "@content": "01 March 2024"
         },
         {
           "@name": "generator",
@@ -532,23 +532,15 @@
         },
         {
           "StreamAudioDestination": {
-            "@channelCountMode": "MAX",
-            "@channelInterpretation": "SPEAKERS",
             "-children": [
               {
                 "Gain": {
-                  "@channelCountMode": "MAX",
-                  "@channelInterpretation": "SPEAKERS",
                   "-children": [
                     {
                       "ChannelMerger": {
-                        "@channelCountMode": "MAX",
-                        "@channelInterpretation": "SPEAKERS",
                         "-children": [
                           {
                             "ChannelSelector": {
-                              "@channelCountMode": "MAX",
-                              "@channelInterpretation": "SPEAKERS",
                               "-children": [
                                 {
                                   "Gain": {
@@ -561,8 +553,6 @@
                           {
                             "ChannelSelector": {
                               "@channelSelection": 1,
-                              "@channelCountMode": "MAX",
-                              "@channelInterpretation": "SPEAKERS",
                               "-children": [
                                 {
                                   "Gain": {
@@ -585,7 +575,6 @@
           "ChannelSplitter": {
             "@DEF": "ChannelSplitter",
             "@channelCountMode": "EXPLICIT",
-            "@channelInterpretation": "SPEAKERS",
             "-children": [
               {
                 "AudioClip": {

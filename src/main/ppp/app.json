@@ -8,6 +8,10 @@
     "head": {
       "meta": [
         {
+          "@name": "title",
+          "@content": "app.x3d"
+        },
+        {
           "@name": "creator",
           "@content": "Carlson, I"
         },
@@ -21,7 +25,7 @@
         },
         {
           "@name": "translated",
-          "@content": "02 July 2023"
+          "@content": "01 March 2024"
         },
         {
           "@name": "generator",

@@ -9,11 +9,19 @@
       "meta": [
         {
           "@name": "title",
-          "@content": "x3dconnectorProto"
+          "@content": "x3dconnectorProto.x3d"
         },
         {
           "@name": "creator",
           "@content": "Lost, Doug Sanden I think"
+        },
+        {
+          "@name": "created",
+          "@content": "Unknown"
+        },
+        {
+          "@name": "modified",
+          "@content": "July 30 2023"
         },
         {
           "@name": "generator",
@@ -21,7 +29,7 @@
         },
         {
           "@name": "identifier",
-          "@content": "https://coderextreme.net/X3DJSONLD/x3dconnectorProto.x3d"
+          "@content": "https://coderextreme.net/X3DJSONLD/src/main/data/x3dconnectorProto.x3d"
         },
         {
           "@name": "description",
@@ -33,7 +41,7 @@
         },
         {
           "@name": "translated",
-          "@content": "02 July 2023"
+          "@content": "01 March 2024"
         },
         {
           "@name": "generator",
@@ -388,6 +396,7 @@
         {
           "Script": {
             "@DEF": "DECLx3dconnector_connector1_S1",
+            "@directOutput": true,
             "field": [
               {
                 "@name": "startnode",
@@ -509,6 +518,7 @@
         {
           "Script": {
             "@DEF": "DECLx3dconnector_connector2_S1",
+            "@directOutput": true,
             "field": [
               {
                 "@name": "startnode",
@@ -630,6 +640,7 @@
         {
           "Script": {
             "@DEF": "DECLx3dconnector_connector3_S1",
+            "@directOutput": true,
             "field": [
               {
                 "@name": "startnode",

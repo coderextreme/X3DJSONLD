@@ -32,16 +32,17 @@
           "@level": 1
         },
         {
-          "@name": "Shape",
-          "@level": 4
-        },
-        {
           "@name": "Grouping",
           "@level": 3
         },
         {
           "@name": "Core",
           "@level": 1
+        }
+      ],
+      "-children": [
+        {
+          "#comment": "<component name='Shape' level='4'></component>"
         }
       ],
       "meta": [
@@ -63,11 +64,11 @@
         },
         {
           "@name": "identifier",
-          "@content": "https://coderextreme.net/X3DJSONLD/flowerproto.x3d"
+          "@content": "https://coderextreme.net/X3DJSONLD/src/main/data/flowerproto.x3d"
         },
         {
           "@name": "translated",
-          "@content": "02 July 2023"
+          "@content": "01 March 2024"
         },
         {
           "@name": "generator",
