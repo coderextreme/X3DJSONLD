@@ -94,9 +94,9 @@ sphereflowers.prototype = {
     .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/sphereflowers.x3d")))
   .setScene((new autoclass.Scene())
     .addChild((new autoclass.NavigationInfo()))
-    .addChild((new autoclass.Background()).setBackUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_back.png\"")).setBottomUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png\"")).setFrontUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_front.png\"")).setLeftUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_left.png\"")).setRightUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_right.png\"")).setTopUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_top.png\"")))
+    .addChild((new autoclass.Background()).setBackUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_back.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png\"")).setBottomUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png\"")).setFrontUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_front.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png\"")).setLeftUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_left.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png\"")).setRightUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_right.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png\"")).setTopUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_top.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png\"")))
     .addChild((new autoclass.Group())
-      .addChild((new autoclass.ExternProtoDeclare()).setName("FlowerProto").setUrl(new autoclass.MFString("\"../personal/flowerproto.json#FlowerProto\""))
+      .addChild((new autoclass.ExternProtoDeclare()).setName("FlowerProto").setUrl(new autoclass.MFString("\"../data/flowerproto.x3d#FlowerProto\" \"https://coderextreme.net/X3DJSONLD/src/main/data/flowerproto.x3d#FlowerProto\""))
         .addField((new autoclass.field()).setName("vertex").setType("MFString").setAccessType("inputOutput"))
         .addField((new autoclass.field()).setName("fragment").setType("MFString").setAccessType("inputOutput")))
       .addChild((new autoclass.ProtoDeclare()).setName("flower")
@@ -113,7 +113,7 @@ sphereflowers.prototype = {
       .addChild((new autoclass.ProtoInstance()))
       .addChild((new autoclass.TimeSensor("SongTime")).setLoop(true))
       .addChild((new autoclass.Sound()).setLocation(0.0,1.0,0.0).setMaxBack(100).setMaxFront(100).setMinBack(20).setMinFront(20)
-        .setSource((new autoclass.AudioClip("AudioClip")).setDescription("Chandubabamusic #1").setUrl(new autoclass.MFString("\"../resources/chandubabamusic1.wav\""))))
+        .setSource((new autoclass.AudioClip("AudioClip")).setDescription("Chandubabamusic #1").setUrl(new autoclass.MFString("\"../resources/chandubabamusic1.wav\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/chandubabamusic1.wav\""))))
       .addChild((new autoclass.ROUTE()).setFromNode("SongTime").setFromField("cycleTime").setToNode("AudioClip").setToField("startTime"))));
   },
   // end of initialize() method
