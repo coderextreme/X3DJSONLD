@@ -11,5 +11,5 @@ pushd ../java
 bash ../shell/nonexecuted.sh | xargs -L 1 -P 8 java -Xss16m -Xmx4096M
 popd
 pushd ../graaljs
-bash ../shell/nonexecutedjs.sh | xargs -L 1 -P 8 jjs -J-Xss1g -J-Xmx4g -cp "${GRAAL_CLASSPATH}"
+bash ../shell/nonexecutedjs.sh | xargs -L 1 -P 8 ../shell/jjs.sh
 popd
