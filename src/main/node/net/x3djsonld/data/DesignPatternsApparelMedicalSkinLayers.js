@@ -110,10 +110,9 @@ DesignPatternsApparelMedicalSkinLayers.prototype = {
   initialize : function ()
   {
 
-	/** Large attribute array: MetadataString reference field, scene-graph level=4, element #20, 1 total value */
-	this.MetadataString_HAnimArchitecture_4_20_reference = new autoclass.SFString("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/Guidelines.html#MultipleHumanoidsPerFile");
+	/** Large attribute array: MetadataString reference field, scene-graph level=4, element #19, 1 total value */
+	this.MetadataString_HAnimArchitecture_4_19_reference = new autoclass.SFString("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/Guidelines.html#MultipleHumanoidsPerFile");
   this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
-  .addComponent((new autoclass.component()).setName("HAnim").setLevel(2))
   .setHead((new autoclass.head())
     .addMeta((new autoclass.meta()).setName("title").setContent("DesignPatternsApparelMedicalSkinLayers.x3d"))
     .addMeta((new autoclass.meta()).setName("description").setContent("Design patterns for skin and apparel using HAnim2 standard in X3D4"))
@@ -134,7 +133,7 @@ DesignPatternsApparelMedicalSkinLayers.prototype = {
     .addChild((new autoclass.WorldInfo()).setTitle("HAnimHumanoid skin design patterns for apparel, medical"))
     .addChild((new autoclass.Background()).setSkyColor(new autoclass.MFColor(java.newArray("float", [0.0,0.6,0.6]))))
     .addChild((new autoclass.Group("MultipleHumanoids"))
-      .setValue((new autoclass.MetadataString()).setName("HAnimArchitecture").setReference(this.MetadataString_HAnimArchitecture_4_20_reference).setValue(new autoclass.MFString("\"E.4 Multiple humanoids per file\"")))
+      .setMetadata((new autoclass.MetadataString()).setName("HAnimArchitecture").setReference(this.MetadataString_HAnimArchitecture_4_19_reference).setValue(new autoclass.MFString("\"E.4 Multiple humanoids per file\"")))
       .addComments(" ============================== ")
       .addChild((new autoclass.HAnimHumanoid("a_SimpleSkeleton")).setName("SimpleSkeleton").setVersion("2.0")
         .addSkeleton((new autoclass.HAnimJoint()).setName("humanoid_root").setLlimit(java.newArray("float", [0.0,0.0,0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))

@@ -48,4 +48,5 @@ ProtoInstance1
             .addChild((new autoclass.Shape())
               .setGeometry((new autoclass.Box()).setSize(java.newArray("float", [java.newFloat(140), java.newFloat(140), java.newFloat(140)])))));
     X3D0.toFileX3D("../data/abox.new.node.x3d");
+    X3D0.toFileJSON("../data/abox.new.node.json");
     process.exit(0);
