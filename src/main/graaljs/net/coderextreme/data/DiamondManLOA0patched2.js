@@ -11,7 +11,7 @@ function doubleToFloat(d) {
       var X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
       .setHead(new head()
         .addComponent(new component().setName("HAnim").setLevel(1))
-        .addMeta(new meta().setName("title").setContent("DiamondManLOA0.x3d"))
+        .addMeta(new meta().setName("title").setContent("DiamondManLOA0patched2.x3d"))
         .addMeta(new meta().setName("description").setContent("HAnim skeletal structure for Level of Action (LOA) zero, with one diamond at the base node for the structure. HumanoidRoot only, so this is the minimum legal HAnim humanoid."))
         .addMeta(new meta().setName("creator").setContent("Matthew T. Beitler"))
         .addMeta(new meta().setName("translator").setContent("Joel S. Pawloski"))
