@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+  <head>
+    <component name='Scripting' level='1'/>
+    <component name='EnvironmentalEffects' level='3'/>
+    <component name='Shaders' level='1'/>
+    <component name='CubeMapTexturing' level='1'/>
+    <component name='Texturing' level='1'/>
+    <component name='Rendering' level='1'/>
+    <component name='Grouping' level='3'/>
+    <component name='Core' level='1'/>
+    <meta content='sphereflowers.x3d' name='title'/>
+    <meta content='John Carlson' name='creator'/>
+    <meta content='Jan 17 2022' name='created'/>
+    <meta content='Sep 3 2023' name='modified'/>
+    <meta content='5 or more prismatic flowers' name='description'/>
+    <meta content='X3D-Edit, https://savage.nps.edu/X3D-Edit' name='generator'/>
+    <meta content='https://coderextreme.net/X3DJSONLD/src/main/data/sphereflowers.x3d' name='identifier'/>
+  </head>
+  <Scene>
+    <NavigationInfo avatarSize='0.25 1.6 0.75' transitionType='"LINEAR"' type='"EXAMINE" "ANY"'/>
+    <Background backUrl='"../resources/images/all_probes/stpeters_cross/stpeters_back.png"' bottomUrl='"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"' frontUrl='"../resources/images/all_probes/stpeters_cross/stpeters_front.png"' leftUrl='"../resources/images/all_probes/stpeters_cross/stpeters_left.png"' rightUrl='"../resources/images/all_probes/stpeters_cross/stpeters_right.png"' topUrl='"../resources/images/all_probes/stpeters_cross/stpeters_top.png"'/>
+    <Group>
+      <ExternProtoDeclare name='FlowerProto' url='"../personal/flowerproto.json#FlowerProto"'>
+        <field name='vertex' accessType='inputOutput' type='MFString'/>
+        <field name='fragment' accessType='inputOutput' type='MFString'/>
+      </ExternProtoDeclare>
+      <ProtoDeclare name='flower'>
+        <ProtoBody>
+          <Group>
+            <ProtoInstance name='FlowerProto'>
+              <fieldValue name='vertex' value='"../shaders/x_ite_flowers_chromatic.vs"'/>
+              <fieldValue name='fragment' value='"../shaders/x_ite.fs"'/>
+            </ProtoInstance>
+          </Group>
+        </ProtoBody>
+      </ProtoDeclare>
+      <ProtoInstance name='flower'/>
+      <ProtoInstance name='flower'/>
+      <ProtoInstance name='flower'/>
+      <ProtoInstance name='flower'/>
+      <ProtoInstance name='flower'/>
+      <ProtoInstance name='flower'/>
+      <TimeSensor DEF='SongTime' loop='true'/>
+      <Sound location='0 1 0' maxBack='100.0' maxFront='100.0' minBack='20.0' minFront='20.0'>
+        <AudioClip DEF='AudioClip' description='Chandubabamusic #1' url='"../resources/chandubabamusic1.wav"'/>
+      </Sound>
+      <ROUTE fromField='cycleTime' fromNode='SongTime' toField='startTime' toNode='AudioClip'/>
+    </Group>
+  </Scene>
+</X3D>

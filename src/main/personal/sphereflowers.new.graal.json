@@ -54,11 +54,23 @@
 },
 {
 "@name":"modified",
-"@content":"Fri, 06 Oct 2023 12:44:25 GMT"
+"@content":"Sep 3 2023"
+},
+{
+"@name":"description",
+"@content":"5 or more prismatic flowers"
+},
+{
+"@name":"generator",
+"@content":"X3D-Edit, https://savage.nps.edu/X3D-Edit"
+},
+{
+"@name":"identifier",
+"@content":"https://coderextreme.net/X3DJSONLD/src/main/data/sphereflowers.x3d"
 },
 {
 "@name":"translated",
-"@content":"06 October 2023"
+"@content":"01 March 2024"
 },
 {
 "@name":"generator",
@@ -71,6 +83,23 @@
 ]
 },
 "Scene": {
+"-children":[
+{ "NavigationInfo":
+{
+}
+},
+{ "Background":
+{
+"@backUrl":["../resources/images/all_probes/stpeters_cross/stpeters_back.png"],
+"@bottomUrl":["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"],
+"@frontUrl":["../resources/images/all_probes/stpeters_cross/stpeters_front.png"],
+"@leftUrl":["../resources/images/all_probes/stpeters_cross/stpeters_left.png"],
+"@rightUrl":["../resources/images/all_probes/stpeters_cross/stpeters_right.png"],
+"@topUrl":["../resources/images/all_probes/stpeters_cross/stpeters_top.png"]
+}
+},
+{ "Group":
+{
 "-children":[
 { "ExternProtoDeclare":
 {
@@ -93,8 +122,6 @@
 { "ProtoDeclare":
 {
 "@name":"flower",
-"ProtoInterface": {
-},
 "ProtoBody": {
 "-children":[
 { "Group":
@@ -122,23 +149,6 @@
 }
 }
 },
-{ "NavigationInfo":
-{
-}
-},
-{ "Background":
-{
-"@backUrl":["../resources/images/all_probes/stpeters_cross/stpeters_back.png"],
-"@bottomUrl":["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"],
-"@frontUrl":["../resources/images/all_probes/stpeters_cross/stpeters_front.png"],
-"@leftUrl":["../resources/images/all_probes/stpeters_cross/stpeters_left.png"],
-"@rightUrl":["../resources/images/all_probes/stpeters_cross/stpeters_right.png"],
-"@topUrl":["../resources/images/all_probes/stpeters_cross/stpeters_top.png"]
-}
-},
-{ "Group":
-{
-"-children":[
 { "ProtoInstance":
 {
 "@name":"flower"
@@ -187,13 +197,9 @@
 {
 "@DEF":"AudioClip",
 "@description":"Chandubabamusic #1",
-"@startTime":1.696596265028E9,
 "@url":["../resources/chandubabamusic1.wav"]
 }
 }
-}
-}
-]
 }
 },
 { "ROUTE":
@@ -202,6 +208,9 @@
 "@fromNode":"SongTime",
 "@toField":"startTime",
 "@toNode":"AudioClip"
+}
+}
+]
 }
 }
 ]
