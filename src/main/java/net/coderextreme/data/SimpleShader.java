@@ -46,7 +46,7 @@ public class SimpleShader implements X3DRoots {
     X3D model = new SimpleShader().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
     model.toFileX3D("../data/SimpleShader.new.java.x3d");
-    model.toFileJSON("../data/SimpleShader.new.json");
+    model.toFileJSON("../data/SimpleShader.new.java.json");
     }
     public List<X3D> getRootNodeList() {
     	List<X3D> list = new ArrayList<X3D>(1);

@@ -46,7 +46,7 @@ public class JoeSkinTexcoordDisplacerKick implements X3DRoots {
     X3D model = new JoeSkinTexcoordDisplacerKick().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
     model.toFileX3D("../data/JoeSkinTexcoordDisplacerKick.new.java.x3d");
-    model.toFileJSON("../data/JoeSkinTexcoordDisplacerKick.new.json");
+    model.toFileJSON("../data/JoeSkinTexcoordDisplacerKick.new.java.json");
     }
     public List<X3D> getRootNodeList() {
     	List<X3D> list = new ArrayList<X3D>(1);

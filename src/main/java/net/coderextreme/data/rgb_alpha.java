@@ -46,7 +46,7 @@ public class rgb_alpha implements X3DRoots {
     X3D model = new rgb_alpha().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
     model.toFileX3D("../data/rgb_alpha.new.java.x3d");
-    model.toFileJSON("../data/rgb_alpha.new.json");
+    model.toFileJSON("../data/rgb_alpha.new.java.json");
     }
     public List<X3D> getRootNodeList() {
     	List<X3D> list = new ArrayList<X3D>(1);

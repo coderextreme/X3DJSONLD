@@ -46,7 +46,7 @@ public class qq3 implements X3DRoots {
     X3D model = new qq3().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
     model.toFileX3D("../data/qq3.new.java.x3d");
-    model.toFileJSON("../data/qq3.new.json");
+    model.toFileJSON("../data/qq3.new.java.json");
     }
     public List<X3D> getRootNodeList() {
     	List<X3D> list = new ArrayList<X3D>(1);

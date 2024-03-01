@@ -7,12 +7,12 @@
     "head": {
         "meta": [
           {
-            "@name":"filename",
+            "@name":"title",
             "@content":"Scripting.x3d"
           },
           {
             "@name":"translated",
-            "@content":"19 February 2024"
+            "@content":"29 February 2024"
           },
           {
             "@name":"generator",

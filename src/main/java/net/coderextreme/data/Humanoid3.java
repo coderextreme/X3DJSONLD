@@ -46,7 +46,7 @@ public class Humanoid3 implements X3DRoots {
     X3D model = new Humanoid3().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
     model.toFileX3D("../data/Humanoid3.new.java.x3d");
-    model.toFileJSON("../data/Humanoid3.new.json");
+    model.toFileJSON("../data/Humanoid3.new.java.json");
     }
     public List<X3D> getRootNodeList() {
     	List<X3D> list = new ArrayList<X3D>(1);

@@ -117,7 +117,7 @@ JavaSerializer.prototype = {
 			str += "    "+element.nodeName+" model = new "+clz+"().getRootNodeList().get(0); // only get one root node\n" 
 			str += "    System.out.print(model.validationReport().trim());\n"
 			str += "    model.toFileX3D(\""+clazz+".new.java.x3d\");\n";
-			str += "    model.toFileJSON(\""+clazz+".new.json\");\n";
+			str += "    model.toFileJSON(\""+clazz+".new.java.json\");\n";
 			str += "    }\n";
 			str += "    public List<X3D> getRootNodeList() {\n";
 			str += "    	List<X3D> list = new ArrayList<X3D>(1);\n";

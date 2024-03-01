@@ -46,7 +46,7 @@ public class ArchHalf implements X3DRoots {
     X3D model = new ArchHalf().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
     model.toFileX3D("../data/ArchHalf.new.java.x3d");
-    model.toFileJSON("../data/ArchHalf.new.json");
+    model.toFileJSON("../data/ArchHalf.new.java.json");
     }
     public List<X3D> getRootNodeList() {
     	List<X3D> list = new ArrayList<X3D>(1);

@@ -46,7 +46,7 @@ public class LOA1_KneelAnimation implements X3DRoots {
     X3D model = new LOA1_KneelAnimation().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
     model.toFileX3D("../data/LOA1_KneelAnimation.new.java.x3d");
-    model.toFileJSON("../data/LOA1_KneelAnimation.new.json");
+    model.toFileJSON("../data/LOA1_KneelAnimation.new.java.json");
     }
     public List<X3D> getRootNodeList() {
     	List<X3D> list = new ArrayList<X3D>(1);

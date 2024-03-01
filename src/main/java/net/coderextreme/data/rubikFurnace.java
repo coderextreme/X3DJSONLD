@@ -46,7 +46,7 @@ public class rubikFurnace implements X3DRoots {
     X3D model = new rubikFurnace().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
     model.toFileX3D("../data/rubikFurnace.new.java.x3d");
-    model.toFileJSON("../data/rubikFurnace.new.json");
+    model.toFileJSON("../data/rubikFurnace.new.java.json");
     }
     public List<X3D> getRootNodeList() {
     	List<X3D> list = new ArrayList<X3D>(1);

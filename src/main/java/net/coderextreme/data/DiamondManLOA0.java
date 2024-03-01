@@ -46,7 +46,7 @@ public class DiamondManLOA0 implements X3DRoots {
     X3D model = new DiamondManLOA0().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
     model.toFileX3D("../data/DiamondManLOA0.new.java.x3d");
-    model.toFileJSON("../data/DiamondManLOA0.new.json");
+    model.toFileJSON("../data/DiamondManLOA0.new.java.json");
     }
     public List<X3D> getRootNodeList() {
     	List<X3D> list = new ArrayList<X3D>(1);

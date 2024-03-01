@@ -46,7 +46,7 @@ public class StringArrayEncodingExamples implements X3DRoots {
     X3D model = new StringArrayEncodingExamples().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
     model.toFileX3D("../data/StringArrayEncodingExamples.new.java.x3d");
-    model.toFileJSON("../data/StringArrayEncodingExamples.new.json");
+    model.toFileJSON("../data/StringArrayEncodingExamples.new.java.json");
     }
     public List<X3D> getRootNodeList() {
     	List<X3D> list = new ArrayList<X3D>(1);

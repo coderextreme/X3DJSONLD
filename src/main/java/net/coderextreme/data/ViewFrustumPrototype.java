@@ -46,7 +46,7 @@ public class ViewFrustumPrototype implements X3DRoots {
     X3D model = new ViewFrustumPrototype().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
     model.toFileX3D("../data/ViewFrustumPrototype.new.java.x3d");
-    model.toFileJSON("../data/ViewFrustumPrototype.new.json");
+    model.toFileJSON("../data/ViewFrustumPrototype.new.java.json");
     }
     public List<X3D> getRootNodeList() {
     	List<X3D> list = new ArrayList<X3D>(1);

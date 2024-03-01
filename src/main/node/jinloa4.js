@@ -261,6 +261,9 @@
                 return true;
         }
     }
+    function X3D() {
+        new HAnimScale();
+    }
     function initialize() {
         new HAnimScale();
     }

@@ -46,7 +46,7 @@ public class KoreanCharacter05Ju implements X3DRoots {
     X3D model = new KoreanCharacter05Ju().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
     model.toFileX3D("../data/KoreanCharacter05Ju.new.java.x3d");
-    model.toFileJSON("../data/KoreanCharacter05Ju.new.json");
+    model.toFileJSON("../data/KoreanCharacter05Ju.new.java.json");
     }
     public List<X3D> getRootNodeList() {
     	List<X3D> list = new ArrayList<X3D>(1);

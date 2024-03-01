@@ -46,7 +46,7 @@ public class JointCoordinateAxes implements X3DRoots {
     X3D model = new JointCoordinateAxes().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
     model.toFileX3D("../data/JointCoordinateAxes.new.java.x3d");
-    model.toFileJSON("../data/JointCoordinateAxes.new.json");
+    model.toFileJSON("../data/JointCoordinateAxes.new.java.json");
     }
     public List<X3D> getRootNodeList() {
     	List<X3D> list = new ArrayList<X3D>(1);

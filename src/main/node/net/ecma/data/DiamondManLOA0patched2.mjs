@@ -49,7 +49,7 @@ var X3D0 =  new X3D({
           meta : new MFNode([
             new meta({
               name : new SFString("title"),
-              content : new SFString("DiamondManLOA0.x3d")}),
+              content : new SFString("DiamondManLOA0patched2.x3d")}),
 
             new meta({
               name : new SFString("description"),
