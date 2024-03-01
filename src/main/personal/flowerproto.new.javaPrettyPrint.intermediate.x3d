@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+  <head>
+    <component name='Scripting' level='1'/>
+    <component name='EnvironmentalEffects' level='3'/>
+    <component name='Shaders' level='1'/>
+    <component name='CubeMapTexturing' level='1'/>
+    <component name='Texturing' level='1'/>
+    <component name='Rendering' level='1'/>
+    <component name='Shape' level='4'/>
+    <component name='Grouping' level='3'/>
+    <component name='Core' level='1'/>
+    <meta content='flowerproto.x3d' name='title'/>
+    <meta content='John Carlson' name='creator'/>
+    <meta content='A flower proto with configurable shaders' name='description'/>
+    <meta content='X3D-Edit, https://savage.nps.edu/X3D-Edit' name='generator'/>
+    <meta content='https://coderextreme.net/X3DJSONLD/src/main/data/flowerproto.x3d' name='identifier'/>
+  </head>
+  <Scene>
+    <ProtoDeclare name='FlowerProto'>
+      <ProtoInterface>
+        <field name='vertex' accessType='inputOutput' type='MFString' value='"https://coderextreme.net/X3DJSONLD/src/main/shaders/gl_flowers_chromatic.vs"'/>
+        <field name='fragment' accessType='inputOutput' type='MFString' value='"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_flowers.fs"'/>
+      </ProtoInterface>
+      <ProtoBody>
+        <Transform DEF='transform'>
+          <Shape>
+            <Appearance>
+              <Material diffuseColor='0.7 0.7 0.7' specularColor='0.5 0.5 0.5'/>
+              <ComposedShader DEF='shader' language='GLSL'>
+                <!-- <field name='cube' type='SFNode' accessType="inputOutput"> <ComposedCubeMapTexture USE="texture"/> </field> -->
+                <field name='cube' accessType='inputOutput' type='SFInt32' value='0'/>
+                <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1 1.033'/>
+                <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'/>
+                <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'/>
+                <field name='power' accessType='inputOutput' type='SFFloat' value='2.0'/>
+                <field name='a' accessType='inputOutput' type='SFFloat' value='10.0'/>
+                <field name='b' accessType='inputOutput' type='SFFloat' value='1.0'/>
+                <field name='c' accessType='inputOutput' type='SFFloat' value='20.0'/>
+                <field name='d' accessType='inputOutput' type='SFFloat' value='20.0'/>
+                <field name='tdelta' accessType='inputOutput' type='SFFloat' value='0.0'/>
+                <field name='pdelta' accessType='inputOutput' type='SFFloat' value='0.0'/>
+                <ShaderPart>
+                  <IS>
+                    <connect nodeField='url' protoField='vertex'/>
+                  </IS>
+                </ShaderPart>
+                <ShaderPart type='FRAGMENT'>
+                  <IS>
+                    <connect nodeField='url' protoField='fragment'/>
+                  </IS>
+                </ShaderPart>
+              </ComposedShader>
+              <ComposedCubeMapTexture DEF='texture'>
+                <ImageTexture containerField='backTexture' url='"../resources/images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"'/>
+                <ImageTexture containerField='bottomTexture' url='"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"'/>
+                <ImageTexture containerField='frontTexture' url='"../resources/images/all_probes/stpeters_cross/stpeters_front.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"'/>
+                <ImageTexture containerField='leftTexture' url='"../resources/images/all_probes/stpeters_cross/stpeters_left.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"'/>
+                <ImageTexture containerField='rightTexture' url='"../resources/images/all_probes/stpeters_cross/stpeters_right.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"'/>
+                <ImageTexture containerField='topTexture' url='"../resources/images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"'/>
+              </ComposedCubeMapTexture>
+            </Appearance>
+            <Sphere/>
+          </Shape>
+          <Script DEF='Animate'>
+            <field name='translation' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
+            <field name='velocity' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
+            <field name='set_fraction' accessType='inputOnly' type='SFFloat'/>
+            <field name='a' accessType='inputOutput' type='SFFloat' value='0.5'/>
+            <field name='b' accessType='inputOutput' type='SFFloat' value='0.5'/>
+            <field name='c' accessType='inputOutput' type='SFFloat' value='3.0'/>
+            <field name='d' accessType='inputOutput' type='SFFloat' value='3.0'/>
+            <field name='tdelta' accessType='inputOutput' type='SFFloat' value='0.5'/>
+            <field name='pdelta' accessType='inputOutput' type='SFFloat' value='0.5'/>
+<![CDATA[
+ecmascript:
+			function initialize() {
+			    translation = new SFVec3f(0, 0, 0);
+			    velocity = new SFVec3f(
+			    	Math.random() - 0.5,
+				Math.random() - 0.5,
+				Math.random() - 0.5);
+			}
+			function set_fraction() {
+			    translation = new SFVec3f(
+			    	translation.x + velocity.x,
+				translation.y + velocity.y,
+				translation.z + velocity.z);
+			    for (var j = 0; j <= 2; j++) {
+				    if (Math.abs(translation.x) > 10) {
+					initialize();
+				    } else if (Math.abs(translation.y) > 10) {
+					initialize();
+				    } else if (Math.abs(translation.z) > 10) {
+					initialize();
+				    } else {
+					velocity.x += Math.random() * 0.2 - 0.1;
+					velocity.y += Math.random() * 0.2 - 0.1;
+					velocity.z += Math.random() * 0.2 - 0.1;
+				    }
+			    }
+			    animate_flowers();
+			}
+
+			function animate_flowers(fraction, eventTime) {
+				var choice = Math.floor(Math.random() * 4);
+				switch (choice) {
+				case 0:
+					a += Math.random() * 0.2 - 0.1;
+					break;
+				case 1:
+					b += Math.random() * 0.2 - 0.1;
+					break;
+				case 2:
+					c += Math.random() * 2 - 1;
+					break;
+				case 3:
+					d += Math.random() * 2 - 1;
+					break;
+				}
+				tdelta += 0.5;
+				pdelta += 0.5;
+				if (a > 1) {
+					a =  0.5;
+				}
+				if (b > 1) {
+					b =  0.5;
+				}
+				if (c < 1) {
+					c =  4;
+				}
+				if (d < 1) {
+					d =  4;
+				}
+				if (c > 10) {
+					c = 4;
+				}
+				if (d > 10) {
+					d = 4;
+				}
+			}
+]]>
+          </Script>
+          <TimeSensor DEF='TourTime' cycleInterval='5.0' loop='true'/>
+          <ROUTE fromField='fraction_changed' fromNode='TourTime' toField='set_fraction' toNode='Animate'/>
+          <ROUTE fromField='translation_changed' fromNode='Animate' toField='set_translation' toNode='transform'/>
+          <ROUTE fromField='a' fromNode='Animate' toField='a' toNode='shader'/>
+          <ROUTE fromField='b' fromNode='Animate' toField='b' toNode='shader'/>
+          <ROUTE fromField='c' fromNode='Animate' toField='c' toNode='shader'/>
+          <ROUTE fromField='d' fromNode='Animate' toField='d' toNode='shader'/>
+          <ROUTE fromField='tdelta' fromNode='Animate' toField='tdelta' toNode='shader'/>
+          <ROUTE fromField='pdelta' fromNode='Animate' toField='pdelta' toNode='shader'/>
+        </Transform>
+      </ProtoBody>
+    </ProtoDeclare>
+  </Scene>
+</X3D>
