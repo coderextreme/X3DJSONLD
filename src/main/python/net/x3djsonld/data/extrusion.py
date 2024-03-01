@@ -26,7 +26,7 @@
 
 from x3d import *
 
-newModel=X3D(profile='Immersive',version='3.3',
+newModel=X3D(profile='Immersive',version='4.0',
   head=head(
     children=[
     meta(name='creator',content='John W Carlson'),

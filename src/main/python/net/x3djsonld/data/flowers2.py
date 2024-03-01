@@ -26,7 +26,7 @@
 
 from x3d import *
 
-newModel=X3D(profile='Immersive',version='3.0',
+newModel=X3D(profile='Immersive',version='4.0',
   head=head(
     children=[
     component(level=1,name='Scripting'),
