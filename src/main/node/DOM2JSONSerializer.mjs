@@ -118,7 +118,7 @@ DOM2JSONSerializer.prototype = {
 				var attrs = element.attributes;
 				try {
 					parseInt(a);
-					if (attrs.hasOwnProperty(a) && attrs[a].nodeType == 2) {
+					if (attrs.hasOwnProperty(a) && attrs[a].nodeType === 2) {
 						var attr = attrs[a].nodeName;
 						var method = attr;
 						// look at object model
@@ -244,7 +244,7 @@ DOM2JSONSerializer.prototype = {
 				var attrs = element.attributes;
 				try {
 					parseInt(a);
-					if (attrs.hasOwnProperty(a) && attrs[a].nodeType == 2) {
+					if (attrs.hasOwnProperty(a) && attrs[a].nodeType === 2) {
 						var attr = attrs[a].nodeName;
 						if (attr === at) {
 							value = attrs[a].nodeValue;

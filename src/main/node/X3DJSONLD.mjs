@@ -93,7 +93,7 @@ processURLs: function(localArray, path) {
 					pc = "";
 				}
 			}
-			if (p == 0) {
+			if (p === 0) {
 				localArray[url] = path+localArray[url];
 			} else {
 				localArray[url] = pc+"/"+localArray[url];

@@ -75,7 +75,7 @@ doValidate : function(json, validated_version, file, success, failure, e) {
 
 		retval = (valid || confirm(error));
 	}
-	if (retval && typeof success == 'function') {
+	if (retval && typeof success === 'function') {
 		success();
 	} else if (typeof failure === 'function') {
 		failure(e);

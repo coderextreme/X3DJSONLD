@@ -433,7 +433,7 @@ PROTOS.prototype = {
 				if (typeof obj !== 'undefined') {
 					if (typeof obj[3] !== 'undefined') {
 						var f = this.getField(scope, obj[3]);
-						if (f.indexOf("DECL", 1) == -1) {
+						if (f.indexOf("DECL", 1) === -1) {
 							defobj = [f,  obj[0]["@name"]];
 							// console.error("def5 is", defobj);
 						}
@@ -1051,7 +1051,7 @@ PROTOS.prototype = {
 						pc = "";
 					}
 				}
-				if (p == 0) {
+				if (p === 0) {
 					localArray[url] = path+localArray[url];
 				} else {
 					localArray[url] = pc+"/"+localArray[url];
