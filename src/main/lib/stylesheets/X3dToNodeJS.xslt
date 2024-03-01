@@ -296,6 +296,7 @@ POSSIBILITY OF SUCH DAMAGE.
 		]]>var testObject = new </xsl:text><xsl:value-of select="$newClassName"/><xsl:text>();
 		console.log ("</xsl:text>          <xsl:value-of select="$newClassName"/>
 		<xsl:text> execution self-validation test results: " + testObject.validateSelf());
+		process.exit();
 	}
 }
 </xsl:text><!-- class complete -->
@@ -694,6 +695,11 @@ POSSIBILITY OF SUCH DAMAGE.
 			</xsl:when>
 		</xsl:choose>
 		<xsl:text>))</xsl:text>
+		<xsl:if test="(string-length(@USE) > 0) and not(local-name() = 'ProtoInstance')">
+			<xsl:text>.setUSE("</xsl:text>
+			<xsl:value-of select="@USE"/>
+			<xsl:text>")</xsl:text>
+		</xsl:if>
 		
 		<!-- handle attribute(s) if any -->
 		<xsl:call-template name="process-attributes-in-order">
@@ -823,6 +829,9 @@ POSSIBILITY OF SUCH DAMAGE.
                     <xsl:when test="(local-name(..) = 'HAnimHumanoid') and (local-name() = 'HAnimSegment')">
                         <xsl:text>segments</xsl:text>
                     </xsl:when>
+                    <xsl:when test="(local-name(..) = 'HAnimHumanoid') and (local-name() = 'MetadataSet')">
+                        <xsl:text>metadata</xsl:text>
+                    </xsl:when>
                     <!-- HAnimHumanoid can contain Metadata*  with containerField = metadata -->
                     <!-- HAnimHumanoid can contain HAnimJoint with containerField = joints or skeleton -->
                     <!-- HAnimHumanoid can contain HAnimSite  with containerField = sites, skeleton or viewpoints -->
@@ -910,6 +919,11 @@ POSSIBILITY OF SUCH DAMAGE.
 				</xsl:when>
 				<xsl:when test="(local-name(..) = 'HAnimHumanoid') and (@containerField = 'skinNormal')">
 					<xsl:text>.setSkinNormal(</xsl:text>
+					<xsl:apply-templates select="."/><!-- handle this node -->
+					<xsl:text>)</xsl:text>
+				</xsl:when>
+				<xsl:when test="(local-name(..) = 'HAnimHumanoid') and (@containerField = 'metadata')">
+					<xsl:text>.setMetadata(</xsl:text>
 					<xsl:apply-templates select="."/><!-- handle this node -->
 					<xsl:text>)</xsl:text>
 				</xsl:when>
