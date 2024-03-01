@@ -382,13 +382,17 @@ class Scripts {
 		var toField = route["@toField"];
 
 		var set = "";
-		if (toField.startsWith("set_")) {
+		if (toField == null) {
+			console.error("toField is null");
+		} else if (toField.startsWith("set_")) {
 			toField = toField.substring(4);
 			set = "set_";
 		}
 
 		var changed = "";
-		if (fromField.endsWith("_changed")) {
+		if (fromField == null) {
+			console.error("fromField is null");
+		} else if (fromField.endsWith("_changed")) {
 			fromField = fromField.substring(0, fromField.length-8);
 			changed = "_changed";
 		}
