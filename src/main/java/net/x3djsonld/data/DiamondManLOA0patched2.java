@@ -131,7 +131,10 @@ import org.web3d.x3d.jsail.Shape.*;
 	* @author Matthew T. Beitler
  */
 
-import net.coderextreme.X3DRoots;import java.util.List;import java.util.ArrayList;public class DiamondManLOA0patched2 implements X3DRoots
+import net.coderextreme.X3DRoots;
+import java.util.List;
+import java.util.ArrayList;
+public class DiamondManLOA0patched2 implements X3DRoots
 {
 	/** Default constructor to create this object. */
 	public DiamondManLOA0patched2 ()

@@ -142,4 +142,5 @@ ConfigurationProperties.setStripTrailingZeroes(true);
             .setGeometry((new autoclass.Text()).setString(java.newArray("java.lang.String", ["ArtDecoExamples.x3d","is a Materials Prototype declaration file.","","For an example scene using these node,","click this text and view","ArtDecoExamples.x3d"]))
               .setFontStyle((new autoclass.FontStyle()).setJustify(java.newArray("java.lang.String", ["MIDDLE","MIDDLE"])).setSize(java.newFloat(0.8)))))))      ;
     X3D0.toFileX3D("../data/ArtDecoPrototypes.new.node.x3d");
+    X3D0.toFileJSON("../data/ArtDecoPrototypes.new.node.json");
     process.exit(0);

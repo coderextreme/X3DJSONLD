@@ -43,4 +43,5 @@ ConfigurationProperties.setStripTrailingZeroes(true);
             .setSourceCode("ecmascript:\n"+
 "			    var me = '\"1\" \"\"2\" \"\\n3\"';"))))      ;
     X3D0.toFileX3D("../data/text3shapes.new.node.x3d");
+    X3D0.toFileJSON("../data/text3shapes.new.node.json");
     process.exit(0);

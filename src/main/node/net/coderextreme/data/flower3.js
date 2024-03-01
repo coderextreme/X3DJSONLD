@@ -115,4 +115,5 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addChild((new autoclass.ROUTE()).setFromNode("OrbitScript").setFromField("coordinates").setToNode("OrbitCoordinates").setToField("point"))
         .addChild((new autoclass.ROUTE()).setFromNode("Clock").setFromField("fraction_changed").setToNode("OrbitScript").setToField("set_fraction")))      ;
     X3D0.toFileX3D("../data/flower3.new.node.x3d");
+    X3D0.toFileJSON("../data/flower3.new.node.json");
     process.exit(0);

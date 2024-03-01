@@ -524,4 +524,5 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addChild((new autoclass.ROUTE()).setFromField("value_changed").setFromNode("whole_body_RotationInterpolator_Jump").setToField("set_rotation").setToNode("hanim_humanoid_root"))
         .addChild((new autoclass.ROUTE()).setFromField("value_changed").setFromNode("whole_body_TranslationInterpolator_Jump").setToField("set_translation").setToNode("hanim_humanoid_root")))      ;
     X3D0.toFileX3D("../data/AllenDutton.new.node.x3d");
+    X3D0.toFileJSON("../data/AllenDutton.new.node.json");
     process.exit(0);

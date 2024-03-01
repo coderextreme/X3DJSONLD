@@ -48,4 +48,5 @@ ProtoInstance1
             .addChild((new autoclass.Shape())
               .setGeometry((new autoclass.Box()))));
     X3D0.toFileX3D("../data/asmallbox.new.node.x3d");
+    X3D0.toFileJSON("../data/asmallbox.new.node.json");
     process.exit(0);

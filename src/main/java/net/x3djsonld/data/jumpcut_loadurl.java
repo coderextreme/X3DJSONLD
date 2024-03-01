@@ -95,13 +95,21 @@ import org.web3d.x3d.jsail.Shape.*;
 	* @author http://www.itl.nist.gov/div897/ctg/vrml/members.html
  */
 
-public class jumpcut_loadurl
+import net.coderextreme.X3DRoots;
+import java.util.List;
+import java.util.ArrayList;
+public class jumpcut_loadurl implements X3DRoots
 {
 	/** Default constructor to create this object. */
 	public jumpcut_loadurl ()
 	{
 	  initialize();
 	}
+        public List<X3D> getRootNodeList() {
+                List<X3D> list = new ArrayList<X3D>(1);
+                list.add(x3dModel);
+                return list;
+        }
 
 	/** Create and initialize the X3D model for this object. */
 	public final void initialize()

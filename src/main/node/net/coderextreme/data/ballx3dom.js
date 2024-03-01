@@ -55,4 +55,5 @@ ConfigurationProperties.setStripTrailingZeroes(true);
                 .addParts((new autoclass.ShaderPart()).setType("VERTEX").setUrl(java.newArray("java.lang.String", ["../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"])))
                 .addParts((new autoclass.ShaderPart()).setType("FRAGMENT").setDEF("common").setUrl(java.newArray("java.lang.String", ["../shaders/common.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"]))))))))      ;
     X3D0.toFileX3D("../data/ballx3dom.new.node.x3d");
+    X3D0.toFileJSON("../data/ballx3dom.new.node.json");
     process.exit(0);

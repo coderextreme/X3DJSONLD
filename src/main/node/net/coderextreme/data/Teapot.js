@@ -46,4 +46,5 @@ ConfigurationProperties.setStripTrailingZeroes(true);
             .setCoord((new autoclass.Coordinate()).setPoint(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0), java.newFloat(1), java.newFloat(0), java.newFloat(0), java.newFloat(0), java.newFloat(1), java.newFloat(0), java.newFloat(0), java.newFloat(0), java.newFloat(1)])))
             .setColor((new autoclass.Color()).setColor(java.newArray("float", [java.newFloat(1), java.newFloat(0), java.newFloat(0), java.newFloat(0), java.newFloat(0.6), java.newFloat(0), java.newFloat(0), java.newFloat(0), java.newFloat(1)]))))))      ;
     X3D0.toFileX3D("../data/Teapot.new.node.x3d");
+    X3D0.toFileJSON("../data/Teapot.new.node.json");
     process.exit(0);

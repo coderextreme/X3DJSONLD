@@ -57,4 +57,5 @@ ConfigurationProperties.setStripTrailingZeroes(true);
               .setAppearance((new autoclass.Appearance())
                 .setMaterial((new autoclass.Material()).setUSE("MaterialLightBlue")))))))      ;
     X3D0.toFileX3D("../data/HelloWorld.new.node.x3d");
+    X3D0.toFileJSON("../data/HelloWorld.new.node.json");
     process.exit(0);

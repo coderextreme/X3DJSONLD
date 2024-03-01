@@ -162,4 +162,5 @@ ProtoInstance1
 ProtoInstance1
             .addFieldValue((new autoclass.fieldValue()).setName("transparency").setValue("0.5"));
     X3D0.toFileX3D("../data/flowers2.new.node.x3d");
+    X3D0.toFileJSON("../data/flowers2.new.node.json");
     process.exit(0);

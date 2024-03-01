@@ -43,4 +43,5 @@ ConfigurationProperties.setStripTrailingZeroes(true);
               .setFontStyle((new autoclass.FontStyle()).setUSE("testFontStyle")))
             .setAppearance((new autoclass.Appearance()).setUSE("LightBlueAppearance")))))      ;
     X3D0.toFileX3D("../data/TextExamples.new.node.x3d");
+    X3D0.toFileJSON("../data/TextExamples.new.node.json");
     process.exit(0);

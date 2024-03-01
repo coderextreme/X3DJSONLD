@@ -16,8 +16,8 @@ ConfigurationProperties.setStripTrailingZeroes(true);
       var X3D0 =  (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
       .setHead((new autoclass.head())
         .addComponent((new autoclass.component()).setName("HAnim").setLevel(1))
-        .addMeta((new autoclass.meta()).setName("title").setContent("JohnBoy.x3d"))
-        .addMeta((new autoclass.meta()).setName("identifier").setContent("http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d"))
+        .addMeta((new autoclass.meta()).setName("title").setContent("DonHumanoid.x3d"))
+        .addMeta((new autoclass.meta()).setName("identifier").setContent("http://www.web3d.org/x3d/content/examples/HumanoidAnimation/DonHumanoid.x3d"))
         .addMeta((new autoclass.meta()).setName("description").setContent("An attempt at a standard LOA-4 skeleton"))
         .addMeta((new autoclass.meta()).setName("generator").setContent("h2.pl"))
         .addMeta((new autoclass.meta()).setName("modified").setContent("14 Jan 2023"))
@@ -73,4 +73,5 @@ ConfigurationProperties.setStripTrailingZeroes(true);
           .addSkeleton((new autoclass.HAnimJoint()).setName("").setDEF("hanim_").setUlimit(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setLlimit(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])))
           .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_"))))      ;
     X3D0.toFileX3D("../data/DonHumanoid.new.node.x3d");
+    X3D0.toFileJSON("../data/DonHumanoid.new.node.json");
     process.exit(0);

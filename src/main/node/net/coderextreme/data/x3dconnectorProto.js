@@ -198,4 +198,5 @@ ProtoInstance2
 ProtoInstance2
           .addFieldValue((new autoclass.fieldValue()).setName("set_endpoint").setValue("0 0 0"));
     X3D0.toFileX3D("../data/x3dconnectorProto.new.node.x3d");
+    X3D0.toFileJSON("../data/x3dconnectorProto.new.node.json");
     process.exit(0);

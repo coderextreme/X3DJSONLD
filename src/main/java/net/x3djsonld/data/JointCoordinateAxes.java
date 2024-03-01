@@ -10,7 +10,7 @@ import org.web3d.x3d.jsail.Text.*;
 
 // Javadoc metadata annotations follow, see below for X3DJSAIL Java source code.
 /**
- * <p> Example scene . </p>
+ * <p> Example scene JointCoordinateAxes. </p>
  <p> Related links: JointCoordinateAxes.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;">
         <caption>Scene Meta Information</caption>
@@ -44,13 +44,21 @@ import org.web3d.x3d.jsail.Text.*;
 
  */
 
-public class JointCoordinateAxes
+import net.coderextreme.X3DRoots;
+import java.util.List;
+import java.util.ArrayList;
+public class JointCoordinateAxes implements X3DRoots
 {
 	/** Default constructor to create this object. */
 	public JointCoordinateAxes ()
 	{
 	  initialize();
 	}
+        public List<X3D> getRootNodeList() {
+                List<X3D> list = new ArrayList<X3D>(1);
+                list.add(x3dModel);
+                return list;
+        }
 
 	/** Create and initialize the X3D model for this object. */
 	public final void initialize()

@@ -343,4 +343,5 @@ ConfigurationProperties.setStripTrailingZeroes(true);
           .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_r_carpal_proximal_interphalangeal_5"))
           .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_r_carpal_distal_interphalangeal_5"))))      ;
     X3D0.toFileX3D("../data/JohnJoint2.new.node.x3d");
+    X3D0.toFileJSON("../data/JohnJoint2.new.node.json");
     process.exit(0);

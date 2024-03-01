@@ -63,4 +63,5 @@ ProtoInstance0
 ProtoInstance0
                   .addFieldValue((new autoclass.fieldValue()).setName("fragment").setValue("\"../shaders/x_ite.fs\""));
     X3D0.toFileX3D("../data/sphereflowers.new.node.x3d");
+    X3D0.toFileJSON("../data/sphereflowers.new.node.json");
     process.exit(0);

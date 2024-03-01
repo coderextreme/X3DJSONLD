@@ -47,4 +47,5 @@ ConfigurationProperties.setStripTrailingZeroes(true);
           .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFBOOL).setName("trigger_event").setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY)))
         .addChild((new autoclass.ROUTE()).setFromField("isActive").setFromNode("STARTER").setToField("trigger_event").setToNode("MYSCRIPT")))      ;
     X3D0.toFileX3D("../data/jumpcut_loadurl.new.node.x3d");
+    X3D0.toFileJSON("../data/jumpcut_loadurl.new.node.json");
     process.exit(0);

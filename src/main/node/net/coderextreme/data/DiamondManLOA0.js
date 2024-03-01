@@ -70,4 +70,5 @@ ConfigurationProperties.setStripTrailingZeroes(true);
           .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_sacroiliac"))
           .addSegments((new autoclass.HAnimSegment()).setUSE("hanim_pelvis"))))      ;
     X3D0.toFileX3D("../data/DiamondManLOA0.new.node.x3d");
+    X3D0.toFileJSON("../data/DiamondManLOA0.new.node.json");
     process.exit(0);

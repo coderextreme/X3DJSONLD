@@ -10,18 +10,18 @@ import org.web3d.x3d.jsail.Sound.*;
 
 // Javadoc metadata annotations follow, see below for X3DJSAIL Java source code.
 /**
- * <p> Example scene . </p>
+ * <p> Example scene JoeExample. </p>
  <p> Related links: JoeExample.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;">
         <caption>Scene Meta Information</caption>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
-			<td style="text-align:left;   padding:10px 0px;">&nbsp; Document Metadata </td>
+			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.JoeExample&nbsp; Document Metadata </td>
 		</tr>
 
 		<tr>
-			<td style="text-align:right; vertical-align: text-top;"> <i> filename </i> </td>
-			<td> Scripting.x3d </td>
+			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
+			<td> <a href="Scripting.x3d">Scripting.x3d</a> </td>
 		</tr>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center;" colspan="2">  &nbsp; </td>
@@ -40,13 +40,21 @@ import org.web3d.x3d.jsail.Sound.*;
 
  */
 
-public class JoeExample
+import net.coderextreme.X3DRoots;
+import java.util.List;
+import java.util.ArrayList;
+public class JoeExample implements X3DRoots
 {
 	/** Default constructor to create this object. */
 	public JoeExample ()
 	{
 	  initialize();
 	}
+        public List<X3D> getRootNodeList() {
+                List<X3D> list = new ArrayList<X3D>(1);
+                list.add(x3dModel);
+                return list;
+        }
 
 	/** Create and initialize the X3D model for this object. */
 	public final void initialize()
@@ -54,7 +62,7 @@ public class JoeExample
             try { // catch-all
   x3dModel = new X3D().setProfile(X3D.PROFILE_IMMERSIVE).setVersion(X3D.VERSION_3_0)
   .setHead(new head()
-    .addMeta(new meta().setName("filename").setContent("Scripting.x3d")))
+    .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("Scripting.x3d")))
   .setScene(new Scene()
     .addChild(new Script("OpenVault").setSourceCode("""
 ecmascript:

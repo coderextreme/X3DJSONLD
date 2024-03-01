@@ -102,4 +102,5 @@ ConfigurationProperties.setStripTrailingZeroes(true);
             .setGeometry((new autoclass.Text()).setString(java.newArray("java.lang.String", ["ViewFrustumPrototype.x3d","is a Prototype declaration file.","For an example scene using the prototype,","click this text and view","ViewFrustumExample.x3d"]))
               .setFontStyle((new autoclass.FontStyle()).setJustify(java.newArray("java.lang.String", ["MIDDLE","MIDDLE"])).setSize(java.newFloat(0.8)))))))      ;
     X3D0.toFileX3D("../data/ViewFrustumPrototype.new.node.x3d");
+    X3D0.toFileJSON("../data/ViewFrustumPrototype.new.node.json");
     process.exit(0);

@@ -105,4 +105,5 @@ var ProtoInstance2 = null;
         .addChild(ProtoInstance1 = (new autoclass.ProtoInstance()).setName("Bubble"))
         .addChild(ProtoInstance2 = (new autoclass.ProtoInstance()).setName("Bubble")))      ;
     X3D0.toFileX3D("../data/bub.new.node.x3d");
+    X3D0.toFileJSON("../data/bub.new.node.json");
     process.exit(0);

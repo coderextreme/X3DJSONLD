@@ -31,4 +31,5 @@ ConfigurationProperties.setStripTrailingZeroes(true);
             .setAppearance((new autoclass.Appearance())
               .setMaterial((new autoclass.Material()).setDiffuseColor(java.newArray("float", [java.newFloat(0.8), java.newFloat(0.3), java.newFloat(0.3)])))))))      ;
     X3D0.toFileX3D("../data/ExtrusionHeart.new.node.x3d");
+    X3D0.toFileJSON("../data/ExtrusionHeart.new.node.json");
     process.exit(0);

@@ -33,4 +33,5 @@ ConfigurationProperties.setStripTrailingZeroes(true);
           .setAppearance((new autoclass.Appearance())
             .setMaterial((new autoclass.Material()).setDEF("MaterialNode").setDiffuseColor(java.newArray("float", [java.newFloat(1), java.newFloat(0.75), java.newFloat(0.25)]))))))      ;
     X3D0.toFileX3D("../data/ArchHalf.new.node.x3d");
+    X3D0.toFileJSON("../data/ArchHalf.new.node.json");
     process.exit(0);
