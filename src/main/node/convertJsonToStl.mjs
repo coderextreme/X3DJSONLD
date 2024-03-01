@@ -84,21 +84,21 @@ function toNormals(json, LDNodeList, ParentNode) {
 	}
 	var fieldDispatchTable = {
 		"@scale" : function(obj, LDNode) {
-			if (typeof obj == 'string') {
+			if (typeof obj === 'string') {
 				obj = obj.split(/[ \t,]+/);
 			}
 			LDNode.scale = Matrix.scale(obj[0], obj[1], obj[2]);
 			// console.log("Scaling", LDNode.scale);
 		},
 		"@rotation" : function(obj, LDNode) {
-			if (typeof obj == 'string') {
+			if (typeof obj === 'string') {
 				obj = obj.split(/[ \t,]+/);
 			}
 			LDNode.quaternion = Matrix.quaternion(obj[0], obj[1], obj[2], obj[3]);
 			// console.log("Rotating", LDNode.quaternion);
 		},
 		"@translation" : function(obj, LDNode) {
-			if (typeof obj == 'string') {
+			if (typeof obj === 'string') {
 				obj = obj.split(/[ \t,]+/);
 			}
 			LDNode.translation = Matrix.translation(obj[0], obj[1], obj[2]);
@@ -138,7 +138,7 @@ function toNormals(json, LDNodeList, ParentNode) {
 			var f = 0;
 			LDNode.normalIndex = [];
 			for (var o = 0; o < obj.length; o++) {
-				if (obj[o] == -1) {
+				if (obj[o] === -1) {
 					f++;
 					continue;
 				}
@@ -155,7 +155,7 @@ function toNormals(json, LDNodeList, ParentNode) {
 			var f = 0;
 			LDNode.coordIndex = [];
 			for (var o = 0; o < obj.length; o++) {
-				if (obj[o] == -1) {
+				if (obj[o] === -1) {
 					f++;
 				} else {
 					if (typeof LDNode.coordIndex[f] === 'undefined') {
@@ -183,7 +183,7 @@ function toNormals(json, LDNodeList, ParentNode) {
 				break;
 			case 'IndexedTriangleStripSet':
 				for (var o = 2; o < obj.length; o++) {
-					if (obj[o] == -1) {
+					if (obj[o] === -1) {
 						o += 3;
 						if (o >= obj.length) {
 							break;
@@ -199,7 +199,7 @@ function toNormals(json, LDNodeList, ParentNode) {
 			case 'IndexedTriangleFanSet':
 				var center = 0;
 				for (var o = 2; o < obj.length; o++) {
-					if (obj[o] == -1) {
+					if (obj[o] === -1) {
 						center = o+1;
 						o += 3;
 						if (o >= obj.length) {
@@ -288,7 +288,7 @@ function IndexedTriangle(LDNode, output, transform) {
 		output.push("solid "+(LDNode.DEF || LDNode.nodeName));
 		for (var face in LDNode.index) { // each face
 			var f = LDNode.index[face];
-			// normalPerVertex == false
+			// normalPerVertex === false
 			if (typeof LDNode.Normal === 'undefined') {
 				// compute the normal for the face with 3 points
 				var normal = triangle_normal(
