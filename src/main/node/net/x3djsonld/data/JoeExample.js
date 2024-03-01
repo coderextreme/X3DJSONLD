@@ -15,12 +15,12 @@ var autoclass = require('./X3Dautoclass');
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;" summary="Scene Metadata">
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
-			<td style="text-align:left;   padding:10px 0px;">&nbsp; Document Metadata </td>
+			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.JoeExample&nbsp; Document Metadata </td>
 		</tr>
 
 		<tr>
-			<td style="text-align:right; vertical-align: text-top;"> <i> filename </i> </td>
-			<td> Scripting.x3d </td>
+			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
+			<td> <a href="Scripting.x3d">Scripting.x3d</a> </td>
 		</tr>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center;" colspan="2">  &nbsp; </td>
@@ -52,7 +52,7 @@ JoeExample.prototype = {
   {
   this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("3.0")
   .setHead((new autoclass.head())
-    .addMeta((new autoclass.meta()).setName("filename").setContent("Scripting.x3d")))
+    .addMeta((new autoclass.meta()).setName("title").setContent("Scripting.x3d")))
   .setScene((new autoclass.Scene())
     .addChild((new autoclass.Script("OpenVault")).setSourceCode("\n" + 
 "\n" + 
