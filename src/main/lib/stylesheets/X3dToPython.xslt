@@ -558,6 +558,9 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                 <xsl:when test="(local-name(..) = 'HAnimHumanoid') and (local-name() = 'HAnimSegment')">
                     <xsl:text>segments</xsl:text>
                 </xsl:when>
+                <xsl:when test="(local-name(..) = 'HAnimHumanoid') and (local-name() = 'MetadataSet')">
+                    <xsl:text>metadata</xsl:text>
+                </xsl:when>
                 <!-- HAnimHumanoid can contain HAnimJoint with containerField = joints or skeleton -->
                 <!-- HAnimHumanoid can contain HAnimSite  with containerField = sites, skeleton or viewpoints -->
                 <!-- HAnimHumanoid can contain X3DCoordinateNode with containerField = skinCoord or skinBindingCoords -->
