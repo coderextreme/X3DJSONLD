@@ -68,14 +68,12 @@ convertJSON.convertJSON([
 	folder : "../graaljs/net/coderextreme/",
 	extension : ".js",
 	codeOutput : "../"
-/*
 	},
 	{ 
-	serializer : './PythonSerializer.js',
+	serializer : './PythonSerializerX3DJSAIL.js',
 	folder : "../python/net/coderextreme/",
 	extension : ".py",
 	codeOutput : "../"
-*/
 	}
 	]);
 process.exit(0);
