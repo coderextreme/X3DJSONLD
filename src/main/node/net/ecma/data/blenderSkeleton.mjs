@@ -30,7 +30,6 @@ var PointLight = require('./x3d.mjs');
 var Viewpoint = require('./x3d.mjs');
 var HAnimHumanoid = require('./x3d.mjs');
 var HAnimJoint = require('./x3d.mjs');
-var MFFloat = require('./x3d.mjs');
 var HAnimSegment = require('./x3d.mjs');
 var TouchSensor = require('./x3d.mjs');
 var HAnimSite = require('./x3d.mjs');
@@ -40,6 +39,7 @@ var SFBool = require('./x3d.mjs');
 var ProximitySensor = require('./x3d.mjs');
 var ROUTE = require('./x3d.mjs');
 var OrientationInterpolator = require('./x3d.mjs');
+var MFFloat = require('./x3d.mjs');
 var MFRotation = require('./x3d.mjs');
 var X3D0 =  new X3D({
 
@@ -137,8 +137,6 @@ var X3D0 =  new X3D({
                     new HAnimJoint({
                       name : new SFString("Armature"),
                       DEF : new SFString("hanim_Armature"),
-                      ulimit : new MFFloat([0,0,0]),
-                      llimit : new MFFloat([0,0,0]),
                       children : new MFNode([
                         new HAnimSegment({
                           name : new SFString("SEGMENT_FOR_Armature"),
@@ -165,8 +163,6 @@ var X3D0 =  new X3D({
                           name : new SFString("sacrum"),
                           DEF : new SFString("hanim_sacrum"),
                           center : new SFVec3f([-0.0002,-0.1178,0.8174]),
-                          ulimit : new MFFloat([0,0,0]),
-                          llimit : new MFFloat([0,0,0]),
                           children : new MFNode([
                             new HAnimSegment({
                               name : new SFString("SEGMENT_FOR_sacrum"),
@@ -195,8 +191,6 @@ var X3D0 =  new X3D({
                               name : new SFString("pelvis"),
                               DEF : new SFString("hanim_pelvis"),
                               center : new SFVec3f([-0.0002,-0.1178,0.6986]),
-                              ulimit : new MFFloat([0,0,0]),
-                              llimit : new MFFloat([0,0,0]),
                               children : new MFNode([
                                 new HAnimSegment({
                                   name : new SFString("SEGMENT_FOR_pelvis"),
@@ -225,8 +219,6 @@ var X3D0 =  new X3D({
                                   name : new SFString("l_thigh"),
                                   DEF : new SFString("hanim_l_thigh"),
                                   center : new SFVec3f([0.0945,-0.1202,0.8181]),
-                                  ulimit : new MFFloat([0,0,0]),
-                                  llimit : new MFFloat([0,0,0]),
                                   children : new MFNode([
                                     new HAnimSegment({
                                       name : new SFString("SEGMENT_FOR_l_thigh"),
@@ -255,8 +247,6 @@ var X3D0 =  new X3D({
                                       name : new SFString("l_calf"),
                                       DEF : new SFString("hanim_l_calf"),
                                       center : new SFVec3f([0.0924,-0.1213,0.4003]),
-                                      ulimit : new MFFloat([0,0,0]),
-                                      llimit : new MFFloat([0,0,0]),
                                       children : new MFNode([
                                         new HAnimSegment({
                                           name : new SFString("SEGMENT_FOR_l_calf"),
@@ -285,8 +275,6 @@ var X3D0 =  new X3D({
                                           name : new SFString("l_talus"),
                                           DEF : new SFString("hanim_l_talus"),
                                           center : new SFVec3f([0.0886,-0.1123,0.0869]),
-                                          ulimit : new MFFloat([0,0,0]),
-                                          llimit : new MFFloat([0,0,0]),
                                           children : new MFNode([
                                             new HAnimSegment({
                                               name : new SFString("SEGMENT_FOR_l_talus"),
@@ -315,8 +303,6 @@ var X3D0 =  new X3D({
                                               name : new SFString("l_navicular"),
                                               DEF : new SFString("hanim_l_navicular"),
                                               center : new SFVec3f([0.0781,-0.097,0.0283]),
-                                              ulimit : new MFFloat([0,0,0]),
-                                              llimit : new MFFloat([0,0,0]),
                                               children : new MFNode([
                                                 new HAnimSegment({
                                                   name : new SFString("SEGMENT_FOR_l_navicular"),
@@ -345,8 +331,6 @@ var X3D0 =  new X3D({
                                                   name : new SFString("l_cuneiform_1"),
                                                   DEF : new SFString("hanim_l_cuneiform_1"),
                                                   center : new SFVec3f([0.0672,-0.0835,0.0235]),
-                                                  ulimit : new MFFloat([0,0,0]),
-                                                  llimit : new MFFloat([0,0,0]),
                                                   children : new MFNode([
                                                     new HAnimSegment({
                                                       name : new SFString("SEGMENT_FOR_l_cuneiform_1"),
@@ -375,8 +359,6 @@ var X3D0 =  new X3D({
                                                       name : new SFString("l_metatarsal_1"),
                                                       DEF : new SFString("hanim_l_metatarsal_1"),
                                                       center : new SFVec3f([0.0644,-0.0577,0.0147]),
-                                                      ulimit : new MFFloat([0,0,0]),
-                                                      llimit : new MFFloat([0,0,0]),
                                                       children : new MFNode([
                                                         new HAnimSegment({
                                                           name : new SFString("SEGMENT_FOR_l_metatarsal_1"),
@@ -405,8 +387,6 @@ var X3D0 =  new X3D({
                                                           name : new SFString("l_tarsal_proximal_phalanx_1"),
                                                           DEF : new SFString("hanim_l_tarsal_proximal_phalanx_1"),
                                                           center : new SFVec3f([0.0619,-0.0083,0.0059]),
-                                                          ulimit : new MFFloat([0,0,0]),
-                                                          llimit : new MFFloat([0,0,0]),
                                                           children : new MFNode([
                                                             new HAnimSegment({
                                                               name : new SFString("SEGMENT_FOR_l_tarsal_proximal_phalanx_1"),
@@ -434,8 +414,6 @@ var X3D0 =  new X3D({
                                                             new HAnimJoint({
                                                               name : new SFString("l_tarsal_distal_phalanx_1"),
                                                               DEF : new SFString("hanim_l_tarsal_distal_phalanx_1"),
-                                                              ulimit : new MFFloat([0,0,0]),
-                                                              llimit : new MFFloat([0,0,0]),
                                                               children : new MFNode([
                                                                 new HAnimSegment({
                                                                   name : new SFString("SEGMENT_FOR_l_tarsal_distal_phalanx_1"),
@@ -462,8 +440,6 @@ var X3D0 =  new X3D({
                                                   name : new SFString("l_cuneiform_2"),
                                                   DEF : new SFString("hanim_l_cuneiform_2"),
                                                   center : new SFVec3f([0.0812,-0.0805,0.025]),
-                                                  ulimit : new MFFloat([0,0,0]),
-                                                  llimit : new MFFloat([0,0,0]),
                                                   children : new MFNode([
                                                     new HAnimSegment({
                                                       name : new SFString("SEGMENT_FOR_l_cuneiform_2"),
@@ -492,8 +468,6 @@ var X3D0 =  new X3D({
                                                       name : new SFString("l_metatarsal_2"),
                                                       DEF : new SFString("hanim_l_metatarsal_2"),
                                                       center : new SFVec3f([0.08,-0.0608,0.0175]),
-                                                      ulimit : new MFFloat([0,0,0]),
-                                                      llimit : new MFFloat([0,0,0]),
                                                       children : new MFNode([
                                                         new HAnimSegment({
                                                           name : new SFString("SEGMENT_FOR_l_metatarsal_2"),
@@ -522,8 +496,6 @@ var X3D0 =  new X3D({
                                                           name : new SFString("l_tarsal_proximal_phalanx_2"),
                                                           DEF : new SFString("hanim_l_tarsal_proximal_phalanx_2"),
                                                           center : new SFVec3f([0.0824,-0.004,0.0064]),
-                                                          ulimit : new MFFloat([0,0,0]),
-                                                          llimit : new MFFloat([0,0,0]),
                                                           children : new MFNode([
                                                             new HAnimSegment({
                                                               name : new SFString("SEGMENT_FOR_l_tarsal_proximal_phalanx_2"),
@@ -552,8 +524,6 @@ var X3D0 =  new X3D({
                                                               name : new SFString("l_tarsal_middle_phalanx_2"),
                                                               DEF : new SFString("hanim_l_tarsal_middle_phalanx_2"),
                                                               center : new SFVec3f([0.0841,0.0121,0.0041]),
-                                                              ulimit : new MFFloat([0,0,0]),
-                                                              llimit : new MFFloat([0,0,0]),
                                                               children : new MFNode([
                                                                 new HAnimSegment({
                                                                   name : new SFString("SEGMENT_FOR_l_tarsal_middle_phalanx_2"),
@@ -582,8 +552,6 @@ var X3D0 =  new X3D({
                                                                   name : new SFString("l_tarsal_distal_phalanx_2"),
                                                                   DEF : new SFString("hanim_l_tarsal_distal_phalanx_2"),
                                                                   center : new SFVec3f([0.0841,0.0216,0.0013]),
-                                                                  ulimit : new MFFloat([0,0,0]),
-                                                                  llimit : new MFFloat([0,0,0]),
                                                                   children : new MFNode([
                                                                     new HAnimSegment({
                                                                       name : new SFString("SEGMENT_FOR_l_tarsal_distal_phalanx_2"),
@@ -612,8 +580,6 @@ var X3D0 =  new X3D({
                                                   name : new SFString("l_cuneiform_3"),
                                                   DEF : new SFString("hanim_l_cuneiform_3"),
                                                   center : new SFVec3f([0.0928,-0.0821,0.0248]),
-                                                  ulimit : new MFFloat([0,0,0]),
-                                                  llimit : new MFFloat([0,0,0]),
                                                   children : new MFNode([
                                                     new HAnimSegment({
                                                       name : new SFString("SEGMENT_FOR_l_cuneiform_3"),
@@ -642,8 +608,6 @@ var X3D0 =  new X3D({
                                                       name : new SFString("l_metatarsal_3"),
                                                       DEF : new SFString("hanim_l_metatarsal_3"),
                                                       center : new SFVec3f([0.0944,-0.0625,0.0175]),
-                                                      ulimit : new MFFloat([0,0,0]),
-                                                      llimit : new MFFloat([0,0,0]),
                                                       children : new MFNode([
                                                         new HAnimSegment({
                                                           name : new SFString("SEGMENT_FOR_l_metatarsal_3"),
@@ -672,8 +636,6 @@ var X3D0 =  new X3D({
                                                           name : new SFString("l_tarsal_proximal_phalanx_3"),
                                                           DEF : new SFString("hanim_l_tarsal_proximal_phalanx_3"),
                                                           center : new SFVec3f([0.0963,-0.0065,0.0065]),
-                                                          ulimit : new MFFloat([0,0,0]),
-                                                          llimit : new MFFloat([0,0,0]),
                                                           children : new MFNode([
                                                             new HAnimSegment({
                                                               name : new SFString("SEGMENT_FOR_l_tarsal_proximal_phalanx_3"),
@@ -702,8 +664,6 @@ var X3D0 =  new X3D({
                                                               name : new SFString("l_tarsal_middle_phalanx_3"),
                                                               DEF : new SFString("hanim_l_tarsal_middle_phalanx_3"),
                                                               center : new SFVec3f([0.0987,0.0086,0.0034]),
-                                                              ulimit : new MFFloat([0,0,0]),
-                                                              llimit : new MFFloat([0,0,0]),
                                                               children : new MFNode([
                                                                 new HAnimSegment({
                                                                   name : new SFString("SEGMENT_FOR_l_tarsal_middle_phalanx_3"),
@@ -732,8 +692,6 @@ var X3D0 =  new X3D({
                                                                   name : new SFString("l_tarsal_distal_phalanx_3"),
                                                                   DEF : new SFString("hanim_l_tarsal_distal_phalanx_3"),
                                                                   center : new SFVec3f([0.1002,0.0178,0.0013]),
-                                                                  ulimit : new MFFloat([0,0,0]),
-                                                                  llimit : new MFFloat([0,0,0]),
                                                                   children : new MFNode([
                                                                     new HAnimSegment({
                                                                       name : new SFString("SEGMENT_FOR_l_tarsal_distal_phalanx_3"),
@@ -762,8 +720,6 @@ var X3D0 =  new X3D({
                                               name : new SFString("l_calcaneus"),
                                               DEF : new SFString("hanim_l_calcaneus"),
                                               center : new SFVec3f([0.0889,-0.1278,0.0494]),
-                                              ulimit : new MFFloat([0,0,0]),
-                                              llimit : new MFFloat([0,0,0]),
                                               children : new MFNode([
                                                 new HAnimSegment({
                                                   name : new SFString("SEGMENT_FOR_l_calcaneus"),
@@ -792,8 +748,6 @@ var X3D0 =  new X3D({
                                                   name : new SFString("l_cuboid"),
                                                   DEF : new SFString("hanim_l_cuboid"),
                                                   center : new SFVec3f([0.1105,-0.0998,0.0267]),
-                                                  ulimit : new MFFloat([0,0,0]),
-                                                  llimit : new MFFloat([0,0,0]),
                                                   children : new MFNode([
                                                     new HAnimSegment({
                                                       name : new SFString("SEGMENT_FOR_l_cuboid"),
@@ -822,8 +776,6 @@ var X3D0 =  new X3D({
                                                       name : new SFString("l_metatarsal_4"),
                                                       DEF : new SFString("hanim_l_metatarsal_4"),
                                                       center : new SFVec3f([0.1063,-0.0634,0.016]),
-                                                      ulimit : new MFFloat([0,0,0]),
-                                                      llimit : new MFFloat([0,0,0]),
                                                       children : new MFNode([
                                                         new HAnimSegment({
                                                           name : new SFString("SEGMENT_FOR_l_metatarsal_4"),
@@ -852,8 +804,6 @@ var X3D0 =  new X3D({
                                                           name : new SFString("l_tarsal_proximal_phalanx_4"),
                                                           DEF : new SFString("hanim_l_tarsal_proximal_phalanx_4"),
                                                           center : new SFVec3f([0.1097,-0.0107,0.0058]),
-                                                          ulimit : new MFFloat([0,0,0]),
-                                                          llimit : new MFFloat([0,0,0]),
                                                           children : new MFNode([
                                                             new HAnimSegment({
                                                               name : new SFString("SEGMENT_FOR_l_tarsal_proximal_phalanx_4"),
@@ -882,8 +832,6 @@ var X3D0 =  new X3D({
                                                               name : new SFString("l_tarsal_middle_phalanx_4"),
                                                               DEF : new SFString("hanim_l_tarsal_middle_phalanx_4"),
                                                               center : new SFVec3f([0.114,0.0044,0.0037]),
-                                                              ulimit : new MFFloat([0,0,0]),
-                                                              llimit : new MFFloat([0,0,0]),
                                                               children : new MFNode([
                                                                 new HAnimSegment({
                                                                   name : new SFString("SEGMENT_FOR_l_tarsal_middle_phalanx_4"),
@@ -912,8 +860,6 @@ var X3D0 =  new X3D({
                                                                   name : new SFString("l_tarsal_distal_phalanx_4"),
                                                                   DEF : new SFString("hanim_l_tarsal_distal_phalanx_4"),
                                                                   center : new SFVec3f([0.1155,0.0118,0.0008]),
-                                                                  ulimit : new MFFloat([0,0,0]),
-                                                                  llimit : new MFFloat([0,0,0]),
                                                                   children : new MFNode([
                                                                     new HAnimSegment({
                                                                       name : new SFString("SEGMENT_FOR_l_tarsal_distal_phalanx_4"),
@@ -942,8 +888,6 @@ var X3D0 =  new X3D({
                                                       name : new SFString("l_metatarsal_5"),
                                                       DEF : new SFString("hanim_l_metatarsal_5"),
                                                       center : new SFVec3f([0.1206,-0.0671,0.0124]),
-                                                      ulimit : new MFFloat([0,0,0]),
-                                                      llimit : new MFFloat([0,0,0]),
                                                       children : new MFNode([
                                                         new HAnimSegment({
                                                           name : new SFString("SEGMENT_FOR_l_metatarsal_5"),
@@ -972,8 +916,6 @@ var X3D0 =  new X3D({
                                                           name : new SFString("l_tarsal_proximal_phalanx_5"),
                                                           DEF : new SFString("hanim_l_tarsal_proximal_phalanx_5"),
                                                           center : new SFVec3f([0.1239,-0.0153,0.0051]),
-                                                          ulimit : new MFFloat([0,0,0]),
-                                                          llimit : new MFFloat([0,0,0]),
                                                           children : new MFNode([
                                                             new HAnimSegment({
                                                               name : new SFString("SEGMENT_FOR_l_tarsal_proximal_phalanx_5"),
@@ -1002,8 +944,6 @@ var X3D0 =  new X3D({
                                                               name : new SFString("l_tarsal_middle_phalanx_5"),
                                                               DEF : new SFString("hanim_l_tarsal_middle_phalanx_5"),
                                                               center : new SFVec3f([0.1262,-0.0077,0.0023]),
-                                                              ulimit : new MFFloat([0,0,0]),
-                                                              llimit : new MFFloat([0,0,0]),
                                                               children : new MFNode([
                                                                 new HAnimSegment({
                                                                   name : new SFString("SEGMENT_FOR_l_tarsal_middle_phalanx_5"),
@@ -1032,8 +972,6 @@ var X3D0 =  new X3D({
                                                                   name : new SFString("l_tarsal_distal_phalanx_5"),
                                                                   DEF : new SFString("hanim_l_tarsal_distal_phalanx_5"),
                                                                   center : new SFVec3f([0.1271,0,0]),
-                                                                  ulimit : new MFFloat([0,0,0]),
-                                                                  llimit : new MFFloat([0,0,0]),
                                                                   children : new MFNode([
                                                                     new HAnimSegment({
                                                                       name : new SFString("SEGMENT_FOR_l_tarsal_distal_phalanx_5"),
@@ -1062,8 +1000,6 @@ var X3D0 =  new X3D({
                                   name : new SFString("r_thigh"),
                                   DEF : new SFString("hanim_r_thigh"),
                                   center : new SFVec3f([-0.0948,-0.1202,0.8181]),
-                                  ulimit : new MFFloat([0,0,0]),
-                                  llimit : new MFFloat([0,0,0]),
                                   children : new MFNode([
                                     new HAnimSegment({
                                       name : new SFString("SEGMENT_FOR_r_thigh"),
@@ -1092,8 +1028,6 @@ var X3D0 =  new X3D({
                                       name : new SFString("r_calf"),
                                       DEF : new SFString("hanim_r_calf"),
                                       center : new SFVec3f([-0.0928,-0.1213,0.4003]),
-                                      ulimit : new MFFloat([0,0,0]),
-                                      llimit : new MFFloat([0,0,0]),
                                       children : new MFNode([
                                         new HAnimSegment({
                                           name : new SFString("SEGMENT_FOR_r_calf"),
@@ -1122,8 +1056,6 @@ var X3D0 =  new X3D({
                                           name : new SFString("r_talus"),
                                           DEF : new SFString("hanim_r_talus"),
                                           center : new SFVec3f([-0.0886,-0.1123,0.0869]),
-                                          ulimit : new MFFloat([0,0,0]),
-                                          llimit : new MFFloat([0,0,0]),
                                           children : new MFNode([
                                             new HAnimSegment({
                                               name : new SFString("SEGMENT_FOR_r_talus"),
@@ -1152,8 +1084,6 @@ var X3D0 =  new X3D({
                                               name : new SFString("r_navicular"),
                                               DEF : new SFString("hanim_r_navicular"),
                                               center : new SFVec3f([-0.0781,-0.097,0.0283]),
-                                              ulimit : new MFFloat([0,0,0]),
-                                              llimit : new MFFloat([0,0,0]),
                                               children : new MFNode([
                                                 new HAnimSegment({
                                                   name : new SFString("SEGMENT_FOR_r_navicular"),
@@ -1182,8 +1112,6 @@ var X3D0 =  new X3D({
                                                   name : new SFString("r_cuneiform_1"),
                                                   DEF : new SFString("hanim_r_cuneiform_1"),
                                                   center : new SFVec3f([-0.0672,-0.0835,0.0235]),
-                                                  ulimit : new MFFloat([0,0,0]),
-                                                  llimit : new MFFloat([0,0,0]),
                                                   children : new MFNode([
                                                     new HAnimSegment({
                                                       name : new SFString("SEGMENT_FOR_r_cuneiform_1"),
@@ -1212,8 +1140,6 @@ var X3D0 =  new X3D({
                                                       name : new SFString("r_metatarsal_1"),
                                                       DEF : new SFString("hanim_r_metatarsal_1"),
                                                       center : new SFVec3f([-0.0644,-0.0577,0.0147]),
-                                                      ulimit : new MFFloat([0,0,0]),
-                                                      llimit : new MFFloat([0,0,0]),
                                                       children : new MFNode([
                                                         new HAnimSegment({
                                                           name : new SFString("SEGMENT_FOR_r_metatarsal_1"),
@@ -1242,8 +1168,6 @@ var X3D0 =  new X3D({
                                                           name : new SFString("r_tarsal_proximal_phalanx_1"),
                                                           DEF : new SFString("hanim_r_tarsal_proximal_phalanx_1"),
                                                           center : new SFVec3f([-0.0619,-0.0083,0.0059]),
-                                                          ulimit : new MFFloat([0,0,0]),
-                                                          llimit : new MFFloat([0,0,0]),
                                                           children : new MFNode([
                                                             new HAnimSegment({
                                                               name : new SFString("SEGMENT_FOR_r_tarsal_proximal_phalanx_1"),
@@ -1271,8 +1195,6 @@ var X3D0 =  new X3D({
                                                             new HAnimJoint({
                                                               name : new SFString("r_tarsal_distal_phalanx_1"),
                                                               DEF : new SFString("hanim_r_tarsal_distal_phalanx_1"),
-                                                              ulimit : new MFFloat([0,0,0]),
-                                                              llimit : new MFFloat([0,0,0]),
                                                               children : new MFNode([
                                                                 new HAnimSegment({
                                                                   name : new SFString("SEGMENT_FOR_r_tarsal_distal_phalanx_1"),
@@ -1299,8 +1221,6 @@ var X3D0 =  new X3D({
                                                   name : new SFString("r_cuneiform_2"),
                                                   DEF : new SFString("hanim_r_cuneiform_2"),
                                                   center : new SFVec3f([-0.0812,-0.0805,0.025]),
-                                                  ulimit : new MFFloat([0,0,0]),
-                                                  llimit : new MFFloat([0,0,0]),
                                                   children : new MFNode([
                                                     new HAnimSegment({
                                                       name : new SFString("SEGMENT_FOR_r_cuneiform_2"),
@@ -1329,8 +1249,6 @@ var X3D0 =  new X3D({
                                                       name : new SFString("r_metatarsal_2"),
                                                       DEF : new SFString("hanim_r_metatarsal_2"),
                                                       center : new SFVec3f([-0.08,-0.0608,0.0175]),
-                                                      ulimit : new MFFloat([0,0,0]),
-                                                      llimit : new MFFloat([0,0,0]),
                                                       children : new MFNode([
                                                         new HAnimSegment({
                                                           name : new SFString("SEGMENT_FOR_r_metatarsal_2"),
@@ -1359,8 +1277,6 @@ var X3D0 =  new X3D({
                                                           name : new SFString("r_tarsal_proximal_phalanx_2"),
                                                           DEF : new SFString("hanim_r_tarsal_proximal_phalanx_2"),
                                                           center : new SFVec3f([-0.0823,-0.004,0.0064]),
-                                                          ulimit : new MFFloat([0,0,0]),
-                                                          llimit : new MFFloat([0,0,0]),
                                                           children : new MFNode([
                                                             new HAnimSegment({
                                                               name : new SFString("SEGMENT_FOR_r_tarsal_proximal_phalanx_2"),
@@ -1389,8 +1305,6 @@ var X3D0 =  new X3D({
                                                               name : new SFString("r_tarsal_middle_phalanx_2"),
                                                               DEF : new SFString("hanim_r_tarsal_middle_phalanx_2"),
                                                               center : new SFVec3f([-0.0841,0.0121,0.0041]),
-                                                              ulimit : new MFFloat([0,0,0]),
-                                                              llimit : new MFFloat([0,0,0]),
                                                               children : new MFNode([
                                                                 new HAnimSegment({
                                                                   name : new SFString("SEGMENT_FOR_r_tarsal_middle_phalanx_2"),
@@ -1419,8 +1333,6 @@ var X3D0 =  new X3D({
                                                                   name : new SFString("r_tarsal_distal_phalanx_2"),
                                                                   DEF : new SFString("hanim_r_tarsal_distal_phalanx_2"),
                                                                   center : new SFVec3f([-0.0841,0.0216,0.0013]),
-                                                                  ulimit : new MFFloat([0,0,0]),
-                                                                  llimit : new MFFloat([0,0,0]),
                                                                   children : new MFNode([
                                                                     new HAnimSegment({
                                                                       name : new SFString("SEGMENT_FOR_r_tarsal_distal_phalanx_2"),
@@ -1449,8 +1361,6 @@ var X3D0 =  new X3D({
                                                   name : new SFString("r_cuneiform_3"),
                                                   DEF : new SFString("hanim_r_cuneiform_3"),
                                                   center : new SFVec3f([-0.0928,-0.0821,0.0248]),
-                                                  ulimit : new MFFloat([0,0,0]),
-                                                  llimit : new MFFloat([0,0,0]),
                                                   children : new MFNode([
                                                     new HAnimSegment({
                                                       name : new SFString("SEGMENT_FOR_r_cuneiform_3"),
@@ -1479,8 +1389,6 @@ var X3D0 =  new X3D({
                                                       name : new SFString("r_metatarsal_3"),
                                                       DEF : new SFString("hanim_r_metatarsal_3"),
                                                       center : new SFVec3f([-0.0944,-0.0625,0.0175]),
-                                                      ulimit : new MFFloat([0,0,0]),
-                                                      llimit : new MFFloat([0,0,0]),
                                                       children : new MFNode([
                                                         new HAnimSegment({
                                                           name : new SFString("SEGMENT_FOR_r_metatarsal_3"),
@@ -1509,8 +1417,6 @@ var X3D0 =  new X3D({
                                                           name : new SFString("r_tarsal_proximal_phalanx_3"),
                                                           DEF : new SFString("hanim_r_tarsal_proximal_phalanx_3"),
                                                           center : new SFVec3f([-0.0963,-0.0065,0.0065]),
-                                                          ulimit : new MFFloat([0,0,0]),
-                                                          llimit : new MFFloat([0,0,0]),
                                                           children : new MFNode([
                                                             new HAnimSegment({
                                                               name : new SFString("SEGMENT_FOR_r_tarsal_proximal_phalanx_3"),
@@ -1539,8 +1445,6 @@ var X3D0 =  new X3D({
                                                               name : new SFString("r_tarsal_middle_phalanx_3"),
                                                               DEF : new SFString("hanim_r_tarsal_middle_phalanx_3"),
                                                               center : new SFVec3f([-0.0987,0.0086,0.0034]),
-                                                              ulimit : new MFFloat([0,0,0]),
-                                                              llimit : new MFFloat([0,0,0]),
                                                               children : new MFNode([
                                                                 new HAnimSegment({
                                                                   name : new SFString("SEGMENT_FOR_r_tarsal_middle_phalanx_3"),
@@ -1569,8 +1473,6 @@ var X3D0 =  new X3D({
                                                                   name : new SFString("r_tarsal_distal_phalanx_3"),
                                                                   DEF : new SFString("hanim_r_tarsal_distal_phalanx_3"),
                                                                   center : new SFVec3f([-0.1002,0.0178,0.0013]),
-                                                                  ulimit : new MFFloat([0,0,0]),
-                                                                  llimit : new MFFloat([0,0,0]),
                                                                   children : new MFNode([
                                                                     new HAnimSegment({
                                                                       name : new SFString("SEGMENT_FOR_r_tarsal_distal_phalanx_3"),
@@ -1599,8 +1501,6 @@ var X3D0 =  new X3D({
                                               name : new SFString("r_calcaneus"),
                                               DEF : new SFString("hanim_r_calcaneus"),
                                               center : new SFVec3f([-0.0889,-0.1278,0.0494]),
-                                              ulimit : new MFFloat([0,0,0]),
-                                              llimit : new MFFloat([0,0,0]),
                                               children : new MFNode([
                                                 new HAnimSegment({
                                                   name : new SFString("SEGMENT_FOR_r_calcaneus"),
@@ -1629,8 +1529,6 @@ var X3D0 =  new X3D({
                                                   name : new SFString("r_cuboid"),
                                                   DEF : new SFString("hanim_r_cuboid"),
                                                   center : new SFVec3f([-0.1105,-0.0998,0.0267]),
-                                                  ulimit : new MFFloat([0,0,0]),
-                                                  llimit : new MFFloat([0,0,0]),
                                                   children : new MFNode([
                                                     new HAnimSegment({
                                                       name : new SFString("SEGMENT_FOR_r_cuboid"),
@@ -1659,8 +1557,6 @@ var X3D0 =  new X3D({
                                                       name : new SFString("r_metatarsal_4"),
                                                       DEF : new SFString("hanim_r_metatarsal_4"),
                                                       center : new SFVec3f([-0.1063,-0.0634,0.016]),
-                                                      ulimit : new MFFloat([0,0,0]),
-                                                      llimit : new MFFloat([0,0,0]),
                                                       children : new MFNode([
                                                         new HAnimSegment({
                                                           name : new SFString("SEGMENT_FOR_r_metatarsal_4"),
@@ -1689,8 +1585,6 @@ var X3D0 =  new X3D({
                                                           name : new SFString("r_tarsal_proximal_phalanx_4"),
                                                           DEF : new SFString("hanim_r_tarsal_proximal_phalanx_4"),
                                                           center : new SFVec3f([-0.1097,-0.0107,0.0058]),
-                                                          ulimit : new MFFloat([0,0,0]),
-                                                          llimit : new MFFloat([0,0,0]),
                                                           children : new MFNode([
                                                             new HAnimSegment({
                                                               name : new SFString("SEGMENT_FOR_r_tarsal_proximal_phalanx_4"),
@@ -1719,8 +1613,6 @@ var X3D0 =  new X3D({
                                                               name : new SFString("r_tarsal_middle_phalanx_4"),
                                                               DEF : new SFString("hanim_r_tarsal_middle_phalanx_4"),
                                                               center : new SFVec3f([-0.114,0.0044,0.0037]),
-                                                              ulimit : new MFFloat([0,0,0]),
-                                                              llimit : new MFFloat([0,0,0]),
                                                               children : new MFNode([
                                                                 new HAnimSegment({
                                                                   name : new SFString("SEGMENT_FOR_r_tarsal_middle_phalanx_4"),
@@ -1749,8 +1641,6 @@ var X3D0 =  new X3D({
                                                                   name : new SFString("r_tarsal_distal_phalanx_4"),
                                                                   DEF : new SFString("hanim_r_tarsal_distal_phalanx_4"),
                                                                   center : new SFVec3f([-0.1155,0.0118,0.0008]),
-                                                                  ulimit : new MFFloat([0,0,0]),
-                                                                  llimit : new MFFloat([0,0,0]),
                                                                   children : new MFNode([
                                                                     new HAnimSegment({
                                                                       name : new SFString("SEGMENT_FOR_r_tarsal_distal_phalanx_4"),
@@ -1779,8 +1669,6 @@ var X3D0 =  new X3D({
                                                       name : new SFString("r_metatarsal_5"),
                                                       DEF : new SFString("hanim_r_metatarsal_5"),
                                                       center : new SFVec3f([-0.1206,-0.0671,0.0124]),
-                                                      ulimit : new MFFloat([0,0,0]),
-                                                      llimit : new MFFloat([0,0,0]),
                                                       children : new MFNode([
                                                         new HAnimSegment({
                                                           name : new SFString("SEGMENT_FOR_r_metatarsal_5"),
@@ -1809,8 +1697,6 @@ var X3D0 =  new X3D({
                                                           name : new SFString("r_tarsal_proximal_phalanx_5"),
                                                           DEF : new SFString("hanim_r_tarsal_proximal_phalanx_5"),
                                                           center : new SFVec3f([-0.1239,-0.0153,0.0051]),
-                                                          ulimit : new MFFloat([0,0,0]),
-                                                          llimit : new MFFloat([0,0,0]),
                                                           children : new MFNode([
                                                             new HAnimSegment({
                                                               name : new SFString("SEGMENT_FOR_r_tarsal_proximal_phalanx_5"),
@@ -1839,8 +1725,6 @@ var X3D0 =  new X3D({
                                                               name : new SFString("r_tarsal_middle_phalanx_5"),
                                                               DEF : new SFString("hanim_r_tarsal_middle_phalanx_5"),
                                                               center : new SFVec3f([-0.1262,-0.0077,0.0023]),
-                                                              ulimit : new MFFloat([0,0,0]),
-                                                              llimit : new MFFloat([0,0,0]),
                                                               children : new MFNode([
                                                                 new HAnimSegment({
                                                                   name : new SFString("SEGMENT_FOR_r_tarsal_middle_phalanx_5"),
@@ -1869,8 +1753,6 @@ var X3D0 =  new X3D({
                                                                   name : new SFString("r_tarsal_distal_phalanx_5"),
                                                                   DEF : new SFString("hanim_r_tarsal_distal_phalanx_5"),
                                                                   center : new SFVec3f([-0.1271,0,0]),
-                                                                  ulimit : new MFFloat([0,0,0]),
-                                                                  llimit : new MFFloat([0,0,0]),
                                                                   children : new MFNode([
                                                                     new HAnimSegment({
                                                                       name : new SFString("SEGMENT_FOR_r_tarsal_distal_phalanx_5"),
@@ -1899,8 +1781,6 @@ var X3D0 =  new X3D({
                               name : new SFString("l5"),
                               DEF : new SFString("hanim_l5"),
                               center : new SFVec3f([-0.0002,-0.1156,0.9169]),
-                              ulimit : new MFFloat([0,0,0]),
-                              llimit : new MFFloat([0,0,0]),
                               children : new MFNode([
                                 new HAnimSegment({
                                   name : new SFString("SEGMENT_FOR_l5"),
@@ -1929,8 +1809,6 @@ var X3D0 =  new X3D({
                                   name : new SFString("l4"),
                                   DEF : new SFString("hanim_l4"),
                                   center : new SFVec3f([-0.0002,-0.1156,0.9412]),
-                                  ulimit : new MFFloat([0,0,0]),
-                                  llimit : new MFFloat([0,0,0]),
                                   children : new MFNode([
                                     new HAnimSegment({
                                       name : new SFString("SEGMENT_FOR_l4"),
@@ -1959,8 +1837,6 @@ var X3D0 =  new X3D({
                                       name : new SFString("l3"),
                                       DEF : new SFString("hanim_l3"),
                                       center : new SFVec3f([-0.0002,-0.1156,0.9574]),
-                                      ulimit : new MFFloat([0,0,0]),
-                                      llimit : new MFFloat([0,0,0]),
                                       children : new MFNode([
                                         new HAnimSegment({
                                           name : new SFString("SEGMENT_FOR_l3"),
@@ -1989,8 +1865,6 @@ var X3D0 =  new X3D({
                                           name : new SFString("l2"),
                                           DEF : new SFString("hanim_l2"),
                                           center : new SFVec3f([-0.0002,-0.1156,0.9738]),
-                                          ulimit : new MFFloat([0,0,0]),
-                                          llimit : new MFFloat([0,0,0]),
                                           children : new MFNode([
                                             new HAnimSegment({
                                               name : new SFString("SEGMENT_FOR_l2"),
@@ -2019,8 +1893,6 @@ var X3D0 =  new X3D({
                                               name : new SFString("l1"),
                                               DEF : new SFString("hanim_l1"),
                                               center : new SFVec3f([-0.0002,-0.1156,0.9911]),
-                                              ulimit : new MFFloat([0,0,0]),
-                                              llimit : new MFFloat([0,0,0]),
                                               children : new MFNode([
                                                 new HAnimSegment({
                                                   name : new SFString("SEGMENT_FOR_l1"),
@@ -2049,8 +1921,6 @@ var X3D0 =  new X3D({
                                                   name : new SFString("t12"),
                                                   DEF : new SFString("hanim_t12"),
                                                   center : new SFVec3f([-0.0002,-0.1156,1.0145]),
-                                                  ulimit : new MFFloat([0,0,0]),
-                                                  llimit : new MFFloat([0,0,0]),
                                                   children : new MFNode([
                                                     new HAnimSegment({
                                                       name : new SFString("SEGMENT_FOR_t12"),
@@ -2079,8 +1949,6 @@ var X3D0 =  new X3D({
                                                       name : new SFString("t11"),
                                                       DEF : new SFString("hanim_t11"),
                                                       center : new SFVec3f([-0.0002,-0.1156,1.0381]),
-                                                      ulimit : new MFFloat([0,0,0]),
-                                                      llimit : new MFFloat([0,0,0]),
                                                       children : new MFNode([
                                                         new HAnimSegment({
                                                           name : new SFString("SEGMENT_FOR_t11"),
@@ -2109,8 +1977,6 @@ var X3D0 =  new X3D({
                                                           name : new SFString("t10"),
                                                           DEF : new SFString("hanim_t10"),
                                                           center : new SFVec3f([-0.0002,-0.1157,1.0552]),
-                                                          ulimit : new MFFloat([0,0,0]),
-                                                          llimit : new MFFloat([0,0,0]),
                                                           children : new MFNode([
                                                             new HAnimSegment({
                                                               name : new SFString("SEGMENT_FOR_t10"),
@@ -2139,8 +2005,6 @@ var X3D0 =  new X3D({
                                                               name : new SFString("t9"),
                                                               DEF : new SFString("hanim_t9"),
                                                               center : new SFVec3f([-0.0002,-0.1156,1.0699]),
-                                                              ulimit : new MFFloat([0,0,0]),
-                                                              llimit : new MFFloat([0,0,0]),
                                                               children : new MFNode([
                                                                 new HAnimSegment({
                                                                   name : new SFString("SEGMENT_FOR_t9"),
@@ -2169,8 +2033,6 @@ var X3D0 =  new X3D({
                                                                   name : new SFString("t8"),
                                                                   DEF : new SFString("hanim_t8"),
                                                                   center : new SFVec3f([-0.0002,-0.1156,1.0845]),
-                                                                  ulimit : new MFFloat([0,0,0]),
-                                                                  llimit : new MFFloat([0,0,0]),
                                                                   children : new MFNode([
                                                                     new HAnimSegment({
                                                                       name : new SFString("SEGMENT_FOR_t8"),
@@ -2199,8 +2061,6 @@ var X3D0 =  new X3D({
                                                                       name : new SFString("t7"),
                                                                       DEF : new SFString("hanim_t7"),
                                                                       center : new SFVec3f([-0.0002,-0.1156,1.1002]),
-                                                                      ulimit : new MFFloat([0,0,0]),
-                                                                      llimit : new MFFloat([0,0,0]),
                                                                       children : new MFNode([
                                                                         new HAnimSegment({
                                                                           name : new SFString("SEGMENT_FOR_t7"),
@@ -2229,8 +2089,6 @@ var X3D0 =  new X3D({
                                                                           name : new SFString("t6"),
                                                                           DEF : new SFString("hanim_t6"),
                                                                           center : new SFVec3f([-0.0002,-0.1156,1.1131]),
-                                                                          ulimit : new MFFloat([0,0,0]),
-                                                                          llimit : new MFFloat([0,0,0]),
                                                                           children : new MFNode([
                                                                             new HAnimSegment({
                                                                               name : new SFString("SEGMENT_FOR_t6"),
@@ -2259,8 +2117,6 @@ var X3D0 =  new X3D({
                                                                               name : new SFString("t5"),
                                                                               DEF : new SFString("hanim_t5"),
                                                                               center : new SFVec3f([-0.0002,-0.1156,1.1286]),
-                                                                              ulimit : new MFFloat([0,0,0]),
-                                                                              llimit : new MFFloat([0,0,0]),
                                                                               children : new MFNode([
                                                                                 new HAnimSegment({
                                                                                   name : new SFString("SEGMENT_FOR_t5"),
@@ -2289,8 +2145,6 @@ var X3D0 =  new X3D({
                                                                                   name : new SFString("t4"),
                                                                                   DEF : new SFString("hanim_t4"),
                                                                                   center : new SFVec3f([-0.0002,-0.1156,1.1439]),
-                                                                                  ulimit : new MFFloat([0,0,0]),
-                                                                                  llimit : new MFFloat([0,0,0]),
                                                                                   children : new MFNode([
                                                                                     new HAnimSegment({
                                                                                       name : new SFString("SEGMENT_FOR_t4"),
@@ -2319,8 +2173,6 @@ var X3D0 =  new X3D({
                                                                                       name : new SFString("t3"),
                                                                                       DEF : new SFString("hanim_t3"),
                                                                                       center : new SFVec3f([-0.0002,-0.1156,1.1623]),
-                                                                                      ulimit : new MFFloat([0,0,0]),
-                                                                                      llimit : new MFFloat([0,0,0]),
                                                                                       children : new MFNode([
                                                                                         new HAnimSegment({
                                                                                           name : new SFString("SEGMENT_FOR_t3"),
@@ -2349,8 +2201,6 @@ var X3D0 =  new X3D({
                                                                                           name : new SFString("t2"),
                                                                                           DEF : new SFString("hanim_t2"),
                                                                                           center : new SFVec3f([-0.0002,-0.1157,1.1871]),
-                                                                                          ulimit : new MFFloat([0,0,0]),
-                                                                                          llimit : new MFFloat([0,0,0]),
                                                                                           children : new MFNode([
                                                                                             new HAnimSegment({
                                                                                               name : new SFString("SEGMENT_FOR_t2"),
@@ -2379,8 +2229,6 @@ var X3D0 =  new X3D({
                                                                                               name : new SFString("t1"),
                                                                                               DEF : new SFString("hanim_t1"),
                                                                                               center : new SFVec3f([-0.0002,-0.1156,1.2109]),
-                                                                                              ulimit : new MFFloat([0,0,0]),
-                                                                                              llimit : new MFFloat([0,0,0]),
                                                                                               children : new MFNode([
                                                                                                 new HAnimSegment({
                                                                                                   name : new SFString("SEGMENT_FOR_t1"),
@@ -2409,8 +2257,6 @@ var X3D0 =  new X3D({
                                                                                                   name : new SFString("c7"),
                                                                                                   DEF : new SFString("hanim_c7"),
                                                                                                   center : new SFVec3f([-0.0002,-0.1169,1.2368]),
-                                                                                                  ulimit : new MFFloat([0,0,0]),
-                                                                                                  llimit : new MFFloat([0,0,0]),
                                                                                                   children : new MFNode([
                                                                                                     new HAnimSegment({
                                                                                                       name : new SFString("SEGMENT_FOR_c7"),
@@ -2439,8 +2285,6 @@ var X3D0 =  new X3D({
                                                                                                       name : new SFString("c6"),
                                                                                                       DEF : new SFString("hanim_c6"),
                                                                                                       center : new SFVec3f([-0.0002,-0.1169,1.249]),
-                                                                                                      ulimit : new MFFloat([0,0,0]),
-                                                                                                      llimit : new MFFloat([0,0,0]),
                                                                                                       children : new MFNode([
                                                                                                         new HAnimSegment({
                                                                                                           name : new SFString("SEGMENT_FOR_c6"),
@@ -2469,8 +2313,6 @@ var X3D0 =  new X3D({
                                                                                                           name : new SFString("c5"),
                                                                                                           DEF : new SFString("hanim_c5"),
                                                                                                           center : new SFVec3f([-0.0002,-0.1169,1.2613]),
-                                                                                                          ulimit : new MFFloat([0,0,0]),
-                                                                                                          llimit : new MFFloat([0,0,0]),
                                                                                                           children : new MFNode([
                                                                                                             new HAnimSegment({
                                                                                                               name : new SFString("SEGMENT_FOR_c5"),
@@ -2499,8 +2341,6 @@ var X3D0 =  new X3D({
                                                                                                               name : new SFString("c4"),
                                                                                                               DEF : new SFString("hanim_c4"),
                                                                                                               center : new SFVec3f([-0.0002,-0.1169,1.2737]),
-                                                                                                              ulimit : new MFFloat([0,0,0]),
-                                                                                                              llimit : new MFFloat([0,0,0]),
                                                                                                               children : new MFNode([
                                                                                                                 new HAnimSegment({
                                                                                                                   name : new SFString("SEGMENT_FOR_c4"),
@@ -2529,8 +2369,6 @@ var X3D0 =  new X3D({
                                                                                                                   name : new SFString("c3"),
                                                                                                                   DEF : new SFString("hanim_c3"),
                                                                                                                   center : new SFVec3f([-0.0002,-0.1169,1.2865]),
-                                                                                                                  ulimit : new MFFloat([0,0,0]),
-                                                                                                                  llimit : new MFFloat([0,0,0]),
                                                                                                                   children : new MFNode([
                                                                                                                     new HAnimSegment({
                                                                                                                       name : new SFString("SEGMENT_FOR_c3"),
@@ -2559,8 +2397,6 @@ var X3D0 =  new X3D({
                                                                                                                       name : new SFString("c2"),
                                                                                                                       DEF : new SFString("hanim_c2"),
                                                                                                                       center : new SFVec3f([-0.0002,-0.1169,1.2982]),
-                                                                                                                      ulimit : new MFFloat([0,0,0]),
-                                                                                                                      llimit : new MFFloat([0,0,0]),
                                                                                                                       children : new MFNode([
                                                                                                                         new HAnimSegment({
                                                                                                                           name : new SFString("SEGMENT_FOR_c2"),
@@ -2589,8 +2425,6 @@ var X3D0 =  new X3D({
                                                                                                                           name : new SFString("c1"),
                                                                                                                           DEF : new SFString("hanim_c1"),
                                                                                                                           center : new SFVec3f([-0.0002,-0.1169,1.3099]),
-                                                                                                                          ulimit : new MFFloat([0,0,0]),
-                                                                                                                          llimit : new MFFloat([0,0,0]),
                                                                                                                           children : new MFNode([
                                                                                                                             new HAnimSegment({
                                                                                                                               name : new SFString("SEGMENT_FOR_c1"),
@@ -2619,8 +2453,6 @@ var X3D0 =  new X3D({
                                                                                                                               name : new SFString("skull"),
                                                                                                                               DEF : new SFString("hanim_skull"),
                                                                                                                               center : new SFVec3f([-0.0002,-0.1173,1.3041]),
-                                                                                                                              ulimit : new MFFloat([0,0,0]),
-                                                                                                                              llimit : new MFFloat([0,0,0]),
                                                                                                                               children : new MFNode([
                                                                                                                                 new HAnimSegment({
                                                                                                                                   name : new SFString("SEGMENT_FOR_skull"),
@@ -2649,8 +2481,6 @@ var X3D0 =  new X3D({
                                                                                                                                   name : new SFString("l_eyelid"),
                                                                                                                                   DEF : new SFString("hanim_l_eyelid"),
                                                                                                                                   center : new SFVec3f([0.0503,-0.0689,1.4157]),
-                                                                                                                                  ulimit : new MFFloat([0,0,0]),
-                                                                                                                                  llimit : new MFFloat([0,0,0]),
                                                                                                                                   children : new MFNode([
                                                                                                                                     new HAnimSegment({
                                                                                                                                       name : new SFString("SEGMENT_FOR_l_eyelid"),
@@ -2679,8 +2509,6 @@ var X3D0 =  new X3D({
                                                                                                                                   name : new SFString("r_eyelid"),
                                                                                                                                   DEF : new SFString("hanim_r_eyelid"),
                                                                                                                                   center : new SFVec3f([-0.0507,-0.0689,1.4157]),
-                                                                                                                                  ulimit : new MFFloat([0,0,0]),
-                                                                                                                                  llimit : new MFFloat([0,0,0]),
                                                                                                                                   children : new MFNode([
                                                                                                                                     new HAnimSegment({
                                                                                                                                       name : new SFString("SEGMENT_FOR_r_eyelid"),
@@ -2709,8 +2537,6 @@ var X3D0 =  new X3D({
                                                                                                                                   name : new SFString("l_eyeball"),
                                                                                                                                   DEF : new SFString("hanim_l_eyeball"),
                                                                                                                                   center : new SFVec3f([0.0479,-0.0188,1.3963]),
-                                                                                                                                  ulimit : new MFFloat([0,0,0]),
-                                                                                                                                  llimit : new MFFloat([0,0,0]),
                                                                                                                                   children : new MFNode([
                                                                                                                                     new HAnimSegment({
                                                                                                                                       name : new SFString("SEGMENT_FOR_l_eyeball"),
@@ -2739,8 +2565,6 @@ var X3D0 =  new X3D({
                                                                                                                                   name : new SFString("r_eyeball"),
                                                                                                                                   DEF : new SFString("hanim_r_eyeball"),
                                                                                                                                   center : new SFVec3f([-0.0483,-0.0188,1.3963]),
-                                                                                                                                  ulimit : new MFFloat([0,0,0]),
-                                                                                                                                  llimit : new MFFloat([0,0,0]),
                                                                                                                                   children : new MFNode([
                                                                                                                                     new HAnimSegment({
                                                                                                                                       name : new SFString("SEGMENT_FOR_r_eyeball"),
@@ -2769,8 +2593,6 @@ var X3D0 =  new X3D({
                                                                                                                                   name : new SFString("l_eyebrow"),
                                                                                                                                   DEF : new SFString("hanim_l_eyebrow"),
                                                                                                                                   center : new SFVec3f([0.0216,0.0051,1.4053]),
-                                                                                                                                  ulimit : new MFFloat([0,0,0]),
-                                                                                                                                  llimit : new MFFloat([0,0,0]),
                                                                                                                                   children : new MFNode([
                                                                                                                                     new HAnimSegment({
                                                                                                                                       name : new SFString("SEGMENT_FOR_l_eyebrow"),
@@ -2799,8 +2621,6 @@ var X3D0 =  new X3D({
                                                                                                                                   name : new SFString("r_eyebrow"),
                                                                                                                                   DEF : new SFString("hanim_r_eyebrow"),
                                                                                                                                   center : new SFVec3f([-0.0219,0.0051,1.4053]),
-                                                                                                                                  ulimit : new MFFloat([0,0,0]),
-                                                                                                                                  llimit : new MFFloat([0,0,0]),
                                                                                                                                   children : new MFNode([
                                                                                                                                     new HAnimSegment({
                                                                                                                                       name : new SFString("SEGMENT_FOR_r_eyebrow"),
@@ -2829,8 +2649,6 @@ var X3D0 =  new X3D({
                                                                                                                                   name : new SFString("jaw"),
                                                                                                                                   DEF : new SFString("hanim_jaw"),
                                                                                                                                   center : new SFVec3f([-0.0002,-0.0865,1.3043]),
-                                                                                                                                  ulimit : new MFFloat([0,0,0]),
-                                                                                                                                  llimit : new MFFloat([0,0,0]),
                                                                                                                                   children : new MFNode([
                                                                                                                                     new HAnimSegment({
                                                                                                                                       name : new SFString("SEGMENT_FOR_jaw"),
@@ -2859,8 +2677,6 @@ var X3D0 =  new X3D({
                                                                                                   name : new SFString("l_clavicle"),
                                                                                                   DEF : new SFString("hanim_l_clavicle"),
                                                                                                   center : new SFVec3f([0.1228,-0.1148,1.1833]),
-                                                                                                  ulimit : new MFFloat([0,0,0]),
-                                                                                                  llimit : new MFFloat([0,0,0]),
                                                                                                   children : new MFNode([
                                                                                                     new HAnimSegment({
                                                                                                       name : new SFString("SEGMENT_FOR_l_clavicle"),
@@ -2889,8 +2705,6 @@ var X3D0 =  new X3D({
                                                                                                       name : new SFString("l_scapula"),
                                                                                                       DEF : new SFString("hanim_l_scapula"),
                                                                                                       center : new SFVec3f([0.0383,-0.1157,1.2001]),
-                                                                                                      ulimit : new MFFloat([0,0,0]),
-                                                                                                      llimit : new MFFloat([0,0,0]),
                                                                                                       children : new MFNode([
                                                                                                         new HAnimSegment({
                                                                                                           name : new SFString("SEGMENT_FOR_l_scapula"),
@@ -2919,8 +2733,6 @@ var X3D0 =  new X3D({
                                                                                                           name : new SFString("l_upperarm"),
                                                                                                           DEF : new SFString("hanim_l_upperarm"),
                                                                                                           center : new SFVec3f([0.1649,-0.1051,1.17]),
-                                                                                                          ulimit : new MFFloat([0,0,0]),
-                                                                                                          llimit : new MFFloat([0,0,0]),
                                                                                                           children : new MFNode([
                                                                                                             new HAnimSegment({
                                                                                                               name : new SFString("SEGMENT_FOR_l_upperarm"),
@@ -2949,8 +2761,6 @@ var X3D0 =  new X3D({
                                                                                                               name : new SFString("l_forearm"),
                                                                                                               DEF : new SFString("hanim_l_forearm"),
                                                                                                               center : new SFVec3f([0.1819,-0.1075,0.9202]),
-                                                                                                              ulimit : new MFFloat([0,0,0]),
-                                                                                                              llimit : new MFFloat([0,0,0]),
                                                                                                               children : new MFNode([
                                                                                                                 new HAnimSegment({
                                                                                                                   name : new SFString("SEGMENT_FOR_l_forearm"),
@@ -2979,8 +2789,6 @@ var X3D0 =  new X3D({
                                                                                                                   name : new SFString("l_carpal"),
                                                                                                                   DEF : new SFString("hanim_l_carpal"),
                                                                                                                   center : new SFVec3f([0.1818,-0.1069,0.7157]),
-                                                                                                                  ulimit : new MFFloat([0,0,0]),
-                                                                                                                  llimit : new MFFloat([0,0,0]),
                                                                                                                   children : new MFNode([
                                                                                                                     new HAnimSegment({
                                                                                                                       name : new SFString("SEGMENT_FOR_l_carpal"),
@@ -3009,8 +2817,6 @@ var X3D0 =  new X3D({
                                                                                                                       name : new SFString("l_trapezium"),
                                                                                                                       DEF : new SFString("hanim_l_trapezium"),
                                                                                                                       center : new SFVec3f([0.1811,-0.0826,0.6975]),
-                                                                                                                      ulimit : new MFFloat([0,0,0]),
-                                                                                                                      llimit : new MFFloat([0,0,0]),
                                                                                                                       children : new MFNode([
                                                                                                                         new HAnimSegment({
                                                                                                                           name : new SFString("SEGMENT_FOR_l_trapezium"),
@@ -3039,8 +2845,6 @@ var X3D0 =  new X3D({
                                                                                                                           name : new SFString("l_metacarpal_1"),
                                                                                                                           DEF : new SFString("hanim_l_metacarpal_1"),
                                                                                                                           center : new SFVec3f([0.1803,-0.0759,0.684]),
-                                                                                                                          ulimit : new MFFloat([0,0,0]),
-                                                                                                                          llimit : new MFFloat([0,0,0]),
                                                                                                                           children : new MFNode([
                                                                                                                             new HAnimSegment({
                                                                                                                               name : new SFString("SEGMENT_FOR_l_metacarpal_1"),
@@ -3069,8 +2873,6 @@ var X3D0 =  new X3D({
                                                                                                                               name : new SFString("l_carpal_proximal_phalanx_1"),
                                                                                                                               DEF : new SFString("hanim_l_carpal_proximal_phalanx_1"),
                                                                                                                               center : new SFVec3f([0.1809,-0.0661,0.6642]),
-                                                                                                                              ulimit : new MFFloat([0,0,0]),
-                                                                                                                              llimit : new MFFloat([0,0,0]),
                                                                                                                               children : new MFNode([
                                                                                                                                 new HAnimSegment({
                                                                                                                                   name : new SFString("SEGMENT_FOR_l_carpal_proximal_phalanx_1"),
@@ -3099,8 +2901,6 @@ var X3D0 =  new X3D({
                                                                                                                                   name : new SFString("l_carpal_distal_phalanx_1"),
                                                                                                                                   DEF : new SFString("hanim_l_carpal_distal_phalanx_1"),
                                                                                                                                   center : new SFVec3f([0.1825,-0.0522,0.6455]),
-                                                                                                                                  ulimit : new MFFloat([0,0,0]),
-                                                                                                                                  llimit : new MFFloat([0,0,0]),
                                                                                                                                   children : new MFNode([
                                                                                                                                     new HAnimSegment({
                                                                                                                                       name : new SFString("SEGMENT_FOR_l_carpal_distal_phalanx_1"),
@@ -3129,8 +2929,6 @@ var X3D0 =  new X3D({
                                                                                                                       name : new SFString("l_trapezoid"),
                                                                                                                       DEF : new SFString("hanim_l_trapezoid"),
                                                                                                                       center : new SFVec3f([0.1811,-0.0935,0.6984]),
-                                                                                                                      ulimit : new MFFloat([0,0,0]),
-                                                                                                                      llimit : new MFFloat([0,0,0]),
                                                                                                                       children : new MFNode([
                                                                                                                         new HAnimSegment({
                                                                                                                           name : new SFString("SEGMENT_FOR_l_trapezoid"),
@@ -3159,8 +2957,6 @@ var X3D0 =  new X3D({
                                                                                                                           name : new SFString("l_metacarpal_2"),
                                                                                                                           DEF : new SFString("hanim_l_metacarpal_2"),
                                                                                                                           center : new SFVec3f([0.1811,-0.0922,0.679]),
-                                                                                                                          ulimit : new MFFloat([0,0,0]),
-                                                                                                                          llimit : new MFFloat([0,0,0]),
                                                                                                                           children : new MFNode([
                                                                                                                             new HAnimSegment({
                                                                                                                               name : new SFString("SEGMENT_FOR_l_metacarpal_2"),
@@ -3189,8 +2985,6 @@ var X3D0 =  new X3D({
                                                                                                                               name : new SFString("l_carpal_proximal_phalanx_2"),
                                                                                                                               DEF : new SFString("hanim_l_carpal_proximal_phalanx_2"),
                                                                                                                               center : new SFVec3f([0.1836,-0.0868,0.6286]),
-                                                                                                                              ulimit : new MFFloat([0,0,0]),
-                                                                                                                              llimit : new MFFloat([0,0,0]),
                                                                                                                               children : new MFNode([
                                                                                                                                 new HAnimSegment({
                                                                                                                                   name : new SFString("SEGMENT_FOR_l_carpal_proximal_phalanx_2"),
@@ -3219,8 +3013,6 @@ var X3D0 =  new X3D({
                                                                                                                                   name : new SFString("l_carpal_middle_phalanx_2"),
                                                                                                                                   DEF : new SFString("hanim_l_carpal_middle_phalanx_2"),
                                                                                                                                   center : new SFVec3f([0.1815,-0.0877,0.5983]),
-                                                                                                                                  ulimit : new MFFloat([0,0,0]),
-                                                                                                                                  llimit : new MFFloat([0,0,0]),
                                                                                                                                   children : new MFNode([
                                                                                                                                     new HAnimSegment({
                                                                                                                                       name : new SFString("SEGMENT_FOR_l_carpal_middle_phalanx_2"),
@@ -3249,8 +3041,6 @@ var X3D0 =  new X3D({
                                                                                                                                       name : new SFString("l_carpal_distal_phalanx_2"),
                                                                                                                                       DEF : new SFString("hanim_l_carpal_distal_phalanx_2"),
                                                                                                                                       center : new SFVec3f([0.1805,-0.0885,0.5731]),
-                                                                                                                                      ulimit : new MFFloat([0,0,0]),
-                                                                                                                                      llimit : new MFFloat([0,0,0]),
                                                                                                                                       children : new MFNode([
                                                                                                                                         new HAnimSegment({
                                                                                                                                           name : new SFString("SEGMENT_FOR_l_carpal_distal_phalanx_2"),
@@ -3279,8 +3069,6 @@ var X3D0 =  new X3D({
                                                                                                                       name : new SFString("l_capitate"),
                                                                                                                       DEF : new SFString("hanim_l_capitate"),
                                                                                                                       center : new SFVec3f([0.1809,-0.1067,0.7]),
-                                                                                                                      ulimit : new MFFloat([0,0,0]),
-                                                                                                                      llimit : new MFFloat([0,0,0]),
                                                                                                                       children : new MFNode([
                                                                                                                         new HAnimSegment({
                                                                                                                           name : new SFString("SEGMENT_FOR_l_capitate"),
@@ -3309,8 +3097,6 @@ var X3D0 =  new X3D({
                                                                                                                           name : new SFString("l_metacarpal_3"),
                                                                                                                           DEF : new SFString("hanim_l_metacarpal_3"),
                                                                                                                           center : new SFVec3f([0.1809,-0.1081,0.6772]),
-                                                                                                                          ulimit : new MFFloat([0,0,0]),
-                                                                                                                          llimit : new MFFloat([0,0,0]),
                                                                                                                           children : new MFNode([
                                                                                                                             new HAnimSegment({
                                                                                                                               name : new SFString("SEGMENT_FOR_l_metacarpal_3"),
@@ -3339,8 +3125,6 @@ var X3D0 =  new X3D({
                                                                                                                               name : new SFString("l_carpal_proximal_phalanx_3"),
                                                                                                                               DEF : new SFString("hanim_l_carpal_proximal_phalanx_3"),
                                                                                                                               center : new SFVec3f([0.1835,-0.1058,0.6264]),
-                                                                                                                              ulimit : new MFFloat([0,0,0]),
-                                                                                                                              llimit : new MFFloat([0,0,0]),
                                                                                                                               children : new MFNode([
                                                                                                                                 new HAnimSegment({
                                                                                                                                   name : new SFString("SEGMENT_FOR_l_carpal_proximal_phalanx_3"),
@@ -3369,8 +3153,6 @@ var X3D0 =  new X3D({
                                                                                                                                   name : new SFString("l_carpal_middle_phalanx_3"),
                                                                                                                                   DEF : new SFString("hanim_l_carpal_middle_phalanx_3"),
                                                                                                                                   center : new SFVec3f([0.1815,-0.1054,0.5947]),
-                                                                                                                                  ulimit : new MFFloat([0,0,0]),
-                                                                                                                                  llimit : new MFFloat([0,0,0]),
                                                                                                                                   children : new MFNode([
                                                                                                                                     new HAnimSegment({
                                                                                                                                       name : new SFString("SEGMENT_FOR_l_carpal_middle_phalanx_3"),
@@ -3399,8 +3181,6 @@ var X3D0 =  new X3D({
                                                                                                                                       name : new SFString("l_carpal_distal_phalanx_3"),
                                                                                                                                       DEF : new SFString("hanim_l_carpal_distal_phalanx_3"),
                                                                                                                                       center : new SFVec3f([0.1805,-0.1056,0.5668]),
-                                                                                                                                      ulimit : new MFFloat([0,0,0]),
-                                                                                                                                      llimit : new MFFloat([0,0,0]),
                                                                                                                                       children : new MFNode([
                                                                                                                                         new HAnimSegment({
                                                                                                                                           name : new SFString("SEGMENT_FOR_l_carpal_distal_phalanx_3"),
@@ -3429,8 +3209,6 @@ var X3D0 =  new X3D({
                                                                                                                       name : new SFString("l_hamate"),
                                                                                                                       DEF : new SFString("hanim_l_hamate"),
                                                                                                                       center : new SFVec3f([0.1809,-0.1276,0.6973]),
-                                                                                                                      ulimit : new MFFloat([0,0,0]),
-                                                                                                                      llimit : new MFFloat([0,0,0]),
                                                                                                                       children : new MFNode([
                                                                                                                         new HAnimSegment({
                                                                                                                           name : new SFString("SEGMENT_FOR_l_hamate"),
@@ -3459,8 +3237,6 @@ var X3D0 =  new X3D({
                                                                                                                           name : new SFString("l_metacarpal_4"),
                                                                                                                           DEF : new SFString("hanim_l_metacarpal_4"),
                                                                                                                           center : new SFVec3f([0.1809,-0.1218,0.6777]),
-                                                                                                                          ulimit : new MFFloat([0,0,0]),
-                                                                                                                          llimit : new MFFloat([0,0,0]),
                                                                                                                           children : new MFNode([
                                                                                                                             new HAnimSegment({
                                                                                                                               name : new SFString("SEGMENT_FOR_l_metacarpal_4"),
@@ -3489,8 +3265,6 @@ var X3D0 =  new X3D({
                                                                                                                               name : new SFString("l_carpal_proximal_phalanx_4"),
                                                                                                                               DEF : new SFString("hanim_l_carpal_proximal_phalanx_4"),
                                                                                                                               center : new SFVec3f([0.1835,-0.1233,0.6255]),
-                                                                                                                              ulimit : new MFFloat([0,0,0]),
-                                                                                                                              llimit : new MFFloat([0,0,0]),
                                                                                                                               children : new MFNode([
                                                                                                                                 new HAnimSegment({
                                                                                                                                   name : new SFString("SEGMENT_FOR_l_carpal_proximal_phalanx_4"),
@@ -3519,8 +3293,6 @@ var X3D0 =  new X3D({
                                                                                                                                   name : new SFString("l_carpal_middle_phalanx_4"),
                                                                                                                                   DEF : new SFString("hanim_l_carpal_middle_phalanx_4"),
                                                                                                                                   center : new SFVec3f([0.1815,-0.1225,0.598]),
-                                                                                                                                  ulimit : new MFFloat([0,0,0]),
-                                                                                                                                  llimit : new MFFloat([0,0,0]),
                                                                                                                                   children : new MFNode([
                                                                                                                                     new HAnimSegment({
                                                                                                                                       name : new SFString("SEGMENT_FOR_l_carpal_middle_phalanx_4"),
@@ -3549,8 +3321,6 @@ var X3D0 =  new X3D({
                                                                                                                                       name : new SFString("l_carpal_distal_phalanx_4"),
                                                                                                                                       DEF : new SFString("hanim_l_carpal_distal_phalanx_4"),
                                                                                                                                       center : new SFVec3f([0.1805,-0.1217,0.5722]),
-                                                                                                                                      ulimit : new MFFloat([0,0,0]),
-                                                                                                                                      llimit : new MFFloat([0,0,0]),
                                                                                                                                       children : new MFNode([
                                                                                                                                         new HAnimSegment({
                                                                                                                                           name : new SFString("SEGMENT_FOR_l_carpal_distal_phalanx_4"),
@@ -3579,8 +3349,6 @@ var X3D0 =  new X3D({
                                                                                                                           name : new SFString("l_metacarpal_5"),
                                                                                                                           DEF : new SFString("hanim_l_metacarpal_5"),
                                                                                                                           center : new SFVec3f([0.1815,-0.1347,0.6797]),
-                                                                                                                          ulimit : new MFFloat([0,0,0]),
-                                                                                                                          llimit : new MFFloat([0,0,0]),
                                                                                                                           children : new MFNode([
                                                                                                                             new HAnimSegment({
                                                                                                                               name : new SFString("SEGMENT_FOR_l_metacarpal_5"),
@@ -3609,8 +3377,6 @@ var X3D0 =  new X3D({
                                                                                                                               name : new SFString("l_carpal_proximal_phalanx_5"),
                                                                                                                               DEF : new SFString("hanim_l_carpal_proximal_phalanx_5"),
                                                                                                                               center : new SFVec3f([0.1832,-0.1389,0.6295]),
-                                                                                                                              ulimit : new MFFloat([0,0,0]),
-                                                                                                                              llimit : new MFFloat([0,0,0]),
                                                                                                                               children : new MFNode([
                                                                                                                                 new HAnimSegment({
                                                                                                                                   name : new SFString("SEGMENT_FOR_l_carpal_proximal_phalanx_5"),
@@ -3639,8 +3405,6 @@ var X3D0 =  new X3D({
                                                                                                                                   name : new SFString("l_carpal_middle_phalanx_5"),
                                                                                                                                   DEF : new SFString("hanim_l_carpal_middle_phalanx_5"),
                                                                                                                                   center : new SFVec3f([0.1815,-0.139,0.6124]),
-                                                                                                                                  ulimit : new MFFloat([0,0,0]),
-                                                                                                                                  llimit : new MFFloat([0,0,0]),
                                                                                                                                   children : new MFNode([
                                                                                                                                     new HAnimSegment({
                                                                                                                                       name : new SFString("SEGMENT_FOR_l_carpal_middle_phalanx_5"),
@@ -3669,8 +3433,6 @@ var X3D0 =  new X3D({
                                                                                                                                       name : new SFString("l_carpal_distal_phalanx_5"),
                                                                                                                                       DEF : new SFString("hanim_l_carpal_distal_phalanx_5"),
                                                                                                                                       center : new SFVec3f([0.1806,-0.1388,0.5938]),
-                                                                                                                                      ulimit : new MFFloat([0,0,0]),
-                                                                                                                                      llimit : new MFFloat([0,0,0]),
                                                                                                                                       children : new MFNode([
                                                                                                                                         new HAnimSegment({
                                                                                                                                           name : new SFString("SEGMENT_FOR_l_carpal_distal_phalanx_5"),
@@ -3699,8 +3461,6 @@ var X3D0 =  new X3D({
                                                                                                   name : new SFString("r_clavicle"),
                                                                                                   DEF : new SFString("hanim_r_clavicle"),
                                                                                                   center : new SFVec3f([-0.1231,-0.1148,1.1833]),
-                                                                                                  ulimit : new MFFloat([0,0,0]),
-                                                                                                  llimit : new MFFloat([0,0,0]),
                                                                                                   children : new MFNode([
                                                                                                     new HAnimSegment({
                                                                                                       name : new SFString("SEGMENT_FOR_r_clavicle"),
@@ -3729,8 +3489,6 @@ var X3D0 =  new X3D({
                                                                                                       name : new SFString("r_scapula"),
                                                                                                       DEF : new SFString("hanim_r_scapula"),
                                                                                                       center : new SFVec3f([-0.0387,-0.1157,1.2001]),
-                                                                                                      ulimit : new MFFloat([0,0,0]),
-                                                                                                      llimit : new MFFloat([0,0,0]),
                                                                                                       children : new MFNode([
                                                                                                         new HAnimSegment({
                                                                                                           name : new SFString("SEGMENT_FOR_r_scapula"),
@@ -3759,8 +3517,6 @@ var X3D0 =  new X3D({
                                                                                                           name : new SFString("r_upperarm"),
                                                                                                           DEF : new SFString("hanim_r_upperarm"),
                                                                                                           center : new SFVec3f([-0.1649,-0.1051,1.17]),
-                                                                                                          ulimit : new MFFloat([0,0,0]),
-                                                                                                          llimit : new MFFloat([0,0,0]),
                                                                                                           children : new MFNode([
                                                                                                             new HAnimSegment({
                                                                                                               name : new SFString("SEGMENT_FOR_r_upperarm"),
@@ -3789,8 +3545,6 @@ var X3D0 =  new X3D({
                                                                                                               name : new SFString("r_forearm"),
                                                                                                               DEF : new SFString("hanim_r_forearm"),
                                                                                                               center : new SFVec3f([-0.1819,-0.1075,0.9202]),
-                                                                                                              ulimit : new MFFloat([0,0,0]),
-                                                                                                              llimit : new MFFloat([0,0,0]),
                                                                                                               children : new MFNode([
                                                                                                                 new HAnimSegment({
                                                                                                                   name : new SFString("SEGMENT_FOR_r_forearm"),
@@ -3819,8 +3573,6 @@ var X3D0 =  new X3D({
                                                                                                                   name : new SFString("r_carpal"),
                                                                                                                   DEF : new SFString("hanim_r_carpal"),
                                                                                                                   center : new SFVec3f([-0.1818,-0.1069,0.7157]),
-                                                                                                                  ulimit : new MFFloat([0,0,0]),
-                                                                                                                  llimit : new MFFloat([0,0,0]),
                                                                                                                   children : new MFNode([
                                                                                                                     new HAnimSegment({
                                                                                                                       name : new SFString("SEGMENT_FOR_r_carpal"),
@@ -3849,8 +3601,6 @@ var X3D0 =  new X3D({
                                                                                                                       name : new SFString("r_trapezium"),
                                                                                                                       DEF : new SFString("hanim_r_trapezium"),
                                                                                                                       center : new SFVec3f([-0.1811,-0.0826,0.6975]),
-                                                                                                                      ulimit : new MFFloat([0,0,0]),
-                                                                                                                      llimit : new MFFloat([0,0,0]),
                                                                                                                       children : new MFNode([
                                                                                                                         new HAnimSegment({
                                                                                                                           name : new SFString("SEGMENT_FOR_r_trapezium"),
@@ -3879,8 +3629,6 @@ var X3D0 =  new X3D({
                                                                                                                           name : new SFString("r_metacarpal_1"),
                                                                                                                           DEF : new SFString("hanim_r_metacarpal_1"),
                                                                                                                           center : new SFVec3f([-0.1803,-0.0759,0.684]),
-                                                                                                                          ulimit : new MFFloat([0,0,0]),
-                                                                                                                          llimit : new MFFloat([0,0,0]),
                                                                                                                           children : new MFNode([
                                                                                                                             new HAnimSegment({
                                                                                                                               name : new SFString("SEGMENT_FOR_r_metacarpal_1"),
@@ -3909,8 +3657,6 @@ var X3D0 =  new X3D({
                                                                                                                               name : new SFString("r_carpal_proximal_phalanx_1"),
                                                                                                                               DEF : new SFString("hanim_r_carpal_proximal_phalanx_1"),
                                                                                                                               center : new SFVec3f([-0.1808,-0.0661,0.6642]),
-                                                                                                                              ulimit : new MFFloat([0,0,0]),
-                                                                                                                              llimit : new MFFloat([0,0,0]),
                                                                                                                               children : new MFNode([
                                                                                                                                 new HAnimSegment({
                                                                                                                                   name : new SFString("SEGMENT_FOR_r_carpal_proximal_phalanx_1"),
@@ -3939,8 +3685,6 @@ var X3D0 =  new X3D({
                                                                                                                                   name : new SFString("r_carpal_distal_phalanx_1"),
                                                                                                                                   DEF : new SFString("hanim_r_carpal_distal_phalanx_1"),
                                                                                                                                   center : new SFVec3f([-0.1825,-0.0522,0.6455]),
-                                                                                                                                  ulimit : new MFFloat([0,0,0]),
-                                                                                                                                  llimit : new MFFloat([0,0,0]),
                                                                                                                                   children : new MFNode([
                                                                                                                                     new HAnimSegment({
                                                                                                                                       name : new SFString("SEGMENT_FOR_r_carpal_distal_phalanx_1"),
@@ -3969,8 +3713,6 @@ var X3D0 =  new X3D({
                                                                                                                       name : new SFString("r_trapezoid"),
                                                                                                                       DEF : new SFString("hanim_r_trapezoid"),
                                                                                                                       center : new SFVec3f([-0.1811,-0.0935,0.6984]),
-                                                                                                                      ulimit : new MFFloat([0,0,0]),
-                                                                                                                      llimit : new MFFloat([0,0,0]),
                                                                                                                       children : new MFNode([
                                                                                                                         new HAnimSegment({
                                                                                                                           name : new SFString("SEGMENT_FOR_r_trapezoid"),
@@ -3999,8 +3741,6 @@ var X3D0 =  new X3D({
                                                                                                                           name : new SFString("r_metacarpal_2"),
                                                                                                                           DEF : new SFString("hanim_r_metacarpal_2"),
                                                                                                                           center : new SFVec3f([-0.1811,-0.0922,0.679]),
-                                                                                                                          ulimit : new MFFloat([0,0,0]),
-                                                                                                                          llimit : new MFFloat([0,0,0]),
                                                                                                                           children : new MFNode([
                                                                                                                             new HAnimSegment({
                                                                                                                               name : new SFString("SEGMENT_FOR_r_metacarpal_2"),
@@ -4029,8 +3769,6 @@ var X3D0 =  new X3D({
                                                                                                                               name : new SFString("r_carpal_proximal_phalanx_2"),
                                                                                                                               DEF : new SFString("hanim_r_carpal_proximal_phalanx_2"),
                                                                                                                               center : new SFVec3f([-0.1835,-0.0868,0.6286]),
-                                                                                                                              ulimit : new MFFloat([0,0,0]),
-                                                                                                                              llimit : new MFFloat([0,0,0]),
                                                                                                                               children : new MFNode([
                                                                                                                                 new HAnimSegment({
                                                                                                                                   name : new SFString("SEGMENT_FOR_r_carpal_proximal_phalanx_2"),
@@ -4059,8 +3797,6 @@ var X3D0 =  new X3D({
                                                                                                                                   name : new SFString("r_carpal_middle_phalanx_2"),
                                                                                                                                   DEF : new SFString("hanim_r_carpal_middle_phalanx_2"),
                                                                                                                                   center : new SFVec3f([-0.1815,-0.0877,0.5983]),
-                                                                                                                                  ulimit : new MFFloat([0,0,0]),
-                                                                                                                                  llimit : new MFFloat([0,0,0]),
                                                                                                                                   children : new MFNode([
                                                                                                                                     new HAnimSegment({
                                                                                                                                       name : new SFString("SEGMENT_FOR_r_carpal_middle_phalanx_2"),
@@ -4089,8 +3825,6 @@ var X3D0 =  new X3D({
                                                                                                                                       name : new SFString("r_carpal_distal_phalanx_2"),
                                                                                                                                       DEF : new SFString("hanim_r_carpal_distal_phalanx_2"),
                                                                                                                                       center : new SFVec3f([-0.1805,-0.0885,0.5731]),
-                                                                                                                                      ulimit : new MFFloat([0,0,0]),
-                                                                                                                                      llimit : new MFFloat([0,0,0]),
                                                                                                                                       children : new MFNode([
                                                                                                                                         new HAnimSegment({
                                                                                                                                           name : new SFString("SEGMENT_FOR_r_carpal_distal_phalanx_2"),
@@ -4119,8 +3853,6 @@ var X3D0 =  new X3D({
                                                                                                                       name : new SFString("r_capitate"),
                                                                                                                       DEF : new SFString("hanim_r_capitate"),
                                                                                                                       center : new SFVec3f([-0.1809,-0.1067,0.7]),
-                                                                                                                      ulimit : new MFFloat([0,0,0]),
-                                                                                                                      llimit : new MFFloat([0,0,0]),
                                                                                                                       children : new MFNode([
                                                                                                                         new HAnimSegment({
                                                                                                                           name : new SFString("SEGMENT_FOR_r_capitate"),
@@ -4149,8 +3881,6 @@ var X3D0 =  new X3D({
                                                                                                                           name : new SFString("r_metacarpal_3"),
                                                                                                                           DEF : new SFString("hanim_r_metacarpal_3"),
                                                                                                                           center : new SFVec3f([-0.1809,-0.1081,0.6772]),
-                                                                                                                          ulimit : new MFFloat([0,0,0]),
-                                                                                                                          llimit : new MFFloat([0,0,0]),
                                                                                                                           children : new MFNode([
                                                                                                                             new HAnimSegment({
                                                                                                                               name : new SFString("SEGMENT_FOR_r_metacarpal_3"),
@@ -4179,8 +3909,6 @@ var X3D0 =  new X3D({
                                                                                                                               name : new SFString("r_carpal_proximal_phalanx_3"),
                                                                                                                               DEF : new SFString("hanim_r_carpal_proximal_phalanx_3"),
                                                                                                                               center : new SFVec3f([-0.1835,-0.1058,0.6264]),
-                                                                                                                              ulimit : new MFFloat([0,0,0]),
-                                                                                                                              llimit : new MFFloat([0,0,0]),
                                                                                                                               children : new MFNode([
                                                                                                                                 new HAnimSegment({
                                                                                                                                   name : new SFString("SEGMENT_FOR_r_carpal_proximal_phalanx_3"),
@@ -4209,8 +3937,6 @@ var X3D0 =  new X3D({
                                                                                                                                   name : new SFString("r_carpal_middle_phalanx_3"),
                                                                                                                                   DEF : new SFString("hanim_r_carpal_middle_phalanx_3"),
                                                                                                                                   center : new SFVec3f([-0.1815,-0.1054,0.5947]),
-                                                                                                                                  ulimit : new MFFloat([0,0,0]),
-                                                                                                                                  llimit : new MFFloat([0,0,0]),
                                                                                                                                   children : new MFNode([
                                                                                                                                     new HAnimSegment({
                                                                                                                                       name : new SFString("SEGMENT_FOR_r_carpal_middle_phalanx_3"),
@@ -4239,8 +3965,6 @@ var X3D0 =  new X3D({
                                                                                                                                       name : new SFString("r_carpal_distal_phalanx_3"),
                                                                                                                                       DEF : new SFString("hanim_r_carpal_distal_phalanx_3"),
                                                                                                                                       center : new SFVec3f([-0.1805,-0.1056,0.5668]),
-                                                                                                                                      ulimit : new MFFloat([0,0,0]),
-                                                                                                                                      llimit : new MFFloat([0,0,0]),
                                                                                                                                       children : new MFNode([
                                                                                                                                         new HAnimSegment({
                                                                                                                                           name : new SFString("SEGMENT_FOR_r_carpal_distal_phalanx_3"),
@@ -4269,8 +3993,6 @@ var X3D0 =  new X3D({
                                                                                                                       name : new SFString("r_hamate"),
                                                                                                                       DEF : new SFString("hanim_r_hamate"),
                                                                                                                       center : new SFVec3f([-0.1809,-0.1276,0.6973]),
-                                                                                                                      ulimit : new MFFloat([0,0,0]),
-                                                                                                                      llimit : new MFFloat([0,0,0]),
                                                                                                                       children : new MFNode([
                                                                                                                         new HAnimSegment({
                                                                                                                           name : new SFString("SEGMENT_FOR_r_hamate"),
@@ -4299,8 +4021,6 @@ var X3D0 =  new X3D({
                                                                                                                           name : new SFString("r_metacarpal_4"),
                                                                                                                           DEF : new SFString("hanim_r_metacarpal_4"),
                                                                                                                           center : new SFVec3f([-0.1809,-0.1218,0.6777]),
-                                                                                                                          ulimit : new MFFloat([0,0,0]),
-                                                                                                                          llimit : new MFFloat([0,0,0]),
                                                                                                                           children : new MFNode([
                                                                                                                             new HAnimSegment({
                                                                                                                               name : new SFString("SEGMENT_FOR_r_metacarpal_4"),
@@ -4329,8 +4049,6 @@ var X3D0 =  new X3D({
                                                                                                                               name : new SFString("r_carpal_proximal_phalanx_4"),
                                                                                                                               DEF : new SFString("hanim_r_carpal_proximal_phalanx_4"),
                                                                                                                               center : new SFVec3f([-0.1835,-0.1233,0.6255]),
-                                                                                                                              ulimit : new MFFloat([0,0,0]),
-                                                                                                                              llimit : new MFFloat([0,0,0]),
                                                                                                                               children : new MFNode([
                                                                                                                                 new HAnimSegment({
                                                                                                                                   name : new SFString("SEGMENT_FOR_r_carpal_proximal_phalanx_4"),
@@ -4359,8 +4077,6 @@ var X3D0 =  new X3D({
                                                                                                                                   name : new SFString("r_carpal_middle_phalanx_4"),
                                                                                                                                   DEF : new SFString("hanim_r_carpal_middle_phalanx_4"),
                                                                                                                                   center : new SFVec3f([-0.1815,-0.1225,0.598]),
-                                                                                                                                  ulimit : new MFFloat([0,0,0]),
-                                                                                                                                  llimit : new MFFloat([0,0,0]),
                                                                                                                                   children : new MFNode([
                                                                                                                                     new HAnimSegment({
                                                                                                                                       name : new SFString("SEGMENT_FOR_r_carpal_middle_phalanx_4"),
@@ -4389,8 +4105,6 @@ var X3D0 =  new X3D({
                                                                                                                                       name : new SFString("r_carpal_distal_phalanx_4"),
                                                                                                                                       DEF : new SFString("hanim_r_carpal_distal_phalanx_4"),
                                                                                                                                       center : new SFVec3f([-0.1805,-0.1217,0.5722]),
-                                                                                                                                      ulimit : new MFFloat([0,0,0]),
-                                                                                                                                      llimit : new MFFloat([0,0,0]),
                                                                                                                                       children : new MFNode([
                                                                                                                                         new HAnimSegment({
                                                                                                                                           name : new SFString("SEGMENT_FOR_r_carpal_distal_phalanx_4"),
@@ -4419,8 +4133,6 @@ var X3D0 =  new X3D({
                                                                                                                           name : new SFString("r_metacarpal_5"),
                                                                                                                           DEF : new SFString("hanim_r_metacarpal_5"),
                                                                                                                           center : new SFVec3f([-0.1814,-0.1347,0.6797]),
-                                                                                                                          ulimit : new MFFloat([0,0,0]),
-                                                                                                                          llimit : new MFFloat([0,0,0]),
                                                                                                                           children : new MFNode([
                                                                                                                             new HAnimSegment({
                                                                                                                               name : new SFString("SEGMENT_FOR_r_metacarpal_5"),
@@ -4449,8 +4161,6 @@ var X3D0 =  new X3D({
                                                                                                                               name : new SFString("r_carpal_proximal_phalanx_5"),
                                                                                                                               DEF : new SFString("hanim_r_carpal_proximal_phalanx_5"),
                                                                                                                               center : new SFVec3f([-0.1832,-0.1389,0.6295]),
-                                                                                                                              ulimit : new MFFloat([0,0,0]),
-                                                                                                                              llimit : new MFFloat([0,0,0]),
                                                                                                                               children : new MFNode([
                                                                                                                                 new HAnimSegment({
                                                                                                                                   name : new SFString("SEGMENT_FOR_r_carpal_proximal_phalanx_5"),
@@ -4479,8 +4189,6 @@ var X3D0 =  new X3D({
                                                                                                                                   name : new SFString("r_carpal_middle_phalanx_5"),
                                                                                                                                   DEF : new SFString("hanim_r_carpal_middle_phalanx_5"),
                                                                                                                                   center : new SFVec3f([-0.1815,-0.139,0.6124]),
-                                                                                                                                  ulimit : new MFFloat([0,0,0]),
-                                                                                                                                  llimit : new MFFloat([0,0,0]),
                                                                                                                                   children : new MFNode([
                                                                                                                                     new HAnimSegment({
                                                                                                                                       name : new SFString("SEGMENT_FOR_r_carpal_middle_phalanx_5"),
@@ -4509,8 +4217,6 @@ var X3D0 =  new X3D({
                                                                                                                                       name : new SFString("r_carpal_distal_phalanx_5"),
                                                                                                                                       DEF : new SFString("hanim_r_carpal_distal_phalanx_5"),
                                                                                                                                       center : new SFVec3f([-0.1806,-0.1388,0.5938]),
-                                                                                                                                      ulimit : new MFFloat([0,0,0]),
-                                                                                                                                      llimit : new MFFloat([0,0,0]),
                                                                                                                                       children : new MFNode([
                                                                                                                                         new HAnimSegment({
                                                                                                                                           name : new SFString("SEGMENT_FOR_r_carpal_distal_phalanx_5"),
