@@ -519,8 +519,8 @@ X3DJSON.nodeUtil("Scene","Stop_l_hip_RotationInterpolator").addEventListener('ou
 X3DJSON.nodeUtil("Scene","Stop_l_knee_RotationInterpolator").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","Stop_l_ankle_RotationInterpolator")) {
-X3DJSON.nodeUtil("Scene","Stop_l_ankle_RotationInterpolator").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","Stop_l_talocrural_RotationInterpolator")) {
+X3DJSON.nodeUtil("Scene","Stop_l_talocrural_RotationInterpolator").addEventListener('outputchange', function(event) {
 }, false);
 }
     if (X3DJSON.nodeUtil("Scene","Stop_l_midtarsal_RotationInterpolator")) {
@@ -535,8 +535,8 @@ X3DJSON.nodeUtil("Scene","Stop_r_hip_RotationInterpolator").addEventListener('ou
 X3DJSON.nodeUtil("Scene","Stop_r_knee_RotationInterpolator").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","Stop_r_ankle_RotationInterpolator")) {
-X3DJSON.nodeUtil("Scene","Stop_r_ankle_RotationInterpolator").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","Stop_r_talocrural_RotationInterpolator")) {
+X3DJSON.nodeUtil("Scene","Stop_r_talocrural_RotationInterpolator").addEventListener('outputchange', function(event) {
 }, false);
 }
     if (X3DJSON.nodeUtil("Scene","Stop_r_midtarsal_RotationInterpolator")) {
@@ -559,8 +559,8 @@ X3DJSON.nodeUtil("Scene","Stop_l_shoulder_RotationInterpolator").addEventListene
 X3DJSON.nodeUtil("Scene","Stop_l_elbow_RotationInterpolator").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","Stop_l_wrist_RotationInterpolator")) {
-X3DJSON.nodeUtil("Scene","Stop_l_wrist_RotationInterpolator").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","Stop_l_radiocarpal_RotationInterpolator")) {
+X3DJSON.nodeUtil("Scene","Stop_l_radiocarpal_RotationInterpolator").addEventListener('outputchange', function(event) {
 }, false);
 }
     if (X3DJSON.nodeUtil("Scene","Stop_r_shoulder_RotationInterpolator")) {
@@ -571,8 +571,8 @@ X3DJSON.nodeUtil("Scene","Stop_r_shoulder_RotationInterpolator").addEventListene
 X3DJSON.nodeUtil("Scene","Stop_r_elbow_RotationInterpolator").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","Stop_r_wrist_RotationInterpolator")) {
-X3DJSON.nodeUtil("Scene","Stop_r_wrist_RotationInterpolator").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","Stop_r_radiocarpal_RotationInterpolator")) {
+X3DJSON.nodeUtil("Scene","Stop_r_radiocarpal_RotationInterpolator").addEventListener('outputchange', function(event) {
 }, false);
 }
     if (X3DJSON.nodeUtil("Scene","StandTimer")) {
@@ -707,8 +707,8 @@ X3DJSON.nodeUtil("Scene","StandTimer").addEventListener('outputchange', function
 X3DJSON.nodeUtil("Scene","StandTimer").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","Stand_r_ankle_RotationInterpolator")) {
-X3DJSON.nodeUtil("Scene","Stand_r_ankle_RotationInterpolator").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","Stand_r_talocrural_RotationInterpolator")) {
+X3DJSON.nodeUtil("Scene","Stand_r_talocrural_RotationInterpolator").addEventListener('outputchange', function(event) {
 }, false);
 }
     if (X3DJSON.nodeUtil("Scene","Stand_r_knee_RotationInterpolator")) {
@@ -719,8 +719,8 @@ X3DJSON.nodeUtil("Scene","Stand_r_knee_RotationInterpolator").addEventListener('
 X3DJSON.nodeUtil("Scene","Stand_r_hip_RotationInterpolator").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","Stand_l_ankle_RotationInterpolator")) {
-X3DJSON.nodeUtil("Scene","Stand_l_ankle_RotationInterpolator").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","Stand_l_talocrural_RotationInterpolator")) {
+X3DJSON.nodeUtil("Scene","Stand_l_talocrural_RotationInterpolator").addEventListener('outputchange', function(event) {
 }, false);
 }
     if (X3DJSON.nodeUtil("Scene","Stand_l_knee_RotationInterpolator")) {
@@ -731,8 +731,8 @@ X3DJSON.nodeUtil("Scene","Stand_l_knee_RotationInterpolator").addEventListener('
 X3DJSON.nodeUtil("Scene","Stand_l_hip_RotationInterpolator").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","Stand_r_wrist_RotationInterpolator")) {
-X3DJSON.nodeUtil("Scene","Stand_r_wrist_RotationInterpolator").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","Stand_r_radiocarpal_RotationInterpolator")) {
+X3DJSON.nodeUtil("Scene","Stand_r_radiocarpal_RotationInterpolator").addEventListener('outputchange', function(event) {
 }, false);
 }
     if (X3DJSON.nodeUtil("Scene","Stand_r_elbow_RotationInterpolator")) {
@@ -743,8 +743,8 @@ X3DJSON.nodeUtil("Scene","Stand_r_elbow_RotationInterpolator").addEventListener(
 X3DJSON.nodeUtil("Scene","Stand_r_shoulder_RotationInterpolator").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","Stand_l_wrist_RotationInterpolator")) {
-X3DJSON.nodeUtil("Scene","Stand_l_wrist_RotationInterpolator").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","Stand_l_radiocarpal_RotationInterpolator")) {
+X3DJSON.nodeUtil("Scene","Stand_l_radiocarpal_RotationInterpolator").addEventListener('outputchange', function(event) {
 }, false);
 }
     if (X3DJSON.nodeUtil("Scene","Stand_l_elbow_RotationInterpolator")) {
@@ -883,8 +883,8 @@ X3DJSON.nodeUtil("Scene","PitchTimer").addEventListener('outputchange', function
 X3DJSON.nodeUtil("Scene","PitchTimer").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","Pitches_r_ankle_RotationInterpolator")) {
-X3DJSON.nodeUtil("Scene","Pitches_r_ankle_RotationInterpolator").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","Pitches_r_talocrural_RotationInterpolator")) {
+X3DJSON.nodeUtil("Scene","Pitches_r_talocrural_RotationInterpolator").addEventListener('outputchange', function(event) {
 }, false);
 }
     if (X3DJSON.nodeUtil("Scene","Pitches_r_knee_RotationInterpolator")) {
@@ -895,8 +895,8 @@ X3DJSON.nodeUtil("Scene","Pitches_r_knee_RotationInterpolator").addEventListener
 X3DJSON.nodeUtil("Scene","Pitches_r_hip_RotationInterpolator").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","Pitches_l_ankle_RotationInterpolator")) {
-X3DJSON.nodeUtil("Scene","Pitches_l_ankle_RotationInterpolator").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","Pitches_l_talocrural_RotationInterpolator")) {
+X3DJSON.nodeUtil("Scene","Pitches_l_talocrural_RotationInterpolator").addEventListener('outputchange', function(event) {
 }, false);
 }
     if (X3DJSON.nodeUtil("Scene","Pitches_l_knee_RotationInterpolator")) {
@@ -907,8 +907,8 @@ X3DJSON.nodeUtil("Scene","Pitches_l_knee_RotationInterpolator").addEventListener
 X3DJSON.nodeUtil("Scene","Pitches_l_hip_RotationInterpolator").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","Pitches_r_wrist_RotationInterpolator")) {
-X3DJSON.nodeUtil("Scene","Pitches_r_wrist_RotationInterpolator").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","Pitches_r_radiocarpal_RotationInterpolator")) {
+X3DJSON.nodeUtil("Scene","Pitches_r_radiocarpal_RotationInterpolator").addEventListener('outputchange', function(event) {
 }, false);
 }
     if (X3DJSON.nodeUtil("Scene","Pitches_r_elbow_RotationInterpolator")) {
@@ -919,8 +919,8 @@ X3DJSON.nodeUtil("Scene","Pitches_r_elbow_RotationInterpolator").addEventListene
 X3DJSON.nodeUtil("Scene","Pitches_r_shoulder_RotationInterpolator").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","Pitches_l_wrist_RotationInterpolator")) {
-X3DJSON.nodeUtil("Scene","Pitches_l_wrist_RotationInterpolator").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","Pitches_l_radiocarpal_RotationInterpolator")) {
+X3DJSON.nodeUtil("Scene","Pitches_l_radiocarpal_RotationInterpolator").addEventListener('outputchange', function(event) {
 }, false);
 }
     if (X3DJSON.nodeUtil("Scene","Pitches_l_elbow_RotationInterpolator")) {
@@ -1059,8 +1059,8 @@ X3DJSON.nodeUtil("Scene","YawTimer").addEventListener('outputchange', function(e
 X3DJSON.nodeUtil("Scene","YawTimer").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","Yaws_r_ankle_RotationInterpolator")) {
-X3DJSON.nodeUtil("Scene","Yaws_r_ankle_RotationInterpolator").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","Yaws_r_talocrural_RotationInterpolator")) {
+X3DJSON.nodeUtil("Scene","Yaws_r_talocrural_RotationInterpolator").addEventListener('outputchange', function(event) {
 }, false);
 }
     if (X3DJSON.nodeUtil("Scene","Yaws_r_knee_RotationInterpolator")) {
@@ -1071,8 +1071,8 @@ X3DJSON.nodeUtil("Scene","Yaws_r_knee_RotationInterpolator").addEventListener('o
 X3DJSON.nodeUtil("Scene","Yaws_r_hip_RotationInterpolator").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","Yaws_l_ankle_RotationInterpolator")) {
-X3DJSON.nodeUtil("Scene","Yaws_l_ankle_RotationInterpolator").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","Yaws_l_talocrural_RotationInterpolator")) {
+X3DJSON.nodeUtil("Scene","Yaws_l_talocrural_RotationInterpolator").addEventListener('outputchange', function(event) {
 }, false);
 }
     if (X3DJSON.nodeUtil("Scene","Yaws_l_knee_RotationInterpolator")) {
@@ -1083,8 +1083,8 @@ X3DJSON.nodeUtil("Scene","Yaws_l_knee_RotationInterpolator").addEventListener('o
 X3DJSON.nodeUtil("Scene","Yaws_l_hip_RotationInterpolator").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","Yaws_r_wrist_RotationInterpolator")) {
-X3DJSON.nodeUtil("Scene","Yaws_r_wrist_RotationInterpolator").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","Yaws_r_radiocarpal_RotationInterpolator")) {
+X3DJSON.nodeUtil("Scene","Yaws_r_radiocarpal_RotationInterpolator").addEventListener('outputchange', function(event) {
 }, false);
 }
     if (X3DJSON.nodeUtil("Scene","Yaws_r_elbow_RotationInterpolator")) {
@@ -1095,8 +1095,8 @@ X3DJSON.nodeUtil("Scene","Yaws_r_elbow_RotationInterpolator").addEventListener('
 X3DJSON.nodeUtil("Scene","Yaws_r_shoulder_RotationInterpolator").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","Yaws_l_wrist_RotationInterpolator")) {
-X3DJSON.nodeUtil("Scene","Yaws_l_wrist_RotationInterpolator").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","Yaws_l_radiocarpal_RotationInterpolator")) {
+X3DJSON.nodeUtil("Scene","Yaws_l_radiocarpal_RotationInterpolator").addEventListener('outputchange', function(event) {
 }, false);
 }
     if (X3DJSON.nodeUtil("Scene","Yaws_l_elbow_RotationInterpolator")) {
@@ -1235,8 +1235,8 @@ X3DJSON.nodeUtil("Scene","RollTimer").addEventListener('outputchange', function(
 X3DJSON.nodeUtil("Scene","RollTimer").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","Rolls_r_ankle_RotationInterpolator")) {
-X3DJSON.nodeUtil("Scene","Rolls_r_ankle_RotationInterpolator").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","Rolls_r_talocrural_RotationInterpolator")) {
+X3DJSON.nodeUtil("Scene","Rolls_r_talocrural_RotationInterpolator").addEventListener('outputchange', function(event) {
 }, false);
 }
     if (X3DJSON.nodeUtil("Scene","Rolls_r_knee_RotationInterpolator")) {
@@ -1247,8 +1247,8 @@ X3DJSON.nodeUtil("Scene","Rolls_r_knee_RotationInterpolator").addEventListener('
 X3DJSON.nodeUtil("Scene","Rolls_r_hip_RotationInterpolator").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","Rolls_l_ankle_RotationInterpolator")) {
-X3DJSON.nodeUtil("Scene","Rolls_l_ankle_RotationInterpolator").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","Rolls_l_talocrural_RotationInterpolator")) {
+X3DJSON.nodeUtil("Scene","Rolls_l_talocrural_RotationInterpolator").addEventListener('outputchange', function(event) {
 }, false);
 }
     if (X3DJSON.nodeUtil("Scene","Rolls_l_knee_RotationInterpolator")) {
@@ -1259,8 +1259,8 @@ X3DJSON.nodeUtil("Scene","Rolls_l_knee_RotationInterpolator").addEventListener('
 X3DJSON.nodeUtil("Scene","Rolls_l_hip_RotationInterpolator").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","Rolls_r_wrist_RotationInterpolator")) {
-X3DJSON.nodeUtil("Scene","Rolls_r_wrist_RotationInterpolator").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","Rolls_r_radiocarpal_RotationInterpolator")) {
+X3DJSON.nodeUtil("Scene","Rolls_r_radiocarpal_RotationInterpolator").addEventListener('outputchange', function(event) {
 }, false);
 }
     if (X3DJSON.nodeUtil("Scene","Rolls_r_elbow_RotationInterpolator")) {
@@ -1271,8 +1271,8 @@ X3DJSON.nodeUtil("Scene","Rolls_r_elbow_RotationInterpolator").addEventListener(
 X3DJSON.nodeUtil("Scene","Rolls_r_shoulder_RotationInterpolator").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","Rolls_l_wrist_RotationInterpolator")) {
-X3DJSON.nodeUtil("Scene","Rolls_l_wrist_RotationInterpolator").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","Rolls_l_radiocarpal_RotationInterpolator")) {
+X3DJSON.nodeUtil("Scene","Rolls_l_radiocarpal_RotationInterpolator").addEventListener('outputchange', function(event) {
 }, false);
 }
     if (X3DJSON.nodeUtil("Scene","Rolls_l_elbow_RotationInterpolator")) {
@@ -1411,8 +1411,8 @@ X3DJSON.nodeUtil("Scene","WalkTimer").addEventListener('outputchange', function(
 X3DJSON.nodeUtil("Scene","WalkTimer").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","Walk_r_ankle_RotationInterpolator")) {
-X3DJSON.nodeUtil("Scene","Walk_r_ankle_RotationInterpolator").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","Walk_r_talocrural_RotationInterpolator")) {
+X3DJSON.nodeUtil("Scene","Walk_r_talocrural_RotationInterpolator").addEventListener('outputchange', function(event) {
 }, false);
 }
     if (X3DJSON.nodeUtil("Scene","Walk_r_knee_RotationInterpolator")) {
@@ -1423,8 +1423,8 @@ X3DJSON.nodeUtil("Scene","Walk_r_knee_RotationInterpolator").addEventListener('o
 X3DJSON.nodeUtil("Scene","Walk_r_hip_RotationInterpolator").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","Walk_l_ankle_RotationInterpolator")) {
-X3DJSON.nodeUtil("Scene","Walk_l_ankle_RotationInterpolator").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","Walk_l_talocrural_RotationInterpolator")) {
+X3DJSON.nodeUtil("Scene","Walk_l_talocrural_RotationInterpolator").addEventListener('outputchange', function(event) {
 }, false);
 }
     if (X3DJSON.nodeUtil("Scene","Walk_l_knee_RotationInterpolator")) {
@@ -1435,8 +1435,8 @@ X3DJSON.nodeUtil("Scene","Walk_l_knee_RotationInterpolator").addEventListener('o
 X3DJSON.nodeUtil("Scene","Walk_l_hip_RotationInterpolator").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","Walk_r_wrist_RotationInterpolator")) {
-X3DJSON.nodeUtil("Scene","Walk_r_wrist_RotationInterpolator").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","Walk_r_radiocarpal_RotationInterpolator")) {
+X3DJSON.nodeUtil("Scene","Walk_r_radiocarpal_RotationInterpolator").addEventListener('outputchange', function(event) {
 }, false);
 }
     if (X3DJSON.nodeUtil("Scene","Walk_r_elbow_RotationInterpolator")) {
@@ -1447,8 +1447,8 @@ X3DJSON.nodeUtil("Scene","Walk_r_elbow_RotationInterpolator").addEventListener('
 X3DJSON.nodeUtil("Scene","Walk_r_shoulder_RotationInterpolator").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","Walk_l_wrist_RotationInterpolator")) {
-X3DJSON.nodeUtil("Scene","Walk_l_wrist_RotationInterpolator").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","Walk_l_radiocarpal_RotationInterpolator")) {
+X3DJSON.nodeUtil("Scene","Walk_l_radiocarpal_RotationInterpolator").addEventListener('outputchange', function(event) {
 }, false);
 }
     if (X3DJSON.nodeUtil("Scene","Walk_l_elbow_RotationInterpolator")) {
@@ -1587,8 +1587,8 @@ X3DJSON.nodeUtil("Scene","RunTimer").addEventListener('outputchange', function(e
 X3DJSON.nodeUtil("Scene","RunTimer").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","Run_r_ankle_RotationInterpolator_Run")) {
-X3DJSON.nodeUtil("Scene","Run_r_ankle_RotationInterpolator_Run").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","Run_r_talocrural_RotationInterpolator_Run")) {
+X3DJSON.nodeUtil("Scene","Run_r_talocrural_RotationInterpolator_Run").addEventListener('outputchange', function(event) {
 }, false);
 }
     if (X3DJSON.nodeUtil("Scene","Run_r_knee_RotationInterpolator_Run")) {
@@ -1599,8 +1599,8 @@ X3DJSON.nodeUtil("Scene","Run_r_knee_RotationInterpolator_Run").addEventListener
 X3DJSON.nodeUtil("Scene","Run_r_hip_RotationInterpolator_Run").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","Run_l_ankle_RotationInterpolator_Run")) {
-X3DJSON.nodeUtil("Scene","Run_l_ankle_RotationInterpolator_Run").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","Run_l_talocrural_RotationInterpolator_Run")) {
+X3DJSON.nodeUtil("Scene","Run_l_talocrural_RotationInterpolator_Run").addEventListener('outputchange', function(event) {
 }, false);
 }
     if (X3DJSON.nodeUtil("Scene","Run_l_knee_RotationInterpolator_Run")) {
@@ -1611,8 +1611,8 @@ X3DJSON.nodeUtil("Scene","Run_l_knee_RotationInterpolator_Run").addEventListener
 X3DJSON.nodeUtil("Scene","Run_l_hip_RotationInterpolator_Run").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","Run_r_wrist_RotationInterpolator_Run")) {
-X3DJSON.nodeUtil("Scene","Run_r_wrist_RotationInterpolator_Run").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","Run_r_radiocarpal_RotationInterpolator_Run")) {
+X3DJSON.nodeUtil("Scene","Run_r_radiocarpal_RotationInterpolator_Run").addEventListener('outputchange', function(event) {
 }, false);
 }
     if (X3DJSON.nodeUtil("Scene","Run_r_elbow_RotationInterpolator_Run")) {
@@ -1623,8 +1623,8 @@ X3DJSON.nodeUtil("Scene","Run_r_elbow_RotationInterpolator_Run").addEventListene
 X3DJSON.nodeUtil("Scene","Run_r_shoulder_RotationInterpolator_Run").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","Run_l_wrist_RotationInterpolator_Run")) {
-X3DJSON.nodeUtil("Scene","Run_l_wrist_RotationInterpolator_Run").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","Run_l_radiocarpal_RotationInterpolator_Run")) {
+X3DJSON.nodeUtil("Scene","Run_l_radiocarpal_RotationInterpolator_Run").addEventListener('outputchange', function(event) {
 }, false);
 }
     if (X3DJSON.nodeUtil("Scene","Run_l_elbow_RotationInterpolator_Run")) {
@@ -1763,8 +1763,8 @@ X3DJSON.nodeUtil("Scene","JumpTimer").addEventListener('outputchange', function(
 X3DJSON.nodeUtil("Scene","JumpTimer").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","Jump_r_ankle_RotationInterpolator")) {
-X3DJSON.nodeUtil("Scene","Jump_r_ankle_RotationInterpolator").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","Jump_r_talocrural_RotationInterpolator")) {
+X3DJSON.nodeUtil("Scene","Jump_r_talocrural_RotationInterpolator").addEventListener('outputchange', function(event) {
 }, false);
 }
     if (X3DJSON.nodeUtil("Scene","Jump_r_knee_RotationInterpolator")) {
@@ -1775,8 +1775,8 @@ X3DJSON.nodeUtil("Scene","Jump_r_knee_RotationInterpolator").addEventListener('o
 X3DJSON.nodeUtil("Scene","Jump_r_hip_RotationInterpolator").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","Jump_l_ankle_RotationInterpolator")) {
-X3DJSON.nodeUtil("Scene","Jump_l_ankle_RotationInterpolator").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","Jump_l_talocrural_RotationInterpolator")) {
+X3DJSON.nodeUtil("Scene","Jump_l_talocrural_RotationInterpolator").addEventListener('outputchange', function(event) {
 }, false);
 }
     if (X3DJSON.nodeUtil("Scene","Jump_l_knee_RotationInterpolator")) {
@@ -1787,8 +1787,8 @@ X3DJSON.nodeUtil("Scene","Jump_l_knee_RotationInterpolator").addEventListener('o
 X3DJSON.nodeUtil("Scene","Jump_l_hip_RotationInterpolator").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","Jump_r_wrist_RotationInterpolator")) {
-X3DJSON.nodeUtil("Scene","Jump_r_wrist_RotationInterpolator").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","Jump_r_radiocarpal_RotationInterpolator")) {
+X3DJSON.nodeUtil("Scene","Jump_r_radiocarpal_RotationInterpolator").addEventListener('outputchange', function(event) {
 }, false);
 }
     if (X3DJSON.nodeUtil("Scene","Jump_r_elbow_RotationInterpolator")) {
@@ -1799,8 +1799,8 @@ X3DJSON.nodeUtil("Scene","Jump_r_elbow_RotationInterpolator").addEventListener('
 X3DJSON.nodeUtil("Scene","Jump_r_shoulder_RotationInterpolator").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","Jump_l_wrist_RotationInterpolator")) {
-X3DJSON.nodeUtil("Scene","Jump_l_wrist_RotationInterpolator").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","Jump_l_radiocarpal_RotationInterpolator")) {
+X3DJSON.nodeUtil("Scene","Jump_l_radiocarpal_RotationInterpolator").addEventListener('outputchange', function(event) {
 }, false);
 }
     if (X3DJSON.nodeUtil("Scene","Jump_l_elbow_RotationInterpolator")) {
@@ -1939,8 +1939,8 @@ X3DJSON.nodeUtil("Scene","Kick_l_shoulder_RollInterpolator").addEventListener('o
 X3DJSON.nodeUtil("Scene","Kick_l_ForeArm_PitchInterpolator").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","Kick_l_wrist_RollInterpolator")) {
-X3DJSON.nodeUtil("Scene","Kick_l_wrist_RollInterpolator").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","Kick_l_radiocarpal_RollInterpolator")) {
+X3DJSON.nodeUtil("Scene","Kick_l_radiocarpal_RollInterpolator").addEventListener('outputchange', function(event) {
 }, false);
 }
     if (X3DJSON.nodeUtil("Scene","Kick_r_shoulder_RollInterpolator")) {
@@ -1951,8 +1951,8 @@ X3DJSON.nodeUtil("Scene","Kick_r_shoulder_RollInterpolator").addEventListener('o
 X3DJSON.nodeUtil("Scene","Kick_r_ForeArm_PitchInterpolator").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","Kick_r_wrist_RollInterpolator")) {
-X3DJSON.nodeUtil("Scene","Kick_r_wrist_RollInterpolator").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","Kick_r_radiocarpal_RollInterpolator")) {
+X3DJSON.nodeUtil("Scene","Kick_r_radiocarpal_RollInterpolator").addEventListener('outputchange', function(event) {
 }, false);
 }
     if (X3DJSON.nodeUtil("Scene","Kick_r_hip_PitchInterpolator")) {
@@ -1963,8 +1963,8 @@ X3DJSON.nodeUtil("Scene","Kick_r_hip_PitchInterpolator").addEventListener('outpu
 X3DJSON.nodeUtil("Scene","Kick_r_knee_PitchInterpolator").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","Kick_r_ankle_PitchInterpolator")) {
-X3DJSON.nodeUtil("Scene","Kick_r_ankle_PitchInterpolator").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","Kick_r_talocrural_PitchInterpolator")) {
+X3DJSON.nodeUtil("Scene","Kick_r_talocrural_PitchInterpolator").addEventListener('outputchange', function(event) {
 }, false);
 }
     if (X3DJSON.nodeUtil("Scene","Kick_l_hip_PitchInterpolator")) {
@@ -1975,8 +1975,8 @@ X3DJSON.nodeUtil("Scene","Kick_l_hip_PitchInterpolator").addEventListener('outpu
 X3DJSON.nodeUtil("Scene","Kick_l_knee_PitchInterpolator").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","Kick_r_ankle_PitchInterpolator")) {
-X3DJSON.nodeUtil("Scene","Kick_r_ankle_PitchInterpolator").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","Kick_r_talocrural_PitchInterpolator")) {
+X3DJSON.nodeUtil("Scene","Kick_r_talocrural_PitchInterpolator").addEventListener('outputchange', function(event) {
 }, false);
 }
     if (X3DJSON.nodeUtil("Scene","Kick_vl5_YawInterpolator")) {
