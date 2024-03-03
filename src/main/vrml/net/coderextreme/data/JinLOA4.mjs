@@ -42,7 +42,7 @@ head1.meta[6] = meta8;
 
 let meta9 = browser.currentScene.createNode("meta");
 meta9.name = "description";
-meta9.content = "Articulated 3D game character designed with a general graphics tool, then converted into an X3D HAnim model.";
+meta9.content = "Articulated 3D game character designed with a general graphics tool";
 head1.meta[7] = meta9;
 
 let meta10 = browser.currentScene.createNode("meta");

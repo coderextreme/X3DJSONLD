@@ -44,7 +44,7 @@ head1.meta[6] = meta8;
 
 meta meta9 = createNode("meta");
 meta9.name = "description";
-meta9.content = "Articulated 3D game character designed with a general graphics tool, then converted into an X3D HAnim model.";
+meta9.content = "Articulated 3D game character designed with a general graphics tool";
 head1.meta[7] = meta9;
 
 meta meta10 = createNode("meta");

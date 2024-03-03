@@ -116,8 +116,6 @@
                       { "HAnimJoint":
                         {
                           "@name":"humanoid_root",
-                          "@ulimit":[0,0,0],
-                          "@llimit":[0,0,0],
                           "-children":[
                             { "HAnimSegment":
                               {
@@ -167,8 +165,6 @@
                       { "HAnimJoint":
                         {
                           "@name":"humanoid_root",
-                          "@ulimit":[0,0,0],
-                          "@llimit":[0,0,0],
                           "-children":[
                             { "HAnimSegment":
                               {
@@ -205,8 +201,6 @@
                       { "HAnimJoint":
                         {
                           "@name":"humanoid_root",
-                          "@ulimit":[0,0,0],
-                          "@llimit":[0,0,0],
                           "-children":[
                             { "HAnimSegment":
                               {
@@ -238,8 +232,6 @@
                       { "HAnimJoint":
                         {
                           "@name":"humanoid_root",
-                          "@ulimit":[0,0,0],
-                          "@llimit":[0,0,0],
                           "-children":[
                             { "HAnimSegment":
                               {
@@ -276,8 +268,6 @@
                       { "HAnimJoint":
                         {
                           "@name":"humanoid_root",
-                          "@ulimit":[0,0,0],
-                          "@llimit":[0,0,0],
                           "-children":[
                             { "HAnimSegment":
                               {
@@ -328,8 +318,6 @@
                       { "HAnimJoint":
                         {
                           "@name":"humanoid_root",
-                          "@ulimit":[0,0,0],
-                          "@llimit":[0,0,0],
                           "-children":[
                             { "HAnimSegment":
                               {
@@ -372,8 +360,6 @@
                       { "HAnimJoint":
                         {
                           "@name":"humanoid_root",
-                          "@ulimit":[0,0,0],
-                          "@llimit":[0,0,0],
                           "-children":[
                             { "HAnimSegment":
                               {
@@ -412,8 +398,6 @@
                       { "HAnimJoint":
                         {
                           "@name":"humanoid_root",
-                          "@ulimit":[0,0,0],
-                          "@llimit":[0,0,0],
                           "-children":[
                             { "HAnimSegment":
                               {
