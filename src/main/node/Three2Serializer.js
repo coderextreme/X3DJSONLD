@@ -101,7 +101,7 @@ Three2Serializer.prototype = {
 		obj.children = [];
 		for (var field in json) {
 			if (field.startsWith("@")) {
-				if (field === "@xmlns:xsd" || field === "@xsd:noNamespaceSchemaLocation") {
+				if (attr === "xmlns:xsd" || attr === "xsd:noNamespaceSchemaLocation" || attr === 'containerField' || attr === 'type') {
 					continue;
 				}
 				var attr = field.substr(1);

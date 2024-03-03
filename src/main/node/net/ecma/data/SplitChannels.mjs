@@ -67,7 +67,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("modified"),
-              content : new SFString("5 December 2021")}),
+              content : new SFString("23 April 2023")}),
 
             new meta({
               name : new SFString("reference"),
@@ -83,7 +83,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("identifier"),
-              content : new SFString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/SplitChannels.x3d")}),
+              content : new SFString("https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/SplitChannels.x3d")}),
 
             new meta({
               name : new SFString("generator"),
@@ -99,7 +99,7 @@ var X3D0 =  new X3D({
               title : new SFString("SplitChannels.x3d")}),
 
             new NavigationInfo({
-              type : ["ON"]}),
+              type : ["NONE"]}),
 
             new Background({
               skyColor : new MFColor([0.2,0.2,0.21])}),
@@ -145,7 +145,7 @@ var X3D0 =  new X3D({
                               specularColor : new SFColor([0.01,0.01,0.01])})),
                           texture : new SFNode(
                             new ImageTexture({
-                              url : new MFString(["images/line.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/line.png"])}))})),
+                              url : new MFString(["images/line.png","https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/images/line.png"])}))})),
                       geometry : new SFNode(
                         new Box({
                           size : new SFVec3f([25,83,0.01])}))}))}),
@@ -170,7 +170,8 @@ var X3D0 =  new X3D({
                           string : new MFString(["Right Channel Volume"]),
                           fontStyle : new SFNode(
                             new FontStyle({
-                              family : new MFString(["Times"]),
+                              DEF : new SFString("VolumeFontStyle"),
+                              family : new MFString(["Times","SERIF"]),
                               style : new SFString("BOLD")}))}))}))})])}),
 
             new Transform({
@@ -209,7 +210,7 @@ var X3D0 =  new X3D({
                               specularColor : new SFColor([0.01,0.01,0.01])})),
                           texture : new SFNode(
                             new ImageTexture({
-                              url : new MFString(["images/line.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/line.png"])}))})),
+                              url : new MFString(["images/line.png","https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/images/line.png"])}))})),
                       geometry : new SFNode(
                         new Box({
                           size : new SFVec3f([25,83,0.01])}))}))}),
@@ -234,8 +235,7 @@ var X3D0 =  new X3D({
                           string : new MFString(["Left Channel Volume"]),
                           fontStyle : new SFNode(
                             new FontStyle({
-                              family : new MFString(["Times"]),
-                              style : new SFString("BOLD")}))}))}))})])}),
+                              USE : new SFString("VolumeFontStyle")}))}))}))})])}),
 
             new Transform({
               child : new SFNode(
@@ -278,7 +278,7 @@ var X3D0 =  new X3D({
               outputs : new SFNode(
                 new AudioClip({
                   description : new SFString("Violin"),
-                  url : new MFString(["sound/violin.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3"])}))}),
+                  url : new MFString(["sound/violin.mp3","https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3"])}))}),
 
             new Transform({
               DEF : new SFString("Audio3"),
@@ -296,7 +296,7 @@ var X3D0 =  new X3D({
                           specularColor : new SFColor([0.01,0.01,0.01])})),
                       texture : new SFNode(
                         new ImageTexture({
-                          url : new MFString(["images/loudspeaker.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/loudspeaker.png"])}))})),
+                          url : new MFString(["images/loudspeaker.png","https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/images/loudspeaker.png"])}))})),
                   geometry : new SFNode(
                     new Box({
                       size : new SFVec3f([100,100,0.001])}))}))})])}))});

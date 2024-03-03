@@ -150,7 +150,7 @@ var X3D0 =  new X3D({
               version : new SFString("2.0"),
               metadata : new MFNode([
                 new MetadataSet({
-                  name : new SFString("HAnimHumanoid_info"),
+                  name : new SFString("HAnimHumanoid.info"),
                   reference : new SFString("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid"),
                   value : new SFNode(
                     new MetadataString({
@@ -6198,7 +6198,7 @@ var X3D0 =  new X3D({
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("Stop_l_ankle_RotationInterpolator"),
+                  DEF : new SFString("Stop_l_talocrural_RotationInterpolator"),
                   key : new MFFloat([0,0.5,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
@@ -6228,7 +6228,7 @@ var X3D0 =  new X3D({
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("Stop_r_ankle_RotationInterpolator"),
+                  DEF : new SFString("Stop_r_talocrural_RotationInterpolator"),
                   key : new MFFloat([0,0.5,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
@@ -6403,7 +6403,7 @@ var X3D0 =  new X3D({
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("Stop_l_wrist_RotationInterpolator"),
+                  DEF : new SFString("Stop_l_radiocarpal_RotationInterpolator"),
                   key : new MFFloat([0,0.5,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
@@ -6523,7 +6523,7 @@ var X3D0 =  new X3D({
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("Stop_r_wrist_RotationInterpolator"),
+                  DEF : new SFString("Stop_r_radiocarpal_RotationInterpolator"),
                   key : new MFFloat([0,0.5,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
@@ -6636,7 +6636,7 @@ var X3D0 =  new X3D({
                   keyValue : new MFRotation([1,0,0,0,-1,0,0,0.015,1,0,0,0.17,-1,0,0,0.025,1,0,0,0.01,1,0,0,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("Stand_r_ankle_RotationInterpolator"),
+                  DEF : new SFString("Stand_r_talocrural_RotationInterpolator"),
                   key : new MFFloat([0,0.5,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
@@ -6651,7 +6651,7 @@ var X3D0 =  new X3D({
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("Stand_l_ankle_RotationInterpolator"),
+                  DEF : new SFString("Stand_l_talocrural_RotationInterpolator"),
                   key : new MFFloat([0,0.5,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
@@ -6666,7 +6666,7 @@ var X3D0 =  new X3D({
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("Stand_r_wrist_RotationInterpolator"),
+                  DEF : new SFString("Stand_r_radiocarpal_RotationInterpolator"),
                   key : new MFFloat([0,0.5,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,-1,0.25,0,0,1,0])}),
 
@@ -6681,7 +6681,7 @@ var X3D0 =  new X3D({
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("Stand_l_wrist_RotationInterpolator"),
+                  DEF : new SFString("Stand_l_radiocarpal_RotationInterpolator"),
                   key : new MFFloat([0,0.5,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
@@ -6809,7 +6809,7 @@ var X3D0 =  new X3D({
                   keyValue : new MFRotation([1,0,0,0,-1,0,0,0.5,-1,0,0,0.7,1,0,0,0.75,-1,0,0,0.2,1,0,0,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("Pitches_r_ankle_RotationInterpolator"),
+                  DEF : new SFString("Pitches_r_talocrural_RotationInterpolator"),
                   key : new MFFloat([0,0.25,0.5,0.75,1]),
                   keyValue : new MFRotation([0,0,1,0,1,0,0,1.5,0,0,1,0,-1,0,0,1.5,0,0,1,0])}),
 
@@ -6824,7 +6824,7 @@ var X3D0 =  new X3D({
                   keyValue : new MFRotation([0,0,1,0,-1,0,0,1.5,0,0,1,0,1,0,0,1.5,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("Pitches_l_ankle_RotationInterpolator"),
+                  DEF : new SFString("Pitches_l_talocrural_RotationInterpolator"),
                   key : new MFFloat([0,0.25,0.5,0.75,1]),
                   keyValue : new MFRotation([0,0,1,0,-1,0,0,1.5,0,0,1,0,1,0,0,1.5,0,0,1,0])}),
 
@@ -6839,7 +6839,7 @@ var X3D0 =  new X3D({
                   keyValue : new MFRotation([0,0,1,0,1,0,0,1.5,0,0,1,0,-1,0,0,1.5,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("Pitches_r_wrist_RotationInterpolator"),
+                  DEF : new SFString("Pitches_r_radiocarpal_RotationInterpolator"),
                   key : new MFFloat([0,0.5,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
@@ -6854,7 +6854,7 @@ var X3D0 =  new X3D({
                   keyValue : new MFRotation([0,0,1,0,1,0,0,1.5,0,0,1,0,-1,0,0,1.5,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("Pitches_l_wrist_RotationInterpolator"),
+                  DEF : new SFString("Pitches_l_radiocarpal_RotationInterpolator"),
                   key : new MFFloat([0,0.5,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
@@ -6957,7 +6957,7 @@ var X3D0 =  new X3D({
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("Yaws_r_ankle_RotationInterpolator"),
+                  DEF : new SFString("Yaws_r_talocrural_RotationInterpolator"),
                   key : new MFFloat([0,0.25,0.5,0.75,1]),
                   keyValue : new MFRotation([0,0,1,0,0,-1,0,1.5,0,0,1,0,0,1,0,1.5,0,0,1,0])}),
 
@@ -6972,7 +6972,7 @@ var X3D0 =  new X3D({
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("Yaws_l_ankle_RotationInterpolator"),
+                  DEF : new SFString("Yaws_l_talocrural_RotationInterpolator"),
                   key : new MFFloat([0,0.25,0.5,0.75,1]),
                   keyValue : new MFRotation([0,0,1,0,0,1,0,1.5,0,0,1,0,0,-1,0,1.5,0,0,1,0])}),
 
@@ -6987,7 +6987,7 @@ var X3D0 =  new X3D({
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("Yaws_r_wrist_RotationInterpolator"),
+                  DEF : new SFString("Yaws_r_radiocarpal_RotationInterpolator"),
                   key : new MFFloat([0,0.5,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
@@ -7002,7 +7002,7 @@ var X3D0 =  new X3D({
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("Yaws_l_wrist_RotationInterpolator"),
+                  DEF : new SFString("Yaws_l_radiocarpal_RotationInterpolator"),
                   key : new MFFloat([0,0.5,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
@@ -7105,7 +7105,7 @@ var X3D0 =  new X3D({
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("Rolls_r_ankle_RotationInterpolator"),
+                  DEF : new SFString("Rolls_r_talocrural_RotationInterpolator"),
                   key : new MFFloat([0,0.25,0.5,0.75,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,1.5,0,0,1,0,0,0,1,1.5,0,0,1,0])}),
 
@@ -7120,7 +7120,7 @@ var X3D0 =  new X3D({
                   keyValue : new MFRotation([0,0,-1,0,0,0,-1,1.5,0,0,1,0,0,0,-1,1.5,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("Rolls_l_ankle_RotationInterpolator"),
+                  DEF : new SFString("Rolls_l_talocrural_RotationInterpolator"),
                   key : new MFFloat([0,0.25,0.5,0.75,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,-1,1.5,0,0,1,0,0,0,-1,1.5,0,0,1,0])}),
 
@@ -7135,7 +7135,7 @@ var X3D0 =  new X3D({
                   keyValue : new MFRotation([0,0,1,0,0,0,1,1.5,0,0,1,0,0,0,1,1.5,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("Rolls_r_wrist_RotationInterpolator"),
+                  DEF : new SFString("Rolls_r_radiocarpal_RotationInterpolator"),
                   key : new MFFloat([0,0.25,0.5,0.75,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,-1,1.5,0,0,1,0,0,0,1,1.5,0,0,1,0])}),
 
@@ -7150,7 +7150,7 @@ var X3D0 =  new X3D({
                   keyValue : new MFRotation([0,0,1,0,0,0,-1,1.5,0,0,-1,3,0,0,-1,1.5,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("Rolls_l_wrist_RotationInterpolator"),
+                  DEF : new SFString("Rolls_l_radiocarpal_RotationInterpolator"),
                   key : new MFFloat([0,0.25,0.5,0.75,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,1.5,0,0,1,0,0,0,-1,1.5,0,0,1,0])}),
 
@@ -7253,7 +7253,7 @@ var X3D0 =  new X3D({
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("Walk_r_ankle_RotationInterpolator"),
+                  DEF : new SFString("Walk_r_talocrural_RotationInterpolator"),
                   key : new MFFloat([0,0.125,0.2083,0.375,0.4583,0.5,0.6667,0.75,0.7917,0.9167,1]),
                   keyValue : new MFRotation([0,0,1,0,-1,0,0,0.3533,-1,0,0,0.1072,1,0,0,0.2612,1,0,0,0.1268,-1,0,0,0.01793,-1,0,0,0.05824,-1,0,0,0.2398,-1,0,0,0.35,-1,0,0,0.3322,0,0,1,0])}),
 
@@ -7268,7 +7268,7 @@ var X3D0 =  new X3D({
                   keyValue : new MFRotation([-0.5831,0.03511,0.8116,0.1481,-0.995,0.02296,0.09674,0.4683,-1,0.00192,0.007964,0.4732,-0.998,-0.0158,-0.06102,0.5079,-0.9911,-0.03541,-0.1286,0.5419,-0.9131,-0.06243,-0.403,0.3361,-0.4306,-0.07962,-0.899,0.07038,1,0,0,0.2571,0.9891,-0.02805,0.1444,0.3879,-0.5831,0.03511,0.8116,0.1481])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("Walk_l_ankle_RotationInterpolator"),
+                  DEF : new SFString("Walk_l_talocrural_RotationInterpolator"),
                   key : new MFFloat([0,0.125,0.2083,0.375,0.6667,0.9167,1]),
                   keyValue : new MFRotation([-1,0,0,0.06714,-1,0,0,0.2152,-1,0,0,0.3184,-1,0,0,0.4717,-1,0,0,0.2912,1,0,0,0.1222,-1,0,0,0.06714])}),
 
@@ -7288,7 +7288,7 @@ var X3D0 =  new X3D({
                   keyValue : new MFRotation([0,0,-1,0.1056,0,0,1,0.09018,0,0,-1,0.1056])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("Walk_r_wrist_RotationInterpolator"),
+                  DEF : new SFString("Walk_r_radiocarpal_RotationInterpolator"),
                   key : new MFFloat([0,0.375,0.9167,1]),
                   keyValue : new MFRotation([-0.8129,0.4759,-0.3357,0.1346,0.1533,-0.9878,0.02582,0.3902,-0.5701,0.7604,-0.311,0.366,-0.8129,0.4759,-0.3357,0.1346])}),
 
@@ -7303,7 +7303,7 @@ var X3D0 =  new X3D({
                   keyValue : new MFRotation([-1,0,0,0.09346,1,0,0,0.3197,-1,0,0,0.1564,-1,0,0,0.09346])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("Walk_l_wrist_RotationInterpolator"),
+                  DEF : new SFString("Walk_l_radiocarpal_RotationInterpolator"),
                   key : new MFFloat([0,0.375,0.9167,1]),
                   keyValue : new MFRotation([0,-1,0,0.461076,-0.330195,-0.927451,0.175516,0.538852,0.0327774,-0.999314,-0.0172185,0.492033,0,-1,0,0.461076])}),
 
@@ -7411,7 +7411,7 @@ var X3D0 =  new X3D({
                   keyValue : new MFRotation([1,0,0,1.01,1,0,0,0.426,1,0,0,0.705,1,0,0,2.179,1,0,0,1.01])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("Run_l_ankle_RotationInterpolator_Run"),
+                  DEF : new SFString("Run_l_talocrural_RotationInterpolator_Run"),
                   key : new MFFloat([0,0.22,0.3,0.4,1]),
                   keyValue : new MFRotation([1,0,0,0.0374,-1,0,0,0.1037,-1,0,0,0.4328,1,0,0,0.1929,1,0,0,0.03574])}),
 
@@ -7426,7 +7426,7 @@ var X3D0 =  new X3D({
                   keyValue : new MFRotation([1,0,0,0.705,1,0,0,2.179,1,0,0,1.01,1,0,0,0.426,1,0,0,0.705])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("Run_r_ankle_RotationInterpolator_Run"),
+                  DEF : new SFString("Run_r_talocrural_RotationInterpolator_Run"),
                   key : new MFFloat([0,0.4,0.71,0.8,0.82,1]),
                   keyValue : new MFRotation([1,0,0,0.2323,-1,0,0,0.07843,-1,0,0,0.32,-1,0,0,0.374,-1,0,0,0.3478,1,0,0,0.2323])}),
 
@@ -7441,7 +7441,7 @@ var X3D0 =  new X3D({
                   keyValue : new MFRotation([-1,0,0,1.85,-0.99,-0.19,0.18,1.35,-1,0,0,0.975,-0.99,-0.09,-0.02,1.55,-1,0,0,1.85])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("Run_l_wrist_RotationInterpolator_Run"),
+                  DEF : new SFString("Run_l_radiocarpal_RotationInterpolator_Run"),
                   key : new MFFloat([0,0.25,0.5,0.75,1]),
                   keyValue : new MFRotation([-0.25,-1,0.08,0.14,0.25,1,0.08,0.14,0,0,1,0,-0.25,1,0.08,-0.14,-0.25,1,0.08,0.14])}),
 
@@ -7456,7 +7456,7 @@ var X3D0 =  new X3D({
                   keyValue : new MFRotation([-1,0,0,0.975,-0.99,0.09,0.02,1.55,-1,0,0,1.85,-0.99,0.19,-0.18,1.35,-1,0,0,0.975])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("Run_r_wrist_RotationInterpolator_Run"),
+                  DEF : new SFString("Run_r_radiocarpal_RotationInterpolator_Run"),
                   key : new MFFloat([0,1]),
                   keyValue : new MFRotation([-0.917742,-0.237244,-0.318536,0.214273,-0.917742,-0.237244,-0.318536,0.214273])}),
 
@@ -7549,7 +7549,7 @@ var X3D0 =  new X3D({
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("Jump_r_ankle_RotationInterpolator"),
+                  DEF : new SFString("Jump_r_talocrural_RotationInterpolator"),
                   key : new MFFloat([0,0.1,0.15,0.25,0.28,0.32,0.35,0.64,0.76,0.84,0.88,0.92,0.96,1]),
                   keyValue : new MFRotation([0,0,1,0,-1,0,0,0.6735,-1,0,0,0.6735,-1,0,0,0.3527,-1,0,0,0.3038,-1,0,0,0.07964,1,0,0,1.3,1,0,0,0.6509,1,0,0,0.3001,-1,0,0,0.2087,-1,0,0,0.3756,-1,0,0,0.3279,-1,0,0,0.1193,0,0,1,0])}),
 
@@ -7564,7 +7564,7 @@ var X3D0 =  new X3D({
                   keyValue : new MFRotation([0,0,1,0,-1,0,0,1.63,-1,0,0,1.7,-1,0,0,1.55,-1,0,0,0.8943,-1,0,0,0.3698,0,0,1,0,-1,0,0,0.4963,-1,0,0,0.3829,-1,0,0,0.5169,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("Jump_l_ankle_RotationInterpolator"),
+                  DEF : new SFString("Jump_l_talocrural_RotationInterpolator"),
                   key : new MFFloat([0,0.28,0.32,0.36,0.4,0.44,0.48,0.64,0.76,0.84,0.88,0.92,0.96,1]),
                   keyValue : new MFRotation([0,0,1,0,-1,0,0,0.625,-1,0,0,0.625,-1,0,0,0.3364,-1,0,0,0.2742,-1,0,0,0.05078,1,0,0,0.2833,1,0,0,0.6667,1,0,0,0.2833,-1,0,0,0.2108,-1,0,0,0.375,-1,0,0,0.3146,-1,0,0,0.1174,0,0,1,0])}),
 
@@ -7584,7 +7584,7 @@ var X3D0 =  new X3D({
                   keyValue : new MFRotation([0,0,1,0,1,0,0,0.1892,1,0,0,0.1892,0,0,1,0,0,0,1,0,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("Jump_r_wrist_RotationInterpolator"),
+                  DEF : new SFString("Jump_r_radiocarpal_RotationInterpolator"),
                   key : new MFFloat([0,0.28,0.32,0.64,0.76,1]),
                   keyValue : new MFRotation([0,0,1,0,-0.0585279,0.983903,-0.168849,1.85956,-0.0585279,0.983903,-0.168849,1.85956,-0.00222418,0.99801,-0.0630095,1.46072,0,1,0,0.497349,0,0,1,0])}),
 
@@ -7599,7 +7599,7 @@ var X3D0 =  new X3D({
                   keyValue : new MFRotation([0,0,1,0,0.9992,0.02042,0.03558,4.688,0.9992,0.02042,0.03558,4.688,0.9989,-0.04623,0.005159,4.079,-0.8687,-0.2525,-0.4261,1.501,-0.941,-0.2893,-0.1754,0.4788,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("Jump_l_wrist_RotationInterpolator"),
+                  DEF : new SFString("Jump_l_radiocarpal_RotationInterpolator"),
                   key : new MFFloat([0,0.48,0.52,0.64,0.76,0.88,1]),
                   keyValue : new MFRotation([0,0,1,0,0.0672928,0.989475,-0.128107,4.15574,0.0672928,0.989475,-0.128107,4.15574,0.00364942,0.999901,0.0135896,4.5822,0,-1,0,0.655922,-0.00050618,-0.999999,0.0012782,1.28397,0,0,1,0])}),
 
@@ -7712,7 +7712,7 @@ var X3D0 =  new X3D({
                   keyValue : new MFRotation([1,0,0,0,1,0,0,-0.55,-1,0.25,0,2.55,1,0,0,0,1,0,0,0,1,0,0,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("Kick_l_wrist_RollInterpolator"),
+                  DEF : new SFString("Kick_l_radiocarpal_RollInterpolator"),
                   key : new MFFloat([0,0.2,0.4,0.6,0.8,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,1,0,0.55,0,0,1,0,0,0,1,0,0,0,1,0])}),
 
@@ -7742,7 +7742,7 @@ var X3D0 =  new X3D({
                   keyValue : new MFRotation([1,0,0,0,1,0,0,-0.55,1,0.25,0,-2.55,1,0,0,0,1,0,0,0,1,0,0,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("Kick_r_wrist_RollInterpolator"),
+                  DEF : new SFString("Kick_r_radiocarpal_RollInterpolator"),
                   key : new MFFloat([0,0.2,0.4,0.6,0.8,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,1,0,-0.55,0,0,1,0,0,0,1,0,0,0,1,0])}),
 
@@ -7772,7 +7772,7 @@ var X3D0 =  new X3D({
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("Kick_r_ankle_PitchInterpolator"),
+                  DEF : new SFString("Kick_r_talocrural_PitchInterpolator"),
                   key : new MFFloat([0,0.2,0.4,0.6,0.7,1]),
                   keyValue : new MFRotation([0,0,1,0,-1,0,0,0.9,-1,0,0,0.95,1,0,0,0.75,-1,0,0,0.05,1,0,0,0])}),
 
@@ -8208,7 +8208,7 @@ var X3D0 =  new X3D({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("StopTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("Stop_l_ankle_RotationInterpolator")}),
+              toNode : new SFString("Stop_l_talocrural_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
@@ -8244,7 +8244,7 @@ var X3D0 =  new X3D({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("StopTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("Stop_r_ankle_RotationInterpolator")}),
+              toNode : new SFString("Stop_r_talocrural_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
@@ -8454,7 +8454,7 @@ var X3D0 =  new X3D({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("StopTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("Stop_l_wrist_RotationInterpolator")}),
+              toNode : new SFString("Stop_l_radiocarpal_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
@@ -8598,7 +8598,7 @@ var X3D0 =  new X3D({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("StopTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("Stop_r_wrist_RotationInterpolator")}),
+              toNode : new SFString("Stop_r_radiocarpal_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
@@ -8740,9 +8740,9 @@ var X3D0 =  new X3D({
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("Stop_l_ankle_RotationInterpolator"),
+              fromNode : new SFString("Stop_l_talocrural_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("hanim_l_ankle")}),
+              toNode : new SFString("hanim_l_talocrural")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
@@ -8764,9 +8764,9 @@ var X3D0 =  new X3D({
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("Stop_r_ankle_RotationInterpolator"),
+              fromNode : new SFString("Stop_r_talocrural_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("hanim_r_ankle")}),
+              toNode : new SFString("hanim_r_talocrural")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
@@ -8800,9 +8800,9 @@ var X3D0 =  new X3D({
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("Stop_l_wrist_RotationInterpolator"),
+              fromNode : new SFString("Stop_l_radiocarpal_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("hanim_l_wrist")}),
+              toNode : new SFString("hanim_l_radiocarpal")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
@@ -8818,15 +8818,15 @@ var X3D0 =  new X3D({
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("Stop_r_wrist_RotationInterpolator"),
+              fromNode : new SFString("Stop_r_radiocarpal_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("hanim_r_wrist")}),
+              toNode : new SFString("hanim_r_radiocarpal")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("StandTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("Stand_r_ankle_RotationInterpolator")}),
+              toNode : new SFString("Stand_r_talocrural_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
@@ -8844,7 +8844,7 @@ var X3D0 =  new X3D({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("StandTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("Stand_l_ankle_RotationInterpolator")}),
+              toNode : new SFString("Stand_l_talocrural_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
@@ -8868,7 +8868,7 @@ var X3D0 =  new X3D({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("StandTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("Stand_r_wrist_RotationInterpolator")}),
+              toNode : new SFString("Stand_r_radiocarpal_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
@@ -8886,7 +8886,7 @@ var X3D0 =  new X3D({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("StandTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("Stand_l_wrist_RotationInterpolator")}),
+              toNode : new SFString("Stand_l_radiocarpal_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
@@ -9022,9 +9022,9 @@ var X3D0 =  new X3D({
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("Stand_r_ankle_RotationInterpolator"),
+              fromNode : new SFString("Stand_r_talocrural_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("hanim_r_ankle")}),
+              toNode : new SFString("hanim_r_talocrural")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
@@ -9040,9 +9040,9 @@ var X3D0 =  new X3D({
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("Stand_l_ankle_RotationInterpolator"),
+              fromNode : new SFString("Stand_l_talocrural_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("hanim_l_ankle")}),
+              toNode : new SFString("hanim_l_talocrural")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
@@ -9058,9 +9058,9 @@ var X3D0 =  new X3D({
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("Stand_r_wrist_RotationInterpolator"),
+              fromNode : new SFString("Stand_r_radiocarpal_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("hanim_r_wrist")}),
+              toNode : new SFString("hanim_r_radiocarpal")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
@@ -9076,9 +9076,9 @@ var X3D0 =  new X3D({
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("Stand_l_wrist_RotationInterpolator"),
+              fromNode : new SFString("Stand_l_radiocarpal_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("hanim_l_wrist")}),
+              toNode : new SFString("hanim_l_radiocarpal")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
@@ -9120,7 +9120,7 @@ var X3D0 =  new X3D({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("PitchTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("Pitches_r_ankle_RotationInterpolator")}),
+              toNode : new SFString("Pitches_r_talocrural_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
@@ -9138,7 +9138,7 @@ var X3D0 =  new X3D({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("PitchTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("Pitches_l_ankle_RotationInterpolator")}),
+              toNode : new SFString("Pitches_l_talocrural_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
@@ -9162,7 +9162,7 @@ var X3D0 =  new X3D({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("PitchTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("Pitches_r_wrist_RotationInterpolator")}),
+              toNode : new SFString("Pitches_r_radiocarpal_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
@@ -9180,7 +9180,7 @@ var X3D0 =  new X3D({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("PitchTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("Pitches_l_wrist_RotationInterpolator")}),
+              toNode : new SFString("Pitches_l_radiocarpal_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
@@ -9286,9 +9286,9 @@ var X3D0 =  new X3D({
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("Pitches_r_ankle_RotationInterpolator"),
+              fromNode : new SFString("Pitches_r_talocrural_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("hanim_r_ankle")}),
+              toNode : new SFString("hanim_r_talocrural")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
@@ -9304,9 +9304,9 @@ var X3D0 =  new X3D({
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("Pitches_l_ankle_RotationInterpolator"),
+              fromNode : new SFString("Pitches_l_talocrural_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("hanim_l_ankle")}),
+              toNode : new SFString("hanim_l_talocrural")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
@@ -9322,9 +9322,9 @@ var X3D0 =  new X3D({
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("Pitches_r_wrist_RotationInterpolator"),
+              fromNode : new SFString("Pitches_r_radiocarpal_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("hanim_r_wrist")}),
+              toNode : new SFString("hanim_r_radiocarpal")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
@@ -9340,9 +9340,9 @@ var X3D0 =  new X3D({
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("Pitches_l_wrist_RotationInterpolator"),
+              fromNode : new SFString("Pitches_l_radiocarpal_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("hanim_l_wrist")}),
+              toNode : new SFString("hanim_l_radiocarpal")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
@@ -9384,7 +9384,7 @@ var X3D0 =  new X3D({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("YawTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("Yaws_r_ankle_RotationInterpolator")}),
+              toNode : new SFString("Yaws_r_talocrural_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
@@ -9402,7 +9402,7 @@ var X3D0 =  new X3D({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("YawTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("Yaws_l_ankle_RotationInterpolator")}),
+              toNode : new SFString("Yaws_l_talocrural_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
@@ -9426,7 +9426,7 @@ var X3D0 =  new X3D({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("YawTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("Yaws_r_wrist_RotationInterpolator")}),
+              toNode : new SFString("Yaws_r_radiocarpal_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
@@ -9444,7 +9444,7 @@ var X3D0 =  new X3D({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("YawTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("Yaws_l_wrist_RotationInterpolator")}),
+              toNode : new SFString("Yaws_l_radiocarpal_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
@@ -9550,9 +9550,9 @@ var X3D0 =  new X3D({
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("Yaws_r_ankle_RotationInterpolator"),
+              fromNode : new SFString("Yaws_r_talocrural_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("hanim_r_ankle")}),
+              toNode : new SFString("hanim_r_talocrural")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
@@ -9568,9 +9568,9 @@ var X3D0 =  new X3D({
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("Yaws_l_ankle_RotationInterpolator"),
+              fromNode : new SFString("Yaws_l_talocrural_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("hanim_l_ankle")}),
+              toNode : new SFString("hanim_l_talocrural")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
@@ -9586,9 +9586,9 @@ var X3D0 =  new X3D({
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("Yaws_r_wrist_RotationInterpolator"),
+              fromNode : new SFString("Yaws_r_radiocarpal_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("hanim_r_wrist")}),
+              toNode : new SFString("hanim_r_radiocarpal")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
@@ -9604,9 +9604,9 @@ var X3D0 =  new X3D({
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("Yaws_l_wrist_RotationInterpolator"),
+              fromNode : new SFString("Yaws_l_radiocarpal_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("hanim_l_wrist")}),
+              toNode : new SFString("hanim_l_radiocarpal")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
@@ -9648,7 +9648,7 @@ var X3D0 =  new X3D({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("RollTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("Rolls_r_ankle_RotationInterpolator")}),
+              toNode : new SFString("Rolls_r_talocrural_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
@@ -9666,7 +9666,7 @@ var X3D0 =  new X3D({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("RollTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("Rolls_l_ankle_RotationInterpolator")}),
+              toNode : new SFString("Rolls_l_talocrural_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
@@ -9690,7 +9690,7 @@ var X3D0 =  new X3D({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("RollTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("Rolls_r_wrist_RotationInterpolator")}),
+              toNode : new SFString("Rolls_r_radiocarpal_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
@@ -9708,7 +9708,7 @@ var X3D0 =  new X3D({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("RollTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("Rolls_l_wrist_RotationInterpolator")}),
+              toNode : new SFString("Rolls_l_radiocarpal_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
@@ -9814,9 +9814,9 @@ var X3D0 =  new X3D({
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("Rolls_r_ankle_RotationInterpolator"),
+              fromNode : new SFString("Rolls_r_talocrural_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("hanim_r_ankle")}),
+              toNode : new SFString("hanim_r_talocrural")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
@@ -9832,9 +9832,9 @@ var X3D0 =  new X3D({
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("Rolls_l_ankle_RotationInterpolator"),
+              fromNode : new SFString("Rolls_l_talocrural_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("hanim_l_ankle")}),
+              toNode : new SFString("hanim_l_talocrural")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
@@ -9850,9 +9850,9 @@ var X3D0 =  new X3D({
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("Rolls_r_wrist_RotationInterpolator"),
+              fromNode : new SFString("Rolls_r_radiocarpal_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("hanim_r_wrist")}),
+              toNode : new SFString("hanim_r_radiocarpal")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
@@ -9868,9 +9868,9 @@ var X3D0 =  new X3D({
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("Rolls_l_wrist_RotationInterpolator"),
+              fromNode : new SFString("Rolls_l_radiocarpal_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("hanim_l_wrist")}),
+              toNode : new SFString("hanim_l_radiocarpal")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
@@ -9912,7 +9912,7 @@ var X3D0 =  new X3D({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("WalkTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("Walk_r_ankle_RotationInterpolator")}),
+              toNode : new SFString("Walk_r_talocrural_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
@@ -9930,7 +9930,7 @@ var X3D0 =  new X3D({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("WalkTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("Walk_l_ankle_RotationInterpolator")}),
+              toNode : new SFString("Walk_l_talocrural_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
@@ -9954,7 +9954,7 @@ var X3D0 =  new X3D({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("WalkTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("Walk_r_wrist_RotationInterpolator")}),
+              toNode : new SFString("Walk_r_radiocarpal_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
@@ -9972,7 +9972,7 @@ var X3D0 =  new X3D({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("WalkTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("Walk_l_wrist_RotationInterpolator")}),
+              toNode : new SFString("Walk_l_radiocarpal_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
@@ -10078,9 +10078,9 @@ var X3D0 =  new X3D({
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("Walk_r_ankle_RotationInterpolator"),
+              fromNode : new SFString("Walk_r_talocrural_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("hanim_r_ankle")}),
+              toNode : new SFString("hanim_r_talocrural")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
@@ -10096,9 +10096,9 @@ var X3D0 =  new X3D({
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("Walk_l_ankle_RotationInterpolator"),
+              fromNode : new SFString("Walk_l_talocrural_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("hanim_l_ankle")}),
+              toNode : new SFString("hanim_l_talocrural")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
@@ -10114,9 +10114,9 @@ var X3D0 =  new X3D({
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("Walk_r_wrist_RotationInterpolator"),
+              fromNode : new SFString("Walk_r_radiocarpal_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("hanim_r_wrist")}),
+              toNode : new SFString("hanim_r_radiocarpal")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
@@ -10132,9 +10132,9 @@ var X3D0 =  new X3D({
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("Walk_l_wrist_RotationInterpolator"),
+              fromNode : new SFString("Walk_l_radiocarpal_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("hanim_l_wrist")}),
+              toNode : new SFString("hanim_l_radiocarpal")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
@@ -10176,7 +10176,7 @@ var X3D0 =  new X3D({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("RunTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("Run_r_ankle_RotationInterpolator_Run")}),
+              toNode : new SFString("Run_r_talocrural_RotationInterpolator_Run")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
@@ -10194,7 +10194,7 @@ var X3D0 =  new X3D({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("RunTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("Run_l_ankle_RotationInterpolator_Run")}),
+              toNode : new SFString("Run_l_talocrural_RotationInterpolator_Run")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
@@ -10218,7 +10218,7 @@ var X3D0 =  new X3D({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("RunTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("Run_r_wrist_RotationInterpolator_Run")}),
+              toNode : new SFString("Run_r_radiocarpal_RotationInterpolator_Run")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
@@ -10236,7 +10236,7 @@ var X3D0 =  new X3D({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("RunTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("Run_l_wrist_RotationInterpolator_Run")}),
+              toNode : new SFString("Run_l_radiocarpal_RotationInterpolator_Run")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
@@ -10342,9 +10342,9 @@ var X3D0 =  new X3D({
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("Run_r_ankle_RotationInterpolator_Run"),
+              fromNode : new SFString("Run_r_talocrural_RotationInterpolator_Run"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("hanim_r_ankle")}),
+              toNode : new SFString("hanim_r_talocrural")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
@@ -10360,9 +10360,9 @@ var X3D0 =  new X3D({
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("Run_l_ankle_RotationInterpolator_Run"),
+              fromNode : new SFString("Run_l_talocrural_RotationInterpolator_Run"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("hanim_l_ankle")}),
+              toNode : new SFString("hanim_l_talocrural")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
@@ -10378,9 +10378,9 @@ var X3D0 =  new X3D({
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("Run_r_wrist_RotationInterpolator_Run"),
+              fromNode : new SFString("Run_r_radiocarpal_RotationInterpolator_Run"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("hanim_r_wrist")}),
+              toNode : new SFString("hanim_r_radiocarpal")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
@@ -10396,9 +10396,9 @@ var X3D0 =  new X3D({
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("Run_l_wrist_RotationInterpolator_Run"),
+              fromNode : new SFString("Run_l_radiocarpal_RotationInterpolator_Run"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("hanim_l_wrist")}),
+              toNode : new SFString("hanim_l_radiocarpal")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
@@ -10440,7 +10440,7 @@ var X3D0 =  new X3D({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("JumpTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("Jump_r_ankle_RotationInterpolator")}),
+              toNode : new SFString("Jump_r_talocrural_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
@@ -10458,7 +10458,7 @@ var X3D0 =  new X3D({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("JumpTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("Jump_l_ankle_RotationInterpolator")}),
+              toNode : new SFString("Jump_l_talocrural_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
@@ -10482,7 +10482,7 @@ var X3D0 =  new X3D({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("JumpTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("Jump_r_wrist_RotationInterpolator")}),
+              toNode : new SFString("Jump_r_radiocarpal_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
@@ -10500,7 +10500,7 @@ var X3D0 =  new X3D({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("JumpTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("Jump_l_wrist_RotationInterpolator")}),
+              toNode : new SFString("Jump_l_radiocarpal_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
@@ -10606,9 +10606,9 @@ var X3D0 =  new X3D({
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("Jump_r_ankle_RotationInterpolator"),
+              fromNode : new SFString("Jump_r_talocrural_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("hanim_r_ankle")}),
+              toNode : new SFString("hanim_r_talocrural")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
@@ -10624,9 +10624,9 @@ var X3D0 =  new X3D({
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("Jump_l_ankle_RotationInterpolator"),
+              fromNode : new SFString("Jump_l_talocrural_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("hanim_l_ankle")}),
+              toNode : new SFString("hanim_l_talocrural")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
@@ -10642,9 +10642,9 @@ var X3D0 =  new X3D({
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("Jump_r_wrist_RotationInterpolator"),
+              fromNode : new SFString("Jump_r_radiocarpal_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("hanim_r_wrist")}),
+              toNode : new SFString("hanim_r_radiocarpal")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
@@ -10660,9 +10660,9 @@ var X3D0 =  new X3D({
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("Jump_l_wrist_RotationInterpolator"),
+              fromNode : new SFString("Jump_l_radiocarpal_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("hanim_l_wrist")}),
+              toNode : new SFString("hanim_l_radiocarpal")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
@@ -10728,7 +10728,7 @@ var X3D0 =  new X3D({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("Kick_l_wrist_RollInterpolator")}),
+              toNode : new SFString("Kick_l_radiocarpal_RollInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
@@ -10764,7 +10764,7 @@ var X3D0 =  new X3D({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("Kick_r_wrist_RollInterpolator")}),
+              toNode : new SFString("Kick_r_radiocarpal_RollInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
@@ -10800,7 +10800,7 @@ var X3D0 =  new X3D({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("Kick_r_ankle_PitchInterpolator")}),
+              toNode : new SFString("Kick_r_talocrural_PitchInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
@@ -10870,9 +10870,9 @@ var X3D0 =  new X3D({
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("Kick_l_wrist_RollInterpolator"),
+              fromNode : new SFString("Kick_l_radiocarpal_RollInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("hanim_l_wrist")}),
+              toNode : new SFString("hanim_l_radiocarpal")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
@@ -10888,9 +10888,9 @@ var X3D0 =  new X3D({
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("Kick_r_wrist_RollInterpolator"),
+              fromNode : new SFString("Kick_r_radiocarpal_RollInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("hanim_r_wrist")}),
+              toNode : new SFString("hanim_r_radiocarpal")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
@@ -10906,9 +10906,9 @@ var X3D0 =  new X3D({
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("Kick_r_ankle_PitchInterpolator"),
+              fromNode : new SFString("Kick_r_talocrural_PitchInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("hanim_r_ankle")}),
+              toNode : new SFString("hanim_r_talocrural")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
@@ -10924,9 +10924,9 @@ var X3D0 =  new X3D({
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("Kick_r_ankle_PitchInterpolator"),
+              fromNode : new SFString("Kick_r_talocrural_PitchInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("hanim_l_ankle")}),
+              toNode : new SFString("hanim_l_talocrural")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
@@ -11443,5 +11443,5 @@ var X3D0 =  new X3D({
               fromNode : new SFString("Stop_Touch"),
               toField : new SFString("set_startTime"),
               toNode : new SFString("StopTimer")}),
-          /*<Script url='../node/jinloa4.js'/>*/])}))});
+          /*<Script url='../node/jinloa4.js'></Script>*/])}))});
 console.log(X3D0.toXMLNode());
