@@ -38,6 +38,7 @@ PythonSerializerX3DJSAIL.prototype = {
 
 		str += bodystr;
 		str += element.nodeName+stack[0]+".toFileX3D(\""+clazz+".new.python.x3d\")\n";
+		str += element.nodeName+stack[0]+".toFileJSON(\""+clazz+".new.python.json\")\n";
 		stack.shift();
 		return str;
 	},
