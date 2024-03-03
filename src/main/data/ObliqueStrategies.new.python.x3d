@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
+<X3D profile='Immersive' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.3.xsd'>
+  <head>
+    <meta content='ObliqueStrategies.x3d' name='title'/>
+    <meta content='Text scripting and animation example using Oblique Strategies card set by Brian Eno.' name='description'/>
+    <meta content='Don Brutzman, John Kelly, Ben Cheng' name='creator'/>
+    <meta content='3 November 2013' name='created'/>
+    <meta content='10 November 2019' name='modified'/>
+    <meta content='oblique.html' name='reference'/>
+    <meta content='ObliqueStrategies.txt' name='reference'/>
+    <meta content='ObliqueStrategiesScript.js' name='reference'/>
+    <meta content='http://music.hyperreal.org/artists/brian_eno/oblique/oblique.html' name='reference'/>
+    <meta content='http://www.eno-web.co.uk/obliques.html' name='reference'/>
+    <meta content='http://gothpunk.com/haiku-intro.html' name='reference'/>
+    <meta content='http://www.rtqe.net/ObliqueStrategies/OSintro.html' name='reference'/>
+    <meta content='https://en.wikipedia.org/wiki/Oblique_Strategies' name='reference'/>
+    <meta content='Brian Eno, Oblique Strategies' name='subject'/>
+    <meta content='images/ObliqueStrategiesEntryScreen.png' name='Image'/>
+    <meta content='http://translate.google.com/translate_tts?tl=en&amp;q=hello%20X3D' name='Sound'/>
+    <meta content='translate_tts_HelloX3D.mp3' name='Sound'/>
+    <meta content='translate_tts_HelloX3D.wav' name='Sound'/>
+    <meta content='multiliingual translation parameter' name='TODO'/>
+    <meta content='http://stackoverflow.com/questions/9163988/download-mp3-from-google-translate-text-to-speech' name='reference'/>
+    <meta content='http://www.greenbot.com/article/2105862/how-to-get-started-with-google-text-to-speech.html' name='reference'/>
+    <meta content='under development, scene Sound/AudioClip triggering (or retrieved file format) not working' name='warning'/>
+    <meta content='TODO resolve potential error in Script node TextScript: parse problem line 15 " var strategy = [];' name='warning'/>
+    <meta content='https://gist.github.com/alotaiba/1728771' name='reference'/>
+    <meta content='https://stackoverflow.com/questions/35002003/how-to-use-google-translate-tts-with-the-new-v2-api' name='reference'/>
+    <meta content='https://translate.google.com/translate_tts?ie=UTF-8&amp;client=tw-ob&amp;tl=en&amp;q=Hello+X3D4' name='Sound'/>
+    <meta content='translate_tts_HelloX3D4.mp3' name='Sound'/>
+    <meta content='https://cloud.google.com/translate/docs/basic/translating-text' name='reference'/>
+    <meta content='https://x3dgraphics.com/examples/X3dForAdvancedModeling/Inspiration/ObliqueStrategies.x3d' name='identifier'/>
+    <meta content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' name='generator'/>
+    <meta content='../license.html' name='license'/>
+  </head>
+  <Scene>
+    <WorldInfo title='ObliqueStrategies.x3d'/>
+    <NavigationInfo avatarSize='0.25 1.6 0.75' transitionType='"LINEAR"' type='"NONE"'/>
+    <Background skyColor='0.419608 0.427451 1'/>
+    <Transform scale='0.4 0.4 0.4' translation='0 1 0'>
+      <TouchSensor DEF='RandomTextClickedSensor' description='Select to see a new strategy'/>
+      <Shape>
+        <Appearance>
+          <Material diffuseColor='1 1 1'/>
+        </Appearance>
+        <Text string='"Oblique Strategies" "" "(Over One Hundred Worthwhile Dilemmas)" "" "by Brian Eno and Peter Schmidt"'>
+          <FontStyle DEF='MessageFont' family='"SANS"' justify='"MIDDLE" "MIDDLE"' style='BOLD'/>
+        </Text>
+      </Shape>
+      <Transform scale='10 3 1'>
+        <Shape DEF='HeadlineClickSurface'>
+          <Appearance>
+            <Material ambientIntensity='0.245763' diffuseColor='0.34773 0.090909 0.005289' shininess='0.07' specularColor='0.336735 0.051091 0.051091' transparency='0.8'/>
+          </Appearance>
+          <IndexedFaceSet coordIndex='0 1 2 3 -1' solid='false'>
+            <Coordinate point='1 1 0 1 -1 0 -1 -1 0 -1 1 0'/>
+          </IndexedFaceSet>
+        </Shape>
+      </Transform>
+    </Transform>
+    <Script DEF='TextScript' url='"ObliqueStrategiesScript.js" "https://x3dgraphics.com/examples/X3dForAdvancedModeling/Inspiration/ObliqueStrategiesScript.js"'>
+      <field name='index' accessType='initializeOnly' appinfo='index for active strategy card, -1 means no selection' type='SFInt32' value='0'/>
+      <field name='string_changed' accessType='outputOnly' appinfo='latest strategy card value' type='MFString'/>
+      <field name='textToSpeechUrl' accessType='outputOnly' appinfo='"url to invoke Google Translate"' type='MFString'/>
+      <field name='newCardTime' accessType='outputOnly' appinfo='activate Sound node' type='SFTime'/>
+      <field name='selectPreviousCard' accessType='inputOnly' type='SFBool'/>
+      <field name='selectNextCard' accessType='inputOnly' type='SFBool'/>
+      <field name='selectRandomCard' accessType='inputOnly' type='SFBool'/>
+      <field name='traceEnabled' accessType='initializeOnly' appinfo='controls console tracing' type='SFBool' value='true'/>
+    </Script>
+    <Transform DEF='CardTransform' scale='0.4 0.4 0.4' translation='0 -1.5 0'>
+      <Shape>
+        <Appearance>
+          <Material diffuseColor='1 1 1'/>
+        </Appearance>
+        <Text DEF='CardText'>
+          <FontStyle family='"SANS"' justify='"MIDDLE" "MIDDLE"' style='BOLD'/>
+        </Text>
+      </Shape>
+      <ROUTE fromField='string_changed' fromNode='TextScript' toField='string' toNode='CardText'/>
+      <Sound DEF='CardSoundSpatialization' maxBack='100.0' maxFront='100.0' minBack='20.0' minFront='20.0'>
+        <AudioClip DEF='TextToSpeechAudioClip' description='sends strategy text google translate' url='"http://translate.google.com/translate_tts?tl=en&amp;amp;q=Feed%20the%20recording%20back%20out%20of%20the%20medium" "translate_tts_mp3FileFormatNotSupported.wav" "https://x3dgraphics.com/examples/X3dForAdvancedModeling/Inspiration/translate_tts_mp3FileFormatNotSupported.wav"'/>
+      </Sound>
+      <ROUTE fromField='textToSpeechUrl' fromNode='TextScript' toField='url' toNode='TextToSpeechAudioClip'/>
+      <ROUTE fromField='newCardTime' fromNode='TextScript' toField='startTime' toNode='TextToSpeechAudioClip'/>
+    </Transform>
+    <Transform scale='0.4 0.4 0.4' translation='-3.2 2.5 0'>
+      <TouchSensor DEF='PreviousTextClickedSensor' description='Select to see previous strategy'/>
+      <ROUTE fromField='isActive' fromNode='PreviousTextClickedSensor' toField='selectPreviousCard' toNode='TextScript'/>
+      <Shape>
+        <Appearance DEF='InterfaceAppearance'>
+          <Material diffuseColor='1 0 0.6'/>
+        </Appearance>
+        <Text string='"previous"'>
+          <FontStyle USE='MessageFont'/>
+        </Text>
+      </Shape>
+      <Transform scale='2 0.6 1'>
+        <Shape DEF='TransparentClickSurface'>
+          <Appearance>
+            <Material transparency='1.0'/>
+          </Appearance>
+          <IndexedFaceSet coordIndex='0 1 2 3 -1' solid='false'>
+            <Coordinate point='1 1 0 1 -1 0 -1 -1 0 -1 1 0'/>
+          </IndexedFaceSet>
+        </Shape>
+      </Transform>
+    </Transform>
+    <Transform scale='0.4 0.4 0.4' translation='3.5 2.5 0'>
+      <TouchSensor DEF='NextTextClickedSensor' description='Select to see next strategy'/>
+      <ROUTE fromField='isActive' fromNode='NextTextClickedSensor' toField='selectNextCard' toNode='TextScript'/>
+      <Shape>
+        <Appearance USE='InterfaceAppearance'/>
+        <Text string='"next"'>
+          <FontStyle USE='MessageFont'/>
+        </Text>
+      </Shape>
+      <Transform scale='1.2 0.6 1'>
+        <Shape USE='TransparentClickSurface'/>
+      </Transform>
+    </Transform>
+    <Transform scale='0.4 0.4 0.4' translation='-3.3 -0.5 0'>
+      <TouchSensor USE='RandomTextClickedSensor'/>
+      <ROUTE fromField='isActive' fromNode='RandomTextClickedSensor' toField='selectRandomCard' toNode='TextScript'/>
+      <Shape>
+        <Appearance USE='InterfaceAppearance'/>
+        <Text string='"random"'>
+          <FontStyle USE='MessageFont'/>
+        </Text>
+      </Shape>
+      <Transform scale='1.8 0.6 1'>
+        <Shape USE='TransparentClickSurface'/>
+      </Transform>
+    </Transform>
+    <Transform scale='0.4 0.4 0.4' translation='3.3 -0.5 0'>
+      <Anchor DEF='TextToSpeechAnchor' description='text to speech in browser' parameter='"target=_blank"' url='"http://translate.google.com/translate_tts?tl=en&amp;amp;q=Overtly%20resist%20change"'>
+        <ROUTE fromField='textToSpeechUrl' fromNode='TextScript' toField='url' toNode='TextToSpeechAnchor'/>
+        <Shape>
+          <Appearance USE='InterfaceAppearance'/>
+          <Text string='"speech"'>
+            <FontStyle USE='MessageFont'/>
+          </Text>
+        </Shape>
+        <Transform scale='1.8 0.6 1'>
+          <Shape USE='TransparentClickSurface'/>
+        </Transform>
+      </Anchor>
+    </Transform>
+  </Scene>
+</X3D>

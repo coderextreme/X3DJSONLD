@@ -103,12 +103,12 @@ group->addChildren(*Viewpoint18);
 CProtoDeclare ProtoDeclare19 = browser.createX3DFromString(R"foo(<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="Bubble" ><ProtoBody><Transform DEF="transform"><Shape DEF="myShape"><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0.7 0.7 0.7" specularColor="0.5 0.5 0.5"></Material>
-<ComposedCubeMapTexture containerField="texture" DEF="texture"><ImageTexture containerField="back" url="&quot;../resources/images/all_probes/stpeters_cross/stpeters_back.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png&quot;"></ImageTexture>
-<ImageTexture containerField="bottom" url="&quot;../resources/images/all_probes/stpeters_cross/stpeters_bottom.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png&quot;"></ImageTexture>
-<ImageTexture containerField="front" url="&quot;../resources/images/all_probes/stpeters_cross/stpeters_front.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png&quot;"></ImageTexture>
-<ImageTexture containerField="left" url="&quot;../resources/images/all_probes/stpeters_cross/stpeters_left.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png&quot;"></ImageTexture>
-<ImageTexture containerField="right" url="&quot;../resources/images/all_probes/stpeters_cross/stpeters_right.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png&quot;"></ImageTexture>
-<ImageTexture containerField="top" url="&quot;../resources/images/all_probes/stpeters_cross/stpeters_top.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png&quot;"></ImageTexture>
+<ComposedCubeMapTexture containerField="texture" DEF="texture"><ImageTexture containerField="backTexture" url="&quot;../resources/images/all_probes/stpeters_cross/stpeters_back.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png&quot;"></ImageTexture>
+<ImageTexture containerField="bottomTexture" url="&quot;../resources/images/all_probes/stpeters_cross/stpeters_bottom.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png&quot;"></ImageTexture>
+<ImageTexture containerField="frontTexture" url="&quot;../resources/images/all_probes/stpeters_cross/stpeters_front.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png&quot;"></ImageTexture>
+<ImageTexture containerField="leftTexture" url="&quot;../resources/images/all_probes/stpeters_cross/stpeters_left.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png&quot;"></ImageTexture>
+<ImageTexture containerField="rightTexture" url="&quot;../resources/images/all_probes/stpeters_cross/stpeters_right.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png&quot;"></ImageTexture>
+<ImageTexture containerField="topTexture" url="&quot;../resources/images/all_probes/stpeters_cross/stpeters_top.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png&quot;"></ImageTexture>
 </ComposedCubeMapTexture>
 <!--<ComposedShader DEF='gl' language="GLSL"> <field name='cube' type='SFInt32' accessType="inputOutput" value='0'></field> <field name='chromaticDispertion' type='SFVec3f' accessType="inputOutput" value='0.98 1.0 1.033'></field> <field name='bias' type='SFFloat' accessType="inputOutput" value='0.5'></field> <field name='scale' type='SFFloat' accessType="inputOutput" value='0.5'></field> <field name='power' type='SFFloat' accessType="inputOutput" value='2.0'></field> <ShaderPart url='"../shaders/gl.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/gl.vs"' type='VERTEX'></ShaderPart> <ShaderPart url='"../shaders/pc_bubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"' type='FRAGMENT'></ShaderPart> </ComposedShader> <ComposedShader DEF='freewrl' language="GLSL"> <field name='fw_textureCoodGenType' type='SFInt32' accessType="inputOutput" value='0'></field> <field name='chromaticDispertion' type='SFVec3f' accessType="inputOutput" value='0.98 1.0 1.033'></field> <field name='bias' type='SFFloat' accessType="inputOutput" value='0.5'></field> <field name='scale' type='SFFloat' accessType="inputOutput" value='0.5'></field> <field name='power' type='SFFloat' accessType="inputOutput" value='2.0'></field> <ShaderPart url='"../shaders/freewrl.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.vs"' type='VERTEX'></ShaderPart> <ShaderPart url='"../shaders/pc_bubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"' type='FRAGMENT'></ShaderPart> </ComposedShader>--><!--<ComposedShader DEF='instant' language="GLSL"> <field name='cube' type='SFInt32' accessType="inputOutput" value='0'></field> <field name='chromaticDispertion' type='SFVec3f' accessType="inputOutput" value='0.98 1.0 1.033'></field> <field name='bias' type='SFFloat' accessType="inputOutput" value='0.5'></field> <field name='scale' type='SFFloat' accessType="inputOutput" value='0.5'></field> <field name='power' type='SFFloat' accessType="inputOutput" value='2.0'></field> <ShaderPart url='"../shaders/instant.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/instant.vs"' type='VERTEX'></ShaderPart> <ShaderPart url='"../shaders/pc_bubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"' type='FRAGMENT'></ShaderPart> </ComposedShader>--><ComposedShader DEF="x3dom" language="GLSL"><field name="cube" type="SFInt32" accessType="inputOutput" value="0"></field>
 <field name="chromaticDispertion" type="SFVec3f" accessType="inputOutput" value="0.98 1 1.033"></field>
@@ -180,27 +180,27 @@ CComposedCubeMapTexture* ComposedCubeMapTexture25 = (CComposedCubeMapTexture *)(
 ComposedCubeMapTexture25->setDEF("texture");
 CImageTexture* ImageTexture26 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
 ImageTexture26->setUrl(new CString[2]{"../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"}, 2);
-ComposedCubeMapTexture25->setBack(*ImageTexture26);
+ComposedCubeMapTexture25->setBackTexture(*ImageTexture26);
 
 CImageTexture* ImageTexture27 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
 ImageTexture27->setUrl(new CString[2]{"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"}, 2);
-ComposedCubeMapTexture25->setBottom(*ImageTexture27);
+ComposedCubeMapTexture25->setBottomTexture(*ImageTexture27);
 
 CImageTexture* ImageTexture28 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
 ImageTexture28->setUrl(new CString[2]{"../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"}, 2);
-ComposedCubeMapTexture25->setFront(*ImageTexture28);
+ComposedCubeMapTexture25->setFrontTexture(*ImageTexture28);
 
 CImageTexture* ImageTexture29 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
 ImageTexture29->setUrl(new CString[2]{"../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"}, 2);
-ComposedCubeMapTexture25->setLeft(*ImageTexture29);
+ComposedCubeMapTexture25->setLeftTexture(*ImageTexture29);
 
 CImageTexture* ImageTexture30 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
 ImageTexture30->setUrl(new CString[2]{"../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"}, 2);
-ComposedCubeMapTexture25->setRight(*ImageTexture30);
+ComposedCubeMapTexture25->setRightTexture(*ImageTexture30);
 
 CImageTexture* ImageTexture31 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
 ImageTexture31->setUrl(new CString[2]{"../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"}, 2);
-ComposedCubeMapTexture25->setTop(*ImageTexture31);
+ComposedCubeMapTexture25->setTopTexture(*ImageTexture31);
 
 Appearance23->setTexture(*ComposedCubeMapTexture25);
 
@@ -211,47 +211,40 @@ ComposedShader32->setDEF("x3dom");
 ComposedShader32->setLanguage("GLSL");
 Cfield* field33 = new Cfield();
 field33->setName("cube");
-field33->setType("SFInt32");
 field33->setAccessType("inputOutput");
 field33->setValue("0");
 ComposedShader32->addField(*field33);
 
 Cfield* field34 = new Cfield();
 field34->setName("chromaticDispertion");
-field34->setType("SFVec3f");
 field34->setAccessType("inputOutput");
 field34->setValue("0.98 1 1.033");
 ComposedShader32->addField(*field34);
 
 Cfield* field35 = new Cfield();
 field35->setName("bias");
-field35->setType("SFFloat");
 field35->setAccessType("inputOutput");
 field35->setValue("0.5");
 ComposedShader32->addField(*field35);
 
 Cfield* field36 = new Cfield();
 field36->setName("scale");
-field36->setType("SFFloat");
 field36->setAccessType("inputOutput");
 field36->setValue("0.5");
 ComposedShader32->addField(*field36);
 
 Cfield* field37 = new Cfield();
 field37->setName("power");
-field37->setType("SFFloat");
 field37->setAccessType("inputOutput");
 field37->setValue("2");
 ComposedShader32->addField(*field37);
 
 CShaderPart* ShaderPart38 = (CShaderPart *)(m_pScene.createNode("ShaderPart"));
 ShaderPart38->setUrl(new CString[2]{"../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"}, 2);
-ShaderPart38->setType("VERTEX");
 ComposedShader32->addParts(*ShaderPart38);
 
 CShaderPart* ShaderPart39 = (CShaderPart *)(m_pScene.createNode("ShaderPart"));
 ShaderPart39->setUrl(new CString[2]{"../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"}, 2);
-ShaderPart39->setType("FRAGMENT");
 ComposedShader32->addParts(*ShaderPart39);
 
 Appearance23->addShaders(*ComposedShader32);
@@ -261,7 +254,6 @@ ComposedShader40->setDEF("x_ite");
 ComposedShader40->setLanguage("GLSL");
 Cfield* field41 = new Cfield();
 field41->setName("cube");
-field41->setType("SFNode");
 field41->setAccessType("inputOutput");
 CComposedCubeMapTexture* ComposedCubeMapTexture42 = (CComposedCubeMapTexture *)(m_pScene.createNode("ComposedCubeMapTexture"));
 ComposedCubeMapTexture42->setUSE("texture");
@@ -271,40 +263,34 @@ ComposedShader40->addField(*field41);
 
 Cfield* field43 = new Cfield();
 field43->setName("chromaticDispertion");
-field43->setType("SFVec3f");
 field43->setAccessType("inputOutput");
 field43->setValue("0.98 1 1.033");
 ComposedShader40->addField(*field43);
 
 Cfield* field44 = new Cfield();
 field44->setName("bias");
-field44->setType("SFFloat");
 field44->setAccessType("inputOutput");
 field44->setValue("0.5");
 ComposedShader40->addField(*field44);
 
 Cfield* field45 = new Cfield();
 field45->setName("scale");
-field45->setType("SFFloat");
 field45->setAccessType("inputOutput");
 field45->setValue("0.5");
 ComposedShader40->addField(*field45);
 
 Cfield* field46 = new Cfield();
 field46->setName("power");
-field46->setType("SFFloat");
 field46->setAccessType("inputOutput");
 field46->setValue("2");
 ComposedShader40->addField(*field46);
 
 CShaderPart* ShaderPart47 = (CShaderPart *)(m_pScene.createNode("ShaderPart"));
 ShaderPart47->setUrl(new CString[2]{"../shaders/x_ite.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"}, 2);
-ShaderPart47->setType("VERTEX");
 ComposedShader40->addParts(*ShaderPart47);
 
 CShaderPart* ShaderPart48 = (CShaderPart *)(m_pScene.createNode("ShaderPart"));
 ShaderPart48->setUrl(new CString[2]{"../shaders/x_itebubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs"}, 2);
-ShaderPart48->setType("FRAGMENT");
 ComposedShader40->addParts(*ShaderPart48);
 
 Appearance23->addShaders(*ComposedShader40);
@@ -323,21 +309,18 @@ Script50->setDEF("Bounce");
 Cfield* field51 = new Cfield();
 field51->setName("translation");
 field51->setAccessType("inputOutput");
-field51->setType("SFVec3f");
 field51->setValue("0 0 0");
 Script50->addField(*field51);
 
 Cfield* field52 = new Cfield();
 field52->setName("velocity");
 field52->setAccessType("inputOutput");
-field52->setType("SFVec3f");
 field52->setValue("0 0 0");
 Script50->addField(*field52);
 
 Cfield* field53 = new Cfield();
 field53->setName("set_fraction");
 field53->setAccessType("inputOnly");
-field53->setType("SFTime");
 Script50->addField(*field53);
 
 

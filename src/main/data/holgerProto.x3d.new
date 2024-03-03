@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.0" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-4.0.xsd" ><head><meta name="title" content="x3dconnectorProto.x3d"></meta>
+<meta name="creator" content="Lost, Doug Sanden I think"></meta>
+<meta name="created" content="Unknown"></meta>
+<meta name="modified" content="Sat, 30 Dec 2023 10:14:10 GMT"></meta>
+<meta name="generator" content="manual"></meta>
+<meta name="generator" content="x3d-tidy V1.0.118, https://www.npmjs.com/package/x3d-tidy"></meta>
+</head>
+<Scene><ProtoDeclare name="x3dconnector"><ProtoInterface><field accessType="initializeOnly" type="SFNode" name="startnode"></field>
+<field accessType="initializeOnly" type="SFNode" name="endnode"></field>
+<field accessType="initializeOnly" type="SFNode" name="transnode"></field>
+<field accessType="initializeOnly" type="SFNode" name="rotscalenode"></field>
+<field accessType="inputOnly" type="SFVec3f" name="set_startpoint"></field>
+<field accessType="inputOnly" type="SFVec3f" name="set_endpoint"></field>
+</ProtoInterface>
+<ProtoBody><Script DEF="S1" directOutput="true"><field accessType="initializeOnly" type="SFNode" name="startnode"></field>
+<field accessType="initializeOnly" type="SFNode" name="endnode"></field>
+<field accessType="initializeOnly" type="SFNode" name="transnode"></field>
+<field accessType="initializeOnly" type="SFNode" name="rotscalenode"></field>
+<field accessType="inputOnly" type="SFVec3f" name="set_startpoint"></field>
+<field accessType="inputOnly" type="SFVec3f" name="set_endpoint"></field>
+<![CDATA[ecmascript:
+        function recompute(startpoint,endpoint){
+	    if (typeof endpoint === 'undefined') {
+		return;
+	    }
+            var dif = endpoint.subtract(startpoint);
+            var dist = dif.length()*0.5;
+            var dif2 = dif.multiply(0.5);
+            var norm = dif.normalize();
+            var transl = startpoint.add(dif2);
+	    if (typeof Quaternion !== 'undefined') {
+		    return {
+			    scale : new SFVec3f(1.0,dist,1.0),
+			    translation : transl,
+			    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)
+		    };
+	    } else {
+		    return {
+			    scale : new SFVec3f(1.0,dist,1.0),
+			    translation : transl,
+			    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)
+		    };
+	    }
+	}
+	function recompute_and_route(startpoint, endpoint) {
+	      var trafo = recompute(startpoint, endpoint);
+	      if (trafo) {
+		      transnode.translation = trafo.translation;
+		      rotscalenode.rotation = trafo.rotation;
+		      rotscalenode.scale = trafo.scale;
+	      }
+	}
+        function initialize(){
+            recompute_and_route(startnode.translation,endnode.translation);
+        }
+        function set_startpoint(val,t){
+            recompute_and_route(val,endnode.translation);
+        }
+        function set_endpoint(val,t){
+            recompute_and_route(startnode.translation,val);
+        }]]><IS><connect nodeField="startnode" protoField="startnode"></connect>
+<connect nodeField="endnode" protoField="endnode"></connect>
+<connect nodeField="transnode" protoField="transnode"></connect>
+<connect nodeField="rotscalenode" protoField="rotscalenode"></connect>
+<connect nodeField="set_startpoint" protoField="set_startpoint"></connect>
+<connect nodeField="set_endpoint" protoField="set_endpoint"></connect>
+</IS>
+</Script>
+</ProtoBody>
+</ProtoDeclare>
+<WorldInfo title="Connector Proto"></WorldInfo>
+<Viewpoint description="Only Viewpoint" position="0 0 5"></Viewpoint>
+<Background skyColor="0.4 0.4 0.4"></Background>
+<Transform DEF="G1"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0.7 0.2 0.2"></Material>
+</Appearance>
+<Sphere radius="0.1"></Sphere>
+</Shape>
+<PlaneSensor DEF="PS1" description="Grab to move"></PlaneSensor>
+</Transform>
+<Transform DEF="G2" translation="1 -1 0.01"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0.2 0.7 0.2"></Material>
+</Appearance>
+<Sphere radius="0.1"></Sphere>
+</Shape>
+<PlaneSensor DEF="PS2" description="Grab to move" offset="1 -1 0.01"></PlaneSensor>
+</Transform>
+<Transform DEF="G3" translation="1 1 0.01"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0.2 0.7 0.2"></Material>
+</Appearance>
+<Sphere radius="0.1"></Sphere>
+</Shape>
+<PlaneSensor DEF="PS3" description="Grab to move" offset="1 1 0.01"></PlaneSensor>
+</Transform>
+<Transform DEF="G4" translation="-1 1 0.01"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0.2 0.7 0.2"></Material>
+</Appearance>
+<Sphere radius="0.1"></Sphere>
+</Shape>
+<PlaneSensor DEF="PS4" description="Grab to move" offset="-1 1 0.01"></PlaneSensor>
+</Transform>
+<Transform DEF="transC1"><Transform DEF="rotscaleC1"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0.2 0.7 0.7" transparency="0.5"></Material>
+</Appearance>
+<Cylinder radius="0.05"></Cylinder>
+</Shape>
+</Transform>
+</Transform>
+<Transform DEF="transC2"><Transform DEF="rotscaleC2"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0.2 0.7 0.7" transparency="0.5"></Material>
+</Appearance>
+<Cylinder radius="0.05"></Cylinder>
+</Shape>
+</Transform>
+</Transform>
+<Transform DEF="transC3"><Transform DEF="rotscaleC3"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0.2 0.7 0.7" transparency="0.5"></Material>
+</Appearance>
+<Cylinder radius="0.05"></Cylinder>
+</Shape>
+</Transform>
+</Transform>
+<ProtoInstance DEF="connector1" name="x3dconnector"><fieldValue name="startnode"><Transform USE="G1"></Transform>
+</fieldValue>
+<fieldValue name="endnode"><Transform USE="G2"></Transform>
+</fieldValue>
+<fieldValue name="transnode"><Transform USE="transC1"></Transform>
+</fieldValue>
+<fieldValue name="rotscalenode"><Transform USE="rotscaleC1"></Transform>
+</fieldValue>
+</ProtoInstance>
+<ProtoInstance DEF="connector2" name="x3dconnector"><fieldValue name="startnode"><Transform USE="G1"></Transform>
+</fieldValue>
+<fieldValue name="endnode"><Transform USE="G3"></Transform>
+</fieldValue>
+<fieldValue name="transnode"><Transform USE="transC2"></Transform>
+</fieldValue>
+<fieldValue name="rotscalenode"><Transform USE="rotscaleC2"></Transform>
+</fieldValue>
+</ProtoInstance>
+<ProtoInstance DEF="connector3" name="x3dconnector"><fieldValue name="startnode"><Transform USE="G1"></Transform>
+</fieldValue>
+<fieldValue name="endnode"><Transform USE="G4"></Transform>
+</fieldValue>
+<fieldValue name="transnode"><Transform USE="transC3"></Transform>
+</fieldValue>
+<fieldValue name="rotscalenode"><Transform USE="rotscaleC3"></Transform>
+</fieldValue>
+</ProtoInstance>
+<ROUTE fromNode="PS1" fromField="translation_changed" toNode="G1" toField="translation"></ROUTE>
+<ROUTE fromNode="PS2" fromField="translation_changed" toNode="G2" toField="translation"></ROUTE>
+<ROUTE fromNode="PS3" fromField="translation_changed" toNode="G3" toField="translation"></ROUTE>
+<ROUTE fromNode="PS4" fromField="translation_changed" toNode="G4" toField="translation"></ROUTE>
+<ROUTE fromNode="G1" fromField="translation" toNode="connector1" toField="set_startpoint"></ROUTE>
+<ROUTE fromNode="G2" fromField="translation" toNode="connector1" toField="set_endpoint"></ROUTE>
+<ROUTE fromNode="G1" fromField="translation" toNode="connector2" toField="set_startpoint"></ROUTE>
+<ROUTE fromNode="G3" fromField="translation" toNode="connector2" toField="set_endpoint"></ROUTE>
+<ROUTE fromNode="G1" fromField="translation" toNode="connector3" toField="set_startpoint"></ROUTE>
+<ROUTE fromNode="G4" fromField="translation" toNode="connector3" toField="set_endpoint"></ROUTE>
+</Scene>
+</X3D>

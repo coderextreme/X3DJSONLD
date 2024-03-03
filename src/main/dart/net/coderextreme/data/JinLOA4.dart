@@ -97,7 +97,7 @@ var X3D0 =  X3D(
               version_ : SFString('2.0'),
               metadata_ : [
                 MetadataSet(
-                  name_ : SFString('HAnimHumanoid_info'),
+                  name_ : SFString('HAnimHumanoid.info'),
                   reference_ : SFString('https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid'),
                   value_ : 
                     MetadataString(
@@ -6145,7 +6145,7 @@ var X3D0 =  X3D(
                   keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
 
                 OrientationInterpolator(
-                  DEF_ : SFString('Stop_l_ankle_RotationInterpolator'),
+                  DEF_ : SFString('Stop_l_talocrural_RotationInterpolator'),
                   key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
                   keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
 
@@ -6175,7 +6175,7 @@ var X3D0 =  X3D(
                   keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
 
                 OrientationInterpolator(
-                  DEF_ : SFString('Stop_r_ankle_RotationInterpolator'),
+                  DEF_ : SFString('Stop_r_talocrural_RotationInterpolator'),
                   key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
                   keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
 
@@ -6350,7 +6350,7 @@ var X3D0 =  X3D(
                   keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
 
                 OrientationInterpolator(
-                  DEF_ : SFString('Stop_l_wrist_RotationInterpolator'),
+                  DEF_ : SFString('Stop_l_radiocarpal_RotationInterpolator'),
                   key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
                   keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
 
@@ -6470,7 +6470,7 @@ var X3D0 =  X3D(
                   keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
 
                 OrientationInterpolator(
-                  DEF_ : SFString('Stop_r_wrist_RotationInterpolator'),
+                  DEF_ : SFString('Stop_r_radiocarpal_RotationInterpolator'),
                   key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
                   keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
 
@@ -6583,7 +6583,7 @@ var X3D0 =  X3D(
                   keyValue_ : MFRotation([SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.015), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.17), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.025), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.01), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0)])),
 
                 OrientationInterpolator(
-                  DEF_ : SFString('Stand_r_ankle_RotationInterpolator'),
+                  DEF_ : SFString('Stand_r_talocrural_RotationInterpolator'),
                   key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
                   keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
 
@@ -6598,7 +6598,7 @@ var X3D0 =  X3D(
                   keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
 
                 OrientationInterpolator(
-                  DEF_ : SFString('Stand_l_ankle_RotationInterpolator'),
+                  DEF_ : SFString('Stand_l_talocrural_RotationInterpolator'),
                   key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
                   keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
 
@@ -6613,7 +6613,7 @@ var X3D0 =  X3D(
                   keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
 
                 OrientationInterpolator(
-                  DEF_ : SFString('Stand_r_wrist_RotationInterpolator'),
+                  DEF_ : SFString('Stand_r_radiocarpal_RotationInterpolator'),
                   key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
                   keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(-1), SFRotation(0.25), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
 
@@ -6628,7 +6628,7 @@ var X3D0 =  X3D(
                   keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
 
                 OrientationInterpolator(
-                  DEF_ : SFString('Stand_l_wrist_RotationInterpolator'),
+                  DEF_ : SFString('Stand_l_radiocarpal_RotationInterpolator'),
                   key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
                   keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
 
@@ -6756,7 +6756,7 @@ var X3D0 =  X3D(
                   keyValue_ : MFRotation([SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.5), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.7), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.75), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.2), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0)])),
 
                 OrientationInterpolator(
-                  DEF_ : SFString('Pitches_r_ankle_RotationInterpolator'),
+                  DEF_ : SFString('Pitches_r_talocrural_RotationInterpolator'),
                   key_ : MFFloat([SFFloat(0), SFFloat(0.25), SFFloat(0.5), SFFloat(0.75), SFFloat(1)]),
                   keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(1.5), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(1.5), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
 
@@ -6771,7 +6771,7 @@ var X3D0 =  X3D(
                   keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(1.5), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(1.5), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
 
                 OrientationInterpolator(
-                  DEF_ : SFString('Pitches_l_ankle_RotationInterpolator'),
+                  DEF_ : SFString('Pitches_l_talocrural_RotationInterpolator'),
                   key_ : MFFloat([SFFloat(0), SFFloat(0.25), SFFloat(0.5), SFFloat(0.75), SFFloat(1)]),
                   keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(1.5), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(1.5), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
 
@@ -6786,7 +6786,7 @@ var X3D0 =  X3D(
                   keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(1.5), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(1.5), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
 
                 OrientationInterpolator(
-                  DEF_ : SFString('Pitches_r_wrist_RotationInterpolator'),
+                  DEF_ : SFString('Pitches_r_radiocarpal_RotationInterpolator'),
                   key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
                   keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
 
@@ -6801,7 +6801,7 @@ var X3D0 =  X3D(
                   keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(1.5), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(1.5), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
 
                 OrientationInterpolator(
-                  DEF_ : SFString('Pitches_l_wrist_RotationInterpolator'),
+                  DEF_ : SFString('Pitches_l_radiocarpal_RotationInterpolator'),
                   key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
                   keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
 
@@ -6904,7 +6904,7 @@ var X3D0 =  X3D(
                   keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
 
                 OrientationInterpolator(
-                  DEF_ : SFString('Yaws_r_ankle_RotationInterpolator'),
+                  DEF_ : SFString('Yaws_r_talocrural_RotationInterpolator'),
                   key_ : MFFloat([SFFloat(0), SFFloat(0.25), SFFloat(0.5), SFFloat(0.75), SFFloat(1)]),
                   keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(-1), SFRotation(0), SFRotation(1.5), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(1.5), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
 
@@ -6919,7 +6919,7 @@ var X3D0 =  X3D(
                   keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
 
                 OrientationInterpolator(
-                  DEF_ : SFString('Yaws_l_ankle_RotationInterpolator'),
+                  DEF_ : SFString('Yaws_l_talocrural_RotationInterpolator'),
                   key_ : MFFloat([SFFloat(0), SFFloat(0.25), SFFloat(0.5), SFFloat(0.75), SFFloat(1)]),
                   keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(1.5), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(-1), SFRotation(0), SFRotation(1.5), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
 
@@ -6934,7 +6934,7 @@ var X3D0 =  X3D(
                   keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
 
                 OrientationInterpolator(
-                  DEF_ : SFString('Yaws_r_wrist_RotationInterpolator'),
+                  DEF_ : SFString('Yaws_r_radiocarpal_RotationInterpolator'),
                   key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
                   keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
 
@@ -6949,7 +6949,7 @@ var X3D0 =  X3D(
                   keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
 
                 OrientationInterpolator(
-                  DEF_ : SFString('Yaws_l_wrist_RotationInterpolator'),
+                  DEF_ : SFString('Yaws_l_radiocarpal_RotationInterpolator'),
                   key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
                   keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
 
@@ -7052,7 +7052,7 @@ var X3D0 =  X3D(
                   keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
 
                 OrientationInterpolator(
-                  DEF_ : SFString('Rolls_r_ankle_RotationInterpolator'),
+                  DEF_ : SFString('Rolls_r_talocrural_RotationInterpolator'),
                   key_ : MFFloat([SFFloat(0), SFFloat(0.25), SFFloat(0.5), SFFloat(0.75), SFFloat(1)]),
                   keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(1.5), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(1.5), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
 
@@ -7067,7 +7067,7 @@ var X3D0 =  X3D(
                   keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(-1), SFRotation(1.5), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(-1), SFRotation(1.5), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
 
                 OrientationInterpolator(
-                  DEF_ : SFString('Rolls_l_ankle_RotationInterpolator'),
+                  DEF_ : SFString('Rolls_l_talocrural_RotationInterpolator'),
                   key_ : MFFloat([SFFloat(0), SFFloat(0.25), SFFloat(0.5), SFFloat(0.75), SFFloat(1)]),
                   keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(-1), SFRotation(1.5), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(-1), SFRotation(1.5), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
 
@@ -7082,7 +7082,7 @@ var X3D0 =  X3D(
                   keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(1.5), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(1.5), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
 
                 OrientationInterpolator(
-                  DEF_ : SFString('Rolls_r_wrist_RotationInterpolator'),
+                  DEF_ : SFString('Rolls_r_radiocarpal_RotationInterpolator'),
                   key_ : MFFloat([SFFloat(0), SFFloat(0.25), SFFloat(0.5), SFFloat(0.75), SFFloat(1)]),
                   keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(-1), SFRotation(1.5), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(1.5), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
 
@@ -7097,7 +7097,7 @@ var X3D0 =  X3D(
                   keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(-1), SFRotation(1.5), SFRotation(0), SFRotation(0), SFRotation(-1), SFRotation(3), SFRotation(0), SFRotation(0), SFRotation(-1), SFRotation(1.5), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
 
                 OrientationInterpolator(
-                  DEF_ : SFString('Rolls_l_wrist_RotationInterpolator'),
+                  DEF_ : SFString('Rolls_l_radiocarpal_RotationInterpolator'),
                   key_ : MFFloat([SFFloat(0), SFFloat(0.25), SFFloat(0.5), SFFloat(0.75), SFFloat(1)]),
                   keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(1.5), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(-1), SFRotation(1.5), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
 
@@ -7200,7 +7200,7 @@ var X3D0 =  X3D(
                   keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
 
                 OrientationInterpolator(
-                  DEF_ : SFString('Walk_r_ankle_RotationInterpolator'),
+                  DEF_ : SFString('Walk_r_talocrural_RotationInterpolator'),
                   key_ : MFFloat([SFFloat(0), SFFloat(0.125), SFFloat(0.2083), SFFloat(0.375), SFFloat(0.4583), SFFloat(0.5), SFFloat(0.6667), SFFloat(0.75), SFFloat(0.7917), SFFloat(0.9167), SFFloat(1)]),
                   keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.3533), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.1072), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.2612), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.1268), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.01793), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.05824), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.2398), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.35), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.3322), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
 
@@ -7215,7 +7215,7 @@ var X3D0 =  X3D(
                   keyValue_ : MFRotation([SFRotation(-0.5831), SFRotation(0.03511), SFRotation(0.8116), SFRotation(0.1481), SFRotation(-0.995), SFRotation(0.02296), SFRotation(0.09674), SFRotation(0.4683), SFRotation(-1), SFRotation(0.00192), SFRotation(0.007964), SFRotation(0.4732), SFRotation(-0.998), SFRotation(-0.0158), SFRotation(-0.06102), SFRotation(0.5079), SFRotation(-0.9911), SFRotation(-0.03541), SFRotation(-0.1286), SFRotation(0.5419), SFRotation(-0.9131), SFRotation(-0.06243), SFRotation(-0.403), SFRotation(0.3361), SFRotation(-0.4306), SFRotation(-0.07962), SFRotation(-0.899), SFRotation(0.07038), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.2571), SFRotation(0.9891), SFRotation(-0.02805), SFRotation(0.1444), SFRotation(0.3879), SFRotation(-0.5831), SFRotation(0.03511), SFRotation(0.8116), SFRotation(0.1481)])),
 
                 OrientationInterpolator(
-                  DEF_ : SFString('Walk_l_ankle_RotationInterpolator'),
+                  DEF_ : SFString('Walk_l_talocrural_RotationInterpolator'),
                   key_ : MFFloat([SFFloat(0), SFFloat(0.125), SFFloat(0.2083), SFFloat(0.375), SFFloat(0.6667), SFFloat(0.9167), SFFloat(1)]),
                   keyValue_ : MFRotation([SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.06714), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.2152), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.3184), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.4717), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.2912), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.1222), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.06714)])),
 
@@ -7235,7 +7235,7 @@ var X3D0 =  X3D(
                   keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(-1), SFRotation(0.1056), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0.09018), SFRotation(0), SFRotation(0), SFRotation(-1), SFRotation(0.1056)])),
 
                 OrientationInterpolator(
-                  DEF_ : SFString('Walk_r_wrist_RotationInterpolator'),
+                  DEF_ : SFString('Walk_r_radiocarpal_RotationInterpolator'),
                   key_ : MFFloat([SFFloat(0), SFFloat(0.375), SFFloat(0.9167), SFFloat(1)]),
                   keyValue_ : MFRotation([SFRotation(-0.8129), SFRotation(0.4759), SFRotation(-0.3357), SFRotation(0.1346), SFRotation(0.1533), SFRotation(-0.9878), SFRotation(0.02582), SFRotation(0.3902), SFRotation(-0.5701), SFRotation(0.7604), SFRotation(-0.311), SFRotation(0.366), SFRotation(-0.8129), SFRotation(0.4759), SFRotation(-0.3357), SFRotation(0.1346)])),
 
@@ -7250,7 +7250,7 @@ var X3D0 =  X3D(
                   keyValue_ : MFRotation([SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.09346), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.3197), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.1564), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.09346)])),
 
                 OrientationInterpolator(
-                  DEF_ : SFString('Walk_l_wrist_RotationInterpolator'),
+                  DEF_ : SFString('Walk_l_radiocarpal_RotationInterpolator'),
                   key_ : MFFloat([SFFloat(0), SFFloat(0.375), SFFloat(0.9167), SFFloat(1)]),
                   keyValue_ : MFRotation([SFRotation(0), SFRotation(-1), SFRotation(0), SFRotation(0.461076), SFRotation(-0.330195), SFRotation(-0.927451), SFRotation(0.175516), SFRotation(0.538852), SFRotation(0.0327774), SFRotation(-0.999314), SFRotation(-0.0172185), SFRotation(0.492033), SFRotation(0), SFRotation(-1), SFRotation(0), SFRotation(0.461076)])),
 
@@ -7358,7 +7358,7 @@ var X3D0 =  X3D(
                   keyValue_ : MFRotation([SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(1.01), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.426), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.705), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(2.179), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(1.01)])),
 
                 OrientationInterpolator(
-                  DEF_ : SFString('Run_l_ankle_RotationInterpolator_Run'),
+                  DEF_ : SFString('Run_l_talocrural_RotationInterpolator_Run'),
                   key_ : MFFloat([SFFloat(0), SFFloat(0.22), SFFloat(0.3), SFFloat(0.4), SFFloat(1)]),
                   keyValue_ : MFRotation([SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.0374), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.1037), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.4328), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.1929), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.03574)])),
 
@@ -7373,7 +7373,7 @@ var X3D0 =  X3D(
                   keyValue_ : MFRotation([SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.705), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(2.179), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(1.01), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.426), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.705)])),
 
                 OrientationInterpolator(
-                  DEF_ : SFString('Run_r_ankle_RotationInterpolator_Run'),
+                  DEF_ : SFString('Run_r_talocrural_RotationInterpolator_Run'),
                   key_ : MFFloat([SFFloat(0), SFFloat(0.4), SFFloat(0.71), SFFloat(0.8), SFFloat(0.82), SFFloat(1)]),
                   keyValue_ : MFRotation([SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.2323), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.07843), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.32), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.374), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.3478), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.2323)])),
 
@@ -7388,7 +7388,7 @@ var X3D0 =  X3D(
                   keyValue_ : MFRotation([SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(1.85), SFRotation(-0.99), SFRotation(-0.19), SFRotation(0.18), SFRotation(1.35), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.975), SFRotation(-0.99), SFRotation(-0.09), SFRotation(-0.02), SFRotation(1.55), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(1.85)])),
 
                 OrientationInterpolator(
-                  DEF_ : SFString('Run_l_wrist_RotationInterpolator_Run'),
+                  DEF_ : SFString('Run_l_radiocarpal_RotationInterpolator_Run'),
                   key_ : MFFloat([SFFloat(0), SFFloat(0.25), SFFloat(0.5), SFFloat(0.75), SFFloat(1)]),
                   keyValue_ : MFRotation([SFRotation(-0.25), SFRotation(-1), SFRotation(0.08), SFRotation(0.14), SFRotation(0.25), SFRotation(1), SFRotation(0.08), SFRotation(0.14), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(-0.25), SFRotation(1), SFRotation(0.08), SFRotation(-0.14), SFRotation(-0.25), SFRotation(1), SFRotation(0.08), SFRotation(0.14)])),
 
@@ -7403,7 +7403,7 @@ var X3D0 =  X3D(
                   keyValue_ : MFRotation([SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.975), SFRotation(-0.99), SFRotation(0.09), SFRotation(0.02), SFRotation(1.55), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(1.85), SFRotation(-0.99), SFRotation(0.19), SFRotation(-0.18), SFRotation(1.35), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.975)])),
 
                 OrientationInterpolator(
-                  DEF_ : SFString('Run_r_wrist_RotationInterpolator_Run'),
+                  DEF_ : SFString('Run_r_radiocarpal_RotationInterpolator_Run'),
                   key_ : MFFloat([SFFloat(0), SFFloat(1)]),
                   keyValue_ : MFRotation([SFRotation(-0.917742), SFRotation(-0.237244), SFRotation(-0.318536), SFRotation(0.214273), SFRotation(-0.917742), SFRotation(-0.237244), SFRotation(-0.318536), SFRotation(0.214273)])),
 
@@ -7496,7 +7496,7 @@ var X3D0 =  X3D(
                   keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
 
                 OrientationInterpolator(
-                  DEF_ : SFString('Jump_r_ankle_RotationInterpolator'),
+                  DEF_ : SFString('Jump_r_talocrural_RotationInterpolator'),
                   key_ : MFFloat([SFFloat(0), SFFloat(0.1), SFFloat(0.15), SFFloat(0.25), SFFloat(0.28), SFFloat(0.32), SFFloat(0.35), SFFloat(0.64), SFFloat(0.76), SFFloat(0.84), SFFloat(0.88), SFFloat(0.92), SFFloat(0.96), SFFloat(1)]),
                   keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.6735), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.6735), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.3527), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.3038), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.07964), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(1.3), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.6509), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.3001), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.2087), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.3756), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.3279), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.1193), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
 
@@ -7511,7 +7511,7 @@ var X3D0 =  X3D(
                   keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(1.63), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(1.7), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(1.55), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.8943), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.3698), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.4963), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.3829), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.5169), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
 
                 OrientationInterpolator(
-                  DEF_ : SFString('Jump_l_ankle_RotationInterpolator'),
+                  DEF_ : SFString('Jump_l_talocrural_RotationInterpolator'),
                   key_ : MFFloat([SFFloat(0), SFFloat(0.28), SFFloat(0.32), SFFloat(0.36), SFFloat(0.4), SFFloat(0.44), SFFloat(0.48), SFFloat(0.64), SFFloat(0.76), SFFloat(0.84), SFFloat(0.88), SFFloat(0.92), SFFloat(0.96), SFFloat(1)]),
                   keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.625), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.625), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.3364), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.2742), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.05078), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.2833), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.6667), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.2833), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.2108), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.375), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.3146), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.1174), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
 
@@ -7531,7 +7531,7 @@ var X3D0 =  X3D(
                   keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.1892), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.1892), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
 
                 OrientationInterpolator(
-                  DEF_ : SFString('Jump_r_wrist_RotationInterpolator'),
+                  DEF_ : SFString('Jump_r_radiocarpal_RotationInterpolator'),
                   key_ : MFFloat([SFFloat(0), SFFloat(0.28), SFFloat(0.32), SFFloat(0.64), SFFloat(0.76), SFFloat(1)]),
                   keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(-0.0585279), SFRotation(0.983903), SFRotation(-0.168849), SFRotation(1.85956), SFRotation(-0.0585279), SFRotation(0.983903), SFRotation(-0.168849), SFRotation(1.85956), SFRotation(-0.00222418), SFRotation(0.99801), SFRotation(-0.0630095), SFRotation(1.46072), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0.497349), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
 
@@ -7546,7 +7546,7 @@ var X3D0 =  X3D(
                   keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0.9992), SFRotation(0.02042), SFRotation(0.03558), SFRotation(4.688), SFRotation(0.9992), SFRotation(0.02042), SFRotation(0.03558), SFRotation(4.688), SFRotation(0.9989), SFRotation(-0.04623), SFRotation(0.005159), SFRotation(4.079), SFRotation(-0.8687), SFRotation(-0.2525), SFRotation(-0.4261), SFRotation(1.501), SFRotation(-0.941), SFRotation(-0.2893), SFRotation(-0.1754), SFRotation(0.4788), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
 
                 OrientationInterpolator(
-                  DEF_ : SFString('Jump_l_wrist_RotationInterpolator'),
+                  DEF_ : SFString('Jump_l_radiocarpal_RotationInterpolator'),
                   key_ : MFFloat([SFFloat(0), SFFloat(0.48), SFFloat(0.52), SFFloat(0.64), SFFloat(0.76), SFFloat(0.88), SFFloat(1)]),
                   keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0.0672928), SFRotation(0.989475), SFRotation(-0.128107), SFRotation(4.15574), SFRotation(0.0672928), SFRotation(0.989475), SFRotation(-0.128107), SFRotation(4.15574), SFRotation(0.00364942), SFRotation(0.999901), SFRotation(0.0135896), SFRotation(4.5822), SFRotation(0), SFRotation(-1), SFRotation(0), SFRotation(0.655922), SFRotation(-0.00050618), SFRotation(-0.999999), SFRotation(0.0012782), SFRotation(1.28397), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
 
@@ -7659,7 +7659,7 @@ var X3D0 =  X3D(
                   keyValue_ : MFRotation([SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(-0.55), SFRotation(-1), SFRotation(0.25), SFRotation(0), SFRotation(2.55), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0)])),
 
                 OrientationInterpolator(
-                  DEF_ : SFString('Kick_l_wrist_RollInterpolator'),
+                  DEF_ : SFString('Kick_l_radiocarpal_RollInterpolator'),
                   key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
                   keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0.55), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
 
@@ -7689,7 +7689,7 @@ var X3D0 =  X3D(
                   keyValue_ : MFRotation([SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(-0.55), SFRotation(1), SFRotation(0.25), SFRotation(0), SFRotation(-2.55), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0)])),
 
                 OrientationInterpolator(
-                  DEF_ : SFString('Kick_r_wrist_RollInterpolator'),
+                  DEF_ : SFString('Kick_r_radiocarpal_RollInterpolator'),
                   key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
                   keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(-0.55), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
 
@@ -7719,7 +7719,7 @@ var X3D0 =  X3D(
                   keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
 
                 OrientationInterpolator(
-                  DEF_ : SFString('Kick_r_ankle_PitchInterpolator'),
+                  DEF_ : SFString('Kick_r_talocrural_PitchInterpolator'),
                   key_ : MFFloat([SFFloat(0), SFFloat(0.2), SFFloat(0.4), SFFloat(0.6), SFFloat(0.7), SFFloat(1)]),
                   keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.9), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.95), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0.75), SFRotation(-1), SFRotation(0), SFRotation(0), SFRotation(0.05), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0)])),
 
@@ -8155,7 +8155,7 @@ var X3D0 =  X3D(
               fromField_ : SFString('fraction_changed'),
               fromNode_ : SFString('StopTimer'),
               toField_ : SFString('set_fraction'),
-              toNode_ : SFString('Stop_l_ankle_RotationInterpolator')),
+              toNode_ : SFString('Stop_l_talocrural_RotationInterpolator')),
 
             ROUTE(
               fromField_ : SFString('fraction_changed'),
@@ -8191,7 +8191,7 @@ var X3D0 =  X3D(
               fromField_ : SFString('fraction_changed'),
               fromNode_ : SFString('StopTimer'),
               toField_ : SFString('set_fraction'),
-              toNode_ : SFString('Stop_r_ankle_RotationInterpolator')),
+              toNode_ : SFString('Stop_r_talocrural_RotationInterpolator')),
 
             ROUTE(
               fromField_ : SFString('fraction_changed'),
@@ -8401,7 +8401,7 @@ var X3D0 =  X3D(
               fromField_ : SFString('fraction_changed'),
               fromNode_ : SFString('StopTimer'),
               toField_ : SFString('set_fraction'),
-              toNode_ : SFString('Stop_l_wrist_RotationInterpolator')),
+              toNode_ : SFString('Stop_l_radiocarpal_RotationInterpolator')),
 
             ROUTE(
               fromField_ : SFString('fraction_changed'),
@@ -8545,7 +8545,7 @@ var X3D0 =  X3D(
               fromField_ : SFString('fraction_changed'),
               fromNode_ : SFString('StopTimer'),
               toField_ : SFString('set_fraction'),
-              toNode_ : SFString('Stop_r_wrist_RotationInterpolator')),
+              toNode_ : SFString('Stop_r_radiocarpal_RotationInterpolator')),
 
             ROUTE(
               fromField_ : SFString('fraction_changed'),
@@ -8687,9 +8687,9 @@ var X3D0 =  X3D(
 
             ROUTE(
               fromField_ : SFString('value_changed'),
-              fromNode_ : SFString('Stop_l_ankle_RotationInterpolator'),
+              fromNode_ : SFString('Stop_l_talocrural_RotationInterpolator'),
               toField_ : SFString('set_rotation'),
-              toNode_ : SFString('hanim_l_ankle')),
+              toNode_ : SFString('hanim_l_talocrural')),
 
             ROUTE(
               fromField_ : SFString('value_changed'),
@@ -8711,9 +8711,9 @@ var X3D0 =  X3D(
 
             ROUTE(
               fromField_ : SFString('value_changed'),
-              fromNode_ : SFString('Stop_r_ankle_RotationInterpolator'),
+              fromNode_ : SFString('Stop_r_talocrural_RotationInterpolator'),
               toField_ : SFString('set_rotation'),
-              toNode_ : SFString('hanim_r_ankle')),
+              toNode_ : SFString('hanim_r_talocrural')),
 
             ROUTE(
               fromField_ : SFString('value_changed'),
@@ -8747,9 +8747,9 @@ var X3D0 =  X3D(
 
             ROUTE(
               fromField_ : SFString('value_changed'),
-              fromNode_ : SFString('Stop_l_wrist_RotationInterpolator'),
+              fromNode_ : SFString('Stop_l_radiocarpal_RotationInterpolator'),
               toField_ : SFString('set_rotation'),
-              toNode_ : SFString('hanim_l_wrist')),
+              toNode_ : SFString('hanim_l_radiocarpal')),
 
             ROUTE(
               fromField_ : SFString('value_changed'),
@@ -8765,15 +8765,15 @@ var X3D0 =  X3D(
 
             ROUTE(
               fromField_ : SFString('value_changed'),
-              fromNode_ : SFString('Stop_r_wrist_RotationInterpolator'),
+              fromNode_ : SFString('Stop_r_radiocarpal_RotationInterpolator'),
               toField_ : SFString('set_rotation'),
-              toNode_ : SFString('hanim_r_wrist')),
+              toNode_ : SFString('hanim_r_radiocarpal')),
 
             ROUTE(
               fromField_ : SFString('fraction_changed'),
               fromNode_ : SFString('StandTimer'),
               toField_ : SFString('set_fraction'),
-              toNode_ : SFString('Stand_r_ankle_RotationInterpolator')),
+              toNode_ : SFString('Stand_r_talocrural_RotationInterpolator')),
 
             ROUTE(
               fromField_ : SFString('fraction_changed'),
@@ -8791,7 +8791,7 @@ var X3D0 =  X3D(
               fromField_ : SFString('fraction_changed'),
               fromNode_ : SFString('StandTimer'),
               toField_ : SFString('set_fraction'),
-              toNode_ : SFString('Stand_l_ankle_RotationInterpolator')),
+              toNode_ : SFString('Stand_l_talocrural_RotationInterpolator')),
 
             ROUTE(
               fromField_ : SFString('fraction_changed'),
@@ -8815,7 +8815,7 @@ var X3D0 =  X3D(
               fromField_ : SFString('fraction_changed'),
               fromNode_ : SFString('StandTimer'),
               toField_ : SFString('set_fraction'),
-              toNode_ : SFString('Stand_r_wrist_RotationInterpolator')),
+              toNode_ : SFString('Stand_r_radiocarpal_RotationInterpolator')),
 
             ROUTE(
               fromField_ : SFString('fraction_changed'),
@@ -8833,7 +8833,7 @@ var X3D0 =  X3D(
               fromField_ : SFString('fraction_changed'),
               fromNode_ : SFString('StandTimer'),
               toField_ : SFString('set_fraction'),
-              toNode_ : SFString('Stand_l_wrist_RotationInterpolator')),
+              toNode_ : SFString('Stand_l_radiocarpal_RotationInterpolator')),
 
             ROUTE(
               fromField_ : SFString('fraction_changed'),
@@ -8969,9 +8969,9 @@ var X3D0 =  X3D(
 
             ROUTE(
               fromField_ : SFString('value_changed'),
-              fromNode_ : SFString('Stand_r_ankle_RotationInterpolator'),
+              fromNode_ : SFString('Stand_r_talocrural_RotationInterpolator'),
               toField_ : SFString('set_rotation'),
-              toNode_ : SFString('hanim_r_ankle')),
+              toNode_ : SFString('hanim_r_talocrural')),
 
             ROUTE(
               fromField_ : SFString('value_changed'),
@@ -8987,9 +8987,9 @@ var X3D0 =  X3D(
 
             ROUTE(
               fromField_ : SFString('value_changed'),
-              fromNode_ : SFString('Stand_l_ankle_RotationInterpolator'),
+              fromNode_ : SFString('Stand_l_talocrural_RotationInterpolator'),
               toField_ : SFString('set_rotation'),
-              toNode_ : SFString('hanim_l_ankle')),
+              toNode_ : SFString('hanim_l_talocrural')),
 
             ROUTE(
               fromField_ : SFString('value_changed'),
@@ -9005,9 +9005,9 @@ var X3D0 =  X3D(
 
             ROUTE(
               fromField_ : SFString('value_changed'),
-              fromNode_ : SFString('Stand_r_wrist_RotationInterpolator'),
+              fromNode_ : SFString('Stand_r_radiocarpal_RotationInterpolator'),
               toField_ : SFString('set_rotation'),
-              toNode_ : SFString('hanim_r_wrist')),
+              toNode_ : SFString('hanim_r_radiocarpal')),
 
             ROUTE(
               fromField_ : SFString('value_changed'),
@@ -9023,9 +9023,9 @@ var X3D0 =  X3D(
 
             ROUTE(
               fromField_ : SFString('value_changed'),
-              fromNode_ : SFString('Stand_l_wrist_RotationInterpolator'),
+              fromNode_ : SFString('Stand_l_radiocarpal_RotationInterpolator'),
               toField_ : SFString('set_rotation'),
-              toNode_ : SFString('hanim_l_wrist')),
+              toNode_ : SFString('hanim_l_radiocarpal')),
 
             ROUTE(
               fromField_ : SFString('value_changed'),
@@ -9067,7 +9067,7 @@ var X3D0 =  X3D(
               fromField_ : SFString('fraction_changed'),
               fromNode_ : SFString('PitchTimer'),
               toField_ : SFString('set_fraction'),
-              toNode_ : SFString('Pitches_r_ankle_RotationInterpolator')),
+              toNode_ : SFString('Pitches_r_talocrural_RotationInterpolator')),
 
             ROUTE(
               fromField_ : SFString('fraction_changed'),
@@ -9085,7 +9085,7 @@ var X3D0 =  X3D(
               fromField_ : SFString('fraction_changed'),
               fromNode_ : SFString('PitchTimer'),
               toField_ : SFString('set_fraction'),
-              toNode_ : SFString('Pitches_l_ankle_RotationInterpolator')),
+              toNode_ : SFString('Pitches_l_talocrural_RotationInterpolator')),
 
             ROUTE(
               fromField_ : SFString('fraction_changed'),
@@ -9109,7 +9109,7 @@ var X3D0 =  X3D(
               fromField_ : SFString('fraction_changed'),
               fromNode_ : SFString('PitchTimer'),
               toField_ : SFString('set_fraction'),
-              toNode_ : SFString('Pitches_r_wrist_RotationInterpolator')),
+              toNode_ : SFString('Pitches_r_radiocarpal_RotationInterpolator')),
 
             ROUTE(
               fromField_ : SFString('fraction_changed'),
@@ -9127,7 +9127,7 @@ var X3D0 =  X3D(
               fromField_ : SFString('fraction_changed'),
               fromNode_ : SFString('PitchTimer'),
               toField_ : SFString('set_fraction'),
-              toNode_ : SFString('Pitches_l_wrist_RotationInterpolator')),
+              toNode_ : SFString('Pitches_l_radiocarpal_RotationInterpolator')),
 
             ROUTE(
               fromField_ : SFString('fraction_changed'),
@@ -9233,9 +9233,9 @@ var X3D0 =  X3D(
 
             ROUTE(
               fromField_ : SFString('value_changed'),
-              fromNode_ : SFString('Pitches_r_ankle_RotationInterpolator'),
+              fromNode_ : SFString('Pitches_r_talocrural_RotationInterpolator'),
               toField_ : SFString('set_rotation'),
-              toNode_ : SFString('hanim_r_ankle')),
+              toNode_ : SFString('hanim_r_talocrural')),
 
             ROUTE(
               fromField_ : SFString('value_changed'),
@@ -9251,9 +9251,9 @@ var X3D0 =  X3D(
 
             ROUTE(
               fromField_ : SFString('value_changed'),
-              fromNode_ : SFString('Pitches_l_ankle_RotationInterpolator'),
+              fromNode_ : SFString('Pitches_l_talocrural_RotationInterpolator'),
               toField_ : SFString('set_rotation'),
-              toNode_ : SFString('hanim_l_ankle')),
+              toNode_ : SFString('hanim_l_talocrural')),
 
             ROUTE(
               fromField_ : SFString('value_changed'),
@@ -9269,9 +9269,9 @@ var X3D0 =  X3D(
 
             ROUTE(
               fromField_ : SFString('value_changed'),
-              fromNode_ : SFString('Pitches_r_wrist_RotationInterpolator'),
+              fromNode_ : SFString('Pitches_r_radiocarpal_RotationInterpolator'),
               toField_ : SFString('set_rotation'),
-              toNode_ : SFString('hanim_r_wrist')),
+              toNode_ : SFString('hanim_r_radiocarpal')),
 
             ROUTE(
               fromField_ : SFString('value_changed'),
@@ -9287,9 +9287,9 @@ var X3D0 =  X3D(
 
             ROUTE(
               fromField_ : SFString('value_changed'),
-              fromNode_ : SFString('Pitches_l_wrist_RotationInterpolator'),
+              fromNode_ : SFString('Pitches_l_radiocarpal_RotationInterpolator'),
               toField_ : SFString('set_rotation'),
-              toNode_ : SFString('hanim_l_wrist')),
+              toNode_ : SFString('hanim_l_radiocarpal')),
 
             ROUTE(
               fromField_ : SFString('value_changed'),
@@ -9331,7 +9331,7 @@ var X3D0 =  X3D(
               fromField_ : SFString('fraction_changed'),
               fromNode_ : SFString('YawTimer'),
               toField_ : SFString('set_fraction'),
-              toNode_ : SFString('Yaws_r_ankle_RotationInterpolator')),
+              toNode_ : SFString('Yaws_r_talocrural_RotationInterpolator')),
 
             ROUTE(
               fromField_ : SFString('fraction_changed'),
@@ -9349,7 +9349,7 @@ var X3D0 =  X3D(
               fromField_ : SFString('fraction_changed'),
               fromNode_ : SFString('YawTimer'),
               toField_ : SFString('set_fraction'),
-              toNode_ : SFString('Yaws_l_ankle_RotationInterpolator')),
+              toNode_ : SFString('Yaws_l_talocrural_RotationInterpolator')),
 
             ROUTE(
               fromField_ : SFString('fraction_changed'),
@@ -9373,7 +9373,7 @@ var X3D0 =  X3D(
               fromField_ : SFString('fraction_changed'),
               fromNode_ : SFString('YawTimer'),
               toField_ : SFString('set_fraction'),
-              toNode_ : SFString('Yaws_r_wrist_RotationInterpolator')),
+              toNode_ : SFString('Yaws_r_radiocarpal_RotationInterpolator')),
 
             ROUTE(
               fromField_ : SFString('fraction_changed'),
@@ -9391,7 +9391,7 @@ var X3D0 =  X3D(
               fromField_ : SFString('fraction_changed'),
               fromNode_ : SFString('YawTimer'),
               toField_ : SFString('set_fraction'),
-              toNode_ : SFString('Yaws_l_wrist_RotationInterpolator')),
+              toNode_ : SFString('Yaws_l_radiocarpal_RotationInterpolator')),
 
             ROUTE(
               fromField_ : SFString('fraction_changed'),
@@ -9497,9 +9497,9 @@ var X3D0 =  X3D(
 
             ROUTE(
               fromField_ : SFString('value_changed'),
-              fromNode_ : SFString('Yaws_r_ankle_RotationInterpolator'),
+              fromNode_ : SFString('Yaws_r_talocrural_RotationInterpolator'),
               toField_ : SFString('set_rotation'),
-              toNode_ : SFString('hanim_r_ankle')),
+              toNode_ : SFString('hanim_r_talocrural')),
 
             ROUTE(
               fromField_ : SFString('value_changed'),
@@ -9515,9 +9515,9 @@ var X3D0 =  X3D(
 
             ROUTE(
               fromField_ : SFString('value_changed'),
-              fromNode_ : SFString('Yaws_l_ankle_RotationInterpolator'),
+              fromNode_ : SFString('Yaws_l_talocrural_RotationInterpolator'),
               toField_ : SFString('set_rotation'),
-              toNode_ : SFString('hanim_l_ankle')),
+              toNode_ : SFString('hanim_l_talocrural')),
 
             ROUTE(
               fromField_ : SFString('value_changed'),
@@ -9533,9 +9533,9 @@ var X3D0 =  X3D(
 
             ROUTE(
               fromField_ : SFString('value_changed'),
-              fromNode_ : SFString('Yaws_r_wrist_RotationInterpolator'),
+              fromNode_ : SFString('Yaws_r_radiocarpal_RotationInterpolator'),
               toField_ : SFString('set_rotation'),
-              toNode_ : SFString('hanim_r_wrist')),
+              toNode_ : SFString('hanim_r_radiocarpal')),
 
             ROUTE(
               fromField_ : SFString('value_changed'),
@@ -9551,9 +9551,9 @@ var X3D0 =  X3D(
 
             ROUTE(
               fromField_ : SFString('value_changed'),
-              fromNode_ : SFString('Yaws_l_wrist_RotationInterpolator'),
+              fromNode_ : SFString('Yaws_l_radiocarpal_RotationInterpolator'),
               toField_ : SFString('set_rotation'),
-              toNode_ : SFString('hanim_l_wrist')),
+              toNode_ : SFString('hanim_l_radiocarpal')),
 
             ROUTE(
               fromField_ : SFString('value_changed'),
@@ -9595,7 +9595,7 @@ var X3D0 =  X3D(
               fromField_ : SFString('fraction_changed'),
               fromNode_ : SFString('RollTimer'),
               toField_ : SFString('set_fraction'),
-              toNode_ : SFString('Rolls_r_ankle_RotationInterpolator')),
+              toNode_ : SFString('Rolls_r_talocrural_RotationInterpolator')),
 
             ROUTE(
               fromField_ : SFString('fraction_changed'),
@@ -9613,7 +9613,7 @@ var X3D0 =  X3D(
               fromField_ : SFString('fraction_changed'),
               fromNode_ : SFString('RollTimer'),
               toField_ : SFString('set_fraction'),
-              toNode_ : SFString('Rolls_l_ankle_RotationInterpolator')),
+              toNode_ : SFString('Rolls_l_talocrural_RotationInterpolator')),
 
             ROUTE(
               fromField_ : SFString('fraction_changed'),
@@ -9637,7 +9637,7 @@ var X3D0 =  X3D(
               fromField_ : SFString('fraction_changed'),
               fromNode_ : SFString('RollTimer'),
               toField_ : SFString('set_fraction'),
-              toNode_ : SFString('Rolls_r_wrist_RotationInterpolator')),
+              toNode_ : SFString('Rolls_r_radiocarpal_RotationInterpolator')),
 
             ROUTE(
               fromField_ : SFString('fraction_changed'),
@@ -9655,7 +9655,7 @@ var X3D0 =  X3D(
               fromField_ : SFString('fraction_changed'),
               fromNode_ : SFString('RollTimer'),
               toField_ : SFString('set_fraction'),
-              toNode_ : SFString('Rolls_l_wrist_RotationInterpolator')),
+              toNode_ : SFString('Rolls_l_radiocarpal_RotationInterpolator')),
 
             ROUTE(
               fromField_ : SFString('fraction_changed'),
@@ -9761,9 +9761,9 @@ var X3D0 =  X3D(
 
             ROUTE(
               fromField_ : SFString('value_changed'),
-              fromNode_ : SFString('Rolls_r_ankle_RotationInterpolator'),
+              fromNode_ : SFString('Rolls_r_talocrural_RotationInterpolator'),
               toField_ : SFString('set_rotation'),
-              toNode_ : SFString('hanim_r_ankle')),
+              toNode_ : SFString('hanim_r_talocrural')),
 
             ROUTE(
               fromField_ : SFString('value_changed'),
@@ -9779,9 +9779,9 @@ var X3D0 =  X3D(
 
             ROUTE(
               fromField_ : SFString('value_changed'),
-              fromNode_ : SFString('Rolls_l_ankle_RotationInterpolator'),
+              fromNode_ : SFString('Rolls_l_talocrural_RotationInterpolator'),
               toField_ : SFString('set_rotation'),
-              toNode_ : SFString('hanim_l_ankle')),
+              toNode_ : SFString('hanim_l_talocrural')),
 
             ROUTE(
               fromField_ : SFString('value_changed'),
@@ -9797,9 +9797,9 @@ var X3D0 =  X3D(
 
             ROUTE(
               fromField_ : SFString('value_changed'),
-              fromNode_ : SFString('Rolls_r_wrist_RotationInterpolator'),
+              fromNode_ : SFString('Rolls_r_radiocarpal_RotationInterpolator'),
               toField_ : SFString('set_rotation'),
-              toNode_ : SFString('hanim_r_wrist')),
+              toNode_ : SFString('hanim_r_radiocarpal')),
 
             ROUTE(
               fromField_ : SFString('value_changed'),
@@ -9815,9 +9815,9 @@ var X3D0 =  X3D(
 
             ROUTE(
               fromField_ : SFString('value_changed'),
-              fromNode_ : SFString('Rolls_l_wrist_RotationInterpolator'),
+              fromNode_ : SFString('Rolls_l_radiocarpal_RotationInterpolator'),
               toField_ : SFString('set_rotation'),
-              toNode_ : SFString('hanim_l_wrist')),
+              toNode_ : SFString('hanim_l_radiocarpal')),
 
             ROUTE(
               fromField_ : SFString('value_changed'),
@@ -9859,7 +9859,7 @@ var X3D0 =  X3D(
               fromField_ : SFString('fraction_changed'),
               fromNode_ : SFString('WalkTimer'),
               toField_ : SFString('set_fraction'),
-              toNode_ : SFString('Walk_r_ankle_RotationInterpolator')),
+              toNode_ : SFString('Walk_r_talocrural_RotationInterpolator')),
 
             ROUTE(
               fromField_ : SFString('fraction_changed'),
@@ -9877,7 +9877,7 @@ var X3D0 =  X3D(
               fromField_ : SFString('fraction_changed'),
               fromNode_ : SFString('WalkTimer'),
               toField_ : SFString('set_fraction'),
-              toNode_ : SFString('Walk_l_ankle_RotationInterpolator')),
+              toNode_ : SFString('Walk_l_talocrural_RotationInterpolator')),
 
             ROUTE(
               fromField_ : SFString('fraction_changed'),
@@ -9901,7 +9901,7 @@ var X3D0 =  X3D(
               fromField_ : SFString('fraction_changed'),
               fromNode_ : SFString('WalkTimer'),
               toField_ : SFString('set_fraction'),
-              toNode_ : SFString('Walk_r_wrist_RotationInterpolator')),
+              toNode_ : SFString('Walk_r_radiocarpal_RotationInterpolator')),
 
             ROUTE(
               fromField_ : SFString('fraction_changed'),
@@ -9919,7 +9919,7 @@ var X3D0 =  X3D(
               fromField_ : SFString('fraction_changed'),
               fromNode_ : SFString('WalkTimer'),
               toField_ : SFString('set_fraction'),
-              toNode_ : SFString('Walk_l_wrist_RotationInterpolator')),
+              toNode_ : SFString('Walk_l_radiocarpal_RotationInterpolator')),
 
             ROUTE(
               fromField_ : SFString('fraction_changed'),
@@ -10025,9 +10025,9 @@ var X3D0 =  X3D(
 
             ROUTE(
               fromField_ : SFString('value_changed'),
-              fromNode_ : SFString('Walk_r_ankle_RotationInterpolator'),
+              fromNode_ : SFString('Walk_r_talocrural_RotationInterpolator'),
               toField_ : SFString('set_rotation'),
-              toNode_ : SFString('hanim_r_ankle')),
+              toNode_ : SFString('hanim_r_talocrural')),
 
             ROUTE(
               fromField_ : SFString('value_changed'),
@@ -10043,9 +10043,9 @@ var X3D0 =  X3D(
 
             ROUTE(
               fromField_ : SFString('value_changed'),
-              fromNode_ : SFString('Walk_l_ankle_RotationInterpolator'),
+              fromNode_ : SFString('Walk_l_talocrural_RotationInterpolator'),
               toField_ : SFString('set_rotation'),
-              toNode_ : SFString('hanim_l_ankle')),
+              toNode_ : SFString('hanim_l_talocrural')),
 
             ROUTE(
               fromField_ : SFString('value_changed'),
@@ -10061,9 +10061,9 @@ var X3D0 =  X3D(
 
             ROUTE(
               fromField_ : SFString('value_changed'),
-              fromNode_ : SFString('Walk_r_wrist_RotationInterpolator'),
+              fromNode_ : SFString('Walk_r_radiocarpal_RotationInterpolator'),
               toField_ : SFString('set_rotation'),
-              toNode_ : SFString('hanim_r_wrist')),
+              toNode_ : SFString('hanim_r_radiocarpal')),
 
             ROUTE(
               fromField_ : SFString('value_changed'),
@@ -10079,9 +10079,9 @@ var X3D0 =  X3D(
 
             ROUTE(
               fromField_ : SFString('value_changed'),
-              fromNode_ : SFString('Walk_l_wrist_RotationInterpolator'),
+              fromNode_ : SFString('Walk_l_radiocarpal_RotationInterpolator'),
               toField_ : SFString('set_rotation'),
-              toNode_ : SFString('hanim_l_wrist')),
+              toNode_ : SFString('hanim_l_radiocarpal')),
 
             ROUTE(
               fromField_ : SFString('value_changed'),
@@ -10123,7 +10123,7 @@ var X3D0 =  X3D(
               fromField_ : SFString('fraction_changed'),
               fromNode_ : SFString('RunTimer'),
               toField_ : SFString('set_fraction'),
-              toNode_ : SFString('Run_r_ankle_RotationInterpolator_Run')),
+              toNode_ : SFString('Run_r_talocrural_RotationInterpolator_Run')),
 
             ROUTE(
               fromField_ : SFString('fraction_changed'),
@@ -10141,7 +10141,7 @@ var X3D0 =  X3D(
               fromField_ : SFString('fraction_changed'),
               fromNode_ : SFString('RunTimer'),
               toField_ : SFString('set_fraction'),
-              toNode_ : SFString('Run_l_ankle_RotationInterpolator_Run')),
+              toNode_ : SFString('Run_l_talocrural_RotationInterpolator_Run')),
 
             ROUTE(
               fromField_ : SFString('fraction_changed'),
@@ -10165,7 +10165,7 @@ var X3D0 =  X3D(
               fromField_ : SFString('fraction_changed'),
               fromNode_ : SFString('RunTimer'),
               toField_ : SFString('set_fraction'),
-              toNode_ : SFString('Run_r_wrist_RotationInterpolator_Run')),
+              toNode_ : SFString('Run_r_radiocarpal_RotationInterpolator_Run')),
 
             ROUTE(
               fromField_ : SFString('fraction_changed'),
@@ -10183,7 +10183,7 @@ var X3D0 =  X3D(
               fromField_ : SFString('fraction_changed'),
               fromNode_ : SFString('RunTimer'),
               toField_ : SFString('set_fraction'),
-              toNode_ : SFString('Run_l_wrist_RotationInterpolator_Run')),
+              toNode_ : SFString('Run_l_radiocarpal_RotationInterpolator_Run')),
 
             ROUTE(
               fromField_ : SFString('fraction_changed'),
@@ -10289,9 +10289,9 @@ var X3D0 =  X3D(
 
             ROUTE(
               fromField_ : SFString('value_changed'),
-              fromNode_ : SFString('Run_r_ankle_RotationInterpolator_Run'),
+              fromNode_ : SFString('Run_r_talocrural_RotationInterpolator_Run'),
               toField_ : SFString('set_rotation'),
-              toNode_ : SFString('hanim_r_ankle')),
+              toNode_ : SFString('hanim_r_talocrural')),
 
             ROUTE(
               fromField_ : SFString('value_changed'),
@@ -10307,9 +10307,9 @@ var X3D0 =  X3D(
 
             ROUTE(
               fromField_ : SFString('value_changed'),
-              fromNode_ : SFString('Run_l_ankle_RotationInterpolator_Run'),
+              fromNode_ : SFString('Run_l_talocrural_RotationInterpolator_Run'),
               toField_ : SFString('set_rotation'),
-              toNode_ : SFString('hanim_l_ankle')),
+              toNode_ : SFString('hanim_l_talocrural')),
 
             ROUTE(
               fromField_ : SFString('value_changed'),
@@ -10325,9 +10325,9 @@ var X3D0 =  X3D(
 
             ROUTE(
               fromField_ : SFString('value_changed'),
-              fromNode_ : SFString('Run_r_wrist_RotationInterpolator_Run'),
+              fromNode_ : SFString('Run_r_radiocarpal_RotationInterpolator_Run'),
               toField_ : SFString('set_rotation'),
-              toNode_ : SFString('hanim_r_wrist')),
+              toNode_ : SFString('hanim_r_radiocarpal')),
 
             ROUTE(
               fromField_ : SFString('value_changed'),
@@ -10343,9 +10343,9 @@ var X3D0 =  X3D(
 
             ROUTE(
               fromField_ : SFString('value_changed'),
-              fromNode_ : SFString('Run_l_wrist_RotationInterpolator_Run'),
+              fromNode_ : SFString('Run_l_radiocarpal_RotationInterpolator_Run'),
               toField_ : SFString('set_rotation'),
-              toNode_ : SFString('hanim_l_wrist')),
+              toNode_ : SFString('hanim_l_radiocarpal')),
 
             ROUTE(
               fromField_ : SFString('value_changed'),
@@ -10387,7 +10387,7 @@ var X3D0 =  X3D(
               fromField_ : SFString('fraction_changed'),
               fromNode_ : SFString('JumpTimer'),
               toField_ : SFString('set_fraction'),
-              toNode_ : SFString('Jump_r_ankle_RotationInterpolator')),
+              toNode_ : SFString('Jump_r_talocrural_RotationInterpolator')),
 
             ROUTE(
               fromField_ : SFString('fraction_changed'),
@@ -10405,7 +10405,7 @@ var X3D0 =  X3D(
               fromField_ : SFString('fraction_changed'),
               fromNode_ : SFString('JumpTimer'),
               toField_ : SFString('set_fraction'),
-              toNode_ : SFString('Jump_l_ankle_RotationInterpolator')),
+              toNode_ : SFString('Jump_l_talocrural_RotationInterpolator')),
 
             ROUTE(
               fromField_ : SFString('fraction_changed'),
@@ -10429,7 +10429,7 @@ var X3D0 =  X3D(
               fromField_ : SFString('fraction_changed'),
               fromNode_ : SFString('JumpTimer'),
               toField_ : SFString('set_fraction'),
-              toNode_ : SFString('Jump_r_wrist_RotationInterpolator')),
+              toNode_ : SFString('Jump_r_radiocarpal_RotationInterpolator')),
 
             ROUTE(
               fromField_ : SFString('fraction_changed'),
@@ -10447,7 +10447,7 @@ var X3D0 =  X3D(
               fromField_ : SFString('fraction_changed'),
               fromNode_ : SFString('JumpTimer'),
               toField_ : SFString('set_fraction'),
-              toNode_ : SFString('Jump_l_wrist_RotationInterpolator')),
+              toNode_ : SFString('Jump_l_radiocarpal_RotationInterpolator')),
 
             ROUTE(
               fromField_ : SFString('fraction_changed'),
@@ -10553,9 +10553,9 @@ var X3D0 =  X3D(
 
             ROUTE(
               fromField_ : SFString('value_changed'),
-              fromNode_ : SFString('Jump_r_ankle_RotationInterpolator'),
+              fromNode_ : SFString('Jump_r_talocrural_RotationInterpolator'),
               toField_ : SFString('set_rotation'),
-              toNode_ : SFString('hanim_r_ankle')),
+              toNode_ : SFString('hanim_r_talocrural')),
 
             ROUTE(
               fromField_ : SFString('value_changed'),
@@ -10571,9 +10571,9 @@ var X3D0 =  X3D(
 
             ROUTE(
               fromField_ : SFString('value_changed'),
-              fromNode_ : SFString('Jump_l_ankle_RotationInterpolator'),
+              fromNode_ : SFString('Jump_l_talocrural_RotationInterpolator'),
               toField_ : SFString('set_rotation'),
-              toNode_ : SFString('hanim_l_ankle')),
+              toNode_ : SFString('hanim_l_talocrural')),
 
             ROUTE(
               fromField_ : SFString('value_changed'),
@@ -10589,9 +10589,9 @@ var X3D0 =  X3D(
 
             ROUTE(
               fromField_ : SFString('value_changed'),
-              fromNode_ : SFString('Jump_r_wrist_RotationInterpolator'),
+              fromNode_ : SFString('Jump_r_radiocarpal_RotationInterpolator'),
               toField_ : SFString('set_rotation'),
-              toNode_ : SFString('hanim_r_wrist')),
+              toNode_ : SFString('hanim_r_radiocarpal')),
 
             ROUTE(
               fromField_ : SFString('value_changed'),
@@ -10607,9 +10607,9 @@ var X3D0 =  X3D(
 
             ROUTE(
               fromField_ : SFString('value_changed'),
-              fromNode_ : SFString('Jump_l_wrist_RotationInterpolator'),
+              fromNode_ : SFString('Jump_l_radiocarpal_RotationInterpolator'),
               toField_ : SFString('set_rotation'),
-              toNode_ : SFString('hanim_l_wrist')),
+              toNode_ : SFString('hanim_l_radiocarpal')),
 
             ROUTE(
               fromField_ : SFString('value_changed'),
@@ -10675,7 +10675,7 @@ var X3D0 =  X3D(
               fromField_ : SFString('fraction_changed'),
               fromNode_ : SFString('KickTimer'),
               toField_ : SFString('set_fraction'),
-              toNode_ : SFString('Kick_l_wrist_RollInterpolator')),
+              toNode_ : SFString('Kick_l_radiocarpal_RollInterpolator')),
 
             ROUTE(
               fromField_ : SFString('fraction_changed'),
@@ -10711,7 +10711,7 @@ var X3D0 =  X3D(
               fromField_ : SFString('fraction_changed'),
               fromNode_ : SFString('KickTimer'),
               toField_ : SFString('set_fraction'),
-              toNode_ : SFString('Kick_r_wrist_RollInterpolator')),
+              toNode_ : SFString('Kick_r_radiocarpal_RollInterpolator')),
 
             ROUTE(
               fromField_ : SFString('fraction_changed'),
@@ -10747,7 +10747,7 @@ var X3D0 =  X3D(
               fromField_ : SFString('fraction_changed'),
               fromNode_ : SFString('KickTimer'),
               toField_ : SFString('set_fraction'),
-              toNode_ : SFString('Kick_r_ankle_PitchInterpolator')),
+              toNode_ : SFString('Kick_r_talocrural_PitchInterpolator')),
 
             ROUTE(
               fromField_ : SFString('fraction_changed'),
@@ -10817,9 +10817,9 @@ var X3D0 =  X3D(
 
             ROUTE(
               fromField_ : SFString('value_changed'),
-              fromNode_ : SFString('Kick_l_wrist_RollInterpolator'),
+              fromNode_ : SFString('Kick_l_radiocarpal_RollInterpolator'),
               toField_ : SFString('set_rotation'),
-              toNode_ : SFString('hanim_l_wrist')),
+              toNode_ : SFString('hanim_l_radiocarpal')),
 
             ROUTE(
               fromField_ : SFString('value_changed'),
@@ -10835,9 +10835,9 @@ var X3D0 =  X3D(
 
             ROUTE(
               fromField_ : SFString('value_changed'),
-              fromNode_ : SFString('Kick_r_wrist_RollInterpolator'),
+              fromNode_ : SFString('Kick_r_radiocarpal_RollInterpolator'),
               toField_ : SFString('set_rotation'),
-              toNode_ : SFString('hanim_r_wrist')),
+              toNode_ : SFString('hanim_r_radiocarpal')),
 
             ROUTE(
               fromField_ : SFString('value_changed'),
@@ -10853,9 +10853,9 @@ var X3D0 =  X3D(
 
             ROUTE(
               fromField_ : SFString('value_changed'),
-              fromNode_ : SFString('Kick_r_ankle_PitchInterpolator'),
+              fromNode_ : SFString('Kick_r_talocrural_PitchInterpolator'),
               toField_ : SFString('set_rotation'),
-              toNode_ : SFString('hanim_r_ankle')),
+              toNode_ : SFString('hanim_r_talocrural')),
 
             ROUTE(
               fromField_ : SFString('value_changed'),
@@ -10871,9 +10871,9 @@ var X3D0 =  X3D(
 
             ROUTE(
               fromField_ : SFString('value_changed'),
-              fromNode_ : SFString('Kick_r_ankle_PitchInterpolator'),
+              fromNode_ : SFString('Kick_r_talocrural_PitchInterpolator'),
               toField_ : SFString('set_rotation'),
-              toNode_ : SFString('hanim_l_ankle')),
+              toNode_ : SFString('hanim_l_talocrural')),
 
             ROUTE(
               fromField_ : SFString('value_changed'),
@@ -11390,5 +11390,5 @@ var X3D0 =  X3D(
               fromNode_ : SFString('Stop_Touch'),
               toField_ : SFString('set_startTime'),
               toNode_ : SFString('StopTimer')),
-          /*<Script url='../node/jinloa4.js'/>*/]));
+          /*<Script url='../node/jinloa4.js'> </Script>*/]));
 void main() { exit(0); }

@@ -133,32 +133,32 @@ CComposedCubeMapTexture* ComposedCubeMapTexture28 = (CComposedCubeMapTexture *)(
 CImageTexture* ImageTexture29 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
 ImageTexture29->setDEF("backShader");
 ImageTexture29->setUrl(new CString[2]{"../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_back.png"}, 2);
-ComposedCubeMapTexture28->setBack(*ImageTexture29);
+ComposedCubeMapTexture28->setBackTexture(*ImageTexture29);
 
 CImageTexture* ImageTexture30 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
 ImageTexture30->setDEF("bottomShader");
 ImageTexture30->setUrl(new CString[2]{"../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"}, 2);
-ComposedCubeMapTexture28->setBottom(*ImageTexture30);
+ComposedCubeMapTexture28->setBottomTexture(*ImageTexture30);
 
 CImageTexture* ImageTexture31 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
 ImageTexture31->setDEF("frontShader");
 ImageTexture31->setUrl(new CString[2]{"../resources/images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_front.png"}, 2);
-ComposedCubeMapTexture28->setFront(*ImageTexture31);
+ComposedCubeMapTexture28->setFrontTexture(*ImageTexture31);
 
 CImageTexture* ImageTexture32 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
 ImageTexture32->setDEF("leftShader");
 ImageTexture32->setUrl(new CString[2]{"../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_left.png"}, 2);
-ComposedCubeMapTexture28->setLeft(*ImageTexture32);
+ComposedCubeMapTexture28->setLeftTexture(*ImageTexture32);
 
 CImageTexture* ImageTexture33 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
 ImageTexture33->setDEF("rightShader");
 ImageTexture33->setUrl(new CString[2]{"../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_right.png"}, 2);
-ComposedCubeMapTexture28->setRight(*ImageTexture33);
+ComposedCubeMapTexture28->setRightTexture(*ImageTexture33);
 
 CImageTexture* ImageTexture34 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
 ImageTexture34->setDEF("topShader");
 ImageTexture34->setUrl(new CString[2]{"../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_top.png"}, 2);
-ComposedCubeMapTexture28->setTop(*ImageTexture34);
+ComposedCubeMapTexture28->setTopTexture(*ImageTexture34);
 
 Appearance26->setTexture(*ComposedCubeMapTexture28);
 
