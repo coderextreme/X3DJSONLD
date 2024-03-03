@@ -18,7 +18,7 @@
     <meta content='a flower' name='description'/>
   </head>
   <Scene>
-    <NavigationInfo avatarSize='0.25 1.6 0.75' transitionType='"LINEAR"' type='"EXAMINE" "ANY"'/>
+    <NavigationInfo avatarSize='0.15 1.53 0.75' transitionType='"LINEAR"' type='"EXAMINE" "ANY"'/>
     <!-- Images courtesy of Paul Debevec's Light Probe Image Gallery -->
     <Background DEF='background' backUrl='"../resources/images/all_probes/beach_cross/beach_back.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png"' bottomUrl='"../resources/images/all_probes/beach_cross/beach_bottom.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"' frontUrl='"../resources/images/all_probes/beach_cross/beach_front.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png"' leftUrl='"../resources/images/all_probes/beach_cross/beach_left.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png"' rightUrl='"../resources/images/all_probes/beach_cross/beach_right.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png"' topUrl='"../resources/images/all_probes/beach_cross/beach_top.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png"'/>
     <Viewpoint description='Transparent rose' position='0 0 40'/>

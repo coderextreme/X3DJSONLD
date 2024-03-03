@@ -9,7 +9,7 @@
     <meta content='Blender 4.0.1' name='generator'/>
   </head>
   <Scene>
-    <NavigationInfo avatarSize='0.25 1.6 0.75' transitionType='"LINEAR"' type='"EXAMINE" "ANY"'/>
+    <NavigationInfo avatarSize='0.15 1.53 0.75' transitionType='"LINEAR"' type='"EXAMINE" "ANY"'/>
     <Background DEF='WO_World' groundColor='0.05087609 0.05087609 0.05087609' skyColor='0.05087609 0.05087609 0.05087609'/>
     <Transform>
       <Shape DEF='SiteShape'>

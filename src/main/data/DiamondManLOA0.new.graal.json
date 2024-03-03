@@ -111,7 +111,7 @@ of Articulation, Level of Articulation Zero"
 },
 {
 "@name":"translated",
-"@content":"01 March 2024"
+"@content":"03 March 2024"
 },
 {
 "@name":"generator",
@@ -141,6 +141,7 @@ based on can be found at: http://www.cis.upenn.edu/~badler/anthro/89-71.ps, .pdf
 },
 { "NavigationInfo":
 {
+"@avatarSize":[0.15,1.53,0.75],
 "@speed":1.5
 }
 },

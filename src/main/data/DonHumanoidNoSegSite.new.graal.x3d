@@ -63,7 +63,7 @@
         </Transform>
       </Transform>
     </Group>
-    <NavigationInfo avatarSize='0.25 1.6 0.75' speed='1.5' transitionType='"LINEAR"' type='"EXAMINE" "ANY"'/>
+    <NavigationInfo avatarSize='0.15 1.53 0.75' speed='1.5' transitionType='"LINEAR"' type='"EXAMINE" "ANY"'/>
     <Viewpoint description='default'/>
     <HAnimHumanoid DEF='hanim_HAnim' name='HAnim' info='"humanoidVersion=2.0"' version='2.0'>
       <!-- <LOD containerField='skin'> (Switch whichChoice='0' and LOD parents each already work in view3dscene) -->
