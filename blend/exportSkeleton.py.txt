@@ -1,6 +1,6 @@
 import bpy;
 
-output_path = "C:/Users/john/Tufani/blender.humanoid.json"
+output_path = "C:/Users/john/WinterAndSpring/blender.humanoid.json"
 
 armature = None
 for obj in bpy.context.scene.objects:

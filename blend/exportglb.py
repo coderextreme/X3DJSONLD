@@ -3,8 +3,8 @@ import os
 
 objs = bpy.data.objects
 objs.remove(objs["Cube"], do_unlink=True)
-#bpy.ops.import_scene.fbx(filepath = "../../Tufani/InputDir73/maya to c4d files/gramps_my_c4d_anim.fbx")
-bpy.ops.wm.collada_import(filepath = "../../Tufani/InputDir73/maya to c4d files/gramps-ANIM.dae", auto_connect = True, find_chains = True, fix_orientation = True)
+#bpy.ops.import_scene.fbx(filepath = "../../WinterAndSpring/InputDir73/maya to c4d files/gramps_my_c4d_anim.fbx")
+bpy.ops.wm.collada_import(filepath = "../../WinterAndSpring/InputDir73/maya to c4d files/gramps-ANIM.dae", auto_connect = True, find_chains = True, fix_orientation = True)
 
 def export_objects(path):
     # path fixing (many other validations to be added here)
