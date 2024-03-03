@@ -52,7 +52,7 @@
     <ExternProtoDeclare name='ArtDeco33' appinfo='UniversalMediaMaterials prototype' documentation='https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials' url='"ArtDecoPrototypes.x3d#ArtDeco33" "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco33" "ArtDecoPrototypes.wrl#ArtDeco33" "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco33"'/>
     <ExternProtoDeclare name='ArtDeco34' appinfo='UniversalMediaMaterials prototype' documentation='https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials' url='"ArtDecoPrototypes.x3d#ArtDeco34" "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco34" "ArtDecoPrototypes.wrl#ArtDeco34" "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco34"'/>
     <Group>
-      <NavigationInfo avatarSize='0.25 1.6 0.75' headlight='false' transitionType='"LINEAR"' type='"EXAMINE" "ANY"'/>
+      <NavigationInfo avatarSize='0.15 1.53 0.75' headlight='false' transitionType='"LINEAR"' type='"EXAMINE" "ANY"'/>
       <Viewpoint DEF='Front' description='Front view' position='0 0 12'/>
       <Viewpoint DEF='PersRight' description='Low Right' orientation='0.74291 0.30772 0.59447 1.2171' position='6.9282 -6.9282 6.9282'/>
       <Viewpoint DEF='PersLeft' description='Low Left' orientation='0.74291 -0.30772 -0.59447 1.2171' position='-6.9282 -6.9282 6.9282'/>
