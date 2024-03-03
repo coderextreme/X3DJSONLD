@@ -29,7 +29,7 @@
         },
         {
           "@name": "modified",
-          "@content": "5 December 2021"
+          "@content": "23 April 2023"
         },
         {
           "@name": "reference",
@@ -45,7 +45,7 @@
         },
         {
           "@name": "identifier",
-          "@content": "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/SplitChannels.x3d"
+          "@content": "https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/SplitChannels.x3d"
         },
         {
           "@name": "generator",
@@ -57,7 +57,7 @@
         },
         {
           "@name": "translated",
-          "@content": "01 March 2024"
+          "@content": "03 March 2024"
         },
         {
           "@name": "generator",
@@ -78,7 +78,7 @@
         },
         {
           "NavigationInfo": {
-            "@type": "NONE"
+            "@type": "\"NONE\""
           }
         },
         {
@@ -211,7 +211,7 @@
                               "ImageTexture": {
                                 "@url": [
                                   "images/line.png",
-                                  "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/line.png"
+                                  "https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/images/line.png"
                                 ]
                               }
                             }
@@ -280,8 +280,10 @@
                             ],
                             "-fontStyle": {
                               "FontStyle": {
+                                "@DEF": "VolumeFontStyle",
                                 "@family": [
-                                  "Times"
+                                  "Times",
+                                  "SERIF"
                                 ],
                                 "@style": "BOLD"
                               }
@@ -401,7 +403,7 @@
                               "ImageTexture": {
                                 "@url": [
                                   "images/line.png",
-                                  "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/line.png"
+                                  "https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/images/line.png"
                                 ]
                               }
                             }
@@ -470,10 +472,7 @@
                             ],
                             "-fontStyle": {
                               "FontStyle": {
-                                "@family": [
-                                  "Times"
-                                ],
-                                "@style": "BOLD"
+                                "@USE": "VolumeFontStyle"
                               }
                             }
                           }
@@ -581,7 +580,7 @@
                   "@description": "Violin",
                   "@url": [
                     "sound/violin.mp3",
-                    "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3"
+                    "https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3"
                   ]
                 }
               }
@@ -631,7 +630,7 @@
                         "ImageTexture": {
                           "@url": [
                             "images/loudspeaker.png",
-                            "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/loudspeaker.png"
+                            "https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/images/loudspeaker.png"
                           ]
                         }
                       }

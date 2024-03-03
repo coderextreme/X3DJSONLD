@@ -68,7 +68,7 @@
         },
         {
           "@name": "translated",
-          "@content": "01 March 2024"
+          "@content": "03 March 2024"
         },
         {
           "@name": "generator",
@@ -151,7 +151,7 @@
                       "-texture": {
                         "ComposedCubeMapTexture": {
                           "@DEF": "texture",
-                          "-back": {
+                          "-backTexture": {
                             "ImageTexture": {
                               "@url": [
                                 "../resources/images/bBK.png",
@@ -159,7 +159,7 @@
                               ]
                             }
                           },
-                          "-bottom": {
+                          "-bottomTexture": {
                             "ImageTexture": {
                               "@url": [
                                 "../resources/images/bBT.png",
@@ -167,7 +167,7 @@
                               ]
                             }
                           },
-                          "-front": {
+                          "-frontTexture": {
                             "ImageTexture": {
                               "@url": [
                                 "../resources/images/bFR.png",
@@ -175,7 +175,7 @@
                               ]
                             }
                           },
-                          "-left": {
+                          "-leftTexture": {
                             "ImageTexture": {
                               "@url": [
                                 "../resources/images/bLF.png",
@@ -183,7 +183,7 @@
                               ]
                             }
                           },
-                          "-right": {
+                          "-rightTexture": {
                             "ImageTexture": {
                               "@url": [
                                 "../resources/images/bRT.png",
@@ -191,7 +191,7 @@
                               ]
                             }
                           },
-                          "-top": {
+                          "-topTexture": {
                             "ImageTexture": {
                               "@url": [
                                 "../resources/images/bTP.png",
