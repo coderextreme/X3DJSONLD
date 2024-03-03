@@ -116,9 +116,9 @@ do
 done
 
 echo Comparing old xml and pretty printed intermediate xml
-ls -d "$@" | grep -v intermediate | grep -v "\.new" |  sed -e 's/\.x3d/.newPrettyPrint.intermediate.x3d/' -e "$ROOTTOLOCAL" -e 's/^\/c/../' | sed -e 's/ /$/g' | tr '\n' '\0' | while read -d $'\0' -r i
+ls -d "$@" | grep -v intermediate | grep -v "\.new" |  sed -e 's/\.x3d/.new.javaPrettyPrint.intermediate.x3d/' -e "$ROOTTOLOCAL" -e 's/^\/c/../' | sed -e 's/ /$/g' | tr '\n' '\0' | while read -d $'\0' -r i
 do
-	X3D=`mydirname "$i" | sed -e "$LOCALTOROOT" `/`mybasename "$i" .newPrettyPrint.intermediate.x3d | sed 's/\\$/ /g'`.x3d 
+	X3D=`mydirname "$i" | sed -e "$LOCALTOROOT" `/`mybasename "$i" .new.javaPrettyPrint.intermediate.x3d | sed 's/\\$/ /g'`.x3d 
 	# echo "$X3D" "$i"
 	echo "${NODE}" --trace-warnings "${NODEDIR}/xmldiff.js" "$X3D" "$i"
 	"${NODE}" --trace-warnings "${NODEDIR}/xmldiff.js" "$X3D" "$i"

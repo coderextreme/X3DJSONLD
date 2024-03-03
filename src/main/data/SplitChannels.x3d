@@ -7,17 +7,17 @@
     <meta content='This work presents an innovative solution of the spatial sound in X3DOM framework, that based on a combinational methodology. Specifically, we suggested the enrichment of X3DOM with spatial sound features, using both the X3D sound nodes and the structure of Web Audio API.' name='info'/>
     <meta content='Efi Lakka, Athanasios Malamos, Dick Puk, Don Brutzman' name='creator'/>
     <meta content='28 October 2020' name='created'/>
-    <meta content='5 December 2021' name='modified'/>
+    <meta content='23 April 2023' name='modified'/>
     <meta content='CHANGELOG.txt' name='reference'/>
     <meta content='credit for audio files' name='TODO'/>
     <meta content='http://www.medialab.hmu.gr/minipages/x3domAudio' name='reference'/>
-    <meta content='https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/SplitChannels.x3d' name='identifier'/>
+    <meta content='https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/SplitChannels.x3d' name='identifier'/>
     <meta content='X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit' name='generator'/>
     <meta content='../license.html' name='license'/>
   </head>
   <Scene>
     <WorldInfo title='SplitChannels.x3d'/>
-    <NavigationInfo id='NAV' type='NONE'/>
+    <NavigationInfo id='NAV' type='"NONE"'/>
     <Background skyColor='0.200 0.200 0.210'/>
     <Viewpoint orientation='1 0 0 -0.5' position='0.0 500.0 600.0' retainUserOffsets='true'/>
     <Transform DEF='PowerR' translation='100 400 400'>
@@ -33,7 +33,7 @@
         <Shape>
           <Appearance DEF='audio_emit2'>
             <Material diffuseColor='0 1 0' emissiveColor='0.8 0.8 0.8' specularColor='0.01 0.01 0.01'/>
-            <ImageTexture url='"images/line.png" "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/line.png"'/>
+            <ImageTexture url='"images/line.png" "https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/images/line.png"'/>
           </Appearance>
           <Box size='25 83 0.01'/>
         </Shape>
@@ -43,8 +43,8 @@
           <Appearance>
             <Material ambientIntensity='0.0933' diffuseColor='0.345 0.345 0.882' shininess='0.51' specularColor='0.46 0.46 0.46'/>
           </Appearance>
-          <Text string='Right Channel Volume'>
-            <FontStyle family='"Times"' style='BOLD'/>
+          <Text string='"Right Channel Volume"'>
+            <FontStyle DEF='VolumeFontStyle' family='"Times" "SERIF"' style='BOLD'/>
           </Text>
         </Shape>
       </Transform>
@@ -62,7 +62,7 @@
         <Shape>
           <Appearance DEF='audio_emit4'>
             <Material diffuseColor='0 1 0' emissiveColor='0.8 0.8 0.8' specularColor='0.01 0.01 0.01'/>
-            <ImageTexture url='"images/line.png" "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/line.png"'/>
+            <ImageTexture url='"images/line.png" "https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/images/line.png"'/>
           </Appearance>
           <Box size='25 83 0.01'/>
         </Shape>
@@ -72,8 +72,8 @@
           <Appearance>
             <Material ambientIntensity='0.0933' diffuseColor='0.345 0.345 0.882' shininess='0.51' specularColor='0.46 0.46 0.46'/>
           </Appearance>
-          <Text string='Left Channel Volume'>
-            <FontStyle family='"Times"' style='BOLD'/>
+          <Text string='"Left Channel Volume"'>
+            <FontStyle USE='VolumeFontStyle'/>
           </Text>
         </Shape>
       </Transform>
@@ -100,13 +100,13 @@
       </Gain>
     </StreamAudioDestination>
     <ChannelSplitter DEF='ChannelSplitter' channelCountMode='EXPLICIT'>
-      <AudioClip containerField='children' description='Violin' url='"sound/violin.mp3" "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3"'/>
+      <AudioClip containerField='children' description='Violin' url='"sound/violin.mp3" "https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3"'/>
     </ChannelSplitter>
     <Transform DEF='Audio3' rotation='1 0 0 -0.5' translation='0 100 0'>
       <Shape>
         <Appearance DEF='audio_emit5'>
           <Material diffuseColor='0.3 1 0.3' emissiveColor='0.8 0.8 0.8' specularColor='0.01 0.01 0.01'/>
-          <ImageTexture url='"images/loudspeaker.png" "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/loudspeaker.png"'/>
+          <ImageTexture url='"images/loudspeaker.png" "https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/images/loudspeaker.png"'/>
         </Appearance>
         <Box size='100 100 0.001'/>
       </Shape>

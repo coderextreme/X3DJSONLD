@@ -631,7 +631,7 @@ prepareDocument: function(DOMImplementation, jsobj) {
 NavigationInfoTypeToXML : function(str) {
 	let y = str;
 	console.log("X3DJSONLD jsonstring replacing "+ y);
-	str = y.replace(/\\/g, "");
+	// str = y.replace(/\\/g, "");
 	if (y !== str) {
 		console.log("with                           "+ str);
 	} else {
