@@ -26,7 +26,7 @@
 <Scene><WorldInfo title="HAnimModelHandLeft.x3d"></WorldInfo>
 <HAnimHumanoid name="Hand_Left" DEF="hanim_Hand_Left" loa="4" version="2.0"><!--original HAnimHumanoid info='"authorName=Kwan-Hee YOO, Don Brutzman and Joe Williams"'--><MetadataSet containerField="metadata" name="HAnimHumanoid.info" reference="https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid"><MetadataString name="authorName" value="&quot;Kwan-Hee YOO, Don Brutzman and Joe Williams&quot;" containerField="value"></MetadataString>
 </MetadataSet>
-<HAnimJoint name="humanoid_root" DEF="hanim_humanoid_root" ulimit="0 0 0" llimit="0 0 0" containerField="skeleton"><!--Might consider putting a HAnimSegment here, but that doesn't help with re-use of this hand model--><HAnimJoint name="l_radiocarpal" DEF="hanim_l_radiocarpal" description="connection joint of hand to leg above" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_carpal" DEF="hanim_l_carpal"><Transform><Shape DEF="HAnimJointShape"><Sphere radius="0.025"></Sphere>
+<HAnimJoint name="humanoid_root" DEF="hanim_humanoid_root" containerField="skeleton"><!--Might consider putting a HAnimSegment here, but that doesn't help with re-use of this hand model--><HAnimJoint name="l_radiocarpal" DEF="hanim_l_radiocarpal" description="connection joint of hand to leg above"><HAnimSegment name="l_carpal" DEF="hanim_l_carpal"><Transform><Shape DEF="HAnimJointShape"><Sphere radius="0.025"></Sphere>
 <Appearance containerField="appearance" DEF="HAnimJointAppearanceBlue"><Material containerField="material" diffuseColor="0 0 1"></Material>
 </Appearance>
 </Shape>
@@ -47,7 +47,7 @@
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
-<!--MC1--><HAnimJoint name="l_midcarpal_1" DEF="hanim_l_midcarpal_1" center="0.14 0.09 0" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_trapezium" DEF="hanim_l_trapezium"><Transform translation="0.14 0.09 0"><Shape DEF="HAnimNewJointShape"><Sphere radius="0.025"></Sphere>
+<!--MC1--><HAnimJoint name="l_midcarpal_1" DEF="hanim_l_midcarpal_1" center="0.14 0.09 0"><HAnimSegment name="l_trapezium" DEF="hanim_l_trapezium"><Transform translation="0.14 0.09 0"><Shape DEF="HAnimNewJointShape"><Sphere radius="0.025"></Sphere>
 <Appearance containerField="appearance" DEF="HAnimJointAppearanceRed"><Material containerField="material" diffuseColor="1 0 0"></Material>
 </Appearance>
 </Shape>
@@ -63,7 +63,7 @@
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
-<!--thumb finger--><HAnimJoint name="l_carpometacarpal_1" DEF="hanim_l_carpometacarpal_1" center="0.2 0.15 0" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_metacarpal_1" DEF="hanim_l_metacarpal_1"><Transform translation="0.2 0.15 0"><Shape USE="HAnimJointShape"></Shape>
+<!--thumb finger--><HAnimJoint name="l_carpometacarpal_1" DEF="hanim_l_carpometacarpal_1" center="0.2 0.15 0"><HAnimSegment name="l_metacarpal_1" DEF="hanim_l_metacarpal_1"><Transform translation="0.2 0.15 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <Shape><Appearance containerField="appearance"><Material containerField="material" emissiveColor="1 1 1"></Material>
 </Appearance>
@@ -71,7 +71,7 @@
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="l_metacarpophalangeal_1" DEF="hanim_l_metacarpophalangeal_1" center="0.3 0.3 0" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_carpal_proximal_phalanx_1" DEF="hanim_l_carpal_proximal_phalanx_1"><Transform translation="0.3 0.3 0"><Shape USE="HAnimJointShape"></Shape>
+<HAnimJoint name="l_metacarpophalangeal_1" DEF="hanim_l_metacarpophalangeal_1" center="0.3 0.3 0"><HAnimSegment name="l_carpal_proximal_phalanx_1" DEF="hanim_l_carpal_proximal_phalanx_1"><Transform translation="0.3 0.3 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <Shape><Appearance containerField="appearance"><Material containerField="material" emissiveColor="1 1 1"></Material>
 </Appearance>
@@ -79,7 +79,7 @@
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="l_carpal_interphalangeal_1" DEF="hanim_l_carpal_interphalangeal_1" center="0.35 0.4 0" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_carpal_distal_phalanx_1" DEF="hanim_l_carpal_distal_phalanx_1"><Transform translation="0.35 0.4 0"><Shape USE="HAnimJointShape"></Shape>
+<HAnimJoint name="l_carpal_interphalangeal_1" DEF="hanim_l_carpal_interphalangeal_1" center="0.35 0.4 0"><HAnimSegment name="l_carpal_distal_phalanx_1" DEF="hanim_l_carpal_distal_phalanx_1"><Transform translation="0.35 0.4 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <Shape><Appearance containerField="appearance"><Material containerField="material" emissiveColor="1 1 1"></Material>
 </Appearance>
@@ -91,7 +91,7 @@
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<!--MC2--><HAnimJoint name="l_midcarpal_2" DEF="hanim_l_midcarpal_2" center="0.07 0.07 0" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_trapezoid" DEF="hanim_l_trapezoid"><Transform translation="0.07 0.07 0"><Shape USE="HAnimNewJointShape"></Shape>
+<!--MC2--><HAnimJoint name="l_midcarpal_2" DEF="hanim_l_midcarpal_2" center="0.07 0.07 0"><HAnimSegment name="l_trapezoid" DEF="hanim_l_trapezoid"><Transform translation="0.07 0.07 0"><Shape USE="HAnimNewJointShape"></Shape>
 </Transform>
 <Shape><Appearance containerField="appearance"><Material containerField="material" emissiveColor="1 1 1"></Material>
 </Appearance>
@@ -99,7 +99,7 @@
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
-<!--index finger--><HAnimJoint name="l_carpometacarpal_2" DEF="hanim_l_carpometacarpal_2" center="0.1 0.2 0" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_metacarpal_2" DEF="hanim_l_metacarpal_2"><Transform translation="0.1 0.2 0"><Shape USE="HAnimJointShape"></Shape>
+<!--index finger--><HAnimJoint name="l_carpometacarpal_2" DEF="hanim_l_carpometacarpal_2" center="0.1 0.2 0"><HAnimSegment name="l_metacarpal_2" DEF="hanim_l_metacarpal_2"><Transform translation="0.1 0.2 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <Shape><Appearance containerField="appearance"><Material containerField="material" emissiveColor="1 1 1"></Material>
 </Appearance>
@@ -107,7 +107,7 @@
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="l_metacarpophalangeal_2" DEF="hanim_l_metacarpophalangeal_2" center="0.15 0.5 0" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_carpal_proximal_phalanx_2" DEF="hanim_l_carpal_proximal_phalanx_2"><Transform translation="0.15 0.5 0"><Shape USE="HAnimJointShape"></Shape>
+<HAnimJoint name="l_metacarpophalangeal_2" DEF="hanim_l_metacarpophalangeal_2" center="0.15 0.5 0"><HAnimSegment name="l_carpal_proximal_phalanx_2" DEF="hanim_l_carpal_proximal_phalanx_2"><Transform translation="0.15 0.5 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <Shape><Appearance containerField="appearance"><Material containerField="material" emissiveColor="1 1 1"></Material>
 </Appearance>
@@ -115,7 +115,7 @@
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="l_carpal_proximal_interphalangeal_2" DEF="hanim_l_carpal_proximal_interphalangeal_2" center="0.2 0.7 0" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_carpal_middle_phalanx_2" DEF="hanim_l_carpal_middle_phalanx_2"><Transform translation="0.2 0.7 0"><Shape USE="HAnimJointShape"></Shape>
+<HAnimJoint name="l_carpal_proximal_interphalangeal_2" DEF="hanim_l_carpal_proximal_interphalangeal_2" center="0.2 0.7 0"><HAnimSegment name="l_carpal_middle_phalanx_2" DEF="hanim_l_carpal_middle_phalanx_2"><Transform translation="0.2 0.7 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <Shape><Appearance containerField="appearance"><Material containerField="material" emissiveColor="1 1 1"></Material>
 </Appearance>
@@ -123,7 +123,7 @@
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="l_carpal_distal_interphalangeal_2" DEF="hanim_l_carpal_distal_interphalangeal_2" center="0.24 0.87 0" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_carpal_distal_phalanx_2" DEF="hanim_l_carpal_distal_phalanx_2"><Transform translation="0.24 0.87 0"><Shape USE="HAnimJointShape"></Shape>
+<HAnimJoint name="l_carpal_distal_interphalangeal_2" DEF="hanim_l_carpal_distal_interphalangeal_2" center="0.24 0.87 0"><HAnimSegment name="l_carpal_distal_phalanx_2" DEF="hanim_l_carpal_distal_phalanx_2"><Transform translation="0.24 0.87 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <Shape><Appearance containerField="appearance"><Material containerField="material" emissiveColor="1 1 1"></Material>
 </Appearance>
@@ -136,7 +136,7 @@
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<!--MC3--><HAnimJoint name="l_midcarpal_3" DEF="hanim_l_midcarpal_3" center="0 0.07 0" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_capitate" DEF="hanim_l_capitate"><Transform translation="0 0.07 0"><Shape USE="HAnimNewJointShape"></Shape>
+<!--MC3--><HAnimJoint name="l_midcarpal_3" DEF="hanim_l_midcarpal_3" center="0 0.07 0"><HAnimSegment name="l_capitate" DEF="hanim_l_capitate"><Transform translation="0 0.07 0"><Shape USE="HAnimNewJointShape"></Shape>
 </Transform>
 <Shape><Appearance containerField="appearance"><Material containerField="material" emissiveColor="1 1 1"></Material>
 </Appearance>
@@ -144,7 +144,7 @@
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
-<!--Middle fingle--><HAnimJoint name="l_carpometacarpal_3" DEF="hanim_l_carpometacarpal_3" center="0 0.2 0" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_metacarpal_3" DEF="hanim_l_metacarpal_3"><Transform translation="0 0.2 0"><Shape USE="HAnimJointShape"></Shape>
+<!--Middle fingle--><HAnimJoint name="l_carpometacarpal_3" DEF="hanim_l_carpometacarpal_3" center="0 0.2 0"><HAnimSegment name="l_metacarpal_3" DEF="hanim_l_metacarpal_3"><Transform translation="0 0.2 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <Shape><Appearance containerField="appearance"><Material containerField="material" emissiveColor="1 1 1"></Material>
 </Appearance>
@@ -152,7 +152,7 @@
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="l_metacarpophalangeal_3" DEF="hanim_l_metacarpophalangeal_3" center="0.03 0.5 0" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_carpal_proximal_phalanx_3" DEF="hanim_l_carpal_proximal_phalanx_3"><Transform translation="0.03 0.5 0"><Shape USE="HAnimJointShape"></Shape>
+<HAnimJoint name="l_metacarpophalangeal_3" DEF="hanim_l_metacarpophalangeal_3" center="0.03 0.5 0"><HAnimSegment name="l_carpal_proximal_phalanx_3" DEF="hanim_l_carpal_proximal_phalanx_3"><Transform translation="0.03 0.5 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <Shape><Appearance containerField="appearance"><Material containerField="material" emissiveColor="1 1 1"></Material>
 </Appearance>
@@ -160,7 +160,7 @@
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="l_carpal_proximal_interphalangeal_3" DEF="hanim_l_carpal_proximal_interphalangeal_3" center="0.05 0.75 0" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_carpal_middle_phalanx_3" DEF="hanim_l_carpal_middle_phalanx_3"><Transform translation="0.05 0.75 0"><Shape USE="HAnimJointShape"></Shape>
+<HAnimJoint name="l_carpal_proximal_interphalangeal_3" DEF="hanim_l_carpal_proximal_interphalangeal_3" center="0.05 0.75 0"><HAnimSegment name="l_carpal_middle_phalanx_3" DEF="hanim_l_carpal_middle_phalanx_3"><Transform translation="0.05 0.75 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <Shape><Appearance containerField="appearance"><Material containerField="material" emissiveColor="1 1 1"></Material>
 </Appearance>
@@ -168,7 +168,7 @@
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="l_carpal_distal_interphalangeal_3" DEF="hanim_l_carpal_distal_interphalangeal_3" center="0.08 0.96 0" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_carpal_distal_phalanx_3" DEF="hanim_l_carpal_distal_phalanx_3"><Transform translation="0.08 0.96 0"><Shape USE="HAnimJointShape"></Shape>
+<HAnimJoint name="l_carpal_distal_interphalangeal_3" DEF="hanim_l_carpal_distal_interphalangeal_3" center="0.08 0.96 0"><HAnimSegment name="l_carpal_distal_phalanx_3" DEF="hanim_l_carpal_distal_phalanx_3"><Transform translation="0.08 0.96 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <Shape><Appearance containerField="appearance"><Material containerField="material" emissiveColor="1 1 1"></Material>
 </Appearance>
@@ -181,7 +181,7 @@
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<!--MC45--><HAnimJoint name="l_midcarpal_4_5" DEF="hanim_l_midcarpal_4_5" center="-0.1 0.1 0" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_hamate" DEF="hanim_l_hamate"><Transform translation="-0.1 0.1 0"><Shape USE="HAnimNewJointShape"></Shape>
+<!--MC45--><HAnimJoint name="l_midcarpal_4_5" DEF="hanim_l_midcarpal_4_5" center="-0.1 0.1 0"><HAnimSegment name="l_hamate" DEF="hanim_l_hamate"><Transform translation="-0.1 0.1 0"><Shape USE="HAnimNewJointShape"></Shape>
 </Transform>
 <Shape><Appearance containerField="appearance"><Material containerField="material" emissiveColor="1 1 1"></Material>
 </Appearance>
@@ -194,7 +194,7 @@
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
-<!--ring finger--><HAnimJoint name="l_carpometacarpal_4" DEF="hanim_l_carpometacarpal_4" center="-0.1 0.2 0" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_metacarpal_4" DEF="hanim_l_metacarpal_4"><Transform translation="-0.1 0.2 0"><Shape USE="HAnimJointShape"></Shape>
+<!--ring finger--><HAnimJoint name="l_carpometacarpal_4" DEF="hanim_l_carpometacarpal_4" center="-0.1 0.2 0"><HAnimSegment name="l_metacarpal_4" DEF="hanim_l_metacarpal_4"><Transform translation="-0.1 0.2 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <Shape><Appearance containerField="appearance"><Material containerField="material" emissiveColor="1 1 1"></Material>
 </Appearance>
@@ -202,7 +202,7 @@
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="l_metacarpophalangeal_4" DEF="hanim_l_metacarpophalangeal_4" center="-0.1 0.47 0" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_carpal_proximal_phalanx_4" DEF="hanim_l_carpal_proximal_phalanx_4"><Transform translation="-0.1 0.47 0"><Shape USE="HAnimJointShape"></Shape>
+<HAnimJoint name="l_metacarpophalangeal_4" DEF="hanim_l_metacarpophalangeal_4" center="-0.1 0.47 0"><HAnimSegment name="l_carpal_proximal_phalanx_4" DEF="hanim_l_carpal_proximal_phalanx_4"><Transform translation="-0.1 0.47 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <Shape><Appearance containerField="appearance"><Material containerField="material" emissiveColor="1 1 1"></Material>
 </Appearance>
@@ -210,7 +210,7 @@
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="l_carpal_proximal_interphalangeal_4" DEF="hanim_l_carpal_proximal_interphalangeal_4" center="-0.1 0.7 0" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_carpal_middle_phalanx_4" DEF="hanim_l_carpal_middle_phalanx_4"><Transform translation="-0.1 0.7 0"><Shape USE="HAnimJointShape"></Shape>
+<HAnimJoint name="l_carpal_proximal_interphalangeal_4" DEF="hanim_l_carpal_proximal_interphalangeal_4" center="-0.1 0.7 0"><HAnimSegment name="l_carpal_middle_phalanx_4" DEF="hanim_l_carpal_middle_phalanx_4"><Transform translation="-0.1 0.7 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <Shape><Appearance containerField="appearance"><Material containerField="material" emissiveColor="1 1 1"></Material>
 </Appearance>
@@ -218,7 +218,7 @@
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="l_carpal_distal_interphalangeal_4" DEF="hanim_l_carpal_distal_interphalangeal_4" center="-0.1 0.93 0" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_carpal_distal_phalanx_4" DEF="hanim_l_carpal_distal_phalanx_4"><Transform translation="-0.1 0.93 0"><Shape USE="HAnimJointShape"></Shape>
+<HAnimJoint name="l_carpal_distal_interphalangeal_4" DEF="hanim_l_carpal_distal_interphalangeal_4" center="-0.1 0.93 0"><HAnimSegment name="l_carpal_distal_phalanx_4" DEF="hanim_l_carpal_distal_phalanx_4"><Transform translation="-0.1 0.93 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <Shape><Appearance containerField="appearance"><Material containerField="material" emissiveColor="1 1 1"></Material>
 </Appearance>
@@ -230,7 +230,7 @@
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<!--pinky finger--><HAnimJoint name="l_carpometacarpal_5" DEF="hanim_l_carpometacarpal_5" center="-0.15 0.17 0" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_metacarpal_5" DEF="hanim_l_metacarpal_5"><Transform translation="-0.15 0.17 0"><Shape USE="HAnimJointShape"></Shape>
+<!--pinky finger--><HAnimJoint name="l_carpometacarpal_5" DEF="hanim_l_carpometacarpal_5" center="-0.15 0.17 0"><HAnimSegment name="l_metacarpal_5" DEF="hanim_l_metacarpal_5"><Transform translation="-0.15 0.17 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <Shape><Appearance containerField="appearance"><Material containerField="material" emissiveColor="1 1 1"></Material>
 </Appearance>
@@ -238,7 +238,7 @@
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="l_metacarpophalangeal_5" DEF="hanim_l_metacarpophalangeal_5" center="-0.2 0.4 0" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_carpal_proximal_phalanx_5" DEF="hanim_l_carpal_proximal_phalanx_5"><Transform translation="-0.2 0.4 0"><Shape USE="HAnimJointShape"></Shape>
+<HAnimJoint name="l_metacarpophalangeal_5" DEF="hanim_l_metacarpophalangeal_5" center="-0.2 0.4 0"><HAnimSegment name="l_carpal_proximal_phalanx_5" DEF="hanim_l_carpal_proximal_phalanx_5"><Transform translation="-0.2 0.4 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <Shape><Appearance containerField="appearance"><Material containerField="material" emissiveColor="1 1 1"></Material>
 </Appearance>
@@ -246,7 +246,7 @@
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="l_carpal_proximal_interphalangeal_5" DEF="hanim_l_carpal_proximal_interphalangeal_5" center="-0.23 0.63 0" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_carpal_middle_phalanx_5" DEF="hanim_l_carpal_middle_phalanx_5"><Transform translation="-0.23 0.63 0"><Shape USE="HAnimJointShape"></Shape>
+<HAnimJoint name="l_carpal_proximal_interphalangeal_5" DEF="hanim_l_carpal_proximal_interphalangeal_5" center="-0.23 0.63 0"><HAnimSegment name="l_carpal_middle_phalanx_5" DEF="hanim_l_carpal_middle_phalanx_5"><Transform translation="-0.23 0.63 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <Shape><Appearance containerField="appearance"><Material containerField="material" emissiveColor="1 1 1"></Material>
 </Appearance>
@@ -254,7 +254,7 @@
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="l_carpal_distal_interphalangeal_5" DEF="hanim_l_carpal_distal_interphalangeal_5" center="-0.25 0.79 0" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_carpal_distal_phalanx_5" DEF="hanim_l_carpal_distal_phalanx_5"><Transform translation="-0.25 0.79 0"><Shape USE="HAnimJointShape"></Shape>
+<HAnimJoint name="l_carpal_distal_interphalangeal_5" DEF="hanim_l_carpal_distal_interphalangeal_5" center="-0.25 0.79 0"><HAnimSegment name="l_carpal_distal_phalanx_5" DEF="hanim_l_carpal_distal_phalanx_5"><Transform translation="-0.25 0.79 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <Shape><Appearance containerField="appearance"><Material containerField="material" emissiveColor="1 1 1"></Material>
 </Appearance>

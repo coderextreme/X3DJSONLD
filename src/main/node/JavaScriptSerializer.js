@@ -430,16 +430,6 @@ JavaScriptSerializer.prototype = {
 					this.postcode[stack[0]] += element.nodeName+stack[0];
 				}
 				var ch = this.printParentChild(element, node, cn, mapToMethod, n);
-				let hAnimListFound = false;
-				if (ch.indexOf(".addJoints") >= 0 ||
-				    ch.indexOf(".addSites") >= 0 ||
-				    ch.indexOf(".addSkin") >= 0 ||
-				    ch.indexOf(".setSkinCoord") >= 0 ||
-				    ch.indexOf(".addViewpoints") >= 0 ||
-				    ch.indexOf(".addSkeleton") >= 0 ||
-				    ch.indexOf(".addSegments") >= 0) {
-					hAnimListFound = true;
-				}
 				ch += "(";
 				if (element.nodeName === "Appearance" && node.NodeName === "ComposedShader") {
 					ch += "new X3DNode [] {";
@@ -456,7 +446,6 @@ JavaScriptSerializer.prototype = {
 					}
 					if (node.nodeName.startsWith("HAnimHumanoid")) {
 						this.foundHumanoid = true;
-						hAnimListFound = true;
 					}
 				}
 				let construct = "new "+node.nodeName+"("+DEFpar+")";

@@ -17,7 +17,7 @@ function doubleToFloat(d) {
         .addMeta(new meta().setName("created").setContent("31 March 2011"))
         .addMeta(new meta().setName("translated").setContent("1 November 2014"))
         .addMeta(new meta().setName("modified").setContent("27 January 2023"))
-        .addMeta(new meta().setName("description").setContent("Articulated 3D game character designed with a general graphics tool, then converted into an X3D HAnim model."))
+        .addMeta(new meta().setName("description").setContent("Articulated 3D game character designed with a general graphics tool"))
         .addMeta(new meta().setName("reference").setContent("KoreanCharacter00ReadMe.txt"))
         .addMeta(new meta().setName("reference").setContent("KoreanCharacterHumanMotion_Infotech2014_140706.pdf"))
         .addMeta(new meta().setName("reference").setContent("KoreanCharactersIllustrated.pdf"))

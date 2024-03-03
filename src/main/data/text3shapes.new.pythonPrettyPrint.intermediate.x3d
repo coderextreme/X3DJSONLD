@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
+<X3D profile='Immersive' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.3.xsd'>
+  <head>
+    <meta content='John W Carlson' name='creator'/>
+    <meta content='December 13 2015' name='created'/>
+    <meta content='text3shapes.x3d' name='title'/>
+    <meta content='https://coderextreme.net/X3DJSONLD/src/main/data/text3shapes.x3d' name='identifier'/>
+    <meta content='3 text shapes' name='description'/>
+    <meta content='Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit' name='generator'/>
+  </head>
+  <Scene>
+    <Transform>
+      <Shape>
+        <Appearance>
+          <Material/>
+        </Appearance>
+        <Text string='"Node\"\"\""'>
+          <FontStyle family='"SERIF"' justify='"BEGIN"'/>
+        </Text>
+      </Shape>
+      <Shape>
+        <Appearance>
+          <Material/>
+        </Appearance>
+        <Text string='"Node2" "\\" "\\\\" "Node2"'>
+          <FontStyle family='"SERIF"' justify='"BEGIN"'/>
+        </Text>
+      </Shape>
+      <Shape>
+        <Appearance>
+          <Material/>
+        </Appearance>
+        <Text string='"Node3 \\\\ \\ " "Node3\"\"\""'>
+          <FontStyle family='"SERIF"' justify='"BEGIN"'/>
+        </Text>
+      </Shape>
+      <Script>
+        <field name='frontUrls' accessType='initializeOnly' type='MFString' value='"rnl_front.png" "uffizi_front.png"'/>
+<![CDATA[
+ecmascript:
+"+
+"			    var me = '"1" ""2" "\n3"';
+]]>
+      </Script>
+    </Transform>
+  </Scene>
+</X3D>
