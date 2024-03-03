@@ -61,16 +61,16 @@ public class SplitChannels implements X3DRoots {
         .addMeta(new meta().setName("info").setContent("This work presents an innovative solution of the spatial sound in X3DOM framework, that based on a combinational methodology. Specifically, we suggested the enrichment of X3DOM with spatial sound features, using both the X3D sound nodes and the structure of Web Audio API."))
         .addMeta(new meta().setName("creator").setContent("Efi Lakka, Athanasios Malamos, Dick Puk, Don Brutzman"))
         .addMeta(new meta().setName("created").setContent("28 October 2020"))
-        .addMeta(new meta().setName("modified").setContent("5 December 2021"))
+        .addMeta(new meta().setName("modified").setContent("23 April 2023"))
         .addMeta(new meta().setName("reference").setContent("CHANGELOG.txt"))
         .addMeta(new meta().setName("TODO").setContent("credit for audio files"))
         .addMeta(new meta().setName("reference").setContent("http://www.medialab.hmu.gr/minipages/x3domAudio"))
-        .addMeta(new meta().setName("identifier").setContent("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/SplitChannels.x3d"))
+        .addMeta(new meta().setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/SplitChannels.x3d"))
         .addMeta(new meta().setName("generator").setContent("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"))
         .addMeta(new meta().setName("license").setContent("../license.html")))
       .setScene(new Scene()
         .addChild(new WorldInfo().setTitle("SplitChannels.x3d"))
-        .addChild(new NavigationInfo().setType("NONE"))
+        .addChild(new NavigationInfo().setType("\"NONE\""))
         .addChild(new Background().setSkyColor(new MFColor0().getArray()))
         .addChild(new Viewpoint().setOrientation(new double[] {1,0,0,-0.5}).setPosition(new double[] {0,500,600}).setRetainUserOffsets(true))
         .addChild(new Transform().setDEF("PowerR").setTranslation(new double[] {100,400,400})
@@ -90,7 +90,7 @@ public class SplitChannels implements X3DRoots {
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setAmbientIntensity(0.0933).setDiffuseColor(new double[] {0.345,0.345,0.882}).setShininess(0.51).setSpecularColor(new double[] {0.46,0.46,0.46})))
               .setGeometry(new Text().setString(new MFString2().getArray())
-                .setFontStyle(new FontStyle().setFamily(new MFString3().getArray()).setStyle("BOLD"))))))
+                .setFontStyle(new FontStyle().setDEF("VolumeFontStyle").setFamily(new MFString3().getArray()).setStyle("BOLD"))))))
         .addChild(new Transform().setDEF("PowerL").setTranslation(new double[] {-100,400,400})
           .addChild(new Transform().setRotation(new double[] {1,0,0,-0.5}).setTranslation(new double[] {0,40,0})
             .addChild(new Shape()
@@ -108,7 +108,7 @@ public class SplitChannels implements X3DRoots {
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setAmbientIntensity(0.0933).setDiffuseColor(new double[] {0.345,0.345,0.882}).setShininess(0.51).setSpecularColor(new double[] {0.46,0.46,0.46})))
               .setGeometry(new Text().setString(new MFString5().getArray())
-                .setFontStyle(new FontStyle().setFamily(new MFString6().getArray()).setStyle("BOLD"))))))
+                .setFontStyle(new FontStyle().setUSE("VolumeFontStyle"))))))
         .addChild(new Transform()
           .addChild(new Shape()
             .setAppearance(new Appearance().setDEF("floor")
@@ -123,12 +123,12 @@ public class SplitChannels implements X3DRoots {
               .addChild(new ChannelSelector().setChannelSelection(1)
                 .addChild(new Gain().setUSE("ChannelSplitter"))))))
         .addChild(new ChannelSplitter().setDEF("ChannelSplitter").setChannelCountMode("EXPLICIT")
-          .addOutputs(new AudioClip().setDescription("Violin").setUrl(new MFString7().getArray())))
+          .addOutputs(new AudioClip().setDescription("Violin").setUrl(new MFString6().getArray())))
         .addChild(new Transform().setDEF("Audio3").setRotation(new double[] {1,0,0,-0.5}).setTranslation(new double[] {0,100,0})
           .addChild(new Shape()
             .setAppearance(new Appearance().setDEF("audio_emit5")
               .setMaterial(new Material().setDiffuseColor(new double[] {0.3,1,0.3}).setEmissiveColor(new double[] {0.8,0.8,0.8}).setSpecularColor(new double[] {0.01,0.01,0.01}))
-              .setTexture(new ImageTexture().setUrl(new MFString8().getArray())))
+              .setTexture(new ImageTexture().setUrl(new MFString7().getArray())))
             .setGeometry(new Box().setSize(new double[] {100,100,0.001})))))      ;
     return X3D0;
     }
@@ -139,7 +139,7 @@ private class MFColor0 {
 }
 private class MFString1 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"images/line.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/line.png"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"images/line.png","https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/images/line.png"});
   }
 }
 private class MFString2 {
@@ -149,12 +149,12 @@ private class MFString2 {
 }
 private class MFString3 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"Times"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"Times","SERIF"});
   }
 }
 private class MFString4 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"images/line.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/line.png"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"images/line.png","https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/images/line.png"});
   }
 }
 private class MFString5 {
@@ -164,17 +164,12 @@ private class MFString5 {
 }
 private class MFString6 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"Times"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"sound/violin.mp3","https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3"});
   }
 }
 private class MFString7 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"sound/violin.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3"});
-  }
-}
-private class MFString8 {
-  private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"images/loudspeaker.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/loudspeaker.png"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"images/loudspeaker.png","https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/images/loudspeaker.png"});
   }
 }
 }

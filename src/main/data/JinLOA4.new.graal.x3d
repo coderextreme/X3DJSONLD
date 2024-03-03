@@ -3731,6 +3731,6 @@
     <ROUTE fromField='touchTime' fromNode='Stop_Touch' toField='set_stopTime' toNode='JumpTimer'/>
     <ROUTE fromField='touchTime' fromNode='Stop_Touch' toField='set_stopTime' toNode='KickTimer'/>
     <ROUTE fromField='touchTime' fromNode='Stop_Touch' toField='set_startTime' toNode='StopTimer'/>
-    <!-- <Script url='../node/jinloa4.js'> </Script> -->
+    <!-- <Script url='../node/jinloa4.js'></Script> -->
   </Scene>
 </X3D>

@@ -366,7 +366,7 @@ AframeSerializer.prototype = {
 				if (attr === "translation" && name === "Transform") {
 					attr = "position"
 				}
-				if (attr === "xmlns:xsd" || attr === "xsd:noNamespaceSchemaLocation") {
+				if (attr === "xmlns:xsd" || attr === "xsd:noNamespaceSchemaLocation" || attr === 'containerField' || attr === 'type') {
 					continue;
 				}
 				/*
