@@ -276,7 +276,9 @@ already work in view3dscene)"
 },
 {
 "#comment":"&lt;/LOD&gt;"
-},
+}
+],
+"-skeleton":[
 { "HAnimJoint":
 {
 "@name":"humanoid_root",
@@ -2114,7 +2116,9 @@ already work in view3dscene)"
 }
 ]
 }
-},
+}
+],
+"-joints":[
 { "HAnimJoint":
 {
 "@USE":"hanim_humanoid_root"
@@ -2844,7 +2848,9 @@ already work in view3dscene)"
 {
 "@USE":"hanim_r_carpal_distal_interphalangeal_5"
 }
-},
+}
+],
+"-skin":[
 { "Shape":
 {
 "@DEF":"SkinShape",
@@ -2895,7 +2901,7 @@ already work in view3dscene)"
 }
 }
 ],
-"-coord":
+"-skinCoord":
 { "Coordinate":
 {
 "@USE":"TheSkinCoord"

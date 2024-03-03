@@ -155,7 +155,7 @@
 "@name":"humanoid",
 "@DEF":"hanim_humanoid",
 "@version":"2.0",
-"-children":[
+"-skeleton":[
 { "HAnimJoint":
 {
 "@name":"Armature",
@@ -8378,7 +8378,9 @@
 }
 ]
 }
-},
+}
+],
+"-joints":[
 { "HAnimJoint":
 {
 "@USE":"hanim_sacrum"
