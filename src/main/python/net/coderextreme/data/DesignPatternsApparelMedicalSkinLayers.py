@@ -357,3 +357,4 @@ Scene17.addChildren(Anchor64)
 
 X3D0.setScene(Scene17)
 X3D0.toFileX3D("../data/DesignPatternsApparelMedicalSkinLayers.new.python.x3d")
+X3D0.toFileJSON("../data/DesignPatternsApparelMedicalSkinLayers.new.python.json")

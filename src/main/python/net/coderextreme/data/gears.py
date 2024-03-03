@@ -91,3 +91,4 @@ Scene12.addChildren(Group14)
 
 X3D0.setScene(Scene12)
 X3D0.toFileX3D("../data/gears.new.python.x3d")
+X3D0.toFileJSON("../data/gears.new.python.json")

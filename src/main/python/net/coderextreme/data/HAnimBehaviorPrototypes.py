@@ -9916,3 +9916,4 @@ Scene18.addChildren(ProtoInstance1811)
 
 X3D0.setScene(Scene18)
 X3D0.toFileX3D("../data/HAnimBehaviorPrototypes.new.python.x3d")
+X3D0.toFileJSON("../data/HAnimBehaviorPrototypes.new.python.json")

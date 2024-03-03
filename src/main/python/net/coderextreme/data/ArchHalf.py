@@ -84,3 +84,4 @@ Scene12.addChildren(Shape13)
 
 X3D0.setScene(Scene12)
 X3D0.toFileX3D("../data/ArchHalf.new.python.x3d")
+X3D0.toFileJSON("../data/ArchHalf.new.python.json")

@@ -113,3 +113,4 @@ Scene17.addChildren(Shape20)
 
 X3D0.setScene(Scene17)
 X3D0.toFileX3D("../data/IcosahedronSubdivisionLevel5.new.python.x3d")
+X3D0.toFileJSON("../data/IcosahedronSubdivisionLevel5.new.python.json")

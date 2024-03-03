@@ -82,6 +82,7 @@ WorldInfo15->setTitle("SplitChannels.x3d");
 group->addChildren(*WorldInfo15);
 
 CNavigationInfo* NavigationInfo16 = (CNavigationInfo *)(m_pScene.createNode("NavigationInfo"));
+NavigationInfo16->setType(new CString[1]{"NONE"}, 1);
 group->addChildren(*NavigationInfo16);
 
 CBackground* Background17 = (CBackground *)(m_pScene.createNode("Background"));

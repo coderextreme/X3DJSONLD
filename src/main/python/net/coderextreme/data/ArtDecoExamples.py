@@ -2406,3 +2406,4 @@ Scene13.addChildren(ROUTE556)
 
 X3D0.setScene(Scene13)
 X3D0.toFileX3D("../data/ArtDecoExamples.new.python.x3d")
+X3D0.toFileJSON("../data/ArtDecoExamples.new.python.json")

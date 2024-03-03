@@ -2838,3 +2838,4 @@ Scene19.addChildren(ROUTE508)
 
 X3D0.setScene(Scene19)
 X3D0.toFileX3D("../data/AllenDutton.new.python.x3d")
+X3D0.toFileJSON("../data/AllenDutton.new.python.json")

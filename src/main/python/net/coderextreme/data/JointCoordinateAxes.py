@@ -172,3 +172,4 @@ Scene4.addChildren(Transform34)
 
 X3D0.setScene(Scene4)
 X3D0.toFileX3D("../data/JointCoordinateAxes.new.python.x3d")
+X3D0.toFileJSON("../data/JointCoordinateAxes.new.python.json")

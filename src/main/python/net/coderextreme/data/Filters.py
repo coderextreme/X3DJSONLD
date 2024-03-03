@@ -284,3 +284,4 @@ Scene14.addChildren(StreamAudioDestination46)
 
 X3D0.setScene(Scene14)
 X3D0.toFileX3D("../data/Filters.new.python.x3d")
+X3D0.toFileJSON("../data/Filters.new.python.json")

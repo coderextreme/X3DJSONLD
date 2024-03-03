@@ -327,3 +327,4 @@ Scene9.addChildren(ROUTE58)
 
 X3D0.setScene(Scene9)
 X3D0.toFileX3D("../data/fors2.new.python.x3d")
+X3D0.toFileJSON("../data/fors2.new.python.json")

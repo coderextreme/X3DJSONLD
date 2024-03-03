@@ -89,3 +89,4 @@ Scene12.addChildren(Shape15)
 
 X3D0.setScene(Scene12)
 X3D0.toFileX3D("../data/Cane.new.python.x3d")
+X3D0.toFileJSON("../data/Cane.new.python.json")

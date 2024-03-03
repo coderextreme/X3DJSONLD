@@ -97,3 +97,4 @@ Scene17.addChildren(Shape19)
 
 X3D0.setScene(Scene17)
 X3D0.toFileX3D("../data/HelloWorldMinimal.new.python.x3d")
+X3D0.toFileJSON("../data/HelloWorldMinimal.new.python.json")

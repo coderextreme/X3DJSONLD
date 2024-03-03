@@ -103,3 +103,4 @@ Scene8.addChildren(Transform9)
 
 X3D0.setScene(Scene8)
 X3D0.toFileX3D("../data/text3shapes.new.python.x3d")
+X3D0.toFileJSON("../data/text3shapes.new.python.json")

@@ -1844,3 +1844,4 @@ Scene17.addChildren(ROUTE383)
 
 X3D0.setScene(Scene17)
 X3D0.toFileX3D("../data/Trebuchet.new.python.x3d")
+X3D0.toFileJSON("../data/Trebuchet.new.python.json")

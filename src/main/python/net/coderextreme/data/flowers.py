@@ -579,3 +579,4 @@ Scene15.addChildren(ProtoInstance88)
 
 X3D0.setScene(Scene15)
 X3D0.toFileX3D("../data/flowers.new.python.x3d")
+X3D0.toFileJSON("../data/flowers.new.python.json")

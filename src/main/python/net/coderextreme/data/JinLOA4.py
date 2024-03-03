@@ -14166,3 +14166,4 @@ Scene19.addChildren(ROUTE2777)
 
 X3D0.setScene(Scene19)
 X3D0.toFileX3D("../data/JinLOA4.new.python.x3d")
+X3D0.toFileJSON("../data/JinLOA4.new.python.json")

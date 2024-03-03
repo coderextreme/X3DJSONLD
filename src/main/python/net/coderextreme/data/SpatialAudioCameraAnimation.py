@@ -295,3 +295,4 @@ Scene14.addChildren(StreamAudioDestination56)
 
 X3D0.setScene(Scene14)
 X3D0.toFileX3D("../data/SpatialAudioCameraAnimation.new.python.x3d")
+X3D0.toFileJSON("../data/SpatialAudioCameraAnimation.new.python.json")

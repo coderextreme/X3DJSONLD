@@ -276,3 +276,4 @@ Scene26.addChildren(HAnimHumanoid30)
 
 X3D0.setScene(Scene26)
 X3D0.toFileX3D("../data/DiamondManLOA0patched2.new.python.x3d")
+X3D0.toFileJSON("../data/DiamondManLOA0patched2.new.python.json")

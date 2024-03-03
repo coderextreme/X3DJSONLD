@@ -464,3 +464,4 @@ Scene10.addChildren(Background96)
 
 X3D0.setScene(Scene10)
 X3D0.toFileX3D("../data/Bubbles.new.python.x3d")
+X3D0.toFileJSON("../data/Bubbles.new.python.json")

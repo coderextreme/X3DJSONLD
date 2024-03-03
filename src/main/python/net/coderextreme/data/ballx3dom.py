@@ -193,3 +193,4 @@ Scene15.addChildren(Transform20)
 
 X3D0.setScene(Scene15)
 X3D0.toFileX3D("../data/ballx3dom.new.python.x3d")
+X3D0.toFileJSON("../data/ballx3dom.new.python.json")

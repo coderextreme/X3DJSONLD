@@ -160,3 +160,4 @@ Scene13.addChildren(Shape30)
 
 X3D0.setScene(Scene13)
 X3D0.toFileX3D("../data/Bushes.new.python.x3d")
+X3D0.toFileJSON("../data/Bushes.new.python.json")

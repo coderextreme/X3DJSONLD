@@ -114,3 +114,4 @@ Scene7.addChildren(Group10)
 
 X3D0.setScene(Scene7)
 X3D0.toFileX3D("../data/glflowers.new.python.x3d")
+X3D0.toFileJSON("../data/glflowers.new.python.json")

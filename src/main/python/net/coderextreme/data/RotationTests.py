@@ -275,3 +275,4 @@ Scene17.addChildren(ROUTE49)
 
 X3D0.setScene(Scene17)
 X3D0.toFileX3D("../data/RotationTests.new.python.x3d")
+X3D0.toFileJSON("../data/RotationTests.new.python.json")

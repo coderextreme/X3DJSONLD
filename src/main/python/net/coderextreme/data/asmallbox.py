@@ -118,3 +118,4 @@ Scene7.addChildren(ProtoInstance27)
 
 X3D0.setScene(Scene7)
 X3D0.toFileX3D("../data/asmallbox.new.python.x3d")
+X3D0.toFileJSON("../data/asmallbox.new.python.json")

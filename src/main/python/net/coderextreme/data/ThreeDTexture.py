@@ -258,3 +258,4 @@ Scene7.addChildren(ProtoInstance60)
 
 X3D0.setScene(Scene7)
 X3D0.toFileX3D("../data/ThreeDTexture.new.python.x3d")
+X3D0.toFileJSON("../data/ThreeDTexture.new.python.json")
