@@ -56,13 +56,13 @@ with open("../../specifications/X3dUnifiedObjectModel-4.0.xml") as fp:
     soup = BeautifulSoup(fp, 'xml')
 
 
-    ants = soup.find_all("AbstractNodeType")
-    for ant in ants:
-        classes[ant['name']] = ClassPrinter(ant, "")
-
-    aots = soup.find_all("AbstractObjectType")
-    for aot in aots:
-        classes[aot['name']] = ClassPrinter(aot, "")
+#    ants = soup.find_all("AbstractNodeType")
+#    for ant in ants:
+#        classes[ant['name']] = ClassPrinter(ant, "")
+#
+#    aots = soup.find_all("AbstractObjectType")
+#    for aot in aots:
+#        classes[aot['name']] = ClassPrinter(aot, "")
 
     cns = soup.find_all("ConcreteNode")
     for cn in cns:
