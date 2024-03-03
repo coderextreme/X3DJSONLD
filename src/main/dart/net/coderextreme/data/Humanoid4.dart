@@ -14,11 +14,11 @@ var X3D0 =  X3D(
           meta_ : [
             meta(
               name_ : SFString('title'),
-              content_ : SFString('JohnBoy.x3d')),
+              content_ : SFString('Humanoid4.x3d')),
 
             meta(
               name_ : SFString('identifier'),
-              content_ : SFString('http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d')),
+              content_ : SFString('http://www.web3d.org/x3d/content/examples/HumanoidAnimation/Humanoid4.x3d')),
 
             meta(
               name_ : SFString('description'),
