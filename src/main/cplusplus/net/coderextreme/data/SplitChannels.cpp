@@ -41,7 +41,7 @@ head1->addMeta(*meta6);
 
 Cmeta* meta7 = new Cmeta();
 meta7->setName("modified");
-meta7->setContent("5 December 2021");
+meta7->setContent("23 April 2023");
 head1->addMeta(*meta7);
 
 Cmeta* meta8 = new Cmeta();
@@ -61,7 +61,7 @@ head1->addMeta(*meta10);
 
 Cmeta* meta11 = new Cmeta();
 meta11->setName("identifier");
-meta11->setContent("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/SplitChannels.x3d");
+meta11->setContent("https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/SplitChannels.x3d");
 head1->addMeta(*meta11);
 
 Cmeta* meta12 = new Cmeta();
@@ -82,7 +82,6 @@ WorldInfo15->setTitle("SplitChannels.x3d");
 group->addChildren(*WorldInfo15);
 
 CNavigationInfo* NavigationInfo16 = (CNavigationInfo *)(m_pScene.createNode("NavigationInfo"));
-NavigationInfo16->setType(new CString[1]{"ON"}, 1);
 group->addChildren(*NavigationInfo16);
 
 CBackground* Background17 = (CBackground *)(m_pScene.createNode("Background"));
@@ -133,7 +132,7 @@ Material28->setSpecularColor(new float[3]{0.01,0.01,0.01});
 Appearance27->setMaterial(*Material28);
 
 CImageTexture* ImageTexture29 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
-ImageTexture29->setUrl(new CString[2]{"images/line.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/line.png"}, 2);
+ImageTexture29->setUrl(new CString[2]{"images/line.png","https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/images/line.png"}, 2);
 Appearance27->setTexture(*ImageTexture29);
 
 Shape26->setAppearance(*Appearance27);
@@ -165,7 +164,8 @@ Shape32->setAppearance(*Appearance33);
 CText* Text35 = (CText *)(m_pScene.createNode("Text"));
 Text35->setString(new CString[1]{"Right Channel Volume"}, 1);
 CFontStyle* FontStyle36 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
-FontStyle36->setFamily(new CString[1]{"Times"}, 1);
+FontStyle36->setDEF("VolumeFontStyle");
+FontStyle36->setFamily(new CString[2]{"Times","SERIF"}, 2);
 FontStyle36->setStyle("BOLD");
 Text35->setFontStyle(*FontStyle36);
 
@@ -215,7 +215,7 @@ Material46->setSpecularColor(new float[3]{0.01,0.01,0.01});
 Appearance45->setMaterial(*Material46);
 
 CImageTexture* ImageTexture47 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
-ImageTexture47->setUrl(new CString[2]{"images/line.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/line.png"}, 2);
+ImageTexture47->setUrl(new CString[2]{"images/line.png","https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/images/line.png"}, 2);
 Appearance45->setTexture(*ImageTexture47);
 
 Shape44->setAppearance(*Appearance45);
@@ -247,8 +247,7 @@ Shape50->setAppearance(*Appearance51);
 CText* Text53 = (CText *)(m_pScene.createNode("Text"));
 Text53->setString(new CString[1]{"Left Channel Volume"}, 1);
 CFontStyle* FontStyle54 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
-FontStyle54->setFamily(new CString[1]{"Times"}, 1);
-FontStyle54->setStyle("BOLD");
+FontStyle54->setUSE("VolumeFontStyle");
 Text53->setFontStyle(*FontStyle54);
 
 Shape50->setGeometry(Text53);
@@ -312,7 +311,7 @@ ChannelSplitter68->setDEF("ChannelSplitter");
 ChannelSplitter68->setChannelCountMode("EXPLICIT");
 CAudioClip* AudioClip69 = (CAudioClip *)(m_pScene.createNode("AudioClip"));
 AudioClip69->setDescription("Violin");
-AudioClip69->setUrl(new CString[2]{"sound/violin.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3"}, 2);
+AudioClip69->setUrl(new CString[2]{"sound/violin.mp3","https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3"}, 2);
 ChannelSplitter68->addOutputs(*AudioClip69);
 
 group->addChildren(*ChannelSplitter68);
@@ -331,7 +330,7 @@ Material73->setSpecularColor(new float[3]{0.01,0.01,0.01});
 Appearance72->setMaterial(*Material73);
 
 CImageTexture* ImageTexture74 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
-ImageTexture74->setUrl(new CString[2]{"images/loudspeaker.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/loudspeaker.png"}, 2);
+ImageTexture74->setUrl(new CString[2]{"images/loudspeaker.png","https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/images/loudspeaker.png"}, 2);
 Appearance72->setTexture(*ImageTexture74);
 
 Shape71->setAppearance(*Appearance72);

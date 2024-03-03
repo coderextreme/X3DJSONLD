@@ -58,7 +58,6 @@ X3D0->setHead(*head1);
 
 CScene* Scene10 = new CScene();
 CNavigationInfo* NavigationInfo11 = (CNavigationInfo *)(m_pScene.createNode("NavigationInfo"));
-NavigationInfo11->setType(new CString[1]{"EXAMINE"}, 1);
 group->addChildren(*NavigationInfo11);
 
 CViewpoint* Viewpoint12 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
@@ -169,35 +168,30 @@ Script21->setDEF("bounce");
 Cfield* field22 = new Cfield();
 field22->setName("scale");
 field22->setAccessType("inputOutput");
-field22->setType("SFVec3f");
 field22->setValue("1 1 1");
 Script21->addField(*field22);
 
 Cfield* field23 = new Cfield();
 field23->setName("translation");
 field23->setAccessType("inputOutput");
-field23->setType("SFVec3f");
 field23->setValue("0 0 0");
 Script21->addField(*field23);
 
 Cfield* field24 = new Cfield();
 field24->setName("velocity");
 field24->setAccessType("inputOutput");
-field24->setType("SFVec3f");
 field24->setValue("0 0 0");
 Script21->addField(*field24);
 
 Cfield* field25 = new Cfield();
 field25->setName("scalvel");
 field25->setAccessType("inputOutput");
-field25->setType("SFVec3f");
 field25->setValue("0 0 0");
 Script21->addField(*field25);
 
 Cfield* field26 = new Cfield();
 field26->setName("set_fraction");
 field26->setAccessType("inputOnly");
-field26->setType("SFFloat");
 Script21->addField(*field26);
 
 

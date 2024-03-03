@@ -50,7 +50,6 @@ head1.component[7] = component9;
 head = head1;
 
 NavigationInfo NavigationInfo11 = createNode("NavigationInfo");
-NavigationInfo11.type = new MFString(new java.lang.String["EXAMINE"]);
 children = new MFNode();
 
 children[0] = NavigationInfo11;
@@ -165,7 +164,6 @@ Script21.DEF = "bounce";
 field field22 = createNode("field");
 field22.name = "scale";
 field22.accessType = "inputOutput";
-field22.type = "SFVec3f";
 field22.value = "1 1 1";
 Script21.field = new MFNode();
 
@@ -174,28 +172,24 @@ Script21.field[0] = field22;
 field field23 = createNode("field");
 field23.name = "translation";
 field23.accessType = "inputOutput";
-field23.type = "SFVec3f";
 field23.value = "0 0 0";
 Script21.field[1] = field23;
 
 field field24 = createNode("field");
 field24.name = "velocity";
 field24.accessType = "inputOutput";
-field24.type = "SFVec3f";
 field24.value = "0 0 0";
 Script21.field[2] = field24;
 
 field field25 = createNode("field");
 field25.name = "scalvel";
 field25.accessType = "inputOutput";
-field25.type = "SFVec3f";
 field25.value = "0 0 0";
 Script21.field[3] = field25;
 
 field field26 = createNode("field");
 field26.name = "set_fraction";
 field26.accessType = "inputOnly";
-field26.type = "SFFloat";
 Script21.field[4] = field26;
 
 
