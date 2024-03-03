@@ -78,7 +78,7 @@
           },
           {
             "@name":"translated",
-            "@content":"02 March 2024"
+            "@content":"03 March 2024"
           },
           {
             "@name":"generator",
@@ -119,7 +119,7 @@
               "-metadata":
                 { "MetadataSet":
                   {
-                    "@name":"HAnimHumanoid_info",
+                    "@name":"HAnimHumanoid.info",
                     "@reference":"https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid",
                     "-value":[
                       { "MetadataString":
@@ -18800,7 +18800,7 @@
             }
           },
           {
-            "#comment":"<Script url='../node/jinloa4.js'/>"
+            "#comment":"<Script url='../node/jinloa4.js'> </Script>"
           }
         ]
     }

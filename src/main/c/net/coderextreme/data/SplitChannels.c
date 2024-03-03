@@ -34,7 +34,7 @@ head1.meta[4] = meta6;
 
 meta meta7 = createNode("meta");
 meta7.name = "modified";
-meta7.content = "5 December 2021";
+meta7.content = "23 April 2023";
 head1.meta[5] = meta7;
 
 meta meta8 = createNode("meta");
@@ -54,7 +54,7 @@ head1.meta[8] = meta10;
 
 meta meta11 = createNode("meta");
 meta11.name = "identifier";
-meta11.content = "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/SplitChannels.x3d";
+meta11.content = "https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/SplitChannels.x3d";
 head1.meta[9] = meta11;
 
 meta meta12 = createNode("meta");
@@ -76,7 +76,6 @@ children = new MFNode();
 children[0] = WorldInfo15;
 
 NavigationInfo NavigationInfo16 = createNode("NavigationInfo");
-NavigationInfo16.type = new MFString(new java.lang.String["ON"]);
 children[1] = NavigationInfo16;
 
 Background Background17 = createNode("Background");
@@ -131,7 +130,7 @@ Material28.specularColor = new SFColor(new float[0.01,0.01,0.01]);
 Appearance27.material = Material28;
 
 ImageTexture ImageTexture29 = createNode("ImageTexture");
-ImageTexture29.url = new MFString(new java.lang.String["images/line.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/line.png"]);
+ImageTexture29.url = new MFString(new java.lang.String["images/line.png","https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/images/line.png"]);
 Appearance27.texture = ImageTexture29;
 
 Shape26.appearance = Appearance27;
@@ -165,7 +164,8 @@ Shape32.appearance = Appearance33;
 Text Text35 = createNode("Text");
 Text35.string = new MFString(new java.lang.String["Right Channel Volume"]);
 FontStyle FontStyle36 = createNode("FontStyle");
-FontStyle36.family = new MFString(new java.lang.String["Times"]);
+FontStyle36.DEF = "VolumeFontStyle";
+FontStyle36.family = new MFString(new java.lang.String["Times","SERIF"]);
 FontStyle36.style = "BOLD";
 Text35.fontStyle = FontStyle36;
 
@@ -221,7 +221,7 @@ Material46.specularColor = new SFColor(new float[0.01,0.01,0.01]);
 Appearance45.material = Material46;
 
 ImageTexture ImageTexture47 = createNode("ImageTexture");
-ImageTexture47.url = new MFString(new java.lang.String["images/line.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/line.png"]);
+ImageTexture47.url = new MFString(new java.lang.String["images/line.png","https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/images/line.png"]);
 Appearance45.texture = ImageTexture47;
 
 Shape44.appearance = Appearance45;
@@ -255,8 +255,7 @@ Shape50.appearance = Appearance51;
 Text Text53 = createNode("Text");
 Text53.string = new MFString(new java.lang.String["Left Channel Volume"]);
 FontStyle FontStyle54 = createNode("FontStyle");
-FontStyle54.family = new MFString(new java.lang.String["Times"]);
-FontStyle54.style = "BOLD";
+FontStyle54.USE = "VolumeFontStyle";
 Text53.fontStyle = FontStyle54;
 
 Shape50.geometry = Text53;
@@ -334,7 +333,7 @@ ChannelSplitter68.DEF = "ChannelSplitter";
 ChannelSplitter68.channelCountMode = "EXPLICIT";
 AudioClip AudioClip69 = createNode("AudioClip");
 AudioClip69.description = "Violin";
-AudioClip69.url = new MFString(new java.lang.String["sound/violin.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3"]);
+AudioClip69.url = new MFString(new java.lang.String["sound/violin.mp3","https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3"]);
 ChannelSplitter68.outputs = new MFNode();
 
 ChannelSplitter68.outputs[0] = AudioClip69;
@@ -355,7 +354,7 @@ Material73.specularColor = new SFColor(new float[0.01,0.01,0.01]);
 Appearance72.material = Material73;
 
 ImageTexture ImageTexture74 = createNode("ImageTexture");
-ImageTexture74.url = new MFString(new java.lang.String["images/loudspeaker.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/loudspeaker.png"]);
+ImageTexture74.url = new MFString(new java.lang.String["images/loudspeaker.png","https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/images/loudspeaker.png"]);
 Appearance72.texture = ImageTexture74;
 
 Shape71.appearance = Appearance72;

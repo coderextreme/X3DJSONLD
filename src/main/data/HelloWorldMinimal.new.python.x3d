@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
+<X3D profile='Immersive' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.3.xsd'>
+  <head>
+    <meta content='HelloWorldMinimal.x3d' name='title'/>
+    <meta content='Hello World minimal example scene.' name='description'/>
+    <meta content='Don Brutzman' name='creator'/>
+    <meta content='19 January 2020' name='created'/>
+    <meta content='24 January 2020' name='modified'/>
+    <meta content='https://helloworldcollection.de' name='reference'/>
+    <meta content='https://en.wiktionary.org/wiki/Hello_World' name='reference'/>
+    <meta content='https://en.wikipedia.org/wiki/%22Hello,%20World!%22_program' name='reference'/>
+    <meta content='https://en.wikibooks.org/w/index.php?title=Computer_Programming/Hello_world' name='reference'/>
+    <meta content='https://en.wikibooks.org/w/index.php?title=Computer_Programming/Hello_world#X3D_(Extensible_3D)' name='reference'/>
+    <meta content='https://x3dgraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes' name='reference'/>
+    <meta content='https://x3dgraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloWorldMinimalIndex.html' name='reference'/>
+    <meta content='https://x3dgraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloWorldMinimal.x3d' name='identifier'/>
+    <meta content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' name='generator'/>
+    <meta content='../license.html' name='license'/>
+  </head>
+  <Scene>
+    <WorldInfo title='HelloWorldMinimal.x3d'/>
+    <Shape>
+      <Text string='"hello, world"'/>
+    </Shape>
+  </Scene>
+</X3D>
