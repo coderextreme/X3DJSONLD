@@ -173,7 +173,7 @@ converted into an X3D HAnim model."
 ]
 }
 },
-"-children":[
+"-skeleton":[
 { "HAnimJoint":
 {
 "@name":"humanoid_root",
@@ -1386,7 +1386,9 @@ converted into an X3D HAnim model."
 }
 ]
 }
-},
+}
+],
+"-joints":[
 { "HAnimJoint":
 {
 "@USE":"hanim_humanoid_root"
@@ -1476,7 +1478,9 @@ converted into an X3D HAnim model."
 {
 "@USE":"hanim_r_talocrural"
 }
-},
+}
+],
+"-segments":[
 { "HAnimSegment":
 {
 "@USE":"hanim_sacrum"

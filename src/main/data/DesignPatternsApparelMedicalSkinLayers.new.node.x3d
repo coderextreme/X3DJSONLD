@@ -25,7 +25,7 @@
       <MetadataString name='HAnimArchitecture' reference='https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/Guidelines.html#MultipleHumanoidsPerFile' value='"E.4 Multiple humanoids per file"'/>
       <!-- ============================== -->
       <HAnimHumanoid DEF='a_SimpleSkeleton' name='SimpleSkeleton' version='2.0'>
-        <HAnimJoint name='humanoid_root' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+        <HAnimJoint DEF='a_SimpleSkeleton' name='humanoid_root' containerField='skeleton' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
           <HAnimSegment name='sacrum' momentsOfInertia='0 0 0 0 0 0 0 0 0'>
             <Shape DEF='JointVisualization'/>
             <Shape DEF='SegmentVisualization'/>
@@ -37,7 +37,7 @@
       </HAnimHumanoid>
       <!-- ============================== -->
       <HAnimHumanoid DEF='b_SimpleSkeletonMesh' name='SimpleSkeletonMesh' version='2.0'>
-        <HAnimJoint name='humanoid_root' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+        <HAnimJoint DEF='b_SimpleSkeletonMesh' name='humanoid_root' containerField='skeleton' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
           <HAnimSegment name='sacrum' momentsOfInertia='0 0 0 0 0 0 0 0 0'>
             <Shape>
               <IndexedFaceSet DEF='SegmentBoneMesh'/>
@@ -47,27 +47,27 @@
       </HAnimHumanoid>
       <!-- ============================== -->
       <HAnimHumanoid DEF='c_SkinIndexedGeometry' name='SkinIndexedGeometry' version='2.0'>
-        <HAnimJoint name='humanoid_root' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+        <HAnimJoint DEF='c_SkinIndexedGeometry' name='humanoid_root' containerField='skeleton' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
           <HAnimSegment name='sacrum' momentsOfInertia='0 0 0 0 0 0 0 0 0'/>
         </HAnimJoint>
-        <IndexedFaceSet DEF='SkinMeshIFS'/>
+        <IndexedFaceSet DEF='SkinMeshIFS' containerField='skin'/>
       </HAnimHumanoid>
       <!-- ============================== -->
       <HAnimHumanoid DEF='d_SkinShapeIndexedGeometry' name='SkinShapeIndexedGeometry' version='2.0'>
-        <HAnimJoint name='humanoid_root' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+        <HAnimJoint DEF='d_SkinShapeIndexedGeometry' name='humanoid_root' containerField='skeleton' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
           <HAnimSegment name='sacrum' momentsOfInertia='0 0 0 0 0 0 0 0 0'/>
         </HAnimJoint>
-        <Shape>
+        <Shape containerField='skin'>
           <IndexedFaceSet USE='SkinMeshIFS'/>
         </Shape>
       </HAnimHumanoid>
       <!-- ============================== -->
       <HAnimHumanoid DEF='e_SkinSwitchShapeIndexedGeometry' name='SkinSwitchShapeIndexedGeometry' version='2.0'>
         <!-- TODO show X3D4.0 addition of <Switch DEF='AlternativeSkins' containerField='skin'> -->
-        <HAnimJoint name='humanoid_root' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+        <HAnimJoint DEF='e_SkinSwitchShapeIndexedGeometry' name='humanoid_root' containerField='skeleton' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
           <HAnimSegment name='sacrum' momentsOfInertia='0 0 0 0 0 0 0 0 0'/>
         </HAnimJoint>
-        <Shape>
+        <Shape containerField='skin'>
           <IndexedFaceSet DEF='IndexedSkinMeshIFS'>
             <Coordinate DEF='SkinMeshCoordinate'/>
           </IndexedFaceSet>
@@ -76,10 +76,10 @@
       <!-- similarly for LOD -->
       <!-- ============================== -->
       <HAnimHumanoid DEF='f_SynthesizedSkinShapeIndexedTwoPartGeometry' name='SynthesizedSkinShapeIndexedTwoPartGeometry' version='2.0'>
-        <HAnimJoint name='humanoid_root' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+        <HAnimJoint DEF='f_SynthesizedSkinShapeIndexedTwoPartGeometry' name='humanoid_root' containerField='skeleton' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
           <HAnimSegment name='sacrum' momentsOfInertia='0 0 0 0 0 0 0 0 0'/>
         </HAnimJoint>
-        <Shape>
+        <Shape containerField='skin'>
           <IndexedFaceSet DEF='TwoPartIndexedSkinMesh'>
             <Coordinate DEF='TwoPartSkinMesh'/>
           </IndexedFaceSet>
@@ -89,18 +89,18 @@
       <HAnimHumanoid DEF='g_ApparelSkinIndexedGeometryMultipleShapes' name='ApparelSkinIndexedGeometryMultipleShapes' version='2.0'>
         <!-- allow multiple Shape nodes with containerField='apparel', one for each layer of clothing -->
         <!-- TODO proposed for X3D4.1 <Shape containerField='apparel'/> -->
-        <HAnimJoint name='humanoid_root' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+        <HAnimJoint DEF='g_ApparelSkinIndexedGeometryMultipleShapes' name='humanoid_root' containerField='skeleton' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
           <HAnimSegment name='sacrum' momentsOfInertia='0 0 0 0 0 0 0 0 0'/>
         </HAnimJoint>
-        <Shape/>
+        <Shape containerField='skin'/>
       </HAnimHumanoid>
       <!-- ============================== -->
       <HAnimHumanoid DEF='h_AnatomySkinIndexedGeometryMultipleShapes' name='AnatomySkinIndexedGeometryMultipleShapes' version='2.0'>
         <!-- allow multiple Shape nodes with containerField='skin', one for each layer of skin -->
-        <HAnimJoint name='humanoid_root' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+        <HAnimJoint DEF='h_AnatomySkinIndexedGeometryMultipleShapes' name='humanoid_root' containerField='skeleton' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
           <HAnimSegment name='sacrum' momentsOfInertia='0 0 0 0 0 0 0 0 0'/>
         </HAnimJoint>
-        <Shape/>
+        <Shape containerField='skin'/>
       </HAnimHumanoid>
       <!-- ============================== -->
     </Group>

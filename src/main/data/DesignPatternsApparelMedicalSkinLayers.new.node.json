@@ -114,10 +114,11 @@ models."
 "@name":"SimpleSkeleton",
 "@DEF":"a_SimpleSkeleton",
 "@version":"2.0",
-"-children":[
+"-skeleton":[
 { "HAnimJoint":
 {
 "@name":"humanoid_root",
+"@DEF":"a_SimpleSkeleton",
 "@llimit":[0,0,0],
 "@ulimit":[0,0,0],
 "-children":[
@@ -165,10 +166,11 @@ models."
 "@name":"SimpleSkeletonMesh",
 "@DEF":"b_SimpleSkeletonMesh",
 "@version":"2.0",
-"-children":[
+"-skeleton":[
 { "HAnimJoint":
 {
 "@name":"humanoid_root",
+"@DEF":"b_SimpleSkeletonMesh",
 "@llimit":[0,0,0],
 "@ulimit":[0,0,0],
 "-children":[
@@ -203,10 +205,11 @@ models."
 "@name":"SkinIndexedGeometry",
 "@DEF":"c_SkinIndexedGeometry",
 "@version":"2.0",
-"-children":[
+"-skeleton":[
 { "HAnimJoint":
 {
 "@name":"humanoid_root",
+"@DEF":"c_SkinIndexedGeometry",
 "@llimit":[0,0,0],
 "@ulimit":[0,0,0],
 "-children":[
@@ -219,12 +222,13 @@ models."
 }
 }
 ],
-"-geometry":
+"-skin":[
 { "IndexedFaceSet":
 {
 "@DEF":"SkinMeshIFS"
 }
 }
+]
 }
 },
 {
@@ -235,10 +239,11 @@ models."
 "@name":"SkinShapeIndexedGeometry",
 "@DEF":"d_SkinShapeIndexedGeometry",
 "@version":"2.0",
-"-children":[
+"-skeleton":[
 { "HAnimJoint":
 {
 "@name":"humanoid_root",
+"@DEF":"d_SkinShapeIndexedGeometry",
 "@llimit":[0,0,0],
 "@ulimit":[0,0,0],
 "-children":[
@@ -249,7 +254,9 @@ models."
 }
 ]
 }
-},
+}
+],
+"-skin":[
 { "Shape":
 {
 "-geometry":
@@ -274,10 +281,13 @@ models."
 "-children":[
 {
 "#comment":"TODO show X3D4.0 addition of &lt;Switch DEF='AlternativeSkins' containerField='skin'&gt;"
-},
+}
+],
+"-skeleton":[
 { "HAnimJoint":
 {
 "@name":"humanoid_root",
+"@DEF":"e_SkinSwitchShapeIndexedGeometry",
 "@llimit":[0,0,0],
 "@ulimit":[0,0,0],
 "-children":[
@@ -288,7 +298,9 @@ models."
 }
 ]
 }
-},
+}
+],
+"-skin":[
 { "Shape":
 {
 "-geometry":
@@ -319,10 +331,11 @@ models."
 "@name":"SynthesizedSkinShapeIndexedTwoPartGeometry",
 "@DEF":"f_SynthesizedSkinShapeIndexedTwoPartGeometry",
 "@version":"2.0",
-"-children":[
+"-skeleton":[
 { "HAnimJoint":
 {
 "@name":"humanoid_root",
+"@DEF":"f_SynthesizedSkinShapeIndexedTwoPartGeometry",
 "@llimit":[0,0,0],
 "@ulimit":[0,0,0],
 "-children":[
@@ -333,7 +346,9 @@ models."
 }
 ]
 }
-},
+}
+],
+"-skin":[
 { "Shape":
 {
 "-geometry":
@@ -368,10 +383,13 @@ layer of clothing"
 },
 {
 "#comment":"TODO proposed for X3D4.1 &lt;Shape containerField='apparel'/&gt;"
-},
+}
+],
+"-skeleton":[
 { "HAnimJoint":
 {
 "@name":"humanoid_root",
+"@DEF":"g_ApparelSkinIndexedGeometryMultipleShapes",
 "@llimit":[0,0,0],
 "@ulimit":[0,0,0],
 "-children":[
@@ -382,7 +400,9 @@ layer of clothing"
 }
 ]
 }
-},
+}
+],
+"-skin":[
 { "Shape":
 {
 }
@@ -402,10 +422,13 @@ layer of clothing"
 {
 "#comment":"allow multiple Shape nodes with containerField='skin', one for each layer
 of skin"
-},
+}
+],
+"-skeleton":[
 { "HAnimJoint":
 {
 "@name":"humanoid_root",
+"@DEF":"h_AnatomySkinIndexedGeometryMultipleShapes",
 "@llimit":[0,0,0],
 "@ulimit":[0,0,0],
 "-children":[
@@ -416,7 +439,9 @@ of skin"
 }
 ]
 }
-},
+}
+],
+"-skin":[
 { "Shape":
 {
 }

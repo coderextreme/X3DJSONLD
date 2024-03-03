@@ -132,7 +132,24 @@ attaching this appendage to a body"
 {
 "#comment":"original HAnimHumanoid info='\"authorName=Kwan-Hee YOO, Don Brutzman and
 Joe Williams\"'"
+}
+],
+"-metadata":
+{ "MetadataSet":
+{
+"@name":"HAnimHumanoid.info",
+"@reference":"https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid",
+"-value":[
+{ "MetadataString":
+{
+"@name":"authorName",
+"@value":["Kwan-Hee YOO, Don Brutzman and Joe Williams"]
+}
+}
+]
+}
 },
+"-skeleton":[
 { "HAnimJoint":
 {
 "@name":"humanoid_root",
@@ -1833,7 +1850,9 @@ re-use of this foot model"
 }
 ]
 }
-},
+}
+],
+"-joints":[
 { "HAnimJoint":
 {
 "@USE":"hanim_humanoid_root"
@@ -1968,7 +1987,9 @@ re-use of this foot model"
 {
 "@USE":"hanim_r_transversetarsal"
 }
-},
+}
+],
+"-segments":[
 { "HAnimSegment":
 {
 "@USE":"hanim_r_calcaneus"
@@ -2099,22 +2120,7 @@ re-use of this foot model"
 "@USE":"hanim_r_tarsal_proximal_phalanx_5"
 }
 }
-],
-"-metadata":
-{ "MetadataSet":
-{
-"@name":"HAnimHumanoid.info",
-"@reference":"https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid",
-"-value":[
-{ "MetadataString":
-{
-"@name":"authorName",
-"@value":["Kwan-Hee YOO, Don Brutzman and Joe Williams"]
-}
-}
 ]
-}
-}
 }
 }
 ]

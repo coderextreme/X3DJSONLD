@@ -272,7 +272,9 @@
 "-children":[
 {
 "#comment":"&lt;/LOD&gt;"
-},
+}
+],
+"-skeleton":[
 { "HAnimJoint":
 {
 "@name":"humanoid_root",
@@ -11329,7 +11331,9 @@ vertices 2"
 }
 ]
 }
-},
+}
+],
+"-joints":[
 { "HAnimJoint":
 {
 "@USE":"hanim_humanoid_root"
@@ -12059,7 +12063,9 @@ vertices 2"
 {
 "@USE":"hanim_r_carpal_distal_interphalangeal_5"
 }
-},
+}
+],
+"-segments":[
 { "HAnimSegment":
 {
 "@USE":"hanim_sacrum"
@@ -12654,7 +12660,9 @@ vertices 2"
 {
 "@USE":"hanim_r_carpal_middle_phalanx_5"
 }
-},
+}
+],
+"-sites":[
 { "HAnimSite":
 {
 "@USE":"hanim_buttocks_standing_wall_contact_point_pt"
@@ -13246,7 +13254,7 @@ vertices 2"
 }
 }
 ],
-"-coord":
+"-skinCoord":
 { "Coordinate":
 {
 "@USE":"TheSkinCoord"
