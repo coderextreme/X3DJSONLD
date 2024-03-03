@@ -35,12 +35,12 @@
             <Appearance>
 		<Material diffuseColor='0.7 0.7 0.7' specularColor='0.5 0.5 0.5'></Material>
                 <ComposedCubeMapTexture DEF="texture">
-			<ImageTexture url='"../resources/images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"' containerField="back"></ImageTexture>
-			<ImageTexture url='"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"' containerField="bottom"></ImageTexture>
-			<ImageTexture url='"../resources/images/all_probes/stpeters_cross/stpeters_front.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"' containerField="front"></ImageTexture>
-			<ImageTexture url='"../resources/images/all_probes/stpeters_cross/stpeters_left.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"' containerField="left"></ImageTexture>
-			<ImageTexture url='"../resources/images/all_probes/stpeters_cross/stpeters_right.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"' containerField="right"></ImageTexture>
-			<ImageTexture url='"../resources/images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"' containerField="top"></ImageTexture>
+			<ImageTexture url='"../resources/images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"' containerField="backTexture"></ImageTexture>
+			<ImageTexture url='"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"' containerField="bottomTexture"></ImageTexture>
+			<ImageTexture url='"../resources/images/all_probes/stpeters_cross/stpeters_front.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"' containerField="frontTexture"></ImageTexture>
+			<ImageTexture url='"../resources/images/all_probes/stpeters_cross/stpeters_left.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"' containerField="leftTexture"></ImageTexture>
+			<ImageTexture url='"../resources/images/all_probes/stpeters_cross/stpeters_right.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"' containerField="rightTexture"></ImageTexture>
+			<ImageTexture url='"../resources/images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"' containerField="topTexture"></ImageTexture>
                 </ComposedCubeMapTexture>
                 <ComposedShader language='GLSL'>
 		  <field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'></field>
