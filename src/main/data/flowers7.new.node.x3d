@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+  <head>
+    <!-- <component name='Shape' level='4'></component> -->
+    <component name='Scripting' level='1'/>
+    <component name='EnvironmentalEffects' level='3'/>
+    <component name='Shaders' level='1'/>
+    <component name='CubeMapTexturing' level='1'/>
+    <component name='Texturing' level='1'/>
+    <component name='Rendering' level='1'/>
+    <component name='Grouping' level='3'/>
+    <component name='Core' level='1'/>
+    <meta content='flowers7.x3d' name='title'/>
+    <meta content='John Carlson' name='creator'/>
+    <meta content='manual' name='generator'/>
+    <meta content='https://coderextreme.net/X3DJSONLD/src/main/data/flowers7.x3d' name='identifier'/>
+    <meta content='a flower' name='description'/>
+  </head>
+  <Scene>
+    <NavigationInfo avatarSize='0.25 1.6 0.75' transitionType='"LINEAR"' type='"EXAMINE" "ANY"'/>
+    <!-- Images courtesy of Paul Debevec's Light Probe Image Gallery -->
+    <Background DEF='background' backUrl='"../resources/images/all_probes/beach_cross/beach_back.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png"' bottomUrl='"../resources/images/all_probes/beach_cross/beach_bottom.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"' frontUrl='"../resources/images/all_probes/beach_cross/beach_front.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png"' leftUrl='"../resources/images/all_probes/beach_cross/beach_left.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png"' rightUrl='"../resources/images/all_probes/beach_cross/beach_right.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png"' topUrl='"../resources/images/all_probes/beach_cross/beach_top.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png"'/>
+    <Viewpoint description='Transparent rose' position='0 0 40'/>
+    <Transform>
+      <Shape>
+        <Appearance>
+          <Material diffuseColor='0.7 0.7 0.7' specularColor='0.5 0.5 0.5'/>
+          <ComposedShader DEF='x3dom' language='GLSL'>
+            <!-- <field name='cube' type='SFNode' accessType="inputOutput"> <ComposedCubeMapTexture USE="texture"/> </field> -->
+            <field name='cube' accessType='inputOutput' type='SFInt32' value='0'/>
+            <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1 1.033'/>
+            <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'/>
+            <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'/>
+            <field name='power' accessType='inputOutput' type='SFFloat' value='2.0'/>
+            <field name='a' accessType='inputOutput' type='SFFloat' value='10.0'/>
+            <field name='b' accessType='inputOutput' type='SFFloat' value='1.0'/>
+            <field name='c' accessType='inputOutput' type='SFFloat' value='20.0'/>
+            <field name='d' accessType='inputOutput' type='SFFloat' value='20.0'/>
+            <field name='tdelta' accessType='inputOutput' type='SFFloat' value='0.0'/>
+            <field name='pdelta' accessType='inputOutput' type='SFFloat' value='0.0'/>
+            <ShaderPart url='"../shaders/x3dom_flowers_chromatic.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs"'/>
+            <ShaderPart type='FRAGMENT' url='"../shaders/common.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"'/>
+          </ComposedShader>
+          <ComposedShader DEF='x_ite' language='GLSL'>
+            <field name='cube' accessType='inputOutput' type='SFNode'>
+              <ComposedCubeMapTexture USE='texture'/>
+            </field>
+            <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1 1.033'/>
+            <field name='bias' accessType='inputOnly' type='SFFloat' value='0.5'/>
+            <field name='scale' accessType='inputOnly' type='SFFloat' value='0.5'/>
+            <field name='power' accessType='inputOnly' type='SFFloat' value='2.0'/>
+            <field name='a' accessType='inputOnly' type='SFFloat' value='10.0'/>
+            <field name='b' accessType='inputOnly' type='SFFloat' value='1.0'/>
+            <field name='c' accessType='inputOnly' type='SFFloat' value='20.0'/>
+            <field name='d' accessType='inputOnly' type='SFFloat' value='20.0'/>
+            <field name='tdelta' accessType='inputOnly' type='SFFloat' value='0.0'/>
+            <field name='pdelta' accessType='inputOnly' type='SFFloat' value='0.0'/>
+            <ShaderPart url='"../shaders/x_ite_flowers_chromatic.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs"'/>
+            <ShaderPart type='FRAGMENT' url='"../shaders/x_ite.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"'/>
+          </ComposedShader>
+          <ComposedCubeMapTexture DEF='texture'>
+            <ImageTexture DEF='backShader' containerField='backTexture' url='"../resources/images/all_probes/beach_cross/beach_back.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png"'/>
+            <ImageTexture DEF='bottomShader' containerField='bottomTexture' url='"../resources/images/all_probes/beach_cross/beach_bottom.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"'/>
+            <ImageTexture DEF='frontShader' containerField='frontTexture' url='"../resources/images/all_probes/beach_cross/beach_front.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png"'/>
+            <ImageTexture DEF='leftShader' containerField='leftTexture' url='"../resources/images/all_probes/beach_cross/beach_left.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png"'/>
+            <ImageTexture DEF='rightShader' containerField='rightTexture' url='"../resources/images/all_probes/beach_cross/beach_right.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png"'/>
+            <ImageTexture DEF='topShader' containerField='topTexture' url='"../resources/images/all_probes/beach_cross/beach_top.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png"'/>
+          </ComposedCubeMapTexture>
+        </Appearance>
+        <Sphere/>
+      </Shape>
+    </Transform>
+    <Script DEF='UrlSelector' directOutput='true'>
+      <field name='frontUrls' accessType='initializeOnly' type='MFString' value='"../resources/images/all_probes/beach_cross/beach_front.png" "../resources/images/all_probes/building_cross/building_front.png" "../resources/images/all_probes/campus_cross/campus_front.png" "../resources/images/all_probes/galileo_cross/galileo_front.png" "../resources/images/all_probes/grace_cross/grace_front.png" "../resources/images/all_probes/kitchen_cross/kitchen_front.png" "../resources/images/all_probes/rnl_cross/rnl_front.png" "../resources/images/all_probes/stpeters_cross/stpeters_front.png" "../resources/images/all_probes/uffizi_cross/uffizi_front.png"'/>
+      <field name='backUrls' accessType='initializeOnly' type='MFString' value='"../resources/images/all_probes/beach_cross/beach_back.png" "../resources/images/all_probes/building_cross/building_back.png" "../resources/images/all_probes/campus_cross/campus_back.png" "../resources/images/all_probes/galileo_cross/galileo_back.png" "../resources/images/all_probes/grace_cross/grace_back.png" "../resources/images/all_probes/kitchen_cross/kitchen_back.png" "../resources/images/all_probes/rnl_cross/rnl_back.png" "../resources/images/all_probes/stpeters_cross/stpeters_back.png" "../resources/images/all_probes/uffizi_cross/uffizi_back.png"'/>
+      <field name='leftUrls' accessType='initializeOnly' type='MFString' value='"../resources/images/all_probes/beach_cross/beach_left.png" "../resources/images/all_probes/building_cross/building_left.png" "../resources/images/all_probes/campus_cross/campus_left.png" "../resources/images/all_probes/galileo_cross/galileo_left.png" "../resources/images/all_probes/grace_cross/grace_left.png" "../resources/images/all_probes/kitchen_cross/kitchen_left.png" "../resources/images/all_probes/rnl_cross/rnl_left.png" "../resources/images/all_probes/stpeters_cross/stpeters_left.png" "../resources/images/all_probes/uffizi_cross/uffizi_left.png"'/>
+      <field name='rightUrls' accessType='initializeOnly' type='MFString' value='"../resources/images/all_probes/beach_cross/beach_right.png" "../resources/images/all_probes/building_cross/building_right.png" "../resources/images/all_probes/campus_cross/campus_right.png" "../resources/images/all_probes/galileo_cross/galileo_right.png" "../resources/images/all_probes/grace_cross/grace_right.png" "../resources/images/all_probes/kitchen_cross/kitchen_right.png" "../resources/images/all_probes/rnl_cross/rnl_right.png" "../resources/images/all_probes/stpeters_cross/stpeters_right.png" "../resources/images/all_probes/uffizi_cross/uffizi_right.png"'/>
+      <field name='topUrls' accessType='initializeOnly' type='MFString' value='"../resources/images/all_probes/beach_cross/beach_top.png" "../resources/images/all_probes/building_cross/building_top.png" "../resources/images/all_probes/campus_cross/campus_top.png" "../resources/images/all_probes/galileo_cross/galileo_top.png" "../resources/images/all_probes/grace_cross/grace_top.png" "../resources/images/all_probes/kitchen_cross/kitchen_top.png" "../resources/images/all_probes/rnl_cross/rnl_top.png" "../resources/images/all_probes/stpeters_cross/stpeters_top.png" "../resources/images/all_probes/uffizi_cross/uffizi_top.png"'/>
+      <field name='bottomUrls' accessType='initializeOnly' type='MFString' value='"../resources/images/all_probes/beach_cross/beach_bottom.png" "../resources/images/all_probes/building_cross/building_bottom.png" "../resources/images/all_probes/campus_cross/campus_bottom.png" "../resources/images/all_probes/galileo_cross/galileo_bottom.png" "../resources/images/all_probes/grace_cross/grace_bottom.png" "../resources/images/all_probes/kitchen_cross/kitchen_bottom.png" "../resources/images/all_probes/rnl_cross/rnl_bottom.png" "../resources/images/all_probes/stpeters_cross/stpeters_bottom.png" "../resources/images/all_probes/uffizi_cross/uffizi_bottom.png"'/>
+      <field name='front' accessType='inputOutput' type='MFString'/>
+      <field name='back' accessType='inputOutput' type='MFString'/>
+      <field name='left' accessType='inputOutput' type='MFString'/>
+      <field name='right' accessType='inputOutput' type='MFString'/>
+      <field name='top' accessType='inputOutput' type='MFString'/>
+      <field name='bottom' accessType='inputOutput' type='MFString'/>
+      <field name='set_fraction' accessType='inputOnly' type='SFFloat'/>
+      <field name='old' accessType='inputOutput' type='SFInt32' value='-1'/>
+<![CDATA[
+ecmascript:
+        function set_fraction( f, tm ) {
+            var side = Math.floor(f*frontUrls.length);
+            if (side > frontUrls.length-1) {
+                side = 0;
+            }
+            if (side != old) {
+                    old = side;
+                    front[0] = frontUrls[side];
+                    back[0] = backUrls[side];
+                    left[0] = leftUrls[side];
+                    right[0] = rightUrls[side];
+                    top[0] = topUrls[side];
+                    bottom[0] = bottomUrls[side];
+            }
+        }
+]]>
+    </Script>
+    <!-- <TimeSensor DEF="Clock" cycleInterval="45" loop='true'/> <ROUTE fromNode='Clock' fromField='fraction_changed' toNode='UrlSelector' toField='set_fraction'/> <ROUTE fromNode='UrlSelector' fromField='front' toNode='background' toField='frontUrl'/> <ROUTE fromNode='UrlSelector' fromField='back' toNode='background' toField='backUrl'/> <ROUTE fromNode='UrlSelector' fromField='left' toNode='background' toField='leftUrl'/> <ROUTE fromNode='UrlSelector' fromField='right' toNode='background' toField='rightUrl'/> <ROUTE fromNode='UrlSelector' fromField='top' toNode='background' toField='topUrl'/> <ROUTE fromNode='UrlSelector' fromField='bottom' toNode='background' toField='bottomUrl'/> <ROUTE fromNode='UrlSelector' fromField='front' toNode='frontShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='back' toNode='backShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='left' toNode='leftShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='right' toNode='rightShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='top' toNode='topShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='bottom' toNode='bottomShader' toField='url'/> -->
+    <Script DEF='Animate' directOutput='true'>
+      <field name='set_fraction' accessType='inputOnly' type='SFFloat'/>
+      <field name='a' accessType='inputOutput' type='SFFloat' value='10.0'/>
+      <field name='b' accessType='inputOutput' type='SFFloat' value='1.0'/>
+      <field name='c' accessType='inputOutput' type='SFFloat' value='20.0'/>
+      <field name='d' accessType='inputOutput' type='SFFloat' value='20.0'/>
+      <field name='tdelta' accessType='inputOutput' type='SFFloat' value='0.0'/>
+      <field name='pdelta' accessType='inputOutput' type='SFFloat' value='0.0'/>
+<![CDATA[
+ecmascript:
+
+function set_fraction() {
+	var choice = Math.floor(Math.random() * 4);
+	switch (choice) {
+	case 0:
+		a = a + Math.floor(Math.random() * 2) * 2 - 1;
+		break;
+	case 1:
+		b = b + Math.floor(Math.random() * 2) * 2 - 1;
+		break;
+	case 2:
+		c = c + Math.floor(Math.random() * 2) * 2 - 1;
+		break;
+	case 3:
+		d = d + Math.floor(Math.random() * 2) * 2 - 1;
+		break;
+	}
+	tdelta = tdelta + 0.5;
+	pdelta = pdelta + 0.5;
+	if (a < 1) {
+		a = 10;
+	}
+	if (b < 1) {
+		b = 10;
+	}
+	if (c < 1) {
+		c = 4;
+	}
+	if (c > 20) {
+		c = 4;
+	}
+	if (d < 1) {
+		d = 4;
+	}
+	if (d > 20) {
+		d = 4;
+	}
+}
+]]>
+    </Script>
+    <TimeSensor DEF='TourTime' cycleInterval='5.0' loop='true'/>
+    <ROUTE fromField='fraction_changed' fromNode='TourTime' toField='set_fraction' toNode='Animate'/>
+    <ROUTE fromField='a' fromNode='Animate' toField='a' toNode='x_ite'/>
+    <ROUTE fromField='b' fromNode='Animate' toField='b' toNode='x_ite'/>
+    <ROUTE fromField='c' fromNode='Animate' toField='c' toNode='x_ite'/>
+    <ROUTE fromField='d' fromNode='Animate' toField='d' toNode='x_ite'/>
+    <ROUTE fromField='pdelta' fromNode='Animate' toField='pdelta' toNode='x_ite'/>
+    <ROUTE fromField='tdelta' fromNode='Animate' toField='tdelta' toNode='x_ite'/>
+    <ROUTE fromField='a' fromNode='Animate' toField='a' toNode='x3dom'/>
+    <ROUTE fromField='b' fromNode='Animate' toField='b' toNode='x3dom'/>
+    <ROUTE fromField='c' fromNode='Animate' toField='c' toNode='x3dom'/>
+    <ROUTE fromField='d' fromNode='Animate' toField='d' toNode='x3dom'/>
+    <ROUTE fromField='pdelta' fromNode='Animate' toField='pdelta' toNode='x3dom'/>
+    <ROUTE fromField='tdelta' fromNode='Animate' toField='tdelta' toNode='x3dom'/>
+  </Scene>
+</X3D>
