@@ -91,7 +91,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("description"),
-              content : new SFString("Articulated 3D game character designed with a general graphics tool, then converted into an X3D HAnim model.")}),
+              content : new SFString("Articulated 3D game character designed with a general graphics tool")}),
 
             new meta({
               name : new SFString("reference"),

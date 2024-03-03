@@ -23,7 +23,6 @@ var HAnimHumanoid = require('./x3d.mjs');
 var MetadataSet = require('./x3d.mjs');
 var MetadataString = require('./x3d.mjs');
 var HAnimJoint = require('./x3d.mjs');
-var MFFloat = require('./x3d.mjs');
 var HAnimSegment = require('./x3d.mjs');
 var Transform = require('./x3d.mjs');
 var Shape = require('./x3d.mjs');
@@ -192,15 +191,11 @@ var X3D0 =  new X3D({
                   name : new SFString("humanoid_root"),
                   DEF : new SFString("hanim_humanoid_root"),
                   center : new SFVec3f([0,0.824,0.0277]),
-                  ulimit : new MFFloat([0,0,0]),
-                  llimit : new MFFloat([0,0,0]),
                   children : new MFNode([
                     new HAnimJoint({
                       name : new SFString("sacroiliac"),
                       DEF : new SFString("hanim_sacroiliac"),
                       center : new SFVec3f([0,0.9149,0.0016]),
-                      ulimit : new MFFloat([0,0,0]),
-                      llimit : new MFFloat([0,0,0]),
                       children : new MFNode([
                         new HAnimSegment({
                           name : new SFString("pelvis"),

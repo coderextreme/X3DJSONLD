@@ -19,7 +19,6 @@ var MetadataString = require('./x3d.mjs');
 var MFString = require('./x3d.mjs');
 var HAnimHumanoid = require('./x3d.mjs');
 var HAnimJoint = require('./x3d.mjs');
-var MFFloat = require('./x3d.mjs');
 var HAnimSegment = require('./x3d.mjs');
 var Shape = require('./x3d.mjs');
 var HAnimSite = require('./x3d.mjs');
@@ -126,8 +125,6 @@ var X3D0 =  new X3D({
                   joints : new MFNode([
                     new HAnimJoint({
                       name : new SFString("humanoid_root"),
-                      ulimit : new MFFloat([0,0,0]),
-                      llimit : new MFFloat([0,0,0]),
                       children : new MFNode([
                         new HAnimSegment({
                           name : new SFString("sacrum"),
@@ -153,8 +150,6 @@ var X3D0 =  new X3D({
                   joints : new MFNode([
                     new HAnimJoint({
                       name : new SFString("humanoid_root"),
-                      ulimit : new MFFloat([0,0,0]),
-                      llimit : new MFFloat([0,0,0]),
                       children : new MFNode([
                         new HAnimSegment({
                           name : new SFString("sacrum"),
@@ -172,8 +167,6 @@ var X3D0 =  new X3D({
                   joints : new MFNode([
                     new HAnimJoint({
                       name : new SFString("humanoid_root"),
-                      ulimit : new MFFloat([0,0,0]),
-                      llimit : new MFFloat([0,0,0]),
                       children : new MFNode([
                         new HAnimSegment({
                           name : new SFString("sacrum")})])}),
@@ -189,8 +182,6 @@ var X3D0 =  new X3D({
                   joints : new MFNode([
                     new HAnimJoint({
                       name : new SFString("humanoid_root"),
-                      ulimit : new MFFloat([0,0,0]),
-                      llimit : new MFFloat([0,0,0]),
                       children : new MFNode([
                         new HAnimSegment({
                           name : new SFString("sacrum")})])}),
@@ -208,8 +199,6 @@ var X3D0 =  new X3D({
                   joints : new MFNode([
                     new HAnimJoint({
                       name : new SFString("humanoid_root"),
-                      ulimit : new MFFloat([0,0,0]),
-                      llimit : new MFFloat([0,0,0]),
                       children : new MFNode([
                         new HAnimSegment({
                           name : new SFString("sacrum")})])}),
@@ -232,8 +221,6 @@ var X3D0 =  new X3D({
                   joints : new MFNode([
                     new HAnimJoint({
                       name : new SFString("humanoid_root"),
-                      ulimit : new MFFloat([0,0,0]),
-                      llimit : new MFFloat([0,0,0]),
                       children : new MFNode([
                         new HAnimSegment({
                           name : new SFString("sacrum")})])}),
@@ -254,8 +241,6 @@ var X3D0 =  new X3D({
                   joints : new MFNode([
                     new HAnimJoint({
                       name : new SFString("humanoid_root"),
-                      ulimit : new MFFloat([0,0,0]),
-                      llimit : new MFFloat([0,0,0]),
                       children : new MFNode([
                         new HAnimSegment({
                           name : new SFString("sacrum")})])}),
@@ -272,8 +257,6 @@ var X3D0 =  new X3D({
                   joints : new MFNode([
                     new HAnimJoint({
                       name : new SFString("humanoid_root"),
-                      ulimit : new MFFloat([0,0,0]),
-                      llimit : new MFFloat([0,0,0]),
                       children : new MFNode([
                         new HAnimSegment({
                           name : new SFString("sacrum")})])}),
