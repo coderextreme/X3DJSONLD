@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D profile='Full' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+  <head>
+    <meta content='AllAudioGraphNodesTest.x3d' name='title'/>
+    <meta content='List of all X3D4 audio graph nodes to test infrastructure and validation support. Absence of attributes means that checking and removal of default values is working.' name='description'/>
+    <meta content='Don Brutzman' name='creator'/>
+    <meta content='25 October 2020' name='created'/>
+    <meta content='26 November 2021' name='modified'/>
+    <meta content='Developmental test, no actual 3D model expected' name='warning'/>
+    <meta content='https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/AllAudioGraphNodesTest.x3d' name='identifier'/>
+    <meta content='X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit' name='generator'/>
+  </head>
+  <Scene>
+    <WorldInfo title='AllAudioGraphNodes.x3d'/>
+    <Shape>
+      <Appearance>
+        <AcousticProperties description='Testing of X3D4 nodes demonstrating W3C Audio API in progress' diffuse='0.25' refraction='0.5' specular='1.0'/>
+        <Material/>
+      </Appearance>
+      <Box/>
+    </Shape>
+    <Sound location='0 1.6 0'>
+      <AudioClip description='testing' url='"sound/saxophone.mp3" "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/saxophone.mp3"'/>
+    </Sound>
+    <Sound location='0 1.6 0'>
+      <MovieTexture containerField='source' description='testing' url='"bogus.mpg" "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/bogus.mpg"'/>
+    </Sound>
+    <SpatialSound>
+      <Analyser>
+        <StreamAudioDestination>
+          <BiquadFilter>
+            <ChannelMerger>
+              <ChannelSelector>
+                <ChannelSplitter>
+                  <Convolver>
+                    <Delay>
+                      <DynamicsCompressor>
+                        <Gain>
+                          <StreamAudioDestination>
+                            <WaveShaper>
+                              <BufferAudioSource/>
+                              <ListenerPointSource/>
+                              <MicrophoneSource/>
+                              <OscillatorSource/>
+                              <StreamAudioSource/>
+                            </WaveShaper>
+                          </StreamAudioDestination>
+                        </Gain>
+                      </DynamicsCompressor>
+                    </Delay>
+                  </Convolver>
+                </ChannelSplitter>
+              </ChannelSelector>
+            </ChannelMerger>
+          </BiquadFilter>
+        </StreamAudioDestination>
+      </Analyser>
+    </SpatialSound>
+  </Scene>
+</X3D>

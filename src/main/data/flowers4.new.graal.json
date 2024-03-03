@@ -67,7 +67,7 @@
 },
 {
 "@name":"translated",
-"@content":"01 March 2024"
+"@content":"03 March 2024"
 },
 {
 "@name":"generator",
@@ -83,6 +83,7 @@
 "-children":[
 { "NavigationInfo":
 {
+"@avatarSize":[0.15,1.53,0.75]
 }
 },
 { "Background":
