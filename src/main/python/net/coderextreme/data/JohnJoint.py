@@ -131,3 +131,4 @@ Scene10.addChildren(Viewpoint29)
 
 X3D0.setScene(Scene10)
 X3D0.toFileX3D("../data/JohnJoint.new.python.x3d")
+X3D0.toFileJSON("../data/JohnJoint.new.python.json")

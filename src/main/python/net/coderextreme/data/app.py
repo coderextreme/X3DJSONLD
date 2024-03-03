@@ -51,3 +51,4 @@ Scene6.addChildren(Transform12)
 
 X3D0.setScene(Scene6)
 X3D0.toFileX3D("../data/app.new.python.x3d")
+X3D0.toFileJSON("../data/app.new.python.json")

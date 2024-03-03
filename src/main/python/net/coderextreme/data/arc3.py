@@ -380,3 +380,4 @@ Scene7.addChildren(ROUTE61)
 
 X3D0.setScene(Scene7)
 X3D0.toFileX3D("../data/arc3.new.python.x3d")
+X3D0.toFileJSON("../data/arc3.new.python.json")

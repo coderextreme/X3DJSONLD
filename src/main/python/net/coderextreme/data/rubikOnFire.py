@@ -379,3 +379,4 @@ Scene7.addChildren(ProtoInstance87)
 
 X3D0.setScene(Scene7)
 X3D0.toFileX3D("../data/rubikOnFire.new.python.x3d")
+X3D0.toFileJSON("../data/rubikOnFire.new.python.json")

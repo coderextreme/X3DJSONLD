@@ -231,3 +231,4 @@ Scene10.addChildren(ProtoInstance34)
 
 X3D0.setScene(Scene10)
 X3D0.toFileX3D("../data/bubs2.new.python.x3d")
+X3D0.toFileJSON("../data/bubs2.new.python.json")

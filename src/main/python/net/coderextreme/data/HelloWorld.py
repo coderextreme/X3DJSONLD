@@ -187,3 +187,4 @@ Scene25.addChildren(Group27)
 
 X3D0.setScene(Scene25)
 X3D0.toFileX3D("../data/HelloWorld.new.python.x3d")
+X3D0.toFileJSON("../data/HelloWorld.new.python.json")

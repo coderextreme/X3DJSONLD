@@ -70,3 +70,4 @@ Scene9.addChildren(Group10)
 
 X3D0.setScene(Scene9)
 X3D0.toFileX3D("../data/cube.new.python.x3d")
+X3D0.toFileJSON("../data/cube.new.python.json")

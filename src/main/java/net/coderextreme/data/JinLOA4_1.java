@@ -74,7 +74,7 @@ public class JinLOA4_1 implements X3DRoots {
         .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
         .addMeta(new meta().setName("license").setContent("../license.html")))
       .setScene(new Scene()
-        .addChild(new WorldInfo().setTitle("JinLOA4.x3d"))
+        .addChild(new WorldInfo().setTitle("JinLOA4_1.x3d"))
         .addChild(new NavigationInfo().setSpeed(1.5))
         .addChild(new Viewpoint().setCenterOfRotation(new double[] {0,1,0}).setDescription("JinLOA4").setPosition(new double[] {0,1,3}))
         .addChild(new HAnimHumanoid().setName("JinLOA4").setDEF("hanim_JinLOA4").setLoa(4).setScale(new double[] {0.0225,0.0225,0.0225}).setVersion("2.0")

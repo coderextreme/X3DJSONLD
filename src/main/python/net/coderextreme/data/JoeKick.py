@@ -3676,3 +3676,4 @@ Scene18.addChildren(Group551)
 
 X3D0.setScene(Scene18)
 X3D0.toFileX3D("../data/JoeKick.new.python.x3d")
+X3D0.toFileJSON("../data/JoeKick.new.python.json")

@@ -602,3 +602,4 @@ Scene10.addChildren(ROUTE121)
 
 X3D0.setScene(Scene10)
 X3D0.toFileX3D("../data/x3dconnectorProto.new.python.x3d")
+X3D0.toFileJSON("../data/x3dconnectorProto.new.python.json")

@@ -259,3 +259,4 @@ Scene22.addChildren(ProtoInstance52)
 
 X3D0.setScene(Scene22)
 X3D0.toFileX3D("../data/SimpleShader.new.python.x3d")
+X3D0.toFileJSON("../data/SimpleShader.new.python.json")

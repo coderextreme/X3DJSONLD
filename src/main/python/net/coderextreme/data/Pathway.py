@@ -9802,3 +9802,4 @@ Scene15.addChildren(Shape2222)
 
 X3D0.setScene(Scene15)
 X3D0.toFileX3D("../data/Pathway.new.python.x3d")
+X3D0.toFileJSON("../data/Pathway.new.python.json")

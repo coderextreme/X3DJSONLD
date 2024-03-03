@@ -1895,3 +1895,4 @@ Scene11.addChildren(HAnimHumanoid31)
 
 X3D0.setScene(Scene11)
 X3D0.toFileX3D("../data/JohnJoint2.new.python.x3d")
+X3D0.toFileJSON("../data/JohnJoint2.new.python.json")

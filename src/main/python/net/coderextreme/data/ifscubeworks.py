@@ -74,3 +74,4 @@ Scene9.addChildren(Group11)
 
 X3D0.setScene(Scene9)
 X3D0.toFileX3D("../data/ifscubeworks.new.python.x3d")
+X3D0.toFileJSON("../data/ifscubeworks.new.python.json")

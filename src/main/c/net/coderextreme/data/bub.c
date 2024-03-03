@@ -205,6 +205,7 @@ ComposedShader32.DEF = "x3dom";
 ComposedShader32.language = "GLSL";
 field field33 = createNode("field");
 field33.name = "cube";
+field33.type = "SFInt32";
 field33.accessType = "inputOutput";
 field33.value = "0";
 ComposedShader32.field = new MFNode();
@@ -213,34 +214,40 @@ ComposedShader32.field[0] = field33;
 
 field field34 = createNode("field");
 field34.name = "chromaticDispertion";
+field34.type = "SFVec3f";
 field34.accessType = "inputOutput";
 field34.value = "0.98 1 1.033";
 ComposedShader32.field[1] = field34;
 
 field field35 = createNode("field");
 field35.name = "bias";
+field35.type = "SFFloat";
 field35.accessType = "inputOutput";
 field35.value = "0.5";
 ComposedShader32.field[2] = field35;
 
 field field36 = createNode("field");
 field36.name = "scale";
+field36.type = "SFFloat";
 field36.accessType = "inputOutput";
 field36.value = "0.5";
 ComposedShader32.field[3] = field36;
 
 field field37 = createNode("field");
 field37.name = "power";
+field37.type = "SFFloat";
 field37.accessType = "inputOutput";
 field37.value = "2";
 ComposedShader32.field[4] = field37;
 
 ShaderPart ShaderPart38 = createNode("ShaderPart");
 ShaderPart38.url = new MFString(new java.lang.String["../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"]);
+ShaderPart38.type = "VERTEX";
 ComposedShader32.parts[5] = ShaderPart38;
 
 ShaderPart ShaderPart39 = createNode("ShaderPart");
 ShaderPart39.url = new MFString(new java.lang.String["../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"]);
+ShaderPart39.type = "FRAGMENT";
 ComposedShader32.parts[6] = ShaderPart39;
 
 Appearance23.shaders = new MFNode();
@@ -252,6 +259,7 @@ ComposedShader40.DEF = "x_ite";
 ComposedShader40.language = "GLSL";
 field field41 = createNode("field");
 field41.name = "cube";
+field41.type = "SFNode";
 field41.accessType = "inputOutput";
 ComposedCubeMapTexture ComposedCubeMapTexture42 = createNode("ComposedCubeMapTexture");
 ComposedCubeMapTexture42.USE = "texture";
@@ -265,34 +273,40 @@ ComposedShader40.field[0] = field41;
 
 field field43 = createNode("field");
 field43.name = "chromaticDispertion";
+field43.type = "SFVec3f";
 field43.accessType = "inputOutput";
 field43.value = "0.98 1 1.033";
 ComposedShader40.field[1] = field43;
 
 field field44 = createNode("field");
 field44.name = "bias";
+field44.type = "SFFloat";
 field44.accessType = "inputOutput";
 field44.value = "0.5";
 ComposedShader40.field[2] = field44;
 
 field field45 = createNode("field");
 field45.name = "scale";
+field45.type = "SFFloat";
 field45.accessType = "inputOutput";
 field45.value = "0.5";
 ComposedShader40.field[3] = field45;
 
 field field46 = createNode("field");
 field46.name = "power";
+field46.type = "SFFloat";
 field46.accessType = "inputOutput";
 field46.value = "2";
 ComposedShader40.field[4] = field46;
 
 ShaderPart ShaderPart47 = createNode("ShaderPart");
 ShaderPart47.url = new MFString(new java.lang.String["../shaders/x_ite.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"]);
+ShaderPart47.type = "VERTEX";
 ComposedShader40.parts[5] = ShaderPart47;
 
 ShaderPart ShaderPart48 = createNode("ShaderPart");
 ShaderPart48.url = new MFString(new java.lang.String["../shaders/x_itebubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs"]);
+ShaderPart48.type = "FRAGMENT";
 ComposedShader40.parts[6] = ShaderPart48;
 
 Appearance23.shaders[1] = ComposedShader40;
@@ -315,6 +329,7 @@ Script50.DEF = "Bounce";
 field field51 = createNode("field");
 field51.name = "translation";
 field51.accessType = "inputOutput";
+field51.type = "SFVec3f";
 field51.value = "0 0 0";
 Script50.field = new MFNode();
 
@@ -323,12 +338,14 @@ Script50.field[0] = field51;
 field field52 = createNode("field");
 field52.name = "velocity";
 field52.accessType = "inputOutput";
+field52.type = "SFVec3f";
 field52.value = "0 0 0";
 Script50.field[1] = field52;
 
 field field53 = createNode("field");
 field53.name = "set_fraction";
 field53.accessType = "inputOnly";
+field53.type = "SFTime";
 Script50.field[2] = field53;
 
 

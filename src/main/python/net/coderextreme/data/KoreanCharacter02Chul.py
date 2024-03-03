@@ -1106,3 +1106,4 @@ Scene19.addChildren(HAnimHumanoid23)
 
 X3D0.setScene(Scene19)
 X3D0.toFileX3D("../data/KoreanCharacter02Chul.new.python.x3d")
+X3D0.toFileJSON("../data/KoreanCharacter02Chul.new.python.json")

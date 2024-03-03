@@ -145,3 +145,4 @@ Scene7.addChildren(ROUTE22)
 
 X3D0.setScene(Scene7)
 X3D0.toFileX3D("../data/MyBounce.new.python.x3d")
+X3D0.toFileJSON("../data/MyBounce.new.python.json")

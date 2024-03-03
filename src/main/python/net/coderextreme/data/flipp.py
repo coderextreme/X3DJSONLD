@@ -144,3 +144,4 @@ Scene9.addChildren(ROUTE27)
 
 X3D0.setScene(Scene9)
 X3D0.toFileX3D("../data/flipp.new.python.x3d")
+X3D0.toFileJSON("../data/flipp.new.python.json")

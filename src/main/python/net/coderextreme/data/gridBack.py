@@ -91,3 +91,4 @@ Scene13.addChildren(Shape14)
 
 X3D0.setScene(Scene13)
 X3D0.toFileX3D("../data/gridBack.new.python.x3d")
+X3D0.toFileJSON("../data/gridBack.new.python.json")

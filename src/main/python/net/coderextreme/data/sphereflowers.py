@@ -190,3 +190,4 @@ Scene17.addChildren(Group20)
 
 X3D0.setScene(Scene17)
 X3D0.toFileX3D("../data/sphereflowers.new.python.x3d")
+X3D0.toFileJSON("../data/sphereflowers.new.python.json")

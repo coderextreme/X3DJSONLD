@@ -28,7 +28,7 @@ function doubleToFloat(d) {
         .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
         .addMeta(new meta().setName("license").setContent("../license.html")))
       .setScene(new Scene()
-        .addChild(new WorldInfo().setTitle("JinLOA4.x3d"))
+        .addChild(new WorldInfo().setTitle("JinLOA4_4.x3d"))
         .addChild(new NavigationInfo().setSpeed(1.5))
         .addChild(new Viewpoint().setCenterOfRotation(Java.to([doubleToFloat(0),doubleToFloat(1),doubleToFloat(0)], Java.type("float[]"))).setDescription("JinLOA4").setPosition(Java.to([doubleToFloat(0),doubleToFloat(1),doubleToFloat(3)], Java.type("float[]"))))
         .addChild(new HAnimHumanoid().setName("JinLOA4").setDEF("hanim_JinLOA4").setLoa(4).setVersion("2.0")

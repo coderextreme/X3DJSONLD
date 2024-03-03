@@ -288,3 +288,4 @@ Scene14.addChildren(Collision16)
 
 X3D0.setScene(Scene14)
 X3D0.toFileX3D("../data/CoordinateAxes.new.python.x3d")
+X3D0.toFileJSON("../data/CoordinateAxes.new.python.json")

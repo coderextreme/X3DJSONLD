@@ -128,3 +128,4 @@ Scene15.addChildren(GeoLOD17)
 
 X3D0.setScene(Scene15)
 X3D0.toFileX3D("../data/SquawLOD023.new.python.x3d")
+X3D0.toFileJSON("../data/SquawLOD023.new.python.json")

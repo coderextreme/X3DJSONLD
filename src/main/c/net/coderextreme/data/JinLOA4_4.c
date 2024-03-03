@@ -95,7 +95,7 @@ head1.meta[16] = meta18;
 head = head1;
 
 WorldInfo WorldInfo20 = createNode("WorldInfo");
-WorldInfo20.title = "JinLOA4.x3d";
+WorldInfo20.title = "JinLOA4_4.x3d";
 children = new MFNode();
 
 children[0] = WorldInfo20;

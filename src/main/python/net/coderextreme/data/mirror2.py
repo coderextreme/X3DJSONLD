@@ -453,3 +453,4 @@ Scene15.addChildren(Transform18)
 
 X3D0.setScene(Scene15)
 X3D0.toFileX3D("../data/mirror2.new.python.x3d")
+X3D0.toFileJSON("../data/mirror2.new.python.json")

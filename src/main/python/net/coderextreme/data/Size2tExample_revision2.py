@@ -778,3 +778,4 @@ Scene15.addChildren(TimeSensor146)
 
 X3D0.setScene(Scene15)
 X3D0.toFileX3D("../data/Size2tExample_revision2.new.python.x3d")
+X3D0.toFileJSON("../data/Size2tExample_revision2.new.python.json")

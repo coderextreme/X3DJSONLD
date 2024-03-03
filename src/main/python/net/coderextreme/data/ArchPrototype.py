@@ -483,3 +483,4 @@ Scene13.addChildren(Inline81)
 
 X3D0.setScene(Scene13)
 X3D0.toFileX3D("../data/ArchPrototype.new.python.x3d")
+X3D0.toFileJSON("../data/ArchPrototype.new.python.json")

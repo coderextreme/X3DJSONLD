@@ -134,3 +134,4 @@ Scene14.addChildren(Transform26)
 
 X3D0.setScene(Scene14)
 X3D0.toFileX3D("../data/InlineSoundSource.new.python.x3d")
+X3D0.toFileJSON("../data/InlineSoundSource.new.python.json")

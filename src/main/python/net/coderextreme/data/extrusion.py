@@ -104,3 +104,4 @@ Scene8.addChildren(Group9)
 
 X3D0.setScene(Scene8)
 X3D0.toFileX3D("../data/extrusion.new.python.x3d")
+X3D0.toFileJSON("../data/extrusion.new.python.json")

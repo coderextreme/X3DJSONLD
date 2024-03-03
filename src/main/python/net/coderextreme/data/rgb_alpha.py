@@ -187,3 +187,4 @@ Scene20.addChildren(Group22)
 
 X3D0.setScene(Scene20)
 X3D0.toFileX3D("../data/rgb_alpha.new.python.x3d")
+X3D0.toFileJSON("../data/rgb_alpha.new.python.json")
