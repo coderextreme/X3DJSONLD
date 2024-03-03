@@ -115,7 +115,7 @@ HAnimHumanoid23.loa = 4;
 HAnimHumanoid23.scale = new SFVec3f(new float[0.0225,0.0225,0.0225]);
 HAnimHumanoid23.version = "2.0";
 let MetadataSet24 = browser.currentScene.createNode("MetadataSet");
-MetadataSet24.name = "HAnimHumanoid.info";
+MetadataSet24.name = "HAnimHumanoid_info";
 MetadataSet24.reference = "https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid";
 let MetadataString25 = browser.currentScene.createNode("MetadataString");
 MetadataString25.name = "authorName";
@@ -15091,4 +15091,4 @@ ROUTE2777.toField = "set_startTime";
 ROUTE2777.toNode = "StopTimer";
 browser.currentScene.children[558] = ROUTE2777;
 
-//<Script url='../node/jinloa4.js'> </Script>
+//<Script url='../node/jinloa4.js'/>

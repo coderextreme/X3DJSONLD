@@ -37,7 +37,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addChild((new autoclass.NavigationInfo()).setSpeed(java.newFloat(1.5)))
         .addChild((new autoclass.Viewpoint()).setCenterOfRotation(java.newArray("float", [java.newFloat(0), java.newFloat(1), java.newFloat(0)])).setDescription("JinLOA4").setPosition(java.newArray("float", [java.newFloat(0), java.newFloat(1), java.newFloat(3)])))
         .addChild((new autoclass.HAnimHumanoid()).setName("JinLOA4").setDEF("hanim_JinLOA4").setLoa(4).setScale(java.newArray("float", [java.newFloat(0.0225), java.newFloat(0.0225), java.newFloat(0.0225)])).setVersion("2.0")
-          .setMetadata((new autoclass.MetadataSet()).setName("HAnimHumanoid.info").setReference("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid")
+          .setMetadata((new autoclass.MetadataSet()).setName("HAnimHumanoid_info").setReference("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid")
             .addValue((new autoclass.MetadataString()).setName("authorName").setValue(java.newArray("java.lang.String", ["Jin Hoon Lee and Min Joo Lee, Chul Hee Jung and Myeong Won Lee"])))
             .addValue((new autoclass.MetadataString()).setName("authorEmail").setValue(java.newArray("java.lang.String", ["myeongwonlee@gmail.com"])))
             .addValue((new autoclass.MetadataString()).setName("creationDate").setValue(java.newArray("java.lang.String", ["31 March 2011"])))
@@ -2791,7 +2791,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addChild((new autoclass.ROUTE()).setFromField("touchTime").setFromNode("Stop_Touch").setToField("set_stopTime").setToNode("JumpTimer"))
         .addChild((new autoclass.ROUTE()).setFromField("touchTime").setFromNode("Stop_Touch").setToField("set_stopTime").setToNode("KickTimer"))
         .addChild((new autoclass.ROUTE()).setFromField("touchTime").setFromNode("Stop_Touch").setToField("set_startTime").setToNode("StopTimer"))
-        .addComments((new autoclass.CommentsBlock("<Script url='../node/jinloa4.js'> </Script>"))))      ;
+        .addComments((new autoclass.CommentsBlock("<Script url='../node/jinloa4.js'/>"))))      ;
     X3D0.toFileX3D("../data/JinLOA4.new.node.x3d");
     X3D0.toFileJSON("../data/JinLOA4.new.node.json");
     process.exit(0);

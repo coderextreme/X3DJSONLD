@@ -78,7 +78,7 @@ public class JinLOA4 implements X3DRoots {
         .addChild(new NavigationInfo().setSpeed(1.5))
         .addChild(new Viewpoint().setCenterOfRotation(new double[] {0,1,0}).setDescription("JinLOA4").setPosition(new double[] {0,1,3}))
         .addChild(new HAnimHumanoid().setName("JinLOA4").setDEF("hanim_JinLOA4").setLoa(4).setScale(new double[] {0.0225,0.0225,0.0225}).setVersion("2.0")
-          .setMetadata(new MetadataSet().setName("HAnimHumanoid.info").setReference("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid")
+          .setMetadata(new MetadataSet().setName("HAnimHumanoid_info").setReference("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid")
             .addValue(new MetadataString().setName("authorName").setValue(new MFString0().getArray()))
             .addValue(new MetadataString().setName("authorEmail").setValue(new MFString1().getArray()))
             .addValue(new MetadataString().setName("creationDate").setValue(new MFString2().getArray()))
@@ -2832,7 +2832,7 @@ public class JinLOA4 implements X3DRoots {
         .addChild(new ROUTE().setFromField("touchTime").setFromNode("Stop_Touch").setToField("set_stopTime").setToNode("JumpTimer"))
         .addChild(new ROUTE().setFromField("touchTime").setFromNode("Stop_Touch").setToField("set_stopTime").setToNode("KickTimer"))
         .addChild(new ROUTE().setFromField("touchTime").setFromNode("Stop_Touch").setToField("set_startTime").setToNode("StopTimer"))
-        .addComments("<Script url='../node/jinloa4.js'> </Script>"))      ;
+        .addComments("<Script url='../node/jinloa4.js'/>"))      ;
     return X3D0;
     }
 private class MFString0 {

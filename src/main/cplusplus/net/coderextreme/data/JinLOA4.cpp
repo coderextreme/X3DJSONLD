@@ -123,7 +123,7 @@ HAnimHumanoid23->setLoa(4);
 HAnimHumanoid23->setScale(new float[3]{0.0225,0.0225,0.0225});
 HAnimHumanoid23->setVersion("2.0");
 CMetadataSet* MetadataSet24 = (CMetadataSet *)(m_pScene.createNode("MetadataSet"));
-MetadataSet24->setName("HAnimHumanoid.info");
+MetadataSet24->setName("HAnimHumanoid_info");
 MetadataSet24->setReference("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid");
 CMetadataString* MetadataString25 = (CMetadataString *)(m_pScene.createNode("MetadataString"));
 MetadataString25->setName("authorName");
@@ -14173,7 +14173,7 @@ ROUTE2777->setToField("set_startTime");
 ROUTE2777->setToNode("StopTimer");
 group->addChildren(*ROUTE2777);
 
-//<Script url='../node/jinloa4.js'> </Script>
+//<Script url='../node/jinloa4.js'/>
 X3D0->setScene(*Scene19);
 
 m_pScene.addRootNode(group);
