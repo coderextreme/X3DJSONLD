@@ -36,6 +36,7 @@ PythonSerializer.prototype = {
 
 		str += bodystr;
 		str += element.nodeName+stack[0]+".toFileX3D(\""+clazz+"_RoundTrip.x3d\")\n";
+		str += element.nodeName+stack[0]+".toFileJSON(\""+clazz+"_RoundTrip.json\")\n";
 		stack.shift();
 		return str;
 	},
