@@ -165,21 +165,21 @@ done
 #	     "${NODE}" "${NODEDIR}/jsondiff.js" "$SAXGEND" "$XSLTGEND"
 #done
 
-exit
-
 echo Running python code
 ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e "s/\.x3d/.${JSONEXT}/" -e 's/^\/c/../' | tr '\n' '\0' | while read -d $'\0' -r i
 do
 	PY=`echo "$i" | sed -e "$DATATOPYTHON" -e "$PERSONALTOPYTHON" -e "$ROOTTOPYTHON" -e "s/.${JSONEXT}/.py/"`
-	X3D=`echo "$i" | sed -e "s/.${JSONEXT}/.new.x3d/"`
-	echo py ../python/x3djsonld.py "'$i'" ">" "'$PY'" and py "'$PY'" ">" "'$X3D'"
-	py ../python/x3djsonld.py "$i" > "$PY" && py "$PY" > "$X3D" && echo "$PY" "$X3D" || echo "Error: "$PY" failed to parse"
+	X3D=`echo "$i" | sed -e "s/.${JSONEXT}/.new.python.x3d/"`
+	#echo py ../python/x3djsonld.py "'$i'" ">" "'$PY'" and py "'$PY'" ">" "'$X3D'"
+	#py ../python/x3djsonld.py "$i" > "$PY" && py "$PY" > "$X3D" && echo "$PY" "$X3D" || echo "Error: "$PY" failed to parse"
+	echo python "$PY"
+	python "$PY"
 done
 
-echo Diffing .new.x3d from x3djsonld and x3d.py with original x3d
-ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d/.new.x3d/' -e "$ROOTTOLOCAL" -e 's/^\/c/../' | tr '\n' '\0' | while read -d $'\0' -r i
+echo Diffing .new.python.x3d .py with original x3d
+ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d/.new.python.x3d/' -e "$ROOTTOLOCAL" -e 's/^\/c/../' | tr '\n' '\0' | while read -d $'\0' -r i
 do
-	X3D=`mydirname "$i" | sed -e "$LOCALTOROOT" `/`mybasename "$i" .new.x3d`.x3d
+	X3D=`mydirname "$i" | sed -e "$LOCALTOROOT" `/`mybasename "$i" .new.python.x3d`.x3d
 	echo "${NODE}" --trace-warnings "${NODEDIR}/xmldiff.js" "'$X3D'" "'$i'"
 	"${NODE}" --trace-warnings "${NODEDIR}/xmldiff.js" "$X3D" "$i"
 done
