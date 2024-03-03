@@ -103,7 +103,7 @@ X3D0->setHead(*head1);
 
 CScene* Scene19 = new CScene();
 CWorldInfo* WorldInfo20 = (CWorldInfo *)(m_pScene.createNode("WorldInfo"));
-WorldInfo20->setTitle("JinLOA4.x3d");
+WorldInfo20->setTitle("JinLOA4_5.x3d");
 group->addChildren(*WorldInfo20);
 
 CNavigationInfo* NavigationInfo21 = (CNavigationInfo *)(m_pScene.createNode("NavigationInfo"));

@@ -211,40 +211,47 @@ ComposedShader32->setDEF("x3dom");
 ComposedShader32->setLanguage("GLSL");
 Cfield* field33 = new Cfield();
 field33->setName("cube");
+field33->setType("SFInt32");
 field33->setAccessType("inputOutput");
 field33->setValue("0");
 ComposedShader32->addField(*field33);
 
 Cfield* field34 = new Cfield();
 field34->setName("chromaticDispertion");
+field34->setType("SFVec3f");
 field34->setAccessType("inputOutput");
 field34->setValue("0.98 1 1.033");
 ComposedShader32->addField(*field34);
 
 Cfield* field35 = new Cfield();
 field35->setName("bias");
+field35->setType("SFFloat");
 field35->setAccessType("inputOutput");
 field35->setValue("0.5");
 ComposedShader32->addField(*field35);
 
 Cfield* field36 = new Cfield();
 field36->setName("scale");
+field36->setType("SFFloat");
 field36->setAccessType("inputOutput");
 field36->setValue("0.5");
 ComposedShader32->addField(*field36);
 
 Cfield* field37 = new Cfield();
 field37->setName("power");
+field37->setType("SFFloat");
 field37->setAccessType("inputOutput");
 field37->setValue("2");
 ComposedShader32->addField(*field37);
 
 CShaderPart* ShaderPart38 = (CShaderPart *)(m_pScene.createNode("ShaderPart"));
 ShaderPart38->setUrl(new CString[2]{"../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"}, 2);
+ShaderPart38->setType("VERTEX");
 ComposedShader32->addParts(*ShaderPart38);
 
 CShaderPart* ShaderPart39 = (CShaderPart *)(m_pScene.createNode("ShaderPart"));
 ShaderPart39->setUrl(new CString[2]{"../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"}, 2);
+ShaderPart39->setType("FRAGMENT");
 ComposedShader32->addParts(*ShaderPart39);
 
 Appearance23->addShaders(*ComposedShader32);
@@ -254,6 +261,7 @@ ComposedShader40->setDEF("x_ite");
 ComposedShader40->setLanguage("GLSL");
 Cfield* field41 = new Cfield();
 field41->setName("cube");
+field41->setType("SFNode");
 field41->setAccessType("inputOutput");
 CComposedCubeMapTexture* ComposedCubeMapTexture42 = (CComposedCubeMapTexture *)(m_pScene.createNode("ComposedCubeMapTexture"));
 ComposedCubeMapTexture42->setUSE("texture");
@@ -263,34 +271,40 @@ ComposedShader40->addField(*field41);
 
 Cfield* field43 = new Cfield();
 field43->setName("chromaticDispertion");
+field43->setType("SFVec3f");
 field43->setAccessType("inputOutput");
 field43->setValue("0.98 1 1.033");
 ComposedShader40->addField(*field43);
 
 Cfield* field44 = new Cfield();
 field44->setName("bias");
+field44->setType("SFFloat");
 field44->setAccessType("inputOutput");
 field44->setValue("0.5");
 ComposedShader40->addField(*field44);
 
 Cfield* field45 = new Cfield();
 field45->setName("scale");
+field45->setType("SFFloat");
 field45->setAccessType("inputOutput");
 field45->setValue("0.5");
 ComposedShader40->addField(*field45);
 
 Cfield* field46 = new Cfield();
 field46->setName("power");
+field46->setType("SFFloat");
 field46->setAccessType("inputOutput");
 field46->setValue("2");
 ComposedShader40->addField(*field46);
 
 CShaderPart* ShaderPart47 = (CShaderPart *)(m_pScene.createNode("ShaderPart"));
 ShaderPart47->setUrl(new CString[2]{"../shaders/x_ite.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"}, 2);
+ShaderPart47->setType("VERTEX");
 ComposedShader40->addParts(*ShaderPart47);
 
 CShaderPart* ShaderPart48 = (CShaderPart *)(m_pScene.createNode("ShaderPart"));
 ShaderPart48->setUrl(new CString[2]{"../shaders/x_itebubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs"}, 2);
+ShaderPart48->setType("FRAGMENT");
 ComposedShader40->addParts(*ShaderPart48);
 
 Appearance23->addShaders(*ComposedShader40);
@@ -309,18 +323,21 @@ Script50->setDEF("Bounce");
 Cfield* field51 = new Cfield();
 field51->setName("translation");
 field51->setAccessType("inputOutput");
+field51->setType("SFVec3f");
 field51->setValue("0 0 0");
 Script50->addField(*field51);
 
 Cfield* field52 = new Cfield();
 field52->setName("velocity");
 field52->setAccessType("inputOutput");
+field52->setType("SFVec3f");
 field52->setValue("0 0 0");
 Script50->addField(*field52);
 
 Cfield* field53 = new Cfield();
 field53->setName("set_fraction");
 field53->setAccessType("inputOnly");
+field53->setType("SFTime");
 Script50->addField(*field53);
 
 
