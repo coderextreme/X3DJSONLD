@@ -97,7 +97,7 @@ var X3D0 =  X3D(
               version_ : SFString('2.0'),
               metadata_ : [
                 MetadataSet(
-                  name_ : SFString('HAnimHumanoid.info'),
+                  name_ : SFString('HAnimHumanoid_info'),
                   reference_ : SFString('https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid'),
                   value_ : 
                     MetadataString(
@@ -11390,5 +11390,5 @@ var X3D0 =  X3D(
               fromNode_ : SFString('Stop_Touch'),
               toField_ : SFString('set_startTime'),
               toNode_ : SFString('StopTimer')),
-          /*<Script url='../node/jinloa4.js'> </Script>*/]));
+          /*<Script url='../node/jinloa4.js'/>*/]));
 void main() { exit(0); }

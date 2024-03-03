@@ -40,6 +40,10 @@ var MFString = require('./x3d.mjs');
 var ImageTexture = require('./x3d.mjs');
 var HAnimJoint = require('./x3d.mjs');
 var MFFloat = require('./x3d.mjs');
+var HAnimSegment = require('./x3d.mjs');
+var HAnimSite = require('./x3d.mjs');
+var TouchSensor = require('./x3d.mjs');
+var SFRotation = require('./x3d.mjs');
 var X3D0 =  new X3D({
 
       profile : new SFString("Immersive"),
@@ -228,11 +232,6723 @@ var X3D0 =  new X3D({
                   USE : new SFString("TheSkinCoord")})),
               joints : new MFNode([
                 new HAnimJoint({
-                  name : new SFString(""),
-                  DEF : new SFString("hanim_"),
+                  name : new SFString("humanoid_root"),
+                  DEF : new SFString("hanim_humanoid_root"),
+                  center : new SFVec3f([0,0.824,0.0277]),
                   ulimit : new MFFloat([0,0,0]),
-                  llimit : new MFFloat([0,0,0])}),
+                  llimit : new MFFloat([0,0,0]),
+                  children : new MFNode([
+                    new HAnimSegment({
+                      name : new SFString("sacrum"),
+                      DEF : new SFString("hanim_sacrum"),
+                      children : new MFNode([
+                        new Transform({
+                          translation : new SFVec3f([0,0.824,0.0277]),
+                          children : new MFNode([
+                            new Transform({
+                              /*Empty Transform*/
+                              child : new SFNode(
+                                new Shape({
+                                  USE : new SFString("HAnimJointShape")}))})])}),
+
+                        new Shape({
+                          geometry : new SFNode(
+                            new LineSet({
+                              vertexCount : new MFInt32([2]),
+                              coord : new SFNode(
+                                new Coordinate({
+                                  point : new MFVec3f([0,0.824,0.0277,0,0.9149,0.0016])})),
+                              /*from humanoid_root to sacroiliac vertices 2*/
+                              color : new SFNode(
+                                new ColorRGBA({
+                                  USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                        new HAnimSite({
+                          name : new SFString("buttocks_standing_wall_contact_point"),
+                          DEF : new SFString("hanim_buttocks_standing_wall_contact_point"),
+                          children : new MFNode([
+                            new TouchSensor({
+                              description : new SFString("HAnimSite buttocks_standing_wall_contact_point")}),
+
+                            new Shape({
+                              USE : new SFString("HAnimSiteShape")})])}),
+
+                        new HAnimSite({
+                          name : new SFString("crotch"),
+                          DEF : new SFString("hanim_crotch"),
+                          translation : new SFVec3f([0.0034,0.8266,0.0257]),
+                          children : new MFNode([
+                            new TouchSensor({
+                              description : new SFString("HAnimSite crotch")}),
+
+                            new Shape({
+                              USE : new SFString("HAnimSiteShape")})])}),
+
+                        new HAnimSite({
+                          name : new SFString("l_asis"),
+                          DEF : new SFString("hanim_l_asis"),
+                          translation : new SFVec3f([0.0925,0.9983,0.1052]),
+                          children : new MFNode([
+                            new TouchSensor({
+                              description : new SFString("HAnimSite l_asis")}),
+
+                            new Shape({
+                              USE : new SFString("HAnimSiteShape")})])}),
+
+                        new HAnimSite({
+                          name : new SFString("l_iliocristale"),
+                          DEF : new SFString("hanim_l_iliocristale"),
+                          translation : new SFVec3f([0.1612,1.0537,0.0008]),
+                          children : new MFNode([
+                            new TouchSensor({
+                              description : new SFString("HAnimSite l_iliocristale")}),
+
+                            new Shape({
+                              USE : new SFString("HAnimSiteShape")})])}),
+
+                        new HAnimSite({
+                          name : new SFString("l_psis"),
+                          DEF : new SFString("hanim_l_psis"),
+                          translation : new SFVec3f([0.0774,1.019,-0.1151]),
+                          children : new MFNode([
+                            new TouchSensor({
+                              description : new SFString("HAnimSite l_psis")}),
+
+                            new Shape({
+                              USE : new SFString("HAnimSiteShape")})])}),
+
+                        new HAnimSite({
+                          name : new SFString("l_trochanterion"),
+                          DEF : new SFString("hanim_l_trochanterion"),
+                          translation : new SFVec3f([0.1677,0.8336,0.0303]),
+                          children : new MFNode([
+                            new TouchSensor({
+                              description : new SFString("HAnimSite l_trochanterion")}),
+
+                            new Shape({
+                              USE : new SFString("HAnimSiteShape")})])}),
+
+                        new HAnimSite({
+                          name : new SFString("r_asis"),
+                          DEF : new SFString("hanim_r_asis"),
+                          translation : new SFVec3f([-0.0887,1.0021,0.1112]),
+                          children : new MFNode([
+                            new TouchSensor({
+                              description : new SFString("HAnimSite r_asis")}),
+
+                            new Shape({
+                              USE : new SFString("HAnimSiteShape")})])}),
+
+                        new HAnimSite({
+                          name : new SFString("r_iliocristale"),
+                          DEF : new SFString("hanim_r_iliocristale"),
+                          translation : new SFVec3f([-0.1525,1.0628,0.0035]),
+                          children : new MFNode([
+                            new TouchSensor({
+                              description : new SFString("HAnimSite r_iliocristale")}),
+
+                            new Shape({
+                              USE : new SFString("HAnimSiteShape")})])}),
+
+                        new HAnimSite({
+                          name : new SFString("r_psis"),
+                          DEF : new SFString("hanim_r_psis"),
+                          translation : new SFVec3f([-0.0716,1.019,-0.1138]),
+                          children : new MFNode([
+                            new TouchSensor({
+                              description : new SFString("HAnimSite r_psis")}),
+
+                            new Shape({
+                              USE : new SFString("HAnimSiteShape")})])}),
+
+                        new HAnimSite({
+                          name : new SFString("r_trochanterion"),
+                          DEF : new SFString("hanim_r_trochanterion"),
+                          translation : new SFVec3f([-0.1689,0.8419,0.0352]),
+                          children : new MFNode([
+                            new TouchSensor({
+                              description : new SFString("HAnimSite r_trochanterion")}),
+
+                            new Shape({
+                              USE : new SFString("HAnimSiteShape")})])}),
+
+                        new Shape({
+                          geometry : new SFNode(
+                            new LineSet({
+                              vertexCount : new MFInt32([2]),
+                              coord : new SFNode(
+                                new Coordinate({
+                                  point : new MFVec3f([0,0.824,0.0277,0.0028,1.0568,-0.0776])})),
+                              /*from humanoid_root to vl5 vertices 2*/
+                              color : new SFNode(
+                                new ColorRGBA({
+                                  USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                        new HAnimSite({
+                          name : new SFString("navel"),
+                          DEF : new SFString("hanim_navel"),
+                          translation : new SFVec3f([0.0069,1.0966,0.1017]),
+                          children : new MFNode([
+                            new TouchSensor({
+                              description : new SFString("HAnimSite navel")}),
+
+                            new Shape({
+                              USE : new SFString("HAnimSiteShape")})])}),
+
+                        new HAnimSite({
+                          name : new SFString("waist_preferred_anterior"),
+                          DEF : new SFString("hanim_waist_preferred_anterior"),
+                          children : new MFNode([
+                            new TouchSensor({
+                              description : new SFString("HAnimSite waist_preferred_anterior")}),
+
+                            new Shape({
+                              USE : new SFString("HAnimSiteShape")})])}),
+
+                        new HAnimSite({
+                          name : new SFString("waist_preferred_posterior"),
+                          DEF : new SFString("hanim_waist_preferred_posterior"),
+                          translation : new SFVec3f([0.29,1.0915,-0.1091]),
+                          children : new MFNode([
+                            new TouchSensor({
+                              description : new SFString("HAnimSite waist_preferred_posterior")}),
+
+                            new Shape({
+                              USE : new SFString("HAnimSiteShape")})])})])}),
+
+                    new HAnimJoint({
+                      name : new SFString("sacroiliac"),
+                      DEF : new SFString("hanim_sacroiliac"),
+                      center : new SFVec3f([0,0.9149,0.0016]),
+                      ulimit : new MFFloat([0,0,0]),
+                      llimit : new MFFloat([0,0,0]),
+                      children : new MFNode([
+                        new HAnimSegment({
+                          name : new SFString("pelvis"),
+                          DEF : new SFString("hanim_pelvis"),
+                          children : new MFNode([
+                            new Transform({
+                              translation : new SFVec3f([0,0.9149,0.0016]),
+                              children : new MFNode([
+                                new Transform({
+                                  /*Empty Transform*/
+                                  child : new SFNode(
+                                    new Shape({
+                                      USE : new SFString("HAnimJointShape")}))})])}),
+
+                            new Shape({
+                              geometry : new SFNode(
+                                new LineSet({
+                                  vertexCount : new MFInt32([2]),
+                                  coord : new SFNode(
+                                    new Coordinate({
+                                      point : new MFVec3f([0,0.9149,0.0016,0.0961,0.9124,-0.0001])})),
+                                  /*from sacroiliac to l_hip vertices 2*/
+                                  color : new SFNode(
+                                    new ColorRGBA({
+                                      USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                            new HAnimSite({
+                              name : new SFString("l_femoral_lateral_epicondyles"),
+                              DEF : new SFString("hanim_l_femoral_lateral_epicondyles"),
+                              translation : new SFVec3f([0.1598,0.4967,0.0297]),
+                              children : new MFNode([
+                                new TouchSensor({
+                                  description : new SFString("HAnimSite l_femoral_lateral_epicondyles")}),
+
+                                new Shape({
+                                  USE : new SFString("HAnimSiteShape")})])}),
+
+                            new HAnimSite({
+                              name : new SFString("l_femoral_medial_epicondyles"),
+                              DEF : new SFString("hanim_l_femoral_medial_epicondyles"),
+                              translation : new SFVec3f([0.0398,0.4946,0.0303]),
+                              children : new MFNode([
+                                new TouchSensor({
+                                  description : new SFString("HAnimSite l_femoral_medial_epicondyles")}),
+
+                                new Shape({
+                                  USE : new SFString("HAnimSiteShape")})])}),
+
+                            new HAnimSite({
+                              name : new SFString("l_knee_crease"),
+                              DEF : new SFString("hanim_l_knee_crease"),
+                              translation : new SFVec3f([0.0993,0.4881,-0.0309]),
+                              children : new MFNode([
+                                new TouchSensor({
+                                  description : new SFString("HAnimSite l_knee_crease")}),
+
+                                new Shape({
+                                  USE : new SFString("HAnimSiteShape")})])}),
+
+                            new HAnimSite({
+                              name : new SFString("l_suprapatella"),
+                              DEF : new SFString("hanim_l_suprapatella"),
+                              children : new MFNode([
+                                new TouchSensor({
+                                  description : new SFString("HAnimSite l_suprapatella")}),
+
+                                new Shape({
+                                  USE : new SFString("HAnimSiteShape")})])}),
+
+                            new Shape({
+                              geometry : new SFNode(
+                                new LineSet({
+                                  vertexCount : new MFInt32([2]),
+                                  coord : new SFNode(
+                                    new Coordinate({
+                                      point : new MFVec3f([0,0.9149,0.0016,-0.095,0.9171,0.0029])})),
+                                  /*from sacroiliac to r_hip vertices 2*/
+                                  color : new SFNode(
+                                    new ColorRGBA({
+                                      USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                            new HAnimSite({
+                              name : new SFString("r_femoral_lateral_epicondyles"),
+                              DEF : new SFString("hanim_r_femoral_lateral_epicondyles"),
+                              translation : new SFVec3f([-0.1421,0.4992,0.031]),
+                              children : new MFNode([
+                                new TouchSensor({
+                                  description : new SFString("HAnimSite r_femoral_lateral_epicondyles")}),
+
+                                new Shape({
+                                  USE : new SFString("HAnimSiteShape")})])}),
+
+                            new HAnimSite({
+                              name : new SFString("r_femoral_medial_epicondyles"),
+                              DEF : new SFString("hanim_r_femoral_medial_epicondyles"),
+                              translation : new SFVec3f([-0.0221,0.5014,0.0289]),
+                              children : new MFNode([
+                                new TouchSensor({
+                                  description : new SFString("HAnimSite r_femoral_medial_epicondyles")}),
+
+                                new Shape({
+                                  USE : new SFString("HAnimSiteShape")})])}),
+
+                            new HAnimSite({
+                              name : new SFString("r_knee_crease"),
+                              DEF : new SFString("hanim_r_knee_crease"),
+                              translation : new SFVec3f([-0.0825,0.4932,-0.0326]),
+                              children : new MFNode([
+                                new TouchSensor({
+                                  description : new SFString("HAnimSite r_knee_crease")}),
+
+                                new Shape({
+                                  USE : new SFString("HAnimSiteShape")})])}),
+
+                            new HAnimSite({
+                              name : new SFString("r_suprapatella"),
+                              DEF : new SFString("hanim_r_suprapatella"),
+                              children : new MFNode([
+                                new TouchSensor({
+                                  description : new SFString("HAnimSite r_suprapatella")}),
+
+                                new Shape({
+                                  USE : new SFString("HAnimSiteShape")})])})])}),
+
+                        new HAnimJoint({
+                          name : new SFString("l_hip"),
+                          DEF : new SFString("hanim_l_hip"),
+                          center : new SFVec3f([0.0961,0.9124,-0.0001]),
+                          ulimit : new MFFloat([0,0,0]),
+                          llimit : new MFFloat([0,0,0]),
+                          children : new MFNode([
+                            new HAnimSegment({
+                              name : new SFString("l_thigh"),
+                              DEF : new SFString("hanim_l_thigh"),
+                              children : new MFNode([
+                                new Transform({
+                                  translation : new SFVec3f([0.0961,0.9124,-0.0001]),
+                                  children : new MFNode([
+                                    new Transform({
+                                      /*Empty Transform*/
+                                      child : new SFNode(
+                                        new Shape({
+                                          USE : new SFString("HAnimJointShape")}))})])}),
+
+                                new Shape({
+                                  geometry : new SFNode(
+                                    new LineSet({
+                                      vertexCount : new MFInt32([2]),
+                                      coord : new SFNode(
+                                        new Coordinate({
+                                          point : new MFVec3f([0.0961,0.9124,-0.0001,0.104,0.4867,0.0308])})),
+                                      /*from l_hip to l_knee vertices 2*/
+                                      color : new SFNode(
+                                        new ColorRGBA({
+                                          USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                new HAnimSite({
+                                  name : new SFString("l_lateral_malleolus"),
+                                  DEF : new SFString("hanim_l_lateral_malleolus"),
+                                  translation : new SFVec3f([0.1308,0.0597,-0.1032]),
+                                  children : new MFNode([
+                                    new TouchSensor({
+                                      description : new SFString("HAnimSite l_lateral_malleolus")}),
+
+                                    new Shape({
+                                      USE : new SFString("HAnimSiteShape")})])}),
+
+                                new HAnimSite({
+                                  name : new SFString("l_medial_malleolus"),
+                                  DEF : new SFString("hanim_l_medial_malleolus"),
+                                  translation : new SFVec3f([0.089,0.0716,-0.0881]),
+                                  children : new MFNode([
+                                    new TouchSensor({
+                                      description : new SFString("HAnimSite l_medial_malleolus")}),
+
+                                    new Shape({
+                                      USE : new SFString("HAnimSiteShape")})])}),
+
+                                new HAnimSite({
+                                  name : new SFString("l_tibiale"),
+                                  DEF : new SFString("hanim_l_tibiale"),
+                                  children : new MFNode([
+                                    new TouchSensor({
+                                      description : new SFString("HAnimSite l_tibiale")}),
+
+                                    new Shape({
+                                      USE : new SFString("HAnimSiteShape")})])})])}),
+
+                            new HAnimJoint({
+                              name : new SFString("l_knee"),
+                              DEF : new SFString("hanim_l_knee"),
+                              center : new SFVec3f([0.104,0.4867,0.0308]),
+                              ulimit : new MFFloat([0,0,0]),
+                              llimit : new MFFloat([0,0,0]),
+                              children : new MFNode([
+                                new HAnimSegment({
+                                  name : new SFString("l_calf"),
+                                  DEF : new SFString("hanim_l_calf"),
+                                  children : new MFNode([
+                                    new Transform({
+                                      translation : new SFVec3f([0.104,0.4867,0.0308]),
+                                      children : new MFNode([
+                                        new Transform({
+                                          /*Empty Transform*/
+                                          child : new SFNode(
+                                            new Shape({
+                                              USE : new SFString("HAnimJointShape")}))})])}),
+
+                                    new Shape({
+                                      geometry : new SFNode(
+                                        new LineSet({
+                                          vertexCount : new MFInt32([2]),
+                                          coord : new SFNode(
+                                            new Coordinate({
+                                              point : new MFVec3f([0.104,0.4867,0.0308,0.1101,0.0656,-0.0736])})),
+                                          /*from l_knee to l_talocrural vertices 2*/
+                                          color : new SFNode(
+                                            new ColorRGBA({
+                                              USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                    new HAnimSite({
+                                      name : new SFString("l_calcaneus_posterior"),
+                                      DEF : new SFString("hanim_l_calcaneus_posterior"),
+                                      translation : new SFVec3f([0.0974,0.0259,-0.1171]),
+                                      children : new MFNode([
+                                        new TouchSensor({
+                                          description : new SFString("HAnimSite l_calcaneus_posterior")}),
+
+                                        new Shape({
+                                          USE : new SFString("HAnimSiteShape")})])}),
+
+                                    new HAnimSite({
+                                      name : new SFString("l_sphyrion"),
+                                      DEF : new SFString("hanim_l_sphyrion"),
+                                      translation : new SFVec3f([0.089,0.0575,-0.0943]),
+                                      children : new MFNode([
+                                        new TouchSensor({
+                                          description : new SFString("HAnimSite l_sphyrion")}),
+
+                                        new Shape({
+                                          USE : new SFString("HAnimSiteShape")})])})])}),
+
+                                new HAnimJoint({
+                                  name : new SFString("l_talocrural"),
+                                  DEF : new SFString("hanim_l_talocrural"),
+                                  center : new SFVec3f([0.1101,0.0656,-0.0736]),
+                                  ulimit : new MFFloat([0,0,0]),
+                                  llimit : new MFFloat([0,0,0]),
+                                  children : new MFNode([
+                                    new HAnimSegment({
+                                      name : new SFString("l_talus"),
+                                      DEF : new SFString("hanim_l_talus"),
+                                      children : new MFNode([
+                                        new Transform({
+                                          scale : new SFVec3f([0.15,0.15,0.15]),
+                                          translation : new SFVec3f([0.08,0.06,-0.025]),
+                                          rotation : new SFRotation([1,0,0,-1.57]),
+                                          /*Transform left foot*/
+                                          children : new MFNode([
+                                            new Transform({
+                                              /*Empty Transform left foot*/
+                                              child : new SFNode(
+                                                new Shape({
+                                                  USE : new SFString("HAnimJointShape")}))})])}),
+
+                                        new Shape({
+                                          geometry : new SFNode(
+                                            new LineSet({
+                                              vertexCount : new MFInt32([2]),
+                                              coord : new SFNode(
+                                                new Coordinate({
+                                                  point : new MFVec3f([0.1101,0.0656,-0.0736,0.0781,0.0283,-0.097])})),
+                                              /*from l_talocrural to l_talocalcaneonavicular vertices 2*/
+                                              color : new SFNode(
+                                                new ColorRGBA({
+                                                  USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                        new Shape({
+                                          geometry : new SFNode(
+                                            new LineSet({
+                                              vertexCount : new MFInt32([2]),
+                                              coord : new SFNode(
+                                                new Coordinate({
+                                                  point : new MFVec3f([0.1101,0.0656,-0.0736,0.0889,0.0494,-0.1278])})),
+                                              /*from l_talocrural to l_calcaneocuboid vertices 2*/
+                                              color : new SFNode(
+                                                new ColorRGBA({
+                                                  USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+
+                                    new HAnimJoint({
+                                      name : new SFString("l_talocalcaneonavicular"),
+                                      DEF : new SFString("hanim_l_talocalcaneonavicular"),
+                                      center : new SFVec3f([0.0781,0.0283,-0.097]),
+                                      ulimit : new MFFloat([0,0,0]),
+                                      llimit : new MFFloat([0,0,0]),
+                                      children : new MFNode([
+                                        new HAnimSegment({
+                                          name : new SFString("l_navicular"),
+                                          DEF : new SFString("hanim_l_navicular"),
+                                          children : new MFNode([
+                                            new Transform({
+                                              translation : new SFVec3f([0.0781,0.0283,-0.097]),
+                                              children : new MFNode([
+                                                new Transform({
+                                                  /*Empty Transform*/
+                                                  child : new SFNode(
+                                                    new Shape({
+                                                      USE : new SFString("HAnimJointShape")}))})])}),
+
+                                            new Shape({
+                                              geometry : new SFNode(
+                                                new LineSet({
+                                                  vertexCount : new MFInt32([2]),
+                                                  coord : new SFNode(
+                                                    new Coordinate({
+                                                      point : new MFVec3f([0.0781,0.0283,-0.097,0.0672,0.0235,-0.0835])})),
+                                                  /*from l_talocalcaneonavicular to l_cuneonavicular_1 vertices 2*/
+                                                  color : new SFNode(
+                                                    new ColorRGBA({
+                                                      USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                            new Shape({
+                                              geometry : new SFNode(
+                                                new LineSet({
+                                                  vertexCount : new MFInt32([2]),
+                                                  coord : new SFNode(
+                                                    new Coordinate({
+                                                      point : new MFVec3f([0.0781,0.0283,-0.097,0.0812,0.025,-0.0805])})),
+                                                  /*from l_talocalcaneonavicular to l_cuneonavicular_2 vertices 2*/
+                                                  color : new SFNode(
+                                                    new ColorRGBA({
+                                                      USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                            new Shape({
+                                              geometry : new SFNode(
+                                                new LineSet({
+                                                  vertexCount : new MFInt32([2]),
+                                                  coord : new SFNode(
+                                                    new Coordinate({
+                                                      point : new MFVec3f([0.0781,0.0283,-0.097,0.0928,0.0248,-0.0821])})),
+                                                  /*from l_talocalcaneonavicular to l_cuneonavicular_3 vertices 2*/
+                                                  color : new SFNode(
+                                                    new ColorRGBA({
+                                                      USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+
+                                        new HAnimJoint({
+                                          name : new SFString("l_cuneonavicular_1"),
+                                          DEF : new SFString("hanim_l_cuneonavicular_1"),
+                                          center : new SFVec3f([0.0672,0.0235,-0.0835]),
+                                          ulimit : new MFFloat([0,0,0]),
+                                          llimit : new MFFloat([0,0,0]),
+                                          children : new MFNode([
+                                            new HAnimSegment({
+                                              name : new SFString("l_cuneiform_1"),
+                                              DEF : new SFString("hanim_l_cuneiform_1"),
+                                              children : new MFNode([
+                                                new Transform({
+                                                  translation : new SFVec3f([0.0672,0.0235,-0.0835]),
+                                                  children : new MFNode([
+                                                    new Transform({
+                                                      /*Empty Transform*/
+                                                      child : new SFNode(
+                                                        new Shape({
+                                                          USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                new Shape({
+                                                  geometry : new SFNode(
+                                                    new LineSet({
+                                                      vertexCount : new MFInt32([2]),
+                                                      coord : new SFNode(
+                                                        new Coordinate({
+                                                          point : new MFVec3f([0.0672,0.0235,-0.0835,0.0644,0.0147,-0.0577])})),
+                                                      /*from l_cuneonavicular_1 to l_tarsometatarsal_1 vertices 2*/
+                                                      color : new SFNode(
+                                                        new ColorRGBA({
+                                                          USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+
+                                            new HAnimJoint({
+                                              name : new SFString("l_tarsometatarsal_1"),
+                                              DEF : new SFString("hanim_l_tarsometatarsal_1"),
+                                              center : new SFVec3f([0.0644,0.0147,-0.0577]),
+                                              ulimit : new MFFloat([0,0,0]),
+                                              llimit : new MFFloat([0,0,0]),
+                                              children : new MFNode([
+                                                new HAnimSegment({
+                                                  name : new SFString("l_metatarsal_1"),
+                                                  DEF : new SFString("hanim_l_metatarsal_1"),
+                                                  children : new MFNode([
+                                                    new Transform({
+                                                      translation : new SFVec3f([0.0644,0.0147,-0.0577]),
+                                                      children : new MFNode([
+                                                        new Transform({
+                                                          /*Empty Transform*/
+                                                          child : new SFNode(
+                                                            new Shape({
+                                                              USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                    new Shape({
+                                                      geometry : new SFNode(
+                                                        new LineSet({
+                                                          vertexCount : new MFInt32([2]),
+                                                          coord : new SFNode(
+                                                            new Coordinate({
+                                                              point : new MFVec3f([0.0644,0.0147,-0.0577,0.0619,0.0059,-0.0083])})),
+                                                          /*from l_tarsometatarsal_1 to l_metatarsophalangeal_1 vertices 2*/
+                                                          color : new SFNode(
+                                                            new ColorRGBA({
+                                                              USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                                    new HAnimSite({
+                                                      name : new SFString("l_metatarsal_phalanx_1"),
+                                                      DEF : new SFString("hanim_l_metatarsal_phalanx_1"),
+                                                      children : new MFNode([
+                                                        new TouchSensor({
+                                                          description : new SFString("HAnimSite l_metatarsal_phalanx_1")}),
+
+                                                        new Shape({
+                                                          USE : new SFString("HAnimSiteShape")})])})])}),
+
+                                                new HAnimJoint({
+                                                  name : new SFString("l_metatarsophalangeal_1"),
+                                                  DEF : new SFString("hanim_l_metatarsophalangeal_1"),
+                                                  center : new SFVec3f([0.0619,0.0059,-0.0083]),
+                                                  ulimit : new MFFloat([0,0,0]),
+                                                  llimit : new MFFloat([0,0,0]),
+                                                  children : new MFNode([
+                                                    new HAnimSegment({
+                                                      name : new SFString("l_tarsal_proximal_phalanx_1"),
+                                                      DEF : new SFString("hanim_l_tarsal_proximal_phalanx_1"),
+                                                      children : new MFNode([
+                                                        new Transform({
+                                                          translation : new SFVec3f([0.0619,0.0059,-0.0083]),
+                                                          children : new MFNode([
+                                                            new Transform({
+                                                              /*Empty Transform*/
+                                                              child : new SFNode(
+                                                                new Shape({
+                                                                  USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                        new Shape({
+                                                          geometry : new SFNode(
+                                                            new LineSet({
+                                                              vertexCount : new MFInt32([2]),
+                                                              coord : new SFNode(
+                                                                new Coordinate({
+                                                                  point : new MFVec3f([0.0619,0.0059,-0.0083,0.0619,0.0059,-0.0083])})),
+                                                              /*from l_metatarsophalangeal_1 to l_tarsal_interphalangeal_1 vertices 2*/
+                                                              color : new SFNode(
+                                                                new ColorRGBA({
+                                                                  USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                                        new HAnimSite({
+                                                          name : new SFString("l_tarsal_distal_phalanx_1_tip"),
+                                                          DEF : new SFString("hanim_l_tarsal_distal_phalanx_1_tip"),
+                                                          children : new MFNode([
+                                                            new TouchSensor({
+                                                              description : new SFString("HAnimSite l_tarsal_distal_phalanx_1_tip")}),
+
+                                                            new Shape({
+                                                              USE : new SFString("HAnimSiteShape")})])})])}),
+
+                                                    new HAnimJoint({
+                                                      name : new SFString("l_tarsal_interphalangeal_1"),
+                                                      DEF : new SFString("hanim_l_tarsal_interphalangeal_1"),
+                                                      ulimit : new MFFloat([0,0,0]),
+                                                      llimit : new MFFloat([0,0,0])})])})])})])}),
+
+                                        new HAnimJoint({
+                                          name : new SFString("l_cuneonavicular_2"),
+                                          DEF : new SFString("hanim_l_cuneonavicular_2"),
+                                          center : new SFVec3f([0.0812,0.025,-0.0805]),
+                                          ulimit : new MFFloat([0,0,0]),
+                                          llimit : new MFFloat([0,0,0]),
+                                          children : new MFNode([
+                                            new HAnimSegment({
+                                              name : new SFString("l_cuneiform_2"),
+                                              DEF : new SFString("hanim_l_cuneiform_2"),
+                                              children : new MFNode([
+                                                new Transform({
+                                                  translation : new SFVec3f([0.0812,0.025,-0.0805]),
+                                                  children : new MFNode([
+                                                    new Transform({
+                                                      /*Empty Transform*/
+                                                      child : new SFNode(
+                                                        new Shape({
+                                                          USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                new Shape({
+                                                  geometry : new SFNode(
+                                                    new LineSet({
+                                                      vertexCount : new MFInt32([2]),
+                                                      coord : new SFNode(
+                                                        new Coordinate({
+                                                          point : new MFVec3f([0.0812,0.025,-0.0805,0.08,0.0175,-0.0608])})),
+                                                      /*from l_cuneonavicular_2 to l_tarsometatarsal_2 vertices 2*/
+                                                      color : new SFNode(
+                                                        new ColorRGBA({
+                                                          USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+
+                                            new HAnimJoint({
+                                              name : new SFString("l_tarsometatarsal_2"),
+                                              DEF : new SFString("hanim_l_tarsometatarsal_2"),
+                                              center : new SFVec3f([0.08,0.0175,-0.0608]),
+                                              ulimit : new MFFloat([0,0,0]),
+                                              llimit : new MFFloat([0,0,0]),
+                                              children : new MFNode([
+                                                new HAnimSegment({
+                                                  name : new SFString("l_metatarsal_2"),
+                                                  DEF : new SFString("hanim_l_metatarsal_2"),
+                                                  children : new MFNode([
+                                                    new Transform({
+                                                      translation : new SFVec3f([0.08,0.0175,-0.0608]),
+                                                      children : new MFNode([
+                                                        new Transform({
+                                                          /*Empty Transform*/
+                                                          child : new SFNode(
+                                                            new Shape({
+                                                              USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                    new Shape({
+                                                      geometry : new SFNode(
+                                                        new LineSet({
+                                                          vertexCount : new MFInt32([2]),
+                                                          coord : new SFNode(
+                                                            new Coordinate({
+                                                              point : new MFVec3f([0.08,0.0175,-0.0608,0.0824,0.0064,-0.004])})),
+                                                          /*from l_tarsometatarsal_2 to l_metatarsophalangeal_2 vertices 2*/
+                                                          color : new SFNode(
+                                                            new ColorRGBA({
+                                                              USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+
+                                                new HAnimJoint({
+                                                  name : new SFString("l_metatarsophalangeal_2"),
+                                                  DEF : new SFString("hanim_l_metatarsophalangeal_2"),
+                                                  center : new SFVec3f([0.0824,0.0064,-0.004]),
+                                                  ulimit : new MFFloat([0,0,0]),
+                                                  llimit : new MFFloat([0,0,0]),
+                                                  children : new MFNode([
+                                                    new HAnimSegment({
+                                                      name : new SFString("l_tarsal_proximal_phalanx_2"),
+                                                      DEF : new SFString("hanim_l_tarsal_proximal_phalanx_2"),
+                                                      children : new MFNode([
+                                                        new Transform({
+                                                          translation : new SFVec3f([0.0824,0.0064,-0.004]),
+                                                          children : new MFNode([
+                                                            new Transform({
+                                                              /*Empty Transform*/
+                                                              child : new SFNode(
+                                                                new Shape({
+                                                                  USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                        new Shape({
+                                                          geometry : new SFNode(
+                                                            new LineSet({
+                                                              vertexCount : new MFInt32([2]),
+                                                              coord : new SFNode(
+                                                                new Coordinate({
+                                                                  point : new MFVec3f([0.0824,0.0064,-0.004,0.0841,0.0041,0.0121])})),
+                                                              /*from l_metatarsophalangeal_2 to l_tarsal_proximal_interphalangeal_2 vertices 2*/
+                                                              color : new SFNode(
+                                                                new ColorRGBA({
+                                                                  USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+
+                                                    new HAnimJoint({
+                                                      name : new SFString("l_tarsal_proximal_interphalangeal_2"),
+                                                      DEF : new SFString("hanim_l_tarsal_proximal_interphalangeal_2"),
+                                                      center : new SFVec3f([0.0841,0.0041,0.0121]),
+                                                      ulimit : new MFFloat([0,0,0]),
+                                                      llimit : new MFFloat([0,0,0]),
+                                                      children : new MFNode([
+                                                        new HAnimSegment({
+                                                          name : new SFString("l_tarsal_middle_phalanx_2"),
+                                                          DEF : new SFString("hanim_l_tarsal_middle_phalanx_2"),
+                                                          children : new MFNode([
+                                                            new Transform({
+                                                              translation : new SFVec3f([0.0841,0.0041,0.0121]),
+                                                              children : new MFNode([
+                                                                new Transform({
+                                                                  /*Empty Transform*/
+                                                                  child : new SFNode(
+                                                                    new Shape({
+                                                                      USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                            new Shape({
+                                                              geometry : new SFNode(
+                                                                new LineSet({
+                                                                  vertexCount : new MFInt32([2]),
+                                                                  coord : new SFNode(
+                                                                    new Coordinate({
+                                                                      point : new MFVec3f([0.0841,0.0041,0.0121,0.0841,0.0013,0.0216])})),
+                                                                  /*from l_tarsal_proximal_interphalangeal_2 to l_tarsal_distal_interphalangeal_2 vertices 2*/
+                                                                  color : new SFNode(
+                                                                    new ColorRGBA({
+                                                                      USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                                            new HAnimSite({
+                                                              name : new SFString("l_tarsal_distal_phalanx_2_tip"),
+                                                              DEF : new SFString("hanim_l_tarsal_distal_phalanx_2_tip"),
+                                                              translation : new SFVec3f([0.1195,0.0079,0.1433]),
+                                                              children : new MFNode([
+                                                                new TouchSensor({
+                                                                  description : new SFString("HAnimSite l_tarsal_distal_phalanx_2_tip")}),
+
+                                                                new Shape({
+                                                                  USE : new SFString("HAnimSiteShape")})])})])}),
+
+                                                        new HAnimJoint({
+                                                          name : new SFString("l_tarsal_distal_interphalangeal_2"),
+                                                          DEF : new SFString("hanim_l_tarsal_distal_interphalangeal_2"),
+                                                          center : new SFVec3f([0.0841,0.0013,0.0216]),
+                                                          ulimit : new MFFloat([0,0,0]),
+                                                          llimit : new MFFloat([0,0,0])})])})])})])})])}),
+
+                                        new HAnimJoint({
+                                          name : new SFString("l_cuneonavicular_3"),
+                                          DEF : new SFString("hanim_l_cuneonavicular_3"),
+                                          center : new SFVec3f([0.0928,0.0248,-0.0821]),
+                                          ulimit : new MFFloat([0,0,0]),
+                                          llimit : new MFFloat([0,0,0]),
+                                          children : new MFNode([
+                                            new HAnimSegment({
+                                              name : new SFString("l_cuneiform_3"),
+                                              DEF : new SFString("hanim_l_cuneiform_3"),
+                                              children : new MFNode([
+                                                new Transform({
+                                                  translation : new SFVec3f([0.0928,0.0248,-0.0821]),
+                                                  children : new MFNode([
+                                                    new Transform({
+                                                      /*Empty Transform*/
+                                                      child : new SFNode(
+                                                        new Shape({
+                                                          USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                new Shape({
+                                                  geometry : new SFNode(
+                                                    new LineSet({
+                                                      vertexCount : new MFInt32([2]),
+                                                      coord : new SFNode(
+                                                        new Coordinate({
+                                                          point : new MFVec3f([0.0928,0.0248,-0.0821,0.0944,0.0175,-0.0625])})),
+                                                      /*from l_cuneonavicular_3 to l_tarsometatarsal_3 vertices 2*/
+                                                      color : new SFNode(
+                                                        new ColorRGBA({
+                                                          USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+
+                                            new HAnimJoint({
+                                              name : new SFString("l_tarsometatarsal_3"),
+                                              DEF : new SFString("hanim_l_tarsometatarsal_3"),
+                                              center : new SFVec3f([0.0944,0.0175,-0.0625]),
+                                              ulimit : new MFFloat([0,0,0]),
+                                              llimit : new MFFloat([0,0,0]),
+                                              children : new MFNode([
+                                                new HAnimSegment({
+                                                  name : new SFString("l_metatarsal_3"),
+                                                  DEF : new SFString("hanim_l_metatarsal_3"),
+                                                  children : new MFNode([
+                                                    new Transform({
+                                                      translation : new SFVec3f([0.0944,0.0175,-0.0625]),
+                                                      children : new MFNode([
+                                                        new Transform({
+                                                          /*Empty Transform*/
+                                                          child : new SFNode(
+                                                            new Shape({
+                                                              USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                    new Shape({
+                                                      geometry : new SFNode(
+                                                        new LineSet({
+                                                          vertexCount : new MFInt32([2]),
+                                                          coord : new SFNode(
+                                                            new Coordinate({
+                                                              point : new MFVec3f([0.0944,0.0175,-0.0625,0.0963,0.0065,-0.0065])})),
+                                                          /*from l_tarsometatarsal_3 to l_metatarsophalangeal_3 vertices 2*/
+                                                          color : new SFNode(
+                                                            new ColorRGBA({
+                                                              USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+
+                                                new HAnimJoint({
+                                                  name : new SFString("l_metatarsophalangeal_3"),
+                                                  DEF : new SFString("hanim_l_metatarsophalangeal_3"),
+                                                  center : new SFVec3f([0.0963,0.0065,-0.0065]),
+                                                  ulimit : new MFFloat([0,0,0]),
+                                                  llimit : new MFFloat([0,0,0]),
+                                                  children : new MFNode([
+                                                    new HAnimSegment({
+                                                      name : new SFString("l_tarsal_proximal_phalanx_3"),
+                                                      DEF : new SFString("hanim_l_tarsal_proximal_phalanx_3"),
+                                                      children : new MFNode([
+                                                        new Transform({
+                                                          translation : new SFVec3f([0.0963,0.0065,-0.0065]),
+                                                          children : new MFNode([
+                                                            new Transform({
+                                                              /*Empty Transform*/
+                                                              child : new SFNode(
+                                                                new Shape({
+                                                                  USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                        new Shape({
+                                                          geometry : new SFNode(
+                                                            new LineSet({
+                                                              vertexCount : new MFInt32([2]),
+                                                              coord : new SFNode(
+                                                                new Coordinate({
+                                                                  point : new MFVec3f([0.0963,0.0065,-0.0065,0.0987,0.0034,0.0086])})),
+                                                              /*from l_metatarsophalangeal_3 to l_tarsal_proximal_interphalangeal_3 vertices 2*/
+                                                              color : new SFNode(
+                                                                new ColorRGBA({
+                                                                  USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+
+                                                    new HAnimJoint({
+                                                      name : new SFString("l_tarsal_proximal_interphalangeal_3"),
+                                                      DEF : new SFString("hanim_l_tarsal_proximal_interphalangeal_3"),
+                                                      center : new SFVec3f([0.0987,0.0034,0.0086]),
+                                                      ulimit : new MFFloat([0,0,0]),
+                                                      llimit : new MFFloat([0,0,0]),
+                                                      children : new MFNode([
+                                                        new HAnimSegment({
+                                                          name : new SFString("l_tarsal_middle_phalanx_3"),
+                                                          DEF : new SFString("hanim_l_tarsal_middle_phalanx_3"),
+                                                          children : new MFNode([
+                                                            new Transform({
+                                                              translation : new SFVec3f([0.0987,0.0034,0.0086]),
+                                                              children : new MFNode([
+                                                                new Transform({
+                                                                  /*Empty Transform*/
+                                                                  child : new SFNode(
+                                                                    new Shape({
+                                                                      USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                            new Shape({
+                                                              geometry : new SFNode(
+                                                                new LineSet({
+                                                                  vertexCount : new MFInt32([2]),
+                                                                  coord : new SFNode(
+                                                                    new Coordinate({
+                                                                      point : new MFVec3f([0.0987,0.0034,0.0086,0.1002,0.0013,0.0178])})),
+                                                                  /*from l_tarsal_proximal_interphalangeal_3 to l_tarsal_distal_interphalangeal_3 vertices 2*/
+                                                                  color : new SFNode(
+                                                                    new ColorRGBA({
+                                                                      USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                                            new HAnimSite({
+                                                              name : new SFString("l_tarsal_distal_phalanx_3_tip"),
+                                                              DEF : new SFString("hanim_l_tarsal_distal_phalanx_3_tip"),
+                                                              children : new MFNode([
+                                                                new TouchSensor({
+                                                                  description : new SFString("HAnimSite l_tarsal_distal_phalanx_3_tip")}),
+
+                                                                new Shape({
+                                                                  USE : new SFString("HAnimSiteShape")})])})])}),
+
+                                                        new HAnimJoint({
+                                                          name : new SFString("l_tarsal_distal_interphalangeal_3"),
+                                                          DEF : new SFString("hanim_l_tarsal_distal_interphalangeal_3"),
+                                                          center : new SFVec3f([0.1002,0.0013,0.0178]),
+                                                          ulimit : new MFFloat([0,0,0]),
+                                                          llimit : new MFFloat([0,0,0])})])})])})])})])})])}),
+
+                                    new HAnimJoint({
+                                      name : new SFString("l_calcaneocuboid"),
+                                      DEF : new SFString("hanim_l_calcaneocuboid"),
+                                      center : new SFVec3f([0.0889,0.0494,-0.1278]),
+                                      ulimit : new MFFloat([0,0,0]),
+                                      llimit : new MFFloat([0,0,0]),
+                                      children : new MFNode([
+                                        new HAnimSegment({
+                                          name : new SFString("l_calcaneus"),
+                                          DEF : new SFString("hanim_l_calcaneus"),
+                                          children : new MFNode([
+                                            new Transform({
+                                              translation : new SFVec3f([0.0889,0.0494,-0.1278]),
+                                              children : new MFNode([
+                                                new Transform({
+                                                  /*Empty Transform*/
+                                                  child : new SFNode(
+                                                    new Shape({
+                                                      USE : new SFString("HAnimJointShape")}))})])}),
+
+                                            new Shape({
+                                              geometry : new SFNode(
+                                                new LineSet({
+                                                  vertexCount : new MFInt32([2]),
+                                                  coord : new SFNode(
+                                                    new Coordinate({
+                                                      point : new MFVec3f([0.0889,0.0494,-0.1278,0.1105,0.0267,-0.0998])})),
+                                                  /*from l_calcaneocuboid to l_transversetarsal vertices 2*/
+                                                  color : new SFNode(
+                                                    new ColorRGBA({
+                                                      USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+
+                                        new HAnimJoint({
+                                          name : new SFString("l_transversetarsal"),
+                                          DEF : new SFString("hanim_l_transversetarsal"),
+                                          center : new SFVec3f([0.1105,0.0267,-0.0998]),
+                                          ulimit : new MFFloat([0,0,0]),
+                                          llimit : new MFFloat([0,0,0]),
+                                          children : new MFNode([
+                                            new HAnimSegment({
+                                              name : new SFString("l_cuboid"),
+                                              DEF : new SFString("hanim_l_cuboid"),
+                                              children : new MFNode([
+                                                new Transform({
+                                                  translation : new SFVec3f([0.1105,0.0267,-0.0998]),
+                                                  children : new MFNode([
+                                                    new Transform({
+                                                      /*Empty Transform*/
+                                                      child : new SFNode(
+                                                        new Shape({
+                                                          USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                new Shape({
+                                                  geometry : new SFNode(
+                                                    new LineSet({
+                                                      vertexCount : new MFInt32([2]),
+                                                      coord : new SFNode(
+                                                        new Coordinate({
+                                                          point : new MFVec3f([0.1105,0.0267,-0.0998,0.1063,0.016,-0.0634])})),
+                                                      /*from l_transversetarsal to l_tarsometatarsal_4 vertices 2*/
+                                                      color : new SFNode(
+                                                        new ColorRGBA({
+                                                          USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                                new Shape({
+                                                  geometry : new SFNode(
+                                                    new LineSet({
+                                                      vertexCount : new MFInt32([2]),
+                                                      coord : new SFNode(
+                                                        new Coordinate({
+                                                          point : new MFVec3f([0.1105,0.0267,-0.0998,0.1206,0.0124,-0.0671])})),
+                                                      /*from l_transversetarsal to l_tarsometatarsal_5 vertices 2*/
+                                                      color : new SFNode(
+                                                        new ColorRGBA({
+                                                          USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+
+                                            new HAnimJoint({
+                                              name : new SFString("l_tarsometatarsal_4"),
+                                              DEF : new SFString("hanim_l_tarsometatarsal_4"),
+                                              center : new SFVec3f([0.1063,0.016,-0.0634]),
+                                              ulimit : new MFFloat([0,0,0]),
+                                              llimit : new MFFloat([0,0,0]),
+                                              children : new MFNode([
+                                                new HAnimSegment({
+                                                  name : new SFString("l_metatarsal_4"),
+                                                  DEF : new SFString("hanim_l_metatarsal_4"),
+                                                  children : new MFNode([
+                                                    new Transform({
+                                                      translation : new SFVec3f([0.1063,0.016,-0.0634]),
+                                                      children : new MFNode([
+                                                        new Transform({
+                                                          /*Empty Transform*/
+                                                          child : new SFNode(
+                                                            new Shape({
+                                                              USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                    new Shape({
+                                                      geometry : new SFNode(
+                                                        new LineSet({
+                                                          vertexCount : new MFInt32([2]),
+                                                          coord : new SFNode(
+                                                            new Coordinate({
+                                                              point : new MFVec3f([0.1063,0.016,-0.0634,0.1097,0.0058,-0.0107])})),
+                                                          /*from l_tarsometatarsal_4 to l_metatarsophalangeal_4 vertices 2*/
+                                                          color : new SFNode(
+                                                            new ColorRGBA({
+                                                              USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+
+                                                new HAnimJoint({
+                                                  name : new SFString("l_metatarsophalangeal_4"),
+                                                  DEF : new SFString("hanim_l_metatarsophalangeal_4"),
+                                                  center : new SFVec3f([0.1097,0.0058,-0.0107]),
+                                                  ulimit : new MFFloat([0,0,0]),
+                                                  llimit : new MFFloat([0,0,0]),
+                                                  children : new MFNode([
+                                                    new HAnimSegment({
+                                                      name : new SFString("l_tarsal_proximal_phalanx_4"),
+                                                      DEF : new SFString("hanim_l_tarsal_proximal_phalanx_4"),
+                                                      children : new MFNode([
+                                                        new Transform({
+                                                          translation : new SFVec3f([0.1097,0.0058,-0.0107]),
+                                                          children : new MFNode([
+                                                            new Transform({
+                                                              /*Empty Transform*/
+                                                              child : new SFNode(
+                                                                new Shape({
+                                                                  USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                        new Shape({
+                                                          geometry : new SFNode(
+                                                            new LineSet({
+                                                              vertexCount : new MFInt32([2]),
+                                                              coord : new SFNode(
+                                                                new Coordinate({
+                                                                  point : new MFVec3f([0.1097,0.0058,-0.0107,0.114,0.0037,0.0044])})),
+                                                              /*from l_metatarsophalangeal_4 to l_tarsal_proximal_interphalangeal_4 vertices 2*/
+                                                              color : new SFNode(
+                                                                new ColorRGBA({
+                                                                  USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+
+                                                    new HAnimJoint({
+                                                      name : new SFString("l_tarsal_proximal_interphalangeal_4"),
+                                                      DEF : new SFString("hanim_l_tarsal_proximal_interphalangeal_4"),
+                                                      center : new SFVec3f([0.114,0.0037,0.0044]),
+                                                      ulimit : new MFFloat([0,0,0]),
+                                                      llimit : new MFFloat([0,0,0]),
+                                                      children : new MFNode([
+                                                        new HAnimSegment({
+                                                          name : new SFString("l_tarsal_middle_phalanx_4"),
+                                                          DEF : new SFString("hanim_l_tarsal_middle_phalanx_4"),
+                                                          children : new MFNode([
+                                                            new Transform({
+                                                              translation : new SFVec3f([0.114,0.0037,0.0044]),
+                                                              children : new MFNode([
+                                                                new Transform({
+                                                                  /*Empty Transform*/
+                                                                  child : new SFNode(
+                                                                    new Shape({
+                                                                      USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                            new Shape({
+                                                              geometry : new SFNode(
+                                                                new LineSet({
+                                                                  vertexCount : new MFInt32([2]),
+                                                                  coord : new SFNode(
+                                                                    new Coordinate({
+                                                                      point : new MFVec3f([0.114,0.0037,0.0044,0.1155,0.0008,0.0118])})),
+                                                                  /*from l_tarsal_proximal_interphalangeal_4 to l_tarsal_distal_interphalangeal_4 vertices 2*/
+                                                                  color : new SFNode(
+                                                                    new ColorRGBA({
+                                                                      USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                                            new HAnimSite({
+                                                              name : new SFString("l_tarsal_distal_phalanx_4_tip"),
+                                                              DEF : new SFString("hanim_l_tarsal_distal_phalanx_4_tip"),
+                                                              children : new MFNode([
+                                                                new TouchSensor({
+                                                                  description : new SFString("HAnimSite l_tarsal_distal_phalanx_4_tip")}),
+
+                                                                new Shape({
+                                                                  USE : new SFString("HAnimSiteShape")})])})])}),
+
+                                                        new HAnimJoint({
+                                                          name : new SFString("l_tarsal_distal_interphalangeal_4"),
+                                                          DEF : new SFString("hanim_l_tarsal_distal_interphalangeal_4"),
+                                                          center : new SFVec3f([0.1155,0.0008,0.0118]),
+                                                          ulimit : new MFFloat([0,0,0]),
+                                                          llimit : new MFFloat([0,0,0])})])})])})])}),
+
+                                            new HAnimJoint({
+                                              name : new SFString("l_tarsometatarsal_5"),
+                                              DEF : new SFString("hanim_l_tarsometatarsal_5"),
+                                              center : new SFVec3f([0.1206,0.0124,-0.0671]),
+                                              ulimit : new MFFloat([0,0,0]),
+                                              llimit : new MFFloat([0,0,0]),
+                                              children : new MFNode([
+                                                new HAnimSegment({
+                                                  name : new SFString("l_metatarsal_5"),
+                                                  DEF : new SFString("hanim_l_metatarsal_5"),
+                                                  children : new MFNode([
+                                                    new Transform({
+                                                      translation : new SFVec3f([0.1206,0.0124,-0.0671]),
+                                                      children : new MFNode([
+                                                        new Transform({
+                                                          /*Empty Transform*/
+                                                          child : new SFNode(
+                                                            new Shape({
+                                                              USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                    new Shape({
+                                                      geometry : new SFNode(
+                                                        new LineSet({
+                                                          vertexCount : new MFInt32([2]),
+                                                          coord : new SFNode(
+                                                            new Coordinate({
+                                                              point : new MFVec3f([0.1206,0.0124,-0.0671,0.1239,0.0051,-0.0153])})),
+                                                          /*from l_tarsometatarsal_5 to l_metatarsophalangeal_5 vertices 2*/
+                                                          color : new SFNode(
+                                                            new ColorRGBA({
+                                                              USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                                    new HAnimSite({
+                                                      name : new SFString("l_metatarsal_phalanx_5"),
+                                                      DEF : new SFString("hanim_l_metatarsal_phalanx_5"),
+                                                      children : new MFNode([
+                                                        new TouchSensor({
+                                                          description : new SFString("HAnimSite l_metatarsal_phalanx_5")}),
+
+                                                        new Shape({
+                                                          USE : new SFString("HAnimSiteShape")})])})])}),
+
+                                                new HAnimJoint({
+                                                  name : new SFString("l_metatarsophalangeal_5"),
+                                                  DEF : new SFString("hanim_l_metatarsophalangeal_5"),
+                                                  center : new SFVec3f([0.1239,0.0051,-0.0153]),
+                                                  ulimit : new MFFloat([0,0,0]),
+                                                  llimit : new MFFloat([0,0,0]),
+                                                  children : new MFNode([
+                                                    new HAnimSegment({
+                                                      name : new SFString("l_tarsal_proximal_phalanx_5"),
+                                                      DEF : new SFString("hanim_l_tarsal_proximal_phalanx_5"),
+                                                      children : new MFNode([
+                                                        new Transform({
+                                                          translation : new SFVec3f([0.1239,0.0051,-0.0153]),
+                                                          children : new MFNode([
+                                                            new Transform({
+                                                              /*Empty Transform*/
+                                                              child : new SFNode(
+                                                                new Shape({
+                                                                  USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                        new Shape({
+                                                          geometry : new SFNode(
+                                                            new LineSet({
+                                                              vertexCount : new MFInt32([2]),
+                                                              coord : new SFNode(
+                                                                new Coordinate({
+                                                                  point : new MFVec3f([0.1239,0.0051,-0.0153,0.1262,0.0023,-0.0077])})),
+                                                              /*from l_metatarsophalangeal_5 to l_tarsal_proximal_interphalangeal_5 vertices 2*/
+                                                              color : new SFNode(
+                                                                new ColorRGBA({
+                                                                  USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+
+                                                    new HAnimJoint({
+                                                      name : new SFString("l_tarsal_proximal_interphalangeal_5"),
+                                                      DEF : new SFString("hanim_l_tarsal_proximal_interphalangeal_5"),
+                                                      center : new SFVec3f([0.1262,0.0023,-0.0077]),
+                                                      ulimit : new MFFloat([0,0,0]),
+                                                      llimit : new MFFloat([0,0,0]),
+                                                      children : new MFNode([
+                                                        new HAnimSegment({
+                                                          name : new SFString("l_tarsal_middle_phalanx_5"),
+                                                          DEF : new SFString("hanim_l_tarsal_middle_phalanx_5"),
+                                                          children : new MFNode([
+                                                            new Transform({
+                                                              translation : new SFVec3f([0.1262,0.0023,-0.0077]),
+                                                              children : new MFNode([
+                                                                new Transform({
+                                                                  /*Empty Transform*/
+                                                                  child : new SFNode(
+                                                                    new Shape({
+                                                                      USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                            new Shape({
+                                                              geometry : new SFNode(
+                                                                new LineSet({
+                                                                  vertexCount : new MFInt32([2]),
+                                                                  coord : new SFNode(
+                                                                    new Coordinate({
+                                                                      point : new MFVec3f([0.1262,0.0023,-0.0077,0.1271,0,0])})),
+                                                                  /*from l_tarsal_proximal_interphalangeal_5 to l_tarsal_distal_interphalangeal_5 vertices 2*/
+                                                                  color : new SFNode(
+                                                                    new ColorRGBA({
+                                                                      USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                                            new HAnimSite({
+                                                              name : new SFString("l_tarsal_distal_phalanx_5_tip"),
+                                                              DEF : new SFString("hanim_l_tarsal_distal_phalanx_5_tip"),
+                                                              children : new MFNode([
+                                                                new TouchSensor({
+                                                                  description : new SFString("HAnimSite l_tarsal_distal_phalanx_5_tip")}),
+
+                                                                new Shape({
+                                                                  USE : new SFString("HAnimSiteShape")})])})])}),
+
+                                                        new HAnimJoint({
+                                                          name : new SFString("l_tarsal_distal_interphalangeal_5"),
+                                                          DEF : new SFString("hanim_l_tarsal_distal_interphalangeal_5"),
+                                                          center : new SFVec3f([0.1271,0,0]),
+                                                          ulimit : new MFFloat([0,0,0]),
+                                                          llimit : new MFFloat([0,0,0])})])})])})])})])})])})])})])})])}),
+
+                        new HAnimJoint({
+                          name : new SFString("r_hip"),
+                          DEF : new SFString("hanim_r_hip"),
+                          center : new SFVec3f([-0.095,0.9171,0.0029]),
+                          ulimit : new MFFloat([0,0,0]),
+                          llimit : new MFFloat([0,0,0]),
+                          children : new MFNode([
+                            new HAnimSegment({
+                              name : new SFString("r_thigh"),
+                              DEF : new SFString("hanim_r_thigh"),
+                              children : new MFNode([
+                                new Transform({
+                                  translation : new SFVec3f([-0.095,0.9171,0.0029]),
+                                  children : new MFNode([
+                                    new Transform({
+                                      /*Empty Transform*/
+                                      child : new SFNode(
+                                        new Shape({
+                                          USE : new SFString("HAnimJointShape")}))})])}),
+
+                                new Shape({
+                                  geometry : new SFNode(
+                                    new LineSet({
+                                      vertexCount : new MFInt32([2]),
+                                      coord : new SFNode(
+                                        new Coordinate({
+                                          point : new MFVec3f([-0.095,0.9171,0.0029,-0.0867,0.4913,0.0318])})),
+                                      /*from r_hip to r_knee vertices 2*/
+                                      color : new SFNode(
+                                        new ColorRGBA({
+                                          USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                new HAnimSite({
+                                  name : new SFString("r_lateral_malleolus"),
+                                  DEF : new SFString("hanim_r_lateral_malleolus"),
+                                  translation : new SFVec3f([-0.1006,0.0658,-0.1075]),
+                                  children : new MFNode([
+                                    new TouchSensor({
+                                      description : new SFString("HAnimSite r_lateral_malleolus")}),
+
+                                    new Shape({
+                                      USE : new SFString("HAnimSiteShape")})])}),
+
+                                new HAnimSite({
+                                  name : new SFString("r_medial_malleolus"),
+                                  DEF : new SFString("hanim_r_medial_malleolus"),
+                                  translation : new SFVec3f([-0.0591,0.076,-0.0928]),
+                                  children : new MFNode([
+                                    new TouchSensor({
+                                      description : new SFString("HAnimSite r_medial_malleolus")}),
+
+                                    new Shape({
+                                      USE : new SFString("HAnimSiteShape")})])}),
+
+                                new HAnimSite({
+                                  name : new SFString("r_tibiale"),
+                                  DEF : new SFString("hanim_r_tibiale"),
+                                  children : new MFNode([
+                                    new TouchSensor({
+                                      description : new SFString("HAnimSite r_tibiale")}),
+
+                                    new Shape({
+                                      USE : new SFString("HAnimSiteShape")})])})])}),
+
+                            new HAnimJoint({
+                              name : new SFString("r_knee"),
+                              DEF : new SFString("hanim_r_knee"),
+                              center : new SFVec3f([-0.0867,0.4913,0.0318]),
+                              ulimit : new MFFloat([0,0,0]),
+                              llimit : new MFFloat([0,0,0]),
+                              children : new MFNode([
+                                new HAnimSegment({
+                                  name : new SFString("r_calf"),
+                                  DEF : new SFString("hanim_r_calf"),
+                                  children : new MFNode([
+                                    new Transform({
+                                      translation : new SFVec3f([-0.0867,0.4913,0.0318]),
+                                      children : new MFNode([
+                                        new Transform({
+                                          /*Empty Transform*/
+                                          child : new SFNode(
+                                            new Shape({
+                                              USE : new SFString("HAnimJointShape")}))})])}),
+
+                                    new Shape({
+                                      geometry : new SFNode(
+                                        new LineSet({
+                                          vertexCount : new MFInt32([2]),
+                                          coord : new SFNode(
+                                            new Coordinate({
+                                              point : new MFVec3f([-0.0867,0.4913,0.0318,-0.0801,0.0712,-0.0766])})),
+                                          /*from r_knee to r_talocrural vertices 2*/
+                                          color : new SFNode(
+                                            new ColorRGBA({
+                                              USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                    new HAnimSite({
+                                      name : new SFString("r_calcaneus_posterior"),
+                                      DEF : new SFString("hanim_r_calcaneus_posterior"),
+                                      translation : new SFVec3f([-0.0692,0.0297,-0.1221]),
+                                      children : new MFNode([
+                                        new TouchSensor({
+                                          description : new SFString("HAnimSite r_calcaneus_posterior")}),
+
+                                        new Shape({
+                                          USE : new SFString("HAnimSiteShape")})])}),
+
+                                    new HAnimSite({
+                                      name : new SFString("r_sphyrion"),
+                                      DEF : new SFString("hanim_r_sphyrion"),
+                                      translation : new SFVec3f([-0.0603,0.061,-0.1002]),
+                                      children : new MFNode([
+                                        new TouchSensor({
+                                          description : new SFString("HAnimSite r_sphyrion")}),
+
+                                        new Shape({
+                                          USE : new SFString("HAnimSiteShape")})])})])}),
+
+                                new HAnimJoint({
+                                  name : new SFString("r_talocrural"),
+                                  DEF : new SFString("hanim_r_talocrural"),
+                                  center : new SFVec3f([-0.0801,0.0712,-0.0766]),
+                                  ulimit : new MFFloat([0,0,0]),
+                                  llimit : new MFFloat([0,0,0]),
+                                  children : new MFNode([
+                                    new HAnimSegment({
+                                      name : new SFString("r_talus"),
+                                      DEF : new SFString("hanim_r_talus"),
+                                      children : new MFNode([
+                                        new Transform({
+                                          scale : new SFVec3f([0.15,0.15,0.15]),
+                                          translation : new SFVec3f([-0.05,0.06,-0.025]),
+                                          rotation : new SFRotation([1,0,0,-1.57]),
+                                          /*Transform right foot*/
+                                          children : new MFNode([
+                                            new Transform({
+                                              /*Empty Transform right foot*/
+                                              child : new SFNode(
+                                                new Shape({
+                                                  USE : new SFString("HAnimJointShape")}))})])}),
+
+                                        new Shape({
+                                          geometry : new SFNode(
+                                            new LineSet({
+                                              vertexCount : new MFInt32([2]),
+                                              coord : new SFNode(
+                                                new Coordinate({
+                                                  point : new MFVec3f([-0.0801,0.0712,-0.0766,-0.0781,0.0283,-0.097])})),
+                                              /*from r_talocrural to r_talocalcaneonavicular vertices 2*/
+                                              color : new SFNode(
+                                                new ColorRGBA({
+                                                  USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                        new Shape({
+                                          geometry : new SFNode(
+                                            new LineSet({
+                                              vertexCount : new MFInt32([2]),
+                                              coord : new SFNode(
+                                                new Coordinate({
+                                                  point : new MFVec3f([-0.0801,0.0712,-0.0766,-0.0889,0.0494,-0.1278])})),
+                                              /*from r_talocrural to r_calcaneocuboid vertices 2*/
+                                              color : new SFNode(
+                                                new ColorRGBA({
+                                                  USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+
+                                    new HAnimJoint({
+                                      name : new SFString("r_talocalcaneonavicular"),
+                                      DEF : new SFString("hanim_r_talocalcaneonavicular"),
+                                      center : new SFVec3f([-0.0781,0.0283,-0.097]),
+                                      ulimit : new MFFloat([0,0,0]),
+                                      llimit : new MFFloat([0,0,0]),
+                                      children : new MFNode([
+                                        new HAnimSegment({
+                                          name : new SFString("r_navicular"),
+                                          DEF : new SFString("hanim_r_navicular"),
+                                          children : new MFNode([
+                                            new Transform({
+                                              translation : new SFVec3f([-0.0781,0.0283,-0.097]),
+                                              children : new MFNode([
+                                                new Transform({
+                                                  /*Empty Transform*/
+                                                  child : new SFNode(
+                                                    new Shape({
+                                                      USE : new SFString("HAnimJointShape")}))})])}),
+
+                                            new Shape({
+                                              geometry : new SFNode(
+                                                new LineSet({
+                                                  vertexCount : new MFInt32([2]),
+                                                  coord : new SFNode(
+                                                    new Coordinate({
+                                                      point : new MFVec3f([-0.0781,0.0283,-0.097,-0.0672,0.0235,-0.0835])})),
+                                                  /*from r_talocalcaneonavicular to r_cuneonavicular_1 vertices 2*/
+                                                  color : new SFNode(
+                                                    new ColorRGBA({
+                                                      USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                            new Shape({
+                                              geometry : new SFNode(
+                                                new LineSet({
+                                                  vertexCount : new MFInt32([2]),
+                                                  coord : new SFNode(
+                                                    new Coordinate({
+                                                      point : new MFVec3f([-0.0781,0.0283,-0.097,-0.0812,0.025,-0.0805])})),
+                                                  /*from r_talocalcaneonavicular to r_cuneonavicular_2 vertices 2*/
+                                                  color : new SFNode(
+                                                    new ColorRGBA({
+                                                      USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                            new Shape({
+                                              geometry : new SFNode(
+                                                new LineSet({
+                                                  vertexCount : new MFInt32([2]),
+                                                  coord : new SFNode(
+                                                    new Coordinate({
+                                                      point : new MFVec3f([-0.0781,0.0283,-0.097,-0.0928,0.0248,-0.0821])})),
+                                                  /*from r_talocalcaneonavicular to r_cuneonavicular_3 vertices 2*/
+                                                  color : new SFNode(
+                                                    new ColorRGBA({
+                                                      USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+
+                                        new HAnimJoint({
+                                          name : new SFString("r_cuneonavicular_1"),
+                                          DEF : new SFString("hanim_r_cuneonavicular_1"),
+                                          center : new SFVec3f([-0.0672,0.0235,-0.0835]),
+                                          ulimit : new MFFloat([0,0,0]),
+                                          llimit : new MFFloat([0,0,0]),
+                                          children : new MFNode([
+                                            new HAnimSegment({
+                                              name : new SFString("r_cuneiform_1"),
+                                              DEF : new SFString("hanim_r_cuneiform_1"),
+                                              children : new MFNode([
+                                                new Transform({
+                                                  translation : new SFVec3f([-0.0672,0.0235,-0.0835]),
+                                                  children : new MFNode([
+                                                    new Transform({
+                                                      /*Empty Transform*/
+                                                      child : new SFNode(
+                                                        new Shape({
+                                                          USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                new Shape({
+                                                  geometry : new SFNode(
+                                                    new LineSet({
+                                                      vertexCount : new MFInt32([2]),
+                                                      coord : new SFNode(
+                                                        new Coordinate({
+                                                          point : new MFVec3f([-0.0672,0.0235,-0.0835,-0.0644,0.0147,-0.0577])})),
+                                                      /*from r_cuneonavicular_1 to r_tarsometatarsal_1 vertices 2*/
+                                                      color : new SFNode(
+                                                        new ColorRGBA({
+                                                          USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+
+                                            new HAnimJoint({
+                                              name : new SFString("r_tarsometatarsal_1"),
+                                              DEF : new SFString("hanim_r_tarsometatarsal_1"),
+                                              center : new SFVec3f([-0.0644,0.0147,-0.0577]),
+                                              ulimit : new MFFloat([0,0,0]),
+                                              llimit : new MFFloat([0,0,0]),
+                                              children : new MFNode([
+                                                new HAnimSegment({
+                                                  name : new SFString("r_metatarsal_1"),
+                                                  DEF : new SFString("hanim_r_metatarsal_1"),
+                                                  children : new MFNode([
+                                                    new Transform({
+                                                      translation : new SFVec3f([-0.0644,0.0147,-0.0577]),
+                                                      children : new MFNode([
+                                                        new Transform({
+                                                          /*Empty Transform*/
+                                                          child : new SFNode(
+                                                            new Shape({
+                                                              USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                    new Shape({
+                                                      geometry : new SFNode(
+                                                        new LineSet({
+                                                          vertexCount : new MFInt32([2]),
+                                                          coord : new SFNode(
+                                                            new Coordinate({
+                                                              point : new MFVec3f([-0.0644,0.0147,-0.0577,-0.0619,0.0059,-0.0083])})),
+                                                          /*from r_tarsometatarsal_1 to r_metatarsophalangeal_1 vertices 2*/
+                                                          color : new SFNode(
+                                                            new ColorRGBA({
+                                                              USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                                    new HAnimSite({
+                                                      name : new SFString("r_metatarsal_phalanx_1"),
+                                                      DEF : new SFString("hanim_r_metatarsal_phalanx_1"),
+                                                      children : new MFNode([
+                                                        new TouchSensor({
+                                                          description : new SFString("HAnimSite r_metatarsal_phalanx_1")}),
+
+                                                        new Shape({
+                                                          USE : new SFString("HAnimSiteShape")})])})])}),
+
+                                                new HAnimJoint({
+                                                  name : new SFString("r_metatarsophalangeal_1"),
+                                                  DEF : new SFString("hanim_r_metatarsophalangeal_1"),
+                                                  center : new SFVec3f([-0.0619,0.0059,-0.0083]),
+                                                  ulimit : new MFFloat([0,0,0]),
+                                                  llimit : new MFFloat([0,0,0]),
+                                                  children : new MFNode([
+                                                    new HAnimSegment({
+                                                      name : new SFString("r_tarsal_proximal_phalanx_1"),
+                                                      DEF : new SFString("hanim_r_tarsal_proximal_phalanx_1"),
+                                                      children : new MFNode([
+                                                        new Transform({
+                                                          translation : new SFVec3f([-0.0619,0.0059,-0.0083]),
+                                                          children : new MFNode([
+                                                            new Transform({
+                                                              /*Empty Transform*/
+                                                              child : new SFNode(
+                                                                new Shape({
+                                                                  USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                        new Shape({
+                                                          geometry : new SFNode(
+                                                            new LineSet({
+                                                              vertexCount : new MFInt32([2]),
+                                                              coord : new SFNode(
+                                                                new Coordinate({
+                                                                  point : new MFVec3f([-0.0619,0.0059,-0.0083,-0.0619,0.0059,-0.0083])})),
+                                                              /*from r_metatarsophalangeal_1 to r_tarsal_interphalangeal_1 vertices 2*/
+                                                              color : new SFNode(
+                                                                new ColorRGBA({
+                                                                  USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                                        new HAnimSite({
+                                                          name : new SFString("r_tarsal_distal_phalanx_1_tip"),
+                                                          DEF : new SFString("hanim_r_tarsal_distal_phalanx_1_tip"),
+                                                          children : new MFNode([
+                                                            new TouchSensor({
+                                                              description : new SFString("HAnimSite r_tarsal_distal_phalanx_1_tip")}),
+
+                                                            new Shape({
+                                                              USE : new SFString("HAnimSiteShape")})])})])}),
+
+                                                    new HAnimJoint({
+                                                      name : new SFString("r_tarsal_interphalangeal_1"),
+                                                      DEF : new SFString("hanim_r_tarsal_interphalangeal_1"),
+                                                      ulimit : new MFFloat([0,0,0]),
+                                                      llimit : new MFFloat([0,0,0])})])})])})])}),
+
+                                        new HAnimJoint({
+                                          name : new SFString("r_cuneonavicular_2"),
+                                          DEF : new SFString("hanim_r_cuneonavicular_2"),
+                                          center : new SFVec3f([-0.0812,0.025,-0.0805]),
+                                          ulimit : new MFFloat([0,0,0]),
+                                          llimit : new MFFloat([0,0,0]),
+                                          children : new MFNode([
+                                            new HAnimSegment({
+                                              name : new SFString("r_cuneiform_2"),
+                                              DEF : new SFString("hanim_r_cuneiform_2"),
+                                              children : new MFNode([
+                                                new Transform({
+                                                  translation : new SFVec3f([-0.0812,0.025,-0.0805]),
+                                                  children : new MFNode([
+                                                    new Transform({
+                                                      /*Empty Transform*/
+                                                      child : new SFNode(
+                                                        new Shape({
+                                                          USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                new Shape({
+                                                  geometry : new SFNode(
+                                                    new LineSet({
+                                                      vertexCount : new MFInt32([2]),
+                                                      coord : new SFNode(
+                                                        new Coordinate({
+                                                          point : new MFVec3f([-0.0812,0.025,-0.0805,-0.08,0.0175,-0.0608])})),
+                                                      /*from r_cuneonavicular_2 to r_tarsometatarsal_2 vertices 2*/
+                                                      color : new SFNode(
+                                                        new ColorRGBA({
+                                                          USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+
+                                            new HAnimJoint({
+                                              name : new SFString("r_tarsometatarsal_2"),
+                                              DEF : new SFString("hanim_r_tarsometatarsal_2"),
+                                              center : new SFVec3f([-0.08,0.0175,-0.0608]),
+                                              ulimit : new MFFloat([0,0,0]),
+                                              llimit : new MFFloat([0,0,0]),
+                                              children : new MFNode([
+                                                new HAnimSegment({
+                                                  name : new SFString("r_metatarsal_2"),
+                                                  DEF : new SFString("hanim_r_metatarsal_2"),
+                                                  children : new MFNode([
+                                                    new Transform({
+                                                      translation : new SFVec3f([-0.08,0.0175,-0.0608]),
+                                                      children : new MFNode([
+                                                        new Transform({
+                                                          /*Empty Transform*/
+                                                          child : new SFNode(
+                                                            new Shape({
+                                                              USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                    new Shape({
+                                                      geometry : new SFNode(
+                                                        new LineSet({
+                                                          vertexCount : new MFInt32([2]),
+                                                          coord : new SFNode(
+                                                            new Coordinate({
+                                                              point : new MFVec3f([-0.08,0.0175,-0.0608,-0.0823,0.0064,-0.004])})),
+                                                          /*from r_tarsometatarsal_2 to r_metatarsophalangeal_2 vertices 2*/
+                                                          color : new SFNode(
+                                                            new ColorRGBA({
+                                                              USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+
+                                                new HAnimJoint({
+                                                  name : new SFString("r_metatarsophalangeal_2"),
+                                                  DEF : new SFString("hanim_r_metatarsophalangeal_2"),
+                                                  center : new SFVec3f([-0.0823,0.0064,-0.004]),
+                                                  ulimit : new MFFloat([0,0,0]),
+                                                  llimit : new MFFloat([0,0,0]),
+                                                  children : new MFNode([
+                                                    new HAnimSegment({
+                                                      name : new SFString("r_tarsal_proximal_phalanx_2"),
+                                                      DEF : new SFString("hanim_r_tarsal_proximal_phalanx_2"),
+                                                      children : new MFNode([
+                                                        new Transform({
+                                                          translation : new SFVec3f([-0.0823,0.0064,-0.004]),
+                                                          children : new MFNode([
+                                                            new Transform({
+                                                              /*Empty Transform*/
+                                                              child : new SFNode(
+                                                                new Shape({
+                                                                  USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                        new Shape({
+                                                          geometry : new SFNode(
+                                                            new LineSet({
+                                                              vertexCount : new MFInt32([2]),
+                                                              coord : new SFNode(
+                                                                new Coordinate({
+                                                                  point : new MFVec3f([-0.0823,0.0064,-0.004,-0.0841,0.0041,0.0121])})),
+                                                              /*from r_metatarsophalangeal_2 to r_tarsal_proximal_interphalangeal_2 vertices 2*/
+                                                              color : new SFNode(
+                                                                new ColorRGBA({
+                                                                  USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+
+                                                    new HAnimJoint({
+                                                      name : new SFString("r_tarsal_proximal_interphalangeal_2"),
+                                                      DEF : new SFString("hanim_r_tarsal_proximal_interphalangeal_2"),
+                                                      center : new SFVec3f([-0.0841,0.0041,0.0121]),
+                                                      ulimit : new MFFloat([0,0,0]),
+                                                      llimit : new MFFloat([0,0,0]),
+                                                      children : new MFNode([
+                                                        new HAnimSegment({
+                                                          name : new SFString("r_tarsal_middle_phalanx_2"),
+                                                          DEF : new SFString("hanim_r_tarsal_middle_phalanx_2"),
+                                                          children : new MFNode([
+                                                            new Transform({
+                                                              translation : new SFVec3f([-0.0841,0.0041,0.0121]),
+                                                              children : new MFNode([
+                                                                new Transform({
+                                                                  /*Empty Transform*/
+                                                                  child : new SFNode(
+                                                                    new Shape({
+                                                                      USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                            new Shape({
+                                                              geometry : new SFNode(
+                                                                new LineSet({
+                                                                  vertexCount : new MFInt32([2]),
+                                                                  coord : new SFNode(
+                                                                    new Coordinate({
+                                                                      point : new MFVec3f([-0.0841,0.0041,0.0121,-0.0841,0.0013,0.0216])})),
+                                                                  /*from r_tarsal_proximal_interphalangeal_2 to r_tarsal_distal_interphalangeal_2 vertices 2*/
+                                                                  color : new SFNode(
+                                                                    new ColorRGBA({
+                                                                      USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                                            new HAnimSite({
+                                                              name : new SFString("r_tarsal_distal_phalanx_2_tip"),
+                                                              DEF : new SFString("hanim_r_tarsal_distal_phalanx_2_tip"),
+                                                              translation : new SFVec3f([-0.0883,0.0134,0.1383]),
+                                                              children : new MFNode([
+                                                                new TouchSensor({
+                                                                  description : new SFString("HAnimSite r_tarsal_distal_phalanx_2_tip")}),
+
+                                                                new Shape({
+                                                                  USE : new SFString("HAnimSiteShape")})])})])}),
+
+                                                        new HAnimJoint({
+                                                          name : new SFString("r_tarsal_distal_interphalangeal_2"),
+                                                          DEF : new SFString("hanim_r_tarsal_distal_interphalangeal_2"),
+                                                          center : new SFVec3f([-0.0841,0.0013,0.0216]),
+                                                          ulimit : new MFFloat([0,0,0]),
+                                                          llimit : new MFFloat([0,0,0])})])})])})])})])}),
+
+                                        new HAnimJoint({
+                                          name : new SFString("r_cuneonavicular_3"),
+                                          DEF : new SFString("hanim_r_cuneonavicular_3"),
+                                          center : new SFVec3f([-0.0928,0.0248,-0.0821]),
+                                          ulimit : new MFFloat([0,0,0]),
+                                          llimit : new MFFloat([0,0,0]),
+                                          children : new MFNode([
+                                            new HAnimSegment({
+                                              name : new SFString("r_cuneiform_3"),
+                                              DEF : new SFString("hanim_r_cuneiform_3"),
+                                              children : new MFNode([
+                                                new Transform({
+                                                  translation : new SFVec3f([-0.0928,0.0248,-0.0821]),
+                                                  children : new MFNode([
+                                                    new Transform({
+                                                      /*Empty Transform*/
+                                                      child : new SFNode(
+                                                        new Shape({
+                                                          USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                new Shape({
+                                                  geometry : new SFNode(
+                                                    new LineSet({
+                                                      vertexCount : new MFInt32([2]),
+                                                      coord : new SFNode(
+                                                        new Coordinate({
+                                                          point : new MFVec3f([-0.0928,0.0248,-0.0821,-0.0944,0.0175,-0.0625])})),
+                                                      /*from r_cuneonavicular_3 to r_tarsometatarsal_3 vertices 2*/
+                                                      color : new SFNode(
+                                                        new ColorRGBA({
+                                                          USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+
+                                            new HAnimJoint({
+                                              name : new SFString("r_tarsometatarsal_3"),
+                                              DEF : new SFString("hanim_r_tarsometatarsal_3"),
+                                              center : new SFVec3f([-0.0944,0.0175,-0.0625]),
+                                              ulimit : new MFFloat([0,0,0]),
+                                              llimit : new MFFloat([0,0,0]),
+                                              children : new MFNode([
+                                                new HAnimSegment({
+                                                  name : new SFString("r_metatarsal_3"),
+                                                  DEF : new SFString("hanim_r_metatarsal_3"),
+                                                  children : new MFNode([
+                                                    new Transform({
+                                                      translation : new SFVec3f([-0.0944,0.0175,-0.0625]),
+                                                      children : new MFNode([
+                                                        new Transform({
+                                                          /*Empty Transform*/
+                                                          child : new SFNode(
+                                                            new Shape({
+                                                              USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                    new Shape({
+                                                      geometry : new SFNode(
+                                                        new LineSet({
+                                                          vertexCount : new MFInt32([2]),
+                                                          coord : new SFNode(
+                                                            new Coordinate({
+                                                              point : new MFVec3f([-0.0944,0.0175,-0.0625,-0.0963,0.0065,-0.0065])})),
+                                                          /*from r_tarsometatarsal_3 to r_metatarsophalangeal_3 vertices 2*/
+                                                          color : new SFNode(
+                                                            new ColorRGBA({
+                                                              USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+
+                                                new HAnimJoint({
+                                                  name : new SFString("r_metatarsophalangeal_3"),
+                                                  DEF : new SFString("hanim_r_metatarsophalangeal_3"),
+                                                  center : new SFVec3f([-0.0963,0.0065,-0.0065]),
+                                                  ulimit : new MFFloat([0,0,0]),
+                                                  llimit : new MFFloat([0,0,0]),
+                                                  children : new MFNode([
+                                                    new HAnimSegment({
+                                                      name : new SFString("r_tarsal_proximal_phalanx_3"),
+                                                      DEF : new SFString("hanim_r_tarsal_proximal_phalanx_3"),
+                                                      children : new MFNode([
+                                                        new Transform({
+                                                          translation : new SFVec3f([-0.0963,0.0065,-0.0065]),
+                                                          children : new MFNode([
+                                                            new Transform({
+                                                              /*Empty Transform*/
+                                                              child : new SFNode(
+                                                                new Shape({
+                                                                  USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                        new Shape({
+                                                          geometry : new SFNode(
+                                                            new LineSet({
+                                                              vertexCount : new MFInt32([2]),
+                                                              coord : new SFNode(
+                                                                new Coordinate({
+                                                                  point : new MFVec3f([-0.0963,0.0065,-0.0065,-0.0987,0.0034,0.0086])})),
+                                                              /*from r_metatarsophalangeal_3 to r_tarsal_proximal_interphalangeal_3 vertices 2*/
+                                                              color : new SFNode(
+                                                                new ColorRGBA({
+                                                                  USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+
+                                                    new HAnimJoint({
+                                                      name : new SFString("r_tarsal_proximal_interphalangeal_3"),
+                                                      DEF : new SFString("hanim_r_tarsal_proximal_interphalangeal_3"),
+                                                      center : new SFVec3f([-0.0987,0.0034,0.0086]),
+                                                      ulimit : new MFFloat([0,0,0]),
+                                                      llimit : new MFFloat([0,0,0]),
+                                                      children : new MFNode([
+                                                        new HAnimSegment({
+                                                          name : new SFString("r_tarsal_middle_phalanx_3"),
+                                                          DEF : new SFString("hanim_r_tarsal_middle_phalanx_3"),
+                                                          children : new MFNode([
+                                                            new Transform({
+                                                              translation : new SFVec3f([-0.0987,0.0034,0.0086]),
+                                                              children : new MFNode([
+                                                                new Transform({
+                                                                  /*Empty Transform*/
+                                                                  child : new SFNode(
+                                                                    new Shape({
+                                                                      USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                            new Shape({
+                                                              geometry : new SFNode(
+                                                                new LineSet({
+                                                                  vertexCount : new MFInt32([2]),
+                                                                  coord : new SFNode(
+                                                                    new Coordinate({
+                                                                      point : new MFVec3f([-0.0987,0.0034,0.0086,-0.1002,0.0013,0.0178])})),
+                                                                  /*from r_tarsal_proximal_interphalangeal_3 to r_tarsal_distal_interphalangeal_3 vertices 2*/
+                                                                  color : new SFNode(
+                                                                    new ColorRGBA({
+                                                                      USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                                            new HAnimSite({
+                                                              name : new SFString("r_tarsal_distal_phalanx_3_tip"),
+                                                              DEF : new SFString("hanim_r_tarsal_distal_phalanx_3_tip"),
+                                                              children : new MFNode([
+                                                                new TouchSensor({
+                                                                  description : new SFString("HAnimSite r_tarsal_distal_phalanx_3_tip")}),
+
+                                                                new Shape({
+                                                                  USE : new SFString("HAnimSiteShape")})])})])}),
+
+                                                        new HAnimJoint({
+                                                          name : new SFString("r_tarsal_distal_interphalangeal_3"),
+                                                          DEF : new SFString("hanim_r_tarsal_distal_interphalangeal_3"),
+                                                          center : new SFVec3f([-0.1002,0.0013,0.0178]),
+                                                          ulimit : new MFFloat([0,0,0]),
+                                                          llimit : new MFFloat([0,0,0])})])})])})])})])})])}),
+
+                                    new HAnimJoint({
+                                      name : new SFString("r_calcaneocuboid"),
+                                      DEF : new SFString("hanim_r_calcaneocuboid"),
+                                      center : new SFVec3f([-0.0889,0.0494,-0.1278]),
+                                      ulimit : new MFFloat([0,0,0]),
+                                      llimit : new MFFloat([0,0,0]),
+                                      children : new MFNode([
+                                        new HAnimSegment({
+                                          name : new SFString("r_calcaneus"),
+                                          DEF : new SFString("hanim_r_calcaneus"),
+                                          children : new MFNode([
+                                            new Transform({
+                                              translation : new SFVec3f([-0.0889,0.0494,-0.1278]),
+                                              children : new MFNode([
+                                                new Transform({
+                                                  /*Empty Transform*/
+                                                  child : new SFNode(
+                                                    new Shape({
+                                                      USE : new SFString("HAnimJointShape")}))})])}),
+
+                                            new Shape({
+                                              geometry : new SFNode(
+                                                new LineSet({
+                                                  vertexCount : new MFInt32([2]),
+                                                  coord : new SFNode(
+                                                    new Coordinate({
+                                                      point : new MFVec3f([-0.0889,0.0494,-0.1278,-0.1105,0.0267,-0.0998])})),
+                                                  /*from r_calcaneocuboid to r_transversetarsal vertices 2*/
+                                                  color : new SFNode(
+                                                    new ColorRGBA({
+                                                      USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+
+                                        new HAnimJoint({
+                                          name : new SFString("r_transversetarsal"),
+                                          DEF : new SFString("hanim_r_transversetarsal"),
+                                          center : new SFVec3f([-0.1105,0.0267,-0.0998]),
+                                          ulimit : new MFFloat([0,0,0]),
+                                          llimit : new MFFloat([0,0,0]),
+                                          children : new MFNode([
+                                            new HAnimSegment({
+                                              name : new SFString("r_cuboid"),
+                                              DEF : new SFString("hanim_r_cuboid"),
+                                              children : new MFNode([
+                                                new Transform({
+                                                  translation : new SFVec3f([-0.1105,0.0267,-0.0998]),
+                                                  children : new MFNode([
+                                                    new Transform({
+                                                      /*Empty Transform*/
+                                                      child : new SFNode(
+                                                        new Shape({
+                                                          USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                new Shape({
+                                                  geometry : new SFNode(
+                                                    new LineSet({
+                                                      vertexCount : new MFInt32([2]),
+                                                      coord : new SFNode(
+                                                        new Coordinate({
+                                                          point : new MFVec3f([-0.1105,0.0267,-0.0998,-0.1063,0.016,-0.0634])})),
+                                                      /*from r_transversetarsal to r_tarsometatarsal_4 vertices 2*/
+                                                      color : new SFNode(
+                                                        new ColorRGBA({
+                                                          USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                                new Shape({
+                                                  geometry : new SFNode(
+                                                    new LineSet({
+                                                      vertexCount : new MFInt32([2]),
+                                                      coord : new SFNode(
+                                                        new Coordinate({
+                                                          point : new MFVec3f([-0.1105,0.0267,-0.0998,-0.1206,0.0124,-0.0671])})),
+                                                      /*from r_transversetarsal to r_tarsometatarsal_5 vertices 2*/
+                                                      color : new SFNode(
+                                                        new ColorRGBA({
+                                                          USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+
+                                            new HAnimJoint({
+                                              name : new SFString("r_tarsometatarsal_4"),
+                                              DEF : new SFString("hanim_r_tarsometatarsal_4"),
+                                              center : new SFVec3f([-0.1063,0.016,-0.0634]),
+                                              ulimit : new MFFloat([0,0,0]),
+                                              llimit : new MFFloat([0,0,0]),
+                                              children : new MFNode([
+                                                new HAnimSegment({
+                                                  name : new SFString("r_metatarsal_4"),
+                                                  DEF : new SFString("hanim_r_metatarsal_4"),
+                                                  children : new MFNode([
+                                                    new Transform({
+                                                      translation : new SFVec3f([-0.1063,0.016,-0.0634]),
+                                                      children : new MFNode([
+                                                        new Transform({
+                                                          /*Empty Transform*/
+                                                          child : new SFNode(
+                                                            new Shape({
+                                                              USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                    new Shape({
+                                                      geometry : new SFNode(
+                                                        new LineSet({
+                                                          vertexCount : new MFInt32([2]),
+                                                          coord : new SFNode(
+                                                            new Coordinate({
+                                                              point : new MFVec3f([-0.1063,0.016,-0.0634,-0.1097,0.0058,-0.0107])})),
+                                                          /*from r_tarsometatarsal_4 to r_metatarsophalangeal_4 vertices 2*/
+                                                          color : new SFNode(
+                                                            new ColorRGBA({
+                                                              USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+
+                                                new HAnimJoint({
+                                                  name : new SFString("r_metatarsophalangeal_4"),
+                                                  DEF : new SFString("hanim_r_metatarsophalangeal_4"),
+                                                  center : new SFVec3f([-0.1097,0.0058,-0.0107]),
+                                                  ulimit : new MFFloat([0,0,0]),
+                                                  llimit : new MFFloat([0,0,0]),
+                                                  children : new MFNode([
+                                                    new HAnimSegment({
+                                                      name : new SFString("r_tarsal_proximal_phalanx_4"),
+                                                      DEF : new SFString("hanim_r_tarsal_proximal_phalanx_4"),
+                                                      children : new MFNode([
+                                                        new Transform({
+                                                          translation : new SFVec3f([-0.1097,0.0058,-0.0107]),
+                                                          children : new MFNode([
+                                                            new Transform({
+                                                              /*Empty Transform*/
+                                                              child : new SFNode(
+                                                                new Shape({
+                                                                  USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                        new Shape({
+                                                          geometry : new SFNode(
+                                                            new LineSet({
+                                                              vertexCount : new MFInt32([2]),
+                                                              coord : new SFNode(
+                                                                new Coordinate({
+                                                                  point : new MFVec3f([-0.1097,0.0058,-0.0107,-0.114,0.0037,0.0044])})),
+                                                              /*from r_metatarsophalangeal_4 to r_tarsal_proximal_interphalangeal_4 vertices 2*/
+                                                              color : new SFNode(
+                                                                new ColorRGBA({
+                                                                  USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+
+                                                    new HAnimJoint({
+                                                      name : new SFString("r_tarsal_proximal_interphalangeal_4"),
+                                                      DEF : new SFString("hanim_r_tarsal_proximal_interphalangeal_4"),
+                                                      center : new SFVec3f([-0.114,0.0037,0.0044]),
+                                                      ulimit : new MFFloat([0,0,0]),
+                                                      llimit : new MFFloat([0,0,0]),
+                                                      children : new MFNode([
+                                                        new HAnimSegment({
+                                                          name : new SFString("r_tarsal_middle_phalanx_4"),
+                                                          DEF : new SFString("hanim_r_tarsal_middle_phalanx_4"),
+                                                          children : new MFNode([
+                                                            new Transform({
+                                                              translation : new SFVec3f([-0.114,0.0037,0.0044]),
+                                                              children : new MFNode([
+                                                                new Transform({
+                                                                  /*Empty Transform*/
+                                                                  child : new SFNode(
+                                                                    new Shape({
+                                                                      USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                            new Shape({
+                                                              geometry : new SFNode(
+                                                                new LineSet({
+                                                                  vertexCount : new MFInt32([2]),
+                                                                  coord : new SFNode(
+                                                                    new Coordinate({
+                                                                      point : new MFVec3f([-0.114,0.0037,0.0044,-0.1155,0.0008,0.0118])})),
+                                                                  /*from r_tarsal_proximal_interphalangeal_4 to r_tarsal_distal_interphalangeal_4 vertices 2*/
+                                                                  color : new SFNode(
+                                                                    new ColorRGBA({
+                                                                      USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                                            new HAnimSite({
+                                                              name : new SFString("r_tarsal_distal_phalanx_4_tip"),
+                                                              DEF : new SFString("hanim_r_tarsal_distal_phalanx_4_tip"),
+                                                              children : new MFNode([
+                                                                new TouchSensor({
+                                                                  description : new SFString("HAnimSite r_tarsal_distal_phalanx_4_tip")}),
+
+                                                                new Shape({
+                                                                  USE : new SFString("HAnimSiteShape")})])})])}),
+
+                                                        new HAnimJoint({
+                                                          name : new SFString("r_tarsal_distal_interphalangeal_4"),
+                                                          DEF : new SFString("hanim_r_tarsal_distal_interphalangeal_4"),
+                                                          center : new SFVec3f([-0.1155,0.0008,0.0118]),
+                                                          ulimit : new MFFloat([0,0,0]),
+                                                          llimit : new MFFloat([0,0,0])})])})])})])}),
+
+                                            new HAnimJoint({
+                                              name : new SFString("r_tarsometatarsal_5"),
+                                              DEF : new SFString("hanim_r_tarsometatarsal_5"),
+                                              center : new SFVec3f([-0.1206,0.0124,-0.0671]),
+                                              ulimit : new MFFloat([0,0,0]),
+                                              llimit : new MFFloat([0,0,0]),
+                                              children : new MFNode([
+                                                new HAnimSegment({
+                                                  name : new SFString("r_metatarsal_5"),
+                                                  DEF : new SFString("hanim_r_metatarsal_5"),
+                                                  children : new MFNode([
+                                                    new Transform({
+                                                      translation : new SFVec3f([-0.1206,0.0124,-0.0671]),
+                                                      children : new MFNode([
+                                                        new Transform({
+                                                          /*Empty Transform*/
+                                                          child : new SFNode(
+                                                            new Shape({
+                                                              USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                    new Shape({
+                                                      geometry : new SFNode(
+                                                        new LineSet({
+                                                          vertexCount : new MFInt32([2]),
+                                                          coord : new SFNode(
+                                                            new Coordinate({
+                                                              point : new MFVec3f([-0.1206,0.0124,-0.0671,-0.1239,0.0051,-0.0153])})),
+                                                          /*from r_tarsometatarsal_5 to r_metatarsophalangeal_5 vertices 2*/
+                                                          color : new SFNode(
+                                                            new ColorRGBA({
+                                                              USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                                    new HAnimSite({
+                                                      name : new SFString("r_metatarsal_phalanx_5"),
+                                                      DEF : new SFString("hanim_r_metatarsal_phalanx_5"),
+                                                      children : new MFNode([
+                                                        new TouchSensor({
+                                                          description : new SFString("HAnimSite r_metatarsal_phalanx_5")}),
+
+                                                        new Shape({
+                                                          USE : new SFString("HAnimSiteShape")})])})])}),
+
+                                                new HAnimJoint({
+                                                  name : new SFString("r_metatarsophalangeal_5"),
+                                                  DEF : new SFString("hanim_r_metatarsophalangeal_5"),
+                                                  center : new SFVec3f([-0.1239,0.0051,-0.0153]),
+                                                  ulimit : new MFFloat([0,0,0]),
+                                                  llimit : new MFFloat([0,0,0]),
+                                                  children : new MFNode([
+                                                    new HAnimSegment({
+                                                      name : new SFString("r_tarsal_proximal_phalanx_5"),
+                                                      DEF : new SFString("hanim_r_tarsal_proximal_phalanx_5"),
+                                                      children : new MFNode([
+                                                        new Transform({
+                                                          translation : new SFVec3f([-0.1239,0.0051,-0.0153]),
+                                                          children : new MFNode([
+                                                            new Transform({
+                                                              /*Empty Transform*/
+                                                              child : new SFNode(
+                                                                new Shape({
+                                                                  USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                        new Shape({
+                                                          geometry : new SFNode(
+                                                            new LineSet({
+                                                              vertexCount : new MFInt32([2]),
+                                                              coord : new SFNode(
+                                                                new Coordinate({
+                                                                  point : new MFVec3f([-0.1239,0.0051,-0.0153,-0.1262,0.0023,-0.0077])})),
+                                                              /*from r_metatarsophalangeal_5 to r_tarsal_proximal_interphalangeal_5 vertices 2*/
+                                                              color : new SFNode(
+                                                                new ColorRGBA({
+                                                                  USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+
+                                                    new HAnimJoint({
+                                                      name : new SFString("r_tarsal_proximal_interphalangeal_5"),
+                                                      DEF : new SFString("hanim_r_tarsal_proximal_interphalangeal_5"),
+                                                      center : new SFVec3f([-0.1262,0.0023,-0.0077]),
+                                                      ulimit : new MFFloat([0,0,0]),
+                                                      llimit : new MFFloat([0,0,0]),
+                                                      children : new MFNode([
+                                                        new HAnimSegment({
+                                                          name : new SFString("r_tarsal_middle_phalanx_5"),
+                                                          DEF : new SFString("hanim_r_tarsal_middle_phalanx_5"),
+                                                          children : new MFNode([
+                                                            new Transform({
+                                                              translation : new SFVec3f([-0.1262,0.0023,-0.0077]),
+                                                              children : new MFNode([
+                                                                new Transform({
+                                                                  /*Empty Transform*/
+                                                                  child : new SFNode(
+                                                                    new Shape({
+                                                                      USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                            new Shape({
+                                                              geometry : new SFNode(
+                                                                new LineSet({
+                                                                  vertexCount : new MFInt32([2]),
+                                                                  coord : new SFNode(
+                                                                    new Coordinate({
+                                                                      point : new MFVec3f([-0.1262,0.0023,-0.0077,-0.1271,0,0])})),
+                                                                  /*from r_tarsal_proximal_interphalangeal_5 to r_tarsal_distal_interphalangeal_5 vertices 2*/
+                                                                  color : new SFNode(
+                                                                    new ColorRGBA({
+                                                                      USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                                            new HAnimSite({
+                                                              name : new SFString("r_tarsal_distal_phalanx_5_tip"),
+                                                              DEF : new SFString("hanim_r_tarsal_distal_phalanx_5_tip"),
+                                                              children : new MFNode([
+                                                                new TouchSensor({
+                                                                  description : new SFString("HAnimSite r_tarsal_distal_phalanx_5_tip")}),
+
+                                                                new Shape({
+                                                                  USE : new SFString("HAnimSiteShape")})])})])}),
+
+                                                        new HAnimJoint({
+                                                          name : new SFString("r_tarsal_distal_interphalangeal_5"),
+                                                          DEF : new SFString("hanim_r_tarsal_distal_interphalangeal_5"),
+                                                          center : new SFVec3f([-0.1271,0,0]),
+                                                          ulimit : new MFFloat([0,0,0]),
+                                                          llimit : new MFFloat([0,0,0])})])})])})])})])})])})])})])})])})])}),
+
+                    new HAnimJoint({
+                      name : new SFString("vl5"),
+                      DEF : new SFString("hanim_vl5"),
+                      center : new SFVec3f([0.0028,1.0568,-0.0776]),
+                      ulimit : new MFFloat([0,0,0]),
+                      llimit : new MFFloat([0,0,0]),
+                      children : new MFNode([
+                        new HAnimSegment({
+                          name : new SFString("l5"),
+                          DEF : new SFString("hanim_l5"),
+                          children : new MFNode([
+                            new Transform({
+                              translation : new SFVec3f([0.0028,1.0568,-0.0776]),
+                              children : new MFNode([
+                                new Transform({
+                                  /*Empty Transform*/
+                                  child : new SFNode(
+                                    new Shape({
+                                      USE : new SFString("HAnimJointShape")}))})])}),
+
+                            new Shape({
+                              geometry : new SFNode(
+                                new LineSet({
+                                  vertexCount : new MFInt32([2]),
+                                  coord : new SFNode(
+                                    new Coordinate({
+                                      point : new MFVec3f([0.0028,1.0568,-0.0776,0.0035,1.0925,-0.0787])})),
+                                  /*from vl5 to vl4 vertices 2*/
+                                  color : new SFNode(
+                                    new ColorRGBA({
+                                      USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+
+                        new HAnimJoint({
+                          name : new SFString("vl4"),
+                          DEF : new SFString("hanim_vl4"),
+                          center : new SFVec3f([0.0035,1.0925,-0.0787]),
+                          ulimit : new MFFloat([0,0,0]),
+                          llimit : new MFFloat([0,0,0]),
+                          children : new MFNode([
+                            new HAnimSegment({
+                              name : new SFString("l4"),
+                              DEF : new SFString("hanim_l4"),
+                              children : new MFNode([
+                                new Transform({
+                                  translation : new SFVec3f([0.0035,1.0925,-0.0787]),
+                                  children : new MFNode([
+                                    new Transform({
+                                      /*Empty Transform*/
+                                      child : new SFNode(
+                                        new Shape({
+                                          USE : new SFString("HAnimJointShape")}))})])}),
+
+                                new Shape({
+                                  geometry : new SFNode(
+                                    new LineSet({
+                                      vertexCount : new MFInt32([2]),
+                                      coord : new SFNode(
+                                        new Coordinate({
+                                          point : new MFVec3f([0.0035,1.0925,-0.0787,0.0041,1.1276,-0.0796])})),
+                                      /*from vl4 to vl3 vertices 2*/
+                                      color : new SFNode(
+                                        new ColorRGBA({
+                                          USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+
+                            new HAnimJoint({
+                              name : new SFString("vl3"),
+                              DEF : new SFString("hanim_vl3"),
+                              center : new SFVec3f([0.0041,1.1276,-0.0796]),
+                              ulimit : new MFFloat([0,0,0]),
+                              llimit : new MFFloat([0,0,0]),
+                              children : new MFNode([
+                                new HAnimSegment({
+                                  name : new SFString("l3"),
+                                  DEF : new SFString("hanim_l3"),
+                                  children : new MFNode([
+                                    new Transform({
+                                      translation : new SFVec3f([0.0041,1.1276,-0.0796]),
+                                      children : new MFNode([
+                                        new Transform({
+                                          /*Empty Transform*/
+                                          child : new SFNode(
+                                            new Shape({
+                                              USE : new SFString("HAnimJointShape")}))})])}),
+
+                                    new Shape({
+                                      geometry : new SFNode(
+                                        new LineSet({
+                                          vertexCount : new MFInt32([2]),
+                                          coord : new SFNode(
+                                            new Coordinate({
+                                              point : new MFVec3f([0.0041,1.1276,-0.0796,0.0045,1.1546,-0.08])})),
+                                          /*from vl3 to vl2 vertices 2*/
+                                          color : new SFNode(
+                                            new ColorRGBA({
+                                              USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                    new HAnimSite({
+                                      name : new SFString("l_rib10"),
+                                      DEF : new SFString("hanim_l_rib10"),
+                                      translation : new SFVec3f([0.0871,1.1925,0.0992]),
+                                      children : new MFNode([
+                                        new TouchSensor({
+                                          description : new SFString("HAnimSite l_rib10")}),
+
+                                        new Shape({
+                                          USE : new SFString("HAnimSiteShape")})])}),
+
+                                    new HAnimSite({
+                                      name : new SFString("r_rib10"),
+                                      DEF : new SFString("hanim_r_rib10"),
+                                      translation : new SFVec3f([-0.0711,1.1941,0.1016]),
+                                      children : new MFNode([
+                                        new TouchSensor({
+                                          description : new SFString("HAnimSite r_rib10")}),
+
+                                        new Shape({
+                                          USE : new SFString("HAnimSiteShape")})])}),
+
+                                    new HAnimSite({
+                                      name : new SFString("spine_2_middle_back"),
+                                      DEF : new SFString("hanim_spine_2_middle_back"),
+                                      children : new MFNode([
+                                        new TouchSensor({
+                                          description : new SFString("HAnimSite spine_2_middle_back")}),
+
+                                        new Shape({
+                                          USE : new SFString("HAnimSiteShape")})])})])}),
+
+                                new HAnimJoint({
+                                  name : new SFString("vl2"),
+                                  DEF : new SFString("hanim_vl2"),
+                                  center : new SFVec3f([0.0045,1.1546,-0.08]),
+                                  ulimit : new MFFloat([0,0,0]),
+                                  llimit : new MFFloat([0,0,0]),
+                                  children : new MFNode([
+                                    new HAnimSegment({
+                                      name : new SFString("l2"),
+                                      DEF : new SFString("hanim_l2"),
+                                      children : new MFNode([
+                                        new Transform({
+                                          translation : new SFVec3f([0.0045,1.1546,-0.08]),
+                                          children : new MFNode([
+                                            new Transform({
+                                              /*Empty Transform*/
+                                              child : new SFNode(
+                                                new Shape({
+                                                  USE : new SFString("HAnimJointShape")}))})])}),
+
+                                        new Shape({
+                                          geometry : new SFNode(
+                                            new LineSet({
+                                              vertexCount : new MFInt32([2]),
+                                              coord : new SFNode(
+                                                new Coordinate({
+                                                  point : new MFVec3f([0.0045,1.1546,-0.08,0.0048,1.1912,-0.0805])})),
+                                              /*from vl2 to vl1 vertices 2*/
+                                              color : new SFNode(
+                                                new ColorRGBA({
+                                                  USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+
+                                    new HAnimJoint({
+                                      name : new SFString("vl1"),
+                                      DEF : new SFString("hanim_vl1"),
+                                      center : new SFVec3f([0.0048,1.1912,-0.0805]),
+                                      ulimit : new MFFloat([0,0,0]),
+                                      llimit : new MFFloat([0,0,0]),
+                                      children : new MFNode([
+                                        new HAnimSegment({
+                                          name : new SFString("l1"),
+                                          DEF : new SFString("hanim_l1"),
+                                          children : new MFNode([
+                                            new Transform({
+                                              translation : new SFVec3f([0.0048,1.1912,-0.0805]),
+                                              children : new MFNode([
+                                                new Transform({
+                                                  /*Empty Transform*/
+                                                  child : new SFNode(
+                                                    new Shape({
+                                                      USE : new SFString("HAnimJointShape")}))})])}),
+
+                                            new Shape({
+                                              geometry : new SFNode(
+                                                new LineSet({
+                                                  vertexCount : new MFInt32([2]),
+                                                  coord : new SFNode(
+                                                    new Coordinate({
+                                                      point : new MFVec3f([0.0048,1.1912,-0.0805,0.0051,1.2278,-0.0808])})),
+                                                  /*from vl1 to vt12 vertices 2*/
+                                                  color : new SFNode(
+                                                    new ColorRGBA({
+                                                      USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+
+                                        new HAnimJoint({
+                                          name : new SFString("vt12"),
+                                          DEF : new SFString("hanim_vt12"),
+                                          center : new SFVec3f([0.0051,1.2278,-0.0808]),
+                                          ulimit : new MFFloat([0,0,0]),
+                                          llimit : new MFFloat([0,0,0]),
+                                          children : new MFNode([
+                                            new HAnimSegment({
+                                              name : new SFString("t12"),
+                                              DEF : new SFString("hanim_t12"),
+                                              children : new MFNode([
+                                                new Transform({
+                                                  translation : new SFVec3f([0.0051,1.2278,-0.0808]),
+                                                  children : new MFNode([
+                                                    new Transform({
+                                                      /*Empty Transform*/
+                                                      child : new SFNode(
+                                                        new Shape({
+                                                          USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                new Shape({
+                                                  geometry : new SFNode(
+                                                    new LineSet({
+                                                      vertexCount : new MFInt32([2]),
+                                                      coord : new SFNode(
+                                                        new Coordinate({
+                                                          point : new MFVec3f([0.0051,1.2278,-0.0808,0.0053,1.2679,-0.081])})),
+                                                      /*from vt12 to vt11 vertices 2*/
+                                                      color : new SFNode(
+                                                        new ColorRGBA({
+                                                          USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+
+                                            new HAnimJoint({
+                                              name : new SFString("vt11"),
+                                              DEF : new SFString("hanim_vt11"),
+                                              center : new SFVec3f([0.0053,1.2679,-0.081]),
+                                              ulimit : new MFFloat([0,0,0]),
+                                              llimit : new MFFloat([0,0,0]),
+                                              children : new MFNode([
+                                                new HAnimSegment({
+                                                  name : new SFString("t11"),
+                                                  DEF : new SFString("hanim_t11"),
+                                                  children : new MFNode([
+                                                    new Transform({
+                                                      translation : new SFVec3f([0.0053,1.2679,-0.081]),
+                                                      children : new MFNode([
+                                                        new Transform({
+                                                          /*Empty Transform*/
+                                                          child : new SFNode(
+                                                            new Shape({
+                                                              USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                    new Shape({
+                                                      geometry : new SFNode(
+                                                        new LineSet({
+                                                          vertexCount : new MFInt32([2]),
+                                                          coord : new SFNode(
+                                                            new Coordinate({
+                                                              point : new MFVec3f([0.0053,1.2679,-0.081,0.0056,1.2848,-0.0822])})),
+                                                          /*from vt11 to vt10 vertices 2*/
+                                                          color : new SFNode(
+                                                            new ColorRGBA({
+                                                              USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                                    new HAnimSite({
+                                                      name : new SFString("substernale"),
+                                                      DEF : new SFString("hanim_substernale"),
+                                                      translation : new SFVec3f([0.0085,1.2995,0.1147]),
+                                                      children : new MFNode([
+                                                        new TouchSensor({
+                                                          description : new SFString("HAnimSite substernale")}),
+
+                                                        new Shape({
+                                                          USE : new SFString("HAnimSiteShape")})])})])}),
+
+                                                new HAnimJoint({
+                                                  name : new SFString("vt10"),
+                                                  DEF : new SFString("hanim_vt10"),
+                                                  center : new SFVec3f([0.0056,1.2848,-0.0822]),
+                                                  ulimit : new MFFloat([0,0,0]),
+                                                  llimit : new MFFloat([0,0,0]),
+                                                  children : new MFNode([
+                                                    new HAnimSegment({
+                                                      name : new SFString("t10"),
+                                                      DEF : new SFString("hanim_t10"),
+                                                      children : new MFNode([
+                                                        new Transform({
+                                                          translation : new SFVec3f([0.0056,1.2848,-0.0822]),
+                                                          children : new MFNode([
+                                                            new Transform({
+                                                              /*Empty Transform*/
+                                                              child : new SFNode(
+                                                                new Shape({
+                                                                  USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                        new Shape({
+                                                          geometry : new SFNode(
+                                                            new LineSet({
+                                                              vertexCount : new MFInt32([2]),
+                                                              coord : new SFNode(
+                                                                new Coordinate({
+                                                                  point : new MFVec3f([0.0056,1.2848,-0.0822,0.0057,1.3126,-0.0838])})),
+                                                              /*from vt10 to vt9 vertices 2*/
+                                                              color : new SFNode(
+                                                                new ColorRGBA({
+                                                                  USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                                        new HAnimSite({
+                                                          name : new SFString("l_thelion"),
+                                                          DEF : new SFString("hanim_l_thelion"),
+                                                          translation : new SFVec3f([0.0918,1.3382,0.1192]),
+                                                          children : new MFNode([
+                                                            new TouchSensor({
+                                                              description : new SFString("HAnimSite l_thelion")}),
+
+                                                            new Shape({
+                                                              USE : new SFString("HAnimSiteShape")})])}),
+
+                                                        new HAnimSite({
+                                                          name : new SFString("r_thelion"),
+                                                          DEF : new SFString("hanim_r_thelion"),
+                                                          translation : new SFVec3f([-0.0736,1.3385,0.1217]),
+                                                          children : new MFNode([
+                                                            new TouchSensor({
+                                                              description : new SFString("HAnimSite r_thelion")}),
+
+                                                            new Shape({
+                                                              USE : new SFString("HAnimSiteShape")})])})])}),
+
+                                                    new HAnimJoint({
+                                                      name : new SFString("vt9"),
+                                                      DEF : new SFString("hanim_vt9"),
+                                                      center : new SFVec3f([0.0057,1.3126,-0.0838]),
+                                                      ulimit : new MFFloat([0,0,0]),
+                                                      llimit : new MFFloat([0,0,0]),
+                                                      children : new MFNode([
+                                                        new HAnimSegment({
+                                                          name : new SFString("t9"),
+                                                          DEF : new SFString("hanim_t9"),
+                                                          children : new MFNode([
+                                                            new Transform({
+                                                              translation : new SFVec3f([0.0057,1.3126,-0.0838]),
+                                                              children : new MFNode([
+                                                                new Transform({
+                                                                  /*Empty Transform*/
+                                                                  child : new SFNode(
+                                                                    new Shape({
+                                                                      USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                            new Shape({
+                                                              geometry : new SFNode(
+                                                                new LineSet({
+                                                                  vertexCount : new MFInt32([2]),
+                                                                  coord : new SFNode(
+                                                                    new Coordinate({
+                                                                      point : new MFVec3f([0.0057,1.3126,-0.0838,0.0057,1.3382,-0.0845])})),
+                                                                  /*from vt9 to vt8 vertices 2*/
+                                                                  color : new SFNode(
+                                                                    new ColorRGBA({
+                                                                      USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+
+                                                        new HAnimJoint({
+                                                          name : new SFString("vt8"),
+                                                          DEF : new SFString("hanim_vt8"),
+                                                          center : new SFVec3f([0.0057,1.3382,-0.0845]),
+                                                          ulimit : new MFFloat([0,0,0]),
+                                                          llimit : new MFFloat([0,0,0]),
+                                                          children : new MFNode([
+                                                            new HAnimSegment({
+                                                              name : new SFString("t8"),
+                                                              DEF : new SFString("hanim_t8"),
+                                                              children : new MFNode([
+                                                                new Transform({
+                                                                  translation : new SFVec3f([0.0057,1.3382,-0.0845]),
+                                                                  children : new MFNode([
+                                                                    new Transform({
+                                                                      /*Empty Transform*/
+                                                                      child : new SFNode(
+                                                                        new Shape({
+                                                                          USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                                new Shape({
+                                                                  geometry : new SFNode(
+                                                                    new LineSet({
+                                                                      vertexCount : new MFInt32([2]),
+                                                                      coord : new SFNode(
+                                                                        new Coordinate({
+                                                                          point : new MFVec3f([0.0057,1.3382,-0.0845,0.0058,1.3625,-0.0833])})),
+                                                                      /*from vt8 to vt7 vertices 2*/
+                                                                      color : new SFNode(
+                                                                        new ColorRGBA({
+                                                                          USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+
+                                                            new HAnimJoint({
+                                                              name : new SFString("vt7"),
+                                                              DEF : new SFString("hanim_vt7"),
+                                                              center : new SFVec3f([0.0058,1.3625,-0.0833]),
+                                                              ulimit : new MFFloat([0,0,0]),
+                                                              llimit : new MFFloat([0,0,0]),
+                                                              children : new MFNode([
+                                                                new HAnimSegment({
+                                                                  name : new SFString("t7"),
+                                                                  DEF : new SFString("hanim_t7"),
+                                                                  children : new MFNode([
+                                                                    new Transform({
+                                                                      translation : new SFVec3f([0.0058,1.3625,-0.0833]),
+                                                                      children : new MFNode([
+                                                                        new Transform({
+                                                                          /*Empty Transform*/
+                                                                          child : new SFNode(
+                                                                            new Shape({
+                                                                              USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                                    new Shape({
+                                                                      geometry : new SFNode(
+                                                                        new LineSet({
+                                                                          vertexCount : new MFInt32([2]),
+                                                                          coord : new SFNode(
+                                                                            new Coordinate({
+                                                                              point : new MFVec3f([0.0058,1.3625,-0.0833,0.0059,1.3866,-0.08])})),
+                                                                          /*from vt7 to vt6 vertices 2*/
+                                                                          color : new SFNode(
+                                                                            new ColorRGBA({
+                                                                              USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                                                    new HAnimSite({
+                                                                      name : new SFString("l_chest_midsagittal_plane"),
+                                                                      DEF : new SFString("hanim_l_chest_midsagittal_plane"),
+                                                                      children : new MFNode([
+                                                                        new TouchSensor({
+                                                                          description : new SFString("HAnimSite l_chest_midsagittal_plane")}),
+
+                                                                        new Shape({
+                                                                          USE : new SFString("HAnimSiteShape")})])}),
+
+                                                                    new HAnimSite({
+                                                                      name : new SFString("mesosternale"),
+                                                                      DEF : new SFString("hanim_mesosternale"),
+                                                                      children : new MFNode([
+                                                                        new TouchSensor({
+                                                                          description : new SFString("HAnimSite mesosternale")}),
+
+                                                                        new Shape({
+                                                                          USE : new SFString("HAnimSiteShape")})])}),
+
+                                                                    new HAnimSite({
+                                                                      name : new SFString("r_chest_midsagittal_plane"),
+                                                                      DEF : new SFString("hanim_r_chest_midsagittal_plane"),
+                                                                      children : new MFNode([
+                                                                        new TouchSensor({
+                                                                          description : new SFString("HAnimSite r_chest_midsagittal_plane")}),
+
+                                                                        new Shape({
+                                                                          USE : new SFString("HAnimSiteShape")})])}),
+
+                                                                    new HAnimSite({
+                                                                      name : new SFString("rear_center_midsagittal_plane"),
+                                                                      DEF : new SFString("hanim_rear_center_midsagittal_plane"),
+                                                                      children : new MFNode([
+                                                                        new TouchSensor({
+                                                                          description : new SFString("HAnimSite rear_center_midsagittal_plane")}),
+
+                                                                        new Shape({
+                                                                          USE : new SFString("HAnimSiteShape")})])})])}),
+
+                                                                new HAnimJoint({
+                                                                  name : new SFString("vt6"),
+                                                                  DEF : new SFString("hanim_vt6"),
+                                                                  center : new SFVec3f([0.0059,1.3866,-0.08]),
+                                                                  ulimit : new MFFloat([0,0,0]),
+                                                                  llimit : new MFFloat([0,0,0]),
+                                                                  children : new MFNode([
+                                                                    new HAnimSegment({
+                                                                      name : new SFString("t6"),
+                                                                      DEF : new SFString("hanim_t6"),
+                                                                      children : new MFNode([
+                                                                        new Transform({
+                                                                          translation : new SFVec3f([0.0059,1.3866,-0.08]),
+                                                                          children : new MFNode([
+                                                                            new Transform({
+                                                                              /*Empty Transform*/
+                                                                              child : new SFNode(
+                                                                                new Shape({
+                                                                                  USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                                        new Shape({
+                                                                          geometry : new SFNode(
+                                                                            new LineSet({
+                                                                              vertexCount : new MFInt32([2]),
+                                                                              coord : new SFNode(
+                                                                                new Coordinate({
+                                                                                  point : new MFVec3f([0.0059,1.3866,-0.08,0.006,1.4102,-0.0745])})),
+                                                                              /*from vt6 to vt5 vertices 2*/
+                                                                              color : new SFNode(
+                                                                                new ColorRGBA({
+                                                                                  USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                                                        new HAnimSite({
+                                                                          name : new SFString("spine_1_middle_back"),
+                                                                          DEF : new SFString("hanim_spine_1_middle_back"),
+                                                                          children : new MFNode([
+                                                                            new TouchSensor({
+                                                                              description : new SFString("HAnimSite spine_1_middle_back")}),
+
+                                                                            new Shape({
+                                                                              USE : new SFString("HAnimSiteShape")})])})])}),
+
+                                                                    new HAnimJoint({
+                                                                      name : new SFString("vt5"),
+                                                                      DEF : new SFString("hanim_vt5"),
+                                                                      center : new SFVec3f([0.006,1.4102,-0.0745]),
+                                                                      ulimit : new MFFloat([0,0,0]),
+                                                                      llimit : new MFFloat([0,0,0]),
+                                                                      children : new MFNode([
+                                                                        new HAnimSegment({
+                                                                          name : new SFString("t5"),
+                                                                          DEF : new SFString("hanim_t5"),
+                                                                          children : new MFNode([
+                                                                            new Transform({
+                                                                              translation : new SFVec3f([0.006,1.4102,-0.0745]),
+                                                                              children : new MFNode([
+                                                                                new Transform({
+                                                                                  /*Empty Transform*/
+                                                                                  child : new SFNode(
+                                                                                    new Shape({
+                                                                                      USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                                            new Shape({
+                                                                              geometry : new SFNode(
+                                                                                new LineSet({
+                                                                                  vertexCount : new MFInt32([2]),
+                                                                                  coord : new SFNode(
+                                                                                    new Coordinate({
+                                                                                      point : new MFVec3f([0.006,1.4102,-0.0745,0.0061,1.432,-0.0675])})),
+                                                                                  /*from vt5 to vt4 vertices 2*/
+                                                                                  color : new SFNode(
+                                                                                    new ColorRGBA({
+                                                                                      USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+
+                                                                        new HAnimJoint({
+                                                                          name : new SFString("vt4"),
+                                                                          DEF : new SFString("hanim_vt4"),
+                                                                          center : new SFVec3f([0.0061,1.432,-0.0675]),
+                                                                          ulimit : new MFFloat([0,0,0]),
+                                                                          llimit : new MFFloat([0,0,0]),
+                                                                          children : new MFNode([
+                                                                            new HAnimSegment({
+                                                                              name : new SFString("t4"),
+                                                                              DEF : new SFString("hanim_t4"),
+                                                                              children : new MFNode([
+                                                                                new Transform({
+                                                                                  translation : new SFVec3f([0.0061,1.432,-0.0675]),
+                                                                                  children : new MFNode([
+                                                                                    new Transform({
+                                                                                      /*Empty Transform*/
+                                                                                      child : new SFNode(
+                                                                                        new Shape({
+                                                                                          USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                                                new Shape({
+                                                                                  geometry : new SFNode(
+                                                                                    new LineSet({
+                                                                                      vertexCount : new MFInt32([2]),
+                                                                                      coord : new SFNode(
+                                                                                        new Coordinate({
+                                                                                          point : new MFVec3f([0.0061,1.432,-0.0675,0.0062,1.4583,-0.057])})),
+                                                                                      /*from vt4 to vt3 vertices 2*/
+                                                                                      color : new SFNode(
+                                                                                        new ColorRGBA({
+                                                                                          USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+
+                                                                            new HAnimJoint({
+                                                                              name : new SFString("vt3"),
+                                                                              DEF : new SFString("hanim_vt3"),
+                                                                              center : new SFVec3f([0.0062,1.4583,-0.057]),
+                                                                              ulimit : new MFFloat([0,0,0]),
+                                                                              llimit : new MFFloat([0,0,0]),
+                                                                              children : new MFNode([
+                                                                                new HAnimSegment({
+                                                                                  name : new SFString("t3"),
+                                                                                  DEF : new SFString("hanim_t3"),
+                                                                                  children : new MFNode([
+                                                                                    new Transform({
+                                                                                      translation : new SFVec3f([0.0062,1.4583,-0.057]),
+                                                                                      children : new MFNode([
+                                                                                        new Transform({
+                                                                                          /*Empty Transform*/
+                                                                                          child : new SFNode(
+                                                                                            new Shape({
+                                                                                              USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                                                    new Shape({
+                                                                                      geometry : new SFNode(
+                                                                                        new LineSet({
+                                                                                          vertexCount : new MFInt32([2]),
+                                                                                          coord : new SFNode(
+                                                                                            new Coordinate({
+                                                                                              point : new MFVec3f([0.0062,1.4583,-0.057,0.0063,1.4761,-0.0484])})),
+                                                                                          /*from vt3 to vt2 vertices 2*/
+                                                                                          color : new SFNode(
+                                                                                            new ColorRGBA({
+                                                                                              USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+
+                                                                                new HAnimJoint({
+                                                                                  name : new SFString("vt2"),
+                                                                                  DEF : new SFString("hanim_vt2"),
+                                                                                  center : new SFVec3f([0.0063,1.4761,-0.0484]),
+                                                                                  ulimit : new MFFloat([0,0,0]),
+                                                                                  llimit : new MFFloat([0,0,0]),
+                                                                                  children : new MFNode([
+                                                                                    new HAnimSegment({
+                                                                                      name : new SFString("t2"),
+                                                                                      DEF : new SFString("hanim_t2"),
+                                                                                      children : new MFNode([
+                                                                                        new Transform({
+                                                                                          translation : new SFVec3f([0.0063,1.4761,-0.0484]),
+                                                                                          children : new MFNode([
+                                                                                            new Transform({
+                                                                                              /*Empty Transform*/
+                                                                                              child : new SFNode(
+                                                                                                new Shape({
+                                                                                                  USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                                                        new Shape({
+                                                                                          geometry : new SFNode(
+                                                                                            new LineSet({
+                                                                                              vertexCount : new MFInt32([2]),
+                                                                                              coord : new SFNode(
+                                                                                                new Coordinate({
+                                                                                                  point : new MFVec3f([0.0063,1.4761,-0.0484,0.0065,1.4951,-0.0387])})),
+                                                                                              /*from vt2 to vt1 vertices 2*/
+                                                                                              color : new SFNode(
+                                                                                                new ColorRGBA({
+                                                                                                  USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                                                                        new HAnimSite({
+                                                                                          name : new SFString("cervicale"),
+                                                                                          DEF : new SFString("hanim_cervicale"),
+                                                                                          translation : new SFVec3f([0.0064,1.52,-0.0815]),
+                                                                                          children : new MFNode([
+                                                                                            new TouchSensor({
+                                                                                              description : new SFString("HAnimSite cervicale")}),
+
+                                                                                            new Shape({
+                                                                                              USE : new SFString("HAnimSiteShape")})])}),
+
+                                                                                        new HAnimSite({
+                                                                                          name : new SFString("suprasternale"),
+                                                                                          DEF : new SFString("hanim_suprasternale"),
+                                                                                          translation : new SFVec3f([0.0084,1.4714,0.0551]),
+                                                                                          children : new MFNode([
+                                                                                            new TouchSensor({
+                                                                                              description : new SFString("HAnimSite suprasternale")}),
+
+                                                                                            new Shape({
+                                                                                              USE : new SFString("HAnimSiteShape")})])})])}),
+
+                                                                                    new HAnimJoint({
+                                                                                      name : new SFString("vt1"),
+                                                                                      DEF : new SFString("hanim_vt1"),
+                                                                                      center : new SFVec3f([0.0065,1.4951,-0.0387]),
+                                                                                      ulimit : new MFFloat([0,0,0]),
+                                                                                      llimit : new MFFloat([0,0,0]),
+                                                                                      children : new MFNode([
+                                                                                        new HAnimSegment({
+                                                                                          name : new SFString("t1"),
+                                                                                          DEF : new SFString("hanim_t1"),
+                                                                                          children : new MFNode([
+                                                                                            new Transform({
+                                                                                              translation : new SFVec3f([0.0065,1.4951,-0.0387]),
+                                                                                              children : new MFNode([
+                                                                                                new Transform({
+                                                                                                  /*Empty Transform*/
+                                                                                                  child : new SFNode(
+                                                                                                    new Shape({
+                                                                                                      USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                                                            new Shape({
+                                                                                              geometry : new SFNode(
+                                                                                                new LineSet({
+                                                                                                  vertexCount : new MFInt32([2]),
+                                                                                                  coord : new SFNode(
+                                                                                                    new Coordinate({
+                                                                                                      point : new MFVec3f([0.0065,1.4951,-0.0387,0.0066,1.5132,-0.0301])})),
+                                                                                                  /*from vt1 to vc7 vertices 2*/
+                                                                                                  color : new SFNode(
+                                                                                                    new ColorRGBA({
+                                                                                                      USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                                                                            new HAnimSite({
+                                                                                              name : new SFString("l_neck_base"),
+                                                                                              DEF : new SFString("hanim_l_neck_base"),
+                                                                                              translation : new SFVec3f([0.0646,1.5141,-0.038]),
+                                                                                              children : new MFNode([
+                                                                                                new TouchSensor({
+                                                                                                  description : new SFString("HAnimSite l_neck_base")}),
+
+                                                                                                new Shape({
+                                                                                                  USE : new SFString("HAnimSiteShape")})])}),
+
+                                                                                            new HAnimSite({
+                                                                                              name : new SFString("r_neck_base"),
+                                                                                              DEF : new SFString("hanim_r_neck_base"),
+                                                                                              translation : new SFVec3f([-0.0419,1.5149,-0.022]),
+                                                                                              children : new MFNode([
+                                                                                                new TouchSensor({
+                                                                                                  description : new SFString("HAnimSite r_neck_base")}),
+
+                                                                                                new Shape({
+                                                                                                  USE : new SFString("HAnimSiteShape")})])}),
+
+                                                                                            new Shape({
+                                                                                              geometry : new SFNode(
+                                                                                                new LineSet({
+                                                                                                  vertexCount : new MFInt32([2]),
+                                                                                                  coord : new SFNode(
+                                                                                                    new Coordinate({
+                                                                                                      point : new MFVec3f([0.0065,1.4951,-0.0387,0.082,1.4488,-0.0353])})),
+                                                                                                  /*from vt1 to l_sternoclavicular vertices 2*/
+                                                                                                  color : new SFNode(
+                                                                                                    new ColorRGBA({
+                                                                                                      USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                                                                            new HAnimSite({
+                                                                                              name : new SFString("l_acromion"),
+                                                                                              DEF : new SFString("hanim_l_acromion"),
+                                                                                              translation : new SFVec3f([0.2032,1.476,-0.049]),
+                                                                                              children : new MFNode([
+                                                                                                new TouchSensor({
+                                                                                                  description : new SFString("HAnimSite l_acromion")}),
+
+                                                                                                new Shape({
+                                                                                                  USE : new SFString("HAnimSiteShape")})])}),
+
+                                                                                            new HAnimSite({
+                                                                                              name : new SFString("l_axilla_distal_pt"),
+                                                                                              DEF : new SFString("hanim_l_axilla_distal_pt"),
+                                                                                              translation : new SFVec3f([0.1706,1.4072,-0.0875]),
+                                                                                              children : new MFNode([
+                                                                                                new TouchSensor({
+                                                                                                  description : new SFString("HAnimSite l_axilla_distal_pt")}),
+
+                                                                                                new Shape({
+                                                                                                  USE : new SFString("HAnimSiteShape")})])}),
+
+                                                                                            new HAnimSite({
+                                                                                              name : new SFString("l_axilla_posterior_folds"),
+                                                                                              DEF : new SFString("hanim_l_axilla_posterior_folds"),
+                                                                                              children : new MFNode([
+                                                                                                new TouchSensor({
+                                                                                                  description : new SFString("HAnimSite l_axilla_posterior_folds")}),
+
+                                                                                                new Shape({
+                                                                                                  USE : new SFString("HAnimSiteShape")})])}),
+
+                                                                                            new HAnimSite({
+                                                                                              name : new SFString("l_axilla_proximal"),
+                                                                                              DEF : new SFString("hanim_l_axilla_proximal"),
+                                                                                              translation : new SFVec3f([0.1777,1.4065,-0.0075]),
+                                                                                              children : new MFNode([
+                                                                                                new TouchSensor({
+                                                                                                  description : new SFString("HAnimSite l_axilla_proximal")}),
+
+                                                                                                new Shape({
+                                                                                                  USE : new SFString("HAnimSiteShape")})])}),
+
+                                                                                            new HAnimSite({
+                                                                                              name : new SFString("l_clavicale"),
+                                                                                              DEF : new SFString("hanim_l_clavicale"),
+                                                                                              translation : new SFVec3f([0.0271,1.4943,0.0394]),
+                                                                                              children : new MFNode([
+                                                                                                new TouchSensor({
+                                                                                                  description : new SFString("HAnimSite l_clavicale")}),
+
+                                                                                                new Shape({
+                                                                                                  USE : new SFString("HAnimSiteShape")})])}),
+
+                                                                                            new Shape({
+                                                                                              geometry : new SFNode(
+                                                                                                new LineSet({
+                                                                                                  vertexCount : new MFInt32([2]),
+                                                                                                  coord : new SFNode(
+                                                                                                    new Coordinate({
+                                                                                                      point : new MFVec3f([0.0065,1.4951,-0.0387,-0.0694,1.46,-0.033])})),
+                                                                                                  /*from vt1 to r_sternoclavicular vertices 2*/
+                                                                                                  color : new SFNode(
+                                                                                                    new ColorRGBA({
+                                                                                                      USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                                                                            new HAnimSite({
+                                                                                              name : new SFString("r_acromion"),
+                                                                                              DEF : new SFString("hanim_r_acromion"),
+                                                                                              translation : new SFVec3f([-0.1905,1.4791,-0.0431]),
+                                                                                              children : new MFNode([
+                                                                                                new TouchSensor({
+                                                                                                  description : new SFString("HAnimSite r_acromion")}),
+
+                                                                                                new Shape({
+                                                                                                  USE : new SFString("HAnimSiteShape")})])}),
+
+                                                                                            new HAnimSite({
+                                                                                              name : new SFString("r_axilla_distal_pt"),
+                                                                                              DEF : new SFString("hanim_r_axilla_distal_pt"),
+                                                                                              translation : new SFVec3f([-0.1603,1.4098,-0.0826]),
+                                                                                              children : new MFNode([
+                                                                                                new TouchSensor({
+                                                                                                  description : new SFString("HAnimSite r_axilla_distal_pt")}),
+
+                                                                                                new Shape({
+                                                                                                  USE : new SFString("HAnimSiteShape")})])}),
+
+                                                                                            new HAnimSite({
+                                                                                              name : new SFString("r_axilla_posterior_folds"),
+                                                                                              DEF : new SFString("hanim_r_axilla_posterior_folds"),
+                                                                                              children : new MFNode([
+                                                                                                new TouchSensor({
+                                                                                                  description : new SFString("HAnimSite r_axilla_posterior_folds")}),
+
+                                                                                                new Shape({
+                                                                                                  USE : new SFString("HAnimSiteShape")})])}),
+
+                                                                                            new HAnimSite({
+                                                                                              name : new SFString("r_axilla_proximal"),
+                                                                                              DEF : new SFString("hanim_r_axilla_proximal"),
+                                                                                              translation : new SFVec3f([-0.1626,1.4072,-0.0031]),
+                                                                                              children : new MFNode([
+                                                                                                new TouchSensor({
+                                                                                                  description : new SFString("HAnimSite r_axilla_proximal")}),
+
+                                                                                                new Shape({
+                                                                                                  USE : new SFString("HAnimSiteShape")})])}),
+
+                                                                                            new HAnimSite({
+                                                                                              name : new SFString("r_clavicale"),
+                                                                                              DEF : new SFString("hanim_r_clavicale"),
+                                                                                              translation : new SFVec3f([-0.0115,1.4943,0.04]),
+                                                                                              children : new MFNode([
+                                                                                                new TouchSensor({
+                                                                                                  description : new SFString("HAnimSite r_clavicale")}),
+
+                                                                                                new Shape({
+                                                                                                  USE : new SFString("HAnimSiteShape")})])})])}),
+
+                                                                                        new HAnimJoint({
+                                                                                          name : new SFString("vc7"),
+                                                                                          DEF : new SFString("hanim_vc7"),
+                                                                                          center : new SFVec3f([0.0066,1.5132,-0.0301]),
+                                                                                          ulimit : new MFFloat([0,0,0]),
+                                                                                          llimit : new MFFloat([0,0,0]),
+                                                                                          children : new MFNode([
+                                                                                            new HAnimSegment({
+                                                                                              name : new SFString("c7"),
+                                                                                              DEF : new SFString("hanim_c7"),
+                                                                                              children : new MFNode([
+                                                                                                new Transform({
+                                                                                                  translation : new SFVec3f([0.0066,1.5132,-0.0301]),
+                                                                                                  children : new MFNode([
+                                                                                                    new Transform({
+                                                                                                      /*Empty Transform*/
+                                                                                                      child : new SFNode(
+                                                                                                        new Shape({
+                                                                                                          USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                                                                new Shape({
+                                                                                                  geometry : new SFNode(
+                                                                                                    new LineSet({
+                                                                                                      vertexCount : new MFInt32([2]),
+                                                                                                      coord : new SFNode(
+                                                                                                        new Coordinate({
+                                                                                                          point : new MFVec3f([0.0066,1.5132,-0.0301,0.0066,1.5357,-0.0143])})),
+                                                                                                      /*from vc7 to vc6 vertices 2*/
+                                                                                                      color : new SFNode(
+                                                                                                        new ColorRGBA({
+                                                                                                          USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+
+                                                                                            new HAnimJoint({
+                                                                                              name : new SFString("vc6"),
+                                                                                              DEF : new SFString("hanim_vc6"),
+                                                                                              center : new SFVec3f([0.0066,1.5357,-0.0143]),
+                                                                                              ulimit : new MFFloat([0,0,0]),
+                                                                                              llimit : new MFFloat([0,0,0]),
+                                                                                              children : new MFNode([
+                                                                                                new HAnimSegment({
+                                                                                                  name : new SFString("c6"),
+                                                                                                  DEF : new SFString("hanim_c6"),
+                                                                                                  children : new MFNode([
+                                                                                                    new Transform({
+                                                                                                      translation : new SFVec3f([0.0066,1.5357,-0.0143]),
+                                                                                                      children : new MFNode([
+                                                                                                        new Transform({
+                                                                                                          /*Empty Transform*/
+                                                                                                          child : new SFNode(
+                                                                                                            new Shape({
+                                                                                                              USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                                                                    new Shape({
+                                                                                                      geometry : new SFNode(
+                                                                                                        new LineSet({
+                                                                                                          vertexCount : new MFInt32([2]),
+                                                                                                          coord : new SFNode(
+                                                                                                            new Coordinate({
+                                                                                                              point : new MFVec3f([0.0066,1.5357,-0.0143,0.0066,1.552,-0.0082])})),
+                                                                                                          /*from vc6 to vc5 vertices 2*/
+                                                                                                          color : new SFNode(
+                                                                                                            new ColorRGBA({
+                                                                                                              USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+
+                                                                                                new HAnimJoint({
+                                                                                                  name : new SFString("vc5"),
+                                                                                                  DEF : new SFString("hanim_vc5"),
+                                                                                                  center : new SFVec3f([0.0066,1.552,-0.0082]),
+                                                                                                  ulimit : new MFFloat([0,0,0]),
+                                                                                                  llimit : new MFFloat([0,0,0]),
+                                                                                                  children : new MFNode([
+                                                                                                    new HAnimSegment({
+                                                                                                      name : new SFString("c5"),
+                                                                                                      DEF : new SFString("hanim_c5"),
+                                                                                                      children : new MFNode([
+                                                                                                        new Transform({
+                                                                                                          translation : new SFVec3f([0.0066,1.552,-0.0082]),
+                                                                                                          children : new MFNode([
+                                                                                                            new Transform({
+                                                                                                              /*Empty Transform*/
+                                                                                                              child : new SFNode(
+                                                                                                                new Shape({
+                                                                                                                  USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                                                                        new Shape({
+                                                                                                          geometry : new SFNode(
+                                                                                                            new LineSet({
+                                                                                                              vertexCount : new MFInt32([2]),
+                                                                                                              coord : new SFNode(
+                                                                                                                new Coordinate({
+                                                                                                                  point : new MFVec3f([0.0066,1.552,-0.0082,0.0066,1.5662,-0.0084])})),
+                                                                                                              /*from vc5 to vc4 vertices 2*/
+                                                                                                              color : new SFNode(
+                                                                                                                new ColorRGBA({
+                                                                                                                  USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+
+                                                                                                    new HAnimJoint({
+                                                                                                      name : new SFString("vc4"),
+                                                                                                      DEF : new SFString("hanim_vc4"),
+                                                                                                      center : new SFVec3f([0.0066,1.5662,-0.0084]),
+                                                                                                      ulimit : new MFFloat([0,0,0]),
+                                                                                                      llimit : new MFFloat([0,0,0]),
+                                                                                                      children : new MFNode([
+                                                                                                        new HAnimSegment({
+                                                                                                          name : new SFString("c4"),
+                                                                                                          DEF : new SFString("hanim_c4"),
+                                                                                                          children : new MFNode([
+                                                                                                            new Transform({
+                                                                                                              translation : new SFVec3f([0.0066,1.5662,-0.0084]),
+                                                                                                              children : new MFNode([
+                                                                                                                new Transform({
+                                                                                                                  /*Empty Transform*/
+                                                                                                                  child : new SFNode(
+                                                                                                                    new Shape({
+                                                                                                                      USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                                                                            new Shape({
+                                                                                                              geometry : new SFNode(
+                                                                                                                new LineSet({
+                                                                                                                  vertexCount : new MFInt32([2]),
+                                                                                                                  coord : new SFNode(
+                                                                                                                    new Coordinate({
+                                                                                                                      point : new MFVec3f([0.0066,1.5662,-0.0084,0.0066,1.58,-0.0103])})),
+                                                                                                                  /*from vc4 to vc3 vertices 2*/
+                                                                                                                  color : new SFNode(
+                                                                                                                    new ColorRGBA({
+                                                                                                                      USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+
+                                                                                                        new HAnimJoint({
+                                                                                                          name : new SFString("vc3"),
+                                                                                                          DEF : new SFString("hanim_vc3"),
+                                                                                                          center : new SFVec3f([0.0066,1.58,-0.0103]),
+                                                                                                          ulimit : new MFFloat([0,0,0]),
+                                                                                                          llimit : new MFFloat([0,0,0]),
+                                                                                                          children : new MFNode([
+                                                                                                            new HAnimSegment({
+                                                                                                              name : new SFString("c3"),
+                                                                                                              DEF : new SFString("hanim_c3"),
+                                                                                                              children : new MFNode([
+                                                                                                                new Transform({
+                                                                                                                  translation : new SFVec3f([0.0066,1.58,-0.0103]),
+                                                                                                                  children : new MFNode([
+                                                                                                                    new Transform({
+                                                                                                                      /*Empty Transform*/
+                                                                                                                      child : new SFNode(
+                                                                                                                        new Shape({
+                                                                                                                          USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                                                                                new Shape({
+                                                                                                                  geometry : new SFNode(
+                                                                                                                    new LineSet({
+                                                                                                                      vertexCount : new MFInt32([2]),
+                                                                                                                      coord : new SFNode(
+                                                                                                                        new Coordinate({
+                                                                                                                          point : new MFVec3f([0.0066,1.58,-0.0103,0.0066,1.5928,-0.0103])})),
+                                                                                                                      /*from vc3 to vc2 vertices 2*/
+                                                                                                                      color : new SFNode(
+                                                                                                                        new ColorRGBA({
+                                                                                                                          USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                                                                                                new HAnimSite({
+                                                                                                                  name : new SFString("adams_apple"),
+                                                                                                                  DEF : new SFString("hanim_adams_apple"),
+                                                                                                                  children : new MFNode([
+                                                                                                                    new TouchSensor({
+                                                                                                                      description : new SFString("HAnimSite adams_apple")}),
+
+                                                                                                                    new Shape({
+                                                                                                                      USE : new SFString("HAnimSiteShape")})])})])}),
+
+                                                                                                            new HAnimJoint({
+                                                                                                              name : new SFString("vc2"),
+                                                                                                              DEF : new SFString("hanim_vc2"),
+                                                                                                              center : new SFVec3f([0.0066,1.5928,-0.0103]),
+                                                                                                              ulimit : new MFFloat([0,0,0]),
+                                                                                                              llimit : new MFFloat([0,0,0]),
+                                                                                                              children : new MFNode([
+                                                                                                                new HAnimSegment({
+                                                                                                                  name : new SFString("c2"),
+                                                                                                                  DEF : new SFString("hanim_c2"),
+                                                                                                                  children : new MFNode([
+                                                                                                                    new Transform({
+                                                                                                                      translation : new SFVec3f([0.0066,1.5928,-0.0103]),
+                                                                                                                      children : new MFNode([
+                                                                                                                        new Transform({
+                                                                                                                          /*Empty Transform*/
+                                                                                                                          child : new SFNode(
+                                                                                                                            new Shape({
+                                                                                                                              USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                                                                                    new Shape({
+                                                                                                                      geometry : new SFNode(
+                                                                                                                        new LineSet({
+                                                                                                                          vertexCount : new MFInt32([2]),
+                                                                                                                          coord : new SFNode(
+                                                                                                                            new Coordinate({
+                                                                                                                              point : new MFVec3f([0.0066,1.5928,-0.0103,0.0066,1.6144,-0.0034])})),
+                                                                                                                          /*from vc2 to vc1 vertices 2*/
+                                                                                                                          color : new SFNode(
+                                                                                                                            new ColorRGBA({
+                                                                                                                              USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+
+                                                                                                                new HAnimJoint({
+                                                                                                                  name : new SFString("vc1"),
+                                                                                                                  DEF : new SFString("hanim_vc1"),
+                                                                                                                  center : new SFVec3f([0.0066,1.6144,-0.0034]),
+                                                                                                                  ulimit : new MFFloat([0,0,0]),
+                                                                                                                  llimit : new MFFloat([0,0,0]),
+                                                                                                                  children : new MFNode([
+                                                                                                                    new HAnimSegment({
+                                                                                                                      name : new SFString("c1"),
+                                                                                                                      DEF : new SFString("hanim_c1"),
+                                                                                                                      children : new MFNode([
+                                                                                                                        new Transform({
+                                                                                                                          translation : new SFVec3f([0.0066,1.6144,-0.0034]),
+                                                                                                                          children : new MFNode([
+                                                                                                                            new Transform({
+                                                                                                                              /*Empty Transform*/
+                                                                                                                              child : new SFNode(
+                                                                                                                                new Shape({
+                                                                                                                                  USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                                                                                        new Shape({
+                                                                                                                          geometry : new SFNode(
+                                                                                                                            new LineSet({
+                                                                                                                              vertexCount : new MFInt32([2]),
+                                                                                                                              coord : new SFNode(
+                                                                                                                                new Coordinate({
+                                                                                                                                  point : new MFVec3f([0.0066,1.6144,-0.0034,0.0044,1.6209,0.0236])})),
+                                                                                                                              /*from vc1 to skullbase vertices 2*/
+                                                                                                                              color : new SFNode(
+                                                                                                                                new ColorRGBA({
+                                                                                                                                  USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                                                                                                        new HAnimSite({
+                                                                                                                          name : new SFString("glabella"),
+                                                                                                                          DEF : new SFString("hanim_glabella"),
+                                                                                                                          children : new MFNode([
+                                                                                                                            new TouchSensor({
+                                                                                                                              description : new SFString("HAnimSite glabella")}),
+
+                                                                                                                            new Shape({
+                                                                                                                              USE : new SFString("HAnimSiteShape")})])}),
+
+                                                                                                                        new HAnimSite({
+                                                                                                                          name : new SFString("l_ectocanthus"),
+                                                                                                                          DEF : new SFString("hanim_l_ectocanthus"),
+                                                                                                                          children : new MFNode([
+                                                                                                                            new TouchSensor({
+                                                                                                                              description : new SFString("HAnimSite l_ectocanthus")}),
+
+                                                                                                                            new Shape({
+                                                                                                                              USE : new SFString("HAnimSiteShape")})])}),
+
+                                                                                                                        new HAnimSite({
+                                                                                                                          name : new SFString("l_infraorbitale"),
+                                                                                                                          DEF : new SFString("hanim_l_infraorbitale"),
+                                                                                                                          translation : new SFVec3f([0.0341,1.6171,0.0752]),
+                                                                                                                          children : new MFNode([
+                                                                                                                            new TouchSensor({
+                                                                                                                              description : new SFString("HAnimSite l_infraorbitale")}),
+
+                                                                                                                            new Shape({
+                                                                                                                              USE : new SFString("HAnimSiteShape")})])}),
+
+                                                                                                                        new HAnimSite({
+                                                                                                                          name : new SFString("l_tragion"),
+                                                                                                                          DEF : new SFString("hanim_l_tragion"),
+                                                                                                                          translation : new SFVec3f([0.0739,1.6348,0.0282]),
+                                                                                                                          children : new MFNode([
+                                                                                                                            new TouchSensor({
+                                                                                                                              description : new SFString("HAnimSite l_tragion")}),
+
+                                                                                                                            new Shape({
+                                                                                                                              USE : new SFString("HAnimSiteShape")})])}),
+
+                                                                                                                        new HAnimSite({
+                                                                                                                          name : new SFString("nuchale"),
+                                                                                                                          DEF : new SFString("hanim_nuchale"),
+                                                                                                                          translation : new SFVec3f([0.0039,1.5972,-0.0796]),
+                                                                                                                          children : new MFNode([
+                                                                                                                            new TouchSensor({
+                                                                                                                              description : new SFString("HAnimSite nuchale")}),
+
+                                                                                                                            new Shape({
+                                                                                                                              USE : new SFString("HAnimSiteShape")})])}),
+
+                                                                                                                        new HAnimSite({
+                                                                                                                          name : new SFString("opisthocranion"),
+                                                                                                                          DEF : new SFString("hanim_opisthocranion"),
+                                                                                                                          children : new MFNode([
+                                                                                                                            new TouchSensor({
+                                                                                                                              description : new SFString("HAnimSite opisthocranion")}),
+
+                                                                                                                            new Shape({
+                                                                                                                              USE : new SFString("HAnimSiteShape")})])}),
+
+                                                                                                                        new HAnimSite({
+                                                                                                                          name : new SFString("r_ectocanthus"),
+                                                                                                                          DEF : new SFString("hanim_r_ectocanthus"),
+                                                                                                                          children : new MFNode([
+                                                                                                                            new TouchSensor({
+                                                                                                                              description : new SFString("HAnimSite r_ectocanthus")}),
+
+                                                                                                                            new Shape({
+                                                                                                                              USE : new SFString("HAnimSiteShape")})])}),
+
+                                                                                                                        new HAnimSite({
+                                                                                                                          name : new SFString("r_infraorbitale"),
+                                                                                                                          DEF : new SFString("hanim_r_infraorbitale"),
+                                                                                                                          translation : new SFVec3f([-0.0237,1.6171,0.0752]),
+                                                                                                                          children : new MFNode([
+                                                                                                                            new TouchSensor({
+                                                                                                                              description : new SFString("HAnimSite r_infraorbitale")}),
+
+                                                                                                                            new Shape({
+                                                                                                                              USE : new SFString("HAnimSiteShape")})])}),
+
+                                                                                                                        new HAnimSite({
+                                                                                                                          name : new SFString("r_tragion"),
+                                                                                                                          DEF : new SFString("hanim_r_tragion"),
+                                                                                                                          translation : new SFVec3f([-0.0646,1.6347,0.0302]),
+                                                                                                                          children : new MFNode([
+                                                                                                                            new TouchSensor({
+                                                                                                                              description : new SFString("HAnimSite r_tragion")}),
+
+                                                                                                                            new Shape({
+                                                                                                                              USE : new SFString("HAnimSiteShape")})])}),
+
+                                                                                                                        new HAnimSite({
+                                                                                                                          name : new SFString("sellion"),
+                                                                                                                          DEF : new SFString("hanim_sellion"),
+                                                                                                                          translation : new SFVec3f([0.0058,1.6316,0.0852]),
+                                                                                                                          children : new MFNode([
+                                                                                                                            new TouchSensor({
+                                                                                                                              description : new SFString("HAnimSite sellion")}),
+
+                                                                                                                            new Shape({
+                                                                                                                              USE : new SFString("HAnimSiteShape")})])}),
+
+                                                                                                                        new HAnimSite({
+                                                                                                                          name : new SFString("skull_vertex"),
+                                                                                                                          DEF : new SFString("hanim_skull_vertex"),
+                                                                                                                          children : new MFNode([
+                                                                                                                            new TouchSensor({
+                                                                                                                              description : new SFString("HAnimSite skull_vertex")}),
+
+                                                                                                                            new Shape({
+                                                                                                                              USE : new SFString("HAnimSiteShape")})])})])}),
+
+                                                                                                                    new HAnimJoint({
+                                                                                                                      name : new SFString("skullbase"),
+                                                                                                                      DEF : new SFString("hanim_skullbase"),
+                                                                                                                      center : new SFVec3f([0.0044,1.6209,0.0236]),
+                                                                                                                      ulimit : new MFFloat([0,0,0]),
+                                                                                                                      llimit : new MFFloat([0,0,0]),
+                                                                                                                      children : new MFNode([
+                                                                                                                        new HAnimSegment({
+                                                                                                                          name : new SFString("skull"),
+                                                                                                                          DEF : new SFString("hanim_skull"),
+                                                                                                                          children : new MFNode([
+                                                                                                                            new Transform({
+                                                                                                                              translation : new SFVec3f([0.0044,1.6209,0.0236]),
+                                                                                                                              children : new MFNode([
+                                                                                                                                new Transform({
+                                                                                                                                  /*Empty Transform*/
+                                                                                                                                  child : new SFNode(
+                                                                                                                                    new Shape({
+                                                                                                                                      USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                                                                                            new Shape({
+                                                                                                                              geometry : new SFNode(
+                                                                                                                                new LineSet({
+                                                                                                                                  vertexCount : new MFInt32([2]),
+                                                                                                                                  coord : new SFNode(
+                                                                                                                                    new Coordinate({
+                                                                                                                                      point : new MFVec3f([0.0044,1.6209,0.0236,0.0503,1.4157,-0.0689])})),
+                                                                                                                                  /*from skullbase to l_eyelid_joint vertices 2*/
+                                                                                                                                  color : new SFNode(
+                                                                                                                                    new ColorRGBA({
+                                                                                                                                      USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                                                                                                            new Shape({
+                                                                                                                              geometry : new SFNode(
+                                                                                                                                new LineSet({
+                                                                                                                                  vertexCount : new MFInt32([2]),
+                                                                                                                                  coord : new SFNode(
+                                                                                                                                    new Coordinate({
+                                                                                                                                      point : new MFVec3f([0.0044,1.6209,0.0236,-0.0507,1.4157,-0.0689])})),
+                                                                                                                                  /*from skullbase to r_eyelid_joint vertices 2*/
+                                                                                                                                  color : new SFNode(
+                                                                                                                                    new ColorRGBA({
+                                                                                                                                      USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                                                                                                            new Shape({
+                                                                                                                              geometry : new SFNode(
+                                                                                                                                new LineSet({
+                                                                                                                                  vertexCount : new MFInt32([2]),
+                                                                                                                                  coord : new SFNode(
+                                                                                                                                    new Coordinate({
+                                                                                                                                      point : new MFVec3f([0.0044,1.6209,0.0236,0.0479,1.3963,-0.0188])})),
+                                                                                                                                  /*from skullbase to l_eyeball_joint vertices 2*/
+                                                                                                                                  color : new SFNode(
+                                                                                                                                    new ColorRGBA({
+                                                                                                                                      USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                                                                                                            new Shape({
+                                                                                                                              geometry : new SFNode(
+                                                                                                                                new LineSet({
+                                                                                                                                  vertexCount : new MFInt32([2]),
+                                                                                                                                  coord : new SFNode(
+                                                                                                                                    new Coordinate({
+                                                                                                                                      point : new MFVec3f([0.0044,1.6209,0.0236,-0.0483,1.3963,-0.0188])})),
+                                                                                                                                  /*from skullbase to r_eyeball_joint vertices 2*/
+                                                                                                                                  color : new SFNode(
+                                                                                                                                    new ColorRGBA({
+                                                                                                                                      USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                                                                                                            new Shape({
+                                                                                                                              geometry : new SFNode(
+                                                                                                                                new LineSet({
+                                                                                                                                  vertexCount : new MFInt32([2]),
+                                                                                                                                  coord : new SFNode(
+                                                                                                                                    new Coordinate({
+                                                                                                                                      point : new MFVec3f([0.0044,1.6209,0.0236,0.0216,1.4053,0.0051])})),
+                                                                                                                                  /*from skullbase to l_eyebrow_joint vertices 2*/
+                                                                                                                                  color : new SFNode(
+                                                                                                                                    new ColorRGBA({
+                                                                                                                                      USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                                                                                                            new Shape({
+                                                                                                                              geometry : new SFNode(
+                                                                                                                                new LineSet({
+                                                                                                                                  vertexCount : new MFInt32([2]),
+                                                                                                                                  coord : new SFNode(
+                                                                                                                                    new Coordinate({
+                                                                                                                                      point : new MFVec3f([0.0044,1.6209,0.0236,-0.0219,1.4053,0.0051])})),
+                                                                                                                                  /*from skullbase to r_eyebrow_joint vertices 2*/
+                                                                                                                                  color : new SFNode(
+                                                                                                                                    new ColorRGBA({
+                                                                                                                                      USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                                                                                                            new Shape({
+                                                                                                                              geometry : new SFNode(
+                                                                                                                                new LineSet({
+                                                                                                                                  vertexCount : new MFInt32([2]),
+                                                                                                                                  coord : new SFNode(
+                                                                                                                                    new Coordinate({
+                                                                                                                                      point : new MFVec3f([0.0044,1.6209,0.0236,-0.0002,1.3043,-0.0865])})),
+                                                                                                                                  /*from skullbase to temporomandibular vertices 2*/
+                                                                                                                                  color : new SFNode(
+                                                                                                                                    new ColorRGBA({
+                                                                                                                                      USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                                                                                                            new HAnimSite({
+                                                                                                                              name : new SFString("l_gonion"),
+                                                                                                                              DEF : new SFString("hanim_l_gonion"),
+                                                                                                                              translation : new SFVec3f([0.0631,1.553,0.033]),
+                                                                                                                              children : new MFNode([
+                                                                                                                                new TouchSensor({
+                                                                                                                                  description : new SFString("HAnimSite l_gonion")}),
+
+                                                                                                                                new Shape({
+                                                                                                                                  USE : new SFString("HAnimSiteShape")})])}),
+
+                                                                                                                            new HAnimSite({
+                                                                                                                              name : new SFString("menton"),
+                                                                                                                              DEF : new SFString("hanim_menton"),
+                                                                                                                              children : new MFNode([
+                                                                                                                                new TouchSensor({
+                                                                                                                                  description : new SFString("HAnimSite menton")}),
+
+                                                                                                                                new Shape({
+                                                                                                                                  USE : new SFString("HAnimSiteShape")})])}),
+
+                                                                                                                            new HAnimSite({
+                                                                                                                              name : new SFString("r_gonion"),
+                                                                                                                              DEF : new SFString("hanim_r_gonion"),
+                                                                                                                              translation : new SFVec3f([-0.052,1.5529,0.0347]),
+                                                                                                                              children : new MFNode([
+                                                                                                                                new TouchSensor({
+                                                                                                                                  description : new SFString("HAnimSite r_gonion")}),
+
+                                                                                                                                new Shape({
+                                                                                                                                  USE : new SFString("HAnimSiteShape")})])}),
+
+                                                                                                                            new HAnimSite({
+                                                                                                                              name : new SFString("supramenton"),
+                                                                                                                              DEF : new SFString("hanim_supramenton"),
+                                                                                                                              translation : new SFVec3f([0.0061,1.541,0.0805]),
+                                                                                                                              children : new MFNode([
+                                                                                                                                new TouchSensor({
+                                                                                                                                  description : new SFString("HAnimSite supramenton")}),
+
+                                                                                                                                new Shape({
+                                                                                                                                  USE : new SFString("HAnimSiteShape")})])})])}),
+
+                                                                                                                        new HAnimJoint({
+                                                                                                                          name : new SFString("l_eyelid_joint"),
+                                                                                                                          DEF : new SFString("hanim_l_eyelid_joint"),
+                                                                                                                          center : new SFVec3f([0.0503,1.4157,-0.0689]),
+                                                                                                                          ulimit : new MFFloat([0,0,0]),
+                                                                                                                          llimit : new MFFloat([0,0,0])}),
+
+                                                                                                                        new HAnimJoint({
+                                                                                                                          name : new SFString("r_eyelid_joint"),
+                                                                                                                          DEF : new SFString("hanim_r_eyelid_joint"),
+                                                                                                                          center : new SFVec3f([-0.0507,1.4157,-0.0689]),
+                                                                                                                          ulimit : new MFFloat([0,0,0]),
+                                                                                                                          llimit : new MFFloat([0,0,0])}),
+
+                                                                                                                        new HAnimJoint({
+                                                                                                                          name : new SFString("l_eyeball_joint"),
+                                                                                                                          DEF : new SFString("hanim_l_eyeball_joint"),
+                                                                                                                          center : new SFVec3f([0.0479,1.3963,-0.0188]),
+                                                                                                                          ulimit : new MFFloat([0,0,0]),
+                                                                                                                          llimit : new MFFloat([0,0,0])}),
+
+                                                                                                                        new HAnimJoint({
+                                                                                                                          name : new SFString("r_eyeball_joint"),
+                                                                                                                          DEF : new SFString("hanim_r_eyeball_joint"),
+                                                                                                                          center : new SFVec3f([-0.0483,1.3963,-0.0188]),
+                                                                                                                          ulimit : new MFFloat([0,0,0]),
+                                                                                                                          llimit : new MFFloat([0,0,0])}),
+
+                                                                                                                        new HAnimJoint({
+                                                                                                                          name : new SFString("l_eyebrow_joint"),
+                                                                                                                          DEF : new SFString("hanim_l_eyebrow_joint"),
+                                                                                                                          center : new SFVec3f([0.0216,1.4053,0.0051]),
+                                                                                                                          ulimit : new MFFloat([0,0,0]),
+                                                                                                                          llimit : new MFFloat([0,0,0])}),
+
+                                                                                                                        new HAnimJoint({
+                                                                                                                          name : new SFString("r_eyebrow_joint"),
+                                                                                                                          DEF : new SFString("hanim_r_eyebrow_joint"),
+                                                                                                                          center : new SFVec3f([-0.0219,1.4053,0.0051]),
+                                                                                                                          ulimit : new MFFloat([0,0,0]),
+                                                                                                                          llimit : new MFFloat([0,0,0])}),
+
+                                                                                                                        new HAnimJoint({
+                                                                                                                          name : new SFString("temporomandibular"),
+                                                                                                                          DEF : new SFString("hanim_temporomandibular"),
+                                                                                                                          center : new SFVec3f([-0.0002,1.3043,-0.0865]),
+                                                                                                                          ulimit : new MFFloat([0,0,0]),
+                                                                                                                          llimit : new MFFloat([0,0,0])})])})])})])})])})])})])})])})])}),
+
+                                                                                        new HAnimJoint({
+                                                                                          name : new SFString("l_sternoclavicular"),
+                                                                                          DEF : new SFString("hanim_l_sternoclavicular"),
+                                                                                          center : new SFVec3f([0.082,1.4488,-0.0353]),
+                                                                                          ulimit : new MFFloat([0,0,0]),
+                                                                                          llimit : new MFFloat([0,0,0]),
+                                                                                          children : new MFNode([
+                                                                                            new HAnimSegment({
+                                                                                              name : new SFString("l_clavicle"),
+                                                                                              DEF : new SFString("hanim_l_clavicle"),
+                                                                                              children : new MFNode([
+                                                                                                new Transform({
+                                                                                                  translation : new SFVec3f([0.082,1.4488,-0.0353]),
+                                                                                                  children : new MFNode([
+                                                                                                    new Transform({
+                                                                                                      /*Empty Transform*/
+                                                                                                      child : new SFNode(
+                                                                                                        new Shape({
+                                                                                                          USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                                                                new Shape({
+                                                                                                  geometry : new SFNode(
+                                                                                                    new LineSet({
+                                                                                                      vertexCount : new MFInt32([2]),
+                                                                                                      coord : new SFNode(
+                                                                                                        new Coordinate({
+                                                                                                          point : new MFVec3f([0.082,1.4488,-0.0353,0.0962,1.4269,-0.0424])})),
+                                                                                                      /*from l_sternoclavicular to l_acromioclavicular vertices 2*/
+                                                                                                      color : new SFNode(
+                                                                                                        new ColorRGBA({
+                                                                                                          USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+
+                                                                                            new HAnimJoint({
+                                                                                              name : new SFString("l_acromioclavicular"),
+                                                                                              DEF : new SFString("hanim_l_acromioclavicular"),
+                                                                                              center : new SFVec3f([0.0962,1.4269,-0.0424]),
+                                                                                              ulimit : new MFFloat([0,0,0]),
+                                                                                              llimit : new MFFloat([0,0,0]),
+                                                                                              children : new MFNode([
+                                                                                                new HAnimSegment({
+                                                                                                  name : new SFString("l_scapula"),
+                                                                                                  DEF : new SFString("hanim_l_scapula"),
+                                                                                                  children : new MFNode([
+                                                                                                    new Transform({
+                                                                                                      translation : new SFVec3f([0.0962,1.4269,-0.0424]),
+                                                                                                      children : new MFNode([
+                                                                                                        new Transform({
+                                                                                                          /*Empty Transform*/
+                                                                                                          child : new SFNode(
+                                                                                                            new Shape({
+                                                                                                              USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                                                                    new Shape({
+                                                                                                      geometry : new SFNode(
+                                                                                                        new LineSet({
+                                                                                                          vertexCount : new MFInt32([2]),
+                                                                                                          coord : new SFNode(
+                                                                                                            new Coordinate({
+                                                                                                              point : new MFVec3f([0.0962,1.4269,-0.0424,0.2029,1.4376,-0.0387])})),
+                                                                                                          /*from l_acromioclavicular to l_shoulder vertices 2*/
+                                                                                                          color : new SFNode(
+                                                                                                            new ColorRGBA({
+                                                                                                              USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                                                                                    new HAnimSite({
+                                                                                                      name : new SFString("l_bideltoid"),
+                                                                                                      DEF : new SFString("hanim_l_bideltoid"),
+                                                                                                      children : new MFNode([
+                                                                                                        new TouchSensor({
+                                                                                                          description : new SFString("HAnimSite l_bideltoid")}),
+
+                                                                                                        new Shape({
+                                                                                                          USE : new SFString("HAnimSiteShape")})])}),
+
+                                                                                                    new HAnimSite({
+                                                                                                      name : new SFString("l_humeral_lateral_epicondyles"),
+                                                                                                      DEF : new SFString("hanim_l_humeral_lateral_epicondyles"),
+                                                                                                      translation : new SFVec3f([0.228,1.1482,-0.11]),
+                                                                                                      children : new MFNode([
+                                                                                                        new TouchSensor({
+                                                                                                          description : new SFString("HAnimSite l_humeral_lateral_epicondyles")}),
+
+                                                                                                        new Shape({
+                                                                                                          USE : new SFString("HAnimSiteShape")})])})])}),
+
+                                                                                                new HAnimJoint({
+                                                                                                  name : new SFString("l_shoulder"),
+                                                                                                  DEF : new SFString("hanim_l_shoulder"),
+                                                                                                  center : new SFVec3f([0.2029,1.4376,-0.0387]),
+                                                                                                  ulimit : new MFFloat([0,0,0]),
+                                                                                                  llimit : new MFFloat([0,0,0]),
+                                                                                                  children : new MFNode([
+                                                                                                    new HAnimSegment({
+                                                                                                      name : new SFString("l_upperarm"),
+                                                                                                      DEF : new SFString("hanim_l_upperarm"),
+                                                                                                      children : new MFNode([
+                                                                                                        new Transform({
+                                                                                                          translation : new SFVec3f([0.2029,1.4376,-0.0387]),
+                                                                                                          children : new MFNode([
+                                                                                                            new Transform({
+                                                                                                              /*Empty Transform*/
+                                                                                                              child : new SFNode(
+                                                                                                                new Shape({
+                                                                                                                  USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                                                                        new Shape({
+                                                                                                          geometry : new SFNode(
+                                                                                                            new LineSet({
+                                                                                                              vertexCount : new MFInt32([2]),
+                                                                                                              coord : new SFNode(
+                                                                                                                new Coordinate({
+                                                                                                                  point : new MFVec3f([0.2029,1.4376,-0.0387,0.2014,1.1357,-0.0682])})),
+                                                                                                              /*from l_shoulder to l_elbow vertices 2*/
+                                                                                                              color : new SFNode(
+                                                                                                                new ColorRGBA({
+                                                                                                                  USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                                                                                        new HAnimSite({
+                                                                                                          name : new SFString("l_humeral_medial_epicondyles"),
+                                                                                                          DEF : new SFString("hanim_l_humeral_medial_epicondyles"),
+                                                                                                          translation : new SFVec3f([0.1735,1.1272,-0.1113]),
+                                                                                                          children : new MFNode([
+                                                                                                            new TouchSensor({
+                                                                                                              description : new SFString("HAnimSite l_humeral_medial_epicondyles")}),
+
+                                                                                                            new Shape({
+                                                                                                              USE : new SFString("HAnimSiteShape")})])}),
+
+                                                                                                        new HAnimSite({
+                                                                                                          name : new SFString("l_olecranon"),
+                                                                                                          DEF : new SFString("hanim_l_olecranon"),
+                                                                                                          translation : new SFVec3f([-0.1962,1.1375,-0.1123]),
+                                                                                                          children : new MFNode([
+                                                                                                            new TouchSensor({
+                                                                                                              description : new SFString("HAnimSite l_olecranon")}),
+
+                                                                                                            new Shape({
+                                                                                                              USE : new SFString("HAnimSiteShape")})])}),
+
+                                                                                                        new HAnimSite({
+                                                                                                          name : new SFString("l_radial_styloid"),
+                                                                                                          DEF : new SFString("hanim_l_radial_styloid"),
+                                                                                                          translation : new SFVec3f([0.1901,0.8645,-0.0415]),
+                                                                                                          children : new MFNode([
+                                                                                                            new TouchSensor({
+                                                                                                              description : new SFString("HAnimSite l_radial_styloid")}),
+
+                                                                                                            new Shape({
+                                                                                                              USE : new SFString("HAnimSiteShape")})])}),
+
+                                                                                                        new HAnimSite({
+                                                                                                          name : new SFString("l_radiale"),
+                                                                                                          DEF : new SFString("hanim_l_radiale"),
+                                                                                                          translation : new SFVec3f([0.2182,1.1212,-0.1167]),
+                                                                                                          children : new MFNode([
+                                                                                                            new TouchSensor({
+                                                                                                              description : new SFString("HAnimSite l_radiale")}),
+
+                                                                                                            new Shape({
+                                                                                                              USE : new SFString("HAnimSiteShape")})])})])}),
+
+                                                                                                    new HAnimJoint({
+                                                                                                      name : new SFString("l_elbow"),
+                                                                                                      DEF : new SFString("hanim_l_elbow"),
+                                                                                                      center : new SFVec3f([0.2014,1.1357,-0.0682]),
+                                                                                                      ulimit : new MFFloat([0,0,0]),
+                                                                                                      llimit : new MFFloat([0,0,0]),
+                                                                                                      children : new MFNode([
+                                                                                                        new HAnimSegment({
+                                                                                                          name : new SFString("l_forearm"),
+                                                                                                          DEF : new SFString("hanim_l_forearm"),
+                                                                                                          children : new MFNode([
+                                                                                                            new Transform({
+                                                                                                              translation : new SFVec3f([0.2014,1.1357,-0.0682]),
+                                                                                                              children : new MFNode([
+                                                                                                                new Transform({
+                                                                                                                  /*Empty Transform*/
+                                                                                                                  child : new SFNode(
+                                                                                                                    new Shape({
+                                                                                                                      USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                                                                            new Shape({
+                                                                                                              geometry : new SFNode(
+                                                                                                                new LineSet({
+                                                                                                                  vertexCount : new MFInt32([2]),
+                                                                                                                  coord : new SFNode(
+                                                                                                                    new Coordinate({
+                                                                                                                      point : new MFVec3f([0.2014,1.1357,-0.0682,0.1984,0.8663,-0.0583])})),
+                                                                                                                  /*from l_elbow to l_radiocarpal vertices 2*/
+                                                                                                                  color : new SFNode(
+                                                                                                                    new ColorRGBA({
+                                                                                                                      USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                                                                                            new HAnimSite({
+                                                                                                              name : new SFString("l_ulnar_styloid"),
+                                                                                                              DEF : new SFString("hanim_l_ulnar_styloid"),
+                                                                                                              translation : new SFVec3f([-0.2142,0.8529,-0.0648]),
+                                                                                                              children : new MFNode([
+                                                                                                                new TouchSensor({
+                                                                                                                  description : new SFString("HAnimSite l_ulnar_styloid")}),
+
+                                                                                                                new Shape({
+                                                                                                                  USE : new SFString("HAnimSiteShape")})])})])}),
+
+                                                                                                        new HAnimJoint({
+                                                                                                          name : new SFString("l_radiocarpal"),
+                                                                                                          DEF : new SFString("hanim_l_radiocarpal"),
+                                                                                                          center : new SFVec3f([0.1984,0.8663,-0.0583]),
+                                                                                                          ulimit : new MFFloat([0,0,0]),
+                                                                                                          llimit : new MFFloat([0,0,0]),
+                                                                                                          children : new MFNode([
+                                                                                                            new HAnimSegment({
+                                                                                                              name : new SFString("l_carpal"),
+                                                                                                              DEF : new SFString("hanim_l_carpal"),
+                                                                                                              children : new MFNode([
+                                                                                                                new Transform({
+                                                                                                                  scale : new SFVec3f([0.2,0.2,0.2]),
+                                                                                                                  translation : new SFVec3f([0.2,0.85,-0.05]),
+                                                                                                                  rotation : new SFRotation([0,0,1,-3.14]),
+                                                                                                                  /*Transform left hand*/
+                                                                                                                  children : new MFNode([
+                                                                                                                    new Transform({
+                                                                                                                      rotation : new SFRotation([0,1,0,-1.57]),
+                                                                                                                      /*Transform left hand*/
+                                                                                                                      child : new SFNode(
+                                                                                                                        new Shape({
+                                                                                                                          USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                                                                                new Shape({
+                                                                                                                  geometry : new SFNode(
+                                                                                                                    new LineSet({
+                                                                                                                      vertexCount : new MFInt32([2]),
+                                                                                                                      coord : new SFNode(
+                                                                                                                        new Coordinate({
+                                                                                                                          point : new MFVec3f([0.1984,0.8663,-0.0583,0.1811,0.6975,-0.0826])})),
+                                                                                                                      /*from l_radiocarpal to l_midcarpal_1 vertices 2*/
+                                                                                                                      color : new SFNode(
+                                                                                                                        new ColorRGBA({
+                                                                                                                          USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                                                                                                new Shape({
+                                                                                                                  geometry : new SFNode(
+                                                                                                                    new LineSet({
+                                                                                                                      vertexCount : new MFInt32([2]),
+                                                                                                                      coord : new SFNode(
+                                                                                                                        new Coordinate({
+                                                                                                                          point : new MFVec3f([0.1984,0.8663,-0.0583,0.1811,0.6984,-0.0935])})),
+                                                                                                                      /*from l_radiocarpal to l_midcarpal_2 vertices 2*/
+                                                                                                                      color : new SFNode(
+                                                                                                                        new ColorRGBA({
+                                                                                                                          USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                                                                                                new Shape({
+                                                                                                                  geometry : new SFNode(
+                                                                                                                    new LineSet({
+                                                                                                                      vertexCount : new MFInt32([2]),
+                                                                                                                      coord : new SFNode(
+                                                                                                                        new Coordinate({
+                                                                                                                          point : new MFVec3f([0.1984,0.8663,-0.0583,0.1809,0.7,-0.1067])})),
+                                                                                                                      /*from l_radiocarpal to l_midcarpal_3 vertices 2*/
+                                                                                                                      color : new SFNode(
+                                                                                                                        new ColorRGBA({
+                                                                                                                          USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                                                                                                new Shape({
+                                                                                                                  geometry : new SFNode(
+                                                                                                                    new LineSet({
+                                                                                                                      vertexCount : new MFInt32([2]),
+                                                                                                                      coord : new SFNode(
+                                                                                                                        new Coordinate({
+                                                                                                                          point : new MFVec3f([0.1984,0.8663,-0.0583,0.1809,0.6973,-0.1276])})),
+                                                                                                                      /*from l_radiocarpal to l_midcarpal_4_5 vertices 2*/
+                                                                                                                      color : new SFNode(
+                                                                                                                        new ColorRGBA({
+                                                                                                                          USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+
+                                                                                                            new HAnimJoint({
+                                                                                                              name : new SFString("l_midcarpal_1"),
+                                                                                                              DEF : new SFString("hanim_l_midcarpal_1"),
+                                                                                                              center : new SFVec3f([0.1811,0.6975,-0.0826]),
+                                                                                                              ulimit : new MFFloat([0,0,0]),
+                                                                                                              llimit : new MFFloat([0,0,0]),
+                                                                                                              children : new MFNode([
+                                                                                                                new HAnimSegment({
+                                                                                                                  name : new SFString("l_trapezium"),
+                                                                                                                  DEF : new SFString("hanim_l_trapezium"),
+                                                                                                                  children : new MFNode([
+                                                                                                                    new Transform({
+                                                                                                                      translation : new SFVec3f([0.1811,0.6975,-0.0826]),
+                                                                                                                      children : new MFNode([
+                                                                                                                        new Transform({
+                                                                                                                          /*Empty Transform*/
+                                                                                                                          child : new SFNode(
+                                                                                                                            new Shape({
+                                                                                                                              USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                                                                                    new Shape({
+                                                                                                                      geometry : new SFNode(
+                                                                                                                        new LineSet({
+                                                                                                                          vertexCount : new MFInt32([2]),
+                                                                                                                          coord : new SFNode(
+                                                                                                                            new Coordinate({
+                                                                                                                              point : new MFVec3f([0.1811,0.6975,-0.0826,0.1924,0.8472,-0.0534])})),
+                                                                                                                          /*from l_midcarpal_1 to l_carpometacarpal_1 vertices 2*/
+                                                                                                                          color : new SFNode(
+                                                                                                                            new ColorRGBA({
+                                                                                                                              USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+
+                                                                                                                new HAnimJoint({
+                                                                                                                  name : new SFString("l_carpometacarpal_1"),
+                                                                                                                  DEF : new SFString("hanim_l_carpometacarpal_1"),
+                                                                                                                  center : new SFVec3f([0.1924,0.8472,-0.0534]),
+                                                                                                                  ulimit : new MFFloat([0,0,0]),
+                                                                                                                  llimit : new MFFloat([0,0,0]),
+                                                                                                                  children : new MFNode([
+                                                                                                                    new HAnimSegment({
+                                                                                                                      name : new SFString("l_metacarpal_1"),
+                                                                                                                      DEF : new SFString("hanim_l_metacarpal_1"),
+                                                                                                                      children : new MFNode([
+                                                                                                                        new Transform({
+                                                                                                                          translation : new SFVec3f([0.1924,0.8472,-0.0534]),
+                                                                                                                          children : new MFNode([
+                                                                                                                            new Transform({
+                                                                                                                              /*Empty Transform*/
+                                                                                                                              child : new SFNode(
+                                                                                                                                new Shape({
+                                                                                                                                  USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                                                                                        new Shape({
+                                                                                                                          geometry : new SFNode(
+                                                                                                                            new LineSet({
+                                                                                                                              vertexCount : new MFInt32([2]),
+                                                                                                                              coord : new SFNode(
+                                                                                                                                new Coordinate({
+                                                                                                                                  point : new MFVec3f([0.1924,0.8472,-0.0534,0.1951,0.8226,0.0246])})),
+                                                                                                                              /*from l_carpometacarpal_1 to l_metacarpophalangeal_1 vertices 2*/
+                                                                                                                              color : new SFNode(
+                                                                                                                                new ColorRGBA({
+                                                                                                                                  USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+
+                                                                                                                    new HAnimJoint({
+                                                                                                                      name : new SFString("l_metacarpophalangeal_1"),
+                                                                                                                      DEF : new SFString("hanim_l_metacarpophalangeal_1"),
+                                                                                                                      center : new SFVec3f([0.1951,0.8226,0.0246]),
+                                                                                                                      ulimit : new MFFloat([0,0,0]),
+                                                                                                                      llimit : new MFFloat([0,0,0]),
+                                                                                                                      children : new MFNode([
+                                                                                                                        new HAnimSegment({
+                                                                                                                          name : new SFString("l_carpal_proximal_phalanx_1"),
+                                                                                                                          DEF : new SFString("hanim_l_carpal_proximal_phalanx_1"),
+                                                                                                                          children : new MFNode([
+                                                                                                                            new Transform({
+                                                                                                                              translation : new SFVec3f([0.1951,0.8226,0.0246]),
+                                                                                                                              children : new MFNode([
+                                                                                                                                new Transform({
+                                                                                                                                  /*Empty Transform*/
+                                                                                                                                  child : new SFNode(
+                                                                                                                                    new Shape({
+                                                                                                                                      USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                                                                                            new Shape({
+                                                                                                                              geometry : new SFNode(
+                                                                                                                                new LineSet({
+                                                                                                                                  vertexCount : new MFInt32([2]),
+                                                                                                                                  coord : new SFNode(
+                                                                                                                                    new Coordinate({
+                                                                                                                                      point : new MFVec3f([0.1951,0.8226,0.0246,0.1955,0.8159,0.0464])})),
+                                                                                                                                  /*from l_metacarpophalangeal_1 to l_carpal_interphalangeal_1 vertices 2*/
+                                                                                                                                  color : new SFNode(
+                                                                                                                                    new ColorRGBA({
+                                                                                                                                      USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                                                                                                            new HAnimSite({
+                                                                                                                              name : new SFString("l_carpal_distal_phalanx_1_tip"),
+                                                                                                                              DEF : new SFString("hanim_l_carpal_distal_phalanx_1_tip"),
+                                                                                                                              children : new MFNode([
+                                                                                                                                new TouchSensor({
+                                                                                                                                  description : new SFString("HAnimSite l_carpal_distal_phalanx_1_tip")}),
+
+                                                                                                                                new Shape({
+                                                                                                                                  USE : new SFString("HAnimSiteShape")})])})])}),
+
+                                                                                                                        new HAnimJoint({
+                                                                                                                          name : new SFString("l_carpal_interphalangeal_1"),
+                                                                                                                          DEF : new SFString("hanim_l_carpal_interphalangeal_1"),
+                                                                                                                          center : new SFVec3f([0.1955,0.8159,0.0464]),
+                                                                                                                          ulimit : new MFFloat([0,0,0]),
+                                                                                                                          llimit : new MFFloat([0,0,0])})])})])})])}),
+
+                                                                                                            new HAnimJoint({
+                                                                                                              name : new SFString("l_midcarpal_2"),
+                                                                                                              DEF : new SFString("hanim_l_midcarpal_2"),
+                                                                                                              center : new SFVec3f([0.1811,0.6984,-0.0935]),
+                                                                                                              ulimit : new MFFloat([0,0,0]),
+                                                                                                              llimit : new MFFloat([0,0,0]),
+                                                                                                              children : new MFNode([
+                                                                                                                new HAnimSegment({
+                                                                                                                  name : new SFString("l_trapezoid"),
+                                                                                                                  DEF : new SFString("hanim_l_trapezoid"),
+                                                                                                                  children : new MFNode([
+                                                                                                                    new Transform({
+                                                                                                                      translation : new SFVec3f([0.1811,0.6984,-0.0935]),
+                                                                                                                      children : new MFNode([
+                                                                                                                        new Transform({
+                                                                                                                          /*Empty Transform*/
+                                                                                                                          child : new SFNode(
+                                                                                                                            new Shape({
+                                                                                                                              USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                                                                                    new Shape({
+                                                                                                                      geometry : new SFNode(
+                                                                                                                        new LineSet({
+                                                                                                                          vertexCount : new MFInt32([2]),
+                                                                                                                          coord : new SFNode(
+                                                                                                                            new Coordinate({
+                                                                                                                              point : new MFVec3f([0.1811,0.6984,-0.0935,0.1983,0.8024,-0.028])})),
+                                                                                                                          /*from l_midcarpal_2 to l_carpometacarpal_2 vertices 2*/
+                                                                                                                          color : new SFNode(
+                                                                                                                            new ColorRGBA({
+                                                                                                                              USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                                                                                                    new HAnimSite({
+                                                                                                                      name : new SFString("l_metacarpal_phalanx_2"),
+                                                                                                                      DEF : new SFString("hanim_l_metacarpal_phalanx_2"),
+                                                                                                                      translation : new SFVec3f([0.2009,0.8139,-0.0237]),
+                                                                                                                      children : new MFNode([
+                                                                                                                        new TouchSensor({
+                                                                                                                          description : new SFString("HAnimSite l_metacarpal_phalanx_2")}),
+
+                                                                                                                        new Shape({
+                                                                                                                          USE : new SFString("HAnimSiteShape")})])})])}),
+
+                                                                                                                new HAnimJoint({
+                                                                                                                  name : new SFString("l_carpometacarpal_2"),
+                                                                                                                  DEF : new SFString("hanim_l_carpometacarpal_2"),
+                                                                                                                  center : new SFVec3f([0.1983,0.8024,-0.028]),
+                                                                                                                  ulimit : new MFFloat([0,0,0]),
+                                                                                                                  llimit : new MFFloat([0,0,0]),
+                                                                                                                  children : new MFNode([
+                                                                                                                    new HAnimSegment({
+                                                                                                                      name : new SFString("l_metacarpal_2"),
+                                                                                                                      DEF : new SFString("hanim_l_metacarpal_2"),
+                                                                                                                      children : new MFNode([
+                                                                                                                        new Transform({
+                                                                                                                          translation : new SFVec3f([0.1983,0.8024,-0.028]),
+                                                                                                                          children : new MFNode([
+                                                                                                                            new Transform({
+                                                                                                                              /*Empty Transform*/
+                                                                                                                              child : new SFNode(
+                                                                                                                                new Shape({
+                                                                                                                                  USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                                                                                        new Shape({
+                                                                                                                          geometry : new SFNode(
+                                                                                                                            new LineSet({
+                                                                                                                              vertexCount : new MFInt32([2]),
+                                                                                                                              coord : new SFNode(
+                                                                                                                                new Coordinate({
+                                                                                                                                  point : new MFVec3f([0.1983,0.8024,-0.028,0.1983,0.7815,-0.028])})),
+                                                                                                                              /*from l_carpometacarpal_2 to l_metacarpophalangeal_2 vertices 2*/
+                                                                                                                              color : new SFNode(
+                                                                                                                                new ColorRGBA({
+                                                                                                                                  USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+
+                                                                                                                    new HAnimJoint({
+                                                                                                                      name : new SFString("l_metacarpophalangeal_2"),
+                                                                                                                      DEF : new SFString("hanim_l_metacarpophalangeal_2"),
+                                                                                                                      center : new SFVec3f([0.1983,0.7815,-0.028]),
+                                                                                                                      ulimit : new MFFloat([0,0,0]),
+                                                                                                                      llimit : new MFFloat([0,0,0]),
+                                                                                                                      children : new MFNode([
+                                                                                                                        new HAnimSegment({
+                                                                                                                          name : new SFString("l_carpal_proximal_phalanx_2"),
+                                                                                                                          DEF : new SFString("hanim_l_carpal_proximal_phalanx_2"),
+                                                                                                                          children : new MFNode([
+                                                                                                                            new Transform({
+                                                                                                                              translation : new SFVec3f([0.1983,0.7815,-0.028]),
+                                                                                                                              children : new MFNode([
+                                                                                                                                new Transform({
+                                                                                                                                  /*Empty Transform*/
+                                                                                                                                  child : new SFNode(
+                                                                                                                                    new Shape({
+                                                                                                                                      USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                                                                                            new Shape({
+                                                                                                                              geometry : new SFNode(
+                                                                                                                                new LineSet({
+                                                                                                                                  vertexCount : new MFInt32([2]),
+                                                                                                                                  coord : new SFNode(
+                                                                                                                                    new Coordinate({
+                                                                                                                                      point : new MFVec3f([0.1983,0.7815,-0.028,0.2017,0.7363,-0.0248])})),
+                                                                                                                                  /*from l_metacarpophalangeal_2 to l_carpal_proximal_interphalangeal_2 vertices 2*/
+                                                                                                                                  color : new SFNode(
+                                                                                                                                    new ColorRGBA({
+                                                                                                                                      USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+
+                                                                                                                        new HAnimJoint({
+                                                                                                                          name : new SFString("l_carpal_proximal_interphalangeal_2"),
+                                                                                                                          DEF : new SFString("hanim_l_carpal_proximal_interphalangeal_2"),
+                                                                                                                          center : new SFVec3f([0.2017,0.7363,-0.0248]),
+                                                                                                                          ulimit : new MFFloat([0,0,0]),
+                                                                                                                          llimit : new MFFloat([0,0,0]),
+                                                                                                                          children : new MFNode([
+                                                                                                                            new HAnimSegment({
+                                                                                                                              name : new SFString("l_carpal_middle_phalanx_2"),
+                                                                                                                              DEF : new SFString("hanim_l_carpal_middle_phalanx_2"),
+                                                                                                                              children : new MFNode([
+                                                                                                                                new Transform({
+                                                                                                                                  translation : new SFVec3f([0.2017,0.7363,-0.0248]),
+                                                                                                                                  children : new MFNode([
+                                                                                                                                    new Transform({
+                                                                                                                                      /*Empty Transform*/
+                                                                                                                                      child : new SFNode(
+                                                                                                                                        new Shape({
+                                                                                                                                          USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                                                                                                new Shape({
+                                                                                                                                  geometry : new SFNode(
+                                                                                                                                    new LineSet({
+                                                                                                                                      vertexCount : new MFInt32([2]),
+                                                                                                                                      coord : new SFNode(
+                                                                                                                                        new Coordinate({
+                                                                                                                                          point : new MFVec3f([0.2017,0.7363,-0.0248,0.2028,0.7139,-0.0236])})),
+                                                                                                                                      /*from l_carpal_proximal_interphalangeal_2 to l_carpal_distal_interphalangeal_2 vertices 2*/
+                                                                                                                                      color : new SFNode(
+                                                                                                                                        new ColorRGBA({
+                                                                                                                                          USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                                                                                                                new HAnimSite({
+                                                                                                                                  name : new SFString("l_carpal_distal_phalanx_2_tip"),
+                                                                                                                                  DEF : new SFString("hanim_l_carpal_distal_phalanx_2_tip"),
+                                                                                                                                  children : new MFNode([
+                                                                                                                                    new TouchSensor({
+                                                                                                                                      description : new SFString("HAnimSite l_carpal_distal_phalanx_2_tip")}),
+
+                                                                                                                                    new Shape({
+                                                                                                                                      USE : new SFString("HAnimSiteShape")})])}),
+
+                                                                                                                                new HAnimSite({
+                                                                                                                                  name : new SFString("l_dactylion"),
+                                                                                                                                  DEF : new SFString("hanim_l_dactylion"),
+                                                                                                                                  translation : new SFVec3f([0.2056,0.6743,-0.0482]),
+                                                                                                                                  children : new MFNode([
+                                                                                                                                    new TouchSensor({
+                                                                                                                                      description : new SFString("HAnimSite l_dactylion")}),
+
+                                                                                                                                    new Shape({
+                                                                                                                                      USE : new SFString("HAnimSiteShape")})])})])}),
+
+                                                                                                                            new HAnimJoint({
+                                                                                                                              name : new SFString("l_carpal_distal_interphalangeal_2"),
+                                                                                                                              DEF : new SFString("hanim_l_carpal_distal_interphalangeal_2"),
+                                                                                                                              center : new SFVec3f([0.2028,0.7139,-0.0236]),
+                                                                                                                              ulimit : new MFFloat([0,0,0]),
+                                                                                                                              llimit : new MFFloat([0,0,0])})])})])})])})])}),
+
+                                                                                                            new HAnimJoint({
+                                                                                                              name : new SFString("l_midcarpal_3"),
+                                                                                                              DEF : new SFString("hanim_l_midcarpal_3"),
+                                                                                                              center : new SFVec3f([0.1809,0.7,-0.1067]),
+                                                                                                              ulimit : new MFFloat([0,0,0]),
+                                                                                                              llimit : new MFFloat([0,0,0]),
+                                                                                                              children : new MFNode([
+                                                                                                                new HAnimSegment({
+                                                                                                                  name : new SFString("l_capitate"),
+                                                                                                                  DEF : new SFString("hanim_l_capitate"),
+                                                                                                                  children : new MFNode([
+                                                                                                                    new Transform({
+                                                                                                                      translation : new SFVec3f([0.1809,0.7,-0.1067]),
+                                                                                                                      children : new MFNode([
+                                                                                                                        new Transform({
+                                                                                                                          /*Empty Transform*/
+                                                                                                                          child : new SFNode(
+                                                                                                                            new Shape({
+                                                                                                                              USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                                                                                    new Shape({
+                                                                                                                      geometry : new SFNode(
+                                                                                                                        new LineSet({
+                                                                                                                          vertexCount : new MFInt32([2]),
+                                                                                                                          coord : new SFNode(
+                                                                                                                            new Coordinate({
+                                                                                                                              point : new MFVec3f([0.1809,0.7,-0.1067,0.1987,0.8029,-0.053])})),
+                                                                                                                          /*from l_midcarpal_3 to l_carpometacarpal_3 vertices 2*/
+                                                                                                                          color : new SFNode(
+                                                                                                                            new ColorRGBA({
+                                                                                                                              USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                                                                                                    new HAnimSite({
+                                                                                                                      name : new SFString("l_metacarpal_phalanx_3"),
+                                                                                                                      DEF : new SFString("hanim_l_metacarpal_phalanx_3"),
+                                                                                                                      children : new MFNode([
+                                                                                                                        new TouchSensor({
+                                                                                                                          description : new SFString("HAnimSite l_metacarpal_phalanx_3")}),
+
+                                                                                                                        new Shape({
+                                                                                                                          USE : new SFString("HAnimSiteShape")})])})])}),
+
+                                                                                                                new HAnimJoint({
+                                                                                                                  name : new SFString("l_carpometacarpal_3"),
+                                                                                                                  DEF : new SFString("hanim_l_carpometacarpal_3"),
+                                                                                                                  center : new SFVec3f([0.1987,0.8029,-0.053]),
+                                                                                                                  ulimit : new MFFloat([0,0,0]),
+                                                                                                                  llimit : new MFFloat([0,0,0]),
+                                                                                                                  children : new MFNode([
+                                                                                                                    new HAnimSegment({
+                                                                                                                      name : new SFString("l_metacarpal_3"),
+                                                                                                                      DEF : new SFString("hanim_l_metacarpal_3"),
+                                                                                                                      children : new MFNode([
+                                                                                                                        new Transform({
+                                                                                                                          translation : new SFVec3f([0.1987,0.8029,-0.053]),
+                                                                                                                          children : new MFNode([
+                                                                                                                            new Transform({
+                                                                                                                              /*Empty Transform*/
+                                                                                                                              child : new SFNode(
+                                                                                                                                new Shape({
+                                                                                                                                  USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                                                                                        new Shape({
+                                                                                                                          geometry : new SFNode(
+                                                                                                                            new LineSet({
+                                                                                                                              vertexCount : new MFInt32([2]),
+                                                                                                                              coord : new SFNode(
+                                                                                                                                new Coordinate({
+                                                                                                                                  point : new MFVec3f([0.1987,0.8029,-0.053,0.1987,0.7818,-0.053])})),
+                                                                                                                              /*from l_carpometacarpal_3 to l_metacarpophalangeal_3 vertices 2*/
+                                                                                                                              color : new SFNode(
+                                                                                                                                new ColorRGBA({
+                                                                                                                                  USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+
+                                                                                                                    new HAnimJoint({
+                                                                                                                      name : new SFString("l_metacarpophalangeal_3"),
+                                                                                                                      DEF : new SFString("hanim_l_metacarpophalangeal_3"),
+                                                                                                                      center : new SFVec3f([0.1987,0.7818,-0.053]),
+                                                                                                                      ulimit : new MFFloat([0,0,0]),
+                                                                                                                      llimit : new MFFloat([0,0,0]),
+                                                                                                                      children : new MFNode([
+                                                                                                                        new HAnimSegment({
+                                                                                                                          name : new SFString("l_carpal_proximal_phalanx_3"),
+                                                                                                                          DEF : new SFString("hanim_l_carpal_proximal_phalanx_3"),
+                                                                                                                          children : new MFNode([
+                                                                                                                            new Transform({
+                                                                                                                              translation : new SFVec3f([0.1987,0.7818,-0.053]),
+                                                                                                                              children : new MFNode([
+                                                                                                                                new Transform({
+                                                                                                                                  /*Empty Transform*/
+                                                                                                                                  child : new SFNode(
+                                                                                                                                    new Shape({
+                                                                                                                                      USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                                                                                            new Shape({
+                                                                                                                              geometry : new SFNode(
+                                                                                                                                new LineSet({
+                                                                                                                                  vertexCount : new MFInt32([2]),
+                                                                                                                                  coord : new SFNode(
+                                                                                                                                    new Coordinate({
+                                                                                                                                      point : new MFVec3f([0.1987,0.7818,-0.053,0.2013,0.7273,-0.0503])})),
+                                                                                                                                  /*from l_metacarpophalangeal_3 to l_carpal_proximal_interphalangeal_3 vertices 2*/
+                                                                                                                                  color : new SFNode(
+                                                                                                                                    new ColorRGBA({
+                                                                                                                                      USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+
+                                                                                                                        new HAnimJoint({
+                                                                                                                          name : new SFString("l_carpal_proximal_interphalangeal_3"),
+                                                                                                                          DEF : new SFString("hanim_l_carpal_proximal_interphalangeal_3"),
+                                                                                                                          center : new SFVec3f([0.2013,0.7273,-0.0503]),
+                                                                                                                          ulimit : new MFFloat([0,0,0]),
+                                                                                                                          llimit : new MFFloat([0,0,0]),
+                                                                                                                          children : new MFNode([
+                                                                                                                            new HAnimSegment({
+                                                                                                                              name : new SFString("l_carpal_middle_phalanx_3"),
+                                                                                                                              DEF : new SFString("hanim_l_carpal_middle_phalanx_3"),
+                                                                                                                              children : new MFNode([
+                                                                                                                                new Transform({
+                                                                                                                                  translation : new SFVec3f([0.2013,0.7273,-0.0503]),
+                                                                                                                                  children : new MFNode([
+                                                                                                                                    new Transform({
+                                                                                                                                      /*Empty Transform*/
+                                                                                                                                      child : new SFNode(
+                                                                                                                                        new Shape({
+                                                                                                                                          USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                                                                                                new Shape({
+                                                                                                                                  geometry : new SFNode(
+                                                                                                                                    new LineSet({
+                                                                                                                                      vertexCount : new MFInt32([2]),
+                                                                                                                                      coord : new SFNode(
+                                                                                                                                        new Coordinate({
+                                                                                                                                          point : new MFVec3f([0.2013,0.7273,-0.0503,0.2026,0.7011,-0.0494])})),
+                                                                                                                                      /*from l_carpal_proximal_interphalangeal_3 to l_carpal_distal_interphalangeal_3 vertices 2*/
+                                                                                                                                      color : new SFNode(
+                                                                                                                                        new ColorRGBA({
+                                                                                                                                          USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                                                                                                                new HAnimSite({
+                                                                                                                                  name : new SFString("l_carpal_distal_phalanx_3_tip"),
+                                                                                                                                  DEF : new SFString("hanim_l_carpal_distal_phalanx_3_tip"),
+                                                                                                                                  children : new MFNode([
+                                                                                                                                    new TouchSensor({
+                                                                                                                                      description : new SFString("HAnimSite l_carpal_distal_phalanx_3_tip")}),
+
+                                                                                                                                    new Shape({
+                                                                                                                                      USE : new SFString("HAnimSiteShape")})])})])}),
+
+                                                                                                                            new HAnimJoint({
+                                                                                                                              name : new SFString("l_carpal_distal_interphalangeal_3"),
+                                                                                                                              DEF : new SFString("hanim_l_carpal_distal_interphalangeal_3"),
+                                                                                                                              center : new SFVec3f([0.2026,0.7011,-0.0494]),
+                                                                                                                              ulimit : new MFFloat([0,0,0]),
+                                                                                                                              llimit : new MFFloat([0,0,0])})])})])})])})])}),
+
+                                                                                                            new HAnimJoint({
+                                                                                                              name : new SFString("l_midcarpal_4_5"),
+                                                                                                              DEF : new SFString("hanim_l_midcarpal_4_5"),
+                                                                                                              center : new SFVec3f([0.1809,0.6973,-0.1276]),
+                                                                                                              ulimit : new MFFloat([0,0,0]),
+                                                                                                              llimit : new MFFloat([0,0,0]),
+                                                                                                              children : new MFNode([
+                                                                                                                new HAnimSegment({
+                                                                                                                  name : new SFString("l_hamate"),
+                                                                                                                  DEF : new SFString("hanim_l_hamate"),
+                                                                                                                  children : new MFNode([
+                                                                                                                    new Transform({
+                                                                                                                      translation : new SFVec3f([0.1809,0.6973,-0.1276]),
+                                                                                                                      children : new MFNode([
+                                                                                                                        new Transform({
+                                                                                                                          /*Empty Transform*/
+                                                                                                                          child : new SFNode(
+                                                                                                                            new Shape({
+                                                                                                                              USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                                                                                    new Shape({
+                                                                                                                      geometry : new SFNode(
+                                                                                                                        new LineSet({
+                                                                                                                          vertexCount : new MFInt32([2]),
+                                                                                                                          coord : new SFNode(
+                                                                                                                            new Coordinate({
+                                                                                                                              point : new MFVec3f([0.1809,0.6973,-0.1276,0.1956,0.8019,-0.0794])})),
+                                                                                                                          /*from l_midcarpal_4_5 to l_carpometacarpal_4 vertices 2*/
+                                                                                                                          color : new SFNode(
+                                                                                                                            new ColorRGBA({
+                                                                                                                              USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                                                                                                    new Shape({
+                                                                                                                      geometry : new SFNode(
+                                                                                                                        new LineSet({
+                                                                                                                          vertexCount : new MFInt32([2]),
+                                                                                                                          coord : new SFNode(
+                                                                                                                            new Coordinate({
+                                                                                                                              point : new MFVec3f([0.1809,0.6973,-0.1276,0.1925,0.8066,-0.1036])})),
+                                                                                                                          /*from l_midcarpal_4_5 to l_carpometacarpal_5 vertices 2*/
+                                                                                                                          color : new SFNode(
+                                                                                                                            new ColorRGBA({
+                                                                                                                              USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                                                                                                    new HAnimSite({
+                                                                                                                      name : new SFString("l_metacarpal_phalanx_5"),
+                                                                                                                      DEF : new SFString("hanim_l_metacarpal_phalanx_5"),
+                                                                                                                      translation : new SFVec3f([0.1929,0.786,-0.1122]),
+                                                                                                                      children : new MFNode([
+                                                                                                                        new TouchSensor({
+                                                                                                                          description : new SFString("HAnimSite l_metacarpal_phalanx_5")}),
+
+                                                                                                                        new Shape({
+                                                                                                                          USE : new SFString("HAnimSiteShape")})])})])}),
+
+                                                                                                                new HAnimJoint({
+                                                                                                                  name : new SFString("l_carpometacarpal_4"),
+                                                                                                                  DEF : new SFString("hanim_l_carpometacarpal_4"),
+                                                                                                                  center : new SFVec3f([0.1956,0.8019,-0.0794]),
+                                                                                                                  ulimit : new MFFloat([0,0,0]),
+                                                                                                                  llimit : new MFFloat([0,0,0]),
+                                                                                                                  children : new MFNode([
+                                                                                                                    new HAnimSegment({
+                                                                                                                      name : new SFString("l_metacarpal_4"),
+                                                                                                                      DEF : new SFString("hanim_l_metacarpal_4"),
+                                                                                                                      children : new MFNode([
+                                                                                                                        new Transform({
+                                                                                                                          translation : new SFVec3f([0.1956,0.8019,-0.0794]),
+                                                                                                                          children : new MFNode([
+                                                                                                                            new Transform({
+                                                                                                                              /*Empty Transform*/
+                                                                                                                              child : new SFNode(
+                                                                                                                                new Shape({
+                                                                                                                                  USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                                                                                        new Shape({
+                                                                                                                          geometry : new SFNode(
+                                                                                                                            new LineSet({
+                                                                                                                              vertexCount : new MFInt32([2]),
+                                                                                                                              coord : new SFNode(
+                                                                                                                                new Coordinate({
+                                                                                                                                  point : new MFVec3f([0.1956,0.8019,-0.0794,0.1956,0.7815,-0.0794])})),
+                                                                                                                              /*from l_carpometacarpal_4 to l_metacarpophalangeal_4 vertices 2*/
+                                                                                                                              color : new SFNode(
+                                                                                                                                new ColorRGBA({
+                                                                                                                                  USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+
+                                                                                                                    new HAnimJoint({
+                                                                                                                      name : new SFString("l_metacarpophalangeal_4"),
+                                                                                                                      DEF : new SFString("hanim_l_metacarpophalangeal_4"),
+                                                                                                                      center : new SFVec3f([0.1956,0.7815,-0.0794]),
+                                                                                                                      ulimit : new MFFloat([0,0,0]),
+                                                                                                                      llimit : new MFFloat([0,0,0]),
+                                                                                                                      children : new MFNode([
+                                                                                                                        new HAnimSegment({
+                                                                                                                          name : new SFString("l_carpal_proximal_phalanx_4"),
+                                                                                                                          DEF : new SFString("hanim_l_carpal_proximal_phalanx_4"),
+                                                                                                                          children : new MFNode([
+                                                                                                                            new Transform({
+                                                                                                                              translation : new SFVec3f([0.1956,0.7815,-0.0794]),
+                                                                                                                              children : new MFNode([
+                                                                                                                                new Transform({
+                                                                                                                                  /*Empty Transform*/
+                                                                                                                                  child : new SFNode(
+                                                                                                                                    new Shape({
+                                                                                                                                      USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                                                                                            new Shape({
+                                                                                                                              geometry : new SFNode(
+                                                                                                                                new LineSet({
+                                                                                                                                  vertexCount : new MFInt32([2]),
+                                                                                                                                  coord : new SFNode(
+                                                                                                                                    new Coordinate({
+                                                                                                                                      point : new MFVec3f([0.1956,0.7815,-0.0794,0.1973,0.7287,-0.0777])})),
+                                                                                                                                  /*from l_metacarpophalangeal_4 to l_carpal_proximal_interphalangeal_4 vertices 2*/
+                                                                                                                                  color : new SFNode(
+                                                                                                                                    new ColorRGBA({
+                                                                                                                                      USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+
+                                                                                                                        new HAnimJoint({
+                                                                                                                          name : new SFString("l_carpal_proximal_interphalangeal_4"),
+                                                                                                                          DEF : new SFString("hanim_l_carpal_proximal_interphalangeal_4"),
+                                                                                                                          center : new SFVec3f([0.1973,0.7287,-0.0777]),
+                                                                                                                          ulimit : new MFFloat([0,0,0]),
+                                                                                                                          llimit : new MFFloat([0,0,0]),
+                                                                                                                          children : new MFNode([
+                                                                                                                            new HAnimSegment({
+                                                                                                                              name : new SFString("l_carpal_middle_phalanx_4"),
+                                                                                                                              DEF : new SFString("hanim_l_carpal_middle_phalanx_4"),
+                                                                                                                              children : new MFNode([
+                                                                                                                                new Transform({
+                                                                                                                                  translation : new SFVec3f([0.1973,0.7287,-0.0777]),
+                                                                                                                                  children : new MFNode([
+                                                                                                                                    new Transform({
+                                                                                                                                      /*Empty Transform*/
+                                                                                                                                      child : new SFNode(
+                                                                                                                                        new Shape({
+                                                                                                                                          USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                                                                                                new Shape({
+                                                                                                                                  geometry : new SFNode(
+                                                                                                                                    new LineSet({
+                                                                                                                                      vertexCount : new MFInt32([2]),
+                                                                                                                                      coord : new SFNode(
+                                                                                                                                        new Coordinate({
+                                                                                                                                          point : new MFVec3f([0.1973,0.7287,-0.0777,0.1983,0.7045,-0.0767])})),
+                                                                                                                                      /*from l_carpal_proximal_interphalangeal_4 to l_carpal_distal_interphalangeal_4 vertices 2*/
+                                                                                                                                      color : new SFNode(
+                                                                                                                                        new ColorRGBA({
+                                                                                                                                          USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                                                                                                                new HAnimSite({
+                                                                                                                                  name : new SFString("l_carpal_distal_phalanx_4_tip"),
+                                                                                                                                  DEF : new SFString("hanim_l_carpal_distal_phalanx_4_tip"),
+                                                                                                                                  children : new MFNode([
+                                                                                                                                    new TouchSensor({
+                                                                                                                                      description : new SFString("HAnimSite l_carpal_distal_phalanx_4_tip")}),
+
+                                                                                                                                    new Shape({
+                                                                                                                                      USE : new SFString("HAnimSiteShape")})])})])}),
+
+                                                                                                                            new HAnimJoint({
+                                                                                                                              name : new SFString("l_carpal_distal_interphalangeal_4"),
+                                                                                                                              DEF : new SFString("hanim_l_carpal_distal_interphalangeal_4"),
+                                                                                                                              center : new SFVec3f([0.1983,0.7045,-0.0767]),
+                                                                                                                              ulimit : new MFFloat([0,0,0]),
+                                                                                                                              llimit : new MFFloat([0,0,0])})])})])})])}),
+
+                                                                                                                new HAnimJoint({
+                                                                                                                  name : new SFString("l_carpometacarpal_5"),
+                                                                                                                  DEF : new SFString("hanim_l_carpometacarpal_5"),
+                                                                                                                  center : new SFVec3f([0.1925,0.8066,-0.1036]),
+                                                                                                                  ulimit : new MFFloat([0,0,0]),
+                                                                                                                  llimit : new MFFloat([0,0,0]),
+                                                                                                                  children : new MFNode([
+                                                                                                                    new HAnimSegment({
+                                                                                                                      name : new SFString("l_metacarpal_5"),
+                                                                                                                      DEF : new SFString("hanim_l_metacarpal_5"),
+                                                                                                                      children : new MFNode([
+                                                                                                                        new Transform({
+                                                                                                                          translation : new SFVec3f([0.1925,0.8066,-0.1036]),
+                                                                                                                          children : new MFNode([
+                                                                                                                            new Transform({
+                                                                                                                              /*Empty Transform*/
+                                                                                                                              child : new SFNode(
+                                                                                                                                new Shape({
+                                                                                                                                  USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                                                                                        new Shape({
+                                                                                                                          geometry : new SFNode(
+                                                                                                                            new LineSet({
+                                                                                                                              vertexCount : new MFInt32([2]),
+                                                                                                                              coord : new SFNode(
+                                                                                                                                new Coordinate({
+                                                                                                                                  point : new MFVec3f([0.1925,0.8066,-0.1036,0.1925,0.7866,-0.1036])})),
+                                                                                                                              /*from l_carpometacarpal_5 to l_metacarpophalangeal_5 vertices 2*/
+                                                                                                                              color : new SFNode(
+                                                                                                                                new ColorRGBA({
+                                                                                                                                  USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+
+                                                                                                                    new HAnimJoint({
+                                                                                                                      name : new SFString("l_metacarpophalangeal_5"),
+                                                                                                                      DEF : new SFString("hanim_l_metacarpophalangeal_5"),
+                                                                                                                      center : new SFVec3f([0.1925,0.7866,-0.1036]),
+                                                                                                                      ulimit : new MFFloat([0,0,0]),
+                                                                                                                      llimit : new MFFloat([0,0,0]),
+                                                                                                                      children : new MFNode([
+                                                                                                                        new HAnimSegment({
+                                                                                                                          name : new SFString("l_carpal_proximal_phalanx_5"),
+                                                                                                                          DEF : new SFString("hanim_l_carpal_proximal_phalanx_5"),
+                                                                                                                          children : new MFNode([
+                                                                                                                            new Transform({
+                                                                                                                              translation : new SFVec3f([0.1925,0.7866,-0.1036]),
+                                                                                                                              children : new MFNode([
+                                                                                                                                new Transform({
+                                                                                                                                  /*Empty Transform*/
+                                                                                                                                  child : new SFNode(
+                                                                                                                                    new Shape({
+                                                                                                                                      USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                                                                                            new Shape({
+                                                                                                                              geometry : new SFNode(
+                                                                                                                                new LineSet({
+                                                                                                                                  vertexCount : new MFInt32([2]),
+                                                                                                                                  coord : new SFNode(
+                                                                                                                                    new Coordinate({
+                                                                                                                                      point : new MFVec3f([0.1925,0.7866,-0.1036,0.1938,0.7452,-0.1024])})),
+                                                                                                                                  /*from l_metacarpophalangeal_5 to l_carpal_proximal_interphalangeal_5 vertices 2*/
+                                                                                                                                  color : new SFNode(
+                                                                                                                                    new ColorRGBA({
+                                                                                                                                      USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+
+                                                                                                                        new HAnimJoint({
+                                                                                                                          name : new SFString("l_carpal_proximal_interphalangeal_5"),
+                                                                                                                          DEF : new SFString("hanim_l_carpal_proximal_interphalangeal_5"),
+                                                                                                                          center : new SFVec3f([0.1938,0.7452,-0.1024]),
+                                                                                                                          ulimit : new MFFloat([0,0,0]),
+                                                                                                                          llimit : new MFFloat([0,0,0]),
+                                                                                                                          children : new MFNode([
+                                                                                                                            new HAnimSegment({
+                                                                                                                              name : new SFString("l_carpal_middle_phalanx_5"),
+                                                                                                                              DEF : new SFString("hanim_l_carpal_middle_phalanx_5"),
+                                                                                                                              children : new MFNode([
+                                                                                                                                new Transform({
+                                                                                                                                  translation : new SFVec3f([0.1938,0.7452,-0.1024]),
+                                                                                                                                  children : new MFNode([
+                                                                                                                                    new Transform({
+                                                                                                                                      /*Empty Transform*/
+                                                                                                                                      child : new SFNode(
+                                                                                                                                        new Shape({
+                                                                                                                                          USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                                                                                                new Shape({
+                                                                                                                                  geometry : new SFNode(
+                                                                                                                                    new LineSet({
+                                                                                                                                      vertexCount : new MFInt32([2]),
+                                                                                                                                      coord : new SFNode(
+                                                                                                                                        new Coordinate({
+                                                                                                                                          point : new MFVec3f([0.1938,0.7452,-0.1024,0.1948,0.7277,-0.1017])})),
+                                                                                                                                      /*from l_carpal_proximal_interphalangeal_5 to l_carpal_distal_interphalangeal_5 vertices 2*/
+                                                                                                                                      color : new SFNode(
+                                                                                                                                        new ColorRGBA({
+                                                                                                                                          USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                                                                                                                new HAnimSite({
+                                                                                                                                  name : new SFString("l_carpal_distal_phalanx_5_tip"),
+                                                                                                                                  DEF : new SFString("hanim_l_carpal_distal_phalanx_5_tip"),
+                                                                                                                                  children : new MFNode([
+                                                                                                                                    new TouchSensor({
+                                                                                                                                      description : new SFString("HAnimSite l_carpal_distal_phalanx_5_tip")}),
+
+                                                                                                                                    new Shape({
+                                                                                                                                      USE : new SFString("HAnimSiteShape")})])})])}),
+
+                                                                                                                            new HAnimJoint({
+                                                                                                                              name : new SFString("l_carpal_distal_interphalangeal_5"),
+                                                                                                                              DEF : new SFString("hanim_l_carpal_distal_interphalangeal_5"),
+                                                                                                                              center : new SFVec3f([0.1948,0.7277,-0.1017]),
+                                                                                                                              ulimit : new MFFloat([0,0,0]),
+                                                                                                                              llimit : new MFFloat([0,0,0])})])})])})])})])})])})])})])})])})])}),
+
+                                                                                        new HAnimJoint({
+                                                                                          name : new SFString("r_sternoclavicular"),
+                                                                                          DEF : new SFString("hanim_r_sternoclavicular"),
+                                                                                          center : new SFVec3f([-0.0694,1.46,-0.033]),
+                                                                                          ulimit : new MFFloat([0,0,0]),
+                                                                                          llimit : new MFFloat([0,0,0]),
+                                                                                          children : new MFNode([
+                                                                                            new HAnimSegment({
+                                                                                              name : new SFString("r_clavicle"),
+                                                                                              DEF : new SFString("hanim_r_clavicle"),
+                                                                                              children : new MFNode([
+                                                                                                new Transform({
+                                                                                                  translation : new SFVec3f([-0.0694,1.46,-0.033]),
+                                                                                                  children : new MFNode([
+                                                                                                    new Transform({
+                                                                                                      /*Empty Transform*/
+                                                                                                      child : new SFNode(
+                                                                                                        new Shape({
+                                                                                                          USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                                                                new Shape({
+                                                                                                  geometry : new SFNode(
+                                                                                                    new LineSet({
+                                                                                                      vertexCount : new MFInt32([2]),
+                                                                                                      coord : new SFNode(
+                                                                                                        new Coordinate({
+                                                                                                          point : new MFVec3f([-0.0694,1.46,-0.033,-0.0836,1.4281,-0.0401])})),
+                                                                                                      /*from r_sternoclavicular to r_acromioclavicular vertices 2*/
+                                                                                                      color : new SFNode(
+                                                                                                        new ColorRGBA({
+                                                                                                          USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+
+                                                                                            new HAnimJoint({
+                                                                                              name : new SFString("r_acromioclavicular"),
+                                                                                              DEF : new SFString("hanim_r_acromioclavicular"),
+                                                                                              center : new SFVec3f([-0.0836,1.4281,-0.0401]),
+                                                                                              ulimit : new MFFloat([0,0,0]),
+                                                                                              llimit : new MFFloat([0,0,0]),
+                                                                                              children : new MFNode([
+                                                                                                new HAnimSegment({
+                                                                                                  name : new SFString("r_scapula"),
+                                                                                                  DEF : new SFString("hanim_r_scapula"),
+                                                                                                  children : new MFNode([
+                                                                                                    new Transform({
+                                                                                                      translation : new SFVec3f([-0.0836,1.4281,-0.0401]),
+                                                                                                      children : new MFNode([
+                                                                                                        new Transform({
+                                                                                                          /*Empty Transform*/
+                                                                                                          child : new SFNode(
+                                                                                                            new Shape({
+                                                                                                              USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                                                                    new Shape({
+                                                                                                      geometry : new SFNode(
+                                                                                                        new LineSet({
+                                                                                                          vertexCount : new MFInt32([2]),
+                                                                                                          coord : new SFNode(
+                                                                                                            new Coordinate({
+                                                                                                              point : new MFVec3f([-0.0836,1.4281,-0.0401,-0.1907,1.4407,-0.0325])})),
+                                                                                                          /*from r_acromioclavicular to r_shoulder vertices 2*/
+                                                                                                          color : new SFNode(
+                                                                                                            new ColorRGBA({
+                                                                                                              USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                                                                                    new HAnimSite({
+                                                                                                      name : new SFString("r_bideltoid"),
+                                                                                                      DEF : new SFString("hanim_r_bideltoid"),
+                                                                                                      children : new MFNode([
+                                                                                                        new TouchSensor({
+                                                                                                          description : new SFString("HAnimSite r_bideltoid")}),
+
+                                                                                                        new Shape({
+                                                                                                          USE : new SFString("HAnimSiteShape")})])}),
+
+                                                                                                    new HAnimSite({
+                                                                                                      name : new SFString("r_humeral_lateral_epicondyles"),
+                                                                                                      DEF : new SFString("hanim_r_humeral_lateral_epicondyles"),
+                                                                                                      translation : new SFVec3f([-0.2224,1.1517,-0.1033]),
+                                                                                                      children : new MFNode([
+                                                                                                        new TouchSensor({
+                                                                                                          description : new SFString("HAnimSite r_humeral_lateral_epicondyles")}),
+
+                                                                                                        new Shape({
+                                                                                                          USE : new SFString("HAnimSiteShape")})])})])}),
+
+                                                                                                new HAnimJoint({
+                                                                                                  name : new SFString("r_shoulder"),
+                                                                                                  DEF : new SFString("hanim_r_shoulder"),
+                                                                                                  center : new SFVec3f([-0.1907,1.4407,-0.0325]),
+                                                                                                  ulimit : new MFFloat([0,0,0]),
+                                                                                                  llimit : new MFFloat([0,0,0]),
+                                                                                                  children : new MFNode([
+                                                                                                    new HAnimSegment({
+                                                                                                      name : new SFString("r_upperarm"),
+                                                                                                      DEF : new SFString("hanim_r_upperarm"),
+                                                                                                      children : new MFNode([
+                                                                                                        new Transform({
+                                                                                                          translation : new SFVec3f([-0.1907,1.4407,-0.0325]),
+                                                                                                          children : new MFNode([
+                                                                                                            new Transform({
+                                                                                                              /*Empty Transform*/
+                                                                                                              child : new SFNode(
+                                                                                                                new Shape({
+                                                                                                                  USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                                                                        new Shape({
+                                                                                                          geometry : new SFNode(
+                                                                                                            new LineSet({
+                                                                                                              vertexCount : new MFInt32([2]),
+                                                                                                              coord : new SFNode(
+                                                                                                                new Coordinate({
+                                                                                                                  point : new MFVec3f([-0.1907,1.4407,-0.0325,-0.1949,1.1388,-0.062])})),
+                                                                                                              /*from r_shoulder to r_elbow vertices 2*/
+                                                                                                              color : new SFNode(
+                                                                                                                new ColorRGBA({
+                                                                                                                  USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                                                                                        new HAnimSite({
+                                                                                                          name : new SFString("r_humeral_medial_epicondyles"),
+                                                                                                          DEF : new SFString("hanim_r_humeral_medial_epicondyles"),
+                                                                                                          translation : new SFVec3f([-0.168,1.1298,-0.1062]),
+                                                                                                          children : new MFNode([
+                                                                                                            new TouchSensor({
+                                                                                                              description : new SFString("HAnimSite r_humeral_medial_epicondyles")}),
+
+                                                                                                            new Shape({
+                                                                                                              USE : new SFString("HAnimSiteShape")})])}),
+
+                                                                                                        new HAnimSite({
+                                                                                                          name : new SFString("r_olecranon"),
+                                                                                                          DEF : new SFString("hanim_r_olecranon"),
+                                                                                                          translation : new SFVec3f([-0.1907,1.1405,-0.1065]),
+                                                                                                          children : new MFNode([
+                                                                                                            new TouchSensor({
+                                                                                                              description : new SFString("HAnimSite r_olecranon")}),
+
+                                                                                                            new Shape({
+                                                                                                              USE : new SFString("HAnimSiteShape")})])}),
+
+                                                                                                        new HAnimSite({
+                                                                                                          name : new SFString("r_radial_styloid"),
+                                                                                                          DEF : new SFString("hanim_r_radial_styloid"),
+                                                                                                          translation : new SFVec3f([-0.1884,0.8676,-0.036]),
+                                                                                                          children : new MFNode([
+                                                                                                            new TouchSensor({
+                                                                                                              description : new SFString("HAnimSite r_radial_styloid")}),
+
+                                                                                                            new Shape({
+                                                                                                              USE : new SFString("HAnimSiteShape")})])}),
+
+                                                                                                        new HAnimSite({
+                                                                                                          name : new SFString("r_radiale"),
+                                                                                                          DEF : new SFString("hanim_r_radiale"),
+                                                                                                          translation : new SFVec3f([-0.213,1.1305,-0.1091]),
+                                                                                                          children : new MFNode([
+                                                                                                            new TouchSensor({
+                                                                                                              description : new SFString("HAnimSite r_radiale")}),
+
+                                                                                                            new Shape({
+                                                                                                              USE : new SFString("HAnimSiteShape")})])})])}),
+
+                                                                                                    new HAnimJoint({
+                                                                                                      name : new SFString("r_elbow"),
+                                                                                                      DEF : new SFString("hanim_r_elbow"),
+                                                                                                      center : new SFVec3f([-0.1949,1.1388,-0.062]),
+                                                                                                      ulimit : new MFFloat([0,0,0]),
+                                                                                                      llimit : new MFFloat([0,0,0]),
+                                                                                                      children : new MFNode([
+                                                                                                        new HAnimSegment({
+                                                                                                          name : new SFString("r_forearm"),
+                                                                                                          DEF : new SFString("hanim_r_forearm"),
+                                                                                                          children : new MFNode([
+                                                                                                            new Transform({
+                                                                                                              translation : new SFVec3f([-0.1949,1.1388,-0.062]),
+                                                                                                              children : new MFNode([
+                                                                                                                new Transform({
+                                                                                                                  /*Empty Transform*/
+                                                                                                                  child : new SFNode(
+                                                                                                                    new Shape({
+                                                                                                                      USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                                                                            new Shape({
+                                                                                                              geometry : new SFNode(
+                                                                                                                new LineSet({
+                                                                                                                  vertexCount : new MFInt32([2]),
+                                                                                                                  coord : new SFNode(
+                                                                                                                    new Coordinate({
+                                                                                                                      point : new MFVec3f([-0.1949,1.1388,-0.062,-0.1959,0.8694,-0.0521])})),
+                                                                                                                  /*from r_elbow to r_radiocarpal vertices 2*/
+                                                                                                                  color : new SFNode(
+                                                                                                                    new ColorRGBA({
+                                                                                                                      USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                                                                                            new HAnimSite({
+                                                                                                              name : new SFString("r_ulnar_styloid"),
+                                                                                                              DEF : new SFString("hanim_r_ulnar_styloid"),
+                                                                                                              translation : new SFVec3f([-0.2117,0.8562,-0.0584]),
+                                                                                                              children : new MFNode([
+                                                                                                                new TouchSensor({
+                                                                                                                  description : new SFString("HAnimSite r_ulnar_styloid")}),
+
+                                                                                                                new Shape({
+                                                                                                                  USE : new SFString("HAnimSiteShape")})])})])}),
+
+                                                                                                        new HAnimJoint({
+                                                                                                          name : new SFString("r_radiocarpal"),
+                                                                                                          DEF : new SFString("hanim_r_radiocarpal"),
+                                                                                                          center : new SFVec3f([-0.1959,0.8694,-0.0521]),
+                                                                                                          ulimit : new MFFloat([0,0,0]),
+                                                                                                          llimit : new MFFloat([0,0,0]),
+                                                                                                          children : new MFNode([
+                                                                                                            new HAnimSegment({
+                                                                                                              name : new SFString("r_carpal"),
+                                                                                                              DEF : new SFString("hanim_r_carpal"),
+                                                                                                              children : new MFNode([
+                                                                                                                new Transform({
+                                                                                                                  scale : new SFVec3f([0.2,0.2,0.2]),
+                                                                                                                  translation : new SFVec3f([-0.2,0.85,-0.05]),
+                                                                                                                  rotation : new SFRotation([0,0,1,-3.14]),
+                                                                                                                  /*Transform right hand*/
+                                                                                                                  children : new MFNode([
+                                                                                                                    new Transform({
+                                                                                                                      rotation : new SFRotation([0,1,0,1.57]),
+                                                                                                                      /*Transform right hand*/
+                                                                                                                      child : new SFNode(
+                                                                                                                        new Shape({
+                                                                                                                          USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                                                                                new Shape({
+                                                                                                                  geometry : new SFNode(
+                                                                                                                    new LineSet({
+                                                                                                                      vertexCount : new MFInt32([2]),
+                                                                                                                      coord : new SFNode(
+                                                                                                                        new Coordinate({
+                                                                                                                          point : new MFVec3f([-0.1959,0.8694,-0.0521,-0.1811,0.6975,-0.0826])})),
+                                                                                                                      /*from r_radiocarpal to r_midcarpal_1 vertices 2*/
+                                                                                                                      color : new SFNode(
+                                                                                                                        new ColorRGBA({
+                                                                                                                          USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                                                                                                new Shape({
+                                                                                                                  geometry : new SFNode(
+                                                                                                                    new LineSet({
+                                                                                                                      vertexCount : new MFInt32([2]),
+                                                                                                                      coord : new SFNode(
+                                                                                                                        new Coordinate({
+                                                                                                                          point : new MFVec3f([-0.1959,0.8694,-0.0521,-0.1811,0.6984,-0.0935])})),
+                                                                                                                      /*from r_radiocarpal to r_midcarpal_2 vertices 2*/
+                                                                                                                      color : new SFNode(
+                                                                                                                        new ColorRGBA({
+                                                                                                                          USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                                                                                                new Shape({
+                                                                                                                  geometry : new SFNode(
+                                                                                                                    new LineSet({
+                                                                                                                      vertexCount : new MFInt32([2]),
+                                                                                                                      coord : new SFNode(
+                                                                                                                        new Coordinate({
+                                                                                                                          point : new MFVec3f([-0.1959,0.8694,-0.0521,-0.1809,0.7,-0.1067])})),
+                                                                                                                      /*from r_radiocarpal to r_midcarpal_3 vertices 2*/
+                                                                                                                      color : new SFNode(
+                                                                                                                        new ColorRGBA({
+                                                                                                                          USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                                                                                                new Shape({
+                                                                                                                  geometry : new SFNode(
+                                                                                                                    new LineSet({
+                                                                                                                      vertexCount : new MFInt32([2]),
+                                                                                                                      coord : new SFNode(
+                                                                                                                        new Coordinate({
+                                                                                                                          point : new MFVec3f([-0.1959,0.8694,-0.0521,-0.1809,0.6973,-0.1276])})),
+                                                                                                                      /*from r_radiocarpal to r_midcarpal_4_5 vertices 2*/
+                                                                                                                      color : new SFNode(
+                                                                                                                        new ColorRGBA({
+                                                                                                                          USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+
+                                                                                                            new HAnimJoint({
+                                                                                                              name : new SFString("r_midcarpal_1"),
+                                                                                                              DEF : new SFString("hanim_r_midcarpal_1"),
+                                                                                                              center : new SFVec3f([-0.1811,0.6975,-0.0826]),
+                                                                                                              ulimit : new MFFloat([0,0,0]),
+                                                                                                              llimit : new MFFloat([0,0,0]),
+                                                                                                              children : new MFNode([
+                                                                                                                new HAnimSegment({
+                                                                                                                  name : new SFString("r_trapezium"),
+                                                                                                                  DEF : new SFString("hanim_r_trapezium"),
+                                                                                                                  children : new MFNode([
+                                                                                                                    new Transform({
+                                                                                                                      translation : new SFVec3f([-0.1811,0.6975,-0.0826]),
+                                                                                                                      children : new MFNode([
+                                                                                                                        new Transform({
+                                                                                                                          /*Empty Transform*/
+                                                                                                                          child : new SFNode(
+                                                                                                                            new Shape({
+                                                                                                                              USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                                                                                    new Shape({
+                                                                                                                      geometry : new SFNode(
+                                                                                                                        new LineSet({
+                                                                                                                          vertexCount : new MFInt32([2]),
+                                                                                                                          coord : new SFNode(
+                                                                                                                            new Coordinate({
+                                                                                                                              point : new MFVec3f([-0.1811,0.6975,-0.0826,-0.1899,0.8502,-0.0473])})),
+                                                                                                                          /*from r_midcarpal_1 to r_carpometacarpal_1 vertices 2*/
+                                                                                                                          color : new SFNode(
+                                                                                                                            new ColorRGBA({
+                                                                                                                              USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+
+                                                                                                                new HAnimJoint({
+                                                                                                                  name : new SFString("r_carpometacarpal_1"),
+                                                                                                                  DEF : new SFString("hanim_r_carpometacarpal_1"),
+                                                                                                                  center : new SFVec3f([-0.1899,0.8502,-0.0473]),
+                                                                                                                  ulimit : new MFFloat([0,0,0]),
+                                                                                                                  llimit : new MFFloat([0,0,0]),
+                                                                                                                  children : new MFNode([
+                                                                                                                    new HAnimSegment({
+                                                                                                                      name : new SFString("r_metacarpal_1"),
+                                                                                                                      DEF : new SFString("hanim_r_metacarpal_1"),
+                                                                                                                      children : new MFNode([
+                                                                                                                        new Transform({
+                                                                                                                          translation : new SFVec3f([-0.1899,0.8502,-0.0473]),
+                                                                                                                          children : new MFNode([
+                                                                                                                            new Transform({
+                                                                                                                              /*Empty Transform*/
+                                                                                                                              child : new SFNode(
+                                                                                                                                new Shape({
+                                                                                                                                  USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                                                                                        new Shape({
+                                                                                                                          geometry : new SFNode(
+                                                                                                                            new LineSet({
+                                                                                                                              vertexCount : new MFInt32([2]),
+                                                                                                                              coord : new SFNode(
+                                                                                                                                new Coordinate({
+                                                                                                                                  point : new MFVec3f([-0.1899,0.8502,-0.0473,-0.1874,0.8256,0.0306])})),
+                                                                                                                              /*from r_carpometacarpal_1 to r_metacarpophalangeal_1 vertices 2*/
+                                                                                                                              color : new SFNode(
+                                                                                                                                new ColorRGBA({
+                                                                                                                                  USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+
+                                                                                                                    new HAnimJoint({
+                                                                                                                      name : new SFString("r_metacarpophalangeal_1"),
+                                                                                                                      DEF : new SFString("hanim_r_metacarpophalangeal_1"),
+                                                                                                                      center : new SFVec3f([-0.1874,0.8256,0.0306]),
+                                                                                                                      ulimit : new MFFloat([0,0,0]),
+                                                                                                                      llimit : new MFFloat([0,0,0]),
+                                                                                                                      children : new MFNode([
+                                                                                                                        new HAnimSegment({
+                                                                                                                          name : new SFString("r_carpal_proximal_phalanx_1"),
+                                                                                                                          DEF : new SFString("hanim_r_carpal_proximal_phalanx_1"),
+                                                                                                                          children : new MFNode([
+                                                                                                                            new Transform({
+                                                                                                                              translation : new SFVec3f([-0.1874,0.8256,0.0306]),
+                                                                                                                              children : new MFNode([
+                                                                                                                                new Transform({
+                                                                                                                                  /*Empty Transform*/
+                                                                                                                                  child : new SFNode(
+                                                                                                                                    new Shape({
+                                                                                                                                      USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                                                                                            new Shape({
+                                                                                                                              geometry : new SFNode(
+                                                                                                                                new LineSet({
+                                                                                                                                  vertexCount : new MFInt32([2]),
+                                                                                                                                  coord : new SFNode(
+                                                                                                                                    new Coordinate({
+                                                                                                                                      point : new MFVec3f([-0.1874,0.8256,0.0306,-0.1864,0.819,0.0506])})),
+                                                                                                                                  /*from r_metacarpophalangeal_1 to r_carpal_interphalangeal_1 vertices 2*/
+                                                                                                                                  color : new SFNode(
+                                                                                                                                    new ColorRGBA({
+                                                                                                                                      USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                                                                                                            new HAnimSite({
+                                                                                                                              name : new SFString("r_carpal_distal_phalanx_1_tip"),
+                                                                                                                              DEF : new SFString("hanim_r_carpal_distal_phalanx_1_tip"),
+                                                                                                                              children : new MFNode([
+                                                                                                                                new TouchSensor({
+                                                                                                                                  description : new SFString("HAnimSite r_carpal_distal_phalanx_1_tip")}),
+
+                                                                                                                                new Shape({
+                                                                                                                                  USE : new SFString("HAnimSiteShape")})])})])}),
+
+                                                                                                                        new HAnimJoint({
+                                                                                                                          name : new SFString("r_carpal_interphalangeal_1"),
+                                                                                                                          DEF : new SFString("hanim_r_carpal_interphalangeal_1"),
+                                                                                                                          center : new SFVec3f([-0.1864,0.819,0.0506]),
+                                                                                                                          ulimit : new MFFloat([0,0,0]),
+                                                                                                                          llimit : new MFFloat([0,0,0])})])})])})])}),
+
+                                                                                                            new HAnimJoint({
+                                                                                                              name : new SFString("r_midcarpal_2"),
+                                                                                                              DEF : new SFString("hanim_r_midcarpal_2"),
+                                                                                                              center : new SFVec3f([-0.1811,0.6984,-0.0935]),
+                                                                                                              ulimit : new MFFloat([0,0,0]),
+                                                                                                              llimit : new MFFloat([0,0,0]),
+                                                                                                              children : new MFNode([
+                                                                                                                new HAnimSegment({
+                                                                                                                  name : new SFString("r_trapezoid"),
+                                                                                                                  DEF : new SFString("hanim_r_trapezoid"),
+                                                                                                                  children : new MFNode([
+                                                                                                                    new Transform({
+                                                                                                                      translation : new SFVec3f([-0.1811,0.6984,-0.0935]),
+                                                                                                                      children : new MFNode([
+                                                                                                                        new Transform({
+                                                                                                                          /*Empty Transform*/
+                                                                                                                          child : new SFNode(
+                                                                                                                            new Shape({
+                                                                                                                              USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                                                                                    new Shape({
+                                                                                                                      geometry : new SFNode(
+                                                                                                                        new LineSet({
+                                                                                                                          vertexCount : new MFInt32([2]),
+                                                                                                                          coord : new SFNode(
+                                                                                                                            new Coordinate({
+                                                                                                                              point : new MFVec3f([-0.1811,0.6984,-0.0935,-0.1961,0.8055,-0.0218])})),
+                                                                                                                          /*from r_midcarpal_2 to r_carpometacarpal_2 vertices 2*/
+                                                                                                                          color : new SFNode(
+                                                                                                                            new ColorRGBA({
+                                                                                                                              USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                                                                                                    new HAnimSite({
+                                                                                                                      name : new SFString("r_metacarpal_phalanx_2"),
+                                                                                                                      DEF : new SFString("hanim_r_metacarpal_phalanx_2"),
+                                                                                                                      translation : new SFVec3f([-0.1977,0.8169,-0.0177]),
+                                                                                                                      children : new MFNode([
+                                                                                                                        new TouchSensor({
+                                                                                                                          description : new SFString("HAnimSite r_metacarpal_phalanx_2")}),
+
+                                                                                                                        new Shape({
+                                                                                                                          USE : new SFString("HAnimSiteShape")})])})])}),
+
+                                                                                                                new HAnimJoint({
+                                                                                                                  name : new SFString("r_carpometacarpal_2"),
+                                                                                                                  DEF : new SFString("hanim_r_carpometacarpal_2"),
+                                                                                                                  center : new SFVec3f([-0.1961,0.8055,-0.0218]),
+                                                                                                                  ulimit : new MFFloat([0,0,0]),
+                                                                                                                  llimit : new MFFloat([0,0,0]),
+                                                                                                                  children : new MFNode([
+                                                                                                                    new HAnimSegment({
+                                                                                                                      name : new SFString("r_metacarpal_2"),
+                                                                                                                      DEF : new SFString("hanim_r_metacarpal_2"),
+                                                                                                                      children : new MFNode([
+                                                                                                                        new Transform({
+                                                                                                                          translation : new SFVec3f([-0.1961,0.8055,-0.0218]),
+                                                                                                                          children : new MFNode([
+                                                                                                                            new Transform({
+                                                                                                                              /*Empty Transform*/
+                                                                                                                              child : new SFNode(
+                                                                                                                                new Shape({
+                                                                                                                                  USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                                                                                        new Shape({
+                                                                                                                          geometry : new SFNode(
+                                                                                                                            new LineSet({
+                                                                                                                              vertexCount : new MFInt32([2]),
+                                                                                                                              coord : new SFNode(
+                                                                                                                                new Coordinate({
+                                                                                                                                  point : new MFVec3f([-0.1961,0.8055,-0.0218,-0.1961,0.7846,-0.0218])})),
+                                                                                                                              /*from r_carpometacarpal_2 to r_metacarpophalangeal_2 vertices 2*/
+                                                                                                                              color : new SFNode(
+                                                                                                                                new ColorRGBA({
+                                                                                                                                  USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+
+                                                                                                                    new HAnimJoint({
+                                                                                                                      name : new SFString("r_metacarpophalangeal_2"),
+                                                                                                                      DEF : new SFString("hanim_r_metacarpophalangeal_2"),
+                                                                                                                      center : new SFVec3f([-0.1961,0.7846,-0.0218]),
+                                                                                                                      ulimit : new MFFloat([0,0,0]),
+                                                                                                                      llimit : new MFFloat([0,0,0]),
+                                                                                                                      children : new MFNode([
+                                                                                                                        new HAnimSegment({
+                                                                                                                          name : new SFString("r_carpal_proximal_phalanx_2"),
+                                                                                                                          DEF : new SFString("hanim_r_carpal_proximal_phalanx_2"),
+                                                                                                                          children : new MFNode([
+                                                                                                                            new Transform({
+                                                                                                                              translation : new SFVec3f([-0.1961,0.7846,-0.0218]),
+                                                                                                                              children : new MFNode([
+                                                                                                                                new Transform({
+                                                                                                                                  /*Empty Transform*/
+                                                                                                                                  child : new SFNode(
+                                                                                                                                    new Shape({
+                                                                                                                                      USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                                                                                            new Shape({
+                                                                                                                              geometry : new SFNode(
+                                                                                                                                new LineSet({
+                                                                                                                                  vertexCount : new MFInt32([2]),
+                                                                                                                                  coord : new SFNode(
+                                                                                                                                    new Coordinate({
+                                                                                                                                      point : new MFVec3f([-0.1961,0.7846,-0.0218,-0.1954,0.7393,-0.0185])})),
+                                                                                                                                  /*from r_metacarpophalangeal_2 to r_carpal_proximal_interphalangeal_2 vertices 2*/
+                                                                                                                                  color : new SFNode(
+                                                                                                                                    new ColorRGBA({
+                                                                                                                                      USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+
+                                                                                                                        new HAnimJoint({
+                                                                                                                          name : new SFString("r_carpal_proximal_interphalangeal_2"),
+                                                                                                                          DEF : new SFString("hanim_r_carpal_proximal_interphalangeal_2"),
+                                                                                                                          center : new SFVec3f([-0.1954,0.7393,-0.0185]),
+                                                                                                                          ulimit : new MFFloat([0,0,0]),
+                                                                                                                          llimit : new MFFloat([0,0,0]),
+                                                                                                                          children : new MFNode([
+                                                                                                                            new HAnimSegment({
+                                                                                                                              name : new SFString("r_carpal_middle_phalanx_2"),
+                                                                                                                              DEF : new SFString("hanim_r_carpal_middle_phalanx_2"),
+                                                                                                                              children : new MFNode([
+                                                                                                                                new Transform({
+                                                                                                                                  translation : new SFVec3f([-0.1954,0.7393,-0.0185]),
+                                                                                                                                  children : new MFNode([
+                                                                                                                                    new Transform({
+                                                                                                                                      /*Empty Transform*/
+                                                                                                                                      child : new SFNode(
+                                                                                                                                        new Shape({
+                                                                                                                                          USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                                                                                                new Shape({
+                                                                                                                                  geometry : new SFNode(
+                                                                                                                                    new LineSet({
+                                                                                                                                      vertexCount : new MFInt32([2]),
+                                                                                                                                      coord : new SFNode(
+                                                                                                                                        new Coordinate({
+                                                                                                                                          point : new MFVec3f([-0.1954,0.7393,-0.0185,-0.1945,0.7169,-0.0173])})),
+                                                                                                                                      /*from r_carpal_proximal_interphalangeal_2 to r_carpal_distal_interphalangeal_2 vertices 2*/
+                                                                                                                                      color : new SFNode(
+                                                                                                                                        new ColorRGBA({
+                                                                                                                                          USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                                                                                                                new HAnimSite({
+                                                                                                                                  name : new SFString("r_carpal_distal_phalanx_2_tip"),
+                                                                                                                                  DEF : new SFString("hanim_r_carpal_distal_phalanx_2_tip"),
+                                                                                                                                  children : new MFNode([
+                                                                                                                                    new TouchSensor({
+                                                                                                                                      description : new SFString("HAnimSite r_carpal_distal_phalanx_2_tip")}),
+
+                                                                                                                                    new Shape({
+                                                                                                                                      USE : new SFString("HAnimSiteShape")})])}),
+
+                                                                                                                                new HAnimSite({
+                                                                                                                                  name : new SFString("r_dactylion"),
+                                                                                                                                  DEF : new SFString("hanim_r_dactylion"),
+                                                                                                                                  translation : new SFVec3f([-0.1941,0.6772,-0.0423]),
+                                                                                                                                  children : new MFNode([
+                                                                                                                                    new TouchSensor({
+                                                                                                                                      description : new SFString("HAnimSite r_dactylion")}),
+
+                                                                                                                                    new Shape({
+                                                                                                                                      USE : new SFString("HAnimSiteShape")})])})])}),
+
+                                                                                                                            new HAnimJoint({
+                                                                                                                              name : new SFString("r_carpal_distal_interphalangeal_2"),
+                                                                                                                              DEF : new SFString("hanim_r_carpal_distal_interphalangeal_2"),
+                                                                                                                              center : new SFVec3f([-0.1945,0.7169,-0.0173]),
+                                                                                                                              ulimit : new MFFloat([0,0,0]),
+                                                                                                                              llimit : new MFFloat([0,0,0])})])})])})])})])}),
+
+                                                                                                            new HAnimJoint({
+                                                                                                              name : new SFString("r_midcarpal_3"),
+                                                                                                              DEF : new SFString("hanim_r_midcarpal_3"),
+                                                                                                              center : new SFVec3f([-0.1809,0.7,-0.1067]),
+                                                                                                              ulimit : new MFFloat([0,0,0]),
+                                                                                                              llimit : new MFFloat([0,0,0]),
+                                                                                                              children : new MFNode([
+                                                                                                                new HAnimSegment({
+                                                                                                                  name : new SFString("r_capitate"),
+                                                                                                                  DEF : new SFString("hanim_r_capitate"),
+                                                                                                                  children : new MFNode([
+                                                                                                                    new Transform({
+                                                                                                                      translation : new SFVec3f([-0.1809,0.7,-0.1067]),
+                                                                                                                      children : new MFNode([
+                                                                                                                        new Transform({
+                                                                                                                          /*Empty Transform*/
+                                                                                                                          child : new SFNode(
+                                                                                                                            new Shape({
+                                                                                                                              USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                                                                                    new Shape({
+                                                                                                                      geometry : new SFNode(
+                                                                                                                        new LineSet({
+                                                                                                                          vertexCount : new MFInt32([2]),
+                                                                                                                          coord : new SFNode(
+                                                                                                                            new Coordinate({
+                                                                                                                              point : new MFVec3f([-0.1809,0.7,-0.1067,-0.1972,0.806,-0.0468])})),
+                                                                                                                          /*from r_midcarpal_3 to r_carpometacarpal_3 vertices 2*/
+                                                                                                                          color : new SFNode(
+                                                                                                                            new ColorRGBA({
+                                                                                                                              USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                                                                                                    new HAnimSite({
+                                                                                                                      name : new SFString("r_metacarpal_phalanx_3"),
+                                                                                                                      DEF : new SFString("hanim_r_metacarpal_phalanx_3"),
+                                                                                                                      children : new MFNode([
+                                                                                                                        new TouchSensor({
+                                                                                                                          description : new SFString("HAnimSite r_metacarpal_phalanx_3")}),
+
+                                                                                                                        new Shape({
+                                                                                                                          USE : new SFString("HAnimSiteShape")})])})])}),
+
+                                                                                                                new HAnimJoint({
+                                                                                                                  name : new SFString("r_carpometacarpal_3"),
+                                                                                                                  DEF : new SFString("hanim_r_carpometacarpal_3"),
+                                                                                                                  center : new SFVec3f([-0.1972,0.806,-0.0468]),
+                                                                                                                  ulimit : new MFFloat([0,0,0]),
+                                                                                                                  llimit : new MFFloat([0,0,0]),
+                                                                                                                  children : new MFNode([
+                                                                                                                    new HAnimSegment({
+                                                                                                                      name : new SFString("r_metacarpal_3"),
+                                                                                                                      DEF : new SFString("hanim_r_metacarpal_3"),
+                                                                                                                      children : new MFNode([
+                                                                                                                        new Transform({
+                                                                                                                          translation : new SFVec3f([-0.1972,0.806,-0.0468]),
+                                                                                                                          children : new MFNode([
+                                                                                                                            new Transform({
+                                                                                                                              /*Empty Transform*/
+                                                                                                                              child : new SFNode(
+                                                                                                                                new Shape({
+                                                                                                                                  USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                                                                                        new Shape({
+                                                                                                                          geometry : new SFNode(
+                                                                                                                            new LineSet({
+                                                                                                                              vertexCount : new MFInt32([2]),
+                                                                                                                              coord : new SFNode(
+                                                                                                                                new Coordinate({
+                                                                                                                                  point : new MFVec3f([-0.1972,0.806,-0.0468,-0.1972,0.7849,-0.0468])})),
+                                                                                                                              /*from r_carpometacarpal_3 to r_metacarpophalangeal_3 vertices 2*/
+                                                                                                                              color : new SFNode(
+                                                                                                                                new ColorRGBA({
+                                                                                                                                  USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+
+                                                                                                                    new HAnimJoint({
+                                                                                                                      name : new SFString("r_metacarpophalangeal_3"),
+                                                                                                                      DEF : new SFString("hanim_r_metacarpophalangeal_3"),
+                                                                                                                      center : new SFVec3f([-0.1972,0.7849,-0.0468]),
+                                                                                                                      ulimit : new MFFloat([0,0,0]),
+                                                                                                                      llimit : new MFFloat([0,0,0]),
+                                                                                                                      children : new MFNode([
+                                                                                                                        new HAnimSegment({
+                                                                                                                          name : new SFString("r_carpal_proximal_phalanx_3"),
+                                                                                                                          DEF : new SFString("hanim_r_carpal_proximal_phalanx_3"),
+                                                                                                                          children : new MFNode([
+                                                                                                                            new Transform({
+                                                                                                                              translation : new SFVec3f([-0.1972,0.7849,-0.0468]),
+                                                                                                                              children : new MFNode([
+                                                                                                                                new Transform({
+                                                                                                                                  /*Empty Transform*/
+                                                                                                                                  child : new SFNode(
+                                                                                                                                    new Shape({
+                                                                                                                                      USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                                                                                            new Shape({
+                                                                                                                              geometry : new SFNode(
+                                                                                                                                new LineSet({
+                                                                                                                                  vertexCount : new MFInt32([2]),
+                                                                                                                                  coord : new SFNode(
+                                                                                                                                    new Coordinate({
+                                                                                                                                      point : new MFVec3f([-0.1972,0.7849,-0.0468,-0.195,0.7304,-0.0441])})),
+                                                                                                                                  /*from r_metacarpophalangeal_3 to r_carpal_proximal_interphalangeal_3 vertices 2*/
+                                                                                                                                  color : new SFNode(
+                                                                                                                                    new ColorRGBA({
+                                                                                                                                      USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+
+                                                                                                                        new HAnimJoint({
+                                                                                                                          name : new SFString("r_carpal_proximal_interphalangeal_3"),
+                                                                                                                          DEF : new SFString("hanim_r_carpal_proximal_interphalangeal_3"),
+                                                                                                                          center : new SFVec3f([-0.195,0.7304,-0.0441]),
+                                                                                                                          ulimit : new MFFloat([0,0,0]),
+                                                                                                                          llimit : new MFFloat([0,0,0]),
+                                                                                                                          children : new MFNode([
+                                                                                                                            new HAnimSegment({
+                                                                                                                              name : new SFString("r_carpal_middle_phalanx_3"),
+                                                                                                                              DEF : new SFString("hanim_r_carpal_middle_phalanx_3"),
+                                                                                                                              children : new MFNode([
+                                                                                                                                new Transform({
+                                                                                                                                  translation : new SFVec3f([-0.195,0.7304,-0.0441]),
+                                                                                                                                  children : new MFNode([
+                                                                                                                                    new Transform({
+                                                                                                                                      /*Empty Transform*/
+                                                                                                                                      child : new SFNode(
+                                                                                                                                        new Shape({
+                                                                                                                                          USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                                                                                                new Shape({
+                                                                                                                                  geometry : new SFNode(
+                                                                                                                                    new LineSet({
+                                                                                                                                      vertexCount : new MFInt32([2]),
+                                                                                                                                      coord : new SFNode(
+                                                                                                                                        new Coordinate({
+                                                                                                                                          point : new MFVec3f([-0.195,0.7304,-0.0441,-0.1939,0.7042,-0.0432])})),
+                                                                                                                                      /*from r_carpal_proximal_interphalangeal_3 to r_carpal_distal_interphalangeal_3 vertices 2*/
+                                                                                                                                      color : new SFNode(
+                                                                                                                                        new ColorRGBA({
+                                                                                                                                          USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                                                                                                                new HAnimSite({
+                                                                                                                                  name : new SFString("r_carpal_distal_phalanx_3_tip"),
+                                                                                                                                  DEF : new SFString("hanim_r_carpal_distal_phalanx_3_tip"),
+                                                                                                                                  children : new MFNode([
+                                                                                                                                    new TouchSensor({
+                                                                                                                                      description : new SFString("HAnimSite r_carpal_distal_phalanx_3_tip")}),
+
+                                                                                                                                    new Shape({
+                                                                                                                                      USE : new SFString("HAnimSiteShape")})])})])}),
+
+                                                                                                                            new HAnimJoint({
+                                                                                                                              name : new SFString("r_carpal_distal_interphalangeal_3"),
+                                                                                                                              DEF : new SFString("hanim_r_carpal_distal_interphalangeal_3"),
+                                                                                                                              center : new SFVec3f([-0.1939,0.7042,-0.0432]),
+                                                                                                                              ulimit : new MFFloat([0,0,0]),
+                                                                                                                              llimit : new MFFloat([0,0,0])})])})])})])})])}),
+
+                                                                                                            new HAnimJoint({
+                                                                                                              name : new SFString("r_midcarpal_4_5"),
+                                                                                                              DEF : new SFString("hanim_r_midcarpal_4_5"),
+                                                                                                              center : new SFVec3f([-0.1809,0.6973,-0.1276]),
+                                                                                                              ulimit : new MFFloat([0,0,0]),
+                                                                                                              llimit : new MFFloat([0,0,0]),
+                                                                                                              children : new MFNode([
+                                                                                                                new HAnimSegment({
+                                                                                                                  name : new SFString("r_hamate"),
+                                                                                                                  DEF : new SFString("hanim_r_hamate"),
+                                                                                                                  children : new MFNode([
+                                                                                                                    new Transform({
+                                                                                                                      translation : new SFVec3f([-0.1809,0.6973,-0.1276]),
+                                                                                                                      children : new MFNode([
+                                                                                                                        new Transform({
+                                                                                                                          /*Empty Transform*/
+                                                                                                                          child : new SFNode(
+                                                                                                                            new Shape({
+                                                                                                                              USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                                                                                    new Shape({
+                                                                                                                      geometry : new SFNode(
+                                                                                                                        new LineSet({
+                                                                                                                          vertexCount : new MFInt32([2]),
+                                                                                                                          coord : new SFNode(
+                                                                                                                            new Coordinate({
+                                                                                                                              point : new MFVec3f([-0.1809,0.6973,-0.1276,-0.1951,0.8049,-0.0732])})),
+                                                                                                                          /*from r_midcarpal_4_5 to r_carpometacarpal_4 vertices 2*/
+                                                                                                                          color : new SFNode(
+                                                                                                                            new ColorRGBA({
+                                                                                                                              USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                                                                                                    new Shape({
+                                                                                                                      geometry : new SFNode(
+                                                                                                                        new LineSet({
+                                                                                                                          vertexCount : new MFInt32([2]),
+                                                                                                                          coord : new SFNode(
+                                                                                                                            new Coordinate({
+                                                                                                                              point : new MFVec3f([-0.1809,0.6973,-0.1276,-0.1926,0.8096,-0.0975])})),
+                                                                                                                          /*from r_midcarpal_4_5 to r_carpometacarpal_5 vertices 2*/
+                                                                                                                          color : new SFNode(
+                                                                                                                            new ColorRGBA({
+                                                                                                                              USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                                                                                                    new HAnimSite({
+                                                                                                                      name : new SFString("r_metacarpal_phalanx_5"),
+                                                                                                                      DEF : new SFString("hanim_r_metacarpal_phalanx_5"),
+                                                                                                                      translation : new SFVec3f([-0.1929,0.789,-0.1064]),
+                                                                                                                      children : new MFNode([
+                                                                                                                        new TouchSensor({
+                                                                                                                          description : new SFString("HAnimSite r_metacarpal_phalanx_5")}),
+
+                                                                                                                        new Shape({
+                                                                                                                          USE : new SFString("HAnimSiteShape")})])})])}),
+
+                                                                                                                new HAnimJoint({
+                                                                                                                  name : new SFString("r_carpometacarpal_4"),
+                                                                                                                  DEF : new SFString("hanim_r_carpometacarpal_4"),
+                                                                                                                  center : new SFVec3f([-0.1951,0.8049,-0.0732]),
+                                                                                                                  ulimit : new MFFloat([0,0,0]),
+                                                                                                                  llimit : new MFFloat([0,0,0]),
+                                                                                                                  children : new MFNode([
+                                                                                                                    new HAnimSegment({
+                                                                                                                      name : new SFString("r_metacarpal_4"),
+                                                                                                                      DEF : new SFString("hanim_r_metacarpal_4"),
+                                                                                                                      children : new MFNode([
+                                                                                                                        new Transform({
+                                                                                                                          translation : new SFVec3f([-0.1951,0.8049,-0.0732]),
+                                                                                                                          children : new MFNode([
+                                                                                                                            new Transform({
+                                                                                                                              /*Empty Transform*/
+                                                                                                                              child : new SFNode(
+                                                                                                                                new Shape({
+                                                                                                                                  USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                                                                                        new Shape({
+                                                                                                                          geometry : new SFNode(
+                                                                                                                            new LineSet({
+                                                                                                                              vertexCount : new MFInt32([2]),
+                                                                                                                              coord : new SFNode(
+                                                                                                                                new Coordinate({
+                                                                                                                                  point : new MFVec3f([-0.1951,0.8049,-0.0732,-0.1951,0.7845,-0.0732])})),
+                                                                                                                              /*from r_carpometacarpal_4 to r_metacarpophalangeal_4 vertices 2*/
+                                                                                                                              color : new SFNode(
+                                                                                                                                new ColorRGBA({
+                                                                                                                                  USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+
+                                                                                                                    new HAnimJoint({
+                                                                                                                      name : new SFString("r_metacarpophalangeal_4"),
+                                                                                                                      DEF : new SFString("hanim_r_metacarpophalangeal_4"),
+                                                                                                                      center : new SFVec3f([-0.1951,0.7845,-0.0732]),
+                                                                                                                      ulimit : new MFFloat([0,0,0]),
+                                                                                                                      llimit : new MFFloat([0,0,0]),
+                                                                                                                      children : new MFNode([
+                                                                                                                        new HAnimSegment({
+                                                                                                                          name : new SFString("r_carpal_proximal_phalanx_4"),
+                                                                                                                          DEF : new SFString("hanim_r_carpal_proximal_phalanx_4"),
+                                                                                                                          children : new MFNode([
+                                                                                                                            new Transform({
+                                                                                                                              translation : new SFVec3f([-0.1951,0.7845,-0.0732]),
+                                                                                                                              children : new MFNode([
+                                                                                                                                new Transform({
+                                                                                                                                  /*Empty Transform*/
+                                                                                                                                  child : new SFNode(
+                                                                                                                                    new Shape({
+                                                                                                                                      USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                                                                                            new Shape({
+                                                                                                                              geometry : new SFNode(
+                                                                                                                                new LineSet({
+                                                                                                                                  vertexCount : new MFInt32([2]),
+                                                                                                                                  coord : new SFNode(
+                                                                                                                                    new Coordinate({
+                                                                                                                                      point : new MFVec3f([-0.1951,0.7845,-0.0732,-0.192,0.7318,-0.0716])})),
+                                                                                                                                  /*from r_metacarpophalangeal_4 to r_carpal_proximal_interphalangeal_4 vertices 2*/
+                                                                                                                                  color : new SFNode(
+                                                                                                                                    new ColorRGBA({
+                                                                                                                                      USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+
+                                                                                                                        new HAnimJoint({
+                                                                                                                          name : new SFString("r_carpal_proximal_interphalangeal_4"),
+                                                                                                                          DEF : new SFString("hanim_r_carpal_proximal_interphalangeal_4"),
+                                                                                                                          center : new SFVec3f([-0.192,0.7318,-0.0716]),
+                                                                                                                          ulimit : new MFFloat([0,0,0]),
+                                                                                                                          llimit : new MFFloat([0,0,0]),
+                                                                                                                          children : new MFNode([
+                                                                                                                            new HAnimSegment({
+                                                                                                                              name : new SFString("r_carpal_middle_phalanx_4"),
+                                                                                                                              DEF : new SFString("hanim_r_carpal_middle_phalanx_4"),
+                                                                                                                              children : new MFNode([
+                                                                                                                                new Transform({
+                                                                                                                                  translation : new SFVec3f([-0.192,0.7318,-0.0716]),
+                                                                                                                                  children : new MFNode([
+                                                                                                                                    new Transform({
+                                                                                                                                      /*Empty Transform*/
+                                                                                                                                      child : new SFNode(
+                                                                                                                                        new Shape({
+                                                                                                                                          USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                                                                                                new Shape({
+                                                                                                                                  geometry : new SFNode(
+                                                                                                                                    new LineSet({
+                                                                                                                                      vertexCount : new MFInt32([2]),
+                                                                                                                                      coord : new SFNode(
+                                                                                                                                        new Coordinate({
+                                                                                                                                          point : new MFVec3f([-0.192,0.7318,-0.0716,-0.1908,0.7077,-0.0706])})),
+                                                                                                                                      /*from r_carpal_proximal_interphalangeal_4 to r_carpal_distal_interphalangeal_4 vertices 2*/
+                                                                                                                                      color : new SFNode(
+                                                                                                                                        new ColorRGBA({
+                                                                                                                                          USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                                                                                                                new HAnimSite({
+                                                                                                                                  name : new SFString("r_carpal_distal_phalanx_4_tip"),
+                                                                                                                                  DEF : new SFString("hanim_r_carpal_distal_phalanx_4_tip"),
+                                                                                                                                  children : new MFNode([
+                                                                                                                                    new TouchSensor({
+                                                                                                                                      description : new SFString("HAnimSite r_carpal_distal_phalanx_4_tip")}),
+
+                                                                                                                                    new Shape({
+                                                                                                                                      USE : new SFString("HAnimSiteShape")})])})])}),
+
+                                                                                                                            new HAnimJoint({
+                                                                                                                              name : new SFString("r_carpal_distal_interphalangeal_4"),
+                                                                                                                              DEF : new SFString("hanim_r_carpal_distal_interphalangeal_4"),
+                                                                                                                              center : new SFVec3f([-0.1908,0.7077,-0.0706]),
+                                                                                                                              ulimit : new MFFloat([0,0,0]),
+                                                                                                                              llimit : new MFFloat([0,0,0])})])})])})])}),
+
+                                                                                                                new HAnimJoint({
+                                                                                                                  name : new SFString("r_carpometacarpal_5"),
+                                                                                                                  DEF : new SFString("hanim_r_carpometacarpal_5"),
+                                                                                                                  center : new SFVec3f([-0.1926,0.8096,-0.0975]),
+                                                                                                                  ulimit : new MFFloat([0,0,0]),
+                                                                                                                  llimit : new MFFloat([0,0,0]),
+                                                                                                                  children : new MFNode([
+                                                                                                                    new HAnimSegment({
+                                                                                                                      name : new SFString("r_metacarpal_5"),
+                                                                                                                      DEF : new SFString("hanim_r_metacarpal_5"),
+                                                                                                                      children : new MFNode([
+                                                                                                                        new Transform({
+                                                                                                                          translation : new SFVec3f([-0.1926,0.8096,-0.0975]),
+                                                                                                                          children : new MFNode([
+                                                                                                                            new Transform({
+                                                                                                                              /*Empty Transform*/
+                                                                                                                              child : new SFNode(
+                                                                                                                                new Shape({
+                                                                                                                                  USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                                                                                        new Shape({
+                                                                                                                          geometry : new SFNode(
+                                                                                                                            new LineSet({
+                                                                                                                              vertexCount : new MFInt32([2]),
+                                                                                                                              coord : new SFNode(
+                                                                                                                                new Coordinate({
+                                                                                                                                  point : new MFVec3f([-0.1926,0.8096,-0.0975,-0.1926,0.7896,-0.0975])})),
+                                                                                                                              /*from r_carpometacarpal_5 to r_metacarpophalangeal_5 vertices 2*/
+                                                                                                                              color : new SFNode(
+                                                                                                                                new ColorRGBA({
+                                                                                                                                  USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+
+                                                                                                                    new HAnimJoint({
+                                                                                                                      name : new SFString("r_metacarpophalangeal_5"),
+                                                                                                                      DEF : new SFString("hanim_r_metacarpophalangeal_5"),
+                                                                                                                      center : new SFVec3f([-0.1926,0.7896,-0.0975]),
+                                                                                                                      ulimit : new MFFloat([0,0,0]),
+                                                                                                                      llimit : new MFFloat([0,0,0]),
+                                                                                                                      children : new MFNode([
+                                                                                                                        new HAnimSegment({
+                                                                                                                          name : new SFString("r_carpal_proximal_phalanx_5"),
+                                                                                                                          DEF : new SFString("hanim_r_carpal_proximal_phalanx_5"),
+                                                                                                                          children : new MFNode([
+                                                                                                                            new Transform({
+                                                                                                                              translation : new SFVec3f([-0.1926,0.7896,-0.0975]),
+                                                                                                                              children : new MFNode([
+                                                                                                                                new Transform({
+                                                                                                                                  /*Empty Transform*/
+                                                                                                                                  child : new SFNode(
+                                                                                                                                    new Shape({
+                                                                                                                                      USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                                                                                            new Shape({
+                                                                                                                              geometry : new SFNode(
+                                                                                                                                new LineSet({
+                                                                                                                                  vertexCount : new MFInt32([2]),
+                                                                                                                                  coord : new SFNode(
+                                                                                                                                    new Coordinate({
+                                                                                                                                      point : new MFVec3f([-0.1926,0.7896,-0.0975,-0.1902,0.7483,-0.0963])})),
+                                                                                                                                  /*from r_metacarpophalangeal_5 to r_carpal_proximal_interphalangeal_5 vertices 2*/
+                                                                                                                                  color : new SFNode(
+                                                                                                                                    new ColorRGBA({
+                                                                                                                                      USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+
+                                                                                                                        new HAnimJoint({
+                                                                                                                          name : new SFString("r_carpal_proximal_interphalangeal_5"),
+                                                                                                                          DEF : new SFString("hanim_r_carpal_proximal_interphalangeal_5"),
+                                                                                                                          center : new SFVec3f([-0.1902,0.7483,-0.0963]),
+                                                                                                                          ulimit : new MFFloat([0,0,0]),
+                                                                                                                          llimit : new MFFloat([0,0,0]),
+                                                                                                                          children : new MFNode([
+                                                                                                                            new HAnimSegment({
+                                                                                                                              name : new SFString("r_carpal_middle_phalanx_5"),
+                                                                                                                              DEF : new SFString("hanim_r_carpal_middle_phalanx_5"),
+                                                                                                                              children : new MFNode([
+                                                                                                                                new Transform({
+                                                                                                                                  translation : new SFVec3f([-0.1902,0.7483,-0.0963]),
+                                                                                                                                  children : new MFNode([
+                                                                                                                                    new Transform({
+                                                                                                                                      /*Empty Transform*/
+                                                                                                                                      child : new SFNode(
+                                                                                                                                        new Shape({
+                                                                                                                                          USE : new SFString("HAnimJointShape")}))})])}),
+
+                                                                                                                                new Shape({
+                                                                                                                                  geometry : new SFNode(
+                                                                                                                                    new LineSet({
+                                                                                                                                      vertexCount : new MFInt32([2]),
+                                                                                                                                      coord : new SFNode(
+                                                                                                                                        new Coordinate({
+                                                                                                                                          point : new MFVec3f([-0.1902,0.7483,-0.0963,-0.1908,0.754,-0.096])})),
+                                                                                                                                      /*from r_carpal_proximal_interphalangeal_5 to r_carpal_distal_interphalangeal_5 vertices 2*/
+                                                                                                                                      color : new SFNode(
+                                                                                                                                        new ColorRGBA({
+                                                                                                                                          USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                                                                                                                new HAnimSite({
+                                                                                                                                  name : new SFString("r_carpal_distal_phalanx_5_tip"),
+                                                                                                                                  DEF : new SFString("hanim_r_carpal_distal_phalanx_5_tip"),
+                                                                                                                                  children : new MFNode([
+                                                                                                                                    new TouchSensor({
+                                                                                                                                      description : new SFString("HAnimSite r_carpal_distal_phalanx_5_tip")}),
+
+                                                                                                                                    new Shape({
+                                                                                                                                      USE : new SFString("HAnimSiteShape")})])})])}),
+
+                                                                                                                            new HAnimJoint({
+                                                                                                                              name : new SFString("r_carpal_distal_interphalangeal_5"),
+                                                                                                                              DEF : new SFString("hanim_r_carpal_distal_interphalangeal_5"),
+                                                                                                                              center : new SFVec3f([-0.1908,0.754,-0.096]),
+                                                                                                                              ulimit : new MFFloat([0,0,0]),
+                                                                                                                              llimit : new MFFloat([0,0,0])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])}),
 
                 new HAnimJoint({
-                  USE : new SFString("hanim_")})])})])}))});
+                  USE : new SFString("hanim_humanoid_root")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_sacroiliac")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_l_hip")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_l_knee")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_l_talocrural")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_l_talocalcaneonavicular")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_l_cuneonavicular_1")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_l_tarsometatarsal_1")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_l_metatarsophalangeal_1")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_l_tarsal_interphalangeal_1")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_l_cuneonavicular_2")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_l_tarsometatarsal_2")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_l_metatarsophalangeal_2")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_l_tarsal_proximal_interphalangeal_2")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_l_tarsal_distal_interphalangeal_2")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_l_cuneonavicular_3")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_l_tarsometatarsal_3")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_l_metatarsophalangeal_3")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_l_tarsal_proximal_interphalangeal_3")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_l_tarsal_distal_interphalangeal_3")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_l_calcaneocuboid")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_l_transversetarsal")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_l_tarsometatarsal_4")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_l_metatarsophalangeal_4")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_l_tarsal_proximal_interphalangeal_4")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_l_tarsal_distal_interphalangeal_4")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_l_tarsometatarsal_5")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_l_metatarsophalangeal_5")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_l_tarsal_proximal_interphalangeal_5")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_l_tarsal_distal_interphalangeal_5")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_r_hip")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_r_knee")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_r_talocrural")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_r_talocalcaneonavicular")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_r_cuneonavicular_1")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_r_tarsometatarsal_1")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_r_metatarsophalangeal_1")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_r_tarsal_interphalangeal_1")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_r_cuneonavicular_2")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_r_tarsometatarsal_2")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_r_metatarsophalangeal_2")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_r_tarsal_proximal_interphalangeal_2")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_r_tarsal_distal_interphalangeal_2")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_r_cuneonavicular_3")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_r_tarsometatarsal_3")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_r_metatarsophalangeal_3")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_r_tarsal_proximal_interphalangeal_3")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_r_tarsal_distal_interphalangeal_3")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_r_calcaneocuboid")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_r_transversetarsal")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_r_tarsometatarsal_4")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_r_metatarsophalangeal_4")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_r_tarsal_proximal_interphalangeal_4")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_r_tarsal_distal_interphalangeal_4")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_r_tarsometatarsal_5")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_r_metatarsophalangeal_5")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_r_tarsal_proximal_interphalangeal_5")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_r_tarsal_distal_interphalangeal_5")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_vl5")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_vl4")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_vl3")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_vl2")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_vl1")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_vt12")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_vt11")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_vt10")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_vt9")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_vt8")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_vt7")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_vt6")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_vt5")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_vt4")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_vt3")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_vt2")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_vt1")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_vc7")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_vc6")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_vc5")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_vc4")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_vc3")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_vc2")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_vc1")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_skullbase")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_l_eyelid_joint")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_r_eyelid_joint")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_l_eyeball_joint")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_r_eyeball_joint")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_l_eyebrow_joint")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_r_eyebrow_joint")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_temporomandibular")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_l_sternoclavicular")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_l_acromioclavicular")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_l_shoulder")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_l_elbow")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_l_radiocarpal")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_l_midcarpal_1")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_l_carpometacarpal_1")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_l_metacarpophalangeal_1")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_l_carpal_interphalangeal_1")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_l_midcarpal_2")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_l_carpometacarpal_2")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_l_metacarpophalangeal_2")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_l_carpal_proximal_interphalangeal_2")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_l_carpal_distal_interphalangeal_2")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_l_midcarpal_3")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_l_carpometacarpal_3")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_l_metacarpophalangeal_3")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_l_carpal_proximal_interphalangeal_3")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_l_carpal_distal_interphalangeal_3")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_l_midcarpal_4_5")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_l_carpometacarpal_4")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_l_metacarpophalangeal_4")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_l_carpal_proximal_interphalangeal_4")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_l_carpal_distal_interphalangeal_4")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_l_carpometacarpal_5")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_l_metacarpophalangeal_5")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_l_carpal_proximal_interphalangeal_5")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_l_carpal_distal_interphalangeal_5")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_r_sternoclavicular")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_r_acromioclavicular")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_r_shoulder")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_r_elbow")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_r_radiocarpal")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_r_midcarpal_1")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_r_carpometacarpal_1")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_r_metacarpophalangeal_1")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_r_carpal_interphalangeal_1")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_r_midcarpal_2")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_r_carpometacarpal_2")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_r_metacarpophalangeal_2")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_r_carpal_proximal_interphalangeal_2")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_r_carpal_distal_interphalangeal_2")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_r_midcarpal_3")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_r_carpometacarpal_3")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_r_metacarpophalangeal_3")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_r_carpal_proximal_interphalangeal_3")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_r_carpal_distal_interphalangeal_3")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_r_midcarpal_4_5")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_r_carpometacarpal_4")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_r_metacarpophalangeal_4")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_r_carpal_proximal_interphalangeal_4")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_r_carpal_distal_interphalangeal_4")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_r_carpometacarpal_5")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_r_metacarpophalangeal_5")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_r_carpal_proximal_interphalangeal_5")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_r_carpal_distal_interphalangeal_5")}),
+              segments : new MFNode([
+                new HAnimSegment({
+                  USE : new SFString("hanim_sacrum")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_pelvis")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_l_thigh")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_l_calf")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_l_talus")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_l_navicular")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_l_cuneiform_1")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_l_metatarsal_1")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_l_tarsal_proximal_phalanx_1")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_l_cuneiform_2")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_l_metatarsal_2")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_l_tarsal_proximal_phalanx_2")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_l_tarsal_middle_phalanx_2")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_l_cuneiform_3")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_l_metatarsal_3")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_l_tarsal_proximal_phalanx_3")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_l_tarsal_middle_phalanx_3")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_l_calcaneus")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_l_cuboid")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_l_metatarsal_4")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_l_tarsal_proximal_phalanx_4")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_l_tarsal_middle_phalanx_4")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_l_metatarsal_5")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_l_tarsal_proximal_phalanx_5")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_l_tarsal_middle_phalanx_5")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_r_thigh")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_r_calf")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_r_talus")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_r_navicular")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_r_cuneiform_1")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_r_metatarsal_1")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_r_tarsal_proximal_phalanx_1")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_r_cuneiform_2")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_r_metatarsal_2")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_r_tarsal_proximal_phalanx_2")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_r_tarsal_middle_phalanx_2")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_r_cuneiform_3")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_r_metatarsal_3")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_r_tarsal_proximal_phalanx_3")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_r_tarsal_middle_phalanx_3")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_r_calcaneus")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_r_cuboid")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_r_metatarsal_4")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_r_tarsal_proximal_phalanx_4")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_r_tarsal_middle_phalanx_4")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_r_metatarsal_5")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_r_tarsal_proximal_phalanx_5")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_r_tarsal_middle_phalanx_5")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_l5")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_l4")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_l3")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_l2")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_l1")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_t12")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_t11")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_t10")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_t9")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_t8")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_t7")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_t6")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_t5")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_t4")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_t3")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_t2")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_t1")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_c7")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_c6")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_c5")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_c4")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_c3")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_c2")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_c1")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_skull")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_l_clavicle")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_l_scapula")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_l_upperarm")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_l_forearm")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_l_carpal")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_l_trapezium")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_l_metacarpal_1")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_l_carpal_proximal_phalanx_1")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_l_trapezoid")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_l_metacarpal_2")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_l_carpal_proximal_phalanx_2")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_l_carpal_middle_phalanx_2")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_l_capitate")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_l_metacarpal_3")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_l_carpal_proximal_phalanx_3")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_l_carpal_middle_phalanx_3")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_l_hamate")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_l_metacarpal_4")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_l_carpal_proximal_phalanx_4")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_l_carpal_middle_phalanx_4")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_l_metacarpal_5")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_l_carpal_proximal_phalanx_5")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_l_carpal_middle_phalanx_5")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_r_clavicle")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_r_scapula")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_r_upperarm")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_r_forearm")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_r_carpal")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_r_trapezium")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_r_metacarpal_1")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_r_carpal_proximal_phalanx_1")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_r_trapezoid")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_r_metacarpal_2")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_r_carpal_proximal_phalanx_2")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_r_carpal_middle_phalanx_2")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_r_capitate")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_r_metacarpal_3")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_r_carpal_proximal_phalanx_3")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_r_carpal_middle_phalanx_3")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_r_hamate")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_r_metacarpal_4")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_r_carpal_proximal_phalanx_4")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_r_carpal_middle_phalanx_4")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_r_metacarpal_5")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_r_carpal_proximal_phalanx_5")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_r_carpal_middle_phalanx_5")}),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_buttocks_standing_wall_contact_point")})]),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_crotch")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_l_asis")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_l_iliocristale")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_l_psis")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_l_trochanterion")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_r_asis")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_r_iliocristale")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_r_psis")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_r_trochanterion")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_navel")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_waist_preferred_anterior")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_waist_preferred_posterior")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_l_femoral_lateral_epicondyles")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_l_femoral_medial_epicondyles")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_l_knee_crease")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_l_suprapatella")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_r_femoral_lateral_epicondyles")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_r_femoral_medial_epicondyles")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_r_knee_crease")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_r_suprapatella")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_l_lateral_malleolus")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_l_medial_malleolus")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_l_tibiale")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_l_calcaneus_posterior")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_l_sphyrion")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_l_metatarsal_phalanx_1")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_l_tarsal_distal_phalanx_1_tip")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_l_tarsal_distal_phalanx_2_tip")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_l_tarsal_distal_phalanx_3_tip")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_l_tarsal_distal_phalanx_4_tip")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_l_metatarsal_phalanx_5")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_l_tarsal_distal_phalanx_5_tip")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_r_lateral_malleolus")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_r_medial_malleolus")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_r_tibiale")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_r_calcaneus_posterior")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_r_sphyrion")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_r_metatarsal_phalanx_1")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_r_tarsal_distal_phalanx_1_tip")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_r_tarsal_distal_phalanx_2_tip")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_r_tarsal_distal_phalanx_3_tip")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_r_tarsal_distal_phalanx_4_tip")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_r_metatarsal_phalanx_5")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_r_tarsal_distal_phalanx_5_tip")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_l_rib10")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_r_rib10")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_spine_2_middle_back")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_substernale")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_l_thelion")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_r_thelion")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_l_chest_midsagittal_plane")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_mesosternale")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_r_chest_midsagittal_plane")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_rear_center_midsagittal_plane")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_spine_1_middle_back")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_cervicale")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_suprasternale")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_l_neck_base")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_r_neck_base")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_l_acromion")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_l_axilla_distal_pt")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_l_axilla_posterior_folds")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_l_axilla_proximal")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_l_clavicale")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_r_acromion")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_r_axilla_distal_pt")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_r_axilla_posterior_folds")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_r_axilla_proximal")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_r_clavicale")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_adams_apple")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_glabella")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_l_ectocanthus")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_l_infraorbitale")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_l_tragion")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_nuchale")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_opisthocranion")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_r_ectocanthus")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_r_infraorbitale")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_r_tragion")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_sellion")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_skull_vertex")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_l_gonion")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_menton")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_r_gonion")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_supramenton")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_l_bideltoid")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_l_humeral_lateral_epicondyles")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_l_humeral_medial_epicondyles")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_l_olecranon")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_l_radial_styloid")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_l_radiale")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_l_ulnar_styloid")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_l_carpal_distal_phalanx_1_tip")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_l_metacarpal_phalanx_2")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_l_carpal_distal_phalanx_2_tip")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_l_dactylion")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_l_metacarpal_phalanx_3")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_l_carpal_distal_phalanx_3_tip")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_l_metacarpal_phalanx_5")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_l_carpal_distal_phalanx_4_tip")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_l_carpal_distal_phalanx_5_tip")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_r_bideltoid")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_r_humeral_lateral_epicondyles")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_r_humeral_medial_epicondyles")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_r_olecranon")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_r_radial_styloid")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_r_radiale")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_r_ulnar_styloid")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_r_carpal_distal_phalanx_1_tip")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_r_metacarpal_phalanx_2")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_r_carpal_distal_phalanx_2_tip")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_r_dactylion")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_r_metacarpal_phalanx_3")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_r_carpal_distal_phalanx_3_tip")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_r_metacarpal_phalanx_5")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_r_carpal_distal_phalanx_4_tip")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_r_carpal_distal_phalanx_5_tip")}))})])}))});
 console.log(X3D0.toXMLNode());

@@ -277,14 +277,14 @@ POSSIBILITY OF SUCH DAMAGE.
 		// first list informational meta elements of interest
 		var metaList = this.getX3dModel().getHead().getMetaList();
 		for (var m in metaList) {
-			meta = metaList[m];
-			if (meta.getName().equals(meta.NAME_ERROR) ||
-				meta.getName().equals(meta.NAME_WARNING) ||
-				meta.getName().equals(meta.NAME_HINT) ||
-				meta.getName().equals(meta.NAME_INFO) ||
-				meta.getName().equals(meta.NAME_TODO))
+			var metaObject = metaList[m];
+			if (metaObject.getName() === metaObject.NAME_ERROR ||
+				metaObject.getName() === metaObject.NAME_WARNING ||
+				metaObject.getName() === metaObject.NAME_HINT ||
+				metaObject.getName() === metaObject.NAME_INFO ||
+				metaObject.getName() === metaObject.NAME_TODO)
 			{
-				metaResult += meta.toStringX3D();
+				metaResult += metaObject.toStringX3D();
 			}
 		}
 		validationResult += this.x3dModel.validate(); // walk entire tree to validate correctness
@@ -713,6 +713,11 @@ POSSIBILITY OF SUCH DAMAGE.
 			</xsl:when>
 		</xsl:choose>
 		<xsl:text>)</xsl:text>
+		<xsl:if test="(string-length(@USE) > 0) and not(local-name() = 'ProtoInstance')">
+			<xsl:text>.setUSE("</xsl:text>
+			<xsl:value-of select="@USE"/>
+			<xsl:text>")</xsl:text>
+		</xsl:if>
 		
 		<!-- handle attribute(s) if any -->
 		<xsl:call-template name="process-attributes-in-order">

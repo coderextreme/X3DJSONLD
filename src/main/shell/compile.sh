@@ -6,4 +6,4 @@ IFS=$'\n\t'
 
 . ./classpath
 
-bash noncompiled.sh | xargs -L 20 -P 8 javac -J-Xss1g -J-Xmx4g
+bash noncompiled.sh | xargs -L 20 -P 8 javac -proc:full -J-Xss1g -J-Xmx4g
