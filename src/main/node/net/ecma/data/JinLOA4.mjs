@@ -150,7 +150,7 @@ var X3D0 =  new X3D({
               version : new SFString("2.0"),
               metadata : new MFNode([
                 new MetadataSet({
-                  name : new SFString("HAnimHumanoid.info"),
+                  name : new SFString("HAnimHumanoid_info"),
                   reference : new SFString("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid"),
                   value : new SFNode(
                     new MetadataString({
@@ -11443,5 +11443,5 @@ var X3D0 =  new X3D({
               fromNode : new SFString("Stop_Touch"),
               toField : new SFString("set_startTime"),
               toNode : new SFString("StopTimer")}),
-          /*<Script url='../node/jinloa4.js'> </Script>*/])}))});
+          /*<Script url='../node/jinloa4.js'/>*/])}))});
 console.log(X3D0.toXMLNode());

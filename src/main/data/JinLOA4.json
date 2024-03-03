@@ -78,7 +78,7 @@
           },
           {
             "@name":"translated",
-            "@content":"01 March 2024"
+            "@content":"02 March 2024"
           },
           {
             "@name":"generator",
@@ -119,7 +119,7 @@
               "-metadata":
                 { "MetadataSet":
                   {
-                    "@name":"HAnimHumanoid.info",
+                    "@name":"HAnimHumanoid_info",
                     "@reference":"https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid",
                     "-value":[
                       { "MetadataString":
@@ -11460,7 +11460,7 @@
                 },
                 { "OrientationInterpolator":
                   {
-                    "@DEF":"Stop_l_ankle_RotationInterpolator",
+                    "@DEF":"Stop_l_talocrural_RotationInterpolator",
                     "@key":[0,0.5,1],
                     "@keyValue":[0,0,1,0,0,0,1,0,0,0,1,0]
                   }
@@ -11502,7 +11502,7 @@
                 },
                 { "OrientationInterpolator":
                   {
-                    "@DEF":"Stop_r_ankle_RotationInterpolator",
+                    "@DEF":"Stop_r_talocrural_RotationInterpolator",
                     "@key":[0,0.5,1],
                     "@keyValue":[0,0,1,0,0,0,1,0,0,0,1,0]
                   }
@@ -11747,7 +11747,7 @@
                 },
                 { "OrientationInterpolator":
                   {
-                    "@DEF":"Stop_l_wrist_RotationInterpolator",
+                    "@DEF":"Stop_l_radiocarpal_RotationInterpolator",
                     "@key":[0,0.5,1],
                     "@keyValue":[0,0,1,0,0,0,1,0,0,0,1,0]
                   }
@@ -11915,7 +11915,7 @@
                 },
                 { "OrientationInterpolator":
                   {
-                    "@DEF":"Stop_r_wrist_RotationInterpolator",
+                    "@DEF":"Stop_r_radiocarpal_RotationInterpolator",
                     "@key":[0,0.5,1],
                     "@keyValue":[0,0,1,0,0,0,1,0,0,0,1,0]
                   }
@@ -12076,7 +12076,7 @@
                 },
                 { "OrientationInterpolator":
                   {
-                    "@DEF":"Stand_r_ankle_RotationInterpolator",
+                    "@DEF":"Stand_r_talocrural_RotationInterpolator",
                     "@key":[0,0.5,1],
                     "@keyValue":[0,0,1,0,0,0,1,0,0,0,1,0]
                   }
@@ -12097,7 +12097,7 @@
                 },
                 { "OrientationInterpolator":
                   {
-                    "@DEF":"Stand_l_ankle_RotationInterpolator",
+                    "@DEF":"Stand_l_talocrural_RotationInterpolator",
                     "@key":[0,0.5,1],
                     "@keyValue":[0,0,1,0,0,0,1,0,0,0,1,0]
                   }
@@ -12118,7 +12118,7 @@
                 },
                 { "OrientationInterpolator":
                   {
-                    "@DEF":"Stand_r_wrist_RotationInterpolator",
+                    "@DEF":"Stand_r_radiocarpal_RotationInterpolator",
                     "@key":[0,0.5,1],
                     "@keyValue":[0,0,1,0,0,0,-1,0.25,0,0,1,0]
                   }
@@ -12139,7 +12139,7 @@
                 },
                 { "OrientationInterpolator":
                   {
-                    "@DEF":"Stand_l_wrist_RotationInterpolator",
+                    "@DEF":"Stand_l_radiocarpal_RotationInterpolator",
                     "@key":[0,0.5,1],
                     "@keyValue":[0,0,1,0,0,0,1,0,0,0,1,0]
                   }
@@ -12321,7 +12321,7 @@
                 },
                 { "OrientationInterpolator":
                   {
-                    "@DEF":"Pitches_r_ankle_RotationInterpolator",
+                    "@DEF":"Pitches_r_talocrural_RotationInterpolator",
                     "@key":[0,0.25,0.5,0.75,1],
                     "@keyValue":[0,0,1,0,1,0,0,1.5,0,0,1,0,-1,0,0,1.5,0,0,1,0]
                   }
@@ -12342,7 +12342,7 @@
                 },
                 { "OrientationInterpolator":
                   {
-                    "@DEF":"Pitches_l_ankle_RotationInterpolator",
+                    "@DEF":"Pitches_l_talocrural_RotationInterpolator",
                     "@key":[0,0.25,0.5,0.75,1],
                     "@keyValue":[0,0,1,0,-1,0,0,1.5,0,0,1,0,1,0,0,1.5,0,0,1,0]
                   }
@@ -12363,7 +12363,7 @@
                 },
                 { "OrientationInterpolator":
                   {
-                    "@DEF":"Pitches_r_wrist_RotationInterpolator",
+                    "@DEF":"Pitches_r_radiocarpal_RotationInterpolator",
                     "@key":[0,0.5,1],
                     "@keyValue":[0,0,1,0,0,0,1,0,0,0,1,0]
                   }
@@ -12384,7 +12384,7 @@
                 },
                 { "OrientationInterpolator":
                   {
-                    "@DEF":"Pitches_l_wrist_RotationInterpolator",
+                    "@DEF":"Pitches_l_radiocarpal_RotationInterpolator",
                     "@key":[0,0.5,1],
                     "@keyValue":[0,0,1,0,0,0,1,0,0,0,1,0]
                   }
@@ -12531,7 +12531,7 @@
                 },
                 { "OrientationInterpolator":
                   {
-                    "@DEF":"Yaws_r_ankle_RotationInterpolator",
+                    "@DEF":"Yaws_r_talocrural_RotationInterpolator",
                     "@key":[0,0.25,0.5,0.75,1],
                     "@keyValue":[0,0,1,0,0,-1,0,1.5,0,0,1,0,0,1,0,1.5,0,0,1,0]
                   }
@@ -12552,7 +12552,7 @@
                 },
                 { "OrientationInterpolator":
                   {
-                    "@DEF":"Yaws_l_ankle_RotationInterpolator",
+                    "@DEF":"Yaws_l_talocrural_RotationInterpolator",
                     "@key":[0,0.25,0.5,0.75,1],
                     "@keyValue":[0,0,1,0,0,1,0,1.5,0,0,1,0,0,-1,0,1.5,0,0,1,0]
                   }
@@ -12573,7 +12573,7 @@
                 },
                 { "OrientationInterpolator":
                   {
-                    "@DEF":"Yaws_r_wrist_RotationInterpolator",
+                    "@DEF":"Yaws_r_radiocarpal_RotationInterpolator",
                     "@key":[0,0.5,1],
                     "@keyValue":[0,0,1,0,0,0,1,0,0,0,1,0]
                   }
@@ -12594,7 +12594,7 @@
                 },
                 { "OrientationInterpolator":
                   {
-                    "@DEF":"Yaws_l_wrist_RotationInterpolator",
+                    "@DEF":"Yaws_l_radiocarpal_RotationInterpolator",
                     "@key":[0,0.5,1],
                     "@keyValue":[0,0,1,0,0,0,1,0,0,0,1,0]
                   }
@@ -12741,7 +12741,7 @@
                 },
                 { "OrientationInterpolator":
                   {
-                    "@DEF":"Rolls_r_ankle_RotationInterpolator",
+                    "@DEF":"Rolls_r_talocrural_RotationInterpolator",
                     "@key":[0,0.25,0.5,0.75,1],
                     "@keyValue":[0,0,1,0,0,0,1,1.5,0,0,1,0,0,0,1,1.5,0,0,1,0]
                   }
@@ -12762,7 +12762,7 @@
                 },
                 { "OrientationInterpolator":
                   {
-                    "@DEF":"Rolls_l_ankle_RotationInterpolator",
+                    "@DEF":"Rolls_l_talocrural_RotationInterpolator",
                     "@key":[0,0.25,0.5,0.75,1],
                     "@keyValue":[0,0,1,0,0,0,-1,1.5,0,0,1,0,0,0,-1,1.5,0,0,1,0]
                   }
@@ -12783,7 +12783,7 @@
                 },
                 { "OrientationInterpolator":
                   {
-                    "@DEF":"Rolls_r_wrist_RotationInterpolator",
+                    "@DEF":"Rolls_r_radiocarpal_RotationInterpolator",
                     "@key":[0,0.25,0.5,0.75,1],
                     "@keyValue":[0,0,1,0,0,0,-1,1.5,0,0,1,0,0,0,1,1.5,0,0,1,0]
                   }
@@ -12804,7 +12804,7 @@
                 },
                 { "OrientationInterpolator":
                   {
-                    "@DEF":"Rolls_l_wrist_RotationInterpolator",
+                    "@DEF":"Rolls_l_radiocarpal_RotationInterpolator",
                     "@key":[0,0.25,0.5,0.75,1],
                     "@keyValue":[0,0,1,0,0,0,1,1.5,0,0,1,0,0,0,-1,1.5,0,0,1,0]
                   }
@@ -12951,7 +12951,7 @@
                 },
                 { "OrientationInterpolator":
                   {
-                    "@DEF":"Walk_r_ankle_RotationInterpolator",
+                    "@DEF":"Walk_r_talocrural_RotationInterpolator",
                     "@key":[0,0.125,0.2083,0.375,0.4583,0.5,0.6667,0.75,0.7917,0.9167,1],
                     "@keyValue":[0,0,1,0,-1,0,0,0.3533,-1,0,0,0.1072,1,0,0,0.2612,1,0,0,0.1268,-1,0,0,0.01793,-1,0,0,0.05824,-1,0,0,0.2398,-1,0,0,0.35,-1,0,0,0.3322,0,0,1,0]
                   }
@@ -12972,7 +12972,7 @@
                 },
                 { "OrientationInterpolator":
                   {
-                    "@DEF":"Walk_l_ankle_RotationInterpolator",
+                    "@DEF":"Walk_l_talocrural_RotationInterpolator",
                     "@key":[0,0.125,0.2083,0.375,0.6667,0.9167,1],
                     "@keyValue":[-1,0,0,0.06714,-1,0,0,0.2152,-1,0,0,0.3184,-1,0,0,0.4717,-1,0,0,0.2912,1,0,0,0.1222,-1,0,0,0.06714]
                   }
@@ -13000,7 +13000,7 @@
                 },
                 { "OrientationInterpolator":
                   {
-                    "@DEF":"Walk_r_wrist_RotationInterpolator",
+                    "@DEF":"Walk_r_radiocarpal_RotationInterpolator",
                     "@key":[0,0.375,0.9167,1],
                     "@keyValue":[-0.8129,0.4759,-0.3357,0.1346,0.1533,-0.9878,0.02582,0.3902,-0.5701,0.7604,-0.311,0.366,-0.8129,0.4759,-0.3357,0.1346]
                   }
@@ -13021,7 +13021,7 @@
                 },
                 { "OrientationInterpolator":
                   {
-                    "@DEF":"Walk_l_wrist_RotationInterpolator",
+                    "@DEF":"Walk_l_radiocarpal_RotationInterpolator",
                     "@key":[0,0.375,0.9167,1],
                     "@keyValue":[0,-1,0,0.461076,-0.330195,-0.927451,0.175516,0.538852,0.0327774,-0.999314,-0.0172185,0.492033,0,-1,0,0.461076]
                   }
@@ -13175,7 +13175,7 @@
                 },
                 { "OrientationInterpolator":
                   {
-                    "@DEF":"Run_l_ankle_RotationInterpolator_Run",
+                    "@DEF":"Run_l_talocrural_RotationInterpolator_Run",
                     "@key":[0,0.22,0.3,0.4,1],
                     "@keyValue":[1,0,0,0.0374,-1,0,0,0.1037,-1,0,0,0.4328,1,0,0,0.1929,1,0,0,0.03574]
                   }
@@ -13196,7 +13196,7 @@
                 },
                 { "OrientationInterpolator":
                   {
-                    "@DEF":"Run_r_ankle_RotationInterpolator_Run",
+                    "@DEF":"Run_r_talocrural_RotationInterpolator_Run",
                     "@key":[0,0.4,0.71,0.8,0.82,1],
                     "@keyValue":[1,0,0,0.2323,-1,0,0,0.07843,-1,0,0,0.32,-1,0,0,0.374,-1,0,0,0.3478,1,0,0,0.2323]
                   }
@@ -13217,7 +13217,7 @@
                 },
                 { "OrientationInterpolator":
                   {
-                    "@DEF":"Run_l_wrist_RotationInterpolator_Run",
+                    "@DEF":"Run_l_radiocarpal_RotationInterpolator_Run",
                     "@key":[0,0.25,0.5,0.75,1],
                     "@keyValue":[-0.25,-1,0.08,0.14,0.25,1,0.08,0.14,0,0,1,0,-0.25,1,0.08,-0.14,-0.25,1,0.08,0.14]
                   }
@@ -13238,7 +13238,7 @@
                 },
                 { "OrientationInterpolator":
                   {
-                    "@DEF":"Run_r_wrist_RotationInterpolator_Run",
+                    "@DEF":"Run_r_radiocarpal_RotationInterpolator_Run",
                     "@key":[0,1],
                     "@keyValue":[-0.917742,-0.237244,-0.318536,0.214273,-0.917742,-0.237244,-0.318536,0.214273]
                   }
@@ -13371,7 +13371,7 @@
                 },
                 { "OrientationInterpolator":
                   {
-                    "@DEF":"Jump_r_ankle_RotationInterpolator",
+                    "@DEF":"Jump_r_talocrural_RotationInterpolator",
                     "@key":[0,0.1,0.15,0.25,0.28,0.32,0.35,0.64,0.76,0.84,0.88,0.92,0.96,1],
                     "@keyValue":[0,0,1,0,-1,0,0,0.6735,-1,0,0,0.6735,-1,0,0,0.3527,-1,0,0,0.3038,-1,0,0,0.07964,1,0,0,1.3,1,0,0,0.6509,1,0,0,0.3001,-1,0,0,0.2087,-1,0,0,0.3756,-1,0,0,0.3279,-1,0,0,0.1193,0,0,1,0]
                   }
@@ -13392,7 +13392,7 @@
                 },
                 { "OrientationInterpolator":
                   {
-                    "@DEF":"Jump_l_ankle_RotationInterpolator",
+                    "@DEF":"Jump_l_talocrural_RotationInterpolator",
                     "@key":[0,0.28,0.32,0.36,0.4,0.44,0.48,0.64,0.76,0.84,0.88,0.92,0.96,1],
                     "@keyValue":[0,0,1,0,-1,0,0,0.625,-1,0,0,0.625,-1,0,0,0.3364,-1,0,0,0.2742,-1,0,0,0.05078,1,0,0,0.2833,1,0,0,0.6667,1,0,0,0.2833,-1,0,0,0.2108,-1,0,0,0.375,-1,0,0,0.3146,-1,0,0,0.1174,0,0,1,0]
                   }
@@ -13420,7 +13420,7 @@
                 },
                 { "OrientationInterpolator":
                   {
-                    "@DEF":"Jump_r_wrist_RotationInterpolator",
+                    "@DEF":"Jump_r_radiocarpal_RotationInterpolator",
                     "@key":[0,0.28,0.32,0.64,0.76,1],
                     "@keyValue":[0,0,1,0,-0.0585279,0.983903,-0.168849,1.85956,-0.0585279,0.983903,-0.168849,1.85956,-0.00222418,0.99801,-0.0630095,1.46072,0,1,0,0.497349,0,0,1,0]
                   }
@@ -13441,7 +13441,7 @@
                 },
                 { "OrientationInterpolator":
                   {
-                    "@DEF":"Jump_l_wrist_RotationInterpolator",
+                    "@DEF":"Jump_l_radiocarpal_RotationInterpolator",
                     "@key":[0,0.48,0.52,0.64,0.76,0.88,1],
                     "@keyValue":[0,0,1,0,0.0672928,0.989475,-0.128107,4.15574,0.0672928,0.989475,-0.128107,4.15574,0.00364942,0.999901,0.0135896,4.5822,0,-1,0,0.655922,-0.00050618,-0.999999,0.0012782,1.28397,0,0,1,0]
                   }
@@ -13602,7 +13602,7 @@
                 },
                 { "OrientationInterpolator":
                   {
-                    "@DEF":"Kick_l_wrist_RollInterpolator",
+                    "@DEF":"Kick_l_radiocarpal_RollInterpolator",
                     "@key":[0,0.2,0.4,0.6,0.8,1],
                     "@keyValue":[0,0,1,0,0,0,1,0,0,1,0,0.55,0,0,1,0,0,0,1,0,0,0,1,0]
                   }
@@ -13644,7 +13644,7 @@
                 },
                 { "OrientationInterpolator":
                   {
-                    "@DEF":"Kick_r_wrist_RollInterpolator",
+                    "@DEF":"Kick_r_radiocarpal_RollInterpolator",
                     "@key":[0,0.2,0.4,0.6,0.8,1],
                     "@keyValue":[0,0,1,0,0,0,1,0,0,1,0,-0.55,0,0,1,0,0,0,1,0,0,0,1,0]
                   }
@@ -13686,7 +13686,7 @@
                 },
                 { "OrientationInterpolator":
                   {
-                    "@DEF":"Kick_r_ankle_PitchInterpolator",
+                    "@DEF":"Kick_r_talocrural_PitchInterpolator",
                     "@key":[0,0.2,0.4,0.6,0.7,1],
                     "@keyValue":[0,0,1,0,-1,0,0,0.9,-1,0,0,0.95,1,0,0,0.75,-1,0,0,0.05,1,0,0,0]
                   }
@@ -14484,7 +14484,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"StopTimer",
               "@toField":"set_fraction",
-              "@toNode":"Stop_l_ankle_RotationInterpolator"
+              "@toNode":"Stop_l_talocrural_RotationInterpolator"
             }
           },
           { "ROUTE":
@@ -14532,7 +14532,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"StopTimer",
               "@toField":"set_fraction",
-              "@toNode":"Stop_r_ankle_RotationInterpolator"
+              "@toNode":"Stop_r_talocrural_RotationInterpolator"
             }
           },
           { "ROUTE":
@@ -14812,7 +14812,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"StopTimer",
               "@toField":"set_fraction",
-              "@toNode":"Stop_l_wrist_RotationInterpolator"
+              "@toNode":"Stop_l_radiocarpal_RotationInterpolator"
             }
           },
           { "ROUTE":
@@ -15004,7 +15004,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"StopTimer",
               "@toField":"set_fraction",
-              "@toNode":"Stop_r_wrist_RotationInterpolator"
+              "@toNode":"Stop_r_radiocarpal_RotationInterpolator"
             }
           },
           { "ROUTE":
@@ -15194,9 +15194,9 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"Stop_l_ankle_RotationInterpolator",
+              "@fromNode":"Stop_l_talocrural_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"hanim_l_ankle"
+              "@toNode":"hanim_l_talocrural"
             }
           },
           { "ROUTE":
@@ -15226,9 +15226,9 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"Stop_r_ankle_RotationInterpolator",
+              "@fromNode":"Stop_r_talocrural_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"hanim_r_ankle"
+              "@toNode":"hanim_r_talocrural"
             }
           },
           { "ROUTE":
@@ -15274,9 +15274,9 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"Stop_l_wrist_RotationInterpolator",
+              "@fromNode":"Stop_l_radiocarpal_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"hanim_l_wrist"
+              "@toNode":"hanim_l_radiocarpal"
             }
           },
           { "ROUTE":
@@ -15298,9 +15298,9 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"Stop_r_wrist_RotationInterpolator",
+              "@fromNode":"Stop_r_radiocarpal_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"hanim_r_wrist"
+              "@toNode":"hanim_r_radiocarpal"
             }
           },
           { "ROUTE":
@@ -15308,7 +15308,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"StandTimer",
               "@toField":"set_fraction",
-              "@toNode":"Stand_r_ankle_RotationInterpolator"
+              "@toNode":"Stand_r_talocrural_RotationInterpolator"
             }
           },
           { "ROUTE":
@@ -15332,7 +15332,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"StandTimer",
               "@toField":"set_fraction",
-              "@toNode":"Stand_l_ankle_RotationInterpolator"
+              "@toNode":"Stand_l_talocrural_RotationInterpolator"
             }
           },
           { "ROUTE":
@@ -15364,7 +15364,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"StandTimer",
               "@toField":"set_fraction",
-              "@toNode":"Stand_r_wrist_RotationInterpolator"
+              "@toNode":"Stand_r_radiocarpal_RotationInterpolator"
             }
           },
           { "ROUTE":
@@ -15388,7 +15388,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"StandTimer",
               "@toField":"set_fraction",
-              "@toNode":"Stand_l_wrist_RotationInterpolator"
+              "@toNode":"Stand_l_radiocarpal_RotationInterpolator"
             }
           },
           { "ROUTE":
@@ -15570,9 +15570,9 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"Stand_r_ankle_RotationInterpolator",
+              "@fromNode":"Stand_r_talocrural_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"hanim_r_ankle"
+              "@toNode":"hanim_r_talocrural"
             }
           },
           { "ROUTE":
@@ -15594,9 +15594,9 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"Stand_l_ankle_RotationInterpolator",
+              "@fromNode":"Stand_l_talocrural_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"hanim_l_ankle"
+              "@toNode":"hanim_l_talocrural"
             }
           },
           { "ROUTE":
@@ -15618,9 +15618,9 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"Stand_r_wrist_RotationInterpolator",
+              "@fromNode":"Stand_r_radiocarpal_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"hanim_r_wrist"
+              "@toNode":"hanim_r_radiocarpal"
             }
           },
           { "ROUTE":
@@ -15642,9 +15642,9 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"Stand_l_wrist_RotationInterpolator",
+              "@fromNode":"Stand_l_radiocarpal_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"hanim_l_wrist"
+              "@toNode":"hanim_l_radiocarpal"
             }
           },
           { "ROUTE":
@@ -15700,7 +15700,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"PitchTimer",
               "@toField":"set_fraction",
-              "@toNode":"Pitches_r_ankle_RotationInterpolator"
+              "@toNode":"Pitches_r_talocrural_RotationInterpolator"
             }
           },
           { "ROUTE":
@@ -15724,7 +15724,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"PitchTimer",
               "@toField":"set_fraction",
-              "@toNode":"Pitches_l_ankle_RotationInterpolator"
+              "@toNode":"Pitches_l_talocrural_RotationInterpolator"
             }
           },
           { "ROUTE":
@@ -15756,7 +15756,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"PitchTimer",
               "@toField":"set_fraction",
-              "@toNode":"Pitches_r_wrist_RotationInterpolator"
+              "@toNode":"Pitches_r_radiocarpal_RotationInterpolator"
             }
           },
           { "ROUTE":
@@ -15780,7 +15780,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"PitchTimer",
               "@toField":"set_fraction",
-              "@toNode":"Pitches_l_wrist_RotationInterpolator"
+              "@toNode":"Pitches_l_radiocarpal_RotationInterpolator"
             }
           },
           { "ROUTE":
@@ -15922,9 +15922,9 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"Pitches_r_ankle_RotationInterpolator",
+              "@fromNode":"Pitches_r_talocrural_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"hanim_r_ankle"
+              "@toNode":"hanim_r_talocrural"
             }
           },
           { "ROUTE":
@@ -15946,9 +15946,9 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"Pitches_l_ankle_RotationInterpolator",
+              "@fromNode":"Pitches_l_talocrural_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"hanim_l_ankle"
+              "@toNode":"hanim_l_talocrural"
             }
           },
           { "ROUTE":
@@ -15970,9 +15970,9 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"Pitches_r_wrist_RotationInterpolator",
+              "@fromNode":"Pitches_r_radiocarpal_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"hanim_r_wrist"
+              "@toNode":"hanim_r_radiocarpal"
             }
           },
           { "ROUTE":
@@ -15994,9 +15994,9 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"Pitches_l_wrist_RotationInterpolator",
+              "@fromNode":"Pitches_l_radiocarpal_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"hanim_l_wrist"
+              "@toNode":"hanim_l_radiocarpal"
             }
           },
           { "ROUTE":
@@ -16052,7 +16052,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"YawTimer",
               "@toField":"set_fraction",
-              "@toNode":"Yaws_r_ankle_RotationInterpolator"
+              "@toNode":"Yaws_r_talocrural_RotationInterpolator"
             }
           },
           { "ROUTE":
@@ -16076,7 +16076,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"YawTimer",
               "@toField":"set_fraction",
-              "@toNode":"Yaws_l_ankle_RotationInterpolator"
+              "@toNode":"Yaws_l_talocrural_RotationInterpolator"
             }
           },
           { "ROUTE":
@@ -16108,7 +16108,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"YawTimer",
               "@toField":"set_fraction",
-              "@toNode":"Yaws_r_wrist_RotationInterpolator"
+              "@toNode":"Yaws_r_radiocarpal_RotationInterpolator"
             }
           },
           { "ROUTE":
@@ -16132,7 +16132,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"YawTimer",
               "@toField":"set_fraction",
-              "@toNode":"Yaws_l_wrist_RotationInterpolator"
+              "@toNode":"Yaws_l_radiocarpal_RotationInterpolator"
             }
           },
           { "ROUTE":
@@ -16274,9 +16274,9 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"Yaws_r_ankle_RotationInterpolator",
+              "@fromNode":"Yaws_r_talocrural_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"hanim_r_ankle"
+              "@toNode":"hanim_r_talocrural"
             }
           },
           { "ROUTE":
@@ -16298,9 +16298,9 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"Yaws_l_ankle_RotationInterpolator",
+              "@fromNode":"Yaws_l_talocrural_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"hanim_l_ankle"
+              "@toNode":"hanim_l_talocrural"
             }
           },
           { "ROUTE":
@@ -16322,9 +16322,9 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"Yaws_r_wrist_RotationInterpolator",
+              "@fromNode":"Yaws_r_radiocarpal_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"hanim_r_wrist"
+              "@toNode":"hanim_r_radiocarpal"
             }
           },
           { "ROUTE":
@@ -16346,9 +16346,9 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"Yaws_l_wrist_RotationInterpolator",
+              "@fromNode":"Yaws_l_radiocarpal_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"hanim_l_wrist"
+              "@toNode":"hanim_l_radiocarpal"
             }
           },
           { "ROUTE":
@@ -16404,7 +16404,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"RollTimer",
               "@toField":"set_fraction",
-              "@toNode":"Rolls_r_ankle_RotationInterpolator"
+              "@toNode":"Rolls_r_talocrural_RotationInterpolator"
             }
           },
           { "ROUTE":
@@ -16428,7 +16428,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"RollTimer",
               "@toField":"set_fraction",
-              "@toNode":"Rolls_l_ankle_RotationInterpolator"
+              "@toNode":"Rolls_l_talocrural_RotationInterpolator"
             }
           },
           { "ROUTE":
@@ -16460,7 +16460,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"RollTimer",
               "@toField":"set_fraction",
-              "@toNode":"Rolls_r_wrist_RotationInterpolator"
+              "@toNode":"Rolls_r_radiocarpal_RotationInterpolator"
             }
           },
           { "ROUTE":
@@ -16484,7 +16484,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"RollTimer",
               "@toField":"set_fraction",
-              "@toNode":"Rolls_l_wrist_RotationInterpolator"
+              "@toNode":"Rolls_l_radiocarpal_RotationInterpolator"
             }
           },
           { "ROUTE":
@@ -16626,9 +16626,9 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"Rolls_r_ankle_RotationInterpolator",
+              "@fromNode":"Rolls_r_talocrural_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"hanim_r_ankle"
+              "@toNode":"hanim_r_talocrural"
             }
           },
           { "ROUTE":
@@ -16650,9 +16650,9 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"Rolls_l_ankle_RotationInterpolator",
+              "@fromNode":"Rolls_l_talocrural_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"hanim_l_ankle"
+              "@toNode":"hanim_l_talocrural"
             }
           },
           { "ROUTE":
@@ -16674,9 +16674,9 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"Rolls_r_wrist_RotationInterpolator",
+              "@fromNode":"Rolls_r_radiocarpal_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"hanim_r_wrist"
+              "@toNode":"hanim_r_radiocarpal"
             }
           },
           { "ROUTE":
@@ -16698,9 +16698,9 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"Rolls_l_wrist_RotationInterpolator",
+              "@fromNode":"Rolls_l_radiocarpal_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"hanim_l_wrist"
+              "@toNode":"hanim_l_radiocarpal"
             }
           },
           { "ROUTE":
@@ -16756,7 +16756,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"WalkTimer",
               "@toField":"set_fraction",
-              "@toNode":"Walk_r_ankle_RotationInterpolator"
+              "@toNode":"Walk_r_talocrural_RotationInterpolator"
             }
           },
           { "ROUTE":
@@ -16780,7 +16780,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"WalkTimer",
               "@toField":"set_fraction",
-              "@toNode":"Walk_l_ankle_RotationInterpolator"
+              "@toNode":"Walk_l_talocrural_RotationInterpolator"
             }
           },
           { "ROUTE":
@@ -16812,7 +16812,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"WalkTimer",
               "@toField":"set_fraction",
-              "@toNode":"Walk_r_wrist_RotationInterpolator"
+              "@toNode":"Walk_r_radiocarpal_RotationInterpolator"
             }
           },
           { "ROUTE":
@@ -16836,7 +16836,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"WalkTimer",
               "@toField":"set_fraction",
-              "@toNode":"Walk_l_wrist_RotationInterpolator"
+              "@toNode":"Walk_l_radiocarpal_RotationInterpolator"
             }
           },
           { "ROUTE":
@@ -16978,9 +16978,9 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"Walk_r_ankle_RotationInterpolator",
+              "@fromNode":"Walk_r_talocrural_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"hanim_r_ankle"
+              "@toNode":"hanim_r_talocrural"
             }
           },
           { "ROUTE":
@@ -17002,9 +17002,9 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"Walk_l_ankle_RotationInterpolator",
+              "@fromNode":"Walk_l_talocrural_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"hanim_l_ankle"
+              "@toNode":"hanim_l_talocrural"
             }
           },
           { "ROUTE":
@@ -17026,9 +17026,9 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"Walk_r_wrist_RotationInterpolator",
+              "@fromNode":"Walk_r_radiocarpal_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"hanim_r_wrist"
+              "@toNode":"hanim_r_radiocarpal"
             }
           },
           { "ROUTE":
@@ -17050,9 +17050,9 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"Walk_l_wrist_RotationInterpolator",
+              "@fromNode":"Walk_l_radiocarpal_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"hanim_l_wrist"
+              "@toNode":"hanim_l_radiocarpal"
             }
           },
           { "ROUTE":
@@ -17108,7 +17108,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"RunTimer",
               "@toField":"set_fraction",
-              "@toNode":"Run_r_ankle_RotationInterpolator_Run"
+              "@toNode":"Run_r_talocrural_RotationInterpolator_Run"
             }
           },
           { "ROUTE":
@@ -17132,7 +17132,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"RunTimer",
               "@toField":"set_fraction",
-              "@toNode":"Run_l_ankle_RotationInterpolator_Run"
+              "@toNode":"Run_l_talocrural_RotationInterpolator_Run"
             }
           },
           { "ROUTE":
@@ -17164,7 +17164,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"RunTimer",
               "@toField":"set_fraction",
-              "@toNode":"Run_r_wrist_RotationInterpolator_Run"
+              "@toNode":"Run_r_radiocarpal_RotationInterpolator_Run"
             }
           },
           { "ROUTE":
@@ -17188,7 +17188,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"RunTimer",
               "@toField":"set_fraction",
-              "@toNode":"Run_l_wrist_RotationInterpolator_Run"
+              "@toNode":"Run_l_radiocarpal_RotationInterpolator_Run"
             }
           },
           { "ROUTE":
@@ -17330,9 +17330,9 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"Run_r_ankle_RotationInterpolator_Run",
+              "@fromNode":"Run_r_talocrural_RotationInterpolator_Run",
               "@toField":"set_rotation",
-              "@toNode":"hanim_r_ankle"
+              "@toNode":"hanim_r_talocrural"
             }
           },
           { "ROUTE":
@@ -17354,9 +17354,9 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"Run_l_ankle_RotationInterpolator_Run",
+              "@fromNode":"Run_l_talocrural_RotationInterpolator_Run",
               "@toField":"set_rotation",
-              "@toNode":"hanim_l_ankle"
+              "@toNode":"hanim_l_talocrural"
             }
           },
           { "ROUTE":
@@ -17378,9 +17378,9 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"Run_r_wrist_RotationInterpolator_Run",
+              "@fromNode":"Run_r_radiocarpal_RotationInterpolator_Run",
               "@toField":"set_rotation",
-              "@toNode":"hanim_r_wrist"
+              "@toNode":"hanim_r_radiocarpal"
             }
           },
           { "ROUTE":
@@ -17402,9 +17402,9 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"Run_l_wrist_RotationInterpolator_Run",
+              "@fromNode":"Run_l_radiocarpal_RotationInterpolator_Run",
               "@toField":"set_rotation",
-              "@toNode":"hanim_l_wrist"
+              "@toNode":"hanim_l_radiocarpal"
             }
           },
           { "ROUTE":
@@ -17460,7 +17460,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"JumpTimer",
               "@toField":"set_fraction",
-              "@toNode":"Jump_r_ankle_RotationInterpolator"
+              "@toNode":"Jump_r_talocrural_RotationInterpolator"
             }
           },
           { "ROUTE":
@@ -17484,7 +17484,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"JumpTimer",
               "@toField":"set_fraction",
-              "@toNode":"Jump_l_ankle_RotationInterpolator"
+              "@toNode":"Jump_l_talocrural_RotationInterpolator"
             }
           },
           { "ROUTE":
@@ -17516,7 +17516,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"JumpTimer",
               "@toField":"set_fraction",
-              "@toNode":"Jump_r_wrist_RotationInterpolator"
+              "@toNode":"Jump_r_radiocarpal_RotationInterpolator"
             }
           },
           { "ROUTE":
@@ -17540,7 +17540,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"JumpTimer",
               "@toField":"set_fraction",
-              "@toNode":"Jump_l_wrist_RotationInterpolator"
+              "@toNode":"Jump_l_radiocarpal_RotationInterpolator"
             }
           },
           { "ROUTE":
@@ -17682,9 +17682,9 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"Jump_r_ankle_RotationInterpolator",
+              "@fromNode":"Jump_r_talocrural_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"hanim_r_ankle"
+              "@toNode":"hanim_r_talocrural"
             }
           },
           { "ROUTE":
@@ -17706,9 +17706,9 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"Jump_l_ankle_RotationInterpolator",
+              "@fromNode":"Jump_l_talocrural_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"hanim_l_ankle"
+              "@toNode":"hanim_l_talocrural"
             }
           },
           { "ROUTE":
@@ -17730,9 +17730,9 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"Jump_r_wrist_RotationInterpolator",
+              "@fromNode":"Jump_r_radiocarpal_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"hanim_r_wrist"
+              "@toNode":"hanim_r_radiocarpal"
             }
           },
           { "ROUTE":
@@ -17754,9 +17754,9 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"Jump_l_wrist_RotationInterpolator",
+              "@fromNode":"Jump_l_radiocarpal_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"hanim_l_wrist"
+              "@toNode":"hanim_l_radiocarpal"
             }
           },
           { "ROUTE":
@@ -17844,7 +17844,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"KickTimer",
               "@toField":"set_fraction",
-              "@toNode":"Kick_l_wrist_RollInterpolator"
+              "@toNode":"Kick_l_radiocarpal_RollInterpolator"
             }
           },
           { "ROUTE":
@@ -17892,7 +17892,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"KickTimer",
               "@toField":"set_fraction",
-              "@toNode":"Kick_r_wrist_RollInterpolator"
+              "@toNode":"Kick_r_radiocarpal_RollInterpolator"
             }
           },
           { "ROUTE":
@@ -17940,7 +17940,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"KickTimer",
               "@toField":"set_fraction",
-              "@toNode":"Kick_r_ankle_PitchInterpolator"
+              "@toNode":"Kick_r_talocrural_PitchInterpolator"
             }
           },
           { "ROUTE":
@@ -18034,9 +18034,9 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"Kick_l_wrist_RollInterpolator",
+              "@fromNode":"Kick_l_radiocarpal_RollInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"hanim_l_wrist"
+              "@toNode":"hanim_l_radiocarpal"
             }
           },
           { "ROUTE":
@@ -18058,9 +18058,9 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"Kick_r_wrist_RollInterpolator",
+              "@fromNode":"Kick_r_radiocarpal_RollInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"hanim_r_wrist"
+              "@toNode":"hanim_r_radiocarpal"
             }
           },
           { "ROUTE":
@@ -18082,9 +18082,9 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"Kick_r_ankle_PitchInterpolator",
+              "@fromNode":"Kick_r_talocrural_PitchInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"hanim_r_ankle"
+              "@toNode":"hanim_r_talocrural"
             }
           },
           { "ROUTE":
@@ -18106,9 +18106,9 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"Kick_r_ankle_PitchInterpolator",
+              "@fromNode":"Kick_r_talocrural_PitchInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"hanim_l_ankle"
+              "@toNode":"hanim_l_talocrural"
             }
           },
           { "ROUTE":
@@ -18800,7 +18800,7 @@
             }
           },
           {
-            "#comment":"<Script url='../node/jinloa4.js'> </Script>"
+            "#comment":"<Script url='../node/jinloa4.js'/>"
           }
         ]
     }
