@@ -14162,7 +14162,7 @@ ROUTE2777.setToField("set_startTime")
 ROUTE2777.setToNode("StopTimer")
 
 Scene19.addChildren(ROUTE2777)
-#<Script url='../node/jinloa4.js'> </Script>
+#<Script url='../node/jinloa4.js'></Script>
 
 X3D0.setScene(Scene19)
 X3D0.toFileX3D("../data/JinLOA4.new.python.x3d")

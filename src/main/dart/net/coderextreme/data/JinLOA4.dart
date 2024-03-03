@@ -11390,5 +11390,5 @@ var X3D0 =  X3D(
               fromNode_ : SFString('Stop_Touch'),
               toField_ : SFString('set_startTime'),
               toNode_ : SFString('StopTimer')),
-          /*<Script url='../node/jinloa4.js'> </Script>*/]));
+          /*<Script url='../node/jinloa4.js'></Script>*/]));
 void main() { exit(0); }

@@ -248,6 +248,8 @@ BashSerializer.prototype = {
 						continue;
 					} else if (attr === "id") {
 						continue;
+					} else if (attr === "type") {
+						continue;
 					} else if (element.nodeName === "Sphere" && attr === "subdivision") {
 						continue;
 					} else if (element.nodeName === "X3D" && attr === "showStat") {

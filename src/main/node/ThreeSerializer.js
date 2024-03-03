@@ -91,7 +91,7 @@ function printObject(element, fieldTypes) {
 			parseInt(a);
 			if (attrs.hasOwnProperty(a) && attrs[a].nodeType === 2) {
 				var attr = attrs[a].nodeName;
-				if (attr === "xmlns:xsd" || attr === "xsd:noNamespaceSchemaLocation") {
+				if (attr === "xmlns:xsd" || attr === "xsd:noNamespaceSchemaLocation" || attr === 'containerField' || attr === 'type') {
 					continue;
 				}
 				if (attr !== 'containerField') {
