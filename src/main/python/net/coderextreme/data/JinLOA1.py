@@ -1118,3 +1118,4 @@ Scene20.addChildren(HAnimHumanoid24)
 
 X3D0.setScene(Scene20)
 X3D0.toFileX3D("../data/JinLOA1.new.python.x3d")
+X3D0.toFileJSON("../data/JinLOA1.new.python.json")

@@ -730,3 +730,4 @@ Scene17.addChildren(Anchor134)
 
 X3D0.setScene(Scene17)
 X3D0.toFileX3D("../data/LOA1_WalkAnimation.new.python.x3d")
+X3D0.toFileJSON("../data/LOA1_WalkAnimation.new.python.json")

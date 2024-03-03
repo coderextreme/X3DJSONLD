@@ -116,7 +116,7 @@ var X3D0 =  new X3D({
         new Scene({
           children : new MFNode([
             new WorldInfo({
-              title : new SFString("JinLOA4.x3d")}),
+              title : new SFString("JinLOA4_1.x3d")}),
 
             new NavigationInfo({
               speed : new SFFloat(1.5)}),

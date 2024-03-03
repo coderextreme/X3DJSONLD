@@ -79,7 +79,7 @@ var X3D0 =  X3D(
         Scene(
           children_ : [
             WorldInfo(
-              title_ : SFString('JinLOA4.x3d')),
+              title_ : SFString('JinLOA4_4.x3d')),
 
             NavigationInfo(
               speed_ : 1.5),

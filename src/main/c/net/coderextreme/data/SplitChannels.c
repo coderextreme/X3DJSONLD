@@ -76,6 +76,7 @@ children = new MFNode();
 children[0] = WorldInfo15;
 
 NavigationInfo NavigationInfo16 = createNode("NavigationInfo");
+NavigationInfo16.type = new MFString(new java.lang.String["NONE"]);
 children[1] = NavigationInfo16;
 
 Background Background17 = createNode("Background");

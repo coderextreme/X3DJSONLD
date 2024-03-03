@@ -146,3 +146,4 @@ Scene18.addChildren(Shape27)
 
 X3D0.setScene(Scene18)
 X3D0.toFileX3D("../data/Teapot.new.python.x3d")
+X3D0.toFileJSON("../data/Teapot.new.python.json")

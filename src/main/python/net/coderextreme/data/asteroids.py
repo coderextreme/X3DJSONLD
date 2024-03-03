@@ -71,3 +71,4 @@ Scene7.addChildren(ProtoInstance17)
 
 X3D0.setScene(Scene7)
 X3D0.toFileX3D("../data/asteroids.new.python.x3d")
+X3D0.toFileJSON("../data/asteroids.new.python.json")

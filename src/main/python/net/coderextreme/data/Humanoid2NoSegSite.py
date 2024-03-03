@@ -1230,3 +1230,4 @@ Scene11.addChildren(HAnimHumanoid43)
 
 X3D0.setScene(Scene11)
 X3D0.toFileX3D("../data/Humanoid2NoSegSite.new.python.x3d")
+X3D0.toFileJSON("../data/Humanoid2NoSegSite.new.python.json")

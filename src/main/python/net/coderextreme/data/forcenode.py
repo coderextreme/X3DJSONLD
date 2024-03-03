@@ -482,3 +482,4 @@ Scene8.addChildren(ROUTE85)
 
 X3D0.setScene(Scene8)
 X3D0.toFileX3D("../data/forcenode.new.python.x3d")
+X3D0.toFileJSON("../data/forcenode.new.python.json")

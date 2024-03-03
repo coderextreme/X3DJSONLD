@@ -71,6 +71,7 @@ WorldInfo15.setTitle("SplitChannels.x3d")
 
 Scene14.addChildren(WorldInfo15)
 NavigationInfo16 = x3d.NavigationInfo()
+NavigationInfo16.setType(["NONE"])
 
 Scene14.addChildren(NavigationInfo16)
 Background17 = x3d.Background()
@@ -335,3 +336,4 @@ Scene14.addChildren(Transform70)
 
 X3D0.setScene(Scene14)
 X3D0.toFileX3D("../data/SplitChannels.new.python.x3d")
+X3D0.toFileJSON("../data/SplitChannels.new.python.json")

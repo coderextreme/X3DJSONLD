@@ -77,3 +77,4 @@ Scene10.addChildren(Transform12)
 
 X3D0.setScene(Scene10)
 X3D0.toFileX3D("../data/ExtrusionHeart.new.python.x3d")
+X3D0.toFileJSON("../data/ExtrusionHeart.new.python.json")

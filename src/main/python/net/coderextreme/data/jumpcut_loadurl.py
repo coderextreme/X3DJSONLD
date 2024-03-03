@@ -158,3 +158,4 @@ Scene16.addChildren(ROUTE32)
 
 X3D0.setScene(Scene16)
 X3D0.toFileX3D("../data/jumpcut_loadurl.new.python.x3d")
+X3D0.toFileJSON("../data/jumpcut_loadurl.new.python.json")

@@ -58,3 +58,4 @@ Scene7.addChildren(Script9)
 
 X3D0.setScene(Scene7)
 X3D0.toFileX3D("../data/browser.new.python.x3d")
+X3D0.toFileJSON("../data/browser.new.python.json")

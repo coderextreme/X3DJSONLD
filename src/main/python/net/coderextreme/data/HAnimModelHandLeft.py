@@ -1413,3 +1413,4 @@ Scene24.addChildren(HAnimHumanoid26)
 
 X3D0.setScene(Scene24)
 X3D0.toFileX3D("../data/HAnimModelHandLeft.new.python.x3d")
+X3D0.toFileJSON("../data/HAnimModelHandLeft.new.python.json")

@@ -257,3 +257,4 @@ Scene13.addChildren(Group25)
 
 X3D0.setScene(Scene13)
 X3D0.toFileX3D("../data/MainStage.new.python.x3d")
+X3D0.toFileJSON("../data/MainStage.new.python.json")

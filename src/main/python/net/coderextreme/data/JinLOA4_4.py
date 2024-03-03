@@ -92,7 +92,7 @@ head1.addMeta(meta18)
 X3D0.setHead(head1)
 Scene19 = x3d.Scene()
 WorldInfo20 = x3d.WorldInfo()
-WorldInfo20.setTitle("JinLOA4.x3d")
+WorldInfo20.setTitle("JinLOA4_4.x3d")
 
 Scene19.addChildren(WorldInfo20)
 NavigationInfo21 = x3d.NavigationInfo()
@@ -7889,3 +7889,4 @@ Scene19.addChildren(HAnimHumanoid23)
 
 X3D0.setScene(Scene19)
 X3D0.toFileX3D("../data/JinLOA4_4.new.python.x3d")
+X3D0.toFileJSON("../data/JinLOA4_4.new.python.json")

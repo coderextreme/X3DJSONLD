@@ -122,3 +122,4 @@ Scene12.addChildren(Transform24)
 
 X3D0.setScene(Scene12)
 X3D0.toFileX3D("../data/TextExamples.new.python.x3d")
+X3D0.toFileJSON("../data/TextExamples.new.python.json")

@@ -544,3 +544,4 @@ Scene33.addChildren(Transform102)
 
 X3D0.setScene(Scene33)
 X3D0.toFileX3D("../data/ObliqueStrategies.new.python.x3d")
+X3D0.toFileJSON("../data/ObliqueStrategies.new.python.json")

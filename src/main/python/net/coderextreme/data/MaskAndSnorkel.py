@@ -304,3 +304,4 @@ Scene10.addChildren(Transform13)
 
 X3D0.setScene(Scene10)
 X3D0.toFileX3D("../data/MaskAndSnorkel.new.python.x3d")
+X3D0.toFileJSON("../data/MaskAndSnorkel.new.python.json")

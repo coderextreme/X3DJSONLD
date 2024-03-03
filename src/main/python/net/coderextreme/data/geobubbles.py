@@ -163,3 +163,4 @@ Scene8.addChildren(ROUTE26)
 
 X3D0.setScene(Scene8)
 X3D0.toFileX3D("../data/geobubbles.new.python.x3d")
+X3D0.toFileJSON("../data/geobubbles.new.python.json")

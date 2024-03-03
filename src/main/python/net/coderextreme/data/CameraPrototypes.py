@@ -2183,3 +2183,4 @@ Scene16.addChildren(Anchor255)
 
 X3D0.setScene(Scene16)
 X3D0.toFileX3D("../data/CameraPrototypes.new.python.x3d")
+X3D0.toFileJSON("../data/CameraPrototypes.new.python.json")

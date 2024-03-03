@@ -33,7 +33,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addMeta((new autoclass.meta()).setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
         .addMeta((new autoclass.meta()).setName("license").setContent("../license.html")))
       .setScene((new autoclass.Scene())
-        .addChild((new autoclass.WorldInfo()).setTitle("JinLOA4.x3d"))
+        .addChild((new autoclass.WorldInfo()).setTitle("JinLOA4_4.x3d"))
         .addChild((new autoclass.NavigationInfo()).setSpeed(java.newFloat(1.5)))
         .addChild((new autoclass.Viewpoint()).setCenterOfRotation(java.newArray("float", [java.newFloat(0), java.newFloat(1), java.newFloat(0)])).setDescription("JinLOA4").setPosition(java.newArray("float", [java.newFloat(0), java.newFloat(1), java.newFloat(3)])))
         .addChild((new autoclass.HAnimHumanoid()).setName("JinLOA4").setDEF("hanim_JinLOA4").setLoa(4).setVersion("2.0")

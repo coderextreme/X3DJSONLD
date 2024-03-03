@@ -179,3 +179,4 @@ Scene22.addChildren(Shape30)
 
 X3D0.setScene(Scene22)
 X3D0.toFileX3D("../data/indexedfaceset_pixeltexture_plus.new.python.x3d")
+X3D0.toFileJSON("../data/indexedfaceset_pixeltexture_plus.new.python.json")

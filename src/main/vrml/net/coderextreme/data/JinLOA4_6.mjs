@@ -93,7 +93,7 @@ head1.meta[16] = meta18;
 head = head1;
 
 let WorldInfo20 = browser.currentScene.createNode("WorldInfo");
-WorldInfo20.title = "JinLOA4.x3d";
+WorldInfo20.title = "JinLOA4_6.x3d";
 browser.currentScene.children = new MFNode();
 
 browser.currentScene.children[0] = WorldInfo20;

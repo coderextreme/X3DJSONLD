@@ -735,3 +735,4 @@ Scene18.addChildren(Anchor135)
 
 X3D0.setScene(Scene18)
 X3D0.toFileX3D("../data/LOA1_StandAnimation.new.python.x3d")
+X3D0.toFileJSON("../data/LOA1_StandAnimation.new.python.json")

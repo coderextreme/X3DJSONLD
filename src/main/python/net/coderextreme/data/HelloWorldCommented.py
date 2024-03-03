@@ -154,3 +154,4 @@ Scene14.addChildren(Group16)
 
 X3D0.setScene(Scene14)
 X3D0.toFileX3D("../data/HelloWorldCommented.new.python.x3d")
+X3D0.toFileJSON("../data/HelloWorldCommented.new.python.json")

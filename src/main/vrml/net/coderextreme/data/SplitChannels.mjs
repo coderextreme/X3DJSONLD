@@ -74,6 +74,7 @@ browser.currentScene.children = new MFNode();
 browser.currentScene.children[0] = WorldInfo15;
 
 let NavigationInfo16 = browser.currentScene.createNode("NavigationInfo");
+NavigationInfo16.type = new MFString(new java.lang.String["NONE"]);
 browser.currentScene.children[1] = NavigationInfo16;
 
 let Background17 = browser.currentScene.createNode("Background");

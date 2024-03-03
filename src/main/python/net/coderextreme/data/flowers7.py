@@ -637,3 +637,4 @@ Scene15.addChildren(ROUTE96)
 
 X3D0.setScene(Scene15)
 X3D0.toFileX3D("../data/flowers7.new.python.x3d")
+X3D0.toFileJSON("../data/flowers7.new.python.json")

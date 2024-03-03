@@ -176,3 +176,4 @@ Scene15.addChildren(CADAssembly19)
 
 X3D0.setScene(Scene15)
 X3D0.toFileX3D("../data/CADPartChildNoTransformation.new.python.x3d")
+X3D0.toFileJSON("../data/CADPartChildNoTransformation.new.python.json")

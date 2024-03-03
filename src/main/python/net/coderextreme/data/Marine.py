@@ -230,3 +230,4 @@ Scene12.addChildren(Transform14)
 
 X3D0.setScene(Scene12)
 X3D0.toFileX3D("../data/Marine.new.python.x3d")
+X3D0.toFileJSON("../data/Marine.new.python.json")

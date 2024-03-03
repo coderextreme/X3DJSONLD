@@ -109,3 +109,4 @@ Scene3.addChildren(ROUTE18)
 
 X3D0.setScene(Scene3)
 X3D0.toFileX3D("../data/JoeExample.new.python.x3d")
+X3D0.toFileJSON("../data/JoeExample.new.python.json")

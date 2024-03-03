@@ -3684,3 +3684,4 @@ Scene19.addChildren(Group552)
 
 X3D0.setScene(Scene19)
 X3D0.toFileX3D("../data/JoeSkinTexcoordDisplacerKick.new.python.x3d")
+X3D0.toFileJSON("../data/JoeSkinTexcoordDisplacerKick.new.python.json")

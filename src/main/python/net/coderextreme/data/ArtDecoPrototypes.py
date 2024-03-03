@@ -655,3 +655,4 @@ Scene13.addChildren(Anchor120)
 
 X3D0.setScene(Scene13)
 X3D0.toFileX3D("../data/ArtDecoPrototypes.new.python.x3d")
+X3D0.toFileJSON("../data/ArtDecoPrototypes.new.python.json")

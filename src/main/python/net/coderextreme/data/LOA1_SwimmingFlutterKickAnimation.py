@@ -664,3 +664,4 @@ Scene15.addChildren(Anchor121)
 
 X3D0.setScene(Scene15)
 X3D0.toFileX3D("../data/LOA1_SwimmingFlutterKickAnimation.new.python.x3d")
+X3D0.toFileJSON("../data/LOA1_SwimmingFlutterKickAnimation.new.python.json")

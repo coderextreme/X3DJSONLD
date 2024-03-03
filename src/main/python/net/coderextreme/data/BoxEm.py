@@ -230,3 +230,4 @@ Scene7.addChildren(Transform54)
 
 X3D0.setScene(Scene7)
 X3D0.toFileX3D("../data/BoxEm.new.python.x3d")
+X3D0.toFileJSON("../data/BoxEm.new.python.json")

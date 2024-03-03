@@ -150,3 +150,4 @@ Scene10.addChildren(Transform33)
 
 X3D0.setScene(Scene10)
 X3D0.toFileX3D("../data/qq3.new.python.x3d")
+X3D0.toFileJSON("../data/qq3.new.python.json")

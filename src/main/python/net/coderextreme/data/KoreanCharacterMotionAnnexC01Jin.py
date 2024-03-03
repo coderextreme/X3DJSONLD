@@ -1481,3 +1481,4 @@ Scene21.addChildren(Group244)
 
 X3D0.setScene(Scene21)
 X3D0.toFileX3D("../data/KoreanCharacterMotionAnnexC01Jin.new.python.x3d")
+X3D0.toFileJSON("../data/KoreanCharacterMotionAnnexC01Jin.new.python.json")

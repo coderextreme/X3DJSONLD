@@ -237,3 +237,4 @@ Scene17.addChildren(Transform44)
 
 X3D0.setScene(Scene17)
 X3D0.toFileX3D("../data/ViewFrustumExample.new.python.x3d")
+X3D0.toFileJSON("../data/ViewFrustumExample.new.python.json")

@@ -270,3 +270,4 @@ Scene13.addChildren(Transform20)
 
 X3D0.setScene(Scene13)
 X3D0.toFileX3D("../data/CameraShape.new.python.x3d")
+X3D0.toFileJSON("../data/CameraShape.new.python.json")
