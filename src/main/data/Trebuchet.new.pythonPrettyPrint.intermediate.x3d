@@ -20,7 +20,7 @@
   </head>
   <Scene>
     <WorldInfo title='Trebuchet.x3d'/>
-    <Background backUrl='"https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_back.jpg"' bottomUrl='"https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_bottom.jpg"' frontUrl='"https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_front.jpg"' groundAngle='1.309 1.570796' groundColor='0.1 0.1 0 0.4 0.25 0.2 0.6 0.6 0.6' leftUrl='"https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_left.jpg"' rightUrl='"https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_right.jpg"' skyAngle='1.309 1.57079' skyColor='0 0.2 0.7 0 0.5 1 1 1 1' topUrl='"https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_top.jpg"'/>
+    <Background backUrl='"https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_back.jpg"' bottomUrl='"https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_bottom.jpg"' frontUrl='"https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_front.jpg"' groundAngle='1 1' groundColor='0.1 0.1 0 0.4 0.25 0.2 0.6 0.6 0.6' leftUrl='"https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_left.jpg"' rightUrl='"https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_right.jpg"' skyAngle='1 1' skyColor='0 0.2 0.7 0 0.5 1 1 1 1' topUrl='"https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_top.jpg"'/>
     <Sound maxBack='1000.0' maxFront='1000.0'>
       <AudioClip DEF='HolyGrail' description='HolyGrail' loop='true' url='"holygral.mp3" "http://www.nps.navy.mil/code32/vrml/holygral.mp3"'/>
     </Sound>
@@ -171,7 +171,6 @@
       </Transform>
       <Transform DEF='verticalsupport' rotation='0 0 1 1.57' scale='0.9 1 1' translation='0 11 0'>
         <Shape USE='plank'/>
-        <!-- Main Verticle Support -->
       </Transform>
       <Transform DEF='horizontalsupport' scale='0.4 1 1' translation='0 10 0'>
         <Shape USE='plank'/>
@@ -222,10 +221,8 @@
               </Appearance>
               <Sphere radius='1.5'/>
             </Shape>
-            <!-- knott -->
           </Transform>
         </Transform>
-        <!-- The Unicorn -->
         <Transform rotation='0 0 1 1.2' scale='0.2 0.2 0.2' translation='-18.3 0.3 0'>
           <Shape>
             <Appearance>
@@ -234,14 +231,12 @@
             <Cylinder height='10.0'/>
           </Shape>
           <Transform translation='0 -2.5 0'>
-            <!-- The Unicorn -->
             <Shape USE='Torus'/>
             <Transform translation='-2 0 0'>
               <Shape>
                 <Appearance USE='rope'/>
                 <Sphere radius='1.5'/>
               </Shape>
-              <!-- Knott -->
             </Transform>
           </Transform>
           <Transform rotation='0 0 1 1.2' translation='15 55 -11'>
@@ -255,7 +250,6 @@
         </Transform>
         <Transform rotation='1 0 0 -1.7' translation='-17 -4.5 0'>
           <Transform scale='0.2 0.2 0.2'>
-            <!-- Knot -->
             <Shape USE='Torus'/>
             <Transform translation='-1 0 1.7'>
               <Shape>
@@ -355,7 +349,6 @@
           </Appearance>
           <Cylinder height='8.0' radius='0.4'/>
         </Shape>
-        <!-- Top Pivot -->
       </Transform>
       <Transform DEF='verticalweight'>
         <Transform translation='4 18 1.8'>
@@ -371,7 +364,6 @@
           </Shape>
         </Transform>
         <Transform translation='4 14 2.5'>
-          <!-- CounterWeight -->
           <Shape>
             <Appearance>
               <Material diffuseColor='0 0 0' specularColor='1 1 1'/>
@@ -403,7 +395,6 @@
         <Transform translation='0 0 7'>
           <Transform USE='screw'/>
         </Transform>
-        <!-- Release Pin -->
         <Transform DEF='Pin' rotation='1 0 0 -1.57' translation='0 0 -3'>
           <Transform USE='screw'/>
         </Transform>
@@ -523,28 +514,50 @@
           <field name='CounterWeight' accessType='outputOnly' type='SFFloat'/>
 <![CDATA[
 ecmascript:
-
-
-function initialize ()
-{
-	whichchoice =0;
-	CounterWeight=100;
-}
-
-function set_boolean ( boolean_input, eventTime)
-{
-
-	if ( boolean_input== false ) { return; } // ignore the unclick
-        whichchoice = whichchoice +1;
-	if (whichchoice == 0)CounterWeight=50.00;
-	if (whichchoice == 1)CounterWeight=500.00;
-	if (whichchoice == 2)CounterWeight=1000.00;
-	if (whichchoice == 3)CounterWeight=10000.00;
-        if ( whichchoice ==4 ) { whichchoice = 0; CounterWeight=50; }
-
-
-        Browser.println ('CounterWeight ='+CounterWeight);
-}
+"+
+"
+"+
+"
+"+
+"function initialize ()
+"+
+"{
+"+
+"	whichchoice =0;
+"+
+"	CounterWeight=100;
+"+
+"}
+"+
+"
+"+
+"function set_boolean ( boolean_input, eventTime)
+"+
+"{
+"+
+"
+"+
+"	if ( boolean_input== false ) { return; } // ignore the unclick
+"+
+"        whichchoice = whichchoice +1;
+"+
+"	if (whichchoice == 0)CounterWeight=50.00;
+"+
+"	if (whichchoice == 1)CounterWeight=500.00;
+"+
+"	if (whichchoice == 2)CounterWeight=1000.00;
+"+
+"	if (whichchoice == 3)CounterWeight=10000.00;
+"+
+"        if ( whichchoice ==4 ) { whichchoice = 0; CounterWeight=50; }
+"+
+"
+"+
+"
+"+
+"        Browser.println ('CounterWeight ='+CounterWeight);
+"+
+"}
 ]]>
         </Script>
         <Script DEF='LauncheeScript'>
@@ -553,18 +566,30 @@ function set_boolean ( boolean_input, eventTime)
           <field name='ProjectileWeight' accessType='outputOnly' type='SFFloat'/>
 <![CDATA[
 ecmascript:
-
-function set_boolean (boolean_input, eventTime)
-{
-	if ( boolean_input== false ) { return; } // ignore unclick
-        whichchoice = whichchoice +1;
-        if (whichchoice == 0)ProjectileWeight=10.00;
-        if (whichchoice == 1)ProjectileWeight=1000.00;
-	if (whichchoice == 2)ProjectileWeight=5;
-
-	if ( whichchoice ==3 ) { whichchoice = 0; ProjectileWeight=10.00; }
-	Browser.println ('Projectile Weight'+ProjectileWeight);
-}
+"+
+"
+"+
+"function set_boolean (boolean_input, eventTime)
+"+
+"{
+"+
+"	if ( boolean_input== false ) { return; } // ignore unclick
+"+
+"        whichchoice = whichchoice +1;
+"+
+"        if (whichchoice == 0)ProjectileWeight=10.00;
+"+
+"        if (whichchoice == 1)ProjectileWeight=1000.00;
+"+
+"	if (whichchoice == 2)ProjectileWeight=5;
+"+
+"
+"+
+"	if ( whichchoice ==3 ) { whichchoice = 0; ProjectileWeight=10.00; }
+"+
+"	Browser.println ('Projectile Weight'+ProjectileWeight);
+"+
+"}
 ]]>
         </Script>
         <Script DEF='PigdogMonkScript'>
@@ -572,17 +597,28 @@ function set_boolean (boolean_input, eventTime)
           <field name='whichchoice' accessType='outputOnly' type='SFInt32'/>
 <![CDATA[
 ecmascript:
-
-function set_boolean (boolean_input, eventTime)
-{
-	if ( boolean_input== false ) { return; } // ignore unclick
-
-        whichchoice = whichchoice +1;
-
-        if ( whichchoice ==2 )  whichchoice = 0;
-
-
-}
+"+
+"
+"+
+"function set_boolean (boolean_input, eventTime)
+"+
+"{
+"+
+"	if ( boolean_input== false ) { return; } // ignore unclick
+"+
+"
+"+
+"        whichchoice = whichchoice +1;
+"+
+"
+"+
+"        if ( whichchoice ==2 )  whichchoice = 0;
+"+
+"
+"+
+"
+"+
+"}
 ]]>
         </Script>
         <Script DEF='Mover'>
@@ -595,56 +631,96 @@ function set_boolean (boolean_input, eventTime)
           <field name='value_changed' accessType='outputOnly' type='SFVec3f'/>
 <![CDATA[
 ecmascript:
-
-function initialize ()
-{
-	MassCounterWeight=100;
-	MassProjectileWeight=10;
-	Browser.println ('MassCounterWeight =' + MassCounterWeight);
-	Browser.println ('MassProjectileWeight =' + MassProjectileWeight);
-}
-
-function set_MassProjectileWeight (value, timestamp)
-{
-	MassProjectileWeight = value;
-	Browser.println ('new MassProjectileWeight =' + MassProjectileWeight);
-}
-function set_MassCounterWeight (value2, timestamp)
-{
-	MassCounterWeight = value2;
-	Browser.println ('new MassCounterWeight =' + MassCounterWeight);
-}
-
-
-function set_fraction ( fraction, eventTime )
-{
-	var TrebuchetHeight=45;
-	var Height =25;
-      	x = (2*(MassCounterWeight/MassProjectileWeight)*Height*fraction)-.5*TrebuchetHeight;
-	// start at TrebuchetHeight and keep along z axis (z=zero)
-	y =  (MassCounterWeight/MassProjectileWeight)*Height*Math.sin(fraction*3.14);
-        z = 0;
-        transparent = new SFVec3f (1,1,1);
-     if (y <1.5*TrebuchetHeight  )if (x<TrebuchetHeight)
-		{
-		x=x-10;
-		y=y+1;
-		transparent = new SFVec3f(.01, .01, .01);
-			}
-
-	value_changed = new SFVec3f (x, y, z);
-	Browser.println ('x=' + value_changed[0] + ' y=' + value_changed[1] + ' z=' + value_changed[2]);
-}
+"+
+"
+"+
+"function initialize ()
+"+
+"{
+"+
+"	MassCounterWeight=100;
+"+
+"	MassProjectileWeight=10;
+"+
+"	Browser.println ('MassCounterWeight =' + MassCounterWeight);
+"+
+"	Browser.println ('MassProjectileWeight =' + MassProjectileWeight);
+"+
+"}
+"+
+"
+"+
+"function set_MassProjectileWeight (value, timestamp)
+"+
+"{
+"+
+"	MassProjectileWeight = value;
+"+
+"	Browser.println ('new MassProjectileWeight =' + MassProjectileWeight);
+"+
+"}
+"+
+"function set_MassCounterWeight (value2, timestamp)
+"+
+"{
+"+
+"	MassCounterWeight = value2;
+"+
+"	Browser.println ('new MassCounterWeight =' + MassCounterWeight);
+"+
+"}
+"+
+"
+"+
+"
+"+
+"function set_fraction ( fraction, eventTime )
+"+
+"{
+"+
+"	var TrebuchetHeight=45;
+"+
+"	var Height =25;
+"+
+"      	x = (2*(MassCounterWeight/MassProjectileWeight)*Height*fraction)-.5*TrebuchetHeight;
+"+
+"	// start at TrebuchetHeight and keep along z axis (z=zero)
+"+
+"	y =  (MassCounterWeight/MassProjectileWeight)*Height*Math.sin(fraction*3.14);
+"+
+"        z = 0;
+"+
+"        transparent = new SFVec3f (1,1,1);
+"+
+"     if (y <1.5*TrebuchetHeight  )if (x<TrebuchetHeight)
+"+
+"		{
+"+
+"		x=x-10;
+"+
+"		y=y+1;
+"+
+"		transparent = new SFVec3f(.01, .01, .01);
+"+
+"			}
+"+
+"
+"+
+"	value_changed = new SFVec3f (x, y, z);
+"+
+"	Browser.println ('x=' + value_changed[0] + ' y=' + value_changed[1] + ' z=' + value_changed[2]);
+"+
+"}
 ]]>
         </Script>
       </Transform>
     </Transform>
     <TimeSensor DEF='clock' cycleInterval='10.0'/>
-    <PositionInterpolator DEF='verticalweightpath' key='0 0.1 0.2 0.2 0.3 0.9' keyValue='1.4 1.6 0 1 -8 0 -3.5 -12 0 -3.5 -12 0 1.2 -8 0 1.4 1.6 0'/>
-    <OrientationInterpolator DEF='flingerangles' key='0 0.1 0.2 0.2 0.3 0.9' keyValue='0 0 1 0.82 0 0 1 -0.77 0 0 1 -1.57 0 0 1 -1.57 0 0 1 -0.77 0 0 1 0.82'/>
-    <PositionInterpolator DEF='pinpath' key='0 0.01 0.95 1' keyValue='0 0 -3 0 0 -10 0 0 -10 0 0 -3'/>
-    <OrientationInterpolator DEF='RnSAngels' key='0 0.7 1' keyValue='0 0 1 0 0 0 1 -3.14 0 0 1 0'/>
-    <PositionInterpolator DEF='invisiable' key='0 0.2 0.98 0.99' keyValue='1 1 1 0.01 0.01 0.01 0.01 0.01 0.01 1 1 1'/>
+    <PositionInterpolator DEF='verticalweightpath' key='0 0 0 0 0 0' keyValue='1.4 1.6 0 1 -8 0 -3.5 -12 0 -3.5 -12 0 1.2 -8 0 1.4 1.6 0'/>
+    <OrientationInterpolator DEF='flingerangles' key='0 0 0 0 0 0' keyValue='0 0 1 0.82 0 0 1 -0.77 0 0 1 -1.57 0 0 1 -1.57 0 0 1 -0.77 0 0 1 0.82'/>
+    <PositionInterpolator DEF='pinpath' key='0 0 0 1' keyValue='0 0 -3 0 0 -10 0 0 -10 0 0 -3'/>
+    <OrientationInterpolator DEF='RnSAngels' key='0 0 1' keyValue='0 0 1 0 0 0 1 -3.14 0 0 1 0'/>
+    <PositionInterpolator DEF='invisiable' key='0 0 0 0' keyValue='1 1 1 0.01 0.01 0.01 0.01 0.01 0.01 1 1 1'/>
     <ROUTE fromField='fraction_changed' fromNode='clock' toField='set_fraction' toNode='invisiable'/>
     <ROUTE fromField='value_changed' fromNode='invisiable' toField='set_scale' toNode='projectiletransform'/>
     <ROUTE fromField='CounterWeight' fromNode='WeightScript' toField='set_MassCounterWeight' toNode='Mover'/>
