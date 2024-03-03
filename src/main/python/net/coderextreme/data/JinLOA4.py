@@ -40,7 +40,7 @@ meta8.setContent("27 January 2023")
 head1.addMeta(meta8)
 meta9 = x3d.meta()
 meta9.setName("description")
-meta9.setContent("Articulated 3D game character designed with a general graphics tool, then converted into an X3D HAnim model.")
+meta9.setContent("Articulated 3D game character designed with a general graphics tool")
 
 head1.addMeta(meta9)
 meta10 = x3d.meta()

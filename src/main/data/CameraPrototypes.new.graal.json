@@ -312,7 +312,6 @@ view to vertical when flying to avoid disorientation"
 { "NavigationInfo":
 {
 "@DEF":"CameraNavInfo",
-"@avatarSize":[0.15,1.53,0.75],
 "@type":"\"EXAMINE\" \"FLY\" \"ANY\"",
 "IS": {
 "-children":[

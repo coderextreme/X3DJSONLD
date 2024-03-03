@@ -111,6 +111,9 @@ NodeSerializer.prototype = {
 						} else {
 							if (attrs[a].nodeValue === "joints" 
 								|| attrs[a].nodeValue === "sites" 
+								|| attrs[a].nodeValue === "skin" 
+								|| attrs[a].nodeValue === "viewpoints" 
+								|| attrs[a].nodeValue === "skeleton" 
 								|| attrs[a].nodeValue === "segments" 
 							) {
 								method = "add"+attrs[a].nodeValue.charAt(0).toUpperCase() + attrs[a].nodeValue.slice(1);
@@ -189,7 +192,7 @@ NodeSerializer.prototype = {
 			method = "Child"
 			addpre = "add";
 		}
-		return prepre+addpre+method+"";
+		return prepre+addpre+method;
 	},
 	subSerializeToString : function(element, mapToMethod, fieldTypes, n, stack) {
 		var str = "";
@@ -239,14 +242,33 @@ NodeSerializer.prototype = {
 			attrType = "";
 		}
 		attrType = "";
+		var DEF = undefined;
+		var USE = undefined;
 		for (var a in element.attributes) {
 			var attrs = element.attributes;
 			try {
 				parseInt(a);
 				if (attrs.hasOwnProperty(a) && attrs[a].nodeType === 2) {
 					var attr = attrs[a].nodeName;
-					if (attr === "xmlns:xsd" || attr === "xsd:noNamespaceSchemaLocation" || attr === "containerField" || attr === 'type') {
+					if (attr === 'containerField' && (
+						attrs[a].nodeValue === "joints" ||
+						attrs[a].nodeValue === "skeleton" ||
+						attrs[a].nodeValue === "segments" ||
+						attrs[a].nodeValue === "viewpoints" ||
+						attrs[a].nodeValue === "skin" ||
+						attrs[a].nodeValue === "skinCoord" ||
+						attrs[a].nodeValue === "sites")) {
+						// console.log("################## FOUND", attr, attrs[a].nodeValue);
+						attr = "containerFieldOverride";
+
+					} else if (attr === "xmlns:xsd" || attr === "xsd:noNamespaceSchemaLocation" || attr === 'containerField' || attr === 'type') {
 						continue;
+					}
+					if (attr === "DEF") {
+						DEF = attrs[a].nodeValue;
+					}
+					if (attr === "USE") {
+						USE = attrs[a].nodeValue;
 					}
 					var method = attr;
 					// look at object model
@@ -406,8 +428,19 @@ NodeSerializer.prototype = {
 					ch += node.nodeName+stack[0] + " = ";
 				}
 
-				ch += "(new autoclass."+node.nodeName+"())";
-				ch += this.subSerializeToString(node, mapToMethod, fieldTypes, n+1, stack);
+				var DEFpar = "";
+				// only use a DEF constructor parameter when USE is not present and DEF is present
+				if (node.nodeName.startsWith("HAnim")) {
+					if (typeof USE === 'undefined' && typeof DEF !== 'undefined') {
+						DEFpar = '"'+DEF+'"';
+					}
+					if (node.nodeName.startsWith("HAnimHumanoid")) {
+						this.foundHumanoid = true;
+					}
+				}
+				let construct = "new autoclass."+node.nodeName+"("+DEFpar+")";
+				construct += this.subSerializeToString(node, mapToMethod, fieldTypes, n+1, stack);
+				ch += construct;
 				if (element.nodeName === "Appearance" && node.NodeName === "ComposedShader") {
 					ch += "}";
 				}

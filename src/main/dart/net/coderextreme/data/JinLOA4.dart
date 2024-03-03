@@ -38,7 +38,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('description'),
-              content_ : SFString('Articulated 3D game character designed with a general graphics tool, then converted into an X3D HAnim model.')),
+              content_ : SFString('Articulated 3D game character designed with a general graphics tool')),
 
             meta(
               name_ : SFString('reference'),

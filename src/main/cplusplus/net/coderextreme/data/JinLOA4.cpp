@@ -51,7 +51,7 @@ head1->addMeta(*meta8);
 
 Cmeta* meta9 = new Cmeta();
 meta9->setName("description");
-meta9->setContent("Articulated 3D game character designed with a general graphics tool, then converted into an X3D HAnim model.");
+meta9->setContent("Articulated 3D game character designed with a general graphics tool");
 head1->addMeta(*meta9);
 
 Cmeta* meta10 = new Cmeta();

@@ -111,24 +111,24 @@ public class Humanoid1NoSegSite implements X3DRoots {
               .setTexture(new ImageTexture().setDEF("zBlueSpiralBkg2").setDescription("Blue Spiral Pattern").setUrl(new MFString20().getArray()))
               .setMaterial(new Material().setDEF("SkinMaterial").setAmbientIntensity(0.6).setDiffuseColor(new double[] {1,1,1}).setShininess(0.6).setTransparency(0.2))))
           .setSkinCoord(((Coordinate)new Coordinate().setContainerFieldOverride("skinCoord")).setUSE("TheSkinCoord"))
-          .addSkeleton(((HAnimJoint)new HAnimJoint("hanim_HAnim").setName("humanoid_root").setDEF("hanim_humanoid_root").setCenter(new double[] {0,0.824,0.0277}).setSkinCoordIndex(new MFInt3221().getArray()).setSkinCoordWeight(new MFFloat22().getArray()).setUlimit(new MFFloat23().getArray()).setLlimit(new MFFloat24().getArray()).setContainerFieldOverride("skeleton"))
-            .addChild(new HAnimJoint("hanim_humanoid_root").setName("sacroiliac").setDEF("hanim_sacroiliac").setCenter(new double[] {0,0.9149,0.0016}).setSkinCoordIndex(new MFInt3225().getArray()).setSkinCoordWeight(new MFFloat26().getArray()).setUlimit(new MFFloat27().getArray()).setLlimit(new MFFloat28().getArray())
-              .addChild(new HAnimJoint("hanim_sacroiliac").setName("l_hip").setDEF("hanim_l_hip").setCenter(new double[] {0.0961,0.9124,-0.0001}).setSkinCoordIndex(new MFInt3229().getArray()).setSkinCoordWeight(new MFFloat30().getArray()).setUlimit(new MFFloat31().getArray()).setLlimit(new MFFloat32().getArray())
-                .addChild(new HAnimJoint("hanim_l_hip").setName("l_knee").setDEF("hanim_l_knee").setCenter(new double[] {0.104,0.4867,0.0308}).setSkinCoordIndex(new MFInt3233().getArray()).setSkinCoordWeight(new MFFloat34().getArray()).setUlimit(new MFFloat35().getArray()).setLlimit(new MFFloat36().getArray())
-                  .addChild(new HAnimJoint("hanim_l_knee").setName("l_talocrural").setDEF("hanim_l_talocrural").setCenter(new double[] {0.1101,0.0656,-0.0736}).setSkinCoordIndex(new MFInt3237().getArray()).setSkinCoordWeight(new MFFloat38().getArray()).setUlimit(new MFFloat39().getArray()).setLlimit(new MFFloat40().getArray())
-                    .addChild(new HAnimJoint("hanim_l_talocrural").setName("l_metatarsophalangeal_2").setDEF("hanim_l_metatarsophalangeal_2").setCenter(new double[] {0.0824,0.0064,-0.004}).setSkinCoordIndex(new MFInt3241().getArray()).setSkinCoordWeight(new MFFloat42().getArray()).setUlimit(new MFFloat43().getArray()).setLlimit(new MFFloat44().getArray())))))
-              .addChild(new HAnimJoint("hanim_sacroiliac").setName("r_hip").setDEF("hanim_r_hip").setCenter(new double[] {-0.095,0.9171,0.0029}).setSkinCoordIndex(new MFInt3245().getArray()).setSkinCoordWeight(new MFFloat46().getArray()).setUlimit(new MFFloat47().getArray()).setLlimit(new MFFloat48().getArray())
-                .addChild(new HAnimJoint("hanim_r_hip").setName("r_knee").setDEF("hanim_r_knee").setCenter(new double[] {-0.0867,0.4913,0.0318}).setSkinCoordIndex(new MFInt3249().getArray()).setSkinCoordWeight(new MFFloat50().getArray()).setUlimit(new MFFloat51().getArray()).setLlimit(new MFFloat52().getArray())
-                  .addChild(new HAnimJoint("hanim_r_knee").setName("r_talocrural").setDEF("hanim_r_talocrural").setCenter(new double[] {-0.0801,0.0712,-0.0766}).setSkinCoordIndex(new MFInt3253().getArray()).setSkinCoordWeight(new MFFloat54().getArray()).setUlimit(new MFFloat55().getArray()).setLlimit(new MFFloat56().getArray())
-                    .addChild(new HAnimJoint("hanim_r_talocrural").setName("r_metatarsophalangeal_2").setDEF("hanim_r_metatarsophalangeal_2").setCenter(new double[] {-0.0823,0.0064,-0.004}).setSkinCoordIndex(new MFInt3257().getArray()).setSkinCoordWeight(new MFFloat58().getArray()).setUlimit(new MFFloat59().getArray()).setLlimit(new MFFloat60().getArray()))))))
-            .addChild(new HAnimJoint("hanim_humanoid_root").setName("vl5").setDEF("hanim_vl5").setCenter(new double[] {0.0028,1.0568,-0.0776}).setSkinCoordIndex(new MFInt3261().getArray()).setSkinCoordWeight(new MFFloat62().getArray()).setUlimit(new MFFloat63().getArray()).setLlimit(new MFFloat64().getArray())
-              .addChild(new HAnimJoint("hanim_vl5").setName("skullbase").setDEF("hanim_skullbase").setCenter(new double[] {0.0044,1.6209,0.0236}).setSkinCoordIndex(new MFInt3265().getArray()).setSkinCoordWeight(new MFFloat66().getArray()).setUlimit(new MFFloat67().getArray()).setLlimit(new MFFloat68().getArray()))
-              .addChild(new HAnimJoint("hanim_vl5").setName("l_shoulder").setDEF("hanim_l_shoulder").setCenter(new double[] {0.2029,1.4376,-0.0387}).setSkinCoordIndex(new MFInt3269().getArray()).setSkinCoordWeight(new MFFloat70().getArray()).setUlimit(new MFFloat71().getArray()).setLlimit(new MFFloat72().getArray())
-                .addChild(new HAnimJoint("hanim_l_shoulder").setName("l_elbow").setDEF("hanim_l_elbow").setCenter(new double[] {0.2014,1.1357,-0.0682}).setSkinCoordIndex(new MFInt3273().getArray()).setSkinCoordWeight(new MFFloat74().getArray()).setUlimit(new MFFloat75().getArray()).setLlimit(new MFFloat76().getArray())
-                  .addChild(new HAnimJoint("hanim_l_elbow").setName("l_radiocarpal").setDEF("hanim_l_radiocarpal").setCenter(new double[] {0.1984,0.8663,-0.0583}).setSkinCoordIndex(new MFInt3277().getArray()).setSkinCoordWeight(new MFFloat78().getArray()).setUlimit(new MFFloat79().getArray()).setLlimit(new MFFloat80().getArray()))))
-              .addChild(new HAnimJoint("hanim_vl5").setName("r_shoulder").setDEF("hanim_r_shoulder").setCenter(new double[] {-0.1907,1.4407,-0.0325}).setSkinCoordIndex(new MFInt3281().getArray()).setSkinCoordWeight(new MFFloat82().getArray()).setUlimit(new MFFloat83().getArray()).setLlimit(new MFFloat84().getArray())
-                .addChild(new HAnimJoint("hanim_r_shoulder").setName("r_elbow").setDEF("hanim_r_elbow").setCenter(new double[] {-0.1949,1.1388,-0.062}).setSkinCoordIndex(new MFInt3285().getArray()).setSkinCoordWeight(new MFFloat86().getArray()).setUlimit(new MFFloat87().getArray()).setLlimit(new MFFloat88().getArray())
-                  .addChild(new HAnimJoint("hanim_r_elbow").setName("r_radiocarpal").setDEF("hanim_r_radiocarpal").setCenter(new double[] {-0.1959,0.8694,-0.0521}).setSkinCoordIndex(new MFInt3289().getArray()).setSkinCoordWeight(new MFFloat90().getArray()).setUlimit(new MFFloat91().getArray()).setLlimit(new MFFloat92().getArray()))))))
+          .addSkeleton(((HAnimJoint)new HAnimJoint("hanim_HAnim").setName("humanoid_root").setDEF("hanim_humanoid_root").setCenter(new double[] {0,0.824,0.0277}).setSkinCoordIndex(new MFInt3221().getArray()).setSkinCoordWeight(new MFFloat22().getArray()).setContainerFieldOverride("skeleton"))
+            .addChild(new HAnimJoint("hanim_humanoid_root").setName("sacroiliac").setDEF("hanim_sacroiliac").setCenter(new double[] {0,0.9149,0.0016}).setSkinCoordIndex(new MFInt3223().getArray()).setSkinCoordWeight(new MFFloat24().getArray())
+              .addChild(new HAnimJoint("hanim_sacroiliac").setName("l_hip").setDEF("hanim_l_hip").setCenter(new double[] {0.0961,0.9124,-0.0001}).setSkinCoordIndex(new MFInt3225().getArray()).setSkinCoordWeight(new MFFloat26().getArray())
+                .addChild(new HAnimJoint("hanim_l_hip").setName("l_knee").setDEF("hanim_l_knee").setCenter(new double[] {0.104,0.4867,0.0308}).setSkinCoordIndex(new MFInt3227().getArray()).setSkinCoordWeight(new MFFloat28().getArray())
+                  .addChild(new HAnimJoint("hanim_l_knee").setName("l_talocrural").setDEF("hanim_l_talocrural").setCenter(new double[] {0.1101,0.0656,-0.0736}).setSkinCoordIndex(new MFInt3229().getArray()).setSkinCoordWeight(new MFFloat30().getArray())
+                    .addChild(new HAnimJoint("hanim_l_talocrural").setName("l_metatarsophalangeal_2").setDEF("hanim_l_metatarsophalangeal_2").setCenter(new double[] {0.0824,0.0064,-0.004}).setSkinCoordIndex(new MFInt3231().getArray()).setSkinCoordWeight(new MFFloat32().getArray())))))
+              .addChild(new HAnimJoint("hanim_sacroiliac").setName("r_hip").setDEF("hanim_r_hip").setCenter(new double[] {-0.095,0.9171,0.0029}).setSkinCoordIndex(new MFInt3233().getArray()).setSkinCoordWeight(new MFFloat34().getArray())
+                .addChild(new HAnimJoint("hanim_r_hip").setName("r_knee").setDEF("hanim_r_knee").setCenter(new double[] {-0.0867,0.4913,0.0318}).setSkinCoordIndex(new MFInt3235().getArray()).setSkinCoordWeight(new MFFloat36().getArray())
+                  .addChild(new HAnimJoint("hanim_r_knee").setName("r_talocrural").setDEF("hanim_r_talocrural").setCenter(new double[] {-0.0801,0.0712,-0.0766}).setSkinCoordIndex(new MFInt3237().getArray()).setSkinCoordWeight(new MFFloat38().getArray())
+                    .addChild(new HAnimJoint("hanim_r_talocrural").setName("r_metatarsophalangeal_2").setDEF("hanim_r_metatarsophalangeal_2").setCenter(new double[] {-0.0823,0.0064,-0.004}).setSkinCoordIndex(new MFInt3239().getArray()).setSkinCoordWeight(new MFFloat40().getArray()))))))
+            .addChild(new HAnimJoint("hanim_humanoid_root").setName("vl5").setDEF("hanim_vl5").setCenter(new double[] {0.0028,1.0568,-0.0776}).setSkinCoordIndex(new MFInt3241().getArray()).setSkinCoordWeight(new MFFloat42().getArray())
+              .addChild(new HAnimJoint("hanim_vl5").setName("skullbase").setDEF("hanim_skullbase").setCenter(new double[] {0.0044,1.6209,0.0236}).setSkinCoordIndex(new MFInt3243().getArray()).setSkinCoordWeight(new MFFloat44().getArray()))
+              .addChild(new HAnimJoint("hanim_vl5").setName("l_shoulder").setDEF("hanim_l_shoulder").setCenter(new double[] {0.2029,1.4376,-0.0387}).setSkinCoordIndex(new MFInt3245().getArray()).setSkinCoordWeight(new MFFloat46().getArray())
+                .addChild(new HAnimJoint("hanim_l_shoulder").setName("l_elbow").setDEF("hanim_l_elbow").setCenter(new double[] {0.2014,1.1357,-0.0682}).setSkinCoordIndex(new MFInt3247().getArray()).setSkinCoordWeight(new MFFloat48().getArray())
+                  .addChild(new HAnimJoint("hanim_l_elbow").setName("l_radiocarpal").setDEF("hanim_l_radiocarpal").setCenter(new double[] {0.1984,0.8663,-0.0583}).setSkinCoordIndex(new MFInt3249().getArray()).setSkinCoordWeight(new MFFloat50().getArray()))))
+              .addChild(new HAnimJoint("hanim_vl5").setName("r_shoulder").setDEF("hanim_r_shoulder").setCenter(new double[] {-0.1907,1.4407,-0.0325}).setSkinCoordIndex(new MFInt3251().getArray()).setSkinCoordWeight(new MFFloat52().getArray())
+                .addChild(new HAnimJoint("hanim_r_shoulder").setName("r_elbow").setDEF("hanim_r_elbow").setCenter(new double[] {-0.1949,1.1388,-0.062}).setSkinCoordIndex(new MFInt3253().getArray()).setSkinCoordWeight(new MFFloat54().getArray())
+                  .addChild(new HAnimJoint("hanim_r_elbow").setName("r_radiocarpal").setDEF("hanim_r_radiocarpal").setCenter(new double[] {-0.1959,0.8694,-0.0521}).setSkinCoordIndex(new MFInt3255().getArray()).setSkinCoordWeight(new MFFloat56().getArray()))))))
           .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_humanoid_root"))
           .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_sacroiliac"))
           .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_l_hip"))
@@ -264,14 +264,14 @@ private class MFFloat22 {
     return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0});
   }
 }
-private class MFFloat23 {
-  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
+private class MFInt3223 {
+  private org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0});
   }
 }
 private class MFFloat24 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0});
   }
 }
 private class MFInt3225 {
@@ -284,14 +284,14 @@ private class MFFloat26 {
     return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0});
   }
 }
-private class MFFloat27 {
-  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
+private class MFInt3227 {
+  private org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0});
   }
 }
 private class MFFloat28 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0});
   }
 }
 private class MFInt3229 {
@@ -304,14 +304,14 @@ private class MFFloat30 {
     return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0});
   }
 }
-private class MFFloat31 {
-  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
+private class MFInt3231 {
+  private org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0});
   }
 }
 private class MFFloat32 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0});
   }
 }
 private class MFInt3233 {
@@ -324,14 +324,14 @@ private class MFFloat34 {
     return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0});
   }
 }
-private class MFFloat35 {
-  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
+private class MFInt3235 {
+  private org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0});
   }
 }
 private class MFFloat36 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0});
   }
 }
 private class MFInt3237 {
@@ -344,14 +344,14 @@ private class MFFloat38 {
     return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0});
   }
 }
-private class MFFloat39 {
-  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
+private class MFInt3239 {
+  private org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0});
   }
 }
 private class MFFloat40 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0});
   }
 }
 private class MFInt3241 {
@@ -364,14 +364,14 @@ private class MFFloat42 {
     return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0});
   }
 }
-private class MFFloat43 {
-  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
+private class MFInt3243 {
+  private org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0});
   }
 }
 private class MFFloat44 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0});
   }
 }
 private class MFInt3245 {
@@ -384,14 +384,14 @@ private class MFFloat46 {
     return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0});
   }
 }
-private class MFFloat47 {
-  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
+private class MFInt3247 {
+  private org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0});
   }
 }
 private class MFFloat48 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0});
   }
 }
 private class MFInt3249 {
@@ -404,14 +404,14 @@ private class MFFloat50 {
     return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0});
   }
 }
-private class MFFloat51 {
-  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
+private class MFInt3251 {
+  private org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0});
   }
 }
 private class MFFloat52 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0});
   }
 }
 private class MFInt3253 {
@@ -424,194 +424,14 @@ private class MFFloat54 {
     return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0});
   }
 }
-private class MFFloat55 {
-  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
+private class MFInt3255 {
+  private org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0});
   }
 }
 private class MFFloat56 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
-  }
-}
-private class MFInt3257 {
-  private org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0});
-  }
-}
-private class MFFloat58 {
-  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
     return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0});
-  }
-}
-private class MFFloat59 {
-  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
-  }
-}
-private class MFFloat60 {
-  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
-  }
-}
-private class MFInt3261 {
-  private org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0});
-  }
-}
-private class MFFloat62 {
-  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0});
-  }
-}
-private class MFFloat63 {
-  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
-  }
-}
-private class MFFloat64 {
-  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
-  }
-}
-private class MFInt3265 {
-  private org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0});
-  }
-}
-private class MFFloat66 {
-  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0});
-  }
-}
-private class MFFloat67 {
-  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
-  }
-}
-private class MFFloat68 {
-  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
-  }
-}
-private class MFInt3269 {
-  private org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0});
-  }
-}
-private class MFFloat70 {
-  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0});
-  }
-}
-private class MFFloat71 {
-  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
-  }
-}
-private class MFFloat72 {
-  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
-  }
-}
-private class MFInt3273 {
-  private org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0});
-  }
-}
-private class MFFloat74 {
-  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0});
-  }
-}
-private class MFFloat75 {
-  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
-  }
-}
-private class MFFloat76 {
-  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
-  }
-}
-private class MFInt3277 {
-  private org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0});
-  }
-}
-private class MFFloat78 {
-  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0});
-  }
-}
-private class MFFloat79 {
-  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
-  }
-}
-private class MFFloat80 {
-  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
-  }
-}
-private class MFInt3281 {
-  private org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0});
-  }
-}
-private class MFFloat82 {
-  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0});
-  }
-}
-private class MFFloat83 {
-  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
-  }
-}
-private class MFFloat84 {
-  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
-  }
-}
-private class MFInt3285 {
-  private org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0});
-  }
-}
-private class MFFloat86 {
-  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0});
-  }
-}
-private class MFFloat87 {
-  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
-  }
-}
-private class MFFloat88 {
-  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
-  }
-}
-private class MFInt3289 {
-  private org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0});
-  }
-}
-private class MFFloat90 {
-  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0});
-  }
-}
-private class MFFloat91 {
-  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
-  }
-}
-private class MFFloat92 {
-  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
   }
 }
 }

@@ -9,7 +9,7 @@
     <meta content='https://coderextreme.net/X3DJSONLD/src/main/data/bubble.x3d' name='identifier'/>
   </head>
   <Scene>
-    <NavigationInfo avatarSize='0.15 1.53 0.75' transitionType='"LINEAR"' type='"EXAMINE"'/>
+    <NavigationInfo avatarSize='0.25 1.6 0.75' transitionType='"LINEAR"' type='"EXAMINE"'/>
     <Viewpoint description='Bubble in action' orientation='1 0 0 0' position='0 0 4'/>
     <ProtoDeclare name='Bubble'>
       <ProtoBody>

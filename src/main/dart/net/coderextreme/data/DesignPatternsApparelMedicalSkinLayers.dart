@@ -92,8 +92,6 @@ var X3D0 =  X3D(
                   joints_ : [
                     HAnimJoint(
                       name_ : SFString('humanoid_root'),
-                      ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                      llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                       children_ : [
                         HAnimSegment(
                           name_ : SFString('sacrum'),
@@ -119,8 +117,6 @@ var X3D0 =  X3D(
                   joints_ : [
                     HAnimJoint(
                       name_ : SFString('humanoid_root'),
-                      ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                      llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                       children_ : [
                         HAnimSegment(
                           name_ : SFString('sacrum'),
@@ -138,8 +134,6 @@ var X3D0 =  X3D(
                   joints_ : [
                     HAnimJoint(
                       name_ : SFString('humanoid_root'),
-                      ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                      llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                       children_ : [
                         HAnimSegment(
                           name_ : SFString('sacrum'))]),
@@ -155,8 +149,6 @@ var X3D0 =  X3D(
                   joints_ : [
                     HAnimJoint(
                       name_ : SFString('humanoid_root'),
-                      ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                      llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                       children_ : [
                         HAnimSegment(
                           name_ : SFString('sacrum'))]),
@@ -174,8 +166,6 @@ var X3D0 =  X3D(
                   joints_ : [
                     HAnimJoint(
                       name_ : SFString('humanoid_root'),
-                      ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                      llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                       children_ : [
                         HAnimSegment(
                           name_ : SFString('sacrum'))]),
@@ -198,8 +188,6 @@ var X3D0 =  X3D(
                   joints_ : [
                     HAnimJoint(
                       name_ : SFString('humanoid_root'),
-                      ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                      llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                       children_ : [
                         HAnimSegment(
                           name_ : SFString('sacrum'))]),
@@ -220,8 +208,6 @@ var X3D0 =  X3D(
                   joints_ : [
                     HAnimJoint(
                       name_ : SFString('humanoid_root'),
-                      ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                      llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                       children_ : [
                         HAnimSegment(
                           name_ : SFString('sacrum'))]),
@@ -238,8 +224,6 @@ var X3D0 =  X3D(
                   joints_ : [
                     HAnimJoint(
                       name_ : SFString('humanoid_root'),
-                      ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                      llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                       children_ : [
                         HAnimSegment(
                           name_ : SFString('sacrum'))]),
