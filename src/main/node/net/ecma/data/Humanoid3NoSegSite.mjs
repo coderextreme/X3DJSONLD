@@ -53,11 +53,11 @@ var X3D0 =  new X3D({
           meta : new MFNode([
             new meta({
               name : new SFString("title"),
-              content : new SFString("JohnBoy.x3d")}),
+              content : new SFString("Humanoid3NoSegSite.x3d")}),
 
             new meta({
               name : new SFString("identifier"),
-              content : new SFString("http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d")}),
+              content : new SFString("http://www.web3d.org/x3d/content/examples/HumanoidAnimation/Humanoid3NoSegSite.x3d")}),
 
             new meta({
               name : new SFString("description"),
