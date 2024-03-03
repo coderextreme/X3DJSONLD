@@ -656,11 +656,11 @@ Shape149.setAppearance(Appearance151)
 Transform148.addChild(Shape149)
 Transform153 = x3d.Transform()
 Transform153.setTranslation([0,-2.5,0])
+#The Unicorn
 Shape154 = x3d.Shape()
 Shape154.setUSE("Torus")
 
 Transform153.addChild(Shape154)
-#The Unicorn
 Transform155 = x3d.Transform()
 Transform155.setTranslation([-2,0,0])
 Shape156 = x3d.Shape()
@@ -711,9 +711,9 @@ Transform164.setRotation([1,0,0,-1.7])
 Transform164.setTranslation([-17,-4.5,0])
 Transform165 = x3d.Transform()
 Transform165.setScale([0.2,0.2,0.2])
+#Knot
 Shape166 = x3d.Shape()
 Shape166.setUSE("Torus")
-#Knot
 
 Transform165.addChild(Shape166)
 Transform167 = x3d.Transform()

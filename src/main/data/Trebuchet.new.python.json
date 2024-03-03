@@ -94,11 +94,11 @@ received. I will use the sound clips under \"Fair Use\" clause of the DMCA"
 "@backUrl":["https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_back.jpg"],
 "@bottomUrl":["https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_bottom.jpg"],
 "@frontUrl":["https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_front.jpg"],
-"@groundAngle":[1.309,1.570796],
+"@groundAngle":[1,1],
 "@groundColor":[0.1,0.1,0,0.4,0.25,0.2,0.6,0.6,0.6],
 "@leftUrl":["https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_left.jpg"],
 "@rightUrl":["https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_right.jpg"],
-"@skyAngle":[1.309,1.57079],
+"@skyAngle":[1,1],
 "@skyColor":[0,0.2,0.7,0,0.5,1,1,1,1],
 "@topUrl":["https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_top.jpg"]
 }
@@ -681,9 +681,6 @@ received. I will use the sound clips under \"Fair Use\" clause of the DMCA"
 {
 "@USE":"plank"
 }
-},
-{
-"#comment":"Main Verticle Support"
 }
 ]
 }
@@ -893,18 +890,12 @@ received. I will use the sound clips under \"Fair Use\" clause of the DMCA"
 }
 }
 }
-},
-{
-"#comment":"knott"
 }
 ]
 }
 }
 ]
 }
-},
-{
-"#comment":"The Unicorn"
 },
 { "Transform":
 {
@@ -937,9 +928,6 @@ received. I will use the sound clips under \"Fair Use\" clause of the DMCA"
 {
 "@translation":[0,-2.5,0],
 "-children":[
-{
-"#comment":"The Unicorn"
-},
 { "Shape":
 {
 "@USE":"Torus"
@@ -964,9 +952,6 @@ received. I will use the sound clips under \"Fair Use\" clause of the DMCA"
 }
 }
 }
-},
-{
-"#comment":"Knott"
 }
 ]
 }
@@ -1022,9 +1007,6 @@ received. I will use the sound clips under \"Fair Use\" clause of the DMCA"
 {
 "@scale":[0.2,0.2,0.2],
 "-children":[
-{
-"#comment":"Knot"
-},
 { "Shape":
 {
 "@USE":"Torus"
@@ -1423,9 +1405,6 @@ received. I will use the sound clips under \"Fair Use\" clause of the DMCA"
 }
 }
 }
-},
-{
-"#comment":"Top Pivot"
 }
 ]
 }
@@ -1484,9 +1463,6 @@ received. I will use the sound clips under \"Fair Use\" clause of the DMCA"
 {
 "@translation":[4,14,2.5],
 "-children":[
-{
-"#comment":"CounterWeight"
-},
 { "Shape":
 {
 "-appearance":
@@ -1607,9 +1583,6 @@ received. I will use the sound clips under \"Fair Use\" clause of the DMCA"
 }
 ]
 }
-},
-{
-"#comment":"Release Pin"
 },
 { "Transform":
 {
@@ -2101,28 +2074,50 @@ received. I will use the sound clips under \"Fair Use\" clause of the DMCA"
 "",
 "",
 "ecmascript:",
-"",
-"",
-"function initialize ()",
-"{",
-"\twhichchoice =0;",
-"\tCounterWeight=100;",
-"}",
-"",
-"function set_boolean ( boolean_input, eventTime)",
-"{",
-"",
-"\tif ( boolean_input== false ) { return; } // ignore the unclick",
-"        whichchoice = whichchoice +1;",
-"\tif (whichchoice == 0)CounterWeight=50.00;",
-"\tif (whichchoice == 1)CounterWeight=500.00;",
-"\tif (whichchoice == 2)CounterWeight=1000.00;",
-"\tif (whichchoice == 3)CounterWeight=10000.00;",
-"        if ( whichchoice ==4 ) { whichchoice = 0; CounterWeight=50; }",
-"",
-"",
-"        Browser.println ('CounterWeight ='+CounterWeight);",
-"}",
+"\"+",
+"\"",
+"\"+",
+"\"",
+"\"+",
+"\"function initialize ()",
+"\"+",
+"\"{",
+"\"+",
+"\"\twhichchoice =0;",
+"\"+",
+"\"\tCounterWeight=100;",
+"\"+",
+"\"}",
+"\"+",
+"\"",
+"\"+",
+"\"function set_boolean ( boolean_input, eventTime)",
+"\"+",
+"\"{",
+"\"+",
+"\"",
+"\"+",
+"\"\tif ( boolean_input== false ) { return; } // ignore the unclick",
+"\"+",
+"\"        whichchoice = whichchoice +1;",
+"\"+",
+"\"\tif (whichchoice == 0)CounterWeight=50.00;",
+"\"+",
+"\"\tif (whichchoice == 1)CounterWeight=500.00;",
+"\"+",
+"\"\tif (whichchoice == 2)CounterWeight=1000.00;",
+"\"+",
+"\"\tif (whichchoice == 3)CounterWeight=10000.00;",
+"\"+",
+"\"        if ( whichchoice ==4 ) { whichchoice = 0; CounterWeight=50; }",
+"\"+",
+"\"",
+"\"+",
+"\"",
+"\"+",
+"\"        Browser.println ('CounterWeight ='+CounterWeight);",
+"\"+",
+"\"}",
 "",
 ""
 ]
@@ -2152,18 +2147,30 @@ received. I will use the sound clips under \"Fair Use\" clause of the DMCA"
 "",
 "",
 "ecmascript:",
-"",
-"function set_boolean (boolean_input, eventTime)",
-"{",
-"\tif ( boolean_input== false ) { return; } // ignore unclick",
-"        whichchoice = whichchoice +1;",
-"        if (whichchoice == 0)ProjectileWeight=10.00;",
-"        if (whichchoice == 1)ProjectileWeight=1000.00;",
-"\tif (whichchoice == 2)ProjectileWeight=5;",
-"",
-"\tif ( whichchoice ==3 ) { whichchoice = 0; ProjectileWeight=10.00; }",
-"\tBrowser.println ('Projectile Weight'+ProjectileWeight);",
-"}",
+"\"+",
+"\"",
+"\"+",
+"\"function set_boolean (boolean_input, eventTime)",
+"\"+",
+"\"{",
+"\"+",
+"\"\tif ( boolean_input== false ) { return; } // ignore unclick",
+"\"+",
+"\"        whichchoice = whichchoice +1;",
+"\"+",
+"\"        if (whichchoice == 0)ProjectileWeight=10.00;",
+"\"+",
+"\"        if (whichchoice == 1)ProjectileWeight=1000.00;",
+"\"+",
+"\"\tif (whichchoice == 2)ProjectileWeight=5;",
+"\"+",
+"\"",
+"\"+",
+"\"\tif ( whichchoice ==3 ) { whichchoice = 0; ProjectileWeight=10.00; }",
+"\"+",
+"\"\tBrowser.println ('Projectile Weight'+ProjectileWeight);",
+"\"+",
+"\"}",
 "",
 ""
 ]
@@ -2188,17 +2195,28 @@ received. I will use the sound clips under \"Fair Use\" clause of the DMCA"
 "",
 "",
 "ecmascript:",
-"",
-"function set_boolean (boolean_input, eventTime)",
-"{",
-"\tif ( boolean_input== false ) { return; } // ignore unclick",
-"",
-"        whichchoice = whichchoice +1;",
-"",
-"        if ( whichchoice ==2 )  whichchoice = 0;",
-"",
-"",
-"}",
+"\"+",
+"\"",
+"\"+",
+"\"function set_boolean (boolean_input, eventTime)",
+"\"+",
+"\"{",
+"\"+",
+"\"\tif ( boolean_input== false ) { return; } // ignore unclick",
+"\"+",
+"\"",
+"\"+",
+"\"        whichchoice = whichchoice +1;",
+"\"+",
+"\"",
+"\"+",
+"\"        if ( whichchoice ==2 )  whichchoice = 0;",
+"\"+",
+"\"",
+"\"+",
+"\"",
+"\"+",
+"\"}",
 "",
 ""
 ]
@@ -2250,46 +2268,87 @@ received. I will use the sound clips under \"Fair Use\" clause of the DMCA"
 "",
 "",
 "ecmascript:",
-"",
-"function initialize ()",
-"{",
-"\tMassCounterWeight=100;",
-"\tMassProjectileWeight=10;",
-"\tBrowser.println ('MassCounterWeight =' + MassCounterWeight);",
-"\tBrowser.println ('MassProjectileWeight =' + MassProjectileWeight);",
-"}",
-"",
-"function set_MassProjectileWeight (value, timestamp)",
-"{",
-"\tMassProjectileWeight = value;",
-"\tBrowser.println ('new MassProjectileWeight =' + MassProjectileWeight);",
-"}",
-"function set_MassCounterWeight (value2, timestamp)",
-"{",
-"\tMassCounterWeight = value2;",
-"\tBrowser.println ('new MassCounterWeight =' + MassCounterWeight);",
-"}",
-"",
-"",
-"function set_fraction ( fraction, eventTime )",
-"{",
-"\tvar TrebuchetHeight=45;",
-"\tvar Height =25;",
-"      \tx = (2*(MassCounterWeight/MassProjectileWeight)*Height*fraction)-.5*TrebuchetHeight;",
-"\t// start at TrebuchetHeight and keep along z axis (z=zero)",
-"\ty =  (MassCounterWeight/MassProjectileWeight)*Height*Math.sin(fraction*3.14);",
-"        z = 0;",
-"        transparent = new SFVec3f (1,1,1);",
-"     if (y &lt;1.5*TrebuchetHeight  )if (x&lt;TrebuchetHeight)",
-"\t\t{",
-"\t\tx=x-10;",
-"\t\ty=y+1;",
-"\t\ttransparent = new SFVec3f(.01, .01, .01);",
-"\t\t\t}",
-"",
-"\tvalue_changed = new SFVec3f (x, y, z);",
-"\tBrowser.println ('x=' + value_changed[0] + ' y=' + value_changed[1] + ' z=' + value_changed[2]);",
-"}",
+"\"+",
+"\"",
+"\"+",
+"\"function initialize ()",
+"\"+",
+"\"{",
+"\"+",
+"\"\tMassCounterWeight=100;",
+"\"+",
+"\"\tMassProjectileWeight=10;",
+"\"+",
+"\"\tBrowser.println ('MassCounterWeight =' + MassCounterWeight);",
+"\"+",
+"\"\tBrowser.println ('MassProjectileWeight =' + MassProjectileWeight);",
+"\"+",
+"\"}",
+"\"+",
+"\"",
+"\"+",
+"\"function set_MassProjectileWeight (value, timestamp)",
+"\"+",
+"\"{",
+"\"+",
+"\"\tMassProjectileWeight = value;",
+"\"+",
+"\"\tBrowser.println ('new MassProjectileWeight =' + MassProjectileWeight);",
+"\"+",
+"\"}",
+"\"+",
+"\"function set_MassCounterWeight (value2, timestamp)",
+"\"+",
+"\"{",
+"\"+",
+"\"\tMassCounterWeight = value2;",
+"\"+",
+"\"\tBrowser.println ('new MassCounterWeight =' + MassCounterWeight);",
+"\"+",
+"\"}",
+"\"+",
+"\"",
+"\"+",
+"\"",
+"\"+",
+"\"function set_fraction ( fraction, eventTime )",
+"\"+",
+"\"{",
+"\"+",
+"\"\tvar TrebuchetHeight=45;",
+"\"+",
+"\"\tvar Height =25;",
+"\"+",
+"\"      \tx = (2*(MassCounterWeight/MassProjectileWeight)*Height*fraction)-.5*TrebuchetHeight;",
+"\"+",
+"\"\t// start at TrebuchetHeight and keep along z axis (z=zero)",
+"\"+",
+"\"\ty =  (MassCounterWeight/MassProjectileWeight)*Height*Math.sin(fraction*3.14);",
+"\"+",
+"\"        z = 0;",
+"\"+",
+"\"        transparent = new SFVec3f (1,1,1);",
+"\"+",
+"\"     if (y &lt;1.5*TrebuchetHeight  )if (x&lt;TrebuchetHeight)",
+"\"+",
+"\"\t\t{",
+"\"+",
+"\"\t\tx=x-10;",
+"\"+",
+"\"\t\ty=y+1;",
+"\"+",
+"\"\t\ttransparent = new SFVec3f(.01, .01, .01);",
+"\"+",
+"\"\t\t\t}",
+"\"+",
+"\"",
+"\"+",
+"\"\tvalue_changed = new SFVec3f (x, y, z);",
+"\"+",
+"\"\tBrowser.println ('x=' + value_changed[0] + ' y=' + value_changed[1] + ' z=' +
+value_changed[2]);",
+"\"+",
+"\"}",
 "",
 ""
 ]
@@ -2310,35 +2369,35 @@ received. I will use the sound clips under \"Fair Use\" clause of the DMCA"
 { "PositionInterpolator":
 {
 "@DEF":"verticalweightpath",
-"@key":[0,0.1,0.2,0.2,0.3,0.9],
+"@key":[0,0,0,0,0,0],
 "@keyValue":[1.4,1.6,0,1,-8,0,-3.5,-12,0,-3.5,-12,0,1.2,-8,0,1.4,1.6,0]
 }
 },
 { "OrientationInterpolator":
 {
 "@DEF":"flingerangles",
-"@key":[0,0.1,0.2,0.2,0.3,0.9],
+"@key":[0,0,0,0,0,0],
 "@keyValue":[0,0,1,0.82,0,0,1,-0.77,0,0,1,-1.57,0,0,1,-1.57,0,0,1,-0.77,0,0,1,0.82]
 }
 },
 { "PositionInterpolator":
 {
 "@DEF":"pinpath",
-"@key":[0,0.01,0.95,1],
+"@key":[0,0,0,1],
 "@keyValue":[0,0,-3,0,0,-10,0,0,-10,0,0,-3]
 }
 },
 { "OrientationInterpolator":
 {
 "@DEF":"RnSAngels",
-"@key":[0,0.7,1],
+"@key":[0,0,1],
 "@keyValue":[0,0,1,0,0,0,1,-3.14,0,0,1,0]
 }
 },
 { "PositionInterpolator":
 {
 "@DEF":"invisiable",
-"@key":[0,0.2,0.98,0.99],
+"@key":[0,0,0,0],
 "@keyValue":[1,1,1,0.01,0.01,0.01,0.01,0.01,0.01,1,1,1]
 }
 },

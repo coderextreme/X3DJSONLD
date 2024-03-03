@@ -739,13 +739,13 @@ Transform148.child[0] = Shape149;
 
 Transform Transform153 = createNode("Transform");
 Transform153.translation = new SFVec3f(new float[0,-2.5,0]);
+//The Unicorn
 Shape Shape154 = createNode("Shape");
 Shape154.USE = "Torus";
 Transform153.child = new undefined();
 
 Transform153.child[0] = Shape154;
 
-//The Unicorn
 Transform Transform155 = createNode("Transform");
 Transform155.translation = new SFVec3f(new float[-2,0,0]);
 Shape Shape156 = createNode("Shape");
@@ -802,9 +802,9 @@ Transform164.rotation = new SFRotation(new float[1,0,0,-1.7]);
 Transform164.translation = new SFVec3f(new float[-17,-4.5,0]);
 Transform Transform165 = createNode("Transform");
 Transform165.scale = new SFVec3f(new float[0.2,0.2,0.2]);
+//Knot
 Shape Shape166 = createNode("Shape");
 Shape166.USE = "Torus";
-//Knot
 Transform165.child = new undefined();
 
 Transform165.child[0] = Shape166;

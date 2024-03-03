@@ -516,10 +516,10 @@ var X3D0 =  X3D(
                       children_ : [
                         Transform(
                           translation_ : SFVec3f([SFDouble(0), SFDouble(-2.5), SFDouble(0)]),
+                          /*The Unicorn*/
                           child_ : 
                             Shape(
                               USE_ : SFString('Torus')),
-                          /*The Unicorn*/
                           children_ : [
                             Transform(
                               translation_ : SFVec3f([SFDouble(-2), SFDouble(0), SFDouble(0)]),
@@ -559,10 +559,10 @@ var X3D0 =  X3D(
                       children_ : [
                         Transform(
                           scale_ : SFVec3f([SFDouble(0.2), SFDouble(0.2), SFDouble(0.2)]),
+                          /*Knot*/
                           child_ : 
                             Shape(
-                              USE_ : SFString('Torus'),
-                              /*Knot*/),
+                              USE_ : SFString('Torus')),
                           children_ : [
                             Transform(
                               translation_ : SFVec3f([SFDouble(-1), SFDouble(0), SFDouble(1.7)]),

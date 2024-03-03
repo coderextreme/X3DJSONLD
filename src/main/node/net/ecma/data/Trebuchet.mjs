@@ -566,10 +566,10 @@ var X3D0 =  new X3D({
                       children : new MFNode([
                         new Transform({
                           translation : new SFVec3f([0,-2.5,0]),
+                          /*The Unicorn*/
                           child : new SFNode(
                             new Shape({
                               USE : new SFString("Torus")})),
-                          /*The Unicorn*/
                           children : new MFNode([
                             new Transform({
                               translation : new SFVec3f([-2,0,0]),
@@ -609,10 +609,10 @@ var X3D0 =  new X3D({
                       children : new MFNode([
                         new Transform({
                           scale : new SFVec3f([0.2,0.2,0.2]),
+                          /*Knot*/
                           child : new SFNode(
                             new Shape({
-                              USE : new SFString("Torus"),
-                              /*Knot*/})),
+                              USE : new SFString("Torus")})),
                           children : new MFNode([
                             new Transform({
                               translation : new SFVec3f([-1,0,1.7]),

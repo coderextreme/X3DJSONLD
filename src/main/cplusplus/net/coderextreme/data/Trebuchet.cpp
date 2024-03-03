@@ -667,11 +667,11 @@ Transform148->addChild(*Shape149);
 
 CTransform* Transform153 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform153->setTranslation(new float[3]{0,-2.5,0});
+//The Unicorn
 CShape* Shape154 = (CShape *)(m_pScene.createNode("Shape"));
 Shape154->setUSE("Torus");
 Transform153->addChild(*Shape154);
 
-//The Unicorn
 CTransform* Transform155 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform155->setTranslation(new float[3]{-2,0,0});
 CShape* Shape156 = (CShape *)(m_pScene.createNode("Shape"));
@@ -722,9 +722,9 @@ Transform164->setRotation(new float[4]{1,0,0,-1.7});
 Transform164->setTranslation(new float[3]{-17,-4.5,0});
 CTransform* Transform165 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform165->setScale(new float[3]{0.2,0.2,0.2});
+//Knot
 CShape* Shape166 = (CShape *)(m_pScene.createNode("Shape"));
 Shape166->setUSE("Torus");
-//Knot
 Transform165->addChild(*Shape166);
 
 CTransform* Transform167 = (CTransform *)(m_pScene.createNode("Transform"));

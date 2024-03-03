@@ -935,13 +935,13 @@
                               {
                                 "@translation":[0,-2.5,0],
                                 "-children":[
+                                  {
+                                    "#comment":"The Unicorn"
+                                  },
                                   { "Shape":
                                     {
                                       "@USE":"Torus"
                                     }
-                                  },
-                                  {
-                                    "#comment":"The Unicorn"
                                   },
                                   { "Transform":
                                     {
@@ -1020,14 +1020,12 @@
                               {
                                 "@scale":[0.2,0.2,0.2],
                                 "-children":[
+                                  {
+                                    "#comment":"Knot"
+                                  },
                                   { "Shape":
                                     {
-                                      "@USE":"Torus",
-                                      "-children":[
-                                        {
-                                          "#comment":"Knot"
-                                        }
-                                      ]
+                                      "@USE":"Torus"
                                     }
                                   },
                                   { "Transform":
