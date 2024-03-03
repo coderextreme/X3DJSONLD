@@ -5,6 +5,6 @@ do
 	FILE=$i
 	echo perl -p -i -e "s/NeedClassName/$CLASS/g" "$FILE"
 	perl -p -i -e "s/NeedClassName/$CLASS/g" "$FILE"
-	echo perl -p -i -e "s/JohnBoy/$CLASS/g" "$FILE"
-	perl -p -i -e "s/JohnBoy/$CLASS/g" "$FILE"
+	#echo perl -p -i -e "s/JohnBoy/$CLASS/g" "$FILE"
+	#perl -p -i -e "s/JohnBoy/$CLASS/g" "$FILE"
 done

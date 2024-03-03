@@ -234,8 +234,8 @@
             </Appearance>
           </Shape>
           <Transform translation='0 -2.5 0'>
-            <Shape USE='Torus'/>
             <!-- The Unicorn -->
+            <Shape USE='Torus'/>
             <Transform translation='-2 -0 0'>
               <Shape>
                 <Sphere radius='1.5'/>
@@ -255,8 +255,8 @@
         </Transform>
         <Transform rotation='1 0 0 -1.7' translation='-17 -4.5 0'>
           <Transform scale='.2 .2 .2'>
+            <!-- Knot -->
             <Shape USE='Torus'>
-              <!-- Knot -->
             </Shape>
             <Transform translation='-1 0 1.7'>
               <Shape>

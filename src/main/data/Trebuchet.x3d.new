@@ -148,8 +148,8 @@
 <Appearance containerField="appearance"><Material containerField="material" specularColor="1 1 1"></Material>
 </Appearance>
 </Shape>
-<Transform translation="0 -2.5 0"><Shape USE="Torus"></Shape>
-<!--The Unicorn--><Transform translation="-2 0 0"><Shape><Sphere radius="1.5"></Sphere>
+<Transform translation="0 -2.5 0"><!--The Unicorn--><Shape USE="Torus"></Shape>
+<Transform translation="-2 0 0"><Shape><Sphere radius="1.5"></Sphere>
 <Appearance containerField="appearance" USE="rope"></Appearance>
 </Shape>
 <!--Knott--></Transform>
@@ -160,7 +160,7 @@
 </Transform>
 </Transform>
 </Transform>
-<Transform rotation="1 0 0 -1.7" translation="-17 -4.5 0"><Transform scale="0.2 0.2 0.2"><Shape USE="Torus"><!--Knot--></Shape>
+<Transform rotation="1 0 0 -1.7" translation="-17 -4.5 0"><Transform scale="0.2 0.2 0.2"><!--Knot--><Shape USE="Torus"></Shape>
 <Transform translation="-1 0 1.7"><Shape><Sphere radius="1.5"></Sphere>
 <Appearance containerField="appearance" USE="rope"></Appearance>
 </Shape>

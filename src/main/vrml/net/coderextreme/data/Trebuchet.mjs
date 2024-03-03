@@ -737,13 +737,13 @@ Transform148.child[0] = Shape149;
 
 let Transform153 = browser.currentScene.createNode("Transform");
 Transform153.translation = new SFVec3f(new float[0,-2.5,0]);
+//The Unicorn
 let Shape154 = browser.currentScene.createNode("Shape");
 Shape154.USE = "Torus";
 Transform153.child = new undefined();
 
 Transform153.child[0] = Shape154;
 
-//The Unicorn
 let Transform155 = browser.currentScene.createNode("Transform");
 Transform155.translation = new SFVec3f(new float[-2,0,0]);
 let Shape156 = browser.currentScene.createNode("Shape");
@@ -800,9 +800,9 @@ Transform164.rotation = new SFRotation(new float[1,0,0,-1.7]);
 Transform164.translation = new SFVec3f(new float[-17,-4.5,0]);
 let Transform165 = browser.currentScene.createNode("Transform");
 Transform165.scale = new SFVec3f(new float[0.2,0.2,0.2]);
+//Knot
 let Shape166 = browser.currentScene.createNode("Shape");
 Shape166.USE = "Torus";
-//Knot
 Transform165.child = new undefined();
 
 Transform165.child[0] = Shape166;
