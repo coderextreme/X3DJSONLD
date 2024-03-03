@@ -11,8 +11,8 @@ bpy.ops.import_scene.fbx(filepath = "gramps_anim_short.fbx")
 #    auto_connect = True,
 #    find_chains = True,
 #    fix_orientation = True)
-#bpy.ops.import_scene.fbx(filepath = "../../Tufani/InputDir73/maya to c4d files/gramps_my_c4d_anim.fbx")
-#bpy.ops.import_scene.gltf(filepath = "../../Tufani/HAnimDecoratorAssembly/gramps73/gramps_c4d_omni.gltf")
+#bpy.ops.import_scene.fbx(filepath = "../../WinterAndSpring/InputDir73/maya to c4d files/gramps_my_c4d_anim.fbx")
+#bpy.ops.import_scene.gltf(filepath = "../../WinterAndSpring/HAnimDecoratorAssembly/gramps73/gramps_c4d_omni.gltf")
 
 skinCoordInfo = {}
 
