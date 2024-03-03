@@ -161,7 +161,9 @@ class ClassPrinter:
                 if enumerations is not None:
                     for enum in enumerations:
                         val = enum.get("value")
-                        if ' ' in val:
+                        if field.get("type").endswith("FInt32"):
+                            pass
+                        elif ' ' in val:
                             val = '"'+val.replace('"', '\\"')+'"'
                         elif not '"' in val:
                             val = '"'+val+'"'
@@ -307,7 +309,9 @@ class ClassPrinter:
                     #  if field.get('additionalEnumerationValuesAllowed') == "true":
                     for enum in enumerations:
                         val = enum.get("value")
-                        if ' ' in val:
+                        if field.get("type").endswith("FInt32"):
+                            pass
+                        elif ' ' in val:
                             val = '"'+val.replace('"', '\\"')+'"'
                         elif not '"' in val:
                             val = '"'+val+'"'
