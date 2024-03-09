@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://www.web3d.org/specifications/x3d-3.1-JSONSchema.json",
-  "title": "X3D V3.1 JSON Schema, generated 2024/03/02 20:23:47",
+  "title": "X3D V3.1 JSON Schema, generated 2024/03/09 14:33:05",
   "description": "Experimental JSON Schema for X3D V3.1",
   "type": "object",
   "properties": {
@@ -959,9 +959,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -1056,9 +1058,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -1131,9 +1135,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -1203,9 +1209,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -1289,9 +1297,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -1389,9 +1399,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -1544,9 +1556,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -1642,9 +1656,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -1699,9 +1715,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -1770,9 +1788,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -1832,9 +1852,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -1889,9 +1911,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -1961,9 +1985,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -2042,9 +2068,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -2126,9 +2154,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -2214,9 +2244,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -2375,9 +2407,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -2437,9 +2471,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -2522,9 +2558,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -2589,9 +2627,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -2663,9 +2703,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -2792,9 +2834,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -2867,9 +2911,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -2946,9 +2992,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -3021,9 +3069,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -3134,9 +3184,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -3191,9 +3243,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -3256,9 +3310,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -3321,9 +3377,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -3386,9 +3444,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -3458,9 +3518,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -3530,9 +3592,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -3617,9 +3681,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -3733,9 +3799,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -3843,9 +3911,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -3915,9 +3985,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -4039,9 +4111,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -4578,9 +4652,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -4762,9 +4838,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -4846,9 +4924,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -4919,9 +4999,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -5002,9 +5084,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -5068,9 +5152,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -5215,9 +5301,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -5287,9 +5375,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -5358,9 +5448,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -5498,9 +5590,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -5591,9 +5685,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -5737,9 +5833,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -5813,9 +5911,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -5888,9 +5988,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -5966,9 +6068,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -6038,9 +6142,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -6203,9 +6309,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -6280,9 +6388,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -6446,9 +6556,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -6648,9 +6760,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -6982,9 +7096,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -7196,9 +7312,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -7465,9 +7583,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -7531,9 +7651,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -7607,9 +7729,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -7720,9 +7844,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -7857,9 +7983,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -7947,9 +8075,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -8050,9 +8180,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -8153,9 +8285,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -8256,9 +8390,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -8359,9 +8495,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -8450,9 +8588,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -8521,9 +8661,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -8602,9 +8744,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -8664,9 +8808,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -8736,9 +8882,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -8813,9 +8961,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -8883,9 +9033,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -8971,9 +9123,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -9070,9 +9224,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -9178,9 +9334,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -9246,9 +9404,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -9416,9 +9576,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -9488,9 +9650,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -9560,9 +9724,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -9632,9 +9798,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -9700,9 +9868,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -9772,9 +9942,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -9887,9 +10059,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -10039,9 +10213,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -10099,9 +10275,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -10159,9 +10337,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -10316,9 +10496,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -10383,9 +10565,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -10455,9 +10639,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -10545,9 +10731,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -10640,9 +10828,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -10719,9 +10909,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -10849,9 +11041,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -10928,9 +11122,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -11013,9 +11209,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -11114,9 +11312,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -11187,9 +11387,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -11260,9 +11462,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -11367,9 +11571,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -11500,9 +11706,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -11572,9 +11780,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -11657,9 +11867,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -11732,9 +11944,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -11812,9 +12026,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -11938,9 +12154,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -12066,9 +12284,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -12135,9 +12355,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -12200,9 +12422,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -12265,9 +12489,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -12337,9 +12563,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -12409,9 +12637,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -12538,6 +12768,7 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@name": {
@@ -12545,6 +12776,7 @@
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -12635,9 +12867,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -12717,9 +12951,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -12812,9 +13048,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -13006,9 +13244,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -13116,9 +13356,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -13203,9 +13445,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -13289,9 +13533,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -13378,9 +13624,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -13470,9 +13718,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -13553,9 +13803,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -13749,9 +14001,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -13875,9 +14129,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -13942,9 +14198,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -14038,9 +14296,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -14197,9 +14457,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -14274,9 +14536,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -14341,9 +14605,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -14423,9 +14689,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -14508,9 +14776,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -14627,9 +14897,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -14692,9 +14964,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -14757,9 +15031,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -14822,9 +15098,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -14904,9 +15182,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -14996,9 +15276,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -15108,9 +15390,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -15236,9 +15520,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -15328,9 +15614,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -15385,9 +15673,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -15451,9 +15741,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -15608,9 +15900,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -15892,9 +16186,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -15995,9 +16291,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -16090,9 +16388,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -16160,9 +16460,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -16263,9 +16565,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -16390,9 +16694,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
@@ -16472,9 +16778,11 @@
           "type": "object",
           "properties": {
             "@class": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@USE": {
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-children": {
