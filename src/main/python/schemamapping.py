@@ -183,7 +183,7 @@ with open('../schema/x3d-4.0-JSONSchema.json') as json_data:
     x3duom = json.load(json_data)
 
 
-soup = xml.etree.ElementTree.parse(sys.stdin).getroot()
+soup = xml.etree.ElementTree.parse(open("../../specifications/X3dUnifiedObjectModel-4.0.xml")).getroot()
 
 classes = {}
 regex = {}
