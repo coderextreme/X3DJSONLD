@@ -53,50 +53,130 @@ class ClassPrinter:
 
             return self.children
 
-    def printClass(self):
+    def printProperty(self, prop, field, schema):
+        fieldname = field.get('name')
+        s = ""
+        s += "<td style='border: 1px solid black;'>"
+        # print(self.node)
+        if self.node:
+            s += fieldname
+            s += "<pre>"
+            s += "XML "
+            # s += str(fieldname).replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace('"', "&quot").replace("\\'", "&apos;").replace("\\n", "<br>")
+            s += str(xml.etree.ElementTree.tostring(field, encoding='utf8')).replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace('"', "&quot").replace("\\'", "&apos;").replace("\\n", "<br>")
+            s += "</pre>"
+        s += "<br>"
+        s += "<pre>"
+        s += "JSON "
+        s += '"'+prop+'": '
+        s += json.dumps(schema['properties'][prop], indent=2)
+        # print(prop+" "+fieldname+" processing "+s)
+        s += "</pre>"
+        s += "</td>"
+        return s;
+
+    def printSchema(self, field, schema):
+        s = ""
+        fieldname = field.get('name')
+        if 'properties' in schema:
+            for prop in schema['properties']:
+                s += "<tr style='border: 1px solid black;'>"
+                if prop == "@"+fieldname:
+                    s += self.printProperty(prop, field, schema)
+                elif prop == "-"+fieldname:
+                    s += self.printProperty(prop, field, schema)
+                elif prop == "#"+fieldname:
+                    s += self.printProperty(prop, field, schema)
+                elif prop in [ "IS", "field", "fieldValue" ]:
+                    # s += prop # TODO we don't know how to handle this yet.
+                    pass
+                elif prop.startswith("@") or prop.startswith("-") or prop.startswith("#"):
+                    pass # Unequal
+                else:
+                    print("Unhandled "+prop+" "+fieldname)
+                s += "</tr>\n"
+        #else:
+        #    print("Unhandled schema for "+self.name+"."+fieldname+" "+str(schema))
+        return s
+
+    def printNode(self, soup):
+        s = ""
+        s += "<tr style='border: 1px solid black;'>"
+        s += "<td style='border: 1px solid black;'>"
+        s += self.name
+        s += "</td>"
+        s += "</tr>\n"
+        if self.node:
+            s += "XML "
+            # note that only one of these should return a non-NUL string
+            for nodeType in [ "AbstractNodeType", "AbstractObjectType", "ConcreteNode", "Statement" ]:
+                # print(nodeType)
+                nodes = soup.findall(".//"+nodeType+"[@name='"+self.name+"']")
+                for node in nodes:
+                    s += "<tr style='border: 1px solid black;'>"
+                    s += "<td style='border: 1px solid black;'>"
+                    s += "<pre>"
+                    s += str(xml.etree.ElementTree.tostring(node, encoding='utf8')).replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace('"', "&quot").replace("\\'", "&apos;").replace("\\n", "<br>")
+                    s += "</pre>"
+                    s += "</td>"
+                    s += "</tr>\n"
+                    if self.name in x3duom['$defs']:
+                        s += "<tr style='border: 1px solid black;'>"
+                        s += "<td style='border: 1px solid black;'>"
+                        s += "<pre>"
+                        s += "JSON "
+                        s += '"'+self.name+'": '
+                        s += json.dumps(x3duom['$defs'][self.name], indent=2)
+                        s += "</pre>"
+                        s += "</td>"
+                        s += "</tr>\n"
+                    s += "<tr style='border: 1px solid black;'>"
+                    s += "<td style='border: 1px solid black;'>"
+                    s += "<table style='border: 1px solid black;'>"
+                    fields = node.findall(".//field")
+                    for field in fields:
+                        fieldname = field.get('name')
+                        # print(fieldname)
+                        if self.name in x3duom['$defs']:
+                            if 'oneOf' in x3duom['$defs'][self.name]:
+                                for schema in x3duom['$defs'][self.name]['oneOf']:
+                                    s += self.printSchema(field, schema)
+                                    if 'items' in schema:
+                                        s += "<tr style='border: 1px solid black;'>"
+                                        s += "<td style='border: 1px solid black;'>"
+                                        s += "</td>"
+                                        s += self.name+" appears multiple times, with the follwing attributes, see JSON above.  "
+                                        s += "</td>"
+                                        s += "</tr>\n"
+                                        s += self.printSchema(field, schema['items'])
+                            else:
+                                schema = x3duom['$defs'][self.name]
+                                s += self.printSchema(field, schema)
+                                if 'items' in schema:
+                                    s += "<tr style='border: 1px solid black;'>"
+                                    s += "<td style='border: 1px solid black;'>"
+                                    s += "</td>"
+                                    s += self.name+" appears multiple times, with the follwing attributes, see JSON above.  "
+                                    s += "</td>"
+                                    s += "</tr>\n"
+                                    s += self.printSchema(field, schema['items'])
+                        else:
+                            s += "None"
+                    s += "</table>\n"
+                    s += "</td>"
+                    s += "</tr>\n"
+        return s
+
+    def printClass(self, soup):
         s = ""
         if not self.printed:
             self.printed = True
             for parent in self.parents:
                 try:
-                    s += classes[parent].printClass()
+                    s += classes[parent].printClass(soup)
                 except:
                     pass
-            s += "<tr>"
-            s += "<td>"
-            s += self.name
-            s += "</td>"
-            s += "<td>"
-            s += "<pre>"
-            if self.node:
-                s += "XML "
-                nodes = soup.findall(".//AbstractNodeType[@name='"+self.name+"']")
-                for node in nodes:
-                    s += str(xml.etree.ElementTree.tostring(node, encoding='utf8')).replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace('"', "&quot").replace("\\'", "&apos;").replace("\\n", "<br>")
-                nodes = soup.findall(".//AbstractObjectType[@name='"+self.name+"']")
-                for node in nodes:
-                    s += str(xml.etree.ElementTree.tostring(node, encoding='utf8')).replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace('"', "&quot").replace("\\'", "&apos;").replace("\\n", "<br>")
-                nodes = soup.findall(".//ConcreteNode[@name='"+self.name+"']")
-                for node in nodes:
-                    s += str(xml.etree.ElementTree.tostring(node, encoding='utf8')).replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace('"', "&quot").replace("\\'", "&apos;").replace("\\n", "<br>")
-                nodes = soup.findall(".//Statement[@name='"+self.name+"']")
-                for node in nodes:
-                    s += str(xml.etree.ElementTree.tostring(node, encoding='utf8')).replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace('"', "&quot").replace("\\'", "&apos;").replace("\\n", "<br>")
-            else:
-                s += "None"
-            s += "</pre>"
-            s += "</td>"
-            s += "<td>"
-            s += "<pre>"
-            if self.name in x3duom['$defs']:
-                s += "JSON "
-                s += '"'+self.name+'": '
-                s += json.dumps(x3duom['$defs'][self.name], indent=2)
-            else:
-                s += "None"
-            s += "</pre>"
-            s += "</td>"
-            s += "</tr>\n"
+            s += self.printNode(soup)
         return s
 
 with open('../schema/x3d-4.0-JSONSchema.json') as json_data:
@@ -115,6 +195,7 @@ code += """<!DOCTYPE html>
 <head>
 </head>
 <body>
+<table style="border: 1px solid black;">
 """
 
 fts = soup.iter("FieldType")
@@ -155,12 +236,13 @@ for k,v in classes.items():
     v.findParents()
 
 for k,v in classes.items():
-    code += v.printClass()
+    code += v.printClass(soup)
 
 for k,v in containerFields.items():
     code += v
 
-code += """
+code += """\n
+</table>
 </body>
 </html>
 """
