@@ -453,7 +453,10 @@ class ClassPrinter:
 				{
 					"type": "object",
 					"properties": {
-						"@class": { "type": "string" },
+						"@class": {
+                            "$comment": "SFString inputOutput",
+                            "type": "string"
+                        },
 '''
             if self.name == 'ProtoInstance':
                 str += '''\
@@ -463,7 +466,10 @@ class ClassPrinter:
                            },
 '''
             str += '''\
-                           "@USE": { "type": "string" },
+                           "@USE": {
+                              "$comment": "SFString inputOutput",
+                               "type": "string"
+                            },
                             "-children": {
                                     "type": "array",
                                     "minItems": 1,
