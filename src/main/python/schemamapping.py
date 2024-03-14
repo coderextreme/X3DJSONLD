@@ -53,7 +53,7 @@ class ClassPrinter:
 
             return self.children
 
-    def printProperty(self, prop, field, schema):
+    def printProperty(self, prop, field, schema, soup):
         fieldname = field.get('name')
         s = ""
         s += "<td style='border: 1px solid black;'>"
@@ -75,28 +75,30 @@ class ClassPrinter:
         s += "</td>"
         return s;
 
-    def printSchema(self, field, schema):
+    def printSchema(self, field, schema, soup):
         s = ""
         fieldname = field.get('name')
         if 'properties' in schema:
             for prop in schema['properties']:
-                s += "<tr style='border: 1px solid black;'>"
-                if prop == "@"+fieldname:
-                    s += self.printProperty(prop, field, schema)
-                elif prop == "-"+fieldname:
-                    s += self.printProperty(prop, field, schema)
-                elif prop == "#"+fieldname:
-                    s += self.printProperty(prop, field, schema)
-                elif prop in [ "IS", "field", "fieldValue" ]:
-                    # s += prop # TODO we don't know how to handle this yet.
-                    pass
+                if prop == "@"+fieldname or prop == "-"+fieldname or prop == "#"+fieldname or prop == fieldname:
+                    s += "<tr style='border: 1px solid black;'>"
+                    s += self.printProperty(prop, field, schema, soup)
+                    s += "</tr>\n"
                 elif prop.startswith("@") or prop.startswith("-") or prop.startswith("#"):
                     pass # Unequal
                 else:
-                    print("Unhandled "+prop+" "+fieldname)
-                s += "</tr>\n"
+                    # print("Unhandled "+prop+" "+fieldname)
+                    pass
         #else:
         #    print("Unhandled schema for "+self.name+"."+fieldname+" "+str(schema))
+        if 'items' in schema:
+            s += "<tr style='border: 1px solid black;'>"
+            s += "<td style='border: 1px solid black;'>"
+            s += "</td>"
+            s += self.name+" appears multiple times, with the following attributes, see JSON above.  "
+            s += "</td>"
+            s += "</tr>\n"
+            s += self.printSchema(field, schema['items'], soup)
         return s
 
     def printNode(self, soup):
@@ -107,7 +109,6 @@ class ClassPrinter:
         s += "</td>"
         s += "</tr>\n"
         if self.node:
-            s += "XML "
             # note that only one of these should return a non-NUL string
             for nodeType in [ "AbstractNodeType", "AbstractObjectType", "ConcreteNode", "Statement" ]:
                 # print(nodeType)
@@ -115,6 +116,7 @@ class ClassPrinter:
                 for node in nodes:
                     s += "<tr style='border: 1px solid black;'>"
                     s += "<td style='border: 1px solid black;'>"
+                    s += "XML "
                     s += "<pre>"
                     s += str(xml.etree.ElementTree.tostring(node, encoding='utf8')).replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace('"', "&quot").replace("\\'", "&apos;").replace("\\n", "<br>")
                     s += "</pre>"
@@ -140,28 +142,13 @@ class ClassPrinter:
                         if self.name in x3duom['$defs']:
                             if 'oneOf' in x3duom['$defs'][self.name]:
                                 for schema in x3duom['$defs'][self.name]['oneOf']:
-                                    s += self.printSchema(field, schema)
-                                    if 'items' in schema:
-                                        s += "<tr style='border: 1px solid black;'>"
-                                        s += "<td style='border: 1px solid black;'>"
-                                        s += "</td>"
-                                        s += self.name+" appears multiple times, with the follwing attributes, see JSON above.  "
-                                        s += "</td>"
-                                        s += "</tr>\n"
-                                        s += self.printSchema(field, schema['items'])
+                                    s += self.printSchema(field, schema, soup)
                             else:
                                 schema = x3duom['$defs'][self.name]
-                                s += self.printSchema(field, schema)
-                                if 'items' in schema:
-                                    s += "<tr style='border: 1px solid black;'>"
-                                    s += "<td style='border: 1px solid black;'>"
-                                    s += "</td>"
-                                    s += self.name+" appears multiple times, with the follwing attributes, see JSON above.  "
-                                    s += "</td>"
-                                    s += "</tr>\n"
-                                    s += self.printSchema(field, schema['items'])
+                                s += self.printSchema(field, schema, soup)
                         else:
-                            s += "None"
+                            #s += "None"
+                            pass
                     s += "</table>\n"
                     s += "</td>"
                     s += "</tr>\n"
@@ -179,6 +166,23 @@ class ClassPrinter:
             s += self.printNode(soup)
         return s
 
+def printNodeDefs(soup):
+    s = ""
+    schema = x3duom['$defs']
+    for defs in schema:
+        if defs.startswith("-") or defs.startswith("@"):
+            s += "<tr style='border: 1px solid black;'>"
+            s += "<td style='border: 1px solid black;'>"
+            s += "<pre>"
+            s += "JSONEX "
+            s += '"'+defs+'": '
+            s += json.dumps(schema[defs], indent=2)
+            s += "</pre>"
+            s += "</td>"
+            s += "</tr>\n"
+    return s
+
+
 with open('../schema/x3d-4.0-JSONSchema.json') as json_data:
     x3duom = json.load(json_data)
 
@@ -187,7 +191,6 @@ soup = xml.etree.ElementTree.parse(open("../../specifications/X3dUnifiedObjectMo
 
 classes = {}
 regex = {}
-containerFields = {}
 code = ""
 
 code += """<!DOCTYPE html>
@@ -238,8 +241,7 @@ for k,v in classes.items():
 for k,v in classes.items():
     code += v.printClass(soup)
 
-for k,v in containerFields.items():
-    code += v
+code += printNodeDefs(soup)
 
 code += """\n
 </table>
