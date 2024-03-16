@@ -4,201 +4,136 @@
 #define WINAPI
 #define AFX_EXT_CLASS
 #define EXPORT32
-#include "C:/x3d-code/www.web3d.org/x3d/stylesheets/cpp/concretes.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/CylinderExample/pch.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/CylinderExample/framework.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/XML_PARSER.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/X3DLib.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/Abstracts.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/Concretes.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/glMath.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/glut.h"
 int main(int argc, char ** argv) {
-CX3DScene m_pScene;
-CBrowser browser = X3D.getBrowser();
-CX3D* X3D0 = new CX3D();
-CGroup* group = (CGroup*)(m_pScene.createNode("Group"));
-group->addChildren(X3D0);
+X3D* X3D0 = new X3D();
 X3D0->setProfile("Immersive");
 X3D0->setVersion("3.3");
-Chead* head1 = new Chead();
-Cmeta* meta2 = new Cmeta();
+head* head1 = new head();
+meta* meta2 = new meta();
 meta2->setName("title");
 meta2->setContent("bubs2.x3d");
-head1->addMeta(*meta2);
+head1->addMeta(meta2);
 
-Cmeta* meta3 = new Cmeta();
+meta* meta3 = new meta();
 meta3->setName("creator");
 meta3->setContent("John Carlson");
-head1->addMeta(*meta3);
+head1->addMeta(meta3);
 
-Cmeta* meta4 = new Cmeta();
+meta* meta4 = new meta();
 meta4->setName("description");
 meta4->setContent("Tour around a prismatic sphere");
-head1->addMeta(*meta4);
+head1->addMeta(meta4);
 
-Cmeta* meta5 = new Cmeta();
+meta* meta5 = new meta();
 meta5->setName("generator");
 meta5->setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit");
-head1->addMeta(*meta5);
+head1->addMeta(meta5);
 
-Cmeta* meta6 = new Cmeta();
+meta* meta6 = new meta();
 meta6->setName("identifier");
 meta6->setContent("https://coderextreme.net/X3DJSONLD/src/main/data/geo.x3d");
-head1->addMeta(*meta6);
+head1->addMeta(meta6);
 
-Cmeta* meta7 = new Cmeta();
+meta* meta7 = new meta();
 meta7->setName("translated");
 meta7->setContent("13 March 2016");
-head1->addMeta(*meta7);
+head1->addMeta(meta7);
 
-Cmeta* meta8 = new Cmeta();
+meta* meta8 = new meta();
 meta8->setName("generator");
 meta8->setContent("X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html");
-head1->addMeta(*meta8);
+head1->addMeta(meta8);
 
-Ccomponent* component9 = new Ccomponent();
+component* component9 = new component();
 component9->setName("Scripting");
 component9->setLevel(1);
-head1->addComponent(*component9);
+head1->addComponent(component9);
 
-X3D0->setHead(*head1);
+X3D0->setHead(head1);
 
-CScene* Scene10 = new CScene();
-CNavigationInfo* NavigationInfo11 = (CNavigationInfo *)(m_pScene.createNode("NavigationInfo"));
-NavigationInfo11->setType(new CString[1]{"EXAMINE"}, 1);
-group->addChildren(*NavigationInfo11);
+Scene* Scene10 = new Scene();
+NavigationInfo* NavigationInfo11 = new NavigationInfo();
+NavigationInfo11->setType(new String[1]{"EXAMINE"}, 1);
+Scene10->addChild(NavigationInfo11);
 
-CViewpoint* Viewpoint12 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
+Viewpoint* Viewpoint12 = new Viewpoint();
 Viewpoint12->setPosition(new float[3]{0,0,4});
 Viewpoint12->setOrientation(new float[4]{1,0,0,0});
 Viewpoint12->setDescription("Bubbles in action");
-group->addChildren(*Viewpoint12);
+Scene10->addChild(Viewpoint12);
 
-CBackground* Background13 = (CBackground *)(m_pScene.createNode("Background"));
-Background13->setBackUrl(new CString[2]{"../resources/images/BK.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/BK.png"}, 2);
-Background13->setBottomUrl(new CString[2]{"../resources/images/BT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/BT.png"}, 2);
-Background13->setFrontUrl(new CString[2]{"../resources/images/FR.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/FR.png"}, 2);
-Background13->setLeftUrl(new CString[2]{"../resources/images/LF.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/LF.png"}, 2);
-Background13->setRightUrl(new CString[2]{"../resources/images/RT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/RT.png"}, 2);
-Background13->setTopUrl(new CString[2]{"../resources/images/TP.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/TP.png"}, 2);
-group->addChildren(*Background13);
+Background* Background13 = new Background();
+Background13->setBackUrl(new String[2]{"../resources/images/BK.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/BK.png"}, 2);
+Background13->setBottomUrl(new String[2]{"../resources/images/BT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/BT.png"}, 2);
+Background13->setFrontUrl(new String[2]{"../resources/images/FR.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/FR.png"}, 2);
+Background13->setLeftUrl(new String[2]{"../resources/images/LF.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/LF.png"}, 2);
+Background13->setRightUrl(new String[2]{"../resources/images/RT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/RT.png"}, 2);
+Background13->setTopUrl(new String[2]{"../resources/images/TP.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/TP.png"}, 2);
+Scene10->addChild(Background13);
 
-CProtoDeclare ProtoDeclare14 = browser.createX3DFromString(R"foo(<?xml version="1.0" encoding="undefined"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
-<ProtoDeclare name="Bubble" ><ProtoBody><Transform DEF="body_trans"><Shape><Sphere radius="0.25"></Sphere>
-<Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 0 0" transparency="0.2"></Material>
-</Appearance>
-</Shape>
-<Script DEF="bounce"><field name="scale" accessType="inputOutput" type="SFVec3f" value="1 1 1"></field>
-<field name="translation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
-<field name="velocity" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
-<field name="scalvel" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
-<field name="set_fraction" accessType="inputOnly" type="SFFloat"></field>
-<![CDATA[ecmascript:
-function initialize() {
-    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);
-
-    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);
-}
-
-function set_fraction(value) {
-    if (typeof translation === 'undefined') {
-		translation = new SFVec3f(0, 0, 0);
-    }
-    if (typeof velocity === 'undefined') {
-		velocity = new SFVec3f(0, 0, 0);
-    }
-    if (typeof scalvel === 'undefined') {
-		scalvel = new SFVec3f(0, 0, 0);
-    }
-    if (typeof scale === 'undefined') {
-		scale = new SFVec3f(1, 1, 1);
-    }
-    translation = new SFVec3f(	translation.x + velocity.x, translation.y + velocity.y, translation.z + velocity.z);
-    scale = new SFVec3f(scale.x + scalvel.x, scale.y + scalvel.y, scale.z + scalvel.z);
-    // if you get to far away or too big, explode
-    if ( Math.abs(translation.x) > 256) {
-	translation.x = 0;
-	initialize();
-    }
-    if ( Math.abs(translation.y) > 256) {
-	translation.y = 0;
-	initialize();
-    }
-    if ( Math.abs(translation.z) > 256) {
-	translation.z = 0;
-	initialize();
-    }
-    if (Math.abs(scale.x) > 20) {
-	scale.x = scale.x/20;
-	translation.x = 0;
-	initialize();
-    }
-    if (Math.abs(scale.y) > 20) {
-	scale.y = scale.y/20;
-	translation.y = 0;
-	initialize();
-    }
-    if (Math.abs(scale.z) > 20) {
-	scale.z = scale.z/20;
-	translation.z = 0;
-	initialize();
-    }
-}]]></Script>
-<TimeSensor DEF="bubbleClock" cycleInterval="10" loop="true"></TimeSensor>
-<ROUTE fromNode="bounce" fromField="translation_changed" toNode="body_trans" toField="set_translation"></ROUTE>
-<ROUTE fromNode="bounce" fromField="scale_changed" toNode="body_trans" toField="set_scale"></ROUTE>
-<ROUTE fromNode="bubbleClock" fromField="fraction_changed" toNode="bounce" toField="set_fraction"></ROUTE>
-</Transform>
-</ProtoBody>
-</ProtoDeclare>)foo");
+ProtoDeclare* ProtoDeclare14 = new ProtoDeclare();
 ProtoDeclare14->setName("Bubble");
-CProtoBody* ProtoBody15 = new CProtoBody();
-CTransform* Transform16 = (CTransform *)(m_pScene.createNode("Transform"));
+ProtoBody* ProtoBody15 = new ProtoBody();
+Transform* Transform16 = new Transform();
 Transform16->setDEF("body_trans");
-CShape* Shape17 = (CShape *)(m_pScene.createNode("Shape"));
-CSphere* Sphere18 = (CSphere *)(m_pScene.createNode("Sphere"));
+Shape* Shape17 = new Shape();
+Sphere* Sphere18 = new Sphere();
 Sphere18->setRadius(0.25);
 Shape17->setGeometry(Sphere18);
 
-CAppearance* Appearance19 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material20 = (CMaterial *)(m_pScene.createNode("Material"));
+Appearance* Appearance19 = new Appearance();
+Material* Material20 = new Material();
 Material20->setDiffuseColor(new float[3]{1,0,0});
 Material20->setTransparency(0.2);
-Appearance19->setMaterial(*Material20);
+Appearance19->setMaterial(Material20);
 
-Shape17->setAppearance(*Appearance19);
+Shape17->setAppearance(Appearance19);
 
-Transform16->addChild(*Shape17);
+Transform16->addChild(Shape17);
 
-CScript* Script21 = (CScript *)(m_pScene.createNode("Script"));
+Script* Script21 = new Script();
 Script21->setDEF("bounce");
-Cfield* field22 = new Cfield();
+field* field22 = new field();
 field22->setName("scale");
 field22->setAccessType("inputOutput");
 field22->setType("SFVec3f");
 field22->setValue("1 1 1");
-Script21->addField(*field22);
+Script21->addField(field22);
 
-Cfield* field23 = new Cfield();
+field* field23 = new field();
 field23->setName("translation");
 field23->setAccessType("inputOutput");
 field23->setType("SFVec3f");
 field23->setValue("0 0 0");
-Script21->addField(*field23);
+Script21->addField(field23);
 
-Cfield* field24 = new Cfield();
+field* field24 = new field();
 field24->setName("velocity");
 field24->setAccessType("inputOutput");
 field24->setType("SFVec3f");
 field24->setValue("0 0 0");
-Script21->addField(*field24);
+Script21->addField(field24);
 
-Cfield* field25 = new Cfield();
+field* field25 = new field();
 field25->setName("scalvel");
 field25->setAccessType("inputOutput");
 field25->setType("SFVec3f");
 field25->setValue("0 0 0");
-Script21->addField(*field25);
+Script21->addField(field25);
 
-Cfield* field26 = new Cfield();
+field* field26 = new field();
 field26->setName("set_fraction");
 field26->setAccessType("inputOnly");
 field26->setType("SFFloat");
-Script21->addField(*field26);
+Script21->addField(field26);
 
 
 Script21.setSourceCode(`ecmascript:\n"+
@@ -252,63 +187,62 @@ Script21.setSourceCode(`ecmascript:\n"+
 "	initialize();\n"+
 "    }\n"+
 "}`)
-Transform16->addChildren(*Script21);
+Transform16->addChild(Script21);
 
-CTimeSensor* TimeSensor27 = (CTimeSensor *)(m_pScene.createNode("TimeSensor"));
+TimeSensor* TimeSensor27 = new TimeSensor();
 TimeSensor27->setDEF("bubbleClock");
 TimeSensor27->setCycleInterval(10);
 TimeSensor27->setLoop(True);
-Transform16->addChildren(*TimeSensor27);
+Transform16->addChild(TimeSensor27);
 
-CROUTE* ROUTE28 = new CROUTE();
+ROUTE* ROUTE28 = new ROUTE();
 ROUTE28->setFromNode("bounce");
 ROUTE28->setFromField("translation_changed");
 ROUTE28->setToNode("body_trans");
 ROUTE28->setToField("set_translation");
-Transform16->addChildren(*ROUTE28);
+Transform16->addChild(ROUTE28);
 
-CROUTE* ROUTE29 = new CROUTE();
+ROUTE* ROUTE29 = new ROUTE();
 ROUTE29->setFromNode("bounce");
 ROUTE29->setFromField("scale_changed");
 ROUTE29->setToNode("body_trans");
 ROUTE29->setToField("set_scale");
-Transform16->addChildren(*ROUTE29);
+Transform16->addChild(ROUTE29);
 
-CROUTE* ROUTE30 = new CROUTE();
+ROUTE* ROUTE30 = new ROUTE();
 ROUTE30->setFromNode("bubbleClock");
 ROUTE30->setFromField("fraction_changed");
 ROUTE30->setToNode("bounce");
 ROUTE30->setToField("set_fraction");
-Transform16->addChildren(*ROUTE30);
+Transform16->addChild(ROUTE30);
 
-ProtoBody15->addChildren(*Transform16);
+ProtoBody15->addChild(Transform16);
 
-ProtoDeclare14->setProtoBody(*ProtoBody15);
+ProtoDeclare14->setProtoBody(ProtoBody15);
 
-group->addChildren(*ProtoDeclare14);
+Scene10->addChild(ProtoDeclare14);
 
-CProtoInstance* ProtoInstance31 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
+ProtoInstance* ProtoInstance31 = new ProtoInstance();
 ProtoInstance31->setName("Bubble");
 ProtoInstance31->setDEF("bubbleA");
-group->addChildren(*ProtoInstance31);
+Scene10->addChild(ProtoInstance31);
 
-CProtoInstance* ProtoInstance32 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
+ProtoInstance* ProtoInstance32 = new ProtoInstance();
 ProtoInstance32->setName("Bubble");
 ProtoInstance32->setDEF("bubbleB");
-group->addChildren(*ProtoInstance32);
+Scene10->addChild(ProtoInstance32);
 
-CProtoInstance* ProtoInstance33 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
+ProtoInstance* ProtoInstance33 = new ProtoInstance();
 ProtoInstance33->setName("Bubble");
 ProtoInstance33->setDEF("bubbleC");
-group->addChildren(*ProtoInstance33);
+Scene10->addChild(ProtoInstance33);
 
-CProtoInstance* ProtoInstance34 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
+ProtoInstance* ProtoInstance34 = new ProtoInstance();
 ProtoInstance34->setName("Bubble");
 ProtoInstance34->setDEF("bubbleD");
-group->addChildren(*ProtoInstance34);
+Scene10->addChild(ProtoInstance34);
 
-X3D0->setScene(*Scene10);
+X3D0->setScene(Scene10);
 
-m_pScene.addRootNode(group);
 X3D0->toXMLString();
 }

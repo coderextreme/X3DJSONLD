@@ -4,550 +4,553 @@
 #define WINAPI
 #define AFX_EXT_CLASS
 #define EXPORT32
-#include "C:/x3d-code/www.web3d.org/x3d/stylesheets/cpp/concretes.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/CylinderExample/pch.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/CylinderExample/framework.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/XML_PARSER.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/X3DLib.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/Abstracts.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/Concretes.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/glMath.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/glut.h"
 int main(int argc, char ** argv) {
-CX3DScene m_pScene;
-CBrowser browser = X3D.getBrowser();
-CX3D* X3D0 = new CX3D();
-CGroup* group = (CGroup*)(m_pScene.createNode("Group"));
-group->addChildren(X3D0);
+X3D* X3D0 = new X3D();
 X3D0->setProfile("Immersive");
 X3D0->setVersion("3.0");
-Chead* head1 = new Chead();
-Cmeta* meta2 = new Cmeta();
+head* head1 = new head();
+meta* meta2 = new meta();
 meta2->setName("title");
 meta2->setContent("Trebuchet.x3d");
-head1->addMeta(*meta2);
+head1->addMeta(meta2);
 
-Cmeta* meta3 = new Cmeta();
+meta* meta3 = new meta();
 meta3->setName("description");
 meta3->setContent("Working model of a 14th century Trebuchet Catapult.");
-head1->addMeta(*meta3);
+head1->addMeta(meta3);
 
-Cmeta* meta4 = new Cmeta();
+meta* meta4 = new meta();
 meta4->setName("creator");
 meta4->setContent("LT Joe Roth");
-head1->addMeta(*meta4);
+head1->addMeta(meta4);
 
-Cmeta* meta5 = new Cmeta();
+meta* meta5 = new meta();
 meta5->setName("created");
 meta5->setContent("20 June 2001");
-head1->addMeta(*meta5);
+head1->addMeta(meta5);
 
-Cmeta* meta6 = new Cmeta();
+meta* meta6 = new meta();
 meta6->setName("modified");
 meta6->setContent("20 October 2019");
-head1->addMeta(*meta6);
+head1->addMeta(meta6);
 
-Cmeta* meta7 = new Cmeta();
+meta* meta7 = new meta();
 meta7->setName("version");
 meta7->setContent("7.8");
-head1->addMeta(*meta7);
+head1->addMeta(meta7);
 
-Cmeta* meta8 = new Cmeta();
+meta* meta8 = new meta();
 meta8->setName("identifier");
 meta8->setContent("https://www.web3d.org/x3d/content/examples/Basic/StudentProjects/Trebuchet.x3d");
-head1->addMeta(*meta8);
+head1->addMeta(meta8);
 
-Cmeta* meta9 = new Cmeta();
+meta* meta9 = new meta();
 meta9->setName("reference");
 meta9->setContent("http://trebuchet.com");
-head1->addMeta(*meta9);
+head1->addMeta(meta9);
 
-Cmeta* meta10 = new Cmeta();
+meta* meta10 = new meta();
 meta10->setName("reference");
 meta10->setContent("http://members.home.net/dimona");
-head1->addMeta(*meta10);
+head1->addMeta(meta10);
 
-Cmeta* meta11 = new Cmeta();
+meta* meta11 = new meta();
 meta11->setName("subject");
 meta11->setContent("trebuchet catapult Monty Python");
-head1->addMeta(*meta11);
+head1->addMeta(meta11);
 
-Cmeta* meta12 = new Cmeta();
+meta* meta12 = new meta();
 meta12->setName("reference");
 meta12->setContent("Permission granted for use of the VRML chicken I own a copy of Monty Python and the Holy Grail I have requested permission to use for non profit use. No response received. I will use the sound clips under \"Fair Use\" clause of the DMCA");
-head1->addMeta(*meta12);
+head1->addMeta(meta12);
 
-Cmeta* meta13 = new Cmeta();
+meta* meta13 = new meta();
 meta13->setName("reference");
 meta13->setContent("https://www.web3d.org/WorkingGroups/media/textures/nature/leaves_5.jpg.htm");
-head1->addMeta(*meta13);
+head1->addMeta(meta13);
 
-Cmeta* meta14 = new Cmeta();
+meta* meta14 = new meta();
 meta14->setName("reference");
 meta14->setContent("http://www.revemonde.net/UniversalMedia/textures/nature/leaves_5.jpg.htm");
-head1->addMeta(*meta14);
+head1->addMeta(meta14);
 
-Cmeta* meta15 = new Cmeta();
+meta* meta15 = new meta();
 meta15->setName("generator");
 meta15->setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit");
-head1->addMeta(*meta15);
+head1->addMeta(meta15);
 
-Cmeta* meta16 = new Cmeta();
+meta* meta16 = new meta();
 meta16->setName("license");
 meta16->setContent("../license.html");
-head1->addMeta(*meta16);
+head1->addMeta(meta16);
 
-X3D0->setHead(*head1);
+X3D0->setHead(head1);
 
-CScene* Scene17 = new CScene();
-CWorldInfo* WorldInfo18 = (CWorldInfo *)(m_pScene.createNode("WorldInfo"));
+Scene* Scene17 = new Scene();
+WorldInfo* WorldInfo18 = new WorldInfo();
 WorldInfo18->setTitle("Trebuchet.x3d");
-group->addChildren(*WorldInfo18);
+Scene17->addChild(WorldInfo18);
 
-CBackground* Background19 = (CBackground *)(m_pScene.createNode("Background"));
-Background19->setBackUrl(new CString[1]{"https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_back.jpg"}, 1);
-Background19->setBottomUrl(new CString[1]{"https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_bottom.jpg"}, 1);
-Background19->setFrontUrl(new CString[1]{"https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_front.jpg"}, 1);
+Background* Background19 = new Background();
+Background19->setBackUrl(new String[1]{"https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_back.jpg"}, 1);
+Background19->setBottomUrl(new String[1]{"https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_bottom.jpg"}, 1);
+Background19->setFrontUrl(new String[1]{"https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_front.jpg"}, 1);
 Background19->setGroundAngle(new float[2]{1.309,1.570796}, 2);
 Background19->setGroundColor(new float[9]{0.1,0.1,0,0.4,0.25,0.2,0.6,0.6,0.6});
-Background19->setLeftUrl(new CString[1]{"https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_left.jpg"}, 1);
-Background19->setRightUrl(new CString[1]{"https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_right.jpg"}, 1);
+Background19->setLeftUrl(new String[1]{"https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_left.jpg"}, 1);
+Background19->setRightUrl(new String[1]{"https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_right.jpg"}, 1);
 Background19->setSkyAngle(new float[2]{1.309,1.57079}, 2);
 Background19->setSkyColor(new float[9]{0,0.2,0.7,0,0.5,1,1,1,1});
-Background19->setTopUrl(new CString[1]{"https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_top.jpg"}, 1);
-group->addChildren(*Background19);
+Background19->setTopUrl(new String[1]{"https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_top.jpg"}, 1);
+Scene17->addChild(Background19);
 
-CSound* Sound20 = (CSound *)(m_pScene.createNode("Sound"));
+Sound* Sound20 = new Sound();
 Sound20->setMaxBack(1000);
 Sound20->setMaxFront(1000);
-CAudioClip* AudioClip21 = (CAudioClip *)(m_pScene.createNode("AudioClip"));
+AudioClip* AudioClip21 = new AudioClip();
 AudioClip21->setDEF("HolyGrail");
 AudioClip21->setDescription("HolyGrail");
 AudioClip21->setLoop(True);
-AudioClip21->setUrl(new CString[2]{"holygral.mp3","http://www.nps.navy.mil/code32/vrml/holygral.mp3"}, 2);
-Sound20->setSource(*AudioClip21);
+AudioClip21->setUrl(new String[2]{"holygral.mp3","http://www.nps.navy.mil/code32/vrml/holygral.mp3"}, 2);
+Sound20->setSource(AudioClip21);
 
-group->addChildren(*Sound20);
+Scene17->addChild(Sound20);
 
-CShape* Shape22 = (CShape *)(m_pScene.createNode("Shape"));
-CBox* Box23 = (CBox *)(m_pScene.createNode("Box"));
+Shape* Shape22 = new Shape();
+Box* Box23 = new Box();
 Box23->setSize(new float[3]{10000,1,10000});
 Shape22->setGeometry(Box23);
 
-CAppearance* Appearance24 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CImageTexture* ImageTexture25 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
-ImageTexture25->setUrl(new CString[2]{"grass.jpg","https://www.web3d.org/x3d/content/examples/Basic/StudentProjects/grass.jpg"}, 2);
-Appearance24->setTexture(*ImageTexture25);
+Appearance* Appearance24 = new Appearance();
+ImageTexture* ImageTexture25 = new ImageTexture();
+ImageTexture25->setUrl(new String[2]{"grass.jpg","https://www.web3d.org/x3d/content/examples/Basic/StudentProjects/grass.jpg"}, 2);
+Appearance24->setTexture(ImageTexture25);
 
-Shape22->setAppearance(*Appearance24);
+Shape22->setAppearance(Appearance24);
 
-group->addChildren(*Shape22);
+Scene17->addChild(Shape22);
 
-CTransform* Transform26 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform26 = new Transform();
 Transform26->setRotation(new float[4]{0,1,0,1.57});
 Transform26->setScale(new float[3]{0.5,0.5,0.5});
 Transform26->setTranslation(new float[3]{10.5,6.5,4.5});
-CShape* Shape27 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance28 = (CAppearance *)(m_pScene.createNode("Appearance"));
+Shape* Shape27 = new Shape();
+Appearance* Appearance28 = new Appearance();
 Appearance28->setDEF("TextAppearance");
-CMaterial* Material29 = (CMaterial *)(m_pScene.createNode("Material"));
+Material* Material29 = new Material();
 Material29->setDiffuseColor(new float[3]{1,0,0});
 Material29->setEmissiveColor(new float[3]{1,1,0});
-Appearance28->setMaterial(*Material29);
+Appearance28->setMaterial(Material29);
 
-Shape27->setAppearance(*Appearance28);
+Shape27->setAppearance(Appearance28);
 
-CText* Text30 = (CText *)(m_pScene.createNode("Text"));
-Text30->setString(new CString[1]{"Click Sling to Select Projectile"}, 1);
-CFontStyle* FontStyle31 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
-Text30->setFontStyle(*FontStyle31);
+Text* Text30 = new Text();
+Text30->setString(new String[1]{"Click Sling to Select Projectile"}, 1);
+FontStyle* FontStyle31 = new FontStyle();
+Text30->setFontStyle(FontStyle31);
 
 Shape27->setGeometry(Text30);
 
-Transform26->addChild(*Shape27);
+Transform26->addChild(Shape27);
 
-group->addChildren(*Transform26);
+Scene17->addChild(Transform26);
 
-CTransform* Transform32 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform32 = new Transform();
 Transform32->setRotation(new float[4]{0,1,0,1.57});
 Transform32->setScale(new float[3]{0.5,0.5,0.5});
 Transform32->setTranslation(new float[3]{11,5.5,6});
-CSwitch* Switch33 = (CSwitch *)(m_pScene.createNode("Switch"));
+Switch* Switch33 = new Switch();
 Switch33->setDEF("Weight");
 Switch33->setWhichChoice(0);
-CGroup* Group34 = (CGroup *)(m_pScene.createNode("Group"));
-CShape* Shape35 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance36 = (CAppearance *)(m_pScene.createNode("Appearance"));
+Group* Group34 = new Group();
+Shape* Shape35 = new Shape();
+Appearance* Appearance36 = new Appearance();
 Appearance36->setUSE("TextAppearance");
-Shape35->setAppearance(*Appearance36);
+Shape35->setAppearance(Appearance36);
 
-CText* Text37 = (CText *)(m_pScene.createNode("Text"));
-Text37->setString(new CString[1]{"Click Here to Change Counter Weight (50 lbs)"}, 1);
+Text* Text37 = new Text();
+Text37->setString(new String[1]{"Click Here to Change Counter Weight (50 lbs)"}, 1);
 Shape35->setGeometry(Text37);
 
-Group34->addChildren(*Shape35);
+Group34->addChild(Shape35);
 
-Switch33->addChildren(*Group34);
+Switch33->addChild(Group34);
 
-CGroup* Group38 = (CGroup *)(m_pScene.createNode("Group"));
-CShape* Shape39 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance40 = (CAppearance *)(m_pScene.createNode("Appearance"));
+Group* Group38 = new Group();
+Shape* Shape39 = new Shape();
+Appearance* Appearance40 = new Appearance();
 Appearance40->setUSE("TextAppearance");
-Shape39->setAppearance(*Appearance40);
+Shape39->setAppearance(Appearance40);
 
-CText* Text41 = (CText *)(m_pScene.createNode("Text"));
-Text41->setString(new CString[1]{"Click Here to Change Counter Weight (500 lbs)"}, 1);
+Text* Text41 = new Text();
+Text41->setString(new String[1]{"Click Here to Change Counter Weight (500 lbs)"}, 1);
 Shape39->setGeometry(Text41);
 
-Group38->addChildren(*Shape39);
+Group38->addChild(Shape39);
 
-Switch33->addChildren(*Group38);
+Switch33->addChild(Group38);
 
-CGroup* Group42 = (CGroup *)(m_pScene.createNode("Group"));
-CShape* Shape43 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance44 = (CAppearance *)(m_pScene.createNode("Appearance"));
+Group* Group42 = new Group();
+Shape* Shape43 = new Shape();
+Appearance* Appearance44 = new Appearance();
 Appearance44->setUSE("TextAppearance");
-Shape43->setAppearance(*Appearance44);
+Shape43->setAppearance(Appearance44);
 
-CText* Text45 = (CText *)(m_pScene.createNode("Text"));
-Text45->setString(new CString[1]{"Click Here to Change Counter Weight (1000 lbs)"}, 1);
+Text* Text45 = new Text();
+Text45->setString(new String[1]{"Click Here to Change Counter Weight (1000 lbs)"}, 1);
 Shape43->setGeometry(Text45);
 
-Group42->addChildren(*Shape43);
+Group42->addChild(Shape43);
 
-Switch33->addChildren(*Group42);
+Switch33->addChild(Group42);
 
-CGroup* Group46 = (CGroup *)(m_pScene.createNode("Group"));
-CShape* Shape47 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance48 = (CAppearance *)(m_pScene.createNode("Appearance"));
+Group* Group46 = new Group();
+Shape* Shape47 = new Shape();
+Appearance* Appearance48 = new Appearance();
 Appearance48->setUSE("TextAppearance");
-Shape47->setAppearance(*Appearance48);
+Shape47->setAppearance(Appearance48);
 
-CText* Text49 = (CText *)(m_pScene.createNode("Text"));
-Text49->setString(new CString[1]{"Click Here to Change Counter Weight (10000 lbs)"}, 1);
+Text* Text49 = new Text();
+Text49->setString(new String[1]{"Click Here to Change Counter Weight (10000 lbs)"}, 1);
 Shape47->setGeometry(Text49);
 
-Group46->addChildren(*Shape47);
+Group46->addChild(Shape47);
 
-Switch33->addChildren(*Group46);
+Switch33->addChild(Group46);
 
-Transform32->addChildren(*Switch33);
+Transform32->addChild(Switch33);
 
-CTouchSensor* TouchSensor50 = (CTouchSensor *)(m_pScene.createNode("TouchSensor"));
+TouchSensor* TouchSensor50 = new TouchSensor();
 TouchSensor50->setDEF("weightselector");
 TouchSensor50->setDescription("weight selector");
-Transform32->addChildren(*TouchSensor50);
+Transform32->addChild(TouchSensor50);
 
-CTransform* Transform51 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform51 = new Transform();
 Transform51->setTranslation(new float[3]{8,0,0});
-CShape* Shape52 = (CShape *)(m_pScene.createNode("Shape"));
-CBox* Box53 = (CBox *)(m_pScene.createNode("Box"));
+Shape* Shape52 = new Shape();
+Box* Box53 = new Box();
 Box53->setSize(new float[3]{20,1,1});
 Shape52->setGeometry(Box53);
 
-CAppearance* Appearance54 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material55 = (CMaterial *)(m_pScene.createNode("Material"));
+Appearance* Appearance54 = new Appearance();
+Material* Material55 = new Material();
 Material55->setTransparency(1);
-Appearance54->setMaterial(*Material55);
+Appearance54->setMaterial(Material55);
 
-Shape52->setAppearance(*Appearance54);
+Shape52->setAppearance(Appearance54);
 
-Transform51->addChild(*Shape52);
+Transform51->addChild(Shape52);
 
-Transform32->addChildren(*Transform51);
+Transform32->addChild(Transform51);
 
-group->addChildren(*Transform32);
+Scene17->addChild(Transform32);
 
-CTransform* Transform56 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform56 = new Transform();
 Transform56->setRotation(new float[4]{0,1,0,1.57});
 Transform56->setTranslation(new float[3]{10,0.5,4.5});
-CTransform* Transform57 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform57 = new Transform();
 Transform57->setDEF("launch");
 Transform57->setTranslation(new float[3]{0,2,5});
-CBillboard* Billboard58 = (CBillboard *)(m_pScene.createNode("Billboard"));
-CShape* Shape59 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance60 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material61 = (CMaterial *)(m_pScene.createNode("Material"));
+Billboard* Billboard58 = new Billboard();
+Shape* Shape59 = new Shape();
+Appearance* Appearance60 = new Appearance();
+Material* Material61 = new Material();
 Material61->setDiffuseColor(new float[3]{1,0,0});
-Appearance60->setMaterial(*Material61);
+Appearance60->setMaterial(Material61);
 
-Shape59->setAppearance(*Appearance60);
+Shape59->setAppearance(Appearance60);
 
-CText* Text62 = (CText *)(m_pScene.createNode("Text"));
-Text62->setString(new CString[1]{"LAUNCH"}, 1);
-CFontStyle* FontStyle63 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
-Text62->setFontStyle(*FontStyle63);
+Text* Text62 = new Text();
+Text62->setString(new String[1]{"LAUNCH"}, 1);
+FontStyle* FontStyle63 = new FontStyle();
+Text62->setFontStyle(FontStyle63);
 
 Shape59->setGeometry(Text62);
 
-Billboard58->addChildren(*Shape59);
+Billboard58->addChild(Shape59);
 
-CTransform* Transform64 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform64 = new Transform();
 Transform64->setTranslation(new float[3]{2,0.3,0});
-CShape* Shape65 = (CShape *)(m_pScene.createNode("Shape"));
-CBox* Box66 = (CBox *)(m_pScene.createNode("Box"));
+Shape* Shape65 = new Shape();
+Box* Box66 = new Box();
 Box66->setSize(new float[3]{5,1,1});
 Shape65->setGeometry(Box66);
 
-CAppearance* Appearance67 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material68 = (CMaterial *)(m_pScene.createNode("Material"));
+Appearance* Appearance67 = new Appearance();
+Material* Material68 = new Material();
 Material68->setTransparency(1);
-Appearance67->setMaterial(*Material68);
+Appearance67->setMaterial(Material68);
 
-Shape65->setAppearance(*Appearance67);
+Shape65->setAppearance(Appearance67);
 
-Transform64->addChild(*Shape65);
+Transform64->addChild(Shape65);
 
-Billboard58->addChildren(*Transform64);
+Billboard58->addChild(Transform64);
 
-CSwitch* Switch69 = (CSwitch *)(m_pScene.createNode("Switch"));
+Switch* Switch69 = new Switch();
 Switch69->setDEF("PigdogMonk");
 Switch69->setWhichChoice(-1);
-CGroup* Group70 = (CGroup *)(m_pScene.createNode("Group"));
-CSound* Sound71 = (CSound *)(m_pScene.createNode("Sound"));
+Group* Group70 = new Group();
+Sound* Sound71 = new Sound();
 Sound71->setMaxBack(1000);
 Sound71->setMaxFront(1000);
-CAudioClip* AudioClip72 = (CAudioClip *)(m_pScene.createNode("AudioClip"));
+AudioClip* AudioClip72 = new AudioClip();
 AudioClip72->setDEF("PigDogSound");
 AudioClip72->setDescription("PigDogSound");
-AudioClip72->setUrl(new CString[2]{"pigdog.wav","http://www.nps.navy.mil/code32/vrml/pigdog.wav"}, 2);
-Sound71->setSource(*AudioClip72);
+AudioClip72->setUrl(new String[2]{"pigdog.wav","http://www.nps.navy.mil/code32/vrml/pigdog.wav"}, 2);
+Sound71->setSource(AudioClip72);
 
-Group70->addChildren(*Sound71);
+Group70->addChild(Sound71);
 
-Switch69->addChildren(*Group70);
+Switch69->addChild(Group70);
 
-CGroup* Group73 = (CGroup *)(m_pScene.createNode("Group"));
-CSound* Sound74 = (CSound *)(m_pScene.createNode("Sound"));
+Group* Group73 = new Group();
+Sound* Sound74 = new Sound();
 Sound74->setMaxBack(1000);
 Sound74->setMaxFront(1000);
-CAudioClip* AudioClip75 = (CAudioClip *)(m_pScene.createNode("AudioClip"));
+AudioClip* AudioClip75 = new AudioClip();
 AudioClip75->setDEF("MonkSound");
 AudioClip75->setDescription("MonkSound");
-AudioClip75->setUrl(new CString[2]{"monks.wav","http://www.nps.navy.mil/code32/vrml/monks.wav"}, 2);
-Sound74->setSource(*AudioClip75);
+AudioClip75->setUrl(new String[2]{"monks.wav","http://www.nps.navy.mil/code32/vrml/monks.wav"}, 2);
+Sound74->setSource(AudioClip75);
 
-Group73->addChildren(*Sound74);
+Group73->addChild(Sound74);
 
-Switch69->addChildren(*Group73);
+Switch69->addChild(Group73);
 
-Billboard58->addChildren(*Switch69);
+Billboard58->addChild(Switch69);
 
-Transform57->addChildren(*Billboard58);
+Transform57->addChild(Billboard58);
 
-CTouchSensor* TouchSensor76 = (CTouchSensor *)(m_pScene.createNode("TouchSensor"));
+TouchSensor* TouchSensor76 = new TouchSensor();
 TouchSensor76->setDEF("Launch");
 TouchSensor76->setDescription("launch!");
-Transform57->addChildren(*TouchSensor76);
+Transform57->addChild(TouchSensor76);
 
-Transform56->addChildren(*Transform57);
+Transform56->addChild(Transform57);
 
-CTransform* Transform77 = (CTransform *)(m_pScene.createNode("Transform"));
-CSwitch* Switch78 = (CSwitch *)(m_pScene.createNode("Switch"));
+Transform* Transform77 = new Transform();
+Switch* Switch78 = new Switch();
 Switch78->setDEF("projectilename");
 Switch78->setWhichChoice(0);
-CGroup* Group79 = (CGroup *)(m_pScene.createNode("Group"));
-CShape* Shape80 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance81 = (CAppearance *)(m_pScene.createNode("Appearance"));
+Group* Group79 = new Group();
+Shape* Shape80 = new Shape();
+Appearance* Appearance81 = new Appearance();
 Appearance81->setUSE("TextAppearance");
-Shape80->setAppearance(*Appearance81);
+Shape80->setAppearance(Appearance81);
 
-CText* Text82 = (CText *)(m_pScene.createNode("Text"));
-Text82->setString(new CString[1]{"Bowling Ball (10 lbs)"}, 1);
-CFontStyle* FontStyle83 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
+Text* Text82 = new Text();
+Text82->setString(new String[1]{"Bowling Ball (10 lbs)"}, 1);
+FontStyle* FontStyle83 = new FontStyle();
 FontStyle83->setSize(0.5);
-Text82->setFontStyle(*FontStyle83);
+Text82->setFontStyle(FontStyle83);
 
 Shape80->setGeometry(Text82);
 
-Group79->addChildren(*Shape80);
+Group79->addChild(Shape80);
 
-CSound* Sound84 = (CSound *)(m_pScene.createNode("Sound"));
+Sound* Sound84 = new Sound();
 Sound84->setMaxBack(1000);
 Sound84->setMaxFront(1000);
 Sound84->setPriority(1);
-CAudioClip* AudioClip85 = (CAudioClip *)(m_pScene.createNode("AudioClip"));
+AudioClip* AudioClip85 = new AudioClip();
 AudioClip85->setDEF("HolyHandGrenadeSound");
 AudioClip85->setDescription("HolyHandGrenadeSound");
-AudioClip85->setUrl(new CString[2]{"grenade.wav","http://www.nps.navy.mil/code32/vrml/grenade.wav"}, 2);
-Sound84->setSource(*AudioClip85);
+AudioClip85->setUrl(new String[2]{"grenade.wav","http://www.nps.navy.mil/code32/vrml/grenade.wav"}, 2);
+Sound84->setSource(AudioClip85);
 
-Group79->addChildren(*Sound84);
+Group79->addChild(Sound84);
 
-Switch78->addChildren(*Group79);
+Switch78->addChild(Group79);
 
-CGroup* Group86 = (CGroup *)(m_pScene.createNode("Group"));
-CShape* Shape87 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance88 = (CAppearance *)(m_pScene.createNode("Appearance"));
+Group* Group86 = new Group();
+Shape* Shape87 = new Shape();
+Appearance* Appearance88 = new Appearance();
 Appearance88->setUSE("TextAppearance");
-Shape87->setAppearance(*Appearance88);
+Shape87->setAppearance(Appearance88);
 
-CText* Text89 = (CText *)(m_pScene.createNode("Text"));
-Text89->setString(new CString[1]{"Cow (1000 lbs)"}, 1);
-CFontStyle* FontStyle90 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
+Text* Text89 = new Text();
+Text89->setString(new String[1]{"Cow (1000 lbs)"}, 1);
+FontStyle* FontStyle90 = new FontStyle();
 FontStyle90->setSize(0.5);
-Text89->setFontStyle(*FontStyle90);
+Text89->setFontStyle(FontStyle90);
 
 Shape87->setGeometry(Text89);
 
-Group86->addChildren(*Shape87);
+Group86->addChild(Shape87);
 
-CSound* Sound91 = (CSound *)(m_pScene.createNode("Sound"));
+Sound* Sound91 = new Sound();
 Sound91->setMaxBack(1000);
 Sound91->setMaxFront(1000);
-CAudioClip* AudioClip92 = (CAudioClip *)(m_pScene.createNode("AudioClip"));
+AudioClip* AudioClip92 = new AudioClip();
 AudioClip92->setDEF("CowSound");
 AudioClip92->setDescription("CowSound");
-AudioClip92->setUrl(new CString[2]{"lavache.wav","http://www.nps.navy.mil/code32/vrml/lavache.wav"}, 2);
-Sound91->setSource(*AudioClip92);
+AudioClip92->setUrl(new String[2]{"lavache.wav","http://www.nps.navy.mil/code32/vrml/lavache.wav"}, 2);
+Sound91->setSource(AudioClip92);
 
-Group86->addChildren(*Sound91);
+Group86->addChild(Sound91);
 
-Switch78->addChildren(*Group86);
+Switch78->addChild(Group86);
 
-CGroup* Group93 = (CGroup *)(m_pScene.createNode("Group"));
-CShape* Shape94 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance95 = (CAppearance *)(m_pScene.createNode("Appearance"));
+Group* Group93 = new Group();
+Shape* Shape94 = new Shape();
+Appearance* Appearance95 = new Appearance();
 Appearance95->setUSE("TextAppearance");
-Shape94->setAppearance(*Appearance95);
+Shape94->setAppearance(Appearance95);
 
-CText* Text96 = (CText *)(m_pScene.createNode("Text"));
-Text96->setString(new CString[1]{"Chicken (5 lbs)"}, 1);
-CFontStyle* FontStyle97 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
+Text* Text96 = new Text();
+Text96->setString(new String[1]{"Chicken (5 lbs)"}, 1);
+FontStyle* FontStyle97 = new FontStyle();
 FontStyle97->setSize(0.5);
-Text96->setFontStyle(*FontStyle97);
+Text96->setFontStyle(FontStyle97);
 
 Shape94->setGeometry(Text96);
 
-Group93->addChildren(*Shape94);
+Group93->addChild(Shape94);
 
-CSound* Sound98 = (CSound *)(m_pScene.createNode("Sound"));
+Sound* Sound98 = new Sound();
 Sound98->setMaxBack(1000);
 Sound98->setMaxFront(1000);
 Sound98->setPriority(1);
-CAudioClip* AudioClip99 = (CAudioClip *)(m_pScene.createNode("AudioClip"));
+AudioClip* AudioClip99 = new AudioClip();
 AudioClip99->setDEF("HamsterSound");
 AudioClip99->setDescription("HamsterSound");
-AudioClip99->setUrl(new CString[2]{"hamster.wav","http://www.nps.navy.mil/code32/vrml/hamster.wav"}, 2);
-Sound98->setSource(*AudioClip99);
+AudioClip99->setUrl(new String[2]{"hamster.wav","http://www.nps.navy.mil/code32/vrml/hamster.wav"}, 2);
+Sound98->setSource(AudioClip99);
 
-Group93->addChildren(*Sound98);
+Group93->addChild(Sound98);
 
-Switch78->addChildren(*Group93);
+Switch78->addChild(Group93);
 
-Transform77->addChildren(*Switch78);
+Transform77->addChild(Switch78);
 
-Transform56->addChildren(*Transform77);
+Transform56->addChild(Transform77);
 
-group->addChildren(*Transform56);
+Scene17->addChild(Transform56);
 
-CTransform* Transform100 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform100 = new Transform();
 Transform100->setRotation(new float[4]{0,1,0,-1.67});
-CTransform* Transform101 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform101 = new Transform();
 Transform101->setDEF("aft");
 Transform101->setTranslation(new float[3]{5,5,15});
-CTransform* Transform102 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform102 = new Transform();
 Transform102->setTranslation(new float[3]{-2.5,-4.5,-2});
-CTransform* Transform103 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform103 = new Transform();
 Transform103->setUSE("launch");
-Transform102->addChildren(*Transform103);
+Transform102->addChild(Transform103);
 
-Transform101->addChildren(*Transform102);
+Transform101->addChild(Transform102);
 
-Transform100->addChildren(*Transform101);
+Transform100->addChild(Transform101);
 
-group->addChildren(*Transform100);
+Scene17->addChild(Transform100);
 
-CTransform* Transform104 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform104 = new Transform();
 Transform104->setTranslation(new float[3]{0,3,0});
-CShape* Shape105 = (CShape *)(m_pScene.createNode("Shape"));
+Shape* Shape105 = new Shape();
 Shape105->setDEF("plank");
-CBox* Box106 = (CBox *)(m_pScene.createNode("Box"));
+Box* Box106 = new Box();
 Box106->setSize(new float[3]{25,1,1});
 Shape105->setGeometry(Box106);
 
-CAppearance* Appearance107 = (CAppearance *)(m_pScene.createNode("Appearance"));
+Appearance* Appearance107 = new Appearance();
 Appearance107->setDEF("wood");
-CImageTexture* ImageTexture108 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture* ImageTexture108 = new ImageTexture();
 ImageTexture108->setDEF("woodTexture");
-ImageTexture108->setUrl(new CString[2]{"wood.gif","https://www.web3d.org/x3d/content/examples/Basic/StudentProjects/wood.gif"}, 2);
-Appearance107->setTexture(*ImageTexture108);
+ImageTexture108->setUrl(new String[2]{"wood.gif","https://www.web3d.org/x3d/content/examples/Basic/StudentProjects/wood.gif"}, 2);
+Appearance107->setTexture(ImageTexture108);
 
-Shape105->setAppearance(*Appearance107);
+Shape105->setAppearance(Appearance107);
 
-Transform104->addChild(*Shape105);
+Transform104->addChild(Shape105);
 
-CTransform* Transform109 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform109 = new Transform();
 Transform109->setDEF("angledsupport");
 Transform109->setRotation(new float[4]{0,0,1,1});
 Transform109->setTranslation(new float[3]{-5,10,0});
-CShape* Shape110 = (CShape *)(m_pScene.createNode("Shape"));
+Shape* Shape110 = new Shape();
 Shape110->setUSE("plank");
-Transform109->addChild(*Shape110);
+Transform109->addChild(Shape110);
 
-Transform104->addChildren(*Transform109);
+Transform104->addChild(Transform109);
 
-CTransform* Transform111 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform111 = new Transform();
 Transform111->setDEF("angledsupport2");
 Transform111->setRotation(new float[4]{0,0,1,-1});
 Transform111->setTranslation(new float[3]{5,10,0});
-CShape* Shape112 = (CShape *)(m_pScene.createNode("Shape"));
+Shape* Shape112 = new Shape();
 Shape112->setUSE("plank");
-Transform111->addChild(*Shape112);
+Transform111->addChild(Shape112);
 
-Transform104->addChildren(*Transform111);
+Transform104->addChild(Transform111);
 
-CTransform* Transform113 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform113 = new Transform();
 Transform113->setDEF("verticalsupport");
 Transform113->setRotation(new float[4]{0,0,1,1.57});
 Transform113->setScale(new float[3]{0.9,1,1});
 Transform113->setTranslation(new float[3]{0,11,0});
-CShape* Shape114 = (CShape *)(m_pScene.createNode("Shape"));
+Shape* Shape114 = new Shape();
 Shape114->setUSE("plank");
-Transform113->addChild(*Shape114);
+Transform113->addChild(Shape114);
 
 //Main Verticle Support
-Transform104->addChildren(*Transform113);
+Transform104->addChild(Transform113);
 
-CTransform* Transform115 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform115 = new Transform();
 Transform115->setDEF("horizontalsupport");
 Transform115->setScale(new float[3]{0.4,1,1});
 Transform115->setTranslation(new float[3]{0,10,0});
-CShape* Shape116 = (CShape *)(m_pScene.createNode("Shape"));
+Shape* Shape116 = new Shape();
 Shape116->setUSE("plank");
-Transform115->addChild(*Shape116);
+Transform115->addChild(Shape116);
 
-Transform104->addChildren(*Transform115);
+Transform104->addChild(Transform115);
 
-CTransform* Transform117 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform117 = new Transform();
 Transform117->setRotation(new float[4]{0,0,1,1.57});
 Transform117->setScale(new float[3]{0.6,1,1});
 Transform117->setTranslation(new float[3]{0,5,10});
-CTransform* Transform118 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform118 = new Transform();
 Transform118->setRotation(new float[4]{0,1,0,0.4});
-CShape* Shape119 = (CShape *)(m_pScene.createNode("Shape"));
+Shape* Shape119 = new Shape();
 Shape119->setUSE("plank");
-Transform118->addChild(*Shape119);
+Transform118->addChild(Shape119);
 
-Transform117->addChildren(*Transform118);
+Transform117->addChild(Transform118);
 
-Transform104->addChildren(*Transform117);
+Transform104->addChild(Transform117);
 
-CTransform* Transform120 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform120 = new Transform();
 Transform120->setDEF("panel");
 Transform120->setTranslation(new float[3]{0,18.2,-0.3});
-CShape* Shape121 = (CShape *)(m_pScene.createNode("Shape"));
-CBox* Box122 = (CBox *)(m_pScene.createNode("Box"));
+Shape* Shape121 = new Shape();
+Box* Box122 = new Box();
 Box122->setSize(new float[3]{5,5,0.5});
 Shape121->setGeometry(Box122);
 
-CAppearance* Appearance123 = (CAppearance *)(m_pScene.createNode("Appearance"));
+Appearance* Appearance123 = new Appearance();
 Appearance123->setUSE("wood");
-Shape121->setAppearance(*Appearance123);
+Shape121->setAppearance(Appearance123);
 
-Transform120->addChild(*Shape121);
+Transform120->addChild(Shape121);
 
-Transform104->addChildren(*Transform120);
+Transform104->addChild(Transform120);
 
-CTransform* Transform124 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform124 = new Transform();
 Transform124->setRotation(new float[4]{1,0,0,-1.57});
 Transform124->setTranslation(new float[3]{0,0.6,2.5});
-CTransform* Transform125 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform125 = new Transform();
 Transform125->setRotation(new float[4]{0,0,1,1.57});
-CShape* Shape126 = (CShape *)(m_pScene.createNode("Shape"));
-CExtrusion* Extrusion127 = (CExtrusion *)(m_pScene.createNode("Extrusion"));
+Shape* Shape126 = new Shape();
+Extrusion* Extrusion127 = new Extrusion();
 Extrusion127->setBeginCap(False);
 Extrusion127->setCrossSection(new float[24]{1,-0.38,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,-0.38,-1,-1.1,1,-1.1,1,-0.38});
 Extrusion127->setEndCap(False);
@@ -555,65 +558,65 @@ Extrusion127->setSolid(False);
 Extrusion127->setSpine(new float[6]{0,6,0,0,-11,0});
 Shape126->setGeometry(Extrusion127);
 
-CAppearance* Appearance128 = (CAppearance *)(m_pScene.createNode("Appearance"));
+Appearance* Appearance128 = new Appearance();
 Appearance128->setUSE("wood");
-Shape126->setAppearance(*Appearance128);
+Shape126->setAppearance(Appearance128);
 
-Transform125->addChild(*Shape126);
+Transform125->addChild(Shape126);
 
-Transform124->addChildren(*Transform125);
+Transform124->addChild(Transform125);
 
-Transform104->addChildren(*Transform124);
+Transform104->addChild(Transform124);
 
-CTransform* Transform129 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform129 = new Transform();
 Transform129->setDEF("flinger");
 Transform129->setCenter(new float[3]{7,0,0});
 Transform129->setRotation(new float[4]{0,0,1,0.82});
 Transform129->setScale(new float[3]{0.9,1,1});
 Transform129->setTranslation(new float[3]{-7,18,2.5});
-CTransform* Transform130 = (CTransform *)(m_pScene.createNode("Transform"));
-CShape* Shape131 = (CShape *)(m_pScene.createNode("Shape"));
-CBox* Box132 = (CBox *)(m_pScene.createNode("Box"));
+Transform* Transform130 = new Transform();
+Shape* Shape131 = new Shape();
+Box* Box132 = new Box();
 Box132->setSize(new float[3]{35,1,1});
 Shape131->setGeometry(Box132);
 
-CAppearance* Appearance133 = (CAppearance *)(m_pScene.createNode("Appearance"));
+Appearance* Appearance133 = new Appearance();
 Appearance133->setUSE("wood");
-Shape131->setAppearance(*Appearance133);
+Shape131->setAppearance(Appearance133);
 
-Transform130->addChild(*Shape131);
+Transform130->addChild(Shape131);
 
-CTransform* Transform134 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform134 = new Transform();
 Transform134->setTranslation(new float[3]{7,0,0});
-CShape* Shape135 = (CShape *)(m_pScene.createNode("Shape"));
-CBox* Box136 = (CBox *)(m_pScene.createNode("Box"));
+Shape* Shape135 = new Shape();
+Box* Box136 = new Box();
 Box136->setSize(new float[3]{8,2,2});
 Shape135->setGeometry(Box136);
 
-CAppearance* Appearance137 = (CAppearance *)(m_pScene.createNode("Appearance"));
+Appearance* Appearance137 = new Appearance();
 Appearance137->setUSE("wood");
-Shape135->setAppearance(*Appearance137);
+Shape135->setAppearance(Appearance137);
 
-Transform134->addChild(*Shape135);
+Transform134->addChild(Shape135);
 
-Transform130->addChildren(*Transform134);
+Transform130->addChild(Transform134);
 
-Transform129->addChildren(*Transform130);
+Transform129->addChild(Transform130);
 
-CTransform* Transform138 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform138 = new Transform();
 Transform138->setRotation(new float[4]{1,0,0,1.57});
 Transform138->setScale(new float[3]{0.2,0.2,0.2});
 Transform138->setTranslation(new float[3]{-15,-1,0});
-CShape* Shape139 = (CShape *)(m_pScene.createNode("Shape"));
+Shape* Shape139 = new Shape();
 Shape139->setDEF("Torus");
-CAppearance* Appearance140 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material141 = (CMaterial *)(m_pScene.createNode("Material"));
+Appearance* Appearance140 = new Appearance();
+Material* Material141 = new Material();
 Material141->setSpecularColor(new float[3]{1,1,1});
-Appearance140->setMaterial(*Material141);
+Appearance140->setMaterial(Material141);
 
-Shape139->setAppearance(*Appearance140);
+Shape139->setAppearance(Appearance140);
 
-CExtrusion* Extrusion142 = (CExtrusion *)(m_pScene.createNode("Extrusion"));
+Extrusion* Extrusion142 = new Extrusion();
 Extrusion142->setBeginCap(False);
 Extrusion142->setConvex(False);
 Extrusion142->setCreaseAngle(1.57);
@@ -622,85 +625,85 @@ Extrusion142->setEndCap(False);
 Extrusion142->setSpine(new float[51]{2,0,0,1.85,0,0.77,1.41,0,1.41,0.77,0,1.85,0,0,2,-0.77,0,1.85,-1.41,0,1.41,-1.85,0,0.77,-2,0,0,-1.85,0,-0.77,-1.41,0,-1.41,-0.77,0,-1.85,0,0,-2,0.77,0,-1.85,1.41,0,-1.41,1.85,0,-0.77,2,0,0});
 Shape139->setGeometry(Extrusion142);
 
-Transform138->addChild(*Shape139);
+Transform138->addChild(Shape139);
 
-CTransform* Transform143 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform143 = new Transform();
 Transform143->setTranslation(new float[3]{1,0,2});
-CShape* Shape144 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance145 = (CAppearance *)(m_pScene.createNode("Appearance"));
+Shape* Shape144 = new Shape();
+Appearance* Appearance145 = new Appearance();
 Appearance145->setDEF("rope");
-CImageTexture* ImageTexture146 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture* ImageTexture146 = new ImageTexture();
 ImageTexture146->setUSE("woodTexture");
-Appearance145->setTexture(*ImageTexture146);
+Appearance145->setTexture(ImageTexture146);
 
-Shape144->setAppearance(*Appearance145);
+Shape144->setAppearance(Appearance145);
 
-CSphere* Sphere147 = (CSphere *)(m_pScene.createNode("Sphere"));
+Sphere* Sphere147 = new Sphere();
 Sphere147->setRadius(1.5);
 Shape144->setGeometry(Sphere147);
 
-Transform143->addChild(*Shape144);
+Transform143->addChild(Shape144);
 
 //knott
-Transform138->addChildren(*Transform143);
+Transform138->addChild(Transform143);
 
-Transform129->addChildren(*Transform138);
+Transform129->addChild(Transform138);
 
 //The Unicorn
-CTransform* Transform148 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform148 = new Transform();
 Transform148->setRotation(new float[4]{0,0,1,1.2});
 Transform148->setScale(new float[3]{0.2,0.2,0.2});
 Transform148->setTranslation(new float[3]{-18.3,0.3,0});
-CShape* Shape149 = (CShape *)(m_pScene.createNode("Shape"));
-CCylinder* Cylinder150 = (CCylinder *)(m_pScene.createNode("Cylinder"));
+Shape* Shape149 = new Shape();
+Cylinder* Cylinder150 = new Cylinder();
 Cylinder150->setHeight(10);
 Shape149->setGeometry(Cylinder150);
 
-CAppearance* Appearance151 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material152 = (CMaterial *)(m_pScene.createNode("Material"));
+Appearance* Appearance151 = new Appearance();
+Material* Material152 = new Material();
 Material152->setSpecularColor(new float[3]{1,1,1});
-Appearance151->setMaterial(*Material152);
+Appearance151->setMaterial(Material152);
 
-Shape149->setAppearance(*Appearance151);
+Shape149->setAppearance(Appearance151);
 
-Transform148->addChild(*Shape149);
+Transform148->addChild(Shape149);
 
-CTransform* Transform153 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform153 = new Transform();
 Transform153->setTranslation(new float[3]{0,-2.5,0});
 //The Unicorn
-CShape* Shape154 = (CShape *)(m_pScene.createNode("Shape"));
+Shape* Shape154 = new Shape();
 Shape154->setUSE("Torus");
-Transform153->addChild(*Shape154);
+Transform153->addChild(Shape154);
 
-CTransform* Transform155 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform155 = new Transform();
 Transform155->setTranslation(new float[3]{-2,0,0});
-CShape* Shape156 = (CShape *)(m_pScene.createNode("Shape"));
-CSphere* Sphere157 = (CSphere *)(m_pScene.createNode("Sphere"));
+Shape* Shape156 = new Shape();
+Sphere* Sphere157 = new Sphere();
 Sphere157->setRadius(1.5);
 Shape156->setGeometry(Sphere157);
 
-CAppearance* Appearance158 = (CAppearance *)(m_pScene.createNode("Appearance"));
+Appearance* Appearance158 = new Appearance();
 Appearance158->setUSE("rope");
-Shape156->setAppearance(*Appearance158);
+Shape156->setAppearance(Appearance158);
 
-Transform155->addChild(*Shape156);
+Transform155->addChild(Shape156);
 
 //Knott
-Transform153->addChildren(*Transform155);
+Transform153->addChild(Transform155);
 
-Transform148->addChildren(*Transform153);
+Transform148->addChild(Transform153);
 
-CTransform* Transform159 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform159 = new Transform();
 Transform159->setRotation(new float[4]{0,0,1,1.2});
 Transform159->setTranslation(new float[3]{15,55,-11});
-CTransform* Transform160 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform160 = new Transform();
 Transform160->setScale(new float[3]{5,5,5});
-CShape* Shape161 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance162 = (CAppearance *)(m_pScene.createNode("Appearance"));
+Shape* Shape161 = new Shape();
+Appearance* Appearance162 = new Appearance();
 Appearance162->setUSE("rope");
-Shape161->setAppearance(*Appearance162);
+Shape161->setAppearance(Appearance162);
 
-CExtrusion* Extrusion163 = (CExtrusion *)(m_pScene.createNode("Extrusion"));
+Extrusion* Extrusion163 = new Extrusion();
 Extrusion163->setBeginCap(False);
 Extrusion163->setCreaseAngle(0.76);
 Extrusion163->setCrossSection(new float[34]{0.1,0,0.092,-0.038,0.071,-0.071,0.038,-0.092,0,-0.1,-0.038,-0.092,-0.071,-0.071,-0.092,-0.038,-0.1,0,-0.092,0.038,-0.071,0.071,-0.038,0.092,0,0.1,0.038,0.092,0.071,0.071,0.092,0.038,0.1,0});
@@ -709,56 +712,56 @@ Extrusion163->setSolid(False);
 Extrusion163->setSpine(new float[6]{-15.2,1.4,2.2,-12,-0.8,2.2});
 Shape161->setGeometry(Extrusion163);
 
-Transform160->addChild(*Shape161);
+Transform160->addChild(Shape161);
 
-Transform159->addChildren(*Transform160);
+Transform159->addChild(Transform160);
 
-Transform148->addChildren(*Transform159);
+Transform148->addChild(Transform159);
 
-Transform129->addChildren(*Transform148);
+Transform129->addChild(Transform148);
 
-CTransform* Transform164 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform164 = new Transform();
 Transform164->setRotation(new float[4]{1,0,0,-1.7});
 Transform164->setTranslation(new float[3]{-17,-4.5,0});
-CTransform* Transform165 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform165 = new Transform();
 Transform165->setScale(new float[3]{0.2,0.2,0.2});
 //Knot
-CShape* Shape166 = (CShape *)(m_pScene.createNode("Shape"));
+Shape* Shape166 = new Shape();
 Shape166->setUSE("Torus");
-Transform165->addChild(*Shape166);
+Transform165->addChild(Shape166);
 
-CTransform* Transform167 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform167 = new Transform();
 Transform167->setTranslation(new float[3]{-1,0,1.7});
-CShape* Shape168 = (CShape *)(m_pScene.createNode("Shape"));
-CSphere* Sphere169 = (CSphere *)(m_pScene.createNode("Sphere"));
+Shape* Shape168 = new Shape();
+Sphere* Sphere169 = new Sphere();
 Sphere169->setRadius(1.5);
 Shape168->setGeometry(Sphere169);
 
-CAppearance* Appearance170 = (CAppearance *)(m_pScene.createNode("Appearance"));
+Appearance* Appearance170 = new Appearance();
 Appearance170->setUSE("rope");
-Shape168->setAppearance(*Appearance170);
+Shape168->setAppearance(Appearance170);
 
-Transform167->addChild(*Shape168);
+Transform167->addChild(Shape168);
 
-Transform165->addChildren(*Transform167);
+Transform165->addChild(Transform167);
 
-Transform164->addChildren(*Transform165);
+Transform164->addChild(Transform165);
 
-Transform129->addChildren(*Transform164);
+Transform129->addChild(Transform164);
 
-CTransform* Transform171 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform171 = new Transform();
 Transform171->setDEF("RnS");
-CTransform* Transform172 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform172 = new Transform();
 Transform172->setDEF("ropes");
-CTransform* Transform173 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform173 = new Transform();
 Transform173->setRotation(new float[4]{0,0,1,-0.82});
 Transform173->setTranslation(new float[3]{7,-26,-2.5});
-CShape* Shape174 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance175 = (CAppearance *)(m_pScene.createNode("Appearance"));
+Shape* Shape174 = new Shape();
+Appearance* Appearance175 = new Appearance();
 Appearance175->setUSE("rope");
-Shape174->setAppearance(*Appearance175);
+Shape174->setAppearance(Appearance175);
 
-CExtrusion* Extrusion176 = (CExtrusion *)(m_pScene.createNode("Extrusion"));
+Extrusion* Extrusion176 = new Extrusion();
 Extrusion176->setBeginCap(False);
 Extrusion176->setCreaseAngle(0.76);
 Extrusion176->setCrossSection(new float[34]{0.1,0,0.092,-0.038,0.071,-0.071,0.038,-0.092,0,-0.1,-0.038,-0.092,-0.071,-0.071,-0.092,-0.038,-0.1,0,-0.092,0.038,-0.071,0.071,-0.038,0.092,0,0.1,0.038,0.092,0.071,0.071,0.092,0.038,0.1,0});
@@ -767,14 +770,14 @@ Extrusion176->setSolid(False);
 Extrusion176->setSpine(new float[6]{-33,0.9,2.5,-18.5,1.9,2.55});
 Shape174->setGeometry(Extrusion176);
 
-Transform173->addChild(*Shape174);
+Transform173->addChild(Shape174);
 
-CShape* Shape177 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance178 = (CAppearance *)(m_pScene.createNode("Appearance"));
+Shape* Shape177 = new Shape();
+Appearance* Appearance178 = new Appearance();
 Appearance178->setUSE("rope");
-Shape177->setAppearance(*Appearance178);
+Shape177->setAppearance(Appearance178);
 
-CExtrusion* Extrusion179 = (CExtrusion *)(m_pScene.createNode("Extrusion"));
+Extrusion* Extrusion179 = new Extrusion();
 Extrusion179->setBeginCap(False);
 Extrusion179->setCreaseAngle(0.76);
 Extrusion179->setCrossSection(new float[34]{0.1,0,0.092,-0.038,0.071,-0.071,0.038,-0.092,0,-0.1,-0.038,-0.092,-0.071,-0.071,-0.092,-0.038,-0.1,0,-0.092,0.038,-0.071,0.071,-0.038,0.092,0,0.1,0.038,0.092,0.071,0.071,0.092,0.038,0.1,0});
@@ -783,105 +786,105 @@ Extrusion179->setSolid(False);
 Extrusion179->setSpine(new float[6]{-35.7,-0.8,2.5,-18.8,-0.8,2.55});
 Shape177->setGeometry(Extrusion179);
 
-Transform173->addChild(*Shape177);
+Transform173->addChild(Shape177);
 
-Transform172->addChildren(*Transform173);
+Transform172->addChild(Transform173);
 
-Transform171->addChildren(*Transform172);
+Transform171->addChild(Transform172);
 
-CTransform* Transform180 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform180 = new Transform();
 Transform180->setDEF("sling");
 Transform180->setRotation(new float[4]{0,0,1,-0.82});
 Transform180->setTranslation(new float[3]{-4,-15.3,0});
-CTransform* Transform181 = (CTransform *)(m_pScene.createNode("Transform"));
-CTransform* Transform182 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform181 = new Transform();
+Transform* Transform182 = new Transform();
 Transform182->setRotation(new float[4]{0,1,0,-1.57});
 Transform182->setScale(new float[3]{1,1.3,1});
 Transform182->setTranslation(new float[3]{0.5,0,-1});
-CTransform* Transform183 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform183 = new Transform();
 Transform183->setRotation(new float[4]{0,0,1,1.57});
-CTransform* Transform184 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform184 = new Transform();
 Transform184->setScale(new float[3]{0.3,0.3,0.3});
-CShape* Shape185 = (CShape *)(m_pScene.createNode("Shape"));
+Shape* Shape185 = new Shape();
 Shape185->setDEF("halfsling");
-CAppearance* Appearance186 = (CAppearance *)(m_pScene.createNode("Appearance"));
+Appearance* Appearance186 = new Appearance();
 Appearance186->setDEF("clear");
-CMaterial* Material187 = (CMaterial *)(m_pScene.createNode("Material"));
+Material* Material187 = new Material();
 Material187->setTransparency(0.5);
-Appearance186->setMaterial(*Material187);
+Appearance186->setMaterial(Material187);
 
-Shape185->setAppearance(*Appearance186);
+Shape185->setAppearance(Appearance186);
 
-CExtrusion* Extrusion188 = (CExtrusion *)(m_pScene.createNode("Extrusion"));
+Extrusion* Extrusion188 = new Extrusion();
 Extrusion188->setCrossSection(new float[28]{0,0,0,5,0.5,7,1,8,2,9,3,11,3.5,11.2,4,11,5,9,6,8,6.5,7,6.7,5,6.7,0,0,0});
 Extrusion188->setSpine(new float[6]{0,0,0,0.1,0,0});
 Shape185->setGeometry(Extrusion188);
 
-Transform184->addChild(*Shape185);
+Transform184->addChild(Shape185);
 
-CTransform* Transform189 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform189 = new Transform();
 Transform189->setScale(new float[3]{0.3,0.3,0.3});
 Transform189->setTranslation(new float[3]{0,-3.5,11.5});
-CShape* Shape190 = (CShape *)(m_pScene.createNode("Shape"));
+Shape* Shape190 = new Shape();
 Shape190->setUSE("Torus");
-Transform189->addChild(*Shape190);
+Transform189->addChild(Shape190);
 
-CTransform* Transform191 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform191 = new Transform();
 Transform191->setTranslation(new float[3]{0,0,2});
-CShape* Shape192 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance193 = (CAppearance *)(m_pScene.createNode("Appearance"));
+Shape* Shape192 = new Shape();
+Appearance* Appearance193 = new Appearance();
 Appearance193->setUSE("rope");
-Shape192->setAppearance(*Appearance193);
+Shape192->setAppearance(Appearance193);
 
-CSphere* Sphere194 = (CSphere *)(m_pScene.createNode("Sphere"));
+Sphere* Sphere194 = new Sphere();
 Sphere194->setRadius(1.5);
 Shape192->setGeometry(Sphere194);
 
-Transform191->addChild(*Shape192);
+Transform191->addChild(Shape192);
 
-Transform189->addChildren(*Transform191);
+Transform189->addChild(Transform191);
 
-Transform184->addChildren(*Transform189);
+Transform184->addChild(Transform189);
 
-Transform183->addChildren(*Transform184);
+Transform183->addChild(Transform184);
 
-CTransform* Transform195 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform195 = new Transform();
 Transform195->setScale(new float[3]{0.3,0.3,0.3});
 Transform195->setTranslation(new float[3]{2,0,0});
-CShape* Shape196 = (CShape *)(m_pScene.createNode("Shape"));
+Shape* Shape196 = new Shape();
 Shape196->setUSE("halfsling");
-Transform195->addChild(*Shape196);
+Transform195->addChild(Shape196);
 
-CTransform* Transform197 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform197 = new Transform();
 Transform197->setScale(new float[3]{0.3,0.3,0.3});
 Transform197->setTranslation(new float[3]{0,-3.5,11.3});
-CShape* Shape198 = (CShape *)(m_pScene.createNode("Shape"));
+Shape* Shape198 = new Shape();
 Shape198->setUSE("Torus");
-Transform197->addChild(*Shape198);
+Transform197->addChild(Shape198);
 
-CTransform* Transform199 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform199 = new Transform();
 Transform199->setTranslation(new float[3]{0,0,2});
-CShape* Shape200 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance201 = (CAppearance *)(m_pScene.createNode("Appearance"));
+Shape* Shape200 = new Shape();
+Appearance* Appearance201 = new Appearance();
 Appearance201->setUSE("rope");
-Shape200->setAppearance(*Appearance201);
+Shape200->setAppearance(Appearance201);
 
-CSphere* Sphere202 = (CSphere *)(m_pScene.createNode("Sphere"));
+Sphere* Sphere202 = new Sphere();
 Sphere202->setRadius(1.5);
 Shape200->setGeometry(Sphere202);
 
-Transform199->addChild(*Shape200);
+Transform199->addChild(Shape200);
 
-Transform197->addChildren(*Transform199);
+Transform197->addChild(Transform199);
 
-Transform195->addChildren(*Transform197);
+Transform195->addChild(Transform197);
 
-Transform183->addChildren(*Transform195);
+Transform183->addChild(Transform195);
 
-CTransform* Transform203 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform203 = new Transform();
 Transform203->setTranslation(new float[3]{1,-1,0});
-CShape* Shape204 = (CShape *)(m_pScene.createNode("Shape"));
-CExtrusion* Extrusion205 = (CExtrusion *)(m_pScene.createNode("Extrusion"));
+Shape* Shape204 = new Shape();
+Extrusion* Extrusion205 = new Extrusion();
 Extrusion205->setBeginCap(False);
 Extrusion205->setCreaseAngle(0.785);
 Extrusion205->setCrossSection(new float[18]{1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0});
@@ -890,565 +893,565 @@ Extrusion205->setSolid(False);
 Extrusion205->setSpine(new float[6]{0,-1,0,0,1,0});
 Shape204->setGeometry(Extrusion205);
 
-CAppearance* Appearance206 = (CAppearance *)(m_pScene.createNode("Appearance"));
+Appearance* Appearance206 = new Appearance();
 Appearance206->setUSE("clear");
-Shape204->setAppearance(*Appearance206);
+Shape204->setAppearance(Appearance206);
 
-Transform203->addChild(*Shape204);
+Transform203->addChild(Shape204);
 
-Transform183->addChildren(*Transform203);
+Transform183->addChild(Transform203);
 
-Transform182->addChildren(*Transform183);
+Transform182->addChild(Transform183);
 
-CTouchSensor* TouchSensor207 = (CTouchSensor *)(m_pScene.createNode("TouchSensor"));
+TouchSensor* TouchSensor207 = new TouchSensor();
 TouchSensor207->setDEF("LauncheeChoice");
 TouchSensor207->setDescription("launcher choice");
-Transform182->addChildren(*TouchSensor207);
+Transform182->addChild(TouchSensor207);
 
-Transform181->addChildren(*Transform182);
+Transform181->addChild(Transform182);
 
-CTransform* Transform208 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform208 = new Transform();
 Transform208->setDEF("projectiletransform");
 Transform208->setScale(new float[3]{0.01,0.01,0.01});
-CSwitch* Switch209 = (CSwitch *)(m_pScene.createNode("Switch"));
+Switch* Switch209 = new Switch();
 Switch209->setDEF("projectile");
 Switch209->setWhichChoice(0);
-CGroup* Group210 = (CGroup *)(m_pScene.createNode("Group"));
-CTransform* Transform211 = (CTransform *)(m_pScene.createNode("Transform"));
+Group* Group210 = new Group();
+Transform* Transform211 = new Transform();
 Transform211->setTranslation(new float[3]{0,0.7,0});
-CShape* Shape212 = (CShape *)(m_pScene.createNode("Shape"));
-CSphere* Sphere213 = (CSphere *)(m_pScene.createNode("Sphere"));
+Shape* Shape212 = new Shape();
+Sphere* Sphere213 = new Sphere();
 Sphere213->setRadius(0.7);
 Shape212->setGeometry(Sphere213);
 
-CAppearance* Appearance214 = (CAppearance *)(m_pScene.createNode("Appearance"));
+Appearance* Appearance214 = new Appearance();
 Appearance214->setDEF("black");
-CMaterial* Material215 = (CMaterial *)(m_pScene.createNode("Material"));
+Material* Material215 = new Material();
 Material215->setDiffuseColor(new float[3]{0,0,0});
 Material215->setSpecularColor(new float[3]{1,1,1});
-Appearance214->setMaterial(*Material215);
+Appearance214->setMaterial(Material215);
 
-Shape212->setAppearance(*Appearance214);
+Shape212->setAppearance(Appearance214);
 
-Transform211->addChild(*Shape212);
+Transform211->addChild(Shape212);
 
-Group210->addChildren(*Transform211);
+Group210->addChild(Transform211);
 
-Switch209->addChildren(*Group210);
+Switch209->addChild(Group210);
 
-CGroup* Group216 = (CGroup *)(m_pScene.createNode("Group"));
-CTransform* Transform217 = (CTransform *)(m_pScene.createNode("Transform"));
-CInline* Inline218 = (CInline *)(m_pScene.createNode("Inline"));
-Inline218->setUrl(new CString[2]{"cow.wrl","http://www.uoguelph.ca/~dchiu/cow.wrl"}, 2);
-Transform217->addChildren(*Inline218);
+Group* Group216 = new Group();
+Transform* Transform217 = new Transform();
+Inline* Inline218 = new Inline();
+Inline218->setUrl(new String[2]{"cow.wrl","http://www.uoguelph.ca/~dchiu/cow.wrl"}, 2);
+Transform217->addChild(Inline218);
 
-Group216->addChildren(*Transform217);
+Group216->addChild(Transform217);
 
-Switch209->addChildren(*Group216);
+Switch209->addChild(Group216);
 
-CGroup* Group219 = (CGroup *)(m_pScene.createNode("Group"));
-CTransform* Transform220 = (CTransform *)(m_pScene.createNode("Transform"));
+Group* Group219 = new Group();
+Transform* Transform220 = new Transform();
 Transform220->setRotation(new float[4]{0,1,0,1.57});
 Transform220->setScale(new float[3]{0.4,0.4,0.4});
 Transform220->setTranslation(new float[3]{0,0.7,0});
-CInline* Inline221 = (CInline *)(m_pScene.createNode("Inline"));
-Inline221->setUrl(new CString[2]{"vrml_ginger.wrl","http://home.inreach.com/ntamura/vrml/vrml_ginger.wrl"}, 2);
-Transform220->addChildren(*Inline221);
+Inline* Inline221 = new Inline();
+Inline221->setUrl(new String[2]{"vrml_ginger.wrl","http://home.inreach.com/ntamura/vrml/vrml_ginger.wrl"}, 2);
+Transform220->addChild(Inline221);
 
-Group219->addChildren(*Transform220);
+Group219->addChild(Transform220);
 
-Switch209->addChildren(*Group219);
+Switch209->addChild(Group219);
 
-Transform208->addChildren(*Switch209);
+Transform208->addChild(Switch209);
 
-Transform181->addChildren(*Transform208);
+Transform181->addChild(Transform208);
 
-Transform180->addChildren(*Transform181);
+Transform180->addChild(Transform181);
 
-Transform171->addChildren(*Transform180);
+Transform171->addChild(Transform180);
 
-Transform129->addChildren(*Transform171);
+Transform129->addChild(Transform171);
 
-Transform104->addChildren(*Transform129);
+Transform104->addChild(Transform129);
 
-CTransform* Transform222 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform222 = new Transform();
 Transform222->setRotation(new float[4]{1,0,0,1.57});
 Transform222->setTranslation(new float[3]{0,18,2.5});
-CShape* Shape223 = (CShape *)(m_pScene.createNode("Shape"));
-CCylinder* Cylinder224 = (CCylinder *)(m_pScene.createNode("Cylinder"));
+Shape* Shape223 = new Shape();
+Cylinder* Cylinder224 = new Cylinder();
 Cylinder224->setHeight(8);
 Cylinder224->setRadius(0.4);
 Shape223->setGeometry(Cylinder224);
 
-CAppearance* Appearance225 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material226 = (CMaterial *)(m_pScene.createNode("Material"));
+Appearance* Appearance225 = new Appearance();
+Material* Material226 = new Material();
 Material226->setDiffuseColor(new float[3]{0,0,0});
 Material226->setSpecularColor(new float[3]{1,1,1});
-Appearance225->setMaterial(*Material226);
+Appearance225->setMaterial(Material226);
 
-Shape223->setAppearance(*Appearance225);
+Shape223->setAppearance(Appearance225);
 
-Transform222->addChild(*Shape223);
+Transform222->addChild(Shape223);
 
 //Top Pivot
-Transform104->addChildren(*Transform222);
+Transform104->addChild(Transform222);
 
-CTransform* Transform227 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform227 = new Transform();
 Transform227->setDEF("verticalweight");
-CTransform* Transform228 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform228 = new Transform();
 Transform228->setTranslation(new float[3]{4,18,1.8});
-CShape* Shape229 = (CShape *)(m_pScene.createNode("Shape"));
-CBox* Box230 = (CBox *)(m_pScene.createNode("Box"));
+Shape* Shape229 = new Shape();
+Box* Box230 = new Box();
 Box230->setSize(new float[3]{1,10,0.5});
 Shape229->setGeometry(Box230);
 
-CAppearance* Appearance231 = (CAppearance *)(m_pScene.createNode("Appearance"));
+Appearance* Appearance231 = new Appearance();
 Appearance231->setUSE("wood");
-Shape229->setAppearance(*Appearance231);
+Shape229->setAppearance(Appearance231);
 
-Transform228->addChild(*Shape229);
+Transform228->addChild(Shape229);
 
-Transform227->addChildren(*Transform228);
+Transform227->addChild(Transform228);
 
-CTransform* Transform232 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform232 = new Transform();
 Transform232->setTranslation(new float[3]{4,18,3.2});
-CShape* Shape233 = (CShape *)(m_pScene.createNode("Shape"));
-CBox* Box234 = (CBox *)(m_pScene.createNode("Box"));
+Shape* Shape233 = new Shape();
+Box* Box234 = new Box();
 Box234->setSize(new float[3]{1,10,0.5});
 Shape233->setGeometry(Box234);
 
-CAppearance* Appearance235 = (CAppearance *)(m_pScene.createNode("Appearance"));
+Appearance* Appearance235 = new Appearance();
 Appearance235->setUSE("wood");
-Shape233->setAppearance(*Appearance235);
+Shape233->setAppearance(Appearance235);
 
-Transform232->addChild(*Shape233);
+Transform232->addChild(Shape233);
 
-Transform227->addChildren(*Transform232);
+Transform227->addChild(Transform232);
 
-CTransform* Transform236 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform236 = new Transform();
 Transform236->setTranslation(new float[3]{4,14,2.5});
 //CounterWeight
-CShape* Shape237 = (CShape *)(m_pScene.createNode("Shape"));
-CCylinder* Cylinder238 = (CCylinder *)(m_pScene.createNode("Cylinder"));
+Shape* Shape237 = new Shape();
+Cylinder* Cylinder238 = new Cylinder();
 Cylinder238->setHeight(4);
 Cylinder238->setRadius(1.5);
 Shape237->setGeometry(Cylinder238);
 
-CAppearance* Appearance239 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material240 = (CMaterial *)(m_pScene.createNode("Material"));
+Appearance* Appearance239 = new Appearance();
+Material* Material240 = new Material();
 Material240->setDiffuseColor(new float[3]{0,0,0});
 Material240->setSpecularColor(new float[3]{1,1,1});
-Appearance239->setMaterial(*Material240);
+Appearance239->setMaterial(Material240);
 
-Shape237->setAppearance(*Appearance239);
+Shape237->setAppearance(Appearance239);
 
-Transform236->addChild(*Shape237);
+Transform236->addChild(Shape237);
 
-Transform227->addChildren(*Transform236);
+Transform227->addChild(Transform236);
 
-CTransform* Transform241 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform241 = new Transform();
 Transform241->setRotation(new float[4]{1,0,0,1.57});
 Transform241->setTranslation(new float[3]{4,22,2.5});
-CShape* Shape242 = (CShape *)(m_pScene.createNode("Shape"));
-CCylinder* Cylinder243 = (CCylinder *)(m_pScene.createNode("Cylinder"));
+Shape* Shape242 = new Shape();
+Cylinder* Cylinder243 = new Cylinder();
 Cylinder243->setHeight(2.5);
 Cylinder243->setRadius(0.3);
 Shape242->setGeometry(Cylinder243);
 
-CAppearance* Appearance244 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material245 = (CMaterial *)(m_pScene.createNode("Material"));
+Appearance* Appearance244 = new Appearance();
+Material* Material245 = new Material();
 Material245->setDiffuseColor(new float[3]{0,0,0});
 Material245->setSpecularColor(new float[3]{1,1,1});
-Appearance244->setMaterial(*Material245);
+Appearance244->setMaterial(Material245);
 
-Shape242->setAppearance(*Appearance244);
+Shape242->setAppearance(Appearance244);
 
-Transform241->addChild(*Shape242);
+Transform241->addChild(Shape242);
 
-Transform227->addChildren(*Transform241);
+Transform227->addChild(Transform241);
 
-Transform104->addChildren(*Transform227);
+Transform104->addChild(Transform227);
 
-CTransform* Transform246 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform246 = new Transform();
 Transform246->setRotation(new float[4]{0,0,1,1.57});
 Transform246->setScale(new float[3]{0.2,0.2,0.2});
 Transform246->setTranslation(new float[3]{-11.5,-1,2});
-CTransform* Transform247 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform247 = new Transform();
 Transform247->setDEF("screw");
 Transform247->setRotation(new float[4]{1,0,0,1.57});
-CShape* Shape248 = (CShape *)(m_pScene.createNode("Shape"));
+Shape* Shape248 = new Shape();
 Shape248->setUSE("Torus");
-Transform247->addChild(*Shape248);
+Transform247->addChild(Shape248);
 
-CTransform* Transform249 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform249 = new Transform();
 Transform249->setRotation(new float[4]{1,0,0,-1.57});
 Transform249->setTranslation(new float[3]{0,0,7});
-CShape* Shape250 = (CShape *)(m_pScene.createNode("Shape"));
-CCylinder* Cylinder251 = (CCylinder *)(m_pScene.createNode("Cylinder"));
+Shape* Shape250 = new Shape();
+Cylinder* Cylinder251 = new Cylinder();
 Cylinder251->setHeight(10);
 Cylinder251->setRadius(0.7);
 Shape250->setGeometry(Cylinder251);
 
-CAppearance* Appearance252 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material253 = (CMaterial *)(m_pScene.createNode("Material"));
+Appearance* Appearance252 = new Appearance();
+Material* Material253 = new Material();
 Material253->setSpecularColor(new float[3]{1,1,1});
-Appearance252->setMaterial(*Material253);
+Appearance252->setMaterial(Material253);
 
-Shape250->setAppearance(*Appearance252);
+Shape250->setAppearance(Appearance252);
 
-Transform249->addChild(*Shape250);
+Transform249->addChild(Shape250);
 
-Transform247->addChildren(*Transform249);
+Transform247->addChild(Transform249);
 
-Transform246->addChildren(*Transform247);
+Transform246->addChild(Transform247);
 
-CTransform* Transform254 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform254 = new Transform();
 Transform254->setTranslation(new float[3]{0,0,7});
-CTransform* Transform255 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform255 = new Transform();
 Transform255->setUSE("screw");
-Transform254->addChildren(*Transform255);
+Transform254->addChild(Transform255);
 
-Transform246->addChildren(*Transform254);
+Transform246->addChild(Transform254);
 
 //Release Pin
-CTransform* Transform256 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform256 = new Transform();
 Transform256->setDEF("Pin");
 Transform256->setRotation(new float[4]{1,0,0,-1.57});
 Transform256->setTranslation(new float[3]{0,0,-3});
-CTransform* Transform257 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform257 = new Transform();
 Transform257->setUSE("screw");
-Transform256->addChildren(*Transform257);
+Transform256->addChild(Transform257);
 
-Transform246->addChildren(*Transform256);
+Transform246->addChild(Transform256);
 
-Transform104->addChildren(*Transform246);
+Transform104->addChild(Transform246);
 
-CTransform* Transform258 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform258 = new Transform();
 Transform258->setTranslation(new float[3]{0,0,5});
-CShape* Shape259 = (CShape *)(m_pScene.createNode("Shape"));
+Shape* Shape259 = new Shape();
 Shape259->setUSE("plank");
-Transform258->addChild(*Shape259);
+Transform258->addChild(Shape259);
 
-CTransform* Transform260 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform260 = new Transform();
 Transform260->setUSE("angledsupport");
-Transform258->addChildren(*Transform260);
+Transform258->addChild(Transform260);
 
-CTransform* Transform261 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform261 = new Transform();
 Transform261->setUSE("angledsupport2");
-Transform258->addChildren(*Transform261);
+Transform258->addChild(Transform261);
 
-CTransform* Transform262 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform262 = new Transform();
 Transform262->setUSE("verticalsupport");
-Transform258->addChildren(*Transform262);
+Transform258->addChild(Transform262);
 
-CTransform* Transform263 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform263 = new Transform();
 Transform263->setUSE("horizontalsupport");
-Transform258->addChildren(*Transform263);
+Transform258->addChild(Transform263);
 
-CTransform* Transform264 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform264 = new Transform();
 Transform264->setRotation(new float[4]{0,1,0,1.57});
 Transform264->setScale(new float[3]{0.6,1,1});
 Transform264->setTranslation(new float[3]{0,-11,-2.5});
-CTransform* Transform265 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform265 = new Transform();
 Transform265->setUSE("horizontalsupport");
-Transform264->addChildren(*Transform265);
+Transform264->addChild(Transform265);
 
-Transform258->addChildren(*Transform264);
+Transform258->addChild(Transform264);
 
-CTransform* Transform266 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform266 = new Transform();
 Transform266->setRotation(new float[4]{0,0,1,-1.57});
 Transform266->setScale(new float[3]{0.6,1,1});
 Transform266->setTranslation(new float[3]{0,5,-10});
-CTransform* Transform267 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform267 = new Transform();
 Transform267->setRotation(new float[4]{0,1,0,0.4});
-CShape* Shape268 = (CShape *)(m_pScene.createNode("Shape"));
+Shape* Shape268 = new Shape();
 Shape268->setUSE("plank");
-Transform267->addChild(*Shape268);
+Transform267->addChild(Shape268);
 
-Transform266->addChildren(*Transform267);
+Transform266->addChild(Transform267);
 
-Transform258->addChildren(*Transform266);
+Transform258->addChild(Transform266);
 
-CTransform* Transform269 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform269 = new Transform();
 Transform269->setTranslation(new float[3]{0,0,0.6});
-CTransform* Transform270 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform270 = new Transform();
 Transform270->setUSE("panel");
-Transform269->addChildren(*Transform270);
+Transform269->addChild(Transform270);
 
-Transform258->addChildren(*Transform269);
+Transform258->addChild(Transform269);
 
-Transform104->addChildren(*Transform258);
+Transform104->addChild(Transform258);
 
-CTransform* Transform271 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform271 = new Transform();
 Transform271->setTranslation(new float[3]{10,-1,2.5});
-CShape* Shape272 = (CShape *)(m_pScene.createNode("Shape"));
+Shape* Shape272 = new Shape();
 Shape272->setDEF("Axle");
-CBox* Box273 = (CBox *)(m_pScene.createNode("Box"));
+Box* Box273 = new Box();
 Box273->setSize(new float[3]{1,1,8});
 Shape272->setGeometry(Box273);
 
-CAppearance* Appearance274 = (CAppearance *)(m_pScene.createNode("Appearance"));
+Appearance* Appearance274 = new Appearance();
 Appearance274->setUSE("wood");
-Shape272->setAppearance(*Appearance274);
+Shape272->setAppearance(Appearance274);
 
-Transform271->addChild(*Shape272);
+Transform271->addChild(Shape272);
 
-CTransform* Transform275 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform275 = new Transform();
 Transform275->setRotation(new float[4]{1,0,0,1.57});
 Transform275->setTranslation(new float[3]{0,0,4.5});
-CShape* Shape276 = (CShape *)(m_pScene.createNode("Shape"));
+Shape* Shape276 = new Shape();
 Shape276->setDEF("wheel");
-CCylinder* Cylinder277 = (CCylinder *)(m_pScene.createNode("Cylinder"));
+Cylinder* Cylinder277 = new Cylinder();
 Cylinder277->setRadius(2);
 Shape276->setGeometry(Cylinder277);
 
-CAppearance* Appearance278 = (CAppearance *)(m_pScene.createNode("Appearance"));
+Appearance* Appearance278 = new Appearance();
 Appearance278->setUSE("wood");
-Shape276->setAppearance(*Appearance278);
+Shape276->setAppearance(Appearance278);
 
-Transform275->addChild(*Shape276);
+Transform275->addChild(Shape276);
 
-CShape* Shape279 = (CShape *)(m_pScene.createNode("Shape"));
+Shape* Shape279 = new Shape();
 Shape279->setDEF("tracks");
-CSphere* Sphere280 = (CSphere *)(m_pScene.createNode("Sphere"));
+Sphere* Sphere280 = new Sphere();
 Sphere280->setRadius(1.5);
 Shape279->setGeometry(Sphere280);
 
-CAppearance* Appearance281 = (CAppearance *)(m_pScene.createNode("Appearance"));
+Appearance* Appearance281 = new Appearance();
 Appearance281->setUSE("black");
-Shape279->setAppearance(*Appearance281);
+Shape279->setAppearance(Appearance281);
 
-Transform275->addChild(*Shape279);
+Transform275->addChild(Shape279);
 
-CTransform* Transform282 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform282 = new Transform();
 Transform282->setTranslation(new float[3]{0,0.55,0});
-CShape* Shape283 = (CShape *)(m_pScene.createNode("Shape"));
+Shape* Shape283 = new Shape();
 Shape283->setDEF("hub");
-CSphere* Sphere284 = (CSphere *)(m_pScene.createNode("Sphere"));
+Sphere* Sphere284 = new Sphere();
 Sphere284->setRadius(1.5);
 Shape283->setGeometry(Sphere284);
 
-CAppearance* Appearance285 = (CAppearance *)(m_pScene.createNode("Appearance"));
+Appearance* Appearance285 = new Appearance();
 Appearance285->setUSE("black");
-Shape283->setAppearance(*Appearance285);
+Shape283->setAppearance(Appearance285);
 
-Transform282->addChild(*Shape283);
+Transform282->addChild(Shape283);
 
-Transform275->addChildren(*Transform282);
+Transform275->addChild(Transform282);
 
-Transform271->addChildren(*Transform275);
+Transform271->addChild(Transform275);
 
-CTransform* Transform286 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform286 = new Transform();
 Transform286->setRotation(new float[4]{1,0,0,1.57});
 Transform286->setTranslation(new float[3]{0,0,-4.5});
-CShape* Shape287 = (CShape *)(m_pScene.createNode("Shape"));
+Shape* Shape287 = new Shape();
 Shape287->setUSE("wheel");
-Transform286->addChild(*Shape287);
+Transform286->addChild(Shape287);
 
-CShape* Shape288 = (CShape *)(m_pScene.createNode("Shape"));
+Shape* Shape288 = new Shape();
 Shape288->setUSE("tracks");
-Transform286->addChild(*Shape288);
+Transform286->addChild(Shape288);
 
-CTransform* Transform289 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform289 = new Transform();
 Transform289->setTranslation(new float[3]{0,-0.55,0});
-CShape* Shape290 = (CShape *)(m_pScene.createNode("Shape"));
+Shape* Shape290 = new Shape();
 Shape290->setUSE("hub");
-Transform289->addChild(*Shape290);
+Transform289->addChild(Shape290);
 
-Transform286->addChildren(*Transform289);
+Transform286->addChild(Transform289);
 
-Transform271->addChildren(*Transform286);
+Transform271->addChild(Transform286);
 
-Transform104->addChildren(*Transform271);
+Transform104->addChild(Transform271);
 
-CTransform* Transform291 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform291 = new Transform();
 Transform291->setTranslation(new float[3]{-10,-1,2.5});
-CShape* Shape292 = (CShape *)(m_pScene.createNode("Shape"));
+Shape* Shape292 = new Shape();
 Shape292->setUSE("Axle");
-Transform291->addChild(*Shape292);
+Transform291->addChild(Shape292);
 
-CTransform* Transform293 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform293 = new Transform();
 Transform293->setRotation(new float[4]{1,0,0,1.57});
 Transform293->setTranslation(new float[3]{0,0,4.5});
-CShape* Shape294 = (CShape *)(m_pScene.createNode("Shape"));
+Shape* Shape294 = new Shape();
 Shape294->setUSE("wheel");
-Transform293->addChild(*Shape294);
+Transform293->addChild(Shape294);
 
-CShape* Shape295 = (CShape *)(m_pScene.createNode("Shape"));
+Shape* Shape295 = new Shape();
 Shape295->setUSE("tracks");
-Transform293->addChild(*Shape295);
+Transform293->addChild(Shape295);
 
-CTransform* Transform296 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform296 = new Transform();
 Transform296->setTranslation(new float[3]{0,0.55,0});
-CShape* Shape297 = (CShape *)(m_pScene.createNode("Shape"));
+Shape* Shape297 = new Shape();
 Shape297->setUSE("hub");
-Transform296->addChild(*Shape297);
+Transform296->addChild(Shape297);
 
-Transform293->addChildren(*Transform296);
+Transform293->addChild(Transform296);
 
-Transform291->addChildren(*Transform293);
+Transform291->addChild(Transform293);
 
-CTransform* Transform298 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform298 = new Transform();
 Transform298->setRotation(new float[4]{1,0,0,1.57});
 Transform298->setTranslation(new float[3]{0,0,-4.5});
-CShape* Shape299 = (CShape *)(m_pScene.createNode("Shape"));
+Shape* Shape299 = new Shape();
 Shape299->setUSE("wheel");
-Transform298->addChild(*Shape299);
+Transform298->addChild(Shape299);
 
-CShape* Shape300 = (CShape *)(m_pScene.createNode("Shape"));
+Shape* Shape300 = new Shape();
 Shape300->setUSE("tracks");
-Transform298->addChild(*Shape300);
+Transform298->addChild(Shape300);
 
-CTransform* Transform301 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform301 = new Transform();
 Transform301->setTranslation(new float[3]{0,-0.55,0});
-CShape* Shape302 = (CShape *)(m_pScene.createNode("Shape"));
+Shape* Shape302 = new Shape();
 Shape302->setUSE("hub");
-Transform301->addChild(*Shape302);
+Transform301->addChild(Shape302);
 
-Transform298->addChildren(*Transform301);
+Transform298->addChild(Transform301);
 
-Transform291->addChildren(*Transform298);
+Transform291->addChild(Transform298);
 
-CTransform* Transform303 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform303 = new Transform();
 Transform303->setRotation(new float[4]{0,1,0,-0.6});
 Transform303->setTranslation(new float[3]{0,100,400});
-CTransform* Transform304 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform304 = new Transform();
 Transform304->setTranslation(new float[3]{1,3,0});
-CViewpoint* Viewpoint305 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
+Viewpoint* Viewpoint305 = new Viewpoint();
 Viewpoint305->setDescription("Side");
-Transform304->addChildren(*Viewpoint305);
+Transform304->addChild(Viewpoint305);
 
-Transform303->addChildren(*Transform304);
+Transform303->addChild(Transform304);
 
-CTransform* Transform306 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform306 = new Transform();
 Transform306->setUSE("launch");
-Transform303->addChildren(*Transform306);
+Transform303->addChild(Transform306);
 
-CTransform* Transform307 = (CTransform *)(m_pScene.createNode("Transform"));
-CTouchSensor* TouchSensor308 = (CTouchSensor *)(m_pScene.createNode("TouchSensor"));
+Transform* Transform307 = new Transform();
+TouchSensor* TouchSensor308 = new TouchSensor();
 TouchSensor308->setUSE("LauncheeChoice");
-Transform307->addChildren(*TouchSensor308);
+Transform307->addChild(TouchSensor308);
 
-CSwitch* Switch309 = (CSwitch *)(m_pScene.createNode("Switch"));
+Switch* Switch309 = new Switch();
 Switch309->setUSE("projectilename");
-Transform307->addChildren(*Switch309);
+Transform307->addChild(Switch309);
 
-CTransform* Transform310 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform310 = new Transform();
 Transform310->setTranslation(new float[3]{2.5,0,0});
-CShape* Shape311 = (CShape *)(m_pScene.createNode("Shape"));
-CBox* Box312 = (CBox *)(m_pScene.createNode("Box"));
+Shape* Shape311 = new Shape();
+Box* Box312 = new Box();
 Box312->setSize(new float[3]{5,0.5,0.5});
 Shape311->setGeometry(Box312);
 
-CAppearance* Appearance313 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material314 = (CMaterial *)(m_pScene.createNode("Material"));
+Appearance* Appearance313 = new Appearance();
+Material* Material314 = new Material();
 Material314->setTransparency(1);
-Appearance313->setMaterial(*Material314);
+Appearance313->setMaterial(Material314);
 
-Shape311->setAppearance(*Appearance313);
+Shape311->setAppearance(Appearance313);
 
-Transform310->addChild(*Shape311);
+Transform310->addChild(Shape311);
 
-Transform307->addChildren(*Transform310);
+Transform307->addChild(Transform310);
 
-Transform303->addChildren(*Transform307);
+Transform303->addChild(Transform307);
 
-CTransform* Transform315 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform315 = new Transform();
 Transform315->setScale(new float[3]{0.5,0.5,0.5});
 Transform315->setTranslation(new float[3]{0,-1,0});
-CTouchSensor* TouchSensor316 = (CTouchSensor *)(m_pScene.createNode("TouchSensor"));
+TouchSensor* TouchSensor316 = new TouchSensor();
 TouchSensor316->setUSE("weightselector");
-Transform315->addChildren(*TouchSensor316);
+Transform315->addChild(TouchSensor316);
 
-CSwitch* Switch317 = (CSwitch *)(m_pScene.createNode("Switch"));
+Switch* Switch317 = new Switch();
 Switch317->setUSE("Weight");
-Transform315->addChildren(*Switch317);
+Transform315->addChild(Switch317);
 
-CTransform* Transform318 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform318 = new Transform();
 Transform318->setTranslation(new float[3]{8,0,0});
-CShape* Shape319 = (CShape *)(m_pScene.createNode("Shape"));
-CBox* Box320 = (CBox *)(m_pScene.createNode("Box"));
+Shape* Shape319 = new Shape();
+Box* Box320 = new Box();
 Box320->setSize(new float[3]{17,1,0.5});
 Shape319->setGeometry(Box320);
 
-CAppearance* Appearance321 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material322 = (CMaterial *)(m_pScene.createNode("Material"));
+Appearance* Appearance321 = new Appearance();
+Material* Material322 = new Material();
 Material322->setTransparency(1);
-Appearance321->setMaterial(*Material322);
+Appearance321->setMaterial(Material322);
 
-Shape319->setAppearance(*Appearance321);
+Shape319->setAppearance(Appearance321);
 
-Transform318->addChild(*Shape319);
+Transform318->addChild(Shape319);
 
-Transform315->addChildren(*Transform318);
+Transform315->addChild(Transform318);
 
-Transform303->addChildren(*Transform315);
+Transform303->addChild(Transform315);
 
-Transform291->addChildren(*Transform303);
+Transform291->addChild(Transform303);
 
-CTransform* Transform323 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform323 = new Transform();
 Transform323->setDEF("ProjectileTransform");
 Transform323->setTranslation(new float[3]{14.25,1.25,0});
-CSwitch* Switch324 = (CSwitch *)(m_pScene.createNode("Switch"));
+Switch* Switch324 = new Switch();
 Switch324->setUSE("projectile");
-Transform323->addChildren(*Switch324);
+Transform323->addChild(Switch324);
 
-CTransform* Transform325 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform325 = new Transform();
 Transform325->setRotation(new float[4]{0,1,0,1.57});
 Transform325->setTranslation(new float[3]{0,1,0});
-CViewpoint* Viewpoint326 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
+Viewpoint* Viewpoint326 = new Viewpoint();
 Viewpoint326->setDescription("Projectile Cam");
 Viewpoint326->setPosition(new float[3]{0,0,15});
-Transform325->addChildren(*Viewpoint326);
+Transform325->addChild(Viewpoint326);
 
-Transform323->addChildren(*Transform325);
+Transform323->addChild(Transform325);
 
-Transform291->addChildren(*Transform323);
+Transform291->addChild(Transform323);
 
-CTransform* Transform327 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform327 = new Transform();
 Transform327->setTranslation(new float[3]{20,2,0});
-CTransform* Transform328 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform328 = new Transform();
 Transform328->setDEF("Front");
 Transform328->setRotation(new float[4]{0,1,0,1.57});
-CViewpoint* Viewpoint329 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
+Viewpoint* Viewpoint329 = new Viewpoint();
 Viewpoint329->setDescription("Fore");
-Transform328->addChildren(*Viewpoint329);
+Transform328->addChild(Viewpoint329);
 
-Transform327->addChildren(*Transform328);
+Transform327->addChild(Transform328);
 
-Transform291->addChildren(*Transform327);
+Transform291->addChild(Transform327);
 
-CTransform* Transform330 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform330 = new Transform();
 Transform330->setTranslation(new float[3]{-8,4,0});
-CTransform* Transform331 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform331 = new Transform();
 Transform331->setRotation(new float[4]{0,1,0,-1.57});
-CViewpoint* Viewpoint332 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
+Viewpoint* Viewpoint332 = new Viewpoint();
 Viewpoint332->setDescription("Aft");
-Transform331->addChildren(*Viewpoint332);
+Transform331->addChild(Viewpoint332);
 
-Transform330->addChildren(*Transform331);
+Transform330->addChild(Transform331);
 
-Transform291->addChildren(*Transform330);
+Transform291->addChild(Transform330);
 
-CScript* Script333 = (CScript *)(m_pScene.createNode("Script"));
+Script* Script333 = new Script();
 Script333->setDEF("WeightScript");
-Cfield* field334 = new Cfield();
+field* field334 = new field();
 field334->setName("set_boolean");
 field334->setAccessType("inputOnly");
 field334->setType("SFBool");
-Script333->addField(*field334);
+Script333->addField(field334);
 
-Cfield* field335 = new Cfield();
+field* field335 = new field();
 field335->setName("whichchoice");
 field335->setAccessType("outputOnly");
 field335->setType("SFInt32");
-Script333->addField(*field335);
+Script333->addField(field335);
 
-Cfield* field336 = new Cfield();
+field* field336 = new field();
 field336->setName("CounterWeight");
 field336->setAccessType("outputOnly");
 field336->setType("SFFloat");
-Script333->addField(*field336);
+Script333->addField(field336);
 
 
 Script333.setSourceCode(`ecmascript:\n"+
@@ -1474,27 +1477,27 @@ Script333.setSourceCode(`ecmascript:\n"+
 "\n"+
 "        Browser.println ('CounterWeight ='+CounterWeight);\n"+
 "}`)
-Transform291->addChildren(*Script333);
+Transform291->addChild(Script333);
 
-CScript* Script337 = (CScript *)(m_pScene.createNode("Script"));
+Script* Script337 = new Script();
 Script337->setDEF("LauncheeScript");
-Cfield* field338 = new Cfield();
+field* field338 = new field();
 field338->setName("set_boolean");
 field338->setAccessType("inputOnly");
 field338->setType("SFBool");
-Script337->addField(*field338);
+Script337->addField(field338);
 
-Cfield* field339 = new Cfield();
+field* field339 = new field();
 field339->setName("whichchoice");
 field339->setAccessType("outputOnly");
 field339->setType("SFInt32");
-Script337->addField(*field339);
+Script337->addField(field339);
 
-Cfield* field340 = new Cfield();
+field* field340 = new field();
 field340->setName("ProjectileWeight");
 field340->setAccessType("outputOnly");
 field340->setType("SFFloat");
-Script337->addField(*field340);
+Script337->addField(field340);
 
 
 Script337.setSourceCode(`ecmascript:\n"+
@@ -1510,21 +1513,21 @@ Script337.setSourceCode(`ecmascript:\n"+
 "	if ( whichchoice ==3 ) { whichchoice = 0; ProjectileWeight=10.00; }\n"+
 "	Browser.println ('Projectile Weight'+ProjectileWeight);\n"+
 "}`)
-Transform291->addChildren(*Script337);
+Transform291->addChild(Script337);
 
-CScript* Script341 = (CScript *)(m_pScene.createNode("Script"));
+Script* Script341 = new Script();
 Script341->setDEF("PigdogMonkScript");
-Cfield* field342 = new Cfield();
+field* field342 = new field();
 field342->setName("set_boolean");
 field342->setAccessType("inputOnly");
 field342->setType("SFBool");
-Script341->addField(*field342);
+Script341->addField(field342);
 
-Cfield* field343 = new Cfield();
+field* field343 = new field();
 field343->setName("whichchoice");
 field343->setAccessType("outputOnly");
 field343->setType("SFInt32");
-Script341->addField(*field343);
+Script341->addField(field343);
 
 
 Script341.setSourceCode(`ecmascript:\n"+
@@ -1539,53 +1542,53 @@ Script341.setSourceCode(`ecmascript:\n"+
 "\n"+
 "\n"+
 "}`)
-Transform291->addChildren(*Script341);
+Transform291->addChild(Script341);
 
-CScript* Script344 = (CScript *)(m_pScene.createNode("Script"));
+Script* Script344 = new Script();
 Script344->setDEF("Mover");
-Cfield* field345 = new Cfield();
+field* field345 = new field();
 field345->setName("set_fraction");
 field345->setAccessType("inputOnly");
 field345->setType("SFFloat");
-Script344->addField(*field345);
+Script344->addField(field345);
 
-Cfield* field346 = new Cfield();
+field* field346 = new field();
 field346->setName("set_MassCounterWeight");
 field346->setAccessType("inputOnly");
 field346->setType("SFFloat");
-Script344->addField(*field346);
+Script344->addField(field346);
 
-Cfield* field347 = new Cfield();
+field* field347 = new field();
 field347->setName("set_MassProjectileWeight");
 field347->setAccessType("inputOnly");
 field347->setType("SFFloat");
-Script344->addField(*field347);
+Script344->addField(field347);
 
-Cfield* field348 = new Cfield();
+field* field348 = new field();
 field348->setName("MassCounterWeight");
 field348->setAccessType("initializeOnly");
 field348->setType("SFFloat");
 field348->setValue("1");
-Script344->addField(*field348);
+Script344->addField(field348);
 
-Cfield* field349 = new Cfield();
+field* field349 = new field();
 field349->setName("MassProjectileWeight");
 field349->setAccessType("initializeOnly");
 field349->setType("SFFloat");
 field349->setValue("1");
-Script344->addField(*field349);
+Script344->addField(field349);
 
-Cfield* field350 = new Cfield();
+field* field350 = new field();
 field350->setName("transparent");
 field350->setAccessType("outputOnly");
 field350->setType("SFVec3f");
-Script344->addField(*field350);
+Script344->addField(field350);
 
-Cfield* field351 = new Cfield();
+field* field351 = new field();
 field351->setName("value_changed");
 field351->setAccessType("outputOnly");
 field351->setType("SFVec3f");
-Script344->addField(*field351);
+Script344->addField(field351);
 
 
 Script344.setSourceCode(`ecmascript:\n"+
@@ -1629,231 +1632,230 @@ Script344.setSourceCode(`ecmascript:\n"+
 "	value_changed = new SFVec3f (x, y, z);\n"+
 "	Browser.println ('x=' + value_changed[0] + ' y=' + value_changed[1] + ' z=' + value_changed[2]);\n"+
 "}`)
-Transform291->addChildren(*Script344);
+Transform291->addChild(Script344);
 
-Transform104->addChildren(*Transform291);
+Transform104->addChild(Transform291);
 
-group->addChildren(*Transform104);
+Scene17->addChild(Transform104);
 
-CTimeSensor* TimeSensor352 = (CTimeSensor *)(m_pScene.createNode("TimeSensor"));
+TimeSensor* TimeSensor352 = new TimeSensor();
 TimeSensor352->setDEF("clock");
 TimeSensor352->setCycleInterval(10);
-group->addChildren(*TimeSensor352);
+Scene17->addChild(TimeSensor352);
 
-CPositionInterpolator* PositionInterpolator353 = (CPositionInterpolator *)(m_pScene.createNode("PositionInterpolator"));
+PositionInterpolator* PositionInterpolator353 = new PositionInterpolator();
 PositionInterpolator353->setDEF("verticalweightpath");
 PositionInterpolator353->setKey(new float[6]{0,0.1,0.2,0.2,0.3,0.9}, 6);
 PositionInterpolator353->setKeyValue(new float[18]{1.4,1.6,0,1,-8,0,-3.5,-12,0,-3.5,-12,0,1.2,-8,0,1.4,1.6,0});
-group->addChildren(*PositionInterpolator353);
+Scene17->addChild(PositionInterpolator353);
 
-COrientationInterpolator* OrientationInterpolator354 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator* OrientationInterpolator354 = new OrientationInterpolator();
 OrientationInterpolator354->setDEF("flingerangles");
 OrientationInterpolator354->setKey(new float[6]{0,0.1,0.2,0.2,0.3,0.9}, 6);
 OrientationInterpolator354->setKeyValue(new float[24]{0,0,1,0.82,0,0,1,-0.77,0,0,1,-1.57,0,0,1,-1.57,0,0,1,-0.77,0,0,1,0.82});
-group->addChildren(*OrientationInterpolator354);
+Scene17->addChild(OrientationInterpolator354);
 
-CPositionInterpolator* PositionInterpolator355 = (CPositionInterpolator *)(m_pScene.createNode("PositionInterpolator"));
+PositionInterpolator* PositionInterpolator355 = new PositionInterpolator();
 PositionInterpolator355->setDEF("pinpath");
 PositionInterpolator355->setKey(new float[4]{0,0.01,0.95,1}, 4);
 PositionInterpolator355->setKeyValue(new float[12]{0,0,-3,0,0,-10,0,0,-10,0,0,-3});
-group->addChildren(*PositionInterpolator355);
+Scene17->addChild(PositionInterpolator355);
 
-COrientationInterpolator* OrientationInterpolator356 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator* OrientationInterpolator356 = new OrientationInterpolator();
 OrientationInterpolator356->setDEF("RnSAngels");
 OrientationInterpolator356->setKey(new float[3]{0,0.7,1}, 3);
 OrientationInterpolator356->setKeyValue(new float[12]{0,0,1,0,0,0,1,-3.14,0,0,1,0});
-group->addChildren(*OrientationInterpolator356);
+Scene17->addChild(OrientationInterpolator356);
 
-CPositionInterpolator* PositionInterpolator357 = (CPositionInterpolator *)(m_pScene.createNode("PositionInterpolator"));
+PositionInterpolator* PositionInterpolator357 = new PositionInterpolator();
 PositionInterpolator357->setDEF("invisiable");
 PositionInterpolator357->setKey(new float[4]{0,0.2,0.98,0.99}, 4);
 PositionInterpolator357->setKeyValue(new float[12]{1,1,1,0.01,0.01,0.01,0.01,0.01,0.01,1,1,1});
-group->addChildren(*PositionInterpolator357);
+Scene17->addChild(PositionInterpolator357);
 
-CROUTE* ROUTE358 = new CROUTE();
+ROUTE* ROUTE358 = new ROUTE();
 ROUTE358->setFromField("fraction_changed");
 ROUTE358->setFromNode("clock");
 ROUTE358->setToField("set_fraction");
 ROUTE358->setToNode("invisiable");
-group->addChildren(*ROUTE358);
+Scene17->addChild(ROUTE358);
 
-CROUTE* ROUTE359 = new CROUTE();
+ROUTE* ROUTE359 = new ROUTE();
 ROUTE359->setFromField("value_changed");
 ROUTE359->setFromNode("invisiable");
 ROUTE359->setToField("set_scale");
 ROUTE359->setToNode("projectiletransform");
-group->addChildren(*ROUTE359);
+Scene17->addChild(ROUTE359);
 
-CROUTE* ROUTE360 = new CROUTE();
+ROUTE* ROUTE360 = new ROUTE();
 ROUTE360->setFromField("CounterWeight");
 ROUTE360->setFromNode("WeightScript");
 ROUTE360->setToField("set_MassCounterWeight");
 ROUTE360->setToNode("Mover");
-group->addChildren(*ROUTE360);
+Scene17->addChild(ROUTE360);
 
-CROUTE* ROUTE361 = new CROUTE();
+ROUTE* ROUTE361 = new ROUTE();
 ROUTE361->setFromField("ProjectileWeight");
 ROUTE361->setFromNode("LauncheeScript");
 ROUTE361->setToField("set_MassProjectileWeight");
 ROUTE361->setToNode("Mover");
-group->addChildren(*ROUTE361);
+Scene17->addChild(ROUTE361);
 
-CROUTE* ROUTE362 = new CROUTE();
+ROUTE* ROUTE362 = new ROUTE();
 ROUTE362->setFromField("fraction_changed");
 ROUTE362->setFromNode("clock");
 ROUTE362->setToField("set_fraction");
 ROUTE362->setToNode("Mover");
-group->addChildren(*ROUTE362);
+Scene17->addChild(ROUTE362);
 
-CROUTE* ROUTE363 = new CROUTE();
+ROUTE* ROUTE363 = new ROUTE();
 ROUTE363->setFromField("value_changed");
 ROUTE363->setFromNode("Mover");
 ROUTE363->setToField("set_translation");
 ROUTE363->setToNode("ProjectileTransform");
-group->addChildren(*ROUTE363);
+Scene17->addChild(ROUTE363);
 
-CROUTE* ROUTE364 = new CROUTE();
+ROUTE* ROUTE364 = new ROUTE();
 ROUTE364->setFromField("transparent");
 ROUTE364->setFromNode("Mover");
 ROUTE364->setToField("set_scale");
 ROUTE364->setToNode("ProjectileTransform");
-group->addChildren(*ROUTE364);
+Scene17->addChild(ROUTE364);
 
-CROUTE* ROUTE365 = new CROUTE();
+ROUTE* ROUTE365 = new ROUTE();
 ROUTE365->setFromField("touchTime");
 ROUTE365->setFromNode("Launch");
 ROUTE365->setToField("set_startTime");
 ROUTE365->setToNode("clock");
-group->addChildren(*ROUTE365);
+Scene17->addChild(ROUTE365);
 
-CROUTE* ROUTE366 = new CROUTE();
+ROUTE* ROUTE366 = new ROUTE();
 ROUTE366->setFromField("isActive");
 ROUTE366->setFromNode("Launch");
 ROUTE366->setToField("set_boolean");
 ROUTE366->setToNode("PigdogMonkScript");
-group->addChildren(*ROUTE366);
+Scene17->addChild(ROUTE366);
 
-CROUTE* ROUTE367 = new CROUTE();
+ROUTE* ROUTE367 = new ROUTE();
 ROUTE367->setFromField("touchTime");
 ROUTE367->setFromNode("Launch");
 ROUTE367->setToField("set_startTime");
 ROUTE367->setToNode("PigDogSound");
-group->addChildren(*ROUTE367);
+Scene17->addChild(ROUTE367);
 
-CROUTE* ROUTE368 = new CROUTE();
+ROUTE* ROUTE368 = new ROUTE();
 ROUTE368->setFromField("touchTime");
 ROUTE368->setFromNode("Launch");
 ROUTE368->setToField("set_startTime");
 ROUTE368->setToNode("MonkSound");
-group->addChildren(*ROUTE368);
+Scene17->addChild(ROUTE368);
 
-CROUTE* ROUTE369 = new CROUTE();
+ROUTE* ROUTE369 = new ROUTE();
 ROUTE369->setFromField("whichchoice");
 ROUTE369->setFromNode("PigdogMonkScript");
 ROUTE369->setToField("whichChoice");
 ROUTE369->setToNode("PigdogMonk");
-group->addChildren(*ROUTE369);
+Scene17->addChild(ROUTE369);
 
-CROUTE* ROUTE370 = new CROUTE();
+ROUTE* ROUTE370 = new ROUTE();
 ROUTE370->setFromField("touchTime");
 ROUTE370->setFromNode("LauncheeChoice");
 ROUTE370->setToField("set_startTime");
 ROUTE370->setToNode("HolyHandGrenadeSound");
-group->addChildren(*ROUTE370);
+Scene17->addChild(ROUTE370);
 
-CROUTE* ROUTE371 = new CROUTE();
+ROUTE* ROUTE371 = new ROUTE();
 ROUTE371->setFromField("touchTime");
 ROUTE371->setFromNode("LauncheeChoice");
 ROUTE371->setToField("set_startTime");
 ROUTE371->setToNode("CowSound");
-group->addChildren(*ROUTE371);
+Scene17->addChild(ROUTE371);
 
-CROUTE* ROUTE372 = new CROUTE();
+ROUTE* ROUTE372 = new ROUTE();
 ROUTE372->setFromField("touchTime");
 ROUTE372->setFromNode("LauncheeChoice");
 ROUTE372->setToField("set_startTime");
 ROUTE372->setToNode("HamsterSound");
-group->addChildren(*ROUTE372);
+Scene17->addChild(ROUTE372);
 
-CROUTE* ROUTE373 = new CROUTE();
+ROUTE* ROUTE373 = new ROUTE();
 ROUTE373->setFromField("isActive");
 ROUTE373->setFromNode("LauncheeChoice");
 ROUTE373->setToField("set_boolean");
 ROUTE373->setToNode("LauncheeScript");
-group->addChildren(*ROUTE373);
+Scene17->addChild(ROUTE373);
 
-CROUTE* ROUTE374 = new CROUTE();
+ROUTE* ROUTE374 = new ROUTE();
 ROUTE374->setFromField("whichchoice");
 ROUTE374->setFromNode("LauncheeScript");
 ROUTE374->setToField("whichChoice");
 ROUTE374->setToNode("projectile");
-group->addChildren(*ROUTE374);
+Scene17->addChild(ROUTE374);
 
-CROUTE* ROUTE375 = new CROUTE();
+ROUTE* ROUTE375 = new ROUTE();
 ROUTE375->setFromField("whichchoice");
 ROUTE375->setFromNode("LauncheeScript");
 ROUTE375->setToField("whichChoice");
 ROUTE375->setToNode("projectilename");
-group->addChildren(*ROUTE375);
+Scene17->addChild(ROUTE375);
 
-CROUTE* ROUTE376 = new CROUTE();
+ROUTE* ROUTE376 = new ROUTE();
 ROUTE376->setFromField("isActive");
 ROUTE376->setFromNode("weightselector");
 ROUTE376->setToField("set_boolean");
 ROUTE376->setToNode("WeightScript");
-group->addChildren(*ROUTE376);
+Scene17->addChild(ROUTE376);
 
-CROUTE* ROUTE377 = new CROUTE();
+ROUTE* ROUTE377 = new ROUTE();
 ROUTE377->setFromField("whichchoice");
 ROUTE377->setFromNode("WeightScript");
 ROUTE377->setToField("whichChoice");
 ROUTE377->setToNode("Weight");
-group->addChildren(*ROUTE377);
+Scene17->addChild(ROUTE377);
 
-CROUTE* ROUTE378 = new CROUTE();
+ROUTE* ROUTE378 = new ROUTE();
 ROUTE378->setFromField("fraction_changed");
 ROUTE378->setFromNode("clock");
 ROUTE378->setToField("set_fraction");
 ROUTE378->setToNode("flingerangles");
-group->addChildren(*ROUTE378);
+Scene17->addChild(ROUTE378);
 
-CROUTE* ROUTE379 = new CROUTE();
+ROUTE* ROUTE379 = new ROUTE();
 ROUTE379->setFromField("value_changed");
 ROUTE379->setFromNode("flingerangles");
 ROUTE379->setToField("set_rotation");
 ROUTE379->setToNode("flinger");
-group->addChildren(*ROUTE379);
+Scene17->addChild(ROUTE379);
 
-CROUTE* ROUTE380 = new CROUTE();
+ROUTE* ROUTE380 = new ROUTE();
 ROUTE380->setFromField("fraction_changed");
 ROUTE380->setFromNode("clock");
 ROUTE380->setToField("set_fraction");
 ROUTE380->setToNode("verticalweightpath");
-group->addChildren(*ROUTE380);
+Scene17->addChild(ROUTE380);
 
-CROUTE* ROUTE381 = new CROUTE();
+ROUTE* ROUTE381 = new ROUTE();
 ROUTE381->setFromField("value_changed");
 ROUTE381->setFromNode("verticalweightpath");
 ROUTE381->setToField("set_translation");
 ROUTE381->setToNode("verticalweight");
-group->addChildren(*ROUTE381);
+Scene17->addChild(ROUTE381);
 
-CROUTE* ROUTE382 = new CROUTE();
+ROUTE* ROUTE382 = new ROUTE();
 ROUTE382->setFromField("fraction_changed");
 ROUTE382->setFromNode("clock");
 ROUTE382->setToField("set_fraction");
 ROUTE382->setToNode("pinpath");
-group->addChildren(*ROUTE382);
+Scene17->addChild(ROUTE382);
 
-CROUTE* ROUTE383 = new CROUTE();
+ROUTE* ROUTE383 = new ROUTE();
 ROUTE383->setFromField("value_changed");
 ROUTE383->setFromNode("pinpath");
 ROUTE383->setToField("set_translation");
 ROUTE383->setToNode("Pin");
-group->addChildren(*ROUTE383);
+Scene17->addChild(ROUTE383);
 
-X3D0->setScene(*Scene17);
+X3D0->setScene(Scene17);
 
-m_pScene.addRootNode(group);
 X3D0->toXMLString();
 }

@@ -4,50 +4,53 @@
 #define WINAPI
 #define AFX_EXT_CLASS
 #define EXPORT32
-#include "C:/x3d-code/www.web3d.org/x3d/stylesheets/cpp/concretes.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/CylinderExample/pch.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/CylinderExample/framework.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/XML_PARSER.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/X3DLib.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/Abstracts.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/Concretes.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/glMath.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/glut.h"
 int main(int argc, char ** argv) {
-CX3DScene m_pScene;
-CBrowser browser = X3D.getBrowser();
-CX3D* X3D0 = new CX3D();
-CGroup* group = (CGroup*)(m_pScene.createNode("Group"));
-group->addChildren(X3D0);
+X3D* X3D0 = new X3D();
 X3D0->setVersion("3.0");
 X3D0->setProfile("Immersive");
-Chead* head1 = new Chead();
-Cmeta* meta2 = new Cmeta();
+head* head1 = new head();
+meta* meta2 = new meta();
 meta2->setName("title");
 meta2->setContent("Scripting.x3d");
-head1->addMeta(*meta2);
+head1->addMeta(meta2);
 
-X3D0->setHead(*head1);
+X3D0->setHead(head1);
 
-CScene* Scene3 = new CScene();
-CScript* Script4 = (CScript *)(m_pScene.createNode("Script"));
+Scene* Scene3 = new Scene();
+Script* Script4 = new Script();
 Script4->setDEF("OpenVault");
-Cfield* field5 = new Cfield();
+field* field5 = new field();
 field5->setName("openVault");
 field5->setType("SFTime");
 field5->setAccessType("inputOnly");
-Script4->addField(*field5);
+Script4->addField(field5);
 
-Cfield* field6 = new Cfield();
+field* field6 = new field();
 field6->setName("combinationEntered");
 field6->setType("SFBool");
 field6->setAccessType("inputOnly");
-Script4->addField(*field6);
+Script4->addField(field6);
 
-Cfield* field7 = new Cfield();
+field* field7 = new field();
 field7->setName("vaultUnlocked");
 field7->setType("SFTime");
 field7->setAccessType("outputOnly");
-Script4->addField(*field7);
+Script4->addField(field7);
 
-Cfield* field8 = new Cfield();
+field* field8 = new field();
 field8->setName("unlocked");
 field8->setType("SFBool");
 field8->setValue("false");
 field8->setAccessType("initializeOnly");
-Script4->addField(*field8);
+Script4->addField(field8);
 
 
 Script4.setSourceCode(`ecmascript:\n"+
@@ -63,62 +66,61 @@ Script4.setSourceCode(`ecmascript:\n"+
 "      if (unlocked) vaultUnlocked = value;\n"+
 "\n"+
 "      }`)
-group->addChildren(*Script4);
+Scene3->addChild(Script4);
 
-CShape* Shape9 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance10 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material11 = (CMaterial *)(m_pScene.createNode("Material"));
+Shape* Shape9 = new Shape();
+Appearance* Appearance10 = new Appearance();
+Material* Material11 = new Material();
 Material11->setDiffuseColor(new float[3]{1,0,0});
-Appearance10->setMaterial(*Material11);
+Appearance10->setMaterial(Material11);
 
-Shape9->setAppearance(*Appearance10);
+Shape9->setAppearance(Appearance10);
 
-CSphere* Sphere12 = (CSphere *)(m_pScene.createNode("Sphere"));
+Sphere* Sphere12 = new Sphere();
 Shape9->setGeometry(Sphere12);
 
-group->addChildren(*Shape9);
+Scene3->addChild(Shape9);
 
-CSound* Sound13 = (CSound *)(m_pScene.createNode("Sound"));
+Sound* Sound13 = new Sound();
 Sound13->setMaxBack(1000);
 Sound13->setMaxFront(1000);
 Sound13->setMinBack(1000);
 Sound13->setMinFront(1000);
-CAudioClip* AudioClip14 = (CAudioClip *)(m_pScene.createNode("AudioClip"));
+AudioClip* AudioClip14 = new AudioClip();
 AudioClip14->setDEF("Click");
 AudioClip14->setStopTime(1);
 AudioClip14->setDescription("clicking sound");
-AudioClip14->setUrl(new CString[1]{"../resources/chandubabamusic1.wav"}, 1);
-Sound13->setSource(*AudioClip14);
+AudioClip14->setUrl(new String[1]{"../resources/chandubabamusic1.wav"}, 1);
+Sound13->setSource(AudioClip14);
 
-group->addChildren(*Sound13);
+Scene3->addChild(Sound13);
 
-CTouchSensor* TouchSensor15 = (CTouchSensor *)(m_pScene.createNode("TouchSensor"));
+TouchSensor* TouchSensor15 = new TouchSensor();
 TouchSensor15->setDEF("TS");
-group->addChildren(*TouchSensor15);
+Scene3->addChild(TouchSensor15);
 
-CROUTE* ROUTE16 = new CROUTE();
+ROUTE* ROUTE16 = new ROUTE();
 ROUTE16->setFromNode("TS");
 ROUTE16->setFromField("isOver");
 ROUTE16->setToNode("OpenVault");
 ROUTE16->setToField("combinationEntered");
-group->addChildren(*ROUTE16);
+Scene3->addChild(ROUTE16);
 
-CROUTE* ROUTE17 = new CROUTE();
+ROUTE* ROUTE17 = new ROUTE();
 ROUTE17->setFromNode("TS");
 ROUTE17->setFromField("touchTime");
 ROUTE17->setToNode("OpenVault");
 ROUTE17->setToField("openVault");
-group->addChildren(*ROUTE17);
+Scene3->addChild(ROUTE17);
 
-CROUTE* ROUTE18 = new CROUTE();
+ROUTE* ROUTE18 = new ROUTE();
 ROUTE18->setFromNode("OpenVault");
 ROUTE18->setFromField("vaultUnlocked");
 ROUTE18->setToNode("Click");
 ROUTE18->setToField("startTime");
-group->addChildren(*ROUTE18);
+Scene3->addChild(ROUTE18);
 
-X3D0->setScene(*Scene3);
+X3D0->setScene(Scene3);
 
-m_pScene.addRootNode(group);
 X3D0->toXMLString();
 }

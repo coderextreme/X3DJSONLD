@@ -4,86 +4,89 @@
 #define WINAPI
 #define AFX_EXT_CLASS
 #define EXPORT32
-#include "C:/x3d-code/www.web3d.org/x3d/stylesheets/cpp/concretes.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/CylinderExample/pch.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/CylinderExample/framework.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/XML_PARSER.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/X3DLib.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/Abstracts.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/Concretes.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/glMath.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/glut.h"
 int main(int argc, char ** argv) {
-CX3DScene m_pScene;
-CBrowser browser = X3D.getBrowser();
-CX3D* X3D0 = new CX3D();
-CGroup* group = (CGroup*)(m_pScene.createNode("Group"));
-group->addChildren(X3D0);
+X3D* X3D0 = new X3D();
 X3D0->setProfile("Immersive");
 X3D0->setVersion("4.0");
-Chead* head1 = new Chead();
-Cmeta* meta2 = new Cmeta();
+head* head1 = new head();
+meta* meta2 = new meta();
 meta2->setName("creator");
 meta2->setContent("John W Carlson");
-head1->addMeta(*meta2);
+head1->addMeta(meta2);
 
-Cmeta* meta3 = new Cmeta();
+meta* meta3 = new meta();
 meta3->setName("created");
 meta3->setContent("December 13 2015");
-head1->addMeta(*meta3);
+head1->addMeta(meta3);
 
-Cmeta* meta4 = new Cmeta();
+meta* meta4 = new meta();
 meta4->setName("title");
 meta4->setContent("extrusion.x3d");
-head1->addMeta(*meta4);
+head1->addMeta(meta4);
 
-Cmeta* meta5 = new Cmeta();
+meta* meta5 = new meta();
 meta5->setName("identifier");
 meta5->setContent("https://coderextreme.net/X3DJSONLD/src/main/data/force.x3d");
-head1->addMeta(*meta5);
+head1->addMeta(meta5);
 
-Cmeta* meta6 = new Cmeta();
+meta* meta6 = new meta();
 meta6->setName("description");
 meta6->setContent("beginnings of a force directed graph in 3D");
-head1->addMeta(*meta6);
+head1->addMeta(meta6);
 
-Cmeta* meta7 = new Cmeta();
+meta* meta7 = new meta();
 meta7->setName("generator");
 meta7->setContent("Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit");
-head1->addMeta(*meta7);
+head1->addMeta(meta7);
 
-X3D0->setHead(*head1);
+X3D0->setHead(head1);
 
-CScene* Scene8 = new CScene();
-CGroup* Group9 = (CGroup *)(m_pScene.createNode("Group"));
-CShape* Shape10 = (CShape *)(m_pScene.createNode("Shape"));
-CExtrusion* Extrusion11 = (CExtrusion *)(m_pScene.createNode("Extrusion"));
+Scene* Scene8 = new Scene();
+Group* Group9 = new Group();
+Shape* Shape10 = new Shape();
+Extrusion* Extrusion11 = new Extrusion();
 Extrusion11->setDEF("extrusion");
 Extrusion11->setSpine(new float[6]{-50,-50,0,50,50,0});
 Extrusion11->setCreaseAngle(0.785);
 Extrusion11->setCrossSection(new float[34]{1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0});
 Shape10->setGeometry(Extrusion11);
 
-CAppearance* Appearance12 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material13 = (CMaterial *)(m_pScene.createNode("Material"));
+Appearance* Appearance12 = new Appearance();
+Material* Material13 = new Material();
 Material13->setDiffuseColor(new float[3]{0,1,0});
-Appearance12->setMaterial(*Material13);
+Appearance12->setMaterial(Material13);
 
-Shape10->setAppearance(*Appearance12);
+Shape10->setAppearance(Appearance12);
 
-Group9->addChildren(*Shape10);
+Group9->addChild(Shape10);
 
-CTimeSensor* TimeSensor14 = (CTimeSensor *)(m_pScene.createNode("TimeSensor"));
+TimeSensor* TimeSensor14 = new TimeSensor();
 TimeSensor14->setDEF("TourTime");
 TimeSensor14->setLoop(True);
-Group9->addChildren(*TimeSensor14);
+Group9->addChild(TimeSensor14);
 
-CScript* Script15 = (CScript *)(m_pScene.createNode("Script"));
+Script* Script15 = new Script();
 Script15->setDEF("MoveCylinder");
-Cfield* field16 = new Cfield();
+field* field16 = new field();
 field16->setName("set_cycle");
 field16->setAccessType("inputOnly");
 field16->setType("SFTime");
-Script15->addField(*field16);
+Script15->addField(field16);
 
-Cfield* field17 = new Cfield();
+field* field17 = new field();
 field17->setName("spine");
 field17->setAccessType("inputOutput");
 field17->setType("MFVec3f");
 field17->setValue("-50 -50 0 50 50 0");
-Script15->addField(*field17);
+Script15->addField(field17);
 
 
 Script15.setSourceCode(`ecmascript:\n"+
@@ -94,26 +97,25 @@ Script15.setSourceCode(`ecmascript:\n"+
 "                        var endB = new SFVec3f(spine[1].x*Math.random()*2, spine[1].y*Math.random()*2, spine[1].z*Math.random()*2);\n"+
 "		        spine = new MFVec3f([endA, endB]);\n"+
 "                }`)
-Group9->addChildren(*Script15);
+Group9->addChild(Script15);
 
-CROUTE* ROUTE18 = new CROUTE();
+ROUTE* ROUTE18 = new ROUTE();
 ROUTE18->setFromNode("TourTime");
 ROUTE18->setFromField("cycleTime");
 ROUTE18->setToNode("MoveCylinder");
 ROUTE18->setToField("set_cycle");
-Group9->addChildren(*ROUTE18);
+Group9->addChild(ROUTE18);
 
-CROUTE* ROUTE19 = new CROUTE();
+ROUTE* ROUTE19 = new ROUTE();
 ROUTE19->setFromNode("MoveCylinder");
 ROUTE19->setFromField("spine_changed");
 ROUTE19->setToNode("extrusion");
 ROUTE19->setToField("set_spine");
-Group9->addChildren(*ROUTE19);
+Group9->addChild(ROUTE19);
 
-group->addChildren(*Group9);
+Scene8->addChild(Group9);
 
-X3D0->setScene(*Scene8);
+X3D0->setScene(Scene8);
 
-m_pScene.addRootNode(group);
 X3D0->toXMLString();
 }

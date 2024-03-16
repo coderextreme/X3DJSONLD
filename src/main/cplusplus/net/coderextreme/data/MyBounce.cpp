@@ -4,100 +4,103 @@
 #define WINAPI
 #define AFX_EXT_CLASS
 #define EXPORT32
-#include "C:/x3d-code/www.web3d.org/x3d/stylesheets/cpp/concretes.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/CylinderExample/pch.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/CylinderExample/framework.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/XML_PARSER.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/X3DLib.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/Abstracts.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/Concretes.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/glMath.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/glut.h"
 int main(int argc, char ** argv) {
-CX3DScene m_pScene;
-CBrowser browser = X3D.getBrowser();
-CX3D* X3D0 = new CX3D();
-CGroup* group = (CGroup*)(m_pScene.createNode("Group"));
-group->addChildren(X3D0);
+X3D* X3D0 = new X3D();
 X3D0->setProfile("Immersive");
 X3D0->setVersion("3.3");
-Chead* head1 = new Chead();
-Ccomponent* component2 = new Ccomponent();
+head* head1 = new head();
+component* component2 = new component();
 component2->setName("Scripting");
 component2->setLevel(1);
-head1->addComponent(*component2);
+head1->addComponent(component2);
 
-Cmeta* meta3 = new Cmeta();
+meta* meta3 = new meta();
 meta3->setName("title");
 meta3->setContent("MyBounce.x3d");
-head1->addMeta(*meta3);
+head1->addMeta(meta3);
 
-Cmeta* meta4 = new Cmeta();
+meta* meta4 = new meta();
 meta4->setName("creator");
 meta4->setContent("John Carlson");
-head1->addMeta(*meta4);
+head1->addMeta(meta4);
 
-Cmeta* meta5 = new Cmeta();
+meta* meta5 = new meta();
 meta5->setName("description");
 meta5->setContent("3 prismatic spheres");
-head1->addMeta(*meta5);
+head1->addMeta(meta5);
 
-Cmeta* meta6 = new Cmeta();
+meta* meta6 = new meta();
 meta6->setName("identifier");
 meta6->setContent("https://coderextreme.net/X3DJSONLD/src/main/data/SFVec3f.x3d");
-head1->addMeta(*meta6);
+head1->addMeta(meta6);
 
-X3D0->setHead(*head1);
+X3D0->setHead(head1);
 
-CScene* Scene7 = new CScene();
-CNavigationInfo* NavigationInfo8 = (CNavigationInfo *)(m_pScene.createNode("NavigationInfo"));
-group->addChildren(*NavigationInfo8);
+Scene* Scene7 = new Scene();
+NavigationInfo* NavigationInfo8 = new NavigationInfo();
+Scene7->addChild(NavigationInfo8);
 
-CTransform* Transform9 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform9 = new Transform();
 Transform9->setDEF("transform");
-CShape* Shape10 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance11 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material12 = (CMaterial *)(m_pScene.createNode("Material"));
+Shape* Shape10 = new Shape();
+Appearance* Appearance11 = new Appearance();
+Material* Material12 = new Material();
 Material12->setDiffuseColor(new float[3]{0.7,0.7,0.7});
 Material12->setSpecularColor(new float[3]{0.5,0.5,0.5});
-Appearance11->setMaterial(*Material12);
+Appearance11->setMaterial(Material12);
 
-Shape10->setAppearance(*Appearance11);
+Shape10->setAppearance(Appearance11);
 
-CSphere* Sphere13 = (CSphere *)(m_pScene.createNode("Sphere"));
+Sphere* Sphere13 = new Sphere();
 Shape10->setGeometry(Sphere13);
 
-Transform9->addChild(*Shape10);
+Transform9->addChild(Shape10);
 
-group->addChildren(*Transform9);
+Scene7->addChild(Transform9);
 
-CScript* Script14 = (CScript *)(m_pScene.createNode("Script"));
+Script* Script14 = new Script();
 Script14->setDEF("Bounce2");
-Cfield* field15 = new Cfield();
+field* field15 = new field();
 field15->setName("set_translation");
 field15->setAccessType("inputOnly");
 field15->setType("SFVec3f");
 field15->setValue("0 0 0");
-Script14->addField(*field15);
+Script14->addField(field15);
 
-Cfield* field16 = new Cfield();
+field* field16 = new field();
 field16->setName("translation_changed");
 field16->setAccessType("outputOnly");
 field16->setType("SFVec3f");
 field16->setValue("0 0 0");
-Script14->addField(*field16);
+Script14->addField(field16);
 
-Cfield* field17 = new Cfield();
+field* field17 = new field();
 field17->setName("translation");
 field17->setAccessType("inputOutput");
 field17->setType("SFVec3f");
 field17->setValue("0 0 0");
-Script14->addField(*field17);
+Script14->addField(field17);
 
-Cfield* field18 = new Cfield();
+field* field18 = new field();
 field18->setName("velocity");
 field18->setAccessType("inputOutput");
 field18->setType("SFVec3f");
 field18->setValue("0 0 0");
-Script14->addField(*field18);
+Script14->addField(field18);
 
-Cfield* field19 = new Cfield();
+field* field19 = new field();
 field19->setName("set_fraction");
 field19->setAccessType("inputOnly");
 field19->setType("SFTime");
-Script14->addField(*field19);
+Script14->addField(field19);
 
 
 Script14.setSourceCode(`ecmascript:\n"+
@@ -131,30 +134,29 @@ Script14.setSourceCode(`ecmascript:\n"+
 "			function initialize() {\n"+
 "			     newBubble();\n"+
 "			}`)
-group->addChildren(*Script14);
+Scene7->addChild(Script14);
 
-CTimeSensor* TimeSensor20 = (CTimeSensor *)(m_pScene.createNode("TimeSensor"));
+TimeSensor* TimeSensor20 = new TimeSensor();
 TimeSensor20->setDEF("TourTime");
 TimeSensor20->setCycleInterval(0.15);
 TimeSensor20->setLoop(True);
-group->addChildren(*TimeSensor20);
+Scene7->addChild(TimeSensor20);
 
-CROUTE* ROUTE21 = new CROUTE();
+ROUTE* ROUTE21 = new ROUTE();
 ROUTE21->setFromNode("TourTime");
 ROUTE21->setFromField("cycleTime");
 ROUTE21->setToNode("Bounce2");
 ROUTE21->setToField("set_fraction");
-group->addChildren(*ROUTE21);
+Scene7->addChild(ROUTE21);
 
-CROUTE* ROUTE22 = new CROUTE();
+ROUTE* ROUTE22 = new ROUTE();
 ROUTE22->setFromNode("Bounce2");
 ROUTE22->setFromField("translation_changed");
 ROUTE22->setToNode("transform");
 ROUTE22->setToField("set_translation");
-group->addChildren(*ROUTE22);
+Scene7->addChild(ROUTE22);
 
-X3D0->setScene(*Scene7);
+X3D0->setScene(Scene7);
 
-m_pScene.addRootNode(group);
 X3D0->toXMLString();
 }
