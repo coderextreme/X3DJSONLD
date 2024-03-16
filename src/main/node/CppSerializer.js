@@ -30,45 +30,52 @@ CppScriptSerializer.prototype = {
         // https://stackoverflow.com/questions/3151436/how-can-i-get-the-current-directory-name-in-javascript
         // console.log('Current directory: ' + process.cwd()); // Node.js method for current directory - not what is needed here
         // https://flaviocopes.com/node-get-current-folder/ use __dirname under Node.js
-		bodystr += "/* delete next 5 lines for Visual Studio */\n";
-		bodystr += "#define FALSE false\n";
-		bodystr += "#define TRUE true\n";
-		bodystr += "#define WINAPI\n";
-		bodystr += "#define AFX_EXT_CLASS\n";
-		bodystr += "#define EXPORT32\n";
-		//bodystr += "#include \"C:/x3d-code/www.web3d.org/x3d/stylesheets/cpp/abstracts.h\"\n";
-		//bodystr += "#include \"C:/x3d-code/www.web3d.org/x3d/stylesheets/cpp/concretes.h\"\n";
-		//bodystr += "#include \"C:/x3d-code/www.web3d.org/x3d/languages/cpp/Abstracts.h\"\n";
-		//bodystr += "#include \"C:/x3d-code/www.web3d.org/x3d/languages/cpp/Concretes.h\"\n";
-		bodystr += "#include \"C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/CylinderExample/pch.h\"\n";
-		bodystr += "#include \"C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/CylinderExample/framework.h\"\n";
-		bodystr += "#include \"C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/XML_PARSER.h\"\n";
-		bodystr += "#include \"C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/X3DLib.h\"\n";
-		bodystr += "#include \"C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/Abstracts.h\"\n";
-		bodystr += "#include \"C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/Concretes.h\"\n";
-		bodystr += "#include \"C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/glMath.h\"\n";
-		bodystr += "#include \"C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/glut.h\"\n";
-		bodystr += "int main(int argc, char ** argv) {\n";
-		// bodystr += "Scene* m_pScene = new X3DScene();\n";
-		// bodystr += "X3D* x3dModel = new X3D();\n";
-
-		// bodystr += "m_pScene->addRootNode(x3dModel);\n";
-		//bodystr += "Browser browser = X3D.getBrowser();\n";
+		str += "#ifdef WIN32\n";
+		str += "#define FALSE false\n";
+		str += "#define TRUE true\n";
+		str += "#define WINAPI\n";
+		str += "#define AFX_EXT_CLASS\n";
+		str += "#define EXPORT32\n";
+		str += "#endif\n";
+		str += "#define False false\n";
+		str += "#define True true\n";
+		// str += "#include \"C:/x3d-code/www.web3d.org/x3d/stylesheets/cpp/abstracts.h\"\n";
+		// str += "#include \"C:/x3d-code/www.web3d.org/x3d/stylesheets/cpp/concretes.h\"\n";
+		//str += "#include \"C:/x3d-code/www.web3d.org/x3d/languages/cpp/Abstracts.h\"\n";
+		//str += "#include \"C:/x3d-code/www.web3d.org/x3d/languages/cpp/Concretes.h\"\n";
+		str += "#include \"C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/SphereExample/SphereExample/pch.h\"\n";
+		str += "#include \"C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/SphereExample/SphereExample/framework.h\"\n";
+		str += "#include \"C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/SphereExample/include/XML_PARSER.h\"\n";
+		// str += "#include \"C:/x3d-code/www.web3d.org/x3d/languages/cpp/X3DLib/X3DLib.h\"\n";
+		// str += "#include \"C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/SphereExample/include/Abstracts.h\"\n";
+		// str += "#include \"C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/SphereExample/include/Concretes.h\"\n";
+		str += "#include \"C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/SphereExample/include/X3DLib.h\"\n";
+		str += "#include \"C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/SphereExample/include/glMath.h\"\n";
+		str += "#include \"C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/SphereExample/include/glut.h\"\n";
+		str += "int main(int argc, char ** argv) {\n";
+		// bodystr += "Scene m_pScene = X3DScene();\n";
+		// bodystr += "X3D x3dModel = new X3D();\n";
+		// bodystr += "m_pScene.addRootNode(x3dModel);\n";
+		// bodystr += "Browser browser = X3D.getBrowser();\n";
 		bodystr += element.nodeName+"* "+element.nodeName+stack[0]+" = new "+element.nodeName+"();\n";
-        	// bodystr += 'Group* group = (Group*)(m_pScene->createNode("Group"));\n';
-        	// bodystr += "group->addChildren("+element.nodeName+stack[0]+");\n";
+        	// bodystr += 'Group* group = (Group*)(m_pScene.createNode("Group"));\n';
+        	// bodystr += "group.addChildren("+element.nodeName+stack[0]+");\n";
 		bodystr += this.subSerializeToString(element, mapToMethod, fieldTypes, 3, stack);
         	// bodystr += "m_pScene.addRootNode(group);\n";
-        	bodystr += element.nodeName+stack[0]+"->toXMLString();\n";
+        	// bodystr += element.nodeName+stack[0]+".toXMLString();\n";
 		bodystr += "}\n";
+		// MFInt32 declarations (for now)
+		for (var co in this.code) {
+			str += this.code[co];
+		}
 
 		str += bodystr;
 		stack.shift();
 		return str;
 	},
 
-	printSubArray : function (attrType, type, values, co, j, lead, trail) {
-                if (type === "int") {
+	printSubArray : function (attr, attrType, type, values, co, j, lead, trail) {
+                if (type === "int32_t" || type === "int") {
                         for (var v in values) {
 				if (values[v] > 0x7fffffff) {
 				    values[v] = values[v] - 4294967296
@@ -96,8 +103,20 @@ CppScriptSerializer.prototype = {
 		if (values.length >= 0 && (values[values.length-1] === "" || values[values.length-1] === null)) {
 			values.pop();
 		}
+		if (attr === "texCoordIndex" || attr === "colorIndex") {
 
-		return 'new '+type+'['+values.length+']{'+lead+values.join(j)+trail+'}'+(attrType === "MFString" || attrType === "MFFloat" ? ', '+values.length : '');
+				/*
+				this.code[co] = attrType+' '+attrType+co+' = '+attrType+'();\n'
+				for (let i = 0; i < values.length; i++) {
+					this.code[co] += attrType+co+'.append('+values[i]+');\n';
+				}
+				this.codeno++;
+				*/
+			
+			return 'new int['+values.length+']{'+lead+values.join(j)+trail+'}, '+values.length;
+		} else {
+			return 'new '+type+'['+values.length+']{'+lead+values.join(j)+trail+'}'+(attrType.startsWith("MF") && type !== "boolean" ? ', '+values.length : '');
+		}
 	},
 
 	printParentChild : function (element, node, cn, mapToMethod, n) {
@@ -183,6 +202,12 @@ CppScriptSerializer.prototype = {
 					replace(/\\?"/g, "\\\"")
 					+'"';
 			}
+			strval = "CString("+strval+")"
+			if (
+				(element.nodeName === "fieldValue"         && attrsa.nodeName === "name") ||
+				(element.nodeName === 'ExternProtoDeclare' && attrsa.nodeName === "name")) {
+				strval = "&"+strval;
+			}
 		} else if (attrType === "SFInt32") {
 			strval = nodeValue;
 		} else if (attrType === "SFFloat") {
@@ -200,10 +225,10 @@ CppScriptSerializer.prototype = {
 		} else if (attrType === "SFTime") {
 			strval = nodeValue+DOUBLE_SUFFIX;
 		} else if (attrType === "MFTime") {
-			strval = this.printSubArray(attrType, "double", nodeValue.split(/[ ,\t\r\n]+/), this.codeno, DOUBLE_SUFFIX+',', '', DOUBLE_SUFFIX);
+			strval = this.printSubArray(attr, attrType, "double", nodeValue.split(/[ ,\t\r\n]+/), this.codeno, DOUBLE_SUFFIX+',', '', DOUBLE_SUFFIX);
 		} else if (attrType === "MFString") {
 			nodeValue = nodeValue.replace(/^ *(.*) *$/, "$1");
-			strval = this.printSubArray(attrType, "String",
+			strval = this.printSubArray(attr, attrType, "CString",
 				nodeValue.substr(1, nodeValue.length-2).split(/"[ ,\t\r\n]+"/).
 				map(function(x) {
 					let y = x.
@@ -217,12 +242,14 @@ CppScriptSerializer.prototype = {
 						// console.error("CppScriptSerializer Replacing "+x+" with "+y);
 					}
 					return y;
-				}), this.codeno, '","', '"', '"');
+				}), this.codeno, '"), CString("', 'CString("', '")'); // ... json, lead, tail
 		} else if (
-			attrType === "MFInt32"||
+			attrType === "MFInt32") {
+			strval = this.printSubArray(attr, attrType, "int32_t", nodeValue.split(/[ ,\t\r\n]+/), this.codeno, ',', '', '');
+		} else if (
 			attrType === "MFImage"||
 			attrType === "SFImage") {
-			strval = this.printSubArray(attrType, "int", nodeValue.split(/[ ,\t\r\n]+/), this.codeno, ',', '', '');
+			strval = this.printSubArray(attr, attrType, "int", nodeValue.split(/[ ,\t\r\n]+/), this.codeno, ',', '', '');
 		} else if (
 			attrType === "SFColor"||
 			attrType === "MFColor"||
@@ -241,7 +268,7 @@ CppScriptSerializer.prototype = {
 			attrType === "SFRotation"||
 			attrType === "MFRotation"||
 			attrType === "MFFloat") {
-			strval = this.printSubArray(attrType, "float", nodeValue.split(/[ ,\t\r\n]+/), this.codeno, FLOAT_SUFFIX+',', '', FLOAT_SUFFIX);
+			strval = this.printSubArray(attr, attrType, "float", nodeValue.split(/[ ,\t\r\n]+/), this.codeno, FLOAT_SUFFIX+',', '', FLOAT_SUFFIX);
 		} else if (
 			attrType === "SFVec2d"||
 			attrType === "SFVec3d"||
@@ -254,9 +281,9 @@ CppScriptSerializer.prototype = {
 			attrType === "MFMatrix3d"||
 			attrType === "MFMatrix4d"||
 			attrType === "MFDouble") {
-			strval = this.printSubArray(attrType, "double", nodeValue.split(/[ ,\t\r\n]+/), this.codeno, DOUBLE_SUFFIX+',', '', DOUBLE_SUFFIX);
+			strval = this.printSubArray(attr, attrType, "double", nodeValue.split(/[ ,\t\r\n]+/), this.codeno, DOUBLE_SUFFIX+',', '', DOUBLE_SUFFIX);
 		} else if (attrType === "MFBool") {
-			strval = this.printSubArray(attrType, "boolean", nodeValue.split(/[ ,\t\r\n]+/), this.codeno, ',', '', '');
+			strval = this.printSubArray(attr, attrType, "boolean", nodeValue.split(/[ ,\t\r\n]+/), this.codeno, ',', '', '');
 		} else {
 			strval = '"'+nodeValue.replace(/\n/g, '\\\\n').replace(/\\?"/g, "\\\"")+'"';
 		}
@@ -310,7 +337,10 @@ CppScriptSerializer.prototype = {
 						method = "CssClass";
 					}
 					str += element.nodeName+stack[0];
-					str += '->set'+method+"("+strval+");\n";
+					if (attr === "texCoordIndex") {
+						/// strval = "*"+strval;
+					}
+					str += "->set"+method+"("+strval+");\n";
 				}
 			} catch (e) {
 				console.error(e);
@@ -327,6 +357,12 @@ CppScriptSerializer.prototype = {
 				let nodeName = node.nodeName;
 				if (node.nodeName === "connect") {
 				    nodeName = "Connect";
+				} else if (node.nodeName === "BooleanSequencer") {
+				    nodeName = "CBooleanSequencer";
+				} else if (node.nodeName === "FontStyle") {
+				    nodeName = "CFontStyle";
+				} else if (node.nodeName === "Color") {
+				    nodeName = "CColor";
 				}
 
 				ch += nodeName+"* "+node.nodeName+stack[0]+" = new "+nodeName+"();\n";
@@ -342,8 +378,81 @@ CppScriptSerializer.prototype = {
 				if (method.indexOf("addChildren") >= 0) {
 					method = method.replace("Children", "Child");
 				}
+				method = method.replace("setTopTexture", "setTop");
+				method = method.replace("setBottomTexture", "setBottom");
+				method = method.replace("setFrontTexture", "setFront");
+				method = method.replace("setBackTexture", "setBack");
+				method = method.replace("setLeftTexture", "setLeft");
+				method = method.replace("setRightTexture", "setRight");
+				method = method.replace("addParts", "setParts");  // TODO, need addParts, or collect in array
+				method = method.replace("addFieldValue", "addChild");
+				method = method.replace("addField", "addChild");
+				method = method.replace("addJoints", "addChild");
+				method = method.replace("addDisplacers", "addChild");
+				method = method.replace("addConnect", "addChild");
+				method = method.replace("addComponent", "addChild");
+				method = method.replace("addShaders", "addChild");
+				method = method.replace("setShape", "addChild");
+				method = method.replace("setProtoInterface", "addChild");
+				method = method.replace("setProtoBody", "addChild");
+				method = method.replace("setIS", "addChild");
+				method = method.replace("setAppearance", "addChild");
+				method = method.replace("setMaterial", "addChild");
+				method = method.replace("setTexture", "addChild");
+				method = method.replace("setCoord", "addChild");
+				method = method.replace("setColor", "addChild");
+				method = method.replace("setProxy", "addChild");
+				method = method.replace("setTexCoord", "addChild");
 				ch += element.nodeName+stack[1];
-				ch += method+"("+node.nodeName+stack[0]+");\n\n";
+				let shim = "";
+				// console.log(method, node.nodeName, element.nodeName);
+				/*
+				if ((method.endsWith("setName") && element.nodeName === "fieldValue")) {
+					shim = "&";
+				}
+				*/
+				/*
+				if (
+					(method === ".setName" && element.nodeName === "fieldValue") ||
+					node.nodeName === "Background" ||
+					node.nodeName === "Box" ||
+					node.nodeName === "ComposedCubeMapTexture" ||
+					node.nodeName === "ComposedShader" ||
+					node.nodeName === "connect" ||
+					node.nodeName === "Cylinder" ||
+					node.nodeName === "DirectionalLight" ||
+					node.nodeName === "field" ||
+					node.nodeName === "fieldValue" ||
+					node.nodeName === "Group" ||
+					node.nodeName === "HAnimSegment" ||
+					node.nodeName === "HAnimSite" ||
+					node.nodeName === "head" ||
+					node.nodeName === "IS" ||
+					node.nodeName === "Material" ||
+					node.nodeName === "meta" ||
+					node.nodeName === "component" ||
+					node.nodeName === "NavigationInfo" ||
+					node.nodeName === "PointLight" ||
+					node.nodeName === "ProtoBody" ||
+					node.nodeName === "ProtoDeclare" ||
+					node.nodeName === "ProtoInstance" ||
+					node.nodeName === "ProtoInterface" ||
+					node.nodeName === "Scene" ||
+					node.nodeName === "Shape" ||
+					node.nodeName === "ShaderPart" ||
+					node.nodeName === "Sphere" ||
+					node.nodeName === "TouchSensor" ||
+					node.nodeName === "Transform" ||
+					node.nodeName === "Viewpoint" ||
+					node.nodeName === "WorldInfo"
+				) {
+					shim = "&";
+				}
+				*/
+				if ((method.endsWith("setValue") && node.nodeName.startsWith("Metadata") && element.nodeName === "MetadataSet")) {
+					shim = "(X3DNode *)";
+				}
+				ch += method+"("+shim+node.nodeName+stack[0]+");\n\n";
 				str += ch;
 				stack.shift();
 			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType === 8) {
@@ -360,16 +469,13 @@ CppScriptSerializer.prototype = {
 				}
 			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType === 4) {
 				str += "\n"+element.nodeName+stack[0];
-				str += ".setSourceCode(`"+node.nodeValue.split(/\r?\n/).map(function(x) {
+				str += '->setSourceCode(CString("'+node.nodeValue.split(/[\r\n]+/).map(function(x) {
 					return x.
 					        replace(/\\/g, '\\\\').
 						replace(/"/g, '\\"')
 						replace(/$/g, '\\')
-						/*
-						.replace(/\\n/g, "\\\\n")
-						*/
 					;
-					}).join('\\n\"+\n\"')+"`)\n";
+					}).join('")+\n_T("')+'"));\n';
 			}
 	        		
 		}

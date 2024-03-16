@@ -1,730 +1,731 @@
-/* delete next 5 lines for Visual Studio */
+#ifdef WIN32
 #define FALSE false
 #define TRUE true
 #define WINAPI
 #define AFX_EXT_CLASS
 #define EXPORT32
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/CylinderExample/pch.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/CylinderExample/framework.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/XML_PARSER.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/X3DLib.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/Abstracts.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/Concretes.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/glMath.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/glut.h"
+#endif
+#define False false
+#define True true
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/SphereExample/SphereExample/pch.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/SphereExample/SphereExample/framework.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/SphereExample/include/XML_PARSER.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/SphereExample/include/X3DLib.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/SphereExample/include/glMath.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/SphereExample/include/glut.h"
 int main(int argc, char ** argv) {
 X3D* X3D0 = new X3D();
-X3D0->setProfile("Immersive");
-X3D0->setVersion("3.3");
+X3D0->setProfile(CString("Immersive"));
+X3D0->setVersion(CString("3.3"));
 head* head1 = new head();
 meta* meta2 = new meta();
-meta2->setName("title");
-meta2->setContent("LOA1_RunAnimation.x3d");
+meta2->setName(CString("title"));
+meta2->setContent(CString("LOA1_RunAnimation.x3d"));
 head1->addMeta(meta2);
 
 meta* meta3 = new meta();
-meta3->setName("description");
-meta3->setContent("Humanoid animation prototype reusable by any Humanoid.");
+meta3->setName(CString("description"));
+meta3->setContent(CString("Humanoid animation prototype reusable by any Humanoid."));
 head1->addMeta(meta3);
 
 meta* meta4 = new meta();
-meta4->setName("creator");
-meta4->setContent("Cindy Ballreich cindy@ballreich.net 3Name3D");
+meta4->setName(CString("creator"));
+meta4->setContent(CString("Cindy Ballreich cindy@ballreich.net 3Name3D"));
 head1->addMeta(meta4);
 
 meta* meta5 = new meta();
-meta5->setName("rights");
-meta5->setContent("1997 3Name3D / Yglesias, Wallock, Divekar, Inc., all rights reserved.");
+meta5->setName(CString("rights"));
+meta5->setContent(CString("1997 3Name3D / Yglesias, Wallock, Divekar, Inc., all rights reserved."));
 head1->addMeta(meta5);
 
 meta* meta6 = new meta();
-meta6->setName("translator");
-meta6->setContent("Ozan APAYDIN");
+meta6->setName(CString("translator"));
+meta6->setContent(CString("Ozan APAYDIN"));
 head1->addMeta(meta6);
 
 meta* meta7 = new meta();
-meta7->setName("translated");
-meta7->setContent("30 October 2001");
+meta7->setName(CString("translated"));
+meta7->setContent(CString("30 October 2001"));
 head1->addMeta(meta7);
 
 meta* meta8 = new meta();
-meta8->setName("modified");
-meta8->setContent("23 May 2020");
+meta8->setName(CString("modified"));
+meta8->setContent(CString("23 May 2020"));
 head1->addMeta(meta8);
 
 meta* meta9 = new meta();
-meta9->setName("reference");
-meta9->setContent("http://www.ballreich.net/vrml/HAnim/nancy_HAnim.wrl");
+meta9->setName(CString("reference"));
+meta9->setContent(CString("http://www.ballreich.net/vrml/HAnim/nancy_HAnim.wrl"));
 head1->addMeta(meta9);
 
 meta* meta10 = new meta();
-meta10->setName("reference");
-meta10->setContent("http://www.HAnim.org");
+meta10->setName(CString("reference"));
+meta10->setContent(CString("http://www.HAnim.org"));
 head1->addMeta(meta10);
 
 meta* meta11 = new meta();
-meta11->setName("reference");
-meta11->setContent("http://HAnim.org/Models");
+meta11->setName(CString("reference"));
+meta11->setContent(CString("http://HAnim.org/Models"));
 head1->addMeta(meta11);
 
 meta* meta12 = new meta();
-meta12->setName("reference");
-meta12->setContent("http://HAnim.org/Nodes");
+meta12->setName(CString("reference"));
+meta12->setContent(CString("http://HAnim.org/Nodes"));
 head1->addMeta(meta12);
 
 meta* meta13 = new meta();
-meta13->setName("subject");
-meta13->setContent("Nancy Run Animation HAnim 2001");
+meta13->setName(CString("subject"));
+meta13->setContent(CString("Nancy Run Animation HAnim 2001"));
 head1->addMeta(meta13);
 
 meta* meta14 = new meta();
-meta14->setName("identifier");
-meta14->setContent("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/LOA1_RunAnimation.x3d");
+meta14->setName(CString("identifier"));
+meta14->setContent(CString("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/LOA1_RunAnimation.x3d"));
 head1->addMeta(meta14);
 
 meta* meta15 = new meta();
-meta15->setName("generator");
-meta15->setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit");
+meta15->setName(CString("generator"));
+meta15->setContent(CString("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"));
 head1->addMeta(meta15);
 
 meta* meta16 = new meta();
-meta16->setName("license");
-meta16->setContent("../license.html");
+meta16->setName(CString("license"));
+meta16->setContent(CString("../license.html"));
 head1->addMeta(meta16);
 
 X3D0->setHead(head1);
 
 Scene* Scene17 = new Scene();
 WorldInfo* WorldInfo18 = new WorldInfo();
-WorldInfo18->setTitle("LOA1_RunAnimation.x3d");
+WorldInfo18->setTitle(CString("LOA1_RunAnimation.x3d"));
 Scene17->addChild(WorldInfo18);
 
 ProtoDeclare* ProtoDeclare19 = new ProtoDeclare();
-ProtoDeclare19->setName("LOA1_RunAnimation");
+ProtoDeclare19->setName(CString("LOA1_RunAnimation"));
 ProtoInterface* ProtoInterface20 = new ProtoInterface();
 field* field21 = new field();
-field21->setName("cycleInterval");
-field21->setAccessType("inputOutput");
-field21->setType("SFTime");
-field21->setValue("1");
-ProtoInterface20->addField(field21);
+field21->setName(CString("cycleInterval"));
+field21->setAccessType(CString("inputOutput"));
+field21->setType(CString("SFTime"));
+field21->setValue(CString("1"));
+ProtoInterface20->addChild(field21);
 
 field* field22 = new field();
-field22->setName("enabled");
-field22->setAccessType("inputOutput");
-field22->setType("SFBool");
-field22->setValue("true");
-ProtoInterface20->addField(field22);
+field22->setName(CString("enabled"));
+field22->setAccessType(CString("inputOutput"));
+field22->setType(CString("SFBool"));
+field22->setValue(CString("true"));
+ProtoInterface20->addChild(field22);
 
 field* field23 = new field();
-field23->setName("loop");
-field23->setAccessType("inputOutput");
-field23->setType("SFBool");
-field23->setValue("true");
-ProtoInterface20->addField(field23);
+field23->setName(CString("loop"));
+field23->setAccessType(CString("inputOutput"));
+field23->setType(CString("SFBool"));
+field23->setValue(CString("true"));
+ProtoInterface20->addChild(field23);
 
 field* field24 = new field();
-field24->setName("startTime");
-field24->setAccessType("inputOutput");
-field24->setType("SFTime");
-field24->setValue("0");
-ProtoInterface20->addField(field24);
+field24->setName(CString("startTime"));
+field24->setAccessType(CString("inputOutput"));
+field24->setType(CString("SFTime"));
+field24->setValue(CString("0"));
+ProtoInterface20->addChild(field24);
 
 field* field25 = new field();
-field25->setName("stopTime");
-field25->setAccessType("inputOutput");
-field25->setType("SFTime");
-field25->setValue("-1");
-ProtoInterface20->addField(field25);
+field25->setName(CString("stopTime"));
+field25->setAccessType(CString("inputOutput"));
+field25->setType(CString("SFTime"));
+field25->setValue(CString("-1"));
+ProtoInterface20->addChild(field25);
 
 field* field26 = new field();
-field26->setName("fraction_changed");
-field26->setAccessType("outputOnly");
-field26->setType("SFFloat");
-ProtoInterface20->addField(field26);
+field26->setName(CString("fraction_changed"));
+field26->setAccessType(CString("outputOnly"));
+field26->setType(CString("SFFloat"));
+ProtoInterface20->addChild(field26);
 
 field* field27 = new field();
-field27->setName("isActive");
-field27->setAccessType("outputOnly");
-field27->setType("SFBool");
-ProtoInterface20->addField(field27);
+field27->setName(CString("isActive"));
+field27->setAccessType(CString("outputOnly"));
+field27->setType(CString("SFBool"));
+ProtoInterface20->addChild(field27);
 
 field* field28 = new field();
-field28->setName("HumanoidRoot_translation_changed");
-field28->setAccessType("outputOnly");
-field28->setType("SFVec3f");
-ProtoInterface20->addField(field28);
+field28->setName(CString("HumanoidRoot_translation_changed"));
+field28->setAccessType(CString("outputOnly"));
+field28->setType(CString("SFVec3f"));
+ProtoInterface20->addChild(field28);
 
 field* field29 = new field();
-field29->setName("HumanoidRoot_rotation_changed");
-field29->setAccessType("outputOnly");
-field29->setType("SFRotation");
-ProtoInterface20->addField(field29);
+field29->setName(CString("HumanoidRoot_rotation_changed"));
+field29->setAccessType(CString("outputOnly"));
+field29->setType(CString("SFRotation"));
+ProtoInterface20->addChild(field29);
 
 field* field30 = new field();
-field30->setName("lower_body_rotation_changed");
-field30->setAccessType("outputOnly");
-field30->setType("SFRotation");
-ProtoInterface20->addField(field30);
+field30->setName(CString("lower_body_rotation_changed"));
+field30->setAccessType(CString("outputOnly"));
+field30->setType(CString("SFRotation"));
+ProtoInterface20->addChild(field30);
 
 field* field31 = new field();
-field31->setName("l_hip_rotation_changed");
-field31->setAccessType("outputOnly");
-field31->setType("SFRotation");
-ProtoInterface20->addField(field31);
+field31->setName(CString("l_hip_rotation_changed"));
+field31->setAccessType(CString("outputOnly"));
+field31->setType(CString("SFRotation"));
+ProtoInterface20->addChild(field31);
 
 field* field32 = new field();
-field32->setName("l_knee_rotation_changed");
-field32->setAccessType("outputOnly");
-field32->setType("SFRotation");
-ProtoInterface20->addField(field32);
+field32->setName(CString("l_knee_rotation_changed"));
+field32->setAccessType(CString("outputOnly"));
+field32->setType(CString("SFRotation"));
+ProtoInterface20->addChild(field32);
 
 field* field33 = new field();
-field33->setName("l_ankle_rotation_changed");
-field33->setAccessType("outputOnly");
-field33->setType("SFRotation");
-ProtoInterface20->addField(field33);
+field33->setName(CString("l_ankle_rotation_changed"));
+field33->setAccessType(CString("outputOnly"));
+field33->setType(CString("SFRotation"));
+ProtoInterface20->addChild(field33);
 
 field* field34 = new field();
-field34->setName("l_midtarsal_rotation_changed");
-field34->setAccessType("outputOnly");
-field34->setType("SFRotation");
-ProtoInterface20->addField(field34);
+field34->setName(CString("l_midtarsal_rotation_changed"));
+field34->setAccessType(CString("outputOnly"));
+field34->setType(CString("SFRotation"));
+ProtoInterface20->addChild(field34);
 
 field* field35 = new field();
-field35->setName("r_hip_rotation_changed");
-field35->setAccessType("outputOnly");
-field35->setType("SFRotation");
-ProtoInterface20->addField(field35);
+field35->setName(CString("r_hip_rotation_changed"));
+field35->setAccessType(CString("outputOnly"));
+field35->setType(CString("SFRotation"));
+ProtoInterface20->addChild(field35);
 
 field* field36 = new field();
-field36->setName("r_knee_rotation_changed");
-field36->setAccessType("outputOnly");
-field36->setType("SFRotation");
-ProtoInterface20->addField(field36);
+field36->setName(CString("r_knee_rotation_changed"));
+field36->setAccessType(CString("outputOnly"));
+field36->setType(CString("SFRotation"));
+ProtoInterface20->addChild(field36);
 
 field* field37 = new field();
-field37->setName("r_ankle_rotation_changed");
-field37->setAccessType("outputOnly");
-field37->setType("SFRotation");
-ProtoInterface20->addField(field37);
+field37->setName(CString("r_ankle_rotation_changed"));
+field37->setAccessType(CString("outputOnly"));
+field37->setType(CString("SFRotation"));
+ProtoInterface20->addChild(field37);
 
 field* field38 = new field();
-field38->setName("r_midtarsal_rotation_changed");
-field38->setAccessType("outputOnly");
-field38->setType("SFRotation");
-ProtoInterface20->addField(field38);
+field38->setName(CString("r_midtarsal_rotation_changed"));
+field38->setAccessType(CString("outputOnly"));
+field38->setType(CString("SFRotation"));
+ProtoInterface20->addChild(field38);
 
 field* field39 = new field();
-field39->setName("vl5_rotation_changed");
-field39->setAccessType("outputOnly");
-field39->setType("SFRotation");
-ProtoInterface20->addField(field39);
+field39->setName(CString("vl5_rotation_changed"));
+field39->setAccessType(CString("outputOnly"));
+field39->setType(CString("SFRotation"));
+ProtoInterface20->addChild(field39);
 
 field* field40 = new field();
-field40->setName("skullbase_rotation_changed");
-field40->setAccessType("outputOnly");
-field40->setType("SFRotation");
-ProtoInterface20->addField(field40);
+field40->setName(CString("skullbase_rotation_changed"));
+field40->setAccessType(CString("outputOnly"));
+field40->setType(CString("SFRotation"));
+ProtoInterface20->addChild(field40);
 
 field* field41 = new field();
-field41->setName("l_shoulder_rotation_changed");
-field41->setAccessType("outputOnly");
-field41->setType("SFRotation");
-ProtoInterface20->addField(field41);
+field41->setName(CString("l_shoulder_rotation_changed"));
+field41->setAccessType(CString("outputOnly"));
+field41->setType(CString("SFRotation"));
+ProtoInterface20->addChild(field41);
 
 field* field42 = new field();
-field42->setName("l_elbow_rotation_changed");
-field42->setAccessType("outputOnly");
-field42->setType("SFRotation");
-ProtoInterface20->addField(field42);
+field42->setName(CString("l_elbow_rotation_changed"));
+field42->setAccessType(CString("outputOnly"));
+field42->setType(CString("SFRotation"));
+ProtoInterface20->addChild(field42);
 
 field* field43 = new field();
-field43->setName("l_wrist_rotation_changed");
-field43->setAccessType("outputOnly");
-field43->setType("SFRotation");
-ProtoInterface20->addField(field43);
+field43->setName(CString("l_wrist_rotation_changed"));
+field43->setAccessType(CString("outputOnly"));
+field43->setType(CString("SFRotation"));
+ProtoInterface20->addChild(field43);
 
 field* field44 = new field();
-field44->setName("r_shoulder_rotation_changed");
-field44->setAccessType("outputOnly");
-field44->setType("SFRotation");
-ProtoInterface20->addField(field44);
+field44->setName(CString("r_shoulder_rotation_changed"));
+field44->setAccessType(CString("outputOnly"));
+field44->setType(CString("SFRotation"));
+ProtoInterface20->addChild(field44);
 
 field* field45 = new field();
-field45->setName("r_elbow_rotation_changed");
-field45->setAccessType("outputOnly");
-field45->setType("SFRotation");
-ProtoInterface20->addField(field45);
+field45->setName(CString("r_elbow_rotation_changed"));
+field45->setAccessType(CString("outputOnly"));
+field45->setType(CString("SFRotation"));
+ProtoInterface20->addChild(field45);
 
 field* field46 = new field();
-field46->setName("r_wrist_rotation_changed");
-field46->setAccessType("outputOnly");
-field46->setType("SFRotation");
-ProtoInterface20->addField(field46);
+field46->setName(CString("r_wrist_rotation_changed"));
+field46->setAccessType(CString("outputOnly"));
+field46->setType(CString("SFRotation"));
+ProtoInterface20->addChild(field46);
 
-ProtoDeclare19->setProtoInterface(ProtoInterface20);
+ProtoDeclare19->addChild(ProtoInterface20);
 
 ProtoBody* ProtoBody47 = new ProtoBody();
 Group* Group48 = new Group();
 TimeSensor* TimeSensor49 = new TimeSensor();
-TimeSensor49->setDEF("TIMER");
+TimeSensor49->setDEF(CString("TIMER"));
 IS* IS50 = new IS();
 Connect* connect51 = new Connect();
-connect51->setNodeField("cycleInterval");
-connect51->setProtoField("cycleInterval");
-IS50->addConnect(connect51);
+connect51->setNodeField(CString("cycleInterval"));
+connect51->setProtoField(CString("cycleInterval"));
+IS50->addChild(connect51);
 
 Connect* connect52 = new Connect();
-connect52->setNodeField("enabled");
-connect52->setProtoField("enabled");
-IS50->addConnect(connect52);
+connect52->setNodeField(CString("enabled"));
+connect52->setProtoField(CString("enabled"));
+IS50->addChild(connect52);
 
 Connect* connect53 = new Connect();
-connect53->setNodeField("loop");
-connect53->setProtoField("loop");
-IS50->addConnect(connect53);
+connect53->setNodeField(CString("loop"));
+connect53->setProtoField(CString("loop"));
+IS50->addChild(connect53);
 
 Connect* connect54 = new Connect();
-connect54->setNodeField("startTime");
-connect54->setProtoField("startTime");
-IS50->addConnect(connect54);
+connect54->setNodeField(CString("startTime"));
+connect54->setProtoField(CString("startTime"));
+IS50->addChild(connect54);
 
 Connect* connect55 = new Connect();
-connect55->setNodeField("stopTime");
-connect55->setProtoField("stopTime");
-IS50->addConnect(connect55);
+connect55->setNodeField(CString("stopTime"));
+connect55->setProtoField(CString("stopTime"));
+IS50->addChild(connect55);
 
 Connect* connect56 = new Connect();
-connect56->setNodeField("fraction_changed");
-connect56->setProtoField("fraction_changed");
-IS50->addConnect(connect56);
+connect56->setNodeField(CString("fraction_changed"));
+connect56->setProtoField(CString("fraction_changed"));
+IS50->addChild(connect56);
 
 Connect* connect57 = new Connect();
-connect57->setNodeField("isActive");
-connect57->setProtoField("isActive");
-IS50->addConnect(connect57);
+connect57->setNodeField(CString("isActive"));
+connect57->setProtoField(CString("isActive"));
+IS50->addChild(connect57);
 
-TimeSensor49->setIS(IS50);
+TimeSensor49->addChild(IS50);
 
 Group48->addChild(TimeSensor49);
 
 PositionInterpolator* PositionInterpolator58 = new PositionInterpolator();
-PositionInterpolator58->setDEF("HUMANOIDROOT_POSITION_ANIMATOR");
+PositionInterpolator58->setDEF(CString("HUMANOIDROOT_POSITION_ANIMATOR"));
 PositionInterpolator58->setKey(new float[8]{0,0.2182,0.2909,0.3091,0.7091,0.8,0.8182,1}, 8);
-PositionInterpolator58->setKeyValue(new float[24]{0,-0.0351,0,0,-0.0351,0,0,-0.04087,0,0,-0.04886,0,0,-0.04051,0,0,-0.03666,0,0,-0.03666,0,0,-0.0351,0});
+PositionInterpolator58->setKeyValue(new float[24]{0,-0.0351,0,0,-0.0351,0,0,-0.04087,0,0,-0.04886,0,0,-0.04051,0,0,-0.03666,0,0,-0.03666,0,0,-0.0351,0}, 24);
 IS* IS59 = new IS();
 Connect* connect60 = new Connect();
-connect60->setNodeField("value_changed");
-connect60->setProtoField("HumanoidRoot_translation_changed");
-IS59->addConnect(connect60);
+connect60->setNodeField(CString("value_changed"));
+connect60->setProtoField(CString("HumanoidRoot_translation_changed"));
+IS59->addChild(connect60);
 
-PositionInterpolator58->setIS(IS59);
+PositionInterpolator58->addChild(IS59);
 
 Group48->addChild(PositionInterpolator58);
 
 OrientationInterpolator* OrientationInterpolator61 = new OrientationInterpolator();
-OrientationInterpolator61->setDEF("HUMANOIDROOT_ANIMATOR");
+OrientationInterpolator61->setDEF(CString("HUMANOIDROOT_ANIMATOR"));
 OrientationInterpolator61->setKey(new float[2]{0,1}, 2);
-OrientationInterpolator61->setKeyValue(new float[8]{0,1,0,0,0,1,0,0});
+OrientationInterpolator61->setKeyValue(new float[8]{0,1,0,0,0,1,0,0}, 8);
 IS* IS62 = new IS();
 Connect* connect63 = new Connect();
-connect63->setNodeField("value_changed");
-connect63->setProtoField("HumanoidRoot_rotation_changed");
-IS62->addConnect(connect63);
+connect63->setNodeField(CString("value_changed"));
+connect63->setProtoField(CString("HumanoidRoot_rotation_changed"));
+IS62->addChild(connect63);
 
-OrientationInterpolator61->setIS(IS62);
+OrientationInterpolator61->addChild(IS62);
 
 Group48->addChild(OrientationInterpolator61);
 
 OrientationInterpolator* OrientationInterpolator64 = new OrientationInterpolator();
-OrientationInterpolator64->setDEF("SACROILIAC_ANIMATOR");
+OrientationInterpolator64->setDEF(CString("SACROILIAC_ANIMATOR"));
 OrientationInterpolator64->setKey(new float[2]{0,1}, 2);
-OrientationInterpolator64->setKeyValue(new float[8]{0.9969,-0.05444,0.05596,0.07687,0.9969,-0.05444,0.05596,0.07687});
+OrientationInterpolator64->setKeyValue(new float[8]{0.9969,-0.05444,0.05596,0.07687,0.9969,-0.05444,0.05596,0.07687}, 8);
 IS* IS65 = new IS();
 Connect* connect66 = new Connect();
-connect66->setNodeField("value_changed");
-connect66->setProtoField("lower_body_rotation_changed");
-IS65->addConnect(connect66);
+connect66->setNodeField(CString("value_changed"));
+connect66->setProtoField(CString("lower_body_rotation_changed"));
+IS65->addChild(connect66);
 
-OrientationInterpolator64->setIS(IS65);
+OrientationInterpolator64->addChild(IS65);
 
 Group48->addChild(OrientationInterpolator64);
 
 OrientationInterpolator* OrientationInterpolator67 = new OrientationInterpolator();
-OrientationInterpolator67->setDEF("L_HIP_ANIMATOR");
+OrientationInterpolator67->setDEF(CString("L_HIP_ANIMATOR"));
 OrientationInterpolator67->setKey(new float[5]{0,0.2182,0.4909,0.7455,1}, 5);
-OrientationInterpolator67->setKeyValue(new float[20]{-0.9986,0.03354,0.04001,1.212,-0.9889,0.1328,0.06696,0.4025,0.9894,0.1453,0.009351,0.4114,-0.9963,0.07032,0.05003,0.7035,-0.9986,0.03354,0.04001,1.212});
+OrientationInterpolator67->setKeyValue(new float[20]{-0.9986,0.03354,0.04001,1.212,-0.9889,0.1328,0.06696,0.4025,0.9894,0.1453,0.009351,0.4114,-0.9963,0.07032,0.05003,0.7035,-0.9986,0.03354,0.04001,1.212}, 20);
 IS* IS68 = new IS();
 Connect* connect69 = new Connect();
-connect69->setNodeField("value_changed");
-connect69->setProtoField("l_hip_rotation_changed");
-IS68->addConnect(connect69);
+connect69->setNodeField(CString("value_changed"));
+connect69->setProtoField(CString("l_hip_rotation_changed"));
+IS68->addChild(connect69);
 
-OrientationInterpolator67->setIS(IS68);
+OrientationInterpolator67->addChild(IS68);
 
 Group48->addChild(OrientationInterpolator67);
 
 OrientationInterpolator* OrientationInterpolator70 = new OrientationInterpolator();
-OrientationInterpolator70->setDEF("L_KNEE_ANIMATOR");
+OrientationInterpolator70->setDEF(CString("L_KNEE_ANIMATOR"));
 OrientationInterpolator70->setKey(new float[5]{0,0.2182,0.4909,0.7455,1}, 5);
-OrientationInterpolator70->setKeyValue(new float[20]{1,0,0,1.108,1,0,0,0.4265,1,0,0,0.7052,1,0,0,2.179,1,0,0,1.108});
+OrientationInterpolator70->setKeyValue(new float[20]{1,0,0,1.108,1,0,0,0.4265,1,0,0,0.7052,1,0,0,2.179,1,0,0,1.108}, 20);
 IS* IS71 = new IS();
 Connect* connect72 = new Connect();
-connect72->setNodeField("value_changed");
-connect72->setProtoField("l_knee_rotation_changed");
-IS71->addConnect(connect72);
+connect72->setNodeField(CString("value_changed"));
+connect72->setProtoField(CString("l_knee_rotation_changed"));
+IS71->addChild(connect72);
 
-OrientationInterpolator70->setIS(IS71);
+OrientationInterpolator70->addChild(IS71);
 
 Group48->addChild(OrientationInterpolator70);
 
 OrientationInterpolator* OrientationInterpolator73 = new OrientationInterpolator();
-OrientationInterpolator73->setDEF("L_ANKLE_ANIMATOR");
+OrientationInterpolator73->setDEF(CString("L_ANKLE_ANIMATOR"));
 OrientationInterpolator73->setKey(new float[5]{0,0.2182,0.3091,0.4909,1}, 5);
-OrientationInterpolator73->setKeyValue(new float[20]{1,0,0,0.03543,-1,0,0,0.1037,-1,0,0,0.4328,1,0,0,0.1929,1,0,0,0.03543});
+OrientationInterpolator73->setKeyValue(new float[20]{1,0,0,0.03543,-1,0,0,0.1037,-1,0,0,0.4328,1,0,0,0.1929,1,0,0,0.03543}, 20);
 IS* IS74 = new IS();
 Connect* connect75 = new Connect();
-connect75->setNodeField("value_changed");
-connect75->setProtoField("l_ankle_rotation_changed");
-IS74->addConnect(connect75);
+connect75->setNodeField(CString("value_changed"));
+connect75->setProtoField(CString("l_ankle_rotation_changed"));
+IS74->addChild(connect75);
 
-OrientationInterpolator73->setIS(IS74);
+OrientationInterpolator73->addChild(IS74);
 
 Group48->addChild(OrientationInterpolator73);
 
 OrientationInterpolator* OrientationInterpolator76 = new OrientationInterpolator();
-OrientationInterpolator76->setDEF("L_MIDTARSAL_ANIMATOR");
+OrientationInterpolator76->setDEF(CString("L_MIDTARSAL_ANIMATOR"));
 OrientationInterpolator76->setKey(new float[3]{0,0.5,1}, 3);
-OrientationInterpolator76->setKeyValue(new float[12]{1,0,0,0,1,0,0,-0.2,1,0,0,0});
+OrientationInterpolator76->setKeyValue(new float[12]{1,0,0,0,1,0,0,-0.2,1,0,0,0}, 12);
 IS* IS77 = new IS();
 Connect* connect78 = new Connect();
-connect78->setNodeField("value_changed");
-connect78->setProtoField("l_midtarsal_rotation_changed");
-IS77->addConnect(connect78);
+connect78->setNodeField(CString("value_changed"));
+connect78->setProtoField(CString("l_midtarsal_rotation_changed"));
+IS77->addChild(connect78);
 
-OrientationInterpolator76->setIS(IS77);
+OrientationInterpolator76->addChild(IS77);
 
 Group48->addChild(OrientationInterpolator76);
 
 OrientationInterpolator* OrientationInterpolator79 = new OrientationInterpolator();
-OrientationInterpolator79->setDEF("R_HIP_ANIMATOR");
+OrientationInterpolator79->setDEF(CString("R_HIP_ANIMATOR"));
 OrientationInterpolator79->setKey(new float[5]{0,0.2182,0.4909,0.7455,1}, 5);
-OrientationInterpolator79->setKeyValue(new float[20]{0.9999,0.00293,-0.00989,0.402,-1,0.004977,-0.00497,0.5943,-1,0.003265,-0.001752,1.178,-0.9999,0.00815,-0.01093,0.3031,0.9999,0.00293,-0.00989,0.402});
+OrientationInterpolator79->setKeyValue(new float[20]{0.9999,0.00293,-0.00989,0.402,-1,0.004977,-0.00497,0.5943,-1,0.003265,-0.001752,1.178,-0.9999,0.00815,-0.01093,0.3031,0.9999,0.00293,-0.00989,0.402}, 20);
 IS* IS80 = new IS();
 Connect* connect81 = new Connect();
-connect81->setNodeField("value_changed");
-connect81->setProtoField("r_hip_rotation_changed");
-IS80->addConnect(connect81);
+connect81->setNodeField(CString("value_changed"));
+connect81->setProtoField(CString("r_hip_rotation_changed"));
+IS80->addChild(connect81);
 
-OrientationInterpolator79->setIS(IS80);
+OrientationInterpolator79->addChild(IS80);
 
 Group48->addChild(OrientationInterpolator79);
 
 OrientationInterpolator* OrientationInterpolator82 = new OrientationInterpolator();
-OrientationInterpolator82->setDEF("R_KNEE_ANIMATOR");
+OrientationInterpolator82->setDEF(CString("R_KNEE_ANIMATOR"));
 OrientationInterpolator82->setKey(new float[6]{0,0.03636,0.2182,0.4909,0.7455,1}, 6);
-OrientationInterpolator82->setKeyValue(new float[24]{1,0,0,0.7004,1,0,0,1.011,1,0,0,1.892,1,0,0,1.188,1,0,0,0.3964,1,0,0,0.7004});
+OrientationInterpolator82->setKeyValue(new float[24]{1,0,0,0.7004,1,0,0,1.011,1,0,0,1.892,1,0,0,1.188,1,0,0,0.3964,1,0,0,0.7004}, 24);
 IS* IS83 = new IS();
 Connect* connect84 = new Connect();
-connect84->setNodeField("value_changed");
-connect84->setProtoField("r_knee_rotation_changed");
-IS83->addConnect(connect84);
+connect84->setNodeField(CString("value_changed"));
+connect84->setProtoField(CString("r_knee_rotation_changed"));
+IS83->addChild(connect84);
 
-OrientationInterpolator82->setIS(IS83);
+OrientationInterpolator82->addChild(IS83);
 
 Group48->addChild(OrientationInterpolator82);
 
 OrientationInterpolator* OrientationInterpolator85 = new OrientationInterpolator();
-OrientationInterpolator85->setDEF("R_ANKLE_ANIMATOR");
+OrientationInterpolator85->setDEF(CString("R_ANKLE_ANIMATOR"));
 OrientationInterpolator85->setKey(new float[6]{0,0.4909,0.7091,0.8,0.8182,1}, 6);
-OrientationInterpolator85->setKeyValue(new float[24]{1,0,0,0.2323,-1,0,0,0.07843,-1,0,0,0.09676,-1,0,0,0.3274,-1,0,0,0.3278,1,0,0,0.2323});
+OrientationInterpolator85->setKeyValue(new float[24]{1,0,0,0.2323,-1,0,0,0.07843,-1,0,0,0.09676,-1,0,0,0.3274,-1,0,0,0.3278,1,0,0,0.2323}, 24);
 IS* IS86 = new IS();
 Connect* connect87 = new Connect();
-connect87->setNodeField("value_changed");
-connect87->setProtoField("r_ankle_rotation_changed");
-IS86->addConnect(connect87);
+connect87->setNodeField(CString("value_changed"));
+connect87->setProtoField(CString("r_ankle_rotation_changed"));
+IS86->addChild(connect87);
 
-OrientationInterpolator85->setIS(IS86);
+OrientationInterpolator85->addChild(IS86);
 
 Group48->addChild(OrientationInterpolator85);
 
 OrientationInterpolator* OrientationInterpolator88 = new OrientationInterpolator();
-OrientationInterpolator88->setDEF("R_MIDTARSAL_ANIMATOR");
+OrientationInterpolator88->setDEF(CString("R_MIDTARSAL_ANIMATOR"));
 OrientationInterpolator88->setKey(new float[3]{0,0.5,1}, 3);
-OrientationInterpolator88->setKeyValue(new float[12]{1,0,0,-0.2,1,0,0,0,1,0,0,-0.2});
+OrientationInterpolator88->setKeyValue(new float[12]{1,0,0,-0.2,1,0,0,0,1,0,0,-0.2}, 12);
 IS* IS89 = new IS();
 Connect* connect90 = new Connect();
-connect90->setNodeField("value_changed");
-connect90->setProtoField("r_midtarsal_rotation_changed");
-IS89->addConnect(connect90);
+connect90->setNodeField(CString("value_changed"));
+connect90->setProtoField(CString("r_midtarsal_rotation_changed"));
+IS89->addChild(connect90);
 
-OrientationInterpolator88->setIS(IS89);
+OrientationInterpolator88->addChild(IS89);
 
 Group48->addChild(OrientationInterpolator88);
 
 OrientationInterpolator* OrientationInterpolator91 = new OrientationInterpolator();
-OrientationInterpolator91->setDEF("VL5_ANIMATOR");
+OrientationInterpolator91->setDEF(CString("VL5_ANIMATOR"));
 OrientationInterpolator91->setKey(new float[5]{0,0.2545,0.4909,0.7636,1}, 5);
-OrientationInterpolator91->setKeyValue(new float[20]{0.7651,0.6382,0.08586,0.2712,0.9999,0.002845,-0.01547,0.3756,0.7459,-0.6505,-0.1432,0.2416,0.9984,0.05536,-0.01154,0.3488,0.7651,0.6382,0.08586,0.2712});
+OrientationInterpolator91->setKeyValue(new float[20]{0.7651,0.6382,0.08586,0.2712,0.9999,0.002845,-0.01547,0.3756,0.7459,-0.6505,-0.1432,0.2416,0.9984,0.05536,-0.01154,0.3488,0.7651,0.6382,0.08586,0.2712}, 20);
 IS* IS92 = new IS();
 Connect* connect93 = new Connect();
-connect93->setNodeField("value_changed");
-connect93->setProtoField("vl5_rotation_changed");
-IS92->addConnect(connect93);
+connect93->setNodeField(CString("value_changed"));
+connect93->setProtoField(CString("vl5_rotation_changed"));
+IS92->addChild(connect93);
 
-OrientationInterpolator91->setIS(IS92);
+OrientationInterpolator91->addChild(IS92);
 
 Group48->addChild(OrientationInterpolator91);
 
 OrientationInterpolator* OrientationInterpolator94 = new OrientationInterpolator();
-OrientationInterpolator94->setDEF("SKULLBASE_ANIMATOR");
+OrientationInterpolator94->setDEF(CString("SKULLBASE_ANIMATOR"));
 OrientationInterpolator94->setKey(new float[3]{0,0.4909,1}, 3);
-OrientationInterpolator94->setKeyValue(new float[12]{0.6517,-0.7559,0.06211,0.2508,0.6467,0.7527,-0.1238,0.2344,0.6517,-0.7559,0.06211,0.2508});
+OrientationInterpolator94->setKeyValue(new float[12]{0.6517,-0.7559,0.06211,0.2508,0.6467,0.7527,-0.1238,0.2344,0.6517,-0.7559,0.06211,0.2508}, 12);
 IS* IS95 = new IS();
 Connect* connect96 = new Connect();
-connect96->setNodeField("value_changed");
-connect96->setProtoField("skullbase_rotation_changed");
-IS95->addConnect(connect96);
+connect96->setNodeField(CString("value_changed"));
+connect96->setProtoField(CString("skullbase_rotation_changed"));
+IS95->addChild(connect96);
 
-OrientationInterpolator94->setIS(IS95);
+OrientationInterpolator94->addChild(IS95);
 
 Group48->addChild(OrientationInterpolator94);
 
 OrientationInterpolator* OrientationInterpolator97 = new OrientationInterpolator();
-OrientationInterpolator97->setDEF("L_SHOULDER_ANIMATOR");
+OrientationInterpolator97->setDEF(CString("L_SHOULDER_ANIMATOR"));
 OrientationInterpolator97->setKey(new float[5]{0,0.2182,0.4909,0.7455,1}, 5);
-OrientationInterpolator97->setKeyValue(new float[20]{0.9907,-0.07264,0.115,1.135,0.9291,-0.1222,0.349,0.1695,-0.9892,0.1364,-0.05394,0.5112,0.9942,-0.0002052,0.1073,0.4975,0.9907,-0.07264,0.115,1.135});
+OrientationInterpolator97->setKeyValue(new float[20]{0.9907,-0.07264,0.115,1.135,0.9291,-0.1222,0.349,0.1695,-0.9892,0.1364,-0.05394,0.5112,0.9942,-0.0002052,0.1073,0.4975,0.9907,-0.07264,0.115,1.135}, 20);
 IS* IS98 = new IS();
 Connect* connect99 = new Connect();
-connect99->setNodeField("value_changed");
-connect99->setProtoField("l_shoulder_rotation_changed");
-IS98->addConnect(connect99);
+connect99->setNodeField(CString("value_changed"));
+connect99->setProtoField(CString("l_shoulder_rotation_changed"));
+IS98->addChild(connect99);
 
-OrientationInterpolator97->setIS(IS98);
+OrientationInterpolator97->addChild(IS98);
 
 Group48->addChild(OrientationInterpolator97);
 
 OrientationInterpolator* OrientationInterpolator100 = new OrientationInterpolator();
-OrientationInterpolator100->setDEF("L_ELBOW_ANIMATOR");
+OrientationInterpolator100->setDEF(CString("L_ELBOW_ANIMATOR"));
 OrientationInterpolator100->setKey(new float[5]{0,0.2182,0.4909,0.7455,1}, 5);
-OrientationInterpolator100->setKeyValue(new float[20]{0.9985,0.03887,0.03802,4.689,-0.965,-0.1889,-0.1821,1.415,0.9758,0.1563,0.1529,4.666,-0.9956,-0.0936,0.009826,1.126,0.9985,0.03887,0.03802,4.689});
+OrientationInterpolator100->setKeyValue(new float[20]{0.9985,0.03887,0.03802,4.689,-0.965,-0.1889,-0.1821,1.415,0.9758,0.1563,0.1529,4.666,-0.9956,-0.0936,0.009826,1.126,0.9985,0.03887,0.03802,4.689}, 20);
 IS* IS101 = new IS();
 Connect* connect102 = new Connect();
-connect102->setNodeField("value_changed");
-connect102->setProtoField("l_elbow_rotation_changed");
-IS101->addConnect(connect102);
+connect102->setNodeField(CString("value_changed"));
+connect102->setProtoField(CString("l_elbow_rotation_changed"));
+IS101->addChild(connect102);
 
-OrientationInterpolator100->setIS(IS101);
+OrientationInterpolator100->addChild(IS101);
 
 Group48->addChild(OrientationInterpolator100);
 
 OrientationInterpolator* OrientationInterpolator103 = new OrientationInterpolator();
-OrientationInterpolator103->setDEF("L_WRIST_ANIMATOR");
+OrientationInterpolator103->setDEF(CString("L_WRIST_ANIMATOR"));
 OrientationInterpolator103->setKey(new float[2]{0,1}, 2);
-OrientationInterpolator103->setKeyValue(new float[8]{-0.0240995,-0.999682,0.00741506,0.120409,-0.0240995,-0.999682,0.00741506,0.120409});
+OrientationInterpolator103->setKeyValue(new float[8]{-0.0240995,-0.999682,0.00741506,0.120409,-0.0240995,-0.999682,0.00741506,0.120409}, 8);
 IS* IS104 = new IS();
 Connect* connect105 = new Connect();
-connect105->setNodeField("value_changed");
-connect105->setProtoField("l_wrist_rotation_changed");
-IS104->addConnect(connect105);
+connect105->setNodeField(CString("value_changed"));
+connect105->setProtoField(CString("l_wrist_rotation_changed"));
+IS104->addChild(connect105);
 
-OrientationInterpolator103->setIS(IS104);
+OrientationInterpolator103->addChild(IS104);
 
 Group48->addChild(OrientationInterpolator103);
 
 OrientationInterpolator* OrientationInterpolator106 = new OrientationInterpolator();
-OrientationInterpolator106->setDEF("R_SHOULDER_ANIMATOR");
+OrientationInterpolator106->setDEF(CString("R_SHOULDER_ANIMATOR"));
 OrientationInterpolator106->setKey(new float[5]{0,0.2182,0.4909,0.7455,1}, 5);
-OrientationInterpolator106->setKeyValue(new float[20]{-1,0,0,0.6979,0.9094,0.2062,-0.3613,0.4157,0.9637,0.1537,-0.2185,1.353,0.4864,0.08841,-0.8693,0.1716,-1,0,0,0.6979});
+OrientationInterpolator106->setKeyValue(new float[20]{-1,0,0,0.6979,0.9094,0.2062,-0.3613,0.4157,0.9637,0.1537,-0.2185,1.353,0.4864,0.08841,-0.8693,0.1716,-1,0,0,0.6979}, 20);
 IS* IS107 = new IS();
 Connect* connect108 = new Connect();
-connect108->setNodeField("value_changed");
-connect108->setProtoField("r_shoulder_rotation_changed");
-IS107->addConnect(connect108);
+connect108->setNodeField(CString("value_changed"));
+connect108->setProtoField(CString("r_shoulder_rotation_changed"));
+IS107->addChild(connect108);
 
-OrientationInterpolator106->setIS(IS107);
+OrientationInterpolator106->addChild(IS107);
 
 Group48->addChild(OrientationInterpolator106);
 
 OrientationInterpolator* OrientationInterpolator109 = new OrientationInterpolator();
-OrientationInterpolator109->setDEF("R_ELBOW_ANIMATOR");
+OrientationInterpolator109->setDEF(CString("R_ELBOW_ANIMATOR"));
 OrientationInterpolator109->setKey(new float[5]{0,0.2182,0.4909,0.7455,1}, 5);
-OrientationInterpolator109->setKeyValue(new float[20]{0.9353,-0.2978,-0.191,4.222,-0.9362,0.2924,-0.1952,1.05,0.9941,-0.09719,-0.04725,4.512,-0.9594,0.2653,0.09579,1.525,0.9353,-0.2978,-0.191,4.222});
+OrientationInterpolator109->setKeyValue(new float[20]{0.9353,-0.2978,-0.191,4.222,-0.9362,0.2924,-0.1952,1.05,0.9941,-0.09719,-0.04725,4.512,-0.9594,0.2653,0.09579,1.525,0.9353,-0.2978,-0.191,4.222}, 20);
 IS* IS110 = new IS();
 Connect* connect111 = new Connect();
-connect111->setNodeField("value_changed");
-connect111->setProtoField("r_elbow_rotation_changed");
-IS110->addConnect(connect111);
+connect111->setNodeField(CString("value_changed"));
+connect111->setProtoField(CString("r_elbow_rotation_changed"));
+IS110->addChild(connect111);
 
-OrientationInterpolator109->setIS(IS110);
+OrientationInterpolator109->addChild(IS110);
 
 Group48->addChild(OrientationInterpolator109);
 
 OrientationInterpolator* OrientationInterpolator112 = new OrientationInterpolator();
-OrientationInterpolator112->setDEF("R_WRIST_ANIMATOR");
+OrientationInterpolator112->setDEF(CString("R_WRIST_ANIMATOR"));
 OrientationInterpolator112->setKey(new float[2]{0,1}, 2);
-OrientationInterpolator112->setKeyValue(new float[8]{-0.917742,-0.237244,-0.318536,0.214273,-0.917742,-0.237244,-0.318536,0.214273});
+OrientationInterpolator112->setKeyValue(new float[8]{-0.917742,-0.237244,-0.318536,0.214273,-0.917742,-0.237244,-0.318536,0.214273}, 8);
 IS* IS113 = new IS();
 Connect* connect114 = new Connect();
-connect114->setNodeField("value_changed");
-connect114->setProtoField("r_wrist_rotation_changed");
-IS113->addConnect(connect114);
+connect114->setNodeField(CString("value_changed"));
+connect114->setProtoField(CString("r_wrist_rotation_changed"));
+IS113->addChild(connect114);
 
-OrientationInterpolator112->setIS(IS113);
+OrientationInterpolator112->addChild(IS113);
 
 Group48->addChild(OrientationInterpolator112);
 
 ProtoBody47->addChild(Group48);
 
 ROUTE* ROUTE115 = new ROUTE();
-ROUTE115->setFromField("fraction_changed");
-ROUTE115->setFromNode("TIMER");
-ROUTE115->setToField("set_fraction");
-ROUTE115->setToNode("HUMANOIDROOT_POSITION_ANIMATOR");
+ROUTE115->setFromField(CString("fraction_changed"));
+ROUTE115->setFromNode(CString("TIMER"));
+ROUTE115->setToField(CString("set_fraction"));
+ROUTE115->setToNode(CString("HUMANOIDROOT_POSITION_ANIMATOR"));
 ProtoBody47->addChild(ROUTE115);
 
 ROUTE* ROUTE116 = new ROUTE();
-ROUTE116->setFromField("fraction_changed");
-ROUTE116->setFromNode("TIMER");
-ROUTE116->setToField("set_fraction");
-ROUTE116->setToNode("HUMANOIDROOT_ANIMATOR");
+ROUTE116->setFromField(CString("fraction_changed"));
+ROUTE116->setFromNode(CString("TIMER"));
+ROUTE116->setToField(CString("set_fraction"));
+ROUTE116->setToNode(CString("HUMANOIDROOT_ANIMATOR"));
 ProtoBody47->addChild(ROUTE116);
 
 ROUTE* ROUTE117 = new ROUTE();
-ROUTE117->setFromField("fraction_changed");
-ROUTE117->setFromNode("TIMER");
-ROUTE117->setToField("set_fraction");
-ROUTE117->setToNode("SACROILIAC_ANIMATOR");
+ROUTE117->setFromField(CString("fraction_changed"));
+ROUTE117->setFromNode(CString("TIMER"));
+ROUTE117->setToField(CString("set_fraction"));
+ROUTE117->setToNode(CString("SACROILIAC_ANIMATOR"));
 ProtoBody47->addChild(ROUTE117);
 
 ROUTE* ROUTE118 = new ROUTE();
-ROUTE118->setFromField("fraction_changed");
-ROUTE118->setFromNode("TIMER");
-ROUTE118->setToField("set_fraction");
-ROUTE118->setToNode("L_HIP_ANIMATOR");
+ROUTE118->setFromField(CString("fraction_changed"));
+ROUTE118->setFromNode(CString("TIMER"));
+ROUTE118->setToField(CString("set_fraction"));
+ROUTE118->setToNode(CString("L_HIP_ANIMATOR"));
 ProtoBody47->addChild(ROUTE118);
 
 ROUTE* ROUTE119 = new ROUTE();
-ROUTE119->setFromField("fraction_changed");
-ROUTE119->setFromNode("TIMER");
-ROUTE119->setToField("set_fraction");
-ROUTE119->setToNode("L_KNEE_ANIMATOR");
+ROUTE119->setFromField(CString("fraction_changed"));
+ROUTE119->setFromNode(CString("TIMER"));
+ROUTE119->setToField(CString("set_fraction"));
+ROUTE119->setToNode(CString("L_KNEE_ANIMATOR"));
 ProtoBody47->addChild(ROUTE119);
 
 ROUTE* ROUTE120 = new ROUTE();
-ROUTE120->setFromField("fraction_changed");
-ROUTE120->setFromNode("TIMER");
-ROUTE120->setToField("set_fraction");
-ROUTE120->setToNode("L_ANKLE_ANIMATOR");
+ROUTE120->setFromField(CString("fraction_changed"));
+ROUTE120->setFromNode(CString("TIMER"));
+ROUTE120->setToField(CString("set_fraction"));
+ROUTE120->setToNode(CString("L_ANKLE_ANIMATOR"));
 ProtoBody47->addChild(ROUTE120);
 
 ROUTE* ROUTE121 = new ROUTE();
-ROUTE121->setFromField("fraction_changed");
-ROUTE121->setFromNode("TIMER");
-ROUTE121->setToField("set_fraction");
-ROUTE121->setToNode("L_MIDTARSAL_ANIMATOR");
+ROUTE121->setFromField(CString("fraction_changed"));
+ROUTE121->setFromNode(CString("TIMER"));
+ROUTE121->setToField(CString("set_fraction"));
+ROUTE121->setToNode(CString("L_MIDTARSAL_ANIMATOR"));
 ProtoBody47->addChild(ROUTE121);
 
 ROUTE* ROUTE122 = new ROUTE();
-ROUTE122->setFromField("fraction_changed");
-ROUTE122->setFromNode("TIMER");
-ROUTE122->setToField("set_fraction");
-ROUTE122->setToNode("R_HIP_ANIMATOR");
+ROUTE122->setFromField(CString("fraction_changed"));
+ROUTE122->setFromNode(CString("TIMER"));
+ROUTE122->setToField(CString("set_fraction"));
+ROUTE122->setToNode(CString("R_HIP_ANIMATOR"));
 ProtoBody47->addChild(ROUTE122);
 
 ROUTE* ROUTE123 = new ROUTE();
-ROUTE123->setFromField("fraction_changed");
-ROUTE123->setFromNode("TIMER");
-ROUTE123->setToField("set_fraction");
-ROUTE123->setToNode("R_KNEE_ANIMATOR");
+ROUTE123->setFromField(CString("fraction_changed"));
+ROUTE123->setFromNode(CString("TIMER"));
+ROUTE123->setToField(CString("set_fraction"));
+ROUTE123->setToNode(CString("R_KNEE_ANIMATOR"));
 ProtoBody47->addChild(ROUTE123);
 
 ROUTE* ROUTE124 = new ROUTE();
-ROUTE124->setFromField("fraction_changed");
-ROUTE124->setFromNode("TIMER");
-ROUTE124->setToField("set_fraction");
-ROUTE124->setToNode("R_ANKLE_ANIMATOR");
+ROUTE124->setFromField(CString("fraction_changed"));
+ROUTE124->setFromNode(CString("TIMER"));
+ROUTE124->setToField(CString("set_fraction"));
+ROUTE124->setToNode(CString("R_ANKLE_ANIMATOR"));
 ProtoBody47->addChild(ROUTE124);
 
 ROUTE* ROUTE125 = new ROUTE();
-ROUTE125->setFromField("fraction_changed");
-ROUTE125->setFromNode("TIMER");
-ROUTE125->setToField("set_fraction");
-ROUTE125->setToNode("R_MIDTARSAL_ANIMATOR");
+ROUTE125->setFromField(CString("fraction_changed"));
+ROUTE125->setFromNode(CString("TIMER"));
+ROUTE125->setToField(CString("set_fraction"));
+ROUTE125->setToNode(CString("R_MIDTARSAL_ANIMATOR"));
 ProtoBody47->addChild(ROUTE125);
 
 ROUTE* ROUTE126 = new ROUTE();
-ROUTE126->setFromField("fraction_changed");
-ROUTE126->setFromNode("TIMER");
-ROUTE126->setToField("set_fraction");
-ROUTE126->setToNode("VL5_ANIMATOR");
+ROUTE126->setFromField(CString("fraction_changed"));
+ROUTE126->setFromNode(CString("TIMER"));
+ROUTE126->setToField(CString("set_fraction"));
+ROUTE126->setToNode(CString("VL5_ANIMATOR"));
 ProtoBody47->addChild(ROUTE126);
 
 ROUTE* ROUTE127 = new ROUTE();
-ROUTE127->setFromField("fraction_changed");
-ROUTE127->setFromNode("TIMER");
-ROUTE127->setToField("set_fraction");
-ROUTE127->setToNode("SKULLBASE_ANIMATOR");
+ROUTE127->setFromField(CString("fraction_changed"));
+ROUTE127->setFromNode(CString("TIMER"));
+ROUTE127->setToField(CString("set_fraction"));
+ROUTE127->setToNode(CString("SKULLBASE_ANIMATOR"));
 ProtoBody47->addChild(ROUTE127);
 
 ROUTE* ROUTE128 = new ROUTE();
-ROUTE128->setFromField("fraction_changed");
-ROUTE128->setFromNode("TIMER");
-ROUTE128->setToField("set_fraction");
-ROUTE128->setToNode("L_SHOULDER_ANIMATOR");
+ROUTE128->setFromField(CString("fraction_changed"));
+ROUTE128->setFromNode(CString("TIMER"));
+ROUTE128->setToField(CString("set_fraction"));
+ROUTE128->setToNode(CString("L_SHOULDER_ANIMATOR"));
 ProtoBody47->addChild(ROUTE128);
 
 ROUTE* ROUTE129 = new ROUTE();
-ROUTE129->setFromField("fraction_changed");
-ROUTE129->setFromNode("TIMER");
-ROUTE129->setToField("set_fraction");
-ROUTE129->setToNode("L_ELBOW_ANIMATOR");
+ROUTE129->setFromField(CString("fraction_changed"));
+ROUTE129->setFromNode(CString("TIMER"));
+ROUTE129->setToField(CString("set_fraction"));
+ROUTE129->setToNode(CString("L_ELBOW_ANIMATOR"));
 ProtoBody47->addChild(ROUTE129);
 
 ROUTE* ROUTE130 = new ROUTE();
-ROUTE130->setFromField("fraction_changed");
-ROUTE130->setFromNode("TIMER");
-ROUTE130->setToField("set_fraction");
-ROUTE130->setToNode("L_WRIST_ANIMATOR");
+ROUTE130->setFromField(CString("fraction_changed"));
+ROUTE130->setFromNode(CString("TIMER"));
+ROUTE130->setToField(CString("set_fraction"));
+ROUTE130->setToNode(CString("L_WRIST_ANIMATOR"));
 ProtoBody47->addChild(ROUTE130);
 
 ROUTE* ROUTE131 = new ROUTE();
-ROUTE131->setFromField("fraction_changed");
-ROUTE131->setFromNode("TIMER");
-ROUTE131->setToField("set_fraction");
-ROUTE131->setToNode("R_SHOULDER_ANIMATOR");
+ROUTE131->setFromField(CString("fraction_changed"));
+ROUTE131->setFromNode(CString("TIMER"));
+ROUTE131->setToField(CString("set_fraction"));
+ROUTE131->setToNode(CString("R_SHOULDER_ANIMATOR"));
 ProtoBody47->addChild(ROUTE131);
 
 ROUTE* ROUTE132 = new ROUTE();
-ROUTE132->setFromField("fraction_changed");
-ROUTE132->setFromNode("TIMER");
-ROUTE132->setToField("set_fraction");
-ROUTE132->setToNode("R_ELBOW_ANIMATOR");
+ROUTE132->setFromField(CString("fraction_changed"));
+ROUTE132->setFromNode(CString("TIMER"));
+ROUTE132->setToField(CString("set_fraction"));
+ROUTE132->setToNode(CString("R_ELBOW_ANIMATOR"));
 ProtoBody47->addChild(ROUTE132);
 
 ROUTE* ROUTE133 = new ROUTE();
-ROUTE133->setFromField("fraction_changed");
-ROUTE133->setFromNode("TIMER");
-ROUTE133->setToField("set_fraction");
-ROUTE133->setToNode("R_WRIST_ANIMATOR");
+ROUTE133->setFromField(CString("fraction_changed"));
+ROUTE133->setFromNode(CString("TIMER"));
+ROUTE133->setToField(CString("set_fraction"));
+ROUTE133->setToNode(CString("R_WRIST_ANIMATOR"));
 ProtoBody47->addChild(ROUTE133);
 
-ProtoDeclare19->setProtoBody(ProtoBody47);
+ProtoDeclare19->addChild(ProtoBody47);
 
 Scene17->addChild(ProtoDeclare19);
 
 //======================================
 //Point to example use in case someone inspects this file
 Anchor* Anchor134 = new Anchor();
-Anchor134->setDescription("InterchangableActorsViaDynamicRouting");
-Anchor134->setParameter(new String[1]{"target=_blank"}, 1);
-Anchor134->setUrl(new String[4]{"InterchangableActorsViaDynamicRouting.x3d","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/InterchangableActorsViaDynamicRouting.x3d","InterchangableActorsViaDynamicRouting.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/InterchangableActorsViaDynamicRouting.wrl"}, 4);
+Anchor134->setDescription(CString("InterchangableActorsViaDynamicRouting"));
+Anchor134->setParameter(new CString[1]{CString("target=_blank")}, 1);
+Anchor134->setUrl(new CString[4]{CString("InterchangableActorsViaDynamicRouting.x3d"), CString("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/InterchangableActorsViaDynamicRouting.x3d"), CString("InterchangableActorsViaDynamicRouting.wrl"), CString("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/InterchangableActorsViaDynamicRouting.wrl")}, 4);
 Shape* Shape135 = new Shape();
 Text* Text136 = new Text();
-Text136->setString(new String[6]{"LOA1_RunAnimation.x3d","defines a prototype","for animating a humanoid.","","Click this text to see","InterchangableActorsViaDynamicRouting example."}, 6);
-FontStyle* FontStyle137 = new FontStyle();
-FontStyle137->setJustify(new String[2]{"MIDDLE","MIDDLE"}, 2);
+Text136->setString(new CString[6]{CString("LOA1_RunAnimation.x3d"), CString("defines a prototype"), CString("for animating a humanoid."), CString(""), CString("Click this text to see"), CString("InterchangableActorsViaDynamicRouting example.")}, 6);
+CFontStyle* FontStyle137 = new CFontStyle();
+FontStyle137->setJustify(new CString[2]{CString("MIDDLE"), CString("MIDDLE")}, 2);
 FontStyle137->setSize(0.8);
 Text136->setFontStyle(FontStyle137);
 
@@ -733,9 +734,9 @@ Shape135->setGeometry(Text136);
 Appearance* Appearance138 = new Appearance();
 Material* Material139 = new Material();
 Material139->setDiffuseColor(new float[3]{1,1,0.2});
-Appearance138->setMaterial(Material139);
+Appearance138->addChild(Material139);
 
-Shape135->setAppearance(Appearance138);
+Shape135->addChild(Appearance138);
 
 Anchor134->addChild(Shape135);
 
@@ -743,5 +744,4 @@ Scene17->addChild(Anchor134);
 
 X3D0->setScene(Scene17);
 
-X3D0->toXMLString();
 }

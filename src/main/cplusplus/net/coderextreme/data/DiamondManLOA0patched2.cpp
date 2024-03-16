@@ -1,148 +1,149 @@
-/* delete next 5 lines for Visual Studio */
+#ifdef WIN32
 #define FALSE false
 #define TRUE true
 #define WINAPI
 #define AFX_EXT_CLASS
 #define EXPORT32
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/CylinderExample/pch.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/CylinderExample/framework.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/XML_PARSER.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/X3DLib.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/Abstracts.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/Concretes.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/glMath.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/glut.h"
+#endif
+#define False false
+#define True true
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/SphereExample/SphereExample/pch.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/SphereExample/SphereExample/framework.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/SphereExample/include/XML_PARSER.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/SphereExample/include/X3DLib.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/SphereExample/include/glMath.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/SphereExample/include/glut.h"
 int main(int argc, char ** argv) {
 X3D* X3D0 = new X3D();
-X3D0->setProfile("Immersive");
-X3D0->setVersion("4.0");
+X3D0->setProfile(CString("Immersive"));
+X3D0->setVersion(CString("4.0"));
 head* head1 = new head();
 component* component2 = new component();
-component2->setName("HAnim");
+component2->setName(CString("HAnim"));
 component2->setLevel(1);
-head1->addComponent(component2);
+head1->addChild(component2);
 
 meta* meta3 = new meta();
-meta3->setName("title");
-meta3->setContent("DiamondManLOA0patched2.x3d");
+meta3->setName(CString("title"));
+meta3->setContent(CString("DiamondManLOA0patched2.x3d"));
 head1->addMeta(meta3);
 
 meta* meta4 = new meta();
-meta4->setName("description");
-meta4->setContent("HAnim skeletal structure for Level of Action (LOA) zero, with one diamond at the base node for the structure. HumanoidRoot only, so this is the minimum legal HAnim humanoid.");
+meta4->setName(CString("description"));
+meta4->setContent(CString("HAnim skeletal structure for Level of Action (LOA) zero, with one diamond at the base node for the structure. HumanoidRoot only, so this is the minimum legal HAnim humanoid."));
 head1->addMeta(meta4);
 
 meta* meta5 = new meta();
-meta5->setName("creator");
-meta5->setContent("Matthew T. Beitler");
+meta5->setName(CString("creator"));
+meta5->setContent(CString("Matthew T. Beitler"));
 head1->addMeta(meta5);
 
 meta* meta6 = new meta();
-meta6->setName("translator");
-meta6->setContent("Joel S. Pawloski");
+meta6->setName(CString("translator"));
+meta6->setContent(CString("Joel S. Pawloski"));
 head1->addMeta(meta6);
 
 meta* meta7 = new meta();
-meta7->setName("created");
-meta7->setContent("12 November 2001");
+meta7->setName(CString("created"));
+meta7->setContent(CString("12 November 2001"));
 head1->addMeta(meta7);
 
 meta* meta8 = new meta();
-meta8->setName("modified");
-meta8->setContent("2 November 2023");
+meta8->setName(CString("modified"));
+meta8->setContent(CString("2 November 2023"));
 head1->addMeta(meta8);
 
 meta* meta9 = new meta();
-meta9->setName("motto");
-meta9->setContent("(a) \"Diamonds are a girl's best friend.\" (b) \"Gosh, it sure is chilly in here.\"");
+meta9->setName(CString("motto"));
+meta9->setContent(CString("(a) \"Diamonds are a girl's best friend.\" (b) \"Gosh, it sure is chilly in here.\""));
 head1->addMeta(meta9);
 
 meta* meta10 = new meta();
-meta10->setName("reference");
-meta10->setContent("HAnim 2.0 specification, Appendix A: Nominal human body dimensions and levels of articulation (LOAs)");
+meta10->setName(CString("reference"));
+meta10->setContent(CString("HAnim 2.0 specification, Appendix A: Nominal human body dimensions and levels of articulation (LOAs)"));
 head1->addMeta(meta10);
 
 meta* meta11 = new meta();
-meta11->setName("reference");
-meta11->setContent("https://www.web3d.org/documents/specifications/19774-1/V2.0/HAnim/BodyDimensionsAndLOAs.html");
+meta11->setName(CString("reference"));
+meta11->setContent(CString("https://www.web3d.org/documents/specifications/19774-1/V2.0/HAnim/BodyDimensionsAndLOAs.html"));
 head1->addMeta(meta11);
 
 meta* meta12 = new meta();
-meta12->setName("reference");
-meta12->setContent("https://www.web3d.org/documents/specifications/19774-1/V2.0/HAnim/BodyDimensionsAndLOAs.html#LevelOfArticulationZero");
+meta12->setName(CString("reference"));
+meta12->setContent(CString("https://www.web3d.org/documents/specifications/19774-1/V2.0/HAnim/BodyDimensionsAndLOAs.html#LevelOfArticulationZero"));
 head1->addMeta(meta12);
 
 meta* meta13 = new meta();
-meta13->setName("reference");
-meta13->setContent("HAnim 1.1 specification, Appendix A: Suggested Body Dimensions and Levels of Articulation, Level of Articulation Zero");
+meta13->setName(CString("reference"));
+meta13->setContent(CString("HAnim 1.1 specification, Appendix A: Suggested Body Dimensions and Levels of Articulation, Level of Articulation Zero"));
 head1->addMeta(meta13);
 
 meta* meta14 = new meta();
-meta14->setName("reference");
-meta14->setContent("http://HAnim.org/Specifications/HAnim1.1/appendices.html#appendixa");
+meta14->setName(CString("reference"));
+meta14->setContent(CString("http://HAnim.org/Specifications/HAnim1.1/appendices.html#appendixa"));
 head1->addMeta(meta14);
 
 meta* meta15 = new meta();
-meta15->setName("reference");
-meta15->setContent("http://HAnim.org/Specifications/HAnim1.1/JointCenters1_1_LOA0.wrl");
+meta15->setName(CString("reference"));
+meta15->setContent(CString("http://HAnim.org/Specifications/HAnim1.1/JointCenters1_1_LOA0.wrl"));
 head1->addMeta(meta15);
 
 meta* meta16 = new meta();
-meta16->setName("reference");
-meta16->setContent("http://HAnim.org/Specifications/HAnim1.1/JointCenters1_1_LOA0-diamond.wrl");
+meta16->setName(CString("reference"));
+meta16->setContent(CString("http://HAnim.org/Specifications/HAnim1.1/JointCenters1_1_LOA0-diamond.wrl"));
 head1->addMeta(meta16);
 
 meta* meta17 = new meta();
-meta17->setName("reference");
-meta17->setContent("http://ece.uwaterloo.ca/~HAnim");
+meta17->setName(CString("reference"));
+meta17->setContent(CString("http://ece.uwaterloo.ca/~HAnim"));
 head1->addMeta(meta17);
 
 meta* meta18 = new meta();
-meta18->setName("reference");
-meta18->setContent("http://www.cis.upenn.edu/~badler/anthro/89-71.pdf");
+meta18->setName(CString("reference"));
+meta18->setContent(CString("http://www.cis.upenn.edu/~badler/anthro/89-71.pdf"));
 head1->addMeta(meta18);
 
 meta* meta19 = new meta();
-meta19->setName("reference");
-meta19->setContent("http://www.cis.upenn.edu/~badler/anthro/89-71.ps");
+meta19->setName(CString("reference"));
+meta19->setContent(CString("http://www.cis.upenn.edu/~badler/anthro/89-71.ps"));
 head1->addMeta(meta19);
 
 meta* meta20 = new meta();
-meta20->setName("reference");
-meta20->setContent("http://www.cis.upenn.edu/~beitler");
+meta20->setName(CString("reference"));
+meta20->setContent(CString("http://www.cis.upenn.edu/~beitler"));
 head1->addMeta(meta20);
 
 meta* meta21 = new meta();
-meta21->setName("Image");
-meta21->setContent("humanoid_landmark_locations.gif");
+meta21->setName(CString("Image"));
+meta21->setContent(CString("humanoid_landmark_locations.gif"));
 head1->addMeta(meta21);
 
 meta* meta22 = new meta();
-meta22->setName("Image");
-meta22->setContent("http://HAnim.org/Specifications/HAnim1.1/humanoid_landmark_locations.gif");
+meta22->setName(CString("Image"));
+meta22->setContent(CString("http://HAnim.org/Specifications/HAnim1.1/humanoid_landmark_locations.gif"));
 head1->addMeta(meta22);
 
 meta* meta23 = new meta();
-meta23->setName("identifier");
-meta23->setContent("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Templates/DiamondManLOA0.x3d");
+meta23->setName(CString("identifier"));
+meta23->setContent(CString("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Templates/DiamondManLOA0.x3d"));
 head1->addMeta(meta23);
 
 meta* meta24 = new meta();
-meta24->setName("generator");
-meta24->setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit");
+meta24->setName(CString("generator"));
+meta24->setContent(CString("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"));
 head1->addMeta(meta24);
 
 meta* meta25 = new meta();
-meta25->setName("license");
-meta25->setContent("../license.html");
+meta25->setName(CString("license"));
+meta25->setContent(CString("../license.html"));
 head1->addMeta(meta25);
 
 X3D0->setHead(head1);
 
 Scene* Scene26 = new Scene();
 WorldInfo* WorldInfo27 = new WorldInfo();
-WorldInfo27->setInfo(new String[1]{"HAnim 2.0 Default Joint Centers, Level Of Articulation (LOA) 0 -------------------------------------------------------- HANIM 1.1 (VRML 2.0) Author name: eMpTy (a.k.a. Matthew T. Beitler) HANIM 1.1 (VRML 2.0) Author email: beitler@graphics.cis.upenn.edu or beitler@acm.org HANIM 1.1 (VRML 2.0) Author homepage: http://www.cis.upenn.edu/~beitler HANIM 1.1 (VRML 2.0) Compliance Date: May 12, 1999 HANIM 1.1 Compliance Information: http://ece.uwaterloo.ca/~HAnim/ Construction Info (joint centers): The joint centers of this figure are based on the work of Norman Badler, director of the Center for Human Modeling and Simulation at the University of Pennsylvania. The original document which these joint centers are based on can be found at: http://www.cis.upenn.edu/~badler/anthro/89-71.ps, .pdf"}, 1);
-WorldInfo27->setTitle("HANIM 2.0 Default Joint Centers, LOA0");
+WorldInfo27->setInfo(new CString[1]{CString("HAnim 2.0 Default Joint Centers, Level Of Articulation (LOA) 0 -------------------------------------------------------- HANIM 1.1 (VRML 2.0) Author name: eMpTy (a.k.a. Matthew T. Beitler) HANIM 1.1 (VRML 2.0) Author email: beitler@graphics.cis.upenn.edu or beitler@acm.org HANIM 1.1 (VRML 2.0) Author homepage: http://www.cis.upenn.edu/~beitler HANIM 1.1 (VRML 2.0) Compliance Date: May 12, 1999 HANIM 1.1 Compliance Information: http://ece.uwaterloo.ca/~HAnim/ Construction Info (joint centers): The joint centers of this figure are based on the work of Norman Badler, director of the Center for Human Modeling and Simulation at the University of Pennsylvania. The original document which these joint centers are based on can be found at: http://www.cis.upenn.edu/~badler/anthro/89-71.ps, .pdf")}, 1);
+WorldInfo27->setTitle(CString("HANIM 2.0 Default Joint Centers, LOA0"));
 Scene26->addChild(WorldInfo27);
 
 NavigationInfo* NavigationInfo28 = new NavigationInfo();
@@ -151,81 +152,81 @@ Scene26->addChild(NavigationInfo28);
 
 Viewpoint* Viewpoint29 = new Viewpoint();
 Viewpoint29->setCenterOfRotation(new float[3]{0,1,0});
-Viewpoint29->setDescription("Diamond Man, LOA 0");
+Viewpoint29->setDescription(CString("Diamond Man, LOA 0"));
 Viewpoint29->setPosition(new float[3]{0,1,3});
 Scene26->addChild(Viewpoint29);
 
 HAnimHumanoid* HAnimHumanoid30 = new HAnimHumanoid();
-HAnimHumanoid30->setName("humanoid");
-HAnimHumanoid30->setDEF("hanim_humanoid");
+HAnimHumanoid30->setName(CString("humanoid"));
+HAnimHumanoid30->setDEF(CString("hanim_humanoid"));
 HAnimHumanoid30->setLoa(0);
-HAnimHumanoid30->setVersion("2.0");
+HAnimHumanoid30->setVersion(CString("2.0"));
 //original HAnimHumanoid info='\"authorEmail=beitler@graphics.cis.upenn.edu beitler@acm.org\" \"authorName=Matthew T. Beitler\" \"copyright=Copyright 1999 Matthew T. Beitler\" \"creationDate=05/12/99\" \"humanoidVersion=JointCenters 1.1 LOA0\" \"usageRestrictions=PERMISSION TO FULLY USE THIS SCENE GRAPH IS GRANTED PROVIDED THIS COPYRIGHT INFORMATION AND DOCUMENTATION OF THE ORIGINAL AUTHOR IS INCLUDED. This humanoid scene graph is provided _as-is_ and without warranty of any kind express implied or otherwise including without limitation any warranty of merchantability or fitness for a particular purpose.\"'
 MetadataSet* MetadataSet31 = new MetadataSet();
-MetadataSet31->setName("HAnimHumanoid.info");
-MetadataSet31->setReference("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid");
+MetadataSet31->setName(CString("HAnimHumanoid.info"));
+MetadataSet31->setReference(CString("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid"));
 MetadataString* MetadataString32 = new MetadataString();
-MetadataString32->setName("authorEmail");
-MetadataString32->setValue(new String[1]{"beitler@graphics.cis.upenn.edu beitler@acm.org"}, 1);
-MetadataSet31->setValue(MetadataString32);
+MetadataString32->setName(CString("authorEmail"));
+MetadataString32->setValue(new CString[1]{CString("beitler@graphics.cis.upenn.edu beitler@acm.org")}, 1);
+MetadataSet31->setValue((X3DNode *)MetadataString32);
 
 MetadataString* MetadataString33 = new MetadataString();
-MetadataString33->setName("authorName");
-MetadataString33->setValue(new String[1]{"Matthew T. Beitler"}, 1);
-MetadataSet31->setValue(MetadataString33);
+MetadataString33->setName(CString("authorName"));
+MetadataString33->setValue(new CString[1]{CString("Matthew T. Beitler")}, 1);
+MetadataSet31->setValue((X3DNode *)MetadataString33);
 
 MetadataString* MetadataString34 = new MetadataString();
-MetadataString34->setName("copyright");
-MetadataString34->setValue(new String[1]{"Copyright 1999 Matthew T. Beitler"}, 1);
-MetadataSet31->setValue(MetadataString34);
+MetadataString34->setName(CString("copyright"));
+MetadataString34->setValue(new CString[1]{CString("Copyright 1999 Matthew T. Beitler")}, 1);
+MetadataSet31->setValue((X3DNode *)MetadataString34);
 
 MetadataString* MetadataString35 = new MetadataString();
-MetadataString35->setName("creationDate");
-MetadataString35->setValue(new String[1]{"05/12/99"}, 1);
-MetadataSet31->setValue(MetadataString35);
+MetadataString35->setName(CString("creationDate"));
+MetadataString35->setValue(new CString[1]{CString("05/12/99")}, 1);
+MetadataSet31->setValue((X3DNode *)MetadataString35);
 
 MetadataString* MetadataString36 = new MetadataString();
-MetadataString36->setName("humanoidVersion");
-MetadataString36->setValue(new String[1]{"JointCenters 1.1 LOA0"}, 1);
-MetadataSet31->setValue(MetadataString36);
+MetadataString36->setName(CString("humanoidVersion"));
+MetadataString36->setValue(new CString[1]{CString("JointCenters 1.1 LOA0")}, 1);
+MetadataSet31->setValue((X3DNode *)MetadataString36);
 
 MetadataString* MetadataString37 = new MetadataString();
-MetadataString37->setName("usageRestrictions");
-MetadataString37->setValue(new String[1]{"PERMISSION TO FULLY USE THIS SCENE GRAPH IS GRANTED PROVIDED THIS COPYRIGHT INFORMATION AND DOCUMENTATION OF THE ORIGINAL AUTHOR IS INCLUDED. This humanoid scene graph is provided _as-is_ and without warranty of any kind express implied or otherwise including without limitation any warranty of merchantability or fitness for a particular purpose."}, 1);
-MetadataSet31->setValue(MetadataString37);
+MetadataString37->setName(CString("usageRestrictions"));
+MetadataString37->setValue(new CString[1]{CString("PERMISSION TO FULLY USE THIS SCENE GRAPH IS GRANTED PROVIDED THIS COPYRIGHT INFORMATION AND DOCUMENTATION OF THE ORIGINAL AUTHOR IS INCLUDED. This humanoid scene graph is provided _as-is_ and without warranty of any kind express implied or otherwise including without limitation any warranty of merchantability or fitness for a particular purpose.")}, 1);
+MetadataSet31->setValue((X3DNode *)MetadataString37);
 
 HAnimHumanoid30->setMetadata(MetadataSet31);
 
 HAnimJoint* HAnimJoint38 = new HAnimJoint();
-HAnimJoint38->setName("humanoid_root");
-HAnimJoint38->setDEF("hanim_humanoid_root");
+HAnimJoint38->setName(CString("humanoid_root"));
+HAnimJoint38->setDEF(CString("hanim_humanoid_root"));
 HAnimJoint38->setCenter(new float[3]{0,0.824,0.0277});
 HAnimJoint* HAnimJoint39 = new HAnimJoint();
-HAnimJoint39->setName("sacroiliac");
-HAnimJoint39->setDEF("hanim_sacroiliac");
+HAnimJoint39->setName(CString("sacroiliac"));
+HAnimJoint39->setDEF(CString("hanim_sacroiliac"));
 HAnimJoint39->setCenter(new float[3]{0,0.9149,0.0016});
 HAnimSegment* HAnimSegment40 = new HAnimSegment();
-HAnimSegment40->setName("pelvis");
-HAnimSegment40->setDEF("hanim_pelvis");
+HAnimSegment40->setName(CString("pelvis"));
+HAnimSegment40->setDEF(CString("hanim_pelvis"));
 Transform* Transform41 = new Transform();
 Transform41->setTranslation(new float[3]{0,0.9149,0.0016});
 Shape* Shape42 = new Shape();
-Shape42->setDEF("DiamondShape");
+Shape42->setDEF(CString("DiamondShape"));
 IndexedFaceSet* IndexedFaceSet43 = new IndexedFaceSet();
-IndexedFaceSet43->setCoordIndex(new int[32]{0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+IndexedFaceSet43->setCoordIndex(new int32_t[32]{0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1}, 32);
 IndexedFaceSet43->setCreaseAngle(0.5);
 Coordinate* Coordinate44 = new Coordinate();
-Coordinate44->setPoint(new float[18]{0,0.01,0,-0.01,0,0,0,0,0.01,0.01,0,0,0,0,-0.01,0,-0.01,0});
-IndexedFaceSet43->setCoord(Coordinate44);
+Coordinate44->setPoint(new float[18]{0,0.01,0,-0.01,0,0,0,0,0.01,0.01,0,0,0,0,-0.01,0,-0.01,0}, 18);
+IndexedFaceSet43->addChild(Coordinate44);
 
 Shape42->setGeometry(IndexedFaceSet43);
 
 Appearance* Appearance45 = new Appearance();
 Material* Material46 = new Material();
 Material46->setDiffuseColor(new float[3]{1,1,0});
-Appearance45->setMaterial(Material46);
+Appearance45->addChild(Material46);
 
-Shape42->setAppearance(Appearance45);
+Shape42->addChild(Appearance45);
 
 Transform41->addChild(Shape42);
 
@@ -238,31 +239,31 @@ HAnimJoint38->addChild(HAnimJoint39);
 HAnimHumanoid30->setSkeleton(HAnimJoint38);
 
 HAnimSite* HAnimSite47 = new HAnimSite();
-HAnimSite47->setName("site_view");
-HAnimSite47->setDEF("hanim_site_view");
+HAnimSite47->setName(CString("site_view"));
+HAnimSite47->setDEF(CString("hanim_site_view"));
 Viewpoint* Viewpoint48 = new Viewpoint();
-Viewpoint48->setDEF("InclinedView");
-Viewpoint48->setDescription("Inclined View");
+Viewpoint48->setDEF(CString("InclinedView"));
+Viewpoint48->setDescription(CString("Inclined View"));
 Viewpoint48->setOrientation(new float[4]{-0.113,0.993,0.0347,0.671});
 Viewpoint48->setPosition(new float[3]{1.62,1.05,2.06});
 HAnimSite47->addChild(Viewpoint48);
 
 Viewpoint* Viewpoint49 = new Viewpoint();
-Viewpoint49->setDEF("FrontView");
-Viewpoint49->setDescription("Front View");
+Viewpoint49->setDEF(CString("FrontView"));
+Viewpoint49->setDescription(CString("Front View"));
 Viewpoint49->setPosition(new float[3]{0,0.854,2.57665});
 HAnimSite47->addChild(Viewpoint49);
 
 Viewpoint* Viewpoint50 = new Viewpoint();
-Viewpoint50->setDEF("SideView");
-Viewpoint50->setDescription("Side View");
+Viewpoint50->setDEF(CString("SideView"));
+Viewpoint50->setDescription(CString("Side View"));
 Viewpoint50->setOrientation(new float[4]{0,1,0,1.57079});
 Viewpoint50->setPosition(new float[3]{2.5929,0.854,0});
 HAnimSite47->addChild(Viewpoint50);
 
 Viewpoint* Viewpoint51 = new Viewpoint();
-Viewpoint51->setDEF("TopView");
-Viewpoint51->setDescription("Top View");
+Viewpoint51->setDEF(CString("TopView"));
+Viewpoint51->setDescription(CString("Top View"));
 Viewpoint51->setOrientation(new float[4]{1,0,0,-1.57079});
 Viewpoint51->setPosition(new float[3]{0,3.4495,0});
 HAnimSite47->addChild(Viewpoint51);
@@ -270,20 +271,19 @@ HAnimSite47->addChild(Viewpoint51);
 HAnimHumanoid30->setViewpoints(HAnimSite47);
 
 HAnimJoint* HAnimJoint52 = new HAnimJoint();
-HAnimJoint52->setUSE("hanim_humanoid_root");
-HAnimHumanoid30->addJoints(HAnimJoint52);
+HAnimJoint52->setUSE(CString("hanim_humanoid_root"));
+HAnimHumanoid30->addChild(HAnimJoint52);
 
 HAnimJoint* HAnimJoint53 = new HAnimJoint();
-HAnimJoint53->setUSE("hanim_sacroiliac");
-HAnimHumanoid30->addJoints(HAnimJoint53);
+HAnimJoint53->setUSE(CString("hanim_sacroiliac"));
+HAnimHumanoid30->addChild(HAnimJoint53);
 
 HAnimSegment* HAnimSegment54 = new HAnimSegment();
-HAnimSegment54->setUSE("hanim_pelvis");
+HAnimSegment54->setUSE(CString("hanim_pelvis"));
 HAnimHumanoid30->setSegments(HAnimSegment54);
 
 Scene26->addChild(HAnimHumanoid30);
 
 X3D0->setScene(Scene26);
 
-X3D0->toXMLString();
 }

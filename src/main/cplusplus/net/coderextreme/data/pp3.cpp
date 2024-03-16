@@ -1,67 +1,68 @@
-/* delete next 5 lines for Visual Studio */
+#ifdef WIN32
 #define FALSE false
 #define TRUE true
 #define WINAPI
 #define AFX_EXT_CLASS
 #define EXPORT32
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/CylinderExample/pch.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/CylinderExample/framework.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/XML_PARSER.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/X3DLib.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/Abstracts.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/Concretes.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/glMath.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/glut.h"
+#endif
+#define False false
+#define True true
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/SphereExample/SphereExample/pch.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/SphereExample/SphereExample/framework.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/SphereExample/include/XML_PARSER.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/SphereExample/include/X3DLib.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/SphereExample/include/glMath.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/SphereExample/include/glut.h"
 int main(int argc, char ** argv) {
 X3D* X3D0 = new X3D();
-X3D0->setProfile("Immersive");
-X3D0->setVersion("3.3");
+X3D0->setProfile(CString("Immersive"));
+X3D0->setVersion(CString("3.3"));
 head* head1 = new head();
 meta* meta2 = new meta();
-meta2->setName("title");
-meta2->setContent("pp3.x3d");
+meta2->setName(CString("title"));
+meta2->setContent(CString("pp3.x3d"));
 head1->addMeta(meta2);
 
 meta* meta3 = new meta();
-meta3->setName("creator");
-meta3->setContent("John Carlson");
+meta3->setName(CString("creator"));
+meta3->setContent(CString("John Carlson"));
 head1->addMeta(meta3);
 
 meta* meta4 = new meta();
-meta4->setName("translator");
-meta4->setContent("John Carlson");
+meta4->setName(CString("translator"));
+meta4->setContent(CString("John Carlson"));
 head1->addMeta(meta4);
 
 meta* meta5 = new meta();
-meta5->setName("created");
-meta5->setContent("5 May 2015");
+meta5->setName(CString("created"));
+meta5->setContent(CString("5 May 2015"));
 head1->addMeta(meta5);
 
 meta* meta6 = new meta();
-meta6->setName("modified");
-meta6->setContent("23 Dec 2022");
+meta6->setName(CString("modified"));
+meta6->setContent(CString("23 Dec 2022"));
 head1->addMeta(meta6);
 
 meta* meta7 = new meta();
-meta7->setName("description");
-meta7->setContent("A process pipeline between three spheres (try typing on spheres and blue");
+meta7->setName(CString("description"));
+meta7->setContent(CString("A process pipeline between three spheres (try typing on spheres and blue"));
 head1->addMeta(meta7);
 
 meta* meta8 = new meta();
-meta8->setName("identifier");
-meta8->setContent("https://coderextreme.net/x3d/pp3.x3d");
+meta8->setName(CString("identifier"));
+meta8->setContent(CString("https://coderextreme.net/x3d/pp3.x3d"));
 head1->addMeta(meta8);
 
 meta* meta9 = new meta();
-meta9->setName("generator");
-meta9->setContent("manual");
+meta9->setName(CString("generator"));
+meta9->setContent(CString("manual"));
 head1->addMeta(meta9);
 
 X3D0->setHead(head1);
 
 Scene* Scene10 = new Scene();
 ProtoDeclare* ProtoDeclare11 = new ProtoDeclare();
-ProtoDeclare11->setName("Process");
+ProtoDeclare11->setName(CString("Process"));
 ProtoBody* ProtoBody12 = new ProtoBody();
 Group* Group13 = new Group();
 //left
@@ -72,14 +73,14 @@ Appearance* Appearance16 = new Appearance();
 Material* Material17 = new Material();
 Material17->setDiffuseColor(new float[3]{0.7,1,0});
 Material17->setTransparency(0.5);
-Appearance16->setMaterial(Material17);
+Appearance16->addChild(Material17);
 
-Shape15->setAppearance(Appearance16);
+Shape15->addChild(Appearance16);
 
 Extrusion* Extrusion18 = new Extrusion();
 Extrusion18->setCreaseAngle(0.785);
-Extrusion18->setCrossSection(new float[34]{1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0});
-Extrusion18->setSpine(new float[6]{-2.5,0,0,-1.5,0,0});
+Extrusion18->setCrossSection(new float[34]{1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0}, 34);
+Extrusion18->setSpine(new float[6]{-2.5,0,0,-1.5,0,0}, 6);
 Shape15->setGeometry(Extrusion18);
 
 Transform14->addChild(Shape15);
@@ -95,14 +96,14 @@ Appearance* Appearance21 = new Appearance();
 Material* Material22 = new Material();
 Material22->setDiffuseColor(new float[3]{0,0.7,1});
 Material22->setTransparency(0.5);
-Appearance21->setMaterial(Material22);
+Appearance21->addChild(Material22);
 
-Shape20->setAppearance(Appearance21);
+Shape20->addChild(Appearance21);
 
 Extrusion* Extrusion23 = new Extrusion();
 Extrusion23->setCreaseAngle(0.785);
-Extrusion23->setCrossSection(new float[34]{1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0});
-Extrusion23->setSpine(new float[6]{1.5,0,0,2.5,0,0});
+Extrusion23->setCrossSection(new float[34]{1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0}, 34);
+Extrusion23->setSpine(new float[6]{1.5,0,0,2.5,0,0}, 6);
 Shape20->setGeometry(Extrusion23);
 
 Transform19->addChild(Shape20);
@@ -112,15 +113,15 @@ Transform24->setTranslation(new float[3]{2,0,0});
 Shape* Shape25 = new Shape();
 Appearance* Appearance26 = new Appearance();
 Material* Material27 = new Material();
-Material27->setDEF("MaterialLightBlue");
+Material27->setDEF(CString("MaterialLightBlue"));
 Material27->setDiffuseColor(new float[3]{1,1,1});
-Appearance26->setMaterial(Material27);
+Appearance26->addChild(Material27);
 
-Shape25->setAppearance(Appearance26);
+Shape25->addChild(Appearance26);
 
 Text* Text28 = new Text();
-Text28->setDEF("RightString");
-Text28->setString(new String[1]{"r"}, 1);
+Text28->setDEF(CString("RightString"));
+Text28->setString(new CString[1]{CString("r")}, 1);
 Shape25->setGeometry(Text28);
 
 Transform24->addChild(Shape25);
@@ -128,13 +129,13 @@ Transform24->addChild(Shape25);
 Transform19->addChild(Transform24);
 
 StringSensor* StringSensor29 = new StringSensor();
-StringSensor29->setDEF("RightSensor");
+StringSensor29->setDEF(CString("RightSensor"));
 StringSensor29->setEnabled(False);
 Transform19->addChild(StringSensor29);
 
 TouchSensor* TouchSensor30 = new TouchSensor();
-TouchSensor30->setDescription("touch to activate");
-TouchSensor30->setDEF("RightTouch");
+TouchSensor30->setDescription(CString("touch to activate"));
+TouchSensor30->setDEF(CString("RightTouch"));
 Transform19->addChild(TouchSensor30);
 
 Group13->addChild(Transform19);
@@ -147,14 +148,14 @@ Appearance* Appearance33 = new Appearance();
 Material* Material34 = new Material();
 Material34->setDiffuseColor(new float[3]{0,0.7,1});
 Material34->setTransparency(0.5);
-Appearance33->setMaterial(Material34);
+Appearance33->addChild(Material34);
 
-Shape32->setAppearance(Appearance33);
+Shape32->addChild(Appearance33);
 
 Extrusion* Extrusion35 = new Extrusion();
 Extrusion35->setCreaseAngle(0.785);
-Extrusion35->setCrossSection(new float[34]{1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0});
-Extrusion35->setSpine(new float[6]{0,1.5,0,0,2.5,0});
+Extrusion35->setCrossSection(new float[34]{1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0}, 34);
+Extrusion35->setSpine(new float[6]{0,1.5,0,0,2.5,0}, 6);
 Shape32->setGeometry(Extrusion35);
 
 Transform31->addChild(Shape32);
@@ -164,14 +165,14 @@ Transform36->setTranslation(new float[3]{-0.5,2,0});
 Shape* Shape37 = new Shape();
 Appearance* Appearance38 = new Appearance();
 Material* Material39 = new Material();
-Material39->setUSE("MaterialLightBlue");
-Appearance38->setMaterial(Material39);
+Material39->setUSE(CString("MaterialLightBlue"));
+Appearance38->addChild(Material39);
 
-Shape37->setAppearance(Appearance38);
+Shape37->addChild(Appearance38);
 
 Text* Text40 = new Text();
-Text40->setDEF("UpString");
-Text40->setString(new String[1]{"u"}, 1);
+Text40->setDEF(CString("UpString"));
+Text40->setString(new CString[1]{CString("u")}, 1);
 Shape37->setGeometry(Text40);
 
 Transform36->addChild(Shape37);
@@ -179,13 +180,13 @@ Transform36->addChild(Shape37);
 Transform31->addChild(Transform36);
 
 StringSensor* StringSensor41 = new StringSensor();
-StringSensor41->setDEF("UpSensor");
+StringSensor41->setDEF(CString("UpSensor"));
 StringSensor41->setEnabled(False);
 Transform31->addChild(StringSensor41);
 
 TouchSensor* TouchSensor42 = new TouchSensor();
-TouchSensor42->setDescription("touch to activate");
-TouchSensor42->setDEF("UpTouch");
+TouchSensor42->setDescription(CString("touch to activate"));
+TouchSensor42->setDEF(CString("UpTouch"));
 Transform31->addChild(TouchSensor42);
 
 Group13->addChild(Transform31);
@@ -198,14 +199,14 @@ Appearance* Appearance45 = new Appearance();
 Material* Material46 = new Material();
 Material46->setDiffuseColor(new float[3]{0.7,1,0});
 Material46->setTransparency(0.5);
-Appearance45->setMaterial(Material46);
+Appearance45->addChild(Material46);
 
-Shape44->setAppearance(Appearance45);
+Shape44->addChild(Appearance45);
 
 Extrusion* Extrusion47 = new Extrusion();
 Extrusion47->setCreaseAngle(0.785);
-Extrusion47->setCrossSection(new float[34]{1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0});
-Extrusion47->setSpine(new float[6]{0,-2.5,0,0,-1.5,0});
+Extrusion47->setCrossSection(new float[34]{1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0}, 34);
+Extrusion47->setSpine(new float[6]{0,-2.5,0,0,-1.5,0}, 6);
 Shape44->setGeometry(Extrusion47);
 
 Transform43->addChild(Shape44);
@@ -219,9 +220,9 @@ Shape* Shape49 = new Shape();
 Appearance* Appearance50 = new Appearance();
 Material* Material51 = new Material();
 Material51->setDiffuseColor(new float[3]{1,0,0.7});
-Appearance50->setMaterial(Material51);
+Appearance50->addChild(Material51);
 
-Shape49->setAppearance(Appearance50);
+Shape49->addChild(Appearance50);
 
 Sphere* Sphere52 = new Sphere();
 Shape49->setGeometry(Sphere52);
@@ -234,13 +235,13 @@ Transform53->setTranslation(new float[3]{-0.5,0,1});
 Shape* Shape54 = new Shape();
 Appearance* Appearance55 = new Appearance();
 Material* Material56 = new Material();
-Material56->setUSE("MaterialLightBlue");
-Appearance55->setMaterial(Material56);
+Material56->setUSE(CString("MaterialLightBlue"));
+Appearance55->addChild(Material56);
 
-Shape54->setAppearance(Appearance55);
+Shape54->addChild(Appearance55);
 
 Text* Text57 = new Text();
-Text57->setDEF("CenterString");
+Text57->setDEF(CString("CenterString"));
 Shape54->setGeometry(Text57);
 
 Transform53->addChild(Shape54);
@@ -248,13 +249,13 @@ Transform53->addChild(Shape54);
 Transform48->addChild(Transform53);
 
 StringSensor* StringSensor58 = new StringSensor();
-StringSensor58->setDEF("CenterSensor");
+StringSensor58->setDEF(CString("CenterSensor"));
 StringSensor58->setEnabled(False);
 Transform48->addChild(StringSensor58);
 
 TouchSensor* TouchSensor59 = new TouchSensor();
-TouchSensor59->setDescription("touch to activate");
-TouchSensor59->setDEF("CenterTouch");
+TouchSensor59->setDescription(CString("touch to activate"));
+TouchSensor59->setDEF(CString("CenterTouch"));
 Transform48->addChild(TouchSensor59);
 
 Group13->addChild(Transform48);
@@ -262,147 +263,141 @@ Group13->addChild(Transform48);
 ProtoBody12->addChild(Group13);
 
 Script* Script60 = new Script();
-Script60->setDEF("RightSingleToMultiString");
+Script60->setDEF(CString("RightSingleToMultiString"));
 field* field61 = new field();
-field61->setName("set_rightstring");
-field61->setAccessType("inputOnly");
-field61->setType("SFString");
-Script60->addField(field61);
+field61->setName(CString("set_rightstring"));
+field61->setAccessType(CString("inputOnly"));
+field61->setType(CString("SFString"));
+Script60->addChild(field61);
 
 field* field62 = new field();
-field62->setName("rightlines");
-field62->setAccessType("outputOnly");
-field62->setType("MFString");
-Script60->addField(field62);
+field62->setName(CString("rightlines"));
+field62->setAccessType(CString("outputOnly"));
+field62->setType(CString("MFString"));
+Script60->addChild(field62);
 
 
-Script60.setSourceCode(`ecmascript:\n"+
-"\n"+
-"function initialize() {\n"+
-"	rightlines = new MFString(\"\");\n"+
-"}\n"+
-"\n"+
-"function set_rightstring(rightstr) {\n"+
-"	rightlines = new MFString(rightstr);\n"+
-"}`)
+Script60->setSourceCode(CString("ecmascript:")+
+_T("function initialize() {")+
+_T("	rightlines = new MFString(\"\");")+
+_T("}")+
+_T("function set_rightstring(rightstr) {")+
+_T("	rightlines = new MFString(rightstr);")+
+_T("}"));
 ProtoBody12->addChild(Script60);
 
 Script* Script63 = new Script();
-Script63->setDEF("UpSingleToMultiString");
+Script63->setDEF(CString("UpSingleToMultiString"));
 field* field64 = new field();
-field64->setName("set_upstring");
-field64->setAccessType("inputOnly");
-field64->setType("SFString");
-Script63->addField(field64);
+field64->setName(CString("set_upstring"));
+field64->setAccessType(CString("inputOnly"));
+field64->setType(CString("SFString"));
+Script63->addChild(field64);
 
 field* field65 = new field();
-field65->setName("uplines");
-field65->setAccessType("outputOnly");
-field65->setType("MFString");
-Script63->addField(field65);
+field65->setName(CString("uplines"));
+field65->setAccessType(CString("outputOnly"));
+field65->setType(CString("MFString"));
+Script63->addChild(field65);
 
 
-Script63.setSourceCode(`ecmascript:\n"+
-"\n"+
-"function initialize() {\n"+
-"	uplines = new MFString(\"\");\n"+
-"}\n"+
-"\n"+
-"function set_upstring(upstr) {\n"+
-"	uplines = new MFString(upstr);\n"+
-"}`)
+Script63->setSourceCode(CString("ecmascript:")+
+_T("function initialize() {")+
+_T("	uplines = new MFString(\"\");")+
+_T("}")+
+_T("function set_upstring(upstr) {")+
+_T("	uplines = new MFString(upstr);")+
+_T("}"));
 ProtoBody12->addChild(Script63);
 
 Script* Script66 = new Script();
-Script66->setDEF("CenterSingleToMultiString");
+Script66->setDEF(CString("CenterSingleToMultiString"));
 field* field67 = new field();
-field67->setName("set_centerstring");
-field67->setAccessType("inputOnly");
-field67->setType("SFString");
-Script66->addField(field67);
+field67->setName(CString("set_centerstring"));
+field67->setAccessType(CString("inputOnly"));
+field67->setType(CString("SFString"));
+Script66->addChild(field67);
 
 field* field68 = new field();
-field68->setName("centerlines");
-field68->setAccessType("outputOnly");
-field68->setType("MFString");
-Script66->addField(field68);
+field68->setName(CString("centerlines"));
+field68->setAccessType(CString("outputOnly"));
+field68->setType(CString("MFString"));
+Script66->addChild(field68);
 
 
-Script66.setSourceCode(`ecmascript:\n"+
-"\n"+
-"function initialize() {\n"+
-"	centerlines = new MFString(\"\");\n"+
-"}\n"+
-"\n"+
-"function set_centerstring(centerstr) {\n"+
-"	centerlines = new MFString(centerstr);\n"+
-"}`)
+Script66->setSourceCode(CString("ecmascript:")+
+_T("function initialize() {")+
+_T("	centerlines = new MFString(\"\");")+
+_T("}")+
+_T("function set_centerstring(centerstr) {")+
+_T("	centerlines = new MFString(centerstr);")+
+_T("}"));
 ProtoBody12->addChild(Script66);
 
 ROUTE* ROUTE69 = new ROUTE();
-ROUTE69->setFromField("enteredText");
-ROUTE69->setFromNode("CenterSensor");
-ROUTE69->setToField("set_centerstring");
-ROUTE69->setToNode("CenterSingleToMultiString");
+ROUTE69->setFromField(CString("enteredText"));
+ROUTE69->setFromNode(CString("CenterSensor"));
+ROUTE69->setToField(CString("set_centerstring"));
+ROUTE69->setToNode(CString("CenterSingleToMultiString"));
 ProtoBody12->addChild(ROUTE69);
 
 ROUTE* ROUTE70 = new ROUTE();
-ROUTE70->setFromField("centerlines");
-ROUTE70->setFromNode("CenterSingleToMultiString");
-ROUTE70->setToField("set_string");
-ROUTE70->setToNode("CenterString");
+ROUTE70->setFromField(CString("centerlines"));
+ROUTE70->setFromNode(CString("CenterSingleToMultiString"));
+ROUTE70->setToField(CString("set_string"));
+ROUTE70->setToNode(CString("CenterString"));
 ProtoBody12->addChild(ROUTE70);
 
 ROUTE* ROUTE71 = new ROUTE();
-ROUTE71->setFromField("isOver");
-ROUTE71->setFromNode("CenterTouch");
-ROUTE71->setToField("set_enabled");
-ROUTE71->setToNode("CenterSensor");
+ROUTE71->setFromField(CString("isOver"));
+ROUTE71->setFromNode(CString("CenterTouch"));
+ROUTE71->setToField(CString("set_enabled"));
+ROUTE71->setToNode(CString("CenterSensor"));
 ProtoBody12->addChild(ROUTE71);
 
 ROUTE* ROUTE72 = new ROUTE();
-ROUTE72->setFromField("enteredText");
-ROUTE72->setFromNode("RightSensor");
-ROUTE72->setToField("set_rightstring");
-ROUTE72->setToNode("RightSingleToMultiString");
+ROUTE72->setFromField(CString("enteredText"));
+ROUTE72->setFromNode(CString("RightSensor"));
+ROUTE72->setToField(CString("set_rightstring"));
+ROUTE72->setToNode(CString("RightSingleToMultiString"));
 ProtoBody12->addChild(ROUTE72);
 
 ROUTE* ROUTE73 = new ROUTE();
-ROUTE73->setFromField("rightlines");
-ROUTE73->setFromNode("RightSingleToMultiString");
-ROUTE73->setToField("set_string");
-ROUTE73->setToNode("RightString");
+ROUTE73->setFromField(CString("rightlines"));
+ROUTE73->setFromNode(CString("RightSingleToMultiString"));
+ROUTE73->setToField(CString("set_string"));
+ROUTE73->setToNode(CString("RightString"));
 ProtoBody12->addChild(ROUTE73);
 
 ROUTE* ROUTE74 = new ROUTE();
-ROUTE74->setFromField("isOver");
-ROUTE74->setFromNode("RightTouch");
-ROUTE74->setToField("set_enabled");
-ROUTE74->setToNode("RightSensor");
+ROUTE74->setFromField(CString("isOver"));
+ROUTE74->setFromNode(CString("RightTouch"));
+ROUTE74->setToField(CString("set_enabled"));
+ROUTE74->setToNode(CString("RightSensor"));
 ProtoBody12->addChild(ROUTE74);
 
 ROUTE* ROUTE75 = new ROUTE();
-ROUTE75->setFromField("enteredText");
-ROUTE75->setFromNode("UpSensor");
-ROUTE75->setToField("set_upstring");
-ROUTE75->setToNode("UpSingleToMultiString");
+ROUTE75->setFromField(CString("enteredText"));
+ROUTE75->setFromNode(CString("UpSensor"));
+ROUTE75->setToField(CString("set_upstring"));
+ROUTE75->setToNode(CString("UpSingleToMultiString"));
 ProtoBody12->addChild(ROUTE75);
 
 ROUTE* ROUTE76 = new ROUTE();
-ROUTE76->setFromField("uplines");
-ROUTE76->setFromNode("UpSingleToMultiString");
-ROUTE76->setToField("set_string");
-ROUTE76->setToNode("UpString");
+ROUTE76->setFromField(CString("uplines"));
+ROUTE76->setFromNode(CString("UpSingleToMultiString"));
+ROUTE76->setToField(CString("set_string"));
+ROUTE76->setToNode(CString("UpString"));
 ProtoBody12->addChild(ROUTE76);
 
 ROUTE* ROUTE77 = new ROUTE();
-ROUTE77->setFromField("isOver");
-ROUTE77->setFromNode("UpTouch");
-ROUTE77->setToField("set_enabled");
-ROUTE77->setToNode("UpSensor");
+ROUTE77->setFromField(CString("isOver"));
+ROUTE77->setFromNode(CString("UpTouch"));
+ROUTE77->setToField(CString("set_enabled"));
+ROUTE77->setToNode(CString("UpSensor"));
 ProtoBody12->addChild(ROUTE77);
 
-ProtoDeclare11->setProtoBody(ProtoBody12);
+ProtoDeclare11->addChild(ProtoBody12);
 
 Scene10->addChild(ProtoDeclare11);
 
@@ -410,7 +405,7 @@ NavigationInfo* NavigationInfo78 = new NavigationInfo();
 Scene10->addChild(NavigationInfo78);
 
 Viewpoint* Viewpoint79 = new Viewpoint();
-Viewpoint79->setDescription("Process pipes");
+Viewpoint79->setDescription(CString("Process pipes"));
 Viewpoint79->setOrientation(new float[4]{1,0,0,-0.4});
 Viewpoint79->setPosition(new float[3]{0,5,12});
 Scene10->addChild(Viewpoint79);
@@ -418,14 +413,14 @@ Scene10->addChild(Viewpoint79);
 Transform* Transform80 = new Transform();
 Transform80->setTranslation(new float[3]{0,-2.5,0});
 ProtoInstance* ProtoInstance81 = new ProtoInstance();
-ProtoInstance81->setName("Process");
+ProtoInstance81->setName(CString("Process"));
 Transform80->addChild(ProtoInstance81);
 
 Scene10->addChild(Transform80);
 
 Transform* Transform82 = new Transform();
 ProtoInstance* ProtoInstance83 = new ProtoInstance();
-ProtoInstance83->setName("Process");
+ProtoInstance83->setName(CString("Process"));
 Transform82->addChild(ProtoInstance83);
 
 Scene10->addChild(Transform82);
@@ -433,12 +428,11 @@ Scene10->addChild(Transform82);
 Transform* Transform84 = new Transform();
 Transform84->setTranslation(new float[3]{0,2.5,0});
 ProtoInstance* ProtoInstance85 = new ProtoInstance();
-ProtoInstance85->setName("Process");
+ProtoInstance85->setName(CString("Process"));
 Transform84->addChild(ProtoInstance85);
 
 Scene10->addChild(Transform84);
 
 X3D0->setScene(Scene10);
 
-X3D0->toXMLString();
 }

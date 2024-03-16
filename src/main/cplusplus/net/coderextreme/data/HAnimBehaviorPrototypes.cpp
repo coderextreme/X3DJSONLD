@@ -1,113 +1,114 @@
-/* delete next 5 lines for Visual Studio */
+#ifdef WIN32
 #define FALSE false
 #define TRUE true
 #define WINAPI
 #define AFX_EXT_CLASS
 #define EXPORT32
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/CylinderExample/pch.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/CylinderExample/framework.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/XML_PARSER.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/X3DLib.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/Abstracts.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/Concretes.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/glMath.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/glut.h"
+#endif
+#define False false
+#define True true
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/SphereExample/SphereExample/pch.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/SphereExample/SphereExample/framework.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/SphereExample/include/XML_PARSER.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/SphereExample/include/X3DLib.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/SphereExample/include/glMath.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/SphereExample/include/glut.h"
 int main(int argc, char ** argv) {
 X3D* X3D0 = new X3D();
-X3D0->setProfile("Immersive");
-X3D0->setVersion("3.3");
+X3D0->setProfile(CString("Immersive"));
+X3D0->setVersion(CString("3.3"));
 head* head1 = new head();
 component* component2 = new component();
-component2->setName("HAnim");
+component2->setName(CString("HAnim"));
 component2->setLevel(1);
-head1->addComponent(component2);
+head1->addChild(component2);
 
 meta* meta3 = new meta();
-meta3->setName("title");
-meta3->setContent("HAnimBehaviorPrototypes.x3d");
+meta3->setName(CString("title"));
+meta3->setContent(CString("HAnimBehaviorPrototypes.x3d"));
 head1->addMeta(meta3);
 
 meta* meta4 = new meta();
-meta4->setName("description");
-meta4->setContent("Prototypes for HAnimBehavior node, which collects OrientationInterpolators for aggregate animation of an HAnim humanoid model, and HAnimBodyBehaviorChooser, which selects one body and enables/disables multiple aggregated behaviors.");
+meta4->setName(CString("description"));
+meta4->setContent(CString("Prototypes for HAnimBehavior node, which collects OrientationInterpolators for aggregate animation of an HAnim humanoid model, and HAnimBodyBehaviorChooser, which selects one body and enables/disables multiple aggregated behaviors."));
 head1->addMeta(meta4);
 
 meta* meta5 = new meta();
-meta5->setName("creator");
-meta5->setContent("Don Brutzman, Jeff Weekley, MV4205 Advanced X3D Authoring class, and Keith Victor");
+meta5->setName(CString("creator"));
+meta5->setContent(CString("Don Brutzman, Jeff Weekley, MV4205 Advanced X3D Authoring class, and Keith Victor"));
 head1->addMeta(meta5);
 
 meta* meta6 = new meta();
-meta6->setName("created");
-meta6->setContent("2 May 2006");
+meta6->setName(CString("created"));
+meta6->setContent(CString("2 May 2006"));
 head1->addMeta(meta6);
 
 meta* meta7 = new meta();
-meta7->setName("modified");
-meta7->setContent("4 July 2020");
+meta7->setName(CString("modified"));
+meta7->setContent(CString("4 July 2020"));
 head1->addMeta(meta7);
 
 meta* meta8 = new meta();
-meta8->setName("reference");
-meta8->setContent("Web3D2007BlendedBehaviorsChangeableBodies.pdf");
+meta8->setName(CString("reference"));
+meta8->setContent(CString("Web3D2007BlendedBehaviorsChangeableBodies.pdf"));
 head1->addMeta(meta8);
 
 meta* meta9 = new meta();
-meta9->setName("reference");
-meta9->setContent("https://www.web3d.org/files/specifications/19774/V1.0");
+meta9->setName(CString("reference"));
+meta9->setContent(CString("https://www.web3d.org/files/specifications/19774/V1.0"));
 head1->addMeta(meta9);
 
 meta* meta10 = new meta();
-meta10->setName("reference");
-meta10->setContent("https://www.web3d.org/x3d/specifications/ISO-IEC-19775-X3DAbstractSpecification_Revision1_to_Part1/Part01/components/hanim.html");
+meta10->setName(CString("reference"));
+meta10->setContent(CString("https://www.web3d.org/x3d/specifications/ISO-IEC-19775-X3DAbstractSpecification_Revision1_to_Part1/Part01/components/hanim.html"));
 head1->addMeta(meta10);
 
 meta* meta11 = new meta();
-meta11->setName("reference");
-meta11->setContent("InterchangableActorsViaDynamicRoutingPrototypes.x3d");
+meta11->setName(CString("reference"));
+meta11->setContent(CString("InterchangableActorsViaDynamicRoutingPrototypes.x3d"));
 head1->addMeta(meta11);
 
 meta* meta12 = new meta();
-meta12->setName("reference");
-meta12->setContent("ApaydinThesis.pdf");
+meta12->setName(CString("reference"));
+meta12->setContent(CString("ApaydinThesis.pdf"));
 head1->addMeta(meta12);
 
 meta* meta13 = new meta();
-meta13->setName("subject");
-meta13->setContent("X3D HAnim humanoid animation behaviors");
+meta13->setName(CString("subject"));
+meta13->setContent(CString("X3D HAnim humanoid animation behaviors"));
 head1->addMeta(meta13);
 
 meta* meta14 = new meta();
-meta14->setName("warning");
-meta14->setContent("under development. should joint translations be exposed? upgrade to HAnim v2.2");
+meta14->setName(CString("warning"));
+meta14->setContent(CString("under development. should joint translations be exposed? upgrade to HAnim v2.2"));
 head1->addMeta(meta14);
 
 meta* meta15 = new meta();
-meta15->setName("identifier");
-meta15->setContent("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/HAnimBehaviorPrototypes.x3d");
+meta15->setName(CString("identifier"));
+meta15->setContent(CString("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/HAnimBehaviorPrototypes.x3d"));
 head1->addMeta(meta15);
 
 meta* meta16 = new meta();
-meta16->setName("generator");
-meta16->setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit");
+meta16->setName(CString("generator"));
+meta16->setContent(CString("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"));
 head1->addMeta(meta16);
 
 meta* meta17 = new meta();
-meta17->setName("license");
-meta17->setContent("../license.html");
+meta17->setName(CString("license"));
+meta17->setContent(CString("../license.html"));
 head1->addMeta(meta17);
 
 X3D0->setHead(head1);
 
 Scene* Scene18 = new Scene();
 WorldInfo* WorldInfo19 = new WorldInfo();
-WorldInfo19->setTitle("HAnimBehaviorPrototypes.x3d");
+WorldInfo19->setTitle(CString("HAnimBehaviorPrototypes.x3d"));
 Scene18->addChild(WorldInfo19);
 
 ProtoDeclare* ProtoDeclare20 = new ProtoDeclare();
-ProtoDeclare20->setName("HAnimBehavior");
-ProtoDeclare20->setAppinfo("The HAnimBehavior node models a single humanoid behavior either for an entire body or simply parts of a body. It collects a TimeSensor clock with a single PositionInterpolator and multiple OrientationInterpolator nodes to provide a single humanoid behavior.");
-ProtoDeclare20->setDocumentation("https://www.web3d.org/files/specifications/19774/V1.0/");
+ProtoDeclare20->setName(CString("HAnimBehavior"));
+ProtoDeclare20->setAppinfo(CString("The HAnimBehavior node models a single humanoid behavior either for an entire body or simply parts of a body. It collects a TimeSensor clock with a single PositionInterpolator and multiple OrientationInterpolator nodes to provide a single humanoid behavior."));
+ProtoDeclare20->setDocumentation(CString("https://www.web3d.org/files/specifications/19774/V1.0/"));
 ProtoInterface* ProtoInterface21 = new ProtoInterface();
 //supported Level of Articulation (LOA)
 //shared common input for single TimeSensor animating all interpolators, since different Behaviors may have different cycleInterval durations
@@ -116,9469 +117,9469 @@ ProtoInterface* ProtoInterface21 = new ProtoInterface();
 //pass in key/keyValue array pairs for single PositionInterpolator
 //pass in key/keyValue array pairs and expose named output for each OrientationInterpolator, joint by joint
 field* field22 = new field();
-field22->setName("supportedLOA");
-field22->setAccessType("inputOutput");
-field22->setAppinfo("Supported Level of Articulation (LOA) support needed by authored HAnimBehavior set of OrientationInterpolator values. Legal values 0 1 2 3.");
-field22->setType("SFInt32");
-field22->setValue("-1");
-ProtoInterface21->addField(field22);
+field22->setName(CString("supportedLOA"));
+field22->setAccessType(CString("inputOutput"));
+field22->setAppinfo(CString("Supported Level of Articulation (LOA) support needed by authored HAnimBehavior set of OrientationInterpolator values. Legal values 0 1 2 3."));
+field22->setType(CString("SFInt32"));
+field22->setValue(CString("-1"));
+ProtoInterface21->addChild(field22);
 
 field* field23 = new field();
-field23->setName("enabled");
-field23->setAccessType("inputOutput");
-field23->setAppinfo("is this behavior enabled?");
-field23->setType("SFBool");
-field23->setValue("true");
-ProtoInterface21->addField(field23);
+field23->setName(CString("enabled"));
+field23->setAccessType(CString("inputOutput"));
+field23->setAppinfo(CString("is this behavior enabled?"));
+field23->setType(CString("SFBool"));
+field23->setValue(CString("true"));
+ProtoInterface21->addChild(field23);
 
 field* field24 = new field();
-field24->setName("cycleInterval");
-field24->setAccessType("inputOutput");
-field24->setAppinfo("how long do these interpolators take to execute?");
-field24->setType("SFTime");
-field24->setValue("1");
-ProtoInterface21->addField(field24);
+field24->setName(CString("cycleInterval"));
+field24->setAccessType(CString("inputOutput"));
+field24->setAppinfo(CString("how long do these interpolators take to execute?"));
+field24->setType(CString("SFTime"));
+field24->setValue(CString("1"));
+ProtoInterface21->addChild(field24);
 
 field* field25 = new field();
-field25->setName("loop");
-field25->setAccessType("inputOutput");
-field25->setAppinfo("whether or not this behavior loops (e.g. walking) or is single shot (e.g. shake hands).");
-field25->setType("SFBool");
-field25->setValue("false");
-ProtoInterface21->addField(field25);
+field25->setName(CString("loop"));
+field25->setAccessType(CString("inputOutput"));
+field25->setAppinfo(CString("whether or not this behavior loops (e.g. walking) or is single shot (e.g. shake hands)."));
+field25->setType(CString("SFBool"));
+field25->setValue(CString("false"));
+ProtoInterface21->addChild(field25);
 
 field* field26 = new field();
-field26->setName("startTime");
-field26->setAccessType("inputOutput");
-field26->setAppinfo("when time now >= startTime isActive becomes true and TimeSensor becomes active");
-field26->setType("SFTime");
-field26->setValue("0");
-ProtoInterface21->addField(field26);
+field26->setName(CString("startTime"));
+field26->setAccessType(CString("inputOutput"));
+field26->setAppinfo(CString("when time now >= startTime isActive becomes true and TimeSensor becomes active"));
+field26->setType(CString("SFTime"));
+field26->setValue(CString("0"));
+ProtoInterface21->addChild(field26);
 
 field* field27 = new field();
-field27->setName("stopTime");
-field27->setAccessType("inputOutput");
-field27->setAppinfo("when stopTime becomes <= time now isActive becomes false and TimeSensor becomes inactive");
-field27->setType("SFTime");
-field27->setValue("0");
-ProtoInterface21->addField(field27);
+field27->setName(CString("stopTime"));
+field27->setAccessType(CString("inputOutput"));
+field27->setAppinfo(CString("when stopTime becomes <= time now isActive becomes false and TimeSensor becomes inactive"));
+field27->setType(CString("SFTime"));
+field27->setValue(CString("0"));
+ProtoInterface21->addChild(field27);
 
 field* field28 = new field();
-field28->setName("pauseTime");
-field28->setAccessType("inputOutput");
-field28->setAppinfo("when time now >= pauseTime isPaused becomes true and TimeSensor becomes paused");
-field28->setType("SFTime");
-field28->setValue("0");
-ProtoInterface21->addField(field28);
+field28->setName(CString("pauseTime"));
+field28->setAccessType(CString("inputOutput"));
+field28->setAppinfo(CString("when time now >= pauseTime isPaused becomes true and TimeSensor becomes paused"));
+field28->setType(CString("SFTime"));
+field28->setValue(CString("0"));
+ProtoInterface21->addChild(field28);
 
 field* field29 = new field();
-field29->setName("resumeTime");
-field29->setAccessType("inputOutput");
-field29->setAppinfo("when resumeTime becomes <= time now isPaused becomes false and TimeSensor becomes inactive");
-field29->setType("SFTime");
-field29->setValue("0");
-ProtoInterface21->addField(field29);
+field29->setName(CString("resumeTime"));
+field29->setAccessType(CString("inputOutput"));
+field29->setAppinfo(CString("when resumeTime becomes <= time now isPaused becomes false and TimeSensor becomes inactive"));
+field29->setType(CString("SFTime"));
+field29->setValue(CString("0"));
+ProtoInterface21->addChild(field29);
 
 field* field30 = new field();
-field30->setName("cycleTime");
-field30->setAccessType("outputOnly");
-field30->setAppinfo("cycleTime sends a time outputOnly at startTime and also at the beginning of each new cycle");
-field30->setType("SFTime");
-ProtoInterface21->addField(field30);
+field30->setName(CString("cycleTime"));
+field30->setAccessType(CString("outputOnly"));
+field30->setAppinfo(CString("cycleTime sends a time outputOnly at startTime and also at the beginning of each new cycle"));
+field30->setType(CString("SFTime"));
+ProtoInterface21->addChild(field30);
 
 field* field31 = new field();
-field31->setName("isActive");
-field31->setAccessType("outputOnly");
-field31->setAppinfo("isActive true/false events are sent when TimeSensor starts/stops running");
-field31->setType("SFBool");
-ProtoInterface21->addField(field31);
+field31->setName(CString("isActive"));
+field31->setAccessType(CString("outputOnly"));
+field31->setAppinfo(CString("isActive true/false events are sent when TimeSensor starts/stops running"));
+field31->setType(CString("SFBool"));
+ProtoInterface21->addChild(field31);
 
 field* field32 = new field();
-field32->setName("isPaused");
-field32->setAccessType("outputOnly");
-field32->setAppinfo("isPaused true/false events are sent when TimeSensor is paused/resumed");
-field32->setType("SFBool");
-ProtoInterface21->addField(field32);
+field32->setName(CString("isPaused"));
+field32->setAccessType(CString("outputOnly"));
+field32->setAppinfo(CString("isPaused true/false events are sent when TimeSensor is paused/resumed"));
+field32->setType(CString("SFBool"));
+ProtoInterface21->addChild(field32);
 
 field* field33 = new field();
-field33->setName("elapsedTime");
-field33->setAccessType("outputOnly");
-field33->setAppinfo("current elapsed time since TimeSensor activated/running cumulative in seconds and not counting any paused time");
-field33->setType("SFBool");
-ProtoInterface21->addField(field33);
+field33->setName(CString("elapsedTime"));
+field33->setAccessType(CString("outputOnly"));
+field33->setAppinfo(CString("current elapsed time since TimeSensor activated/running cumulative in seconds and not counting any paused time"));
+field33->setType(CString("SFBool"));
+ProtoInterface21->addChild(field33);
 
 field* field34 = new field();
-field34->setName("time");
-field34->setAccessType("outputOnly");
-field34->setAppinfo("continuously sends the absolute time (since January 1 1970)");
-field34->setType("SFBool");
-ProtoInterface21->addField(field34);
+field34->setName(CString("time"));
+field34->setAccessType(CString("outputOnly"));
+field34->setAppinfo(CString("continuously sends the absolute time (since January 1 1970)"));
+field34->setType(CString("SFBool"));
+ProtoInterface21->addChild(field34);
 
 field* field35 = new field();
-field35->setName("fraction_changed");
-field35->setAccessType("outputOnly");
-field35->setAppinfo("fraction_changed continuously sends value in range [0 1] showing time progress in the current cycle.");
-field35->setType("SFFloat");
-ProtoInterface21->addField(field35);
+field35->setName(CString("fraction_changed"));
+field35->setAccessType(CString("outputOnly"));
+field35->setAppinfo(CString("fraction_changed continuously sends value in range [0 1] showing time progress in the current cycle."));
+field35->setType(CString("SFFloat"));
+ProtoInterface21->addChild(field35);
 
 field* field36 = new field();
-field36->setName("HumanoidRoot_translation_key");
-field36->setAccessType("inputOutput");
-field36->setType("MFFloat");
+field36->setName(CString("HumanoidRoot_translation_key"));
+field36->setAccessType(CString("inputOutput"));
+field36->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field36);
+ProtoInterface21->addChild(field36);
 
 field* field37 = new field();
-field37->setName("HumanoidRoot_translation_keyValue");
-field37->setAccessType("inputOutput");
-field37->setType("MFVec3f");
+field37->setName(CString("HumanoidRoot_translation_keyValue"));
+field37->setAccessType(CString("inputOutput"));
+field37->setType(CString("MFVec3f"));
 //no default value
-ProtoInterface21->addField(field37);
+ProtoInterface21->addChild(field37);
 
 field* field38 = new field();
-field38->setName("HumanoidRoot_translation_changed");
-field38->setAccessType("outputOnly");
-field38->setType("SFVec3f");
-ProtoInterface21->addField(field38);
+field38->setName(CString("HumanoidRoot_translation_changed"));
+field38->setAccessType(CString("outputOnly"));
+field38->setType(CString("SFVec3f"));
+ProtoInterface21->addChild(field38);
 
 field* field39 = new field();
-field39->setName("HumanoidRoot_rotation_key");
-field39->setAccessType("inputOutput");
-field39->setType("MFFloat");
+field39->setName(CString("HumanoidRoot_rotation_key"));
+field39->setAccessType(CString("inputOutput"));
+field39->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field39);
+ProtoInterface21->addChild(field39);
 
 field* field40 = new field();
-field40->setName("HumanoidRoot_rotation_keyValue");
-field40->setAccessType("inputOutput");
-field40->setType("MFRotation");
+field40->setName(CString("HumanoidRoot_rotation_keyValue"));
+field40->setAccessType(CString("inputOutput"));
+field40->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field40);
+ProtoInterface21->addChild(field40);
 
 field* field41 = new field();
-field41->setName("HumanoidRoot_rotation_changed");
-field41->setAccessType("outputOnly");
-field41->setType("SFRotation");
-ProtoInterface21->addField(field41);
+field41->setName(CString("HumanoidRoot_rotation_changed"));
+field41->setAccessType(CString("outputOnly"));
+field41->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field41);
 
 field* field42 = new field();
-field42->setName("c1_key");
-field42->setAccessType("inputOutput");
-field42->setType("MFFloat");
+field42->setName(CString("c1_key"));
+field42->setAccessType(CString("inputOutput"));
+field42->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field42);
+ProtoInterface21->addChild(field42);
 
 field* field43 = new field();
-field43->setName("c1_keyValue");
-field43->setAccessType("inputOutput");
-field43->setType("MFRotation");
+field43->setName(CString("c1_keyValue"));
+field43->setAccessType(CString("inputOutput"));
+field43->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field43);
+ProtoInterface21->addChild(field43);
 
 field* field44 = new field();
-field44->setName("c1_changed");
-field44->setAccessType("outputOnly");
-field44->setType("SFRotation");
-ProtoInterface21->addField(field44);
+field44->setName(CString("c1_changed"));
+field44->setAccessType(CString("outputOnly"));
+field44->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field44);
 
 field* field45 = new field();
-field45->setName("c2_key");
-field45->setAccessType("inputOutput");
-field45->setType("MFFloat");
+field45->setName(CString("c2_key"));
+field45->setAccessType(CString("inputOutput"));
+field45->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field45);
+ProtoInterface21->addChild(field45);
 
 field* field46 = new field();
-field46->setName("c2_keyValue");
-field46->setAccessType("inputOutput");
-field46->setType("MFRotation");
+field46->setName(CString("c2_keyValue"));
+field46->setAccessType(CString("inputOutput"));
+field46->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field46);
+ProtoInterface21->addChild(field46);
 
 field* field47 = new field();
-field47->setName("c2_changed");
-field47->setAccessType("outputOnly");
-field47->setType("SFRotation");
-ProtoInterface21->addField(field47);
+field47->setName(CString("c2_changed"));
+field47->setAccessType(CString("outputOnly"));
+field47->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field47);
 
 field* field48 = new field();
-field48->setName("c3_key");
-field48->setAccessType("inputOutput");
-field48->setType("MFFloat");
+field48->setName(CString("c3_key"));
+field48->setAccessType(CString("inputOutput"));
+field48->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field48);
+ProtoInterface21->addChild(field48);
 
 field* field49 = new field();
-field49->setName("c3_keyValue");
-field49->setAccessType("inputOutput");
-field49->setType("MFRotation");
+field49->setName(CString("c3_keyValue"));
+field49->setAccessType(CString("inputOutput"));
+field49->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field49);
+ProtoInterface21->addChild(field49);
 
 field* field50 = new field();
-field50->setName("c3_changed");
-field50->setAccessType("outputOnly");
-field50->setType("SFRotation");
-ProtoInterface21->addField(field50);
+field50->setName(CString("c3_changed"));
+field50->setAccessType(CString("outputOnly"));
+field50->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field50);
 
 field* field51 = new field();
-field51->setName("c4_key");
-field51->setAccessType("inputOutput");
-field51->setType("MFFloat");
+field51->setName(CString("c4_key"));
+field51->setAccessType(CString("inputOutput"));
+field51->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field51);
+ProtoInterface21->addChild(field51);
 
 field* field52 = new field();
-field52->setName("c4_keyValue");
-field52->setAccessType("inputOutput");
-field52->setType("MFRotation");
+field52->setName(CString("c4_keyValue"));
+field52->setAccessType(CString("inputOutput"));
+field52->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field52);
+ProtoInterface21->addChild(field52);
 
 field* field53 = new field();
-field53->setName("c4_changed");
-field53->setAccessType("outputOnly");
-field53->setType("SFRotation");
-ProtoInterface21->addField(field53);
+field53->setName(CString("c4_changed"));
+field53->setAccessType(CString("outputOnly"));
+field53->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field53);
 
 field* field54 = new field();
-field54->setName("c5_key");
-field54->setAccessType("inputOutput");
-field54->setType("MFFloat");
+field54->setName(CString("c5_key"));
+field54->setAccessType(CString("inputOutput"));
+field54->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field54);
+ProtoInterface21->addChild(field54);
 
 field* field55 = new field();
-field55->setName("c5_keyValue");
-field55->setAccessType("inputOutput");
-field55->setType("MFRotation");
+field55->setName(CString("c5_keyValue"));
+field55->setAccessType(CString("inputOutput"));
+field55->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field55);
+ProtoInterface21->addChild(field55);
 
 field* field56 = new field();
-field56->setName("c5_changed");
-field56->setAccessType("outputOnly");
-field56->setType("SFRotation");
-ProtoInterface21->addField(field56);
+field56->setName(CString("c5_changed"));
+field56->setAccessType(CString("outputOnly"));
+field56->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field56);
 
 field* field57 = new field();
-field57->setName("c6_key");
-field57->setAccessType("inputOutput");
-field57->setType("MFFloat");
+field57->setName(CString("c6_key"));
+field57->setAccessType(CString("inputOutput"));
+field57->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field57);
+ProtoInterface21->addChild(field57);
 
 field* field58 = new field();
-field58->setName("c6_keyValue");
-field58->setAccessType("inputOutput");
-field58->setType("MFRotation");
+field58->setName(CString("c6_keyValue"));
+field58->setAccessType(CString("inputOutput"));
+field58->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field58);
+ProtoInterface21->addChild(field58);
 
 field* field59 = new field();
-field59->setName("c6_changed");
-field59->setAccessType("outputOnly");
-field59->setType("SFRotation");
-ProtoInterface21->addField(field59);
+field59->setName(CString("c6_changed"));
+field59->setAccessType(CString("outputOnly"));
+field59->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field59);
 
 field* field60 = new field();
-field60->setName("c7_key");
-field60->setAccessType("inputOutput");
-field60->setType("MFFloat");
+field60->setName(CString("c7_key"));
+field60->setAccessType(CString("inputOutput"));
+field60->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field60);
+ProtoInterface21->addChild(field60);
 
 field* field61 = new field();
-field61->setName("c7_keyValue");
-field61->setAccessType("inputOutput");
-field61->setType("MFRotation");
+field61->setName(CString("c7_keyValue"));
+field61->setAccessType(CString("inputOutput"));
+field61->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field61);
+ProtoInterface21->addChild(field61);
 
 field* field62 = new field();
-field62->setName("c7_changed");
-field62->setAccessType("outputOnly");
-field62->setType("SFRotation");
-ProtoInterface21->addField(field62);
+field62->setName(CString("c7_changed"));
+field62->setAccessType(CString("outputOnly"));
+field62->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field62);
 
 field* field63 = new field();
-field63->setName("jaw_key");
-field63->setAccessType("inputOutput");
-field63->setType("MFFloat");
+field63->setName(CString("jaw_key"));
+field63->setAccessType(CString("inputOutput"));
+field63->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field63);
+ProtoInterface21->addChild(field63);
 
 field* field64 = new field();
-field64->setName("jaw_keyValue");
-field64->setAccessType("inputOutput");
-field64->setType("MFRotation");
+field64->setName(CString("jaw_keyValue"));
+field64->setAccessType(CString("inputOutput"));
+field64->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field64);
+ProtoInterface21->addChild(field64);
 
 field* field65 = new field();
-field65->setName("jaw_changed");
-field65->setAccessType("outputOnly");
-field65->setType("SFRotation");
-ProtoInterface21->addField(field65);
+field65->setName(CString("jaw_changed"));
+field65->setAccessType(CString("outputOnly"));
+field65->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field65);
 
 field* field66 = new field();
-field66->setName("l1_key");
-field66->setAccessType("inputOutput");
-field66->setType("MFFloat");
+field66->setName(CString("l1_key"));
+field66->setAccessType(CString("inputOutput"));
+field66->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field66);
+ProtoInterface21->addChild(field66);
 
 field* field67 = new field();
-field67->setName("l1_keyValue");
-field67->setAccessType("inputOutput");
-field67->setType("MFRotation");
+field67->setName(CString("l1_keyValue"));
+field67->setAccessType(CString("inputOutput"));
+field67->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field67);
+ProtoInterface21->addChild(field67);
 
 field* field68 = new field();
-field68->setName("l1_changed");
-field68->setAccessType("outputOnly");
-field68->setType("SFRotation");
-ProtoInterface21->addField(field68);
+field68->setName(CString("l1_changed"));
+field68->setAccessType(CString("outputOnly"));
+field68->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field68);
 
 field* field69 = new field();
-field69->setName("l2_key");
-field69->setAccessType("inputOutput");
-field69->setType("MFFloat");
+field69->setName(CString("l2_key"));
+field69->setAccessType(CString("inputOutput"));
+field69->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field69);
+ProtoInterface21->addChild(field69);
 
 field* field70 = new field();
-field70->setName("l2_keyValue");
-field70->setAccessType("inputOutput");
-field70->setType("MFRotation");
+field70->setName(CString("l2_keyValue"));
+field70->setAccessType(CString("inputOutput"));
+field70->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field70);
+ProtoInterface21->addChild(field70);
 
 field* field71 = new field();
-field71->setName("l2_changed");
-field71->setAccessType("outputOnly");
-field71->setType("SFRotation");
-ProtoInterface21->addField(field71);
+field71->setName(CString("l2_changed"));
+field71->setAccessType(CString("outputOnly"));
+field71->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field71);
 
 field* field72 = new field();
-field72->setName("l3_key");
-field72->setAccessType("inputOutput");
-field72->setType("MFFloat");
+field72->setName(CString("l3_key"));
+field72->setAccessType(CString("inputOutput"));
+field72->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field72);
+ProtoInterface21->addChild(field72);
 
 field* field73 = new field();
-field73->setName("l3_keyValue");
-field73->setAccessType("inputOutput");
-field73->setType("MFRotation");
+field73->setName(CString("l3_keyValue"));
+field73->setAccessType(CString("inputOutput"));
+field73->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field73);
+ProtoInterface21->addChild(field73);
 
 field* field74 = new field();
-field74->setName("l3_changed");
-field74->setAccessType("outputOnly");
-field74->setType("SFRotation");
-ProtoInterface21->addField(field74);
+field74->setName(CString("l3_changed"));
+field74->setAccessType(CString("outputOnly"));
+field74->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field74);
 
 field* field75 = new field();
-field75->setName("l4_key");
-field75->setAccessType("inputOutput");
-field75->setType("MFFloat");
+field75->setName(CString("l4_key"));
+field75->setAccessType(CString("inputOutput"));
+field75->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field75);
+ProtoInterface21->addChild(field75);
 
 field* field76 = new field();
-field76->setName("l4_keyValue");
-field76->setAccessType("inputOutput");
-field76->setType("MFRotation");
+field76->setName(CString("l4_keyValue"));
+field76->setAccessType(CString("inputOutput"));
+field76->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field76);
+ProtoInterface21->addChild(field76);
 
 field* field77 = new field();
-field77->setName("l4_changed");
-field77->setAccessType("outputOnly");
-field77->setType("SFRotation");
-ProtoInterface21->addField(field77);
+field77->setName(CString("l4_changed"));
+field77->setAccessType(CString("outputOnly"));
+field77->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field77);
 
 field* field78 = new field();
-field78->setName("l5_key");
-field78->setAccessType("inputOutput");
-field78->setType("MFFloat");
+field78->setName(CString("l5_key"));
+field78->setAccessType(CString("inputOutput"));
+field78->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field78);
+ProtoInterface21->addChild(field78);
 
 field* field79 = new field();
-field79->setName("l5_keyValue");
-field79->setAccessType("inputOutput");
-field79->setType("MFRotation");
+field79->setName(CString("l5_keyValue"));
+field79->setAccessType(CString("inputOutput"));
+field79->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field79);
+ProtoInterface21->addChild(field79);
 
 field* field80 = new field();
-field80->setName("l5_changed");
-field80->setAccessType("outputOnly");
-field80->setType("SFRotation");
-ProtoInterface21->addField(field80);
+field80->setName(CString("l5_changed"));
+field80->setAccessType(CString("outputOnly"));
+field80->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field80);
 
 field* field81 = new field();
-field81->setName("l_acromioclavicular_key");
-field81->setAccessType("inputOutput");
-field81->setType("MFFloat");
+field81->setName(CString("l_acromioclavicular_key"));
+field81->setAccessType(CString("inputOutput"));
+field81->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field81);
+ProtoInterface21->addChild(field81);
 
 field* field82 = new field();
-field82->setName("l_acromioclavicular_keyValue");
-field82->setAccessType("inputOutput");
-field82->setType("MFRotation");
+field82->setName(CString("l_acromioclavicular_keyValue"));
+field82->setAccessType(CString("inputOutput"));
+field82->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field82);
+ProtoInterface21->addChild(field82);
 
 field* field83 = new field();
-field83->setName("l_acromioclavicular_changed");
-field83->setAccessType("outputOnly");
-field83->setType("SFRotation");
-ProtoInterface21->addField(field83);
+field83->setName(CString("l_acromioclavicular_changed"));
+field83->setAccessType(CString("outputOnly"));
+field83->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field83);
 
 field* field84 = new field();
-field84->setName("l_ankle_key");
-field84->setAccessType("inputOutput");
-field84->setType("MFFloat");
+field84->setName(CString("l_ankle_key"));
+field84->setAccessType(CString("inputOutput"));
+field84->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field84);
+ProtoInterface21->addChild(field84);
 
 field* field85 = new field();
-field85->setName("l_ankle_keyValue");
-field85->setAccessType("inputOutput");
-field85->setType("MFRotation");
+field85->setName(CString("l_ankle_keyValue"));
+field85->setAccessType(CString("inputOutput"));
+field85->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field85);
+ProtoInterface21->addChild(field85);
 
 field* field86 = new field();
-field86->setName("l_ankle_changed");
-field86->setAccessType("outputOnly");
-field86->setType("SFRotation");
-ProtoInterface21->addField(field86);
+field86->setName(CString("l_ankle_changed"));
+field86->setAccessType(CString("outputOnly"));
+field86->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field86);
 
 field* field87 = new field();
-field87->setName("l_calf_key");
-field87->setAccessType("inputOutput");
-field87->setType("MFFloat");
+field87->setName(CString("l_calf_key"));
+field87->setAccessType(CString("inputOutput"));
+field87->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field87);
+ProtoInterface21->addChild(field87);
 
 field* field88 = new field();
-field88->setName("l_calf_keyValue");
-field88->setAccessType("inputOutput");
-field88->setType("MFRotation");
+field88->setName(CString("l_calf_keyValue"));
+field88->setAccessType(CString("inputOutput"));
+field88->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field88);
+ProtoInterface21->addChild(field88);
 
 field* field89 = new field();
-field89->setName("l_calf_changed");
-field89->setAccessType("outputOnly");
-field89->setType("SFRotation");
-ProtoInterface21->addField(field89);
+field89->setName(CString("l_calf_changed"));
+field89->setAccessType(CString("outputOnly"));
+field89->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field89);
 
 field* field90 = new field();
-field90->setName("l_clavicle_key");
-field90->setAccessType("inputOutput");
-field90->setType("MFFloat");
+field90->setName(CString("l_clavicle_key"));
+field90->setAccessType(CString("inputOutput"));
+field90->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field90);
+ProtoInterface21->addChild(field90);
 
 field* field91 = new field();
-field91->setName("l_clavicle_keyValue");
-field91->setAccessType("inputOutput");
-field91->setType("MFRotation");
+field91->setName(CString("l_clavicle_keyValue"));
+field91->setAccessType(CString("inputOutput"));
+field91->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field91);
+ProtoInterface21->addChild(field91);
 
 field* field92 = new field();
-field92->setName("l_clavicle_changed");
-field92->setAccessType("outputOnly");
-field92->setType("SFRotation");
-ProtoInterface21->addField(field92);
+field92->setName(CString("l_clavicle_changed"));
+field92->setAccessType(CString("outputOnly"));
+field92->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field92);
 
 field* field93 = new field();
-field93->setName("l_elbow_key");
-field93->setAccessType("inputOutput");
-field93->setType("MFFloat");
+field93->setName(CString("l_elbow_key"));
+field93->setAccessType(CString("inputOutput"));
+field93->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field93);
+ProtoInterface21->addChild(field93);
 
 field* field94 = new field();
-field94->setName("l_elbow_keyValue");
-field94->setAccessType("inputOutput");
-field94->setType("MFRotation");
+field94->setName(CString("l_elbow_keyValue"));
+field94->setAccessType(CString("inputOutput"));
+field94->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field94);
+ProtoInterface21->addChild(field94);
 
 field* field95 = new field();
-field95->setName("l_elbow_changed");
-field95->setAccessType("outputOnly");
-field95->setType("SFRotation");
-ProtoInterface21->addField(field95);
+field95->setName(CString("l_elbow_changed"));
+field95->setAccessType(CString("outputOnly"));
+field95->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field95);
 
 field* field96 = new field();
-field96->setName("l_eyeball_key");
-field96->setAccessType("inputOutput");
-field96->setType("MFFloat");
+field96->setName(CString("l_eyeball_key"));
+field96->setAccessType(CString("inputOutput"));
+field96->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field96);
+ProtoInterface21->addChild(field96);
 
 field* field97 = new field();
-field97->setName("l_eyeball_keyValue");
-field97->setAccessType("inputOutput");
-field97->setType("MFRotation");
+field97->setName(CString("l_eyeball_keyValue"));
+field97->setAccessType(CString("inputOutput"));
+field97->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field97);
+ProtoInterface21->addChild(field97);
 
 field* field98 = new field();
-field98->setName("l_eyeball_changed");
-field98->setAccessType("outputOnly");
-field98->setType("SFRotation");
-ProtoInterface21->addField(field98);
+field98->setName(CString("l_eyeball_changed"));
+field98->setAccessType(CString("outputOnly"));
+field98->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field98);
 
 field* field99 = new field();
-field99->setName("l_eyeball_joint_key");
-field99->setAccessType("inputOutput");
-field99->setType("MFFloat");
+field99->setName(CString("l_eyeball_joint_key"));
+field99->setAccessType(CString("inputOutput"));
+field99->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field99);
+ProtoInterface21->addChild(field99);
 
 field* field100 = new field();
-field100->setName("l_eyeball_joint_keyValue");
-field100->setAccessType("inputOutput");
-field100->setType("MFRotation");
+field100->setName(CString("l_eyeball_joint_keyValue"));
+field100->setAccessType(CString("inputOutput"));
+field100->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field100);
+ProtoInterface21->addChild(field100);
 
 field* field101 = new field();
-field101->setName("l_eyeball_joint_changed");
-field101->setAccessType("outputOnly");
-field101->setType("SFRotation");
-ProtoInterface21->addField(field101);
+field101->setName(CString("l_eyeball_joint_changed"));
+field101->setAccessType(CString("outputOnly"));
+field101->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field101);
 
 field* field102 = new field();
-field102->setName("l_eyebrow_key");
-field102->setAccessType("inputOutput");
-field102->setType("MFFloat");
+field102->setName(CString("l_eyebrow_key"));
+field102->setAccessType(CString("inputOutput"));
+field102->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field102);
+ProtoInterface21->addChild(field102);
 
 field* field103 = new field();
-field103->setName("l_eyebrow_keyValue");
-field103->setAccessType("inputOutput");
-field103->setType("MFRotation");
+field103->setName(CString("l_eyebrow_keyValue"));
+field103->setAccessType(CString("inputOutput"));
+field103->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field103);
+ProtoInterface21->addChild(field103);
 
 field* field104 = new field();
-field104->setName("l_eyebrow_changed");
-field104->setAccessType("outputOnly");
-field104->setType("SFRotation");
-ProtoInterface21->addField(field104);
+field104->setName(CString("l_eyebrow_changed"));
+field104->setAccessType(CString("outputOnly"));
+field104->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field104);
 
 field* field105 = new field();
-field105->setName("l_eyebrow_joint_key");
-field105->setAccessType("inputOutput");
-field105->setType("MFFloat");
+field105->setName(CString("l_eyebrow_joint_key"));
+field105->setAccessType(CString("inputOutput"));
+field105->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field105);
+ProtoInterface21->addChild(field105);
 
 field* field106 = new field();
-field106->setName("l_eyebrow_joint_keyValue");
-field106->setAccessType("inputOutput");
-field106->setType("MFRotation");
+field106->setName(CString("l_eyebrow_joint_keyValue"));
+field106->setAccessType(CString("inputOutput"));
+field106->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field106);
+ProtoInterface21->addChild(field106);
 
 field* field107 = new field();
-field107->setName("l_eyebrow_joint_changed");
-field107->setAccessType("outputOnly");
-field107->setType("SFRotation");
-ProtoInterface21->addField(field107);
+field107->setName(CString("l_eyebrow_joint_changed"));
+field107->setAccessType(CString("outputOnly"));
+field107->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field107);
 
 field* field108 = new field();
-field108->setName("l_eyelid_key");
-field108->setAccessType("inputOutput");
-field108->setType("MFFloat");
+field108->setName(CString("l_eyelid_key"));
+field108->setAccessType(CString("inputOutput"));
+field108->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field108);
+ProtoInterface21->addChild(field108);
 
 field* field109 = new field();
-field109->setName("l_eyelid_keyValue");
-field109->setAccessType("inputOutput");
-field109->setType("MFRotation");
+field109->setName(CString("l_eyelid_keyValue"));
+field109->setAccessType(CString("inputOutput"));
+field109->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field109);
+ProtoInterface21->addChild(field109);
 
 field* field110 = new field();
-field110->setName("l_eyelid_changed");
-field110->setAccessType("outputOnly");
-field110->setType("SFRotation");
-ProtoInterface21->addField(field110);
+field110->setName(CString("l_eyelid_changed"));
+field110->setAccessType(CString("outputOnly"));
+field110->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field110);
 
 field* field111 = new field();
-field111->setName("l_eyelid_joint_key");
-field111->setAccessType("inputOutput");
-field111->setType("MFFloat");
+field111->setName(CString("l_eyelid_joint_key"));
+field111->setAccessType(CString("inputOutput"));
+field111->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field111);
+ProtoInterface21->addChild(field111);
 
 field* field112 = new field();
-field112->setName("l_eyelid_joint_keyValue");
-field112->setAccessType("inputOutput");
-field112->setType("MFRotation");
+field112->setName(CString("l_eyelid_joint_keyValue"));
+field112->setAccessType(CString("inputOutput"));
+field112->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field112);
+ProtoInterface21->addChild(field112);
 
 field* field113 = new field();
-field113->setName("l_eyelid_joint_changed");
-field113->setAccessType("outputOnly");
-field113->setType("SFRotation");
-ProtoInterface21->addField(field113);
+field113->setName(CString("l_eyelid_joint_changed"));
+field113->setAccessType(CString("outputOnly"));
+field113->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field113);
 
 field* field114 = new field();
-field114->setName("l_forearm_key");
-field114->setAccessType("inputOutput");
-field114->setType("MFFloat");
+field114->setName(CString("l_forearm_key"));
+field114->setAccessType(CString("inputOutput"));
+field114->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field114);
+ProtoInterface21->addChild(field114);
 
 field* field115 = new field();
-field115->setName("l_forearm_keyValue");
-field115->setAccessType("inputOutput");
-field115->setType("MFRotation");
+field115->setName(CString("l_forearm_keyValue"));
+field115->setAccessType(CString("inputOutput"));
+field115->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field115);
+ProtoInterface21->addChild(field115);
 
 field* field116 = new field();
-field116->setName("l_forearm_changed");
-field116->setAccessType("outputOnly");
-field116->setType("SFRotation");
-ProtoInterface21->addField(field116);
+field116->setName(CString("l_forearm_changed"));
+field116->setAccessType(CString("outputOnly"));
+field116->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field116);
 
 field* field117 = new field();
-field117->setName("l_forefoot_key");
-field117->setAccessType("inputOutput");
-field117->setType("MFFloat");
+field117->setName(CString("l_forefoot_key"));
+field117->setAccessType(CString("inputOutput"));
+field117->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field117);
+ProtoInterface21->addChild(field117);
 
 field* field118 = new field();
-field118->setName("l_forefoot_keyValue");
-field118->setAccessType("inputOutput");
-field118->setType("MFRotation");
+field118->setName(CString("l_forefoot_keyValue"));
+field118->setAccessType(CString("inputOutput"));
+field118->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field118);
+ProtoInterface21->addChild(field118);
 
 field* field119 = new field();
-field119->setName("l_forefoot_changed");
-field119->setAccessType("outputOnly");
-field119->setType("SFRotation");
-ProtoInterface21->addField(field119);
+field119->setName(CString("l_forefoot_changed"));
+field119->setAccessType(CString("outputOnly"));
+field119->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field119);
 
 field* field120 = new field();
-field120->setName("l_hand_key");
-field120->setAccessType("inputOutput");
-field120->setType("MFFloat");
+field120->setName(CString("l_hand_key"));
+field120->setAccessType(CString("inputOutput"));
+field120->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field120);
+ProtoInterface21->addChild(field120);
 
 field* field121 = new field();
-field121->setName("l_hand_keyValue");
-field121->setAccessType("inputOutput");
-field121->setType("MFRotation");
+field121->setName(CString("l_hand_keyValue"));
+field121->setAccessType(CString("inputOutput"));
+field121->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field121);
+ProtoInterface21->addChild(field121);
 
 field* field122 = new field();
-field122->setName("l_hand_changed");
-field122->setAccessType("outputOnly");
-field122->setType("SFRotation");
-ProtoInterface21->addField(field122);
+field122->setName(CString("l_hand_changed"));
+field122->setAccessType(CString("outputOnly"));
+field122->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field122);
 
 field* field123 = new field();
-field123->setName("l_hindfoot_key");
-field123->setAccessType("inputOutput");
-field123->setType("MFFloat");
+field123->setName(CString("l_hindfoot_key"));
+field123->setAccessType(CString("inputOutput"));
+field123->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field123);
+ProtoInterface21->addChild(field123);
 
 field* field124 = new field();
-field124->setName("l_hindfoot_keyValue");
-field124->setAccessType("inputOutput");
-field124->setType("MFRotation");
+field124->setName(CString("l_hindfoot_keyValue"));
+field124->setAccessType(CString("inputOutput"));
+field124->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field124);
+ProtoInterface21->addChild(field124);
 
 field* field125 = new field();
-field125->setName("l_hindfoot_changed");
-field125->setAccessType("outputOnly");
-field125->setType("SFRotation");
-ProtoInterface21->addField(field125);
+field125->setName(CString("l_hindfoot_changed"));
+field125->setAccessType(CString("outputOnly"));
+field125->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field125);
 
 field* field126 = new field();
-field126->setName("l_hip_key");
-field126->setAccessType("inputOutput");
-field126->setType("MFFloat");
+field126->setName(CString("l_hip_key"));
+field126->setAccessType(CString("inputOutput"));
+field126->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field126);
+ProtoInterface21->addChild(field126);
 
 field* field127 = new field();
-field127->setName("l_hip_keyValue");
-field127->setAccessType("inputOutput");
-field127->setType("MFRotation");
+field127->setName(CString("l_hip_keyValue"));
+field127->setAccessType(CString("inputOutput"));
+field127->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field127);
+ProtoInterface21->addChild(field127);
 
 field* field128 = new field();
-field128->setName("l_hip_changed");
-field128->setAccessType("outputOnly");
-field128->setType("SFRotation");
-ProtoInterface21->addField(field128);
+field128->setName(CString("l_hip_changed"));
+field128->setAccessType(CString("outputOnly"));
+field128->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field128);
 
 field* field129 = new field();
-field129->setName("l_index0_key");
-field129->setAccessType("inputOutput");
-field129->setType("MFFloat");
+field129->setName(CString("l_index0_key"));
+field129->setAccessType(CString("inputOutput"));
+field129->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field129);
+ProtoInterface21->addChild(field129);
 
 field* field130 = new field();
-field130->setName("l_index0_keyValue");
-field130->setAccessType("inputOutput");
-field130->setType("MFRotation");
+field130->setName(CString("l_index0_keyValue"));
+field130->setAccessType(CString("inputOutput"));
+field130->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field130);
+ProtoInterface21->addChild(field130);
 
 field* field131 = new field();
-field131->setName("l_index0_changed");
-field131->setAccessType("outputOnly");
-field131->setType("SFRotation");
-ProtoInterface21->addField(field131);
+field131->setName(CString("l_index0_changed"));
+field131->setAccessType(CString("outputOnly"));
+field131->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field131);
 
 field* field132 = new field();
-field132->setName("l_index1_key");
-field132->setAccessType("inputOutput");
-field132->setType("MFFloat");
+field132->setName(CString("l_index1_key"));
+field132->setAccessType(CString("inputOutput"));
+field132->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field132);
+ProtoInterface21->addChild(field132);
 
 field* field133 = new field();
-field133->setName("l_index1_keyValue");
-field133->setAccessType("inputOutput");
-field133->setType("MFRotation");
+field133->setName(CString("l_index1_keyValue"));
+field133->setAccessType(CString("inputOutput"));
+field133->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field133);
+ProtoInterface21->addChild(field133);
 
 field* field134 = new field();
-field134->setName("l_index1_changed");
-field134->setAccessType("outputOnly");
-field134->setType("SFRotation");
-ProtoInterface21->addField(field134);
+field134->setName(CString("l_index1_changed"));
+field134->setAccessType(CString("outputOnly"));
+field134->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field134);
 
 field* field135 = new field();
-field135->setName("l_index2_key");
-field135->setAccessType("inputOutput");
-field135->setType("MFFloat");
+field135->setName(CString("l_index2_key"));
+field135->setAccessType(CString("inputOutput"));
+field135->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field135);
+ProtoInterface21->addChild(field135);
 
 field* field136 = new field();
-field136->setName("l_index2_keyValue");
-field136->setAccessType("inputOutput");
-field136->setType("MFRotation");
+field136->setName(CString("l_index2_keyValue"));
+field136->setAccessType(CString("inputOutput"));
+field136->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field136);
+ProtoInterface21->addChild(field136);
 
 field* field137 = new field();
-field137->setName("l_index2_changed");
-field137->setAccessType("outputOnly");
-field137->setType("SFRotation");
-ProtoInterface21->addField(field137);
+field137->setName(CString("l_index2_changed"));
+field137->setAccessType(CString("outputOnly"));
+field137->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field137);
 
 field* field138 = new field();
-field138->setName("l_index3_key");
-field138->setAccessType("inputOutput");
-field138->setType("MFFloat");
+field138->setName(CString("l_index3_key"));
+field138->setAccessType(CString("inputOutput"));
+field138->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field138);
+ProtoInterface21->addChild(field138);
 
 field* field139 = new field();
-field139->setName("l_index3_keyValue");
-field139->setAccessType("inputOutput");
-field139->setType("MFRotation");
+field139->setName(CString("l_index3_keyValue"));
+field139->setAccessType(CString("inputOutput"));
+field139->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field139);
+ProtoInterface21->addChild(field139);
 
 field* field140 = new field();
-field140->setName("l_index3_changed");
-field140->setAccessType("outputOnly");
-field140->setType("SFRotation");
-ProtoInterface21->addField(field140);
+field140->setName(CString("l_index3_changed"));
+field140->setAccessType(CString("outputOnly"));
+field140->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field140);
 
 field* field141 = new field();
-field141->setName("l_index_distal_key");
-field141->setAccessType("inputOutput");
-field141->setType("MFFloat");
+field141->setName(CString("l_index_distal_key"));
+field141->setAccessType(CString("inputOutput"));
+field141->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field141);
+ProtoInterface21->addChild(field141);
 
 field* field142 = new field();
-field142->setName("l_index_distal_keyValue");
-field142->setAccessType("inputOutput");
-field142->setType("MFRotation");
+field142->setName(CString("l_index_distal_keyValue"));
+field142->setAccessType(CString("inputOutput"));
+field142->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field142);
+ProtoInterface21->addChild(field142);
 
 field* field143 = new field();
-field143->setName("l_index_distal_changed");
-field143->setAccessType("outputOnly");
-field143->setType("SFRotation");
-ProtoInterface21->addField(field143);
+field143->setName(CString("l_index_distal_changed"));
+field143->setAccessType(CString("outputOnly"));
+field143->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field143);
 
 field* field144 = new field();
-field144->setName("l_index_metacarpal_key");
-field144->setAccessType("inputOutput");
-field144->setType("MFFloat");
+field144->setName(CString("l_index_metacarpal_key"));
+field144->setAccessType(CString("inputOutput"));
+field144->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field144);
+ProtoInterface21->addChild(field144);
 
 field* field145 = new field();
-field145->setName("l_index_metacarpal_keyValue");
-field145->setAccessType("inputOutput");
-field145->setType("MFRotation");
+field145->setName(CString("l_index_metacarpal_keyValue"));
+field145->setAccessType(CString("inputOutput"));
+field145->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field145);
+ProtoInterface21->addChild(field145);
 
 field* field146 = new field();
-field146->setName("l_index_metacarpal_changed");
-field146->setAccessType("outputOnly");
-field146->setType("SFRotation");
-ProtoInterface21->addField(field146);
+field146->setName(CString("l_index_metacarpal_changed"));
+field146->setAccessType(CString("outputOnly"));
+field146->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field146);
 
 field* field147 = new field();
-field147->setName("l_index_middle_key");
-field147->setAccessType("inputOutput");
-field147->setType("MFFloat");
+field147->setName(CString("l_index_middle_key"));
+field147->setAccessType(CString("inputOutput"));
+field147->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field147);
+ProtoInterface21->addChild(field147);
 
 field* field148 = new field();
-field148->setName("l_index_middle_keyValue");
-field148->setAccessType("inputOutput");
-field148->setType("MFRotation");
+field148->setName(CString("l_index_middle_keyValue"));
+field148->setAccessType(CString("inputOutput"));
+field148->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field148);
+ProtoInterface21->addChild(field148);
 
 field* field149 = new field();
-field149->setName("l_index_middle_changed");
-field149->setAccessType("outputOnly");
-field149->setType("SFRotation");
-ProtoInterface21->addField(field149);
+field149->setName(CString("l_index_middle_changed"));
+field149->setAccessType(CString("outputOnly"));
+field149->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field149);
 
 field* field150 = new field();
-field150->setName("l_index_proximal_key");
-field150->setAccessType("inputOutput");
-field150->setType("MFFloat");
+field150->setName(CString("l_index_proximal_key"));
+field150->setAccessType(CString("inputOutput"));
+field150->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field150);
+ProtoInterface21->addChild(field150);
 
 field* field151 = new field();
-field151->setName("l_index_proximal_keyValue");
-field151->setAccessType("inputOutput");
-field151->setType("MFRotation");
+field151->setName(CString("l_index_proximal_keyValue"));
+field151->setAccessType(CString("inputOutput"));
+field151->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field151);
+ProtoInterface21->addChild(field151);
 
 field* field152 = new field();
-field152->setName("l_index_proximal_changed");
-field152->setAccessType("outputOnly");
-field152->setType("SFRotation");
-ProtoInterface21->addField(field152);
+field152->setName(CString("l_index_proximal_changed"));
+field152->setAccessType(CString("outputOnly"));
+field152->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field152);
 
 field* field153 = new field();
-field153->setName("l_knee_key");
-field153->setAccessType("inputOutput");
-field153->setType("MFFloat");
+field153->setName(CString("l_knee_key"));
+field153->setAccessType(CString("inputOutput"));
+field153->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field153);
+ProtoInterface21->addChild(field153);
 
 field* field154 = new field();
-field154->setName("l_knee_keyValue");
-field154->setAccessType("inputOutput");
-field154->setType("MFRotation");
+field154->setName(CString("l_knee_keyValue"));
+field154->setAccessType(CString("inputOutput"));
+field154->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field154);
+ProtoInterface21->addChild(field154);
 
 field* field155 = new field();
-field155->setName("l_knee_changed");
-field155->setAccessType("outputOnly");
-field155->setType("SFRotation");
-ProtoInterface21->addField(field155);
+field155->setName(CString("l_knee_changed"));
+field155->setAccessType(CString("outputOnly"));
+field155->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field155);
 
 field* field156 = new field();
-field156->setName("l_metatarsal_key");
-field156->setAccessType("inputOutput");
-field156->setType("MFFloat");
+field156->setName(CString("l_metatarsal_key"));
+field156->setAccessType(CString("inputOutput"));
+field156->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field156);
+ProtoInterface21->addChild(field156);
 
 field* field157 = new field();
-field157->setName("l_metatarsal_keyValue");
-field157->setAccessType("inputOutput");
-field157->setType("MFRotation");
+field157->setName(CString("l_metatarsal_keyValue"));
+field157->setAccessType(CString("inputOutput"));
+field157->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field157);
+ProtoInterface21->addChild(field157);
 
 field* field158 = new field();
-field158->setName("l_metatarsal_changed");
-field158->setAccessType("outputOnly");
-field158->setType("SFRotation");
-ProtoInterface21->addField(field158);
+field158->setName(CString("l_metatarsal_changed"));
+field158->setAccessType(CString("outputOnly"));
+field158->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field158);
 
 field* field159 = new field();
-field159->setName("l_middistal_key");
-field159->setAccessType("inputOutput");
-field159->setType("MFFloat");
+field159->setName(CString("l_middistal_key"));
+field159->setAccessType(CString("inputOutput"));
+field159->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field159);
+ProtoInterface21->addChild(field159);
 
 field* field160 = new field();
-field160->setName("l_middistal_keyValue");
-field160->setAccessType("inputOutput");
-field160->setType("MFRotation");
+field160->setName(CString("l_middistal_keyValue"));
+field160->setAccessType(CString("inputOutput"));
+field160->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field160);
+ProtoInterface21->addChild(field160);
 
 field* field161 = new field();
-field161->setName("l_middistal_changed");
-field161->setAccessType("outputOnly");
-field161->setType("SFRotation");
-ProtoInterface21->addField(field161);
+field161->setName(CString("l_middistal_changed"));
+field161->setAccessType(CString("outputOnly"));
+field161->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field161);
 
 field* field162 = new field();
-field162->setName("l_middle0_key");
-field162->setAccessType("inputOutput");
-field162->setType("MFFloat");
+field162->setName(CString("l_middle0_key"));
+field162->setAccessType(CString("inputOutput"));
+field162->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field162);
+ProtoInterface21->addChild(field162);
 
 field* field163 = new field();
-field163->setName("l_middle0_keyValue");
-field163->setAccessType("inputOutput");
-field163->setType("MFRotation");
+field163->setName(CString("l_middle0_keyValue"));
+field163->setAccessType(CString("inputOutput"));
+field163->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field163);
+ProtoInterface21->addChild(field163);
 
 field* field164 = new field();
-field164->setName("l_middle0_changed");
-field164->setAccessType("outputOnly");
-field164->setType("SFRotation");
-ProtoInterface21->addField(field164);
+field164->setName(CString("l_middle0_changed"));
+field164->setAccessType(CString("outputOnly"));
+field164->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field164);
 
 field* field165 = new field();
-field165->setName("l_middle1_key");
-field165->setAccessType("inputOutput");
-field165->setType("MFFloat");
+field165->setName(CString("l_middle1_key"));
+field165->setAccessType(CString("inputOutput"));
+field165->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field165);
+ProtoInterface21->addChild(field165);
 
 field* field166 = new field();
-field166->setName("l_middle1_keyValue");
-field166->setAccessType("inputOutput");
-field166->setType("MFRotation");
+field166->setName(CString("l_middle1_keyValue"));
+field166->setAccessType(CString("inputOutput"));
+field166->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field166);
+ProtoInterface21->addChild(field166);
 
 field* field167 = new field();
-field167->setName("l_middle1_changed");
-field167->setAccessType("outputOnly");
-field167->setType("SFRotation");
-ProtoInterface21->addField(field167);
+field167->setName(CString("l_middle1_changed"));
+field167->setAccessType(CString("outputOnly"));
+field167->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field167);
 
 field* field168 = new field();
-field168->setName("l_middle2_key");
-field168->setAccessType("inputOutput");
-field168->setType("MFFloat");
+field168->setName(CString("l_middle2_key"));
+field168->setAccessType(CString("inputOutput"));
+field168->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field168);
+ProtoInterface21->addChild(field168);
 
 field* field169 = new field();
-field169->setName("l_middle2_keyValue");
-field169->setAccessType("inputOutput");
-field169->setType("MFRotation");
+field169->setName(CString("l_middle2_keyValue"));
+field169->setAccessType(CString("inputOutput"));
+field169->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field169);
+ProtoInterface21->addChild(field169);
 
 field* field170 = new field();
-field170->setName("l_middle2_changed");
-field170->setAccessType("outputOnly");
-field170->setType("SFRotation");
-ProtoInterface21->addField(field170);
+field170->setName(CString("l_middle2_changed"));
+field170->setAccessType(CString("outputOnly"));
+field170->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field170);
 
 field* field171 = new field();
-field171->setName("l_middle3_key");
-field171->setAccessType("inputOutput");
-field171->setType("MFFloat");
+field171->setName(CString("l_middle3_key"));
+field171->setAccessType(CString("inputOutput"));
+field171->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field171);
+ProtoInterface21->addChild(field171);
 
 field* field172 = new field();
-field172->setName("l_middle3_keyValue");
-field172->setAccessType("inputOutput");
-field172->setType("MFRotation");
+field172->setName(CString("l_middle3_keyValue"));
+field172->setAccessType(CString("inputOutput"));
+field172->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field172);
+ProtoInterface21->addChild(field172);
 
 field* field173 = new field();
-field173->setName("l_middle3_changed");
-field173->setAccessType("outputOnly");
-field173->setType("SFRotation");
-ProtoInterface21->addField(field173);
+field173->setName(CString("l_middle3_changed"));
+field173->setAccessType(CString("outputOnly"));
+field173->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field173);
 
 field* field174 = new field();
-field174->setName("l_middle_distal_key");
-field174->setAccessType("inputOutput");
-field174->setType("MFFloat");
+field174->setName(CString("l_middle_distal_key"));
+field174->setAccessType(CString("inputOutput"));
+field174->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field174);
+ProtoInterface21->addChild(field174);
 
 field* field175 = new field();
-field175->setName("l_middle_distal_keyValue");
-field175->setAccessType("inputOutput");
-field175->setType("MFRotation");
+field175->setName(CString("l_middle_distal_keyValue"));
+field175->setAccessType(CString("inputOutput"));
+field175->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field175);
+ProtoInterface21->addChild(field175);
 
 field* field176 = new field();
-field176->setName("l_middle_distal_changed");
-field176->setAccessType("outputOnly");
-field176->setType("SFRotation");
-ProtoInterface21->addField(field176);
+field176->setName(CString("l_middle_distal_changed"));
+field176->setAccessType(CString("outputOnly"));
+field176->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field176);
 
 field* field177 = new field();
-field177->setName("l_middle_metacarpal_key");
-field177->setAccessType("inputOutput");
-field177->setType("MFFloat");
+field177->setName(CString("l_middle_metacarpal_key"));
+field177->setAccessType(CString("inputOutput"));
+field177->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field177);
+ProtoInterface21->addChild(field177);
 
 field* field178 = new field();
-field178->setName("l_middle_metacarpal_keyValue");
-field178->setAccessType("inputOutput");
-field178->setType("MFRotation");
+field178->setName(CString("l_middle_metacarpal_keyValue"));
+field178->setAccessType(CString("inputOutput"));
+field178->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field178);
+ProtoInterface21->addChild(field178);
 
 field* field179 = new field();
-field179->setName("l_middle_metacarpal_changed");
-field179->setAccessType("outputOnly");
-field179->setType("SFRotation");
-ProtoInterface21->addField(field179);
+field179->setName(CString("l_middle_metacarpal_changed"));
+field179->setAccessType(CString("outputOnly"));
+field179->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field179);
 
 field* field180 = new field();
-field180->setName("l_middle_middle_key");
-field180->setAccessType("inputOutput");
-field180->setType("MFFloat");
+field180->setName(CString("l_middle_middle_key"));
+field180->setAccessType(CString("inputOutput"));
+field180->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field180);
+ProtoInterface21->addChild(field180);
 
 field* field181 = new field();
-field181->setName("l_middle_middle_keyValue");
-field181->setAccessType("inputOutput");
-field181->setType("MFRotation");
+field181->setName(CString("l_middle_middle_keyValue"));
+field181->setAccessType(CString("inputOutput"));
+field181->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field181);
+ProtoInterface21->addChild(field181);
 
 field* field182 = new field();
-field182->setName("l_middle_middle_changed");
-field182->setAccessType("outputOnly");
-field182->setType("SFRotation");
-ProtoInterface21->addField(field182);
+field182->setName(CString("l_middle_middle_changed"));
+field182->setAccessType(CString("outputOnly"));
+field182->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field182);
 
 field* field183 = new field();
-field183->setName("l_middle_proximal_key");
-field183->setAccessType("inputOutput");
-field183->setType("MFFloat");
+field183->setName(CString("l_middle_proximal_key"));
+field183->setAccessType(CString("inputOutput"));
+field183->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field183);
+ProtoInterface21->addChild(field183);
 
 field* field184 = new field();
-field184->setName("l_middle_proximal_keyValue");
-field184->setAccessType("inputOutput");
-field184->setType("MFRotation");
+field184->setName(CString("l_middle_proximal_keyValue"));
+field184->setAccessType(CString("inputOutput"));
+field184->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field184);
+ProtoInterface21->addChild(field184);
 
 field* field185 = new field();
-field185->setName("l_middle_proximal_changed");
-field185->setAccessType("outputOnly");
-field185->setType("SFRotation");
-ProtoInterface21->addField(field185);
+field185->setName(CString("l_middle_proximal_changed"));
+field185->setAccessType(CString("outputOnly"));
+field185->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field185);
 
 field* field186 = new field();
-field186->setName("l_midproximal_key");
-field186->setAccessType("inputOutput");
-field186->setType("MFFloat");
+field186->setName(CString("l_midproximal_key"));
+field186->setAccessType(CString("inputOutput"));
+field186->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field186);
+ProtoInterface21->addChild(field186);
 
 field* field187 = new field();
-field187->setName("l_midproximal_keyValue");
-field187->setAccessType("inputOutput");
-field187->setType("MFRotation");
+field187->setName(CString("l_midproximal_keyValue"));
+field187->setAccessType(CString("inputOutput"));
+field187->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field187);
+ProtoInterface21->addChild(field187);
 
 field* field188 = new field();
-field188->setName("l_midproximal_changed");
-field188->setAccessType("outputOnly");
-field188->setType("SFRotation");
-ProtoInterface21->addField(field188);
+field188->setName(CString("l_midproximal_changed"));
+field188->setAccessType(CString("outputOnly"));
+field188->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field188);
 
 field* field189 = new field();
-field189->setName("l_midtarsal_key");
-field189->setAccessType("inputOutput");
-field189->setType("MFFloat");
+field189->setName(CString("l_midtarsal_key"));
+field189->setAccessType(CString("inputOutput"));
+field189->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field189);
+ProtoInterface21->addChild(field189);
 
 field* field190 = new field();
-field190->setName("l_midtarsal_keyValue");
-field190->setAccessType("inputOutput");
-field190->setType("MFRotation");
+field190->setName(CString("l_midtarsal_keyValue"));
+field190->setAccessType(CString("inputOutput"));
+field190->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field190);
+ProtoInterface21->addChild(field190);
 
 field* field191 = new field();
-field191->setName("l_midtarsal_changed");
-field191->setAccessType("outputOnly");
-field191->setType("SFRotation");
-ProtoInterface21->addField(field191);
+field191->setName(CString("l_midtarsal_changed"));
+field191->setAccessType(CString("outputOnly"));
+field191->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field191);
 
 field* field192 = new field();
-field192->setName("l_pinky0_key");
-field192->setAccessType("inputOutput");
-field192->setType("MFFloat");
+field192->setName(CString("l_pinky0_key"));
+field192->setAccessType(CString("inputOutput"));
+field192->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field192);
+ProtoInterface21->addChild(field192);
 
 field* field193 = new field();
-field193->setName("l_pinky0_keyValue");
-field193->setAccessType("inputOutput");
-field193->setType("MFRotation");
+field193->setName(CString("l_pinky0_keyValue"));
+field193->setAccessType(CString("inputOutput"));
+field193->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field193);
+ProtoInterface21->addChild(field193);
 
 field* field194 = new field();
-field194->setName("l_pinky0_changed");
-field194->setAccessType("outputOnly");
-field194->setType("SFRotation");
-ProtoInterface21->addField(field194);
+field194->setName(CString("l_pinky0_changed"));
+field194->setAccessType(CString("outputOnly"));
+field194->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field194);
 
 field* field195 = new field();
-field195->setName("l_pinky1_key");
-field195->setAccessType("inputOutput");
-field195->setType("MFFloat");
+field195->setName(CString("l_pinky1_key"));
+field195->setAccessType(CString("inputOutput"));
+field195->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field195);
+ProtoInterface21->addChild(field195);
 
 field* field196 = new field();
-field196->setName("l_pinky1_keyValue");
-field196->setAccessType("inputOutput");
-field196->setType("MFRotation");
+field196->setName(CString("l_pinky1_keyValue"));
+field196->setAccessType(CString("inputOutput"));
+field196->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field196);
+ProtoInterface21->addChild(field196);
 
 field* field197 = new field();
-field197->setName("l_pinky1_changed");
-field197->setAccessType("outputOnly");
-field197->setType("SFRotation");
-ProtoInterface21->addField(field197);
+field197->setName(CString("l_pinky1_changed"));
+field197->setAccessType(CString("outputOnly"));
+field197->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field197);
 
 field* field198 = new field();
-field198->setName("l_pinky2_key");
-field198->setAccessType("inputOutput");
-field198->setType("MFFloat");
+field198->setName(CString("l_pinky2_key"));
+field198->setAccessType(CString("inputOutput"));
+field198->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field198);
+ProtoInterface21->addChild(field198);
 
 field* field199 = new field();
-field199->setName("l_pinky2_keyValue");
-field199->setAccessType("inputOutput");
-field199->setType("MFRotation");
+field199->setName(CString("l_pinky2_keyValue"));
+field199->setAccessType(CString("inputOutput"));
+field199->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field199);
+ProtoInterface21->addChild(field199);
 
 field* field200 = new field();
-field200->setName("l_pinky2_changed");
-field200->setAccessType("outputOnly");
-field200->setType("SFRotation");
-ProtoInterface21->addField(field200);
+field200->setName(CString("l_pinky2_changed"));
+field200->setAccessType(CString("outputOnly"));
+field200->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field200);
 
 field* field201 = new field();
-field201->setName("l_pinky3_key");
-field201->setAccessType("inputOutput");
-field201->setType("MFFloat");
+field201->setName(CString("l_pinky3_key"));
+field201->setAccessType(CString("inputOutput"));
+field201->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field201);
+ProtoInterface21->addChild(field201);
 
 field* field202 = new field();
-field202->setName("l_pinky3_keyValue");
-field202->setAccessType("inputOutput");
-field202->setType("MFRotation");
+field202->setName(CString("l_pinky3_keyValue"));
+field202->setAccessType(CString("inputOutput"));
+field202->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field202);
+ProtoInterface21->addChild(field202);
 
 field* field203 = new field();
-field203->setName("l_pinky3_changed");
-field203->setAccessType("outputOnly");
-field203->setType("SFRotation");
-ProtoInterface21->addField(field203);
+field203->setName(CString("l_pinky3_changed"));
+field203->setAccessType(CString("outputOnly"));
+field203->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field203);
 
 field* field204 = new field();
-field204->setName("l_pinky_distal_key");
-field204->setAccessType("inputOutput");
-field204->setType("MFFloat");
+field204->setName(CString("l_pinky_distal_key"));
+field204->setAccessType(CString("inputOutput"));
+field204->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field204);
+ProtoInterface21->addChild(field204);
 
 field* field205 = new field();
-field205->setName("l_pinky_distal_keyValue");
-field205->setAccessType("inputOutput");
-field205->setType("MFRotation");
+field205->setName(CString("l_pinky_distal_keyValue"));
+field205->setAccessType(CString("inputOutput"));
+field205->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field205);
+ProtoInterface21->addChild(field205);
 
 field* field206 = new field();
-field206->setName("l_pinky_distal_changed");
-field206->setAccessType("outputOnly");
-field206->setType("SFRotation");
-ProtoInterface21->addField(field206);
+field206->setName(CString("l_pinky_distal_changed"));
+field206->setAccessType(CString("outputOnly"));
+field206->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field206);
 
 field* field207 = new field();
-field207->setName("l_pinky_metacarpal_key");
-field207->setAccessType("inputOutput");
-field207->setType("MFFloat");
+field207->setName(CString("l_pinky_metacarpal_key"));
+field207->setAccessType(CString("inputOutput"));
+field207->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field207);
+ProtoInterface21->addChild(field207);
 
 field* field208 = new field();
-field208->setName("l_pinky_metacarpal_keyValue");
-field208->setAccessType("inputOutput");
-field208->setType("MFRotation");
+field208->setName(CString("l_pinky_metacarpal_keyValue"));
+field208->setAccessType(CString("inputOutput"));
+field208->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field208);
+ProtoInterface21->addChild(field208);
 
 field* field209 = new field();
-field209->setName("l_pinky_metacarpal_changed");
-field209->setAccessType("outputOnly");
-field209->setType("SFRotation");
-ProtoInterface21->addField(field209);
+field209->setName(CString("l_pinky_metacarpal_changed"));
+field209->setAccessType(CString("outputOnly"));
+field209->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field209);
 
 field* field210 = new field();
-field210->setName("l_pinky_middle_key");
-field210->setAccessType("inputOutput");
-field210->setType("MFFloat");
+field210->setName(CString("l_pinky_middle_key"));
+field210->setAccessType(CString("inputOutput"));
+field210->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field210);
+ProtoInterface21->addChild(field210);
 
 field* field211 = new field();
-field211->setName("l_pinky_middle_keyValue");
-field211->setAccessType("inputOutput");
-field211->setType("MFRotation");
+field211->setName(CString("l_pinky_middle_keyValue"));
+field211->setAccessType(CString("inputOutput"));
+field211->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field211);
+ProtoInterface21->addChild(field211);
 
 field* field212 = new field();
-field212->setName("l_pinky_middle_changed");
-field212->setAccessType("outputOnly");
-field212->setType("SFRotation");
-ProtoInterface21->addField(field212);
+field212->setName(CString("l_pinky_middle_changed"));
+field212->setAccessType(CString("outputOnly"));
+field212->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field212);
 
 field* field213 = new field();
-field213->setName("l_pinky_proximal_key");
-field213->setAccessType("inputOutput");
-field213->setType("MFFloat");
+field213->setName(CString("l_pinky_proximal_key"));
+field213->setAccessType(CString("inputOutput"));
+field213->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field213);
+ProtoInterface21->addChild(field213);
 
 field* field214 = new field();
-field214->setName("l_pinky_proximal_keyValue");
-field214->setAccessType("inputOutput");
-field214->setType("MFRotation");
+field214->setName(CString("l_pinky_proximal_keyValue"));
+field214->setAccessType(CString("inputOutput"));
+field214->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field214);
+ProtoInterface21->addChild(field214);
 
 field* field215 = new field();
-field215->setName("l_pinky_proximal_changed");
-field215->setAccessType("outputOnly");
-field215->setType("SFRotation");
-ProtoInterface21->addField(field215);
+field215->setName(CString("l_pinky_proximal_changed"));
+field215->setAccessType(CString("outputOnly"));
+field215->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field215);
 
 field* field216 = new field();
-field216->setName("l_ring0_key");
-field216->setAccessType("inputOutput");
-field216->setType("MFFloat");
+field216->setName(CString("l_ring0_key"));
+field216->setAccessType(CString("inputOutput"));
+field216->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field216);
+ProtoInterface21->addChild(field216);
 
 field* field217 = new field();
-field217->setName("l_ring0_keyValue");
-field217->setAccessType("inputOutput");
-field217->setType("MFRotation");
+field217->setName(CString("l_ring0_keyValue"));
+field217->setAccessType(CString("inputOutput"));
+field217->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field217);
+ProtoInterface21->addChild(field217);
 
 field* field218 = new field();
-field218->setName("l_ring0_changed");
-field218->setAccessType("outputOnly");
-field218->setType("SFRotation");
-ProtoInterface21->addField(field218);
+field218->setName(CString("l_ring0_changed"));
+field218->setAccessType(CString("outputOnly"));
+field218->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field218);
 
 field* field219 = new field();
-field219->setName("l_ring1_key");
-field219->setAccessType("inputOutput");
-field219->setType("MFFloat");
+field219->setName(CString("l_ring1_key"));
+field219->setAccessType(CString("inputOutput"));
+field219->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field219);
+ProtoInterface21->addChild(field219);
 
 field* field220 = new field();
-field220->setName("l_ring1_keyValue");
-field220->setAccessType("inputOutput");
-field220->setType("MFRotation");
+field220->setName(CString("l_ring1_keyValue"));
+field220->setAccessType(CString("inputOutput"));
+field220->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field220);
+ProtoInterface21->addChild(field220);
 
 field* field221 = new field();
-field221->setName("l_ring1_changed");
-field221->setAccessType("outputOnly");
-field221->setType("SFRotation");
-ProtoInterface21->addField(field221);
+field221->setName(CString("l_ring1_changed"));
+field221->setAccessType(CString("outputOnly"));
+field221->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field221);
 
 field* field222 = new field();
-field222->setName("l_ring2_key");
-field222->setAccessType("inputOutput");
-field222->setType("MFFloat");
+field222->setName(CString("l_ring2_key"));
+field222->setAccessType(CString("inputOutput"));
+field222->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field222);
+ProtoInterface21->addChild(field222);
 
 field* field223 = new field();
-field223->setName("l_ring2_keyValue");
-field223->setAccessType("inputOutput");
-field223->setType("MFRotation");
+field223->setName(CString("l_ring2_keyValue"));
+field223->setAccessType(CString("inputOutput"));
+field223->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field223);
+ProtoInterface21->addChild(field223);
 
 field* field224 = new field();
-field224->setName("l_ring2_changed");
-field224->setAccessType("outputOnly");
-field224->setType("SFRotation");
-ProtoInterface21->addField(field224);
+field224->setName(CString("l_ring2_changed"));
+field224->setAccessType(CString("outputOnly"));
+field224->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field224);
 
 field* field225 = new field();
-field225->setName("l_ring3_key");
-field225->setAccessType("inputOutput");
-field225->setType("MFFloat");
+field225->setName(CString("l_ring3_key"));
+field225->setAccessType(CString("inputOutput"));
+field225->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field225);
+ProtoInterface21->addChild(field225);
 
 field* field226 = new field();
-field226->setName("l_ring3_keyValue");
-field226->setAccessType("inputOutput");
-field226->setType("MFRotation");
+field226->setName(CString("l_ring3_keyValue"));
+field226->setAccessType(CString("inputOutput"));
+field226->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field226);
+ProtoInterface21->addChild(field226);
 
 field* field227 = new field();
-field227->setName("l_ring3_changed");
-field227->setAccessType("outputOnly");
-field227->setType("SFRotation");
-ProtoInterface21->addField(field227);
+field227->setName(CString("l_ring3_changed"));
+field227->setAccessType(CString("outputOnly"));
+field227->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field227);
 
 field* field228 = new field();
-field228->setName("l_ring_distal_key");
-field228->setAccessType("inputOutput");
-field228->setType("MFFloat");
+field228->setName(CString("l_ring_distal_key"));
+field228->setAccessType(CString("inputOutput"));
+field228->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field228);
+ProtoInterface21->addChild(field228);
 
 field* field229 = new field();
-field229->setName("l_ring_distal_keyValue");
-field229->setAccessType("inputOutput");
-field229->setType("MFRotation");
+field229->setName(CString("l_ring_distal_keyValue"));
+field229->setAccessType(CString("inputOutput"));
+field229->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field229);
+ProtoInterface21->addChild(field229);
 
 field* field230 = new field();
-field230->setName("l_ring_distal_changed");
-field230->setAccessType("outputOnly");
-field230->setType("SFRotation");
-ProtoInterface21->addField(field230);
+field230->setName(CString("l_ring_distal_changed"));
+field230->setAccessType(CString("outputOnly"));
+field230->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field230);
 
 field* field231 = new field();
-field231->setName("l_ring_metacarpal_key");
-field231->setAccessType("inputOutput");
-field231->setType("MFFloat");
+field231->setName(CString("l_ring_metacarpal_key"));
+field231->setAccessType(CString("inputOutput"));
+field231->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field231);
+ProtoInterface21->addChild(field231);
 
 field* field232 = new field();
-field232->setName("l_ring_metacarpal_keyValue");
-field232->setAccessType("inputOutput");
-field232->setType("MFRotation");
+field232->setName(CString("l_ring_metacarpal_keyValue"));
+field232->setAccessType(CString("inputOutput"));
+field232->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field232);
+ProtoInterface21->addChild(field232);
 
 field* field233 = new field();
-field233->setName("l_ring_metacarpal_changed");
-field233->setAccessType("outputOnly");
-field233->setType("SFRotation");
-ProtoInterface21->addField(field233);
+field233->setName(CString("l_ring_metacarpal_changed"));
+field233->setAccessType(CString("outputOnly"));
+field233->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field233);
 
 field* field234 = new field();
-field234->setName("l_ring_middle_key");
-field234->setAccessType("inputOutput");
-field234->setType("MFFloat");
+field234->setName(CString("l_ring_middle_key"));
+field234->setAccessType(CString("inputOutput"));
+field234->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field234);
+ProtoInterface21->addChild(field234);
 
 field* field235 = new field();
-field235->setName("l_ring_middle_keyValue");
-field235->setAccessType("inputOutput");
-field235->setType("MFRotation");
+field235->setName(CString("l_ring_middle_keyValue"));
+field235->setAccessType(CString("inputOutput"));
+field235->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field235);
+ProtoInterface21->addChild(field235);
 
 field* field236 = new field();
-field236->setName("l_ring_middle_changed");
-field236->setAccessType("outputOnly");
-field236->setType("SFRotation");
-ProtoInterface21->addField(field236);
+field236->setName(CString("l_ring_middle_changed"));
+field236->setAccessType(CString("outputOnly"));
+field236->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field236);
 
 field* field237 = new field();
-field237->setName("l_ring_proximal_key");
-field237->setAccessType("inputOutput");
-field237->setType("MFFloat");
+field237->setName(CString("l_ring_proximal_key"));
+field237->setAccessType(CString("inputOutput"));
+field237->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field237);
+ProtoInterface21->addChild(field237);
 
 field* field238 = new field();
-field238->setName("l_ring_proximal_keyValue");
-field238->setAccessType("inputOutput");
-field238->setType("MFRotation");
+field238->setName(CString("l_ring_proximal_keyValue"));
+field238->setAccessType(CString("inputOutput"));
+field238->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field238);
+ProtoInterface21->addChild(field238);
 
 field* field239 = new field();
-field239->setName("l_ring_proximal_changed");
-field239->setAccessType("outputOnly");
-field239->setType("SFRotation");
-ProtoInterface21->addField(field239);
+field239->setName(CString("l_ring_proximal_changed"));
+field239->setAccessType(CString("outputOnly"));
+field239->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field239);
 
 field* field240 = new field();
-field240->setName("l_scapula_key");
-field240->setAccessType("inputOutput");
-field240->setType("MFFloat");
+field240->setName(CString("l_scapula_key"));
+field240->setAccessType(CString("inputOutput"));
+field240->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field240);
+ProtoInterface21->addChild(field240);
 
 field* field241 = new field();
-field241->setName("l_scapula_keyValue");
-field241->setAccessType("inputOutput");
-field241->setType("MFRotation");
+field241->setName(CString("l_scapula_keyValue"));
+field241->setAccessType(CString("inputOutput"));
+field241->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field241);
+ProtoInterface21->addChild(field241);
 
 field* field242 = new field();
-field242->setName("l_scapula_changed");
-field242->setAccessType("outputOnly");
-field242->setType("SFRotation");
-ProtoInterface21->addField(field242);
+field242->setName(CString("l_scapula_changed"));
+field242->setAccessType(CString("outputOnly"));
+field242->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field242);
 
 field* field243 = new field();
-field243->setName("l_shoulder_key");
-field243->setAccessType("inputOutput");
-field243->setType("MFFloat");
+field243->setName(CString("l_shoulder_key"));
+field243->setAccessType(CString("inputOutput"));
+field243->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field243);
+ProtoInterface21->addChild(field243);
 
 field* field244 = new field();
-field244->setName("l_shoulder_keyValue");
-field244->setAccessType("inputOutput");
-field244->setType("MFRotation");
+field244->setName(CString("l_shoulder_keyValue"));
+field244->setAccessType(CString("inputOutput"));
+field244->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field244);
+ProtoInterface21->addChild(field244);
 
 field* field245 = new field();
-field245->setName("l_shoulder_changed");
-field245->setAccessType("outputOnly");
-field245->setType("SFRotation");
-ProtoInterface21->addField(field245);
+field245->setName(CString("l_shoulder_changed"));
+field245->setAccessType(CString("outputOnly"));
+field245->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field245);
 
 field* field246 = new field();
-field246->setName("l_sternoclavicular_key");
-field246->setAccessType("inputOutput");
-field246->setType("MFFloat");
+field246->setName(CString("l_sternoclavicular_key"));
+field246->setAccessType(CString("inputOutput"));
+field246->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field246);
+ProtoInterface21->addChild(field246);
 
 field* field247 = new field();
-field247->setName("l_sternoclavicular_keyValue");
-field247->setAccessType("inputOutput");
-field247->setType("MFRotation");
+field247->setName(CString("l_sternoclavicular_keyValue"));
+field247->setAccessType(CString("inputOutput"));
+field247->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field247);
+ProtoInterface21->addChild(field247);
 
 field* field248 = new field();
-field248->setName("l_sternoclavicular_changed");
-field248->setAccessType("outputOnly");
-field248->setType("SFRotation");
-ProtoInterface21->addField(field248);
+field248->setName(CString("l_sternoclavicular_changed"));
+field248->setAccessType(CString("outputOnly"));
+field248->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field248);
 
 field* field249 = new field();
-field249->setName("l_subtalar_key");
-field249->setAccessType("inputOutput");
-field249->setType("MFFloat");
+field249->setName(CString("l_subtalar_key"));
+field249->setAccessType(CString("inputOutput"));
+field249->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field249);
+ProtoInterface21->addChild(field249);
 
 field* field250 = new field();
-field250->setName("l_subtalar_keyValue");
-field250->setAccessType("inputOutput");
-field250->setType("MFRotation");
+field250->setName(CString("l_subtalar_keyValue"));
+field250->setAccessType(CString("inputOutput"));
+field250->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field250);
+ProtoInterface21->addChild(field250);
 
 field* field251 = new field();
-field251->setName("l_subtalar_changed");
-field251->setAccessType("outputOnly");
-field251->setType("SFRotation");
-ProtoInterface21->addField(field251);
+field251->setName(CString("l_subtalar_changed"));
+field251->setAccessType(CString("outputOnly"));
+field251->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field251);
 
 field* field252 = new field();
-field252->setName("l_thigh_key");
-field252->setAccessType("inputOutput");
-field252->setType("MFFloat");
+field252->setName(CString("l_thigh_key"));
+field252->setAccessType(CString("inputOutput"));
+field252->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field252);
+ProtoInterface21->addChild(field252);
 
 field* field253 = new field();
-field253->setName("l_thigh_keyValue");
-field253->setAccessType("inputOutput");
-field253->setType("MFRotation");
+field253->setName(CString("l_thigh_keyValue"));
+field253->setAccessType(CString("inputOutput"));
+field253->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field253);
+ProtoInterface21->addChild(field253);
 
 field* field254 = new field();
-field254->setName("l_thigh_changed");
-field254->setAccessType("outputOnly");
-field254->setType("SFRotation");
-ProtoInterface21->addField(field254);
+field254->setName(CString("l_thigh_changed"));
+field254->setAccessType(CString("outputOnly"));
+field254->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field254);
 
 field* field255 = new field();
-field255->setName("l_thumb1_key");
-field255->setAccessType("inputOutput");
-field255->setType("MFFloat");
+field255->setName(CString("l_thumb1_key"));
+field255->setAccessType(CString("inputOutput"));
+field255->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field255);
+ProtoInterface21->addChild(field255);
 
 field* field256 = new field();
-field256->setName("l_thumb1_keyValue");
-field256->setAccessType("inputOutput");
-field256->setType("MFRotation");
+field256->setName(CString("l_thumb1_keyValue"));
+field256->setAccessType(CString("inputOutput"));
+field256->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field256);
+ProtoInterface21->addChild(field256);
 
 field* field257 = new field();
-field257->setName("l_thumb1_changed");
-field257->setAccessType("outputOnly");
-field257->setType("SFRotation");
-ProtoInterface21->addField(field257);
+field257->setName(CString("l_thumb1_changed"));
+field257->setAccessType(CString("outputOnly"));
+field257->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field257);
 
 field* field258 = new field();
-field258->setName("l_thumb2_key");
-field258->setAccessType("inputOutput");
-field258->setType("MFFloat");
+field258->setName(CString("l_thumb2_key"));
+field258->setAccessType(CString("inputOutput"));
+field258->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field258);
+ProtoInterface21->addChild(field258);
 
 field* field259 = new field();
-field259->setName("l_thumb2_keyValue");
-field259->setAccessType("inputOutput");
-field259->setType("MFRotation");
+field259->setName(CString("l_thumb2_keyValue"));
+field259->setAccessType(CString("inputOutput"));
+field259->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field259);
+ProtoInterface21->addChild(field259);
 
 field* field260 = new field();
-field260->setName("l_thumb2_changed");
-field260->setAccessType("outputOnly");
-field260->setType("SFRotation");
-ProtoInterface21->addField(field260);
+field260->setName(CString("l_thumb2_changed"));
+field260->setAccessType(CString("outputOnly"));
+field260->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field260);
 
 field* field261 = new field();
-field261->setName("l_thumb3_key");
-field261->setAccessType("inputOutput");
-field261->setType("MFFloat");
+field261->setName(CString("l_thumb3_key"));
+field261->setAccessType(CString("inputOutput"));
+field261->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field261);
+ProtoInterface21->addChild(field261);
 
 field* field262 = new field();
-field262->setName("l_thumb3_keyValue");
-field262->setAccessType("inputOutput");
-field262->setType("MFRotation");
+field262->setName(CString("l_thumb3_keyValue"));
+field262->setAccessType(CString("inputOutput"));
+field262->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field262);
+ProtoInterface21->addChild(field262);
 
 field* field263 = new field();
-field263->setName("l_thumb3_changed");
-field263->setAccessType("outputOnly");
-field263->setType("SFRotation");
-ProtoInterface21->addField(field263);
+field263->setName(CString("l_thumb3_changed"));
+field263->setAccessType(CString("outputOnly"));
+field263->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field263);
 
 field* field264 = new field();
-field264->setName("l_thumb_distal_key");
-field264->setAccessType("inputOutput");
-field264->setType("MFFloat");
+field264->setName(CString("l_thumb_distal_key"));
+field264->setAccessType(CString("inputOutput"));
+field264->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field264);
+ProtoInterface21->addChild(field264);
 
 field* field265 = new field();
-field265->setName("l_thumb_distal_keyValue");
-field265->setAccessType("inputOutput");
-field265->setType("MFRotation");
+field265->setName(CString("l_thumb_distal_keyValue"));
+field265->setAccessType(CString("inputOutput"));
+field265->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field265);
+ProtoInterface21->addChild(field265);
 
 field* field266 = new field();
-field266->setName("l_thumb_distal_changed");
-field266->setAccessType("outputOnly");
-field266->setType("SFRotation");
-ProtoInterface21->addField(field266);
+field266->setName(CString("l_thumb_distal_changed"));
+field266->setAccessType(CString("outputOnly"));
+field266->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field266);
 
 field* field267 = new field();
-field267->setName("l_thumb_metacarpal_key");
-field267->setAccessType("inputOutput");
-field267->setType("MFFloat");
+field267->setName(CString("l_thumb_metacarpal_key"));
+field267->setAccessType(CString("inputOutput"));
+field267->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field267);
+ProtoInterface21->addChild(field267);
 
 field* field268 = new field();
-field268->setName("l_thumb_metacarpal_keyValue");
-field268->setAccessType("inputOutput");
-field268->setType("MFRotation");
+field268->setName(CString("l_thumb_metacarpal_keyValue"));
+field268->setAccessType(CString("inputOutput"));
+field268->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field268);
+ProtoInterface21->addChild(field268);
 
 field* field269 = new field();
-field269->setName("l_thumb_metacarpal_changed");
-field269->setAccessType("outputOnly");
-field269->setType("SFRotation");
-ProtoInterface21->addField(field269);
+field269->setName(CString("l_thumb_metacarpal_changed"));
+field269->setAccessType(CString("outputOnly"));
+field269->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field269);
 
 field* field270 = new field();
-field270->setName("l_thumb_proximal_key");
-field270->setAccessType("inputOutput");
-field270->setType("MFFloat");
+field270->setName(CString("l_thumb_proximal_key"));
+field270->setAccessType(CString("inputOutput"));
+field270->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field270);
+ProtoInterface21->addChild(field270);
 
 field* field271 = new field();
-field271->setName("l_thumb_proximal_keyValue");
-field271->setAccessType("inputOutput");
-field271->setType("MFRotation");
+field271->setName(CString("l_thumb_proximal_keyValue"));
+field271->setAccessType(CString("inputOutput"));
+field271->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field271);
+ProtoInterface21->addChild(field271);
 
 field* field272 = new field();
-field272->setName("l_thumb_proximal_changed");
-field272->setAccessType("outputOnly");
-field272->setType("SFRotation");
-ProtoInterface21->addField(field272);
+field272->setName(CString("l_thumb_proximal_changed"));
+field272->setAccessType(CString("outputOnly"));
+field272->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field272);
 
 field* field273 = new field();
-field273->setName("l_upperarm_key");
-field273->setAccessType("inputOutput");
-field273->setType("MFFloat");
+field273->setName(CString("l_upperarm_key"));
+field273->setAccessType(CString("inputOutput"));
+field273->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field273);
+ProtoInterface21->addChild(field273);
 
 field* field274 = new field();
-field274->setName("l_upperarm_keyValue");
-field274->setAccessType("inputOutput");
-field274->setType("MFRotation");
+field274->setName(CString("l_upperarm_keyValue"));
+field274->setAccessType(CString("inputOutput"));
+field274->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field274);
+ProtoInterface21->addChild(field274);
 
 field* field275 = new field();
-field275->setName("l_upperarm_changed");
-field275->setAccessType("outputOnly");
-field275->setType("SFRotation");
-ProtoInterface21->addField(field275);
+field275->setName(CString("l_upperarm_changed"));
+field275->setAccessType(CString("outputOnly"));
+field275->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field275);
 
 field* field276 = new field();
-field276->setName("l_wrist_key");
-field276->setAccessType("inputOutput");
-field276->setType("MFFloat");
+field276->setName(CString("l_wrist_key"));
+field276->setAccessType(CString("inputOutput"));
+field276->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field276);
+ProtoInterface21->addChild(field276);
 
 field* field277 = new field();
-field277->setName("l_wrist_keyValue");
-field277->setAccessType("inputOutput");
-field277->setType("MFRotation");
+field277->setName(CString("l_wrist_keyValue"));
+field277->setAccessType(CString("inputOutput"));
+field277->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field277);
+ProtoInterface21->addChild(field277);
 
 field* field278 = new field();
-field278->setName("l_wrist_changed");
-field278->setAccessType("outputOnly");
-field278->setType("SFRotation");
-ProtoInterface21->addField(field278);
+field278->setName(CString("l_wrist_changed"));
+field278->setAccessType(CString("outputOnly"));
+field278->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field278);
 
 field* field279 = new field();
-field279->setName("pelvis_key");
-field279->setAccessType("inputOutput");
-field279->setType("MFFloat");
+field279->setName(CString("pelvis_key"));
+field279->setAccessType(CString("inputOutput"));
+field279->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field279);
+ProtoInterface21->addChild(field279);
 
 field* field280 = new field();
-field280->setName("pelvis_keyValue");
-field280->setAccessType("inputOutput");
-field280->setType("MFRotation");
+field280->setName(CString("pelvis_keyValue"));
+field280->setAccessType(CString("inputOutput"));
+field280->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field280);
+ProtoInterface21->addChild(field280);
 
 field* field281 = new field();
-field281->setName("pelvis_changed");
-field281->setAccessType("outputOnly");
-field281->setType("SFRotation");
-ProtoInterface21->addField(field281);
+field281->setName(CString("pelvis_changed"));
+field281->setAccessType(CString("outputOnly"));
+field281->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field281);
 
 field* field282 = new field();
-field282->setName("r_acromioclavicular_key");
-field282->setAccessType("inputOutput");
-field282->setType("MFFloat");
+field282->setName(CString("r_acromioclavicular_key"));
+field282->setAccessType(CString("inputOutput"));
+field282->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field282);
+ProtoInterface21->addChild(field282);
 
 field* field283 = new field();
-field283->setName("r_acromioclavicular_keyValue");
-field283->setAccessType("inputOutput");
-field283->setType("MFRotation");
+field283->setName(CString("r_acromioclavicular_keyValue"));
+field283->setAccessType(CString("inputOutput"));
+field283->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field283);
+ProtoInterface21->addChild(field283);
 
 field* field284 = new field();
-field284->setName("r_acromioclavicular_changed");
-field284->setAccessType("outputOnly");
-field284->setType("SFRotation");
-ProtoInterface21->addField(field284);
+field284->setName(CString("r_acromioclavicular_changed"));
+field284->setAccessType(CString("outputOnly"));
+field284->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field284);
 
 field* field285 = new field();
-field285->setName("r_ankle_key");
-field285->setAccessType("inputOutput");
-field285->setType("MFFloat");
+field285->setName(CString("r_ankle_key"));
+field285->setAccessType(CString("inputOutput"));
+field285->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field285);
+ProtoInterface21->addChild(field285);
 
 field* field286 = new field();
-field286->setName("r_ankle_keyValue");
-field286->setAccessType("inputOutput");
-field286->setType("MFRotation");
+field286->setName(CString("r_ankle_keyValue"));
+field286->setAccessType(CString("inputOutput"));
+field286->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field286);
+ProtoInterface21->addChild(field286);
 
 field* field287 = new field();
-field287->setName("r_ankle_changed");
-field287->setAccessType("outputOnly");
-field287->setType("SFRotation");
-ProtoInterface21->addField(field287);
+field287->setName(CString("r_ankle_changed"));
+field287->setAccessType(CString("outputOnly"));
+field287->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field287);
 
 field* field288 = new field();
-field288->setName("r_calf_key");
-field288->setAccessType("inputOutput");
-field288->setType("MFFloat");
+field288->setName(CString("r_calf_key"));
+field288->setAccessType(CString("inputOutput"));
+field288->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field288);
+ProtoInterface21->addChild(field288);
 
 field* field289 = new field();
-field289->setName("r_calf_keyValue");
-field289->setAccessType("inputOutput");
-field289->setType("MFRotation");
+field289->setName(CString("r_calf_keyValue"));
+field289->setAccessType(CString("inputOutput"));
+field289->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field289);
+ProtoInterface21->addChild(field289);
 
 field* field290 = new field();
-field290->setName("r_calf_changed");
-field290->setAccessType("outputOnly");
-field290->setType("SFRotation");
-ProtoInterface21->addField(field290);
+field290->setName(CString("r_calf_changed"));
+field290->setAccessType(CString("outputOnly"));
+field290->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field290);
 
 field* field291 = new field();
-field291->setName("r_clavicle_key");
-field291->setAccessType("inputOutput");
-field291->setType("MFFloat");
+field291->setName(CString("r_clavicle_key"));
+field291->setAccessType(CString("inputOutput"));
+field291->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field291);
+ProtoInterface21->addChild(field291);
 
 field* field292 = new field();
-field292->setName("r_clavicle_keyValue");
-field292->setAccessType("inputOutput");
-field292->setType("MFRotation");
+field292->setName(CString("r_clavicle_keyValue"));
+field292->setAccessType(CString("inputOutput"));
+field292->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field292);
+ProtoInterface21->addChild(field292);
 
 field* field293 = new field();
-field293->setName("r_clavicle_changed");
-field293->setAccessType("outputOnly");
-field293->setType("SFRotation");
-ProtoInterface21->addField(field293);
+field293->setName(CString("r_clavicle_changed"));
+field293->setAccessType(CString("outputOnly"));
+field293->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field293);
 
 field* field294 = new field();
-field294->setName("r_elbow_key");
-field294->setAccessType("inputOutput");
-field294->setType("MFFloat");
+field294->setName(CString("r_elbow_key"));
+field294->setAccessType(CString("inputOutput"));
+field294->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field294);
+ProtoInterface21->addChild(field294);
 
 field* field295 = new field();
-field295->setName("r_elbow_keyValue");
-field295->setAccessType("inputOutput");
-field295->setType("MFRotation");
+field295->setName(CString("r_elbow_keyValue"));
+field295->setAccessType(CString("inputOutput"));
+field295->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field295);
+ProtoInterface21->addChild(field295);
 
 field* field296 = new field();
-field296->setName("r_elbow_changed");
-field296->setAccessType("outputOnly");
-field296->setType("SFRotation");
-ProtoInterface21->addField(field296);
+field296->setName(CString("r_elbow_changed"));
+field296->setAccessType(CString("outputOnly"));
+field296->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field296);
 
 field* field297 = new field();
-field297->setName("r_eyeball_key");
-field297->setAccessType("inputOutput");
-field297->setType("MFFloat");
+field297->setName(CString("r_eyeball_key"));
+field297->setAccessType(CString("inputOutput"));
+field297->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field297);
+ProtoInterface21->addChild(field297);
 
 field* field298 = new field();
-field298->setName("r_eyeball_keyValue");
-field298->setAccessType("inputOutput");
-field298->setType("MFRotation");
+field298->setName(CString("r_eyeball_keyValue"));
+field298->setAccessType(CString("inputOutput"));
+field298->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field298);
+ProtoInterface21->addChild(field298);
 
 field* field299 = new field();
-field299->setName("r_eyeball_changed");
-field299->setAccessType("outputOnly");
-field299->setType("SFRotation");
-ProtoInterface21->addField(field299);
+field299->setName(CString("r_eyeball_changed"));
+field299->setAccessType(CString("outputOnly"));
+field299->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field299);
 
 field* field300 = new field();
-field300->setName("r_eyeball_joint_key");
-field300->setAccessType("inputOutput");
-field300->setType("MFFloat");
+field300->setName(CString("r_eyeball_joint_key"));
+field300->setAccessType(CString("inputOutput"));
+field300->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field300);
+ProtoInterface21->addChild(field300);
 
 field* field301 = new field();
-field301->setName("r_eyeball_joint_keyValue");
-field301->setAccessType("inputOutput");
-field301->setType("MFRotation");
+field301->setName(CString("r_eyeball_joint_keyValue"));
+field301->setAccessType(CString("inputOutput"));
+field301->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field301);
+ProtoInterface21->addChild(field301);
 
 field* field302 = new field();
-field302->setName("r_eyeball_joint_changed");
-field302->setAccessType("outputOnly");
-field302->setType("SFRotation");
-ProtoInterface21->addField(field302);
+field302->setName(CString("r_eyeball_joint_changed"));
+field302->setAccessType(CString("outputOnly"));
+field302->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field302);
 
 field* field303 = new field();
-field303->setName("r_eyebrow_key");
-field303->setAccessType("inputOutput");
-field303->setType("MFFloat");
+field303->setName(CString("r_eyebrow_key"));
+field303->setAccessType(CString("inputOutput"));
+field303->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field303);
+ProtoInterface21->addChild(field303);
 
 field* field304 = new field();
-field304->setName("r_eyebrow_keyValue");
-field304->setAccessType("inputOutput");
-field304->setType("MFRotation");
+field304->setName(CString("r_eyebrow_keyValue"));
+field304->setAccessType(CString("inputOutput"));
+field304->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field304);
+ProtoInterface21->addChild(field304);
 
 field* field305 = new field();
-field305->setName("r_eyebrow_changed");
-field305->setAccessType("outputOnly");
-field305->setType("SFRotation");
-ProtoInterface21->addField(field305);
+field305->setName(CString("r_eyebrow_changed"));
+field305->setAccessType(CString("outputOnly"));
+field305->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field305);
 
 field* field306 = new field();
-field306->setName("r_eyebrow_joint_key");
-field306->setAccessType("inputOutput");
-field306->setType("MFFloat");
+field306->setName(CString("r_eyebrow_joint_key"));
+field306->setAccessType(CString("inputOutput"));
+field306->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field306);
+ProtoInterface21->addChild(field306);
 
 field* field307 = new field();
-field307->setName("r_eyebrow_joint_keyValue");
-field307->setAccessType("inputOutput");
-field307->setType("MFRotation");
+field307->setName(CString("r_eyebrow_joint_keyValue"));
+field307->setAccessType(CString("inputOutput"));
+field307->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field307);
+ProtoInterface21->addChild(field307);
 
 field* field308 = new field();
-field308->setName("r_eyebrow_joint_changed");
-field308->setAccessType("outputOnly");
-field308->setType("SFRotation");
-ProtoInterface21->addField(field308);
+field308->setName(CString("r_eyebrow_joint_changed"));
+field308->setAccessType(CString("outputOnly"));
+field308->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field308);
 
 field* field309 = new field();
-field309->setName("r_eyelid_key");
-field309->setAccessType("inputOutput");
-field309->setType("MFFloat");
+field309->setName(CString("r_eyelid_key"));
+field309->setAccessType(CString("inputOutput"));
+field309->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field309);
+ProtoInterface21->addChild(field309);
 
 field* field310 = new field();
-field310->setName("r_eyelid_keyValue");
-field310->setAccessType("inputOutput");
-field310->setType("MFRotation");
+field310->setName(CString("r_eyelid_keyValue"));
+field310->setAccessType(CString("inputOutput"));
+field310->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field310);
+ProtoInterface21->addChild(field310);
 
 field* field311 = new field();
-field311->setName("r_eyelid_changed");
-field311->setAccessType("outputOnly");
-field311->setType("SFRotation");
-ProtoInterface21->addField(field311);
+field311->setName(CString("r_eyelid_changed"));
+field311->setAccessType(CString("outputOnly"));
+field311->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field311);
 
 field* field312 = new field();
-field312->setName("r_eyelid_joint_key");
-field312->setAccessType("inputOutput");
-field312->setType("MFFloat");
+field312->setName(CString("r_eyelid_joint_key"));
+field312->setAccessType(CString("inputOutput"));
+field312->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field312);
+ProtoInterface21->addChild(field312);
 
 field* field313 = new field();
-field313->setName("r_eyelid_joint_keyValue");
-field313->setAccessType("inputOutput");
-field313->setType("MFRotation");
+field313->setName(CString("r_eyelid_joint_keyValue"));
+field313->setAccessType(CString("inputOutput"));
+field313->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field313);
+ProtoInterface21->addChild(field313);
 
 field* field314 = new field();
-field314->setName("r_eyelid_joint_changed");
-field314->setAccessType("outputOnly");
-field314->setType("SFRotation");
-ProtoInterface21->addField(field314);
+field314->setName(CString("r_eyelid_joint_changed"));
+field314->setAccessType(CString("outputOnly"));
+field314->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field314);
 
 field* field315 = new field();
-field315->setName("r_forearm_key");
-field315->setAccessType("inputOutput");
-field315->setType("MFFloat");
+field315->setName(CString("r_forearm_key"));
+field315->setAccessType(CString("inputOutput"));
+field315->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field315);
+ProtoInterface21->addChild(field315);
 
 field* field316 = new field();
-field316->setName("r_forearm_keyValue");
-field316->setAccessType("inputOutput");
-field316->setType("MFRotation");
+field316->setName(CString("r_forearm_keyValue"));
+field316->setAccessType(CString("inputOutput"));
+field316->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field316);
+ProtoInterface21->addChild(field316);
 
 field* field317 = new field();
-field317->setName("r_forearm_changed");
-field317->setAccessType("outputOnly");
-field317->setType("SFRotation");
-ProtoInterface21->addField(field317);
+field317->setName(CString("r_forearm_changed"));
+field317->setAccessType(CString("outputOnly"));
+field317->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field317);
 
 field* field318 = new field();
-field318->setName("r_forefoot_key");
-field318->setAccessType("inputOutput");
-field318->setType("MFFloat");
+field318->setName(CString("r_forefoot_key"));
+field318->setAccessType(CString("inputOutput"));
+field318->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field318);
+ProtoInterface21->addChild(field318);
 
 field* field319 = new field();
-field319->setName("r_forefoot_keyValue");
-field319->setAccessType("inputOutput");
-field319->setType("MFRotation");
+field319->setName(CString("r_forefoot_keyValue"));
+field319->setAccessType(CString("inputOutput"));
+field319->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field319);
+ProtoInterface21->addChild(field319);
 
 field* field320 = new field();
-field320->setName("r_forefoot_changed");
-field320->setAccessType("outputOnly");
-field320->setType("SFRotation");
-ProtoInterface21->addField(field320);
+field320->setName(CString("r_forefoot_changed"));
+field320->setAccessType(CString("outputOnly"));
+field320->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field320);
 
 field* field321 = new field();
-field321->setName("r_hand_key");
-field321->setAccessType("inputOutput");
-field321->setType("MFFloat");
+field321->setName(CString("r_hand_key"));
+field321->setAccessType(CString("inputOutput"));
+field321->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field321);
+ProtoInterface21->addChild(field321);
 
 field* field322 = new field();
-field322->setName("r_hand_keyValue");
-field322->setAccessType("inputOutput");
-field322->setType("MFRotation");
+field322->setName(CString("r_hand_keyValue"));
+field322->setAccessType(CString("inputOutput"));
+field322->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field322);
+ProtoInterface21->addChild(field322);
 
 field* field323 = new field();
-field323->setName("r_hand_changed");
-field323->setAccessType("outputOnly");
-field323->setType("SFRotation");
-ProtoInterface21->addField(field323);
+field323->setName(CString("r_hand_changed"));
+field323->setAccessType(CString("outputOnly"));
+field323->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field323);
 
 field* field324 = new field();
-field324->setName("r_hindfoot_key");
-field324->setAccessType("inputOutput");
-field324->setType("MFFloat");
+field324->setName(CString("r_hindfoot_key"));
+field324->setAccessType(CString("inputOutput"));
+field324->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field324);
+ProtoInterface21->addChild(field324);
 
 field* field325 = new field();
-field325->setName("r_hindfoot_keyValue");
-field325->setAccessType("inputOutput");
-field325->setType("MFRotation");
+field325->setName(CString("r_hindfoot_keyValue"));
+field325->setAccessType(CString("inputOutput"));
+field325->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field325);
+ProtoInterface21->addChild(field325);
 
 field* field326 = new field();
-field326->setName("r_hindfoot_changed");
-field326->setAccessType("outputOnly");
-field326->setType("SFRotation");
-ProtoInterface21->addField(field326);
+field326->setName(CString("r_hindfoot_changed"));
+field326->setAccessType(CString("outputOnly"));
+field326->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field326);
 
 field* field327 = new field();
-field327->setName("r_hip_key");
-field327->setAccessType("inputOutput");
-field327->setType("MFFloat");
+field327->setName(CString("r_hip_key"));
+field327->setAccessType(CString("inputOutput"));
+field327->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field327);
+ProtoInterface21->addChild(field327);
 
 field* field328 = new field();
-field328->setName("r_hip_keyValue");
-field328->setAccessType("inputOutput");
-field328->setType("MFRotation");
+field328->setName(CString("r_hip_keyValue"));
+field328->setAccessType(CString("inputOutput"));
+field328->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field328);
+ProtoInterface21->addChild(field328);
 
 field* field329 = new field();
-field329->setName("r_hip_changed");
-field329->setAccessType("outputOnly");
-field329->setType("SFRotation");
-ProtoInterface21->addField(field329);
+field329->setName(CString("r_hip_changed"));
+field329->setAccessType(CString("outputOnly"));
+field329->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field329);
 
 field* field330 = new field();
-field330->setName("r_index0_key");
-field330->setAccessType("inputOutput");
-field330->setType("MFFloat");
+field330->setName(CString("r_index0_key"));
+field330->setAccessType(CString("inputOutput"));
+field330->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field330);
+ProtoInterface21->addChild(field330);
 
 field* field331 = new field();
-field331->setName("r_index0_keyValue");
-field331->setAccessType("inputOutput");
-field331->setType("MFRotation");
+field331->setName(CString("r_index0_keyValue"));
+field331->setAccessType(CString("inputOutput"));
+field331->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field331);
+ProtoInterface21->addChild(field331);
 
 field* field332 = new field();
-field332->setName("r_index0_changed");
-field332->setAccessType("outputOnly");
-field332->setType("SFRotation");
-ProtoInterface21->addField(field332);
+field332->setName(CString("r_index0_changed"));
+field332->setAccessType(CString("outputOnly"));
+field332->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field332);
 
 field* field333 = new field();
-field333->setName("r_index1_key");
-field333->setAccessType("inputOutput");
-field333->setType("MFFloat");
+field333->setName(CString("r_index1_key"));
+field333->setAccessType(CString("inputOutput"));
+field333->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field333);
+ProtoInterface21->addChild(field333);
 
 field* field334 = new field();
-field334->setName("r_index1_keyValue");
-field334->setAccessType("inputOutput");
-field334->setType("MFRotation");
+field334->setName(CString("r_index1_keyValue"));
+field334->setAccessType(CString("inputOutput"));
+field334->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field334);
+ProtoInterface21->addChild(field334);
 
 field* field335 = new field();
-field335->setName("r_index1_changed");
-field335->setAccessType("outputOnly");
-field335->setType("SFRotation");
-ProtoInterface21->addField(field335);
+field335->setName(CString("r_index1_changed"));
+field335->setAccessType(CString("outputOnly"));
+field335->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field335);
 
 field* field336 = new field();
-field336->setName("r_index2_key");
-field336->setAccessType("inputOutput");
-field336->setType("MFFloat");
+field336->setName(CString("r_index2_key"));
+field336->setAccessType(CString("inputOutput"));
+field336->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field336);
+ProtoInterface21->addChild(field336);
 
 field* field337 = new field();
-field337->setName("r_index2_keyValue");
-field337->setAccessType("inputOutput");
-field337->setType("MFRotation");
+field337->setName(CString("r_index2_keyValue"));
+field337->setAccessType(CString("inputOutput"));
+field337->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field337);
+ProtoInterface21->addChild(field337);
 
 field* field338 = new field();
-field338->setName("r_index2_changed");
-field338->setAccessType("outputOnly");
-field338->setType("SFRotation");
-ProtoInterface21->addField(field338);
+field338->setName(CString("r_index2_changed"));
+field338->setAccessType(CString("outputOnly"));
+field338->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field338);
 
 field* field339 = new field();
-field339->setName("r_index3_key");
-field339->setAccessType("inputOutput");
-field339->setType("MFFloat");
+field339->setName(CString("r_index3_key"));
+field339->setAccessType(CString("inputOutput"));
+field339->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field339);
+ProtoInterface21->addChild(field339);
 
 field* field340 = new field();
-field340->setName("r_index3_keyValue");
-field340->setAccessType("inputOutput");
-field340->setType("MFRotation");
+field340->setName(CString("r_index3_keyValue"));
+field340->setAccessType(CString("inputOutput"));
+field340->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field340);
+ProtoInterface21->addChild(field340);
 
 field* field341 = new field();
-field341->setName("r_index3_changed");
-field341->setAccessType("outputOnly");
-field341->setType("SFRotation");
-ProtoInterface21->addField(field341);
+field341->setName(CString("r_index3_changed"));
+field341->setAccessType(CString("outputOnly"));
+field341->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field341);
 
 field* field342 = new field();
-field342->setName("r_index_distal_key");
-field342->setAccessType("inputOutput");
-field342->setType("MFFloat");
+field342->setName(CString("r_index_distal_key"));
+field342->setAccessType(CString("inputOutput"));
+field342->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field342);
+ProtoInterface21->addChild(field342);
 
 field* field343 = new field();
-field343->setName("r_index_distal_keyValue");
-field343->setAccessType("inputOutput");
-field343->setType("MFRotation");
+field343->setName(CString("r_index_distal_keyValue"));
+field343->setAccessType(CString("inputOutput"));
+field343->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field343);
+ProtoInterface21->addChild(field343);
 
 field* field344 = new field();
-field344->setName("r_index_distal_changed");
-field344->setAccessType("outputOnly");
-field344->setType("SFRotation");
-ProtoInterface21->addField(field344);
+field344->setName(CString("r_index_distal_changed"));
+field344->setAccessType(CString("outputOnly"));
+field344->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field344);
 
 field* field345 = new field();
-field345->setName("r_index_metacarpal_key");
-field345->setAccessType("inputOutput");
-field345->setType("MFFloat");
+field345->setName(CString("r_index_metacarpal_key"));
+field345->setAccessType(CString("inputOutput"));
+field345->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field345);
+ProtoInterface21->addChild(field345);
 
 field* field346 = new field();
-field346->setName("r_index_metacarpal_keyValue");
-field346->setAccessType("inputOutput");
-field346->setType("MFRotation");
+field346->setName(CString("r_index_metacarpal_keyValue"));
+field346->setAccessType(CString("inputOutput"));
+field346->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field346);
+ProtoInterface21->addChild(field346);
 
 field* field347 = new field();
-field347->setName("r_index_metacarpal_changed");
-field347->setAccessType("outputOnly");
-field347->setType("SFRotation");
-ProtoInterface21->addField(field347);
+field347->setName(CString("r_index_metacarpal_changed"));
+field347->setAccessType(CString("outputOnly"));
+field347->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field347);
 
 field* field348 = new field();
-field348->setName("r_index_middle_key");
-field348->setAccessType("inputOutput");
-field348->setType("MFFloat");
+field348->setName(CString("r_index_middle_key"));
+field348->setAccessType(CString("inputOutput"));
+field348->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field348);
+ProtoInterface21->addChild(field348);
 
 field* field349 = new field();
-field349->setName("r_index_middle_keyValue");
-field349->setAccessType("inputOutput");
-field349->setType("MFRotation");
+field349->setName(CString("r_index_middle_keyValue"));
+field349->setAccessType(CString("inputOutput"));
+field349->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field349);
+ProtoInterface21->addChild(field349);
 
 field* field350 = new field();
-field350->setName("r_index_middle_changed");
-field350->setAccessType("outputOnly");
-field350->setType("SFRotation");
-ProtoInterface21->addField(field350);
+field350->setName(CString("r_index_middle_changed"));
+field350->setAccessType(CString("outputOnly"));
+field350->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field350);
 
 field* field351 = new field();
-field351->setName("r_index_proximal_key");
-field351->setAccessType("inputOutput");
-field351->setType("MFFloat");
+field351->setName(CString("r_index_proximal_key"));
+field351->setAccessType(CString("inputOutput"));
+field351->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field351);
+ProtoInterface21->addChild(field351);
 
 field* field352 = new field();
-field352->setName("r_index_proximal_keyValue");
-field352->setAccessType("inputOutput");
-field352->setType("MFRotation");
+field352->setName(CString("r_index_proximal_keyValue"));
+field352->setAccessType(CString("inputOutput"));
+field352->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field352);
+ProtoInterface21->addChild(field352);
 
 field* field353 = new field();
-field353->setName("r_index_proximal_changed");
-field353->setAccessType("outputOnly");
-field353->setType("SFRotation");
-ProtoInterface21->addField(field353);
+field353->setName(CString("r_index_proximal_changed"));
+field353->setAccessType(CString("outputOnly"));
+field353->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field353);
 
 field* field354 = new field();
-field354->setName("r_knee_key");
-field354->setAccessType("inputOutput");
-field354->setType("MFFloat");
+field354->setName(CString("r_knee_key"));
+field354->setAccessType(CString("inputOutput"));
+field354->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field354);
+ProtoInterface21->addChild(field354);
 
 field* field355 = new field();
-field355->setName("r_knee_keyValue");
-field355->setAccessType("inputOutput");
-field355->setType("MFRotation");
+field355->setName(CString("r_knee_keyValue"));
+field355->setAccessType(CString("inputOutput"));
+field355->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field355);
+ProtoInterface21->addChild(field355);
 
 field* field356 = new field();
-field356->setName("r_knee_changed");
-field356->setAccessType("outputOnly");
-field356->setType("SFRotation");
-ProtoInterface21->addField(field356);
+field356->setName(CString("r_knee_changed"));
+field356->setAccessType(CString("outputOnly"));
+field356->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field356);
 
 field* field357 = new field();
-field357->setName("r_metatarsal_key");
-field357->setAccessType("inputOutput");
-field357->setType("MFFloat");
+field357->setName(CString("r_metatarsal_key"));
+field357->setAccessType(CString("inputOutput"));
+field357->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field357);
+ProtoInterface21->addChild(field357);
 
 field* field358 = new field();
-field358->setName("r_metatarsal_keyValue");
-field358->setAccessType("inputOutput");
-field358->setType("MFRotation");
+field358->setName(CString("r_metatarsal_keyValue"));
+field358->setAccessType(CString("inputOutput"));
+field358->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field358);
+ProtoInterface21->addChild(field358);
 
 field* field359 = new field();
-field359->setName("r_metatarsal_changed");
-field359->setAccessType("outputOnly");
-field359->setType("SFRotation");
-ProtoInterface21->addField(field359);
+field359->setName(CString("r_metatarsal_changed"));
+field359->setAccessType(CString("outputOnly"));
+field359->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field359);
 
 field* field360 = new field();
-field360->setName("r_middistal_key");
-field360->setAccessType("inputOutput");
-field360->setType("MFFloat");
+field360->setName(CString("r_middistal_key"));
+field360->setAccessType(CString("inputOutput"));
+field360->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field360);
+ProtoInterface21->addChild(field360);
 
 field* field361 = new field();
-field361->setName("r_middistal_keyValue");
-field361->setAccessType("inputOutput");
-field361->setType("MFRotation");
+field361->setName(CString("r_middistal_keyValue"));
+field361->setAccessType(CString("inputOutput"));
+field361->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field361);
+ProtoInterface21->addChild(field361);
 
 field* field362 = new field();
-field362->setName("r_middistal_changed");
-field362->setAccessType("outputOnly");
-field362->setType("SFRotation");
-ProtoInterface21->addField(field362);
+field362->setName(CString("r_middistal_changed"));
+field362->setAccessType(CString("outputOnly"));
+field362->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field362);
 
 field* field363 = new field();
-field363->setName("r_middle0_key");
-field363->setAccessType("inputOutput");
-field363->setType("MFFloat");
+field363->setName(CString("r_middle0_key"));
+field363->setAccessType(CString("inputOutput"));
+field363->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field363);
+ProtoInterface21->addChild(field363);
 
 field* field364 = new field();
-field364->setName("r_middle0_keyValue");
-field364->setAccessType("inputOutput");
-field364->setType("MFRotation");
+field364->setName(CString("r_middle0_keyValue"));
+field364->setAccessType(CString("inputOutput"));
+field364->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field364);
+ProtoInterface21->addChild(field364);
 
 field* field365 = new field();
-field365->setName("r_middle0_changed");
-field365->setAccessType("outputOnly");
-field365->setType("SFRotation");
-ProtoInterface21->addField(field365);
+field365->setName(CString("r_middle0_changed"));
+field365->setAccessType(CString("outputOnly"));
+field365->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field365);
 
 field* field366 = new field();
-field366->setName("r_middle1_key");
-field366->setAccessType("inputOutput");
-field366->setType("MFFloat");
+field366->setName(CString("r_middle1_key"));
+field366->setAccessType(CString("inputOutput"));
+field366->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field366);
+ProtoInterface21->addChild(field366);
 
 field* field367 = new field();
-field367->setName("r_middle1_keyValue");
-field367->setAccessType("inputOutput");
-field367->setType("MFRotation");
+field367->setName(CString("r_middle1_keyValue"));
+field367->setAccessType(CString("inputOutput"));
+field367->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field367);
+ProtoInterface21->addChild(field367);
 
 field* field368 = new field();
-field368->setName("r_middle1_changed");
-field368->setAccessType("outputOnly");
-field368->setType("SFRotation");
-ProtoInterface21->addField(field368);
+field368->setName(CString("r_middle1_changed"));
+field368->setAccessType(CString("outputOnly"));
+field368->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field368);
 
 field* field369 = new field();
-field369->setName("r_middle2_key");
-field369->setAccessType("inputOutput");
-field369->setType("MFFloat");
+field369->setName(CString("r_middle2_key"));
+field369->setAccessType(CString("inputOutput"));
+field369->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field369);
+ProtoInterface21->addChild(field369);
 
 field* field370 = new field();
-field370->setName("r_middle2_keyValue");
-field370->setAccessType("inputOutput");
-field370->setType("MFRotation");
+field370->setName(CString("r_middle2_keyValue"));
+field370->setAccessType(CString("inputOutput"));
+field370->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field370);
+ProtoInterface21->addChild(field370);
 
 field* field371 = new field();
-field371->setName("r_middle2_changed");
-field371->setAccessType("outputOnly");
-field371->setType("SFRotation");
-ProtoInterface21->addField(field371);
+field371->setName(CString("r_middle2_changed"));
+field371->setAccessType(CString("outputOnly"));
+field371->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field371);
 
 field* field372 = new field();
-field372->setName("r_middle3_key");
-field372->setAccessType("inputOutput");
-field372->setType("MFFloat");
+field372->setName(CString("r_middle3_key"));
+field372->setAccessType(CString("inputOutput"));
+field372->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field372);
+ProtoInterface21->addChild(field372);
 
 field* field373 = new field();
-field373->setName("r_middle3_keyValue");
-field373->setAccessType("inputOutput");
-field373->setType("MFRotation");
+field373->setName(CString("r_middle3_keyValue"));
+field373->setAccessType(CString("inputOutput"));
+field373->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field373);
+ProtoInterface21->addChild(field373);
 
 field* field374 = new field();
-field374->setName("r_middle3_changed");
-field374->setAccessType("outputOnly");
-field374->setType("SFRotation");
-ProtoInterface21->addField(field374);
+field374->setName(CString("r_middle3_changed"));
+field374->setAccessType(CString("outputOnly"));
+field374->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field374);
 
 field* field375 = new field();
-field375->setName("r_middle_distal_key");
-field375->setAccessType("inputOutput");
-field375->setType("MFFloat");
+field375->setName(CString("r_middle_distal_key"));
+field375->setAccessType(CString("inputOutput"));
+field375->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field375);
+ProtoInterface21->addChild(field375);
 
 field* field376 = new field();
-field376->setName("r_middle_distal_keyValue");
-field376->setAccessType("inputOutput");
-field376->setType("MFRotation");
+field376->setName(CString("r_middle_distal_keyValue"));
+field376->setAccessType(CString("inputOutput"));
+field376->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field376);
+ProtoInterface21->addChild(field376);
 
 field* field377 = new field();
-field377->setName("r_middle_distal_changed");
-field377->setAccessType("outputOnly");
-field377->setType("SFRotation");
-ProtoInterface21->addField(field377);
+field377->setName(CString("r_middle_distal_changed"));
+field377->setAccessType(CString("outputOnly"));
+field377->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field377);
 
 field* field378 = new field();
-field378->setName("r_middle_metacarpal_key");
-field378->setAccessType("inputOutput");
-field378->setType("MFFloat");
+field378->setName(CString("r_middle_metacarpal_key"));
+field378->setAccessType(CString("inputOutput"));
+field378->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field378);
+ProtoInterface21->addChild(field378);
 
 field* field379 = new field();
-field379->setName("r_middle_metacarpal_keyValue");
-field379->setAccessType("inputOutput");
-field379->setType("MFRotation");
+field379->setName(CString("r_middle_metacarpal_keyValue"));
+field379->setAccessType(CString("inputOutput"));
+field379->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field379);
+ProtoInterface21->addChild(field379);
 
 field* field380 = new field();
-field380->setName("r_middle_metacarpal_changed");
-field380->setAccessType("outputOnly");
-field380->setType("SFRotation");
-ProtoInterface21->addField(field380);
+field380->setName(CString("r_middle_metacarpal_changed"));
+field380->setAccessType(CString("outputOnly"));
+field380->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field380);
 
 field* field381 = new field();
-field381->setName("r_middle_middle_key");
-field381->setAccessType("inputOutput");
-field381->setType("MFFloat");
+field381->setName(CString("r_middle_middle_key"));
+field381->setAccessType(CString("inputOutput"));
+field381->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field381);
+ProtoInterface21->addChild(field381);
 
 field* field382 = new field();
-field382->setName("r_middle_middle_keyValue");
-field382->setAccessType("inputOutput");
-field382->setType("MFRotation");
+field382->setName(CString("r_middle_middle_keyValue"));
+field382->setAccessType(CString("inputOutput"));
+field382->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field382);
+ProtoInterface21->addChild(field382);
 
 field* field383 = new field();
-field383->setName("r_middle_middle_changed");
-field383->setAccessType("outputOnly");
-field383->setType("SFRotation");
-ProtoInterface21->addField(field383);
+field383->setName(CString("r_middle_middle_changed"));
+field383->setAccessType(CString("outputOnly"));
+field383->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field383);
 
 field* field384 = new field();
-field384->setName("r_middle_proximal_key");
-field384->setAccessType("inputOutput");
-field384->setType("MFFloat");
+field384->setName(CString("r_middle_proximal_key"));
+field384->setAccessType(CString("inputOutput"));
+field384->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field384);
+ProtoInterface21->addChild(field384);
 
 field* field385 = new field();
-field385->setName("r_middle_proximal_keyValue");
-field385->setAccessType("inputOutput");
-field385->setType("MFRotation");
+field385->setName(CString("r_middle_proximal_keyValue"));
+field385->setAccessType(CString("inputOutput"));
+field385->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field385);
+ProtoInterface21->addChild(field385);
 
 field* field386 = new field();
-field386->setName("r_middle_proximal_changed");
-field386->setAccessType("outputOnly");
-field386->setType("SFRotation");
-ProtoInterface21->addField(field386);
+field386->setName(CString("r_middle_proximal_changed"));
+field386->setAccessType(CString("outputOnly"));
+field386->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field386);
 
 field* field387 = new field();
-field387->setName("r_midproximal_key");
-field387->setAccessType("inputOutput");
-field387->setType("MFFloat");
+field387->setName(CString("r_midproximal_key"));
+field387->setAccessType(CString("inputOutput"));
+field387->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field387);
+ProtoInterface21->addChild(field387);
 
 field* field388 = new field();
-field388->setName("r_midproximal_keyValue");
-field388->setAccessType("inputOutput");
-field388->setType("MFRotation");
+field388->setName(CString("r_midproximal_keyValue"));
+field388->setAccessType(CString("inputOutput"));
+field388->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field388);
+ProtoInterface21->addChild(field388);
 
 field* field389 = new field();
-field389->setName("r_midproximal_changed");
-field389->setAccessType("outputOnly");
-field389->setType("SFRotation");
-ProtoInterface21->addField(field389);
+field389->setName(CString("r_midproximal_changed"));
+field389->setAccessType(CString("outputOnly"));
+field389->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field389);
 
 field* field390 = new field();
-field390->setName("r_midtarsal_key");
-field390->setAccessType("inputOutput");
-field390->setType("MFFloat");
+field390->setName(CString("r_midtarsal_key"));
+field390->setAccessType(CString("inputOutput"));
+field390->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field390);
+ProtoInterface21->addChild(field390);
 
 field* field391 = new field();
-field391->setName("r_midtarsal_keyValue");
-field391->setAccessType("inputOutput");
-field391->setType("MFRotation");
+field391->setName(CString("r_midtarsal_keyValue"));
+field391->setAccessType(CString("inputOutput"));
+field391->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field391);
+ProtoInterface21->addChild(field391);
 
 field* field392 = new field();
-field392->setName("r_midtarsal_changed");
-field392->setAccessType("outputOnly");
-field392->setType("SFRotation");
-ProtoInterface21->addField(field392);
+field392->setName(CString("r_midtarsal_changed"));
+field392->setAccessType(CString("outputOnly"));
+field392->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field392);
 
 field* field393 = new field();
-field393->setName("r_pinky0_key");
-field393->setAccessType("inputOutput");
-field393->setType("MFFloat");
+field393->setName(CString("r_pinky0_key"));
+field393->setAccessType(CString("inputOutput"));
+field393->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field393);
+ProtoInterface21->addChild(field393);
 
 field* field394 = new field();
-field394->setName("r_pinky0_keyValue");
-field394->setAccessType("inputOutput");
-field394->setType("MFRotation");
+field394->setName(CString("r_pinky0_keyValue"));
+field394->setAccessType(CString("inputOutput"));
+field394->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field394);
+ProtoInterface21->addChild(field394);
 
 field* field395 = new field();
-field395->setName("r_pinky0_changed");
-field395->setAccessType("outputOnly");
-field395->setType("SFRotation");
-ProtoInterface21->addField(field395);
+field395->setName(CString("r_pinky0_changed"));
+field395->setAccessType(CString("outputOnly"));
+field395->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field395);
 
 field* field396 = new field();
-field396->setName("r_pinky1_key");
-field396->setAccessType("inputOutput");
-field396->setType("MFFloat");
+field396->setName(CString("r_pinky1_key"));
+field396->setAccessType(CString("inputOutput"));
+field396->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field396);
+ProtoInterface21->addChild(field396);
 
 field* field397 = new field();
-field397->setName("r_pinky1_keyValue");
-field397->setAccessType("inputOutput");
-field397->setType("MFRotation");
+field397->setName(CString("r_pinky1_keyValue"));
+field397->setAccessType(CString("inputOutput"));
+field397->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field397);
+ProtoInterface21->addChild(field397);
 
 field* field398 = new field();
-field398->setName("r_pinky1_changed");
-field398->setAccessType("outputOnly");
-field398->setType("SFRotation");
-ProtoInterface21->addField(field398);
+field398->setName(CString("r_pinky1_changed"));
+field398->setAccessType(CString("outputOnly"));
+field398->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field398);
 
 field* field399 = new field();
-field399->setName("r_pinky2_key");
-field399->setAccessType("inputOutput");
-field399->setType("MFFloat");
+field399->setName(CString("r_pinky2_key"));
+field399->setAccessType(CString("inputOutput"));
+field399->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field399);
+ProtoInterface21->addChild(field399);
 
 field* field400 = new field();
-field400->setName("r_pinky2_keyValue");
-field400->setAccessType("inputOutput");
-field400->setType("MFRotation");
+field400->setName(CString("r_pinky2_keyValue"));
+field400->setAccessType(CString("inputOutput"));
+field400->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field400);
+ProtoInterface21->addChild(field400);
 
 field* field401 = new field();
-field401->setName("r_pinky2_changed");
-field401->setAccessType("outputOnly");
-field401->setType("SFRotation");
-ProtoInterface21->addField(field401);
+field401->setName(CString("r_pinky2_changed"));
+field401->setAccessType(CString("outputOnly"));
+field401->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field401);
 
 field* field402 = new field();
-field402->setName("r_pinky3_key");
-field402->setAccessType("inputOutput");
-field402->setType("MFFloat");
+field402->setName(CString("r_pinky3_key"));
+field402->setAccessType(CString("inputOutput"));
+field402->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field402);
+ProtoInterface21->addChild(field402);
 
 field* field403 = new field();
-field403->setName("r_pinky3_keyValue");
-field403->setAccessType("inputOutput");
-field403->setType("MFRotation");
+field403->setName(CString("r_pinky3_keyValue"));
+field403->setAccessType(CString("inputOutput"));
+field403->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field403);
+ProtoInterface21->addChild(field403);
 
 field* field404 = new field();
-field404->setName("r_pinky3_changed");
-field404->setAccessType("outputOnly");
-field404->setType("SFRotation");
-ProtoInterface21->addField(field404);
+field404->setName(CString("r_pinky3_changed"));
+field404->setAccessType(CString("outputOnly"));
+field404->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field404);
 
 field* field405 = new field();
-field405->setName("r_pinky_distal_key");
-field405->setAccessType("inputOutput");
-field405->setType("MFFloat");
+field405->setName(CString("r_pinky_distal_key"));
+field405->setAccessType(CString("inputOutput"));
+field405->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field405);
+ProtoInterface21->addChild(field405);
 
 field* field406 = new field();
-field406->setName("r_pinky_distal_keyValue");
-field406->setAccessType("inputOutput");
-field406->setType("MFRotation");
+field406->setName(CString("r_pinky_distal_keyValue"));
+field406->setAccessType(CString("inputOutput"));
+field406->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field406);
+ProtoInterface21->addChild(field406);
 
 field* field407 = new field();
-field407->setName("r_pinky_distal_changed");
-field407->setAccessType("outputOnly");
-field407->setType("SFRotation");
-ProtoInterface21->addField(field407);
+field407->setName(CString("r_pinky_distal_changed"));
+field407->setAccessType(CString("outputOnly"));
+field407->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field407);
 
 field* field408 = new field();
-field408->setName("r_pinky_metacarpal_key");
-field408->setAccessType("inputOutput");
-field408->setType("MFFloat");
+field408->setName(CString("r_pinky_metacarpal_key"));
+field408->setAccessType(CString("inputOutput"));
+field408->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field408);
+ProtoInterface21->addChild(field408);
 
 field* field409 = new field();
-field409->setName("r_pinky_metacarpal_keyValue");
-field409->setAccessType("inputOutput");
-field409->setType("MFRotation");
+field409->setName(CString("r_pinky_metacarpal_keyValue"));
+field409->setAccessType(CString("inputOutput"));
+field409->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field409);
+ProtoInterface21->addChild(field409);
 
 field* field410 = new field();
-field410->setName("r_pinky_metacarpal_changed");
-field410->setAccessType("outputOnly");
-field410->setType("SFRotation");
-ProtoInterface21->addField(field410);
+field410->setName(CString("r_pinky_metacarpal_changed"));
+field410->setAccessType(CString("outputOnly"));
+field410->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field410);
 
 field* field411 = new field();
-field411->setName("r_pinky_middle_key");
-field411->setAccessType("inputOutput");
-field411->setType("MFFloat");
+field411->setName(CString("r_pinky_middle_key"));
+field411->setAccessType(CString("inputOutput"));
+field411->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field411);
+ProtoInterface21->addChild(field411);
 
 field* field412 = new field();
-field412->setName("r_pinky_middle_keyValue");
-field412->setAccessType("inputOutput");
-field412->setType("MFRotation");
+field412->setName(CString("r_pinky_middle_keyValue"));
+field412->setAccessType(CString("inputOutput"));
+field412->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field412);
+ProtoInterface21->addChild(field412);
 
 field* field413 = new field();
-field413->setName("r_pinky_middle_changed");
-field413->setAccessType("outputOnly");
-field413->setType("SFRotation");
-ProtoInterface21->addField(field413);
+field413->setName(CString("r_pinky_middle_changed"));
+field413->setAccessType(CString("outputOnly"));
+field413->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field413);
 
 field* field414 = new field();
-field414->setName("r_pinky_proximal_key");
-field414->setAccessType("inputOutput");
-field414->setType("MFFloat");
+field414->setName(CString("r_pinky_proximal_key"));
+field414->setAccessType(CString("inputOutput"));
+field414->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field414);
+ProtoInterface21->addChild(field414);
 
 field* field415 = new field();
-field415->setName("r_pinky_proximal_keyValue");
-field415->setAccessType("inputOutput");
-field415->setType("MFRotation");
+field415->setName(CString("r_pinky_proximal_keyValue"));
+field415->setAccessType(CString("inputOutput"));
+field415->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field415);
+ProtoInterface21->addChild(field415);
 
 field* field416 = new field();
-field416->setName("r_pinky_proximal_changed");
-field416->setAccessType("outputOnly");
-field416->setType("SFRotation");
-ProtoInterface21->addField(field416);
+field416->setName(CString("r_pinky_proximal_changed"));
+field416->setAccessType(CString("outputOnly"));
+field416->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field416);
 
 field* field417 = new field();
-field417->setName("r_ring0_key");
-field417->setAccessType("inputOutput");
-field417->setType("MFFloat");
+field417->setName(CString("r_ring0_key"));
+field417->setAccessType(CString("inputOutput"));
+field417->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field417);
+ProtoInterface21->addChild(field417);
 
 field* field418 = new field();
-field418->setName("r_ring0_keyValue");
-field418->setAccessType("inputOutput");
-field418->setType("MFRotation");
+field418->setName(CString("r_ring0_keyValue"));
+field418->setAccessType(CString("inputOutput"));
+field418->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field418);
+ProtoInterface21->addChild(field418);
 
 field* field419 = new field();
-field419->setName("r_ring0_changed");
-field419->setAccessType("outputOnly");
-field419->setType("SFRotation");
-ProtoInterface21->addField(field419);
+field419->setName(CString("r_ring0_changed"));
+field419->setAccessType(CString("outputOnly"));
+field419->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field419);
 
 field* field420 = new field();
-field420->setName("r_ring1_key");
-field420->setAccessType("inputOutput");
-field420->setType("MFFloat");
+field420->setName(CString("r_ring1_key"));
+field420->setAccessType(CString("inputOutput"));
+field420->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field420);
+ProtoInterface21->addChild(field420);
 
 field* field421 = new field();
-field421->setName("r_ring1_keyValue");
-field421->setAccessType("inputOutput");
-field421->setType("MFRotation");
+field421->setName(CString("r_ring1_keyValue"));
+field421->setAccessType(CString("inputOutput"));
+field421->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field421);
+ProtoInterface21->addChild(field421);
 
 field* field422 = new field();
-field422->setName("r_ring1_changed");
-field422->setAccessType("outputOnly");
-field422->setType("SFRotation");
-ProtoInterface21->addField(field422);
+field422->setName(CString("r_ring1_changed"));
+field422->setAccessType(CString("outputOnly"));
+field422->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field422);
 
 field* field423 = new field();
-field423->setName("r_ring2_key");
-field423->setAccessType("inputOutput");
-field423->setType("MFFloat");
+field423->setName(CString("r_ring2_key"));
+field423->setAccessType(CString("inputOutput"));
+field423->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field423);
+ProtoInterface21->addChild(field423);
 
 field* field424 = new field();
-field424->setName("r_ring2_keyValue");
-field424->setAccessType("inputOutput");
-field424->setType("MFRotation");
+field424->setName(CString("r_ring2_keyValue"));
+field424->setAccessType(CString("inputOutput"));
+field424->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field424);
+ProtoInterface21->addChild(field424);
 
 field* field425 = new field();
-field425->setName("r_ring2_changed");
-field425->setAccessType("outputOnly");
-field425->setType("SFRotation");
-ProtoInterface21->addField(field425);
+field425->setName(CString("r_ring2_changed"));
+field425->setAccessType(CString("outputOnly"));
+field425->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field425);
 
 field* field426 = new field();
-field426->setName("r_ring3_key");
-field426->setAccessType("inputOutput");
-field426->setType("MFFloat");
+field426->setName(CString("r_ring3_key"));
+field426->setAccessType(CString("inputOutput"));
+field426->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field426);
+ProtoInterface21->addChild(field426);
 
 field* field427 = new field();
-field427->setName("r_ring3_keyValue");
-field427->setAccessType("inputOutput");
-field427->setType("MFRotation");
+field427->setName(CString("r_ring3_keyValue"));
+field427->setAccessType(CString("inputOutput"));
+field427->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field427);
+ProtoInterface21->addChild(field427);
 
 field* field428 = new field();
-field428->setName("r_ring3_changed");
-field428->setAccessType("outputOnly");
-field428->setType("SFRotation");
-ProtoInterface21->addField(field428);
+field428->setName(CString("r_ring3_changed"));
+field428->setAccessType(CString("outputOnly"));
+field428->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field428);
 
 field* field429 = new field();
-field429->setName("r_ring_distal_key");
-field429->setAccessType("inputOutput");
-field429->setType("MFFloat");
+field429->setName(CString("r_ring_distal_key"));
+field429->setAccessType(CString("inputOutput"));
+field429->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field429);
+ProtoInterface21->addChild(field429);
 
 field* field430 = new field();
-field430->setName("r_ring_distal_keyValue");
-field430->setAccessType("inputOutput");
-field430->setType("MFRotation");
+field430->setName(CString("r_ring_distal_keyValue"));
+field430->setAccessType(CString("inputOutput"));
+field430->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field430);
+ProtoInterface21->addChild(field430);
 
 field* field431 = new field();
-field431->setName("r_ring_distal_changed");
-field431->setAccessType("outputOnly");
-field431->setType("SFRotation");
-ProtoInterface21->addField(field431);
+field431->setName(CString("r_ring_distal_changed"));
+field431->setAccessType(CString("outputOnly"));
+field431->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field431);
 
 field* field432 = new field();
-field432->setName("r_ring_metacarpal_key");
-field432->setAccessType("inputOutput");
-field432->setType("MFFloat");
+field432->setName(CString("r_ring_metacarpal_key"));
+field432->setAccessType(CString("inputOutput"));
+field432->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field432);
+ProtoInterface21->addChild(field432);
 
 field* field433 = new field();
-field433->setName("r_ring_metacarpal_keyValue");
-field433->setAccessType("inputOutput");
-field433->setType("MFRotation");
+field433->setName(CString("r_ring_metacarpal_keyValue"));
+field433->setAccessType(CString("inputOutput"));
+field433->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field433);
+ProtoInterface21->addChild(field433);
 
 field* field434 = new field();
-field434->setName("r_ring_metacarpal_changed");
-field434->setAccessType("outputOnly");
-field434->setType("SFRotation");
-ProtoInterface21->addField(field434);
+field434->setName(CString("r_ring_metacarpal_changed"));
+field434->setAccessType(CString("outputOnly"));
+field434->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field434);
 
 field* field435 = new field();
-field435->setName("r_ring_middle_key");
-field435->setAccessType("inputOutput");
-field435->setType("MFFloat");
+field435->setName(CString("r_ring_middle_key"));
+field435->setAccessType(CString("inputOutput"));
+field435->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field435);
+ProtoInterface21->addChild(field435);
 
 field* field436 = new field();
-field436->setName("r_ring_middle_keyValue");
-field436->setAccessType("inputOutput");
-field436->setType("MFRotation");
+field436->setName(CString("r_ring_middle_keyValue"));
+field436->setAccessType(CString("inputOutput"));
+field436->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field436);
+ProtoInterface21->addChild(field436);
 
 field* field437 = new field();
-field437->setName("r_ring_middle_changed");
-field437->setAccessType("outputOnly");
-field437->setType("SFRotation");
-ProtoInterface21->addField(field437);
+field437->setName(CString("r_ring_middle_changed"));
+field437->setAccessType(CString("outputOnly"));
+field437->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field437);
 
 field* field438 = new field();
-field438->setName("r_ring_proximal_key");
-field438->setAccessType("inputOutput");
-field438->setType("MFFloat");
+field438->setName(CString("r_ring_proximal_key"));
+field438->setAccessType(CString("inputOutput"));
+field438->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field438);
+ProtoInterface21->addChild(field438);
 
 field* field439 = new field();
-field439->setName("r_ring_proximal_keyValue");
-field439->setAccessType("inputOutput");
-field439->setType("MFRotation");
+field439->setName(CString("r_ring_proximal_keyValue"));
+field439->setAccessType(CString("inputOutput"));
+field439->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field439);
+ProtoInterface21->addChild(field439);
 
 field* field440 = new field();
-field440->setName("r_ring_proximal_changed");
-field440->setAccessType("outputOnly");
-field440->setType("SFRotation");
-ProtoInterface21->addField(field440);
+field440->setName(CString("r_ring_proximal_changed"));
+field440->setAccessType(CString("outputOnly"));
+field440->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field440);
 
 field* field441 = new field();
-field441->setName("r_scapula_key");
-field441->setAccessType("inputOutput");
-field441->setType("MFFloat");
+field441->setName(CString("r_scapula_key"));
+field441->setAccessType(CString("inputOutput"));
+field441->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field441);
+ProtoInterface21->addChild(field441);
 
 field* field442 = new field();
-field442->setName("r_scapula_keyValue");
-field442->setAccessType("inputOutput");
-field442->setType("MFRotation");
+field442->setName(CString("r_scapula_keyValue"));
+field442->setAccessType(CString("inputOutput"));
+field442->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field442);
+ProtoInterface21->addChild(field442);
 
 field* field443 = new field();
-field443->setName("r_scapula_changed");
-field443->setAccessType("outputOnly");
-field443->setType("SFRotation");
-ProtoInterface21->addField(field443);
+field443->setName(CString("r_scapula_changed"));
+field443->setAccessType(CString("outputOnly"));
+field443->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field443);
 
 field* field444 = new field();
-field444->setName("r_shoulder_key");
-field444->setAccessType("inputOutput");
-field444->setType("MFFloat");
+field444->setName(CString("r_shoulder_key"));
+field444->setAccessType(CString("inputOutput"));
+field444->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field444);
+ProtoInterface21->addChild(field444);
 
 field* field445 = new field();
-field445->setName("r_shoulder_keyValue");
-field445->setAccessType("inputOutput");
-field445->setType("MFRotation");
+field445->setName(CString("r_shoulder_keyValue"));
+field445->setAccessType(CString("inputOutput"));
+field445->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field445);
+ProtoInterface21->addChild(field445);
 
 field* field446 = new field();
-field446->setName("r_shoulder_changed");
-field446->setAccessType("outputOnly");
-field446->setType("SFRotation");
-ProtoInterface21->addField(field446);
+field446->setName(CString("r_shoulder_changed"));
+field446->setAccessType(CString("outputOnly"));
+field446->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field446);
 
 field* field447 = new field();
-field447->setName("r_sternoclavicular_key");
-field447->setAccessType("inputOutput");
-field447->setType("MFFloat");
+field447->setName(CString("r_sternoclavicular_key"));
+field447->setAccessType(CString("inputOutput"));
+field447->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field447);
+ProtoInterface21->addChild(field447);
 
 field* field448 = new field();
-field448->setName("r_sternoclavicular_keyValue");
-field448->setAccessType("inputOutput");
-field448->setType("MFRotation");
+field448->setName(CString("r_sternoclavicular_keyValue"));
+field448->setAccessType(CString("inputOutput"));
+field448->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field448);
+ProtoInterface21->addChild(field448);
 
 field* field449 = new field();
-field449->setName("r_sternoclavicular_changed");
-field449->setAccessType("outputOnly");
-field449->setType("SFRotation");
-ProtoInterface21->addField(field449);
+field449->setName(CString("r_sternoclavicular_changed"));
+field449->setAccessType(CString("outputOnly"));
+field449->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field449);
 
 field* field450 = new field();
-field450->setName("r_subtalar_key");
-field450->setAccessType("inputOutput");
-field450->setType("MFFloat");
+field450->setName(CString("r_subtalar_key"));
+field450->setAccessType(CString("inputOutput"));
+field450->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field450);
+ProtoInterface21->addChild(field450);
 
 field* field451 = new field();
-field451->setName("r_subtalar_keyValue");
-field451->setAccessType("inputOutput");
-field451->setType("MFRotation");
+field451->setName(CString("r_subtalar_keyValue"));
+field451->setAccessType(CString("inputOutput"));
+field451->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field451);
+ProtoInterface21->addChild(field451);
 
 field* field452 = new field();
-field452->setName("r_subtalar_changed");
-field452->setAccessType("outputOnly");
-field452->setType("SFRotation");
-ProtoInterface21->addField(field452);
+field452->setName(CString("r_subtalar_changed"));
+field452->setAccessType(CString("outputOnly"));
+field452->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field452);
 
 field* field453 = new field();
-field453->setName("r_thigh_key");
-field453->setAccessType("inputOutput");
-field453->setType("MFFloat");
+field453->setName(CString("r_thigh_key"));
+field453->setAccessType(CString("inputOutput"));
+field453->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field453);
+ProtoInterface21->addChild(field453);
 
 field* field454 = new field();
-field454->setName("r_thigh_keyValue");
-field454->setAccessType("inputOutput");
-field454->setType("MFRotation");
+field454->setName(CString("r_thigh_keyValue"));
+field454->setAccessType(CString("inputOutput"));
+field454->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field454);
+ProtoInterface21->addChild(field454);
 
 field* field455 = new field();
-field455->setName("r_thigh_changed");
-field455->setAccessType("outputOnly");
-field455->setType("SFRotation");
-ProtoInterface21->addField(field455);
+field455->setName(CString("r_thigh_changed"));
+field455->setAccessType(CString("outputOnly"));
+field455->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field455);
 
 field* field456 = new field();
-field456->setName("r_thumb1_key");
-field456->setAccessType("inputOutput");
-field456->setType("MFFloat");
+field456->setName(CString("r_thumb1_key"));
+field456->setAccessType(CString("inputOutput"));
+field456->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field456);
+ProtoInterface21->addChild(field456);
 
 field* field457 = new field();
-field457->setName("r_thumb1_keyValue");
-field457->setAccessType("inputOutput");
-field457->setType("MFRotation");
+field457->setName(CString("r_thumb1_keyValue"));
+field457->setAccessType(CString("inputOutput"));
+field457->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field457);
+ProtoInterface21->addChild(field457);
 
 field* field458 = new field();
-field458->setName("r_thumb1_changed");
-field458->setAccessType("outputOnly");
-field458->setType("SFRotation");
-ProtoInterface21->addField(field458);
+field458->setName(CString("r_thumb1_changed"));
+field458->setAccessType(CString("outputOnly"));
+field458->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field458);
 
 field* field459 = new field();
-field459->setName("r_thumb2_key");
-field459->setAccessType("inputOutput");
-field459->setType("MFFloat");
+field459->setName(CString("r_thumb2_key"));
+field459->setAccessType(CString("inputOutput"));
+field459->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field459);
+ProtoInterface21->addChild(field459);
 
 field* field460 = new field();
-field460->setName("r_thumb2_keyValue");
-field460->setAccessType("inputOutput");
-field460->setType("MFRotation");
+field460->setName(CString("r_thumb2_keyValue"));
+field460->setAccessType(CString("inputOutput"));
+field460->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field460);
+ProtoInterface21->addChild(field460);
 
 field* field461 = new field();
-field461->setName("r_thumb2_changed");
-field461->setAccessType("outputOnly");
-field461->setType("SFRotation");
-ProtoInterface21->addField(field461);
+field461->setName(CString("r_thumb2_changed"));
+field461->setAccessType(CString("outputOnly"));
+field461->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field461);
 
 field* field462 = new field();
-field462->setName("r_thumb3_key");
-field462->setAccessType("inputOutput");
-field462->setType("MFFloat");
+field462->setName(CString("r_thumb3_key"));
+field462->setAccessType(CString("inputOutput"));
+field462->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field462);
+ProtoInterface21->addChild(field462);
 
 field* field463 = new field();
-field463->setName("r_thumb3_keyValue");
-field463->setAccessType("inputOutput");
-field463->setType("MFRotation");
+field463->setName(CString("r_thumb3_keyValue"));
+field463->setAccessType(CString("inputOutput"));
+field463->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field463);
+ProtoInterface21->addChild(field463);
 
 field* field464 = new field();
-field464->setName("r_thumb3_changed");
-field464->setAccessType("outputOnly");
-field464->setType("SFRotation");
-ProtoInterface21->addField(field464);
+field464->setName(CString("r_thumb3_changed"));
+field464->setAccessType(CString("outputOnly"));
+field464->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field464);
 
 field* field465 = new field();
-field465->setName("r_thumb_distal_key");
-field465->setAccessType("inputOutput");
-field465->setType("MFFloat");
+field465->setName(CString("r_thumb_distal_key"));
+field465->setAccessType(CString("inputOutput"));
+field465->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field465);
+ProtoInterface21->addChild(field465);
 
 field* field466 = new field();
-field466->setName("r_thumb_distal_keyValue");
-field466->setAccessType("inputOutput");
-field466->setType("MFRotation");
+field466->setName(CString("r_thumb_distal_keyValue"));
+field466->setAccessType(CString("inputOutput"));
+field466->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field466);
+ProtoInterface21->addChild(field466);
 
 field* field467 = new field();
-field467->setName("r_thumb_distal_changed");
-field467->setAccessType("outputOnly");
-field467->setType("SFRotation");
-ProtoInterface21->addField(field467);
+field467->setName(CString("r_thumb_distal_changed"));
+field467->setAccessType(CString("outputOnly"));
+field467->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field467);
 
 field* field468 = new field();
-field468->setName("r_thumb_metacarpal_key");
-field468->setAccessType("inputOutput");
-field468->setType("MFFloat");
+field468->setName(CString("r_thumb_metacarpal_key"));
+field468->setAccessType(CString("inputOutput"));
+field468->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field468);
+ProtoInterface21->addChild(field468);
 
 field* field469 = new field();
-field469->setName("r_thumb_metacarpal_keyValue");
-field469->setAccessType("inputOutput");
-field469->setType("MFRotation");
+field469->setName(CString("r_thumb_metacarpal_keyValue"));
+field469->setAccessType(CString("inputOutput"));
+field469->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field469);
+ProtoInterface21->addChild(field469);
 
 field* field470 = new field();
-field470->setName("r_thumb_metacarpal_changed");
-field470->setAccessType("outputOnly");
-field470->setType("SFRotation");
-ProtoInterface21->addField(field470);
+field470->setName(CString("r_thumb_metacarpal_changed"));
+field470->setAccessType(CString("outputOnly"));
+field470->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field470);
 
 field* field471 = new field();
-field471->setName("r_thumb_proximal_key");
-field471->setAccessType("inputOutput");
-field471->setType("MFFloat");
+field471->setName(CString("r_thumb_proximal_key"));
+field471->setAccessType(CString("inputOutput"));
+field471->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field471);
+ProtoInterface21->addChild(field471);
 
 field* field472 = new field();
-field472->setName("r_thumb_proximal_keyValue");
-field472->setAccessType("inputOutput");
-field472->setType("MFRotation");
+field472->setName(CString("r_thumb_proximal_keyValue"));
+field472->setAccessType(CString("inputOutput"));
+field472->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field472);
+ProtoInterface21->addChild(field472);
 
 field* field473 = new field();
-field473->setName("r_thumb_proximal_changed");
-field473->setAccessType("outputOnly");
-field473->setType("SFRotation");
-ProtoInterface21->addField(field473);
+field473->setName(CString("r_thumb_proximal_changed"));
+field473->setAccessType(CString("outputOnly"));
+field473->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field473);
 
 field* field474 = new field();
-field474->setName("r_upperarm_key");
-field474->setAccessType("inputOutput");
-field474->setType("MFFloat");
+field474->setName(CString("r_upperarm_key"));
+field474->setAccessType(CString("inputOutput"));
+field474->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field474);
+ProtoInterface21->addChild(field474);
 
 field* field475 = new field();
-field475->setName("r_upperarm_keyValue");
-field475->setAccessType("inputOutput");
-field475->setType("MFRotation");
+field475->setName(CString("r_upperarm_keyValue"));
+field475->setAccessType(CString("inputOutput"));
+field475->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field475);
+ProtoInterface21->addChild(field475);
 
 field* field476 = new field();
-field476->setName("r_upperarm_changed");
-field476->setAccessType("outputOnly");
-field476->setType("SFRotation");
-ProtoInterface21->addField(field476);
+field476->setName(CString("r_upperarm_changed"));
+field476->setAccessType(CString("outputOnly"));
+field476->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field476);
 
 field* field477 = new field();
-field477->setName("r_wrist_key");
-field477->setAccessType("inputOutput");
-field477->setType("MFFloat");
+field477->setName(CString("r_wrist_key"));
+field477->setAccessType(CString("inputOutput"));
+field477->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field477);
+ProtoInterface21->addChild(field477);
 
 field* field478 = new field();
-field478->setName("r_wrist_keyValue");
-field478->setAccessType("inputOutput");
-field478->setType("MFRotation");
+field478->setName(CString("r_wrist_keyValue"));
+field478->setAccessType(CString("inputOutput"));
+field478->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field478);
+ProtoInterface21->addChild(field478);
 
 field* field479 = new field();
-field479->setName("r_wrist_changed");
-field479->setAccessType("outputOnly");
-field479->setType("SFRotation");
-ProtoInterface21->addField(field479);
+field479->setName(CString("r_wrist_changed"));
+field479->setAccessType(CString("outputOnly"));
+field479->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field479);
 
 field* field480 = new field();
-field480->setName("sacroiliac_key");
-field480->setAccessType("inputOutput");
-field480->setType("MFFloat");
+field480->setName(CString("sacroiliac_key"));
+field480->setAccessType(CString("inputOutput"));
+field480->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field480);
+ProtoInterface21->addChild(field480);
 
 field* field481 = new field();
-field481->setName("sacroiliac_keyValue");
-field481->setAccessType("inputOutput");
-field481->setType("MFRotation");
+field481->setName(CString("sacroiliac_keyValue"));
+field481->setAccessType(CString("inputOutput"));
+field481->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field481);
+ProtoInterface21->addChild(field481);
 
 field* field482 = new field();
-field482->setName("sacroiliac_changed");
-field482->setAccessType("outputOnly");
-field482->setType("SFRotation");
-ProtoInterface21->addField(field482);
+field482->setName(CString("sacroiliac_changed"));
+field482->setAccessType(CString("outputOnly"));
+field482->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field482);
 
 field* field483 = new field();
-field483->setName("sacrum_key");
-field483->setAccessType("inputOutput");
-field483->setType("MFFloat");
+field483->setName(CString("sacrum_key"));
+field483->setAccessType(CString("inputOutput"));
+field483->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field483);
+ProtoInterface21->addChild(field483);
 
 field* field484 = new field();
-field484->setName("sacrum_keyValue");
-field484->setAccessType("inputOutput");
-field484->setType("MFRotation");
+field484->setName(CString("sacrum_keyValue"));
+field484->setAccessType(CString("inputOutput"));
+field484->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field484);
+ProtoInterface21->addChild(field484);
 
 field* field485 = new field();
-field485->setName("sacrum_changed");
-field485->setAccessType("outputOnly");
-field485->setType("SFRotation");
-ProtoInterface21->addField(field485);
+field485->setName(CString("sacrum_changed"));
+field485->setAccessType(CString("outputOnly"));
+field485->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field485);
 
 field* field486 = new field();
-field486->setName("skull_key");
-field486->setAccessType("inputOutput");
-field486->setType("MFFloat");
+field486->setName(CString("skull_key"));
+field486->setAccessType(CString("inputOutput"));
+field486->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field486);
+ProtoInterface21->addChild(field486);
 
 field* field487 = new field();
-field487->setName("skull_keyValue");
-field487->setAccessType("inputOutput");
-field487->setType("MFRotation");
+field487->setName(CString("skull_keyValue"));
+field487->setAccessType(CString("inputOutput"));
+field487->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field487);
+ProtoInterface21->addChild(field487);
 
 field* field488 = new field();
-field488->setName("skull_changed");
-field488->setAccessType("outputOnly");
-field488->setType("SFRotation");
-ProtoInterface21->addField(field488);
+field488->setName(CString("skull_changed"));
+field488->setAccessType(CString("outputOnly"));
+field488->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field488);
 
 field* field489 = new field();
-field489->setName("skullbase_key");
-field489->setAccessType("inputOutput");
-field489->setType("MFFloat");
+field489->setName(CString("skullbase_key"));
+field489->setAccessType(CString("inputOutput"));
+field489->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field489);
+ProtoInterface21->addChild(field489);
 
 field* field490 = new field();
-field490->setName("skullbase_keyValue");
-field490->setAccessType("inputOutput");
-field490->setType("MFRotation");
+field490->setName(CString("skullbase_keyValue"));
+field490->setAccessType(CString("inputOutput"));
+field490->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field490);
+ProtoInterface21->addChild(field490);
 
 field* field491 = new field();
-field491->setName("skullbase_changed");
-field491->setAccessType("outputOnly");
-field491->setType("SFRotation");
-ProtoInterface21->addField(field491);
+field491->setName(CString("skullbase_changed"));
+field491->setAccessType(CString("outputOnly"));
+field491->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field491);
 
 field* field492 = new field();
-field492->setName("t10_key");
-field492->setAccessType("inputOutput");
-field492->setType("MFFloat");
+field492->setName(CString("t10_key"));
+field492->setAccessType(CString("inputOutput"));
+field492->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field492);
+ProtoInterface21->addChild(field492);
 
 field* field493 = new field();
-field493->setName("t10_keyValue");
-field493->setAccessType("inputOutput");
-field493->setType("MFRotation");
+field493->setName(CString("t10_keyValue"));
+field493->setAccessType(CString("inputOutput"));
+field493->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field493);
+ProtoInterface21->addChild(field493);
 
 field* field494 = new field();
-field494->setName("t10_changed");
-field494->setAccessType("outputOnly");
-field494->setType("SFRotation");
-ProtoInterface21->addField(field494);
+field494->setName(CString("t10_changed"));
+field494->setAccessType(CString("outputOnly"));
+field494->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field494);
 
 field* field495 = new field();
-field495->setName("t11_key");
-field495->setAccessType("inputOutput");
-field495->setType("MFFloat");
+field495->setName(CString("t11_key"));
+field495->setAccessType(CString("inputOutput"));
+field495->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field495);
+ProtoInterface21->addChild(field495);
 
 field* field496 = new field();
-field496->setName("t11_keyValue");
-field496->setAccessType("inputOutput");
-field496->setType("MFRotation");
+field496->setName(CString("t11_keyValue"));
+field496->setAccessType(CString("inputOutput"));
+field496->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field496);
+ProtoInterface21->addChild(field496);
 
 field* field497 = new field();
-field497->setName("t11_changed");
-field497->setAccessType("outputOnly");
-field497->setType("SFRotation");
-ProtoInterface21->addField(field497);
+field497->setName(CString("t11_changed"));
+field497->setAccessType(CString("outputOnly"));
+field497->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field497);
 
 field* field498 = new field();
-field498->setName("t12_key");
-field498->setAccessType("inputOutput");
-field498->setType("MFFloat");
+field498->setName(CString("t12_key"));
+field498->setAccessType(CString("inputOutput"));
+field498->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field498);
+ProtoInterface21->addChild(field498);
 
 field* field499 = new field();
-field499->setName("t12_keyValue");
-field499->setAccessType("inputOutput");
-field499->setType("MFRotation");
+field499->setName(CString("t12_keyValue"));
+field499->setAccessType(CString("inputOutput"));
+field499->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field499);
+ProtoInterface21->addChild(field499);
 
 field* field500 = new field();
-field500->setName("t12_changed");
-field500->setAccessType("outputOnly");
-field500->setType("SFRotation");
-ProtoInterface21->addField(field500);
+field500->setName(CString("t12_changed"));
+field500->setAccessType(CString("outputOnly"));
+field500->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field500);
 
 field* field501 = new field();
-field501->setName("t1_key");
-field501->setAccessType("inputOutput");
-field501->setType("MFFloat");
+field501->setName(CString("t1_key"));
+field501->setAccessType(CString("inputOutput"));
+field501->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field501);
+ProtoInterface21->addChild(field501);
 
 field* field502 = new field();
-field502->setName("t1_keyValue");
-field502->setAccessType("inputOutput");
-field502->setType("MFRotation");
+field502->setName(CString("t1_keyValue"));
+field502->setAccessType(CString("inputOutput"));
+field502->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field502);
+ProtoInterface21->addChild(field502);
 
 field* field503 = new field();
-field503->setName("t1_changed");
-field503->setAccessType("outputOnly");
-field503->setType("SFRotation");
-ProtoInterface21->addField(field503);
+field503->setName(CString("t1_changed"));
+field503->setAccessType(CString("outputOnly"));
+field503->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field503);
 
 field* field504 = new field();
-field504->setName("t2_key");
-field504->setAccessType("inputOutput");
-field504->setType("MFFloat");
+field504->setName(CString("t2_key"));
+field504->setAccessType(CString("inputOutput"));
+field504->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field504);
+ProtoInterface21->addChild(field504);
 
 field* field505 = new field();
-field505->setName("t2_keyValue");
-field505->setAccessType("inputOutput");
-field505->setType("MFRotation");
+field505->setName(CString("t2_keyValue"));
+field505->setAccessType(CString("inputOutput"));
+field505->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field505);
+ProtoInterface21->addChild(field505);
 
 field* field506 = new field();
-field506->setName("t2_changed");
-field506->setAccessType("outputOnly");
-field506->setType("SFRotation");
-ProtoInterface21->addField(field506);
+field506->setName(CString("t2_changed"));
+field506->setAccessType(CString("outputOnly"));
+field506->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field506);
 
 field* field507 = new field();
-field507->setName("t3_key");
-field507->setAccessType("inputOutput");
-field507->setType("MFFloat");
+field507->setName(CString("t3_key"));
+field507->setAccessType(CString("inputOutput"));
+field507->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field507);
+ProtoInterface21->addChild(field507);
 
 field* field508 = new field();
-field508->setName("t3_keyValue");
-field508->setAccessType("inputOutput");
-field508->setType("MFRotation");
+field508->setName(CString("t3_keyValue"));
+field508->setAccessType(CString("inputOutput"));
+field508->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field508);
+ProtoInterface21->addChild(field508);
 
 field* field509 = new field();
-field509->setName("t3_changed");
-field509->setAccessType("outputOnly");
-field509->setType("SFRotation");
-ProtoInterface21->addField(field509);
+field509->setName(CString("t3_changed"));
+field509->setAccessType(CString("outputOnly"));
+field509->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field509);
 
 field* field510 = new field();
-field510->setName("t4_key");
-field510->setAccessType("inputOutput");
-field510->setType("MFFloat");
+field510->setName(CString("t4_key"));
+field510->setAccessType(CString("inputOutput"));
+field510->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field510);
+ProtoInterface21->addChild(field510);
 
 field* field511 = new field();
-field511->setName("t4_keyValue");
-field511->setAccessType("inputOutput");
-field511->setType("MFRotation");
+field511->setName(CString("t4_keyValue"));
+field511->setAccessType(CString("inputOutput"));
+field511->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field511);
+ProtoInterface21->addChild(field511);
 
 field* field512 = new field();
-field512->setName("t4_changed");
-field512->setAccessType("outputOnly");
-field512->setType("SFRotation");
-ProtoInterface21->addField(field512);
+field512->setName(CString("t4_changed"));
+field512->setAccessType(CString("outputOnly"));
+field512->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field512);
 
 field* field513 = new field();
-field513->setName("t5_key");
-field513->setAccessType("inputOutput");
-field513->setType("MFFloat");
+field513->setName(CString("t5_key"));
+field513->setAccessType(CString("inputOutput"));
+field513->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field513);
+ProtoInterface21->addChild(field513);
 
 field* field514 = new field();
-field514->setName("t5_keyValue");
-field514->setAccessType("inputOutput");
-field514->setType("MFRotation");
+field514->setName(CString("t5_keyValue"));
+field514->setAccessType(CString("inputOutput"));
+field514->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field514);
+ProtoInterface21->addChild(field514);
 
 field* field515 = new field();
-field515->setName("t5_changed");
-field515->setAccessType("outputOnly");
-field515->setType("SFRotation");
-ProtoInterface21->addField(field515);
+field515->setName(CString("t5_changed"));
+field515->setAccessType(CString("outputOnly"));
+field515->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field515);
 
 field* field516 = new field();
-field516->setName("t6_key");
-field516->setAccessType("inputOutput");
-field516->setType("MFFloat");
+field516->setName(CString("t6_key"));
+field516->setAccessType(CString("inputOutput"));
+field516->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field516);
+ProtoInterface21->addChild(field516);
 
 field* field517 = new field();
-field517->setName("t6_keyValue");
-field517->setAccessType("inputOutput");
-field517->setType("MFRotation");
+field517->setName(CString("t6_keyValue"));
+field517->setAccessType(CString("inputOutput"));
+field517->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field517);
+ProtoInterface21->addChild(field517);
 
 field* field518 = new field();
-field518->setName("t6_changed");
-field518->setAccessType("outputOnly");
-field518->setType("SFRotation");
-ProtoInterface21->addField(field518);
+field518->setName(CString("t6_changed"));
+field518->setAccessType(CString("outputOnly"));
+field518->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field518);
 
 field* field519 = new field();
-field519->setName("t7_key");
-field519->setAccessType("inputOutput");
-field519->setType("MFFloat");
+field519->setName(CString("t7_key"));
+field519->setAccessType(CString("inputOutput"));
+field519->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field519);
+ProtoInterface21->addChild(field519);
 
 field* field520 = new field();
-field520->setName("t7_keyValue");
-field520->setAccessType("inputOutput");
-field520->setType("MFRotation");
+field520->setName(CString("t7_keyValue"));
+field520->setAccessType(CString("inputOutput"));
+field520->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field520);
+ProtoInterface21->addChild(field520);
 
 field* field521 = new field();
-field521->setName("t7_changed");
-field521->setAccessType("outputOnly");
-field521->setType("SFRotation");
-ProtoInterface21->addField(field521);
+field521->setName(CString("t7_changed"));
+field521->setAccessType(CString("outputOnly"));
+field521->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field521);
 
 field* field522 = new field();
-field522->setName("t8_key");
-field522->setAccessType("inputOutput");
-field522->setType("MFFloat");
+field522->setName(CString("t8_key"));
+field522->setAccessType(CString("inputOutput"));
+field522->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field522);
+ProtoInterface21->addChild(field522);
 
 field* field523 = new field();
-field523->setName("t8_keyValue");
-field523->setAccessType("inputOutput");
-field523->setType("MFRotation");
+field523->setName(CString("t8_keyValue"));
+field523->setAccessType(CString("inputOutput"));
+field523->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field523);
+ProtoInterface21->addChild(field523);
 
 field* field524 = new field();
-field524->setName("t8_changed");
-field524->setAccessType("outputOnly");
-field524->setType("SFRotation");
-ProtoInterface21->addField(field524);
+field524->setName(CString("t8_changed"));
+field524->setAccessType(CString("outputOnly"));
+field524->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field524);
 
 field* field525 = new field();
-field525->setName("t9_key");
-field525->setAccessType("inputOutput");
-field525->setType("MFFloat");
+field525->setName(CString("t9_key"));
+field525->setAccessType(CString("inputOutput"));
+field525->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field525);
+ProtoInterface21->addChild(field525);
 
 field* field526 = new field();
-field526->setName("t9_keyValue");
-field526->setAccessType("inputOutput");
-field526->setType("MFRotation");
+field526->setName(CString("t9_keyValue"));
+field526->setAccessType(CString("inputOutput"));
+field526->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field526);
+ProtoInterface21->addChild(field526);
 
 field* field527 = new field();
-field527->setName("t9_changed");
-field527->setAccessType("outputOnly");
-field527->setType("SFRotation");
-ProtoInterface21->addField(field527);
+field527->setName(CString("t9_changed"));
+field527->setAccessType(CString("outputOnly"));
+field527->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field527);
 
 field* field528 = new field();
-field528->setName("temporomandibular_key");
-field528->setAccessType("inputOutput");
-field528->setType("MFFloat");
+field528->setName(CString("temporomandibular_key"));
+field528->setAccessType(CString("inputOutput"));
+field528->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field528);
+ProtoInterface21->addChild(field528);
 
 field* field529 = new field();
-field529->setName("temporomandibular_keyValue");
-field529->setAccessType("inputOutput");
-field529->setType("MFRotation");
+field529->setName(CString("temporomandibular_keyValue"));
+field529->setAccessType(CString("inputOutput"));
+field529->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field529);
+ProtoInterface21->addChild(field529);
 
 field* field530 = new field();
-field530->setName("temporomandibular_changed");
-field530->setAccessType("outputOnly");
-field530->setType("SFRotation");
-ProtoInterface21->addField(field530);
+field530->setName(CString("temporomandibular_changed"));
+field530->setAccessType(CString("outputOnly"));
+field530->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field530);
 
 field* field531 = new field();
-field531->setName("vc1_key");
-field531->setAccessType("inputOutput");
-field531->setType("MFFloat");
+field531->setName(CString("vc1_key"));
+field531->setAccessType(CString("inputOutput"));
+field531->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field531);
+ProtoInterface21->addChild(field531);
 
 field* field532 = new field();
-field532->setName("vc1_keyValue");
-field532->setAccessType("inputOutput");
-field532->setType("MFRotation");
+field532->setName(CString("vc1_keyValue"));
+field532->setAccessType(CString("inputOutput"));
+field532->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field532);
+ProtoInterface21->addChild(field532);
 
 field* field533 = new field();
-field533->setName("vc1_changed");
-field533->setAccessType("outputOnly");
-field533->setType("SFRotation");
-ProtoInterface21->addField(field533);
+field533->setName(CString("vc1_changed"));
+field533->setAccessType(CString("outputOnly"));
+field533->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field533);
 
 field* field534 = new field();
-field534->setName("vc2_key");
-field534->setAccessType("inputOutput");
-field534->setType("MFFloat");
+field534->setName(CString("vc2_key"));
+field534->setAccessType(CString("inputOutput"));
+field534->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field534);
+ProtoInterface21->addChild(field534);
 
 field* field535 = new field();
-field535->setName("vc2_keyValue");
-field535->setAccessType("inputOutput");
-field535->setType("MFRotation");
+field535->setName(CString("vc2_keyValue"));
+field535->setAccessType(CString("inputOutput"));
+field535->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field535);
+ProtoInterface21->addChild(field535);
 
 field* field536 = new field();
-field536->setName("vc2_changed");
-field536->setAccessType("outputOnly");
-field536->setType("SFRotation");
-ProtoInterface21->addField(field536);
+field536->setName(CString("vc2_changed"));
+field536->setAccessType(CString("outputOnly"));
+field536->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field536);
 
 field* field537 = new field();
-field537->setName("vc3_key");
-field537->setAccessType("inputOutput");
-field537->setType("MFFloat");
+field537->setName(CString("vc3_key"));
+field537->setAccessType(CString("inputOutput"));
+field537->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field537);
+ProtoInterface21->addChild(field537);
 
 field* field538 = new field();
-field538->setName("vc3_keyValue");
-field538->setAccessType("inputOutput");
-field538->setType("MFRotation");
+field538->setName(CString("vc3_keyValue"));
+field538->setAccessType(CString("inputOutput"));
+field538->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field538);
+ProtoInterface21->addChild(field538);
 
 field* field539 = new field();
-field539->setName("vc3_changed");
-field539->setAccessType("outputOnly");
-field539->setType("SFRotation");
-ProtoInterface21->addField(field539);
+field539->setName(CString("vc3_changed"));
+field539->setAccessType(CString("outputOnly"));
+field539->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field539);
 
 field* field540 = new field();
-field540->setName("vc4_key");
-field540->setAccessType("inputOutput");
-field540->setType("MFFloat");
+field540->setName(CString("vc4_key"));
+field540->setAccessType(CString("inputOutput"));
+field540->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field540);
+ProtoInterface21->addChild(field540);
 
 field* field541 = new field();
-field541->setName("vc4_keyValue");
-field541->setAccessType("inputOutput");
-field541->setType("MFRotation");
+field541->setName(CString("vc4_keyValue"));
+field541->setAccessType(CString("inputOutput"));
+field541->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field541);
+ProtoInterface21->addChild(field541);
 
 field* field542 = new field();
-field542->setName("vc4_changed");
-field542->setAccessType("outputOnly");
-field542->setType("SFRotation");
-ProtoInterface21->addField(field542);
+field542->setName(CString("vc4_changed"));
+field542->setAccessType(CString("outputOnly"));
+field542->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field542);
 
 field* field543 = new field();
-field543->setName("vc5_key");
-field543->setAccessType("inputOutput");
-field543->setType("MFFloat");
+field543->setName(CString("vc5_key"));
+field543->setAccessType(CString("inputOutput"));
+field543->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field543);
+ProtoInterface21->addChild(field543);
 
 field* field544 = new field();
-field544->setName("vc5_keyValue");
-field544->setAccessType("inputOutput");
-field544->setType("MFRotation");
+field544->setName(CString("vc5_keyValue"));
+field544->setAccessType(CString("inputOutput"));
+field544->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field544);
+ProtoInterface21->addChild(field544);
 
 field* field545 = new field();
-field545->setName("vc5_changed");
-field545->setAccessType("outputOnly");
-field545->setType("SFRotation");
-ProtoInterface21->addField(field545);
+field545->setName(CString("vc5_changed"));
+field545->setAccessType(CString("outputOnly"));
+field545->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field545);
 
 field* field546 = new field();
-field546->setName("vc6_key");
-field546->setAccessType("inputOutput");
-field546->setType("MFFloat");
+field546->setName(CString("vc6_key"));
+field546->setAccessType(CString("inputOutput"));
+field546->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field546);
+ProtoInterface21->addChild(field546);
 
 field* field547 = new field();
-field547->setName("vc6_keyValue");
-field547->setAccessType("inputOutput");
-field547->setType("MFRotation");
+field547->setName(CString("vc6_keyValue"));
+field547->setAccessType(CString("inputOutput"));
+field547->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field547);
+ProtoInterface21->addChild(field547);
 
 field* field548 = new field();
-field548->setName("vc6_changed");
-field548->setAccessType("outputOnly");
-field548->setType("SFRotation");
-ProtoInterface21->addField(field548);
+field548->setName(CString("vc6_changed"));
+field548->setAccessType(CString("outputOnly"));
+field548->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field548);
 
 field* field549 = new field();
-field549->setName("vc7_key");
-field549->setAccessType("inputOutput");
-field549->setType("MFFloat");
+field549->setName(CString("vc7_key"));
+field549->setAccessType(CString("inputOutput"));
+field549->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field549);
+ProtoInterface21->addChild(field549);
 
 field* field550 = new field();
-field550->setName("vc7_keyValue");
-field550->setAccessType("inputOutput");
-field550->setType("MFRotation");
+field550->setName(CString("vc7_keyValue"));
+field550->setAccessType(CString("inputOutput"));
+field550->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field550);
+ProtoInterface21->addChild(field550);
 
 field* field551 = new field();
-field551->setName("vc7_changed");
-field551->setAccessType("outputOnly");
-field551->setType("SFRotation");
-ProtoInterface21->addField(field551);
+field551->setName(CString("vc7_changed"));
+field551->setAccessType(CString("outputOnly"));
+field551->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field551);
 
 field* field552 = new field();
-field552->setName("vl1_key");
-field552->setAccessType("inputOutput");
-field552->setType("MFFloat");
+field552->setName(CString("vl1_key"));
+field552->setAccessType(CString("inputOutput"));
+field552->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field552);
+ProtoInterface21->addChild(field552);
 
 field* field553 = new field();
-field553->setName("vl1_keyValue");
-field553->setAccessType("inputOutput");
-field553->setType("MFRotation");
+field553->setName(CString("vl1_keyValue"));
+field553->setAccessType(CString("inputOutput"));
+field553->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field553);
+ProtoInterface21->addChild(field553);
 
 field* field554 = new field();
-field554->setName("vl1_changed");
-field554->setAccessType("outputOnly");
-field554->setType("SFRotation");
-ProtoInterface21->addField(field554);
+field554->setName(CString("vl1_changed"));
+field554->setAccessType(CString("outputOnly"));
+field554->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field554);
 
 field* field555 = new field();
-field555->setName("vl2_key");
-field555->setAccessType("inputOutput");
-field555->setType("MFFloat");
+field555->setName(CString("vl2_key"));
+field555->setAccessType(CString("inputOutput"));
+field555->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field555);
+ProtoInterface21->addChild(field555);
 
 field* field556 = new field();
-field556->setName("vl2_keyValue");
-field556->setAccessType("inputOutput");
-field556->setType("MFRotation");
+field556->setName(CString("vl2_keyValue"));
+field556->setAccessType(CString("inputOutput"));
+field556->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field556);
+ProtoInterface21->addChild(field556);
 
 field* field557 = new field();
-field557->setName("vl2_changed");
-field557->setAccessType("outputOnly");
-field557->setType("SFRotation");
-ProtoInterface21->addField(field557);
+field557->setName(CString("vl2_changed"));
+field557->setAccessType(CString("outputOnly"));
+field557->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field557);
 
 field* field558 = new field();
-field558->setName("vl3_key");
-field558->setAccessType("inputOutput");
-field558->setType("MFFloat");
+field558->setName(CString("vl3_key"));
+field558->setAccessType(CString("inputOutput"));
+field558->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field558);
+ProtoInterface21->addChild(field558);
 
 field* field559 = new field();
-field559->setName("vl3_keyValue");
-field559->setAccessType("inputOutput");
-field559->setType("MFRotation");
+field559->setName(CString("vl3_keyValue"));
+field559->setAccessType(CString("inputOutput"));
+field559->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field559);
+ProtoInterface21->addChild(field559);
 
 field* field560 = new field();
-field560->setName("vl3_changed");
-field560->setAccessType("outputOnly");
-field560->setType("SFRotation");
-ProtoInterface21->addField(field560);
+field560->setName(CString("vl3_changed"));
+field560->setAccessType(CString("outputOnly"));
+field560->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field560);
 
 field* field561 = new field();
-field561->setName("vl4_key");
-field561->setAccessType("inputOutput");
-field561->setType("MFFloat");
+field561->setName(CString("vl4_key"));
+field561->setAccessType(CString("inputOutput"));
+field561->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field561);
+ProtoInterface21->addChild(field561);
 
 field* field562 = new field();
-field562->setName("vl4_keyValue");
-field562->setAccessType("inputOutput");
-field562->setType("MFRotation");
+field562->setName(CString("vl4_keyValue"));
+field562->setAccessType(CString("inputOutput"));
+field562->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field562);
+ProtoInterface21->addChild(field562);
 
 field* field563 = new field();
-field563->setName("vl4_changed");
-field563->setAccessType("outputOnly");
-field563->setType("SFRotation");
-ProtoInterface21->addField(field563);
+field563->setName(CString("vl4_changed"));
+field563->setAccessType(CString("outputOnly"));
+field563->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field563);
 
 field* field564 = new field();
-field564->setName("vl5_key");
-field564->setAccessType("inputOutput");
-field564->setType("MFFloat");
+field564->setName(CString("vl5_key"));
+field564->setAccessType(CString("inputOutput"));
+field564->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field564);
+ProtoInterface21->addChild(field564);
 
 field* field565 = new field();
-field565->setName("vl5_keyValue");
-field565->setAccessType("inputOutput");
-field565->setType("MFRotation");
+field565->setName(CString("vl5_keyValue"));
+field565->setAccessType(CString("inputOutput"));
+field565->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field565);
+ProtoInterface21->addChild(field565);
 
 field* field566 = new field();
-field566->setName("vl5_changed");
-field566->setAccessType("outputOnly");
-field566->setType("SFRotation");
-ProtoInterface21->addField(field566);
+field566->setName(CString("vl5_changed"));
+field566->setAccessType(CString("outputOnly"));
+field566->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field566);
 
 field* field567 = new field();
-field567->setName("vt10_key");
-field567->setAccessType("inputOutput");
-field567->setType("MFFloat");
+field567->setName(CString("vt10_key"));
+field567->setAccessType(CString("inputOutput"));
+field567->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field567);
+ProtoInterface21->addChild(field567);
 
 field* field568 = new field();
-field568->setName("vt10_keyValue");
-field568->setAccessType("inputOutput");
-field568->setType("MFRotation");
+field568->setName(CString("vt10_keyValue"));
+field568->setAccessType(CString("inputOutput"));
+field568->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field568);
+ProtoInterface21->addChild(field568);
 
 field* field569 = new field();
-field569->setName("vt10_changed");
-field569->setAccessType("outputOnly");
-field569->setType("SFRotation");
-ProtoInterface21->addField(field569);
+field569->setName(CString("vt10_changed"));
+field569->setAccessType(CString("outputOnly"));
+field569->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field569);
 
 field* field570 = new field();
-field570->setName("vt11_key");
-field570->setAccessType("inputOutput");
-field570->setType("MFFloat");
+field570->setName(CString("vt11_key"));
+field570->setAccessType(CString("inputOutput"));
+field570->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field570);
+ProtoInterface21->addChild(field570);
 
 field* field571 = new field();
-field571->setName("vt11_keyValue");
-field571->setAccessType("inputOutput");
-field571->setType("MFRotation");
+field571->setName(CString("vt11_keyValue"));
+field571->setAccessType(CString("inputOutput"));
+field571->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field571);
+ProtoInterface21->addChild(field571);
 
 field* field572 = new field();
-field572->setName("vt11_changed");
-field572->setAccessType("outputOnly");
-field572->setType("SFRotation");
-ProtoInterface21->addField(field572);
+field572->setName(CString("vt11_changed"));
+field572->setAccessType(CString("outputOnly"));
+field572->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field572);
 
 field* field573 = new field();
-field573->setName("vt12_key");
-field573->setAccessType("inputOutput");
-field573->setType("MFFloat");
+field573->setName(CString("vt12_key"));
+field573->setAccessType(CString("inputOutput"));
+field573->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field573);
+ProtoInterface21->addChild(field573);
 
 field* field574 = new field();
-field574->setName("vt12_keyValue");
-field574->setAccessType("inputOutput");
-field574->setType("MFRotation");
+field574->setName(CString("vt12_keyValue"));
+field574->setAccessType(CString("inputOutput"));
+field574->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field574);
+ProtoInterface21->addChild(field574);
 
 field* field575 = new field();
-field575->setName("vt12_changed");
-field575->setAccessType("outputOnly");
-field575->setType("SFRotation");
-ProtoInterface21->addField(field575);
+field575->setName(CString("vt12_changed"));
+field575->setAccessType(CString("outputOnly"));
+field575->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field575);
 
 field* field576 = new field();
-field576->setName("vt1_key");
-field576->setAccessType("inputOutput");
-field576->setType("MFFloat");
+field576->setName(CString("vt1_key"));
+field576->setAccessType(CString("inputOutput"));
+field576->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field576);
+ProtoInterface21->addChild(field576);
 
 field* field577 = new field();
-field577->setName("vt1_keyValue");
-field577->setAccessType("inputOutput");
-field577->setType("MFRotation");
+field577->setName(CString("vt1_keyValue"));
+field577->setAccessType(CString("inputOutput"));
+field577->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field577);
+ProtoInterface21->addChild(field577);
 
 field* field578 = new field();
-field578->setName("vt1_changed");
-field578->setAccessType("outputOnly");
-field578->setType("SFRotation");
-ProtoInterface21->addField(field578);
+field578->setName(CString("vt1_changed"));
+field578->setAccessType(CString("outputOnly"));
+field578->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field578);
 
 field* field579 = new field();
-field579->setName("vt2_key");
-field579->setAccessType("inputOutput");
-field579->setType("MFFloat");
+field579->setName(CString("vt2_key"));
+field579->setAccessType(CString("inputOutput"));
+field579->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field579);
+ProtoInterface21->addChild(field579);
 
 field* field580 = new field();
-field580->setName("vt2_keyValue");
-field580->setAccessType("inputOutput");
-field580->setType("MFRotation");
+field580->setName(CString("vt2_keyValue"));
+field580->setAccessType(CString("inputOutput"));
+field580->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field580);
+ProtoInterface21->addChild(field580);
 
 field* field581 = new field();
-field581->setName("vt2_changed");
-field581->setAccessType("outputOnly");
-field581->setType("SFRotation");
-ProtoInterface21->addField(field581);
+field581->setName(CString("vt2_changed"));
+field581->setAccessType(CString("outputOnly"));
+field581->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field581);
 
 field* field582 = new field();
-field582->setName("vt3_key");
-field582->setAccessType("inputOutput");
-field582->setType("MFFloat");
+field582->setName(CString("vt3_key"));
+field582->setAccessType(CString("inputOutput"));
+field582->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field582);
+ProtoInterface21->addChild(field582);
 
 field* field583 = new field();
-field583->setName("vt3_keyValue");
-field583->setAccessType("inputOutput");
-field583->setType("MFRotation");
+field583->setName(CString("vt3_keyValue"));
+field583->setAccessType(CString("inputOutput"));
+field583->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field583);
+ProtoInterface21->addChild(field583);
 
 field* field584 = new field();
-field584->setName("vt3_changed");
-field584->setAccessType("outputOnly");
-field584->setType("SFRotation");
-ProtoInterface21->addField(field584);
+field584->setName(CString("vt3_changed"));
+field584->setAccessType(CString("outputOnly"));
+field584->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field584);
 
 field* field585 = new field();
-field585->setName("vt4_key");
-field585->setAccessType("inputOutput");
-field585->setType("MFFloat");
+field585->setName(CString("vt4_key"));
+field585->setAccessType(CString("inputOutput"));
+field585->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field585);
+ProtoInterface21->addChild(field585);
 
 field* field586 = new field();
-field586->setName("vt4_keyValue");
-field586->setAccessType("inputOutput");
-field586->setType("MFRotation");
+field586->setName(CString("vt4_keyValue"));
+field586->setAccessType(CString("inputOutput"));
+field586->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field586);
+ProtoInterface21->addChild(field586);
 
 field* field587 = new field();
-field587->setName("vt4_changed");
-field587->setAccessType("outputOnly");
-field587->setType("SFRotation");
-ProtoInterface21->addField(field587);
+field587->setName(CString("vt4_changed"));
+field587->setAccessType(CString("outputOnly"));
+field587->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field587);
 
 field* field588 = new field();
-field588->setName("vt5_key");
-field588->setAccessType("inputOutput");
-field588->setType("MFFloat");
+field588->setName(CString("vt5_key"));
+field588->setAccessType(CString("inputOutput"));
+field588->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field588);
+ProtoInterface21->addChild(field588);
 
 field* field589 = new field();
-field589->setName("vt5_keyValue");
-field589->setAccessType("inputOutput");
-field589->setType("MFRotation");
+field589->setName(CString("vt5_keyValue"));
+field589->setAccessType(CString("inputOutput"));
+field589->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field589);
+ProtoInterface21->addChild(field589);
 
 field* field590 = new field();
-field590->setName("vt5_changed");
-field590->setAccessType("outputOnly");
-field590->setType("SFRotation");
-ProtoInterface21->addField(field590);
+field590->setName(CString("vt5_changed"));
+field590->setAccessType(CString("outputOnly"));
+field590->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field590);
 
 field* field591 = new field();
-field591->setName("vt6_key");
-field591->setAccessType("inputOutput");
-field591->setType("MFFloat");
+field591->setName(CString("vt6_key"));
+field591->setAccessType(CString("inputOutput"));
+field591->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field591);
+ProtoInterface21->addChild(field591);
 
 field* field592 = new field();
-field592->setName("vt6_keyValue");
-field592->setAccessType("inputOutput");
-field592->setType("MFRotation");
+field592->setName(CString("vt6_keyValue"));
+field592->setAccessType(CString("inputOutput"));
+field592->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field592);
+ProtoInterface21->addChild(field592);
 
 field* field593 = new field();
-field593->setName("vt6_changed");
-field593->setAccessType("outputOnly");
-field593->setType("SFRotation");
-ProtoInterface21->addField(field593);
+field593->setName(CString("vt6_changed"));
+field593->setAccessType(CString("outputOnly"));
+field593->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field593);
 
 field* field594 = new field();
-field594->setName("vt7_key");
-field594->setAccessType("inputOutput");
-field594->setType("MFFloat");
+field594->setName(CString("vt7_key"));
+field594->setAccessType(CString("inputOutput"));
+field594->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field594);
+ProtoInterface21->addChild(field594);
 
 field* field595 = new field();
-field595->setName("vt7_keyValue");
-field595->setAccessType("inputOutput");
-field595->setType("MFRotation");
+field595->setName(CString("vt7_keyValue"));
+field595->setAccessType(CString("inputOutput"));
+field595->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field595);
+ProtoInterface21->addChild(field595);
 
 field* field596 = new field();
-field596->setName("vt7_changed");
-field596->setAccessType("outputOnly");
-field596->setType("SFRotation");
-ProtoInterface21->addField(field596);
+field596->setName(CString("vt7_changed"));
+field596->setAccessType(CString("outputOnly"));
+field596->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field596);
 
 field* field597 = new field();
-field597->setName("vt8_key");
-field597->setAccessType("inputOutput");
-field597->setType("MFFloat");
+field597->setName(CString("vt8_key"));
+field597->setAccessType(CString("inputOutput"));
+field597->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field597);
+ProtoInterface21->addChild(field597);
 
 field* field598 = new field();
-field598->setName("vt8_keyValue");
-field598->setAccessType("inputOutput");
-field598->setType("MFRotation");
+field598->setName(CString("vt8_keyValue"));
+field598->setAccessType(CString("inputOutput"));
+field598->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field598);
+ProtoInterface21->addChild(field598);
 
 field* field599 = new field();
-field599->setName("vt8_changed");
-field599->setAccessType("outputOnly");
-field599->setType("SFRotation");
-ProtoInterface21->addField(field599);
+field599->setName(CString("vt8_changed"));
+field599->setAccessType(CString("outputOnly"));
+field599->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field599);
 
 field* field600 = new field();
-field600->setName("vt9_key");
-field600->setAccessType("inputOutput");
-field600->setType("MFFloat");
+field600->setName(CString("vt9_key"));
+field600->setAccessType(CString("inputOutput"));
+field600->setType(CString("MFFloat"));
 //no default value
-ProtoInterface21->addField(field600);
+ProtoInterface21->addChild(field600);
 
 field* field601 = new field();
-field601->setName("vt9_keyValue");
-field601->setAccessType("inputOutput");
-field601->setType("MFRotation");
+field601->setName(CString("vt9_keyValue"));
+field601->setAccessType(CString("inputOutput"));
+field601->setType(CString("MFRotation"));
 //no default value
-ProtoInterface21->addField(field601);
+ProtoInterface21->addChild(field601);
 
 field* field602 = new field();
-field602->setName("vt9_changed");
-field602->setAccessType("outputOnly");
-field602->setType("SFRotation");
-ProtoInterface21->addField(field602);
+field602->setName(CString("vt9_changed"));
+field602->setAccessType(CString("outputOnly"));
+field602->setType(CString("SFRotation"));
+ProtoInterface21->addChild(field602);
 
-ProtoDeclare20->setProtoInterface(ProtoInterface21);
+ProtoDeclare20->addChild(ProtoInterface21);
 
 ProtoBody* ProtoBody603 = new ProtoBody();
 //design alternative: move TimeSensor out of the prototype, instead expose set_fraction globally to all interpolators
 TimeSensor* TimeSensor604 = new TimeSensor();
-TimeSensor604->setDEF("BehaviorClock");
+TimeSensor604->setDEF(CString("BehaviorClock"));
 IS* IS605 = new IS();
 Connect* connect606 = new Connect();
-connect606->setNodeField("enabled");
-connect606->setProtoField("enabled");
-IS605->addConnect(connect606);
+connect606->setNodeField(CString("enabled"));
+connect606->setProtoField(CString("enabled"));
+IS605->addChild(connect606);
 
 Connect* connect607 = new Connect();
-connect607->setNodeField("cycleInterval");
-connect607->setProtoField("cycleInterval");
-IS605->addConnect(connect607);
+connect607->setNodeField(CString("cycleInterval"));
+connect607->setProtoField(CString("cycleInterval"));
+IS605->addChild(connect607);
 
 Connect* connect608 = new Connect();
-connect608->setNodeField("loop");
-connect608->setProtoField("loop");
-IS605->addConnect(connect608);
+connect608->setNodeField(CString("loop"));
+connect608->setProtoField(CString("loop"));
+IS605->addChild(connect608);
 
 Connect* connect609 = new Connect();
-connect609->setNodeField("startTime");
-connect609->setProtoField("startTime");
-IS605->addConnect(connect609);
+connect609->setNodeField(CString("startTime"));
+connect609->setProtoField(CString("startTime"));
+IS605->addChild(connect609);
 
 Connect* connect610 = new Connect();
-connect610->setNodeField("stopTime");
-connect610->setProtoField("stopTime");
-IS605->addConnect(connect610);
+connect610->setNodeField(CString("stopTime"));
+connect610->setProtoField(CString("stopTime"));
+IS605->addChild(connect610);
 
 Connect* connect611 = new Connect();
-connect611->setNodeField("pauseTime");
-connect611->setProtoField("pauseTime");
-IS605->addConnect(connect611);
+connect611->setNodeField(CString("pauseTime"));
+connect611->setProtoField(CString("pauseTime"));
+IS605->addChild(connect611);
 
 Connect* connect612 = new Connect();
-connect612->setNodeField("resumeTime");
-connect612->setProtoField("resumeTime");
-IS605->addConnect(connect612);
+connect612->setNodeField(CString("resumeTime"));
+connect612->setProtoField(CString("resumeTime"));
+IS605->addChild(connect612);
 
 Connect* connect613 = new Connect();
-connect613->setNodeField("cycleTime");
-connect613->setProtoField("cycleTime");
-IS605->addConnect(connect613);
+connect613->setNodeField(CString("cycleTime"));
+connect613->setProtoField(CString("cycleTime"));
+IS605->addChild(connect613);
 
 Connect* connect614 = new Connect();
-connect614->setNodeField("isActive");
-connect614->setProtoField("isActive");
-IS605->addConnect(connect614);
+connect614->setNodeField(CString("isActive"));
+connect614->setProtoField(CString("isActive"));
+IS605->addChild(connect614);
 
 Connect* connect615 = new Connect();
-connect615->setNodeField("isPaused");
-connect615->setProtoField("isPaused");
-IS605->addConnect(connect615);
+connect615->setNodeField(CString("isPaused"));
+connect615->setProtoField(CString("isPaused"));
+IS605->addChild(connect615);
 
 Connect* connect616 = new Connect();
-connect616->setNodeField("elapsedTime");
-connect616->setProtoField("elapsedTime");
-IS605->addConnect(connect616);
+connect616->setNodeField(CString("elapsedTime"));
+connect616->setProtoField(CString("elapsedTime"));
+IS605->addChild(connect616);
 
 Connect* connect617 = new Connect();
-connect617->setNodeField("time");
-connect617->setProtoField("time");
-IS605->addConnect(connect617);
+connect617->setNodeField(CString("time"));
+connect617->setProtoField(CString("time"));
+IS605->addChild(connect617);
 
 Connect* connect618 = new Connect();
-connect618->setNodeField("fraction_changed");
-connect618->setProtoField("fraction_changed");
-IS605->addConnect(connect618);
+connect618->setNodeField(CString("fraction_changed"));
+connect618->setProtoField(CString("fraction_changed"));
+IS605->addChild(connect618);
 
-TimeSensor604->setIS(IS605);
+TimeSensor604->addChild(IS605);
 
 ProtoBody603->addChild(TimeSensor604);
 
 //note that other nodes following the first node in the ProtoBody are not rendered but remain active nevertheless
 Switch* Switch619 = new Switch();
-Switch619->setDEF("SupportedLoaHolder1");
+Switch619->setDEF(CString("SupportedLoaHolder1"));
 Switch619->setWhichChoice(-1);
 IS* IS620 = new IS();
 Connect* connect621 = new Connect();
-connect621->setNodeField("whichChoice");
-connect621->setProtoField("supportedLOA");
-IS620->addConnect(connect621);
+connect621->setNodeField(CString("whichChoice"));
+connect621->setProtoField(CString("supportedLOA"));
+IS620->addChild(connect621);
 
-Switch619->setIS(IS620);
+Switch619->addChild(IS620);
 
 ProtoBody603->addChild(Switch619);
 
 PositionInterpolator* PositionInterpolator622 = new PositionInterpolator();
-PositionInterpolator622->setDEF("HumanoidRootPI");
+PositionInterpolator622->setDEF(CString("HumanoidRootPI"));
 IS* IS623 = new IS();
 Connect* connect624 = new Connect();
-connect624->setNodeField("key");
-connect624->setProtoField("HumanoidRoot_translation_key");
-IS623->addConnect(connect624);
+connect624->setNodeField(CString("key"));
+connect624->setProtoField(CString("HumanoidRoot_translation_key"));
+IS623->addChild(connect624);
 
 Connect* connect625 = new Connect();
-connect625->setNodeField("keyValue");
-connect625->setProtoField("HumanoidRoot_translation_keyValue");
-IS623->addConnect(connect625);
+connect625->setNodeField(CString("keyValue"));
+connect625->setProtoField(CString("HumanoidRoot_translation_keyValue"));
+IS623->addChild(connect625);
 
 Connect* connect626 = new Connect();
-connect626->setNodeField("value_changed");
-connect626->setProtoField("HumanoidRoot_translation_changed");
-IS623->addConnect(connect626);
+connect626->setNodeField(CString("value_changed"));
+connect626->setProtoField(CString("HumanoidRoot_translation_changed"));
+IS623->addChild(connect626);
 
-PositionInterpolator622->setIS(IS623);
+PositionInterpolator622->addChild(IS623);
 
 ProtoBody603->addChild(PositionInterpolator622);
 
 ROUTE* ROUTE627 = new ROUTE();
-ROUTE627->setFromField("fraction_changed");
-ROUTE627->setFromNode("BehaviorClock");
-ROUTE627->setToField("set_fraction");
-ROUTE627->setToNode("HumanoidRootPI");
+ROUTE627->setFromField(CString("fraction_changed"));
+ROUTE627->setFromNode(CString("BehaviorClock"));
+ROUTE627->setToField(CString("set_fraction"));
+ROUTE627->setToNode(CString("HumanoidRootPI"));
 ProtoBody603->addChild(ROUTE627);
 
 OrientationInterpolator* OrientationInterpolator628 = new OrientationInterpolator();
-OrientationInterpolator628->setDEF("HumanoidRootOI");
+OrientationInterpolator628->setDEF(CString("HumanoidRootOI"));
 IS* IS629 = new IS();
 Connect* connect630 = new Connect();
-connect630->setNodeField("key");
-connect630->setProtoField("HumanoidRoot_rotation_key");
-IS629->addConnect(connect630);
+connect630->setNodeField(CString("key"));
+connect630->setProtoField(CString("HumanoidRoot_rotation_key"));
+IS629->addChild(connect630);
 
 Connect* connect631 = new Connect();
-connect631->setNodeField("keyValue");
-connect631->setProtoField("HumanoidRoot_rotation_keyValue");
-IS629->addConnect(connect631);
+connect631->setNodeField(CString("keyValue"));
+connect631->setProtoField(CString("HumanoidRoot_rotation_keyValue"));
+IS629->addChild(connect631);
 
 Connect* connect632 = new Connect();
-connect632->setNodeField("value_changed");
-connect632->setProtoField("HumanoidRoot_rotation_changed");
-IS629->addConnect(connect632);
+connect632->setNodeField(CString("value_changed"));
+connect632->setProtoField(CString("HumanoidRoot_rotation_changed"));
+IS629->addChild(connect632);
 
-OrientationInterpolator628->setIS(IS629);
+OrientationInterpolator628->addChild(IS629);
 
 ProtoBody603->addChild(OrientationInterpolator628);
 
 ROUTE* ROUTE633 = new ROUTE();
-ROUTE633->setFromField("fraction_changed");
-ROUTE633->setFromNode("BehaviorClock");
-ROUTE633->setToField("set_fraction");
-ROUTE633->setToNode("HumanoidRootOI");
+ROUTE633->setFromField(CString("fraction_changed"));
+ROUTE633->setFromNode(CString("BehaviorClock"));
+ROUTE633->setToField(CString("set_fraction"));
+ROUTE633->setToNode(CString("HumanoidRootOI"));
 ProtoBody603->addChild(ROUTE633);
 
 OrientationInterpolator* OrientationInterpolator634 = new OrientationInterpolator();
-OrientationInterpolator634->setDEF("c1_OI");
+OrientationInterpolator634->setDEF(CString("c1_OI"));
 IS* IS635 = new IS();
 Connect* connect636 = new Connect();
-connect636->setNodeField("key");
-connect636->setProtoField("c1_key");
-IS635->addConnect(connect636);
+connect636->setNodeField(CString("key"));
+connect636->setProtoField(CString("c1_key"));
+IS635->addChild(connect636);
 
 Connect* connect637 = new Connect();
-connect637->setNodeField("keyValue");
-connect637->setProtoField("c1_keyValue");
-IS635->addConnect(connect637);
+connect637->setNodeField(CString("keyValue"));
+connect637->setProtoField(CString("c1_keyValue"));
+IS635->addChild(connect637);
 
 Connect* connect638 = new Connect();
-connect638->setNodeField("value_changed");
-connect638->setProtoField("c1_changed");
-IS635->addConnect(connect638);
+connect638->setNodeField(CString("value_changed"));
+connect638->setProtoField(CString("c1_changed"));
+IS635->addChild(connect638);
 
-OrientationInterpolator634->setIS(IS635);
+OrientationInterpolator634->addChild(IS635);
 
 ProtoBody603->addChild(OrientationInterpolator634);
 
 ROUTE* ROUTE639 = new ROUTE();
-ROUTE639->setFromField("fraction_changed");
-ROUTE639->setFromNode("BehaviorClock");
-ROUTE639->setToField("set_fraction");
-ROUTE639->setToNode("c1_OI");
+ROUTE639->setFromField(CString("fraction_changed"));
+ROUTE639->setFromNode(CString("BehaviorClock"));
+ROUTE639->setToField(CString("set_fraction"));
+ROUTE639->setToNode(CString("c1_OI"));
 ProtoBody603->addChild(ROUTE639);
 
 OrientationInterpolator* OrientationInterpolator640 = new OrientationInterpolator();
-OrientationInterpolator640->setDEF("c2_OI");
+OrientationInterpolator640->setDEF(CString("c2_OI"));
 IS* IS641 = new IS();
 Connect* connect642 = new Connect();
-connect642->setNodeField("key");
-connect642->setProtoField("c2_key");
-IS641->addConnect(connect642);
+connect642->setNodeField(CString("key"));
+connect642->setProtoField(CString("c2_key"));
+IS641->addChild(connect642);
 
 Connect* connect643 = new Connect();
-connect643->setNodeField("keyValue");
-connect643->setProtoField("c2_keyValue");
-IS641->addConnect(connect643);
+connect643->setNodeField(CString("keyValue"));
+connect643->setProtoField(CString("c2_keyValue"));
+IS641->addChild(connect643);
 
 Connect* connect644 = new Connect();
-connect644->setNodeField("value_changed");
-connect644->setProtoField("c2_changed");
-IS641->addConnect(connect644);
+connect644->setNodeField(CString("value_changed"));
+connect644->setProtoField(CString("c2_changed"));
+IS641->addChild(connect644);
 
-OrientationInterpolator640->setIS(IS641);
+OrientationInterpolator640->addChild(IS641);
 
 ProtoBody603->addChild(OrientationInterpolator640);
 
 ROUTE* ROUTE645 = new ROUTE();
-ROUTE645->setFromField("fraction_changed");
-ROUTE645->setFromNode("BehaviorClock");
-ROUTE645->setToField("set_fraction");
-ROUTE645->setToNode("c2_OI");
+ROUTE645->setFromField(CString("fraction_changed"));
+ROUTE645->setFromNode(CString("BehaviorClock"));
+ROUTE645->setToField(CString("set_fraction"));
+ROUTE645->setToNode(CString("c2_OI"));
 ProtoBody603->addChild(ROUTE645);
 
 OrientationInterpolator* OrientationInterpolator646 = new OrientationInterpolator();
-OrientationInterpolator646->setDEF("c3_OI");
+OrientationInterpolator646->setDEF(CString("c3_OI"));
 IS* IS647 = new IS();
 Connect* connect648 = new Connect();
-connect648->setNodeField("key");
-connect648->setProtoField("c3_key");
-IS647->addConnect(connect648);
+connect648->setNodeField(CString("key"));
+connect648->setProtoField(CString("c3_key"));
+IS647->addChild(connect648);
 
 Connect* connect649 = new Connect();
-connect649->setNodeField("keyValue");
-connect649->setProtoField("c3_keyValue");
-IS647->addConnect(connect649);
+connect649->setNodeField(CString("keyValue"));
+connect649->setProtoField(CString("c3_keyValue"));
+IS647->addChild(connect649);
 
 Connect* connect650 = new Connect();
-connect650->setNodeField("value_changed");
-connect650->setProtoField("c3_changed");
-IS647->addConnect(connect650);
+connect650->setNodeField(CString("value_changed"));
+connect650->setProtoField(CString("c3_changed"));
+IS647->addChild(connect650);
 
-OrientationInterpolator646->setIS(IS647);
+OrientationInterpolator646->addChild(IS647);
 
 ProtoBody603->addChild(OrientationInterpolator646);
 
 ROUTE* ROUTE651 = new ROUTE();
-ROUTE651->setFromField("fraction_changed");
-ROUTE651->setFromNode("BehaviorClock");
-ROUTE651->setToField("set_fraction");
-ROUTE651->setToNode("c3_OI");
+ROUTE651->setFromField(CString("fraction_changed"));
+ROUTE651->setFromNode(CString("BehaviorClock"));
+ROUTE651->setToField(CString("set_fraction"));
+ROUTE651->setToNode(CString("c3_OI"));
 ProtoBody603->addChild(ROUTE651);
 
 OrientationInterpolator* OrientationInterpolator652 = new OrientationInterpolator();
-OrientationInterpolator652->setDEF("c4_OI");
+OrientationInterpolator652->setDEF(CString("c4_OI"));
 IS* IS653 = new IS();
 Connect* connect654 = new Connect();
-connect654->setNodeField("key");
-connect654->setProtoField("c4_key");
-IS653->addConnect(connect654);
+connect654->setNodeField(CString("key"));
+connect654->setProtoField(CString("c4_key"));
+IS653->addChild(connect654);
 
 Connect* connect655 = new Connect();
-connect655->setNodeField("keyValue");
-connect655->setProtoField("c4_keyValue");
-IS653->addConnect(connect655);
+connect655->setNodeField(CString("keyValue"));
+connect655->setProtoField(CString("c4_keyValue"));
+IS653->addChild(connect655);
 
 Connect* connect656 = new Connect();
-connect656->setNodeField("value_changed");
-connect656->setProtoField("c4_changed");
-IS653->addConnect(connect656);
+connect656->setNodeField(CString("value_changed"));
+connect656->setProtoField(CString("c4_changed"));
+IS653->addChild(connect656);
 
-OrientationInterpolator652->setIS(IS653);
+OrientationInterpolator652->addChild(IS653);
 
 ProtoBody603->addChild(OrientationInterpolator652);
 
 ROUTE* ROUTE657 = new ROUTE();
-ROUTE657->setFromField("fraction_changed");
-ROUTE657->setFromNode("BehaviorClock");
-ROUTE657->setToField("set_fraction");
-ROUTE657->setToNode("c4_OI");
+ROUTE657->setFromField(CString("fraction_changed"));
+ROUTE657->setFromNode(CString("BehaviorClock"));
+ROUTE657->setToField(CString("set_fraction"));
+ROUTE657->setToNode(CString("c4_OI"));
 ProtoBody603->addChild(ROUTE657);
 
 OrientationInterpolator* OrientationInterpolator658 = new OrientationInterpolator();
-OrientationInterpolator658->setDEF("c5_OI");
+OrientationInterpolator658->setDEF(CString("c5_OI"));
 IS* IS659 = new IS();
 Connect* connect660 = new Connect();
-connect660->setNodeField("key");
-connect660->setProtoField("c5_key");
-IS659->addConnect(connect660);
+connect660->setNodeField(CString("key"));
+connect660->setProtoField(CString("c5_key"));
+IS659->addChild(connect660);
 
 Connect* connect661 = new Connect();
-connect661->setNodeField("keyValue");
-connect661->setProtoField("c5_keyValue");
-IS659->addConnect(connect661);
+connect661->setNodeField(CString("keyValue"));
+connect661->setProtoField(CString("c5_keyValue"));
+IS659->addChild(connect661);
 
 Connect* connect662 = new Connect();
-connect662->setNodeField("value_changed");
-connect662->setProtoField("c5_changed");
-IS659->addConnect(connect662);
+connect662->setNodeField(CString("value_changed"));
+connect662->setProtoField(CString("c5_changed"));
+IS659->addChild(connect662);
 
-OrientationInterpolator658->setIS(IS659);
+OrientationInterpolator658->addChild(IS659);
 
 ProtoBody603->addChild(OrientationInterpolator658);
 
 ROUTE* ROUTE663 = new ROUTE();
-ROUTE663->setFromField("fraction_changed");
-ROUTE663->setFromNode("BehaviorClock");
-ROUTE663->setToField("set_fraction");
-ROUTE663->setToNode("c5_OI");
+ROUTE663->setFromField(CString("fraction_changed"));
+ROUTE663->setFromNode(CString("BehaviorClock"));
+ROUTE663->setToField(CString("set_fraction"));
+ROUTE663->setToNode(CString("c5_OI"));
 ProtoBody603->addChild(ROUTE663);
 
 OrientationInterpolator* OrientationInterpolator664 = new OrientationInterpolator();
-OrientationInterpolator664->setDEF("c6_OI");
+OrientationInterpolator664->setDEF(CString("c6_OI"));
 IS* IS665 = new IS();
 Connect* connect666 = new Connect();
-connect666->setNodeField("key");
-connect666->setProtoField("c6_key");
-IS665->addConnect(connect666);
+connect666->setNodeField(CString("key"));
+connect666->setProtoField(CString("c6_key"));
+IS665->addChild(connect666);
 
 Connect* connect667 = new Connect();
-connect667->setNodeField("keyValue");
-connect667->setProtoField("c6_keyValue");
-IS665->addConnect(connect667);
+connect667->setNodeField(CString("keyValue"));
+connect667->setProtoField(CString("c6_keyValue"));
+IS665->addChild(connect667);
 
 Connect* connect668 = new Connect();
-connect668->setNodeField("value_changed");
-connect668->setProtoField("c6_changed");
-IS665->addConnect(connect668);
+connect668->setNodeField(CString("value_changed"));
+connect668->setProtoField(CString("c6_changed"));
+IS665->addChild(connect668);
 
-OrientationInterpolator664->setIS(IS665);
+OrientationInterpolator664->addChild(IS665);
 
 ProtoBody603->addChild(OrientationInterpolator664);
 
 ROUTE* ROUTE669 = new ROUTE();
-ROUTE669->setFromField("fraction_changed");
-ROUTE669->setFromNode("BehaviorClock");
-ROUTE669->setToField("set_fraction");
-ROUTE669->setToNode("c6_OI");
+ROUTE669->setFromField(CString("fraction_changed"));
+ROUTE669->setFromNode(CString("BehaviorClock"));
+ROUTE669->setToField(CString("set_fraction"));
+ROUTE669->setToNode(CString("c6_OI"));
 ProtoBody603->addChild(ROUTE669);
 
 OrientationInterpolator* OrientationInterpolator670 = new OrientationInterpolator();
-OrientationInterpolator670->setDEF("c7_OI");
+OrientationInterpolator670->setDEF(CString("c7_OI"));
 IS* IS671 = new IS();
 Connect* connect672 = new Connect();
-connect672->setNodeField("key");
-connect672->setProtoField("c7_key");
-IS671->addConnect(connect672);
+connect672->setNodeField(CString("key"));
+connect672->setProtoField(CString("c7_key"));
+IS671->addChild(connect672);
 
 Connect* connect673 = new Connect();
-connect673->setNodeField("keyValue");
-connect673->setProtoField("c7_keyValue");
-IS671->addConnect(connect673);
+connect673->setNodeField(CString("keyValue"));
+connect673->setProtoField(CString("c7_keyValue"));
+IS671->addChild(connect673);
 
 Connect* connect674 = new Connect();
-connect674->setNodeField("value_changed");
-connect674->setProtoField("c7_changed");
-IS671->addConnect(connect674);
+connect674->setNodeField(CString("value_changed"));
+connect674->setProtoField(CString("c7_changed"));
+IS671->addChild(connect674);
 
-OrientationInterpolator670->setIS(IS671);
+OrientationInterpolator670->addChild(IS671);
 
 ProtoBody603->addChild(OrientationInterpolator670);
 
 ROUTE* ROUTE675 = new ROUTE();
-ROUTE675->setFromField("fraction_changed");
-ROUTE675->setFromNode("BehaviorClock");
-ROUTE675->setToField("set_fraction");
-ROUTE675->setToNode("c7_OI");
+ROUTE675->setFromField(CString("fraction_changed"));
+ROUTE675->setFromNode(CString("BehaviorClock"));
+ROUTE675->setToField(CString("set_fraction"));
+ROUTE675->setToNode(CString("c7_OI"));
 ProtoBody603->addChild(ROUTE675);
 
 OrientationInterpolator* OrientationInterpolator676 = new OrientationInterpolator();
-OrientationInterpolator676->setDEF("jaw_OI");
+OrientationInterpolator676->setDEF(CString("jaw_OI"));
 IS* IS677 = new IS();
 Connect* connect678 = new Connect();
-connect678->setNodeField("key");
-connect678->setProtoField("jaw_key");
-IS677->addConnect(connect678);
+connect678->setNodeField(CString("key"));
+connect678->setProtoField(CString("jaw_key"));
+IS677->addChild(connect678);
 
 Connect* connect679 = new Connect();
-connect679->setNodeField("keyValue");
-connect679->setProtoField("jaw_keyValue");
-IS677->addConnect(connect679);
+connect679->setNodeField(CString("keyValue"));
+connect679->setProtoField(CString("jaw_keyValue"));
+IS677->addChild(connect679);
 
 Connect* connect680 = new Connect();
-connect680->setNodeField("value_changed");
-connect680->setProtoField("jaw_changed");
-IS677->addConnect(connect680);
+connect680->setNodeField(CString("value_changed"));
+connect680->setProtoField(CString("jaw_changed"));
+IS677->addChild(connect680);
 
-OrientationInterpolator676->setIS(IS677);
+OrientationInterpolator676->addChild(IS677);
 
 ProtoBody603->addChild(OrientationInterpolator676);
 
 ROUTE* ROUTE681 = new ROUTE();
-ROUTE681->setFromField("fraction_changed");
-ROUTE681->setFromNode("BehaviorClock");
-ROUTE681->setToField("set_fraction");
-ROUTE681->setToNode("jaw_OI");
+ROUTE681->setFromField(CString("fraction_changed"));
+ROUTE681->setFromNode(CString("BehaviorClock"));
+ROUTE681->setToField(CString("set_fraction"));
+ROUTE681->setToNode(CString("jaw_OI"));
 ProtoBody603->addChild(ROUTE681);
 
 OrientationInterpolator* OrientationInterpolator682 = new OrientationInterpolator();
-OrientationInterpolator682->setDEF("l1_OI");
+OrientationInterpolator682->setDEF(CString("l1_OI"));
 IS* IS683 = new IS();
 Connect* connect684 = new Connect();
-connect684->setNodeField("key");
-connect684->setProtoField("l1_key");
-IS683->addConnect(connect684);
+connect684->setNodeField(CString("key"));
+connect684->setProtoField(CString("l1_key"));
+IS683->addChild(connect684);
 
 Connect* connect685 = new Connect();
-connect685->setNodeField("keyValue");
-connect685->setProtoField("l1_keyValue");
-IS683->addConnect(connect685);
+connect685->setNodeField(CString("keyValue"));
+connect685->setProtoField(CString("l1_keyValue"));
+IS683->addChild(connect685);
 
 Connect* connect686 = new Connect();
-connect686->setNodeField("value_changed");
-connect686->setProtoField("l1_changed");
-IS683->addConnect(connect686);
+connect686->setNodeField(CString("value_changed"));
+connect686->setProtoField(CString("l1_changed"));
+IS683->addChild(connect686);
 
-OrientationInterpolator682->setIS(IS683);
+OrientationInterpolator682->addChild(IS683);
 
 ProtoBody603->addChild(OrientationInterpolator682);
 
 ROUTE* ROUTE687 = new ROUTE();
-ROUTE687->setFromField("fraction_changed");
-ROUTE687->setFromNode("BehaviorClock");
-ROUTE687->setToField("set_fraction");
-ROUTE687->setToNode("l1_OI");
+ROUTE687->setFromField(CString("fraction_changed"));
+ROUTE687->setFromNode(CString("BehaviorClock"));
+ROUTE687->setToField(CString("set_fraction"));
+ROUTE687->setToNode(CString("l1_OI"));
 ProtoBody603->addChild(ROUTE687);
 
 OrientationInterpolator* OrientationInterpolator688 = new OrientationInterpolator();
-OrientationInterpolator688->setDEF("l2_OI");
+OrientationInterpolator688->setDEF(CString("l2_OI"));
 IS* IS689 = new IS();
 Connect* connect690 = new Connect();
-connect690->setNodeField("key");
-connect690->setProtoField("l2_key");
-IS689->addConnect(connect690);
+connect690->setNodeField(CString("key"));
+connect690->setProtoField(CString("l2_key"));
+IS689->addChild(connect690);
 
 Connect* connect691 = new Connect();
-connect691->setNodeField("keyValue");
-connect691->setProtoField("l2_keyValue");
-IS689->addConnect(connect691);
+connect691->setNodeField(CString("keyValue"));
+connect691->setProtoField(CString("l2_keyValue"));
+IS689->addChild(connect691);
 
 Connect* connect692 = new Connect();
-connect692->setNodeField("value_changed");
-connect692->setProtoField("l2_changed");
-IS689->addConnect(connect692);
+connect692->setNodeField(CString("value_changed"));
+connect692->setProtoField(CString("l2_changed"));
+IS689->addChild(connect692);
 
-OrientationInterpolator688->setIS(IS689);
+OrientationInterpolator688->addChild(IS689);
 
 ProtoBody603->addChild(OrientationInterpolator688);
 
 ROUTE* ROUTE693 = new ROUTE();
-ROUTE693->setFromField("fraction_changed");
-ROUTE693->setFromNode("BehaviorClock");
-ROUTE693->setToField("set_fraction");
-ROUTE693->setToNode("l2_OI");
+ROUTE693->setFromField(CString("fraction_changed"));
+ROUTE693->setFromNode(CString("BehaviorClock"));
+ROUTE693->setToField(CString("set_fraction"));
+ROUTE693->setToNode(CString("l2_OI"));
 ProtoBody603->addChild(ROUTE693);
 
 OrientationInterpolator* OrientationInterpolator694 = new OrientationInterpolator();
-OrientationInterpolator694->setDEF("l3_OI");
+OrientationInterpolator694->setDEF(CString("l3_OI"));
 IS* IS695 = new IS();
 Connect* connect696 = new Connect();
-connect696->setNodeField("key");
-connect696->setProtoField("l3_key");
-IS695->addConnect(connect696);
+connect696->setNodeField(CString("key"));
+connect696->setProtoField(CString("l3_key"));
+IS695->addChild(connect696);
 
 Connect* connect697 = new Connect();
-connect697->setNodeField("keyValue");
-connect697->setProtoField("l3_keyValue");
-IS695->addConnect(connect697);
+connect697->setNodeField(CString("keyValue"));
+connect697->setProtoField(CString("l3_keyValue"));
+IS695->addChild(connect697);
 
 Connect* connect698 = new Connect();
-connect698->setNodeField("value_changed");
-connect698->setProtoField("l3_changed");
-IS695->addConnect(connect698);
+connect698->setNodeField(CString("value_changed"));
+connect698->setProtoField(CString("l3_changed"));
+IS695->addChild(connect698);
 
-OrientationInterpolator694->setIS(IS695);
+OrientationInterpolator694->addChild(IS695);
 
 ProtoBody603->addChild(OrientationInterpolator694);
 
 ROUTE* ROUTE699 = new ROUTE();
-ROUTE699->setFromField("fraction_changed");
-ROUTE699->setFromNode("BehaviorClock");
-ROUTE699->setToField("set_fraction");
-ROUTE699->setToNode("l3_OI");
+ROUTE699->setFromField(CString("fraction_changed"));
+ROUTE699->setFromNode(CString("BehaviorClock"));
+ROUTE699->setToField(CString("set_fraction"));
+ROUTE699->setToNode(CString("l3_OI"));
 ProtoBody603->addChild(ROUTE699);
 
 OrientationInterpolator* OrientationInterpolator700 = new OrientationInterpolator();
-OrientationInterpolator700->setDEF("l4_OI");
+OrientationInterpolator700->setDEF(CString("l4_OI"));
 IS* IS701 = new IS();
 Connect* connect702 = new Connect();
-connect702->setNodeField("key");
-connect702->setProtoField("l4_key");
-IS701->addConnect(connect702);
+connect702->setNodeField(CString("key"));
+connect702->setProtoField(CString("l4_key"));
+IS701->addChild(connect702);
 
 Connect* connect703 = new Connect();
-connect703->setNodeField("keyValue");
-connect703->setProtoField("l4_keyValue");
-IS701->addConnect(connect703);
+connect703->setNodeField(CString("keyValue"));
+connect703->setProtoField(CString("l4_keyValue"));
+IS701->addChild(connect703);
 
 Connect* connect704 = new Connect();
-connect704->setNodeField("value_changed");
-connect704->setProtoField("l4_changed");
-IS701->addConnect(connect704);
+connect704->setNodeField(CString("value_changed"));
+connect704->setProtoField(CString("l4_changed"));
+IS701->addChild(connect704);
 
-OrientationInterpolator700->setIS(IS701);
+OrientationInterpolator700->addChild(IS701);
 
 ProtoBody603->addChild(OrientationInterpolator700);
 
 ROUTE* ROUTE705 = new ROUTE();
-ROUTE705->setFromField("fraction_changed");
-ROUTE705->setFromNode("BehaviorClock");
-ROUTE705->setToField("set_fraction");
-ROUTE705->setToNode("l4_OI");
+ROUTE705->setFromField(CString("fraction_changed"));
+ROUTE705->setFromNode(CString("BehaviorClock"));
+ROUTE705->setToField(CString("set_fraction"));
+ROUTE705->setToNode(CString("l4_OI"));
 ProtoBody603->addChild(ROUTE705);
 
 OrientationInterpolator* OrientationInterpolator706 = new OrientationInterpolator();
-OrientationInterpolator706->setDEF("l5_OI");
+OrientationInterpolator706->setDEF(CString("l5_OI"));
 IS* IS707 = new IS();
 Connect* connect708 = new Connect();
-connect708->setNodeField("key");
-connect708->setProtoField("l5_key");
-IS707->addConnect(connect708);
+connect708->setNodeField(CString("key"));
+connect708->setProtoField(CString("l5_key"));
+IS707->addChild(connect708);
 
 Connect* connect709 = new Connect();
-connect709->setNodeField("keyValue");
-connect709->setProtoField("l5_keyValue");
-IS707->addConnect(connect709);
+connect709->setNodeField(CString("keyValue"));
+connect709->setProtoField(CString("l5_keyValue"));
+IS707->addChild(connect709);
 
 Connect* connect710 = new Connect();
-connect710->setNodeField("value_changed");
-connect710->setProtoField("l5_changed");
-IS707->addConnect(connect710);
+connect710->setNodeField(CString("value_changed"));
+connect710->setProtoField(CString("l5_changed"));
+IS707->addChild(connect710);
 
-OrientationInterpolator706->setIS(IS707);
+OrientationInterpolator706->addChild(IS707);
 
 ProtoBody603->addChild(OrientationInterpolator706);
 
 ROUTE* ROUTE711 = new ROUTE();
-ROUTE711->setFromField("fraction_changed");
-ROUTE711->setFromNode("BehaviorClock");
-ROUTE711->setToField("set_fraction");
-ROUTE711->setToNode("l5_OI");
+ROUTE711->setFromField(CString("fraction_changed"));
+ROUTE711->setFromNode(CString("BehaviorClock"));
+ROUTE711->setToField(CString("set_fraction"));
+ROUTE711->setToNode(CString("l5_OI"));
 ProtoBody603->addChild(ROUTE711);
 
 OrientationInterpolator* OrientationInterpolator712 = new OrientationInterpolator();
-OrientationInterpolator712->setDEF("l_acromioclavicular_OI");
+OrientationInterpolator712->setDEF(CString("l_acromioclavicular_OI"));
 IS* IS713 = new IS();
 Connect* connect714 = new Connect();
-connect714->setNodeField("key");
-connect714->setProtoField("l_acromioclavicular_key");
-IS713->addConnect(connect714);
+connect714->setNodeField(CString("key"));
+connect714->setProtoField(CString("l_acromioclavicular_key"));
+IS713->addChild(connect714);
 
 Connect* connect715 = new Connect();
-connect715->setNodeField("keyValue");
-connect715->setProtoField("l_acromioclavicular_keyValue");
-IS713->addConnect(connect715);
+connect715->setNodeField(CString("keyValue"));
+connect715->setProtoField(CString("l_acromioclavicular_keyValue"));
+IS713->addChild(connect715);
 
 Connect* connect716 = new Connect();
-connect716->setNodeField("value_changed");
-connect716->setProtoField("l_acromioclavicular_changed");
-IS713->addConnect(connect716);
+connect716->setNodeField(CString("value_changed"));
+connect716->setProtoField(CString("l_acromioclavicular_changed"));
+IS713->addChild(connect716);
 
-OrientationInterpolator712->setIS(IS713);
+OrientationInterpolator712->addChild(IS713);
 
 ProtoBody603->addChild(OrientationInterpolator712);
 
 ROUTE* ROUTE717 = new ROUTE();
-ROUTE717->setFromField("fraction_changed");
-ROUTE717->setFromNode("BehaviorClock");
-ROUTE717->setToField("set_fraction");
-ROUTE717->setToNode("l_acromioclavicular_OI");
+ROUTE717->setFromField(CString("fraction_changed"));
+ROUTE717->setFromNode(CString("BehaviorClock"));
+ROUTE717->setToField(CString("set_fraction"));
+ROUTE717->setToNode(CString("l_acromioclavicular_OI"));
 ProtoBody603->addChild(ROUTE717);
 
 OrientationInterpolator* OrientationInterpolator718 = new OrientationInterpolator();
-OrientationInterpolator718->setDEF("l_ankle_OI");
+OrientationInterpolator718->setDEF(CString("l_ankle_OI"));
 IS* IS719 = new IS();
 Connect* connect720 = new Connect();
-connect720->setNodeField("key");
-connect720->setProtoField("l_ankle_key");
-IS719->addConnect(connect720);
+connect720->setNodeField(CString("key"));
+connect720->setProtoField(CString("l_ankle_key"));
+IS719->addChild(connect720);
 
 Connect* connect721 = new Connect();
-connect721->setNodeField("keyValue");
-connect721->setProtoField("l_ankle_keyValue");
-IS719->addConnect(connect721);
+connect721->setNodeField(CString("keyValue"));
+connect721->setProtoField(CString("l_ankle_keyValue"));
+IS719->addChild(connect721);
 
 Connect* connect722 = new Connect();
-connect722->setNodeField("value_changed");
-connect722->setProtoField("l_ankle_changed");
-IS719->addConnect(connect722);
+connect722->setNodeField(CString("value_changed"));
+connect722->setProtoField(CString("l_ankle_changed"));
+IS719->addChild(connect722);
 
-OrientationInterpolator718->setIS(IS719);
+OrientationInterpolator718->addChild(IS719);
 
 ProtoBody603->addChild(OrientationInterpolator718);
 
 ROUTE* ROUTE723 = new ROUTE();
-ROUTE723->setFromField("fraction_changed");
-ROUTE723->setFromNode("BehaviorClock");
-ROUTE723->setToField("set_fraction");
-ROUTE723->setToNode("l_ankle_OI");
+ROUTE723->setFromField(CString("fraction_changed"));
+ROUTE723->setFromNode(CString("BehaviorClock"));
+ROUTE723->setToField(CString("set_fraction"));
+ROUTE723->setToNode(CString("l_ankle_OI"));
 ProtoBody603->addChild(ROUTE723);
 
 OrientationInterpolator* OrientationInterpolator724 = new OrientationInterpolator();
-OrientationInterpolator724->setDEF("l_calf_OI");
+OrientationInterpolator724->setDEF(CString("l_calf_OI"));
 IS* IS725 = new IS();
 Connect* connect726 = new Connect();
-connect726->setNodeField("key");
-connect726->setProtoField("l_calf_key");
-IS725->addConnect(connect726);
+connect726->setNodeField(CString("key"));
+connect726->setProtoField(CString("l_calf_key"));
+IS725->addChild(connect726);
 
 Connect* connect727 = new Connect();
-connect727->setNodeField("keyValue");
-connect727->setProtoField("l_calf_keyValue");
-IS725->addConnect(connect727);
+connect727->setNodeField(CString("keyValue"));
+connect727->setProtoField(CString("l_calf_keyValue"));
+IS725->addChild(connect727);
 
 Connect* connect728 = new Connect();
-connect728->setNodeField("value_changed");
-connect728->setProtoField("l_calf_changed");
-IS725->addConnect(connect728);
+connect728->setNodeField(CString("value_changed"));
+connect728->setProtoField(CString("l_calf_changed"));
+IS725->addChild(connect728);
 
-OrientationInterpolator724->setIS(IS725);
+OrientationInterpolator724->addChild(IS725);
 
 ProtoBody603->addChild(OrientationInterpolator724);
 
 ROUTE* ROUTE729 = new ROUTE();
-ROUTE729->setFromField("fraction_changed");
-ROUTE729->setFromNode("BehaviorClock");
-ROUTE729->setToField("set_fraction");
-ROUTE729->setToNode("l_calf_OI");
+ROUTE729->setFromField(CString("fraction_changed"));
+ROUTE729->setFromNode(CString("BehaviorClock"));
+ROUTE729->setToField(CString("set_fraction"));
+ROUTE729->setToNode(CString("l_calf_OI"));
 ProtoBody603->addChild(ROUTE729);
 
 OrientationInterpolator* OrientationInterpolator730 = new OrientationInterpolator();
-OrientationInterpolator730->setDEF("l_clavicle_OI");
+OrientationInterpolator730->setDEF(CString("l_clavicle_OI"));
 IS* IS731 = new IS();
 Connect* connect732 = new Connect();
-connect732->setNodeField("key");
-connect732->setProtoField("l_clavicle_key");
-IS731->addConnect(connect732);
+connect732->setNodeField(CString("key"));
+connect732->setProtoField(CString("l_clavicle_key"));
+IS731->addChild(connect732);
 
 Connect* connect733 = new Connect();
-connect733->setNodeField("keyValue");
-connect733->setProtoField("l_clavicle_keyValue");
-IS731->addConnect(connect733);
+connect733->setNodeField(CString("keyValue"));
+connect733->setProtoField(CString("l_clavicle_keyValue"));
+IS731->addChild(connect733);
 
 Connect* connect734 = new Connect();
-connect734->setNodeField("value_changed");
-connect734->setProtoField("l_clavicle_changed");
-IS731->addConnect(connect734);
+connect734->setNodeField(CString("value_changed"));
+connect734->setProtoField(CString("l_clavicle_changed"));
+IS731->addChild(connect734);
 
-OrientationInterpolator730->setIS(IS731);
+OrientationInterpolator730->addChild(IS731);
 
 ProtoBody603->addChild(OrientationInterpolator730);
 
 ROUTE* ROUTE735 = new ROUTE();
-ROUTE735->setFromField("fraction_changed");
-ROUTE735->setFromNode("BehaviorClock");
-ROUTE735->setToField("set_fraction");
-ROUTE735->setToNode("l_clavicle_OI");
+ROUTE735->setFromField(CString("fraction_changed"));
+ROUTE735->setFromNode(CString("BehaviorClock"));
+ROUTE735->setToField(CString("set_fraction"));
+ROUTE735->setToNode(CString("l_clavicle_OI"));
 ProtoBody603->addChild(ROUTE735);
 
 OrientationInterpolator* OrientationInterpolator736 = new OrientationInterpolator();
-OrientationInterpolator736->setDEF("l_elbow_OI");
+OrientationInterpolator736->setDEF(CString("l_elbow_OI"));
 IS* IS737 = new IS();
 Connect* connect738 = new Connect();
-connect738->setNodeField("key");
-connect738->setProtoField("l_elbow_key");
-IS737->addConnect(connect738);
+connect738->setNodeField(CString("key"));
+connect738->setProtoField(CString("l_elbow_key"));
+IS737->addChild(connect738);
 
 Connect* connect739 = new Connect();
-connect739->setNodeField("keyValue");
-connect739->setProtoField("l_elbow_keyValue");
-IS737->addConnect(connect739);
+connect739->setNodeField(CString("keyValue"));
+connect739->setProtoField(CString("l_elbow_keyValue"));
+IS737->addChild(connect739);
 
 Connect* connect740 = new Connect();
-connect740->setNodeField("value_changed");
-connect740->setProtoField("l_elbow_changed");
-IS737->addConnect(connect740);
+connect740->setNodeField(CString("value_changed"));
+connect740->setProtoField(CString("l_elbow_changed"));
+IS737->addChild(connect740);
 
-OrientationInterpolator736->setIS(IS737);
+OrientationInterpolator736->addChild(IS737);
 
 ProtoBody603->addChild(OrientationInterpolator736);
 
 ROUTE* ROUTE741 = new ROUTE();
-ROUTE741->setFromField("fraction_changed");
-ROUTE741->setFromNode("BehaviorClock");
-ROUTE741->setToField("set_fraction");
-ROUTE741->setToNode("l_elbow_OI");
+ROUTE741->setFromField(CString("fraction_changed"));
+ROUTE741->setFromNode(CString("BehaviorClock"));
+ROUTE741->setToField(CString("set_fraction"));
+ROUTE741->setToNode(CString("l_elbow_OI"));
 ProtoBody603->addChild(ROUTE741);
 
 OrientationInterpolator* OrientationInterpolator742 = new OrientationInterpolator();
-OrientationInterpolator742->setDEF("l_eyeball_OI");
+OrientationInterpolator742->setDEF(CString("l_eyeball_OI"));
 IS* IS743 = new IS();
 Connect* connect744 = new Connect();
-connect744->setNodeField("key");
-connect744->setProtoField("l_eyeball_key");
-IS743->addConnect(connect744);
+connect744->setNodeField(CString("key"));
+connect744->setProtoField(CString("l_eyeball_key"));
+IS743->addChild(connect744);
 
 Connect* connect745 = new Connect();
-connect745->setNodeField("keyValue");
-connect745->setProtoField("l_eyeball_keyValue");
-IS743->addConnect(connect745);
+connect745->setNodeField(CString("keyValue"));
+connect745->setProtoField(CString("l_eyeball_keyValue"));
+IS743->addChild(connect745);
 
 Connect* connect746 = new Connect();
-connect746->setNodeField("value_changed");
-connect746->setProtoField("l_eyeball_changed");
-IS743->addConnect(connect746);
+connect746->setNodeField(CString("value_changed"));
+connect746->setProtoField(CString("l_eyeball_changed"));
+IS743->addChild(connect746);
 
-OrientationInterpolator742->setIS(IS743);
+OrientationInterpolator742->addChild(IS743);
 
 ProtoBody603->addChild(OrientationInterpolator742);
 
 ROUTE* ROUTE747 = new ROUTE();
-ROUTE747->setFromField("fraction_changed");
-ROUTE747->setFromNode("BehaviorClock");
-ROUTE747->setToField("set_fraction");
-ROUTE747->setToNode("l_eyeball_OI");
+ROUTE747->setFromField(CString("fraction_changed"));
+ROUTE747->setFromNode(CString("BehaviorClock"));
+ROUTE747->setToField(CString("set_fraction"));
+ROUTE747->setToNode(CString("l_eyeball_OI"));
 ProtoBody603->addChild(ROUTE747);
 
 OrientationInterpolator* OrientationInterpolator748 = new OrientationInterpolator();
-OrientationInterpolator748->setDEF("l_eyeball_joint_OI");
+OrientationInterpolator748->setDEF(CString("l_eyeball_joint_OI"));
 IS* IS749 = new IS();
 Connect* connect750 = new Connect();
-connect750->setNodeField("key");
-connect750->setProtoField("l_eyeball_joint_key");
-IS749->addConnect(connect750);
+connect750->setNodeField(CString("key"));
+connect750->setProtoField(CString("l_eyeball_joint_key"));
+IS749->addChild(connect750);
 
 Connect* connect751 = new Connect();
-connect751->setNodeField("keyValue");
-connect751->setProtoField("l_eyeball_joint_keyValue");
-IS749->addConnect(connect751);
+connect751->setNodeField(CString("keyValue"));
+connect751->setProtoField(CString("l_eyeball_joint_keyValue"));
+IS749->addChild(connect751);
 
 Connect* connect752 = new Connect();
-connect752->setNodeField("value_changed");
-connect752->setProtoField("l_eyeball_joint_changed");
-IS749->addConnect(connect752);
+connect752->setNodeField(CString("value_changed"));
+connect752->setProtoField(CString("l_eyeball_joint_changed"));
+IS749->addChild(connect752);
 
-OrientationInterpolator748->setIS(IS749);
+OrientationInterpolator748->addChild(IS749);
 
 ProtoBody603->addChild(OrientationInterpolator748);
 
 ROUTE* ROUTE753 = new ROUTE();
-ROUTE753->setFromField("fraction_changed");
-ROUTE753->setFromNode("BehaviorClock");
-ROUTE753->setToField("set_fraction");
-ROUTE753->setToNode("l_eyeball_joint_OI");
+ROUTE753->setFromField(CString("fraction_changed"));
+ROUTE753->setFromNode(CString("BehaviorClock"));
+ROUTE753->setToField(CString("set_fraction"));
+ROUTE753->setToNode(CString("l_eyeball_joint_OI"));
 ProtoBody603->addChild(ROUTE753);
 
 OrientationInterpolator* OrientationInterpolator754 = new OrientationInterpolator();
-OrientationInterpolator754->setDEF("l_eyebrow_OI");
+OrientationInterpolator754->setDEF(CString("l_eyebrow_OI"));
 IS* IS755 = new IS();
 Connect* connect756 = new Connect();
-connect756->setNodeField("key");
-connect756->setProtoField("l_eyebrow_key");
-IS755->addConnect(connect756);
+connect756->setNodeField(CString("key"));
+connect756->setProtoField(CString("l_eyebrow_key"));
+IS755->addChild(connect756);
 
 Connect* connect757 = new Connect();
-connect757->setNodeField("keyValue");
-connect757->setProtoField("l_eyebrow_keyValue");
-IS755->addConnect(connect757);
+connect757->setNodeField(CString("keyValue"));
+connect757->setProtoField(CString("l_eyebrow_keyValue"));
+IS755->addChild(connect757);
 
 Connect* connect758 = new Connect();
-connect758->setNodeField("value_changed");
-connect758->setProtoField("l_eyebrow_changed");
-IS755->addConnect(connect758);
+connect758->setNodeField(CString("value_changed"));
+connect758->setProtoField(CString("l_eyebrow_changed"));
+IS755->addChild(connect758);
 
-OrientationInterpolator754->setIS(IS755);
+OrientationInterpolator754->addChild(IS755);
 
 ProtoBody603->addChild(OrientationInterpolator754);
 
 ROUTE* ROUTE759 = new ROUTE();
-ROUTE759->setFromField("fraction_changed");
-ROUTE759->setFromNode("BehaviorClock");
-ROUTE759->setToField("set_fraction");
-ROUTE759->setToNode("l_eyebrow_OI");
+ROUTE759->setFromField(CString("fraction_changed"));
+ROUTE759->setFromNode(CString("BehaviorClock"));
+ROUTE759->setToField(CString("set_fraction"));
+ROUTE759->setToNode(CString("l_eyebrow_OI"));
 ProtoBody603->addChild(ROUTE759);
 
 OrientationInterpolator* OrientationInterpolator760 = new OrientationInterpolator();
-OrientationInterpolator760->setDEF("l_eyebrow_joint_OI");
+OrientationInterpolator760->setDEF(CString("l_eyebrow_joint_OI"));
 IS* IS761 = new IS();
 Connect* connect762 = new Connect();
-connect762->setNodeField("key");
-connect762->setProtoField("l_eyebrow_joint_key");
-IS761->addConnect(connect762);
+connect762->setNodeField(CString("key"));
+connect762->setProtoField(CString("l_eyebrow_joint_key"));
+IS761->addChild(connect762);
 
 Connect* connect763 = new Connect();
-connect763->setNodeField("keyValue");
-connect763->setProtoField("l_eyebrow_joint_keyValue");
-IS761->addConnect(connect763);
+connect763->setNodeField(CString("keyValue"));
+connect763->setProtoField(CString("l_eyebrow_joint_keyValue"));
+IS761->addChild(connect763);
 
 Connect* connect764 = new Connect();
-connect764->setNodeField("value_changed");
-connect764->setProtoField("l_eyebrow_joint_changed");
-IS761->addConnect(connect764);
+connect764->setNodeField(CString("value_changed"));
+connect764->setProtoField(CString("l_eyebrow_joint_changed"));
+IS761->addChild(connect764);
 
-OrientationInterpolator760->setIS(IS761);
+OrientationInterpolator760->addChild(IS761);
 
 ProtoBody603->addChild(OrientationInterpolator760);
 
 ROUTE* ROUTE765 = new ROUTE();
-ROUTE765->setFromField("fraction_changed");
-ROUTE765->setFromNode("BehaviorClock");
-ROUTE765->setToField("set_fraction");
-ROUTE765->setToNode("l_eyebrow_joint_OI");
+ROUTE765->setFromField(CString("fraction_changed"));
+ROUTE765->setFromNode(CString("BehaviorClock"));
+ROUTE765->setToField(CString("set_fraction"));
+ROUTE765->setToNode(CString("l_eyebrow_joint_OI"));
 ProtoBody603->addChild(ROUTE765);
 
 OrientationInterpolator* OrientationInterpolator766 = new OrientationInterpolator();
-OrientationInterpolator766->setDEF("l_eyelid_OI");
+OrientationInterpolator766->setDEF(CString("l_eyelid_OI"));
 IS* IS767 = new IS();
 Connect* connect768 = new Connect();
-connect768->setNodeField("key");
-connect768->setProtoField("l_eyelid_key");
-IS767->addConnect(connect768);
+connect768->setNodeField(CString("key"));
+connect768->setProtoField(CString("l_eyelid_key"));
+IS767->addChild(connect768);
 
 Connect* connect769 = new Connect();
-connect769->setNodeField("keyValue");
-connect769->setProtoField("l_eyelid_keyValue");
-IS767->addConnect(connect769);
+connect769->setNodeField(CString("keyValue"));
+connect769->setProtoField(CString("l_eyelid_keyValue"));
+IS767->addChild(connect769);
 
 Connect* connect770 = new Connect();
-connect770->setNodeField("value_changed");
-connect770->setProtoField("l_eyelid_changed");
-IS767->addConnect(connect770);
+connect770->setNodeField(CString("value_changed"));
+connect770->setProtoField(CString("l_eyelid_changed"));
+IS767->addChild(connect770);
 
-OrientationInterpolator766->setIS(IS767);
+OrientationInterpolator766->addChild(IS767);
 
 ProtoBody603->addChild(OrientationInterpolator766);
 
 ROUTE* ROUTE771 = new ROUTE();
-ROUTE771->setFromField("fraction_changed");
-ROUTE771->setFromNode("BehaviorClock");
-ROUTE771->setToField("set_fraction");
-ROUTE771->setToNode("l_eyelid_OI");
+ROUTE771->setFromField(CString("fraction_changed"));
+ROUTE771->setFromNode(CString("BehaviorClock"));
+ROUTE771->setToField(CString("set_fraction"));
+ROUTE771->setToNode(CString("l_eyelid_OI"));
 ProtoBody603->addChild(ROUTE771);
 
 OrientationInterpolator* OrientationInterpolator772 = new OrientationInterpolator();
-OrientationInterpolator772->setDEF("l_eyelid_joint_OI");
+OrientationInterpolator772->setDEF(CString("l_eyelid_joint_OI"));
 IS* IS773 = new IS();
 Connect* connect774 = new Connect();
-connect774->setNodeField("key");
-connect774->setProtoField("l_eyelid_joint_key");
-IS773->addConnect(connect774);
+connect774->setNodeField(CString("key"));
+connect774->setProtoField(CString("l_eyelid_joint_key"));
+IS773->addChild(connect774);
 
 Connect* connect775 = new Connect();
-connect775->setNodeField("keyValue");
-connect775->setProtoField("l_eyelid_joint_keyValue");
-IS773->addConnect(connect775);
+connect775->setNodeField(CString("keyValue"));
+connect775->setProtoField(CString("l_eyelid_joint_keyValue"));
+IS773->addChild(connect775);
 
 Connect* connect776 = new Connect();
-connect776->setNodeField("value_changed");
-connect776->setProtoField("l_eyelid_joint_changed");
-IS773->addConnect(connect776);
+connect776->setNodeField(CString("value_changed"));
+connect776->setProtoField(CString("l_eyelid_joint_changed"));
+IS773->addChild(connect776);
 
-OrientationInterpolator772->setIS(IS773);
+OrientationInterpolator772->addChild(IS773);
 
 ProtoBody603->addChild(OrientationInterpolator772);
 
 ROUTE* ROUTE777 = new ROUTE();
-ROUTE777->setFromField("fraction_changed");
-ROUTE777->setFromNode("BehaviorClock");
-ROUTE777->setToField("set_fraction");
-ROUTE777->setToNode("l_eyelid_joint_OI");
+ROUTE777->setFromField(CString("fraction_changed"));
+ROUTE777->setFromNode(CString("BehaviorClock"));
+ROUTE777->setToField(CString("set_fraction"));
+ROUTE777->setToNode(CString("l_eyelid_joint_OI"));
 ProtoBody603->addChild(ROUTE777);
 
 OrientationInterpolator* OrientationInterpolator778 = new OrientationInterpolator();
-OrientationInterpolator778->setDEF("l_forearm_OI");
+OrientationInterpolator778->setDEF(CString("l_forearm_OI"));
 IS* IS779 = new IS();
 Connect* connect780 = new Connect();
-connect780->setNodeField("key");
-connect780->setProtoField("l_forearm_key");
-IS779->addConnect(connect780);
+connect780->setNodeField(CString("key"));
+connect780->setProtoField(CString("l_forearm_key"));
+IS779->addChild(connect780);
 
 Connect* connect781 = new Connect();
-connect781->setNodeField("keyValue");
-connect781->setProtoField("l_forearm_keyValue");
-IS779->addConnect(connect781);
+connect781->setNodeField(CString("keyValue"));
+connect781->setProtoField(CString("l_forearm_keyValue"));
+IS779->addChild(connect781);
 
 Connect* connect782 = new Connect();
-connect782->setNodeField("value_changed");
-connect782->setProtoField("l_forearm_changed");
-IS779->addConnect(connect782);
+connect782->setNodeField(CString("value_changed"));
+connect782->setProtoField(CString("l_forearm_changed"));
+IS779->addChild(connect782);
 
-OrientationInterpolator778->setIS(IS779);
+OrientationInterpolator778->addChild(IS779);
 
 ProtoBody603->addChild(OrientationInterpolator778);
 
 ROUTE* ROUTE783 = new ROUTE();
-ROUTE783->setFromField("fraction_changed");
-ROUTE783->setFromNode("BehaviorClock");
-ROUTE783->setToField("set_fraction");
-ROUTE783->setToNode("l_forearm_OI");
+ROUTE783->setFromField(CString("fraction_changed"));
+ROUTE783->setFromNode(CString("BehaviorClock"));
+ROUTE783->setToField(CString("set_fraction"));
+ROUTE783->setToNode(CString("l_forearm_OI"));
 ProtoBody603->addChild(ROUTE783);
 
 OrientationInterpolator* OrientationInterpolator784 = new OrientationInterpolator();
-OrientationInterpolator784->setDEF("l_forefoot_OI");
+OrientationInterpolator784->setDEF(CString("l_forefoot_OI"));
 IS* IS785 = new IS();
 Connect* connect786 = new Connect();
-connect786->setNodeField("key");
-connect786->setProtoField("l_forefoot_key");
-IS785->addConnect(connect786);
+connect786->setNodeField(CString("key"));
+connect786->setProtoField(CString("l_forefoot_key"));
+IS785->addChild(connect786);
 
 Connect* connect787 = new Connect();
-connect787->setNodeField("keyValue");
-connect787->setProtoField("l_forefoot_keyValue");
-IS785->addConnect(connect787);
+connect787->setNodeField(CString("keyValue"));
+connect787->setProtoField(CString("l_forefoot_keyValue"));
+IS785->addChild(connect787);
 
 Connect* connect788 = new Connect();
-connect788->setNodeField("value_changed");
-connect788->setProtoField("l_forefoot_changed");
-IS785->addConnect(connect788);
+connect788->setNodeField(CString("value_changed"));
+connect788->setProtoField(CString("l_forefoot_changed"));
+IS785->addChild(connect788);
 
-OrientationInterpolator784->setIS(IS785);
+OrientationInterpolator784->addChild(IS785);
 
 ProtoBody603->addChild(OrientationInterpolator784);
 
 ROUTE* ROUTE789 = new ROUTE();
-ROUTE789->setFromField("fraction_changed");
-ROUTE789->setFromNode("BehaviorClock");
-ROUTE789->setToField("set_fraction");
-ROUTE789->setToNode("l_forefoot_OI");
+ROUTE789->setFromField(CString("fraction_changed"));
+ROUTE789->setFromNode(CString("BehaviorClock"));
+ROUTE789->setToField(CString("set_fraction"));
+ROUTE789->setToNode(CString("l_forefoot_OI"));
 ProtoBody603->addChild(ROUTE789);
 
 OrientationInterpolator* OrientationInterpolator790 = new OrientationInterpolator();
-OrientationInterpolator790->setDEF("l_hand_OI");
+OrientationInterpolator790->setDEF(CString("l_hand_OI"));
 IS* IS791 = new IS();
 Connect* connect792 = new Connect();
-connect792->setNodeField("key");
-connect792->setProtoField("l_hand_key");
-IS791->addConnect(connect792);
+connect792->setNodeField(CString("key"));
+connect792->setProtoField(CString("l_hand_key"));
+IS791->addChild(connect792);
 
 Connect* connect793 = new Connect();
-connect793->setNodeField("keyValue");
-connect793->setProtoField("l_hand_keyValue");
-IS791->addConnect(connect793);
+connect793->setNodeField(CString("keyValue"));
+connect793->setProtoField(CString("l_hand_keyValue"));
+IS791->addChild(connect793);
 
 Connect* connect794 = new Connect();
-connect794->setNodeField("value_changed");
-connect794->setProtoField("l_hand_changed");
-IS791->addConnect(connect794);
+connect794->setNodeField(CString("value_changed"));
+connect794->setProtoField(CString("l_hand_changed"));
+IS791->addChild(connect794);
 
-OrientationInterpolator790->setIS(IS791);
+OrientationInterpolator790->addChild(IS791);
 
 ProtoBody603->addChild(OrientationInterpolator790);
 
 ROUTE* ROUTE795 = new ROUTE();
-ROUTE795->setFromField("fraction_changed");
-ROUTE795->setFromNode("BehaviorClock");
-ROUTE795->setToField("set_fraction");
-ROUTE795->setToNode("l_hand_OI");
+ROUTE795->setFromField(CString("fraction_changed"));
+ROUTE795->setFromNode(CString("BehaviorClock"));
+ROUTE795->setToField(CString("set_fraction"));
+ROUTE795->setToNode(CString("l_hand_OI"));
 ProtoBody603->addChild(ROUTE795);
 
 OrientationInterpolator* OrientationInterpolator796 = new OrientationInterpolator();
-OrientationInterpolator796->setDEF("l_hindfoot_OI");
+OrientationInterpolator796->setDEF(CString("l_hindfoot_OI"));
 IS* IS797 = new IS();
 Connect* connect798 = new Connect();
-connect798->setNodeField("key");
-connect798->setProtoField("l_hindfoot_key");
-IS797->addConnect(connect798);
+connect798->setNodeField(CString("key"));
+connect798->setProtoField(CString("l_hindfoot_key"));
+IS797->addChild(connect798);
 
 Connect* connect799 = new Connect();
-connect799->setNodeField("keyValue");
-connect799->setProtoField("l_hindfoot_keyValue");
-IS797->addConnect(connect799);
+connect799->setNodeField(CString("keyValue"));
+connect799->setProtoField(CString("l_hindfoot_keyValue"));
+IS797->addChild(connect799);
 
 Connect* connect800 = new Connect();
-connect800->setNodeField("value_changed");
-connect800->setProtoField("l_hindfoot_changed");
-IS797->addConnect(connect800);
+connect800->setNodeField(CString("value_changed"));
+connect800->setProtoField(CString("l_hindfoot_changed"));
+IS797->addChild(connect800);
 
-OrientationInterpolator796->setIS(IS797);
+OrientationInterpolator796->addChild(IS797);
 
 ProtoBody603->addChild(OrientationInterpolator796);
 
 ROUTE* ROUTE801 = new ROUTE();
-ROUTE801->setFromField("fraction_changed");
-ROUTE801->setFromNode("BehaviorClock");
-ROUTE801->setToField("set_fraction");
-ROUTE801->setToNode("l_hindfoot_OI");
+ROUTE801->setFromField(CString("fraction_changed"));
+ROUTE801->setFromNode(CString("BehaviorClock"));
+ROUTE801->setToField(CString("set_fraction"));
+ROUTE801->setToNode(CString("l_hindfoot_OI"));
 ProtoBody603->addChild(ROUTE801);
 
 OrientationInterpolator* OrientationInterpolator802 = new OrientationInterpolator();
-OrientationInterpolator802->setDEF("l_hip_OI");
+OrientationInterpolator802->setDEF(CString("l_hip_OI"));
 IS* IS803 = new IS();
 Connect* connect804 = new Connect();
-connect804->setNodeField("key");
-connect804->setProtoField("l_hip_key");
-IS803->addConnect(connect804);
+connect804->setNodeField(CString("key"));
+connect804->setProtoField(CString("l_hip_key"));
+IS803->addChild(connect804);
 
 Connect* connect805 = new Connect();
-connect805->setNodeField("keyValue");
-connect805->setProtoField("l_hip_keyValue");
-IS803->addConnect(connect805);
+connect805->setNodeField(CString("keyValue"));
+connect805->setProtoField(CString("l_hip_keyValue"));
+IS803->addChild(connect805);
 
 Connect* connect806 = new Connect();
-connect806->setNodeField("value_changed");
-connect806->setProtoField("l_hip_changed");
-IS803->addConnect(connect806);
+connect806->setNodeField(CString("value_changed"));
+connect806->setProtoField(CString("l_hip_changed"));
+IS803->addChild(connect806);
 
-OrientationInterpolator802->setIS(IS803);
+OrientationInterpolator802->addChild(IS803);
 
 ProtoBody603->addChild(OrientationInterpolator802);
 
 ROUTE* ROUTE807 = new ROUTE();
-ROUTE807->setFromField("fraction_changed");
-ROUTE807->setFromNode("BehaviorClock");
-ROUTE807->setToField("set_fraction");
-ROUTE807->setToNode("l_hip_OI");
+ROUTE807->setFromField(CString("fraction_changed"));
+ROUTE807->setFromNode(CString("BehaviorClock"));
+ROUTE807->setToField(CString("set_fraction"));
+ROUTE807->setToNode(CString("l_hip_OI"));
 ProtoBody603->addChild(ROUTE807);
 
 OrientationInterpolator* OrientationInterpolator808 = new OrientationInterpolator();
-OrientationInterpolator808->setDEF("l_index0_OI");
+OrientationInterpolator808->setDEF(CString("l_index0_OI"));
 IS* IS809 = new IS();
 Connect* connect810 = new Connect();
-connect810->setNodeField("key");
-connect810->setProtoField("l_index0_key");
-IS809->addConnect(connect810);
+connect810->setNodeField(CString("key"));
+connect810->setProtoField(CString("l_index0_key"));
+IS809->addChild(connect810);
 
 Connect* connect811 = new Connect();
-connect811->setNodeField("keyValue");
-connect811->setProtoField("l_index0_keyValue");
-IS809->addConnect(connect811);
+connect811->setNodeField(CString("keyValue"));
+connect811->setProtoField(CString("l_index0_keyValue"));
+IS809->addChild(connect811);
 
 Connect* connect812 = new Connect();
-connect812->setNodeField("value_changed");
-connect812->setProtoField("l_index0_changed");
-IS809->addConnect(connect812);
+connect812->setNodeField(CString("value_changed"));
+connect812->setProtoField(CString("l_index0_changed"));
+IS809->addChild(connect812);
 
-OrientationInterpolator808->setIS(IS809);
+OrientationInterpolator808->addChild(IS809);
 
 ProtoBody603->addChild(OrientationInterpolator808);
 
 ROUTE* ROUTE813 = new ROUTE();
-ROUTE813->setFromField("fraction_changed");
-ROUTE813->setFromNode("BehaviorClock");
-ROUTE813->setToField("set_fraction");
-ROUTE813->setToNode("l_index0_OI");
+ROUTE813->setFromField(CString("fraction_changed"));
+ROUTE813->setFromNode(CString("BehaviorClock"));
+ROUTE813->setToField(CString("set_fraction"));
+ROUTE813->setToNode(CString("l_index0_OI"));
 ProtoBody603->addChild(ROUTE813);
 
 OrientationInterpolator* OrientationInterpolator814 = new OrientationInterpolator();
-OrientationInterpolator814->setDEF("l_index1_OI");
+OrientationInterpolator814->setDEF(CString("l_index1_OI"));
 IS* IS815 = new IS();
 Connect* connect816 = new Connect();
-connect816->setNodeField("key");
-connect816->setProtoField("l_index1_key");
-IS815->addConnect(connect816);
+connect816->setNodeField(CString("key"));
+connect816->setProtoField(CString("l_index1_key"));
+IS815->addChild(connect816);
 
 Connect* connect817 = new Connect();
-connect817->setNodeField("keyValue");
-connect817->setProtoField("l_index1_keyValue");
-IS815->addConnect(connect817);
+connect817->setNodeField(CString("keyValue"));
+connect817->setProtoField(CString("l_index1_keyValue"));
+IS815->addChild(connect817);
 
 Connect* connect818 = new Connect();
-connect818->setNodeField("value_changed");
-connect818->setProtoField("l_index1_changed");
-IS815->addConnect(connect818);
+connect818->setNodeField(CString("value_changed"));
+connect818->setProtoField(CString("l_index1_changed"));
+IS815->addChild(connect818);
 
-OrientationInterpolator814->setIS(IS815);
+OrientationInterpolator814->addChild(IS815);
 
 ProtoBody603->addChild(OrientationInterpolator814);
 
 ROUTE* ROUTE819 = new ROUTE();
-ROUTE819->setFromField("fraction_changed");
-ROUTE819->setFromNode("BehaviorClock");
-ROUTE819->setToField("set_fraction");
-ROUTE819->setToNode("l_index1_OI");
+ROUTE819->setFromField(CString("fraction_changed"));
+ROUTE819->setFromNode(CString("BehaviorClock"));
+ROUTE819->setToField(CString("set_fraction"));
+ROUTE819->setToNode(CString("l_index1_OI"));
 ProtoBody603->addChild(ROUTE819);
 
 OrientationInterpolator* OrientationInterpolator820 = new OrientationInterpolator();
-OrientationInterpolator820->setDEF("l_index2_OI");
+OrientationInterpolator820->setDEF(CString("l_index2_OI"));
 IS* IS821 = new IS();
 Connect* connect822 = new Connect();
-connect822->setNodeField("key");
-connect822->setProtoField("l_index2_key");
-IS821->addConnect(connect822);
+connect822->setNodeField(CString("key"));
+connect822->setProtoField(CString("l_index2_key"));
+IS821->addChild(connect822);
 
 Connect* connect823 = new Connect();
-connect823->setNodeField("keyValue");
-connect823->setProtoField("l_index2_keyValue");
-IS821->addConnect(connect823);
+connect823->setNodeField(CString("keyValue"));
+connect823->setProtoField(CString("l_index2_keyValue"));
+IS821->addChild(connect823);
 
 Connect* connect824 = new Connect();
-connect824->setNodeField("value_changed");
-connect824->setProtoField("l_index2_changed");
-IS821->addConnect(connect824);
+connect824->setNodeField(CString("value_changed"));
+connect824->setProtoField(CString("l_index2_changed"));
+IS821->addChild(connect824);
 
-OrientationInterpolator820->setIS(IS821);
+OrientationInterpolator820->addChild(IS821);
 
 ProtoBody603->addChild(OrientationInterpolator820);
 
 ROUTE* ROUTE825 = new ROUTE();
-ROUTE825->setFromField("fraction_changed");
-ROUTE825->setFromNode("BehaviorClock");
-ROUTE825->setToField("set_fraction");
-ROUTE825->setToNode("l_index2_OI");
+ROUTE825->setFromField(CString("fraction_changed"));
+ROUTE825->setFromNode(CString("BehaviorClock"));
+ROUTE825->setToField(CString("set_fraction"));
+ROUTE825->setToNode(CString("l_index2_OI"));
 ProtoBody603->addChild(ROUTE825);
 
 OrientationInterpolator* OrientationInterpolator826 = new OrientationInterpolator();
-OrientationInterpolator826->setDEF("l_index3_OI");
+OrientationInterpolator826->setDEF(CString("l_index3_OI"));
 IS* IS827 = new IS();
 Connect* connect828 = new Connect();
-connect828->setNodeField("key");
-connect828->setProtoField("l_index3_key");
-IS827->addConnect(connect828);
+connect828->setNodeField(CString("key"));
+connect828->setProtoField(CString("l_index3_key"));
+IS827->addChild(connect828);
 
 Connect* connect829 = new Connect();
-connect829->setNodeField("keyValue");
-connect829->setProtoField("l_index3_keyValue");
-IS827->addConnect(connect829);
+connect829->setNodeField(CString("keyValue"));
+connect829->setProtoField(CString("l_index3_keyValue"));
+IS827->addChild(connect829);
 
 Connect* connect830 = new Connect();
-connect830->setNodeField("value_changed");
-connect830->setProtoField("l_index3_changed");
-IS827->addConnect(connect830);
+connect830->setNodeField(CString("value_changed"));
+connect830->setProtoField(CString("l_index3_changed"));
+IS827->addChild(connect830);
 
-OrientationInterpolator826->setIS(IS827);
+OrientationInterpolator826->addChild(IS827);
 
 ProtoBody603->addChild(OrientationInterpolator826);
 
 ROUTE* ROUTE831 = new ROUTE();
-ROUTE831->setFromField("fraction_changed");
-ROUTE831->setFromNode("BehaviorClock");
-ROUTE831->setToField("set_fraction");
-ROUTE831->setToNode("l_index3_OI");
+ROUTE831->setFromField(CString("fraction_changed"));
+ROUTE831->setFromNode(CString("BehaviorClock"));
+ROUTE831->setToField(CString("set_fraction"));
+ROUTE831->setToNode(CString("l_index3_OI"));
 ProtoBody603->addChild(ROUTE831);
 
 OrientationInterpolator* OrientationInterpolator832 = new OrientationInterpolator();
-OrientationInterpolator832->setDEF("l_index_distal_OI");
+OrientationInterpolator832->setDEF(CString("l_index_distal_OI"));
 IS* IS833 = new IS();
 Connect* connect834 = new Connect();
-connect834->setNodeField("key");
-connect834->setProtoField("l_index_distal_key");
-IS833->addConnect(connect834);
+connect834->setNodeField(CString("key"));
+connect834->setProtoField(CString("l_index_distal_key"));
+IS833->addChild(connect834);
 
 Connect* connect835 = new Connect();
-connect835->setNodeField("keyValue");
-connect835->setProtoField("l_index_distal_keyValue");
-IS833->addConnect(connect835);
+connect835->setNodeField(CString("keyValue"));
+connect835->setProtoField(CString("l_index_distal_keyValue"));
+IS833->addChild(connect835);
 
 Connect* connect836 = new Connect();
-connect836->setNodeField("value_changed");
-connect836->setProtoField("l_index_distal_changed");
-IS833->addConnect(connect836);
+connect836->setNodeField(CString("value_changed"));
+connect836->setProtoField(CString("l_index_distal_changed"));
+IS833->addChild(connect836);
 
-OrientationInterpolator832->setIS(IS833);
+OrientationInterpolator832->addChild(IS833);
 
 ProtoBody603->addChild(OrientationInterpolator832);
 
 ROUTE* ROUTE837 = new ROUTE();
-ROUTE837->setFromField("fraction_changed");
-ROUTE837->setFromNode("BehaviorClock");
-ROUTE837->setToField("set_fraction");
-ROUTE837->setToNode("l_index_distal_OI");
+ROUTE837->setFromField(CString("fraction_changed"));
+ROUTE837->setFromNode(CString("BehaviorClock"));
+ROUTE837->setToField(CString("set_fraction"));
+ROUTE837->setToNode(CString("l_index_distal_OI"));
 ProtoBody603->addChild(ROUTE837);
 
 OrientationInterpolator* OrientationInterpolator838 = new OrientationInterpolator();
-OrientationInterpolator838->setDEF("l_index_metacarpal_OI");
+OrientationInterpolator838->setDEF(CString("l_index_metacarpal_OI"));
 IS* IS839 = new IS();
 Connect* connect840 = new Connect();
-connect840->setNodeField("key");
-connect840->setProtoField("l_index_metacarpal_key");
-IS839->addConnect(connect840);
+connect840->setNodeField(CString("key"));
+connect840->setProtoField(CString("l_index_metacarpal_key"));
+IS839->addChild(connect840);
 
 Connect* connect841 = new Connect();
-connect841->setNodeField("keyValue");
-connect841->setProtoField("l_index_metacarpal_keyValue");
-IS839->addConnect(connect841);
+connect841->setNodeField(CString("keyValue"));
+connect841->setProtoField(CString("l_index_metacarpal_keyValue"));
+IS839->addChild(connect841);
 
 Connect* connect842 = new Connect();
-connect842->setNodeField("value_changed");
-connect842->setProtoField("l_index_metacarpal_changed");
-IS839->addConnect(connect842);
+connect842->setNodeField(CString("value_changed"));
+connect842->setProtoField(CString("l_index_metacarpal_changed"));
+IS839->addChild(connect842);
 
-OrientationInterpolator838->setIS(IS839);
+OrientationInterpolator838->addChild(IS839);
 
 ProtoBody603->addChild(OrientationInterpolator838);
 
 ROUTE* ROUTE843 = new ROUTE();
-ROUTE843->setFromField("fraction_changed");
-ROUTE843->setFromNode("BehaviorClock");
-ROUTE843->setToField("set_fraction");
-ROUTE843->setToNode("l_index_metacarpal_OI");
+ROUTE843->setFromField(CString("fraction_changed"));
+ROUTE843->setFromNode(CString("BehaviorClock"));
+ROUTE843->setToField(CString("set_fraction"));
+ROUTE843->setToNode(CString("l_index_metacarpal_OI"));
 ProtoBody603->addChild(ROUTE843);
 
 OrientationInterpolator* OrientationInterpolator844 = new OrientationInterpolator();
-OrientationInterpolator844->setDEF("l_index_middle_OI");
+OrientationInterpolator844->setDEF(CString("l_index_middle_OI"));
 IS* IS845 = new IS();
 Connect* connect846 = new Connect();
-connect846->setNodeField("key");
-connect846->setProtoField("l_index_middle_key");
-IS845->addConnect(connect846);
+connect846->setNodeField(CString("key"));
+connect846->setProtoField(CString("l_index_middle_key"));
+IS845->addChild(connect846);
 
 Connect* connect847 = new Connect();
-connect847->setNodeField("keyValue");
-connect847->setProtoField("l_index_middle_keyValue");
-IS845->addConnect(connect847);
+connect847->setNodeField(CString("keyValue"));
+connect847->setProtoField(CString("l_index_middle_keyValue"));
+IS845->addChild(connect847);
 
 Connect* connect848 = new Connect();
-connect848->setNodeField("value_changed");
-connect848->setProtoField("l_index_middle_changed");
-IS845->addConnect(connect848);
+connect848->setNodeField(CString("value_changed"));
+connect848->setProtoField(CString("l_index_middle_changed"));
+IS845->addChild(connect848);
 
-OrientationInterpolator844->setIS(IS845);
+OrientationInterpolator844->addChild(IS845);
 
 ProtoBody603->addChild(OrientationInterpolator844);
 
 ROUTE* ROUTE849 = new ROUTE();
-ROUTE849->setFromField("fraction_changed");
-ROUTE849->setFromNode("BehaviorClock");
-ROUTE849->setToField("set_fraction");
-ROUTE849->setToNode("l_index_middle_OI");
+ROUTE849->setFromField(CString("fraction_changed"));
+ROUTE849->setFromNode(CString("BehaviorClock"));
+ROUTE849->setToField(CString("set_fraction"));
+ROUTE849->setToNode(CString("l_index_middle_OI"));
 ProtoBody603->addChild(ROUTE849);
 
 OrientationInterpolator* OrientationInterpolator850 = new OrientationInterpolator();
-OrientationInterpolator850->setDEF("l_index_proximal_OI");
+OrientationInterpolator850->setDEF(CString("l_index_proximal_OI"));
 IS* IS851 = new IS();
 Connect* connect852 = new Connect();
-connect852->setNodeField("key");
-connect852->setProtoField("l_index_proximal_key");
-IS851->addConnect(connect852);
+connect852->setNodeField(CString("key"));
+connect852->setProtoField(CString("l_index_proximal_key"));
+IS851->addChild(connect852);
 
 Connect* connect853 = new Connect();
-connect853->setNodeField("keyValue");
-connect853->setProtoField("l_index_proximal_keyValue");
-IS851->addConnect(connect853);
+connect853->setNodeField(CString("keyValue"));
+connect853->setProtoField(CString("l_index_proximal_keyValue"));
+IS851->addChild(connect853);
 
 Connect* connect854 = new Connect();
-connect854->setNodeField("value_changed");
-connect854->setProtoField("l_index_proximal_changed");
-IS851->addConnect(connect854);
+connect854->setNodeField(CString("value_changed"));
+connect854->setProtoField(CString("l_index_proximal_changed"));
+IS851->addChild(connect854);
 
-OrientationInterpolator850->setIS(IS851);
+OrientationInterpolator850->addChild(IS851);
 
 ProtoBody603->addChild(OrientationInterpolator850);
 
 ROUTE* ROUTE855 = new ROUTE();
-ROUTE855->setFromField("fraction_changed");
-ROUTE855->setFromNode("BehaviorClock");
-ROUTE855->setToField("set_fraction");
-ROUTE855->setToNode("l_index_proximal_OI");
+ROUTE855->setFromField(CString("fraction_changed"));
+ROUTE855->setFromNode(CString("BehaviorClock"));
+ROUTE855->setToField(CString("set_fraction"));
+ROUTE855->setToNode(CString("l_index_proximal_OI"));
 ProtoBody603->addChild(ROUTE855);
 
 OrientationInterpolator* OrientationInterpolator856 = new OrientationInterpolator();
-OrientationInterpolator856->setDEF("l_knee_OI");
+OrientationInterpolator856->setDEF(CString("l_knee_OI"));
 IS* IS857 = new IS();
 Connect* connect858 = new Connect();
-connect858->setNodeField("key");
-connect858->setProtoField("l_knee_key");
-IS857->addConnect(connect858);
+connect858->setNodeField(CString("key"));
+connect858->setProtoField(CString("l_knee_key"));
+IS857->addChild(connect858);
 
 Connect* connect859 = new Connect();
-connect859->setNodeField("keyValue");
-connect859->setProtoField("l_knee_keyValue");
-IS857->addConnect(connect859);
+connect859->setNodeField(CString("keyValue"));
+connect859->setProtoField(CString("l_knee_keyValue"));
+IS857->addChild(connect859);
 
 Connect* connect860 = new Connect();
-connect860->setNodeField("value_changed");
-connect860->setProtoField("l_knee_changed");
-IS857->addConnect(connect860);
+connect860->setNodeField(CString("value_changed"));
+connect860->setProtoField(CString("l_knee_changed"));
+IS857->addChild(connect860);
 
-OrientationInterpolator856->setIS(IS857);
+OrientationInterpolator856->addChild(IS857);
 
 ProtoBody603->addChild(OrientationInterpolator856);
 
 ROUTE* ROUTE861 = new ROUTE();
-ROUTE861->setFromField("fraction_changed");
-ROUTE861->setFromNode("BehaviorClock");
-ROUTE861->setToField("set_fraction");
-ROUTE861->setToNode("l_knee_OI");
+ROUTE861->setFromField(CString("fraction_changed"));
+ROUTE861->setFromNode(CString("BehaviorClock"));
+ROUTE861->setToField(CString("set_fraction"));
+ROUTE861->setToNode(CString("l_knee_OI"));
 ProtoBody603->addChild(ROUTE861);
 
 OrientationInterpolator* OrientationInterpolator862 = new OrientationInterpolator();
-OrientationInterpolator862->setDEF("l_metatarsal_OI");
+OrientationInterpolator862->setDEF(CString("l_metatarsal_OI"));
 IS* IS863 = new IS();
 Connect* connect864 = new Connect();
-connect864->setNodeField("key");
-connect864->setProtoField("l_metatarsal_key");
-IS863->addConnect(connect864);
+connect864->setNodeField(CString("key"));
+connect864->setProtoField(CString("l_metatarsal_key"));
+IS863->addChild(connect864);
 
 Connect* connect865 = new Connect();
-connect865->setNodeField("keyValue");
-connect865->setProtoField("l_metatarsal_keyValue");
-IS863->addConnect(connect865);
+connect865->setNodeField(CString("keyValue"));
+connect865->setProtoField(CString("l_metatarsal_keyValue"));
+IS863->addChild(connect865);
 
 Connect* connect866 = new Connect();
-connect866->setNodeField("value_changed");
-connect866->setProtoField("l_metatarsal_changed");
-IS863->addConnect(connect866);
+connect866->setNodeField(CString("value_changed"));
+connect866->setProtoField(CString("l_metatarsal_changed"));
+IS863->addChild(connect866);
 
-OrientationInterpolator862->setIS(IS863);
+OrientationInterpolator862->addChild(IS863);
 
 ProtoBody603->addChild(OrientationInterpolator862);
 
 ROUTE* ROUTE867 = new ROUTE();
-ROUTE867->setFromField("fraction_changed");
-ROUTE867->setFromNode("BehaviorClock");
-ROUTE867->setToField("set_fraction");
-ROUTE867->setToNode("l_metatarsal_OI");
+ROUTE867->setFromField(CString("fraction_changed"));
+ROUTE867->setFromNode(CString("BehaviorClock"));
+ROUTE867->setToField(CString("set_fraction"));
+ROUTE867->setToNode(CString("l_metatarsal_OI"));
 ProtoBody603->addChild(ROUTE867);
 
 OrientationInterpolator* OrientationInterpolator868 = new OrientationInterpolator();
-OrientationInterpolator868->setDEF("l_middistal_OI");
+OrientationInterpolator868->setDEF(CString("l_middistal_OI"));
 IS* IS869 = new IS();
 Connect* connect870 = new Connect();
-connect870->setNodeField("key");
-connect870->setProtoField("l_middistal_key");
-IS869->addConnect(connect870);
+connect870->setNodeField(CString("key"));
+connect870->setProtoField(CString("l_middistal_key"));
+IS869->addChild(connect870);
 
 Connect* connect871 = new Connect();
-connect871->setNodeField("keyValue");
-connect871->setProtoField("l_middistal_keyValue");
-IS869->addConnect(connect871);
+connect871->setNodeField(CString("keyValue"));
+connect871->setProtoField(CString("l_middistal_keyValue"));
+IS869->addChild(connect871);
 
 Connect* connect872 = new Connect();
-connect872->setNodeField("value_changed");
-connect872->setProtoField("l_middistal_changed");
-IS869->addConnect(connect872);
+connect872->setNodeField(CString("value_changed"));
+connect872->setProtoField(CString("l_middistal_changed"));
+IS869->addChild(connect872);
 
-OrientationInterpolator868->setIS(IS869);
+OrientationInterpolator868->addChild(IS869);
 
 ProtoBody603->addChild(OrientationInterpolator868);
 
 ROUTE* ROUTE873 = new ROUTE();
-ROUTE873->setFromField("fraction_changed");
-ROUTE873->setFromNode("BehaviorClock");
-ROUTE873->setToField("set_fraction");
-ROUTE873->setToNode("l_middistal_OI");
+ROUTE873->setFromField(CString("fraction_changed"));
+ROUTE873->setFromNode(CString("BehaviorClock"));
+ROUTE873->setToField(CString("set_fraction"));
+ROUTE873->setToNode(CString("l_middistal_OI"));
 ProtoBody603->addChild(ROUTE873);
 
 OrientationInterpolator* OrientationInterpolator874 = new OrientationInterpolator();
-OrientationInterpolator874->setDEF("l_middle0_OI");
+OrientationInterpolator874->setDEF(CString("l_middle0_OI"));
 IS* IS875 = new IS();
 Connect* connect876 = new Connect();
-connect876->setNodeField("key");
-connect876->setProtoField("l_middle0_key");
-IS875->addConnect(connect876);
+connect876->setNodeField(CString("key"));
+connect876->setProtoField(CString("l_middle0_key"));
+IS875->addChild(connect876);
 
 Connect* connect877 = new Connect();
-connect877->setNodeField("keyValue");
-connect877->setProtoField("l_middle0_keyValue");
-IS875->addConnect(connect877);
+connect877->setNodeField(CString("keyValue"));
+connect877->setProtoField(CString("l_middle0_keyValue"));
+IS875->addChild(connect877);
 
 Connect* connect878 = new Connect();
-connect878->setNodeField("value_changed");
-connect878->setProtoField("l_middle0_changed");
-IS875->addConnect(connect878);
+connect878->setNodeField(CString("value_changed"));
+connect878->setProtoField(CString("l_middle0_changed"));
+IS875->addChild(connect878);
 
-OrientationInterpolator874->setIS(IS875);
+OrientationInterpolator874->addChild(IS875);
 
 ProtoBody603->addChild(OrientationInterpolator874);
 
 ROUTE* ROUTE879 = new ROUTE();
-ROUTE879->setFromField("fraction_changed");
-ROUTE879->setFromNode("BehaviorClock");
-ROUTE879->setToField("set_fraction");
-ROUTE879->setToNode("l_middle0_OI");
+ROUTE879->setFromField(CString("fraction_changed"));
+ROUTE879->setFromNode(CString("BehaviorClock"));
+ROUTE879->setToField(CString("set_fraction"));
+ROUTE879->setToNode(CString("l_middle0_OI"));
 ProtoBody603->addChild(ROUTE879);
 
 OrientationInterpolator* OrientationInterpolator880 = new OrientationInterpolator();
-OrientationInterpolator880->setDEF("l_middle1_OI");
+OrientationInterpolator880->setDEF(CString("l_middle1_OI"));
 IS* IS881 = new IS();
 Connect* connect882 = new Connect();
-connect882->setNodeField("key");
-connect882->setProtoField("l_middle1_key");
-IS881->addConnect(connect882);
+connect882->setNodeField(CString("key"));
+connect882->setProtoField(CString("l_middle1_key"));
+IS881->addChild(connect882);
 
 Connect* connect883 = new Connect();
-connect883->setNodeField("keyValue");
-connect883->setProtoField("l_middle1_keyValue");
-IS881->addConnect(connect883);
+connect883->setNodeField(CString("keyValue"));
+connect883->setProtoField(CString("l_middle1_keyValue"));
+IS881->addChild(connect883);
 
 Connect* connect884 = new Connect();
-connect884->setNodeField("value_changed");
-connect884->setProtoField("l_middle1_changed");
-IS881->addConnect(connect884);
+connect884->setNodeField(CString("value_changed"));
+connect884->setProtoField(CString("l_middle1_changed"));
+IS881->addChild(connect884);
 
-OrientationInterpolator880->setIS(IS881);
+OrientationInterpolator880->addChild(IS881);
 
 ProtoBody603->addChild(OrientationInterpolator880);
 
 ROUTE* ROUTE885 = new ROUTE();
-ROUTE885->setFromField("fraction_changed");
-ROUTE885->setFromNode("BehaviorClock");
-ROUTE885->setToField("set_fraction");
-ROUTE885->setToNode("l_middle1_OI");
+ROUTE885->setFromField(CString("fraction_changed"));
+ROUTE885->setFromNode(CString("BehaviorClock"));
+ROUTE885->setToField(CString("set_fraction"));
+ROUTE885->setToNode(CString("l_middle1_OI"));
 ProtoBody603->addChild(ROUTE885);
 
 OrientationInterpolator* OrientationInterpolator886 = new OrientationInterpolator();
-OrientationInterpolator886->setDEF("l_middle2_OI");
+OrientationInterpolator886->setDEF(CString("l_middle2_OI"));
 IS* IS887 = new IS();
 Connect* connect888 = new Connect();
-connect888->setNodeField("key");
-connect888->setProtoField("l_middle2_key");
-IS887->addConnect(connect888);
+connect888->setNodeField(CString("key"));
+connect888->setProtoField(CString("l_middle2_key"));
+IS887->addChild(connect888);
 
 Connect* connect889 = new Connect();
-connect889->setNodeField("keyValue");
-connect889->setProtoField("l_middle2_keyValue");
-IS887->addConnect(connect889);
+connect889->setNodeField(CString("keyValue"));
+connect889->setProtoField(CString("l_middle2_keyValue"));
+IS887->addChild(connect889);
 
 Connect* connect890 = new Connect();
-connect890->setNodeField("value_changed");
-connect890->setProtoField("l_middle2_changed");
-IS887->addConnect(connect890);
+connect890->setNodeField(CString("value_changed"));
+connect890->setProtoField(CString("l_middle2_changed"));
+IS887->addChild(connect890);
 
-OrientationInterpolator886->setIS(IS887);
+OrientationInterpolator886->addChild(IS887);
 
 ProtoBody603->addChild(OrientationInterpolator886);
 
 ROUTE* ROUTE891 = new ROUTE();
-ROUTE891->setFromField("fraction_changed");
-ROUTE891->setFromNode("BehaviorClock");
-ROUTE891->setToField("set_fraction");
-ROUTE891->setToNode("l_middle2_OI");
+ROUTE891->setFromField(CString("fraction_changed"));
+ROUTE891->setFromNode(CString("BehaviorClock"));
+ROUTE891->setToField(CString("set_fraction"));
+ROUTE891->setToNode(CString("l_middle2_OI"));
 ProtoBody603->addChild(ROUTE891);
 
 OrientationInterpolator* OrientationInterpolator892 = new OrientationInterpolator();
-OrientationInterpolator892->setDEF("l_middle3_OI");
+OrientationInterpolator892->setDEF(CString("l_middle3_OI"));
 IS* IS893 = new IS();
 Connect* connect894 = new Connect();
-connect894->setNodeField("key");
-connect894->setProtoField("l_middle3_key");
-IS893->addConnect(connect894);
+connect894->setNodeField(CString("key"));
+connect894->setProtoField(CString("l_middle3_key"));
+IS893->addChild(connect894);
 
 Connect* connect895 = new Connect();
-connect895->setNodeField("keyValue");
-connect895->setProtoField("l_middle3_keyValue");
-IS893->addConnect(connect895);
+connect895->setNodeField(CString("keyValue"));
+connect895->setProtoField(CString("l_middle3_keyValue"));
+IS893->addChild(connect895);
 
 Connect* connect896 = new Connect();
-connect896->setNodeField("value_changed");
-connect896->setProtoField("l_middle3_changed");
-IS893->addConnect(connect896);
+connect896->setNodeField(CString("value_changed"));
+connect896->setProtoField(CString("l_middle3_changed"));
+IS893->addChild(connect896);
 
-OrientationInterpolator892->setIS(IS893);
+OrientationInterpolator892->addChild(IS893);
 
 ProtoBody603->addChild(OrientationInterpolator892);
 
 ROUTE* ROUTE897 = new ROUTE();
-ROUTE897->setFromField("fraction_changed");
-ROUTE897->setFromNode("BehaviorClock");
-ROUTE897->setToField("set_fraction");
-ROUTE897->setToNode("l_middle3_OI");
+ROUTE897->setFromField(CString("fraction_changed"));
+ROUTE897->setFromNode(CString("BehaviorClock"));
+ROUTE897->setToField(CString("set_fraction"));
+ROUTE897->setToNode(CString("l_middle3_OI"));
 ProtoBody603->addChild(ROUTE897);
 
 OrientationInterpolator* OrientationInterpolator898 = new OrientationInterpolator();
-OrientationInterpolator898->setDEF("l_middle_distal_OI");
+OrientationInterpolator898->setDEF(CString("l_middle_distal_OI"));
 IS* IS899 = new IS();
 Connect* connect900 = new Connect();
-connect900->setNodeField("key");
-connect900->setProtoField("l_middle_distal_key");
-IS899->addConnect(connect900);
+connect900->setNodeField(CString("key"));
+connect900->setProtoField(CString("l_middle_distal_key"));
+IS899->addChild(connect900);
 
 Connect* connect901 = new Connect();
-connect901->setNodeField("keyValue");
-connect901->setProtoField("l_middle_distal_keyValue");
-IS899->addConnect(connect901);
+connect901->setNodeField(CString("keyValue"));
+connect901->setProtoField(CString("l_middle_distal_keyValue"));
+IS899->addChild(connect901);
 
 Connect* connect902 = new Connect();
-connect902->setNodeField("value_changed");
-connect902->setProtoField("l_middle_distal_changed");
-IS899->addConnect(connect902);
+connect902->setNodeField(CString("value_changed"));
+connect902->setProtoField(CString("l_middle_distal_changed"));
+IS899->addChild(connect902);
 
-OrientationInterpolator898->setIS(IS899);
+OrientationInterpolator898->addChild(IS899);
 
 ProtoBody603->addChild(OrientationInterpolator898);
 
 ROUTE* ROUTE903 = new ROUTE();
-ROUTE903->setFromField("fraction_changed");
-ROUTE903->setFromNode("BehaviorClock");
-ROUTE903->setToField("set_fraction");
-ROUTE903->setToNode("l_middle_distal_OI");
+ROUTE903->setFromField(CString("fraction_changed"));
+ROUTE903->setFromNode(CString("BehaviorClock"));
+ROUTE903->setToField(CString("set_fraction"));
+ROUTE903->setToNode(CString("l_middle_distal_OI"));
 ProtoBody603->addChild(ROUTE903);
 
 OrientationInterpolator* OrientationInterpolator904 = new OrientationInterpolator();
-OrientationInterpolator904->setDEF("l_middle_metacarpal_OI");
+OrientationInterpolator904->setDEF(CString("l_middle_metacarpal_OI"));
 IS* IS905 = new IS();
 Connect* connect906 = new Connect();
-connect906->setNodeField("key");
-connect906->setProtoField("l_middle_metacarpal_key");
-IS905->addConnect(connect906);
+connect906->setNodeField(CString("key"));
+connect906->setProtoField(CString("l_middle_metacarpal_key"));
+IS905->addChild(connect906);
 
 Connect* connect907 = new Connect();
-connect907->setNodeField("keyValue");
-connect907->setProtoField("l_middle_metacarpal_keyValue");
-IS905->addConnect(connect907);
+connect907->setNodeField(CString("keyValue"));
+connect907->setProtoField(CString("l_middle_metacarpal_keyValue"));
+IS905->addChild(connect907);
 
 Connect* connect908 = new Connect();
-connect908->setNodeField("value_changed");
-connect908->setProtoField("l_middle_metacarpal_changed");
-IS905->addConnect(connect908);
+connect908->setNodeField(CString("value_changed"));
+connect908->setProtoField(CString("l_middle_metacarpal_changed"));
+IS905->addChild(connect908);
 
-OrientationInterpolator904->setIS(IS905);
+OrientationInterpolator904->addChild(IS905);
 
 ProtoBody603->addChild(OrientationInterpolator904);
 
 ROUTE* ROUTE909 = new ROUTE();
-ROUTE909->setFromField("fraction_changed");
-ROUTE909->setFromNode("BehaviorClock");
-ROUTE909->setToField("set_fraction");
-ROUTE909->setToNode("l_middle_metacarpal_OI");
+ROUTE909->setFromField(CString("fraction_changed"));
+ROUTE909->setFromNode(CString("BehaviorClock"));
+ROUTE909->setToField(CString("set_fraction"));
+ROUTE909->setToNode(CString("l_middle_metacarpal_OI"));
 ProtoBody603->addChild(ROUTE909);
 
 OrientationInterpolator* OrientationInterpolator910 = new OrientationInterpolator();
-OrientationInterpolator910->setDEF("l_middle_middle_OI");
+OrientationInterpolator910->setDEF(CString("l_middle_middle_OI"));
 IS* IS911 = new IS();
 Connect* connect912 = new Connect();
-connect912->setNodeField("key");
-connect912->setProtoField("l_middle_middle_key");
-IS911->addConnect(connect912);
+connect912->setNodeField(CString("key"));
+connect912->setProtoField(CString("l_middle_middle_key"));
+IS911->addChild(connect912);
 
 Connect* connect913 = new Connect();
-connect913->setNodeField("keyValue");
-connect913->setProtoField("l_middle_middle_keyValue");
-IS911->addConnect(connect913);
+connect913->setNodeField(CString("keyValue"));
+connect913->setProtoField(CString("l_middle_middle_keyValue"));
+IS911->addChild(connect913);
 
 Connect* connect914 = new Connect();
-connect914->setNodeField("value_changed");
-connect914->setProtoField("l_middle_middle_changed");
-IS911->addConnect(connect914);
+connect914->setNodeField(CString("value_changed"));
+connect914->setProtoField(CString("l_middle_middle_changed"));
+IS911->addChild(connect914);
 
-OrientationInterpolator910->setIS(IS911);
+OrientationInterpolator910->addChild(IS911);
 
 ProtoBody603->addChild(OrientationInterpolator910);
 
 ROUTE* ROUTE915 = new ROUTE();
-ROUTE915->setFromField("fraction_changed");
-ROUTE915->setFromNode("BehaviorClock");
-ROUTE915->setToField("set_fraction");
-ROUTE915->setToNode("l_middle_middle_OI");
+ROUTE915->setFromField(CString("fraction_changed"));
+ROUTE915->setFromNode(CString("BehaviorClock"));
+ROUTE915->setToField(CString("set_fraction"));
+ROUTE915->setToNode(CString("l_middle_middle_OI"));
 ProtoBody603->addChild(ROUTE915);
 
 OrientationInterpolator* OrientationInterpolator916 = new OrientationInterpolator();
-OrientationInterpolator916->setDEF("l_middle_proximal_OI");
+OrientationInterpolator916->setDEF(CString("l_middle_proximal_OI"));
 IS* IS917 = new IS();
 Connect* connect918 = new Connect();
-connect918->setNodeField("key");
-connect918->setProtoField("l_middle_proximal_key");
-IS917->addConnect(connect918);
+connect918->setNodeField(CString("key"));
+connect918->setProtoField(CString("l_middle_proximal_key"));
+IS917->addChild(connect918);
 
 Connect* connect919 = new Connect();
-connect919->setNodeField("keyValue");
-connect919->setProtoField("l_middle_proximal_keyValue");
-IS917->addConnect(connect919);
+connect919->setNodeField(CString("keyValue"));
+connect919->setProtoField(CString("l_middle_proximal_keyValue"));
+IS917->addChild(connect919);
 
 Connect* connect920 = new Connect();
-connect920->setNodeField("value_changed");
-connect920->setProtoField("l_middle_proximal_changed");
-IS917->addConnect(connect920);
+connect920->setNodeField(CString("value_changed"));
+connect920->setProtoField(CString("l_middle_proximal_changed"));
+IS917->addChild(connect920);
 
-OrientationInterpolator916->setIS(IS917);
+OrientationInterpolator916->addChild(IS917);
 
 ProtoBody603->addChild(OrientationInterpolator916);
 
 ROUTE* ROUTE921 = new ROUTE();
-ROUTE921->setFromField("fraction_changed");
-ROUTE921->setFromNode("BehaviorClock");
-ROUTE921->setToField("set_fraction");
-ROUTE921->setToNode("l_middle_proximal_OI");
+ROUTE921->setFromField(CString("fraction_changed"));
+ROUTE921->setFromNode(CString("BehaviorClock"));
+ROUTE921->setToField(CString("set_fraction"));
+ROUTE921->setToNode(CString("l_middle_proximal_OI"));
 ProtoBody603->addChild(ROUTE921);
 
 OrientationInterpolator* OrientationInterpolator922 = new OrientationInterpolator();
-OrientationInterpolator922->setDEF("l_midproximal_OI");
+OrientationInterpolator922->setDEF(CString("l_midproximal_OI"));
 IS* IS923 = new IS();
 Connect* connect924 = new Connect();
-connect924->setNodeField("key");
-connect924->setProtoField("l_midproximal_key");
-IS923->addConnect(connect924);
+connect924->setNodeField(CString("key"));
+connect924->setProtoField(CString("l_midproximal_key"));
+IS923->addChild(connect924);
 
 Connect* connect925 = new Connect();
-connect925->setNodeField("keyValue");
-connect925->setProtoField("l_midproximal_keyValue");
-IS923->addConnect(connect925);
+connect925->setNodeField(CString("keyValue"));
+connect925->setProtoField(CString("l_midproximal_keyValue"));
+IS923->addChild(connect925);
 
 Connect* connect926 = new Connect();
-connect926->setNodeField("value_changed");
-connect926->setProtoField("l_midproximal_changed");
-IS923->addConnect(connect926);
+connect926->setNodeField(CString("value_changed"));
+connect926->setProtoField(CString("l_midproximal_changed"));
+IS923->addChild(connect926);
 
-OrientationInterpolator922->setIS(IS923);
+OrientationInterpolator922->addChild(IS923);
 
 ProtoBody603->addChild(OrientationInterpolator922);
 
 ROUTE* ROUTE927 = new ROUTE();
-ROUTE927->setFromField("fraction_changed");
-ROUTE927->setFromNode("BehaviorClock");
-ROUTE927->setToField("set_fraction");
-ROUTE927->setToNode("l_midproximal_OI");
+ROUTE927->setFromField(CString("fraction_changed"));
+ROUTE927->setFromNode(CString("BehaviorClock"));
+ROUTE927->setToField(CString("set_fraction"));
+ROUTE927->setToNode(CString("l_midproximal_OI"));
 ProtoBody603->addChild(ROUTE927);
 
 OrientationInterpolator* OrientationInterpolator928 = new OrientationInterpolator();
-OrientationInterpolator928->setDEF("l_midtarsal_OI");
+OrientationInterpolator928->setDEF(CString("l_midtarsal_OI"));
 IS* IS929 = new IS();
 Connect* connect930 = new Connect();
-connect930->setNodeField("key");
-connect930->setProtoField("l_midtarsal_key");
-IS929->addConnect(connect930);
+connect930->setNodeField(CString("key"));
+connect930->setProtoField(CString("l_midtarsal_key"));
+IS929->addChild(connect930);
 
 Connect* connect931 = new Connect();
-connect931->setNodeField("keyValue");
-connect931->setProtoField("l_midtarsal_keyValue");
-IS929->addConnect(connect931);
+connect931->setNodeField(CString("keyValue"));
+connect931->setProtoField(CString("l_midtarsal_keyValue"));
+IS929->addChild(connect931);
 
 Connect* connect932 = new Connect();
-connect932->setNodeField("value_changed");
-connect932->setProtoField("l_midtarsal_changed");
-IS929->addConnect(connect932);
+connect932->setNodeField(CString("value_changed"));
+connect932->setProtoField(CString("l_midtarsal_changed"));
+IS929->addChild(connect932);
 
-OrientationInterpolator928->setIS(IS929);
+OrientationInterpolator928->addChild(IS929);
 
 ProtoBody603->addChild(OrientationInterpolator928);
 
 ROUTE* ROUTE933 = new ROUTE();
-ROUTE933->setFromField("fraction_changed");
-ROUTE933->setFromNode("BehaviorClock");
-ROUTE933->setToField("set_fraction");
-ROUTE933->setToNode("l_midtarsal_OI");
+ROUTE933->setFromField(CString("fraction_changed"));
+ROUTE933->setFromNode(CString("BehaviorClock"));
+ROUTE933->setToField(CString("set_fraction"));
+ROUTE933->setToNode(CString("l_midtarsal_OI"));
 ProtoBody603->addChild(ROUTE933);
 
 OrientationInterpolator* OrientationInterpolator934 = new OrientationInterpolator();
-OrientationInterpolator934->setDEF("l_pinky0_OI");
+OrientationInterpolator934->setDEF(CString("l_pinky0_OI"));
 IS* IS935 = new IS();
 Connect* connect936 = new Connect();
-connect936->setNodeField("key");
-connect936->setProtoField("l_pinky0_key");
-IS935->addConnect(connect936);
+connect936->setNodeField(CString("key"));
+connect936->setProtoField(CString("l_pinky0_key"));
+IS935->addChild(connect936);
 
 Connect* connect937 = new Connect();
-connect937->setNodeField("keyValue");
-connect937->setProtoField("l_pinky0_keyValue");
-IS935->addConnect(connect937);
+connect937->setNodeField(CString("keyValue"));
+connect937->setProtoField(CString("l_pinky0_keyValue"));
+IS935->addChild(connect937);
 
 Connect* connect938 = new Connect();
-connect938->setNodeField("value_changed");
-connect938->setProtoField("l_pinky0_changed");
-IS935->addConnect(connect938);
+connect938->setNodeField(CString("value_changed"));
+connect938->setProtoField(CString("l_pinky0_changed"));
+IS935->addChild(connect938);
 
-OrientationInterpolator934->setIS(IS935);
+OrientationInterpolator934->addChild(IS935);
 
 ProtoBody603->addChild(OrientationInterpolator934);
 
 ROUTE* ROUTE939 = new ROUTE();
-ROUTE939->setFromField("fraction_changed");
-ROUTE939->setFromNode("BehaviorClock");
-ROUTE939->setToField("set_fraction");
-ROUTE939->setToNode("l_pinky0_OI");
+ROUTE939->setFromField(CString("fraction_changed"));
+ROUTE939->setFromNode(CString("BehaviorClock"));
+ROUTE939->setToField(CString("set_fraction"));
+ROUTE939->setToNode(CString("l_pinky0_OI"));
 ProtoBody603->addChild(ROUTE939);
 
 OrientationInterpolator* OrientationInterpolator940 = new OrientationInterpolator();
-OrientationInterpolator940->setDEF("l_pinky1_OI");
+OrientationInterpolator940->setDEF(CString("l_pinky1_OI"));
 IS* IS941 = new IS();
 Connect* connect942 = new Connect();
-connect942->setNodeField("key");
-connect942->setProtoField("l_pinky1_key");
-IS941->addConnect(connect942);
+connect942->setNodeField(CString("key"));
+connect942->setProtoField(CString("l_pinky1_key"));
+IS941->addChild(connect942);
 
 Connect* connect943 = new Connect();
-connect943->setNodeField("keyValue");
-connect943->setProtoField("l_pinky1_keyValue");
-IS941->addConnect(connect943);
+connect943->setNodeField(CString("keyValue"));
+connect943->setProtoField(CString("l_pinky1_keyValue"));
+IS941->addChild(connect943);
 
 Connect* connect944 = new Connect();
-connect944->setNodeField("value_changed");
-connect944->setProtoField("l_pinky1_changed");
-IS941->addConnect(connect944);
+connect944->setNodeField(CString("value_changed"));
+connect944->setProtoField(CString("l_pinky1_changed"));
+IS941->addChild(connect944);
 
-OrientationInterpolator940->setIS(IS941);
+OrientationInterpolator940->addChild(IS941);
 
 ProtoBody603->addChild(OrientationInterpolator940);
 
 ROUTE* ROUTE945 = new ROUTE();
-ROUTE945->setFromField("fraction_changed");
-ROUTE945->setFromNode("BehaviorClock");
-ROUTE945->setToField("set_fraction");
-ROUTE945->setToNode("l_pinky1_OI");
+ROUTE945->setFromField(CString("fraction_changed"));
+ROUTE945->setFromNode(CString("BehaviorClock"));
+ROUTE945->setToField(CString("set_fraction"));
+ROUTE945->setToNode(CString("l_pinky1_OI"));
 ProtoBody603->addChild(ROUTE945);
 
 OrientationInterpolator* OrientationInterpolator946 = new OrientationInterpolator();
-OrientationInterpolator946->setDEF("l_pinky2_OI");
+OrientationInterpolator946->setDEF(CString("l_pinky2_OI"));
 IS* IS947 = new IS();
 Connect* connect948 = new Connect();
-connect948->setNodeField("key");
-connect948->setProtoField("l_pinky2_key");
-IS947->addConnect(connect948);
+connect948->setNodeField(CString("key"));
+connect948->setProtoField(CString("l_pinky2_key"));
+IS947->addChild(connect948);
 
 Connect* connect949 = new Connect();
-connect949->setNodeField("keyValue");
-connect949->setProtoField("l_pinky2_keyValue");
-IS947->addConnect(connect949);
+connect949->setNodeField(CString("keyValue"));
+connect949->setProtoField(CString("l_pinky2_keyValue"));
+IS947->addChild(connect949);
 
 Connect* connect950 = new Connect();
-connect950->setNodeField("value_changed");
-connect950->setProtoField("l_pinky2_changed");
-IS947->addConnect(connect950);
+connect950->setNodeField(CString("value_changed"));
+connect950->setProtoField(CString("l_pinky2_changed"));
+IS947->addChild(connect950);
 
-OrientationInterpolator946->setIS(IS947);
+OrientationInterpolator946->addChild(IS947);
 
 ProtoBody603->addChild(OrientationInterpolator946);
 
 ROUTE* ROUTE951 = new ROUTE();
-ROUTE951->setFromField("fraction_changed");
-ROUTE951->setFromNode("BehaviorClock");
-ROUTE951->setToField("set_fraction");
-ROUTE951->setToNode("l_pinky2_OI");
+ROUTE951->setFromField(CString("fraction_changed"));
+ROUTE951->setFromNode(CString("BehaviorClock"));
+ROUTE951->setToField(CString("set_fraction"));
+ROUTE951->setToNode(CString("l_pinky2_OI"));
 ProtoBody603->addChild(ROUTE951);
 
 OrientationInterpolator* OrientationInterpolator952 = new OrientationInterpolator();
-OrientationInterpolator952->setDEF("l_pinky3_OI");
+OrientationInterpolator952->setDEF(CString("l_pinky3_OI"));
 IS* IS953 = new IS();
 Connect* connect954 = new Connect();
-connect954->setNodeField("key");
-connect954->setProtoField("l_pinky3_key");
-IS953->addConnect(connect954);
+connect954->setNodeField(CString("key"));
+connect954->setProtoField(CString("l_pinky3_key"));
+IS953->addChild(connect954);
 
 Connect* connect955 = new Connect();
-connect955->setNodeField("keyValue");
-connect955->setProtoField("l_pinky3_keyValue");
-IS953->addConnect(connect955);
+connect955->setNodeField(CString("keyValue"));
+connect955->setProtoField(CString("l_pinky3_keyValue"));
+IS953->addChild(connect955);
 
 Connect* connect956 = new Connect();
-connect956->setNodeField("value_changed");
-connect956->setProtoField("l_pinky3_changed");
-IS953->addConnect(connect956);
+connect956->setNodeField(CString("value_changed"));
+connect956->setProtoField(CString("l_pinky3_changed"));
+IS953->addChild(connect956);
 
-OrientationInterpolator952->setIS(IS953);
+OrientationInterpolator952->addChild(IS953);
 
 ProtoBody603->addChild(OrientationInterpolator952);
 
 ROUTE* ROUTE957 = new ROUTE();
-ROUTE957->setFromField("fraction_changed");
-ROUTE957->setFromNode("BehaviorClock");
-ROUTE957->setToField("set_fraction");
-ROUTE957->setToNode("l_pinky3_OI");
+ROUTE957->setFromField(CString("fraction_changed"));
+ROUTE957->setFromNode(CString("BehaviorClock"));
+ROUTE957->setToField(CString("set_fraction"));
+ROUTE957->setToNode(CString("l_pinky3_OI"));
 ProtoBody603->addChild(ROUTE957);
 
 OrientationInterpolator* OrientationInterpolator958 = new OrientationInterpolator();
-OrientationInterpolator958->setDEF("l_pinky_distal_OI");
+OrientationInterpolator958->setDEF(CString("l_pinky_distal_OI"));
 IS* IS959 = new IS();
 Connect* connect960 = new Connect();
-connect960->setNodeField("key");
-connect960->setProtoField("l_pinky_distal_key");
-IS959->addConnect(connect960);
+connect960->setNodeField(CString("key"));
+connect960->setProtoField(CString("l_pinky_distal_key"));
+IS959->addChild(connect960);
 
 Connect* connect961 = new Connect();
-connect961->setNodeField("keyValue");
-connect961->setProtoField("l_pinky_distal_keyValue");
-IS959->addConnect(connect961);
+connect961->setNodeField(CString("keyValue"));
+connect961->setProtoField(CString("l_pinky_distal_keyValue"));
+IS959->addChild(connect961);
 
 Connect* connect962 = new Connect();
-connect962->setNodeField("value_changed");
-connect962->setProtoField("l_pinky_distal_changed");
-IS959->addConnect(connect962);
+connect962->setNodeField(CString("value_changed"));
+connect962->setProtoField(CString("l_pinky_distal_changed"));
+IS959->addChild(connect962);
 
-OrientationInterpolator958->setIS(IS959);
+OrientationInterpolator958->addChild(IS959);
 
 ProtoBody603->addChild(OrientationInterpolator958);
 
 ROUTE* ROUTE963 = new ROUTE();
-ROUTE963->setFromField("fraction_changed");
-ROUTE963->setFromNode("BehaviorClock");
-ROUTE963->setToField("set_fraction");
-ROUTE963->setToNode("l_pinky_distal_OI");
+ROUTE963->setFromField(CString("fraction_changed"));
+ROUTE963->setFromNode(CString("BehaviorClock"));
+ROUTE963->setToField(CString("set_fraction"));
+ROUTE963->setToNode(CString("l_pinky_distal_OI"));
 ProtoBody603->addChild(ROUTE963);
 
 OrientationInterpolator* OrientationInterpolator964 = new OrientationInterpolator();
-OrientationInterpolator964->setDEF("l_pinky_metacarpal_OI");
+OrientationInterpolator964->setDEF(CString("l_pinky_metacarpal_OI"));
 IS* IS965 = new IS();
 Connect* connect966 = new Connect();
-connect966->setNodeField("key");
-connect966->setProtoField("l_pinky_metacarpal_key");
-IS965->addConnect(connect966);
+connect966->setNodeField(CString("key"));
+connect966->setProtoField(CString("l_pinky_metacarpal_key"));
+IS965->addChild(connect966);
 
 Connect* connect967 = new Connect();
-connect967->setNodeField("keyValue");
-connect967->setProtoField("l_pinky_metacarpal_keyValue");
-IS965->addConnect(connect967);
+connect967->setNodeField(CString("keyValue"));
+connect967->setProtoField(CString("l_pinky_metacarpal_keyValue"));
+IS965->addChild(connect967);
 
 Connect* connect968 = new Connect();
-connect968->setNodeField("value_changed");
-connect968->setProtoField("l_pinky_metacarpal_changed");
-IS965->addConnect(connect968);
+connect968->setNodeField(CString("value_changed"));
+connect968->setProtoField(CString("l_pinky_metacarpal_changed"));
+IS965->addChild(connect968);
 
-OrientationInterpolator964->setIS(IS965);
+OrientationInterpolator964->addChild(IS965);
 
 ProtoBody603->addChild(OrientationInterpolator964);
 
 ROUTE* ROUTE969 = new ROUTE();
-ROUTE969->setFromField("fraction_changed");
-ROUTE969->setFromNode("BehaviorClock");
-ROUTE969->setToField("set_fraction");
-ROUTE969->setToNode("l_pinky_metacarpal_OI");
+ROUTE969->setFromField(CString("fraction_changed"));
+ROUTE969->setFromNode(CString("BehaviorClock"));
+ROUTE969->setToField(CString("set_fraction"));
+ROUTE969->setToNode(CString("l_pinky_metacarpal_OI"));
 ProtoBody603->addChild(ROUTE969);
 
 OrientationInterpolator* OrientationInterpolator970 = new OrientationInterpolator();
-OrientationInterpolator970->setDEF("l_pinky_middle_OI");
+OrientationInterpolator970->setDEF(CString("l_pinky_middle_OI"));
 IS* IS971 = new IS();
 Connect* connect972 = new Connect();
-connect972->setNodeField("key");
-connect972->setProtoField("l_pinky_middle_key");
-IS971->addConnect(connect972);
+connect972->setNodeField(CString("key"));
+connect972->setProtoField(CString("l_pinky_middle_key"));
+IS971->addChild(connect972);
 
 Connect* connect973 = new Connect();
-connect973->setNodeField("keyValue");
-connect973->setProtoField("l_pinky_middle_keyValue");
-IS971->addConnect(connect973);
+connect973->setNodeField(CString("keyValue"));
+connect973->setProtoField(CString("l_pinky_middle_keyValue"));
+IS971->addChild(connect973);
 
 Connect* connect974 = new Connect();
-connect974->setNodeField("value_changed");
-connect974->setProtoField("l_pinky_middle_changed");
-IS971->addConnect(connect974);
+connect974->setNodeField(CString("value_changed"));
+connect974->setProtoField(CString("l_pinky_middle_changed"));
+IS971->addChild(connect974);
 
-OrientationInterpolator970->setIS(IS971);
+OrientationInterpolator970->addChild(IS971);
 
 ProtoBody603->addChild(OrientationInterpolator970);
 
 ROUTE* ROUTE975 = new ROUTE();
-ROUTE975->setFromField("fraction_changed");
-ROUTE975->setFromNode("BehaviorClock");
-ROUTE975->setToField("set_fraction");
-ROUTE975->setToNode("l_pinky_middle_OI");
+ROUTE975->setFromField(CString("fraction_changed"));
+ROUTE975->setFromNode(CString("BehaviorClock"));
+ROUTE975->setToField(CString("set_fraction"));
+ROUTE975->setToNode(CString("l_pinky_middle_OI"));
 ProtoBody603->addChild(ROUTE975);
 
 OrientationInterpolator* OrientationInterpolator976 = new OrientationInterpolator();
-OrientationInterpolator976->setDEF("l_pinky_proximal_OI");
+OrientationInterpolator976->setDEF(CString("l_pinky_proximal_OI"));
 IS* IS977 = new IS();
 Connect* connect978 = new Connect();
-connect978->setNodeField("key");
-connect978->setProtoField("l_pinky_proximal_key");
-IS977->addConnect(connect978);
+connect978->setNodeField(CString("key"));
+connect978->setProtoField(CString("l_pinky_proximal_key"));
+IS977->addChild(connect978);
 
 Connect* connect979 = new Connect();
-connect979->setNodeField("keyValue");
-connect979->setProtoField("l_pinky_proximal_keyValue");
-IS977->addConnect(connect979);
+connect979->setNodeField(CString("keyValue"));
+connect979->setProtoField(CString("l_pinky_proximal_keyValue"));
+IS977->addChild(connect979);
 
 Connect* connect980 = new Connect();
-connect980->setNodeField("value_changed");
-connect980->setProtoField("l_pinky_proximal_changed");
-IS977->addConnect(connect980);
+connect980->setNodeField(CString("value_changed"));
+connect980->setProtoField(CString("l_pinky_proximal_changed"));
+IS977->addChild(connect980);
 
-OrientationInterpolator976->setIS(IS977);
+OrientationInterpolator976->addChild(IS977);
 
 ProtoBody603->addChild(OrientationInterpolator976);
 
 ROUTE* ROUTE981 = new ROUTE();
-ROUTE981->setFromField("fraction_changed");
-ROUTE981->setFromNode("BehaviorClock");
-ROUTE981->setToField("set_fraction");
-ROUTE981->setToNode("l_pinky_proximal_OI");
+ROUTE981->setFromField(CString("fraction_changed"));
+ROUTE981->setFromNode(CString("BehaviorClock"));
+ROUTE981->setToField(CString("set_fraction"));
+ROUTE981->setToNode(CString("l_pinky_proximal_OI"));
 ProtoBody603->addChild(ROUTE981);
 
 OrientationInterpolator* OrientationInterpolator982 = new OrientationInterpolator();
-OrientationInterpolator982->setDEF("l_ring0_OI");
+OrientationInterpolator982->setDEF(CString("l_ring0_OI"));
 IS* IS983 = new IS();
 Connect* connect984 = new Connect();
-connect984->setNodeField("key");
-connect984->setProtoField("l_ring0_key");
-IS983->addConnect(connect984);
+connect984->setNodeField(CString("key"));
+connect984->setProtoField(CString("l_ring0_key"));
+IS983->addChild(connect984);
 
 Connect* connect985 = new Connect();
-connect985->setNodeField("keyValue");
-connect985->setProtoField("l_ring0_keyValue");
-IS983->addConnect(connect985);
+connect985->setNodeField(CString("keyValue"));
+connect985->setProtoField(CString("l_ring0_keyValue"));
+IS983->addChild(connect985);
 
 Connect* connect986 = new Connect();
-connect986->setNodeField("value_changed");
-connect986->setProtoField("l_ring0_changed");
-IS983->addConnect(connect986);
+connect986->setNodeField(CString("value_changed"));
+connect986->setProtoField(CString("l_ring0_changed"));
+IS983->addChild(connect986);
 
-OrientationInterpolator982->setIS(IS983);
+OrientationInterpolator982->addChild(IS983);
 
 ProtoBody603->addChild(OrientationInterpolator982);
 
 ROUTE* ROUTE987 = new ROUTE();
-ROUTE987->setFromField("fraction_changed");
-ROUTE987->setFromNode("BehaviorClock");
-ROUTE987->setToField("set_fraction");
-ROUTE987->setToNode("l_ring0_OI");
+ROUTE987->setFromField(CString("fraction_changed"));
+ROUTE987->setFromNode(CString("BehaviorClock"));
+ROUTE987->setToField(CString("set_fraction"));
+ROUTE987->setToNode(CString("l_ring0_OI"));
 ProtoBody603->addChild(ROUTE987);
 
 OrientationInterpolator* OrientationInterpolator988 = new OrientationInterpolator();
-OrientationInterpolator988->setDEF("l_ring1_OI");
+OrientationInterpolator988->setDEF(CString("l_ring1_OI"));
 IS* IS989 = new IS();
 Connect* connect990 = new Connect();
-connect990->setNodeField("key");
-connect990->setProtoField("l_ring1_key");
-IS989->addConnect(connect990);
+connect990->setNodeField(CString("key"));
+connect990->setProtoField(CString("l_ring1_key"));
+IS989->addChild(connect990);
 
 Connect* connect991 = new Connect();
-connect991->setNodeField("keyValue");
-connect991->setProtoField("l_ring1_keyValue");
-IS989->addConnect(connect991);
+connect991->setNodeField(CString("keyValue"));
+connect991->setProtoField(CString("l_ring1_keyValue"));
+IS989->addChild(connect991);
 
 Connect* connect992 = new Connect();
-connect992->setNodeField("value_changed");
-connect992->setProtoField("l_ring1_changed");
-IS989->addConnect(connect992);
+connect992->setNodeField(CString("value_changed"));
+connect992->setProtoField(CString("l_ring1_changed"));
+IS989->addChild(connect992);
 
-OrientationInterpolator988->setIS(IS989);
+OrientationInterpolator988->addChild(IS989);
 
 ProtoBody603->addChild(OrientationInterpolator988);
 
 ROUTE* ROUTE993 = new ROUTE();
-ROUTE993->setFromField("fraction_changed");
-ROUTE993->setFromNode("BehaviorClock");
-ROUTE993->setToField("set_fraction");
-ROUTE993->setToNode("l_ring1_OI");
+ROUTE993->setFromField(CString("fraction_changed"));
+ROUTE993->setFromNode(CString("BehaviorClock"));
+ROUTE993->setToField(CString("set_fraction"));
+ROUTE993->setToNode(CString("l_ring1_OI"));
 ProtoBody603->addChild(ROUTE993);
 
 OrientationInterpolator* OrientationInterpolator994 = new OrientationInterpolator();
-OrientationInterpolator994->setDEF("l_ring2_OI");
+OrientationInterpolator994->setDEF(CString("l_ring2_OI"));
 IS* IS995 = new IS();
 Connect* connect996 = new Connect();
-connect996->setNodeField("key");
-connect996->setProtoField("l_ring2_key");
-IS995->addConnect(connect996);
+connect996->setNodeField(CString("key"));
+connect996->setProtoField(CString("l_ring2_key"));
+IS995->addChild(connect996);
 
 Connect* connect997 = new Connect();
-connect997->setNodeField("keyValue");
-connect997->setProtoField("l_ring2_keyValue");
-IS995->addConnect(connect997);
+connect997->setNodeField(CString("keyValue"));
+connect997->setProtoField(CString("l_ring2_keyValue"));
+IS995->addChild(connect997);
 
 Connect* connect998 = new Connect();
-connect998->setNodeField("value_changed");
-connect998->setProtoField("l_ring2_changed");
-IS995->addConnect(connect998);
+connect998->setNodeField(CString("value_changed"));
+connect998->setProtoField(CString("l_ring2_changed"));
+IS995->addChild(connect998);
 
-OrientationInterpolator994->setIS(IS995);
+OrientationInterpolator994->addChild(IS995);
 
 ProtoBody603->addChild(OrientationInterpolator994);
 
 ROUTE* ROUTE999 = new ROUTE();
-ROUTE999->setFromField("fraction_changed");
-ROUTE999->setFromNode("BehaviorClock");
-ROUTE999->setToField("set_fraction");
-ROUTE999->setToNode("l_ring2_OI");
+ROUTE999->setFromField(CString("fraction_changed"));
+ROUTE999->setFromNode(CString("BehaviorClock"));
+ROUTE999->setToField(CString("set_fraction"));
+ROUTE999->setToNode(CString("l_ring2_OI"));
 ProtoBody603->addChild(ROUTE999);
 
 OrientationInterpolator* OrientationInterpolator1000 = new OrientationInterpolator();
-OrientationInterpolator1000->setDEF("l_ring3_OI");
+OrientationInterpolator1000->setDEF(CString("l_ring3_OI"));
 IS* IS1001 = new IS();
 Connect* connect1002 = new Connect();
-connect1002->setNodeField("key");
-connect1002->setProtoField("l_ring3_key");
-IS1001->addConnect(connect1002);
+connect1002->setNodeField(CString("key"));
+connect1002->setProtoField(CString("l_ring3_key"));
+IS1001->addChild(connect1002);
 
 Connect* connect1003 = new Connect();
-connect1003->setNodeField("keyValue");
-connect1003->setProtoField("l_ring3_keyValue");
-IS1001->addConnect(connect1003);
+connect1003->setNodeField(CString("keyValue"));
+connect1003->setProtoField(CString("l_ring3_keyValue"));
+IS1001->addChild(connect1003);
 
 Connect* connect1004 = new Connect();
-connect1004->setNodeField("value_changed");
-connect1004->setProtoField("l_ring3_changed");
-IS1001->addConnect(connect1004);
+connect1004->setNodeField(CString("value_changed"));
+connect1004->setProtoField(CString("l_ring3_changed"));
+IS1001->addChild(connect1004);
 
-OrientationInterpolator1000->setIS(IS1001);
+OrientationInterpolator1000->addChild(IS1001);
 
 ProtoBody603->addChild(OrientationInterpolator1000);
 
 ROUTE* ROUTE1005 = new ROUTE();
-ROUTE1005->setFromField("fraction_changed");
-ROUTE1005->setFromNode("BehaviorClock");
-ROUTE1005->setToField("set_fraction");
-ROUTE1005->setToNode("l_ring3_OI");
+ROUTE1005->setFromField(CString("fraction_changed"));
+ROUTE1005->setFromNode(CString("BehaviorClock"));
+ROUTE1005->setToField(CString("set_fraction"));
+ROUTE1005->setToNode(CString("l_ring3_OI"));
 ProtoBody603->addChild(ROUTE1005);
 
 OrientationInterpolator* OrientationInterpolator1006 = new OrientationInterpolator();
-OrientationInterpolator1006->setDEF("l_ring_distal_OI");
+OrientationInterpolator1006->setDEF(CString("l_ring_distal_OI"));
 IS* IS1007 = new IS();
 Connect* connect1008 = new Connect();
-connect1008->setNodeField("key");
-connect1008->setProtoField("l_ring_distal_key");
-IS1007->addConnect(connect1008);
+connect1008->setNodeField(CString("key"));
+connect1008->setProtoField(CString("l_ring_distal_key"));
+IS1007->addChild(connect1008);
 
 Connect* connect1009 = new Connect();
-connect1009->setNodeField("keyValue");
-connect1009->setProtoField("l_ring_distal_keyValue");
-IS1007->addConnect(connect1009);
+connect1009->setNodeField(CString("keyValue"));
+connect1009->setProtoField(CString("l_ring_distal_keyValue"));
+IS1007->addChild(connect1009);
 
 Connect* connect1010 = new Connect();
-connect1010->setNodeField("value_changed");
-connect1010->setProtoField("l_ring_distal_changed");
-IS1007->addConnect(connect1010);
+connect1010->setNodeField(CString("value_changed"));
+connect1010->setProtoField(CString("l_ring_distal_changed"));
+IS1007->addChild(connect1010);
 
-OrientationInterpolator1006->setIS(IS1007);
+OrientationInterpolator1006->addChild(IS1007);
 
 ProtoBody603->addChild(OrientationInterpolator1006);
 
 ROUTE* ROUTE1011 = new ROUTE();
-ROUTE1011->setFromField("fraction_changed");
-ROUTE1011->setFromNode("BehaviorClock");
-ROUTE1011->setToField("set_fraction");
-ROUTE1011->setToNode("l_ring_distal_OI");
+ROUTE1011->setFromField(CString("fraction_changed"));
+ROUTE1011->setFromNode(CString("BehaviorClock"));
+ROUTE1011->setToField(CString("set_fraction"));
+ROUTE1011->setToNode(CString("l_ring_distal_OI"));
 ProtoBody603->addChild(ROUTE1011);
 
 OrientationInterpolator* OrientationInterpolator1012 = new OrientationInterpolator();
-OrientationInterpolator1012->setDEF("l_ring_metacarpal_OI");
+OrientationInterpolator1012->setDEF(CString("l_ring_metacarpal_OI"));
 IS* IS1013 = new IS();
 Connect* connect1014 = new Connect();
-connect1014->setNodeField("key");
-connect1014->setProtoField("l_ring_metacarpal_key");
-IS1013->addConnect(connect1014);
+connect1014->setNodeField(CString("key"));
+connect1014->setProtoField(CString("l_ring_metacarpal_key"));
+IS1013->addChild(connect1014);
 
 Connect* connect1015 = new Connect();
-connect1015->setNodeField("keyValue");
-connect1015->setProtoField("l_ring_metacarpal_keyValue");
-IS1013->addConnect(connect1015);
+connect1015->setNodeField(CString("keyValue"));
+connect1015->setProtoField(CString("l_ring_metacarpal_keyValue"));
+IS1013->addChild(connect1015);
 
 Connect* connect1016 = new Connect();
-connect1016->setNodeField("value_changed");
-connect1016->setProtoField("l_ring_metacarpal_changed");
-IS1013->addConnect(connect1016);
+connect1016->setNodeField(CString("value_changed"));
+connect1016->setProtoField(CString("l_ring_metacarpal_changed"));
+IS1013->addChild(connect1016);
 
-OrientationInterpolator1012->setIS(IS1013);
+OrientationInterpolator1012->addChild(IS1013);
 
 ProtoBody603->addChild(OrientationInterpolator1012);
 
 ROUTE* ROUTE1017 = new ROUTE();
-ROUTE1017->setFromField("fraction_changed");
-ROUTE1017->setFromNode("BehaviorClock");
-ROUTE1017->setToField("set_fraction");
-ROUTE1017->setToNode("l_ring_metacarpal_OI");
+ROUTE1017->setFromField(CString("fraction_changed"));
+ROUTE1017->setFromNode(CString("BehaviorClock"));
+ROUTE1017->setToField(CString("set_fraction"));
+ROUTE1017->setToNode(CString("l_ring_metacarpal_OI"));
 ProtoBody603->addChild(ROUTE1017);
 
 OrientationInterpolator* OrientationInterpolator1018 = new OrientationInterpolator();
-OrientationInterpolator1018->setDEF("l_ring_middle_OI");
+OrientationInterpolator1018->setDEF(CString("l_ring_middle_OI"));
 IS* IS1019 = new IS();
 Connect* connect1020 = new Connect();
-connect1020->setNodeField("key");
-connect1020->setProtoField("l_ring_middle_key");
-IS1019->addConnect(connect1020);
+connect1020->setNodeField(CString("key"));
+connect1020->setProtoField(CString("l_ring_middle_key"));
+IS1019->addChild(connect1020);
 
 Connect* connect1021 = new Connect();
-connect1021->setNodeField("keyValue");
-connect1021->setProtoField("l_ring_middle_keyValue");
-IS1019->addConnect(connect1021);
+connect1021->setNodeField(CString("keyValue"));
+connect1021->setProtoField(CString("l_ring_middle_keyValue"));
+IS1019->addChild(connect1021);
 
 Connect* connect1022 = new Connect();
-connect1022->setNodeField("value_changed");
-connect1022->setProtoField("l_ring_middle_changed");
-IS1019->addConnect(connect1022);
+connect1022->setNodeField(CString("value_changed"));
+connect1022->setProtoField(CString("l_ring_middle_changed"));
+IS1019->addChild(connect1022);
 
-OrientationInterpolator1018->setIS(IS1019);
+OrientationInterpolator1018->addChild(IS1019);
 
 ProtoBody603->addChild(OrientationInterpolator1018);
 
 ROUTE* ROUTE1023 = new ROUTE();
-ROUTE1023->setFromField("fraction_changed");
-ROUTE1023->setFromNode("BehaviorClock");
-ROUTE1023->setToField("set_fraction");
-ROUTE1023->setToNode("l_ring_middle_OI");
+ROUTE1023->setFromField(CString("fraction_changed"));
+ROUTE1023->setFromNode(CString("BehaviorClock"));
+ROUTE1023->setToField(CString("set_fraction"));
+ROUTE1023->setToNode(CString("l_ring_middle_OI"));
 ProtoBody603->addChild(ROUTE1023);
 
 OrientationInterpolator* OrientationInterpolator1024 = new OrientationInterpolator();
-OrientationInterpolator1024->setDEF("l_ring_proximal_OI");
+OrientationInterpolator1024->setDEF(CString("l_ring_proximal_OI"));
 IS* IS1025 = new IS();
 Connect* connect1026 = new Connect();
-connect1026->setNodeField("key");
-connect1026->setProtoField("l_ring_proximal_key");
-IS1025->addConnect(connect1026);
+connect1026->setNodeField(CString("key"));
+connect1026->setProtoField(CString("l_ring_proximal_key"));
+IS1025->addChild(connect1026);
 
 Connect* connect1027 = new Connect();
-connect1027->setNodeField("keyValue");
-connect1027->setProtoField("l_ring_proximal_keyValue");
-IS1025->addConnect(connect1027);
+connect1027->setNodeField(CString("keyValue"));
+connect1027->setProtoField(CString("l_ring_proximal_keyValue"));
+IS1025->addChild(connect1027);
 
 Connect* connect1028 = new Connect();
-connect1028->setNodeField("value_changed");
-connect1028->setProtoField("l_ring_proximal_changed");
-IS1025->addConnect(connect1028);
+connect1028->setNodeField(CString("value_changed"));
+connect1028->setProtoField(CString("l_ring_proximal_changed"));
+IS1025->addChild(connect1028);
 
-OrientationInterpolator1024->setIS(IS1025);
+OrientationInterpolator1024->addChild(IS1025);
 
 ProtoBody603->addChild(OrientationInterpolator1024);
 
 ROUTE* ROUTE1029 = new ROUTE();
-ROUTE1029->setFromField("fraction_changed");
-ROUTE1029->setFromNode("BehaviorClock");
-ROUTE1029->setToField("set_fraction");
-ROUTE1029->setToNode("l_ring_proximal_OI");
+ROUTE1029->setFromField(CString("fraction_changed"));
+ROUTE1029->setFromNode(CString("BehaviorClock"));
+ROUTE1029->setToField(CString("set_fraction"));
+ROUTE1029->setToNode(CString("l_ring_proximal_OI"));
 ProtoBody603->addChild(ROUTE1029);
 
 OrientationInterpolator* OrientationInterpolator1030 = new OrientationInterpolator();
-OrientationInterpolator1030->setDEF("l_scapula_OI");
+OrientationInterpolator1030->setDEF(CString("l_scapula_OI"));
 IS* IS1031 = new IS();
 Connect* connect1032 = new Connect();
-connect1032->setNodeField("key");
-connect1032->setProtoField("l_scapula_key");
-IS1031->addConnect(connect1032);
+connect1032->setNodeField(CString("key"));
+connect1032->setProtoField(CString("l_scapula_key"));
+IS1031->addChild(connect1032);
 
 Connect* connect1033 = new Connect();
-connect1033->setNodeField("keyValue");
-connect1033->setProtoField("l_scapula_keyValue");
-IS1031->addConnect(connect1033);
+connect1033->setNodeField(CString("keyValue"));
+connect1033->setProtoField(CString("l_scapula_keyValue"));
+IS1031->addChild(connect1033);
 
 Connect* connect1034 = new Connect();
-connect1034->setNodeField("value_changed");
-connect1034->setProtoField("l_scapula_changed");
-IS1031->addConnect(connect1034);
+connect1034->setNodeField(CString("value_changed"));
+connect1034->setProtoField(CString("l_scapula_changed"));
+IS1031->addChild(connect1034);
 
-OrientationInterpolator1030->setIS(IS1031);
+OrientationInterpolator1030->addChild(IS1031);
 
 ProtoBody603->addChild(OrientationInterpolator1030);
 
 ROUTE* ROUTE1035 = new ROUTE();
-ROUTE1035->setFromField("fraction_changed");
-ROUTE1035->setFromNode("BehaviorClock");
-ROUTE1035->setToField("set_fraction");
-ROUTE1035->setToNode("l_scapula_OI");
+ROUTE1035->setFromField(CString("fraction_changed"));
+ROUTE1035->setFromNode(CString("BehaviorClock"));
+ROUTE1035->setToField(CString("set_fraction"));
+ROUTE1035->setToNode(CString("l_scapula_OI"));
 ProtoBody603->addChild(ROUTE1035);
 
 OrientationInterpolator* OrientationInterpolator1036 = new OrientationInterpolator();
-OrientationInterpolator1036->setDEF("l_shoulder_OI");
+OrientationInterpolator1036->setDEF(CString("l_shoulder_OI"));
 IS* IS1037 = new IS();
 Connect* connect1038 = new Connect();
-connect1038->setNodeField("key");
-connect1038->setProtoField("l_shoulder_key");
-IS1037->addConnect(connect1038);
+connect1038->setNodeField(CString("key"));
+connect1038->setProtoField(CString("l_shoulder_key"));
+IS1037->addChild(connect1038);
 
 Connect* connect1039 = new Connect();
-connect1039->setNodeField("keyValue");
-connect1039->setProtoField("l_shoulder_keyValue");
-IS1037->addConnect(connect1039);
+connect1039->setNodeField(CString("keyValue"));
+connect1039->setProtoField(CString("l_shoulder_keyValue"));
+IS1037->addChild(connect1039);
 
 Connect* connect1040 = new Connect();
-connect1040->setNodeField("value_changed");
-connect1040->setProtoField("l_shoulder_changed");
-IS1037->addConnect(connect1040);
+connect1040->setNodeField(CString("value_changed"));
+connect1040->setProtoField(CString("l_shoulder_changed"));
+IS1037->addChild(connect1040);
 
-OrientationInterpolator1036->setIS(IS1037);
+OrientationInterpolator1036->addChild(IS1037);
 
 ProtoBody603->addChild(OrientationInterpolator1036);
 
 ROUTE* ROUTE1041 = new ROUTE();
-ROUTE1041->setFromField("fraction_changed");
-ROUTE1041->setFromNode("BehaviorClock");
-ROUTE1041->setToField("set_fraction");
-ROUTE1041->setToNode("l_shoulder_OI");
+ROUTE1041->setFromField(CString("fraction_changed"));
+ROUTE1041->setFromNode(CString("BehaviorClock"));
+ROUTE1041->setToField(CString("set_fraction"));
+ROUTE1041->setToNode(CString("l_shoulder_OI"));
 ProtoBody603->addChild(ROUTE1041);
 
 OrientationInterpolator* OrientationInterpolator1042 = new OrientationInterpolator();
-OrientationInterpolator1042->setDEF("l_sternoclavicular_OI");
+OrientationInterpolator1042->setDEF(CString("l_sternoclavicular_OI"));
 IS* IS1043 = new IS();
 Connect* connect1044 = new Connect();
-connect1044->setNodeField("key");
-connect1044->setProtoField("l_sternoclavicular_key");
-IS1043->addConnect(connect1044);
+connect1044->setNodeField(CString("key"));
+connect1044->setProtoField(CString("l_sternoclavicular_key"));
+IS1043->addChild(connect1044);
 
 Connect* connect1045 = new Connect();
-connect1045->setNodeField("keyValue");
-connect1045->setProtoField("l_sternoclavicular_keyValue");
-IS1043->addConnect(connect1045);
+connect1045->setNodeField(CString("keyValue"));
+connect1045->setProtoField(CString("l_sternoclavicular_keyValue"));
+IS1043->addChild(connect1045);
 
 Connect* connect1046 = new Connect();
-connect1046->setNodeField("value_changed");
-connect1046->setProtoField("l_sternoclavicular_changed");
-IS1043->addConnect(connect1046);
+connect1046->setNodeField(CString("value_changed"));
+connect1046->setProtoField(CString("l_sternoclavicular_changed"));
+IS1043->addChild(connect1046);
 
-OrientationInterpolator1042->setIS(IS1043);
+OrientationInterpolator1042->addChild(IS1043);
 
 ProtoBody603->addChild(OrientationInterpolator1042);
 
 ROUTE* ROUTE1047 = new ROUTE();
-ROUTE1047->setFromField("fraction_changed");
-ROUTE1047->setFromNode("BehaviorClock");
-ROUTE1047->setToField("set_fraction");
-ROUTE1047->setToNode("l_sternoclavicular_OI");
+ROUTE1047->setFromField(CString("fraction_changed"));
+ROUTE1047->setFromNode(CString("BehaviorClock"));
+ROUTE1047->setToField(CString("set_fraction"));
+ROUTE1047->setToNode(CString("l_sternoclavicular_OI"));
 ProtoBody603->addChild(ROUTE1047);
 
 OrientationInterpolator* OrientationInterpolator1048 = new OrientationInterpolator();
-OrientationInterpolator1048->setDEF("l_subtalar_OI");
+OrientationInterpolator1048->setDEF(CString("l_subtalar_OI"));
 IS* IS1049 = new IS();
 Connect* connect1050 = new Connect();
-connect1050->setNodeField("key");
-connect1050->setProtoField("l_subtalar_key");
-IS1049->addConnect(connect1050);
+connect1050->setNodeField(CString("key"));
+connect1050->setProtoField(CString("l_subtalar_key"));
+IS1049->addChild(connect1050);
 
 Connect* connect1051 = new Connect();
-connect1051->setNodeField("keyValue");
-connect1051->setProtoField("l_subtalar_keyValue");
-IS1049->addConnect(connect1051);
+connect1051->setNodeField(CString("keyValue"));
+connect1051->setProtoField(CString("l_subtalar_keyValue"));
+IS1049->addChild(connect1051);
 
 Connect* connect1052 = new Connect();
-connect1052->setNodeField("value_changed");
-connect1052->setProtoField("l_subtalar_changed");
-IS1049->addConnect(connect1052);
+connect1052->setNodeField(CString("value_changed"));
+connect1052->setProtoField(CString("l_subtalar_changed"));
+IS1049->addChild(connect1052);
 
-OrientationInterpolator1048->setIS(IS1049);
+OrientationInterpolator1048->addChild(IS1049);
 
 ProtoBody603->addChild(OrientationInterpolator1048);
 
 ROUTE* ROUTE1053 = new ROUTE();
-ROUTE1053->setFromField("fraction_changed");
-ROUTE1053->setFromNode("BehaviorClock");
-ROUTE1053->setToField("set_fraction");
-ROUTE1053->setToNode("l_subtalar_OI");
+ROUTE1053->setFromField(CString("fraction_changed"));
+ROUTE1053->setFromNode(CString("BehaviorClock"));
+ROUTE1053->setToField(CString("set_fraction"));
+ROUTE1053->setToNode(CString("l_subtalar_OI"));
 ProtoBody603->addChild(ROUTE1053);
 
 OrientationInterpolator* OrientationInterpolator1054 = new OrientationInterpolator();
-OrientationInterpolator1054->setDEF("l_thigh_OI");
+OrientationInterpolator1054->setDEF(CString("l_thigh_OI"));
 IS* IS1055 = new IS();
 Connect* connect1056 = new Connect();
-connect1056->setNodeField("key");
-connect1056->setProtoField("l_thigh_key");
-IS1055->addConnect(connect1056);
+connect1056->setNodeField(CString("key"));
+connect1056->setProtoField(CString("l_thigh_key"));
+IS1055->addChild(connect1056);
 
 Connect* connect1057 = new Connect();
-connect1057->setNodeField("keyValue");
-connect1057->setProtoField("l_thigh_keyValue");
-IS1055->addConnect(connect1057);
+connect1057->setNodeField(CString("keyValue"));
+connect1057->setProtoField(CString("l_thigh_keyValue"));
+IS1055->addChild(connect1057);
 
 Connect* connect1058 = new Connect();
-connect1058->setNodeField("value_changed");
-connect1058->setProtoField("l_thigh_changed");
-IS1055->addConnect(connect1058);
+connect1058->setNodeField(CString("value_changed"));
+connect1058->setProtoField(CString("l_thigh_changed"));
+IS1055->addChild(connect1058);
 
-OrientationInterpolator1054->setIS(IS1055);
+OrientationInterpolator1054->addChild(IS1055);
 
 ProtoBody603->addChild(OrientationInterpolator1054);
 
 ROUTE* ROUTE1059 = new ROUTE();
-ROUTE1059->setFromField("fraction_changed");
-ROUTE1059->setFromNode("BehaviorClock");
-ROUTE1059->setToField("set_fraction");
-ROUTE1059->setToNode("l_thigh_OI");
+ROUTE1059->setFromField(CString("fraction_changed"));
+ROUTE1059->setFromNode(CString("BehaviorClock"));
+ROUTE1059->setToField(CString("set_fraction"));
+ROUTE1059->setToNode(CString("l_thigh_OI"));
 ProtoBody603->addChild(ROUTE1059);
 
 OrientationInterpolator* OrientationInterpolator1060 = new OrientationInterpolator();
-OrientationInterpolator1060->setDEF("l_thumb1_OI");
+OrientationInterpolator1060->setDEF(CString("l_thumb1_OI"));
 IS* IS1061 = new IS();
 Connect* connect1062 = new Connect();
-connect1062->setNodeField("key");
-connect1062->setProtoField("l_thumb1_key");
-IS1061->addConnect(connect1062);
+connect1062->setNodeField(CString("key"));
+connect1062->setProtoField(CString("l_thumb1_key"));
+IS1061->addChild(connect1062);
 
 Connect* connect1063 = new Connect();
-connect1063->setNodeField("keyValue");
-connect1063->setProtoField("l_thumb1_keyValue");
-IS1061->addConnect(connect1063);
+connect1063->setNodeField(CString("keyValue"));
+connect1063->setProtoField(CString("l_thumb1_keyValue"));
+IS1061->addChild(connect1063);
 
 Connect* connect1064 = new Connect();
-connect1064->setNodeField("value_changed");
-connect1064->setProtoField("l_thumb1_changed");
-IS1061->addConnect(connect1064);
+connect1064->setNodeField(CString("value_changed"));
+connect1064->setProtoField(CString("l_thumb1_changed"));
+IS1061->addChild(connect1064);
 
-OrientationInterpolator1060->setIS(IS1061);
+OrientationInterpolator1060->addChild(IS1061);
 
 ProtoBody603->addChild(OrientationInterpolator1060);
 
 ROUTE* ROUTE1065 = new ROUTE();
-ROUTE1065->setFromField("fraction_changed");
-ROUTE1065->setFromNode("BehaviorClock");
-ROUTE1065->setToField("set_fraction");
-ROUTE1065->setToNode("l_thumb1_OI");
+ROUTE1065->setFromField(CString("fraction_changed"));
+ROUTE1065->setFromNode(CString("BehaviorClock"));
+ROUTE1065->setToField(CString("set_fraction"));
+ROUTE1065->setToNode(CString("l_thumb1_OI"));
 ProtoBody603->addChild(ROUTE1065);
 
 OrientationInterpolator* OrientationInterpolator1066 = new OrientationInterpolator();
-OrientationInterpolator1066->setDEF("l_thumb2_OI");
+OrientationInterpolator1066->setDEF(CString("l_thumb2_OI"));
 IS* IS1067 = new IS();
 Connect* connect1068 = new Connect();
-connect1068->setNodeField("key");
-connect1068->setProtoField("l_thumb2_key");
-IS1067->addConnect(connect1068);
+connect1068->setNodeField(CString("key"));
+connect1068->setProtoField(CString("l_thumb2_key"));
+IS1067->addChild(connect1068);
 
 Connect* connect1069 = new Connect();
-connect1069->setNodeField("keyValue");
-connect1069->setProtoField("l_thumb2_keyValue");
-IS1067->addConnect(connect1069);
+connect1069->setNodeField(CString("keyValue"));
+connect1069->setProtoField(CString("l_thumb2_keyValue"));
+IS1067->addChild(connect1069);
 
 Connect* connect1070 = new Connect();
-connect1070->setNodeField("value_changed");
-connect1070->setProtoField("l_thumb2_changed");
-IS1067->addConnect(connect1070);
+connect1070->setNodeField(CString("value_changed"));
+connect1070->setProtoField(CString("l_thumb2_changed"));
+IS1067->addChild(connect1070);
 
-OrientationInterpolator1066->setIS(IS1067);
+OrientationInterpolator1066->addChild(IS1067);
 
 ProtoBody603->addChild(OrientationInterpolator1066);
 
 ROUTE* ROUTE1071 = new ROUTE();
-ROUTE1071->setFromField("fraction_changed");
-ROUTE1071->setFromNode("BehaviorClock");
-ROUTE1071->setToField("set_fraction");
-ROUTE1071->setToNode("l_thumb2_OI");
+ROUTE1071->setFromField(CString("fraction_changed"));
+ROUTE1071->setFromNode(CString("BehaviorClock"));
+ROUTE1071->setToField(CString("set_fraction"));
+ROUTE1071->setToNode(CString("l_thumb2_OI"));
 ProtoBody603->addChild(ROUTE1071);
 
 OrientationInterpolator* OrientationInterpolator1072 = new OrientationInterpolator();
-OrientationInterpolator1072->setDEF("l_thumb3_OI");
+OrientationInterpolator1072->setDEF(CString("l_thumb3_OI"));
 IS* IS1073 = new IS();
 Connect* connect1074 = new Connect();
-connect1074->setNodeField("key");
-connect1074->setProtoField("l_thumb3_key");
-IS1073->addConnect(connect1074);
+connect1074->setNodeField(CString("key"));
+connect1074->setProtoField(CString("l_thumb3_key"));
+IS1073->addChild(connect1074);
 
 Connect* connect1075 = new Connect();
-connect1075->setNodeField("keyValue");
-connect1075->setProtoField("l_thumb3_keyValue");
-IS1073->addConnect(connect1075);
+connect1075->setNodeField(CString("keyValue"));
+connect1075->setProtoField(CString("l_thumb3_keyValue"));
+IS1073->addChild(connect1075);
 
 Connect* connect1076 = new Connect();
-connect1076->setNodeField("value_changed");
-connect1076->setProtoField("l_thumb3_changed");
-IS1073->addConnect(connect1076);
+connect1076->setNodeField(CString("value_changed"));
+connect1076->setProtoField(CString("l_thumb3_changed"));
+IS1073->addChild(connect1076);
 
-OrientationInterpolator1072->setIS(IS1073);
+OrientationInterpolator1072->addChild(IS1073);
 
 ProtoBody603->addChild(OrientationInterpolator1072);
 
 ROUTE* ROUTE1077 = new ROUTE();
-ROUTE1077->setFromField("fraction_changed");
-ROUTE1077->setFromNode("BehaviorClock");
-ROUTE1077->setToField("set_fraction");
-ROUTE1077->setToNode("l_thumb3_OI");
+ROUTE1077->setFromField(CString("fraction_changed"));
+ROUTE1077->setFromNode(CString("BehaviorClock"));
+ROUTE1077->setToField(CString("set_fraction"));
+ROUTE1077->setToNode(CString("l_thumb3_OI"));
 ProtoBody603->addChild(ROUTE1077);
 
 OrientationInterpolator* OrientationInterpolator1078 = new OrientationInterpolator();
-OrientationInterpolator1078->setDEF("l_thumb_distal_OI");
+OrientationInterpolator1078->setDEF(CString("l_thumb_distal_OI"));
 IS* IS1079 = new IS();
 Connect* connect1080 = new Connect();
-connect1080->setNodeField("key");
-connect1080->setProtoField("l_thumb_distal_key");
-IS1079->addConnect(connect1080);
+connect1080->setNodeField(CString("key"));
+connect1080->setProtoField(CString("l_thumb_distal_key"));
+IS1079->addChild(connect1080);
 
 Connect* connect1081 = new Connect();
-connect1081->setNodeField("keyValue");
-connect1081->setProtoField("l_thumb_distal_keyValue");
-IS1079->addConnect(connect1081);
+connect1081->setNodeField(CString("keyValue"));
+connect1081->setProtoField(CString("l_thumb_distal_keyValue"));
+IS1079->addChild(connect1081);
 
 Connect* connect1082 = new Connect();
-connect1082->setNodeField("value_changed");
-connect1082->setProtoField("l_thumb_distal_changed");
-IS1079->addConnect(connect1082);
+connect1082->setNodeField(CString("value_changed"));
+connect1082->setProtoField(CString("l_thumb_distal_changed"));
+IS1079->addChild(connect1082);
 
-OrientationInterpolator1078->setIS(IS1079);
+OrientationInterpolator1078->addChild(IS1079);
 
 ProtoBody603->addChild(OrientationInterpolator1078);
 
 ROUTE* ROUTE1083 = new ROUTE();
-ROUTE1083->setFromField("fraction_changed");
-ROUTE1083->setFromNode("BehaviorClock");
-ROUTE1083->setToField("set_fraction");
-ROUTE1083->setToNode("l_thumb_distal_OI");
+ROUTE1083->setFromField(CString("fraction_changed"));
+ROUTE1083->setFromNode(CString("BehaviorClock"));
+ROUTE1083->setToField(CString("set_fraction"));
+ROUTE1083->setToNode(CString("l_thumb_distal_OI"));
 ProtoBody603->addChild(ROUTE1083);
 
 OrientationInterpolator* OrientationInterpolator1084 = new OrientationInterpolator();
-OrientationInterpolator1084->setDEF("l_thumb_metacarpal_OI");
+OrientationInterpolator1084->setDEF(CString("l_thumb_metacarpal_OI"));
 IS* IS1085 = new IS();
 Connect* connect1086 = new Connect();
-connect1086->setNodeField("key");
-connect1086->setProtoField("l_thumb_metacarpal_key");
-IS1085->addConnect(connect1086);
+connect1086->setNodeField(CString("key"));
+connect1086->setProtoField(CString("l_thumb_metacarpal_key"));
+IS1085->addChild(connect1086);
 
 Connect* connect1087 = new Connect();
-connect1087->setNodeField("keyValue");
-connect1087->setProtoField("l_thumb_metacarpal_keyValue");
-IS1085->addConnect(connect1087);
+connect1087->setNodeField(CString("keyValue"));
+connect1087->setProtoField(CString("l_thumb_metacarpal_keyValue"));
+IS1085->addChild(connect1087);
 
 Connect* connect1088 = new Connect();
-connect1088->setNodeField("value_changed");
-connect1088->setProtoField("l_thumb_metacarpal_changed");
-IS1085->addConnect(connect1088);
+connect1088->setNodeField(CString("value_changed"));
+connect1088->setProtoField(CString("l_thumb_metacarpal_changed"));
+IS1085->addChild(connect1088);
 
-OrientationInterpolator1084->setIS(IS1085);
+OrientationInterpolator1084->addChild(IS1085);
 
 ProtoBody603->addChild(OrientationInterpolator1084);
 
 ROUTE* ROUTE1089 = new ROUTE();
-ROUTE1089->setFromField("fraction_changed");
-ROUTE1089->setFromNode("BehaviorClock");
-ROUTE1089->setToField("set_fraction");
-ROUTE1089->setToNode("l_thumb_metacarpal_OI");
+ROUTE1089->setFromField(CString("fraction_changed"));
+ROUTE1089->setFromNode(CString("BehaviorClock"));
+ROUTE1089->setToField(CString("set_fraction"));
+ROUTE1089->setToNode(CString("l_thumb_metacarpal_OI"));
 ProtoBody603->addChild(ROUTE1089);
 
 OrientationInterpolator* OrientationInterpolator1090 = new OrientationInterpolator();
-OrientationInterpolator1090->setDEF("l_thumb_proximal_OI");
+OrientationInterpolator1090->setDEF(CString("l_thumb_proximal_OI"));
 IS* IS1091 = new IS();
 Connect* connect1092 = new Connect();
-connect1092->setNodeField("key");
-connect1092->setProtoField("l_thumb_proximal_key");
-IS1091->addConnect(connect1092);
+connect1092->setNodeField(CString("key"));
+connect1092->setProtoField(CString("l_thumb_proximal_key"));
+IS1091->addChild(connect1092);
 
 Connect* connect1093 = new Connect();
-connect1093->setNodeField("keyValue");
-connect1093->setProtoField("l_thumb_proximal_keyValue");
-IS1091->addConnect(connect1093);
+connect1093->setNodeField(CString("keyValue"));
+connect1093->setProtoField(CString("l_thumb_proximal_keyValue"));
+IS1091->addChild(connect1093);
 
 Connect* connect1094 = new Connect();
-connect1094->setNodeField("value_changed");
-connect1094->setProtoField("l_thumb_proximal_changed");
-IS1091->addConnect(connect1094);
+connect1094->setNodeField(CString("value_changed"));
+connect1094->setProtoField(CString("l_thumb_proximal_changed"));
+IS1091->addChild(connect1094);
 
-OrientationInterpolator1090->setIS(IS1091);
+OrientationInterpolator1090->addChild(IS1091);
 
 ProtoBody603->addChild(OrientationInterpolator1090);
 
 ROUTE* ROUTE1095 = new ROUTE();
-ROUTE1095->setFromField("fraction_changed");
-ROUTE1095->setFromNode("BehaviorClock");
-ROUTE1095->setToField("set_fraction");
-ROUTE1095->setToNode("l_thumb_proximal_OI");
+ROUTE1095->setFromField(CString("fraction_changed"));
+ROUTE1095->setFromNode(CString("BehaviorClock"));
+ROUTE1095->setToField(CString("set_fraction"));
+ROUTE1095->setToNode(CString("l_thumb_proximal_OI"));
 ProtoBody603->addChild(ROUTE1095);
 
 OrientationInterpolator* OrientationInterpolator1096 = new OrientationInterpolator();
-OrientationInterpolator1096->setDEF("l_upperarm_OI");
+OrientationInterpolator1096->setDEF(CString("l_upperarm_OI"));
 IS* IS1097 = new IS();
 Connect* connect1098 = new Connect();
-connect1098->setNodeField("key");
-connect1098->setProtoField("l_upperarm_key");
-IS1097->addConnect(connect1098);
+connect1098->setNodeField(CString("key"));
+connect1098->setProtoField(CString("l_upperarm_key"));
+IS1097->addChild(connect1098);
 
 Connect* connect1099 = new Connect();
-connect1099->setNodeField("keyValue");
-connect1099->setProtoField("l_upperarm_keyValue");
-IS1097->addConnect(connect1099);
+connect1099->setNodeField(CString("keyValue"));
+connect1099->setProtoField(CString("l_upperarm_keyValue"));
+IS1097->addChild(connect1099);
 
 Connect* connect1100 = new Connect();
-connect1100->setNodeField("value_changed");
-connect1100->setProtoField("l_upperarm_changed");
-IS1097->addConnect(connect1100);
+connect1100->setNodeField(CString("value_changed"));
+connect1100->setProtoField(CString("l_upperarm_changed"));
+IS1097->addChild(connect1100);
 
-OrientationInterpolator1096->setIS(IS1097);
+OrientationInterpolator1096->addChild(IS1097);
 
 ProtoBody603->addChild(OrientationInterpolator1096);
 
 ROUTE* ROUTE1101 = new ROUTE();
-ROUTE1101->setFromField("fraction_changed");
-ROUTE1101->setFromNode("BehaviorClock");
-ROUTE1101->setToField("set_fraction");
-ROUTE1101->setToNode("l_upperarm_OI");
+ROUTE1101->setFromField(CString("fraction_changed"));
+ROUTE1101->setFromNode(CString("BehaviorClock"));
+ROUTE1101->setToField(CString("set_fraction"));
+ROUTE1101->setToNode(CString("l_upperarm_OI"));
 ProtoBody603->addChild(ROUTE1101);
 
 OrientationInterpolator* OrientationInterpolator1102 = new OrientationInterpolator();
-OrientationInterpolator1102->setDEF("l_wrist_OI");
+OrientationInterpolator1102->setDEF(CString("l_wrist_OI"));
 IS* IS1103 = new IS();
 Connect* connect1104 = new Connect();
-connect1104->setNodeField("key");
-connect1104->setProtoField("l_wrist_key");
-IS1103->addConnect(connect1104);
+connect1104->setNodeField(CString("key"));
+connect1104->setProtoField(CString("l_wrist_key"));
+IS1103->addChild(connect1104);
 
 Connect* connect1105 = new Connect();
-connect1105->setNodeField("keyValue");
-connect1105->setProtoField("l_wrist_keyValue");
-IS1103->addConnect(connect1105);
+connect1105->setNodeField(CString("keyValue"));
+connect1105->setProtoField(CString("l_wrist_keyValue"));
+IS1103->addChild(connect1105);
 
 Connect* connect1106 = new Connect();
-connect1106->setNodeField("value_changed");
-connect1106->setProtoField("l_wrist_changed");
-IS1103->addConnect(connect1106);
+connect1106->setNodeField(CString("value_changed"));
+connect1106->setProtoField(CString("l_wrist_changed"));
+IS1103->addChild(connect1106);
 
-OrientationInterpolator1102->setIS(IS1103);
+OrientationInterpolator1102->addChild(IS1103);
 
 ProtoBody603->addChild(OrientationInterpolator1102);
 
 ROUTE* ROUTE1107 = new ROUTE();
-ROUTE1107->setFromField("fraction_changed");
-ROUTE1107->setFromNode("BehaviorClock");
-ROUTE1107->setToField("set_fraction");
-ROUTE1107->setToNode("l_wrist_OI");
+ROUTE1107->setFromField(CString("fraction_changed"));
+ROUTE1107->setFromNode(CString("BehaviorClock"));
+ROUTE1107->setToField(CString("set_fraction"));
+ROUTE1107->setToNode(CString("l_wrist_OI"));
 ProtoBody603->addChild(ROUTE1107);
 
 OrientationInterpolator* OrientationInterpolator1108 = new OrientationInterpolator();
-OrientationInterpolator1108->setDEF("pelvis_OI");
+OrientationInterpolator1108->setDEF(CString("pelvis_OI"));
 IS* IS1109 = new IS();
 Connect* connect1110 = new Connect();
-connect1110->setNodeField("key");
-connect1110->setProtoField("pelvis_key");
-IS1109->addConnect(connect1110);
+connect1110->setNodeField(CString("key"));
+connect1110->setProtoField(CString("pelvis_key"));
+IS1109->addChild(connect1110);
 
 Connect* connect1111 = new Connect();
-connect1111->setNodeField("keyValue");
-connect1111->setProtoField("pelvis_keyValue");
-IS1109->addConnect(connect1111);
+connect1111->setNodeField(CString("keyValue"));
+connect1111->setProtoField(CString("pelvis_keyValue"));
+IS1109->addChild(connect1111);
 
 Connect* connect1112 = new Connect();
-connect1112->setNodeField("value_changed");
-connect1112->setProtoField("pelvis_changed");
-IS1109->addConnect(connect1112);
+connect1112->setNodeField(CString("value_changed"));
+connect1112->setProtoField(CString("pelvis_changed"));
+IS1109->addChild(connect1112);
 
-OrientationInterpolator1108->setIS(IS1109);
+OrientationInterpolator1108->addChild(IS1109);
 
 ProtoBody603->addChild(OrientationInterpolator1108);
 
 ROUTE* ROUTE1113 = new ROUTE();
-ROUTE1113->setFromField("fraction_changed");
-ROUTE1113->setFromNode("BehaviorClock");
-ROUTE1113->setToField("set_fraction");
-ROUTE1113->setToNode("pelvis_OI");
+ROUTE1113->setFromField(CString("fraction_changed"));
+ROUTE1113->setFromNode(CString("BehaviorClock"));
+ROUTE1113->setToField(CString("set_fraction"));
+ROUTE1113->setToNode(CString("pelvis_OI"));
 ProtoBody603->addChild(ROUTE1113);
 
 OrientationInterpolator* OrientationInterpolator1114 = new OrientationInterpolator();
-OrientationInterpolator1114->setDEF("r_acromioclavicular_OI");
+OrientationInterpolator1114->setDEF(CString("r_acromioclavicular_OI"));
 IS* IS1115 = new IS();
 Connect* connect1116 = new Connect();
-connect1116->setNodeField("key");
-connect1116->setProtoField("r_acromioclavicular_key");
-IS1115->addConnect(connect1116);
+connect1116->setNodeField(CString("key"));
+connect1116->setProtoField(CString("r_acromioclavicular_key"));
+IS1115->addChild(connect1116);
 
 Connect* connect1117 = new Connect();
-connect1117->setNodeField("keyValue");
-connect1117->setProtoField("r_acromioclavicular_keyValue");
-IS1115->addConnect(connect1117);
+connect1117->setNodeField(CString("keyValue"));
+connect1117->setProtoField(CString("r_acromioclavicular_keyValue"));
+IS1115->addChild(connect1117);
 
 Connect* connect1118 = new Connect();
-connect1118->setNodeField("value_changed");
-connect1118->setProtoField("r_acromioclavicular_changed");
-IS1115->addConnect(connect1118);
+connect1118->setNodeField(CString("value_changed"));
+connect1118->setProtoField(CString("r_acromioclavicular_changed"));
+IS1115->addChild(connect1118);
 
-OrientationInterpolator1114->setIS(IS1115);
+OrientationInterpolator1114->addChild(IS1115);
 
 ProtoBody603->addChild(OrientationInterpolator1114);
 
 ROUTE* ROUTE1119 = new ROUTE();
-ROUTE1119->setFromField("fraction_changed");
-ROUTE1119->setFromNode("BehaviorClock");
-ROUTE1119->setToField("set_fraction");
-ROUTE1119->setToNode("r_acromioclavicular_OI");
+ROUTE1119->setFromField(CString("fraction_changed"));
+ROUTE1119->setFromNode(CString("BehaviorClock"));
+ROUTE1119->setToField(CString("set_fraction"));
+ROUTE1119->setToNode(CString("r_acromioclavicular_OI"));
 ProtoBody603->addChild(ROUTE1119);
 
 OrientationInterpolator* OrientationInterpolator1120 = new OrientationInterpolator();
-OrientationInterpolator1120->setDEF("r_ankle_OI");
+OrientationInterpolator1120->setDEF(CString("r_ankle_OI"));
 IS* IS1121 = new IS();
 Connect* connect1122 = new Connect();
-connect1122->setNodeField("key");
-connect1122->setProtoField("r_ankle_key");
-IS1121->addConnect(connect1122);
+connect1122->setNodeField(CString("key"));
+connect1122->setProtoField(CString("r_ankle_key"));
+IS1121->addChild(connect1122);
 
 Connect* connect1123 = new Connect();
-connect1123->setNodeField("keyValue");
-connect1123->setProtoField("r_ankle_keyValue");
-IS1121->addConnect(connect1123);
+connect1123->setNodeField(CString("keyValue"));
+connect1123->setProtoField(CString("r_ankle_keyValue"));
+IS1121->addChild(connect1123);
 
 Connect* connect1124 = new Connect();
-connect1124->setNodeField("value_changed");
-connect1124->setProtoField("r_ankle_changed");
-IS1121->addConnect(connect1124);
+connect1124->setNodeField(CString("value_changed"));
+connect1124->setProtoField(CString("r_ankle_changed"));
+IS1121->addChild(connect1124);
 
-OrientationInterpolator1120->setIS(IS1121);
+OrientationInterpolator1120->addChild(IS1121);
 
 ProtoBody603->addChild(OrientationInterpolator1120);
 
 ROUTE* ROUTE1125 = new ROUTE();
-ROUTE1125->setFromField("fraction_changed");
-ROUTE1125->setFromNode("BehaviorClock");
-ROUTE1125->setToField("set_fraction");
-ROUTE1125->setToNode("r_ankle_OI");
+ROUTE1125->setFromField(CString("fraction_changed"));
+ROUTE1125->setFromNode(CString("BehaviorClock"));
+ROUTE1125->setToField(CString("set_fraction"));
+ROUTE1125->setToNode(CString("r_ankle_OI"));
 ProtoBody603->addChild(ROUTE1125);
 
 OrientationInterpolator* OrientationInterpolator1126 = new OrientationInterpolator();
-OrientationInterpolator1126->setDEF("r_calf_OI");
+OrientationInterpolator1126->setDEF(CString("r_calf_OI"));
 IS* IS1127 = new IS();
 Connect* connect1128 = new Connect();
-connect1128->setNodeField("key");
-connect1128->setProtoField("r_calf_key");
-IS1127->addConnect(connect1128);
+connect1128->setNodeField(CString("key"));
+connect1128->setProtoField(CString("r_calf_key"));
+IS1127->addChild(connect1128);
 
 Connect* connect1129 = new Connect();
-connect1129->setNodeField("keyValue");
-connect1129->setProtoField("r_calf_keyValue");
-IS1127->addConnect(connect1129);
+connect1129->setNodeField(CString("keyValue"));
+connect1129->setProtoField(CString("r_calf_keyValue"));
+IS1127->addChild(connect1129);
 
 Connect* connect1130 = new Connect();
-connect1130->setNodeField("value_changed");
-connect1130->setProtoField("r_calf_changed");
-IS1127->addConnect(connect1130);
+connect1130->setNodeField(CString("value_changed"));
+connect1130->setProtoField(CString("r_calf_changed"));
+IS1127->addChild(connect1130);
 
-OrientationInterpolator1126->setIS(IS1127);
+OrientationInterpolator1126->addChild(IS1127);
 
 ProtoBody603->addChild(OrientationInterpolator1126);
 
 ROUTE* ROUTE1131 = new ROUTE();
-ROUTE1131->setFromField("fraction_changed");
-ROUTE1131->setFromNode("BehaviorClock");
-ROUTE1131->setToField("set_fraction");
-ROUTE1131->setToNode("r_calf_OI");
+ROUTE1131->setFromField(CString("fraction_changed"));
+ROUTE1131->setFromNode(CString("BehaviorClock"));
+ROUTE1131->setToField(CString("set_fraction"));
+ROUTE1131->setToNode(CString("r_calf_OI"));
 ProtoBody603->addChild(ROUTE1131);
 
 OrientationInterpolator* OrientationInterpolator1132 = new OrientationInterpolator();
-OrientationInterpolator1132->setDEF("r_clavicle_OI");
+OrientationInterpolator1132->setDEF(CString("r_clavicle_OI"));
 IS* IS1133 = new IS();
 Connect* connect1134 = new Connect();
-connect1134->setNodeField("key");
-connect1134->setProtoField("r_clavicle_key");
-IS1133->addConnect(connect1134);
+connect1134->setNodeField(CString("key"));
+connect1134->setProtoField(CString("r_clavicle_key"));
+IS1133->addChild(connect1134);
 
 Connect* connect1135 = new Connect();
-connect1135->setNodeField("keyValue");
-connect1135->setProtoField("r_clavicle_keyValue");
-IS1133->addConnect(connect1135);
+connect1135->setNodeField(CString("keyValue"));
+connect1135->setProtoField(CString("r_clavicle_keyValue"));
+IS1133->addChild(connect1135);
 
 Connect* connect1136 = new Connect();
-connect1136->setNodeField("value_changed");
-connect1136->setProtoField("r_clavicle_changed");
-IS1133->addConnect(connect1136);
+connect1136->setNodeField(CString("value_changed"));
+connect1136->setProtoField(CString("r_clavicle_changed"));
+IS1133->addChild(connect1136);
 
-OrientationInterpolator1132->setIS(IS1133);
+OrientationInterpolator1132->addChild(IS1133);
 
 ProtoBody603->addChild(OrientationInterpolator1132);
 
 ROUTE* ROUTE1137 = new ROUTE();
-ROUTE1137->setFromField("fraction_changed");
-ROUTE1137->setFromNode("BehaviorClock");
-ROUTE1137->setToField("set_fraction");
-ROUTE1137->setToNode("r_clavicle_OI");
+ROUTE1137->setFromField(CString("fraction_changed"));
+ROUTE1137->setFromNode(CString("BehaviorClock"));
+ROUTE1137->setToField(CString("set_fraction"));
+ROUTE1137->setToNode(CString("r_clavicle_OI"));
 ProtoBody603->addChild(ROUTE1137);
 
 OrientationInterpolator* OrientationInterpolator1138 = new OrientationInterpolator();
-OrientationInterpolator1138->setDEF("r_elbow_OI");
+OrientationInterpolator1138->setDEF(CString("r_elbow_OI"));
 IS* IS1139 = new IS();
 Connect* connect1140 = new Connect();
-connect1140->setNodeField("key");
-connect1140->setProtoField("r_elbow_key");
-IS1139->addConnect(connect1140);
+connect1140->setNodeField(CString("key"));
+connect1140->setProtoField(CString("r_elbow_key"));
+IS1139->addChild(connect1140);
 
 Connect* connect1141 = new Connect();
-connect1141->setNodeField("keyValue");
-connect1141->setProtoField("r_elbow_keyValue");
-IS1139->addConnect(connect1141);
+connect1141->setNodeField(CString("keyValue"));
+connect1141->setProtoField(CString("r_elbow_keyValue"));
+IS1139->addChild(connect1141);
 
 Connect* connect1142 = new Connect();
-connect1142->setNodeField("value_changed");
-connect1142->setProtoField("r_elbow_changed");
-IS1139->addConnect(connect1142);
+connect1142->setNodeField(CString("value_changed"));
+connect1142->setProtoField(CString("r_elbow_changed"));
+IS1139->addChild(connect1142);
 
-OrientationInterpolator1138->setIS(IS1139);
+OrientationInterpolator1138->addChild(IS1139);
 
 ProtoBody603->addChild(OrientationInterpolator1138);
 
 ROUTE* ROUTE1143 = new ROUTE();
-ROUTE1143->setFromField("fraction_changed");
-ROUTE1143->setFromNode("BehaviorClock");
-ROUTE1143->setToField("set_fraction");
-ROUTE1143->setToNode("r_elbow_OI");
+ROUTE1143->setFromField(CString("fraction_changed"));
+ROUTE1143->setFromNode(CString("BehaviorClock"));
+ROUTE1143->setToField(CString("set_fraction"));
+ROUTE1143->setToNode(CString("r_elbow_OI"));
 ProtoBody603->addChild(ROUTE1143);
 
 OrientationInterpolator* OrientationInterpolator1144 = new OrientationInterpolator();
-OrientationInterpolator1144->setDEF("r_eyeball_OI");
+OrientationInterpolator1144->setDEF(CString("r_eyeball_OI"));
 IS* IS1145 = new IS();
 Connect* connect1146 = new Connect();
-connect1146->setNodeField("key");
-connect1146->setProtoField("r_eyeball_key");
-IS1145->addConnect(connect1146);
+connect1146->setNodeField(CString("key"));
+connect1146->setProtoField(CString("r_eyeball_key"));
+IS1145->addChild(connect1146);
 
 Connect* connect1147 = new Connect();
-connect1147->setNodeField("keyValue");
-connect1147->setProtoField("r_eyeball_keyValue");
-IS1145->addConnect(connect1147);
+connect1147->setNodeField(CString("keyValue"));
+connect1147->setProtoField(CString("r_eyeball_keyValue"));
+IS1145->addChild(connect1147);
 
 Connect* connect1148 = new Connect();
-connect1148->setNodeField("value_changed");
-connect1148->setProtoField("r_eyeball_changed");
-IS1145->addConnect(connect1148);
+connect1148->setNodeField(CString("value_changed"));
+connect1148->setProtoField(CString("r_eyeball_changed"));
+IS1145->addChild(connect1148);
 
-OrientationInterpolator1144->setIS(IS1145);
+OrientationInterpolator1144->addChild(IS1145);
 
 ProtoBody603->addChild(OrientationInterpolator1144);
 
 ROUTE* ROUTE1149 = new ROUTE();
-ROUTE1149->setFromField("fraction_changed");
-ROUTE1149->setFromNode("BehaviorClock");
-ROUTE1149->setToField("set_fraction");
-ROUTE1149->setToNode("r_eyeball_OI");
+ROUTE1149->setFromField(CString("fraction_changed"));
+ROUTE1149->setFromNode(CString("BehaviorClock"));
+ROUTE1149->setToField(CString("set_fraction"));
+ROUTE1149->setToNode(CString("r_eyeball_OI"));
 ProtoBody603->addChild(ROUTE1149);
 
 OrientationInterpolator* OrientationInterpolator1150 = new OrientationInterpolator();
-OrientationInterpolator1150->setDEF("r_eyeball_joint_OI");
+OrientationInterpolator1150->setDEF(CString("r_eyeball_joint_OI"));
 IS* IS1151 = new IS();
 Connect* connect1152 = new Connect();
-connect1152->setNodeField("key");
-connect1152->setProtoField("r_eyeball_joint_key");
-IS1151->addConnect(connect1152);
+connect1152->setNodeField(CString("key"));
+connect1152->setProtoField(CString("r_eyeball_joint_key"));
+IS1151->addChild(connect1152);
 
 Connect* connect1153 = new Connect();
-connect1153->setNodeField("keyValue");
-connect1153->setProtoField("r_eyeball_joint_keyValue");
-IS1151->addConnect(connect1153);
+connect1153->setNodeField(CString("keyValue"));
+connect1153->setProtoField(CString("r_eyeball_joint_keyValue"));
+IS1151->addChild(connect1153);
 
 Connect* connect1154 = new Connect();
-connect1154->setNodeField("value_changed");
-connect1154->setProtoField("r_eyeball_joint_changed");
-IS1151->addConnect(connect1154);
+connect1154->setNodeField(CString("value_changed"));
+connect1154->setProtoField(CString("r_eyeball_joint_changed"));
+IS1151->addChild(connect1154);
 
-OrientationInterpolator1150->setIS(IS1151);
+OrientationInterpolator1150->addChild(IS1151);
 
 ProtoBody603->addChild(OrientationInterpolator1150);
 
 ROUTE* ROUTE1155 = new ROUTE();
-ROUTE1155->setFromField("fraction_changed");
-ROUTE1155->setFromNode("BehaviorClock");
-ROUTE1155->setToField("set_fraction");
-ROUTE1155->setToNode("r_eyeball_joint_OI");
+ROUTE1155->setFromField(CString("fraction_changed"));
+ROUTE1155->setFromNode(CString("BehaviorClock"));
+ROUTE1155->setToField(CString("set_fraction"));
+ROUTE1155->setToNode(CString("r_eyeball_joint_OI"));
 ProtoBody603->addChild(ROUTE1155);
 
 OrientationInterpolator* OrientationInterpolator1156 = new OrientationInterpolator();
-OrientationInterpolator1156->setDEF("r_eyebrow_OI");
+OrientationInterpolator1156->setDEF(CString("r_eyebrow_OI"));
 IS* IS1157 = new IS();
 Connect* connect1158 = new Connect();
-connect1158->setNodeField("key");
-connect1158->setProtoField("r_eyebrow_key");
-IS1157->addConnect(connect1158);
+connect1158->setNodeField(CString("key"));
+connect1158->setProtoField(CString("r_eyebrow_key"));
+IS1157->addChild(connect1158);
 
 Connect* connect1159 = new Connect();
-connect1159->setNodeField("keyValue");
-connect1159->setProtoField("r_eyebrow_keyValue");
-IS1157->addConnect(connect1159);
+connect1159->setNodeField(CString("keyValue"));
+connect1159->setProtoField(CString("r_eyebrow_keyValue"));
+IS1157->addChild(connect1159);
 
 Connect* connect1160 = new Connect();
-connect1160->setNodeField("value_changed");
-connect1160->setProtoField("r_eyebrow_changed");
-IS1157->addConnect(connect1160);
+connect1160->setNodeField(CString("value_changed"));
+connect1160->setProtoField(CString("r_eyebrow_changed"));
+IS1157->addChild(connect1160);
 
-OrientationInterpolator1156->setIS(IS1157);
+OrientationInterpolator1156->addChild(IS1157);
 
 ProtoBody603->addChild(OrientationInterpolator1156);
 
 ROUTE* ROUTE1161 = new ROUTE();
-ROUTE1161->setFromField("fraction_changed");
-ROUTE1161->setFromNode("BehaviorClock");
-ROUTE1161->setToField("set_fraction");
-ROUTE1161->setToNode("r_eyebrow_OI");
+ROUTE1161->setFromField(CString("fraction_changed"));
+ROUTE1161->setFromNode(CString("BehaviorClock"));
+ROUTE1161->setToField(CString("set_fraction"));
+ROUTE1161->setToNode(CString("r_eyebrow_OI"));
 ProtoBody603->addChild(ROUTE1161);
 
 OrientationInterpolator* OrientationInterpolator1162 = new OrientationInterpolator();
-OrientationInterpolator1162->setDEF("r_eyebrow_joint_OI");
+OrientationInterpolator1162->setDEF(CString("r_eyebrow_joint_OI"));
 IS* IS1163 = new IS();
 Connect* connect1164 = new Connect();
-connect1164->setNodeField("key");
-connect1164->setProtoField("r_eyebrow_joint_key");
-IS1163->addConnect(connect1164);
+connect1164->setNodeField(CString("key"));
+connect1164->setProtoField(CString("r_eyebrow_joint_key"));
+IS1163->addChild(connect1164);
 
 Connect* connect1165 = new Connect();
-connect1165->setNodeField("keyValue");
-connect1165->setProtoField("r_eyebrow_joint_keyValue");
-IS1163->addConnect(connect1165);
+connect1165->setNodeField(CString("keyValue"));
+connect1165->setProtoField(CString("r_eyebrow_joint_keyValue"));
+IS1163->addChild(connect1165);
 
 Connect* connect1166 = new Connect();
-connect1166->setNodeField("value_changed");
-connect1166->setProtoField("r_eyebrow_joint_changed");
-IS1163->addConnect(connect1166);
+connect1166->setNodeField(CString("value_changed"));
+connect1166->setProtoField(CString("r_eyebrow_joint_changed"));
+IS1163->addChild(connect1166);
 
-OrientationInterpolator1162->setIS(IS1163);
+OrientationInterpolator1162->addChild(IS1163);
 
 ProtoBody603->addChild(OrientationInterpolator1162);
 
 ROUTE* ROUTE1167 = new ROUTE();
-ROUTE1167->setFromField("fraction_changed");
-ROUTE1167->setFromNode("BehaviorClock");
-ROUTE1167->setToField("set_fraction");
-ROUTE1167->setToNode("r_eyebrow_joint_OI");
+ROUTE1167->setFromField(CString("fraction_changed"));
+ROUTE1167->setFromNode(CString("BehaviorClock"));
+ROUTE1167->setToField(CString("set_fraction"));
+ROUTE1167->setToNode(CString("r_eyebrow_joint_OI"));
 ProtoBody603->addChild(ROUTE1167);
 
 OrientationInterpolator* OrientationInterpolator1168 = new OrientationInterpolator();
-OrientationInterpolator1168->setDEF("r_eyelid_OI");
+OrientationInterpolator1168->setDEF(CString("r_eyelid_OI"));
 IS* IS1169 = new IS();
 Connect* connect1170 = new Connect();
-connect1170->setNodeField("key");
-connect1170->setProtoField("r_eyelid_key");
-IS1169->addConnect(connect1170);
+connect1170->setNodeField(CString("key"));
+connect1170->setProtoField(CString("r_eyelid_key"));
+IS1169->addChild(connect1170);
 
 Connect* connect1171 = new Connect();
-connect1171->setNodeField("keyValue");
-connect1171->setProtoField("r_eyelid_keyValue");
-IS1169->addConnect(connect1171);
+connect1171->setNodeField(CString("keyValue"));
+connect1171->setProtoField(CString("r_eyelid_keyValue"));
+IS1169->addChild(connect1171);
 
 Connect* connect1172 = new Connect();
-connect1172->setNodeField("value_changed");
-connect1172->setProtoField("r_eyelid_changed");
-IS1169->addConnect(connect1172);
+connect1172->setNodeField(CString("value_changed"));
+connect1172->setProtoField(CString("r_eyelid_changed"));
+IS1169->addChild(connect1172);
 
-OrientationInterpolator1168->setIS(IS1169);
+OrientationInterpolator1168->addChild(IS1169);
 
 ProtoBody603->addChild(OrientationInterpolator1168);
 
 ROUTE* ROUTE1173 = new ROUTE();
-ROUTE1173->setFromField("fraction_changed");
-ROUTE1173->setFromNode("BehaviorClock");
-ROUTE1173->setToField("set_fraction");
-ROUTE1173->setToNode("r_eyelid_OI");
+ROUTE1173->setFromField(CString("fraction_changed"));
+ROUTE1173->setFromNode(CString("BehaviorClock"));
+ROUTE1173->setToField(CString("set_fraction"));
+ROUTE1173->setToNode(CString("r_eyelid_OI"));
 ProtoBody603->addChild(ROUTE1173);
 
 OrientationInterpolator* OrientationInterpolator1174 = new OrientationInterpolator();
-OrientationInterpolator1174->setDEF("r_eyelid_joint_OI");
+OrientationInterpolator1174->setDEF(CString("r_eyelid_joint_OI"));
 IS* IS1175 = new IS();
 Connect* connect1176 = new Connect();
-connect1176->setNodeField("key");
-connect1176->setProtoField("r_eyelid_joint_key");
-IS1175->addConnect(connect1176);
+connect1176->setNodeField(CString("key"));
+connect1176->setProtoField(CString("r_eyelid_joint_key"));
+IS1175->addChild(connect1176);
 
 Connect* connect1177 = new Connect();
-connect1177->setNodeField("keyValue");
-connect1177->setProtoField("r_eyelid_joint_keyValue");
-IS1175->addConnect(connect1177);
+connect1177->setNodeField(CString("keyValue"));
+connect1177->setProtoField(CString("r_eyelid_joint_keyValue"));
+IS1175->addChild(connect1177);
 
 Connect* connect1178 = new Connect();
-connect1178->setNodeField("value_changed");
-connect1178->setProtoField("r_eyelid_joint_changed");
-IS1175->addConnect(connect1178);
+connect1178->setNodeField(CString("value_changed"));
+connect1178->setProtoField(CString("r_eyelid_joint_changed"));
+IS1175->addChild(connect1178);
 
-OrientationInterpolator1174->setIS(IS1175);
+OrientationInterpolator1174->addChild(IS1175);
 
 ProtoBody603->addChild(OrientationInterpolator1174);
 
 ROUTE* ROUTE1179 = new ROUTE();
-ROUTE1179->setFromField("fraction_changed");
-ROUTE1179->setFromNode("BehaviorClock");
-ROUTE1179->setToField("set_fraction");
-ROUTE1179->setToNode("r_eyelid_joint_OI");
+ROUTE1179->setFromField(CString("fraction_changed"));
+ROUTE1179->setFromNode(CString("BehaviorClock"));
+ROUTE1179->setToField(CString("set_fraction"));
+ROUTE1179->setToNode(CString("r_eyelid_joint_OI"));
 ProtoBody603->addChild(ROUTE1179);
 
 OrientationInterpolator* OrientationInterpolator1180 = new OrientationInterpolator();
-OrientationInterpolator1180->setDEF("r_forearm_OI");
+OrientationInterpolator1180->setDEF(CString("r_forearm_OI"));
 IS* IS1181 = new IS();
 Connect* connect1182 = new Connect();
-connect1182->setNodeField("key");
-connect1182->setProtoField("r_forearm_key");
-IS1181->addConnect(connect1182);
+connect1182->setNodeField(CString("key"));
+connect1182->setProtoField(CString("r_forearm_key"));
+IS1181->addChild(connect1182);
 
 Connect* connect1183 = new Connect();
-connect1183->setNodeField("keyValue");
-connect1183->setProtoField("r_forearm_keyValue");
-IS1181->addConnect(connect1183);
+connect1183->setNodeField(CString("keyValue"));
+connect1183->setProtoField(CString("r_forearm_keyValue"));
+IS1181->addChild(connect1183);
 
 Connect* connect1184 = new Connect();
-connect1184->setNodeField("value_changed");
-connect1184->setProtoField("r_forearm_changed");
-IS1181->addConnect(connect1184);
+connect1184->setNodeField(CString("value_changed"));
+connect1184->setProtoField(CString("r_forearm_changed"));
+IS1181->addChild(connect1184);
 
-OrientationInterpolator1180->setIS(IS1181);
+OrientationInterpolator1180->addChild(IS1181);
 
 ProtoBody603->addChild(OrientationInterpolator1180);
 
 ROUTE* ROUTE1185 = new ROUTE();
-ROUTE1185->setFromField("fraction_changed");
-ROUTE1185->setFromNode("BehaviorClock");
-ROUTE1185->setToField("set_fraction");
-ROUTE1185->setToNode("r_forearm_OI");
+ROUTE1185->setFromField(CString("fraction_changed"));
+ROUTE1185->setFromNode(CString("BehaviorClock"));
+ROUTE1185->setToField(CString("set_fraction"));
+ROUTE1185->setToNode(CString("r_forearm_OI"));
 ProtoBody603->addChild(ROUTE1185);
 
 OrientationInterpolator* OrientationInterpolator1186 = new OrientationInterpolator();
-OrientationInterpolator1186->setDEF("r_forefoot_OI");
+OrientationInterpolator1186->setDEF(CString("r_forefoot_OI"));
 IS* IS1187 = new IS();
 Connect* connect1188 = new Connect();
-connect1188->setNodeField("key");
-connect1188->setProtoField("r_forefoot_key");
-IS1187->addConnect(connect1188);
+connect1188->setNodeField(CString("key"));
+connect1188->setProtoField(CString("r_forefoot_key"));
+IS1187->addChild(connect1188);
 
 Connect* connect1189 = new Connect();
-connect1189->setNodeField("keyValue");
-connect1189->setProtoField("r_forefoot_keyValue");
-IS1187->addConnect(connect1189);
+connect1189->setNodeField(CString("keyValue"));
+connect1189->setProtoField(CString("r_forefoot_keyValue"));
+IS1187->addChild(connect1189);
 
 Connect* connect1190 = new Connect();
-connect1190->setNodeField("value_changed");
-connect1190->setProtoField("r_forefoot_changed");
-IS1187->addConnect(connect1190);
+connect1190->setNodeField(CString("value_changed"));
+connect1190->setProtoField(CString("r_forefoot_changed"));
+IS1187->addChild(connect1190);
 
-OrientationInterpolator1186->setIS(IS1187);
+OrientationInterpolator1186->addChild(IS1187);
 
 ProtoBody603->addChild(OrientationInterpolator1186);
 
 ROUTE* ROUTE1191 = new ROUTE();
-ROUTE1191->setFromField("fraction_changed");
-ROUTE1191->setFromNode("BehaviorClock");
-ROUTE1191->setToField("set_fraction");
-ROUTE1191->setToNode("r_forefoot_OI");
+ROUTE1191->setFromField(CString("fraction_changed"));
+ROUTE1191->setFromNode(CString("BehaviorClock"));
+ROUTE1191->setToField(CString("set_fraction"));
+ROUTE1191->setToNode(CString("r_forefoot_OI"));
 ProtoBody603->addChild(ROUTE1191);
 
 OrientationInterpolator* OrientationInterpolator1192 = new OrientationInterpolator();
-OrientationInterpolator1192->setDEF("r_hand_OI");
+OrientationInterpolator1192->setDEF(CString("r_hand_OI"));
 IS* IS1193 = new IS();
 Connect* connect1194 = new Connect();
-connect1194->setNodeField("key");
-connect1194->setProtoField("r_hand_key");
-IS1193->addConnect(connect1194);
+connect1194->setNodeField(CString("key"));
+connect1194->setProtoField(CString("r_hand_key"));
+IS1193->addChild(connect1194);
 
 Connect* connect1195 = new Connect();
-connect1195->setNodeField("keyValue");
-connect1195->setProtoField("r_hand_keyValue");
-IS1193->addConnect(connect1195);
+connect1195->setNodeField(CString("keyValue"));
+connect1195->setProtoField(CString("r_hand_keyValue"));
+IS1193->addChild(connect1195);
 
 Connect* connect1196 = new Connect();
-connect1196->setNodeField("value_changed");
-connect1196->setProtoField("r_hand_changed");
-IS1193->addConnect(connect1196);
+connect1196->setNodeField(CString("value_changed"));
+connect1196->setProtoField(CString("r_hand_changed"));
+IS1193->addChild(connect1196);
 
-OrientationInterpolator1192->setIS(IS1193);
+OrientationInterpolator1192->addChild(IS1193);
 
 ProtoBody603->addChild(OrientationInterpolator1192);
 
 ROUTE* ROUTE1197 = new ROUTE();
-ROUTE1197->setFromField("fraction_changed");
-ROUTE1197->setFromNode("BehaviorClock");
-ROUTE1197->setToField("set_fraction");
-ROUTE1197->setToNode("r_hand_OI");
+ROUTE1197->setFromField(CString("fraction_changed"));
+ROUTE1197->setFromNode(CString("BehaviorClock"));
+ROUTE1197->setToField(CString("set_fraction"));
+ROUTE1197->setToNode(CString("r_hand_OI"));
 ProtoBody603->addChild(ROUTE1197);
 
 OrientationInterpolator* OrientationInterpolator1198 = new OrientationInterpolator();
-OrientationInterpolator1198->setDEF("r_hindfoot_OI");
+OrientationInterpolator1198->setDEF(CString("r_hindfoot_OI"));
 IS* IS1199 = new IS();
 Connect* connect1200 = new Connect();
-connect1200->setNodeField("key");
-connect1200->setProtoField("r_hindfoot_key");
-IS1199->addConnect(connect1200);
+connect1200->setNodeField(CString("key"));
+connect1200->setProtoField(CString("r_hindfoot_key"));
+IS1199->addChild(connect1200);
 
 Connect* connect1201 = new Connect();
-connect1201->setNodeField("keyValue");
-connect1201->setProtoField("r_hindfoot_keyValue");
-IS1199->addConnect(connect1201);
+connect1201->setNodeField(CString("keyValue"));
+connect1201->setProtoField(CString("r_hindfoot_keyValue"));
+IS1199->addChild(connect1201);
 
 Connect* connect1202 = new Connect();
-connect1202->setNodeField("value_changed");
-connect1202->setProtoField("r_hindfoot_changed");
-IS1199->addConnect(connect1202);
+connect1202->setNodeField(CString("value_changed"));
+connect1202->setProtoField(CString("r_hindfoot_changed"));
+IS1199->addChild(connect1202);
 
-OrientationInterpolator1198->setIS(IS1199);
+OrientationInterpolator1198->addChild(IS1199);
 
 ProtoBody603->addChild(OrientationInterpolator1198);
 
 ROUTE* ROUTE1203 = new ROUTE();
-ROUTE1203->setFromField("fraction_changed");
-ROUTE1203->setFromNode("BehaviorClock");
-ROUTE1203->setToField("set_fraction");
-ROUTE1203->setToNode("r_hindfoot_OI");
+ROUTE1203->setFromField(CString("fraction_changed"));
+ROUTE1203->setFromNode(CString("BehaviorClock"));
+ROUTE1203->setToField(CString("set_fraction"));
+ROUTE1203->setToNode(CString("r_hindfoot_OI"));
 ProtoBody603->addChild(ROUTE1203);
 
 OrientationInterpolator* OrientationInterpolator1204 = new OrientationInterpolator();
-OrientationInterpolator1204->setDEF("r_hip_OI");
+OrientationInterpolator1204->setDEF(CString("r_hip_OI"));
 IS* IS1205 = new IS();
 Connect* connect1206 = new Connect();
-connect1206->setNodeField("key");
-connect1206->setProtoField("r_hip_key");
-IS1205->addConnect(connect1206);
+connect1206->setNodeField(CString("key"));
+connect1206->setProtoField(CString("r_hip_key"));
+IS1205->addChild(connect1206);
 
 Connect* connect1207 = new Connect();
-connect1207->setNodeField("keyValue");
-connect1207->setProtoField("r_hip_keyValue");
-IS1205->addConnect(connect1207);
+connect1207->setNodeField(CString("keyValue"));
+connect1207->setProtoField(CString("r_hip_keyValue"));
+IS1205->addChild(connect1207);
 
 Connect* connect1208 = new Connect();
-connect1208->setNodeField("value_changed");
-connect1208->setProtoField("r_hip_changed");
-IS1205->addConnect(connect1208);
+connect1208->setNodeField(CString("value_changed"));
+connect1208->setProtoField(CString("r_hip_changed"));
+IS1205->addChild(connect1208);
 
-OrientationInterpolator1204->setIS(IS1205);
+OrientationInterpolator1204->addChild(IS1205);
 
 ProtoBody603->addChild(OrientationInterpolator1204);
 
 ROUTE* ROUTE1209 = new ROUTE();
-ROUTE1209->setFromField("fraction_changed");
-ROUTE1209->setFromNode("BehaviorClock");
-ROUTE1209->setToField("set_fraction");
-ROUTE1209->setToNode("r_hip_OI");
+ROUTE1209->setFromField(CString("fraction_changed"));
+ROUTE1209->setFromNode(CString("BehaviorClock"));
+ROUTE1209->setToField(CString("set_fraction"));
+ROUTE1209->setToNode(CString("r_hip_OI"));
 ProtoBody603->addChild(ROUTE1209);
 
 OrientationInterpolator* OrientationInterpolator1210 = new OrientationInterpolator();
-OrientationInterpolator1210->setDEF("r_index0_OI");
+OrientationInterpolator1210->setDEF(CString("r_index0_OI"));
 IS* IS1211 = new IS();
 Connect* connect1212 = new Connect();
-connect1212->setNodeField("key");
-connect1212->setProtoField("r_index0_key");
-IS1211->addConnect(connect1212);
+connect1212->setNodeField(CString("key"));
+connect1212->setProtoField(CString("r_index0_key"));
+IS1211->addChild(connect1212);
 
 Connect* connect1213 = new Connect();
-connect1213->setNodeField("keyValue");
-connect1213->setProtoField("r_index0_keyValue");
-IS1211->addConnect(connect1213);
+connect1213->setNodeField(CString("keyValue"));
+connect1213->setProtoField(CString("r_index0_keyValue"));
+IS1211->addChild(connect1213);
 
 Connect* connect1214 = new Connect();
-connect1214->setNodeField("value_changed");
-connect1214->setProtoField("r_index0_changed");
-IS1211->addConnect(connect1214);
+connect1214->setNodeField(CString("value_changed"));
+connect1214->setProtoField(CString("r_index0_changed"));
+IS1211->addChild(connect1214);
 
-OrientationInterpolator1210->setIS(IS1211);
+OrientationInterpolator1210->addChild(IS1211);
 
 ProtoBody603->addChild(OrientationInterpolator1210);
 
 ROUTE* ROUTE1215 = new ROUTE();
-ROUTE1215->setFromField("fraction_changed");
-ROUTE1215->setFromNode("BehaviorClock");
-ROUTE1215->setToField("set_fraction");
-ROUTE1215->setToNode("r_index0_OI");
+ROUTE1215->setFromField(CString("fraction_changed"));
+ROUTE1215->setFromNode(CString("BehaviorClock"));
+ROUTE1215->setToField(CString("set_fraction"));
+ROUTE1215->setToNode(CString("r_index0_OI"));
 ProtoBody603->addChild(ROUTE1215);
 
 OrientationInterpolator* OrientationInterpolator1216 = new OrientationInterpolator();
-OrientationInterpolator1216->setDEF("r_index1_OI");
+OrientationInterpolator1216->setDEF(CString("r_index1_OI"));
 IS* IS1217 = new IS();
 Connect* connect1218 = new Connect();
-connect1218->setNodeField("key");
-connect1218->setProtoField("r_index1_key");
-IS1217->addConnect(connect1218);
+connect1218->setNodeField(CString("key"));
+connect1218->setProtoField(CString("r_index1_key"));
+IS1217->addChild(connect1218);
 
 Connect* connect1219 = new Connect();
-connect1219->setNodeField("keyValue");
-connect1219->setProtoField("r_index1_keyValue");
-IS1217->addConnect(connect1219);
+connect1219->setNodeField(CString("keyValue"));
+connect1219->setProtoField(CString("r_index1_keyValue"));
+IS1217->addChild(connect1219);
 
 Connect* connect1220 = new Connect();
-connect1220->setNodeField("value_changed");
-connect1220->setProtoField("r_index1_changed");
-IS1217->addConnect(connect1220);
+connect1220->setNodeField(CString("value_changed"));
+connect1220->setProtoField(CString("r_index1_changed"));
+IS1217->addChild(connect1220);
 
-OrientationInterpolator1216->setIS(IS1217);
+OrientationInterpolator1216->addChild(IS1217);
 
 ProtoBody603->addChild(OrientationInterpolator1216);
 
 ROUTE* ROUTE1221 = new ROUTE();
-ROUTE1221->setFromField("fraction_changed");
-ROUTE1221->setFromNode("BehaviorClock");
-ROUTE1221->setToField("set_fraction");
-ROUTE1221->setToNode("r_index1_OI");
+ROUTE1221->setFromField(CString("fraction_changed"));
+ROUTE1221->setFromNode(CString("BehaviorClock"));
+ROUTE1221->setToField(CString("set_fraction"));
+ROUTE1221->setToNode(CString("r_index1_OI"));
 ProtoBody603->addChild(ROUTE1221);
 
 OrientationInterpolator* OrientationInterpolator1222 = new OrientationInterpolator();
-OrientationInterpolator1222->setDEF("r_index2_OI");
+OrientationInterpolator1222->setDEF(CString("r_index2_OI"));
 IS* IS1223 = new IS();
 Connect* connect1224 = new Connect();
-connect1224->setNodeField("key");
-connect1224->setProtoField("r_index2_key");
-IS1223->addConnect(connect1224);
+connect1224->setNodeField(CString("key"));
+connect1224->setProtoField(CString("r_index2_key"));
+IS1223->addChild(connect1224);
 
 Connect* connect1225 = new Connect();
-connect1225->setNodeField("keyValue");
-connect1225->setProtoField("r_index2_keyValue");
-IS1223->addConnect(connect1225);
+connect1225->setNodeField(CString("keyValue"));
+connect1225->setProtoField(CString("r_index2_keyValue"));
+IS1223->addChild(connect1225);
 
 Connect* connect1226 = new Connect();
-connect1226->setNodeField("value_changed");
-connect1226->setProtoField("r_index2_changed");
-IS1223->addConnect(connect1226);
+connect1226->setNodeField(CString("value_changed"));
+connect1226->setProtoField(CString("r_index2_changed"));
+IS1223->addChild(connect1226);
 
-OrientationInterpolator1222->setIS(IS1223);
+OrientationInterpolator1222->addChild(IS1223);
 
 ProtoBody603->addChild(OrientationInterpolator1222);
 
 ROUTE* ROUTE1227 = new ROUTE();
-ROUTE1227->setFromField("fraction_changed");
-ROUTE1227->setFromNode("BehaviorClock");
-ROUTE1227->setToField("set_fraction");
-ROUTE1227->setToNode("r_index2_OI");
+ROUTE1227->setFromField(CString("fraction_changed"));
+ROUTE1227->setFromNode(CString("BehaviorClock"));
+ROUTE1227->setToField(CString("set_fraction"));
+ROUTE1227->setToNode(CString("r_index2_OI"));
 ProtoBody603->addChild(ROUTE1227);
 
 OrientationInterpolator* OrientationInterpolator1228 = new OrientationInterpolator();
-OrientationInterpolator1228->setDEF("r_index3_OI");
+OrientationInterpolator1228->setDEF(CString("r_index3_OI"));
 IS* IS1229 = new IS();
 Connect* connect1230 = new Connect();
-connect1230->setNodeField("key");
-connect1230->setProtoField("r_index3_key");
-IS1229->addConnect(connect1230);
+connect1230->setNodeField(CString("key"));
+connect1230->setProtoField(CString("r_index3_key"));
+IS1229->addChild(connect1230);
 
 Connect* connect1231 = new Connect();
-connect1231->setNodeField("keyValue");
-connect1231->setProtoField("r_index3_keyValue");
-IS1229->addConnect(connect1231);
+connect1231->setNodeField(CString("keyValue"));
+connect1231->setProtoField(CString("r_index3_keyValue"));
+IS1229->addChild(connect1231);
 
 Connect* connect1232 = new Connect();
-connect1232->setNodeField("value_changed");
-connect1232->setProtoField("r_index3_changed");
-IS1229->addConnect(connect1232);
+connect1232->setNodeField(CString("value_changed"));
+connect1232->setProtoField(CString("r_index3_changed"));
+IS1229->addChild(connect1232);
 
-OrientationInterpolator1228->setIS(IS1229);
+OrientationInterpolator1228->addChild(IS1229);
 
 ProtoBody603->addChild(OrientationInterpolator1228);
 
 ROUTE* ROUTE1233 = new ROUTE();
-ROUTE1233->setFromField("fraction_changed");
-ROUTE1233->setFromNode("BehaviorClock");
-ROUTE1233->setToField("set_fraction");
-ROUTE1233->setToNode("r_index3_OI");
+ROUTE1233->setFromField(CString("fraction_changed"));
+ROUTE1233->setFromNode(CString("BehaviorClock"));
+ROUTE1233->setToField(CString("set_fraction"));
+ROUTE1233->setToNode(CString("r_index3_OI"));
 ProtoBody603->addChild(ROUTE1233);
 
 OrientationInterpolator* OrientationInterpolator1234 = new OrientationInterpolator();
-OrientationInterpolator1234->setDEF("r_index_distal_OI");
+OrientationInterpolator1234->setDEF(CString("r_index_distal_OI"));
 IS* IS1235 = new IS();
 Connect* connect1236 = new Connect();
-connect1236->setNodeField("key");
-connect1236->setProtoField("r_index_distal_key");
-IS1235->addConnect(connect1236);
+connect1236->setNodeField(CString("key"));
+connect1236->setProtoField(CString("r_index_distal_key"));
+IS1235->addChild(connect1236);
 
 Connect* connect1237 = new Connect();
-connect1237->setNodeField("keyValue");
-connect1237->setProtoField("r_index_distal_keyValue");
-IS1235->addConnect(connect1237);
+connect1237->setNodeField(CString("keyValue"));
+connect1237->setProtoField(CString("r_index_distal_keyValue"));
+IS1235->addChild(connect1237);
 
 Connect* connect1238 = new Connect();
-connect1238->setNodeField("value_changed");
-connect1238->setProtoField("r_index_distal_changed");
-IS1235->addConnect(connect1238);
+connect1238->setNodeField(CString("value_changed"));
+connect1238->setProtoField(CString("r_index_distal_changed"));
+IS1235->addChild(connect1238);
 
-OrientationInterpolator1234->setIS(IS1235);
+OrientationInterpolator1234->addChild(IS1235);
 
 ProtoBody603->addChild(OrientationInterpolator1234);
 
 ROUTE* ROUTE1239 = new ROUTE();
-ROUTE1239->setFromField("fraction_changed");
-ROUTE1239->setFromNode("BehaviorClock");
-ROUTE1239->setToField("set_fraction");
-ROUTE1239->setToNode("r_index_distal_OI");
+ROUTE1239->setFromField(CString("fraction_changed"));
+ROUTE1239->setFromNode(CString("BehaviorClock"));
+ROUTE1239->setToField(CString("set_fraction"));
+ROUTE1239->setToNode(CString("r_index_distal_OI"));
 ProtoBody603->addChild(ROUTE1239);
 
 OrientationInterpolator* OrientationInterpolator1240 = new OrientationInterpolator();
-OrientationInterpolator1240->setDEF("r_index_metacarpal_OI");
+OrientationInterpolator1240->setDEF(CString("r_index_metacarpal_OI"));
 IS* IS1241 = new IS();
 Connect* connect1242 = new Connect();
-connect1242->setNodeField("key");
-connect1242->setProtoField("r_index_metacarpal_key");
-IS1241->addConnect(connect1242);
+connect1242->setNodeField(CString("key"));
+connect1242->setProtoField(CString("r_index_metacarpal_key"));
+IS1241->addChild(connect1242);
 
 Connect* connect1243 = new Connect();
-connect1243->setNodeField("keyValue");
-connect1243->setProtoField("r_index_metacarpal_keyValue");
-IS1241->addConnect(connect1243);
+connect1243->setNodeField(CString("keyValue"));
+connect1243->setProtoField(CString("r_index_metacarpal_keyValue"));
+IS1241->addChild(connect1243);
 
 Connect* connect1244 = new Connect();
-connect1244->setNodeField("value_changed");
-connect1244->setProtoField("r_index_metacarpal_changed");
-IS1241->addConnect(connect1244);
+connect1244->setNodeField(CString("value_changed"));
+connect1244->setProtoField(CString("r_index_metacarpal_changed"));
+IS1241->addChild(connect1244);
 
-OrientationInterpolator1240->setIS(IS1241);
+OrientationInterpolator1240->addChild(IS1241);
 
 ProtoBody603->addChild(OrientationInterpolator1240);
 
 ROUTE* ROUTE1245 = new ROUTE();
-ROUTE1245->setFromField("fraction_changed");
-ROUTE1245->setFromNode("BehaviorClock");
-ROUTE1245->setToField("set_fraction");
-ROUTE1245->setToNode("r_index_metacarpal_OI");
+ROUTE1245->setFromField(CString("fraction_changed"));
+ROUTE1245->setFromNode(CString("BehaviorClock"));
+ROUTE1245->setToField(CString("set_fraction"));
+ROUTE1245->setToNode(CString("r_index_metacarpal_OI"));
 ProtoBody603->addChild(ROUTE1245);
 
 OrientationInterpolator* OrientationInterpolator1246 = new OrientationInterpolator();
-OrientationInterpolator1246->setDEF("r_index_middle_OI");
+OrientationInterpolator1246->setDEF(CString("r_index_middle_OI"));
 IS* IS1247 = new IS();
 Connect* connect1248 = new Connect();
-connect1248->setNodeField("key");
-connect1248->setProtoField("r_index_middle_key");
-IS1247->addConnect(connect1248);
+connect1248->setNodeField(CString("key"));
+connect1248->setProtoField(CString("r_index_middle_key"));
+IS1247->addChild(connect1248);
 
 Connect* connect1249 = new Connect();
-connect1249->setNodeField("keyValue");
-connect1249->setProtoField("r_index_middle_keyValue");
-IS1247->addConnect(connect1249);
+connect1249->setNodeField(CString("keyValue"));
+connect1249->setProtoField(CString("r_index_middle_keyValue"));
+IS1247->addChild(connect1249);
 
 Connect* connect1250 = new Connect();
-connect1250->setNodeField("value_changed");
-connect1250->setProtoField("r_index_middle_changed");
-IS1247->addConnect(connect1250);
+connect1250->setNodeField(CString("value_changed"));
+connect1250->setProtoField(CString("r_index_middle_changed"));
+IS1247->addChild(connect1250);
 
-OrientationInterpolator1246->setIS(IS1247);
+OrientationInterpolator1246->addChild(IS1247);
 
 ProtoBody603->addChild(OrientationInterpolator1246);
 
 ROUTE* ROUTE1251 = new ROUTE();
-ROUTE1251->setFromField("fraction_changed");
-ROUTE1251->setFromNode("BehaviorClock");
-ROUTE1251->setToField("set_fraction");
-ROUTE1251->setToNode("r_index_middle_OI");
+ROUTE1251->setFromField(CString("fraction_changed"));
+ROUTE1251->setFromNode(CString("BehaviorClock"));
+ROUTE1251->setToField(CString("set_fraction"));
+ROUTE1251->setToNode(CString("r_index_middle_OI"));
 ProtoBody603->addChild(ROUTE1251);
 
 OrientationInterpolator* OrientationInterpolator1252 = new OrientationInterpolator();
-OrientationInterpolator1252->setDEF("r_index_proximal_OI");
+OrientationInterpolator1252->setDEF(CString("r_index_proximal_OI"));
 IS* IS1253 = new IS();
 Connect* connect1254 = new Connect();
-connect1254->setNodeField("key");
-connect1254->setProtoField("r_index_proximal_key");
-IS1253->addConnect(connect1254);
+connect1254->setNodeField(CString("key"));
+connect1254->setProtoField(CString("r_index_proximal_key"));
+IS1253->addChild(connect1254);
 
 Connect* connect1255 = new Connect();
-connect1255->setNodeField("keyValue");
-connect1255->setProtoField("r_index_proximal_keyValue");
-IS1253->addConnect(connect1255);
+connect1255->setNodeField(CString("keyValue"));
+connect1255->setProtoField(CString("r_index_proximal_keyValue"));
+IS1253->addChild(connect1255);
 
 Connect* connect1256 = new Connect();
-connect1256->setNodeField("value_changed");
-connect1256->setProtoField("r_index_proximal_changed");
-IS1253->addConnect(connect1256);
+connect1256->setNodeField(CString("value_changed"));
+connect1256->setProtoField(CString("r_index_proximal_changed"));
+IS1253->addChild(connect1256);
 
-OrientationInterpolator1252->setIS(IS1253);
+OrientationInterpolator1252->addChild(IS1253);
 
 ProtoBody603->addChild(OrientationInterpolator1252);
 
 ROUTE* ROUTE1257 = new ROUTE();
-ROUTE1257->setFromField("fraction_changed");
-ROUTE1257->setFromNode("BehaviorClock");
-ROUTE1257->setToField("set_fraction");
-ROUTE1257->setToNode("r_index_proximal_OI");
+ROUTE1257->setFromField(CString("fraction_changed"));
+ROUTE1257->setFromNode(CString("BehaviorClock"));
+ROUTE1257->setToField(CString("set_fraction"));
+ROUTE1257->setToNode(CString("r_index_proximal_OI"));
 ProtoBody603->addChild(ROUTE1257);
 
 OrientationInterpolator* OrientationInterpolator1258 = new OrientationInterpolator();
-OrientationInterpolator1258->setDEF("r_knee_OI");
+OrientationInterpolator1258->setDEF(CString("r_knee_OI"));
 IS* IS1259 = new IS();
 Connect* connect1260 = new Connect();
-connect1260->setNodeField("key");
-connect1260->setProtoField("r_knee_key");
-IS1259->addConnect(connect1260);
+connect1260->setNodeField(CString("key"));
+connect1260->setProtoField(CString("r_knee_key"));
+IS1259->addChild(connect1260);
 
 Connect* connect1261 = new Connect();
-connect1261->setNodeField("keyValue");
-connect1261->setProtoField("r_knee_keyValue");
-IS1259->addConnect(connect1261);
+connect1261->setNodeField(CString("keyValue"));
+connect1261->setProtoField(CString("r_knee_keyValue"));
+IS1259->addChild(connect1261);
 
 Connect* connect1262 = new Connect();
-connect1262->setNodeField("value_changed");
-connect1262->setProtoField("r_knee_changed");
-IS1259->addConnect(connect1262);
+connect1262->setNodeField(CString("value_changed"));
+connect1262->setProtoField(CString("r_knee_changed"));
+IS1259->addChild(connect1262);
 
-OrientationInterpolator1258->setIS(IS1259);
+OrientationInterpolator1258->addChild(IS1259);
 
 ProtoBody603->addChild(OrientationInterpolator1258);
 
 ROUTE* ROUTE1263 = new ROUTE();
-ROUTE1263->setFromField("fraction_changed");
-ROUTE1263->setFromNode("BehaviorClock");
-ROUTE1263->setToField("set_fraction");
-ROUTE1263->setToNode("r_knee_OI");
+ROUTE1263->setFromField(CString("fraction_changed"));
+ROUTE1263->setFromNode(CString("BehaviorClock"));
+ROUTE1263->setToField(CString("set_fraction"));
+ROUTE1263->setToNode(CString("r_knee_OI"));
 ProtoBody603->addChild(ROUTE1263);
 
 OrientationInterpolator* OrientationInterpolator1264 = new OrientationInterpolator();
-OrientationInterpolator1264->setDEF("r_metatarsal_OI");
+OrientationInterpolator1264->setDEF(CString("r_metatarsal_OI"));
 IS* IS1265 = new IS();
 Connect* connect1266 = new Connect();
-connect1266->setNodeField("key");
-connect1266->setProtoField("r_metatarsal_key");
-IS1265->addConnect(connect1266);
+connect1266->setNodeField(CString("key"));
+connect1266->setProtoField(CString("r_metatarsal_key"));
+IS1265->addChild(connect1266);
 
 Connect* connect1267 = new Connect();
-connect1267->setNodeField("keyValue");
-connect1267->setProtoField("r_metatarsal_keyValue");
-IS1265->addConnect(connect1267);
+connect1267->setNodeField(CString("keyValue"));
+connect1267->setProtoField(CString("r_metatarsal_keyValue"));
+IS1265->addChild(connect1267);
 
 Connect* connect1268 = new Connect();
-connect1268->setNodeField("value_changed");
-connect1268->setProtoField("r_metatarsal_changed");
-IS1265->addConnect(connect1268);
+connect1268->setNodeField(CString("value_changed"));
+connect1268->setProtoField(CString("r_metatarsal_changed"));
+IS1265->addChild(connect1268);
 
-OrientationInterpolator1264->setIS(IS1265);
+OrientationInterpolator1264->addChild(IS1265);
 
 ProtoBody603->addChild(OrientationInterpolator1264);
 
 ROUTE* ROUTE1269 = new ROUTE();
-ROUTE1269->setFromField("fraction_changed");
-ROUTE1269->setFromNode("BehaviorClock");
-ROUTE1269->setToField("set_fraction");
-ROUTE1269->setToNode("r_metatarsal_OI");
+ROUTE1269->setFromField(CString("fraction_changed"));
+ROUTE1269->setFromNode(CString("BehaviorClock"));
+ROUTE1269->setToField(CString("set_fraction"));
+ROUTE1269->setToNode(CString("r_metatarsal_OI"));
 ProtoBody603->addChild(ROUTE1269);
 
 OrientationInterpolator* OrientationInterpolator1270 = new OrientationInterpolator();
-OrientationInterpolator1270->setDEF("r_middistal_OI");
+OrientationInterpolator1270->setDEF(CString("r_middistal_OI"));
 IS* IS1271 = new IS();
 Connect* connect1272 = new Connect();
-connect1272->setNodeField("key");
-connect1272->setProtoField("r_middistal_key");
-IS1271->addConnect(connect1272);
+connect1272->setNodeField(CString("key"));
+connect1272->setProtoField(CString("r_middistal_key"));
+IS1271->addChild(connect1272);
 
 Connect* connect1273 = new Connect();
-connect1273->setNodeField("keyValue");
-connect1273->setProtoField("r_middistal_keyValue");
-IS1271->addConnect(connect1273);
+connect1273->setNodeField(CString("keyValue"));
+connect1273->setProtoField(CString("r_middistal_keyValue"));
+IS1271->addChild(connect1273);
 
 Connect* connect1274 = new Connect();
-connect1274->setNodeField("value_changed");
-connect1274->setProtoField("r_middistal_changed");
-IS1271->addConnect(connect1274);
+connect1274->setNodeField(CString("value_changed"));
+connect1274->setProtoField(CString("r_middistal_changed"));
+IS1271->addChild(connect1274);
 
-OrientationInterpolator1270->setIS(IS1271);
+OrientationInterpolator1270->addChild(IS1271);
 
 ProtoBody603->addChild(OrientationInterpolator1270);
 
 ROUTE* ROUTE1275 = new ROUTE();
-ROUTE1275->setFromField("fraction_changed");
-ROUTE1275->setFromNode("BehaviorClock");
-ROUTE1275->setToField("set_fraction");
-ROUTE1275->setToNode("r_middistal_OI");
+ROUTE1275->setFromField(CString("fraction_changed"));
+ROUTE1275->setFromNode(CString("BehaviorClock"));
+ROUTE1275->setToField(CString("set_fraction"));
+ROUTE1275->setToNode(CString("r_middistal_OI"));
 ProtoBody603->addChild(ROUTE1275);
 
 OrientationInterpolator* OrientationInterpolator1276 = new OrientationInterpolator();
-OrientationInterpolator1276->setDEF("r_middle0_OI");
+OrientationInterpolator1276->setDEF(CString("r_middle0_OI"));
 IS* IS1277 = new IS();
 Connect* connect1278 = new Connect();
-connect1278->setNodeField("key");
-connect1278->setProtoField("r_middle0_key");
-IS1277->addConnect(connect1278);
+connect1278->setNodeField(CString("key"));
+connect1278->setProtoField(CString("r_middle0_key"));
+IS1277->addChild(connect1278);
 
 Connect* connect1279 = new Connect();
-connect1279->setNodeField("keyValue");
-connect1279->setProtoField("r_middle0_keyValue");
-IS1277->addConnect(connect1279);
+connect1279->setNodeField(CString("keyValue"));
+connect1279->setProtoField(CString("r_middle0_keyValue"));
+IS1277->addChild(connect1279);
 
 Connect* connect1280 = new Connect();
-connect1280->setNodeField("value_changed");
-connect1280->setProtoField("r_middle0_changed");
-IS1277->addConnect(connect1280);
+connect1280->setNodeField(CString("value_changed"));
+connect1280->setProtoField(CString("r_middle0_changed"));
+IS1277->addChild(connect1280);
 
-OrientationInterpolator1276->setIS(IS1277);
+OrientationInterpolator1276->addChild(IS1277);
 
 ProtoBody603->addChild(OrientationInterpolator1276);
 
 ROUTE* ROUTE1281 = new ROUTE();
-ROUTE1281->setFromField("fraction_changed");
-ROUTE1281->setFromNode("BehaviorClock");
-ROUTE1281->setToField("set_fraction");
-ROUTE1281->setToNode("r_middle0_OI");
+ROUTE1281->setFromField(CString("fraction_changed"));
+ROUTE1281->setFromNode(CString("BehaviorClock"));
+ROUTE1281->setToField(CString("set_fraction"));
+ROUTE1281->setToNode(CString("r_middle0_OI"));
 ProtoBody603->addChild(ROUTE1281);
 
 OrientationInterpolator* OrientationInterpolator1282 = new OrientationInterpolator();
-OrientationInterpolator1282->setDEF("r_middle1_OI");
+OrientationInterpolator1282->setDEF(CString("r_middle1_OI"));
 IS* IS1283 = new IS();
 Connect* connect1284 = new Connect();
-connect1284->setNodeField("key");
-connect1284->setProtoField("r_middle1_key");
-IS1283->addConnect(connect1284);
+connect1284->setNodeField(CString("key"));
+connect1284->setProtoField(CString("r_middle1_key"));
+IS1283->addChild(connect1284);
 
 Connect* connect1285 = new Connect();
-connect1285->setNodeField("keyValue");
-connect1285->setProtoField("r_middle1_keyValue");
-IS1283->addConnect(connect1285);
+connect1285->setNodeField(CString("keyValue"));
+connect1285->setProtoField(CString("r_middle1_keyValue"));
+IS1283->addChild(connect1285);
 
 Connect* connect1286 = new Connect();
-connect1286->setNodeField("value_changed");
-connect1286->setProtoField("r_middle1_changed");
-IS1283->addConnect(connect1286);
+connect1286->setNodeField(CString("value_changed"));
+connect1286->setProtoField(CString("r_middle1_changed"));
+IS1283->addChild(connect1286);
 
-OrientationInterpolator1282->setIS(IS1283);
+OrientationInterpolator1282->addChild(IS1283);
 
 ProtoBody603->addChild(OrientationInterpolator1282);
 
 ROUTE* ROUTE1287 = new ROUTE();
-ROUTE1287->setFromField("fraction_changed");
-ROUTE1287->setFromNode("BehaviorClock");
-ROUTE1287->setToField("set_fraction");
-ROUTE1287->setToNode("r_middle1_OI");
+ROUTE1287->setFromField(CString("fraction_changed"));
+ROUTE1287->setFromNode(CString("BehaviorClock"));
+ROUTE1287->setToField(CString("set_fraction"));
+ROUTE1287->setToNode(CString("r_middle1_OI"));
 ProtoBody603->addChild(ROUTE1287);
 
 OrientationInterpolator* OrientationInterpolator1288 = new OrientationInterpolator();
-OrientationInterpolator1288->setDEF("r_middle2_OI");
+OrientationInterpolator1288->setDEF(CString("r_middle2_OI"));
 IS* IS1289 = new IS();
 Connect* connect1290 = new Connect();
-connect1290->setNodeField("key");
-connect1290->setProtoField("r_middle2_key");
-IS1289->addConnect(connect1290);
+connect1290->setNodeField(CString("key"));
+connect1290->setProtoField(CString("r_middle2_key"));
+IS1289->addChild(connect1290);
 
 Connect* connect1291 = new Connect();
-connect1291->setNodeField("keyValue");
-connect1291->setProtoField("r_middle2_keyValue");
-IS1289->addConnect(connect1291);
+connect1291->setNodeField(CString("keyValue"));
+connect1291->setProtoField(CString("r_middle2_keyValue"));
+IS1289->addChild(connect1291);
 
 Connect* connect1292 = new Connect();
-connect1292->setNodeField("value_changed");
-connect1292->setProtoField("r_middle2_changed");
-IS1289->addConnect(connect1292);
+connect1292->setNodeField(CString("value_changed"));
+connect1292->setProtoField(CString("r_middle2_changed"));
+IS1289->addChild(connect1292);
 
-OrientationInterpolator1288->setIS(IS1289);
+OrientationInterpolator1288->addChild(IS1289);
 
 ProtoBody603->addChild(OrientationInterpolator1288);
 
 ROUTE* ROUTE1293 = new ROUTE();
-ROUTE1293->setFromField("fraction_changed");
-ROUTE1293->setFromNode("BehaviorClock");
-ROUTE1293->setToField("set_fraction");
-ROUTE1293->setToNode("r_middle2_OI");
+ROUTE1293->setFromField(CString("fraction_changed"));
+ROUTE1293->setFromNode(CString("BehaviorClock"));
+ROUTE1293->setToField(CString("set_fraction"));
+ROUTE1293->setToNode(CString("r_middle2_OI"));
 ProtoBody603->addChild(ROUTE1293);
 
 OrientationInterpolator* OrientationInterpolator1294 = new OrientationInterpolator();
-OrientationInterpolator1294->setDEF("r_middle3_OI");
+OrientationInterpolator1294->setDEF(CString("r_middle3_OI"));
 IS* IS1295 = new IS();
 Connect* connect1296 = new Connect();
-connect1296->setNodeField("key");
-connect1296->setProtoField("r_middle3_key");
-IS1295->addConnect(connect1296);
+connect1296->setNodeField(CString("key"));
+connect1296->setProtoField(CString("r_middle3_key"));
+IS1295->addChild(connect1296);
 
 Connect* connect1297 = new Connect();
-connect1297->setNodeField("keyValue");
-connect1297->setProtoField("r_middle3_keyValue");
-IS1295->addConnect(connect1297);
+connect1297->setNodeField(CString("keyValue"));
+connect1297->setProtoField(CString("r_middle3_keyValue"));
+IS1295->addChild(connect1297);
 
 Connect* connect1298 = new Connect();
-connect1298->setNodeField("value_changed");
-connect1298->setProtoField("r_middle3_changed");
-IS1295->addConnect(connect1298);
+connect1298->setNodeField(CString("value_changed"));
+connect1298->setProtoField(CString("r_middle3_changed"));
+IS1295->addChild(connect1298);
 
-OrientationInterpolator1294->setIS(IS1295);
+OrientationInterpolator1294->addChild(IS1295);
 
 ProtoBody603->addChild(OrientationInterpolator1294);
 
 ROUTE* ROUTE1299 = new ROUTE();
-ROUTE1299->setFromField("fraction_changed");
-ROUTE1299->setFromNode("BehaviorClock");
-ROUTE1299->setToField("set_fraction");
-ROUTE1299->setToNode("r_middle3_OI");
+ROUTE1299->setFromField(CString("fraction_changed"));
+ROUTE1299->setFromNode(CString("BehaviorClock"));
+ROUTE1299->setToField(CString("set_fraction"));
+ROUTE1299->setToNode(CString("r_middle3_OI"));
 ProtoBody603->addChild(ROUTE1299);
 
 OrientationInterpolator* OrientationInterpolator1300 = new OrientationInterpolator();
-OrientationInterpolator1300->setDEF("r_middle_distal_OI");
+OrientationInterpolator1300->setDEF(CString("r_middle_distal_OI"));
 IS* IS1301 = new IS();
 Connect* connect1302 = new Connect();
-connect1302->setNodeField("key");
-connect1302->setProtoField("r_middle_distal_key");
-IS1301->addConnect(connect1302);
+connect1302->setNodeField(CString("key"));
+connect1302->setProtoField(CString("r_middle_distal_key"));
+IS1301->addChild(connect1302);
 
 Connect* connect1303 = new Connect();
-connect1303->setNodeField("keyValue");
-connect1303->setProtoField("r_middle_distal_keyValue");
-IS1301->addConnect(connect1303);
+connect1303->setNodeField(CString("keyValue"));
+connect1303->setProtoField(CString("r_middle_distal_keyValue"));
+IS1301->addChild(connect1303);
 
 Connect* connect1304 = new Connect();
-connect1304->setNodeField("value_changed");
-connect1304->setProtoField("r_middle_distal_changed");
-IS1301->addConnect(connect1304);
+connect1304->setNodeField(CString("value_changed"));
+connect1304->setProtoField(CString("r_middle_distal_changed"));
+IS1301->addChild(connect1304);
 
-OrientationInterpolator1300->setIS(IS1301);
+OrientationInterpolator1300->addChild(IS1301);
 
 ProtoBody603->addChild(OrientationInterpolator1300);
 
 ROUTE* ROUTE1305 = new ROUTE();
-ROUTE1305->setFromField("fraction_changed");
-ROUTE1305->setFromNode("BehaviorClock");
-ROUTE1305->setToField("set_fraction");
-ROUTE1305->setToNode("r_middle_distal_OI");
+ROUTE1305->setFromField(CString("fraction_changed"));
+ROUTE1305->setFromNode(CString("BehaviorClock"));
+ROUTE1305->setToField(CString("set_fraction"));
+ROUTE1305->setToNode(CString("r_middle_distal_OI"));
 ProtoBody603->addChild(ROUTE1305);
 
 OrientationInterpolator* OrientationInterpolator1306 = new OrientationInterpolator();
-OrientationInterpolator1306->setDEF("r_middle_metacarpal_OI");
+OrientationInterpolator1306->setDEF(CString("r_middle_metacarpal_OI"));
 IS* IS1307 = new IS();
 Connect* connect1308 = new Connect();
-connect1308->setNodeField("key");
-connect1308->setProtoField("r_middle_metacarpal_key");
-IS1307->addConnect(connect1308);
+connect1308->setNodeField(CString("key"));
+connect1308->setProtoField(CString("r_middle_metacarpal_key"));
+IS1307->addChild(connect1308);
 
 Connect* connect1309 = new Connect();
-connect1309->setNodeField("keyValue");
-connect1309->setProtoField("r_middle_metacarpal_keyValue");
-IS1307->addConnect(connect1309);
+connect1309->setNodeField(CString("keyValue"));
+connect1309->setProtoField(CString("r_middle_metacarpal_keyValue"));
+IS1307->addChild(connect1309);
 
 Connect* connect1310 = new Connect();
-connect1310->setNodeField("value_changed");
-connect1310->setProtoField("r_middle_metacarpal_changed");
-IS1307->addConnect(connect1310);
+connect1310->setNodeField(CString("value_changed"));
+connect1310->setProtoField(CString("r_middle_metacarpal_changed"));
+IS1307->addChild(connect1310);
 
-OrientationInterpolator1306->setIS(IS1307);
+OrientationInterpolator1306->addChild(IS1307);
 
 ProtoBody603->addChild(OrientationInterpolator1306);
 
 ROUTE* ROUTE1311 = new ROUTE();
-ROUTE1311->setFromField("fraction_changed");
-ROUTE1311->setFromNode("BehaviorClock");
-ROUTE1311->setToField("set_fraction");
-ROUTE1311->setToNode("r_middle_metacarpal_OI");
+ROUTE1311->setFromField(CString("fraction_changed"));
+ROUTE1311->setFromNode(CString("BehaviorClock"));
+ROUTE1311->setToField(CString("set_fraction"));
+ROUTE1311->setToNode(CString("r_middle_metacarpal_OI"));
 ProtoBody603->addChild(ROUTE1311);
 
 OrientationInterpolator* OrientationInterpolator1312 = new OrientationInterpolator();
-OrientationInterpolator1312->setDEF("r_middle_middle_OI");
+OrientationInterpolator1312->setDEF(CString("r_middle_middle_OI"));
 IS* IS1313 = new IS();
 Connect* connect1314 = new Connect();
-connect1314->setNodeField("key");
-connect1314->setProtoField("r_middle_middle_key");
-IS1313->addConnect(connect1314);
+connect1314->setNodeField(CString("key"));
+connect1314->setProtoField(CString("r_middle_middle_key"));
+IS1313->addChild(connect1314);
 
 Connect* connect1315 = new Connect();
-connect1315->setNodeField("keyValue");
-connect1315->setProtoField("r_middle_middle_keyValue");
-IS1313->addConnect(connect1315);
+connect1315->setNodeField(CString("keyValue"));
+connect1315->setProtoField(CString("r_middle_middle_keyValue"));
+IS1313->addChild(connect1315);
 
 Connect* connect1316 = new Connect();
-connect1316->setNodeField("value_changed");
-connect1316->setProtoField("r_middle_middle_changed");
-IS1313->addConnect(connect1316);
+connect1316->setNodeField(CString("value_changed"));
+connect1316->setProtoField(CString("r_middle_middle_changed"));
+IS1313->addChild(connect1316);
 
-OrientationInterpolator1312->setIS(IS1313);
+OrientationInterpolator1312->addChild(IS1313);
 
 ProtoBody603->addChild(OrientationInterpolator1312);
 
 ROUTE* ROUTE1317 = new ROUTE();
-ROUTE1317->setFromField("fraction_changed");
-ROUTE1317->setFromNode("BehaviorClock");
-ROUTE1317->setToField("set_fraction");
-ROUTE1317->setToNode("r_middle_middle_OI");
+ROUTE1317->setFromField(CString("fraction_changed"));
+ROUTE1317->setFromNode(CString("BehaviorClock"));
+ROUTE1317->setToField(CString("set_fraction"));
+ROUTE1317->setToNode(CString("r_middle_middle_OI"));
 ProtoBody603->addChild(ROUTE1317);
 
 OrientationInterpolator* OrientationInterpolator1318 = new OrientationInterpolator();
-OrientationInterpolator1318->setDEF("r_middle_proximal_OI");
+OrientationInterpolator1318->setDEF(CString("r_middle_proximal_OI"));
 IS* IS1319 = new IS();
 Connect* connect1320 = new Connect();
-connect1320->setNodeField("key");
-connect1320->setProtoField("r_middle_proximal_key");
-IS1319->addConnect(connect1320);
+connect1320->setNodeField(CString("key"));
+connect1320->setProtoField(CString("r_middle_proximal_key"));
+IS1319->addChild(connect1320);
 
 Connect* connect1321 = new Connect();
-connect1321->setNodeField("keyValue");
-connect1321->setProtoField("r_middle_proximal_keyValue");
-IS1319->addConnect(connect1321);
+connect1321->setNodeField(CString("keyValue"));
+connect1321->setProtoField(CString("r_middle_proximal_keyValue"));
+IS1319->addChild(connect1321);
 
 Connect* connect1322 = new Connect();
-connect1322->setNodeField("value_changed");
-connect1322->setProtoField("r_middle_proximal_changed");
-IS1319->addConnect(connect1322);
+connect1322->setNodeField(CString("value_changed"));
+connect1322->setProtoField(CString("r_middle_proximal_changed"));
+IS1319->addChild(connect1322);
 
-OrientationInterpolator1318->setIS(IS1319);
+OrientationInterpolator1318->addChild(IS1319);
 
 ProtoBody603->addChild(OrientationInterpolator1318);
 
 ROUTE* ROUTE1323 = new ROUTE();
-ROUTE1323->setFromField("fraction_changed");
-ROUTE1323->setFromNode("BehaviorClock");
-ROUTE1323->setToField("set_fraction");
-ROUTE1323->setToNode("r_middle_proximal_OI");
+ROUTE1323->setFromField(CString("fraction_changed"));
+ROUTE1323->setFromNode(CString("BehaviorClock"));
+ROUTE1323->setToField(CString("set_fraction"));
+ROUTE1323->setToNode(CString("r_middle_proximal_OI"));
 ProtoBody603->addChild(ROUTE1323);
 
 OrientationInterpolator* OrientationInterpolator1324 = new OrientationInterpolator();
-OrientationInterpolator1324->setDEF("r_midproximal_OI");
+OrientationInterpolator1324->setDEF(CString("r_midproximal_OI"));
 IS* IS1325 = new IS();
 Connect* connect1326 = new Connect();
-connect1326->setNodeField("key");
-connect1326->setProtoField("r_midproximal_key");
-IS1325->addConnect(connect1326);
+connect1326->setNodeField(CString("key"));
+connect1326->setProtoField(CString("r_midproximal_key"));
+IS1325->addChild(connect1326);
 
 Connect* connect1327 = new Connect();
-connect1327->setNodeField("keyValue");
-connect1327->setProtoField("r_midproximal_keyValue");
-IS1325->addConnect(connect1327);
+connect1327->setNodeField(CString("keyValue"));
+connect1327->setProtoField(CString("r_midproximal_keyValue"));
+IS1325->addChild(connect1327);
 
 Connect* connect1328 = new Connect();
-connect1328->setNodeField("value_changed");
-connect1328->setProtoField("r_midproximal_changed");
-IS1325->addConnect(connect1328);
+connect1328->setNodeField(CString("value_changed"));
+connect1328->setProtoField(CString("r_midproximal_changed"));
+IS1325->addChild(connect1328);
 
-OrientationInterpolator1324->setIS(IS1325);
+OrientationInterpolator1324->addChild(IS1325);
 
 ProtoBody603->addChild(OrientationInterpolator1324);
 
 ROUTE* ROUTE1329 = new ROUTE();
-ROUTE1329->setFromField("fraction_changed");
-ROUTE1329->setFromNode("BehaviorClock");
-ROUTE1329->setToField("set_fraction");
-ROUTE1329->setToNode("r_midproximal_OI");
+ROUTE1329->setFromField(CString("fraction_changed"));
+ROUTE1329->setFromNode(CString("BehaviorClock"));
+ROUTE1329->setToField(CString("set_fraction"));
+ROUTE1329->setToNode(CString("r_midproximal_OI"));
 ProtoBody603->addChild(ROUTE1329);
 
 OrientationInterpolator* OrientationInterpolator1330 = new OrientationInterpolator();
-OrientationInterpolator1330->setDEF("r_midtarsal_OI");
+OrientationInterpolator1330->setDEF(CString("r_midtarsal_OI"));
 IS* IS1331 = new IS();
 Connect* connect1332 = new Connect();
-connect1332->setNodeField("key");
-connect1332->setProtoField("r_midtarsal_key");
-IS1331->addConnect(connect1332);
+connect1332->setNodeField(CString("key"));
+connect1332->setProtoField(CString("r_midtarsal_key"));
+IS1331->addChild(connect1332);
 
 Connect* connect1333 = new Connect();
-connect1333->setNodeField("keyValue");
-connect1333->setProtoField("r_midtarsal_keyValue");
-IS1331->addConnect(connect1333);
+connect1333->setNodeField(CString("keyValue"));
+connect1333->setProtoField(CString("r_midtarsal_keyValue"));
+IS1331->addChild(connect1333);
 
 Connect* connect1334 = new Connect();
-connect1334->setNodeField("value_changed");
-connect1334->setProtoField("r_midtarsal_changed");
-IS1331->addConnect(connect1334);
+connect1334->setNodeField(CString("value_changed"));
+connect1334->setProtoField(CString("r_midtarsal_changed"));
+IS1331->addChild(connect1334);
 
-OrientationInterpolator1330->setIS(IS1331);
+OrientationInterpolator1330->addChild(IS1331);
 
 ProtoBody603->addChild(OrientationInterpolator1330);
 
 ROUTE* ROUTE1335 = new ROUTE();
-ROUTE1335->setFromField("fraction_changed");
-ROUTE1335->setFromNode("BehaviorClock");
-ROUTE1335->setToField("set_fraction");
-ROUTE1335->setToNode("r_midtarsal_OI");
+ROUTE1335->setFromField(CString("fraction_changed"));
+ROUTE1335->setFromNode(CString("BehaviorClock"));
+ROUTE1335->setToField(CString("set_fraction"));
+ROUTE1335->setToNode(CString("r_midtarsal_OI"));
 ProtoBody603->addChild(ROUTE1335);
 
 OrientationInterpolator* OrientationInterpolator1336 = new OrientationInterpolator();
-OrientationInterpolator1336->setDEF("r_pinky0_OI");
+OrientationInterpolator1336->setDEF(CString("r_pinky0_OI"));
 IS* IS1337 = new IS();
 Connect* connect1338 = new Connect();
-connect1338->setNodeField("key");
-connect1338->setProtoField("r_pinky0_key");
-IS1337->addConnect(connect1338);
+connect1338->setNodeField(CString("key"));
+connect1338->setProtoField(CString("r_pinky0_key"));
+IS1337->addChild(connect1338);
 
 Connect* connect1339 = new Connect();
-connect1339->setNodeField("keyValue");
-connect1339->setProtoField("r_pinky0_keyValue");
-IS1337->addConnect(connect1339);
+connect1339->setNodeField(CString("keyValue"));
+connect1339->setProtoField(CString("r_pinky0_keyValue"));
+IS1337->addChild(connect1339);
 
 Connect* connect1340 = new Connect();
-connect1340->setNodeField("value_changed");
-connect1340->setProtoField("r_pinky0_changed");
-IS1337->addConnect(connect1340);
+connect1340->setNodeField(CString("value_changed"));
+connect1340->setProtoField(CString("r_pinky0_changed"));
+IS1337->addChild(connect1340);
 
-OrientationInterpolator1336->setIS(IS1337);
+OrientationInterpolator1336->addChild(IS1337);
 
 ProtoBody603->addChild(OrientationInterpolator1336);
 
 ROUTE* ROUTE1341 = new ROUTE();
-ROUTE1341->setFromField("fraction_changed");
-ROUTE1341->setFromNode("BehaviorClock");
-ROUTE1341->setToField("set_fraction");
-ROUTE1341->setToNode("r_pinky0_OI");
+ROUTE1341->setFromField(CString("fraction_changed"));
+ROUTE1341->setFromNode(CString("BehaviorClock"));
+ROUTE1341->setToField(CString("set_fraction"));
+ROUTE1341->setToNode(CString("r_pinky0_OI"));
 ProtoBody603->addChild(ROUTE1341);
 
 OrientationInterpolator* OrientationInterpolator1342 = new OrientationInterpolator();
-OrientationInterpolator1342->setDEF("r_pinky1_OI");
+OrientationInterpolator1342->setDEF(CString("r_pinky1_OI"));
 IS* IS1343 = new IS();
 Connect* connect1344 = new Connect();
-connect1344->setNodeField("key");
-connect1344->setProtoField("r_pinky1_key");
-IS1343->addConnect(connect1344);
+connect1344->setNodeField(CString("key"));
+connect1344->setProtoField(CString("r_pinky1_key"));
+IS1343->addChild(connect1344);
 
 Connect* connect1345 = new Connect();
-connect1345->setNodeField("keyValue");
-connect1345->setProtoField("r_pinky1_keyValue");
-IS1343->addConnect(connect1345);
+connect1345->setNodeField(CString("keyValue"));
+connect1345->setProtoField(CString("r_pinky1_keyValue"));
+IS1343->addChild(connect1345);
 
 Connect* connect1346 = new Connect();
-connect1346->setNodeField("value_changed");
-connect1346->setProtoField("r_pinky1_changed");
-IS1343->addConnect(connect1346);
+connect1346->setNodeField(CString("value_changed"));
+connect1346->setProtoField(CString("r_pinky1_changed"));
+IS1343->addChild(connect1346);
 
-OrientationInterpolator1342->setIS(IS1343);
+OrientationInterpolator1342->addChild(IS1343);
 
 ProtoBody603->addChild(OrientationInterpolator1342);
 
 ROUTE* ROUTE1347 = new ROUTE();
-ROUTE1347->setFromField("fraction_changed");
-ROUTE1347->setFromNode("BehaviorClock");
-ROUTE1347->setToField("set_fraction");
-ROUTE1347->setToNode("r_pinky1_OI");
+ROUTE1347->setFromField(CString("fraction_changed"));
+ROUTE1347->setFromNode(CString("BehaviorClock"));
+ROUTE1347->setToField(CString("set_fraction"));
+ROUTE1347->setToNode(CString("r_pinky1_OI"));
 ProtoBody603->addChild(ROUTE1347);
 
 OrientationInterpolator* OrientationInterpolator1348 = new OrientationInterpolator();
-OrientationInterpolator1348->setDEF("r_pinky2_OI");
+OrientationInterpolator1348->setDEF(CString("r_pinky2_OI"));
 IS* IS1349 = new IS();
 Connect* connect1350 = new Connect();
-connect1350->setNodeField("key");
-connect1350->setProtoField("r_pinky2_key");
-IS1349->addConnect(connect1350);
+connect1350->setNodeField(CString("key"));
+connect1350->setProtoField(CString("r_pinky2_key"));
+IS1349->addChild(connect1350);
 
 Connect* connect1351 = new Connect();
-connect1351->setNodeField("keyValue");
-connect1351->setProtoField("r_pinky2_keyValue");
-IS1349->addConnect(connect1351);
+connect1351->setNodeField(CString("keyValue"));
+connect1351->setProtoField(CString("r_pinky2_keyValue"));
+IS1349->addChild(connect1351);
 
 Connect* connect1352 = new Connect();
-connect1352->setNodeField("value_changed");
-connect1352->setProtoField("r_pinky2_changed");
-IS1349->addConnect(connect1352);
+connect1352->setNodeField(CString("value_changed"));
+connect1352->setProtoField(CString("r_pinky2_changed"));
+IS1349->addChild(connect1352);
 
-OrientationInterpolator1348->setIS(IS1349);
+OrientationInterpolator1348->addChild(IS1349);
 
 ProtoBody603->addChild(OrientationInterpolator1348);
 
 ROUTE* ROUTE1353 = new ROUTE();
-ROUTE1353->setFromField("fraction_changed");
-ROUTE1353->setFromNode("BehaviorClock");
-ROUTE1353->setToField("set_fraction");
-ROUTE1353->setToNode("r_pinky2_OI");
+ROUTE1353->setFromField(CString("fraction_changed"));
+ROUTE1353->setFromNode(CString("BehaviorClock"));
+ROUTE1353->setToField(CString("set_fraction"));
+ROUTE1353->setToNode(CString("r_pinky2_OI"));
 ProtoBody603->addChild(ROUTE1353);
 
 OrientationInterpolator* OrientationInterpolator1354 = new OrientationInterpolator();
-OrientationInterpolator1354->setDEF("r_pinky3_OI");
+OrientationInterpolator1354->setDEF(CString("r_pinky3_OI"));
 IS* IS1355 = new IS();
 Connect* connect1356 = new Connect();
-connect1356->setNodeField("key");
-connect1356->setProtoField("r_pinky3_key");
-IS1355->addConnect(connect1356);
+connect1356->setNodeField(CString("key"));
+connect1356->setProtoField(CString("r_pinky3_key"));
+IS1355->addChild(connect1356);
 
 Connect* connect1357 = new Connect();
-connect1357->setNodeField("keyValue");
-connect1357->setProtoField("r_pinky3_keyValue");
-IS1355->addConnect(connect1357);
+connect1357->setNodeField(CString("keyValue"));
+connect1357->setProtoField(CString("r_pinky3_keyValue"));
+IS1355->addChild(connect1357);
 
 Connect* connect1358 = new Connect();
-connect1358->setNodeField("value_changed");
-connect1358->setProtoField("r_pinky3_changed");
-IS1355->addConnect(connect1358);
+connect1358->setNodeField(CString("value_changed"));
+connect1358->setProtoField(CString("r_pinky3_changed"));
+IS1355->addChild(connect1358);
 
-OrientationInterpolator1354->setIS(IS1355);
+OrientationInterpolator1354->addChild(IS1355);
 
 ProtoBody603->addChild(OrientationInterpolator1354);
 
 ROUTE* ROUTE1359 = new ROUTE();
-ROUTE1359->setFromField("fraction_changed");
-ROUTE1359->setFromNode("BehaviorClock");
-ROUTE1359->setToField("set_fraction");
-ROUTE1359->setToNode("r_pinky3_OI");
+ROUTE1359->setFromField(CString("fraction_changed"));
+ROUTE1359->setFromNode(CString("BehaviorClock"));
+ROUTE1359->setToField(CString("set_fraction"));
+ROUTE1359->setToNode(CString("r_pinky3_OI"));
 ProtoBody603->addChild(ROUTE1359);
 
 OrientationInterpolator* OrientationInterpolator1360 = new OrientationInterpolator();
-OrientationInterpolator1360->setDEF("r_pinky_distal_OI");
+OrientationInterpolator1360->setDEF(CString("r_pinky_distal_OI"));
 IS* IS1361 = new IS();
 Connect* connect1362 = new Connect();
-connect1362->setNodeField("key");
-connect1362->setProtoField("r_pinky_distal_key");
-IS1361->addConnect(connect1362);
+connect1362->setNodeField(CString("key"));
+connect1362->setProtoField(CString("r_pinky_distal_key"));
+IS1361->addChild(connect1362);
 
 Connect* connect1363 = new Connect();
-connect1363->setNodeField("keyValue");
-connect1363->setProtoField("r_pinky_distal_keyValue");
-IS1361->addConnect(connect1363);
+connect1363->setNodeField(CString("keyValue"));
+connect1363->setProtoField(CString("r_pinky_distal_keyValue"));
+IS1361->addChild(connect1363);
 
 Connect* connect1364 = new Connect();
-connect1364->setNodeField("value_changed");
-connect1364->setProtoField("r_pinky_distal_changed");
-IS1361->addConnect(connect1364);
+connect1364->setNodeField(CString("value_changed"));
+connect1364->setProtoField(CString("r_pinky_distal_changed"));
+IS1361->addChild(connect1364);
 
-OrientationInterpolator1360->setIS(IS1361);
+OrientationInterpolator1360->addChild(IS1361);
 
 ProtoBody603->addChild(OrientationInterpolator1360);
 
 ROUTE* ROUTE1365 = new ROUTE();
-ROUTE1365->setFromField("fraction_changed");
-ROUTE1365->setFromNode("BehaviorClock");
-ROUTE1365->setToField("set_fraction");
-ROUTE1365->setToNode("r_pinky_distal_OI");
+ROUTE1365->setFromField(CString("fraction_changed"));
+ROUTE1365->setFromNode(CString("BehaviorClock"));
+ROUTE1365->setToField(CString("set_fraction"));
+ROUTE1365->setToNode(CString("r_pinky_distal_OI"));
 ProtoBody603->addChild(ROUTE1365);
 
 OrientationInterpolator* OrientationInterpolator1366 = new OrientationInterpolator();
-OrientationInterpolator1366->setDEF("r_pinky_metacarpal_OI");
+OrientationInterpolator1366->setDEF(CString("r_pinky_metacarpal_OI"));
 IS* IS1367 = new IS();
 Connect* connect1368 = new Connect();
-connect1368->setNodeField("key");
-connect1368->setProtoField("r_pinky_metacarpal_key");
-IS1367->addConnect(connect1368);
+connect1368->setNodeField(CString("key"));
+connect1368->setProtoField(CString("r_pinky_metacarpal_key"));
+IS1367->addChild(connect1368);
 
 Connect* connect1369 = new Connect();
-connect1369->setNodeField("keyValue");
-connect1369->setProtoField("r_pinky_metacarpal_keyValue");
-IS1367->addConnect(connect1369);
+connect1369->setNodeField(CString("keyValue"));
+connect1369->setProtoField(CString("r_pinky_metacarpal_keyValue"));
+IS1367->addChild(connect1369);
 
 Connect* connect1370 = new Connect();
-connect1370->setNodeField("value_changed");
-connect1370->setProtoField("r_pinky_metacarpal_changed");
-IS1367->addConnect(connect1370);
+connect1370->setNodeField(CString("value_changed"));
+connect1370->setProtoField(CString("r_pinky_metacarpal_changed"));
+IS1367->addChild(connect1370);
 
-OrientationInterpolator1366->setIS(IS1367);
+OrientationInterpolator1366->addChild(IS1367);
 
 ProtoBody603->addChild(OrientationInterpolator1366);
 
 ROUTE* ROUTE1371 = new ROUTE();
-ROUTE1371->setFromField("fraction_changed");
-ROUTE1371->setFromNode("BehaviorClock");
-ROUTE1371->setToField("set_fraction");
-ROUTE1371->setToNode("r_pinky_metacarpal_OI");
+ROUTE1371->setFromField(CString("fraction_changed"));
+ROUTE1371->setFromNode(CString("BehaviorClock"));
+ROUTE1371->setToField(CString("set_fraction"));
+ROUTE1371->setToNode(CString("r_pinky_metacarpal_OI"));
 ProtoBody603->addChild(ROUTE1371);
 
 OrientationInterpolator* OrientationInterpolator1372 = new OrientationInterpolator();
-OrientationInterpolator1372->setDEF("r_pinky_middle_OI");
+OrientationInterpolator1372->setDEF(CString("r_pinky_middle_OI"));
 IS* IS1373 = new IS();
 Connect* connect1374 = new Connect();
-connect1374->setNodeField("key");
-connect1374->setProtoField("r_pinky_middle_key");
-IS1373->addConnect(connect1374);
+connect1374->setNodeField(CString("key"));
+connect1374->setProtoField(CString("r_pinky_middle_key"));
+IS1373->addChild(connect1374);
 
 Connect* connect1375 = new Connect();
-connect1375->setNodeField("keyValue");
-connect1375->setProtoField("r_pinky_middle_keyValue");
-IS1373->addConnect(connect1375);
+connect1375->setNodeField(CString("keyValue"));
+connect1375->setProtoField(CString("r_pinky_middle_keyValue"));
+IS1373->addChild(connect1375);
 
 Connect* connect1376 = new Connect();
-connect1376->setNodeField("value_changed");
-connect1376->setProtoField("r_pinky_middle_changed");
-IS1373->addConnect(connect1376);
+connect1376->setNodeField(CString("value_changed"));
+connect1376->setProtoField(CString("r_pinky_middle_changed"));
+IS1373->addChild(connect1376);
 
-OrientationInterpolator1372->setIS(IS1373);
+OrientationInterpolator1372->addChild(IS1373);
 
 ProtoBody603->addChild(OrientationInterpolator1372);
 
 ROUTE* ROUTE1377 = new ROUTE();
-ROUTE1377->setFromField("fraction_changed");
-ROUTE1377->setFromNode("BehaviorClock");
-ROUTE1377->setToField("set_fraction");
-ROUTE1377->setToNode("r_pinky_middle_OI");
+ROUTE1377->setFromField(CString("fraction_changed"));
+ROUTE1377->setFromNode(CString("BehaviorClock"));
+ROUTE1377->setToField(CString("set_fraction"));
+ROUTE1377->setToNode(CString("r_pinky_middle_OI"));
 ProtoBody603->addChild(ROUTE1377);
 
 OrientationInterpolator* OrientationInterpolator1378 = new OrientationInterpolator();
-OrientationInterpolator1378->setDEF("r_pinky_proximal_OI");
+OrientationInterpolator1378->setDEF(CString("r_pinky_proximal_OI"));
 IS* IS1379 = new IS();
 Connect* connect1380 = new Connect();
-connect1380->setNodeField("key");
-connect1380->setProtoField("r_pinky_proximal_key");
-IS1379->addConnect(connect1380);
+connect1380->setNodeField(CString("key"));
+connect1380->setProtoField(CString("r_pinky_proximal_key"));
+IS1379->addChild(connect1380);
 
 Connect* connect1381 = new Connect();
-connect1381->setNodeField("keyValue");
-connect1381->setProtoField("r_pinky_proximal_keyValue");
-IS1379->addConnect(connect1381);
+connect1381->setNodeField(CString("keyValue"));
+connect1381->setProtoField(CString("r_pinky_proximal_keyValue"));
+IS1379->addChild(connect1381);
 
 Connect* connect1382 = new Connect();
-connect1382->setNodeField("value_changed");
-connect1382->setProtoField("r_pinky_proximal_changed");
-IS1379->addConnect(connect1382);
+connect1382->setNodeField(CString("value_changed"));
+connect1382->setProtoField(CString("r_pinky_proximal_changed"));
+IS1379->addChild(connect1382);
 
-OrientationInterpolator1378->setIS(IS1379);
+OrientationInterpolator1378->addChild(IS1379);
 
 ProtoBody603->addChild(OrientationInterpolator1378);
 
 ROUTE* ROUTE1383 = new ROUTE();
-ROUTE1383->setFromField("fraction_changed");
-ROUTE1383->setFromNode("BehaviorClock");
-ROUTE1383->setToField("set_fraction");
-ROUTE1383->setToNode("r_pinky_proximal_OI");
+ROUTE1383->setFromField(CString("fraction_changed"));
+ROUTE1383->setFromNode(CString("BehaviorClock"));
+ROUTE1383->setToField(CString("set_fraction"));
+ROUTE1383->setToNode(CString("r_pinky_proximal_OI"));
 ProtoBody603->addChild(ROUTE1383);
 
 OrientationInterpolator* OrientationInterpolator1384 = new OrientationInterpolator();
-OrientationInterpolator1384->setDEF("r_ring0_OI");
+OrientationInterpolator1384->setDEF(CString("r_ring0_OI"));
 IS* IS1385 = new IS();
 Connect* connect1386 = new Connect();
-connect1386->setNodeField("key");
-connect1386->setProtoField("r_ring0_key");
-IS1385->addConnect(connect1386);
+connect1386->setNodeField(CString("key"));
+connect1386->setProtoField(CString("r_ring0_key"));
+IS1385->addChild(connect1386);
 
 Connect* connect1387 = new Connect();
-connect1387->setNodeField("keyValue");
-connect1387->setProtoField("r_ring0_keyValue");
-IS1385->addConnect(connect1387);
+connect1387->setNodeField(CString("keyValue"));
+connect1387->setProtoField(CString("r_ring0_keyValue"));
+IS1385->addChild(connect1387);
 
 Connect* connect1388 = new Connect();
-connect1388->setNodeField("value_changed");
-connect1388->setProtoField("r_ring0_changed");
-IS1385->addConnect(connect1388);
+connect1388->setNodeField(CString("value_changed"));
+connect1388->setProtoField(CString("r_ring0_changed"));
+IS1385->addChild(connect1388);
 
-OrientationInterpolator1384->setIS(IS1385);
+OrientationInterpolator1384->addChild(IS1385);
 
 ProtoBody603->addChild(OrientationInterpolator1384);
 
 ROUTE* ROUTE1389 = new ROUTE();
-ROUTE1389->setFromField("fraction_changed");
-ROUTE1389->setFromNode("BehaviorClock");
-ROUTE1389->setToField("set_fraction");
-ROUTE1389->setToNode("r_ring0_OI");
+ROUTE1389->setFromField(CString("fraction_changed"));
+ROUTE1389->setFromNode(CString("BehaviorClock"));
+ROUTE1389->setToField(CString("set_fraction"));
+ROUTE1389->setToNode(CString("r_ring0_OI"));
 ProtoBody603->addChild(ROUTE1389);
 
 OrientationInterpolator* OrientationInterpolator1390 = new OrientationInterpolator();
-OrientationInterpolator1390->setDEF("r_ring1_OI");
+OrientationInterpolator1390->setDEF(CString("r_ring1_OI"));
 IS* IS1391 = new IS();
 Connect* connect1392 = new Connect();
-connect1392->setNodeField("key");
-connect1392->setProtoField("r_ring1_key");
-IS1391->addConnect(connect1392);
+connect1392->setNodeField(CString("key"));
+connect1392->setProtoField(CString("r_ring1_key"));
+IS1391->addChild(connect1392);
 
 Connect* connect1393 = new Connect();
-connect1393->setNodeField("keyValue");
-connect1393->setProtoField("r_ring1_keyValue");
-IS1391->addConnect(connect1393);
+connect1393->setNodeField(CString("keyValue"));
+connect1393->setProtoField(CString("r_ring1_keyValue"));
+IS1391->addChild(connect1393);
 
 Connect* connect1394 = new Connect();
-connect1394->setNodeField("value_changed");
-connect1394->setProtoField("r_ring1_changed");
-IS1391->addConnect(connect1394);
+connect1394->setNodeField(CString("value_changed"));
+connect1394->setProtoField(CString("r_ring1_changed"));
+IS1391->addChild(connect1394);
 
-OrientationInterpolator1390->setIS(IS1391);
+OrientationInterpolator1390->addChild(IS1391);
 
 ProtoBody603->addChild(OrientationInterpolator1390);
 
 ROUTE* ROUTE1395 = new ROUTE();
-ROUTE1395->setFromField("fraction_changed");
-ROUTE1395->setFromNode("BehaviorClock");
-ROUTE1395->setToField("set_fraction");
-ROUTE1395->setToNode("r_ring1_OI");
+ROUTE1395->setFromField(CString("fraction_changed"));
+ROUTE1395->setFromNode(CString("BehaviorClock"));
+ROUTE1395->setToField(CString("set_fraction"));
+ROUTE1395->setToNode(CString("r_ring1_OI"));
 ProtoBody603->addChild(ROUTE1395);
 
 OrientationInterpolator* OrientationInterpolator1396 = new OrientationInterpolator();
-OrientationInterpolator1396->setDEF("r_ring2_OI");
+OrientationInterpolator1396->setDEF(CString("r_ring2_OI"));
 IS* IS1397 = new IS();
 Connect* connect1398 = new Connect();
-connect1398->setNodeField("key");
-connect1398->setProtoField("r_ring2_key");
-IS1397->addConnect(connect1398);
+connect1398->setNodeField(CString("key"));
+connect1398->setProtoField(CString("r_ring2_key"));
+IS1397->addChild(connect1398);
 
 Connect* connect1399 = new Connect();
-connect1399->setNodeField("keyValue");
-connect1399->setProtoField("r_ring2_keyValue");
-IS1397->addConnect(connect1399);
+connect1399->setNodeField(CString("keyValue"));
+connect1399->setProtoField(CString("r_ring2_keyValue"));
+IS1397->addChild(connect1399);
 
 Connect* connect1400 = new Connect();
-connect1400->setNodeField("value_changed");
-connect1400->setProtoField("r_ring2_changed");
-IS1397->addConnect(connect1400);
+connect1400->setNodeField(CString("value_changed"));
+connect1400->setProtoField(CString("r_ring2_changed"));
+IS1397->addChild(connect1400);
 
-OrientationInterpolator1396->setIS(IS1397);
+OrientationInterpolator1396->addChild(IS1397);
 
 ProtoBody603->addChild(OrientationInterpolator1396);
 
 ROUTE* ROUTE1401 = new ROUTE();
-ROUTE1401->setFromField("fraction_changed");
-ROUTE1401->setFromNode("BehaviorClock");
-ROUTE1401->setToField("set_fraction");
-ROUTE1401->setToNode("r_ring2_OI");
+ROUTE1401->setFromField(CString("fraction_changed"));
+ROUTE1401->setFromNode(CString("BehaviorClock"));
+ROUTE1401->setToField(CString("set_fraction"));
+ROUTE1401->setToNode(CString("r_ring2_OI"));
 ProtoBody603->addChild(ROUTE1401);
 
 OrientationInterpolator* OrientationInterpolator1402 = new OrientationInterpolator();
-OrientationInterpolator1402->setDEF("r_ring3_OI");
+OrientationInterpolator1402->setDEF(CString("r_ring3_OI"));
 IS* IS1403 = new IS();
 Connect* connect1404 = new Connect();
-connect1404->setNodeField("key");
-connect1404->setProtoField("r_ring3_key");
-IS1403->addConnect(connect1404);
+connect1404->setNodeField(CString("key"));
+connect1404->setProtoField(CString("r_ring3_key"));
+IS1403->addChild(connect1404);
 
 Connect* connect1405 = new Connect();
-connect1405->setNodeField("keyValue");
-connect1405->setProtoField("r_ring3_keyValue");
-IS1403->addConnect(connect1405);
+connect1405->setNodeField(CString("keyValue"));
+connect1405->setProtoField(CString("r_ring3_keyValue"));
+IS1403->addChild(connect1405);
 
 Connect* connect1406 = new Connect();
-connect1406->setNodeField("value_changed");
-connect1406->setProtoField("r_ring3_changed");
-IS1403->addConnect(connect1406);
+connect1406->setNodeField(CString("value_changed"));
+connect1406->setProtoField(CString("r_ring3_changed"));
+IS1403->addChild(connect1406);
 
-OrientationInterpolator1402->setIS(IS1403);
+OrientationInterpolator1402->addChild(IS1403);
 
 ProtoBody603->addChild(OrientationInterpolator1402);
 
 ROUTE* ROUTE1407 = new ROUTE();
-ROUTE1407->setFromField("fraction_changed");
-ROUTE1407->setFromNode("BehaviorClock");
-ROUTE1407->setToField("set_fraction");
-ROUTE1407->setToNode("r_ring3_OI");
+ROUTE1407->setFromField(CString("fraction_changed"));
+ROUTE1407->setFromNode(CString("BehaviorClock"));
+ROUTE1407->setToField(CString("set_fraction"));
+ROUTE1407->setToNode(CString("r_ring3_OI"));
 ProtoBody603->addChild(ROUTE1407);
 
 OrientationInterpolator* OrientationInterpolator1408 = new OrientationInterpolator();
-OrientationInterpolator1408->setDEF("r_ring_distal_OI");
+OrientationInterpolator1408->setDEF(CString("r_ring_distal_OI"));
 IS* IS1409 = new IS();
 Connect* connect1410 = new Connect();
-connect1410->setNodeField("key");
-connect1410->setProtoField("r_ring_distal_key");
-IS1409->addConnect(connect1410);
+connect1410->setNodeField(CString("key"));
+connect1410->setProtoField(CString("r_ring_distal_key"));
+IS1409->addChild(connect1410);
 
 Connect* connect1411 = new Connect();
-connect1411->setNodeField("keyValue");
-connect1411->setProtoField("r_ring_distal_keyValue");
-IS1409->addConnect(connect1411);
+connect1411->setNodeField(CString("keyValue"));
+connect1411->setProtoField(CString("r_ring_distal_keyValue"));
+IS1409->addChild(connect1411);
 
 Connect* connect1412 = new Connect();
-connect1412->setNodeField("value_changed");
-connect1412->setProtoField("r_ring_distal_changed");
-IS1409->addConnect(connect1412);
+connect1412->setNodeField(CString("value_changed"));
+connect1412->setProtoField(CString("r_ring_distal_changed"));
+IS1409->addChild(connect1412);
 
-OrientationInterpolator1408->setIS(IS1409);
+OrientationInterpolator1408->addChild(IS1409);
 
 ProtoBody603->addChild(OrientationInterpolator1408);
 
 ROUTE* ROUTE1413 = new ROUTE();
-ROUTE1413->setFromField("fraction_changed");
-ROUTE1413->setFromNode("BehaviorClock");
-ROUTE1413->setToField("set_fraction");
-ROUTE1413->setToNode("r_ring_distal_OI");
+ROUTE1413->setFromField(CString("fraction_changed"));
+ROUTE1413->setFromNode(CString("BehaviorClock"));
+ROUTE1413->setToField(CString("set_fraction"));
+ROUTE1413->setToNode(CString("r_ring_distal_OI"));
 ProtoBody603->addChild(ROUTE1413);
 
 OrientationInterpolator* OrientationInterpolator1414 = new OrientationInterpolator();
-OrientationInterpolator1414->setDEF("r_ring_metacarpal_OI");
+OrientationInterpolator1414->setDEF(CString("r_ring_metacarpal_OI"));
 IS* IS1415 = new IS();
 Connect* connect1416 = new Connect();
-connect1416->setNodeField("key");
-connect1416->setProtoField("r_ring_metacarpal_key");
-IS1415->addConnect(connect1416);
+connect1416->setNodeField(CString("key"));
+connect1416->setProtoField(CString("r_ring_metacarpal_key"));
+IS1415->addChild(connect1416);
 
 Connect* connect1417 = new Connect();
-connect1417->setNodeField("keyValue");
-connect1417->setProtoField("r_ring_metacarpal_keyValue");
-IS1415->addConnect(connect1417);
+connect1417->setNodeField(CString("keyValue"));
+connect1417->setProtoField(CString("r_ring_metacarpal_keyValue"));
+IS1415->addChild(connect1417);
 
 Connect* connect1418 = new Connect();
-connect1418->setNodeField("value_changed");
-connect1418->setProtoField("r_ring_metacarpal_changed");
-IS1415->addConnect(connect1418);
+connect1418->setNodeField(CString("value_changed"));
+connect1418->setProtoField(CString("r_ring_metacarpal_changed"));
+IS1415->addChild(connect1418);
 
-OrientationInterpolator1414->setIS(IS1415);
+OrientationInterpolator1414->addChild(IS1415);
 
 ProtoBody603->addChild(OrientationInterpolator1414);
 
 ROUTE* ROUTE1419 = new ROUTE();
-ROUTE1419->setFromField("fraction_changed");
-ROUTE1419->setFromNode("BehaviorClock");
-ROUTE1419->setToField("set_fraction");
-ROUTE1419->setToNode("r_ring_metacarpal_OI");
+ROUTE1419->setFromField(CString("fraction_changed"));
+ROUTE1419->setFromNode(CString("BehaviorClock"));
+ROUTE1419->setToField(CString("set_fraction"));
+ROUTE1419->setToNode(CString("r_ring_metacarpal_OI"));
 ProtoBody603->addChild(ROUTE1419);
 
 OrientationInterpolator* OrientationInterpolator1420 = new OrientationInterpolator();
-OrientationInterpolator1420->setDEF("r_ring_middle_OI");
+OrientationInterpolator1420->setDEF(CString("r_ring_middle_OI"));
 IS* IS1421 = new IS();
 Connect* connect1422 = new Connect();
-connect1422->setNodeField("key");
-connect1422->setProtoField("r_ring_middle_key");
-IS1421->addConnect(connect1422);
+connect1422->setNodeField(CString("key"));
+connect1422->setProtoField(CString("r_ring_middle_key"));
+IS1421->addChild(connect1422);
 
 Connect* connect1423 = new Connect();
-connect1423->setNodeField("keyValue");
-connect1423->setProtoField("r_ring_middle_keyValue");
-IS1421->addConnect(connect1423);
+connect1423->setNodeField(CString("keyValue"));
+connect1423->setProtoField(CString("r_ring_middle_keyValue"));
+IS1421->addChild(connect1423);
 
 Connect* connect1424 = new Connect();
-connect1424->setNodeField("value_changed");
-connect1424->setProtoField("r_ring_middle_changed");
-IS1421->addConnect(connect1424);
+connect1424->setNodeField(CString("value_changed"));
+connect1424->setProtoField(CString("r_ring_middle_changed"));
+IS1421->addChild(connect1424);
 
-OrientationInterpolator1420->setIS(IS1421);
+OrientationInterpolator1420->addChild(IS1421);
 
 ProtoBody603->addChild(OrientationInterpolator1420);
 
 ROUTE* ROUTE1425 = new ROUTE();
-ROUTE1425->setFromField("fraction_changed");
-ROUTE1425->setFromNode("BehaviorClock");
-ROUTE1425->setToField("set_fraction");
-ROUTE1425->setToNode("r_ring_middle_OI");
+ROUTE1425->setFromField(CString("fraction_changed"));
+ROUTE1425->setFromNode(CString("BehaviorClock"));
+ROUTE1425->setToField(CString("set_fraction"));
+ROUTE1425->setToNode(CString("r_ring_middle_OI"));
 ProtoBody603->addChild(ROUTE1425);
 
 OrientationInterpolator* OrientationInterpolator1426 = new OrientationInterpolator();
-OrientationInterpolator1426->setDEF("r_ring_proximal_OI");
+OrientationInterpolator1426->setDEF(CString("r_ring_proximal_OI"));
 IS* IS1427 = new IS();
 Connect* connect1428 = new Connect();
-connect1428->setNodeField("key");
-connect1428->setProtoField("r_ring_proximal_key");
-IS1427->addConnect(connect1428);
+connect1428->setNodeField(CString("key"));
+connect1428->setProtoField(CString("r_ring_proximal_key"));
+IS1427->addChild(connect1428);
 
 Connect* connect1429 = new Connect();
-connect1429->setNodeField("keyValue");
-connect1429->setProtoField("r_ring_proximal_keyValue");
-IS1427->addConnect(connect1429);
+connect1429->setNodeField(CString("keyValue"));
+connect1429->setProtoField(CString("r_ring_proximal_keyValue"));
+IS1427->addChild(connect1429);
 
 Connect* connect1430 = new Connect();
-connect1430->setNodeField("value_changed");
-connect1430->setProtoField("r_ring_proximal_changed");
-IS1427->addConnect(connect1430);
+connect1430->setNodeField(CString("value_changed"));
+connect1430->setProtoField(CString("r_ring_proximal_changed"));
+IS1427->addChild(connect1430);
 
-OrientationInterpolator1426->setIS(IS1427);
+OrientationInterpolator1426->addChild(IS1427);
 
 ProtoBody603->addChild(OrientationInterpolator1426);
 
 ROUTE* ROUTE1431 = new ROUTE();
-ROUTE1431->setFromField("fraction_changed");
-ROUTE1431->setFromNode("BehaviorClock");
-ROUTE1431->setToField("set_fraction");
-ROUTE1431->setToNode("r_ring_proximal_OI");
+ROUTE1431->setFromField(CString("fraction_changed"));
+ROUTE1431->setFromNode(CString("BehaviorClock"));
+ROUTE1431->setToField(CString("set_fraction"));
+ROUTE1431->setToNode(CString("r_ring_proximal_OI"));
 ProtoBody603->addChild(ROUTE1431);
 
 OrientationInterpolator* OrientationInterpolator1432 = new OrientationInterpolator();
-OrientationInterpolator1432->setDEF("r_scapula_OI");
+OrientationInterpolator1432->setDEF(CString("r_scapula_OI"));
 IS* IS1433 = new IS();
 Connect* connect1434 = new Connect();
-connect1434->setNodeField("key");
-connect1434->setProtoField("r_scapula_key");
-IS1433->addConnect(connect1434);
+connect1434->setNodeField(CString("key"));
+connect1434->setProtoField(CString("r_scapula_key"));
+IS1433->addChild(connect1434);
 
 Connect* connect1435 = new Connect();
-connect1435->setNodeField("keyValue");
-connect1435->setProtoField("r_scapula_keyValue");
-IS1433->addConnect(connect1435);
+connect1435->setNodeField(CString("keyValue"));
+connect1435->setProtoField(CString("r_scapula_keyValue"));
+IS1433->addChild(connect1435);
 
 Connect* connect1436 = new Connect();
-connect1436->setNodeField("value_changed");
-connect1436->setProtoField("r_scapula_changed");
-IS1433->addConnect(connect1436);
+connect1436->setNodeField(CString("value_changed"));
+connect1436->setProtoField(CString("r_scapula_changed"));
+IS1433->addChild(connect1436);
 
-OrientationInterpolator1432->setIS(IS1433);
+OrientationInterpolator1432->addChild(IS1433);
 
 ProtoBody603->addChild(OrientationInterpolator1432);
 
 ROUTE* ROUTE1437 = new ROUTE();
-ROUTE1437->setFromField("fraction_changed");
-ROUTE1437->setFromNode("BehaviorClock");
-ROUTE1437->setToField("set_fraction");
-ROUTE1437->setToNode("r_scapula_OI");
+ROUTE1437->setFromField(CString("fraction_changed"));
+ROUTE1437->setFromNode(CString("BehaviorClock"));
+ROUTE1437->setToField(CString("set_fraction"));
+ROUTE1437->setToNode(CString("r_scapula_OI"));
 ProtoBody603->addChild(ROUTE1437);
 
 OrientationInterpolator* OrientationInterpolator1438 = new OrientationInterpolator();
-OrientationInterpolator1438->setDEF("r_shoulder_OI");
+OrientationInterpolator1438->setDEF(CString("r_shoulder_OI"));
 IS* IS1439 = new IS();
 Connect* connect1440 = new Connect();
-connect1440->setNodeField("key");
-connect1440->setProtoField("r_shoulder_key");
-IS1439->addConnect(connect1440);
+connect1440->setNodeField(CString("key"));
+connect1440->setProtoField(CString("r_shoulder_key"));
+IS1439->addChild(connect1440);
 
 Connect* connect1441 = new Connect();
-connect1441->setNodeField("keyValue");
-connect1441->setProtoField("r_shoulder_keyValue");
-IS1439->addConnect(connect1441);
+connect1441->setNodeField(CString("keyValue"));
+connect1441->setProtoField(CString("r_shoulder_keyValue"));
+IS1439->addChild(connect1441);
 
 Connect* connect1442 = new Connect();
-connect1442->setNodeField("value_changed");
-connect1442->setProtoField("r_shoulder_changed");
-IS1439->addConnect(connect1442);
+connect1442->setNodeField(CString("value_changed"));
+connect1442->setProtoField(CString("r_shoulder_changed"));
+IS1439->addChild(connect1442);
 
-OrientationInterpolator1438->setIS(IS1439);
+OrientationInterpolator1438->addChild(IS1439);
 
 ProtoBody603->addChild(OrientationInterpolator1438);
 
 ROUTE* ROUTE1443 = new ROUTE();
-ROUTE1443->setFromField("fraction_changed");
-ROUTE1443->setFromNode("BehaviorClock");
-ROUTE1443->setToField("set_fraction");
-ROUTE1443->setToNode("r_shoulder_OI");
+ROUTE1443->setFromField(CString("fraction_changed"));
+ROUTE1443->setFromNode(CString("BehaviorClock"));
+ROUTE1443->setToField(CString("set_fraction"));
+ROUTE1443->setToNode(CString("r_shoulder_OI"));
 ProtoBody603->addChild(ROUTE1443);
 
 OrientationInterpolator* OrientationInterpolator1444 = new OrientationInterpolator();
-OrientationInterpolator1444->setDEF("r_sternoclavicular_OI");
+OrientationInterpolator1444->setDEF(CString("r_sternoclavicular_OI"));
 IS* IS1445 = new IS();
 Connect* connect1446 = new Connect();
-connect1446->setNodeField("key");
-connect1446->setProtoField("r_sternoclavicular_key");
-IS1445->addConnect(connect1446);
+connect1446->setNodeField(CString("key"));
+connect1446->setProtoField(CString("r_sternoclavicular_key"));
+IS1445->addChild(connect1446);
 
 Connect* connect1447 = new Connect();
-connect1447->setNodeField("keyValue");
-connect1447->setProtoField("r_sternoclavicular_keyValue");
-IS1445->addConnect(connect1447);
+connect1447->setNodeField(CString("keyValue"));
+connect1447->setProtoField(CString("r_sternoclavicular_keyValue"));
+IS1445->addChild(connect1447);
 
 Connect* connect1448 = new Connect();
-connect1448->setNodeField("value_changed");
-connect1448->setProtoField("r_sternoclavicular_changed");
-IS1445->addConnect(connect1448);
+connect1448->setNodeField(CString("value_changed"));
+connect1448->setProtoField(CString("r_sternoclavicular_changed"));
+IS1445->addChild(connect1448);
 
-OrientationInterpolator1444->setIS(IS1445);
+OrientationInterpolator1444->addChild(IS1445);
 
 ProtoBody603->addChild(OrientationInterpolator1444);
 
 ROUTE* ROUTE1449 = new ROUTE();
-ROUTE1449->setFromField("fraction_changed");
-ROUTE1449->setFromNode("BehaviorClock");
-ROUTE1449->setToField("set_fraction");
-ROUTE1449->setToNode("r_sternoclavicular_OI");
+ROUTE1449->setFromField(CString("fraction_changed"));
+ROUTE1449->setFromNode(CString("BehaviorClock"));
+ROUTE1449->setToField(CString("set_fraction"));
+ROUTE1449->setToNode(CString("r_sternoclavicular_OI"));
 ProtoBody603->addChild(ROUTE1449);
 
 OrientationInterpolator* OrientationInterpolator1450 = new OrientationInterpolator();
-OrientationInterpolator1450->setDEF("r_subtalar_OI");
+OrientationInterpolator1450->setDEF(CString("r_subtalar_OI"));
 IS* IS1451 = new IS();
 Connect* connect1452 = new Connect();
-connect1452->setNodeField("key");
-connect1452->setProtoField("r_subtalar_key");
-IS1451->addConnect(connect1452);
+connect1452->setNodeField(CString("key"));
+connect1452->setProtoField(CString("r_subtalar_key"));
+IS1451->addChild(connect1452);
 
 Connect* connect1453 = new Connect();
-connect1453->setNodeField("keyValue");
-connect1453->setProtoField("r_subtalar_keyValue");
-IS1451->addConnect(connect1453);
+connect1453->setNodeField(CString("keyValue"));
+connect1453->setProtoField(CString("r_subtalar_keyValue"));
+IS1451->addChild(connect1453);
 
 Connect* connect1454 = new Connect();
-connect1454->setNodeField("value_changed");
-connect1454->setProtoField("r_subtalar_changed");
-IS1451->addConnect(connect1454);
+connect1454->setNodeField(CString("value_changed"));
+connect1454->setProtoField(CString("r_subtalar_changed"));
+IS1451->addChild(connect1454);
 
-OrientationInterpolator1450->setIS(IS1451);
+OrientationInterpolator1450->addChild(IS1451);
 
 ProtoBody603->addChild(OrientationInterpolator1450);
 
 ROUTE* ROUTE1455 = new ROUTE();
-ROUTE1455->setFromField("fraction_changed");
-ROUTE1455->setFromNode("BehaviorClock");
-ROUTE1455->setToField("set_fraction");
-ROUTE1455->setToNode("r_subtalar_OI");
+ROUTE1455->setFromField(CString("fraction_changed"));
+ROUTE1455->setFromNode(CString("BehaviorClock"));
+ROUTE1455->setToField(CString("set_fraction"));
+ROUTE1455->setToNode(CString("r_subtalar_OI"));
 ProtoBody603->addChild(ROUTE1455);
 
 OrientationInterpolator* OrientationInterpolator1456 = new OrientationInterpolator();
-OrientationInterpolator1456->setDEF("r_thigh_OI");
+OrientationInterpolator1456->setDEF(CString("r_thigh_OI"));
 IS* IS1457 = new IS();
 Connect* connect1458 = new Connect();
-connect1458->setNodeField("key");
-connect1458->setProtoField("r_thigh_key");
-IS1457->addConnect(connect1458);
+connect1458->setNodeField(CString("key"));
+connect1458->setProtoField(CString("r_thigh_key"));
+IS1457->addChild(connect1458);
 
 Connect* connect1459 = new Connect();
-connect1459->setNodeField("keyValue");
-connect1459->setProtoField("r_thigh_keyValue");
-IS1457->addConnect(connect1459);
+connect1459->setNodeField(CString("keyValue"));
+connect1459->setProtoField(CString("r_thigh_keyValue"));
+IS1457->addChild(connect1459);
 
 Connect* connect1460 = new Connect();
-connect1460->setNodeField("value_changed");
-connect1460->setProtoField("r_thigh_changed");
-IS1457->addConnect(connect1460);
+connect1460->setNodeField(CString("value_changed"));
+connect1460->setProtoField(CString("r_thigh_changed"));
+IS1457->addChild(connect1460);
 
-OrientationInterpolator1456->setIS(IS1457);
+OrientationInterpolator1456->addChild(IS1457);
 
 ProtoBody603->addChild(OrientationInterpolator1456);
 
 ROUTE* ROUTE1461 = new ROUTE();
-ROUTE1461->setFromField("fraction_changed");
-ROUTE1461->setFromNode("BehaviorClock");
-ROUTE1461->setToField("set_fraction");
-ROUTE1461->setToNode("r_thigh_OI");
+ROUTE1461->setFromField(CString("fraction_changed"));
+ROUTE1461->setFromNode(CString("BehaviorClock"));
+ROUTE1461->setToField(CString("set_fraction"));
+ROUTE1461->setToNode(CString("r_thigh_OI"));
 ProtoBody603->addChild(ROUTE1461);
 
 OrientationInterpolator* OrientationInterpolator1462 = new OrientationInterpolator();
-OrientationInterpolator1462->setDEF("r_thumb1_OI");
+OrientationInterpolator1462->setDEF(CString("r_thumb1_OI"));
 IS* IS1463 = new IS();
 Connect* connect1464 = new Connect();
-connect1464->setNodeField("key");
-connect1464->setProtoField("r_thumb1_key");
-IS1463->addConnect(connect1464);
+connect1464->setNodeField(CString("key"));
+connect1464->setProtoField(CString("r_thumb1_key"));
+IS1463->addChild(connect1464);
 
 Connect* connect1465 = new Connect();
-connect1465->setNodeField("keyValue");
-connect1465->setProtoField("r_thumb1_keyValue");
-IS1463->addConnect(connect1465);
+connect1465->setNodeField(CString("keyValue"));
+connect1465->setProtoField(CString("r_thumb1_keyValue"));
+IS1463->addChild(connect1465);
 
 Connect* connect1466 = new Connect();
-connect1466->setNodeField("value_changed");
-connect1466->setProtoField("r_thumb1_changed");
-IS1463->addConnect(connect1466);
+connect1466->setNodeField(CString("value_changed"));
+connect1466->setProtoField(CString("r_thumb1_changed"));
+IS1463->addChild(connect1466);
 
-OrientationInterpolator1462->setIS(IS1463);
+OrientationInterpolator1462->addChild(IS1463);
 
 ProtoBody603->addChild(OrientationInterpolator1462);
 
 ROUTE* ROUTE1467 = new ROUTE();
-ROUTE1467->setFromField("fraction_changed");
-ROUTE1467->setFromNode("BehaviorClock");
-ROUTE1467->setToField("set_fraction");
-ROUTE1467->setToNode("r_thumb1_OI");
+ROUTE1467->setFromField(CString("fraction_changed"));
+ROUTE1467->setFromNode(CString("BehaviorClock"));
+ROUTE1467->setToField(CString("set_fraction"));
+ROUTE1467->setToNode(CString("r_thumb1_OI"));
 ProtoBody603->addChild(ROUTE1467);
 
 OrientationInterpolator* OrientationInterpolator1468 = new OrientationInterpolator();
-OrientationInterpolator1468->setDEF("r_thumb2_OI");
+OrientationInterpolator1468->setDEF(CString("r_thumb2_OI"));
 IS* IS1469 = new IS();
 Connect* connect1470 = new Connect();
-connect1470->setNodeField("key");
-connect1470->setProtoField("r_thumb2_key");
-IS1469->addConnect(connect1470);
+connect1470->setNodeField(CString("key"));
+connect1470->setProtoField(CString("r_thumb2_key"));
+IS1469->addChild(connect1470);
 
 Connect* connect1471 = new Connect();
-connect1471->setNodeField("keyValue");
-connect1471->setProtoField("r_thumb2_keyValue");
-IS1469->addConnect(connect1471);
+connect1471->setNodeField(CString("keyValue"));
+connect1471->setProtoField(CString("r_thumb2_keyValue"));
+IS1469->addChild(connect1471);
 
 Connect* connect1472 = new Connect();
-connect1472->setNodeField("value_changed");
-connect1472->setProtoField("r_thumb2_changed");
-IS1469->addConnect(connect1472);
+connect1472->setNodeField(CString("value_changed"));
+connect1472->setProtoField(CString("r_thumb2_changed"));
+IS1469->addChild(connect1472);
 
-OrientationInterpolator1468->setIS(IS1469);
+OrientationInterpolator1468->addChild(IS1469);
 
 ProtoBody603->addChild(OrientationInterpolator1468);
 
 ROUTE* ROUTE1473 = new ROUTE();
-ROUTE1473->setFromField("fraction_changed");
-ROUTE1473->setFromNode("BehaviorClock");
-ROUTE1473->setToField("set_fraction");
-ROUTE1473->setToNode("r_thumb2_OI");
+ROUTE1473->setFromField(CString("fraction_changed"));
+ROUTE1473->setFromNode(CString("BehaviorClock"));
+ROUTE1473->setToField(CString("set_fraction"));
+ROUTE1473->setToNode(CString("r_thumb2_OI"));
 ProtoBody603->addChild(ROUTE1473);
 
 OrientationInterpolator* OrientationInterpolator1474 = new OrientationInterpolator();
-OrientationInterpolator1474->setDEF("r_thumb3_OI");
+OrientationInterpolator1474->setDEF(CString("r_thumb3_OI"));
 IS* IS1475 = new IS();
 Connect* connect1476 = new Connect();
-connect1476->setNodeField("key");
-connect1476->setProtoField("r_thumb3_key");
-IS1475->addConnect(connect1476);
+connect1476->setNodeField(CString("key"));
+connect1476->setProtoField(CString("r_thumb3_key"));
+IS1475->addChild(connect1476);
 
 Connect* connect1477 = new Connect();
-connect1477->setNodeField("keyValue");
-connect1477->setProtoField("r_thumb3_keyValue");
-IS1475->addConnect(connect1477);
+connect1477->setNodeField(CString("keyValue"));
+connect1477->setProtoField(CString("r_thumb3_keyValue"));
+IS1475->addChild(connect1477);
 
 Connect* connect1478 = new Connect();
-connect1478->setNodeField("value_changed");
-connect1478->setProtoField("r_thumb3_changed");
-IS1475->addConnect(connect1478);
+connect1478->setNodeField(CString("value_changed"));
+connect1478->setProtoField(CString("r_thumb3_changed"));
+IS1475->addChild(connect1478);
 
-OrientationInterpolator1474->setIS(IS1475);
+OrientationInterpolator1474->addChild(IS1475);
 
 ProtoBody603->addChild(OrientationInterpolator1474);
 
 ROUTE* ROUTE1479 = new ROUTE();
-ROUTE1479->setFromField("fraction_changed");
-ROUTE1479->setFromNode("BehaviorClock");
-ROUTE1479->setToField("set_fraction");
-ROUTE1479->setToNode("r_thumb3_OI");
+ROUTE1479->setFromField(CString("fraction_changed"));
+ROUTE1479->setFromNode(CString("BehaviorClock"));
+ROUTE1479->setToField(CString("set_fraction"));
+ROUTE1479->setToNode(CString("r_thumb3_OI"));
 ProtoBody603->addChild(ROUTE1479);
 
 OrientationInterpolator* OrientationInterpolator1480 = new OrientationInterpolator();
-OrientationInterpolator1480->setDEF("r_thumb_distal_OI");
+OrientationInterpolator1480->setDEF(CString("r_thumb_distal_OI"));
 IS* IS1481 = new IS();
 Connect* connect1482 = new Connect();
-connect1482->setNodeField("key");
-connect1482->setProtoField("r_thumb_distal_key");
-IS1481->addConnect(connect1482);
+connect1482->setNodeField(CString("key"));
+connect1482->setProtoField(CString("r_thumb_distal_key"));
+IS1481->addChild(connect1482);
 
 Connect* connect1483 = new Connect();
-connect1483->setNodeField("keyValue");
-connect1483->setProtoField("r_thumb_distal_keyValue");
-IS1481->addConnect(connect1483);
+connect1483->setNodeField(CString("keyValue"));
+connect1483->setProtoField(CString("r_thumb_distal_keyValue"));
+IS1481->addChild(connect1483);
 
 Connect* connect1484 = new Connect();
-connect1484->setNodeField("value_changed");
-connect1484->setProtoField("r_thumb_distal_changed");
-IS1481->addConnect(connect1484);
+connect1484->setNodeField(CString("value_changed"));
+connect1484->setProtoField(CString("r_thumb_distal_changed"));
+IS1481->addChild(connect1484);
 
-OrientationInterpolator1480->setIS(IS1481);
+OrientationInterpolator1480->addChild(IS1481);
 
 ProtoBody603->addChild(OrientationInterpolator1480);
 
 ROUTE* ROUTE1485 = new ROUTE();
-ROUTE1485->setFromField("fraction_changed");
-ROUTE1485->setFromNode("BehaviorClock");
-ROUTE1485->setToField("set_fraction");
-ROUTE1485->setToNode("r_thumb_distal_OI");
+ROUTE1485->setFromField(CString("fraction_changed"));
+ROUTE1485->setFromNode(CString("BehaviorClock"));
+ROUTE1485->setToField(CString("set_fraction"));
+ROUTE1485->setToNode(CString("r_thumb_distal_OI"));
 ProtoBody603->addChild(ROUTE1485);
 
 OrientationInterpolator* OrientationInterpolator1486 = new OrientationInterpolator();
-OrientationInterpolator1486->setDEF("r_thumb_metacarpal_OI");
+OrientationInterpolator1486->setDEF(CString("r_thumb_metacarpal_OI"));
 IS* IS1487 = new IS();
 Connect* connect1488 = new Connect();
-connect1488->setNodeField("key");
-connect1488->setProtoField("r_thumb_metacarpal_key");
-IS1487->addConnect(connect1488);
+connect1488->setNodeField(CString("key"));
+connect1488->setProtoField(CString("r_thumb_metacarpal_key"));
+IS1487->addChild(connect1488);
 
 Connect* connect1489 = new Connect();
-connect1489->setNodeField("keyValue");
-connect1489->setProtoField("r_thumb_metacarpal_keyValue");
-IS1487->addConnect(connect1489);
+connect1489->setNodeField(CString("keyValue"));
+connect1489->setProtoField(CString("r_thumb_metacarpal_keyValue"));
+IS1487->addChild(connect1489);
 
 Connect* connect1490 = new Connect();
-connect1490->setNodeField("value_changed");
-connect1490->setProtoField("r_thumb_metacarpal_changed");
-IS1487->addConnect(connect1490);
+connect1490->setNodeField(CString("value_changed"));
+connect1490->setProtoField(CString("r_thumb_metacarpal_changed"));
+IS1487->addChild(connect1490);
 
-OrientationInterpolator1486->setIS(IS1487);
+OrientationInterpolator1486->addChild(IS1487);
 
 ProtoBody603->addChild(OrientationInterpolator1486);
 
 ROUTE* ROUTE1491 = new ROUTE();
-ROUTE1491->setFromField("fraction_changed");
-ROUTE1491->setFromNode("BehaviorClock");
-ROUTE1491->setToField("set_fraction");
-ROUTE1491->setToNode("r_thumb_metacarpal_OI");
+ROUTE1491->setFromField(CString("fraction_changed"));
+ROUTE1491->setFromNode(CString("BehaviorClock"));
+ROUTE1491->setToField(CString("set_fraction"));
+ROUTE1491->setToNode(CString("r_thumb_metacarpal_OI"));
 ProtoBody603->addChild(ROUTE1491);
 
 OrientationInterpolator* OrientationInterpolator1492 = new OrientationInterpolator();
-OrientationInterpolator1492->setDEF("r_thumb_proximal_OI");
+OrientationInterpolator1492->setDEF(CString("r_thumb_proximal_OI"));
 IS* IS1493 = new IS();
 Connect* connect1494 = new Connect();
-connect1494->setNodeField("key");
-connect1494->setProtoField("r_thumb_proximal_key");
-IS1493->addConnect(connect1494);
+connect1494->setNodeField(CString("key"));
+connect1494->setProtoField(CString("r_thumb_proximal_key"));
+IS1493->addChild(connect1494);
 
 Connect* connect1495 = new Connect();
-connect1495->setNodeField("keyValue");
-connect1495->setProtoField("r_thumb_proximal_keyValue");
-IS1493->addConnect(connect1495);
+connect1495->setNodeField(CString("keyValue"));
+connect1495->setProtoField(CString("r_thumb_proximal_keyValue"));
+IS1493->addChild(connect1495);
 
 Connect* connect1496 = new Connect();
-connect1496->setNodeField("value_changed");
-connect1496->setProtoField("r_thumb_proximal_changed");
-IS1493->addConnect(connect1496);
+connect1496->setNodeField(CString("value_changed"));
+connect1496->setProtoField(CString("r_thumb_proximal_changed"));
+IS1493->addChild(connect1496);
 
-OrientationInterpolator1492->setIS(IS1493);
+OrientationInterpolator1492->addChild(IS1493);
 
 ProtoBody603->addChild(OrientationInterpolator1492);
 
 ROUTE* ROUTE1497 = new ROUTE();
-ROUTE1497->setFromField("fraction_changed");
-ROUTE1497->setFromNode("BehaviorClock");
-ROUTE1497->setToField("set_fraction");
-ROUTE1497->setToNode("r_thumb_proximal_OI");
+ROUTE1497->setFromField(CString("fraction_changed"));
+ROUTE1497->setFromNode(CString("BehaviorClock"));
+ROUTE1497->setToField(CString("set_fraction"));
+ROUTE1497->setToNode(CString("r_thumb_proximal_OI"));
 ProtoBody603->addChild(ROUTE1497);
 
 OrientationInterpolator* OrientationInterpolator1498 = new OrientationInterpolator();
-OrientationInterpolator1498->setDEF("r_upperarm_OI");
+OrientationInterpolator1498->setDEF(CString("r_upperarm_OI"));
 IS* IS1499 = new IS();
 Connect* connect1500 = new Connect();
-connect1500->setNodeField("key");
-connect1500->setProtoField("r_upperarm_key");
-IS1499->addConnect(connect1500);
+connect1500->setNodeField(CString("key"));
+connect1500->setProtoField(CString("r_upperarm_key"));
+IS1499->addChild(connect1500);
 
 Connect* connect1501 = new Connect();
-connect1501->setNodeField("keyValue");
-connect1501->setProtoField("r_upperarm_keyValue");
-IS1499->addConnect(connect1501);
+connect1501->setNodeField(CString("keyValue"));
+connect1501->setProtoField(CString("r_upperarm_keyValue"));
+IS1499->addChild(connect1501);
 
 Connect* connect1502 = new Connect();
-connect1502->setNodeField("value_changed");
-connect1502->setProtoField("r_upperarm_changed");
-IS1499->addConnect(connect1502);
+connect1502->setNodeField(CString("value_changed"));
+connect1502->setProtoField(CString("r_upperarm_changed"));
+IS1499->addChild(connect1502);
 
-OrientationInterpolator1498->setIS(IS1499);
+OrientationInterpolator1498->addChild(IS1499);
 
 ProtoBody603->addChild(OrientationInterpolator1498);
 
 ROUTE* ROUTE1503 = new ROUTE();
-ROUTE1503->setFromField("fraction_changed");
-ROUTE1503->setFromNode("BehaviorClock");
-ROUTE1503->setToField("set_fraction");
-ROUTE1503->setToNode("r_upperarm_OI");
+ROUTE1503->setFromField(CString("fraction_changed"));
+ROUTE1503->setFromNode(CString("BehaviorClock"));
+ROUTE1503->setToField(CString("set_fraction"));
+ROUTE1503->setToNode(CString("r_upperarm_OI"));
 ProtoBody603->addChild(ROUTE1503);
 
 OrientationInterpolator* OrientationInterpolator1504 = new OrientationInterpolator();
-OrientationInterpolator1504->setDEF("r_wrist_OI");
+OrientationInterpolator1504->setDEF(CString("r_wrist_OI"));
 IS* IS1505 = new IS();
 Connect* connect1506 = new Connect();
-connect1506->setNodeField("key");
-connect1506->setProtoField("r_wrist_key");
-IS1505->addConnect(connect1506);
+connect1506->setNodeField(CString("key"));
+connect1506->setProtoField(CString("r_wrist_key"));
+IS1505->addChild(connect1506);
 
 Connect* connect1507 = new Connect();
-connect1507->setNodeField("keyValue");
-connect1507->setProtoField("r_wrist_keyValue");
-IS1505->addConnect(connect1507);
+connect1507->setNodeField(CString("keyValue"));
+connect1507->setProtoField(CString("r_wrist_keyValue"));
+IS1505->addChild(connect1507);
 
 Connect* connect1508 = new Connect();
-connect1508->setNodeField("value_changed");
-connect1508->setProtoField("r_wrist_changed");
-IS1505->addConnect(connect1508);
+connect1508->setNodeField(CString("value_changed"));
+connect1508->setProtoField(CString("r_wrist_changed"));
+IS1505->addChild(connect1508);
 
-OrientationInterpolator1504->setIS(IS1505);
+OrientationInterpolator1504->addChild(IS1505);
 
 ProtoBody603->addChild(OrientationInterpolator1504);
 
 ROUTE* ROUTE1509 = new ROUTE();
-ROUTE1509->setFromField("fraction_changed");
-ROUTE1509->setFromNode("BehaviorClock");
-ROUTE1509->setToField("set_fraction");
-ROUTE1509->setToNode("r_wrist_OI");
+ROUTE1509->setFromField(CString("fraction_changed"));
+ROUTE1509->setFromNode(CString("BehaviorClock"));
+ROUTE1509->setToField(CString("set_fraction"));
+ROUTE1509->setToNode(CString("r_wrist_OI"));
 ProtoBody603->addChild(ROUTE1509);
 
 OrientationInterpolator* OrientationInterpolator1510 = new OrientationInterpolator();
-OrientationInterpolator1510->setDEF("sacroiliac_OI");
+OrientationInterpolator1510->setDEF(CString("sacroiliac_OI"));
 IS* IS1511 = new IS();
 Connect* connect1512 = new Connect();
-connect1512->setNodeField("key");
-connect1512->setProtoField("sacroiliac_key");
-IS1511->addConnect(connect1512);
+connect1512->setNodeField(CString("key"));
+connect1512->setProtoField(CString("sacroiliac_key"));
+IS1511->addChild(connect1512);
 
 Connect* connect1513 = new Connect();
-connect1513->setNodeField("keyValue");
-connect1513->setProtoField("sacroiliac_keyValue");
-IS1511->addConnect(connect1513);
+connect1513->setNodeField(CString("keyValue"));
+connect1513->setProtoField(CString("sacroiliac_keyValue"));
+IS1511->addChild(connect1513);
 
 Connect* connect1514 = new Connect();
-connect1514->setNodeField("value_changed");
-connect1514->setProtoField("sacroiliac_changed");
-IS1511->addConnect(connect1514);
+connect1514->setNodeField(CString("value_changed"));
+connect1514->setProtoField(CString("sacroiliac_changed"));
+IS1511->addChild(connect1514);
 
-OrientationInterpolator1510->setIS(IS1511);
+OrientationInterpolator1510->addChild(IS1511);
 
 ProtoBody603->addChild(OrientationInterpolator1510);
 
 ROUTE* ROUTE1515 = new ROUTE();
-ROUTE1515->setFromField("fraction_changed");
-ROUTE1515->setFromNode("BehaviorClock");
-ROUTE1515->setToField("set_fraction");
-ROUTE1515->setToNode("sacroiliac_OI");
+ROUTE1515->setFromField(CString("fraction_changed"));
+ROUTE1515->setFromNode(CString("BehaviorClock"));
+ROUTE1515->setToField(CString("set_fraction"));
+ROUTE1515->setToNode(CString("sacroiliac_OI"));
 ProtoBody603->addChild(ROUTE1515);
 
 OrientationInterpolator* OrientationInterpolator1516 = new OrientationInterpolator();
-OrientationInterpolator1516->setDEF("sacrum_OI");
+OrientationInterpolator1516->setDEF(CString("sacrum_OI"));
 IS* IS1517 = new IS();
 Connect* connect1518 = new Connect();
-connect1518->setNodeField("key");
-connect1518->setProtoField("sacrum_key");
-IS1517->addConnect(connect1518);
+connect1518->setNodeField(CString("key"));
+connect1518->setProtoField(CString("sacrum_key"));
+IS1517->addChild(connect1518);
 
 Connect* connect1519 = new Connect();
-connect1519->setNodeField("keyValue");
-connect1519->setProtoField("sacrum_keyValue");
-IS1517->addConnect(connect1519);
+connect1519->setNodeField(CString("keyValue"));
+connect1519->setProtoField(CString("sacrum_keyValue"));
+IS1517->addChild(connect1519);
 
 Connect* connect1520 = new Connect();
-connect1520->setNodeField("value_changed");
-connect1520->setProtoField("sacrum_changed");
-IS1517->addConnect(connect1520);
+connect1520->setNodeField(CString("value_changed"));
+connect1520->setProtoField(CString("sacrum_changed"));
+IS1517->addChild(connect1520);
 
-OrientationInterpolator1516->setIS(IS1517);
+OrientationInterpolator1516->addChild(IS1517);
 
 ProtoBody603->addChild(OrientationInterpolator1516);
 
 ROUTE* ROUTE1521 = new ROUTE();
-ROUTE1521->setFromField("fraction_changed");
-ROUTE1521->setFromNode("BehaviorClock");
-ROUTE1521->setToField("set_fraction");
-ROUTE1521->setToNode("sacrum_OI");
+ROUTE1521->setFromField(CString("fraction_changed"));
+ROUTE1521->setFromNode(CString("BehaviorClock"));
+ROUTE1521->setToField(CString("set_fraction"));
+ROUTE1521->setToNode(CString("sacrum_OI"));
 ProtoBody603->addChild(ROUTE1521);
 
 OrientationInterpolator* OrientationInterpolator1522 = new OrientationInterpolator();
-OrientationInterpolator1522->setDEF("skull_OI");
+OrientationInterpolator1522->setDEF(CString("skull_OI"));
 IS* IS1523 = new IS();
 Connect* connect1524 = new Connect();
-connect1524->setNodeField("key");
-connect1524->setProtoField("skull_key");
-IS1523->addConnect(connect1524);
+connect1524->setNodeField(CString("key"));
+connect1524->setProtoField(CString("skull_key"));
+IS1523->addChild(connect1524);
 
 Connect* connect1525 = new Connect();
-connect1525->setNodeField("keyValue");
-connect1525->setProtoField("skull_keyValue");
-IS1523->addConnect(connect1525);
+connect1525->setNodeField(CString("keyValue"));
+connect1525->setProtoField(CString("skull_keyValue"));
+IS1523->addChild(connect1525);
 
 Connect* connect1526 = new Connect();
-connect1526->setNodeField("value_changed");
-connect1526->setProtoField("skull_changed");
-IS1523->addConnect(connect1526);
+connect1526->setNodeField(CString("value_changed"));
+connect1526->setProtoField(CString("skull_changed"));
+IS1523->addChild(connect1526);
 
-OrientationInterpolator1522->setIS(IS1523);
+OrientationInterpolator1522->addChild(IS1523);
 
 ProtoBody603->addChild(OrientationInterpolator1522);
 
 ROUTE* ROUTE1527 = new ROUTE();
-ROUTE1527->setFromField("fraction_changed");
-ROUTE1527->setFromNode("BehaviorClock");
-ROUTE1527->setToField("set_fraction");
-ROUTE1527->setToNode("skull_OI");
+ROUTE1527->setFromField(CString("fraction_changed"));
+ROUTE1527->setFromNode(CString("BehaviorClock"));
+ROUTE1527->setToField(CString("set_fraction"));
+ROUTE1527->setToNode(CString("skull_OI"));
 ProtoBody603->addChild(ROUTE1527);
 
 OrientationInterpolator* OrientationInterpolator1528 = new OrientationInterpolator();
-OrientationInterpolator1528->setDEF("skullbase_OI");
+OrientationInterpolator1528->setDEF(CString("skullbase_OI"));
 IS* IS1529 = new IS();
 Connect* connect1530 = new Connect();
-connect1530->setNodeField("key");
-connect1530->setProtoField("skullbase_key");
-IS1529->addConnect(connect1530);
+connect1530->setNodeField(CString("key"));
+connect1530->setProtoField(CString("skullbase_key"));
+IS1529->addChild(connect1530);
 
 Connect* connect1531 = new Connect();
-connect1531->setNodeField("keyValue");
-connect1531->setProtoField("skullbase_keyValue");
-IS1529->addConnect(connect1531);
+connect1531->setNodeField(CString("keyValue"));
+connect1531->setProtoField(CString("skullbase_keyValue"));
+IS1529->addChild(connect1531);
 
 Connect* connect1532 = new Connect();
-connect1532->setNodeField("value_changed");
-connect1532->setProtoField("skullbase_changed");
-IS1529->addConnect(connect1532);
+connect1532->setNodeField(CString("value_changed"));
+connect1532->setProtoField(CString("skullbase_changed"));
+IS1529->addChild(connect1532);
 
-OrientationInterpolator1528->setIS(IS1529);
+OrientationInterpolator1528->addChild(IS1529);
 
 ProtoBody603->addChild(OrientationInterpolator1528);
 
 ROUTE* ROUTE1533 = new ROUTE();
-ROUTE1533->setFromField("fraction_changed");
-ROUTE1533->setFromNode("BehaviorClock");
-ROUTE1533->setToField("set_fraction");
-ROUTE1533->setToNode("skullbase_OI");
+ROUTE1533->setFromField(CString("fraction_changed"));
+ROUTE1533->setFromNode(CString("BehaviorClock"));
+ROUTE1533->setToField(CString("set_fraction"));
+ROUTE1533->setToNode(CString("skullbase_OI"));
 ProtoBody603->addChild(ROUTE1533);
 
 OrientationInterpolator* OrientationInterpolator1534 = new OrientationInterpolator();
-OrientationInterpolator1534->setDEF("t1_OI");
+OrientationInterpolator1534->setDEF(CString("t1_OI"));
 IS* IS1535 = new IS();
 Connect* connect1536 = new Connect();
-connect1536->setNodeField("key");
-connect1536->setProtoField("t1_key");
-IS1535->addConnect(connect1536);
+connect1536->setNodeField(CString("key"));
+connect1536->setProtoField(CString("t1_key"));
+IS1535->addChild(connect1536);
 
 Connect* connect1537 = new Connect();
-connect1537->setNodeField("keyValue");
-connect1537->setProtoField("t1_keyValue");
-IS1535->addConnect(connect1537);
+connect1537->setNodeField(CString("keyValue"));
+connect1537->setProtoField(CString("t1_keyValue"));
+IS1535->addChild(connect1537);
 
 Connect* connect1538 = new Connect();
-connect1538->setNodeField("value_changed");
-connect1538->setProtoField("t1_changed");
-IS1535->addConnect(connect1538);
+connect1538->setNodeField(CString("value_changed"));
+connect1538->setProtoField(CString("t1_changed"));
+IS1535->addChild(connect1538);
 
-OrientationInterpolator1534->setIS(IS1535);
+OrientationInterpolator1534->addChild(IS1535);
 
 ProtoBody603->addChild(OrientationInterpolator1534);
 
 ROUTE* ROUTE1539 = new ROUTE();
-ROUTE1539->setFromField("fraction_changed");
-ROUTE1539->setFromNode("BehaviorClock");
-ROUTE1539->setToField("set_fraction");
-ROUTE1539->setToNode("t1_OI");
+ROUTE1539->setFromField(CString("fraction_changed"));
+ROUTE1539->setFromNode(CString("BehaviorClock"));
+ROUTE1539->setToField(CString("set_fraction"));
+ROUTE1539->setToNode(CString("t1_OI"));
 ProtoBody603->addChild(ROUTE1539);
 
 OrientationInterpolator* OrientationInterpolator1540 = new OrientationInterpolator();
-OrientationInterpolator1540->setDEF("t2_OI");
+OrientationInterpolator1540->setDEF(CString("t2_OI"));
 IS* IS1541 = new IS();
 Connect* connect1542 = new Connect();
-connect1542->setNodeField("key");
-connect1542->setProtoField("t2_key");
-IS1541->addConnect(connect1542);
+connect1542->setNodeField(CString("key"));
+connect1542->setProtoField(CString("t2_key"));
+IS1541->addChild(connect1542);
 
 Connect* connect1543 = new Connect();
-connect1543->setNodeField("keyValue");
-connect1543->setProtoField("t2_keyValue");
-IS1541->addConnect(connect1543);
+connect1543->setNodeField(CString("keyValue"));
+connect1543->setProtoField(CString("t2_keyValue"));
+IS1541->addChild(connect1543);
 
 Connect* connect1544 = new Connect();
-connect1544->setNodeField("value_changed");
-connect1544->setProtoField("t2_changed");
-IS1541->addConnect(connect1544);
+connect1544->setNodeField(CString("value_changed"));
+connect1544->setProtoField(CString("t2_changed"));
+IS1541->addChild(connect1544);
 
-OrientationInterpolator1540->setIS(IS1541);
+OrientationInterpolator1540->addChild(IS1541);
 
 ProtoBody603->addChild(OrientationInterpolator1540);
 
 ROUTE* ROUTE1545 = new ROUTE();
-ROUTE1545->setFromField("fraction_changed");
-ROUTE1545->setFromNode("BehaviorClock");
-ROUTE1545->setToField("set_fraction");
-ROUTE1545->setToNode("t2_OI");
+ROUTE1545->setFromField(CString("fraction_changed"));
+ROUTE1545->setFromNode(CString("BehaviorClock"));
+ROUTE1545->setToField(CString("set_fraction"));
+ROUTE1545->setToNode(CString("t2_OI"));
 ProtoBody603->addChild(ROUTE1545);
 
 OrientationInterpolator* OrientationInterpolator1546 = new OrientationInterpolator();
-OrientationInterpolator1546->setDEF("t3_OI");
+OrientationInterpolator1546->setDEF(CString("t3_OI"));
 IS* IS1547 = new IS();
 Connect* connect1548 = new Connect();
-connect1548->setNodeField("key");
-connect1548->setProtoField("t3_key");
-IS1547->addConnect(connect1548);
+connect1548->setNodeField(CString("key"));
+connect1548->setProtoField(CString("t3_key"));
+IS1547->addChild(connect1548);
 
 Connect* connect1549 = new Connect();
-connect1549->setNodeField("keyValue");
-connect1549->setProtoField("t3_keyValue");
-IS1547->addConnect(connect1549);
+connect1549->setNodeField(CString("keyValue"));
+connect1549->setProtoField(CString("t3_keyValue"));
+IS1547->addChild(connect1549);
 
 Connect* connect1550 = new Connect();
-connect1550->setNodeField("value_changed");
-connect1550->setProtoField("t3_changed");
-IS1547->addConnect(connect1550);
+connect1550->setNodeField(CString("value_changed"));
+connect1550->setProtoField(CString("t3_changed"));
+IS1547->addChild(connect1550);
 
-OrientationInterpolator1546->setIS(IS1547);
+OrientationInterpolator1546->addChild(IS1547);
 
 ProtoBody603->addChild(OrientationInterpolator1546);
 
 ROUTE* ROUTE1551 = new ROUTE();
-ROUTE1551->setFromField("fraction_changed");
-ROUTE1551->setFromNode("BehaviorClock");
-ROUTE1551->setToField("set_fraction");
-ROUTE1551->setToNode("t3_OI");
+ROUTE1551->setFromField(CString("fraction_changed"));
+ROUTE1551->setFromNode(CString("BehaviorClock"));
+ROUTE1551->setToField(CString("set_fraction"));
+ROUTE1551->setToNode(CString("t3_OI"));
 ProtoBody603->addChild(ROUTE1551);
 
 OrientationInterpolator* OrientationInterpolator1552 = new OrientationInterpolator();
-OrientationInterpolator1552->setDEF("t4_OI");
+OrientationInterpolator1552->setDEF(CString("t4_OI"));
 IS* IS1553 = new IS();
 Connect* connect1554 = new Connect();
-connect1554->setNodeField("key");
-connect1554->setProtoField("t4_key");
-IS1553->addConnect(connect1554);
+connect1554->setNodeField(CString("key"));
+connect1554->setProtoField(CString("t4_key"));
+IS1553->addChild(connect1554);
 
 Connect* connect1555 = new Connect();
-connect1555->setNodeField("keyValue");
-connect1555->setProtoField("t4_keyValue");
-IS1553->addConnect(connect1555);
+connect1555->setNodeField(CString("keyValue"));
+connect1555->setProtoField(CString("t4_keyValue"));
+IS1553->addChild(connect1555);
 
 Connect* connect1556 = new Connect();
-connect1556->setNodeField("value_changed");
-connect1556->setProtoField("t4_changed");
-IS1553->addConnect(connect1556);
+connect1556->setNodeField(CString("value_changed"));
+connect1556->setProtoField(CString("t4_changed"));
+IS1553->addChild(connect1556);
 
-OrientationInterpolator1552->setIS(IS1553);
+OrientationInterpolator1552->addChild(IS1553);
 
 ProtoBody603->addChild(OrientationInterpolator1552);
 
 ROUTE* ROUTE1557 = new ROUTE();
-ROUTE1557->setFromField("fraction_changed");
-ROUTE1557->setFromNode("BehaviorClock");
-ROUTE1557->setToField("set_fraction");
-ROUTE1557->setToNode("t4_OI");
+ROUTE1557->setFromField(CString("fraction_changed"));
+ROUTE1557->setFromNode(CString("BehaviorClock"));
+ROUTE1557->setToField(CString("set_fraction"));
+ROUTE1557->setToNode(CString("t4_OI"));
 ProtoBody603->addChild(ROUTE1557);
 
 OrientationInterpolator* OrientationInterpolator1558 = new OrientationInterpolator();
-OrientationInterpolator1558->setDEF("t5_OI");
+OrientationInterpolator1558->setDEF(CString("t5_OI"));
 IS* IS1559 = new IS();
 Connect* connect1560 = new Connect();
-connect1560->setNodeField("key");
-connect1560->setProtoField("t5_key");
-IS1559->addConnect(connect1560);
+connect1560->setNodeField(CString("key"));
+connect1560->setProtoField(CString("t5_key"));
+IS1559->addChild(connect1560);
 
 Connect* connect1561 = new Connect();
-connect1561->setNodeField("keyValue");
-connect1561->setProtoField("t5_keyValue");
-IS1559->addConnect(connect1561);
+connect1561->setNodeField(CString("keyValue"));
+connect1561->setProtoField(CString("t5_keyValue"));
+IS1559->addChild(connect1561);
 
 Connect* connect1562 = new Connect();
-connect1562->setNodeField("value_changed");
-connect1562->setProtoField("t5_changed");
-IS1559->addConnect(connect1562);
+connect1562->setNodeField(CString("value_changed"));
+connect1562->setProtoField(CString("t5_changed"));
+IS1559->addChild(connect1562);
 
-OrientationInterpolator1558->setIS(IS1559);
+OrientationInterpolator1558->addChild(IS1559);
 
 ProtoBody603->addChild(OrientationInterpolator1558);
 
 ROUTE* ROUTE1563 = new ROUTE();
-ROUTE1563->setFromField("fraction_changed");
-ROUTE1563->setFromNode("BehaviorClock");
-ROUTE1563->setToField("set_fraction");
-ROUTE1563->setToNode("t5_OI");
+ROUTE1563->setFromField(CString("fraction_changed"));
+ROUTE1563->setFromNode(CString("BehaviorClock"));
+ROUTE1563->setToField(CString("set_fraction"));
+ROUTE1563->setToNode(CString("t5_OI"));
 ProtoBody603->addChild(ROUTE1563);
 
 OrientationInterpolator* OrientationInterpolator1564 = new OrientationInterpolator();
-OrientationInterpolator1564->setDEF("t6_OI");
+OrientationInterpolator1564->setDEF(CString("t6_OI"));
 IS* IS1565 = new IS();
 Connect* connect1566 = new Connect();
-connect1566->setNodeField("key");
-connect1566->setProtoField("t6_key");
-IS1565->addConnect(connect1566);
+connect1566->setNodeField(CString("key"));
+connect1566->setProtoField(CString("t6_key"));
+IS1565->addChild(connect1566);
 
 Connect* connect1567 = new Connect();
-connect1567->setNodeField("keyValue");
-connect1567->setProtoField("t6_keyValue");
-IS1565->addConnect(connect1567);
+connect1567->setNodeField(CString("keyValue"));
+connect1567->setProtoField(CString("t6_keyValue"));
+IS1565->addChild(connect1567);
 
 Connect* connect1568 = new Connect();
-connect1568->setNodeField("value_changed");
-connect1568->setProtoField("t6_changed");
-IS1565->addConnect(connect1568);
+connect1568->setNodeField(CString("value_changed"));
+connect1568->setProtoField(CString("t6_changed"));
+IS1565->addChild(connect1568);
 
-OrientationInterpolator1564->setIS(IS1565);
+OrientationInterpolator1564->addChild(IS1565);
 
 ProtoBody603->addChild(OrientationInterpolator1564);
 
 ROUTE* ROUTE1569 = new ROUTE();
-ROUTE1569->setFromField("fraction_changed");
-ROUTE1569->setFromNode("BehaviorClock");
-ROUTE1569->setToField("set_fraction");
-ROUTE1569->setToNode("t6_OI");
+ROUTE1569->setFromField(CString("fraction_changed"));
+ROUTE1569->setFromNode(CString("BehaviorClock"));
+ROUTE1569->setToField(CString("set_fraction"));
+ROUTE1569->setToNode(CString("t6_OI"));
 ProtoBody603->addChild(ROUTE1569);
 
 OrientationInterpolator* OrientationInterpolator1570 = new OrientationInterpolator();
-OrientationInterpolator1570->setDEF("t7_OI");
+OrientationInterpolator1570->setDEF(CString("t7_OI"));
 IS* IS1571 = new IS();
 Connect* connect1572 = new Connect();
-connect1572->setNodeField("key");
-connect1572->setProtoField("t7_key");
-IS1571->addConnect(connect1572);
+connect1572->setNodeField(CString("key"));
+connect1572->setProtoField(CString("t7_key"));
+IS1571->addChild(connect1572);
 
 Connect* connect1573 = new Connect();
-connect1573->setNodeField("keyValue");
-connect1573->setProtoField("t7_keyValue");
-IS1571->addConnect(connect1573);
+connect1573->setNodeField(CString("keyValue"));
+connect1573->setProtoField(CString("t7_keyValue"));
+IS1571->addChild(connect1573);
 
 Connect* connect1574 = new Connect();
-connect1574->setNodeField("value_changed");
-connect1574->setProtoField("t7_changed");
-IS1571->addConnect(connect1574);
+connect1574->setNodeField(CString("value_changed"));
+connect1574->setProtoField(CString("t7_changed"));
+IS1571->addChild(connect1574);
 
-OrientationInterpolator1570->setIS(IS1571);
+OrientationInterpolator1570->addChild(IS1571);
 
 ProtoBody603->addChild(OrientationInterpolator1570);
 
 ROUTE* ROUTE1575 = new ROUTE();
-ROUTE1575->setFromField("fraction_changed");
-ROUTE1575->setFromNode("BehaviorClock");
-ROUTE1575->setToField("set_fraction");
-ROUTE1575->setToNode("t7_OI");
+ROUTE1575->setFromField(CString("fraction_changed"));
+ROUTE1575->setFromNode(CString("BehaviorClock"));
+ROUTE1575->setToField(CString("set_fraction"));
+ROUTE1575->setToNode(CString("t7_OI"));
 ProtoBody603->addChild(ROUTE1575);
 
 OrientationInterpolator* OrientationInterpolator1576 = new OrientationInterpolator();
-OrientationInterpolator1576->setDEF("t8_OI");
+OrientationInterpolator1576->setDEF(CString("t8_OI"));
 IS* IS1577 = new IS();
 Connect* connect1578 = new Connect();
-connect1578->setNodeField("key");
-connect1578->setProtoField("t8_key");
-IS1577->addConnect(connect1578);
+connect1578->setNodeField(CString("key"));
+connect1578->setProtoField(CString("t8_key"));
+IS1577->addChild(connect1578);
 
 Connect* connect1579 = new Connect();
-connect1579->setNodeField("keyValue");
-connect1579->setProtoField("t8_keyValue");
-IS1577->addConnect(connect1579);
+connect1579->setNodeField(CString("keyValue"));
+connect1579->setProtoField(CString("t8_keyValue"));
+IS1577->addChild(connect1579);
 
 Connect* connect1580 = new Connect();
-connect1580->setNodeField("value_changed");
-connect1580->setProtoField("t8_changed");
-IS1577->addConnect(connect1580);
+connect1580->setNodeField(CString("value_changed"));
+connect1580->setProtoField(CString("t8_changed"));
+IS1577->addChild(connect1580);
 
-OrientationInterpolator1576->setIS(IS1577);
+OrientationInterpolator1576->addChild(IS1577);
 
 ProtoBody603->addChild(OrientationInterpolator1576);
 
 ROUTE* ROUTE1581 = new ROUTE();
-ROUTE1581->setFromField("fraction_changed");
-ROUTE1581->setFromNode("BehaviorClock");
-ROUTE1581->setToField("set_fraction");
-ROUTE1581->setToNode("t8_OI");
+ROUTE1581->setFromField(CString("fraction_changed"));
+ROUTE1581->setFromNode(CString("BehaviorClock"));
+ROUTE1581->setToField(CString("set_fraction"));
+ROUTE1581->setToNode(CString("t8_OI"));
 ProtoBody603->addChild(ROUTE1581);
 
 OrientationInterpolator* OrientationInterpolator1582 = new OrientationInterpolator();
-OrientationInterpolator1582->setDEF("t9_OI");
+OrientationInterpolator1582->setDEF(CString("t9_OI"));
 IS* IS1583 = new IS();
 Connect* connect1584 = new Connect();
-connect1584->setNodeField("key");
-connect1584->setProtoField("t9_key");
-IS1583->addConnect(connect1584);
+connect1584->setNodeField(CString("key"));
+connect1584->setProtoField(CString("t9_key"));
+IS1583->addChild(connect1584);
 
 Connect* connect1585 = new Connect();
-connect1585->setNodeField("keyValue");
-connect1585->setProtoField("t9_keyValue");
-IS1583->addConnect(connect1585);
+connect1585->setNodeField(CString("keyValue"));
+connect1585->setProtoField(CString("t9_keyValue"));
+IS1583->addChild(connect1585);
 
 Connect* connect1586 = new Connect();
-connect1586->setNodeField("value_changed");
-connect1586->setProtoField("t9_changed");
-IS1583->addConnect(connect1586);
+connect1586->setNodeField(CString("value_changed"));
+connect1586->setProtoField(CString("t9_changed"));
+IS1583->addChild(connect1586);
 
-OrientationInterpolator1582->setIS(IS1583);
+OrientationInterpolator1582->addChild(IS1583);
 
 ProtoBody603->addChild(OrientationInterpolator1582);
 
 ROUTE* ROUTE1587 = new ROUTE();
-ROUTE1587->setFromField("fraction_changed");
-ROUTE1587->setFromNode("BehaviorClock");
-ROUTE1587->setToField("set_fraction");
-ROUTE1587->setToNode("t9_OI");
+ROUTE1587->setFromField(CString("fraction_changed"));
+ROUTE1587->setFromNode(CString("BehaviorClock"));
+ROUTE1587->setToField(CString("set_fraction"));
+ROUTE1587->setToNode(CString("t9_OI"));
 ProtoBody603->addChild(ROUTE1587);
 
 OrientationInterpolator* OrientationInterpolator1588 = new OrientationInterpolator();
-OrientationInterpolator1588->setDEF("t10_OI");
+OrientationInterpolator1588->setDEF(CString("t10_OI"));
 IS* IS1589 = new IS();
 Connect* connect1590 = new Connect();
-connect1590->setNodeField("key");
-connect1590->setProtoField("t10_key");
-IS1589->addConnect(connect1590);
+connect1590->setNodeField(CString("key"));
+connect1590->setProtoField(CString("t10_key"));
+IS1589->addChild(connect1590);
 
 Connect* connect1591 = new Connect();
-connect1591->setNodeField("keyValue");
-connect1591->setProtoField("t10_keyValue");
-IS1589->addConnect(connect1591);
+connect1591->setNodeField(CString("keyValue"));
+connect1591->setProtoField(CString("t10_keyValue"));
+IS1589->addChild(connect1591);
 
 Connect* connect1592 = new Connect();
-connect1592->setNodeField("value_changed");
-connect1592->setProtoField("t10_changed");
-IS1589->addConnect(connect1592);
+connect1592->setNodeField(CString("value_changed"));
+connect1592->setProtoField(CString("t10_changed"));
+IS1589->addChild(connect1592);
 
-OrientationInterpolator1588->setIS(IS1589);
+OrientationInterpolator1588->addChild(IS1589);
 
 ProtoBody603->addChild(OrientationInterpolator1588);
 
 ROUTE* ROUTE1593 = new ROUTE();
-ROUTE1593->setFromField("fraction_changed");
-ROUTE1593->setFromNode("BehaviorClock");
-ROUTE1593->setToField("set_fraction");
-ROUTE1593->setToNode("t10_OI");
+ROUTE1593->setFromField(CString("fraction_changed"));
+ROUTE1593->setFromNode(CString("BehaviorClock"));
+ROUTE1593->setToField(CString("set_fraction"));
+ROUTE1593->setToNode(CString("t10_OI"));
 ProtoBody603->addChild(ROUTE1593);
 
 OrientationInterpolator* OrientationInterpolator1594 = new OrientationInterpolator();
-OrientationInterpolator1594->setDEF("t11_OI");
+OrientationInterpolator1594->setDEF(CString("t11_OI"));
 IS* IS1595 = new IS();
 Connect* connect1596 = new Connect();
-connect1596->setNodeField("key");
-connect1596->setProtoField("t11_key");
-IS1595->addConnect(connect1596);
+connect1596->setNodeField(CString("key"));
+connect1596->setProtoField(CString("t11_key"));
+IS1595->addChild(connect1596);
 
 Connect* connect1597 = new Connect();
-connect1597->setNodeField("keyValue");
-connect1597->setProtoField("t11_keyValue");
-IS1595->addConnect(connect1597);
+connect1597->setNodeField(CString("keyValue"));
+connect1597->setProtoField(CString("t11_keyValue"));
+IS1595->addChild(connect1597);
 
 Connect* connect1598 = new Connect();
-connect1598->setNodeField("value_changed");
-connect1598->setProtoField("t11_changed");
-IS1595->addConnect(connect1598);
+connect1598->setNodeField(CString("value_changed"));
+connect1598->setProtoField(CString("t11_changed"));
+IS1595->addChild(connect1598);
 
-OrientationInterpolator1594->setIS(IS1595);
+OrientationInterpolator1594->addChild(IS1595);
 
 ProtoBody603->addChild(OrientationInterpolator1594);
 
 ROUTE* ROUTE1599 = new ROUTE();
-ROUTE1599->setFromField("fraction_changed");
-ROUTE1599->setFromNode("BehaviorClock");
-ROUTE1599->setToField("set_fraction");
-ROUTE1599->setToNode("t11_OI");
+ROUTE1599->setFromField(CString("fraction_changed"));
+ROUTE1599->setFromNode(CString("BehaviorClock"));
+ROUTE1599->setToField(CString("set_fraction"));
+ROUTE1599->setToNode(CString("t11_OI"));
 ProtoBody603->addChild(ROUTE1599);
 
 OrientationInterpolator* OrientationInterpolator1600 = new OrientationInterpolator();
-OrientationInterpolator1600->setDEF("t12_OI");
+OrientationInterpolator1600->setDEF(CString("t12_OI"));
 IS* IS1601 = new IS();
 Connect* connect1602 = new Connect();
-connect1602->setNodeField("key");
-connect1602->setProtoField("t12_key");
-IS1601->addConnect(connect1602);
+connect1602->setNodeField(CString("key"));
+connect1602->setProtoField(CString("t12_key"));
+IS1601->addChild(connect1602);
 
 Connect* connect1603 = new Connect();
-connect1603->setNodeField("keyValue");
-connect1603->setProtoField("t12_keyValue");
-IS1601->addConnect(connect1603);
+connect1603->setNodeField(CString("keyValue"));
+connect1603->setProtoField(CString("t12_keyValue"));
+IS1601->addChild(connect1603);
 
 Connect* connect1604 = new Connect();
-connect1604->setNodeField("value_changed");
-connect1604->setProtoField("t12_changed");
-IS1601->addConnect(connect1604);
+connect1604->setNodeField(CString("value_changed"));
+connect1604->setProtoField(CString("t12_changed"));
+IS1601->addChild(connect1604);
 
-OrientationInterpolator1600->setIS(IS1601);
+OrientationInterpolator1600->addChild(IS1601);
 
 ProtoBody603->addChild(OrientationInterpolator1600);
 
 ROUTE* ROUTE1605 = new ROUTE();
-ROUTE1605->setFromField("fraction_changed");
-ROUTE1605->setFromNode("BehaviorClock");
-ROUTE1605->setToField("set_fraction");
-ROUTE1605->setToNode("t12_OI");
+ROUTE1605->setFromField(CString("fraction_changed"));
+ROUTE1605->setFromNode(CString("BehaviorClock"));
+ROUTE1605->setToField(CString("set_fraction"));
+ROUTE1605->setToNode(CString("t12_OI"));
 ProtoBody603->addChild(ROUTE1605);
 
 OrientationInterpolator* OrientationInterpolator1606 = new OrientationInterpolator();
-OrientationInterpolator1606->setDEF("temporomandibular_OI");
+OrientationInterpolator1606->setDEF(CString("temporomandibular_OI"));
 IS* IS1607 = new IS();
 Connect* connect1608 = new Connect();
-connect1608->setNodeField("key");
-connect1608->setProtoField("temporomandibular_key");
-IS1607->addConnect(connect1608);
+connect1608->setNodeField(CString("key"));
+connect1608->setProtoField(CString("temporomandibular_key"));
+IS1607->addChild(connect1608);
 
 Connect* connect1609 = new Connect();
-connect1609->setNodeField("keyValue");
-connect1609->setProtoField("temporomandibular_keyValue");
-IS1607->addConnect(connect1609);
+connect1609->setNodeField(CString("keyValue"));
+connect1609->setProtoField(CString("temporomandibular_keyValue"));
+IS1607->addChild(connect1609);
 
 Connect* connect1610 = new Connect();
-connect1610->setNodeField("value_changed");
-connect1610->setProtoField("temporomandibular_changed");
-IS1607->addConnect(connect1610);
+connect1610->setNodeField(CString("value_changed"));
+connect1610->setProtoField(CString("temporomandibular_changed"));
+IS1607->addChild(connect1610);
 
-OrientationInterpolator1606->setIS(IS1607);
+OrientationInterpolator1606->addChild(IS1607);
 
 ProtoBody603->addChild(OrientationInterpolator1606);
 
 ROUTE* ROUTE1611 = new ROUTE();
-ROUTE1611->setFromField("fraction_changed");
-ROUTE1611->setFromNode("BehaviorClock");
-ROUTE1611->setToField("set_fraction");
-ROUTE1611->setToNode("temporomandibular_OI");
+ROUTE1611->setFromField(CString("fraction_changed"));
+ROUTE1611->setFromNode(CString("BehaviorClock"));
+ROUTE1611->setToField(CString("set_fraction"));
+ROUTE1611->setToNode(CString("temporomandibular_OI"));
 ProtoBody603->addChild(ROUTE1611);
 
 OrientationInterpolator* OrientationInterpolator1612 = new OrientationInterpolator();
-OrientationInterpolator1612->setDEF("vc1_OI");
+OrientationInterpolator1612->setDEF(CString("vc1_OI"));
 IS* IS1613 = new IS();
 Connect* connect1614 = new Connect();
-connect1614->setNodeField("key");
-connect1614->setProtoField("vc1_key");
-IS1613->addConnect(connect1614);
+connect1614->setNodeField(CString("key"));
+connect1614->setProtoField(CString("vc1_key"));
+IS1613->addChild(connect1614);
 
 Connect* connect1615 = new Connect();
-connect1615->setNodeField("keyValue");
-connect1615->setProtoField("vc1_keyValue");
-IS1613->addConnect(connect1615);
+connect1615->setNodeField(CString("keyValue"));
+connect1615->setProtoField(CString("vc1_keyValue"));
+IS1613->addChild(connect1615);
 
 Connect* connect1616 = new Connect();
-connect1616->setNodeField("value_changed");
-connect1616->setProtoField("vc1_changed");
-IS1613->addConnect(connect1616);
+connect1616->setNodeField(CString("value_changed"));
+connect1616->setProtoField(CString("vc1_changed"));
+IS1613->addChild(connect1616);
 
-OrientationInterpolator1612->setIS(IS1613);
+OrientationInterpolator1612->addChild(IS1613);
 
 ProtoBody603->addChild(OrientationInterpolator1612);
 
 ROUTE* ROUTE1617 = new ROUTE();
-ROUTE1617->setFromField("fraction_changed");
-ROUTE1617->setFromNode("BehaviorClock");
-ROUTE1617->setToField("set_fraction");
-ROUTE1617->setToNode("vc1_OI");
+ROUTE1617->setFromField(CString("fraction_changed"));
+ROUTE1617->setFromNode(CString("BehaviorClock"));
+ROUTE1617->setToField(CString("set_fraction"));
+ROUTE1617->setToNode(CString("vc1_OI"));
 ProtoBody603->addChild(ROUTE1617);
 
 OrientationInterpolator* OrientationInterpolator1618 = new OrientationInterpolator();
-OrientationInterpolator1618->setDEF("vc2_OI");
+OrientationInterpolator1618->setDEF(CString("vc2_OI"));
 IS* IS1619 = new IS();
 Connect* connect1620 = new Connect();
-connect1620->setNodeField("key");
-connect1620->setProtoField("vc2_key");
-IS1619->addConnect(connect1620);
+connect1620->setNodeField(CString("key"));
+connect1620->setProtoField(CString("vc2_key"));
+IS1619->addChild(connect1620);
 
 Connect* connect1621 = new Connect();
-connect1621->setNodeField("keyValue");
-connect1621->setProtoField("vc2_keyValue");
-IS1619->addConnect(connect1621);
+connect1621->setNodeField(CString("keyValue"));
+connect1621->setProtoField(CString("vc2_keyValue"));
+IS1619->addChild(connect1621);
 
 Connect* connect1622 = new Connect();
-connect1622->setNodeField("value_changed");
-connect1622->setProtoField("vc2_changed");
-IS1619->addConnect(connect1622);
+connect1622->setNodeField(CString("value_changed"));
+connect1622->setProtoField(CString("vc2_changed"));
+IS1619->addChild(connect1622);
 
-OrientationInterpolator1618->setIS(IS1619);
+OrientationInterpolator1618->addChild(IS1619);
 
 ProtoBody603->addChild(OrientationInterpolator1618);
 
 ROUTE* ROUTE1623 = new ROUTE();
-ROUTE1623->setFromField("fraction_changed");
-ROUTE1623->setFromNode("BehaviorClock");
-ROUTE1623->setToField("set_fraction");
-ROUTE1623->setToNode("vc2_OI");
+ROUTE1623->setFromField(CString("fraction_changed"));
+ROUTE1623->setFromNode(CString("BehaviorClock"));
+ROUTE1623->setToField(CString("set_fraction"));
+ROUTE1623->setToNode(CString("vc2_OI"));
 ProtoBody603->addChild(ROUTE1623);
 
 OrientationInterpolator* OrientationInterpolator1624 = new OrientationInterpolator();
-OrientationInterpolator1624->setDEF("vc3_OI");
+OrientationInterpolator1624->setDEF(CString("vc3_OI"));
 IS* IS1625 = new IS();
 Connect* connect1626 = new Connect();
-connect1626->setNodeField("key");
-connect1626->setProtoField("vc3_key");
-IS1625->addConnect(connect1626);
+connect1626->setNodeField(CString("key"));
+connect1626->setProtoField(CString("vc3_key"));
+IS1625->addChild(connect1626);
 
 Connect* connect1627 = new Connect();
-connect1627->setNodeField("keyValue");
-connect1627->setProtoField("vc3_keyValue");
-IS1625->addConnect(connect1627);
+connect1627->setNodeField(CString("keyValue"));
+connect1627->setProtoField(CString("vc3_keyValue"));
+IS1625->addChild(connect1627);
 
 Connect* connect1628 = new Connect();
-connect1628->setNodeField("value_changed");
-connect1628->setProtoField("vc3_changed");
-IS1625->addConnect(connect1628);
+connect1628->setNodeField(CString("value_changed"));
+connect1628->setProtoField(CString("vc3_changed"));
+IS1625->addChild(connect1628);
 
-OrientationInterpolator1624->setIS(IS1625);
+OrientationInterpolator1624->addChild(IS1625);
 
 ProtoBody603->addChild(OrientationInterpolator1624);
 
 ROUTE* ROUTE1629 = new ROUTE();
-ROUTE1629->setFromField("fraction_changed");
-ROUTE1629->setFromNode("BehaviorClock");
-ROUTE1629->setToField("set_fraction");
-ROUTE1629->setToNode("vc3_OI");
+ROUTE1629->setFromField(CString("fraction_changed"));
+ROUTE1629->setFromNode(CString("BehaviorClock"));
+ROUTE1629->setToField(CString("set_fraction"));
+ROUTE1629->setToNode(CString("vc3_OI"));
 ProtoBody603->addChild(ROUTE1629);
 
 OrientationInterpolator* OrientationInterpolator1630 = new OrientationInterpolator();
-OrientationInterpolator1630->setDEF("vc4_OI");
+OrientationInterpolator1630->setDEF(CString("vc4_OI"));
 IS* IS1631 = new IS();
 Connect* connect1632 = new Connect();
-connect1632->setNodeField("key");
-connect1632->setProtoField("vc4_key");
-IS1631->addConnect(connect1632);
+connect1632->setNodeField(CString("key"));
+connect1632->setProtoField(CString("vc4_key"));
+IS1631->addChild(connect1632);
 
 Connect* connect1633 = new Connect();
-connect1633->setNodeField("keyValue");
-connect1633->setProtoField("vc4_keyValue");
-IS1631->addConnect(connect1633);
+connect1633->setNodeField(CString("keyValue"));
+connect1633->setProtoField(CString("vc4_keyValue"));
+IS1631->addChild(connect1633);
 
 Connect* connect1634 = new Connect();
-connect1634->setNodeField("value_changed");
-connect1634->setProtoField("vc4_changed");
-IS1631->addConnect(connect1634);
+connect1634->setNodeField(CString("value_changed"));
+connect1634->setProtoField(CString("vc4_changed"));
+IS1631->addChild(connect1634);
 
-OrientationInterpolator1630->setIS(IS1631);
+OrientationInterpolator1630->addChild(IS1631);
 
 ProtoBody603->addChild(OrientationInterpolator1630);
 
 ROUTE* ROUTE1635 = new ROUTE();
-ROUTE1635->setFromField("fraction_changed");
-ROUTE1635->setFromNode("BehaviorClock");
-ROUTE1635->setToField("set_fraction");
-ROUTE1635->setToNode("vc4_OI");
+ROUTE1635->setFromField(CString("fraction_changed"));
+ROUTE1635->setFromNode(CString("BehaviorClock"));
+ROUTE1635->setToField(CString("set_fraction"));
+ROUTE1635->setToNode(CString("vc4_OI"));
 ProtoBody603->addChild(ROUTE1635);
 
 OrientationInterpolator* OrientationInterpolator1636 = new OrientationInterpolator();
-OrientationInterpolator1636->setDEF("vc5_OI");
+OrientationInterpolator1636->setDEF(CString("vc5_OI"));
 IS* IS1637 = new IS();
 Connect* connect1638 = new Connect();
-connect1638->setNodeField("key");
-connect1638->setProtoField("vc5_key");
-IS1637->addConnect(connect1638);
+connect1638->setNodeField(CString("key"));
+connect1638->setProtoField(CString("vc5_key"));
+IS1637->addChild(connect1638);
 
 Connect* connect1639 = new Connect();
-connect1639->setNodeField("keyValue");
-connect1639->setProtoField("vc5_keyValue");
-IS1637->addConnect(connect1639);
+connect1639->setNodeField(CString("keyValue"));
+connect1639->setProtoField(CString("vc5_keyValue"));
+IS1637->addChild(connect1639);
 
 Connect* connect1640 = new Connect();
-connect1640->setNodeField("value_changed");
-connect1640->setProtoField("vc5_changed");
-IS1637->addConnect(connect1640);
+connect1640->setNodeField(CString("value_changed"));
+connect1640->setProtoField(CString("vc5_changed"));
+IS1637->addChild(connect1640);
 
-OrientationInterpolator1636->setIS(IS1637);
+OrientationInterpolator1636->addChild(IS1637);
 
 ProtoBody603->addChild(OrientationInterpolator1636);
 
 ROUTE* ROUTE1641 = new ROUTE();
-ROUTE1641->setFromField("fraction_changed");
-ROUTE1641->setFromNode("BehaviorClock");
-ROUTE1641->setToField("set_fraction");
-ROUTE1641->setToNode("vc5_OI");
+ROUTE1641->setFromField(CString("fraction_changed"));
+ROUTE1641->setFromNode(CString("BehaviorClock"));
+ROUTE1641->setToField(CString("set_fraction"));
+ROUTE1641->setToNode(CString("vc5_OI"));
 ProtoBody603->addChild(ROUTE1641);
 
 OrientationInterpolator* OrientationInterpolator1642 = new OrientationInterpolator();
-OrientationInterpolator1642->setDEF("vc6_OI");
+OrientationInterpolator1642->setDEF(CString("vc6_OI"));
 IS* IS1643 = new IS();
 Connect* connect1644 = new Connect();
-connect1644->setNodeField("key");
-connect1644->setProtoField("vc6_key");
-IS1643->addConnect(connect1644);
+connect1644->setNodeField(CString("key"));
+connect1644->setProtoField(CString("vc6_key"));
+IS1643->addChild(connect1644);
 
 Connect* connect1645 = new Connect();
-connect1645->setNodeField("keyValue");
-connect1645->setProtoField("vc6_keyValue");
-IS1643->addConnect(connect1645);
+connect1645->setNodeField(CString("keyValue"));
+connect1645->setProtoField(CString("vc6_keyValue"));
+IS1643->addChild(connect1645);
 
 Connect* connect1646 = new Connect();
-connect1646->setNodeField("value_changed");
-connect1646->setProtoField("vc6_changed");
-IS1643->addConnect(connect1646);
+connect1646->setNodeField(CString("value_changed"));
+connect1646->setProtoField(CString("vc6_changed"));
+IS1643->addChild(connect1646);
 
-OrientationInterpolator1642->setIS(IS1643);
+OrientationInterpolator1642->addChild(IS1643);
 
 ProtoBody603->addChild(OrientationInterpolator1642);
 
 ROUTE* ROUTE1647 = new ROUTE();
-ROUTE1647->setFromField("fraction_changed");
-ROUTE1647->setFromNode("BehaviorClock");
-ROUTE1647->setToField("set_fraction");
-ROUTE1647->setToNode("vc6_OI");
+ROUTE1647->setFromField(CString("fraction_changed"));
+ROUTE1647->setFromNode(CString("BehaviorClock"));
+ROUTE1647->setToField(CString("set_fraction"));
+ROUTE1647->setToNode(CString("vc6_OI"));
 ProtoBody603->addChild(ROUTE1647);
 
 OrientationInterpolator* OrientationInterpolator1648 = new OrientationInterpolator();
-OrientationInterpolator1648->setDEF("vc7_OI");
+OrientationInterpolator1648->setDEF(CString("vc7_OI"));
 IS* IS1649 = new IS();
 Connect* connect1650 = new Connect();
-connect1650->setNodeField("key");
-connect1650->setProtoField("vc7_key");
-IS1649->addConnect(connect1650);
+connect1650->setNodeField(CString("key"));
+connect1650->setProtoField(CString("vc7_key"));
+IS1649->addChild(connect1650);
 
 Connect* connect1651 = new Connect();
-connect1651->setNodeField("keyValue");
-connect1651->setProtoField("vc7_keyValue");
-IS1649->addConnect(connect1651);
+connect1651->setNodeField(CString("keyValue"));
+connect1651->setProtoField(CString("vc7_keyValue"));
+IS1649->addChild(connect1651);
 
 Connect* connect1652 = new Connect();
-connect1652->setNodeField("value_changed");
-connect1652->setProtoField("vc7_changed");
-IS1649->addConnect(connect1652);
+connect1652->setNodeField(CString("value_changed"));
+connect1652->setProtoField(CString("vc7_changed"));
+IS1649->addChild(connect1652);
 
-OrientationInterpolator1648->setIS(IS1649);
+OrientationInterpolator1648->addChild(IS1649);
 
 ProtoBody603->addChild(OrientationInterpolator1648);
 
 ROUTE* ROUTE1653 = new ROUTE();
-ROUTE1653->setFromField("fraction_changed");
-ROUTE1653->setFromNode("BehaviorClock");
-ROUTE1653->setToField("set_fraction");
-ROUTE1653->setToNode("vc7_OI");
+ROUTE1653->setFromField(CString("fraction_changed"));
+ROUTE1653->setFromNode(CString("BehaviorClock"));
+ROUTE1653->setToField(CString("set_fraction"));
+ROUTE1653->setToNode(CString("vc7_OI"));
 ProtoBody603->addChild(ROUTE1653);
 
 OrientationInterpolator* OrientationInterpolator1654 = new OrientationInterpolator();
-OrientationInterpolator1654->setDEF("vl1_OI");
+OrientationInterpolator1654->setDEF(CString("vl1_OI"));
 IS* IS1655 = new IS();
 Connect* connect1656 = new Connect();
-connect1656->setNodeField("key");
-connect1656->setProtoField("vl1_key");
-IS1655->addConnect(connect1656);
+connect1656->setNodeField(CString("key"));
+connect1656->setProtoField(CString("vl1_key"));
+IS1655->addChild(connect1656);
 
 Connect* connect1657 = new Connect();
-connect1657->setNodeField("keyValue");
-connect1657->setProtoField("vl1_keyValue");
-IS1655->addConnect(connect1657);
+connect1657->setNodeField(CString("keyValue"));
+connect1657->setProtoField(CString("vl1_keyValue"));
+IS1655->addChild(connect1657);
 
 Connect* connect1658 = new Connect();
-connect1658->setNodeField("value_changed");
-connect1658->setProtoField("vl1_changed");
-IS1655->addConnect(connect1658);
+connect1658->setNodeField(CString("value_changed"));
+connect1658->setProtoField(CString("vl1_changed"));
+IS1655->addChild(connect1658);
 
-OrientationInterpolator1654->setIS(IS1655);
+OrientationInterpolator1654->addChild(IS1655);
 
 ProtoBody603->addChild(OrientationInterpolator1654);
 
 ROUTE* ROUTE1659 = new ROUTE();
-ROUTE1659->setFromField("fraction_changed");
-ROUTE1659->setFromNode("BehaviorClock");
-ROUTE1659->setToField("set_fraction");
-ROUTE1659->setToNode("vl1_OI");
+ROUTE1659->setFromField(CString("fraction_changed"));
+ROUTE1659->setFromNode(CString("BehaviorClock"));
+ROUTE1659->setToField(CString("set_fraction"));
+ROUTE1659->setToNode(CString("vl1_OI"));
 ProtoBody603->addChild(ROUTE1659);
 
 OrientationInterpolator* OrientationInterpolator1660 = new OrientationInterpolator();
-OrientationInterpolator1660->setDEF("vl2_OI");
+OrientationInterpolator1660->setDEF(CString("vl2_OI"));
 IS* IS1661 = new IS();
 Connect* connect1662 = new Connect();
-connect1662->setNodeField("key");
-connect1662->setProtoField("vl2_key");
-IS1661->addConnect(connect1662);
+connect1662->setNodeField(CString("key"));
+connect1662->setProtoField(CString("vl2_key"));
+IS1661->addChild(connect1662);
 
 Connect* connect1663 = new Connect();
-connect1663->setNodeField("keyValue");
-connect1663->setProtoField("vl2_keyValue");
-IS1661->addConnect(connect1663);
+connect1663->setNodeField(CString("keyValue"));
+connect1663->setProtoField(CString("vl2_keyValue"));
+IS1661->addChild(connect1663);
 
 Connect* connect1664 = new Connect();
-connect1664->setNodeField("value_changed");
-connect1664->setProtoField("vl2_changed");
-IS1661->addConnect(connect1664);
+connect1664->setNodeField(CString("value_changed"));
+connect1664->setProtoField(CString("vl2_changed"));
+IS1661->addChild(connect1664);
 
-OrientationInterpolator1660->setIS(IS1661);
+OrientationInterpolator1660->addChild(IS1661);
 
 ProtoBody603->addChild(OrientationInterpolator1660);
 
 ROUTE* ROUTE1665 = new ROUTE();
-ROUTE1665->setFromField("fraction_changed");
-ROUTE1665->setFromNode("BehaviorClock");
-ROUTE1665->setToField("set_fraction");
-ROUTE1665->setToNode("vl2_OI");
+ROUTE1665->setFromField(CString("fraction_changed"));
+ROUTE1665->setFromNode(CString("BehaviorClock"));
+ROUTE1665->setToField(CString("set_fraction"));
+ROUTE1665->setToNode(CString("vl2_OI"));
 ProtoBody603->addChild(ROUTE1665);
 
 OrientationInterpolator* OrientationInterpolator1666 = new OrientationInterpolator();
-OrientationInterpolator1666->setDEF("vl3_OI");
+OrientationInterpolator1666->setDEF(CString("vl3_OI"));
 IS* IS1667 = new IS();
 Connect* connect1668 = new Connect();
-connect1668->setNodeField("key");
-connect1668->setProtoField("vl3_key");
-IS1667->addConnect(connect1668);
+connect1668->setNodeField(CString("key"));
+connect1668->setProtoField(CString("vl3_key"));
+IS1667->addChild(connect1668);
 
 Connect* connect1669 = new Connect();
-connect1669->setNodeField("keyValue");
-connect1669->setProtoField("vl3_keyValue");
-IS1667->addConnect(connect1669);
+connect1669->setNodeField(CString("keyValue"));
+connect1669->setProtoField(CString("vl3_keyValue"));
+IS1667->addChild(connect1669);
 
 Connect* connect1670 = new Connect();
-connect1670->setNodeField("value_changed");
-connect1670->setProtoField("vl3_changed");
-IS1667->addConnect(connect1670);
+connect1670->setNodeField(CString("value_changed"));
+connect1670->setProtoField(CString("vl3_changed"));
+IS1667->addChild(connect1670);
 
-OrientationInterpolator1666->setIS(IS1667);
+OrientationInterpolator1666->addChild(IS1667);
 
 ProtoBody603->addChild(OrientationInterpolator1666);
 
 ROUTE* ROUTE1671 = new ROUTE();
-ROUTE1671->setFromField("fraction_changed");
-ROUTE1671->setFromNode("BehaviorClock");
-ROUTE1671->setToField("set_fraction");
-ROUTE1671->setToNode("vl3_OI");
+ROUTE1671->setFromField(CString("fraction_changed"));
+ROUTE1671->setFromNode(CString("BehaviorClock"));
+ROUTE1671->setToField(CString("set_fraction"));
+ROUTE1671->setToNode(CString("vl3_OI"));
 ProtoBody603->addChild(ROUTE1671);
 
 OrientationInterpolator* OrientationInterpolator1672 = new OrientationInterpolator();
-OrientationInterpolator1672->setDEF("vl4_OI");
+OrientationInterpolator1672->setDEF(CString("vl4_OI"));
 IS* IS1673 = new IS();
 Connect* connect1674 = new Connect();
-connect1674->setNodeField("key");
-connect1674->setProtoField("vl4_key");
-IS1673->addConnect(connect1674);
+connect1674->setNodeField(CString("key"));
+connect1674->setProtoField(CString("vl4_key"));
+IS1673->addChild(connect1674);
 
 Connect* connect1675 = new Connect();
-connect1675->setNodeField("keyValue");
-connect1675->setProtoField("vl4_keyValue");
-IS1673->addConnect(connect1675);
+connect1675->setNodeField(CString("keyValue"));
+connect1675->setProtoField(CString("vl4_keyValue"));
+IS1673->addChild(connect1675);
 
 Connect* connect1676 = new Connect();
-connect1676->setNodeField("value_changed");
-connect1676->setProtoField("vl4_changed");
-IS1673->addConnect(connect1676);
+connect1676->setNodeField(CString("value_changed"));
+connect1676->setProtoField(CString("vl4_changed"));
+IS1673->addChild(connect1676);
 
-OrientationInterpolator1672->setIS(IS1673);
+OrientationInterpolator1672->addChild(IS1673);
 
 ProtoBody603->addChild(OrientationInterpolator1672);
 
 ROUTE* ROUTE1677 = new ROUTE();
-ROUTE1677->setFromField("fraction_changed");
-ROUTE1677->setFromNode("BehaviorClock");
-ROUTE1677->setToField("set_fraction");
-ROUTE1677->setToNode("vl4_OI");
+ROUTE1677->setFromField(CString("fraction_changed"));
+ROUTE1677->setFromNode(CString("BehaviorClock"));
+ROUTE1677->setToField(CString("set_fraction"));
+ROUTE1677->setToNode(CString("vl4_OI"));
 ProtoBody603->addChild(ROUTE1677);
 
 OrientationInterpolator* OrientationInterpolator1678 = new OrientationInterpolator();
-OrientationInterpolator1678->setDEF("vl5_OI");
+OrientationInterpolator1678->setDEF(CString("vl5_OI"));
 IS* IS1679 = new IS();
 Connect* connect1680 = new Connect();
-connect1680->setNodeField("key");
-connect1680->setProtoField("vl5_key");
-IS1679->addConnect(connect1680);
+connect1680->setNodeField(CString("key"));
+connect1680->setProtoField(CString("vl5_key"));
+IS1679->addChild(connect1680);
 
 Connect* connect1681 = new Connect();
-connect1681->setNodeField("keyValue");
-connect1681->setProtoField("vl5_keyValue");
-IS1679->addConnect(connect1681);
+connect1681->setNodeField(CString("keyValue"));
+connect1681->setProtoField(CString("vl5_keyValue"));
+IS1679->addChild(connect1681);
 
 Connect* connect1682 = new Connect();
-connect1682->setNodeField("value_changed");
-connect1682->setProtoField("vl5_changed");
-IS1679->addConnect(connect1682);
+connect1682->setNodeField(CString("value_changed"));
+connect1682->setProtoField(CString("vl5_changed"));
+IS1679->addChild(connect1682);
 
-OrientationInterpolator1678->setIS(IS1679);
+OrientationInterpolator1678->addChild(IS1679);
 
 ProtoBody603->addChild(OrientationInterpolator1678);
 
 ROUTE* ROUTE1683 = new ROUTE();
-ROUTE1683->setFromField("fraction_changed");
-ROUTE1683->setFromNode("BehaviorClock");
-ROUTE1683->setToField("set_fraction");
-ROUTE1683->setToNode("vl5_OI");
+ROUTE1683->setFromField(CString("fraction_changed"));
+ROUTE1683->setFromNode(CString("BehaviorClock"));
+ROUTE1683->setToField(CString("set_fraction"));
+ROUTE1683->setToNode(CString("vl5_OI"));
 ProtoBody603->addChild(ROUTE1683);
 
 OrientationInterpolator* OrientationInterpolator1684 = new OrientationInterpolator();
-OrientationInterpolator1684->setDEF("vt1_OI");
+OrientationInterpolator1684->setDEF(CString("vt1_OI"));
 IS* IS1685 = new IS();
 Connect* connect1686 = new Connect();
-connect1686->setNodeField("key");
-connect1686->setProtoField("vt1_key");
-IS1685->addConnect(connect1686);
+connect1686->setNodeField(CString("key"));
+connect1686->setProtoField(CString("vt1_key"));
+IS1685->addChild(connect1686);
 
 Connect* connect1687 = new Connect();
-connect1687->setNodeField("keyValue");
-connect1687->setProtoField("vt1_keyValue");
-IS1685->addConnect(connect1687);
+connect1687->setNodeField(CString("keyValue"));
+connect1687->setProtoField(CString("vt1_keyValue"));
+IS1685->addChild(connect1687);
 
 Connect* connect1688 = new Connect();
-connect1688->setNodeField("value_changed");
-connect1688->setProtoField("vt1_changed");
-IS1685->addConnect(connect1688);
+connect1688->setNodeField(CString("value_changed"));
+connect1688->setProtoField(CString("vt1_changed"));
+IS1685->addChild(connect1688);
 
-OrientationInterpolator1684->setIS(IS1685);
+OrientationInterpolator1684->addChild(IS1685);
 
 ProtoBody603->addChild(OrientationInterpolator1684);
 
 ROUTE* ROUTE1689 = new ROUTE();
-ROUTE1689->setFromField("fraction_changed");
-ROUTE1689->setFromNode("BehaviorClock");
-ROUTE1689->setToField("set_fraction");
-ROUTE1689->setToNode("vt1_OI");
+ROUTE1689->setFromField(CString("fraction_changed"));
+ROUTE1689->setFromNode(CString("BehaviorClock"));
+ROUTE1689->setToField(CString("set_fraction"));
+ROUTE1689->setToNode(CString("vt1_OI"));
 ProtoBody603->addChild(ROUTE1689);
 
 OrientationInterpolator* OrientationInterpolator1690 = new OrientationInterpolator();
-OrientationInterpolator1690->setDEF("vt2_OI");
+OrientationInterpolator1690->setDEF(CString("vt2_OI"));
 IS* IS1691 = new IS();
 Connect* connect1692 = new Connect();
-connect1692->setNodeField("key");
-connect1692->setProtoField("vt2_key");
-IS1691->addConnect(connect1692);
+connect1692->setNodeField(CString("key"));
+connect1692->setProtoField(CString("vt2_key"));
+IS1691->addChild(connect1692);
 
 Connect* connect1693 = new Connect();
-connect1693->setNodeField("keyValue");
-connect1693->setProtoField("vt2_keyValue");
-IS1691->addConnect(connect1693);
+connect1693->setNodeField(CString("keyValue"));
+connect1693->setProtoField(CString("vt2_keyValue"));
+IS1691->addChild(connect1693);
 
 Connect* connect1694 = new Connect();
-connect1694->setNodeField("value_changed");
-connect1694->setProtoField("vt2_changed");
-IS1691->addConnect(connect1694);
+connect1694->setNodeField(CString("value_changed"));
+connect1694->setProtoField(CString("vt2_changed"));
+IS1691->addChild(connect1694);
 
-OrientationInterpolator1690->setIS(IS1691);
+OrientationInterpolator1690->addChild(IS1691);
 
 ProtoBody603->addChild(OrientationInterpolator1690);
 
 ROUTE* ROUTE1695 = new ROUTE();
-ROUTE1695->setFromField("fraction_changed");
-ROUTE1695->setFromNode("BehaviorClock");
-ROUTE1695->setToField("set_fraction");
-ROUTE1695->setToNode("vt2_OI");
+ROUTE1695->setFromField(CString("fraction_changed"));
+ROUTE1695->setFromNode(CString("BehaviorClock"));
+ROUTE1695->setToField(CString("set_fraction"));
+ROUTE1695->setToNode(CString("vt2_OI"));
 ProtoBody603->addChild(ROUTE1695);
 
 OrientationInterpolator* OrientationInterpolator1696 = new OrientationInterpolator();
-OrientationInterpolator1696->setDEF("vt3_OI");
+OrientationInterpolator1696->setDEF(CString("vt3_OI"));
 IS* IS1697 = new IS();
 Connect* connect1698 = new Connect();
-connect1698->setNodeField("key");
-connect1698->setProtoField("vt3_key");
-IS1697->addConnect(connect1698);
+connect1698->setNodeField(CString("key"));
+connect1698->setProtoField(CString("vt3_key"));
+IS1697->addChild(connect1698);
 
 Connect* connect1699 = new Connect();
-connect1699->setNodeField("keyValue");
-connect1699->setProtoField("vt3_keyValue");
-IS1697->addConnect(connect1699);
+connect1699->setNodeField(CString("keyValue"));
+connect1699->setProtoField(CString("vt3_keyValue"));
+IS1697->addChild(connect1699);
 
 Connect* connect1700 = new Connect();
-connect1700->setNodeField("value_changed");
-connect1700->setProtoField("vt3_changed");
-IS1697->addConnect(connect1700);
+connect1700->setNodeField(CString("value_changed"));
+connect1700->setProtoField(CString("vt3_changed"));
+IS1697->addChild(connect1700);
 
-OrientationInterpolator1696->setIS(IS1697);
+OrientationInterpolator1696->addChild(IS1697);
 
 ProtoBody603->addChild(OrientationInterpolator1696);
 
 ROUTE* ROUTE1701 = new ROUTE();
-ROUTE1701->setFromField("fraction_changed");
-ROUTE1701->setFromNode("BehaviorClock");
-ROUTE1701->setToField("set_fraction");
-ROUTE1701->setToNode("vt3_OI");
+ROUTE1701->setFromField(CString("fraction_changed"));
+ROUTE1701->setFromNode(CString("BehaviorClock"));
+ROUTE1701->setToField(CString("set_fraction"));
+ROUTE1701->setToNode(CString("vt3_OI"));
 ProtoBody603->addChild(ROUTE1701);
 
 OrientationInterpolator* OrientationInterpolator1702 = new OrientationInterpolator();
-OrientationInterpolator1702->setDEF("vt4_OI");
+OrientationInterpolator1702->setDEF(CString("vt4_OI"));
 IS* IS1703 = new IS();
 Connect* connect1704 = new Connect();
-connect1704->setNodeField("key");
-connect1704->setProtoField("vt4_key");
-IS1703->addConnect(connect1704);
+connect1704->setNodeField(CString("key"));
+connect1704->setProtoField(CString("vt4_key"));
+IS1703->addChild(connect1704);
 
 Connect* connect1705 = new Connect();
-connect1705->setNodeField("keyValue");
-connect1705->setProtoField("vt4_keyValue");
-IS1703->addConnect(connect1705);
+connect1705->setNodeField(CString("keyValue"));
+connect1705->setProtoField(CString("vt4_keyValue"));
+IS1703->addChild(connect1705);
 
 Connect* connect1706 = new Connect();
-connect1706->setNodeField("value_changed");
-connect1706->setProtoField("vt4_changed");
-IS1703->addConnect(connect1706);
+connect1706->setNodeField(CString("value_changed"));
+connect1706->setProtoField(CString("vt4_changed"));
+IS1703->addChild(connect1706);
 
-OrientationInterpolator1702->setIS(IS1703);
+OrientationInterpolator1702->addChild(IS1703);
 
 ProtoBody603->addChild(OrientationInterpolator1702);
 
 ROUTE* ROUTE1707 = new ROUTE();
-ROUTE1707->setFromField("fraction_changed");
-ROUTE1707->setFromNode("BehaviorClock");
-ROUTE1707->setToField("set_fraction");
-ROUTE1707->setToNode("vt4_OI");
+ROUTE1707->setFromField(CString("fraction_changed"));
+ROUTE1707->setFromNode(CString("BehaviorClock"));
+ROUTE1707->setToField(CString("set_fraction"));
+ROUTE1707->setToNode(CString("vt4_OI"));
 ProtoBody603->addChild(ROUTE1707);
 
 OrientationInterpolator* OrientationInterpolator1708 = new OrientationInterpolator();
-OrientationInterpolator1708->setDEF("vt5_OI");
+OrientationInterpolator1708->setDEF(CString("vt5_OI"));
 IS* IS1709 = new IS();
 Connect* connect1710 = new Connect();
-connect1710->setNodeField("key");
-connect1710->setProtoField("vt5_key");
-IS1709->addConnect(connect1710);
+connect1710->setNodeField(CString("key"));
+connect1710->setProtoField(CString("vt5_key"));
+IS1709->addChild(connect1710);
 
 Connect* connect1711 = new Connect();
-connect1711->setNodeField("keyValue");
-connect1711->setProtoField("vt5_keyValue");
-IS1709->addConnect(connect1711);
+connect1711->setNodeField(CString("keyValue"));
+connect1711->setProtoField(CString("vt5_keyValue"));
+IS1709->addChild(connect1711);
 
 Connect* connect1712 = new Connect();
-connect1712->setNodeField("value_changed");
-connect1712->setProtoField("vt5_changed");
-IS1709->addConnect(connect1712);
+connect1712->setNodeField(CString("value_changed"));
+connect1712->setProtoField(CString("vt5_changed"));
+IS1709->addChild(connect1712);
 
-OrientationInterpolator1708->setIS(IS1709);
+OrientationInterpolator1708->addChild(IS1709);
 
 ProtoBody603->addChild(OrientationInterpolator1708);
 
 ROUTE* ROUTE1713 = new ROUTE();
-ROUTE1713->setFromField("fraction_changed");
-ROUTE1713->setFromNode("BehaviorClock");
-ROUTE1713->setToField("set_fraction");
-ROUTE1713->setToNode("vt5_OI");
+ROUTE1713->setFromField(CString("fraction_changed"));
+ROUTE1713->setFromNode(CString("BehaviorClock"));
+ROUTE1713->setToField(CString("set_fraction"));
+ROUTE1713->setToNode(CString("vt5_OI"));
 ProtoBody603->addChild(ROUTE1713);
 
 OrientationInterpolator* OrientationInterpolator1714 = new OrientationInterpolator();
-OrientationInterpolator1714->setDEF("vt6_OI");
+OrientationInterpolator1714->setDEF(CString("vt6_OI"));
 IS* IS1715 = new IS();
 Connect* connect1716 = new Connect();
-connect1716->setNodeField("key");
-connect1716->setProtoField("vt6_key");
-IS1715->addConnect(connect1716);
+connect1716->setNodeField(CString("key"));
+connect1716->setProtoField(CString("vt6_key"));
+IS1715->addChild(connect1716);
 
 Connect* connect1717 = new Connect();
-connect1717->setNodeField("keyValue");
-connect1717->setProtoField("vt6_keyValue");
-IS1715->addConnect(connect1717);
+connect1717->setNodeField(CString("keyValue"));
+connect1717->setProtoField(CString("vt6_keyValue"));
+IS1715->addChild(connect1717);
 
 Connect* connect1718 = new Connect();
-connect1718->setNodeField("value_changed");
-connect1718->setProtoField("vt6_changed");
-IS1715->addConnect(connect1718);
+connect1718->setNodeField(CString("value_changed"));
+connect1718->setProtoField(CString("vt6_changed"));
+IS1715->addChild(connect1718);
 
-OrientationInterpolator1714->setIS(IS1715);
+OrientationInterpolator1714->addChild(IS1715);
 
 ProtoBody603->addChild(OrientationInterpolator1714);
 
 ROUTE* ROUTE1719 = new ROUTE();
-ROUTE1719->setFromField("fraction_changed");
-ROUTE1719->setFromNode("BehaviorClock");
-ROUTE1719->setToField("set_fraction");
-ROUTE1719->setToNode("vt6_OI");
+ROUTE1719->setFromField(CString("fraction_changed"));
+ROUTE1719->setFromNode(CString("BehaviorClock"));
+ROUTE1719->setToField(CString("set_fraction"));
+ROUTE1719->setToNode(CString("vt6_OI"));
 ProtoBody603->addChild(ROUTE1719);
 
 OrientationInterpolator* OrientationInterpolator1720 = new OrientationInterpolator();
-OrientationInterpolator1720->setDEF("vt7_OI");
+OrientationInterpolator1720->setDEF(CString("vt7_OI"));
 IS* IS1721 = new IS();
 Connect* connect1722 = new Connect();
-connect1722->setNodeField("key");
-connect1722->setProtoField("vt7_key");
-IS1721->addConnect(connect1722);
+connect1722->setNodeField(CString("key"));
+connect1722->setProtoField(CString("vt7_key"));
+IS1721->addChild(connect1722);
 
 Connect* connect1723 = new Connect();
-connect1723->setNodeField("keyValue");
-connect1723->setProtoField("vt7_keyValue");
-IS1721->addConnect(connect1723);
+connect1723->setNodeField(CString("keyValue"));
+connect1723->setProtoField(CString("vt7_keyValue"));
+IS1721->addChild(connect1723);
 
 Connect* connect1724 = new Connect();
-connect1724->setNodeField("value_changed");
-connect1724->setProtoField("vt7_changed");
-IS1721->addConnect(connect1724);
+connect1724->setNodeField(CString("value_changed"));
+connect1724->setProtoField(CString("vt7_changed"));
+IS1721->addChild(connect1724);
 
-OrientationInterpolator1720->setIS(IS1721);
+OrientationInterpolator1720->addChild(IS1721);
 
 ProtoBody603->addChild(OrientationInterpolator1720);
 
 ROUTE* ROUTE1725 = new ROUTE();
-ROUTE1725->setFromField("fraction_changed");
-ROUTE1725->setFromNode("BehaviorClock");
-ROUTE1725->setToField("set_fraction");
-ROUTE1725->setToNode("vt7_OI");
+ROUTE1725->setFromField(CString("fraction_changed"));
+ROUTE1725->setFromNode(CString("BehaviorClock"));
+ROUTE1725->setToField(CString("set_fraction"));
+ROUTE1725->setToNode(CString("vt7_OI"));
 ProtoBody603->addChild(ROUTE1725);
 
 OrientationInterpolator* OrientationInterpolator1726 = new OrientationInterpolator();
-OrientationInterpolator1726->setDEF("vt8_OI");
+OrientationInterpolator1726->setDEF(CString("vt8_OI"));
 IS* IS1727 = new IS();
 Connect* connect1728 = new Connect();
-connect1728->setNodeField("key");
-connect1728->setProtoField("vt8_key");
-IS1727->addConnect(connect1728);
+connect1728->setNodeField(CString("key"));
+connect1728->setProtoField(CString("vt8_key"));
+IS1727->addChild(connect1728);
 
 Connect* connect1729 = new Connect();
-connect1729->setNodeField("keyValue");
-connect1729->setProtoField("vt8_keyValue");
-IS1727->addConnect(connect1729);
+connect1729->setNodeField(CString("keyValue"));
+connect1729->setProtoField(CString("vt8_keyValue"));
+IS1727->addChild(connect1729);
 
 Connect* connect1730 = new Connect();
-connect1730->setNodeField("value_changed");
-connect1730->setProtoField("vt8_changed");
-IS1727->addConnect(connect1730);
+connect1730->setNodeField(CString("value_changed"));
+connect1730->setProtoField(CString("vt8_changed"));
+IS1727->addChild(connect1730);
 
-OrientationInterpolator1726->setIS(IS1727);
+OrientationInterpolator1726->addChild(IS1727);
 
 ProtoBody603->addChild(OrientationInterpolator1726);
 
 ROUTE* ROUTE1731 = new ROUTE();
-ROUTE1731->setFromField("fraction_changed");
-ROUTE1731->setFromNode("BehaviorClock");
-ROUTE1731->setToField("set_fraction");
-ROUTE1731->setToNode("vt8_OI");
+ROUTE1731->setFromField(CString("fraction_changed"));
+ROUTE1731->setFromNode(CString("BehaviorClock"));
+ROUTE1731->setToField(CString("set_fraction"));
+ROUTE1731->setToNode(CString("vt8_OI"));
 ProtoBody603->addChild(ROUTE1731);
 
 OrientationInterpolator* OrientationInterpolator1732 = new OrientationInterpolator();
-OrientationInterpolator1732->setDEF("vt9_OI");
+OrientationInterpolator1732->setDEF(CString("vt9_OI"));
 IS* IS1733 = new IS();
 Connect* connect1734 = new Connect();
-connect1734->setNodeField("key");
-connect1734->setProtoField("vt9_key");
-IS1733->addConnect(connect1734);
+connect1734->setNodeField(CString("key"));
+connect1734->setProtoField(CString("vt9_key"));
+IS1733->addChild(connect1734);
 
 Connect* connect1735 = new Connect();
-connect1735->setNodeField("keyValue");
-connect1735->setProtoField("vt9_keyValue");
-IS1733->addConnect(connect1735);
+connect1735->setNodeField(CString("keyValue"));
+connect1735->setProtoField(CString("vt9_keyValue"));
+IS1733->addChild(connect1735);
 
 Connect* connect1736 = new Connect();
-connect1736->setNodeField("value_changed");
-connect1736->setProtoField("vt9_changed");
-IS1733->addConnect(connect1736);
+connect1736->setNodeField(CString("value_changed"));
+connect1736->setProtoField(CString("vt9_changed"));
+IS1733->addChild(connect1736);
 
-OrientationInterpolator1732->setIS(IS1733);
+OrientationInterpolator1732->addChild(IS1733);
 
 ProtoBody603->addChild(OrientationInterpolator1732);
 
 ROUTE* ROUTE1737 = new ROUTE();
-ROUTE1737->setFromField("fraction_changed");
-ROUTE1737->setFromNode("BehaviorClock");
-ROUTE1737->setToField("set_fraction");
-ROUTE1737->setToNode("vt9_OI");
+ROUTE1737->setFromField(CString("fraction_changed"));
+ROUTE1737->setFromNode(CString("BehaviorClock"));
+ROUTE1737->setToField(CString("set_fraction"));
+ROUTE1737->setToNode(CString("vt9_OI"));
 ProtoBody603->addChild(ROUTE1737);
 
 OrientationInterpolator* OrientationInterpolator1738 = new OrientationInterpolator();
-OrientationInterpolator1738->setDEF("vt10_OI");
+OrientationInterpolator1738->setDEF(CString("vt10_OI"));
 IS* IS1739 = new IS();
 Connect* connect1740 = new Connect();
-connect1740->setNodeField("key");
-connect1740->setProtoField("vt10_key");
-IS1739->addConnect(connect1740);
+connect1740->setNodeField(CString("key"));
+connect1740->setProtoField(CString("vt10_key"));
+IS1739->addChild(connect1740);
 
 Connect* connect1741 = new Connect();
-connect1741->setNodeField("keyValue");
-connect1741->setProtoField("vt10_keyValue");
-IS1739->addConnect(connect1741);
+connect1741->setNodeField(CString("keyValue"));
+connect1741->setProtoField(CString("vt10_keyValue"));
+IS1739->addChild(connect1741);
 
 Connect* connect1742 = new Connect();
-connect1742->setNodeField("value_changed");
-connect1742->setProtoField("vt10_changed");
-IS1739->addConnect(connect1742);
+connect1742->setNodeField(CString("value_changed"));
+connect1742->setProtoField(CString("vt10_changed"));
+IS1739->addChild(connect1742);
 
-OrientationInterpolator1738->setIS(IS1739);
+OrientationInterpolator1738->addChild(IS1739);
 
 ProtoBody603->addChild(OrientationInterpolator1738);
 
 ROUTE* ROUTE1743 = new ROUTE();
-ROUTE1743->setFromField("fraction_changed");
-ROUTE1743->setFromNode("BehaviorClock");
-ROUTE1743->setToField("set_fraction");
-ROUTE1743->setToNode("vt10_OI");
+ROUTE1743->setFromField(CString("fraction_changed"));
+ROUTE1743->setFromNode(CString("BehaviorClock"));
+ROUTE1743->setToField(CString("set_fraction"));
+ROUTE1743->setToNode(CString("vt10_OI"));
 ProtoBody603->addChild(ROUTE1743);
 
 OrientationInterpolator* OrientationInterpolator1744 = new OrientationInterpolator();
-OrientationInterpolator1744->setDEF("vt11_OI");
+OrientationInterpolator1744->setDEF(CString("vt11_OI"));
 IS* IS1745 = new IS();
 Connect* connect1746 = new Connect();
-connect1746->setNodeField("key");
-connect1746->setProtoField("vt11_key");
-IS1745->addConnect(connect1746);
+connect1746->setNodeField(CString("key"));
+connect1746->setProtoField(CString("vt11_key"));
+IS1745->addChild(connect1746);
 
 Connect* connect1747 = new Connect();
-connect1747->setNodeField("keyValue");
-connect1747->setProtoField("vt11_keyValue");
-IS1745->addConnect(connect1747);
+connect1747->setNodeField(CString("keyValue"));
+connect1747->setProtoField(CString("vt11_keyValue"));
+IS1745->addChild(connect1747);
 
 Connect* connect1748 = new Connect();
-connect1748->setNodeField("value_changed");
-connect1748->setProtoField("vt11_changed");
-IS1745->addConnect(connect1748);
+connect1748->setNodeField(CString("value_changed"));
+connect1748->setProtoField(CString("vt11_changed"));
+IS1745->addChild(connect1748);
 
-OrientationInterpolator1744->setIS(IS1745);
+OrientationInterpolator1744->addChild(IS1745);
 
 ProtoBody603->addChild(OrientationInterpolator1744);
 
 ROUTE* ROUTE1749 = new ROUTE();
-ROUTE1749->setFromField("fraction_changed");
-ROUTE1749->setFromNode("BehaviorClock");
-ROUTE1749->setToField("set_fraction");
-ROUTE1749->setToNode("vt11_OI");
+ROUTE1749->setFromField(CString("fraction_changed"));
+ROUTE1749->setFromNode(CString("BehaviorClock"));
+ROUTE1749->setToField(CString("set_fraction"));
+ROUTE1749->setToNode(CString("vt11_OI"));
 ProtoBody603->addChild(ROUTE1749);
 
 OrientationInterpolator* OrientationInterpolator1750 = new OrientationInterpolator();
-OrientationInterpolator1750->setDEF("vt12_OI");
+OrientationInterpolator1750->setDEF(CString("vt12_OI"));
 IS* IS1751 = new IS();
 Connect* connect1752 = new Connect();
-connect1752->setNodeField("key");
-connect1752->setProtoField("vt12_key");
-IS1751->addConnect(connect1752);
+connect1752->setNodeField(CString("key"));
+connect1752->setProtoField(CString("vt12_key"));
+IS1751->addChild(connect1752);
 
 Connect* connect1753 = new Connect();
-connect1753->setNodeField("keyValue");
-connect1753->setProtoField("vt12_keyValue");
-IS1751->addConnect(connect1753);
+connect1753->setNodeField(CString("keyValue"));
+connect1753->setProtoField(CString("vt12_keyValue"));
+IS1751->addChild(connect1753);
 
 Connect* connect1754 = new Connect();
-connect1754->setNodeField("value_changed");
-connect1754->setProtoField("vt12_changed");
-IS1751->addConnect(connect1754);
+connect1754->setNodeField(CString("value_changed"));
+connect1754->setProtoField(CString("vt12_changed"));
+IS1751->addChild(connect1754);
 
-OrientationInterpolator1750->setIS(IS1751);
+OrientationInterpolator1750->addChild(IS1751);
 
 ProtoBody603->addChild(OrientationInterpolator1750);
 
 ROUTE* ROUTE1755 = new ROUTE();
-ROUTE1755->setFromField("fraction_changed");
-ROUTE1755->setFromNode("BehaviorClock");
-ROUTE1755->setToField("set_fraction");
-ROUTE1755->setToNode("vt12_OI");
+ROUTE1755->setFromField(CString("fraction_changed"));
+ROUTE1755->setFromNode(CString("BehaviorClock"));
+ROUTE1755->setToField(CString("set_fraction"));
+ROUTE1755->setToNode(CString("vt12_OI"));
 ProtoBody603->addChild(ROUTE1755);
 
-ProtoDeclare20->setProtoBody(ProtoBody603);
+ProtoDeclare20->addChild(ProtoBody603);
 
 Scene18->addChild(ProtoDeclare20);
 
 ProtoDeclare* ProtoDeclare1756 = new ProtoDeclare();
-ProtoDeclare1756->setName("HAnimBodyBehaviorChooser");
-ProtoDeclare1756->setAppinfo("The HAnimBodyBehaviorChooser node allows an author to select one of several HAnimHumanoid bodies and simultaneously apply multiple HAnimBehavior animations to the active body. Individual behaviors may be enabled or disabled at any time.");
+ProtoDeclare1756->setName(CString("HAnimBodyBehaviorChooser"));
+ProtoDeclare1756->setAppinfo(CString("The HAnimBodyBehaviorChooser node allows an author to select one of several HAnimHumanoid bodies and simultaneously apply multiple HAnimBehavior animations to the active body. Individual behaviors may be enabled or disabled at any time."));
 ProtoInterface* ProtoInterface1757 = new ProtoInterface();
 //TODO: supported Level of Articulation (LOA) might be adapted to more efficiently setup/teardown pertinent ROUTEs
 //accessType=\"inputOutput\" avoided to maintain backwards compatilibility with VRML97 scripting constraints
@@ -9587,347 +9588,346 @@ ProtoInterface* ProtoInterface1757 = new ProtoInterface();
 //TODO: consider addBody, removeBody, addBehavior, removeBehavior
 //TODO: consider startBehaviorByIndex, stopBehaviorByIndex, startBehaviorByName, stopBehaviorByName
 field* field1758 = new field();
-field1758->setName("supportedLOA");
-field1758->setAccessType("inputOutput");
-field1758->setAppinfo("Level of Articulation (LOA) support needed by authored HAnimBehavior set of OrientationInterpolator values. Legal values 0 1 2 3.");
-field1758->setType("SFInt32");
-field1758->setValue("-1");
-ProtoInterface1757->addField(field1758);
+field1758->setName(CString("supportedLOA"));
+field1758->setAccessType(CString("inputOutput"));
+field1758->setAppinfo(CString("Level of Articulation (LOA) support needed by authored HAnimBehavior set of OrientationInterpolator values. Legal values 0 1 2 3."));
+field1758->setType(CString("SFInt32"));
+field1758->setValue(CString("-1"));
+ProtoInterface1757->addChild(field1758);
 
 field* field1759 = new field();
-field1759->setName("HumanoidArray");
-field1759->setAccessType("initializeOnly");
-field1759->setAppinfo("[HAnimHumanoid] nodes only");
-field1759->setType("MFNode");
+field1759->setName(CString("HumanoidArray"));
+field1759->setAccessType(CString("initializeOnly"));
+field1759->setAppinfo(CString("[HAnimHumanoid] nodes only"));
+field1759->setType(CString("MFNode"));
 //default NULL
-ProtoInterface1757->addField(field1759);
+ProtoInterface1757->addChild(field1759);
 
 field* field1760 = new field();
-field1760->setName("whichBody");
-field1760->setAccessType("initializeOnly");
-field1760->setAppinfo("whichBody is selected default is initial member of HumanoidArray");
-field1760->setType("SFInt32");
-field1760->setValue("-1");
-ProtoInterface1757->addField(field1760);
+field1760->setName(CString("whichBody"));
+field1760->setAccessType(CString("initializeOnly"));
+field1760->setAppinfo(CString("whichBody is selected default is initial member of HumanoidArray"));
+field1760->setType(CString("SFInt32"));
+field1760->setValue(CString("-1"));
+ProtoInterface1757->addChild(field1760);
 
 field* field1761 = new field();
-field1761->setName("set_whichBody");
-field1761->setAccessType("inputOnly");
-field1761->setAppinfo("whichBody is selected default is none");
-field1761->setType("SFInt32");
-ProtoInterface1757->addField(field1761);
+field1761->setName(CString("set_whichBody"));
+field1761->setAccessType(CString("inputOnly"));
+field1761->setAppinfo(CString("whichBody is selected default is none"));
+field1761->setType(CString("SFInt32"));
+ProtoInterface1757->addChild(field1761);
 
 field* field1762 = new field();
-field1762->setName("whichBody_changed");
-field1762->setAccessType("outputOnly");
-field1762->setAppinfo("whichBody is selected default is none");
-field1762->setType("SFInt32");
-ProtoInterface1757->addField(field1762);
+field1762->setName(CString("whichBody_changed"));
+field1762->setAccessType(CString("outputOnly"));
+field1762->setAppinfo(CString("whichBody is selected default is none"));
+field1762->setType(CString("SFInt32"));
+ProtoInterface1757->addChild(field1762);
 
 field* field1763 = new field();
-field1763->setName("hAnimBehaviorNodes");
-field1763->setAccessType("initializeOnly");
-field1763->setAppinfo("[HAnimBehavior] nodes only some or all of which may be enabled. Warning: do not animate a single joint with more than one interpolator at a given time.");
-field1763->setType("MFNode");
+field1763->setName(CString("hAnimBehaviorNodes"));
+field1763->setAccessType(CString("initializeOnly"));
+field1763->setAppinfo(CString("[HAnimBehavior] nodes only some or all of which may be enabled. Warning: do not animate a single joint with more than one interpolator at a given time."));
+field1763->setType(CString("MFNode"));
 //default NULL
-ProtoInterface1757->addField(field1763);
+ProtoInterface1757->addChild(field1763);
 
 field* field1764 = new field();
-field1764->setName("enabledBehaviorsArray");
-field1764->setAccessType("initializeOnly");
-field1764->setAppinfo("indicate which HAnimBehavior nodes are activated, empty indicates all enabled true");
-field1764->setType("MFBool");
+field1764->setName(CString("enabledBehaviorsArray"));
+field1764->setAccessType(CString("initializeOnly"));
+field1764->setAppinfo(CString("indicate which HAnimBehavior nodes are activated, empty indicates all enabled true"));
+field1764->setType(CString("MFBool"));
 //no default values
-ProtoInterface1757->addField(field1764);
+ProtoInterface1757->addChild(field1764);
 
 field* field1765 = new field();
-field1765->setName("enableBehavior");
-field1765->setAccessType("inputOnly");
-field1765->setAppinfo("enable corresponding behavior identified by index number");
-field1765->setType("SFInt32");
-ProtoInterface1757->addField(field1765);
+field1765->setName(CString("enableBehavior"));
+field1765->setAccessType(CString("inputOnly"));
+field1765->setAppinfo(CString("enable corresponding behavior identified by index number"));
+field1765->setType(CString("SFInt32"));
+ProtoInterface1757->addChild(field1765);
 
 field* field1766 = new field();
-field1766->setName("disableBehavior");
-field1766->setAccessType("inputOnly");
-field1766->setAppinfo("disable corresponding behavior identified by index number");
-field1766->setType("SFInt32");
-ProtoInterface1757->addField(field1766);
+field1766->setName(CString("disableBehavior"));
+field1766->setAccessType(CString("inputOnly"));
+field1766->setAppinfo(CString("disable corresponding behavior identified by index number"));
+field1766->setType(CString("SFInt32"));
+ProtoInterface1757->addChild(field1766);
 
 field* field1767 = new field();
-field1767->setName("startTime");
-field1767->setAccessType("inputOutput");
-field1767->setType("SFTime");
-field1767->setValue("0");
-ProtoInterface1757->addField(field1767);
+field1767->setName(CString("startTime"));
+field1767->setAccessType(CString("inputOutput"));
+field1767->setType(CString("SFTime"));
+field1767->setValue(CString("0"));
+ProtoInterface1757->addChild(field1767);
 
 field* field1768 = new field();
-field1768->setName("stopTime");
-field1768->setAccessType("inputOutput");
-field1768->setType("SFTime");
-field1768->setValue("0");
-ProtoInterface1757->addField(field1768);
+field1768->setName(CString("stopTime"));
+field1768->setAccessType(CString("inputOutput"));
+field1768->setType(CString("SFTime"));
+field1768->setValue(CString("0"));
+ProtoInterface1757->addChild(field1768);
 
-ProtoDeclare1756->setProtoInterface(ProtoInterface1757);
+ProtoDeclare1756->addChild(ProtoInterface1757);
 
 ProtoBody* ProtoBody1769 = new ProtoBody();
 Switch* Switch1770 = new Switch();
-Switch1770->setDEF("BodySwitch");
+Switch1770->setDEF(CString("BodySwitch"));
 Switch1770->setWhichChoice(-1);
 IS* IS1771 = new IS();
 Connect* connect1772 = new Connect();
-connect1772->setNodeField("whichChoice");
-connect1772->setProtoField("whichBody");
-IS1771->addConnect(connect1772);
+connect1772->setNodeField(CString("whichChoice"));
+connect1772->setProtoField(CString("whichBody"));
+IS1771->addChild(connect1772);
 
 Connect* connect1773 = new Connect();
-connect1773->setNodeField("children");
-connect1773->setProtoField("HumanoidArray");
-IS1771->addConnect(connect1773);
+connect1773->setNodeField(CString("children"));
+connect1773->setProtoField(CString("HumanoidArray"));
+IS1771->addChild(connect1773);
 
-Switch1770->setIS(IS1771);
+Switch1770->addChild(IS1771);
 
 ProtoBody1769->addChild(Switch1770);
 
 //note that other nodes following the first node in the ProtoBody are not rendered but remain active nevertheless
 Group* Group1774 = new Group();
-Group1774->setDEF("BehaviorArrayHolder");
+Group1774->setDEF(CString("BehaviorArrayHolder"));
 IS* IS1775 = new IS();
 Connect* connect1776 = new Connect();
-connect1776->setNodeField("children");
-connect1776->setProtoField("hAnimBehaviorNodes");
-IS1775->addConnect(connect1776);
+connect1776->setNodeField(CString("children"));
+connect1776->setProtoField(CString("hAnimBehaviorNodes"));
+IS1775->addChild(connect1776);
 
-Group1774->setIS(IS1775);
+Group1774->addChild(IS1775);
 
 ProtoBody1769->addChild(Group1774);
 
 TimeSensor* TimeSensor1777 = new TimeSensor();
-TimeSensor1777->setDEF("TimeSensorHolderStartStopTimes");
+TimeSensor1777->setDEF(CString("TimeSensorHolderStartStopTimes"));
 IS* IS1778 = new IS();
 Connect* connect1779 = new Connect();
-connect1779->setNodeField("startTime");
-connect1779->setProtoField("startTime");
-IS1778->addConnect(connect1779);
+connect1779->setNodeField(CString("startTime"));
+connect1779->setProtoField(CString("startTime"));
+IS1778->addChild(connect1779);
 
 Connect* connect1780 = new Connect();
-connect1780->setNodeField("stopTime");
-connect1780->setProtoField("stopTime");
-IS1778->addConnect(connect1780);
+connect1780->setNodeField(CString("stopTime"));
+connect1780->setProtoField(CString("stopTime"));
+IS1778->addChild(connect1780);
 
-TimeSensor1777->setIS(IS1778);
+TimeSensor1777->addChild(IS1778);
 
 ProtoBody1769->addChild(TimeSensor1777);
 
 Switch* Switch1781 = new Switch();
-Switch1781->setDEF("SupportedLoaHolder2");
+Switch1781->setDEF(CString("SupportedLoaHolder2"));
 Switch1781->setWhichChoice(-1);
 IS* IS1782 = new IS();
 Connect* connect1783 = new Connect();
-connect1783->setNodeField("whichChoice");
-connect1783->setProtoField("supportedLOA");
-IS1782->addConnect(connect1783);
+connect1783->setNodeField(CString("whichChoice"));
+connect1783->setProtoField(CString("supportedLOA"));
+IS1782->addChild(connect1783);
 
-Switch1781->setIS(IS1782);
+Switch1781->addChild(IS1782);
 
 ProtoBody1769->addChild(Switch1781);
 
 Script* Script1784 = new Script();
-Script1784->setDEF("BehaviorSelectionScript");
+Script1784->setDEF(CString("BehaviorSelectionScript"));
 Script1784->setDirectOutput(True);
-Script1784->setUrl(new String[2]{"HAnimBehaviorPrototypesScript.js","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/HAnimBehaviorPrototypesScript.js"}, 2);
+Script1784->setUrl(new CString[2]{CString("HAnimBehaviorPrototypesScript.js"), CString("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/HAnimBehaviorPrototypesScript.js")}, 2);
 field* field1785 = new field();
-field1785->setName("HumanoidArray");
-field1785->setAccessType("initializeOnly");
-field1785->setAppinfo("[HAnimHumanoid] nodes only");
-field1785->setType("MFNode");
-Script1784->addField(field1785);
+field1785->setName(CString("HumanoidArray"));
+field1785->setAccessType(CString("initializeOnly"));
+field1785->setAppinfo(CString("[HAnimHumanoid] nodes only"));
+field1785->setType(CString("MFNode"));
+Script1784->addChild(field1785);
 
 field* field1786 = new field();
-field1786->setName("whichBody");
-field1786->setAccessType("initializeOnly");
-field1786->setAppinfo("whichBody is selected default is none");
-field1786->setType("SFInt32");
-Script1784->addField(field1786);
+field1786->setName(CString("whichBody"));
+field1786->setAccessType(CString("initializeOnly"));
+field1786->setAppinfo(CString("whichBody is selected default is none"));
+field1786->setType(CString("SFInt32"));
+Script1784->addChild(field1786);
 
 field* field1787 = new field();
-field1787->setName("set_whichBody");
-field1787->setAccessType("inputOnly");
-field1787->setAppinfo("whichBody is selected default is none");
-field1787->setType("SFInt32");
-Script1784->addField(field1787);
+field1787->setName(CString("set_whichBody"));
+field1787->setAccessType(CString("inputOnly"));
+field1787->setAppinfo(CString("whichBody is selected default is none"));
+field1787->setType(CString("SFInt32"));
+Script1784->addChild(field1787);
 
 field* field1788 = new field();
-field1788->setName("whichBody_changed");
-field1788->setAccessType("outputOnly");
-field1788->setAppinfo("whichBody is selected default is none");
-field1788->setType("SFInt32");
-Script1784->addField(field1788);
+field1788->setName(CString("whichBody_changed"));
+field1788->setAccessType(CString("outputOnly"));
+field1788->setAppinfo(CString("whichBody is selected default is none"));
+field1788->setType(CString("SFInt32"));
+Script1784->addChild(field1788);
 
 field* field1789 = new field();
-field1789->setName("hAnimBehaviorNodes");
-field1789->setAccessType("initializeOnly");
-field1789->setAppinfo("[HAnimBehavior] nodes only");
-field1789->setType("MFNode");
+field1789->setName(CString("hAnimBehaviorNodes"));
+field1789->setAccessType(CString("initializeOnly"));
+field1789->setAppinfo(CString("[HAnimBehavior] nodes only"));
+field1789->setType(CString("MFNode"));
 //TODO: might consider accessType=\"inputOutput\" if VRML97 compatibility not needed
-Script1784->addField(field1789);
+Script1784->addChild(field1789);
 
 field* field1790 = new field();
-field1790->setName("enabledBehaviorsArray");
-field1790->setAccessType("initializeOnly");
-field1790->setType("MFBool");
-Script1784->addField(field1790);
+field1790->setName(CString("enabledBehaviorsArray"));
+field1790->setAccessType(CString("initializeOnly"));
+field1790->setType(CString("MFBool"));
+Script1784->addChild(field1790);
 
 field* field1791 = new field();
-field1791->setName("enableBehavior");
-field1791->setAccessType("inputOnly");
-field1791->setAppinfo("enable corresponding behavior");
-field1791->setType("SFInt32");
-Script1784->addField(field1791);
+field1791->setName(CString("enableBehavior"));
+field1791->setAccessType(CString("inputOnly"));
+field1791->setAppinfo(CString("enable corresponding behavior"));
+field1791->setType(CString("SFInt32"));
+Script1784->addChild(field1791);
 
 field* field1792 = new field();
-field1792->setName("disableBehavior");
-field1792->setAccessType("inputOnly");
-field1792->setAppinfo("enable corresponding behavior");
-field1792->setType("SFInt32");
-Script1784->addField(field1792);
+field1792->setName(CString("disableBehavior"));
+field1792->setAccessType(CString("inputOnly"));
+field1792->setAppinfo(CString("enable corresponding behavior"));
+field1792->setType(CString("SFInt32"));
+Script1784->addChild(field1792);
 
 field* field1793 = new field();
-field1793->setName("timeSensorNode");
-field1793->setAccessType("initializeOnly");
-field1793->setType("SFNode");
+field1793->setName(CString("timeSensorNode"));
+field1793->setAccessType(CString("initializeOnly"));
+field1793->setType(CString("SFNode"));
 TimeSensor* TimeSensor1794 = new TimeSensor();
-TimeSensor1794->setUSE("TimeSensorHolderStartStopTimes");
+TimeSensor1794->setUSE(CString("TimeSensorHolderStartStopTimes"));
 field1793->addChild(TimeSensor1794);
 
-Script1784->addField(field1793);
+Script1784->addChild(field1793);
 
 field* field1795 = new field();
-field1795->setName("previousBodyIndex");
-field1795->setAccessType("initializeOnly");
-field1795->setAppinfo("remember prior body index to avoid unnecessary ROUTE teardown and creation");
-field1795->setType("SFInt32");
-field1795->setValue("-1");
-Script1784->addField(field1795);
+field1795->setName(CString("previousBodyIndex"));
+field1795->setAccessType(CString("initializeOnly"));
+field1795->setAppinfo(CString("remember prior body index to avoid unnecessary ROUTE teardown and creation"));
+field1795->setType(CString("SFInt32"));
+field1795->setValue(CString("-1"));
+Script1784->addChild(field1795);
 
 field* field1796 = new field();
-field1796->setName("traceEnabled");
-field1796->setAccessType("initializeOnly");
-field1796->setType("SFBool");
-field1796->setValue("true");
-Script1784->addField(field1796);
+field1796->setName(CString("traceEnabled"));
+field1796->setAccessType(CString("initializeOnly"));
+field1796->setType(CString("SFBool"));
+field1796->setValue(CString("true"));
+Script1784->addChild(field1796);
 
 IS* IS1797 = new IS();
 Connect* connect1798 = new Connect();
-connect1798->setNodeField("HumanoidArray");
-connect1798->setProtoField("HumanoidArray");
-IS1797->addConnect(connect1798);
+connect1798->setNodeField(CString("HumanoidArray"));
+connect1798->setProtoField(CString("HumanoidArray"));
+IS1797->addChild(connect1798);
 
 Connect* connect1799 = new Connect();
-connect1799->setNodeField("whichBody");
-connect1799->setProtoField("whichBody");
-IS1797->addConnect(connect1799);
+connect1799->setNodeField(CString("whichBody"));
+connect1799->setProtoField(CString("whichBody"));
+IS1797->addChild(connect1799);
 
 Connect* connect1800 = new Connect();
-connect1800->setNodeField("set_whichBody");
-connect1800->setProtoField("set_whichBody");
-IS1797->addConnect(connect1800);
+connect1800->setNodeField(CString("set_whichBody"));
+connect1800->setProtoField(CString("set_whichBody"));
+IS1797->addChild(connect1800);
 
 Connect* connect1801 = new Connect();
-connect1801->setNodeField("whichBody_changed");
-connect1801->setProtoField("whichBody_changed");
-IS1797->addConnect(connect1801);
+connect1801->setNodeField(CString("whichBody_changed"));
+connect1801->setProtoField(CString("whichBody_changed"));
+IS1797->addChild(connect1801);
 
 Connect* connect1802 = new Connect();
-connect1802->setNodeField("hAnimBehaviorNodes");
-connect1802->setProtoField("hAnimBehaviorNodes");
-IS1797->addConnect(connect1802);
+connect1802->setNodeField(CString("hAnimBehaviorNodes"));
+connect1802->setProtoField(CString("hAnimBehaviorNodes"));
+IS1797->addChild(connect1802);
 
 Connect* connect1803 = new Connect();
-connect1803->setNodeField("enabledBehaviorsArray");
-connect1803->setProtoField("enabledBehaviorsArray");
-IS1797->addConnect(connect1803);
+connect1803->setNodeField(CString("enabledBehaviorsArray"));
+connect1803->setProtoField(CString("enabledBehaviorsArray"));
+IS1797->addChild(connect1803);
 
 Connect* connect1804 = new Connect();
-connect1804->setNodeField("enableBehavior");
-connect1804->setProtoField("enableBehavior");
-IS1797->addConnect(connect1804);
+connect1804->setNodeField(CString("enableBehavior"));
+connect1804->setProtoField(CString("enableBehavior"));
+IS1797->addChild(connect1804);
 
 Connect* connect1805 = new Connect();
-connect1805->setNodeField("disableBehavior");
-connect1805->setProtoField("disableBehavior");
-IS1797->addConnect(connect1805);
+connect1805->setNodeField(CString("disableBehavior"));
+connect1805->setProtoField(CString("disableBehavior"));
+IS1797->addChild(connect1805);
 
-Script1784->setIS(IS1797);
+Script1784->addChild(IS1797);
 
 ProtoBody1769->addChild(Script1784);
 
-ProtoDeclare1756->setProtoBody(ProtoBody1769);
+ProtoDeclare1756->addChild(ProtoBody1769);
 
 Scene18->addChild(ProtoDeclare1756);
 
 //TODO: Goal is to have 3 different ways to present a body: local creation, Inline with IMPORT/EXPORT, or external prototype.
 ProtoInstance* ProtoInstance1806 = new ProtoInstance();
-ProtoInstance1806->setName("HAnimBehavior");
-ProtoInstance1806->setDEF("BehaviorTest1");
+ProtoInstance1806->setName(CString("HAnimBehavior"));
+ProtoInstance1806->setDEF(CString("BehaviorTest1"));
 //only one PositionInterpolator key/keyValue definition for entire humanoid - optional
 //must have paired overrides of each key/keyValue array being defined
 fieldValue* fieldValue1807 = new fieldValue();
-fieldValue1807->setName("HumanoidRoot_translation_key");
-fieldValue1807->setValue("0 0.25 0.5 0.75 1");
-ProtoInstance1806->addFieldValue(fieldValue1807);
+fieldValue1807->setName(&CString("HumanoidRoot_translation_key"));
+fieldValue1807->setValue(CString("0 0.25 0.5 0.75 1"));
+ProtoInstance1806->addChild(fieldValue1807);
 
 fieldValue* fieldValue1808 = new fieldValue();
-fieldValue1808->setName("HumanoidRoot_translation_keyValue");
-fieldValue1808->setValue("0 0 0 0 0 10 0 0 20 0 0 30 0 0 40 0 0 50");
-ProtoInstance1806->addFieldValue(fieldValue1808);
+fieldValue1808->setName(&CString("HumanoidRoot_translation_keyValue"));
+fieldValue1808->setValue(CString("0 0 0 0 0 10 0 0 20 0 0 30 0 0 40 0 0 50"));
+ProtoInstance1806->addChild(fieldValue1808);
 
 fieldValue* fieldValue1809 = new fieldValue();
-fieldValue1809->setName("r_ankle_key");
-fieldValue1809->setValue("0 0.5 1");
-ProtoInstance1806->addFieldValue(fieldValue1809);
+fieldValue1809->setName(&CString("r_ankle_key"));
+fieldValue1809->setValue(CString("0 0.5 1"));
+ProtoInstance1806->addChild(fieldValue1809);
 
 fieldValue* fieldValue1810 = new fieldValue();
-fieldValue1810->setName("r_ankle_keyValue");
-fieldValue1810->setValue("0 1 0 0 0 1 0 0.2 0 1 0 0.4");
-ProtoInstance1806->addFieldValue(fieldValue1810);
+fieldValue1810->setName(&CString("r_ankle_keyValue"));
+fieldValue1810->setValue(CString("0 1 0 0 0 1 0 0.2 0 1 0 0.4"));
+ProtoInstance1806->addChild(fieldValue1810);
 
 Scene18->addChild(ProtoInstance1806);
 
 ProtoInstance* ProtoInstance1811 = new ProtoInstance();
-ProtoInstance1811->setName("HAnimBodyBehaviorChooser");
-ProtoInstance1811->setDEF("ChooserTest");
+ProtoInstance1811->setName(CString("HAnimBodyBehaviorChooser"));
+ProtoInstance1811->setDEF(CString("ChooserTest"));
 fieldValue* fieldValue1812 = new fieldValue();
-fieldValue1812->setName("HumanoidArray");
+fieldValue1812->setName(&CString("HumanoidArray"));
 HAnimHumanoid* HAnimHumanoid1813 = new HAnimHumanoid();
-HAnimHumanoid1813->setName("DiamondManLOA-1");
-HAnimHumanoid1813->setDEF("hanim_DiamondManLOA-1");
-HAnimHumanoid1813->setVersion("2.0");
+HAnimHumanoid1813->setName(CString("DiamondManLOA-1"));
+HAnimHumanoid1813->setDEF(CString("hanim_DiamondManLOA-1"));
+HAnimHumanoid1813->setVersion(CString("2.0"));
 fieldValue1812->addChild(HAnimHumanoid1813);
 
-ProtoInstance1811->addFieldValue(fieldValue1812);
+ProtoInstance1811->addChild(fieldValue1812);
 
 fieldValue* fieldValue1814 = new fieldValue();
-fieldValue1814->setName("whichBody");
-fieldValue1814->setValue("0");
-ProtoInstance1811->addFieldValue(fieldValue1814);
+fieldValue1814->setName(&CString("whichBody"));
+fieldValue1814->setValue(CString("0"));
+ProtoInstance1811->addChild(fieldValue1814);
 
 fieldValue* fieldValue1815 = new fieldValue();
-fieldValue1815->setName("hAnimBehaviorNodes");
+fieldValue1815->setName(&CString("hAnimBehaviorNodes"));
 ProtoInstance* ProtoInstance1816 = new ProtoInstance();
-ProtoInstance1816->setUSE("BehaviorTest1");
+ProtoInstance1816->setUSE(CString("BehaviorTest1"));
 fieldValue1815->addChild(ProtoInstance1816);
 
-ProtoInstance1811->addFieldValue(fieldValue1815);
+ProtoInstance1811->addChild(fieldValue1815);
 
 fieldValue* fieldValue1817 = new fieldValue();
-fieldValue1817->setName("enabledBehaviorsArray");
-fieldValue1817->setValue("true");
-ProtoInstance1811->addFieldValue(fieldValue1817);
+fieldValue1817->setName(&CString("enabledBehaviorsArray"));
+fieldValue1817->setValue(CString("true"));
+ProtoInstance1811->addChild(fieldValue1817);
 
 Scene18->addChild(ProtoInstance1811);
 
 X3D0->setScene(Scene18);
 
-X3D0->toXMLString();
 }
