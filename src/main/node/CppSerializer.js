@@ -36,15 +36,29 @@ CppScriptSerializer.prototype = {
 		bodystr += "#define WINAPI\n";
 		bodystr += "#define AFX_EXT_CLASS\n";
 		bodystr += "#define EXPORT32\n";
-		bodystr += "#include \"C:/x3d-code/www.web3d.org/x3d/stylesheets/cpp/concretes.h\"\n";
+		//bodystr += "#include \"C:/x3d-code/www.web3d.org/x3d/stylesheets/cpp/abstracts.h\"\n";
+		//bodystr += "#include \"C:/x3d-code/www.web3d.org/x3d/stylesheets/cpp/concretes.h\"\n";
+		//bodystr += "#include \"C:/x3d-code/www.web3d.org/x3d/languages/cpp/Abstracts.h\"\n";
+		//bodystr += "#include \"C:/x3d-code/www.web3d.org/x3d/languages/cpp/Concretes.h\"\n";
+		bodystr += "#include \"C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/CylinderExample/pch.h\"\n";
+		bodystr += "#include \"C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/CylinderExample/framework.h\"\n";
+		bodystr += "#include \"C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/XML_PARSER.h\"\n";
+		bodystr += "#include \"C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/X3DLib.h\"\n";
+		bodystr += "#include \"C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/Abstracts.h\"\n";
+		bodystr += "#include \"C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/Concretes.h\"\n";
+		bodystr += "#include \"C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/glMath.h\"\n";
+		bodystr += "#include \"C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/glut.h\"\n";
 		bodystr += "int main(int argc, char ** argv) {\n";
-		bodystr += "CX3DScene m_pScene;\n";
-		bodystr += "CBrowser browser = X3D.getBrowser();\n";
-		bodystr += "C"+element.nodeName+"* "+element.nodeName+stack[0]+" = new C"+element.nodeName+"();\n";
-        	bodystr += 'CGroup* group = (CGroup*)(m_pScene.createNode("Group"));\n';
-        	bodystr += "group->addChildren("+element.nodeName+stack[0]+");\n";
+		// bodystr += "Scene* m_pScene = new X3DScene();\n";
+		// bodystr += "X3D* x3dModel = new X3D();\n";
+
+		// bodystr += "m_pScene->addRootNode(x3dModel);\n";
+		//bodystr += "Browser browser = X3D.getBrowser();\n";
+		bodystr += element.nodeName+"* "+element.nodeName+stack[0]+" = new "+element.nodeName+"();\n";
+        	// bodystr += 'Group* group = (Group*)(m_pScene->createNode("Group"));\n';
+        	// bodystr += "group->addChildren("+element.nodeName+stack[0]+");\n";
 		bodystr += this.subSerializeToString(element, mapToMethod, fieldTypes, 3, stack);
-        	bodystr += "m_pScene.addRootNode(group);\n";
+        	// bodystr += "m_pScene.addRootNode(group);\n";
         	bodystr += element.nodeName+stack[0]+"->toXMLString();\n";
 		bodystr += "}\n";
 
@@ -149,6 +163,10 @@ CppScriptSerializer.prototype = {
 			method = "LayerSet"
 			addpre = "add";
 		}
+		if (addpre === 'add' && addpre+method === "addChildren") {
+			method = "Child";
+			addpre = "add";
+		}
 		return prepre+addpre+method;
 	},
 	stringValue : function(attrsa, attr, attrType, element) {
@@ -185,7 +203,7 @@ CppScriptSerializer.prototype = {
 			strval = this.printSubArray(attrType, "double", nodeValue.split(/[ ,\t\r\n]+/), this.codeno, DOUBLE_SUFFIX+',', '', DOUBLE_SUFFIX);
 		} else if (attrType === "MFString") {
 			nodeValue = nodeValue.replace(/^ *(.*) *$/, "$1");
-			strval = this.printSubArray(attrType, "CString",
+			strval = this.printSubArray(attrType, "String",
 				nodeValue.substr(1, nodeValue.length-2).split(/"[ ,\t\r\n]+"/).
 				map(function(x) {
 					let y = x.
@@ -302,41 +320,16 @@ CppScriptSerializer.prototype = {
 		for (let cn in element.childNodes) {
 			let node = element.childNodes[cn];
 			if (element.childNodes.hasOwnProperty(cn) && node.nodeType === 1) {
-				/*
-				if (node.nodeName === "head") {
-					continue;
-				}
-				*/
 				stack.unshift(this.preno);
 				this.preno++;
 				let ch = "";
-let statements = {
-"component" : true,
-"connect" : true,
-"EXPORT" : true,
-"ExternProtoDeclare" : true,
-"field" : true,
-"fieldValue" : true,
-"head" : true,
-"IMPORT" : true,
-"IS" : true,
-"meta" : true,
-"ProtoBody" : true,
-"ProtoDeclare" : true,
-"ProtoInterface" : true,
-"ROUTE" : true,
-"Scene" : true,
-"unit" : true,
-"X3D" : true
-};
-				if (node.nodeName === "ProtoDeclare") {
-					ch += "C"+node.nodeName+" "+node.nodeName+stack[0]+" = browser.createX3DFromString(R\"foo("+serializer.serializeToString({ "X3D" : { "version" : "4.0"}}, node)+")foo\");\n";
 
-				} else if (statements[node.nodeName]) {
-					ch += "C"+node.nodeName+"* "+node.nodeName+stack[0]+" = new C"+node.nodeName+"();\n";
-				} else {
-					ch += "C"+node.nodeName+"* "+node.nodeName+stack[0]+" = (C"+node.nodeName+" *)(m_pScene.createNode(\""+ node.nodeName+"\"));\n";
+				let nodeName = node.nodeName;
+				if (node.nodeName === "connect") {
+				    nodeName = "Connect";
 				}
+
+				ch += nodeName+"* "+node.nodeName+stack[0]+" = new "+nodeName+"();\n";
 
 				let bodystr = this.subSerializeToString(node, mapToMethod, fieldTypes, n+1, stack);
 				ch += bodystr;
@@ -346,19 +339,11 @@ let statements = {
 				} else if (method.startsWith("->setset")) {
 					method = "->"+method.substr(5);
 				}
-				// if (element.nodeName !== "X3D") {
-					if (element.nodeName !== "Scene") {
-						ch += element.nodeName+stack[1];
-					} else {
-						ch += "group";
-					}
-				// }
-				// console.log(element.nodeName, node.nodeName, method, fieldTypes[element.nodeName][node.nodeName]);
-				if (method === "->setGeometry") {
-					ch += method+"("+node.nodeName+stack[0]+");\n\n";
-				} else {
-					ch += method+"(*"+node.nodeName+stack[0]+");\n\n";
+				if (method.indexOf("addChildren") >= 0) {
+					method = method.replace("Children", "Child");
 				}
+				ch += element.nodeName+stack[1];
+				ch += method+"("+node.nodeName+stack[0]+");\n\n";
 				str += ch;
 				stack.shift();
 			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType === 8) {

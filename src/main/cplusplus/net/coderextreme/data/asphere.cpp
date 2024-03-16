@@ -4,67 +4,69 @@
 #define WINAPI
 #define AFX_EXT_CLASS
 #define EXPORT32
-#include "C:/x3d-code/www.web3d.org/x3d/stylesheets/cpp/concretes.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/CylinderExample/pch.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/CylinderExample/framework.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/XML_PARSER.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/X3DLib.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/Abstracts.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/Concretes.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/glMath.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/glut.h"
 int main(int argc, char ** argv) {
-CX3DScene m_pScene;
-CBrowser browser = X3D.getBrowser();
-CX3D* X3D0 = new CX3D();
-CGroup* group = (CGroup*)(m_pScene.createNode("Group"));
-group->addChildren(X3D0);
+X3D* X3D0 = new X3D();
 X3D0->setProfile("Interchange");
 X3D0->setVersion("3.3");
-Chead* head1 = new Chead();
-Ccomponent* component2 = new Ccomponent();
+head* head1 = new head();
+component* component2 = new component();
 component2->setName("Scripting");
 component2->setLevel(1);
-head1->addComponent(*component2);
+head1->addComponent(component2);
 
-Cmeta* meta3 = new Cmeta();
+meta* meta3 = new meta();
 meta3->setName("title");
 meta3->setContent("asphere.x3d");
-head1->addMeta(*meta3);
+head1->addMeta(meta3);
 
-Cmeta* meta4 = new Cmeta();
+meta* meta4 = new meta();
 meta4->setName("creator");
 meta4->setContent("John Carlson");
-head1->addMeta(*meta4);
+head1->addMeta(meta4);
 
-Cmeta* meta5 = new Cmeta();
+meta* meta5 = new meta();
 meta5->setName("generator");
 meta5->setContent("manual");
-head1->addMeta(*meta5);
+head1->addMeta(meta5);
 
-Cmeta* meta6 = new Cmeta();
+meta* meta6 = new meta();
 meta6->setName("identifier");
 meta6->setContent("https://coderextreme.net/X3DJSONLD/src/main/data/asphere.x3d");
-head1->addMeta(*meta6);
+head1->addMeta(meta6);
 
-Cmeta* meta7 = new Cmeta();
+meta* meta7 = new meta();
 meta7->setName("description");
 meta7->setContent("a sphere");
-head1->addMeta(*meta7);
+head1->addMeta(meta7);
 
-X3D0->setHead(*head1);
+X3D0->setHead(head1);
 
-CScene* Scene8 = new CScene();
-CGroup* Group9 = (CGroup *)(m_pScene.createNode("Group"));
-CShape* Shape10 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance11 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material12 = (CMaterial *)(m_pScene.createNode("Material"));
+Scene* Scene8 = new Scene();
+Group* Group9 = new Group();
+Shape* Shape10 = new Shape();
+Appearance* Appearance11 = new Appearance();
+Material* Material12 = new Material();
 Material12->setDiffuseColor(new float[3]{1,1,1});
-Appearance11->setMaterial(*Material12);
+Appearance11->setMaterial(Material12);
 
-Shape10->setAppearance(*Appearance11);
+Shape10->setAppearance(Appearance11);
 
-CSphere* Sphere13 = (CSphere *)(m_pScene.createNode("Sphere"));
+Sphere* Sphere13 = new Sphere();
 Shape10->setGeometry(Sphere13);
 
-Group9->addChildren(*Shape10);
+Group9->addChild(Shape10);
 
-group->addChildren(*Group9);
+Scene8->addChild(Group9);
 
-X3D0->setScene(*Scene8);
+X3D0->setScene(Scene8);
 
-m_pScene.addRootNode(group);
 X3D0->toXMLString();
 }

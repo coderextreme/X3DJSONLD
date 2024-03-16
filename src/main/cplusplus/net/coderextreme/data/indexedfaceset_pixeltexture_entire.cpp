@@ -4,152 +4,154 @@
 #define WINAPI
 #define AFX_EXT_CLASS
 #define EXPORT32
-#include "C:/x3d-code/www.web3d.org/x3d/stylesheets/cpp/concretes.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/CylinderExample/pch.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/CylinderExample/framework.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/XML_PARSER.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/X3DLib.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/Abstracts.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/Concretes.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/glMath.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/glut.h"
 int main(int argc, char ** argv) {
-CX3DScene m_pScene;
-CBrowser browser = X3D.getBrowser();
-CX3D* X3D0 = new CX3D();
-CGroup* group = (CGroup*)(m_pScene.createNode("Group"));
-group->addChildren(X3D0);
+X3D* X3D0 = new X3D();
 X3D0->setProfile("Interchange");
 X3D0->setVersion("3.0");
-Chead* head1 = new Chead();
-Cmeta* meta2 = new Cmeta();
+head* head1 = new head();
+meta* meta2 = new meta();
 meta2->setName("title");
 meta2->setContent("indexedfaceset_pixeltexture_entire.x3d");
-head1->addMeta(*meta2);
+head1->addMeta(meta2);
 
-Cmeta* meta3 = new Cmeta();
+meta* meta3 = new meta();
 meta3->setName("reference");
 meta3->setContent("http://www.nist.gov/vrml.html");
-head1->addMeta(*meta3);
+head1->addMeta(meta3);
 
-Cmeta* meta4 = new Cmeta();
+meta* meta4 = new meta();
 meta4->setName("reference");
 meta4->setContent("http://www.itl.nist.gov/div897/ctg/vrml/vrml.html");
-head1->addMeta(*meta4);
+head1->addMeta(meta4);
 
-Cmeta* meta5 = new Cmeta();
+meta* meta5 = new meta();
 meta5->setName("creator");
 meta5->setContent("http://www.itl.nist.gov/div897/ctg/vrml/members.html");
-head1->addMeta(*meta5);
+head1->addMeta(meta5);
 
-Cmeta* meta6 = new Cmeta();
+meta* meta6 = new meta();
 meta6->setName("disclaimer");
 meta6->setContent("This file was provided by the National Institute of Standards and Technology, and is part of the X3D Conformance Test Suite, available at http://www.nist.gov/vrml.html The information contained within this file is provided for use in establishing conformance to the ISO VRML97 Specification. Conformance to this test does not imply recommendation or endorsement by the National Institute of Standards and Technology. This software can be redistributed and/or modified freely provided that any derivative works bear some notice that they are derived from it, and any modified versions bear some notice that they have been modified.");
-head1->addMeta(*meta6);
+head1->addMeta(meta6);
 
-Cmeta* meta7 = new Cmeta();
+meta* meta7 = new meta();
 meta7->setName("info");
 meta7->setContent("Correct definition and compliance of this conformance scene is maintained by the X3D Working Group, https://www.web3d.org/working-groups/x3d");
-head1->addMeta(*meta7);
+head1->addMeta(meta7);
 
-Cmeta* meta8 = new Cmeta();
+meta* meta8 = new meta();
 meta8->setName("translator");
 meta8->setContent("Michael Kass NIST, Don Brutzman NPS");
-head1->addMeta(*meta8);
+head1->addMeta(meta8);
 
-Cmeta* meta9 = new Cmeta();
+meta* meta9 = new meta();
 meta9->setName("translated");
 meta9->setContent("21 January 2001");
-head1->addMeta(*meta9);
+head1->addMeta(meta9);
 
-Cmeta* meta10 = new Cmeta();
+meta* meta10 = new meta();
 meta10->setName("modified");
 meta10->setContent("13 January 2014");
-head1->addMeta(*meta10);
+head1->addMeta(meta10);
 
-Cmeta* meta11 = new Cmeta();
+meta* meta11 = new meta();
 meta11->setName("description");
 meta11->setContent("Test browser ability to completely map one PixelTexture onto the surface of an IndexedFaceSet geometry. Four colored squares should map onto each face of the IndexedFaceSet. The PixelTexture consists of red quarter (lower left), green quarter (lower right), white quarter (upper left) and yellow quarter (upper right). PixelTexture should map once onto the surface of the IndexedFaceSet, with the S (horizontal) axis of the texture corresponding to the X axis of the geometry.");
-head1->addMeta(*meta11);
+head1->addMeta(meta11);
 
-Cmeta* meta12 = new Cmeta();
+meta* meta12 = new meta();
 meta12->setName("identifier");
 meta12->setContent("https://www.web3d.org/x3d/content/examples/ConformanceNist/GeometricProperties/TextureCoordinate/indexedfaceset_pixeltexture_entire.x3d");
-head1->addMeta(*meta12);
+head1->addMeta(meta12);
 
-Cmeta* meta13 = new Cmeta();
+meta* meta13 = new meta();
 meta13->setName("generator");
 meta13->setContent("Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html");
-head1->addMeta(*meta13);
+head1->addMeta(meta13);
 
-Cmeta* meta14 = new Cmeta();
+meta* meta14 = new meta();
 meta14->setName("generator");
 meta14->setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit");
-head1->addMeta(*meta14);
+head1->addMeta(meta14);
 
-Cmeta* meta15 = new Cmeta();
+meta* meta15 = new meta();
 meta15->setName("license");
 meta15->setContent("../../license.html");
-head1->addMeta(*meta15);
+head1->addMeta(meta15);
 
-X3D0->setHead(*head1);
+X3D0->setHead(head1);
 
-CScene* Scene16 = new CScene();
-CViewpoint* Viewpoint17 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
+Scene* Scene16 = new Scene();
+Viewpoint* Viewpoint17 = new Viewpoint();
 Viewpoint17->setDescription("Front View");
-group->addChildren(*Viewpoint17);
+Scene16->addChild(Viewpoint17);
 
-CViewpoint* Viewpoint18 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
+Viewpoint* Viewpoint18 = new Viewpoint();
 Viewpoint18->setDescription("Rear View");
 Viewpoint18->setOrientation(new float[4]{0,1,0,3.14});
 Viewpoint18->setPosition(new float[3]{0,0,-10});
-group->addChildren(*Viewpoint18);
+Scene16->addChild(Viewpoint18);
 
-CViewpoint* Viewpoint19 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
+Viewpoint* Viewpoint19 = new Viewpoint();
 Viewpoint19->setDescription("Top View");
 Viewpoint19->setOrientation(new float[4]{1,0,0,-1.57});
 Viewpoint19->setPosition(new float[3]{0,10,0});
-group->addChildren(*Viewpoint19);
+Scene16->addChild(Viewpoint19);
 
-CViewpoint* Viewpoint20 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
+Viewpoint* Viewpoint20 = new Viewpoint();
 Viewpoint20->setDescription("Bottom View");
 Viewpoint20->setOrientation(new float[4]{1,0,0,1.57});
 Viewpoint20->setPosition(new float[3]{0,-10,0});
-group->addChildren(*Viewpoint20);
+Scene16->addChild(Viewpoint20);
 
-CViewpoint* Viewpoint21 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
+Viewpoint* Viewpoint21 = new Viewpoint();
 Viewpoint21->setDescription("Right View");
 Viewpoint21->setOrientation(new float[4]{0,1,0,1.57});
 Viewpoint21->setPosition(new float[3]{10,0,0});
-group->addChildren(*Viewpoint21);
+Scene16->addChild(Viewpoint21);
 
-CViewpoint* Viewpoint22 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
+Viewpoint* Viewpoint22 = new Viewpoint();
 Viewpoint22->setDescription("Left View");
 Viewpoint22->setOrientation(new float[4]{0,1,0,-1.57});
 Viewpoint22->setPosition(new float[3]{-10,0,0});
-group->addChildren(*Viewpoint22);
+Scene16->addChild(Viewpoint22);
 
-CNavigationInfo* NavigationInfo23 = (CNavigationInfo *)(m_pScene.createNode("NavigationInfo"));
-NavigationInfo23->setType(new CString[4]{"EXAMINE","WALK","FLY","ANY"}, 4);
-group->addChildren(*NavigationInfo23);
+NavigationInfo* NavigationInfo23 = new NavigationInfo();
+NavigationInfo23->setType(new String[4]{"EXAMINE","WALK","FLY","ANY"}, 4);
+Scene16->addChild(NavigationInfo23);
 
-CShape* Shape24 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance25 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material26 = (CMaterial *)(m_pScene.createNode("Material"));
-Appearance25->setMaterial(*Material26);
+Shape* Shape24 = new Shape();
+Appearance* Appearance25 = new Appearance();
+Material* Material26 = new Material();
+Appearance25->setMaterial(Material26);
 
-CPixelTexture* PixelTexture27 = (CPixelTexture *)(m_pScene.createNode("PixelTexture"));
+PixelTexture* PixelTexture27 = new PixelTexture();
 PixelTexture27->setImage(new int[7]{2,2,4,-16776961,16711935,-1,-65281});
 PixelTexture27->setRepeatS(False);
 PixelTexture27->setRepeatT(False);
-Appearance25->setTexture(*PixelTexture27);
+Appearance25->setTexture(PixelTexture27);
 
-Shape24->setAppearance(*Appearance25);
+Shape24->setAppearance(Appearance25);
 
-CIndexedFaceSet* IndexedFaceSet28 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet* IndexedFaceSet28 = new IndexedFaceSet();
 IndexedFaceSet28->setCoordIndex(new int[30]{0,1,3,2,-1,4,5,7,6,-1,6,7,1,0,-1,2,3,5,4,-1,6,0,2,4,-1,1,7,5,3,-1});
-CCoordinate* Coordinate29 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate* Coordinate29 = new Coordinate();
 Coordinate29->setPoint(new float[24]{-2,1.5,1,-2,-1.5,1,2,1.5,1,2,-1.5,1,2,1.5,-1,2,-1.5,-1,-2,1.5,-1,-2,-1.5,-1});
-IndexedFaceSet28->setCoord(*Coordinate29);
+IndexedFaceSet28->setCoord(Coordinate29);
 
 Shape24->setGeometry(IndexedFaceSet28);
 
-group->addChildren(*Shape24);
+Scene16->addChild(Shape24);
 
-X3D0->setScene(*Scene16);
+X3D0->setScene(Scene16);
 
-m_pScene.addRootNode(group);
 X3D0->toXMLString();
 }

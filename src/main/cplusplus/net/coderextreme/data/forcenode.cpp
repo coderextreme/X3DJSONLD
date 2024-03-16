@@ -4,180 +4,147 @@
 #define WINAPI
 #define AFX_EXT_CLASS
 #define EXPORT32
-#include "C:/x3d-code/www.web3d.org/x3d/stylesheets/cpp/concretes.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/CylinderExample/pch.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/CylinderExample/framework.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/XML_PARSER.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/X3DLib.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/Abstracts.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/Concretes.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/glMath.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/glut.h"
 int main(int argc, char ** argv) {
-CX3DScene m_pScene;
-CBrowser browser = X3D.getBrowser();
-CX3D* X3D0 = new CX3D();
-CGroup* group = (CGroup*)(m_pScene.createNode("Group"));
-group->addChildren(X3D0);
+X3D* X3D0 = new X3D();
 X3D0->setProfile("Immersive");
 X3D0->setVersion("3.3");
-Chead* head1 = new Chead();
-Cmeta* meta2 = new Cmeta();
+head* head1 = new head();
+meta* meta2 = new meta();
 meta2->setName("creator");
 meta2->setContent("John W Carlson");
-head1->addMeta(*meta2);
+head1->addMeta(meta2);
 
-Cmeta* meta3 = new Cmeta();
+meta* meta3 = new meta();
 meta3->setName("created");
 meta3->setContent("December 13 2015");
-head1->addMeta(*meta3);
+head1->addMeta(meta3);
 
-Cmeta* meta4 = new Cmeta();
+meta* meta4 = new meta();
 meta4->setName("title");
 meta4->setContent("forcenode.x3d");
-head1->addMeta(*meta4);
+head1->addMeta(meta4);
 
-Cmeta* meta5 = new Cmeta();
+meta* meta5 = new meta();
 meta5->setName("identifier");
 meta5->setContent("https://coderextreme.net/X3DJSONLD/src/main/data/force.x3d");
-head1->addMeta(*meta5);
+head1->addMeta(meta5);
 
-Cmeta* meta6 = new Cmeta();
+meta* meta6 = new meta();
 meta6->setName("description");
 meta6->setContent("beginnings of a force directed graph in 3D");
-head1->addMeta(*meta6);
+head1->addMeta(meta6);
 
-Cmeta* meta7 = new Cmeta();
+meta* meta7 = new meta();
 meta7->setName("generator");
 meta7->setContent("Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit");
-head1->addMeta(*meta7);
+head1->addMeta(meta7);
 
-X3D0->setHead(*head1);
+X3D0->setHead(head1);
 
-CScene* Scene8 = new CScene();
-CProtoDeclare ProtoDeclare9 = browser.createX3DFromString(R"foo(<?xml version="1.0" encoding="undefined"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
-<ProtoDeclare name="node" ><ProtoInterface><field name="position" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
-</ProtoInterface>
-<ProtoBody><Group><Transform DEF="transform"><IS><connect nodeField="translation" protoField="position"></connect>
-</IS>
-<Shape><Sphere></Sphere>
-<Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 0 0"></Material>
-</Appearance>
-</Shape>
-<Transform translation="1 0 1"><Shape><Text string="&quot;Node&quot;"><FontStyle containerField="fontStyle" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" size="5"></FontStyle>
-</Text>
-<Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 0 1"></Material>
-</Appearance>
-</Shape>
-</Transform>
-</Transform>
-<PositionInterpolator DEF="NodePosition" key="0 1" keyValue="0 0 0 0 5 0"></PositionInterpolator>
-<Script DEF="MoveBall"><field name="translation" accessType="inputOutput" type="SFVec3f" value="50 50 0"></field>
-<field name="old" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
-<field name="set_cycle" accessType="inputOnly" type="SFTime"></field>
-<field name="keyValue" accessType="outputOnly" type="MFVec3f"></field>
-<![CDATA[ecmascript:
-					function set_cycle(value) {
-                                                old = translation;
-						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);
-                                                keyValue = new MFVec3f([old, translation]);
-						// Browser.println(translation);
-					}]]></Script>
-<TimeSensor DEF="nodeClock" cycleInterval="3" loop="true"></TimeSensor>
-<ROUTE fromNode="nodeClock" fromField="cycleTime" toNode="MoveBall" toField="set_cycle"></ROUTE>
-<ROUTE fromNode="nodeClock" fromField="fraction_changed" toNode="NodePosition" toField="set_fraction"></ROUTE>
-<ROUTE fromNode="MoveBall" fromField="keyValue" toNode="NodePosition" toField="keyValue"></ROUTE>
-<ROUTE fromNode="NodePosition" fromField="value_changed" toNode="transform" toField="set_translation"></ROUTE>
-</Group>
-</ProtoBody>
-</ProtoDeclare>)foo");
+Scene* Scene8 = new Scene();
+ProtoDeclare* ProtoDeclare9 = new ProtoDeclare();
 ProtoDeclare9->setName("node");
-CProtoInterface* ProtoInterface10 = new CProtoInterface();
-Cfield* field11 = new Cfield();
+ProtoInterface* ProtoInterface10 = new ProtoInterface();
+field* field11 = new field();
 field11->setName("position");
 field11->setAccessType("inputOutput");
 field11->setType("SFVec3f");
 field11->setValue("0 0 0");
-ProtoInterface10->addField(*field11);
+ProtoInterface10->addField(field11);
 
-ProtoDeclare9->setProtoInterface(*ProtoInterface10);
+ProtoDeclare9->setProtoInterface(ProtoInterface10);
 
-CProtoBody* ProtoBody12 = new CProtoBody();
-CGroup* Group13 = (CGroup *)(m_pScene.createNode("Group"));
-CTransform* Transform14 = (CTransform *)(m_pScene.createNode("Transform"));
+ProtoBody* ProtoBody12 = new ProtoBody();
+Group* Group13 = new Group();
+Transform* Transform14 = new Transform();
 Transform14->setDEF("transform");
-CIS* IS15 = new CIS();
-Cconnect* connect16 = new Cconnect();
+IS* IS15 = new IS();
+Connect* connect16 = new Connect();
 connect16->setNodeField("translation");
 connect16->setProtoField("position");
-IS15->addConnect(*connect16);
+IS15->addConnect(connect16);
 
-Transform14->setIS(*IS15);
+Transform14->setIS(IS15);
 
-CShape* Shape17 = (CShape *)(m_pScene.createNode("Shape"));
-CSphere* Sphere18 = (CSphere *)(m_pScene.createNode("Sphere"));
+Shape* Shape17 = new Shape();
+Sphere* Sphere18 = new Sphere();
 Shape17->setGeometry(Sphere18);
 
-CAppearance* Appearance19 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material20 = (CMaterial *)(m_pScene.createNode("Material"));
+Appearance* Appearance19 = new Appearance();
+Material* Material20 = new Material();
 Material20->setDiffuseColor(new float[3]{1,0,0});
-Appearance19->setMaterial(*Material20);
+Appearance19->setMaterial(Material20);
 
-Shape17->setAppearance(*Appearance19);
+Shape17->setAppearance(Appearance19);
 
-Transform14->addChild(*Shape17);
+Transform14->addChild(Shape17);
 
-CTransform* Transform21 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform21 = new Transform();
 Transform21->setTranslation(new float[3]{1,0,1});
-CShape* Shape22 = (CShape *)(m_pScene.createNode("Shape"));
-CText* Text23 = (CText *)(m_pScene.createNode("Text"));
-Text23->setString(new CString[1]{"Node"}, 1);
-CFontStyle* FontStyle24 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
-FontStyle24->setJustify(new CString[2]{"MIDDLE","MIDDLE"}, 2);
+Shape* Shape22 = new Shape();
+Text* Text23 = new Text();
+Text23->setString(new String[1]{"Node"}, 1);
+FontStyle* FontStyle24 = new FontStyle();
+FontStyle24->setJustify(new String[2]{"MIDDLE","MIDDLE"}, 2);
 FontStyle24->setSize(5);
-Text23->setFontStyle(*FontStyle24);
+Text23->setFontStyle(FontStyle24);
 
 Shape22->setGeometry(Text23);
 
-CAppearance* Appearance25 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material26 = (CMaterial *)(m_pScene.createNode("Material"));
+Appearance* Appearance25 = new Appearance();
+Material* Material26 = new Material();
 Material26->setDiffuseColor(new float[3]{0,0,1});
-Appearance25->setMaterial(*Material26);
+Appearance25->setMaterial(Material26);
 
-Shape22->setAppearance(*Appearance25);
+Shape22->setAppearance(Appearance25);
 
-Transform21->addChild(*Shape22);
+Transform21->addChild(Shape22);
 
-Transform14->addChildren(*Transform21);
+Transform14->addChild(Transform21);
 
-Group13->addChildren(*Transform14);
+Group13->addChild(Transform14);
 
-CPositionInterpolator* PositionInterpolator27 = (CPositionInterpolator *)(m_pScene.createNode("PositionInterpolator"));
+PositionInterpolator* PositionInterpolator27 = new PositionInterpolator();
 PositionInterpolator27->setDEF("NodePosition");
 PositionInterpolator27->setKey(new float[2]{0,1}, 2);
 PositionInterpolator27->setKeyValue(new float[6]{0,0,0,0,5,0});
-Group13->addChildren(*PositionInterpolator27);
+Group13->addChild(PositionInterpolator27);
 
-CScript* Script28 = (CScript *)(m_pScene.createNode("Script"));
+Script* Script28 = new Script();
 Script28->setDEF("MoveBall");
-Cfield* field29 = new Cfield();
+field* field29 = new field();
 field29->setName("translation");
 field29->setAccessType("inputOutput");
 field29->setType("SFVec3f");
 field29->setValue("50 50 0");
-Script28->addField(*field29);
+Script28->addField(field29);
 
-Cfield* field30 = new Cfield();
+field* field30 = new field();
 field30->setName("old");
 field30->setAccessType("inputOutput");
 field30->setType("SFVec3f");
 field30->setValue("0 0 0");
-Script28->addField(*field30);
+Script28->addField(field30);
 
-Cfield* field31 = new Cfield();
+field* field31 = new field();
 field31->setName("set_cycle");
 field31->setAccessType("inputOnly");
 field31->setType("SFTime");
-Script28->addField(*field31);
+Script28->addField(field31);
 
-Cfield* field32 = new Cfield();
+field* field32 = new field();
 field32->setName("keyValue");
 field32->setAccessType("outputOnly");
 field32->setType("MFVec3f");
-Script28->addField(*field32);
+Script28->addField(field32);
 
 
 Script28.setSourceCode(`ecmascript:\n"+
@@ -187,156 +154,117 @@ Script28.setSourceCode(`ecmascript:\n"+
 "                                                keyValue = new MFVec3f([old, translation]);\n"+
 "						// Browser.println(translation);\n"+
 "					}`)
-Group13->addChildren(*Script28);
+Group13->addChild(Script28);
 
-CTimeSensor* TimeSensor33 = (CTimeSensor *)(m_pScene.createNode("TimeSensor"));
+TimeSensor* TimeSensor33 = new TimeSensor();
 TimeSensor33->setDEF("nodeClock");
 TimeSensor33->setCycleInterval(3);
 TimeSensor33->setLoop(True);
-Group13->addChildren(*TimeSensor33);
+Group13->addChild(TimeSensor33);
 
-CROUTE* ROUTE34 = new CROUTE();
+ROUTE* ROUTE34 = new ROUTE();
 ROUTE34->setFromNode("nodeClock");
 ROUTE34->setFromField("cycleTime");
 ROUTE34->setToNode("MoveBall");
 ROUTE34->setToField("set_cycle");
-Group13->addChildren(*ROUTE34);
+Group13->addChild(ROUTE34);
 
-CROUTE* ROUTE35 = new CROUTE();
+ROUTE* ROUTE35 = new ROUTE();
 ROUTE35->setFromNode("nodeClock");
 ROUTE35->setFromField("fraction_changed");
 ROUTE35->setToNode("NodePosition");
 ROUTE35->setToField("set_fraction");
-Group13->addChildren(*ROUTE35);
+Group13->addChild(ROUTE35);
 
-CROUTE* ROUTE36 = new CROUTE();
+ROUTE* ROUTE36 = new ROUTE();
 ROUTE36->setFromNode("MoveBall");
 ROUTE36->setFromField("keyValue");
 ROUTE36->setToNode("NodePosition");
 ROUTE36->setToField("keyValue");
-Group13->addChildren(*ROUTE36);
+Group13->addChild(ROUTE36);
 
-CROUTE* ROUTE37 = new CROUTE();
+ROUTE* ROUTE37 = new ROUTE();
 ROUTE37->setFromNode("NodePosition");
 ROUTE37->setFromField("value_changed");
 ROUTE37->setToNode("transform");
 ROUTE37->setToField("set_translation");
-Group13->addChildren(*ROUTE37);
+Group13->addChild(ROUTE37);
 
-ProtoBody12->addChildren(*Group13);
+ProtoBody12->addChild(Group13);
 
-ProtoDeclare9->setProtoBody(*ProtoBody12);
+ProtoDeclare9->setProtoBody(ProtoBody12);
 
-group->addChildren(*ProtoDeclare9);
+Scene8->addChild(ProtoDeclare9);
 
-CProtoDeclare ProtoDeclare38 = browser.createX3DFromString(R"foo(<?xml version="1.0" encoding="undefined"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
-<ProtoDeclare name="cyl" ><ProtoInterface><field name="set_positionA" accessType="inputOnly" type="SFVec3f"></field>
-<field name="set_positionB" accessType="inputOnly" type="SFVec3f"></field>
-</ProtoInterface>
-<ProtoBody><Group><Shape><Extrusion DEF="extrusion" creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0" spine="0 -50 0 0 50 0"></Extrusion>
-<Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 1 0"></Material>
-</Appearance>
-</Shape>
-<Script DEF="MoveCylinder"><field name="spine" accessType="inputOutput" type="MFVec3f" value="0 -50 0 0 50 0"></field>
-<field name="set_endA" accessType="inputOnly" type="SFVec3f"></field>
-<field name="set_endB" accessType="inputOnly" type="SFVec3f"></field>
-<IS><connect nodeField="set_endA" protoField="set_positionA"></connect>
-<connect nodeField="set_endB" protoField="set_positionB"></connect>
-</IS>
-<![CDATA[ecmascript:
-
-                function set_endA(value) {
-		    if (typeof spine === 'undefined') {
-		        spine = new MFVec3f([value, value]);
-		    } else {
-		        spine = new MFVec3f([value, spine[1]]);
-		    }
-                }
-
-                function set_endB(value) {
-		    if (typeof spine === 'undefined') {
-		        spine = new MFVec3f([value, value]);
-		    } else {
-		        spine = new MFVec3f([spine[0], value]);
-		    }
-                }
-
-                function set_spine(value) {
-                    spine = value;
-                }]]></Script>
-<ROUTE fromNode="MoveCylinder" fromField="spine" toNode="extrusion" toField="set_spine"></ROUTE>
-</Group>
-</ProtoBody>
-</ProtoDeclare>)foo");
+ProtoDeclare* ProtoDeclare38 = new ProtoDeclare();
 ProtoDeclare38->setName("cyl");
-CProtoInterface* ProtoInterface39 = new CProtoInterface();
-Cfield* field40 = new Cfield();
+ProtoInterface* ProtoInterface39 = new ProtoInterface();
+field* field40 = new field();
 field40->setName("set_positionA");
 field40->setAccessType("inputOnly");
 field40->setType("SFVec3f");
-ProtoInterface39->addField(*field40);
+ProtoInterface39->addField(field40);
 
-Cfield* field41 = new Cfield();
+field* field41 = new field();
 field41->setName("set_positionB");
 field41->setAccessType("inputOnly");
 field41->setType("SFVec3f");
-ProtoInterface39->addField(*field41);
+ProtoInterface39->addField(field41);
 
-ProtoDeclare38->setProtoInterface(*ProtoInterface39);
+ProtoDeclare38->setProtoInterface(ProtoInterface39);
 
-CProtoBody* ProtoBody42 = new CProtoBody();
-CGroup* Group43 = (CGroup *)(m_pScene.createNode("Group"));
-CShape* Shape44 = (CShape *)(m_pScene.createNode("Shape"));
-CExtrusion* Extrusion45 = (CExtrusion *)(m_pScene.createNode("Extrusion"));
+ProtoBody* ProtoBody42 = new ProtoBody();
+Group* Group43 = new Group();
+Shape* Shape44 = new Shape();
+Extrusion* Extrusion45 = new Extrusion();
 Extrusion45->setDEF("extrusion");
 Extrusion45->setCreaseAngle(0.785);
 Extrusion45->setCrossSection(new float[34]{1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0});
 Extrusion45->setSpine(new float[6]{0,-50,0,0,50,0});
 Shape44->setGeometry(Extrusion45);
 
-CAppearance* Appearance46 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material47 = (CMaterial *)(m_pScene.createNode("Material"));
+Appearance* Appearance46 = new Appearance();
+Material* Material47 = new Material();
 Material47->setDiffuseColor(new float[3]{0,1,0});
-Appearance46->setMaterial(*Material47);
+Appearance46->setMaterial(Material47);
 
-Shape44->setAppearance(*Appearance46);
+Shape44->setAppearance(Appearance46);
 
-Group43->addChildren(*Shape44);
+Group43->addChild(Shape44);
 
-CScript* Script48 = (CScript *)(m_pScene.createNode("Script"));
+Script* Script48 = new Script();
 Script48->setDEF("MoveCylinder");
-Cfield* field49 = new Cfield();
+field* field49 = new field();
 field49->setName("spine");
 field49->setAccessType("inputOutput");
 field49->setType("MFVec3f");
 field49->setValue("0 -50 0 0 50 0");
-Script48->addField(*field49);
+Script48->addField(field49);
 
-Cfield* field50 = new Cfield();
+field* field50 = new field();
 field50->setName("set_endA");
 field50->setAccessType("inputOnly");
 field50->setType("SFVec3f");
-Script48->addField(*field50);
+Script48->addField(field50);
 
-Cfield* field51 = new Cfield();
+field* field51 = new field();
 field51->setName("set_endB");
 field51->setAccessType("inputOnly");
 field51->setType("SFVec3f");
-Script48->addField(*field51);
+Script48->addField(field51);
 
-CIS* IS52 = new CIS();
-Cconnect* connect53 = new Cconnect();
+IS* IS52 = new IS();
+Connect* connect53 = new Connect();
 connect53->setNodeField("set_endA");
 connect53->setProtoField("set_positionA");
-IS52->addConnect(*connect53);
+IS52->addConnect(connect53);
 
-Cconnect* connect54 = new Cconnect();
+Connect* connect54 = new Connect();
 connect54->setNodeField("set_endB");
 connect54->setProtoField("set_positionB");
-IS52->addConnect(*connect54);
+IS52->addConnect(connect54);
 
-Script48->setIS(*IS52);
+Script48->setIS(IS52);
 
 
 Script48.setSourceCode(`ecmascript:\n"+
@@ -360,139 +288,139 @@ Script48.setSourceCode(`ecmascript:\n"+
 "                function set_spine(value) {\n"+
 "                    spine = value;\n"+
 "                }`)
-Group43->addChildren(*Script48);
+Group43->addChild(Script48);
 
-CROUTE* ROUTE55 = new CROUTE();
+ROUTE* ROUTE55 = new ROUTE();
 ROUTE55->setFromNode("MoveCylinder");
 ROUTE55->setFromField("spine");
 ROUTE55->setToNode("extrusion");
 ROUTE55->setToField("set_spine");
-Group43->addChildren(*ROUTE55);
+Group43->addChild(ROUTE55);
 
-ProtoBody42->addChildren(*Group43);
+ProtoBody42->addChild(Group43);
 
-ProtoDeclare38->setProtoBody(*ProtoBody42);
+ProtoDeclare38->setProtoBody(ProtoBody42);
 
-group->addChildren(*ProtoDeclare38);
+Scene8->addChild(ProtoDeclare38);
 
-CTransform* Transform56 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform56 = new Transform();
 Transform56->setDEF("HoldsContent");
 Transform56->setScale(new float[3]{0.1,0.1,0.1});
-CPlaneSensor* PlaneSensor57 = (CPlaneSensor *)(m_pScene.createNode("PlaneSensor"));
+PlaneSensor* PlaneSensor57 = new PlaneSensor();
 PlaneSensor57->setDEF("clickGenerator");
 PlaneSensor57->setMinPosition(new float[2]{-50,-50});
 PlaneSensor57->setMaxPosition(new float[2]{50,50});
 PlaneSensor57->setDescription("click on background to add nodes, click on nodes to add links");
-Transform56->addChildren(*PlaneSensor57);
+Transform56->addChild(PlaneSensor57);
 
-CProtoInstance* ProtoInstance58 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
+ProtoInstance* ProtoInstance58 = new ProtoInstance();
 ProtoInstance58->setName("node");
 ProtoInstance58->setDEF("nodeA");
-CfieldValue* fieldValue59 = new CfieldValue();
+fieldValue* fieldValue59 = new fieldValue();
 fieldValue59->setName("position");
 fieldValue59->setValue("0 0 0");
-ProtoInstance58->addFieldValue(*fieldValue59);
+ProtoInstance58->addFieldValue(fieldValue59);
 
-Transform56->addChildren(*ProtoInstance58);
+Transform56->addChild(ProtoInstance58);
 
-CProtoInstance* ProtoInstance60 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
+ProtoInstance* ProtoInstance60 = new ProtoInstance();
 ProtoInstance60->setName("node");
 ProtoInstance60->setDEF("nodeB");
-CfieldValue* fieldValue61 = new CfieldValue();
+fieldValue* fieldValue61 = new fieldValue();
 fieldValue61->setName("position");
 fieldValue61->setValue("50 50 50");
-ProtoInstance60->addFieldValue(*fieldValue61);
+ProtoInstance60->addFieldValue(fieldValue61);
 
-Transform56->addChildren(*ProtoInstance60);
+Transform56->addChild(ProtoInstance60);
 
-CProtoInstance* ProtoInstance62 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
+ProtoInstance* ProtoInstance62 = new ProtoInstance();
 ProtoInstance62->setName("node");
 ProtoInstance62->setDEF("nodeC");
-CfieldValue* fieldValue63 = new CfieldValue();
+fieldValue* fieldValue63 = new fieldValue();
 fieldValue63->setName("position");
 fieldValue63->setValue("-50 -50 -50");
-ProtoInstance62->addFieldValue(*fieldValue63);
+ProtoInstance62->addFieldValue(fieldValue63);
 
-Transform56->addChildren(*ProtoInstance62);
+Transform56->addChild(ProtoInstance62);
 
-CProtoInstance* ProtoInstance64 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
+ProtoInstance* ProtoInstance64 = new ProtoInstance();
 ProtoInstance64->setName("node");
 ProtoInstance64->setDEF("nodeD");
-CfieldValue* fieldValue65 = new CfieldValue();
+fieldValue* fieldValue65 = new fieldValue();
 fieldValue65->setName("position");
 fieldValue65->setValue("50 50 -50");
-ProtoInstance64->addFieldValue(*fieldValue65);
+ProtoInstance64->addFieldValue(fieldValue65);
 
-Transform56->addChildren(*ProtoInstance64);
+Transform56->addChild(ProtoInstance64);
 
-CProtoInstance* ProtoInstance66 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
+ProtoInstance* ProtoInstance66 = new ProtoInstance();
 ProtoInstance66->setName("cyl");
 ProtoInstance66->setDEF("linkA");
-CfieldValue* fieldValue67 = new CfieldValue();
+fieldValue* fieldValue67 = new fieldValue();
 fieldValue67->setName("set_positionA");
 fieldValue67->setValue("0 0 0");
-ProtoInstance66->addFieldValue(*fieldValue67);
+ProtoInstance66->addFieldValue(fieldValue67);
 
-CfieldValue* fieldValue68 = new CfieldValue();
+fieldValue* fieldValue68 = new fieldValue();
 fieldValue68->setName("set_positionB");
 fieldValue68->setValue("50 50 50");
-ProtoInstance66->addFieldValue(*fieldValue68);
+ProtoInstance66->addFieldValue(fieldValue68);
 
-Transform56->addChildren(*ProtoInstance66);
+Transform56->addChild(ProtoInstance66);
 
-CProtoInstance* ProtoInstance69 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
+ProtoInstance* ProtoInstance69 = new ProtoInstance();
 ProtoInstance69->setName("cyl");
 ProtoInstance69->setDEF("linkB");
-CfieldValue* fieldValue70 = new CfieldValue();
+fieldValue* fieldValue70 = new fieldValue();
 fieldValue70->setName("set_positionA");
 fieldValue70->setValue("0 0 0");
-ProtoInstance69->addFieldValue(*fieldValue70);
+ProtoInstance69->addFieldValue(fieldValue70);
 
-CfieldValue* fieldValue71 = new CfieldValue();
+fieldValue* fieldValue71 = new fieldValue();
 fieldValue71->setName("set_positionB");
 fieldValue71->setValue("-50 -50 -50");
-ProtoInstance69->addFieldValue(*fieldValue71);
+ProtoInstance69->addFieldValue(fieldValue71);
 
-Transform56->addChildren(*ProtoInstance69);
+Transform56->addChild(ProtoInstance69);
 
-CProtoInstance* ProtoInstance72 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
+ProtoInstance* ProtoInstance72 = new ProtoInstance();
 ProtoInstance72->setName("cyl");
 ProtoInstance72->setDEF("linkC");
-CfieldValue* fieldValue73 = new CfieldValue();
+fieldValue* fieldValue73 = new fieldValue();
 fieldValue73->setName("set_positionA");
 fieldValue73->setValue("50 50 50");
-ProtoInstance72->addFieldValue(*fieldValue73);
+ProtoInstance72->addFieldValue(fieldValue73);
 
-CfieldValue* fieldValue74 = new CfieldValue();
+fieldValue* fieldValue74 = new fieldValue();
 fieldValue74->setName("set_positionB");
 fieldValue74->setValue("50 50 -50");
-ProtoInstance72->addFieldValue(*fieldValue74);
+ProtoInstance72->addFieldValue(fieldValue74);
 
-Transform56->addChildren(*ProtoInstance72);
+Transform56->addChild(ProtoInstance72);
 
-group->addChildren(*Transform56);
+Scene8->addChild(Transform56);
 
-CScript* Script75 = (CScript *)(m_pScene.createNode("Script"));
+Script* Script75 = new Script();
 Script75->setDEF("clickHandler");
-Cfield* field76 = new Cfield();
+field* field76 = new field();
 field76->setName("counter");
 field76->setAccessType("inputOutput");
 field76->setValue("0");
 field76->setType("SFInt32");
-Script75->addField(*field76);
+Script75->addField(field76);
 
-Cfield* field77 = new Cfield();
+field* field77 = new field();
 field77->setName("node_changed");
 field77->setAccessType("outputOnly");
 field77->setType("SFNode");
-Script75->addField(*field77);
+Script75->addField(field77);
 
-Cfield* field78 = new Cfield();
+field* field78 = new field();
 field78->setName("add_node");
 field78->setAccessType("inputOnly");
 field78->setValue("false");
 field78->setType("SFBool");
-Script75->addField(*field78);
+Script75->addField(field78);
 
 //<field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\"> <Transform USE=\"HoldsContent\"/> </field>
 
@@ -514,59 +442,58 @@ Script75.setSourceCode(`ecmascript:\n"+
 "			});\n"+
 "\n"+
 "        }`)
-group->addChildren(*Script75);
+Scene8->addChild(Script75);
 
-CROUTE* ROUTE79 = new CROUTE();
+ROUTE* ROUTE79 = new ROUTE();
 ROUTE79->setFromNode("clickGenerator");
 ROUTE79->setFromField("isActive");
 ROUTE79->setToNode("clickHandler");
 ROUTE79->setToField("add_node");
-group->addChildren(*ROUTE79);
+Scene8->addChild(ROUTE79);
 
-CROUTE* ROUTE80 = new CROUTE();
+ROUTE* ROUTE80 = new ROUTE();
 ROUTE80->setFromNode("nodeA");
 ROUTE80->setFromField("position");
 ROUTE80->setToNode("linkA");
 ROUTE80->setToField("set_positionA");
-group->addChildren(*ROUTE80);
+Scene8->addChild(ROUTE80);
 
-CROUTE* ROUTE81 = new CROUTE();
+ROUTE* ROUTE81 = new ROUTE();
 ROUTE81->setFromNode("nodeB");
 ROUTE81->setFromField("position");
 ROUTE81->setToNode("linkA");
 ROUTE81->setToField("set_positionB");
-group->addChildren(*ROUTE81);
+Scene8->addChild(ROUTE81);
 
-CROUTE* ROUTE82 = new CROUTE();
+ROUTE* ROUTE82 = new ROUTE();
 ROUTE82->setFromNode("nodeA");
 ROUTE82->setFromField("position");
 ROUTE82->setToNode("linkB");
 ROUTE82->setToField("set_positionA");
-group->addChildren(*ROUTE82);
+Scene8->addChild(ROUTE82);
 
-CROUTE* ROUTE83 = new CROUTE();
+ROUTE* ROUTE83 = new ROUTE();
 ROUTE83->setFromNode("nodeC");
 ROUTE83->setFromField("position");
 ROUTE83->setToNode("linkB");
 ROUTE83->setToField("set_positionB");
-group->addChildren(*ROUTE83);
+Scene8->addChild(ROUTE83);
 
-CROUTE* ROUTE84 = new CROUTE();
+ROUTE* ROUTE84 = new ROUTE();
 ROUTE84->setFromNode("nodeA");
 ROUTE84->setFromField("position");
 ROUTE84->setToNode("linkC");
 ROUTE84->setToField("set_positionA");
-group->addChildren(*ROUTE84);
+Scene8->addChild(ROUTE84);
 
-CROUTE* ROUTE85 = new CROUTE();
+ROUTE* ROUTE85 = new ROUTE();
 ROUTE85->setFromNode("nodeD");
 ROUTE85->setFromField("position");
 ROUTE85->setToNode("linkC");
 ROUTE85->setToField("set_positionB");
-group->addChildren(*ROUTE85);
+Scene8->addChild(ROUTE85);
 
-X3D0->setScene(*Scene8);
+X3D0->setScene(Scene8);
 
-m_pScene.addRootNode(group);
 X3D0->toXMLString();
 }
