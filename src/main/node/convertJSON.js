@@ -46,7 +46,7 @@ function convertJSON(options) {
 		}
 		var basefile = file.substr(0, file.lastIndexOf("."));
 		var file = basefile+".json";
-		console.error("Reading", file, domImpl);
+		// console.error("Reading", file, domImpl);
 		var str = fs.readFileSync(file).toString();
 		if (typeof str === 'undefined') {
 			throw("Read nothing, or possbile error");
@@ -61,7 +61,7 @@ function convertJSON(options) {
 			continue;
 		}
 		var NS = "https://www.web3d.org/specifications/x3d";
-		console.error("loading", file);
+		// console.error("loading", file);
 		loadX3DJS(domImpl, json, file, NS, function(element, xml) {
 			if (typeof element === undefined) {
 				throw ("Undefined element returned from loadX3DJS()")
@@ -82,7 +82,7 @@ function convertJSON(options) {
 			basefile = basefile.replace(/-| /g, "_")
 			// handle filenames with leading zeros and java keywords
 			basefile = basefile.replace(/^(.*[\\\/])([0-9].*|default|switch|for)$/, "$1_$2")
-			console.error(basefile);
+			// console.error(basefile);
 
 			for (var ser in options) {
 				var serializer = require(options[ser].serializer);
