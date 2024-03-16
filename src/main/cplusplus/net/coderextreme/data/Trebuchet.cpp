@@ -1,125 +1,126 @@
-/* delete next 5 lines for Visual Studio */
+#ifdef WIN32
 #define FALSE false
 #define TRUE true
 #define WINAPI
 #define AFX_EXT_CLASS
 #define EXPORT32
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/CylinderExample/pch.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/CylinderExample/framework.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/XML_PARSER.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/X3DLib.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/Abstracts.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/Concretes.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/glMath.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/glut.h"
+#endif
+#define False false
+#define True true
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/SphereExample/SphereExample/pch.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/SphereExample/SphereExample/framework.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/SphereExample/include/XML_PARSER.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/SphereExample/include/X3DLib.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/SphereExample/include/glMath.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/SphereExample/include/glut.h"
 int main(int argc, char ** argv) {
 X3D* X3D0 = new X3D();
-X3D0->setProfile("Immersive");
-X3D0->setVersion("3.0");
+X3D0->setProfile(CString("Immersive"));
+X3D0->setVersion(CString("3.0"));
 head* head1 = new head();
 meta* meta2 = new meta();
-meta2->setName("title");
-meta2->setContent("Trebuchet.x3d");
+meta2->setName(CString("title"));
+meta2->setContent(CString("Trebuchet.x3d"));
 head1->addMeta(meta2);
 
 meta* meta3 = new meta();
-meta3->setName("description");
-meta3->setContent("Working model of a 14th century Trebuchet Catapult.");
+meta3->setName(CString("description"));
+meta3->setContent(CString("Working model of a 14th century Trebuchet Catapult."));
 head1->addMeta(meta3);
 
 meta* meta4 = new meta();
-meta4->setName("creator");
-meta4->setContent("LT Joe Roth");
+meta4->setName(CString("creator"));
+meta4->setContent(CString("LT Joe Roth"));
 head1->addMeta(meta4);
 
 meta* meta5 = new meta();
-meta5->setName("created");
-meta5->setContent("20 June 2001");
+meta5->setName(CString("created"));
+meta5->setContent(CString("20 June 2001"));
 head1->addMeta(meta5);
 
 meta* meta6 = new meta();
-meta6->setName("modified");
-meta6->setContent("20 October 2019");
+meta6->setName(CString("modified"));
+meta6->setContent(CString("20 October 2019"));
 head1->addMeta(meta6);
 
 meta* meta7 = new meta();
-meta7->setName("version");
-meta7->setContent("7.8");
+meta7->setName(CString("version"));
+meta7->setContent(CString("7.8"));
 head1->addMeta(meta7);
 
 meta* meta8 = new meta();
-meta8->setName("identifier");
-meta8->setContent("https://www.web3d.org/x3d/content/examples/Basic/StudentProjects/Trebuchet.x3d");
+meta8->setName(CString("identifier"));
+meta8->setContent(CString("https://www.web3d.org/x3d/content/examples/Basic/StudentProjects/Trebuchet.x3d"));
 head1->addMeta(meta8);
 
 meta* meta9 = new meta();
-meta9->setName("reference");
-meta9->setContent("http://trebuchet.com");
+meta9->setName(CString("reference"));
+meta9->setContent(CString("http://trebuchet.com"));
 head1->addMeta(meta9);
 
 meta* meta10 = new meta();
-meta10->setName("reference");
-meta10->setContent("http://members.home.net/dimona");
+meta10->setName(CString("reference"));
+meta10->setContent(CString("http://members.home.net/dimona"));
 head1->addMeta(meta10);
 
 meta* meta11 = new meta();
-meta11->setName("subject");
-meta11->setContent("trebuchet catapult Monty Python");
+meta11->setName(CString("subject"));
+meta11->setContent(CString("trebuchet catapult Monty Python"));
 head1->addMeta(meta11);
 
 meta* meta12 = new meta();
-meta12->setName("reference");
-meta12->setContent("Permission granted for use of the VRML chicken I own a copy of Monty Python and the Holy Grail I have requested permission to use for non profit use. No response received. I will use the sound clips under \"Fair Use\" clause of the DMCA");
+meta12->setName(CString("reference"));
+meta12->setContent(CString("Permission granted for use of the VRML chicken I own a copy of Monty Python and the Holy Grail I have requested permission to use for non profit use. No response received. I will use the sound clips under \"Fair Use\" clause of the DMCA"));
 head1->addMeta(meta12);
 
 meta* meta13 = new meta();
-meta13->setName("reference");
-meta13->setContent("https://www.web3d.org/WorkingGroups/media/textures/nature/leaves_5.jpg.htm");
+meta13->setName(CString("reference"));
+meta13->setContent(CString("https://www.web3d.org/WorkingGroups/media/textures/nature/leaves_5.jpg.htm"));
 head1->addMeta(meta13);
 
 meta* meta14 = new meta();
-meta14->setName("reference");
-meta14->setContent("http://www.revemonde.net/UniversalMedia/textures/nature/leaves_5.jpg.htm");
+meta14->setName(CString("reference"));
+meta14->setContent(CString("http://www.revemonde.net/UniversalMedia/textures/nature/leaves_5.jpg.htm"));
 head1->addMeta(meta14);
 
 meta* meta15 = new meta();
-meta15->setName("generator");
-meta15->setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit");
+meta15->setName(CString("generator"));
+meta15->setContent(CString("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"));
 head1->addMeta(meta15);
 
 meta* meta16 = new meta();
-meta16->setName("license");
-meta16->setContent("../license.html");
+meta16->setName(CString("license"));
+meta16->setContent(CString("../license.html"));
 head1->addMeta(meta16);
 
 X3D0->setHead(head1);
 
 Scene* Scene17 = new Scene();
 WorldInfo* WorldInfo18 = new WorldInfo();
-WorldInfo18->setTitle("Trebuchet.x3d");
+WorldInfo18->setTitle(CString("Trebuchet.x3d"));
 Scene17->addChild(WorldInfo18);
 
 Background* Background19 = new Background();
-Background19->setBackUrl(new String[1]{"https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_back.jpg"}, 1);
-Background19->setBottomUrl(new String[1]{"https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_bottom.jpg"}, 1);
-Background19->setFrontUrl(new String[1]{"https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_front.jpg"}, 1);
+Background19->setBackUrl(new CString[1]{CString("https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_back.jpg")}, 1);
+Background19->setBottomUrl(new CString[1]{CString("https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_bottom.jpg")}, 1);
+Background19->setFrontUrl(new CString[1]{CString("https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_front.jpg")}, 1);
 Background19->setGroundAngle(new float[2]{1.309,1.570796}, 2);
-Background19->setGroundColor(new float[9]{0.1,0.1,0,0.4,0.25,0.2,0.6,0.6,0.6});
-Background19->setLeftUrl(new String[1]{"https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_left.jpg"}, 1);
-Background19->setRightUrl(new String[1]{"https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_right.jpg"}, 1);
+Background19->setGroundColor(new float[9]{0.1,0.1,0,0.4,0.25,0.2,0.6,0.6,0.6}, 9);
+Background19->setLeftUrl(new CString[1]{CString("https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_left.jpg")}, 1);
+Background19->setRightUrl(new CString[1]{CString("https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_right.jpg")}, 1);
 Background19->setSkyAngle(new float[2]{1.309,1.57079}, 2);
-Background19->setSkyColor(new float[9]{0,0.2,0.7,0,0.5,1,1,1,1});
-Background19->setTopUrl(new String[1]{"https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_top.jpg"}, 1);
+Background19->setSkyColor(new float[9]{0,0.2,0.7,0,0.5,1,1,1,1}, 9);
+Background19->setTopUrl(new CString[1]{CString("https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_top.jpg")}, 1);
 Scene17->addChild(Background19);
 
 Sound* Sound20 = new Sound();
 Sound20->setMaxBack(1000);
 Sound20->setMaxFront(1000);
 AudioClip* AudioClip21 = new AudioClip();
-AudioClip21->setDEF("HolyGrail");
-AudioClip21->setDescription("HolyGrail");
+AudioClip21->setDEF(CString("HolyGrail"));
+AudioClip21->setDescription(CString("HolyGrail"));
 AudioClip21->setLoop(True);
-AudioClip21->setUrl(new String[2]{"holygral.mp3","http://www.nps.navy.mil/code32/vrml/holygral.mp3"}, 2);
+AudioClip21->setUrl(new CString[2]{CString("holygral.mp3"), CString("http://www.nps.navy.mil/code32/vrml/holygral.mp3")}, 2);
 Sound20->setSource(AudioClip21);
 
 Scene17->addChild(Sound20);
@@ -131,10 +132,10 @@ Shape22->setGeometry(Box23);
 
 Appearance* Appearance24 = new Appearance();
 ImageTexture* ImageTexture25 = new ImageTexture();
-ImageTexture25->setUrl(new String[2]{"grass.jpg","https://www.web3d.org/x3d/content/examples/Basic/StudentProjects/grass.jpg"}, 2);
-Appearance24->setTexture(ImageTexture25);
+ImageTexture25->setUrl(new CString[2]{CString("grass.jpg"), CString("https://www.web3d.org/x3d/content/examples/Basic/StudentProjects/grass.jpg")}, 2);
+Appearance24->addChild(ImageTexture25);
 
-Shape22->setAppearance(Appearance24);
+Shape22->addChild(Appearance24);
 
 Scene17->addChild(Shape22);
 
@@ -144,17 +145,17 @@ Transform26->setScale(new float[3]{0.5,0.5,0.5});
 Transform26->setTranslation(new float[3]{10.5,6.5,4.5});
 Shape* Shape27 = new Shape();
 Appearance* Appearance28 = new Appearance();
-Appearance28->setDEF("TextAppearance");
+Appearance28->setDEF(CString("TextAppearance"));
 Material* Material29 = new Material();
 Material29->setDiffuseColor(new float[3]{1,0,0});
 Material29->setEmissiveColor(new float[3]{1,1,0});
-Appearance28->setMaterial(Material29);
+Appearance28->addChild(Material29);
 
-Shape27->setAppearance(Appearance28);
+Shape27->addChild(Appearance28);
 
 Text* Text30 = new Text();
-Text30->setString(new String[1]{"Click Sling to Select Projectile"}, 1);
-FontStyle* FontStyle31 = new FontStyle();
+Text30->setString(new CString[1]{CString("Click Sling to Select Projectile")}, 1);
+CFontStyle* FontStyle31 = new CFontStyle();
 Text30->setFontStyle(FontStyle31);
 
 Shape27->setGeometry(Text30);
@@ -168,16 +169,16 @@ Transform32->setRotation(new float[4]{0,1,0,1.57});
 Transform32->setScale(new float[3]{0.5,0.5,0.5});
 Transform32->setTranslation(new float[3]{11,5.5,6});
 Switch* Switch33 = new Switch();
-Switch33->setDEF("Weight");
+Switch33->setDEF(CString("Weight"));
 Switch33->setWhichChoice(0);
 Group* Group34 = new Group();
 Shape* Shape35 = new Shape();
 Appearance* Appearance36 = new Appearance();
-Appearance36->setUSE("TextAppearance");
-Shape35->setAppearance(Appearance36);
+Appearance36->setUSE(CString("TextAppearance"));
+Shape35->addChild(Appearance36);
 
 Text* Text37 = new Text();
-Text37->setString(new String[1]{"Click Here to Change Counter Weight (50 lbs)"}, 1);
+Text37->setString(new CString[1]{CString("Click Here to Change Counter Weight (50 lbs)")}, 1);
 Shape35->setGeometry(Text37);
 
 Group34->addChild(Shape35);
@@ -187,11 +188,11 @@ Switch33->addChild(Group34);
 Group* Group38 = new Group();
 Shape* Shape39 = new Shape();
 Appearance* Appearance40 = new Appearance();
-Appearance40->setUSE("TextAppearance");
-Shape39->setAppearance(Appearance40);
+Appearance40->setUSE(CString("TextAppearance"));
+Shape39->addChild(Appearance40);
 
 Text* Text41 = new Text();
-Text41->setString(new String[1]{"Click Here to Change Counter Weight (500 lbs)"}, 1);
+Text41->setString(new CString[1]{CString("Click Here to Change Counter Weight (500 lbs)")}, 1);
 Shape39->setGeometry(Text41);
 
 Group38->addChild(Shape39);
@@ -201,11 +202,11 @@ Switch33->addChild(Group38);
 Group* Group42 = new Group();
 Shape* Shape43 = new Shape();
 Appearance* Appearance44 = new Appearance();
-Appearance44->setUSE("TextAppearance");
-Shape43->setAppearance(Appearance44);
+Appearance44->setUSE(CString("TextAppearance"));
+Shape43->addChild(Appearance44);
 
 Text* Text45 = new Text();
-Text45->setString(new String[1]{"Click Here to Change Counter Weight (1000 lbs)"}, 1);
+Text45->setString(new CString[1]{CString("Click Here to Change Counter Weight (1000 lbs)")}, 1);
 Shape43->setGeometry(Text45);
 
 Group42->addChild(Shape43);
@@ -215,11 +216,11 @@ Switch33->addChild(Group42);
 Group* Group46 = new Group();
 Shape* Shape47 = new Shape();
 Appearance* Appearance48 = new Appearance();
-Appearance48->setUSE("TextAppearance");
-Shape47->setAppearance(Appearance48);
+Appearance48->setUSE(CString("TextAppearance"));
+Shape47->addChild(Appearance48);
 
 Text* Text49 = new Text();
-Text49->setString(new String[1]{"Click Here to Change Counter Weight (10000 lbs)"}, 1);
+Text49->setString(new CString[1]{CString("Click Here to Change Counter Weight (10000 lbs)")}, 1);
 Shape47->setGeometry(Text49);
 
 Group46->addChild(Shape47);
@@ -229,8 +230,8 @@ Switch33->addChild(Group46);
 Transform32->addChild(Switch33);
 
 TouchSensor* TouchSensor50 = new TouchSensor();
-TouchSensor50->setDEF("weightselector");
-TouchSensor50->setDescription("weight selector");
+TouchSensor50->setDEF(CString("weightselector"));
+TouchSensor50->setDescription(CString("weight selector"));
 Transform32->addChild(TouchSensor50);
 
 Transform* Transform51 = new Transform();
@@ -243,9 +244,9 @@ Shape52->setGeometry(Box53);
 Appearance* Appearance54 = new Appearance();
 Material* Material55 = new Material();
 Material55->setTransparency(1);
-Appearance54->setMaterial(Material55);
+Appearance54->addChild(Material55);
 
-Shape52->setAppearance(Appearance54);
+Shape52->addChild(Appearance54);
 
 Transform51->addChild(Shape52);
 
@@ -257,20 +258,20 @@ Transform* Transform56 = new Transform();
 Transform56->setRotation(new float[4]{0,1,0,1.57});
 Transform56->setTranslation(new float[3]{10,0.5,4.5});
 Transform* Transform57 = new Transform();
-Transform57->setDEF("launch");
+Transform57->setDEF(CString("launch"));
 Transform57->setTranslation(new float[3]{0,2,5});
 Billboard* Billboard58 = new Billboard();
 Shape* Shape59 = new Shape();
 Appearance* Appearance60 = new Appearance();
 Material* Material61 = new Material();
 Material61->setDiffuseColor(new float[3]{1,0,0});
-Appearance60->setMaterial(Material61);
+Appearance60->addChild(Material61);
 
-Shape59->setAppearance(Appearance60);
+Shape59->addChild(Appearance60);
 
 Text* Text62 = new Text();
-Text62->setString(new String[1]{"LAUNCH"}, 1);
-FontStyle* FontStyle63 = new FontStyle();
+Text62->setString(new CString[1]{CString("LAUNCH")}, 1);
+CFontStyle* FontStyle63 = new CFontStyle();
 Text62->setFontStyle(FontStyle63);
 
 Shape59->setGeometry(Text62);
@@ -287,25 +288,25 @@ Shape65->setGeometry(Box66);
 Appearance* Appearance67 = new Appearance();
 Material* Material68 = new Material();
 Material68->setTransparency(1);
-Appearance67->setMaterial(Material68);
+Appearance67->addChild(Material68);
 
-Shape65->setAppearance(Appearance67);
+Shape65->addChild(Appearance67);
 
 Transform64->addChild(Shape65);
 
 Billboard58->addChild(Transform64);
 
 Switch* Switch69 = new Switch();
-Switch69->setDEF("PigdogMonk");
+Switch69->setDEF(CString("PigdogMonk"));
 Switch69->setWhichChoice(-1);
 Group* Group70 = new Group();
 Sound* Sound71 = new Sound();
 Sound71->setMaxBack(1000);
 Sound71->setMaxFront(1000);
 AudioClip* AudioClip72 = new AudioClip();
-AudioClip72->setDEF("PigDogSound");
-AudioClip72->setDescription("PigDogSound");
-AudioClip72->setUrl(new String[2]{"pigdog.wav","http://www.nps.navy.mil/code32/vrml/pigdog.wav"}, 2);
+AudioClip72->setDEF(CString("PigDogSound"));
+AudioClip72->setDescription(CString("PigDogSound"));
+AudioClip72->setUrl(new CString[2]{CString("pigdog.wav"), CString("http://www.nps.navy.mil/code32/vrml/pigdog.wav")}, 2);
 Sound71->setSource(AudioClip72);
 
 Group70->addChild(Sound71);
@@ -317,9 +318,9 @@ Sound* Sound74 = new Sound();
 Sound74->setMaxBack(1000);
 Sound74->setMaxFront(1000);
 AudioClip* AudioClip75 = new AudioClip();
-AudioClip75->setDEF("MonkSound");
-AudioClip75->setDescription("MonkSound");
-AudioClip75->setUrl(new String[2]{"monks.wav","http://www.nps.navy.mil/code32/vrml/monks.wav"}, 2);
+AudioClip75->setDEF(CString("MonkSound"));
+AudioClip75->setDescription(CString("MonkSound"));
+AudioClip75->setUrl(new CString[2]{CString("monks.wav"), CString("http://www.nps.navy.mil/code32/vrml/monks.wav")}, 2);
 Sound74->setSource(AudioClip75);
 
 Group73->addChild(Sound74);
@@ -331,25 +332,25 @@ Billboard58->addChild(Switch69);
 Transform57->addChild(Billboard58);
 
 TouchSensor* TouchSensor76 = new TouchSensor();
-TouchSensor76->setDEF("Launch");
-TouchSensor76->setDescription("launch!");
+TouchSensor76->setDEF(CString("Launch"));
+TouchSensor76->setDescription(CString("launch!"));
 Transform57->addChild(TouchSensor76);
 
 Transform56->addChild(Transform57);
 
 Transform* Transform77 = new Transform();
 Switch* Switch78 = new Switch();
-Switch78->setDEF("projectilename");
+Switch78->setDEF(CString("projectilename"));
 Switch78->setWhichChoice(0);
 Group* Group79 = new Group();
 Shape* Shape80 = new Shape();
 Appearance* Appearance81 = new Appearance();
-Appearance81->setUSE("TextAppearance");
-Shape80->setAppearance(Appearance81);
+Appearance81->setUSE(CString("TextAppearance"));
+Shape80->addChild(Appearance81);
 
 Text* Text82 = new Text();
-Text82->setString(new String[1]{"Bowling Ball (10 lbs)"}, 1);
-FontStyle* FontStyle83 = new FontStyle();
+Text82->setString(new CString[1]{CString("Bowling Ball (10 lbs)")}, 1);
+CFontStyle* FontStyle83 = new CFontStyle();
 FontStyle83->setSize(0.5);
 Text82->setFontStyle(FontStyle83);
 
@@ -362,9 +363,9 @@ Sound84->setMaxBack(1000);
 Sound84->setMaxFront(1000);
 Sound84->setPriority(1);
 AudioClip* AudioClip85 = new AudioClip();
-AudioClip85->setDEF("HolyHandGrenadeSound");
-AudioClip85->setDescription("HolyHandGrenadeSound");
-AudioClip85->setUrl(new String[2]{"grenade.wav","http://www.nps.navy.mil/code32/vrml/grenade.wav"}, 2);
+AudioClip85->setDEF(CString("HolyHandGrenadeSound"));
+AudioClip85->setDescription(CString("HolyHandGrenadeSound"));
+AudioClip85->setUrl(new CString[2]{CString("grenade.wav"), CString("http://www.nps.navy.mil/code32/vrml/grenade.wav")}, 2);
 Sound84->setSource(AudioClip85);
 
 Group79->addChild(Sound84);
@@ -374,12 +375,12 @@ Switch78->addChild(Group79);
 Group* Group86 = new Group();
 Shape* Shape87 = new Shape();
 Appearance* Appearance88 = new Appearance();
-Appearance88->setUSE("TextAppearance");
-Shape87->setAppearance(Appearance88);
+Appearance88->setUSE(CString("TextAppearance"));
+Shape87->addChild(Appearance88);
 
 Text* Text89 = new Text();
-Text89->setString(new String[1]{"Cow (1000 lbs)"}, 1);
-FontStyle* FontStyle90 = new FontStyle();
+Text89->setString(new CString[1]{CString("Cow (1000 lbs)")}, 1);
+CFontStyle* FontStyle90 = new CFontStyle();
 FontStyle90->setSize(0.5);
 Text89->setFontStyle(FontStyle90);
 
@@ -391,9 +392,9 @@ Sound* Sound91 = new Sound();
 Sound91->setMaxBack(1000);
 Sound91->setMaxFront(1000);
 AudioClip* AudioClip92 = new AudioClip();
-AudioClip92->setDEF("CowSound");
-AudioClip92->setDescription("CowSound");
-AudioClip92->setUrl(new String[2]{"lavache.wav","http://www.nps.navy.mil/code32/vrml/lavache.wav"}, 2);
+AudioClip92->setDEF(CString("CowSound"));
+AudioClip92->setDescription(CString("CowSound"));
+AudioClip92->setUrl(new CString[2]{CString("lavache.wav"), CString("http://www.nps.navy.mil/code32/vrml/lavache.wav")}, 2);
 Sound91->setSource(AudioClip92);
 
 Group86->addChild(Sound91);
@@ -403,12 +404,12 @@ Switch78->addChild(Group86);
 Group* Group93 = new Group();
 Shape* Shape94 = new Shape();
 Appearance* Appearance95 = new Appearance();
-Appearance95->setUSE("TextAppearance");
-Shape94->setAppearance(Appearance95);
+Appearance95->setUSE(CString("TextAppearance"));
+Shape94->addChild(Appearance95);
 
 Text* Text96 = new Text();
-Text96->setString(new String[1]{"Chicken (5 lbs)"}, 1);
-FontStyle* FontStyle97 = new FontStyle();
+Text96->setString(new CString[1]{CString("Chicken (5 lbs)")}, 1);
+CFontStyle* FontStyle97 = new CFontStyle();
 FontStyle97->setSize(0.5);
 Text96->setFontStyle(FontStyle97);
 
@@ -421,9 +422,9 @@ Sound98->setMaxBack(1000);
 Sound98->setMaxFront(1000);
 Sound98->setPriority(1);
 AudioClip* AudioClip99 = new AudioClip();
-AudioClip99->setDEF("HamsterSound");
-AudioClip99->setDescription("HamsterSound");
-AudioClip99->setUrl(new String[2]{"hamster.wav","http://www.nps.navy.mil/code32/vrml/hamster.wav"}, 2);
+AudioClip99->setDEF(CString("HamsterSound"));
+AudioClip99->setDescription(CString("HamsterSound"));
+AudioClip99->setUrl(new CString[2]{CString("hamster.wav"), CString("http://www.nps.navy.mil/code32/vrml/hamster.wav")}, 2);
 Sound98->setSource(AudioClip99);
 
 Group93->addChild(Sound98);
@@ -439,12 +440,12 @@ Scene17->addChild(Transform56);
 Transform* Transform100 = new Transform();
 Transform100->setRotation(new float[4]{0,1,0,-1.67});
 Transform* Transform101 = new Transform();
-Transform101->setDEF("aft");
+Transform101->setDEF(CString("aft"));
 Transform101->setTranslation(new float[3]{5,5,15});
 Transform* Transform102 = new Transform();
 Transform102->setTranslation(new float[3]{-2.5,-4.5,-2});
 Transform* Transform103 = new Transform();
-Transform103->setUSE("launch");
+Transform103->setUSE(CString("launch"));
 Transform102->addChild(Transform103);
 
 Transform101->addChild(Transform102);
@@ -456,60 +457,60 @@ Scene17->addChild(Transform100);
 Transform* Transform104 = new Transform();
 Transform104->setTranslation(new float[3]{0,3,0});
 Shape* Shape105 = new Shape();
-Shape105->setDEF("plank");
+Shape105->setDEF(CString("plank"));
 Box* Box106 = new Box();
 Box106->setSize(new float[3]{25,1,1});
 Shape105->setGeometry(Box106);
 
 Appearance* Appearance107 = new Appearance();
-Appearance107->setDEF("wood");
+Appearance107->setDEF(CString("wood"));
 ImageTexture* ImageTexture108 = new ImageTexture();
-ImageTexture108->setDEF("woodTexture");
-ImageTexture108->setUrl(new String[2]{"wood.gif","https://www.web3d.org/x3d/content/examples/Basic/StudentProjects/wood.gif"}, 2);
-Appearance107->setTexture(ImageTexture108);
+ImageTexture108->setDEF(CString("woodTexture"));
+ImageTexture108->setUrl(new CString[2]{CString("wood.gif"), CString("https://www.web3d.org/x3d/content/examples/Basic/StudentProjects/wood.gif")}, 2);
+Appearance107->addChild(ImageTexture108);
 
-Shape105->setAppearance(Appearance107);
+Shape105->addChild(Appearance107);
 
 Transform104->addChild(Shape105);
 
 Transform* Transform109 = new Transform();
-Transform109->setDEF("angledsupport");
+Transform109->setDEF(CString("angledsupport"));
 Transform109->setRotation(new float[4]{0,0,1,1});
 Transform109->setTranslation(new float[3]{-5,10,0});
 Shape* Shape110 = new Shape();
-Shape110->setUSE("plank");
+Shape110->setUSE(CString("plank"));
 Transform109->addChild(Shape110);
 
 Transform104->addChild(Transform109);
 
 Transform* Transform111 = new Transform();
-Transform111->setDEF("angledsupport2");
+Transform111->setDEF(CString("angledsupport2"));
 Transform111->setRotation(new float[4]{0,0,1,-1});
 Transform111->setTranslation(new float[3]{5,10,0});
 Shape* Shape112 = new Shape();
-Shape112->setUSE("plank");
+Shape112->setUSE(CString("plank"));
 Transform111->addChild(Shape112);
 
 Transform104->addChild(Transform111);
 
 Transform* Transform113 = new Transform();
-Transform113->setDEF("verticalsupport");
+Transform113->setDEF(CString("verticalsupport"));
 Transform113->setRotation(new float[4]{0,0,1,1.57});
 Transform113->setScale(new float[3]{0.9,1,1});
 Transform113->setTranslation(new float[3]{0,11,0});
 Shape* Shape114 = new Shape();
-Shape114->setUSE("plank");
+Shape114->setUSE(CString("plank"));
 Transform113->addChild(Shape114);
 
 //Main Verticle Support
 Transform104->addChild(Transform113);
 
 Transform* Transform115 = new Transform();
-Transform115->setDEF("horizontalsupport");
+Transform115->setDEF(CString("horizontalsupport"));
 Transform115->setScale(new float[3]{0.4,1,1});
 Transform115->setTranslation(new float[3]{0,10,0});
 Shape* Shape116 = new Shape();
-Shape116->setUSE("plank");
+Shape116->setUSE(CString("plank"));
 Transform115->addChild(Shape116);
 
 Transform104->addChild(Transform115);
@@ -521,7 +522,7 @@ Transform117->setTranslation(new float[3]{0,5,10});
 Transform* Transform118 = new Transform();
 Transform118->setRotation(new float[4]{0,1,0,0.4});
 Shape* Shape119 = new Shape();
-Shape119->setUSE("plank");
+Shape119->setUSE(CString("plank"));
 Transform118->addChild(Shape119);
 
 Transform117->addChild(Transform118);
@@ -529,7 +530,7 @@ Transform117->addChild(Transform118);
 Transform104->addChild(Transform117);
 
 Transform* Transform120 = new Transform();
-Transform120->setDEF("panel");
+Transform120->setDEF(CString("panel"));
 Transform120->setTranslation(new float[3]{0,18.2,-0.3});
 Shape* Shape121 = new Shape();
 Box* Box122 = new Box();
@@ -537,8 +538,8 @@ Box122->setSize(new float[3]{5,5,0.5});
 Shape121->setGeometry(Box122);
 
 Appearance* Appearance123 = new Appearance();
-Appearance123->setUSE("wood");
-Shape121->setAppearance(Appearance123);
+Appearance123->setUSE(CString("wood"));
+Shape121->addChild(Appearance123);
 
 Transform120->addChild(Shape121);
 
@@ -552,15 +553,15 @@ Transform125->setRotation(new float[4]{0,0,1,1.57});
 Shape* Shape126 = new Shape();
 Extrusion* Extrusion127 = new Extrusion();
 Extrusion127->setBeginCap(False);
-Extrusion127->setCrossSection(new float[24]{1,-0.38,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,-0.38,-1,-1.1,1,-1.1,1,-0.38});
+Extrusion127->setCrossSection(new float[24]{1,-0.38,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,-0.38,-1,-1.1,1,-1.1,1,-0.38}, 24);
 Extrusion127->setEndCap(False);
 Extrusion127->setSolid(False);
-Extrusion127->setSpine(new float[6]{0,6,0,0,-11,0});
+Extrusion127->setSpine(new float[6]{0,6,0,0,-11,0}, 6);
 Shape126->setGeometry(Extrusion127);
 
 Appearance* Appearance128 = new Appearance();
-Appearance128->setUSE("wood");
-Shape126->setAppearance(Appearance128);
+Appearance128->setUSE(CString("wood"));
+Shape126->addChild(Appearance128);
 
 Transform125->addChild(Shape126);
 
@@ -569,7 +570,7 @@ Transform124->addChild(Transform125);
 Transform104->addChild(Transform124);
 
 Transform* Transform129 = new Transform();
-Transform129->setDEF("flinger");
+Transform129->setDEF(CString("flinger"));
 Transform129->setCenter(new float[3]{7,0,0});
 Transform129->setRotation(new float[4]{0,0,1,0.82});
 Transform129->setScale(new float[3]{0.9,1,1});
@@ -581,8 +582,8 @@ Box132->setSize(new float[3]{35,1,1});
 Shape131->setGeometry(Box132);
 
 Appearance* Appearance133 = new Appearance();
-Appearance133->setUSE("wood");
-Shape131->setAppearance(Appearance133);
+Appearance133->setUSE(CString("wood"));
+Shape131->addChild(Appearance133);
 
 Transform130->addChild(Shape131);
 
@@ -594,8 +595,8 @@ Box136->setSize(new float[3]{8,2,2});
 Shape135->setGeometry(Box136);
 
 Appearance* Appearance137 = new Appearance();
-Appearance137->setUSE("wood");
-Shape135->setAppearance(Appearance137);
+Appearance137->setUSE(CString("wood"));
+Shape135->addChild(Appearance137);
 
 Transform134->addChild(Shape135);
 
@@ -608,21 +609,21 @@ Transform138->setRotation(new float[4]{1,0,0,1.57});
 Transform138->setScale(new float[3]{0.2,0.2,0.2});
 Transform138->setTranslation(new float[3]{-15,-1,0});
 Shape* Shape139 = new Shape();
-Shape139->setDEF("Torus");
+Shape139->setDEF(CString("Torus"));
 Appearance* Appearance140 = new Appearance();
 Material* Material141 = new Material();
 Material141->setSpecularColor(new float[3]{1,1,1});
-Appearance140->setMaterial(Material141);
+Appearance140->addChild(Material141);
 
-Shape139->setAppearance(Appearance140);
+Shape139->addChild(Appearance140);
 
 Extrusion* Extrusion142 = new Extrusion();
 Extrusion142->setBeginCap(False);
 Extrusion142->setConvex(False);
 Extrusion142->setCreaseAngle(1.57);
-Extrusion142->setCrossSection(new float[34]{0.9,0,0.81,-0.34,0.63,-0.63,0.34,-0.83,0,-0.9,-0.34,-0.81,-0.63,-0.63,-0.81,-0.34,-0.9,0,-0.81,0.34,-0.63,0.63,-0.34,0.81,0,0.9,0.38,0.81,0.63,0.63,0.81,0.34,0.9,0});
+Extrusion142->setCrossSection(new float[34]{0.9,0,0.81,-0.34,0.63,-0.63,0.34,-0.83,0,-0.9,-0.34,-0.81,-0.63,-0.63,-0.81,-0.34,-0.9,0,-0.81,0.34,-0.63,0.63,-0.34,0.81,0,0.9,0.38,0.81,0.63,0.63,0.81,0.34,0.9,0}, 34);
 Extrusion142->setEndCap(False);
-Extrusion142->setSpine(new float[51]{2,0,0,1.85,0,0.77,1.41,0,1.41,0.77,0,1.85,0,0,2,-0.77,0,1.85,-1.41,0,1.41,-1.85,0,0.77,-2,0,0,-1.85,0,-0.77,-1.41,0,-1.41,-0.77,0,-1.85,0,0,-2,0.77,0,-1.85,1.41,0,-1.41,1.85,0,-0.77,2,0,0});
+Extrusion142->setSpine(new float[51]{2,0,0,1.85,0,0.77,1.41,0,1.41,0.77,0,1.85,0,0,2,-0.77,0,1.85,-1.41,0,1.41,-1.85,0,0.77,-2,0,0,-1.85,0,-0.77,-1.41,0,-1.41,-0.77,0,-1.85,0,0,-2,0.77,0,-1.85,1.41,0,-1.41,1.85,0,-0.77,2,0,0}, 51);
 Shape139->setGeometry(Extrusion142);
 
 Transform138->addChild(Shape139);
@@ -631,12 +632,12 @@ Transform* Transform143 = new Transform();
 Transform143->setTranslation(new float[3]{1,0,2});
 Shape* Shape144 = new Shape();
 Appearance* Appearance145 = new Appearance();
-Appearance145->setDEF("rope");
+Appearance145->setDEF(CString("rope"));
 ImageTexture* ImageTexture146 = new ImageTexture();
-ImageTexture146->setUSE("woodTexture");
-Appearance145->setTexture(ImageTexture146);
+ImageTexture146->setUSE(CString("woodTexture"));
+Appearance145->addChild(ImageTexture146);
 
-Shape144->setAppearance(Appearance145);
+Shape144->addChild(Appearance145);
 
 Sphere* Sphere147 = new Sphere();
 Sphere147->setRadius(1.5);
@@ -662,9 +663,9 @@ Shape149->setGeometry(Cylinder150);
 Appearance* Appearance151 = new Appearance();
 Material* Material152 = new Material();
 Material152->setSpecularColor(new float[3]{1,1,1});
-Appearance151->setMaterial(Material152);
+Appearance151->addChild(Material152);
 
-Shape149->setAppearance(Appearance151);
+Shape149->addChild(Appearance151);
 
 Transform148->addChild(Shape149);
 
@@ -672,7 +673,7 @@ Transform* Transform153 = new Transform();
 Transform153->setTranslation(new float[3]{0,-2.5,0});
 //The Unicorn
 Shape* Shape154 = new Shape();
-Shape154->setUSE("Torus");
+Shape154->setUSE(CString("Torus"));
 Transform153->addChild(Shape154);
 
 Transform* Transform155 = new Transform();
@@ -683,8 +684,8 @@ Sphere157->setRadius(1.5);
 Shape156->setGeometry(Sphere157);
 
 Appearance* Appearance158 = new Appearance();
-Appearance158->setUSE("rope");
-Shape156->setAppearance(Appearance158);
+Appearance158->setUSE(CString("rope"));
+Shape156->addChild(Appearance158);
 
 Transform155->addChild(Shape156);
 
@@ -700,16 +701,16 @@ Transform* Transform160 = new Transform();
 Transform160->setScale(new float[3]{5,5,5});
 Shape* Shape161 = new Shape();
 Appearance* Appearance162 = new Appearance();
-Appearance162->setUSE("rope");
-Shape161->setAppearance(Appearance162);
+Appearance162->setUSE(CString("rope"));
+Shape161->addChild(Appearance162);
 
 Extrusion* Extrusion163 = new Extrusion();
 Extrusion163->setBeginCap(False);
 Extrusion163->setCreaseAngle(0.76);
-Extrusion163->setCrossSection(new float[34]{0.1,0,0.092,-0.038,0.071,-0.071,0.038,-0.092,0,-0.1,-0.038,-0.092,-0.071,-0.071,-0.092,-0.038,-0.1,0,-0.092,0.038,-0.071,0.071,-0.038,0.092,0,0.1,0.038,0.092,0.071,0.071,0.092,0.038,0.1,0});
+Extrusion163->setCrossSection(new float[34]{0.1,0,0.092,-0.038,0.071,-0.071,0.038,-0.092,0,-0.1,-0.038,-0.092,-0.071,-0.071,-0.092,-0.038,-0.1,0,-0.092,0.038,-0.071,0.071,-0.038,0.092,0,0.1,0.038,0.092,0.071,0.071,0.092,0.038,0.1,0}, 34);
 Extrusion163->setEndCap(False);
 Extrusion163->setSolid(False);
-Extrusion163->setSpine(new float[6]{-15.2,1.4,2.2,-12,-0.8,2.2});
+Extrusion163->setSpine(new float[6]{-15.2,1.4,2.2,-12,-0.8,2.2}, 6);
 Shape161->setGeometry(Extrusion163);
 
 Transform160->addChild(Shape161);
@@ -727,7 +728,7 @@ Transform* Transform165 = new Transform();
 Transform165->setScale(new float[3]{0.2,0.2,0.2});
 //Knot
 Shape* Shape166 = new Shape();
-Shape166->setUSE("Torus");
+Shape166->setUSE(CString("Torus"));
 Transform165->addChild(Shape166);
 
 Transform* Transform167 = new Transform();
@@ -738,8 +739,8 @@ Sphere169->setRadius(1.5);
 Shape168->setGeometry(Sphere169);
 
 Appearance* Appearance170 = new Appearance();
-Appearance170->setUSE("rope");
-Shape168->setAppearance(Appearance170);
+Appearance170->setUSE(CString("rope"));
+Shape168->addChild(Appearance170);
 
 Transform167->addChild(Shape168);
 
@@ -750,40 +751,40 @@ Transform164->addChild(Transform165);
 Transform129->addChild(Transform164);
 
 Transform* Transform171 = new Transform();
-Transform171->setDEF("RnS");
+Transform171->setDEF(CString("RnS"));
 Transform* Transform172 = new Transform();
-Transform172->setDEF("ropes");
+Transform172->setDEF(CString("ropes"));
 Transform* Transform173 = new Transform();
 Transform173->setRotation(new float[4]{0,0,1,-0.82});
 Transform173->setTranslation(new float[3]{7,-26,-2.5});
 Shape* Shape174 = new Shape();
 Appearance* Appearance175 = new Appearance();
-Appearance175->setUSE("rope");
-Shape174->setAppearance(Appearance175);
+Appearance175->setUSE(CString("rope"));
+Shape174->addChild(Appearance175);
 
 Extrusion* Extrusion176 = new Extrusion();
 Extrusion176->setBeginCap(False);
 Extrusion176->setCreaseAngle(0.76);
-Extrusion176->setCrossSection(new float[34]{0.1,0,0.092,-0.038,0.071,-0.071,0.038,-0.092,0,-0.1,-0.038,-0.092,-0.071,-0.071,-0.092,-0.038,-0.1,0,-0.092,0.038,-0.071,0.071,-0.038,0.092,0,0.1,0.038,0.092,0.071,0.071,0.092,0.038,0.1,0});
+Extrusion176->setCrossSection(new float[34]{0.1,0,0.092,-0.038,0.071,-0.071,0.038,-0.092,0,-0.1,-0.038,-0.092,-0.071,-0.071,-0.092,-0.038,-0.1,0,-0.092,0.038,-0.071,0.071,-0.038,0.092,0,0.1,0.038,0.092,0.071,0.071,0.092,0.038,0.1,0}, 34);
 Extrusion176->setEndCap(False);
 Extrusion176->setSolid(False);
-Extrusion176->setSpine(new float[6]{-33,0.9,2.5,-18.5,1.9,2.55});
+Extrusion176->setSpine(new float[6]{-33,0.9,2.5,-18.5,1.9,2.55}, 6);
 Shape174->setGeometry(Extrusion176);
 
 Transform173->addChild(Shape174);
 
 Shape* Shape177 = new Shape();
 Appearance* Appearance178 = new Appearance();
-Appearance178->setUSE("rope");
-Shape177->setAppearance(Appearance178);
+Appearance178->setUSE(CString("rope"));
+Shape177->addChild(Appearance178);
 
 Extrusion* Extrusion179 = new Extrusion();
 Extrusion179->setBeginCap(False);
 Extrusion179->setCreaseAngle(0.76);
-Extrusion179->setCrossSection(new float[34]{0.1,0,0.092,-0.038,0.071,-0.071,0.038,-0.092,0,-0.1,-0.038,-0.092,-0.071,-0.071,-0.092,-0.038,-0.1,0,-0.092,0.038,-0.071,0.071,-0.038,0.092,0,0.1,0.038,0.092,0.071,0.071,0.092,0.038,0.1,0});
+Extrusion179->setCrossSection(new float[34]{0.1,0,0.092,-0.038,0.071,-0.071,0.038,-0.092,0,-0.1,-0.038,-0.092,-0.071,-0.071,-0.092,-0.038,-0.1,0,-0.092,0.038,-0.071,0.071,-0.038,0.092,0,0.1,0.038,0.092,0.071,0.071,0.092,0.038,0.1,0}, 34);
 Extrusion179->setEndCap(False);
 Extrusion179->setSolid(False);
-Extrusion179->setSpine(new float[6]{-35.7,-0.8,2.5,-18.8,-0.8,2.55});
+Extrusion179->setSpine(new float[6]{-35.7,-0.8,2.5,-18.8,-0.8,2.55}, 6);
 Shape177->setGeometry(Extrusion179);
 
 Transform173->addChild(Shape177);
@@ -793,7 +794,7 @@ Transform172->addChild(Transform173);
 Transform171->addChild(Transform172);
 
 Transform* Transform180 = new Transform();
-Transform180->setDEF("sling");
+Transform180->setDEF(CString("sling"));
 Transform180->setRotation(new float[4]{0,0,1,-0.82});
 Transform180->setTranslation(new float[3]{-4,-15.3,0});
 Transform* Transform181 = new Transform();
@@ -806,18 +807,18 @@ Transform183->setRotation(new float[4]{0,0,1,1.57});
 Transform* Transform184 = new Transform();
 Transform184->setScale(new float[3]{0.3,0.3,0.3});
 Shape* Shape185 = new Shape();
-Shape185->setDEF("halfsling");
+Shape185->setDEF(CString("halfsling"));
 Appearance* Appearance186 = new Appearance();
-Appearance186->setDEF("clear");
+Appearance186->setDEF(CString("clear"));
 Material* Material187 = new Material();
 Material187->setTransparency(0.5);
-Appearance186->setMaterial(Material187);
+Appearance186->addChild(Material187);
 
-Shape185->setAppearance(Appearance186);
+Shape185->addChild(Appearance186);
 
 Extrusion* Extrusion188 = new Extrusion();
-Extrusion188->setCrossSection(new float[28]{0,0,0,5,0.5,7,1,8,2,9,3,11,3.5,11.2,4,11,5,9,6,8,6.5,7,6.7,5,6.7,0,0,0});
-Extrusion188->setSpine(new float[6]{0,0,0,0.1,0,0});
+Extrusion188->setCrossSection(new float[28]{0,0,0,5,0.5,7,1,8,2,9,3,11,3.5,11.2,4,11,5,9,6,8,6.5,7,6.7,5,6.7,0,0,0}, 28);
+Extrusion188->setSpine(new float[6]{0,0,0,0.1,0,0}, 6);
 Shape185->setGeometry(Extrusion188);
 
 Transform184->addChild(Shape185);
@@ -826,15 +827,15 @@ Transform* Transform189 = new Transform();
 Transform189->setScale(new float[3]{0.3,0.3,0.3});
 Transform189->setTranslation(new float[3]{0,-3.5,11.5});
 Shape* Shape190 = new Shape();
-Shape190->setUSE("Torus");
+Shape190->setUSE(CString("Torus"));
 Transform189->addChild(Shape190);
 
 Transform* Transform191 = new Transform();
 Transform191->setTranslation(new float[3]{0,0,2});
 Shape* Shape192 = new Shape();
 Appearance* Appearance193 = new Appearance();
-Appearance193->setUSE("rope");
-Shape192->setAppearance(Appearance193);
+Appearance193->setUSE(CString("rope"));
+Shape192->addChild(Appearance193);
 
 Sphere* Sphere194 = new Sphere();
 Sphere194->setRadius(1.5);
@@ -852,22 +853,22 @@ Transform* Transform195 = new Transform();
 Transform195->setScale(new float[3]{0.3,0.3,0.3});
 Transform195->setTranslation(new float[3]{2,0,0});
 Shape* Shape196 = new Shape();
-Shape196->setUSE("halfsling");
+Shape196->setUSE(CString("halfsling"));
 Transform195->addChild(Shape196);
 
 Transform* Transform197 = new Transform();
 Transform197->setScale(new float[3]{0.3,0.3,0.3});
 Transform197->setTranslation(new float[3]{0,-3.5,11.3});
 Shape* Shape198 = new Shape();
-Shape198->setUSE("Torus");
+Shape198->setUSE(CString("Torus"));
 Transform197->addChild(Shape198);
 
 Transform* Transform199 = new Transform();
 Transform199->setTranslation(new float[3]{0,0,2});
 Shape* Shape200 = new Shape();
 Appearance* Appearance201 = new Appearance();
-Appearance201->setUSE("rope");
-Shape200->setAppearance(Appearance201);
+Appearance201->setUSE(CString("rope"));
+Shape200->addChild(Appearance201);
 
 Sphere* Sphere202 = new Sphere();
 Sphere202->setRadius(1.5);
@@ -887,15 +888,15 @@ Shape* Shape204 = new Shape();
 Extrusion* Extrusion205 = new Extrusion();
 Extrusion205->setBeginCap(False);
 Extrusion205->setCreaseAngle(0.785);
-Extrusion205->setCrossSection(new float[18]{1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0});
+Extrusion205->setCrossSection(new float[18]{1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0}, 18);
 Extrusion205->setEndCap(False);
 Extrusion205->setSolid(False);
-Extrusion205->setSpine(new float[6]{0,-1,0,0,1,0});
+Extrusion205->setSpine(new float[6]{0,-1,0,0,1,0}, 6);
 Shape204->setGeometry(Extrusion205);
 
 Appearance* Appearance206 = new Appearance();
-Appearance206->setUSE("clear");
-Shape204->setAppearance(Appearance206);
+Appearance206->setUSE(CString("clear"));
+Shape204->addChild(Appearance206);
 
 Transform203->addChild(Shape204);
 
@@ -904,17 +905,17 @@ Transform183->addChild(Transform203);
 Transform182->addChild(Transform183);
 
 TouchSensor* TouchSensor207 = new TouchSensor();
-TouchSensor207->setDEF("LauncheeChoice");
-TouchSensor207->setDescription("launcher choice");
+TouchSensor207->setDEF(CString("LauncheeChoice"));
+TouchSensor207->setDescription(CString("launcher choice"));
 Transform182->addChild(TouchSensor207);
 
 Transform181->addChild(Transform182);
 
 Transform* Transform208 = new Transform();
-Transform208->setDEF("projectiletransform");
+Transform208->setDEF(CString("projectiletransform"));
 Transform208->setScale(new float[3]{0.01,0.01,0.01});
 Switch* Switch209 = new Switch();
-Switch209->setDEF("projectile");
+Switch209->setDEF(CString("projectile"));
 Switch209->setWhichChoice(0);
 Group* Group210 = new Group();
 Transform* Transform211 = new Transform();
@@ -925,13 +926,13 @@ Sphere213->setRadius(0.7);
 Shape212->setGeometry(Sphere213);
 
 Appearance* Appearance214 = new Appearance();
-Appearance214->setDEF("black");
+Appearance214->setDEF(CString("black"));
 Material* Material215 = new Material();
 Material215->setDiffuseColor(new float[3]{0,0,0});
 Material215->setSpecularColor(new float[3]{1,1,1});
-Appearance214->setMaterial(Material215);
+Appearance214->addChild(Material215);
 
-Shape212->setAppearance(Appearance214);
+Shape212->addChild(Appearance214);
 
 Transform211->addChild(Shape212);
 
@@ -942,7 +943,7 @@ Switch209->addChild(Group210);
 Group* Group216 = new Group();
 Transform* Transform217 = new Transform();
 Inline* Inline218 = new Inline();
-Inline218->setUrl(new String[2]{"cow.wrl","http://www.uoguelph.ca/~dchiu/cow.wrl"}, 2);
+Inline218->setUrl(new CString[2]{CString("cow.wrl"), CString("http://www.uoguelph.ca/~dchiu/cow.wrl")}, 2);
 Transform217->addChild(Inline218);
 
 Group216->addChild(Transform217);
@@ -955,7 +956,7 @@ Transform220->setRotation(new float[4]{0,1,0,1.57});
 Transform220->setScale(new float[3]{0.4,0.4,0.4});
 Transform220->setTranslation(new float[3]{0,0.7,0});
 Inline* Inline221 = new Inline();
-Inline221->setUrl(new String[2]{"vrml_ginger.wrl","http://home.inreach.com/ntamura/vrml/vrml_ginger.wrl"}, 2);
+Inline221->setUrl(new CString[2]{CString("vrml_ginger.wrl"), CString("http://home.inreach.com/ntamura/vrml/vrml_ginger.wrl")}, 2);
 Transform220->addChild(Inline221);
 
 Group219->addChild(Transform220);
@@ -987,9 +988,9 @@ Appearance* Appearance225 = new Appearance();
 Material* Material226 = new Material();
 Material226->setDiffuseColor(new float[3]{0,0,0});
 Material226->setSpecularColor(new float[3]{1,1,1});
-Appearance225->setMaterial(Material226);
+Appearance225->addChild(Material226);
 
-Shape223->setAppearance(Appearance225);
+Shape223->addChild(Appearance225);
 
 Transform222->addChild(Shape223);
 
@@ -997,7 +998,7 @@ Transform222->addChild(Shape223);
 Transform104->addChild(Transform222);
 
 Transform* Transform227 = new Transform();
-Transform227->setDEF("verticalweight");
+Transform227->setDEF(CString("verticalweight"));
 Transform* Transform228 = new Transform();
 Transform228->setTranslation(new float[3]{4,18,1.8});
 Shape* Shape229 = new Shape();
@@ -1006,8 +1007,8 @@ Box230->setSize(new float[3]{1,10,0.5});
 Shape229->setGeometry(Box230);
 
 Appearance* Appearance231 = new Appearance();
-Appearance231->setUSE("wood");
-Shape229->setAppearance(Appearance231);
+Appearance231->setUSE(CString("wood"));
+Shape229->addChild(Appearance231);
 
 Transform228->addChild(Shape229);
 
@@ -1021,8 +1022,8 @@ Box234->setSize(new float[3]{1,10,0.5});
 Shape233->setGeometry(Box234);
 
 Appearance* Appearance235 = new Appearance();
-Appearance235->setUSE("wood");
-Shape233->setAppearance(Appearance235);
+Appearance235->setUSE(CString("wood"));
+Shape233->addChild(Appearance235);
 
 Transform232->addChild(Shape233);
 
@@ -1041,9 +1042,9 @@ Appearance* Appearance239 = new Appearance();
 Material* Material240 = new Material();
 Material240->setDiffuseColor(new float[3]{0,0,0});
 Material240->setSpecularColor(new float[3]{1,1,1});
-Appearance239->setMaterial(Material240);
+Appearance239->addChild(Material240);
 
-Shape237->setAppearance(Appearance239);
+Shape237->addChild(Appearance239);
 
 Transform236->addChild(Shape237);
 
@@ -1062,9 +1063,9 @@ Appearance* Appearance244 = new Appearance();
 Material* Material245 = new Material();
 Material245->setDiffuseColor(new float[3]{0,0,0});
 Material245->setSpecularColor(new float[3]{1,1,1});
-Appearance244->setMaterial(Material245);
+Appearance244->addChild(Material245);
 
-Shape242->setAppearance(Appearance244);
+Shape242->addChild(Appearance244);
 
 Transform241->addChild(Shape242);
 
@@ -1077,10 +1078,10 @@ Transform246->setRotation(new float[4]{0,0,1,1.57});
 Transform246->setScale(new float[3]{0.2,0.2,0.2});
 Transform246->setTranslation(new float[3]{-11.5,-1,2});
 Transform* Transform247 = new Transform();
-Transform247->setDEF("screw");
+Transform247->setDEF(CString("screw"));
 Transform247->setRotation(new float[4]{1,0,0,1.57});
 Shape* Shape248 = new Shape();
-Shape248->setUSE("Torus");
+Shape248->setUSE(CString("Torus"));
 Transform247->addChild(Shape248);
 
 Transform* Transform249 = new Transform();
@@ -1095,9 +1096,9 @@ Shape250->setGeometry(Cylinder251);
 Appearance* Appearance252 = new Appearance();
 Material* Material253 = new Material();
 Material253->setSpecularColor(new float[3]{1,1,1});
-Appearance252->setMaterial(Material253);
+Appearance252->addChild(Material253);
 
-Shape250->setAppearance(Appearance252);
+Shape250->addChild(Appearance252);
 
 Transform249->addChild(Shape250);
 
@@ -1108,18 +1109,18 @@ Transform246->addChild(Transform247);
 Transform* Transform254 = new Transform();
 Transform254->setTranslation(new float[3]{0,0,7});
 Transform* Transform255 = new Transform();
-Transform255->setUSE("screw");
+Transform255->setUSE(CString("screw"));
 Transform254->addChild(Transform255);
 
 Transform246->addChild(Transform254);
 
 //Release Pin
 Transform* Transform256 = new Transform();
-Transform256->setDEF("Pin");
+Transform256->setDEF(CString("Pin"));
 Transform256->setRotation(new float[4]{1,0,0,-1.57});
 Transform256->setTranslation(new float[3]{0,0,-3});
 Transform* Transform257 = new Transform();
-Transform257->setUSE("screw");
+Transform257->setUSE(CString("screw"));
 Transform256->addChild(Transform257);
 
 Transform246->addChild(Transform256);
@@ -1129,23 +1130,23 @@ Transform104->addChild(Transform246);
 Transform* Transform258 = new Transform();
 Transform258->setTranslation(new float[3]{0,0,5});
 Shape* Shape259 = new Shape();
-Shape259->setUSE("plank");
+Shape259->setUSE(CString("plank"));
 Transform258->addChild(Shape259);
 
 Transform* Transform260 = new Transform();
-Transform260->setUSE("angledsupport");
+Transform260->setUSE(CString("angledsupport"));
 Transform258->addChild(Transform260);
 
 Transform* Transform261 = new Transform();
-Transform261->setUSE("angledsupport2");
+Transform261->setUSE(CString("angledsupport2"));
 Transform258->addChild(Transform261);
 
 Transform* Transform262 = new Transform();
-Transform262->setUSE("verticalsupport");
+Transform262->setUSE(CString("verticalsupport"));
 Transform258->addChild(Transform262);
 
 Transform* Transform263 = new Transform();
-Transform263->setUSE("horizontalsupport");
+Transform263->setUSE(CString("horizontalsupport"));
 Transform258->addChild(Transform263);
 
 Transform* Transform264 = new Transform();
@@ -1153,7 +1154,7 @@ Transform264->setRotation(new float[4]{0,1,0,1.57});
 Transform264->setScale(new float[3]{0.6,1,1});
 Transform264->setTranslation(new float[3]{0,-11,-2.5});
 Transform* Transform265 = new Transform();
-Transform265->setUSE("horizontalsupport");
+Transform265->setUSE(CString("horizontalsupport"));
 Transform264->addChild(Transform265);
 
 Transform258->addChild(Transform264);
@@ -1165,7 +1166,7 @@ Transform266->setTranslation(new float[3]{0,5,-10});
 Transform* Transform267 = new Transform();
 Transform267->setRotation(new float[4]{0,1,0,0.4});
 Shape* Shape268 = new Shape();
-Shape268->setUSE("plank");
+Shape268->setUSE(CString("plank"));
 Transform267->addChild(Shape268);
 
 Transform266->addChild(Transform267);
@@ -1175,7 +1176,7 @@ Transform258->addChild(Transform266);
 Transform* Transform269 = new Transform();
 Transform269->setTranslation(new float[3]{0,0,0.6});
 Transform* Transform270 = new Transform();
-Transform270->setUSE("panel");
+Transform270->setUSE(CString("panel"));
 Transform269->addChild(Transform270);
 
 Transform258->addChild(Transform269);
@@ -1185,14 +1186,14 @@ Transform104->addChild(Transform258);
 Transform* Transform271 = new Transform();
 Transform271->setTranslation(new float[3]{10,-1,2.5});
 Shape* Shape272 = new Shape();
-Shape272->setDEF("Axle");
+Shape272->setDEF(CString("Axle"));
 Box* Box273 = new Box();
 Box273->setSize(new float[3]{1,1,8});
 Shape272->setGeometry(Box273);
 
 Appearance* Appearance274 = new Appearance();
-Appearance274->setUSE("wood");
-Shape272->setAppearance(Appearance274);
+Appearance274->setUSE(CString("wood"));
+Shape272->addChild(Appearance274);
 
 Transform271->addChild(Shape272);
 
@@ -1200,40 +1201,40 @@ Transform* Transform275 = new Transform();
 Transform275->setRotation(new float[4]{1,0,0,1.57});
 Transform275->setTranslation(new float[3]{0,0,4.5});
 Shape* Shape276 = new Shape();
-Shape276->setDEF("wheel");
+Shape276->setDEF(CString("wheel"));
 Cylinder* Cylinder277 = new Cylinder();
 Cylinder277->setRadius(2);
 Shape276->setGeometry(Cylinder277);
 
 Appearance* Appearance278 = new Appearance();
-Appearance278->setUSE("wood");
-Shape276->setAppearance(Appearance278);
+Appearance278->setUSE(CString("wood"));
+Shape276->addChild(Appearance278);
 
 Transform275->addChild(Shape276);
 
 Shape* Shape279 = new Shape();
-Shape279->setDEF("tracks");
+Shape279->setDEF(CString("tracks"));
 Sphere* Sphere280 = new Sphere();
 Sphere280->setRadius(1.5);
 Shape279->setGeometry(Sphere280);
 
 Appearance* Appearance281 = new Appearance();
-Appearance281->setUSE("black");
-Shape279->setAppearance(Appearance281);
+Appearance281->setUSE(CString("black"));
+Shape279->addChild(Appearance281);
 
 Transform275->addChild(Shape279);
 
 Transform* Transform282 = new Transform();
 Transform282->setTranslation(new float[3]{0,0.55,0});
 Shape* Shape283 = new Shape();
-Shape283->setDEF("hub");
+Shape283->setDEF(CString("hub"));
 Sphere* Sphere284 = new Sphere();
 Sphere284->setRadius(1.5);
 Shape283->setGeometry(Sphere284);
 
 Appearance* Appearance285 = new Appearance();
-Appearance285->setUSE("black");
-Shape283->setAppearance(Appearance285);
+Appearance285->setUSE(CString("black"));
+Shape283->addChild(Appearance285);
 
 Transform282->addChild(Shape283);
 
@@ -1245,17 +1246,17 @@ Transform* Transform286 = new Transform();
 Transform286->setRotation(new float[4]{1,0,0,1.57});
 Transform286->setTranslation(new float[3]{0,0,-4.5});
 Shape* Shape287 = new Shape();
-Shape287->setUSE("wheel");
+Shape287->setUSE(CString("wheel"));
 Transform286->addChild(Shape287);
 
 Shape* Shape288 = new Shape();
-Shape288->setUSE("tracks");
+Shape288->setUSE(CString("tracks"));
 Transform286->addChild(Shape288);
 
 Transform* Transform289 = new Transform();
 Transform289->setTranslation(new float[3]{0,-0.55,0});
 Shape* Shape290 = new Shape();
-Shape290->setUSE("hub");
+Shape290->setUSE(CString("hub"));
 Transform289->addChild(Shape290);
 
 Transform286->addChild(Transform289);
@@ -1267,24 +1268,24 @@ Transform104->addChild(Transform271);
 Transform* Transform291 = new Transform();
 Transform291->setTranslation(new float[3]{-10,-1,2.5});
 Shape* Shape292 = new Shape();
-Shape292->setUSE("Axle");
+Shape292->setUSE(CString("Axle"));
 Transform291->addChild(Shape292);
 
 Transform* Transform293 = new Transform();
 Transform293->setRotation(new float[4]{1,0,0,1.57});
 Transform293->setTranslation(new float[3]{0,0,4.5});
 Shape* Shape294 = new Shape();
-Shape294->setUSE("wheel");
+Shape294->setUSE(CString("wheel"));
 Transform293->addChild(Shape294);
 
 Shape* Shape295 = new Shape();
-Shape295->setUSE("tracks");
+Shape295->setUSE(CString("tracks"));
 Transform293->addChild(Shape295);
 
 Transform* Transform296 = new Transform();
 Transform296->setTranslation(new float[3]{0,0.55,0});
 Shape* Shape297 = new Shape();
-Shape297->setUSE("hub");
+Shape297->setUSE(CString("hub"));
 Transform296->addChild(Shape297);
 
 Transform293->addChild(Transform296);
@@ -1295,17 +1296,17 @@ Transform* Transform298 = new Transform();
 Transform298->setRotation(new float[4]{1,0,0,1.57});
 Transform298->setTranslation(new float[3]{0,0,-4.5});
 Shape* Shape299 = new Shape();
-Shape299->setUSE("wheel");
+Shape299->setUSE(CString("wheel"));
 Transform298->addChild(Shape299);
 
 Shape* Shape300 = new Shape();
-Shape300->setUSE("tracks");
+Shape300->setUSE(CString("tracks"));
 Transform298->addChild(Shape300);
 
 Transform* Transform301 = new Transform();
 Transform301->setTranslation(new float[3]{0,-0.55,0});
 Shape* Shape302 = new Shape();
-Shape302->setUSE("hub");
+Shape302->setUSE(CString("hub"));
 Transform301->addChild(Shape302);
 
 Transform298->addChild(Transform301);
@@ -1318,22 +1319,22 @@ Transform303->setTranslation(new float[3]{0,100,400});
 Transform* Transform304 = new Transform();
 Transform304->setTranslation(new float[3]{1,3,0});
 Viewpoint* Viewpoint305 = new Viewpoint();
-Viewpoint305->setDescription("Side");
+Viewpoint305->setDescription(CString("Side"));
 Transform304->addChild(Viewpoint305);
 
 Transform303->addChild(Transform304);
 
 Transform* Transform306 = new Transform();
-Transform306->setUSE("launch");
+Transform306->setUSE(CString("launch"));
 Transform303->addChild(Transform306);
 
 Transform* Transform307 = new Transform();
 TouchSensor* TouchSensor308 = new TouchSensor();
-TouchSensor308->setUSE("LauncheeChoice");
+TouchSensor308->setUSE(CString("LauncheeChoice"));
 Transform307->addChild(TouchSensor308);
 
 Switch* Switch309 = new Switch();
-Switch309->setUSE("projectilename");
+Switch309->setUSE(CString("projectilename"));
 Transform307->addChild(Switch309);
 
 Transform* Transform310 = new Transform();
@@ -1346,9 +1347,9 @@ Shape311->setGeometry(Box312);
 Appearance* Appearance313 = new Appearance();
 Material* Material314 = new Material();
 Material314->setTransparency(1);
-Appearance313->setMaterial(Material314);
+Appearance313->addChild(Material314);
 
-Shape311->setAppearance(Appearance313);
+Shape311->addChild(Appearance313);
 
 Transform310->addChild(Shape311);
 
@@ -1360,11 +1361,11 @@ Transform* Transform315 = new Transform();
 Transform315->setScale(new float[3]{0.5,0.5,0.5});
 Transform315->setTranslation(new float[3]{0,-1,0});
 TouchSensor* TouchSensor316 = new TouchSensor();
-TouchSensor316->setUSE("weightselector");
+TouchSensor316->setUSE(CString("weightselector"));
 Transform315->addChild(TouchSensor316);
 
 Switch* Switch317 = new Switch();
-Switch317->setUSE("Weight");
+Switch317->setUSE(CString("Weight"));
 Transform315->addChild(Switch317);
 
 Transform* Transform318 = new Transform();
@@ -1377,9 +1378,9 @@ Shape319->setGeometry(Box320);
 Appearance* Appearance321 = new Appearance();
 Material* Material322 = new Material();
 Material322->setTransparency(1);
-Appearance321->setMaterial(Material322);
+Appearance321->addChild(Material322);
 
-Shape319->setAppearance(Appearance321);
+Shape319->addChild(Appearance321);
 
 Transform318->addChild(Shape319);
 
@@ -1390,17 +1391,17 @@ Transform303->addChild(Transform315);
 Transform291->addChild(Transform303);
 
 Transform* Transform323 = new Transform();
-Transform323->setDEF("ProjectileTransform");
+Transform323->setDEF(CString("ProjectileTransform"));
 Transform323->setTranslation(new float[3]{14.25,1.25,0});
 Switch* Switch324 = new Switch();
-Switch324->setUSE("projectile");
+Switch324->setUSE(CString("projectile"));
 Transform323->addChild(Switch324);
 
 Transform* Transform325 = new Transform();
 Transform325->setRotation(new float[4]{0,1,0,1.57});
 Transform325->setTranslation(new float[3]{0,1,0});
 Viewpoint* Viewpoint326 = new Viewpoint();
-Viewpoint326->setDescription("Projectile Cam");
+Viewpoint326->setDescription(CString("Projectile Cam"));
 Viewpoint326->setPosition(new float[3]{0,0,15});
 Transform325->addChild(Viewpoint326);
 
@@ -1411,10 +1412,10 @@ Transform291->addChild(Transform323);
 Transform* Transform327 = new Transform();
 Transform327->setTranslation(new float[3]{20,2,0});
 Transform* Transform328 = new Transform();
-Transform328->setDEF("Front");
+Transform328->setDEF(CString("Front"));
 Transform328->setRotation(new float[4]{0,1,0,1.57});
 Viewpoint* Viewpoint329 = new Viewpoint();
-Viewpoint329->setDescription("Fore");
+Viewpoint329->setDescription(CString("Fore"));
 Transform328->addChild(Viewpoint329);
 
 Transform327->addChild(Transform328);
@@ -1426,7 +1427,7 @@ Transform330->setTranslation(new float[3]{-8,4,0});
 Transform* Transform331 = new Transform();
 Transform331->setRotation(new float[4]{0,1,0,-1.57});
 Viewpoint* Viewpoint332 = new Viewpoint();
-Viewpoint332->setDescription("Aft");
+Viewpoint332->setDescription(CString("Aft"));
 Transform331->addChild(Viewpoint332);
 
 Transform330->addChild(Transform331);
@@ -1434,204 +1435,186 @@ Transform330->addChild(Transform331);
 Transform291->addChild(Transform330);
 
 Script* Script333 = new Script();
-Script333->setDEF("WeightScript");
+Script333->setDEF(CString("WeightScript"));
 field* field334 = new field();
-field334->setName("set_boolean");
-field334->setAccessType("inputOnly");
-field334->setType("SFBool");
-Script333->addField(field334);
+field334->setName(CString("set_boolean"));
+field334->setAccessType(CString("inputOnly"));
+field334->setType(CString("SFBool"));
+Script333->addChild(field334);
 
 field* field335 = new field();
-field335->setName("whichchoice");
-field335->setAccessType("outputOnly");
-field335->setType("SFInt32");
-Script333->addField(field335);
+field335->setName(CString("whichchoice"));
+field335->setAccessType(CString("outputOnly"));
+field335->setType(CString("SFInt32"));
+Script333->addChild(field335);
 
 field* field336 = new field();
-field336->setName("CounterWeight");
-field336->setAccessType("outputOnly");
-field336->setType("SFFloat");
-Script333->addField(field336);
+field336->setName(CString("CounterWeight"));
+field336->setAccessType(CString("outputOnly"));
+field336->setType(CString("SFFloat"));
+Script333->addChild(field336);
 
 
-Script333.setSourceCode(`ecmascript:\n"+
-"\n"+
-"\n"+
-"function initialize ()\n"+
-"{\n"+
-"	whichchoice =0;\n"+
-"	CounterWeight=100;\n"+
-"}\n"+
-"\n"+
-"function set_boolean ( boolean_input, eventTime)\n"+
-"{\n"+
-"\n"+
-"	if ( boolean_input== false ) { return; } // ignore the unclick\n"+
-"        whichchoice = whichchoice +1;\n"+
-"	if (whichchoice == 0)CounterWeight=50.00;\n"+
-"	if (whichchoice == 1)CounterWeight=500.00;\n"+
-"	if (whichchoice == 2)CounterWeight=1000.00;\n"+
-"	if (whichchoice == 3)CounterWeight=10000.00;\n"+
-"        if ( whichchoice ==4 ) { whichchoice = 0; CounterWeight=50; }\n"+
-"\n"+
-"\n"+
-"        Browser.println ('CounterWeight ='+CounterWeight);\n"+
-"}`)
+Script333->setSourceCode(CString("ecmascript:")+
+_T("function initialize ()")+
+_T("{")+
+_T("	whichchoice =0;")+
+_T("	CounterWeight=100;")+
+_T("}")+
+_T("function set_boolean ( boolean_input, eventTime)")+
+_T("{")+
+_T("	if ( boolean_input== false ) { return; } // ignore the unclick")+
+_T("        whichchoice = whichchoice +1;")+
+_T("	if (whichchoice == 0)CounterWeight=50.00;")+
+_T("	if (whichchoice == 1)CounterWeight=500.00;")+
+_T("	if (whichchoice == 2)CounterWeight=1000.00;")+
+_T("	if (whichchoice == 3)CounterWeight=10000.00;")+
+_T("        if ( whichchoice ==4 ) { whichchoice = 0; CounterWeight=50; }")+
+_T("        Browser.println ('CounterWeight ='+CounterWeight);")+
+_T("}"));
 Transform291->addChild(Script333);
 
 Script* Script337 = new Script();
-Script337->setDEF("LauncheeScript");
+Script337->setDEF(CString("LauncheeScript"));
 field* field338 = new field();
-field338->setName("set_boolean");
-field338->setAccessType("inputOnly");
-field338->setType("SFBool");
-Script337->addField(field338);
+field338->setName(CString("set_boolean"));
+field338->setAccessType(CString("inputOnly"));
+field338->setType(CString("SFBool"));
+Script337->addChild(field338);
 
 field* field339 = new field();
-field339->setName("whichchoice");
-field339->setAccessType("outputOnly");
-field339->setType("SFInt32");
-Script337->addField(field339);
+field339->setName(CString("whichchoice"));
+field339->setAccessType(CString("outputOnly"));
+field339->setType(CString("SFInt32"));
+Script337->addChild(field339);
 
 field* field340 = new field();
-field340->setName("ProjectileWeight");
-field340->setAccessType("outputOnly");
-field340->setType("SFFloat");
-Script337->addField(field340);
+field340->setName(CString("ProjectileWeight"));
+field340->setAccessType(CString("outputOnly"));
+field340->setType(CString("SFFloat"));
+Script337->addChild(field340);
 
 
-Script337.setSourceCode(`ecmascript:\n"+
-"\n"+
-"function set_boolean (boolean_input, eventTime)\n"+
-"{\n"+
-"	if ( boolean_input== false ) { return; } // ignore unclick\n"+
-"        whichchoice = whichchoice +1;\n"+
-"        if (whichchoice == 0)ProjectileWeight=10.00;\n"+
-"        if (whichchoice == 1)ProjectileWeight=1000.00;\n"+
-"	if (whichchoice == 2)ProjectileWeight=5;\n"+
-"\n"+
-"	if ( whichchoice ==3 ) { whichchoice = 0; ProjectileWeight=10.00; }\n"+
-"	Browser.println ('Projectile Weight'+ProjectileWeight);\n"+
-"}`)
+Script337->setSourceCode(CString("ecmascript:")+
+_T("function set_boolean (boolean_input, eventTime)")+
+_T("{")+
+_T("	if ( boolean_input== false ) { return; } // ignore unclick")+
+_T("        whichchoice = whichchoice +1;")+
+_T("        if (whichchoice == 0)ProjectileWeight=10.00;")+
+_T("        if (whichchoice == 1)ProjectileWeight=1000.00;")+
+_T("	if (whichchoice == 2)ProjectileWeight=5;")+
+_T("	if ( whichchoice ==3 ) { whichchoice = 0; ProjectileWeight=10.00; }")+
+_T("	Browser.println ('Projectile Weight'+ProjectileWeight);")+
+_T("}"));
 Transform291->addChild(Script337);
 
 Script* Script341 = new Script();
-Script341->setDEF("PigdogMonkScript");
+Script341->setDEF(CString("PigdogMonkScript"));
 field* field342 = new field();
-field342->setName("set_boolean");
-field342->setAccessType("inputOnly");
-field342->setType("SFBool");
-Script341->addField(field342);
+field342->setName(CString("set_boolean"));
+field342->setAccessType(CString("inputOnly"));
+field342->setType(CString("SFBool"));
+Script341->addChild(field342);
 
 field* field343 = new field();
-field343->setName("whichchoice");
-field343->setAccessType("outputOnly");
-field343->setType("SFInt32");
-Script341->addField(field343);
+field343->setName(CString("whichchoice"));
+field343->setAccessType(CString("outputOnly"));
+field343->setType(CString("SFInt32"));
+Script341->addChild(field343);
 
 
-Script341.setSourceCode(`ecmascript:\n"+
-"\n"+
-"function set_boolean (boolean_input, eventTime)\n"+
-"{\n"+
-"	if ( boolean_input== false ) { return; } // ignore unclick\n"+
-"\n"+
-"        whichchoice = whichchoice +1;\n"+
-"\n"+
-"        if ( whichchoice ==2 )  whichchoice = 0;\n"+
-"\n"+
-"\n"+
-"}`)
+Script341->setSourceCode(CString("ecmascript:")+
+_T("function set_boolean (boolean_input, eventTime)")+
+_T("{")+
+_T("	if ( boolean_input== false ) { return; } // ignore unclick")+
+_T("        whichchoice = whichchoice +1;")+
+_T("        if ( whichchoice ==2 )  whichchoice = 0;")+
+_T("}"));
 Transform291->addChild(Script341);
 
 Script* Script344 = new Script();
-Script344->setDEF("Mover");
+Script344->setDEF(CString("Mover"));
 field* field345 = new field();
-field345->setName("set_fraction");
-field345->setAccessType("inputOnly");
-field345->setType("SFFloat");
-Script344->addField(field345);
+field345->setName(CString("set_fraction"));
+field345->setAccessType(CString("inputOnly"));
+field345->setType(CString("SFFloat"));
+Script344->addChild(field345);
 
 field* field346 = new field();
-field346->setName("set_MassCounterWeight");
-field346->setAccessType("inputOnly");
-field346->setType("SFFloat");
-Script344->addField(field346);
+field346->setName(CString("set_MassCounterWeight"));
+field346->setAccessType(CString("inputOnly"));
+field346->setType(CString("SFFloat"));
+Script344->addChild(field346);
 
 field* field347 = new field();
-field347->setName("set_MassProjectileWeight");
-field347->setAccessType("inputOnly");
-field347->setType("SFFloat");
-Script344->addField(field347);
+field347->setName(CString("set_MassProjectileWeight"));
+field347->setAccessType(CString("inputOnly"));
+field347->setType(CString("SFFloat"));
+Script344->addChild(field347);
 
 field* field348 = new field();
-field348->setName("MassCounterWeight");
-field348->setAccessType("initializeOnly");
-field348->setType("SFFloat");
-field348->setValue("1");
-Script344->addField(field348);
+field348->setName(CString("MassCounterWeight"));
+field348->setAccessType(CString("initializeOnly"));
+field348->setType(CString("SFFloat"));
+field348->setValue(CString("1"));
+Script344->addChild(field348);
 
 field* field349 = new field();
-field349->setName("MassProjectileWeight");
-field349->setAccessType("initializeOnly");
-field349->setType("SFFloat");
-field349->setValue("1");
-Script344->addField(field349);
+field349->setName(CString("MassProjectileWeight"));
+field349->setAccessType(CString("initializeOnly"));
+field349->setType(CString("SFFloat"));
+field349->setValue(CString("1"));
+Script344->addChild(field349);
 
 field* field350 = new field();
-field350->setName("transparent");
-field350->setAccessType("outputOnly");
-field350->setType("SFVec3f");
-Script344->addField(field350);
+field350->setName(CString("transparent"));
+field350->setAccessType(CString("outputOnly"));
+field350->setType(CString("SFVec3f"));
+Script344->addChild(field350);
 
 field* field351 = new field();
-field351->setName("value_changed");
-field351->setAccessType("outputOnly");
-field351->setType("SFVec3f");
-Script344->addField(field351);
+field351->setName(CString("value_changed"));
+field351->setAccessType(CString("outputOnly"));
+field351->setType(CString("SFVec3f"));
+Script344->addChild(field351);
 
 
-Script344.setSourceCode(`ecmascript:\n"+
-"\n"+
-"function initialize ()\n"+
-"{\n"+
-"	MassCounterWeight=100;\n"+
-"	MassProjectileWeight=10;\n"+
-"	Browser.println ('MassCounterWeight =' + MassCounterWeight);\n"+
-"	Browser.println ('MassProjectileWeight =' + MassProjectileWeight);\n"+
-"}\n"+
-"\n"+
-"function set_MassProjectileWeight (value, timestamp)\n"+
-"{\n"+
-"	MassProjectileWeight = value;\n"+
-"	Browser.println ('new MassProjectileWeight =' + MassProjectileWeight);\n"+
-"}\n"+
-"function set_MassCounterWeight (value2, timestamp)\n"+
-"{\n"+
-"	MassCounterWeight = value2;\n"+
-"	Browser.println ('new MassCounterWeight =' + MassCounterWeight);\n"+
-"}\n"+
-"\n"+
-"\n"+
-"function set_fraction ( fraction, eventTime )\n"+
-"{\n"+
-"	var TrebuchetHeight=45;\n"+
-"	var Height =25;\n"+
-"      	x = (2*(MassCounterWeight/MassProjectileWeight)*Height*fraction)-.5*TrebuchetHeight;\n"+
-"	// start at TrebuchetHeight and keep along z axis (z=zero)\n"+
-"	y =  (MassCounterWeight/MassProjectileWeight)*Height*Math.sin(fraction*3.14);\n"+
-"        z = 0;\n"+
-"        transparent = new SFVec3f (1,1,1);\n"+
-"     if (y <1.5*TrebuchetHeight  )if (x<TrebuchetHeight)\n"+
-"		{\n"+
-"		x=x-10;\n"+
-"		y=y+1;\n"+
-"		transparent = new SFVec3f(.01, .01, .01);\n"+
-"			}\n"+
-"\n"+
-"	value_changed = new SFVec3f (x, y, z);\n"+
-"	Browser.println ('x=' + value_changed[0] + ' y=' + value_changed[1] + ' z=' + value_changed[2]);\n"+
-"}`)
+Script344->setSourceCode(CString("ecmascript:")+
+_T("function initialize ()")+
+_T("{")+
+_T("	MassCounterWeight=100;")+
+_T("	MassProjectileWeight=10;")+
+_T("	Browser.println ('MassCounterWeight =' + MassCounterWeight);")+
+_T("	Browser.println ('MassProjectileWeight =' + MassProjectileWeight);")+
+_T("}")+
+_T("function set_MassProjectileWeight (value, timestamp)")+
+_T("{")+
+_T("	MassProjectileWeight = value;")+
+_T("	Browser.println ('new MassProjectileWeight =' + MassProjectileWeight);")+
+_T("}")+
+_T("function set_MassCounterWeight (value2, timestamp)")+
+_T("{")+
+_T("	MassCounterWeight = value2;")+
+_T("	Browser.println ('new MassCounterWeight =' + MassCounterWeight);")+
+_T("}")+
+_T("function set_fraction ( fraction, eventTime )")+
+_T("{")+
+_T("	var TrebuchetHeight=45;")+
+_T("	var Height =25;")+
+_T("      	x = (2*(MassCounterWeight/MassProjectileWeight)*Height*fraction)-.5*TrebuchetHeight;")+
+_T("	// start at TrebuchetHeight and keep along z axis (z=zero)")+
+_T("	y =  (MassCounterWeight/MassProjectileWeight)*Height*Math.sin(fraction*3.14);")+
+_T("        z = 0;")+
+_T("        transparent = new SFVec3f (1,1,1);")+
+_T("     if (y <1.5*TrebuchetHeight  )if (x<TrebuchetHeight)")+
+_T("		{")+
+_T("		x=x-10;")+
+_T("		y=y+1;")+
+_T("		transparent = new SFVec3f(.01, .01, .01);")+
+_T("			}")+
+_T("	value_changed = new SFVec3f (x, y, z);")+
+_T("	Browser.println ('x=' + value_changed[0] + ' y=' + value_changed[1] + ' z=' + value_changed[2]);")+
+_T("}"));
 Transform291->addChild(Script344);
 
 Transform104->addChild(Transform291);
@@ -1639,223 +1622,222 @@ Transform104->addChild(Transform291);
 Scene17->addChild(Transform104);
 
 TimeSensor* TimeSensor352 = new TimeSensor();
-TimeSensor352->setDEF("clock");
+TimeSensor352->setDEF(CString("clock"));
 TimeSensor352->setCycleInterval(10);
 Scene17->addChild(TimeSensor352);
 
 PositionInterpolator* PositionInterpolator353 = new PositionInterpolator();
-PositionInterpolator353->setDEF("verticalweightpath");
+PositionInterpolator353->setDEF(CString("verticalweightpath"));
 PositionInterpolator353->setKey(new float[6]{0,0.1,0.2,0.2,0.3,0.9}, 6);
-PositionInterpolator353->setKeyValue(new float[18]{1.4,1.6,0,1,-8,0,-3.5,-12,0,-3.5,-12,0,1.2,-8,0,1.4,1.6,0});
+PositionInterpolator353->setKeyValue(new float[18]{1.4,1.6,0,1,-8,0,-3.5,-12,0,-3.5,-12,0,1.2,-8,0,1.4,1.6,0}, 18);
 Scene17->addChild(PositionInterpolator353);
 
 OrientationInterpolator* OrientationInterpolator354 = new OrientationInterpolator();
-OrientationInterpolator354->setDEF("flingerangles");
+OrientationInterpolator354->setDEF(CString("flingerangles"));
 OrientationInterpolator354->setKey(new float[6]{0,0.1,0.2,0.2,0.3,0.9}, 6);
-OrientationInterpolator354->setKeyValue(new float[24]{0,0,1,0.82,0,0,1,-0.77,0,0,1,-1.57,0,0,1,-1.57,0,0,1,-0.77,0,0,1,0.82});
+OrientationInterpolator354->setKeyValue(new float[24]{0,0,1,0.82,0,0,1,-0.77,0,0,1,-1.57,0,0,1,-1.57,0,0,1,-0.77,0,0,1,0.82}, 24);
 Scene17->addChild(OrientationInterpolator354);
 
 PositionInterpolator* PositionInterpolator355 = new PositionInterpolator();
-PositionInterpolator355->setDEF("pinpath");
+PositionInterpolator355->setDEF(CString("pinpath"));
 PositionInterpolator355->setKey(new float[4]{0,0.01,0.95,1}, 4);
-PositionInterpolator355->setKeyValue(new float[12]{0,0,-3,0,0,-10,0,0,-10,0,0,-3});
+PositionInterpolator355->setKeyValue(new float[12]{0,0,-3,0,0,-10,0,0,-10,0,0,-3}, 12);
 Scene17->addChild(PositionInterpolator355);
 
 OrientationInterpolator* OrientationInterpolator356 = new OrientationInterpolator();
-OrientationInterpolator356->setDEF("RnSAngels");
+OrientationInterpolator356->setDEF(CString("RnSAngels"));
 OrientationInterpolator356->setKey(new float[3]{0,0.7,1}, 3);
-OrientationInterpolator356->setKeyValue(new float[12]{0,0,1,0,0,0,1,-3.14,0,0,1,0});
+OrientationInterpolator356->setKeyValue(new float[12]{0,0,1,0,0,0,1,-3.14,0,0,1,0}, 12);
 Scene17->addChild(OrientationInterpolator356);
 
 PositionInterpolator* PositionInterpolator357 = new PositionInterpolator();
-PositionInterpolator357->setDEF("invisiable");
+PositionInterpolator357->setDEF(CString("invisiable"));
 PositionInterpolator357->setKey(new float[4]{0,0.2,0.98,0.99}, 4);
-PositionInterpolator357->setKeyValue(new float[12]{1,1,1,0.01,0.01,0.01,0.01,0.01,0.01,1,1,1});
+PositionInterpolator357->setKeyValue(new float[12]{1,1,1,0.01,0.01,0.01,0.01,0.01,0.01,1,1,1}, 12);
 Scene17->addChild(PositionInterpolator357);
 
 ROUTE* ROUTE358 = new ROUTE();
-ROUTE358->setFromField("fraction_changed");
-ROUTE358->setFromNode("clock");
-ROUTE358->setToField("set_fraction");
-ROUTE358->setToNode("invisiable");
+ROUTE358->setFromField(CString("fraction_changed"));
+ROUTE358->setFromNode(CString("clock"));
+ROUTE358->setToField(CString("set_fraction"));
+ROUTE358->setToNode(CString("invisiable"));
 Scene17->addChild(ROUTE358);
 
 ROUTE* ROUTE359 = new ROUTE();
-ROUTE359->setFromField("value_changed");
-ROUTE359->setFromNode("invisiable");
-ROUTE359->setToField("set_scale");
-ROUTE359->setToNode("projectiletransform");
+ROUTE359->setFromField(CString("value_changed"));
+ROUTE359->setFromNode(CString("invisiable"));
+ROUTE359->setToField(CString("set_scale"));
+ROUTE359->setToNode(CString("projectiletransform"));
 Scene17->addChild(ROUTE359);
 
 ROUTE* ROUTE360 = new ROUTE();
-ROUTE360->setFromField("CounterWeight");
-ROUTE360->setFromNode("WeightScript");
-ROUTE360->setToField("set_MassCounterWeight");
-ROUTE360->setToNode("Mover");
+ROUTE360->setFromField(CString("CounterWeight"));
+ROUTE360->setFromNode(CString("WeightScript"));
+ROUTE360->setToField(CString("set_MassCounterWeight"));
+ROUTE360->setToNode(CString("Mover"));
 Scene17->addChild(ROUTE360);
 
 ROUTE* ROUTE361 = new ROUTE();
-ROUTE361->setFromField("ProjectileWeight");
-ROUTE361->setFromNode("LauncheeScript");
-ROUTE361->setToField("set_MassProjectileWeight");
-ROUTE361->setToNode("Mover");
+ROUTE361->setFromField(CString("ProjectileWeight"));
+ROUTE361->setFromNode(CString("LauncheeScript"));
+ROUTE361->setToField(CString("set_MassProjectileWeight"));
+ROUTE361->setToNode(CString("Mover"));
 Scene17->addChild(ROUTE361);
 
 ROUTE* ROUTE362 = new ROUTE();
-ROUTE362->setFromField("fraction_changed");
-ROUTE362->setFromNode("clock");
-ROUTE362->setToField("set_fraction");
-ROUTE362->setToNode("Mover");
+ROUTE362->setFromField(CString("fraction_changed"));
+ROUTE362->setFromNode(CString("clock"));
+ROUTE362->setToField(CString("set_fraction"));
+ROUTE362->setToNode(CString("Mover"));
 Scene17->addChild(ROUTE362);
 
 ROUTE* ROUTE363 = new ROUTE();
-ROUTE363->setFromField("value_changed");
-ROUTE363->setFromNode("Mover");
-ROUTE363->setToField("set_translation");
-ROUTE363->setToNode("ProjectileTransform");
+ROUTE363->setFromField(CString("value_changed"));
+ROUTE363->setFromNode(CString("Mover"));
+ROUTE363->setToField(CString("set_translation"));
+ROUTE363->setToNode(CString("ProjectileTransform"));
 Scene17->addChild(ROUTE363);
 
 ROUTE* ROUTE364 = new ROUTE();
-ROUTE364->setFromField("transparent");
-ROUTE364->setFromNode("Mover");
-ROUTE364->setToField("set_scale");
-ROUTE364->setToNode("ProjectileTransform");
+ROUTE364->setFromField(CString("transparent"));
+ROUTE364->setFromNode(CString("Mover"));
+ROUTE364->setToField(CString("set_scale"));
+ROUTE364->setToNode(CString("ProjectileTransform"));
 Scene17->addChild(ROUTE364);
 
 ROUTE* ROUTE365 = new ROUTE();
-ROUTE365->setFromField("touchTime");
-ROUTE365->setFromNode("Launch");
-ROUTE365->setToField("set_startTime");
-ROUTE365->setToNode("clock");
+ROUTE365->setFromField(CString("touchTime"));
+ROUTE365->setFromNode(CString("Launch"));
+ROUTE365->setToField(CString("set_startTime"));
+ROUTE365->setToNode(CString("clock"));
 Scene17->addChild(ROUTE365);
 
 ROUTE* ROUTE366 = new ROUTE();
-ROUTE366->setFromField("isActive");
-ROUTE366->setFromNode("Launch");
-ROUTE366->setToField("set_boolean");
-ROUTE366->setToNode("PigdogMonkScript");
+ROUTE366->setFromField(CString("isActive"));
+ROUTE366->setFromNode(CString("Launch"));
+ROUTE366->setToField(CString("set_boolean"));
+ROUTE366->setToNode(CString("PigdogMonkScript"));
 Scene17->addChild(ROUTE366);
 
 ROUTE* ROUTE367 = new ROUTE();
-ROUTE367->setFromField("touchTime");
-ROUTE367->setFromNode("Launch");
-ROUTE367->setToField("set_startTime");
-ROUTE367->setToNode("PigDogSound");
+ROUTE367->setFromField(CString("touchTime"));
+ROUTE367->setFromNode(CString("Launch"));
+ROUTE367->setToField(CString("set_startTime"));
+ROUTE367->setToNode(CString("PigDogSound"));
 Scene17->addChild(ROUTE367);
 
 ROUTE* ROUTE368 = new ROUTE();
-ROUTE368->setFromField("touchTime");
-ROUTE368->setFromNode("Launch");
-ROUTE368->setToField("set_startTime");
-ROUTE368->setToNode("MonkSound");
+ROUTE368->setFromField(CString("touchTime"));
+ROUTE368->setFromNode(CString("Launch"));
+ROUTE368->setToField(CString("set_startTime"));
+ROUTE368->setToNode(CString("MonkSound"));
 Scene17->addChild(ROUTE368);
 
 ROUTE* ROUTE369 = new ROUTE();
-ROUTE369->setFromField("whichchoice");
-ROUTE369->setFromNode("PigdogMonkScript");
-ROUTE369->setToField("whichChoice");
-ROUTE369->setToNode("PigdogMonk");
+ROUTE369->setFromField(CString("whichchoice"));
+ROUTE369->setFromNode(CString("PigdogMonkScript"));
+ROUTE369->setToField(CString("whichChoice"));
+ROUTE369->setToNode(CString("PigdogMonk"));
 Scene17->addChild(ROUTE369);
 
 ROUTE* ROUTE370 = new ROUTE();
-ROUTE370->setFromField("touchTime");
-ROUTE370->setFromNode("LauncheeChoice");
-ROUTE370->setToField("set_startTime");
-ROUTE370->setToNode("HolyHandGrenadeSound");
+ROUTE370->setFromField(CString("touchTime"));
+ROUTE370->setFromNode(CString("LauncheeChoice"));
+ROUTE370->setToField(CString("set_startTime"));
+ROUTE370->setToNode(CString("HolyHandGrenadeSound"));
 Scene17->addChild(ROUTE370);
 
 ROUTE* ROUTE371 = new ROUTE();
-ROUTE371->setFromField("touchTime");
-ROUTE371->setFromNode("LauncheeChoice");
-ROUTE371->setToField("set_startTime");
-ROUTE371->setToNode("CowSound");
+ROUTE371->setFromField(CString("touchTime"));
+ROUTE371->setFromNode(CString("LauncheeChoice"));
+ROUTE371->setToField(CString("set_startTime"));
+ROUTE371->setToNode(CString("CowSound"));
 Scene17->addChild(ROUTE371);
 
 ROUTE* ROUTE372 = new ROUTE();
-ROUTE372->setFromField("touchTime");
-ROUTE372->setFromNode("LauncheeChoice");
-ROUTE372->setToField("set_startTime");
-ROUTE372->setToNode("HamsterSound");
+ROUTE372->setFromField(CString("touchTime"));
+ROUTE372->setFromNode(CString("LauncheeChoice"));
+ROUTE372->setToField(CString("set_startTime"));
+ROUTE372->setToNode(CString("HamsterSound"));
 Scene17->addChild(ROUTE372);
 
 ROUTE* ROUTE373 = new ROUTE();
-ROUTE373->setFromField("isActive");
-ROUTE373->setFromNode("LauncheeChoice");
-ROUTE373->setToField("set_boolean");
-ROUTE373->setToNode("LauncheeScript");
+ROUTE373->setFromField(CString("isActive"));
+ROUTE373->setFromNode(CString("LauncheeChoice"));
+ROUTE373->setToField(CString("set_boolean"));
+ROUTE373->setToNode(CString("LauncheeScript"));
 Scene17->addChild(ROUTE373);
 
 ROUTE* ROUTE374 = new ROUTE();
-ROUTE374->setFromField("whichchoice");
-ROUTE374->setFromNode("LauncheeScript");
-ROUTE374->setToField("whichChoice");
-ROUTE374->setToNode("projectile");
+ROUTE374->setFromField(CString("whichchoice"));
+ROUTE374->setFromNode(CString("LauncheeScript"));
+ROUTE374->setToField(CString("whichChoice"));
+ROUTE374->setToNode(CString("projectile"));
 Scene17->addChild(ROUTE374);
 
 ROUTE* ROUTE375 = new ROUTE();
-ROUTE375->setFromField("whichchoice");
-ROUTE375->setFromNode("LauncheeScript");
-ROUTE375->setToField("whichChoice");
-ROUTE375->setToNode("projectilename");
+ROUTE375->setFromField(CString("whichchoice"));
+ROUTE375->setFromNode(CString("LauncheeScript"));
+ROUTE375->setToField(CString("whichChoice"));
+ROUTE375->setToNode(CString("projectilename"));
 Scene17->addChild(ROUTE375);
 
 ROUTE* ROUTE376 = new ROUTE();
-ROUTE376->setFromField("isActive");
-ROUTE376->setFromNode("weightselector");
-ROUTE376->setToField("set_boolean");
-ROUTE376->setToNode("WeightScript");
+ROUTE376->setFromField(CString("isActive"));
+ROUTE376->setFromNode(CString("weightselector"));
+ROUTE376->setToField(CString("set_boolean"));
+ROUTE376->setToNode(CString("WeightScript"));
 Scene17->addChild(ROUTE376);
 
 ROUTE* ROUTE377 = new ROUTE();
-ROUTE377->setFromField("whichchoice");
-ROUTE377->setFromNode("WeightScript");
-ROUTE377->setToField("whichChoice");
-ROUTE377->setToNode("Weight");
+ROUTE377->setFromField(CString("whichchoice"));
+ROUTE377->setFromNode(CString("WeightScript"));
+ROUTE377->setToField(CString("whichChoice"));
+ROUTE377->setToNode(CString("Weight"));
 Scene17->addChild(ROUTE377);
 
 ROUTE* ROUTE378 = new ROUTE();
-ROUTE378->setFromField("fraction_changed");
-ROUTE378->setFromNode("clock");
-ROUTE378->setToField("set_fraction");
-ROUTE378->setToNode("flingerangles");
+ROUTE378->setFromField(CString("fraction_changed"));
+ROUTE378->setFromNode(CString("clock"));
+ROUTE378->setToField(CString("set_fraction"));
+ROUTE378->setToNode(CString("flingerangles"));
 Scene17->addChild(ROUTE378);
 
 ROUTE* ROUTE379 = new ROUTE();
-ROUTE379->setFromField("value_changed");
-ROUTE379->setFromNode("flingerangles");
-ROUTE379->setToField("set_rotation");
-ROUTE379->setToNode("flinger");
+ROUTE379->setFromField(CString("value_changed"));
+ROUTE379->setFromNode(CString("flingerangles"));
+ROUTE379->setToField(CString("set_rotation"));
+ROUTE379->setToNode(CString("flinger"));
 Scene17->addChild(ROUTE379);
 
 ROUTE* ROUTE380 = new ROUTE();
-ROUTE380->setFromField("fraction_changed");
-ROUTE380->setFromNode("clock");
-ROUTE380->setToField("set_fraction");
-ROUTE380->setToNode("verticalweightpath");
+ROUTE380->setFromField(CString("fraction_changed"));
+ROUTE380->setFromNode(CString("clock"));
+ROUTE380->setToField(CString("set_fraction"));
+ROUTE380->setToNode(CString("verticalweightpath"));
 Scene17->addChild(ROUTE380);
 
 ROUTE* ROUTE381 = new ROUTE();
-ROUTE381->setFromField("value_changed");
-ROUTE381->setFromNode("verticalweightpath");
-ROUTE381->setToField("set_translation");
-ROUTE381->setToNode("verticalweight");
+ROUTE381->setFromField(CString("value_changed"));
+ROUTE381->setFromNode(CString("verticalweightpath"));
+ROUTE381->setToField(CString("set_translation"));
+ROUTE381->setToNode(CString("verticalweight"));
 Scene17->addChild(ROUTE381);
 
 ROUTE* ROUTE382 = new ROUTE();
-ROUTE382->setFromField("fraction_changed");
-ROUTE382->setFromNode("clock");
-ROUTE382->setToField("set_fraction");
-ROUTE382->setToNode("pinpath");
+ROUTE382->setFromField(CString("fraction_changed"));
+ROUTE382->setFromNode(CString("clock"));
+ROUTE382->setToField(CString("set_fraction"));
+ROUTE382->setToNode(CString("pinpath"));
 Scene17->addChild(ROUTE382);
 
 ROUTE* ROUTE383 = new ROUTE();
-ROUTE383->setFromField("value_changed");
-ROUTE383->setFromNode("pinpath");
-ROUTE383->setToField("set_translation");
-ROUTE383->setToNode("Pin");
+ROUTE383->setFromField(CString("value_changed"));
+ROUTE383->setFromNode(CString("pinpath"));
+ROUTE383->setToField(CString("set_translation"));
+ROUTE383->setToNode(CString("Pin"));
 Scene17->addChild(ROUTE383);
 
 X3D0->setScene(Scene17);
 
-X3D0->toXMLString();
 }

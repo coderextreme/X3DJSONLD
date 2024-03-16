@@ -1,45 +1,46 @@
-/* delete next 5 lines for Visual Studio */
+#ifdef WIN32
 #define FALSE false
 #define TRUE true
 #define WINAPI
 #define AFX_EXT_CLASS
 #define EXPORT32
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/CylinderExample/pch.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/CylinderExample/framework.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/XML_PARSER.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/X3DLib.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/Abstracts.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/Concretes.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/glMath.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/glut.h"
+#endif
+#define False false
+#define True true
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/SphereExample/SphereExample/pch.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/SphereExample/SphereExample/framework.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/SphereExample/include/XML_PARSER.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/SphereExample/include/X3DLib.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/SphereExample/include/glMath.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/SphereExample/include/glut.h"
 int main(int argc, char ** argv) {
 X3D* X3D0 = new X3D();
-X3D0->setProfile("Immersive");
-X3D0->setVersion("3.3");
+X3D0->setProfile(CString("Immersive"));
+X3D0->setVersion(CString("3.3"));
 head* head1 = new head();
 meta* meta2 = new meta();
-meta2->setName("title");
-meta2->setContent("arc1.x3d");
+meta2->setName(CString("title"));
+meta2->setContent(CString("arc1.x3d"));
 head1->addMeta(meta2);
 
 meta* meta3 = new meta();
-meta3->setName("creator");
-meta3->setContent("Lost, Doug Sanden I think");
+meta3->setName(CString("creator"));
+meta3->setContent(CString("Lost, Doug Sanden I think"));
 head1->addMeta(meta3);
 
 meta* meta4 = new meta();
-meta4->setName("generator");
-meta4->setContent("manual");
+meta4->setName(CString("generator"));
+meta4->setContent(CString("manual"));
 head1->addMeta(meta4);
 
 meta* meta5 = new meta();
-meta5->setName("identifier");
-meta5->setContent("https://coderextreme.net/X3DJSONLD/src/main/data/arc1.x3d");
+meta5->setName(CString("identifier"));
+meta5->setContent(CString("https://coderextreme.net/X3DJSONLD/src/main/data/arc1.x3d"));
 head1->addMeta(meta5);
 
 meta* meta6 = new meta();
-meta6->setName("description");
-meta6->setContent("a generic proto to connect two objects");
+meta6->setName(CString("description"));
+meta6->setContent(CString("a generic proto to connect two objects"));
 head1->addMeta(meta6);
 
 X3D0->setHead(head1);
@@ -47,35 +48,35 @@ X3D0->setHead(head1);
 Scene* Scene7 = new Scene();
 Viewpoint* Viewpoint8 = new Viewpoint();
 Viewpoint8->setPosition(new float[3]{0,0,5});
-Viewpoint8->setDescription("Only Viewpoint");
+Viewpoint8->setDescription(CString("Only Viewpoint"));
 Scene7->addChild(Viewpoint8);
 
 Background* Background9 = new Background();
-Background9->setSkyColor(new float[3]{0.4,0.4,0.4});
+Background9->setSkyColor(new float[3]{0.4,0.4,0.4}, 3);
 Scene7->addChild(Background9);
 
 ProtoDeclare* ProtoDeclare10 = new ProtoDeclare();
-ProtoDeclare10->setName("point");
+ProtoDeclare10->setName(CString("point"));
 ProtoInterface* ProtoInterface11 = new ProtoInterface();
 field* field12 = new field();
-field12->setName("translation");
-field12->setAccessType("inputOutput");
-field12->setType("SFVec3f");
-field12->setValue("0 0 0");
-ProtoInterface11->addField(field12);
+field12->setName(CString("translation"));
+field12->setAccessType(CString("inputOutput"));
+field12->setType(CString("SFVec3f"));
+field12->setValue(CString("0 0 0"));
+ProtoInterface11->addChild(field12);
 
-ProtoDeclare10->setProtoInterface(ProtoInterface11);
+ProtoDeclare10->addChild(ProtoInterface11);
 
 ProtoBody* ProtoBody13 = new ProtoBody();
 Transform* Transform14 = new Transform();
-Transform14->setDEF("node");
+Transform14->setDEF(CString("node"));
 IS* IS15 = new IS();
 Connect* connect16 = new Connect();
-connect16->setNodeField("translation");
-connect16->setProtoField("translation");
-IS15->addConnect(connect16);
+connect16->setNodeField(CString("translation"));
+connect16->setProtoField(CString("translation"));
+IS15->addChild(connect16);
 
-Transform14->setIS(IS15);
+Transform14->addChild(IS15);
 
 Shape* Shape17 = new Shape();
 Sphere* Sphere18 = new Sphere();
@@ -85,131 +86,131 @@ Shape17->setGeometry(Sphere18);
 Appearance* Appearance19 = new Appearance();
 Material* Material20 = new Material();
 Material20->setDiffuseColor(new float[3]{1,0,0});
-Appearance19->setMaterial(Material20);
+Appearance19->addChild(Material20);
 
-Shape17->setAppearance(Appearance19);
+Shape17->addChild(Appearance19);
 
 Transform14->addChild(Shape17);
 
 PositionInterpolator* PositionInterpolator21 = new PositionInterpolator();
-PositionInterpolator21->setDEF("PI1");
+PositionInterpolator21->setDEF(CString("PI1"));
 PositionInterpolator21->setKey(new float[2]{0,1}, 2);
-PositionInterpolator21->setKeyValue(new float[6]{0,0,0,0,5,0});
+PositionInterpolator21->setKeyValue(new float[6]{0,0,0,0,5,0}, 6);
 Transform14->addChild(PositionInterpolator21);
 
 Script* Script22 = new Script();
-Script22->setDEF("MB1");
+Script22->setDEF(CString("MB1"));
 field* field23 = new field();
-field23->setName("translation");
-field23->setAccessType("inputOutput");
-field23->setType("SFVec3f");
-field23->setValue("50 50 0");
-Script22->addField(field23);
+field23->setName(CString("translation"));
+field23->setAccessType(CString("inputOutput"));
+field23->setType(CString("SFVec3f"));
+field23->setValue(CString("50 50 0"));
+Script22->addChild(field23);
 
 field* field24 = new field();
-field24->setName("old");
-field24->setAccessType("inputOutput");
-field24->setType("SFVec3f");
-field24->setValue("0 0 0");
-Script22->addField(field24);
+field24->setName(CString("old"));
+field24->setAccessType(CString("inputOutput"));
+field24->setType(CString("SFVec3f"));
+field24->setValue(CString("0 0 0"));
+Script22->addChild(field24);
 
 field* field25 = new field();
-field25->setName("set_location");
-field25->setAccessType("inputOnly");
-field25->setType("SFTime");
-Script22->addField(field25);
+field25->setName(CString("set_location"));
+field25->setAccessType(CString("inputOnly"));
+field25->setType(CString("SFTime"));
+Script22->addChild(field25);
 
 field* field26 = new field();
-field26->setName("keyValue");
-field26->setAccessType("inputOutput");
-field26->setType("MFVec3f");
-field26->setValue("0 0 0 0 5 0");
-Script22->addField(field26);
+field26->setName(CString("keyValue"));
+field26->setAccessType(CString("inputOutput"));
+field26->setType(CString("MFVec3f"));
+field26->setValue(CString("0 0 0 0 5 0"));
+Script22->addChild(field26);
 
 
-Script22.setSourceCode(`ecmascript:\n"+
-"               function set_location(value) {\n"+
-"                    old = translation;\n"+
-"                    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);\n"+
-"                    keyValue = new MFVec3f([old, translation]);\n"+
-"               }`)
+Script22->setSourceCode(CString("ecmascript:")+
+_T("               function set_location(value) {")+
+_T("                    old = translation;")+
+_T("                    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);")+
+_T("                    keyValue = new MFVec3f([old, translation]);")+
+_T("               }"));
 Transform14->addChild(Script22);
 
 TimeSensor* TimeSensor27 = new TimeSensor();
-TimeSensor27->setDEF("CL1");
+TimeSensor27->setDEF(CString("CL1"));
 TimeSensor27->setCycleInterval(3);
 TimeSensor27->setLoop(True);
 Transform14->addChild(TimeSensor27);
 
 ROUTE* ROUTE28 = new ROUTE();
-ROUTE28->setFromNode("CL1");
-ROUTE28->setFromField("cycleTime");
-ROUTE28->setToNode("MB1");
-ROUTE28->setToField("set_location");
+ROUTE28->setFromNode(CString("CL1"));
+ROUTE28->setFromField(CString("cycleTime"));
+ROUTE28->setToNode(CString("MB1"));
+ROUTE28->setToField(CString("set_location"));
 Transform14->addChild(ROUTE28);
 
 ROUTE* ROUTE29 = new ROUTE();
-ROUTE29->setFromNode("CL1");
-ROUTE29->setFromField("fraction_changed");
-ROUTE29->setToNode("PI1");
-ROUTE29->setToField("set_fraction");
+ROUTE29->setFromNode(CString("CL1"));
+ROUTE29->setFromField(CString("fraction_changed"));
+ROUTE29->setToNode(CString("PI1"));
+ROUTE29->setToField(CString("set_fraction"));
 Transform14->addChild(ROUTE29);
 
 ROUTE* ROUTE30 = new ROUTE();
-ROUTE30->setFromNode("MB1");
-ROUTE30->setFromField("keyValue");
-ROUTE30->setToNode("PI1");
-ROUTE30->setToField("keyValue");
+ROUTE30->setFromNode(CString("MB1"));
+ROUTE30->setFromField(CString("keyValue"));
+ROUTE30->setToNode(CString("PI1"));
+ROUTE30->setToField(CString("keyValue"));
 Transform14->addChild(ROUTE30);
 
 ROUTE* ROUTE31 = new ROUTE();
-ROUTE31->setFromNode("PI1");
-ROUTE31->setFromField("value_changed");
-ROUTE31->setToNode("node");
-ROUTE31->setToField("set_translation");
+ROUTE31->setFromNode(CString("PI1"));
+ROUTE31->setFromField(CString("value_changed"));
+ROUTE31->setToNode(CString("node"));
+ROUTE31->setToField(CString("set_translation"));
 Transform14->addChild(ROUTE31);
 
 ROUTE* ROUTE32 = new ROUTE();
-ROUTE32->setFromNode("MB1");
-ROUTE32->setFromField("translation_changed");
-ROUTE32->setToNode("node");
-ROUTE32->setToField("set_translation");
+ROUTE32->setFromNode(CString("MB1"));
+ROUTE32->setFromField(CString("translation_changed"));
+ROUTE32->setToNode(CString("node"));
+ROUTE32->setToField(CString("set_translation"));
 Transform14->addChild(ROUTE32);
 
 ProtoBody13->addChild(Transform14);
 
-ProtoDeclare10->setProtoBody(ProtoBody13);
+ProtoDeclare10->addChild(ProtoBody13);
 
 Scene7->addChild(ProtoDeclare10);
 
 Transform* Transform33 = new Transform();
-Transform33->setDEF("G1");
+Transform33->setDEF(CString("G1"));
 ProtoInstance* ProtoInstance34 = new ProtoInstance();
-ProtoInstance34->setName("point");
+ProtoInstance34->setName(CString("point"));
 Transform33->addChild(ProtoInstance34);
 
 Scene7->addChild(Transform33);
 
 Transform* Transform35 = new Transform();
-Transform35->setDEF("G2");
+Transform35->setDEF(CString("G2"));
 ProtoInstance* ProtoInstance36 = new ProtoInstance();
-ProtoInstance36->setName("point");
+ProtoInstance36->setName(CString("point"));
 Transform35->addChild(ProtoInstance36);
 
 Scene7->addChild(Transform35);
 
 Transform* Transform37 = new Transform();
-Transform37->setDEF("transC1");
+Transform37->setDEF(CString("transC1"));
 Transform* Transform38 = new Transform();
-Transform38->setDEF("rotscaleC1");
+Transform38->setDEF(CString("rotscaleC1"));
 Shape* Shape39 = new Shape();
 Appearance* Appearance40 = new Appearance();
 Material* Material41 = new Material();
 Material41->setDiffuseColor(new float[3]{0.2,0.7,0.7});
 Material41->setTransparency(0.5);
-Appearance40->setMaterial(Material41);
+Appearance40->addChild(Material41);
 
-Shape39->setAppearance(Appearance40);
+Shape39->addChild(Appearance40);
 
 Cylinder* Cylinder42 = new Cylinder();
 Cylinder42->setRadius(0.05);
@@ -222,226 +223,225 @@ Transform37->addChild(Transform38);
 Scene7->addChild(Transform37);
 
 ProtoDeclare* ProtoDeclare43 = new ProtoDeclare();
-ProtoDeclare43->setName("x3dconnector");
+ProtoDeclare43->setName(CString("x3dconnector"));
 ProtoInterface* ProtoInterface44 = new ProtoInterface();
 field* field45 = new field();
-field45->setName("startnode");
-field45->setAccessType("initializeOnly");
-field45->setType("SFNode");
-ProtoInterface44->addField(field45);
+field45->setName(CString("startnode"));
+field45->setAccessType(CString("initializeOnly"));
+field45->setType(CString("SFNode"));
+ProtoInterface44->addChild(field45);
 
 field* field46 = new field();
-field46->setName("endnode");
-field46->setAccessType("initializeOnly");
-field46->setType("SFNode");
-ProtoInterface44->addField(field46);
+field46->setName(CString("endnode"));
+field46->setAccessType(CString("initializeOnly"));
+field46->setType(CString("SFNode"));
+ProtoInterface44->addChild(field46);
 
 field* field47 = new field();
-field47->setName("transnode");
-field47->setAccessType("inputOutput");
-field47->setType("SFNode");
-ProtoInterface44->addField(field47);
+field47->setName(CString("transnode"));
+field47->setAccessType(CString("inputOutput"));
+field47->setType(CString("SFNode"));
+ProtoInterface44->addChild(field47);
 
 field* field48 = new field();
-field48->setName("rotscalenode");
-field48->setAccessType("inputOutput");
-field48->setType("SFNode");
-ProtoInterface44->addField(field48);
+field48->setName(CString("rotscalenode"));
+field48->setAccessType(CString("inputOutput"));
+field48->setType(CString("SFNode"));
+ProtoInterface44->addChild(field48);
 
 field* field49 = new field();
-field49->setName("set_startpoint");
-field49->setAccessType("inputOnly");
-field49->setType("SFVec3f");
-ProtoInterface44->addField(field49);
+field49->setName(CString("set_startpoint"));
+field49->setAccessType(CString("inputOnly"));
+field49->setType(CString("SFVec3f"));
+ProtoInterface44->addChild(field49);
 
 field* field50 = new field();
-field50->setName("set_endpoint");
-field50->setAccessType("inputOnly");
-field50->setType("SFVec3f");
-ProtoInterface44->addField(field50);
+field50->setName(CString("set_endpoint"));
+field50->setAccessType(CString("inputOnly"));
+field50->setType(CString("SFVec3f"));
+ProtoInterface44->addChild(field50);
 
-ProtoDeclare43->setProtoInterface(ProtoInterface44);
+ProtoDeclare43->addChild(ProtoInterface44);
 
 ProtoBody* ProtoBody51 = new ProtoBody();
 Script* Script52 = new Script();
-Script52->setDEF("S1");
+Script52->setDEF(CString("S1"));
 field* field53 = new field();
-field53->setName("startnode");
-field53->setAccessType("initializeOnly");
-field53->setType("SFNode");
-Script52->addField(field53);
+field53->setName(CString("startnode"));
+field53->setAccessType(CString("initializeOnly"));
+field53->setType(CString("SFNode"));
+Script52->addChild(field53);
 
 field* field54 = new field();
-field54->setName("endnode");
-field54->setAccessType("initializeOnly");
-field54->setType("SFNode");
-Script52->addField(field54);
+field54->setName(CString("endnode"));
+field54->setAccessType(CString("initializeOnly"));
+field54->setType(CString("SFNode"));
+Script52->addChild(field54);
 
 field* field55 = new field();
-field55->setName("transnode");
-field55->setAccessType("initializeOnly");
-field55->setType("SFNode");
-Script52->addField(field55);
+field55->setName(CString("transnode"));
+field55->setAccessType(CString("initializeOnly"));
+field55->setType(CString("SFNode"));
+Script52->addChild(field55);
 
 field* field56 = new field();
-field56->setName("rotscalenode");
-field56->setAccessType("initializeOnly");
-field56->setType("SFNode");
-Script52->addField(field56);
+field56->setName(CString("rotscalenode"));
+field56->setAccessType(CString("initializeOnly"));
+field56->setType(CString("SFNode"));
+Script52->addChild(field56);
 
 field* field57 = new field();
-field57->setName("set_startpoint");
-field57->setAccessType("inputOnly");
-field57->setType("SFVec3f");
-Script52->addField(field57);
+field57->setName(CString("set_startpoint"));
+field57->setAccessType(CString("inputOnly"));
+field57->setType(CString("SFVec3f"));
+Script52->addChild(field57);
 
 field* field58 = new field();
-field58->setName("set_endpoint");
-field58->setAccessType("inputOnly");
-field58->setType("SFVec3f");
-Script52->addField(field58);
+field58->setName(CString("set_endpoint"));
+field58->setAccessType(CString("inputOnly"));
+field58->setType(CString("SFVec3f"));
+Script52->addChild(field58);
 
 IS* IS59 = new IS();
 Connect* connect60 = new Connect();
-connect60->setNodeField("startnode");
-connect60->setProtoField("startnode");
-IS59->addConnect(connect60);
+connect60->setNodeField(CString("startnode"));
+connect60->setProtoField(CString("startnode"));
+IS59->addChild(connect60);
 
 Connect* connect61 = new Connect();
-connect61->setNodeField("endnode");
-connect61->setProtoField("endnode");
-IS59->addConnect(connect61);
+connect61->setNodeField(CString("endnode"));
+connect61->setProtoField(CString("endnode"));
+IS59->addChild(connect61);
 
 Connect* connect62 = new Connect();
-connect62->setNodeField("transnode");
-connect62->setProtoField("transnode");
-IS59->addConnect(connect62);
+connect62->setNodeField(CString("transnode"));
+connect62->setProtoField(CString("transnode"));
+IS59->addChild(connect62);
 
 Connect* connect63 = new Connect();
-connect63->setNodeField("rotscalenode");
-connect63->setProtoField("rotscalenode");
-IS59->addConnect(connect63);
+connect63->setNodeField(CString("rotscalenode"));
+connect63->setProtoField(CString("rotscalenode"));
+IS59->addChild(connect63);
 
 Connect* connect64 = new Connect();
-connect64->setNodeField("set_startpoint");
-connect64->setProtoField("set_startpoint");
-IS59->addConnect(connect64);
+connect64->setNodeField(CString("set_startpoint"));
+connect64->setProtoField(CString("set_startpoint"));
+IS59->addChild(connect64);
 
 Connect* connect65 = new Connect();
-connect65->setNodeField("set_endpoint");
-connect65->setProtoField("set_endpoint");
-IS59->addConnect(connect65);
+connect65->setNodeField(CString("set_endpoint"));
+connect65->setProtoField(CString("set_endpoint"));
+IS59->addChild(connect65);
 
-Script52->setIS(IS59);
+Script52->addChild(IS59);
 
 
-Script52.setSourceCode(`ecmascript:\n"+
-"        function recompute(startpoint,endpoint){\n"+
-"	    if (typeof endpoint === 'undefined') {\n"+
-"		return;\n"+
-"	    }\n"+
-"            var dif = endpoint.subtract(startpoint);\n"+
-"            var dist = dif.length()*0.5;\n"+
-"            var dif2 = dif.multiply(0.5);\n"+
-"            var norm = dif.normalize();\n"+
-"            var transl = startpoint.add(dif2);\n"+
-"	    if (typeof Quaternion !== 'undefined') {\n"+
-"		    return {\n"+
-"			    scale : new SFVec3f(1.0,dist,1.0),\n"+
-"			    translation : transl,\n"+
-"			    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)\n"+
-"		    };\n"+
-"	    } else {\n"+
-"		    return {\n"+
-"			    scale : new SFVec3f(1.0,dist,1.0),\n"+
-"			    translation : transl,\n"+
-"			    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)\n"+
-"		    };\n"+
-"	    }\n"+
-"	}\n"+
-"	function recompute_and_route(startpoint, endpoint) {\n"+
-"	      var trafo = recompute(startpoint, endpoint);\n"+
-"	      if (trafo) {\n"+
-"		      transnode.translation = trafo.translation;\n"+
-"		      rotscalenode.rotation = trafo.rotation;\n"+
-"		      rotscalenode.scale = trafo.scale;\n"+
-"	      }\n"+
-"	}\n"+
-"        function initialize(){\n"+
-"            recompute_and_route(startnode.translation,endnode.translation);\n"+
-"        }\n"+
-"        function set_startpoint(val,t){\n"+
-"            recompute_and_route(val,endnode.translation);\n"+
-"        }\n"+
-"        function set_endpoint(val,t){\n"+
-"            recompute_and_route(startnode.translation,val);\n"+
-"        }`)
+Script52->setSourceCode(CString("ecmascript:")+
+_T("        function recompute(startpoint,endpoint){")+
+_T("	    if (typeof endpoint === 'undefined') {")+
+_T("		return;")+
+_T("	    }")+
+_T("            var dif = endpoint.subtract(startpoint);")+
+_T("            var dist = dif.length()*0.5;")+
+_T("            var dif2 = dif.multiply(0.5);")+
+_T("            var norm = dif.normalize();")+
+_T("            var transl = startpoint.add(dif2);")+
+_T("	    if (typeof Quaternion !== 'undefined') {")+
+_T("		    return {")+
+_T("			    scale : new SFVec3f(1.0,dist,1.0),")+
+_T("			    translation : transl,")+
+_T("			    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)")+
+_T("		    };")+
+_T("	    } else {")+
+_T("		    return {")+
+_T("			    scale : new SFVec3f(1.0,dist,1.0),")+
+_T("			    translation : transl,")+
+_T("			    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)")+
+_T("		    };")+
+_T("	    }")+
+_T("	}")+
+_T("	function recompute_and_route(startpoint, endpoint) {")+
+_T("	      var trafo = recompute(startpoint, endpoint);")+
+_T("	      if (trafo) {")+
+_T("		      transnode.translation = trafo.translation;")+
+_T("		      rotscalenode.rotation = trafo.rotation;")+
+_T("		      rotscalenode.scale = trafo.scale;")+
+_T("	      }")+
+_T("	}")+
+_T("        function initialize(){")+
+_T("            recompute_and_route(startnode.translation,endnode.translation);")+
+_T("        }")+
+_T("        function set_startpoint(val,t){")+
+_T("            recompute_and_route(val,endnode.translation);")+
+_T("        }")+
+_T("        function set_endpoint(val,t){")+
+_T("            recompute_and_route(startnode.translation,val);")+
+_T("        }"));
 ProtoBody51->addChild(Script52);
 
-ProtoDeclare43->setProtoBody(ProtoBody51);
+ProtoDeclare43->addChild(ProtoBody51);
 
 Scene7->addChild(ProtoDeclare43);
 
 ProtoInstance* ProtoInstance66 = new ProtoInstance();
-ProtoInstance66->setName("x3dconnector");
-ProtoInstance66->setDEF("connector1");
+ProtoInstance66->setName(CString("x3dconnector"));
+ProtoInstance66->setDEF(CString("connector1"));
 fieldValue* fieldValue67 = new fieldValue();
-fieldValue67->setName("startnode");
+fieldValue67->setName(&CString("startnode"));
 Transform* Transform68 = new Transform();
-Transform68->setUSE("G1");
+Transform68->setUSE(CString("G1"));
 fieldValue67->addChild(Transform68);
 
-ProtoInstance66->addFieldValue(fieldValue67);
+ProtoInstance66->addChild(fieldValue67);
 
 fieldValue* fieldValue69 = new fieldValue();
-fieldValue69->setName("endnode");
+fieldValue69->setName(&CString("endnode"));
 Transform* Transform70 = new Transform();
-Transform70->setUSE("G2");
+Transform70->setUSE(CString("G2"));
 fieldValue69->addChild(Transform70);
 
-ProtoInstance66->addFieldValue(fieldValue69);
+ProtoInstance66->addChild(fieldValue69);
 
 fieldValue* fieldValue71 = new fieldValue();
-fieldValue71->setName("transnode");
+fieldValue71->setName(&CString("transnode"));
 Transform* Transform72 = new Transform();
-Transform72->setUSE("transC1");
+Transform72->setUSE(CString("transC1"));
 fieldValue71->addChild(Transform72);
 
-ProtoInstance66->addFieldValue(fieldValue71);
+ProtoInstance66->addChild(fieldValue71);
 
 fieldValue* fieldValue73 = new fieldValue();
-fieldValue73->setName("rotscalenode");
+fieldValue73->setName(&CString("rotscalenode"));
 Transform* Transform74 = new Transform();
-Transform74->setUSE("rotscaleC1");
+Transform74->setUSE(CString("rotscaleC1"));
 fieldValue73->addChild(Transform74);
 
-ProtoInstance66->addFieldValue(fieldValue73);
+ProtoInstance66->addChild(fieldValue73);
 
 fieldValue* fieldValue75 = new fieldValue();
-fieldValue75->setName("set_startpoint");
-ProtoInstance66->addFieldValue(fieldValue75);
+fieldValue75->setName(&CString("set_startpoint"));
+ProtoInstance66->addChild(fieldValue75);
 
 fieldValue* fieldValue76 = new fieldValue();
-fieldValue76->setName("set_endpoint");
-ProtoInstance66->addFieldValue(fieldValue76);
+fieldValue76->setName(&CString("set_endpoint"));
+ProtoInstance66->addChild(fieldValue76);
 
 Scene7->addChild(ProtoInstance66);
 
 ROUTE* ROUTE77 = new ROUTE();
-ROUTE77->setFromNode("G1");
-ROUTE77->setFromField("translation_changed");
-ROUTE77->setToNode("connector1");
-ROUTE77->setToField("set_startpoint");
+ROUTE77->setFromNode(CString("G1"));
+ROUTE77->setFromField(CString("translation_changed"));
+ROUTE77->setToNode(CString("connector1"));
+ROUTE77->setToField(CString("set_startpoint"));
 Scene7->addChild(ROUTE77);
 
 ROUTE* ROUTE78 = new ROUTE();
-ROUTE78->setFromNode("G2");
-ROUTE78->setFromField("translation_changed");
-ROUTE78->setToNode("connector1");
-ROUTE78->setToField("set_endpoint");
+ROUTE78->setFromNode(CString("G2"));
+ROUTE78->setFromField(CString("translation_changed"));
+ROUTE78->setToNode(CString("connector1"));
+ROUTE78->setToField(CString("set_endpoint"));
 Scene7->addChild(ROUTE78);
 
 X3D0->setScene(Scene7);
 
-X3D0->toXMLString();
 }

@@ -146,6 +146,7 @@ var doValidate = function doValidate(json, validated_version, file, success, fai
 		console.log("Success validating", file);
 		success();
 	} else if (typeof failure === 'function') {
+		console.log("Failure validating", file);
 		failure(e);
 	} else {
 		console.error("User selected failure");
@@ -190,7 +191,7 @@ loadSchema = async function loadSchema(json, file, success, failure) {
 			version = "4.0";
 		}
 		var validated_version = CACHE.validate[version];
-		console.error("loading schema", version, success, failure);
+		// console.error("loading schema", version, success, failure);
 		if (typeof validated_version === 'undefined') {
 			if (typeof fs === 'object') {
 				var schema = fs.readFileSync("../schema/x3d-"+version+"-JSONSchema.json");
@@ -220,14 +221,14 @@ loadSchema = async function loadSchema(json, file, success, failure) {
  */
 loadX3DJS = function loadX3DJS(DOMImplementation, jsobj, path, NS, callback) {
 	X3DJSONLD.x3djsonNS = NS;
-	console.error("In loadValidate.loadX3DJS", path)
+	// console.error("In loadValidate.loadX3DJS", path)
 	loadSchema(jsobj, path, function() {
-		console.error("Successfully loaded schema", path)
+		// console.error("Successfully loaded schema", path)
 		var child, xml;
 		[ child, xml ] = X3DJSONLD.loadJsonIntoXml(DOMImplementation, jsobj, path);
 		callback(child, xml);
 	}, function(e) {
-		console.error(e);
+		console.error("Failure loading schema", path, e)
 		callback(null, null);
 	});
 }
