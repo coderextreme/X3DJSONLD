@@ -4,105 +4,108 @@
 #define WINAPI
 #define AFX_EXT_CLASS
 #define EXPORT32
-#include "C:/x3d-code/www.web3d.org/x3d/stylesheets/cpp/concretes.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/CylinderExample/pch.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/CylinderExample/framework.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/XML_PARSER.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/X3DLib.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/Abstracts.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/Concretes.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/glMath.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/glut.h"
 int main(int argc, char ** argv) {
-CX3DScene m_pScene;
-CBrowser browser = X3D.getBrowser();
-CX3D* X3D0 = new CX3D();
-CGroup* group = (CGroup*)(m_pScene.createNode("Group"));
-group->addChildren(X3D0);
+X3D* X3D0 = new X3D();
 X3D0->setProfile("Immersive");
 X3D0->setVersion("4.0");
-Chead* head1 = new Chead();
-Cmeta* meta2 = new Cmeta();
+head* head1 = new head();
+meta* meta2 = new meta();
 meta2->setName("title");
 meta2->setContent("flower3.x3d");
-head1->addMeta(*meta2);
+head1->addMeta(meta2);
 
-Cmeta* meta3 = new Cmeta();
+meta* meta3 = new meta();
 meta3->setName("creator");
 meta3->setContent("John Carlson");
-head1->addMeta(*meta3);
+head1->addMeta(meta3);
 
-Cmeta* meta4 = new Cmeta();
+meta* meta4 = new meta();
 meta4->setName("generator");
 meta4->setContent("manual");
-head1->addMeta(*meta4);
+head1->addMeta(meta4);
 
-Cmeta* meta5 = new Cmeta();
+meta* meta5 = new meta();
 meta5->setName("identifier");
 meta5->setContent("https://coderextreme.net/X3DJSONLD/src/main/data/flower3.x3d");
-head1->addMeta(*meta5);
+head1->addMeta(meta5);
 
-Cmeta* meta6 = new Cmeta();
+meta* meta6 = new meta();
 meta6->setName("description");
 meta6->setContent("a flower");
-head1->addMeta(*meta6);
+head1->addMeta(meta6);
 
-X3D0->setHead(*head1);
+X3D0->setHead(head1);
 
-CScene* Scene7 = new CScene();
-CNavigationInfo* NavigationInfo8 = (CNavigationInfo *)(m_pScene.createNode("NavigationInfo"));
-group->addChildren(*NavigationInfo8);
+Scene* Scene7 = new Scene();
+NavigationInfo* NavigationInfo8 = new NavigationInfo();
+Scene7->addChild(NavigationInfo8);
 
-CDirectionalLight* DirectionalLight9 = (CDirectionalLight *)(m_pScene.createNode("DirectionalLight"));
+DirectionalLight* DirectionalLight9 = new DirectionalLight();
 DirectionalLight9->setDirection(new float[3]{0,-0.8,-0.2});
 DirectionalLight9->setIntensity(0.5);
-group->addChildren(*DirectionalLight9);
+Scene7->addChild(DirectionalLight9);
 
-CBackground* Background10 = (CBackground *)(m_pScene.createNode("Background"));
+Background* Background10 = new Background();
 Background10->setSkyColor(new float[3]{1,1,1});
-group->addChildren(*Background10);
+Scene7->addChild(Background10);
 
-CViewpoint* Viewpoint11 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
+Viewpoint* Viewpoint11 = new Viewpoint();
 Viewpoint11->setDescription("One mathematical orbital");
 Viewpoint11->setPosition(new float[3]{0,0,50});
-group->addChildren(*Viewpoint11);
+Scene7->addChild(Viewpoint11);
 
-CTransform* Transform12 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform12 = new Transform();
 Transform12->setDEF("OrbitTransform");
 Transform12->setTranslation(new float[3]{8,0,0});
-CShape* Shape13 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance14 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material15 = (CMaterial *)(m_pScene.createNode("Material"));
+Shape* Shape13 = new Shape();
+Appearance* Appearance14 = new Appearance();
+Material* Material15 = new Material();
 Material15->setDiffuseColor(new float[3]{0,0.5,1});
 Material15->setSpecularColor(new float[3]{0,0.5,1});
-Appearance14->setMaterial(*Material15);
+Appearance14->setMaterial(Material15);
 
-Shape13->setAppearance(*Appearance14);
+Shape13->setAppearance(Appearance14);
 
-CIndexedFaceSet* IndexedFaceSet16 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet* IndexedFaceSet16 = new IndexedFaceSet();
 IndexedFaceSet16->setConvex(False);
 IndexedFaceSet16->setDEF("Orbit");
-CCoordinate* Coordinate17 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate* Coordinate17 = new Coordinate();
 Coordinate17->setDEF("OrbitCoordinates");
-IndexedFaceSet16->setCoord(*Coordinate17);
+IndexedFaceSet16->setCoord(Coordinate17);
 
 Shape13->setGeometry(IndexedFaceSet16);
 
-Transform12->addChild(*Shape13);
+Transform12->addChild(Shape13);
 
-group->addChildren(*Transform12);
+Scene7->addChild(Transform12);
 
-CScript* Script18 = (CScript *)(m_pScene.createNode("Script"));
+Script* Script18 = new Script();
 Script18->setDEF("OrbitScript");
-Cfield* field19 = new Cfield();
+field* field19 = new field();
 field19->setName("set_fraction");
 field19->setAccessType("inputOnly");
 field19->setType("SFFloat");
-Script18->addField(*field19);
+Script18->addField(field19);
 
-Cfield* field20 = new Cfield();
+field* field20 = new field();
 field20->setName("coordinates");
 field20->setAccessType("outputOnly");
 field20->setType("MFVec3f");
-Script18->addField(*field20);
+Script18->addField(field20);
 
-Cfield* field21 = new Cfield();
+field* field21 = new field();
 field21->setName("coordIndexes");
 field21->setAccessType("outputOnly");
 field21->setType("MFInt32");
-Script18->addField(*field21);
+Script18->addField(field21);
 
 //<field accessType=\"inputOutput\" name=\"e\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"f\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"g\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"h\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"t\" type=\"SFFloat\" value=\"0\"/> <field accessType=\"inputOutput\" name=\"p\" type=\"SFFloat\" value=\"0\"/> <field accessType=\"initializeOnly\" name=\"resolution\" type=\"SFInt32\" value=\"100\"/>
 
@@ -180,37 +183,36 @@ Script18.setSourceCode(`ecmascript:\n"+
 "	}\n"+
 "	generateCoordinates(resolution);\n"+
 "}`)
-group->addChildren(*Script18);
+Scene7->addChild(Script18);
 
-CTimeSensor* TimeSensor22 = (CTimeSensor *)(m_pScene.createNode("TimeSensor"));
+TimeSensor* TimeSensor22 = new TimeSensor();
 TimeSensor22->setDEF("Clock");
 TimeSensor22->setCycleInterval(16);
 TimeSensor22->setLoop(True);
-group->addChildren(*TimeSensor22);
+Scene7->addChild(TimeSensor22);
 
-CROUTE* ROUTE23 = new CROUTE();
+ROUTE* ROUTE23 = new ROUTE();
 ROUTE23->setFromNode("OrbitScript");
 ROUTE23->setFromField("coordIndexes");
 ROUTE23->setToNode("Orbit");
 ROUTE23->setToField("set_coordIndex");
-group->addChildren(*ROUTE23);
+Scene7->addChild(ROUTE23);
 
-CROUTE* ROUTE24 = new CROUTE();
+ROUTE* ROUTE24 = new ROUTE();
 ROUTE24->setFromNode("OrbitScript");
 ROUTE24->setFromField("coordinates");
 ROUTE24->setToNode("OrbitCoordinates");
 ROUTE24->setToField("point");
-group->addChildren(*ROUTE24);
+Scene7->addChild(ROUTE24);
 
-CROUTE* ROUTE25 = new CROUTE();
+ROUTE* ROUTE25 = new ROUTE();
 ROUTE25->setFromNode("Clock");
 ROUTE25->setFromField("fraction_changed");
 ROUTE25->setToNode("OrbitScript");
 ROUTE25->setToField("set_fraction");
-group->addChildren(*ROUTE25);
+Scene7->addChild(ROUTE25);
 
-X3D0->setScene(*Scene7);
+X3D0->setScene(Scene7);
 
-m_pScene.addRootNode(group);
 X3D0->toXMLString();
 }

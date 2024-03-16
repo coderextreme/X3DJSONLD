@@ -4,69 +4,72 @@
 #define WINAPI
 #define AFX_EXT_CLASS
 #define EXPORT32
-#include "C:/x3d-code/www.web3d.org/x3d/stylesheets/cpp/concretes.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/CylinderExample/pch.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/CylinderExample/framework.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/XML_PARSER.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/X3DLib.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/Abstracts.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/Concretes.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/glMath.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/CylinderExample/include/glut.h"
 int main(int argc, char ** argv) {
-CX3DScene m_pScene;
-CBrowser browser = X3D.getBrowser();
-CX3D* X3D0 = new CX3D();
-CGroup* group = (CGroup*)(m_pScene.createNode("Group"));
-group->addChildren(X3D0);
+X3D* X3D0 = new X3D();
 X3D0->setProfile("Immersive");
 X3D0->setVersion("3.0");
-Chead* head1 = new Chead();
-Cmeta* meta2 = new Cmeta();
+head* head1 = new head();
+meta* meta2 = new meta();
 meta2->setName("title");
 meta2->setContent("ExtrusionHeart.x3d");
-head1->addMeta(*meta2);
+head1->addMeta(meta2);
 
-Cmeta* meta3 = new Cmeta();
+meta* meta3 = new meta();
 meta3->setName("description");
 meta3->setContent("Simple extrusion of a Valentine heart.");
-head1->addMeta(*meta3);
+head1->addMeta(meta3);
 
-Cmeta* meta4 = new Cmeta();
+meta* meta4 = new meta();
 meta4->setName("creator");
 meta4->setContent("Class participants in course Introduction to VRML/X3D.");
-head1->addMeta(*meta4);
+head1->addMeta(meta4);
 
-Cmeta* meta5 = new Cmeta();
+meta* meta5 = new meta();
 meta5->setName("created");
 meta5->setContent("14 February 2001");
-head1->addMeta(*meta5);
+head1->addMeta(meta5);
 
-Cmeta* meta6 = new Cmeta();
+meta* meta6 = new meta();
 meta6->setName("modified");
 meta6->setContent("27 November 2015");
-head1->addMeta(*meta6);
+head1->addMeta(meta6);
 
-Cmeta* meta7 = new Cmeta();
+meta* meta7 = new meta();
 meta7->setName("identifier");
 meta7->setContent("https://www.web3d.org/x3d/content/examples/Basic/course/ExtrusionHeart.x3d");
-head1->addMeta(*meta7);
+head1->addMeta(meta7);
 
-Cmeta* meta8 = new Cmeta();
+meta* meta8 = new meta();
 meta8->setName("generator");
 meta8->setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit");
-head1->addMeta(*meta8);
+head1->addMeta(meta8);
 
-Cmeta* meta9 = new Cmeta();
+meta* meta9 = new meta();
 meta9->setName("license");
 meta9->setContent("../license.html");
-head1->addMeta(*meta9);
+head1->addMeta(meta9);
 
-X3D0->setHead(*head1);
+X3D0->setHead(head1);
 
-CScene* Scene10 = new CScene();
-CViewpoint* Viewpoint11 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
+Scene* Scene10 = new Scene();
+Viewpoint* Viewpoint11 = new Viewpoint();
 Viewpoint11->setDescription("Extrusion Heart");
 Viewpoint11->setOrientation(new float[4]{1,0,0,1.57});
 Viewpoint11->setPosition(new float[3]{0,-4,0});
-group->addChildren(*Viewpoint11);
+Scene10->addChild(Viewpoint11);
 
-CTransform* Transform12 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform* Transform12 = new Transform();
 Transform12->setTranslation(new float[3]{0,-0.5,0});
-CShape* Shape13 = (CShape *)(m_pScene.createNode("Shape"));
-CExtrusion* Extrusion14 = (CExtrusion *)(m_pScene.createNode("Extrusion"));
+Shape* Shape13 = new Shape();
+Extrusion* Extrusion14 = new Extrusion();
 Extrusion14->setCreaseAngle(3.14159);
 Extrusion14->setCrossSection(new float[26]{0,0.8,0.2,1,0.7,0.95,1,0.5,0.8,0,0.5,-0.3,0,-0.7,-0.5,-0.3,-0.8,0,-1,0.5,-0.7,0.95,-0.2,1,0,0.8});
 Extrusion14->setScale(new float[10]{0.01,0.01,0.8,0.8,1,1,0.8,0.8,0.01,0.01});
@@ -74,19 +77,18 @@ Extrusion14->setSolid(False);
 Extrusion14->setSpine(new float[15]{0,0,0,0,0.1,0,0,0.5,0,0,0.9,0,0,1,0});
 Shape13->setGeometry(Extrusion14);
 
-CAppearance* Appearance15 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material16 = (CMaterial *)(m_pScene.createNode("Material"));
+Appearance* Appearance15 = new Appearance();
+Material* Material16 = new Material();
 Material16->setDiffuseColor(new float[3]{0.8,0.3,0.3});
-Appearance15->setMaterial(*Material16);
+Appearance15->setMaterial(Material16);
 
-Shape13->setAppearance(*Appearance15);
+Shape13->setAppearance(Appearance15);
 
-Transform12->addChild(*Shape13);
+Transform12->addChild(Shape13);
 
-group->addChildren(*Transform12);
+Scene10->addChild(Transform12);
 
-X3D0->setScene(*Scene10);
+X3D0->setScene(Scene10);
 
-m_pScene.addRootNode(group);
 X3D0->toXMLString();
 }
