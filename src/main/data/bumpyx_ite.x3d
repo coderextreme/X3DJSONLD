@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D profile="Immersive" version="4.0" xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-4.0.xsd' xmlns:xsd='http://www.web3d.org/specifications/x3d-namespace'>
+    <head>
+    	      <component level='1' name='Scripting'/>
+	      <component name='EnvironmentalEffects' level='3'></component>
+	      <component name='Shaders' level='1'></component>
+	      <component name='CubeMapTexturing' level='1'></component>
+	      <component name='Texturing' level='1'></component>
+	      <component name='Rendering' level='1'></component>
+	      <component name='Shape' level='4'></component>
+	      <component name='Grouping' level='3'></component>
+	      <component name='Core' level='1'></component>
+        <meta name="title" content="bumpy.x3d"></meta>
+        <meta name="creator" content="John Carlson"></meta>
+        <meta name="description" content="A flower"></meta>
+        <meta name="generator" content="X3D-Edit, https://savage.nps.edu/X3D-Edit"></meta>
+	<meta name="identifier" content="https://coderextreme.net/X3DJSONLD/src/main/data/flowerproto.x3d"></meta>
+    </head>
+  <Scene>
+    <NavigationInfo type="&quot;EXAMINE&quot; &quot;ANY&quot;"></NavigationInfo>
+<!-- Images courtesy of Paul Debevec's Light Probe Image Gallery -->
+    <Background
+	    leftUrl='"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png"'
+	    rightUrl='"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png"'
+	    frontUrl='"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png"'
+	    backUrl='"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png"'
+	    topUrl='"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png"'
+	    bottomUrl='"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"'
+	    ></Background> 
+	<Viewpoint position='0 0 40' description="Transparent rose" ></Viewpoint>
+	<Transform DEF='Rose01' >
+	<Shape>
+	  <Appearance>
+          <Material diffuseColor=".7 .7 .7" specularColor=".5 .5 .5" ></Material>
+                <ComposedCubeMapTexture>
+                    <ImageTexture id="backShader" containerField="back" url='"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png"' ></ImageTexture>
+                    <ImageTexture id="bottomShader" containerField="bottom" url='"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"' ></ImageTexture>
+                    <ImageTexture id="frontShader" containerField="front" url='"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png"' ></ImageTexture>
+                    <ImageTexture id="leftShader" containerField="left" url='"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png"' ></ImageTexture>
+                    <ImageTexture id="rightShader" containerField="right" url='"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png"' ></ImageTexture>
+                    <ImageTexture id="topShader" containerField="top" url='"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png"' ></ImageTexture>
+                </ComposedCubeMapTexture>
+		<ComposedShader DEF='ComposedShader' language="GLSL">
+		  <!--
+                  <field name='fw_textureCoordGenType' type='SFInt32' accessType='inputOnly' value='0'></field>
+		  -->
+                  <field name='cube' type='SFInt32' accessType='inputOnly' value='0'></field>
+
+                  <field name='chromaticDispertion' accessType='inputOnly' type='SFVec3f' value='0.98 1.0 1.033'></field>
+                  <field name='bias' type='SFFloat' accessType='inputOnly' value='0.5'></field>
+                  <field name='scale' type='SFFloat' accessType='inputOnly' value='0.5'></field>
+                  <field name='power' type='SFFloat' accessType='inputOnly' value='2'></field>
+                  <field name='a' type='SFFloat' accessType='inputOutput' value='10'></field>
+                  <field name='b' type='SFFloat' accessType='inputOutput' value='1'></field>
+                  <field name='c' type='SFFloat' accessType='inputOutput' value='20'></field>
+                  <field name='d' type='SFFloat' accessType='inputOutput' value='20'></field>
+                  <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
+                  <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
+		  <ShaderPart url='"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs"' containerField='parts' type='VERTEX'></ShaderPart>
+		  <ShaderPart url='"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_bubbles.fs"' containerField='parts' type='FRAGMENT'></ShaderPart>
+                </ComposedShader>
+	  </Appearance>
+	  <Sphere radius='20'></Sphere>
+	</Shape>
+      </Transform>
+    </Scene>   
+</X3D>
