@@ -1,6 +1,7 @@
 __pycache__/
 node_modules/
 *.class
+*.obj
 *.bak
 target/
 /nbproject/private/
