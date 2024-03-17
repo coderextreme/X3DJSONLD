@@ -14,6 +14,8 @@
 #include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/SphereExample/include/glMath.h"
 #include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/SphereExample/include/glut.h"
 int main(int argc, char ** argv) {
+SFImage SFImage0 = SFImage();
+SFImage0.setValue(2, 2, 4, new int[4]{-16776961, 16711935, -1, -65281});
 X3D* X3D0 = new X3D();
 X3D0->setProfile(CString("Interchange"));
 X3D0->setVersion(CString("3.0"));
@@ -135,7 +137,7 @@ Material* Material26 = new Material();
 Appearance25->addChild(Material26);
 
 PixelTexture* PixelTexture27 = new PixelTexture();
-PixelTexture27->setImage(new int32_t[7]{2,2,4,-16776961,16711935,-1,-65281});
+PixelTexture27->setImage(SFImage0);
 PixelTexture27->setRepeatS(False);
 PixelTexture27->setRepeatT(False);
 Appearance25->addChild(PixelTexture27);

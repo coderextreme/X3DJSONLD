@@ -14,6 +14,8 @@
 #include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/SphereExample/include/glMath.h"
 #include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/SphereExample/include/glut.h"
 int main(int argc, char ** argv) {
+MFInt32 MFInt320 = MFInt32();
+MFInt320.setValue(33, new int32_t[33]{0, 0, 0, -1, 0, 0, 0, -1, 0, 0, 0, 0, -1, 0, 0, 0, 0, -1, 0, 0, 0, 0, -1, 0, 0, 0, 0, -1, 0, 0, 0, 0, -1});
 X3D* X3D0 = new X3D();
 X3D0->setProfile(CString("Interchange"));
 X3D0->setVersion(CString("3.3"));
@@ -67,7 +69,7 @@ IndexedFaceSet13->setDEF(CString("IndexedFaceSet"));
 IndexedFaceSet13->setCoordIndex(new int32_t[33]{0,0,1,-1,0,1,1,-1,2,2,3,3,-1,0,3,3,0,-1,0,3,2,1,-1,1,2,2,1,-1,1,2,3,0,-1}, 33);
 IndexedFaceSet13->setNormalIndex(new int32_t[7]{0,0,1,2,3,4,5}, 7);
 IndexedFaceSet13->setNormalPerVertex(False);
-IndexedFaceSet13->setColorIndex(new int[33]{0,0,0,-1,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1}, 33);
+IndexedFaceSet13->setColorIndex(MFInt320);
 Coordinate* Coordinate14 = new Coordinate();
 Coordinate14->setPoint(new float[12]{0,0,1,0,1,1,1,1,1,1,0,1}, 12);
 IndexedFaceSet13->addChild(Coordinate14);

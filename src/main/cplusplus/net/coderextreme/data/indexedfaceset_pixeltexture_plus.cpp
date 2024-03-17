@@ -14,6 +14,8 @@
 #include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/SphereExample/include/glMath.h"
 #include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/SphereExample/include/glut.h"
 int main(int argc, char ** argv) {
+SFImage SFImage0 = SFImage();
+SFImage0.setValue(2, 2, 4, new int[4]{-16776961, 16711935, -1, -65281});
 X3D* X3D0 = new X3D();
 X3D0->setProfile(CString("Interchange"));
 X3D0->setVersion(CString("3.0"));
@@ -165,7 +167,7 @@ Material* Material32 = new Material();
 Appearance31->addChild(Material32);
 
 PixelTexture* PixelTexture33 = new PixelTexture();
-PixelTexture33->setImage(new int32_t[7]{2,2,4,-16776961,16711935,-1,-65281});
+PixelTexture33->setImage(SFImage0);
 Appearance31->addChild(PixelTexture33);
 
 Shape30->addChild(Appearance31);
@@ -174,7 +176,7 @@ IndexedFaceSet* IndexedFaceSet34 = new IndexedFaceSet();
 IndexedFaceSet34->setColorPerVertex(False);
 IndexedFaceSet34->setCoordIndex(new int32_t[30]{0,1,3,2,-1,4,5,7,6,-1,6,7,1,0,-1,2,3,5,4,-1,6,0,2,4,-1,1,7,5,3,-1}, 30);
 IndexedFaceSet34->setCreaseAngle(0.5);
-IndexedFaceSet34->setTexCoordIndex(new int[30]{0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1}, 30);
+IndexedFaceSet34->setTexCoordIndex(new int32_t[30]{0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1}, 30);
 CColor* Color35 = new CColor();
 Color35->setColor(new float[18]{0,1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,1,0}, 18);
 IndexedFaceSet34->addChild(Color35);
