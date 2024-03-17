@@ -103,17 +103,24 @@ CppScriptSerializer.prototype = {
 		if (values.length >= 0 && (values[values.length-1] === "" || values[values.length-1] === null)) {
 			values.pop();
 		}
-		if (attr === "texCoordIndex" || attr === "colorIndex") {
+		if (attrType === 'SFImage') {
+			let length = values[0]*values[1]*values[2];
+			let str = values[0]+", "+values[1]+", "+values[2]+", new "+type+"["+(values.length-3)+"]{"+(values.slice(3, length+1).join(', '))+"}";
+			this.code[co] = attrType+' '+attrType+co+' = '+attrType+'();\n'
+			this.code[co] += attrType+co+'.setValue('+str+');\n';
+			this.codeno++;
+			return attrType+co;
+		}
+		if (attr === "colorIndex") {
+			let str = values.length+", new "+type+"["+(values.length)+"]{"+values.join(', ')+"}";
+			this.code[co] = attrType+' '+attrType+co+' = '+attrType+'();\n'
+			this.code[co] += attrType+co+'.setValue('+str+');\n';
+			this.codeno++;
+			return attrType+co;
+		} else if (attr === "texCoordIndex") {
 
-				/*
-				this.code[co] = attrType+' '+attrType+co+' = '+attrType+'();\n'
-				for (let i = 0; i < values.length; i++) {
-					this.code[co] += attrType+co+'.append('+values[i]+');\n';
-				}
-				this.codeno++;
-				*/
 			
-			return 'new int['+values.length+']{'+lead+values.join(j)+trail+'}, '+values.length;
+			return 'new '+type+'['+values.length+']{'+lead+values.join(j)+trail+'}, '+values.length;
 		} else {
 			return 'new '+type+'['+values.length+']{'+lead+values.join(j)+trail+'}'+(attrType.startsWith("MF") && type !== "boolean" ? ', '+values.length : '');
 		}
@@ -243,12 +250,11 @@ CppScriptSerializer.prototype = {
 					}
 					return y;
 				}), this.codeno, '"), CString("', 'CString("', '")'); // ... json, lead, tail
-		} else if (
-			attrType === "MFInt32") {
+		} else if (attrType === "MFInt32") {
 			strval = this.printSubArray(attr, attrType, "int32_t", nodeValue.split(/[ ,\t\r\n]+/), this.codeno, ',', '', '');
-		} else if (
-			attrType === "MFImage"||
-			attrType === "SFImage") {
+		} else if (attrType === "MFImage") {
+			strval = this.printSubArray(attr, attrType, "int", nodeValue.split(/[ ,\t\r\n]+/), this.codeno, ',', '', '');
+		} else if (attrType === "SFImage") {
 			strval = this.printSubArray(attr, attrType, "int", nodeValue.split(/[ ,\t\r\n]+/), this.codeno, ',', '', '');
 		} else if (
 			attrType === "SFColor"||
@@ -378,12 +384,14 @@ CppScriptSerializer.prototype = {
 				if (method.indexOf("addChildren") >= 0) {
 					method = method.replace("Children", "Child");
 				}
-				method = method.replace("setTopTexture", "setTop");
-				method = method.replace("setBottomTexture", "setBottom");
-				method = method.replace("setFrontTexture", "setFront");
-				method = method.replace("setBackTexture", "setBack");
-				method = method.replace("setLeftTexture", "setLeft");
-				method = method.replace("setRightTexture", "setRight");
+				if (element.nodeName !== "TextureBackground") {
+					method = method.replace("setTopTexture", "setTop");
+					method = method.replace("setBottomTexture", "setBottom");
+					method = method.replace("setFrontTexture", "setFront");
+					method = method.replace("setBackTexture", "setBack");
+					method = method.replace("setLeftTexture", "setLeft");
+					method = method.replace("setRightTexture", "setRight");
+				}
 				method = method.replace("addParts", "setParts");  // TODO, need addParts, or collect in array
 				method = method.replace("addFieldValue", "addChild");
 				method = method.replace("addField", "addChild");
@@ -398,11 +406,14 @@ CppScriptSerializer.prototype = {
 				method = method.replace("setIS", "addChild");
 				method = method.replace("setAppearance", "addChild");
 				method = method.replace("setMaterial", "addChild");
-				method = method.replace("setTexture", "addChild");
 				method = method.replace("setCoord", "addChild");
 				method = method.replace("setColor", "addChild");
 				method = method.replace("setProxy", "addChild");
 				method = method.replace("setTexCoord", "addChild");
+				method = method.replace("setTextureTransform", "addChild");
+				if (method.endsWith("setTexture")) {
+					method = method.replace("setTexture", "addChild");
+				}
 				ch += element.nodeName+stack[1];
 				let shim = "";
 				// console.log(method, node.nodeName, element.nodeName);

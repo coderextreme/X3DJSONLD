@@ -14,6 +14,8 @@
 #include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/SphereExample/include/glMath.h"
 #include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/SphereExample/include/glut.h"
 int main(int argc, char ** argv) {
+MFInt32 MFInt320 = MFInt32();
+MFInt320.setValue(3, new int32_t[3]{0, 1, 2});
 X3D* X3D0 = new X3D();
 X3D0->setProfile(CString("Interchange"));
 X3D0->setVersion(CString("3.3"));
@@ -143,7 +145,7 @@ Shape* Shape27 = new Shape();
 Shape27->setDEF(CString("AxisLinesShape"));
 //RGB lines showing XYZ axes
 IndexedLineSet* IndexedLineSet28 = new IndexedLineSet();
-IndexedLineSet28->setColorIndex(new int[3]{0,1,2}, 3);
+IndexedLineSet28->setColorIndex(MFInt320);
 IndexedLineSet28->setColorPerVertex(False);
 IndexedLineSet28->setCoordIndex(new int32_t[9]{0,1,-1,0,2,-1,0,3,-1}, 9);
 Coordinate* Coordinate29 = new Coordinate();
