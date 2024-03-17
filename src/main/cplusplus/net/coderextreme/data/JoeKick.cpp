@@ -14,6 +14,8 @@
 #include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/SphereExample/include/glMath.h"
 #include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/SphereExample/include/glut.h"
 int main(int argc, char ** argv) {
+MFInt32 MFInt320 = MFInt32();
+MFInt320.setValue(3, new int32_t[3]{0, 1, 2});
 X3D* X3D0 = new X3D();
 X3D0->setProfile(CString("Immersive"));
 X3D0->setVersion(CString("4.0"));
@@ -213,7 +215,7 @@ Shape* Shape38 = new Shape();
 Shape38->setDEF(CString("AxisLinesShape"));
 //RGB lines showing XYZ axes
 IndexedLineSet* IndexedLineSet39 = new IndexedLineSet();
-IndexedLineSet39->setColorIndex(new int[3]{0,1,2}, 3);
+IndexedLineSet39->setColorIndex(MFInt320);
 IndexedLineSet39->setColorPerVertex(False);
 IndexedLineSet39->setCoordIndex(new int32_t[9]{0,1,-1,0,2,-1,0,3,-1}, 9);
 Coordinate* Coordinate40 = new Coordinate();
@@ -955,7 +957,7 @@ Appearance137->addChild(ImageTexture139);
 
 TextureTransform* TextureTransform140 = new TextureTransform();
 TextureTransform140->setDEF(CString("KickTextureTransform"));
-Appearance137->addChildTransform(TextureTransform140);
+Appearance137->addChild(TextureTransform140);
 
 Shape136->addChild(Appearance137);
 

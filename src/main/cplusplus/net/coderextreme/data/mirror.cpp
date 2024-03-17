@@ -96,32 +96,32 @@ TextureBackground* TextureBackground17 = new TextureBackground();
 ImageTexture* ImageTexture18 = new ImageTexture();
 ImageTexture18->setDEF(CString("leftBackgroundTexture"));
 ImageTexture18->setUrl(new CString[2]{CString("../resources/images/all_probes/beach_cross/beach_left.png"), CString("https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_left.png")}, 2);
-TextureBackground17->setLeft(ImageTexture18);
+TextureBackground17->setLeftTexture(ImageTexture18);
 
 ImageTexture* ImageTexture19 = new ImageTexture();
 ImageTexture19->setDEF(CString("rightBackgroundTexture"));
 ImageTexture19->setUrl(new CString[2]{CString("../resources/images/all_probes/beach_cross/beach_right.png"), CString("https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_right.png")}, 2);
-TextureBackground17->setRight(ImageTexture19);
+TextureBackground17->setRightTexture(ImageTexture19);
 
 ImageTexture* ImageTexture20 = new ImageTexture();
 ImageTexture20->setDEF(CString("frontBackgroundTexture"));
 ImageTexture20->setUrl(new CString[2]{CString("../resources/images/all_probes/beach_cross/beach_front.png"), CString("https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_front.png")}, 2);
-TextureBackground17->setFront(ImageTexture20);
+TextureBackground17->setFrontTexture(ImageTexture20);
 
 ImageTexture* ImageTexture21 = new ImageTexture();
 ImageTexture21->setDEF(CString("backBackgroundTexture"));
 ImageTexture21->setUrl(new CString[2]{CString("../resources/images/all_probes/beach_cross/beach_back.png"), CString("https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_back.png")}, 2);
-TextureBackground17->setBack(ImageTexture21);
+TextureBackground17->setBackTexture(ImageTexture21);
 
 ImageTexture* ImageTexture22 = new ImageTexture();
 ImageTexture22->setDEF(CString("topBackgroundTexture"));
 ImageTexture22->setUrl(new CString[2]{CString("../resources/images/all_probes/beach_cross/beach_top.png"), CString("https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_top.png")}, 2);
-TextureBackground17->setTop(ImageTexture22);
+TextureBackground17->setTopTexture(ImageTexture22);
 
 ImageTexture* ImageTexture23 = new ImageTexture();
 ImageTexture23->setDEF(CString("bottomBackgroundTexture"));
 ImageTexture23->setUrl(new CString[2]{CString("../resources/images/all_probes/beach_cross/beach_bottom.png"), CString("https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_bottom.png")}, 2);
-TextureBackground17->setBottom(ImageTexture23);
+TextureBackground17->setBottomTexture(ImageTexture23);
 
 Scene15->addChild(TextureBackground17);
 
