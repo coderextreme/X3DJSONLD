@@ -106,7 +106,7 @@
           },
           {
             "@name":"translated",
-            "@content":"03 March 2024"
+            "@content":"11 March 2024"
           },
           {
             "@name":"generator",
@@ -200,16 +200,12 @@
                     "@name":"humanoid_root",
                     "@DEF":"hanim_humanoid_root",
                     "@center":[0,0.824,0.0277],
-                    "@llimit":[0,0,0],
-                    "@ulimit":[0,0,0],
                     "-children":[
                       { "HAnimJoint":
                         {
                           "@name":"sacroiliac",
                           "@DEF":"hanim_sacroiliac",
                           "@center":[0,0.9149,0.0016],
-                          "@llimit":[0,0,0],
-                          "@ulimit":[0,0,0],
                           "-children":[
                             { "HAnimSegment":
                               {
