@@ -38,8 +38,7 @@
 },
 {
 "@name":"description",
-"@content":"Articulated 3D game character designed with a general graphics tool, then
-converted into an X3D HAnim model."
+"@content":"Articulated 3D game character designed with a general graphics tool"
 },
 {
 "@name":"reference",
@@ -79,7 +78,7 @@ converted into an X3D HAnim model."
 },
 {
 "@name":"translated",
-"@content":"03 March 2024"
+"@content":"04 March 2024"
 },
 {
 "@name":"generator",
