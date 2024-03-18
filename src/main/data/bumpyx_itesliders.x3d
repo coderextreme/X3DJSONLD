@@ -50,7 +50,7 @@
       <Background groundColor=".3 .3 .3" skyColor=".6 .6 .6" />
       <DirectionalLight ambientIntensity=".2" direction="0 -1 -0" />
       <DirectionalLight ambientIntensity=".2" direction="-1 -.1 -1" />
-      <Viewpoint description='My Overview' fieldOfView='1.570796' position='0 1.75 60' />
+      <Viewpoint description='X_ITE sliders' fieldOfView='1.570796' position='0 1.75 60' />
       <!-- this group contains the red/green/blue 3D crosshair -->
       <Group>
         <!-- Arrow X -->
@@ -197,9 +197,9 @@
           </Shape>
         </Transform>
         <Transform DEF="aTransform" translation="0 0 0.1">
-          <PlaneSensor DEF="aSensor" description="click and drag to scale the model" minPosition="-20 0" maxPosition="20 0"/>
+          <PlaneSensor DEF="aSensor" minPosition="-20 0" maxPosition="20 0"/>
           <Transform translation="0 0.0 0">
-            <TouchSensor DEF="aTS" description="click to delete the model"/>
+            <TouchSensor DEF="aTS" />
             <Shape>
               <Sphere radius="0.08"/>
               <Appearance>
@@ -235,9 +235,9 @@
           </Shape>
         </Transform>
         <Transform DEF="bTransform" translation="0 0 0.1">
-          <PlaneSensor DEF="bSensor" description="click and drag to deepen the model" minPosition="-20 0" maxPosition="20 0"/>
+          <PlaneSensor DEF="bSensor" minPosition="-20 0" maxPosition="20 0"/>
           <Transform translation="0 0.0 0">
-            <TouchSensor DEF="bTS" description="click to delete the model"/>
+            <TouchSensor DEF="bTS"/>
             <Shape>
               <Sphere radius="0.08"/>
               <Appearance>
@@ -264,9 +264,9 @@
           </Shape>
         </Transform>
         <Transform DEF="cTransform" translation="0 0 0.1">
-          <PlaneSensor DEF="cSensor" description="click and drag to change leaves in the model" minPosition="-20 0" maxPosition="20 0"/>
+          <PlaneSensor DEF="cSensor" minPosition="-20 0" maxPosition="20 0"/>
           <Transform translation="0 0.0 0">
-            <TouchSensor DEF="cTS" description="click to delete the model"/>
+            <TouchSensor DEF="cTS" />
             <Shape>
               <Sphere radius="0.08"/>
               <Appearance>
@@ -293,9 +293,9 @@
           </Shape>
         </Transform>
         <Transform DEF="dTransform" translation="0 0 0.1">
-          <PlaneSensor DEF="dSensor" description="click and drag to change leaves in the model" minPosition="-20 0" maxPosition="20 0"/>
+          <PlaneSensor DEF="dSensor" minPosition="-20 0" maxPosition="20 0"/>
           <Transform translation="0 0.0 0">
-            <TouchSensor DEF="dTS" description="click to delete the model"/>
+            <TouchSensor DEF="dTS"/>
             <Shape>
               <Sphere radius="0.08"/>
               <Appearance>
@@ -322,9 +322,9 @@
           </Shape>
         </Transform>
         <Transform DEF="pdeltaTransform" translation="0 0 0.1">
-          <PlaneSensor DEF="pdeltaSensor" description="click and drag to rotate the model" minPosition="-20 0" maxPosition="20 0"/>
+          <PlaneSensor DEF="pdeltaSensor" minPosition="-20 0" maxPosition="20 0"/>
           <Transform translation="0 0.0 0">
-            <TouchSensor DEF="pdeltaTS" description="click to delete the model"/>
+            <TouchSensor DEF="pdeltaTS"/>
             <Shape>
               <Sphere radius="0.08"/>
               <Appearance>
@@ -351,9 +351,9 @@
           </Shape>
         </Transform>
         <Transform DEF="tdeltaTransform" translation="0 0 0.1">
-          <PlaneSensor DEF="tdeltaSensor" description="click and drag to rotate the model" minPosition="-20 0" maxPosition="20 0"/>
+          <PlaneSensor DEF="tdeltaSensor" minPosition="-20 0" maxPosition="20 0"/>
           <Transform translation="0 0.0 0">
-            <TouchSensor DEF="tdeltaTS" description="click to delete the model"/>
+            <TouchSensor DEF="tdeltaTS" />
             <Shape>
               <Sphere radius="0.08"/>
               <Appearance>
