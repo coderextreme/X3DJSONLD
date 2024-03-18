@@ -88,7 +88,7 @@ C (informative) An example of HAnim motion data animation using interpolators"
 },
 {
 "@name":"translated",
-"@content":"03 March 2024"
+"@content":"11 March 2024"
 },
 {
 "@name":"generator",
@@ -128,14 +128,29 @@ C (informative) An example of HAnim motion data animation using interpolators"
 "-children":[
 {
 "#comment":"original HAnimHumanoid info='\"humanoidVersion=2.0\"'"
+}
+],
+"-metadata":
+{ "MetadataSet":
+{
+"@name":"HAnimHumanoid.info",
+"@reference":"https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid",
+"-value":[
+{ "MetadataString":
+{
+"@name":"humanoidVersion",
+"@value":["2.0"]
+}
+}
+]
+}
 },
+"-skeleton":[
 { "HAnimJoint":
 {
 "@name":"humanoid_root",
 "@DEF":"hanim_humanoid_root",
 "@center":[0,30.53,-0.7076],
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -199,8 +214,6 @@ C (informative) An example of HAnim motion data animation using interpolators"
 "@name":"sacroiliac",
 "@DEF":"hanim_sacroiliac",
 "@center":[0,35.8,-0.7076],
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -263,8 +276,6 @@ C (informative) An example of HAnim motion data animation using interpolators"
 "@name":"l_hip",
 "@DEF":"hanim_l_hip",
 "@center":[4.207,32.02,-0.8155],
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -327,8 +338,6 @@ C (informative) An example of HAnim motion data animation using interpolators"
 "@name":"l_knee",
 "@DEF":"hanim_l_knee",
 "@center":[4.116,17.26,-0.8639],
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -391,8 +400,6 @@ C (informative) An example of HAnim motion data animation using interpolators"
 "@name":"l_talocrural",
 "@DEF":"hanim_l_talocrural",
 "@center":[3.854,3.939,-0.7038],
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -455,8 +462,6 @@ C (informative) An example of HAnim motion data animation using interpolators"
 "@name":"l_metatarsophalangeal_2",
 "@DEF":"hanim_l_metatarsophalangeal_2",
 "@center":[3.854,3.64,0.7402],
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -531,8 +536,6 @@ C (informative) An example of HAnim motion data animation using interpolators"
 "@name":"r_hip",
 "@DEF":"hanim_r_hip",
 "@center":[-4.207,32.02,-0.8155],
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -595,8 +598,6 @@ C (informative) An example of HAnim motion data animation using interpolators"
 "@name":"r_knee",
 "@DEF":"hanim_r_knee",
 "@center":[-4.116,17.26,-0.8639],
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -659,8 +660,6 @@ C (informative) An example of HAnim motion data animation using interpolators"
 "@name":"r_talocrural",
 "@DEF":"hanim_r_talocrural",
 "@center":[-3.854,3.939,-0.7038],
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -723,8 +722,6 @@ C (informative) An example of HAnim motion data animation using interpolators"
 "@name":"r_metatarsophalangeal_2",
 "@DEF":"hanim_r_metatarsophalangeal_2",
 "@center":[-3.854,3.64,0.7402],
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -799,8 +796,6 @@ C (informative) An example of HAnim motion data animation using interpolators"
 "@name":"vl5",
 "@DEF":"hanim_vl5",
 "@center":[0,40.23,-0.8527],
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -863,8 +858,6 @@ C (informative) An example of HAnim motion data animation using interpolators"
 "@name":"skullbase",
 "@DEF":"hanim_skullbase",
 "@center":[0,57.43,-0.6863],
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -930,8 +923,6 @@ C (informative) An example of HAnim motion data animation using interpolators"
 "@name":"l_shoulder",
 "@DEF":"hanim_l_shoulder",
 "@center":[5.975,52,-0.1452],
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -994,8 +985,6 @@ C (informative) An example of HAnim motion data animation using interpolators"
 "@name":"l_elbow",
 "@DEF":"hanim_l_elbow",
 "@center":[8.093,40.38,-0.2502],
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -1058,8 +1047,6 @@ C (informative) An example of HAnim motion data animation using interpolators"
 "@name":"l_radiocarpal",
 "@DEF":"hanim_l_radiocarpal",
 "@center":[7.808,31.46,-0.05849],
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -1131,8 +1118,6 @@ C (informative) An example of HAnim motion data animation using interpolators"
 "@name":"r_shoulder",
 "@DEF":"hanim_r_shoulder",
 "@center":[-5.975,52,-0.1452],
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -1195,8 +1180,6 @@ C (informative) An example of HAnim motion data animation using interpolators"
 "@name":"r_elbow",
 "@DEF":"hanim_r_elbow",
 "@center":[-8.093,40.38,-0.2502],
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -1259,8 +1242,6 @@ C (informative) An example of HAnim motion data animation using interpolators"
 "@name":"r_radiocarpal",
 "@DEF":"hanim_r_radiocarpal",
 "@center":[-7.808,31.46,-0.05849],
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -1335,7 +1316,9 @@ C (informative) An example of HAnim motion data animation using interpolators"
 }
 ]
 }
-},
+}
+],
+"-joints":[
 { "HAnimJoint":
 {
 "@USE":"hanim_humanoid_root"
@@ -1425,7 +1408,9 @@ C (informative) An example of HAnim motion data animation using interpolators"
 {
 "@USE":"hanim_r_talocrural"
 }
-},
+}
+],
+"-segments":[
 { "HAnimSegment":
 {
 "@USE":"hanim_sacrum"
@@ -1516,22 +1501,7 @@ C (informative) An example of HAnim motion data animation using interpolators"
 "@USE":"hanim_r_upperarm"
 }
 }
-],
-"-metadata":
-{ "MetadataSet":
-{
-"@name":"HAnimHumanoid.info",
-"@reference":"https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid",
-"-value":[
-{ "MetadataString":
-{
-"@name":"humanoidVersion",
-"@value":["2.0"]
-}
-}
 ]
-}
-}
 }
 },
 { "Group":
