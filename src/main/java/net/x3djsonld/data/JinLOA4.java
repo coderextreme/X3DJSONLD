@@ -18,7 +18,7 @@ import org.web3d.x3d.jsail.Time.*;
 
 // Javadoc metadata annotations follow, see below for X3DJSAIL Java source code.
 /**
- * <p> Articulated 3D game character designed with a general graphics tool, then converted into an X3D HAnim model. </p>
+ * <p> Articulated 3D game character designed with a general graphics tool. </p>
  <p> Related links: JinLOA4.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;">
         <caption>Scene Meta Information</caption>
@@ -53,7 +53,7 @@ import org.web3d.x3d.jsail.Time.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
-			<td> Articulated 3D game character designed with a general graphics tool, then converted into an X3D HAnim model. </td>
+			<td> Articulated 3D game character designed with a general graphics tool </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
@@ -89,7 +89,7 @@ import org.web3d.x3d.jsail.Time.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> license </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/../license.html">../license.html</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/license.html">license.html</a> </td>
 		</tr>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center;" colspan="2">  &nbsp; </td>
@@ -130,7 +130,7 @@ public class JinLOA4
     .addMeta(new meta().setName(meta.NAME_CREATED    ).setContent("31 March 2011"))
     .addMeta(new meta().setName(meta.NAME_TRANSLATED ).setContent("1 November 2014"))
     .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("27 January 2023"))
-    .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("Articulated 3D game character designed with a general graphics tool, then converted into an X3D HAnim model."))
+    .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("Articulated 3D game character designed with a general graphics tool"))
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("KoreanCharacter00ReadMe.txt"))
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("KoreanCharacterHumanMotion_Infotech2014_140706.pdf"))
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("KoreanCharactersIllustrated.pdf"))
@@ -139,13 +139,13 @@ public class JinLOA4
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("Suwon HAnim Converter"))
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("Gnu Image Manipulation Program, http://www.gimp.org"))
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
-    .addMeta(new meta().setName(meta.NAME_LICENSE    ).setContent("../license.html")))
+    .addMeta(new meta().setName(meta.NAME_LICENSE    ).setContent("license.html")))
   .setScene(new Scene()
     .addChild(new WorldInfo().setTitle("JinLOA4.x3d"))
     .addChild(new NavigationInfo().setSpeed(1.5))
     .addChild(new Viewpoint().setDescription("JinLOA4").setCenterOfRotation(0.0,1.0,0.0).setPosition(0.0,1.0,3.0))
     .addChild(new HAnimHumanoid("hanim_JinLOA4").setName("JinLOA4").setLoa(4).setScale(0.0225,0.0225,0.0225).setVersion("2.0")
-      .setMetadata(new MetadataSet().setName("HAnimHumanoid_info").setReference("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid")
+      .setMetadata(new MetadataSet().setName("HAnimHumanoid.info").setReference("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid")
         .setMetadata(new MetadataString().setName("authorName").setValue(new String[] {"Jin Hoon Lee and Min Joo Lee, Chul Hee Jung and Myeong Won Lee"}))
         .setMetadata(new MetadataString().setName("authorEmail").setValue(new String[] {"myeongwonlee@gmail.com"}))
         .setMetadata(new MetadataString().setName("creationDate").setValue(new String[] {"31 March 2011"}))
@@ -1411,7 +1411,7 @@ public class JinLOA4
                                                                     .setTexture(new ImageTexture().setUSE("JinLOA4TextureAtlas")))
                                                                   .setGeometry(new IndexedFaceSet().setCreaseAngle(3.14159).setCoordIndex(new int[] {5,6,0,-1,7,3,14,-1,14,13,7,-1,5,0,17,-1,17,10,5,-1,4,5,10,-1,10,9,4,-1,3,4,9,-1,9,14,3,-1,0,1,19,-1,19,17,0,-1,1,7,13,-1,13,19,1,-1,1,0,2,-1,0,6,8,-1,8,2,0,-1,9,10,11,-1,11,12,9,-1,13,14,15,-1,15,16,13,-1,10,17,18,-1,18,11,10,-1,19,13,16,-1,16,20,19,-1,17,19,20,-1,20,18,17,-1,14,9,12,-1,12,15,14,-1,15,12,20,-1,20,16,15,-1,11,18,20,-1,20,12,11,-1,22,23,24,-1,24,25,26,-1,22,24,26,-1,21,22,26,-1,28,29,30,-1,30,27,28,-1,8,6,22,-1,22,21,8,-1,6,5,23,-1,23,22,6,-1,5,4,24,-1,24,23,5,-1,4,3,25,-1,25,24,4,-1,3,7,26,-1,26,25,3,-1,27,30,31,-1,31,32,27,-1,7,1,28,-1,28,27,7,-1,1,2,29,-1,29,28,1,-1,2,8,30,-1,30,29,2,-1,8,21,31,-1,31,30,8,-1,21,26,32,-1,32,31,21,-1,26,7,27,-1,27,32,26,-1}).setTexCoordIndex(new int[] {0,1,2,-1,36,33,34,-1,34,35,36,-1,0,2,7,-1,7,8,0,-1,10,0,8,-1,8,9,10,-1,33,38,37,-1,37,34,33,-1,2,11,12,-1,12,7,2,-1,39,36,35,-1,35,40,39,-1,11,2,13,-1,2,1,14,-1,14,13,2,-1,9,8,15,-1,15,16,9,-1,5,4,17,-1,17,18,5,-1,8,7,19,-1,19,15,8,-1,12,5,18,-1,18,20,12,-1,7,12,20,-1,20,19,7,-1,4,9,16,-1,16,17,4,-1,17,16,20,-1,20,18,17,-1,15,19,20,-1,20,16,15,-1,22,23,24,-1,24,25,26,-1,22,24,26,-1,21,22,26,-1,28,29,30,-1,30,27,28,-1,14,1,22,-1,22,21,14,-1,1,0,23,-1,23,22,1,-1,0,10,24,-1,24,23,0,-1,10,3,25,-1,25,24,10,-1,33,36,42,-1,42,41,33,-1,27,30,31,-1,31,32,27,-1,6,11,28,-1,28,27,6,-1,11,13,29,-1,29,28,11,-1,13,14,30,-1,30,29,13,-1,14,21,31,-1,31,30,14,-1,21,26,32,-1,32,31,21,-1,42,36,43,-1,43,44,42,-1})
                                                                     .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-0.6480,-0.1572,-0.1816,-0.2215,-0.4696,-0.3727,-0.7293,-0.3514,-0.3769,0.5989,0.0674,-0.0620,0.3258,0.2652,0.2094,-0.3575,0.3782,0.3089,-0.6921,-0.0248,-0.2768,0.3898,-0.3658,-0.5188,-0.7948,-0.1175,-0.4637,0.2134,-0.6161,0.8058,-0.3101,-0.4028,0.7384,-0.1954,-0.8397,0.9419,0.1104,-0.9591,0.8926,0.2493,-1.1510,0.2193,0.5111,-0.8320,0.6281,0.3686,-0.9810,0.7131,0.1898,-1.2270,0.3830,-0.5399,-0.7980,0.2786,-0.4043,-1.1270,0.5533,-0.1346,-1.1160,0.1902,-0.1035,-1.2540,0.4943,-0.4370,0.1054,-0.5720,-0.4429,0.1652,-0.5023,-0.1619,0.4787,-0.0154,0.2164,0.3980,-0.0699,0.3666,0.2424,-0.3170,0.2404,0.0654,-0.5934,0.2919,-0.3931,-0.7578,-0.1692,-0.5049,-0.6608,-0.5909,-0.3962,-0.6566,-0.6389,-0.2511,-0.7092,-0.4111,-0.0844,-0.8017,0.1733,-0.1282,-0.8504})))
-                                                                    .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.8786,0.0507,0.8570,0.0621,0.8601,0.0649,0.8670,0.0598,0.8887,0.0786,0.8747,0.0865,0.8533,0.0697,0.8760,0.0783,0.8930,0.0688,0.8992,0.0702,0.8819,0.0483,0.8561,0.0728,0.8736,0.0851,0.8532,0.0697,0.8503,0.0646,0.8986,0.0785,0.8970,0.0809,0.8914,0.0813,0.8802,0.0861,0.8841,0.0856,0.8821,0.0883,0.8487,0.0595,0.8509,0.0581,0.8683,0.0489,0.8680,0.0507,0.8608,0.0544,0.8505,0.0603,0.8455,0.0706,0.8468,0.0730,0.8455,0.0707,0.8437,0.0676,0.8416,0.0639,0.8422,0.0648,0.8729,0.2464,0.8482,0.2317,0.8612,0.2211,0.8847,0.2342,0.8433,0.2381,0.8632,0.2548,0.8814,0.2316,0.8625,0.2222,0.8799,0.2506,0.8891,0.2430,0.8922,0.2320})))))))
+                                                                    .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.8786,0.0507,0.8570,0.0621,0.8601,0.0649,0.8670,0.0598,0.8887,0.0786,0.8747,0.0865,0.8533,0.0697,0.8760,0.0783,0.8930,0.0688,0.8992,0.0702,0.8819,0.0483,0.8561,0.0728,0.8736,0.0851,0.8532,0.0697,0.8503,0.0646,0.8986,0.0785,0.8970,0.0809,0.8914,0.0813,0.8802,0.0861,0.8841,0.0856,0.8821,0.0883,0.8487,0.0595,0.8509,0.0581,0.8683,0.0489,0.8680,0.0507,0.8608,0.0544,0.8505,0.0603,0.8455,0.0706,0.8468,0.0730,0.8455,0.0707,0.8437,0.0676,0.8416,0.0639,0.8422,0.0648,0.8729,0.2464,0.8482,0.2317,0.8612,0.2211,0.8847,0.2342,0.8433,0.2381,0.8632,0.2548,0.8814,0.2316,0.8625,0.2222,0.8799,0.2506,0.8891,0.2430,0.8922,0.2320,0.8922,0.2320})))))))
                                                             .addChild(new HAnimJoint("hanim_r_carpal_interphalangeal_1").setName("r_carpal_interphalangeal_1").setCenter(-8.101,29.070,2.207).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                               .addChild(new HAnimSegment("hanim_r_carpal_distal_phalanx_1").setName("r_carpal_distal_phalanx_1")
                                                                 .addChild(new Transform().setTranslation(-8.101,29.070,2.207)
@@ -1913,13 +1913,15 @@ public class JinLOA4
       .addChild(new OrientationInterpolator("Stop_l_knee_RotationInterpolator").setKey(new double[] {0.0,0.5,1.0}).setKeyValue(new MFRotation(new double[] {0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0})))
       .addChild(new OrientationInterpolator("Stop_l_talocrural_RotationInterpolator").setKey(new double[] {0.0,0.5,1.0}).setKeyValue(new MFRotation(new double[] {0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0})))
       .addChild(new OrientationInterpolator("Stop_l_subtalar_RotationInterpolator").setKey(new double[] {0.0,0.5,1.0}).setKeyValue(new MFRotation(new double[] {0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0})))
-      .addChild(new OrientationInterpolator("Stop_l_midtarsal_RotationInterpolator").setKey(new double[] {0.0,0.5,1.0}).setKeyValue(new MFRotation(new double[] {0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0})))
+      .addComments(new String[] {"",
+"      <OrientationInterpolator DEF='Stop_l_midtarsal_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>"})
       .addChild(new OrientationInterpolator("Stop_l_metatarsal_RotationInterpolator").setKey(new double[] {0.0,0.5,1.0}).setKeyValue(new MFRotation(new double[] {0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0})))
       .addChild(new OrientationInterpolator("Stop_r_hip_RotationInterpolator").setKey(new double[] {0.0,0.5,1.0}).setKeyValue(new MFRotation(new double[] {0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0})))
       .addChild(new OrientationInterpolator("Stop_r_knee_RotationInterpolator").setKey(new double[] {0.0,0.5,1.0}).setKeyValue(new MFRotation(new double[] {0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0})))
       .addChild(new OrientationInterpolator("Stop_r_talocrural_RotationInterpolator").setKey(new double[] {0.0,0.5,1.0}).setKeyValue(new MFRotation(new double[] {0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0})))
       .addChild(new OrientationInterpolator("Stop_r_subtalar_RotationInterpolator").setKey(new double[] {0.0,0.5,1.0}).setKeyValue(new MFRotation(new double[] {0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0})))
-      .addChild(new OrientationInterpolator("Stop_r_midtarsal_RotationInterpolator").setKey(new double[] {0.0,0.5,1.0}).setKeyValue(new MFRotation(new double[] {0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0})))
+      .addComments(new String[] {"",
+"      <OrientationInterpolator DEF='Stop_r_midtarsal_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>"})
       .addChild(new OrientationInterpolator("Stop_r_metatarsal_RotationInterpolator").setKey(new double[] {0.0,0.5,1.0}).setKeyValue(new MFRotation(new double[] {0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0})))
       .addChild(new OrientationInterpolator("Stop_vl5_RotationInterpolator").setKey(new double[] {0.0,0.5,1.0}).setKeyValue(new MFRotation(new double[] {0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0})))
       .addChild(new OrientationInterpolator("Stop_vl4_RotationInterpolator").setKey(new double[] {0.0,0.5,1.0}).setKeyValue(new MFRotation(new double[] {0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0})))
@@ -2352,7 +2354,7 @@ public class JinLOA4
             .addChild(new Shape("SceneLabelText")
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setUSE("text_color")))
-              .setGeometry(new Text().setString(new String[] {"BoxMan4","Animation"})
+              .setGeometry(new Text().setString(new String[] {"JinLOA4","Animation"})
                 .setFontStyle(new FontStyle().setFamily(new String[] {"SANS"}).setJustify(FontStyle.JUSTIFY_MIDDLE_MIDDLE))))))))
     .addChild(new ROUTE().setFromNode("StopTimer").setFromField("fraction_changed").setToNode("Stop_humanoid_root_TranslationInterpolator").setToField("set_fraction"))
     .addChild(new ROUTE().setFromNode("StopTimer").setFromField("fraction_changed").setToNode("Stop_humanoid_root_RotationInterpolator").setToField("set_fraction"))
@@ -2361,13 +2363,15 @@ public class JinLOA4
     .addChild(new ROUTE().setFromNode("StopTimer").setFromField("fraction_changed").setToNode("Stop_l_knee_RotationInterpolator").setToField("set_fraction"))
     .addChild(new ROUTE().setFromNode("StopTimer").setFromField("fraction_changed").setToNode("Stop_l_talocrural_RotationInterpolator").setToField("set_fraction"))
     .addChild(new ROUTE().setFromNode("StopTimer").setFromField("fraction_changed").setToNode("Stop_l_subtalar_RotationInterpolator").setToField("set_fraction"))
-    .addChild(new ROUTE().setFromNode("StopTimer").setFromField("fraction_changed").setToNode("Stop_l_midtarsal_RotationInterpolator").setToField("set_fraction"))
+    .addComments(new String[] {"",
+"    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_l_midtarsal_RotationInterpolator'/>"})
     .addChild(new ROUTE().setFromNode("StopTimer").setFromField("fraction_changed").setToNode("Stop_l_metatarsal_RotationInterpolator").setToField("set_fraction"))
     .addChild(new ROUTE().setFromNode("StopTimer").setFromField("fraction_changed").setToNode("Stop_r_hip_RotationInterpolator").setToField("set_fraction"))
     .addChild(new ROUTE().setFromNode("StopTimer").setFromField("fraction_changed").setToNode("Stop_r_knee_RotationInterpolator").setToField("set_fraction"))
     .addChild(new ROUTE().setFromNode("StopTimer").setFromField("fraction_changed").setToNode("Stop_r_talocrural_RotationInterpolator").setToField("set_fraction"))
     .addChild(new ROUTE().setFromNode("StopTimer").setFromField("fraction_changed").setToNode("Stop_r_subtalar_RotationInterpolator").setToField("set_fraction"))
-    .addChild(new ROUTE().setFromNode("StopTimer").setFromField("fraction_changed").setToNode("Stop_r_midtarsal_RotationInterpolator").setToField("set_fraction"))
+    .addComments(new String[] {"",
+"    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_r_midtarsal_RotationInterpolator'/>"})
     .addChild(new ROUTE().setFromNode("StopTimer").setFromField("fraction_changed").setToNode("Stop_r_metatarsal_RotationInterpolator").setToField("set_fraction"))
     .addChild(new ROUTE().setFromNode("StopTimer").setFromField("fraction_changed").setToNode("Stop_vl5_RotationInterpolator").setToField("set_fraction"))
     .addChild(new ROUTE().setFromNode("StopTimer").setFromField("fraction_changed").setToNode("Stop_vl4_RotationInterpolator").setToField("set_fraction"))
@@ -2449,11 +2453,13 @@ public class JinLOA4
     .addChild(new ROUTE().setFromNode("Stop_l_hip_RotationInterpolator").setFromField("value_changed").setToNode("hanim_l_hip").setToField("set_rotation"))
     .addChild(new ROUTE().setFromNode("Stop_l_knee_RotationInterpolator").setFromField("value_changed").setToNode("hanim_l_knee").setToField("set_rotation"))
     .addChild(new ROUTE().setFromNode("Stop_l_talocrural_RotationInterpolator").setFromField("value_changed").setToNode("hanim_l_talocrural").setToField("set_rotation"))
-    .addChild(new ROUTE().setFromNode("Stop_l_midtarsal_RotationInterpolator").setFromField("value_changed").setToNode("hanim_l_midtarsal").setToField("set_rotation"))
+    .addComments(new String[] {"",
+"    <ROUTE fromField='value_changed' fromNode='Stop_l_midtarsal_RotationInterpolator' toField='set_rotation' toNode='hanim_l_midtarsal'/>"})
     .addChild(new ROUTE().setFromNode("Stop_r_hip_RotationInterpolator").setFromField("value_changed").setToNode("hanim_r_hip").setToField("set_rotation"))
     .addChild(new ROUTE().setFromNode("Stop_r_knee_RotationInterpolator").setFromField("value_changed").setToNode("hanim_r_knee").setToField("set_rotation"))
     .addChild(new ROUTE().setFromNode("Stop_r_talocrural_RotationInterpolator").setFromField("value_changed").setToNode("hanim_r_talocrural").setToField("set_rotation"))
-    .addChild(new ROUTE().setFromNode("Stop_r_midtarsal_RotationInterpolator").setFromField("value_changed").setToNode("hanim_r_midtarsal").setToField("set_rotation"))
+    .addComments(new String[] {"",
+"    <ROUTE fromField='value_changed' fromNode='Stop_r_midtarsal_RotationInterpolator' toField='set_rotation' toNode='hanim_r_midtarsal'/>"})
     .addChild(new ROUTE().setFromNode("Stop_vl5_RotationInterpolator").setFromField("value_changed").setToNode("hanim_vl5").setToField("set_rotation"))
     .addChild(new ROUTE().setFromNode("Stop_skullbase_RotationInterpolator").setFromField("value_changed").setToNode("hanim_skullbase").setToField("set_rotation"))
     .addChild(new ROUTE().setFromNode("Stop_l_shoulder_RotationInterpolator").setFromField("value_changed").setToNode("hanim_l_shoulder").setToField("set_rotation"))
@@ -2898,8 +2904,7 @@ public class JinLOA4
     .addChild(new ROUTE().setFromNode("Stop_Touch").setFromField("touchTime").setToNode("RunTimer").setToField("set_stopTime"))
     .addChild(new ROUTE().setFromNode("Stop_Touch").setFromField("touchTime").setToNode("JumpTimer").setToField("set_stopTime"))
     .addChild(new ROUTE().setFromNode("Stop_Touch").setFromField("touchTime").setToNode("KickTimer").setToField("set_stopTime"))
-    .addChild(new ROUTE().setFromNode("Stop_Touch").setFromField("touchTime").setToNode("StopTimer").setToField("set_startTime"))
-    .addComments("<Script url='../node/jinloa4.js'/>"));
+    .addChild(new ROUTE().setFromNode("Stop_Touch").setFromField("touchTime").setToNode("StopTimer").setToField("set_startTime")));
             }
             catch (Exception ex)
             {       
