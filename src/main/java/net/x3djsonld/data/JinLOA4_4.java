@@ -13,7 +13,7 @@ import org.web3d.x3d.jsail.Texturing.*;
 
 // Javadoc metadata annotations follow, see below for X3DJSAIL Java source code.
 /**
- * <p> Articulated 3D game character designed with a general graphics tool, then converted into an X3D HAnim model. </p>
+ * <p> Articulated 3D game character designed with a general graphics tool. </p>
  <p> Related links: JinLOA4_4.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;">
         <caption>Scene Meta Information</caption>
@@ -48,7 +48,7 @@ import org.web3d.x3d.jsail.Texturing.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
-			<td> Articulated 3D game character designed with a general graphics tool, then converted into an X3D HAnim model. </td>
+			<td> Articulated 3D game character designed with a general graphics tool </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
@@ -104,21 +104,13 @@ import org.web3d.x3d.jsail.Texturing.*;
 	* @author Jin Hoon Lee and Min Joo Lee
  */
 
-import net.coderextreme.X3DRoots;
-import java.util.List;
-import java.util.ArrayList;
-public class JinLOA4_4 implements X3DRoots
+public class JinLOA4_4
 {
 	/** Default constructor to create this object. */
 	public JinLOA4_4 ()
 	{
 	  initialize();
 	}
-        public List<X3D> getRootNodeList() {
-                List<X3D> list = new ArrayList<X3D>(1);
-                list.add(x3dModel);
-                return list;
-        }
 
 	/** Create and initialize the X3D model for this object. */
 	public final void initialize()
@@ -133,7 +125,7 @@ public class JinLOA4_4 implements X3DRoots
     .addMeta(new meta().setName(meta.NAME_CREATED    ).setContent("31 March 2011"))
     .addMeta(new meta().setName(meta.NAME_TRANSLATED ).setContent("1 November 2014"))
     .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("13 March 2021"))
-    .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("Articulated 3D game character designed with a general graphics tool, then converted into an X3D HAnim model."))
+    .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("Articulated 3D game character designed with a general graphics tool"))
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("KoreanCharacter00ReadMe.txt"))
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("KoreanCharacterHumanMotion_Infotech2014_140706.pdf"))
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("KoreanCharactersIllustrated.pdf"))
@@ -144,7 +136,7 @@ public class JinLOA4_4 implements X3DRoots
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
     .addMeta(new meta().setName(meta.NAME_LICENSE    ).setContent("../license.html")))
   .setScene(new Scene()
-    .addChild(new WorldInfo().setTitle("JinLOA4.x3d"))
+    .addChild(new WorldInfo().setTitle("JinLOA4_4.x3d"))
     .addChild(new NavigationInfo().setSpeed(1.5))
     .addChild(new Viewpoint().setDescription("JinLOA4").setCenterOfRotation(0.0,1.0,0.0).setPosition(0.0,1.0,3.0))
     .addChild(new HAnimHumanoid("hanim_JinLOA4").setName("JinLOA4").setLoa(4).setVersion("2.0")

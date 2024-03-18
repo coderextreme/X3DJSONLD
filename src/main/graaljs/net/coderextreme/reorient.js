@@ -64,7 +64,7 @@ function traverseChildSceneGraph(child) {
 function transformKeyValue(keyValue, key) {
 	var newKeyValue = keyValue.map(item => item);
 	// negate z axis
-	newKeyValue[key+2] = - newKeyValue[key+2];
+	// newKeyValue[key+2] = - newKeyValue[key+2];
 	// negate rotation
 	newKeyValue[key+3] = - newKeyValue[key+3];
 	return Java.to(newKeyValue, Java.type("double[]"));
