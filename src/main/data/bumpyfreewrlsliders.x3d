@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN"
   "http://www.web3d.org/specifications/x3d-3.3.dtd">
-<X3D profile='Immersive' version='3.3'>
+<X3D profile='Full' version='4.0'>
 <head>
     	      <component level='1' name='Scripting'/>
 	      <component name='EnvironmentalEffects' level='3'></component>
@@ -45,14 +45,6 @@
     <Layer isPickable='true'>
       <!-- basic nodes, which might be present in any scene -->
       <NavigationInfo headlight="true" type='"EXAMINE"' avatarSize="0.25, 1.75, 0.75"   />
-    <Background
-		backUrl='"../resources/images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"'
-		bottomUrl='"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"'
-		frontUrl='"../resources/images/all_probes/stpeters_cross/stpeters_front.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"'
-		leftUrl='"../resources/images/all_probes/stpeters_cross/stpeters_left.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"'
-		rightUrl='"../resources/images/all_probes/stpeters_cross/stpeters_right.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"'
-		topUrl='"../resources/images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"'
-	    ></Background> 
       <DirectionalLight ambientIntensity=".2" direction="0 -1 -0" />
       <DirectionalLight ambientIntensity=".2" direction="-1 -.1 -1" />
       <Viewpoint description='My Overview' fieldOfView='1.570796' position='0 1.75 60' />
@@ -115,8 +107,17 @@
 	      <!--
         <Inline DEF="Flower" url='"bumpyfreewrl.x3d"' />
 	-->
+<!-- Images courtesy of Paul Debevec's Light Probe Image Gallery -->
+    <Background
+		backUrl='"../resources/images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"'
+		bottomUrl='"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"'
+		frontUrl='"../resources/images/all_probes/stpeters_cross/stpeters_front.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"'
+		leftUrl='"../resources/images/all_probes/stpeters_cross/stpeters_left.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"'
+		rightUrl='"../resources/images/all_probes/stpeters_cross/stpeters_right.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"'
+		topUrl='"../resources/images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"'
+	    ></Background> 
 	<Shape>
-	  <Sphere radius='5'></Sphere>
+	  <Sphere radius='40'></Sphere>
 	  <Appearance>
           <Material diffuseColor=".7 .7 .7" specularColor=".5 .5 .5" ></Material>
                 <ComposedCubeMapTexture DEF="texture">
@@ -133,8 +134,8 @@
                   <field name='bias' type='SFFloat' accessType='inputOnly' value='0.5'></field>
                   <field name='scale' type='SFFloat' accessType='inputOnly' value='0.5'></field>
                   <field name='power' type='SFFloat' accessType='inputOnly' value='2'></field>
-                  <field name='a' type='SFFloat' accessType='inputOutput' value='10'></field>
-                  <field name='b' type='SFFloat' accessType='inputOutput' value='1'></field>
+                  <field name='a' type='SFFloat' accessType='inputOutput' value='15'></field>
+                  <field name='b' type='SFFloat' accessType='inputOutput' value='5'></field>
                   <field name='c' type='SFFloat' accessType='inputOutput' value='5'></field>
                   <field name='d' type='SFFloat' accessType='inputOutput' value='5'></field>
                   <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
@@ -196,7 +197,7 @@
             </Shape>
           </Transform>
           <Shape>
-            <Cylinder radius="0.05" height="0.6" />
+            <Cylinder radius="0.05" height="0.3" />
             <Appearance>
               <Material/>
             </Appearance>
@@ -234,7 +235,7 @@
             </Shape>
           </Transform>
           <Shape>
-            <Cylinder radius="0.05" height="0.6" />
+            <Cylinder radius="0.05" height="0.3" />
             <Appearance>
               <Material/>
             </Appearance>
@@ -263,7 +264,7 @@
             </Shape>
           </Transform>
           <Shape>
-            <Cylinder radius="0.05" height="0.6" />
+            <Cylinder radius="0.05" height="0.3" />
             <Appearance>
               <Material/>
             </Appearance>
@@ -292,7 +293,7 @@
             </Shape>
           </Transform>
           <Shape>
-            <Cylinder radius="0.05" height="0.6" />
+            <Cylinder radius="0.05" height="0.3" />
             <Appearance>
               <Material/>
             </Appearance>
@@ -321,7 +322,7 @@
             </Shape>
           </Transform>
           <Shape>
-            <Cylinder radius="0.05" height="0.6" />
+            <Cylinder radius="0.05" height="0.3" />
             <Appearance>
               <Material/>
             </Appearance>
@@ -350,7 +351,7 @@
             </Shape>
           </Transform>
           <Shape>
-            <Cylinder radius="0.05" height="0.6" />
+            <Cylinder radius="0.05" height="0.3" />
             <Appearance>
               <Material/>
             </Appearance>
@@ -360,22 +361,22 @@
         <Script DEF='aValueTransformerScript' directOutput="true" mustEvaluate="true">
           <field accessType='inputOnly' name='newTranslation' type='SFVec3f' value='1.0 1.0 1.0'/>
           <field accessType='outputOnly' name='aValue' type='SFFloat' value='1.0'/>
-	  <![CDATA[ecmascript: function newTranslation(Value) { aValue = Value.x; }]]>
+	  <![CDATA[ecmascript: function newTranslation(Value) { aValue = Value.x * 30; }]]>
         </Script>
         <Script DEF='bValueTransformerScript' directOutput="true" mustEvaluate="true">
           <field accessType='inputOnly' name='newTranslation' type='SFVec3f' value='1.0 1.0 1.0'/>
           <field accessType='outputOnly' name='bValue' type='SFFloat' value='1.0'/>
-	  <![CDATA[ecmascript: function newTranslation(Value) { bValue = Value.x; }]]>
+	  <![CDATA[ecmascript: function newTranslation(Value) { bValue = Value.x * 30; }]]>
         </Script>
         <Script DEF='cValueTransformerScript' directOutput="true" mustEvaluate="true">
           <field accessType='inputOnly' name='newTranslation' type='SFVec3f' value='1.0 1.0 1.0'/>
           <field accessType='outputOnly' name='cValue' type='SFFloat' value='1.0'/>
-	  <![CDATA[ecmascript: function newTranslation(Value) { cValue = Value.x; }]]>
+	  <![CDATA[ecmascript: function newTranslation(Value) { cValue = Value.x * 5; }]]>
         </Script>
         <Script DEF='dValueTransformerScript' directOutput="true" mustEvaluate="true">
           <field accessType='inputOnly' name='newTranslation' type='SFVec3f' value='1.0 1.0 1.0'/>
           <field accessType='outputOnly' name='dValue' type='SFFloat' value='1.0'/>
-	  <![CDATA[ecmascript: function newTranslation(Value) { dValue = Value.x; }]]>
+	  <![CDATA[ecmascript: function newTranslation(Value) { dValue = Value.x * 5; }]]>
         </Script>
         <Script DEF='pdeltaValueTransformerScript' directOutput="true" mustEvaluate="true">
           <field accessType='inputOnly' name='newTranslation' type='SFVec3f' value='1.0 1.0 1.0'/>
