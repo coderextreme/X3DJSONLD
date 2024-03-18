@@ -8,7 +8,7 @@
 	      <component name='CubeMapTexturing' level='1'></component>
 	      <component name='Texturing' level='1'></component>
 	      <component name='Rendering' level='1'></component>
-	      <component name='Shape' level='4'></component>
+	      <!--<component name='Shape' level='4'></component>-->
 	      <component name='Grouping' level='3'></component>
 	      <component name='Core' level='1'></component>
         <meta name="title" content="bumpyfreewrl.x3d"></meta>
@@ -36,12 +36,12 @@
 	  <Appearance>
           <Material diffuseColor=".7 .7 .7" specularColor=".5 .5 .5" ></Material>
                 <ComposedCubeMapTexture DEF="texture">
-			<ImageTexture name="backShader" containerField="back" url='"../resources/images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"' ></ImageTexture>
-			<ImageTexture name="bottomShader" containerField="bottom" url='"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"' ></ImageTexture>
-			<ImageTexture name="frontShader" containerField="front" url='"../resources/images/all_probes/stpeters_cross/stpeters_front.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"' ></ImageTexture>
-			<ImageTexture name="leftShader" containerField="left" url='"../resources/images/all_probes/stpeters_cross/stpeters_left.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"' ></ImageTexture>
-			<ImageTexture name="rightShader" containerField="right" url='"../resources/images/all_probes/stpeters_cross/stpeters_right.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"' ></ImageTexture>
-			<ImageTexture name="topShader" containerField="top" url='"../resources/images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"' ></ImageTexture>
+			<ImageTexture id="backShader" containerField="back" url='"../resources/images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"' ></ImageTexture>
+			<ImageTexture id="bottomShader" containerField="bottom" url='"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"' ></ImageTexture>
+			<ImageTexture id="frontShader" containerField="front" url='"../resources/images/all_probes/stpeters_cross/stpeters_front.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"' ></ImageTexture>
+			<ImageTexture id="leftShader" containerField="left" url='"../resources/images/all_probes/stpeters_cross/stpeters_left.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"' ></ImageTexture>
+			<ImageTexture id="rightShader" containerField="right" url='"../resources/images/all_probes/stpeters_cross/stpeters_right.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"' ></ImageTexture>
+			<ImageTexture id="topShader" containerField="top" url='"../resources/images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"' ></ImageTexture>
                 </ComposedCubeMapTexture>
                 <ComposedShader DEF="freewrlShader" language="GLSL">
                   <field name='chromaticDispertion' accessType='inputOnly' type='SFVec3f' value='0.98 1.0 1.033'></field>
