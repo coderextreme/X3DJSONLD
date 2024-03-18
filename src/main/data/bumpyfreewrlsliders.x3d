@@ -148,8 +148,8 @@
       </Transform>
       <!-- DIS multiuser facilities -->
       <DISEntityManager DEF='EntityManager' networkMode='networkReader' >
-	      <DISEntityTypeMapping category='77' specific='1' url='"Leif8Final.x3d"'/>
-	      <DISEntityTypeMapping category='77' specific='2' url='"Lily8Final.x3d"'/>
+	      <DISEntityTypeMapping category='77' specific='1' url='"../data/Leif8Final.x3d" "https://coderextreme.net/X3DJSODLD/src/main/data/Leif8Final.x3d"'/>
+	      <DISEntityTypeMapping category='77' specific='2' url='"../data/Lily8Final.x3d" "https://coderextreme.net/X3DJSODLD/src/main/data/Leif8Final.x3d"'/>
       </DISEntityManager>
       <Collision enabled='false'>
         <Group DEF='AvatarHolder'/>
