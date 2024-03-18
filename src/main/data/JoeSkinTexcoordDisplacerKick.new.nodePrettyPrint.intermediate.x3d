@@ -34,7 +34,8 @@
     <Viewpoint DEF='Scene_TopView' centerOfRotation='0 1.5 0' description='Scene Top View' orientation='1 0 0 -1.5708' position='0 3.5 0'/>
     <Group DEF='Joe_Humanoid'>
       <HAnimHumanoid DEF='Joe_Human' name='Human' version='2.0'>
-        <HAnimJoint DEF='Joe_HumanoidRoot' name='HumanoidRoot' center='0 0.875 0' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
+        <Coordinate USE='Joe_SkinCoord' containerField='skinCoord'/>
+        <HAnimJoint DEF='Joe_HumanoidRoot' name='HumanoidRoot' containerField='skeleton' center='0 0.875 0' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
           <MetadataSet name='warnings' containerField='metadata' reference='HAnim'>
             <!-- TODO experimental -->
             <MetadataString name='SymmetricalLeftRight' containerField='value' reference='correction options: ignore, warn, average, left, right, largest, smallest' value='"ignore"'/>
@@ -222,103 +223,103 @@
             </HAnimJoint>
           </HAnimJoint>
         </HAnimJoint>
-        <HAnimJoint USE='Joe_HumanoidRoot'/>
-        <HAnimJoint USE='Joe_sacroiliac'/>
-        <HAnimJoint USE='Joe_vl5'/>
-        <HAnimJoint USE='Joe_vl4'/>
-        <HAnimJoint USE='Joe_vl3'/>
-        <HAnimJoint USE='Joe_vl2'/>
-        <HAnimJoint USE='Joe_vl1'/>
-        <HAnimJoint USE='Joe_vt12'/>
-        <HAnimJoint USE='Joe_vt11'/>
-        <HAnimJoint USE='Joe_vt10'/>
-        <HAnimJoint USE='Joe_vt9'/>
-        <HAnimJoint USE='Joe_vt8'/>
-        <HAnimJoint USE='Joe_vt7'/>
-        <HAnimJoint USE='Joe_vt6'/>
-        <HAnimJoint USE='Joe_vt5'/>
-        <HAnimJoint USE='Joe_vt4'/>
-        <HAnimJoint USE='Joe_vt3'/>
-        <HAnimJoint USE='Joe_vt2'/>
-        <HAnimJoint USE='Joe_vt1'/>
-        <HAnimJoint USE='Joe_vc7'/>
-        <HAnimJoint USE='Joe_vc6'/>
-        <HAnimJoint USE='Joe_vc5'/>
-        <HAnimJoint USE='Joe_vc4'/>
-        <HAnimJoint USE='Joe_vc3'/>
-        <HAnimJoint USE='Joe_vc2'/>
-        <HAnimJoint USE='Joe_vc1'/>
-        <HAnimJoint USE='Joe_skullbase'/>
-        <HAnimJoint USE='Joe_temporomandibular'/>
-        <HAnimJoint USE='Joe_l_acromioclavicular'/>
-        <HAnimJoint USE='Joe_r_acromioclavicular'/>
-        <HAnimJoint USE='Joe_l_ankle'/>
-        <HAnimJoint USE='Joe_r_ankle'/>
-        <HAnimJoint USE='Joe_l_elbow'/>
-        <HAnimJoint USE='Joe_r_elbow'/>
-        <HAnimJoint USE='Joe_l_eyeball_joint'/>
-        <HAnimJoint USE='Joe_r_eyeball_joint'/>
-        <HAnimJoint USE='Joe_l_eyebrow_joint'/>
-        <HAnimJoint USE='Joe_r_eyebrow_joint'/>
-        <HAnimJoint USE='Joe_l_eyelid_joint'/>
-        <HAnimJoint USE='Joe_r_eyelid_joint'/>
-        <HAnimJoint USE='Joe_l_hip'/>
-        <HAnimJoint USE='Joe_r_hip'/>
-        <HAnimJoint USE='Joe_l_index0'/>
-        <HAnimJoint USE='Joe_r_index0'/>
-        <HAnimJoint USE='Joe_l_index1'/>
-        <HAnimJoint USE='Joe_r_index1'/>
-        <HAnimJoint USE='Joe_l_index2'/>
-        <HAnimJoint USE='Joe_r_index2'/>
-        <HAnimJoint USE='Joe_l_index3'/>
-        <HAnimJoint USE='Joe_r_index3'/>
-        <HAnimJoint USE='Joe_l_knee'/>
-        <HAnimJoint USE='Joe_r_knee'/>
-        <HAnimJoint USE='Joe_l_metatarsal'/>
-        <HAnimJoint USE='Joe_r_metatarsal'/>
-        <HAnimJoint USE='Joe_l_middle0'/>
-        <HAnimJoint USE='Joe_r_middle0'/>
-        <HAnimJoint USE='Joe_l_middle1'/>
-        <HAnimJoint USE='Joe_r_middle1'/>
-        <HAnimJoint USE='Joe_l_middle2'/>
-        <HAnimJoint USE='Joe_r_middle2'/>
-        <HAnimJoint USE='Joe_l_middle3'/>
-        <HAnimJoint USE='Joe_r_middle3'/>
-        <HAnimJoint USE='Joe_l_midtarsal'/>
-        <HAnimJoint USE='Joe_r_midtarsal'/>
-        <HAnimJoint USE='Joe_l_pinky0'/>
-        <HAnimJoint USE='Joe_r_pinky0'/>
-        <HAnimJoint USE='Joe_l_pinky1'/>
-        <HAnimJoint USE='Joe_r_pinky1'/>
-        <HAnimJoint USE='Joe_l_pinky2'/>
-        <HAnimJoint USE='Joe_r_pinky2'/>
-        <HAnimJoint USE='Joe_l_pinky3'/>
-        <HAnimJoint USE='Joe_r_pinky3'/>
-        <HAnimJoint USE='Joe_l_ring0'/>
-        <HAnimJoint USE='Joe_r_ring0'/>
-        <HAnimJoint USE='Joe_l_ring1'/>
-        <HAnimJoint USE='Joe_r_ring1'/>
-        <HAnimJoint USE='Joe_l_ring2'/>
-        <HAnimJoint USE='Joe_r_ring2'/>
-        <HAnimJoint USE='Joe_l_ring3'/>
-        <HAnimJoint USE='Joe_r_ring3'/>
-        <HAnimJoint USE='Joe_l_shoulder'/>
-        <HAnimJoint USE='Joe_r_shoulder'/>
-        <HAnimJoint USE='Joe_l_sternoclavicular'/>
-        <HAnimJoint USE='Joe_r_sternoclavicular'/>
-        <HAnimJoint USE='Joe_l_subtalar'/>
-        <HAnimJoint USE='Joe_r_subtalar'/>
-        <HAnimJoint USE='Joe_l_thumb1'/>
-        <HAnimJoint USE='Joe_r_thumb1'/>
-        <HAnimJoint USE='Joe_l_thumb2'/>
-        <HAnimJoint USE='Joe_r_thumb2'/>
-        <HAnimJoint USE='Joe_l_thumb3'/>
-        <HAnimJoint USE='Joe_r_thumb3'/>
-        <HAnimJoint USE='Joe_l_wrist'/>
-        <HAnimJoint USE='Joe_r_wrist'/>
-        <HAnimSegment USE='Joe_sacrum'/>
-        <HAnimSite USE='Joe_RootFront_view'/>
-        <Shape DEF='Joe_Shape'>
+        <HAnimJoint USE='Joe_HumanoidRoot' containerField='joints'/>
+        <HAnimJoint USE='Joe_sacroiliac' containerField='joints'/>
+        <HAnimJoint USE='Joe_vl5' containerField='joints'/>
+        <HAnimJoint USE='Joe_vl4' containerField='joints'/>
+        <HAnimJoint USE='Joe_vl3' containerField='joints'/>
+        <HAnimJoint USE='Joe_vl2' containerField='joints'/>
+        <HAnimJoint USE='Joe_vl1' containerField='joints'/>
+        <HAnimJoint USE='Joe_vt12' containerField='joints'/>
+        <HAnimJoint USE='Joe_vt11' containerField='joints'/>
+        <HAnimJoint USE='Joe_vt10' containerField='joints'/>
+        <HAnimJoint USE='Joe_vt9' containerField='joints'/>
+        <HAnimJoint USE='Joe_vt8' containerField='joints'/>
+        <HAnimJoint USE='Joe_vt7' containerField='joints'/>
+        <HAnimJoint USE='Joe_vt6' containerField='joints'/>
+        <HAnimJoint USE='Joe_vt5' containerField='joints'/>
+        <HAnimJoint USE='Joe_vt4' containerField='joints'/>
+        <HAnimJoint USE='Joe_vt3' containerField='joints'/>
+        <HAnimJoint USE='Joe_vt2' containerField='joints'/>
+        <HAnimJoint USE='Joe_vt1' containerField='joints'/>
+        <HAnimJoint USE='Joe_vc7' containerField='joints'/>
+        <HAnimJoint USE='Joe_vc6' containerField='joints'/>
+        <HAnimJoint USE='Joe_vc5' containerField='joints'/>
+        <HAnimJoint USE='Joe_vc4' containerField='joints'/>
+        <HAnimJoint USE='Joe_vc3' containerField='joints'/>
+        <HAnimJoint USE='Joe_vc2' containerField='joints'/>
+        <HAnimJoint USE='Joe_vc1' containerField='joints'/>
+        <HAnimJoint USE='Joe_skullbase' containerField='joints'/>
+        <HAnimJoint USE='Joe_temporomandibular' containerField='joints'/>
+        <HAnimJoint USE='Joe_l_acromioclavicular' containerField='joints'/>
+        <HAnimJoint USE='Joe_r_acromioclavicular' containerField='joints'/>
+        <HAnimJoint USE='Joe_l_ankle' containerField='joints'/>
+        <HAnimJoint USE='Joe_r_ankle' containerField='joints'/>
+        <HAnimJoint USE='Joe_l_elbow' containerField='joints'/>
+        <HAnimJoint USE='Joe_r_elbow' containerField='joints'/>
+        <HAnimJoint USE='Joe_l_eyeball_joint' containerField='joints'/>
+        <HAnimJoint USE='Joe_r_eyeball_joint' containerField='joints'/>
+        <HAnimJoint USE='Joe_l_eyebrow_joint' containerField='joints'/>
+        <HAnimJoint USE='Joe_r_eyebrow_joint' containerField='joints'/>
+        <HAnimJoint USE='Joe_l_eyelid_joint' containerField='joints'/>
+        <HAnimJoint USE='Joe_r_eyelid_joint' containerField='joints'/>
+        <HAnimJoint USE='Joe_l_hip' containerField='joints'/>
+        <HAnimJoint USE='Joe_r_hip' containerField='joints'/>
+        <HAnimJoint USE='Joe_l_index0' containerField='joints'/>
+        <HAnimJoint USE='Joe_r_index0' containerField='joints'/>
+        <HAnimJoint USE='Joe_l_index1' containerField='joints'/>
+        <HAnimJoint USE='Joe_r_index1' containerField='joints'/>
+        <HAnimJoint USE='Joe_l_index2' containerField='joints'/>
+        <HAnimJoint USE='Joe_r_index2' containerField='joints'/>
+        <HAnimJoint USE='Joe_l_index3' containerField='joints'/>
+        <HAnimJoint USE='Joe_r_index3' containerField='joints'/>
+        <HAnimJoint USE='Joe_l_knee' containerField='joints'/>
+        <HAnimJoint USE='Joe_r_knee' containerField='joints'/>
+        <HAnimJoint USE='Joe_l_metatarsal' containerField='joints'/>
+        <HAnimJoint USE='Joe_r_metatarsal' containerField='joints'/>
+        <HAnimJoint USE='Joe_l_middle0' containerField='joints'/>
+        <HAnimJoint USE='Joe_r_middle0' containerField='joints'/>
+        <HAnimJoint USE='Joe_l_middle1' containerField='joints'/>
+        <HAnimJoint USE='Joe_r_middle1' containerField='joints'/>
+        <HAnimJoint USE='Joe_l_middle2' containerField='joints'/>
+        <HAnimJoint USE='Joe_r_middle2' containerField='joints'/>
+        <HAnimJoint USE='Joe_l_middle3' containerField='joints'/>
+        <HAnimJoint USE='Joe_r_middle3' containerField='joints'/>
+        <HAnimJoint USE='Joe_l_midtarsal' containerField='joints'/>
+        <HAnimJoint USE='Joe_r_midtarsal' containerField='joints'/>
+        <HAnimJoint USE='Joe_l_pinky0' containerField='joints'/>
+        <HAnimJoint USE='Joe_r_pinky0' containerField='joints'/>
+        <HAnimJoint USE='Joe_l_pinky1' containerField='joints'/>
+        <HAnimJoint USE='Joe_r_pinky1' containerField='joints'/>
+        <HAnimJoint USE='Joe_l_pinky2' containerField='joints'/>
+        <HAnimJoint USE='Joe_r_pinky2' containerField='joints'/>
+        <HAnimJoint USE='Joe_l_pinky3' containerField='joints'/>
+        <HAnimJoint USE='Joe_r_pinky3' containerField='joints'/>
+        <HAnimJoint USE='Joe_l_ring0' containerField='joints'/>
+        <HAnimJoint USE='Joe_r_ring0' containerField='joints'/>
+        <HAnimJoint USE='Joe_l_ring1' containerField='joints'/>
+        <HAnimJoint USE='Joe_r_ring1' containerField='joints'/>
+        <HAnimJoint USE='Joe_l_ring2' containerField='joints'/>
+        <HAnimJoint USE='Joe_r_ring2' containerField='joints'/>
+        <HAnimJoint USE='Joe_l_ring3' containerField='joints'/>
+        <HAnimJoint USE='Joe_r_ring3' containerField='joints'/>
+        <HAnimJoint USE='Joe_l_shoulder' containerField='joints'/>
+        <HAnimJoint USE='Joe_r_shoulder' containerField='joints'/>
+        <HAnimJoint USE='Joe_l_sternoclavicular' containerField='joints'/>
+        <HAnimJoint USE='Joe_r_sternoclavicular' containerField='joints'/>
+        <HAnimJoint USE='Joe_l_subtalar' containerField='joints'/>
+        <HAnimJoint USE='Joe_r_subtalar' containerField='joints'/>
+        <HAnimJoint USE='Joe_l_thumb1' containerField='joints'/>
+        <HAnimJoint USE='Joe_r_thumb1' containerField='joints'/>
+        <HAnimJoint USE='Joe_l_thumb2' containerField='joints'/>
+        <HAnimJoint USE='Joe_r_thumb2' containerField='joints'/>
+        <HAnimJoint USE='Joe_l_thumb3' containerField='joints'/>
+        <HAnimJoint USE='Joe_r_thumb3' containerField='joints'/>
+        <HAnimJoint USE='Joe_l_wrist' containerField='joints'/>
+        <HAnimJoint USE='Joe_r_wrist' containerField='joints'/>
+        <HAnimSegment USE='Joe_sacrum' containerField='segments'/>
+        <HAnimSite USE='Joe_RootFront_view' containerField='sites'/>
+        <Shape DEF='Joe_Shape' containerField='skin'>
           <Appearance DEF='Joe_skin_Appearance'>
             <Material DEF='Joe_skin_Material' diffuseColor='0.3 0.3 0.6' emissiveColor='0.3 0.3 0.6'/>
             <ImageTexture DEF='JoeSkinImageTexture' url='"JoeBodyTexture29.png" "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/JoeBodyTexture29.png"'/>
@@ -329,7 +330,6 @@
             <TextureCoordinate point='0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5'/>
           </IndexedFaceSet>
         </Shape>
-        <Coordinate USE='Joe_SkinCoord'/>
       </HAnimHumanoid>
     </Group>
     <Group>

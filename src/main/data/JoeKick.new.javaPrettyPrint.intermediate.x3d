@@ -36,6 +36,7 @@
         <MetadataSet name='warnings' containerField='metadata' reference='HAnim'>
           <MetadataString name='SymmetricalLeftRight' reference='correction options: ignore, warn, average, left, right, largest, smallest' value='"ignore"'/>
         </MetadataSet>
+        <Coordinate USE='Joe_SkinCoord' containerField='skinCoord'/>
         <HAnimJoint DEF='Joe_humanoid_root' name='humanoid_root' containerField='skeleton' center='0 0.875 0' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
           <HAnimSegment DEF='Joe_sacrum' name='sacrum' momentsOfInertia='0 0 0 0 0 0 0 0 0'>
             <HAnimSite DEF='Joe_RootFront_view' name='RootFront_view'>
@@ -327,7 +328,6 @@
             <TextureCoordinate point='0 0 0.5 0.5 0.5 0 0 0.5'/>
           </IndexedFaceSet>
         </Shape>
-        <Coordinate USE='Joe_SkinCoord' containerField='skinCoord'/>
       </HAnimHumanoid>
     </Group>
     <Group>
