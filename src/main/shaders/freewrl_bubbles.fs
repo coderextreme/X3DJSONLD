@@ -12,21 +12,20 @@ THE SOFTWARE IS PROVIDED AS IS, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED
 */
 uniform samplerCube fw_textureCoordGenType;
 
-varying vec3 t;
-varying vec3 tr;
-varying vec3 tg;
-varying vec3 tb;
-varying float rfac;
+in vec3 t;
+in vec3 tr;
+in vec3 tg;
+in vec3 tb;
+in float rfac;
 
 void main()
 {
-    vec4 ref = textureCube(fw_textureCoordGenType, t);
+    vec4 refracted = textureCube(fw_textureCoordGenType, t);
+    vec4 reflected = vec4(1.0);
 
-    vec4 ret = vec4(1.0);
+    reflected.r = textureCube(fw_textureCoordGenType, tr).r;
+    reflected.g = textureCube(fw_textureCoordGenType, tg).g;
+    reflected.b = textureCube(fw_textureCoordGenType, tb).b;
 
-    ret.r = textureCube(fw_textureCoordGenType, tr).r;
-    ret.g = textureCube(fw_textureCoordGenType, tg).g;
-    ret.b = textureCube(fw_textureCoordGenType, tb).b;
-
-    gl_FragColor = ret * rfac + ref * (1.0 - rfac);
+    gl_FragColor = reflected * rfac + refracted * (1.0 - rfac);
 }

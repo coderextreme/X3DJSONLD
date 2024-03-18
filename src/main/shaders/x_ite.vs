@@ -29,8 +29,7 @@ out vec3  tg;
 out vec3  tb;
 out float rfac;
 
-void
-main ()
+void main()
 {
   vec3 fragNormal = normalize (x3d_NormalMatrix * x3d_Normal);
   vec3 incident   = normalize ((x3d_ModelViewMatrix * x3d_Vertex) .xyz);
