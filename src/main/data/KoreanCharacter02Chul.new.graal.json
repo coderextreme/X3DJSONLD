@@ -79,7 +79,7 @@ converted into an X3D HAnim model."
 },
 {
 "@name":"translated",
-"@content":"03 March 2024"
+"@content":"11 March 2024"
 },
 {
 "@name":"generator",
@@ -174,8 +174,6 @@ Lee\" \"authorEmail=myeongwonlee@gmail.com\" \"creationDate=31 March 2011\" \"hu
 "@name":"humanoid_root",
 "@DEF":"hanim_humanoid_root",
 "@center":[0,44.07,-1.034],
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -239,8 +237,6 @@ Lee\" \"authorEmail=myeongwonlee@gmail.com\" \"creationDate=31 March 2011\" \"hu
 "@name":"l_hip",
 "@DEF":"hanim_l_hip",
 "@center":[4.001,41.14,-1.119],
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -303,8 +299,6 @@ Lee\" \"authorEmail=myeongwonlee@gmail.com\" \"creationDate=31 March 2011\" \"hu
 "@name":"l_knee",
 "@DEF":"hanim_l_knee",
 "@center":[4.315,25.19,-1.119],
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -367,8 +361,6 @@ Lee\" \"authorEmail=myeongwonlee@gmail.com\" \"creationDate=31 March 2011\" \"hu
 "@name":"l_talocrural",
 "@DEF":"hanim_l_talocrural",
 "@center":[4.574,6.838,-1.463],
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -431,8 +423,6 @@ Lee\" \"authorEmail=myeongwonlee@gmail.com\" \"creationDate=31 March 2011\" \"hu
 "@name":"l_metatarsophalangeal_2",
 "@DEF":"hanim_l_metatarsophalangeal_2",
 "@center":[4.809,5.583,1.492],
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -507,8 +497,6 @@ Lee\" \"authorEmail=myeongwonlee@gmail.com\" \"creationDate=31 March 2011\" \"hu
 "@name":"r_hip",
 "@DEF":"hanim_r_hip",
 "@center":[-4.001,41.14,-1.119],
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -571,8 +559,6 @@ Lee\" \"authorEmail=myeongwonlee@gmail.com\" \"creationDate=31 March 2011\" \"hu
 "@name":"r_knee",
 "@DEF":"hanim_r_knee",
 "@center":[-4.315,25.19,-1.119],
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -635,8 +621,6 @@ Lee\" \"authorEmail=myeongwonlee@gmail.com\" \"creationDate=31 March 2011\" \"hu
 "@name":"r_talocrural",
 "@DEF":"hanim_r_talocrural",
 "@center":[-4.574,6.838,-1.463],
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -699,8 +683,6 @@ Lee\" \"authorEmail=myeongwonlee@gmail.com\" \"creationDate=31 March 2011\" \"hu
 "@name":"r_metatarsophalangeal_2",
 "@DEF":"hanim_r_metatarsophalangeal_2",
 "@center":[-4.809,5.583,1.492],
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -775,8 +757,6 @@ Lee\" \"authorEmail=myeongwonlee@gmail.com\" \"creationDate=31 March 2011\" \"hu
 "@name":"sacroiliac",
 "@DEF":"hanim_sacroiliac",
 "@center":[0,38.64,-1.034],
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -839,8 +819,6 @@ Lee\" \"authorEmail=myeongwonlee@gmail.com\" \"creationDate=31 March 2011\" \"hu
 "@name":"l_shoulder",
 "@DEF":"hanim_l_shoulder",
 "@center":[7.699,59.42,-1.567],
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -903,8 +881,6 @@ Lee\" \"authorEmail=myeongwonlee@gmail.com\" \"creationDate=31 March 2011\" \"hu
 "@name":"l_elbow",
 "@DEF":"hanim_l_elbow",
 "@center":[8.026,48.45,-1.959],
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -967,8 +943,6 @@ Lee\" \"authorEmail=myeongwonlee@gmail.com\" \"creationDate=31 March 2011\" \"hu
 "@name":"l_radiocarpal",
 "@DEF":"hanim_l_radiocarpal",
 "@center":[7.617,37.69,-1.663],
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -1040,8 +1014,6 @@ Lee\" \"authorEmail=myeongwonlee@gmail.com\" \"creationDate=31 March 2011\" \"hu
 "@name":"r_shoulder",
 "@DEF":"hanim_r_shoulder",
 "@center":[-7.699,59.42,-1.567],
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -1104,8 +1076,6 @@ Lee\" \"authorEmail=myeongwonlee@gmail.com\" \"creationDate=31 March 2011\" \"hu
 "@name":"r_elbow",
 "@DEF":"hanim_r_elbow",
 "@center":[-8.026,48.45,-1.959],
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -1168,8 +1138,6 @@ Lee\" \"authorEmail=myeongwonlee@gmail.com\" \"creationDate=31 March 2011\" \"hu
 "@name":"r_radiocarpal",
 "@DEF":"hanim_r_radiocarpal",
 "@center":[-7.617,37.69,-1.663],
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -1241,8 +1209,6 @@ Lee\" \"authorEmail=myeongwonlee@gmail.com\" \"creationDate=31 March 2011\" \"hu
 "@name":"vl5",
 "@DEF":"hanim_vl5",
 "@center":[0,47.33,-0.5744],
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -1305,8 +1271,6 @@ Lee\" \"authorEmail=myeongwonlee@gmail.com\" \"creationDate=31 March 2011\" \"hu
 "@name":"skullbase",
 "@DEF":"hanim_skullbase",
 "@center":[0,65.51,-1.446],
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
