@@ -1,5 +1,5 @@
 #version 300 es
-precision mediump float;
+precision highp float;
 
 /*
 The MIT License (MIT)
@@ -30,8 +30,8 @@ void main()
     reflected.g = texture(x3d_TextureCube [0], tg).g;
     reflected.b = texture(x3d_TextureCube [0], tb).b;
 
-    x3d_FragColor = reflected * 0.5 + refracted * (1.0 - 0.5);
-    /*  IF there aren't normals, rfac isn't computed
+    /*
     x3d_FragColor = reflected * rfac + refracted * (1.0 - rfac);
     */
+    x3d_FragColor = mix (refracted, reflected, rfac);
 }
