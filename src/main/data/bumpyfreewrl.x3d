@@ -15,31 +15,33 @@
         <meta name="creator" content="John Carlson"></meta>
         <meta name="description" content="A flower"></meta>
         <meta name="generator" content="X3D-Edit, https://savage.nps.edu/X3D-Edit"></meta>
-	<meta name="identifier" content="https://coderextreme.net/X3DJSONLD/src/main/data/flowerproto.x3d"></meta>
+	<meta name="identifier" content="https://coderextreme.net/X3DJSONLD/src/main/data/bumpfreewrl.x3d"></meta>
     </head>
   <Scene>
+    <WorldInfo title='bumpyx_ite.x3d'/>
     <NavigationInfo type="&quot;EXAMINE&quot; &quot;ANY&quot;"></NavigationInfo>
+    <Viewpoint position='0 0 40' description="Transparent rose" ></Viewpoint>
 <!-- Images courtesy of Paul Debevec's Light Probe Image Gallery -->
     <Background
-	    leftUrl='"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"'
-	    rightUrl='"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"'
-	    frontUrl='"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"'
-	    backUrl='"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"'
-	    topUrl='"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"'
-	    bottomUrl='"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"'
+		backUrl='"../resources/images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"'
+		bottomUrl='"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"'
+		frontUrl='"../resources/images/all_probes/stpeters_cross/stpeters_front.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"'
+		leftUrl='"../resources/images/all_probes/stpeters_cross/stpeters_left.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"'
+		rightUrl='"../resources/images/all_probes/stpeters_cross/stpeters_right.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"'
+		topUrl='"../resources/images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"'
 	    ></Background> 
-	<Viewpoint position='0 0 40' description="Transparent rose" ></Viewpoint>
-	<Transform DEF='Rose01' >
+	<Transform>
 	<Shape>
+	  <Sphere radius='20'></Sphere>
 	  <Appearance>
           <Material diffuseColor=".7 .7 .7" specularColor=".5 .5 .5" ></Material>
                 <ComposedCubeMapTexture DEF="texture">
-                    <ImageTexture name="backShader" containerField="back" url='"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"' ></ImageTexture>
-                    <ImageTexture name="bottomShader" containerField="bottom" url='"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"' ></ImageTexture>
-                    <ImageTexture name="frontShader" containerField="front" url='"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"' ></ImageTexture>
-                    <ImageTexture name="leftShader" containerField="left" url='"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"' ></ImageTexture>
-                    <ImageTexture name="rightShader" containerField="right" url='"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"' ></ImageTexture>
-                    <ImageTexture name="topShader" containerField="top" url='"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"' ></ImageTexture>
+			<ImageTexture name="backShader" containerField="back" url='"../resources/images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"' ></ImageTexture>
+			<ImageTexture name="bottomShader" containerField="bottom" url='"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"' ></ImageTexture>
+			<ImageTexture name="frontShader" containerField="front" url='"../resources/images/all_probes/stpeters_cross/stpeters_front.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"' ></ImageTexture>
+			<ImageTexture name="leftShader" containerField="left" url='"../resources/images/all_probes/stpeters_cross/stpeters_left.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"' ></ImageTexture>
+			<ImageTexture name="rightShader" containerField="right" url='"../resources/images/all_probes/stpeters_cross/stpeters_right.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"' ></ImageTexture>
+			<ImageTexture name="topShader" containerField="top" url='"../resources/images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"' ></ImageTexture>
                 </ComposedCubeMapTexture>
 		<ComposedShader DEF='ComposedShader' language="GLSL">
                   <field name='fw_textureCoordGenType' accessType='inputOnly' type='SFInt32' value='0'></field>
@@ -53,11 +55,10 @@
                   <field name='d' type='SFFloat' accessType='inputOutput' value='5'></field>
                   <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
                   <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
-		  <ShaderPart url='"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl_flowers_chromatic.vs"' containerField='parts' type='VERTEX'></ShaderPart>
-		  <ShaderPart url='"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl_bubbles.fs"' containerField='parts' type='FRAGMENT'></ShaderPart>
+                  <ShaderPart url='"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl_flowers_chromatic.vs"' containerField='parts' type='VERTEX'></ShaderPart>
+                  <ShaderPart url='"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl_bubbles.fs"' containerField='parts' type='FRAGMENT'></ShaderPart>
                 </ComposedShader>
 	  </Appearance>
-	  <Sphere radius='20'></Sphere>
 	</Shape>
       </Transform>
     </Scene>   
