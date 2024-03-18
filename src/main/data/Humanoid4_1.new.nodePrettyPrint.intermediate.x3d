@@ -67,6 +67,7 @@
     <Viewpoint description='default'/>
     <HAnimHumanoid DEF='hanim_HAnim' name='HAnim' info='"humanoidVersion=2.0"' version='2.0'>
       <!-- </LOD> -->
+      <Coordinate USE='TheSkinCoord' containerField='skinCoord'/>
       <HAnimJoint DEF='hanim_humanoid_root' name='humanoid_root' containerField='skeleton' center='0 0.824 0.0277' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
         <HAnimSegment DEF='hanim_sacrum' name='sacrum' momentsOfInertia='0 0 0 0 0 0 0 0 0'>
           <Transform translation='0 0.824 0.0277'>
@@ -3158,7 +3159,6 @@
       <HAnimSite USE='hanim_r_metacarpal_phalanx_5_pt' containerField='sites'/>
       <HAnimSite USE='hanim_r_carpal_distal_phalanx_4_tip' containerField='sites'/>
       <HAnimSite USE='hanim_r_carpal_distal_phalanx_5_tip' containerField='sites'/>
-      <Coordinate USE='TheSkinCoord' containerField='skinCoord'/>
     </HAnimHumanoid>
   </Scene>
 </X3D>
