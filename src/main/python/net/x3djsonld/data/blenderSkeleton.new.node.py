@@ -59,7 +59,7 @@ newModel=X3D(profile='Immersive',version='4.0',
     Transform(DEF='Armature_TRANSFORM',
       children=[
       HAnimHumanoid(DEF='hanim_humanoid',name='humanoid',version='2.0',
-        children=[
+        skeleton=[
         HAnimJoint(DEF='hanim_Armature',name='Armature',llimit=[0,0,0],ulimit=[0,0,0],
           children=[
           HAnimSegment(DEF='hanim_SEGMENT_FOR_Armature',name='SEGMENT_FOR_Armature',
@@ -1970,7 +1970,8 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                                       children=[
                                                                       Transform(translation=(-0.1806,-0.1388,0.5938),
                                                                         children=[
-                                                                        Shape(USE='SiteShape')])])])])])])])])])])])])])])])])])])])])])])])])])])])])])])])]),
+                                                                        Shape(USE='SiteShape')])])])])])])])])])])])])])])])])])])])])])])])])])])])])])])])]),],
+        joints=[
         HAnimJoint(USE='hanim_sacrum',ulimit=[0,0,0],llimit=[0,0,0]),
         HAnimJoint(USE='hanim_pelvis',ulimit=[0,0,0],llimit=[0,0,0]),
         HAnimJoint(USE='hanim_l_thigh',ulimit=[0,0,0],llimit=[0,0,0]),

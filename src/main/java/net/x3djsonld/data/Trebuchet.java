@@ -105,21 +105,13 @@ import org.web3d.x3d.jsail.Time.*;
 	* @author LT Joe Roth
  */
 
-import net.coderextreme.X3DRoots;
-import java.util.List;
-import java.util.ArrayList;
-public class Trebuchet implements X3DRoots
+public class Trebuchet
 {
 	/** Default constructor to create this object. */
 	public Trebuchet ()
 	{
 	  initialize();
 	}
-        public List<X3D> getRootNodeList() {
-                List<X3D> list = new ArrayList<X3D>(1);
-                list.add(x3dModel);
-                return list;
-        }
 
 	/** Create and initialize the X3D model for this object. */
 	public final void initialize()
@@ -282,8 +274,8 @@ public class Trebuchet implements X3DRoots
             .setAppearance(new Appearance()
               .setMaterial(new Material().setSpecularColor(1.0,1.0,1.0))))
           .addChild(new Transform().setTranslation(0.0,-2.5,0.0)
-            .addChild(new Shape().setUSE("Torus"))
             .addComments(" The Unicorn ")
+            .addChild(new Shape().setUSE("Torus"))
             .addChild(new Transform().setTranslation(-2.0,-0.0,0.0)
               .addChild(new Shape()
                 .setGeometry(new Sphere().setRadius(1.5))
@@ -296,8 +288,8 @@ public class Trebuchet implements X3DRoots
                 .setGeometry(new Extrusion().setBeginCap(false).setCreaseAngle(0.76).setCrossSection(new MFVec2f(new double[] {.100,0.00,0.092,-0.038,0.071,-0.071,0.038,-0.092,0.00,-.100,-0.038,-0.092,-0.071,-0.071,-0.092,-0.038,-.100,-0.00,-0.092,0.038,-0.071,0.071,-0.038,0.092,0.00,.100,0.038,0.092,0.071,0.071,0.092,0.038,.100,0.00})).setEndCap(false).setSolid(false).setSpine(new MFVec3f(new double[] {-15.2,1.4,2.2,-12.0,-.8,2.2})))))))
         .addChild(new Transform().setRotation(1.0,0.0,0.0,-1.7).setTranslation(-17.0,-4.5,0.0)
           .addChild(new Transform().setScale(.2,.2,.2)
-            .addChild(new Shape().setUSE("Torus")
-              .addComments(" Knot "))
+            .addComments(" Knot ")
+            .addChild(new Shape().setUSE("Torus"))
             .addChild(new Transform().setTranslation(-1.0,0.0,1.7)
               .addChild(new Shape()
                 .setGeometry(new Sphere().setRadius(1.5))

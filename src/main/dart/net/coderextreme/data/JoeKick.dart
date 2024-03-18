@@ -158,8 +158,6 @@ var X3D0 =  X3D(
                       name_ : SFString('humanoid_root'),
                       DEF_ : SFString('Joe_humanoid_root'),
                       center_ : SFVec3f([SFDouble(0), SFDouble(0.875), SFDouble(0)]),
-                      ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                      llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                       children_ : [
                         HAnimSegment(
                           name_ : SFString('sacrum'),
@@ -198,8 +196,6 @@ var X3D0 =  X3D(
                           center_ : SFVec3f([SFDouble(0), SFDouble(0.92), SFDouble(0)]),
                           skinCoordIndex_ : MFInt32([SFInt32(17), SFInt32(19), SFInt32(20), SFInt32(21), SFInt32(22), SFInt32(23), SFInt32(26), SFInt32(27), SFInt32(73), SFInt32(82), SFInt32(89), SFInt32(91), SFInt32(93)]),
                           skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(0.35), SFFloat(0.35), SFFloat(1)]),
-                          ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                          llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                           children_ : [
                             HAnimJoint(
                               name_ : SFString('l_hip'),
@@ -207,8 +203,6 @@ var X3D0 =  X3D(
                               center_ : SFVec3f([SFDouble(0.1), SFDouble(0.92), SFDouble(0)]),
                               skinCoordIndex_ : MFInt32([SFInt32(89), SFInt32(90), SFInt32(94), SFInt32(95), SFInt32(96), SFInt32(97)]),
                               skinCoordWeight_ : MFFloat([SFFloat(0.65), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1)]),
-                              ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                              llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                               children_ : [
                                 HAnimJoint(
                                   name_ : SFString('l_knee'),
@@ -216,8 +210,6 @@ var X3D0 =  X3D(
                                   center_ : SFVec3f([SFDouble(0.115), SFDouble(0.466), SFDouble(0)]),
                                   skinCoordIndex_ : MFInt32([SFInt32(334), SFInt32(335), SFInt32(336), SFInt32(337), SFInt32(338), SFInt32(339), SFInt32(340), SFInt32(341)]),
                                   skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1)]),
-                                  ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                  llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                   children_ : [
                                     HAnimJoint(
                                       name_ : SFString('l_talocrural'),
@@ -225,8 +217,6 @@ var X3D0 =  X3D(
                                       center_ : SFVec3f([SFDouble(0.115), SFDouble(0.069), SFDouble(0)]),
                                       skinCoordIndex_ : MFInt32([SFInt32(342), SFInt32(343), SFInt32(344), SFInt32(345)]),
                                       skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1)]),
-                                      ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                      llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                       children_ : [
                                         HAnimJoint(
                                           name_ : SFString('l_tarsometatarsal_2'),
@@ -234,8 +224,6 @@ var X3D0 =  X3D(
                                           center_ : SFVec3f([SFDouble(0.115), SFDouble(0.031), SFDouble(0.03)]),
                                           skinCoordIndex_ : MFInt32([SFInt32(346), SFInt32(347), SFInt32(348), SFInt32(71)]),
                                           skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1)]),
-                                          ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                          llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                           children_ : [
                                             HAnimJoint(
                                               name_ : SFString('l_metatarsophalangeal_2'),
@@ -243,17 +231,13 @@ var X3D0 =  X3D(
                                               center_ : SFVec3f([SFDouble(0.115), SFDouble(0.037), SFDouble(0.09)]),
                                               skinCoordIndex_ : MFInt32([SFInt32(349), SFInt32(350), SFInt32(351), SFInt32(352)]),
                                               skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1)]),
-                                              ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                              llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                               children_ : [
                                                 HAnimJoint(
                                                   name_ : SFString('l_tarsal_distal_interphalangeal_2'),
                                                   DEF_ : SFString('Joe_l_tarsal_distal_interphalangeal_2'),
                                                   center_ : SFVec3f([SFDouble(0.115), SFDouble(0.02), SFDouble(0.122)]),
                                                   skinCoordIndex_ : MFInt32([SFInt32(353), SFInt32(354), SFInt32(355), SFInt32(356), SFInt32(357), SFInt32(358), SFInt32(359), SFInt32(360), SFInt32(361)]),
-                                                  skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1)]),
-                                                  ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                  llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]))])])])])]),
+                                                  skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1)]))])])])])]),
 
                             HAnimJoint(
                               name_ : SFString('r_hip'),
@@ -261,8 +245,6 @@ var X3D0 =  X3D(
                               center_ : SFVec3f([SFDouble(-0.1), SFDouble(0.92), SFDouble(0)]),
                               skinCoordIndex_ : MFInt32([SFInt32(91), SFInt32(92), SFInt32(98), SFInt32(99), SFInt32(100), SFInt32(101), SFInt32(362), SFInt32(363)]),
                               skinCoordWeight_ : MFFloat([SFFloat(0.65), SFFloat(1), SFFloat(0.8), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(0.4), SFFloat(0.8)]),
-                              ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                              llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                               children_ : [
                                 HAnimJoint(
                                   name_ : SFString('r_knee'),
@@ -270,8 +252,6 @@ var X3D0 =  X3D(
                                   center_ : SFVec3f([SFDouble(-0.05), SFDouble(0.466), SFDouble(0)]),
                                   skinCoordIndex_ : MFInt32([SFInt32(362), SFInt32(363), SFInt32(364), SFInt32(365), SFInt32(366), SFInt32(367), SFInt32(368), SFInt32(369), SFInt32(98)]),
                                   skinCoordWeight_ : MFFloat([SFFloat(0.6), SFFloat(0.2), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(0.2)]),
-                                  ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                  llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                   children_ : [
                                     HAnimJoint(
                                       name_ : SFString('r_talocrural'),
@@ -279,8 +259,6 @@ var X3D0 =  X3D(
                                       center_ : SFVec3f([SFDouble(-0.115), SFDouble(0.069), SFDouble(0)]),
                                       skinCoordIndex_ : MFInt32([SFInt32(370), SFInt32(371), SFInt32(372), SFInt32(373)]),
                                       skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1)]),
-                                      ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                      llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                       children_ : [
                                         HAnimJoint(
                                           name_ : SFString('r_tarsometatarsal_2'),
@@ -288,8 +266,6 @@ var X3D0 =  X3D(
                                           center_ : SFVec3f([SFDouble(-0.1), SFDouble(0.015), SFDouble(-0.01)]),
                                           skinCoordIndex_ : MFInt32([SFInt32(374), SFInt32(375), SFInt32(376)]),
                                           skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1)]),
-                                          ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                          llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                           children_ : [
                                             HAnimJoint(
                                               name_ : SFString('r_metatarsophalangeal_2'),
@@ -297,17 +273,13 @@ var X3D0 =  X3D(
                                               center_ : SFVec3f([SFDouble(-0.115), SFDouble(0.037), SFDouble(0.09)]),
                                               skinCoordIndex_ : MFInt32([SFInt32(377), SFInt32(378), SFInt32(379), SFInt32(380)]),
                                               skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1)]),
-                                              ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                              llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                               children_ : [
                                                 HAnimJoint(
                                                   name_ : SFString('r_tarsal_distal_interphalangeal_2'),
                                                   DEF_ : SFString('Joe_r_tarsal_distal_interphalangeal_2'),
                                                   center_ : SFVec3f([SFDouble(-0.1), SFDouble(0.01), SFDouble(0.14)]),
                                                   skinCoordIndex_ : MFInt32([SFInt32(381), SFInt32(382), SFInt32(383), SFInt32(384), SFInt32(385), SFInt32(386), SFInt32(387), SFInt32(388), SFInt32(389)]),
-                                                  skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1)]),
-                                                  ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                  llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]))])])])])])]),
+                                                  skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1)]))])])])])])]),
 
                         HAnimJoint(
                           name_ : SFString('vl5'),
@@ -315,22 +287,16 @@ var X3D0 =  X3D(
                           center_ : SFVec3f([SFDouble(0), SFDouble(1.045), SFDouble(-0.095)]),
                           skinCoordIndex_ : MFInt32([SFInt32(28), SFInt32(76)]),
                           skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1)]),
-                          ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                          llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                           children_ : [
                             HAnimJoint(
                               name_ : SFString('vl4'),
                               DEF_ : SFString('Joe_vl4'),
                               center_ : SFVec3f([SFDouble(0), SFDouble(1.068), SFDouble(-0.085)]),
-                              ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                              llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                               children_ : [
                                 HAnimJoint(
                                   name_ : SFString('vl3'),
                                   DEF_ : SFString('Joe_vl3'),
                                   center_ : SFVec3f([SFDouble(0), SFDouble(1.092), SFDouble(-0.0725)]),
-                                  ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                  llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                   children_ : [
                                     HAnimJoint(
                                       name_ : SFString('vl2'),
@@ -338,29 +304,21 @@ var X3D0 =  X3D(
                                       center_ : SFVec3f([SFDouble(0), SFDouble(1.12), SFDouble(-0.065)]),
                                       skinCoordIndex_ : MFInt32([SFInt32(16), SFInt32(18), SFInt32(25), SFInt32(83), SFInt32(84), SFInt32(85), SFInt32(86), SFInt32(87), SFInt32(88)]),
                                       skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(0.7), SFFloat(1), SFFloat(0.8)]),
-                                      ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                      llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                       children_ : [
                                         HAnimJoint(
                                           name_ : SFString('vl1'),
                                           DEF_ : SFString('Joe_vl1'),
                                           center_ : SFVec3f([SFDouble(0), SFDouble(1.1459), SFDouble(-0.0625)]),
-                                          ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                          llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                           children_ : [
                                             HAnimJoint(
                                               name_ : SFString('vt12'),
                                               DEF_ : SFString('Joe_vt12'),
                                               center_ : SFVec3f([SFDouble(0), SFDouble(1.179), SFDouble(-0.068)]),
-                                              ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                              llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                               children_ : [
                                                 HAnimJoint(
                                                   name_ : SFString('vt11'),
                                                   DEF_ : SFString('Joe_vt11'),
                                                   center_ : SFVec3f([SFDouble(0), SFDouble(1.2679), SFDouble(-0.081)]),
-                                                  ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                  llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                   children_ : [
                                                     HAnimJoint(
                                                       name_ : SFString('vt10'),
@@ -368,8 +326,6 @@ var X3D0 =  X3D(
                                                       center_ : SFVec3f([SFDouble(0), SFDouble(1.242), SFDouble(-0.09)]),
                                                       skinCoordIndex_ : MFInt32([SFInt32(15)]),
                                                       skinCoordWeight_ : MFFloat([SFFloat(1)]),
-                                                      ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                      llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                       children_ : [
                                                         HAnimJoint(
                                                           name_ : SFString('vt9'),
@@ -377,36 +333,26 @@ var X3D0 =  X3D(
                                                           center_ : SFVec3f([SFDouble(0), SFDouble(1.268), SFDouble(-0.1)]),
                                                           skinCoordIndex_ : MFInt32([SFInt32(13), SFInt32(14)]),
                                                           skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1)]),
-                                                          ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                          llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                           children_ : [
                                                             HAnimJoint(
                                                               name_ : SFString('vt8'),
                                                               DEF_ : SFString('Joe_vt8'),
                                                               center_ : SFVec3f([SFDouble(0), SFDouble(1.294), SFDouble(-0.11)]),
-                                                              ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                              llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                               children_ : [
                                                                 HAnimJoint(
                                                                   name_ : SFString('vt7'),
                                                                   DEF_ : SFString('Joe_vt7'),
                                                                   center_ : SFVec3f([SFDouble(0), SFDouble(1.323), SFDouble(-0.1155)]),
-                                                                  ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                  llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                   children_ : [
                                                                     HAnimJoint(
                                                                       name_ : SFString('vt6'),
                                                                       DEF_ : SFString('Joe_vt6'),
                                                                       center_ : SFVec3f([SFDouble(0), SFDouble(1.352), SFDouble(-0.12)]),
-                                                                      ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                      llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                       children_ : [
                                                                         HAnimJoint(
                                                                           name_ : SFString('vt5'),
                                                                           DEF_ : SFString('Joe_vt5'),
                                                                           center_ : SFVec3f([SFDouble(0), SFDouble(1.381), SFDouble(-0.1235)]),
-                                                                          ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                          llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                           children_ : [
                                                                             HAnimJoint(
                                                                               name_ : SFString('vt4'),
@@ -414,22 +360,16 @@ var X3D0 =  X3D(
                                                                               center_ : SFVec3f([SFDouble(0), SFDouble(1.41), SFDouble(-0.1235)]),
                                                                               skinCoordIndex_ : MFInt32([SFInt32(81)]),
                                                                               skinCoordWeight_ : MFFloat([SFFloat(1)]),
-                                                                              ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                              llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                               children_ : [
                                                                                 HAnimJoint(
                                                                                   name_ : SFString('vt3'),
                                                                                   DEF_ : SFString('Joe_vt3'),
                                                                                   center_ : SFVec3f([SFDouble(0), SFDouble(1.438), SFDouble(-0.12)]),
-                                                                                  ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                  llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                   children_ : [
                                                                                     HAnimJoint(
                                                                                       name_ : SFString('vt2'),
                                                                                       DEF_ : SFString('Joe_vt2'),
                                                                                       center_ : SFVec3f([SFDouble(0), SFDouble(1.468), SFDouble(-0.105)]),
-                                                                                      ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                      llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                       children_ : [
                                                                                         HAnimJoint(
                                                                                           name_ : SFString('vt1'),
@@ -437,8 +377,6 @@ var X3D0 =  X3D(
                                                                                           center_ : SFVec3f([SFDouble(0), SFDouble(1.497), SFDouble(-0.09)]),
                                                                                           skinCoordIndex_ : MFInt32([SFInt32(11), SFInt32(24)]),
                                                                                           skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1)]),
-                                                                                          ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                          llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                           children_ : [
                                                                                             HAnimJoint(
                                                                                               name_ : SFString('vc7'),
@@ -446,50 +384,36 @@ var X3D0 =  X3D(
                                                                                               center_ : SFVec3f([SFDouble(0), SFDouble(1.525), SFDouble(-0.072)]),
                                                                                               skinCoordIndex_ : MFInt32([SFInt32(74), SFInt32(75)]),
                                                                                               skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1)]),
-                                                                                              ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                              llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                               children_ : [
                                                                                                 HAnimJoint(
                                                                                                   name_ : SFString('vc6'),
                                                                                                   DEF_ : SFString('Joe_vc6'),
                                                                                                   center_ : SFVec3f([SFDouble(0), SFDouble(1.54), SFDouble(-0.05)]),
-                                                                                                  ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                  llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                   children_ : [
                                                                                                     HAnimJoint(
                                                                                                       name_ : SFString('vc5'),
                                                                                                       DEF_ : SFString('Joe_vc5'),
                                                                                                       center_ : SFVec3f([SFDouble(0), SFDouble(1.552), SFDouble(-0.035)]),
-                                                                                                      ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                      llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                       children_ : [
                                                                                                         HAnimJoint(
                                                                                                           name_ : SFString('vc4'),
                                                                                                           DEF_ : SFString('Joe_vc4'),
                                                                                                           center_ : SFVec3f([SFDouble(0), SFDouble(1.5675), SFDouble(-0.0256)]),
-                                                                                                          ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                          llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                           children_ : [
                                                                                                             HAnimJoint(
                                                                                                               name_ : SFString('vc3'),
                                                                                                               DEF_ : SFString('Joe_vc3'),
                                                                                                               center_ : SFVec3f([SFDouble(0), SFDouble(1.58225), SFDouble(-0.0185)]),
-                                                                                                              ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                              llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                               children_ : [
                                                                                                                 HAnimJoint(
                                                                                                                   name_ : SFString('vc2'),
                                                                                                                   DEF_ : SFString('Joe_vc2'),
                                                                                                                   center_ : SFVec3f([SFDouble(0), SFDouble(1.595), SFDouble(-0.0175)]),
-                                                                                                                  ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                  llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                   children_ : [
                                                                                                                     HAnimJoint(
                                                                                                                       name_ : SFString('vc1'),
                                                                                                                       DEF_ : SFString('Joe_vc1'),
                                                                                                                       center_ : SFVec3f([SFDouble(0), SFDouble(1.61), SFDouble(-0.015)]),
-                                                                                                                      ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                      llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                       children_ : [
                                                                                                                         HAnimJoint(
                                                                                                                           name_ : SFString('skullbase'),
@@ -497,8 +421,6 @@ var X3D0 =  X3D(
                                                                                                                           center_ : SFVec3f([SFDouble(0), SFDouble(1.63), SFDouble(-0.01)]),
                                                                                                                           skinCoordIndex_ : MFInt32([SFInt32(0), SFInt32(1), SFInt32(2), SFInt32(3), SFInt32(4), SFInt32(5), SFInt32(6), SFInt32(7), SFInt32(8), SFInt32(9)]),
                                                                                                                           skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1)]),
-                                                                                                                          ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                          llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                           displacers_ : 
                                                                                                                             HAnimDisplacer(
                                                                                                                               name_ : SFString('skull_tip_raiser_action'),
@@ -509,59 +431,43 @@ var X3D0 =  X3D(
                                                                                                                             HAnimJoint(
                                                                                                                               name_ : SFString('l_eyelid_joint'),
                                                                                                                               DEF_ : SFString('Joe_l_eyelid_joint'),
-                                                                                                                              center_ : SFVec3f([SFDouble(0.034), SFDouble(1.659), SFDouble(0.06)]),
-                                                                                                                              ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                              llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)])),
+                                                                                                                              center_ : SFVec3f([SFDouble(0.034), SFDouble(1.659), SFDouble(0.06)])),
 
                                                                                                                             HAnimJoint(
                                                                                                                               name_ : SFString('l_eyeball_joint'),
                                                                                                                               DEF_ : SFString('Joe_l_eyeball_joint'),
-                                                                                                                              center_ : SFVec3f([SFDouble(0.034), SFDouble(1.659), SFDouble(0.06)]),
-                                                                                                                              ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                              llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)])),
+                                                                                                                              center_ : SFVec3f([SFDouble(0.034), SFDouble(1.659), SFDouble(0.06)])),
 
                                                                                                                             HAnimJoint(
                                                                                                                               name_ : SFString('l_eyebrow_joint'),
                                                                                                                               DEF_ : SFString('Joe_l_eyebrow_joint'),
-                                                                                                                              center_ : SFVec3f([SFDouble(0.034), SFDouble(1.659), SFDouble(0.06)]),
-                                                                                                                              ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                              llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)])),
+                                                                                                                              center_ : SFVec3f([SFDouble(0.034), SFDouble(1.659), SFDouble(0.06)])),
 
                                                                                                                             HAnimJoint(
                                                                                                                               name_ : SFString('r_eyelid_joint'),
                                                                                                                               DEF_ : SFString('Joe_r_eyelid_joint'),
-                                                                                                                              center_ : SFVec3f([SFDouble(-0.034), SFDouble(1.659), SFDouble(0.06)]),
-                                                                                                                              ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                              llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)])),
+                                                                                                                              center_ : SFVec3f([SFDouble(-0.034), SFDouble(1.659), SFDouble(0.06)])),
 
                                                                                                                             HAnimJoint(
                                                                                                                               name_ : SFString('r_eyeball_joint'),
                                                                                                                               DEF_ : SFString('Joe_r_eyeball_joint'),
-                                                                                                                              center_ : SFVec3f([SFDouble(-0.034), SFDouble(1.659), SFDouble(0.06)]),
-                                                                                                                              ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                              llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)])),
+                                                                                                                              center_ : SFVec3f([SFDouble(-0.034), SFDouble(1.659), SFDouble(0.06)])),
 
                                                                                                                             HAnimJoint(
                                                                                                                               name_ : SFString('r_eyebrow_joint'),
                                                                                                                               DEF_ : SFString('Joe_r_eyebrow_joint'),
-                                                                                                                              center_ : SFVec3f([SFDouble(-0.034), SFDouble(1.659), SFDouble(0.06)]),
-                                                                                                                              ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                              llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)])),
+                                                                                                                              center_ : SFVec3f([SFDouble(-0.034), SFDouble(1.659), SFDouble(0.06)])),
 
                                                                                                                             HAnimJoint(
                                                                                                                               name_ : SFString('temporomandibular'),
                                                                                                                               DEF_ : SFString('Joe_temporomandibular'),
-                                                                                                                              center_ : SFVec3f([SFDouble(0.034), SFDouble(1.659), SFDouble(0.06)]),
-                                                                                                                              ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                              llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]))])])])])])])])]),
+                                                                                                                              center_ : SFVec3f([SFDouble(0.034), SFDouble(1.659), SFDouble(0.06)]))])])])])])])])]),
 
                                                                                             HAnimJoint(
                                                                                               DEF_ : SFString('Joe_l_acromioclavicular'),
                                                                                               center_ : SFVec3f([SFDouble(0.082), SFDouble(1.4488), SFDouble(-0.0353)]),
                                                                                               skinCoordIndex_ : MFInt32([SFInt32(12)]),
                                                                                               skinCoordWeight_ : MFFloat([SFFloat(1)]),
-                                                                                              ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                              llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                               children_ : [
                                                                                                 HAnimJoint(
                                                                                                   name_ : SFString('l_acromioclavicular'),
@@ -569,8 +475,6 @@ var X3D0 =  X3D(
                                                                                                   center_ : SFVec3f([SFDouble(0.0962), SFDouble(1.4269), SFDouble(-0.0424)]),
                                                                                                   skinCoordIndex_ : MFInt32([SFInt32(79)]),
                                                                                                   skinCoordWeight_ : MFFloat([SFFloat(1)]),
-                                                                                                  ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                  llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                   children_ : [
                                                                                                     HAnimJoint(
                                                                                                       name_ : SFString('l_shoulder'),
@@ -578,8 +482,6 @@ var X3D0 =  X3D(
                                                                                                       center_ : SFVec3f([SFDouble(0.2), SFDouble(1.44), SFDouble(-0.04)]),
                                                                                                       skinCoordIndex_ : MFInt32([SFInt32(41), SFInt32(42), SFInt32(44), SFInt32(80), SFInt32(102), SFInt32(103), SFInt32(104), SFInt32(105)]),
                                                                                                       skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1)]),
-                                                                                                      ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                      llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                       children_ : [
                                                                                                         HAnimJoint(
                                                                                                           name_ : SFString('l_elbow'),
@@ -587,8 +489,6 @@ var X3D0 =  X3D(
                                                                                                           center_ : SFVec3f([SFDouble(0.2), SFDouble(1.1388), SFDouble(-0.04)]),
                                                                                                           skinCoordIndex_ : MFInt32([SFInt32(45), SFInt32(46), SFInt32(47), SFInt32(109), SFInt32(110), SFInt32(111), SFInt32(112), SFInt32(113), SFInt32(115), SFInt32(116), SFInt32(117), SFInt32(118)]),
                                                                                                           skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1)]),
-                                                                                                          ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                          llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                           children_ : [
                                                                                                             HAnimJoint(
                                                                                                               name_ : SFString('l_radiocarpal'),
@@ -596,8 +496,6 @@ var X3D0 =  X3D(
                                                                                                               center_ : SFVec3f([SFDouble(0.2), SFDouble(0.87), SFDouble(-0.04)]),
                                                                                                               skinCoordIndex_ : MFInt32([SFInt32(119), SFInt32(120), SFInt32(121), SFInt32(122), SFInt32(123), SFInt32(124), SFInt32(125), SFInt32(126)]),
                                                                                                               skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1)]),
-                                                                                                              ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                              llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                               children_ : [
                                                                                                                 HAnimJoint(
                                                                                                                   name_ : SFString('l_carpometacarpal_1'),
@@ -605,8 +503,6 @@ var X3D0 =  X3D(
                                                                                                                   center_ : SFVec3f([SFDouble(0.1924), SFDouble(0.8472), SFDouble(-0.0534)]),
                                                                                                                   skinCoordIndex_ : MFInt32([SFInt32(127), SFInt32(128)]),
                                                                                                                   skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1)]),
-                                                                                                                  ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                  llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                   children_ : [
                                                                                                                     HAnimJoint(
                                                                                                                       name_ : SFString('l_metacarpophalangeal_1'),
@@ -614,17 +510,13 @@ var X3D0 =  X3D(
                                                                                                                       center_ : SFVec3f([SFDouble(0.1951), SFDouble(0.8226), SFDouble(0.0246)]),
                                                                                                                       skinCoordIndex_ : MFInt32([SFInt32(138), SFInt32(139), SFInt32(140), SFInt32(141), SFInt32(142), SFInt32(143)]),
                                                                                                                       skinCoordWeight_ : MFFloat([SFFloat(0.5), SFFloat(0.5), SFFloat(0.5), SFFloat(1), SFFloat(1), SFFloat(1)]),
-                                                                                                                      ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                      llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                       children_ : [
                                                                                                                         HAnimJoint(
                                                                                                                           name_ : SFString('l_carpal_interphalangeal_1'),
                                                                                                                           DEF_ : SFString('Joe_l_carpal_interphalangeal_1'),
                                                                                                                           center_ : SFVec3f([SFDouble(0.1955), SFDouble(0.8159), SFDouble(0.0464)]),
                                                                                                                           skinCoordIndex_ : MFInt32([SFInt32(144), SFInt32(145), SFInt32(146), SFInt32(147), SFInt32(148), SFInt32(149), SFInt32(150), SFInt32(151), SFInt32(152)]),
-                                                                                                                          skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1)]),
-                                                                                                                          ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                          llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]))])]),
+                                                                                                                          skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1)]))])]),
 
                                                                                                                 HAnimJoint(
                                                                                                                   name_ : SFString('l_carpometacarpal_2'),
@@ -632,8 +524,6 @@ var X3D0 =  X3D(
                                                                                                                   center_ : SFVec3f([SFDouble(0.1983), SFDouble(0.8024), SFDouble(-0.028)]),
                                                                                                                   skinCoordIndex_ : MFInt32([SFInt32(129), SFInt32(130)]),
                                                                                                                   skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1)]),
-                                                                                                                  ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                  llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                   children_ : [
                                                                                                                     HAnimJoint(
                                                                                                                       name_ : SFString('l_metacarpophalangeal_2'),
@@ -641,8 +531,6 @@ var X3D0 =  X3D(
                                                                                                                       center_ : SFVec3f([SFDouble(0.1983), SFDouble(0.7815), SFDouble(-0.028)]),
                                                                                                                       skinCoordIndex_ : MFInt32([SFInt32(138), SFInt32(139), SFInt32(140), SFInt32(153), SFInt32(154), SFInt32(155), SFInt32(163)]),
                                                                                                                       skinCoordWeight_ : MFFloat([SFFloat(0.5), SFFloat(0.5), SFFloat(0.5), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(0.5)]),
-                                                                                                                      ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                      llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                       children_ : [
                                                                                                                         HAnimJoint(
                                                                                                                           name_ : SFString('l_carpal_proximal_interphalangeal_2'),
@@ -650,17 +538,13 @@ var X3D0 =  X3D(
                                                                                                                           center_ : SFVec3f([SFDouble(0.2017), SFDouble(0.7363), SFDouble(-0.0248)]),
                                                                                                                           skinCoordIndex_ : MFInt32([SFInt32(166), SFInt32(167), SFInt32(168), SFInt32(169)]),
                                                                                                                           skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1)]),
-                                                                                                                          ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                          llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                           children_ : [
                                                                                                                             HAnimJoint(
                                                                                                                               name_ : SFString('l_carpal_distal_interphalangeal_2'),
                                                                                                                               DEF_ : SFString('Joe_l_carpal_distal_interphalangeal_2'),
                                                                                                                               center_ : SFVec3f([SFDouble(0.2028), SFDouble(0.7139), SFDouble(-0.0236)]),
                                                                                                                               skinCoordIndex_ : MFInt32([SFInt32(170), SFInt32(171), SFInt32(172), SFInt32(173), SFInt32(174), SFInt32(175), SFInt32(176), SFInt32(177), SFInt32(178)]),
-                                                                                                                              skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1)]),
-                                                                                                                              ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                              llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]))])])]),
+                                                                                                                              skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1)]))])])]),
 
                                                                                                                 HAnimJoint(
                                                                                                                   name_ : SFString('l_carpometacarpal_3'),
@@ -668,8 +552,6 @@ var X3D0 =  X3D(
                                                                                                                   center_ : SFVec3f([SFDouble(0.1987), SFDouble(0.8029), SFDouble(-0.053)]),
                                                                                                                   skinCoordIndex_ : MFInt32([SFInt32(131), SFInt32(132)]),
                                                                                                                   skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1)]),
-                                                                                                                  ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                  llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                   children_ : [
                                                                                                                     HAnimJoint(
                                                                                                                       name_ : SFString('l_metacarpophalangeal_3'),
@@ -677,8 +559,6 @@ var X3D0 =  X3D(
                                                                                                                       center_ : SFVec3f([SFDouble(0.1987), SFDouble(0.7818), SFDouble(-0.053)]),
                                                                                                                       skinCoordIndex_ : MFInt32([SFInt32(156), SFInt32(157), SFInt32(163), SFInt32(164)]),
                                                                                                                       skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(0.5), SFFloat(0.5)]),
-                                                                                                                      ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                      llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                       children_ : [
                                                                                                                         HAnimJoint(
                                                                                                                           name_ : SFString('l_carpal_proximal_interphalangeal_3'),
@@ -686,17 +566,13 @@ var X3D0 =  X3D(
                                                                                                                           center_ : SFVec3f([SFDouble(0.2013), SFDouble(0.7273), SFDouble(-0.0503)]),
                                                                                                                           skinCoordIndex_ : MFInt32([SFInt32(179), SFInt32(180), SFInt32(181), SFInt32(182)]),
                                                                                                                           skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1)]),
-                                                                                                                          ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                          llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                           children_ : [
                                                                                                                             HAnimJoint(
                                                                                                                               name_ : SFString('l_carpal_distal_interphalangeal_3'),
                                                                                                                               DEF_ : SFString('Joe_l_carpal_distal_interphalangeal_3'),
                                                                                                                               center_ : SFVec3f([SFDouble(0.2026), SFDouble(0.7011), SFDouble(-0.0494)]),
                                                                                                                               skinCoordIndex_ : MFInt32([SFInt32(183), SFInt32(184), SFInt32(185), SFInt32(186), SFInt32(187), SFInt32(188), SFInt32(189), SFInt32(190), SFInt32(191)]),
-                                                                                                                              skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1)]),
-                                                                                                                              ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                              llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]))])])]),
+                                                                                                                              skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1)]))])])]),
 
                                                                                                                 HAnimJoint(
                                                                                                                   name_ : SFString('l_carpometacarpal_4'),
@@ -704,8 +580,6 @@ var X3D0 =  X3D(
                                                                                                                   center_ : SFVec3f([SFDouble(0.1956), SFDouble(0.8019), SFDouble(-0.0794)]),
                                                                                                                   skinCoordIndex_ : MFInt32([SFInt32(133), SFInt32(134)]),
                                                                                                                   skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1)]),
-                                                                                                                  ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                  llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                   children_ : [
                                                                                                                     HAnimJoint(
                                                                                                                       name_ : SFString('l_metacarpophalangeal_4'),
@@ -713,8 +587,6 @@ var X3D0 =  X3D(
                                                                                                                       center_ : SFVec3f([SFDouble(0.1956), SFDouble(0.7815), SFDouble(-0.0794)]),
                                                                                                                       skinCoordIndex_ : MFInt32([SFInt32(158), SFInt32(159), SFInt32(164), SFInt32(165)]),
                                                                                                                       skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(0.5), SFFloat(0.5)]),
-                                                                                                                      ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                      llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                       children_ : [
                                                                                                                         HAnimJoint(
                                                                                                                           name_ : SFString('l_carpal_proximal_interphalangeal_4'),
@@ -722,17 +594,13 @@ var X3D0 =  X3D(
                                                                                                                           center_ : SFVec3f([SFDouble(0.1973), SFDouble(0.7287), SFDouble(-0.0777)]),
                                                                                                                           skinCoordIndex_ : MFInt32([SFInt32(192), SFInt32(193), SFInt32(194), SFInt32(195)]),
                                                                                                                           skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1)]),
-                                                                                                                          ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                          llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                           children_ : [
                                                                                                                             HAnimJoint(
                                                                                                                               name_ : SFString('l_carpal_distal_interphalangeal_4'),
                                                                                                                               DEF_ : SFString('Joe_l_carpal_distal_interphalangeal_4'),
                                                                                                                               center_ : SFVec3f([SFDouble(0.1983), SFDouble(0.7045), SFDouble(-0.0767)]),
                                                                                                                               skinCoordIndex_ : MFInt32([SFInt32(196), SFInt32(197), SFInt32(198), SFInt32(199), SFInt32(200), SFInt32(201), SFInt32(202), SFInt32(203), SFInt32(204)]),
-                                                                                                                              skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1)]),
-                                                                                                                              ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                              llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]))])])]),
+                                                                                                                              skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1)]))])])]),
 
                                                                                                                 HAnimJoint(
                                                                                                                   name_ : SFString('l_carpometacarpal_5'),
@@ -740,8 +608,6 @@ var X3D0 =  X3D(
                                                                                                                   center_ : SFVec3f([SFDouble(0.1925), SFDouble(0.8066), SFDouble(-0.1036)]),
                                                                                                                   skinCoordIndex_ : MFInt32([SFInt32(135), SFInt32(136), SFInt32(137), SFInt32(165)]),
                                                                                                                   skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(0.5)]),
-                                                                                                                  ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                  llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                   children_ : [
                                                                                                                     HAnimJoint(
                                                                                                                       name_ : SFString('l_metacarpophalangeal_5'),
@@ -749,8 +615,6 @@ var X3D0 =  X3D(
                                                                                                                       center_ : SFVec3f([SFDouble(0.1925), SFDouble(0.7866), SFDouble(-0.1036)]),
                                                                                                                       skinCoordIndex_ : MFInt32([SFInt32(160), SFInt32(161), SFInt32(162)]),
                                                                                                                       skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1)]),
-                                                                                                                      ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                      llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                       children_ : [
                                                                                                                         HAnimJoint(
                                                                                                                           name_ : SFString('l_carpal_proximal_interphalangeal_5'),
@@ -758,17 +622,13 @@ var X3D0 =  X3D(
                                                                                                                           center_ : SFVec3f([SFDouble(0.1938), SFDouble(0.7452), SFDouble(-0.1024)]),
                                                                                                                           skinCoordIndex_ : MFInt32([SFInt32(205), SFInt32(206), SFInt32(207), SFInt32(208)]),
                                                                                                                           skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1)]),
-                                                                                                                          ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                          llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                           children_ : [
                                                                                                                             HAnimJoint(
                                                                                                                               name_ : SFString('l_carpal_distal_interphalangeal_5'),
                                                                                                                               DEF_ : SFString('Joe_l_carpal_distal_interphalangeal_5'),
                                                                                                                               center_ : SFVec3f([SFDouble(0.1948), SFDouble(0.7277), SFDouble(-0.1017)]),
                                                                                                                               skinCoordIndex_ : MFInt32([SFInt32(209), SFInt32(210), SFInt32(211), SFInt32(212), SFInt32(213), SFInt32(214), SFInt32(215), SFInt32(216), SFInt32(217)]),
-                                                                                                                              skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1)]),
-                                                                                                                              ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                              llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]))])])])])])])])]),
+                                                                                                                              skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1)]))])])])])])])])]),
 
                                                                                             HAnimJoint(
                                                                                               name_ : SFString('r_sternoclavicular'),
@@ -776,8 +636,6 @@ var X3D0 =  X3D(
                                                                                               center_ : SFVec3f([SFDouble(-0.03), SFDouble(1.46), SFDouble(0)]),
                                                                                               skinCoordIndex_ : MFInt32([SFInt32(10)]),
                                                                                               skinCoordWeight_ : MFFloat([SFFloat(1)]),
-                                                                                              ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                              llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                               children_ : [
                                                                                                 HAnimJoint(
                                                                                                   name_ : SFString('r_acromioclavicular'),
@@ -785,8 +643,6 @@ var X3D0 =  X3D(
                                                                                                   center_ : SFVec3f([SFDouble(-0.09), SFDouble(1.41), SFDouble(-0.11)]),
                                                                                                   skinCoordIndex_ : MFInt32([SFInt32(77), SFInt32(29)]),
                                                                                                   skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(0.9)]),
-                                                                                                  ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                  llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                   children_ : [
                                                                                                     HAnimJoint(
                                                                                                       name_ : SFString('r_shoulder'),
@@ -794,8 +650,6 @@ var X3D0 =  X3D(
                                                                                                       center_ : SFVec3f([SFDouble(-0.2), SFDouble(1.44), SFDouble(-0.04)]),
                                                                                                       skinCoordIndex_ : MFInt32([SFInt32(29), SFInt32(30), SFInt32(32), SFInt32(78), SFInt32(218), SFInt32(219), SFInt32(220), SFInt32(221), SFInt32(86), SFInt32(88)]),
                                                                                                       skinCoordWeight_ : MFFloat([SFFloat(0.1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(0.3), SFFloat(0.2)]),
-                                                                                                      ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                      llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                       children_ : [
                                                                                                         HAnimJoint(
                                                                                                           name_ : SFString('r_elbow'),
@@ -803,8 +657,6 @@ var X3D0 =  X3D(
                                                                                                           center_ : SFVec3f([SFDouble(-0.2), SFDouble(1.1388), SFDouble(-0.04)]),
                                                                                                           skinCoordIndex_ : MFInt32([SFInt32(33), SFInt32(34), SFInt32(35), SFInt32(225), SFInt32(226), SFInt32(227), SFInt32(228), SFInt32(229), SFInt32(231), SFInt32(232), SFInt32(233), SFInt32(234)]),
                                                                                                           skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1)]),
-                                                                                                          ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                          llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                           children_ : [
                                                                                                             HAnimJoint(
                                                                                                               name_ : SFString('r_radiocarpal'),
@@ -812,8 +664,6 @@ var X3D0 =  X3D(
                                                                                                               center_ : SFVec3f([SFDouble(-0.2), SFDouble(0.89), SFDouble(-0.04)]),
                                                                                                               skinCoordIndex_ : MFInt32([SFInt32(235), SFInt32(236), SFInt32(237), SFInt32(238), SFInt32(239), SFInt32(240), SFInt32(241), SFInt32(242)]),
                                                                                                               skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1)]),
-                                                                                                              ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                              llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                               children_ : [
                                                                                                                 HAnimJoint(
                                                                                                                   name_ : SFString('r_carpometacarpal_1'),
@@ -821,8 +671,6 @@ var X3D0 =  X3D(
                                                                                                                   center_ : SFVec3f([SFDouble(-0.2), SFDouble(0.85), SFDouble(0)]),
                                                                                                                   skinCoordIndex_ : MFInt32([SFInt32(243), SFInt32(244)]),
                                                                                                                   skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1)]),
-                                                                                                                  ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                  llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                   children_ : [
                                                                                                                     HAnimJoint(
                                                                                                                       name_ : SFString('r_metacarpophalangeal_1'),
@@ -830,17 +678,13 @@ var X3D0 =  X3D(
                                                                                                                       center_ : SFVec3f([SFDouble(-0.2), SFDouble(0.82), SFDouble(0.03)]),
                                                                                                                       skinCoordIndex_ : MFInt32([SFInt32(254), SFInt32(255), SFInt32(256), SFInt32(257), SFInt32(258), SFInt32(259)]),
                                                                                                                       skinCoordWeight_ : MFFloat([SFFloat(0.5), SFFloat(0.5), SFFloat(0.5), SFFloat(1), SFFloat(1), SFFloat(1)]),
-                                                                                                                      ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                      llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                       children_ : [
                                                                                                                         HAnimJoint(
                                                                                                                           name_ : SFString('r_carpal_interphalangeal_1'),
                                                                                                                           DEF_ : SFString('Joe_r_carpal_interphalangeal_1'),
                                                                                                                           center_ : SFVec3f([SFDouble(-0.2), SFDouble(0.8), SFDouble(0.05)]),
                                                                                                                           skinCoordIndex_ : MFInt32([SFInt32(260), SFInt32(261), SFInt32(262), SFInt32(263), SFInt32(264), SFInt32(265), SFInt32(266), SFInt32(267), SFInt32(268)]),
-                                                                                                                          skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1)]),
-                                                                                                                          ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                          llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]))])]),
+                                                                                                                          skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1)]))])]),
 
                                                                                                                 HAnimJoint(
                                                                                                                   name_ : SFString('r_carpometacarpal_2'),
@@ -848,8 +692,6 @@ var X3D0 =  X3D(
                                                                                                                   center_ : SFVec3f([SFDouble(-0.2), SFDouble(0.84), SFDouble(-0.015)]),
                                                                                                                   skinCoordIndex_ : MFInt32([SFInt32(245), SFInt32(246)]),
                                                                                                                   skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1)]),
-                                                                                                                  ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                  llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                   children_ : [
                                                                                                                     HAnimJoint(
                                                                                                                       name_ : SFString('r_metacarpophalangeal_2'),
@@ -857,8 +699,6 @@ var X3D0 =  X3D(
                                                                                                                       center_ : SFVec3f([SFDouble(-0.2), SFDouble(0.793), SFDouble(-0.015)]),
                                                                                                                       skinCoordIndex_ : MFInt32([SFInt32(254), SFInt32(255), SFInt32(256), SFInt32(269), SFInt32(270), SFInt32(271), SFInt32(279)]),
                                                                                                                       skinCoordWeight_ : MFFloat([SFFloat(0.5), SFFloat(0.5), SFFloat(0.5), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(0.5)]),
-                                                                                                                      ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                      llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                       children_ : [
                                                                                                                         HAnimJoint(
                                                                                                                           name_ : SFString('r_carpal_proximal_interphalangeal_2'),
@@ -866,17 +706,13 @@ var X3D0 =  X3D(
                                                                                                                           center_ : SFVec3f([SFDouble(-0.2), SFDouble(0.745), SFDouble(-0.015)]),
                                                                                                                           skinCoordIndex_ : MFInt32([SFInt32(282), SFInt32(283), SFInt32(284), SFInt32(285)]),
                                                                                                                           skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1)]),
-                                                                                                                          ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                          llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                           children_ : [
                                                                                                                             HAnimJoint(
                                                                                                                               name_ : SFString('r_carpal_distal_interphalangeal_2'),
                                                                                                                               DEF_ : SFString('Joe_r_carpal_distal_interphalangeal_2'),
                                                                                                                               center_ : SFVec3f([SFDouble(-0.2), SFDouble(0.72), SFDouble(-0.015)]),
                                                                                                                               skinCoordIndex_ : MFInt32([SFInt32(286), SFInt32(287), SFInt32(288), SFInt32(289), SFInt32(290), SFInt32(291), SFInt32(292), SFInt32(293), SFInt32(294)]),
-                                                                                                                              skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1)]),
-                                                                                                                              ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                              llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]))])])]),
+                                                                                                                              skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1)]))])])]),
 
                                                                                                                 HAnimJoint(
                                                                                                                   name_ : SFString('r_carpometacarpal_3'),
@@ -884,8 +720,6 @@ var X3D0 =  X3D(
                                                                                                                   center_ : SFVec3f([SFDouble(-0.2), SFDouble(0.835), SFDouble(-0.04)]),
                                                                                                                   skinCoordIndex_ : MFInt32([SFInt32(247), SFInt32(248)]),
                                                                                                                   skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1)]),
-                                                                                                                  ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                  llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                   children_ : [
                                                                                                                     HAnimJoint(
                                                                                                                       name_ : SFString('r_metacarpophalangeal_3'),
@@ -893,8 +727,6 @@ var X3D0 =  X3D(
                                                                                                                       center_ : SFVec3f([SFDouble(-0.2), SFDouble(0.788), SFDouble(-0.04)]),
                                                                                                                       skinCoordIndex_ : MFInt32([SFInt32(272), SFInt32(273), SFInt32(279), SFInt32(280)]),
                                                                                                                       skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(0.5), SFFloat(0.5)]),
-                                                                                                                      ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                      llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                       children_ : [
                                                                                                                         HAnimJoint(
                                                                                                                           name_ : SFString('r_carpal_proximal_interphalangeal_3'),
@@ -902,17 +734,13 @@ var X3D0 =  X3D(
                                                                                                                           center_ : SFVec3f([SFDouble(-0.2), SFDouble(0.74), SFDouble(-0.04)]),
                                                                                                                           skinCoordIndex_ : MFInt32([SFInt32(295), SFInt32(296), SFInt32(297), SFInt32(298)]),
                                                                                                                           skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1)]),
-                                                                                                                          ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                          llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                           children_ : [
                                                                                                                             HAnimJoint(
                                                                                                                               name_ : SFString('r_carpal_distal_interphalangeal_3'),
                                                                                                                               DEF_ : SFString('Joe_r_carpal_distal_interphalangeal_3'),
                                                                                                                               center_ : SFVec3f([SFDouble(-0.2), SFDouble(0.7142), SFDouble(-0.04)]),
                                                                                                                               skinCoordIndex_ : MFInt32([SFInt32(299), SFInt32(300), SFInt32(301), SFInt32(302), SFInt32(303), SFInt32(304), SFInt32(305), SFInt32(306), SFInt32(307)]),
-                                                                                                                              skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1)]),
-                                                                                                                              ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                              llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]))])])]),
+                                                                                                                              skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1)]))])])]),
 
                                                                                                                 HAnimJoint(
                                                                                                                   name_ : SFString('r_carpometacarpal_4'),
@@ -920,8 +748,6 @@ var X3D0 =  X3D(
                                                                                                                   center_ : SFVec3f([SFDouble(-0.2), SFDouble(0.835), SFDouble(-0.065)]),
                                                                                                                   skinCoordIndex_ : MFInt32([SFInt32(249), SFInt32(250)]),
                                                                                                                   skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1)]),
-                                                                                                                  ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                  llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                   children_ : [
                                                                                                                     HAnimJoint(
                                                                                                                       name_ : SFString('r_metacarpophalangeal_4'),
@@ -929,8 +755,6 @@ var X3D0 =  X3D(
                                                                                                                       center_ : SFVec3f([SFDouble(-0.2), SFDouble(0.793), SFDouble(-0.065)]),
                                                                                                                       skinCoordIndex_ : MFInt32([SFInt32(274), SFInt32(275), SFInt32(280), SFInt32(281)]),
                                                                                                                       skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(0.5), SFFloat(0.5)]),
-                                                                                                                      ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                      llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                       children_ : [
                                                                                                                         HAnimJoint(
                                                                                                                           name_ : SFString('r_carpal_proximal_interphalangeal_4'),
@@ -938,17 +762,13 @@ var X3D0 =  X3D(
                                                                                                                           center_ : SFVec3f([SFDouble(-0.2), SFDouble(0.74), SFDouble(-0.065)]),
                                                                                                                           skinCoordIndex_ : MFInt32([SFInt32(308), SFInt32(309), SFInt32(310), SFInt32(311)]),
                                                                                                                           skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1)]),
-                                                                                                                          ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                          llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                           children_ : [
                                                                                                                             HAnimJoint(
                                                                                                                               name_ : SFString('r_carpal_distal_interphalangeal_4'),
                                                                                                                               DEF_ : SFString('Joe_r_carpal_distal_interphalangeal_4'),
                                                                                                                               center_ : SFVec3f([SFDouble(-0.2), SFDouble(0.7177), SFDouble(-0.065)]),
                                                                                                                               skinCoordIndex_ : MFInt32([SFInt32(312), SFInt32(313), SFInt32(314), SFInt32(315), SFInt32(316), SFInt32(317), SFInt32(318), SFInt32(319), SFInt32(320)]),
-                                                                                                                              skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1)]),
-                                                                                                                              ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                              llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]))])])]),
+                                                                                                                              skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1)]))])])]),
 
                                                                                                                 HAnimJoint(
                                                                                                                   name_ : SFString('r_carpometacarpal_5'),
@@ -956,8 +776,6 @@ var X3D0 =  X3D(
                                                                                                                   center_ : SFVec3f([SFDouble(-0.2), SFDouble(0.84), SFDouble(-0.085)]),
                                                                                                                   skinCoordIndex_ : MFInt32([SFInt32(251), SFInt32(252), SFInt32(253), SFInt32(281)]),
                                                                                                                   skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(0.5)]),
-                                                                                                                  ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                  llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                   children_ : [
                                                                                                                     HAnimJoint(
                                                                                                                       name_ : SFString('r_metacarpophalangeal_5'),
@@ -965,8 +783,6 @@ var X3D0 =  X3D(
                                                                                                                       center_ : SFVec3f([SFDouble(-0.2), SFDouble(0.79), SFDouble(-0.085)]),
                                                                                                                       skinCoordIndex_ : MFInt32([SFInt32(276), SFInt32(277), SFInt32(278)]),
                                                                                                                       skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1)]),
-                                                                                                                      ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                      llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                       children_ : [
                                                                                                                         HAnimJoint(
                                                                                                                           name_ : SFString('r_carpal_proximal_interphalangeal_5'),
@@ -974,17 +790,13 @@ var X3D0 =  X3D(
                                                                                                                           center_ : SFVec3f([SFDouble(-0.2), SFDouble(0.755), SFDouble(-0.085)]),
                                                                                                                           skinCoordIndex_ : MFInt32([SFInt32(321), SFInt32(322), SFInt32(323), SFInt32(324)]),
                                                                                                                           skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1)]),
-                                                                                                                          ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                          llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                           children_ : [
                                                                                                                             HAnimJoint(
                                                                                                                               name_ : SFString('r_carpal_distal_interphalangeal_5'),
                                                                                                                               DEF_ : SFString('Joe_r_carpal_distal_interphalangeal_5'),
                                                                                                                               center_ : SFVec3f([SFDouble(-0.2), SFDouble(0.735), SFDouble(-0.09)]),
                                                                                                                               skinCoordIndex_ : MFInt32([SFInt32(325), SFInt32(326), SFInt32(327), SFInt32(328), SFInt32(329), SFInt32(330), SFInt32(331), SFInt32(332), SFInt32(333)]),
-                                                                                                                              skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1)]),
-                                                                                                                              ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                              llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]))])])])])])])])])])])])])])])])])])])])])])])])])])]),
+                                                                                                                              skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1)]))])])])])])])])])])])])])])])])])])])])])])])])])])]),
                   skin_ : 
                     Shape(
                       DEF_ : SFString('Joe_Shape'),
