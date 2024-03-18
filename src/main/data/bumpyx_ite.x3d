@@ -44,13 +44,13 @@
 			<ImageTexture name="topShader" containerField="topTexture" url='"../resources/images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"' ></ImageTexture>
                 </ComposedCubeMapTexture>
                 <ComposedShader language="GLSL">
-                  <field name='chromaticDispertion' accessType='inputOnly' type='SFVec3f' value='0.98 1 1.033'></field>
+                  <field name='chromaticDispertion' accessType='inputOnly' type='SFVec3f' value='0.98 1.0 1.033'></field>
                   <field name='cube' type='SFNode' accessType="inputOnly">
                         <ComposedCubeMapTexture USE="texture"></ComposedCubeMapTexture>
                   </field>
-                  <field name='bias' accessType='inputOnly' type='SFFloat' value='0.5'></field>
-                  <field name='scale' accessType='inputOnly' type='SFFloat' value='0.5'></field>
-                  <field name='power' accessType='inputOnly' type='SFFloat' value='2'></field>
+                  <field name='bias' type='SFFloat' accessType='inputOnly' value='0.5'></field>
+                  <field name='scale' type='SFFloat' accessType='inputOnly' value='0.5'></field>
+                  <field name='power' type='SFFloat' accessType='inputOnly' value='2'></field>
                   <field name='a' type='SFFloat' accessType='inputOutput' value='10'></field>
                   <field name='b' type='SFFloat' accessType='inputOutput' value='1'></field>
                   <field name='c' type='SFFloat' accessType='inputOutput' value='5'></field>
@@ -59,7 +59,7 @@
                   <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
                   <ShaderPart url='"../shaders/x_ite_flowers_chromatic.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs"' containerField='parts' type='VERTEX'></ShaderPart>
                   <ShaderPart url='"../shaders/x_ite.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"' containerField='parts' type='FRAGMENT'></ShaderPart>
-                  <!--
+                  <!-- TO CONVERT TO A SPHERE
                   <ShaderPart url='"../shaders/x_ite.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"' type="VERTEX" containerField='parts'></ShaderPart>
                   <ShaderPart url='"../shaders/x_itebubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs"' containerField='parts' type='FRAGMENT'></ShaderPart>
                   -->
