@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN"
   "http://www.web3d.org/specifications/x3d-3.3.dtd">
-<X3D profile='Immersive' version='3.3'>
+<X3D profile='Full' version='3.3'>
 <head>
     	      <component level='1' name='Scripting'/>
 	      <component name='EnvironmentalEffects' level='3'></component>
@@ -13,7 +13,7 @@
 	      <component name='Grouping' level='3'></component>
 	      <component name='Core' level='1'></component>
 	      <component name='DIS' level='2'></component>
-    <meta content='bumpfreewrlsliders.x3d' name='title'/>
+    <meta content='bumpyx_itesliders.x3d' name='title'/>
     <meta content='*enter description here, short-sentence summaries preferred*' name='description'/>
     <meta content='Doug Sanden, Christoph Valentin, John Carlson' name='creator'/>
     <meta content='*if manually translating VRML-to-X3D, enter name of person translating here*' name='translator'/>
@@ -108,23 +108,35 @@
       <!-- the model that is being reviewed by the users of this scene -->
       <Transform DEF="FlowerTransform">
 	      <!--
-        <Inline DEF="Flower" url='"bumpyfreewrl.x3d"' />
+        <Inline DEF="Flower" url='"bumpyx_ite.x3d"' />
 	-->
+<!-- Images courtesy of Paul Debevec's Light Probe Image Gallery -->
+    <Background
+		backUrl='"../resources/images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"'
+		bottomUrl='"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"'
+		frontUrl='"../resources/images/all_probes/stpeters_cross/stpeters_front.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"'
+		leftUrl='"../resources/images/all_probes/stpeters_cross/stpeters_left.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"'
+		rightUrl='"../resources/images/all_probes/stpeters_cross/stpeters_right.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"'
+		topUrl='"../resources/images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"'
+	    ></Background> 
+	<Transform>
 	<Shape>
 	  <Sphere radius='5'></Sphere>
 	  <Appearance>
           <Material diffuseColor=".7 .7 .7" specularColor=".5 .5 .5" ></Material>
                 <ComposedCubeMapTexture DEF="texture">
-			<ImageTexture name="backShader" containerField="back" url='"../resources/images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"' ></ImageTexture>
-			<ImageTexture name="bottomShader" containerField="bottom" url='"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"' ></ImageTexture>
-			<ImageTexture name="frontShader" containerField="front" url='"../resources/images/all_probes/stpeters_cross/stpeters_front.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"' ></ImageTexture>
-			<ImageTexture name="leftShader" containerField="left" url='"../resources/images/all_probes/stpeters_cross/stpeters_left.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"' ></ImageTexture>
-			<ImageTexture name="rightShader" containerField="right" url='"../resources/images/all_probes/stpeters_cross/stpeters_right.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"' ></ImageTexture>
-			<ImageTexture name="topShader" containerField="top" url='"../resources/images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"' ></ImageTexture>
+			<ImageTexture name="backShader" containerField="backTexture" url='"../resources/images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"' ></ImageTexture>
+			<ImageTexture name="bottomShader" containerField="bottomTexture" url='"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"' ></ImageTexture>
+			<ImageTexture name="frontShader" containerField="frontTexture" url='"../resources/images/all_probes/stpeters_cross/stpeters_front.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"' ></ImageTexture>
+			<ImageTexture name="leftShader" containerField="leftTexture" url='"../resources/images/all_probes/stpeters_cross/stpeters_left.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"' ></ImageTexture>
+			<ImageTexture name="rightShader" containerField="rightTexture" url='"../resources/images/all_probes/stpeters_cross/stpeters_right.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"' ></ImageTexture>
+			<ImageTexture name="topShader" containerField="topTexture" url='"../resources/images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"' ></ImageTexture>
                 </ComposedCubeMapTexture>
-                <ComposedShader DEF="freewrlShader" language="GLSL">
+                <ComposedShader DEF="x_iteShader" language="GLSL">
                   <field name='chromaticDispertion' accessType='inputOnly' type='SFVec3f' value='0.98 1.0 1.033'></field>
-                  <field name='fw_textureCoordGenType' accessType='inputOnly' type='SFInt32' value='0'></field>
+                  <field name='cube' type='SFNode' accessType="inputOnly">
+                        <ComposedCubeMapTexture USE="texture"></ComposedCubeMapTexture>
+                  </field>
                   <field name='bias' type='SFFloat' accessType='inputOnly' value='0.5'></field>
                   <field name='scale' type='SFFloat' accessType='inputOnly' value='0.5'></field>
                   <field name='power' type='SFFloat' accessType='inputOnly' value='2'></field>
@@ -134,11 +146,16 @@
                   <field name='d' type='SFFloat' accessType='inputOutput' value='5'></field>
                   <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
                   <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
-		  <ShaderPart url='"../shaders/freewrl_flowers_chromatic.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl_flowers_chromatic.vs"' containerField='parts' type='VERTEX'></ShaderPart>
-		  <ShaderPart url='"../shaders/freewrl_bubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl_bubbles.fs"' containerField='parts' type='FRAGMENT'></ShaderPart>
-                </ComposedShader>
+                  <ShaderPart url='"../shaders/x_ite_flowers_chromatic.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs"' containerField='parts' type='VERTEX'></ShaderPart>
+                  <ShaderPart url='"../shaders/x_ite.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"' containerField='parts' type='FRAGMENT'></ShaderPart>
+                  <!-- TO CONVERT TO A SPHERE
+                  <ShaderPart url='"../shaders/x_ite.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"' type="VERTEX" containerField='parts'></ShaderPart>
+                  <ShaderPart url='"../shaders/x_itebubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs"' containerField='parts' type='FRAGMENT'></ShaderPart>
+                  -->
+               </ComposedShader>
 	  </Appearance>
 	</Shape>
+      </Transform>
       </Transform>
       <!-- DIS multiuser facilities -->
       <DISEntityManager DEF='EntityManager' networkMode='networkReader' >
@@ -396,12 +413,12 @@
         <ROUTE fromField='translation_changed' fromNode='pdeltaSensor' toField='newTranslation' toNode='pdeltaValueTransformerScript'/>
         <ROUTE fromField='translation_changed' fromNode='tdeltaSensor' toField='newTranslation' toNode='tdeltaValueTransformerScript'/>
 
-        <ROUTE fromField='aValue_changed' fromNode='aValueTransformerScript' toField='a' toNode='freewrlShader'/>
-        <ROUTE fromField='bValue_changed' fromNode='bValueTransformerScript' toField='b' toNode='freewrlShader'/>
-        <ROUTE fromField='cValue_changed' fromNode='cValueTransformerScript' toField='c' toNode='freewrlShader'/>
-        <ROUTE fromField='dValue_changed' fromNode='dValueTransformerScript' toField='d' toNode='freewrlShader'/>
-        <ROUTE fromField='pdeltaValue_changed' fromNode='pdeltaValueTransformerScript' toField='pdelta' toNode='freewrlShader'/>
-        <ROUTE fromField='tdeltaValue_changed' fromNode='tdeltaValueTransformerScript' toField='tdelta' toNode='freewrlShader'/>
+        <ROUTE fromField='aValue_changed' fromNode='aValueTransformerScript' toField='a' toNode='x_iteShader'/>
+        <ROUTE fromField='bValue_changed' fromNode='bValueTransformerScript' toField='b' toNode='x_iteShader'/>
+        <ROUTE fromField='cValue_changed' fromNode='cValueTransformerScript' toField='c' toNode='x_iteShader'/>
+        <ROUTE fromField='dValue_changed' fromNode='dValueTransformerScript' toField='d' toNode='x_iteShader'/>
+        <ROUTE fromField='pdeltaValue_changed' fromNode='pdeltaValueTransformerScript' toField='pdelta' toNode='x_iteShader'/>
+        <ROUTE fromField='tdeltaValue_changed' fromNode='tdeltaValueTransformerScript' toField='tdelta' toNode='x_iteShader'/>
     </LayoutLayer>
   </LayerSet>
 </Scene>
