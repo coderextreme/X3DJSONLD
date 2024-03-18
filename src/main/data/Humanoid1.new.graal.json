@@ -46,7 +46,7 @@
 },
 {
 "@name":"translated",
-"@content":"03 March 2024"
+"@content":"11 March 2024"
 },
 {
 "@name":"generator",
@@ -278,14 +278,18 @@ already work in view3dscene)"
 "#comment":"&lt;/LOD&gt;"
 }
 ],
+"-skinCoord":
+{ "Coordinate":
+{
+"@USE":"TheSkinCoord"
+}
+},
 "-skeleton":[
 { "HAnimJoint":
 {
 "@name":"humanoid_root",
 "@DEF":"hanim_humanoid_root",
 "@center":[0,0.824,0.0277],
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -1066,8 +1070,6 @@ already work in view3dscene)"
 "@name":"sacroiliac",
 "@DEF":"hanim_sacroiliac",
 "@center":[0,0.9149,0.0016],
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -1299,8 +1301,6 @@ already work in view3dscene)"
 "@name":"l_hip",
 "@DEF":"hanim_l_hip",
 "@center":[0.0961,0.9124,-1.0E-4],
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -1416,8 +1416,6 @@ already work in view3dscene)"
 "@name":"l_knee",
 "@DEF":"hanim_l_knee",
 "@center":[0.104,0.4867,0.0308],
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -1516,8 +1514,6 @@ already work in view3dscene)"
 "@name":"l_talocrural",
 "@DEF":"hanim_l_talocrural",
 "@center":[0.1101,0.0656,-0.0736],
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -1704,9 +1700,7 @@ already work in view3dscene)"
 {
 "@name":"l_metatarsophalangeal_2",
 "@DEF":"hanim_l_metatarsophalangeal_2",
-"@center":[0.0824,0.0064,-0.004],
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0]
+"@center":[0.0824,0.0064,-0.004]
 }
 }
 ]
@@ -1723,8 +1717,6 @@ already work in view3dscene)"
 "@name":"r_hip",
 "@DEF":"hanim_r_hip",
 "@center":[-0.095,0.9171,0.0029],
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -1840,8 +1832,6 @@ already work in view3dscene)"
 "@name":"r_knee",
 "@DEF":"hanim_r_knee",
 "@center":[-0.0867,0.4913,0.0318],
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -1940,8 +1930,6 @@ already work in view3dscene)"
 "@name":"r_talocrural",
 "@DEF":"hanim_r_talocrural",
 "@center":[-0.0801,0.0712,-0.0766],
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -2128,9 +2116,7 @@ already work in view3dscene)"
 {
 "@name":"r_metatarsophalangeal_2",
 "@DEF":"hanim_r_metatarsophalangeal_2",
-"@center":[-0.0823,0.0064,-0.004],
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0]
+"@center":[-0.0823,0.0064,-0.004]
 }
 }
 ]
@@ -2150,8 +2136,6 @@ already work in view3dscene)"
 "@name":"vl5",
 "@DEF":"hanim_vl5",
 "@center":[0.0028,1.0568,-0.0776],
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -2601,9 +2585,7 @@ already work in view3dscene)"
 {
 "@name":"skullbase",
 "@DEF":"hanim_skullbase",
-"@center":[0.0044,1.6209,0.0236],
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0]
+"@center":[0.0044,1.6209,0.0236]
 }
 },
 { "HAnimJoint":
@@ -2611,8 +2593,6 @@ already work in view3dscene)"
 "@name":"l_shoulder",
 "@DEF":"hanim_l_shoulder",
 "@center":[0.2029,1.4376,-0.0387],
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -2747,8 +2727,6 @@ already work in view3dscene)"
 "@name":"l_elbow",
 "@DEF":"hanim_l_elbow",
 "@center":[0.2014,1.1357,-0.0682],
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -2916,9 +2894,7 @@ already work in view3dscene)"
 {
 "@name":"l_radiocarpal",
 "@DEF":"hanim_l_radiocarpal",
-"@center":[0.1984,0.8663,-0.0583],
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0]
+"@center":[0.1984,0.8663,-0.0583]
 }
 }
 ]
@@ -2932,8 +2908,6 @@ already work in view3dscene)"
 "@name":"r_shoulder",
 "@DEF":"hanim_r_shoulder",
 "@center":[-0.1907,1.4407,-0.0325],
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -3068,8 +3042,6 @@ already work in view3dscene)"
 "@name":"r_elbow",
 "@DEF":"hanim_r_elbow",
 "@center":[-0.1949,1.1388,-0.062],
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -3237,9 +3209,7 @@ already work in view3dscene)"
 {
 "@name":"r_radiocarpal",
 "@DEF":"hanim_r_radiocarpal",
-"@center":[-0.1959,0.8694,-0.0521],
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0]
+"@center":[-0.1959,0.8694,-0.0521]
 }
 }
 ]
@@ -4016,13 +3986,7 @@ already work in view3dscene)"
 }
 }
 }
-],
-"-skinCoord":
-{ "Coordinate":
-{
-"@USE":"TheSkinCoord"
-}
-}
+]
 }
 }
 ]
