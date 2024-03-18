@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN"
   "http://www.web3d.org/specifications/x3d-3.3.dtd">
-<X3D profile='Full' version='3.3'>
+<X3D profile='Full' version='4.0'>
 <head>
     	      <component level='1' name='Scripting'/>
 	      <component name='EnvironmentalEffects' level='3'></component>
@@ -45,7 +45,6 @@
     <Layer isPickable='true'>
       <!-- basic nodes, which might be present in any scene -->
       <NavigationInfo headlight="true" type='"EXAMINE"' avatarSize="0.25, 1.75, 0.75"   />
-      <Background groundColor=".3 .3 .3" skyColor=".6 .6 .6" />
       <DirectionalLight ambientIntensity=".2" direction="0 -1 -0" />
       <DirectionalLight ambientIntensity=".2" direction="-1 -.1 -1" />
       <Viewpoint description='My Overview' fieldOfView='1.570796' position='0 1.75 60' />
@@ -119,7 +118,7 @@
 	    ></Background> 
 	<Transform>
 	<Shape>
-	  <Sphere radius='5'></Sphere>
+	  <Sphere radius='40'></Sphere>
 	  <Appearance>
           <Material diffuseColor=".7 .7 .7" specularColor=".5 .5 .5" ></Material>
                 <ComposedCubeMapTexture DEF="texture">
@@ -138,8 +137,8 @@
                   <field name='bias' type='SFFloat' accessType='inputOnly' value='0.5'></field>
                   <field name='scale' type='SFFloat' accessType='inputOnly' value='0.5'></field>
                   <field name='power' type='SFFloat' accessType='inputOnly' value='2'></field>
-                  <field name='a' type='SFFloat' accessType='inputOutput' value='10'></field>
-                  <field name='b' type='SFFloat' accessType='inputOutput' value='1'></field>
+                  <field name='a' type='SFFloat' accessType='inputOutput' value='15'></field>
+                  <field name='b' type='SFFloat' accessType='inputOutput' value='5'></field>
                   <field name='c' type='SFFloat' accessType='inputOutput' value='5'></field>
                   <field name='d' type='SFFloat' accessType='inputOutput' value='5'></field>
                   <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
@@ -170,7 +169,7 @@
          like a HUD (heads up display) -->
     <LayoutLayer isPickable='true'>
       <!-- positioning the LayoutLayer -->
-      <Layout containerField='layout' align='"RIGHT","BOTTOM"' offset='0.0, 0.0' offsetUnits='"WORLD","WORLD"' scaleMode='"NONE","NONE"' size='0.4, 1.0' sizeUnits='"WORLD","WORLD"'/>
+      <Layout containerField='layout' align='"RIGHT","BOTTOM"' offset='0.0, 0.2' offsetUnits='"WORLD","WORLD"' scaleMode='"NONE","NONE"' size='0.4, 0.6' sizeUnits='"WORLD","WORLD"'/>
       <!-- clipping the LayoutLayer -->
       <Viewport containerField='viewport' clipBoundary='0, 1, 0, 1'/>
       <!-- the content (children) of the LayoutLayer -->
@@ -206,7 +205,7 @@
             </Shape>
           </Transform>
           <Shape>
-            <Cylinder radius="0.05" height="0.6" />
+            <Cylinder radius="0.05" height="0.3" />
             <Appearance>
               <Material/>
             </Appearance>
@@ -244,7 +243,7 @@
             </Shape>
           </Transform>
           <Shape>
-            <Cylinder radius="0.05" height="0.6" />
+            <Cylinder radius="0.05" height="0.3" />
             <Appearance>
               <Material/>
             </Appearance>
@@ -273,7 +272,7 @@
             </Shape>
           </Transform>
           <Shape>
-            <Cylinder radius="0.05" height="0.6" />
+            <Cylinder radius="0.05" height="0.3" />
             <Appearance>
               <Material/>
             </Appearance>
@@ -302,7 +301,7 @@
             </Shape>
           </Transform>
           <Shape>
-            <Cylinder radius="0.05" height="0.6" />
+            <Cylinder radius="0.05" height="0.3" />
             <Appearance>
               <Material/>
             </Appearance>
@@ -331,7 +330,7 @@
             </Shape>
           </Transform>
           <Shape>
-            <Cylinder radius="0.05" height="0.6" />
+            <Cylinder radius="0.05" height="0.3" />
             <Appearance>
               <Material/>
             </Appearance>
@@ -360,7 +359,7 @@
             </Shape>
           </Transform>
           <Shape>
-            <Cylinder radius="0.05" height="0.6" />
+            <Cylinder radius="0.05" height="0.3" />
             <Appearance>
               <Material/>
             </Appearance>
@@ -370,22 +369,22 @@
         <Script DEF='aValueTransformerScript' directOutput="true" mustEvaluate="true">
           <field accessType='inputOnly' name='newTranslation' type='SFVec3f' value='1.0 1.0 1.0'/>
           <field accessType='outputOnly' name='aValue_changed' type='SFFloat' value='1.0'/>
-	  <![CDATA[ecmascript: function newTranslation(Value) { aValue_changed = Value.x; }]]>
+	  <![CDATA[ecmascript: function newTranslation(Value) { aValue_changed = Value.x * 30; }]]>
         </Script>
         <Script DEF='bValueTransformerScript' directOutput="true" mustEvaluate="true">
           <field accessType='inputOnly' name='newTranslation' type='SFVec3f' value='1.0 1.0 1.0'/>
           <field accessType='outputOnly' name='bValue_changed' type='SFFloat' value='1.0'/>
-	  <![CDATA[ecmascript: function newTranslation(Value) { bValue_changed = Value.x; }]]>
+	  <![CDATA[ecmascript: function newTranslation(Value) { bValue_changed = Value.x * 30; }]]>
         </Script>
         <Script DEF='cValueTransformerScript' directOutput="true" mustEvaluate="true">
           <field accessType='inputOnly' name='newTranslation' type='SFVec3f' value='1.0 1.0 1.0'/>
           <field accessType='outputOnly' name='cValue_changed' type='SFFloat' value='1.0'/>
-	  <![CDATA[ecmascript: function newTranslation(Value) { cValue_changed = Value.x; }]]>
+	  <![CDATA[ecmascript: function newTranslation(Value) { cValue_changed = Value.x * 5; }]]>
         </Script>
         <Script DEF='dValueTransformerScript' directOutput="true" mustEvaluate="true">
           <field accessType='inputOnly' name='newTranslation' type='SFVec3f' value='1.0 1.0 1.0'/>
           <field accessType='outputOnly' name='dValue_changed' type='SFFloat' value='1.0'/>
-	  <![CDATA[ecmascript: function newTranslation(Value) { dValue_changed = Value.x; }]]>
+	  <![CDATA[ecmascript: function newTranslation(Value) { dValue_changed = Value.x * 5; }]]>
         </Script>
         <Script DEF='pdeltaValueTransformerScript' directOutput="true" mustEvaluate="true">
           <field accessType='inputOnly' name='newTranslation' type='SFVec3f' value='1.0 1.0 1.0'/>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D profile="Immersive" version="4.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance">
+<X3D profile="Full" version="4.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance">
     <head>
     	      <component level='1' name='Scripting'/>
 	      <component name='EnvironmentalEffects' level='3'></component>
@@ -32,7 +32,7 @@
 	    ></Background> 
 	<Transform>
 	<Shape>
-	  <Sphere radius='5'></Sphere>
+	  <Sphere radius='40'></Sphere>
 	  <Appearance>
           <Material diffuseColor=".7 .7 .7" specularColor=".5 .5 .5" ></Material>
                 <ComposedCubeMapTexture DEF="texture">
@@ -51,8 +51,8 @@
                   <field name='bias' type='SFFloat' accessType='inputOnly' value='0.5'></field>
                   <field name='scale' type='SFFloat' accessType='inputOnly' value='0.5'></field>
                   <field name='power' type='SFFloat' accessType='inputOnly' value='2'></field>
-                  <field name='a' type='SFFloat' accessType='inputOutput' value='10'></field>
-                  <field name='b' type='SFFloat' accessType='inputOutput' value='1'></field>
+                  <field name='a' type='SFFloat' accessType='inputOutput' value='15'></field>
+                  <field name='b' type='SFFloat' accessType='inputOutput' value='5'></field>
                   <field name='c' type='SFFloat' accessType='inputOutput' value='5'></field>
                   <field name='d' type='SFFloat' accessType='inputOutput' value='5'></field>
                   <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
