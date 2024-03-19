@@ -44,17 +44,15 @@ class X3DSLPHandler extends DefaultHandler2 {
 			writeXML("\t"+attributes.getLocalName(i)+"=\""+attributes.getValue(i)+"\"");
 	}
 	writeXML(">\n\t<advice element=\""+qName+"\"> <!-- add macro1, macro2, macro3, ... attributes and values for templating -->\n"+  
-				"\t\t<operation><add></add><get></get><set></set><remove></remove><grant></grant><move></move><draw></draw></operation>\n"+
-				"\t\t<start>    <td></td>  <td></td>  <td></td>  <td></td>        <td></td>      <td></td>    <td></td>    </start>\n"+
-				"\t\t<around>   <td></td>  <td></td>  <td></td>  <td></td>        <td></td>      <td></td>    <td></td>    </around>\n"+
-				"\t\t<end>      <td></td>  <td></td>  <td></td>  <td></td>        <td></td>      <td></td>    <td></td>    </start>\n"+
+				"\t\t\t<start> <td op=\"add\"></td><td op=\"get\"></td><td op=\"set\"></td><td op=\"remove\"></td><td op=\"grant\"></td><td op=\"revoke\"></td><td op=\"move\"></td><td op=\"draw\"></td></start>\n"+
+				"\t\t\t<around><td op=\"add\"></td><td op=\"get\"></td><td op=\"set\"></td><td op=\"remove\"></td><td op=\"grant\"></td><td op=\"revoke\"></td><td op=\"move\"></td><td op=\"draw\"></td></around>\n"+
+				"\t\t\t<end>   <td op=\"add\"></td><td op=\"get\"></td><td op=\"set\"></td><td op=\"remove\"></td><td op=\"grant\"></td><td op=\"revoke\"></td><td op=\"move\"></td><td op=\"draw\"></td></start>\n"+
 			"\t</advice>\n");
 	for (int i = 0; i < attributes.getLength(); i++) {
 		writeXML("\t\t<advice attribute=\""+attributes.getLocalName(i)+"\"> <!-- add macro1, macro2, macro3, ... attributes and values for templating -->\n"+
-				"\t\t\t<operation><add></add><get></get><set></set><remove></remove><grant></grant><move></move><draw></draw></operation>\n"+
-				"\t\t\t<start>    <td></td>  <td></td>  <td></td>  <td></td>        <td></td>      <td></td>    <td></td>    </start>\n"+
-				"\t\t\t<around>   <td></td>  <td></td>  <td></td>  <td></td>        <td></td>      <td></td>    <td></td>    </around>\n"+
-				"\t\t\t<end>      <td></td>  <td></td>  <td></td>  <td></td>        <td></td>      <td></td>    <td></td>    </start>\n"+
+				"\t\t\t<start> <td op=\"add\"></td><td op=\"get\"></td><td op=\"set\"></td><td op=\"remove\"></td><td op=\"grant\"></td><td op=\"revoke\"></td><td op=\"move\"></td><td op=\"draw\"></td></start>\n"+
+				"\t\t\t<around><td op=\"add\"></td><td op=\"get\"></td><td op=\"set\"></td><td op=\"remove\"></td><td op=\"grant\"></td><td op=\"revoke\"></td><td op=\"move\"></td><td op=\"draw\"></td></around>\n"+
+				"\t\t\t<end>   <td op=\"add\"></td><td op=\"get\"></td><td op=\"set\"></td><td op=\"remove\"></td><td op=\"grant\"></td><td op=\"revoke\"></td><td op=\"move\"></td><td op=\"draw\"></td></start>\n"+
 			"\t\t</advice>\n");
 	}
     }
