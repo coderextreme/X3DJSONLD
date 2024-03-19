@@ -4323,6 +4323,31 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
 					</xsl:otherwise>
 				</xsl:choose>
 			</xsl:variable>
+            <!-- XSLT alert, this construct appears twice -->
+            <xsl:variable name="endsWithFileExtension" select="not(starts-with(., 'urn:')) and
+                                                               not(starts-with(., '.')) and
+                                                            (ends-with(., '.pdf')  or 
+                                                             ends-with(., '.ppt')  or 
+                                                             ends-with(., '.pptx') or 
+                                                             ends-with(., '.au')   or 
+                                                             ends-with(., '.aiff') or 
+                                                             ends-with(., '.midi') or 
+                                                             ends-with(., '.mp3')  or 
+                                                             ends-with(., '.mp4')  or 
+                                                             ends-with(., '.mpeg') or 
+                                                             ends-with(., '.rdf')  or 
+                                                             ends-with(., '.owl')  or 
+                                                             ends-with(., '.ttl')  or 
+                                                             ends-with(., '.xml')  or 
+                                                             ends-with(., '.xslt') or 
+                                                             ends-with(., '.java') or 
+                                                             ends-with(., '.json') or 
+                                                             ends-with(., '.py')   or 
+                                                             ends-with(., '.x3d')  or 
+                                                             ends-with(., '.html') or 
+                                                             ends-with(., '.htm')  or 
+                                                             ends-with(., '.svg')  or 
+                                                             ends-with(., '.txt'))"/>
             <!-- good attribute found, output it -->
             <xsl:choose>
                 <!-- break to new line prior to each of Background url fields -->
@@ -4385,7 +4410,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                 </xsl:otherwise>
             </xsl:choose>
             <xsl:text>=</xsl:text>
-			<xsl:value-of select="$attributeDelimiter"/>
+	    <xsl:value-of select="$attributeDelimiter"/>
             <!-- style payload data, as appropriate -->
             <xsl:choose>
                 <!-- handle special cases first -->
@@ -4457,11 +4482,18 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                         </xsl:call-template>
                     </b>
                 </xsl:when>
+                <xsl:when test="local-name(..)='meta' and $endsWithFileExtension">
+                    <span class="attribute">
+                        <xsl:call-template name="URL-ize-MFString-elements">
+                            <xsl:with-param name="list" select="normalize-space(string(.))"/>
+                        </xsl:call-template>
+                    </span>
+                </xsl:when>
                 <xsl:when test="(local-name(..)='meta' and local-name()='content') and ((../@name='description') or (../@name='documentation') or (../@name='info'))">
                     <span class="plain">
-						<xsl:call-template name="escape-special-characters">
-							<xsl:with-param name="inputValue" select="."/>
-						</xsl:call-template>
+                        <xsl:call-template name="escape-special-characters">
+                                <xsl:with-param name="inputValue" select="."/>
+                        </xsl:call-template>
                     </span>
                 </xsl:when>
                 <xsl:when test="((local-name(..)='field' or local-name(..)='fieldValue') and local-name()='appinfo')">
@@ -5453,9 +5485,45 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
             <xsl:variable name="nextURLunquoted">
                 <xsl:value-of select="normalize-space(translate($nextURL,'&quot;',''))"/>
             </xsl:variable>
-            <xsl:variable name="quoted">
+            <xsl:variable name="isQuoted">
                 <xsl:value-of select="contains($nextURL,'&quot;')"/>
             </xsl:variable>
+            <!-- XSLT alert, this construct appears twice -->
+            <xsl:variable name="endsWithFileExtension" select="not(starts-with($nextURLunquoted, 'urn:')) and
+                                                               not(starts-with($nextURLunquoted, '.')) and
+                                                            (ends-with($nextURLunquoted, '.pdf')  or 
+                                                             ends-with($nextURLunquoted, '.ppt')  or 
+                                                             ends-with($nextURLunquoted, '.pptx') or 
+                                                             ends-with($nextURLunquoted, '.au')   or 
+                                                             ends-with($nextURLunquoted, '.aiff') or 
+                                                             ends-with($nextURLunquoted, '.midi') or 
+                                                             ends-with($nextURLunquoted, '.mp3')  or 
+                                                             ends-with($nextURLunquoted, '.mp4')  or 
+                                                             ends-with($nextURLunquoted, '.mpeg') or 
+                                                             ends-with($nextURLunquoted, '.rdf')  or 
+                                                             ends-with($nextURLunquoted, '.owl')  or 
+                                                             ends-with($nextURLunquoted, '.ttl')  or 
+                                                             ends-with($nextURLunquoted, '.xml')  or 
+                                                             ends-with($nextURLunquoted, '.xslt') or 
+                                                             ends-with($nextURLunquoted, '.java') or 
+                                                             ends-with($nextURLunquoted, '.json') or 
+                                                             ends-with($nextURLunquoted, '.py')   or 
+                                                             ends-with($nextURLunquoted, '.x3d')  or 
+                                                             ends-with($nextURLunquoted, '.html') or 
+                                                             ends-with($nextURLunquoted, '.htm')  or 
+                                                             ends-with($nextURLunquoted, '.svg')  or 
+                                                             ends-with($nextURLunquoted, '.txt'))"/>
+            <!-- debug
+            <xsl:if test="$endsWithFileExtension and not(contains($nextURLunquoted, '://'))">
+                <xsl:message>
+                    <xsl:text>*** $endsWithFileExtension=</xsl:text>
+                    <xsl:value-of select="$endsWithFileExtension"/>
+                    <xsl:text>, $nextURLunquoted='</xsl:text>
+                    <xsl:value-of select="$nextURLunquoted"/>
+                    <xsl:text>'</xsl:text>
+                </xsl:message>
+            </xsl:if> -->
+            <!-- ignore movie formats as questionable since mouseover might provoke an inadvertent large download -->
             <xsl:variable name="isDisplayableImage" select="not(starts-with($nextURLunquoted, 'urn:')) and
                                                             (ends-with($nextURLunquoted, '.png') or 
                                                              ends-with($nextURLunquoted, '.gif') or 
@@ -5487,6 +5555,26 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
             <xsl:variable name="restURLs" select="substring-after($wlist,' ')"/>
             <!-- debug: <xsl:text>&#10;$restURLs=[</xsl:text><xsl:value-of select="$restURLs" disable-output-escaping="yes"/><xsl:text>]&#10;</xsl:text> -->
             <xsl:choose>
+                <xsl:when test="$endsWithFileExtension and not(contains($nextURLunquoted, '://'))">
+                    <!-- debug
+                    <xsl:message>
+                        <xsl:text>*** ... found </xsl:text>
+                        <xsl:value-of select="$nextURLunquoted"/>
+                    </xsl:message> -->
+                    <xsl:element name="a">
+                        <xsl:attribute name="href">
+                            <xsl:value-of select="$nextURLunquoted"/>
+                        </xsl:attribute>
+                        <xsl:attribute name="target">
+                            <xsl:text>_blank</xsl:text>
+                        </xsl:attribute>
+                        <xsl:value-of select="$nextURLunquoted"/>
+                    </xsl:element>
+                    <!-- debug
+                    <xsl:message>
+                        <xsl:text>*** ... handled it</xsl:text>
+                    </xsl:message> -->
+                </xsl:when>
                 <xsl:when test="($urlsOnly='true') and not(contains($nextURL,'http://')) and not(contains($nextURL,'https://')) 
                                                    and not(contains($nextURL,'sftp://')) and not(contains($nextURL,'mailto:')) 
                                                    and not(contains($nextURL, 'ftp://')) and not(contains($nextURL,'./'))">
@@ -5499,7 +5587,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                                 <xsl:text disable-output-escaping="yes">&lt;br /&gt;</xsl:text>
                             </xsl:if>
                             -->
-                            <xsl:if test="($quoted='true')">
+                            <xsl:if test="($isQuoted='true')">
                                 <xsl:text>&quot;</xsl:text>
                             </xsl:if>
                             <xsl:element name="a">
@@ -5530,7 +5618,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                                     </xsl:element>
                                 </xsl:if>
                             </xsl:element>
-                            <xsl:if test="($quoted='true')">
+                            <xsl:if test="($isQuoted='true')">
                                 <xsl:text>&quot;</xsl:text>
                             </xsl:if>
                             <xsl:text> </xsl:text>
@@ -5562,7 +5650,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                         <xsl:text>sftp://</xsl:text>
                         <xsl:value-of select="normalize-space(substring-after($nextURLunquoted,'sftp://'))"/>
                     </xsl:element>
-                    <xsl:if test="($quoted='true')">
+                    <xsl:if test="($isQuoted='true')">
                         <xsl:text>&quot;</xsl:text>
                     </xsl:if>
                     <xsl:text> </xsl:text>
@@ -5588,7 +5676,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                         <xsl:text>ftp://</xsl:text>
                         <xsl:value-of select="normalize-space(substring-after($nextURLunquoted,'ftp://'))"/>
                     </xsl:element>
-                    <xsl:if test="($quoted='true')">
+                    <xsl:if test="($isQuoted='true')">
                         <xsl:text>&quot;</xsl:text>
                     </xsl:if>
                     <xsl:text> </xsl:text>
@@ -5633,7 +5721,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                                     </xsl:element>
                                 </xsl:if>
                     </xsl:element>
-                    <xsl:if test="($quoted='true')">
+                    <xsl:if test="($isQuoted='true')">
                         <xsl:text>&quot;</xsl:text>
                     </xsl:if>
                     <xsl:text> </xsl:text>
@@ -5678,7 +5766,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                                     </xsl:element>
                                 </xsl:if>
                     </xsl:element>
-                    <xsl:if test="($quoted='true')">
+                    <xsl:if test="($isQuoted='true')">
                         <xsl:text>&quot;</xsl:text>
                     </xsl:if>
                     <xsl:text> </xsl:text>
@@ -5687,13 +5775,13 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                     </xsl:if>
                 </xsl:when>
                 <xsl:when test="($baseUrlAvailable='false') and not(contains($nextURL,'://'))">
-                    <xsl:if test="($quoted='true')">
+                    <xsl:if test="($isQuoted='true')">
                         <xsl:text>&quot;</xsl:text>
                     </xsl:if>
                     <span class="value">
                         <xsl:value-of select="normalize-space($nextURLunquoted)"/>
                     </span>
-                    <xsl:if test="($quoted='true')">
+                    <xsl:if test="($isQuoted='true')">
                         <xsl:text>&quot;</xsl:text>
                     </xsl:if>
                     <xsl:text>&#10;</xsl:text>
@@ -5712,7 +5800,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                     <xsl:if test="($insertBreaks='true') and not($urlsOnly)">
                         <xsl:text disable-output-escaping="yes">&lt;br /&gt;</xsl:text>
                     </xsl:if>
-                    <xsl:if test="($quoted='true')">
+                    <xsl:if test="($isQuoted='true')">
                         <xsl:text>&quot;</xsl:text>
                     </xsl:if>
                     <xsl:element name="a">
@@ -5743,13 +5831,13 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                                     </xsl:element>
                                 </xsl:if>
                     </xsl:element>
-                    <xsl:if test="($quoted='true')">
+                    <xsl:if test="($isQuoted='true')">
                         <xsl:text>&quot;</xsl:text>
                     </xsl:if>
                     <xsl:text>&#10;</xsl:text>
                 </xsl:otherwise>
             </xsl:choose>
-            <!-- tail recurse on remainder of list of URLs -->
+            <!-- tail recurse on remainder of list of URLs, otherwise done -->
             <xsl:if test="$restURLs!=''">
                 <xsl:call-template name="URL-ize-MFString-elements">
                     <xsl:with-param name="list" select="$restURLs"/>
@@ -8058,7 +8146,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
 		  <xsl:when test="
                     ($localFieldType='MFNode')  or 
                     ($attributeName='children') or ($attributeName='addChildren') or ($attributeName='removeChildren') or 
-                    ($attributeName='level') or
+                    (ends-with($parentElementName,'LOD') and  ($attributeName='level')) or
                     ($attributeName='bodies') or ($attributeName='collidables') or ($attributeName='contacts') or
                     (($parentElementName='RigidBodyCollection') and  $attributeName='joints') or
                     ($parentElementName='MetadataSet' and $attributeName='metadata') or
