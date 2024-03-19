@@ -238,26 +238,27 @@ def defuse(node):
 
 # copy this to your code that uses DAGs
 def defuse(node):
-    if hasattr(node, 'DEF'):
-        if node.DEF in defusetable:
-            usenode = type(node)(USE=node.DEF)
-            return usenode
-        elif node.USE in defusetable:
-            usenode = type(node)(USE=node.USE)
-            return usenode
-        elif node.DEF:
-            defusetable.update({node.DEF : node})
-            return node
-        elif node.USE:
-            # USE found, not in defusetable, but no DEF, switch to DEF
-            #node.DEF = node.USE
-            #defusetable.update({node.DEF : node})
-            return node
-        else:
-            return node
-    else: # no USE or DEF
-        # what do we do if there are multiple parents?
-        return node
+#    if hasattr(node, 'DEF'):
+#        if node.DEF in defusetable:
+#            usenode = type(node)(USE=node.DEF)
+#            return usenode
+#        elif node.USE in defusetable:
+#            usenode = type(node)(USE=node.USE)
+#            return usenode
+#        elif node.DEF:
+#            defusetable.update({node.DEF : node})
+#            return node
+#        elif node.USE:
+#            # USE found, not in defusetable, but no DEF, switch to DEF
+#            #node.DEF = node.USE
+#            #defusetable.update({node.DEF : node})
+#            return node
+#        else:
+#            return node
+#    else: # no USE or DEF
+#        # what do we do if there are multiple parents?
+#        return node
+     return node
 
 # SimpleType Enumerations
 </xsl:text>
@@ -373,7 +374,7 @@ class _X3DField:
     @classmethod
     def SPECIFICATION_URL(cls):
         """ Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. """
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-IS.proof/Part01/fieldTypes.html#X3DField'
+        return 'https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/fieldTypes.html#X3DField'
     @classmethod
     def TOOLTIP_URL(cls):
         """ X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. """
@@ -417,7 +418,7 @@ class _X3DArrayField(_X3DField):
     @classmethod
     def SPECIFICATION_URL(cls):
         """ Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. """
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-IS.proof/Part01/fieldTypes.html#X3DArrayField'
+        return 'https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/fieldTypes.html#X3DArrayField'
 
 def isX3DField(value):
     """
@@ -434,7 +435,7 @@ class AccessType(_X3DField):
     @classmethod
     def SPECIFICATION_URL(cls):
         """ Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. """
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-IS.proof/Part01/concepts.html#FieldSemantics'
+        return 'https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/concepts.html#FieldSemantics'
     @classmethod
     def TOOLTIP_URL(cls):
         """ X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. """
@@ -469,7 +470,7 @@ class FieldType(_X3DField):
     @classmethod
     def SPECIFICATION_URL(cls):
         """ Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. """
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-IS.proof/Part01/fieldsDef.html'
+        return 'https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/fieldsDef.html'
     @classmethod
     def TOOLTIP_URL(cls):
         """ X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. """
@@ -561,7 +562,7 @@ class _X3DStatement:
     @classmethod
     def SPECIFICATION_URL(cls):
         """ Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. """
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-IS.proof/Part01/components/core.html#AbstractX3DStructure'
+        return 'https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/components/core.html#AbstractX3DStructure'
     @classmethod
     def TOOLTIP_URL(cls):
         """ X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. """
@@ -685,7 +686,7 @@ class Comment(_X3DStatement):
     @classmethod
     def SPECIFICATION_URL(cls):
         """ Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. """
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-IS.proof/Part01/components/core.html#Organization'
+        return 'https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/components/core.html#Organization'
     @classmethod
     def TOOLTIP_URL(cls):
         """ X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. """
@@ -2990,8 +2991,7 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
     </xsl:text>
     
         <xsl:variable name="tooltipText"><!-- /attribute[@name = $fieldName] -->
-            <xsl:value-of select="$elementName" />
-            <!--<xsl:value-of select="$x3d.tooltips.document//element[@name = $elementName]/@tooltip" disable-output-escaping="yes"/>-->
+            <xsl:value-of select="$x3d.tooltips.document//element[@name = $elementName]/@tooltip" disable-output-escaping="yes"/>
         </xsl:variable>
         <xsl:variable name="fieldTooltip">
             <xsl:if test="(string-length(normalize-space($tooltipText)) > 0)"><!-- doc-available($x3d.tooltips.path) -->
@@ -3008,7 +3008,7 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                 <xsl:value-of select="$annotation"/>
             </xsl:when>
             <xsl:when test="(string-length(normalize-space($fieldTooltip)) > 0)">
-                <!--<xsl:value-of select="substring-before($fieldTooltip,'.')"/>-->
+                <xsl:value-of select="substring-before($fieldTooltip,'.')"/>
                 <xsl:text>.</xsl:text>
                 <xsl:message>
                     <xsl:text>*** Warning: annotation not found in X3DUOM, used tooltip as docstring for </xsl:text>
@@ -3484,10 +3484,10 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                 <xsl:sort select="(@name = 'IS')"/>
                 <xsl:sort select="(@name = 'USE')"/>
                 <xsl:sort select="(@name = 'DEF')"/>
-            	<xsl:sort select="(@type='MFNode') and (@name = 'skeleton')" order="descending"/>
-            	<xsl:sort select="(@type='MFNode') and (@name = 'skin')" order="descending"/>
-            	<xsl:sort select="(@type='MFNode') and not(@name = 'skeleton')"/>
-            	<xsl:sort select="(@type='MFNode') and not(@name = 'skin')"/>
+                <xsl:sort select="(@type='MFNode') and (@name = 'skeleton')" order="descending"/>
+                <xsl:sort select="(@type='MFNode') and (@name = 'skin')" order="descending"/>
+                <xsl:sort select="(@type='MFNode') and not(@name = 'skeleton')"/>
+                <xsl:sort select="(@type='MFNode') and not(@name = 'skin')"/>
                 <xsl:sort select="(@type='SFNode') and not(@name = 'IS') and not(@name = 'metadata')"/>
                 <xsl:sort select="not(contains(@type,'Node')) and not(@name = 'DEF') and not(@name = 'USE') and not(@name = 'class') and not(@name = 'id') and not(@name = 'style')"/>
 
@@ -3586,13 +3586,11 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                     <xsl:choose>
                         <xsl:when test="($elementName = 'meta') and ($fieldName = 'httpequiv')">
                             <!-- some field names got munged -->
-                            <!--<xsl:value-of select="$x3d.tooltips.document//element[@name = $elementName]/attribute[@name = 'http-equiv']/@tooltip" disable-output-escaping="yes"/>-->
-                            <xsl:value-of select="$elementName"/>
+                            <xsl:value-of select="$x3d.tooltips.document//element[@name = $elementName]/attribute[@name = 'http-equiv']/@tooltip" disable-output-escaping="yes"/>
                         </xsl:when>
                         <xsl:otherwise>
                             <!-- some field names have underscores to avoid collisions with Python reserved words -->
-                            <!--<xsl:value-of select="$x3d.tooltips.document//element[@name = $elementName]/attribute[@name = translate($fieldName,'_','')]/@tooltip" disable-output-escaping="yes"/>-->
-                            <xsl:value-of select="$elementName"/>
+                            <xsl:value-of select="$x3d.tooltips.document//element[@name = $elementName]/attribute[@name = translate($fieldName,'_','')]/@tooltip" disable-output-escaping="yes"/>
                         </xsl:otherwise>
                     </xsl:choose>
                 </xsl:variable>
@@ -3833,10 +3831,10 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
             <xsl:when test="(count($allFields[contains(@type,'Node')]) > 0)">
                 <!-- TODO hasComment -->
                 <xsl:for-each select="$allFields[contains(@type,'Node')]">
-            	    <xsl:sort select="(@type='MFNode') and (@name = 'skeleton')" order="descending"/>
-            	    <xsl:sort select="(@type='MFNode') and (@name = 'skin')" order="descending"/>
-            	    <xsl:sort select="(@type='MFNode') and not(@name = 'skeleton')"/>
-            	    <xsl:sort select="(@type='MFNode') and not(@name = 'skin')"/>
+                    <xsl:sort select="(@type='MFNode') and (@name = 'skeleton')" order="descending"/>
+                    <xsl:sort select="(@type='MFNode') and (@name = 'skin')" order="descending"/>
+                    <xsl:sort select="(@type='MFNode') and not(@name = 'skeleton')"/>
+                    <xsl:sort select="(@type='MFNode') and not(@name = 'skin')"/>
                     <xsl:sort select="(@type = 'SFNode')"/>
                     
                     <xsl:variable name="fieldName">
@@ -4276,14 +4274,15 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                         <xsl:text>
             result += self.XMLforNodeFields(fields=self.callerargs, indentLevel=indentLevel, syntax=syntax)</xsl:text>
                         <xsl:for-each select="$allFields[contains(@type,'Node')]">
-                    	    <xsl:sort select="(@type='MFNode') and (@name = 'skeleton')" order="descending"/>
-            	            <xsl:sort select="(@type='MFNode') and (@name = 'skin')" order="descending"/>
-                    	    <xsl:sort select="(@type='MFNode') and not(@name = 'skeleton')"/>
-            	            <xsl:sort select="(@type='MFNode') and not(@name = 'skin')"/>
+                            <xsl:sort select="(@type='MFNode') and (@name = 'skeleton')" order="descending"/>
+                            <xsl:sort select="(@type='MFNode') and (@name = 'skin')" order="descending"/>
+                            <xsl:sort select="(@type='MFNode') and not(@name = 'skeleton')"/>
+                            <xsl:sort select="(@type='MFNode') and not(@name = 'skin')"/>
                             <xsl:sort select="(@type='SFNode')"/>
                             <xsl:sort select="(@name = 'ProtoBody')"/>
                             <xsl:sort select="(@name = 'ProtoInterface')"/>
-			    <!--<xsl:sort select="@name" order="ascending"/>-->
+                            <!--<xsl:sort select="@name" order="ascending"/>-->
+
                             <xsl:variable name="fieldName">
                                 <xsl:call-template name="fieldName">
                                     <xsl:with-param name="name" select="@name"/>
@@ -4412,7 +4411,7 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                 <!-- opening tag is unclosed since followed by attributes -->
                 <!-- output simple-type fields as JSON attributes -->
                 <xsl:for-each select="$allFields[not(contains(@type,'Node'))]">
-		    <xsl:sort select="@name[not(.='DEF') and not(.='USE')]" order="ascending"/>
+                    <xsl:sort select="@name[not(.='DEF') and not(.='USE')]" order="ascending"/>
                     <xsl:sort select="(@name = 'USE')"/>
                     <xsl:sort select="(@name = 'DEF')"/>
                     
@@ -4551,14 +4550,14 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                         </xsl:when>
                     <xsl:otherwise>
                         <xsl:for-each select="$allFields[contains(@type,'Node')]">
-            		    <xsl:sort select="(@type='MFNode') and (@name = 'skeleton')" order="descending"/>
-            		    <xsl:sort select="(@type='MFNode') and (@name = 'skin')" order="descending"/>
-            		    <xsl:sort select="(@type='MFNode') and not(@name = 'skeleton')"/>
-            	            <xsl:sort select="(@type='MFNode') and not(@name = 'skin')"/>
+                            <xsl:sort select="(@type='MFNode') and (@name = 'skeleton')" order="descending"/>
+                            <xsl:sort select="(@type='MFNode') and (@name = 'skin')" order="descending"/>
+                            <xsl:sort select="(@type='MFNode') and not(@name = 'skeleton')"/>
+                            <xsl:sort select="(@type='MFNode') and not(@name = 'skin')"/>
                             <xsl:sort select="(@type='SFNode')"/>
                             <xsl:sort select="(@name = 'ProtoBody')"/>
                             <xsl:sort select="(@name = 'ProtoInterface')"/>
-			    <!--<xsl:sort select="@name" order="ascending"/>-->
+                            <!--<xsl:sort select="@name" order="ascending"/>-->
 
                             <xsl:variable name="fieldName">
                                 <xsl:call-template name="fieldName">
@@ -4841,11 +4840,11 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                             <xsl:sort select="(@type='MFNode') and (@name = 'skeleton')" order="descending"/>
                             <xsl:sort select="(@type='MFNode') and (@name = 'skin')" order="descending"/>
                             <xsl:sort select="(@type='MFNode') and not(@name = 'skeleton')"/>
-            	            <xsl:sort select="(@type='MFNode') and not(@name = 'skin')"/>
+                            <xsl:sort select="(@type='MFNode') and not(@name = 'skin')"/>
                             <xsl:sort select="(@type='SFNode')"/>
                             <xsl:sort select="(@name = 'ProtoBody')"/>
                             <xsl:sort select="(@name = 'ProtoInterface')"/>
-			    <!--<xsl:sort select="@name" order="ascending"/>-->
+                            <!--<xsl:sort select="@name" order="ascending"/>-->
 
                             <xsl:variable name="fieldName">
                                 <xsl:call-template name="fieldName">
@@ -5287,6 +5286,6 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
 		</xsl:choose>
     </xsl:template>
 
-    <!-- ===========+========================================= -->
+    <!-- ===================================================== -->
 
 </xsl:stylesheet>
