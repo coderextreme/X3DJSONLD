@@ -19,94 +19,77 @@ class X3DSLPHandler extends DefaultHandler2 {
 	this.writer = writer;
     }
 
+    public void writeXML(String str) {
+	    try {
+	    	writer.write(str);
+	    } catch (IOException ioe) {
+		    ioe.printStackTrace(System.err);
+	    }
+    }
+
     public void startDocument() throws SAXException {
-	try {
-		writer.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
-	} catch (IOException e) {
-		e.printStackTrace();
-	}
+	writeXML("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
     }
 
     public void endDocument() throws SAXException {
-	/*
-	try {
-	} catch (IOException e) {
-		e.printStackTrace();
-	}
-	*/
     }
 
     public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
-	try {
-		writer.write("<"+qName+"\n");
-		for (int i = 0; i < attributes.getLength(); i++) {
-			try {
-				if (i > 0) {
-					writer.write("\n");
-
-				}
-				writer.write("\t"+attributes.getLocalName(i)+"=\""+attributes.getValue(i)+"\"");
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		}
-		writer.write(">\n\t<advice element=\""+qName+"\"><start></start><around><around><end></end></advice>\n");
-	} catch (IOException e) {
-		e.printStackTrace();
-	}
+	writeXML("<"+qName+"\n");
 	for (int i = 0; i < attributes.getLength(); i++) {
-		try {
-			writer.write("\t\t<advice attribute=\""+attributes.getLocalName(i)+"\"><start></start><around><around><end></end></advice>\n");
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+			if (i > 0) {
+				writeXML("\n");
+
+			}
+			writeXML("\t"+attributes.getLocalName(i)+"=\""+attributes.getValue(i)+"\"");
+	}
+	writeXML(">\n\t<advice element=\""+qName+"\"> <!-- add macro1, macro2, macro3, ... attributes and values for templating -->\n"+  
+				"\t\t<operation><add></add><get></get><set></set><remove></remove><grant></grant><move></move><draw></draw></operation>\n"+
+				"\t\t<start>    <td></td>  <td></td>  <td></td>  <td></td>        <td></td>      <td></td>    <td></td>    </start>\n"+
+				"\t\t<around>   <td></td>  <td></td>  <td></td>  <td></td>        <td></td>      <td></td>    <td></td>    </around>\n"+
+				"\t\t<end>      <td></td>  <td></td>  <td></td>  <td></td>        <td></td>      <td></td>    <td></td>    </start>\n"+
+			"\t</advice>\n");
+	for (int i = 0; i < attributes.getLength(); i++) {
+		writeXML("\t\t<advice attribute=\""+attributes.getLocalName(i)+"\"> <!-- add macro1, macro2, macro3, ... attributes and values for templating -->\n"+
+				"\t\t\t<operation><add></add><get></get><set></set><remove></remove><grant></grant><move></move><draw></draw></operation>\n"+
+				"\t\t\t<start>    <td></td>  <td></td>  <td></td>  <td></td>        <td></td>      <td></td>    <td></td>    </start>\n"+
+				"\t\t\t<around>   <td></td>  <td></td>  <td></td>  <td></td>        <td></td>      <td></td>    <td></td>    </around>\n"+
+				"\t\t\t<end>      <td></td>  <td></td>  <td></td>  <td></td>        <td></td>      <td></td>    <td></td>    </start>\n"+
+			"\t\t</advice>\n");
 	}
     }
 
     public void endElement(String uri, String localName, String qName) throws SAXException {
-	try {
-		writer.write("</"+qName+">\n");
-	} catch (IOException e) {
-		e.printStackTrace();
-	}
+	writeXML("</"+qName+">\n");
     }
 
-    public void characters(char ch[], int start, int length)
-        throws SAXException {
-	String value = new String(ch, start, length);
+    public void characters(char ch[], int start, int length) throws SAXException {
 	/*
-	try {
-		writer.write(value);
-	} catch (IOException e) {
-		e.printStackTrace();
-	}
+	String value = new String(ch, start, length);
+	writeXML(value);
 	*/
     }
 
-    public void comment(char ch[], int start, int length)
-        throws SAXException {
+    public void comment(char ch[], int start, int length) throws SAXException {
 	String value = new String(ch, start, length);
-	try {
-		writer.write("<!--"+value+"-->\n");
-	} catch (IOException e) {
-		e.printStackTrace();
-	}
+	writeXML("<!--"+value+"-->\n");
     }
 }    
 
 public class X3DSLP {
-    public static void main (String argv []) {
-        SAXParserFactory factory = SAXParserFactory.newInstance();
-        try {
-            SAXParser      saxParser = factory.newSAXParser();
+    public static void main (String argv []) throws Exception {
+	    FileInputStream fr = new FileInputStream(new File("../../../../specifications/X3dUnifiedObjectModel-4.0.xml"));
+	    FileOutputStream fw = new FileOutputStream(new File("../../../../specifications/X3dExtendedObjectModel-4.0.xml"));
+	    SAXParserFactory factory = SAXParserFactory.newInstance();
+	    SAXParser      saxParser = factory.newSAXParser();
 	    XMLReader xmlReader = saxParser.getXMLReader();
-	    OutputStreamWriter writer = new OutputStreamWriter(System.out, "UTF-8");
-            X3DSLPHandler handler   = new X3DSLPHandler(writer);
+	    OutputStreamWriter writer = new OutputStreamWriter(fw, "UTF-8");
+	    X3DSLPHandler handler   = new X3DSLPHandler(writer);
 	    xmlReader.setProperty("http://xml.org/sax/properties/lexical-handler",
-                      handler); 
-            saxParser.parse(System.in, handler);
-        } catch (Throwable err) {
-            err.printStackTrace ();
-        }
+		      handler); 
+	    saxParser.parse(fr, handler);
+	    writer.close();
+	    fr.close();
+	    fw.close();
     }
 }
