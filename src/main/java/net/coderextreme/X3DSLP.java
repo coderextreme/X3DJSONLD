@@ -38,25 +38,25 @@ class X3DSLPHandler extends DefaultHandler2 {
 
     public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
 	try {
-		writer.write("\t<"+qName+"\n");
+		writer.write("<"+qName+"\n");
 		for (int i = 0; i < attributes.getLength(); i++) {
 			try {
 				if (i > 0) {
 					writer.write("\n");
 
 				}
-				writer.write("\t\t"+attributes.getLocalName(i)+"=\""+attributes.getValue(i)+"\"");
+				writer.write("\t"+attributes.getLocalName(i)+"=\""+attributes.getValue(i)+"\"");
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
 		}
-		writer.write(">\n\t\t<advice element=\""+qName+"\"><start></start><around><around><end></end></advice>\n");
+		writer.write(">\n\t<advice element=\""+qName+"\"><start></start><around><around><end></end></advice>\n");
 	} catch (IOException e) {
 		e.printStackTrace();
 	}
 	for (int i = 0; i < attributes.getLength(); i++) {
 		try {
-			writer.write("\t\t\t<advice attribute=\""+attributes.getLocalName(i)+"\"><start></start><around><around><end></end></advice>\n");
+			writer.write("\t\t<advice attribute=\""+attributes.getLocalName(i)+"\"><start></start><around><around><end></end></advice>\n");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -65,7 +65,7 @@ class X3DSLPHandler extends DefaultHandler2 {
 
     public void endElement(String uri, String localName, String qName) throws SAXException {
 	try {
-		writer.write("\t</"+qName+">\n");
+		writer.write("</"+qName+">\n");
 	} catch (IOException e) {
 		e.printStackTrace();
 	}
