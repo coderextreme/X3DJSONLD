@@ -35,25 +35,38 @@ class X3DSLPHandler extends DefaultHandler2 {
     }
 
     public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
+	final String [] advice = new String[] { "method", "start", "around", "end" };
+	final String [] method = new String[] { "add", "get", "set", "remove", "grant", "revoke", "move", "draw" };
+	String fieldType = "";
 	writeXML("<"+qName+"\n");
 	for (int i = 0; i < attributes.getLength(); i++) {
-			if (i > 0) {
-				writeXML("\n");
+		String attributeName =  attributes.getLocalName(i);
+		String attributeValue = attributes.getValue(i);
+		if (qName.equals("field") && attributeName.equals("type")) {
+			fieldType = attributeValue;
+		}
+		if (i > 0) {
+			writeXML("\n");
 
-			}
-			writeXML("\t"+attributes.getLocalName(i)+"=\""+attributes.getValue(i)+"\"");
+		}
+		writeXML("\t"+attributeName+"=\""+attributeValue+"\"");
 	}
-	writeXML(">\n\t<advice element=\""+qName+"\"> <!-- add macro1, macro2, macro3, ... attributes and values for templating -->\n"+  
-				"\t\t\t<start> <code op=\"add\"></code><code op=\"get\"></code><code op=\"set\"></code><code op=\"remove\"></code><code op=\"grant\"></code><code op=\"revoke\"></code><code op=\"move\"></code><code op=\"draw\"></code></start>\n"+
-				"\t\t\t<around><code op=\"add\"></code><code op=\"get\"></code><code op=\"set\"></code><code op=\"remove\"></code><code op=\"grant\"></code><code op=\"revoke\"></code><code op=\"move\"></code><code op=\"draw\"></code></around>\n"+
-				"\t\t\t<end>   <code op=\"add\"></code><code op=\"get\"></code><code op=\"set\"></code><code op=\"remove\"></code><code op=\"grant\"></code><code op=\"revoke\"></code><code op=\"move\"></code><code op=\"draw\"></code></start>\n"+
-			"\t</advice>\n");
+	writeXML(">\n");
+	writeXML("\t<advice element=\""+qName+"\"> <!-- add macro1, macro2, macro3, ... attributes and values for templating -->\n");
+	for (int a = 0; a < advice.length; a++) {
+		for (int m = 0; m < method.length; m++) {
+			writeXML("\t\t<code op=\""+method[m]+"\" advice=\""+advice[a]+"\"></code>\n");
+		}
+	}
+	writeXML("\t</advice>\n");
 	for (int i = 0; i < attributes.getLength(); i++) {
-		writeXML("\t\t<advice attribute=\""+attributes.getLocalName(i)+"\"> <!-- add macro1, macro2, macro3, ... attributes and values for templating -->\n"+
-				"\t\t\t<start> <code op=\"add\"></code><code op=\"get\"></code><code op=\"set\"></code><code op=\"remove\"></code><code op=\"grant\"></code><code op=\"revoke\"></code><code op=\"move\"></code><code op=\"draw\"></code></start>\n"+
-				"\t\t\t<around><code op=\"add\"></code><code op=\"get\"></code><code op=\"set\"></code><code op=\"remove\"></code><code op=\"grant\"></code><code op=\"revoke\"></code><code op=\"move\"></code><code op=\"draw\"></code></around>\n"+
-				"\t\t\t<end>   <code op=\"add\"></code><code op=\"get\"></code><code op=\"set\"></code><code op=\"remove\"></code><code op=\"grant\"></code><code op=\"revoke\"></code><code op=\"move\"></code><code op=\"draw\"></code></start>\n"+
-			"\t\t</advice>\n");
+		writeXML("\t\t<advice attribute=\""+attributes.getLocalName(i)+"\" "+(!fieldType.equals("") ? "fieldtype=\""+fieldType+"\"" : "")+"> <!-- add macro1, macro2, macro3, ... attributes and values for templating -->\n");
+		for (int a = 0; a < advice.length; a++) {
+			for (int m = 0; m < method.length; m++) {
+				writeXML("\t\t\t<code op=\""+method[m]+"\" advice=\""+advice[a]+"\"></code>\n");
+			}
+		}
+		writeXML("\t\t</advice>\n");
 	}
     }
 
