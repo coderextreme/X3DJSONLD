@@ -172,8 +172,8 @@ do
 	X3D=`echo "$i" | sed -e "s/.${JSONEXT}/.new.python.x3d/"`
 	#echo py ../python/x3djsonld.py "'$i'" ">" "'$PY'" and py "'$PY'" ">" "'$X3D'"
 	#py ../python/x3djsonld.py "$i" > "$PY" && py "$PY" > "$X3D" && echo "$PY" "$X3D" || echo "Error: "$PY" failed to parse"
-	echo python "$PY"
-	python "$PY"
+	echo "${PYTHON}" "$PY"
+	"${PYTHON}" "$PY"
 done
 
 echo Diffing .new.python.x3d .py with original x3d
