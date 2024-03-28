@@ -114,6 +114,8 @@ JavaSerializer.prototype = {
 			str += "  public static void main(String[] args) {\n";
 			str += "    ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);\n";
 			str += "    ConfigurationProperties.setDeleteIntermediateFiles(false);\n";
+			str += "    ConfigurationProperties.setStripTrailingZeroes(true);\n";
+			str += "    ConfigurationProperties.setStripDefaultAttributes(true);\n";
 			str += "    "+element.nodeName+" model = new "+clz+"().getRootNodeList().get(0); // only get one root node\n" 
 			str += "    System.out.print(model.validationReport().trim());\n"
 			str += "    model.toFileX3D(\""+clazz+".new.java.x3d\");\n";

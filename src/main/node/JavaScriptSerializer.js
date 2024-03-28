@@ -1,5 +1,9 @@
 "use strict";
 
+if (typeof require !== 'undefined') {
+	var fs = require("fs")
+}
+
 function JavaScriptSerializer () {
 this.DOUBLE_SUFFIX = '';
 this.FLOAT_SUFFIX = '';
@@ -31,12 +35,17 @@ JavaScriptSerializer.prototype = {
 		clz = clz.replace(/^([0-9].*|default$)/, "_$1")
 		var pkg = pc.substr(0, c).replace(/[\/\\]/g, ".").trim();
 
-		str += "load('X3Dautoclass.js');\n";
+		if (typeof fs !== 'undefined') {
+			str += fs.readFileSync("../graaljs/net/coderextreme/data/X3Dautoclass.js").toString();
+		} else {
+			str += "load('X3Dautoclass.js');\n";
+		}
 		str += "var ConfigurationProperties = Packages.org.web3d.x3d.jsail.ConfigurationProperties;\n";
 		str += "ConfigurationProperties.showDefaultAttributes = false;\n";
 		str += "ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;\n";
 		str += "ConfigurationProperties.deleteIntermediateFiles = false;\n";
 		str += "ConfigurationProperties.setStripTrailingZeroes(true);\n";
+		str += "ConfigurationProperties.setStripDefaultAttributes(true);\n";
 		str += "function doubleToFloat(d) {\n";
 		str += "    if (Float32Array)\n";
         	str += "	return new Float32Array([d])[0];\n";
