@@ -43,6 +43,8 @@ public class x3dconnector implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
+    ConfigurationProperties.setStripTrailingZeroes(true);
+    ConfigurationProperties.setStripDefaultAttributes(true);
     X3D model = new x3dconnector().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
     model.toFileX3D("../data/x3dconnector.new.java.x3d");

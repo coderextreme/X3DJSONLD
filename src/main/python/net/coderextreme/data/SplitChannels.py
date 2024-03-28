@@ -1,4 +1,5 @@
 import x3dpsail as x3d
+ConfigurationProperties.setStripDefaultAttributes(True)
 X3D0 = x3d.X3D()
 X3D0.setProfile("Full")
 X3D0.setVersion("4.0")

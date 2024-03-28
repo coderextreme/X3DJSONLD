@@ -43,6 +43,8 @@ public class KoreanCharacterMotionAnnexD01Jin implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
+    ConfigurationProperties.setStripTrailingZeroes(true);
+    ConfigurationProperties.setStripDefaultAttributes(true);
     X3D model = new KoreanCharacterMotionAnnexD01Jin().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
     model.toFileX3D("../data/KoreanCharacterMotionAnnexD01Jin.new.java.x3d");
