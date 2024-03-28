@@ -2,7 +2,8 @@
 
 export PATH=${PATH}:~/apache-maven-3.6.3/bin:~/apache-ant-1.10.9/bin
 export MAVEN_OPTS="-Xmx16g" # " -XX:MaxPermSize=128m"
-export JAVA_HOME="C:/Users/john/Downloads/openjdk-21_windows-x64_bin/jdk-21"
+export JAVA_HOME="C:/graalvm-jdk-22_windows-x64_bin/graalvm-jdk-22+36.1"
+# export JAVA_HOME="C:/Users/john/Downloads/openjdk-21_windows-x64_bin/jdk-21"
 # export PYTHONPATH=${PYTHONPATH}:/usr/lib/python3/dist-packages/pkg_resources/:/usr/lib/python3/dist-packages
 # source venv/Scripts/activate
 
@@ -18,7 +19,7 @@ cp /c/x3d-code/www.web3d.org/specifications/X3dUnifiedObjectModel-* src/specific
 pushd /c/x3d-code/www.web3d.org/x3d/stylesheets
 ant create.X3DJSAIL
 cp java/jars/*.jar /c/Users/john/pythonSAI
-mvn install:install-file -Dfile=/c/Users/john/pythonSAI/X3DJSAIL.4.0.full.jar -DgroupId=org.web3d.x3d -DartifactId=X3DJSAIL -Dversion=4.0-SNAPSHOT -Dpackaging=jar
+mvn install:install-file -Dfile=/c/Users/john/pythonSAI/X3DJSAIL.4.0.full.jar -DgroupId=org.web3d.x3d -DartifactId=X3DJSAIL -Dversion=4.0.full -Dpackaging=jar
 mvn install:install-file -Dfile=/c/Users/john/X3DJSONLD/saxon-he-12.1.jar -DgroupId=net.sf.saxon -DartifactId=SAXON-HE -Dversion=12.1 -Dpackaging=jar
 
 popd

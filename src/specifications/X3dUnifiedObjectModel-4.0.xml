@@ -9608,7 +9608,7 @@
                     acceptableNodeTypes="X3DMetadataObject"
                     inheritedFrom="X3DNode"/>
             <field name="name"
-                    type="xs:NMTOKEN"
+                    type="SFString"
                     accessType="initializeOnly"
                     baseType="xs:NMTOKEN"/>
             <field name="DEF"
@@ -18341,7 +18341,7 @@
                     inheritedFrom="X3DNode"
                     description="Information about this node can be contained in a MetadataBoolean, MetadataDouble, MetadataFloat, MetadataInteger, MetadataString or MetadataSet node."/>
             <field name="name"
-                    type="xs:NMTOKEN"
+                    type="SFString"
                     accessType="initializeOnly"
                     inheritedFrom="X3DVertexAttributeNode"
                     baseType="xs:NMTOKEN"
@@ -26071,6 +26071,24 @@
                                appinfo="Layer contains a list of children nodes that define the contents of the layer.">
             <componentInfo name="Layering" level="1"/>
             <Inheritance baseType="X3DLayerNode"/>
+            <AdditionalInheritance baseType="X3DGroupingNode"/>
+            <field name="bboxCenter"
+                    type="SFVec3f"
+                    accessType="initializeOnly"
+                    default="0 0 0"/>
+            <field name="bboxSize"
+                    type="SFVec3f"
+                    accessType="initializeOnly"
+                    default="-1 -1 -1"
+                    inheritedFrom="X3DBoundedObject"
+                    baseType="bboxSizeType"
+                    description="Bounding box size is usually omitted, and can easily be calculated automatically by an X3D player at scene-loading time with minimal computational cost."/>
+            <field name="bboxDisplay"
+                    type="SFBool"
+                    accessType="inputOutput"
+                    default="false"
+                    inheritedFrom="X3DGroupingNode"
+                    description="Whether to display bounding box for associated geometry, aligned with world coordinates."/>
             <field name="addChildren"
                     type="MFNode"
                     accessType="inputOnly"
@@ -26494,6 +26512,24 @@
                                appinfo="LayoutLayer is a Grouping node that can contain most nodes.">
             <componentInfo name="Layout" level="1"/>
             <Inheritance baseType="X3DLayerNode"/>
+            <AdditionalInheritance baseType="X3DGroupingNode"/>
+            <field name="bboxCenter"
+                    type="SFVec3f"
+                    accessType="initializeOnly"
+                    default="0 0 0"/>
+            <field name="bboxSize"
+                    type="SFVec3f"
+                    accessType="initializeOnly"
+                    default="-1 -1 -1"
+                    inheritedFrom="X3DBoundedObject"
+                    baseType="bboxSizeType"
+                    description="Bounding box size is usually omitted, and can easily be calculated automatically by an X3D player at scene-loading time with minimal computational cost."/>
+            <field name="bboxDisplay"
+                    type="SFBool"
+                    accessType="inputOutput"
+                    default="false"
+                    inheritedFrom="X3DGroupingNode"
+                    description="Whether to display bounding box for associated geometry, aligned with world coordinates."/>
             <field name="addChildren"
                     type="MFNode"
                     accessType="inputOnly"
@@ -27613,7 +27649,7 @@
                     inheritedFrom="X3DNode"
                     description="Information about this node can be contained in a MetadataBoolean, MetadataDouble, MetadataFloat, MetadataInteger, MetadataString or MetadataSet node."/>
             <field name="name"
-                    type="xs:NMTOKEN"
+                    type="SFString"
                     accessType="initializeOnly"
                     inheritedFrom="X3DVertexAttributeNode"
                     baseType="xs:NMTOKEN"
@@ -27676,7 +27712,7 @@
                     inheritedFrom="X3DNode"
                     description="Information about this node can be contained in a MetadataBoolean, MetadataDouble, MetadataFloat, MetadataInteger, MetadataString or MetadataSet node."/>
             <field name="name"
-                    type="xs:NMTOKEN"
+                    type="SFString"
                     accessType="initializeOnly"
                     inheritedFrom="X3DVertexAttributeNode"
                     baseType="xs:NMTOKEN"

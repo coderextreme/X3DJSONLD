@@ -53,6 +53,15 @@
 	</repositories>
 
 	<dependencies>
+		<!-- https://mvnrepository.com/artifact/org.graalvm.polyglot/js-community -->
+<dependency>
+    <groupId>org.graalvm.polyglot</groupId>
+    <artifactId>js-community</artifactId>
+    <version>24.0.0</version>
+    <type>pom</type>
+    <scope>runtime</scope>
+</dependency>
+
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
@@ -94,11 +103,6 @@
 		    <artifactId>js</artifactId>
 		    <version>20.2.0</version>
 		</dependency>
-		<dependency>
-		    <groupId>org.graalvm.js</groupId>
-		    <artifactId>js</artifactId>
-		    <version>20.2.0</version>
-		</dependency>
 	</dependencies>
 
 	<build>
@@ -113,7 +117,8 @@
 					<target>20</target>
 					<fork>true</fork>
 					<maxmem>4096m</maxmem>
-					<executable>C:/Users/john/Downloads/openjdk-21_windows-x64_bin/jdk-21/javac.exe</executable>
+					<executable>C:/graalvm-jdk-22_windows-x64_bin/graalvm-jdk-22+36.1/bin/javac.exe</executable>
+
 
 
 				</configuration>

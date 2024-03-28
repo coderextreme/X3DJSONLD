@@ -14,10 +14,10 @@ git clone https://github.com/coderextreme/X3DJSONLD
 cd X3DJSONLD
 ```
 
-* set environmental variables (Linux OpenJDK 18 here)
+* set environmental variables (Windows 10 here)
 ```
-JAVA_HOME=/usr/lib/jvm/java-18-openjdk-amd64/
-LD_LIBRARY_PATH=/usr/lib/jvm/java-18-openjdk-amd64/lib/server
+# LD_LIBRARY_PATH=/usr/lib/jvm/java-18-openjdk-amd64/lib/server
+export JAVA_HOME="C:/graalvm-jdk-22_windows-x64_bin/graalvm-jdk-22+36.1"
 ```
 
 * If you want to use node.js as your web server, download and install node.js (npm comes with it). You can download examples from here: http://www.web3d.org/x3d/content/examples/X3dExampleArchivesJsonScenes.zip
