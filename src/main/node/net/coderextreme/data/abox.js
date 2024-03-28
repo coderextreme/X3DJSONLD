@@ -13,6 +13,7 @@ ConfigurationProperties.showDefaultAttributes = false;
 ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;
 ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
+ConfigurationProperties.setStripDefaultAttributes(true);
 var ProtoInstance0 = null;
 var ProtoInstance1 = null;
       var X3D0 =  (new autoclass.X3D()).setProfile("Immersive").setVersion("3.3")

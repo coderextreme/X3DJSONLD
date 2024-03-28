@@ -13,6 +13,7 @@ ConfigurationProperties.showDefaultAttributes = false;
 ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;
 ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
+ConfigurationProperties.setStripDefaultAttributes(true);
       var X3D0 =  (new autoclass.X3D()).setProfile("Interchange").setVersion("3.0")
       .setHead(new autoclass.head()
         .addMeta(new autoclass.meta().setName("title").setContent("indexedfaceset_pixeltexture_plus.x3d"))

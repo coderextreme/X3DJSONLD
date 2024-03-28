@@ -1,4 +1,3 @@
-CommentsBlock = Java.type("org.web3d.x3d.jsail.Core.CommentsBlock")
 AcousticProperties = Java.type('org.web3d.x3d.jsail.Shape.AcousticProperties')
 Analyser = Java.type('org.web3d.x3d.jsail.Sound.Analyser')
 Anchor = Java.type('org.web3d.x3d.jsail.Networking.Anchor')

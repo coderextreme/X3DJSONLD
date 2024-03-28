@@ -43,6 +43,8 @@ public class KoreanCharacter03Hyun implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
+    ConfigurationProperties.setStripTrailingZeroes(true);
+    ConfigurationProperties.setStripDefaultAttributes(true);
     X3D model = new KoreanCharacter03Hyun().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
     model.toFileX3D("../data/KoreanCharacter03Hyun.new.java.x3d");
