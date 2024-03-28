@@ -75,7 +75,8 @@ for ft in fts:
 for k,v in classes.items():
     code += v.printClass()
 
-code += '\t"Comment" : Comment\n}'
+code += '\t"Comment" : Comment,\n'
+code += '\t"ConfigurationProperties" : ConfigurationProperties\n}'
 
 f = open("X3Dautoclass.py", "w")
 f.write(code)
