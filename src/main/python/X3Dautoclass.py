@@ -320,5 +320,6 @@ X3dClassLookup = {
 	"MFVec4d" : MFVec4d,
 	"SFVec4f" : SFVec4f,
 	"MFVec4f" : MFVec4f,
-	"Comment" : Comment
+	"Comment" : Comment,
+	"ConfigurationProperties" : ConfigurationProperties
 }
