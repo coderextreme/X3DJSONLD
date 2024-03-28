@@ -84,34 +84,74 @@ class ClassPrinter:
                     inheritance = "implements"
                     additionalInheritance = ", "
                     if self.name in [ "X3DMetadataObject" ]:
-                        abstract = "abstract"
+                        #abstract = "abstract "
+                        pass
                     if self.name in [ "X3DField", "X3DArrayField" ]:
                         self.package = ""
                     else:
                         superpackage += "."
-                if self.name != "MFNode":
-                    str += "public "+abstract+" class "+self.name+"Element "+inheritance+" org.web3d.x3d."+superpackage+""+self.package+"."+self.name+" "+additionalInheritance+" VisitableElement\n"
+                if self.name == "SFNode":
+                    str += "public class "+self.name+"Element "+inheritance+" org.web3d.x3d."+superpackage+""+self.package+"."+self.name+" "+additionalInheritance+" VisitableElement\n"
                     str += "{\n"
                     str += "\tprivate org.web3d.x3d."+superpackage+""+self.package+"."+self.name+" delegate = null;\n"
+                    str += "\tprivate org.web3d.x3d.jsail.Core.IS delegateIS = null;\n"
+                    str += "\tprivate org.web3d.x3d.sai.Core.X3DMetadataObject delegateX3DMetadataObject = null;\n"
                     str += "\tpublic "+self.name+"Element(org.web3d.x3d."+superpackage+""+self.package+"."+self.name+" delegate) {\n"
                     str += "\t\tthis.delegate = delegate;\n"
                     str += "\t}\n"
-                else:
-                    str += "public "+abstract+" class "+self.name+"Element<P extends org.web3d.x3d.sai.Core.X3DNode> "+inheritance+" org.web3d.x3d."+superpackage+""+self.package+"."+self.name+" "+additionalInheritance+" VisitableElement\n"
+                    str += "\tpublic SFNodeElement(org.web3d.x3d.jsail.Core.IS delegate) {\n"
+                    str += "\t\tthis.delegateIS = delegate;\n"
+                    str += "\t}\n"
+                    str += "\tpublic SFNodeElement(org.web3d.x3d.sai.Core.X3DMetadataObject delegate) {\n"
+                    str += "\t\tthis.delegateX3DMetadataObject = delegate;\n"
+                    str += "\t}\n"
+                elif self.name == "MFNode":
+                    str += "public class "+self.name+"Element<P extends Object> "+inheritance+" org.web3d.x3d."+superpackage+""+self.package+"."+self.name+" "+additionalInheritance+" VisitableElement\n"
                     str += "{\n"
 
                     str += "\tprivate org.web3d.x3d."+superpackage+""+self.package+"."+self.name+" delegate = null;\n"
 
-                    str += "\tpublic "+self.name+"Element(org.web3d.x3d."+superpackage+""+self.package+"."+self.name+" delegate) {\n"
+                    str += "\tpublic "+self.name+"Element<P>(org.web3d.x3d."+superpackage+""+self.package+"."+self.name+" delegate) {\n"
                     str += "\t\tthis.delegate = delegate;\n"
                     str += "\t}\n"
 
-                    str += "\tpublic "+self.name+"Element(P[] delegate) {\n"
+                    str += "\tpublic "+self.name+"Element<P>(P[] delegate) {\n"
                     str += "\t\tthis.delegate = new org.web3d.x3d."+superpackage+""+self.package+"."+self.name+"(delegate);\n"
                     str += "\t}\n"
 
-                    str += "\tpublic "+self.name+"Element(java.util.ArrayList<P> delegate) {\n"
-                    str += "\t\tthis.delegate = new org.web3d.x3d."+superpackage+""+self.package+"."+self.name+"(delegate.toArray(new org.web3d.x3d.sai.Core.X3DNode[0]));\n"
+                    str += "\tpublic "+self.name+"Element<P>(java.util.ArrayList<P> delegate) {\n"
+                    str += "\t\tthis.delegate = new org.web3d.x3d."+superpackage+""+self.package+"."+self.name+"(delegate.toArray(new P[0]));\n"
+                    str += "\t}\n"
+
+                    #str += "\tpublic "+self.name+"Element(org.web3d.x3d.sai.Core.X3DNode[] delegate) {\n"
+                    #str += "\t\tthis.delegate = new org.web3d.x3d."+superpackage+""+self.package+"."+self.name+"(delegate);\n"
+                    #str += "\t}\n"
+
+                    #str += "\tpublic "+self.name+"Element(java.util.ArrayList<org.web3d.x3d.sai.Core.X3DNode> delegate) {\n"
+                    #str += "\t\tthis.delegate = new org.web3d.x3d."+superpackage+""+self.package+"."+self.name+"(delegate.toArray(new org.web3d.x3d.sai.Core.X3DNode[0]));\n"
+                    #str += "\t}\n"
+
+                    #str += "\tpublic "+self.name+"Element(org.web3d.x3d.jsail.X3DConcreteStatement[] delegate) {\n"
+                    #str += "\t\tthis.delegate = new org.web3d.x3d."+superpackage+""+self.package+"."+self.name+"(delegate);\n"
+                    #str += "\t}\n"
+
+                    #str += "\tpublic "+self.name+"Element(java.util.ArrayList<org.web3d.x3d.jsail.X3DConcreteStatement> delegate) {\n"
+                    #str += "\t\tthis.delegate = new org.web3d.x3d."+superpackage+""+self.package+"."+self.name+"(delegate.toArray(new org.web3d.x3d.jsail.X3DConcreteStatement[0]));\n"
+                    #str += "\t}\n"
+
+                    #str += "\tpublic "+self.name+"Element(org.web3d.x3d.jsail.Core.connect[] delegate) {\n"
+                    #str += "\t\tthis.delegate = new org.web3d.x3d."+superpackage+""+self.package+"."+self.name+"(delegate);\n"
+                    #str += "\t}\n"
+
+                    #str += "\tpublic "+self.name+"Element(java.util.ArrayList<org.web3d.x3d.jsail.Core.connect> delegate) {\n"
+                    #str += "\t\tthis.delegate = new org.web3d.x3d."+superpackage+""+self.package+"."+self.name+"(delegate.toArray(new org.web3d.x3d.jsail.Core.connect[0]));\n"
+                    #str += "\t}\n"
+                else:
+                    str += "public "+abstract+"class "+self.name+"Element "+inheritance+" org.web3d.x3d."+superpackage+""+self.package+"."+self.name+" "+additionalInheritance+" VisitableElement\n"
+                    str += "{\n"
+                    str += "\tprivate org.web3d.x3d."+superpackage+""+self.package+"."+self.name+" delegate = null;\n"
+                    str += "\tpublic "+self.name+"Element(org.web3d.x3d."+superpackage+""+self.package+"."+self.name+" delegate) {\n"
+                    str += "\t\tthis.delegate = delegate;\n"
                     str += "\t}\n"
 
                 str += "\tpublic void accept(Visitor v) {\n"
@@ -168,17 +208,22 @@ class ClassPrinter:
 
                             
                     if fieldname not in [ "id", "addGeometry", "removeGeometry", "addedEntities", "removedEntities", "addTrimmingContour", "removeTrimmingContour", "addChildren", "removeChildren" ]:
-                        str += "\tpublic "+returntype+" get"+fieldname[0].upper()+fieldname[1:]+"Element() { "+("//"+field.get("acceptableNodeTypes") if field.get("acceptableNodeTypes") else "")+"\n"
+                        str += "\tpublic "+returntype+" get"+fieldname[0].upper()+fieldname[1:]+"Element() { "
                         match basefieldtype:
                             case "MFNode":
                                 if fieldname in [ "children", "field" ]:
                                     str += "\t\t return "+newobject+"(delegate.get"+fieldname[0].upper()+fieldname[1:]+"());\n"
                                 elif fieldname in [ "org.web3d.x3d.jsail.Core.component", "org.web3d.x3d.jsail.Core.unit", "org.web3d.x3d.jsail.Core.meta" ]:
-                                   lst = fieldname[fieldname.rfind(".")+1]
-                                   str += "\t\t return "+newobject+"("+fieldtype+"((java.util.ArrayList<"+fieldname+">)delegate.get"+lst[0].upper()+lst[1:]+"List()));\n"
+                                    lst = fieldname[fieldname.rfind(".")+1]
+                                    str += "\t\t return "+newobject+"<"+fieldname+">("+fieldtype+"((java.util.ArrayList<"+fieldname+">)delegate.get"+lst[0].upper()+lst[1:]+"List()));\n"
+                                elif fieldname in [ "connect" ]:
+                                    print(basefieldtype)
+                                    print(fieldname)
+                                    str += "\t\t return "+newobject+"<org.web3d.x3d.jsail.Core."+fieldname+">("+fieldtype+"((java.util.ArrayList<org.web3d.x3d.jsail.Core."+fieldname+">)delegate.get"+fieldname[0].upper()+fieldname[1:]+"List()));\n"
                                 else:
-                                    str += "\t\t return "+newobject+"("+fieldtype+"(delegate.get"+fieldname[0].upper()+fieldname[1:]+"()));\n"
+                                    str += "\t\t return "+newobject+"<"+fieldname+">("+fieldtype+"(delegate.get"+fieldname[0].upper()+fieldname[1:]+"()));\n"
                             case _:
+                                # print(str)
                                 str += "\t\t return "+newobject+"("+fieldtype+"(delegate.get"+fieldname[0].upper()+fieldname[1:]+"()));\n"
                         str += "}\n"
                 str += "}\n"
