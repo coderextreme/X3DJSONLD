@@ -45,6 +45,7 @@ NodeSerializer.prototype = {
 		str += "ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;\n";
 		str += "ConfigurationProperties.deleteIntermediateFiles = false;\n";
 		str += "ConfigurationProperties.setStripTrailingZeroes(true);\n";
+		str += "ConfigurationProperties.setStripDefaultAttributes(true);\n";
 		// we figure out body first and print it out later
 		var body = "      var "+element.nodeName+0+" =  (new autoclass."+element.nodeName+"())";
 		body += this.subSerializeToString(element, mapToMethod, fieldTypes, 3, []);
