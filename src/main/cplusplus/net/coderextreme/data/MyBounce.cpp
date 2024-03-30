@@ -1,110 +1,101 @@
-#ifdef WIN32
-#define FALSE false
-#define TRUE true
-#define WINAPI
-#define AFX_EXT_CLASS
-#define EXPORT32
-#endif
 #define False false
 #define True true
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/SphereExample/SphereExample/pch.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/SphereExample/SphereExample/framework.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/SphereExample/include/XML_PARSER.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/SphereExample/include/X3DLib.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/SphereExample/include/glMath.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/SphereExample/include/glut.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/X3DLib.h"
 int main(int argc, char ** argv) {
-X3D* X3D0 = new X3D();
-X3D0->setProfile(CString("Immersive"));
-X3D0->setVersion(CString("3.3"));
-head* head1 = new head();
-component* component2 = new component();
-component2->setName(CString("Scripting"));
-component2->setLevel(1);
-head1->addChild(component2);
+X3D& X3D0 =  X3D();
+X3D0.setProfile(CString("Immersive"));
+X3D0.setVersion(CString("3.3"));
+head& head1 =  head();
+component& component2 =  component();
+component2.setName(CString("Scripting"));
+component2.setLevel(1);
+head1.addChild(&component2);
 
-meta* meta3 = new meta();
-meta3->setName(CString("title"));
-meta3->setContent(CString("MyBounce.x3d"));
-head1->addMeta(meta3);
+meta& meta3 =  meta();
+meta3.setName(CString("title"));
+meta3.setContent(CString("MyBounce.x3d"));
+head1.addMeta(&meta3);
 
-meta* meta4 = new meta();
-meta4->setName(CString("creator"));
-meta4->setContent(CString("John Carlson"));
-head1->addMeta(meta4);
+meta& meta4 =  meta();
+meta4.setName(CString("creator"));
+meta4.setContent(CString("John Carlson"));
+head1.addMeta(&meta4);
 
-meta* meta5 = new meta();
-meta5->setName(CString("description"));
-meta5->setContent(CString("3 prismatic spheres"));
-head1->addMeta(meta5);
+meta& meta5 =  meta();
+meta5.setName(CString("description"));
+meta5.setContent(CString("3 prismatic spheres"));
+head1.addMeta(&meta5);
 
-meta* meta6 = new meta();
-meta6->setName(CString("identifier"));
-meta6->setContent(CString("https://coderextreme.net/X3DJSONLD/src/main/data/SFVec3f.x3d"));
-head1->addMeta(meta6);
+meta& meta6 =  meta();
+meta6.setName(CString("identifier"));
+meta6.setContent(CString("https://coderextreme.net/X3DJSONLD/src/main/data/SFVec3f.x3d"));
+head1.addMeta(&meta6);
 
-X3D0->setHead(head1);
+X3D0.setHead(&head1);
 
-Scene* Scene7 = new Scene();
-NavigationInfo* NavigationInfo8 = new NavigationInfo();
-Scene7->addChild(NavigationInfo8);
+Scene& Scene7 =  Scene();
+NavigationInfo& NavigationInfo8 =  NavigationInfo();
+Scene7.addChild(&NavigationInfo8);
 
-Transform* Transform9 = new Transform();
-Transform9->setDEF(CString("transform"));
-Shape* Shape10 = new Shape();
-Appearance* Appearance11 = new Appearance();
-Material* Material12 = new Material();
-Material12->setDiffuseColor(new float[3]{0.7,0.7,0.7});
-Material12->setSpecularColor(new float[3]{0.5,0.5,0.5});
-Appearance11->addChild(Material12);
+Transform& Transform9 =  Transform();
+Transform9.setDEF(CString("transform"));
+Shape& Shape10 =  Shape();
+Appearance& Appearance11 =  Appearance();
+Material& Material12 =  Material();
+Material12.setDiffuseColor(new float[3]{0.7,0.7,0.7});
+Material12.setSpecularColor(new float[3]{0.5,0.5,0.5});
+Appearance11.addChild(&Material12);
 
-Shape10->addChild(Appearance11);
+Shape10.addChild(&Appearance11);
 
-Sphere* Sphere13 = new Sphere();
-Shape10->setGeometry(Sphere13);
+Sphere& Sphere13 =  Sphere();
+Shape10.setGeometry(&Sphere13);
 
-Transform9->addChild(Shape10);
+Transform9.addChild(&Shape10);
 
-Scene7->addChild(Transform9);
+Scene7.addChild(&Transform9);
 
-Script* Script14 = new Script();
-Script14->setDEF(CString("Bounce2"));
-field* field15 = new field();
-field15->setName(CString("set_translation"));
-field15->setAccessType(CString("inputOnly"));
-field15->setType(CString("SFVec3f"));
-field15->setValue(CString("0 0 0"));
-Script14->addChild(field15);
+Script& Script14 =  Script();
+Script14.setDEF(CString("Bounce2"));
+field& field15 =  field();
+field15.setName(CString("set_translation"));
+field15.setAccessType(CString("inputOnly"));
+field15.setType(CString("SFVec3f"));
+field15.setValue(CString("0 0 0"));
+Script14.addChild(&field15);
 
-field* field16 = new field();
-field16->setName(CString("translation_changed"));
-field16->setAccessType(CString("outputOnly"));
-field16->setType(CString("SFVec3f"));
-field16->setValue(CString("0 0 0"));
-Script14->addChild(field16);
+field& field16 =  field();
+field16.setName(CString("translation_changed"));
+field16.setAccessType(CString("outputOnly"));
+field16.setType(CString("SFVec3f"));
+field16.setValue(CString("0 0 0"));
+Script14.addChild(&field16);
 
-field* field17 = new field();
-field17->setName(CString("translation"));
-field17->setAccessType(CString("inputOutput"));
-field17->setType(CString("SFVec3f"));
-field17->setValue(CString("0 0 0"));
-Script14->addChild(field17);
+field& field17 =  field();
+field17.setName(CString("translation"));
+field17.setAccessType(CString("inputOutput"));
+field17.setType(CString("SFVec3f"));
+field17.setValue(CString("0 0 0"));
+Script14.addChild(&field17);
 
-field* field18 = new field();
-field18->setName(CString("velocity"));
-field18->setAccessType(CString("inputOutput"));
-field18->setType(CString("SFVec3f"));
-field18->setValue(CString("0 0 0"));
-Script14->addChild(field18);
+field& field18 =  field();
+field18.setName(CString("velocity"));
+field18.setAccessType(CString("inputOutput"));
+field18.setType(CString("SFVec3f"));
+field18.setValue(CString("0 0 0"));
+Script14.addChild(&field18);
 
-field* field19 = new field();
-field19->setName(CString("set_fraction"));
-field19->setAccessType(CString("inputOnly"));
-field19->setType(CString("SFTime"));
-Script14->addChild(field19);
+field& field19 =  field();
+field19.setName(CString("set_fraction"));
+field19.setAccessType(CString("inputOnly"));
+field19.setType(CString("SFTime"));
+Script14.addChild(&field19);
 
 
-Script14->setSourceCode(CString("ecmascript:")+
+Script14.setSourceCode(CString("ecmascript:")+
 _T("			function newBubble() {")+
 _T("			    translation = new SFVec3f(0, 0, 0);")+
 _T("			    velocity = new SFVec3f(")+
@@ -134,28 +125,28 @@ _T("			}")+
 _T("			function initialize() {")+
 _T("			     newBubble();")+
 _T("			}"));
-Scene7->addChild(Script14);
+Scene7.addChild(&Script14);
 
-TimeSensor* TimeSensor20 = new TimeSensor();
-TimeSensor20->setDEF(CString("TourTime"));
-TimeSensor20->setCycleInterval(0.15);
-TimeSensor20->setLoop(True);
-Scene7->addChild(TimeSensor20);
+TimeSensor& TimeSensor20 =  TimeSensor();
+TimeSensor20.setDEF(CString("TourTime"));
+TimeSensor20.setCycleInterval(0.15);
+TimeSensor20.setLoop(True);
+Scene7.addChild(&TimeSensor20);
 
-ROUTE* ROUTE21 = new ROUTE();
-ROUTE21->setFromNode(CString("TourTime"));
-ROUTE21->setFromField(CString("cycleTime"));
-ROUTE21->setToNode(CString("Bounce2"));
-ROUTE21->setToField(CString("set_fraction"));
-Scene7->addChild(ROUTE21);
+ROUTE& ROUTE21 =  ROUTE();
+ROUTE21.setFromNode(CString("TourTime"));
+ROUTE21.setFromField(CString("cycleTime"));
+ROUTE21.setToNode(CString("Bounce2"));
+ROUTE21.setToField(CString("set_fraction"));
+Scene7.addChild(&ROUTE21);
 
-ROUTE* ROUTE22 = new ROUTE();
-ROUTE22->setFromNode(CString("Bounce2"));
-ROUTE22->setFromField(CString("translation_changed"));
-ROUTE22->setToNode(CString("transform"));
-ROUTE22->setToField(CString("set_translation"));
-Scene7->addChild(ROUTE22);
+ROUTE& ROUTE22 =  ROUTE();
+ROUTE22.setFromNode(CString("Bounce2"));
+ROUTE22.setFromField(CString("translation_changed"));
+ROUTE22.setToNode(CString("transform"));
+ROUTE22.setToField(CString("set_translation"));
+Scene7.addChild(&ROUTE22);
 
-X3D0->setScene(Scene7);
+X3D0.setScene(&Scene7);
 
 }
