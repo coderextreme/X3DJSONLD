@@ -62,8 +62,8 @@ class ClassPrinter:
             s += fieldname
             s += "<pre>"
             s += "XML "
-            # s += str(fieldname).replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace('"', "&quot").replace("\\'", "&apos;").replace("\\n", "<br>")
-            s += str(xml.etree.ElementTree.tostring(field, encoding='utf8')).replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace('"', "&quot").replace("\\'", "&apos;").replace("\\n", "<br>")
+            # s += str(fieldname).replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace('"', "&quot;").replace("\\'", "&apos;").replace("\\n", "<br>")
+            s += str(xml.etree.ElementTree.tostring(field, encoding='utf8')).replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace('"', "&quot;").replace("\\'", "&apos;").replace("\\n", "<br>")
             s += "</pre>"
         s += "<br>"
         s += "<pre>"
@@ -118,7 +118,7 @@ class ClassPrinter:
                     s += "<td style='border: 1px solid black;'>"
                     s += "XML "
                     s += "<pre>"
-                    s += str(xml.etree.ElementTree.tostring(node, encoding='utf8')).replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace('"', "&quot").replace("\\'", "&apos;").replace("\\n", "<br>")
+                    s += str(xml.etree.ElementTree.tostring(node, encoding='utf8')).replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace('"', "&quot;").replace("\\'", "&apos;").replace("\\n", "<br>")
                     s += "</pre>"
                     s += "</td>"
                     s += "</tr>\n"
