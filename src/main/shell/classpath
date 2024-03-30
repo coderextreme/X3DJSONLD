@@ -5,9 +5,9 @@ export USERNAME=john
 
 export X3DJSONLD=${HOMESFOLDER}/$USERNAME/X3DJSONLD
 export GRAALX3DJSONLD=${HOMESFOLDER}/$USERNAME/X3DJSONLD
-export CLASSPATH=".;../java;${HOMESFOLDER}/$USERNAME/pythonSAI/X3DJSAIL.4.0.full.jar;${X3DJSONLD}/src/main/java;${X3DJSONLD}/saxon-he-12.1.jar;${X3DJSONLD}/target/X3DJSONLD-1.0-SNAPSHOT.jar;${X3DJSONLD}/target/classes;${X3DJSONLD}/src/main/java"
+export CLASSPATH=".;${X3DJSONLD}/src/main/java;${X3DJSONLD}/saxon-he-12.1.jar;${X3DJSONLD}/target/X3DJSONLD-1.0-SNAPSHOT.jar;${X3DJSONLD}/target/classes;${X3DJSONLD}/src/main/java;../java;${HOMESFOLDER}/$USERNAME/pythonSAI/X3DJSAIL.4.0.full.jar"
 # GRAAL DOES NOT TAKE C:
-export GRAAL_CLASSPATH=".;../java;${HOMESFOLDER}/$USERNAME/pythonSAI/X3DJSAIL.4.0.full.jar;${GRAALX3DJSONLD}/saxon-he-12.1.jar;${GRAALX3DJSONLD}/target/X3DJSONLD-1.0-SNAPSHOT.jar;${GRAALX3DJSONLD}/src/main/graaljs"
+export GRAAL_CLASSPATH=".;${GRAALX3DJSONLD}/saxon-he-12.1.jar;${GRAALX3DJSONLD}/target/X3DJSONLD-1.0-SNAPSHOT.jar;${GRAALX3DJSONLD}/src/main/graaljs;../java;${HOMESFOLDER}/$USERNAME/pythonSAI/X3DJSAIL.4.0.full.jar"
 export PYTHONPATH="{PYTHONPATH};C:\\Python311\\Lib;c:\\x3d-code\\www.web3d.org\\x3d\\stylesheets\\python"
 export PATH="${JAVA_HOME}/bin:${JAVA_HOME}/jre/bin/server:${PATH}"
 

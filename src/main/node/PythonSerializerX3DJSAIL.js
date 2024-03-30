@@ -32,7 +32,7 @@ PythonSerializerX3DJSAIL.prototype = {
         // https://stackoverflow.com/questions/3151436/how-can-i-get-the-current-directory-name-in-javascript
         // console.log('Current directory: ' + process.cwd()); // Node.js method for current directory - not what is needed here
         // https://flaviocopes.com/node-get-current-folder/ use __dirname under Node.js
-		bodystr += "ConfigurationProperties.setStripDefaultAttributes(True)\n";
+		// bodystr += "ConfigurationProperties.setStripDefaultAttributes(True)\n";
 		bodystr += element.nodeName+stack[0]+" = x3d."+element.nodeName;
 		bodystr += "()\n";
 		bodystr += this.subSerializeToString(element, mapToMethod, fieldTypes, 3, stack);

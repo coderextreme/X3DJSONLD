@@ -3014,6 +3014,9 @@ let fieldTypes = {"X3DNode" : {
 	"style" : "SFString",
 },
 "Layer" : {
+	"bboxCenter" : "SFVec3f",
+	"bboxSize" : "SFVec3f",
+	"bboxDisplay" : "SFBool",
 	"addChildren" : "MFNode",
 	"children" : "MFNode",
 	"IS" : "SFNode",
@@ -3075,6 +3078,9 @@ let fieldTypes = {"X3DNode" : {
 	"style" : "SFString",
 },
 "LayoutLayer" : {
+	"bboxCenter" : "SFVec3f",
+	"bboxSize" : "SFVec3f",
+	"bboxDisplay" : "SFBool",
 	"addChildren" : "MFNode",
 	"children" : "MFNode",
 	"IS" : "SFNode",

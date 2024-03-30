@@ -371,7 +371,27 @@ CppScriptSerializer.prototype = {
 						method = "CssClass";
 					}
 					str += element.nodeName+stack[0];
-					str += OBJ+"set"+method+"("+strval+");\n";
+					let startshim = "";
+					switch (element.nodeName) {
+						case "head":
+						case "component":
+						case "unit":
+						case "meta":
+						case "field":
+						case "fieldValue":
+						case "ExternProtoDeclare":
+						case "ProtoDeclare":
+						case "ProtoInterface":
+						case "ProtoInstance":
+						case "IS":
+							break;
+						default:
+							if (attr === "name" || attr === "reference") {
+								startshim = "X3DNode::";
+							}
+							break;
+					}
+					str += OBJ+startshim+"set"+method+"("+strval+");\n";
 				}
 			} catch (e) {
 				console.error(e);
@@ -417,16 +437,17 @@ CppScriptSerializer.prototype = {
 				if (element.nodeName === "TextureBackground" && node.nodeName === "ImageTexture") {
 					shim = PTR;
 				}
-				if (element.nodeName === "Sound" &&
-					(method.endsWith("setAudioClip") ||
-					method.endsWith("setSource")
-					)) {
+				if (element.nodeName === "Sound" && node.nodeName ==="AudioClip") {
 					shim = PTR;
+				}
+				if (element.nodeName === "Sound" && node.nodeName ==="Source") {
+					shim = REF;
 				}
 				if (element.nodeName === "GeoLOD" && method.endsWith("setGeoOrigin") && node.nodeName === "GeoOrigin") {
 					shim = PTR;
 				}
 				if (element.nodeName === "ComposedCubeMapTexture") {
+					// TODO for V3.3, do not do for V4.0
 					method = method.replace("setTopTexture", "setTop");
 					method = method.replace("setBottomTexture", "setBottom");
 					method = method.replace("setFrontTexture", "setFront");
@@ -445,19 +466,21 @@ CppScriptSerializer.prototype = {
 				method = method.replace("addFieldValue", "addChild");
 				method = method.replace("addField", "addChild");
 				method = method.replace("addJoints", "setJoints");
-				method = method.replace("addDisplacers", "addChildren");
+				method = method.replace("addDisplacers", "setDisplacers");
 				method = method.replace("addConnect", "addChildren");
 				method = method.replace("addComponent", "addChildren");
 				method = method.replace("addShaders", "addChildren");
 				method = method.replace("addLayers", "addChildren");
 				method = method.replace("addLayerSet", "addChildren");
 
+				/*
 				if (element.nodeName === "CADFace") {
+					shim = REF;
 					method = method.replace("addChildren", "setShape");
-					shim = PTR;
 				} else {
 					method = method.replace("setShape", "addChildren");
 				}
+				*/
 				method = method.replace("setProtoInterface", "addChildren");
 				method = method.replace("setProtoBody", "addChildren");
 				method = method.replace("setIS", "addChildren");
@@ -474,11 +497,13 @@ CppScriptSerializer.prototype = {
 					method = method.replace("setTexture", "addChild");
 					switch (node.nodeName) {
 					case "ImageTexture":
+					case "PixelTexture":
 						shim = REF;
 						break;
 					}
-				} else if (method.endsWith("setGeometry")) {
+				} else if (method.endsWith("setGeometry") || method.endsWith("setSkin")) {
 					switch (node.nodeName) {
+					case "Transform":
 					case "Text":
 					case "GeoElevationGrid":
 					case "IndexedLineSet":
@@ -488,6 +513,23 @@ CppScriptSerializer.prototype = {
 					case "Cone":
 					case "Cylinder":
 					case "Extrusion":
+					case "Shape":
+						shim = REF;
+						break;
+					}
+				} else if (method.endsWith("setColor")) {
+					switch (node.nodeName) {
+					case "Color":
+						shim = REF;
+						break;
+					case "ColorRGBA":
+						method = OBJ+"addChild";
+						shim = REF;
+						break;
+					}
+				} else if (method.endsWith("setNormal")) {
+					switch (node.nodeName) {
+					case "Normal":
 						shim = REF;
 						break;
 					}
@@ -507,6 +549,12 @@ CppScriptSerializer.prototype = {
 					switch (node.nodeName) {
 					case "Coordinate":
 						shim = PTR;
+						break;
+					}
+				} else if (method.endsWith("setSkinCoord")) {
+					switch (node.nodeName) {
+					case "Coordinate":
+						shim = REF;
 						break;
 					}
 				} else if (method.endsWith("setCoord")) {
@@ -537,17 +585,20 @@ CppScriptSerializer.prototype = {
 					case "LayoutLayer":
 					case "LayerSet":
 					case "Shape":
+					case "ProtoBody":
+					case "Appearance":
 						shim = REF;
 					case "head":
 					case "field":
 					case "fieldValue":
+					case "ExternProtoDeclare":
 					case "ProtoDeclare":
 					case "ProtoInterface":
-					case "ProtoBody":
 					case "ProtoInstance":
 					case "IS":
 					case "Scene":
-					case "Appearance":
+					case "HAnimSegment":
+					case "HAnimSite":
 						method = method.replace("addChildren", "addChild");
 						break;
 					}
@@ -572,7 +623,9 @@ CppScriptSerializer.prototype = {
 					case "CADAssembly":
 					case "Group":
 					case "Transform":
+					case "Switch":
 					case "Anchor":
+					case "Billboard":
 					case "Scene":
 						method = method.replace("addChildren", "addChild");
 						shim = REF;
@@ -589,10 +642,17 @@ CppScriptSerializer.prototype = {
 					case "CADAssembly":
 					case "Group":
 					case "Transform":
+					case "Switch":
+					case "Anchor":
+					case "Billboard":
+					case "HAnimSegment":
+					case "HAnimSite":
 					case "field":
 					case "fieldValue":
 						switch (node.nodeName) {
 						case "Shape":
+						case "Extrusion":
+						case "Coordinate":
 							shim = REF;
 							break;
 						case "CADPart":
@@ -642,6 +702,7 @@ CppScriptSerializer.prototype = {
 					node.nodeName === "meta" ||
 					node.nodeName === "component" ||
 					node.nodeName === "NavigationInfo" ||
+					node.nodeName === "ExternProtoDeclare" ||
 					node.nodeName === "ProtoDeclare" ||
 					node.nodeName === "ProtoInterface" ||
 					node.nodeName === "ProtoBody" ||
