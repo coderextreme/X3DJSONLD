@@ -2,6 +2,10 @@
 
 const DOUBLE_SUFFIX = '';
 const FLOAT_SUFFIX = '';
+const OBJ = '.'; // ->
+const NEW = ""; // new
+const PTR = ""; // *
+const REF = "&"; // *
 
 var DOMSerializer = require('./DOMSerializer.js');
 let serializer = new DOMSerializer();
@@ -18,51 +22,39 @@ CppScriptSerializer.prototype = {
 		this.code = [];
 		this.codeno = 0;
 		this.preno = 0;
-		let stack = [];
+		var stack = [];
 
-		let str = "";
+		var str = "";
 
 		stack.unshift(this.preno);
 		this.preno++;
-		let bodystr = "";
+		var bodystr = "";
         
         // https://stackoverflow.com/questions/48469666/error-enoent-no-such-file-or-directory-open-moviedata-json
         // https://stackoverflow.com/questions/3151436/how-can-i-get-the-current-directory-name-in-javascript
         // console.log('Current directory: ' + process.cwd()); // Node.js method for current directory - not what is needed here
         // https://flaviocopes.com/node-get-current-folder/ use __dirname under Node.js
-		str += "#ifdef WIN32\n";
-		str += "#define FALSE false\n";
-		str += "#define TRUE true\n";
+		/*
+		str += "#ifndef WIN32\n";
 		str += "#define WINAPI\n";
 		str += "#define AFX_EXT_CLASS\n";
 		str += "#define EXPORT32\n";
+		str += "#define WINGDIAPI\n";
+		str += "#define APIENTRY\n";
 		str += "#endif\n";
+		str += "#define FALSE false\n";
+		str += "#define TRUE true\n";
+		str += "#define BOOL bool\n";
+		*/
 		str += "#define False false\n";
 		str += "#define True true\n";
-		// str += "#include \"C:/x3d-code/www.web3d.org/x3d/stylesheets/cpp/abstracts.h\"\n";
-		// str += "#include \"C:/x3d-code/www.web3d.org/x3d/stylesheets/cpp/concretes.h\"\n";
-		//str += "#include \"C:/x3d-code/www.web3d.org/x3d/languages/cpp/Abstracts.h\"\n";
-		//str += "#include \"C:/x3d-code/www.web3d.org/x3d/languages/cpp/Concretes.h\"\n";
-		str += "#include \"C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/SphereExample/SphereExample/pch.h\"\n";
-		str += "#include \"C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/SphereExample/SphereExample/framework.h\"\n";
-		str += "#include \"C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/SphereExample/include/XML_PARSER.h\"\n";
-		// str += "#include \"C:/x3d-code/www.web3d.org/x3d/languages/cpp/X3DLib/X3DLib.h\"\n";
-		// str += "#include \"C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/SphereExample/include/Abstracts.h\"\n";
-		// str += "#include \"C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/SphereExample/include/Concretes.h\"\n";
-		str += "#include \"C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/SphereExample/include/X3DLib.h\"\n";
-		str += "#include \"C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/SphereExample/include/glMath.h\"\n";
-		str += "#include \"C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter02/SphereExample/include/glut.h\"\n";
+		str += "#include \"C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h\"\n";
+		str += "#include \"C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h\"\n";
+		str += "#include \"C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h\"\n";
+		str += "#include \"C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/X3DLib.h\"\n";
 		str += "int main(int argc, char ** argv) {\n";
-		// bodystr += "Scene m_pScene = X3DScene();\n";
-		// bodystr += "X3D x3dModel = new X3D();\n";
-		// bodystr += "m_pScene.addRootNode(x3dModel);\n";
-		// bodystr += "Browser browser = X3D.getBrowser();\n";
-		bodystr += element.nodeName+"* "+element.nodeName+stack[0]+" = new "+element.nodeName+"();\n";
-        	// bodystr += 'Group* group = (Group*)(m_pScene.createNode("Group"));\n';
-        	// bodystr += "group.addChildren("+element.nodeName+stack[0]+");\n";
+		bodystr += element.nodeName+REF+" "+element.nodeName+stack[0]+" = "+NEW+" "+element.nodeName+"();\n";
 		bodystr += this.subSerializeToString(element, mapToMethod, fieldTypes, 3, stack);
-        	// bodystr += "m_pScene.addRootNode(group);\n";
-        	// bodystr += element.nodeName+stack[0]+".toXMLString();\n";
 		bodystr += "}\n";
 		// MFInt32 declarations (for now)
 		for (var co in this.code) {
@@ -74,11 +66,13 @@ CppScriptSerializer.prototype = {
 		return str;
 	},
 
-	printSubArray : function (attr, attrType, type, values, co, j, lead, trail) {
+	printSubArray : function (attr, attrType, type, values, co, j, lead, trail, element) {
+		let str;
+		let shim = NEW;
                 if (type === "int32_t" || type === "int") {
                         for (var v in values) {
 				if (values[v] > 0x7fffffff) {
-				    values[v] = values[v] - 4294967296
+				    values[v] = values[v] - 4294967296;
 				}
 
 				/*
@@ -103,31 +97,57 @@ CppScriptSerializer.prototype = {
 		if (values.length >= 0 && (values[values.length-1] === "" || values[values.length-1] === null)) {
 			values.pop();
 		}
-		if (attrType === 'SFImage') {
+		if (attrType === "SFImage" && element.nodeName !== "PixelTexture") {
 			let length = values[0]*values[1]*values[2];
-			let str = values[0]+", "+values[1]+", "+values[2]+", new "+type+"["+(values.length-3)+"]{"+(values.slice(3, length+1).join(', '))+"}";
-			this.code[co] = attrType+' '+attrType+co+' = '+attrType+'();\n'
-			this.code[co] += attrType+co+'.setValue('+str+');\n';
+			str = values[0]+", "+values[1]+", "+values[2]+", "+NEW+" "+type+"["+(values.length-3)+"]{"+(values.slice(3, length+1).join(', '))+"}";
+			this.code[co] = attrType+PTR+' '+attrType+co+' = '+NEW+' '+attrType+'();\n'
+			this.code[co] += attrType+co+OBJ+'setValue('+str+');\n';
 			this.codeno++;
 			return attrType+co;
 		}
-		if (attr === "colorIndex") {
-			let str = values.length+", new "+type+"["+(values.length)+"]{"+values.join(', ')+"}";
-			this.code[co] = attrType+' '+attrType+co+' = '+attrType+'();\n'
-			this.code[co] += attrType+co+'.setValue('+str+');\n';
-			this.codeno++;
-			return attrType+co;
-		} else if (attr === "texCoordIndex") {
-
-			
-			return 'new '+type+'['+values.length+']{'+lead+values.join(j)+trail+'}, '+values.length;
+		switch (type) {
+		case "float":
+		case "int32_t":
+		case "double":
+		case "boolean":
+		case "CString":
+			shim = "new";
+			break;
+		}
+		if (attrType === "MFInt32") {
+			switch (attr) {
+			case "colorIndex":
+				type = "int";  // converted from int32_t
+			case "texCoordIndex":
+			case "index":
+			case "normalIndex":
+			case "skinCoordIndex":
+			case "coordIndex":
+			case "vertexCount":
+			case "order":
+				str = shim+' '+type+'['+values.length+']{'+lead+values.join(j)+trail+'}, '+values.length;
+				if (attr == "colorIndex") {
+					if (element.nodeName === "IndexedFaceSet") {
+						str = ""+str;
+					} else if (element.nodeName === "IndexedLineSet") {
+						str = ""+str;
+					}
+				}
+				return str;
+			default:
+				str = values.length+", "+shim+" "+type+"["+(values.length)+"]{"+values.join(', ')+"}";
+				this.code[co] = attrType+PTR+' '+attrType+co+' = '+NEW+' '+attrType+'();\n'
+				this.code[co] += attrType+co+OBJ+'setValue('+str+');\n';
+				this.codeno++;
+				return attrType+co;
+			}
 		} else {
-			return 'new '+type+'['+values.length+']{'+lead+values.join(j)+trail+'}'+(attrType.startsWith("MF") && type !== "boolean" ? ', '+values.length : '');
+			return shim+' '+type+'['+values.length+']{'+lead+values.join(j)+trail+'}'+(attrType.startsWith("MF") && type !== "boolean" ? ', '+values.length : '');
 		}
 	},
 
 	printParentChild : function (element, node, cn, mapToMethod, n) {
-		let prepre = "->";
+		let prepre = OBJ;
 		let addpre = "set";
 		if (cn > 0 && node.nodeName !== 'IS') {
 			addpre = "add";
@@ -163,7 +183,7 @@ CppScriptSerializer.prototype = {
 						}
 						if (method === "Shaders") {
 							addpre = "add";
-							method = "Child";
+							method = "Children";
 						} else {
 							addpre = "set";
 						}
@@ -177,26 +197,26 @@ CppScriptSerializer.prototype = {
 			method = "IS";
 			addpre = "set";
 		}
-		if (addpre+method === "setJoints") {
-			method = "Joints"
-			addpre = "add";
-		}
 		if (element.nodeName === 'Scene' && addpre+method === "setMetadata") {
 			method = "Metadata"
 			addpre = "add";
 		}
+		/*
 		if (node.nodeName === 'LayerSet' && addpre+method === "addChild") {
 			method = "LayerSet"
 			addpre = "add";
 		}
+		*/
+		/*
 		if (addpre === 'add' && addpre+method === "addChildren") {
 			method = "Child";
 			addpre = "add";
 		}
+		*/
 		return prepre+addpre+method;
 	},
 	stringValue : function(attrsa, attr, attrType, element) {
-		let strval;
+		let strval = "";
 		let nodeValue = attrsa.nodeValue;
 		if (nodeValue === 'NULL') {
 			strval = "";
@@ -210,11 +230,13 @@ CppScriptSerializer.prototype = {
 					+'"';
 			}
 			strval = "CString("+strval+")"
+			/*
 			if (
 				(element.nodeName === "fieldValue"         && attrsa.nodeName === "name") ||
 				(element.nodeName === 'ExternProtoDeclare' && attrsa.nodeName === "name")) {
 				strval = "&"+strval;
 			}
+			*/
 		} else if (attrType === "SFInt32") {
 			strval = nodeValue;
 		} else if (attrType === "SFFloat") {
@@ -232,7 +254,7 @@ CppScriptSerializer.prototype = {
 		} else if (attrType === "SFTime") {
 			strval = nodeValue+DOUBLE_SUFFIX;
 		} else if (attrType === "MFTime") {
-			strval = this.printSubArray(attr, attrType, "double", nodeValue.split(/[ ,\t\r\n]+/), this.codeno, DOUBLE_SUFFIX+',', '', DOUBLE_SUFFIX);
+			strval = this.printSubArray(attr, attrType, "double", nodeValue.split(/[ ,\t\r\n]+/), this.codeno, DOUBLE_SUFFIX+',', '', DOUBLE_SUFFIX, element);
 		} else if (attrType === "MFString") {
 			nodeValue = nodeValue.replace(/^ *(.*) *$/, "$1");
 			strval = this.printSubArray(attr, attrType, "CString",
@@ -249,13 +271,19 @@ CppScriptSerializer.prototype = {
 						// console.error("CppScriptSerializer Replacing "+x+" with "+y);
 					}
 					return y;
-				}), this.codeno, '"), CString("', 'CString("', '")'); // ... json, lead, tail
+				}), this.codeno, '"), CString("', 'CString("', '")', element); // ... json, lead, tail
+		} else if (attrType === "SFImage" && element.nodeName === "PixelTexture") {
+			strval = '"'+nodeValue+'"';
+			strval = "CString("+strval+")"
 		} else if (attrType === "MFInt32") {
-			strval = this.printSubArray(attr, attrType, "int32_t", nodeValue.split(/[ ,\t\r\n]+/), this.codeno, ',', '', '');
+			strval = this.printSubArray(attr, attrType, "int32_t", nodeValue.split(/[ ,\t\r\n]+/), this.codeno, ',', '', '', element);
+			if (attr !== "texCoordIndex") {
+				strval.replace(/MFInt32/, PTR+"MFInt32");
+			}
 		} else if (attrType === "MFImage") {
-			strval = this.printSubArray(attr, attrType, "int", nodeValue.split(/[ ,\t\r\n]+/), this.codeno, ',', '', '');
+			strval = this.printSubArray(attr, attrType, "int", nodeValue.split(/[ ,\t\r\n]+/), this.codeno, ',', '', '', element);
 		} else if (attrType === "SFImage") {
-			strval = this.printSubArray(attr, attrType, "int", nodeValue.split(/[ ,\t\r\n]+/), this.codeno, ',', '', '');
+			strval = this.printSubArray(attr, attrType, "int", nodeValue.split(/[ ,\t\r\n]+/), this.codeno, ',', '', '', element);
 		} else if (
 			attrType === "SFColor"||
 			attrType === "MFColor"||
@@ -274,7 +302,7 @@ CppScriptSerializer.prototype = {
 			attrType === "SFRotation"||
 			attrType === "MFRotation"||
 			attrType === "MFFloat") {
-			strval = this.printSubArray(attr, attrType, "float", nodeValue.split(/[ ,\t\r\n]+/), this.codeno, FLOAT_SUFFIX+',', '', FLOAT_SUFFIX);
+			strval = this.printSubArray(attr, attrType, "float", nodeValue.split(/[ ,\t\r\n]+/), this.codeno, FLOAT_SUFFIX+',', '', FLOAT_SUFFIX, element);
 		} else if (
 			attrType === "SFVec2d"||
 			attrType === "SFVec3d"||
@@ -287,9 +315,9 @@ CppScriptSerializer.prototype = {
 			attrType === "MFMatrix3d"||
 			attrType === "MFMatrix4d"||
 			attrType === "MFDouble") {
-			strval = this.printSubArray(attr, attrType, "double", nodeValue.split(/[ ,\t\r\n]+/), this.codeno, DOUBLE_SUFFIX+',', '', DOUBLE_SUFFIX);
+			strval = this.printSubArray(attr, attrType, "double", nodeValue.split(/[ ,\t\r\n]+/), this.codeno, DOUBLE_SUFFIX+',', '', DOUBLE_SUFFIX, element);
 		} else if (attrType === "MFBool") {
-			strval = this.printSubArray(attr, attrType, "boolean", nodeValue.split(/[ ,\t\r\n]+/), this.codeno, ',', '', '');
+			strval = this.printSubArray(attr, attrType, "boolean", nodeValue.split(/[ ,\t\r\n]+/), this.codeno, ',', '', '', element);
 		} else {
 			strval = '"'+nodeValue.replace(/\n/g, '\\\\n').replace(/\\?"/g, "\\\"")+'"';
 		}
@@ -343,10 +371,7 @@ CppScriptSerializer.prototype = {
 						method = "CssClass";
 					}
 					str += element.nodeName+stack[0];
-					if (attr === "texCoordIndex") {
-						/// strval = "*"+strval;
-					}
-					str += "->set"+method+"("+strval+");\n";
+					str += OBJ+"set"+method+"("+strval+");\n";
 				}
 			} catch (e) {
 				console.error(e);
@@ -371,70 +396,244 @@ CppScriptSerializer.prototype = {
 				    nodeName = "CColor";
 				}
 
-				ch += nodeName+"* "+node.nodeName+stack[0]+" = new "+nodeName+"();\n";
+				ch += nodeName+REF+" "+node.nodeName+stack[0]+" = "+NEW+" "+nodeName+"();\n";
 
 				let bodystr = this.subSerializeToString(node, mapToMethod, fieldTypes, n+1, stack);
 				ch += bodystr;
 				method = this.printParentChild(element, node, cn, mapToMethod, n);
-				if (method.startsWith("->setadd")) {
-					method = "->"+method.substr(5);
-				} else if (method.startsWith("->setset")) {
-					method = "->"+method.substr(5);
+				if (method.startsWith(OBJ+"setadd")) {
+					method = OBJ+method.substr(OBJ.length+3);
+				} else if (method.startsWith(OBJ+"setset")) {
+					method = OBJ+method.substr(OBJ.length+3);
 				}
+				/*
 				if (method.indexOf("addChildren") >= 0) {
 					method = method.replace("Children", "Child");
 				}
-				if (element.nodeName !== "TextureBackground") {
+				*/
+				let startshim = "";
+				let shim = "";
+				let endshim = "";
+				if (element.nodeName === "TextureBackground" && node.nodeName === "ImageTexture") {
+					shim = PTR;
+				}
+				if (element.nodeName === "Sound" &&
+					(method.endsWith("setAudioClip") ||
+					method.endsWith("setSource")
+					)) {
+					shim = PTR;
+				}
+				if (element.nodeName === "GeoLOD" && method.endsWith("setGeoOrigin") && node.nodeName === "GeoOrigin") {
+					shim = PTR;
+				}
+				if (element.nodeName === "ComposedCubeMapTexture") {
 					method = method.replace("setTopTexture", "setTop");
 					method = method.replace("setBottomTexture", "setBottom");
 					method = method.replace("setFrontTexture", "setFront");
 					method = method.replace("setBackTexture", "setBack");
 					method = method.replace("setLeftTexture", "setLeft");
 					method = method.replace("setRightTexture", "setRight");
+					shim = PTR;
+				}
+				if (element.nodeName === "LayoutLayer" && (
+					node.nodeName === "Layout" ||
+					node.nodeName === "Viewport")) {
+					shim = PTR;
 				}
 				method = method.replace("addParts", "setParts");  // TODO, need addParts, or collect in array
+				method = method.replace("addRootNode", "setRootNode");  // TODO, need addParts, or collect in array
 				method = method.replace("addFieldValue", "addChild");
 				method = method.replace("addField", "addChild");
-				method = method.replace("addJoints", "addChild");
-				method = method.replace("addDisplacers", "addChild");
-				method = method.replace("addConnect", "addChild");
-				method = method.replace("addComponent", "addChild");
-				method = method.replace("addShaders", "addChild");
-				method = method.replace("setShape", "addChild");
-				method = method.replace("setProtoInterface", "addChild");
-				method = method.replace("setProtoBody", "addChild");
-				method = method.replace("setIS", "addChild");
-				method = method.replace("setAppearance", "addChild");
-				method = method.replace("setMaterial", "addChild");
-				method = method.replace("setCoord", "addChild");
-				method = method.replace("setColor", "addChild");
-				method = method.replace("setProxy", "addChild");
-				method = method.replace("setTexCoord", "addChild");
-				method = method.replace("setTextureTransform", "addChild");
+				method = method.replace("addJoints", "setJoints");
+				method = method.replace("addDisplacers", "addChildren");
+				method = method.replace("addConnect", "addChildren");
+				method = method.replace("addComponent", "addChildren");
+				method = method.replace("addShaders", "addChildren");
+				method = method.replace("addLayers", "addChildren");
+				method = method.replace("addLayerSet", "addChildren");
+
+				if (element.nodeName === "CADFace") {
+					method = method.replace("addChildren", "setShape");
+					shim = PTR;
+				} else {
+					method = method.replace("setShape", "addChildren");
+				}
+				method = method.replace("setProtoInterface", "addChildren");
+				method = method.replace("setProtoBody", "addChildren");
+				method = method.replace("setIS", "addChildren");
+				method = method.replace("setAppearance", "addChildren");
+				method = method.replace("setProxy", "addChildren");
+				method = method.replace("setMaterial", "addChildren");
+				/*
+				method = method.replace("setGeometry", "addChildren");
+				method = method.replace("setCoord", "addChildren");
+				method = method.replace("setColor", "addChildren");
+				method = method.replace("setTextureTransform", "addChildren");
+				*/
 				if (method.endsWith("setTexture")) {
 					method = method.replace("setTexture", "addChild");
+					switch (node.nodeName) {
+					case "ImageTexture":
+						shim = REF;
+						break;
+					}
+				} else if (method.endsWith("setGeometry")) {
+					switch (node.nodeName) {
+					case "Text":
+					case "GeoElevationGrid":
+					case "IndexedLineSet":
+					case "IndexedFaceSet":
+					case "LineSet":
+					case "IndexedTriangleSet":
+					case "Cone":
+					case "Cylinder":
+					case "Extrusion":
+						shim = REF;
+						break;
+					}
+				} else if (element.nodeName === "GeoElevationGrid") {
+					switch (node.nodeName) {
+					case "TextureCoordinate":
+						shim = PTR;
+						break;
+					}
+				} else if (method.endsWith("setTexCoord")) {
+					switch (node.nodeName) {
+					case "TextureCoordinate":
+						shim = REF;
+						break;
+					}
+				} else if (element.nodeName === "LineSet") {
+					switch (node.nodeName) {
+					case "Coordinate":
+						shim = PTR;
+						break;
+					}
+				} else if (method.endsWith("setCoord")) {
+					switch (node.nodeName) {
+					case "Coordinate":
+						shim = REF;
+						break;
+					}
+				} else if (method.endsWith("setJoints")) {
+					switch (node.nodeName) {
+					case "HAnimJoint":
+						shim = REF;
+						break;
+					}
+				} else if (method.endsWith("setSkeleton")) {
+					switch (node.nodeName) {
+					case "HAnimJoint":
+						shim = REF;
+						break;
+					}
+				} else if (method.endsWith("addChildren")) {
+					switch (element.nodeName) {
+					case "DISEntityManager":
+						method = method.replace("addChildren", "setMapping");
+						shim = REF;
+						break;
+					case "Layer":
+					case "LayoutLayer":
+					case "LayerSet":
+					case "Shape":
+						shim = REF;
+					case "head":
+					case "field":
+					case "fieldValue":
+					case "ProtoDeclare":
+					case "ProtoInterface":
+					case "ProtoBody":
+					case "ProtoInstance":
+					case "IS":
+					case "Scene":
+					case "Appearance":
+						method = method.replace("addChildren", "addChild");
+						break;
+					}
+					switch (node.nodeName) {
+					case "IS":
+						method = method.replace("addChildren", "addChild");
+						break;
+					}
+					switch (node.nodeName) {
+					case "GeoLOD":
+					case "GeoElevationGrid":
+					case "HAnimHumanoid":
+					case "HAnimJoint":
+					case "Appearance":
+					case "Group":
+					case "Script":
+					case "Transform":
+						shim = REF;
+						break;
+					}
+					switch (element.nodeName) {
+					case "CADAssembly":
+					case "Group":
+					case "Transform":
+					case "Anchor":
+					case "Scene":
+						method = method.replace("addChildren", "addChild");
+						shim = REF;
+						break;
+					}
+				}
+				switch (node.nodeName) {
+				case "ROUTE":
+				case "FontStyle":
+					shim = REF;
+					break;
+				}
+				switch (element.nodeName) {
+					case "CADAssembly":
+					case "Group":
+					case "Transform":
+					case "field":
+					case "fieldValue":
+						switch (node.nodeName) {
+						case "Shape":
+							shim = REF;
+							break;
+						case "CADPart":
+						case "CADAssembly":
+							startshim = OBJ+"X3DGroupingNode::";
+							shim = "static_cast<X3DGroupingNode*>("+REF;
+							endshim = ")";
+							break;
+						}
+						break;
+					case "Scene":
+						switch (node.nodeName) {
+						case "Shape":
+							shim = REF;
+							break;
+						case "CADPart":
+						case "CADAssembly":
+							startshim = OBJ+"X3DBaseNode::";
+							shim = "static_cast<X3DGroupingNode*>("+REF;
+							endshim = ")";
+							break;
+						}
+						break;
 				}
 				ch += element.nodeName+stack[1];
-				let shim = "";
 				// console.log(method, node.nodeName, element.nodeName);
 				/*
 				if ((method.endsWith("setName") && element.nodeName === "fieldValue")) {
-					shim = "&";
+					shim = REF;
 				}
 				*/
-				/*
 				if (
-					(method === ".setName" && element.nodeName === "fieldValue") ||
+					(method === OBJ+"setName" && element.nodeName === "fieldValue") ||
 					node.nodeName === "Background" ||
 					node.nodeName === "Box" ||
 					node.nodeName === "ComposedCubeMapTexture" ||
 					node.nodeName === "ComposedShader" ||
 					node.nodeName === "connect" ||
-					node.nodeName === "Cylinder" ||
 					node.nodeName === "DirectionalLight" ||
 					node.nodeName === "field" ||
 					node.nodeName === "fieldValue" ||
-					node.nodeName === "Group" ||
 					node.nodeName === "HAnimSegment" ||
 					node.nodeName === "HAnimSite" ||
 					node.nodeName === "head" ||
@@ -443,34 +642,39 @@ CppScriptSerializer.prototype = {
 					node.nodeName === "meta" ||
 					node.nodeName === "component" ||
 					node.nodeName === "NavigationInfo" ||
-					node.nodeName === "PointLight" ||
-					node.nodeName === "ProtoBody" ||
 					node.nodeName === "ProtoDeclare" ||
-					node.nodeName === "ProtoInstance" ||
 					node.nodeName === "ProtoInterface" ||
+					node.nodeName === "ProtoBody" ||
+					node.nodeName === "ProtoInstance" ||
+					node.nodeName === "PointLight" ||
 					node.nodeName === "Scene" ||
-					node.nodeName === "Shape" ||
 					node.nodeName === "ShaderPart" ||
 					node.nodeName === "Sphere" ||
-					node.nodeName === "TouchSensor" ||
-					node.nodeName === "Transform" ||
+					node.nodeName.endsWith("Sensor") ||
+					node.nodeName === "Collision" ||
+					node.nodeName.endsWith("Interpolator") ||
 					node.nodeName === "Viewpoint" ||
 					node.nodeName === "WorldInfo"
 				) {
-					shim = "&";
+					shim = REF;
 				}
-				*/
 				if ((method.endsWith("setValue") && node.nodeName.startsWith("Metadata") && element.nodeName === "MetadataSet")) {
-					shim = "(X3DNode *)";
+					shim = "(X3DNode *)&";
 				}
-				ch += method+"("+shim+node.nodeName+stack[0]+");\n\n";
+				if (method.endsWith("setMetadata")) {
+					shim = REF;
+				}
+				if (startshim.startsWith(OBJ)) {
+					method = method.substring(OBJ.length);
+				}
+				ch += startshim+method+"("+shim+node.nodeName+stack[0]+endshim+");\n\n";
 				str += ch;
 				stack.shift();
 			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType === 8) {
 				let y = node.nodeValue.
 					replace(/\\/g, '\\\\').
 					replace(/"/g, '\\"');
-				// str += ".addComments(CommentsBlock(\"\"\""+y+"\"\"\")) \\\n";
+				// str += OBJ+"addComments(CommentsBlock(\"\"\""+y+"\"\"\")) \\\n";
 				str += y.split("\r\n").map(function(x) {
 					return x.replace(/^/g, '//');
 					}).join("\r\n");
@@ -480,7 +684,7 @@ CppScriptSerializer.prototype = {
 				}
 			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType === 4) {
 				str += "\n"+element.nodeName+stack[0];
-				str += '->setSourceCode(CString("'+node.nodeValue.split(/[\r\n]+/).map(function(x) {
+				str += OBJ+'setSourceCode(CString("'+node.nodeValue.split(/[\r\n]+/).map(function(x) {
 					return x.
 					        replace(/\\/g, '\\\\').
 						replace(/"/g, '\\"')

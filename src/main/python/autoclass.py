@@ -49,6 +49,7 @@ class ClassPrinter:
 
 code = ""
 code += "CommentsBlock = autoclass('org.web3d.x3d.jsail.Core.CommentsBlock')\n"
+code += "ConfigurationProperties = autoclass('org.web3d.x3d.jsail.ConfigurationProperties')\n"
 
 classes = {}
 
