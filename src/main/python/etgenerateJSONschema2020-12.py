@@ -23,9 +23,11 @@ class ClassPrinter:
         if isString(node):
             self.name = node
             self.node = None
+            self.statementContentModel = None
         else:
             self.name = node.get("name")
             self.node = node
+            self.statementContentModel = self.node.findall(".//StatementContentModel")
 
     def findParents(self):
         if self.node is not None:
@@ -136,24 +138,24 @@ class ClassPrinter:
 
         if field.get(namesyn) != "value" or  (self.name != 'field' and self.name != 'fieldValue'):
             if not field.get("type").startswith("MF"):
-#                try:
-#                    str += '\t\t\t\t\t\t"exclusiveMaximum" : '+field.get("maxExclusive") + ',\n'
-#                except:
-#                    pass
-#                try:
-#                    str += '\t\t\t\t\t\t"maximum" : '+field.get("maxInclusive") + ',\n'
-#                except:
-#                    pass
-#
-#                try:
-#                    str += '\t\t\t\t\t\t"exclusiveMinimum" : '+field.get("minExclusive") + ',\n'
-#                except:
-#                    pass
-#
-#                try:
-#                    str += '\t\t\t\t\t\t"minimum" : '+field.get("minInclusive") + ',\n'
-#                except:
-#                    pass
+                try:
+                    str += '\t\t\t\t\t\t"exclusiveMaximum" : '+field.get("maxExclusive") + ',\n'
+                except:
+                    pass
+                try:
+                    str += '\t\t\t\t\t\t"maximum" : '+field.get("maxInclusive") + ',\n'
+                except:
+                    pass
+
+                try:
+                    str += '\t\t\t\t\t\t"exclusiveMinimum" : '+field.get("minExclusive") + ',\n'
+                except:
+                    pass
+
+                try:
+                    str += '\t\t\t\t\t\t"minimum" : '+field.get("minInclusive") + ',\n'
+                except:
+                    pass
 
                 # enumerations
                 enumerations = field.iter("enumeration")
@@ -487,6 +489,27 @@ class ClassPrinter:
 				},
 				{
 '''
+        if self.statementContentModel:
+            str += '\t\t"x-orderOf": {'
+            str += '\t\t\t"type": "object",\n'
+            str += '\t\t\t\t"properties": {\n'
+            scms = []
+            for scm in self.statementContentModel:
+                scmstr = ""
+                scmname = scm.get('name')
+                scmmin = scm.get('minOccurs')
+                scmmax = scm.get('maxOccurs')
+                scmstr += '\t\t\t\t\t"@'+scmname+'": {\n'
+                scmstr += '\t\t\t\t\t\t"$comment": "x-orderOf-StatementContentModel"'
+                if scmmin:
+                    scmstr += ',\n\t\t\t\t\t\t"minOccurs": "'+scmmin+'"'
+                if scmmax:
+                    scmstr += ',\t\t\n\t\t\t\t"maxOccurs": "'+scmmax+'"'
+                scmstr += '\n\t\t\t\t}\n'
+                scms.append(scmstr)
+            str += ",\n".join(scms)
+            str += '\n\t\t\t}\n'
+            str += '\t\t},\n'
         str += '''\
                                  "type": "object",
                                  "properties": {
