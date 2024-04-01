@@ -545,6 +545,12 @@ CppScriptSerializer.prototype = {
 						shim = REF;
 						break;
 					}
+				} else if (element.nodeName === "IndexedLineSet") {
+					switch (node.nodeName) {
+					case "Coordinate":
+						shim = REF;
+						break;
+					}
 				} else if (element.nodeName === "LineSet") {
 					switch (node.nodeName) {
 					case "Coordinate":
