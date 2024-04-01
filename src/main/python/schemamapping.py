@@ -143,9 +143,9 @@ class ClassPrinter:
                             if 'oneOf' in x3duom['$defs'][self.name]:
                                 for schema in x3duom['$defs'][self.name]['oneOf']:
                                     s += self.printSchema(field, schema, soup)
-                            else:
-                                schema = x3duom['$defs'][self.name]
-                                s += self.printSchema(field, schema, soup)
+                            #else:
+                            schema = x3duom['$defs'][self.name]
+                            s += self.printSchema(field, schema, soup)
                         else:
                             #s += "None"
                             pass

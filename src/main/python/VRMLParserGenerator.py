@@ -1,9 +1,10 @@
 import xml.etree.ElementTree
-import xml.etree.ElementTree as ET
 import sys
 import re
 import datetime
 import pprint
+
+sys.stdout.reconfigure(encoding='utf-8')
 
 def isString(obj):
         return isinstance(obj, str)
@@ -56,13 +57,18 @@ class ClassPrinter:
     def printClass(self):
         str = ""
         if self.name is not None and self.name.startswith("X3D") and not self.name == 'X3D':
-            str += self.name+"\n"
+            str += self.name[:1].lower()+self.name[1:]+" : "
             str += "(\n"
             doList = {}
             children = []
             for child,b in self.listChildren(doList).items():
                 if child is not None and child != self.name:
-                    children.append(child)
+                    if child.startswith("MFNode") or child.startswith("SFNode"):
+                        children.append(child[:1].lower()+child[1:])
+                    elif child.startswith("MF") or child.startswith("SF"):
+                        children.append(child)
+                    else:
+                        children.append(child[:1].lower()+child[1:])
             str += "\n|".join(children)
             str += "\n)\n"
             str += ";\n"
@@ -70,21 +76,21 @@ class ClassPrinter:
             # print(ET.tostring(self.node))
             useFound = False
             defFound = False
-            optDEF = ""
             fields = self.node.iter("field")
             for field in fields:
                 if field.get("name") in ("DEF"):
                     defFound = True
-                    optDEF = "('DEF' xsID)?"
                 elif field.get("name") in ("USE"):
                     useFound = True
 
             try:
-                str += self.node.get("name")+"\n"
-                str += ": "+optDEF+" '"+self.node.get("name")+"' '{'\n"
+                parserRule = self.node.get("name")[:1].lower()+self.node.get("name")[1:]
+                str += parserRule+"\n"
+                str += ": dEF '"+self.node.get("name")+"' '{'\n"
             except:
+                parserRule = self.node.get("type")
                 str += self.node.get("type")+"\n"
-                str += ": "+optDEF+" '"+self.node.get("type")+"' '{'\n"
+                str += ": dEF '"+self.node.get("type")+"' '{'\n"
             str += "(\n"
             flds = []
             str += " "
@@ -106,9 +112,23 @@ class ClassPrinter:
                 elif field_name in ("USE"):
                     pass
                 elif field_type.endswith("SFNode"):
-                    flds.append("  '"+field_name+"' ("+field.get("acceptableNodeTypes")+")")
+                    try:
+                        acceptableNodeTypes = []
+                        for at in field.get("acceptableNodeTypes").split("|"):
+                            acceptableNodeTypes.append(at[:1].lower()+at[1:])
+                        acceptableNodeTypes = "|".join(acceptableNodeTypes)
+                        flds.append("  '"+field_name+"' ( "+acceptableNodeTypes+" )")
+                    except:
+                        pass
                 elif field_type.endswith("MFNode"):
-                    flds.append("  '"+field_name+"' '[' ("+field.get("acceptableNodeTypes")+")* ']'")
+                    try:
+                        acceptableNodeTypes = []
+                        for at in field.get("acceptableNodeTypes").split("|"):
+                            acceptableNodeTypes.append(at[:1].lower()+at[1:])
+                        acceptableNodeTypes = "|".join(acceptableNodeTypes)
+                        flds.append("  '"+field_name+"' '[' ( "+acceptableNodeTypes+" )* ']'")
+                    except:
+                        pass
                 elif field.get("simpleType") is not None and field_type.startswith("SF"):
                     flds.append("  '"+field_name+"' "+field.get("simpleType"))
                 elif field.get("simpleType") is not None and field_type.startswith("MF"):
@@ -129,50 +149,29 @@ code = ''
 classes = {}
 
 soup = xml.etree.ElementTree.parse(sys.stdin).getroot()
+# run with `antlr4-parse.exe vrml.g4 X3D`
+code += "grammar VRMLGrammar;\n\n"
 
 
-code += "NCNameStartChar :	[A-Z] | '_' | [a-z] | [#xC0-#xD6] | [#xD8-#xF6] | [#xF8-#x2FF] | [#x370-#x37D] | [#x37F-#x1FFF] | [#x200C-#x200D] | [#x2070-#x218F] | [#x2C00-#x2FEF] | [#x3001-#xD7FF] | [#xF900-#xFDCF] | [#xFDF0-#xFFFD] | [#x10000-#xEFFFF];\n"
-code += "NCNameChar : NCNameStartChar | '-' | '.' | [0-9] | #xB7 | [#x0300-#x036F] | [#x203F-#x2040];\n"
-code += "NCName	: NCNameStartChar (NCNameChar)*;\n"
 
-code += "NameStartChar : ':' | NCNameStartChar;\n"
-code += "NameChar : NameStartChar | '-' | '.' | [0-9] | #xB7 | [#x0300-#x036F] | [#x203F-#x2040];\n"
+code += "NCNameStartChar :   ( [A-Z] | '_' | [a-z] | '\xC0'..'\xD6' | '\xD8'..'\xF6' | '\xF8'..'\u02FF' | '\u0370'..'\u037D' | '\u037F'..'\u1FFF' | '\u200C'..'\u200D' | '\u2070'..'\u218F' | '\u2C00'..'\u2FEF' | '\u3001'..'\uD7FF' | '\uF900'..'\uFDCF' | '\uFDF0'..'\uFFFD' | '\u10000'..'\uEFFFF' );\n"
+code += "NCNameChar : ( NCNameStartChar | '-' | '.' | [0-9] | '\xB7' | '\u0300'..'\u036F' | '\u203F'..'\u2040' );\n"
+code += "NCName        : NCNameStartChar (NCNameChar)*;\n"
+
+code += "NameStartChar : ( ':' | [A-Z] | '_' | [a-z] | '\xC0'..'\xD6' | '\xD8'..'\xF6' | '\xF8'..'\u02FF' | '\u0370'..'\u037D' | '\u037F'..'\u1FFF' | '\u200C'..'\u200D' | '\u2070'..'\u218F' | '\u2C00'..'\u2FEF' | '\u3001'..'\uD7FF' | '\uF900'..'\uFDCF' | '\uFDF0'..'\uFFFD' | '\u10000'..'\uEFFFF' );\n"
+code += "NameChar :     ( NameStartChar | '-' | '.' | [0-9] | '\xB7' | '\u0300'..'\u036F' | '\u203F'..'\u2040' );\n"
 code += "Name : NameStartChar (NameChar)*;\n"
 
-code += "xsID : NCName\n"
-code += "xsIDREF : NCName\n"
-code += "xsNMTOKEN : (NameChar)+\n"
-code += "xsNMTOKENS : xsNMTOKEN (#x20 xsNMTOKEN)*\n"
-code += "xsstring : \S+( \S+)*\n"
-code += "SFBool : 'TRUE' | 'FALSE';\n"
-code += "SFColor : SFFloat SFFloat SFFloat;\n"
-code += "SFColorRGBA : SFFloat SFFloat SFFloat SFFloat;\n"
-code += "SFDouble : [+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?);\n"
-code += "SFFloat : [+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?);\n"
-code += "SFImage : SFInt32 SFInt32 SFInt32 (SFInt32 | HexSFInt32)*;\n"
-code += "SFInt32\n"
-code += """: DecimalSFInt32
-| HexSFInt32
-| OctalSFInt32
-| BinarySFInt32
-;\n"""
-code += "DecimalSFInt32 : ('+' | '-')? [1-9][0-9_]* [lL]?;\n"
-code += "OctalSFInt32 : ('+' | '-')? '0' [0-7][0-7_]* [lL]?;\n"
-code += "HexSFInt32 : ('+' | '-')? '0' [xX] [0-9A-Fa-f][0-9A-Fa-f_]* [lL]?;\n"
-code += "BinarySFInt32 : ('+' | '-')? '0' [bB] [0-1][0-1_]* [lL]?;\n"
-code += "SFMatrix3d : SFDouble SFDouble SFDouble SFDouble SFDouble SFDouble SFDouble SFDouble SFDouble;\n"
-code += "SFMatrix3f : SFFloat SFFloat SFFloat SFFloat SFFloat SFFloat SFFloat SFFloat SFFloat;\n"
-code += "SFMatrix4d : SFDouble SFDouble SFDouble SFDouble SFDouble SFDouble SFDouble SFDouble SFDouble SFDouble SFDouble SFDouble SFDouble SFDouble SFDouble SFDouble;\n"
-code += "SFMatrix4f : SFFloat SFFloat SFFloat SFFloat SFFloat SFFloat SFFloat SFFloat SFFloat SFFloat SFFloat SFFloat SFFloat SFFloat SFFloat SFFloat;\n"
-code += "SFRotation : SFFloatOrDouble SFFloatOrDouble SFFloatOrDouble SFFloatOrDouble;\n"
-code += "SFString : TODO;\n"
-code += "SFTime : SFDouble;\n"
-code += "SFVec2d : SFDouble SFDouble;\n"
-code += "SFVec2f : SFFloat SFFloat;\n"
-code += "SFVec3d : SFDouble SFDouble SFDouble;\n"
-code += "SFVec3f : SFFloat SFFloat SFFloat;\n"
-code += "SFVec4d : SFDouble SFDouble  SFDouble SFDouble;\n"
-code += "SFVec4f : SFFloat SFFloat SFFloat SFFloat;\n"
+code += "NotWhite :  ~(' '|'\\t'|'\\r'|'\\n');\n"
+code += "White :  (' '|'\\t'|'\\r'|'\\n')+;\n"
+
+code += "xsID : NCName\n;"
+code += "xsIDREF : NCName;\n"
+code += "xsNMTOKEN : (NameChar)+;\n"
+code += "xsNMTOKENS : xsNMTOKEN ('\x20' xsNMTOKEN)*;\n"
+code += "xsstring : NotWhite+ (White+ NotWhite+)*;\n"
+code += "dEF : ('DEF' xsID){0,1};\n"
+
 
 sits = soup.iter("SimpleType")
 for sit in sits:
@@ -193,14 +192,35 @@ for ant in ants:
 fts = soup.iter("FieldType")
 for ft in fts:
     classes[ft.get('type')] = ClassPrinter(ft, {}, False)
-    if ft.get("type").startswith("MF"):
-        code += ft.get("type")+" : "+"'[' (S"+ft.get("type")[1:]+")* ']';\n"
+    if ft.get('regex') is not None and ft.get('type') is not None:
+        regex = ft.get('regex')
+        regex = regex.replace("\s",  "(' '|'\\t'|'\\r'|'\\n')")
+        regex = regex.replace("\S", "~(' '|'\\t'|'\\r'|'\\n')")
+        regex = regex.replace("\.", "[.]")
+        regex = regex.replace("true", "'TRUE'")
+        regex = regex.replace("false", "'FALSE'")
+        regex = regex.replace(",", "[,]")             # replace commas first, before next 2 lines
+        regex = regex.replace("{1[,]16}", "{1,16}")   # switch this comma back
+        regex = regex.replace("?", "{0,1}")
+        regex = regex.replace("(0(", "([0](")         # ))))
+        regex = regex.replace("0x", "[0][x]")
+        regex = regex.replace("(0|", "([0]|")         # ))
+        regex = regex.replace("]0*", "][0]*")
+        regex = regex.replace("|1(", "|[1](")         # ))
+        if ft.get("type").startswith("MF"):
+            code += ft.get('type')+" : '[' "+regex+" ']';\n"
+        elif ft.get("type").startswith("SFString"):
+            code += ft.get('type')+" : [\"'] "+regex+" ['\"];\n"
+        else:
+            code += ft.get('type')+" : "+regex+";\n"
+    if ft.get("type").startswith("MFNode"):
+        code += ft.get('type')[:1].lower()+ft.get('type')[1:]+" : "+"'[' (s"+ft.get("type")[1:]+")* ']';\n"
         classes["X3DArrayField"].children[ft.get("type")] = ft.get("type")
     else:
         classes["X3DField"].children[ft.get("type")] = ft.get("type")
 
 classes["X3DConcreteNode"] = ClassPrinter("X3DConcreteNode", {}, True)
-classes["X3DConcreteStatement"] = ClassPrinter("X3DConcreteStatement", {}, False)
+# classes["X3DConcreteStatement"] = ClassPrinter("X3DConcreteStatement", {}, False)
 
 aots = soup.iter("AbstractObjectType")
 for aot in aots:
@@ -215,11 +235,11 @@ for cn in cns:
 sts = soup.iter("Statement")
 for st in sts:
     if st.get("name") in ["ExternProtoDeclare", "ProtoDeclare", "IMPORT", "EXPORT", "ROUTE" ]:
-        classes[st.get('name')] = ClassPrinter(st, { "X3DConcreteStatement" : 1, "X3DChildNode" : 1 }, False)
+        classes[st.get('name')] = ClassPrinter(st, { "X3DChildNode" : 1 }, False)
         classes["X3DChildNode"].children[st.get("name")] = st.get("name")
     else:
-        classes[st.get('name')] = ClassPrinter(st, { "X3DConcreteStatement" : 1 }, False)
-    classes["X3DConcreteStatement"].children[st.get("name")] = st.get("name")
+        classes[st.get('name')] = ClassPrinter(st, { }, False)
+    # classes["X3DConcreteStatement"].children[st.get("name")] = st.get("name")
 
 for k,v in classes.items():
     v.findChildren()
@@ -227,6 +247,12 @@ for k,v in classes.items():
 for k,v in classes.items():
     code += v.printClass()
 
+nodes = []
+for k,v in classes.items():
+    if not k.startswith("MF") and not k.startswith("SF"):
+        nodes.append(k[:1].lower()+k[1:])
+
+code += "sFNode : ( "+("\n|".join(nodes))+" );\n"
 f = sys.stdout
 f.write(code)
 f.close()
