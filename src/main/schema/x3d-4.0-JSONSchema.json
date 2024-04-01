@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
-  "title": "X3D V4.0 JSON Schema, generated 2024/03/09 14:33:06",
+  "title": "X3D V4.0 JSON Schema, generated 2024/04/01 01:49:36",
   "description": "Experimental JSON Schema for X3D V4.0",
   "type": "object",
   "properties": {
@@ -980,6 +980,8 @@
               "$ref": "#/$defs/IS"
             },
             "@absorption": {
+              "maximum": 1,
+              "minimum": 0,
               "default": 0,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -989,6 +991,8 @@
               "type": "string"
             },
             "@diffuse": {
+              "maximum": 1,
+              "minimum": 0,
               "default": 0,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -1002,11 +1006,15 @@
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
             "@refraction": {
+              "maximum": 1,
+              "minimum": 0,
               "default": 0,
               "$comment": "SFFloat inputOutput",
               "type": "number"
             },
             "@specular": {
+              "maximum": 1,
+              "minimum": 0,
               "default": 0,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -1104,11 +1112,13 @@
               "type": "boolean"
             },
             "@fftSize": {
+              "minimum": 0,
               "default": 2048,
               "$comment": "SFInt32 inputOutput",
               "type": "integer"
             },
             "@frequencyBinCount": {
+              "minimum": 0,
               "default": 1024,
               "$comment": "SFInt32 inputOutput",
               "type": "integer"
@@ -1142,6 +1152,7 @@
               "type": "number"
             },
             "@smoothingTimeConstant": {
+              "minimum": 0,
               "default": 0.8,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -1157,6 +1168,7 @@
               "type": "number"
             },
             "@tailTime": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFTime inputOutput",
               "type": "number"
@@ -1223,11 +1235,13 @@
               "$ref": "#/$defs/IS"
             },
             "@autoRefresh": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFTime inputOutput",
               "type": "number"
             },
             "@autoRefreshTimeLimit": {
+              "minimum": 0,
               "default": 3600,
               "$comment": "SFTime inputOutput",
               "type": "number"
@@ -1361,6 +1375,8 @@
               "$ref": "#/$defs/-AcousticPropertiesSFNode"
             },
             "@alphaCutoff": {
+              "maximum": 1,
+              "minimum": 0,
               "default": 0.5,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -1468,6 +1484,8 @@
               "$ref": "#/$defs/IS"
             },
             "@endAngle": {
+              "exclusiveMaximum": 6.2832,
+              "exclusiveMinimum": -6.2832,
               "default": 1.570796,
               "$comment": "SFFloat initializeOnly",
               "type": "number"
@@ -1476,11 +1494,14 @@
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
             "@radius": {
+              "exclusiveMinimum": 0,
               "default": 1,
               "$comment": "SFFloat initializeOnly",
               "type": "number"
             },
             "@startAngle": {
+              "exclusiveMaximum": 6.2832,
+              "exclusiveMinimum": -6.2832,
               "default": 0,
               "$comment": "SFFloat initializeOnly",
               "type": "number"
@@ -1559,6 +1580,8 @@
               "type": "string"
             },
             "@endAngle": {
+              "exclusiveMaximum": 6.2832,
+              "exclusiveMinimum": -6.2832,
               "default": 1.570796,
               "$comment": "SFFloat initializeOnly",
               "type": "number"
@@ -1567,6 +1590,7 @@
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
             "@radius": {
+              "exclusiveMinimum": 0,
               "default": 1,
               "$comment": "SFFloat initializeOnly",
               "type": "number"
@@ -1577,6 +1601,8 @@
               "type": "boolean"
             },
             "@startAngle": {
+              "exclusiveMaximum": 6.2832,
+              "exclusiveMinimum": -6.2832,
               "default": 0,
               "$comment": "SFFloat initializeOnly",
               "type": "number"
@@ -1646,11 +1672,13 @@
               "$ref": "#/$defs/IS"
             },
             "@autoRefresh": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFTime inputOutput",
               "type": "number"
             },
             "@autoRefreshTimeLimit": {
+              "minimum": 0,
               "default": 3600,
               "$comment": "SFTime inputOutput",
               "type": "number"
@@ -1688,6 +1716,7 @@
               "type": "number"
             },
             "@pitch": {
+              "exclusiveMinimum": 0,
               "default": 1,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -1814,6 +1843,7 @@
               "type": "number"
             },
             "@maxChannelCount": {
+              "minimum": 0,
               "default": 2,
               "$comment": "SFInt32 inputOutput",
               "type": "integer"
@@ -1986,6 +2016,8 @@
               }
             },
             "@transparency": {
+              "maximum": 1,
+              "minimum": 0,
               "default": 0,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -2298,6 +2330,7 @@
               "type": "string"
             },
             "@detune": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -2308,6 +2341,7 @@
               "type": "boolean"
             },
             "@frequency": {
+              "minimum": 0,
               "default": 350,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -2326,6 +2360,7 @@
               "type": "number"
             },
             "@qualityFactor": {
+              "minimum": 0,
               "default": 1,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -2346,6 +2381,7 @@
               "type": "number"
             },
             "@tailTime": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFTime inputOutput",
               "type": "number"
@@ -2444,11 +2480,15 @@
               "$ref": "#/$defs/-X3DTexture3DNodeSFNode"
             },
             "@weightConstant1": {
+              "maximum": 1,
+              "minimum": 0,
               "default": 0.5,
               "$comment": "SFFloat inputOutput",
               "type": "number"
             },
             "@weightConstant2": {
+              "maximum": 1,
+              "minimum": 0,
               "default": 0.5,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -2837,6 +2877,8 @@
               "$ref": "#/$defs/IS"
             },
             "@boundaryOpacity": {
+              "maximum": 1,
+              "minimum": 0,
               "default": 0.9,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -2850,11 +2892,14 @@
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
             "@opacityFactor": {
+              "minimum": 0,
               "default": 2,
               "$comment": "SFFloat inputOutput",
               "type": "number"
             },
             "@retainedOpacity": {
+              "maximum": 1,
+              "minimum": 0,
               "default": 0.2,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -3081,11 +3126,13 @@
               "$ref": "#/$defs/IS"
             },
             "@autoRefresh": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFTime inputOutput",
               "type": "number"
             },
             "@autoRefreshTimeLimit": {
+              "minimum": 0,
               "default": 3600,
               "$comment": "SFTime inputOutput",
               "type": "number"
@@ -3100,6 +3147,7 @@
               }
             },
             "@bufferDuration": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFTime inputOutput",
               "type": "number"
@@ -3128,6 +3176,7 @@
               "type": "string"
             },
             "@detune": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -3153,11 +3202,13 @@
               "type": "boolean"
             },
             "@loopEnd": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFFloat inputOutput",
               "type": "number"
             },
             "@loopStart": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -3166,6 +3217,7 @@
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
             "@numberOfChannels": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFInt32 inputOutput",
               "type": "integer"
@@ -3186,6 +3238,7 @@
               "type": "number"
             },
             "@sampleRate": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -3761,6 +3814,8 @@
               "$ref": "#/$defs/IS"
             },
             "@colorSteps": {
+              "maximum": 64,
+              "minimum": 1,
               "default": 4,
               "$comment": "SFInt32 inputOutput",
               "type": "integer"
@@ -3774,6 +3829,8 @@
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
             "@orthogonalColor": {
+              "maximum": 1,
+              "minimum": 0,
               "$comment": "SFColorRGBA inputOutput",
               "type": "array",
               "minItems": 4,
@@ -3786,6 +3843,8 @@
               }
             },
             "@parallelColor": {
+              "maximum": 1,
+              "minimum": 0,
               "$comment": "SFColorRGBA inputOutput",
               "type": "array",
               "minItems": 4,
@@ -4002,6 +4061,7 @@
               "type": "string"
             },
             "@channelSelection": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFInt32 inputOutput",
               "type": "integer"
@@ -4197,6 +4257,7 @@
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
             "@radius": {
+              "exclusiveMinimum": 0,
               "default": 1,
               "$comment": "SFFloat initializeOnly",
               "type": "number"
@@ -4274,6 +4335,8 @@
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
             "@plane": {
+              "maximum": 1,
+              "minimum": -1,
               "$comment": "SFVec4f inputOutput",
               "type": "array",
               "minItems": 4,
@@ -4804,6 +4867,8 @@
               }
             },
             "@bounce": {
+              "maximum": 1,
+              "minimum": 0,
               "default": 0,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -4821,6 +4886,7 @@
               "type": "boolean"
             },
             "@frictionCoefficients": {
+              "minimum": 0,
               "$comment": "SFVec2f inputOutput",
               "type": "array",
               "minItems": 2,
@@ -4835,6 +4901,7 @@
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
             "@minBounceSpeed": {
+              "minimum": 0,
               "default": 0.1,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -4850,11 +4917,15 @@
               }
             },
             "@softnessConstantForceMix": {
+              "maximum": 1,
+              "minimum": 0,
               "default": 0.0001,
               "$comment": "SFFloat inputOutput",
               "type": "number"
             },
             "@softnessErrorCorrection": {
+              "maximum": 1,
+              "minimum": 0,
               "default": 0.8,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -5211,11 +5282,14 @@
               "$ref": "#/$defs/IS"
             },
             "@duration": {
+              "minimum": 0,
               "default": 1,
               "$comment": "SFTime initializeOnly",
               "type": "number"
             },
             "@initialDestination": {
+              "maximum": 1,
+              "minimum": 0,
               "$comment": "SFColor initializeOnly",
               "type": "array",
               "minItems": 3,
@@ -5228,6 +5302,8 @@
               }
             },
             "@initialValue": {
+              "maximum": 1,
+              "minimum": 0,
               "$comment": "SFColor initializeOnly",
               "type": "array",
               "minItems": 3,
@@ -5307,6 +5383,8 @@
               "$ref": "#/$defs/IS"
             },
             "@initialDestination": {
+              "maximum": 1,
+              "minimum": 0,
               "$comment": "SFColor initializeOnly",
               "type": "array",
               "minItems": 3,
@@ -5319,6 +5397,8 @@
               }
             },
             "@initialValue": {
+              "maximum": 1,
+              "minimum": 0,
               "$comment": "SFColor initializeOnly",
               "type": "array",
               "minItems": 3,
@@ -5334,11 +5414,14 @@
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
             "@order": {
+              "maximum": 5,
+              "minimum": 0,
               "default": 3,
               "$comment": "SFInt32 initializeOnly",
               "type": "integer"
             },
             "@tau": {
+              "minimum": 0,
               "default": 0.3,
               "$comment": "SFTime inputOutput",
               "type": "number"
@@ -5945,11 +6028,13 @@
               "type": "boolean"
             },
             "@bottomRadius": {
+              "exclusiveMinimum": 0,
               "default": 1,
               "$comment": "SFFloat initializeOnly",
               "type": "number"
             },
             "@height": {
+              "exclusiveMinimum": 0,
               "default": 2,
               "$comment": "SFFloat initializeOnly",
               "type": "number"
@@ -6032,11 +6117,15 @@
               "$ref": "#/$defs/IS"
             },
             "@angle": {
+              "maximum": 3.1416,
+              "minimum": 0,
               "default": 0.7854,
               "$comment": "SFFloat inputOutput",
               "type": "number"
             },
             "@direction": {
+              "maximum": 1,
+              "minimum": -1,
               "$comment": "SFVec3f inputOutput",
               "type": "array",
               "minItems": 3,
@@ -6064,6 +6153,7 @@
               "items": false
             },
             "@mass": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -6087,16 +6177,19 @@
               }
             },
             "@speed": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFFloat inputOutput",
               "type": "number"
             },
             "@surfaceArea": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFFloat inputOutput",
               "type": "number"
             },
             "@variation": {
+              "minimum": 0,
               "default": 0.25,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -6191,6 +6284,8 @@
               "$ref": "#/$defs/-RigidBodySFNode"
             },
             "@bounce": {
+              "maximum": 1,
+              "minimum": 0,
               "default": 0,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -6222,6 +6317,7 @@
               "type": "number"
             },
             "@frictionCoefficients": {
+              "minimum": 0,
               "$comment": "SFVec2f inputOutput",
               "type": "array",
               "minItems": 2,
@@ -6263,6 +6359,7 @@
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
             "@minBounceSpeed": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -6288,11 +6385,15 @@
               }
             },
             "@softnessConstantForceMix": {
+              "maximum": 1,
+              "minimum": 0,
               "default": 0.0001,
               "$comment": "SFFloat inputOutput",
               "type": "number"
             },
             "@softnessErrorCorrection": {
+              "maximum": 1,
+              "minimum": 0,
               "default": 0.8,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -6584,6 +6685,7 @@
               "type": "number"
             },
             "@tailTime": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFTime inputOutput",
               "type": "number"
@@ -6728,6 +6830,7 @@
               "$ref": "#/$defs/IS"
             },
             "@duration": {
+              "minimum": 0,
               "default": 1,
               "$comment": "SFTime initializeOnly",
               "type": "number"
@@ -6839,11 +6942,14 @@
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
             "@order": {
+              "maximum": 5,
+              "minimum": 0,
               "default": 3,
               "$comment": "SFInt32 initializeOnly",
               "type": "integer"
             },
             "@tau": {
+              "minimum": 0,
               "default": 0.3,
               "$comment": "SFTime inputOutput",
               "type": "number"
@@ -7162,6 +7268,7 @@
               "type": "boolean"
             },
             "@height": {
+              "exclusiveMinimum": 0,
               "default": 2,
               "$comment": "SFFloat initializeOnly",
               "type": "number"
@@ -7170,6 +7277,7 @@
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
             "@radius": {
+              "exclusiveMinimum": 0,
               "default": 1,
               "$comment": "SFFloat initializeOnly",
               "type": "number"
@@ -7288,6 +7396,8 @@
               "type": "string"
             },
             "@diskAngle": {
+              "maximum": 1.5708,
+              "minimum": 0,
               "default": 0.26179167,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -7298,6 +7408,8 @@
               "type": "boolean"
             },
             "@maxAngle": {
+              "exclusiveMaximum": 6.2832,
+              "exclusiveMinimum": -6.2832,
               "default": -1,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -7306,6 +7418,8 @@
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
             "@minAngle": {
+              "exclusiveMaximum": 6.2832,
+              "exclusiveMinimum": -6.2832,
               "default": 0,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -7399,6 +7513,7 @@
               "$ref": "#/$defs/-Analyser-AudioClip-AudioDestination-BiquadFilter-BufferAudioSource-ChannelMerger-ChannelSelector-ChannelSplitter-Convolver-Delay-DynamicsCompressor-Gain-ListenerPointSource-MicrophoneSource-MovieTexture-OscillatorSource-Sound-SpatialSound-StreamAudioDestination-StreamAudioSource-WaveShaperMFNode"
             },
             "@delayTime": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFTime inputOutput",
               "type": "number"
@@ -7418,6 +7533,7 @@
               "type": "number"
             },
             "@maxDelayTime": {
+              "minimum": 0,
               "default": 1,
               "$comment": "SFTime inputOutput",
               "type": "number"
@@ -7446,6 +7562,7 @@
               "type": "number"
             },
             "@tailTime": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFTime inputOutput",
               "type": "number"
@@ -7515,11 +7632,15 @@
               "$ref": "#/$defs/IS"
             },
             "@ambientIntensity": {
+              "maximum": 1,
+              "minimum": 0,
               "default": 0,
               "$comment": "SFFloat inputOutput",
               "type": "number"
             },
             "@color": {
+              "maximum": 1,
+              "minimum": 0,
               "$comment": "SFColor inputOutput",
               "type": "array",
               "minItems": 3,
@@ -7558,6 +7679,7 @@
               "type": "boolean"
             },
             "@intensity": {
+              "minimum": 0,
               "default": 1,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -7571,6 +7693,8 @@
               "type": "boolean"
             },
             "@shadowIntensity": {
+              "maximum": 1,
+              "minimum": 0,
               "default": 1,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -7735,21 +7859,27 @@
               "$ref": "#/$defs/IS"
             },
             "@autoRefresh": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFTime inputOutput",
               "type": "number"
             },
             "@autoRefreshTimeLimit": {
+              "minimum": 0,
               "default": 3600,
               "$comment": "SFTime inputOutput",
               "type": "number"
             },
             "@category": {
+              "maximum": 255,
+              "minimum": 0,
               "default": 0,
               "$comment": "SFInt32 initializeOnly",
               "type": "integer"
             },
             "@country": {
+              "maximum": 65535,
+              "minimum": 0,
               "default": 0,
               "$comment": "SFInt32 initializeOnly",
               "type": "integer"
@@ -7759,16 +7889,22 @@
               "type": "string"
             },
             "@domain": {
+              "maximum": 255,
+              "minimum": 0,
               "default": 0,
               "$comment": "SFInt32 initializeOnly",
               "type": "integer"
             },
             "@extra": {
+              "maximum": 255,
+              "minimum": 0,
               "default": 0,
               "$comment": "SFInt32 initializeOnly",
               "type": "integer"
             },
             "@kind": {
+              "maximum": 255,
+              "minimum": 0,
               "default": 0,
               "$comment": "SFInt32 initializeOnly",
               "type": "integer"
@@ -7782,11 +7918,15 @@
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
             "@specific": {
+              "maximum": 255,
+              "minimum": 0,
               "default": 0,
               "$comment": "SFInt32 initializeOnly",
               "type": "integer"
             },
             "@subcategory": {
+              "maximum": 255,
+              "minimum": 0,
               "default": 0,
               "$comment": "SFInt32 initializeOnly",
               "type": "integer"
@@ -7865,6 +8005,7 @@
               "$ref": "#/$defs/IS"
             },
             "@innerRadius": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFFloat initializeOnly",
               "type": "number"
@@ -7873,6 +8014,7 @@
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
             "@outerRadius": {
+              "exclusiveMinimum": 0,
               "default": 1,
               "$comment": "SFFloat initializeOnly",
               "type": "number"
@@ -8143,6 +8285,7 @@
               "$ref": "#/$defs/IS"
             },
             "@attack": {
+              "minimum": 0,
               "default": 0.003,
               "$comment": "SFTime inputOutput",
               "type": "number"
@@ -8184,6 +8327,7 @@
               "type": "number"
             },
             "@knee": {
+              "minimum": 0,
               "default": 30,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -8197,11 +8341,14 @@
               "type": "number"
             },
             "@ratio": {
+              "maximum": 20,
+              "minimum": 1,
               "default": 12,
               "$comment": "SFFloat inputOutput",
               "type": "number"
             },
             "@release": {
+              "minimum": 0,
               "default": 0.25,
               "$comment": "SFTime inputOutput",
               "type": "number"
@@ -8222,11 +8369,14 @@
               "type": "number"
             },
             "@tailTime": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFTime inputOutput",
               "type": "number"
             },
             "@threshold": {
+              "maximum": 0,
+              "minimum": -100,
               "default": -24,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -8378,6 +8528,8 @@
               "$ref": "#/$defs/IS"
             },
             "@edgeColor": {
+              "maximum": 1,
+              "minimum": 0,
               "$comment": "SFColorRGBA inputOutput",
               "type": "array",
               "minItems": 4,
@@ -8416,6 +8568,8 @@
               "type": "boolean"
             },
             "@gradientThreshold": {
+              "maximum": 3.1416,
+              "minimum": 0,
               "default": 0.4,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -8507,6 +8661,7 @@
               "type": "boolean"
             },
             "@creaseAngle": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFFloat initializeOnly",
               "type": "number"
@@ -8541,21 +8696,25 @@
               "$ref": "#/$defs/-X3DSingleTextureCoordinateNodeSFNode"
             },
             "@xDimension": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFInt32 initializeOnly",
               "type": "integer"
             },
             "@xSpacing": {
+              "exclusiveMinimum": 0,
               "default": 1,
               "$comment": "SFFloat initializeOnly",
               "type": "number"
             },
             "@zDimension": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFInt32 initializeOnly",
               "type": "integer"
             },
             "@zSpacing": {
+              "exclusiveMinimum": 0,
               "default": 1,
               "$comment": "SFFloat initializeOnly",
               "type": "number"
@@ -8953,6 +9112,7 @@
               "type": "integer"
             },
             "@readInterval": {
+              "minimum": 0,
               "default": 0.1,
               "$comment": "SFTime inputOutput",
               "type": "number"
@@ -9048,6 +9208,7 @@
               "type": "integer"
             },
             "@writeInterval": {
+              "minimum": 0,
               "default": 1,
               "$comment": "SFTime inputOutput",
               "type": "number"
@@ -9117,6 +9278,7 @@
               "$ref": "#/$defs/IS"
             },
             "@mass": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -9140,16 +9302,19 @@
               }
             },
             "@speed": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFFloat inputOutput",
               "type": "number"
             },
             "@surfaceArea": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFFloat inputOutput",
               "type": "number"
             },
             "@variation": {
+              "minimum": 0,
               "default": 0.25,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -9234,6 +9399,7 @@
               "type": "boolean"
             },
             "@creaseAngle": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFFloat initializeOnly",
               "type": "number"
@@ -9440,6 +9606,8 @@
               "type": "boolean"
             },
             "@hatchColor": {
+              "maximum": 1,
+              "minimum": 0,
               "$comment": "SFColor inputOutput",
               "type": "array",
               "minItems": 3,
@@ -9457,6 +9625,7 @@
               "type": "boolean"
             },
             "@hatchStyle": {
+              "minimum": 0,
               "enum": [
                 1,
                 2,
@@ -9553,13 +9722,12 @@
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
             "@name": {
-              "$comment": "xs:NMTOKEN initializeOnly",
-              "type": "array",
-              "items": {
-                "type": "number"
-              }
+              "$comment": "SFString initializeOnly",
+              "type": "string"
             },
             "@numComponents": {
+              "maximum": 4,
+              "minimum": 1,
               "default": 4,
               "$comment": "SFInt32 initializeOnly",
               "type": "integer"
@@ -9636,6 +9804,8 @@
               "$ref": "#/$defs/IS"
             },
             "@color": {
+              "maximum": 1,
+              "minimum": 0,
               "$comment": "SFColor inputOutput",
               "type": "array",
               "minItems": 3,
@@ -9660,6 +9830,7 @@
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
             "@visibilityRange": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -9880,11 +10051,13 @@
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
             "@size": {
+              "exclusiveMinimum": 0,
               "default": 1,
               "$comment": "SFFloat inputOutput",
               "type": "number"
             },
             "@spacing": {
+              "minimum": 0,
               "default": 1,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -10107,6 +10280,7 @@
               "type": "number"
             },
             "@tailTime": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFTime inputOutput",
               "type": "number"
@@ -10183,6 +10357,7 @@
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
             "@size": {
+              "exclusiveMinimum": 0,
               "default": 128,
               "$comment": "SFInt32 initializeOnly",
               "type": "integer"
@@ -10359,6 +10534,7 @@
               "type": "boolean"
             },
             "@creaseAngle": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFDouble initializeOnly",
               "type": "number"
@@ -10407,26 +10583,31 @@
               "$ref": "#/$defs/-X3DSingleTextureCoordinateNodeSFNode"
             },
             "@xDimension": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFInt32 initializeOnly",
               "type": "integer"
             },
             "@xSpacing": {
+              "exclusiveMinimum": 0,
               "default": 1,
               "$comment": "SFDouble initializeOnly",
               "type": "number"
             },
             "@yScale": {
+              "minimum": 0,
               "default": 1,
               "$comment": "SFFloat inputOutput",
               "type": "number"
             },
             "@zDimension": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFInt32 initializeOnly",
               "type": "integer"
             },
             "@zSpacing": {
+              "exclusiveMinimum": 0,
               "default": 1,
               "$comment": "SFDouble initializeOnly",
               "type": "number"
@@ -10689,6 +10870,7 @@
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
             "@range": {
+              "minimum": 0,
               "default": 10,
               "$comment": "SFFloat initializeOnly",
               "type": "number"
@@ -10775,11 +10957,13 @@
               "$ref": "#/$defs/IS"
             },
             "@autoRefresh": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFTime inputOutput",
               "type": "number"
             },
             "@autoRefreshTimeLimit": {
+              "minimum": 0,
               "default": 3600,
               "$comment": "SFTime inputOutput",
               "type": "number"
@@ -11091,6 +11275,7 @@
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
             "@size": {
+              "minimum": 0,
               "$comment": "SFVec3f inputOutput",
               "type": "array",
               "minItems": 3,
@@ -11450,6 +11635,8 @@
               "type": "number"
             },
             "@fieldOfView": {
+              "exclusiveMaximum": 3.1416,
+              "exclusiveMinimum": 0,
               "default": 0.7854,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -11528,6 +11715,7 @@
               "type": "boolean"
             },
             "@speedFactor": {
+              "minimum": 0,
               "default": 1,
               "$comment": "SFFloat initializeOnly",
               "type": "number"
@@ -11994,6 +12182,8 @@
               "$ref": "#/$defs/-HAnimJointMFNode"
             },
             "@loa": {
+              "maximum": 4,
+              "minimum": -1,
               "default": -1,
               "$comment": "SFInt32 inputOutput",
               "type": "integer"
@@ -12041,6 +12231,7 @@
               "items": false
             },
             "@scale": {
+              "exclusiveMinimum": 0,
               "$comment": "SFVec3f inputOutput",
               "type": "array",
               "minItems": 3,
@@ -12458,6 +12649,7 @@
               "items": false
             },
             "@scale": {
+              "exclusiveMinimum": 0,
               "$comment": "SFVec3f inputOutput",
               "type": "array",
               "minItems": 3,
@@ -12626,11 +12818,13 @@
               "type": "boolean"
             },
             "@endFrame": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFInt32 inputOutput",
               "type": "integer"
             },
             "@frameDuration": {
+              "exclusiveMinimum": 0,
               "default": 0.1,
               "$comment": "SFTime inputOutput",
               "type": "number"
@@ -12641,6 +12835,7 @@
               "type": "integer"
             },
             "@frameIndex": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFInt32 inputOutput",
               "type": "integer"
@@ -12650,6 +12845,8 @@
               "type": "string"
             },
             "@loa": {
+              "maximum": 4,
+              "minimum": -1,
               "default": -1,
               "$comment": "SFInt32 inputOutput",
               "type": "integer"
@@ -12667,6 +12864,7 @@
               "type": "string"
             },
             "@startFrame": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFInt32 inputOutput",
               "type": "integer"
@@ -12788,6 +12986,7 @@
               "$ref": "#/$defs/-HAnimDisplacerMFNode"
             },
             "@mass": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -13231,6 +13430,7 @@
               "items": false
             },
             "@scale": {
+              "exclusiveMinimum": 0,
               "$comment": "SFVec3f inputOutput",
               "type": "array",
               "minItems": 3,
@@ -13346,11 +13546,13 @@
               "$ref": "#/$defs/IS"
             },
             "@autoRefresh": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFTime inputOutput",
               "type": "number"
             },
             "@autoRefreshTimeLimit": {
+              "minimum": 0,
               "default": 3600,
               "$comment": "SFTime inputOutput",
               "type": "number"
@@ -13444,11 +13646,13 @@
               "$ref": "#/$defs/IS"
             },
             "@autoRefresh": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFTime inputOutput",
               "type": "number"
             },
             "@autoRefreshTimeLimit": {
+              "minimum": 0,
               "default": 3600,
               "$comment": "SFTime inputOutput",
               "type": "number"
@@ -13552,11 +13756,13 @@
               "$ref": "#/$defs/IS"
             },
             "@autoRefresh": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFTime inputOutput",
               "type": "number"
             },
             "@autoRefreshTimeLimit": {
+              "minimum": 0,
               "default": 3600,
               "$comment": "SFTime inputOutput",
               "type": "number"
@@ -13705,6 +13911,7 @@
               }
             },
             "@creaseAngle": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFFloat initializeOnly",
               "type": "number"
@@ -14367,11 +14574,13 @@
               "$ref": "#/$defs/IS"
             },
             "@autoRefresh": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFTime inputOutput",
               "type": "number"
             },
             "@autoRefreshTimeLimit": {
+              "minimum": 0,
               "default": 3600,
               "$comment": "SFTime inputOutput",
               "type": "number"
@@ -14680,6 +14889,7 @@
               "type": "number"
             },
             "@dimensions": {
+              "exclusiveMinimum": 0,
               "$comment": "SFVec3f inputOutput",
               "type": "array",
               "minItems": 3,
@@ -14700,6 +14910,7 @@
               "$ref": "#/$defs/-X3DVolumeRenderStyleNodeMFNode"
             },
             "@surfaceTolerance": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -14856,6 +15067,31 @@
             "IS": {
               "$ref": "#/$defs/IS"
             },
+            "@bboxCenter": {
+              "$comment": "SFVec3f initializeOnly",
+              "type": "array",
+              "minItems": 3,
+              "maxItems": 3,
+              "items": {
+                "default": 0,
+                "type": "number"
+              }
+            },
+            "@bboxSize": {
+              "$comment": "SFVec3f initializeOnly",
+              "type": "array",
+              "minItems": 3,
+              "maxItems": 3,
+              "items": {
+                "default": -1,
+                "type": "number"
+              }
+            },
+            "@bboxDisplay": {
+              "default": false,
+              "$comment": "SFBool inputOutput",
+              "type": "boolean"
+            },
             "-children": {
               "$ref": "#/$defs/-X3DChildNodeMFNode"
             },
@@ -14960,6 +15196,7 @@
               "$ref": "#/$defs/IS"
             },
             "@activeLayer": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFInt32 inputOutput",
               "type": "integer"
@@ -15309,6 +15546,31 @@
             "IS": {
               "$ref": "#/$defs/IS"
             },
+            "@bboxCenter": {
+              "$comment": "SFVec3f initializeOnly",
+              "type": "array",
+              "minItems": 3,
+              "maxItems": 3,
+              "items": {
+                "default": 0,
+                "type": "number"
+              }
+            },
+            "@bboxSize": {
+              "$comment": "SFVec3f initializeOnly",
+              "type": "array",
+              "minItems": 3,
+              "maxItems": 3,
+              "items": {
+                "default": -1,
+                "type": "number"
+              }
+            },
+            "@bboxDisplay": {
+              "default": false,
+              "$comment": "SFBool inputOutput",
+              "type": "boolean"
+            },
             "-children": {
               "$ref": "#/$defs/-X3DChildNodeMFNode"
             },
@@ -15570,6 +15832,7 @@
               "type": "boolean"
             },
             "@linetype": {
+              "minimum": 0,
               "enum": [
                 1,
                 2,
@@ -15774,6 +16037,7 @@
               "type": "number"
             },
             "@interauralDistance": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -15921,6 +16185,7 @@
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
             "@timeOut": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFTime inputOutput",
               "type": "number"
@@ -15990,6 +16255,8 @@
               "$ref": "#/$defs/IS"
             },
             "@color": {
+              "maximum": 1,
+              "minimum": 0,
               "$comment": "SFColor inputOutput",
               "type": "array",
               "minItems": 3,
@@ -16019,6 +16286,7 @@
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
             "@visibilityRange": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -16207,6 +16475,8 @@
               "$ref": "#/$defs/IS"
             },
             "@ambientIntensity": {
+              "maximum": 1,
+              "minimum": 0,
               "default": 0.2,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -16219,6 +16489,8 @@
               "type": "string"
             },
             "@diffuseColor": {
+              "maximum": 1,
+              "minimum": 0,
               "$comment": "SFColor inputOutput",
               "type": "array",
               "minItems": 3,
@@ -16238,6 +16510,8 @@
               "type": "string"
             },
             "@emissiveColor": {
+              "maximum": 1,
+              "minimum": 0,
               "$comment": "SFColor inputOutput",
               "type": "array",
               "minItems": 3,
@@ -16260,6 +16534,7 @@
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
             "@normalScale": {
+              "minimum": 0,
               "default": 1,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -16272,6 +16547,8 @@
               "type": "string"
             },
             "@occlusionStrength": {
+              "maximum": 1,
+              "minimum": 0,
               "default": 1,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -16284,6 +16561,8 @@
               "type": "string"
             },
             "@shininess": {
+              "maximum": 1,
+              "minimum": 0,
               "default": 0.2,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -16296,6 +16575,8 @@
               "type": "string"
             },
             "@specularColor": {
+              "maximum": 1,
+              "minimum": 0,
               "$comment": "SFColor inputOutput",
               "type": "array",
               "minItems": 3,
@@ -16315,6 +16596,8 @@
               "type": "string"
             },
             "@transparency": {
+              "maximum": 1,
+              "minimum": 0,
               "default": 0,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -16387,11 +16670,8 @@
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
             "@name": {
-              "$comment": "xs:NMTOKEN initializeOnly",
-              "type": "array",
-              "items": {
-                "type": "number"
-              }
+              "$comment": "SFString initializeOnly",
+              "type": "string"
             },
             "@value": {
               "$comment": "MFMatrix3f inputOutput",
@@ -16468,11 +16748,8 @@
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
             "@name": {
-              "$comment": "xs:NMTOKEN initializeOnly",
-              "type": "array",
-              "items": {
-                "type": "number"
-              }
+              "$comment": "SFString initializeOnly",
+              "type": "string"
             },
             "@value": {
               "$comment": "MFMatrix4f inputOutput",
@@ -17180,6 +17457,8 @@
               "$ref": "#/$defs/-RigidBodySFNode"
             },
             "@enabledAxes": {
+              "maximum": 3,
+              "minimum": 0,
               "default": 1,
               "$comment": "SFInt32 inputOutput",
               "type": "integer"
@@ -17364,11 +17643,13 @@
               "$ref": "#/$defs/IS"
             },
             "@autoRefresh": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFTime inputOutput",
               "type": "number"
             },
             "@autoRefreshTimeLimit": {
+              "minimum": 0,
               "default": 3600,
               "$comment": "SFTime inputOutput",
               "type": "number"
@@ -17406,6 +17687,7 @@
               "type": "number"
             },
             "@pitch": {
+              "exclusiveMinimum": 0,
               "default": 1,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -17517,11 +17799,15 @@
               "$ref": "#/$defs/IS"
             },
             "@alpha": {
+              "maximum": 1,
+              "minimum": 0,
               "default": 1,
               "$comment": "SFFloat inputOutput",
               "type": "number"
             },
             "@color": {
+              "maximum": 1,
+              "minimum": 0,
               "$comment": "SFColor inputOutput",
               "type": "array",
               "minItems": 3,
@@ -17856,11 +18142,13 @@
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
             "@speed": {
+              "minimum": 0,
               "default": 1,
               "$comment": "SFFloat inputOutput",
               "type": "number"
             },
             "@transitionTime": {
+              "minimum": 0,
               "default": 1,
               "$comment": "SFTime inputOutput",
               "type": "number"
@@ -17921,6 +18209,7 @@
               }
             },
             "@visibilityLimit": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -18167,6 +18456,7 @@
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
             "@order": {
+              "minimum": 2,
               "default": 3,
               "$comment": "SFInt32 initializeOnly",
               "type": "integer"
@@ -18272,6 +18562,7 @@
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
             "@order": {
+              "minimum": 2,
               "default": 3,
               "$comment": "SFInt32 initializeOnly",
               "type": "integer"
@@ -18367,6 +18658,7 @@
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
             "@order": {
+              "minimum": 2,
               "default": 3,
               "$comment": "SFInt32 inputOutput",
               "type": "integer"
@@ -18462,6 +18754,7 @@
               "type": "boolean"
             },
             "@uDimension": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFInt32 initializeOnly",
               "type": "integer"
@@ -18474,6 +18767,7 @@
               }
             },
             "@uOrder": {
+              "minimum": 2,
               "default": 3,
               "$comment": "SFInt32 initializeOnly",
               "type": "integer"
@@ -18489,6 +18783,7 @@
               "type": "boolean"
             },
             "@vDimension": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFInt32 initializeOnly",
               "type": "integer"
@@ -18501,6 +18796,7 @@
               }
             },
             "@vOrder": {
+              "minimum": 2,
               "default": 3,
               "$comment": "SFInt32 initializeOnly",
               "type": "integer"
@@ -18596,6 +18892,7 @@
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
             "@order": {
+              "minimum": 2,
               "default": 3,
               "$comment": "SFInt32 inputOutput",
               "type": "integer"
@@ -18703,6 +19000,7 @@
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
             "@tessellationScale": {
+              "exclusiveMinimum": 0,
               "default": 1,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -18783,6 +19081,7 @@
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
             "@uDimension": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFInt32 initializeOnly",
               "type": "integer"
@@ -18795,11 +19094,13 @@
               }
             },
             "@uOrder": {
+              "minimum": 2,
               "default": 3,
               "$comment": "SFInt32 initializeOnly",
               "type": "integer"
             },
             "@vDimension": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFInt32 initializeOnly",
               "type": "integer"
@@ -18812,6 +19113,7 @@
               }
             },
             "@vOrder": {
+              "minimum": 2,
               "default": 3,
               "$comment": "SFInt32 initializeOnly",
               "type": "integer"
@@ -19065,6 +19367,7 @@
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
             "@uDimension": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFInt32 initializeOnly",
               "type": "integer"
@@ -19077,11 +19380,13 @@
               }
             },
             "@uOrder": {
+              "minimum": 2,
               "default": 3,
               "$comment": "SFInt32 initializeOnly",
               "type": "integer"
             },
             "@vDimension": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFInt32 initializeOnly",
               "type": "integer"
@@ -19094,6 +19399,7 @@
               }
             },
             "@vOrder": {
+              "minimum": 2,
               "default": 3,
               "$comment": "SFInt32 initializeOnly",
               "type": "integer"
@@ -19193,6 +19499,7 @@
               "type": "boolean"
             },
             "@uDimension": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFInt32 initializeOnly",
               "type": "integer"
@@ -19205,6 +19512,7 @@
               }
             },
             "@uOrder": {
+              "minimum": 2,
               "default": 3,
               "$comment": "SFInt32 initializeOnly",
               "type": "integer"
@@ -19220,6 +19528,7 @@
               "type": "boolean"
             },
             "@vDimension": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFInt32 initializeOnly",
               "type": "integer"
@@ -19232,6 +19541,7 @@
               }
             },
             "@vOrder": {
+              "minimum": 2,
               "default": 3,
               "$comment": "SFInt32 initializeOnly",
               "type": "integer"
@@ -19389,6 +19699,7 @@
               "$ref": "#/$defs/IS"
             },
             "@duration": {
+              "minimum": 0,
               "default": 1,
               "$comment": "SFTime initializeOnly",
               "type": "number"
@@ -19564,11 +19875,14 @@
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
             "@order": {
+              "maximum": 5,
+              "minimum": 0,
               "default": 3,
               "$comment": "SFInt32 initializeOnly",
               "type": "integer"
             },
             "@tau": {
+              "minimum": 0,
               "default": 0.3,
               "$comment": "SFTime inputOutput",
               "type": "number"
@@ -19909,6 +20223,7 @@
               "type": "string"
             },
             "@detune": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -19919,6 +20234,7 @@
               "type": "boolean"
             },
             "@frequency": {
+              "minimum": 0,
               "default": 440,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -20019,11 +20335,13 @@
               "$ref": "#/$defs/IS"
             },
             "@autoRefresh": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFTime inputOutput",
               "type": "number"
             },
             "@autoRefreshTimeLimit": {
+              "minimum": 0,
               "default": 3600,
               "$comment": "SFTime inputOutput",
               "type": "number"
@@ -20213,11 +20531,14 @@
               "type": "string"
             },
             "@lifetimeVariation": {
+              "maximum": 1,
+              "minimum": 0,
               "default": 0.25,
               "$comment": "SFFloat inputOutput",
               "type": "number"
             },
             "@maxParticles": {
+              "minimum": 0,
               "default": 200,
               "$comment": "SFInt32 inputOutput",
               "type": "integer"
@@ -20226,11 +20547,13 @@
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
             "@particleLifetime": {
+              "minimum": 0,
               "default": 5,
               "$comment": "SFFloat inputOutput",
               "type": "number"
             },
             "@particleSize": {
+              "minimum": 0,
               "$comment": "SFVec2f inputOutput",
               "type": "array",
               "minItems": 2,
@@ -20430,6 +20753,8 @@
               "$ref": "#/$defs/IS"
             },
             "@baseColor": {
+              "maximum": 1,
+              "minimum": 0,
               "$comment": "SFColor inputOutput",
               "type": "array",
               "minItems": 3,
@@ -20449,6 +20774,8 @@
               "type": "string"
             },
             "@emissiveColor": {
+              "maximum": 1,
+              "minimum": 0,
               "$comment": "SFColor inputOutput",
               "type": "array",
               "minItems": 3,
@@ -20471,6 +20798,8 @@
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
             "@metallic": {
+              "maximum": 1,
+              "minimum": 0,
               "default": 1,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -20483,6 +20812,7 @@
               "type": "string"
             },
             "@normalScale": {
+              "minimum": 0,
               "default": 1,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -20495,6 +20825,8 @@
               "type": "string"
             },
             "@occlusionStrength": {
+              "maximum": 1,
+              "minimum": 0,
               "default": 1,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -20507,11 +20839,15 @@
               "type": "string"
             },
             "@roughness": {
+              "maximum": 1,
+              "minimum": 0,
               "default": 1,
               "$comment": "SFFloat inputOutput",
               "type": "number"
             },
             "@transparency": {
+              "maximum": 1,
+              "minimum": 0,
               "default": 0,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -21053,6 +21389,7 @@
               "items": false
             },
             "@mass": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -21076,16 +21413,19 @@
               }
             },
             "@speed": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFFloat inputOutput",
               "type": "number"
             },
             "@surfaceArea": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFFloat inputOutput",
               "type": "number"
             },
             "@variation": {
+              "minimum": 0,
               "default": 0.25,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -21155,11 +21495,14 @@
               "$ref": "#/$defs/IS"
             },
             "@ambientIntensity": {
+              "maximum": 1,
+              "minimum": 0,
               "default": 0,
               "$comment": "SFFloat inputOutput",
               "type": "number"
             },
             "@attenuation": {
+              "minimum": 0,
               "$comment": "SFVec3f inputOutput",
               "type": "array",
               "minItems": 3,
@@ -21184,6 +21527,8 @@
               "items": false
             },
             "@color": {
+              "maximum": 1,
+              "minimum": 0,
               "$comment": "SFColor inputOutput",
               "type": "array",
               "minItems": 3,
@@ -21201,6 +21546,7 @@
               "type": "boolean"
             },
             "@intensity": {
+              "minimum": 0,
               "default": 1,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -21224,11 +21570,14 @@
               "type": "boolean"
             },
             "@radius": {
+              "minimum": 0,
               "default": 100,
               "$comment": "SFFloat inputOutput",
               "type": "number"
             },
             "@shadowIntensity": {
+              "maximum": 1,
+              "minimum": 0,
               "default": 1,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -21476,16 +21825,19 @@
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
             "@pointSizeMaxValue": {
+              "minimum": 0,
               "default": 1,
               "$comment": "SFFloat inputOutput",
               "type": "number"
             },
             "@pointSizeMinValue": {
+              "minimum": 0,
               "default": 1,
               "$comment": "SFFloat inputOutput",
               "type": "number"
             },
             "@pointSizeScaleFactor": {
+              "minimum": 1,
               "default": 1,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -21724,6 +22076,8 @@
               }
             },
             "@direction": {
+              "maximum": 1,
+              "minimum": -1,
               "$comment": "SFVec3f inputOutput",
               "type": "array",
               "minItems": 3,
@@ -21751,6 +22105,7 @@
               "items": false
             },
             "@mass": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -21764,16 +22119,19 @@
               "type": "boolean"
             },
             "@speed": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFFloat inputOutput",
               "type": "number"
             },
             "@surfaceArea": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFFloat inputOutput",
               "type": "number"
             },
             "@variation": {
+              "minimum": 0,
               "default": 0.25,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -21918,6 +22276,7 @@
               "$ref": "#/$defs/IS"
             },
             "@duration": {
+              "minimum": 0,
               "default": 1,
               "$comment": "SFTime initializeOnly",
               "type": "number"
@@ -22010,6 +22369,7 @@
               "$ref": "#/$defs/IS"
             },
             "@duration": {
+              "minimum": 0,
               "default": 1,
               "$comment": "SFTime initializeOnly",
               "type": "number"
@@ -22125,11 +22485,14 @@
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
             "@order": {
+              "maximum": 5,
+              "minimum": 0,
               "default": 3,
               "$comment": "SFInt32 initializeOnly",
               "type": "integer"
             },
             "@tau": {
+              "minimum": 0,
               "default": 0.3,
               "$comment": "SFTime inputOutput",
               "type": "number"
@@ -22227,11 +22590,14 @@
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
             "@order": {
+              "maximum": 5,
+              "minimum": 0,
               "default": 3,
               "$comment": "SFInt32 initializeOnly",
               "type": "integer"
             },
             "@tau": {
+              "minimum": 0,
               "default": 0.3,
               "$comment": "SFTime inputOutput",
               "type": "number"
@@ -22710,6 +23076,8 @@
               "type": "boolean"
             },
             "@intensityThreshold": {
+              "maximum": 1,
+              "minimum": 0,
               "default": 0,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -22902,6 +23270,7 @@
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
             "@size": {
+              "minimum": 0,
               "$comment": "SFVec3f inputOutput",
               "type": "array",
               "minItems": 3,
@@ -23176,6 +23545,7 @@
               "type": "integer"
             },
             "@readInterval": {
+              "minimum": 0,
               "default": 0.1,
               "$comment": "SFTime inputOutput",
               "type": "number"
@@ -23231,6 +23601,7 @@
               "type": "integer"
             },
             "@writeInterval": {
+              "minimum": 0,
               "default": 1,
               "$comment": "SFTime inputOutput",
               "type": "number"
@@ -23452,6 +23823,7 @@
               "type": "number"
             },
             "@disableTime": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFTime inputOutput",
               "type": "number"
@@ -23746,6 +24118,7 @@
               "type": "number"
             },
             "@disableTime": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFTime inputOutput",
               "type": "number"
@@ -23875,6 +24248,7 @@
               "$ref": "#/$defs/IS"
             },
             "@duration": {
+              "minimum": 0,
               "default": 1,
               "$comment": "SFTime initializeOnly",
               "type": "number"
@@ -23970,11 +24344,14 @@
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
             "@order": {
+              "maximum": 5,
+              "minimum": 0,
               "default": 3,
               "$comment": "SFInt32 initializeOnly",
               "type": "integer"
             },
             "@tau": {
+              "minimum": 0,
               "default": 0.3,
               "$comment": "SFTime inputOutput",
               "type": "number"
@@ -24205,11 +24582,13 @@
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
             "@pointSize": {
+              "exclusiveMinimum": 0,
               "default": 12,
               "$comment": "SFFloat inputOutput",
               "type": "number"
             },
             "@spacing": {
+              "minimum": 0,
               "default": 1,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -24390,11 +24769,13 @@
               "$ref": "#/$defs/IS"
             },
             "@autoRefresh": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFTime inputOutput",
               "type": "number"
             },
             "@autoRefreshTimeLimit": {
+              "minimum": 0,
               "default": 3600,
               "$comment": "SFTime inputOutput",
               "type": "number"
@@ -24524,6 +24905,7 @@
               }
             },
             "@dimensions": {
+              "exclusiveMinimum": 0,
               "$comment": "SFVec3f inputOutput",
               "type": "array",
               "minItems": 3,
@@ -24734,11 +25116,13 @@
               "$ref": "#/$defs/IS"
             },
             "@autoRefresh": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFTime inputOutput",
               "type": "number"
             },
             "@autoRefreshTimeLimit": {
+              "minimum": 0,
               "default": 3600,
               "$comment": "SFTime inputOutput",
               "type": "number"
@@ -24859,11 +25243,13 @@
               "$ref": "#/$defs/IS"
             },
             "@autoRefresh": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFTime inputOutput",
               "type": "number"
             },
             "@autoRefreshTimeLimit": {
+              "minimum": 0,
               "default": 3600,
               "$comment": "SFTime inputOutput",
               "type": "number"
@@ -25193,6 +25579,7 @@
               "type": "integer"
             },
             "@readInterval": {
+              "minimum": 0,
               "default": 0.1,
               "$comment": "SFTime inputOutput",
               "type": "number"
@@ -25233,6 +25620,7 @@
               "type": "integer"
             },
             "@writeInterval": {
+              "minimum": 0,
               "default": 1,
               "$comment": "SFTime inputOutput",
               "type": "number"
@@ -25310,16 +25698,21 @@
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
             "@silhouetteBoundaryOpacity": {
+              "maximum": 1,
+              "minimum": 0,
               "default": 0,
               "$comment": "SFFloat inputOutput",
               "type": "number"
             },
             "@silhouetteRetainedOpacity": {
+              "maximum": 1,
+              "minimum": 0,
               "default": 1,
               "$comment": "SFFloat inputOutput",
               "type": "number"
             },
             "@silhouetteSharpness": {
+              "minimum": 0,
               "default": 0.5,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -25703,6 +26096,8 @@
               "type": "boolean"
             },
             "@intensity": {
+              "maximum": 1,
+              "minimum": 0,
               "default": 1,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -25718,11 +26113,13 @@
               }
             },
             "@maxBack": {
+              "minimum": 0,
               "default": 10,
               "$comment": "SFFloat inputOutput",
               "type": "number"
             },
             "@maxFront": {
+              "minimum": 0,
               "default": 10,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -25731,16 +26128,20 @@
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
             "@minBack": {
+              "minimum": 0,
               "default": 1,
               "$comment": "SFFloat inputOutput",
               "type": "number"
             },
             "@minFront": {
+              "minimum": 0,
               "default": 1,
               "$comment": "SFFloat inputOutput",
               "type": "number"
             },
             "@priority": {
+              "maximum": 1,
+              "minimum": 0,
               "default": 0,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -25818,11 +26219,15 @@
               "$ref": "#/$defs/-Analyser-AudioClip-AudioDestination-BiquadFilter-BufferAudioSource-ChannelMerger-ChannelSelector-ChannelSplitter-Convolver-Delay-DynamicsCompressor-Gain-ListenerPointSource-MicrophoneSource-MovieTexture-OscillatorSource-Sound-SpatialSound-StreamAudioDestination-StreamAudioSource-WaveShaperMFNode"
             },
             "@coneInnerAngle": {
+              "maximum": 6.2832,
+              "minimum": 0,
               "default": 6.2832,
               "$comment": "SFFloat inputOutput",
               "type": "number"
             },
             "@coneOuterAngle": {
+              "maximum": 6.2832,
+              "minimum": 0,
               "default": 6.2832,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -25888,6 +26293,8 @@
               "type": "number"
             },
             "@intensity": {
+              "maximum": 1,
+              "minimum": 0,
               "default": 1,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -25903,6 +26310,7 @@
               }
             },
             "@maxDistance": {
+              "minimum": 0,
               "default": 10000,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -25911,16 +26319,20 @@
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
             "@priority": {
+              "maximum": 1,
+              "minimum": 0,
               "default": 0,
               "$comment": "SFFloat inputOutput",
               "type": "number"
             },
             "@referenceDistance": {
+              "minimum": 0,
               "default": 1,
               "$comment": "SFFloat inputOutput",
               "type": "number"
             },
             "@rolloffFactor": {
+              "minimum": 0,
               "default": 1,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -25998,6 +26410,7 @@
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
             "@radius": {
+              "exclusiveMinimum": 0,
               "default": 1,
               "$comment": "SFFloat initializeOnly",
               "type": "number"
@@ -26476,11 +26889,14 @@
               "$ref": "#/$defs/IS"
             },
             "@ambientIntensity": {
+              "maximum": 1,
+              "minimum": 0,
               "default": 0,
               "$comment": "SFFloat inputOutput",
               "type": "number"
             },
             "@attenuation": {
+              "minimum": 0,
               "$comment": "SFVec3f inputOutput",
               "type": "array",
               "minItems": 3,
@@ -26505,11 +26921,15 @@
               "items": false
             },
             "@beamWidth": {
+              "maximum": 1.570796,
+              "exclusiveMinimum": 0,
               "default": 0.589049,
               "$comment": "SFFloat inputOutput",
               "type": "number"
             },
             "@color": {
+              "maximum": 1,
+              "minimum": 0,
               "$comment": "SFColor inputOutput",
               "type": "array",
               "minItems": 3,
@@ -26522,6 +26942,8 @@
               }
             },
             "@cutOffAngle": {
+              "maximum": 1.570796,
+              "exclusiveMinimum": 0,
               "default": 1.570796,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -26553,6 +26975,7 @@
               "type": "boolean"
             },
             "@intensity": {
+              "minimum": 0,
               "default": 1,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -26576,11 +26999,14 @@
               "type": "boolean"
             },
             "@radius": {
+              "minimum": 0,
               "default": 100,
               "$comment": "SFFloat inputOutput",
               "type": "number"
             },
             "@shadowIntensity": {
+              "maximum": 1,
+              "minimum": 0,
               "default": 1,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -27152,6 +27578,7 @@
               "$ref": "#/$defs/IS"
             },
             "@mass": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -27165,6 +27592,7 @@
               "type": "boolean"
             },
             "@speed": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -27173,11 +27601,13 @@
               "$ref": "#/$defs/-X3DGeometryNodeSFNode"
             },
             "@surfaceArea": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFFloat inputOutput",
               "type": "number"
             },
             "@variation": {
+              "minimum": 0,
               "default": 0.25,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -27280,6 +27710,7 @@
               "type": "boolean"
             },
             "@whichChoice": {
+              "minimum": -1,
               "default": -1,
               "$comment": "SFInt32 inputOutput",
               "type": "integer"
@@ -27349,6 +27780,7 @@
               "$ref": "#/$defs/IS"
             },
             "@duration": {
+              "minimum": 0,
               "default": 1,
               "$comment": "SFTime initializeOnly",
               "type": "number"
@@ -27456,11 +27888,14 @@
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
             "@order": {
+              "maximum": 5,
+              "minimum": 0,
               "default": 3,
               "$comment": "SFInt32 initializeOnly",
               "type": "integer"
             },
             "@tau": {
+              "minimum": 0,
               "default": 0.3,
               "$comment": "SFTime inputOutput",
               "type": "number"
@@ -27546,6 +27981,7 @@
               }
             },
             "@maxExtent": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -27690,6 +28126,8 @@
               "$ref": "#/$defs/-X3DTexture2DNode-MultiTextureSFNode"
             },
             "@transparency": {
+              "maximum": 1,
+              "minimum": 0,
               "default": 0,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -28092,11 +28530,15 @@
               "$ref": "#/$defs/IS"
             },
             "@ambientIntensity": {
+              "maximum": 1,
+              "minimum": 0,
               "default": 0,
               "$comment": "SFFloat inputOutput",
               "type": "number"
             },
             "@color": {
+              "maximum": 1,
+              "minimum": 0,
               "$comment": "SFColor inputOutput",
               "type": "array",
               "minItems": 3,
@@ -28134,11 +28576,14 @@
               "items": false
             },
             "@farDistance": {
+              "minimum": -1,
               "default": -1,
               "$comment": "SFFloat inputOutput",
               "type": "number"
             },
             "@fieldOfView": {
+              "maximum": 3.1416,
+              "minimum": 0,
               "default": 0.7854,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -28149,6 +28594,7 @@
               "type": "boolean"
             },
             "@intensity": {
+              "minimum": 0,
               "default": 1,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -28167,6 +28613,7 @@
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
             "@nearDistance": {
+              "minimum": -1,
               "default": -1,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -28177,6 +28624,8 @@
               "type": "boolean"
             },
             "@shadowIntensity": {
+              "maximum": 1,
+              "minimum": 0,
               "default": 1,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -28275,11 +28724,15 @@
               "$ref": "#/$defs/IS"
             },
             "@ambientIntensity": {
+              "maximum": 1,
+              "minimum": 0,
               "default": 0,
               "$comment": "SFFloat inputOutput",
               "type": "number"
             },
             "@color": {
+              "maximum": 1,
+              "minimum": 0,
               "$comment": "SFColor inputOutput",
               "type": "array",
               "minItems": 3,
@@ -28317,6 +28770,7 @@
               "items": false
             },
             "@farDistance": {
+              "minimum": -1,
               "default": -1,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -28352,6 +28806,7 @@
               "type": "boolean"
             },
             "@intensity": {
+              "minimum": 0,
               "default": 1,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -28370,6 +28825,7 @@
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
             "@nearDistance": {
+              "minimum": -1,
               "default": -1,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -28380,6 +28836,8 @@
               "type": "boolean"
             },
             "@shadowIntensity": {
+              "maximum": 1,
+              "minimum": 0,
               "default": 1,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -28457,11 +28915,14 @@
               "$ref": "#/$defs/IS"
             },
             "@anisotropicDegree": {
+              "minimum": 1,
               "default": 1,
               "$comment": "SFFloat inputOutput",
               "type": "number"
             },
             "@borderColor": {
+              "maximum": 1,
+              "minimum": 0,
               "$comment": "SFColorRGBA inputOutput",
               "type": "array",
               "minItems": 4,
@@ -28474,6 +28935,7 @@
               }
             },
             "@borderWidth": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFInt32 inputOutput",
               "type": "integer"
@@ -28564,6 +29026,8 @@
               "type": "string"
             },
             "@texturePriority": {
+              "maximum": 1,
+              "minimum": 0,
               "default": 0,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -29007,6 +29471,7 @@
               "$ref": "#/$defs/IS"
             },
             "@cycleInterval": {
+              "minimum": 0,
               "default": 1,
               "$comment": "SFTime inputOutput",
               "type": "number"
@@ -29180,6 +29645,8 @@
               "$ref": "#/$defs/IS"
             },
             "@coolColor": {
+              "maximum": 1,
+              "minimum": 0,
               "$comment": "SFColorRGBA inputOutput",
               "type": "array",
               "minItems": 4,
@@ -29224,6 +29691,8 @@
               "$ref": "#/$defs/-X3DTexture3DNodeSFNode"
             },
             "@warmColor": {
+              "maximum": 1,
+              "minimum": 0,
               "$comment": "SFColorRGBA inputOutput",
               "type": "array",
               "minItems": 4,
@@ -29596,6 +30065,7 @@
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
             "@size": {
+              "minimum": 0,
               "$comment": "SFVec3f inputOutput",
               "type": "array",
               "minItems": 3,
@@ -29753,6 +30223,7 @@
               "type": "integer"
             },
             "@frequency": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFInt32 inputOutput",
               "type": "integer"
@@ -29868,6 +30339,7 @@
               "type": "integer"
             },
             "@readInterval": {
+              "minimum": 0,
               "default": 0.1,
               "$comment": "SFTime inputOutput",
               "type": "number"
@@ -29913,6 +30385,7 @@
               "type": "integer"
             },
             "@writeInterval": {
+              "minimum": 0,
               "default": 1,
               "$comment": "SFTime inputOutput",
               "type": "number"
@@ -30393,16 +30866,22 @@
               "$ref": "#/$defs/IS"
             },
             "@ambientIntensity": {
+              "maximum": 1,
+              "minimum": 0,
               "default": 0.2,
               "$comment": "SFFloat inputOutput",
               "type": "number"
             },
             "@backAmbientIntensity": {
+              "maximum": 1,
+              "minimum": 0,
               "default": 0.2,
               "$comment": "SFFloat inputOutput",
               "type": "number"
             },
             "@backDiffuseColor": {
+              "maximum": 1,
+              "minimum": 0,
               "$comment": "SFColor inputOutput",
               "type": "array",
               "minItems": 3,
@@ -30415,6 +30894,8 @@
               }
             },
             "@backEmissiveColor": {
+              "maximum": 1,
+              "minimum": 0,
               "$comment": "SFColor inputOutput",
               "type": "array",
               "minItems": 3,
@@ -30427,11 +30908,15 @@
               }
             },
             "@backShininess": {
+              "maximum": 1,
+              "minimum": 0,
               "default": 0.2,
               "$comment": "SFFloat inputOutput",
               "type": "number"
             },
             "@backSpecularColor": {
+              "maximum": 1,
+              "minimum": 0,
               "$comment": "SFColor inputOutput",
               "type": "array",
               "minItems": 3,
@@ -30444,11 +30929,15 @@
               }
             },
             "@backTransparency": {
+              "maximum": 1,
+              "minimum": 0,
               "default": 0,
               "$comment": "SFFloat inputOutput",
               "type": "number"
             },
             "@diffuseColor": {
+              "maximum": 1,
+              "minimum": 0,
               "$comment": "SFColor inputOutput",
               "type": "array",
               "minItems": 3,
@@ -30461,6 +30950,8 @@
               }
             },
             "@emissiveColor": {
+              "maximum": 1,
+              "minimum": 0,
               "$comment": "SFColor inputOutput",
               "type": "array",
               "minItems": 3,
@@ -30481,11 +30972,15 @@
               "type": "boolean"
             },
             "@shininess": {
+              "maximum": 1,
+              "minimum": 0,
               "default": 0.2,
               "$comment": "SFFloat inputOutput",
               "type": "number"
             },
             "@specularColor": {
+              "maximum": 1,
+              "minimum": 0,
               "$comment": "SFColor inputOutput",
               "type": "array",
               "minItems": 3,
@@ -30498,6 +30993,8 @@
               }
             },
             "@transparency": {
+              "maximum": 1,
+              "minimum": 0,
               "default": 0,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -30647,21 +31144,29 @@
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
             "@stop1Bounce": {
+              "maximum": 1,
+              "minimum": 0,
               "default": 0,
               "$comment": "SFFloat inputOutput",
               "type": "number"
             },
             "@stop1ErrorCorrection": {
+              "maximum": 1,
+              "minimum": 0,
               "default": 0.8,
               "$comment": "SFFloat inputOutput",
               "type": "number"
             },
             "@stop2Bounce": {
+              "maximum": 1,
+              "minimum": 0,
               "default": 0,
               "$comment": "SFFloat inputOutput",
               "type": "number"
             },
             "@stop2ErrorCorrection": {
+              "maximum": 1,
+              "minimum": 0,
               "default": 0.8,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -30731,6 +31236,8 @@
               "$ref": "#/$defs/IS"
             },
             "@emissiveColor": {
+              "maximum": 1,
+              "minimum": 0,
               "$comment": "SFColor inputOutput",
               "type": "array",
               "minItems": 3,
@@ -30753,6 +31260,7 @@
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
             "@normalScale": {
+              "minimum": 0,
               "default": 1,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -30765,6 +31273,8 @@
               "type": "string"
             },
             "@transparency": {
+              "maximum": 1,
+              "minimum": 0,
               "default": 0,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -30853,6 +31363,8 @@
               "type": "number"
             },
             "@fieldOfView": {
+              "exclusiveMaximum": 3.1416,
+              "exclusiveMinimum": 0,
               "default": 0.7854,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -31249,6 +31761,7 @@
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
             "@size": {
+              "minimum": 0,
               "$comment": "SFVec3f inputOutput",
               "type": "array",
               "minItems": 3,
@@ -31349,6 +31862,7 @@
               }
             },
             "@dimensions": {
+              "exclusiveMinimum": 0,
               "$comment": "SFVec3f inputOutput",
               "type": "array",
               "minItems": 3,
@@ -31450,6 +31964,8 @@
               }
             },
             "@direction": {
+              "maximum": 1,
+              "minimum": -1,
               "$comment": "SFVec3f inputOutput",
               "type": "array",
               "minItems": 3,
@@ -31482,6 +31998,7 @@
               "type": "boolean"
             },
             "@mass": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -31495,16 +32012,19 @@
               "type": "boolean"
             },
             "@speed": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFFloat inputOutput",
               "type": "number"
             },
             "@surfaceArea": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFFloat inputOutput",
               "type": "number"
             },
             "@variation": {
+              "minimum": 0,
               "default": 0.25,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -31789,6 +32309,7 @@
               "type": "number"
             },
             "@tailTime": {
+              "minimum": 0,
               "default": 0,
               "$comment": "SFTime inputOutput",
               "type": "number"
@@ -31884,6 +32405,7 @@
               "type": "boolean"
             },
             "@gustiness": {
+              "minimum": 0,
               "default": 0.1,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -31892,11 +32414,14 @@
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
             "@speed": {
+              "minimum": 0,
               "default": 0.1,
               "$comment": "SFFloat inputOutput",
               "type": "number"
             },
             "@turbulence": {
+              "maximum": 1,
+              "minimum": 0,
               "default": 0,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -32017,6 +32542,8 @@
             "type": "string"
           },
           "@level": {
+            "maximum": 5,
+            "minimum": 1,
             "default": 1,
             "$comment": "SFInt32 inputOutput",
             "type": "integer"
@@ -32145,6 +32672,14 @@
       "additionalProperties": false
     },
     "ExternProtoDeclare": {
+      "x-orderOf": {
+        "type": "object",
+        "properties": {
+          "@field": {
+            "$comment": "x-orderOf-StatementContentModel"
+          }
+        }
+      },
       "type": "object",
       "properties": {
         "-children": {
@@ -32326,6 +32861,26 @@
       }
     },
     "head": {
+      "x-orderOf": {
+        "type": "object",
+        "properties": {
+          "@component": {
+            "$comment": "x-orderOf-StatementContentModel",
+            "minOccurs": "0",
+            "maxOccurs": "unbounded"
+          },
+          "@unit": {
+            "$comment": "x-orderOf-StatementContentModel",
+            "minOccurs": "0",
+            "maxOccurs": "unbounded"
+          },
+          "@meta": {
+            "$comment": "x-orderOf-StatementContentModel",
+            "minOccurs": "0",
+            "maxOccurs": "unbounded"
+          }
+        }
+      },
       "type": "object",
       "properties": {
         "-children": {
@@ -32393,6 +32948,14 @@
       "additionalProperties": false
     },
     "IS": {
+      "x-orderOf": {
+        "type": "object",
+        "properties": {
+          "@connect": {
+            "$comment": "x-orderOf-StatementContentModel"
+          }
+        }
+      },
       "type": "object",
       "properties": {
         "-children": {
@@ -32525,6 +33088,15 @@
       }
     },
     "ProtoBody": {
+      "x-orderOf": {
+        "type": "object",
+        "properties": {
+          "@LayerSet": {
+            "$comment": "x-orderOf-StatementContentModel",
+            "minOccurs": "0"
+          }
+        }
+      },
       "type": "object",
       "properties": {
         "-children": {
@@ -32546,6 +33118,18 @@
       "additionalProperties": false
     },
     "ProtoDeclare": {
+      "x-orderOf": {
+        "type": "object",
+        "properties": {
+          "@ProtoInterface": {
+            "$comment": "x-orderOf-StatementContentModel",
+            "minOccurs": "0"
+          },
+          "@ProtoBody": {
+            "$comment": "x-orderOf-StatementContentModel"
+          }
+        }
+      },
       "type": "object",
       "properties": {
         "-children": {
@@ -32588,6 +33172,16 @@
       "additionalProperties": false
     },
     "ProtoInterface": {
+      "x-orderOf": {
+        "type": "object",
+        "properties": {
+          "@field": {
+            "$comment": "x-orderOf-StatementContentModel",
+            "minOccurs": "0",
+            "maxOccurs": "unbounded"
+          }
+        }
+      },
       "type": "object",
       "properties": {
         "-children": {
@@ -32655,6 +33249,15 @@
       "additionalProperties": false
     },
     "Scene": {
+      "x-orderOf": {
+        "type": "object",
+        "properties": {
+          "@LayerSet": {
+            "$comment": "x-orderOf-StatementContentModel",
+            "minOccurs": "0"
+          }
+        }
+      },
       "type": "object",
       "properties": {
         "-children": {
@@ -32698,6 +33301,7 @@
             "type": "string"
           },
           "@conversionFactor": {
+            "exclusiveMinimum": 0,
             "default": 1,
             "$comment": "SFDouble inputOutput",
             "type": "number"
@@ -32724,6 +33328,22 @@
       }
     },
     "X3D": {
+      "x-orderOf": {
+        "type": "object",
+        "properties": {
+          "@head": {
+            "$comment": "x-orderOf-StatementContentModel",
+            "minOccurs": "0"
+          },
+          "@Scene": {
+            "$comment": "x-orderOf-StatementContentModel"
+          },
+          "@ds:Signature": {
+            "$comment": "x-orderOf-StatementContentModel",
+            "minOccurs": "0"
+          }
+        }
+      },
       "type": "object",
       "properties": {
         "@xsd:noNamespaceSchemaLocation": {
@@ -33032,8 +33652,14 @@
           "HAnimSite": {
             "$ref": "#/$defs/HAnimSite"
           },
+          "Layer": {
+            "$ref": "#/$defs/Layer"
+          },
           "LayoutGroup": {
             "$ref": "#/$defs/LayoutGroup"
+          },
+          "LayoutLayer": {
+            "$ref": "#/$defs/LayoutLayer"
           },
           "LOD": {
             "$ref": "#/$defs/LOD"
@@ -33954,8 +34580,14 @@
         "HAnimSite": {
           "$ref": "#/$defs/HAnimSite"
         },
+        "Layer": {
+          "$ref": "#/$defs/Layer"
+        },
         "LayoutGroup": {
           "$ref": "#/$defs/LayoutGroup"
+        },
+        "LayoutLayer": {
+          "$ref": "#/$defs/LayoutLayer"
         },
         "LOD": {
           "$ref": "#/$defs/LOD"
@@ -34804,8 +35436,14 @@
           "HAnimSite": {
             "$ref": "#/$defs/HAnimSite"
           },
+          "Layer": {
+            "$ref": "#/$defs/Layer"
+          },
           "LayoutGroup": {
             "$ref": "#/$defs/LayoutGroup"
+          },
+          "LayoutLayer": {
+            "$ref": "#/$defs/LayoutLayer"
           },
           "LOD": {
             "$ref": "#/$defs/LOD"
@@ -35271,12 +35909,6 @@
           },
           "TriangleSet2D": {
             "$ref": "#/$defs/TriangleSet2D"
-          },
-          "Layer": {
-            "$ref": "#/$defs/Layer"
-          },
-          "LayoutLayer": {
-            "$ref": "#/$defs/LayoutLayer"
           },
           "CollisionSpace": {
             "$ref": "#/$defs/CollisionSpace"
@@ -35795,8 +36427,14 @@
           "HAnimSite": {
             "$ref": "#/$defs/HAnimSite"
           },
+          "Layer": {
+            "$ref": "#/$defs/Layer"
+          },
           "LayoutGroup": {
             "$ref": "#/$defs/LayoutGroup"
+          },
+          "LayoutLayer": {
+            "$ref": "#/$defs/LayoutLayer"
           },
           "LOD": {
             "$ref": "#/$defs/LOD"
@@ -36424,8 +37062,14 @@
         "HAnimSite": {
           "$ref": "#/$defs/HAnimSite"
         },
+        "Layer": {
+          "$ref": "#/$defs/Layer"
+        },
         "LayoutGroup": {
           "$ref": "#/$defs/LayoutGroup"
+        },
+        "LayoutLayer": {
+          "$ref": "#/$defs/LayoutLayer"
         },
         "LOD": {
           "$ref": "#/$defs/LOD"
@@ -36649,8 +37293,14 @@
           "HAnimSite": {
             "$ref": "#/$defs/HAnimSite"
           },
+          "Layer": {
+            "$ref": "#/$defs/Layer"
+          },
           "LayoutGroup": {
             "$ref": "#/$defs/LayoutGroup"
+          },
+          "LayoutLayer": {
+            "$ref": "#/$defs/LayoutLayer"
           },
           "LOD": {
             "$ref": "#/$defs/LOD"
