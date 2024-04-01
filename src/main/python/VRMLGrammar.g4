@@ -1,43 +1,19 @@
-NCNameStartChar :	[A-Z] | '_' | [a-z] | [#xC0-#xD6] | [#xD8-#xF6] | [#xF8-#x2FF] | [#x370-#x37D] | [#x37F-#x1FFF] | [#x200C-#x200D] | [#x2070-#x218F] | [#x2C00-#x2FEF] | [#x3001-#xD7FF] | [#xF900-#xFDCF] | [#xFDF0-#xFFFD] | [#x10000-#xEFFFF];
-NCNameChar : NCNameStartChar | '-' | '.' | [0-9] | #xB7 | [#x0300-#x036F] | [#x203F-#x2040];
-NCName	: NCNameStartChar (NCNameChar)*;
-NameStartChar : ':' | NCNameStartChar;
-NameChar : NameStartChar | '-' | '.' | [0-9] | #xB7 | [#x0300-#x036F] | [#x203F-#x2040];
+grammar VRMLGrammar;
+
+NCNameStartChar :   ( [A-Z] | '_' | [a-z] | 'À'..'Ö' | 'Ø'..'ö' | 'ø'..'˿' | 'Ͱ'..'ͽ' | 'Ϳ'..'῿' | '‌'..'‍' | '⁰'..'↏' | 'Ⰰ'..'⿯' | '、'..'퟿' | '豈'..'﷏' | 'ﷰ'..'�' );
+NCNameChar : ( NCNameStartChar | '-' | '.' | [0-9] | '·' | '̀'..'ͯ' | '‿'..'⁀' );
+NCName        : NCNameStartChar (NCNameChar)*;
+NameStartChar : ( ':' | [A-Z] | '_' | [a-z] | 'À'..'Ö' | 'Ø'..'ö' | 'ø'..'˿' | 'Ͱ'..'ͽ' | 'Ϳ'..'῿' | '‌'..'‍' | '⁰'..'↏' | 'Ⰰ'..'⿯' | '、'..'퟿' | '豈'..'﷏' | 'ﷰ'..'�' );
+NameChar :     ( NameStartChar | '-' | '.' | [0-9] | '·' | '̀'..'ͯ' | '‿'..'⁀' );
 Name : NameStartChar (NameChar)*;
+NotWhite :  ~(' '|'\t'|'\r'|'\n');
+White :  (' '|'\t'|'\r'|'\n')+;
 xsID : NCName
-xsIDREF : NCName
-xsNMTOKEN : (NameChar)+
-xsNMTOKENS : xsNMTOKEN (#x20 xsNMTOKEN)*
-xsstring : \S+( \S+)*
-SFBool : 'TRUE' | 'FALSE';
-SFColor : SFFloat SFFloat SFFloat;
-SFColorRGBA : SFFloat SFFloat SFFloat SFFloat;
-SFDouble : [+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?);
-SFFloat : [+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?);
-SFImage : SFInt32 SFInt32 SFInt32 (SFInt32 | HexSFInt32)*;
-SFInt32
-: DecimalSFInt32
-| HexSFInt32
-| OctalSFInt32
-| BinarySFInt32
-;
-DecimalSFInt32 : ('+' | '-')? [1-9][0-9_]* [lL]?;
-OctalSFInt32 : ('+' | '-')? '0' [0-7][0-7_]* [lL]?;
-HexSFInt32 : ('+' | '-')? '0' [xX] [0-9A-Fa-f][0-9A-Fa-f_]* [lL]?;
-BinarySFInt32 : ('+' | '-')? '0' [bB] [0-1][0-1_]* [lL]?;
-SFMatrix3d : SFDouble SFDouble SFDouble SFDouble SFDouble SFDouble SFDouble SFDouble SFDouble;
-SFMatrix3f : SFFloat SFFloat SFFloat SFFloat SFFloat SFFloat SFFloat SFFloat SFFloat;
-SFMatrix4d : SFDouble SFDouble SFDouble SFDouble SFDouble SFDouble SFDouble SFDouble SFDouble SFDouble SFDouble SFDouble SFDouble SFDouble SFDouble SFDouble;
-SFMatrix4f : SFFloat SFFloat SFFloat SFFloat SFFloat SFFloat SFFloat SFFloat SFFloat SFFloat SFFloat SFFloat SFFloat SFFloat SFFloat SFFloat;
-SFRotation : SFFloatOrDouble SFFloatOrDouble SFFloatOrDouble SFFloatOrDouble;
-SFString : TODO;
-SFTime : SFDouble;
-SFVec2d : SFDouble SFDouble;
-SFVec2f : SFFloat SFFloat;
-SFVec3d : SFDouble SFDouble SFDouble;
-SFVec3f : SFFloat SFFloat SFFloat;
-SFVec4d : SFDouble SFDouble  SFDouble SFDouble;
-SFVec4f : SFFloat SFFloat SFFloat SFFloat;
+;xsIDREF : NCName;
+xsNMTOKEN : (NameChar)+;
+xsNMTOKENS : xsNMTOKEN (' ' xsNMTOKEN)*;
+xsstring : NotWhite+ (White+ NotWhite+)*;
+dEF : ('DEF' xsID){0,1};
 accessTypeChoices : ('initializeOnly'|'inputOnly'|'outputOnly'|'inputOutput');
 acronymChoices : ('CAD'|'HSV'|'JPEG'|'MIDI'|'MIME'|'MF'|'MPEG'|'PNG'|'RGB'|'RURL'|'SAI'|'SF'|'UCS'|'URI'|'URL'|'URN'|'UTF-8');
 alphaModeChoices : ('AUTO'|'OPAQUE'|'MASK'|'BLEND');
@@ -125,406 +101,91 @@ unitIntervalType : SFFloat;
 volumeRenderingWeightFunctionChoices : ('CONSTANT'|'ALPHA1'|'ALPHA2'|'ONE_MINUS_ALPHA1'|'ONE_MINUS_ALPHA2'|'TABLE');
 waveShaperOversampleChoices : ('NONE'|'2X'|'4X');
 x3dVersionChoices : ('3.0'|'3.1'|'3.2'|'3.3'|'4.0');
-MFBool : '[' (SFBool)* ']';
-MFColor : '[' (SFColor)* ']';
-MFColorRGBA : '[' (SFColorRGBA)* ']';
-MFDouble : '[' (SFDouble)* ']';
-MFFloat : '[' (SFFloat)* ']';
-MFImage : '[' (SFImage)* ']';
-MFInt32 : '[' (SFInt32)* ']';
-MFMatrix3d : '[' (SFMatrix3d)* ']';
-MFMatrix3f : '[' (SFMatrix3f)* ']';
-MFMatrix4d : '[' (SFMatrix4d)* ']';
-MFMatrix4f : '[' (SFMatrix4f)* ']';
-MFNode : '[' (SFNode)* ']';
-MFRotation : '[' (SFRotation)* ']';
-MFString : '[' (SFString)* ']';
-MFTime : '[' (SFTime)* ']';
-MFVec2d : '[' (SFVec2d)* ']';
-MFVec2f : '[' (SFVec2f)* ']';
-MFVec3d : '[' (SFVec3d)* ']';
-MFVec3f : '[' (SFVec3f)* ']';
-MFVec4d : '[' (SFVec4d)* ']';
-MFVec4f : '[' (SFVec4f)* ']';
-X3DAppearanceChildNode
-(
-X3DMaterialNode
-|X3DOneSidedMaterialNode
-|Material
-|PhysicalMaterial
-|UnlitMaterial
-|TwoSidedMaterial
-|X3DShaderNode
-|ComposedShader
-|PackagedShader
-|ProgramShader
-|X3DTextureNode
-|X3DEnvironmentTextureNode
-|ComposedCubeMapTexture
-|GeneratedCubeMapTexture
-|ImageCubeMapTexture
-|X3DSingleTextureNode
-|X3DTexture2DNode
-|ImageTexture
-|MovieTexture
-|PixelTexture
-|X3DTexture3DNode
-|ComposedTexture3D
-|ImageTexture3D
-|PixelTexture3D
-|MultiTexture
-|X3DTextureTransformNode
-|X3DSingleTextureTransformNode
-|MultiTextureTransform
-|TextureTransform
-|TextureTransform3D
-|TextureTransformMatrix3D
-|AcousticProperties
-|FillProperties
-|LineProperties
-|PointProperties
+SFBool : (' '|'\t'|'\r'|'\n')*('TRUE'|'FALSE')(' '|'\t'|'\r'|'\n')*;
+MFBool : '[' (' '|'\t'|'\r'|'\n')*(('TRUE'|'FALSE')(' '|'\t'|'\r'|'\n')*[,]{0,1}(' '|'\t'|'\r'|'\n')*)* ']';
+SFColor : (' '|'\t'|'\r'|'\n')*(([+]{0,1}(([0]([.][0-9]*){0,1}|[.][0-9]+)|[1]([.][0]*){0,1})([Ee][+-]{0,1}[0-9]+){0,1})(' '|'\t'|'\r'|'\n')+){2}([+]{0,1}(([0]([.][0-9]*){0,1}|[.][0-9]+)|[1]([.][0]*){0,1})([Ee][+-]{0,1}[0-9]+){0,1})(' '|'\t'|'\r'|'\n')*;
+MFColor : '[' (' '|'\t'|'\r'|'\n')*((([+-]{0,1}(([0]([.][0-9]*){0,1}|[.][0-9]+)|[1]([.][0]*){0,1})([Ee][+-]{0,1}[0-9]+){0,1})(' '|'\t'|'\r'|'\n')+){2}([+-]{0,1}(([0]([.][0-9]*){0,1}|[.][0-9]+)|[1]([.][0]*){0,1})([Ee][+-]{0,1}[0-9]+){0,1})(' '|'\t'|'\r'|'\n')*[,]{0,1}(' '|'\t'|'\r'|'\n')*)* ']';
+SFColorRGBA : (' '|'\t'|'\r'|'\n')*(([+-]{0,1}(([0]([.][0-9]*){0,1}|[.][0-9]+)|[1]([.][0]*){0,1})([Ee][+-]{0,1}[0-9]+){0,1})(' '|'\t'|'\r'|'\n')+){3}([+-]{0,1}(([0]([.][0-9]*){0,1}|[.][0-9]+)|[1]([.][0]*){0,1})([Ee][+-]{0,1}[0-9]+){0,1})(' '|'\t'|'\r'|'\n')*;
+MFColorRGBA : '[' (' '|'\t'|'\r'|'\n')*((([+-]{0,1}(([0]([.][0-9]*){0,1}|[.][0-9]+)|[1]([.][0]*){0,1})([Ee][+-]{0,1}[0-9]+){0,1})(' '|'\t'|'\r'|'\n')+){3}([+-]{0,1}(([0]([.][0-9]*){0,1}|[.][0-9]+)|[1]([.][0]*){0,1})([Ee][+-]{0,1}[0-9]+){0,1})(' '|'\t'|'\r'|'\n')*[,]{0,1}(' '|'\t'|'\r'|'\n')*)* ']';
+SFDouble : (' '|'\t'|'\r'|'\n')*([+-]{0,1}(([0]|[1-9][0-9]*)([.][0-9]*){0,1}|[.][0-9]+)([Ee][+-]{0,1}[0-9]+){0,1})(' '|'\t'|'\r'|'\n')*;
+MFDouble : '[' (' '|'\t'|'\r'|'\n')*(([+-]{0,1}(([0]|[1-9][0-9]*)([.][0-9]*){0,1}|[.][0-9]+)([Ee][+-]{0,1}[0-9]+){0,1})(' '|'\t'|'\r'|'\n')*[,]{0,1}(' '|'\t'|'\r'|'\n')*)* ']';
+SFFloat : (' '|'\t'|'\r'|'\n')*([+-]{0,1}(([0]|[1-9][0-9]*)([.][0-9]*){0,1}|[.][0-9]+)([Ee][+-]{0,1}[0-9]+){0,1})(' '|'\t'|'\r'|'\n')*;
+MFFloat : '[' (' '|'\t'|'\r'|'\n')*(([+-]{0,1}(([0]|[1-9][0-9]*)([.][0-9]*){0,1}|[.][0-9]+)([Ee][+-]{0,1}[0-9]+){0,1})(' '|'\t'|'\r'|'\n')*[,]{0,1}(' '|'\t'|'\r'|'\n')*)* ']';
+SFImage : (' '|'\t'|'\r'|'\n')*([+]{0,1}([0]|[1-9][0-9]*)([Ee][+]{0,1}[0-9]+){0,1}(' '|'\t'|'\r'|'\n')+){2}[+]{0,1}[0-4]((' '|'\t'|'\r'|'\n')+([0][x][0-9a-fA-F]{1,16}|[+]{0,1}([0]|[1-9][0-9]*)([Ee][+]{0,1}[0-9]+){0,1}))*(' '|'\t'|'\r'|'\n')*;
+MFImage : '[' (' '|'\t'|'\r'|'\n')*(([+]{0,1}([0]|[1-9][0-9]*)([Ee][+]{0,1}[0-9]+){0,1}(' '|'\t'|'\r'|'\n')+){2}[+]{0,1}[0-4]((' '|'\t'|'\r'|'\n')+([0][x][0-9a-fA-F]{1,16}|[+]{0,1}([0]|[1-9][0-9]*)([Ee][+]{0,1}[0-9]+){0,1}))*(' '|'\t'|'\r'|'\n')*[,]{0,1}(' '|'\t'|'\r'|'\n')*)* ']';
+SFInt32 : (' '|'\t'|'\r'|'\n')*[+-]{0,1}([0]|[1-9][0-9]*)([Ee][+-]{0,1}[0-9]+){0,1}(' '|'\t'|'\r'|'\n')*;
+MFInt32 : '[' (' '|'\t'|'\r'|'\n')*([+-]{0,1}([0]|[1-9][0-9]*)([Ee][+-]{0,1}[0-9]+){0,1}(' '|'\t'|'\r'|'\n')*[,]{0,1}(' '|'\t'|'\r'|'\n')*)* ']';
+SFMatrix3d : (' '|'\t'|'\r'|'\n')*(([+-]{0,1}(([0]|[1-9][0-9]*)([.][0-9]*){0,1}|[.][0-9]+)([Ee][+-]{0,1}[0-9]+){0,1})(' '|'\t'|'\r'|'\n')+){8}([+-]{0,1}(([0]|[1-9][0-9]*)([.][0-9]*){0,1}|[.][0-9]+)([Ee][+-]{0,1}[0-9]+){0,1})(' '|'\t'|'\r'|'\n')*;
+MFMatrix3d : '[' (' '|'\t'|'\r'|'\n')*((([+-]{0,1}(([0]|[1-9][0-9]*)([.][0-9]*){0,1}|[.][0-9]+)([Ee][+-]{0,1}[0-9]+){0,1})(' '|'\t'|'\r'|'\n')+){8}([+-]{0,1}(([0]|[1-9][0-9]*)([.][0-9]*){0,1}|[.][0-9]+)([Ee][+-]{0,1}[0-9]+){0,1})(' '|'\t'|'\r'|'\n')*[,]{0,1}(' '|'\t'|'\r'|'\n')*)* ']';
+SFMatrix3f : (' '|'\t'|'\r'|'\n')*(([+-]{0,1}(([0]|[1-9][0-9]*)([.][0-9]*){0,1}|[.][0-9]+)([Ee][+-]{0,1}[0-9]+){0,1})(' '|'\t'|'\r'|'\n')+){8}([+-]{0,1}(([0]|[1-9][0-9]*)([.][0-9]*){0,1}|[.][0-9]+)([Ee][+-]{0,1}[0-9]+){0,1})(' '|'\t'|'\r'|'\n')*;
+MFMatrix3f : '[' (' '|'\t'|'\r'|'\n')*((([+-]{0,1}(([0]|[1-9][0-9]*)([.][0-9]*){0,1}|[.][0-9]+)([Ee][+-]{0,1}[0-9]+){0,1})(' '|'\t'|'\r'|'\n')+){8}([+-]{0,1}(([0]|[1-9][0-9]*)([.][0-9]*){0,1}|[.][0-9]+)([Ee][+-]{0,1}[0-9]+){0,1})(' '|'\t'|'\r'|'\n')*[,]{0,1}(' '|'\t'|'\r'|'\n')*)* ']';
+SFMatrix4d : (' '|'\t'|'\r'|'\n')*(([+-]{0,1}(([0]|[1-9][0-9]*)([.][0-9]*){0,1}|[.][0-9]+)([Ee][+-]{0,1}[0-9]+){0,1})(' '|'\t'|'\r'|'\n')+){15}([+-]{0,1}(([0]|[1-9][0-9]*)([.][0-9]*){0,1}|[.][0-9]+)([Ee][+-]{0,1}[0-9]+){0,1})(' '|'\t'|'\r'|'\n')*;
+MFMatrix4d : '[' (' '|'\t'|'\r'|'\n')*((([+-]{0,1}(([0]|[1-9][0-9]*)([.][0-9]*){0,1}|[.][0-9]+)([Ee][+-]{0,1}[0-9]+){0,1})(' '|'\t'|'\r'|'\n')+){15}([+-]{0,1}(([0]|[1-9][0-9]*)([.][0-9]*){0,1}|[.][0-9]+)([Ee][+-]{0,1}[0-9]+){0,1})(' '|'\t'|'\r'|'\n')*[,]{0,1}(' '|'\t'|'\r'|'\n')*)* ']';
+SFMatrix4f : (' '|'\t'|'\r'|'\n')*(([+-]{0,1}(([0]|[1-9][0-9]*)([.][0-9]*){0,1}|[.][0-9]+)([Ee][+-]{0,1}[0-9]+){0,1})(' '|'\t'|'\r'|'\n')+){15}([+-]{0,1}(([0]|[1-9][0-9]*)([.][0-9]*){0,1}|[.][0-9]+)([Ee][+-]{0,1}[0-9]+){0,1})(' '|'\t'|'\r'|'\n')*;
+MFMatrix4f : '[' (' '|'\t'|'\r'|'\n')*((([+-]{0,1}(([0]|[1-9][0-9]*)([.][0-9]*){0,1}|[.][0-9]+)([Ee][+-]{0,1}[0-9]+){0,1})(' '|'\t'|'\r'|'\n')+){15}([+-]{0,1}(([0]|[1-9][0-9]*)([.][0-9]*){0,1}|[.][0-9]+)([Ee][+-]{0,1}[0-9]+){0,1})(' '|'\t'|'\r'|'\n')*[,]{0,1}(' '|'\t'|'\r'|'\n')*)* ']';
+mFNode : '[' (sFNode)* ']';
+SFRotation : (' '|'\t'|'\r'|'\n')*(([+-]{0,1}(([0]|[1-9][0-9]*)([.][0-9]*){0,1}|[.][0-9]+)([Ee][+-]{0,1}[0-9]+){0,1})(' '|'\t'|'\r'|'\n')+){3}([+-]{0,1}(([0]|[1-9][0-9]*)([.][0-9]*){0,1}|[.][0-9]+)([Ee][+-]{0,1}[0-9]+){0,1})(' '|'\t'|'\r'|'\n')*;
+MFRotation : '[' (' '|'\t'|'\r'|'\n')*((([+-]{0,1}(([0]|[1-9][0-9]*)([.][0-9]*){0,1}|[.][0-9]+)([Ee][+-]{0,1}[0-9]+){0,1})(' '|'\t'|'\r'|'\n')+){3}([+-]{0,1}(([0]|[1-9][0-9]*)([.][0-9]*){0,1}|[.][0-9]+)([Ee][+-]{0,1}[0-9]+){0,1})(' '|'\t'|'\r'|'\n')*[,]{0,1}(' '|'\t'|'\r'|'\n')*)* ']';
+SFString : ["'] ((' '|'\t'|'\r'|'\n')|~(' '|'\t'|'\r'|'\n'))* ['"];
+MFString : '[' ((' '|'\t'|'\r'|'\n')|~(' '|'\t'|'\r'|'\n'))* ']';
+SFTime : (' '|'\t'|'\r'|'\n')*([+-]{0,1}(([0]|[1-9][0-9]*)([.][0-9]*){0,1}|[.][0-9]+)([Ee][+-]{0,1}[0-9]+){0,1})(' '|'\t'|'\r'|'\n')*;
+MFTime : '[' (' '|'\t'|'\r'|'\n')*(([+-]{0,1}(([0]|[1-9][0-9]*)([.][0-9]*){0,1}|[.][0-9]+)([Ee][+-]{0,1}[0-9]+){0,1})(' '|'\t'|'\r'|'\n')*[,]{0,1}(' '|'\t'|'\r'|'\n')*)* ']';
+SFVec2d : (' '|'\t'|'\r'|'\n')*(([+-]{0,1}(([0]|[1-9][0-9]*)([.][0-9]*){0,1}|[.][0-9]+)([Ee][+-]{0,1}[0-9]+){0,1})(' '|'\t'|'\r'|'\n')+){1}([+-]{0,1}(([0]|[1-9][0-9]*)([.][0-9]*){0,1}|[.][0-9]+)([Ee][+-]{0,1}[0-9]+){0,1})(' '|'\t'|'\r'|'\n')*;
+MFVec2d : '[' (' '|'\t'|'\r'|'\n')*((([+-]{0,1}(([0]|[1-9][0-9]*)([.][0-9]*){0,1}|[.][0-9]+)([Ee][+-]{0,1}[0-9]+){0,1})(' '|'\t'|'\r'|'\n')+){1}([+-]{0,1}(([0]|[1-9][0-9]*)([.][0-9]*){0,1}|[.][0-9]+)([Ee][+-]{0,1}[0-9]+){0,1})(' '|'\t'|'\r'|'\n')*[,]{0,1}(' '|'\t'|'\r'|'\n')*)* ']';
+SFVec2f : (' '|'\t'|'\r'|'\n')*(([+-]{0,1}(([0]|[1-9][0-9]*)([.][0-9]*){0,1}|[.][0-9]+)([Ee][+-]{0,1}[0-9]+){0,1})(' '|'\t'|'\r'|'\n')+){1}([+-]{0,1}(([0]|[1-9][0-9]*)([.][0-9]*){0,1}|[.][0-9]+)([Ee][+-]{0,1}[0-9]+){0,1})(' '|'\t'|'\r'|'\n')*;
+MFVec2f : '[' (' '|'\t'|'\r'|'\n')*((([+-]{0,1}(([0]|[1-9][0-9]*)([.][0-9]*){0,1}|[.][0-9]+)([Ee][+-]{0,1}[0-9]+){0,1})(' '|'\t'|'\r'|'\n')+){1}([+-]{0,1}(([0]|[1-9][0-9]*)([.][0-9]*){0,1}|[.][0-9]+)([Ee][+-]{0,1}[0-9]+){0,1})(' '|'\t'|'\r'|'\n')*[,]{0,1}(' '|'\t'|'\r'|'\n')*)* ']';
+SFVec3d : (' '|'\t'|'\r'|'\n')*(([+-]{0,1}(([0]|[1-9][0-9]*)([.][0-9]*){0,1}|[.][0-9]+)([Ee][+-]{0,1}[0-9]+){0,1})(' '|'\t'|'\r'|'\n')+){2}([+-]{0,1}(([0]|[1-9][0-9]*)([.][0-9]*){0,1}|[.][0-9]+)([Ee][+-]{0,1}[0-9]+){0,1})(' '|'\t'|'\r'|'\n')*;
+MFVec3d : '[' (' '|'\t'|'\r'|'\n')*((([+-]{0,1}(([0]|[1-9][0-9]*)([.][0-9]*){0,1}|[.][0-9]+)([Ee][+-]{0,1}[0-9]+){0,1})(' '|'\t'|'\r'|'\n')+){2}([+-]{0,1}(([0]|[1-9][0-9]*)([.][0-9]*){0,1}|[.][0-9]+)([Ee][+-]{0,1}[0-9]+){0,1})(' '|'\t'|'\r'|'\n')*[,]{0,1}(' '|'\t'|'\r'|'\n')*)* ']';
+SFVec3f : (' '|'\t'|'\r'|'\n')*(([+-]{0,1}(([0]|[1-9][0-9]*)([.][0-9]*){0,1}|[.][0-9]+)([Ee][+-]{0,1}[0-9]+){0,1})(' '|'\t'|'\r'|'\n')+){2}([+-]{0,1}(([0]|[1-9][0-9]*)([.][0-9]*){0,1}|[.][0-9]+)([Ee][+-]{0,1}[0-9]+){0,1})(' '|'\t'|'\r'|'\n')*;
+MFVec3f : '[' (' '|'\t'|'\r'|'\n')*((([+-]{0,1}(([0]|[1-9][0-9]*)([.][0-9]*){0,1}|[.][0-9]+)([Ee][+-]{0,1}[0-9]+){0,1})(' '|'\t'|'\r'|'\n')+){2}([+-]{0,1}(([0]|[1-9][0-9]*)([.][0-9]*){0,1}|[.][0-9]+)([Ee][+-]{0,1}[0-9]+){0,1})(' '|'\t'|'\r'|'\n')*[,]{0,1}(' '|'\t'|'\r'|'\n')*)* ']';
+SFVec4d : (' '|'\t'|'\r'|'\n')*(([+-]{0,1}(([0]|[1-9][0-9]*)([.][0-9]*){0,1}|[.][0-9]+)([Ee][+-]{0,1}[0-9]+){0,1})(' '|'\t'|'\r'|'\n')+){3}([+-]{0,1}(([0]|[1-9][0-9]*)([.][0-9]*){0,1}|[.][0-9]+)([Ee][+-]{0,1}[0-9]+){0,1})(' '|'\t'|'\r'|'\n')*;
+MFVec4d : '[' (' '|'\t'|'\r'|'\n')*((([+-]{0,1}(([0]|[1-9][0-9]*)([.][0-9]*){0,1}|[.][0-9]+)([Ee][+-]{0,1}[0-9]+){0,1})(' '|'\t'|'\r'|'\n')+){3}([+-]{0,1}(([0]|[1-9][0-9]*)([.][0-9]*){0,1}|[.][0-9]+)([Ee][+-]{0,1}[0-9]+){0,1})(' '|'\t'|'\r'|'\n')*[,]{0,1}(' '|'\t'|'\r'|'\n')*)* ']';
+SFVec4f : (' '|'\t'|'\r'|'\n')*(([+-]{0,1}(([0]|[1-9][0-9]*)([.][0-9]*){0,1}|[.][0-9]+)([Ee][+-]{0,1}[0-9]+){0,1})(' '|'\t'|'\r'|'\n')+){3}([+-]{0,1}(([0]|[1-9][0-9]*)([.][0-9]*){0,1}|[.][0-9]+)([Ee][+-]{0,1}[0-9]+){0,1})(' '|'\t'|'\r'|'\n')*;
+MFVec4f : '[' (' '|'\t'|'\r'|'\n')*((([+-]{0,1}(([0]|[1-9][0-9]*)([.][0-9]*){0,1}|[.][0-9]+)([Ee][+-]{0,1}[0-9]+){0,1})(' '|'\t'|'\r'|'\n')+){3}([+-]{0,1}(([0]|[1-9][0-9]*)([.][0-9]*){0,1}|[.][0-9]+)([Ee][+-]{0,1}[0-9]+){0,1})(' '|'\t'|'\r'|'\n')*[,]{0,1}(' '|'\t'|'\r'|'\n')*)* ']';
+x3DAppearanceChildNode : (
+x3DMaterialNode
+|x3DOneSidedMaterialNode
+|material
+|physicalMaterial
+|unlitMaterial
+|twoSidedMaterial
+|x3DShaderNode
+|composedShader
+|packagedShader
+|programShader
+|x3DTextureNode
+|x3DEnvironmentTextureNode
+|composedCubeMapTexture
+|generatedCubeMapTexture
+|imageCubeMapTexture
+|x3DSingleTextureNode
+|x3DTexture2DNode
+|imageTexture
+|movieTexture
+|pixelTexture
+|x3DTexture3DNode
+|composedTexture3D
+|imageTexture3D
+|pixelTexture3D
+|multiTexture
+|x3DTextureTransformNode
+|x3DSingleTextureTransformNode
+|multiTextureTransform
+|textureTransform
+|textureTransform3D
+|textureTransformMatrix3D
+|acousticProperties
+|fillProperties
+|lineProperties
+|pointProperties
 )
 ;
-X3DAppearanceNode
-(
-Appearance
+x3DAppearanceNode : (
+appearance
 )
 ;
-X3DArrayField
-(
-MFBool
-|MFColor
-|MFColorRGBA
-|MFDouble
-|MFFloat
-|MFImage
-|MFInt32
-|MFMatrix3d
-|MFMatrix3f
-|MFMatrix4d
-|MFMatrix4f
-|MFNode
-|MFRotation
-|MFString
-|MFTime
-|MFVec2d
-|MFVec2f
-|MFVec3d
-|MFVec3f
-|MFVec4d
-|MFVec4f
-)
-;
-X3DBackgroundNode
-(
-Background
-|TextureBackground
-)
-;
-X3DBindableNode
-(
-X3DBackgroundNode
-|Background
-|TextureBackground
-|X3DViewpointNode
-|GeoViewpoint
-|OrthoViewpoint
-|Viewpoint
-|Fog
-|NavigationInfo
-)
-;
-X3DChaserNode
-(
-ColorChaser
-|CoordinateChaser
-|OrientationChaser
-|PositionChaser
-|PositionChaser2D
-|ScalarChaser
-|TexCoordChaser2D
-)
-;
-X3DChildNode
-(
-EXPORT
-|ExternProtoDeclare
-|IMPORT
-|ProtoDeclare
-|ROUTE
-|X3DBindableNode
-|X3DBackgroundNode
-|Background
-|TextureBackground
-|X3DViewpointNode
-|GeoViewpoint
-|OrthoViewpoint
-|Viewpoint
-|Fog
-|NavigationInfo
-|X3DFollowerNode
-|X3DChaserNode
-|ColorChaser
-|CoordinateChaser
-|OrientationChaser
-|PositionChaser
-|PositionChaser2D
-|ScalarChaser
-|TexCoordChaser2D
-|X3DDamperNode
-|ColorDamper
-|CoordinateDamper
-|OrientationDamper
-|PositionDamper
-|PositionDamper2D
-|ScalarDamper
-|TexCoordDamper2D
-|X3DGroupingNode
-|X3DViewportNode
-|Viewport
-|Anchor
-|Billboard
-|CADAssembly
-|CADLayer
-|CADPart
-|Collision
-|EspduTransform
-|GeoLocation
-|GeoTransform
-|Group
-|HAnimSegment
-|HAnimSite
-|LayoutGroup
-|LOD
-|PickableGroup
-|ScreenGroup
-|Switch
-|Transform
-|X3DInfoNode
-|DISEntityTypeMapping
-|GeoMetadata
-|WorldInfo
-|X3DInterpolatorNode
-|ColorInterpolator
-|CoordinateInterpolator
-|CoordinateInterpolator2D
-|GeoPositionInterpolator
-|NormalInterpolator
-|OrientationInterpolator
-|PositionInterpolator
-|PositionInterpolator2D
-|ScalarInterpolator
-|SplinePositionInterpolator
-|SplinePositionInterpolator2D
-|SplineScalarInterpolator
-|SquadOrientationInterpolator
-|X3DLayoutNode
-|Layout
-|X3DLightNode
-|X3DTextureProjectorNode
-|TextureProjector
-|TextureProjectorParallel
-|DirectionalLight
-|PointLight
-|SpotLight
-|X3DNBodyCollidableNode
-|CollidableOffset
-|CollidableShape
-|X3DProductStructureChildNode
-|CADFace
-|X3DScriptNode
-|Script
-|X3DSensorNode
-|X3DEnvironmentalSensorNode
-|GeoProximitySensor
-|ProximitySensor
-|TransformSensor
-|VisibilitySensor
-|X3DKeyDeviceSensorNode
-|KeySensor
-|StringSensor
-|X3DNetworkSensorNode
-|LoadSensor
-|ReceiverPdu
-|SignalPdu
-|TransmitterPdu
-|X3DPickSensorNode
-|LinePickSensor
-|PointPickSensor
-|PrimitivePickSensor
-|VolumePickSensor
-|X3DPointingDeviceSensorNode
-|X3DDragSensorNode
-|CylinderSensor
-|PlaneSensor
-|SphereSensor
-|X3DTouchSensorNode
-|GeoTouchSensor
-|TouchSensor
-|CollisionSensor
-|TimeSensor
-|X3DSequencerNode
-|BooleanSequencer
-|IntegerSequencer
-|X3DShapeNode
-|ParticleSystem
-|Shape
-|X3DSoundNode
-|X3DSoundChannelNode
-|ChannelMerger
-|ChannelSelector
-|ChannelSplitter
-|X3DSoundDestinationNode
-|AudioDestination
-|StreamAudioDestination
-|X3DSoundProcessingNode
-|Analyser
-|BiquadFilter
-|Convolver
-|Delay
-|DynamicsCompressor
-|Gain
-|WaveShaper
-|X3DSoundSourceNode
-|AudioClip
-|BufferAudioSource
-|ListenerPointSource
-|MicrophoneSource
-|MovieTexture
-|OscillatorSource
-|StreamAudioSource
-|PeriodicWave
-|Sound
-|SpatialSound
-|X3DTimeDependentNode
-|X3DTriggerNode
-|BooleanTrigger
-|IntegerTrigger
-|TimeTrigger
-|X3DVolumeDataNode
-|IsoSurfaceVolumeData
-|SegmentedVolumeData
-|VolumeData
-|BooleanFilter
-|BooleanToggle
-|ClipPlane
-|CollisionCollection
-|DISEntityManager
-|EaseInEaseOut
-|GeoLOD
-|HAnimHumanoid
-|HAnimJoint
-|HAnimMotion
-|Inline
-|LocalFog
-|NurbsOrientationInterpolator
-|NurbsPositionInterpolator
-|NurbsSet
-|NurbsSurfaceInterpolator
-|ProtoInstance
-|RigidBody
-|RigidBodyCollection
-|StaticGroup
-|ViewpointGroup
-)
-;
-X3DColorNode
-(
-Color
-|ColorRGBA
-)
-;
-X3DComposableVolumeRenderStyleNode
-(
-BlendedVolumeStyle
-|BoundaryEnhancementVolumeStyle
-|CartoonVolumeStyle
-|ComposedVolumeStyle
-|EdgeEnhancementVolumeStyle
-|OpacityMapVolumeStyle
-|ShadedVolumeStyle
-|SilhouetteEnhancementVolumeStyle
-|ToneMappedVolumeStyle
-)
-;
-X3DComposedGeometryNode
-(
-IndexedFaceSet
-|IndexedQuadSet
-|IndexedTriangleFanSet
-|IndexedTriangleSet
-|IndexedTriangleStripSet
-|QuadSet
-|TriangleFanSet
-|TriangleSet
-|TriangleStripSet
-)
-;
-X3DCoordinateNode
-(
-Coordinate
-|CoordinateDouble
-|GeoCoordinate
-)
-;
-X3DDamperNode
-(
-ColorDamper
-|CoordinateDamper
-|OrientationDamper
-|PositionDamper
-|PositionDamper2D
-|ScalarDamper
-|TexCoordDamper2D
-)
-;
-X3DDragSensorNode
-(
-CylinderSensor
-|PlaneSensor
-|SphereSensor
-)
-;
-X3DEnvironmentalSensorNode
-(
-GeoProximitySensor
-|ProximitySensor
-|TransformSensor
-|VisibilitySensor
-)
-;
-X3DEnvironmentTextureNode
-(
-ComposedCubeMapTexture
-|GeneratedCubeMapTexture
-|ImageCubeMapTexture
-)
-;
-X3DField
-(
-SFBool
-|SFColor
-|SFColorRGBA
-|SFDouble
-|SFFloat
-|SFImage
-|SFInt32
-|SFMatrix3d
-|SFMatrix3f
-|SFMatrix4d
-|SFMatrix4f
-|SFNode
-|SFRotation
-|SFString
-|MFNode
-|SFTime
-|SFVec2d
-|SFVec2f
-|SFVec3d
-|SFVec3f
-|SFVec4d
-|SFVec4f
-|X3DArrayField
+x3DArrayField : (
+mFNode
 |MFBool
 |MFColor
 |MFColorRGBA
@@ -537,7 +198,6 @@ SFBool
 |MFMatrix4d
 |MFMatrix4f
 |MFRotation
-|MFString
 |MFTime
 |MFVec2d
 |MFVec2f
@@ -547,1306 +207,1547 @@ SFBool
 |MFVec4f
 )
 ;
-X3DFollowerNode
-(
-X3DChaserNode
-|ColorChaser
-|CoordinateChaser
-|OrientationChaser
-|PositionChaser
-|PositionChaser2D
-|ScalarChaser
-|TexCoordChaser2D
-|X3DDamperNode
-|ColorDamper
-|CoordinateDamper
-|OrientationDamper
-|PositionDamper
-|PositionDamper2D
-|ScalarDamper
-|TexCoordDamper2D
+x3DBackgroundNode : (
+background
+|textureBackground
 )
 ;
-X3DFontStyleNode
-(
-FontStyle
-|ScreenFontStyle
+x3DBindableNode : (
+x3DBackgroundNode
+|background
+|textureBackground
+|x3DViewpointNode
+|geoViewpoint
+|orthoViewpoint
+|viewpoint
+|fog
+|navigationInfo
 )
 ;
-X3DGeometricPropertyNode
-(
-X3DColorNode
-|Color
-|ColorRGBA
-|X3DCoordinateNode
-|Coordinate
-|CoordinateDouble
-|GeoCoordinate
-|X3DNormalNode
-|Normal
-|X3DTextureCoordinateNode
-|X3DSingleTextureCoordinateNode
-|TextureCoordinate
-|TextureCoordinate3D
-|TextureCoordinate4D
-|TextureCoordinateGenerator
-|MultiTextureCoordinate
-|X3DVertexAttributeNode
-|FloatVertexAttribute
-|Matrix3VertexAttribute
-|Matrix4VertexAttribute
-|FogCoordinate
-|HAnimDisplacer
+x3DChaserNode : (
+colorChaser
+|coordinateChaser
+|orientationChaser
+|positionChaser
+|positionChaser2D
+|scalarChaser
+|texCoordChaser2D
 )
 ;
-X3DGeometryNode
-(
-X3DComposedGeometryNode
-|IndexedFaceSet
-|IndexedQuadSet
-|IndexedTriangleFanSet
-|IndexedTriangleSet
-|IndexedTriangleStripSet
-|QuadSet
-|TriangleFanSet
-|TriangleSet
-|TriangleStripSet
-|X3DParametricGeometryNode
-|X3DNurbsSurfaceGeometryNode
-|NurbsPatchSurface
-|NurbsTrimmedSurface
-|NurbsCurve
-|NurbsSweptSurface
-|NurbsSwungSurface
-|Arc2D
-|ArcClose2D
-|Box
-|Circle2D
-|Cone
-|Cylinder
-|Disk2D
-|ElevationGrid
-|Extrusion
-|GeoElevationGrid
-|IndexedLineSet
-|LineSet
-|PointSet
-|Polyline2D
-|Polypoint2D
-|Rectangle2D
-|Sphere
-|Text
-|TriangleSet2D
+x3DChildNode : (
+eXPORT
+|externProtoDeclare
+|iMPORT
+|protoDeclare
+|rOUTE
+|x3DBindableNode
+|x3DBackgroundNode
+|background
+|textureBackground
+|x3DViewpointNode
+|geoViewpoint
+|orthoViewpoint
+|viewpoint
+|fog
+|navigationInfo
+|x3DFollowerNode
+|x3DChaserNode
+|colorChaser
+|coordinateChaser
+|orientationChaser
+|positionChaser
+|positionChaser2D
+|scalarChaser
+|texCoordChaser2D
+|x3DDamperNode
+|colorDamper
+|coordinateDamper
+|orientationDamper
+|positionDamper
+|positionDamper2D
+|scalarDamper
+|texCoordDamper2D
+|x3DGroupingNode
+|x3DViewportNode
+|viewport
+|anchor
+|billboard
+|cADAssembly
+|cADLayer
+|cADPart
+|collision
+|espduTransform
+|geoLocation
+|geoTransform
+|group
+|hAnimSegment
+|hAnimSite
+|layer
+|layoutGroup
+|layoutLayer
+|lOD
+|pickableGroup
+|screenGroup
+|switch
+|transform
+|x3DInfoNode
+|dISEntityTypeMapping
+|geoMetadata
+|worldInfo
+|x3DInterpolatorNode
+|colorInterpolator
+|coordinateInterpolator
+|coordinateInterpolator2D
+|geoPositionInterpolator
+|normalInterpolator
+|orientationInterpolator
+|positionInterpolator
+|positionInterpolator2D
+|scalarInterpolator
+|splinePositionInterpolator
+|splinePositionInterpolator2D
+|splineScalarInterpolator
+|squadOrientationInterpolator
+|x3DLayoutNode
+|layout
+|x3DLightNode
+|x3DTextureProjectorNode
+|textureProjector
+|textureProjectorParallel
+|directionalLight
+|pointLight
+|spotLight
+|x3DNBodyCollidableNode
+|collidableOffset
+|collidableShape
+|x3DProductStructureChildNode
+|cADFace
+|x3DScriptNode
+|script
+|x3DSensorNode
+|x3DEnvironmentalSensorNode
+|geoProximitySensor
+|proximitySensor
+|transformSensor
+|visibilitySensor
+|x3DKeyDeviceSensorNode
+|keySensor
+|stringSensor
+|x3DNetworkSensorNode
+|loadSensor
+|receiverPdu
+|signalPdu
+|transmitterPdu
+|x3DPickSensorNode
+|linePickSensor
+|pointPickSensor
+|primitivePickSensor
+|volumePickSensor
+|x3DPointingDeviceSensorNode
+|x3DDragSensorNode
+|cylinderSensor
+|planeSensor
+|sphereSensor
+|x3DTouchSensorNode
+|geoTouchSensor
+|touchSensor
+|collisionSensor
+|timeSensor
+|x3DSequencerNode
+|booleanSequencer
+|integerSequencer
+|x3DShapeNode
+|particleSystem
+|shape
+|x3DSoundNode
+|x3DSoundChannelNode
+|channelMerger
+|channelSelector
+|channelSplitter
+|x3DSoundDestinationNode
+|audioDestination
+|streamAudioDestination
+|x3DSoundProcessingNode
+|analyser
+|biquadFilter
+|convolver
+|delay
+|dynamicsCompressor
+|gain
+|waveShaper
+|x3DSoundSourceNode
+|audioClip
+|bufferAudioSource
+|listenerPointSource
+|microphoneSource
+|movieTexture
+|oscillatorSource
+|streamAudioSource
+|periodicWave
+|sound
+|spatialSound
+|x3DTimeDependentNode
+|x3DTriggerNode
+|booleanTrigger
+|integerTrigger
+|timeTrigger
+|x3DVolumeDataNode
+|isoSurfaceVolumeData
+|segmentedVolumeData
+|volumeData
+|booleanFilter
+|booleanToggle
+|clipPlane
+|collisionCollection
+|dISEntityManager
+|easeInEaseOut
+|geoLOD
+|hAnimHumanoid
+|hAnimJoint
+|hAnimMotion
+|inline
+|localFog
+|nurbsOrientationInterpolator
+|nurbsPositionInterpolator
+|nurbsSet
+|nurbsSurfaceInterpolator
+|protoInstance
+|rigidBody
+|rigidBodyCollection
+|staticGroup
+|viewpointGroup
 )
 ;
-X3DGroupingNode
-(
-X3DViewportNode
-|Viewport
-|Anchor
-|Billboard
-|CADAssembly
-|CADLayer
-|CADPart
-|Collision
-|EspduTransform
-|GeoLocation
-|GeoTransform
-|Group
-|HAnimSegment
-|HAnimSite
-|LayoutGroup
-|LOD
-|PickableGroup
-|ScreenGroup
-|Switch
-|Transform
+x3DColorNode : (
+color
+|colorRGBA
 )
 ;
-X3DInfoNode
-(
-DISEntityTypeMapping
-|GeoMetadata
-|WorldInfo
+x3DComposableVolumeRenderStyleNode : (
+blendedVolumeStyle
+|boundaryEnhancementVolumeStyle
+|cartoonVolumeStyle
+|composedVolumeStyle
+|edgeEnhancementVolumeStyle
+|opacityMapVolumeStyle
+|shadedVolumeStyle
+|silhouetteEnhancementVolumeStyle
+|toneMappedVolumeStyle
 )
 ;
-X3DInterpolatorNode
-(
-ColorInterpolator
-|CoordinateInterpolator
-|CoordinateInterpolator2D
-|GeoPositionInterpolator
-|NormalInterpolator
-|OrientationInterpolator
-|PositionInterpolator
-|PositionInterpolator2D
-|ScalarInterpolator
-|SplinePositionInterpolator
-|SplinePositionInterpolator2D
-|SplineScalarInterpolator
-|SquadOrientationInterpolator
+x3DComposedGeometryNode : (
+indexedFaceSet
+|indexedQuadSet
+|indexedTriangleFanSet
+|indexedTriangleSet
+|indexedTriangleStripSet
+|quadSet
+|triangleFanSet
+|triangleSet
+|triangleStripSet
 )
 ;
-X3DKeyDeviceSensorNode
-(
-KeySensor
-|StringSensor
+x3DCoordinateNode : (
+coordinate
+|coordinateDouble
+|geoCoordinate
 )
 ;
-X3DLayerNode
-(
-Layer
-|LayoutLayer
+x3DDamperNode : (
+colorDamper
+|coordinateDamper
+|orientationDamper
+|positionDamper
+|positionDamper2D
+|scalarDamper
+|texCoordDamper2D
 )
 ;
-X3DLayoutNode
-(
-Layout
+x3DDragSensorNode : (
+cylinderSensor
+|planeSensor
+|sphereSensor
 )
 ;
-X3DLightNode
-(
-X3DTextureProjectorNode
-|TextureProjector
-|TextureProjectorParallel
-|DirectionalLight
-|PointLight
-|SpotLight
+x3DEnvironmentalSensorNode : (
+geoProximitySensor
+|proximitySensor
+|transformSensor
+|visibilitySensor
 )
 ;
-X3DMaterialNode
-(
-X3DOneSidedMaterialNode
-|Material
-|PhysicalMaterial
-|UnlitMaterial
-|TwoSidedMaterial
+x3DEnvironmentTextureNode : (
+composedCubeMapTexture
+|generatedCubeMapTexture
+|imageCubeMapTexture
 )
 ;
-X3DNBodyCollidableNode
-(
-CollidableOffset
-|CollidableShape
+x3DField : (
+SFBool
+|MFBool
+|SFColor
+|MFColor
+|SFColorRGBA
+|MFColorRGBA
+|SFDouble
+|MFDouble
+|SFFloat
+|MFFloat
+|SFImage
+|MFImage
+|SFInt32
+|MFInt32
+|SFMatrix3d
+|MFMatrix3d
+|SFMatrix3f
+|MFMatrix3f
+|SFMatrix4d
+|MFMatrix4d
+|SFMatrix4f
+|MFMatrix4f
+|sFNode
+|SFRotation
+|MFRotation
+|SFString
+|mFNode
+|MFString
+|SFTime
+|MFTime
+|SFVec2d
+|MFVec2d
+|SFVec2f
+|MFVec2f
+|SFVec3d
+|MFVec3d
+|SFVec3f
+|MFVec3f
+|SFVec4d
+|MFVec4d
+|SFVec4f
+|MFVec4f
+|x3DArrayField
 )
 ;
-X3DNBodyCollisionSpaceNode
-(
-CollisionSpace
+x3DFollowerNode : (
+x3DChaserNode
+|colorChaser
+|coordinateChaser
+|orientationChaser
+|positionChaser
+|positionChaser2D
+|scalarChaser
+|texCoordChaser2D
+|x3DDamperNode
+|colorDamper
+|coordinateDamper
+|orientationDamper
+|positionDamper
+|positionDamper2D
+|scalarDamper
+|texCoordDamper2D
 )
 ;
-X3DNetworkSensorNode
-(
-EspduTransform
-|LoadSensor
-|ReceiverPdu
-|SignalPdu
-|TransmitterPdu
+x3DFontStyleNode : (
+fontStyle
+|screenFontStyle
 )
 ;
-X3DNode
-(
-X3DAppearanceChildNode
-|X3DMaterialNode
-|X3DOneSidedMaterialNode
-|Material
-|PhysicalMaterial
-|UnlitMaterial
-|TwoSidedMaterial
-|X3DShaderNode
-|ComposedShader
-|PackagedShader
-|ProgramShader
-|X3DTextureNode
-|X3DEnvironmentTextureNode
-|ComposedCubeMapTexture
-|GeneratedCubeMapTexture
-|ImageCubeMapTexture
-|X3DSingleTextureNode
-|X3DTexture2DNode
-|ImageTexture
-|MovieTexture
-|PixelTexture
-|X3DTexture3DNode
-|ComposedTexture3D
-|ImageTexture3D
-|PixelTexture3D
-|MultiTexture
-|X3DTextureTransformNode
-|X3DSingleTextureTransformNode
-|MultiTextureTransform
-|TextureTransform
-|TextureTransform3D
-|TextureTransformMatrix3D
-|AcousticProperties
-|FillProperties
-|LineProperties
-|PointProperties
-|X3DAppearanceNode
-|Appearance
-|X3DChildNode
-|EXPORT
-|ExternProtoDeclare
-|IMPORT
-|ProtoDeclare
-|ROUTE
-|X3DBindableNode
-|X3DBackgroundNode
-|Background
-|TextureBackground
-|X3DViewpointNode
-|GeoViewpoint
-|OrthoViewpoint
-|Viewpoint
-|Fog
-|NavigationInfo
-|X3DFollowerNode
-|X3DChaserNode
-|ColorChaser
-|CoordinateChaser
-|OrientationChaser
-|PositionChaser
-|PositionChaser2D
-|ScalarChaser
-|TexCoordChaser2D
-|X3DDamperNode
-|ColorDamper
-|CoordinateDamper
-|OrientationDamper
-|PositionDamper
-|PositionDamper2D
-|ScalarDamper
-|TexCoordDamper2D
-|X3DGroupingNode
-|X3DViewportNode
-|Viewport
-|Anchor
-|Billboard
-|CADAssembly
-|CADLayer
-|CADPart
-|Collision
-|EspduTransform
-|GeoLocation
-|GeoTransform
-|Group
-|HAnimSegment
-|HAnimSite
-|LayoutGroup
-|LOD
-|PickableGroup
-|ScreenGroup
-|Switch
-|Transform
-|X3DInfoNode
-|DISEntityTypeMapping
-|GeoMetadata
-|WorldInfo
-|X3DInterpolatorNode
-|ColorInterpolator
-|CoordinateInterpolator
-|CoordinateInterpolator2D
-|GeoPositionInterpolator
-|NormalInterpolator
-|OrientationInterpolator
-|PositionInterpolator
-|PositionInterpolator2D
-|ScalarInterpolator
-|SplinePositionInterpolator
-|SplinePositionInterpolator2D
-|SplineScalarInterpolator
-|SquadOrientationInterpolator
-|X3DLayoutNode
-|Layout
-|X3DLightNode
-|X3DTextureProjectorNode
-|TextureProjector
-|TextureProjectorParallel
-|DirectionalLight
-|PointLight
-|SpotLight
-|X3DNBodyCollidableNode
-|CollidableOffset
-|CollidableShape
-|X3DProductStructureChildNode
-|CADFace
-|X3DScriptNode
-|Script
-|X3DSensorNode
-|X3DEnvironmentalSensorNode
-|GeoProximitySensor
-|ProximitySensor
-|TransformSensor
-|VisibilitySensor
-|X3DKeyDeviceSensorNode
-|KeySensor
-|StringSensor
-|X3DNetworkSensorNode
-|LoadSensor
-|ReceiverPdu
-|SignalPdu
-|TransmitterPdu
-|X3DPickSensorNode
-|LinePickSensor
-|PointPickSensor
-|PrimitivePickSensor
-|VolumePickSensor
-|X3DPointingDeviceSensorNode
-|X3DDragSensorNode
-|CylinderSensor
-|PlaneSensor
-|SphereSensor
-|X3DTouchSensorNode
-|GeoTouchSensor
-|TouchSensor
-|CollisionSensor
-|TimeSensor
-|X3DSequencerNode
-|BooleanSequencer
-|IntegerSequencer
-|X3DShapeNode
-|ParticleSystem
-|Shape
-|X3DSoundNode
-|X3DSoundChannelNode
-|ChannelMerger
-|ChannelSelector
-|ChannelSplitter
-|X3DSoundDestinationNode
-|AudioDestination
-|StreamAudioDestination
-|X3DSoundProcessingNode
-|Analyser
-|BiquadFilter
-|Convolver
-|Delay
-|DynamicsCompressor
-|Gain
-|WaveShaper
-|X3DSoundSourceNode
-|AudioClip
-|BufferAudioSource
-|ListenerPointSource
-|MicrophoneSource
-|OscillatorSource
-|StreamAudioSource
-|PeriodicWave
-|Sound
-|SpatialSound
-|X3DTimeDependentNode
-|X3DTriggerNode
-|BooleanTrigger
-|IntegerTrigger
-|TimeTrigger
-|X3DVolumeDataNode
-|IsoSurfaceVolumeData
-|SegmentedVolumeData
-|VolumeData
-|BooleanFilter
-|BooleanToggle
-|ClipPlane
-|CollisionCollection
-|DISEntityManager
-|EaseInEaseOut
-|GeoLOD
-|HAnimHumanoid
-|HAnimJoint
-|HAnimMotion
-|Inline
-|LocalFog
-|NurbsOrientationInterpolator
-|NurbsPositionInterpolator
-|NurbsSet
-|NurbsSurfaceInterpolator
-|ProtoInstance
-|RigidBody
-|RigidBodyCollection
-|StaticGroup
-|ViewpointGroup
-|X3DFontStyleNode
-|FontStyle
-|ScreenFontStyle
-|X3DGeometricPropertyNode
-|X3DColorNode
-|Color
-|ColorRGBA
-|X3DCoordinateNode
-|Coordinate
-|CoordinateDouble
-|GeoCoordinate
-|X3DNormalNode
-|Normal
-|X3DTextureCoordinateNode
-|X3DSingleTextureCoordinateNode
-|TextureCoordinate
-|TextureCoordinate3D
-|TextureCoordinate4D
-|TextureCoordinateGenerator
-|MultiTextureCoordinate
-|X3DVertexAttributeNode
-|FloatVertexAttribute
-|Matrix3VertexAttribute
-|Matrix4VertexAttribute
-|FogCoordinate
-|HAnimDisplacer
-|X3DGeometryNode
-|X3DComposedGeometryNode
-|IndexedFaceSet
-|IndexedQuadSet
-|IndexedTriangleFanSet
-|IndexedTriangleSet
-|IndexedTriangleStripSet
-|QuadSet
-|TriangleFanSet
-|TriangleSet
-|TriangleStripSet
-|X3DParametricGeometryNode
-|X3DNurbsSurfaceGeometryNode
-|NurbsPatchSurface
-|NurbsTrimmedSurface
-|NurbsCurve
-|NurbsSweptSurface
-|NurbsSwungSurface
-|Arc2D
-|ArcClose2D
-|Box
-|Circle2D
-|Cone
-|Cylinder
-|Disk2D
-|ElevationGrid
-|Extrusion
-|GeoElevationGrid
-|IndexedLineSet
-|LineSet
-|PointSet
-|Polyline2D
-|Polypoint2D
-|Rectangle2D
-|Sphere
-|Text
-|TriangleSet2D
-|X3DLayerNode
-|Layer
-|LayoutLayer
-|X3DNBodyCollisionSpaceNode
-|CollisionSpace
-|X3DNurbsControlCurveNode
-|ContourPolyline2D
-|NurbsCurve2D
-|X3DParticleEmitterNode
-|ConeEmitter
-|ExplosionEmitter
-|PointEmitter
-|PolylineEmitter
-|SurfaceEmitter
-|VolumeEmitter
-|X3DParticlePhysicsModelNode
-|BoundedPhysicsModel
-|ForcePhysicsModel
-|WindPhysicsModel
-|X3DPrototypeInstance
-|X3DRigidJointNode
-|BallJoint
-|DoubleAxisHingeJoint
-|MotorJoint
-|SingleAxisHingeJoint
-|SliderJoint
-|UniversalJoint
-|X3DVolumeRenderStyleNode
-|X3DComposableVolumeRenderStyleNode
-|BlendedVolumeStyle
-|BoundaryEnhancementVolumeStyle
-|CartoonVolumeStyle
-|ComposedVolumeStyle
-|EdgeEnhancementVolumeStyle
-|OpacityMapVolumeStyle
-|ShadedVolumeStyle
-|SilhouetteEnhancementVolumeStyle
-|ToneMappedVolumeStyle
-|ProjectionVolumeStyle
-|Contact
-|Contour2D
-|GeoOrigin
-|LayerSet
-|MetadataBoolean
-|MetadataDouble
-|MetadataFloat
-|MetadataInteger
-|MetadataSet
-|MetadataString
-|NurbsTextureCoordinate
-|ShaderPart
-|ShaderProgram
-|TextureProperties
+x3DGeometricPropertyNode : (
+x3DColorNode
+|color
+|colorRGBA
+|x3DCoordinateNode
+|coordinate
+|coordinateDouble
+|geoCoordinate
+|x3DNormalNode
+|normal
+|x3DTextureCoordinateNode
+|x3DSingleTextureCoordinateNode
+|textureCoordinate
+|textureCoordinate3D
+|textureCoordinate4D
+|textureCoordinateGenerator
+|multiTextureCoordinate
+|x3DVertexAttributeNode
+|floatVertexAttribute
+|matrix3VertexAttribute
+|matrix4VertexAttribute
+|fogCoordinate
+|hAnimDisplacer
 )
 ;
-X3DNormalNode
-(
-Normal
+x3DGeometryNode : (
+x3DComposedGeometryNode
+|indexedFaceSet
+|indexedQuadSet
+|indexedTriangleFanSet
+|indexedTriangleSet
+|indexedTriangleStripSet
+|quadSet
+|triangleFanSet
+|triangleSet
+|triangleStripSet
+|x3DParametricGeometryNode
+|x3DNurbsSurfaceGeometryNode
+|nurbsPatchSurface
+|nurbsTrimmedSurface
+|nurbsCurve
+|nurbsSweptSurface
+|nurbsSwungSurface
+|arc2D
+|arcClose2D
+|box
+|circle2D
+|cone
+|cylinder
+|disk2D
+|elevationGrid
+|extrusion
+|geoElevationGrid
+|indexedLineSet
+|lineSet
+|pointSet
+|polyline2D
+|polypoint2D
+|rectangle2D
+|sphere
+|text
+|triangleSet2D
 )
 ;
-X3DNurbsControlCurveNode
-(
-ContourPolyline2D
-|NurbsCurve2D
+x3DGroupingNode : (
+x3DViewportNode
+|viewport
+|anchor
+|billboard
+|cADAssembly
+|cADLayer
+|cADPart
+|collision
+|espduTransform
+|geoLocation
+|geoTransform
+|group
+|hAnimSegment
+|hAnimSite
+|layer
+|layoutGroup
+|layoutLayer
+|lOD
+|pickableGroup
+|screenGroup
+|switch
+|transform
 )
 ;
-X3DNurbsSurfaceGeometryNode
-(
-NurbsPatchSurface
-|NurbsTrimmedSurface
+x3DInfoNode : (
+dISEntityTypeMapping
+|geoMetadata
+|worldInfo
 )
 ;
-X3DOneSidedMaterialNode
-(
-Material
-|PhysicalMaterial
-|UnlitMaterial
+x3DInterpolatorNode : (
+colorInterpolator
+|coordinateInterpolator
+|coordinateInterpolator2D
+|geoPositionInterpolator
+|normalInterpolator
+|orientationInterpolator
+|positionInterpolator
+|positionInterpolator2D
+|scalarInterpolator
+|splinePositionInterpolator
+|splinePositionInterpolator2D
+|splineScalarInterpolator
+|squadOrientationInterpolator
 )
 ;
-X3DParametricGeometryNode
-(
-X3DNurbsSurfaceGeometryNode
-|NurbsPatchSurface
-|NurbsTrimmedSurface
-|NurbsCurve
-|NurbsSweptSurface
-|NurbsSwungSurface
+x3DKeyDeviceSensorNode : (
+keySensor
+|stringSensor
 )
 ;
-X3DParticleEmitterNode
-(
-ConeEmitter
-|ExplosionEmitter
-|PointEmitter
-|PolylineEmitter
-|SurfaceEmitter
-|VolumeEmitter
+x3DLayerNode : (
+layer
+|layoutLayer
 )
 ;
-X3DParticlePhysicsModelNode
-(
-BoundedPhysicsModel
-|ForcePhysicsModel
-|WindPhysicsModel
+x3DLayoutNode : (
+layout
 )
 ;
-X3DPickSensorNode
-(
-LinePickSensor
-|PointPickSensor
-|PrimitivePickSensor
-|VolumePickSensor
+x3DLightNode : (
+x3DTextureProjectorNode
+|textureProjector
+|textureProjectorParallel
+|directionalLight
+|pointLight
+|spotLight
 )
 ;
-X3DPointingDeviceSensorNode
-(
-X3DDragSensorNode
-|CylinderSensor
-|PlaneSensor
-|SphereSensor
-|X3DTouchSensorNode
-|GeoTouchSensor
-|TouchSensor
+x3DMaterialNode : (
+x3DOneSidedMaterialNode
+|material
+|physicalMaterial
+|unlitMaterial
+|twoSidedMaterial
 )
 ;
-X3DProductStructureChildNode
-(
-CADAssembly
-|CADFace
-|CADPart
+x3DNBodyCollidableNode : (
+collidableOffset
+|collidableShape
 )
 ;
-X3DPrototypeInstance
-(
-ProtoInstance
+x3DNBodyCollisionSpaceNode : (
+collisionSpace
 )
 ;
-X3DRigidJointNode
-(
-BallJoint
-|DoubleAxisHingeJoint
-|MotorJoint
-|SingleAxisHingeJoint
-|SliderJoint
-|UniversalJoint
+x3DNetworkSensorNode : (
+espduTransform
+|loadSensor
+|receiverPdu
+|signalPdu
+|transmitterPdu
 )
 ;
-X3DScriptNode
-(
-Script
+x3DNode : (
+x3DAppearanceChildNode
+|x3DMaterialNode
+|x3DOneSidedMaterialNode
+|material
+|physicalMaterial
+|unlitMaterial
+|twoSidedMaterial
+|x3DShaderNode
+|composedShader
+|packagedShader
+|programShader
+|x3DTextureNode
+|x3DEnvironmentTextureNode
+|composedCubeMapTexture
+|generatedCubeMapTexture
+|imageCubeMapTexture
+|x3DSingleTextureNode
+|x3DTexture2DNode
+|imageTexture
+|movieTexture
+|pixelTexture
+|x3DTexture3DNode
+|composedTexture3D
+|imageTexture3D
+|pixelTexture3D
+|multiTexture
+|x3DTextureTransformNode
+|x3DSingleTextureTransformNode
+|multiTextureTransform
+|textureTransform
+|textureTransform3D
+|textureTransformMatrix3D
+|acousticProperties
+|fillProperties
+|lineProperties
+|pointProperties
+|x3DAppearanceNode
+|appearance
+|x3DChildNode
+|eXPORT
+|externProtoDeclare
+|iMPORT
+|protoDeclare
+|rOUTE
+|x3DBindableNode
+|x3DBackgroundNode
+|background
+|textureBackground
+|x3DViewpointNode
+|geoViewpoint
+|orthoViewpoint
+|viewpoint
+|fog
+|navigationInfo
+|x3DFollowerNode
+|x3DChaserNode
+|colorChaser
+|coordinateChaser
+|orientationChaser
+|positionChaser
+|positionChaser2D
+|scalarChaser
+|texCoordChaser2D
+|x3DDamperNode
+|colorDamper
+|coordinateDamper
+|orientationDamper
+|positionDamper
+|positionDamper2D
+|scalarDamper
+|texCoordDamper2D
+|x3DGroupingNode
+|x3DViewportNode
+|viewport
+|anchor
+|billboard
+|cADAssembly
+|cADLayer
+|cADPart
+|collision
+|espduTransform
+|geoLocation
+|geoTransform
+|group
+|hAnimSegment
+|hAnimSite
+|layer
+|layoutGroup
+|layoutLayer
+|lOD
+|pickableGroup
+|screenGroup
+|switch
+|transform
+|x3DInfoNode
+|dISEntityTypeMapping
+|geoMetadata
+|worldInfo
+|x3DInterpolatorNode
+|colorInterpolator
+|coordinateInterpolator
+|coordinateInterpolator2D
+|geoPositionInterpolator
+|normalInterpolator
+|orientationInterpolator
+|positionInterpolator
+|positionInterpolator2D
+|scalarInterpolator
+|splinePositionInterpolator
+|splinePositionInterpolator2D
+|splineScalarInterpolator
+|squadOrientationInterpolator
+|x3DLayoutNode
+|layout
+|x3DLightNode
+|x3DTextureProjectorNode
+|textureProjector
+|textureProjectorParallel
+|directionalLight
+|pointLight
+|spotLight
+|x3DNBodyCollidableNode
+|collidableOffset
+|collidableShape
+|x3DProductStructureChildNode
+|cADFace
+|x3DScriptNode
+|script
+|x3DSensorNode
+|x3DEnvironmentalSensorNode
+|geoProximitySensor
+|proximitySensor
+|transformSensor
+|visibilitySensor
+|x3DKeyDeviceSensorNode
+|keySensor
+|stringSensor
+|x3DNetworkSensorNode
+|loadSensor
+|receiverPdu
+|signalPdu
+|transmitterPdu
+|x3DPickSensorNode
+|linePickSensor
+|pointPickSensor
+|primitivePickSensor
+|volumePickSensor
+|x3DPointingDeviceSensorNode
+|x3DDragSensorNode
+|cylinderSensor
+|planeSensor
+|sphereSensor
+|x3DTouchSensorNode
+|geoTouchSensor
+|touchSensor
+|collisionSensor
+|timeSensor
+|x3DSequencerNode
+|booleanSequencer
+|integerSequencer
+|x3DShapeNode
+|particleSystem
+|shape
+|x3DSoundNode
+|x3DSoundChannelNode
+|channelMerger
+|channelSelector
+|channelSplitter
+|x3DSoundDestinationNode
+|audioDestination
+|streamAudioDestination
+|x3DSoundProcessingNode
+|analyser
+|biquadFilter
+|convolver
+|delay
+|dynamicsCompressor
+|gain
+|waveShaper
+|x3DSoundSourceNode
+|audioClip
+|bufferAudioSource
+|listenerPointSource
+|microphoneSource
+|oscillatorSource
+|streamAudioSource
+|periodicWave
+|sound
+|spatialSound
+|x3DTimeDependentNode
+|x3DTriggerNode
+|booleanTrigger
+|integerTrigger
+|timeTrigger
+|x3DVolumeDataNode
+|isoSurfaceVolumeData
+|segmentedVolumeData
+|volumeData
+|booleanFilter
+|booleanToggle
+|clipPlane
+|collisionCollection
+|dISEntityManager
+|easeInEaseOut
+|geoLOD
+|hAnimHumanoid
+|hAnimJoint
+|hAnimMotion
+|inline
+|localFog
+|nurbsOrientationInterpolator
+|nurbsPositionInterpolator
+|nurbsSet
+|nurbsSurfaceInterpolator
+|protoInstance
+|rigidBody
+|rigidBodyCollection
+|staticGroup
+|viewpointGroup
+|x3DFontStyleNode
+|fontStyle
+|screenFontStyle
+|x3DGeometricPropertyNode
+|x3DColorNode
+|color
+|colorRGBA
+|x3DCoordinateNode
+|coordinate
+|coordinateDouble
+|geoCoordinate
+|x3DNormalNode
+|normal
+|x3DTextureCoordinateNode
+|x3DSingleTextureCoordinateNode
+|textureCoordinate
+|textureCoordinate3D
+|textureCoordinate4D
+|textureCoordinateGenerator
+|multiTextureCoordinate
+|x3DVertexAttributeNode
+|floatVertexAttribute
+|matrix3VertexAttribute
+|matrix4VertexAttribute
+|fogCoordinate
+|hAnimDisplacer
+|x3DGeometryNode
+|x3DComposedGeometryNode
+|indexedFaceSet
+|indexedQuadSet
+|indexedTriangleFanSet
+|indexedTriangleSet
+|indexedTriangleStripSet
+|quadSet
+|triangleFanSet
+|triangleSet
+|triangleStripSet
+|x3DParametricGeometryNode
+|x3DNurbsSurfaceGeometryNode
+|nurbsPatchSurface
+|nurbsTrimmedSurface
+|nurbsCurve
+|nurbsSweptSurface
+|nurbsSwungSurface
+|arc2D
+|arcClose2D
+|box
+|circle2D
+|cone
+|cylinder
+|disk2D
+|elevationGrid
+|extrusion
+|geoElevationGrid
+|indexedLineSet
+|lineSet
+|pointSet
+|polyline2D
+|polypoint2D
+|rectangle2D
+|sphere
+|text
+|triangleSet2D
+|x3DLayerNode
+|x3DNBodyCollisionSpaceNode
+|collisionSpace
+|x3DNurbsControlCurveNode
+|contourPolyline2D
+|nurbsCurve2D
+|x3DParticleEmitterNode
+|coneEmitter
+|explosionEmitter
+|pointEmitter
+|polylineEmitter
+|surfaceEmitter
+|volumeEmitter
+|x3DParticlePhysicsModelNode
+|boundedPhysicsModel
+|forcePhysicsModel
+|windPhysicsModel
+|x3DPrototypeInstance
+|x3DRigidJointNode
+|ballJoint
+|doubleAxisHingeJoint
+|motorJoint
+|singleAxisHingeJoint
+|sliderJoint
+|universalJoint
+|x3DVolumeRenderStyleNode
+|x3DComposableVolumeRenderStyleNode
+|blendedVolumeStyle
+|boundaryEnhancementVolumeStyle
+|cartoonVolumeStyle
+|composedVolumeStyle
+|edgeEnhancementVolumeStyle
+|opacityMapVolumeStyle
+|shadedVolumeStyle
+|silhouetteEnhancementVolumeStyle
+|toneMappedVolumeStyle
+|projectionVolumeStyle
+|contact
+|contour2D
+|geoOrigin
+|layerSet
+|metadataBoolean
+|metadataDouble
+|metadataFloat
+|metadataInteger
+|metadataSet
+|metadataString
+|nurbsTextureCoordinate
+|shaderPart
+|shaderProgram
+|textureProperties
 )
 ;
-X3DSensorNode
-(
-X3DEnvironmentalSensorNode
-|GeoProximitySensor
-|ProximitySensor
-|TransformSensor
-|VisibilitySensor
-|X3DKeyDeviceSensorNode
-|KeySensor
-|StringSensor
-|X3DNetworkSensorNode
-|EspduTransform
-|LoadSensor
-|ReceiverPdu
-|SignalPdu
-|TransmitterPdu
-|X3DPickSensorNode
-|LinePickSensor
-|PointPickSensor
-|PrimitivePickSensor
-|VolumePickSensor
-|X3DPointingDeviceSensorNode
-|X3DDragSensorNode
-|CylinderSensor
-|PlaneSensor
-|SphereSensor
-|X3DTouchSensorNode
-|GeoTouchSensor
-|TouchSensor
-|Collision
-|CollisionSensor
-|TimeSensor
+x3DNormalNode : (
+normal
 )
 ;
-X3DSequencerNode
-(
-BooleanSequencer
-|IntegerSequencer
+x3DNurbsControlCurveNode : (
+contourPolyline2D
+|nurbsCurve2D
 )
 ;
-X3DShaderNode
-(
-ComposedShader
-|PackagedShader
-|ProgramShader
+x3DNurbsSurfaceGeometryNode : (
+nurbsPatchSurface
+|nurbsTrimmedSurface
 )
 ;
-X3DShapeNode
-(
-ParticleSystem
-|Shape
+x3DOneSidedMaterialNode : (
+material
+|physicalMaterial
+|unlitMaterial
 )
 ;
-X3DSingleTextureCoordinateNode
-(
-TextureCoordinate
-|TextureCoordinate3D
-|TextureCoordinate4D
-|TextureCoordinateGenerator
+x3DParametricGeometryNode : (
+x3DNurbsSurfaceGeometryNode
+|nurbsPatchSurface
+|nurbsTrimmedSurface
+|nurbsCurve
+|nurbsSweptSurface
+|nurbsSwungSurface
 )
 ;
-X3DSingleTextureNode
-(
-X3DTexture2DNode
-|ImageTexture
-|MovieTexture
-|PixelTexture
+x3DParticleEmitterNode : (
+coneEmitter
+|explosionEmitter
+|pointEmitter
+|polylineEmitter
+|surfaceEmitter
+|volumeEmitter
 )
 ;
-X3DSingleTextureTransformNode
-(
+x3DParticlePhysicsModelNode : (
+boundedPhysicsModel
+|forcePhysicsModel
+|windPhysicsModel
+)
+;
+x3DPickSensorNode : (
+linePickSensor
+|pointPickSensor
+|primitivePickSensor
+|volumePickSensor
+)
+;
+x3DPointingDeviceSensorNode : (
+x3DDragSensorNode
+|cylinderSensor
+|planeSensor
+|sphereSensor
+|x3DTouchSensorNode
+|geoTouchSensor
+|touchSensor
+)
+;
+x3DProductStructureChildNode : (
+cADAssembly
+|cADFace
+|cADPart
+)
+;
+x3DPrototypeInstance : (
+protoInstance
+)
+;
+x3DRigidJointNode : (
+ballJoint
+|doubleAxisHingeJoint
+|motorJoint
+|singleAxisHingeJoint
+|sliderJoint
+|universalJoint
+)
+;
+x3DScriptNode : (
+script
+)
+;
+x3DSensorNode : (
+x3DEnvironmentalSensorNode
+|geoProximitySensor
+|proximitySensor
+|transformSensor
+|visibilitySensor
+|x3DKeyDeviceSensorNode
+|keySensor
+|stringSensor
+|x3DNetworkSensorNode
+|espduTransform
+|loadSensor
+|receiverPdu
+|signalPdu
+|transmitterPdu
+|x3DPickSensorNode
+|linePickSensor
+|pointPickSensor
+|primitivePickSensor
+|volumePickSensor
+|x3DPointingDeviceSensorNode
+|x3DDragSensorNode
+|cylinderSensor
+|planeSensor
+|sphereSensor
+|x3DTouchSensorNode
+|geoTouchSensor
+|touchSensor
+|collision
+|collisionSensor
+|timeSensor
+)
+;
+x3DSequencerNode : (
+booleanSequencer
+|integerSequencer
+)
+;
+x3DShaderNode : (
+composedShader
+|packagedShader
+|programShader
+)
+;
+x3DShapeNode : (
+particleSystem
+|shape
+)
+;
+x3DSingleTextureCoordinateNode : (
+textureCoordinate
+|textureCoordinate3D
+|textureCoordinate4D
+|textureCoordinateGenerator
+)
+;
+x3DSingleTextureNode : (
+x3DTexture2DNode
+|imageTexture
+|movieTexture
+|pixelTexture
+)
+;
+x3DSingleTextureTransformNode : (
 
 )
 ;
-X3DSoundChannelNode
-(
-ChannelMerger
-|ChannelSelector
-|ChannelSplitter
+x3DSoundChannelNode : (
+channelMerger
+|channelSelector
+|channelSplitter
 )
 ;
-X3DSoundDestinationNode
-(
-AudioDestination
-|StreamAudioDestination
+x3DSoundDestinationNode : (
+audioDestination
+|streamAudioDestination
 )
 ;
-X3DSoundNode
-(
-X3DSoundChannelNode
-|ChannelMerger
-|ChannelSelector
-|ChannelSplitter
-|X3DSoundDestinationNode
-|AudioDestination
-|StreamAudioDestination
-|X3DSoundProcessingNode
-|Analyser
-|BiquadFilter
-|Convolver
-|Delay
-|DynamicsCompressor
-|Gain
-|WaveShaper
-|X3DSoundSourceNode
-|AudioClip
-|BufferAudioSource
-|ListenerPointSource
-|MicrophoneSource
-|MovieTexture
-|OscillatorSource
-|StreamAudioSource
-|PeriodicWave
-|Sound
-|SpatialSound
+x3DSoundNode : (
+x3DSoundChannelNode
+|channelMerger
+|channelSelector
+|channelSplitter
+|x3DSoundDestinationNode
+|audioDestination
+|streamAudioDestination
+|x3DSoundProcessingNode
+|analyser
+|biquadFilter
+|convolver
+|delay
+|dynamicsCompressor
+|gain
+|waveShaper
+|x3DSoundSourceNode
+|audioClip
+|bufferAudioSource
+|listenerPointSource
+|microphoneSource
+|movieTexture
+|oscillatorSource
+|streamAudioSource
+|periodicWave
+|sound
+|spatialSound
 )
 ;
-X3DSoundProcessingNode
-(
-Analyser
-|BiquadFilter
-|Convolver
-|Delay
-|DynamicsCompressor
-|Gain
-|WaveShaper
+x3DSoundProcessingNode : (
+analyser
+|biquadFilter
+|convolver
+|delay
+|dynamicsCompressor
+|gain
+|waveShaper
 )
 ;
-X3DSoundSourceNode
-(
-AudioClip
-|BufferAudioSource
-|ListenerPointSource
-|MicrophoneSource
-|MovieTexture
-|OscillatorSource
-|StreamAudioSource
+x3DSoundSourceNode : (
+audioClip
+|bufferAudioSource
+|listenerPointSource
+|microphoneSource
+|movieTexture
+|oscillatorSource
+|streamAudioSource
 )
 ;
-X3DStatement
-(
+x3DStatement : (
 
 )
 ;
-X3DTexture2DNode
-(
-ImageTexture
-|MovieTexture
-|PixelTexture
+x3DTexture2DNode : (
+imageTexture
+|movieTexture
+|pixelTexture
 )
 ;
-X3DTexture3DNode
-(
-ComposedTexture3D
-|ImageTexture3D
-|PixelTexture3D
+x3DTexture3DNode : (
+composedTexture3D
+|imageTexture3D
+|pixelTexture3D
 )
 ;
-X3DTextureCoordinateNode
-(
-X3DSingleTextureCoordinateNode
-|TextureCoordinate
-|TextureCoordinate3D
-|TextureCoordinate4D
-|TextureCoordinateGenerator
-|MultiTextureCoordinate
+x3DTextureCoordinateNode : (
+x3DSingleTextureCoordinateNode
+|textureCoordinate
+|textureCoordinate3D
+|textureCoordinate4D
+|textureCoordinateGenerator
+|multiTextureCoordinate
 )
 ;
-X3DTextureNode
-(
-X3DEnvironmentTextureNode
-|ComposedCubeMapTexture
-|GeneratedCubeMapTexture
-|ImageCubeMapTexture
-|X3DSingleTextureNode
-|X3DTexture2DNode
-|ImageTexture
-|MovieTexture
-|PixelTexture
-|X3DTexture3DNode
-|ComposedTexture3D
-|ImageTexture3D
-|PixelTexture3D
-|MultiTexture
+x3DTextureNode : (
+x3DEnvironmentTextureNode
+|composedCubeMapTexture
+|generatedCubeMapTexture
+|imageCubeMapTexture
+|x3DSingleTextureNode
+|x3DTexture2DNode
+|imageTexture
+|movieTexture
+|pixelTexture
+|x3DTexture3DNode
+|composedTexture3D
+|imageTexture3D
+|pixelTexture3D
+|multiTexture
 )
 ;
-X3DTextureProjectorNode
-(
-TextureProjector
-|TextureProjectorParallel
+x3DTextureProjectorNode : (
+textureProjector
+|textureProjectorParallel
 )
 ;
-X3DTextureTransformNode
-(
-X3DSingleTextureTransformNode
-|MultiTextureTransform
-|TextureTransform
-|TextureTransform3D
-|TextureTransformMatrix3D
+x3DTextureTransformNode : (
+x3DSingleTextureTransformNode
+|multiTextureTransform
+|textureTransform
+|textureTransform3D
+|textureTransformMatrix3D
 )
 ;
-X3DTimeDependentNode
-(
-X3DSoundProcessingNode
-|Analyser
-|BiquadFilter
-|Convolver
-|Delay
-|DynamicsCompressor
-|Gain
-|WaveShaper
-|X3DSoundSourceNode
-|AudioClip
-|BufferAudioSource
-|ListenerPointSource
-|MicrophoneSource
-|MovieTexture
-|OscillatorSource
-|StreamAudioSource
-|TimeSensor
+x3DTimeDependentNode : (
+x3DSoundProcessingNode
+|analyser
+|biquadFilter
+|convolver
+|delay
+|dynamicsCompressor
+|gain
+|waveShaper
+|x3DSoundSourceNode
+|audioClip
+|bufferAudioSource
+|listenerPointSource
+|microphoneSource
+|movieTexture
+|oscillatorSource
+|streamAudioSource
+|timeSensor
 )
 ;
-X3DTouchSensorNode
-(
-GeoTouchSensor
-|TouchSensor
+x3DTouchSensorNode : (
+geoTouchSensor
+|touchSensor
 )
 ;
-X3DTriggerNode
-(
-BooleanTrigger
-|IntegerTrigger
-|TimeTrigger
+x3DTriggerNode : (
+booleanTrigger
+|integerTrigger
+|timeTrigger
 )
 ;
-X3DVertexAttributeNode
-(
-FloatVertexAttribute
-|Matrix3VertexAttribute
-|Matrix4VertexAttribute
+x3DVertexAttributeNode : (
+floatVertexAttribute
+|matrix3VertexAttribute
+|matrix4VertexAttribute
 )
 ;
-X3DViewpointNode
-(
-GeoViewpoint
-|OrthoViewpoint
-|Viewpoint
+x3DViewpointNode : (
+geoViewpoint
+|orthoViewpoint
+|viewpoint
 )
 ;
-X3DViewportNode
-(
-Viewport
+x3DViewportNode : (
+viewport
 )
 ;
-X3DVolumeDataNode
-(
-IsoSurfaceVolumeData
-|SegmentedVolumeData
-|VolumeData
+x3DVolumeDataNode : (
+isoSurfaceVolumeData
+|segmentedVolumeData
+|volumeData
 )
 ;
-X3DVolumeRenderStyleNode
-(
-X3DComposableVolumeRenderStyleNode
-|BlendedVolumeStyle
-|BoundaryEnhancementVolumeStyle
-|CartoonVolumeStyle
-|ComposedVolumeStyle
-|EdgeEnhancementVolumeStyle
-|OpacityMapVolumeStyle
-|ShadedVolumeStyle
-|SilhouetteEnhancementVolumeStyle
-|ToneMappedVolumeStyle
-|ProjectionVolumeStyle
+x3DVolumeRenderStyleNode : (
+x3DComposableVolumeRenderStyleNode
+|blendedVolumeStyle
+|boundaryEnhancementVolumeStyle
+|cartoonVolumeStyle
+|composedVolumeStyle
+|edgeEnhancementVolumeStyle
+|opacityMapVolumeStyle
+|shadedVolumeStyle
+|silhouetteEnhancementVolumeStyle
+|toneMappedVolumeStyle
+|projectionVolumeStyle
 )
 ;
-X3DConcreteNode
-(
-AcousticProperties
-|Analyser
-|Anchor
-|Appearance
-|Arc2D
-|ArcClose2D
-|AudioClip
-|AudioDestination
-|Background
-|BallJoint
-|Billboard
-|BiquadFilter
-|BlendedVolumeStyle
-|BooleanFilter
-|BooleanSequencer
-|BooleanToggle
-|BooleanTrigger
-|BoundaryEnhancementVolumeStyle
-|BoundedPhysicsModel
-|Box
-|BufferAudioSource
-|CADAssembly
-|CADFace
-|CADLayer
-|CADPart
-|CartoonVolumeStyle
-|ChannelMerger
-|ChannelSelector
-|ChannelSplitter
-|Circle2D
-|ClipPlane
-|CollidableOffset
-|CollidableShape
-|Collision
-|CollisionCollection
-|CollisionSensor
-|CollisionSpace
-|Color
-|ColorChaser
-|ColorDamper
-|ColorInterpolator
-|ColorRGBA
-|ComposedCubeMapTexture
-|ComposedShader
-|ComposedTexture3D
-|ComposedVolumeStyle
-|Cone
-|ConeEmitter
-|Contact
-|Contour2D
-|ContourPolyline2D
-|Convolver
-|Coordinate
-|CoordinateChaser
-|CoordinateDamper
-|CoordinateDouble
-|CoordinateInterpolator
-|CoordinateInterpolator2D
-|Cylinder
-|CylinderSensor
-|Delay
-|DirectionalLight
-|DISEntityManager
-|DISEntityTypeMapping
-|Disk2D
-|DoubleAxisHingeJoint
-|DynamicsCompressor
-|EaseInEaseOut
-|EdgeEnhancementVolumeStyle
-|ElevationGrid
-|EspduTransform
-|ExplosionEmitter
-|Extrusion
-|FillProperties
-|FloatVertexAttribute
-|Fog
-|FogCoordinate
-|FontStyle
-|ForcePhysicsModel
-|Gain
-|GeneratedCubeMapTexture
-|GeoCoordinate
-|GeoElevationGrid
-|GeoLocation
-|GeoLOD
-|GeoMetadata
-|GeoOrigin
-|GeoPositionInterpolator
-|GeoProximitySensor
-|GeoTouchSensor
-|GeoTransform
-|GeoViewpoint
-|Group
-|HAnimDisplacer
-|HAnimHumanoid
-|HAnimJoint
-|HAnimMotion
-|HAnimSegment
-|HAnimSite
-|ImageCubeMapTexture
-|ImageTexture
-|ImageTexture3D
-|IndexedFaceSet
-|IndexedLineSet
-|IndexedQuadSet
-|IndexedTriangleFanSet
-|IndexedTriangleSet
-|IndexedTriangleStripSet
-|Inline
-|IntegerSequencer
-|IntegerTrigger
-|IsoSurfaceVolumeData
-|KeySensor
-|Layer
-|LayerSet
-|Layout
-|LayoutGroup
-|LayoutLayer
-|LinePickSensor
-|LineProperties
-|LineSet
-|ListenerPointSource
-|LoadSensor
-|LocalFog
-|LOD
-|Material
-|Matrix3VertexAttribute
-|Matrix4VertexAttribute
-|MetadataBoolean
-|MetadataDouble
-|MetadataFloat
-|MetadataInteger
-|MetadataSet
-|MetadataString
-|MicrophoneSource
-|MotorJoint
-|MovieTexture
-|MultiTexture
-|MultiTextureCoordinate
-|MultiTextureTransform
-|NavigationInfo
-|Normal
-|NormalInterpolator
-|NurbsCurve
-|NurbsCurve2D
-|NurbsOrientationInterpolator
-|NurbsPatchSurface
-|NurbsPositionInterpolator
-|NurbsSet
-|NurbsSurfaceInterpolator
-|NurbsSweptSurface
-|NurbsSwungSurface
-|NurbsTextureCoordinate
-|NurbsTrimmedSurface
-|OpacityMapVolumeStyle
-|OrientationChaser
-|OrientationDamper
-|OrientationInterpolator
-|OrthoViewpoint
-|OscillatorSource
-|PackagedShader
-|ParticleSystem
-|PeriodicWave
-|PhysicalMaterial
-|PickableGroup
-|PixelTexture
-|PixelTexture3D
-|PlaneSensor
-|PointEmitter
-|PointLight
-|PointPickSensor
-|PointProperties
-|PointSet
-|Polyline2D
-|PolylineEmitter
-|Polypoint2D
-|PositionChaser
-|PositionChaser2D
-|PositionDamper
-|PositionDamper2D
-|PositionInterpolator
-|PositionInterpolator2D
-|PrimitivePickSensor
-|ProgramShader
-|ProjectionVolumeStyle
-|ProtoInstance
-|ProximitySensor
-|QuadSet
-|ReceiverPdu
-|Rectangle2D
-|RigidBody
-|RigidBodyCollection
-|ScalarChaser
-|ScalarDamper
-|ScalarInterpolator
-|ScreenFontStyle
-|ScreenGroup
-|Script
-|SegmentedVolumeData
-|ShadedVolumeStyle
-|ShaderPart
-|ShaderProgram
-|Shape
-|SignalPdu
-|SilhouetteEnhancementVolumeStyle
-|SingleAxisHingeJoint
-|SliderJoint
-|Sound
-|SpatialSound
-|Sphere
-|SphereSensor
-|SplinePositionInterpolator
-|SplinePositionInterpolator2D
-|SplineScalarInterpolator
-|SpotLight
-|SquadOrientationInterpolator
-|StaticGroup
-|StreamAudioDestination
-|StreamAudioSource
-|StringSensor
-|SurfaceEmitter
-|Switch
-|TexCoordChaser2D
-|TexCoordDamper2D
-|Text
-|TextureBackground
-|TextureCoordinate
-|TextureCoordinate3D
-|TextureCoordinate4D
-|TextureCoordinateGenerator
-|TextureProjector
-|TextureProjectorParallel
-|TextureProperties
-|TextureTransform
-|TextureTransform3D
-|TextureTransformMatrix3D
-|TimeSensor
-|TimeTrigger
-|ToneMappedVolumeStyle
-|TouchSensor
-|Transform
-|TransformSensor
-|TransmitterPdu
-|TriangleFanSet
-|TriangleSet
-|TriangleSet2D
-|TriangleStripSet
-|TwoSidedMaterial
-|UniversalJoint
-|UnlitMaterial
-|Viewpoint
-|ViewpointGroup
-|Viewport
-|VisibilitySensor
-|VolumeData
-|VolumeEmitter
-|VolumePickSensor
-|WaveShaper
-|WindPhysicsModel
-|WorldInfo
+x3DConcreteNode : (
+acousticProperties
+|analyser
+|anchor
+|appearance
+|arc2D
+|arcClose2D
+|audioClip
+|audioDestination
+|background
+|ballJoint
+|billboard
+|biquadFilter
+|blendedVolumeStyle
+|booleanFilter
+|booleanSequencer
+|booleanToggle
+|booleanTrigger
+|boundaryEnhancementVolumeStyle
+|boundedPhysicsModel
+|box
+|bufferAudioSource
+|cADAssembly
+|cADFace
+|cADLayer
+|cADPart
+|cartoonVolumeStyle
+|channelMerger
+|channelSelector
+|channelSplitter
+|circle2D
+|clipPlane
+|collidableOffset
+|collidableShape
+|collision
+|collisionCollection
+|collisionSensor
+|collisionSpace
+|color
+|colorChaser
+|colorDamper
+|colorInterpolator
+|colorRGBA
+|composedCubeMapTexture
+|composedShader
+|composedTexture3D
+|composedVolumeStyle
+|cone
+|coneEmitter
+|contact
+|contour2D
+|contourPolyline2D
+|convolver
+|coordinate
+|coordinateChaser
+|coordinateDamper
+|coordinateDouble
+|coordinateInterpolator
+|coordinateInterpolator2D
+|cylinder
+|cylinderSensor
+|delay
+|directionalLight
+|dISEntityManager
+|dISEntityTypeMapping
+|disk2D
+|doubleAxisHingeJoint
+|dynamicsCompressor
+|easeInEaseOut
+|edgeEnhancementVolumeStyle
+|elevationGrid
+|espduTransform
+|explosionEmitter
+|extrusion
+|fillProperties
+|floatVertexAttribute
+|fog
+|fogCoordinate
+|fontStyle
+|forcePhysicsModel
+|gain
+|generatedCubeMapTexture
+|geoCoordinate
+|geoElevationGrid
+|geoLocation
+|geoLOD
+|geoMetadata
+|geoOrigin
+|geoPositionInterpolator
+|geoProximitySensor
+|geoTouchSensor
+|geoTransform
+|geoViewpoint
+|group
+|hAnimDisplacer
+|hAnimHumanoid
+|hAnimJoint
+|hAnimMotion
+|hAnimSegment
+|hAnimSite
+|imageCubeMapTexture
+|imageTexture
+|imageTexture3D
+|indexedFaceSet
+|indexedLineSet
+|indexedQuadSet
+|indexedTriangleFanSet
+|indexedTriangleSet
+|indexedTriangleStripSet
+|inline
+|integerSequencer
+|integerTrigger
+|isoSurfaceVolumeData
+|keySensor
+|layer
+|layerSet
+|layout
+|layoutGroup
+|layoutLayer
+|linePickSensor
+|lineProperties
+|lineSet
+|listenerPointSource
+|loadSensor
+|localFog
+|lOD
+|material
+|matrix3VertexAttribute
+|matrix4VertexAttribute
+|metadataBoolean
+|metadataDouble
+|metadataFloat
+|metadataInteger
+|metadataSet
+|metadataString
+|microphoneSource
+|motorJoint
+|movieTexture
+|multiTexture
+|multiTextureCoordinate
+|multiTextureTransform
+|navigationInfo
+|normal
+|normalInterpolator
+|nurbsCurve
+|nurbsCurve2D
+|nurbsOrientationInterpolator
+|nurbsPatchSurface
+|nurbsPositionInterpolator
+|nurbsSet
+|nurbsSurfaceInterpolator
+|nurbsSweptSurface
+|nurbsSwungSurface
+|nurbsTextureCoordinate
+|nurbsTrimmedSurface
+|opacityMapVolumeStyle
+|orientationChaser
+|orientationDamper
+|orientationInterpolator
+|orthoViewpoint
+|oscillatorSource
+|packagedShader
+|particleSystem
+|periodicWave
+|physicalMaterial
+|pickableGroup
+|pixelTexture
+|pixelTexture3D
+|planeSensor
+|pointEmitter
+|pointLight
+|pointPickSensor
+|pointProperties
+|pointSet
+|polyline2D
+|polylineEmitter
+|polypoint2D
+|positionChaser
+|positionChaser2D
+|positionDamper
+|positionDamper2D
+|positionInterpolator
+|positionInterpolator2D
+|primitivePickSensor
+|programShader
+|projectionVolumeStyle
+|protoInstance
+|proximitySensor
+|quadSet
+|receiverPdu
+|rectangle2D
+|rigidBody
+|rigidBodyCollection
+|scalarChaser
+|scalarDamper
+|scalarInterpolator
+|screenFontStyle
+|screenGroup
+|script
+|segmentedVolumeData
+|shadedVolumeStyle
+|shaderPart
+|shaderProgram
+|shape
+|signalPdu
+|silhouetteEnhancementVolumeStyle
+|singleAxisHingeJoint
+|sliderJoint
+|sound
+|spatialSound
+|sphere
+|sphereSensor
+|splinePositionInterpolator
+|splinePositionInterpolator2D
+|splineScalarInterpolator
+|spotLight
+|squadOrientationInterpolator
+|staticGroup
+|streamAudioDestination
+|streamAudioSource
+|stringSensor
+|surfaceEmitter
+|switch
+|texCoordChaser2D
+|texCoordDamper2D
+|text
+|textureBackground
+|textureCoordinate
+|textureCoordinate3D
+|textureCoordinate4D
+|textureCoordinateGenerator
+|textureProjector
+|textureProjectorParallel
+|textureProperties
+|textureTransform
+|textureTransform3D
+|textureTransformMatrix3D
+|timeSensor
+|timeTrigger
+|toneMappedVolumeStyle
+|touchSensor
+|transform
+|transformSensor
+|transmitterPdu
+|triangleFanSet
+|triangleSet
+|triangleSet2D
+|triangleStripSet
+|twoSidedMaterial
+|universalJoint
+|unlitMaterial
+|viewpoint
+|viewpointGroup
+|viewport
+|visibilitySensor
+|volumeData
+|volumeEmitter
+|volumePickSensor
+|waveShaper
+|windPhysicsModel
+|worldInfo
 )
 ;
-X3DConcreteStatement
-(
-component
-|connect
-|EXPORT
-|ExternProtoDeclare
-|field
-|fieldValue
-|head
-|IMPORT
-|IS
-|meta
-|ProtoBody
-|ProtoDeclare
-|ProtoInterface
-|ROUTE
-|Scene
-|unit
-|X3D
+x3DBoundedObject : (
+x3DGroupingNode
+|x3DViewportNode
+|viewport
+|anchor
+|billboard
+|cADAssembly
+|cADLayer
+|cADPart
+|collision
+|espduTransform
+|geoLocation
+|geoTransform
+|group
+|hAnimSegment
+|hAnimSite
+|layer
+|layoutGroup
+|layoutLayer
+|lOD
+|pickableGroup
+|screenGroup
+|switch
+|transform
+|x3DNBodyCollidableNode
+|collidableOffset
+|collidableShape
+|x3DNBodyCollisionSpaceNode
+|collisionSpace
+|x3DShapeNode
+|particleSystem
+|shape
+|x3DVolumeDataNode
+|isoSurfaceVolumeData
+|segmentedVolumeData
+|volumeData
+|cADFace
+|collisionCollection
+|geoLOD
+|hAnimHumanoid
+|hAnimJoint
+|inline
+|nurbsSet
+|receiverPdu
+|rigidBody
+|rigidBodyCollection
+|signalPdu
+|staticGroup
+|transmitterPdu
 )
 ;
-X3DBoundedObject
-(
-X3DGroupingNode
-|X3DViewportNode
-|Viewport
-|Anchor
-|Billboard
-|CADAssembly
-|CADLayer
-|CADPart
-|Collision
-|EspduTransform
-|GeoLocation
-|GeoTransform
-|Group
-|HAnimSegment
-|HAnimSite
-|LayoutGroup
-|LOD
-|PickableGroup
-|ScreenGroup
-|Switch
-|Transform
-|X3DNBodyCollidableNode
-|CollidableOffset
-|CollidableShape
-|X3DNBodyCollisionSpaceNode
-|CollisionSpace
-|X3DShapeNode
-|ParticleSystem
-|Shape
-|X3DVolumeDataNode
-|IsoSurfaceVolumeData
-|SegmentedVolumeData
-|VolumeData
-|CADFace
-|CollisionCollection
-|GeoLOD
-|HAnimHumanoid
-|HAnimJoint
-|Inline
-|NurbsSet
-|ReceiverPdu
-|RigidBody
-|RigidBodyCollection
-|SignalPdu
-|StaticGroup
-|TransmitterPdu
+x3DFogObject : (
+fog
+|localFog
 )
 ;
-X3DFogObject
-(
-Fog
-|LocalFog
+x3DMetadataObject : (
+metadataBoolean
+|metadataDouble
+|metadataFloat
+|metadataInteger
+|metadataSet
+|metadataString
 )
 ;
-X3DMetadataObject
-(
-MetadataBoolean
-|MetadataDouble
-|MetadataFloat
-|MetadataInteger
-|MetadataSet
-|MetadataString
+x3DPickableObject : (
+x3DLayerNode
+|layer
+|layoutLayer
+|pickableGroup
 )
 ;
-X3DPickableObject
-(
-X3DLayerNode
-|Layer
-|LayoutLayer
-|PickableGroup
+x3DProgrammableShaderObject : (
+composedShader
+|packagedShader
+|shaderProgram
 )
 ;
-X3DProgrammableShaderObject
-(
-ComposedShader
-|PackagedShader
-|ShaderProgram
+x3DUrlObject : (
+x3DScriptNode
+|script
+|anchor
+|audioClip
+|bufferAudioSource
+|dISEntityTypeMapping
+|geoMetadata
+|imageCubeMapTexture
+|imageTexture
+|imageTexture3D
+|inline
+|movieTexture
+|packagedShader
+|shaderPart
+|shaderProgram
 )
 ;
-X3DUrlObject
-(
-X3DScriptNode
-|Script
-|Anchor
-|AudioClip
-|BufferAudioSource
-|DISEntityTypeMapping
-|GeoMetadata
-|ImageCubeMapTexture
-|ImageTexture
-|ImageTexture3D
-|Inline
-|MovieTexture
-|PackagedShader
-|ShaderPart
-|ShaderProgram
-)
-;
-AcousticProperties
-: ('DEF' xsID)? 'AcousticProperties' '{'
+acousticProperties
+: dEF 'AcousticProperties' '{'
 (
    'absorption' SFFloat
 |  'description' SFString
 |  'diffuse' SFFloat
 |  'enabled' SFBool
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'refraction' SFFloat
 |  'specular' SFFloat
 |  'class' xsNMTOKENS
@@ -1855,24 +1756,24 @@ AcousticProperties
 )*
 '}'
 | 'USE' xsIDREF;
-Analyser
-: ('DEF' xsID)? 'Analyser' '{'
+analyser
+: dEF 'Analyser' '{'
 (
    'channelCount' SFInt32
 |  'channelCountMode' channelCountModeChoices
 |  'channelInterpretation' channelInterpretationChoices
-|  'children' '[' (Analyser|AudioClip|AudioDestination|BiquadFilter|BufferAudioSource|ChannelMerger|ChannelSelector|ChannelSplitter|Convolver|Delay|DynamicsCompressor|Gain|ListenerPointSource|MicrophoneSource|MovieTexture|OscillatorSource|Sound|SpatialSound|StreamAudioDestination|StreamAudioSource|WaveShaper)* ']'
+|  'children' '[' ( analyser|audioClip|audioDestination|biquadFilter|bufferAudioSource|channelMerger|channelSelector|channelSplitter|convolver|delay|dynamicsCompressor|gain|listenerPointSource|microphoneSource|movieTexture|oscillatorSource|sound|spatialSound|streamAudioDestination|streamAudioSource|waveShaper )* ']'
 |  'description' SFString
 |  'elapsedTime' SFTime
 |  'enabled' SFBool
 |  'fftSize' SFInt32
 |  'frequencyBinCount' SFInt32
 |  'gain' SFFloat
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'isActive' SFBool
 |  'isPaused' SFBool
 |  'maxDecibels' SFFloat
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'minDecibels' SFFloat
 |  'pauseTime' SFTime
 |  'resumeTime' SFTime
@@ -1886,22 +1787,22 @@ Analyser
 )*
 '}'
 | 'USE' xsIDREF;
-Anchor
-: ('DEF' xsID)? 'Anchor' '{'
+anchor
+: dEF 'Anchor' '{'
 (
-   'addChildren' '[' (X3DChildNode)* ']'
+   'addChildren' '[' ( x3DChildNode )* ']'
 |  'autoRefresh' SFTime
 |  'autoRefreshTimeLimit' SFTime
 |  'bboxCenter' SFVec3f
 |  'bboxDisplay' SFBool
 |  'bboxSize' bboxSizeType
-|  'children' '[' (X3DChildNode)* ']'
+|  'children' '[' ( x3DChildNode )* ']'
 |  'description' SFString
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'load' SFBool
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'parameter' MFString
-|  'removeChildren' '[' (X3DChildNode)* ']'
+|  'removeChildren' '[' ( x3DChildNode )* ']'
 |  'url' MFString
 |  'visible' SFBool
 |  'class' xsNMTOKENS
@@ -1910,33 +1811,34 @@ Anchor
 )*
 '}'
 | 'USE' xsIDREF;
-Appearance
-: ('DEF' xsID)? 'Appearance' '{'
+appearance
+: dEF 'Appearance' '{'
 (
-   'acousticProperties' (AcousticProperties)
+   'acousticProperties' ( acousticProperties )
 |  'alphaCutoff' unitIntervalType
 |  'alphaMode' alphaModeChoices
-|  'fillProperties' (FillProperties)
-|  'IS' (IS)
-|  'lineProperties' (LineProperties)
-|  'material' (X3DMaterialNode)
-|  'metadata' (X3DMetadataObject)
-|  'pointProperties' (PointProperties)
-|  'shaders' '[' (X3DShaderNode)* ']'
-|  'texture' (X3DTextureNode)
-|  'textureTransform' (X3DTextureTransformNode)
+|  'backMaterial' ( x3DMaterialNode )
+|  'fillProperties' ( fillProperties )
+|  'IS' ( iS )
+|  'lineProperties' ( lineProperties )
+|  'material' ( x3DMaterialNode )
+|  'metadata' ( x3DMetadataObject )
+|  'pointProperties' ( pointProperties )
+|  'shaders' '[' ( x3DShaderNode )* ']'
+|  'texture' ( x3DTextureNode )
+|  'textureTransform' ( x3DTextureTransformNode )
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
 |  'style' SFString
 )*
 '}'
 | 'USE' xsIDREF;
-Arc2D
-: ('DEF' xsID)? 'Arc2D' '{'
+arc2D
+: dEF 'Arc2D' '{'
 (
    'endAngle' SFFloat
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'radius' SFFloat
 |  'startAngle' SFFloat
 |  'class' xsNMTOKENS
@@ -1945,13 +1847,13 @@ Arc2D
 )*
 '}'
 | 'USE' xsIDREF;
-ArcClose2D
-: ('DEF' xsID)? 'ArcClose2D' '{'
+arcClose2D
+: dEF 'ArcClose2D' '{'
 (
    'closureType' closureTypeChoices
 |  'endAngle' SFFloat
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'radius' SFFloat
 |  'solid' SFBool
 |  'startAngle' SFFloat
@@ -1961,8 +1863,8 @@ ArcClose2D
 )*
 '}'
 | 'USE' xsIDREF;
-AudioClip
-: ('DEF' xsID)? 'AudioClip' '{'
+audioClip
+: dEF 'AudioClip' '{'
 (
    'autoRefresh' SFTime
 |  'autoRefreshTimeLimit' SFTime
@@ -1971,12 +1873,12 @@ AudioClip
 |  'elapsedTime' SFTime
 |  'enabled' SFBool
 |  'gain' SFFloat
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'isActive' SFBool
 |  'isPaused' SFBool
 |  'load' SFBool
 |  'loop' SFBool
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'pauseTime' SFTime
 |  'pitch' SFFloat
 |  'resumeTime' SFTime
@@ -1989,29 +1891,29 @@ AudioClip
 )*
 '}'
 | 'USE' xsIDREF;
-AudioDestination
-: ('DEF' xsID)? 'AudioDestination' '{'
+audioDestination
+: dEF 'AudioDestination' '{'
 (
    'channelCount' SFInt32
 |  'channelCountMode' channelCountModeChoices
 |  'channelInterpretation' channelInterpretationChoices
-|  'children' '[' (Analyser|AudioClip|AudioDestination|BiquadFilter|BufferAudioSource|ChannelMerger|ChannelSelector|ChannelSplitter|Convolver|Delay|DynamicsCompressor|Gain|ListenerPointSource|MicrophoneSource|MovieTexture|OscillatorSource|Sound|SpatialSound|StreamAudioDestination|StreamAudioSource|WaveShaper)* ']'
+|  'children' '[' ( analyser|audioClip|audioDestination|biquadFilter|bufferAudioSource|channelMerger|channelSelector|channelSplitter|convolver|delay|dynamicsCompressor|gain|listenerPointSource|microphoneSource|movieTexture|oscillatorSource|sound|spatialSound|streamAudioDestination|streamAudioSource|waveShaper )* ']'
 |  'description' SFString
 |  'enabled' SFBool
 |  'gain' SFFloat
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'isActive' SFBool
 |  'maxChannelCount' SFInt32
 |  'mediaDeviceID' SFString
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
 |  'style' SFString
 )*
 '}'
 | 'USE' xsIDREF;
-Background
-: ('DEF' xsID)? 'Background' '{'
+background
+: dEF 'Background' '{'
 (
    'backUrl' MFString
 |  'bindTime' SFTime
@@ -2019,10 +1921,10 @@ Background
 |  'frontUrl' MFString
 |  'groundAngle' MFFloat
 |  'groundColor' MFColor
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'isBound' SFBool
 |  'leftUrl' MFString
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'rightUrl' MFString
 |  'set_bind' SFBool
 |  'skyAngle' MFFloat
@@ -2035,35 +1937,35 @@ Background
 )*
 '}'
 | 'USE' xsIDREF;
-BallJoint
-: ('DEF' xsID)? 'BallJoint' '{'
+ballJoint
+: dEF 'BallJoint' '{'
 (
    'anchorPoint' SFVec3f
-|  'body1' (RigidBody)
+|  'body1' ( rigidBody )
 |  'body1AnchorPoint' SFVec3f
-|  'body2' (RigidBody)
+|  'body2' ( rigidBody )
 |  'body2AnchorPoint' SFVec3f
 |  'forceOutput' '[' (forceOutputValues)* ']'
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
 |  'style' SFString
 )*
 '}'
 | 'USE' xsIDREF;
-Billboard
-: ('DEF' xsID)? 'Billboard' '{'
+billboard
+: dEF 'Billboard' '{'
 (
-   'addChildren' '[' (X3DChildNode)* ']'
+   'addChildren' '[' ( x3DChildNode )* ']'
 |  'axisOfRotation' SFVec3f
 |  'bboxCenter' SFVec3f
 |  'bboxDisplay' SFBool
 |  'bboxSize' bboxSizeType
-|  'children' '[' (X3DChildNode)* ']'
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
-|  'removeChildren' '[' (X3DChildNode)* ']'
+|  'children' '[' ( x3DChildNode )* ']'
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
+|  'removeChildren' '[' ( x3DChildNode )* ']'
 |  'visible' SFBool
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -2071,23 +1973,23 @@ Billboard
 )*
 '}'
 | 'USE' xsIDREF;
-BiquadFilter
-: ('DEF' xsID)? 'BiquadFilter' '{'
+biquadFilter
+: dEF 'BiquadFilter' '{'
 (
    'channelCount' SFInt32
 |  'channelCountMode' channelCountModeChoices
 |  'channelInterpretation' channelInterpretationChoices
-|  'children' '[' (Analyser|AudioClip|AudioDestination|BiquadFilter|BufferAudioSource|ChannelMerger|ChannelSelector|ChannelSplitter|Convolver|Delay|DynamicsCompressor|Gain|ListenerPointSource|MicrophoneSource|MovieTexture|OscillatorSource|Sound|SpatialSound|StreamAudioDestination|StreamAudioSource|WaveShaper)* ']'
+|  'children' '[' ( analyser|audioClip|audioDestination|biquadFilter|bufferAudioSource|channelMerger|channelSelector|channelSplitter|convolver|delay|dynamicsCompressor|gain|listenerPointSource|microphoneSource|movieTexture|oscillatorSource|sound|spatialSound|streamAudioDestination|streamAudioSource|waveShaper )* ']'
 |  'description' SFString
 |  'detune' SFFloat
 |  'elapsedTime' SFTime
 |  'enabled' SFBool
 |  'frequency' SFFloat
 |  'gain' SFFloat
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'isActive' SFBool
 |  'isPaused' SFBool
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'pauseTime' SFTime
 |  'qualityFactor' SFFloat
 |  'resumeTime' SFTime
@@ -2101,34 +2003,34 @@ BiquadFilter
 )*
 '}'
 | 'USE' xsIDREF;
-BlendedVolumeStyle
-: ('DEF' xsID)? 'BlendedVolumeStyle' '{'
+blendedVolumeStyle
+: dEF 'BlendedVolumeStyle' '{'
 (
    'enabled' SFBool
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
-|  'renderStyle' (X3DComposableVolumeRenderStyleNode)
-|  'voxels' (X3DTexture3DNode)
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
+|  'renderStyle' ( x3DComposableVolumeRenderStyleNode )
+|  'voxels' ( x3DTexture3DNode )
 |  'weightConstant1' SFFloat
 |  'weightConstant2' SFFloat
 |  'weightFunction1' volumeRenderingWeightFunctionChoices
 |  'weightFunction2' volumeRenderingWeightFunctionChoices
-|  'weightTransferFunction1' (X3DTexture2DNode)
-|  'weightTransferFunction2' (X3DTexture2DNode)
+|  'weightTransferFunction1' ( x3DTexture2DNode )
+|  'weightTransferFunction2' ( x3DTexture2DNode )
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
 |  'style' SFString
 )*
 '}'
 | 'USE' xsIDREF;
-BooleanFilter
-: ('DEF' xsID)? 'BooleanFilter' '{'
+booleanFilter
+: dEF 'BooleanFilter' '{'
 (
    'inputFalse' SFBool
 |  'inputNegate' SFBool
 |  'inputTrue' SFBool
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'set_boolean' SFBool
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -2136,13 +2038,13 @@ BooleanFilter
 )*
 '}'
 | 'USE' xsIDREF;
-BooleanSequencer
-: ('DEF' xsID)? 'BooleanSequencer' '{'
+booleanSequencer
+: dEF 'BooleanSequencer' '{'
 (
-   'IS' (IS)
+   'IS' ( iS )
 |  'key' MFFloat
 |  'keyValue' MFBool
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'next' SFBool
 |  'previous' SFBool
 |  'set_fraction' SFFloat
@@ -2153,11 +2055,11 @@ BooleanSequencer
 )*
 '}'
 | 'USE' xsIDREF;
-BooleanToggle
-: ('DEF' xsID)? 'BooleanToggle' '{'
+booleanToggle
+: dEF 'BooleanToggle' '{'
 (
-   'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+   'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'set_boolean' SFBool
 |  'toggle' SFBool
 |  'class' xsNMTOKENS
@@ -2166,11 +2068,11 @@ BooleanToggle
 )*
 '}'
 | 'USE' xsIDREF;
-BooleanTrigger
-: ('DEF' xsID)? 'BooleanTrigger' '{'
+booleanTrigger
+: dEF 'BooleanTrigger' '{'
 (
-   'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+   'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'set_triggerTime' SFTime
 |  'triggerTrue' SFBool
 |  'class' xsNMTOKENS
@@ -2179,13 +2081,13 @@ BooleanTrigger
 )*
 '}'
 | 'USE' xsIDREF;
-BoundaryEnhancementVolumeStyle
-: ('DEF' xsID)? 'BoundaryEnhancementVolumeStyle' '{'
+boundaryEnhancementVolumeStyle
+: dEF 'BoundaryEnhancementVolumeStyle' '{'
 (
    'boundaryOpacity' SFFloat
 |  'enabled' SFBool
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'opacityFactor' SFFloat
 |  'retainedOpacity' SFFloat
 |  'class' xsNMTOKENS
@@ -2194,24 +2096,24 @@ BoundaryEnhancementVolumeStyle
 )*
 '}'
 | 'USE' xsIDREF;
-BoundedPhysicsModel
-: ('DEF' xsID)? 'BoundedPhysicsModel' '{'
+boundedPhysicsModel
+: dEF 'BoundedPhysicsModel' '{'
 (
    'enabled' SFBool
-|  'geometry' (X3DGeometryNode)
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+|  'geometry' ( x3DGeometryNode )
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
 |  'style' SFString
 )*
 '}'
 | 'USE' xsIDREF;
-Box
-: ('DEF' xsID)? 'Box' '{'
+box
+: dEF 'Box' '{'
 (
-   'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+   'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'size' SFVec3f
 |  'solid' SFBool
 |  'class' xsNMTOKENS
@@ -2220,8 +2122,8 @@ Box
 )*
 '}'
 | 'USE' xsIDREF;
-BufferAudioSource
-: ('DEF' xsID)? 'BufferAudioSource' '{'
+bufferAudioSource
+: dEF 'BufferAudioSource' '{'
 (
    'autoRefresh' SFTime
 |  'autoRefreshTimeLimit' SFTime
@@ -2236,7 +2138,7 @@ BufferAudioSource
 |  'elapsedTime' SFTime
 |  'enabled' SFBool
 |  'gain' SFFloat
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'isActive' SFBool
 |  'isPaused' SFBool
 |  'length' SFInt32
@@ -2244,7 +2146,7 @@ BufferAudioSource
 |  'loop' SFBool
 |  'loopEnd' SFFloat
 |  'loopStart' SFFloat
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'numberOfChannels' SFInt32
 |  'pauseTime' SFTime
 |  'playbackRate' SFFloat
@@ -2259,18 +2161,18 @@ BufferAudioSource
 )*
 '}'
 | 'USE' xsIDREF;
-CADAssembly
-: ('DEF' xsID)? 'CADAssembly' '{'
+cADAssembly
+: dEF 'CADAssembly' '{'
 (
-   'addChildren' '[' (X3DChildNode)* ']'
+   'addChildren' '[' ( x3DChildNode )* ']'
 |  'bboxCenter' SFVec3f
 |  'bboxDisplay' SFBool
 |  'bboxSize' bboxSizeType
-|  'children' '[' (X3DChildNode)* ']'
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+|  'children' '[' ( x3DChildNode )* ']'
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'name' SFString
-|  'removeChildren' '[' (X3DChildNode)* ']'
+|  'removeChildren' '[' ( x3DChildNode )* ']'
 |  'visible' SFBool
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -2278,16 +2180,16 @@ CADAssembly
 )*
 '}'
 | 'USE' xsIDREF;
-CADFace
-: ('DEF' xsID)? 'CADFace' '{'
+cADFace
+: dEF 'CADFace' '{'
 (
    'bboxCenter' SFVec3f
 |  'bboxDisplay' SFBool
 |  'bboxSize' bboxSizeType
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'name' SFString
-|  'shape' (Shape|LOD|Transform)
+|  'shape' ( shape|lOD|transform )
 |  'visible' SFBool
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -2295,18 +2197,18 @@ CADFace
 )*
 '}'
 | 'USE' xsIDREF;
-CADLayer
-: ('DEF' xsID)? 'CADLayer' '{'
+cADLayer
+: dEF 'CADLayer' '{'
 (
-   'addChildren' '[' (X3DChildNode)* ']'
+   'addChildren' '[' ( x3DChildNode )* ']'
 |  'bboxCenter' SFVec3f
 |  'bboxDisplay' SFBool
 |  'bboxSize' bboxSizeType
-|  'children' '[' (X3DChildNode)* ']'
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+|  'children' '[' ( x3DChildNode )* ']'
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'name' SFString
-|  'removeChildren' '[' (X3DChildNode)* ']'
+|  'removeChildren' '[' ( x3DChildNode )* ']'
 |  'visible' SFBool
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -2314,19 +2216,19 @@ CADLayer
 )*
 '}'
 | 'USE' xsIDREF;
-CADPart
-: ('DEF' xsID)? 'CADPart' '{'
+cADPart
+: dEF 'CADPart' '{'
 (
-   'addChildren' '[' (CADFace)* ']'
+   'addChildren' '[' ( cADFace )* ']'
 |  'bboxCenter' SFVec3f
 |  'bboxDisplay' SFBool
 |  'bboxSize' bboxSizeType
 |  'center' SFVec3f
-|  'children' '[' (CADFace)* ']'
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+|  'children' '[' ( cADFace )* ']'
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'name' SFString
-|  'removeChildren' '[' (CADFace)* ']'
+|  'removeChildren' '[' ( cADFace )* ']'
 |  'rotation' SFRotation
 |  'scale' SFVec3f
 |  'scaleOrientation' SFRotation
@@ -2338,83 +2240,83 @@ CADPart
 )*
 '}'
 | 'USE' xsIDREF;
-CartoonVolumeStyle
-: ('DEF' xsID)? 'CartoonVolumeStyle' '{'
+cartoonVolumeStyle
+: dEF 'CartoonVolumeStyle' '{'
 (
    'colorSteps' SFInt32
 |  'enabled' SFBool
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'orthogonalColor' SFColorRGBA
 |  'parallelColor' SFColorRGBA
-|  'surfaceNormals' (X3DTexture3DNode)
+|  'surfaceNormals' ( x3DTexture3DNode )
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
 |  'style' SFString
 )*
 '}'
 | 'USE' xsIDREF;
-ChannelMerger
-: ('DEF' xsID)? 'ChannelMerger' '{'
+channelMerger
+: dEF 'ChannelMerger' '{'
 (
    'channelCount' SFInt32
 |  'channelCountMode' channelCountModeChoices
 |  'channelInterpretation' channelInterpretationChoices
-|  'children' '[' (Analyser|AudioClip|AudioDestination|BiquadFilter|BufferAudioSource|ChannelMerger|ChannelSelector|ChannelSplitter|Convolver|Delay|DynamicsCompressor|Gain|ListenerPointSource|MicrophoneSource|MovieTexture|OscillatorSource|Sound|SpatialSound|StreamAudioDestination|StreamAudioSource|WaveShaper)* ']'
+|  'children' '[' ( analyser|audioClip|audioDestination|biquadFilter|bufferAudioSource|channelMerger|channelSelector|channelSplitter|convolver|delay|dynamicsCompressor|gain|listenerPointSource|microphoneSource|movieTexture|oscillatorSource|sound|spatialSound|streamAudioDestination|streamAudioSource|waveShaper )* ']'
 |  'description' SFString
 |  'enabled' SFBool
 |  'gain' SFFloat
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
 |  'style' SFString
 )*
 '}'
 | 'USE' xsIDREF;
-ChannelSelector
-: ('DEF' xsID)? 'ChannelSelector' '{'
+channelSelector
+: dEF 'ChannelSelector' '{'
 (
    'channelCount' SFInt32
 |  'channelCountMode' channelCountModeChoices
 |  'channelInterpretation' channelInterpretationChoices
 |  'channelSelection' SFInt32
-|  'children' '[' (Analyser|AudioClip|AudioDestination|BiquadFilter|BufferAudioSource|ChannelMerger|ChannelSelector|ChannelSplitter|Convolver|Delay|DynamicsCompressor|Gain|ListenerPointSource|MicrophoneSource|MovieTexture|OscillatorSource|Sound|SpatialSound|StreamAudioDestination|StreamAudioSource|WaveShaper)* ']'
+|  'children' '[' ( analyser|audioClip|audioDestination|biquadFilter|bufferAudioSource|channelMerger|channelSelector|channelSplitter|convolver|delay|dynamicsCompressor|gain|listenerPointSource|microphoneSource|movieTexture|oscillatorSource|sound|spatialSound|streamAudioDestination|streamAudioSource|waveShaper )* ']'
 |  'description' SFString
 |  'enabled' SFBool
 |  'gain' SFFloat
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
 |  'style' SFString
 )*
 '}'
 | 'USE' xsIDREF;
-ChannelSplitter
-: ('DEF' xsID)? 'ChannelSplitter' '{'
+channelSplitter
+: dEF 'ChannelSplitter' '{'
 (
    'channelCount' SFInt32
 |  'channelCountMode' channelCountModeChoices
 |  'channelInterpretation' channelInterpretationChoices
-|  'children' '[' (Analyser|AudioClip|AudioDestination|BiquadFilter|BufferAudioSource|ChannelMerger|ChannelSelector|ChannelSplitter|Convolver|Delay|DynamicsCompressor|Gain|ListenerPointSource|MicrophoneSource|MovieTexture|OscillatorSource|Sound|SpatialSound|StreamAudioDestination|StreamAudioSource|WaveShaper)* ']'
+|  'children' '[' ( analyser|audioClip|audioDestination|biquadFilter|bufferAudioSource|channelMerger|channelSelector|channelSplitter|convolver|delay|dynamicsCompressor|gain|listenerPointSource|microphoneSource|movieTexture|oscillatorSource|sound|spatialSound|streamAudioDestination|streamAudioSource|waveShaper )* ']'
 |  'description' SFString
 |  'enabled' SFBool
 |  'gain' SFFloat
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
-|  'outputs' '[' (X3DSoundChannelNode|X3DSoundProcessingNode|X3DSoundSourceNode)* ']'
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
+|  'outputs' '[' ( x3DSoundChannelNode|x3DSoundProcessingNode|x3DSoundSourceNode )* ']'
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
 |  'style' SFString
 )*
 '}'
 | 'USE' xsIDREF;
-Circle2D
-: ('DEF' xsID)? 'Circle2D' '{'
+circle2D
+: dEF 'Circle2D' '{'
 (
-   'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+   'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'radius' SFFloat
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -2422,12 +2324,12 @@ Circle2D
 )*
 '}'
 | 'USE' xsIDREF;
-ClipPlane
-: ('DEF' xsID)? 'ClipPlane' '{'
+clipPlane
+: dEF 'ClipPlane' '{'
 (
    'enabled' SFBool
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'plane' SFVec4f
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -2435,16 +2337,16 @@ ClipPlane
 )*
 '}'
 | 'USE' xsIDREF;
-CollidableOffset
-: ('DEF' xsID)? 'CollidableOffset' '{'
+collidableOffset
+: dEF 'CollidableOffset' '{'
 (
    'bboxCenter' SFVec3f
 |  'bboxDisplay' SFBool
 |  'bboxSize' bboxSizeType
-|  'collidable' (X3DNBodyCollidableNode)
+|  'collidable' ( x3DNBodyCollidableNode )
 |  'enabled' SFBool
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'rotation' SFRotation
 |  'translation' SFVec3f
 |  'visible' SFBool
@@ -2454,17 +2356,17 @@ CollidableOffset
 )*
 '}'
 | 'USE' xsIDREF;
-CollidableShape
-: ('DEF' xsID)? 'CollidableShape' '{'
+collidableShape
+: dEF 'CollidableShape' '{'
 (
    'bboxCenter' SFVec3f
 |  'bboxDisplay' SFBool
 |  'bboxSize' bboxSizeType
 |  'enabled' SFBool
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'rotation' SFRotation
-|  'shape' (Shape)
+|  'shape' ( shape )
 |  'translation' SFVec3f
 |  'visible' SFBool
 |  'class' xsNMTOKENS
@@ -2473,22 +2375,22 @@ CollidableShape
 )*
 '}'
 | 'USE' xsIDREF;
-Collision
-: ('DEF' xsID)? 'Collision' '{'
+collision
+: dEF 'Collision' '{'
 (
-   'addChildren' '[' (X3DChildNode)* ']'
+   'addChildren' '[' ( x3DChildNode )* ']'
 |  'bboxCenter' SFVec3f
 |  'bboxDisplay' SFBool
 |  'bboxSize' bboxSizeType
-|  'children' '[' (X3DChildNode)* ']'
+|  'children' '[' ( x3DChildNode )* ']'
 |  'collideTime' SFTime
 |  'description' SFString
 |  'enabled' SFBool
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'isActive' SFBool
-|  'metadata' (X3DMetadataObject)
-|  'proxy' (X3DChildNode)
-|  'removeChildren' '[' (X3DChildNode)* ']'
+|  'metadata' ( x3DMetadataObject )
+|  'proxy' ( x3DChildNode )
+|  'removeChildren' '[' ( x3DChildNode )* ']'
 |  'visible' SFBool
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -2496,20 +2398,20 @@ Collision
 )*
 '}'
 | 'USE' xsIDREF;
-CollisionCollection
-: ('DEF' xsID)? 'CollisionCollection' '{'
+collisionCollection
+: dEF 'CollisionCollection' '{'
 (
    'appliedParameters' '[' (appliedParametersChoices)* ']'
 |  'bboxCenter' SFVec3f
 |  'bboxDisplay' SFBool
 |  'bboxSize' bboxSizeType
 |  'bounce' SFFloat
-|  'collidables' '[' (X3DNBodyCollisionSpaceNode|X3DNBodyCollidableNode)* ']'
+|  'collidables' '[' ( x3DNBodyCollisionSpaceNode|x3DNBodyCollidableNode )* ']'
 |  'description' SFString
 |  'enabled' SFBool
 |  'frictionCoefficients' SFVec2f
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'minBounceSpeed' SFFloat
 |  'slipFactors' SFVec2f
 |  'softnessConstantForceMix' SFFloat
@@ -2522,33 +2424,33 @@ CollisionCollection
 )*
 '}'
 | 'USE' xsIDREF;
-CollisionSensor
-: ('DEF' xsID)? 'CollisionSensor' '{'
+collisionSensor
+: dEF 'CollisionSensor' '{'
 (
-   'collider' (CollisionCollection)
-|  'contacts' '[' (Contact)* ']'
+   'collider' ( collisionCollection )
+|  'contacts' '[' ( contact )* ']'
 |  'description' SFString
 |  'enabled' SFBool
-|  'intersections' '[' (X3DNBodyCollidableNode)* ']'
-|  'IS' (IS)
+|  'intersections' '[' ( x3DNBodyCollidableNode )* ']'
+|  'IS' ( iS )
 |  'isActive' SFBool
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
 |  'style' SFString
 )*
 '}'
 | 'USE' xsIDREF;
-CollisionSpace
-: ('DEF' xsID)? 'CollisionSpace' '{'
+collisionSpace
+: dEF 'CollisionSpace' '{'
 (
    'bboxCenter' SFVec3f
 |  'bboxDisplay' SFBool
 |  'bboxSize' bboxSizeType
-|  'collidables' '[' (X3DNBodyCollisionSpaceNode|X3DNBodyCollidableNode)* ']'
+|  'collidables' '[' ( x3DNBodyCollisionSpaceNode|x3DNBodyCollidableNode )* ']'
 |  'enabled' SFBool
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'useGeometry' SFBool
 |  'visible' SFBool
 |  'class' xsNMTOKENS
@@ -2557,27 +2459,27 @@ CollisionSpace
 )*
 '}'
 | 'USE' xsIDREF;
-Color
-: ('DEF' xsID)? 'Color' '{'
+color
+: dEF 'Color' '{'
 (
    'color' MFColor
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
 |  'style' SFString
 )*
 '}'
 | 'USE' xsIDREF;
-ColorChaser
-: ('DEF' xsID)? 'ColorChaser' '{'
+colorChaser
+: dEF 'ColorChaser' '{'
 (
    'duration' SFTime
 |  'initialDestination' SFColor
 |  'initialValue' SFColor
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'isActive' SFBool
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'set_destination' SFColor
 |  'set_value' SFColor
 |  'value_changed' SFColor
@@ -2587,14 +2489,14 @@ ColorChaser
 )*
 '}'
 | 'USE' xsIDREF;
-ColorDamper
-: ('DEF' xsID)? 'ColorDamper' '{'
+colorDamper
+: dEF 'ColorDamper' '{'
 (
    'initialDestination' SFColor
 |  'initialValue' SFColor
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'isActive' SFBool
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'order' SFInt32
 |  'set_destination' SFColor
 |  'set_value' SFColor
@@ -2607,13 +2509,13 @@ ColorDamper
 )*
 '}'
 | 'USE' xsIDREF;
-ColorInterpolator
-: ('DEF' xsID)? 'ColorInterpolator' '{'
+colorInterpolator
+: dEF 'ColorInterpolator' '{'
 (
-   'IS' (IS)
+   'IS' ( iS )
 |  'key' MFFloat
 |  'keyValue' MFColor
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'set_fraction' SFFloat
 |  'value_changed' SFColor
 |  'class' xsNMTOKENS
@@ -2622,91 +2524,92 @@ ColorInterpolator
 )*
 '}'
 | 'USE' xsIDREF;
-ColorRGBA
-: ('DEF' xsID)? 'ColorRGBA' '{'
+colorRGBA
+: dEF 'ColorRGBA' '{'
 (
    'color' MFColorRGBA
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
 |  'style' SFString
 )*
 '}'
 | 'USE' xsIDREF;
-ComposedCubeMapTexture
-: ('DEF' xsID)? 'ComposedCubeMapTexture' '{'
+composedCubeMapTexture
+: dEF 'ComposedCubeMapTexture' '{'
 (
-   'backTexture' (X3DTexture2DNode)
-|  'bottomTexture' (X3DTexture2DNode)
+   'backTexture' ( x3DTexture2DNode )
+|  'bottomTexture' ( x3DTexture2DNode )
 |  'description' SFString
-|  'frontTexture' (X3DTexture2DNode)
-|  'IS' (IS)
-|  'leftTexture' (X3DTexture2DNode)
-|  'metadata' (X3DMetadataObject)
-|  'rightTexture' (X3DTexture2DNode)
-|  'topTexture' (X3DTexture2DNode)
+|  'frontTexture' ( x3DTexture2DNode )
+|  'IS' ( iS )
+|  'leftTexture' ( x3DTexture2DNode )
+|  'metadata' ( x3DMetadataObject )
+|  'rightTexture' ( x3DTexture2DNode )
+|  'textureProperties' ( textureProperties )
+|  'topTexture' ( x3DTexture2DNode )
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
 |  'style' SFString
 )*
 '}'
 | 'USE' xsIDREF;
-ComposedShader
-: ('DEF' xsID)? 'ComposedShader' '{'
+composedShader
+: dEF 'ComposedShader' '{'
 (
    'activate' SFBool
-|  'field' '[' (field)* ']'
-|  'IS' (IS)
+|  'field' '[' ( field )* ']'
+|  'IS' ( iS )
 |  'isSelected' SFBool
 |  'isValid' SFBool
 |  'language' shaderLanguageValues
-|  'metadata' (X3DMetadataObject)
-|  'parts' '[' (ShaderPart)* ']'
+|  'metadata' ( x3DMetadataObject )
+|  'parts' '[' ( shaderPart )* ']'
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
 |  'style' SFString
 )*
 '}'
 | 'USE' xsIDREF;
-ComposedTexture3D
-: ('DEF' xsID)? 'ComposedTexture3D' '{'
+composedTexture3D
+: dEF 'ComposedTexture3D' '{'
 (
    'description' SFString
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'repeatR' SFBool
 |  'repeatS' SFBool
 |  'repeatT' SFBool
-|  'texture' '[' (X3DTexture2DNode)* ']'
-|  'textureProperties' (TextureProperties)
+|  'texture' '[' ( x3DTexture2DNode )* ']'
+|  'textureProperties' ( textureProperties )
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
 |  'style' SFString
 )*
 '}'
 | 'USE' xsIDREF;
-ComposedVolumeStyle
-: ('DEF' xsID)? 'ComposedVolumeStyle' '{'
+composedVolumeStyle
+: dEF 'ComposedVolumeStyle' '{'
 (
    'enabled' SFBool
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
-|  'renderStyle' '[' (X3DComposableVolumeRenderStyleNode)* ']'
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
+|  'renderStyle' '[' ( x3DComposableVolumeRenderStyleNode )* ']'
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
 |  'style' SFString
 )*
 '}'
 | 'USE' xsIDREF;
-Cone
-: ('DEF' xsID)? 'Cone' '{'
+cone
+: dEF 'Cone' '{'
 (
    'bottom' SFBool
 |  'bottomRadius' SFFloat
 |  'height' SFFloat
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'side' SFBool
 |  'solid' SFBool
 |  'class' xsNMTOKENS
@@ -2715,14 +2618,14 @@ Cone
 )*
 '}'
 | 'USE' xsIDREF;
-ConeEmitter
-: ('DEF' xsID)? 'ConeEmitter' '{'
+coneEmitter
+: dEF 'ConeEmitter' '{'
 (
    'angle' SFFloat
 |  'direction' SFVec3f
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'mass' SFFloat
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'on' SFBool
 |  'position' SFVec3f
 |  'speed' SFFloat
@@ -2734,21 +2637,21 @@ ConeEmitter
 )*
 '}'
 | 'USE' xsIDREF;
-Contact
-: ('DEF' xsID)? 'Contact' '{'
+contact
+: dEF 'Contact' '{'
 (
    'appliedParameters' '[' (appliedParametersChoices)* ']'
-|  'body1' (RigidBody)
-|  'body2' (RigidBody)
+|  'body1' ( rigidBody )
+|  'body2' ( rigidBody )
 |  'bounce' SFFloat
 |  'contactNormal' SFVec3f
 |  'depth' SFFloat
 |  'frictionCoefficients' SFVec2f
 |  'frictionDirection' SFVec3f
-|  'geometry1' (X3DNBodyCollidableNode)
-|  'geometry2' (X3DNBodyCollidableNode)
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+|  'geometry1' ( x3DNBodyCollidableNode )
+|  'geometry2' ( x3DNBodyCollidableNode )
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'minBounceSpeed' SFFloat
 |  'position' SFVec3f
 |  'slipCoefficients' SFVec2f
@@ -2761,48 +2664,48 @@ Contact
 )*
 '}'
 | 'USE' xsIDREF;
-Contour2D
-: ('DEF' xsID)? 'Contour2D' '{'
+contour2D
+: dEF 'Contour2D' '{'
 (
-   'addChildren' '[' (NurbsCurve2D|ContourPolyline2D)* ']'
-|  'children' '[' (NurbsCurve2D|ContourPolyline2D)* ']'
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
-|  'removeChildren' '[' (NurbsCurve2D|ContourPolyline2D)* ']'
+   'addChildren' '[' ( nurbsCurve2D|contourPolyline2D )* ']'
+|  'children' '[' ( nurbsCurve2D|contourPolyline2D )* ']'
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
+|  'removeChildren' '[' ( nurbsCurve2D|contourPolyline2D )* ']'
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
 |  'style' SFString
 )*
 '}'
 | 'USE' xsIDREF;
-ContourPolyline2D
-: ('DEF' xsID)? 'ContourPolyline2D' '{'
+contourPolyline2D
+: dEF 'ContourPolyline2D' '{'
 (
    'controlPoint' MFVec2d
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
 |  'style' SFString
 )*
 '}'
 | 'USE' xsIDREF;
-Convolver
-: ('DEF' xsID)? 'Convolver' '{'
+convolver
+: dEF 'Convolver' '{'
 (
    'buffer' MFFloat
 |  'channelCount' SFInt32
 |  'channelCountMode' channelCountModeChoices
 |  'channelInterpretation' channelInterpretationChoices
-|  'children' '[' (Analyser|AudioClip|AudioDestination|BiquadFilter|BufferAudioSource|ChannelMerger|ChannelSelector|ChannelSplitter|Convolver|Delay|DynamicsCompressor|Gain|ListenerPointSource|MicrophoneSource|MovieTexture|OscillatorSource|Sound|SpatialSound|StreamAudioDestination|StreamAudioSource|WaveShaper)* ']'
+|  'children' '[' ( analyser|audioClip|audioDestination|biquadFilter|bufferAudioSource|channelMerger|channelSelector|channelSplitter|convolver|delay|dynamicsCompressor|gain|listenerPointSource|microphoneSource|movieTexture|oscillatorSource|sound|spatialSound|streamAudioDestination|streamAudioSource|waveShaper )* ']'
 |  'description' SFString
 |  'elapsedTime' SFTime
 |  'enabled' SFBool
 |  'gain' SFFloat
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'isActive' SFBool
 |  'isPaused' SFBool
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'normalize' SFBool
 |  'pauseTime' SFTime
 |  'resumeTime' SFTime
@@ -2815,11 +2718,11 @@ Convolver
 )*
 '}'
 | 'USE' xsIDREF;
-Coordinate
-: ('DEF' xsID)? 'Coordinate' '{'
+coordinate
+: dEF 'Coordinate' '{'
 (
-   'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+   'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'point' MFVec3f
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -2827,15 +2730,15 @@ Coordinate
 )*
 '}'
 | 'USE' xsIDREF;
-CoordinateChaser
-: ('DEF' xsID)? 'CoordinateChaser' '{'
+coordinateChaser
+: dEF 'CoordinateChaser' '{'
 (
    'duration' SFTime
 |  'initialDestination' MFVec3f
 |  'initialValue' MFVec3f
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'isActive' SFBool
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'set_destination' MFVec3f
 |  'set_value' MFVec3f
 |  'value_changed' MFVec3f
@@ -2845,14 +2748,14 @@ CoordinateChaser
 )*
 '}'
 | 'USE' xsIDREF;
-CoordinateDamper
-: ('DEF' xsID)? 'CoordinateDamper' '{'
+coordinateDamper
+: dEF 'CoordinateDamper' '{'
 (
    'initialDestination' MFVec3f
 |  'initialValue' MFVec3f
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'isActive' SFBool
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'order' SFInt32
 |  'set_destination' MFVec3f
 |  'set_value' MFVec3f
@@ -2865,11 +2768,11 @@ CoordinateDamper
 )*
 '}'
 | 'USE' xsIDREF;
-CoordinateDouble
-: ('DEF' xsID)? 'CoordinateDouble' '{'
+coordinateDouble
+: dEF 'CoordinateDouble' '{'
 (
-   'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+   'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'point' MFVec3d
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -2877,13 +2780,13 @@ CoordinateDouble
 )*
 '}'
 | 'USE' xsIDREF;
-CoordinateInterpolator
-: ('DEF' xsID)? 'CoordinateInterpolator' '{'
+coordinateInterpolator
+: dEF 'CoordinateInterpolator' '{'
 (
-   'IS' (IS)
+   'IS' ( iS )
 |  'key' MFFloat
 |  'keyValue' MFVec3f
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'set_fraction' SFFloat
 |  'value_changed' MFVec3f
 |  'class' xsNMTOKENS
@@ -2892,13 +2795,13 @@ CoordinateInterpolator
 )*
 '}'
 | 'USE' xsIDREF;
-CoordinateInterpolator2D
-: ('DEF' xsID)? 'CoordinateInterpolator2D' '{'
+coordinateInterpolator2D
+: dEF 'CoordinateInterpolator2D' '{'
 (
-   'IS' (IS)
+   'IS' ( iS )
 |  'key' MFFloat
 |  'keyValue' MFVec2f
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'set_fraction' SFFloat
 |  'value_changed' MFVec2f
 |  'class' xsNMTOKENS
@@ -2907,13 +2810,13 @@ CoordinateInterpolator2D
 )*
 '}'
 | 'USE' xsIDREF;
-Cylinder
-: ('DEF' xsID)? 'Cylinder' '{'
+cylinder
+: dEF 'Cylinder' '{'
 (
    'bottom' SFBool
 |  'height' SFFloat
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'radius' SFFloat
 |  'side' SFBool
 |  'solid' SFBool
@@ -2924,19 +2827,19 @@ Cylinder
 )*
 '}'
 | 'USE' xsIDREF;
-CylinderSensor
-: ('DEF' xsID)? 'CylinderSensor' '{'
+cylinderSensor
+: dEF 'CylinderSensor' '{'
 (
    'autoOffset' SFBool
 |  'axisRotation' SFRotation
 |  'description' SFString
 |  'diskAngle' SFFloat
 |  'enabled' SFBool
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'isActive' SFBool
 |  'isOver' SFBool
 |  'maxAngle' SFFloat
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'minAngle' SFFloat
 |  'offset' SFFloat
 |  'rotation_changed' SFRotation
@@ -2947,23 +2850,23 @@ CylinderSensor
 )*
 '}'
 | 'USE' xsIDREF;
-Delay
-: ('DEF' xsID)? 'Delay' '{'
+delay
+: dEF 'Delay' '{'
 (
    'channelCount' SFInt32
 |  'channelCountMode' channelCountModeChoices
 |  'channelInterpretation' channelInterpretationChoices
-|  'children' '[' (Analyser|AudioClip|AudioDestination|BiquadFilter|BufferAudioSource|ChannelMerger|ChannelSelector|ChannelSplitter|Convolver|Delay|DynamicsCompressor|Gain|ListenerPointSource|MicrophoneSource|MovieTexture|OscillatorSource|Sound|SpatialSound|StreamAudioDestination|StreamAudioSource|WaveShaper)* ']'
+|  'children' '[' ( analyser|audioClip|audioDestination|biquadFilter|bufferAudioSource|channelMerger|channelSelector|channelSplitter|convolver|delay|dynamicsCompressor|gain|listenerPointSource|microphoneSource|movieTexture|oscillatorSource|sound|spatialSound|streamAudioDestination|streamAudioSource|waveShaper )* ']'
 |  'delayTime' SFTime
 |  'description' SFString
 |  'elapsedTime' SFTime
 |  'enabled' SFBool
 |  'gain' SFFloat
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'isActive' SFBool
 |  'isPaused' SFBool
 |  'maxDelayTime' SFTime
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'pauseTime' SFTime
 |  'resumeTime' SFTime
 |  'startTime' SFTime
@@ -2975,16 +2878,16 @@ Delay
 )*
 '}'
 | 'USE' xsIDREF;
-DirectionalLight
-: ('DEF' xsID)? 'DirectionalLight' '{'
+directionalLight
+: dEF 'DirectionalLight' '{'
 (
    'ambientIntensity' unitIntervalType
 |  'color' SFColor
 |  'direction' SFVec3f
 |  'global' SFBool
 |  'intensity' SFFloat
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'on' SFBool
 |  'shadowIntensity' unitIntervalType
 |  'shadows' SFBool
@@ -2994,17 +2897,17 @@ DirectionalLight
 )*
 '}'
 | 'USE' xsIDREF;
-DISEntityManager
-: ('DEF' xsID)? 'DISEntityManager' '{'
+dISEntityManager
+: dEF 'DISEntityManager' '{'
 (
-   'addedEntities' '[' (EspduTransform)* ']'
+   'addedEntities' '[' ( espduTransform )* ']'
 |  'address' SFString
 |  'applicationID' SFInt32
-|  'children' '[' (DISEntityTypeMapping)* ']'
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+|  'children' '[' ( dISEntityTypeMapping )* ']'
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'port' SFInt32
-|  'removedEntities' '[' (EspduTransform)* ']'
+|  'removedEntities' '[' ( espduTransform )* ']'
 |  'siteID' SFInt32
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -3012,8 +2915,8 @@ DISEntityManager
 )*
 '}'
 | 'USE' xsIDREF;
-DISEntityTypeMapping
-: ('DEF' xsID)? 'DISEntityTypeMapping' '{'
+dISEntityTypeMapping
+: dEF 'DISEntityTypeMapping' '{'
 (
    'autoRefresh' SFTime
 |  'autoRefreshTimeLimit' SFTime
@@ -3022,10 +2925,10 @@ DISEntityTypeMapping
 |  'description' SFString
 |  'domain' SFInt32
 |  'extra' SFInt32
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'kind' SFInt32
 |  'load' SFBool
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'specific' SFInt32
 |  'subcategory' SFInt32
 |  'url' MFString
@@ -3035,12 +2938,12 @@ DISEntityTypeMapping
 )*
 '}'
 | 'USE' xsIDREF;
-Disk2D
-: ('DEF' xsID)? 'Disk2D' '{'
+disk2D
+: dEF 'Disk2D' '{'
 (
    'innerRadius' SFFloat
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'outerRadius' SFFloat
 |  'solid' SFBool
 |  'class' xsNMTOKENS
@@ -3049,16 +2952,16 @@ Disk2D
 )*
 '}'
 | 'USE' xsIDREF;
-DoubleAxisHingeJoint
-: ('DEF' xsID)? 'DoubleAxisHingeJoint' '{'
+doubleAxisHingeJoint
+: dEF 'DoubleAxisHingeJoint' '{'
 (
    'anchorPoint' SFVec3f
 |  'axis1' SFVec3f
 |  'axis2' SFVec3f
-|  'body1' (RigidBody)
+|  'body1' ( rigidBody )
 |  'body1AnchorPoint' SFVec3f
 |  'body1Axis' SFVec3f
-|  'body2' (RigidBody)
+|  'body2' ( rigidBody )
 |  'body2AnchorPoint' SFVec3f
 |  'body2Axis' SFVec3f
 |  'desiredAngularVelocity1' SFFloat
@@ -3068,11 +2971,11 @@ DoubleAxisHingeJoint
 |  'hinge1AngleRate' SFFloat
 |  'hinge2Angle' SFFloat
 |  'hinge2AngleRate' SFFloat
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'maxAngle1' SFFloat
 |  'maxTorque1' SFFloat
 |  'maxTorque2' SFFloat
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'minAngle1' SFFloat
 |  'stop1Bounce' SFFloat
 |  'stop1ConstantForceMix' SFFloat
@@ -3085,23 +2988,23 @@ DoubleAxisHingeJoint
 )*
 '}'
 | 'USE' xsIDREF;
-DynamicsCompressor
-: ('DEF' xsID)? 'DynamicsCompressor' '{'
+dynamicsCompressor
+: dEF 'DynamicsCompressor' '{'
 (
    'attack' SFTime
 |  'channelCount' SFInt32
 |  'channelCountMode' channelCountModeChoices
 |  'channelInterpretation' channelInterpretationChoices
-|  'children' '[' (Analyser|AudioClip|AudioDestination|BiquadFilter|BufferAudioSource|ChannelMerger|ChannelSelector|ChannelSplitter|Convolver|Delay|DynamicsCompressor|Gain|ListenerPointSource|MicrophoneSource|MovieTexture|OscillatorSource|Sound|SpatialSound|StreamAudioDestination|StreamAudioSource|WaveShaper)* ']'
+|  'children' '[' ( analyser|audioClip|audioDestination|biquadFilter|bufferAudioSource|channelMerger|channelSelector|channelSplitter|convolver|delay|dynamicsCompressor|gain|listenerPointSource|microphoneSource|movieTexture|oscillatorSource|sound|spatialSound|streamAudioDestination|streamAudioSource|waveShaper )* ']'
 |  'description' SFString
 |  'elapsedTime' SFTime
 |  'enabled' SFBool
 |  'gain' SFFloat
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'isActive' SFBool
 |  'isPaused' SFBool
 |  'knee' SFFloat
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'pauseTime' SFTime
 |  'ratio' SFFloat
 |  'reduction' SFFloat
@@ -3117,13 +3020,13 @@ DynamicsCompressor
 )*
 '}'
 | 'USE' xsIDREF;
-EaseInEaseOut
-: ('DEF' xsID)? 'EaseInEaseOut' '{'
+easeInEaseOut
+: dEF 'EaseInEaseOut' '{'
 (
    'easeInEaseOut' MFVec2f
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'key' MFFloat
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'modifiedFraction_changed' SFFloat
 |  'set_fraction' SFFloat
 |  'class' xsNMTOKENS
@@ -3132,38 +3035,38 @@ EaseInEaseOut
 )*
 '}'
 | 'USE' xsIDREF;
-EdgeEnhancementVolumeStyle
-: ('DEF' xsID)? 'EdgeEnhancementVolumeStyle' '{'
+edgeEnhancementVolumeStyle
+: dEF 'EdgeEnhancementVolumeStyle' '{'
 (
    'edgeColor' SFColorRGBA
 |  'enabled' SFBool
 |  'gradientThreshold' SFFloat
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
-|  'surfaceNormals' (X3DTexture3DNode)
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
+|  'surfaceNormals' ( x3DTexture3DNode )
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
 |  'style' SFString
 )*
 '}'
 | 'USE' xsIDREF;
-ElevationGrid
-: ('DEF' xsID)? 'ElevationGrid' '{'
+elevationGrid
+: dEF 'ElevationGrid' '{'
 (
-   'attrib' '[' (X3DVertexAttributeNode)* ']'
+   'attrib' '[' ( x3DVertexAttributeNode )* ']'
 |  'ccw' SFBool
-|  'color' (X3DColorNode)
+|  'color' ( x3DColorNode )
 |  'colorPerVertex' SFBool
 |  'creaseAngle' SFFloat
-|  'fogCoord' (FogCoordinate)
+|  'fogCoord' ( fogCoordinate )
 |  'height' MFFloat
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
-|  'normal' (X3DNormalNode)
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
+|  'normal' ( x3DNormalNode )
 |  'normalPerVertex' SFBool
 |  'set_height' MFFloat
 |  'solid' SFBool
-|  'texCoord' (X3DSingleTextureCoordinateNode)
+|  'texCoord' ( x3DSingleTextureCoordinateNode )
 |  'xDimension' SFInt32
 |  'xSpacing' SFFloat
 |  'zDimension' SFInt32
@@ -3174,10 +3077,10 @@ ElevationGrid
 )*
 '}'
 | 'USE' xsIDREF;
-EspduTransform
-: ('DEF' xsID)? 'EspduTransform' '{'
+espduTransform
+: dEF 'EspduTransform' '{'
 (
-   'addChildren' '[' (X3DChildNode)* ']'
+   'addChildren' '[' ( x3DChildNode )* ']'
 |  'address' SFString
 |  'applicationID' SFInt32
 |  'articulationParameterArray' MFFloat
@@ -3198,7 +3101,7 @@ EspduTransform
 |  'bboxDisplay' SFBool
 |  'bboxSize' bboxSizeType
 |  'center' SFVec3f
-|  'children' '[' (X3DChildNode)* ']'
+|  'children' '[' ( x3DChildNode )* ']'
 |  'collideTime' SFTime
 |  'collisionType' SFInt32
 |  'deadReckoning' SFInt32
@@ -3230,7 +3133,7 @@ EspduTransform
 |  'fuse' SFInt32
 |  'geoCoords' SFVec3d
 |  'geoSystem' geoSystemType
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'isActive' SFBool
 |  'isCollided' SFBool
 |  'isDetonated' SFBool
@@ -3241,7 +3144,7 @@ EspduTransform
 |  'linearAcceleration' SFVec3f
 |  'linearVelocity' SFVec3f
 |  'marking' SFString
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'multicastRelayHost' SFString
 |  'multicastRelayPort' SFInt32
 |  'munitionApplicationID' SFInt32
@@ -3253,7 +3156,7 @@ EspduTransform
 |  'networkMode' networkModeChoices
 |  'port' SFInt32
 |  'readInterval' SFTime
-|  'removeChildren' '[' (X3DChildNode)* ']'
+|  'removeChildren' '[' ( x3DChildNode )* ']'
 |  'rotation' SFRotation
 |  'rtpHeaderExpected' SFBool
 |  'scale' SFVec3f
@@ -3278,12 +3181,12 @@ EspduTransform
 )*
 '}'
 | 'USE' xsIDREF;
-ExplosionEmitter
-: ('DEF' xsID)? 'ExplosionEmitter' '{'
+explosionEmitter
+: dEF 'ExplosionEmitter' '{'
 (
-   'IS' (IS)
+   'IS' ( iS )
 |  'mass' SFFloat
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'on' SFBool
 |  'position' SFVec3f
 |  'speed' SFFloat
@@ -3295,8 +3198,8 @@ ExplosionEmitter
 )*
 '}'
 | 'USE' xsIDREF;
-Extrusion
-: ('DEF' xsID)? 'Extrusion' '{'
+extrusion
+: dEF 'Extrusion' '{'
 (
    'beginCap' SFBool
 |  'ccw' SFBool
@@ -3304,8 +3207,8 @@ Extrusion
 |  'creaseAngle' SFFloat
 |  'crossSection' MFVec2f
 |  'endCap' SFBool
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'orientation' MFRotation
 |  'scale' MFVec2f
 |  'set_crossSection' MFVec2f
@@ -3320,26 +3223,26 @@ Extrusion
 )*
 '}'
 | 'USE' xsIDREF;
-FillProperties
-: ('DEF' xsID)? 'FillProperties' '{'
+fillProperties
+: dEF 'FillProperties' '{'
 (
    'filled' SFBool
 |  'hatchColor' SFColor
 |  'hatched' SFBool
 |  'hatchStyle' hatchStyleValues
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
 |  'style' SFString
 )*
 '}'
 | 'USE' xsIDREF;
-FloatVertexAttribute
-: ('DEF' xsID)? 'FloatVertexAttribute' '{'
+floatVertexAttribute
+: dEF 'FloatVertexAttribute' '{'
 (
-   'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+   'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'name' xsNMTOKEN
 |  'numComponents' SFInt32
 |  'value' MFFloat
@@ -3349,15 +3252,15 @@ FloatVertexAttribute
 )*
 '}'
 | 'USE' xsIDREF;
-Fog
-: ('DEF' xsID)? 'Fog' '{'
+fog
+: dEF 'Fog' '{'
 (
    'bindTime' SFTime
 |  'color' SFColor
 |  'fogType' fogTypeChoices
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'isBound' SFBool
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'set_bind' SFBool
 |  'visibilityRange' SFFloat
 |  'class' xsNMTOKENS
@@ -3366,30 +3269,30 @@ Fog
 )*
 '}'
 | 'USE' xsIDREF;
-FogCoordinate
-: ('DEF' xsID)? 'FogCoordinate' '{'
+fogCoordinate
+: dEF 'FogCoordinate' '{'
 (
    'depth' MFFloat
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
 |  'style' SFString
 )*
 '}'
 | 'USE' xsIDREF;
-FontStyle
-: ('DEF' xsID)? 'FontStyle' '{'
+fontStyle
+: dEF 'FontStyle' '{'
 (
    'class' xsNMTOKENS
 |  'family' '[' (fontFamilyValues)* ']'
 |  'horizontal' SFBool
 |  'id' xsNMTOKEN
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'justify' '[' (justifyChoices)* ']'
 |  'language' SFString
 |  'leftToRight' SFBool
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'size' SFFloat
 |  'spacing' SFFloat
 |  'style' fontStyleChoices
@@ -3397,34 +3300,34 @@ FontStyle
 )*
 '}'
 | 'USE' xsIDREF;
-ForcePhysicsModel
-: ('DEF' xsID)? 'ForcePhysicsModel' '{'
+forcePhysicsModel
+: dEF 'ForcePhysicsModel' '{'
 (
    'enabled' SFBool
 |  'force' SFVec3f
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
 |  'style' SFString
 )*
 '}'
 | 'USE' xsIDREF;
-Gain
-: ('DEF' xsID)? 'Gain' '{'
+gain
+: dEF 'Gain' '{'
 (
    'channelCount' SFInt32
 |  'channelCountMode' channelCountModeChoices
 |  'channelInterpretation' channelInterpretationChoices
-|  'children' '[' (Analyser|AudioClip|AudioDestination|BiquadFilter|BufferAudioSource|ChannelMerger|ChannelSelector|ChannelSplitter|Convolver|Delay|DynamicsCompressor|Gain|ListenerPointSource|MicrophoneSource|MovieTexture|OscillatorSource|Sound|SpatialSound|StreamAudioDestination|StreamAudioSource|WaveShaper)* ']'
+|  'children' '[' ( analyser|audioClip|audioDestination|biquadFilter|bufferAudioSource|channelMerger|channelSelector|channelSplitter|convolver|delay|dynamicsCompressor|gain|listenerPointSource|microphoneSource|movieTexture|oscillatorSource|sound|spatialSound|streamAudioDestination|streamAudioSource|waveShaper )* ']'
 |  'description' SFString
 |  'elapsedTime' SFTime
 |  'enabled' SFBool
 |  'gain' SFFloat
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'isActive' SFBool
 |  'isPaused' SFBool
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'pauseTime' SFTime
 |  'resumeTime' SFTime
 |  'startTime' SFTime
@@ -3436,14 +3339,14 @@ Gain
 )*
 '}'
 | 'USE' xsIDREF;
-GeneratedCubeMapTexture
-: ('DEF' xsID)? 'GeneratedCubeMapTexture' '{'
+generatedCubeMapTexture
+: dEF 'GeneratedCubeMapTexture' '{'
 (
    'description' SFString
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'size' SFInt32
-|  'textureProperties' (TextureProperties)
+|  'textureProperties' ( textureProperties )
 |  'update' generatedCubeMapTextureUpdateChoices
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -3451,13 +3354,13 @@ GeneratedCubeMapTexture
 )*
 '}'
 | 'USE' xsIDREF;
-GeoCoordinate
-: ('DEF' xsID)? 'GeoCoordinate' '{'
+geoCoordinate
+: dEF 'GeoCoordinate' '{'
 (
-   'geoOrigin' (GeoOrigin)
+   'geoOrigin' ( geoOrigin )
 |  'geoSystem' geoSystemType
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'point' MFVec3d
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -3465,24 +3368,24 @@ GeoCoordinate
 )*
 '}'
 | 'USE' xsIDREF;
-GeoElevationGrid
-: ('DEF' xsID)? 'GeoElevationGrid' '{'
+geoElevationGrid
+: dEF 'GeoElevationGrid' '{'
 (
    'ccw' SFBool
-|  'color' (X3DColorNode)
+|  'color' ( x3DColorNode )
 |  'colorPerVertex' SFBool
 |  'creaseAngle' SFDouble
 |  'geoGridOrigin' SFVec3d
-|  'geoOrigin' (GeoOrigin)
+|  'geoOrigin' ( geoOrigin )
 |  'geoSystem' geoSystemType
 |  'height' MFDouble
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
-|  'normal' (X3DNormalNode)
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
+|  'normal' ( x3DNormalNode )
 |  'normalPerVertex' SFBool
-|  'set_height' MFFloat
+|  'set_height' MFDouble
 |  'solid' SFBool
-|  'texCoord' (X3DSingleTextureCoordinateNode)
+|  'texCoord' ( x3DSingleTextureCoordinateNode )
 |  'xDimension' SFInt32
 |  'xSpacing' SFDouble
 |  'yScale' SFFloat
@@ -3494,20 +3397,20 @@ GeoElevationGrid
 )*
 '}'
 | 'USE' xsIDREF;
-GeoLocation
-: ('DEF' xsID)? 'GeoLocation' '{'
+geoLocation
+: dEF 'GeoLocation' '{'
 (
-   'addChildren' '[' (X3DChildNode)* ']'
+   'addChildren' '[' ( x3DChildNode )* ']'
 |  'bboxCenter' SFVec3f
 |  'bboxDisplay' SFBool
 |  'bboxSize' bboxSizeType
-|  'children' '[' (X3DChildNode)* ']'
+|  'children' '[' ( x3DChildNode )* ']'
 |  'geoCoords' SFVec3d
-|  'geoOrigin' (GeoOrigin)
+|  'geoOrigin' ( geoOrigin )
 |  'geoSystem' geoSystemType
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
-|  'removeChildren' '[' (X3DChildNode)* ']'
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
+|  'removeChildren' '[' ( x3DChildNode )* ']'
 |  'visible' SFBool
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -3515,8 +3418,8 @@ GeoLocation
 )*
 '}'
 | 'USE' xsIDREF;
-GeoLOD
-: ('DEF' xsID)? 'GeoLOD' '{'
+geoLOD
+: dEF 'GeoLOD' '{'
 (
    'bboxCenter' SFVec3f
 |  'bboxDisplay' SFBool
@@ -3526,14 +3429,14 @@ GeoLOD
 |  'child2Url' MFString
 |  'child3Url' MFString
 |  'child4Url' MFString
-|  'children' '[' (X3DChildNode)* ']'
-|  'geoOrigin' (GeoOrigin)
+|  'children' '[' ( x3DChildNode )* ']'
+|  'geoOrigin' ( geoOrigin )
 |  'geoSystem' geoSystemType
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'level_changed' SFInt32
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'range' SFFloat
-|  'rootNode' '[' (X3DChildNode)* ']'
+|  'rootNode' '[' ( x3DChildNode )* ']'
 |  'rootUrl' MFString
 |  'visible' SFBool
 |  'class' xsNMTOKENS
@@ -3542,16 +3445,16 @@ GeoLOD
 )*
 '}'
 | 'USE' xsIDREF;
-GeoMetadata
-: ('DEF' xsID)? 'GeoMetadata' '{'
+geoMetadata
+: dEF 'GeoMetadata' '{'
 (
    'autoRefresh' SFTime
 |  'autoRefreshTimeLimit' SFTime
-|  'data' '[' (X3DNode)* ']'
+|  'data' '[' ( x3DNode )* ']'
 |  'description' SFString
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'load' SFBool
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'summary' MFString
 |  'url' MFString
 |  'class' xsNMTOKENS
@@ -3560,13 +3463,13 @@ GeoMetadata
 )*
 '}'
 | 'USE' xsIDREF;
-GeoOrigin
-: ('DEF' xsID)? 'GeoOrigin' '{'
+geoOrigin
+: dEF 'GeoOrigin' '{'
 (
    'geoCoords' SFVec3d
 |  'geoSystem' geoSystemType
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'rotateYUp' SFBool
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -3574,16 +3477,16 @@ GeoOrigin
 )*
 '}'
 | 'USE' xsIDREF;
-GeoPositionInterpolator
-: ('DEF' xsID)? 'GeoPositionInterpolator' '{'
+geoPositionInterpolator
+: dEF 'GeoPositionInterpolator' '{'
 (
-   'geoOrigin' (GeoOrigin)
+   'geoOrigin' ( geoOrigin )
 |  'geoSystem' geoSystemType
 |  'geovalue_changed' SFVec3d
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'key' MFFloat
 |  'keyValue' MFVec3d
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'set_fraction' SFFloat
 |  'value_changed' SFVec3f
 |  'class' xsNMTOKENS
@@ -3592,8 +3495,8 @@ GeoPositionInterpolator
 )*
 '}'
 | 'USE' xsIDREF;
-GeoProximitySensor
-: ('DEF' xsID)? 'GeoProximitySensor' '{'
+geoProximitySensor
+: dEF 'GeoProximitySensor' '{'
 (
    'center' SFVec3d
 |  'centerOfRotation_changed' SFVec3f
@@ -3603,11 +3506,11 @@ GeoProximitySensor
 |  'exitTime' SFTime
 |  'geoCenter' SFVec3d
 |  'geoCoord_changed' SFVec3d
-|  'geoOrigin' (GeoOrigin)
+|  'geoOrigin' ( geoOrigin )
 |  'geoSystem' geoSystemType
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'isActive' SFBool
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'orientation_changed' SFRotation
 |  'position_changed' SFVec3f
 |  'size' SFVec3f
@@ -3617,21 +3520,21 @@ GeoProximitySensor
 )*
 '}'
 | 'USE' xsIDREF;
-GeoTouchSensor
-: ('DEF' xsID)? 'GeoTouchSensor' '{'
+geoTouchSensor
+: dEF 'GeoTouchSensor' '{'
 (
    'description' SFString
 |  'enabled' SFBool
-|  'geoOrigin' (GeoOrigin)
+|  'geoOrigin' ( geoOrigin )
 |  'geoSystem' geoSystemType
 |  'hitGeoCoord_changed' SFVec3d
 |  'hitNormal_changed' SFVec3f
 |  'hitPoint_changed' SFVec3f
 |  'hitTexCoord_changed' SFVec2f
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'isActive' SFBool
 |  'isOver' SFBool
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'touchTime' SFTime
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -3639,20 +3542,20 @@ GeoTouchSensor
 )*
 '}'
 | 'USE' xsIDREF;
-GeoTransform
-: ('DEF' xsID)? 'GeoTransform' '{'
+geoTransform
+: dEF 'GeoTransform' '{'
 (
-   'addChildren' '[' (X3DChildNode)* ']'
+   'addChildren' '[' ( x3DChildNode )* ']'
 |  'bboxCenter' SFVec3f
 |  'bboxDisplay' SFBool
 |  'bboxSize' bboxSizeType
-|  'children' '[' (X3DChildNode)* ']'
+|  'children' '[' ( x3DChildNode )* ']'
 |  'geoCenter' SFVec3d
-|  'geoOrigin' (GeoOrigin)
+|  'geoOrigin' ( geoOrigin )
 |  'geoSystem' geoSystemType
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
-|  'removeChildren' '[' (X3DChildNode)* ']'
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
+|  'removeChildren' '[' ( x3DChildNode )* ']'
 |  'rotation' SFRotation
 |  'scale' SFVec3f
 |  'scaleOrientation' SFRotation
@@ -3664,21 +3567,21 @@ GeoTransform
 )*
 '}'
 | 'USE' xsIDREF;
-GeoViewpoint
-: ('DEF' xsID)? 'GeoViewpoint' '{'
+geoViewpoint
+: dEF 'GeoViewpoint' '{'
 (
    'bindTime' SFTime
 |  'centerOfRotation' SFVec3d
 |  'description' SFString
 |  'farDistance' SFFloat
 |  'fieldOfView' SFFloat
-|  'geoOrigin' (GeoOrigin)
+|  'geoOrigin' ( geoOrigin )
 |  'geoSystem' geoSystemType
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'isBound' SFBool
 |  'jump' SFBool
-|  'metadata' (X3DMetadataObject)
-|  'navigationInfo' (NavigationInfo)
+|  'metadata' ( x3DMetadataObject )
+|  'navigationInfo' ( navigationInfo )
 |  'nearDistance' SFFloat
 |  'orientation' SFRotation
 |  'position' SFVec3d
@@ -3692,17 +3595,17 @@ GeoViewpoint
 )*
 '}'
 | 'USE' xsIDREF;
-Group
-: ('DEF' xsID)? 'Group' '{'
+group
+: dEF 'Group' '{'
 (
-   'addChildren' '[' (X3DChildNode)* ']'
+   'addChildren' '[' ( x3DChildNode )* ']'
 |  'bboxCenter' SFVec3f
 |  'bboxDisplay' SFBool
 |  'bboxSize' bboxSizeType
-|  'children' '[' (X3DChildNode)* ']'
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
-|  'removeChildren' '[' (X3DChildNode)* ']'
+|  'children' '[' ( x3DChildNode )* ']'
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
+|  'removeChildren' '[' ( x3DChildNode )* ']'
 |  'visible' SFBool
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -3710,14 +3613,14 @@ Group
 )*
 '}'
 | 'USE' xsIDREF;
-HAnimDisplacer
-: ('DEF' xsID)? 'HAnimDisplacer' '{'
+hAnimDisplacer
+: dEF 'HAnimDisplacer' '{'
 (
    'coordIndex' MFInt32
 |  'description' SFString
 |  'displacements' MFVec3f
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'name' hanimFeaturePointNameValues
 |  'weight' SFFloat
 |  'class' xsNMTOKENS
@@ -3726,8 +3629,8 @@ HAnimDisplacer
 )*
 '}'
 | 'USE' xsIDREF;
-HAnimHumanoid
-: ('DEF' xsID)? 'HAnimHumanoid' '{'
+hAnimHumanoid
+: dEF 'HAnimHumanoid' '{'
 (
    'bboxCenter' SFVec3f
 |  'bboxDisplay' SFBool
@@ -3735,31 +3638,31 @@ HAnimHumanoid
 |  'center' SFVec3f
 |  'description' SFString
 |  'info' MFString
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'jointBindingPositions' MFVec3f
 |  'jointBindingRotations' MFRotation
 |  'jointBindingScales' MFVec3f
-|  'joints' '[' (HAnimJoint)* ']'
+|  'joints' '[' ( hAnimJoint )* ']'
 |  'loa' loaType
-|  'metadata' (X3DMetadataObject)
-|  'motions' '[' (HAnimMotion)* ']'
+|  'metadata' ( x3DMetadataObject )
+|  'motions' '[' ( hAnimMotion )* ']'
 |  'motionsEnabled' MFBool
 |  'name' xsNMTOKEN
 |  'rotation' SFRotation
 |  'scale' SFVec3f
 |  'scaleOrientation' SFRotation
-|  'segments' '[' (HAnimSegment)* ']'
-|  'sites' '[' (HAnimSite)* ']'
+|  'segments' '[' ( hAnimSegment )* ']'
+|  'sites' '[' ( hAnimSite )* ']'
 |  'skeletalConfiguration' SFString
-|  'skeleton' '[' (HAnimJoint|HAnimSite)* ']'
-|  'skin' '[' (Group|Transform|Shape|IndexedFaceSet)* ']'
-|  'skinBindingCoords' (Coordinate|CoordinateDouble)
-|  'skinBindingNormals' (X3DNormalNode)
-|  'skinCoord' (Coordinate|CoordinateDouble)
-|  'skinNormal' (X3DNormalNode)
+|  'skeleton' '[' ( hAnimJoint|hAnimSite )* ']'
+|  'skin' '[' ( group|transform|shape|indexedFaceSet )* ']'
+|  'skinBindingCoords' ( coordinate|coordinateDouble )
+|  'skinBindingNormals' ( x3DNormalNode )
+|  'skinCoord' ( coordinate|coordinateDouble )
+|  'skinNormal' ( x3DNormalNode )
 |  'translation' SFVec3f
 |  'version' hanimVersionChoices
-|  'viewpoints' '[' (HAnimSite)* ']'
+|  'viewpoints' '[' ( hAnimSite )* ']'
 |  'visible' SFBool
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -3767,23 +3670,23 @@ HAnimHumanoid
 )*
 '}'
 | 'USE' xsIDREF;
-HAnimJoint
-: ('DEF' xsID)? 'HAnimJoint' '{'
+hAnimJoint
+: dEF 'HAnimJoint' '{'
 (
-   'addChildren' '[' (HAnimJoint|HAnimSegment)* ']'
+   'addChildren' '[' ( hAnimJoint|hAnimSegment )* ']'
 |  'bboxCenter' SFVec3f
 |  'bboxDisplay' SFBool
 |  'bboxSize' bboxSizeType
 |  'center' SFVec3f
-|  'children' '[' (HAnimJoint|HAnimSegment)* ']'
+|  'children' '[' ( hAnimJoint|hAnimSegment )* ']'
 |  'description' SFString
-|  'displacers' '[' (HAnimDisplacer)* ']'
-|  'IS' (IS)
+|  'displacers' '[' ( hAnimDisplacer )* ']'
+|  'IS' ( iS )
 |  'limitOrientation' SFRotation
 |  'llimit' MFFloat
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'name' hanimJointNameValues
-|  'removeChildren' '[' (HAnimJoint|HAnimSegment)* ']'
+|  'removeChildren' '[' ( hAnimJoint|hAnimSegment )* ']'
 |  'rotation' SFRotation
 |  'scale' SFVec3f
 |  'scaleOrientation' SFRotation
@@ -3799,8 +3702,8 @@ HAnimJoint
 )*
 '}'
 | 'USE' xsIDREF;
-HAnimMotion
-: ('DEF' xsID)? 'HAnimMotion' '{'
+hAnimMotion
+: dEF 'HAnimMotion' '{'
 (
    'channels' SFString
 |  'channelsEnabled' MFBool
@@ -3813,12 +3716,14 @@ HAnimMotion
 |  'frameDuration' SFTime
 |  'frameIncrement' SFInt32
 |  'frameIndex' SFInt32
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'joints' SFString
 |  'loa' loaType
 |  'loop' SFBool
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'name' xsNMTOKEN
+|  'next' SFBool
+|  'previous' SFBool
 |  'startFrame' SFInt32
 |  'values' MFFloat
 |  'class' xsNMTOKENS
@@ -3827,24 +3732,24 @@ HAnimMotion
 )*
 '}'
 | 'USE' xsIDREF;
-HAnimSegment
-: ('DEF' xsID)? 'HAnimSegment' '{'
+hAnimSegment
+: dEF 'HAnimSegment' '{'
 (
-   'addChildren' '[' (X3DChildNode)* ']'
+   'addChildren' '[' ( x3DChildNode )* ']'
 |  'bboxCenter' SFVec3f
 |  'bboxDisplay' SFBool
 |  'bboxSize' bboxSizeType
 |  'centerOfMass' SFVec3f
-|  'children' '[' (X3DChildNode)* ']'
-|  'coord' (Coordinate|CoordinateDouble)
+|  'children' '[' ( x3DChildNode )* ']'
+|  'coord' ( coordinate|coordinateDouble )
 |  'description' SFString
-|  'displacers' '[' (HAnimDisplacer)* ']'
-|  'IS' (IS)
+|  'displacers' '[' ( hAnimDisplacer )* ']'
+|  'IS' ( iS )
 |  'mass' SFFloat
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'momentsOfInertia' MFFloat
 |  'name' hanimSegmentNameValues
-|  'removeChildren' '[' (X3DChildNode)* ']'
+|  'removeChildren' '[' ( x3DChildNode )* ']'
 |  'visible' SFBool
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -3852,20 +3757,20 @@ HAnimSegment
 )*
 '}'
 | 'USE' xsIDREF;
-HAnimSite
-: ('DEF' xsID)? 'HAnimSite' '{'
+hAnimSite
+: dEF 'HAnimSite' '{'
 (
-   'addChildren' '[' (X3DChildNode)* ']'
+   'addChildren' '[' ( x3DChildNode )* ']'
 |  'bboxCenter' SFVec3f
 |  'bboxDisplay' SFBool
 |  'bboxSize' bboxSizeType
 |  'center' SFVec3f
-|  'children' '[' (X3DChildNode)* ']'
+|  'children' '[' ( x3DChildNode )* ']'
 |  'description' SFString
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'name' hanimFeaturePointNameValues
-|  'removeChildren' '[' (X3DChildNode)* ']'
+|  'removeChildren' '[' ( x3DChildNode )* ']'
 |  'rotation' SFRotation
 |  'scale' SFVec3f
 |  'scaleOrientation' SFRotation
@@ -3877,16 +3782,16 @@ HAnimSite
 )*
 '}'
 | 'USE' xsIDREF;
-ImageCubeMapTexture
-: ('DEF' xsID)? 'ImageCubeMapTexture' '{'
+imageCubeMapTexture
+: dEF 'ImageCubeMapTexture' '{'
 (
    'autoRefresh' SFTime
 |  'autoRefreshTimeLimit' SFTime
 |  'description' SFString
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'load' SFBool
-|  'metadata' (X3DMetadataObject)
-|  'textureProperties' (TextureProperties)
+|  'metadata' ( x3DMetadataObject )
+|  'textureProperties' ( textureProperties )
 |  'url' MFString
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -3894,18 +3799,18 @@ ImageCubeMapTexture
 )*
 '}'
 | 'USE' xsIDREF;
-ImageTexture
-: ('DEF' xsID)? 'ImageTexture' '{'
+imageTexture
+: dEF 'ImageTexture' '{'
 (
    'autoRefresh' SFTime
 |  'autoRefreshTimeLimit' SFTime
 |  'description' SFString
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'load' SFBool
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'repeatS' SFBool
 |  'repeatT' SFBool
-|  'textureProperties' (TextureProperties)
+|  'textureProperties' ( textureProperties )
 |  'url' MFString
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -3913,19 +3818,19 @@ ImageTexture
 )*
 '}'
 | 'USE' xsIDREF;
-ImageTexture3D
-: ('DEF' xsID)? 'ImageTexture3D' '{'
+imageTexture3D
+: dEF 'ImageTexture3D' '{'
 (
    'autoRefresh' SFTime
 |  'autoRefreshTimeLimit' SFTime
 |  'description' SFString
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'load' SFBool
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'repeatR' SFBool
 |  'repeatS' SFBool
 |  'repeatT' SFBool
-|  'textureProperties' (TextureProperties)
+|  'textureProperties' ( textureProperties )
 |  'url' MFString
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -3933,22 +3838,22 @@ ImageTexture3D
 )*
 '}'
 | 'USE' xsIDREF;
-IndexedFaceSet
-: ('DEF' xsID)? 'IndexedFaceSet' '{'
+indexedFaceSet
+: dEF 'IndexedFaceSet' '{'
 (
-   'attrib' '[' (X3DVertexAttributeNode)* ']'
+   'attrib' '[' ( x3DVertexAttributeNode )* ']'
 |  'ccw' SFBool
-|  'color' (X3DColorNode)
+|  'color' ( x3DColorNode )
 |  'colorIndex' MFInt32
 |  'colorPerVertex' SFBool
 |  'convex' SFBool
-|  'coord' (X3DCoordinateNode)
+|  'coord' ( x3DCoordinateNode )
 |  'coordIndex' MFInt32
 |  'creaseAngle' SFFloat
-|  'fogCoord' (FogCoordinate)
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
-|  'normal' (X3DNormalNode)
+|  'fogCoord' ( fogCoordinate )
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
+|  'normal' ( x3DNormalNode )
 |  'normalIndex' MFInt32
 |  'normalPerVertex' SFBool
 |  'set_colorIndex' MFInt32
@@ -3956,7 +3861,7 @@ IndexedFaceSet
 |  'set_normalIndex' MFInt32
 |  'set_texCoordIndex' MFInt32
 |  'solid' SFBool
-|  'texCoord' (X3DSingleTextureCoordinateNode|MultiTextureCoordinate)
+|  'texCoord' ( x3DSingleTextureCoordinateNode|multiTextureCoordinate )
 |  'texCoordIndex' MFInt32
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -3964,19 +3869,19 @@ IndexedFaceSet
 )*
 '}'
 | 'USE' xsIDREF;
-IndexedLineSet
-: ('DEF' xsID)? 'IndexedLineSet' '{'
+indexedLineSet
+: dEF 'IndexedLineSet' '{'
 (
-   'attrib' '[' (X3DVertexAttributeNode)* ']'
-|  'color' (X3DColorNode)
+   'attrib' '[' ( x3DVertexAttributeNode )* ']'
+|  'color' ( x3DColorNode )
 |  'colorIndex' MFInt32
 |  'colorPerVertex' SFBool
-|  'coord' (X3DCoordinateNode)
+|  'coord' ( x3DCoordinateNode )
 |  'coordIndex' MFInt32
-|  'fogCoord' (FogCoordinate)
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
-|  'normal' (X3DNormalNode)
+|  'fogCoord' ( fogCoordinate )
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
+|  'normal' ( x3DNormalNode )
 |  'set_colorIndex' MFInt32
 |  'set_coordIndex' MFInt32
 |  'class' xsNMTOKENS
@@ -3985,100 +3890,100 @@ IndexedLineSet
 )*
 '}'
 | 'USE' xsIDREF;
-IndexedQuadSet
-: ('DEF' xsID)? 'IndexedQuadSet' '{'
+indexedQuadSet
+: dEF 'IndexedQuadSet' '{'
 (
-   'attrib' '[' (X3DVertexAttributeNode)* ']'
+   'attrib' '[' ( x3DVertexAttributeNode )* ']'
 |  'ccw' SFBool
-|  'color' (X3DColorNode)
+|  'color' ( x3DColorNode )
 |  'colorPerVertex' SFBool
-|  'coord' (X3DCoordinateNode)
-|  'fogCoord' (FogCoordinate)
+|  'coord' ( x3DCoordinateNode )
+|  'fogCoord' ( fogCoordinate )
 |  'index' MFInt32
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
-|  'normal' (X3DNormalNode)
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
+|  'normal' ( x3DNormalNode )
 |  'normalPerVertex' SFBool
 |  'set_index' MFInt32
 |  'solid' SFBool
-|  'texCoord' (X3DSingleTextureCoordinateNode|MultiTextureCoordinate)
+|  'texCoord' ( x3DSingleTextureCoordinateNode|multiTextureCoordinate )
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
 |  'style' SFString
 )*
 '}'
 | 'USE' xsIDREF;
-IndexedTriangleFanSet
-: ('DEF' xsID)? 'IndexedTriangleFanSet' '{'
+indexedTriangleFanSet
+: dEF 'IndexedTriangleFanSet' '{'
 (
-   'attrib' '[' (X3DVertexAttributeNode)* ']'
+   'attrib' '[' ( x3DVertexAttributeNode )* ']'
 |  'ccw' SFBool
-|  'color' (X3DColorNode)
+|  'color' ( x3DColorNode )
 |  'colorPerVertex' SFBool
-|  'coord' (X3DCoordinateNode)
-|  'fogCoord' (FogCoordinate)
+|  'coord' ( x3DCoordinateNode )
+|  'fogCoord' ( fogCoordinate )
 |  'index' MFInt32
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
-|  'normal' (X3DNormalNode)
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
+|  'normal' ( x3DNormalNode )
 |  'normalPerVertex' SFBool
 |  'set_index' MFInt32
 |  'solid' SFBool
-|  'texCoord' (X3DSingleTextureCoordinateNode|MultiTextureCoordinate)
+|  'texCoord' ( x3DSingleTextureCoordinateNode|multiTextureCoordinate )
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
 |  'style' SFString
 )*
 '}'
 | 'USE' xsIDREF;
-IndexedTriangleSet
-: ('DEF' xsID)? 'IndexedTriangleSet' '{'
+indexedTriangleSet
+: dEF 'IndexedTriangleSet' '{'
 (
-   'attrib' '[' (X3DVertexAttributeNode)* ']'
+   'attrib' '[' ( x3DVertexAttributeNode )* ']'
 |  'ccw' SFBool
-|  'color' (X3DColorNode)
+|  'color' ( x3DColorNode )
 |  'colorPerVertex' SFBool
-|  'coord' (X3DCoordinateNode)
-|  'fogCoord' (FogCoordinate)
+|  'coord' ( x3DCoordinateNode )
+|  'fogCoord' ( fogCoordinate )
 |  'index' MFInt32
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
-|  'normal' (X3DNormalNode)
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
+|  'normal' ( x3DNormalNode )
 |  'normalPerVertex' SFBool
 |  'set_index' MFInt32
 |  'solid' SFBool
-|  'texCoord' (X3DSingleTextureCoordinateNode|MultiTextureCoordinate)
+|  'texCoord' ( x3DSingleTextureCoordinateNode|multiTextureCoordinate )
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
 |  'style' SFString
 )*
 '}'
 | 'USE' xsIDREF;
-IndexedTriangleStripSet
-: ('DEF' xsID)? 'IndexedTriangleStripSet' '{'
+indexedTriangleStripSet
+: dEF 'IndexedTriangleStripSet' '{'
 (
-   'attrib' '[' (X3DVertexAttributeNode)* ']'
+   'attrib' '[' ( x3DVertexAttributeNode )* ']'
 |  'ccw' SFBool
-|  'color' (X3DColorNode)
+|  'color' ( x3DColorNode )
 |  'colorPerVertex' SFBool
-|  'coord' (X3DCoordinateNode)
-|  'fogCoord' (FogCoordinate)
+|  'coord' ( x3DCoordinateNode )
+|  'fogCoord' ( fogCoordinate )
 |  'index' MFInt32
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
-|  'normal' (X3DNormalNode)
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
+|  'normal' ( x3DNormalNode )
 |  'normalPerVertex' SFBool
 |  'set_index' MFInt32
 |  'solid' SFBool
-|  'texCoord' (X3DSingleTextureCoordinateNode|MultiTextureCoordinate)
+|  'texCoord' ( x3DSingleTextureCoordinateNode|multiTextureCoordinate )
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
 |  'style' SFString
 )*
 '}'
 | 'USE' xsIDREF;
-Inline
-: ('DEF' xsID)? 'Inline' '{'
+inline
+: dEF 'Inline' '{'
 (
    'autoRefresh' SFTime
 |  'autoRefreshTimeLimit' SFTime
@@ -4087,9 +3992,9 @@ Inline
 |  'bboxSize' bboxSizeType
 |  'description' SFString
 |  'global' SFBool
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'load' SFBool
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'url' MFString
 |  'visible' SFBool
 |  'class' xsNMTOKENS
@@ -4098,13 +4003,13 @@ Inline
 )*
 '}'
 | 'USE' xsIDREF;
-IntegerSequencer
-: ('DEF' xsID)? 'IntegerSequencer' '{'
+integerSequencer
+: dEF 'IntegerSequencer' '{'
 (
-   'IS' (IS)
+   'IS' ( iS )
 |  'key' MFFloat
 |  'keyValue' MFInt32
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'next' SFBool
 |  'previous' SFBool
 |  'set_fraction' SFFloat
@@ -4115,12 +4020,12 @@ IntegerSequencer
 )*
 '}'
 | 'USE' xsIDREF;
-IntegerTrigger
-: ('DEF' xsID)? 'IntegerTrigger' '{'
+integerTrigger
+: dEF 'IntegerTrigger' '{'
 (
    'integerKey' SFInt32
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'set_boolean' SFBool
 |  'triggerValue' SFInt32
 |  'class' xsNMTOKENS
@@ -4129,30 +4034,30 @@ IntegerTrigger
 )*
 '}'
 | 'USE' xsIDREF;
-IsoSurfaceVolumeData
-: ('DEF' xsID)? 'IsoSurfaceVolumeData' '{'
+isoSurfaceVolumeData
+: dEF 'IsoSurfaceVolumeData' '{'
 (
    'bboxCenter' SFVec3f
 |  'bboxDisplay' SFBool
 |  'bboxSize' bboxSizeType
 |  'contourStepSize' SFFloat
 |  'dimensions' SFVec3f
-|  'gradients' (X3DTexture3DNode)
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
-|  'renderStyle' '[' (X3DVolumeRenderStyleNode)* ']'
+|  'gradients' ( x3DTexture3DNode )
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
+|  'renderStyle' '[' ( x3DVolumeRenderStyleNode )* ']'
 |  'surfaceTolerance' SFFloat
 |  'surfaceValues' MFFloat
 |  'visible' SFBool
-|  'voxels' (X3DTexture3DNode)
+|  'voxels' ( x3DTexture3DNode )
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
 |  'style' SFString
 )*
 '}'
 | 'USE' xsIDREF;
-KeySensor
-: ('DEF' xsID)? 'KeySensor' '{'
+keySensor
+: dEF 'KeySensor' '{'
 (
    'actionKeyPress' SFInt32
 |  'actionKeyRelease' SFInt32
@@ -4160,11 +4065,11 @@ KeySensor
 |  'controlKey' SFBool
 |  'description' SFString
 |  'enabled' SFBool
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'isActive' SFBool
 |  'keyPress' SFString
 |  'keyRelease' SFString
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'shiftKey' SFBool
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -4172,17 +4077,20 @@ KeySensor
 )*
 '}'
 | 'USE' xsIDREF;
-Layer
-: ('DEF' xsID)? 'Layer' '{'
+layer
+: dEF 'Layer' '{'
 (
-   'addChildren' '[' (X3DChildNode)* ']'
-|  'children' '[' (X3DChildNode)* ']'
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+   'bboxCenter' SFVec3f
+|  'bboxSize' bboxSizeType
+|  'bboxDisplay' SFBool
+|  'addChildren' '[' ( x3DChildNode )* ']'
+|  'children' '[' ( x3DChildNode )* ']'
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'objectType' '[' (pickableObjectTypeValues)* ']'
 |  'pickable' SFBool
-|  'removeChildren' '[' (X3DChildNode)* ']'
-|  'viewport' (X3DViewportNode)
+|  'removeChildren' '[' ( x3DChildNode )* ']'
+|  'viewport' ( x3DViewportNode )
 |  'visible' SFBool
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -4190,13 +4098,13 @@ Layer
 )*
 '}'
 | 'USE' xsIDREF;
-LayerSet
-: ('DEF' xsID)? 'LayerSet' '{'
+layerSet
+: dEF 'LayerSet' '{'
 (
    'activeLayer' SFInt32
-|  'IS' (IS)
-|  'layers' '[' (X3DLayerNode)* ']'
-|  'metadata' (X3DMetadataObject)
+|  'IS' ( iS )
+|  'layers' '[' ( x3DLayerNode )* ']'
+|  'metadata' ( x3DMetadataObject )
 |  'order' MFInt32
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -4204,12 +4112,12 @@ LayerSet
 )*
 '}'
 | 'USE' xsIDREF;
-Layout
-: ('DEF' xsID)? 'Layout' '{'
+layout
+: dEF 'Layout' '{'
 (
    'align' '[' (layoutAlignChoices)* ']'
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'offset' MFFloat
 |  'offsetUnits' '[' (layoutUnitsChoices)* ']'
 |  'scaleMode' '[' (layoutScaleModeChoices)* ']'
@@ -4221,19 +4129,19 @@ Layout
 )*
 '}'
 | 'USE' xsIDREF;
-LayoutGroup
-: ('DEF' xsID)? 'LayoutGroup' '{'
+layoutGroup
+: dEF 'LayoutGroup' '{'
 (
-   'addChildren' '[' (X3DChildNode)* ']'
+   'addChildren' '[' ( x3DChildNode )* ']'
 |  'bboxCenter' SFVec3f
 |  'bboxDisplay' SFBool
 |  'bboxSize' bboxSizeType
-|  'children' '[' (X3DChildNode)* ']'
-|  'IS' (IS)
-|  'layout' (X3DLayoutNode)
-|  'metadata' (X3DMetadataObject)
-|  'removeChildren' '[' (X3DChildNode)* ']'
-|  'viewport' (X3DViewportNode)
+|  'children' '[' ( x3DChildNode )* ']'
+|  'IS' ( iS )
+|  'layout' ( x3DLayoutNode )
+|  'metadata' ( x3DMetadataObject )
+|  'removeChildren' '[' ( x3DChildNode )* ']'
+|  'viewport' ( x3DViewportNode )
 |  'visible' SFBool
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -4241,18 +4149,21 @@ LayoutGroup
 )*
 '}'
 | 'USE' xsIDREF;
-LayoutLayer
-: ('DEF' xsID)? 'LayoutLayer' '{'
+layoutLayer
+: dEF 'LayoutLayer' '{'
 (
-   'addChildren' '[' (X3DChildNode)* ']'
-|  'children' '[' (X3DChildNode)* ']'
-|  'IS' (IS)
-|  'layout' (X3DLayoutNode)
-|  'metadata' (X3DMetadataObject)
+   'bboxCenter' SFVec3f
+|  'bboxSize' bboxSizeType
+|  'bboxDisplay' SFBool
+|  'addChildren' '[' ( x3DChildNode )* ']'
+|  'children' '[' ( x3DChildNode )* ']'
+|  'IS' ( iS )
+|  'layout' ( x3DLayoutNode )
+|  'metadata' ( x3DMetadataObject )
 |  'objectType' '[' (pickableObjectTypeValues)* ']'
 |  'pickable' SFBool
-|  'removeChildren' '[' (X3DChildNode)* ']'
-|  'viewport' (X3DViewportNode)
+|  'removeChildren' '[' ( x3DChildNode )* ']'
+|  'viewport' ( x3DViewportNode )
 |  'visible' SFBool
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -4260,23 +4171,23 @@ LayoutLayer
 )*
 '}'
 | 'USE' xsIDREF;
-LinePickSensor
-: ('DEF' xsID)? 'LinePickSensor' '{'
+linePickSensor
+: dEF 'LinePickSensor' '{'
 (
    'description' SFString
 |  'enabled' SFBool
 |  'intersectionType' intersectionTypeValues
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'isActive' SFBool
 |  'matchCriterion' pickSensorMatchCriterionChoices
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'objectType' '[' (pickableObjectTypeValues)* ']'
-|  'pickedGeometry' '[' (X3DChildNode)* ']'
+|  'pickedGeometry' '[' ( x3DChildNode )* ']'
 |  'pickedNormal' MFVec3f
 |  'pickedPoint' MFVec3f
 |  'pickedTextureCoordinate' MFVec3f
-|  'pickingGeometry' (X3DGeometryNode)
-|  'pickTarget' '[' (X3DGroupingNode|X3DShapeNode|Inline)* ']'
+|  'pickingGeometry' ( x3DGeometryNode )
+|  'pickTarget' '[' ( x3DGroupingNode|x3DShapeNode|inline )* ']'
 |  'sortOrder' pickSensorSortOrderValues
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -4284,30 +4195,30 @@ LinePickSensor
 )*
 '}'
 | 'USE' xsIDREF;
-LineProperties
-: ('DEF' xsID)? 'LineProperties' '{'
+lineProperties
+: dEF 'LineProperties' '{'
 (
    'applied' SFBool
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'linetype' lineTypeValues
 |  'linewidthScaleFactor' SFFloat
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
 |  'style' SFString
 )*
 '}'
 | 'USE' xsIDREF;
-LineSet
-: ('DEF' xsID)? 'LineSet' '{'
+lineSet
+: dEF 'LineSet' '{'
 (
-   'attrib' '[' (X3DVertexAttributeNode)* ']'
-|  'color' (X3DColorNode)
-|  'coord' (X3DCoordinateNode)
-|  'fogCoord' (FogCoordinate)
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
-|  'normal' (X3DNormalNode)
+   'attrib' '[' ( x3DVertexAttributeNode )* ']'
+|  'color' ( x3DColorNode )
+|  'coord' ( x3DCoordinateNode )
+|  'fogCoord' ( fogCoordinate )
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
+|  'normal' ( x3DNormalNode )
 |  'vertexCount' MFInt32
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -4315,8 +4226,8 @@ LineSet
 )*
 '}'
 | 'USE' xsIDREF;
-ListenerPointSource
-: ('DEF' xsID)? 'ListenerPointSource' '{'
+listenerPointSource
+: dEF 'ListenerPointSource' '{'
 (
    'description' SFString
 |  'dopplerEnabled' SFBool
@@ -4324,10 +4235,10 @@ ListenerPointSource
 |  'enabled' SFBool
 |  'gain' SFFloat
 |  'interauralDistance' SFFloat
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'isActive' SFBool
 |  'isPaused' SFBool
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'orientation' SFRotation
 |  'pauseTime' SFTime
 |  'position' SFVec3f
@@ -4341,17 +4252,17 @@ ListenerPointSource
 )*
 '}'
 | 'USE' xsIDREF;
-LoadSensor
-: ('DEF' xsID)? 'LoadSensor' '{'
+loadSensor
+: dEF 'LoadSensor' '{'
 (
-   'children' '[' (X3DUrlObject)* ']'
+   'children' '[' ( x3DUrlObject )* ']'
 |  'description' SFString
 |  'enabled' SFBool
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'isActive' SFBool
 |  'isLoaded' SFBool
 |  'loadTime' SFTime
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'progress' SFFloat
 |  'timeOut' SFTime
 |  'class' xsNMTOKENS
@@ -4360,14 +4271,14 @@ LoadSensor
 )*
 '}'
 | 'USE' xsIDREF;
-LocalFog
-: ('DEF' xsID)? 'LocalFog' '{'
+localFog
+: dEF 'LocalFog' '{'
 (
    'color' SFColor
 |  'enabled' SFBool
 |  'fogType' fogTypeChoices
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'visibilityRange' SFFloat
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -4375,21 +4286,21 @@ LocalFog
 )*
 '}'
 | 'USE' xsIDREF;
-LOD
-: ('DEF' xsID)? 'LOD' '{'
+lOD
+: dEF 'LOD' '{'
 (
-   'addChildren' '[' (X3DChildNode)* ']'
+   'addChildren' '[' ( x3DChildNode )* ']'
 |  'bboxCenter' SFVec3f
 |  'bboxDisplay' SFBool
 |  'bboxSize' bboxSizeType
 |  'center' SFVec3f
-|  'children' '[' (X3DChildNode)* ']'
+|  'children' '[' ( x3DChildNode )* ']'
 |  'forceTransitions' SFBool
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'level_changed' SFInt32
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'range' MFFloat
-|  'removeChildren' '[' (X3DChildNode)* ']'
+|  'removeChildren' '[' ( x3DChildNode )* ']'
 |  'visible' SFBool
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -4397,31 +4308,31 @@ LOD
 )*
 '}'
 | 'USE' xsIDREF;
-Material
-: ('DEF' xsID)? 'Material' '{'
+material
+: dEF 'Material' '{'
 (
    'ambientIntensity' unitIntervalType
-|  'ambientTexture' (X3DSingleTextureNode)
+|  'ambientTexture' ( x3DSingleTextureNode )
 |  'ambientTextureMapping' xsNMTOKEN
 |  'diffuseColor' SFColor
-|  'diffuseTexture' (X3DSingleTextureNode)
+|  'diffuseTexture' ( x3DSingleTextureNode )
 |  'diffuseTextureMapping' xsNMTOKEN
 |  'emissiveColor' SFColor
-|  'emissiveTexture' (X3DSingleTextureNode)
+|  'emissiveTexture' ( x3DSingleTextureNode )
 |  'emissiveTextureMapping' xsNMTOKEN
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'normalScale' SFFloat
-|  'normalTexture' (X3DSingleTextureNode)
+|  'normalTexture' ( x3DSingleTextureNode )
 |  'normalTextureMapping' xsNMTOKEN
 |  'occlusionStrength' unitIntervalType
-|  'occlusionTexture' (X3DSingleTextureNode)
+|  'occlusionTexture' ( x3DSingleTextureNode )
 |  'occlusionTextureMapping' xsNMTOKEN
 |  'shininess' unitIntervalType
-|  'shininessTexture' (X3DSingleTextureNode)
+|  'shininessTexture' ( x3DSingleTextureNode )
 |  'shininessTextureMapping' xsNMTOKEN
 |  'specularColor' SFColor
-|  'specularTexture' (X3DSingleTextureNode)
+|  'specularTexture' ( x3DSingleTextureNode )
 |  'specularTextureMapping' xsNMTOKEN
 |  'transparency' unitIntervalType
 |  'class' xsNMTOKENS
@@ -4430,11 +4341,11 @@ Material
 )*
 '}'
 | 'USE' xsIDREF;
-Matrix3VertexAttribute
-: ('DEF' xsID)? 'Matrix3VertexAttribute' '{'
+matrix3VertexAttribute
+: dEF 'Matrix3VertexAttribute' '{'
 (
-   'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+   'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'name' xsNMTOKEN
 |  'value' MFMatrix3f
 |  'class' xsNMTOKENS
@@ -4443,11 +4354,11 @@ Matrix3VertexAttribute
 )*
 '}'
 | 'USE' xsIDREF;
-Matrix4VertexAttribute
-: ('DEF' xsID)? 'Matrix4VertexAttribute' '{'
+matrix4VertexAttribute
+: dEF 'Matrix4VertexAttribute' '{'
 (
-   'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+   'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'name' xsNMTOKEN
 |  'value' MFMatrix4f
 |  'class' xsNMTOKENS
@@ -4456,11 +4367,11 @@ Matrix4VertexAttribute
 )*
 '}'
 | 'USE' xsIDREF;
-MetadataBoolean
-: ('DEF' xsID)? 'MetadataBoolean' '{'
+metadataBoolean
+: dEF 'MetadataBoolean' '{'
 (
-   'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+   'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'name' SFString
 |  'reference' SFString
 |  'value' MFBool
@@ -4470,11 +4381,11 @@ MetadataBoolean
 )*
 '}'
 | 'USE' xsIDREF;
-MetadataDouble
-: ('DEF' xsID)? 'MetadataDouble' '{'
+metadataDouble
+: dEF 'MetadataDouble' '{'
 (
-   'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+   'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'name' SFString
 |  'reference' SFString
 |  'value' MFDouble
@@ -4484,11 +4395,11 @@ MetadataDouble
 )*
 '}'
 | 'USE' xsIDREF;
-MetadataFloat
-: ('DEF' xsID)? 'MetadataFloat' '{'
+metadataFloat
+: dEF 'MetadataFloat' '{'
 (
-   'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+   'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'name' SFString
 |  'reference' SFString
 |  'value' MFFloat
@@ -4498,11 +4409,11 @@ MetadataFloat
 )*
 '}'
 | 'USE' xsIDREF;
-MetadataInteger
-: ('DEF' xsID)? 'MetadataInteger' '{'
+metadataInteger
+: dEF 'MetadataInteger' '{'
 (
-   'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+   'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'name' SFString
 |  'reference' SFString
 |  'value' MFInt32
@@ -4512,25 +4423,25 @@ MetadataInteger
 )*
 '}'
 | 'USE' xsIDREF;
-MetadataSet
-: ('DEF' xsID)? 'MetadataSet' '{'
+metadataSet
+: dEF 'MetadataSet' '{'
 (
-   'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+   'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'name' SFString
 |  'reference' SFString
-|  'value' '[' (X3DMetadataObject)* ']'
+|  'value' '[' ( x3DMetadataObject )* ']'
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
 |  'style' SFString
 )*
 '}'
 | 'USE' xsIDREF;
-MetadataString
-: ('DEF' xsID)? 'MetadataString' '{'
+metadataString
+: dEF 'MetadataString' '{'
 (
-   'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+   'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'name' SFString
 |  'reference' SFString
 |  'value' MFString
@@ -4540,18 +4451,18 @@ MetadataString
 )*
 '}'
 | 'USE' xsIDREF;
-MicrophoneSource
-: ('DEF' xsID)? 'MicrophoneSource' '{'
+microphoneSource
+: dEF 'MicrophoneSource' '{'
 (
    'description' SFString
 |  'elapsedTime' SFTime
 |  'enabled' SFBool
 |  'gain' SFFloat
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'isActive' SFBool
 |  'isPaused' SFBool
 |  'mediaDeviceID' SFString
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'pauseTime' SFTime
 |  'resumeTime' SFTime
 |  'startTime' SFTime
@@ -4562,8 +4473,8 @@ MicrophoneSource
 )*
 '}'
 | 'USE' xsIDREF;
-MotorJoint
-: ('DEF' xsID)? 'MotorJoint' '{'
+motorJoint
+: dEF 'MotorJoint' '{'
 (
    'autoCalc' SFBool
 |  'axis1Angle' SFFloat
@@ -4572,12 +4483,12 @@ MotorJoint
 |  'axis2Torque' SFFloat
 |  'axis3Angle' SFFloat
 |  'axis3Torque' SFFloat
-|  'body1' (RigidBody)
-|  'body2' (RigidBody)
+|  'body1' ( rigidBody )
+|  'body2' ( rigidBody )
 |  'enabledAxes' SFInt32
 |  'forceOutput' '[' (forceOutputValues)* ']'
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'motor1Angle' SFFloat
 |  'motor1AngleRate' SFFloat
 |  'motor1Axis' SFVec3f
@@ -4599,8 +4510,8 @@ MotorJoint
 )*
 '}'
 | 'USE' xsIDREF;
-MovieTexture
-: ('DEF' xsID)? 'MovieTexture' '{'
+movieTexture
+: dEF 'MovieTexture' '{'
 (
    'autoRefresh' SFTime
 |  'autoRefreshTimeLimit' SFTime
@@ -4609,12 +4520,12 @@ MovieTexture
 |  'elapsedTime' SFTime
 |  'enabled' SFBool
 |  'gain' SFFloat
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'isActive' SFBool
 |  'isPaused' SFBool
 |  'load' SFBool
 |  'loop' SFBool
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'pauseTime' SFTime
 |  'pitch' SFFloat
 |  'repeatS' SFBool
@@ -4623,7 +4534,7 @@ MovieTexture
 |  'speed' SFFloat
 |  'startTime' SFTime
 |  'stopTime' SFTime
-|  'textureProperties' (TextureProperties)
+|  'textureProperties' ( textureProperties )
 |  'url' MFString
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -4631,57 +4542,57 @@ MovieTexture
 )*
 '}'
 | 'USE' xsIDREF;
-MultiTexture
-: ('DEF' xsID)? 'MultiTexture' '{'
+multiTexture
+: dEF 'MultiTexture' '{'
 (
    'alpha' SFFloat
 |  'color' SFColor
 |  'description' SFString
 |  'function' '[' (multiTextureFunctionValues)* ']'
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'mode' '[' (multiTextureModeValues)* ']'
 |  'source' '[' (multiTextureSourceValues)* ']'
-|  'texture' '[' (X3DSingleTextureNode)* ']'
+|  'texture' '[' ( x3DSingleTextureNode )* ']'
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
 |  'style' SFString
 )*
 '}'
 | 'USE' xsIDREF;
-MultiTextureCoordinate
-: ('DEF' xsID)? 'MultiTextureCoordinate' '{'
+multiTextureCoordinate
+: dEF 'MultiTextureCoordinate' '{'
 (
-   'IS' (IS)
-|  'metadata' (X3DMetadataObject)
-|  'texCoord' '[' (X3DSingleTextureCoordinateNode)* ']'
+   'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
+|  'texCoord' '[' ( x3DSingleTextureCoordinateNode )* ']'
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
 |  'style' SFString
 )*
 '}'
 | 'USE' xsIDREF;
-MultiTextureTransform
-: ('DEF' xsID)? 'MultiTextureTransform' '{'
+multiTextureTransform
+: dEF 'MultiTextureTransform' '{'
 (
-   'IS' (IS)
-|  'metadata' (X3DMetadataObject)
-|  'textureTransform' '[' (X3DSingleTextureTransformNode)* ']'
+   'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
+|  'textureTransform' '[' ( x3DSingleTextureTransformNode )* ']'
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
 |  'style' SFString
 )*
 '}'
 | 'USE' xsIDREF;
-NavigationInfo
-: ('DEF' xsID)? 'NavigationInfo' '{'
+navigationInfo
+: dEF 'NavigationInfo' '{'
 (
    'avatarSize' MFFloat
 |  'bindTime' SFTime
 |  'headlight' SFBool
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'isBound' SFBool
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'set_bind' SFBool
 |  'speed' SFFloat
 |  'transitionComplete' SFBool
@@ -4695,11 +4606,11 @@ NavigationInfo
 )*
 '}'
 | 'USE' xsIDREF;
-Normal
-: ('DEF' xsID)? 'Normal' '{'
+normal
+: dEF 'Normal' '{'
 (
-   'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+   'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'vector' MFVec3f
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -4707,13 +4618,13 @@ Normal
 )*
 '}'
 | 'USE' xsIDREF;
-NormalInterpolator
-: ('DEF' xsID)? 'NormalInterpolator' '{'
+normalInterpolator
+: dEF 'NormalInterpolator' '{'
 (
-   'IS' (IS)
+   'IS' ( iS )
 |  'key' MFFloat
 |  'keyValue' MFVec3f
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'set_fraction' SFFloat
 |  'value_changed' MFVec3f
 |  'class' xsNMTOKENS
@@ -4722,14 +4633,14 @@ NormalInterpolator
 )*
 '}'
 | 'USE' xsIDREF;
-NurbsCurve
-: ('DEF' xsID)? 'NurbsCurve' '{'
+nurbsCurve
+: dEF 'NurbsCurve' '{'
 (
    'closed' SFBool
-|  'controlPoint' (Coordinate|CoordinateDouble)
-|  'IS' (IS)
+|  'controlPoint' ( coordinate|coordinateDouble )
+|  'IS' ( iS )
 |  'knot' MFDouble
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'order' SFInt32
 |  'tessellation' SFInt32
 |  'weight' MFDouble
@@ -4739,14 +4650,14 @@ NurbsCurve
 )*
 '}'
 | 'USE' xsIDREF;
-NurbsCurve2D
-: ('DEF' xsID)? 'NurbsCurve2D' '{'
+nurbsCurve2D
+: dEF 'NurbsCurve2D' '{'
 (
    'closed' SFBool
 |  'controlPoint' MFVec2d
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'knot' MFDouble
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'order' SFInt32
 |  'tessellation' SFInt32
 |  'weight' MFDouble
@@ -4756,13 +4667,13 @@ NurbsCurve2D
 )*
 '}'
 | 'USE' xsIDREF;
-NurbsOrientationInterpolator
-: ('DEF' xsID)? 'NurbsOrientationInterpolator' '{'
+nurbsOrientationInterpolator
+: dEF 'NurbsOrientationInterpolator' '{'
 (
-   'controlPoint' (Coordinate|CoordinateDouble)
-|  'IS' (IS)
+   'controlPoint' ( coordinate|coordinateDouble )
+|  'IS' ( iS )
 |  'knot' MFDouble
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'order' SFInt32
 |  'set_fraction' SFFloat
 |  'value_changed' SFRotation
@@ -4773,14 +4684,14 @@ NurbsOrientationInterpolator
 )*
 '}'
 | 'USE' xsIDREF;
-NurbsPatchSurface
-: ('DEF' xsID)? 'NurbsPatchSurface' '{'
+nurbsPatchSurface
+: dEF 'NurbsPatchSurface' '{'
 (
-   'controlPoint' (Coordinate|CoordinateDouble)
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+   'controlPoint' ( coordinate|coordinateDouble )
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'solid' SFBool
-|  'texCoord' (X3DSingleTextureCoordinateNode|NurbsTextureCoordinate)
+|  'texCoord' ( x3DSingleTextureCoordinateNode|nurbsTextureCoordinate )
 |  'uClosed' SFBool
 |  'uDimension' SFInt32
 |  'uKnot' MFDouble
@@ -4798,13 +4709,13 @@ NurbsPatchSurface
 )*
 '}'
 | 'USE' xsIDREF;
-NurbsPositionInterpolator
-: ('DEF' xsID)? 'NurbsPositionInterpolator' '{'
+nurbsPositionInterpolator
+: dEF 'NurbsPositionInterpolator' '{'
 (
-   'controlPoint' (Coordinate|CoordinateDouble)
-|  'IS' (IS)
+   'controlPoint' ( coordinate|coordinateDouble )
+|  'IS' ( iS )
 |  'knot' MFDouble
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'order' SFInt32
 |  'set_fraction' SFFloat
 |  'value_changed' SFVec3f
@@ -4815,17 +4726,17 @@ NurbsPositionInterpolator
 )*
 '}'
 | 'USE' xsIDREF;
-NurbsSet
-: ('DEF' xsID)? 'NurbsSet' '{'
+nurbsSet
+: dEF 'NurbsSet' '{'
 (
-   'addGeometry' '[' (X3DParametricGeometryNode)* ']'
+   'addGeometry' '[' ( x3DParametricGeometryNode )* ']'
 |  'bboxCenter' SFVec3f
 |  'bboxDisplay' SFBool
 |  'bboxSize' bboxSizeType
-|  'geometry' '[' (X3DParametricGeometryNode)* ']'
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
-|  'removeGeometry' '[' (X3DParametricGeometryNode)* ']'
+|  'geometry' '[' ( x3DParametricGeometryNode )* ']'
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
+|  'removeGeometry' '[' ( x3DParametricGeometryNode )* ']'
 |  'tessellationScale' SFFloat
 |  'visible' SFBool
 |  'class' xsNMTOKENS
@@ -4834,12 +4745,12 @@ NurbsSet
 )*
 '}'
 | 'USE' xsIDREF;
-NurbsSurfaceInterpolator
-: ('DEF' xsID)? 'NurbsSurfaceInterpolator' '{'
+nurbsSurfaceInterpolator
+: dEF 'NurbsSurfaceInterpolator' '{'
 (
-   'controlPoint' (Coordinate|CoordinateDouble)
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+   'controlPoint' ( coordinate|coordinateDouble )
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'normal_changed' SFVec3f
 |  'position_changed' SFVec3f
 |  'set_fraction' SFVec2f
@@ -4856,42 +4767,42 @@ NurbsSurfaceInterpolator
 )*
 '}'
 | 'USE' xsIDREF;
-NurbsSweptSurface
-: ('DEF' xsID)? 'NurbsSweptSurface' '{'
+nurbsSweptSurface
+: dEF 'NurbsSweptSurface' '{'
 (
    'ccw' SFBool
-|  'crossSectionCurve' (X3DNurbsControlCurveNode)
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+|  'crossSectionCurve' ( x3DNurbsControlCurveNode )
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'solid' SFBool
-|  'trajectoryCurve' (NurbsCurve)
+|  'trajectoryCurve' ( nurbsCurve )
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
 |  'style' SFString
 )*
 '}'
 | 'USE' xsIDREF;
-NurbsSwungSurface
-: ('DEF' xsID)? 'NurbsSwungSurface' '{'
+nurbsSwungSurface
+: dEF 'NurbsSwungSurface' '{'
 (
    'ccw' SFBool
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
-|  'profileCurve' (X3DNurbsControlCurveNode)
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
+|  'profileCurve' ( x3DNurbsControlCurveNode )
 |  'solid' SFBool
-|  'trajectoryCurve' (X3DNurbsControlCurveNode)
+|  'trajectoryCurve' ( x3DNurbsControlCurveNode )
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
 |  'style' SFString
 )*
 '}'
 | 'USE' xsIDREF;
-NurbsTextureCoordinate
-: ('DEF' xsID)? 'NurbsTextureCoordinate' '{'
+nurbsTextureCoordinate
+: dEF 'NurbsTextureCoordinate' '{'
 (
    'controlPoint' MFVec2f
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'uDimension' SFInt32
 |  'uKnot' MFDouble
 |  'uOrder' SFInt32
@@ -4905,17 +4816,17 @@ NurbsTextureCoordinate
 )*
 '}'
 | 'USE' xsIDREF;
-NurbsTrimmedSurface
-: ('DEF' xsID)? 'NurbsTrimmedSurface' '{'
+nurbsTrimmedSurface
+: dEF 'NurbsTrimmedSurface' '{'
 (
-   'addTrimmingContour' '[' (Contour2D)* ']'
-|  'controlPoint' (Coordinate|CoordinateDouble)
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
-|  'removeTrimmingContour' '[' (Contour2D)* ']'
+   'addTrimmingContour' '[' ( contour2D )* ']'
+|  'controlPoint' ( coordinate|coordinateDouble )
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
+|  'removeTrimmingContour' '[' ( contour2D )* ']'
 |  'solid' SFBool
-|  'texCoord' (X3DSingleTextureCoordinateNode|NurbsTextureCoordinate)
-|  'trimmingContour' '[' (Contour2D)* ']'
+|  'texCoord' ( x3DSingleTextureCoordinateNode|nurbsTextureCoordinate )
+|  'trimmingContour' '[' ( contour2D )* ']'
 |  'uClosed' SFBool
 |  'uDimension' SFInt32
 |  'uKnot' MFDouble
@@ -4933,28 +4844,28 @@ NurbsTrimmedSurface
 )*
 '}'
 | 'USE' xsIDREF;
-OpacityMapVolumeStyle
-: ('DEF' xsID)? 'OpacityMapVolumeStyle' '{'
+opacityMapVolumeStyle
+: dEF 'OpacityMapVolumeStyle' '{'
 (
    'enabled' SFBool
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
-|  'transferFunction' (X3DTexture2DNode|X3DTexture3DNode)
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
+|  'transferFunction' ( x3DTexture2DNode|x3DTexture3DNode )
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
 |  'style' SFString
 )*
 '}'
 | 'USE' xsIDREF;
-OrientationChaser
-: ('DEF' xsID)? 'OrientationChaser' '{'
+orientationChaser
+: dEF 'OrientationChaser' '{'
 (
    'duration' SFTime
 |  'initialDestination' SFRotation
 |  'initialValue' SFRotation
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'isActive' SFBool
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'set_destination' SFRotation
 |  'set_value' SFRotation
 |  'value_changed' SFRotation
@@ -4964,14 +4875,14 @@ OrientationChaser
 )*
 '}'
 | 'USE' xsIDREF;
-OrientationDamper
-: ('DEF' xsID)? 'OrientationDamper' '{'
+orientationDamper
+: dEF 'OrientationDamper' '{'
 (
    'initialDestination' SFRotation
 |  'initialValue' SFRotation
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'isActive' SFBool
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'order' SFInt32
 |  'set_destination' SFRotation
 |  'set_value' SFRotation
@@ -4984,13 +4895,13 @@ OrientationDamper
 )*
 '}'
 | 'USE' xsIDREF;
-OrientationInterpolator
-: ('DEF' xsID)? 'OrientationInterpolator' '{'
+orientationInterpolator
+: dEF 'OrientationInterpolator' '{'
 (
-   'IS' (IS)
+   'IS' ( iS )
 |  'key' MFFloat
 |  'keyValue' MFRotation
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'set_fraction' SFFloat
 |  'value_changed' SFRotation
 |  'class' xsNMTOKENS
@@ -4999,19 +4910,19 @@ OrientationInterpolator
 )*
 '}'
 | 'USE' xsIDREF;
-OrthoViewpoint
-: ('DEF' xsID)? 'OrthoViewpoint' '{'
+orthoViewpoint
+: dEF 'OrthoViewpoint' '{'
 (
    'bindTime' SFTime
 |  'centerOfRotation' SFVec3f
 |  'description' SFString
 |  'farDistance' SFFloat
-|  'fieldOfView' SFVec4f
-|  'IS' (IS)
+|  'fieldOfView' MFFloat
+|  'IS' ( iS )
 |  'isBound' SFBool
 |  'jump' SFBool
-|  'metadata' (X3DMetadataObject)
-|  'navigationInfo' (NavigationInfo)
+|  'metadata' ( x3DMetadataObject )
+|  'navigationInfo' ( navigationInfo )
 |  'nearDistance' SFFloat
 |  'orientation' SFRotation
 |  'position' SFVec3f
@@ -5024,8 +4935,8 @@ OrthoViewpoint
 )*
 '}'
 | 'USE' xsIDREF;
-OscillatorSource
-: ('DEF' xsID)? 'OscillatorSource' '{'
+oscillatorSource
+: dEF 'OscillatorSource' '{'
 (
    'description' SFString
 |  'detune' SFFloat
@@ -5033,10 +4944,10 @@ OscillatorSource
 |  'enabled' SFBool
 |  'frequency' SFFloat
 |  'gain' SFFloat
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'isActive' SFBool
 |  'isPaused' SFBool
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'pauseTime' SFTime
 |  'resumeTime' SFTime
 |  'startTime' SFTime
@@ -5047,20 +4958,20 @@ OscillatorSource
 )*
 '}'
 | 'USE' xsIDREF;
-PackagedShader
-: ('DEF' xsID)? 'PackagedShader' '{'
+packagedShader
+: dEF 'PackagedShader' '{'
 (
    'activate' SFBool
 |  'autoRefresh' SFTime
 |  'autoRefreshTimeLimit' SFTime
 |  'description' SFString
-|  'field' '[' (field)* ']'
-|  'IS' (IS)
+|  'field' '[' ( field )* ']'
+|  'IS' ( iS )
 |  'isSelected' SFBool
 |  'isValid' SFBool
 |  'language' shaderLanguageValues
 |  'load' SFBool
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'url' MFString
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -5068,30 +4979,30 @@ PackagedShader
 )*
 '}'
 | 'USE' xsIDREF;
-ParticleSystem
-: ('DEF' xsID)? 'ParticleSystem' '{'
+particleSystem
+: dEF 'ParticleSystem' '{'
 (
-   'appearance' (X3DAppearanceNode)
+   'appearance' ( x3DAppearanceNode )
 |  'bboxCenter' SFVec3f
 |  'bboxDisplay' SFBool
 |  'bboxSize' bboxSizeType
 |  'castShadow' SFBool
-|  'color' '[' (X3DColorNode)* ']'
+|  'color' ( x3DColorNode )
 |  'colorKey' MFFloat
 |  'createParticles' SFBool
-|  'emitter' (X3DParticleEmitterNode)
+|  'emitter' ( x3DParticleEmitterNode )
 |  'enabled' SFBool
-|  'geometry' (X3DGeometryNode)
+|  'geometry' ( x3DGeometryNode )
 |  'geometryType' particleSystemGeometryTypeValues
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'isActive' SFBool
 |  'lifetimeVariation' SFFloat
 |  'maxParticles' SFInt32
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'particleLifetime' SFFloat
 |  'particleSize' SFVec2f
-|  'physics' '[' (X3DParticlePhysicsModelNode)* ']'
-|  'texCoord' (TextureCoordinate|TextureCoordinateGenerator)
+|  'physics' '[' ( x3DParticlePhysicsModelNode )* ']'
+|  'texCoord' ( textureCoordinate|textureCoordinateGenerator )
 |  'texCoordKey' MFFloat
 |  'visible' SFBool
 |  'class' xsNMTOKENS
@@ -5100,13 +5011,13 @@ ParticleSystem
 )*
 '}'
 | 'USE' xsIDREF;
-PeriodicWave
-: ('DEF' xsID)? 'PeriodicWave' '{'
+periodicWave
+: dEF 'PeriodicWave' '{'
 (
    'description' SFString
 |  'enabled' SFBool
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'optionsImag' MFFloat
 |  'optionsReal' MFFloat
 |  'type' periodicWaveTypeChoices
@@ -5116,25 +5027,25 @@ PeriodicWave
 )*
 '}'
 | 'USE' xsIDREF;
-PhysicalMaterial
-: ('DEF' xsID)? 'PhysicalMaterial' '{'
+physicalMaterial
+: dEF 'PhysicalMaterial' '{'
 (
    'baseColor' SFColor
-|  'baseTexture' (X3DSingleTextureNode)
+|  'baseTexture' ( x3DSingleTextureNode )
 |  'baseTextureMapping' xsNMTOKEN
 |  'emissiveColor' SFColor
-|  'emissiveTexture' (X3DSingleTextureNode)
+|  'emissiveTexture' ( x3DSingleTextureNode )
 |  'emissiveTextureMapping' xsNMTOKEN
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'metallic' unitIntervalType
-|  'metallicRoughnessTexture' (X3DSingleTextureNode)
+|  'metallicRoughnessTexture' ( x3DSingleTextureNode )
 |  'metallicRoughnessTextureMapping' xsNMTOKEN
 |  'normalScale' SFFloat
-|  'normalTexture' (X3DSingleTextureNode)
+|  'normalTexture' ( x3DSingleTextureNode )
 |  'normalTextureMapping' xsNMTOKEN
 |  'occlusionStrength' unitIntervalType
-|  'occlusionTexture' (X3DSingleTextureNode)
+|  'occlusionTexture' ( x3DSingleTextureNode )
 |  'occlusionTextureMapping' xsNMTOKEN
 |  'roughness' unitIntervalType
 |  'transparency' unitIntervalType
@@ -5144,20 +5055,20 @@ PhysicalMaterial
 )*
 '}'
 | 'USE' xsIDREF;
-PickableGroup
-: ('DEF' xsID)? 'PickableGroup' '{'
+pickableGroup
+: dEF 'PickableGroup' '{'
 (
-   'addChildren' '[' (X3DChildNode)* ']'
+   'addChildren' '[' ( x3DChildNode )* ']'
 |  'bboxCenter' SFVec3f
 |  'bboxDisplay' SFBool
 |  'bboxSize' bboxSizeType
-|  'children' '[' (X3DChildNode)* ']'
+|  'children' '[' ( x3DChildNode )* ']'
 |  'description' SFString
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'objectType' '[' (pickableObjectTypeValues)* ']'
 |  'pickable' SFBool
-|  'removeChildren' '[' (X3DChildNode)* ']'
+|  'removeChildren' '[' ( x3DChildNode )* ']'
 |  'visible' SFBool
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -5165,51 +5076,51 @@ PickableGroup
 )*
 '}'
 | 'USE' xsIDREF;
-PixelTexture
-: ('DEF' xsID)? 'PixelTexture' '{'
+pixelTexture
+: dEF 'PixelTexture' '{'
 (
    'description' SFString
 |  'image' SFImage
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'repeatS' SFBool
 |  'repeatT' SFBool
-|  'textureProperties' (TextureProperties)
+|  'textureProperties' ( textureProperties )
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
 |  'style' SFString
 )*
 '}'
 | 'USE' xsIDREF;
-PixelTexture3D
-: ('DEF' xsID)? 'PixelTexture3D' '{'
+pixelTexture3D
+: dEF 'PixelTexture3D' '{'
 (
    'description' SFString
 |  'image' MFInt32
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'repeatR' SFBool
 |  'repeatS' SFBool
 |  'repeatT' SFBool
-|  'textureProperties' (TextureProperties)
+|  'textureProperties' ( textureProperties )
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
 |  'style' SFString
 )*
 '}'
 | 'USE' xsIDREF;
-PlaneSensor
-: ('DEF' xsID)? 'PlaneSensor' '{'
+planeSensor
+: dEF 'PlaneSensor' '{'
 (
    'autoOffset' SFBool
 |  'axisRotation' SFRotation
 |  'description' SFString
 |  'enabled' SFBool
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'isActive' SFBool
 |  'isOver' SFBool
 |  'maxPosition' SFVec2f
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'minPosition' SFVec2f
 |  'offset' SFVec3f
 |  'trackPoint_changed' SFVec3f
@@ -5220,13 +5131,13 @@ PlaneSensor
 )*
 '}'
 | 'USE' xsIDREF;
-PointEmitter
-: ('DEF' xsID)? 'PointEmitter' '{'
+pointEmitter
+: dEF 'PointEmitter' '{'
 (
    'direction' SFVec3f
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'mass' SFFloat
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'on' SFBool
 |  'position' SFVec3f
 |  'speed' SFFloat
@@ -5238,17 +5149,17 @@ PointEmitter
 )*
 '}'
 | 'USE' xsIDREF;
-PointLight
-: ('DEF' xsID)? 'PointLight' '{'
+pointLight
+: dEF 'PointLight' '{'
 (
    'ambientIntensity' unitIntervalType
 |  'attenuation' SFVec3f
 |  'color' SFColor
 |  'global' SFBool
 |  'intensity' SFFloat
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'location' SFVec3f
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'on' SFBool
 |  'radius' SFFloat
 |  'shadowIntensity' unitIntervalType
@@ -5259,21 +5170,21 @@ PointLight
 )*
 '}'
 | 'USE' xsIDREF;
-PointPickSensor
-: ('DEF' xsID)? 'PointPickSensor' '{'
+pointPickSensor
+: dEF 'PointPickSensor' '{'
 (
    'description' SFString
 |  'enabled' SFBool
 |  'intersectionType' intersectionTypeValues
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'isActive' SFBool
 |  'matchCriterion' pickSensorMatchCriterionChoices
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'objectType' '[' (pickableObjectTypeValues)* ']'
-|  'pickedGeometry' '[' (X3DChildNode)* ']'
+|  'pickedGeometry' '[' ( x3DChildNode )* ']'
 |  'pickedPoint' MFVec3f
-|  'pickingGeometry' (X3DGeometryNode)
-|  'pickTarget' '[' (X3DGroupingNode|X3DShapeNode|Inline)* ']'
+|  'pickingGeometry' ( x3DGeometryNode )
+|  'pickTarget' '[' ( x3DGroupingNode|x3DShapeNode|inline )* ']'
 |  'sortOrder' pickSensorSortOrderValues
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -5281,12 +5192,12 @@ PointPickSensor
 )*
 '}'
 | 'USE' xsIDREF;
-PointProperties
-: ('DEF' xsID)? 'PointProperties' '{'
+pointProperties
+: dEF 'PointProperties' '{'
 (
    'attenuation' SFVec3f
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'pointSizeMaxValue' SFFloat
 |  'pointSizeMinValue' SFFloat
 |  'pointSizeScaleFactor' SFFloat
@@ -5296,43 +5207,43 @@ PointProperties
 )*
 '}'
 | 'USE' xsIDREF;
-PointSet
-: ('DEF' xsID)? 'PointSet' '{'
+pointSet
+: dEF 'PointSet' '{'
 (
-   'attrib' '[' (X3DVertexAttributeNode)* ']'
-|  'color' (X3DColorNode)
-|  'coord' (X3DCoordinateNode)
-|  'fogCoord' (FogCoordinate)
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
-|  'normal' (X3DNormalNode)
+   'attrib' '[' ( x3DVertexAttributeNode )* ']'
+|  'color' ( x3DColorNode )
+|  'coord' ( x3DCoordinateNode )
+|  'fogCoord' ( fogCoordinate )
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
+|  'normal' ( x3DNormalNode )
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
 |  'style' SFString
 )*
 '}'
 | 'USE' xsIDREF;
-Polyline2D
-: ('DEF' xsID)? 'Polyline2D' '{'
+polyline2D
+: dEF 'Polyline2D' '{'
 (
-   'IS' (IS)
+   'IS' ( iS )
 |  'lineSegments' MFVec2f
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
 |  'style' SFString
 )*
 '}'
 | 'USE' xsIDREF;
-PolylineEmitter
-: ('DEF' xsID)? 'PolylineEmitter' '{'
+polylineEmitter
+: dEF 'PolylineEmitter' '{'
 (
-   'coord' (X3DCoordinateNode)
+   'coord' ( x3DCoordinateNode )
 |  'coordIndex' MFInt32
 |  'direction' SFVec3f
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'mass' SFFloat
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'on' SFBool
 |  'set_coordIndex' MFInt32
 |  'speed' SFFloat
@@ -5344,11 +5255,11 @@ PolylineEmitter
 )*
 '}'
 | 'USE' xsIDREF;
-Polypoint2D
-: ('DEF' xsID)? 'Polypoint2D' '{'
+polypoint2D
+: dEF 'Polypoint2D' '{'
 (
-   'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+   'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'point' MFVec2f
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -5356,15 +5267,15 @@ Polypoint2D
 )*
 '}'
 | 'USE' xsIDREF;
-PositionChaser
-: ('DEF' xsID)? 'PositionChaser' '{'
+positionChaser
+: dEF 'PositionChaser' '{'
 (
    'duration' SFTime
 |  'initialDestination' SFVec3f
 |  'initialValue' SFVec3f
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'isActive' SFBool
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'set_destination' SFVec3f
 |  'set_value' SFVec3f
 |  'value_changed' SFVec3f
@@ -5374,15 +5285,15 @@ PositionChaser
 )*
 '}'
 | 'USE' xsIDREF;
-PositionChaser2D
-: ('DEF' xsID)? 'PositionChaser2D' '{'
+positionChaser2D
+: dEF 'PositionChaser2D' '{'
 (
    'duration' SFTime
 |  'initialDestination' SFVec2f
 |  'initialValue' SFVec2f
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'isActive' SFBool
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'set_destination' SFVec2f
 |  'set_value' SFVec2f
 |  'value_changed' SFVec2f
@@ -5392,14 +5303,14 @@ PositionChaser2D
 )*
 '}'
 | 'USE' xsIDREF;
-PositionDamper
-: ('DEF' xsID)? 'PositionDamper' '{'
+positionDamper
+: dEF 'PositionDamper' '{'
 (
    'initialDestination' SFVec3f
 |  'initialValue' SFVec3f
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'isActive' SFBool
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'order' SFInt32
 |  'set_destination' SFVec3f
 |  'set_value' SFVec3f
@@ -5412,14 +5323,14 @@ PositionDamper
 )*
 '}'
 | 'USE' xsIDREF;
-PositionDamper2D
-: ('DEF' xsID)? 'PositionDamper2D' '{'
+positionDamper2D
+: dEF 'PositionDamper2D' '{'
 (
    'initialDestination' SFVec2f
 |  'initialValue' SFVec2f
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'isActive' SFBool
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'order' SFInt32
 |  'set_destination' SFVec2f
 |  'set_value' SFVec2f
@@ -5432,13 +5343,13 @@ PositionDamper2D
 )*
 '}'
 | 'USE' xsIDREF;
-PositionInterpolator
-: ('DEF' xsID)? 'PositionInterpolator' '{'
+positionInterpolator
+: dEF 'PositionInterpolator' '{'
 (
-   'IS' (IS)
+   'IS' ( iS )
 |  'key' MFFloat
 |  'keyValue' MFVec3f
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'set_fraction' SFFloat
 |  'value_changed' SFVec3f
 |  'class' xsNMTOKENS
@@ -5447,13 +5358,13 @@ PositionInterpolator
 )*
 '}'
 | 'USE' xsIDREF;
-PositionInterpolator2D
-: ('DEF' xsID)? 'PositionInterpolator2D' '{'
+positionInterpolator2D
+: dEF 'PositionInterpolator2D' '{'
 (
-   'IS' (IS)
+   'IS' ( iS )
 |  'key' MFFloat
 |  'keyValue' MFVec2f
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'set_fraction' SFFloat
 |  'value_changed' SFVec2f
 |  'class' xsNMTOKENS
@@ -5462,20 +5373,20 @@ PositionInterpolator2D
 )*
 '}'
 | 'USE' xsIDREF;
-PrimitivePickSensor
-: ('DEF' xsID)? 'PrimitivePickSensor' '{'
+primitivePickSensor
+: dEF 'PrimitivePickSensor' '{'
 (
    'description' SFString
 |  'enabled' SFBool
 |  'intersectionType' intersectionTypeValues
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'isActive' SFBool
 |  'matchCriterion' pickSensorMatchCriterionChoices
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'objectType' '[' (pickableObjectTypeValues)* ']'
-|  'pickedGeometry' '[' (X3DChildNode)* ']'
-|  'pickingGeometry' (X3DGeometryNode)
-|  'pickTarget' '[' (X3DGroupingNode|X3DShapeNode|Inline)* ']'
+|  'pickedGeometry' '[' ( x3DChildNode )* ']'
+|  'pickingGeometry' ( x3DGeometryNode )
+|  'pickTarget' '[' ( x3DGroupingNode|x3DShapeNode|inline )* ']'
 |  'sortOrder' pickSensorSortOrderValues
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -5483,29 +5394,29 @@ PrimitivePickSensor
 )*
 '}'
 | 'USE' xsIDREF;
-ProgramShader
-: ('DEF' xsID)? 'ProgramShader' '{'
+programShader
+: dEF 'ProgramShader' '{'
 (
    'activate' SFBool
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'isSelected' SFBool
 |  'isValid' SFBool
 |  'language' shaderLanguageValues
-|  'metadata' (X3DMetadataObject)
-|  'programs' '[' (ShaderProgram)* ']'
+|  'metadata' ( x3DMetadataObject )
+|  'programs' '[' ( shaderProgram )* ']'
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
 |  'style' SFString
 )*
 '}'
 | 'USE' xsIDREF;
-ProjectionVolumeStyle
-: ('DEF' xsID)? 'ProjectionVolumeStyle' '{'
+projectionVolumeStyle
+: dEF 'ProjectionVolumeStyle' '{'
 (
    'enabled' SFBool
 |  'intensityThreshold' SFFloat
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'type' projectionVolumeStyleTypeChoices
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -5513,12 +5424,12 @@ ProjectionVolumeStyle
 )*
 '}'
 | 'USE' xsIDREF;
-ProtoInstance
-: ('DEF' xsID)? 'ProtoInstance' '{'
+protoInstance
+: dEF 'ProtoInstance' '{'
 (
-   'fieldValue' '[' (fieldValue)* ']'
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+   'fieldValue' '[' ( fieldValue )* ']'
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'name' xsNMTOKEN
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -5526,8 +5437,8 @@ ProtoInstance
 )*
 '}'
 | 'USE' xsIDREF;
-ProximitySensor
-: ('DEF' xsID)? 'ProximitySensor' '{'
+proximitySensor
+: dEF 'ProximitySensor' '{'
 (
    'center' SFVec3f
 |  'centerOfRotation_changed' SFVec3f
@@ -5535,9 +5446,9 @@ ProximitySensor
 |  'enabled' SFBool
 |  'enterTime' SFTime
 |  'exitTime' SFTime
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'isActive' SFBool
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'orientation_changed' SFRotation
 |  'position_changed' SFVec3f
 |  'size' SFVec3f
@@ -5547,29 +5458,29 @@ ProximitySensor
 )*
 '}'
 | 'USE' xsIDREF;
-QuadSet
-: ('DEF' xsID)? 'QuadSet' '{'
+quadSet
+: dEF 'QuadSet' '{'
 (
-   'attrib' '[' (X3DVertexAttributeNode)* ']'
+   'attrib' '[' ( x3DVertexAttributeNode )* ']'
 |  'ccw' SFBool
-|  'color' (X3DColorNode)
+|  'color' ( x3DColorNode )
 |  'colorPerVertex' SFBool
-|  'coord' (X3DCoordinateNode)
-|  'fogCoord' (FogCoordinate)
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
-|  'normal' (X3DNormalNode)
+|  'coord' ( x3DCoordinateNode )
+|  'fogCoord' ( fogCoordinate )
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
+|  'normal' ( x3DNormalNode )
 |  'normalPerVertex' SFBool
 |  'solid' SFBool
-|  'texCoord' (X3DSingleTextureCoordinateNode|MultiTextureCoordinate)
+|  'texCoord' ( x3DSingleTextureCoordinateNode|multiTextureCoordinate )
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
 |  'style' SFString
 )*
 '}'
 | 'USE' xsIDREF;
-ReceiverPdu
-: ('DEF' xsID)? 'ReceiverPdu' '{'
+receiverPdu
+: dEF 'ReceiverPdu' '{'
 (
    'address' SFString
 |  'applicationID' SFInt32
@@ -5581,13 +5492,13 @@ ReceiverPdu
 |  'entityID' SFInt32
 |  'geoCoords' SFVec3d
 |  'geoSystem' geoSystemType
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'isActive' SFBool
 |  'isNetworkReader' SFBool
 |  'isNetworkWriter' SFBool
 |  'isRtpHeaderHeard' SFBool
 |  'isStandAlone' SFBool
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'multicastRelayHost' SFString
 |  'multicastRelayPort' SFInt32
 |  'networkMode' networkModeChoices
@@ -5612,11 +5523,11 @@ ReceiverPdu
 )*
 '}'
 | 'USE' xsIDREF;
-Rectangle2D
-: ('DEF' xsID)? 'Rectangle2D' '{'
+rectangle2D
+: dEF 'Rectangle2D' '{'
 (
-   'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+   'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'size' SFVec2f
 |  'solid' SFBool
 |  'class' xsNMTOKENS
@@ -5625,8 +5536,8 @@ Rectangle2D
 )*
 '}'
 | 'USE' xsIDREF;
-RigidBody
-: ('DEF' xsID)? 'RigidBody' '{'
+rigidBody
+: dEF 'RigidBody' '{'
 (
    'angularDampingFactor' SFFloat
 |  'angularVelocity' SFVec3f
@@ -5643,14 +5554,14 @@ RigidBody
 |  'finiteRotationAxis' SFVec3f
 |  'fixed' SFBool
 |  'forces' MFVec3f
-|  'geometry' '[' (X3DNBodyCollidableNode)* ']'
+|  'geometry' '[' ( x3DNBodyCollidableNode )* ']'
 |  'inertia' SFMatrix3f
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'linearDampingFactor' SFFloat
 |  'linearVelocity' SFVec3f
 |  'mass' SFFloat
-|  'massDensityModel' (Sphere|Box|Cone)
-|  'metadata' (X3DMetadataObject)
+|  'massDensityModel' ( sphere|box|cone )
+|  'metadata' ( x3DMetadataObject )
 |  'orientation' SFRotation
 |  'position' SFVec3f
 |  'torques' MFVec3f
@@ -5663,15 +5574,15 @@ RigidBody
 )*
 '}'
 | 'USE' xsIDREF;
-RigidBodyCollection
-: ('DEF' xsID)? 'RigidBodyCollection' '{'
+rigidBodyCollection
+: dEF 'RigidBodyCollection' '{'
 (
    'autoDisable' SFBool
 |  'bboxCenter' SFVec3f
 |  'bboxDisplay' SFBool
 |  'bboxSize' bboxSizeType
-|  'bodies' '[' (RigidBody)* ']'
-|  'collider' (CollisionCollection)
+|  'bodies' '[' ( rigidBody )* ']'
+|  'collider' ( collisionCollection )
 |  'constantForceMix' SFFloat
 |  'contactSurfaceThickness' SFFloat
 |  'disableAngularSpeed' SFFloat
@@ -5680,13 +5591,13 @@ RigidBodyCollection
 |  'enabled' SFBool
 |  'errorCorrection' SFFloat
 |  'gravity' SFVec3f
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'iterations' SFInt32
-|  'joints' '[' (X3DRigidJointNode)* ']'
+|  'joints' '[' ( x3DRigidJointNode )* ']'
 |  'maxCorrectionSpeed' SFFloat
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'preferAccuracy' SFBool
-|  'set_contacts' '[' (Contact)* ']'
+|  'set_contacts' '[' ( contact )* ']'
 |  'visible' SFBool
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -5694,15 +5605,15 @@ RigidBodyCollection
 )*
 '}'
 | 'USE' xsIDREF;
-ScalarChaser
-: ('DEF' xsID)? 'ScalarChaser' '{'
+scalarChaser
+: dEF 'ScalarChaser' '{'
 (
    'duration' SFTime
 |  'initialDestination' SFFloat
 |  'initialValue' SFFloat
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'isActive' SFBool
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'set_destination' SFFloat
 |  'set_value' SFFloat
 |  'value_changed' SFFloat
@@ -5712,14 +5623,14 @@ ScalarChaser
 )*
 '}'
 | 'USE' xsIDREF;
-ScalarDamper
-: ('DEF' xsID)? 'ScalarDamper' '{'
+scalarDamper
+: dEF 'ScalarDamper' '{'
 (
    'initialDestination' SFFloat
 |  'initialValue' SFFloat
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'isActive' SFBool
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'order' SFInt32
 |  'set_destination' SFFloat
 |  'set_value' SFFloat
@@ -5732,13 +5643,13 @@ ScalarDamper
 )*
 '}'
 | 'USE' xsIDREF;
-ScalarInterpolator
-: ('DEF' xsID)? 'ScalarInterpolator' '{'
+scalarInterpolator
+: dEF 'ScalarInterpolator' '{'
 (
-   'IS' (IS)
+   'IS' ( iS )
 |  'key' MFFloat
 |  'keyValue' MFFloat
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'set_fraction' SFFloat
 |  'value_changed' SFFloat
 |  'class' xsNMTOKENS
@@ -5747,18 +5658,18 @@ ScalarInterpolator
 )*
 '}'
 | 'USE' xsIDREF;
-ScreenFontStyle
-: ('DEF' xsID)? 'ScreenFontStyle' '{'
+screenFontStyle
+: dEF 'ScreenFontStyle' '{'
 (
    'class' xsNMTOKENS
 |  'family' '[' (fontFamilyValues)* ']'
 |  'horizontal' SFBool
 |  'id' xsNMTOKEN
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'justify' '[' (justifyChoices)* ']'
 |  'language' SFString
 |  'leftToRight' SFBool
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'pointSize' SFFloat
 |  'spacing' SFFloat
 |  'style' fontStyleChoices
@@ -5766,17 +5677,17 @@ ScreenFontStyle
 )*
 '}'
 | 'USE' xsIDREF;
-ScreenGroup
-: ('DEF' xsID)? 'ScreenGroup' '{'
+screenGroup
+: dEF 'ScreenGroup' '{'
 (
-   'addChildren' '[' (X3DChildNode)* ']'
+   'addChildren' '[' ( x3DChildNode )* ']'
 |  'bboxCenter' SFVec3f
 |  'bboxDisplay' SFBool
 |  'bboxSize' bboxSizeType
-|  'children' '[' (X3DChildNode)* ']'
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
-|  'removeChildren' '[' (X3DChildNode)* ']'
+|  'children' '[' ( x3DChildNode )* ']'
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
+|  'removeChildren' '[' ( x3DChildNode )* ']'
 |  'visible' SFBool
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -5784,17 +5695,17 @@ ScreenGroup
 )*
 '}'
 | 'USE' xsIDREF;
-Script
-: ('DEF' xsID)? 'Script' '{'
+script
+: dEF 'Script' '{'
 (
    'autoRefresh' SFTime
 |  'autoRefreshTimeLimit' SFTime
 |  'description' SFString
 |  'directOutput' SFBool
-|  'field' '[' (field)* ']'
-|  'IS' (IS)
+|  'field' '[' ( field )* ']'
+|  'IS' ( iS )
 |  'load' SFBool
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'mustEvaluate' SFBool
 |  'sourceCode' xsstring
 |  'url' MFString
@@ -5804,52 +5715,52 @@ Script
 )*
 '}'
 | 'USE' xsIDREF;
-SegmentedVolumeData
-: ('DEF' xsID)? 'SegmentedVolumeData' '{'
+segmentedVolumeData
+: dEF 'SegmentedVolumeData' '{'
 (
    'bboxCenter' SFVec3f
 |  'bboxDisplay' SFBool
 |  'bboxSize' bboxSizeType
 |  'dimensions' SFVec3f
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
-|  'renderStyle' '[' (X3DVolumeRenderStyleNode)* ']'
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
+|  'renderStyle' '[' ( x3DVolumeRenderStyleNode )* ']'
 |  'segmentEnabled' MFBool
-|  'segmentIdentifiers' (X3DTexture3DNode)
+|  'segmentIdentifiers' ( x3DTexture3DNode )
 |  'visible' SFBool
-|  'voxels' (X3DTexture3DNode)
+|  'voxels' ( x3DTexture3DNode )
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
 |  'style' SFString
 )*
 '}'
 | 'USE' xsIDREF;
-ShadedVolumeStyle
-: ('DEF' xsID)? 'ShadedVolumeStyle' '{'
+shadedVolumeStyle
+: dEF 'ShadedVolumeStyle' '{'
 (
    'enabled' SFBool
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'lighting' SFBool
-|  'material' (X3DMaterialNode)
-|  'metadata' (X3DMetadataObject)
+|  'material' ( x3DMaterialNode )
+|  'metadata' ( x3DMetadataObject )
 |  'phaseFunction' phaseFunctionValues
 |  'shadows' SFBool
-|  'surfaceNormals' (X3DTexture3DNode)
+|  'surfaceNormals' ( x3DTexture3DNode )
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
 |  'style' SFString
 )*
 '}'
 | 'USE' xsIDREF;
-ShaderPart
-: ('DEF' xsID)? 'ShaderPart' '{'
+shaderPart
+: dEF 'ShaderPart' '{'
 (
    'autoRefresh' SFTime
 |  'autoRefreshTimeLimit' SFTime
 |  'description' SFString
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'load' SFBool
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'sourceCode' xsstring
 |  'type' shaderPartTypeValues
 |  'url' MFString
@@ -5859,16 +5770,16 @@ ShaderPart
 )*
 '}'
 | 'USE' xsIDREF;
-ShaderProgram
-: ('DEF' xsID)? 'ShaderProgram' '{'
+shaderProgram
+: dEF 'ShaderProgram' '{'
 (
    'autoRefresh' SFTime
 |  'autoRefreshTimeLimit' SFTime
 |  'description' SFString
-|  'field' '[' (field)* ']'
-|  'IS' (IS)
+|  'field' '[' ( field )* ']'
+|  'IS' ( iS )
 |  'load' SFBool
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'sourceCode' xsstring
 |  'type' shaderPartTypeValues
 |  'url' MFString
@@ -5878,17 +5789,17 @@ ShaderProgram
 )*
 '}'
 | 'USE' xsIDREF;
-Shape
-: ('DEF' xsID)? 'Shape' '{'
+shape
+: dEF 'Shape' '{'
 (
-   'appearance' (X3DAppearanceNode)
+   'appearance' ( x3DAppearanceNode )
 |  'bboxCenter' SFVec3f
 |  'bboxDisplay' SFBool
 |  'bboxSize' bboxSizeType
 |  'castShadow' SFBool
-|  'geometry' (X3DGeometryNode)
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+|  'geometry' ( x3DGeometryNode )
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'visible' SFBool
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -5896,8 +5807,8 @@ Shape
 )*
 '}'
 | 'USE' xsIDREF;
-SignalPdu
-: ('DEF' xsID)? 'SignalPdu' '{'
+signalPdu
+: dEF 'SignalPdu' '{'
 (
    'address' SFString
 |  'applicationID' SFInt32
@@ -5912,13 +5823,13 @@ SignalPdu
 |  'entityID' SFInt32
 |  'geoCoords' SFVec3d
 |  'geoSystem' geoSystemType
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'isActive' SFBool
 |  'isNetworkReader' SFBool
 |  'isNetworkWriter' SFBool
 |  'isRtpHeaderHeard' SFBool
 |  'isStandAlone' SFBool
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'multicastRelayHost' SFString
 |  'multicastRelayPort' SFInt32
 |  'networkMode' networkModeChoices
@@ -5940,37 +5851,37 @@ SignalPdu
 )*
 '}'
 | 'USE' xsIDREF;
-SilhouetteEnhancementVolumeStyle
-: ('DEF' xsID)? 'SilhouetteEnhancementVolumeStyle' '{'
+silhouetteEnhancementVolumeStyle
+: dEF 'SilhouetteEnhancementVolumeStyle' '{'
 (
    'enabled' SFBool
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'silhouetteBoundaryOpacity' SFFloat
 |  'silhouetteRetainedOpacity' SFFloat
 |  'silhouetteSharpness' SFFloat
-|  'surfaceNormals' (X3DTexture3DNode)
+|  'surfaceNormals' ( x3DTexture3DNode )
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
 |  'style' SFString
 )*
 '}'
 | 'USE' xsIDREF;
-SingleAxisHingeJoint
-: ('DEF' xsID)? 'SingleAxisHingeJoint' '{'
+singleAxisHingeJoint
+: dEF 'SingleAxisHingeJoint' '{'
 (
    'anchorPoint' SFVec3f
 |  'angle' SFFloat
 |  'angleRate' SFFloat
 |  'axis' SFVec3f
-|  'body1' (RigidBody)
+|  'body1' ( rigidBody )
 |  'body1AnchorPoint' SFVec3f
-|  'body2' (RigidBody)
+|  'body2' ( rigidBody )
 |  'body2AnchorPoint' SFVec3f
 |  'forceOutput' '[' (forceOutputValues)* ']'
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'maxAngle' SFFloat
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'minAngle' SFFloat
 |  'stopBounce' SFFloat
 |  'stopErrorCorrection' SFFloat
@@ -5980,16 +5891,16 @@ SingleAxisHingeJoint
 )*
 '}'
 | 'USE' xsIDREF;
-SliderJoint
-: ('DEF' xsID)? 'SliderJoint' '{'
+sliderJoint
+: dEF 'SliderJoint' '{'
 (
    'axis' SFVec3f
-|  'body1' (RigidBody)
-|  'body2' (RigidBody)
+|  'body1' ( rigidBody )
+|  'body2' ( rigidBody )
 |  'forceOutput' '[' (forceOutputValues)* ']'
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'maxSeparation' SFFloat
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'minSeparation' SFFloat
 |  'separation' SFFloat
 |  'separationRate' SFFloat
@@ -6002,22 +5913,22 @@ SliderJoint
 )*
 '}'
 | 'USE' xsIDREF;
-Sound
-: ('DEF' xsID)? 'Sound' '{'
+sound
+: dEF 'Sound' '{'
 (
    'description' SFString
 |  'direction' SFVec3f
 |  'enabled' SFBool
 |  'intensity' unitIntervalType
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'location' SFVec3f
 |  'maxBack' SFFloat
 |  'maxFront' SFFloat
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'minBack' SFFloat
 |  'minFront' SFFloat
 |  'priority' unitIntervalType
-|  'source' (X3DSoundSourceNode)
+|  'source' ( x3DSoundSourceNode )
 |  'spatialize' SFBool
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -6025,10 +5936,10 @@ Sound
 )*
 '}'
 | 'USE' xsIDREF;
-SpatialSound
-: ('DEF' xsID)? 'SpatialSound' '{'
+spatialSound
+: dEF 'SpatialSound' '{'
 (
-   'children' '[' (Analyser|AudioClip|AudioDestination|BiquadFilter|BufferAudioSource|ChannelMerger|ChannelSelector|ChannelSplitter|Convolver|Delay|DynamicsCompressor|Gain|ListenerPointSource|MicrophoneSource|MovieTexture|OscillatorSource|Sound|SpatialSound|StreamAudioDestination|StreamAudioSource|WaveShaper)* ']'
+   'children' '[' ( analyser|audioClip|audioDestination|biquadFilter|bufferAudioSource|channelMerger|channelSelector|channelSplitter|convolver|delay|dynamicsCompressor|gain|listenerPointSource|microphoneSource|movieTexture|oscillatorSource|sound|spatialSound|streamAudioDestination|streamAudioSource|waveShaper )* ']'
 |  'coneInnerAngle' SFFloat
 |  'coneOuterAngle' SFFloat
 |  'coneOuterGain' SFFloat
@@ -6040,10 +5951,10 @@ SpatialSound
 |  'enableHRTF' SFBool
 |  'gain' SFFloat
 |  'intensity' unitIntervalType
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'location' SFVec3f
 |  'maxDistance' SFFloat
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'priority' unitIntervalType
 |  'referenceDistance' SFFloat
 |  'rolloffFactor' SFFloat
@@ -6054,11 +5965,11 @@ SpatialSound
 )*
 '}'
 | 'USE' xsIDREF;
-Sphere
-: ('DEF' xsID)? 'Sphere' '{'
+sphere
+: dEF 'Sphere' '{'
 (
-   'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+   'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'radius' SFFloat
 |  'solid' SFBool
 |  'class' xsNMTOKENS
@@ -6067,16 +5978,16 @@ Sphere
 )*
 '}'
 | 'USE' xsIDREF;
-SphereSensor
-: ('DEF' xsID)? 'SphereSensor' '{'
+sphereSensor
+: dEF 'SphereSensor' '{'
 (
    'autoOffset' SFBool
 |  'description' SFString
 |  'enabled' SFBool
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'isActive' SFBool
 |  'isOver' SFBool
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'offset' SFRotation
 |  'rotation_changed' SFRotation
 |  'trackPoint_changed' SFVec3f
@@ -6086,15 +5997,15 @@ SphereSensor
 )*
 '}'
 | 'USE' xsIDREF;
-SplinePositionInterpolator
-: ('DEF' xsID)? 'SplinePositionInterpolator' '{'
+splinePositionInterpolator
+: dEF 'SplinePositionInterpolator' '{'
 (
    'closed' SFBool
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'key' MFFloat
 |  'keyValue' MFVec3f
 |  'keyVelocity' MFVec3f
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'normalizeVelocity' SFBool
 |  'set_fraction' SFFloat
 |  'value_changed' SFVec3f
@@ -6104,15 +6015,15 @@ SplinePositionInterpolator
 )*
 '}'
 | 'USE' xsIDREF;
-SplinePositionInterpolator2D
-: ('DEF' xsID)? 'SplinePositionInterpolator2D' '{'
+splinePositionInterpolator2D
+: dEF 'SplinePositionInterpolator2D' '{'
 (
    'closed' SFBool
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'key' MFFloat
 |  'keyValue' MFVec2f
 |  'keyVelocity' MFVec2f
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'normalizeVelocity' SFBool
 |  'set_fraction' SFFloat
 |  'value_changed' SFVec2f
@@ -6122,15 +6033,15 @@ SplinePositionInterpolator2D
 )*
 '}'
 | 'USE' xsIDREF;
-SplineScalarInterpolator
-: ('DEF' xsID)? 'SplineScalarInterpolator' '{'
+splineScalarInterpolator
+: dEF 'SplineScalarInterpolator' '{'
 (
    'closed' SFBool
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'key' MFFloat
 |  'keyValue' MFFloat
 |  'keyVelocity' MFFloat
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'normalizeVelocity' SFBool
 |  'set_fraction' SFFloat
 |  'value_changed' SFFloat
@@ -6140,8 +6051,8 @@ SplineScalarInterpolator
 )*
 '}'
 | 'USE' xsIDREF;
-SpotLight
-: ('DEF' xsID)? 'SpotLight' '{'
+spotLight
+: dEF 'SpotLight' '{'
 (
    'ambientIntensity' unitIntervalType
 |  'attenuation' SFVec3f
@@ -6151,9 +6062,9 @@ SpotLight
 |  'direction' SFVec3f
 |  'global' SFBool
 |  'intensity' SFFloat
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'location' SFVec3f
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'on' SFBool
 |  'radius' SFFloat
 |  'shadowIntensity' unitIntervalType
@@ -6164,13 +6075,13 @@ SpotLight
 )*
 '}'
 | 'USE' xsIDREF;
-SquadOrientationInterpolator
-: ('DEF' xsID)? 'SquadOrientationInterpolator' '{'
+squadOrientationInterpolator
+: dEF 'SquadOrientationInterpolator' '{'
 (
-   'IS' (IS)
+   'IS' ( iS )
 |  'key' MFFloat
 |  'keyValue' MFRotation
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'normalizeVelocity' SFBool
 |  'set_fraction' SFFloat
 |  'value_changed' SFRotation
@@ -6180,15 +6091,15 @@ SquadOrientationInterpolator
 )*
 '}'
 | 'USE' xsIDREF;
-StaticGroup
-: ('DEF' xsID)? 'StaticGroup' '{'
+staticGroup
+: dEF 'StaticGroup' '{'
 (
    'bboxCenter' SFVec3f
 |  'bboxDisplay' SFBool
 |  'bboxSize' bboxSizeType
-|  'children' '[' (X3DChildNode)* ']'
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+|  'children' '[' ( x3DChildNode )* ']'
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'visible' SFBool
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -6196,20 +6107,20 @@ StaticGroup
 )*
 '}'
 | 'USE' xsIDREF;
-StreamAudioDestination
-: ('DEF' xsID)? 'StreamAudioDestination' '{'
+streamAudioDestination
+: dEF 'StreamAudioDestination' '{'
 (
    'channelCount' SFInt32
 |  'channelCountMode' channelCountModeChoices
 |  'channelInterpretation' channelInterpretationChoices
-|  'children' '[' (Analyser|AudioClip|AudioDestination|BiquadFilter|BufferAudioSource|ChannelMerger|ChannelSelector|ChannelSplitter|Convolver|Delay|DynamicsCompressor|Gain|ListenerPointSource|MicrophoneSource|MovieTexture|OscillatorSource|Sound|SpatialSound|StreamAudioDestination|StreamAudioSource|WaveShaper)* ']'
+|  'children' '[' ( analyser|audioClip|audioDestination|biquadFilter|bufferAudioSource|channelMerger|channelSelector|channelSplitter|convolver|delay|dynamicsCompressor|gain|listenerPointSource|microphoneSource|movieTexture|oscillatorSource|sound|spatialSound|streamAudioDestination|streamAudioSource|waveShaper )* ']'
 |  'description' SFString
 |  'enabled' SFBool
 |  'gain' SFFloat
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'isActive' SFBool
 |  'mediaDeviceID' SFString
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'streamIdentifier' SFString
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -6217,8 +6128,8 @@ StreamAudioDestination
 )*
 '}'
 | 'USE' xsIDREF;
-StreamAudioSource
-: ('DEF' xsID)? 'StreamAudioSource' '{'
+streamAudioSource
+: dEF 'StreamAudioSource' '{'
 (
    'channelCountMode' channelCountModeChoices
 |  'channelInterpretation' channelInterpretationChoices
@@ -6226,10 +6137,10 @@ StreamAudioSource
 |  'elapsedTime' SFTime
 |  'enabled' SFBool
 |  'gain' SFFloat
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'isActive' SFBool
 |  'isPaused' SFBool
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'pauseTime' SFTime
 |  'resumeTime' SFTime
 |  'startTime' SFTime
@@ -6241,34 +6152,32 @@ StreamAudioSource
 )*
 '}'
 | 'USE' xsIDREF;
-StringSensor
-: ('DEF' xsID)? 'StringSensor' '{'
+stringSensor
+: dEF 'StringSensor' '{'
 (
    'deletionAllowed' SFBool
 |  'description' SFString
 |  'enabled' SFBool
 |  'enteredText' SFString
 |  'finalText' SFString
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'isActive' SFBool
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
 |  'style' SFString
 )*
 '}'
 | 'USE' xsIDREF;
-SurfaceEmitter
-: ('DEF' xsID)? 'SurfaceEmitter' '{'
+surfaceEmitter
+: dEF 'SurfaceEmitter' '{'
 (
-   'coordIndex' MFInt32
-|  'IS' (IS)
+   'IS' ( iS )
 |  'mass' SFFloat
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'on' SFBool
-|  'set_coordIndex' MFInt32
 |  'speed' SFFloat
-|  'surface' (X3DGeometryNode)
+|  'surface' ( x3DGeometryNode )
 |  'surfaceArea' SFFloat
 |  'variation' SFFloat
 |  'class' xsNMTOKENS
@@ -6277,17 +6186,17 @@ SurfaceEmitter
 )*
 '}'
 | 'USE' xsIDREF;
-Switch
-: ('DEF' xsID)? 'Switch' '{'
+switch
+: dEF 'Switch' '{'
 (
-   'addChildren' '[' (X3DChildNode)* ']'
+   'addChildren' '[' ( x3DChildNode )* ']'
 |  'bboxCenter' SFVec3f
 |  'bboxDisplay' SFBool
 |  'bboxSize' bboxSizeType
-|  'children' '[' (X3DChildNode)* ']'
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
-|  'removeChildren' '[' (X3DChildNode)* ']'
+|  'children' '[' ( x3DChildNode )* ']'
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
+|  'removeChildren' '[' ( x3DChildNode )* ']'
 |  'visible' SFBool
 |  'whichChoice' SFInt32
 |  'class' xsNMTOKENS
@@ -6296,15 +6205,15 @@ Switch
 )*
 '}'
 | 'USE' xsIDREF;
-TexCoordChaser2D
-: ('DEF' xsID)? 'TexCoordChaser2D' '{'
+texCoordChaser2D
+: dEF 'TexCoordChaser2D' '{'
 (
    'duration' SFTime
 |  'initialDestination' MFVec2f
 |  'initialValue' MFVec2f
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'isActive' SFBool
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'set_destination' MFVec2f
 |  'set_value' MFVec2f
 |  'value_changed' MFVec2f
@@ -6314,14 +6223,14 @@ TexCoordChaser2D
 )*
 '}'
 | 'USE' xsIDREF;
-TexCoordDamper2D
-: ('DEF' xsID)? 'TexCoordDamper2D' '{'
+texCoordDamper2D
+: dEF 'TexCoordDamper2D' '{'
 (
    'initialDestination' MFVec2f
 |  'initialValue' MFVec2f
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'isActive' SFBool
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'order' SFInt32
 |  'set_destination' MFVec2f
 |  'set_value' MFVec2f
@@ -6334,15 +6243,15 @@ TexCoordDamper2D
 )*
 '}'
 | 'USE' xsIDREF;
-Text
-: ('DEF' xsID)? 'Text' '{'
+text
+: dEF 'Text' '{'
 (
-   'fontStyle' (X3DFontStyleNode)
-|  'IS' (IS)
+   'fontStyle' ( x3DFontStyleNode )
+|  'IS' ( iS )
 |  'length' MFFloat
 |  'lineBounds' MFVec2f
 |  'maxExtent' SFFloat
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'origin' SFVec3f
 |  'solid' SFBool
 |  'string' MFString
@@ -6353,24 +6262,24 @@ Text
 )*
 '}'
 | 'USE' xsIDREF;
-TextureBackground
-: ('DEF' xsID)? 'TextureBackground' '{'
+textureBackground
+: dEF 'TextureBackground' '{'
 (
-   'backTexture' (X3DTexture2DNode|MultiTexture)
+   'backTexture' ( x3DTexture2DNode|multiTexture )
 |  'bindTime' SFTime
-|  'bottomTexture' (X3DTexture2DNode|MultiTexture)
-|  'frontTexture' (X3DTexture2DNode|MultiTexture)
+|  'bottomTexture' ( x3DTexture2DNode|multiTexture )
+|  'frontTexture' ( x3DTexture2DNode|multiTexture )
 |  'groundAngle' MFFloat
 |  'groundColor' MFColor
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'isBound' SFBool
-|  'leftTexture' (X3DTexture2DNode|MultiTexture)
-|  'metadata' (X3DMetadataObject)
-|  'rightTexture' (X3DTexture2DNode|MultiTexture)
+|  'leftTexture' ( x3DTexture2DNode|multiTexture )
+|  'metadata' ( x3DMetadataObject )
+|  'rightTexture' ( x3DTexture2DNode|multiTexture )
 |  'set_bind' SFBool
 |  'skyAngle' MFFloat
 |  'skyColor' MFColor
-|  'topTexture' (X3DTexture2DNode|MultiTexture)
+|  'topTexture' ( x3DTexture2DNode|multiTexture )
 |  'transparency' unitIntervalType
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -6378,12 +6287,12 @@ TextureBackground
 )*
 '}'
 | 'USE' xsIDREF;
-TextureCoordinate
-: ('DEF' xsID)? 'TextureCoordinate' '{'
+textureCoordinate
+: dEF 'TextureCoordinate' '{'
 (
-   'IS' (IS)
+   'IS' ( iS )
 |  'mapping' xsNMTOKEN
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'point' MFVec2f
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -6391,12 +6300,12 @@ TextureCoordinate
 )*
 '}'
 | 'USE' xsIDREF;
-TextureCoordinate3D
-: ('DEF' xsID)? 'TextureCoordinate3D' '{'
+textureCoordinate3D
+: dEF 'TextureCoordinate3D' '{'
 (
-   'IS' (IS)
+   'IS' ( iS )
 |  'mapping' xsNMTOKEN
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'point' MFVec3f
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -6404,12 +6313,12 @@ TextureCoordinate3D
 )*
 '}'
 | 'USE' xsIDREF;
-TextureCoordinate4D
-: ('DEF' xsID)? 'TextureCoordinate4D' '{'
+textureCoordinate4D
+: dEF 'TextureCoordinate4D' '{'
 (
-   'IS' (IS)
+   'IS' ( iS )
 |  'mapping' xsNMTOKEN
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'point' MFVec4f
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -6417,12 +6326,12 @@ TextureCoordinate4D
 )*
 '}'
 | 'USE' xsIDREF;
-TextureCoordinateGenerator
-: ('DEF' xsID)? 'TextureCoordinateGenerator' '{'
+textureCoordinateGenerator
+: dEF 'TextureCoordinateGenerator' '{'
 (
-   'IS' (IS)
+   'IS' ( iS )
 |  'mapping' xsNMTOKEN
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'mode' textureCoordinateGeneratorModeChoices
 |  'parameter' MFFloat
 |  'class' xsNMTOKENS
@@ -6431,8 +6340,8 @@ TextureCoordinateGenerator
 )*
 '}'
 | 'USE' xsIDREF;
-TextureProjector
-: ('DEF' xsID)? 'TextureProjector' '{'
+textureProjector
+: dEF 'TextureProjector' '{'
 (
    'ambientIntensity' unitIntervalType
 |  'aspectRatio' SFFloat
@@ -6443,14 +6352,14 @@ TextureProjector
 |  'fieldOfView' SFFloat
 |  'global' SFBool
 |  'intensity' SFFloat
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'location' SFVec3f
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'nearDistance' SFFloat
 |  'on' SFBool
 |  'shadowIntensity' unitIntervalType
 |  'shadows' SFBool
-|  'texture' (X3DTexture2DNode)
+|  'texture' ( x3DTexture2DNode )
 |  'upVector' SFVec3f
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -6458,8 +6367,8 @@ TextureProjector
 )*
 '}'
 | 'USE' xsIDREF;
-TextureProjectorParallel
-: ('DEF' xsID)? 'TextureProjectorParallel' '{'
+textureProjectorParallel
+: dEF 'TextureProjectorParallel' '{'
 (
    'ambientIntensity' unitIntervalType
 |  'aspectRatio' SFFloat
@@ -6470,22 +6379,22 @@ TextureProjectorParallel
 |  'fieldOfView' SFVec4f
 |  'global' SFBool
 |  'intensity' SFFloat
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'location' SFVec3f
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'nearDistance' SFFloat
 |  'on' SFBool
 |  'shadowIntensity' unitIntervalType
 |  'shadows' SFBool
-|  'texture' (X3DTexture2DNode)
+|  'texture' ( x3DTexture2DNode )
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
 |  'style' SFString
 )*
 '}'
 | 'USE' xsIDREF;
-TextureProperties
-: ('DEF' xsID)? 'TextureProperties' '{'
+textureProperties
+: dEF 'TextureProperties' '{'
 (
    'anisotropicDegree' SFFloat
 |  'borderColor' SFColorRGBA
@@ -6494,9 +6403,9 @@ TextureProperties
 |  'boundaryModeS' textureBoundaryModeChoices
 |  'boundaryModeT' textureBoundaryModeChoices
 |  'generateMipMaps' SFBool
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'magnificationFilter' textureMagnificationModeChoices
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'minificationFilter' textureMinificationModeChoices
 |  'textureCompression' textureCompressionModeChoices
 |  'texturePriority' SFFloat
@@ -6506,12 +6415,13 @@ TextureProperties
 )*
 '}'
 | 'USE' xsIDREF;
-TextureTransform
-: ('DEF' xsID)? 'TextureTransform' '{'
+textureTransform
+: dEF 'TextureTransform' '{'
 (
    'center' SFVec2f
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+|  'IS' ( iS )
+|  'mapping' xsNMTOKEN
+|  'metadata' ( x3DMetadataObject )
 |  'rotation' SFFloat
 |  'scale' SFVec2f
 |  'translation' SFVec2f
@@ -6521,12 +6431,13 @@ TextureTransform
 )*
 '}'
 | 'USE' xsIDREF;
-TextureTransform3D
-: ('DEF' xsID)? 'TextureTransform3D' '{'
+textureTransform3D
+: dEF 'TextureTransform3D' '{'
 (
    'center' SFVec3f
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+|  'IS' ( iS )
+|  'mapping' xsNMTOKEN
+|  'metadata' ( x3DMetadataObject )
 |  'rotation' SFRotation
 |  'scale' SFVec3f
 |  'translation' SFVec3f
@@ -6536,20 +6447,21 @@ TextureTransform3D
 )*
 '}'
 | 'USE' xsIDREF;
-TextureTransformMatrix3D
-: ('DEF' xsID)? 'TextureTransformMatrix3D' '{'
+textureTransformMatrix3D
+: dEF 'TextureTransformMatrix3D' '{'
 (
-   'IS' (IS)
+   'IS' ( iS )
+|  'mapping' xsNMTOKEN
 |  'matrix' SFMatrix4f
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
 |  'style' SFString
 )*
 '}'
 | 'USE' xsIDREF;
-TimeSensor
-: ('DEF' xsID)? 'TimeSensor' '{'
+timeSensor
+: dEF 'TimeSensor' '{'
 (
    'cycleInterval' SFTime
 |  'cycleTime' SFTime
@@ -6557,11 +6469,11 @@ TimeSensor
 |  'elapsedTime' SFTime
 |  'enabled' SFBool
 |  'fraction_changed' SFFloat
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'isActive' SFBool
 |  'isPaused' SFBool
 |  'loop' SFBool
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'pauseTime' SFTime
 |  'resumeTime' SFTime
 |  'startTime' SFTime
@@ -6573,11 +6485,11 @@ TimeSensor
 )*
 '}'
 | 'USE' xsIDREF;
-TimeTrigger
-: ('DEF' xsID)? 'TimeTrigger' '{'
+timeTrigger
+: dEF 'TimeTrigger' '{'
 (
-   'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+   'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'set_boolean' SFBool
 |  'triggerTime' SFTime
 |  'class' xsNMTOKENS
@@ -6586,14 +6498,14 @@ TimeTrigger
 )*
 '}'
 | 'USE' xsIDREF;
-ToneMappedVolumeStyle
-: ('DEF' xsID)? 'ToneMappedVolumeStyle' '{'
+toneMappedVolumeStyle
+: dEF 'ToneMappedVolumeStyle' '{'
 (
    'coolColor' SFColorRGBA
 |  'enabled' SFBool
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
-|  'surfaceNormals' (X3DTexture3DNode)
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
+|  'surfaceNormals' ( x3DTexture3DNode )
 |  'warmColor' SFColorRGBA
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -6601,18 +6513,18 @@ ToneMappedVolumeStyle
 )*
 '}'
 | 'USE' xsIDREF;
-TouchSensor
-: ('DEF' xsID)? 'TouchSensor' '{'
+touchSensor
+: dEF 'TouchSensor' '{'
 (
    'description' SFString
 |  'enabled' SFBool
 |  'hitNormal_changed' SFVec3f
 |  'hitPoint_changed' SFVec3f
 |  'hitTexCoord_changed' SFVec2f
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'isActive' SFBool
 |  'isOver' SFBool
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'touchTime' SFTime
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -6620,18 +6532,18 @@ TouchSensor
 )*
 '}'
 | 'USE' xsIDREF;
-Transform
-: ('DEF' xsID)? 'Transform' '{'
+transform
+: dEF 'Transform' '{'
 (
-   'addChildren' '[' (X3DChildNode)* ']'
+   'addChildren' '[' ( x3DChildNode )* ']'
 |  'bboxCenter' SFVec3f
 |  'bboxDisplay' SFBool
 |  'bboxSize' bboxSizeType
 |  'center' SFVec3f
-|  'children' '[' (X3DChildNode)* ']'
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
-|  'removeChildren' '[' (X3DChildNode)* ']'
+|  'children' '[' ( x3DChildNode )* ']'
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
+|  'removeChildren' '[' ( x3DChildNode )* ']'
 |  'rotation' SFRotation
 |  'scale' SFVec3f
 |  'scaleOrientation' SFRotation
@@ -6643,29 +6555,29 @@ Transform
 )*
 '}'
 | 'USE' xsIDREF;
-TransformSensor
-: ('DEF' xsID)? 'TransformSensor' '{'
+transformSensor
+: dEF 'TransformSensor' '{'
 (
    'center' SFVec3f
 |  'description' SFString
 |  'enabled' SFBool
 |  'enterTime' SFTime
 |  'exitTime' SFTime
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'isActive' SFBool
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'orientation_changed' SFRotation
 |  'position_changed' SFVec3f
 |  'size' SFVec3f
-|  'targetObject' (X3DGroupingNode|X3DShapeNode)
+|  'targetObject' ( x3DGroupingNode|x3DShapeNode )
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
 |  'style' SFString
 )*
 '}'
 | 'USE' xsIDREF;
-TransmitterPdu
-: ('DEF' xsID)? 'TransmitterPdu' '{'
+transmitterPdu
+: dEF 'TransmitterPdu' '{'
 (
    'address' SFString
 |  'antennaLocation' SFVec3f
@@ -6684,14 +6596,14 @@ TransmitterPdu
 |  'geoCoords' SFVec3d
 |  'geoSystem' geoSystemType
 |  'inputSource' SFInt32
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'isActive' SFBool
 |  'isNetworkReader' SFBool
 |  'isNetworkWriter' SFBool
 |  'isRtpHeaderHeard' SFBool
 |  'isStandAlone' SFBool
 |  'lengthOfModulationParameters' SFInt32
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'modulationTypeDetail' SFInt32
 |  'modulationTypeMajor' SFInt32
 |  'modulationTypeSpreadSpectrum' SFInt32
@@ -6724,54 +6636,54 @@ TransmitterPdu
 )*
 '}'
 | 'USE' xsIDREF;
-TriangleFanSet
-: ('DEF' xsID)? 'TriangleFanSet' '{'
+triangleFanSet
+: dEF 'TriangleFanSet' '{'
 (
-   'attrib' '[' (X3DVertexAttributeNode)* ']'
+   'attrib' '[' ( x3DVertexAttributeNode )* ']'
 |  'ccw' SFBool
-|  'color' (X3DColorNode)
+|  'color' ( x3DColorNode )
 |  'colorPerVertex' SFBool
-|  'coord' (X3DCoordinateNode)
+|  'coord' ( x3DCoordinateNode )
 |  'fanCount' MFInt32
-|  'fogCoord' (FogCoordinate)
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
-|  'normal' (X3DNormalNode)
+|  'fogCoord' ( fogCoordinate )
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
+|  'normal' ( x3DNormalNode )
 |  'normalPerVertex' SFBool
 |  'solid' SFBool
-|  'texCoord' (X3DSingleTextureCoordinateNode|MultiTextureCoordinate)
+|  'texCoord' ( x3DSingleTextureCoordinateNode|multiTextureCoordinate )
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
 |  'style' SFString
 )*
 '}'
 | 'USE' xsIDREF;
-TriangleSet
-: ('DEF' xsID)? 'TriangleSet' '{'
+triangleSet
+: dEF 'TriangleSet' '{'
 (
-   'attrib' '[' (X3DVertexAttributeNode)* ']'
+   'attrib' '[' ( x3DVertexAttributeNode )* ']'
 |  'ccw' SFBool
-|  'color' (X3DColorNode)
+|  'color' ( x3DColorNode )
 |  'colorPerVertex' SFBool
-|  'coord' (X3DCoordinateNode)
-|  'fogCoord' (FogCoordinate)
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
-|  'normal' (X3DNormalNode)
+|  'coord' ( x3DCoordinateNode )
+|  'fogCoord' ( fogCoordinate )
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
+|  'normal' ( x3DNormalNode )
 |  'normalPerVertex' SFBool
 |  'solid' SFBool
-|  'texCoord' (X3DSingleTextureCoordinateNode|MultiTextureCoordinate)
+|  'texCoord' ( x3DSingleTextureCoordinateNode|multiTextureCoordinate )
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
 |  'style' SFString
 )*
 '}'
 | 'USE' xsIDREF;
-TriangleSet2D
-: ('DEF' xsID)? 'TriangleSet2D' '{'
+triangleSet2D
+: dEF 'TriangleSet2D' '{'
 (
-   'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+   'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'solid' SFBool
 |  'vertices' MFVec2f
 |  'class' xsNMTOKENS
@@ -6780,30 +6692,30 @@ TriangleSet2D
 )*
 '}'
 | 'USE' xsIDREF;
-TriangleStripSet
-: ('DEF' xsID)? 'TriangleStripSet' '{'
+triangleStripSet
+: dEF 'TriangleStripSet' '{'
 (
-   'attrib' '[' (X3DVertexAttributeNode)* ']'
+   'attrib' '[' ( x3DVertexAttributeNode )* ']'
 |  'ccw' SFBool
-|  'color' (X3DColorNode)
+|  'color' ( x3DColorNode )
 |  'colorPerVertex' SFBool
-|  'coord' (X3DCoordinateNode)
-|  'fogCoord' (FogCoordinate)
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
-|  'normal' (X3DNormalNode)
+|  'coord' ( x3DCoordinateNode )
+|  'fogCoord' ( fogCoordinate )
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
+|  'normal' ( x3DNormalNode )
 |  'normalPerVertex' SFBool
 |  'solid' SFBool
 |  'stripCount' MFInt32
-|  'texCoord' (X3DSingleTextureCoordinateNode|MultiTextureCoordinate)
+|  'texCoord' ( x3DSingleTextureCoordinateNode|multiTextureCoordinate )
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
 |  'style' SFString
 )*
 '}'
 | 'USE' xsIDREF;
-TwoSidedMaterial
-: ('DEF' xsID)? 'TwoSidedMaterial' '{'
+twoSidedMaterial
+: dEF 'TwoSidedMaterial' '{'
 (
    'ambientIntensity' unitIntervalType
 |  'backAmbientIntensity' unitIntervalType
@@ -6814,8 +6726,8 @@ TwoSidedMaterial
 |  'backTransparency' unitIntervalType
 |  'diffuseColor' SFColor
 |  'emissiveColor' SFColor
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'separateBackColor' SFBool
 |  'shininess' unitIntervalType
 |  'specularColor' SFColor
@@ -6826,21 +6738,21 @@ TwoSidedMaterial
 )*
 '}'
 | 'USE' xsIDREF;
-UniversalJoint
-: ('DEF' xsID)? 'UniversalJoint' '{'
+universalJoint
+: dEF 'UniversalJoint' '{'
 (
    'anchorPoint' SFVec3f
 |  'axis1' SFVec3f
 |  'axis2' SFVec3f
-|  'body1' (RigidBody)
+|  'body1' ( rigidBody )
 |  'body1AnchorPoint' SFVec3f
 |  'body1Axis' SFVec3f
-|  'body2' (RigidBody)
+|  'body2' ( rigidBody )
 |  'body2AnchorPoint' SFVec3f
-|  'body2Axis' SFFloat
+|  'body2Axis' SFVec3f
 |  'forceOutput' '[' (forceOutputValues)* ']'
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'stop1Bounce' SFFloat
 |  'stop1ErrorCorrection' SFFloat
 |  'stop2Bounce' SFFloat
@@ -6851,16 +6763,16 @@ UniversalJoint
 )*
 '}'
 | 'USE' xsIDREF;
-UnlitMaterial
-: ('DEF' xsID)? 'UnlitMaterial' '{'
+unlitMaterial
+: dEF 'UnlitMaterial' '{'
 (
    'emissiveColor' SFColor
-|  'emissiveTexture' (X3DSingleTextureNode)
+|  'emissiveTexture' ( x3DSingleTextureNode )
 |  'emissiveTextureMapping' xsNMTOKEN
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'normalScale' SFFloat
-|  'normalTexture' (X3DSingleTextureNode)
+|  'normalTexture' ( x3DSingleTextureNode )
 |  'normalTextureMapping' xsNMTOKEN
 |  'transparency' unitIntervalType
 |  'class' xsNMTOKENS
@@ -6869,19 +6781,19 @@ UnlitMaterial
 )*
 '}'
 | 'USE' xsIDREF;
-Viewpoint
-: ('DEF' xsID)? 'Viewpoint' '{'
+viewpoint
+: dEF 'Viewpoint' '{'
 (
    'bindTime' SFTime
 |  'centerOfRotation' SFVec3f
 |  'description' SFString
 |  'farDistance' SFFloat
 |  'fieldOfView' SFFloat
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'isBound' SFBool
 |  'jump' SFBool
-|  'metadata' (X3DMetadataObject)
-|  'navigationInfo' (NavigationInfo)
+|  'metadata' ( x3DMetadataObject )
+|  'navigationInfo' ( navigationInfo )
 |  'nearDistance' SFFloat
 |  'orientation' SFRotation
 |  'position' SFVec3f
@@ -6894,15 +6806,15 @@ Viewpoint
 )*
 '}'
 | 'USE' xsIDREF;
-ViewpointGroup
-: ('DEF' xsID)? 'ViewpointGroup' '{'
+viewpointGroup
+: dEF 'ViewpointGroup' '{'
 (
    'center' SFVec3f
-|  'children' '[' (X3DViewpointNode|ViewpointGroup)* ']'
+|  'children' '[' ( x3DViewpointNode|viewpointGroup )* ']'
 |  'description' SFString
 |  'displayed' SFBool
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'retainUserOffsets' SFBool
 |  'size' SFVec3f
 |  'class' xsNMTOKENS
@@ -6911,18 +6823,18 @@ ViewpointGroup
 )*
 '}'
 | 'USE' xsIDREF;
-Viewport
-: ('DEF' xsID)? 'Viewport' '{'
+viewport
+: dEF 'Viewport' '{'
 (
-   'addChildren' '[' (X3DChildNode)* ']'
+   'addChildren' '[' ( x3DChildNode )* ']'
 |  'bboxCenter' SFVec3f
 |  'bboxDisplay' SFBool
 |  'bboxSize' bboxSizeType
-|  'children' '[' (X3DChildNode)* ']'
+|  'children' '[' ( x3DChildNode )* ']'
 |  'clipBoundary' MFFloat
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
-|  'removeChildren' '[' (X3DChildNode)* ']'
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
+|  'removeChildren' '[' ( x3DChildNode )* ']'
 |  'visible' SFBool
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -6930,17 +6842,17 @@ Viewport
 )*
 '}'
 | 'USE' xsIDREF;
-VisibilitySensor
-: ('DEF' xsID)? 'VisibilitySensor' '{'
+visibilitySensor
+: dEF 'VisibilitySensor' '{'
 (
    'center' SFVec3f
 |  'description' SFString
 |  'enabled' SFBool
 |  'enterTime' SFTime
 |  'exitTime' SFTime
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'isActive' SFBool
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'size' SFVec3f
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -6948,34 +6860,34 @@ VisibilitySensor
 )*
 '}'
 | 'USE' xsIDREF;
-VolumeData
-: ('DEF' xsID)? 'VolumeData' '{'
+volumeData
+: dEF 'VolumeData' '{'
 (
    'bboxCenter' SFVec3f
 |  'bboxDisplay' SFBool
 |  'bboxSize' bboxSizeType
 |  'dimensions' SFVec3f
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
-|  'renderStyle' (X3DVolumeRenderStyleNode)
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
+|  'renderStyle' ( x3DVolumeRenderStyleNode )
 |  'visible' SFBool
-|  'voxels' (X3DTexture3DNode)
+|  'voxels' ( x3DTexture3DNode )
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
 |  'style' SFString
 )*
 '}'
 | 'USE' xsIDREF;
-VolumeEmitter
-: ('DEF' xsID)? 'VolumeEmitter' '{'
+volumeEmitter
+: dEF 'VolumeEmitter' '{'
 (
-   'coord' (X3DCoordinateNode)
+   'coord' ( x3DCoordinateNode )
 |  'coordIndex' MFInt32
 |  'direction' SFVec3f
 |  'internal' SFBool
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'mass' SFFloat
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'on' SFBool
 |  'set_coordIndex' MFInt32
 |  'speed' SFFloat
@@ -6987,20 +6899,20 @@ VolumeEmitter
 )*
 '}'
 | 'USE' xsIDREF;
-VolumePickSensor
-: ('DEF' xsID)? 'VolumePickSensor' '{'
+volumePickSensor
+: dEF 'VolumePickSensor' '{'
 (
    'description' SFString
 |  'enabled' SFBool
 |  'intersectionType' intersectionTypeValues
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'isActive' SFBool
 |  'matchCriterion' pickSensorMatchCriterionChoices
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'objectType' '[' (pickableObjectTypeValues)* ']'
-|  'pickedGeometry' '[' (X3DChildNode)* ']'
-|  'pickingGeometry' (X3DGeometryNode)
-|  'pickTarget' '[' (X3DGroupingNode|X3DShapeNode|Inline)* ']'
+|  'pickedGeometry' '[' ( x3DChildNode )* ']'
+|  'pickingGeometry' ( x3DGeometryNode )
+|  'pickTarget' '[' ( x3DGroupingNode|x3DShapeNode|inline )* ']'
 |  'sortOrder' pickSensorSortOrderValues
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -7008,21 +6920,21 @@ VolumePickSensor
 )*
 '}'
 | 'USE' xsIDREF;
-WaveShaper
-: ('DEF' xsID)? 'WaveShaper' '{'
+waveShaper
+: dEF 'WaveShaper' '{'
 (
    'channelCount' SFInt32
 |  'channelCountMode' channelCountModeChoices
 |  'channelInterpretation' channelInterpretationChoices
-|  'children' '[' (Analyser|AudioClip|AudioDestination|BiquadFilter|BufferAudioSource|ChannelMerger|ChannelSelector|ChannelSplitter|Convolver|Delay|DynamicsCompressor|Gain|ListenerPointSource|MicrophoneSource|MovieTexture|OscillatorSource|Sound|SpatialSound|StreamAudioDestination|StreamAudioSource|WaveShaper)* ']'
+|  'children' '[' ( analyser|audioClip|audioDestination|biquadFilter|bufferAudioSource|channelMerger|channelSelector|channelSplitter|convolver|delay|dynamicsCompressor|gain|listenerPointSource|microphoneSource|movieTexture|oscillatorSource|sound|spatialSound|streamAudioDestination|streamAudioSource|waveShaper )* ']'
 |  'description' SFString
 |  'elapsedTime' SFTime
 |  'enabled' SFBool
 |  'gain' SFFloat
-|  'IS' (IS)
+|  'IS' ( iS )
 |  'isActive' SFBool
 |  'isPaused' SFBool
-|  'metadata' (X3DMetadataObject)
+|  'metadata' ( x3DMetadataObject )
 |  'oversample' waveShaperOversampleChoices
 |  'pauseTime' SFTime
 |  'resumeTime' SFTime
@@ -7035,14 +6947,14 @@ WaveShaper
 )*
 '}'
 | 'USE' xsIDREF;
-WindPhysicsModel
-: ('DEF' xsID)? 'WindPhysicsModel' '{'
+windPhysicsModel
+: dEF 'WindPhysicsModel' '{'
 (
    'direction' SFVec3f
 |  'enabled' SFBool
 |  'gustiness' SFFloat
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'speed' SFFloat
 |  'turbulence' SFFloat
 |  'class' xsNMTOKENS
@@ -7051,12 +6963,12 @@ WindPhysicsModel
 )*
 '}'
 | 'USE' xsIDREF;
-WorldInfo
-: ('DEF' xsID)? 'WorldInfo' '{'
+worldInfo
+: dEF 'WorldInfo' '{'
 (
    'info' MFString
-|  'IS' (IS)
-|  'metadata' (X3DMetadataObject)
+|  'IS' ( iS )
+|  'metadata' ( x3DMetadataObject )
 |  'title' SFString
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -7065,7 +6977,7 @@ WorldInfo
 '}'
 | 'USE' xsIDREF;
 component
-:  'component' '{'
+: dEF 'component' '{'
 (
    'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -7076,7 +6988,7 @@ component
 '}'
 ;
 connect
-:  'connect' '{'
+: dEF 'connect' '{'
 (
    'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -7086,8 +6998,8 @@ connect
 )*
 '}'
 ;
-EXPORT
-:  'EXPORT' '{'
+eXPORT
+: dEF 'EXPORT' '{'
 (
    'AS' xsNMTOKEN
 |  'class' xsNMTOKENS
@@ -7097,13 +7009,13 @@ EXPORT
 )*
 '}'
 ;
-ExternProtoDeclare
-:  'ExternProtoDeclare' '{'
+externProtoDeclare
+: dEF 'ExternProtoDeclare' '{'
 (
    'appinfo' SFString
 |  'class' xsNMTOKENS
 |  'documentation' SFString
-|  'field' '[' (field)* ']'
+|  'field' '[' ( field )* ']'
 |  'id' xsNMTOKEN
 |  'name' xsNMTOKEN
 |  'style' SFString
@@ -7112,11 +7024,11 @@ ExternProtoDeclare
 '}'
 ;
 field
-:  'field' '{'
+: dEF 'field' '{'
 (
    'accessType' accessTypeChoices
 |  'appinfo' SFString
-|  'children' '[' (X3DNode)* ']'
+|  'children' '[' ( x3DNode )* ']'
 |  'class' xsNMTOKENS
 |  'documentation' SFString
 |  'id' xsNMTOKEN
@@ -7128,9 +7040,9 @@ field
 '}'
 ;
 fieldValue
-:  'fieldValue' '{'
+: dEF 'fieldValue' '{'
 (
-   'children' '[' (X3DNode)* ']'
+   'children' '[' ( x3DNode )* ']'
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
 |  'name' xsNMTOKEN
@@ -7140,19 +7052,19 @@ fieldValue
 '}'
 ;
 head
-:  'head' '{'
+: dEF 'head' '{'
 (
    'class' xsNMTOKENS
-|  'COMPONENT' '[' (component)* ']'
+|  'COMPONENT' '[' ( component )* ']'
 |  'id' xsNMTOKEN
-|  'META' '[' (meta)* ']'
+|  'META' '[' ( meta )* ']'
 |  'style' SFString
-|  'UNIT' '[' (unit)* ']'
+|  'UNIT' '[' ( unit )* ']'
 )*
 '}'
 ;
-IMPORT
-:  'IMPORT' '{'
+iMPORT
+: dEF 'IMPORT' '{'
 (
    'AS' xsID
 |  'class' xsNMTOKENS
@@ -7163,18 +7075,18 @@ IMPORT
 )*
 '}'
 ;
-IS
-:  'IS' '{'
+iS
+: dEF 'IS' '{'
 (
    'class' xsNMTOKENS
-|  'connect' '[' (connect)* ']'
+|  'connect' '[' ( connect )* ']'
 |  'id' xsNMTOKEN
 |  'style' SFString
 )*
 '}'
 ;
 meta
-:  'meta' '{'
+: dEF 'meta' '{'
 (
    'class' xsNMTOKENS
 |  'content' SFString
@@ -7188,42 +7100,42 @@ meta
 )*
 '}'
 ;
-ProtoBody
-:  'ProtoBody' '{'
+protoBody
+: dEF 'ProtoBody' '{'
 (
-   'children' '[' (X3DNode)* ']'
+   'children' '[' ( x3DNode )* ']'
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
 |  'style' SFString
 )*
 '}'
 ;
-ProtoDeclare
-:  'ProtoDeclare' '{'
+protoDeclare
+: dEF 'ProtoDeclare' '{'
 (
    'appinfo' SFString
 |  'class' xsNMTOKENS
 |  'documentation' SFString
 |  'id' xsNMTOKEN
 |  'name' xsNMTOKEN
-|  'ProtoBody' (ProtoBody)
-|  'ProtoInterface' (ProtoInterface)
+|  'ProtoBody' ( protoBody )
+|  'ProtoInterface' ( protoInterface )
 |  'style' SFString
 )*
 '}'
 ;
-ProtoInterface
-:  'ProtoInterface' '{'
+protoInterface
+: dEF 'ProtoInterface' '{'
 (
    'class' xsNMTOKENS
-|  'field' '[' (field)* ']'
+|  'field' '[' ( field )* ']'
 |  'id' xsNMTOKEN
 |  'style' SFString
 )*
 '}'
 ;
-ROUTE
-:  'ROUTE' '{'
+rOUTE
+: dEF 'ROUTE' '{'
 (
    'class' xsNMTOKENS
 |  'fromField' xsNMTOKEN
@@ -7235,10 +7147,10 @@ ROUTE
 )*
 '}'
 ;
-Scene
-:  'Scene' '{'
+scene
+: dEF 'Scene' '{'
 (
-   'children' '[' (X3DChildNode|X3DMetadataObject|LayerSet)* ']'
+   'children' '[' ( x3DChildNode|x3DMetadataObject|layerSet )* ']'
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
 |  'style' SFString
@@ -7246,7 +7158,7 @@ Scene
 '}'
 ;
 unit
-:  'unit' '{'
+: dEF 'unit' '{'
 (
    'category' unitCategoryChoices
 |  'class' xsNMTOKENS
@@ -7257,16 +7169,372 @@ unit
 )*
 '}'
 ;
-X3D
-:  'X3D' '{'
+x3D
+: dEF 'X3D' '{'
 (
    'class' xsNMTOKENS
-|  'head' (head)
+|  'head' ( head )
 |  'id' xsNMTOKEN
 |  'PROFILE' profileNameChoices
-|  'Scene' (Scene)
+|  'Scene' ( scene )
 |  'style' SFString
 |  'version' x3dVersionChoices
 )*
 '}'
 ;
+sFNode : ( x3DAppearanceChildNode
+|x3DAppearanceNode
+|x3DArrayField
+|x3DBackgroundNode
+|x3DBindableNode
+|x3DChaserNode
+|x3DChildNode
+|x3DColorNode
+|x3DComposableVolumeRenderStyleNode
+|x3DComposedGeometryNode
+|x3DCoordinateNode
+|x3DDamperNode
+|x3DDragSensorNode
+|x3DEnvironmentalSensorNode
+|x3DEnvironmentTextureNode
+|x3DField
+|x3DFollowerNode
+|x3DFontStyleNode
+|x3DGeometricPropertyNode
+|x3DGeometryNode
+|x3DGroupingNode
+|x3DInfoNode
+|x3DInterpolatorNode
+|x3DKeyDeviceSensorNode
+|x3DLayerNode
+|x3DLayoutNode
+|x3DLightNode
+|x3DMaterialNode
+|x3DNBodyCollidableNode
+|x3DNBodyCollisionSpaceNode
+|x3DNetworkSensorNode
+|x3DNode
+|x3DNormalNode
+|x3DNurbsControlCurveNode
+|x3DNurbsSurfaceGeometryNode
+|x3DOneSidedMaterialNode
+|x3DParametricGeometryNode
+|x3DParticleEmitterNode
+|x3DParticlePhysicsModelNode
+|x3DPickSensorNode
+|x3DPointingDeviceSensorNode
+|x3DProductStructureChildNode
+|x3DPrototypeInstance
+|x3DRigidJointNode
+|x3DScriptNode
+|x3DSensorNode
+|x3DSequencerNode
+|x3DShaderNode
+|x3DShapeNode
+|x3DSingleTextureCoordinateNode
+|x3DSingleTextureNode
+|x3DSingleTextureTransformNode
+|x3DSoundChannelNode
+|x3DSoundDestinationNode
+|x3DSoundNode
+|x3DSoundProcessingNode
+|x3DSoundSourceNode
+|x3DStatement
+|x3DTexture2DNode
+|x3DTexture3DNode
+|x3DTextureCoordinateNode
+|x3DTextureNode
+|x3DTextureProjectorNode
+|x3DTextureTransformNode
+|x3DTimeDependentNode
+|x3DTouchSensorNode
+|x3DTriggerNode
+|x3DVertexAttributeNode
+|x3DViewpointNode
+|x3DViewportNode
+|x3DVolumeDataNode
+|x3DVolumeRenderStyleNode
+|x3DConcreteNode
+|x3DBoundedObject
+|x3DFogObject
+|x3DMetadataObject
+|x3DPickableObject
+|x3DProgrammableShaderObject
+|x3DUrlObject
+|acousticProperties
+|analyser
+|anchor
+|appearance
+|arc2D
+|arcClose2D
+|audioClip
+|audioDestination
+|background
+|ballJoint
+|billboard
+|biquadFilter
+|blendedVolumeStyle
+|booleanFilter
+|booleanSequencer
+|booleanToggle
+|booleanTrigger
+|boundaryEnhancementVolumeStyle
+|boundedPhysicsModel
+|box
+|bufferAudioSource
+|cADAssembly
+|cADFace
+|cADLayer
+|cADPart
+|cartoonVolumeStyle
+|channelMerger
+|channelSelector
+|channelSplitter
+|circle2D
+|clipPlane
+|collidableOffset
+|collidableShape
+|collision
+|collisionCollection
+|collisionSensor
+|collisionSpace
+|color
+|colorChaser
+|colorDamper
+|colorInterpolator
+|colorRGBA
+|composedCubeMapTexture
+|composedShader
+|composedTexture3D
+|composedVolumeStyle
+|cone
+|coneEmitter
+|contact
+|contour2D
+|contourPolyline2D
+|convolver
+|coordinate
+|coordinateChaser
+|coordinateDamper
+|coordinateDouble
+|coordinateInterpolator
+|coordinateInterpolator2D
+|cylinder
+|cylinderSensor
+|delay
+|directionalLight
+|dISEntityManager
+|dISEntityTypeMapping
+|disk2D
+|doubleAxisHingeJoint
+|dynamicsCompressor
+|easeInEaseOut
+|edgeEnhancementVolumeStyle
+|elevationGrid
+|espduTransform
+|explosionEmitter
+|extrusion
+|fillProperties
+|floatVertexAttribute
+|fog
+|fogCoordinate
+|fontStyle
+|forcePhysicsModel
+|gain
+|generatedCubeMapTexture
+|geoCoordinate
+|geoElevationGrid
+|geoLocation
+|geoLOD
+|geoMetadata
+|geoOrigin
+|geoPositionInterpolator
+|geoProximitySensor
+|geoTouchSensor
+|geoTransform
+|geoViewpoint
+|group
+|hAnimDisplacer
+|hAnimHumanoid
+|hAnimJoint
+|hAnimMotion
+|hAnimSegment
+|hAnimSite
+|imageCubeMapTexture
+|imageTexture
+|imageTexture3D
+|indexedFaceSet
+|indexedLineSet
+|indexedQuadSet
+|indexedTriangleFanSet
+|indexedTriangleSet
+|indexedTriangleStripSet
+|inline
+|integerSequencer
+|integerTrigger
+|isoSurfaceVolumeData
+|keySensor
+|layer
+|layerSet
+|layout
+|layoutGroup
+|layoutLayer
+|linePickSensor
+|lineProperties
+|lineSet
+|listenerPointSource
+|loadSensor
+|localFog
+|lOD
+|material
+|matrix3VertexAttribute
+|matrix4VertexAttribute
+|metadataBoolean
+|metadataDouble
+|metadataFloat
+|metadataInteger
+|metadataSet
+|metadataString
+|microphoneSource
+|motorJoint
+|movieTexture
+|multiTexture
+|multiTextureCoordinate
+|multiTextureTransform
+|navigationInfo
+|normal
+|normalInterpolator
+|nurbsCurve
+|nurbsCurve2D
+|nurbsOrientationInterpolator
+|nurbsPatchSurface
+|nurbsPositionInterpolator
+|nurbsSet
+|nurbsSurfaceInterpolator
+|nurbsSweptSurface
+|nurbsSwungSurface
+|nurbsTextureCoordinate
+|nurbsTrimmedSurface
+|opacityMapVolumeStyle
+|orientationChaser
+|orientationDamper
+|orientationInterpolator
+|orthoViewpoint
+|oscillatorSource
+|packagedShader
+|particleSystem
+|periodicWave
+|physicalMaterial
+|pickableGroup
+|pixelTexture
+|pixelTexture3D
+|planeSensor
+|pointEmitter
+|pointLight
+|pointPickSensor
+|pointProperties
+|pointSet
+|polyline2D
+|polylineEmitter
+|polypoint2D
+|positionChaser
+|positionChaser2D
+|positionDamper
+|positionDamper2D
+|positionInterpolator
+|positionInterpolator2D
+|primitivePickSensor
+|programShader
+|projectionVolumeStyle
+|protoInstance
+|proximitySensor
+|quadSet
+|receiverPdu
+|rectangle2D
+|rigidBody
+|rigidBodyCollection
+|scalarChaser
+|scalarDamper
+|scalarInterpolator
+|screenFontStyle
+|screenGroup
+|script
+|segmentedVolumeData
+|shadedVolumeStyle
+|shaderPart
+|shaderProgram
+|shape
+|signalPdu
+|silhouetteEnhancementVolumeStyle
+|singleAxisHingeJoint
+|sliderJoint
+|sound
+|spatialSound
+|sphere
+|sphereSensor
+|splinePositionInterpolator
+|splinePositionInterpolator2D
+|splineScalarInterpolator
+|spotLight
+|squadOrientationInterpolator
+|staticGroup
+|streamAudioDestination
+|streamAudioSource
+|stringSensor
+|surfaceEmitter
+|switch
+|texCoordChaser2D
+|texCoordDamper2D
+|text
+|textureBackground
+|textureCoordinate
+|textureCoordinate3D
+|textureCoordinate4D
+|textureCoordinateGenerator
+|textureProjector
+|textureProjectorParallel
+|textureProperties
+|textureTransform
+|textureTransform3D
+|textureTransformMatrix3D
+|timeSensor
+|timeTrigger
+|toneMappedVolumeStyle
+|touchSensor
+|transform
+|transformSensor
+|transmitterPdu
+|triangleFanSet
+|triangleSet
+|triangleSet2D
+|triangleStripSet
+|twoSidedMaterial
+|universalJoint
+|unlitMaterial
+|viewpoint
+|viewpointGroup
+|viewport
+|visibilitySensor
+|volumeData
+|volumeEmitter
+|volumePickSensor
+|waveShaper
+|windPhysicsModel
+|worldInfo
+|component
+|connect
+|eXPORT
+|externProtoDeclare
+|field
+|fieldValue
+|head
+|iMPORT
+|iS
+|meta
+|protoBody
+|protoDeclare
+|protoInterface
+|rOUTE
+|scene
+|unit
+|x3D );
