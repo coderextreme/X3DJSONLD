@@ -91,7 +91,7 @@
 		<dependency>
 			<groupId>org.web3d.x3d</groupId>
 			<artifactId>X3DJSAIL</artifactId>
-			<version>4.0-SNAPSHOT</version>
+			<version>4.0.full</version>
 		</dependency>
 		<dependency>
 		    <groupId>org.glassfish</groupId>

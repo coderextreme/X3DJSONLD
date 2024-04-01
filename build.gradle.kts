@@ -26,12 +26,10 @@ dependencies {
     api("org.apache.commons:commons-lang3:3.4")
     api("org.slf4j:slf4j-log4j12:1.7.12")
     implementation("net.sf.saxon:Saxon-HE:12.3")
-    //api("org.web3d.x3d:X3DJSAIL:4.0-SNAPSHOT")
     api("org.glassfish:javax.json:1.0.4")
     implementation("org.graalvm.js:js:20.2.0")
     implementation("org.graalvm.js:js-scriptengine:20.2.0")
-    implementation("org.web3d.x3d:X3DJSAIL:4.0-SNAPSHOT") // add this, I can give you pom.xml
-    // classpath("org.web3d.x3d:X3DJSAIL:4.0-SNAPSHOT")
+    implementation("org.web3d.x3d:X3DJSAIL:4.0.full")
 }
 
 group = "net.coderextreme"
