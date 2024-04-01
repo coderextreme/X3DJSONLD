@@ -132,7 +132,7 @@
           },
           {
             "@name":"translated",
-            "@content":"14 March 2024"
+            "@content":"30 March 2024"
           },
           {
             "@name":"generator",
@@ -153,7 +153,7 @@
           },
           { "NavigationInfo":
             {
-              "@type":"\"NONE\""
+              "@type":["NONE"]
             }
           },
           { "Background":
