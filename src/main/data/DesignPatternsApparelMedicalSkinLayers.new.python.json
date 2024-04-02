@@ -69,7 +69,7 @@ models."
 },
 {
 "@name":"translated",
-"@content":"04 March 2024"
+"@content":"30 March 2024"
 },
 {
 "@name":"generator",
@@ -115,8 +115,6 @@ models."
 { "HAnimJoint":
 {
 "@name":"humanoid_root",
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -163,8 +161,6 @@ models."
 { "HAnimJoint":
 {
 "@name":"humanoid_root",
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -198,8 +194,6 @@ models."
 { "HAnimJoint":
 {
 "@name":"humanoid_root",
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -227,8 +221,6 @@ models."
 { "HAnimJoint":
 {
 "@name":"humanoid_root",
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -260,8 +252,6 @@ models."
 { "HAnimJoint":
 {
 "@name":"humanoid_root",
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -299,8 +289,6 @@ models."
 { "HAnimJoint":
 {
 "@name":"humanoid_root",
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -338,8 +326,6 @@ models."
 { "HAnimJoint":
 {
 "@name":"humanoid_root",
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -365,8 +351,6 @@ models."
 { "HAnimJoint":
 {
 "@name":"humanoid_root",
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
