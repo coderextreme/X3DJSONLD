@@ -63,6 +63,7 @@
     <NavigationInfo avatarSize='0.25 1.6 0.75' speed='1.5' transitionType='"LINEAR"' type='"EXAMINE" "ANY"'/>
     <Viewpoint description='default'/>
     <HAnimHumanoid DEF='hanim_HAnim' name='HAnim' info='"humanoidVersion=2.0"' version='2.0'>
+      <Coordinate USE='TheSkinCoord'/>
       <HAnimJoint DEF='hanim_humanoid_root' name='humanoid_root' center='0 0.824 0.0277' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
         <HAnimSegment DEF='hanim_sacrum' name='sacrum' momentsOfInertia='0 0 0 0 0 0 0 0 0'>
           <Transform translation='0 0.824 0.0277'>
@@ -2651,7 +2652,6 @@
       <HAnimJoint USE='hanim_r_carpal_distal_interphalangeal_5'/>
       <HAnimSegment USE='hanim_r_carpal_middle_phalanx_5'/>
       <HAnimSite USE='hanim_r_carpal_distal_phalanx_5_tip'/>
-      <Coordinate USE='TheSkinCoord'/>
     </HAnimHumanoid>
   </Scene>
 </X3D>
