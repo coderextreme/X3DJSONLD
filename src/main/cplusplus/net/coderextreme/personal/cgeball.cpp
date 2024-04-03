@@ -1,201 +1,194 @@
-/* delete next 5 lines for Visual Studio */
-#define FALSE false
-#define TRUE true
-#define WINAPI
-#define AFX_EXT_CLASS
-#define EXPORT32
-#include "C:/x3d-code/www.web3d.org/x3d/stylesheets/cpp/concretes.h"
+#define False false
+#define True true
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/X3DLib.h"
 int main(int argc, char ** argv) {
-CX3DScene m_pScene;
-CBrowser browser = X3D.getBrowser();
-CX3D* X3D0 = new CX3D();
-CGroup* group = (CGroup*)(m_pScene.createNode("Group"));
-group->addChildren(X3D0);
-X3D0->setProfile("Immersive");
-X3D0->setVersion("4.0");
-Chead* head1 = new Chead();
-Ccomponent* component2 = new Ccomponent();
-component2->setName("Scripting");
-component2->setLevel(1);
-head1->addComponent(*component2);
+X3D& X3D0 =  X3D();
+X3D0.setProfile(CString("Immersive"));
+X3D0.setVersion(CString("4.0"));
+head& head1 =  head();
+component& component2 =  component();
+component2.setName(CString("Scripting"));
+component2.setLevel(1);
+head1.addChild(&component2);
 
-Ccomponent* component3 = new Ccomponent();
-component3->setName("EnvironmentalEffects");
-component3->setLevel(3);
-head1->addComponent(*component3);
+component& component3 =  component();
+component3.setName(CString("EnvironmentalEffects"));
+component3.setLevel(3);
+head1.addChild(&component3);
 
-Ccomponent* component4 = new Ccomponent();
-component4->setName("Texturing");
-component4->setLevel(1);
-head1->addComponent(*component4);
+component& component4 =  component();
+component4.setName(CString("Texturing"));
+component4.setLevel(1);
+head1.addChild(&component4);
 
-Ccomponent* component5 = new Ccomponent();
-component5->setName("Rendering");
-component5->setLevel(1);
-head1->addComponent(*component5);
+component& component5 =  component();
+component5.setName(CString("Rendering"));
+component5.setLevel(1);
+head1.addChild(&component5);
 
-Ccomponent* component6 = new Ccomponent();
-component6->setName("Grouping");
-component6->setLevel(3);
-head1->addComponent(*component6);
+component& component6 =  component();
+component6.setName(CString("Grouping"));
+component6.setLevel(3);
+head1.addChild(&component6);
 
-Ccomponent* component7 = new Ccomponent();
-component7->setName("Core");
-component7->setLevel(1);
-head1->addComponent(*component7);
+component& component7 =  component();
+component7.setName(CString("Core"));
+component7.setLevel(1);
+head1.addChild(&component7);
 
 //component name='Shaders' level='1'></component
 //component name='CubeMapTexturing' level='1'></component
-Cmeta* meta8 = new Cmeta();
-meta8->setName("title");
-meta8->setContent("ball.x3d");
-head1->addMeta(*meta8);
+meta& meta8 =  meta();
+meta8.setName(CString("title"));
+meta8.setContent(CString("ball.x3d"));
+head1.addMeta(&meta8);
 
-Cmeta* meta9 = new Cmeta();
-meta9->setName("creator");
-meta9->setContent("John Carlson");
-head1->addMeta(*meta9);
+meta& meta9 =  meta();
+meta9.setName(CString("creator"));
+meta9.setContent(CString("John Carlson"));
+head1.addMeta(&meta9);
 
-Cmeta* meta10 = new Cmeta();
-meta10->setName("generator");
-meta10->setContent("manual");
-head1->addMeta(*meta10);
+meta& meta10 =  meta();
+meta10.setName(CString("generator"));
+meta10.setContent(CString("manual"));
+head1.addMeta(&meta10);
 
-Cmeta* meta11 = new Cmeta();
-meta11->setName("identifier");
-meta11->setContent("https://coderextreme.net/X3DJSONLD/src/main/data/ball.x3d");
-head1->addMeta(*meta11);
+meta& meta11 =  meta();
+meta11.setName(CString("identifier"));
+meta11.setContent(CString("https://coderextreme.net/X3DJSONLD/src/main/data/ball.x3d"));
+head1.addMeta(&meta11);
 
-Cmeta* meta12 = new Cmeta();
-meta12->setName("description");
-meta12->setContent("a prismatic sphere");
-head1->addMeta(*meta12);
+meta& meta12 =  meta();
+meta12.setName(CString("description"));
+meta12.setContent(CString("a prismatic sphere"));
+head1.addMeta(&meta12);
 
-X3D0->setHead(*head1);
+X3D0.setHead(&head1);
 
-CScene* Scene13 = new CScene();
-CWorldInfo* WorldInfo14 = (CWorldInfo *)(m_pScene.createNode("WorldInfo"));
-WorldInfo14->setTitle("ball.x3d");
-group->addChildren(*WorldInfo14);
+Scene& Scene13 =  Scene();
+WorldInfo& WorldInfo14 =  WorldInfo();
+WorldInfo14.setTitle(CString("ball.x3d"));
+Scene13.addChild(&WorldInfo14);
 
-CNavigationInfo* NavigationInfo15 = (CNavigationInfo *)(m_pScene.createNode("NavigationInfo"));
-NavigationInfo15->setType(new CString[4]{"ANY","EXAMINE","FLY","LOOKAT"}, 4);
-group->addChildren(*NavigationInfo15);
+NavigationInfo& NavigationInfo15 =  NavigationInfo();
+NavigationInfo15.setType(new CString[4]{CString("ANY"), CString("EXAMINE"), CString("FLY"), CString("LOOKAT")}, 4);
+Scene13.addChild(&NavigationInfo15);
 
-CViewpoint* Viewpoint16 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
-Viewpoint16->setDescription("Tour Views");
-Viewpoint16->setPosition(new float[3]{0,0,12});
-group->addChildren(*Viewpoint16);
+Viewpoint& Viewpoint16 =  Viewpoint();
+Viewpoint16.setDescription(CString("Tour Views"));
+Viewpoint16.setPosition(new float[3]{0,0,12});
+Scene13.addChild(&Viewpoint16);
 
-CBackground* Background17 = (CBackground *)(m_pScene.createNode("Background"));
-Background17->setBackUrl(new CString[1]{"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"}, 1);
-Background17->setBottomUrl(new CString[1]{"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"}, 1);
-Background17->setFrontUrl(new CString[1]{"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"}, 1);
-Background17->setLeftUrl(new CString[1]{"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"}, 1);
-Background17->setRightUrl(new CString[1]{"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"}, 1);
-Background17->setTopUrl(new CString[1]{"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"}, 1);
-group->addChildren(*Background17);
+Background& Background17 =  Background();
+Background17.setBackUrl(new CString[1]{CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png")}, 1);
+Background17.setBottomUrl(new CString[1]{CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png")}, 1);
+Background17.setFrontUrl(new CString[1]{CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png")}, 1);
+Background17.setLeftUrl(new CString[1]{CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png")}, 1);
+Background17.setRightUrl(new CString[1]{CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png")}, 1);
+Background17.setTopUrl(new CString[1]{CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png")}, 1);
+Scene13.addChild(&Background17);
 
-CTransform* Transform18 = (CTransform *)(m_pScene.createNode("Transform"));
-CShape* Shape19 = (CShape *)(m_pScene.createNode("Shape"));
-CSphere* Sphere20 = (CSphere *)(m_pScene.createNode("Sphere"));
-Shape19->setGeometry(Sphere20);
+Transform& Transform18 =  Transform();
+Shape& Shape19 =  Shape();
+Sphere& Sphere20 =  Sphere();
+Shape19.setGeometry(&Sphere20);
 
-CAppearance* Appearance21 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material22 = (CMaterial *)(m_pScene.createNode("Material"));
-Material22->setDiffuseColor(new float[3]{0.7,0.7,0.7});
-Material22->setSpecularColor(new float[3]{0.5,0.5,0.5});
-Appearance21->setMaterial(*Material22);
+Appearance& Appearance21 =  Appearance();
+Material& Material22 =  Material();
+Material22.setDiffuseColor(new float[3]{0.7,0.7,0.7});
+Material22.setSpecularColor(new float[3]{0.5,0.5,0.5});
+Appearance21.addChild(&Material22);
 
-CComposedCubeMapTexture* ComposedCubeMapTexture23 = (CComposedCubeMapTexture *)(m_pScene.createNode("ComposedCubeMapTexture"));
-ComposedCubeMapTexture23->setDEF("texture");
-CImageTexture* ImageTexture24 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
-ImageTexture24->setUrl(new CString[1]{"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"}, 1);
-ComposedCubeMapTexture23->setBackTexture(*ImageTexture24);
+ComposedCubeMapTexture& ComposedCubeMapTexture23 =  ComposedCubeMapTexture();
+ComposedCubeMapTexture23.setDEF(CString("texture"));
+ImageTexture& ImageTexture24 =  ImageTexture();
+ImageTexture24.setUrl(new CString[1]{CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png")}, 1);
+ComposedCubeMapTexture23.setBack(ImageTexture24);
 
-CImageTexture* ImageTexture25 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
-ImageTexture25->setUrl(new CString[1]{"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"}, 1);
-ComposedCubeMapTexture23->setBottomTexture(*ImageTexture25);
+ImageTexture& ImageTexture25 =  ImageTexture();
+ImageTexture25.setUrl(new CString[1]{CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png")}, 1);
+ComposedCubeMapTexture23.setBottom(ImageTexture25);
 
-CImageTexture* ImageTexture26 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
-ImageTexture26->setUrl(new CString[1]{"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"}, 1);
-ComposedCubeMapTexture23->setFrontTexture(*ImageTexture26);
+ImageTexture& ImageTexture26 =  ImageTexture();
+ImageTexture26.setUrl(new CString[1]{CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png")}, 1);
+ComposedCubeMapTexture23.setFront(ImageTexture26);
 
-CImageTexture* ImageTexture27 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
-ImageTexture27->setUrl(new CString[1]{"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"}, 1);
-ComposedCubeMapTexture23->setLeftTexture(*ImageTexture27);
+ImageTexture& ImageTexture27 =  ImageTexture();
+ImageTexture27.setUrl(new CString[1]{CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png")}, 1);
+ComposedCubeMapTexture23.setLeft(ImageTexture27);
 
-CImageTexture* ImageTexture28 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
-ImageTexture28->setUrl(new CString[1]{"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"}, 1);
-ComposedCubeMapTexture23->setRightTexture(*ImageTexture28);
+ImageTexture& ImageTexture28 =  ImageTexture();
+ImageTexture28.setUrl(new CString[1]{CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png")}, 1);
+ComposedCubeMapTexture23.setRight(ImageTexture28);
 
-CImageTexture* ImageTexture29 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
-ImageTexture29->setUrl(new CString[1]{"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"}, 1);
-ComposedCubeMapTexture23->setTopTexture(*ImageTexture29);
+ImageTexture& ImageTexture29 =  ImageTexture();
+ImageTexture29.setUrl(new CString[1]{CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png")}, 1);
+ComposedCubeMapTexture23.setTop(ImageTexture29);
 
-Appearance21->setTexture(*ComposedCubeMapTexture23);
+Appearance21.addChild(&ComposedCubeMapTexture23);
 
-CComposedShader* ComposedShader30 = (CComposedShader *)(m_pScene.createNode("ComposedShader"));
-ComposedShader30->setLanguage("GLSL");
-Cfield* field31 = new Cfield();
-field31->setName("chromaticDispertion");
-field31->setAccessType("inputOutput");
-field31->setType("SFVec3f");
-field31->setValue("0.98 1 1.033");
-ComposedShader30->addField(*field31);
+ComposedShader& ComposedShader30 =  ComposedShader();
+ComposedShader30.setLanguage(CString("GLSL"));
+field& field31 =  field();
+field31.setName(CString("chromaticDispertion"));
+field31.setAccessType(CString("inputOutput"));
+field31.setType(CString("SFVec3f"));
+field31.setValue(CString("0.98 1 1.033"));
+ComposedShader30.addChild(&field31);
 
-Cfield* field32 = new Cfield();
-field32->setName("cube");
-field32->setType("SFNode");
-field32->setAccessType("inputOutput");
-CComposedCubeMapTexture* ComposedCubeMapTexture33 = (CComposedCubeMapTexture *)(m_pScene.createNode("ComposedCubeMapTexture"));
-ComposedCubeMapTexture33->setUSE("texture");
-field32->addChildren(*ComposedCubeMapTexture33);
+field& field32 =  field();
+field32.setName(CString("cube"));
+field32.setType(CString("SFNode"));
+field32.setAccessType(CString("inputOutput"));
+ComposedCubeMapTexture& ComposedCubeMapTexture33 =  ComposedCubeMapTexture();
+ComposedCubeMapTexture33.setUSE(CString("texture"));
+field32.addChild(&ComposedCubeMapTexture33);
 
-ComposedShader30->addField(*field32);
+ComposedShader30.addChild(&field32);
 
-Cfield* field34 = new Cfield();
-field34->setName("bias");
-field34->setAccessType("inputOutput");
-field34->setType("SFFloat");
-field34->setValue("0.5");
-ComposedShader30->addField(*field34);
+field& field34 =  field();
+field34.setName(CString("bias"));
+field34.setAccessType(CString("inputOutput"));
+field34.setType(CString("SFFloat"));
+field34.setValue(CString("0.5"));
+ComposedShader30.addChild(&field34);
 
-Cfield* field35 = new Cfield();
-field35->setName("scale");
-field35->setAccessType("inputOutput");
-field35->setType("SFFloat");
-field35->setValue("0.5");
-ComposedShader30->addField(*field35);
+field& field35 =  field();
+field35.setName(CString("scale"));
+field35.setAccessType(CString("inputOutput"));
+field35.setType(CString("SFFloat"));
+field35.setValue(CString("0.5"));
+ComposedShader30.addChild(&field35);
 
-Cfield* field36 = new Cfield();
-field36->setName("power");
-field36->setAccessType("inputOutput");
-field36->setType("SFFloat");
-field36->setValue("2");
-ComposedShader30->addField(*field36);
+field& field36 =  field();
+field36.setName(CString("power"));
+field36.setAccessType(CString("inputOutput"));
+field36.setType(CString("SFFloat"));
+field36.setValue(CString("2"));
+ComposedShader30.addChild(&field36);
 
-CShaderPart* ShaderPart37 = (CShaderPart *)(m_pScene.createNode("ShaderPart"));
-ShaderPart37->setUrl(new CString[2]{"../shaders/castle.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.vs"}, 2);
-ShaderPart37->setType("VERTEX");
-ComposedShader30->addParts(*ShaderPart37);
+ShaderPart& ShaderPart37 =  ShaderPart();
+ShaderPart37.setUrl(new CString[2]{CString("../shaders/castle.vs"), CString("https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.vs")}, 2);
+ShaderPart37.setType(CString("VERTEX"));
+ComposedShader30.setParts(&ShaderPart37);
 
-CShaderPart* ShaderPart38 = (CShaderPart *)(m_pScene.createNode("ShaderPart"));
-ShaderPart38->setDEF("commonfs");
-ShaderPart38->setUrl(new CString[2]{"../shaders/castle.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.fs"}, 2);
-ShaderPart38->setType("FRAGMENT");
-ComposedShader30->addParts(*ShaderPart38);
+ShaderPart& ShaderPart38 =  ShaderPart();
+ShaderPart38.setDEF(CString("commonfs"));
+ShaderPart38.setUrl(new CString[2]{CString("../shaders/castle.fs"), CString("https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.fs")}, 2);
+ShaderPart38.setType(CString("FRAGMENT"));
+ComposedShader30.setParts(&ShaderPart38);
 
-Appearance21->addShaders(*ComposedShader30);
+Appearance21.addChild(&ComposedShader30);
 
-Shape19->setAppearance(*Appearance21);
+Shape19.addChild(&Appearance21);
 
-Transform18->addChild(*Shape19);
+Transform18.addChild(&Shape19);
 
-group->addChildren(*Transform18);
+Scene13.addChild(&Transform18);
 
-X3D0->setScene(*Scene13);
+X3D0.setScene(&Scene13);
 
-m_pScene.addRootNode(group);
-X3D0->toXMLString();
 }

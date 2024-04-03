@@ -1,564 +1,549 @@
-/* delete next 5 lines for Visual Studio */
-#define FALSE false
-#define TRUE true
-#define WINAPI
-#define AFX_EXT_CLASS
-#define EXPORT32
-#include "C:/x3d-code/www.web3d.org/x3d/stylesheets/cpp/concretes.h"
+#define False false
+#define True true
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/X3DLib.h"
 int main(int argc, char ** argv) {
-CX3DScene m_pScene;
-CBrowser browser = X3D.getBrowser();
-CX3D* X3D0 = new CX3D();
-CGroup* group = (CGroup*)(m_pScene.createNode("Group"));
-group->addChildren(X3D0);
-X3D0->setProfile("Immersive");
-X3D0->setVersion("3.3");
-Chead* head1 = new Chead();
-Cmeta* meta2 = new Cmeta();
-meta2->setName("title");
-meta2->setContent("bubs3.x3d");
-head1->addMeta(*meta2);
-
-Cmeta* meta3 = new Cmeta();
-meta3->setName("creator");
-meta3->setContent("John Carlson");
-head1->addMeta(*meta3);
-
-Cmeta* meta4 = new Cmeta();
-meta4->setName("description");
-meta4->setContent("Tour around a prismatic sphere");
-head1->addMeta(*meta4);
-
-Cmeta* meta5 = new Cmeta();
-meta5->setName("generator");
-meta5->setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit");
-head1->addMeta(*meta5);
-
-Cmeta* meta6 = new Cmeta();
-meta6->setName("identifier");
-meta6->setContent("https://coderextreme.net/X3DJSONLD/src/main/data/bubs.x3d");
-head1->addMeta(*meta6);
-
-X3D0->setHead(*head1);
-
-CScene* Scene7 = new CScene();
-CNavigationInfo* NavigationInfo8 = (CNavigationInfo *)(m_pScene.createNode("NavigationInfo"));
-NavigationInfo8->setType(new CString[1]{"EXAMINE"}, 1);
-group->addChildren(*NavigationInfo8);
-
-CViewpoint* Viewpoint9 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
-Viewpoint9->setPosition(new float[3]{0,0,4});
-Viewpoint9->setOrientation(new float[4]{1,0,0,0});
-Viewpoint9->setDescription("Bubbles in action");
-group->addChildren(*Viewpoint9);
-
-CBackground* Background10 = (CBackground *)(m_pScene.createNode("Background"));
-Background10->setBackUrl(new CString[2]{"../resources/images/BK.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/BK.png"}, 2);
-Background10->setBottomUrl(new CString[2]{"../resources/images/BT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/BT.png"}, 2);
-Background10->setFrontUrl(new CString[2]{"../resources/images/FR.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/FR.png"}, 2);
-Background10->setLeftUrl(new CString[2]{"../resources/images/LF.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/LF.png"}, 2);
-Background10->setRightUrl(new CString[2]{"../resources/images/RT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/RT.png"}, 2);
-Background10->setTopUrl(new CString[2]{"../resources/images/TP.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/TP.png"}, 2);
-group->addChildren(*Background10);
-
-CTransform* Transform11 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform11->setDEF("DECLBubble_bubbleA");
-CShape* Shape12 = (CShape *)(m_pScene.createNode("Shape"));
-CSphere* Sphere13 = (CSphere *)(m_pScene.createNode("Sphere"));
-Sphere13->setRadius(0.25);
-Shape12->setGeometry(Sphere13);
-
-CAppearance* Appearance14 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material15 = (CMaterial *)(m_pScene.createNode("Material"));
-Material15->setDiffuseColor(new float[3]{1,0,0});
-Material15->setTransparency(0.2);
-Appearance14->setMaterial(*Material15);
-
-Shape12->setAppearance(*Appearance14);
-
-Transform11->addChild(*Shape12);
-
-CScript* Script16 = (CScript *)(m_pScene.createNode("Script"));
-Script16->setDEF("DECLBubble_bubbleA_bounce");
-Cfield* field17 = new Cfield();
-field17->setName("scale");
-field17->setAccessType("inputOutput");
-field17->setType("SFVec3f");
-field17->setValue("1 1 1");
-Script16->addField(*field17);
-
-Cfield* field18 = new Cfield();
-field18->setName("translation");
-field18->setAccessType("inputOutput");
-field18->setType("SFVec3f");
-field18->setValue("0 0 0");
-Script16->addField(*field18);
-
-Cfield* field19 = new Cfield();
-field19->setName("velocity");
-field19->setAccessType("inputOutput");
-field19->setType("SFVec3f");
-field19->setValue("0 0 0");
-Script16->addField(*field19);
-
-Cfield* field20 = new Cfield();
-field20->setName("scalvel");
-field20->setAccessType("inputOutput");
-field20->setType("SFVec3f");
-field20->setValue("0 0 0");
-Script16->addField(*field20);
-
-Cfield* field21 = new Cfield();
-field21->setName("set_fraction");
-field21->setAccessType("inputOnly");
-field21->setType("SFFloat");
-Script16->addField(*field21);
-
-
-Script16.setSourceCode(`ecmascript:\n"+
-"function initialize() {\n"+
-"    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);\n"+
-"\n"+
-"    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);\n"+
-"}\n"+
-"\n"+
-"function set_fraction(value) {\n"+
-"    translation = new SFVec3f(	translation.x + velocity.x, translation.y + velocity.y, translation.z + velocity.z);\n"+
-"    scale = new SFVec3f(scale.x + scalvel.x, scale.y + scalvel.y, scale.z + scalvel.z);\n"+
-"    // if you get to far away or too big, explode\n"+
-"    if ( Math.abs(translation.x) > 256) {\n"+
-"	translation.x = 0;\n"+
-"	initialize();\n"+
-"    }\n"+
-"    if ( Math.abs(translation.y) > 256) {\n"+
-"	translation.y = 0;\n"+
-"	initialize();\n"+
-"    }\n"+
-"    if ( Math.abs(translation.z) > 256) {\n"+
-"	translation.z = 0;\n"+
-"	initialize();\n"+
-"    }\n"+
-"    if (Math.abs(scale.x) > 20) {\n"+
-"	scale.x = scale.x/20;\n"+
-"	translation.x = 0;\n"+
-"	initialize();\n"+
-"    }\n"+
-"    if (Math.abs(scale.y) > 20) {\n"+
-"	scale.y = scale.y/20;\n"+
-"	translation.y = 0;\n"+
-"	initialize();\n"+
-"    }\n"+
-"    if (Math.abs(scale.z) > 20) {\n"+
-"	scale.z = scale.z/20;\n"+
-"	translation.z = 0;\n"+
-"	initialize();\n"+
-"    }\n"+
-"}`)
-Transform11->addChildren(*Script16);
-
-CTimeSensor* TimeSensor22 = (CTimeSensor *)(m_pScene.createNode("TimeSensor"));
-TimeSensor22->setDEF("DECLBubble_bubbleA_bubbleClock");
-TimeSensor22->setCycleInterval(10);
-TimeSensor22->setLoop(True);
-Transform11->addChildren(*TimeSensor22);
-
-CROUTE* ROUTE23 = new CROUTE();
-ROUTE23->setFromNode("DECLBubble_bubbleA_bounce");
-ROUTE23->setFromField("translation_changed");
-ROUTE23->setToNode("DECLBubble_transform");
-ROUTE23->setToField("set_translation");
-Transform11->addChildren(*ROUTE23);
-
-CROUTE* ROUTE24 = new CROUTE();
-ROUTE24->setFromNode("DECLBubble_bubbleA_bounce");
-ROUTE24->setFromField("scale_changed");
-ROUTE24->setToNode("DECLBubble_transform");
-ROUTE24->setToField("set_scale");
-Transform11->addChildren(*ROUTE24);
-
-CROUTE* ROUTE25 = new CROUTE();
-ROUTE25->setFromNode("DECLBubble_bubbleA_bubbleClock");
-ROUTE25->setFromField("fraction_changed");
-ROUTE25->setToNode("DECLBubble_bubbleA_bounce");
-ROUTE25->setToField("set_fraction");
-Transform11->addChildren(*ROUTE25);
-
-group->addChildren(*Transform11);
-
-CTransform* Transform26 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform26->setDEF("DECLBubble_bubbleB");
-CShape* Shape27 = (CShape *)(m_pScene.createNode("Shape"));
-CSphere* Sphere28 = (CSphere *)(m_pScene.createNode("Sphere"));
-Sphere28->setRadius(0.25);
-Shape27->setGeometry(Sphere28);
-
-CAppearance* Appearance29 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material30 = (CMaterial *)(m_pScene.createNode("Material"));
-Material30->setDiffuseColor(new float[3]{1,0,0});
-Material30->setTransparency(0.2);
-Appearance29->setMaterial(*Material30);
-
-Shape27->setAppearance(*Appearance29);
-
-Transform26->addChild(*Shape27);
-
-CScript* Script31 = (CScript *)(m_pScene.createNode("Script"));
-Script31->setDEF("DECLBubble_bubbleB_bounce");
-Cfield* field32 = new Cfield();
-field32->setName("scale");
-field32->setAccessType("inputOutput");
-field32->setType("SFVec3f");
-field32->setValue("1 1 1");
-Script31->addField(*field32);
-
-Cfield* field33 = new Cfield();
-field33->setName("translation");
-field33->setAccessType("inputOutput");
-field33->setType("SFVec3f");
-field33->setValue("0 0 0");
-Script31->addField(*field33);
-
-Cfield* field34 = new Cfield();
-field34->setName("velocity");
-field34->setAccessType("inputOutput");
-field34->setType("SFVec3f");
-field34->setValue("0 0 0");
-Script31->addField(*field34);
-
-Cfield* field35 = new Cfield();
-field35->setName("scalvel");
-field35->setAccessType("inputOutput");
-field35->setType("SFVec3f");
-field35->setValue("0 0 0");
-Script31->addField(*field35);
-
-Cfield* field36 = new Cfield();
-field36->setName("set_fraction");
-field36->setAccessType("inputOnly");
-field36->setType("SFFloat");
-Script31->addField(*field36);
-
-
-Script31.setSourceCode(`ecmascript:\n"+
-"function initialize() {\n"+
-"    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);\n"+
-"\n"+
-"    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);\n"+
-"}\n"+
-"\n"+
-"function set_fraction(value) {\n"+
-"    translation = new SFVec3f(	translation.x + velocity.x, translation.y + velocity.y, translation.z + velocity.z);\n"+
-"    scale = new SFVec3f(scale.x + scalvel.x, scale.y + scalvel.y, scale.z + scalvel.z);\n"+
-"    // if you get to far away or too big, explode\n"+
-"    if ( Math.abs(translation.x) > 256) {\n"+
-"	translation.x = 0;\n"+
-"	initialize();\n"+
-"    }\n"+
-"    if ( Math.abs(translation.y) > 256) {\n"+
-"	translation.y = 0;\n"+
-"	initialize();\n"+
-"    }\n"+
-"    if ( Math.abs(translation.z) > 256) {\n"+
-"	translation.z = 0;\n"+
-"	initialize();\n"+
-"    }\n"+
-"    if (Math.abs(scale.x) > 20) {\n"+
-"	scale.x = scale.x/20;\n"+
-"	translation.x = 0;\n"+
-"	initialize();\n"+
-"    }\n"+
-"    if (Math.abs(scale.y) > 20) {\n"+
-"	scale.y = scale.y/20;\n"+
-"	translation.y = 0;\n"+
-"	initialize();\n"+
-"    }\n"+
-"    if (Math.abs(scale.z) > 20) {\n"+
-"	scale.z = scale.z/20;\n"+
-"	translation.z = 0;\n"+
-"	initialize();\n"+
-"    }\n"+
-"}`)
-Transform26->addChildren(*Script31);
-
-CTimeSensor* TimeSensor37 = (CTimeSensor *)(m_pScene.createNode("TimeSensor"));
-TimeSensor37->setDEF("DECLBubble_bubbleB_bubbleClock");
-TimeSensor37->setCycleInterval(10);
-TimeSensor37->setLoop(True);
-Transform26->addChildren(*TimeSensor37);
-
-CROUTE* ROUTE38 = new CROUTE();
-ROUTE38->setFromNode("DECLBubble_bubbleB_bounce");
-ROUTE38->setFromField("translation_changed");
-ROUTE38->setToNode("DECLBubble_transform");
-ROUTE38->setToField("set_translation");
-Transform26->addChildren(*ROUTE38);
-
-CROUTE* ROUTE39 = new CROUTE();
-ROUTE39->setFromNode("DECLBubble_bubbleB_bounce");
-ROUTE39->setFromField("scale_changed");
-ROUTE39->setToNode("DECLBubble_transform");
-ROUTE39->setToField("set_scale");
-Transform26->addChildren(*ROUTE39);
-
-CROUTE* ROUTE40 = new CROUTE();
-ROUTE40->setFromNode("DECLBubble_bubbleB_bubbleClock");
-ROUTE40->setFromField("fraction_changed");
-ROUTE40->setToNode("DECLBubble_bubbleB_bounce");
-ROUTE40->setToField("set_fraction");
-Transform26->addChildren(*ROUTE40);
-
-group->addChildren(*Transform26);
-
-CTransform* Transform41 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform41->setDEF("DECLBubble_bubbleC");
-CShape* Shape42 = (CShape *)(m_pScene.createNode("Shape"));
-CSphere* Sphere43 = (CSphere *)(m_pScene.createNode("Sphere"));
-Sphere43->setRadius(0.25);
-Shape42->setGeometry(Sphere43);
-
-CAppearance* Appearance44 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material45 = (CMaterial *)(m_pScene.createNode("Material"));
-Material45->setDiffuseColor(new float[3]{1,0,0});
-Material45->setTransparency(0.2);
-Appearance44->setMaterial(*Material45);
-
-Shape42->setAppearance(*Appearance44);
-
-Transform41->addChild(*Shape42);
-
-CScript* Script46 = (CScript *)(m_pScene.createNode("Script"));
-Script46->setDEF("DECLBubble_bubbleC_bounce");
-Cfield* field47 = new Cfield();
-field47->setName("scale");
-field47->setAccessType("inputOutput");
-field47->setType("SFVec3f");
-field47->setValue("1 1 1");
-Script46->addField(*field47);
-
-Cfield* field48 = new Cfield();
-field48->setName("translation");
-field48->setAccessType("inputOutput");
-field48->setType("SFVec3f");
-field48->setValue("0 0 0");
-Script46->addField(*field48);
-
-Cfield* field49 = new Cfield();
-field49->setName("velocity");
-field49->setAccessType("inputOutput");
-field49->setType("SFVec3f");
-field49->setValue("0 0 0");
-Script46->addField(*field49);
-
-Cfield* field50 = new Cfield();
-field50->setName("scalvel");
-field50->setAccessType("inputOutput");
-field50->setType("SFVec3f");
-field50->setValue("0 0 0");
-Script46->addField(*field50);
-
-Cfield* field51 = new Cfield();
-field51->setName("set_fraction");
-field51->setAccessType("inputOnly");
-field51->setType("SFFloat");
-Script46->addField(*field51);
-
-
-Script46.setSourceCode(`ecmascript:\n"+
-"function initialize() {\n"+
-"    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);\n"+
-"\n"+
-"    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);\n"+
-"}\n"+
-"\n"+
-"function set_fraction(value) {\n"+
-"    translation = new SFVec3f(	translation.x + velocity.x, translation.y + velocity.y, translation.z + velocity.z);\n"+
-"    scale = new SFVec3f(scale.x + scalvel.x, scale.y + scalvel.y, scale.z + scalvel.z);\n"+
-"    // if you get to far away or too big, explode\n"+
-"    if ( Math.abs(translation.x) > 256) {\n"+
-"	translation.x = 0;\n"+
-"	initialize();\n"+
-"    }\n"+
-"    if ( Math.abs(translation.y) > 256) {\n"+
-"	translation.y = 0;\n"+
-"	initialize();\n"+
-"    }\n"+
-"    if ( Math.abs(translation.z) > 256) {\n"+
-"	translation.z = 0;\n"+
-"	initialize();\n"+
-"    }\n"+
-"    if (Math.abs(scale.x) > 20) {\n"+
-"	scale.x = scale.x/20;\n"+
-"	translation.x = 0;\n"+
-"	initialize();\n"+
-"    }\n"+
-"    if (Math.abs(scale.y) > 20) {\n"+
-"	scale.y = scale.y/20;\n"+
-"	translation.y = 0;\n"+
-"	initialize();\n"+
-"    }\n"+
-"    if (Math.abs(scale.z) > 20) {\n"+
-"	scale.z = scale.z/20;\n"+
-"	translation.z = 0;\n"+
-"	initialize();\n"+
-"    }\n"+
-"}`)
-Transform41->addChildren(*Script46);
-
-CTimeSensor* TimeSensor52 = (CTimeSensor *)(m_pScene.createNode("TimeSensor"));
-TimeSensor52->setDEF("DECLBubble_bubbleC_bubbleClock");
-TimeSensor52->setCycleInterval(10);
-TimeSensor52->setLoop(True);
-Transform41->addChildren(*TimeSensor52);
-
-CROUTE* ROUTE53 = new CROUTE();
-ROUTE53->setFromNode("DECLBubble_bubbleC_bounce");
-ROUTE53->setFromField("translation_changed");
-ROUTE53->setToNode("DECLBubble_transform");
-ROUTE53->setToField("set_translation");
-Transform41->addChildren(*ROUTE53);
-
-CROUTE* ROUTE54 = new CROUTE();
-ROUTE54->setFromNode("DECLBubble_bubbleC_bounce");
-ROUTE54->setFromField("scale_changed");
-ROUTE54->setToNode("DECLBubble_transform");
-ROUTE54->setToField("set_scale");
-Transform41->addChildren(*ROUTE54);
-
-CROUTE* ROUTE55 = new CROUTE();
-ROUTE55->setFromNode("DECLBubble_bubbleC_bubbleClock");
-ROUTE55->setFromField("fraction_changed");
-ROUTE55->setToNode("DECLBubble_bubbleC_bounce");
-ROUTE55->setToField("set_fraction");
-Transform41->addChildren(*ROUTE55);
-
-group->addChildren(*Transform41);
-
-CTransform* Transform56 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform56->setDEF("DECLBubble_bubbleD");
-CShape* Shape57 = (CShape *)(m_pScene.createNode("Shape"));
-CSphere* Sphere58 = (CSphere *)(m_pScene.createNode("Sphere"));
-Sphere58->setRadius(0.25);
-Shape57->setGeometry(Sphere58);
-
-CAppearance* Appearance59 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material60 = (CMaterial *)(m_pScene.createNode("Material"));
-Material60->setDiffuseColor(new float[3]{1,0,0});
-Material60->setTransparency(0.2);
-Appearance59->setMaterial(*Material60);
-
-Shape57->setAppearance(*Appearance59);
-
-Transform56->addChild(*Shape57);
-
-CScript* Script61 = (CScript *)(m_pScene.createNode("Script"));
-Script61->setDEF("DECLBubble_bubbleD_bounce");
-Cfield* field62 = new Cfield();
-field62->setName("scale");
-field62->setAccessType("inputOutput");
-field62->setType("SFVec3f");
-field62->setValue("1 1 1");
-Script61->addField(*field62);
-
-Cfield* field63 = new Cfield();
-field63->setName("translation");
-field63->setAccessType("inputOutput");
-field63->setType("SFVec3f");
-field63->setValue("0 0 0");
-Script61->addField(*field63);
-
-Cfield* field64 = new Cfield();
-field64->setName("velocity");
-field64->setAccessType("inputOutput");
-field64->setType("SFVec3f");
-field64->setValue("0 0 0");
-Script61->addField(*field64);
-
-Cfield* field65 = new Cfield();
-field65->setName("scalvel");
-field65->setAccessType("inputOutput");
-field65->setType("SFVec3f");
-field65->setValue("0 0 0");
-Script61->addField(*field65);
-
-Cfield* field66 = new Cfield();
-field66->setName("set_fraction");
-field66->setAccessType("inputOnly");
-field66->setType("SFFloat");
-Script61->addField(*field66);
-
-
-Script61.setSourceCode(`ecmascript:\n"+
-"function initialize() {\n"+
-"    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);\n"+
-"\n"+
-"    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);\n"+
-"}\n"+
-"\n"+
-"function set_fraction(value) {\n"+
-"    translation = new SFVec3f(	translation.x + velocity.x, translation.y + velocity.y, translation.z + velocity.z);\n"+
-"    scale = new SFVec3f(scale.x + scalvel.x, scale.y + scalvel.y, scale.z + scalvel.z);\n"+
-"    // if you get to far away or too big, explode\n"+
-"    if ( Math.abs(translation.x) > 256) {\n"+
-"	translation.x = 0;\n"+
-"	initialize();\n"+
-"    }\n"+
-"    if ( Math.abs(translation.y) > 256) {\n"+
-"	translation.y = 0;\n"+
-"	initialize();\n"+
-"    }\n"+
-"    if ( Math.abs(translation.z) > 256) {\n"+
-"	translation.z = 0;\n"+
-"	initialize();\n"+
-"    }\n"+
-"    if (Math.abs(scale.x) > 20) {\n"+
-"	scale.x = scale.x/20;\n"+
-"	translation.x = 0;\n"+
-"	initialize();\n"+
-"    }\n"+
-"    if (Math.abs(scale.y) > 20) {\n"+
-"	scale.y = scale.y/20;\n"+
-"	translation.y = 0;\n"+
-"	initialize();\n"+
-"    }\n"+
-"    if (Math.abs(scale.z) > 20) {\n"+
-"	scale.z = scale.z/20;\n"+
-"	translation.z = 0;\n"+
-"	initialize();\n"+
-"    }\n"+
-"}`)
-Transform56->addChildren(*Script61);
-
-CTimeSensor* TimeSensor67 = (CTimeSensor *)(m_pScene.createNode("TimeSensor"));
-TimeSensor67->setDEF("DECLBubble_bubbleD_bubbleClock");
-TimeSensor67->setCycleInterval(10);
-TimeSensor67->setLoop(True);
-Transform56->addChildren(*TimeSensor67);
-
-CROUTE* ROUTE68 = new CROUTE();
-ROUTE68->setFromNode("DECLBubble_bubbleD_bounce");
-ROUTE68->setFromField("translation_changed");
-ROUTE68->setToNode("DECLBubble_transform");
-ROUTE68->setToField("set_translation");
-Transform56->addChildren(*ROUTE68);
-
-CROUTE* ROUTE69 = new CROUTE();
-ROUTE69->setFromNode("DECLBubble_bubbleD_bounce");
-ROUTE69->setFromField("scale_changed");
-ROUTE69->setToNode("DECLBubble_transform");
-ROUTE69->setToField("set_scale");
-Transform56->addChildren(*ROUTE69);
-
-CROUTE* ROUTE70 = new CROUTE();
-ROUTE70->setFromNode("DECLBubble_bubbleD_bubbleClock");
-ROUTE70->setFromField("fraction_changed");
-ROUTE70->setToNode("DECLBubble_bubbleD_bounce");
-ROUTE70->setToField("set_fraction");
-Transform56->addChildren(*ROUTE70);
-
-group->addChildren(*Transform56);
-
-X3D0->setScene(*Scene7);
-
-m_pScene.addRootNode(group);
-X3D0->toXMLString();
+X3D& X3D0 =  X3D();
+X3D0.setProfile(CString("Immersive"));
+X3D0.setVersion(CString("3.3"));
+head& head1 =  head();
+meta& meta2 =  meta();
+meta2.setName(CString("title"));
+meta2.setContent(CString("bubs3.x3d"));
+head1.addMeta(&meta2);
+
+meta& meta3 =  meta();
+meta3.setName(CString("creator"));
+meta3.setContent(CString("John Carlson"));
+head1.addMeta(&meta3);
+
+meta& meta4 =  meta();
+meta4.setName(CString("description"));
+meta4.setContent(CString("Tour around a prismatic sphere"));
+head1.addMeta(&meta4);
+
+meta& meta5 =  meta();
+meta5.setName(CString("generator"));
+meta5.setContent(CString("X3D-Edit, https://savage.nps.edu/X3D-Edit"));
+head1.addMeta(&meta5);
+
+meta& meta6 =  meta();
+meta6.setName(CString("identifier"));
+meta6.setContent(CString("https://coderextreme.net/X3DJSONLD/src/main/data/bubs.x3d"));
+head1.addMeta(&meta6);
+
+X3D0.setHead(&head1);
+
+Scene& Scene7 =  Scene();
+NavigationInfo& NavigationInfo8 =  NavigationInfo();
+NavigationInfo8.setType(new CString[1]{CString("EXAMINE")}, 1);
+Scene7.addChild(&NavigationInfo8);
+
+Viewpoint& Viewpoint9 =  Viewpoint();
+Viewpoint9.setPosition(new float[3]{0,0,4});
+Viewpoint9.setOrientation(new float[4]{1,0,0,0});
+Viewpoint9.setDescription(CString("Bubbles in action"));
+Scene7.addChild(&Viewpoint9);
+
+Background& Background10 =  Background();
+Background10.setBackUrl(new CString[2]{CString("../resources/images/BK.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/BK.png")}, 2);
+Background10.setBottomUrl(new CString[2]{CString("../resources/images/BT.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/BT.png")}, 2);
+Background10.setFrontUrl(new CString[2]{CString("../resources/images/FR.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/FR.png")}, 2);
+Background10.setLeftUrl(new CString[2]{CString("../resources/images/LF.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/LF.png")}, 2);
+Background10.setRightUrl(new CString[2]{CString("../resources/images/RT.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/RT.png")}, 2);
+Background10.setTopUrl(new CString[2]{CString("../resources/images/TP.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/TP.png")}, 2);
+Scene7.addChild(&Background10);
+
+Transform& Transform11 =  Transform();
+Transform11.setDEF(CString("DECLBubble_bubbleA"));
+Shape& Shape12 =  Shape();
+Sphere& Sphere13 =  Sphere();
+Sphere13.setRadius(0.25);
+Shape12.setGeometry(&Sphere13);
+
+Appearance& Appearance14 =  Appearance();
+Material& Material15 =  Material();
+Material15.setDiffuseColor(new float[3]{1,0,0});
+Material15.setTransparency(0.2);
+Appearance14.addChild(&Material15);
+
+Shape12.addChild(&Appearance14);
+
+Transform11.addChild(&Shape12);
+
+Script& Script16 =  Script();
+Script16.setDEF(CString("DECLBubble_bubbleA_bounce"));
+field& field17 =  field();
+field17.setName(CString("scale"));
+field17.setAccessType(CString("inputOutput"));
+field17.setType(CString("SFVec3f"));
+field17.setValue(CString("1 1 1"));
+Script16.addChild(&field17);
+
+field& field18 =  field();
+field18.setName(CString("translation"));
+field18.setAccessType(CString("inputOutput"));
+field18.setType(CString("SFVec3f"));
+field18.setValue(CString("0 0 0"));
+Script16.addChild(&field18);
+
+field& field19 =  field();
+field19.setName(CString("velocity"));
+field19.setAccessType(CString("inputOutput"));
+field19.setType(CString("SFVec3f"));
+field19.setValue(CString("0 0 0"));
+Script16.addChild(&field19);
+
+field& field20 =  field();
+field20.setName(CString("scalvel"));
+field20.setAccessType(CString("inputOutput"));
+field20.setType(CString("SFVec3f"));
+field20.setValue(CString("0 0 0"));
+Script16.addChild(&field20);
+
+field& field21 =  field();
+field21.setName(CString("set_fraction"));
+field21.setAccessType(CString("inputOnly"));
+field21.setType(CString("SFFloat"));
+Script16.addChild(&field21);
+
+
+Script16.setSourceCode(CString("ecmascript:")+
+_T("function initialize() {")+
+_T("    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);")+
+_T("    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);")+
+_T("}")+
+_T("function set_fraction(value) {")+
+_T("    translation = new SFVec3f(	translation.x + velocity.x, translation.y + velocity.y, translation.z + velocity.z);")+
+_T("    scale = new SFVec3f(scale.x + scalvel.x, scale.y + scalvel.y, scale.z + scalvel.z);")+
+_T("    // if you get to far away or too big, explode")+
+_T("    if ( Math.abs(translation.x) > 256) {")+
+_T("	translation.x = 0;")+
+_T("	initialize();")+
+_T("    }")+
+_T("    if ( Math.abs(translation.y) > 256) {")+
+_T("	translation.y = 0;")+
+_T("	initialize();")+
+_T("    }")+
+_T("    if ( Math.abs(translation.z) > 256) {")+
+_T("	translation.z = 0;")+
+_T("	initialize();")+
+_T("    }")+
+_T("    if (Math.abs(scale.x) > 20) {")+
+_T("	scale.x = scale.x/20;")+
+_T("	translation.x = 0;")+
+_T("	initialize();")+
+_T("    }")+
+_T("    if (Math.abs(scale.y) > 20) {")+
+_T("	scale.y = scale.y/20;")+
+_T("	translation.y = 0;")+
+_T("	initialize();")+
+_T("    }")+
+_T("    if (Math.abs(scale.z) > 20) {")+
+_T("	scale.z = scale.z/20;")+
+_T("	translation.z = 0;")+
+_T("	initialize();")+
+_T("    }")+
+_T("}"));
+Transform11.addChild(&Script16);
+
+TimeSensor& TimeSensor22 =  TimeSensor();
+TimeSensor22.setDEF(CString("DECLBubble_bubbleA_bubbleClock"));
+TimeSensor22.setCycleInterval(10);
+TimeSensor22.setLoop(True);
+Transform11.addChild(&TimeSensor22);
+
+ROUTE& ROUTE23 =  ROUTE();
+ROUTE23.setFromNode(CString("DECLBubble_bubbleA_bounce"));
+ROUTE23.setFromField(CString("translation_changed"));
+ROUTE23.setToNode(CString("DECLBubble_transform"));
+ROUTE23.setToField(CString("set_translation"));
+Transform11.addChild(&ROUTE23);
+
+ROUTE& ROUTE24 =  ROUTE();
+ROUTE24.setFromNode(CString("DECLBubble_bubbleA_bounce"));
+ROUTE24.setFromField(CString("scale_changed"));
+ROUTE24.setToNode(CString("DECLBubble_transform"));
+ROUTE24.setToField(CString("set_scale"));
+Transform11.addChild(&ROUTE24);
+
+ROUTE& ROUTE25 =  ROUTE();
+ROUTE25.setFromNode(CString("DECLBubble_bubbleA_bubbleClock"));
+ROUTE25.setFromField(CString("fraction_changed"));
+ROUTE25.setToNode(CString("DECLBubble_bubbleA_bounce"));
+ROUTE25.setToField(CString("set_fraction"));
+Transform11.addChild(&ROUTE25);
+
+Scene7.addChild(&Transform11);
+
+Transform& Transform26 =  Transform();
+Transform26.setDEF(CString("DECLBubble_bubbleB"));
+Shape& Shape27 =  Shape();
+Sphere& Sphere28 =  Sphere();
+Sphere28.setRadius(0.25);
+Shape27.setGeometry(&Sphere28);
+
+Appearance& Appearance29 =  Appearance();
+Material& Material30 =  Material();
+Material30.setDiffuseColor(new float[3]{1,0,0});
+Material30.setTransparency(0.2);
+Appearance29.addChild(&Material30);
+
+Shape27.addChild(&Appearance29);
+
+Transform26.addChild(&Shape27);
+
+Script& Script31 =  Script();
+Script31.setDEF(CString("DECLBubble_bubbleB_bounce"));
+field& field32 =  field();
+field32.setName(CString("scale"));
+field32.setAccessType(CString("inputOutput"));
+field32.setType(CString("SFVec3f"));
+field32.setValue(CString("1 1 1"));
+Script31.addChild(&field32);
+
+field& field33 =  field();
+field33.setName(CString("translation"));
+field33.setAccessType(CString("inputOutput"));
+field33.setType(CString("SFVec3f"));
+field33.setValue(CString("0 0 0"));
+Script31.addChild(&field33);
+
+field& field34 =  field();
+field34.setName(CString("velocity"));
+field34.setAccessType(CString("inputOutput"));
+field34.setType(CString("SFVec3f"));
+field34.setValue(CString("0 0 0"));
+Script31.addChild(&field34);
+
+field& field35 =  field();
+field35.setName(CString("scalvel"));
+field35.setAccessType(CString("inputOutput"));
+field35.setType(CString("SFVec3f"));
+field35.setValue(CString("0 0 0"));
+Script31.addChild(&field35);
+
+field& field36 =  field();
+field36.setName(CString("set_fraction"));
+field36.setAccessType(CString("inputOnly"));
+field36.setType(CString("SFFloat"));
+Script31.addChild(&field36);
+
+
+Script31.setSourceCode(CString("ecmascript:")+
+_T("function initialize() {")+
+_T("    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);")+
+_T("    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);")+
+_T("}")+
+_T("function set_fraction(value) {")+
+_T("    translation = new SFVec3f(	translation.x + velocity.x, translation.y + velocity.y, translation.z + velocity.z);")+
+_T("    scale = new SFVec3f(scale.x + scalvel.x, scale.y + scalvel.y, scale.z + scalvel.z);")+
+_T("    // if you get to far away or too big, explode")+
+_T("    if ( Math.abs(translation.x) > 256) {")+
+_T("	translation.x = 0;")+
+_T("	initialize();")+
+_T("    }")+
+_T("    if ( Math.abs(translation.y) > 256) {")+
+_T("	translation.y = 0;")+
+_T("	initialize();")+
+_T("    }")+
+_T("    if ( Math.abs(translation.z) > 256) {")+
+_T("	translation.z = 0;")+
+_T("	initialize();")+
+_T("    }")+
+_T("    if (Math.abs(scale.x) > 20) {")+
+_T("	scale.x = scale.x/20;")+
+_T("	translation.x = 0;")+
+_T("	initialize();")+
+_T("    }")+
+_T("    if (Math.abs(scale.y) > 20) {")+
+_T("	scale.y = scale.y/20;")+
+_T("	translation.y = 0;")+
+_T("	initialize();")+
+_T("    }")+
+_T("    if (Math.abs(scale.z) > 20) {")+
+_T("	scale.z = scale.z/20;")+
+_T("	translation.z = 0;")+
+_T("	initialize();")+
+_T("    }")+
+_T("}"));
+Transform26.addChild(&Script31);
+
+TimeSensor& TimeSensor37 =  TimeSensor();
+TimeSensor37.setDEF(CString("DECLBubble_bubbleB_bubbleClock"));
+TimeSensor37.setCycleInterval(10);
+TimeSensor37.setLoop(True);
+Transform26.addChild(&TimeSensor37);
+
+ROUTE& ROUTE38 =  ROUTE();
+ROUTE38.setFromNode(CString("DECLBubble_bubbleB_bounce"));
+ROUTE38.setFromField(CString("translation_changed"));
+ROUTE38.setToNode(CString("DECLBubble_transform"));
+ROUTE38.setToField(CString("set_translation"));
+Transform26.addChild(&ROUTE38);
+
+ROUTE& ROUTE39 =  ROUTE();
+ROUTE39.setFromNode(CString("DECLBubble_bubbleB_bounce"));
+ROUTE39.setFromField(CString("scale_changed"));
+ROUTE39.setToNode(CString("DECLBubble_transform"));
+ROUTE39.setToField(CString("set_scale"));
+Transform26.addChild(&ROUTE39);
+
+ROUTE& ROUTE40 =  ROUTE();
+ROUTE40.setFromNode(CString("DECLBubble_bubbleB_bubbleClock"));
+ROUTE40.setFromField(CString("fraction_changed"));
+ROUTE40.setToNode(CString("DECLBubble_bubbleB_bounce"));
+ROUTE40.setToField(CString("set_fraction"));
+Transform26.addChild(&ROUTE40);
+
+Scene7.addChild(&Transform26);
+
+Transform& Transform41 =  Transform();
+Transform41.setDEF(CString("DECLBubble_bubbleC"));
+Shape& Shape42 =  Shape();
+Sphere& Sphere43 =  Sphere();
+Sphere43.setRadius(0.25);
+Shape42.setGeometry(&Sphere43);
+
+Appearance& Appearance44 =  Appearance();
+Material& Material45 =  Material();
+Material45.setDiffuseColor(new float[3]{1,0,0});
+Material45.setTransparency(0.2);
+Appearance44.addChild(&Material45);
+
+Shape42.addChild(&Appearance44);
+
+Transform41.addChild(&Shape42);
+
+Script& Script46 =  Script();
+Script46.setDEF(CString("DECLBubble_bubbleC_bounce"));
+field& field47 =  field();
+field47.setName(CString("scale"));
+field47.setAccessType(CString("inputOutput"));
+field47.setType(CString("SFVec3f"));
+field47.setValue(CString("1 1 1"));
+Script46.addChild(&field47);
+
+field& field48 =  field();
+field48.setName(CString("translation"));
+field48.setAccessType(CString("inputOutput"));
+field48.setType(CString("SFVec3f"));
+field48.setValue(CString("0 0 0"));
+Script46.addChild(&field48);
+
+field& field49 =  field();
+field49.setName(CString("velocity"));
+field49.setAccessType(CString("inputOutput"));
+field49.setType(CString("SFVec3f"));
+field49.setValue(CString("0 0 0"));
+Script46.addChild(&field49);
+
+field& field50 =  field();
+field50.setName(CString("scalvel"));
+field50.setAccessType(CString("inputOutput"));
+field50.setType(CString("SFVec3f"));
+field50.setValue(CString("0 0 0"));
+Script46.addChild(&field50);
+
+field& field51 =  field();
+field51.setName(CString("set_fraction"));
+field51.setAccessType(CString("inputOnly"));
+field51.setType(CString("SFFloat"));
+Script46.addChild(&field51);
+
+
+Script46.setSourceCode(CString("ecmascript:")+
+_T("function initialize() {")+
+_T("    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);")+
+_T("    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);")+
+_T("}")+
+_T("function set_fraction(value) {")+
+_T("    translation = new SFVec3f(	translation.x + velocity.x, translation.y + velocity.y, translation.z + velocity.z);")+
+_T("    scale = new SFVec3f(scale.x + scalvel.x, scale.y + scalvel.y, scale.z + scalvel.z);")+
+_T("    // if you get to far away or too big, explode")+
+_T("    if ( Math.abs(translation.x) > 256) {")+
+_T("	translation.x = 0;")+
+_T("	initialize();")+
+_T("    }")+
+_T("    if ( Math.abs(translation.y) > 256) {")+
+_T("	translation.y = 0;")+
+_T("	initialize();")+
+_T("    }")+
+_T("    if ( Math.abs(translation.z) > 256) {")+
+_T("	translation.z = 0;")+
+_T("	initialize();")+
+_T("    }")+
+_T("    if (Math.abs(scale.x) > 20) {")+
+_T("	scale.x = scale.x/20;")+
+_T("	translation.x = 0;")+
+_T("	initialize();")+
+_T("    }")+
+_T("    if (Math.abs(scale.y) > 20) {")+
+_T("	scale.y = scale.y/20;")+
+_T("	translation.y = 0;")+
+_T("	initialize();")+
+_T("    }")+
+_T("    if (Math.abs(scale.z) > 20) {")+
+_T("	scale.z = scale.z/20;")+
+_T("	translation.z = 0;")+
+_T("	initialize();")+
+_T("    }")+
+_T("}"));
+Transform41.addChild(&Script46);
+
+TimeSensor& TimeSensor52 =  TimeSensor();
+TimeSensor52.setDEF(CString("DECLBubble_bubbleC_bubbleClock"));
+TimeSensor52.setCycleInterval(10);
+TimeSensor52.setLoop(True);
+Transform41.addChild(&TimeSensor52);
+
+ROUTE& ROUTE53 =  ROUTE();
+ROUTE53.setFromNode(CString("DECLBubble_bubbleC_bounce"));
+ROUTE53.setFromField(CString("translation_changed"));
+ROUTE53.setToNode(CString("DECLBubble_transform"));
+ROUTE53.setToField(CString("set_translation"));
+Transform41.addChild(&ROUTE53);
+
+ROUTE& ROUTE54 =  ROUTE();
+ROUTE54.setFromNode(CString("DECLBubble_bubbleC_bounce"));
+ROUTE54.setFromField(CString("scale_changed"));
+ROUTE54.setToNode(CString("DECLBubble_transform"));
+ROUTE54.setToField(CString("set_scale"));
+Transform41.addChild(&ROUTE54);
+
+ROUTE& ROUTE55 =  ROUTE();
+ROUTE55.setFromNode(CString("DECLBubble_bubbleC_bubbleClock"));
+ROUTE55.setFromField(CString("fraction_changed"));
+ROUTE55.setToNode(CString("DECLBubble_bubbleC_bounce"));
+ROUTE55.setToField(CString("set_fraction"));
+Transform41.addChild(&ROUTE55);
+
+Scene7.addChild(&Transform41);
+
+Transform& Transform56 =  Transform();
+Transform56.setDEF(CString("DECLBubble_bubbleD"));
+Shape& Shape57 =  Shape();
+Sphere& Sphere58 =  Sphere();
+Sphere58.setRadius(0.25);
+Shape57.setGeometry(&Sphere58);
+
+Appearance& Appearance59 =  Appearance();
+Material& Material60 =  Material();
+Material60.setDiffuseColor(new float[3]{1,0,0});
+Material60.setTransparency(0.2);
+Appearance59.addChild(&Material60);
+
+Shape57.addChild(&Appearance59);
+
+Transform56.addChild(&Shape57);
+
+Script& Script61 =  Script();
+Script61.setDEF(CString("DECLBubble_bubbleD_bounce"));
+field& field62 =  field();
+field62.setName(CString("scale"));
+field62.setAccessType(CString("inputOutput"));
+field62.setType(CString("SFVec3f"));
+field62.setValue(CString("1 1 1"));
+Script61.addChild(&field62);
+
+field& field63 =  field();
+field63.setName(CString("translation"));
+field63.setAccessType(CString("inputOutput"));
+field63.setType(CString("SFVec3f"));
+field63.setValue(CString("0 0 0"));
+Script61.addChild(&field63);
+
+field& field64 =  field();
+field64.setName(CString("velocity"));
+field64.setAccessType(CString("inputOutput"));
+field64.setType(CString("SFVec3f"));
+field64.setValue(CString("0 0 0"));
+Script61.addChild(&field64);
+
+field& field65 =  field();
+field65.setName(CString("scalvel"));
+field65.setAccessType(CString("inputOutput"));
+field65.setType(CString("SFVec3f"));
+field65.setValue(CString("0 0 0"));
+Script61.addChild(&field65);
+
+field& field66 =  field();
+field66.setName(CString("set_fraction"));
+field66.setAccessType(CString("inputOnly"));
+field66.setType(CString("SFFloat"));
+Script61.addChild(&field66);
+
+
+Script61.setSourceCode(CString("ecmascript:")+
+_T("function initialize() {")+
+_T("    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);")+
+_T("    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);")+
+_T("}")+
+_T("function set_fraction(value) {")+
+_T("    translation = new SFVec3f(	translation.x + velocity.x, translation.y + velocity.y, translation.z + velocity.z);")+
+_T("    scale = new SFVec3f(scale.x + scalvel.x, scale.y + scalvel.y, scale.z + scalvel.z);")+
+_T("    // if you get to far away or too big, explode")+
+_T("    if ( Math.abs(translation.x) > 256) {")+
+_T("	translation.x = 0;")+
+_T("	initialize();")+
+_T("    }")+
+_T("    if ( Math.abs(translation.y) > 256) {")+
+_T("	translation.y = 0;")+
+_T("	initialize();")+
+_T("    }")+
+_T("    if ( Math.abs(translation.z) > 256) {")+
+_T("	translation.z = 0;")+
+_T("	initialize();")+
+_T("    }")+
+_T("    if (Math.abs(scale.x) > 20) {")+
+_T("	scale.x = scale.x/20;")+
+_T("	translation.x = 0;")+
+_T("	initialize();")+
+_T("    }")+
+_T("    if (Math.abs(scale.y) > 20) {")+
+_T("	scale.y = scale.y/20;")+
+_T("	translation.y = 0;")+
+_T("	initialize();")+
+_T("    }")+
+_T("    if (Math.abs(scale.z) > 20) {")+
+_T("	scale.z = scale.z/20;")+
+_T("	translation.z = 0;")+
+_T("	initialize();")+
+_T("    }")+
+_T("}"));
+Transform56.addChild(&Script61);
+
+TimeSensor& TimeSensor67 =  TimeSensor();
+TimeSensor67.setDEF(CString("DECLBubble_bubbleD_bubbleClock"));
+TimeSensor67.setCycleInterval(10);
+TimeSensor67.setLoop(True);
+Transform56.addChild(&TimeSensor67);
+
+ROUTE& ROUTE68 =  ROUTE();
+ROUTE68.setFromNode(CString("DECLBubble_bubbleD_bounce"));
+ROUTE68.setFromField(CString("translation_changed"));
+ROUTE68.setToNode(CString("DECLBubble_transform"));
+ROUTE68.setToField(CString("set_translation"));
+Transform56.addChild(&ROUTE68);
+
+ROUTE& ROUTE69 =  ROUTE();
+ROUTE69.setFromNode(CString("DECLBubble_bubbleD_bounce"));
+ROUTE69.setFromField(CString("scale_changed"));
+ROUTE69.setToNode(CString("DECLBubble_transform"));
+ROUTE69.setToField(CString("set_scale"));
+Transform56.addChild(&ROUTE69);
+
+ROUTE& ROUTE70 =  ROUTE();
+ROUTE70.setFromNode(CString("DECLBubble_bubbleD_bubbleClock"));
+ROUTE70.setFromField(CString("fraction_changed"));
+ROUTE70.setToNode(CString("DECLBubble_bubbleD_bounce"));
+ROUTE70.setToField(CString("set_fraction"));
+Transform56.addChild(&ROUTE70);
+
+Scene7.addChild(&Transform56);
+
+X3D0.setScene(&Scene7);
+
 }
