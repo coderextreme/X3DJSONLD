@@ -1,10 +1,11 @@
-#define False false
-#define True true
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/X3DLib.h"
-int main(int argc, char ** argv) {
+//#define False false
+//#define True true
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/X3DLib.h"
+//int main(int argc, char ** argv) 
+//{
 X3D& X3D0 =  X3D();
 X3D0.setProfile(CString("Immersive"));
 X3D0.setVersion(CString("3.3"));
@@ -57,7 +58,7 @@ WorldInfo11.setTitle(CString("MaskAndSnorkel.x3d"));
 Scene10.addChild(&WorldInfo11);
 
 Background& Background12 =  Background();
-Background12.setSkyColor(new float[3]{0,0,0.9}, 3);
+Background12.setSkyColor(new float[3]{0.0,0.0,0.9}, 3);
 Scene10.addChild(&Background12);
 
 Transform& Transform13 =  Transform();
@@ -68,7 +69,7 @@ Shape15.setDEF(CString("maskFrame"));
 Appearance& Appearance16 =  Appearance();
 Material& Material17 =  Material();
 Material17.setDEF(CString("frameColor"));
-Material17.setDiffuseColor(new float[3]{0,0,0});
+Material17.setDiffuseColor(new float[3]{0.0,0.0,0.0});
 Appearance16.addChild(&Material17);
 
 Shape15.addChild(&Appearance16);
@@ -78,7 +79,7 @@ IndexedFaceSet18.setCoordIndex(new int32_t[80]{0,1,13,12,0,-1,1,2,14,13,1,-1,2,3
 IndexedFaceSet18.setCreaseAngle(1.45);
 IndexedFaceSet18.setSolid(False);
 Coordinate& Coordinate19 =  Coordinate();
-Coordinate19.setPoint(new float[78]{0,0.08,0,0.02,0.05,0,0.05,0.05,0,0.06,0.06,0,0.06,0.09,0,0.05,0.1,0,0,0.1,0,-0.05,0.1,0,-0.06,0.09,0,-0.06,0.06,0,-0.05,0.05,0,-0.02,0.05,0,0.005,0.08,0,0.02,0.055,0,0.05,0.055,0,0.055,0.06,0,0.055,0.09,0,0.045,0.095,0,0.005,0.095,0,-0.005,0.08,0,-0.02,0.055,0,-0.05,0.055,0,-0.055,0.06,0,-0.055,0.09,0,-0.045,0.095,0,-0.005,0.095,0}, 78);
+Coordinate19.setPoint(new float[78]{0.0,0.08,0.0,0.02,0.05,0.0,0.05,0.05,0.0,0.06,0.06,0.0,0.06,0.09,0.0,0.05,0.1,0.0,0.0,0.1,0.0,-0.05,0.1,0.0,-0.06,0.09,0.0,-0.06,0.06,0.0,-0.05,0.05,0.0,-0.02,0.05,0.0,0.005,0.08,0.0,0.02,0.055,0.0,0.05,0.055,0.0,0.055,0.06,0.0,0.055,0.09,0.0,0.045,0.095,0.0,0.005,0.095,0.0,-0.005,0.08,0.0,-0.02,0.055,0.0,-0.05,0.055,0.0,-0.055,0.06,0.0,-0.055,0.09,0.0,-0.045,0.095,0.0,-0.005,0.095,0.0}, 78);
 IndexedFaceSet18.setCoord(&Coordinate19);
 
 Shape15.setGeometry(&IndexedFaceSet18);
@@ -110,7 +111,7 @@ Transform13.addChild(&Transform20);
 Group& Group25 =  Group();
 Group25.setDEF(CString("snorkel"));
 Transform& Transform26 =  Transform();
-Transform26.setTranslation(new float[3]{0,-0.02,0});
+Transform26.setTranslation(new float[3]{0.0,-0.02,0.0});
 Transform& Transform27 =  Transform();
 Transform27.setScale(new float[3]{0.9,0.9,0.9});
 Transform27.setTranslation(new float[3]{0.035,-0.07,-0.02});
@@ -118,15 +119,15 @@ Shape& Shape28 =  Shape();
 Appearance& Appearance29 =  Appearance();
 Material& Material30 =  Material();
 Material30.setDEF(CString("snorkelTube"));
-Material30.setDiffuseColor(new float[3]{0.678,1,0.184});
+Material30.setDiffuseColor(new float[3]{0.678,1.0,0.184});
 Material30.setTransparency(0.4);
 Appearance29.addChild(&Material30);
 
 Shape28.addChild(&Appearance29);
 
 Extrusion& Extrusion31 =  Extrusion();
-Extrusion31.setCrossSection(new float[34]{0,0.013,0.00494,0.01196,0.00923,0.00923,0.01196,0.00494,0.013,0,0.01196,-0.00494,0.00923,-0.00923,0.00494,-0.01196,0,0.013,-0.00494,-0.01196,-0.00923,-0.00923,-0.01196,-0.00494,-0.013,0,-0.01196,0.00494,-0.00923,0.00923,-0.00494,0.01196,0,0.013}, 34);
-Extrusion31.setSpine(new float[15]{-0.01,-0.04,0,0,0,0,0.03,0.05,0,0.05,0.2,0,0.03,0.4,0.03}, 15);
+Extrusion31.setCrossSection(new float[34]{0.0,0.013,0.00494,0.01196,0.00923,0.00923,0.01196,0.00494,0.013,0.0,0.01196,-0.00494,0.00923,-0.00923,0.00494,-0.01196,0.0,0.013,-0.00494,-0.01196,-0.00923,-0.00923,-0.01196,-0.00494,-0.013,0.0,-0.01196,0.00494,-0.00923,0.00923,-0.00494,0.01196,0.0,0.013}, 34);
+Extrusion31.setSpine(new float[15]{-0.01,-0.04,0.0,0.0,0.0,0.0,0.03,0.05,0.0,0.05,0.2,0.0,0.03,0.4,0.03}, 15);
 Shape28.setGeometry(&Extrusion31);
 
 Transform27.addChild(&Shape28);
@@ -134,22 +135,22 @@ Transform27.addChild(&Shape28);
 Transform26.addChild(&Transform27);
 
 Transform& Transform32 =  Transform();
-Transform32.setRotation(new float[4]{0,0,1,1.57});
+Transform32.setRotation(new float[4]{0.0,0.0,1.0,1.57});
 Transform32.setScale(new float[3]{0.9,0.9,0.9});
 Transform32.setTranslation(new float[3]{0.01,-0.04,-0.02});
 Shape& Shape33 =  Shape();
 Appearance& Appearance34 =  Appearance();
 Material& Material35 =  Material();
 Material35.setDEF(CString("Mouthpiece"));
-Material35.setDiffuseColor(new float[3]{0.678,1,0.8});
+Material35.setDiffuseColor(new float[3]{0.678,1.0,0.8});
 Material35.setTransparency(0.4);
 Appearance34.addChild(&Material35);
 
 Shape33.addChild(&Appearance34);
 
 Extrusion& Extrusion36 =  Extrusion();
-Extrusion36.setCrossSection(new float[34]{0,0.013,0.00494,0.01196,0.00923,0.00923,0.01196,0.00494,0.013,0,0.01196,-0.00494,0.00923,-0.00923,0.00494,-0.01196,0,0.013,-0.00494,-0.01196,-0.00923,-0.00923,-0.01196,-0.00494,-0.013,0,-0.01196,0.00494,-0.00923,0.00923,-0.00494,0.01196,0,0.013}, 34);
-Extrusion36.setSpine(new float[9]{-0.01,-0.03,0,0,0,0,0.02,0.01,0}, 9);
+Extrusion36.setCrossSection(new float[34]{0.0,0.013,0.00494,0.01196,0.00923,0.00923,0.01196,0.00494,0.013,0.0,0.01196,-0.00494,0.00923,-0.00923,0.00494,-0.01196,0.0,0.013,-0.00494,-0.01196,-0.00923,-0.00923,-0.01196,-0.00494,-0.013,0.0,-0.01196,0.00494,-0.00923,0.00923,-0.00494,0.01196,0.0,0.013}, 34);
+Extrusion36.setSpine(new float[9]{-0.01,-0.03,0.0,0.0,0.0,0.0,0.02,0.01,0.0}, 9);
 Shape33.setGeometry(&Extrusion36);
 
 Transform32.addChild(&Shape33);
@@ -157,7 +158,7 @@ Transform32.addChild(&Shape33);
 Transform26.addChild(&Transform32);
 
 Transform& Transform37 =  Transform();
-Transform37.setRotation(new float[4]{0,0,1,-0.85});
+Transform37.setRotation(new float[4]{0.0,0.0,1.0,-0.85});
 Transform37.setScale(new float[3]{0.9,0.9,0.9});
 Transform37.setTranslation(new float[3]{0.005,-0.01,-0.02});
 Shape& Shape38 =  Shape();
@@ -169,8 +170,8 @@ Appearance39.addChild(&Material40);
 Shape38.addChild(&Appearance39);
 
 Extrusion& Extrusion41 =  Extrusion();
-Extrusion41.setCrossSection(new float[18]{0,0.013,0.00494,0.01196,0.00923,0.00923,0.01196,0.00494,0.013,0,0.01196,-0.00494,0.00923,-0.00923,0.00494,-0.01196,0,0.013}, 18);
-Extrusion41.setSpine(new float[18]{-0.02,-0.03,0,-0.01,-0.03,0,0,-0.0175,0,0,-0.0135,0,-0.01,0,0,-0.02,0,0}, 18);
+Extrusion41.setCrossSection(new float[18]{0.0,0.013,0.00494,0.01196,0.00923,0.00923,0.01196,0.00494,0.013,0.0,0.01196,-0.00494,0.00923,-0.00923,0.00494,-0.01196,0.0,0.013}, 18);
+Extrusion41.setSpine(new float[18]{-0.02,-0.03,0.0,-0.01,-0.03,0.0,0.0,-0.0175,0.0,0.0,-0.0135,0.0,-0.01,0.0,0.0,-0.02,0.0,0.0}, 18);
 Shape38.setGeometry(&Extrusion41);
 
 Transform37.addChild(&Shape38);
@@ -187,7 +188,7 @@ Shape43.setDEF(CString("maskLensR"));
 Appearance& Appearance44 =  Appearance();
 Material& Material45 =  Material();
 Material45.setDEF(CString("plastic"));
-Material45.setDiffuseColor(new float[3]{0.941,0.973,1});
+Material45.setDiffuseColor(new float[3]{0.941,0.973,1.0});
 Material45.setTransparency(0.8);
 Appearance44.addChild(&Material45);
 
@@ -198,7 +199,7 @@ IndexedFaceSet46.setCoordIndex(new int32_t[9]{12,13,14,15,16,17,18,12,-1}, 9);
 IndexedFaceSet46.setCreaseAngle(1.45);
 IndexedFaceSet46.setSolid(False);
 Coordinate& Coordinate47 =  Coordinate();
-Coordinate47.setPoint(new float[78]{0,0.08,0,0.02,0.05,0,0.05,0.05,0,0.06,0.06,0,0.06,0.09,0,0.05,0.1,0,0,0.1,0,-0.05,0.1,0,-0.06,0.09,0,-0.06,0.06,0,-0.05,0.05,0,-0.02,0.05,0,0.005,0.08,0,0.02,0.055,0,0.05,0.055,0,0.055,0.06,0,0.055,0.09,0,0.045,0.095,0,0.005,0.095,0,-0.005,0.08,0,-0.02,0.055,0,-0.05,0.055,0,-0.055,0.06,0,-0.055,0.09,0,-0.045,0.095,0,-0.005,0.095,0}, 78);
+Coordinate47.setPoint(new float[78]{0.0,0.08,0.0,0.02,0.05,0.0,0.05,0.05,0.0,0.06,0.06,0.0,0.06,0.09,0.0,0.05,0.1,0.0,0.0,0.1,0.0,-0.05,0.1,0.0,-0.06,0.09,0.0,-0.06,0.06,0.0,-0.05,0.05,0.0,-0.02,0.05,0.0,0.005,0.08,0.0,0.02,0.055,0.0,0.05,0.055,0.0,0.055,0.06,0.0,0.055,0.09,0.0,0.045,0.095,0.0,0.005,0.095,0.0,-0.005,0.08,0.0,-0.02,0.055,0.0,-0.05,0.055,0.0,-0.055,0.06,0.0,-0.055,0.09,0.0,-0.045,0.095,0.0,-0.005,0.095,0.0}, 78);
 IndexedFaceSet46.setCoord(&Coordinate47);
 
 Shape43.setGeometry(&IndexedFaceSet46);
@@ -222,7 +223,7 @@ IndexedFaceSet52.setCoordIndex(new int32_t[9]{19,20,21,22,23,24,25,19,-1}, 9);
 IndexedFaceSet52.setCreaseAngle(1.45);
 IndexedFaceSet52.setSolid(False);
 Coordinate& Coordinate53 =  Coordinate();
-Coordinate53.setPoint(new float[78]{0,0.08,0,0.02,0.05,0,0.05,0.05,0,0.06,0.06,0,0.06,0.09,0,0.05,0.1,0,0,0.1,0,-0.05,0.1,0,-0.06,0.09,0,-0.06,0.06,0,-0.05,0.05,0,-0.02,0.05,0,0.005,0.08,0,0.02,0.055,0,0.05,0.055,0,0.055,0.06,0,0.055,0.09,0,0.045,0.095,0,0.005,0.095,0,-0.005,0.08,0,-0.02,0.055,0,-0.05,0.055,0,-0.055,0.06,0,-0.055,0.09,0,-0.045,0.095,0,-0.005,0.095,0}, 78);
+Coordinate53.setPoint(new float[78]{0.0,0.08,0.0,0.02,0.05,0.0,0.05,0.05,0.0,0.06,0.06,0.0,0.06,0.09,0.0,0.05,0.1,0.0,0.0,0.1,0.0,-0.05,0.1,0.0,-0.06,0.09,0.0,-0.06,0.06,0.0,-0.05,0.05,0.0,-0.02,0.05,0.0,0.005,0.08,0.0,0.02,0.055,0.0,0.05,0.055,0.0,0.055,0.06,0.0,0.055,0.09,0.0,0.045,0.095,0.0,0.005,0.095,0.0,-0.005,0.08,0.0,-0.02,0.055,0.0,-0.05,0.055,0.0,-0.055,0.06,0.0,-0.055,0.09,0.0,-0.045,0.095,0.0,-0.005,0.095,0.0}, 78);
 IndexedFaceSet52.setCoord(&Coordinate53);
 
 Shape49.setGeometry(&IndexedFaceSet52);
@@ -237,7 +238,7 @@ Shape55.setDEF(CString("nose"));
 Appearance& Appearance56 =  Appearance();
 Material& Material57 =  Material();
 Material57.setDEF(CString("plasticFit"));
-Material57.setDiffuseColor(new float[3]{0.678,1,0.184});
+Material57.setDiffuseColor(new float[3]{0.678,1.0,0.184});
 Material57.setTransparency(0.7);
 Appearance56.addChild(&Material57);
 
@@ -248,7 +249,7 @@ IndexedFaceSet58.setCoordIndex(new int32_t[25]{0,37,26,0,-1,0,36,26,0,-1,36,37,2
 IndexedFaceSet58.setCreaseAngle(1.45);
 IndexedFaceSet58.setSolid(False);
 Coordinate& Coordinate59 =  Coordinate();
-Coordinate59.setPoint(new float[114]{0,0.08,0,0.02,0.05,0,0.05,0.05,0,0.06,0.06,0,0.06,0.09,0,0.05,0.1,0,0,0.1,0,-0.05,0.1,0,-0.06,0.09,0,-0.06,0.06,0,-0.05,0.05,0,-0.02,0.05,0,0.005,0.08,0,0.02,0.055,0,0.05,0.055,0,0.055,0.06,0,0.055,0.09,0,0.045,0.095,0,0.005,0.095,0,-0.005,0.08,0,-0.02,0.055,0,-0.05,0.055,0,-0.055,0.06,0,-0.055,0.09,0,-0.045,0.095,0,-0.005,0.095,0,0,0.04,0.015,0.05,0.04,-0.03,0.06,0.05,-0.03,0.07,0.095,-0.03,0.055,0.11,-0.03,0,0.11,-0.02,-0.055,0.11,-0.03,-0.07,0.095,-0.03,-0.06,0.05,-0.03,-0.05,0.04,-0.03,-0.02,0.04,-0.02,0.02,0.04,-0.02}, 114);
+Coordinate59.setPoint(new float[114]{0.0,0.08,0.0,0.02,0.05,0.0,0.05,0.05,0.0,0.06,0.06,0.0,0.06,0.09,0.0,0.05,0.1,0.0,0.0,0.1,0.0,-0.05,0.1,0.0,-0.06,0.09,0.0,-0.06,0.06,0.0,-0.05,0.05,0.0,-0.02,0.05,0.0,0.005,0.08,0.0,0.02,0.055,0.0,0.05,0.055,0.0,0.055,0.06,0.0,0.055,0.09,0.0,0.045,0.095,0.0,0.005,0.095,0.0,-0.005,0.08,0.0,-0.02,0.055,0.0,-0.05,0.055,0.0,-0.055,0.06,0.0,-0.055,0.09,0.0,-0.045,0.095,0.0,-0.005,0.095,0.0,0.0,0.04,0.015,0.05,0.04,-0.03,0.06,0.05,-0.03,0.07,0.095,-0.03,0.055,0.11,-0.03,0.0,0.11,-0.02,-0.055,0.11,-0.03,-0.07,0.095,-0.03,-0.06,0.05,-0.03,-0.05,0.04,-0.03,-0.02,0.04,-0.02,0.02,0.04,-0.02}, 114);
 IndexedFaceSet58.setCoord(&Coordinate59);
 
 Shape55.setGeometry(&IndexedFaceSet58);
@@ -272,7 +273,7 @@ IndexedFaceSet64.setCoordIndex(new int32_t[60]{1,2,27,37,1,-1,2,3,28,27,2,-1,3,4
 IndexedFaceSet64.setCreaseAngle(1.45);
 IndexedFaceSet64.setSolid(False);
 Coordinate& Coordinate65 =  Coordinate();
-Coordinate65.setPoint(new float[114]{0,0.08,0,0.02,0.05,0,0.05,0.05,0,0.06,0.06,0,0.06,0.09,0,0.05,0.1,0,0,0.1,0,-0.05,0.1,0,-0.06,0.09,0,-0.06,0.06,0,-0.05,0.05,0,-0.02,0.05,0,0.005,0.08,0,0.02,0.055,0,0.05,0.055,0,0.055,0.06,0,0.055,0.09,0,0.045,0.095,0,0.005,0.095,0,-0.005,0.08,0,-0.02,0.055,0,-0.05,0.055,0,-0.055,0.06,0,-0.055,0.09,0,-0.045,0.095,0,-0.005,0.095,0,0,0.05,0.015,0.05,0.04,-0.03,0.06,0.05,-0.03,0.07,0.095,-0.03,0.055,0.11,-0.03,0,0.11,-0.02,-0.055,0.11,-0.03,-0.07,0.095,-0.03,-0.06,0.05,-0.03,-0.05,0.04,-0.03,-0.02,0.04,-0.02,0.02,0.04,-0.02}, 114);
+Coordinate65.setPoint(new float[114]{0.0,0.08,0.0,0.02,0.05,0.0,0.05,0.05,0.0,0.06,0.06,0.0,0.06,0.09,0.0,0.05,0.1,0.0,0.0,0.1,0.0,-0.05,0.1,0.0,-0.06,0.09,0.0,-0.06,0.06,0.0,-0.05,0.05,0.0,-0.02,0.05,0.0,0.005,0.08,0.0,0.02,0.055,0.0,0.05,0.055,0.0,0.055,0.06,0.0,0.055,0.09,0.0,0.045,0.095,0.0,0.005,0.095,0.0,-0.005,0.08,0.0,-0.02,0.055,0.0,-0.05,0.055,0.0,-0.055,0.06,0.0,-0.055,0.09,0.0,-0.045,0.095,0.0,-0.005,0.095,0.0,0.0,0.05,0.015,0.05,0.04,-0.03,0.06,0.05,-0.03,0.07,0.095,-0.03,0.055,0.11,-0.03,0.0,0.11,-0.02,-0.055,0.11,-0.03,-0.07,0.095,-0.03,-0.06,0.05,-0.03,-0.05,0.04,-0.03,-0.02,0.04,-0.02,0.02,0.04,-0.02}, 114);
 IndexedFaceSet64.setCoord(&Coordinate65);
 
 Shape61.setGeometry(&IndexedFaceSet64);
@@ -296,7 +297,7 @@ IndexedFaceSet70.setCoordIndex(new int32_t[36]{3,4,39,38,3,-1,8,9,40,41,8,-1,38,
 IndexedFaceSet70.setCreaseAngle(1.45);
 IndexedFaceSet70.setSolid(False);
 Coordinate& Coordinate71 =  Coordinate();
-Coordinate71.setPoint(new float[144]{0,0.08,0,0.02,0.05,0,0.05,0.05,0,0.06,0.06,0,0.06,0.09,0,0.05,0.1,0,0,0.1,0,-0.05,0.1,0,-0.06,0.09,0,-0.06,0.06,0,-0.05,0.05,0,-0.02,0.05,0,0.005,0.08,0,0.02,0.055,0,0.05,0.055,0,0.055,0.06,0,0.055,0.09,0,0.045,0.095,0,0.005,0.095,0,-0.005,0.08,0,-0.02,0.055,0,-0.05,0.055,0,-0.055,0.06,0,-0.055,0.09,0,-0.045,0.095,0,-0.005,0.095,0,0,0.05,0.015,0.05,0.04,-0.03,0.06,0.05,-0.03,0.07,0.095,-0.03,0.055,0.11,-0.03,0,0.11,-0.02,-0.055,0.11,-0.03,-0.07,0.095,-0.03,-0.06,0.05,-0.03,-0.05,0.04,-0.03,-0.02,0.04,-0.02,0.02,0.04,-0.02,0.075,0.06,-0.135,0.075,0.09,-0.135,-0.075,0.06,-0.135,-0.075,0.09,-0.135,0.06,0.09,-0.165,0.06,0.06,-0.165,-0.06,0.09,-0.165,-0.06,0.06,-0.165,0,0.09,-0.2,0,0.06,-0.175}, 144);
+Coordinate71.setPoint(new float[144]{0.0,0.08,0.0,0.02,0.05,0.0,0.05,0.05,0.0,0.06,0.06,0.0,0.06,0.09,0.0,0.05,0.1,0.0,0.0,0.1,0.0,-0.05,0.1,0.0,-0.06,0.09,0.0,-0.06,0.06,0.0,-0.05,0.05,0.0,-0.02,0.05,0.0,0.005,0.08,0.0,0.02,0.055,0.0,0.05,0.055,0.0,0.055,0.06,0.0,0.055,0.09,0.0,0.045,0.095,0.0,0.005,0.095,0.0,-0.005,0.08,0.0,-0.02,0.055,0.0,-0.05,0.055,0.0,-0.055,0.06,0.0,-0.055,0.09,0.0,-0.045,0.095,0.0,-0.005,0.095,0.0,0.0,0.05,0.015,0.05,0.04,-0.03,0.06,0.05,-0.03,0.07,0.095,-0.03,0.055,0.11,-0.03,0.0,0.11,-0.02,-0.055,0.11,-0.03,-0.07,0.095,-0.03,-0.06,0.05,-0.03,-0.05,0.04,-0.03,-0.02,0.04,-0.02,0.02,0.04,-0.02,0.075,0.06,-0.135,0.075,0.09,-0.135,-0.075,0.06,-0.135,-0.075,0.09,-0.135,0.06,0.09,-0.165,0.06,0.06,-0.165,-0.06,0.09,-0.165,-0.06,0.06,-0.165,0.0,0.09,-0.2,0.0,0.06,-0.175}, 144);
 IndexedFaceSet70.setCoord(&Coordinate71);
 
 Shape67.setGeometry(&IndexedFaceSet70);
@@ -309,4 +310,4 @@ Scene10.addChild(&Transform13);
 
 X3D0.setScene(&Scene10);
 
-}
+//}

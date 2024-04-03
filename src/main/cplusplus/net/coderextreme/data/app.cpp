@@ -1,10 +1,11 @@
-#define False false
-#define True true
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/X3DLib.h"
-int main(int argc, char ** argv) {
+//#define False false
+//#define True true
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/X3DLib.h"
+//int main(int argc, char ** argv) 
+//{
 X3D& X3D0 =  X3D();
 X3D0.setProfile(CString("Immersive"));
 X3D0.setVersion(CString("4.0"));
@@ -36,7 +37,7 @@ Group& Group7 =  Group();
 Shape& Shape8 =  Shape();
 Appearance& Appearance9 =  Appearance();
 Material& Material10 =  Material();
-Material10.setDiffuseColor(new float[3]{1,0,0});
+Material10.setDiffuseColor(new float[3]{1.0,0.0,0.0});
 Appearance9.addChild(&Material10);
 
 Shape8.addChild(&Appearance9);
@@ -49,11 +50,11 @@ Group7.addChild(&Shape8);
 Scene6.addChild(&Group7);
 
 Transform& Transform12 =  Transform();
-Transform12.setRotation(new float[4]{7,8,9,3.14});
-Transform12.setScale(new float[3]{4,5,6});
-Transform12.setTranslation(new float[3]{1,2,3});
+Transform12.setRotation(new float[4]{7.0,8.0,9.0,3.14});
+Transform12.setScale(new float[3]{4.0,5.0,6.0});
+Transform12.setTranslation(new float[3]{1.0,2.0,3.0});
 Scene6.addChild(&Transform12);
 
 X3D0.setScene(&Scene6);
 
-}
+//}

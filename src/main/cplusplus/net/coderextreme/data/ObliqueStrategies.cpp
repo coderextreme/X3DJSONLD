@@ -1,10 +1,11 @@
-#define False false
-#define True true
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/X3DLib.h"
-int main(int argc, char ** argv) {
+//#define False false
+//#define True true
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/X3DLib.h"
+//int main(int argc, char ** argv) 
+//{
 X3D& X3D0 =  X3D();
 X3D0.setProfile(CString("Immersive"));
 X3D0.setVersion(CString("3.3"));
@@ -176,12 +177,12 @@ NavigationInfo35.setType(new CString[1]{CString("NONE")}, 1);
 Scene33.addChild(&NavigationInfo35);
 
 Background& Background36 =  Background();
-Background36.setSkyColor(new float[3]{0.419608,0.427451,1}, 3);
+Background36.setSkyColor(new float[3]{0.419608,0.427451,1.0}, 3);
 Scene33.addChild(&Background36);
 
 Transform& Transform37 =  Transform();
 Transform37.setScale(new float[3]{0.4,0.4,0.4});
-Transform37.setTranslation(new float[3]{0,1,0});
+Transform37.setTranslation(new float[3]{0.0,1.0,0.0});
 TouchSensor& TouchSensor38 =  TouchSensor();
 TouchSensor38.setDEF(CString("RandomTextClickedSensor"));
 TouchSensor38.setDescription(CString("Select to see a new strategy"));
@@ -201,7 +202,7 @@ Shape39.setGeometry(&Text40);
 
 Appearance& Appearance42 =  Appearance();
 Material& Material43 =  Material();
-Material43.setDiffuseColor(new float[3]{1,1,1});
+Material43.setDiffuseColor(new float[3]{1.0,1.0,1.0});
 Appearance42.addChild(&Material43);
 
 Shape39.addChild(&Appearance42);
@@ -209,14 +210,14 @@ Shape39.addChild(&Appearance42);
 Transform37.addChild(&Shape39);
 
 Transform& Transform44 =  Transform();
-Transform44.setScale(new float[3]{10,3,1});
+Transform44.setScale(new float[3]{10.0,3.0,1.0});
 Shape& Shape45 =  Shape();
 Shape45.setDEF(CString("HeadlineClickSurface"));
 IndexedFaceSet& IndexedFaceSet46 =  IndexedFaceSet();
 IndexedFaceSet46.setCoordIndex(new int32_t[5]{0,1,2,3,-1}, 5);
 IndexedFaceSet46.setSolid(False);
 Coordinate& Coordinate47 =  Coordinate();
-Coordinate47.setPoint(new float[12]{1,1,0,1,-1,0,-1,-1,0,-1,1,0}, 12);
+Coordinate47.setPoint(new float[12]{1.0,1.0,0.0,1.0,-1.0,0.0,-1.0,-1.0,0.0,-1.0,1.0,0.0}, 12);
 IndexedFaceSet46.setCoord(&Coordinate47);
 
 Shape45.setGeometry(&IndexedFaceSet46);
@@ -303,7 +304,7 @@ Scene33.addChild(&Script50);
 Transform& Transform59 =  Transform();
 Transform59.setDEF(CString("CardTransform"));
 Transform59.setScale(new float[3]{0.4,0.4,0.4});
-Transform59.setTranslation(new float[3]{0,-1.5,0});
+Transform59.setTranslation(new float[3]{0.0,-1.5,0.0});
 Shape& Shape60 =  Shape();
 Text& Text61 =  Text();
 Text61.setDEF(CString("CardText"));
@@ -317,7 +318,7 @@ Shape60.setGeometry(&Text61);
 
 Appearance& Appearance63 =  Appearance();
 Material& Material64 =  Material();
-Material64.setDiffuseColor(new float[3]{1,1,1});
+Material64.setDiffuseColor(new float[3]{1.0,1.0,1.0});
 Appearance63.addChild(&Material64);
 
 Shape60.addChild(&Appearance63);
@@ -367,7 +368,7 @@ Scene33.addChild(&Transform59);
 
 Transform& Transform70 =  Transform();
 Transform70.setScale(new float[3]{0.4,0.4,0.4});
-Transform70.setTranslation(new float[3]{-3.2,2.5,0});
+Transform70.setTranslation(new float[3]{-3.2,2.5,0.0});
 TouchSensor& TouchSensor71 =  TouchSensor();
 TouchSensor71.setDEF(CString("PreviousTextClickedSensor"));
 TouchSensor71.setDescription(CString("Select to see previous strategy"));
@@ -392,7 +393,7 @@ Shape73.setGeometry(&Text74);
 Appearance& Appearance76 =  Appearance();
 Appearance76.setDEF(CString("InterfaceAppearance"));
 Material& Material77 =  Material();
-Material77.setDiffuseColor(new float[3]{1,0,0.6});
+Material77.setDiffuseColor(new float[3]{1.0,0.0,0.6});
 Appearance76.addChild(&Material77);
 
 Shape73.addChild(&Appearance76);
@@ -400,7 +401,7 @@ Shape73.addChild(&Appearance76);
 Transform70.addChild(&Shape73);
 
 Transform& Transform78 =  Transform();
-Transform78.setScale(new float[3]{2,0.6,1});
+Transform78.setScale(new float[3]{2.0,0.6,1.0});
 Shape& Shape79 =  Shape();
 Shape79.setDEF(CString("TransparentClickSurface"));
 //support Selectable Text with a scalable IFS
@@ -408,7 +409,7 @@ IndexedFaceSet& IndexedFaceSet80 =  IndexedFaceSet();
 IndexedFaceSet80.setCoordIndex(new int32_t[5]{0,1,2,3,-1}, 5);
 IndexedFaceSet80.setSolid(False);
 Coordinate& Coordinate81 =  Coordinate();
-Coordinate81.setPoint(new float[12]{1,1,0,1,-1,0,-1,-1,0,-1,1,0}, 12);
+Coordinate81.setPoint(new float[12]{1.0,1.0,0.0,1.0,-1.0,0.0,-1.0,-1.0,0.0,-1.0,1.0,0.0}, 12);
 IndexedFaceSet80.setCoord(&Coordinate81);
 
 Shape79.setGeometry(&IndexedFaceSet80);
@@ -428,7 +429,7 @@ Scene33.addChild(&Transform70);
 
 Transform& Transform84 =  Transform();
 Transform84.setScale(new float[3]{0.4,0.4,0.4});
-Transform84.setTranslation(new float[3]{3.5,2.5,0});
+Transform84.setTranslation(new float[3]{3.5,2.5,0.0});
 TouchSensor& TouchSensor85 =  TouchSensor();
 TouchSensor85.setDEF(CString("NextTextClickedSensor"));
 TouchSensor85.setDescription(CString("Select to see next strategy"));
@@ -457,7 +458,7 @@ Shape87.addChild(&Appearance90);
 Transform84.addChild(&Shape87);
 
 Transform& Transform91 =  Transform();
-Transform91.setScale(new float[3]{1.2,0.6,1});
+Transform91.setScale(new float[3]{1.2,0.6,1.0});
 Shape& Shape92 =  Shape();
 Shape92.setUSE(CString("TransparentClickSurface"));
 Transform91.addChild(&Shape92);
@@ -468,7 +469,7 @@ Scene33.addChild(&Transform84);
 
 Transform& Transform93 =  Transform();
 Transform93.setScale(new float[3]{0.4,0.4,0.4});
-Transform93.setTranslation(new float[3]{-3.3,-0.5,0});
+Transform93.setTranslation(new float[3]{-3.3,-0.5,0.0});
 TouchSensor& TouchSensor94 =  TouchSensor();
 TouchSensor94.setUSE(CString("RandomTextClickedSensor"));
 Transform93.addChild(&TouchSensor94);
@@ -496,7 +497,7 @@ Shape96.addChild(&Appearance99);
 Transform93.addChild(&Shape96);
 
 Transform& Transform100 =  Transform();
-Transform100.setScale(new float[3]{1.8,0.6,1});
+Transform100.setScale(new float[3]{1.8,0.6,1.0});
 Shape& Shape101 =  Shape();
 Shape101.setUSE(CString("TransparentClickSurface"));
 Transform100.addChild(&Shape101);
@@ -507,7 +508,7 @@ Scene33.addChild(&Transform93);
 
 Transform& Transform102 =  Transform();
 Transform102.setScale(new float[3]{0.4,0.4,0.4});
-Transform102.setTranslation(new float[3]{3.3,-0.5,0});
+Transform102.setTranslation(new float[3]{3.3,-0.5,0.0});
 Anchor& Anchor103 =  Anchor();
 Anchor103.setDEF(CString("TextToSpeechAnchor"));
 Anchor103.setDescription(CString("text to speech in browser"));
@@ -536,7 +537,7 @@ Shape105.addChild(&Appearance108);
 Anchor103.addChild(&Shape105);
 
 Transform& Transform109 =  Transform();
-Transform109.setScale(new float[3]{1.8,0.6,1});
+Transform109.setScale(new float[3]{1.8,0.6,1.0});
 Shape& Shape110 =  Shape();
 Shape110.setUSE(CString("TransparentClickSurface"));
 Transform109.addChild(&Shape110);
@@ -549,4 +550,4 @@ Scene33.addChild(&Transform102);
 
 X3D0.setScene(&Scene33);
 
-}
+//}

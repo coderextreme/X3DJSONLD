@@ -1,10 +1,11 @@
-#define False false
-#define True true
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/X3DLib.h"
-int main(int argc, char ** argv) {
+//#define False false
+//#define True true
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/X3DLib.h"
+//int main(int argc, char ** argv) 
+//{
 X3D& X3D0 =  X3D();
 X3D0.setVersion(CString("3.0"));
 X3D0.setProfile(CString("Immersive"));
@@ -45,19 +46,19 @@ field8.setAccessType(CString("initializeOnly"));
 Script4.addChild(&field8);
 
 
-Script4.setSourceCode(CString("ecmascript:")+
-_T("      function combinationEntered (value) {")+
-_T("        unlocked = value;")+
-_T("      }")+
-_T("      function openVault(value) {")+
-_T("      if (unlocked) vaultUnlocked = value;")+
-_T("      }"));
+//Script4.setSourceCode(CString("ecmascript:")+
+//_T("      function combinationEntered (value) {")+
+//_T("        unlocked = value;")+
+//_T("      }")+
+//_T("      function openVault(value) {")+
+//_T("      if (unlocked) vaultUnlocked = value;")+
+//_T("      }"));
 Scene3.addChild(&Script4);
 
 Shape& Shape9 =  Shape();
 Appearance& Appearance10 =  Appearance();
 Material& Material11 =  Material();
-Material11.setDiffuseColor(new float[3]{1,0,0});
+Material11.setDiffuseColor(new float[3]{1.0,0.0,0.0});
 Appearance10.addChild(&Material11);
 
 Shape9.addChild(&Appearance10);
@@ -108,4 +109,4 @@ Scene3.addChild(&ROUTE18);
 
 X3D0.setScene(&Scene3);
 
-}
+//}

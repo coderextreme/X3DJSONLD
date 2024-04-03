@@ -1,10 +1,11 @@
-#define False false
-#define True true
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/X3DLib.h"
-int main(int argc, char ** argv) {
+//#define False false
+//#define True true
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/X3DLib.h"
+//int main(int argc, char ** argv) 
+//{
 X3D& X3D0 =  X3D();
 X3D0.setProfile(CString("Immersive"));
 X3D0.setVersion(CString("3.3"));
@@ -63,15 +64,15 @@ Shape& Shape15 =  Shape();
 Shape15.setDEF(CString("ShapeLeftDown"));
 Appearance& Appearance16 =  Appearance();
 Material& Material17 =  Material();
-Material17.setDiffuseColor(new float[3]{0.7,1,0});
+Material17.setDiffuseColor(new float[3]{0.7,1.0,0.0});
 Appearance16.addChild(&Material17);
 
 Shape15.addChild(&Appearance16);
 
 Extrusion& Extrusion18 =  Extrusion();
-Extrusion18.setSpine(new float[6]{-2.5,0,0,-1.5,0,0}, 6);
+Extrusion18.setSpine(new float[6]{-2.5,0.0,0.0,-1.5,0.0,0.0}, 6);
 Extrusion18.setCreaseAngle(0.785);
-Extrusion18.setCrossSection(new float[34]{1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0}, 34);
+Extrusion18.setCrossSection(new float[34]{1.0,0.0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.0,-1.0,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.0,0.0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0.0,1.0,0.38,0.92,0.71,0.71,0.92,0.38,1.0,0.0}, 34);
 Shape15.setGeometry(&Extrusion18);
 
 Transform14.addChild(&Shape15);
@@ -85,15 +86,15 @@ Shape& Shape20 =  Shape();
 Shape20.setDEF(CString("ShapeUpRight"));
 Appearance& Appearance21 =  Appearance();
 Material& Material22 =  Material();
-Material22.setDiffuseColor(new float[3]{0,0.7,1});
+Material22.setDiffuseColor(new float[3]{0.0,0.7,1.0});
 Appearance21.addChild(&Material22);
 
 Shape20.addChild(&Appearance21);
 
 Extrusion& Extrusion23 =  Extrusion();
-Extrusion23.setSpine(new float[6]{1.5,0,0,2.5,0,0}, 6);
+Extrusion23.setSpine(new float[6]{1.5,0.0,0.0,2.5,0.0,0.0}, 6);
 Extrusion23.setCreaseAngle(0.785);
-Extrusion23.setCrossSection(new float[34]{1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0}, 34);
+Extrusion23.setCrossSection(new float[34]{1.0,0.0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.0,-1.0,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.0,0.0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0.0,1.0,0.38,0.92,0.71,0.71,0.92,0.38,1.0,0.0}, 34);
 Shape20.setGeometry(&Extrusion23);
 
 Transform19.addChild(&Shape20);
@@ -126,12 +127,12 @@ Scene10.addChild(&ProtoDeclare11);
 
 Viewpoint& Viewpoint28 =  Viewpoint();
 Viewpoint28.setDescription(CString("Process pipes"));
-Viewpoint28.setOrientation(new float[4]{1,0,0,-0.4});
-Viewpoint28.setPosition(new float[3]{0,5,12});
+Viewpoint28.setOrientation(new float[4]{1.0,0.0,0.0,-0.4});
+Viewpoint28.setPosition(new float[3]{0.0,5.0,12.0});
 Scene10.addChild(&Viewpoint28);
 
 Transform& Transform29 =  Transform();
-Transform29.setTranslation(new float[3]{0,-2.5,0});
+Transform29.setTranslation(new float[3]{0.0,-2.5,0.0});
 ProtoInstance& ProtoInstance30 =  ProtoInstance();
 ProtoInstance30.setName(CString("Process"));
 Transform29.addChild(&ProtoInstance30);
@@ -146,7 +147,7 @@ Transform31.addChild(&ProtoInstance32);
 Scene10.addChild(&Transform31);
 
 Transform& Transform33 =  Transform();
-Transform33.setTranslation(new float[3]{0,2.5,0});
+Transform33.setTranslation(new float[3]{0.0,2.5,0.0});
 ProtoInstance& ProtoInstance34 =  ProtoInstance();
 ProtoInstance34.setName(CString("Process"));
 Transform33.addChild(&ProtoInstance34);
@@ -155,4 +156,4 @@ Scene10.addChild(&Transform33);
 
 X3D0.setScene(&Scene10);
 
-}
+//}

@@ -1,10 +1,11 @@
-#define False false
-#define True true
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/X3DLib.h"
-int main(int argc, char ** argv) {
+//#define False false
+//#define True true
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/X3DLib.h"
+//int main(int argc, char ** argv) 
+//{
 X3D& X3D0 =  X3D();
 X3D0.setProfile(CString("Immersive"));
 X3D0.setVersion(CString("3.3"));
@@ -93,8 +94,8 @@ Scene17.addChild(&WorldInfo18);
 
 Viewpoint& Viewpoint19 =  Viewpoint();
 Viewpoint19.setDescription(CString("ViewFrustum from above, looking down"));
-Viewpoint19.setOrientation(new float[4]{1,0,0,-1.57});
-Viewpoint19.setPosition(new float[3]{0,40,0});
+Viewpoint19.setOrientation(new float[4]{1.0,0.0,0.0,-1.57});
+Viewpoint19.setPosition(new float[3]{0.0,40.0,0.0});
 Scene17.addChild(&Viewpoint19);
 
 Viewpoint& Viewpoint20 =  Viewpoint();
@@ -103,13 +104,13 @@ Scene17.addChild(&Viewpoint20);
 
 Viewpoint& Viewpoint21 =  Viewpoint();
 Viewpoint21.setDescription(CString("ViewFrustum behind point of view"));
-Viewpoint21.setPosition(new float[3]{0,0,15});
+Viewpoint21.setPosition(new float[3]{0.0,0.0,15.0});
 Scene17.addChild(&Viewpoint21);
 
 Viewpoint& Viewpoint22 =  Viewpoint();
 Viewpoint22.setDescription(CString("ViewFrustum oblique side view"));
 Viewpoint22.setOrientation(new float[4]{0.8005,0.5926,0.0898,-0.3743});
-Viewpoint22.setPosition(new float[3]{-5,5,20});
+Viewpoint22.setPosition(new float[3]{-5.0,5.0,20.0});
 Scene17.addChild(&Viewpoint22);
 
 NavigationInfo& NavigationInfo23 =  NavigationInfo();
@@ -232,7 +233,7 @@ Inline43.setUrl(new CString[1]{CString("GridXZ_20x20Fixed.x3d")}, 1);
 Scene17.addChild(&Inline43);
 
 Transform& Transform44 =  Transform();
-Transform44.setScale(new float[3]{5,5,5});
+Transform44.setScale(new float[3]{5.0,5.0,5.0});
 Inline& Inline45 =  Inline();
 Inline45.setDEF(CString("CoordinateAxes"));
 Inline45.setUrl(new CString[1]{CString("CoordinateAxes.x3d")}, 1);
@@ -242,4 +243,4 @@ Scene17.addChild(&Transform44);
 
 X3D0.setScene(&Scene17);
 
-}
+//}

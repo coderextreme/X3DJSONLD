@@ -1,10 +1,11 @@
-#define False false
-#define True true
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/X3DLib.h"
-int main(int argc, char ** argv) {
+//#define False false
+//#define True true
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/X3DLib.h"
+//int main(int argc, char ** argv) 
+//{
 X3D& X3D0 =  X3D();
 X3D0.setProfile(CString("Immersive"));
 X3D0.setVersion(CString("3.0"));
@@ -63,7 +64,7 @@ X3D0.setHead(&head1);
 
 Scene& Scene12 =  Scene();
 Transform& Transform13 =  Transform();
-Transform13.setTranslation(new float[3]{0,2,0});
+Transform13.setTranslation(new float[3]{0.0,2.0,0.0});
 Shape& Shape14 =  Shape();
 Text& Text15 =  Text();
 Text15.setString(new CString[1]{CString("Compare special character escaping")}, 1);
@@ -88,7 +89,7 @@ Transform13.addChild(&Shape14);
 Scene12.addChild(&Transform13);
 
 Transform& Transform19 =  Transform();
-Transform19.setTranslation(new float[3]{-3,0,0});
+Transform19.setTranslation(new float[3]{-3.0,0.0,0.0});
 Shape& Shape20 =  Shape();
 Text& Text21 =  Text();
 Text21.setString(new CString[3]{CString("I don't think so"), CString(""), CString("he said \"Hi\"")}, 3);
@@ -107,7 +108,7 @@ Transform19.addChild(&Shape20);
 Scene12.addChild(&Transform19);
 
 Transform& Transform24 =  Transform();
-Transform24.setTranslation(new float[3]{3,0,0});
+Transform24.setTranslation(new float[3]{3.0,0.0,0.0});
 Shape& Shape25 =  Shape();
 Text& Text26 =  Text();
 Text26.setString(new CString[3]{CString("I don't think so"), CString(""), CString("he said \"Hi\"")}, 3);
@@ -127,4 +128,4 @@ Scene12.addChild(&Transform24);
 
 X3D0.setScene(&Scene12);
 
-}
+//}
