@@ -1,10 +1,11 @@
-#define False false
-#define True true
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/X3DLib.h"
-int main(int argc, char ** argv) {
+//#define False false
+//#define True true
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/X3DLib.h"
+//int main(int argc, char ** argv) 
+//{
 X3D& X3D0 =  X3D();
 X3D0.setProfile(CString("Immersive"));
 X3D0.setVersion(CString("3.3"));
@@ -71,7 +72,7 @@ Shape16.setGeometry(&Sphere17);
 
 Appearance& Appearance18 =  Appearance();
 Material& Material19 =  Material();
-Material19.setDiffuseColor(new float[3]{1,0,0});
+Material19.setDiffuseColor(new float[3]{1.0,0.0,0.0});
 Appearance18.addChild(&Material19);
 
 Shape16.addChild(&Appearance18);
@@ -79,7 +80,7 @@ Shape16.addChild(&Appearance18);
 Transform13.addChild(&Shape16);
 
 Transform& Transform20 =  Transform();
-Transform20.setTranslation(new float[3]{1,0,0});
+Transform20.setTranslation(new float[3]{1.0,0.0,0.0});
 Shape& Shape21 =  Shape();
 Text& Text22 =  Text();
 Text22.setString(new CString[1]{CString("Node")}, 1);
@@ -92,7 +93,7 @@ Shape21.setGeometry(&Text22);
 
 Appearance& Appearance24 =  Appearance();
 Material& Material25 =  Material();
-Material25.setDiffuseColor(new float[3]{0,0,1});
+Material25.setDiffuseColor(new float[3]{0.0,0.0,1.0});
 Appearance24.addChild(&Material25);
 
 Shape21.addChild(&Appearance24);
@@ -105,8 +106,8 @@ ProtoBody12.addChild(&Transform13);
 
 PositionInterpolator& PositionInterpolator26 =  PositionInterpolator();
 PositionInterpolator26.setDEF(CString("NodePosition"));
-PositionInterpolator26.setKey(new float[2]{0,1}, 2);
-PositionInterpolator26.setKeyValue(new float[6]{0,0,0,0,5,0}, 6);
+PositionInterpolator26.setKey(new float[2]{0.0,1.0}, 2);
+PositionInterpolator26.setKeyValue(new float[6]{0.0,0.0,0.0,0.0,5.0,0.0}, 6);
 ProtoBody12.addChild(&PositionInterpolator26);
 
 Script& Script27 =  Script();
@@ -138,13 +139,13 @@ field31.setType(CString("MFVec3f"));
 Script27.addChild(&field31);
 
 
-Script27.setSourceCode(CString("ecmascript:")+
-_T("					function set_cycle(value) {")+
-_T("                                                old = translation;")+
-_T("						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);")+
-_T("                                                keyValue = new MFVec3f([old, translation]);")+
-_T("						// Browser.println(translation);")+
-_T("					}"));
+//Script27.setSourceCode(CString("ecmascript:")+
+//_T("					function set_cycle(value) {")+
+//_T("                                                old = translation;")+
+//_T("						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);")+
+//_T("                                                keyValue = new MFVec3f([old, translation]);")+
+//_T("						// Browser.println(translation);")+
+//_T("					}"));
 ProtoBody12.addChild(&Script27);
 
 TimeSensor& TimeSensor32 =  TimeSensor();
@@ -207,13 +208,13 @@ Shape& Shape42 =  Shape();
 Extrusion& Extrusion43 =  Extrusion();
 Extrusion43.setDEF(CString("extrusion"));
 Extrusion43.setCreaseAngle(0.785);
-Extrusion43.setCrossSection(new float[34]{1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0}, 34);
-Extrusion43.setSpine(new float[6]{0,-50,0,0,50,0}, 6);
+Extrusion43.setCrossSection(new float[34]{1.0,0.0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.0,-1.0,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.0,0.0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0.0,1.0,0.38,0.92,0.71,0.71,0.92,0.38,1.0,0.0}, 34);
+Extrusion43.setSpine(new float[6]{0.0,-50.0,0.0,0.0,50.0,0.0}, 6);
 Shape42.setGeometry(&Extrusion43);
 
 Appearance& Appearance44 =  Appearance();
 Material& Material45 =  Material();
-Material45.setDiffuseColor(new float[3]{0,1,0});
+Material45.setDiffuseColor(new float[3]{0.0,1.0,0.0});
 Appearance44.addChild(&Material45);
 
 Shape42.addChild(&Appearance44);
@@ -255,24 +256,24 @@ IS50.addChild(&connect52);
 Script46.addChild(&IS50);
 
 
-Script46.setSourceCode(CString("ecmascript:")+
-_T("                function set_endA(value) {")+
-_T("		    if (typeof spine === 'undefined') {")+
-_T("		        spine = new MFVec3f([value, value]);")+
-_T("		    } else {")+
-_T("		        spine = new MFVec3f([value, spine[1]]);")+
-_T("		    }")+
-_T("                }")+
-_T("                function set_endB(value) {")+
-_T("		    if (typeof spine === 'undefined') {")+
-_T("		        spine = new MFVec3f([value, value]);")+
-_T("		    } else {")+
-_T("		        spine = new MFVec3f([spine[0], value]);")+
-_T("		    }")+
-_T("                }")+
-_T("                function set_spine(value) {")+
-_T("                    spine = value;")+
-_T("                }"));
+//Script46.setSourceCode(CString("ecmascript:")+
+//_T("                function set_endA(value) {")+
+//_T("		    if (typeof spine === 'undefined') {")+
+//_T("		        spine = new MFVec3f([value, value]);")+
+//_T("		    } else {")+
+//_T("		        spine = new MFVec3f([value, spine[1]]);")+
+//_T("		    }")+
+//_T("                }")+
+//_T("                function set_endB(value) {")+
+//_T("		    if (typeof spine === 'undefined') {")+
+//_T("		        spine = new MFVec3f([value, value]);")+
+//_T("		    } else {")+
+//_T("		        spine = new MFVec3f([spine[0], value]);")+
+//_T("		    }")+
+//_T("                }")+
+//_T("                function set_spine(value) {")+
+//_T("                    spine = value;")+
+//_T("                }"));
 ProtoBody41.addChild(&Script46);
 
 ROUTE& ROUTE53 =  ROUTE();
@@ -291,8 +292,8 @@ Transform54.setDEF(CString("HoldsContent"));
 Transform54.setScale(new float[3]{0.1,0.1,0.1});
 PlaneSensor& PlaneSensor55 =  PlaneSensor();
 PlaneSensor55.setDEF(CString("clickGenerator"));
-PlaneSensor55.setMinPosition(new float[2]{-50,-50});
-PlaneSensor55.setMaxPosition(new float[2]{50,50});
+PlaneSensor55.setMinPosition(new float[2]{-50.0,-50.0});
+PlaneSensor55.setMaxPosition(new float[2]{50.0,50.0});
 PlaneSensor55.setDescription(CString("click on background to add nodes, click on nodes to add links"));
 Transform54.addChild(&PlaneSensor55);
 
@@ -349,4 +350,4 @@ Scene8.addChild(&ROUTE64);
 
 X3D0.setScene(&Scene8);
 
-}
+//}

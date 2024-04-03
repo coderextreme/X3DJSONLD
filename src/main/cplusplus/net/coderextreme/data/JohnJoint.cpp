@@ -1,10 +1,11 @@
-#define False false
-#define True true
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/X3DLib.h"
-int main(int argc, char ** argv) {
+//#define False false
+//#define True true
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/X3DLib.h"
+//int main(int argc, char ** argv) 
+//{
 X3D& X3D0 =  X3D();
 X3D0.setProfile(CString("Immersive"));
 X3D0.setVersion(CString("4.0"));
@@ -62,11 +63,11 @@ IndexedLineSet13.setColorIndex(new int[3]{0,1,2}, 3);
 IndexedLineSet13.setColorPerVertex(False);
 IndexedLineSet13.setCoordIndex(new int32_t[9]{0,1,-1,0,2,-1,0,3,-1}, 9);
 Coordinate& Coordinate14 =  Coordinate();
-Coordinate14.setPoint(new float[12]{0,0,0,0.1,0,0,0,0.1,0,0,0,0.1}, 12);
+Coordinate14.setPoint(new float[12]{0.0,0.0,0.0,0.1,0.0,0.0,0.0,0.1,0.0,0.0,0.0,0.1}, 12);
 IndexedLineSet13.setCoord(&Coordinate14);
 
 CColor& Color15 =  CColor();
-Color15.setColor(new float[9]{1,0,0,0,0.6,0,0,0,1}, 9);
+Color15.setColor(new float[9]{1.0,0.0,0.0,0.0,0.6,0.0,0.0,0.0,1.0}, 9);
 IndexedLineSet13.setColor(&Color15);
 
 Shape12.setGeometry(&IndexedLineSet13);
@@ -80,7 +81,7 @@ Group& Group16 =  Group();
 Transform& Transform17 =  Transform();
 //<Transform translation='0 2 0' scale='1 1 1'> <Shape DEF='HAnimRootShape'> <Sphere radius='0.02' /> <Appearance> <Material DEF='HAnimRootMaterial' diffuseColor='0.8 0 0' transparency='0.3'/> </Appearance> </Shape> </Transform>
 Transform& Transform18 =  Transform();
-Transform18.setTranslation(new float[3]{0,2.1,0});
+Transform18.setTranslation(new float[3]{0.0,2.1,0.0});
 Shape& Shape19 =  Shape();
 Shape19.setDEF(CString("HAnimJointShape"));
 Sphere& Sphere20 =  Sphere();
@@ -90,7 +91,7 @@ Shape19.setGeometry(&Sphere20);
 Appearance& Appearance21 =  Appearance();
 Material& Material22 =  Material();
 Material22.setDEF(CString("HAnimJointMaterial"));
-Material22.setDiffuseColor(new float[3]{0,0,0.8});
+Material22.setDiffuseColor(new float[3]{0.0,0.0,0.8});
 Material22.setTransparency(0.3);
 Appearance21.addChild(&Material22);
 
@@ -101,18 +102,18 @@ Transform18.addChild(&Shape19);
 Transform17.addChild(&Transform18);
 
 Transform& Transform23 =  Transform();
-Transform23.setTranslation(new float[3]{0,2.05,0});
+Transform23.setTranslation(new float[3]{0.0,2.05,0.0});
 Shape& Shape24 =  Shape();
 Shape24.setDEF(CString("HAnimSegmentLine"));
 LineSet& LineSet25 =  LineSet();
 LineSet25.setVertexCount(new int32_t[1]{2}, 1);
 ColorRGBA& ColorRGBA26 =  ColorRGBA();
 ColorRGBA26.setDEF(CString("HAnimSegmentLineColorRGBA"));
-ColorRGBA26.setColor(new float[8]{1,1,0,1,1,1,0,0.1}, 8);
+ColorRGBA26.setColor(new float[8]{1.0,1.0,0.0,1.0,1.0,1.0,0.0,0.1}, 8);
 LineSet25.addChild(&ColorRGBA26);
 
 Coordinate& Coordinate27 =  Coordinate();
-Coordinate27.setPoint(new float[6]{-0.05,0,0,0.05,0,0}, 6);
+Coordinate27.setPoint(new float[6]{-0.05,0.0,0.0,0.05,0.0,0.0}, 6);
 LineSet25.setCoord(Coordinate27);
 
 Shape24.setGeometry(&LineSet25);
@@ -136,4 +137,4 @@ Scene10.addChild(&Viewpoint29);
 
 X3D0.setScene(&Scene10);
 
-}
+//}

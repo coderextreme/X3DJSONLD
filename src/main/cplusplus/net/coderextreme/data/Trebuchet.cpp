@@ -1,10 +1,11 @@
-#define False false
-#define True true
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/X3DLib.h"
-int main(int argc, char ** argv) {
+//#define False false
+//#define True true
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/X3DLib.h"
+//int main(int argc, char ** argv) 
+//{
 X3D& X3D0 =  X3D();
 X3D0.setProfile(CString("Immersive"));
 X3D0.setVersion(CString("3.0"));
@@ -96,11 +97,11 @@ Background19.setBackUrl(new CString[1]{CString("https://www.web3d.org/WorkingGro
 Background19.setBottomUrl(new CString[1]{CString("https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_bottom.jpg")}, 1);
 Background19.setFrontUrl(new CString[1]{CString("https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_front.jpg")}, 1);
 Background19.setGroundAngle(new float[2]{1.309,1.570796}, 2);
-Background19.setGroundColor(new float[9]{0.1,0.1,0,0.4,0.25,0.2,0.6,0.6,0.6}, 9);
+Background19.setGroundColor(new float[9]{0.1,0.1,0.0,0.4,0.25,0.2,0.6,0.6,0.6}, 9);
 Background19.setLeftUrl(new CString[1]{CString("https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_left.jpg")}, 1);
 Background19.setRightUrl(new CString[1]{CString("https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_right.jpg")}, 1);
 Background19.setSkyAngle(new float[2]{1.309,1.57079}, 2);
-Background19.setSkyColor(new float[9]{0,0.2,0.7,0,0.5,1,1,1,1}, 9);
+Background19.setSkyColor(new float[9]{0.0,0.2,0.7,0.0,0.5,1.0,1.0,1.0,1.0}, 9);
 Background19.setTopUrl(new CString[1]{CString("https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_top.jpg")}, 1);
 Scene17.addChild(&Background19);
 
@@ -118,7 +119,7 @@ Scene17.addChild(&Sound20);
 
 Shape& Shape22 =  Shape();
 Box& Box23 =  Box();
-Box23.setSize(new float[3]{10000,1,10000});
+Box23.setSize(new float[3]{10000.0,1.0,10000.0});
 Shape22.setGeometry(&Box23);
 
 Appearance& Appearance24 =  Appearance();
@@ -131,15 +132,15 @@ Shape22.addChild(&Appearance24);
 Scene17.addChild(&Shape22);
 
 Transform& Transform26 =  Transform();
-Transform26.setRotation(new float[4]{0,1,0,1.57});
+Transform26.setRotation(new float[4]{0.0,1.0,0.0,1.57});
 Transform26.setScale(new float[3]{0.5,0.5,0.5});
 Transform26.setTranslation(new float[3]{10.5,6.5,4.5});
 Shape& Shape27 =  Shape();
 Appearance& Appearance28 =  Appearance();
 Appearance28.setDEF(CString("TextAppearance"));
 Material& Material29 =  Material();
-Material29.setDiffuseColor(new float[3]{1,0,0});
-Material29.setEmissiveColor(new float[3]{1,1,0});
+Material29.setDiffuseColor(new float[3]{1.0,0.0,0.0});
+Material29.setEmissiveColor(new float[3]{1.0,1.0,0.0});
 Appearance28.addChild(&Material29);
 
 Shape27.addChild(&Appearance28);
@@ -156,9 +157,9 @@ Transform26.addChild(&Shape27);
 Scene17.addChild(&Transform26);
 
 Transform& Transform32 =  Transform();
-Transform32.setRotation(new float[4]{0,1,0,1.57});
+Transform32.setRotation(new float[4]{0.0,1.0,0.0,1.57});
 Transform32.setScale(new float[3]{0.5,0.5,0.5});
-Transform32.setTranslation(new float[3]{11,5.5,6});
+Transform32.setTranslation(new float[3]{11.0,5.5,6.0});
 Switch& Switch33 =  Switch();
 Switch33.setDEF(CString("Weight"));
 Switch33.setWhichChoice(0);
@@ -226,10 +227,10 @@ TouchSensor50.setDescription(CString("weight selector"));
 Transform32.addChild(&TouchSensor50);
 
 Transform& Transform51 =  Transform();
-Transform51.setTranslation(new float[3]{8,0,0});
+Transform51.setTranslation(new float[3]{8.0,0.0,0.0});
 Shape& Shape52 =  Shape();
 Box& Box53 =  Box();
-Box53.setSize(new float[3]{20,1,1});
+Box53.setSize(new float[3]{20.0,1.0,1.0});
 Shape52.setGeometry(&Box53);
 
 Appearance& Appearance54 =  Appearance();
@@ -246,16 +247,16 @@ Transform32.addChild(&Transform51);
 Scene17.addChild(&Transform32);
 
 Transform& Transform56 =  Transform();
-Transform56.setRotation(new float[4]{0,1,0,1.57});
-Transform56.setTranslation(new float[3]{10,0.5,4.5});
+Transform56.setRotation(new float[4]{0.0,1.0,0.0,1.57});
+Transform56.setTranslation(new float[3]{10.0,0.5,4.5});
 Transform& Transform57 =  Transform();
 Transform57.setDEF(CString("launch"));
-Transform57.setTranslation(new float[3]{0,2,5});
+Transform57.setTranslation(new float[3]{0.0,2.0,5.0});
 Billboard& Billboard58 =  Billboard();
 Shape& Shape59 =  Shape();
 Appearance& Appearance60 =  Appearance();
 Material& Material61 =  Material();
-Material61.setDiffuseColor(new float[3]{1,0,0});
+Material61.setDiffuseColor(new float[3]{1.0,0.0,0.0});
 Appearance60.addChild(&Material61);
 
 Shape59.addChild(&Appearance60);
@@ -270,10 +271,10 @@ Shape59.setGeometry(&Text62);
 Billboard58.addChild(&Shape59);
 
 Transform& Transform64 =  Transform();
-Transform64.setTranslation(new float[3]{2,0.3,0});
+Transform64.setTranslation(new float[3]{2.0,0.3,0.0});
 Shape& Shape65 =  Shape();
 Box& Box66 =  Box();
-Box66.setSize(new float[3]{5,1,1});
+Box66.setSize(new float[3]{5.0,1.0,1.0});
 Shape65.setGeometry(&Box66);
 
 Appearance& Appearance67 =  Appearance();
@@ -429,12 +430,12 @@ Transform56.addChild(&Transform77);
 Scene17.addChild(&Transform56);
 
 Transform& Transform100 =  Transform();
-Transform100.setRotation(new float[4]{0,1,0,-1.67});
+Transform100.setRotation(new float[4]{0.0,1.0,0.0,-1.67});
 Transform& Transform101 =  Transform();
 Transform101.setDEF(CString("aft"));
-Transform101.setTranslation(new float[3]{5,5,15});
+Transform101.setTranslation(new float[3]{5.0,5.0,15.0});
 Transform& Transform102 =  Transform();
-Transform102.setTranslation(new float[3]{-2.5,-4.5,-2});
+Transform102.setTranslation(new float[3]{-2.5,-4.5,-2.0});
 Transform& Transform103 =  Transform();
 Transform103.setUSE(CString("launch"));
 Transform102.addChild(&Transform103);
@@ -446,11 +447,11 @@ Transform100.addChild(&Transform101);
 Scene17.addChild(&Transform100);
 
 Transform& Transform104 =  Transform();
-Transform104.setTranslation(new float[3]{0,3,0});
+Transform104.setTranslation(new float[3]{0.0,3.0,0.0});
 Shape& Shape105 =  Shape();
 Shape105.setDEF(CString("plank"));
 Box& Box106 =  Box();
-Box106.setSize(new float[3]{25,1,1});
+Box106.setSize(new float[3]{25.0,1.0,1.0});
 Shape105.setGeometry(&Box106);
 
 Appearance& Appearance107 =  Appearance();
@@ -466,8 +467,8 @@ Transform104.addChild(&Shape105);
 
 Transform& Transform109 =  Transform();
 Transform109.setDEF(CString("angledsupport"));
-Transform109.setRotation(new float[4]{0,0,1,1});
-Transform109.setTranslation(new float[3]{-5,10,0});
+Transform109.setRotation(new float[4]{0.0,0.0,1.0,1.0});
+Transform109.setTranslation(new float[3]{-5.0,10.0,0.0});
 Shape& Shape110 =  Shape();
 Shape110.setUSE(CString("plank"));
 Transform109.addChild(&Shape110);
@@ -476,8 +477,8 @@ Transform104.addChild(&Transform109);
 
 Transform& Transform111 =  Transform();
 Transform111.setDEF(CString("angledsupport2"));
-Transform111.setRotation(new float[4]{0,0,1,-1});
-Transform111.setTranslation(new float[3]{5,10,0});
+Transform111.setRotation(new float[4]{0.0,0.0,1.0,-1.0});
+Transform111.setTranslation(new float[3]{5.0,10.0,0.0});
 Shape& Shape112 =  Shape();
 Shape112.setUSE(CString("plank"));
 Transform111.addChild(&Shape112);
@@ -486,9 +487,9 @@ Transform104.addChild(&Transform111);
 
 Transform& Transform113 =  Transform();
 Transform113.setDEF(CString("verticalsupport"));
-Transform113.setRotation(new float[4]{0,0,1,1.57});
-Transform113.setScale(new float[3]{0.9,1,1});
-Transform113.setTranslation(new float[3]{0,11,0});
+Transform113.setRotation(new float[4]{0.0,0.0,1.0,1.57});
+Transform113.setScale(new float[3]{0.9,1.0,1.0});
+Transform113.setTranslation(new float[3]{0.0,11.0,0.0});
 Shape& Shape114 =  Shape();
 Shape114.setUSE(CString("plank"));
 Transform113.addChild(&Shape114);
@@ -498,8 +499,8 @@ Transform104.addChild(&Transform113);
 
 Transform& Transform115 =  Transform();
 Transform115.setDEF(CString("horizontalsupport"));
-Transform115.setScale(new float[3]{0.4,1,1});
-Transform115.setTranslation(new float[3]{0,10,0});
+Transform115.setScale(new float[3]{0.4,1.0,1.0});
+Transform115.setTranslation(new float[3]{0.0,10.0,0.0});
 Shape& Shape116 =  Shape();
 Shape116.setUSE(CString("plank"));
 Transform115.addChild(&Shape116);
@@ -507,11 +508,11 @@ Transform115.addChild(&Shape116);
 Transform104.addChild(&Transform115);
 
 Transform& Transform117 =  Transform();
-Transform117.setRotation(new float[4]{0,0,1,1.57});
-Transform117.setScale(new float[3]{0.6,1,1});
-Transform117.setTranslation(new float[3]{0,5,10});
+Transform117.setRotation(new float[4]{0.0,0.0,1.0,1.57});
+Transform117.setScale(new float[3]{0.6,1.0,1.0});
+Transform117.setTranslation(new float[3]{0.0,5.0,10.0});
 Transform& Transform118 =  Transform();
-Transform118.setRotation(new float[4]{0,1,0,0.4});
+Transform118.setRotation(new float[4]{0.0,1.0,0.0,0.4});
 Shape& Shape119 =  Shape();
 Shape119.setUSE(CString("plank"));
 Transform118.addChild(&Shape119);
@@ -522,10 +523,10 @@ Transform104.addChild(&Transform117);
 
 Transform& Transform120 =  Transform();
 Transform120.setDEF(CString("panel"));
-Transform120.setTranslation(new float[3]{0,18.2,-0.3});
+Transform120.setTranslation(new float[3]{0.0,18.2,-0.3});
 Shape& Shape121 =  Shape();
 Box& Box122 =  Box();
-Box122.setSize(new float[3]{5,5,0.5});
+Box122.setSize(new float[3]{5.0,5.0,0.5});
 Shape121.setGeometry(&Box122);
 
 Appearance& Appearance123 =  Appearance();
@@ -537,17 +538,17 @@ Transform120.addChild(&Shape121);
 Transform104.addChild(&Transform120);
 
 Transform& Transform124 =  Transform();
-Transform124.setRotation(new float[4]{1,0,0,-1.57});
-Transform124.setTranslation(new float[3]{0,0.6,2.5});
+Transform124.setRotation(new float[4]{1.0,0.0,0.0,-1.57});
+Transform124.setTranslation(new float[3]{0.0,0.6,2.5});
 Transform& Transform125 =  Transform();
-Transform125.setRotation(new float[4]{0,0,1,1.57});
+Transform125.setRotation(new float[4]{0.0,0.0,1.0,1.57});
 Shape& Shape126 =  Shape();
 Extrusion& Extrusion127 =  Extrusion();
 Extrusion127.setBeginCap(False);
-Extrusion127.setCrossSection(new float[24]{1,-0.38,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,-0.38,-1,-1.1,1,-1.1,1,-0.38}, 24);
+Extrusion127.setCrossSection(new float[24]{1.0,-0.38,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.0,-1.0,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.0,-0.38,-1.0,-1.1,1.0,-1.1,1.0,-0.38}, 24);
 Extrusion127.setEndCap(False);
 Extrusion127.setSolid(False);
-Extrusion127.setSpine(new float[6]{0,6,0,0,-11,0}, 6);
+Extrusion127.setSpine(new float[6]{0.0,6.0,0.0,0.0,-11.0,0.0}, 6);
 Shape126.setGeometry(&Extrusion127);
 
 Appearance& Appearance128 =  Appearance();
@@ -562,14 +563,14 @@ Transform104.addChild(&Transform124);
 
 Transform& Transform129 =  Transform();
 Transform129.setDEF(CString("flinger"));
-Transform129.setCenter(new float[3]{7,0,0});
-Transform129.setRotation(new float[4]{0,0,1,0.82});
-Transform129.setScale(new float[3]{0.9,1,1});
-Transform129.setTranslation(new float[3]{-7,18,2.5});
+Transform129.setCenter(new float[3]{7.0,0.0,0.0});
+Transform129.setRotation(new float[4]{0.0,0.0,1.0,0.82});
+Transform129.setScale(new float[3]{0.9,1.0,1.0});
+Transform129.setTranslation(new float[3]{-7.0,18.0,2.5});
 Transform& Transform130 =  Transform();
 Shape& Shape131 =  Shape();
 Box& Box132 =  Box();
-Box132.setSize(new float[3]{35,1,1});
+Box132.setSize(new float[3]{35.0,1.0,1.0});
 Shape131.setGeometry(&Box132);
 
 Appearance& Appearance133 =  Appearance();
@@ -579,10 +580,10 @@ Shape131.addChild(&Appearance133);
 Transform130.addChild(&Shape131);
 
 Transform& Transform134 =  Transform();
-Transform134.setTranslation(new float[3]{7,0,0});
+Transform134.setTranslation(new float[3]{7.0,0.0,0.0});
 Shape& Shape135 =  Shape();
 Box& Box136 =  Box();
-Box136.setSize(new float[3]{8,2,2});
+Box136.setSize(new float[3]{8.0,2.0,2.0});
 Shape135.setGeometry(&Box136);
 
 Appearance& Appearance137 =  Appearance();
@@ -596,14 +597,14 @@ Transform130.addChild(&Transform134);
 Transform129.addChild(&Transform130);
 
 Transform& Transform138 =  Transform();
-Transform138.setRotation(new float[4]{1,0,0,1.57});
+Transform138.setRotation(new float[4]{1.0,0.0,0.0,1.57});
 Transform138.setScale(new float[3]{0.2,0.2,0.2});
-Transform138.setTranslation(new float[3]{-15,-1,0});
+Transform138.setTranslation(new float[3]{-15.0,-1.0,0.0});
 Shape& Shape139 =  Shape();
 Shape139.setDEF(CString("Torus"));
 Appearance& Appearance140 =  Appearance();
 Material& Material141 =  Material();
-Material141.setSpecularColor(new float[3]{1,1,1});
+Material141.setSpecularColor(new float[3]{1.0,1.0,1.0});
 Appearance140.addChild(&Material141);
 
 Shape139.addChild(&Appearance140);
@@ -612,15 +613,15 @@ Extrusion& Extrusion142 =  Extrusion();
 Extrusion142.setBeginCap(False);
 Extrusion142.setConvex(False);
 Extrusion142.setCreaseAngle(1.57);
-Extrusion142.setCrossSection(new float[34]{0.9,0,0.81,-0.34,0.63,-0.63,0.34,-0.83,0,-0.9,-0.34,-0.81,-0.63,-0.63,-0.81,-0.34,-0.9,0,-0.81,0.34,-0.63,0.63,-0.34,0.81,0,0.9,0.38,0.81,0.63,0.63,0.81,0.34,0.9,0}, 34);
+Extrusion142.setCrossSection(new float[34]{0.9,0.0,0.81,-0.34,0.63,-0.63,0.34,-0.83,0.0,-0.9,-0.34,-0.81,-0.63,-0.63,-0.81,-0.34,-0.9,0.0,-0.81,0.34,-0.63,0.63,-0.34,0.81,0.0,0.9,0.38,0.81,0.63,0.63,0.81,0.34,0.9,0.0}, 34);
 Extrusion142.setEndCap(False);
-Extrusion142.setSpine(new float[51]{2,0,0,1.85,0,0.77,1.41,0,1.41,0.77,0,1.85,0,0,2,-0.77,0,1.85,-1.41,0,1.41,-1.85,0,0.77,-2,0,0,-1.85,0,-0.77,-1.41,0,-1.41,-0.77,0,-1.85,0,0,-2,0.77,0,-1.85,1.41,0,-1.41,1.85,0,-0.77,2,0,0}, 51);
+Extrusion142.setSpine(new float[51]{2.0,0.0,0.0,1.85,0.0,0.77,1.41,0.0,1.41,0.77,0.0,1.85,0.0,0.0,2.0,-0.77,0.0,1.85,-1.41,0.0,1.41,-1.85,0.0,0.77,-2.0,0.0,0.0,-1.85,0.0,-0.77,-1.41,0.0,-1.41,-0.77,0.0,-1.85,0.0,0.0,-2.0,0.77,0.0,-1.85,1.41,0.0,-1.41,1.85,0.0,-0.77,2.0,0.0,0.0}, 51);
 Shape139.setGeometry(&Extrusion142);
 
 Transform138.addChild(&Shape139);
 
 Transform& Transform143 =  Transform();
-Transform143.setTranslation(new float[3]{1,0,2});
+Transform143.setTranslation(new float[3]{1.0,0.0,2.0});
 Shape& Shape144 =  Shape();
 Appearance& Appearance145 =  Appearance();
 Appearance145.setDEF(CString("rope"));
@@ -643,9 +644,9 @@ Transform129.addChild(&Transform138);
 
 //The Unicorn
 Transform& Transform148 =  Transform();
-Transform148.setRotation(new float[4]{0,0,1,1.2});
+Transform148.setRotation(new float[4]{0.0,0.0,1.0,1.2});
 Transform148.setScale(new float[3]{0.2,0.2,0.2});
-Transform148.setTranslation(new float[3]{-18.3,0.3,0});
+Transform148.setTranslation(new float[3]{-18.3,0.3,0.0});
 Shape& Shape149 =  Shape();
 Cylinder& Cylinder150 =  Cylinder();
 Cylinder150.setHeight(10);
@@ -653,7 +654,7 @@ Shape149.setGeometry(&Cylinder150);
 
 Appearance& Appearance151 =  Appearance();
 Material& Material152 =  Material();
-Material152.setSpecularColor(new float[3]{1,1,1});
+Material152.setSpecularColor(new float[3]{1.0,1.0,1.0});
 Appearance151.addChild(&Material152);
 
 Shape149.addChild(&Appearance151);
@@ -661,14 +662,14 @@ Shape149.addChild(&Appearance151);
 Transform148.addChild(&Shape149);
 
 Transform& Transform153 =  Transform();
-Transform153.setTranslation(new float[3]{0,-2.5,0});
+Transform153.setTranslation(new float[3]{0.0,-2.5,0.0});
 //The Unicorn
 Shape& Shape154 =  Shape();
 Shape154.setUSE(CString("Torus"));
 Transform153.addChild(&Shape154);
 
 Transform& Transform155 =  Transform();
-Transform155.setTranslation(new float[3]{-2,0,0});
+Transform155.setTranslation(new float[3]{-2.0,0.0,0.0});
 Shape& Shape156 =  Shape();
 Sphere& Sphere157 =  Sphere();
 Sphere157.setRadius(1.5);
@@ -686,10 +687,10 @@ Transform153.addChild(&Transform155);
 Transform148.addChild(&Transform153);
 
 Transform& Transform159 =  Transform();
-Transform159.setRotation(new float[4]{0,0,1,1.2});
-Transform159.setTranslation(new float[3]{15,55,-11});
+Transform159.setRotation(new float[4]{0.0,0.0,1.0,1.2});
+Transform159.setTranslation(new float[3]{15.0,55.0,-11.0});
 Transform& Transform160 =  Transform();
-Transform160.setScale(new float[3]{5,5,5});
+Transform160.setScale(new float[3]{5.0,5.0,5.0});
 Shape& Shape161 =  Shape();
 Appearance& Appearance162 =  Appearance();
 Appearance162.setUSE(CString("rope"));
@@ -698,10 +699,10 @@ Shape161.addChild(&Appearance162);
 Extrusion& Extrusion163 =  Extrusion();
 Extrusion163.setBeginCap(False);
 Extrusion163.setCreaseAngle(0.76);
-Extrusion163.setCrossSection(new float[34]{0.1,0,0.092,-0.038,0.071,-0.071,0.038,-0.092,0,-0.1,-0.038,-0.092,-0.071,-0.071,-0.092,-0.038,-0.1,0,-0.092,0.038,-0.071,0.071,-0.038,0.092,0,0.1,0.038,0.092,0.071,0.071,0.092,0.038,0.1,0}, 34);
+Extrusion163.setCrossSection(new float[34]{0.1,0.0,0.092,-0.038,0.071,-0.071,0.038,-0.092,0.0,-0.1,-0.038,-0.092,-0.071,-0.071,-0.092,-0.038,-0.1,0.0,-0.092,0.038,-0.071,0.071,-0.038,0.092,0.0,0.1,0.038,0.092,0.071,0.071,0.092,0.038,0.1,0.0}, 34);
 Extrusion163.setEndCap(False);
 Extrusion163.setSolid(False);
-Extrusion163.setSpine(new float[6]{-15.2,1.4,2.2,-12,-0.8,2.2}, 6);
+Extrusion163.setSpine(new float[6]{-15.2,1.4,2.2,-12.0,-0.8,2.2}, 6);
 Shape161.setGeometry(&Extrusion163);
 
 Transform160.addChild(&Shape161);
@@ -713,8 +714,8 @@ Transform148.addChild(&Transform159);
 Transform129.addChild(&Transform148);
 
 Transform& Transform164 =  Transform();
-Transform164.setRotation(new float[4]{1,0,0,-1.7});
-Transform164.setTranslation(new float[3]{-17,-4.5,0});
+Transform164.setRotation(new float[4]{1.0,0.0,0.0,-1.7});
+Transform164.setTranslation(new float[3]{-17.0,-4.5,0.0});
 Transform& Transform165 =  Transform();
 Transform165.setScale(new float[3]{0.2,0.2,0.2});
 //Knot
@@ -723,7 +724,7 @@ Shape166.setUSE(CString("Torus"));
 Transform165.addChild(&Shape166);
 
 Transform& Transform167 =  Transform();
-Transform167.setTranslation(new float[3]{-1,0,1.7});
+Transform167.setTranslation(new float[3]{-1.0,0.0,1.7});
 Shape& Shape168 =  Shape();
 Sphere& Sphere169 =  Sphere();
 Sphere169.setRadius(1.5);
@@ -746,8 +747,8 @@ Transform171.setDEF(CString("RnS"));
 Transform& Transform172 =  Transform();
 Transform172.setDEF(CString("ropes"));
 Transform& Transform173 =  Transform();
-Transform173.setRotation(new float[4]{0,0,1,-0.82});
-Transform173.setTranslation(new float[3]{7,-26,-2.5});
+Transform173.setRotation(new float[4]{0.0,0.0,1.0,-0.82});
+Transform173.setTranslation(new float[3]{7.0,-26.0,-2.5});
 Shape& Shape174 =  Shape();
 Appearance& Appearance175 =  Appearance();
 Appearance175.setUSE(CString("rope"));
@@ -756,10 +757,10 @@ Shape174.addChild(&Appearance175);
 Extrusion& Extrusion176 =  Extrusion();
 Extrusion176.setBeginCap(False);
 Extrusion176.setCreaseAngle(0.76);
-Extrusion176.setCrossSection(new float[34]{0.1,0,0.092,-0.038,0.071,-0.071,0.038,-0.092,0,-0.1,-0.038,-0.092,-0.071,-0.071,-0.092,-0.038,-0.1,0,-0.092,0.038,-0.071,0.071,-0.038,0.092,0,0.1,0.038,0.092,0.071,0.071,0.092,0.038,0.1,0}, 34);
+Extrusion176.setCrossSection(new float[34]{0.1,0.0,0.092,-0.038,0.071,-0.071,0.038,-0.092,0.0,-0.1,-0.038,-0.092,-0.071,-0.071,-0.092,-0.038,-0.1,0.0,-0.092,0.038,-0.071,0.071,-0.038,0.092,0.0,0.1,0.038,0.092,0.071,0.071,0.092,0.038,0.1,0.0}, 34);
 Extrusion176.setEndCap(False);
 Extrusion176.setSolid(False);
-Extrusion176.setSpine(new float[6]{-33,0.9,2.5,-18.5,1.9,2.55}, 6);
+Extrusion176.setSpine(new float[6]{-33.0,0.9,2.5,-18.5,1.9,2.55}, 6);
 Shape174.setGeometry(&Extrusion176);
 
 Transform173.addChild(&Shape174);
@@ -772,7 +773,7 @@ Shape177.addChild(&Appearance178);
 Extrusion& Extrusion179 =  Extrusion();
 Extrusion179.setBeginCap(False);
 Extrusion179.setCreaseAngle(0.76);
-Extrusion179.setCrossSection(new float[34]{0.1,0,0.092,-0.038,0.071,-0.071,0.038,-0.092,0,-0.1,-0.038,-0.092,-0.071,-0.071,-0.092,-0.038,-0.1,0,-0.092,0.038,-0.071,0.071,-0.038,0.092,0,0.1,0.038,0.092,0.071,0.071,0.092,0.038,0.1,0}, 34);
+Extrusion179.setCrossSection(new float[34]{0.1,0.0,0.092,-0.038,0.071,-0.071,0.038,-0.092,0.0,-0.1,-0.038,-0.092,-0.071,-0.071,-0.092,-0.038,-0.1,0.0,-0.092,0.038,-0.071,0.071,-0.038,0.092,0.0,0.1,0.038,0.092,0.071,0.071,0.092,0.038,0.1,0.0}, 34);
 Extrusion179.setEndCap(False);
 Extrusion179.setSolid(False);
 Extrusion179.setSpine(new float[6]{-35.7,-0.8,2.5,-18.8,-0.8,2.55}, 6);
@@ -786,15 +787,15 @@ Transform171.addChild(&Transform172);
 
 Transform& Transform180 =  Transform();
 Transform180.setDEF(CString("sling"));
-Transform180.setRotation(new float[4]{0,0,1,-0.82});
-Transform180.setTranslation(new float[3]{-4,-15.3,0});
+Transform180.setRotation(new float[4]{0.0,0.0,1.0,-0.82});
+Transform180.setTranslation(new float[3]{-4.0,-15.3,0.0});
 Transform& Transform181 =  Transform();
 Transform& Transform182 =  Transform();
-Transform182.setRotation(new float[4]{0,1,0,-1.57});
-Transform182.setScale(new float[3]{1,1.3,1});
-Transform182.setTranslation(new float[3]{0.5,0,-1});
+Transform182.setRotation(new float[4]{0.0,1.0,0.0,-1.57});
+Transform182.setScale(new float[3]{1.0,1.3,1.0});
+Transform182.setTranslation(new float[3]{0.5,0.0,-1.0});
 Transform& Transform183 =  Transform();
-Transform183.setRotation(new float[4]{0,0,1,1.57});
+Transform183.setRotation(new float[4]{0.0,0.0,1.0,1.57});
 Transform& Transform184 =  Transform();
 Transform184.setScale(new float[3]{0.3,0.3,0.3});
 Shape& Shape185 =  Shape();
@@ -808,21 +809,21 @@ Appearance186.addChild(&Material187);
 Shape185.addChild(&Appearance186);
 
 Extrusion& Extrusion188 =  Extrusion();
-Extrusion188.setCrossSection(new float[28]{0,0,0,5,0.5,7,1,8,2,9,3,11,3.5,11.2,4,11,5,9,6,8,6.5,7,6.7,5,6.7,0,0,0}, 28);
-Extrusion188.setSpine(new float[6]{0,0,0,0.1,0,0}, 6);
+Extrusion188.setCrossSection(new float[28]{0.0,0.0,0.0,5.0,0.5,7.0,1.0,8.0,2.0,9.0,3.0,11.0,3.5,11.2,4.0,11.0,5.0,9.0,6.0,8.0,6.5,7.0,6.7,5.0,6.7,0.0,0.0,0.0}, 28);
+Extrusion188.setSpine(new float[6]{0.0,0.0,0.0,0.1,0.0,0.0}, 6);
 Shape185.setGeometry(&Extrusion188);
 
 Transform184.addChild(&Shape185);
 
 Transform& Transform189 =  Transform();
 Transform189.setScale(new float[3]{0.3,0.3,0.3});
-Transform189.setTranslation(new float[3]{0,-3.5,11.5});
+Transform189.setTranslation(new float[3]{0.0,-3.5,11.5});
 Shape& Shape190 =  Shape();
 Shape190.setUSE(CString("Torus"));
 Transform189.addChild(&Shape190);
 
 Transform& Transform191 =  Transform();
-Transform191.setTranslation(new float[3]{0,0,2});
+Transform191.setTranslation(new float[3]{0.0,0.0,2.0});
 Shape& Shape192 =  Shape();
 Appearance& Appearance193 =  Appearance();
 Appearance193.setUSE(CString("rope"));
@@ -842,20 +843,20 @@ Transform183.addChild(&Transform184);
 
 Transform& Transform195 =  Transform();
 Transform195.setScale(new float[3]{0.3,0.3,0.3});
-Transform195.setTranslation(new float[3]{2,0,0});
+Transform195.setTranslation(new float[3]{2.0,0.0,0.0});
 Shape& Shape196 =  Shape();
 Shape196.setUSE(CString("halfsling"));
 Transform195.addChild(&Shape196);
 
 Transform& Transform197 =  Transform();
 Transform197.setScale(new float[3]{0.3,0.3,0.3});
-Transform197.setTranslation(new float[3]{0,-3.5,11.3});
+Transform197.setTranslation(new float[3]{0.0,-3.5,11.3});
 Shape& Shape198 =  Shape();
 Shape198.setUSE(CString("Torus"));
 Transform197.addChild(&Shape198);
 
 Transform& Transform199 =  Transform();
-Transform199.setTranslation(new float[3]{0,0,2});
+Transform199.setTranslation(new float[3]{0.0,0.0,2.0});
 Shape& Shape200 =  Shape();
 Appearance& Appearance201 =  Appearance();
 Appearance201.setUSE(CString("rope"));
@@ -874,15 +875,15 @@ Transform195.addChild(&Transform197);
 Transform183.addChild(&Transform195);
 
 Transform& Transform203 =  Transform();
-Transform203.setTranslation(new float[3]{1,-1,0});
+Transform203.setTranslation(new float[3]{1.0,-1.0,0.0});
 Shape& Shape204 =  Shape();
 Extrusion& Extrusion205 =  Extrusion();
 Extrusion205.setBeginCap(False);
 Extrusion205.setCreaseAngle(0.785);
-Extrusion205.setCrossSection(new float[18]{1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0}, 18);
+Extrusion205.setCrossSection(new float[18]{1.0,0.0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.0,-1.0,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.0,0.0}, 18);
 Extrusion205.setEndCap(False);
 Extrusion205.setSolid(False);
-Extrusion205.setSpine(new float[6]{0,-1,0,0,1,0}, 6);
+Extrusion205.setSpine(new float[6]{0.0,-1.0,0.0,0.0,1.0,0.0}, 6);
 Shape204.setGeometry(&Extrusion205);
 
 Appearance& Appearance206 =  Appearance();
@@ -910,7 +911,7 @@ Switch209.setDEF(CString("projectile"));
 Switch209.setWhichChoice(0);
 Group& Group210 =  Group();
 Transform& Transform211 =  Transform();
-Transform211.setTranslation(new float[3]{0,0.7,0});
+Transform211.setTranslation(new float[3]{0.0,0.7,0.0});
 Shape& Shape212 =  Shape();
 Sphere& Sphere213 =  Sphere();
 Sphere213.setRadius(0.7);
@@ -919,8 +920,8 @@ Shape212.setGeometry(&Sphere213);
 Appearance& Appearance214 =  Appearance();
 Appearance214.setDEF(CString("black"));
 Material& Material215 =  Material();
-Material215.setDiffuseColor(new float[3]{0,0,0});
-Material215.setSpecularColor(new float[3]{1,1,1});
+Material215.setDiffuseColor(new float[3]{0.0,0.0,0.0});
+Material215.setSpecularColor(new float[3]{1.0,1.0,1.0});
 Appearance214.addChild(&Material215);
 
 Shape212.addChild(&Appearance214);
@@ -943,9 +944,9 @@ Switch209.addChild(&Group216);
 
 Group& Group219 =  Group();
 Transform& Transform220 =  Transform();
-Transform220.setRotation(new float[4]{0,1,0,1.57});
+Transform220.setRotation(new float[4]{0.0,1.0,0.0,1.57});
 Transform220.setScale(new float[3]{0.4,0.4,0.4});
-Transform220.setTranslation(new float[3]{0,0.7,0});
+Transform220.setTranslation(new float[3]{0.0,0.7,0.0});
 Inline& Inline221 =  Inline();
 Inline221.setUrl(new CString[2]{CString("vrml_ginger.wrl"), CString("http://home.inreach.com/ntamura/vrml/vrml_ginger.wrl")}, 2);
 Transform220.addChild(&Inline221);
@@ -967,8 +968,8 @@ Transform129.addChild(&Transform171);
 Transform104.addChild(&Transform129);
 
 Transform& Transform222 =  Transform();
-Transform222.setRotation(new float[4]{1,0,0,1.57});
-Transform222.setTranslation(new float[3]{0,18,2.5});
+Transform222.setRotation(new float[4]{1.0,0.0,0.0,1.57});
+Transform222.setTranslation(new float[3]{0.0,18.0,2.5});
 Shape& Shape223 =  Shape();
 Cylinder& Cylinder224 =  Cylinder();
 Cylinder224.setHeight(8);
@@ -977,8 +978,8 @@ Shape223.setGeometry(&Cylinder224);
 
 Appearance& Appearance225 =  Appearance();
 Material& Material226 =  Material();
-Material226.setDiffuseColor(new float[3]{0,0,0});
-Material226.setSpecularColor(new float[3]{1,1,1});
+Material226.setDiffuseColor(new float[3]{0.0,0.0,0.0});
+Material226.setSpecularColor(new float[3]{1.0,1.0,1.0});
 Appearance225.addChild(&Material226);
 
 Shape223.addChild(&Appearance225);
@@ -991,10 +992,10 @@ Transform104.addChild(&Transform222);
 Transform& Transform227 =  Transform();
 Transform227.setDEF(CString("verticalweight"));
 Transform& Transform228 =  Transform();
-Transform228.setTranslation(new float[3]{4,18,1.8});
+Transform228.setTranslation(new float[3]{4.0,18.0,1.8});
 Shape& Shape229 =  Shape();
 Box& Box230 =  Box();
-Box230.setSize(new float[3]{1,10,0.5});
+Box230.setSize(new float[3]{1.0,10.0,0.5});
 Shape229.setGeometry(&Box230);
 
 Appearance& Appearance231 =  Appearance();
@@ -1006,10 +1007,10 @@ Transform228.addChild(&Shape229);
 Transform227.addChild(&Transform228);
 
 Transform& Transform232 =  Transform();
-Transform232.setTranslation(new float[3]{4,18,3.2});
+Transform232.setTranslation(new float[3]{4.0,18.0,3.2});
 Shape& Shape233 =  Shape();
 Box& Box234 =  Box();
-Box234.setSize(new float[3]{1,10,0.5});
+Box234.setSize(new float[3]{1.0,10.0,0.5});
 Shape233.setGeometry(&Box234);
 
 Appearance& Appearance235 =  Appearance();
@@ -1021,7 +1022,7 @@ Transform232.addChild(&Shape233);
 Transform227.addChild(&Transform232);
 
 Transform& Transform236 =  Transform();
-Transform236.setTranslation(new float[3]{4,14,2.5});
+Transform236.setTranslation(new float[3]{4.0,14.0,2.5});
 //CounterWeight
 Shape& Shape237 =  Shape();
 Cylinder& Cylinder238 =  Cylinder();
@@ -1031,8 +1032,8 @@ Shape237.setGeometry(&Cylinder238);
 
 Appearance& Appearance239 =  Appearance();
 Material& Material240 =  Material();
-Material240.setDiffuseColor(new float[3]{0,0,0});
-Material240.setSpecularColor(new float[3]{1,1,1});
+Material240.setDiffuseColor(new float[3]{0.0,0.0,0.0});
+Material240.setSpecularColor(new float[3]{1.0,1.0,1.0});
 Appearance239.addChild(&Material240);
 
 Shape237.addChild(&Appearance239);
@@ -1042,8 +1043,8 @@ Transform236.addChild(&Shape237);
 Transform227.addChild(&Transform236);
 
 Transform& Transform241 =  Transform();
-Transform241.setRotation(new float[4]{1,0,0,1.57});
-Transform241.setTranslation(new float[3]{4,22,2.5});
+Transform241.setRotation(new float[4]{1.0,0.0,0.0,1.57});
+Transform241.setTranslation(new float[3]{4.0,22.0,2.5});
 Shape& Shape242 =  Shape();
 Cylinder& Cylinder243 =  Cylinder();
 Cylinder243.setHeight(2.5);
@@ -1052,8 +1053,8 @@ Shape242.setGeometry(&Cylinder243);
 
 Appearance& Appearance244 =  Appearance();
 Material& Material245 =  Material();
-Material245.setDiffuseColor(new float[3]{0,0,0});
-Material245.setSpecularColor(new float[3]{1,1,1});
+Material245.setDiffuseColor(new float[3]{0.0,0.0,0.0});
+Material245.setSpecularColor(new float[3]{1.0,1.0,1.0});
 Appearance244.addChild(&Material245);
 
 Shape242.addChild(&Appearance244);
@@ -1065,19 +1066,19 @@ Transform227.addChild(&Transform241);
 Transform104.addChild(&Transform227);
 
 Transform& Transform246 =  Transform();
-Transform246.setRotation(new float[4]{0,0,1,1.57});
+Transform246.setRotation(new float[4]{0.0,0.0,1.0,1.57});
 Transform246.setScale(new float[3]{0.2,0.2,0.2});
-Transform246.setTranslation(new float[3]{-11.5,-1,2});
+Transform246.setTranslation(new float[3]{-11.5,-1.0,2.0});
 Transform& Transform247 =  Transform();
 Transform247.setDEF(CString("screw"));
-Transform247.setRotation(new float[4]{1,0,0,1.57});
+Transform247.setRotation(new float[4]{1.0,0.0,0.0,1.57});
 Shape& Shape248 =  Shape();
 Shape248.setUSE(CString("Torus"));
 Transform247.addChild(&Shape248);
 
 Transform& Transform249 =  Transform();
-Transform249.setRotation(new float[4]{1,0,0,-1.57});
-Transform249.setTranslation(new float[3]{0,0,7});
+Transform249.setRotation(new float[4]{1.0,0.0,0.0,-1.57});
+Transform249.setTranslation(new float[3]{0.0,0.0,7.0});
 Shape& Shape250 =  Shape();
 Cylinder& Cylinder251 =  Cylinder();
 Cylinder251.setHeight(10);
@@ -1086,7 +1087,7 @@ Shape250.setGeometry(&Cylinder251);
 
 Appearance& Appearance252 =  Appearance();
 Material& Material253 =  Material();
-Material253.setSpecularColor(new float[3]{1,1,1});
+Material253.setSpecularColor(new float[3]{1.0,1.0,1.0});
 Appearance252.addChild(&Material253);
 
 Shape250.addChild(&Appearance252);
@@ -1098,7 +1099,7 @@ Transform247.addChild(&Transform249);
 Transform246.addChild(&Transform247);
 
 Transform& Transform254 =  Transform();
-Transform254.setTranslation(new float[3]{0,0,7});
+Transform254.setTranslation(new float[3]{0.0,0.0,7.0});
 Transform& Transform255 =  Transform();
 Transform255.setUSE(CString("screw"));
 Transform254.addChild(&Transform255);
@@ -1108,8 +1109,8 @@ Transform246.addChild(&Transform254);
 //Release Pin
 Transform& Transform256 =  Transform();
 Transform256.setDEF(CString("Pin"));
-Transform256.setRotation(new float[4]{1,0,0,-1.57});
-Transform256.setTranslation(new float[3]{0,0,-3});
+Transform256.setRotation(new float[4]{1.0,0.0,0.0,-1.57});
+Transform256.setTranslation(new float[3]{0.0,0.0,-3.0});
 Transform& Transform257 =  Transform();
 Transform257.setUSE(CString("screw"));
 Transform256.addChild(&Transform257);
@@ -1119,7 +1120,7 @@ Transform246.addChild(&Transform256);
 Transform104.addChild(&Transform246);
 
 Transform& Transform258 =  Transform();
-Transform258.setTranslation(new float[3]{0,0,5});
+Transform258.setTranslation(new float[3]{0.0,0.0,5.0});
 Shape& Shape259 =  Shape();
 Shape259.setUSE(CString("plank"));
 Transform258.addChild(&Shape259);
@@ -1141,9 +1142,9 @@ Transform263.setUSE(CString("horizontalsupport"));
 Transform258.addChild(&Transform263);
 
 Transform& Transform264 =  Transform();
-Transform264.setRotation(new float[4]{0,1,0,1.57});
-Transform264.setScale(new float[3]{0.6,1,1});
-Transform264.setTranslation(new float[3]{0,-11,-2.5});
+Transform264.setRotation(new float[4]{0.0,1.0,0.0,1.57});
+Transform264.setScale(new float[3]{0.6,1.0,1.0});
+Transform264.setTranslation(new float[3]{0.0,-11.0,-2.5});
 Transform& Transform265 =  Transform();
 Transform265.setUSE(CString("horizontalsupport"));
 Transform264.addChild(&Transform265);
@@ -1151,11 +1152,11 @@ Transform264.addChild(&Transform265);
 Transform258.addChild(&Transform264);
 
 Transform& Transform266 =  Transform();
-Transform266.setRotation(new float[4]{0,0,1,-1.57});
-Transform266.setScale(new float[3]{0.6,1,1});
-Transform266.setTranslation(new float[3]{0,5,-10});
+Transform266.setRotation(new float[4]{0.0,0.0,1.0,-1.57});
+Transform266.setScale(new float[3]{0.6,1.0,1.0});
+Transform266.setTranslation(new float[3]{0.0,5.0,-10.0});
 Transform& Transform267 =  Transform();
-Transform267.setRotation(new float[4]{0,1,0,0.4});
+Transform267.setRotation(new float[4]{0.0,1.0,0.0,0.4});
 Shape& Shape268 =  Shape();
 Shape268.setUSE(CString("plank"));
 Transform267.addChild(&Shape268);
@@ -1165,7 +1166,7 @@ Transform266.addChild(&Transform267);
 Transform258.addChild(&Transform266);
 
 Transform& Transform269 =  Transform();
-Transform269.setTranslation(new float[3]{0,0,0.6});
+Transform269.setTranslation(new float[3]{0.0,0.0,0.6});
 Transform& Transform270 =  Transform();
 Transform270.setUSE(CString("panel"));
 Transform269.addChild(&Transform270);
@@ -1175,11 +1176,11 @@ Transform258.addChild(&Transform269);
 Transform104.addChild(&Transform258);
 
 Transform& Transform271 =  Transform();
-Transform271.setTranslation(new float[3]{10,-1,2.5});
+Transform271.setTranslation(new float[3]{10.0,-1.0,2.5});
 Shape& Shape272 =  Shape();
 Shape272.setDEF(CString("Axle"));
 Box& Box273 =  Box();
-Box273.setSize(new float[3]{1,1,8});
+Box273.setSize(new float[3]{1.0,1.0,8.0});
 Shape272.setGeometry(&Box273);
 
 Appearance& Appearance274 =  Appearance();
@@ -1189,8 +1190,8 @@ Shape272.addChild(&Appearance274);
 Transform271.addChild(&Shape272);
 
 Transform& Transform275 =  Transform();
-Transform275.setRotation(new float[4]{1,0,0,1.57});
-Transform275.setTranslation(new float[3]{0,0,4.5});
+Transform275.setRotation(new float[4]{1.0,0.0,0.0,1.57});
+Transform275.setTranslation(new float[3]{0.0,0.0,4.5});
 Shape& Shape276 =  Shape();
 Shape276.setDEF(CString("wheel"));
 Cylinder& Cylinder277 =  Cylinder();
@@ -1216,7 +1217,7 @@ Shape279.addChild(&Appearance281);
 Transform275.addChild(&Shape279);
 
 Transform& Transform282 =  Transform();
-Transform282.setTranslation(new float[3]{0,0.55,0});
+Transform282.setTranslation(new float[3]{0.0,0.55,0.0});
 Shape& Shape283 =  Shape();
 Shape283.setDEF(CString("hub"));
 Sphere& Sphere284 =  Sphere();
@@ -1234,8 +1235,8 @@ Transform275.addChild(&Transform282);
 Transform271.addChild(&Transform275);
 
 Transform& Transform286 =  Transform();
-Transform286.setRotation(new float[4]{1,0,0,1.57});
-Transform286.setTranslation(new float[3]{0,0,-4.5});
+Transform286.setRotation(new float[4]{1.0,0.0,0.0,1.57});
+Transform286.setTranslation(new float[3]{0.0,0.0,-4.5});
 Shape& Shape287 =  Shape();
 Shape287.setUSE(CString("wheel"));
 Transform286.addChild(&Shape287);
@@ -1245,7 +1246,7 @@ Shape288.setUSE(CString("tracks"));
 Transform286.addChild(&Shape288);
 
 Transform& Transform289 =  Transform();
-Transform289.setTranslation(new float[3]{0,-0.55,0});
+Transform289.setTranslation(new float[3]{0.0,-0.55,0.0});
 Shape& Shape290 =  Shape();
 Shape290.setUSE(CString("hub"));
 Transform289.addChild(&Shape290);
@@ -1257,14 +1258,14 @@ Transform271.addChild(&Transform286);
 Transform104.addChild(&Transform271);
 
 Transform& Transform291 =  Transform();
-Transform291.setTranslation(new float[3]{-10,-1,2.5});
+Transform291.setTranslation(new float[3]{-10.0,-1.0,2.5});
 Shape& Shape292 =  Shape();
 Shape292.setUSE(CString("Axle"));
 Transform291.addChild(&Shape292);
 
 Transform& Transform293 =  Transform();
-Transform293.setRotation(new float[4]{1,0,0,1.57});
-Transform293.setTranslation(new float[3]{0,0,4.5});
+Transform293.setRotation(new float[4]{1.0,0.0,0.0,1.57});
+Transform293.setTranslation(new float[3]{0.0,0.0,4.5});
 Shape& Shape294 =  Shape();
 Shape294.setUSE(CString("wheel"));
 Transform293.addChild(&Shape294);
@@ -1274,7 +1275,7 @@ Shape295.setUSE(CString("tracks"));
 Transform293.addChild(&Shape295);
 
 Transform& Transform296 =  Transform();
-Transform296.setTranslation(new float[3]{0,0.55,0});
+Transform296.setTranslation(new float[3]{0.0,0.55,0.0});
 Shape& Shape297 =  Shape();
 Shape297.setUSE(CString("hub"));
 Transform296.addChild(&Shape297);
@@ -1284,8 +1285,8 @@ Transform293.addChild(&Transform296);
 Transform291.addChild(&Transform293);
 
 Transform& Transform298 =  Transform();
-Transform298.setRotation(new float[4]{1,0,0,1.57});
-Transform298.setTranslation(new float[3]{0,0,-4.5});
+Transform298.setRotation(new float[4]{1.0,0.0,0.0,1.57});
+Transform298.setTranslation(new float[3]{0.0,0.0,-4.5});
 Shape& Shape299 =  Shape();
 Shape299.setUSE(CString("wheel"));
 Transform298.addChild(&Shape299);
@@ -1295,7 +1296,7 @@ Shape300.setUSE(CString("tracks"));
 Transform298.addChild(&Shape300);
 
 Transform& Transform301 =  Transform();
-Transform301.setTranslation(new float[3]{0,-0.55,0});
+Transform301.setTranslation(new float[3]{0.0,-0.55,0.0});
 Shape& Shape302 =  Shape();
 Shape302.setUSE(CString("hub"));
 Transform301.addChild(&Shape302);
@@ -1305,10 +1306,10 @@ Transform298.addChild(&Transform301);
 Transform291.addChild(&Transform298);
 
 Transform& Transform303 =  Transform();
-Transform303.setRotation(new float[4]{0,1,0,-0.6});
-Transform303.setTranslation(new float[3]{0,100,400});
+Transform303.setRotation(new float[4]{0.0,1.0,0.0,-0.6});
+Transform303.setTranslation(new float[3]{0.0,100.0,400.0});
 Transform& Transform304 =  Transform();
-Transform304.setTranslation(new float[3]{1,3,0});
+Transform304.setTranslation(new float[3]{1.0,3.0,0.0});
 Viewpoint& Viewpoint305 =  Viewpoint();
 Viewpoint305.setDescription(CString("Side"));
 Transform304.addChild(&Viewpoint305);
@@ -1329,10 +1330,10 @@ Switch309.setUSE(CString("projectilename"));
 Transform307.addChild(&Switch309);
 
 Transform& Transform310 =  Transform();
-Transform310.setTranslation(new float[3]{2.5,0,0});
+Transform310.setTranslation(new float[3]{2.5,0.0,0.0});
 Shape& Shape311 =  Shape();
 Box& Box312 =  Box();
-Box312.setSize(new float[3]{5,0.5,0.5});
+Box312.setSize(new float[3]{5.0,0.5,0.5});
 Shape311.setGeometry(&Box312);
 
 Appearance& Appearance313 =  Appearance();
@@ -1350,7 +1351,7 @@ Transform303.addChild(&Transform307);
 
 Transform& Transform315 =  Transform();
 Transform315.setScale(new float[3]{0.5,0.5,0.5});
-Transform315.setTranslation(new float[3]{0,-1,0});
+Transform315.setTranslation(new float[3]{0.0,-1.0,0.0});
 TouchSensor& TouchSensor316 =  TouchSensor();
 TouchSensor316.setUSE(CString("weightselector"));
 Transform315.addChild(&TouchSensor316);
@@ -1360,10 +1361,10 @@ Switch317.setUSE(CString("Weight"));
 Transform315.addChild(&Switch317);
 
 Transform& Transform318 =  Transform();
-Transform318.setTranslation(new float[3]{8,0,0});
+Transform318.setTranslation(new float[3]{8.0,0.0,0.0});
 Shape& Shape319 =  Shape();
 Box& Box320 =  Box();
-Box320.setSize(new float[3]{17,1,0.5});
+Box320.setSize(new float[3]{17.0,1.0,0.5});
 Shape319.setGeometry(&Box320);
 
 Appearance& Appearance321 =  Appearance();
@@ -1383,17 +1384,17 @@ Transform291.addChild(&Transform303);
 
 Transform& Transform323 =  Transform();
 Transform323.setDEF(CString("ProjectileTransform"));
-Transform323.setTranslation(new float[3]{14.25,1.25,0});
+Transform323.setTranslation(new float[3]{14.25,1.25,0.0});
 Switch& Switch324 =  Switch();
 Switch324.setUSE(CString("projectile"));
 Transform323.addChild(&Switch324);
 
 Transform& Transform325 =  Transform();
-Transform325.setRotation(new float[4]{0,1,0,1.57});
-Transform325.setTranslation(new float[3]{0,1,0});
+Transform325.setRotation(new float[4]{0.0,1.0,0.0,1.57});
+Transform325.setTranslation(new float[3]{0.0,1.0,0.0});
 Viewpoint& Viewpoint326 =  Viewpoint();
 Viewpoint326.setDescription(CString("Projectile Cam"));
-Viewpoint326.setPosition(new float[3]{0,0,15});
+Viewpoint326.setPosition(new float[3]{0.0,0.0,15.0});
 Transform325.addChild(&Viewpoint326);
 
 Transform323.addChild(&Transform325);
@@ -1401,10 +1402,10 @@ Transform323.addChild(&Transform325);
 Transform291.addChild(&Transform323);
 
 Transform& Transform327 =  Transform();
-Transform327.setTranslation(new float[3]{20,2,0});
+Transform327.setTranslation(new float[3]{20.0,2.0,0.0});
 Transform& Transform328 =  Transform();
 Transform328.setDEF(CString("Front"));
-Transform328.setRotation(new float[4]{0,1,0,1.57});
+Transform328.setRotation(new float[4]{0.0,1.0,0.0,1.57});
 Viewpoint& Viewpoint329 =  Viewpoint();
 Viewpoint329.setDescription(CString("Fore"));
 Transform328.addChild(&Viewpoint329);
@@ -1414,9 +1415,9 @@ Transform327.addChild(&Transform328);
 Transform291.addChild(&Transform327);
 
 Transform& Transform330 =  Transform();
-Transform330.setTranslation(new float[3]{-8,4,0});
+Transform330.setTranslation(new float[3]{-8.0,4.0,0.0});
 Transform& Transform331 =  Transform();
-Transform331.setRotation(new float[4]{0,1,0,-1.57});
+Transform331.setRotation(new float[4]{0.0,1.0,0.0,-1.57});
 Viewpoint& Viewpoint332 =  Viewpoint();
 Viewpoint332.setDescription(CString("Aft"));
 Transform331.addChild(&Viewpoint332);
@@ -1446,23 +1447,23 @@ field336.setType(CString("SFFloat"));
 Script333.addChild(&field336);
 
 
-Script333.setSourceCode(CString("ecmascript:")+
-_T("function initialize ()")+
-_T("{")+
-_T("	whichchoice =0;")+
-_T("	CounterWeight=100;")+
-_T("}")+
-_T("function set_boolean ( boolean_input, eventTime)")+
-_T("{")+
-_T("	if ( boolean_input== false ) { return; } // ignore the unclick")+
-_T("        whichchoice = whichchoice +1;")+
-_T("	if (whichchoice == 0)CounterWeight=50.00;")+
-_T("	if (whichchoice == 1)CounterWeight=500.00;")+
-_T("	if (whichchoice == 2)CounterWeight=1000.00;")+
-_T("	if (whichchoice == 3)CounterWeight=10000.00;")+
-_T("        if ( whichchoice ==4 ) { whichchoice = 0; CounterWeight=50; }")+
-_T("        Browser.println ('CounterWeight ='+CounterWeight);")+
-_T("}"));
+//Script333.setSourceCode(CString("ecmascript:")+
+//_T("function initialize ()")+
+//_T("{")+
+//_T("	whichchoice =0;")+
+//_T("	CounterWeight=100;")+
+//_T("}")+
+//_T("function set_boolean ( boolean_input, eventTime)")+
+//_T("{")+
+//_T("	if ( boolean_input== false ) { return; } // ignore the unclick")+
+//_T("        whichchoice = whichchoice +1;")+
+//_T("	if (whichchoice == 0)CounterWeight=50.00;")+
+//_T("	if (whichchoice == 1)CounterWeight=500.00;")+
+//_T("	if (whichchoice == 2)CounterWeight=1000.00;")+
+//_T("	if (whichchoice == 3)CounterWeight=10000.00;")+
+//_T("        if ( whichchoice ==4 ) { whichchoice = 0; CounterWeight=50; }")+
+//_T("        Browser.println ('CounterWeight ='+CounterWeight);")+
+//_T("}"));
 Transform291.addChild(&Script333);
 
 Script& Script337 =  Script();
@@ -1486,17 +1487,17 @@ field340.setType(CString("SFFloat"));
 Script337.addChild(&field340);
 
 
-Script337.setSourceCode(CString("ecmascript:")+
-_T("function set_boolean (boolean_input, eventTime)")+
-_T("{")+
-_T("	if ( boolean_input== false ) { return; } // ignore unclick")+
-_T("        whichchoice = whichchoice +1;")+
-_T("        if (whichchoice == 0)ProjectileWeight=10.00;")+
-_T("        if (whichchoice == 1)ProjectileWeight=1000.00;")+
-_T("	if (whichchoice == 2)ProjectileWeight=5;")+
-_T("	if ( whichchoice ==3 ) { whichchoice = 0; ProjectileWeight=10.00; }")+
-_T("	Browser.println ('Projectile Weight'+ProjectileWeight);")+
-_T("}"));
+//Script337.setSourceCode(CString("ecmascript:")+
+//_T("function set_boolean (boolean_input, eventTime)")+
+//_T("{")+
+//_T("	if ( boolean_input== false ) { return; } // ignore unclick")+
+//_T("        whichchoice = whichchoice +1;")+
+//_T("        if (whichchoice == 0)ProjectileWeight=10.00;")+
+//_T("        if (whichchoice == 1)ProjectileWeight=1000.00;")+
+//_T("	if (whichchoice == 2)ProjectileWeight=5;")+
+//_T("	if ( whichchoice ==3 ) { whichchoice = 0; ProjectileWeight=10.00; }")+
+//_T("	Browser.println ('Projectile Weight'+ProjectileWeight);")+
+//_T("}"));
 Transform291.addChild(&Script337);
 
 Script& Script341 =  Script();
@@ -1514,13 +1515,13 @@ field343.setType(CString("SFInt32"));
 Script341.addChild(&field343);
 
 
-Script341.setSourceCode(CString("ecmascript:")+
-_T("function set_boolean (boolean_input, eventTime)")+
-_T("{")+
-_T("	if ( boolean_input== false ) { return; } // ignore unclick")+
-_T("        whichchoice = whichchoice +1;")+
-_T("        if ( whichchoice ==2 )  whichchoice = 0;")+
-_T("}"));
+//Script341.setSourceCode(CString("ecmascript:")+
+//_T("function set_boolean (boolean_input, eventTime)")+
+//_T("{")+
+//_T("	if ( boolean_input== false ) { return; } // ignore unclick")+
+//_T("        whichchoice = whichchoice +1;")+
+//_T("        if ( whichchoice ==2 )  whichchoice = 0;")+
+//_T("}"));
 Transform291.addChild(&Script341);
 
 Script& Script344 =  Script();
@@ -1570,42 +1571,42 @@ field351.setType(CString("SFVec3f"));
 Script344.addChild(&field351);
 
 
-Script344.setSourceCode(CString("ecmascript:")+
-_T("function initialize ()")+
-_T("{")+
-_T("	MassCounterWeight=100;")+
-_T("	MassProjectileWeight=10;")+
-_T("	Browser.println ('MassCounterWeight =' + MassCounterWeight);")+
-_T("	Browser.println ('MassProjectileWeight =' + MassProjectileWeight);")+
-_T("}")+
-_T("function set_MassProjectileWeight (value, timestamp)")+
-_T("{")+
-_T("	MassProjectileWeight = value;")+
-_T("	Browser.println ('new MassProjectileWeight =' + MassProjectileWeight);")+
-_T("}")+
-_T("function set_MassCounterWeight (value2, timestamp)")+
-_T("{")+
-_T("	MassCounterWeight = value2;")+
-_T("	Browser.println ('new MassCounterWeight =' + MassCounterWeight);")+
-_T("}")+
-_T("function set_fraction ( fraction, eventTime )")+
-_T("{")+
-_T("	var TrebuchetHeight=45;")+
-_T("	var Height =25;")+
-_T("      	x = (2*(MassCounterWeight/MassProjectileWeight)*Height*fraction)-.5*TrebuchetHeight;")+
-_T("	// start at TrebuchetHeight and keep along z axis (z=zero)")+
-_T("	y =  (MassCounterWeight/MassProjectileWeight)*Height*Math.sin(fraction*3.14);")+
-_T("        z = 0;")+
-_T("        transparent = new SFVec3f (1,1,1);")+
-_T("     if (y <1.5*TrebuchetHeight  )if (x<TrebuchetHeight)")+
-_T("		{")+
-_T("		x=x-10;")+
-_T("		y=y+1;")+
-_T("		transparent = new SFVec3f(.01, .01, .01);")+
-_T("			}")+
-_T("	value_changed = new SFVec3f (x, y, z);")+
-_T("	Browser.println ('x=' + value_changed[0] + ' y=' + value_changed[1] + ' z=' + value_changed[2]);")+
-_T("}"));
+//Script344.setSourceCode(CString("ecmascript:")+
+//_T("function initialize ()")+
+//_T("{")+
+//_T("	MassCounterWeight=100;")+
+//_T("	MassProjectileWeight=10;")+
+//_T("	Browser.println ('MassCounterWeight =' + MassCounterWeight);")+
+//_T("	Browser.println ('MassProjectileWeight =' + MassProjectileWeight);")+
+//_T("}")+
+//_T("function set_MassProjectileWeight (value, timestamp)")+
+//_T("{")+
+//_T("	MassProjectileWeight = value;")+
+//_T("	Browser.println ('new MassProjectileWeight =' + MassProjectileWeight);")+
+//_T("}")+
+//_T("function set_MassCounterWeight (value2, timestamp)")+
+//_T("{")+
+//_T("	MassCounterWeight = value2;")+
+//_T("	Browser.println ('new MassCounterWeight =' + MassCounterWeight);")+
+//_T("}")+
+//_T("function set_fraction ( fraction, eventTime )")+
+//_T("{")+
+//_T("	var TrebuchetHeight=45;")+
+//_T("	var Height =25;")+
+//_T("      	x = (2*(MassCounterWeight/MassProjectileWeight)*Height*fraction)-.5*TrebuchetHeight;")+
+//_T("	// start at TrebuchetHeight and keep along z axis (z=zero)")+
+//_T("	y =  (MassCounterWeight/MassProjectileWeight)*Height*Math.sin(fraction*3.14);")+
+//_T("        z = 0;")+
+//_T("        transparent = new SFVec3f (1,1,1);")+
+//_T("     if (y <1.5*TrebuchetHeight  )if (x<TrebuchetHeight)")+
+//_T("		{")+
+//_T("		x=x-10;")+
+//_T("		y=y+1;")+
+//_T("		transparent = new SFVec3f(.01, .01, .01);")+
+//_T("			}")+
+//_T("	value_changed = new SFVec3f (x, y, z);")+
+//_T("	Browser.println ('x=' + value_changed[0] + ' y=' + value_changed[1] + ' z=' + value_changed[2]);")+
+//_T("}"));
 Transform291.addChild(&Script344);
 
 Transform104.addChild(&Transform291);
@@ -1619,32 +1620,32 @@ Scene17.addChild(&TimeSensor352);
 
 PositionInterpolator& PositionInterpolator353 =  PositionInterpolator();
 PositionInterpolator353.setDEF(CString("verticalweightpath"));
-PositionInterpolator353.setKey(new float[6]{0,0.1,0.2,0.2,0.3,0.9}, 6);
-PositionInterpolator353.setKeyValue(new float[18]{1.4,1.6,0,1,-8,0,-3.5,-12,0,-3.5,-12,0,1.2,-8,0,1.4,1.6,0}, 18);
+PositionInterpolator353.setKey(new float[6]{0.0,0.1,0.2,0.2,0.3,0.9}, 6);
+PositionInterpolator353.setKeyValue(new float[18]{1.4,1.6,0.0,1.0,-8.0,0.0,-3.5,-12.0,0.0,-3.5,-12.0,0.0,1.2,-8.0,0.0,1.4,1.6,0.0}, 18);
 Scene17.addChild(&PositionInterpolator353);
 
 OrientationInterpolator& OrientationInterpolator354 =  OrientationInterpolator();
 OrientationInterpolator354.setDEF(CString("flingerangles"));
-OrientationInterpolator354.setKey(new float[6]{0,0.1,0.2,0.2,0.3,0.9}, 6);
-OrientationInterpolator354.setKeyValue(new float[24]{0,0,1,0.82,0,0,1,-0.77,0,0,1,-1.57,0,0,1,-1.57,0,0,1,-0.77,0,0,1,0.82}, 24);
+OrientationInterpolator354.setKey(new float[6]{0.0,0.1,0.2,0.2,0.3,0.9}, 6);
+OrientationInterpolator354.setKeyValue(new float[24]{0.0,0.0,1.0,0.82,0.0,0.0,1.0,-0.77,0.0,0.0,1.0,-1.57,0.0,0.0,1.0,-1.57,0.0,0.0,1.0,-0.77,0.0,0.0,1.0,0.82}, 24);
 Scene17.addChild(&OrientationInterpolator354);
 
 PositionInterpolator& PositionInterpolator355 =  PositionInterpolator();
 PositionInterpolator355.setDEF(CString("pinpath"));
-PositionInterpolator355.setKey(new float[4]{0,0.01,0.95,1}, 4);
-PositionInterpolator355.setKeyValue(new float[12]{0,0,-3,0,0,-10,0,0,-10,0,0,-3}, 12);
+PositionInterpolator355.setKey(new float[4]{0.0,0.01,0.95,1.0}, 4);
+PositionInterpolator355.setKeyValue(new float[12]{0.0,0.0,-3.0,0.0,0.0,-10.0,0.0,0.0,-10.0,0.0,0.0,-3.0}, 12);
 Scene17.addChild(&PositionInterpolator355);
 
 OrientationInterpolator& OrientationInterpolator356 =  OrientationInterpolator();
 OrientationInterpolator356.setDEF(CString("RnSAngels"));
-OrientationInterpolator356.setKey(new float[3]{0,0.7,1}, 3);
-OrientationInterpolator356.setKeyValue(new float[12]{0,0,1,0,0,0,1,-3.14,0,0,1,0}, 12);
+OrientationInterpolator356.setKey(new float[3]{0.0,0.7,1.0}, 3);
+OrientationInterpolator356.setKeyValue(new float[12]{0.0,0.0,1.0,0.0,0.0,0.0,1.0,-3.14,0.0,0.0,1.0,0.0}, 12);
 Scene17.addChild(&OrientationInterpolator356);
 
 PositionInterpolator& PositionInterpolator357 =  PositionInterpolator();
 PositionInterpolator357.setDEF(CString("invisiable"));
-PositionInterpolator357.setKey(new float[4]{0,0.2,0.98,0.99}, 4);
-PositionInterpolator357.setKeyValue(new float[12]{1,1,1,0.01,0.01,0.01,0.01,0.01,0.01,1,1,1}, 12);
+PositionInterpolator357.setKey(new float[4]{0.0,0.2,0.98,0.99}, 4);
+PositionInterpolator357.setKeyValue(new float[12]{1.0,1.0,1.0,0.01,0.01,0.01,0.01,0.01,0.01,1.0,1.0,1.0}, 12);
 Scene17.addChild(&PositionInterpolator357);
 
 ROUTE& ROUTE358 =  ROUTE();
@@ -1831,4 +1832,4 @@ Scene17.addChild(&ROUTE383);
 
 X3D0.setScene(&Scene17);
 
-}
+//}

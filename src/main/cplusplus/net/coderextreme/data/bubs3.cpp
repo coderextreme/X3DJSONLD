@@ -1,10 +1,11 @@
-#define False false
-#define True true
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/X3DLib.h"
-int main(int argc, char ** argv) {
+//#define False false
+//#define True true
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/X3DLib.h"
+//int main(int argc, char ** argv) 
+//{
 X3D& X3D0 =  X3D();
 X3D0.setProfile(CString("Immersive"));
 X3D0.setVersion(CString("3.3"));
@@ -42,8 +43,8 @@ NavigationInfo8.setType(new CString[1]{CString("EXAMINE")}, 1);
 Scene7.addChild(&NavigationInfo8);
 
 Viewpoint& Viewpoint9 =  Viewpoint();
-Viewpoint9.setPosition(new float[3]{0,0,4});
-Viewpoint9.setOrientation(new float[4]{1,0,0,0});
+Viewpoint9.setPosition(new float[3]{0.0,0.0,4.0});
+Viewpoint9.setOrientation(new float[4]{1.0,0.0,0.0,0.0});
 Viewpoint9.setDescription(CString("Bubbles in action"));
 Scene7.addChild(&Viewpoint9);
 
@@ -65,7 +66,7 @@ Shape12.setGeometry(&Sphere13);
 
 Appearance& Appearance14 =  Appearance();
 Material& Material15 =  Material();
-Material15.setDiffuseColor(new float[3]{1,0,0});
+Material15.setDiffuseColor(new float[3]{1.0,0.0,0.0});
 Material15.setTransparency(0.2);
 Appearance14.addChild(&Material15);
 
@@ -110,43 +111,43 @@ field21.setType(CString("SFFloat"));
 Script16.addChild(&field21);
 
 
-Script16.setSourceCode(CString("ecmascript:")+
-_T("function initialize() {")+
-_T("    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);")+
-_T("    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);")+
-_T("}")+
-_T("function set_fraction(value) {")+
-_T("    translation = new SFVec3f(	translation.x + velocity.x, translation.y + velocity.y, translation.z + velocity.z);")+
-_T("    scale = new SFVec3f(scale.x + scalvel.x, scale.y + scalvel.y, scale.z + scalvel.z);")+
-_T("    // if you get to far away or too big, explode")+
-_T("    if ( Math.abs(translation.x) > 256) {")+
-_T("	translation.x = 0;")+
-_T("	initialize();")+
-_T("    }")+
-_T("    if ( Math.abs(translation.y) > 256) {")+
-_T("	translation.y = 0;")+
-_T("	initialize();")+
-_T("    }")+
-_T("    if ( Math.abs(translation.z) > 256) {")+
-_T("	translation.z = 0;")+
-_T("	initialize();")+
-_T("    }")+
-_T("    if (Math.abs(scale.x) > 20) {")+
-_T("	scale.x = scale.x/20;")+
-_T("	translation.x = 0;")+
-_T("	initialize();")+
-_T("    }")+
-_T("    if (Math.abs(scale.y) > 20) {")+
-_T("	scale.y = scale.y/20;")+
-_T("	translation.y = 0;")+
-_T("	initialize();")+
-_T("    }")+
-_T("    if (Math.abs(scale.z) > 20) {")+
-_T("	scale.z = scale.z/20;")+
-_T("	translation.z = 0;")+
-_T("	initialize();")+
-_T("    }")+
-_T("}"));
+//Script16.setSourceCode(CString("ecmascript:")+
+//_T("function initialize() {")+
+//_T("    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);")+
+//_T("    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);")+
+//_T("}")+
+//_T("function set_fraction(value) {")+
+//_T("    translation = new SFVec3f(	translation.x + velocity.x, translation.y + velocity.y, translation.z + velocity.z);")+
+//_T("    scale = new SFVec3f(scale.x + scalvel.x, scale.y + scalvel.y, scale.z + scalvel.z);")+
+//_T("    // if you get to far away or too big, explode")+
+//_T("    if ( Math.abs(translation.x) > 256) {")+
+//_T("	translation.x = 0;")+
+//_T("	initialize();")+
+//_T("    }")+
+//_T("    if ( Math.abs(translation.y) > 256) {")+
+//_T("	translation.y = 0;")+
+//_T("	initialize();")+
+//_T("    }")+
+//_T("    if ( Math.abs(translation.z) > 256) {")+
+//_T("	translation.z = 0;")+
+//_T("	initialize();")+
+//_T("    }")+
+//_T("    if (Math.abs(scale.x) > 20) {")+
+//_T("	scale.x = scale.x/20;")+
+//_T("	translation.x = 0;")+
+//_T("	initialize();")+
+//_T("    }")+
+//_T("    if (Math.abs(scale.y) > 20) {")+
+//_T("	scale.y = scale.y/20;")+
+//_T("	translation.y = 0;")+
+//_T("	initialize();")+
+//_T("    }")+
+//_T("    if (Math.abs(scale.z) > 20) {")+
+//_T("	scale.z = scale.z/20;")+
+//_T("	translation.z = 0;")+
+//_T("	initialize();")+
+//_T("    }")+
+//_T("}"));
 Transform11.addChild(&Script16);
 
 TimeSensor& TimeSensor22 =  TimeSensor();
@@ -187,7 +188,7 @@ Shape27.setGeometry(&Sphere28);
 
 Appearance& Appearance29 =  Appearance();
 Material& Material30 =  Material();
-Material30.setDiffuseColor(new float[3]{1,0,0});
+Material30.setDiffuseColor(new float[3]{1.0,0.0,0.0});
 Material30.setTransparency(0.2);
 Appearance29.addChild(&Material30);
 
@@ -232,43 +233,43 @@ field36.setType(CString("SFFloat"));
 Script31.addChild(&field36);
 
 
-Script31.setSourceCode(CString("ecmascript:")+
-_T("function initialize() {")+
-_T("    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);")+
-_T("    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);")+
-_T("}")+
-_T("function set_fraction(value) {")+
-_T("    translation = new SFVec3f(	translation.x + velocity.x, translation.y + velocity.y, translation.z + velocity.z);")+
-_T("    scale = new SFVec3f(scale.x + scalvel.x, scale.y + scalvel.y, scale.z + scalvel.z);")+
-_T("    // if you get to far away or too big, explode")+
-_T("    if ( Math.abs(translation.x) > 256) {")+
-_T("	translation.x = 0;")+
-_T("	initialize();")+
-_T("    }")+
-_T("    if ( Math.abs(translation.y) > 256) {")+
-_T("	translation.y = 0;")+
-_T("	initialize();")+
-_T("    }")+
-_T("    if ( Math.abs(translation.z) > 256) {")+
-_T("	translation.z = 0;")+
-_T("	initialize();")+
-_T("    }")+
-_T("    if (Math.abs(scale.x) > 20) {")+
-_T("	scale.x = scale.x/20;")+
-_T("	translation.x = 0;")+
-_T("	initialize();")+
-_T("    }")+
-_T("    if (Math.abs(scale.y) > 20) {")+
-_T("	scale.y = scale.y/20;")+
-_T("	translation.y = 0;")+
-_T("	initialize();")+
-_T("    }")+
-_T("    if (Math.abs(scale.z) > 20) {")+
-_T("	scale.z = scale.z/20;")+
-_T("	translation.z = 0;")+
-_T("	initialize();")+
-_T("    }")+
-_T("}"));
+//Script31.setSourceCode(CString("ecmascript:")+
+//_T("function initialize() {")+
+//_T("    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);")+
+//_T("    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);")+
+//_T("}")+
+//_T("function set_fraction(value) {")+
+//_T("    translation = new SFVec3f(	translation.x + velocity.x, translation.y + velocity.y, translation.z + velocity.z);")+
+//_T("    scale = new SFVec3f(scale.x + scalvel.x, scale.y + scalvel.y, scale.z + scalvel.z);")+
+//_T("    // if you get to far away or too big, explode")+
+//_T("    if ( Math.abs(translation.x) > 256) {")+
+//_T("	translation.x = 0;")+
+//_T("	initialize();")+
+//_T("    }")+
+//_T("    if ( Math.abs(translation.y) > 256) {")+
+//_T("	translation.y = 0;")+
+//_T("	initialize();")+
+//_T("    }")+
+//_T("    if ( Math.abs(translation.z) > 256) {")+
+//_T("	translation.z = 0;")+
+//_T("	initialize();")+
+//_T("    }")+
+//_T("    if (Math.abs(scale.x) > 20) {")+
+//_T("	scale.x = scale.x/20;")+
+//_T("	translation.x = 0;")+
+//_T("	initialize();")+
+//_T("    }")+
+//_T("    if (Math.abs(scale.y) > 20) {")+
+//_T("	scale.y = scale.y/20;")+
+//_T("	translation.y = 0;")+
+//_T("	initialize();")+
+//_T("    }")+
+//_T("    if (Math.abs(scale.z) > 20) {")+
+//_T("	scale.z = scale.z/20;")+
+//_T("	translation.z = 0;")+
+//_T("	initialize();")+
+//_T("    }")+
+//_T("}"));
 Transform26.addChild(&Script31);
 
 TimeSensor& TimeSensor37 =  TimeSensor();
@@ -309,7 +310,7 @@ Shape42.setGeometry(&Sphere43);
 
 Appearance& Appearance44 =  Appearance();
 Material& Material45 =  Material();
-Material45.setDiffuseColor(new float[3]{1,0,0});
+Material45.setDiffuseColor(new float[3]{1.0,0.0,0.0});
 Material45.setTransparency(0.2);
 Appearance44.addChild(&Material45);
 
@@ -354,43 +355,43 @@ field51.setType(CString("SFFloat"));
 Script46.addChild(&field51);
 
 
-Script46.setSourceCode(CString("ecmascript:")+
-_T("function initialize() {")+
-_T("    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);")+
-_T("    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);")+
-_T("}")+
-_T("function set_fraction(value) {")+
-_T("    translation = new SFVec3f(	translation.x + velocity.x, translation.y + velocity.y, translation.z + velocity.z);")+
-_T("    scale = new SFVec3f(scale.x + scalvel.x, scale.y + scalvel.y, scale.z + scalvel.z);")+
-_T("    // if you get to far away or too big, explode")+
-_T("    if ( Math.abs(translation.x) > 256) {")+
-_T("	translation.x = 0;")+
-_T("	initialize();")+
-_T("    }")+
-_T("    if ( Math.abs(translation.y) > 256) {")+
-_T("	translation.y = 0;")+
-_T("	initialize();")+
-_T("    }")+
-_T("    if ( Math.abs(translation.z) > 256) {")+
-_T("	translation.z = 0;")+
-_T("	initialize();")+
-_T("    }")+
-_T("    if (Math.abs(scale.x) > 20) {")+
-_T("	scale.x = scale.x/20;")+
-_T("	translation.x = 0;")+
-_T("	initialize();")+
-_T("    }")+
-_T("    if (Math.abs(scale.y) > 20) {")+
-_T("	scale.y = scale.y/20;")+
-_T("	translation.y = 0;")+
-_T("	initialize();")+
-_T("    }")+
-_T("    if (Math.abs(scale.z) > 20) {")+
-_T("	scale.z = scale.z/20;")+
-_T("	translation.z = 0;")+
-_T("	initialize();")+
-_T("    }")+
-_T("}"));
+//Script46.setSourceCode(CString("ecmascript:")+
+//_T("function initialize() {")+
+//_T("    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);")+
+//_T("    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);")+
+//_T("}")+
+//_T("function set_fraction(value) {")+
+//_T("    translation = new SFVec3f(	translation.x + velocity.x, translation.y + velocity.y, translation.z + velocity.z);")+
+//_T("    scale = new SFVec3f(scale.x + scalvel.x, scale.y + scalvel.y, scale.z + scalvel.z);")+
+//_T("    // if you get to far away or too big, explode")+
+//_T("    if ( Math.abs(translation.x) > 256) {")+
+//_T("	translation.x = 0;")+
+//_T("	initialize();")+
+//_T("    }")+
+//_T("    if ( Math.abs(translation.y) > 256) {")+
+//_T("	translation.y = 0;")+
+//_T("	initialize();")+
+//_T("    }")+
+//_T("    if ( Math.abs(translation.z) > 256) {")+
+//_T("	translation.z = 0;")+
+//_T("	initialize();")+
+//_T("    }")+
+//_T("    if (Math.abs(scale.x) > 20) {")+
+//_T("	scale.x = scale.x/20;")+
+//_T("	translation.x = 0;")+
+//_T("	initialize();")+
+//_T("    }")+
+//_T("    if (Math.abs(scale.y) > 20) {")+
+//_T("	scale.y = scale.y/20;")+
+//_T("	translation.y = 0;")+
+//_T("	initialize();")+
+//_T("    }")+
+//_T("    if (Math.abs(scale.z) > 20) {")+
+//_T("	scale.z = scale.z/20;")+
+//_T("	translation.z = 0;")+
+//_T("	initialize();")+
+//_T("    }")+
+//_T("}"));
 Transform41.addChild(&Script46);
 
 TimeSensor& TimeSensor52 =  TimeSensor();
@@ -431,7 +432,7 @@ Shape57.setGeometry(&Sphere58);
 
 Appearance& Appearance59 =  Appearance();
 Material& Material60 =  Material();
-Material60.setDiffuseColor(new float[3]{1,0,0});
+Material60.setDiffuseColor(new float[3]{1.0,0.0,0.0});
 Material60.setTransparency(0.2);
 Appearance59.addChild(&Material60);
 
@@ -476,43 +477,43 @@ field66.setType(CString("SFFloat"));
 Script61.addChild(&field66);
 
 
-Script61.setSourceCode(CString("ecmascript:")+
-_T("function initialize() {")+
-_T("    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);")+
-_T("    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);")+
-_T("}")+
-_T("function set_fraction(value) {")+
-_T("    translation = new SFVec3f(	translation.x + velocity.x, translation.y + velocity.y, translation.z + velocity.z);")+
-_T("    scale = new SFVec3f(scale.x + scalvel.x, scale.y + scalvel.y, scale.z + scalvel.z);")+
-_T("    // if you get to far away or too big, explode")+
-_T("    if ( Math.abs(translation.x) > 256) {")+
-_T("	translation.x = 0;")+
-_T("	initialize();")+
-_T("    }")+
-_T("    if ( Math.abs(translation.y) > 256) {")+
-_T("	translation.y = 0;")+
-_T("	initialize();")+
-_T("    }")+
-_T("    if ( Math.abs(translation.z) > 256) {")+
-_T("	translation.z = 0;")+
-_T("	initialize();")+
-_T("    }")+
-_T("    if (Math.abs(scale.x) > 20) {")+
-_T("	scale.x = scale.x/20;")+
-_T("	translation.x = 0;")+
-_T("	initialize();")+
-_T("    }")+
-_T("    if (Math.abs(scale.y) > 20) {")+
-_T("	scale.y = scale.y/20;")+
-_T("	translation.y = 0;")+
-_T("	initialize();")+
-_T("    }")+
-_T("    if (Math.abs(scale.z) > 20) {")+
-_T("	scale.z = scale.z/20;")+
-_T("	translation.z = 0;")+
-_T("	initialize();")+
-_T("    }")+
-_T("}"));
+//Script61.setSourceCode(CString("ecmascript:")+
+//_T("function initialize() {")+
+//_T("    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);")+
+//_T("    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);")+
+//_T("}")+
+//_T("function set_fraction(value) {")+
+//_T("    translation = new SFVec3f(	translation.x + velocity.x, translation.y + velocity.y, translation.z + velocity.z);")+
+//_T("    scale = new SFVec3f(scale.x + scalvel.x, scale.y + scalvel.y, scale.z + scalvel.z);")+
+//_T("    // if you get to far away or too big, explode")+
+//_T("    if ( Math.abs(translation.x) > 256) {")+
+//_T("	translation.x = 0;")+
+//_T("	initialize();")+
+//_T("    }")+
+//_T("    if ( Math.abs(translation.y) > 256) {")+
+//_T("	translation.y = 0;")+
+//_T("	initialize();")+
+//_T("    }")+
+//_T("    if ( Math.abs(translation.z) > 256) {")+
+//_T("	translation.z = 0;")+
+//_T("	initialize();")+
+//_T("    }")+
+//_T("    if (Math.abs(scale.x) > 20) {")+
+//_T("	scale.x = scale.x/20;")+
+//_T("	translation.x = 0;")+
+//_T("	initialize();")+
+//_T("    }")+
+//_T("    if (Math.abs(scale.y) > 20) {")+
+//_T("	scale.y = scale.y/20;")+
+//_T("	translation.y = 0;")+
+//_T("	initialize();")+
+//_T("    }")+
+//_T("    if (Math.abs(scale.z) > 20) {")+
+//_T("	scale.z = scale.z/20;")+
+//_T("	translation.z = 0;")+
+//_T("	initialize();")+
+//_T("    }")+
+//_T("}"));
 Transform56.addChild(&Script61);
 
 TimeSensor& TimeSensor67 =  TimeSensor();
@@ -546,4 +547,4 @@ Scene7.addChild(&Transform56);
 
 X3D0.setScene(&Scene7);
 
-}
+//}

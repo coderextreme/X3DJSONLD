@@ -1,10 +1,11 @@
-#define False false
-#define True true
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/X3DLib.h"
-int main(int argc, char ** argv) {
+//#define False false
+//#define True true
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/X3DLib.h"
+//int main(int argc, char ** argv) 
+//{
 X3D& X3D0 =  X3D();
 X3D0.setProfile(CString("Interchange"));
 X3D0.setVersion(CString("3.3"));
@@ -47,15 +48,15 @@ IndexedFaceSet10.setNormalIndex(new int32_t[14]{0,-1,0,-1,1,-1,2,-1,3,-1,4,-1,5,
 IndexedFaceSet10.setNormalPerVertex(False);
 IndexedFaceSet10.setColorIndex(new int[33]{0,0,0,-1,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1}, 33);
 Coordinate& Coordinate11 =  Coordinate();
-Coordinate11.setPoint(new float[12]{0,0,1,0,1,1,1,1,1,1,0,1}, 12);
+Coordinate11.setPoint(new float[12]{0.0,0.0,1.0,0.0,1.0,1.0,1.0,1.0,1.0,1.0,0.0,1.0}, 12);
 IndexedFaceSet10.setCoord(&Coordinate11);
 
 Normal& Normal12 =  Normal();
-Normal12.setVector(new float[18]{1,0,0,-1,0,0,0,1,0,0,0,-1,0,-1,0,0,0,1}, 18);
+Normal12.setVector(new float[18]{1.0,0.0,0.0,-1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,-1.0,0.0,-1.0,0.0,0.0,0.0,1.0}, 18);
 IndexedFaceSet10.setNormal(&Normal12);
 
 CColor& Color13 =  CColor();
-Color13.setColor(new float[3]{0,1,0}, 3);
+Color13.setColor(new float[3]{0.0,1.0,0.0}, 3);
 IndexedFaceSet10.setColor(&Color13);
 
 Shape9.setGeometry(&IndexedFaceSet10);
@@ -66,4 +67,4 @@ Scene7.addChild(&Group8);
 
 X3D0.setScene(&Scene7);
 
-}
+//}

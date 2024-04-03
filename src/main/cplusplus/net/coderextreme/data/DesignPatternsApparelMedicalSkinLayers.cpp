@@ -1,10 +1,11 @@
-#define False false
-#define True true
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/X3DLib.h"
-int main(int argc, char ** argv) {
+//#define False false
+//#define True true
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/X3DLib.h"
+//int main(int argc, char ** argv) 
+//{
 X3D& X3D0 =  X3D();
 X3D0.setProfile(CString("Immersive"));
 X3D0.setVersion(CString("4.0"));
@@ -92,7 +93,7 @@ WorldInfo18.setTitle(CString("HAnimHumanoid skin design patterns for apparel, me
 Scene17.addChild(&WorldInfo18);
 
 Background& Background19 =  Background();
-Background19.setSkyColor(new float[3]{0,0.6,0.6}, 3);
+Background19.setSkyColor(new float[3]{0.0,0.6,0.6}, 3);
 Scene17.addChild(&Background19);
 
 Group& Group20 =  Group();
@@ -110,8 +111,6 @@ HAnimHumanoid22.setDEF(CString("a_SimpleSkeleton"));
 HAnimHumanoid22.setVersion(CString("2.0"));
 HAnimJoint& HAnimJoint23 =  HAnimJoint();
 HAnimJoint23.X3DNode::setName(CString("humanoid_root"));
-HAnimJoint23.setUlimit(new float[3]{0,0,0}, 3);
-HAnimJoint23.setLlimit(new float[3]{0,0,0}, 3);
 HAnimSegment& HAnimSegment24 =  HAnimSegment();
 HAnimSegment24.X3DNode::setName(CString("sacrum"));
 Shape& Shape25 =  Shape();
@@ -144,8 +143,6 @@ HAnimHumanoid29.setDEF(CString("b_SimpleSkeletonMesh"));
 HAnimHumanoid29.setVersion(CString("2.0"));
 HAnimJoint& HAnimJoint30 =  HAnimJoint();
 HAnimJoint30.X3DNode::setName(CString("humanoid_root"));
-HAnimJoint30.setUlimit(new float[3]{0,0,0}, 3);
-HAnimJoint30.setLlimit(new float[3]{0,0,0}, 3);
 HAnimSegment& HAnimSegment31 =  HAnimSegment();
 HAnimSegment31.X3DNode::setName(CString("sacrum"));
 Shape& Shape32 =  Shape();
@@ -168,8 +165,6 @@ HAnimHumanoid34.setDEF(CString("c_SkinIndexedGeometry"));
 HAnimHumanoid34.setVersion(CString("2.0"));
 HAnimJoint& HAnimJoint35 =  HAnimJoint();
 HAnimJoint35.X3DNode::setName(CString("humanoid_root"));
-HAnimJoint35.setUlimit(new float[3]{0,0,0}, 3);
-HAnimJoint35.setLlimit(new float[3]{0,0,0}, 3);
 HAnimSegment& HAnimSegment36 =  HAnimSegment();
 HAnimSegment36.X3DNode::setName(CString("sacrum"));
 HAnimJoint35.addChildren(&HAnimSegment36);
@@ -189,8 +184,6 @@ HAnimHumanoid38.setDEF(CString("d_SkinShapeIndexedGeometry"));
 HAnimHumanoid38.setVersion(CString("2.0"));
 HAnimJoint& HAnimJoint39 =  HAnimJoint();
 HAnimJoint39.X3DNode::setName(CString("humanoid_root"));
-HAnimJoint39.setUlimit(new float[3]{0,0,0}, 3);
-HAnimJoint39.setLlimit(new float[3]{0,0,0}, 3);
 HAnimSegment& HAnimSegment40 =  HAnimSegment();
 HAnimSegment40.X3DNode::setName(CString("sacrum"));
 HAnimJoint39.addChildren(&HAnimSegment40);
@@ -213,8 +206,6 @@ HAnimHumanoid43.setDEF(CString("e_SkinSwitchShapeIndexedGeometry"));
 HAnimHumanoid43.setVersion(CString("2.0"));
 HAnimJoint& HAnimJoint44 =  HAnimJoint();
 HAnimJoint44.X3DNode::setName(CString("humanoid_root"));
-HAnimJoint44.setUlimit(new float[3]{0,0,0}, 3);
-HAnimJoint44.setLlimit(new float[3]{0,0,0}, 3);
 HAnimSegment& HAnimSegment45 =  HAnimSegment();
 HAnimSegment45.X3DNode::setName(CString("sacrum"));
 HAnimJoint44.addChildren(&HAnimSegment45);
@@ -243,8 +234,6 @@ HAnimHumanoid49.setDEF(CString("f_SynthesizedSkinShapeIndexedTwoPartGeometry"));
 HAnimHumanoid49.setVersion(CString("2.0"));
 HAnimJoint& HAnimJoint50 =  HAnimJoint();
 HAnimJoint50.X3DNode::setName(CString("humanoid_root"));
-HAnimJoint50.setUlimit(new float[3]{0,0,0}, 3);
-HAnimJoint50.setLlimit(new float[3]{0,0,0}, 3);
 HAnimSegment& HAnimSegment51 =  HAnimSegment();
 HAnimSegment51.X3DNode::setName(CString("sacrum"));
 HAnimJoint50.addChildren(&HAnimSegment51);
@@ -271,8 +260,6 @@ HAnimHumanoid55.setDEF(CString("g_ApparelSkinIndexedGeometryMultipleShapes"));
 HAnimHumanoid55.setVersion(CString("2.0"));
 HAnimJoint& HAnimJoint56 =  HAnimJoint();
 HAnimJoint56.X3DNode::setName(CString("humanoid_root"));
-HAnimJoint56.setUlimit(new float[3]{0,0,0}, 3);
-HAnimJoint56.setLlimit(new float[3]{0,0,0}, 3);
 HAnimSegment& HAnimSegment57 =  HAnimSegment();
 HAnimSegment57.X3DNode::setName(CString("sacrum"));
 HAnimJoint56.addChildren(&HAnimSegment57);
@@ -293,8 +280,6 @@ HAnimHumanoid59.setDEF(CString("h_AnatomySkinIndexedGeometryMultipleShapes"));
 HAnimHumanoid59.setVersion(CString("2.0"));
 HAnimJoint& HAnimJoint60 =  HAnimJoint();
 HAnimJoint60.X3DNode::setName(CString("humanoid_root"));
-HAnimJoint60.setUlimit(new float[3]{0,0,0}, 3);
-HAnimJoint60.setLlimit(new float[3]{0,0,0}, 3);
 HAnimSegment& HAnimSegment61 =  HAnimSegment();
 HAnimSegment61.X3DNode::setName(CString("sacrum"));
 HAnimJoint60.addChildren(&HAnimSegment61);
@@ -313,7 +298,7 @@ Scene17.addChild(&Group20);
 Viewpoint& Viewpoint63 =  Viewpoint();
 Viewpoint63.setDEF(CString("ViewHelpText"));
 Viewpoint63.setDescription(CString("Select text to see website"));
-Viewpoint63.setPosition(new float[3]{0,0,12});
+Viewpoint63.setPosition(new float[3]{0.0,0.0,12.0});
 Scene17.addChild(&Viewpoint63);
 
 //Selectable Text design pattern has transparent Box and TouchSensor description as a tooltip
@@ -346,7 +331,7 @@ Anchor64.addChild(&Shape65);
 Shape& Shape70 =  Shape();
 //Author TODO: to adjust transparent Box as text-selection assist, set width and height to match size, then set transparency='1' to make invisible.
 Box& Box71 =  Box();
-Box71.setSize(new float[3]{11,2,0.001});
+Box71.setSize(new float[3]{11.0,2.0,0.001});
 Shape70.setGeometry(&Box71);
 
 Appearance& Appearance72 =  Appearance();
@@ -362,4 +347,4 @@ Scene17.addChild(&Anchor64);
 
 X3D0.setScene(&Scene17);
 
-}
+//}

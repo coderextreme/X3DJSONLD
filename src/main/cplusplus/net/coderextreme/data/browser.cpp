@@ -1,10 +1,11 @@
-#define False false
-#define True true
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/X3DLib.h"
-int main(int argc, char ** argv) {
+//#define False false
+//#define True true
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/X3DLib.h"
+//int main(int argc, char ** argv) 
+//{
 X3D& X3D0 =  X3D();
 X3D0.setProfile(CString("Immersive"));
 X3D0.setVersion(CString("3.3"));
@@ -40,24 +41,24 @@ Scene& Scene7 =  Scene();
 Script& Script8 =  Script();
 Script8.setDEF(CString("Browser"));
 
-Script8.setSourceCode(CString("ecmascript:")+
-_T("                function initialize() {")+
-_T("		    Browser.print('DUDES\\n'+'\"DUDETTES');")+
-_T("                }"));
+//Script8.setSourceCode(CString("ecmascript:")+
+//_T("                function initialize() {")+
+//_T("		    Browser.print('DUDES\\n'+'\"DUDETTES');")+
+//_T("                }"));
 Scene7.addChild(&Script8);
 
 Script& Script9 =  Script();
 Script9.setDEF(CString("Clouds"));
 
-Script9.setSourceCode(CString("ecmascript:")+
-_T("function cumulustranslation() // These values designate the boundary location of the cloud")+
-_T("{")+
-_T("var xxx = ' '+' '+")+
-_T("'	Transform		\\n'+")+
-_T("'    ' + '               	\\n';")+
-_T("}"));
+//Script9.setSourceCode(CString("ecmascript:")+
+//_T("function cumulustranslation() // These values designate the boundary location of the cloud")+
+//_T("{")+
+//_T("var xxx = ' '+' '+")+
+//_T("'	Transform		\\n'+")+
+//_T("'    ' + '               	\\n';")+
+//_T("}"));
 Scene7.addChild(&Script9);
 
 X3D0.setScene(&Scene7);
 
-}
+//}

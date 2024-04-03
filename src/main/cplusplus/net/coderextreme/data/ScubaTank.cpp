@@ -1,10 +1,11 @@
-#define False false
-#define True true
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/X3DLib.h"
-int main(int argc, char ** argv) {
+//#define False false
+//#define True true
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/X3DLib.h"
+//int main(int argc, char ** argv) 
+//{
 X3D& X3D0 =  X3D();
 X3D0.setProfile(CString("Interchange"));
 X3D0.setVersion(CString("3.3"));
@@ -81,7 +82,7 @@ Transform13.addChild(&Shape14);
 Transform12.addChild(&Transform13);
 
 Transform& Transform18 =  Transform();
-Transform18.setTranslation(new float[3]{0,0.35,0});
+Transform18.setTranslation(new float[3]{0.0,0.35,0.0});
 Shape& Shape19 =  Shape();
 Appearance& Appearance20 =  Appearance();
 Material& Material21 =  Material();
@@ -99,14 +100,14 @@ Transform18.addChild(&Shape19);
 Transform12.addChild(&Transform18);
 
 Transform& Transform23 =  Transform();
-Transform23.setTranslation(new float[3]{0,-0.35,0});
+Transform23.setTranslation(new float[3]{0.0,-0.35,0.0});
 Shape& Shape24 =  Shape();
 Shape24.setDEF(CString("tankBottom"));
 Appearance& Appearance25 =  Appearance();
 Material& Material26 =  Material();
 Material26.setDEF(CString("black"));
 Material26.setAmbientIntensity(0.3);
-Material26.setDiffuseColor(new float[3]{0,0,0});
+Material26.setDiffuseColor(new float[3]{0.0,0.0,0.0});
 Appearance25.addChild(&Material26);
 
 Shape24.addChild(&Appearance25);
@@ -124,7 +125,7 @@ Group& Group28 =  Group();
 Group28.setDEF(CString("tankNozzle"));
 Transform& Transform29 =  Transform();
 Transform& Transform30 =  Transform();
-Transform30.setTranslation(new float[3]{0,0.45,0});
+Transform30.setTranslation(new float[3]{0.0,0.45,0.0});
 Shape& Shape31 =  Shape();
 Shape31.setDEF(CString("pressure"));
 Appearance& Appearance32 =  Appearance();
@@ -148,7 +149,7 @@ Transform30.addChild(&Shape31);
 Transform29.addChild(&Transform30);
 
 Transform& Transform35 =  Transform();
-Transform35.setTranslation(new float[3]{0,0.5,0});
+Transform35.setTranslation(new float[3]{0.0,0.5,0.0});
 Shape& Shape36 =  Shape();
 Shape36.setDEF(CString("pressureTop"));
 Appearance& Appearance37 =  Appearance();
@@ -168,8 +169,8 @@ Transform35.addChild(&Shape36);
 Transform29.addChild(&Transform35);
 
 Transform& Transform40 =  Transform();
-Transform40.setRotation(new float[4]{0,0,1,1.57});
-Transform40.setTranslation(new float[3]{-0.028,0.462,0});
+Transform40.setRotation(new float[4]{0.0,0.0,1.0,1.57});
+Transform40.setTranslation(new float[3]{-0.028,0.462,0.0});
 Transform& Transform41 =  Transform();
 Shape& Shape42 =  Shape();
 Shape42.setDEF(CString("connectorToRegulator"));
@@ -190,7 +191,7 @@ Transform41.addChild(&Shape42);
 Transform40.addChild(&Transform41);
 
 Transform& Transform46 =  Transform();
-Transform46.setTranslation(new float[3]{0,0.02,0});
+Transform46.setTranslation(new float[3]{0.0,0.02,0.0});
 Shape& Shape47 =  Shape();
 Shape47.setDEF(CString("connectorToRegulatorTop"));
 Appearance& Appearance48 =  Appearance();
@@ -216,7 +217,7 @@ Group28.addChild(&Transform29);
 Transform12.addChild(&Group28);
 
 Transform& Transform51 =  Transform();
-Transform51.setTranslation(new float[3]{0,0.2,0});
+Transform51.setTranslation(new float[3]{0.0,0.2,0.0});
 Shape& Shape52 =  Shape();
 Shape52.setDEF(CString("tankHoldBelt"));
 Appearance& Appearance53 =  Appearance();
@@ -243,4 +244,4 @@ Scene10.addChild(&Background56);
 
 X3D0.setScene(&Scene10);
 
-}
+//}

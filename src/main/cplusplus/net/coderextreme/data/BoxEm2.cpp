@@ -1,10 +1,11 @@
-#define False false
-#define True true
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/X3DLib.h"
-int main(int argc, char ** argv) {
+//#define False false
+//#define True true
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/X3DLib.h"
+//int main(int argc, char ** argv) 
+//{
 X3D& X3D0 =  X3D();
 X3D0.setProfile(CString("Immersive"));
 X3D0.setVersion(CString("3.3"));
@@ -43,7 +44,7 @@ Scene7.addChild(&NavigationInfo8);
 
 Viewpoint& Viewpoint9 =  Viewpoint();
 Viewpoint9.setDescription(CString("Cubes on Fire"));
-Viewpoint9.setPosition(new float[3]{0,0,12});
+Viewpoint9.setPosition(new float[3]{0.0,0.0,12.0});
 Scene7.addChild(&Viewpoint9);
 
 ProtoDeclare& ProtoDeclare10 =  ProtoDeclare();
@@ -66,7 +67,7 @@ Shape14.setGeometry(&Sphere15);
 
 Appearance& Appearance16 =  Appearance();
 Material& Material17 =  Material();
-Material17.setDiffuseColor(new float[3]{1,1,1});
+Material17.setDiffuseColor(new float[3]{1.0,1.0,1.0});
 Appearance16.addChild(&Material17);
 
 Shape14.addChild(&Appearance16);
@@ -118,7 +119,7 @@ Shape27.setGeometry(&Cylinder28);
 
 Appearance& Appearance29 =  Appearance();
 Material& Material30 =  Material();
-Material30.setDiffuseColor(new float[3]{1,1,1});
+Material30.setDiffuseColor(new float[3]{1.0,1.0,1.0});
 Appearance29.addChild(&Material30);
 
 Shape27.addChild(&Appearance29);
@@ -209,12 +210,12 @@ fieldValue49.setName(CString("myShape"));
 Shape& Shape50 =  Shape();
 Shape50.setDEF(CString("box"));
 Box& Box51 =  Box();
-Box51.setSize(new float[3]{1,1,1});
+Box51.setSize(new float[3]{1.0,1.0,1.0});
 Shape50.setGeometry(&Box51);
 
 Appearance& Appearance52 =  Appearance();
 Material& Material53 =  Material();
-Material53.setDiffuseColor(new float[3]{0,1,0});
+Material53.setDiffuseColor(new float[3]{0.0,1.0,0.0});
 Appearance52.addChild(&Material53);
 
 Shape50.addChild(&Appearance52);
@@ -226,7 +227,7 @@ ProtoInstance47.addChild(&fieldValue49);
 Scene7.addChild(&ProtoInstance47);
 
 Transform& Transform54 =  Transform();
-Transform54.setTranslation(new float[3]{0,2,0});
+Transform54.setTranslation(new float[3]{0.0,2.0,0.0});
 Shape& Shape55 =  Shape();
 Shape55.setUSE(CString("box"));
 Transform54.addChild(&Shape55);
@@ -235,4 +236,4 @@ Scene7.addChild(&Transform54);
 
 X3D0.setScene(&Scene7);
 
-}
+//}

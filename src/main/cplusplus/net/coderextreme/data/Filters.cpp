@@ -1,10 +1,11 @@
-#define False false
-#define True true
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/X3DLib.h"
-int main(int argc, char ** argv) {
+//#define False false
+//#define True true
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/X3DLib.h"
+//int main(int argc, char ** argv) 
+//{
 X3D& X3D0 =  X3D();
 X3D0.setProfile(CString("Full"));
 X3D0.setVersion(CString("4.0"));
@@ -85,14 +86,14 @@ Scene14.addChild(&Background17);
 
 Viewpoint& Viewpoint18 =  Viewpoint();
 Viewpoint18.setDescription(CString("View entire audio model"));
-Viewpoint18.setOrientation(new float[4]{1,0,0,-0.5});
-Viewpoint18.setPosition(new float[3]{0,500,600});
+Viewpoint18.setOrientation(new float[4]{1.0,0.0,0.0,-0.5});
+Viewpoint18.setPosition(new float[3]{0.0,500.0,600.0});
 Viewpoint18.setRetainUserOffsets(True);
 Scene14.addChild(&Viewpoint18);
 
 Transform& Transform19 =  Transform();
 Transform19.setDEF(CString("TransformAudio1"));
-Transform19.setTranslation(new float[3]{-200,50,0});
+Transform19.setTranslation(new float[3]{-200.0,50.0,0.0});
 Shape& Shape20 =  Shape();
 Appearance& Appearance21 =  Appearance();
 Appearance21.setDEF(CString("audio_emit"));
@@ -114,7 +115,7 @@ Scene14.addChild(&Transform19);
 
 Transform& Transform24 =  Transform();
 Transform24.setDEF(CString("TransformAudio2"));
-Transform24.setTranslation(new float[3]{0,50,0});
+Transform24.setTranslation(new float[3]{0.0,50.0,0.0});
 Shape& Shape25 =  Shape();
 Appearance& Appearance26 =  Appearance();
 Appearance26.setDEF(CString("audio_emit2"));
@@ -136,7 +137,7 @@ Scene14.addChild(&Transform24);
 
 Transform& Transform29 =  Transform();
 Transform29.setDEF(CString("TransformAudio3"));
-Transform29.setTranslation(new float[3]{200,50,0});
+Transform29.setTranslation(new float[3]{200.0,50.0,0.0});
 Shape& Shape30 =  Shape();
 Appearance& Appearance31 =  Appearance();
 Appearance31.setDEF(CString("audio_emit3"));
@@ -158,32 +159,32 @@ Scene14.addChild(&Transform29);
 
 Transform& Transform34 =  Transform();
 Transform34.setDEF(CString("AnimData"));
-Transform34.setTranslation(new float[3]{0,50,0});
+Transform34.setTranslation(new float[3]{0.0,50.0,0.0});
 Scene14.addChild(&Transform34);
 
 Transform& Transform35 =  Transform();
 Transform35.setDEF(CString("AnimDataBoxH"));
-Transform35.setTranslation(new float[3]{0,100,0});
+Transform35.setTranslation(new float[3]{0.0,100.0,0.0});
 Scene14.addChild(&Transform35);
 
 Transform& Transform36 =  Transform();
 Transform36.setDEF(CString("AnimDataBoxM"));
-Transform36.setTranslation(new float[3]{15,100,0});
+Transform36.setTranslation(new float[3]{15.0,100.0,0.0});
 Scene14.addChild(&Transform36);
 
 Transform& Transform37 =  Transform();
 Transform37.setDEF(CString("AnimDataBoxL"));
-Transform37.setTranslation(new float[3]{30,100,0});
+Transform37.setTranslation(new float[3]{30.0,100.0,0.0});
 Scene14.addChild(&Transform37);
 
 Transform& Transform38 =  Transform();
 Transform38.setDEF(CString("AnimDataBoxMM"));
-Transform38.setTranslation(new float[3]{-15,100,0});
+Transform38.setTranslation(new float[3]{-15.0,100.0,0.0});
 Scene14.addChild(&Transform38);
 
 Transform& Transform39 =  Transform();
 Transform39.setDEF(CString("AnimDataBoxLM"));
-Transform39.setTranslation(new float[3]{-30,100,0});
+Transform39.setTranslation(new float[3]{-30.0,100.0,0.0});
 Scene14.addChild(&Transform39);
 
 Transform& Transform40 =  Transform();
@@ -289,4 +290,4 @@ Scene14.addChild(&StreamAudioDestination46);
 
 X3D0.setScene(&Scene14);
 
-}
+//}

@@ -1,10 +1,11 @@
-#define False false
-#define True true
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/X3DLib.h"
-int main(int argc, char ** argv) {
+//#define False false
+//#define True true
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/X3DLib.h"
+//int main(int argc, char ** argv) 
+//{
 X3D& X3D0 =  X3D();
 X3D0.setProfile(CString("Interchange"));
 X3D0.setVersion(CString("3.0"));
@@ -88,32 +89,32 @@ Scene16.addChild(&Viewpoint17);
 
 Viewpoint& Viewpoint18 =  Viewpoint();
 Viewpoint18.setDescription(CString("Rear View"));
-Viewpoint18.setOrientation(new float[4]{0,1,0,3.14});
-Viewpoint18.setPosition(new float[3]{0,0,-10});
+Viewpoint18.setOrientation(new float[4]{0.0,1.0,0.0,3.14});
+Viewpoint18.setPosition(new float[3]{0.0,0.0,-10.0});
 Scene16.addChild(&Viewpoint18);
 
 Viewpoint& Viewpoint19 =  Viewpoint();
 Viewpoint19.setDescription(CString("Top View"));
-Viewpoint19.setOrientation(new float[4]{1,0,0,-1.57});
-Viewpoint19.setPosition(new float[3]{0,10,0});
+Viewpoint19.setOrientation(new float[4]{1.0,0.0,0.0,-1.57});
+Viewpoint19.setPosition(new float[3]{0.0,10.0,0.0});
 Scene16.addChild(&Viewpoint19);
 
 Viewpoint& Viewpoint20 =  Viewpoint();
 Viewpoint20.setDescription(CString("Bottom View"));
-Viewpoint20.setOrientation(new float[4]{1,0,0,1.57});
-Viewpoint20.setPosition(new float[3]{0,-10,0});
+Viewpoint20.setOrientation(new float[4]{1.0,0.0,0.0,1.57});
+Viewpoint20.setPosition(new float[3]{0.0,-10.0,0.0});
 Scene16.addChild(&Viewpoint20);
 
 Viewpoint& Viewpoint21 =  Viewpoint();
 Viewpoint21.setDescription(CString("Right View"));
-Viewpoint21.setOrientation(new float[4]{0,1,0,1.57});
-Viewpoint21.setPosition(new float[3]{10,0,0});
+Viewpoint21.setOrientation(new float[4]{0.0,1.0,0.0,1.57});
+Viewpoint21.setPosition(new float[3]{10.0,0.0,0.0});
 Scene16.addChild(&Viewpoint21);
 
 Viewpoint& Viewpoint22 =  Viewpoint();
 Viewpoint22.setDescription(CString("Left View"));
-Viewpoint22.setOrientation(new float[4]{0,1,0,-1.57});
-Viewpoint22.setPosition(new float[3]{-10,0,0});
+Viewpoint22.setOrientation(new float[4]{0.0,1.0,0.0,-1.57});
+Viewpoint22.setPosition(new float[3]{-10.0,0.0,0.0});
 Scene16.addChild(&Viewpoint22);
 
 NavigationInfo& NavigationInfo23 =  NavigationInfo();
@@ -136,7 +137,7 @@ Shape24.addChild(&Appearance25);
 IndexedFaceSet& IndexedFaceSet28 =  IndexedFaceSet();
 IndexedFaceSet28.setCoordIndex(new int32_t[30]{0,1,3,2,-1,4,5,7,6,-1,6,7,1,0,-1,2,3,5,4,-1,6,0,2,4,-1,1,7,5,3,-1}, 30);
 Coordinate& Coordinate29 =  Coordinate();
-Coordinate29.setPoint(new float[24]{-2,1.5,1,-2,-1.5,1,2,1.5,1,2,-1.5,1,2,1.5,-1,2,-1.5,-1,-2,1.5,-1,-2,-1.5,-1}, 24);
+Coordinate29.setPoint(new float[24]{-2.0,1.5,1.0,-2.0,-1.5,1.0,2.0,1.5,1.0,2.0,-1.5,1.0,2.0,1.5,-1.0,2.0,-1.5,-1.0,-2.0,1.5,-1.0,-2.0,-1.5,-1.0}, 24);
 IndexedFaceSet28.setCoord(&Coordinate29);
 
 Shape24.setGeometry(&IndexedFaceSet28);
@@ -145,4 +146,4 @@ Scene16.addChild(&Shape24);
 
 X3D0.setScene(&Scene16);
 
-}
+//}
