@@ -1,66 +1,59 @@
-/* delete next 5 lines for Visual Studio */
-#define FALSE false
-#define TRUE true
-#define WINAPI
-#define AFX_EXT_CLASS
-#define EXPORT32
-#include "C:/x3d-code/www.web3d.org/x3d/stylesheets/cpp/concretes.h"
+#define False false
+#define True true
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/X3DLib.h"
 int main(int argc, char ** argv) {
-CX3DScene m_pScene;
-CBrowser browser = X3D.getBrowser();
-CX3D* X3D0 = new CX3D();
-CGroup* group = (CGroup*)(m_pScene.createNode("Group"));
-group->addChildren(X3D0);
-X3D0->setProfile("Immersive");
-X3D0->setVersion("4.0");
-Chead* head1 = new Chead();
-Cmeta* meta2 = new Cmeta();
-meta2->setName("title");
-meta2->setContent("app.x3d");
-head1->addMeta(*meta2);
+X3D& X3D0 =  X3D();
+X3D0.setProfile(CString("Immersive"));
+X3D0.setVersion(CString("4.0"));
+head& head1 =  head();
+meta& meta2 =  meta();
+meta2.setName(CString("title"));
+meta2.setContent(CString("app.x3d"));
+head1.addMeta(&meta2);
 
-Cmeta* meta3 = new Cmeta();
-meta3->setName("creator");
-meta3->setContent("Carlson, I");
-head1->addMeta(*meta3);
+meta& meta3 =  meta();
+meta3.setName(CString("creator"));
+meta3.setContent(CString("Carlson, I"));
+head1.addMeta(&meta3);
 
-Cmeta* meta4 = new Cmeta();
-meta4->setName("creator");
-meta4->setContent("Carlson, II");
-head1->addMeta(*meta4);
+meta& meta4 =  meta();
+meta4.setName(CString("creator"));
+meta4.setContent(CString("Carlson, II"));
+head1.addMeta(&meta4);
 
-Cmeta* meta5 = new Cmeta();
-meta5->setName("creator");
-meta5->setContent("Carlson, III");
-head1->addMeta(*meta5);
+meta& meta5 =  meta();
+meta5.setName(CString("creator"));
+meta5.setContent(CString("Carlson, III"));
+head1.addMeta(&meta5);
 
-X3D0->setHead(*head1);
+X3D0.setHead(&head1);
 
-CScene* Scene6 = new CScene();
-CGroup* Group7 = (CGroup *)(m_pScene.createNode("Group"));
-CShape* Shape8 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance9 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material10 = (CMaterial *)(m_pScene.createNode("Material"));
-Material10->setDiffuseColor(new float[3]{1,0,0});
-Appearance9->setMaterial(*Material10);
+Scene& Scene6 =  Scene();
+Group& Group7 =  Group();
+Shape& Shape8 =  Shape();
+Appearance& Appearance9 =  Appearance();
+Material& Material10 =  Material();
+Material10.setDiffuseColor(new float[3]{1,0,0});
+Appearance9.addChild(&Material10);
 
-Shape8->setAppearance(*Appearance9);
+Shape8.addChild(&Appearance9);
 
-CBox* Box11 = (CBox *)(m_pScene.createNode("Box"));
-Shape8->setGeometry(Box11);
+Box& Box11 =  Box();
+Shape8.setGeometry(&Box11);
 
-Group7->addChildren(*Shape8);
+Group7.addChild(&Shape8);
 
-group->addChildren(*Group7);
+Scene6.addChild(&Group7);
 
-CTransform* Transform12 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform12->setRotation(new float[4]{7,8,9,3.14});
-Transform12->setScale(new float[3]{4,5,6});
-Transform12->setTranslation(new float[3]{1,2,3});
-group->addChildren(*Transform12);
+Transform& Transform12 =  Transform();
+Transform12.setRotation(new float[4]{7,8,9,3.14});
+Transform12.setScale(new float[3]{4,5,6});
+Transform12.setTranslation(new float[3]{1,2,3});
+Scene6.addChild(&Transform12);
 
-X3D0->setScene(*Scene6);
+X3D0.setScene(&Scene6);
 
-m_pScene.addRootNode(group);
-X3D0->toXMLString();
 }

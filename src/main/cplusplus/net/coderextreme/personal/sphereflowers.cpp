@@ -1,212 +1,198 @@
-/* delete next 5 lines for Visual Studio */
-#define FALSE false
-#define TRUE true
-#define WINAPI
-#define AFX_EXT_CLASS
-#define EXPORT32
-#include "C:/x3d-code/www.web3d.org/x3d/stylesheets/cpp/concretes.h"
+#define False false
+#define True true
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/X3DLib.h"
 int main(int argc, char ** argv) {
-CX3DScene m_pScene;
-CBrowser browser = X3D.getBrowser();
-CX3D* X3D0 = new CX3D();
-CGroup* group = (CGroup*)(m_pScene.createNode("Group"));
-group->addChildren(X3D0);
-X3D0->setProfile("Immersive");
-X3D0->setVersion("4.0");
-Chead* head1 = new Chead();
-Ccomponent* component2 = new Ccomponent();
-component2->setName("Scripting");
-component2->setLevel(1);
-head1->addComponent(*component2);
+X3D& X3D0 =  X3D();
+X3D0.setProfile(CString("Immersive"));
+X3D0.setVersion(CString("4.0"));
+head& head1 =  head();
+component& component2 =  component();
+component2.setName(CString("Scripting"));
+component2.setLevel(1);
+head1.addChild(&component2);
 
-Ccomponent* component3 = new Ccomponent();
-component3->setName("EnvironmentalEffects");
-component3->setLevel(3);
-head1->addComponent(*component3);
+component& component3 =  component();
+component3.setName(CString("EnvironmentalEffects"));
+component3.setLevel(3);
+head1.addChild(&component3);
 
-Ccomponent* component4 = new Ccomponent();
-component4->setName("Shaders");
-component4->setLevel(1);
-head1->addComponent(*component4);
+component& component4 =  component();
+component4.setName(CString("Shaders"));
+component4.setLevel(1);
+head1.addChild(&component4);
 
-Ccomponent* component5 = new Ccomponent();
-component5->setName("CubeMapTexturing");
-component5->setLevel(1);
-head1->addComponent(*component5);
+component& component5 =  component();
+component5.setName(CString("CubeMapTexturing"));
+component5.setLevel(1);
+head1.addChild(&component5);
 
-Ccomponent* component6 = new Ccomponent();
-component6->setName("Texturing");
-component6->setLevel(1);
-head1->addComponent(*component6);
+component& component6 =  component();
+component6.setName(CString("Texturing"));
+component6.setLevel(1);
+head1.addChild(&component6);
 
-Ccomponent* component7 = new Ccomponent();
-component7->setName("Rendering");
-component7->setLevel(1);
-head1->addComponent(*component7);
+component& component7 =  component();
+component7.setName(CString("Rendering"));
+component7.setLevel(1);
+head1.addChild(&component7);
 
-Ccomponent* component8 = new Ccomponent();
-component8->setName("Grouping");
-component8->setLevel(3);
-head1->addComponent(*component8);
+component& component8 =  component();
+component8.setName(CString("Grouping"));
+component8.setLevel(3);
+head1.addChild(&component8);
 
-Ccomponent* component9 = new Ccomponent();
-component9->setName("Core");
-component9->setLevel(1);
-head1->addComponent(*component9);
+component& component9 =  component();
+component9.setName(CString("Core"));
+component9.setLevel(1);
+head1.addChild(&component9);
 
-Cmeta* meta10 = new Cmeta();
-meta10->setName("title");
-meta10->setContent("sphereflowers.x3d");
-head1->addMeta(*meta10);
+meta& meta10 =  meta();
+meta10.setName(CString("title"));
+meta10.setContent(CString("sphereflowers.x3d"));
+head1.addMeta(&meta10);
 
-Cmeta* meta11 = new Cmeta();
-meta11->setName("creator");
-meta11->setContent("John Carlson");
-head1->addMeta(*meta11);
+meta& meta11 =  meta();
+meta11.setName(CString("creator"));
+meta11.setContent(CString("John Carlson"));
+head1.addMeta(&meta11);
 
-Cmeta* meta12 = new Cmeta();
-meta12->setName("created");
-meta12->setContent("Jan 17 2022");
-head1->addMeta(*meta12);
+meta& meta12 =  meta();
+meta12.setName(CString("created"));
+meta12.setContent(CString("Jan 17 2022"));
+head1.addMeta(&meta12);
 
-Cmeta* meta13 = new Cmeta();
-meta13->setName("modified");
-meta13->setContent("Sep 3 2023");
-head1->addMeta(*meta13);
+meta& meta13 =  meta();
+meta13.setName(CString("modified"));
+meta13.setContent(CString("Sep 3 2023"));
+head1.addMeta(&meta13);
 
-Cmeta* meta14 = new Cmeta();
-meta14->setName("description");
-meta14->setContent("5 or more prismatic flowers");
-head1->addMeta(*meta14);
+meta& meta14 =  meta();
+meta14.setName(CString("description"));
+meta14.setContent(CString("5 or more prismatic flowers"));
+head1.addMeta(&meta14);
 
-Cmeta* meta15 = new Cmeta();
-meta15->setName("generator");
-meta15->setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit");
-head1->addMeta(*meta15);
+meta& meta15 =  meta();
+meta15.setName(CString("generator"));
+meta15.setContent(CString("X3D-Edit, https://savage.nps.edu/X3D-Edit"));
+head1.addMeta(&meta15);
 
-Cmeta* meta16 = new Cmeta();
-meta16->setName("identifier");
-meta16->setContent("https://coderextreme.net/X3DJSONLD/src/main/data/sphereflowers.x3d");
-head1->addMeta(*meta16);
+meta& meta16 =  meta();
+meta16.setName(CString("identifier"));
+meta16.setContent(CString("https://coderextreme.net/X3DJSONLD/src/main/data/sphereflowers.x3d"));
+head1.addMeta(&meta16);
 
-X3D0->setHead(*head1);
+X3D0.setHead(&head1);
 
-CScene* Scene17 = new CScene();
-CNavigationInfo* NavigationInfo18 = (CNavigationInfo *)(m_pScene.createNode("NavigationInfo"));
-group->addChildren(*NavigationInfo18);
+Scene& Scene17 =  Scene();
+NavigationInfo& NavigationInfo18 =  NavigationInfo();
+Scene17.addChild(&NavigationInfo18);
 
-CBackground* Background19 = (CBackground *)(m_pScene.createNode("Background"));
-Background19->setBackUrl(new CString[1]{"../resources/images/all_probes/stpeters_cross/stpeters_back.png"}, 1);
-Background19->setBottomUrl(new CString[1]{"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"}, 1);
-Background19->setFrontUrl(new CString[1]{"../resources/images/all_probes/stpeters_cross/stpeters_front.png"}, 1);
-Background19->setLeftUrl(new CString[1]{"../resources/images/all_probes/stpeters_cross/stpeters_left.png"}, 1);
-Background19->setRightUrl(new CString[1]{"../resources/images/all_probes/stpeters_cross/stpeters_right.png"}, 1);
-Background19->setTopUrl(new CString[1]{"../resources/images/all_probes/stpeters_cross/stpeters_top.png"}, 1);
-group->addChildren(*Background19);
+Background& Background19 =  Background();
+Background19.setBackUrl(new CString[1]{CString("../resources/images/all_probes/stpeters_cross/stpeters_back.png")}, 1);
+Background19.setBottomUrl(new CString[1]{CString("../resources/images/all_probes/stpeters_cross/stpeters_bottom.png")}, 1);
+Background19.setFrontUrl(new CString[1]{CString("../resources/images/all_probes/stpeters_cross/stpeters_front.png")}, 1);
+Background19.setLeftUrl(new CString[1]{CString("../resources/images/all_probes/stpeters_cross/stpeters_left.png")}, 1);
+Background19.setRightUrl(new CString[1]{CString("../resources/images/all_probes/stpeters_cross/stpeters_right.png")}, 1);
+Background19.setTopUrl(new CString[1]{CString("../resources/images/all_probes/stpeters_cross/stpeters_top.png")}, 1);
+Scene17.addChild(&Background19);
 
-CGroup* Group20 = (CGroup *)(m_pScene.createNode("Group"));
-CExternProtoDeclare* ExternProtoDeclare21 = new CExternProtoDeclare();
-ExternProtoDeclare21->setName("FlowerProto");
-ExternProtoDeclare21->setUrl(new CString[1]{"../personal/flowerproto.json#FlowerProto"}, 1);
-Cfield* field22 = new Cfield();
-field22->setName("vertex");
-field22->setAccessType("inputOutput");
-field22->setType("MFString");
-ExternProtoDeclare21->addField(*field22);
+Group& Group20 =  Group();
+ExternProtoDeclare& ExternProtoDeclare21 =  ExternProtoDeclare();
+ExternProtoDeclare21.setName(CString("FlowerProto"));
+ExternProtoDeclare21.setUrl(new CString[1]{CString("../personal/flowerproto.json#FlowerProto")}, 1);
+field& field22 =  field();
+field22.setName(CString("vertex"));
+field22.setAccessType(CString("inputOutput"));
+field22.setType(CString("MFString"));
+ExternProtoDeclare21.addChild(&field22);
 
-Cfield* field23 = new Cfield();
-field23->setName("fragment");
-field23->setAccessType("inputOutput");
-field23->setType("MFString");
-ExternProtoDeclare21->addField(*field23);
+field& field23 =  field();
+field23.setName(CString("fragment"));
+field23.setAccessType(CString("inputOutput"));
+field23.setType(CString("MFString"));
+ExternProtoDeclare21.addChild(&field23);
 
-Group20->addChildren(*ExternProtoDeclare21);
+Group20.addChild(&ExternProtoDeclare21);
 
-CProtoDeclare ProtoDeclare24 = browser.createX3DFromString(R"foo(<?xml version="1.0" encoding="undefined"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
-<ProtoDeclare name="flower" ><ProtoBody><Group><ProtoInstance name="FlowerProto"><fieldValue name="vertex" value="&quot;../shaders/x_ite_flowers_chromatic.vs&quot;"></fieldValue>
-<fieldValue name="fragment" value="&quot;../shaders/x_ite.fs&quot;"></fieldValue>
-</ProtoInstance>
-</Group>
-</ProtoBody>
-</ProtoDeclare>)foo");
-ProtoDeclare24->setName("flower");
-CProtoBody* ProtoBody25 = new CProtoBody();
-CGroup* Group26 = (CGroup *)(m_pScene.createNode("Group"));
-CProtoInstance* ProtoInstance27 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
-ProtoInstance27->setName("FlowerProto");
-CfieldValue* fieldValue28 = new CfieldValue();
-fieldValue28->setName("vertex");
-fieldValue28->setValue("\"../shaders/x_ite_flowers_chromatic.vs\"");
-ProtoInstance27->addFieldValue(*fieldValue28);
+ProtoDeclare& ProtoDeclare24 =  ProtoDeclare();
+ProtoDeclare24.setName(CString("flower"));
+ProtoBody& ProtoBody25 =  ProtoBody();
+Group& Group26 =  Group();
+ProtoInstance& ProtoInstance27 =  ProtoInstance();
+ProtoInstance27.setName(CString("FlowerProto"));
+fieldValue& fieldValue28 =  fieldValue();
+fieldValue28.setName(CString("vertex"));
+fieldValue28.setValue(CString("\"../shaders/x_ite_flowers_chromatic.vs\""));
+ProtoInstance27.addChild(&fieldValue28);
 
-CfieldValue* fieldValue29 = new CfieldValue();
-fieldValue29->setName("fragment");
-fieldValue29->setValue("\"../shaders/x_ite.fs\"");
-ProtoInstance27->addFieldValue(*fieldValue29);
+fieldValue& fieldValue29 =  fieldValue();
+fieldValue29.setName(CString("fragment"));
+fieldValue29.setValue(CString("\"../shaders/x_ite.fs\""));
+ProtoInstance27.addChild(&fieldValue29);
 
-Group26->addChildren(*ProtoInstance27);
+Group26.addChild(&ProtoInstance27);
 
-ProtoBody25->addChildren(*Group26);
+ProtoBody25.addChild(&Group26);
 
-ProtoDeclare24->setProtoBody(*ProtoBody25);
+ProtoDeclare24.addChild(&ProtoBody25);
 
-Group20->addChildren(*ProtoDeclare24);
+Group20.addChild(&ProtoDeclare24);
 
-CProtoInstance* ProtoInstance30 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
-ProtoInstance30->setName("flower");
-Group20->addChildren(*ProtoInstance30);
+ProtoInstance& ProtoInstance30 =  ProtoInstance();
+ProtoInstance30.setName(CString("flower"));
+Group20.addChild(&ProtoInstance30);
 
-CProtoInstance* ProtoInstance31 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
-ProtoInstance31->setName("flower");
-Group20->addChildren(*ProtoInstance31);
+ProtoInstance& ProtoInstance31 =  ProtoInstance();
+ProtoInstance31.setName(CString("flower"));
+Group20.addChild(&ProtoInstance31);
 
-CProtoInstance* ProtoInstance32 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
-ProtoInstance32->setName("flower");
-Group20->addChildren(*ProtoInstance32);
+ProtoInstance& ProtoInstance32 =  ProtoInstance();
+ProtoInstance32.setName(CString("flower"));
+Group20.addChild(&ProtoInstance32);
 
-CProtoInstance* ProtoInstance33 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
-ProtoInstance33->setName("flower");
-Group20->addChildren(*ProtoInstance33);
+ProtoInstance& ProtoInstance33 =  ProtoInstance();
+ProtoInstance33.setName(CString("flower"));
+Group20.addChild(&ProtoInstance33);
 
-CProtoInstance* ProtoInstance34 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
-ProtoInstance34->setName("flower");
-Group20->addChildren(*ProtoInstance34);
+ProtoInstance& ProtoInstance34 =  ProtoInstance();
+ProtoInstance34.setName(CString("flower"));
+Group20.addChild(&ProtoInstance34);
 
-CProtoInstance* ProtoInstance35 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
-ProtoInstance35->setName("flower");
-Group20->addChildren(*ProtoInstance35);
+ProtoInstance& ProtoInstance35 =  ProtoInstance();
+ProtoInstance35.setName(CString("flower"));
+Group20.addChild(&ProtoInstance35);
 
-CTimeSensor* TimeSensor36 = (CTimeSensor *)(m_pScene.createNode("TimeSensor"));
-TimeSensor36->setDEF("SongTime");
-TimeSensor36->setLoop(True);
-Group20->addChildren(*TimeSensor36);
+TimeSensor& TimeSensor36 =  TimeSensor();
+TimeSensor36.setDEF(CString("SongTime"));
+TimeSensor36.setLoop(True);
+Group20.addChild(&TimeSensor36);
 
-CSound* Sound37 = (CSound *)(m_pScene.createNode("Sound"));
-Sound37->setMaxBack(100);
-Sound37->setMaxFront(100);
-Sound37->setMinBack(20);
-Sound37->setMinFront(20);
-Sound37->setLocation(new float[3]{0,1,0});
-CAudioClip* AudioClip38 = (CAudioClip *)(m_pScene.createNode("AudioClip"));
-AudioClip38->setDEF("AudioClip");
-AudioClip38->setDescription("Chandubabamusic #1");
-AudioClip38->setUrl(new CString[1]{"../resources/chandubabamusic1.wav"}, 1);
-Sound37->setSource(*AudioClip38);
+Sound& Sound37 =  Sound();
+Sound37.setMaxBack(100);
+Sound37.setMaxFront(100);
+Sound37.setMinBack(20);
+Sound37.setMinFront(20);
+Sound37.setLocation(new float[3]{0,1,0});
+AudioClip& AudioClip38 =  AudioClip();
+AudioClip38.setDEF(CString("AudioClip"));
+AudioClip38.setDescription(CString("Chandubabamusic #1"));
+AudioClip38.setUrl(new CString[1]{CString("../resources/chandubabamusic1.wav")}, 1);
+Sound37.setSource(AudioClip38);
 
-Group20->addChildren(*Sound37);
+Group20.addChild(&Sound37);
 
-CROUTE* ROUTE39 = new CROUTE();
-ROUTE39->setFromField("cycleTime");
-ROUTE39->setFromNode("SongTime");
-ROUTE39->setToField("startTime");
-ROUTE39->setToNode("AudioClip");
-Group20->addChildren(*ROUTE39);
+ROUTE& ROUTE39 =  ROUTE();
+ROUTE39.setFromField(CString("cycleTime"));
+ROUTE39.setFromNode(CString("SongTime"));
+ROUTE39.setToField(CString("startTime"));
+ROUTE39.setToNode(CString("AudioClip"));
+Group20.addChild(&ROUTE39);
 
-group->addChildren(*Group20);
+Scene17.addChild(&Group20);
 
-X3D0->setScene(*Scene17);
+X3D0.setScene(&Scene17);
 
-m_pScene.addRootNode(group);
-X3D0->toXMLString();
 }

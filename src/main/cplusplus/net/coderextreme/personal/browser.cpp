@@ -1,73 +1,63 @@
-/* delete next 5 lines for Visual Studio */
-#define FALSE false
-#define TRUE true
-#define WINAPI
-#define AFX_EXT_CLASS
-#define EXPORT32
-#include "C:/x3d-code/www.web3d.org/x3d/stylesheets/cpp/concretes.h"
+#define False false
+#define True true
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/X3DLib.h"
 int main(int argc, char ** argv) {
-CX3DScene m_pScene;
-CBrowser browser = X3D.getBrowser();
-CX3D* X3D0 = new CX3D();
-CGroup* group = (CGroup*)(m_pScene.createNode("Group"));
-group->addChildren(X3D0);
-X3D0->setProfile("Immersive");
-X3D0->setVersion("3.3");
-Chead* head1 = new Chead();
-Cmeta* meta2 = new Cmeta();
-meta2->setName("title");
-meta2->setContent("browser.x3d");
-head1->addMeta(*meta2);
+X3D& X3D0 =  X3D();
+X3D0.setProfile(CString("Immersive"));
+X3D0.setVersion(CString("3.3"));
+head& head1 =  head();
+meta& meta2 =  meta();
+meta2.setName(CString("title"));
+meta2.setContent(CString("browser.x3d"));
+head1.addMeta(&meta2);
 
-Cmeta* meta3 = new Cmeta();
-meta3->setName("creator");
-meta3->setContent("John Carlson");
-head1->addMeta(*meta3);
+meta& meta3 =  meta();
+meta3.setName(CString("creator"));
+meta3.setContent(CString("John Carlson"));
+head1.addMeta(&meta3);
 
-Cmeta* meta4 = new Cmeta();
-meta4->setName("generator");
-meta4->setContent("manual");
-head1->addMeta(*meta4);
+meta& meta4 =  meta();
+meta4.setName(CString("generator"));
+meta4.setContent(CString("manual"));
+head1.addMeta(&meta4);
 
-Cmeta* meta5 = new Cmeta();
-meta5->setName("identifier");
-meta5->setContent("https://coderextreme.net/X3DJSONLD/src/main/data/browser.x3d");
-head1->addMeta(*meta5);
+meta& meta5 =  meta();
+meta5.setName(CString("identifier"));
+meta5.setContent(CString("https://coderextreme.net/X3DJSONLD/src/main/data/browser.x3d"));
+head1.addMeta(&meta5);
 
-Cmeta* meta6 = new Cmeta();
-meta6->setName("description");
-meta6->setContent("a script test with embedded \\n between single quotes, a double backslash \\\\ a backslash \\ and a closing quote \"");
-head1->addMeta(*meta6);
+meta& meta6 =  meta();
+meta6.setName(CString("description"));
+meta6.setContent(CString("a script test with embedded \\n between single quotes, a double backslash \\\\ a backslash \\ and a closing quote \""));
+head1.addMeta(&meta6);
 
-X3D0->setHead(*head1);
+X3D0.setHead(&head1);
 
-CScene* Scene7 = new CScene();
-CScript* Script8 = (CScript *)(m_pScene.createNode("Script"));
-Script8->setDEF("Browser");
+Scene& Scene7 =  Scene();
+Script& Script8 =  Script();
+Script8.setDEF(CString("Browser"));
 
-Script8.setSourceCode(`ecmascript:\n"+
-"                function initialize() {\n"+
-"		    Browser.print('DUDES\\n'+'\"DUDETTES');\n"+
-"                }`)
-group->addChildren(*Script8);
+Script8.setSourceCode(CString("ecmascript:")+
+_T("                function initialize() {")+
+_T("		    Browser.print('DUDES\\n'+'\"DUDETTES');")+
+_T("                }"));
+Scene7.addChild(&Script8);
 
-CScript* Script9 = (CScript *)(m_pScene.createNode("Script"));
-Script9->setDEF("Clouds");
+Script& Script9 =  Script();
+Script9.setDEF(CString("Clouds"));
 
-Script9.setSourceCode(`ecmascript:\n"+
-"\n"+
-"\n"+
-"function cumulustranslation() // These values designate the boundary location of the cloud\n"+
-"{\n"+
-"var xxx = ' '+' '+\n"+
-"'	Transform		\\n'+\n"+
-"'    ' + '               	\\n';\n"+
-"\n"+
-"}`)
-group->addChildren(*Script9);
+Script9.setSourceCode(CString("ecmascript:")+
+_T("function cumulustranslation() // These values designate the boundary location of the cloud")+
+_T("{")+
+_T("var xxx = ' '+' '+")+
+_T("'	Transform		\\n'+")+
+_T("'    ' + '               	\\n';")+
+_T("}"));
+Scene7.addChild(&Script9);
 
-X3D0->setScene(*Scene7);
+X3D0.setScene(&Scene7);
 
-m_pScene.addRootNode(group);
-X3D0->toXMLString();
 }
