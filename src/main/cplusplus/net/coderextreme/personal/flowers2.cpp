@@ -1,501 +1,390 @@
-/* delete next 5 lines for Visual Studio */
-#define FALSE false
-#define TRUE true
-#define WINAPI
-#define AFX_EXT_CLASS
-#define EXPORT32
-#include "C:/x3d-code/www.web3d.org/x3d/stylesheets/cpp/concretes.h"
+#define False false
+#define True true
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/X3DLib.h"
 int main(int argc, char ** argv) {
-CX3DScene m_pScene;
-CBrowser browser = X3D.getBrowser();
-CX3D* X3D0 = new CX3D();
-CGroup* group = (CGroup*)(m_pScene.createNode("Group"));
-group->addChildren(X3D0);
-X3D0->setProfile("Immersive");
-X3D0->setVersion("4.0");
-Chead* head1 = new Chead();
-Ccomponent* component2 = new Ccomponent();
-component2->setName("Scripting");
-component2->setLevel(1);
-head1->addComponent(*component2);
+X3D& X3D0 =  X3D();
+X3D0.setProfile(CString("Immersive"));
+X3D0.setVersion(CString("4.0"));
+head& head1 =  head();
+component& component2 =  component();
+component2.setName(CString("Scripting"));
+component2.setLevel(1);
+head1.addChild(&component2);
 
-Cmeta* meta3 = new Cmeta();
-meta3->setName("title");
-meta3->setContent("flowers2.x3d");
-head1->addMeta(*meta3);
+meta& meta3 =  meta();
+meta3.setName(CString("title"));
+meta3.setContent(CString("flowers2.x3d"));
+head1.addMeta(&meta3);
 
-Cmeta* meta4 = new Cmeta();
-meta4->setName("creator");
-meta4->setContent("John Carlson");
-head1->addMeta(*meta4);
+meta& meta4 =  meta();
+meta4.setName(CString("creator"));
+meta4.setContent(CString("John Carlson"));
+head1.addMeta(&meta4);
 
-Cmeta* meta5 = new Cmeta();
-meta5->setName("transcriber");
-meta5->setContent("John Carlson");
-head1->addMeta(*meta5);
+meta& meta5 =  meta();
+meta5.setName(CString("transcriber"));
+meta5.setContent(CString("John Carlson"));
+head1.addMeta(&meta5);
 
-Cmeta* meta6 = new Cmeta();
-meta6->setName("created");
-meta6->setContent("23 January 2005");
-head1->addMeta(*meta6);
+meta& meta6 =  meta();
+meta6.setName(CString("created"));
+meta6.setContent(CString("23 January 2005"));
+head1.addMeta(&meta6);
 
-Cmeta* meta7 = new Cmeta();
-meta7->setName("modified");
-meta7->setContent("21 March 2018");
-head1->addMeta(*meta7);
+meta& meta7 =  meta();
+meta7.setName(CString("modified"));
+meta7.setContent(CString("21 March 2018"));
+head1.addMeta(&meta7);
 
-Cmeta* meta8 = new Cmeta();
-meta8->setName("description");
-meta8->setContent("2 random mathematical roses in spherical dimensions. rho = a + b * cos(c * theta) * cos(d * phi)");
-head1->addMeta(*meta8);
+meta& meta8 =  meta();
+meta8.setName(CString("description"));
+meta8.setContent(CString("2 random mathematical roses in spherical dimensions. rho = a + b * cos(c * theta) * cos(d * phi)"));
+head1.addMeta(&meta8);
 
-Cmeta* meta9 = new Cmeta();
-meta9->setName("identifier");
-meta9->setContent("https://coderextreme.net/X3DJSONLD/src/main/data/flowers2.x3d");
-head1->addMeta(*meta9);
+meta& meta9 =  meta();
+meta9.setName(CString("identifier"));
+meta9.setContent(CString("https://coderextreme.net/X3DJSONLD/src/main/data/flowers2.x3d"));
+head1.addMeta(&meta9);
 
-Cmeta* meta10 = new Cmeta();
-meta10->setName("generator");
-meta10->setContent("manually written");
-head1->addMeta(*meta10);
+meta& meta10 =  meta();
+meta10.setName(CString("generator"));
+meta10.setContent(CString("manually written"));
+head1.addMeta(&meta10);
 
-Cmeta* meta11 = new Cmeta();
-meta11->setName("license");
-meta11->setContent("https://www.web3d.org/x3d/content/examples/license.html");
-head1->addMeta(*meta11);
+meta& meta11 =  meta();
+meta11.setName(CString("license"));
+meta11.setContent(CString("https://www.web3d.org/x3d/content/examples/license.html"));
+head1.addMeta(&meta11);
 
-X3D0->setHead(*head1);
+X3D0.setHead(&head1);
 
-CScene* Scene12 = new CScene();
-CNavigationInfo* NavigationInfo13 = (CNavigationInfo *)(m_pScene.createNode("NavigationInfo"));
-group->addChildren(*NavigationInfo13);
+Scene& Scene12 =  Scene();
+NavigationInfo& NavigationInfo13 =  NavigationInfo();
+Scene12.addChild(&NavigationInfo13);
 
-CViewpoint* Viewpoint14 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
-Viewpoint14->setDescription("Two mathematical orbitals");
-Viewpoint14->setPosition(new float[3]{0,0,50});
-group->addChildren(*Viewpoint14);
+Viewpoint& Viewpoint14 =  Viewpoint();
+Viewpoint14.setDescription(CString("Two mathematical orbitals"));
+Viewpoint14.setPosition(new float[3]{0,0,50});
+Scene12.addChild(&Viewpoint14);
 
-CGroup* Group15 = (CGroup *)(m_pScene.createNode("Group"));
-CDirectionalLight* DirectionalLight16 = (CDirectionalLight *)(m_pScene.createNode("DirectionalLight"));
-DirectionalLight16->setDirection(new float[3]{1,1,1});
-Group15->addChildren(*DirectionalLight16);
+Group& Group15 =  Group();
+DirectionalLight& DirectionalLight16 =  DirectionalLight();
+DirectionalLight16.setDirection(new float[3]{1,1,1});
+Group15.addChild(&DirectionalLight16);
 
-CProtoDeclare ProtoDeclare17 = browser.createX3DFromString(R"foo(<?xml version="1.0" encoding="undefined"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
-<ProtoDeclare name="orbit" ><ProtoInterface><field name="translation" accessType="inputOutput" type="SFVec3f" value="-8 0 0"></field>
-<field name="diffuseColor" accessType="inputOutput" type="SFColor" value="1 0.5 0"></field>
-<field name="specularColor" accessType="inputOutput" type="SFColor" value="1 0.5 0"></field>
-<field name="transparency" accessType="inputOutput" type="SFFloat" value="0.75"></field>
-</ProtoInterface>
-<ProtoBody><Group><TimeSensor DEF="Clock" cycleInterval="16" loop="true"></TimeSensor>
-<OrientationInterpolator DEF="OrbitPath" key="0 0.5 1" keyValue="1 0 0 0 1 0 0 3.14 1 0 0 6.28"></OrientationInterpolator>
-<Transform DEF="OrbitTransform"><IS><connect nodeField="translation" protoField="translation"></connect>
-</IS>
-<Shape><Appearance containerField="appearance"><Material containerField="material"><IS><connect nodeField="diffuseColor" protoField="diffuseColor"></connect>
-<connect nodeField="specularColor" protoField="specularColor"></connect>
-<connect nodeField="transparency" protoField="transparency"></connect>
-</IS>
-</Material>
-</Appearance>
-<!--<IndexedFaceSet DEF="Orbit" creaseAngle="0"> <Coordinate DEF="OrbitCoordinates"></Coordinate> </IndexedFaceSet>--><IndexedFaceSet ccw="false" convex="false" coordIndex="0 1 2 -1" DEF="Orbit"><Coordinate DEF="OrbitCoordinates" point="0 0 1 0 1 0 1 0 0"></Coordinate>
-</IndexedFaceSet>
-</Shape>
-</Transform>
-<Script DEF="OrbitScript"><field name="set_fraction" accessType="inputOnly" type="SFFloat"></field>
-<field name="coordinates" accessType="inputOutput" type="MFVec3f"></field>
-<field name="coordIndexes" accessType="inputOutput" type="MFInt32"></field>
-<field name="e" accessType="inputOutput" type="SFFloat" value="5"></field>
-<field name="f" accessType="inputOutput" type="SFFloat" value="5"></field>
-<field name="g" accessType="inputOutput" type="SFFloat" value="5"></field>
-<field name="h" accessType="inputOutput" type="SFFloat" value="5"></field>
-<field name="resolution" accessType="inputOutput" type="SFInt32" value="50"></field>
-<![CDATA[ecmascript:
+ProtoDeclare& ProtoDeclare17 =  ProtoDeclare();
+ProtoDeclare17.setName(CString("orbit"));
+ProtoInterface& ProtoInterface18 =  ProtoInterface();
+field& field19 =  field();
+field19.setName(CString("translation"));
+field19.setAccessType(CString("inputOutput"));
+field19.setType(CString("SFVec3f"));
+field19.setValue(CString("-8 0 0"));
+ProtoInterface18.addChild(&field19);
 
-			function initialize() {
-			     generateCoordinates();
-			     var arrIndex = 0;
-			     for (var i = 0; i < resolution-1; i++) {
-				for (var j = 0; j < resolution-1; j++) {
-				     coordIndexes[arrIndex++] = i*resolution+j;
-				     coordIndexes[arrIndex++] = i*resolution+j+1;
-				     coordIndexes[arrIndex++] = (i+1)*resolution+j+1;
-				     coordIndexes[arrIndex++] = (i+1)*resolution+j;
-				     coordIndexes[arrIndex++] = -1;
-				}
-			    }
-			}
+field& field20 =  field();
+field20.setName(CString("diffuseColor"));
+field20.setAccessType(CString("inputOutput"));
+field20.setType(CString("SFColor"));
+field20.setValue(CString("1 0.5 0"));
+ProtoInterface18.addChild(&field20);
 
-			function generateCoordinates() {
-			     var theta = 0.0;
-			     var phi = 0.0;
-			     var delta = (2 * 3.141592653) / (resolution-1);
-			     var arrIndex = 0;
-			     for (var i = 0; i < resolution; i++) {
-				for (var j = 0; j < resolution; j++) {
-					var rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);
-					coordinates[arrIndex++] = new SFVec3f(
-						rho * Math.cos(phi) * Math.cos(theta),
-						rho * Math.cos(phi) * Math.sin(theta),
-						rho * Math.sin(phi)
-					);
-					theta += delta;
-				}
-				phi += delta;
-			     }
-			}
+field& field21 =  field();
+field21.setName(CString("specularColor"));
+field21.setAccessType(CString("inputOutput"));
+field21.setType(CString("SFColor"));
+field21.setValue(CString("1 0.5 0"));
+ProtoInterface18.addChild(&field21);
 
-			function set_fraction(fraction, eventTime) {
-				var choice = Math.floor(Math.random() * 4);
-				switch (choice) {
-				case 0:
-					e += Math.floor(Math.random() * 2) * 2 - 1;
-					break;
-				case 1:
-					f += Math.floor(Math.random() * 2) * 2 - 1;
-					break;
-				case 2:
-					g += Math.floor(Math.random() * 2) * 2 - 1;
-					break;
-				case 3:
-					h += Math.floor(Math.random() * 2) * 2 - 1;
-					break;
-				}
-				if (e < 1) {
-					f = 10;
-				}
-				if (f < 1) {
-					f = 10;
-				}
-				if (g < 1) {
-					g = 4;
-				}
-				if (h < 1) {
-					h = 4;
-				}
-				generateCoordinates();
-			}]]></Script>
-<ROUTE fromNode="OrbitScript" fromField="coordIndexes" toNode="Orbit" toField="set_coordIndex"></ROUTE>
-<ROUTE fromNode="OrbitScript" fromField="coordinates" toNode="OrbitCoordinates" toField="point"></ROUTE>
-<ROUTE fromNode="Clock" fromField="fraction_changed" toNode="OrbitScript" toField="set_fraction"></ROUTE>
-<ROUTE fromNode="OrbitPath" fromField="value_changed" toNode="OrbitTransform" toField="rotation"></ROUTE>
-<ROUTE fromNode="Clock" fromField="fraction_changed" toNode="OrbitPath" toField="set_fraction"></ROUTE>
-</Group>
-</ProtoBody>
-</ProtoDeclare>)foo");
-ProtoDeclare17->setName("orbit");
-CProtoInterface* ProtoInterface18 = new CProtoInterface();
-Cfield* field19 = new Cfield();
-field19->setName("translation");
-field19->setAccessType("inputOutput");
-field19->setType("SFVec3f");
-field19->setValue("-8 0 0");
-ProtoInterface18->addField(*field19);
+field& field22 =  field();
+field22.setName(CString("transparency"));
+field22.setAccessType(CString("inputOutput"));
+field22.setType(CString("SFFloat"));
+field22.setValue(CString("0.75"));
+ProtoInterface18.addChild(&field22);
 
-Cfield* field20 = new Cfield();
-field20->setName("diffuseColor");
-field20->setAccessType("inputOutput");
-field20->setType("SFColor");
-field20->setValue("1 0.5 0");
-ProtoInterface18->addField(*field20);
+ProtoDeclare17.addChild(&ProtoInterface18);
 
-Cfield* field21 = new Cfield();
-field21->setName("specularColor");
-field21->setAccessType("inputOutput");
-field21->setType("SFColor");
-field21->setValue("1 0.5 0");
-ProtoInterface18->addField(*field21);
+ProtoBody& ProtoBody23 =  ProtoBody();
+Group& Group24 =  Group();
+TimeSensor& TimeSensor25 =  TimeSensor();
+TimeSensor25.setDEF(CString("Clock"));
+TimeSensor25.setCycleInterval(16);
+TimeSensor25.setLoop(True);
+Group24.addChild(&TimeSensor25);
 
-Cfield* field22 = new Cfield();
-field22->setName("transparency");
-field22->setAccessType("inputOutput");
-field22->setType("SFFloat");
-field22->setValue("0.75");
-ProtoInterface18->addField(*field22);
+OrientationInterpolator& OrientationInterpolator26 =  OrientationInterpolator();
+OrientationInterpolator26.setDEF(CString("OrbitPath"));
+OrientationInterpolator26.setKey(new float[3]{0,0.5,1}, 3);
+OrientationInterpolator26.setKeyValue(new float[12]{1,0,0,0,1,0,0,3.14,1,0,0,6.28}, 12);
+Group24.addChild(&OrientationInterpolator26);
 
-ProtoDeclare17->setProtoInterface(*ProtoInterface18);
+Transform& Transform27 =  Transform();
+Transform27.setDEF(CString("OrbitTransform"));
+IS& IS28 =  IS();
+Connect& connect29 =  Connect();
+connect29.setNodeField(CString("translation"));
+connect29.setProtoField(CString("translation"));
+IS28.addChild(&connect29);
 
-CProtoBody* ProtoBody23 = new CProtoBody();
-CGroup* Group24 = (CGroup *)(m_pScene.createNode("Group"));
-CTimeSensor* TimeSensor25 = (CTimeSensor *)(m_pScene.createNode("TimeSensor"));
-TimeSensor25->setDEF("Clock");
-TimeSensor25->setCycleInterval(16);
-TimeSensor25->setLoop(True);
-Group24->addChildren(*TimeSensor25);
+Transform27.addChild(&IS28);
 
-COrientationInterpolator* OrientationInterpolator26 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
-OrientationInterpolator26->setDEF("OrbitPath");
-OrientationInterpolator26->setKey(new float[3]{0,0.5,1}, 3);
-OrientationInterpolator26->setKeyValue(new float[12]{1,0,0,0,1,0,0,3.14,1,0,0,6.28});
-Group24->addChildren(*OrientationInterpolator26);
+Shape& Shape30 =  Shape();
+Appearance& Appearance31 =  Appearance();
+Material& Material32 =  Material();
+IS& IS33 =  IS();
+Connect& connect34 =  Connect();
+connect34.setNodeField(CString("diffuseColor"));
+connect34.setProtoField(CString("diffuseColor"));
+IS33.addChild(&connect34);
 
-CTransform* Transform27 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform27->setDEF("OrbitTransform");
-CIS* IS28 = new CIS();
-Cconnect* connect29 = new Cconnect();
-connect29->setNodeField("translation");
-connect29->setProtoField("translation");
-IS28->addConnect(*connect29);
+Connect& connect35 =  Connect();
+connect35.setNodeField(CString("specularColor"));
+connect35.setProtoField(CString("specularColor"));
+IS33.addChild(&connect35);
 
-Transform27->setIS(*IS28);
+Connect& connect36 =  Connect();
+connect36.setNodeField(CString("transparency"));
+connect36.setProtoField(CString("transparency"));
+IS33.addChild(&connect36);
 
-CShape* Shape30 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance31 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material32 = (CMaterial *)(m_pScene.createNode("Material"));
-CIS* IS33 = new CIS();
-Cconnect* connect34 = new Cconnect();
-connect34->setNodeField("diffuseColor");
-connect34->setProtoField("diffuseColor");
-IS33->addConnect(*connect34);
+Material32.addChild(&IS33);
 
-Cconnect* connect35 = new Cconnect();
-connect35->setNodeField("specularColor");
-connect35->setProtoField("specularColor");
-IS33->addConnect(*connect35);
+Appearance31.addChild(&Material32);
 
-Cconnect* connect36 = new Cconnect();
-connect36->setNodeField("transparency");
-connect36->setProtoField("transparency");
-IS33->addConnect(*connect36);
-
-Material32->setIS(*IS33);
-
-Appearance31->setMaterial(*Material32);
-
-Shape30->setAppearance(*Appearance31);
+Shape30.addChild(&Appearance31);
 
 //<IndexedFaceSet DEF=\"Orbit\" creaseAngle=\"0\"> <Coordinate DEF=\"OrbitCoordinates\"/> </IndexedFaceSet>
-CIndexedFaceSet* IndexedFaceSet37 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
-IndexedFaceSet37->setCcw(False);
-IndexedFaceSet37->setConvex(False);
-IndexedFaceSet37->setCoordIndex(new int[4]{0,1,2,-1});
-IndexedFaceSet37->setDEF("Orbit");
-CCoordinate* Coordinate38 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
-Coordinate38->setDEF("OrbitCoordinates");
-Coordinate38->setPoint(new float[9]{0,0,1,0,1,0,1,0,0});
-IndexedFaceSet37->setCoord(*Coordinate38);
+IndexedFaceSet& IndexedFaceSet37 =  IndexedFaceSet();
+IndexedFaceSet37.setCcw(False);
+IndexedFaceSet37.setConvex(False);
+IndexedFaceSet37.setCoordIndex(new int32_t[4]{0,1,2,-1}, 4);
+IndexedFaceSet37.setDEF(CString("Orbit"));
+Coordinate& Coordinate38 =  Coordinate();
+Coordinate38.setDEF(CString("OrbitCoordinates"));
+Coordinate38.setPoint(new float[9]{0,0,1,0,1,0,1,0,0}, 9);
+IndexedFaceSet37.setCoord(&Coordinate38);
 
-Shape30->setGeometry(IndexedFaceSet37);
+Shape30.setGeometry(&IndexedFaceSet37);
 
-Transform27->addChild(*Shape30);
+Transform27.addChild(&Shape30);
 
-Group24->addChildren(*Transform27);
+Group24.addChild(&Transform27);
 
-CScript* Script39 = (CScript *)(m_pScene.createNode("Script"));
-Script39->setDEF("OrbitScript");
-Cfield* field40 = new Cfield();
-field40->setName("set_fraction");
-field40->setAccessType("inputOnly");
-field40->setType("SFFloat");
-Script39->addField(*field40);
+Script& Script39 =  Script();
+Script39.setDEF(CString("OrbitScript"));
+field& field40 =  field();
+field40.setName(CString("set_fraction"));
+field40.setAccessType(CString("inputOnly"));
+field40.setType(CString("SFFloat"));
+Script39.addChild(&field40);
 
-Cfield* field41 = new Cfield();
-field41->setName("coordinates");
-field41->setAccessType("inputOutput");
-field41->setType("MFVec3f");
-Script39->addField(*field41);
+field& field41 =  field();
+field41.setName(CString("coordinates"));
+field41.setAccessType(CString("inputOutput"));
+field41.setType(CString("MFVec3f"));
+Script39.addChild(&field41);
 
-Cfield* field42 = new Cfield();
-field42->setName("coordIndexes");
-field42->setAccessType("inputOutput");
-field42->setType("MFInt32");
-Script39->addField(*field42);
+field& field42 =  field();
+field42.setName(CString("coordIndexes"));
+field42.setAccessType(CString("inputOutput"));
+field42.setType(CString("MFInt32"));
+Script39.addChild(&field42);
 
-Cfield* field43 = new Cfield();
-field43->setName("e");
-field43->setAccessType("inputOutput");
-field43->setType("SFFloat");
-field43->setValue("5");
-Script39->addField(*field43);
+field& field43 =  field();
+field43.setName(CString("e"));
+field43.setAccessType(CString("inputOutput"));
+field43.setType(CString("SFFloat"));
+field43.setValue(CString("5"));
+Script39.addChild(&field43);
 
-Cfield* field44 = new Cfield();
-field44->setName("f");
-field44->setAccessType("inputOutput");
-field44->setType("SFFloat");
-field44->setValue("5");
-Script39->addField(*field44);
+field& field44 =  field();
+field44.setName(CString("f"));
+field44.setAccessType(CString("inputOutput"));
+field44.setType(CString("SFFloat"));
+field44.setValue(CString("5"));
+Script39.addChild(&field44);
 
-Cfield* field45 = new Cfield();
-field45->setName("g");
-field45->setAccessType("inputOutput");
-field45->setType("SFFloat");
-field45->setValue("5");
-Script39->addField(*field45);
+field& field45 =  field();
+field45.setName(CString("g"));
+field45.setAccessType(CString("inputOutput"));
+field45.setType(CString("SFFloat"));
+field45.setValue(CString("5"));
+Script39.addChild(&field45);
 
-Cfield* field46 = new Cfield();
-field46->setName("h");
-field46->setAccessType("inputOutput");
-field46->setType("SFFloat");
-field46->setValue("5");
-Script39->addField(*field46);
+field& field46 =  field();
+field46.setName(CString("h"));
+field46.setAccessType(CString("inputOutput"));
+field46.setType(CString("SFFloat"));
+field46.setValue(CString("5"));
+Script39.addChild(&field46);
 
-Cfield* field47 = new Cfield();
-field47->setName("resolution");
-field47->setAccessType("inputOutput");
-field47->setType("SFInt32");
-field47->setValue("50");
-Script39->addField(*field47);
+field& field47 =  field();
+field47.setName(CString("resolution"));
+field47.setAccessType(CString("inputOutput"));
+field47.setType(CString("SFInt32"));
+field47.setValue(CString("50"));
+Script39.addChild(&field47);
 
 
-Script39.setSourceCode(`ecmascript:\n"+
-"\n"+
-"			function initialize() {\n"+
-"			     generateCoordinates();\n"+
-"			     var arrIndex = 0;\n"+
-"			     for (var i = 0; i < resolution-1; i++) {\n"+
-"				for (var j = 0; j < resolution-1; j++) {\n"+
-"				     coordIndexes[arrIndex++] = i*resolution+j;\n"+
-"				     coordIndexes[arrIndex++] = i*resolution+j+1;\n"+
-"				     coordIndexes[arrIndex++] = (i+1)*resolution+j+1;\n"+
-"				     coordIndexes[arrIndex++] = (i+1)*resolution+j;\n"+
-"				     coordIndexes[arrIndex++] = -1;\n"+
-"				}\n"+
-"			    }\n"+
-"			}\n"+
-"\n"+
-"			function generateCoordinates() {\n"+
-"			     var theta = 0.0;\n"+
-"			     var phi = 0.0;\n"+
-"			     var delta = (2 * 3.141592653) / (resolution-1);\n"+
-"			     var arrIndex = 0;\n"+
-"			     for (var i = 0; i < resolution; i++) {\n"+
-"				for (var j = 0; j < resolution; j++) {\n"+
-"					var rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);\n"+
-"					coordinates[arrIndex++] = new SFVec3f(\n"+
-"						rho * Math.cos(phi) * Math.cos(theta),\n"+
-"						rho * Math.cos(phi) * Math.sin(theta),\n"+
-"						rho * Math.sin(phi)\n"+
-"					);\n"+
-"					theta += delta;\n"+
-"				}\n"+
-"				phi += delta;\n"+
-"			     }\n"+
-"			}\n"+
-"\n"+
-"			function set_fraction(fraction, eventTime) {\n"+
-"				var choice = Math.floor(Math.random() * 4);\n"+
-"				switch (choice) {\n"+
-"				case 0:\n"+
-"					e += Math.floor(Math.random() * 2) * 2 - 1;\n"+
-"					break;\n"+
-"				case 1:\n"+
-"					f += Math.floor(Math.random() * 2) * 2 - 1;\n"+
-"					break;\n"+
-"				case 2:\n"+
-"					g += Math.floor(Math.random() * 2) * 2 - 1;\n"+
-"					break;\n"+
-"				case 3:\n"+
-"					h += Math.floor(Math.random() * 2) * 2 - 1;\n"+
-"					break;\n"+
-"				}\n"+
-"				if (e < 1) {\n"+
-"					f = 10;\n"+
-"				}\n"+
-"				if (f < 1) {\n"+
-"					f = 10;\n"+
-"				}\n"+
-"				if (g < 1) {\n"+
-"					g = 4;\n"+
-"				}\n"+
-"				if (h < 1) {\n"+
-"					h = 4;\n"+
-"				}\n"+
-"				generateCoordinates();\n"+
-"			}`)
-Group24->addChildren(*Script39);
+Script39.setSourceCode(CString("ecmascript:")+
+_T("			function initialize() {")+
+_T("			     generateCoordinates();")+
+_T("			     var arrIndex = 0;")+
+_T("			     for (var i = 0; i < resolution-1; i++) {")+
+_T("				for (var j = 0; j < resolution-1; j++) {")+
+_T("				     coordIndexes[arrIndex++] = i*resolution+j;")+
+_T("				     coordIndexes[arrIndex++] = i*resolution+j+1;")+
+_T("				     coordIndexes[arrIndex++] = (i+1)*resolution+j+1;")+
+_T("				     coordIndexes[arrIndex++] = (i+1)*resolution+j;")+
+_T("				     coordIndexes[arrIndex++] = -1;")+
+_T("				}")+
+_T("			    }")+
+_T("			}")+
+_T("			function generateCoordinates() {")+
+_T("			     var theta = 0.0;")+
+_T("			     var phi = 0.0;")+
+_T("			     var delta = (2 * 3.141592653) / (resolution-1);")+
+_T("			     var arrIndex = 0;")+
+_T("			     for (var i = 0; i < resolution; i++) {")+
+_T("				for (var j = 0; j < resolution; j++) {")+
+_T("					var rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);")+
+_T("					coordinates[arrIndex++] = new SFVec3f(")+
+_T("						rho * Math.cos(phi) * Math.cos(theta),")+
+_T("						rho * Math.cos(phi) * Math.sin(theta),")+
+_T("						rho * Math.sin(phi)")+
+_T("					);")+
+_T("					theta += delta;")+
+_T("				}")+
+_T("				phi += delta;")+
+_T("			     }")+
+_T("			}")+
+_T("			function set_fraction(fraction, eventTime) {")+
+_T("				var choice = Math.floor(Math.random() * 4);")+
+_T("				switch (choice) {")+
+_T("				case 0:")+
+_T("					e += Math.floor(Math.random() * 2) * 2 - 1;")+
+_T("					break;")+
+_T("				case 1:")+
+_T("					f += Math.floor(Math.random() * 2) * 2 - 1;")+
+_T("					break;")+
+_T("				case 2:")+
+_T("					g += Math.floor(Math.random() * 2) * 2 - 1;")+
+_T("					break;")+
+_T("				case 3:")+
+_T("					h += Math.floor(Math.random() * 2) * 2 - 1;")+
+_T("					break;")+
+_T("				}")+
+_T("				if (e < 1) {")+
+_T("					f = 10;")+
+_T("				}")+
+_T("				if (f < 1) {")+
+_T("					f = 10;")+
+_T("				}")+
+_T("				if (g < 1) {")+
+_T("					g = 4;")+
+_T("				}")+
+_T("				if (h < 1) {")+
+_T("					h = 4;")+
+_T("				}")+
+_T("				generateCoordinates();")+
+_T("			}"));
+Group24.addChild(&Script39);
 
-CROUTE* ROUTE48 = new CROUTE();
-ROUTE48->setFromNode("OrbitScript");
-ROUTE48->setFromField("coordIndexes");
-ROUTE48->setToNode("Orbit");
-ROUTE48->setToField("set_coordIndex");
-Group24->addChildren(*ROUTE48);
+ROUTE& ROUTE48 =  ROUTE();
+ROUTE48.setFromNode(CString("OrbitScript"));
+ROUTE48.setFromField(CString("coordIndexes"));
+ROUTE48.setToNode(CString("Orbit"));
+ROUTE48.setToField(CString("set_coordIndex"));
+Group24.addChild(&ROUTE48);
 
-CROUTE* ROUTE49 = new CROUTE();
-ROUTE49->setFromNode("OrbitScript");
-ROUTE49->setFromField("coordinates");
-ROUTE49->setToNode("OrbitCoordinates");
-ROUTE49->setToField("point");
-Group24->addChildren(*ROUTE49);
+ROUTE& ROUTE49 =  ROUTE();
+ROUTE49.setFromNode(CString("OrbitScript"));
+ROUTE49.setFromField(CString("coordinates"));
+ROUTE49.setToNode(CString("OrbitCoordinates"));
+ROUTE49.setToField(CString("point"));
+Group24.addChild(&ROUTE49);
 
-CROUTE* ROUTE50 = new CROUTE();
-ROUTE50->setFromNode("Clock");
-ROUTE50->setFromField("fraction_changed");
-ROUTE50->setToNode("OrbitScript");
-ROUTE50->setToField("set_fraction");
-Group24->addChildren(*ROUTE50);
+ROUTE& ROUTE50 =  ROUTE();
+ROUTE50.setFromNode(CString("Clock"));
+ROUTE50.setFromField(CString("fraction_changed"));
+ROUTE50.setToNode(CString("OrbitScript"));
+ROUTE50.setToField(CString("set_fraction"));
+Group24.addChild(&ROUTE50);
 
-CROUTE* ROUTE51 = new CROUTE();
-ROUTE51->setFromNode("OrbitPath");
-ROUTE51->setFromField("value_changed");
-ROUTE51->setToNode("OrbitTransform");
-ROUTE51->setToField("rotation");
-Group24->addChildren(*ROUTE51);
+ROUTE& ROUTE51 =  ROUTE();
+ROUTE51.setFromNode(CString("OrbitPath"));
+ROUTE51.setFromField(CString("value_changed"));
+ROUTE51.setToNode(CString("OrbitTransform"));
+ROUTE51.setToField(CString("rotation"));
+Group24.addChild(&ROUTE51);
 
-CROUTE* ROUTE52 = new CROUTE();
-ROUTE52->setFromNode("Clock");
-ROUTE52->setFromField("fraction_changed");
-ROUTE52->setToNode("OrbitPath");
-ROUTE52->setToField("set_fraction");
-Group24->addChildren(*ROUTE52);
+ROUTE& ROUTE52 =  ROUTE();
+ROUTE52.setFromNode(CString("Clock"));
+ROUTE52.setFromField(CString("fraction_changed"));
+ROUTE52.setToNode(CString("OrbitPath"));
+ROUTE52.setToField(CString("set_fraction"));
+Group24.addChild(&ROUTE52);
 
-ProtoBody23->addChildren(*Group24);
+ProtoBody23.addChild(&Group24);
 
-ProtoDeclare17->setProtoBody(*ProtoBody23);
+ProtoDeclare17.addChild(&ProtoBody23);
 
-Group15->addChildren(*ProtoDeclare17);
+Group15.addChild(&ProtoDeclare17);
 
-CProtoInstance* ProtoInstance53 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
-ProtoInstance53->setName("orbit");
-CfieldValue* fieldValue54 = new CfieldValue();
-fieldValue54->setName("translation");
-fieldValue54->setValue("-8 0 0");
-ProtoInstance53->addFieldValue(*fieldValue54);
+ProtoInstance& ProtoInstance53 =  ProtoInstance();
+ProtoInstance53.setName(CString("orbit"));
+fieldValue& fieldValue54 =  fieldValue();
+fieldValue54.setName(CString("translation"));
+fieldValue54.setValue(CString("-8 0 0"));
+ProtoInstance53.addChild(&fieldValue54);
 
-CfieldValue* fieldValue55 = new CfieldValue();
-fieldValue55->setName("diffuseColor");
-fieldValue55->setValue("1 0.5 0");
-ProtoInstance53->addFieldValue(*fieldValue55);
+fieldValue& fieldValue55 =  fieldValue();
+fieldValue55.setName(CString("diffuseColor"));
+fieldValue55.setValue(CString("1 0.5 0"));
+ProtoInstance53.addChild(&fieldValue55);
 
-CfieldValue* fieldValue56 = new CfieldValue();
-fieldValue56->setName("specularColor");
-fieldValue56->setValue("1 0.5 0");
-ProtoInstance53->addFieldValue(*fieldValue56);
+fieldValue& fieldValue56 =  fieldValue();
+fieldValue56.setName(CString("specularColor"));
+fieldValue56.setValue(CString("1 0.5 0"));
+ProtoInstance53.addChild(&fieldValue56);
 
-CfieldValue* fieldValue57 = new CfieldValue();
-fieldValue57->setName("transparency");
-fieldValue57->setValue("0.75");
-ProtoInstance53->addFieldValue(*fieldValue57);
+fieldValue& fieldValue57 =  fieldValue();
+fieldValue57.setName(CString("transparency"));
+fieldValue57.setValue(CString("0.75"));
+ProtoInstance53.addChild(&fieldValue57);
 
-Group15->addChildren(*ProtoInstance53);
+Group15.addChild(&ProtoInstance53);
 
-CProtoInstance* ProtoInstance58 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
-ProtoInstance58->setName("orbit");
-CfieldValue* fieldValue59 = new CfieldValue();
-fieldValue59->setName("translation");
-fieldValue59->setValue("8 0 0");
-ProtoInstance58->addFieldValue(*fieldValue59);
+ProtoInstance& ProtoInstance58 =  ProtoInstance();
+ProtoInstance58.setName(CString("orbit"));
+fieldValue& fieldValue59 =  fieldValue();
+fieldValue59.setName(CString("translation"));
+fieldValue59.setValue(CString("8 0 0"));
+ProtoInstance58.addChild(&fieldValue59);
 
-CfieldValue* fieldValue60 = new CfieldValue();
-fieldValue60->setName("diffuseColor");
-fieldValue60->setValue("0 0.5 1");
-ProtoInstance58->addFieldValue(*fieldValue60);
+fieldValue& fieldValue60 =  fieldValue();
+fieldValue60.setName(CString("diffuseColor"));
+fieldValue60.setValue(CString("0 0.5 1"));
+ProtoInstance58.addChild(&fieldValue60);
 
-CfieldValue* fieldValue61 = new CfieldValue();
-fieldValue61->setName("specularColor");
-fieldValue61->setValue("0 0.5 1");
-ProtoInstance58->addFieldValue(*fieldValue61);
+fieldValue& fieldValue61 =  fieldValue();
+fieldValue61.setName(CString("specularColor"));
+fieldValue61.setValue(CString("0 0.5 1"));
+ProtoInstance58.addChild(&fieldValue61);
 
-CfieldValue* fieldValue62 = new CfieldValue();
-fieldValue62->setName("transparency");
-fieldValue62->setValue("0.5");
-ProtoInstance58->addFieldValue(*fieldValue62);
+fieldValue& fieldValue62 =  fieldValue();
+fieldValue62.setName(CString("transparency"));
+fieldValue62.setValue(CString("0.5"));
+ProtoInstance58.addChild(&fieldValue62);
 
-Group15->addChildren(*ProtoInstance58);
+Group15.addChild(&ProtoInstance58);
 
-group->addChildren(*Group15);
+Scene12.addChild(&Group15);
 
-X3D0->setScene(*Scene12);
+X3D0.setScene(&Scene12);
 
-m_pScene.addRootNode(group);
-X3D0->toXMLString();
 }

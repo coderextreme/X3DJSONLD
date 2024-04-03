@@ -1,472 +1,465 @@
-/* delete next 5 lines for Visual Studio */
-#define FALSE false
-#define TRUE true
-#define WINAPI
-#define AFX_EXT_CLASS
-#define EXPORT32
-#include "C:/x3d-code/www.web3d.org/x3d/stylesheets/cpp/concretes.h"
+#define False false
+#define True true
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/X3DLib.h"
 int main(int argc, char ** argv) {
-CX3DScene m_pScene;
-CBrowser browser = X3D.getBrowser();
-CX3D* X3D0 = new CX3D();
-CGroup* group = (CGroup*)(m_pScene.createNode("Group"));
-group->addChildren(X3D0);
-X3D0->setProfile("Immersive");
-X3D0->setVersion("4.0");
-Chead* head1 = new Chead();
-Ccomponent* component2 = new Ccomponent();
-component2->setName("Scripting");
-component2->setLevel(1);
-head1->addComponent(*component2);
+X3D& X3D0 =  X3D();
+X3D0.setProfile(CString("Immersive"));
+X3D0.setVersion(CString("4.0"));
+head& head1 =  head();
+component& component2 =  component();
+component2.setName(CString("Scripting"));
+component2.setLevel(1);
+head1.addChild(&component2);
 
-Ccomponent* component3 = new Ccomponent();
-component3->setName("EnvironmentalEffects");
-component3->setLevel(3);
-head1->addComponent(*component3);
+component& component3 =  component();
+component3.setName(CString("EnvironmentalEffects"));
+component3.setLevel(3);
+head1.addChild(&component3);
 
-Ccomponent* component4 = new Ccomponent();
-component4->setName("Shaders");
-component4->setLevel(1);
-head1->addComponent(*component4);
+component& component4 =  component();
+component4.setName(CString("Shaders"));
+component4.setLevel(1);
+head1.addChild(&component4);
 
-Ccomponent* component5 = new Ccomponent();
-component5->setName("CubeMapTexturing");
-component5->setLevel(1);
-head1->addComponent(*component5);
+component& component5 =  component();
+component5.setName(CString("CubeMapTexturing"));
+component5.setLevel(1);
+head1.addChild(&component5);
 
-Ccomponent* component6 = new Ccomponent();
-component6->setName("Texturing");
-component6->setLevel(1);
-head1->addComponent(*component6);
+component& component6 =  component();
+component6.setName(CString("Texturing"));
+component6.setLevel(1);
+head1.addChild(&component6);
 
-Ccomponent* component7 = new Ccomponent();
-component7->setName("Rendering");
-component7->setLevel(1);
-head1->addComponent(*component7);
+component& component7 =  component();
+component7.setName(CString("Rendering"));
+component7.setLevel(1);
+head1.addChild(&component7);
 
-Ccomponent* component8 = new Ccomponent();
-component8->setName("Shape");
-component8->setLevel(4);
-head1->addComponent(*component8);
+component& component8 =  component();
+component8.setName(CString("Shape"));
+component8.setLevel(4);
+head1.addChild(&component8);
 
-Ccomponent* component9 = new Ccomponent();
-component9->setName("Grouping");
-component9->setLevel(3);
-head1->addComponent(*component9);
+component& component9 =  component();
+component9.setName(CString("Grouping"));
+component9.setLevel(3);
+head1.addChild(&component9);
 
-Ccomponent* component10 = new Ccomponent();
-component10->setName("Core");
-component10->setLevel(1);
-head1->addComponent(*component10);
+component& component10 =  component();
+component10.setName(CString("Core"));
+component10.setLevel(1);
+head1.addChild(&component10);
 
-Cmeta* meta11 = new Cmeta();
-meta11->setName("title");
-meta11->setContent("mirror2.x3d");
-head1->addMeta(*meta11);
+meta& meta11 =  meta();
+meta11.setName(CString("title"));
+meta11.setContent(CString("mirror2.x3d"));
+head1.addMeta(&meta11);
 
-Cmeta* meta12 = new Cmeta();
-meta12->setName("creator");
-meta12->setContent("John Carlson");
-head1->addMeta(*meta12);
+meta& meta12 =  meta();
+meta12.setName(CString("creator"));
+meta12.setContent(CString("John Carlson"));
+head1.addMeta(&meta12);
 
-Cmeta* meta13 = new Cmeta();
-meta13->setName("generator");
-meta13->setContent("manual");
-head1->addMeta(*meta13);
+meta& meta13 =  meta();
+meta13.setName(CString("generator"));
+meta13.setContent(CString("manual"));
+head1.addMeta(&meta13);
 
-Cmeta* meta14 = new Cmeta();
-meta14->setName("identifier");
-meta14->setContent("https://coderextreme.net/X3DJSONLD/src/main/data/mirror2.x3d");
-head1->addMeta(*meta14);
+meta& meta14 =  meta();
+meta14.setName(CString("identifier"));
+meta14.setContent(CString("https://coderextreme.net/X3DJSONLD/src/main/data/mirror2.x3d"));
+head1.addMeta(&meta14);
 
-Cmeta* meta15 = new Cmeta();
-meta15->setName("description");
-meta15->setContent("a mirrored sphere");
-head1->addMeta(*meta15);
+meta& meta15 =  meta();
+meta15.setName(CString("description"));
+meta15.setContent(CString("a mirrored sphere"));
+head1.addMeta(&meta15);
 
-X3D0->setHead(*head1);
+X3D0.setHead(&head1);
 
-CScene* Scene16 = new CScene();
-CViewpoint* Viewpoint17 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
-Viewpoint17->setPosition(new float[3]{0,5,100});
-Viewpoint17->setDescription("Switch background and images texture");
-group->addChildren(*Viewpoint17);
+Scene& Scene16 =  Scene();
+Viewpoint& Viewpoint17 =  Viewpoint();
+Viewpoint17.setPosition(new float[3]{0,5,100});
+Viewpoint17.setDescription(CString("Switch background and images texture"));
+Scene16.addChild(&Viewpoint17);
 
-CBackground* Background18 = (CBackground *)(m_pScene.createNode("Background"));
-Background18->setDEF("cube");
-Background18->setLeftUrl(new CString[2]{"../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png"}, 2);
-Background18->setRightUrl(new CString[2]{"../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png"}, 2);
-Background18->setFrontUrl(new CString[2]{"../resources/images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png"}, 2);
-Background18->setBackUrl(new CString[2]{"../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png"}, 2);
-Background18->setTopUrl(new CString[2]{"../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png"}, 2);
-Background18->setBottomUrl(new CString[2]{"../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"}, 2);
-group->addChildren(*Background18);
+Background& Background18 =  Background();
+Background18.setDEF(CString("cube"));
+Background18.setLeftUrl(new CString[2]{CString("../resources/images/all_probes/beach_cross/beach_left.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png")}, 2);
+Background18.setRightUrl(new CString[2]{CString("../resources/images/all_probes/beach_cross/beach_right.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png")}, 2);
+Background18.setFrontUrl(new CString[2]{CString("../resources/images/all_probes/beach_cross/beach_front.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png")}, 2);
+Background18.setBackUrl(new CString[2]{CString("../resources/images/all_probes/beach_cross/beach_back.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png")}, 2);
+Background18.setTopUrl(new CString[2]{CString("../resources/images/all_probes/beach_cross/beach_top.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png")}, 2);
+Background18.setBottomUrl(new CString[2]{CString("../resources/images/all_probes/beach_cross/beach_bottom.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png")}, 2);
+Scene16.addChild(&Background18);
 
-CTransform* Transform19 = (CTransform *)(m_pScene.createNode("Transform"));
-CShape* Shape20 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance21 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material22 = (CMaterial *)(m_pScene.createNode("Material"));
-Material22->setDiffuseColor(new float[3]{0.7,0.7,0.7});
-Material22->setSpecularColor(new float[3]{0.5,0.5,0.5});
-Appearance21->setMaterial(*Material22);
+Transform& Transform19 =  Transform();
+Shape& Shape20 =  Shape();
+Appearance& Appearance21 =  Appearance();
+Material& Material22 =  Material();
+Material22.setDiffuseColor(new float[3]{0.7,0.7,0.7});
+Material22.setSpecularColor(new float[3]{0.5,0.5,0.5});
+Appearance21.addChild(&Material22);
 
-CComposedCubeMapTexture* ComposedCubeMapTexture23 = (CComposedCubeMapTexture *)(m_pScene.createNode("ComposedCubeMapTexture"));
-CImageTexture* ImageTexture24 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
-ImageTexture24->setDEF("backShader");
-ImageTexture24->setUrl(new CString[2]{"../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png"}, 2);
-ComposedCubeMapTexture23->setBack(*ImageTexture24);
+ComposedCubeMapTexture& ComposedCubeMapTexture23 =  ComposedCubeMapTexture();
+ImageTexture& ImageTexture24 =  ImageTexture();
+ImageTexture24.setDEF(CString("backShader"));
+ImageTexture24.setUrl(new CString[2]{CString("../resources/images/all_probes/beach_cross/beach_back.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png")}, 2);
+ComposedCubeMapTexture23.setBack(ImageTexture24);
 
-CImageTexture* ImageTexture25 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
-ImageTexture25->setDEF("bottomShader");
-ImageTexture25->setUrl(new CString[2]{"../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"}, 2);
-ComposedCubeMapTexture23->setBottom(*ImageTexture25);
+ImageTexture& ImageTexture25 =  ImageTexture();
+ImageTexture25.setDEF(CString("bottomShader"));
+ImageTexture25.setUrl(new CString[2]{CString("../resources/images/all_probes/beach_cross/beach_bottom.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png")}, 2);
+ComposedCubeMapTexture23.setBottom(ImageTexture25);
 
-CImageTexture* ImageTexture26 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
-ImageTexture26->setDEF("frontShader");
-ImageTexture26->setUrl(new CString[2]{"../resources/images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png"}, 2);
-ComposedCubeMapTexture23->setFront(*ImageTexture26);
+ImageTexture& ImageTexture26 =  ImageTexture();
+ImageTexture26.setDEF(CString("frontShader"));
+ImageTexture26.setUrl(new CString[2]{CString("../resources/images/all_probes/beach_cross/beach_front.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png")}, 2);
+ComposedCubeMapTexture23.setFront(ImageTexture26);
 
-CImageTexture* ImageTexture27 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
-ImageTexture27->setDEF("leftShader");
-ImageTexture27->setUrl(new CString[2]{"../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png"}, 2);
-ComposedCubeMapTexture23->setLeft(*ImageTexture27);
+ImageTexture& ImageTexture27 =  ImageTexture();
+ImageTexture27.setDEF(CString("leftShader"));
+ImageTexture27.setUrl(new CString[2]{CString("../resources/images/all_probes/beach_cross/beach_left.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png")}, 2);
+ComposedCubeMapTexture23.setLeft(ImageTexture27);
 
-CImageTexture* ImageTexture28 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
-ImageTexture28->setDEF("rightShader");
-ImageTexture28->setUrl(new CString[2]{"../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png"}, 2);
-ComposedCubeMapTexture23->setRight(*ImageTexture28);
+ImageTexture& ImageTexture28 =  ImageTexture();
+ImageTexture28.setDEF(CString("rightShader"));
+ImageTexture28.setUrl(new CString[2]{CString("../resources/images/all_probes/beach_cross/beach_right.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png")}, 2);
+ComposedCubeMapTexture23.setRight(ImageTexture28);
 
-CImageTexture* ImageTexture29 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
-ImageTexture29->setDEF("topShader");
-ImageTexture29->setUrl(new CString[2]{"../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png"}, 2);
-ComposedCubeMapTexture23->setTop(*ImageTexture29);
+ImageTexture& ImageTexture29 =  ImageTexture();
+ImageTexture29.setDEF(CString("topShader"));
+ImageTexture29.setUrl(new CString[2]{CString("../resources/images/all_probes/beach_cross/beach_top.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png")}, 2);
+ComposedCubeMapTexture23.setTop(ImageTexture29);
 
-Appearance21->setTexture(*ComposedCubeMapTexture23);
+Appearance21.addChild(&ComposedCubeMapTexture23);
 
-CComposedShader* ComposedShader30 = (CComposedShader *)(m_pScene.createNode("ComposedShader"));
-ComposedShader30->setDEF("x_ite");
-ComposedShader30->setLanguage("GLSL");
+ComposedShader& ComposedShader30 =  ComposedShader();
+ComposedShader30.setDEF(CString("x_ite"));
+ComposedShader30.setLanguage(CString("GLSL"));
 //http://hypertextbook.com/facts/2005/JustinChe.shtml
-Cfield* field31 = new Cfield();
-field31->setName("chromaticDispertion");
-field31->setAccessType("inputOutput");
-field31->setType("SFVec3f");
-field31->setValue("0.98 1 1.033");
-ComposedShader30->addField(*field31);
+field& field31 =  field();
+field31.setName(CString("chromaticDispertion"));
+field31.setAccessType(CString("inputOutput"));
+field31.setType(CString("SFVec3f"));
+field31.setValue(CString("0.98 1 1.033"));
+ComposedShader30.addChild(&field31);
 
-Cfield* field32 = new Cfield();
-field32->setName("cube");
-field32->setAccessType("inputOutput");
-field32->setType("SFInt32");
-field32->setValue("0");
-ComposedShader30->addField(*field32);
+field& field32 =  field();
+field32.setName(CString("cube"));
+field32.setAccessType(CString("inputOutput"));
+field32.setType(CString("SFInt32"));
+field32.setValue(CString("0"));
+ComposedShader30.addChild(&field32);
 
-Cfield* field33 = new Cfield();
-field33->setName("bias");
-field33->setAccessType("inputOutput");
-field33->setType("SFFloat");
-field33->setValue("0.5");
-ComposedShader30->addField(*field33);
+field& field33 =  field();
+field33.setName(CString("bias"));
+field33.setAccessType(CString("inputOutput"));
+field33.setType(CString("SFFloat"));
+field33.setValue(CString("0.5"));
+ComposedShader30.addChild(&field33);
 
-Cfield* field34 = new Cfield();
-field34->setName("scale");
-field34->setAccessType("inputOutput");
-field34->setType("SFFloat");
-field34->setValue("0.5");
-ComposedShader30->addField(*field34);
+field& field34 =  field();
+field34.setName(CString("scale"));
+field34.setAccessType(CString("inputOutput"));
+field34.setType(CString("SFFloat"));
+field34.setValue(CString("0.5"));
+ComposedShader30.addChild(&field34);
 
-Cfield* field35 = new Cfield();
-field35->setName("power");
-field35->setAccessType("inputOutput");
-field35->setType("SFFloat");
-field35->setValue("2");
-ComposedShader30->addField(*field35);
+field& field35 =  field();
+field35.setName(CString("power"));
+field35.setAccessType(CString("inputOutput"));
+field35.setType(CString("SFFloat"));
+field35.setValue(CString("2"));
+ComposedShader30.addChild(&field35);
 
-CShaderPart* ShaderPart36 = (CShaderPart *)(m_pScene.createNode("ShaderPart"));
-ShaderPart36->setUrl(new CString[2]{"../shaders/x_ite.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"}, 2);
-ShaderPart36->setType("VERTEX");
-ComposedShader30->addParts(*ShaderPart36);
+ShaderPart& ShaderPart36 =  ShaderPart();
+ShaderPart36.setUrl(new CString[2]{CString("../shaders/x_ite.vs"), CString("https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs")}, 2);
+ShaderPart36.setType(CString("VERTEX"));
+ComposedShader30.setParts(&ShaderPart36);
 
-CShaderPart* ShaderPart37 = (CShaderPart *)(m_pScene.createNode("ShaderPart"));
-ShaderPart37->setUrl(new CString[2]{"../shaders/x_itemix.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itemix.fs"}, 2);
-ShaderPart37->setType("FRAGMENT");
-ComposedShader30->addParts(*ShaderPart37);
+ShaderPart& ShaderPart37 =  ShaderPart();
+ShaderPart37.setUrl(new CString[2]{CString("../shaders/x_itemix.fs"), CString("https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itemix.fs")}, 2);
+ShaderPart37.setType(CString("FRAGMENT"));
+ComposedShader30.setParts(&ShaderPart37);
 
-Appearance21->addShaders(*ComposedShader30);
+Appearance21.addChild(&ComposedShader30);
 
-CComposedShader* ComposedShader38 = (CComposedShader *)(m_pScene.createNode("ComposedShader"));
-ComposedShader38->setDEF("x3dom");
-ComposedShader38->setLanguage("GLSL");
-Cfield* field39 = new Cfield();
-field39->setName("chromaticDispertion");
-field39->setAccessType("inputOutput");
-field39->setType("SFVec3f");
-field39->setValue("0.98 1 1.033");
-ComposedShader38->addField(*field39);
+ComposedShader& ComposedShader38 =  ComposedShader();
+ComposedShader38.setDEF(CString("x3dom"));
+ComposedShader38.setLanguage(CString("GLSL"));
+field& field39 =  field();
+field39.setName(CString("chromaticDispertion"));
+field39.setAccessType(CString("inputOutput"));
+field39.setType(CString("SFVec3f"));
+field39.setValue(CString("0.98 1 1.033"));
+ComposedShader38.addChild(&field39);
 
-Cfield* field40 = new Cfield();
-field40->setName("cube");
-field40->setAccessType("inputOutput");
-field40->setType("SFInt32");
-field40->setValue("0");
-ComposedShader38->addField(*field40);
+field& field40 =  field();
+field40.setName(CString("cube"));
+field40.setAccessType(CString("inputOutput"));
+field40.setType(CString("SFInt32"));
+field40.setValue(CString("0"));
+ComposedShader38.addChild(&field40);
 
-Cfield* field41 = new Cfield();
-field41->setName("bias");
-field41->setAccessType("inputOutput");
-field41->setType("SFFloat");
-field41->setValue("0.5");
-ComposedShader38->addField(*field41);
+field& field41 =  field();
+field41.setName(CString("bias"));
+field41.setAccessType(CString("inputOutput"));
+field41.setType(CString("SFFloat"));
+field41.setValue(CString("0.5"));
+ComposedShader38.addChild(&field41);
 
-Cfield* field42 = new Cfield();
-field42->setName("scale");
-field42->setAccessType("inputOutput");
-field42->setType("SFFloat");
-field42->setValue("0.5");
-ComposedShader38->addField(*field42);
+field& field42 =  field();
+field42.setName(CString("scale"));
+field42.setAccessType(CString("inputOutput"));
+field42.setType(CString("SFFloat"));
+field42.setValue(CString("0.5"));
+ComposedShader38.addChild(&field42);
 
-Cfield* field43 = new Cfield();
-field43->setName("power");
-field43->setAccessType("inputOutput");
-field43->setType("SFFloat");
-field43->setValue("2");
-ComposedShader38->addField(*field43);
+field& field43 =  field();
+field43.setName(CString("power"));
+field43.setAccessType(CString("inputOutput"));
+field43.setType(CString("SFFloat"));
+field43.setValue(CString("2"));
+ComposedShader38.addChild(&field43);
 
-CShaderPart* ShaderPart44 = (CShaderPart *)(m_pScene.createNode("ShaderPart"));
-ShaderPart44->setUrl(new CString[2]{"../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"}, 2);
-ShaderPart44->setType("VERTEX");
-ComposedShader38->addParts(*ShaderPart44);
+ShaderPart& ShaderPart44 =  ShaderPart();
+ShaderPart44.setUrl(new CString[2]{CString("../shaders/x3dom.vs"), CString("https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs")}, 2);
+ShaderPart44.setType(CString("VERTEX"));
+ComposedShader38.setParts(&ShaderPart44);
 
-CShaderPart* ShaderPart45 = (CShaderPart *)(m_pScene.createNode("ShaderPart"));
-ShaderPart45->setUrl(new CString[2]{"../shaders/mix.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/mix.fs"}, 2);
-ShaderPart45->setType("FRAGMENT");
-ComposedShader38->addParts(*ShaderPart45);
+ShaderPart& ShaderPart45 =  ShaderPart();
+ShaderPart45.setUrl(new CString[2]{CString("../shaders/mix.fs"), CString("https://coderextreme.net/X3DJSONLD/src/main/shaders/mix.fs")}, 2);
+ShaderPart45.setType(CString("FRAGMENT"));
+ComposedShader38.setParts(&ShaderPart45);
 
-Appearance21->addShaders(*ComposedShader38);
+Appearance21.addChild(&ComposedShader38);
 
-Shape20->setAppearance(*Appearance21);
+Shape20.addChild(&Appearance21);
 
-CSphere* Sphere46 = (CSphere *)(m_pScene.createNode("Sphere"));
-Sphere46->setRadius(30);
-Shape20->setGeometry(Sphere46);
+Sphere& Sphere46 =  Sphere();
+Sphere46.setRadius(30);
+Shape20.setGeometry(&Sphere46);
 
-Transform19->addChild(*Shape20);
+Transform19.addChild(&Shape20);
 
-CScript* Script47 = (CScript *)(m_pScene.createNode("Script"));
-Script47->setDEF("UrlSelector");
-Script47->setDirectOutput(True);
-Cfield* field48 = new Cfield();
-field48->setName("frontUrls");
-field48->setType("MFString");
-field48->setAccessType("initializeOnly");
-field48->setValue("\"../resources/images/all_probes/beach_cross/beach_front.png\" \"../resources/images/all_probes/building_cross/building_front.png\" \"../resources/images/all_probes/campus_cross/campus_front.png\" \"../resources/images/all_probes/galileo_cross/galileo_front.png\" \"../resources/images/all_probes/grace_cross/grace_front.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_front.png\" \"../resources/images/all_probes/rnl_cross/rnl_front.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_front.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_front.png\"");
-Script47->addField(*field48);
+Script& Script47 =  Script();
+Script47.setDEF(CString("UrlSelector"));
+Script47.setDirectOutput(True);
+field& field48 =  field();
+field48.setName(CString("frontUrls"));
+field48.setType(CString("MFString"));
+field48.setAccessType(CString("initializeOnly"));
+field48.setValue(CString("\"../resources/images/all_probes/beach_cross/beach_front.png\" \"../resources/images/all_probes/building_cross/building_front.png\" \"../resources/images/all_probes/campus_cross/campus_front.png\" \"../resources/images/all_probes/galileo_cross/galileo_front.png\" \"../resources/images/all_probes/grace_cross/grace_front.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_front.png\" \"../resources/images/all_probes/rnl_cross/rnl_front.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_front.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_front.png\""));
+Script47.addChild(&field48);
 
-Cfield* field49 = new Cfield();
-field49->setName("backUrls");
-field49->setType("MFString");
-field49->setAccessType("initializeOnly");
-field49->setValue("\"../resources/images/all_probes/beach_cross/beach_back.png\" \"../resources/images/all_probes/building_cross/building_back.png\" \"../resources/images/all_probes/campus_cross/campus_back.png\" \"../resources/images/all_probes/galileo_cross/galileo_back.png\" \"../resources/images/all_probes/grace_cross/grace_back.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_back.png\" \"../resources/images/all_probes/rnl_cross/rnl_back.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_back.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_back.png\"");
-Script47->addField(*field49);
+field& field49 =  field();
+field49.setName(CString("backUrls"));
+field49.setType(CString("MFString"));
+field49.setAccessType(CString("initializeOnly"));
+field49.setValue(CString("\"../resources/images/all_probes/beach_cross/beach_back.png\" \"../resources/images/all_probes/building_cross/building_back.png\" \"../resources/images/all_probes/campus_cross/campus_back.png\" \"../resources/images/all_probes/galileo_cross/galileo_back.png\" \"../resources/images/all_probes/grace_cross/grace_back.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_back.png\" \"../resources/images/all_probes/rnl_cross/rnl_back.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_back.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_back.png\""));
+Script47.addChild(&field49);
 
-Cfield* field50 = new Cfield();
-field50->setName("leftUrls");
-field50->setType("MFString");
-field50->setAccessType("initializeOnly");
-field50->setValue("\"../resources/images/all_probes/beach_cross/beach_left.png\" \"../resources/images/all_probes/building_cross/building_left.png\" \"../resources/images/all_probes/campus_cross/campus_left.png\" \"../resources/images/all_probes/galileo_cross/galileo_left.png\" \"../resources/images/all_probes/grace_cross/grace_left.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_left.png\" \"../resources/images/all_probes/rnl_cross/rnl_left.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_left.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_left.png\"");
-Script47->addField(*field50);
+field& field50 =  field();
+field50.setName(CString("leftUrls"));
+field50.setType(CString("MFString"));
+field50.setAccessType(CString("initializeOnly"));
+field50.setValue(CString("\"../resources/images/all_probes/beach_cross/beach_left.png\" \"../resources/images/all_probes/building_cross/building_left.png\" \"../resources/images/all_probes/campus_cross/campus_left.png\" \"../resources/images/all_probes/galileo_cross/galileo_left.png\" \"../resources/images/all_probes/grace_cross/grace_left.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_left.png\" \"../resources/images/all_probes/rnl_cross/rnl_left.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_left.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_left.png\""));
+Script47.addChild(&field50);
 
-Cfield* field51 = new Cfield();
-field51->setName("rightUrls");
-field51->setType("MFString");
-field51->setAccessType("initializeOnly");
-field51->setValue("\"../resources/images/all_probes/beach_cross/beach_right.png\" \"../resources/images/all_probes/building_cross/building_right.png\" \"../resources/images/all_probes/campus_cross/campus_right.png\" \"../resources/images/all_probes/galileo_cross/galileo_right.png\" \"../resources/images/all_probes/grace_cross/grace_right.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_right.png\" \"../resources/images/all_probes/rnl_cross/rnl_right.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_right.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_right.png\"");
-Script47->addField(*field51);
+field& field51 =  field();
+field51.setName(CString("rightUrls"));
+field51.setType(CString("MFString"));
+field51.setAccessType(CString("initializeOnly"));
+field51.setValue(CString("\"../resources/images/all_probes/beach_cross/beach_right.png\" \"../resources/images/all_probes/building_cross/building_right.png\" \"../resources/images/all_probes/campus_cross/campus_right.png\" \"../resources/images/all_probes/galileo_cross/galileo_right.png\" \"../resources/images/all_probes/grace_cross/grace_right.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_right.png\" \"../resources/images/all_probes/rnl_cross/rnl_right.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_right.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_right.png\""));
+Script47.addChild(&field51);
 
-Cfield* field52 = new Cfield();
-field52->setName("topUrls");
-field52->setType("MFString");
-field52->setAccessType("initializeOnly");
-field52->setValue("\"../resources/images/all_probes/beach_cross/beach_top.png\" \"../resources/images/all_probes/building_cross/building_top.png\" \"../resources/images/all_probes/campus_cross/campus_top.png\" \"../resources/images/all_probes/galileo_cross/galileo_top.png\" \"../resources/images/all_probes/grace_cross/grace_top.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_top.png\" \"../resources/images/all_probes/rnl_cross/rnl_top.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_top.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_top.png\"");
-Script47->addField(*field52);
+field& field52 =  field();
+field52.setName(CString("topUrls"));
+field52.setType(CString("MFString"));
+field52.setAccessType(CString("initializeOnly"));
+field52.setValue(CString("\"../resources/images/all_probes/beach_cross/beach_top.png\" \"../resources/images/all_probes/building_cross/building_top.png\" \"../resources/images/all_probes/campus_cross/campus_top.png\" \"../resources/images/all_probes/galileo_cross/galileo_top.png\" \"../resources/images/all_probes/grace_cross/grace_top.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_top.png\" \"../resources/images/all_probes/rnl_cross/rnl_top.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_top.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_top.png\""));
+Script47.addChild(&field52);
 
-Cfield* field53 = new Cfield();
-field53->setName("bottomUrls");
-field53->setType("MFString");
-field53->setAccessType("initializeOnly");
-field53->setValue("\"../resources/images/all_probes/beach_cross/beach_bottom.png\" \"../resources/images/all_probes/building_cross/building_bottom.png\" \"../resources/images/all_probes/campus_cross/campus_bottom.png\" \"../resources/images/all_probes/galileo_cross/galileo_bottom.png\" \"../resources/images/all_probes/grace_cross/grace_bottom.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_bottom.png\" \"../resources/images/all_probes/rnl_cross/rnl_bottom.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_bottom.png\"");
-Script47->addField(*field53);
+field& field53 =  field();
+field53.setName(CString("bottomUrls"));
+field53.setType(CString("MFString"));
+field53.setAccessType(CString("initializeOnly"));
+field53.setValue(CString("\"../resources/images/all_probes/beach_cross/beach_bottom.png\" \"../resources/images/all_probes/building_cross/building_bottom.png\" \"../resources/images/all_probes/campus_cross/campus_bottom.png\" \"../resources/images/all_probes/galileo_cross/galileo_bottom.png\" \"../resources/images/all_probes/grace_cross/grace_bottom.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_bottom.png\" \"../resources/images/all_probes/rnl_cross/rnl_bottom.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_bottom.png\""));
+Script47.addChild(&field53);
 
-Cfield* field54 = new Cfield();
-field54->setName("front_changed");
-field54->setType("MFString");
-field54->setAccessType("outputOnly");
-Script47->addField(*field54);
+field& field54 =  field();
+field54.setName(CString("front_changed"));
+field54.setType(CString("MFString"));
+field54.setAccessType(CString("outputOnly"));
+Script47.addChild(&field54);
 
-Cfield* field55 = new Cfield();
-field55->setName("back_changed");
-field55->setType("MFString");
-field55->setAccessType("outputOnly");
-Script47->addField(*field55);
+field& field55 =  field();
+field55.setName(CString("back_changed"));
+field55.setType(CString("MFString"));
+field55.setAccessType(CString("outputOnly"));
+Script47.addChild(&field55);
 
-Cfield* field56 = new Cfield();
-field56->setName("left_changed");
-field56->setType("MFString");
-field56->setAccessType("outputOnly");
-Script47->addField(*field56);
+field& field56 =  field();
+field56.setName(CString("left_changed"));
+field56.setType(CString("MFString"));
+field56.setAccessType(CString("outputOnly"));
+Script47.addChild(&field56);
 
-Cfield* field57 = new Cfield();
-field57->setName("right_changed");
-field57->setType("MFString");
-field57->setAccessType("outputOnly");
-Script47->addField(*field57);
+field& field57 =  field();
+field57.setName(CString("right_changed"));
+field57.setType(CString("MFString"));
+field57.setAccessType(CString("outputOnly"));
+Script47.addChild(&field57);
 
-Cfield* field58 = new Cfield();
-field58->setName("top_changed");
-field58->setType("MFString");
-field58->setAccessType("outputOnly");
-Script47->addField(*field58);
+field& field58 =  field();
+field58.setName(CString("top_changed"));
+field58.setType(CString("MFString"));
+field58.setAccessType(CString("outputOnly"));
+Script47.addChild(&field58);
 
-Cfield* field59 = new Cfield();
-field59->setName("bottom_changed");
-field59->setType("MFString");
-field59->setAccessType("outputOnly");
-Script47->addField(*field59);
+field& field59 =  field();
+field59.setName(CString("bottom_changed"));
+field59.setType(CString("MFString"));
+field59.setAccessType(CString("outputOnly"));
+Script47.addChild(&field59);
 
-Cfield* field60 = new Cfield();
-field60->setName("set_fraction");
-field60->setType("SFFloat");
-field60->setAccessType("inputOnly");
-Script47->addField(*field60);
+field& field60 =  field();
+field60.setName(CString("set_fraction"));
+field60.setType(CString("SFFloat"));
+field60.setAccessType(CString("inputOnly"));
+Script47.addChild(&field60);
 
-Cfield* field61 = new Cfield();
-field61->setName("old");
-field61->setType("SFInt32");
-field61->setAccessType("inputOutput");
-field61->setValue("-1");
-Script47->addField(*field61);
+field& field61 =  field();
+field61.setName(CString("old"));
+field61.setType(CString("SFInt32"));
+field61.setAccessType(CString("inputOutput"));
+field61.setValue(CString("-1"));
+Script47.addChild(&field61);
 
 
-Script47.setSourceCode(`ecmascript:\n"+
-"        function set_fraction( f, tm ) {\n"+
-"	    var side = Math.floor(f*frontUrls.length);\n"+
-"	    if (side > frontUrls.length-1) {\n"+
-"	    	side = 0;\n"+
-"	    }\n"+
-"	    if (side != old) {\n"+
-"	    	    // Browser.print(f+\" \"+side);\n"+
-"	    	    old = side;\n"+
-"		    front_changed[0] = frontUrls[side];\n"+
-"		    back_changed[0] = backUrls[side];\n"+
-"		    left_changed[0] = leftUrls[side];\n"+
-"		    right_changed[0] = rightUrls[side];\n"+
-"		    top_changed[0] = topUrls[side];\n"+
-"		    bottom_changed[0] = bottomUrls[side];\n"+
-"            }\n"+
-"        }`)
-Transform19->addChildren(*Script47);
+Script47.setSourceCode(CString("ecmascript:")+
+_T("        function set_fraction( f, tm ) {")+
+_T("	    var side = Math.floor(f*frontUrls.length);")+
+_T("	    if (side > frontUrls.length-1) {")+
+_T("	    	side = 0;")+
+_T("	    }")+
+_T("	    if (side != old) {")+
+_T("	    	    // Browser.print(f+\" \"+side);")+
+_T("	    	    old = side;")+
+_T("		    front_changed[0] = frontUrls[side];")+
+_T("		    back_changed[0] = backUrls[side];")+
+_T("		    left_changed[0] = leftUrls[side];")+
+_T("		    right_changed[0] = rightUrls[side];")+
+_T("		    top_changed[0] = topUrls[side];")+
+_T("		    bottom_changed[0] = bottomUrls[side];")+
+_T("            }")+
+_T("        }"));
+Transform19.addChild(&Script47);
 
-CTimeSensor* TimeSensor62 = (CTimeSensor *)(m_pScene.createNode("TimeSensor"));
-TimeSensor62->setDEF("Clock");
-TimeSensor62->setCycleInterval(45);
-TimeSensor62->setLoop(True);
-Transform19->addChildren(*TimeSensor62);
+TimeSensor& TimeSensor62 =  TimeSensor();
+TimeSensor62.setDEF(CString("Clock"));
+TimeSensor62.setCycleInterval(45);
+TimeSensor62.setLoop(True);
+Transform19.addChild(&TimeSensor62);
 
-CROUTE* ROUTE63 = new CROUTE();
-ROUTE63->setFromNode("Clock");
-ROUTE63->setFromField("fraction_changed");
-ROUTE63->setToNode("UrlSelector");
-ROUTE63->setToField("set_fraction");
-Transform19->addChildren(*ROUTE63);
+ROUTE& ROUTE63 =  ROUTE();
+ROUTE63.setFromNode(CString("Clock"));
+ROUTE63.setFromField(CString("fraction_changed"));
+ROUTE63.setToNode(CString("UrlSelector"));
+ROUTE63.setToField(CString("set_fraction"));
+Transform19.addChild(&ROUTE63);
 
-CROUTE* ROUTE64 = new CROUTE();
-ROUTE64->setFromNode("UrlSelector");
-ROUTE64->setFromField("front_changed");
-ROUTE64->setToNode("cube");
-ROUTE64->setToField("frontUrl");
-Transform19->addChildren(*ROUTE64);
+ROUTE& ROUTE64 =  ROUTE();
+ROUTE64.setFromNode(CString("UrlSelector"));
+ROUTE64.setFromField(CString("front_changed"));
+ROUTE64.setToNode(CString("cube"));
+ROUTE64.setToField(CString("frontUrl"));
+Transform19.addChild(&ROUTE64);
 
-CROUTE* ROUTE65 = new CROUTE();
-ROUTE65->setFromNode("UrlSelector");
-ROUTE65->setFromField("back_changed");
-ROUTE65->setToNode("cube");
-ROUTE65->setToField("backUrl");
-Transform19->addChildren(*ROUTE65);
+ROUTE& ROUTE65 =  ROUTE();
+ROUTE65.setFromNode(CString("UrlSelector"));
+ROUTE65.setFromField(CString("back_changed"));
+ROUTE65.setToNode(CString("cube"));
+ROUTE65.setToField(CString("backUrl"));
+Transform19.addChild(&ROUTE65);
 
-CROUTE* ROUTE66 = new CROUTE();
-ROUTE66->setFromNode("UrlSelector");
-ROUTE66->setFromField("left_changed");
-ROUTE66->setToNode("cube");
-ROUTE66->setToField("leftUrl");
-Transform19->addChildren(*ROUTE66);
+ROUTE& ROUTE66 =  ROUTE();
+ROUTE66.setFromNode(CString("UrlSelector"));
+ROUTE66.setFromField(CString("left_changed"));
+ROUTE66.setToNode(CString("cube"));
+ROUTE66.setToField(CString("leftUrl"));
+Transform19.addChild(&ROUTE66);
 
-CROUTE* ROUTE67 = new CROUTE();
-ROUTE67->setFromNode("UrlSelector");
-ROUTE67->setFromField("right_changed");
-ROUTE67->setToNode("cube");
-ROUTE67->setToField("rightUrl");
-Transform19->addChildren(*ROUTE67);
+ROUTE& ROUTE67 =  ROUTE();
+ROUTE67.setFromNode(CString("UrlSelector"));
+ROUTE67.setFromField(CString("right_changed"));
+ROUTE67.setToNode(CString("cube"));
+ROUTE67.setToField(CString("rightUrl"));
+Transform19.addChild(&ROUTE67);
 
-CROUTE* ROUTE68 = new CROUTE();
-ROUTE68->setFromNode("UrlSelector");
-ROUTE68->setFromField("top_changed");
-ROUTE68->setToNode("cube");
-ROUTE68->setToField("topUrl");
-Transform19->addChildren(*ROUTE68);
+ROUTE& ROUTE68 =  ROUTE();
+ROUTE68.setFromNode(CString("UrlSelector"));
+ROUTE68.setFromField(CString("top_changed"));
+ROUTE68.setToNode(CString("cube"));
+ROUTE68.setToField(CString("topUrl"));
+Transform19.addChild(&ROUTE68);
 
-CROUTE* ROUTE69 = new CROUTE();
-ROUTE69->setFromNode("UrlSelector");
-ROUTE69->setFromField("bottom_changed");
-ROUTE69->setToNode("cube");
-ROUTE69->setToField("bottomUrl");
-Transform19->addChildren(*ROUTE69);
+ROUTE& ROUTE69 =  ROUTE();
+ROUTE69.setFromNode(CString("UrlSelector"));
+ROUTE69.setFromField(CString("bottom_changed"));
+ROUTE69.setToNode(CString("cube"));
+ROUTE69.setToField(CString("bottomUrl"));
+Transform19.addChild(&ROUTE69);
 
-CROUTE* ROUTE70 = new CROUTE();
-ROUTE70->setFromNode("UrlSelector");
-ROUTE70->setFromField("front_changed");
-ROUTE70->setToNode("frontShader");
-ROUTE70->setToField("url");
-Transform19->addChildren(*ROUTE70);
+ROUTE& ROUTE70 =  ROUTE();
+ROUTE70.setFromNode(CString("UrlSelector"));
+ROUTE70.setFromField(CString("front_changed"));
+ROUTE70.setToNode(CString("frontShader"));
+ROUTE70.setToField(CString("url"));
+Transform19.addChild(&ROUTE70);
 
-CROUTE* ROUTE71 = new CROUTE();
-ROUTE71->setFromNode("UrlSelector");
-ROUTE71->setFromField("back_changed");
-ROUTE71->setToNode("backShader");
-ROUTE71->setToField("url");
-Transform19->addChildren(*ROUTE71);
+ROUTE& ROUTE71 =  ROUTE();
+ROUTE71.setFromNode(CString("UrlSelector"));
+ROUTE71.setFromField(CString("back_changed"));
+ROUTE71.setToNode(CString("backShader"));
+ROUTE71.setToField(CString("url"));
+Transform19.addChild(&ROUTE71);
 
-CROUTE* ROUTE72 = new CROUTE();
-ROUTE72->setFromNode("UrlSelector");
-ROUTE72->setFromField("left_changed");
-ROUTE72->setToNode("leftShader");
-ROUTE72->setToField("url");
-Transform19->addChildren(*ROUTE72);
+ROUTE& ROUTE72 =  ROUTE();
+ROUTE72.setFromNode(CString("UrlSelector"));
+ROUTE72.setFromField(CString("left_changed"));
+ROUTE72.setToNode(CString("leftShader"));
+ROUTE72.setToField(CString("url"));
+Transform19.addChild(&ROUTE72);
 
-CROUTE* ROUTE73 = new CROUTE();
-ROUTE73->setFromNode("UrlSelector");
-ROUTE73->setFromField("right_changed");
-ROUTE73->setToNode("rightShader");
-ROUTE73->setToField("url");
-Transform19->addChildren(*ROUTE73);
+ROUTE& ROUTE73 =  ROUTE();
+ROUTE73.setFromNode(CString("UrlSelector"));
+ROUTE73.setFromField(CString("right_changed"));
+ROUTE73.setToNode(CString("rightShader"));
+ROUTE73.setToField(CString("url"));
+Transform19.addChild(&ROUTE73);
 
-CROUTE* ROUTE74 = new CROUTE();
-ROUTE74->setFromNode("UrlSelector");
-ROUTE74->setFromField("top_changed");
-ROUTE74->setToNode("topShader");
-ROUTE74->setToField("url");
-Transform19->addChildren(*ROUTE74);
+ROUTE& ROUTE74 =  ROUTE();
+ROUTE74.setFromNode(CString("UrlSelector"));
+ROUTE74.setFromField(CString("top_changed"));
+ROUTE74.setToNode(CString("topShader"));
+ROUTE74.setToField(CString("url"));
+Transform19.addChild(&ROUTE74);
 
-CROUTE* ROUTE75 = new CROUTE();
-ROUTE75->setFromNode("UrlSelector");
-ROUTE75->setFromField("bottom_changed");
-ROUTE75->setToNode("bottomShader");
-ROUTE75->setToField("url");
-Transform19->addChildren(*ROUTE75);
+ROUTE& ROUTE75 =  ROUTE();
+ROUTE75.setFromNode(CString("UrlSelector"));
+ROUTE75.setFromField(CString("bottom_changed"));
+ROUTE75.setToNode(CString("bottomShader"));
+ROUTE75.setToField(CString("url"));
+Transform19.addChild(&ROUTE75);
 
-group->addChildren(*Transform19);
+Scene16.addChild(&Transform19);
 
-X3D0->setScene(*Scene16);
+X3D0.setScene(&Scene16);
 
-m_pScene.addRootNode(group);
-X3D0->toXMLString();
 }

@@ -1,70 +1,63 @@
-/* delete next 5 lines for Visual Studio */
-#define FALSE false
-#define TRUE true
-#define WINAPI
-#define AFX_EXT_CLASS
-#define EXPORT32
-#include "C:/x3d-code/www.web3d.org/x3d/stylesheets/cpp/concretes.h"
+#define False false
+#define True true
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/X3DLib.h"
 int main(int argc, char ** argv) {
-CX3DScene m_pScene;
-CBrowser browser = X3D.getBrowser();
-CX3D* X3D0 = new CX3D();
-CGroup* group = (CGroup*)(m_pScene.createNode("Group"));
-group->addChildren(X3D0);
-X3D0->setProfile("Interchange");
-X3D0->setVersion("3.3");
-Chead* head1 = new Chead();
-Ccomponent* component2 = new Ccomponent();
-component2->setName("Scripting");
-component2->setLevel(1);
-head1->addComponent(*component2);
+X3D& X3D0 =  X3D();
+X3D0.setProfile(CString("Interchange"));
+X3D0.setVersion(CString("3.3"));
+head& head1 =  head();
+component& component2 =  component();
+component2.setName(CString("Scripting"));
+component2.setLevel(1);
+head1.addChild(&component2);
 
-Cmeta* meta3 = new Cmeta();
-meta3->setName("title");
-meta3->setContent("sphere.x3d");
-head1->addMeta(*meta3);
+meta& meta3 =  meta();
+meta3.setName(CString("title"));
+meta3.setContent(CString("sphere.x3d"));
+head1.addMeta(&meta3);
 
-Cmeta* meta4 = new Cmeta();
-meta4->setName("creator");
-meta4->setContent("John Carlson");
-head1->addMeta(*meta4);
+meta& meta4 =  meta();
+meta4.setName(CString("creator"));
+meta4.setContent(CString("John Carlson"));
+head1.addMeta(&meta4);
 
-Cmeta* meta5 = new Cmeta();
-meta5->setName("generator");
-meta5->setContent("manual");
-head1->addMeta(*meta5);
+meta& meta5 =  meta();
+meta5.setName(CString("generator"));
+meta5.setContent(CString("manual"));
+head1.addMeta(&meta5);
 
-Cmeta* meta6 = new Cmeta();
-meta6->setName("identifier");
-meta6->setContent("https://coderextreme.net/X3DJSONLD/src/main/data/sphere.x3d");
-head1->addMeta(*meta6);
+meta& meta6 =  meta();
+meta6.setName(CString("identifier"));
+meta6.setContent(CString("https://coderextreme.net/X3DJSONLD/src/main/data/sphere.x3d"));
+head1.addMeta(&meta6);
 
-Cmeta* meta7 = new Cmeta();
-meta7->setName("description");
-meta7->setContent("a sphere");
-head1->addMeta(*meta7);
+meta& meta7 =  meta();
+meta7.setName(CString("description"));
+meta7.setContent(CString("a sphere"));
+head1.addMeta(&meta7);
 
-X3D0->setHead(*head1);
+X3D0.setHead(&head1);
 
-CScene* Scene8 = new CScene();
-CGroup* Group9 = (CGroup *)(m_pScene.createNode("Group"));
-CShape* Shape10 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance11 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material12 = (CMaterial *)(m_pScene.createNode("Material"));
-Material12->setDiffuseColor(new float[3]{1,1,1});
-Appearance11->setMaterial(*Material12);
+Scene& Scene8 =  Scene();
+Group& Group9 =  Group();
+Shape& Shape10 =  Shape();
+Appearance& Appearance11 =  Appearance();
+Material& Material12 =  Material();
+Material12.setDiffuseColor(new float[3]{1,1,1});
+Appearance11.addChild(&Material12);
 
-Shape10->setAppearance(*Appearance11);
+Shape10.addChild(&Appearance11);
 
-CSphere* Sphere13 = (CSphere *)(m_pScene.createNode("Sphere"));
-Shape10->setGeometry(Sphere13);
+Sphere& Sphere13 =  Sphere();
+Shape10.setGeometry(&Sphere13);
 
-Group9->addChildren(*Shape10);
+Group9.addChild(&Shape10);
 
-group->addChildren(*Group9);
+Scene8.addChild(&Group9);
 
-X3D0->setScene(*Scene8);
+X3D0.setScene(&Scene8);
 
-m_pScene.addRootNode(group);
-X3D0->toXMLString();
 }
