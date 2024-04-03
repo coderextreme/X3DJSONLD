@@ -1,10 +1,11 @@
-#define False false
-#define True true
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/X3DLib.h"
-int main(int argc, char ** argv) {
+//#define False false
+//#define True true
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/X3DLib.h"
+//int main(int argc, char ** argv) 
+//{
 X3D& X3D0 =  X3D();
 X3D0.setProfile(CString("Immersive"));
 X3D0.setVersion(CString("4.0"));
@@ -79,7 +80,7 @@ X3D0.setHead(&head1);
 
 Scene& Scene15 =  Scene();
 Viewpoint& Viewpoint16 =  Viewpoint();
-Viewpoint16.setPosition(new float[3]{0,5,100});
+Viewpoint16.setPosition(new float[3]{0.0,5.0,100.0});
 Viewpoint16.setDescription(CString("Switch background and images texture"));
 Scene15.addChild(&Viewpoint16);
 
@@ -338,23 +339,23 @@ field60.setValue(CString("-1"));
 Script46.addChild(&field60);
 
 
-Script46.setSourceCode(CString("ecmascript:")+
-_T("        function set_fraction( f, tm ) {")+
-_T("	    var side = Math.floor(f*frontUrls.length);")+
-_T("	    if (side > frontUrls.length-1) {")+
-_T("	    	side = 0;")+
-_T("	    }")+
-_T("	    if (side != old) {")+
-_T("	    	    // Browser.print(f+\" \"+side);")+
-_T("	    	    old = side;")+
-_T("		    front_changed[0] = frontUrls[side];")+
-_T("		    back_changed[0] = backUrls[side];")+
-_T("		    left_changed[0] = leftUrls[side];")+
-_T("		    right_changed[0] = rightUrls[side];")+
-_T("		    top_changed[0] = topUrls[side];")+
-_T("		    bottom_changed[0] = bottomUrls[side];")+
-_T("            }")+
-_T("        }"));
+//Script46.setSourceCode(CString("ecmascript:")+
+//_T("        function set_fraction( f, tm ) {")+
+//_T("	    var side = Math.floor(f*frontUrls.length);")+
+//_T("	    if (side > frontUrls.length-1) {")+
+//_T("	    	side = 0;")+
+//_T("	    }")+
+//_T("	    if (side != old) {")+
+//_T("	    	    // Browser.print(f+\" \"+side);")+
+//_T("	    	    old = side;")+
+//_T("		    front_changed[0] = frontUrls[side];")+
+//_T("		    back_changed[0] = backUrls[side];")+
+//_T("		    left_changed[0] = leftUrls[side];")+
+//_T("		    right_changed[0] = rightUrls[side];")+
+//_T("		    top_changed[0] = topUrls[side];")+
+//_T("		    bottom_changed[0] = bottomUrls[side];")+
+//_T("            }")+
+//_T("        }"));
 Transform18.addChild(&Script46);
 
 TimeSensor& TimeSensor61 =  TimeSensor();
@@ -458,4 +459,4 @@ Scene15.addChild(&Transform18);
 
 X3D0.setScene(&Scene15);
 
-}
+//}

@@ -1,10 +1,11 @@
-#define False false
-#define True true
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/X3DLib.h"
-int main(int argc, char ** argv) {
+//#define False false
+//#define True true
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/X3DLib.h"
+//int main(int argc, char ** argv) 
+//{
 X3D& X3D0 =  X3D();
 X3D0.setProfile(CString("Immersive"));
 X3D0.setVersion(CString("3.3"));
@@ -38,7 +39,7 @@ X3D0.setHead(&head1);
 
 Scene& Scene7 =  Scene();
 Viewpoint& Viewpoint8 =  Viewpoint();
-Viewpoint8.setPosition(new float[3]{0,0,5});
+Viewpoint8.setPosition(new float[3]{0.0,0.0,5.0});
 Viewpoint8.setDescription(CString("Only Viewpoint"));
 Scene7.addChild(&Viewpoint8);
 
@@ -55,7 +56,7 @@ Shape11.setGeometry(&Sphere12);
 
 Appearance& Appearance13 =  Appearance();
 Material& Material14 =  Material();
-Material14.setDiffuseColor(new float[3]{1,0,0});
+Material14.setDiffuseColor(new float[3]{1.0,0.0,0.0});
 Appearance13.addChild(&Material14);
 
 Shape11.addChild(&Appearance13);
@@ -64,8 +65,8 @@ Transform10.addChild(&Shape11);
 
 PositionInterpolator& PositionInterpolator15 =  PositionInterpolator();
 PositionInterpolator15.setDEF(CString("DECLpoint_G1_PI1"));
-PositionInterpolator15.setKey(new float[2]{0,1}, 2);
-PositionInterpolator15.setKeyValue(new float[6]{0,0,0,0,5,0}, 6);
+PositionInterpolator15.setKey(new float[2]{0.0,1.0}, 2);
+PositionInterpolator15.setKeyValue(new float[6]{0.0,0.0,0.0,0.0,5.0,0.0}, 6);
 Transform10.addChild(&PositionInterpolator15);
 
 Script& Script16 =  Script();
@@ -98,13 +99,13 @@ field20.setValue(CString("0 0 0 0 5 0"));
 Script16.addChild(&field20);
 
 
-Script16.setSourceCode(CString("ecmascript:")+
-_T("		function set_location(value) {")+
-_T("                    old = translation;")+
-_T("		    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);")+
-_T("                    keyValue = new MFVec3f([old, translation]);")+
-_T("		    // Browser.println(keyValue);")+
-_T("		}"));
+//Script16.setSourceCode(CString("ecmascript:")+
+//_T("		function set_location(value) {")+
+//_T("                    old = translation;")+
+//_T("		    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);")+
+//_T("                    keyValue = new MFVec3f([old, translation]);")+
+//_T("		    // Browser.println(keyValue);")+
+//_T("		}"));
 Transform10.addChild(&Script16);
 
 TimeSensor& TimeSensor21 =  TimeSensor();
@@ -152,7 +153,7 @@ Shape27.setGeometry(&Sphere28);
 
 Appearance& Appearance29 =  Appearance();
 Material& Material30 =  Material();
-Material30.setDiffuseColor(new float[3]{1,0,0});
+Material30.setDiffuseColor(new float[3]{1.0,0.0,0.0});
 Appearance29.addChild(&Material30);
 
 Shape27.addChild(&Appearance29);
@@ -161,8 +162,8 @@ Transform26.addChild(&Shape27);
 
 PositionInterpolator& PositionInterpolator31 =  PositionInterpolator();
 PositionInterpolator31.setDEF(CString("DECLpoint_G2_PI1"));
-PositionInterpolator31.setKey(new float[2]{0,1}, 2);
-PositionInterpolator31.setKeyValue(new float[6]{0,0,0,0,5,0}, 6);
+PositionInterpolator31.setKey(new float[2]{0.0,1.0}, 2);
+PositionInterpolator31.setKeyValue(new float[6]{0.0,0.0,0.0,0.0,5.0,0.0}, 6);
 Transform26.addChild(&PositionInterpolator31);
 
 Script& Script32 =  Script();
@@ -195,13 +196,13 @@ field36.setValue(CString("0 0 0 0 5 0"));
 Script32.addChild(&field36);
 
 
-Script32.setSourceCode(CString("ecmascript:")+
-_T("		function set_location(value) {")+
-_T("                    old = translation;")+
-_T("		    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);")+
-_T("                    keyValue = new MFVec3f([old, translation]);")+
-_T("		    // Browser.println(keyValue);")+
-_T("		}"));
+//Script32.setSourceCode(CString("ecmascript:")+
+//_T("		function set_location(value) {")+
+//_T("                    old = translation;")+
+//_T("		    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);")+
+//_T("                    keyValue = new MFVec3f([old, translation]);")+
+//_T("		    // Browser.println(keyValue);")+
+//_T("		}"));
 Transform26.addChild(&Script32);
 
 TimeSensor& TimeSensor37 =  TimeSensor();
@@ -319,52 +320,52 @@ field59.setType(CString("SFVec3f"));
 Script49.addChild(&field59);
 
 
-Script49.setSourceCode(CString("ecmascript:")+
-_T("        function recompute(startpoint,endpoint){")+
-_T("	    if (typeof endpoint === 'undefined') {")+
-_T("		return;")+
-_T("	    }")+
-_T("            var dif = endpoint.subtract(startpoint);")+
-_T("            var dist = dif.length()*0.5;")+
-_T("            var dif2 = dif.multiply(0.5);")+
-_T("            var norm = dif.normalize();")+
-_T("            var transl = startpoint.add(dif2);")+
-_T("	    if (typeof Quaternion !== 'undefined') {")+
-_T("		    return {")+
-_T("			    scale : new SFVec3f(1.0,dist,1.0),")+
-_T("			    translation : transl,")+
-_T("			    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)")+
-_T("		    };")+
-_T("	    } else if (typeof SFRotation !== 'undefined') {")+
-_T("		    return {")+
-_T("			    scale : new SFVec3f(1.0,dist,1.0),")+
-_T("			    translation : transl,")+
-_T("			    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)")+
-_T("		    };")+
-_T("	    } else {")+
-_T("		    return {")+
-_T("			    scale : new SFVec3f(1.0,dist,1.0),")+
-_T("			    translation : transl")+
-_T("		    };")+
-_T("	    }")+
-_T("	}")+
-_T("	function recompute_and_route(startpoint, endpoint) {")+
-_T("	      var trafo = recompute(startpoint, endpoint);")+
-_T("	      if (trafo) {")+
-_T("		      position.translation = trafo.translation;")+
-_T("		      rotscale.rotation = trafo.rotation;")+
-_T("		      rotscale.scale = trafo.scale;")+
-_T("	      }")+
-_T("	}")+
-_T("        function initialize(){")+
-_T("            recompute_and_route(startnode.translation,endnode.translation);")+
-_T("        }")+
-_T("        function set_startpoint(val,t){")+
-_T("            recompute_and_route(val,endnode.translation);")+
-_T("        }")+
-_T("        function set_endpoint(val,t){")+
-_T("            recompute_and_route(startnode.translation,val);")+
-_T("        }"));
+//Script49.setSourceCode(CString("ecmascript:")+
+//_T("        function recompute(startpoint,endpoint){")+
+//_T("	    if (typeof endpoint === 'undefined') {")+
+//_T("		return;")+
+//_T("	    }")+
+//_T("            var dif = endpoint.subtract(startpoint);")+
+//_T("            var dist = dif.length()*0.5;")+
+//_T("            var dif2 = dif.multiply(0.5);")+
+//_T("            var norm = dif.normalize();")+
+//_T("            var transl = startpoint.add(dif2);")+
+//_T("	    if (typeof Quaternion !== 'undefined') {")+
+//_T("		    return {")+
+//_T("			    scale : new SFVec3f(1.0,dist,1.0),")+
+//_T("			    translation : transl,")+
+//_T("			    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)")+
+//_T("		    };")+
+//_T("	    } else if (typeof SFRotation !== 'undefined') {")+
+//_T("		    return {")+
+//_T("			    scale : new SFVec3f(1.0,dist,1.0),")+
+//_T("			    translation : transl,")+
+//_T("			    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)")+
+//_T("		    };")+
+//_T("	    } else {")+
+//_T("		    return {")+
+//_T("			    scale : new SFVec3f(1.0,dist,1.0),")+
+//_T("			    translation : transl")+
+//_T("		    };")+
+//_T("	    }")+
+//_T("	}")+
+//_T("	function recompute_and_route(startpoint, endpoint) {")+
+//_T("	      var trafo = recompute(startpoint, endpoint);")+
+//_T("	      if (trafo) {")+
+//_T("		      position.translation = trafo.translation;")+
+//_T("		      rotscale.rotation = trafo.rotation;")+
+//_T("		      rotscale.scale = trafo.scale;")+
+//_T("	      }")+
+//_T("	}")+
+//_T("        function initialize(){")+
+//_T("            recompute_and_route(startnode.translation,endnode.translation);")+
+//_T("        }")+
+//_T("        function set_startpoint(val,t){")+
+//_T("            recompute_and_route(val,endnode.translation);")+
+//_T("        }")+
+//_T("        function set_endpoint(val,t){")+
+//_T("            recompute_and_route(startnode.translation,val);")+
+//_T("        }"));
 Group42.addChild(&Script49);
 
 Scene7.addChild(&Group42);
@@ -385,4 +386,4 @@ Scene7.addChild(&ROUTE61);
 
 X3D0.setScene(&Scene7);
 
-}
+//}

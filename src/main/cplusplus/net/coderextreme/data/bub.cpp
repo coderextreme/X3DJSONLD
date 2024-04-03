@@ -1,10 +1,11 @@
-#define False false
-#define True true
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/X3DLib.h"
-int main(int argc, char ** argv) {
+//#define False false
+//#define True true
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/X3DLib.h"
+//int main(int argc, char ** argv) 
+//{
 X3D& X3D0 =  X3D();
 X3D0.setProfile(CString("Immersive"));
 X3D0.setVersion(CString("4.0"));
@@ -91,7 +92,7 @@ Background17.setTopUrl(new CString[2]{CString("../resources/images/all_probes/st
 Scene15.addChild(&Background17);
 
 Viewpoint& Viewpoint18 =  Viewpoint();
-Viewpoint18.setPosition(new float[3]{0,0,20});
+Viewpoint18.setPosition(new float[3]{0.0,0.0,20.0});
 Viewpoint18.setDescription(CString("Look at the bubbles flying"));
 Scene15.addChild(&Viewpoint18);
 
@@ -273,31 +274,31 @@ field53.setType(CString("SFTime"));
 Script50.addChild(&field53);
 
 
-Script50.setSourceCode(CString("ecmascript:")+
-_T("			function initialize() {")+
-_T("			    translation = new SFVec3f(0, 0, 0);")+
-_T("			    velocity = new SFVec3f(")+
-_T("			    	Math.random() - 0.5,")+
-_T("				Math.random() - 0.5,")+
-_T("				Math.random() - 0.5);")+
-_T("			}")+
-_T("			function set_fraction() {")+
-_T("			    translation = new SFVec3f(")+
-_T("			    	translation.x + velocity.x,")+
-_T("				translation.y + velocity.y,")+
-_T("				translation.z + velocity.z);")+
-_T("			    if (Math.abs(translation.x) > 10) {")+
-_T("				initialize();")+
-_T("			    } else if (Math.abs(translation.y) > 10) {")+
-_T("				initialize();")+
-_T("			    } else if (Math.abs(translation.z) > 10) {")+
-_T("				initialize();")+
-_T("			    } else {")+
-_T("				velocity.x += Math.random() * 0.2 - 0.1;")+
-_T("				velocity.y += Math.random() * 0.2 - 0.1;")+
-_T("				velocity.z += Math.random() * 0.2 - 0.1;")+
-_T("			    }")+
-_T("			}"));
+//Script50.setSourceCode(CString("ecmascript:")+
+//_T("			function initialize() {")+
+//_T("			    translation = new SFVec3f(0, 0, 0);")+
+//_T("			    velocity = new SFVec3f(")+
+//_T("			    	Math.random() - 0.5,")+
+//_T("				Math.random() - 0.5,")+
+//_T("				Math.random() - 0.5);")+
+//_T("			}")+
+//_T("			function set_fraction() {")+
+//_T("			    translation = new SFVec3f(")+
+//_T("			    	translation.x + velocity.x,")+
+//_T("				translation.y + velocity.y,")+
+//_T("				translation.z + velocity.z);")+
+//_T("			    if (Math.abs(translation.x) > 10) {")+
+//_T("				initialize();")+
+//_T("			    } else if (Math.abs(translation.y) > 10) {")+
+//_T("				initialize();")+
+//_T("			    } else if (Math.abs(translation.z) > 10) {")+
+//_T("				initialize();")+
+//_T("			    } else {")+
+//_T("				velocity.x += Math.random() * 0.2 - 0.1;")+
+//_T("				velocity.y += Math.random() * 0.2 - 0.1;")+
+//_T("				velocity.z += Math.random() * 0.2 - 0.1;")+
+//_T("			    }")+
+//_T("			}"));
 ProtoBody20.addChild(&Script50);
 
 TimeSensor& TimeSensor54 =  TimeSensor();
@@ -338,4 +339,4 @@ Scene15.addChild(&ProtoInstance59);
 
 X3D0.setScene(&Scene15);
 
-}
+//}

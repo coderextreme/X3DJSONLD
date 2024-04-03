@@ -1,10 +1,11 @@
-#define False false
-#define True true
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/X3DLib.h"
-int main(int argc, char ** argv) {
+//#define False false
+//#define True true
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/X3DLib.h"
+//int main(int argc, char ** argv) 
+//{
 X3D& X3D0 =  X3D();
 X3D0.setProfile(CString("Immersive"));
 X3D0.setVersion(CString("3.3"));
@@ -43,7 +44,7 @@ Scene7.addChild(&NavigationInfo8);
 
 Viewpoint& Viewpoint9 =  Viewpoint();
 Viewpoint9.setDescription(CString("Rubiks Cube on Fire"));
-Viewpoint9.setPosition(new float[3]{0,0,12});
+Viewpoint9.setPosition(new float[3]{0.0,0.0,12.0});
 Scene7.addChild(&Viewpoint9);
 
 ProtoDeclare& ProtoDeclare10 =  ProtoDeclare();
@@ -88,7 +89,7 @@ Shape19.addChild(&IS20);
 
 Appearance& Appearance22 =  Appearance();
 Material& Material23 =  Material();
-Material23.setDiffuseColor(new float[3]{1,1,1});
+Material23.setDiffuseColor(new float[3]{1.0,1.0,1.0});
 Appearance22.addChild(&Material23);
 
 Shape19.addChild(&Appearance22);
@@ -375,7 +376,7 @@ ProtoInstance87.addChild(&fieldValue88);
 fieldValue& fieldValue89 =  fieldValue();
 fieldValue89.setName(CString("myShape"));
 Box& Box90 =  Box();
-Box90.setSize(new float[3]{1,1,1});
+Box90.setSize(new float[3]{1.0,1.0,1.0});
 fieldValue89.addChild(&Box90);
 
 ProtoInstance87.addChild(&fieldValue89);
@@ -384,4 +385,4 @@ Scene7.addChild(&ProtoInstance87);
 
 X3D0.setScene(&Scene7);
 
-}
+//}

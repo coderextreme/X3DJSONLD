@@ -1,10 +1,11 @@
-#define False false
-#define True true
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/X3DLib.h"
-int main(int argc, char ** argv) {
+//#define False false
+//#define True true
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/X3DLib.h"
+//int main(int argc, char ** argv) 
+//{
 X3D& X3D0 =  X3D();
 X3D0.setProfile(CString("Immersive"));
 X3D0.setVersion(CString("4.0"));
@@ -393,71 +394,71 @@ field70.setValue(CString("0.5"));
 Script61.addChild(&field70);
 
 
-Script61.setSourceCode(CString("ecmascript:")+
-_T("			function initialize() {")+
-_T("			    translation = new SFVec3f(0, 0, 0);")+
-_T("			    velocity = new SFVec3f(")+
-_T("			    	Math.random() - 0.5,")+
-_T("				Math.random() - 0.5,")+
-_T("				Math.random() - 0.5);")+
-_T("			}")+
-_T("			function set_fraction() {")+
-_T("			    translation = new SFVec3f(")+
-_T("			    	translation.x + velocity.x,")+
-_T("				translation.y + velocity.y,")+
-_T("				translation.z + velocity.z);")+
-_T("			    for (var j = 0; j <= 2; j++) {")+
-_T("				    if (Math.abs(translation.x) > 10) {")+
-_T("					initialize();")+
-_T("				    } else if (Math.abs(translation.y) > 10) {")+
-_T("					initialize();")+
-_T("				    } else if (Math.abs(translation.z) > 10) {")+
-_T("					initialize();")+
-_T("				    } else {")+
-_T("					velocity.x += Math.random() * 0.2 - 0.1;")+
-_T("					velocity.y += Math.random() * 0.2 - 0.1;")+
-_T("					velocity.z += Math.random() * 0.2 - 0.1;")+
-_T("				    }")+
-_T("			    }")+
-_T("			    animate_flowers();")+
-_T("			}")+
-_T("			function animate_flowers(fraction, eventTime) {")+
-_T("				var choice = Math.floor(Math.random() * 4);")+
-_T("				switch (choice) {")+
-_T("				case 0:")+
-_T("					a += Math.random() * 0.2 - 0.1;")+
-_T("					break;")+
-_T("				case 1:")+
-_T("					b += Math.random() * 0.2 - 0.1;")+
-_T("					break;")+
-_T("				case 2:")+
-_T("					c += Math.random() * 2 - 1;")+
-_T("					break;")+
-_T("				case 3:")+
-_T("					d += Math.random() * 2 - 1;")+
-_T("					break;")+
-_T("				}")+
-_T("				tdelta = tdelta + 0.5;")+
-_T("				pdelta = pdelta + 0.5;")+
-_T("				if (a > 1) {")+
-_T("					a =  0.5;")+
-_T("				}")+
-_T("				if (b > 1) {")+
-_T("					b =  0.5;")+
-_T("				}")+
-_T("				if (c < 1) {")+
-_T("					c =  4;")+
-_T("				}")+
-_T("				if (d < 1) {")+
-_T("					d =  4;")+
-_T("				}")+
-_T("				if (c > 10) {")+
-_T("					c = 4;")+
-_T("				}")+
-_T("				if (d > 10) {")+
-_T("					d = 4;")+
-_T("				}")+
-_T("			}"));
+//Script61.setSourceCode(CString("ecmascript:")+
+//_T("			function initialize() {")+
+//_T("			    translation = new SFVec3f(0, 0, 0);")+
+//_T("			    velocity = new SFVec3f(")+
+//_T("			    	Math.random() - 0.5,")+
+//_T("				Math.random() - 0.5,")+
+//_T("				Math.random() - 0.5);")+
+//_T("			}")+
+//_T("			function set_fraction() {")+
+//_T("			    translation = new SFVec3f(")+
+//_T("			    	translation.x + velocity.x,")+
+//_T("				translation.y + velocity.y,")+
+//_T("				translation.z + velocity.z);")+
+//_T("			    for (var j = 0; j <= 2; j++) {")+
+//_T("				    if (Math.abs(translation.x) > 10) {")+
+//_T("					initialize();")+
+//_T("				    } else if (Math.abs(translation.y) > 10) {")+
+//_T("					initialize();")+
+//_T("				    } else if (Math.abs(translation.z) > 10) {")+
+//_T("					initialize();")+
+//_T("				    } else {")+
+//_T("					velocity.x += Math.random() * 0.2 - 0.1;")+
+//_T("					velocity.y += Math.random() * 0.2 - 0.1;")+
+//_T("					velocity.z += Math.random() * 0.2 - 0.1;")+
+//_T("				    }")+
+//_T("			    }")+
+//_T("			    animate_flowers();")+
+//_T("			}")+
+//_T("			function animate_flowers(fraction, eventTime) {")+
+//_T("				var choice = Math.floor(Math.random() * 4);")+
+//_T("				switch (choice) {")+
+//_T("				case 0:")+
+//_T("					a += Math.random() * 0.2 - 0.1;")+
+//_T("					break;")+
+//_T("				case 1:")+
+//_T("					b += Math.random() * 0.2 - 0.1;")+
+//_T("					break;")+
+//_T("				case 2:")+
+//_T("					c += Math.random() * 2 - 1;")+
+//_T("					break;")+
+//_T("				case 3:")+
+//_T("					d += Math.random() * 2 - 1;")+
+//_T("					break;")+
+//_T("				}")+
+//_T("				tdelta = tdelta + 0.5;")+
+//_T("				pdelta = pdelta + 0.5;")+
+//_T("				if (a > 1) {")+
+//_T("					a =  0.5;")+
+//_T("				}")+
+//_T("				if (b > 1) {")+
+//_T("					b =  0.5;")+
+//_T("				}")+
+//_T("				if (c < 1) {")+
+//_T("					c =  4;")+
+//_T("				}")+
+//_T("				if (d < 1) {")+
+//_T("					d =  4;")+
+//_T("				}")+
+//_T("				if (c > 10) {")+
+//_T("					c = 4;")+
+//_T("				}")+
+//_T("				if (d > 10) {")+
+//_T("					d = 4;")+
+//_T("				}")+
+//_T("			}"));
 ProtoBody19.addChild(&Script61);
 
 TimeSensor& TimeSensor71 =  TimeSensor();
@@ -582,4 +583,4 @@ Scene15.addChild(&ProtoInstance88);
 
 X3D0.setScene(&Scene15);
 
-}
+//}

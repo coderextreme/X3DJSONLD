@@ -1,10 +1,11 @@
-#define False false
-#define True true
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/X3DLib.h"
-int main(int argc, char ** argv) {
+//#define False false
+//#define True true
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/X3DLib.h"
+//int main(int argc, char ** argv) 
+//{
 X3D& X3D0 =  X3D();
 X3D0.setProfile(CString("Immersive"));
 X3D0.setVersion(CString("4.0"));
@@ -60,7 +61,7 @@ Scene& Scene11 =  Scene();
 Group& Group12 =  Group();
 //DEFS for markers of skeleton joints, segments, and sites
 Transform& Transform13 =  Transform();
-Transform13.setTranslation(new float[3]{0,2.1,0});
+Transform13.setTranslation(new float[3]{0.0,2.1,0.0});
 Shape& Shape14 =  Shape();
 Shape14.setDEF(CString("HAnimSiteShape"));
 IndexedFaceSet& IndexedFaceSet15 =  IndexedFaceSet();
@@ -70,18 +71,18 @@ IndexedFaceSet15.setSolid(False);
 IndexedFaceSet15.setCoordIndex(new int32_t[32]{0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1}, 32);
 ColorRGBA& ColorRGBA16 =  ColorRGBA();
 ColorRGBA16.setDEF(CString("HAnimSiteColorRGBA"));
-ColorRGBA16.setColor(new float[8]{1,1,0,1,1,1,0,0.1}, 8);
+ColorRGBA16.setColor(new float[8]{1.0,1.0,0.0,1.0,1.0,1.0,0.0,0.1}, 8);
 IndexedFaceSet15.addChild(&ColorRGBA16);
 
 Coordinate& Coordinate17 =  Coordinate();
-Coordinate17.setPoint(new float[18]{0,0.01,0,-0.01,0,0,0,0,0.01,0.01,0,0,0,0,-0.01,0,-0.01,0}, 18);
+Coordinate17.setPoint(new float[18]{0.0,0.01,0.0,-0.01,0.0,0.0,0.0,0.0,0.01,0.01,0.0,0.0,0.0,0.0,-0.01,0.0,-0.01,0.0}, 18);
 IndexedFaceSet15.setCoord(&Coordinate17);
 
 Shape14.setGeometry(&IndexedFaceSet15);
 
 Appearance& Appearance18 =  Appearance();
 Material& Material19 =  Material();
-Material19.setDiffuseColor(new float[3]{1,1,0});
+Material19.setDiffuseColor(new float[3]{1.0,1.0,0.0});
 Material19.setTransparency(0.3);
 Appearance18.addChild(&Material19);
 
@@ -103,4 +104,4 @@ Scene11.addChild(&Viewpoint21);
 
 X3D0.setScene(&Scene11);
 
-}
+//}

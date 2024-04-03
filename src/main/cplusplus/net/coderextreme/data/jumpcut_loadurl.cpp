@@ -1,10 +1,11 @@
-#define False false
-#define True true
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/X3DLib.h"
-int main(int argc, char ** argv) {
+//#define False false
+//#define True true
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/X3DLib.h"
+//int main(int argc, char ** argv) 
+//{
 X3D& X3D0 =  X3D();
 X3D0.setProfile(CString("Immersive"));
 X3D0.setVersion(CString("3.0"));
@@ -88,8 +89,8 @@ Scene16.addChild(&WorldInfo17);
 
 Background& Background18 =  Background();
 Background18.setGroundAngle(new float[1]{1.57}, 1);
-Background18.setGroundColor(new float[6]{0,0.5,0,0,0.5,0}, 6);
-Background18.setSkyColor(new float[3]{0,0,1}, 3);
+Background18.setGroundColor(new float[6]{0.0,0.5,0.0,0.0,0.5,0.0}, 6);
+Background18.setSkyColor(new float[3]{0.0,0.0,1.0}, 3);
 Scene16.addChild(&Background18);
 
 NavigationInfo& NavigationInfo19 =  NavigationInfo();
@@ -104,8 +105,8 @@ Scene16.addChild(&Viewpoint20);
 Viewpoint& Viewpoint21 =  Viewpoint();
 Viewpoint21.setDEF(CString("Top_View"));
 Viewpoint21.setDescription(CString("Top View"));
-Viewpoint21.setOrientation(new float[4]{1,0,0,-1.57});
-Viewpoint21.setPosition(new float[3]{0,10,0});
+Viewpoint21.setOrientation(new float[4]{1.0,0.0,0.0,-1.57});
+Viewpoint21.setPosition(new float[3]{0.0,10.0,0.0});
 Scene16.addChild(&Viewpoint21);
 
 TouchSensor& TouchSensor22 =  TouchSensor();
@@ -163,4 +164,4 @@ Scene16.addChild(&ROUTE32);
 
 X3D0.setScene(&Scene16);
 
-}
+//}

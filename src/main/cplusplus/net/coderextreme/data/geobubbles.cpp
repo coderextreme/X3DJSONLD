@@ -1,10 +1,11 @@
-#define False false
-#define True true
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/X3DLib.h"
-int main(int argc, char ** argv) {
+//#define False false
+//#define True true
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
+//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/X3DLib.h"
+//int main(int argc, char ** argv) 
+//{
 X3D& X3D0 =  X3D();
 X3D0.setProfile(CString("Immersive"));
 X3D0.setVersion(CString("3.3"));
@@ -46,8 +47,8 @@ Scene& Scene8 =  Scene();
 //PositionInterpolator DEF='TourPosition' key='0 1' keyValue='-0.5 -0.5 4 -0.5 0.5 4'/
 GeoViewpoint& GeoViewpoint9 =  GeoViewpoint();
 GeoViewpoint9.setDEF(CString("Tour"));
-GeoViewpoint9.setPosition(new double[3]{0,0,4});
-GeoViewpoint9.setOrientation(new float[4]{1,0,0,0});
+GeoViewpoint9.setPosition(new double[3]{0.0,0.0,4.0});
+GeoViewpoint9.setOrientation(new float[4]{1.0,0.0,0.0,0.0});
 GeoViewpoint9.setDescription(CString("Tour Views"));
 Scene8.addChild(&GeoViewpoint9);
 
@@ -85,8 +86,8 @@ Scene8.addChild(&TimeSensor16);
 
 GeoPositionInterpolator& GeoPositionInterpolator17 =  GeoPositionInterpolator();
 GeoPositionInterpolator17.setDEF(CString("TourPosition"));
-GeoPositionInterpolator17.setKey(new float[2]{0,1}, 2);
-GeoPositionInterpolator17.setKeyValue(new double[6]{0.0015708,0,4,0,0.0015708,4}, 6);
+GeoPositionInterpolator17.setKey(new float[2]{0.0,1.0}, 2);
+GeoPositionInterpolator17.setKeyValue(new double[6]{0.0015708,0.0,4.0,0.0,0.0015708,4.0}, 6);
 Scene8.addChild(&GeoPositionInterpolator17);
 
 Script& Script18 =  Script();
@@ -119,22 +120,22 @@ field22.setValue(CString("0.0015708 0 4 0 0.0015708 4"));
 Script18.addChild(&field22);
 
 
-Script18.setSourceCode(CString("ecmascript:")+
-_T("               function set_cycle(value) {")+
-_T("                        var cartesianMult = -150;  // -150 if cartesian, 1 if geo")+
-_T("                        var ov = val;")+
-_T("			// Browser.print('old '+ov);")+
-_T("                        do {")+
-_T("                                val = Math.floor(Math.random()*2);")+
-_T("                                var vc = val;")+
-_T("                                positions[vc] = new SFVec3d(Math.round(Math.random()*2)*0.0015708*cartesianMult, Math.round(Math.random()*2)*0.0015708*cartesianMult, 4);")+
-_T("                        } while ( positions[ov][0] === positions[vc][0] && positions[ov][1] === positions[vc][1] && positions[ov][2] === positions[vc][2]);")+
-_T("			// Browser.println(positions[ov]);")+
-_T("			// Browser.println(positions[vc]);")+
-_T("                        position = new MFVec3d();")+
-_T("                        position[0] = new SFVec3d(positions[ov][0],positions[ov][1],positions[ov][2]);")+
-_T("                        position[1] = new SFVec3d(positions[vc][0],positions[vc][1],positions[vc][2]);")+
-_T("               }"));
+//Script18.setSourceCode(CString("ecmascript:")+
+//_T("               function set_cycle(value) {")+
+//_T("                        var cartesianMult = -150;  // -150 if cartesian, 1 if geo")+
+//_T("                        var ov = val;")+
+//_T("			// Browser.print('old '+ov);")+
+//_T("                        do {")+
+//_T("                                val = Math.floor(Math.random()*2);")+
+//_T("                                var vc = val;")+
+//_T("                                positions[vc] = new SFVec3d(Math.round(Math.random()*2)*0.0015708*cartesianMult, Math.round(Math.random()*2)*0.0015708*cartesianMult, 4);")+
+//_T("                        } while ( positions[ov][0] === positions[vc][0] && positions[ov][1] === positions[vc][1] && positions[ov][2] === positions[vc][2]);")+
+//_T("			// Browser.println(positions[ov]);")+
+//_T("			// Browser.println(positions[vc]);")+
+//_T("                        position = new MFVec3d();")+
+//_T("                        position[0] = new SFVec3d(positions[ov][0],positions[ov][1],positions[ov][2]);")+
+//_T("                        position[1] = new SFVec3d(positions[vc][0],positions[vc][1],positions[vc][2]);")+
+//_T("               }"));
 Scene8.addChild(&Script18);
 
 ROUTE& ROUTE23 =  ROUTE();
@@ -167,4 +168,4 @@ Scene8.addChild(&ROUTE26);
 
 X3D0.setScene(&Scene8);
 
-}
+//}
