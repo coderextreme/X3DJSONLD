@@ -6,8 +6,9 @@ IDENTIFIER : [A-Za-z_][A-Za-z0-9_]*;
 REFERENCE : '&';
 EQUALS : '=';
 SEMI : ';';
-DOT : '.';
+COLON : ':';
 SET : '.set';
+X3DNODESET : '.X3DNode::set';
 ADD : '.add';
 WHOLE: [0-9]+;
 FLOAT : [-+]?([0-9]+[.]?|[0-9]*[.][0-9]+)([eE][-+]?[0-9]+)?;
@@ -15,6 +16,8 @@ BOOLEAN : 'true' | 'false';
 COMMENT : '//' ~[\r\n]* -> skip;
 OPENBRACKET : '[';
 CLOSEBRACKET : ']';
+QUOTE : ['];
+AT : [@];
 
 nonnegative : '+'? WHOLE;
 negative : '-' WHOLE;
@@ -24,7 +27,7 @@ field : IDENTIFIER; // field of node or statement, TODO get list from X3DUOM
 
 variable : IDENTIFIER WHOLE?; // TODO IDENTIFIER is a list of concrete types and statements from X3DUOM
 
-string : ( '"https://' | '"http://' | '"' ) ( '/' | '\\"' | ~'"' )* '"';
+string : '"' ( 'https://' | 'http://' | '*' | '!' | '?' | AT | QUOTE | '~' | '#' | '/' ~('/') | '\\"' | '\\' | '.' | ~'"' )*? '"';
 
 cstring : 'CString' '(' string ')';
 
@@ -41,7 +44,7 @@ construct_array : 'new ' type OPENBRACKET WHOLE CLOSEBRACKET '{'  list '}';
 
 parameters : (cstring | BOOLEAN | WHOLE (',' construct_array)? | FLOAT | construct_array (',' WHOLE)? | REFERENCE? variable);
 
-operator : (EQUALS | SET | ADD );
+operator : (EQUALS | X3DNODESET | SET | ADD );
 
 funccall : variable operator IDENTIFIER '(' parameters? ')';
 
