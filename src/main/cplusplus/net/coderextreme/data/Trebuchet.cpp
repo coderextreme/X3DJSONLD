@@ -1,11 +1,10 @@
-//#define False false
-//#define True true
-//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
-//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
-//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
-//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/X3DLib.h"
-//int main(int argc, char ** argv) 
-//{
+#define False false
+#define True true
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/X3DLib.h"
+int main(int argc, char ** argv) {
 X3D& X3D0 =  X3D();
 X3D0.setProfile(CString("Immersive"));
 X3D0.setVersion(CString("3.0"));
@@ -1447,23 +1446,23 @@ field336.setType(CString("SFFloat"));
 Script333.addChild(&field336);
 
 
-//Script333.setSourceCode(CString("ecmascript:")+
-//_T("function initialize ()")+
-//_T("{")+
-//_T("	whichchoice =0;")+
-//_T("	CounterWeight=100;")+
-//_T("}")+
-//_T("function set_boolean ( boolean_input, eventTime)")+
-//_T("{")+
-//_T("	if ( boolean_input== false ) { return; } // ignore the unclick")+
-//_T("        whichchoice = whichchoice +1;")+
-//_T("	if (whichchoice == 0)CounterWeight=50.00;")+
-//_T("	if (whichchoice == 1)CounterWeight=500.00;")+
-//_T("	if (whichchoice == 2)CounterWeight=1000.00;")+
-//_T("	if (whichchoice == 3)CounterWeight=10000.00;")+
-//_T("        if ( whichchoice ==4 ) { whichchoice = 0; CounterWeight=50; }")+
-//_T("        Browser.println ('CounterWeight ='+CounterWeight);")+
-//_T("}"));
+Script333.setSourceCode(CString("ecmascript:")+
+_T("function initialize ()")+
+_T("{")+
+_T("	whichchoice =0;")+
+_T("	CounterWeight=100;")+
+_T("}")+
+_T("function set_boolean ( boolean_input, eventTime)")+
+_T("{")+
+_T("	if ( boolean_input== false ) { return; } // ignore the unclick")+
+_T("        whichchoice = whichchoice +1;")+
+_T("	if (whichchoice == 0)CounterWeight=50.00;")+
+_T("	if (whichchoice == 1)CounterWeight=500.00;")+
+_T("	if (whichchoice == 2)CounterWeight=1000.00;")+
+_T("	if (whichchoice == 3)CounterWeight=10000.00;")+
+_T("        if ( whichchoice ==4 ) { whichchoice = 0; CounterWeight=50; }")+
+_T("        Browser.println ('CounterWeight ='+CounterWeight);")+
+_T("}"));
 Transform291.addChild(&Script333);
 
 Script& Script337 =  Script();
@@ -1487,17 +1486,17 @@ field340.setType(CString("SFFloat"));
 Script337.addChild(&field340);
 
 
-//Script337.setSourceCode(CString("ecmascript:")+
-//_T("function set_boolean (boolean_input, eventTime)")+
-//_T("{")+
-//_T("	if ( boolean_input== false ) { return; } // ignore unclick")+
-//_T("        whichchoice = whichchoice +1;")+
-//_T("        if (whichchoice == 0)ProjectileWeight=10.00;")+
-//_T("        if (whichchoice == 1)ProjectileWeight=1000.00;")+
-//_T("	if (whichchoice == 2)ProjectileWeight=5;")+
-//_T("	if ( whichchoice ==3 ) { whichchoice = 0; ProjectileWeight=10.00; }")+
-//_T("	Browser.println ('Projectile Weight'+ProjectileWeight);")+
-//_T("}"));
+Script337.setSourceCode(CString("ecmascript:")+
+_T("function set_boolean (boolean_input, eventTime)")+
+_T("{")+
+_T("	if ( boolean_input== false ) { return; } // ignore unclick")+
+_T("        whichchoice = whichchoice +1;")+
+_T("        if (whichchoice == 0)ProjectileWeight=10.00;")+
+_T("        if (whichchoice == 1)ProjectileWeight=1000.00;")+
+_T("	if (whichchoice == 2)ProjectileWeight=5;")+
+_T("	if ( whichchoice ==3 ) { whichchoice = 0; ProjectileWeight=10.00; }")+
+_T("	Browser.println ('Projectile Weight'+ProjectileWeight);")+
+_T("}"));
 Transform291.addChild(&Script337);
 
 Script& Script341 =  Script();
@@ -1515,13 +1514,13 @@ field343.setType(CString("SFInt32"));
 Script341.addChild(&field343);
 
 
-//Script341.setSourceCode(CString("ecmascript:")+
-//_T("function set_boolean (boolean_input, eventTime)")+
-//_T("{")+
-//_T("	if ( boolean_input== false ) { return; } // ignore unclick")+
-//_T("        whichchoice = whichchoice +1;")+
-//_T("        if ( whichchoice ==2 )  whichchoice = 0;")+
-//_T("}"));
+Script341.setSourceCode(CString("ecmascript:")+
+_T("function set_boolean (boolean_input, eventTime)")+
+_T("{")+
+_T("	if ( boolean_input== false ) { return; } // ignore unclick")+
+_T("        whichchoice = whichchoice +1;")+
+_T("        if ( whichchoice ==2 )  whichchoice = 0;")+
+_T("}"));
 Transform291.addChild(&Script341);
 
 Script& Script344 =  Script();
@@ -1571,42 +1570,42 @@ field351.setType(CString("SFVec3f"));
 Script344.addChild(&field351);
 
 
-//Script344.setSourceCode(CString("ecmascript:")+
-//_T("function initialize ()")+
-//_T("{")+
-//_T("	MassCounterWeight=100;")+
-//_T("	MassProjectileWeight=10;")+
-//_T("	Browser.println ('MassCounterWeight =' + MassCounterWeight);")+
-//_T("	Browser.println ('MassProjectileWeight =' + MassProjectileWeight);")+
-//_T("}")+
-//_T("function set_MassProjectileWeight (value, timestamp)")+
-//_T("{")+
-//_T("	MassProjectileWeight = value;")+
-//_T("	Browser.println ('new MassProjectileWeight =' + MassProjectileWeight);")+
-//_T("}")+
-//_T("function set_MassCounterWeight (value2, timestamp)")+
-//_T("{")+
-//_T("	MassCounterWeight = value2;")+
-//_T("	Browser.println ('new MassCounterWeight =' + MassCounterWeight);")+
-//_T("}")+
-//_T("function set_fraction ( fraction, eventTime )")+
-//_T("{")+
-//_T("	var TrebuchetHeight=45;")+
-//_T("	var Height =25;")+
-//_T("      	x = (2*(MassCounterWeight/MassProjectileWeight)*Height*fraction)-.5*TrebuchetHeight;")+
-//_T("	// start at TrebuchetHeight and keep along z axis (z=zero)")+
-//_T("	y =  (MassCounterWeight/MassProjectileWeight)*Height*Math.sin(fraction*3.14);")+
-//_T("        z = 0;")+
-//_T("        transparent = new SFVec3f (1,1,1);")+
-//_T("     if (y <1.5*TrebuchetHeight  )if (x<TrebuchetHeight)")+
-//_T("		{")+
-//_T("		x=x-10;")+
-//_T("		y=y+1;")+
-//_T("		transparent = new SFVec3f(.01, .01, .01);")+
-//_T("			}")+
-//_T("	value_changed = new SFVec3f (x, y, z);")+
-//_T("	Browser.println ('x=' + value_changed[0] + ' y=' + value_changed[1] + ' z=' + value_changed[2]);")+
-//_T("}"));
+Script344.setSourceCode(CString("ecmascript:")+
+_T("function initialize ()")+
+_T("{")+
+_T("	MassCounterWeight=100;")+
+_T("	MassProjectileWeight=10;")+
+_T("	Browser.println ('MassCounterWeight =' + MassCounterWeight);")+
+_T("	Browser.println ('MassProjectileWeight =' + MassProjectileWeight);")+
+_T("}")+
+_T("function set_MassProjectileWeight (value, timestamp)")+
+_T("{")+
+_T("	MassProjectileWeight = value;")+
+_T("	Browser.println ('new MassProjectileWeight =' + MassProjectileWeight);")+
+_T("}")+
+_T("function set_MassCounterWeight (value2, timestamp)")+
+_T("{")+
+_T("	MassCounterWeight = value2;")+
+_T("	Browser.println ('new MassCounterWeight =' + MassCounterWeight);")+
+_T("}")+
+_T("function set_fraction ( fraction, eventTime )")+
+_T("{")+
+_T("	var TrebuchetHeight=45;")+
+_T("	var Height =25;")+
+_T("      	x = (2*(MassCounterWeight/MassProjectileWeight)*Height*fraction)-.5*TrebuchetHeight;")+
+_T("	// start at TrebuchetHeight and keep along z axis (z=zero)")+
+_T("	y =  (MassCounterWeight/MassProjectileWeight)*Height*Math.sin(fraction*3.14);")+
+_T("        z = 0;")+
+_T("        transparent = new SFVec3f (1,1,1);")+
+_T("     if (y <1.5*TrebuchetHeight  )if (x<TrebuchetHeight)")+
+_T("		{")+
+_T("		x=x-10;")+
+_T("		y=y+1;")+
+_T("		transparent = new SFVec3f(.01, .01, .01);")+
+_T("			}")+
+_T("	value_changed = new SFVec3f (x, y, z);")+
+_T("	Browser.println ('x=' + value_changed[0] + ' y=' + value_changed[1] + ' z=' + value_changed[2]);")+
+_T("}"));
 Transform291.addChild(&Script344);
 
 Transform104.addChild(&Transform291);
@@ -1832,4 +1831,4 @@ Scene17.addChild(&ROUTE383);
 
 X3D0.setScene(&Scene17);
 
-//}
+}

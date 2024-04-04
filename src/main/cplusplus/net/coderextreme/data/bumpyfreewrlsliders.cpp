@@ -1,11 +1,10 @@
-//#define False false
-//#define True true
-//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
-//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
-//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
-//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/X3DLib.h"
-//int main(int argc, char ** argv) 
-//{
+#define False false
+#define True true
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/X3DLib.h"
+int main(int argc, char ** argv) {
 X3D& X3D0 =  X3D();
 X3D0.setProfile(CString("Full"));
 X3D0.setVersion(CString("4.0"));
@@ -994,7 +993,7 @@ field224.setValue(CString("1"));
 Script222.addChild(&field224);
 
 
-//Script222.setSourceCode(CString("ecmascript: function newTranslation(Value) { aValue = Value.x * 30; }"));
+Script222.setSourceCode(CString("ecmascript: function newTranslation(Value) { aValue = Value.x * 30; }"));
 LayoutLayer103.addChild(&Script222);
 
 Script& Script225 =  Script();
@@ -1016,7 +1015,7 @@ field227.setValue(CString("1"));
 Script225.addChild(&field227);
 
 
-//Script225.setSourceCode(CString("ecmascript: function newTranslation(Value) { bValue = Value.x * 30; }"));
+Script225.setSourceCode(CString("ecmascript: function newTranslation(Value) { bValue = Value.x * 30; }"));
 LayoutLayer103.addChild(&Script225);
 
 Script& Script228 =  Script();
@@ -1038,7 +1037,7 @@ field230.setValue(CString("1"));
 Script228.addChild(&field230);
 
 
-//Script228.setSourceCode(CString("ecmascript: function newTranslation(Value) { cValue = Value.x * 5; }"));
+Script228.setSourceCode(CString("ecmascript: function newTranslation(Value) { cValue = Value.x * 5; }"));
 LayoutLayer103.addChild(&Script228);
 
 Script& Script231 =  Script();
@@ -1060,7 +1059,7 @@ field233.setValue(CString("1"));
 Script231.addChild(&field233);
 
 
-//Script231.setSourceCode(CString("ecmascript: function newTranslation(Value) { dValue = Value.x * 5; }"));
+Script231.setSourceCode(CString("ecmascript: function newTranslation(Value) { dValue = Value.x * 5; }"));
 LayoutLayer103.addChild(&Script231);
 
 Script& Script234 =  Script();
@@ -1082,7 +1081,7 @@ field236.setValue(CString("1"));
 Script234.addChild(&field236);
 
 
-//Script234.setSourceCode(CString("ecmascript: function newTranslation(Value) { pdeltaValue = Value.x; }"));
+Script234.setSourceCode(CString("ecmascript: function newTranslation(Value) { pdeltaValue = Value.x; }"));
 LayoutLayer103.addChild(&Script234);
 
 Script& Script237 =  Script();
@@ -1104,7 +1103,7 @@ field239.setValue(CString("1"));
 Script237.addChild(&field239);
 
 
-//Script237.setSourceCode(CString("ecmascript: function newTranslation(Value) { tdeltaValue = Value.x; }"));
+Script237.setSourceCode(CString("ecmascript: function newTranslation(Value) { tdeltaValue = Value.x; }"));
 LayoutLayer103.addChild(&Script237);
 
 ROUTE& ROUTE240 =  ROUTE();
@@ -1252,4 +1251,4 @@ Scene31.addChild(&LayerSet32);
 
 X3D0.setScene(&Scene31);
 
-//}
+}

@@ -1,11 +1,10 @@
-//#define False false
-//#define True true
-//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
-//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
-//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
-//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/X3DLib.h"
-//int main(int argc, char ** argv) 
-//{
+#define False false
+#define True true
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/X3DLib.h"
+int main(int argc, char ** argv) {
 X3D& X3D0 =  X3D();
 X3D0.setProfile(CString("Immersive"));
 X3D0.setVersion(CString("4.0"));
@@ -432,22 +431,22 @@ field74.setValue(CString("-1"));
 Script60.addChild(&field74);
 
 
-//Script60.setSourceCode(CString("ecmascript:")+
-//_T("        function set_fraction( f, tm ) {")+
-//_T("            var side = Math.floor(f*frontUrls.length);")+
-//_T("            if (side > frontUrls.length-1) {")+
-//_T("                side = 0;")+
-//_T("            }")+
-//_T("            if (side != old) {")+
-//_T("                    old = side;")+
-//_T("                    front[0] = frontUrls[side];")+
-//_T("                    back[0] = backUrls[side];")+
-//_T("                    left[0] = leftUrls[side];")+
-//_T("                    right[0] = rightUrls[side];")+
-//_T("                    top[0] = topUrls[side];")+
-//_T("                    bottom[0] = bottomUrls[side];")+
-//_T("            }")+
-//_T("        }"));
+Script60.setSourceCode(CString("ecmascript:")+
+_T("        function set_fraction( f, tm ) {")+
+_T("            var side = Math.floor(f*frontUrls.length);")+
+_T("            if (side > frontUrls.length-1) {")+
+_T("                side = 0;")+
+_T("            }")+
+_T("            if (side != old) {")+
+_T("                    old = side;")+
+_T("                    front[0] = frontUrls[side];")+
+_T("                    back[0] = backUrls[side];")+
+_T("                    left[0] = leftUrls[side];")+
+_T("                    right[0] = rightUrls[side];")+
+_T("                    top[0] = topUrls[side];")+
+_T("                    bottom[0] = bottomUrls[side];")+
+_T("            }")+
+_T("        }"));
 Scene15.addChild(&Script60);
 
 //<TimeSensor DEF=\"Clock\" cycleInterval=\"45\" loop='true'/> <ROUTE fromNode='Clock' fromField='fraction_changed' toNode='UrlSelector' toField='set_fraction'/> <ROUTE fromNode='UrlSelector' fromField='front' toNode='background' toField='frontUrl'/> <ROUTE fromNode='UrlSelector' fromField='back' toNode='background' toField='backUrl'/> <ROUTE fromNode='UrlSelector' fromField='left' toNode='background' toField='leftUrl'/> <ROUTE fromNode='UrlSelector' fromField='right' toNode='background' toField='rightUrl'/> <ROUTE fromNode='UrlSelector' fromField='top' toNode='background' toField='topUrl'/> <ROUTE fromNode='UrlSelector' fromField='bottom' toNode='background' toField='bottomUrl'/> <ROUTE fromNode='UrlSelector' fromField='front' toNode='frontShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='back' toNode='backShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='left' toNode='leftShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='right' toNode='rightShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='top' toNode='topShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='bottom' toNode='bottomShader' toField='url'/>
@@ -503,44 +502,44 @@ field82.setValue(CString("0"));
 Script75.addChild(&field82);
 
 
-//Script75.setSourceCode(CString("ecmascript:")+
-//_T("function set_fraction() {")+
-//_T("	var choice = Math.floor(Math.random() * 4);")+
-//_T("	switch (choice) {")+
-//_T("	case 0:")+
-//_T("		a = a + Math.floor(Math.random() * 2) * 2 - 1;")+
-//_T("		break;")+
-//_T("	case 1:")+
-//_T("		b = b + Math.floor(Math.random() * 2) * 2 - 1;")+
-//_T("		break;")+
-//_T("	case 2:")+
-//_T("		c = c + Math.floor(Math.random() * 2) * 2 - 1;")+
-//_T("		break;")+
-//_T("	case 3:")+
-//_T("		d = d + Math.floor(Math.random() * 2) * 2 - 1;")+
-//_T("		break;")+
-//_T("	}")+
-//_T("	tdelta = tdelta + 0.5;")+
-//_T("	pdelta = pdelta + 0.5;")+
-//_T("	if (a < 1) {")+
-//_T("		a = 10;")+
-//_T("	}")+
-//_T("	if (b < 1) {")+
-//_T("		b = 10;")+
-//_T("	}")+
-//_T("	if (c < 1) {")+
-//_T("		c = 4;")+
-//_T("	}")+
-//_T("	if (c > 20) {")+
-//_T("		c = 4;")+
-//_T("	}")+
-//_T("	if (d < 1) {")+
-//_T("		d = 4;")+
-//_T("	}")+
-//_T("	if (d > 20) {")+
-//_T("		d = 4;")+
-//_T("	}")+
-//_T("}"));
+Script75.setSourceCode(CString("ecmascript:")+
+_T("function set_fraction() {")+
+_T("	var choice = Math.floor(Math.random() * 4);")+
+_T("	switch (choice) {")+
+_T("	case 0:")+
+_T("		a = a + Math.floor(Math.random() * 2) * 2 - 1;")+
+_T("		break;")+
+_T("	case 1:")+
+_T("		b = b + Math.floor(Math.random() * 2) * 2 - 1;")+
+_T("		break;")+
+_T("	case 2:")+
+_T("		c = c + Math.floor(Math.random() * 2) * 2 - 1;")+
+_T("		break;")+
+_T("	case 3:")+
+_T("		d = d + Math.floor(Math.random() * 2) * 2 - 1;")+
+_T("		break;")+
+_T("	}")+
+_T("	tdelta = tdelta + 0.5;")+
+_T("	pdelta = pdelta + 0.5;")+
+_T("	if (a < 1) {")+
+_T("		a = 10;")+
+_T("	}")+
+_T("	if (b < 1) {")+
+_T("		b = 10;")+
+_T("	}")+
+_T("	if (c < 1) {")+
+_T("		c = 4;")+
+_T("	}")+
+_T("	if (c > 20) {")+
+_T("		c = 4;")+
+_T("	}")+
+_T("	if (d < 1) {")+
+_T("		d = 4;")+
+_T("	}")+
+_T("	if (d > 20) {")+
+_T("		d = 4;")+
+_T("	}")+
+_T("}"));
 Scene15.addChild(&Script75);
 
 TimeSensor& TimeSensor83 =  TimeSensor();
@@ -642,4 +641,4 @@ Scene15.addChild(&ROUTE96);
 
 X3D0.setScene(&Scene15);
 
-//}
+}
