@@ -82,14 +82,14 @@ Group& Group16 =  Group();
 //Viewpoint begin
 Viewpoint& Viewpoint17 =  Viewpoint();
 Viewpoint17.setDEF(CString("ViewUpClose"));
-Viewpoint17.setCenterOfRotation(new float[3]{0.0,-1.0,0.0});
+Viewpoint17.setCenterOfRotation(new float[]{0.0,-1.0,0.0});
 Viewpoint17.setDescription(CString("Hello world!"));
-Viewpoint17.setPosition(new float[3]{0.0,-1.0,7.0});
+Viewpoint17.setPosition(new float[]{0.0,-1.0,7.0});
 Group16.addChild(&Viewpoint17);
 
 //Viewpoint complete, Transform begin
 Transform& Transform18 =  Transform();
-Transform18.setRotation(new float[4]{0.0,1.0,0.0,3.0});
+Transform18.setRotation(new float[]{0.0,1.0,0.0,3.0});
 //Shape begin
 Shape& Shape19 =  Shape();
 //Sphere begin
@@ -104,12 +104,12 @@ Appearance& Appearance21 =  Appearance();
 //ImageTexture complete
 Material& Material22 =  Material();
 Material22.setDEF(CString("MaterialLightBlue"));
-Material22.setDiffuseColor(new float[3]{0.1,0.5,1.0});
+Material22.setDiffuseColor(new float[]{0.1,0.5,1.0});
 Appearance21.addChild(&Material22);
 
 ImageTexture& ImageTexture23 =  ImageTexture();
 ImageTexture23.setDEF(CString("ImageCloudlessEarth"));
-ImageTexture23.setUrl(new CString[6]{CString("earth-topo.png"), CString("earth-topo.jpg"), CString("earth-topo-small.gif"), CString("https://www.web3d.org/x3d/content/examples/Basic/earth-topo.png"), CString("https://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg"), CString("https://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif")}, 6);
+ImageTexture23.setUrl(new CString[]{CString("earth-topo.png"), CString("earth-topo.jpg"), CString("earth-topo-small.gif"), CString("https://www.web3d.org/x3d/content/examples/Basic/earth-topo.png"), CString("https://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg"), CString("https://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif")}, 6);
 Appearance21.addChild(&ImageTexture23);
 
 Shape19.addChild(&Appearance21);
@@ -121,7 +121,7 @@ Group16.addChild(&Transform18);
 
 //Transform complete, Transform begin
 Transform& Transform24 =  Transform();
-Transform24.setTranslation(new float[3]{0.0,-2.0,0.0});
+Transform24.setTranslation(new float[]{0.0,-2.0,0.0});
 //Shape begin
 Shape& Shape25 =  Shape();
 //Text begin
@@ -129,11 +129,11 @@ Shape& Shape25 =  Shape();
 //Appearance complete
 Text& Text26 =  Text();
 Text26.setDEF(CString("TextMessage"));
-Text26.setString(new CString[2]{CString("Hello"), CString("world!")}, 2);
+Text26.setString(new CString[]{CString("Hello"), CString("world!")}, 2);
 //FontStyle begin
 //FontStyle complete
 CFontStyle& FontStyle27 =  CFontStyle();
-FontStyle27.setJustify(new CString[2]{CString("MIDDLE"), CString("MIDDLE")}, 2);
+FontStyle27.setJustify(new CString[]{CString("MIDDLE"), CString("MIDDLE")}, 2);
 Text26.setFontStyle(&FontStyle27);
 
 Shape25.setGeometry(&Text26);

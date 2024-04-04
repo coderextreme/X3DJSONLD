@@ -12,16 +12,16 @@ X3D0.setHead(&head1);
 
 Scene& Scene2 =  Scene();
 Transform& Transform3 =  Transform();
-Transform3.setScale(new float[3]{10,10,1});
-Transform3.setRotation(new float[4]{1,0,0,3.14});
+Transform3.setScale(new float[]{10,10,1});
+Transform3.setRotation(new float[]{1,0,0,3.14});
 Shape& Shape4 =  Shape();
 Appearance& Appearance5 =  Appearance();
 Material& Material6 =  Material();
-Material6.setDiffuseColor(new float[3]{0.8,0.5,0.5});
+Material6.setDiffuseColor(new float[]{0.8,0.5,0.5});
 Appearance5.addChild(&Material6);
 
 ImageTexture& ImageTexture7 =  ImageTexture();
-ImageTexture7.setUrl(new CString[1]{CString("./face1.jpg")}, 1);
+ImageTexture7.setUrl(new CString[]{CString("./face1.jpg")}, 1);
 Appearance5.addChild(&ImageTexture7);
 
 Shape4.addChild(&Appearance5);

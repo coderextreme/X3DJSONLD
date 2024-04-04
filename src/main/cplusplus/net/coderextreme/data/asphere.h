@@ -45,7 +45,7 @@ Group& Group9 =  Group();
 Shape& Shape10 =  Shape();
 Appearance& Appearance11 =  Appearance();
 Material& Material12 =  Material();
-Material12.setDiffuseColor(new float[3]{1.0,1.0,1.0});
+Material12.setDiffuseColor(new float[]{1.0,1.0,1.0});
 Appearance11.addChild(&Material12);
 
 Shape10.addChild(&Appearance11);

@@ -57,12 +57,12 @@ WorldInfo11.setTitle(CString("Connector Proto"));
 Scene10.addChild(&WorldInfo11);
 
 Viewpoint& Viewpoint12 =  Viewpoint();
-Viewpoint12.setPosition(new float[3]{0,0,5});
+Viewpoint12.setPosition(new float[]{0,0,5});
 Viewpoint12.setDescription(CString("Only Viewpoint"));
 Scene10.addChild(&Viewpoint12);
 
 Background& Background13 =  Background();
-Background13.setSkyColor(new float[3]{0.4,0.4,0.4}, 3);
+Background13.setSkyColor(new float[]{0.4,0.4,0.4}, 3);
 Scene10.addChild(&Background13);
 
 Transform& Transform14 =  Transform();
@@ -70,7 +70,7 @@ Transform14.setDEF(CString("G1"));
 Shape& Shape15 =  Shape();
 Appearance& Appearance16 =  Appearance();
 Material& Material17 =  Material();
-Material17.setDiffuseColor(new float[3]{0.7,0.2,0.2});
+Material17.setDiffuseColor(new float[]{0.7,0.2,0.2});
 Appearance16.addChild(&Material17);
 
 Shape15.addChild(&Appearance16);
@@ -97,11 +97,11 @@ Scene10.addChild(&Transform14);
 
 Transform& Transform21 =  Transform();
 Transform21.setDEF(CString("G2"));
-Transform21.setTranslation(new float[3]{1,-1,0.01});
+Transform21.setTranslation(new float[]{1,-1,0.01});
 Shape& Shape22 =  Shape();
 Appearance& Appearance23 =  Appearance();
 Material& Material24 =  Material();
-Material24.setDiffuseColor(new float[3]{0.2,0.7,0.2});
+Material24.setDiffuseColor(new float[]{0.2,0.7,0.2});
 Appearance23.addChild(&Material24);
 
 Shape22.addChild(&Appearance23);
@@ -114,7 +114,7 @@ Transform21.addChild(&Shape22);
 
 PlaneSensor& PlaneSensor26 =  PlaneSensor();
 PlaneSensor26.setDescription(CString("Grab to move"));
-PlaneSensor26.setOffset(new float[3]{1,-1,0.01});
+PlaneSensor26.setOffset(new float[]{1,-1,0.01});
 PlaneSensor26.setDEF(CString("PS2"));
 Transform21.addChild(&PlaneSensor26);
 
@@ -129,11 +129,11 @@ Scene10.addChild(&Transform21);
 
 Transform& Transform28 =  Transform();
 Transform28.setDEF(CString("G3"));
-Transform28.setTranslation(new float[3]{1,1,0.01});
+Transform28.setTranslation(new float[]{1,1,0.01});
 Shape& Shape29 =  Shape();
 Appearance& Appearance30 =  Appearance();
 Material& Material31 =  Material();
-Material31.setDiffuseColor(new float[3]{0.2,0.7,0.2});
+Material31.setDiffuseColor(new float[]{0.2,0.7,0.2});
 Appearance30.addChild(&Material31);
 
 Shape29.addChild(&Appearance30);
@@ -146,7 +146,7 @@ Transform28.addChild(&Shape29);
 
 PlaneSensor& PlaneSensor33 =  PlaneSensor();
 PlaneSensor33.setDescription(CString("Grab to move"));
-PlaneSensor33.setOffset(new float[3]{1,1,0.01});
+PlaneSensor33.setOffset(new float[]{1,1,0.01});
 PlaneSensor33.setDEF(CString("PS3"));
 Transform28.addChild(&PlaneSensor33);
 
@@ -161,11 +161,11 @@ Scene10.addChild(&Transform28);
 
 Transform& Transform35 =  Transform();
 Transform35.setDEF(CString("G4"));
-Transform35.setTranslation(new float[3]{-1,1,0.01});
+Transform35.setTranslation(new float[]{-1,1,0.01});
 Shape& Shape36 =  Shape();
 Appearance& Appearance37 =  Appearance();
 Material& Material38 =  Material();
-Material38.setDiffuseColor(new float[3]{0.2,0.7,0.2});
+Material38.setDiffuseColor(new float[]{0.2,0.7,0.2});
 Appearance37.addChild(&Material38);
 
 Shape36.addChild(&Appearance37);
@@ -178,7 +178,7 @@ Transform35.addChild(&Shape36);
 
 PlaneSensor& PlaneSensor40 =  PlaneSensor();
 PlaneSensor40.setDescription(CString("Grab to move"));
-PlaneSensor40.setOffset(new float[3]{-1,1,0.01});
+PlaneSensor40.setOffset(new float[]{-1,1,0.01});
 PlaneSensor40.setDEF(CString("PS4"));
 Transform35.addChild(&PlaneSensor40);
 
@@ -198,7 +198,7 @@ Transform43.setDEF(CString("rotscaleC1"));
 Shape& Shape44 =  Shape();
 Appearance& Appearance45 =  Appearance();
 Material& Material46 =  Material();
-Material46.setDiffuseColor(new float[3]{0.2,0.7,0.7});
+Material46.setDiffuseColor(new float[]{0.2,0.7,0.7});
 Material46.setTransparency(0.5);
 Appearance45.addChild(&Material46);
 
@@ -221,7 +221,7 @@ Transform49.setDEF(CString("rotscaleC2"));
 Shape& Shape50 =  Shape();
 Appearance& Appearance51 =  Appearance();
 Material& Material52 =  Material();
-Material52.setDiffuseColor(new float[3]{0.2,0.7,0.7});
+Material52.setDiffuseColor(new float[]{0.2,0.7,0.7});
 Material52.setTransparency(0.5);
 Appearance51.addChild(&Material52);
 
@@ -244,7 +244,7 @@ Transform55.setDEF(CString("rotscaleC3"));
 Shape& Shape56 =  Shape();
 Appearance& Appearance57 =  Appearance();
 Material& Material58 =  Material();
-Material58.setDiffuseColor(new float[3]{0.2,0.7,0.7});
+Material58.setDiffuseColor(new float[]{0.2,0.7,0.7});
 Material58.setTransparency(0.5);
 Appearance57.addChild(&Material58);
 

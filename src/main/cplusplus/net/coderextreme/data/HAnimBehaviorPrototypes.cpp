@@ -9727,7 +9727,7 @@ ProtoBody1769.addChild(&Switch1781);
 Script& Script1784 =  Script();
 Script1784.setDEF(CString("BehaviorSelectionScript"));
 Script1784.setDirectOutput(True);
-Script1784.setUrl(new CString[2]{CString("HAnimBehaviorPrototypesScript.js"), CString("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/HAnimBehaviorPrototypesScript.js")}, 2);
+Script1784.setUrl(new CString[]{CString("HAnimBehaviorPrototypesScript.js"), CString("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/HAnimBehaviorPrototypesScript.js")}, 2);
 field& field1785 =  field();
 field1785.setName(CString("HumanoidArray"));
 field1785.setAccessType(CString("initializeOnly"));

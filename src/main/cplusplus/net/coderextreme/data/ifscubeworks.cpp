@@ -55,20 +55,20 @@ Group& Group11 =  Group();
 Shape& Shape12 =  Shape();
 IndexedFaceSet& IndexedFaceSet13 =  IndexedFaceSet();
 IndexedFaceSet13.setDEF(CString("IndexedFaceSet"));
-IndexedFaceSet13.setCoordIndex(new int32_t[33]{0,0,1,-1,0,1,1,-1,2,2,3,3,-1,0,3,3,0,-1,0,3,2,1,-1,1,2,2,1,-1,1,2,3,0,-1}, 33);
-IndexedFaceSet13.setNormalIndex(new int32_t[7]{0,0,1,2,3,4,5}, 7);
+IndexedFaceSet13.setCoordIndex(new int32_t[]{0,0,1,-1,0,1,1,-1,2,2,3,3,-1,0,3,3,0,-1,0,3,2,1,-1,1,2,2,1,-1,1,2,3,0,-1}, 33);
+IndexedFaceSet13.setNormalIndex(new int32_t[]{0,0,1,2,3,4,5}, 7);
 IndexedFaceSet13.setNormalPerVertex(False);
-IndexedFaceSet13.setColorIndex(new int[33]{0,0,0,-1,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1}, 33);
+IndexedFaceSet13.setColorIndex(new int[]{0,0,0,-1,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1}, 33);
 Coordinate& Coordinate14 =  Coordinate();
-Coordinate14.setPoint(new float[12]{0,0,1,0,1,1,1,1,1,1,0,1}, 12);
+Coordinate14.setPoint(new float[]{0,0,1,0,1,1,1,1,1,1,0,1}, 12);
 IndexedFaceSet13.setCoord(&Coordinate14);
 
 Normal& Normal15 =  Normal();
-Normal15.setVector(new float[18]{1,0,0,-1,0,0,0,1,0,0,0,-1,0,-1,0,0,0,1}, 18);
+Normal15.setVector(new float[]{1,0,0,-1,0,0,0,1,0,0,0,-1,0,-1,0,0,0,1}, 18);
 IndexedFaceSet13.setNormal(&Normal15);
 
 CColor& Color16 =  CColor();
-Color16.setColor(new float[3]{0,1,0}, 3);
+Color16.setColor(new float[]{0,1,0}, 3);
 IndexedFaceSet13.setColor(&Color16);
 
 Shape12.setGeometry(&IndexedFaceSet13);

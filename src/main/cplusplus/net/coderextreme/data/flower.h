@@ -40,29 +40,29 @@ NavigationInfo& NavigationInfo8 =  NavigationInfo();
 Scene7.addChild(&NavigationInfo8);
 
 DirectionalLight& DirectionalLight9 =  DirectionalLight();
-DirectionalLight9.setDirection(new float[3]{0.0,-0.8,-0.2});
+DirectionalLight9.setDirection(new float[]{0.0,-0.8,-0.2});
 DirectionalLight9.setIntensity(0.5);
 Scene7.addChild(&DirectionalLight9);
 
 Background& Background10 =  Background();
-Background10.setSkyColor(new float[3]{1.0,1.0,1.0}, 3);
+Background10.setSkyColor(new float[]{1.0,1.0,1.0}, 3);
 Scene7.addChild(&Background10);
 
 Viewpoint& Viewpoint11 =  Viewpoint();
 Viewpoint11.setDescription(CString("One mathematical orbital"));
-Viewpoint11.setPosition(new float[3]{0.0,0.0,50.0});
+Viewpoint11.setPosition(new float[]{0.0,0.0,50.0});
 Scene7.addChild(&Viewpoint11);
 
 Transform& Transform12 =  Transform();
-Transform12.setTranslation(new float[3]{0.0,-1.0,1.0});
-Transform12.setRotation(new float[4]{0.0,1.0,0.0,3.1415926});
-Transform12.setScale(new float[3]{1.5,1.5,1.5});
+Transform12.setTranslation(new float[]{0.0,-1.0,1.0});
+Transform12.setRotation(new float[]{0.0,1.0,0.0,3.1415926});
+Transform12.setScale(new float[]{1.5,1.5,1.5});
 Shape& Shape13 =  Shape();
 Appearance& Appearance14 =  Appearance();
 Material& Material15 =  Material();
 Material15.setTransparency(0.1);
-Material15.setDiffuseColor(new float[3]{0.9,0.3,0.3});
-Material15.setSpecularColor(new float[3]{0.8,0.8,0.8});
+Material15.setDiffuseColor(new float[]{0.9,0.3,0.3});
+Material15.setSpecularColor(new float[]{0.8,0.8,0.8});
 Material15.setShininess(0.145);
 Appearance14.addChild(&Material15);
 
@@ -71,11 +71,11 @@ Shape13.addChild(&Appearance14);
 IndexedFaceSet& IndexedFaceSet16 =  IndexedFaceSet();
 IndexedFaceSet16.setCcw(false);
 IndexedFaceSet16.setConvex(false);
-IndexedFaceSet16.setCoordIndex(new int32_t[4]{0,1,2,-1}, 4);
+IndexedFaceSet16.setCoordIndex(new int32_t[]{0,1,2,-1}, 4);
 IndexedFaceSet16.setDEF(CString("Orbit"));
 Coordinate& Coordinate17 =  Coordinate();
 Coordinate17.setDEF(CString("OrbitCoordinates"));
-Coordinate17.setPoint(new float[9]{0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0}, 9);
+Coordinate17.setPoint(new float[]{0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0}, 9);
 IndexedFaceSet16.setCoord(&Coordinate17);
 
 Shape13.setGeometry(&IndexedFaceSet16);

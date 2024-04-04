@@ -80,12 +80,12 @@ NavigationInfo16.setDEF(CString("NAV"));
 Scene14.addChild(&NavigationInfo16);
 
 Background& Background17 =  Background();
-Background17.setBackUrl(new CString[2]{CString("images/generic/BK1.png"), CString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/BK1.png")}, 2);
-Background17.setBottomUrl(new CString[2]{CString("images/generic/DN1.png"), CString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/DN1.png")}, 2);
-Background17.setFrontUrl(new CString[2]{CString("images/generic/FR1.png"), CString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/FR1.png")}, 2);
-Background17.setLeftUrl(new CString[2]{CString("images/generic/LF1.png"), CString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/LF1.png")}, 2);
-Background17.setRightUrl(new CString[2]{CString("images/generic/RT1.png"), CString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/RT1.png")}, 2);
-Background17.setTopUrl(new CString[2]{CString("images/generic/UP1.png"), CString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/UP1.png")}, 2);
+Background17.setBackUrl(new CString[]{CString("images/generic/BK1.png"), CString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/BK1.png")}, 2);
+Background17.setBottomUrl(new CString[]{CString("images/generic/DN1.png"), CString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/DN1.png")}, 2);
+Background17.setFrontUrl(new CString[]{CString("images/generic/FR1.png"), CString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/FR1.png")}, 2);
+Background17.setLeftUrl(new CString[]{CString("images/generic/LF1.png"), CString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/LF1.png")}, 2);
+Background17.setRightUrl(new CString[]{CString("images/generic/RT1.png"), CString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/RT1.png")}, 2);
+Background17.setTopUrl(new CString[]{CString("images/generic/UP1.png"), CString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/UP1.png")}, 2);
 Scene14.addChild(&Background17);
 
 Viewpoint& Viewpoint18 =  Viewpoint();
@@ -93,32 +93,32 @@ Viewpoint18.setDEF(CString("Camera001"));
 Viewpoint18.setDescription(CString("Camera001"));
 Viewpoint18.setFarDistance(0);
 Viewpoint18.setNearDistance(1);
-Viewpoint18.setOrientation(new float[4]{1.0,0.0,0.0,-0.523599});
-Viewpoint18.setPosition(new float[3]{0.0,2000.0,3500.0});
+Viewpoint18.setOrientation(new float[]{1.0,0.0,0.0,-0.523599});
+Viewpoint18.setPosition(new float[]{0.0,2000.0,3500.0});
 Scene14.addChild(&Viewpoint18);
 
 Transform& Transform19 =  Transform();
 Transform19.setDEF(CString("Floor"));
-Transform19.setTranslation(new float[3]{1.241,0.0,0.358});
+Transform19.setTranslation(new float[]{1.241,0.0,0.358});
 Shape& Shape20 =  Shape();
 Appearance& Appearance21 =  Appearance();
 Appearance21.setDEF(CString("WireColor"));
 Material& Material22 =  Material();
-Material22.setDiffuseColor(new float[3]{0.122,0.114,0.125});
+Material22.setDiffuseColor(new float[]{0.122,0.114,0.125});
 Appearance21.addChild(&Material22);
 
 Shape20.addChild(&Appearance21);
 
 IndexedFaceSet& IndexedFaceSet23 =  IndexedFaceSet();
 IndexedFaceSet23.setDEF(CString("Box001-GEOMETRY"));
-IndexedFaceSet23.setCoordIndex(new int32_t[48]{0,1,2,-1,3,4,5,-1,6,7,8,-1,9,10,11,-1,12,13,14,-1,15,16,17,-1,18,19,20,-1,21,22,23,-1,24,25,26,-1,27,28,29,-1,30,31,32,-1,33,34,35,-1}, 48);
+IndexedFaceSet23.setCoordIndex(new int32_t[]{0,1,2,-1,3,4,5,-1,6,7,8,-1,9,10,11,-1,12,13,14,-1,15,16,17,-1,18,19,20,-1,21,22,23,-1,24,25,26,-1,27,28,29,-1,30,31,32,-1,33,34,35,-1}, 48);
 IndexedFaceSet23.setSolid(false);
 Coordinate& Coordinate24 =  Coordinate();
-Coordinate24.setPoint(new float[108]{-1000.0,0.0,1000.0,-1000.0,0.0,-1000.0,1000.0,0.0,-1000.0,1000.0,0.0,-1000.0,1000.0,0.0,1000.0,-1000.0,0.0,1000.0,-1000.0,8.031588,1000.0,1000.0,8.031588,1000.0,1000.0,8.031588,-1000.0,1000.0,8.031588,-1000.0,-1000.0,8.031588,-1000.0,-1000.0,8.031588,1000.0,-1000.0,0.0,1000.0,1000.0,0.0,1000.0,1000.0,8.031588,1000.0,1000.0,8.031588,1000.0,-1000.0,8.031588,1000.0,-1000.0,0.0,1000.0,1000.0,0.0,1000.0,1000.0,0.0,-1000.0,1000.0,8.031588,-1000.0,1000.0,8.031588,-1000.0,1000.0,8.031588,1000.0,1000.0,0.0,1000.0,1000.0,0.0,-1000.0,-1000.0,0.0,-1000.0,-1000.0,8.031588,-1000.0,-1000.0,8.031588,-1000.0,1000.0,8.031588,-1000.0,1000.0,0.0,-1000.0,-1000.0,0.0,-1000.0,-1000.0,0.0,1000.0,-1000.0,8.031588,1000.0,-1000.0,8.031588,1000.0,-1000.0,8.031588,-1000.0,-1000.0,0.0,-1000.0}, 108);
+Coordinate24.setPoint(new float[]{-1000.0,0.0,1000.0,-1000.0,0.0,-1000.0,1000.0,0.0,-1000.0,1000.0,0.0,-1000.0,1000.0,0.0,1000.0,-1000.0,0.0,1000.0,-1000.0,8.031588,1000.0,1000.0,8.031588,1000.0,1000.0,8.031588,-1000.0,1000.0,8.031588,-1000.0,-1000.0,8.031588,-1000.0,-1000.0,8.031588,1000.0,-1000.0,0.0,1000.0,1000.0,0.0,1000.0,1000.0,8.031588,1000.0,1000.0,8.031588,1000.0,-1000.0,8.031588,1000.0,-1000.0,0.0,1000.0,1000.0,0.0,1000.0,1000.0,0.0,-1000.0,1000.0,8.031588,-1000.0,1000.0,8.031588,-1000.0,1000.0,8.031588,1000.0,1000.0,0.0,1000.0,1000.0,0.0,-1000.0,-1000.0,0.0,-1000.0,-1000.0,8.031588,-1000.0,-1000.0,8.031588,-1000.0,1000.0,8.031588,-1000.0,1000.0,0.0,-1000.0,-1000.0,0.0,-1000.0,-1000.0,0.0,1000.0,-1000.0,8.031588,1000.0,-1000.0,8.031588,1000.0,-1000.0,8.031588,-1000.0,-1000.0,0.0,-1000.0}, 108);
 IndexedFaceSet23.setCoord(&Coordinate24);
 
 Normal& Normal25 =  Normal();
-Normal25.setVector(new float[108]{0.0,-1.0,0.0,0.0,-1.0,0.0,0.0,-1.0,0.0,0.0,-1.0,0.0,0.0,-1.0,0.0,0.0,-1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,-1.0,0.0,0.0,-1.0,0.0,0.0,-1.0,0.0,0.0,-1.0,0.0,0.0,-1.0,0.0,0.0,-1.0,-1.0,0.0,0.0,-1.0,0.0,0.0,-1.0,0.0,0.0,-1.0,0.0,0.0,-1.0,0.0,0.0,-1.0,0.0,0.0}, 108);
+Normal25.setVector(new float[]{0.0,-1.0,0.0,0.0,-1.0,0.0,0.0,-1.0,0.0,0.0,-1.0,0.0,0.0,-1.0,0.0,0.0,-1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,-1.0,0.0,0.0,-1.0,0.0,0.0,-1.0,0.0,0.0,-1.0,0.0,0.0,-1.0,0.0,0.0,-1.0,-1.0,0.0,0.0,-1.0,0.0,0.0,-1.0,0.0,0.0,-1.0,0.0,0.0,-1.0,0.0,0.0,-1.0,0.0,0.0}, 108);
 IndexedFaceSet23.setNormal(&Normal25);
 
 Shape20.setGeometry(&IndexedFaceSet23);
@@ -131,7 +131,7 @@ Transform& Transform26 =  Transform();
 Transform26.setDEF(CString("InlineScene"));
 Inline& Inline27 =  Inline();
 Inline27.setDEF(CString("inline"));
-Inline27.setUrl(new CString[4]{CString("x3d/example1.x3d"), CString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/x3d/example1.x3d"), CString("x3d/example1.wrl"), CString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/x3d/example1.wrl")}, 4);
+Inline27.setUrl(new CString[]{CString("x3d/example1.x3d"), CString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/x3d/example1.x3d"), CString("x3d/example1.wrl"), CString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/x3d/example1.wrl")}, 4);
 Transform26.addChild(&Inline27);
 
 Scene14.addChild(&Transform26);

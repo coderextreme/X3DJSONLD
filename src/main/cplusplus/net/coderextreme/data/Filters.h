@@ -79,26 +79,26 @@ NavigationInfo& NavigationInfo16 =  NavigationInfo();
 Scene14.addChild(&NavigationInfo16);
 
 Background& Background17 =  Background();
-Background17.setSkyColor(new float[3]{0.2,0.2,0.2}, 3);
+Background17.setSkyColor(new float[]{0.2,0.2,0.2}, 3);
 Scene14.addChild(&Background17);
 
 Viewpoint& Viewpoint18 =  Viewpoint();
 Viewpoint18.setDescription(CString("View entire audio model"));
-Viewpoint18.setOrientation(new float[4]{1.0,0.0,0.0,-0.5});
-Viewpoint18.setPosition(new float[3]{0.0,500.0,600.0});
+Viewpoint18.setOrientation(new float[]{1.0,0.0,0.0,-0.5});
+Viewpoint18.setPosition(new float[]{0.0,500.0,600.0});
 Viewpoint18.setRetainUserOffsets(true);
 Scene14.addChild(&Viewpoint18);
 
 Transform& Transform19 =  Transform();
 Transform19.setDEF(CString("TransformAudio1"));
-Transform19.setTranslation(new float[3]{-200.0,50.0,0.0});
+Transform19.setTranslation(new float[]{-200.0,50.0,0.0});
 Shape& Shape20 =  Shape();
 Appearance& Appearance21 =  Appearance();
 Appearance21.setDEF(CString("audio_emit"));
 Material& Material22 =  Material();
-Material22.setDiffuseColor(new float[3]{0.1,0.1,0.1});
-Material22.setEmissiveColor(new float[3]{0.8,0.8,0.8});
-Material22.setSpecularColor(new float[3]{0.01,0.01,0.01});
+Material22.setDiffuseColor(new float[]{0.1,0.1,0.1});
+Material22.setEmissiveColor(new float[]{0.8,0.8,0.8});
+Material22.setSpecularColor(new float[]{0.01,0.01,0.01});
 Appearance21.addChild(&Material22);
 
 Shape20.addChild(&Appearance21);
@@ -113,14 +113,14 @@ Scene14.addChild(&Transform19);
 
 Transform& Transform24 =  Transform();
 Transform24.setDEF(CString("TransformAudio2"));
-Transform24.setTranslation(new float[3]{0.0,50.0,0.0});
+Transform24.setTranslation(new float[]{0.0,50.0,0.0});
 Shape& Shape25 =  Shape();
 Appearance& Appearance26 =  Appearance();
 Appearance26.setDEF(CString("audio_emit2"));
 Material& Material27 =  Material();
-Material27.setDiffuseColor(new float[3]{0.1,0.1,0.1});
-Material27.setEmissiveColor(new float[3]{0.8,0.8,0.8});
-Material27.setSpecularColor(new float[3]{0.01,0.01,0.01});
+Material27.setDiffuseColor(new float[]{0.1,0.1,0.1});
+Material27.setEmissiveColor(new float[]{0.8,0.8,0.8});
+Material27.setSpecularColor(new float[]{0.01,0.01,0.01});
 Appearance26.addChild(&Material27);
 
 Shape25.addChild(&Appearance26);
@@ -135,14 +135,14 @@ Scene14.addChild(&Transform24);
 
 Transform& Transform29 =  Transform();
 Transform29.setDEF(CString("TransformAudio3"));
-Transform29.setTranslation(new float[3]{200.0,50.0,0.0});
+Transform29.setTranslation(new float[]{200.0,50.0,0.0});
 Shape& Shape30 =  Shape();
 Appearance& Appearance31 =  Appearance();
 Appearance31.setDEF(CString("audio_emit3"));
 Material& Material32 =  Material();
-Material32.setDiffuseColor(new float[3]{0.1,0.1,0.1});
-Material32.setEmissiveColor(new float[3]{0.8,0.8,0.8});
-Material32.setSpecularColor(new float[3]{0.01,0.01,0.01});
+Material32.setDiffuseColor(new float[]{0.1,0.1,0.1});
+Material32.setEmissiveColor(new float[]{0.8,0.8,0.8});
+Material32.setSpecularColor(new float[]{0.01,0.01,0.01});
 Appearance31.addChild(&Material32);
 
 Shape30.addChild(&Appearance31);
@@ -157,32 +157,32 @@ Scene14.addChild(&Transform29);
 
 Transform& Transform34 =  Transform();
 Transform34.setDEF(CString("AnimData"));
-Transform34.setTranslation(new float[3]{0.0,50.0,0.0});
+Transform34.setTranslation(new float[]{0.0,50.0,0.0});
 Scene14.addChild(&Transform34);
 
 Transform& Transform35 =  Transform();
 Transform35.setDEF(CString("AnimDataBoxH"));
-Transform35.setTranslation(new float[3]{0.0,100.0,0.0});
+Transform35.setTranslation(new float[]{0.0,100.0,0.0});
 Scene14.addChild(&Transform35);
 
 Transform& Transform36 =  Transform();
 Transform36.setDEF(CString("AnimDataBoxM"));
-Transform36.setTranslation(new float[3]{15.0,100.0,0.0});
+Transform36.setTranslation(new float[]{15.0,100.0,0.0});
 Scene14.addChild(&Transform36);
 
 Transform& Transform37 =  Transform();
 Transform37.setDEF(CString("AnimDataBoxL"));
-Transform37.setTranslation(new float[3]{30.0,100.0,0.0});
+Transform37.setTranslation(new float[]{30.0,100.0,0.0});
 Scene14.addChild(&Transform37);
 
 Transform& Transform38 =  Transform();
 Transform38.setDEF(CString("AnimDataBoxMM"));
-Transform38.setTranslation(new float[3]{-15.0,100.0,0.0});
+Transform38.setTranslation(new float[]{-15.0,100.0,0.0});
 Scene14.addChild(&Transform38);
 
 Transform& Transform39 =  Transform();
 Transform39.setDEF(CString("AnimDataBoxLM"));
-Transform39.setTranslation(new float[3]{-30.0,100.0,0.0});
+Transform39.setTranslation(new float[]{-30.0,100.0,0.0});
 Scene14.addChild(&Transform39);
 
 Transform& Transform40 =  Transform();
@@ -190,9 +190,9 @@ Shape& Shape41 =  Shape();
 Appearance& Appearance42 =  Appearance();
 Appearance42.setDEF(CString("floor"));
 Material& Material43 =  Material();
-Material43.setDiffuseColor(new float[3]{0.1,0.1,0.1});
+Material43.setDiffuseColor(new float[]{0.1,0.1,0.1});
 Material43.setShininess(0.8);
-Material43.setSpecularColor(new float[3]{0.5,0.6,0.7});
+Material43.setSpecularColor(new float[]{0.5,0.6,0.7});
 Appearance42.addChild(&Material43);
 
 Shape41.addChild(&Appearance42);
@@ -224,7 +224,7 @@ BiquadFilter52.setType(CString("ALLPASS"));
 AudioClip& AudioClip53 =  AudioClip();
 AudioClip53.setDescription(CString("Techno beat"));
 AudioClip53.setLoop(true);
-AudioClip53.setUrl(new CString[2]{CString("sound/techno_beat.mp3"), CString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/techno_beat.mp3")}, 2);
+AudioClip53.setUrl(new CString[]{CString("sound/techno_beat.mp3"), CString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/techno_beat.mp3")}, 2);
 BiquadFilter52.addChildren(AudioClip53);
 
 Analyser51.addChildren(BiquadFilter52);
@@ -247,7 +247,7 @@ BiquadFilter57.setType(CString("ALLPASS"));
 AudioClip& AudioClip58 =  AudioClip();
 AudioClip58.setDescription(CString("Simple beat"));
 AudioClip58.setLoop(true);
-AudioClip58.setUrl(new CString[2]{CString("sound/beat.mp3"), CString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/beat.mp3")}, 2);
+AudioClip58.setUrl(new CString[]{CString("sound/beat.mp3"), CString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/beat.mp3")}, 2);
 BiquadFilter57.addChildren(AudioClip58);
 
 Analyser56.addChildren(BiquadFilter57);
@@ -269,7 +269,7 @@ BiquadFilter62.setType(CString("ALLPASS"));
 AudioClip& AudioClip63 =  AudioClip();
 AudioClip63.setDescription(CString("Wobble loop"));
 AudioClip63.setLoop(true);
-AudioClip63.setUrl(new CString[2]{CString("sound/wobble_loop.mp3"), CString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/wobble_loop.mp3")}, 2);
+AudioClip63.setUrl(new CString[]{CString("sound/wobble_loop.mp3"), CString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/wobble_loop.mp3")}, 2);
 BiquadFilter62.addChildren(AudioClip63);
 
 Analyser61.addChildren(BiquadFilter62);

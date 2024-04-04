@@ -94,7 +94,7 @@ Scene17.addChild(&WorldInfo18);
 
 Shape& Shape19 =  Shape();
 Text& Text20 =  Text();
-Text20.setString(new CString[1]{CString("hello, world")}, 1);
+Text20.setString(new CString[]{CString("hello, world")}, 1);
 Shape19.setGeometry(&Text20);
 
 Scene17.addChild(&Shape19);

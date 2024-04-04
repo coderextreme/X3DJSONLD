@@ -92,16 +92,16 @@ Viewpoint18.setDescription(CString("Hello MFString syntax"));
 Scene17.addChild(&Viewpoint18);
 
 Background& Background19 =  Background();
-Background19.setSkyColor(new float[3]{0.6,1.0,0.8}, 3);
+Background19.setSkyColor(new float[]{0.6,1.0,0.8}, 3);
 Scene17.addChild(&Background19);
 
 Shape& Shape20 =  Shape();
 Text& Text21 =  Text();
-Text21.setString(new CString[3]{CString("One, Two, Three"), CString(""), CString("He said, \"Immel did it!\"")}, 3);
+Text21.setString(new CString[]{CString("One, Two, Three"), CString(""), CString("He said, \"Immel did it!\"")}, 3);
 //alternative XML encoding: Text string='\"One, Two, Three\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\"'
 //alternative Java source: .setString(new String [] {\"One, Two, Three\", \"\", \"He said, \\\"\"Immel did it!\\\"\"\"})
 CFontStyle& FontStyle22 =  CFontStyle();
-FontStyle22.setJustify(new CString[2]{CString("MIDDLE"), CString("MIDDLE")}, 2);
+FontStyle22.setJustify(new CString[]{CString("MIDDLE"), CString("MIDDLE")}, 2);
 FontStyle22.setStyle(CString("BOLD"));
 Text21.setFontStyle(&FontStyle22);
 
@@ -109,7 +109,7 @@ Shape20.setGeometry(&Text21);
 
 Appearance& Appearance23 =  Appearance();
 Material& Material24 =  Material();
-Material24.setDiffuseColor(new float[3]{0.6,0.4,0.2});
+Material24.setDiffuseColor(new float[]{0.6,0.4,0.2});
 Appearance23.addChild(&Material24);
 
 Shape20.addChild(&Appearance23);

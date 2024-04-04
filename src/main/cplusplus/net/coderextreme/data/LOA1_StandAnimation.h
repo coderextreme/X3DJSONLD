@@ -307,8 +307,8 @@ Group49.addChild(&TimeSensor50);
 
 PositionInterpolator& PositionInterpolator59 =  PositionInterpolator();
 PositionInterpolator59.setDEF(CString("HUMANOIDROOT_POSITION_ANIMATOR"));
-PositionInterpolator59.setKey(new float[2]{0.0,1.0}, 2);
-PositionInterpolator59.setKeyValue(new float[6]{0.0,0.0,0.0,0.0,0.0,0.0}, 6);
+PositionInterpolator59.setKey(new float[]{0.0,1.0}, 2);
+PositionInterpolator59.setKeyValue(new float[]{0.0,0.0,0.0,0.0,0.0,0.0}, 6);
 IS& IS60 =  IS();
 Connect& connect61 =  Connect();
 connect61.setNodeField(CString("value_changed"));
@@ -321,8 +321,8 @@ Group49.addChild(&PositionInterpolator59);
 
 OrientationInterpolator& OrientationInterpolator62 =  OrientationInterpolator();
 OrientationInterpolator62.setDEF(CString("HUMANOIDROOT_ANIMATOR"));
-OrientationInterpolator62.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator62.setKeyValue(new float[8]{0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0}, 8);
+OrientationInterpolator62.setKey(new float[]{0.0,1.0}, 2);
+OrientationInterpolator62.setKeyValue(new float[]{0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0}, 8);
 IS& IS63 =  IS();
 Connect& connect64 =  Connect();
 connect64.setNodeField(CString("value_changed"));
@@ -335,8 +335,8 @@ Group49.addChild(&OrientationInterpolator62);
 
 OrientationInterpolator& OrientationInterpolator65 =  OrientationInterpolator();
 OrientationInterpolator65.setDEF(CString("SACROILIAC_ANIMATOR"));
-OrientationInterpolator65.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator65.setKeyValue(new float[8]{0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0}, 8);
+OrientationInterpolator65.setKey(new float[]{0.0,1.0}, 2);
+OrientationInterpolator65.setKeyValue(new float[]{0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0}, 8);
 IS& IS66 =  IS();
 Connect& connect67 =  Connect();
 connect67.setNodeField(CString("value_changed"));
@@ -349,8 +349,8 @@ Group49.addChild(&OrientationInterpolator65);
 
 OrientationInterpolator& OrientationInterpolator68 =  OrientationInterpolator();
 OrientationInterpolator68.setDEF(CString("L_HIP_ANIMATOR"));
-OrientationInterpolator68.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator68.setKeyValue(new float[8]{0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0}, 8);
+OrientationInterpolator68.setKey(new float[]{0.0,1.0}, 2);
+OrientationInterpolator68.setKeyValue(new float[]{0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0}, 8);
 IS& IS69 =  IS();
 Connect& connect70 =  Connect();
 connect70.setNodeField(CString("value_changed"));
@@ -363,8 +363,8 @@ Group49.addChild(&OrientationInterpolator68);
 
 OrientationInterpolator& OrientationInterpolator71 =  OrientationInterpolator();
 OrientationInterpolator71.setDEF(CString("L_KNEE_ANIMATOR"));
-OrientationInterpolator71.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator71.setKeyValue(new float[8]{0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0}, 8);
+OrientationInterpolator71.setKey(new float[]{0.0,1.0}, 2);
+OrientationInterpolator71.setKeyValue(new float[]{0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0}, 8);
 IS& IS72 =  IS();
 Connect& connect73 =  Connect();
 connect73.setNodeField(CString("value_changed"));
@@ -377,8 +377,8 @@ Group49.addChild(&OrientationInterpolator71);
 
 OrientationInterpolator& OrientationInterpolator74 =  OrientationInterpolator();
 OrientationInterpolator74.setDEF(CString("L_ANKLE_ANIMATOR"));
-OrientationInterpolator74.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator74.setKeyValue(new float[8]{0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0}, 8);
+OrientationInterpolator74.setKey(new float[]{0.0,1.0}, 2);
+OrientationInterpolator74.setKeyValue(new float[]{0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0}, 8);
 IS& IS75 =  IS();
 Connect& connect76 =  Connect();
 connect76.setNodeField(CString("value_changed"));
@@ -391,8 +391,8 @@ Group49.addChild(&OrientationInterpolator74);
 
 OrientationInterpolator& OrientationInterpolator77 =  OrientationInterpolator();
 OrientationInterpolator77.setDEF(CString("L_MIDTARSAL_ANIMATOR"));
-OrientationInterpolator77.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator77.setKeyValue(new float[8]{1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator77.setKey(new float[]{0.0,1.0}, 2);
+OrientationInterpolator77.setKeyValue(new float[]{1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0}, 8);
 IS& IS78 =  IS();
 Connect& connect79 =  Connect();
 connect79.setNodeField(CString("value_changed"));
@@ -405,8 +405,8 @@ Group49.addChild(&OrientationInterpolator77);
 
 OrientationInterpolator& OrientationInterpolator80 =  OrientationInterpolator();
 OrientationInterpolator80.setDEF(CString("R_HIP_ANIMATOR"));
-OrientationInterpolator80.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator80.setKeyValue(new float[8]{0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0}, 8);
+OrientationInterpolator80.setKey(new float[]{0.0,1.0}, 2);
+OrientationInterpolator80.setKeyValue(new float[]{0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0}, 8);
 IS& IS81 =  IS();
 Connect& connect82 =  Connect();
 connect82.setNodeField(CString("value_changed"));
@@ -419,8 +419,8 @@ Group49.addChild(&OrientationInterpolator80);
 
 OrientationInterpolator& OrientationInterpolator83 =  OrientationInterpolator();
 OrientationInterpolator83.setDEF(CString("R_KNEE_ANIMATOR"));
-OrientationInterpolator83.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator83.setKeyValue(new float[8]{0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0}, 8);
+OrientationInterpolator83.setKey(new float[]{0.0,1.0}, 2);
+OrientationInterpolator83.setKeyValue(new float[]{0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0}, 8);
 IS& IS84 =  IS();
 Connect& connect85 =  Connect();
 connect85.setNodeField(CString("value_changed"));
@@ -433,8 +433,8 @@ Group49.addChild(&OrientationInterpolator83);
 
 OrientationInterpolator& OrientationInterpolator86 =  OrientationInterpolator();
 OrientationInterpolator86.setDEF(CString("R_ANKLE_ANIMATOR"));
-OrientationInterpolator86.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator86.setKeyValue(new float[8]{0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0}, 8);
+OrientationInterpolator86.setKey(new float[]{0.0,1.0}, 2);
+OrientationInterpolator86.setKeyValue(new float[]{0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0}, 8);
 IS& IS87 =  IS();
 Connect& connect88 =  Connect();
 connect88.setNodeField(CString("value_changed"));
@@ -447,8 +447,8 @@ Group49.addChild(&OrientationInterpolator86);
 
 OrientationInterpolator& OrientationInterpolator89 =  OrientationInterpolator();
 OrientationInterpolator89.setDEF(CString("R_MIDTARSAL_ANIMATOR"));
-OrientationInterpolator89.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator89.setKeyValue(new float[8]{1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator89.setKey(new float[]{0.0,1.0}, 2);
+OrientationInterpolator89.setKeyValue(new float[]{1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0}, 8);
 IS& IS90 =  IS();
 Connect& connect91 =  Connect();
 connect91.setNodeField(CString("value_changed"));
@@ -461,8 +461,8 @@ Group49.addChild(&OrientationInterpolator89);
 
 OrientationInterpolator& OrientationInterpolator92 =  OrientationInterpolator();
 OrientationInterpolator92.setDEF(CString("VL5_ANIMATOR"));
-OrientationInterpolator92.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator92.setKeyValue(new float[8]{0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0}, 8);
+OrientationInterpolator92.setKey(new float[]{0.0,1.0}, 2);
+OrientationInterpolator92.setKeyValue(new float[]{0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0}, 8);
 IS& IS93 =  IS();
 Connect& connect94 =  Connect();
 connect94.setNodeField(CString("value_changed"));
@@ -475,8 +475,8 @@ Group49.addChild(&OrientationInterpolator92);
 
 OrientationInterpolator& OrientationInterpolator95 =  OrientationInterpolator();
 OrientationInterpolator95.setDEF(CString("SKULLBASE_ANIMATOR"));
-OrientationInterpolator95.setKey(new float[3]{0.0,0.5,1.0}, 3);
-OrientationInterpolator95.setKeyValue(new float[12]{0.0,0.0,1.0,0.0,-1.0,0.0,0.0,0.5,0.0,0.0,1.0,0.0}, 12);
+OrientationInterpolator95.setKey(new float[]{0.0,0.5,1.0}, 3);
+OrientationInterpolator95.setKeyValue(new float[]{0.0,0.0,1.0,0.0,-1.0,0.0,0.0,0.5,0.0,0.0,1.0,0.0}, 12);
 IS& IS96 =  IS();
 Connect& connect97 =  Connect();
 connect97.setNodeField(CString("value_changed"));
@@ -489,8 +489,8 @@ Group49.addChild(&OrientationInterpolator95);
 
 OrientationInterpolator& OrientationInterpolator98 =  OrientationInterpolator();
 OrientationInterpolator98.setDEF(CString("L_SHOULDER_ANIMATOR"));
-OrientationInterpolator98.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator98.setKeyValue(new float[8]{0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0}, 8);
+OrientationInterpolator98.setKey(new float[]{0.0,1.0}, 2);
+OrientationInterpolator98.setKeyValue(new float[]{0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0}, 8);
 IS& IS99 =  IS();
 Connect& connect100 =  Connect();
 connect100.setNodeField(CString("value_changed"));
@@ -503,8 +503,8 @@ Group49.addChild(&OrientationInterpolator98);
 
 OrientationInterpolator& OrientationInterpolator101 =  OrientationInterpolator();
 OrientationInterpolator101.setDEF(CString("L_ELBOW_ANIMATOR"));
-OrientationInterpolator101.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator101.setKeyValue(new float[8]{0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0}, 8);
+OrientationInterpolator101.setKey(new float[]{0.0,1.0}, 2);
+OrientationInterpolator101.setKeyValue(new float[]{0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0}, 8);
 IS& IS102 =  IS();
 Connect& connect103 =  Connect();
 connect103.setNodeField(CString("value_changed"));
@@ -517,8 +517,8 @@ Group49.addChild(&OrientationInterpolator101);
 
 OrientationInterpolator& OrientationInterpolator104 =  OrientationInterpolator();
 OrientationInterpolator104.setDEF(CString("L_WRIST_ANIMATOR"));
-OrientationInterpolator104.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator104.setKeyValue(new float[8]{0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0}, 8);
+OrientationInterpolator104.setKey(new float[]{0.0,1.0}, 2);
+OrientationInterpolator104.setKeyValue(new float[]{0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0}, 8);
 IS& IS105 =  IS();
 Connect& connect106 =  Connect();
 connect106.setNodeField(CString("value_changed"));
@@ -531,8 +531,8 @@ Group49.addChild(&OrientationInterpolator104);
 
 OrientationInterpolator& OrientationInterpolator107 =  OrientationInterpolator();
 OrientationInterpolator107.setDEF(CString("R_SHOULDER_ANIMATOR"));
-OrientationInterpolator107.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator107.setKeyValue(new float[8]{0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0}, 8);
+OrientationInterpolator107.setKey(new float[]{0.0,1.0}, 2);
+OrientationInterpolator107.setKeyValue(new float[]{0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0}, 8);
 IS& IS108 =  IS();
 Connect& connect109 =  Connect();
 connect109.setNodeField(CString("value_changed"));
@@ -545,8 +545,8 @@ Group49.addChild(&OrientationInterpolator107);
 
 OrientationInterpolator& OrientationInterpolator110 =  OrientationInterpolator();
 OrientationInterpolator110.setDEF(CString("R_ELBOW_ANIMATOR"));
-OrientationInterpolator110.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator110.setKeyValue(new float[8]{0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0}, 8);
+OrientationInterpolator110.setKey(new float[]{0.0,1.0}, 2);
+OrientationInterpolator110.setKeyValue(new float[]{0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0}, 8);
 IS& IS111 =  IS();
 Connect& connect112 =  Connect();
 connect112.setNodeField(CString("value_changed"));
@@ -559,8 +559,8 @@ Group49.addChild(&OrientationInterpolator110);
 
 OrientationInterpolator& OrientationInterpolator113 =  OrientationInterpolator();
 OrientationInterpolator113.setDEF(CString("R_WRIST_ANIMATOR"));
-OrientationInterpolator113.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator113.setKeyValue(new float[8]{0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0}, 8);
+OrientationInterpolator113.setKey(new float[]{0.0,1.0}, 2);
+OrientationInterpolator113.setKeyValue(new float[]{0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0}, 8);
 IS& IS114 =  IS();
 Connect& connect115 =  Connect();
 connect115.setNodeField(CString("value_changed"));
@@ -714,13 +714,13 @@ Scene18.addChild(&ProtoDeclare20);
 //Point to example use in case someone inspects this file
 Anchor& Anchor135 =  Anchor();
 Anchor135.setDescription(CString("InterchangableActorsViaDynamicRouting"));
-Anchor135.setParameter(new CString[1]{CString("target=_blank")}, 1);
-Anchor135.setUrl(new CString[4]{CString("InterchangableActorsViaDynamicRouting.x3d"), CString("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/InterchangableActorsViaDynamicRouting.x3d"), CString("InterchangableActorsViaDynamicRouting.wrl"), CString("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/InterchangableActorsViaDynamicRouting.wrl")}, 4);
+Anchor135.setParameter(new CString[]{CString("target=_blank")}, 1);
+Anchor135.setUrl(new CString[]{CString("InterchangableActorsViaDynamicRouting.x3d"), CString("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/InterchangableActorsViaDynamicRouting.x3d"), CString("InterchangableActorsViaDynamicRouting.wrl"), CString("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/InterchangableActorsViaDynamicRouting.wrl")}, 4);
 Shape& Shape136 =  Shape();
 Text& Text137 =  Text();
-Text137.setString(new CString[6]{CString("LOA1_StandAnimation.x3d"), CString("defines a prototype"), CString("for animating a humanoid."), CString(""), CString("Click this text to see"), CString("InterchangableActorsViaDynamicRouting example.")}, 6);
+Text137.setString(new CString[]{CString("LOA1_StandAnimation.x3d"), CString("defines a prototype"), CString("for animating a humanoid."), CString(""), CString("Click this text to see"), CString("InterchangableActorsViaDynamicRouting example.")}, 6);
 CFontStyle& FontStyle138 =  CFontStyle();
-FontStyle138.setJustify(new CString[2]{CString("MIDDLE"), CString("MIDDLE")}, 2);
+FontStyle138.setJustify(new CString[]{CString("MIDDLE"), CString("MIDDLE")}, 2);
 FontStyle138.setSize(0.8);
 Text137.setFontStyle(&FontStyle138);
 
@@ -728,7 +728,7 @@ Shape136.setGeometry(&Text137);
 
 Appearance& Appearance139 =  Appearance();
 Material& Material140 =  Material();
-Material140.setDiffuseColor(new float[3]{1.0,1.0,0.2});
+Material140.setDiffuseColor(new float[]{1.0,1.0,0.2});
 Appearance139.addChild(&Material140);
 
 Shape136.addChild(&Appearance139);

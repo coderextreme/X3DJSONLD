@@ -62,13 +62,13 @@ X3D0.setHead(&head1);
 
 Scene& Scene12 =  Scene();
 Transform& Transform13 =  Transform();
-Transform13.setTranslation(new float[3]{0.0,2.0,0.0});
+Transform13.setTranslation(new float[]{0.0,2.0,0.0});
 Shape& Shape14 =  Shape();
 Text& Text15 =  Text();
-Text15.setString(new CString[1]{CString("Compare special character escaping")}, 1);
+Text15.setString(new CString[]{CString("Compare special character escaping")}, 1);
 CFontStyle& FontStyle16 =  CFontStyle();
 FontStyle16.setDEF(CString("testFontStyle"));
-FontStyle16.setJustify(new CString[2]{CString("MIDDLE"), CString("MIDDLE")}, 2);
+FontStyle16.setJustify(new CString[]{CString("MIDDLE"), CString("MIDDLE")}, 2);
 FontStyle16.setSize(0.8);
 Text15.setFontStyle(&FontStyle16);
 
@@ -77,7 +77,7 @@ Shape14.setGeometry(&Text15);
 Appearance& Appearance17 =  Appearance();
 Appearance17.setDEF(CString("LightBlueAppearance"));
 Material& Material18 =  Material();
-Material18.setDiffuseColor(new float[3]{0.1,0.7,0.7});
+Material18.setDiffuseColor(new float[]{0.1,0.7,0.7});
 Appearance17.addChild(&Material18);
 
 Shape14.addChild(&Appearance17);
@@ -87,10 +87,10 @@ Transform13.addChild(&Shape14);
 Scene12.addChild(&Transform13);
 
 Transform& Transform19 =  Transform();
-Transform19.setTranslation(new float[3]{-3.0,0.0,0.0});
+Transform19.setTranslation(new float[]{-3.0,0.0,0.0});
 Shape& Shape20 =  Shape();
 Text& Text21 =  Text();
-Text21.setString(new CString[3]{CString("I don't think so"), CString(""), CString("he said \"Hi\"")}, 3);
+Text21.setString(new CString[]{CString("I don't think so"), CString(""), CString("he said \"Hi\"")}, 3);
 CFontStyle& FontStyle22 =  CFontStyle();
 FontStyle22.setUSE(CString("testFontStyle"));
 Text21.setFontStyle(&FontStyle22);
@@ -106,10 +106,10 @@ Transform19.addChild(&Shape20);
 Scene12.addChild(&Transform19);
 
 Transform& Transform24 =  Transform();
-Transform24.setTranslation(new float[3]{3.0,0.0,0.0});
+Transform24.setTranslation(new float[]{3.0,0.0,0.0});
 Shape& Shape25 =  Shape();
 Text& Text26 =  Text();
-Text26.setString(new CString[3]{CString("I don't think so"), CString(""), CString("he said \"Hi\"")}, 3);
+Text26.setString(new CString[]{CString("I don't think so"), CString(""), CString("he said \"Hi\"")}, 3);
 CFontStyle& FontStyle27 =  CFontStyle();
 FontStyle27.setUSE(CString("testFontStyle"));
 Text26.setFontStyle(&FontStyle27);

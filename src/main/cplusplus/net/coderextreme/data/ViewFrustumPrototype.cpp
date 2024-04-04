@@ -157,16 +157,16 @@ Switch28.setDEF(CString("VisibilitySwitch"));
 Switch28.setWhichChoice(-1);
 Transform& Transform29 =  Transform();
 Transform29.setDEF(CString("PositionTransform"));
-Transform29.setRotation(new float[4]{0,1,0,3.14159});
+Transform29.setRotation(new float[]{0,1,0,3.14159});
 Transform& Transform30 =  Transform();
 Transform30.setDEF(CString("OrientationTransform"));
 Shape& Shape31 =  Shape();
 IndexedLineSet& IndexedLineSet32 =  IndexedLineSet();
 IndexedLineSet32.setDEF(CString("FrustumLines"));
-IndexedLineSet32.setCoordIndex(new int32_t[24]{0,1,2,3,0,-1,4,5,6,7,4,-1,0,4,-1,1,5,-1,2,6,-1,3,7,-1}, 24);
+IndexedLineSet32.setCoordIndex(new int32_t[]{0,1,2,3,0,-1,4,5,6,7,4,-1,0,4,-1,1,5,-1,2,6,-1,3,7,-1}, 24);
 Coordinate& Coordinate33 =  Coordinate();
 Coordinate33.setDEF(CString("FrustumCoordinate"));
-Coordinate33.setPoint(new float[24]{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}, 24);
+Coordinate33.setPoint(new float[]{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}, 24);
 IndexedLineSet32.setCoord(&Coordinate33);
 
 Shape31.setGeometry(&IndexedLineSet32);
@@ -234,7 +234,7 @@ ProtoBody27.addChild(&Switch28);
 Script& Script48 =  Script();
 Script48.setDEF(CString("GeometryComputationScript"));
 Script48.setDirectOutput(True);
-Script48.setUrl(new CString[1]{CString("ViewFrustumPrototypeScript.js")}, 1);
+Script48.setUrl(new CString[]{CString("ViewFrustumPrototypeScript.js")}, 1);
 field& field49 =  field();
 field49.setName(CString("visible"));
 field49.setAccessType(CString("inputOutput"));
@@ -411,19 +411,19 @@ Scene15.addChild(&ProtoDeclare17);
 //Example use is in separate scene
 Anchor& Anchor77 =  Anchor();
 Anchor77.setDescription(CString("ViewFrustum Example"));
-Anchor77.setUrl(new CString[1]{CString("ViewFrustumExample.x3d")}, 1);
+Anchor77.setUrl(new CString[]{CString("ViewFrustumExample.x3d")}, 1);
 Shape& Shape78 =  Shape();
 Appearance& Appearance79 =  Appearance();
 Material& Material80 =  Material();
-Material80.setDiffuseColor(new float[3]{0.8,0.4,0});
+Material80.setDiffuseColor(new float[]{0.8,0.4,0});
 Appearance79.addChild(&Material80);
 
 Shape78.addChild(&Appearance79);
 
 Text& Text81 =  Text();
-Text81.setString(new CString[5]{CString("ViewFrustumPrototype.x3d"), CString("is a Prototype declaration file."), CString("For an example scene using the prototype,"), CString("click this text and view"), CString("ViewFrustumExample.x3d")}, 5);
+Text81.setString(new CString[]{CString("ViewFrustumPrototype.x3d"), CString("is a Prototype declaration file."), CString("For an example scene using the prototype,"), CString("click this text and view"), CString("ViewFrustumExample.x3d")}, 5);
 CFontStyle& FontStyle82 =  CFontStyle();
-FontStyle82.setJustify(new CString[2]{CString("MIDDLE"), CString("MIDDLE")}, 2);
+FontStyle82.setJustify(new CString[]{CString("MIDDLE"), CString("MIDDLE")}, 2);
 FontStyle82.setSize(0.8);
 Text81.setFontStyle(&FontStyle82);
 
