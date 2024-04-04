@@ -1,0 +1,21 @@
+#include "MyGrammarLexer.h"
+#include "MyGrammarParser.h"
+#include "DOMVisitor.h"
+
+int main(int argc, char *argv[]) {
+    std::string input = /* your input string */;
+    antlr4::ANTLRInputStream inputStream(input);
+    MyGrammarLexer lexer(&inputStream);
+    antlr4::CommonTokenStream tokens(&lexer);
+    MyGrammarParser parser(&tokens);
+
+    antlr4::tree::ParseTree *tree = parser.rule();  // Parse the input
+
+    DOMVisitor visitor;
+    visitor.visit(tree);  // Create the DOM document
+
+    // Print the DOM document
+    rapidxml::print(std::cout, *visitor.doc, 0);
+
+    return 0;
+}
