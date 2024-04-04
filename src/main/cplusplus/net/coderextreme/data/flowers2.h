@@ -66,12 +66,12 @@ Scene12.addChild(&NavigationInfo13);
 
 Viewpoint& Viewpoint14 =  Viewpoint();
 Viewpoint14.setDescription(CString("Two mathematical orbitals"));
-Viewpoint14.setPosition(new float[3]{0.0,0.0,50.0});
+Viewpoint14.setPosition(new float[]{0.0,0.0,50.0});
 Scene12.addChild(&Viewpoint14);
 
 Group& Group15 =  Group();
 DirectionalLight& DirectionalLight16 =  DirectionalLight();
-DirectionalLight16.setDirection(new float[3]{1.0,1.0,1.0});
+DirectionalLight16.setDirection(new float[]{1.0,1.0,1.0});
 Group15.addChild(&DirectionalLight16);
 
 ProtoDeclare& ProtoDeclare17 =  ProtoDeclare();
@@ -117,8 +117,8 @@ Group24.addChild(&TimeSensor25);
 
 OrientationInterpolator& OrientationInterpolator26 =  OrientationInterpolator();
 OrientationInterpolator26.setDEF(CString("OrbitPath"));
-OrientationInterpolator26.setKey(new float[3]{0.0,0.5,1.0}, 3);
-OrientationInterpolator26.setKeyValue(new float[12]{1.0,0.0,0.0,0.0,1.0,0.0,0.0,3.14,1.0,0.0,0.0,6.28}, 12);
+OrientationInterpolator26.setKey(new float[]{0.0,0.5,1.0}, 3);
+OrientationInterpolator26.setKeyValue(new float[]{1.0,0.0,0.0,0.0,1.0,0.0,0.0,3.14,1.0,0.0,0.0,6.28}, 12);
 Group24.addChild(&OrientationInterpolator26);
 
 Transform& Transform27 =  Transform();
@@ -160,11 +160,11 @@ Shape30.addChild(&Appearance31);
 IndexedFaceSet& IndexedFaceSet37 =  IndexedFaceSet();
 IndexedFaceSet37.setCcw(false);
 IndexedFaceSet37.setConvex(false);
-IndexedFaceSet37.setCoordIndex(new int32_t[4]{0,1,2,-1}, 4);
+IndexedFaceSet37.setCoordIndex(new int32_t[]{0,1,2,-1}, 4);
 IndexedFaceSet37.setDEF(CString("Orbit"));
 Coordinate& Coordinate38 =  Coordinate();
 Coordinate38.setDEF(CString("OrbitCoordinates"));
-Coordinate38.setPoint(new float[9]{0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0}, 9);
+Coordinate38.setPoint(new float[]{0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0}, 9);
 IndexedFaceSet37.setCoord(&Coordinate38);
 
 Shape30.setGeometry(&IndexedFaceSet37);

@@ -103,12 +103,12 @@ X3D0.setHead(&head1);
 
 Scene& Scene20 =  Scene();
 NavigationInfo& NavigationInfo21 =  NavigationInfo();
-NavigationInfo21.setType(new CString[4]{CString("EXAMINE"), CString("WALK"), CString("FLY"), CString("ANY")}, 4);
+NavigationInfo21.setType(new CString[]{CString("EXAMINE"), CString("WALK"), CString("FLY"), CString("ANY")}, 4);
 Scene20.addChild(&NavigationInfo21);
 
 Group& Group22 =  Group();
 Transform& Transform23 =  Transform();
-Transform23.setTranslation(new float[3]{6.14221,0.0694613,-0.000999451});
+Transform23.setTranslation(new float[]{6.14221,0.0694613,-0.000999451});
 Shape& Shape24 =  Shape();
 Appearance& Appearance25 =  Appearance();
 Material& Material26 =  Material();
@@ -129,7 +129,7 @@ Transform23.addChild(&Shape24);
 Group22.addChild(&Transform23);
 
 Transform& Transform29 =  Transform();
-Transform29.setTranslation(new float[3]{-4.85443,0.0694381,-0.00149918});
+Transform29.setTranslation(new float[]{-4.85443,0.0694381,-0.00149918});
 Shape& Shape30 =  Shape();
 Appearance& Appearance31 =  Appearance();
 Material& Material32 =  Material();
@@ -149,7 +149,7 @@ Transform29.addChild(&Shape30);
 Group22.addChild(&Transform29);
 
 Transform& Transform35 =  Transform();
-Transform35.setTranslation(new float[3]{-1.47341,0.036672,-0.00175095});
+Transform35.setTranslation(new float[]{-1.47341,0.036672,-0.00175095});
 Shape& Shape36 =  Shape();
 Appearance& Appearance37 =  Appearance();
 Material& Material38 =  Material();
@@ -169,7 +169,7 @@ Transform35.addChild(&Shape36);
 Group22.addChild(&Transform35);
 
 Transform& Transform41 =  Transform();
-Transform41.setTranslation(new float[3]{2.31094,0.0694206,-0.00187683});
+Transform41.setTranslation(new float[]{2.31094,0.0694206,-0.00187683});
 Shape& Shape42 =  Shape();
 Appearance& Appearance43 =  Appearance();
 Material& Material44 =  Material();

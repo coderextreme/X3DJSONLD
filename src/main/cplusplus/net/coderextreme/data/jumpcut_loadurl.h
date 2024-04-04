@@ -86,13 +86,13 @@ WorldInfo17.setTitle(CString("jumpcut_loadurl.x3d"));
 Scene16.addChild(&WorldInfo17);
 
 Background& Background18 =  Background();
-Background18.setGroundAngle(new float[1]{1.57}, 1);
-Background18.setGroundColor(new float[6]{0.0,0.5,0.0,0.0,0.5,0.0}, 6);
-Background18.setSkyColor(new float[3]{0.0,0.0,1.0}, 3);
+Background18.setGroundAngle(new float[]{1.57}, 1);
+Background18.setGroundColor(new float[]{0.0,0.5,0.0,0.0,0.5,0.0}, 6);
+Background18.setSkyColor(new float[]{0.0,0.0,1.0}, 3);
 Scene16.addChild(&Background18);
 
 NavigationInfo& NavigationInfo19 =  NavigationInfo();
-NavigationInfo19.setType(new CString[4]{CString("EXAMINE"), CString("WALK"), CString("FLY"), CString("ANY")}, 4);
+NavigationInfo19.setType(new CString[]{CString("EXAMINE"), CString("WALK"), CString("FLY"), CString("ANY")}, 4);
 Scene16.addChild(&NavigationInfo19);
 
 Viewpoint& Viewpoint20 =  Viewpoint();
@@ -103,8 +103,8 @@ Scene16.addChild(&Viewpoint20);
 Viewpoint& Viewpoint21 =  Viewpoint();
 Viewpoint21.setDEF(CString("Top_View"));
 Viewpoint21.setDescription(CString("Top View"));
-Viewpoint21.setOrientation(new float[4]{1.0,0.0,0.0,-1.57});
-Viewpoint21.setPosition(new float[3]{0.0,10.0,0.0});
+Viewpoint21.setOrientation(new float[]{1.0,0.0,0.0,-1.57});
+Viewpoint21.setPosition(new float[]{0.0,10.0,0.0});
 Scene16.addChild(&Viewpoint21);
 
 TouchSensor& TouchSensor22 =  TouchSensor();
@@ -130,7 +130,7 @@ Scene16.addChild(&Transform23);
 
 Script& Script28 =  Script();
 Script28.setDEF(CString("MYSCRIPT"));
-Script28.setUrl(new CString[2]{CString("jumpcut_loadurl.js"), CString("https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.js")}, 2);
+Script28.setUrl(new CString[]{CString("jumpcut_loadurl.js"), CString("https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.js")}, 2);
 field& field29 =  field();
 field29.setName(CString("myParameter"));
 field29.setAccessType(CString("initializeOnly"));

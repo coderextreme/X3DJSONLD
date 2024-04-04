@@ -171,16 +171,16 @@ WorldInfo34.setTitle(CString("ObliqueStrategies.x3d"));
 Scene33.addChild(&WorldInfo34);
 
 NavigationInfo& NavigationInfo35 =  NavigationInfo();
-NavigationInfo35.setType(new CString[1]{CString("NONE")}, 1);
+NavigationInfo35.setType(new CString[]{CString("NONE")}, 1);
 Scene33.addChild(&NavigationInfo35);
 
 Background& Background36 =  Background();
-Background36.setSkyColor(new float[3]{0.419608,0.427451,1.0}, 3);
+Background36.setSkyColor(new float[]{0.419608,0.427451,1.0}, 3);
 Scene33.addChild(&Background36);
 
 Transform& Transform37 =  Transform();
-Transform37.setScale(new float[3]{0.4,0.4,0.4});
-Transform37.setTranslation(new float[3]{0.0,1.0,0.0});
+Transform37.setScale(new float[]{0.4,0.4,0.4});
+Transform37.setTranslation(new float[]{0.0,1.0,0.0});
 TouchSensor& TouchSensor38 =  TouchSensor();
 TouchSensor38.setDEF(CString("RandomTextClickedSensor"));
 TouchSensor38.setDescription(CString("Select to see a new strategy"));
@@ -188,11 +188,11 @@ Transform37.addChild(&TouchSensor38);
 
 Shape& Shape39 =  Shape();
 Text& Text40 =  Text();
-Text40.setString(new CString[5]{CString("Oblique Strategies"), CString(""), CString("(Over One Hundred Worthwhile Dilemmas)"), CString(""), CString("by Brian Eno and Peter Schmidt")}, 5);
+Text40.setString(new CString[]{CString("Oblique Strategies"), CString(""), CString("(Over One Hundred Worthwhile Dilemmas)"), CString(""), CString("by Brian Eno and Peter Schmidt")}, 5);
 CFontStyle& FontStyle41 =  CFontStyle();
 FontStyle41.setDEF(CString("MessageFont"));
-FontStyle41.setFamily(new CString[1]{CString("SANS")}, 1);
-FontStyle41.setJustify(new CString[2]{CString("MIDDLE"), CString("MIDDLE")}, 2);
+FontStyle41.setFamily(new CString[]{CString("SANS")}, 1);
+FontStyle41.setJustify(new CString[]{CString("MIDDLE"), CString("MIDDLE")}, 2);
 FontStyle41.setStyle(CString("BOLD"));
 Text40.setFontStyle(&FontStyle41);
 
@@ -200,7 +200,7 @@ Shape39.setGeometry(&Text40);
 
 Appearance& Appearance42 =  Appearance();
 Material& Material43 =  Material();
-Material43.setDiffuseColor(new float[3]{1.0,1.0,1.0});
+Material43.setDiffuseColor(new float[]{1.0,1.0,1.0});
 Appearance42.addChild(&Material43);
 
 Shape39.addChild(&Appearance42);
@@ -208,14 +208,14 @@ Shape39.addChild(&Appearance42);
 Transform37.addChild(&Shape39);
 
 Transform& Transform44 =  Transform();
-Transform44.setScale(new float[3]{10.0,3.0,1.0});
+Transform44.setScale(new float[]{10.0,3.0,1.0});
 Shape& Shape45 =  Shape();
 Shape45.setDEF(CString("HeadlineClickSurface"));
 IndexedFaceSet& IndexedFaceSet46 =  IndexedFaceSet();
-IndexedFaceSet46.setCoordIndex(new int32_t[5]{0,1,2,3,-1}, 5);
+IndexedFaceSet46.setCoordIndex(new int32_t[]{0,1,2,3,-1}, 5);
 IndexedFaceSet46.setSolid(false);
 Coordinate& Coordinate47 =  Coordinate();
-Coordinate47.setPoint(new float[12]{1.0,1.0,0.0,1.0,-1.0,0.0,-1.0,-1.0,0.0,-1.0,1.0,0.0}, 12);
+Coordinate47.setPoint(new float[]{1.0,1.0,0.0,1.0,-1.0,0.0,-1.0,-1.0,0.0,-1.0,1.0,0.0}, 12);
 IndexedFaceSet46.setCoord(&Coordinate47);
 
 Shape45.setGeometry(&IndexedFaceSet46);
@@ -223,9 +223,9 @@ Shape45.setGeometry(&IndexedFaceSet46);
 Appearance& Appearance48 =  Appearance();
 Material& Material49 =  Material();
 Material49.setAmbientIntensity(0.245763);
-Material49.setDiffuseColor(new float[3]{0.34773,0.090909,0.005289});
+Material49.setDiffuseColor(new float[]{0.34773,0.090909,0.005289});
 Material49.setShininess(0.07);
-Material49.setSpecularColor(new float[3]{0.336735,0.051091,0.051091});
+Material49.setSpecularColor(new float[]{0.336735,0.051091,0.051091});
 Material49.setTransparency(0.8);
 Appearance48.addChild(&Material49);
 
@@ -239,7 +239,7 @@ Scene33.addChild(&Transform37);
 
 Script& Script50 =  Script();
 Script50.setDEF(CString("TextScript"));
-Script50.setUrl(new CString[2]{CString("ObliqueStrategiesScript.js"), CString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/Inspiration/ObliqueStrategiesScript.js")}, 2);
+Script50.setUrl(new CString[]{CString("ObliqueStrategiesScript.js"), CString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/Inspiration/ObliqueStrategiesScript.js")}, 2);
 //initialize() method includes unit test to printAllStrategies() to console
 //TODO insert field definitions here (index string_changed previous next random) and then animate!
 field& field51 =  field();
@@ -301,14 +301,14 @@ Scene33.addChild(&Script50);
 
 Transform& Transform59 =  Transform();
 Transform59.setDEF(CString("CardTransform"));
-Transform59.setScale(new float[3]{0.4,0.4,0.4});
-Transform59.setTranslation(new float[3]{0.0,-1.5,0.0});
+Transform59.setScale(new float[]{0.4,0.4,0.4});
+Transform59.setTranslation(new float[]{0.0,-1.5,0.0});
 Shape& Shape60 =  Shape();
 Text& Text61 =  Text();
 Text61.setDEF(CString("CardText"));
 CFontStyle& FontStyle62 =  CFontStyle();
-FontStyle62.setFamily(new CString[1]{CString("SANS")}, 1);
-FontStyle62.setJustify(new CString[2]{CString("MIDDLE"), CString("MIDDLE")}, 2);
+FontStyle62.setFamily(new CString[]{CString("SANS")}, 1);
+FontStyle62.setJustify(new CString[]{CString("MIDDLE"), CString("MIDDLE")}, 2);
 FontStyle62.setStyle(CString("BOLD"));
 Text61.setFontStyle(&FontStyle62);
 
@@ -316,7 +316,7 @@ Shape60.setGeometry(&Text61);
 
 Appearance& Appearance63 =  Appearance();
 Material& Material64 =  Material();
-Material64.setDiffuseColor(new float[3]{1.0,1.0,1.0});
+Material64.setDiffuseColor(new float[]{1.0,1.0,1.0});
 Appearance63.addChild(&Material64);
 
 Shape60.addChild(&Appearance63);
@@ -343,7 +343,7 @@ Sound66.setMinFront(20);
 AudioClip& AudioClip67 =  AudioClip();
 AudioClip67.setDEF(CString("TextToSpeechAudioClip"));
 AudioClip67.setDescription(CString("sends strategy text google translate"));
-AudioClip67.setUrl(new CString[3]{CString("http://translate.google.com/translate_tts?tl=en&amp;q=Feed%20the%20recording%20back%20out%20of%20the%20medium"), CString("translate_tts_mp3FileFormatNotSupported.wav"), CString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/Inspiration/translate_tts_mp3FileFormatNotSupported.wav")}, 3);
+AudioClip67.setUrl(new CString[]{CString("http://translate.google.com/translate_tts?tl=en&amp;q=Feed%20the%20recording%20back%20out%20of%20the%20medium"), CString("translate_tts_mp3FileFormatNotSupported.wav"), CString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/Inspiration/translate_tts_mp3FileFormatNotSupported.wav")}, 3);
 Sound66.setSource(AudioClip67);
 
 Transform59.addChild(&Sound66);
@@ -365,8 +365,8 @@ Transform59.addChild(&ROUTE69);
 Scene33.addChild(&Transform59);
 
 Transform& Transform70 =  Transform();
-Transform70.setScale(new float[3]{0.4,0.4,0.4});
-Transform70.setTranslation(new float[3]{-3.2,2.5,0.0});
+Transform70.setScale(new float[]{0.4,0.4,0.4});
+Transform70.setTranslation(new float[]{-3.2,2.5,0.0});
 TouchSensor& TouchSensor71 =  TouchSensor();
 TouchSensor71.setDEF(CString("PreviousTextClickedSensor"));
 TouchSensor71.setDescription(CString("Select to see previous strategy"));
@@ -381,7 +381,7 @@ Transform70.addChild(&ROUTE72);
 
 Shape& Shape73 =  Shape();
 Text& Text74 =  Text();
-Text74.setString(new CString[1]{CString("previous")}, 1);
+Text74.setString(new CString[]{CString("previous")}, 1);
 CFontStyle& FontStyle75 =  CFontStyle();
 FontStyle75.setUSE(CString("MessageFont"));
 Text74.setFontStyle(&FontStyle75);
@@ -391,7 +391,7 @@ Shape73.setGeometry(&Text74);
 Appearance& Appearance76 =  Appearance();
 Appearance76.setDEF(CString("InterfaceAppearance"));
 Material& Material77 =  Material();
-Material77.setDiffuseColor(new float[3]{1.0,0.0,0.6});
+Material77.setDiffuseColor(new float[]{1.0,0.0,0.6});
 Appearance76.addChild(&Material77);
 
 Shape73.addChild(&Appearance76);
@@ -399,15 +399,15 @@ Shape73.addChild(&Appearance76);
 Transform70.addChild(&Shape73);
 
 Transform& Transform78 =  Transform();
-Transform78.setScale(new float[3]{2.0,0.6,1.0});
+Transform78.setScale(new float[]{2.0,0.6,1.0});
 Shape& Shape79 =  Shape();
 Shape79.setDEF(CString("TransparentClickSurface"));
 //support Selectable Text with a scalable IFS
 IndexedFaceSet& IndexedFaceSet80 =  IndexedFaceSet();
-IndexedFaceSet80.setCoordIndex(new int32_t[5]{0,1,2,3,-1}, 5);
+IndexedFaceSet80.setCoordIndex(new int32_t[]{0,1,2,3,-1}, 5);
 IndexedFaceSet80.setSolid(false);
 Coordinate& Coordinate81 =  Coordinate();
-Coordinate81.setPoint(new float[12]{1.0,1.0,0.0,1.0,-1.0,0.0,-1.0,-1.0,0.0,-1.0,1.0,0.0}, 12);
+Coordinate81.setPoint(new float[]{1.0,1.0,0.0,1.0,-1.0,0.0,-1.0,-1.0,0.0,-1.0,1.0,0.0}, 12);
 IndexedFaceSet80.setCoord(&Coordinate81);
 
 Shape79.setGeometry(&IndexedFaceSet80);
@@ -426,8 +426,8 @@ Transform70.addChild(&Transform78);
 Scene33.addChild(&Transform70);
 
 Transform& Transform84 =  Transform();
-Transform84.setScale(new float[3]{0.4,0.4,0.4});
-Transform84.setTranslation(new float[3]{3.5,2.5,0.0});
+Transform84.setScale(new float[]{0.4,0.4,0.4});
+Transform84.setTranslation(new float[]{3.5,2.5,0.0});
 TouchSensor& TouchSensor85 =  TouchSensor();
 TouchSensor85.setDEF(CString("NextTextClickedSensor"));
 TouchSensor85.setDescription(CString("Select to see next strategy"));
@@ -442,7 +442,7 @@ Transform84.addChild(&ROUTE86);
 
 Shape& Shape87 =  Shape();
 Text& Text88 =  Text();
-Text88.setString(new CString[1]{CString("next")}, 1);
+Text88.setString(new CString[]{CString("next")}, 1);
 CFontStyle& FontStyle89 =  CFontStyle();
 FontStyle89.setUSE(CString("MessageFont"));
 Text88.setFontStyle(&FontStyle89);
@@ -456,7 +456,7 @@ Shape87.addChild(&Appearance90);
 Transform84.addChild(&Shape87);
 
 Transform& Transform91 =  Transform();
-Transform91.setScale(new float[3]{1.2,0.6,1.0});
+Transform91.setScale(new float[]{1.2,0.6,1.0});
 Shape& Shape92 =  Shape();
 Shape92.setUSE(CString("TransparentClickSurface"));
 Transform91.addChild(&Shape92);
@@ -466,8 +466,8 @@ Transform84.addChild(&Transform91);
 Scene33.addChild(&Transform84);
 
 Transform& Transform93 =  Transform();
-Transform93.setScale(new float[3]{0.4,0.4,0.4});
-Transform93.setTranslation(new float[3]{-3.3,-0.5,0.0});
+Transform93.setScale(new float[]{0.4,0.4,0.4});
+Transform93.setTranslation(new float[]{-3.3,-0.5,0.0});
 TouchSensor& TouchSensor94 =  TouchSensor();
 TouchSensor94.setUSE(CString("RandomTextClickedSensor"));
 Transform93.addChild(&TouchSensor94);
@@ -481,7 +481,7 @@ Transform93.addChild(&ROUTE95);
 
 Shape& Shape96 =  Shape();
 Text& Text97 =  Text();
-Text97.setString(new CString[1]{CString("random")}, 1);
+Text97.setString(new CString[]{CString("random")}, 1);
 CFontStyle& FontStyle98 =  CFontStyle();
 FontStyle98.setUSE(CString("MessageFont"));
 Text97.setFontStyle(&FontStyle98);
@@ -495,7 +495,7 @@ Shape96.addChild(&Appearance99);
 Transform93.addChild(&Shape96);
 
 Transform& Transform100 =  Transform();
-Transform100.setScale(new float[3]{1.8,0.6,1.0});
+Transform100.setScale(new float[]{1.8,0.6,1.0});
 Shape& Shape101 =  Shape();
 Shape101.setUSE(CString("TransparentClickSurface"));
 Transform100.addChild(&Shape101);
@@ -505,13 +505,13 @@ Transform93.addChild(&Transform100);
 Scene33.addChild(&Transform93);
 
 Transform& Transform102 =  Transform();
-Transform102.setScale(new float[3]{0.4,0.4,0.4});
-Transform102.setTranslation(new float[3]{3.3,-0.5,0.0});
+Transform102.setScale(new float[]{0.4,0.4,0.4});
+Transform102.setTranslation(new float[]{3.3,-0.5,0.0});
 Anchor& Anchor103 =  Anchor();
 Anchor103.setDEF(CString("TextToSpeechAnchor"));
 Anchor103.setDescription(CString("text to speech in browser"));
-Anchor103.setParameter(new CString[1]{CString("target=_blank")}, 1);
-Anchor103.setUrl(new CString[1]{CString("http://translate.google.com/translate_tts?tl=en&amp;q=Overtly%20resist%20change")}, 1);
+Anchor103.setParameter(new CString[]{CString("target=_blank")}, 1);
+Anchor103.setUrl(new CString[]{CString("http://translate.google.com/translate_tts?tl=en&amp;q=Overtly%20resist%20change")}, 1);
 ROUTE& ROUTE104 =  ROUTE();
 ROUTE104.setFromField(CString("textToSpeechUrl"));
 ROUTE104.setFromNode(CString("TextScript"));
@@ -521,7 +521,7 @@ Anchor103.addChild(&ROUTE104);
 
 Shape& Shape105 =  Shape();
 Text& Text106 =  Text();
-Text106.setString(new CString[1]{CString("speech")}, 1);
+Text106.setString(new CString[]{CString("speech")}, 1);
 CFontStyle& FontStyle107 =  CFontStyle();
 FontStyle107.setUSE(CString("MessageFont"));
 Text106.setFontStyle(&FontStyle107);
@@ -535,7 +535,7 @@ Shape105.addChild(&Appearance108);
 Anchor103.addChild(&Shape105);
 
 Transform& Transform109 =  Transform();
-Transform109.setScale(new float[3]{1.8,0.6,1.0});
+Transform109.setScale(new float[]{1.8,0.6,1.0});
 Shape& Shape110 =  Shape();
 Shape110.setUSE(CString("TransparentClickSurface"));
 Transform109.addChild(&Shape110);

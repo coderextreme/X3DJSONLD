@@ -235,7 +235,7 @@ ProtoBody30.addChild(&Transform31);
 //This embedded Script provides the X3D author with additional visibility and control over prototype inputs and outputs
 Script& Script40 =  Script();
 Script40.setDEF(CString("ArchPrototypeScript"));
-Script40.setUrl(new CString[2]{CString("../node/ArchPrototypeScript.js"), CString("https://coderextreme.net/X3DJSONLD/src/main/node/ArchPrototypeScript.js")}, 2);
+Script40.setUrl(new CString[]{CString("../node/ArchPrototypeScript.js"), CString("https://coderextreme.net/X3DJSONLD/src/main/node/ArchPrototypeScript.js")}, 2);
 //INPUT PARAMETERS
 //General parameters
 //Parameters to create to create shapes related to arch: put true to apply
@@ -483,7 +483,7 @@ Scene13.addChild(&ProtoInstance72);
 //Add any ROUTEs here that connect ProtoInstance to/from prior nodes in Scene (and outside of ProtoDeclare)
 Inline& Inline81 =  Inline();
 Inline81.setDEF(CString("CoordinateAxes"));
-Inline81.setUrl(new CString[1]{CString("../data/CoordinateAxes.x3d")}, 1);
+Inline81.setUrl(new CString[]{CString("../data/CoordinateAxes.x3d")}, 1);
 Scene13.addChild(&Inline81);
 
 X3D0.setScene(&Scene13);

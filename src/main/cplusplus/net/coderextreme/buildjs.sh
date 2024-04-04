@@ -1,8 +1,9 @@
 #!/bin/bash
-npm install -g antlr4js-cli
-mkdir js
+mkdir -p js
 pushd js
-antlr4js -visitor ../CPPONGrammar.g4
+# npm install -g antlr4js-cli
+# antlr4js -visitor ../CPPONGrammar.g4
+java -Xss1g -Xmx8g -cp "C:/Users/john/Downloads/antlr-4.13.1-complete.jar;." org.antlr.v4.Tool -Dlanguage=JavaScript -visitor ../CPPONGrammar.g4
 for i in ../data/*.h
 do
 	echo $i

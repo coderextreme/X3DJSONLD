@@ -38,12 +38,12 @@ X3D0.setHead(&head1);
 
 Scene& Scene7 =  Scene();
 NavigationInfo& NavigationInfo8 =  NavigationInfo();
-NavigationInfo8.setType(new CString[1]{CString("EXAMINE")}, 1);
+NavigationInfo8.setType(new CString[]{CString("EXAMINE")}, 1);
 Scene7.addChild(&NavigationInfo8);
 
 Viewpoint& Viewpoint9 =  Viewpoint();
-Viewpoint9.setPosition(new float[3]{0,0,4});
-Viewpoint9.setOrientation(new float[4]{1,0,0,0});
+Viewpoint9.setPosition(new float[]{0,0,4});
+Viewpoint9.setOrientation(new float[]{1,0,0,0});
 Viewpoint9.setDescription(CString("Bubble in action"));
 Scene7.addChild(&Viewpoint9);
 
@@ -59,7 +59,7 @@ Shape13.setGeometry(&Sphere14);
 
 Appearance& Appearance15 =  Appearance();
 Material& Material16 =  Material();
-Material16.setDiffuseColor(new float[3]{1,0,0});
+Material16.setDiffuseColor(new float[]{1,0,0});
 Material16.setTransparency(0.2);
 Appearance15.addChild(&Material16);
 

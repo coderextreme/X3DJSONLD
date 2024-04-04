@@ -80,19 +80,19 @@ NavigationInfo& NavigationInfo16 =  NavigationInfo();
 Scene14.addChild(&NavigationInfo16);
 
 Background& Background17 =  Background();
-Background17.setBackUrl(new CString[2]{CString("images/generic/BK1.png"), CString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/BK1.png")}, 2);
-Background17.setBottomUrl(new CString[2]{CString("images/generic/DN1.png"), CString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/DN1.png")}, 2);
-Background17.setFrontUrl(new CString[2]{CString("images/generic/FR1.png"), CString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/FR1.png")}, 2);
-Background17.setLeftUrl(new CString[2]{CString("images/generic/LF1.png"), CString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/LF1.png")}, 2);
-Background17.setRightUrl(new CString[2]{CString("images/generic/RT1.png"), CString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/RT1.png")}, 2);
-Background17.setTopUrl(new CString[2]{CString("images/generic/UP1.png"), CString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/UP1.png")}, 2);
+Background17.setBackUrl(new CString[]{CString("images/generic/BK1.png"), CString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/BK1.png")}, 2);
+Background17.setBottomUrl(new CString[]{CString("images/generic/DN1.png"), CString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/DN1.png")}, 2);
+Background17.setFrontUrl(new CString[]{CString("images/generic/FR1.png"), CString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/FR1.png")}, 2);
+Background17.setLeftUrl(new CString[]{CString("images/generic/LF1.png"), CString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/LF1.png")}, 2);
+Background17.setRightUrl(new CString[]{CString("images/generic/RT1.png"), CString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/RT1.png")}, 2);
+Background17.setTopUrl(new CString[]{CString("images/generic/UP1.png"), CString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/UP1.png")}, 2);
 Scene14.addChild(&Background17);
 
 Viewpoint& Viewpoint18 =  Viewpoint();
 Viewpoint18.setDEF(CString("Camera001"));
 Viewpoint18.setDescription(CString("Viewpoint is like camera, prepositioned in locations (and directions) of interest. In this example the camera is the \"ears of the user\". So, if the trackCurrentView field from ListenerPointSource is TRUE then position and orientation matches the users current view"));
-Viewpoint18.setOrientation(new float[4]{1,0,0,-0.523599});
-Viewpoint18.setPosition(new float[3]{0,2000,3500});
+Viewpoint18.setOrientation(new float[]{1,0,0,-0.523599});
+Viewpoint18.setPosition(new float[]{0,2000,3500});
 Scene14.addChild(&Viewpoint18);
 
 TimeSensor& TimeSensor19 =  TimeSensor();
@@ -103,14 +103,14 @@ Scene14.addChild(&TimeSensor19);
 
 PositionInterpolator& PositionInterpolator20 =  PositionInterpolator();
 PositionInterpolator20.setDEF(CString("Camera001-POS-INTERP"));
-PositionInterpolator20.setKey(new float[5]{0,0.25,0.5,0.75,1}, 5);
-PositionInterpolator20.setKeyValue(new float[15]{0,2000,3500,0,2000,0,0,2000,-3500,0,2000,0,0,2000,3500}, 15);
+PositionInterpolator20.setKey(new float[]{0,0.25,0.5,0.75,1}, 5);
+PositionInterpolator20.setKeyValue(new float[]{0,2000,3500,0,2000,0,0,2000,-3500,0,2000,0,0,2000,3500}, 15);
 Scene14.addChild(&PositionInterpolator20);
 
 OrientationInterpolator& OrientationInterpolator21 =  OrientationInterpolator();
 OrientationInterpolator21.setDEF(CString("Camera001-ROT-INTERP"));
-OrientationInterpolator21.setKey(new float[5]{0,0.25,0.5,0.75,1}, 5);
-OrientationInterpolator21.setKeyValue(new float[20]{1,0,0,-0.523599,0.99999,0.003554,0.002727,-1.309007,0,-0.965926,-0.258819,-3.141593,0.002282,-0.793351,-0.60876,-3.135645,1,-0.000001,0,-0.523599}, 20);
+OrientationInterpolator21.setKey(new float[]{0,0.25,0.5,0.75,1}, 5);
+OrientationInterpolator21.setKeyValue(new float[]{1,0,0,-0.523599,0.99999,0.003554,0.002727,-1.309007,0,-0.965926,-0.258819,-3.141593,0.002282,-0.793351,-0.60876,-3.135645,1,-0.000001,0,-0.523599}, 20);
 Scene14.addChild(&OrientationInterpolator21);
 
 ROUTE& ROUTE22 =  ROUTE();
@@ -143,18 +143,18 @@ Scene14.addChild(&ROUTE25);
 
 Transform& Transform26 =  Transform();
 Transform26.setDEF(CString("Floor"));
-Transform26.setTranslation(new float[3]{1.241,0,0.358});
+Transform26.setTranslation(new float[]{1.241,0,0.358});
 Shape& Shape27 =  Shape();
 Appearance& Appearance28 =  Appearance();
 Appearance28.setDEF(CString("WireColor"));
 Material& Material29 =  Material();
-Material29.setDiffuseColor(new float[3]{0.122,0.114,0.125});
+Material29.setDiffuseColor(new float[]{0.122,0.114,0.125});
 Appearance28.addChild(&Material29);
 
 Shape27.addChild(&Appearance28);
 
 Box& Box30 =  Box();
-Box30.setSize(new float[3]{2000,1,2000});
+Box30.setSize(new float[]{2000,1,2000});
 Shape27.setGeometry(&Box30);
 
 Transform26.addChild(&Shape27);
@@ -163,12 +163,12 @@ Scene14.addChild(&Transform26);
 
 Transform& Transform31 =  Transform();
 Transform31.setDEF(CString("TransformAudio1"));
-Transform31.setTranslation(new float[3]{-933.123474,0,-926.253235});
+Transform31.setTranslation(new float[]{-933.123474,0,-926.253235});
 Shape& Shape32 =  Shape();
 Appearance& Appearance33 =  Appearance();
 Appearance33.setDEF(CString("WireColor_1"));
 Material& Material34 =  Material();
-Material34.setDiffuseColor(new float[3]{0.690196,0.101961,0.101961});
+Material34.setDiffuseColor(new float[]{0.690196,0.101961,0.101961});
 Appearance33.addChild(&Material34);
 
 Shape32.addChild(&Appearance33);
@@ -182,25 +182,25 @@ Transform31.addChild(&Shape32);
 Billboard& Billboard36 =  Billboard();
 Transform& Transform37 =  Transform();
 Transform37.setDEF(CString("violin"));
-Transform37.setRotation(new float[4]{1,0,0,-0.5});
-Transform37.setScale(new float[3]{100,100,100});
-Transform37.setTranslation(new float[3]{0,100,0});
+Transform37.setRotation(new float[]{1,0,0,-0.5});
+Transform37.setScale(new float[]{100,100,100});
+Transform37.setTranslation(new float[]{0,100,0});
 Shape& Shape38 =  Shape();
 Appearance& Appearance39 =  Appearance();
 Material& Material40 =  Material();
 Material40.setAmbientIntensity(0.0933);
-Material40.setDiffuseColor(new float[3]{1,1,1});
+Material40.setDiffuseColor(new float[]{1,1,1});
 Material40.setShininess(0.51);
-Material40.setSpecularColor(new float[3]{0.46,0.46,0.46});
+Material40.setSpecularColor(new float[]{0.46,0.46,0.46});
 Appearance39.addChild(&Material40);
 
 Shape38.addChild(&Appearance39);
 
 Text& Text41 =  Text();
-Text41.setString(new CString[1]{CString("Violin")}, 1);
+Text41.setString(new CString[]{CString("Violin")}, 1);
 CFontStyle& FontStyle42 =  CFontStyle();
 FontStyle42.setDEF(CString("ModelFontStyle"));
-FontStyle42.setFamily(new CString[2]{CString("Times"), CString("SERIF")}, 2);
+FontStyle42.setFamily(new CString[]{CString("Times"), CString("SERIF")}, 2);
 FontStyle42.setStyle(CString("BOLD"));
 Text41.setFontStyle(&FontStyle42);
 
@@ -216,12 +216,12 @@ Scene14.addChild(&Transform31);
 
 Transform& Transform43 =  Transform();
 Transform43.setDEF(CString("TransformAudio2"));
-Transform43.setTranslation(new float[3]{933.475586,0,924.423218});
+Transform43.setTranslation(new float[]{933.475586,0,924.423218});
 Shape& Shape44 =  Shape();
 Appearance& Appearance45 =  Appearance();
 Appearance45.setDEF(CString("WireColor_2"));
 Material& Material46 =  Material();
-Material46.setDiffuseColor(new float[3]{0.105882,0.694118,0.580392});
+Material46.setDiffuseColor(new float[]{0.105882,0.694118,0.580392});
 Appearance45.addChild(&Material46);
 
 Shape44.addChild(&Appearance45);
@@ -235,22 +235,22 @@ Transform43.addChild(&Shape44);
 Billboard& Billboard48 =  Billboard();
 Transform& Transform49 =  Transform();
 Transform49.setDEF(CString("saxophone"));
-Transform49.setRotation(new float[4]{1,0,0,-0.5});
-Transform49.setScale(new float[3]{100,100,100});
-Transform49.setTranslation(new float[3]{0,100,0});
+Transform49.setRotation(new float[]{1,0,0,-0.5});
+Transform49.setScale(new float[]{100,100,100});
+Transform49.setTranslation(new float[]{0,100,0});
 Shape& Shape50 =  Shape();
 Appearance& Appearance51 =  Appearance();
 Material& Material52 =  Material();
 Material52.setAmbientIntensity(0.0933);
-Material52.setDiffuseColor(new float[3]{1,1,1});
+Material52.setDiffuseColor(new float[]{1,1,1});
 Material52.setShininess(0.51);
-Material52.setSpecularColor(new float[3]{0.46,0.46,0.46});
+Material52.setSpecularColor(new float[]{0.46,0.46,0.46});
 Appearance51.addChild(&Material52);
 
 Shape50.addChild(&Appearance51);
 
 Text& Text53 =  Text();
-Text53.setString(new CString[1]{CString("Saxophone")}, 1);
+Text53.setString(new CString[]{CString("Saxophone")}, 1);
 CFontStyle& FontStyle54 =  CFontStyle();
 FontStyle54.setUSE(CString("ModelFontStyle"));
 Text53.setFontStyle(&FontStyle54);
@@ -276,7 +276,7 @@ Gain& Gain58 =  Gain();
 AudioClip& AudioClip59 =  AudioClip();
 AudioClip59.setDescription(CString("Violin"));
 AudioClip59.setLoop(True);
-AudioClip59.setUrl(new CString[2]{CString("sound/violin.mp3"), CString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3")}, 2);
+AudioClip59.setUrl(new CString[]{CString("sound/violin.mp3"), CString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3")}, 2);
 Gain58.addChildren(AudioClip59);
 
 SpatialSound57.addChildren(Gain58);
@@ -289,7 +289,7 @@ Gain& Gain61 =  Gain();
 AudioClip& AudioClip62 =  AudioClip();
 AudioClip62.setDescription(CString("Saxophone"));
 AudioClip62.setLoop(True);
-AudioClip62.setUrl(new CString[2]{CString("sound/saxophone.mp3"), CString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/saxophone.mp3")}, 2);
+AudioClip62.setUrl(new CString[]{CString("sound/saxophone.mp3"), CString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/saxophone.mp3")}, 2);
 Gain61.addChildren(AudioClip62);
 
 SpatialSound60.addChildren(Gain61);

@@ -38,12 +38,12 @@ X3D0.setHead(&head1);
 
 Scene& Scene7 =  Scene();
 Viewpoint& Viewpoint8 =  Viewpoint();
-Viewpoint8.setPosition(new float[3]{0,0,5});
+Viewpoint8.setPosition(new float[]{0,0,5});
 Viewpoint8.setDescription(CString("Only Viewpoint"));
 Scene7.addChild(&Viewpoint8);
 
 Background& Background9 =  Background();
-Background9.setSkyColor(new float[3]{0.4,0.4,0.4}, 3);
+Background9.setSkyColor(new float[]{0.4,0.4,0.4}, 3);
 Scene7.addChild(&Background9);
 
 Transform& Transform10 =  Transform();
@@ -51,7 +51,7 @@ Transform10.setDEF(CString("G1"));
 Shape& Shape11 =  Shape();
 Appearance& Appearance12 =  Appearance();
 Material& Material13 =  Material();
-Material13.setDiffuseColor(new float[3]{0.7,0.2,0.2});
+Material13.setDiffuseColor(new float[]{0.7,0.2,0.2});
 Appearance12.addChild(&Material13);
 
 Shape11.addChild(&Appearance12);
@@ -78,11 +78,11 @@ Scene7.addChild(&Transform10);
 
 Transform& Transform17 =  Transform();
 Transform17.setDEF(CString("G2"));
-Transform17.setTranslation(new float[3]{1,-1,0.01});
+Transform17.setTranslation(new float[]{1,-1,0.01});
 Shape& Shape18 =  Shape();
 Appearance& Appearance19 =  Appearance();
 Material& Material20 =  Material();
-Material20.setDiffuseColor(new float[3]{0.2,0.7,0.2});
+Material20.setDiffuseColor(new float[]{0.2,0.7,0.2});
 Appearance19.addChild(&Material20);
 
 Shape18.addChild(&Appearance19);
@@ -95,7 +95,7 @@ Transform17.addChild(&Shape18);
 
 PlaneSensor& PlaneSensor22 =  PlaneSensor();
 PlaneSensor22.setDescription(CString("Grab to move"));
-PlaneSensor22.setOffset(new float[3]{1,-1,0.01});
+PlaneSensor22.setOffset(new float[]{1,-1,0.01});
 PlaneSensor22.setDEF(CString("PS2"));
 Transform17.addChild(&PlaneSensor22);
 
@@ -115,7 +115,7 @@ Transform25.setDEF(CString("rotscaleC1"));
 Shape& Shape26 =  Shape();
 Appearance& Appearance27 =  Appearance();
 Material& Material28 =  Material();
-Material28.setDiffuseColor(new float[3]{0.2,0.7,0.7});
+Material28.setDiffuseColor(new float[]{0.2,0.7,0.7});
 Material28.setTransparency(0.5);
 Appearance27.addChild(&Material28);
 

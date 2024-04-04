@@ -91,7 +91,7 @@ WorldInfo18.setTitle(CString("HAnimHumanoid skin design patterns for apparel, me
 Scene17.addChild(&WorldInfo18);
 
 Background& Background19 =  Background();
-Background19.setSkyColor(new float[3]{0.0,0.6,0.6}, 3);
+Background19.setSkyColor(new float[]{0.0,0.6,0.6}, 3);
 Scene17.addChild(&Background19);
 
 Group& Group20 =  Group();
@@ -99,7 +99,7 @@ Group20.setDEF(CString("MultipleHumanoids"));
 MetadataString& MetadataString21 =  MetadataString();
 MetadataString21.X3DNode::setName(CString("HAnimArchitecture"));
 MetadataString21.X3DNode::setReference(CString("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/Guidelines.html#MultipleHumanoidsPerFile"));
-MetadataString21.setValue(new CString[1]{CString("E.4 Multiple humanoids per file")}, 1);
+MetadataString21.setValue(new CString[]{CString("E.4 Multiple humanoids per file")}, 1);
 Group20.setMetadata(&MetadataString21);
 
 //==============================
@@ -296,21 +296,21 @@ Scene17.addChild(&Group20);
 Viewpoint& Viewpoint63 =  Viewpoint();
 Viewpoint63.setDEF(CString("ViewHelpText"));
 Viewpoint63.setDescription(CString("Select text to see website"));
-Viewpoint63.setPosition(new float[3]{0.0,0.0,12.0});
+Viewpoint63.setPosition(new float[]{0.0,0.0,12.0});
 Scene17.addChild(&Viewpoint63);
 
 //Selectable Text design pattern has transparent Box and TouchSensor description as a tooltip
 Anchor& Anchor64 =  Anchor();
 Anchor64.setDescription(CString("DesignPatternsApparelMedicalSkinLayers.x3d explores potential apparel approaches"));
-Anchor64.setParameter(new CString[1]{CString("target=blank")}, 1);
-Anchor64.setUrl(new CString[1]{CString("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/DesignPatternsApparelMedicalSkinLayersIndex.html")}, 1);
+Anchor64.setParameter(new CString[]{CString("target=blank")}, 1);
+Anchor64.setUrl(new CString[]{CString("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/DesignPatternsApparelMedicalSkinLayersIndex.html")}, 1);
 Shape& Shape65 =  Shape();
 //TODO adjust Text string and Box size, then set Material transparency='1'
 Text& Text66 =  Text();
-Text66.setString(new CString[3]{CString("DesignPatternsApparelMedicalSkinLayers.x3d"), CString(""), CString("explores potential apparel approaches")}, 3);
+Text66.setString(new CString[]{CString("DesignPatternsApparelMedicalSkinLayers.x3d"), CString(""), CString("explores potential apparel approaches")}, 3);
 CFontStyle& FontStyle67 =  CFontStyle();
-FontStyle67.setFamily(new CString[1]{CString("SANS")}, 1);
-FontStyle67.setJustify(new CString[2]{CString("MIDDLE"), CString("MIDDLE")}, 2);
+FontStyle67.setFamily(new CString[]{CString("SANS")}, 1);
+FontStyle67.setJustify(new CString[]{CString("MIDDLE"), CString("MIDDLE")}, 2);
 FontStyle67.setSize(0.6);
 FontStyle67.setStyle(CString("BOLD"));
 Text66.setFontStyle(&FontStyle67);
@@ -319,7 +319,7 @@ Shape65.setGeometry(&Text66);
 
 Appearance& Appearance68 =  Appearance();
 Material& Material69 =  Material();
-Material69.setDiffuseColor(new float[3]{0.9,0.9,0.9});
+Material69.setDiffuseColor(new float[]{0.9,0.9,0.9});
 Appearance68.addChild(&Material69);
 
 Shape65.addChild(&Appearance68);
@@ -329,7 +329,7 @@ Anchor64.addChild(&Shape65);
 Shape& Shape70 =  Shape();
 //Author TODO: to adjust transparent Box as text-selection assist, set width and height to match size, then set transparency='1' to make invisible.
 Box& Box71 =  Box();
-Box71.setSize(new float[3]{11.0,2.0,0.001});
+Box71.setSize(new float[]{11.0,2.0,0.001});
 Shape70.setGeometry(&Box71);
 
 Appearance& Appearance72 =  Appearance();

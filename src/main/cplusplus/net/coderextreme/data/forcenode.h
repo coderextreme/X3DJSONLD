@@ -71,7 +71,7 @@ Shape17.setGeometry(&Sphere18);
 
 Appearance& Appearance19 =  Appearance();
 Material& Material20 =  Material();
-Material20.setDiffuseColor(new float[3]{1.0,0.0,0.0});
+Material20.setDiffuseColor(new float[]{1.0,0.0,0.0});
 Appearance19.addChild(&Material20);
 
 Shape17.addChild(&Appearance19);
@@ -79,12 +79,12 @@ Shape17.addChild(&Appearance19);
 Transform14.addChild(&Shape17);
 
 Transform& Transform21 =  Transform();
-Transform21.setTranslation(new float[3]{1.0,0.0,1.0});
+Transform21.setTranslation(new float[]{1.0,0.0,1.0});
 Shape& Shape22 =  Shape();
 Text& Text23 =  Text();
-Text23.setString(new CString[1]{CString("Node")}, 1);
+Text23.setString(new CString[]{CString("Node")}, 1);
 CFontStyle& FontStyle24 =  CFontStyle();
-FontStyle24.setJustify(new CString[2]{CString("MIDDLE"), CString("MIDDLE")}, 2);
+FontStyle24.setJustify(new CString[]{CString("MIDDLE"), CString("MIDDLE")}, 2);
 FontStyle24.setSize(5);
 Text23.setFontStyle(&FontStyle24);
 
@@ -92,7 +92,7 @@ Shape22.setGeometry(&Text23);
 
 Appearance& Appearance25 =  Appearance();
 Material& Material26 =  Material();
-Material26.setDiffuseColor(new float[3]{0.0,0.0,1.0});
+Material26.setDiffuseColor(new float[]{0.0,0.0,1.0});
 Appearance25.addChild(&Material26);
 
 Shape22.addChild(&Appearance25);
@@ -105,8 +105,8 @@ Group13.addChild(&Transform14);
 
 PositionInterpolator& PositionInterpolator27 =  PositionInterpolator();
 PositionInterpolator27.setDEF(CString("NodePosition"));
-PositionInterpolator27.setKey(new float[2]{0.0,1.0}, 2);
-PositionInterpolator27.setKeyValue(new float[6]{0.0,0.0,0.0,0.0,5.0,0.0}, 6);
+PositionInterpolator27.setKey(new float[]{0.0,1.0}, 2);
+PositionInterpolator27.setKeyValue(new float[]{0.0,0.0,0.0,0.0,5.0,0.0}, 6);
 Group13.addChild(&PositionInterpolator27);
 
 Script& Script28 =  Script();
@@ -210,13 +210,13 @@ Shape& Shape44 =  Shape();
 Extrusion& Extrusion45 =  Extrusion();
 Extrusion45.setDEF(CString("extrusion"));
 Extrusion45.setCreaseAngle(0.785);
-Extrusion45.setCrossSection(new float[34]{1.0,0.0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.0,-1.0,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.0,0.0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0.0,1.0,0.38,0.92,0.71,0.71,0.92,0.38,1.0,0.0}, 34);
-Extrusion45.setSpine(new float[6]{0.0,-50.0,0.0,0.0,50.0,0.0}, 6);
+Extrusion45.setCrossSection(new float[]{1.0,0.0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.0,-1.0,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.0,0.0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0.0,1.0,0.38,0.92,0.71,0.71,0.92,0.38,1.0,0.0}, 34);
+Extrusion45.setSpine(new float[]{0.0,-50.0,0.0,0.0,50.0,0.0}, 6);
 Shape44.setGeometry(&Extrusion45);
 
 Appearance& Appearance46 =  Appearance();
 Material& Material47 =  Material();
-Material47.setDiffuseColor(new float[3]{0.0,1.0,0.0});
+Material47.setDiffuseColor(new float[]{0.0,1.0,0.0});
 Appearance46.addChild(&Material47);
 
 Shape44.addChild(&Appearance46);
@@ -293,11 +293,11 @@ Scene8.addChild(&ProtoDeclare38);
 
 Transform& Transform56 =  Transform();
 Transform56.setDEF(CString("HoldsContent"));
-Transform56.setScale(new float[3]{0.1,0.1,0.1});
+Transform56.setScale(new float[]{0.1,0.1,0.1});
 PlaneSensor& PlaneSensor57 =  PlaneSensor();
 PlaneSensor57.setDEF(CString("clickGenerator"));
-PlaneSensor57.setMinPosition(new float[2]{-50.0,-50.0});
-PlaneSensor57.setMaxPosition(new float[2]{50.0,50.0});
+PlaneSensor57.setMinPosition(new float[]{-50.0,-50.0});
+PlaneSensor57.setMaxPosition(new float[]{50.0,50.0});
 PlaneSensor57.setDescription(CString("click on background to add nodes, click on nodes to add links"));
 Transform56.addChild(&PlaneSensor57);
 

@@ -63,9 +63,9 @@ Appearance& Appearance15 =  Appearance();
 Material& Material16 =  Material();
 Material16.setDEF(CString("tank"));
 Material16.setAmbientIntensity(0.3);
-Material16.setDiffuseColor(new float[3]{0.3,0.3,0.5});
+Material16.setDiffuseColor(new float[]{0.3,0.3,0.5});
 Material16.setShininess(0.1);
-Material16.setSpecularColor(new float[3]{0.7,0.7,0.8});
+Material16.setSpecularColor(new float[]{0.7,0.7,0.8});
 Appearance15.addChild(&Material16);
 
 Shape14.addChild(&Appearance15);
@@ -80,7 +80,7 @@ Transform13.addChild(&Shape14);
 Transform12.addChild(&Transform13);
 
 Transform& Transform18 =  Transform();
-Transform18.setTranslation(new float[3]{0.0,0.35,0.0});
+Transform18.setTranslation(new float[]{0.0,0.35,0.0});
 Shape& Shape19 =  Shape();
 Appearance& Appearance20 =  Appearance();
 Material& Material21 =  Material();
@@ -98,14 +98,14 @@ Transform18.addChild(&Shape19);
 Transform12.addChild(&Transform18);
 
 Transform& Transform23 =  Transform();
-Transform23.setTranslation(new float[3]{0.0,-0.35,0.0});
+Transform23.setTranslation(new float[]{0.0,-0.35,0.0});
 Shape& Shape24 =  Shape();
 Shape24.setDEF(CString("tankBottom"));
 Appearance& Appearance25 =  Appearance();
 Material& Material26 =  Material();
 Material26.setDEF(CString("black"));
 Material26.setAmbientIntensity(0.3);
-Material26.setDiffuseColor(new float[3]{0.0,0.0,0.0});
+Material26.setDiffuseColor(new float[]{0.0,0.0,0.0});
 Appearance25.addChild(&Material26);
 
 Shape24.addChild(&Appearance25);
@@ -123,16 +123,16 @@ Group& Group28 =  Group();
 Group28.setDEF(CString("tankNozzle"));
 Transform& Transform29 =  Transform();
 Transform& Transform30 =  Transform();
-Transform30.setTranslation(new float[3]{0.0,0.45,0.0});
+Transform30.setTranslation(new float[]{0.0,0.45,0.0});
 Shape& Shape31 =  Shape();
 Shape31.setDEF(CString("pressure"));
 Appearance& Appearance32 =  Appearance();
 Material& Material33 =  Material();
 Material33.setDEF(CString("pressureColor"));
 Material33.setAmbientIntensity(0.4);
-Material33.setDiffuseColor(new float[3]{0.91,0.91,0.91});
+Material33.setDiffuseColor(new float[]{0.91,0.91,0.91});
 Material33.setShininess(0.16);
-Material33.setSpecularColor(new float[3]{0.91,0.9,0.91});
+Material33.setSpecularColor(new float[]{0.91,0.9,0.91});
 Appearance32.addChild(&Material33);
 
 Shape31.addChild(&Appearance32);
@@ -147,7 +147,7 @@ Transform30.addChild(&Shape31);
 Transform29.addChild(&Transform30);
 
 Transform& Transform35 =  Transform();
-Transform35.setTranslation(new float[3]{0.0,0.5,0.0});
+Transform35.setTranslation(new float[]{0.0,0.5,0.0});
 Shape& Shape36 =  Shape();
 Shape36.setDEF(CString("pressureTop"));
 Appearance& Appearance37 =  Appearance();
@@ -167,8 +167,8 @@ Transform35.addChild(&Shape36);
 Transform29.addChild(&Transform35);
 
 Transform& Transform40 =  Transform();
-Transform40.setRotation(new float[4]{0.0,0.0,1.0,1.57});
-Transform40.setTranslation(new float[3]{-0.028,0.462,0.0});
+Transform40.setRotation(new float[]{0.0,0.0,1.0,1.57});
+Transform40.setTranslation(new float[]{-0.028,0.462,0.0});
 Transform& Transform41 =  Transform();
 Shape& Shape42 =  Shape();
 Shape42.setDEF(CString("connectorToRegulator"));
@@ -189,7 +189,7 @@ Transform41.addChild(&Shape42);
 Transform40.addChild(&Transform41);
 
 Transform& Transform46 =  Transform();
-Transform46.setTranslation(new float[3]{0.0,0.02,0.0});
+Transform46.setTranslation(new float[]{0.0,0.02,0.0});
 Shape& Shape47 =  Shape();
 Shape47.setDEF(CString("connectorToRegulatorTop"));
 Appearance& Appearance48 =  Appearance();
@@ -215,7 +215,7 @@ Group28.addChild(&Transform29);
 Transform12.addChild(&Group28);
 
 Transform& Transform51 =  Transform();
-Transform51.setTranslation(new float[3]{0.0,0.2,0.0});
+Transform51.setTranslation(new float[]{0.0,0.2,0.0});
 Shape& Shape52 =  Shape();
 Shape52.setDEF(CString("tankHoldBelt"));
 Appearance& Appearance53 =  Appearance();
@@ -237,7 +237,7 @@ Transform12.addChild(&Transform51);
 Scene10.addChild(&Transform12);
 
 Background& Background56 =  Background();
-Background56.setSkyColor(new float[3]{0.6,0.6,0.6}, 3);
+Background56.setSkyColor(new float[]{0.6,0.6,0.6}, 3);
 Scene10.addChild(&Background56);
 
 X3D0.setScene(&Scene10);

@@ -56,7 +56,7 @@ Scene3.addChild(&Script4);
 Shape& Shape9 =  Shape();
 Appearance& Appearance10 =  Appearance();
 Material& Material11 =  Material();
-Material11.setDiffuseColor(new float[3]{1.0,0.0,0.0});
+Material11.setDiffuseColor(new float[]{1.0,0.0,0.0});
 Appearance10.addChild(&Material11);
 
 Shape9.addChild(&Appearance10);
@@ -75,7 +75,7 @@ AudioClip& AudioClip14 =  AudioClip();
 AudioClip14.setDEF(CString("Click"));
 AudioClip14.setStopTime(1);
 AudioClip14.setDescription(CString("clicking sound"));
-AudioClip14.setUrl(new CString[1]{CString("../resources/chandubabamusic1.wav")}, 1);
+AudioClip14.setUrl(new CString[]{CString("../resources/chandubabamusic1.wav")}, 1);
 Sound13.setSource(AudioClip14);
 
 Scene3.addChild(&Sound13);

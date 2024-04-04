@@ -131,7 +131,7 @@ Transform27.setDEF(CString("TR"));
 Shape& Shape28 =  Shape();
 Appearance& Appearance29 =  Appearance();
 Material& Material30 =  Material();
-Material30.setDiffuseColor(new float[3]{0.5,0.5,0.9});
+Material30.setDiffuseColor(new float[]{0.5,0.5,0.9});
 Appearance29.addChild(&Material30);
 
 ComposedShader& ComposedShader31 =  ComposedShader();
@@ -222,7 +222,7 @@ MetadataString& MetadataString47 =  MetadataString();
 MetadataString47.X3DNode::setName(CString("type"));
 MetadataString47.setDEF(CString("type"));
 MetadataString47.X3DNode::setReference(CString("http://titania.create3000.de"));
-MetadataString47.setValue(new CString[1]{CString("EXAMINE")}, 1);
+MetadataString47.setValue(new CString[]{CString("EXAMINE")}, 1);
 MetadataSet46.setValue((X3DNode *)&MetadataString47);
 
 MetadataSet43.setValue((X3DNode *)&MetadataSet46);
@@ -235,21 +235,21 @@ MetadataDouble& MetadataDouble49 =  MetadataDouble();
 MetadataDouble49.X3DNode::setName(CString("position"));
 MetadataDouble49.setDEF(CString("position"));
 MetadataDouble49.X3DNode::setReference(CString("http://titania.create3000.de"));
-MetadataDouble49.setValue(new double[3]{6.24067728185014,0.00250837343276661,2.92117542307615}, 3);
+MetadataDouble49.setValue(new double[]{6.24067728185014,0.00250837343276661,2.92117542307615}, 3);
 MetadataSet48.setValue((X3DNode *)&MetadataDouble49);
 
 MetadataDouble& MetadataDouble50 =  MetadataDouble();
 MetadataDouble50.X3DNode::setName(CString("orientation"));
 MetadataDouble50.setDEF(CString("orientation"));
 MetadataDouble50.X3DNode::setReference(CString("http://titania.create3000.de"));
-MetadataDouble50.setValue(new double[4]{-0.110173424710488,0.990158061907379,-0.0863065984000336,1.21146676119191}, 4);
+MetadataDouble50.setValue(new double[]{-0.110173424710488,0.990158061907379,-0.0863065984000336,1.21146676119191}, 4);
 MetadataSet48.setValue((X3DNode *)&MetadataDouble50);
 
 MetadataDouble& MetadataDouble51 =  MetadataDouble();
 MetadataDouble51.X3DNode::setName(CString("centerOfRotation"));
 MetadataDouble51.setDEF(CString("centerOfRotation"));
 MetadataDouble51.X3DNode::setReference(CString("http://titania.create3000.de"));
-MetadataDouble51.setValue(new double[3]{-0.808320198626341,-0.358072370409949,0.22817191560906}, 3);
+MetadataDouble51.setValue(new double[]{-0.808320198626341,-0.358072370409949,0.22817191560906}, 3);
 MetadataSet48.setValue((X3DNode *)&MetadataDouble51);
 
 MetadataSet43.setValue((X3DNode *)&MetadataSet48);

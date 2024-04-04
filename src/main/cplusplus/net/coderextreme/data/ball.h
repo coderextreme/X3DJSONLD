@@ -81,7 +81,7 @@ WorldInfo16.setTitle(CString("ball.x3d"));
 Scene15.addChild(&WorldInfo16);
 
 NavigationInfo& NavigationInfo17 =  NavigationInfo();
-NavigationInfo17.setType(new CString[4]{CString("ANY"), CString("EXAMINE"), CString("FLY"), CString("LOOKAT")}, 4);
+NavigationInfo17.setType(new CString[]{CString("ANY"), CString("EXAMINE"), CString("FLY"), CString("LOOKAT")}, 4);
 Scene15.addChild(&NavigationInfo17);
 
 Viewpoint& Viewpoint18 =  Viewpoint();
@@ -89,12 +89,12 @@ Viewpoint18.setDescription(CString("Tour Views"));
 Scene15.addChild(&Viewpoint18);
 
 Background& Background19 =  Background();
-Background19.setBackUrl(new CString[1]{CString("../resources/images/all_probes/stpeters_cross/stpeters_back.png")}, 1);
-Background19.setBottomUrl(new CString[1]{CString("../resources/images/all_probes/stpeters_cross/stpeters_bottom.png")}, 1);
-Background19.setFrontUrl(new CString[1]{CString("../resources/images/all_probes/stpeters_cross/stpeters_front.png")}, 1);
-Background19.setLeftUrl(new CString[1]{CString("../resources/images/all_probes/stpeters_cross/stpeters_left.png")}, 1);
-Background19.setRightUrl(new CString[1]{CString("../resources/images/all_probes/stpeters_cross/stpeters_right.png")}, 1);
-Background19.setTopUrl(new CString[1]{CString("../resources/images/all_probes/stpeters_cross/stpeters_top.png")}, 1);
+Background19.setBackUrl(new CString[]{CString("../resources/images/all_probes/stpeters_cross/stpeters_back.png")}, 1);
+Background19.setBottomUrl(new CString[]{CString("../resources/images/all_probes/stpeters_cross/stpeters_bottom.png")}, 1);
+Background19.setFrontUrl(new CString[]{CString("../resources/images/all_probes/stpeters_cross/stpeters_front.png")}, 1);
+Background19.setLeftUrl(new CString[]{CString("../resources/images/all_probes/stpeters_cross/stpeters_left.png")}, 1);
+Background19.setRightUrl(new CString[]{CString("../resources/images/all_probes/stpeters_cross/stpeters_right.png")}, 1);
+Background19.setTopUrl(new CString[]{CString("../resources/images/all_probes/stpeters_cross/stpeters_top.png")}, 1);
 Scene15.addChild(&Background19);
 
 Transform& Transform20 =  Transform();
@@ -104,34 +104,34 @@ Shape21.setGeometry(&Sphere22);
 
 Appearance& Appearance23 =  Appearance();
 Material& Material24 =  Material();
-Material24.setDiffuseColor(new float[3]{0.7,0.7,0.7});
-Material24.setSpecularColor(new float[3]{0.5,0.5,0.5});
+Material24.setDiffuseColor(new float[]{0.7,0.7,0.7});
+Material24.setSpecularColor(new float[]{0.5,0.5,0.5});
 Appearance23.addChild(&Material24);
 
 ComposedCubeMapTexture& ComposedCubeMapTexture25 =  ComposedCubeMapTexture();
 ComposedCubeMapTexture25.setDEF(CString("texture"));
 ImageTexture& ImageTexture26 =  ImageTexture();
-ImageTexture26.setUrl(new CString[1]{CString("../resources/images/all_probes/stpeters_cross/stpeters_back.png")}, 1);
+ImageTexture26.setUrl(new CString[]{CString("../resources/images/all_probes/stpeters_cross/stpeters_back.png")}, 1);
 ComposedCubeMapTexture25.setBack(ImageTexture26);
 
 ImageTexture& ImageTexture27 =  ImageTexture();
-ImageTexture27.setUrl(new CString[1]{CString("../resources/images/all_probes/stpeters_cross/stpeters_bottom.png")}, 1);
+ImageTexture27.setUrl(new CString[]{CString("../resources/images/all_probes/stpeters_cross/stpeters_bottom.png")}, 1);
 ComposedCubeMapTexture25.setBottom(ImageTexture27);
 
 ImageTexture& ImageTexture28 =  ImageTexture();
-ImageTexture28.setUrl(new CString[1]{CString("../resources/images/all_probes/stpeters_cross/stpeters_front.png")}, 1);
+ImageTexture28.setUrl(new CString[]{CString("../resources/images/all_probes/stpeters_cross/stpeters_front.png")}, 1);
 ComposedCubeMapTexture25.setFront(ImageTexture28);
 
 ImageTexture& ImageTexture29 =  ImageTexture();
-ImageTexture29.setUrl(new CString[1]{CString("../resources/images/all_probes/stpeters_cross/stpeters_left.png")}, 1);
+ImageTexture29.setUrl(new CString[]{CString("../resources/images/all_probes/stpeters_cross/stpeters_left.png")}, 1);
 ComposedCubeMapTexture25.setLeft(ImageTexture29);
 
 ImageTexture& ImageTexture30 =  ImageTexture();
-ImageTexture30.setUrl(new CString[1]{CString("../resources/images/all_probes/stpeters_cross/stpeters_right.png")}, 1);
+ImageTexture30.setUrl(new CString[]{CString("../resources/images/all_probes/stpeters_cross/stpeters_right.png")}, 1);
 ComposedCubeMapTexture25.setRight(ImageTexture30);
 
 ImageTexture& ImageTexture31 =  ImageTexture();
-ImageTexture31.setUrl(new CString[1]{CString("../resources/images/all_probes/stpeters_cross/stpeters_top.png")}, 1);
+ImageTexture31.setUrl(new CString[]{CString("../resources/images/all_probes/stpeters_cross/stpeters_top.png")}, 1);
 ComposedCubeMapTexture25.setTop(ImageTexture31);
 
 Appearance23.addChild(&ComposedCubeMapTexture25);
@@ -182,13 +182,13 @@ field38.setValue(CString("2"));
 ComposedShader32.addChild(&field38);
 
 ShaderPart& ShaderPart39 =  ShaderPart();
-ShaderPart39.setUrl(new CString[1]{CString("../shaders/x3dom.vs")}, 1);
+ShaderPart39.setUrl(new CString[]{CString("../shaders/x3dom.vs")}, 1);
 ShaderPart39.setType(CString("VERTEX"));
 ComposedShader32.setParts(&ShaderPart39);
 
 ShaderPart& ShaderPart40 =  ShaderPart();
 ShaderPart40.setDEF(CString("common"));
-ShaderPart40.setUrl(new CString[1]{CString("../shaders/common.fs")}, 1);
+ShaderPart40.setUrl(new CString[]{CString("../shaders/common.fs")}, 1);
 ShaderPart40.setType(CString("FRAGMENT"));
 ComposedShader32.setParts(&ShaderPart40);
 
@@ -235,12 +235,12 @@ field47.setValue(CString("2"));
 ComposedShader41.addChild(&field47);
 
 ShaderPart& ShaderPart48 =  ShaderPart();
-ShaderPart48.setUrl(new CString[1]{CString("../shaders/x_ite.vs")}, 1);
+ShaderPart48.setUrl(new CString[]{CString("../shaders/x_ite.vs")}, 1);
 ShaderPart48.setType(CString("VERTEX"));
 ComposedShader41.setParts(&ShaderPart48);
 
 ShaderPart& ShaderPart49 =  ShaderPart();
-ShaderPart49.setUrl(new CString[1]{CString("../shaders/x_itebubbles.fs")}, 1);
+ShaderPart49.setUrl(new CString[]{CString("../shaders/x_itebubbles.fs")}, 1);
 ShaderPart49.setType(CString("FRAGMENT"));
 ComposedShader41.setParts(&ShaderPart49);
 

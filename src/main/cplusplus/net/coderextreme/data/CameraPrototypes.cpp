@@ -313,7 +313,7 @@ ProtoBody42.addChild(&Viewpoint43);
 //NavInfo EXAMINE used since some browsers (InstantReality) try to lock view to vertical when flying to avoid disorientation
 NavigationInfo& NavigationInfo52 =  NavigationInfo();
 NavigationInfo52.setDEF(CString("CameraNavInfo"));
-NavigationInfo52.setType(new CString[3]{CString("EXAMINE"), CString("FLY"), CString("ANY")}, 3);
+NavigationInfo52.setType(new CString[]{CString("EXAMINE"), CString("FLY"), CString("ANY")}, 3);
 IS& IS53 =  IS();
 Connect& connect54 =  Connect();
 connect54.setNodeField(CString("set_bind"));
@@ -362,8 +362,8 @@ ProtoBody42.addChild(&DirectionalLight57);
 
 PositionInterpolator& PositionInterpolator62 =  PositionInterpolator();
 PositionInterpolator62.setDEF(CString("CameraPositionInterpolator"));
-PositionInterpolator62.setKey(new float[2]{0,1}, 2);
-PositionInterpolator62.setKeyValue(new float[6]{0,0,0,0,0,0}, 6);
+PositionInterpolator62.setKey(new float[]{0,1}, 2);
+PositionInterpolator62.setKeyValue(new float[]{0,0,0,0,0,0}, 6);
 IS& IS63 =  IS();
 Connect& connect64 =  Connect();
 connect64.setNodeField(CString("set_fraction"));
@@ -376,8 +376,8 @@ ProtoBody42.addChild(&PositionInterpolator62);
 
 OrientationInterpolator& OrientationInterpolator65 =  OrientationInterpolator();
 OrientationInterpolator65.setDEF(CString("CameraOrientationInterpolator"));
-OrientationInterpolator65.setKey(new float[2]{0,1}, 2);
-OrientationInterpolator65.setKeyValue(new float[8]{0,1,0,0,0,1,0,0}, 8);
+OrientationInterpolator65.setKey(new float[]{0,1}, 2);
+OrientationInterpolator65.setKeyValue(new float[]{0,1,0,0,0,1,0,0}, 8);
 IS& IS66 =  IS();
 Connect& connect67 =  Connect();
 connect67.setNodeField(CString("set_fraction"));
@@ -2078,25 +2078,25 @@ Scene16.addChild(&ProtoDeclare216);
 
 //=============== Launch Prototype Example ==============
 Background& Background254 =  Background();
-Background254.setSkyColor(new float[3]{0.282353,0.380392,0.470588}, 3);
+Background254.setSkyColor(new float[]{0.282353,0.380392,0.470588}, 3);
 Scene16.addChild(&Background254);
 
 Anchor& Anchor255 =  Anchor();
 Anchor255.setDescription(CString("launch CameraExample scene"));
-Anchor255.setUrl(new CString[4]{CString("CameraExamples.x3d"), CString("https://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.x3d"), CString("CameraExamples.wrl"), CString("https://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.wrl")}, 4);
+Anchor255.setUrl(new CString[]{CString("CameraExamples.x3d"), CString("https://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.x3d"), CString("CameraExamples.wrl"), CString("https://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.wrl")}, 4);
 Transform& Transform256 =  Transform();
 Shape& Shape257 =  Shape();
 Text& Text258 =  Text();
-Text258.setString(new CString[5]{CString("CameraPrototypes.x3d"), CString("defines multiple prototype nodes"), CString(""), CString("Click on this text to see"), CString("CameraExamples.x3d scene")}, 5);
+Text258.setString(new CString[]{CString("CameraPrototypes.x3d"), CString("defines multiple prototype nodes"), CString(""), CString("Click on this text to see"), CString("CameraExamples.x3d scene")}, 5);
 CFontStyle& FontStyle259 =  CFontStyle();
-FontStyle259.setJustify(new CString[2]{CString("MIDDLE"), CString("MIDDLE")}, 2);
+FontStyle259.setJustify(new CString[]{CString("MIDDLE"), CString("MIDDLE")}, 2);
 Text258.setFontStyle(&FontStyle259);
 
 Shape257.setGeometry(&Text258);
 
 Appearance& Appearance260 =  Appearance();
 Material& Material261 =  Material();
-Material261.setDiffuseColor(new float[3]{1,1,0.2});
+Material261.setDiffuseColor(new float[]{1,1,0.2});
 Appearance260.addChild(&Material261);
 
 Shape257.addChild(&Appearance260);

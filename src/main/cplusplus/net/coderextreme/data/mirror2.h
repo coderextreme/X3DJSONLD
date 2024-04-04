@@ -78,57 +78,57 @@ X3D0.setHead(&head1);
 
 Scene& Scene15 =  Scene();
 Viewpoint& Viewpoint16 =  Viewpoint();
-Viewpoint16.setPosition(new float[3]{0.0,5.0,100.0});
+Viewpoint16.setPosition(new float[]{0.0,5.0,100.0});
 Viewpoint16.setDescription(CString("Switch background and images texture"));
 Scene15.addChild(&Viewpoint16);
 
 Background& Background17 =  Background();
 Background17.setDEF(CString("cube"));
-Background17.setLeftUrl(new CString[2]{CString("../resources/images/all_probes/beach_cross/beach_left.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png")}, 2);
-Background17.setRightUrl(new CString[2]{CString("../resources/images/all_probes/beach_cross/beach_right.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png")}, 2);
-Background17.setFrontUrl(new CString[2]{CString("../resources/images/all_probes/beach_cross/beach_front.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png")}, 2);
-Background17.setBackUrl(new CString[2]{CString("../resources/images/all_probes/beach_cross/beach_back.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png")}, 2);
-Background17.setTopUrl(new CString[2]{CString("../resources/images/all_probes/beach_cross/beach_top.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png")}, 2);
-Background17.setBottomUrl(new CString[2]{CString("../resources/images/all_probes/beach_cross/beach_bottom.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png")}, 2);
+Background17.setLeftUrl(new CString[]{CString("../resources/images/all_probes/beach_cross/beach_left.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png")}, 2);
+Background17.setRightUrl(new CString[]{CString("../resources/images/all_probes/beach_cross/beach_right.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png")}, 2);
+Background17.setFrontUrl(new CString[]{CString("../resources/images/all_probes/beach_cross/beach_front.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png")}, 2);
+Background17.setBackUrl(new CString[]{CString("../resources/images/all_probes/beach_cross/beach_back.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png")}, 2);
+Background17.setTopUrl(new CString[]{CString("../resources/images/all_probes/beach_cross/beach_top.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png")}, 2);
+Background17.setBottomUrl(new CString[]{CString("../resources/images/all_probes/beach_cross/beach_bottom.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png")}, 2);
 Scene15.addChild(&Background17);
 
 Transform& Transform18 =  Transform();
 Shape& Shape19 =  Shape();
 Appearance& Appearance20 =  Appearance();
 Material& Material21 =  Material();
-Material21.setDiffuseColor(new float[3]{0.7,0.7,0.7});
-Material21.setSpecularColor(new float[3]{0.5,0.5,0.5});
+Material21.setDiffuseColor(new float[]{0.7,0.7,0.7});
+Material21.setSpecularColor(new float[]{0.5,0.5,0.5});
 Appearance20.addChild(&Material21);
 
 ComposedCubeMapTexture& ComposedCubeMapTexture22 =  ComposedCubeMapTexture();
 ImageTexture& ImageTexture23 =  ImageTexture();
 ImageTexture23.setDEF(CString("backShader"));
-ImageTexture23.setUrl(new CString[2]{CString("../resources/images/all_probes/beach_cross/beach_back.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png")}, 2);
+ImageTexture23.setUrl(new CString[]{CString("../resources/images/all_probes/beach_cross/beach_back.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png")}, 2);
 ComposedCubeMapTexture22.setBack(ImageTexture23);
 
 ImageTexture& ImageTexture24 =  ImageTexture();
 ImageTexture24.setDEF(CString("bottomShader"));
-ImageTexture24.setUrl(new CString[2]{CString("../resources/images/all_probes/beach_cross/beach_bottom.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png")}, 2);
+ImageTexture24.setUrl(new CString[]{CString("../resources/images/all_probes/beach_cross/beach_bottom.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png")}, 2);
 ComposedCubeMapTexture22.setBottom(ImageTexture24);
 
 ImageTexture& ImageTexture25 =  ImageTexture();
 ImageTexture25.setDEF(CString("frontShader"));
-ImageTexture25.setUrl(new CString[2]{CString("../resources/images/all_probes/beach_cross/beach_front.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png")}, 2);
+ImageTexture25.setUrl(new CString[]{CString("../resources/images/all_probes/beach_cross/beach_front.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png")}, 2);
 ComposedCubeMapTexture22.setFront(ImageTexture25);
 
 ImageTexture& ImageTexture26 =  ImageTexture();
 ImageTexture26.setDEF(CString("leftShader"));
-ImageTexture26.setUrl(new CString[2]{CString("../resources/images/all_probes/beach_cross/beach_left.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png")}, 2);
+ImageTexture26.setUrl(new CString[]{CString("../resources/images/all_probes/beach_cross/beach_left.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png")}, 2);
 ComposedCubeMapTexture22.setLeft(ImageTexture26);
 
 ImageTexture& ImageTexture27 =  ImageTexture();
 ImageTexture27.setDEF(CString("rightShader"));
-ImageTexture27.setUrl(new CString[2]{CString("../resources/images/all_probes/beach_cross/beach_right.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png")}, 2);
+ImageTexture27.setUrl(new CString[]{CString("../resources/images/all_probes/beach_cross/beach_right.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png")}, 2);
 ComposedCubeMapTexture22.setRight(ImageTexture27);
 
 ImageTexture& ImageTexture28 =  ImageTexture();
 ImageTexture28.setDEF(CString("topShader"));
-ImageTexture28.setUrl(new CString[2]{CString("../resources/images/all_probes/beach_cross/beach_top.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png")}, 2);
+ImageTexture28.setUrl(new CString[]{CString("../resources/images/all_probes/beach_cross/beach_top.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png")}, 2);
 ComposedCubeMapTexture22.setTop(ImageTexture28);
 
 Appearance20.addChild(&ComposedCubeMapTexture22);
@@ -173,12 +173,12 @@ field34.setValue(CString("2"));
 ComposedShader29.addChild(&field34);
 
 ShaderPart& ShaderPart35 =  ShaderPart();
-ShaderPart35.setUrl(new CString[2]{CString("../shaders/x_ite.vs"), CString("https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs")}, 2);
+ShaderPart35.setUrl(new CString[]{CString("../shaders/x_ite.vs"), CString("https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs")}, 2);
 ShaderPart35.setType(CString("VERTEX"));
 ComposedShader29.setParts(&ShaderPart35);
 
 ShaderPart& ShaderPart36 =  ShaderPart();
-ShaderPart36.setUrl(new CString[2]{CString("../shaders/x_itemix.fs"), CString("https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itemix.fs")}, 2);
+ShaderPart36.setUrl(new CString[]{CString("../shaders/x_itemix.fs"), CString("https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itemix.fs")}, 2);
 ShaderPart36.setType(CString("FRAGMENT"));
 ComposedShader29.setParts(&ShaderPart36);
 
@@ -223,12 +223,12 @@ field42.setValue(CString("2"));
 ComposedShader37.addChild(&field42);
 
 ShaderPart& ShaderPart43 =  ShaderPart();
-ShaderPart43.setUrl(new CString[2]{CString("../shaders/x3dom.vs"), CString("https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs")}, 2);
+ShaderPart43.setUrl(new CString[]{CString("../shaders/x3dom.vs"), CString("https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs")}, 2);
 ShaderPart43.setType(CString("VERTEX"));
 ComposedShader37.setParts(&ShaderPart43);
 
 ShaderPart& ShaderPart44 =  ShaderPart();
-ShaderPart44.setUrl(new CString[2]{CString("../shaders/mix.fs"), CString("https://coderextreme.net/X3DJSONLD/src/main/shaders/mix.fs")}, 2);
+ShaderPart44.setUrl(new CString[]{CString("../shaders/mix.fs"), CString("https://coderextreme.net/X3DJSONLD/src/main/shaders/mix.fs")}, 2);
 ShaderPart44.setType(CString("FRAGMENT"));
 ComposedShader37.setParts(&ShaderPart44);
 
