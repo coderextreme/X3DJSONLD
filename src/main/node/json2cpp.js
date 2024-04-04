@@ -12,4 +12,11 @@ convertJSON([{
 	folder : "../cplusplus/net/coderextreme/",
 	extension : ".cpp",
 	codeOutput : "../",
-	}]);
+	},
+	{ 
+	serializer : './CppFunctionBodySerializer.js',
+	folder : "../cplusplus/net/coderextreme/",
+	extension : ".h",
+	codeOutput : "../"
+	}
+]);
