@@ -1,11 +1,10 @@
-//#define False false
-//#define True true
-//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
-//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
-//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
-//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/X3DLib.h"
-//int main(int argc, char ** argv) 
-//{
+#define False false
+#define True true
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/X3DLib.h"
+int main(int argc, char ** argv) {
 X3D& X3D0 =  X3D();
 X3D0.setProfile(CString("Immersive"));
 X3D0.setVersion(CString("3.3"));
@@ -139,13 +138,13 @@ field31.setType(CString("MFVec3f"));
 Script27.addChild(&field31);
 
 
-//Script27.setSourceCode(CString("ecmascript:")+
-//_T("					function set_cycle(value) {")+
-//_T("                                                old = translation;")+
-//_T("						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);")+
-//_T("                                                keyValue = new MFVec3f([old, translation]);")+
-//_T("						// Browser.println(translation);")+
-//_T("					}"));
+Script27.setSourceCode(CString("ecmascript:")+
+_T("					function set_cycle(value) {")+
+_T("                                                old = translation;")+
+_T("						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);")+
+_T("                                                keyValue = new MFVec3f([old, translation]);")+
+_T("						// Browser.println(translation);")+
+_T("					}"));
 ProtoBody12.addChild(&Script27);
 
 TimeSensor& TimeSensor32 =  TimeSensor();
@@ -256,24 +255,24 @@ IS50.addChild(&connect52);
 Script46.addChild(&IS50);
 
 
-//Script46.setSourceCode(CString("ecmascript:")+
-//_T("                function set_endA(value) {")+
-//_T("		    if (typeof spine === 'undefined') {")+
-//_T("		        spine = new MFVec3f([value, value]);")+
-//_T("		    } else {")+
-//_T("		        spine = new MFVec3f([value, spine[1]]);")+
-//_T("		    }")+
-//_T("                }")+
-//_T("                function set_endB(value) {")+
-//_T("		    if (typeof spine === 'undefined') {")+
-//_T("		        spine = new MFVec3f([value, value]);")+
-//_T("		    } else {")+
-//_T("		        spine = new MFVec3f([spine[0], value]);")+
-//_T("		    }")+
-//_T("                }")+
-//_T("                function set_spine(value) {")+
-//_T("                    spine = value;")+
-//_T("                }"));
+Script46.setSourceCode(CString("ecmascript:")+
+_T("                function set_endA(value) {")+
+_T("		    if (typeof spine === 'undefined') {")+
+_T("		        spine = new MFVec3f([value, value]);")+
+_T("		    } else {")+
+_T("		        spine = new MFVec3f([value, spine[1]]);")+
+_T("		    }")+
+_T("                }")+
+_T("                function set_endB(value) {")+
+_T("		    if (typeof spine === 'undefined') {")+
+_T("		        spine = new MFVec3f([value, value]);")+
+_T("		    } else {")+
+_T("		        spine = new MFVec3f([spine[0], value]);")+
+_T("		    }")+
+_T("                }")+
+_T("                function set_spine(value) {")+
+_T("                    spine = value;")+
+_T("                }"));
 ProtoBody41.addChild(&Script46);
 
 ROUTE& ROUTE53 =  ROUTE();
@@ -350,4 +349,4 @@ Scene8.addChild(&ROUTE64);
 
 X3D0.setScene(&Scene8);
 
-//}
+}

@@ -1,11 +1,10 @@
-//#define False false
-//#define True true
-//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
-//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
-//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
-//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/X3DLib.h"
-//int main(int argc, char ** argv) 
-//{
+#define False false
+#define True true
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/X3DLib.h"
+int main(int argc, char ** argv) {
 X3D& X3D0 =  X3D();
 X3D0.setProfile(CString("Immersive"));
 X3D0.setVersion(CString("3.3"));
@@ -140,13 +139,13 @@ field32.setType(CString("MFVec3f"));
 Script28.addChild(&field32);
 
 
-//Script28.setSourceCode(CString("ecmascript:")+
-//_T("					function set_cycle(value) {")+
-//_T("                                                old = translation;")+
-//_T("						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);")+
-//_T("                                                keyValue = new MFVec3f([old, translation]);")+
-//_T("						// Browser.println(translation);")+
-//_T("					}"));
+Script28.setSourceCode(CString("ecmascript:")+
+_T("					function set_cycle(value) {")+
+_T("                                                old = translation;")+
+_T("						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);")+
+_T("                                                keyValue = new MFVec3f([old, translation]);")+
+_T("						// Browser.println(translation);")+
+_T("					}"));
 Group13.addChild(&Script28);
 
 TimeSensor& TimeSensor33 =  TimeSensor();
@@ -260,24 +259,24 @@ IS52.addChild(&connect54);
 Script48.addChild(&IS52);
 
 
-//Script48.setSourceCode(CString("ecmascript:")+
-//_T("                function set_endA(value) {")+
-//_T("		    if (typeof spine === 'undefined') {")+
-//_T("		        spine = new MFVec3f([value, value]);")+
-//_T("		    } else {")+
-//_T("		        spine = new MFVec3f([value, spine[1]]);")+
-//_T("		    }")+
-//_T("                }")+
-//_T("                function set_endB(value) {")+
-//_T("		    if (typeof spine === 'undefined') {")+
-//_T("		        spine = new MFVec3f([value, value]);")+
-//_T("		    } else {")+
-//_T("		        spine = new MFVec3f([spine[0], value]);")+
-//_T("		    }")+
-//_T("                }")+
-//_T("                function set_spine(value) {")+
-//_T("                    spine = value;")+
-//_T("                }"));
+Script48.setSourceCode(CString("ecmascript:")+
+_T("                function set_endA(value) {")+
+_T("		    if (typeof spine === 'undefined') {")+
+_T("		        spine = new MFVec3f([value, value]);")+
+_T("		    } else {")+
+_T("		        spine = new MFVec3f([value, spine[1]]);")+
+_T("		    }")+
+_T("                }")+
+_T("                function set_endB(value) {")+
+_T("		    if (typeof spine === 'undefined') {")+
+_T("		        spine = new MFVec3f([value, value]);")+
+_T("		    } else {")+
+_T("		        spine = new MFVec3f([spine[0], value]);")+
+_T("		    }")+
+_T("                }")+
+_T("                function set_spine(value) {")+
+_T("                    spine = value;")+
+_T("                }"));
 Group43.addChild(&Script48);
 
 ROUTE& ROUTE55 =  ROUTE();
@@ -414,23 +413,23 @@ Script75.addChild(&field78);
 
 //<field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\"> <Transform USE=\"HoldsContent\"/> </field>
 
-//Script75.setSourceCode(CString("ecmascript:")+
-//_T("	function add_node(value) {")+
-//_T("                // Browser.print('hey ', counter);")+
-//_T("                counter = counter++;")+
-//_T("		Browser.appendTo(Browser.getDocument().querySelector(\"field [name=ModifiableNode]\"),")+
-//_T("			{ \"ProtoInstance\":")+
-//_T("				{ \"@name\":\"node\",")+
-//_T("				  \"@DEF\":\"node'+counter+'\",")+
-//_T("				  \"fieldValue\": [")+
-//_T("					{")+
-//_T("						 \"@name\":\"position\",")+
-//_T("						 \"@value\":[0.0,0.0,0.0]")+
-//_T("					}")+
-//_T("				  ]")+
-//_T("				}")+
-//_T("			});")+
-//_T("        }"));
+Script75.setSourceCode(CString("ecmascript:")+
+_T("	function add_node(value) {")+
+_T("                // Browser.print('hey ', counter);")+
+_T("                counter = counter++;")+
+_T("		Browser.appendTo(Browser.getDocument().querySelector(\"field [name=ModifiableNode]\"),")+
+_T("			{ \"ProtoInstance\":")+
+_T("				{ \"@name\":\"node\",")+
+_T("				  \"@DEF\":\"node'+counter+'\",")+
+_T("				  \"fieldValue\": [")+
+_T("					{")+
+_T("						 \"@name\":\"position\",")+
+_T("						 \"@value\":[0.0,0.0,0.0]")+
+_T("					}")+
+_T("				  ]")+
+_T("				}")+
+_T("			});")+
+_T("        }"));
 Scene8.addChild(&Script75);
 
 ROUTE& ROUTE79 =  ROUTE();
@@ -484,4 +483,4 @@ Scene8.addChild(&ROUTE85);
 
 X3D0.setScene(&Scene8);
 
-//}
+}

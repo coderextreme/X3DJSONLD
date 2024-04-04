@@ -1,11 +1,10 @@
-//#define False false
-//#define True true
-//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
-//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
-//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
-//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/X3DLib.h"
-//int main(int argc, char ** argv) 
-//{
+#define False false
+#define True true
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/X3DLib.h"
+int main(int argc, char ** argv) {
 X3D& X3D0 =  X3D();
 X3D0.setProfile(CString("Immersive"));
 X3D0.setVersion(CString("3.3"));
@@ -269,13 +268,13 @@ field62.setType(CString("MFString"));
 Script60.addChild(&field62);
 
 
-//Script60.setSourceCode(CString("ecmascript:")+
-//_T("function initialize() {")+
-//_T("	rightlines = new MFString(\"\");")+
-//_T("}")+
-//_T("function set_rightstring(rightstr) {")+
-//_T("	rightlines = new MFString(rightstr);")+
-//_T("}"));
+Script60.setSourceCode(CString("ecmascript:")+
+_T("function initialize() {")+
+_T("	rightlines = new MFString(\"\");")+
+_T("}")+
+_T("function set_rightstring(rightstr) {")+
+_T("	rightlines = new MFString(rightstr);")+
+_T("}"));
 ProtoBody12.addChild(&Script60);
 
 Script& Script63 =  Script();
@@ -293,13 +292,13 @@ field65.setType(CString("MFString"));
 Script63.addChild(&field65);
 
 
-//Script63.setSourceCode(CString("ecmascript:")+
-//_T("function initialize() {")+
-//_T("	uplines = new MFString(\"\");")+
-//_T("}")+
-//_T("function set_upstring(upstr) {")+
-//_T("	uplines = new MFString(upstr);")+
-//_T("}"));
+Script63.setSourceCode(CString("ecmascript:")+
+_T("function initialize() {")+
+_T("	uplines = new MFString(\"\");")+
+_T("}")+
+_T("function set_upstring(upstr) {")+
+_T("	uplines = new MFString(upstr);")+
+_T("}"));
 ProtoBody12.addChild(&Script63);
 
 Script& Script66 =  Script();
@@ -317,13 +316,13 @@ field68.setType(CString("MFString"));
 Script66.addChild(&field68);
 
 
-//Script66.setSourceCode(CString("ecmascript:")+
-//_T("function initialize() {")+
-//_T("	centerlines = new MFString(\"\");")+
-//_T("}")+
-//_T("function set_centerstring(centerstr) {")+
-//_T("	centerlines = new MFString(centerstr);")+
-//_T("}"));
+Script66.setSourceCode(CString("ecmascript:")+
+_T("function initialize() {")+
+_T("	centerlines = new MFString(\"\");")+
+_T("}")+
+_T("function set_centerstring(centerstr) {")+
+_T("	centerlines = new MFString(centerstr);")+
+_T("}"));
 ProtoBody12.addChild(&Script66);
 
 ROUTE& ROUTE69 =  ROUTE();
@@ -427,4 +426,4 @@ Scene10.addChild(&Transform84);
 
 X3D0.setScene(&Scene10);
 
-//}
+}

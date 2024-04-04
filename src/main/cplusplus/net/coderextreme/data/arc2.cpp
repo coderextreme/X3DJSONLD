@@ -1,11 +1,10 @@
-//#define False false
-//#define True true
-//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
-//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
-//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
-//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/X3DLib.h"
-//int main(int argc, char ** argv) 
-//{
+#define False false
+#define True true
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/X3DLib.h"
+int main(int argc, char ** argv) {
 X3D& X3D0 =  X3D();
 X3D0.setProfile(CString("Immersive"));
 X3D0.setVersion(CString("3.3"));
@@ -101,12 +100,12 @@ field21.setValue(CString("0 0 0 0 5 0"));
 Script17.addChild(&field21);
 
 
-//Script17.setSourceCode(CString("ecmascript:")+
-//_T("               function set_location(value) {")+
-//_T("                    old = translation;")+
-//_T("                    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);")+
-//_T("                    keyValue = new MFVec3f(old, translation);")+
-//_T("               }"));
+Script17.setSourceCode(CString("ecmascript:")+
+_T("               function set_location(value) {")+
+_T("                    old = translation;")+
+_T("                    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);")+
+_T("                    keyValue = new MFVec3f(old, translation);")+
+_T("               }"));
 Transform11.addChild(&Script17);
 
 TimeSensor& TimeSensor22 =  TimeSensor();
@@ -208,12 +207,12 @@ field39.setValue(CString("0 0 0 0 5 0"));
 Script35.addChild(&field39);
 
 
-//Script35.setSourceCode(CString("ecmascript:")+
-//_T("               function set_location(value) {")+
-//_T("                    old = translation;")+
-//_T("                    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);")+
-//_T("                    keyValue = new MFVec3f(old, translation);")+
-//_T("               }"));
+Script35.setSourceCode(CString("ecmascript:")+
+_T("               function set_location(value) {")+
+_T("                    old = translation;")+
+_T("                    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);")+
+_T("                    keyValue = new MFVec3f(old, translation);")+
+_T("               }"));
 Transform29.addChild(&Script35);
 
 TimeSensor& TimeSensor40 =  TimeSensor();
@@ -339,45 +338,45 @@ field62.setType(CString("SFVec3f"));
 Script52.addChild(&field62);
 
 
-//Script52.setSourceCode(CString("ecmascript:")+
-//_T("        function recompute(startpoint,endpoint){")+
-//_T("	    if (typeof endpoint === 'undefined') {")+
-//_T("		return;")+
-//_T("	    }")+
-//_T("            var dif = endpoint.subtract(startpoint);")+
-//_T("            var dist = dif.length()*0.5;")+
-//_T("            var dif2 = dif.multiply(0.5);")+
-//_T("            var norm = dif.normalize();")+
-//_T("            var transl = startpoint.add(dif2);")+
-//_T("	    if (typeof Quaternion !== 'undefined') {")+
-//_T("		    return {")+
-//_T("			    scale : new SFVec3f(1.0,dist,1.0),")+
-//_T("			    translation : transl,")+
-//_T("			    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)")+
-//_T("		    };")+
-//_T("	    } else {")+
-//_T("		    return {")+
-//_T("			    scale : new SFVec3f(1.0,dist,1.0),")+
-//_T("			    translation : transl,")+
-//_T("			    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)")+
-//_T("		    };")+
-//_T("	    }")+
-//_T("	}")+
-//_T("	function recompute_and_route(startpoint, endpoint) {")+
-//_T("	      var trafo = recompute(startpoint, endpoint);")+
-//_T("	      transC1.translation = trafo.translation;")+
-//_T("	      rotscaleC1.rotation = trafo.rotation;")+
-//_T("	      rotscaleC1.scale = trafo.scale;")+
-//_T("	}")+
-//_T("        function initialize(){")+
-//_T("            recompute_and_route(startnode.translation,endnode.translation);")+
-//_T("        }")+
-//_T("        function set_startpoint(val,t){")+
-//_T("            recompute_and_route(val,endnode.translation);")+
-//_T("        }")+
-//_T("        function set_endpoint(val,t){")+
-//_T("            recompute_and_route(startnode.translation,val);")+
-//_T("        }"));
+Script52.setSourceCode(CString("ecmascript:")+
+_T("        function recompute(startpoint,endpoint){")+
+_T("	    if (typeof endpoint === 'undefined') {")+
+_T("		return;")+
+_T("	    }")+
+_T("            var dif = endpoint.subtract(startpoint);")+
+_T("            var dist = dif.length()*0.5;")+
+_T("            var dif2 = dif.multiply(0.5);")+
+_T("            var norm = dif.normalize();")+
+_T("            var transl = startpoint.add(dif2);")+
+_T("	    if (typeof Quaternion !== 'undefined') {")+
+_T("		    return {")+
+_T("			    scale : new SFVec3f(1.0,dist,1.0),")+
+_T("			    translation : transl,")+
+_T("			    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)")+
+_T("		    };")+
+_T("	    } else {")+
+_T("		    return {")+
+_T("			    scale : new SFVec3f(1.0,dist,1.0),")+
+_T("			    translation : transl,")+
+_T("			    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)")+
+_T("		    };")+
+_T("	    }")+
+_T("	}")+
+_T("	function recompute_and_route(startpoint, endpoint) {")+
+_T("	      var trafo = recompute(startpoint, endpoint);")+
+_T("	      transC1.translation = trafo.translation;")+
+_T("	      rotscaleC1.rotation = trafo.rotation;")+
+_T("	      rotscaleC1.scale = trafo.scale;")+
+_T("	}")+
+_T("        function initialize(){")+
+_T("            recompute_and_route(startnode.translation,endnode.translation);")+
+_T("        }")+
+_T("        function set_startpoint(val,t){")+
+_T("            recompute_and_route(val,endnode.translation);")+
+_T("        }")+
+_T("        function set_endpoint(val,t){")+
+_T("            recompute_and_route(startnode.translation,val);")+
+_T("        }"));
 Scene7.addChild(&Script52);
 
 ROUTE& ROUTE63 =  ROUTE();
@@ -396,4 +395,4 @@ Scene7.addChild(&ROUTE64);
 
 X3D0.setScene(&Scene7);
 
-//}
+}
