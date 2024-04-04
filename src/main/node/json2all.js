@@ -64,6 +64,12 @@ convertJSON.convertJSON([
 	codeOutput : "../"
 	},
 	{ 
+	serializer : './CppFunctionBodySerializer.js',
+	folder : "../cplusplus/net/coderextreme/",
+	extension : ".h",
+	codeOutput : "../"
+	},
+	{ 
 	serializer : './JavaScriptSerializer.js',
 	folder : "../graaljs/net/coderextreme/",
 	extension : ".js",
