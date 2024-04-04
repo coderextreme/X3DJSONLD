@@ -1,11 +1,10 @@
-//#define False false
-//#define True true
-//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
-//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
-//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
-//#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/X3DLib.h"
-//int main(int argc, char ** argv) 
-//{
+#define False false
+#define True true
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/X3DLib.h"
+int main(int argc, char ** argv) {
 X3D& X3D0 =  X3D();
 X3D0.setProfile(CString("Immersive"));
 X3D0.setVersion(CString("3.3"));
@@ -96,36 +95,36 @@ field19.setType(CString("SFTime"));
 Script14.addChild(&field19);
 
 
-//Script14.setSourceCode(CString("ecmascript:")+
-//_T("			function newBubble() {")+
-//_T("			    translation = new SFVec3f(0, 0, 0);")+
-//_T("			    velocity = new SFVec3f(")+
-//_T("			    	Math.random() - 0.5,")+
-//_T("				Math.random() - 0.5,")+
-//_T("				Math.random() - 0.5);")+
-//_T("			}")+
-//_T("			function set_fraction() {")+
-//_T("			    translation = new SFVec3f(")+
-//_T("			    	translation.x + velocity.x,")+
-//_T("				translation.y + velocity.y,")+
-//_T("				translation.z + velocity.z);")+
-//_T("				if (Math.abs(translation.x) > 10) {")+
-//_T("					newBubble();")+
-//_T("				} else if (Math.abs(translation.y) > 10) {")+
-//_T("					newBubble();")+
-//_T("				} else if (Math.abs(translation.z) > 10) {")+
-//_T("					newBubble();")+
-//_T("				} else {")+
-//_T("					velocity = new SFVec3f(")+
-//_T("						velocity.x + Math.random() * 0.2 - 0.1,")+
-//_T("						velocity.y + Math.random() * 0.2 - 0.1,")+
-//_T("						velocity.z + Math.random() * 0.2 - 0.1")+
-//_T("					);")+
-//_T("				}")+
-//_T("			}")+
-//_T("			function initialize() {")+
-//_T("			     newBubble();")+
-//_T("			}"));
+Script14.setSourceCode(CString("ecmascript:")+
+_T("			function newBubble() {")+
+_T("			    translation = new SFVec3f(0, 0, 0);")+
+_T("			    velocity = new SFVec3f(")+
+_T("			    	Math.random() - 0.5,")+
+_T("				Math.random() - 0.5,")+
+_T("				Math.random() - 0.5);")+
+_T("			}")+
+_T("			function set_fraction() {")+
+_T("			    translation = new SFVec3f(")+
+_T("			    	translation.x + velocity.x,")+
+_T("				translation.y + velocity.y,")+
+_T("				translation.z + velocity.z);")+
+_T("				if (Math.abs(translation.x) > 10) {")+
+_T("					newBubble();")+
+_T("				} else if (Math.abs(translation.y) > 10) {")+
+_T("					newBubble();")+
+_T("				} else if (Math.abs(translation.z) > 10) {")+
+_T("					newBubble();")+
+_T("				} else {")+
+_T("					velocity = new SFVec3f(")+
+_T("						velocity.x + Math.random() * 0.2 - 0.1,")+
+_T("						velocity.y + Math.random() * 0.2 - 0.1,")+
+_T("						velocity.z + Math.random() * 0.2 - 0.1")+
+_T("					);")+
+_T("				}")+
+_T("			}")+
+_T("			function initialize() {")+
+_T("			     newBubble();")+
+_T("			}"));
 Scene7.addChild(&Script14);
 
 TimeSensor& TimeSensor20 =  TimeSensor();
@@ -150,4 +149,4 @@ Scene7.addChild(&ROUTE22);
 
 X3D0.setScene(&Scene7);
 
-//}
+}
