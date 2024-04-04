@@ -163,38 +163,38 @@ Scene& Scene31 =  Scene();
 //LayerSet with two layers, navigation happens in layer 1
 LayerSet& LayerSet32 =  LayerSet();
 LayerSet32.setActiveLayer(1);
-LayerSet32.setOrder(new int32_t[2]{1,2}, 2);
+LayerSet32.setOrder(new int32_t[]{1,2}, 2);
 //the first Layer contains the main scenery - \"The Review of the Flower (DIS Multiuser)\"
 //the second layer contains the sliders that are moved with the user's display like a HUD (heads up display)
 Layer& Layer33 =  Layer();
 //basic nodes, which might be present in any scene
 NavigationInfo& NavigationInfo34 =  NavigationInfo();
-NavigationInfo34.setType(new CString[1]{CString("EXAMINE")}, 1);
-NavigationInfo34.setAvatarSize(new float[3]{0.25,1.75,0.75}, 3);
+NavigationInfo34.setType(new CString[]{CString("EXAMINE")}, 1);
+NavigationInfo34.setAvatarSize(new float[]{0.25,1.75,0.75}, 3);
 Layer33.addChild(&NavigationInfo34);
 
 DirectionalLight& DirectionalLight35 =  DirectionalLight();
 DirectionalLight35.setAmbientIntensity(0.2);
-DirectionalLight35.setDirection(new float[3]{0,-1,0});
+DirectionalLight35.setDirection(new float[]{0,-1,0});
 Layer33.addChild(&DirectionalLight35);
 
 DirectionalLight& DirectionalLight36 =  DirectionalLight();
 DirectionalLight36.setAmbientIntensity(0.2);
-DirectionalLight36.setDirection(new float[3]{-1,-0.1,-1});
+DirectionalLight36.setDirection(new float[]{-1,-0.1,-1});
 Layer33.addChild(&DirectionalLight36);
 
 Viewpoint& Viewpoint37 =  Viewpoint();
 Viewpoint37.setDescription(CString("My Overview"));
 Viewpoint37.setFieldOfView(1.570796);
-Viewpoint37.setPosition(new float[3]{0,1.75,60});
+Viewpoint37.setPosition(new float[]{0,1.75,60});
 Layer33.addChild(&Viewpoint37);
 
 //this group contains the red/green/blue 3D crosshair
 Group& Group38 =  Group();
 //Arrow X
 Transform& Transform39 =  Transform();
-Transform39.setTranslation(new float[3]{25,0,0});
-Transform39.setRotation(new float[4]{0,0,-1,1.57});
+Transform39.setTranslation(new float[]{25,0,0});
+Transform39.setRotation(new float[]{0,0,-1,1.57});
 Shape& Shape40 =  Shape();
 Cylinder& Cylinder41 =  Cylinder();
 Cylinder41.setDEF(CString("Shaft"));
@@ -205,8 +205,8 @@ Shape40.setGeometry(&Cylinder41);
 Appearance& Appearance42 =  Appearance();
 Material& Material43 =  Material();
 Material43.setDEF(CString("RED"));
-Material43.setDiffuseColor(new float[3]{1,0,0});
-Material43.setEmissiveColor(new float[3]{1,0,0});
+Material43.setDiffuseColor(new float[]{1,0,0});
+Material43.setEmissiveColor(new float[]{1,0,0});
 Appearance42.addChild(&Material43);
 
 Shape40.addChild(&Appearance42);
@@ -216,8 +216,8 @@ Transform39.addChild(&Shape40);
 Group38.addChild(&Transform39);
 
 Transform& Transform44 =  Transform();
-Transform44.setTranslation(new float[3]{50,0,0});
-Transform44.setRotation(new float[4]{0,0,-1,1.57});
+Transform44.setTranslation(new float[]{50,0,0});
+Transform44.setRotation(new float[]{0,0,-1,1.57});
 Shape& Shape45 =  Shape();
 Cone& Cone46 =  Cone();
 Cone46.setDEF(CString("Tip"));
@@ -238,7 +238,7 @@ Group38.addChild(&Transform44);
 
 //Arrow Y
 Transform& Transform49 =  Transform();
-Transform49.setTranslation(new float[3]{0,25,0});
+Transform49.setTranslation(new float[]{0,25,0});
 Shape& Shape50 =  Shape();
 Cylinder& Cylinder51 =  Cylinder();
 Cylinder51.setUSE(CString("Shaft"));
@@ -247,8 +247,8 @@ Shape50.setGeometry(&Cylinder51);
 Appearance& Appearance52 =  Appearance();
 Material& Material53 =  Material();
 Material53.setDEF(CString("GREEN"));
-Material53.setDiffuseColor(new float[3]{0,1,0});
-Material53.setEmissiveColor(new float[3]{0,1,0});
+Material53.setDiffuseColor(new float[]{0,1,0});
+Material53.setEmissiveColor(new float[]{0,1,0});
 Appearance52.addChild(&Material53);
 
 Shape50.addChild(&Appearance52);
@@ -258,7 +258,7 @@ Transform49.addChild(&Shape50);
 Group38.addChild(&Transform49);
 
 Transform& Transform54 =  Transform();
-Transform54.setTranslation(new float[3]{0,50,0});
+Transform54.setTranslation(new float[]{0,50,0});
 Shape& Shape55 =  Shape();
 Cone& Cone56 =  Cone();
 Cone56.setUSE(CString("Tip"));
@@ -277,8 +277,8 @@ Group38.addChild(&Transform54);
 
 //Arrow Z
 Transform& Transform59 =  Transform();
-Transform59.setTranslation(new float[3]{0,0,25});
-Transform59.setRotation(new float[4]{1,0,0,1.57});
+Transform59.setTranslation(new float[]{0,0,25});
+Transform59.setRotation(new float[]{1,0,0,1.57});
 Shape& Shape60 =  Shape();
 Cylinder& Cylinder61 =  Cylinder();
 Cylinder61.setUSE(CString("Shaft"));
@@ -287,8 +287,8 @@ Shape60.setGeometry(&Cylinder61);
 Appearance& Appearance62 =  Appearance();
 Material& Material63 =  Material();
 Material63.setDEF(CString("BLUE"));
-Material63.setDiffuseColor(new float[3]{0,0,1});
-Material63.setEmissiveColor(new float[3]{0,0,1});
+Material63.setDiffuseColor(new float[]{0,0,1});
+Material63.setEmissiveColor(new float[]{0,0,1});
 Appearance62.addChild(&Material63);
 
 Shape60.addChild(&Appearance62);
@@ -298,8 +298,8 @@ Transform59.addChild(&Shape60);
 Group38.addChild(&Transform59);
 
 Transform& Transform64 =  Transform();
-Transform64.setTranslation(new float[3]{0,0,50});
-Transform64.setRotation(new float[4]{1,0,0,1.57});
+Transform64.setTranslation(new float[]{0,0,50});
+Transform64.setRotation(new float[]{1,0,0,1.57});
 Shape& Shape65 =  Shape();
 Cone& Cone66 =  Cone();
 Cone66.setUSE(CString("Tip"));
@@ -324,12 +324,12 @@ Transform69.setDEF(CString("FlowerTransform"));
 //<Inline DEF=\"Flower\" url='\"bumpyx_ite.x3d\"' />
 //Images courtesy of Paul Debevec's Light Probe Image Gallery
 Background& Background70 =  Background();
-Background70.setBackUrl(new CString[2]{CString("../resources/images/all_probes/stpeters_cross/stpeters_back.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png")}, 2);
-Background70.setBottomUrl(new CString[2]{CString("../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png")}, 2);
-Background70.setFrontUrl(new CString[2]{CString("../resources/images/all_probes/stpeters_cross/stpeters_front.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png")}, 2);
-Background70.setLeftUrl(new CString[2]{CString("../resources/images/all_probes/stpeters_cross/stpeters_left.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png")}, 2);
-Background70.setRightUrl(new CString[2]{CString("../resources/images/all_probes/stpeters_cross/stpeters_right.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png")}, 2);
-Background70.setTopUrl(new CString[2]{CString("../resources/images/all_probes/stpeters_cross/stpeters_top.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png")}, 2);
+Background70.setBackUrl(new CString[]{CString("../resources/images/all_probes/stpeters_cross/stpeters_back.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png")}, 2);
+Background70.setBottomUrl(new CString[]{CString("../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png")}, 2);
+Background70.setFrontUrl(new CString[]{CString("../resources/images/all_probes/stpeters_cross/stpeters_front.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png")}, 2);
+Background70.setLeftUrl(new CString[]{CString("../resources/images/all_probes/stpeters_cross/stpeters_left.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png")}, 2);
+Background70.setRightUrl(new CString[]{CString("../resources/images/all_probes/stpeters_cross/stpeters_right.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png")}, 2);
+Background70.setTopUrl(new CString[]{CString("../resources/images/all_probes/stpeters_cross/stpeters_top.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png")}, 2);
 Transform69.addChild(&Background70);
 
 Transform& Transform71 =  Transform();
@@ -340,34 +340,34 @@ Shape72.setGeometry(&Sphere73);
 
 Appearance& Appearance74 =  Appearance();
 Material& Material75 =  Material();
-Material75.setDiffuseColor(new float[3]{0.7,0.7,0.7});
-Material75.setSpecularColor(new float[3]{0.5,0.5,0.5});
+Material75.setDiffuseColor(new float[]{0.7,0.7,0.7});
+Material75.setSpecularColor(new float[]{0.5,0.5,0.5});
 Appearance74.addChild(&Material75);
 
 ComposedCubeMapTexture& ComposedCubeMapTexture76 =  ComposedCubeMapTexture();
 ComposedCubeMapTexture76.setDEF(CString("texture"));
 ImageTexture& ImageTexture77 =  ImageTexture();
-ImageTexture77.setUrl(new CString[2]{CString("../resources/images/all_probes/stpeters_cross/stpeters_back.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png")}, 2);
+ImageTexture77.setUrl(new CString[]{CString("../resources/images/all_probes/stpeters_cross/stpeters_back.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png")}, 2);
 ComposedCubeMapTexture76.setBack(ImageTexture77);
 
 ImageTexture& ImageTexture78 =  ImageTexture();
-ImageTexture78.setUrl(new CString[2]{CString("../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png")}, 2);
+ImageTexture78.setUrl(new CString[]{CString("../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png")}, 2);
 ComposedCubeMapTexture76.setBottom(ImageTexture78);
 
 ImageTexture& ImageTexture79 =  ImageTexture();
-ImageTexture79.setUrl(new CString[2]{CString("../resources/images/all_probes/stpeters_cross/stpeters_front.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png")}, 2);
+ImageTexture79.setUrl(new CString[]{CString("../resources/images/all_probes/stpeters_cross/stpeters_front.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png")}, 2);
 ComposedCubeMapTexture76.setFront(ImageTexture79);
 
 ImageTexture& ImageTexture80 =  ImageTexture();
-ImageTexture80.setUrl(new CString[2]{CString("../resources/images/all_probes/stpeters_cross/stpeters_left.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png")}, 2);
+ImageTexture80.setUrl(new CString[]{CString("../resources/images/all_probes/stpeters_cross/stpeters_left.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png")}, 2);
 ComposedCubeMapTexture76.setLeft(ImageTexture80);
 
 ImageTexture& ImageTexture81 =  ImageTexture();
-ImageTexture81.setUrl(new CString[2]{CString("../resources/images/all_probes/stpeters_cross/stpeters_right.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png")}, 2);
+ImageTexture81.setUrl(new CString[]{CString("../resources/images/all_probes/stpeters_cross/stpeters_right.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png")}, 2);
 ComposedCubeMapTexture76.setRight(ImageTexture81);
 
 ImageTexture& ImageTexture82 =  ImageTexture();
-ImageTexture82.setUrl(new CString[2]{CString("../resources/images/all_probes/stpeters_cross/stpeters_top.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png")}, 2);
+ImageTexture82.setUrl(new CString[]{CString("../resources/images/all_probes/stpeters_cross/stpeters_top.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png")}, 2);
 ComposedCubeMapTexture76.setTop(ImageTexture82);
 
 Appearance74.addChild(&ComposedCubeMapTexture76);
@@ -456,12 +456,12 @@ field95.setValue(CString("0"));
 ComposedShader83.addChild(&field95);
 
 ShaderPart& ShaderPart96 =  ShaderPart();
-ShaderPart96.setUrl(new CString[2]{CString("../shaders/x_ite_flowers_chromatic.vs"), CString("https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs")}, 2);
+ShaderPart96.setUrl(new CString[]{CString("../shaders/x_ite_flowers_chromatic.vs"), CString("https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs")}, 2);
 ShaderPart96.setType(CString("VERTEX"));
 ComposedShader83.setParts(&ShaderPart96);
 
 ShaderPart& ShaderPart97 =  ShaderPart();
-ShaderPart97.setUrl(new CString[2]{CString("../shaders/x_ite.fs"), CString("https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs")}, 2);
+ShaderPart97.setUrl(new CString[]{CString("../shaders/x_ite.fs"), CString("https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs")}, 2);
 ShaderPart97.setType(CString("FRAGMENT"));
 ComposedShader83.setParts(&ShaderPart97);
 
@@ -483,13 +483,13 @@ DISEntityManager98.setNetworkMode("networkReader");
 DISEntityTypeMapping& DISEntityTypeMapping99 =  DISEntityTypeMapping();
 DISEntityTypeMapping99.setCategory(77);
 DISEntityTypeMapping99.setSpecific(1);
-DISEntityTypeMapping99.setUrl(new CString[1]{CString("Leif8Final.x3d")}, 1);
+DISEntityTypeMapping99.setUrl(new CString[]{CString("Leif8Final.x3d")}, 1);
 DISEntityManager98.setMapping(&DISEntityTypeMapping99);
 
 DISEntityTypeMapping& DISEntityTypeMapping100 =  DISEntityTypeMapping();
 DISEntityTypeMapping100.setCategory(77);
 DISEntityTypeMapping100.setSpecific(2);
-DISEntityTypeMapping100.setUrl(new CString[1]{CString("Lily8Final.x3d")}, 1);
+DISEntityTypeMapping100.setUrl(new CString[]{CString("Lily8Final.x3d")}, 1);
 DISEntityManager98.setMapping(&DISEntityTypeMapping100);
 
 Layer33.addChild(&DISEntityManager98);
@@ -524,18 +524,18 @@ LayoutLayer& LayoutLayer105 =  LayoutLayer();
 //the content (children) of the LayoutLayer
 //first, the slider for scaling the model
 Transform& Transform106 =  Transform();
-Transform106.setTranslation(new float[3]{0,0,-3});
+Transform106.setTranslation(new float[]{0,0,-3});
 Shape& Shape107 =  Shape();
 Appearance& Appearance108 =  Appearance();
 Material& Material109 =  Material();
-Material109.setDiffuseColor(new float[3]{0,0,0});
+Material109.setDiffuseColor(new float[]{0,0,0});
 Material109.setTransparency(0.7);
 Appearance108.addChild(&Material109);
 
 Shape107.addChild(&Appearance108);
 
 Box& Box110 =  Box();
-Box110.setSize(new float[3]{100,100,0.02});
+Box110.setSize(new float[]{100,100,0.02});
 Shape107.setGeometry(&Box110);
 
 Transform106.addChild(&Shape107);
@@ -545,9 +545,9 @@ LayoutLayer105.addChild(&Transform106);
 //the plane sensors
 Transform& Transform111 =  Transform();
 Transform111.setDEF(CString("aSlider"));
-Transform111.setTranslation(new float[3]{0,0.7,0});
+Transform111.setTranslation(new float[]{0,0.7,0});
 Transform& Transform112 =  Transform();
-Transform112.setRotation(new float[4]{0,0,1,1.57});
+Transform112.setRotation(new float[]{0,0,1,1.57});
 Shape& Shape113 =  Shape();
 Appearance& Appearance114 =  Appearance();
 Material& Material115 =  Material();
@@ -566,15 +566,15 @@ Transform111.addChild(&Transform112);
 
 Transform& Transform117 =  Transform();
 Transform117.setDEF(CString("aTransform"));
-Transform117.setTranslation(new float[3]{0,0,0.1});
+Transform117.setTranslation(new float[]{0,0,0.1});
 PlaneSensor& PlaneSensor118 =  PlaneSensor();
 PlaneSensor118.setDEF(CString("aSensor"));
-PlaneSensor118.setMinPosition(new float[2]{-20,0});
-PlaneSensor118.setMaxPosition(new float[2]{20,0});
+PlaneSensor118.setMinPosition(new float[]{-20,0});
+PlaneSensor118.setMaxPosition(new float[]{20,0});
 Transform117.addChild(&PlaneSensor118);
 
 Transform& Transform119 =  Transform();
-Transform119.setTranslation(new float[3]{0,0,0});
+Transform119.setTranslation(new float[]{0,0,0});
 TouchSensor& TouchSensor120 =  TouchSensor();
 TouchSensor120.setDEF(CString("aTS"));
 Transform119.addChild(&TouchSensor120);
@@ -586,7 +586,7 @@ Shape121.setGeometry(&Sphere122);
 
 Appearance& Appearance123 =  Appearance();
 Material& Material124 =  Material();
-Material124.setDiffuseColor(new float[3]{1,0,0});
+Material124.setDiffuseColor(new float[]{1,0,0});
 Appearance123.addChild(&Material124);
 
 Shape121.addChild(&Appearance123);
@@ -612,7 +612,7 @@ Transform117.addChild(&Shape125);
 Transform111.addChild(&Transform117);
 
 Transform& Transform129 =  Transform();
-Transform129.setRotation(new float[4]{0,0,1,1.57});
+Transform129.setRotation(new float[]{0,0,1,1.57});
 Shape& Shape130 =  Shape();
 Appearance& Appearance131 =  Appearance();
 Material& Material132 =  Material();
@@ -633,9 +633,9 @@ LayoutLayer105.addChild(&Transform111);
 
 Transform& Transform134 =  Transform();
 Transform134.setDEF(CString("bSlider"));
-Transform134.setTranslation(new float[3]{0,0.4,0});
+Transform134.setTranslation(new float[]{0,0.4,0});
 Transform& Transform135 =  Transform();
-Transform135.setRotation(new float[4]{0,0,1,1.57});
+Transform135.setRotation(new float[]{0,0,1,1.57});
 Shape& Shape136 =  Shape();
 Appearance& Appearance137 =  Appearance();
 Material& Material138 =  Material();
@@ -654,15 +654,15 @@ Transform134.addChild(&Transform135);
 
 Transform& Transform140 =  Transform();
 Transform140.setDEF(CString("bTransform"));
-Transform140.setTranslation(new float[3]{0,0,0.1});
+Transform140.setTranslation(new float[]{0,0,0.1});
 PlaneSensor& PlaneSensor141 =  PlaneSensor();
 PlaneSensor141.setDEF(CString("bSensor"));
-PlaneSensor141.setMinPosition(new float[2]{-20,0});
-PlaneSensor141.setMaxPosition(new float[2]{20,0});
+PlaneSensor141.setMinPosition(new float[]{-20,0});
+PlaneSensor141.setMaxPosition(new float[]{20,0});
 Transform140.addChild(&PlaneSensor141);
 
 Transform& Transform142 =  Transform();
-Transform142.setTranslation(new float[3]{0,0,0});
+Transform142.setTranslation(new float[]{0,0,0});
 TouchSensor& TouchSensor143 =  TouchSensor();
 TouchSensor143.setDEF(CString("bTS"));
 Transform142.addChild(&TouchSensor143);
@@ -674,7 +674,7 @@ Shape144.setGeometry(&Sphere145);
 
 Appearance& Appearance146 =  Appearance();
 Material& Material147 =  Material();
-Material147.setDiffuseColor(new float[3]{1,0,0});
+Material147.setDiffuseColor(new float[]{1,0,0});
 Appearance146.addChild(&Material147);
 
 Shape144.addChild(&Appearance146);
@@ -703,9 +703,9 @@ LayoutLayer105.addChild(&Transform134);
 
 Transform& Transform152 =  Transform();
 Transform152.setDEF(CString("cSlider"));
-Transform152.setTranslation(new float[3]{0,0.1,0});
+Transform152.setTranslation(new float[]{0,0.1,0});
 Transform& Transform153 =  Transform();
-Transform153.setRotation(new float[4]{0,0,1,1.57});
+Transform153.setRotation(new float[]{0,0,1,1.57});
 Shape& Shape154 =  Shape();
 Appearance& Appearance155 =  Appearance();
 Material& Material156 =  Material();
@@ -724,15 +724,15 @@ Transform152.addChild(&Transform153);
 
 Transform& Transform158 =  Transform();
 Transform158.setDEF(CString("cTransform"));
-Transform158.setTranslation(new float[3]{0,0,0.1});
+Transform158.setTranslation(new float[]{0,0,0.1});
 PlaneSensor& PlaneSensor159 =  PlaneSensor();
 PlaneSensor159.setDEF(CString("cSensor"));
-PlaneSensor159.setMinPosition(new float[2]{-20,0});
-PlaneSensor159.setMaxPosition(new float[2]{20,0});
+PlaneSensor159.setMinPosition(new float[]{-20,0});
+PlaneSensor159.setMaxPosition(new float[]{20,0});
 Transform158.addChild(&PlaneSensor159);
 
 Transform& Transform160 =  Transform();
-Transform160.setTranslation(new float[3]{0,0,0});
+Transform160.setTranslation(new float[]{0,0,0});
 TouchSensor& TouchSensor161 =  TouchSensor();
 TouchSensor161.setDEF(CString("cTS"));
 Transform160.addChild(&TouchSensor161);
@@ -744,7 +744,7 @@ Shape162.setGeometry(&Sphere163);
 
 Appearance& Appearance164 =  Appearance();
 Material& Material165 =  Material();
-Material165.setDiffuseColor(new float[3]{1,0,0});
+Material165.setDiffuseColor(new float[]{1,0,0});
 Appearance164.addChild(&Material165);
 
 Shape162.addChild(&Appearance164);
@@ -773,9 +773,9 @@ LayoutLayer105.addChild(&Transform152);
 
 Transform& Transform170 =  Transform();
 Transform170.setDEF(CString("dSlider"));
-Transform170.setTranslation(new float[3]{0,-0.2,0});
+Transform170.setTranslation(new float[]{0,-0.2,0});
 Transform& Transform171 =  Transform();
-Transform171.setRotation(new float[4]{0,0,1,1.57});
+Transform171.setRotation(new float[]{0,0,1,1.57});
 Shape& Shape172 =  Shape();
 Appearance& Appearance173 =  Appearance();
 Material& Material174 =  Material();
@@ -794,15 +794,15 @@ Transform170.addChild(&Transform171);
 
 Transform& Transform176 =  Transform();
 Transform176.setDEF(CString("dTransform"));
-Transform176.setTranslation(new float[3]{0,0,0.1});
+Transform176.setTranslation(new float[]{0,0,0.1});
 PlaneSensor& PlaneSensor177 =  PlaneSensor();
 PlaneSensor177.setDEF(CString("dSensor"));
-PlaneSensor177.setMinPosition(new float[2]{-20,0});
-PlaneSensor177.setMaxPosition(new float[2]{20,0});
+PlaneSensor177.setMinPosition(new float[]{-20,0});
+PlaneSensor177.setMaxPosition(new float[]{20,0});
 Transform176.addChild(&PlaneSensor177);
 
 Transform& Transform178 =  Transform();
-Transform178.setTranslation(new float[3]{0,0,0});
+Transform178.setTranslation(new float[]{0,0,0});
 TouchSensor& TouchSensor179 =  TouchSensor();
 TouchSensor179.setDEF(CString("dTS"));
 Transform178.addChild(&TouchSensor179);
@@ -814,7 +814,7 @@ Shape180.setGeometry(&Sphere181);
 
 Appearance& Appearance182 =  Appearance();
 Material& Material183 =  Material();
-Material183.setDiffuseColor(new float[3]{1,0,0});
+Material183.setDiffuseColor(new float[]{1,0,0});
 Appearance182.addChild(&Material183);
 
 Shape180.addChild(&Appearance182);
@@ -843,9 +843,9 @@ LayoutLayer105.addChild(&Transform170);
 
 Transform& Transform188 =  Transform();
 Transform188.setDEF(CString("pdeltaSlider"));
-Transform188.setTranslation(new float[3]{0,-0.5,0});
+Transform188.setTranslation(new float[]{0,-0.5,0});
 Transform& Transform189 =  Transform();
-Transform189.setRotation(new float[4]{0,0,1,1.57});
+Transform189.setRotation(new float[]{0,0,1,1.57});
 Shape& Shape190 =  Shape();
 Appearance& Appearance191 =  Appearance();
 Material& Material192 =  Material();
@@ -864,15 +864,15 @@ Transform188.addChild(&Transform189);
 
 Transform& Transform194 =  Transform();
 Transform194.setDEF(CString("pdeltaTransform"));
-Transform194.setTranslation(new float[3]{0,0,0.1});
+Transform194.setTranslation(new float[]{0,0,0.1});
 PlaneSensor& PlaneSensor195 =  PlaneSensor();
 PlaneSensor195.setDEF(CString("pdeltaSensor"));
-PlaneSensor195.setMinPosition(new float[2]{-20,0});
-PlaneSensor195.setMaxPosition(new float[2]{20,0});
+PlaneSensor195.setMinPosition(new float[]{-20,0});
+PlaneSensor195.setMaxPosition(new float[]{20,0});
 Transform194.addChild(&PlaneSensor195);
 
 Transform& Transform196 =  Transform();
-Transform196.setTranslation(new float[3]{0,0,0});
+Transform196.setTranslation(new float[]{0,0,0});
 TouchSensor& TouchSensor197 =  TouchSensor();
 TouchSensor197.setDEF(CString("pdeltaTS"));
 Transform196.addChild(&TouchSensor197);
@@ -884,7 +884,7 @@ Shape198.setGeometry(&Sphere199);
 
 Appearance& Appearance200 =  Appearance();
 Material& Material201 =  Material();
-Material201.setDiffuseColor(new float[3]{1,0,0});
+Material201.setDiffuseColor(new float[]{1,0,0});
 Appearance200.addChild(&Material201);
 
 Shape198.addChild(&Appearance200);
@@ -913,9 +913,9 @@ LayoutLayer105.addChild(&Transform188);
 
 Transform& Transform206 =  Transform();
 Transform206.setDEF(CString("tdeltaSlider"));
-Transform206.setTranslation(new float[3]{0,-0.8,0});
+Transform206.setTranslation(new float[]{0,-0.8,0});
 Transform& Transform207 =  Transform();
-Transform207.setRotation(new float[4]{0,0,1,1.57});
+Transform207.setRotation(new float[]{0,0,1,1.57});
 Shape& Shape208 =  Shape();
 Appearance& Appearance209 =  Appearance();
 Material& Material210 =  Material();
@@ -934,15 +934,15 @@ Transform206.addChild(&Transform207);
 
 Transform& Transform212 =  Transform();
 Transform212.setDEF(CString("tdeltaTransform"));
-Transform212.setTranslation(new float[3]{0,0,0.1});
+Transform212.setTranslation(new float[]{0,0,0.1});
 PlaneSensor& PlaneSensor213 =  PlaneSensor();
 PlaneSensor213.setDEF(CString("tdeltaSensor"));
-PlaneSensor213.setMinPosition(new float[2]{-20,0});
-PlaneSensor213.setMaxPosition(new float[2]{20,0});
+PlaneSensor213.setMinPosition(new float[]{-20,0});
+PlaneSensor213.setMaxPosition(new float[]{20,0});
 Transform212.addChild(&PlaneSensor213);
 
 Transform& Transform214 =  Transform();
-Transform214.setTranslation(new float[3]{0,0,0});
+Transform214.setTranslation(new float[]{0,0,0});
 TouchSensor& TouchSensor215 =  TouchSensor();
 TouchSensor215.setDEF(CString("tdeltaTS"));
 Transform214.addChild(&TouchSensor215);
@@ -954,7 +954,7 @@ Shape216.setGeometry(&Sphere217);
 
 Appearance& Appearance218 =  Appearance();
 Material& Material219 =  Material();
-Material219.setDiffuseColor(new float[3]{1,0,0});
+Material219.setDiffuseColor(new float[]{1,0,0});
 Appearance218.addChild(&Material219);
 
 Shape216.addChild(&Appearance218);
@@ -1240,16 +1240,16 @@ ROUTE259.setToNode(CString("x_iteShader"));
 LayoutLayer105.addChild(&ROUTE259);
 
 Layout& Layout260 =  Layout();
-Layout260.setAlign(new CString[2]{CString("RIGHT"), CString("BOTTOM")}, 2);
-Layout260.setOffset(new float[2]{0,0.2}, 2);
-Layout260.setOffsetUnits(new CString[2]{CString("WORLD"), CString("WORLD")}, 2);
-Layout260.setScaleMode(new CString[2]{CString("NONE"), CString("NONE")}, 2);
-Layout260.setSize(new float[2]{0.4,0.6}, 2);
-Layout260.setSizeUnits(new CString[2]{CString("WORLD"), CString("WORLD")}, 2);
+Layout260.setAlign(new CString[]{CString("RIGHT"), CString("BOTTOM")}, 2);
+Layout260.setOffset(new float[]{0,0.2}, 2);
+Layout260.setOffsetUnits(new CString[]{CString("WORLD"), CString("WORLD")}, 2);
+Layout260.setScaleMode(new CString[]{CString("NONE"), CString("NONE")}, 2);
+Layout260.setSize(new float[]{0.4,0.6}, 2);
+Layout260.setSizeUnits(new CString[]{CString("WORLD"), CString("WORLD")}, 2);
 LayoutLayer105.setLayout(Layout260);
 
 Viewport& Viewport261 =  Viewport();
-Viewport261.setClipBoundary(new float[4]{0,1,0,1}, 4);
+Viewport261.setClipBoundary(new float[]{0,1,0,1}, 4);
 LayoutLayer105.setViewport(Viewport261);
 
 LayerSet32.addChild(&LayoutLayer105);

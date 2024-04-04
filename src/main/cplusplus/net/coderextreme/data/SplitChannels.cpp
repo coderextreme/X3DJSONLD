@@ -77,38 +77,38 @@ WorldInfo15.setTitle(CString("SplitChannels.x3d"));
 Scene14.addChild(&WorldInfo15);
 
 NavigationInfo& NavigationInfo16 =  NavigationInfo();
-NavigationInfo16.setType(new CString[1]{CString("NONE")}, 1);
+NavigationInfo16.setType(new CString[]{CString("NONE")}, 1);
 Scene14.addChild(&NavigationInfo16);
 
 Background& Background17 =  Background();
-Background17.setSkyColor(new float[3]{0.2,0.2,0.21}, 3);
+Background17.setSkyColor(new float[]{0.2,0.2,0.21}, 3);
 Scene14.addChild(&Background17);
 
 Viewpoint& Viewpoint18 =  Viewpoint();
-Viewpoint18.setOrientation(new float[4]{1,0,0,-0.5});
-Viewpoint18.setPosition(new float[3]{0,500,600});
+Viewpoint18.setOrientation(new float[]{1,0,0,-0.5});
+Viewpoint18.setPosition(new float[]{0,500,600});
 Viewpoint18.setRetainUserOffsets(True);
 Scene14.addChild(&Viewpoint18);
 
 Transform& Transform19 =  Transform();
 Transform19.setDEF(CString("PowerR"));
-Transform19.setTranslation(new float[3]{100,400,400});
+Transform19.setTranslation(new float[]{100,400,400});
 Transform& Transform20 =  Transform();
-Transform20.setRotation(new float[4]{1,0,0,-0.5});
-Transform20.setTranslation(new float[3]{0,40,0});
+Transform20.setRotation(new float[]{1,0,0,-0.5});
+Transform20.setTranslation(new float[]{0,40,0});
 Shape& Shape21 =  Shape();
 Appearance& Appearance22 =  Appearance();
 Appearance22.setDEF(CString("audio_emit"));
 Material& Material23 =  Material();
-Material23.setDiffuseColor(new float[3]{0,1,0});
-Material23.setEmissiveColor(new float[3]{0.8,0.8,0.8});
-Material23.setSpecularColor(new float[3]{0.01,0.01,0.01});
+Material23.setDiffuseColor(new float[]{0,1,0});
+Material23.setEmissiveColor(new float[]{0.8,0.8,0.8});
+Material23.setSpecularColor(new float[]{0.01,0.01,0.01});
 Appearance22.addChild(&Material23);
 
 Shape21.addChild(&Appearance22);
 
 Box& Box24 =  Box();
-Box24.setSize(new float[3]{10,80,0.01});
+Box24.setSize(new float[]{10,80,0.01});
 Shape21.setGeometry(&Box24);
 
 Transform20.addChild(&Shape21);
@@ -116,25 +116,25 @@ Transform20.addChild(&Shape21);
 Transform19.addChild(&Transform20);
 
 Transform& Transform25 =  Transform();
-Transform25.setRotation(new float[4]{1,0,0,-0.5});
-Transform25.setTranslation(new float[3]{-2.7,37,0});
+Transform25.setRotation(new float[]{1,0,0,-0.5});
+Transform25.setTranslation(new float[]{-2.7,37,0});
 Shape& Shape26 =  Shape();
 Appearance& Appearance27 =  Appearance();
 Appearance27.setDEF(CString("audio_emit2"));
 Material& Material28 =  Material();
-Material28.setDiffuseColor(new float[3]{0,1,0});
-Material28.setEmissiveColor(new float[3]{0.8,0.8,0.8});
-Material28.setSpecularColor(new float[3]{0.01,0.01,0.01});
+Material28.setDiffuseColor(new float[]{0,1,0});
+Material28.setEmissiveColor(new float[]{0.8,0.8,0.8});
+Material28.setSpecularColor(new float[]{0.01,0.01,0.01});
 Appearance27.addChild(&Material28);
 
 ImageTexture& ImageTexture29 =  ImageTexture();
-ImageTexture29.setUrl(new CString[2]{CString("images/line.png"), CString("https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/images/line.png")}, 2);
+ImageTexture29.setUrl(new CString[]{CString("images/line.png"), CString("https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/images/line.png")}, 2);
 Appearance27.addChild(&ImageTexture29);
 
 Shape26.addChild(&Appearance27);
 
 Box& Box30 =  Box();
-Box30.setSize(new float[3]{25,83,0.01});
+Box30.setSize(new float[]{25,83,0.01});
 Shape26.setGeometry(&Box30);
 
 Transform25.addChild(&Shape26);
@@ -143,25 +143,25 @@ Transform19.addChild(&Transform25);
 
 Transform& Transform31 =  Transform();
 Transform31.setDEF(CString("volumeRight"));
-Transform31.setRotation(new float[4]{1,0,0,-0.5});
-Transform31.setScale(new float[3]{10,10,10});
-Transform31.setTranslation(new float[3]{0,-10,0});
+Transform31.setRotation(new float[]{1,0,0,-0.5});
+Transform31.setScale(new float[]{10,10,10});
+Transform31.setTranslation(new float[]{0,-10,0});
 Shape& Shape32 =  Shape();
 Appearance& Appearance33 =  Appearance();
 Material& Material34 =  Material();
 Material34.setAmbientIntensity(0.0933);
-Material34.setDiffuseColor(new float[3]{0.345,0.345,0.882});
+Material34.setDiffuseColor(new float[]{0.345,0.345,0.882});
 Material34.setShininess(0.51);
-Material34.setSpecularColor(new float[3]{0.46,0.46,0.46});
+Material34.setSpecularColor(new float[]{0.46,0.46,0.46});
 Appearance33.addChild(&Material34);
 
 Shape32.addChild(&Appearance33);
 
 Text& Text35 =  Text();
-Text35.setString(new CString[1]{CString("Right Channel Volume")}, 1);
+Text35.setString(new CString[]{CString("Right Channel Volume")}, 1);
 CFontStyle& FontStyle36 =  CFontStyle();
 FontStyle36.setDEF(CString("VolumeFontStyle"));
-FontStyle36.setFamily(new CString[2]{CString("Times"), CString("SERIF")}, 2);
+FontStyle36.setFamily(new CString[]{CString("Times"), CString("SERIF")}, 2);
 FontStyle36.setStyle(CString("BOLD"));
 Text35.setFontStyle(&FontStyle36);
 
@@ -175,23 +175,23 @@ Scene14.addChild(&Transform19);
 
 Transform& Transform37 =  Transform();
 Transform37.setDEF(CString("PowerL"));
-Transform37.setTranslation(new float[3]{-100,400,400});
+Transform37.setTranslation(new float[]{-100,400,400});
 Transform& Transform38 =  Transform();
-Transform38.setRotation(new float[4]{1,0,0,-0.5});
-Transform38.setTranslation(new float[3]{0,40,0});
+Transform38.setRotation(new float[]{1,0,0,-0.5});
+Transform38.setTranslation(new float[]{0,40,0});
 Shape& Shape39 =  Shape();
 Appearance& Appearance40 =  Appearance();
 Appearance40.setDEF(CString("audio_emit3"));
 Material& Material41 =  Material();
-Material41.setDiffuseColor(new float[3]{0,1,0});
-Material41.setEmissiveColor(new float[3]{0.8,0.8,0.8});
-Material41.setSpecularColor(new float[3]{0.01,0.01,0.01});
+Material41.setDiffuseColor(new float[]{0,1,0});
+Material41.setEmissiveColor(new float[]{0.8,0.8,0.8});
+Material41.setSpecularColor(new float[]{0.01,0.01,0.01});
 Appearance40.addChild(&Material41);
 
 Shape39.addChild(&Appearance40);
 
 Box& Box42 =  Box();
-Box42.setSize(new float[3]{10,80,0.01});
+Box42.setSize(new float[]{10,80,0.01});
 Shape39.setGeometry(&Box42);
 
 Transform38.addChild(&Shape39);
@@ -199,25 +199,25 @@ Transform38.addChild(&Shape39);
 Transform37.addChild(&Transform38);
 
 Transform& Transform43 =  Transform();
-Transform43.setRotation(new float[4]{1,0,0,-0.5});
-Transform43.setTranslation(new float[3]{13.2,37,0});
+Transform43.setRotation(new float[]{1,0,0,-0.5});
+Transform43.setTranslation(new float[]{13.2,37,0});
 Shape& Shape44 =  Shape();
 Appearance& Appearance45 =  Appearance();
 Appearance45.setDEF(CString("audio_emit4"));
 Material& Material46 =  Material();
-Material46.setDiffuseColor(new float[3]{0,1,0});
-Material46.setEmissiveColor(new float[3]{0.8,0.8,0.8});
-Material46.setSpecularColor(new float[3]{0.01,0.01,0.01});
+Material46.setDiffuseColor(new float[]{0,1,0});
+Material46.setEmissiveColor(new float[]{0.8,0.8,0.8});
+Material46.setSpecularColor(new float[]{0.01,0.01,0.01});
 Appearance45.addChild(&Material46);
 
 ImageTexture& ImageTexture47 =  ImageTexture();
-ImageTexture47.setUrl(new CString[2]{CString("images/line.png"), CString("https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/images/line.png")}, 2);
+ImageTexture47.setUrl(new CString[]{CString("images/line.png"), CString("https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/images/line.png")}, 2);
 Appearance45.addChild(&ImageTexture47);
 
 Shape44.addChild(&Appearance45);
 
 Box& Box48 =  Box();
-Box48.setSize(new float[3]{25,83,0.01});
+Box48.setSize(new float[]{25,83,0.01});
 Shape44.setGeometry(&Box48);
 
 Transform43.addChild(&Shape44);
@@ -226,22 +226,22 @@ Transform37.addChild(&Transform43);
 
 Transform& Transform49 =  Transform();
 Transform49.setDEF(CString("volumeLeft"));
-Transform49.setRotation(new float[4]{1,0,0,-0.5});
-Transform49.setScale(new float[3]{10,10,10});
-Transform49.setTranslation(new float[3]{0,-10,0});
+Transform49.setRotation(new float[]{1,0,0,-0.5});
+Transform49.setScale(new float[]{10,10,10});
+Transform49.setTranslation(new float[]{0,-10,0});
 Shape& Shape50 =  Shape();
 Appearance& Appearance51 =  Appearance();
 Material& Material52 =  Material();
 Material52.setAmbientIntensity(0.0933);
-Material52.setDiffuseColor(new float[3]{0.345,0.345,0.882});
+Material52.setDiffuseColor(new float[]{0.345,0.345,0.882});
 Material52.setShininess(0.51);
-Material52.setSpecularColor(new float[3]{0.46,0.46,0.46});
+Material52.setSpecularColor(new float[]{0.46,0.46,0.46});
 Appearance51.addChild(&Material52);
 
 Shape50.addChild(&Appearance51);
 
 Text& Text53 =  Text();
-Text53.setString(new CString[1]{CString("Left Channel Volume")}, 1);
+Text53.setString(new CString[]{CString("Left Channel Volume")}, 1);
 CFontStyle& FontStyle54 =  CFontStyle();
 FontStyle54.setUSE(CString("VolumeFontStyle"));
 Text53.setFontStyle(&FontStyle54);
@@ -259,15 +259,15 @@ Shape& Shape56 =  Shape();
 Appearance& Appearance57 =  Appearance();
 Appearance57.setDEF(CString("floor"));
 Material& Material58 =  Material();
-Material58.setDiffuseColor(new float[3]{0.1,0.1,0.1});
+Material58.setDiffuseColor(new float[]{0.1,0.1,0.1});
 Material58.setShininess(0.8);
-Material58.setSpecularColor(new float[3]{0.5,0.6,0.7});
+Material58.setSpecularColor(new float[]{0.5,0.6,0.7});
 Appearance57.addChild(&Material58);
 
 Shape56.addChild(&Appearance57);
 
 Box& Box59 =  Box();
-Box59.setSize(new float[3]{1500,10,500});
+Box59.setSize(new float[]{1500,10,500});
 Shape56.setGeometry(&Box59);
 
 Transform55.addChild(&Shape56);
@@ -307,32 +307,32 @@ ChannelSplitter68.setDEF(CString("ChannelSplitter"));
 ChannelSplitter68.setChannelCountMode(CString("EXPLICIT"));
 AudioClip& AudioClip69 =  AudioClip();
 AudioClip69.setDescription(CString("Violin"));
-AudioClip69.setUrl(new CString[2]{CString("sound/violin.mp3"), CString("https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3")}, 2);
+AudioClip69.setUrl(new CString[]{CString("sound/violin.mp3"), CString("https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3")}, 2);
 ChannelSplitter68.addOutputs(AudioClip69);
 
 Scene14.addChild(&ChannelSplitter68);
 
 Transform& Transform70 =  Transform();
 Transform70.setDEF(CString("Audio3"));
-Transform70.setRotation(new float[4]{1,0,0,-0.5});
-Transform70.setTranslation(new float[3]{0,100,0});
+Transform70.setRotation(new float[]{1,0,0,-0.5});
+Transform70.setTranslation(new float[]{0,100,0});
 Shape& Shape71 =  Shape();
 Appearance& Appearance72 =  Appearance();
 Appearance72.setDEF(CString("audio_emit5"));
 Material& Material73 =  Material();
-Material73.setDiffuseColor(new float[3]{0.3,1,0.3});
-Material73.setEmissiveColor(new float[3]{0.8,0.8,0.8});
-Material73.setSpecularColor(new float[3]{0.01,0.01,0.01});
+Material73.setDiffuseColor(new float[]{0.3,1,0.3});
+Material73.setEmissiveColor(new float[]{0.8,0.8,0.8});
+Material73.setSpecularColor(new float[]{0.01,0.01,0.01});
 Appearance72.addChild(&Material73);
 
 ImageTexture& ImageTexture74 =  ImageTexture();
-ImageTexture74.setUrl(new CString[2]{CString("images/loudspeaker.png"), CString("https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/images/loudspeaker.png")}, 2);
+ImageTexture74.setUrl(new CString[]{CString("images/loudspeaker.png"), CString("https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/images/loudspeaker.png")}, 2);
 Appearance72.addChild(&ImageTexture74);
 
 Shape71.addChild(&Appearance72);
 
 Box& Box75 =  Box();
-Box75.setSize(new float[3]{100,100,0.001});
+Box75.setSize(new float[]{100,100,0.001});
 Shape71.setGeometry(&Box75);
 
 Transform70.addChild(&Shape71);

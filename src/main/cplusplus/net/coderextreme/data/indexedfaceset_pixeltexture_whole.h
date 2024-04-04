@@ -122,36 +122,36 @@ Scene23.addChild(&Viewpoint24);
 
 Viewpoint& Viewpoint25 =  Viewpoint();
 Viewpoint25.setDescription(CString("Rear View"));
-Viewpoint25.setOrientation(new float[4]{0.0,1.0,0.0,3.14});
-Viewpoint25.setPosition(new float[3]{0.0,0.0,-10.0});
+Viewpoint25.setOrientation(new float[]{0.0,1.0,0.0,3.14});
+Viewpoint25.setPosition(new float[]{0.0,0.0,-10.0});
 Scene23.addChild(&Viewpoint25);
 
 Viewpoint& Viewpoint26 =  Viewpoint();
 Viewpoint26.setDescription(CString("Top View"));
-Viewpoint26.setOrientation(new float[4]{1.0,0.0,0.0,-1.57});
-Viewpoint26.setPosition(new float[3]{0.0,10.0,0.0});
+Viewpoint26.setOrientation(new float[]{1.0,0.0,0.0,-1.57});
+Viewpoint26.setPosition(new float[]{0.0,10.0,0.0});
 Scene23.addChild(&Viewpoint26);
 
 Viewpoint& Viewpoint27 =  Viewpoint();
 Viewpoint27.setDescription(CString("Bottom View"));
-Viewpoint27.setOrientation(new float[4]{1.0,0.0,0.0,1.57});
-Viewpoint27.setPosition(new float[3]{0.0,-10.0,0.0});
+Viewpoint27.setOrientation(new float[]{1.0,0.0,0.0,1.57});
+Viewpoint27.setPosition(new float[]{0.0,-10.0,0.0});
 Scene23.addChild(&Viewpoint27);
 
 Viewpoint& Viewpoint28 =  Viewpoint();
 Viewpoint28.setDescription(CString("Right View"));
-Viewpoint28.setOrientation(new float[4]{0.0,1.0,0.0,1.57});
-Viewpoint28.setPosition(new float[3]{10.0,0.0,0.0});
+Viewpoint28.setOrientation(new float[]{0.0,1.0,0.0,1.57});
+Viewpoint28.setPosition(new float[]{10.0,0.0,0.0});
 Scene23.addChild(&Viewpoint28);
 
 Viewpoint& Viewpoint29 =  Viewpoint();
 Viewpoint29.setDescription(CString("Left View"));
-Viewpoint29.setOrientation(new float[4]{0.0,1.0,0.0,-1.57});
-Viewpoint29.setPosition(new float[3]{-10.0,0.0,0.0});
+Viewpoint29.setOrientation(new float[]{0.0,1.0,0.0,-1.57});
+Viewpoint29.setPosition(new float[]{-10.0,0.0,0.0});
 Scene23.addChild(&Viewpoint29);
 
 NavigationInfo& NavigationInfo30 =  NavigationInfo();
-NavigationInfo30.setType(new CString[1]{CString("EXAMINE")}, 1);
+NavigationInfo30.setType(new CString[]{CString("EXAMINE")}, 1);
 Scene23.addChild(&NavigationInfo30);
 
 Shape& Shape31 =  Shape();
@@ -167,19 +167,19 @@ Shape31.addChild(&Appearance32);
 
 IndexedFaceSet& IndexedFaceSet35 =  IndexedFaceSet();
 IndexedFaceSet35.setColorPerVertex(false);
-IndexedFaceSet35.setCoordIndex(new int32_t[30]{0,1,3,2,-1,4,5,7,6,-1,6,7,1,0,-1,2,3,5,4,-1,6,0,2,4,-1,1,7,5,3,-1}, 30);
+IndexedFaceSet35.setCoordIndex(new int32_t[]{0,1,3,2,-1,4,5,7,6,-1,6,7,1,0,-1,2,3,5,4,-1,6,0,2,4,-1,1,7,5,3,-1}, 30);
 IndexedFaceSet35.setCreaseAngle(0.5);
-IndexedFaceSet35.setTexCoordIndex(new int32_t[30]{0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1}, 30);
+IndexedFaceSet35.setTexCoordIndex(new int32_t[]{0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1}, 30);
 CColor& Color36 =  CColor();
-Color36.setColor(new float[18]{0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0}, 18);
+Color36.setColor(new float[]{0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0}, 18);
 IndexedFaceSet35.setColor(&Color36);
 
 Coordinate& Coordinate37 =  Coordinate();
-Coordinate37.setPoint(new float[24]{-2.0,1.0,1.0,-2.0,-1.0,1.0,2.0,1.0,1.0,2.0,-1.0,1.0,2.0,1.0,-1.0,2.0,-1.0,-1.0,-2.0,1.0,-1.0,-2.0,-1.0,-1.0}, 24);
+Coordinate37.setPoint(new float[]{-2.0,1.0,1.0,-2.0,-1.0,1.0,2.0,1.0,1.0,2.0,-1.0,1.0,2.0,1.0,-1.0,2.0,-1.0,-1.0,-2.0,1.0,-1.0,-2.0,-1.0,-1.0}, 24);
 IndexedFaceSet35.setCoord(&Coordinate37);
 
 TextureCoordinate& TextureCoordinate38 =  TextureCoordinate();
-TextureCoordinate38.setPoint(new float[8]{0.0,1.0,0.0,0.0,1.0,1.0,1.0,0.0}, 8);
+TextureCoordinate38.setPoint(new float[]{0.0,1.0,0.0,0.0,1.0,1.0,1.0,0.0}, 8);
 IndexedFaceSet35.setTexCoord(&TextureCoordinate38);
 
 Shape31.setGeometry(&IndexedFaceSet35);

@@ -53,22 +53,22 @@ X3D0.setHead(&head1);
 
 Scene& Scene10 =  Scene();
 NavigationInfo& NavigationInfo11 =  NavigationInfo();
-NavigationInfo11.setType(new CString[1]{CString("EXAMINE")}, 1);
+NavigationInfo11.setType(new CString[]{CString("EXAMINE")}, 1);
 Scene10.addChild(&NavigationInfo11);
 
 Viewpoint& Viewpoint12 =  Viewpoint();
-Viewpoint12.setPosition(new float[3]{0,0,4});
-Viewpoint12.setOrientation(new float[4]{1,0,0,0});
+Viewpoint12.setPosition(new float[]{0,0,4});
+Viewpoint12.setOrientation(new float[]{1,0,0,0});
 Viewpoint12.setDescription(CString("Bubbles in action"));
 Scene10.addChild(&Viewpoint12);
 
 Background& Background13 =  Background();
-Background13.setBackUrl(new CString[2]{CString("../resources/images/BK.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/BK.png")}, 2);
-Background13.setBottomUrl(new CString[2]{CString("../resources/images/BT.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/BT.png")}, 2);
-Background13.setFrontUrl(new CString[2]{CString("../resources/images/FR.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/FR.png")}, 2);
-Background13.setLeftUrl(new CString[2]{CString("../resources/images/LF.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/LF.png")}, 2);
-Background13.setRightUrl(new CString[2]{CString("../resources/images/RT.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/RT.png")}, 2);
-Background13.setTopUrl(new CString[2]{CString("../resources/images/TP.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/TP.png")}, 2);
+Background13.setBackUrl(new CString[]{CString("../resources/images/BK.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/BK.png")}, 2);
+Background13.setBottomUrl(new CString[]{CString("../resources/images/BT.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/BT.png")}, 2);
+Background13.setFrontUrl(new CString[]{CString("../resources/images/FR.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/FR.png")}, 2);
+Background13.setLeftUrl(new CString[]{CString("../resources/images/LF.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/LF.png")}, 2);
+Background13.setRightUrl(new CString[]{CString("../resources/images/RT.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/RT.png")}, 2);
+Background13.setTopUrl(new CString[]{CString("../resources/images/TP.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/TP.png")}, 2);
 Scene10.addChild(&Background13);
 
 ProtoDeclare& ProtoDeclare14 =  ProtoDeclare();
@@ -83,7 +83,7 @@ Shape17.setGeometry(&Sphere18);
 
 Appearance& Appearance19 =  Appearance();
 Material& Material20 =  Material();
-Material20.setDiffuseColor(new float[3]{1,0,0});
+Material20.setDiffuseColor(new float[]{1,0,0});
 Material20.setTransparency(0.2);
 Appearance19.addChild(&Material20);
 

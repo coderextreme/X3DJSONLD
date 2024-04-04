@@ -45,18 +45,18 @@ Scene& Scene8 =  Scene();
 //PositionInterpolator DEF='TourPosition' key='0 1' keyValue='-0.5 -0.5 4 -0.5 0.5 4'/
 GeoViewpoint& GeoViewpoint9 =  GeoViewpoint();
 GeoViewpoint9.setDEF(CString("Tour"));
-GeoViewpoint9.setPosition(new double[3]{0.0,0.0,4.0});
-GeoViewpoint9.setOrientation(new float[4]{1.0,0.0,0.0,0.0});
+GeoViewpoint9.setPosition(new double[]{0.0,0.0,4.0});
+GeoViewpoint9.setOrientation(new float[]{1.0,0.0,0.0,0.0});
 GeoViewpoint9.setDescription(CString("Tour Views"));
 Scene8.addChild(&GeoViewpoint9);
 
 Background& Background10 =  Background();
-Background10.setBackUrl(new CString[2]{CString("../resources/images/BK.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/BK.png")}, 2);
-Background10.setBottomUrl(new CString[2]{CString("../resources/images/BT.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/BT.png")}, 2);
-Background10.setFrontUrl(new CString[2]{CString("../resources/images/FR.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/FR.png")}, 2);
-Background10.setLeftUrl(new CString[2]{CString("../resources/images/LF.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/LF.png")}, 2);
-Background10.setRightUrl(new CString[2]{CString("../resources/images/RT.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/RT.png")}, 2);
-Background10.setTopUrl(new CString[2]{CString("../resources/images/TP.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/TP.png")}, 2);
+Background10.setBackUrl(new CString[]{CString("../resources/images/BK.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/BK.png")}, 2);
+Background10.setBottomUrl(new CString[]{CString("../resources/images/BT.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/BT.png")}, 2);
+Background10.setFrontUrl(new CString[]{CString("../resources/images/FR.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/FR.png")}, 2);
+Background10.setLeftUrl(new CString[]{CString("../resources/images/LF.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/LF.png")}, 2);
+Background10.setRightUrl(new CString[]{CString("../resources/images/RT.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/RT.png")}, 2);
+Background10.setTopUrl(new CString[]{CString("../resources/images/TP.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/TP.png")}, 2);
 Scene8.addChild(&Background10);
 
 Transform& Transform11 =  Transform();
@@ -66,8 +66,8 @@ Shape12.setGeometry(&Sphere13);
 
 Appearance& Appearance14 =  Appearance();
 Material& Material15 =  Material();
-Material15.setDiffuseColor(new float[3]{0.7,0.7,0.7});
-Material15.setSpecularColor(new float[3]{0.5,0.5,0.5});
+Material15.setDiffuseColor(new float[]{0.7,0.7,0.7});
+Material15.setSpecularColor(new float[]{0.5,0.5,0.5});
 Appearance14.addChild(&Material15);
 
 Shape12.addChild(&Appearance14);
@@ -84,8 +84,8 @@ Scene8.addChild(&TimeSensor16);
 
 GeoPositionInterpolator& GeoPositionInterpolator17 =  GeoPositionInterpolator();
 GeoPositionInterpolator17.setDEF(CString("TourPosition"));
-GeoPositionInterpolator17.setKey(new float[2]{0.0,1.0}, 2);
-GeoPositionInterpolator17.setKeyValue(new double[6]{0.0015708,0.0,4.0,0.0,0.0015708,4.0}, 6);
+GeoPositionInterpolator17.setKey(new float[]{0.0,1.0}, 2);
+GeoPositionInterpolator17.setKeyValue(new double[]{0.0015708,0.0,4.0,0.0,0.0015708,4.0}, 6);
 Scene8.addChild(&GeoPositionInterpolator17);
 
 Script& Script18 =  Script();

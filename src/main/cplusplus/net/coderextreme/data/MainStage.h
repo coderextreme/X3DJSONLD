@@ -76,19 +76,19 @@ Scene13.addChild(&NavigationInfo15);
 
 DirectionalLight& DirectionalLight16 =  DirectionalLight();
 DirectionalLight16.setAmbientIntensity(1);
-DirectionalLight16.setDirection(new float[3]{-0.5,-0.5,-0.5});
+DirectionalLight16.setDirection(new float[]{-0.5,-0.5,-0.5});
 DirectionalLight16.setGlobal(true);
 Scene13.addChild(&DirectionalLight16);
 
 DirectionalLight& DirectionalLight17 =  DirectionalLight();
 DirectionalLight17.setAmbientIntensity(1);
-DirectionalLight17.setDirection(new float[3]{-1.0,-1.0,-1.0});
+DirectionalLight17.setDirection(new float[]{-1.0,-1.0,-1.0});
 DirectionalLight17.setGlobal(true);
 Scene13.addChild(&DirectionalLight17);
 
 DirectionalLight& DirectionalLight18 =  DirectionalLight();
 DirectionalLight18.setAmbientIntensity(1);
-DirectionalLight18.setDirection(new float[3]{1.0,1.0,-1.0});
+DirectionalLight18.setDirection(new float[]{1.0,1.0,-1.0});
 DirectionalLight18.setGlobal(true);
 DirectionalLight18.setIntensity(0.5);
 Scene13.addChild(&DirectionalLight18);
@@ -96,59 +96,59 @@ Scene13.addChild(&DirectionalLight18);
 Viewpoint& Viewpoint19 =  Viewpoint();
 Viewpoint19.setDEF(CString("Scene_StageFrontViewFar"));
 Viewpoint19.setDescription(CString("hanim_Stage Front View"));
-Viewpoint19.setOrientation(new float[4]{1.0,0.0,0.0,-0.449999988});
-Viewpoint19.setPosition(new float[3]{0.0,4.0,10.0});
+Viewpoint19.setOrientation(new float[]{1.0,0.0,0.0,-0.449999988});
+Viewpoint19.setPosition(new float[]{0.0,4.0,10.0});
 Scene13.addChild(&Viewpoint19);
 
 Viewpoint& Viewpoint20 =  Viewpoint();
 Viewpoint20.setDEF(CString("Scene_InclinedView"));
 Viewpoint20.setDescription(CString("hanim_Inclined View"));
-Viewpoint20.setOrientation(new float[4]{-0.112999998,0.992999971,0.034699999,0.671000004});
-Viewpoint20.setPosition(new float[3]{2.619999886,1.049999952,4.059999943});
+Viewpoint20.setOrientation(new float[]{-0.112999998,0.992999971,0.034699999,0.671000004});
+Viewpoint20.setPosition(new float[]{2.619999886,1.049999952,4.059999943});
 Scene13.addChild(&Viewpoint20);
 
 Viewpoint& Viewpoint21 =  Viewpoint();
 Viewpoint21.setDEF(CString("Scene_StageFrontView"));
 Viewpoint21.setDescription(CString("hanim_Stage Front View"));
-Viewpoint21.setPosition(new float[3]{0.0,1.0,5.0});
+Viewpoint21.setPosition(new float[]{0.0,1.0,5.0});
 Scene13.addChild(&Viewpoint21);
 
 Viewpoint& Viewpoint22 =  Viewpoint();
 Viewpoint22.setDEF(CString("Scene_FeetStageBottomView"));
 Viewpoint22.setDescription(CString("hanim_feet View"));
-Viewpoint22.setOrientation(new float[4]{1.0,0.0,0.0,1.570000052});
-Viewpoint22.setPosition(new float[3]{0.0,-10.0,0.0});
+Viewpoint22.setOrientation(new float[]{1.0,0.0,0.0,1.570000052});
+Viewpoint22.setPosition(new float[]{0.0,-10.0,0.0});
 Scene13.addChild(&Viewpoint22);
 
 Viewpoint& Viewpoint23 =  Viewpoint();
 Viewpoint23.setDEF(CString("Scene_HeadTopView"));
 Viewpoint23.setDescription(CString("hanim_Head Top View"));
-Viewpoint23.setOrientation(new float[4]{1.0,0.0,0.0,-1.570000052});
-Viewpoint23.setPosition(new float[3]{0.0,15.0,0.0});
+Viewpoint23.setOrientation(new float[]{1.0,0.0,0.0,-1.570000052});
+Viewpoint23.setPosition(new float[]{0.0,15.0,0.0});
 Scene13.addChild(&Viewpoint23);
 
 Viewpoint& Viewpoint24 =  Viewpoint();
 Viewpoint24.setDEF(CString("Scene_TopFrontCloseView"));
 Viewpoint24.setDescription(CString("hanim_Head Top View"));
-Viewpoint24.setOrientation(new float[4]{1.0,0.0,0.0,-1.100000024});
-Viewpoint24.setPosition(new float[3]{0.0,8.0,3.0});
+Viewpoint24.setOrientation(new float[]{1.0,0.0,0.0,-1.100000024});
+Viewpoint24.setPosition(new float[]{0.0,8.0,3.0});
 Scene13.addChild(&Viewpoint24);
 
 Group& Group25 =  Group();
 Group25.setDEF(CString("HAnimStage"));
 Transform& Transform26 =  Transform();
 Transform26.setDEF(CString("cordsysfloor"));
-Transform26.setScale(new float[3]{0.174999997,0.174999997,0.174999997});
+Transform26.setScale(new float[]{0.174999997,0.174999997,0.174999997});
 Inline& Inline27 =  Inline();
-Inline27.setUrl(new CString[1]{CString("JointCoordinateAxes.x3dv")}, 1);
+Inline27.setUrl(new CString[]{CString("JointCoordinateAxes.x3dv")}, 1);
 Transform26.addChild(&Inline27);
 
 Group25.addChild(&Transform26);
 
 Transform& Transform28 =  Transform();
 Transform28.setDEF(CString("StageGeometry"));
-Transform28.setScale(new float[3]{1.0,0.01,1.0});
-Transform28.setTranslation(new float[3]{0.0,-0.01,0.0});
+Transform28.setScale(new float[]{1.0,0.01,1.0});
+Transform28.setTranslation(new float[]{0.0,-0.01,0.0});
 Shape& Shape29 =  Shape();
 Appearance& Appearance30 =  Appearance();
 Material& Material31 =  Material();
@@ -158,7 +158,7 @@ Appearance30.addChild(&Material31);
 Shape29.addChild(&Appearance30);
 
 Box& Box32 =  Box();
-Box32.setSize(new float[3]{9.0,1.0,9.0});
+Box32.setSize(new float[]{9.0,1.0,9.0});
 Shape29.setGeometry(&Box32);
 
 Transform28.addChild(&Shape29);
@@ -170,19 +170,19 @@ Appearance& Appearance35 =  Appearance();
 Appearance35.setDEF(CString("LineColor"));
 Material& Material36 =  Material();
 Material36.setAmbientIntensity(1);
-Material36.setDiffuseColor(new float[3]{0.699999988,0.0,0.899999976});
-Material36.setEmissiveColor(new float[3]{0.449999988,0.449999988,1.0});
+Material36.setDiffuseColor(new float[]{0.699999988,0.0,0.899999976});
+Material36.setEmissiveColor(new float[]{0.449999988,0.449999988,1.0});
 Material36.setShininess(1);
-Material36.setSpecularColor(new float[3]{0.0,0.0,1.0});
+Material36.setSpecularColor(new float[]{0.0,0.0,1.0});
 Appearance35.addChild(&Material36);
 
 Shape34.addChild(&Appearance35);
 
 IndexedLineSet& IndexedLineSet37 =  IndexedLineSet();
 IndexedLineSet37.setDEF(CString("Orbit1"));
-IndexedLineSet37.setCoordIndex(new int32_t[62]{0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,-1}, 62);
+IndexedLineSet37.setCoordIndex(new int32_t[]{0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,-1}, 62);
 Coordinate& Coordinate38 =  Coordinate();
-Coordinate38.setPoint(new float[183]{1.0,0.0,0.0,0.995000005,0.0,-0.104999997,0.978999972,0.0,-0.208000004,0.950999975,0.0,-0.308999985,0.913999975,0.0,-0.407000005,0.865999997,0.0,-0.5,0.809000015,0.0,-0.588,0.742999971,0.0,-0.66900003,0.66900003,0.0,-0.742999971,0.588,0.0,-0.809000015,0.5,0.0,-0.865999997,0.407000005,0.0,-0.913999975,0.308999985,0.0,-0.950999975,0.208000004,0.0,-0.977999985,0.104999997,0.0,-0.995000005,0.0,0.0,-1.0,-0.104999997,0.0,-0.994521976,-0.208000004,0.0,-0.977999985,-0.308999985,0.0,-0.950999975,-0.407000005,0.0,-0.913999975,-0.5,0.0,-0.865999997,-0.588,0.0,-0.809000015,-0.66900003,0.0,-0.742999971,-0.742999971,0.0,-0.66900003,-0.809000015,0.0,-0.588,-0.865999997,0.0,-0.5,-0.913999975,0.0,-0.407000005,-0.950999975,0.0,-0.308999985,-0.977999985,0.0,-0.208000004,-0.995000005,0.0,-0.104999997,-1.0,0.0,0.0,-0.995000005,0.0,0.104999997,-0.977999985,0.0,0.208000004,-0.950999975,0.0,0.308999985,-0.913999975,0.0,0.407000005,-0.865999997,0.0,0.5,-0.809000015,0.0,0.588,-0.742999971,0.0,0.66900003,-0.66900003,0.0,0.742999971,-0.588,0.0,0.809000015,-0.5,0.0,0.865999997,-0.407000005,0.0,0.913999975,-0.308999985,0.0,0.950999975,-0.208000004,0.0,0.977999985,-0.104999997,0.0,0.995000005,0.0,0.0,1.0,0.104999997,0.0,0.995000005,0.208000004,0.0,0.977999985,0.308999985,0.0,0.950999975,0.407000005,0.0,0.913999975,0.5,0.0,0.865999997,0.588,0.0,0.809000015,0.66900003,0.0,0.742999971,0.742999971,0.0,0.66900003,0.809000015,0.0,0.588,0.865999997,0.0,0.5,0.913999975,0.0,0.407000005,0.950999975,0.0,0.308999985,0.977999985,0.0,0.208000004,0.995000005,0.0,0.104000002,1.0,0.0,0.0}, 183);
+Coordinate38.setPoint(new float[]{1.0,0.0,0.0,0.995000005,0.0,-0.104999997,0.978999972,0.0,-0.208000004,0.950999975,0.0,-0.308999985,0.913999975,0.0,-0.407000005,0.865999997,0.0,-0.5,0.809000015,0.0,-0.588,0.742999971,0.0,-0.66900003,0.66900003,0.0,-0.742999971,0.588,0.0,-0.809000015,0.5,0.0,-0.865999997,0.407000005,0.0,-0.913999975,0.308999985,0.0,-0.950999975,0.208000004,0.0,-0.977999985,0.104999997,0.0,-0.995000005,0.0,0.0,-1.0,-0.104999997,0.0,-0.994521976,-0.208000004,0.0,-0.977999985,-0.308999985,0.0,-0.950999975,-0.407000005,0.0,-0.913999975,-0.5,0.0,-0.865999997,-0.588,0.0,-0.809000015,-0.66900003,0.0,-0.742999971,-0.742999971,0.0,-0.66900003,-0.809000015,0.0,-0.588,-0.865999997,0.0,-0.5,-0.913999975,0.0,-0.407000005,-0.950999975,0.0,-0.308999985,-0.977999985,0.0,-0.208000004,-0.995000005,0.0,-0.104999997,-1.0,0.0,0.0,-0.995000005,0.0,0.104999997,-0.977999985,0.0,0.208000004,-0.950999975,0.0,0.308999985,-0.913999975,0.0,0.407000005,-0.865999997,0.0,0.5,-0.809000015,0.0,0.588,-0.742999971,0.0,0.66900003,-0.66900003,0.0,0.742999971,-0.588,0.0,0.809000015,-0.5,0.0,0.865999997,-0.407000005,0.0,0.913999975,-0.308999985,0.0,0.950999975,-0.208000004,0.0,0.977999985,-0.104999997,0.0,0.995000005,0.0,0.0,1.0,0.104999997,0.0,0.995000005,0.208000004,0.0,0.977999985,0.308999985,0.0,0.950999975,0.407000005,0.0,0.913999975,0.5,0.0,0.865999997,0.588,0.0,0.809000015,0.66900003,0.0,0.742999971,0.742999971,0.0,0.66900003,0.809000015,0.0,0.588,0.865999997,0.0,0.5,0.913999975,0.0,0.407000005,0.950999975,0.0,0.308999985,0.977999985,0.0,0.208000004,0.995000005,0.0,0.104000002,1.0,0.0,0.0}, 183);
 IndexedLineSet37.setCoord(&Coordinate38);
 
 Shape34.setGeometry(&IndexedLineSet37);
@@ -193,7 +193,7 @@ Transform28.addChild(&Transform33);
 
 Transform& Transform39 =  Transform();
 Transform39.setDEF(CString("Circle1"));
-Transform39.setScale(new float[3]{0.5,1.0,0.5});
+Transform39.setScale(new float[]{0.5,1.0,0.5});
 Shape& Shape40 =  Shape();
 Appearance& Appearance41 =  Appearance();
 Appearance41.setUSE(CString("LineColor"));
@@ -209,7 +209,7 @@ Transform28.addChild(&Transform39);
 
 Transform& Transform43 =  Transform();
 Transform43.setDEF(CString("Circle2"));
-Transform43.setScale(new float[3]{0.25,1.0,0.25});
+Transform43.setScale(new float[]{0.25,1.0,0.25});
 Shape& Shape44 =  Shape();
 Appearance& Appearance45 =  Appearance();
 Appearance45.setUSE(CString("LineColor"));
@@ -225,7 +225,7 @@ Transform28.addChild(&Transform43);
 
 Transform& Transform47 =  Transform();
 Transform47.setDEF(CString("Circle3"));
-Transform47.setScale(new float[3]{2.0,1.0,2.0});
+Transform47.setScale(new float[]{2.0,1.0,2.0});
 Shape& Shape48 =  Shape();
 Appearance& Appearance49 =  Appearance();
 Appearance49.setUSE(CString("LineColor"));
@@ -241,7 +241,7 @@ Transform28.addChild(&Transform47);
 
 Transform& Transform51 =  Transform();
 Transform51.setDEF(CString("Circle4"));
-Transform51.setScale(new float[3]{3.0,1.0,3.0});
+Transform51.setScale(new float[]{3.0,1.0,3.0});
 Shape& Shape52 =  Shape();
 Appearance& Appearance53 =  Appearance();
 Appearance53.setUSE(CString("LineColor"));

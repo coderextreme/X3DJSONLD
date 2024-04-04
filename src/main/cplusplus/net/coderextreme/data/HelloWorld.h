@@ -129,20 +129,20 @@ X3D0.setHead(&head1);
 Scene& Scene25 =  Scene();
 //Example scene to illustrate X3D nodes and fields (XML elements and attributes)
 WorldInfo& WorldInfo26 =  WorldInfo();
-WorldInfo26.setInfo(new CString[1]{CString("Example scene to illustrate a simple X3D model")}, 1);
+WorldInfo26.setInfo(new CString[]{CString("Example scene to illustrate a simple X3D model")}, 1);
 WorldInfo26.setTitle(CString("Hello World!"));
 Scene25.addChild(&WorldInfo26);
 
 Group& Group27 =  Group();
 Viewpoint& Viewpoint28 =  Viewpoint();
 Viewpoint28.setDEF(CString("ViewUpClose"));
-Viewpoint28.setCenterOfRotation(new float[3]{0.0,-1.0,0.0});
+Viewpoint28.setCenterOfRotation(new float[]{0.0,-1.0,0.0});
 Viewpoint28.setDescription(CString("Hello world!"));
-Viewpoint28.setPosition(new float[3]{0.0,-1.0,7.0});
+Viewpoint28.setPosition(new float[]{0.0,-1.0,7.0});
 Group27.addChild(&Viewpoint28);
 
 Transform& Transform29 =  Transform();
-Transform29.setRotation(new float[4]{0.0,1.0,0.0,3.0});
+Transform29.setRotation(new float[]{0.0,1.0,0.0,3.0});
 Shape& Shape30 =  Shape();
 Sphere& Sphere31 =  Sphere();
 Shape30.setGeometry(&Sphere31);
@@ -150,12 +150,12 @@ Shape30.setGeometry(&Sphere31);
 Appearance& Appearance32 =  Appearance();
 Material& Material33 =  Material();
 Material33.setDEF(CString("MaterialLightBlue"));
-Material33.setDiffuseColor(new float[3]{0.1,0.5,1.0});
+Material33.setDiffuseColor(new float[]{0.1,0.5,1.0});
 Appearance32.addChild(&Material33);
 
 ImageTexture& ImageTexture34 =  ImageTexture();
 ImageTexture34.setDEF(CString("ImageCloudlessEarth"));
-ImageTexture34.setUrl(new CString[6]{CString("earth-topo.png"), CString("earth-topo.jpg"), CString("earth-topo-small.gif"), CString("https://www.web3d.org/x3d/content/examples/Basic/earth-topo.png"), CString("https://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg"), CString("https://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif")}, 6);
+ImageTexture34.setUrl(new CString[]{CString("earth-topo.png"), CString("earth-topo.jpg"), CString("earth-topo-small.gif"), CString("https://www.web3d.org/x3d/content/examples/Basic/earth-topo.png"), CString("https://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg"), CString("https://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif")}, 6);
 Appearance32.addChild(&ImageTexture34);
 
 Shape30.addChild(&Appearance32);
@@ -165,13 +165,13 @@ Transform29.addChild(&Shape30);
 Group27.addChild(&Transform29);
 
 Transform& Transform35 =  Transform();
-Transform35.setTranslation(new float[3]{0.0,-2.0,0.0});
+Transform35.setTranslation(new float[]{0.0,-2.0,0.0});
 Shape& Shape36 =  Shape();
 Text& Text37 =  Text();
 Text37.setDEF(CString("TextMessage"));
-Text37.setString(new CString[2]{CString("Hello"), CString("world!")}, 2);
+Text37.setString(new CString[]{CString("Hello"), CString("world!")}, 2);
 CFontStyle& FontStyle38 =  CFontStyle();
-FontStyle38.setJustify(new CString[2]{CString("MIDDLE"), CString("MIDDLE")}, 2);
+FontStyle38.setJustify(new CString[]{CString("MIDDLE"), CString("MIDDLE")}, 2);
 Text37.setFontStyle(&FontStyle38);
 
 Shape36.setGeometry(&Text37);

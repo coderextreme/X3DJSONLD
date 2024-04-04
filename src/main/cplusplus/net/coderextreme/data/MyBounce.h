@@ -44,8 +44,8 @@ Transform9.setDEF(CString("transform"));
 Shape& Shape10 =  Shape();
 Appearance& Appearance11 =  Appearance();
 Material& Material12 =  Material();
-Material12.setDiffuseColor(new float[3]{0.7,0.7,0.7});
-Material12.setSpecularColor(new float[3]{0.5,0.5,0.5});
+Material12.setDiffuseColor(new float[]{0.7,0.7,0.7});
+Material12.setSpecularColor(new float[]{0.5,0.5,0.5});
 Appearance11.addChild(&Material12);
 
 Shape10.addChild(&Appearance11);

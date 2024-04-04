@@ -113,7 +113,7 @@ fieldValue& fieldValue28 =  fieldValue();
 fieldValue28.setName(CString("myShape"));
 Shape& Shape29 =  Shape();
 Box& Box30 =  Box();
-Box30.setSize(new float[3]{140,140,140});
+Box30.setSize(new float[]{140,140,140});
 Shape29.setGeometry(&Box30);
 
 fieldValue28.addChild(&Shape29);
