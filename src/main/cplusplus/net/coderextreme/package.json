@@ -1,0 +1,13 @@
+{
+  "name": "CPPON",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "CPP.mjs",
+  "dependencies": {
+	  "antlr4": "*"
+  },
+  "scripts": {
+    "start": "antlr4js -visitor CPPONGrammar.g4; node.exe CPP.mjs data/abox.h"
+  }
+}

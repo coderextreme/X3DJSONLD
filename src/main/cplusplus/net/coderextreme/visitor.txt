@@ -1,0 +1,32 @@
+#include <rapidxml.hpp>
+#include <rapidxml_print.hpp>
+#include "MyGrammarVisitor.h"
+
+class DOMVisitor : public MyGrammarVisitor {
+public:
+    DOMVisitor() : doc(new rapidxml::xml_document<>) {}
+
+    antlrcpp::Any visitRule(MyGrammarParser::RuleContext *ctx) override {
+        // Create a new XML element for the rule
+        rapidxml::xml_node<> *node = doc->allocate_node(rapidxml::node_element, ctx->getRuleIndex());
+        doc->append_node(node);
+
+        // Visit the rule's children and add their DOM nodes as children
+        for (auto child : ctx->children) {
+            node->append_node(visitNode(child));
+        }
+
+        return node;
+    }
+
+    antlrcpp::Any visitTerminal(antlr4::tree::TerminalNode *node) override {
+        // Create a new XML text node for the terminal
+        rapidxml::xml_node<> *text = doc->allocate_node(rapidxml::node_data);
+        text->value(node->getText().c_str());
+        return text;
+    }
+
+    // Add more visitNode methods for other node types as needed
+
+    std::unique_ptr<rapidxml::xml_document<>> doc;
+};

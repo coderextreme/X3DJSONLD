@@ -1,0 +1,21 @@
+#include <rapidxml.hpp>
+
+class MyListener : public MyLanguageBaseListener {
+public:
+    void enterRule(antlr4::tree::ParseTreeListener *listener, antlr4::tree::ParseTree *ctx) override {
+        // Create a new XML element based on the rule name
+        rapidxml::xml_node<> *node = doc.allocate_node(rapidxml::node_element, ctx->getRuleContext()->getRuleIndex());
+        // Add the new node to the parent node
+        parent->append_node(node);
+        // Set the new node as the current parent
+        parent = node;
+    }
+
+    void exitRule(antlr4::tree::ParseTreeListener *listener, antlr4::tree::ParseTree *ctx) override {
+        // Move back up to the previous parent node
+        parent = parent->parent();
+    }
+
+    rapidxml::xml_document<> doc;
+    rapidxml::xml_node<> *parent = nullptr;
+};
