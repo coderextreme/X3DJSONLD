@@ -196,13 +196,13 @@ public class CPPONGrammarBaseListener implements CPPONGrammarListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterConstructor(CPPONGrammarParser.ConstructorContext ctx) { }
+	@Override public void enterConstruct(CPPONGrammarParser.ConstructContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitConstructor(CPPONGrammarParser.ConstructorContext ctx) { }
+	@Override public void exitConstruct(CPPONGrammarParser.ConstructContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

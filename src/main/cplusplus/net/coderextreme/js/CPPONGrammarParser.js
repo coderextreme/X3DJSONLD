@@ -1,4 +1,4 @@
-// Generated from ../CPPONGrammar.g4 by ANTLR 4.10.1
+// Generated from ../CPPONGrammar.g4 by ANTLR 4.13.1
 // jshint ignore: start
 import antlr4 from 'antlr4';
 import CPPONGrammarListener from './CPPONGrammarListener.js';
@@ -81,7 +81,7 @@ const atn = new antlr4.atn.ATNDeserializer().deserialize(serializedATN);
 
 const decisionsToDFA = atn.decisionToState.map( (ds, index) => new antlr4.dfa.DFA(ds, index) );
 
-const sharedContextCache = new antlr4.PredictionContextCache();
+const sharedContextCache = new antlr4.atn.PredictionContextCache();
 
 export default class CPPONGrammarParser extends antlr4.Parser {
 
@@ -108,7 +108,7 @@ export default class CPPONGrammarParser extends antlr4.Parser {
     static ruleNames = [ "type", "field", "variable", "string", "cstring", 
                          "boolean", "boolean_list", "integer_list", "float_list", 
                          "string_list", "list", "construct_array", "parameters", 
-                         "operator", "funccall", "constructor", "set_field", 
+                         "operator", "funccall", "construct", "set_field", 
                          "add_field", "line", "lines", "x3d" ];
 
     constructor(input) {
@@ -119,21 +119,17 @@ export default class CPPONGrammarParser extends antlr4.Parser {
         this.symbolicNames = CPPONGrammarParser.symbolicNames;
     }
 
-    get atn() {
-        return atn;
-    }
-
 
 
 	type() {
 	    let localctx = new TypeContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 0, CPPONGrammarParser.RULE_type);
-	    var _la = 0; // Token type
+	    var _la = 0;
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 42;
 	        _la = this._input.LA(1);
-	        if(!((((_la) & ~0x1f) == 0 && ((1 << _la) & ((1 << CPPONGrammarParser.T__0) | (1 << CPPONGrammarParser.T__1) | (1 << CPPONGrammarParser.T__2) | (1 << CPPONGrammarParser.T__3) | (1 << CPPONGrammarParser.T__4) | (1 << CPPONGrammarParser.T__5))) !== 0) || _la===CPPONGrammarParser.IDENTIFIER)) {
+	        if(!((((_la) & ~0x1f) === 0 && ((1 << _la) & 126) !== 0) || _la===35)) {
 	        this._errHandler.recoverInline(this);
 	        }
 	        else {
@@ -182,7 +178,7 @@ export default class CPPONGrammarParser extends antlr4.Parser {
 	variable() {
 	    let localctx = new VariableContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 4, CPPONGrammarParser.RULE_variable);
-	    var _la = 0; // Token type
+	    var _la = 0;
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 46;
@@ -190,7 +186,7 @@ export default class CPPONGrammarParser extends antlr4.Parser {
 	        this.state = 48;
 	        this._errHandler.sync(this);
 	        _la = this._input.LA(1);
-	        if(_la===CPPONGrammarParser.WHOLE) {
+	        if(_la===43) {
 	            this.state = 47;
 	            this.match(CPPONGrammarParser.WHOLE);
 	        }
@@ -214,7 +210,7 @@ export default class CPPONGrammarParser extends antlr4.Parser {
 	string() {
 	    let localctx = new StringContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 6, CPPONGrammarParser.RULE_string);
-	    var _la = 0; // Token type
+	    var _la = 0;
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 50;
@@ -293,7 +289,7 @@ export default class CPPONGrammarParser extends antlr4.Parser {
 	                    this.match(CPPONGrammarParser.T__17);
 	                    this.state = 64;
 	                    _la = this._input.LA(1);
-	                    if(_la<=0 || _la===CPPONGrammarParser.T__17) {
+	                    if(_la<=0 || _la===18) {
 	                    this._errHandler.recoverInline(this);
 	                    }
 	                    else {
@@ -325,7 +321,7 @@ export default class CPPONGrammarParser extends antlr4.Parser {
 	                case 18:
 	                    this.state = 69;
 	                    _la = this._input.LA(1);
-	                    if(_la<=0 || _la===CPPONGrammarParser.T__6) {
+	                    if(_la<=0 || _la===7) {
 	                    this._errHandler.recoverInline(this);
 	                    }
 	                    else {
@@ -391,12 +387,12 @@ export default class CPPONGrammarParser extends antlr4.Parser {
 	boolean_() {
 	    let localctx = new BooleanContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 10, CPPONGrammarParser.RULE_boolean);
-	    var _la = 0; // Token type
+	    var _la = 0;
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 82;
 	        _la = this._input.LA(1);
-	        if(!(_la===CPPONGrammarParser.T__24 || _la===CPPONGrammarParser.T__25)) {
+	        if(!(_la===25 || _la===26)) {
 	        this._errHandler.recoverInline(this);
 	        }
 	        else {
@@ -422,7 +418,7 @@ export default class CPPONGrammarParser extends antlr4.Parser {
 	boolean_list() {
 	    let localctx = new Boolean_listContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 12, CPPONGrammarParser.RULE_boolean_list);
-	    var _la = 0; // Token type
+	    var _la = 0;
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 84;
@@ -430,7 +426,7 @@ export default class CPPONGrammarParser extends antlr4.Parser {
 	        this.state = 89;
 	        this._errHandler.sync(this);
 	        _la = this._input.LA(1);
-	        while(_la===CPPONGrammarParser.T__26) {
+	        while(_la===27) {
 	            this.state = 85;
 	            this.match(CPPONGrammarParser.T__26);
 	            this.state = 86;
@@ -458,28 +454,28 @@ export default class CPPONGrammarParser extends antlr4.Parser {
 	integer_list() {
 	    let localctx = new Integer_listContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 14, CPPONGrammarParser.RULE_integer_list);
-	    var _la = 0; // Token type
+	    var _la = 0;
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 99;
 	        this._errHandler.sync(this);
 	        switch(this._input.LA(1)) {
-	        case CPPONGrammarParser.SENTINEL:
+	        case 44:
 	            this.state = 92;
 	            this.match(CPPONGrammarParser.SENTINEL);
 	            break;
-	        case CPPONGrammarParser.T__27:
+	        case 28:
 	            this.state = 93;
 	            this.match(CPPONGrammarParser.T__27);
 	            this.state = 94;
 	            this.match(CPPONGrammarParser.WHOLE);
 	            break;
-	        case CPPONGrammarParser.T__28:
-	        case CPPONGrammarParser.WHOLE:
+	        case 29:
+	        case 43:
 	            this.state = 96;
 	            this._errHandler.sync(this);
 	            _la = this._input.LA(1);
-	            if(_la===CPPONGrammarParser.T__28) {
+	            if(_la===29) {
 	                this.state = 95;
 	                this.match(CPPONGrammarParser.T__28);
 	            }
@@ -493,28 +489,28 @@ export default class CPPONGrammarParser extends antlr4.Parser {
 	        this.state = 113;
 	        this._errHandler.sync(this);
 	        _la = this._input.LA(1);
-	        while(_la===CPPONGrammarParser.T__26) {
+	        while(_la===27) {
 	            this.state = 101;
 	            this.match(CPPONGrammarParser.T__26);
 	            this.state = 109;
 	            this._errHandler.sync(this);
 	            switch(this._input.LA(1)) {
-	            case CPPONGrammarParser.SENTINEL:
+	            case 44:
 	                this.state = 102;
 	                this.match(CPPONGrammarParser.SENTINEL);
 	                break;
-	            case CPPONGrammarParser.T__27:
+	            case 28:
 	                this.state = 103;
 	                this.match(CPPONGrammarParser.T__27);
 	                this.state = 104;
 	                this.match(CPPONGrammarParser.WHOLE);
 	                break;
-	            case CPPONGrammarParser.T__28:
-	            case CPPONGrammarParser.WHOLE:
+	            case 29:
+	            case 43:
 	                this.state = 106;
 	                this._errHandler.sync(this);
 	                _la = this._input.LA(1);
-	                if(_la===CPPONGrammarParser.T__28) {
+	                if(_la===29) {
 	                    this.state = 105;
 	                    this.match(CPPONGrammarParser.T__28);
 	                }
@@ -548,7 +544,7 @@ export default class CPPONGrammarParser extends antlr4.Parser {
 	float_list() {
 	    let localctx = new Float_listContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 16, CPPONGrammarParser.RULE_float_list);
-	    var _la = 0; // Token type
+	    var _la = 0;
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 116;
@@ -556,7 +552,7 @@ export default class CPPONGrammarParser extends antlr4.Parser {
 	        this.state = 121;
 	        this._errHandler.sync(this);
 	        _la = this._input.LA(1);
-	        while(_la===CPPONGrammarParser.T__26) {
+	        while(_la===27) {
 	            this.state = 117;
 	            this.match(CPPONGrammarParser.T__26);
 	            this.state = 118;
@@ -584,7 +580,7 @@ export default class CPPONGrammarParser extends antlr4.Parser {
 	string_list() {
 	    let localctx = new String_listContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 18, CPPONGrammarParser.RULE_string_list);
-	    var _la = 0; // Token type
+	    var _la = 0;
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 124;
@@ -592,7 +588,7 @@ export default class CPPONGrammarParser extends antlr4.Parser {
 	        this.state = 129;
 	        this._errHandler.sync(this);
 	        _la = this._input.LA(1);
-	        while(_la===CPPONGrammarParser.T__26) {
+	        while(_la===27) {
 	            this.state = 125;
 	            this.match(CPPONGrammarParser.T__26);
 	            this.state = 126;
@@ -624,26 +620,26 @@ export default class CPPONGrammarParser extends antlr4.Parser {
 	        this.state = 136;
 	        this._errHandler.sync(this);
 	        switch(this._input.LA(1)) {
-	        case CPPONGrammarParser.T__24:
-	        case CPPONGrammarParser.T__25:
+	        case 25:
+	        case 26:
 	            this.enterOuterAlt(localctx, 1);
 	            this.state = 132;
 	            this.boolean_list();
 	            break;
-	        case CPPONGrammarParser.T__27:
-	        case CPPONGrammarParser.T__28:
-	        case CPPONGrammarParser.WHOLE:
-	        case CPPONGrammarParser.SENTINEL:
+	        case 28:
+	        case 29:
+	        case 43:
+	        case 44:
 	            this.enterOuterAlt(localctx, 2);
 	            this.state = 133;
 	            this.integer_list();
 	            break;
-	        case CPPONGrammarParser.FLOAT:
+	        case 45:
 	            this.enterOuterAlt(localctx, 3);
 	            this.state = 134;
 	            this.float_list();
 	            break;
-	        case CPPONGrammarParser.T__0:
+	        case 1:
 	            this.enterOuterAlt(localctx, 4);
 	            this.state = 135;
 	            this.string_list();
@@ -707,7 +703,7 @@ export default class CPPONGrammarParser extends antlr4.Parser {
 	parameters() {
 	    let localctx = new ParametersContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 24, CPPONGrammarParser.RULE_parameters);
-	    var _la = 0; // Token type
+	    var _la = 0;
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 176;
@@ -723,22 +719,22 @@ export default class CPPONGrammarParser extends antlr4.Parser {
 	            this.state = 155;
 	            this._errHandler.sync(this);
 	            switch(this._input.LA(1)) {
-	            case CPPONGrammarParser.SENTINEL:
+	            case 44:
 	                this.state = 148;
 	                this.match(CPPONGrammarParser.SENTINEL);
 	                break;
-	            case CPPONGrammarParser.T__27:
+	            case 28:
 	                this.state = 149;
 	                this.match(CPPONGrammarParser.T__27);
 	                this.state = 150;
 	                this.match(CPPONGrammarParser.WHOLE);
 	                break;
-	            case CPPONGrammarParser.T__28:
-	            case CPPONGrammarParser.WHOLE:
+	            case 29:
+	            case 43:
 	                this.state = 152;
 	                this._errHandler.sync(this);
 	                _la = this._input.LA(1);
-	                if(_la===CPPONGrammarParser.T__28) {
+	                if(_la===29) {
 	                    this.state = 151;
 	                    this.match(CPPONGrammarParser.T__28);
 	                }
@@ -762,7 +758,7 @@ export default class CPPONGrammarParser extends antlr4.Parser {
 	            this.state = 161;
 	            this._errHandler.sync(this);
 	            _la = this._input.LA(1);
-	            if(_la===CPPONGrammarParser.T__26) {
+	            if(_la===27) {
 	                this.state = 159;
 	                this.match(CPPONGrammarParser.T__26);
 	                this.state = 160;
@@ -782,7 +778,7 @@ export default class CPPONGrammarParser extends antlr4.Parser {
 	            this.state = 167;
 	            this._errHandler.sync(this);
 	            _la = this._input.LA(1);
-	            if(_la===CPPONGrammarParser.T__26) {
+	            if(_la===27) {
 	                this.state = 165;
 	                this.match(CPPONGrammarParser.T__26);
 	                this.state = 166;
@@ -795,7 +791,7 @@ export default class CPPONGrammarParser extends antlr4.Parser {
 	            this.state = 170;
 	            this._errHandler.sync(this);
 	            _la = this._input.LA(1);
-	            if(_la===CPPONGrammarParser.T__32) {
+	            if(_la===33) {
 	                this.state = 169;
 	                this.match(CPPONGrammarParser.T__32);
 	            }
@@ -803,7 +799,7 @@ export default class CPPONGrammarParser extends antlr4.Parser {
 	            this.state = 173;
 	            this._errHandler.sync(this);
 	            _la = this._input.LA(1);
-	            if(_la===CPPONGrammarParser.REFERENCE) {
+	            if(_la===36) {
 	                this.state = 172;
 	                this.match(CPPONGrammarParser.REFERENCE);
 	            }
@@ -832,12 +828,12 @@ export default class CPPONGrammarParser extends antlr4.Parser {
 	operator() {
 	    let localctx = new OperatorContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 26, CPPONGrammarParser.RULE_operator);
-	    var _la = 0; // Token type
+	    var _la = 0;
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 178;
 	        _la = this._input.LA(1);
-	        if(!(((((_la - 37)) & ~0x1f) == 0 && ((1 << (_la - 37)) & ((1 << (CPPONGrammarParser.EQUALS - 37)) | (1 << (CPPONGrammarParser.SET - 37)) | (1 << (CPPONGrammarParser.X3DNODESET - 37)) | (1 << (CPPONGrammarParser.ADD - 37)))) !== 0))) {
+	        if(!(((((_la - 37)) & ~0x1f) === 0 && ((1 << (_la - 37)) & 57) !== 0))) {
 	        this._errHandler.recoverInline(this);
 	        }
 	        else {
@@ -863,7 +859,7 @@ export default class CPPONGrammarParser extends antlr4.Parser {
 	funccall() {
 	    let localctx = new FunccallContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 28, CPPONGrammarParser.RULE_funccall);
-	    var _la = 0; // Token type
+	    var _la = 0;
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 180;
@@ -877,7 +873,7 @@ export default class CPPONGrammarParser extends antlr4.Parser {
 	        this.state = 185;
 	        this._errHandler.sync(this);
 	        _la = this._input.LA(1);
-	        if((((_la) & ~0x1f) == 0 && ((1 << _la) & ((1 << CPPONGrammarParser.T__0) | (1 << CPPONGrammarParser.T__24) | (1 << CPPONGrammarParser.T__25) | (1 << CPPONGrammarParser.T__27) | (1 << CPPONGrammarParser.T__28) | (1 << CPPONGrammarParser.T__29))) !== 0) || ((((_la - 33)) & ~0x1f) == 0 && ((1 << (_la - 33)) & ((1 << (CPPONGrammarParser.T__32 - 33)) | (1 << (CPPONGrammarParser.IDENTIFIER - 33)) | (1 << (CPPONGrammarParser.REFERENCE - 33)) | (1 << (CPPONGrammarParser.WHOLE - 33)) | (1 << (CPPONGrammarParser.SENTINEL - 33)) | (1 << (CPPONGrammarParser.FLOAT - 33)))) !== 0)) {
+	        if((((_la) & ~0x1f) === 0 && ((1 << _la) & 1979711490) !== 0) || ((((_la - 33)) & ~0x1f) === 0 && ((1 << (_la - 33)) & 7181) !== 0)) {
 	            this.state = 184;
 	            this.parameters();
 	        }
@@ -900,10 +896,10 @@ export default class CPPONGrammarParser extends antlr4.Parser {
 
 
 
-	constructor() {
-	    let localctx = new ConstructorContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 30, CPPONGrammarParser.RULE_constructor);
-	    var _la = 0; // Token type
+	construct() {
+	    let localctx = new ConstructContext(this, this._ctx, this.state);
+	    this.enterRule(localctx, 30, CPPONGrammarParser.RULE_construct);
+	    var _la = 0;
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 189;
@@ -911,7 +907,7 @@ export default class CPPONGrammarParser extends antlr4.Parser {
 	        this.state = 191;
 	        this._errHandler.sync(this);
 	        _la = this._input.LA(1);
-	        if(_la===CPPONGrammarParser.REFERENCE) {
+	        if(_la===36) {
 	            this.state = 190;
 	            this.match(CPPONGrammarParser.REFERENCE);
 	        }
@@ -991,7 +987,7 @@ export default class CPPONGrammarParser extends antlr4.Parser {
 	        switch(la_) {
 	        case 1:
 	            this.state = 199;
-	            this.constructor();
+	            this.construct();
 	            break;
 
 	        case 2:
@@ -1026,13 +1022,13 @@ export default class CPPONGrammarParser extends antlr4.Parser {
 	lines() {
 	    let localctx = new LinesContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 38, CPPONGrammarParser.RULE_lines);
-	    var _la = 0; // Token type
+	    var _la = 0;
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 209;
 	        this._errHandler.sync(this);
 	        _la = this._input.LA(1);
-	        while((((_la) & ~0x1f) == 0 && ((1 << _la) & ((1 << CPPONGrammarParser.T__0) | (1 << CPPONGrammarParser.T__1) | (1 << CPPONGrammarParser.T__2) | (1 << CPPONGrammarParser.T__3) | (1 << CPPONGrammarParser.T__4) | (1 << CPPONGrammarParser.T__5))) !== 0) || _la===CPPONGrammarParser.IDENTIFIER) {
+	        while((((_la) & ~0x1f) === 0 && ((1 << _la) & 126) !== 0) || _la===35) {
 	            this.state = 206;
 	            this.line();
 	            this.state = 211;
@@ -1150,7 +1146,7 @@ CPPONGrammarParser.RULE_construct_array = 11;
 CPPONGrammarParser.RULE_parameters = 12;
 CPPONGrammarParser.RULE_operator = 13;
 CPPONGrammarParser.RULE_funccall = 14;
-CPPONGrammarParser.RULE_constructor = 15;
+CPPONGrammarParser.RULE_construct = 15;
 CPPONGrammarParser.RULE_set_field = 16;
 CPPONGrammarParser.RULE_add_field = 17;
 CPPONGrammarParser.RULE_line = 18;
@@ -1945,7 +1941,7 @@ class FunccallContext extends antlr4.ParserRuleContext {
 
 
 
-class ConstructorContext extends antlr4.ParserRuleContext {
+class ConstructContext extends antlr4.ParserRuleContext {
 
     constructor(parser, parent, invokingState) {
         if(parent===undefined) {
@@ -1956,7 +1952,7 @@ class ConstructorContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = CPPONGrammarParser.RULE_constructor;
+        this.ruleIndex = CPPONGrammarParser.RULE_construct;
     }
 
 	type() {
@@ -1973,19 +1969,19 @@ class ConstructorContext extends antlr4.ParserRuleContext {
 
 	enterRule(listener) {
 	    if(listener instanceof CPPONGrammarListener ) {
-	        listener.enterConstructor(this);
+	        listener.enterConstruct(this);
 		}
 	}
 
 	exitRule(listener) {
 	    if(listener instanceof CPPONGrammarListener ) {
-	        listener.exitConstructor(this);
+	        listener.exitConstruct(this);
 		}
 	}
 
 	accept(visitor) {
 	    if ( visitor instanceof CPPONGrammarVisitor ) {
-	        return visitor.visitConstructor(this);
+	        return visitor.visitConstruct(this);
 	    } else {
 	        return visitor.visitChildren(this);
 	    }
@@ -2100,8 +2096,8 @@ class LineContext extends antlr4.ParserRuleContext {
 	    return this.getToken(CPPONGrammarParser.SEMI, 0);
 	};
 
-	constructor() {
-	    return this.getTypedRuleContext(ConstructorContext,0);
+	construct() {
+	    return this.getTypedRuleContext(ConstructContext,0);
 	};
 
 	set_field() {
@@ -2250,7 +2246,7 @@ CPPONGrammarParser.Construct_arrayContext = Construct_arrayContext;
 CPPONGrammarParser.ParametersContext = ParametersContext; 
 CPPONGrammarParser.OperatorContext = OperatorContext; 
 CPPONGrammarParser.FunccallContext = FunccallContext; 
-CPPONGrammarParser.ConstructorContext = ConstructorContext; 
+CPPONGrammarParser.ConstructContext = ConstructContext; 
 CPPONGrammarParser.Set_fieldContext = Set_fieldContext; 
 CPPONGrammarParser.Add_fieldContext = Add_fieldContext; 
 CPPONGrammarParser.LineContext = LineContext; 
