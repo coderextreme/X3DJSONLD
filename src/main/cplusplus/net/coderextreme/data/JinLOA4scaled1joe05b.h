@@ -1,5 +1,3 @@
-//#define False false
-//#define True true
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
@@ -6021,7 +6019,7 @@ Group1349.setDEF(CString("StopAnimation_loa4"));
 TimeSensor& TimeSensor1350 =  TimeSensor();
 TimeSensor1350.setDEF(CString("StopTimer"));
 TimeSensor1350.setCycleInterval(5.5);
-TimeSensor1350.setLoop(True);
+TimeSensor1350.setLoop(true);
 Group1349.addChild(&TimeSensor1350);
 
 PositionInterpolator& PositionInterpolator1351 =  PositionInterpolator();
@@ -8971,7 +8969,7 @@ Group1792.setDEF(CString("StandAnimation"));
 TimeSensor& TimeSensor1793 =  TimeSensor();
 TimeSensor1793.setDEF(CString("StandTimer"));
 TimeSensor1793.setCycleInterval(5.73);
-TimeSensor1793.setLoop(True);
+TimeSensor1793.setLoop(true);
 Group1792.addChild(&TimeSensor1793);
 
 OrientationInterpolator& OrientationInterpolator1794 =  OrientationInterpolator();
@@ -9179,7 +9177,7 @@ Group1827.setDEF(CString("PitchesAnimation"));
 TimeSensor& TimeSensor1828 =  TimeSensor();
 TimeSensor1828.setDEF(CString("PitchTimer"));
 TimeSensor1828.setCycleInterval(5.73);
-TimeSensor1828.setLoop(True);
+TimeSensor1828.setLoop(true);
 Group1827.addChild(&TimeSensor1828);
 
 OrientationInterpolator& OrientationInterpolator1829 =  OrientationInterpolator();
@@ -9357,7 +9355,7 @@ Group1857.setDEF(CString("YawsAnimation"));
 TimeSensor& TimeSensor1858 =  TimeSensor();
 TimeSensor1858.setDEF(CString("YawTimer"));
 TimeSensor1858.setCycleInterval(5.73);
-TimeSensor1858.setLoop(True);
+TimeSensor1858.setLoop(true);
 Group1857.addChild(&TimeSensor1858);
 
 OrientationInterpolator& OrientationInterpolator1859 =  OrientationInterpolator();
@@ -9535,7 +9533,7 @@ Group1887.setDEF(CString("RollsAnimation"));
 TimeSensor& TimeSensor1888 =  TimeSensor();
 TimeSensor1888.setDEF(CString("RollTimer"));
 TimeSensor1888.setCycleInterval(5.73);
-TimeSensor1888.setLoop(True);
+TimeSensor1888.setLoop(true);
 Group1887.addChild(&TimeSensor1888);
 
 OrientationInterpolator& OrientationInterpolator1889 =  OrientationInterpolator();
@@ -9713,7 +9711,7 @@ Group1917.setDEF(CString("WalkAnimation"));
 TimeSensor& TimeSensor1918 =  TimeSensor();
 TimeSensor1918.setDEF(CString("WalkTimer"));
 TimeSensor1918.setCycleInterval(1.73);
-TimeSensor1918.setLoop(True);
+TimeSensor1918.setLoop(true);
 Group1917.addChild(&TimeSensor1918);
 
 OrientationInterpolator& OrientationInterpolator1919 =  OrientationInterpolator();
@@ -9891,7 +9889,7 @@ Group1947.setDEF(CString("RunAnimation"));
 TimeSensor& TimeSensor1948 =  TimeSensor();
 TimeSensor1948.setDEF(CString("RunTimer"));
 TimeSensor1948.setCycleInterval(0.9);
-TimeSensor1948.setLoop(True);
+TimeSensor1948.setLoop(true);
 Group1947.addChild(&TimeSensor1948);
 
 OrientationInterpolator& OrientationInterpolator1949 =  OrientationInterpolator();
@@ -10069,7 +10067,7 @@ Group1977.setDEF(CString("JumpAnimation"));
 TimeSensor& TimeSensor1978 =  TimeSensor();
 TimeSensor1978.setDEF(CString("JumpTimer"));
 TimeSensor1978.setCycleInterval(3.73);
-TimeSensor1978.setLoop(True);
+TimeSensor1978.setLoop(true);
 Group1977.addChild(&TimeSensor1978);
 
 OrientationInterpolator& OrientationInterpolator1979 =  OrientationInterpolator();
@@ -10247,7 +10245,7 @@ Group2007.setDEF(CString("KickAnimation"));
 TimeSensor& TimeSensor2008 =  TimeSensor();
 TimeSensor2008.setDEF(CString("KickTimer"));
 TimeSensor2008.setCycleInterval(3.73);
-TimeSensor2008.setLoop(True);
+TimeSensor2008.setLoop(true);
 Group2007.addChild(&TimeSensor2008);
 
 OrientationInterpolator& OrientationInterpolator2009 =  OrientationInterpolator();
@@ -12895,7 +12893,7 @@ Shape& Shape2391 =  Shape();
 Shape2391.setDEF(CString("AxisLinesShape"));
 IndexedLineSet& IndexedLineSet2392 =  IndexedLineSet();
 IndexedLineSet2392.setColorIndex(new int[3]{0,1,2}, 3);
-IndexedLineSet2392.setColorPerVertex(False);
+IndexedLineSet2392.setColorPerVertex(false);
 IndexedLineSet2392.setCoordIndex(new int32_t[9]{0,1,-1,0,2,-1,0,3,-1}, 9);
 CColor& Color2393 =  CColor();
 Color2393.setColor(new float[9]{1.0,0.0,0.0,0.0,0.6,0.0,0.0,0.0,1.0}, 9);

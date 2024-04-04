@@ -1,5 +1,3 @@
-//#define False false
-//#define True true
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
@@ -489,7 +487,7 @@ DISEntityManager96.setMapping(&DISEntityTypeMapping98);
 Layer33.addChild(&DISEntityManager96);
 
 Collision& Collision99 =  Collision();
-Collision99.setEnabled(False);
+Collision99.setEnabled(false);
 Group& Group100 =  Group();
 Group100.setDEF(CString("AvatarHolder"));
 Collision99.addChildren(&Group100);
@@ -977,8 +975,8 @@ LayoutLayer103.addChild(&Transform204);
 
 Script& Script222 =  Script();
 Script222.setDEF(CString("aValueTransformerScript"));
-Script222.setDirectOutput(True);
-Script222.setMustEvaluate(True);
+Script222.setDirectOutput(true);
+Script222.setMustEvaluate(true);
 field& field223 =  field();
 field223.setName(CString("newTranslation"));
 field223.setAccessType(CString("inputOnly"));
@@ -999,8 +997,8 @@ LayoutLayer103.addChild(&Script222);
 
 Script& Script225 =  Script();
 Script225.setDEF(CString("bValueTransformerScript"));
-Script225.setDirectOutput(True);
-Script225.setMustEvaluate(True);
+Script225.setDirectOutput(true);
+Script225.setMustEvaluate(true);
 field& field226 =  field();
 field226.setName(CString("newTranslation"));
 field226.setAccessType(CString("inputOnly"));
@@ -1021,8 +1019,8 @@ LayoutLayer103.addChild(&Script225);
 
 Script& Script228 =  Script();
 Script228.setDEF(CString("cValueTransformerScript"));
-Script228.setDirectOutput(True);
-Script228.setMustEvaluate(True);
+Script228.setDirectOutput(true);
+Script228.setMustEvaluate(true);
 field& field229 =  field();
 field229.setName(CString("newTranslation"));
 field229.setAccessType(CString("inputOnly"));
@@ -1043,8 +1041,8 @@ LayoutLayer103.addChild(&Script228);
 
 Script& Script231 =  Script();
 Script231.setDEF(CString("dValueTransformerScript"));
-Script231.setDirectOutput(True);
-Script231.setMustEvaluate(True);
+Script231.setDirectOutput(true);
+Script231.setMustEvaluate(true);
 field& field232 =  field();
 field232.setName(CString("newTranslation"));
 field232.setAccessType(CString("inputOnly"));
@@ -1065,8 +1063,8 @@ LayoutLayer103.addChild(&Script231);
 
 Script& Script234 =  Script();
 Script234.setDEF(CString("pdeltaValueTransformerScript"));
-Script234.setDirectOutput(True);
-Script234.setMustEvaluate(True);
+Script234.setDirectOutput(true);
+Script234.setMustEvaluate(true);
 field& field235 =  field();
 field235.setName(CString("newTranslation"));
 field235.setAccessType(CString("inputOnly"));
@@ -1087,8 +1085,8 @@ LayoutLayer103.addChild(&Script234);
 
 Script& Script237 =  Script();
 Script237.setDEF(CString("tdeltaValueTransformerScript"));
-Script237.setDirectOutput(True);
-Script237.setMustEvaluate(True);
+Script237.setDirectOutput(true);
+Script237.setMustEvaluate(true);
 field& field238 =  field();
 field238.setName(CString("newTranslation"));
 field238.setAccessType(CString("inputOnly"));

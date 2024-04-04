@@ -76,6 +76,18 @@ public class CPPONGrammarBaseListener implements CPPONGrammarListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterBoolean(CPPONGrammarParser.BooleanContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitBoolean(CPPONGrammarParser.BooleanContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterBoolean_list(CPPONGrammarParser.Boolean_listContext ctx) { }
 	/**
 	 * {@inheritDoc}

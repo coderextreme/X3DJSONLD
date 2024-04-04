@@ -1,5 +1,3 @@
-//#define False false
-//#define True true
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
@@ -206,7 +204,7 @@ Shape38.setDEF(CString("AxisLinesShape"));
 //RGB lines showing XYZ axes
 IndexedLineSet& IndexedLineSet39 =  IndexedLineSet();
 IndexedLineSet39.setColorIndex(new int[3]{0,1,2}, 3);
-IndexedLineSet39.setColorPerVertex(False);
+IndexedLineSet39.setColorPerVertex(false);
 IndexedLineSet39.setCoordIndex(new int32_t[9]{0,1,-1,0,2,-1,0,3,-1}, 9);
 Coordinate& Coordinate40 =  Coordinate();
 Coordinate40.setPoint(new float[12]{0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0}, 12);
@@ -1364,7 +1362,7 @@ Group& Group241 =  Group();
 TimeSensor& TimeSensor242 =  TimeSensor();
 TimeSensor242.setDEF(CString("KickTimer"));
 TimeSensor242.setCycleInterval(3.73);
-TimeSensor242.setLoop(True);
+TimeSensor242.setLoop(true);
 Group241.addChild(&TimeSensor242);
 
 //Interpolators

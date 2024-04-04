@@ -1,5 +1,3 @@
-//#define False false
-//#define True true
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
@@ -67,7 +65,7 @@ Shape14.setDEF(CString("HAnimSiteShape"));
 IndexedFaceSet& IndexedFaceSet15 =  IndexedFaceSet();
 IndexedFaceSet15.setDEF(CString("DiamondIFS"));
 IndexedFaceSet15.setCreaseAngle(0.5);
-IndexedFaceSet15.setSolid(False);
+IndexedFaceSet15.setSolid(false);
 IndexedFaceSet15.setCoordIndex(new int32_t[32]{0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1}, 32);
 ColorRGBA& ColorRGBA16 =  ColorRGBA();
 ColorRGBA16.setDEF(CString("HAnimSiteColorRGBA"));

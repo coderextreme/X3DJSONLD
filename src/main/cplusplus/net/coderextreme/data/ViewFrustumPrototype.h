@@ -1,5 +1,3 @@
-//#define False false
-//#define True true
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
@@ -234,7 +232,7 @@ ProtoBody27.addChild(&Switch28);
 
 Script& Script48 =  Script();
 Script48.setDEF(CString("GeometryComputationScript"));
-Script48.setDirectOutput(True);
+Script48.setDirectOutput(true);
 Script48.setUrl(new CString[1]{CString("ViewFrustumPrototypeScript.js")}, 1);
 field& field49 =  field();
 field49.setName(CString("visible"));

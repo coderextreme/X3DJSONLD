@@ -1,5 +1,3 @@
-//#define False false
-//#define True true
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
@@ -305,7 +303,7 @@ ProtoDeclare60.addChild(&ProtoInterface61);
 ProtoBody& ProtoBody68 =  ProtoBody();
 Script& Script69 =  Script();
 Script69.setDEF(CString("S1"));
-Script69.setDirectOutput(True);
+Script69.setDirectOutput(true);
 field& field70 =  field();
 field70.setName(CString("startnode"));
 field70.setAccessType(CString("initializeOnly"));

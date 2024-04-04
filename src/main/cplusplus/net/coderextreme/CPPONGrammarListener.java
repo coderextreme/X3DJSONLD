@@ -57,6 +57,16 @@ public interface CPPONGrammarListener extends ParseTreeListener {
 	 */
 	void exitCstring(CPPONGrammarParser.CstringContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link CPPONGrammarParser#boolean}.
+	 * @param ctx the parse tree
+	 */
+	void enterBoolean(CPPONGrammarParser.BooleanContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link CPPONGrammarParser#boolean}.
+	 * @param ctx the parse tree
+	 */
+	void exitBoolean(CPPONGrammarParser.BooleanContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link CPPONGrammarParser#boolean_list}.
 	 * @param ctx the parse tree
 	 */

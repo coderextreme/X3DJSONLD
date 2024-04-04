@@ -42,8 +42,8 @@ NavigationInfo8.setType(new CString[1]{CString("EXAMINE")}, 1);
 Scene7.addChild(&NavigationInfo8);
 
 Viewpoint& Viewpoint9 =  Viewpoint();
-Viewpoint9.setPosition(new float[3]{0.0,0.0,4.0});
-Viewpoint9.setOrientation(new float[4]{1.0,0.0,0.0,0.0});
+Viewpoint9.setPosition(new float[3]{0,0,4});
+Viewpoint9.setOrientation(new float[4]{1,0,0,0});
 Viewpoint9.setDescription(CString("Bubbles in action"));
 Scene7.addChild(&Viewpoint9);
 
@@ -65,7 +65,7 @@ Shape12.setGeometry(&Sphere13);
 
 Appearance& Appearance14 =  Appearance();
 Material& Material15 =  Material();
-Material15.setDiffuseColor(new float[3]{1.0,0.0,0.0});
+Material15.setDiffuseColor(new float[3]{1,0,0});
 Material15.setTransparency(0.2);
 Appearance14.addChild(&Material15);
 
@@ -187,7 +187,7 @@ Shape27.setGeometry(&Sphere28);
 
 Appearance& Appearance29 =  Appearance();
 Material& Material30 =  Material();
-Material30.setDiffuseColor(new float[3]{1.0,0.0,0.0});
+Material30.setDiffuseColor(new float[3]{1,0,0});
 Material30.setTransparency(0.2);
 Appearance29.addChild(&Material30);
 
@@ -309,7 +309,7 @@ Shape42.setGeometry(&Sphere43);
 
 Appearance& Appearance44 =  Appearance();
 Material& Material45 =  Material();
-Material45.setDiffuseColor(new float[3]{1.0,0.0,0.0});
+Material45.setDiffuseColor(new float[3]{1,0,0});
 Material45.setTransparency(0.2);
 Appearance44.addChild(&Material45);
 
@@ -431,7 +431,7 @@ Shape57.setGeometry(&Sphere58);
 
 Appearance& Appearance59 =  Appearance();
 Material& Material60 =  Material();
-Material60.setDiffuseColor(new float[3]{1.0,0.0,0.0});
+Material60.setDiffuseColor(new float[3]{1,0,0});
 Material60.setTransparency(0.2);
 Appearance59.addChild(&Material60);
 

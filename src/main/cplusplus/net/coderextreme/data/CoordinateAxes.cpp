@@ -105,7 +105,7 @@ Shape19.addChild(&Appearance21);
 Group18.addChild(&Shape19);
 
 Transform& Transform23 =  Transform();
-Transform23.setTranslation(new float[3]{0.0,1.0,0.0});
+Transform23.setTranslation(new float[3]{0,1,0});
 Shape& Shape24 =  Shape();
 Cone& Cone25 =  Cone();
 Cone25.setDEF(CString("ArrowCone"));
@@ -124,13 +124,13 @@ Group18.addChild(&Transform23);
 Group17.addChild(&Group18);
 
 Transform& Transform27 =  Transform();
-Transform27.setTranslation(new float[3]{0.0,1.08,0.0});
+Transform27.setTranslation(new float[3]{0,1.08,0});
 Billboard& Billboard28 =  Billboard();
 Shape& Shape29 =  Shape();
 Appearance& Appearance30 =  Appearance();
 Appearance30.setDEF(CString("LABEL_APPEARANCE"));
 Material& Material31 =  Material();
-Material31.setDiffuseColor(new float[3]{1.0,1.0,0.3});
+Material31.setDiffuseColor(new float[3]{1,1,0.3});
 Material31.setEmissiveColor(new float[3]{0.33,0.33,0.1});
 Appearance30.addChild(&Material31);
 
@@ -156,7 +156,7 @@ Group17.addChild(&Transform27);
 Collision16.addChildren(&Group17);
 
 Transform& Transform34 =  Transform();
-Transform34.setRotation(new float[4]{0.0,0.0,1.0,-1.57079});
+Transform34.setRotation(new float[4]{0,0,1,-1.57079});
 //Horizontal X arrow and label
 Group& Group35 =  Group();
 Group& Group36 =  Group();
@@ -170,7 +170,7 @@ Appearance& Appearance39 =  Appearance();
 Appearance39.setDEF(CString("Red"));
 Material& Material40 =  Material();
 Material40.setDiffuseColor(new float[3]{0.7,0.1,0.1});
-Material40.setEmissiveColor(new float[3]{0.33,0.0,0.0});
+Material40.setEmissiveColor(new float[3]{0.33,0,0});
 Appearance39.addChild(&Material40);
 
 Shape37.addChild(&Appearance39);
@@ -178,7 +178,7 @@ Shape37.addChild(&Appearance39);
 Group36.addChild(&Shape37);
 
 Transform& Transform41 =  Transform();
-Transform41.setTranslation(new float[3]{0.0,1.0,0.0});
+Transform41.setTranslation(new float[3]{0,1,0});
 Shape& Shape42 =  Shape();
 Cone& Cone43 =  Cone();
 Cone43.setUSE(CString("ArrowCone"));
@@ -195,8 +195,8 @@ Group36.addChild(&Transform41);
 Group35.addChild(&Group36);
 
 Transform& Transform45 =  Transform();
-Transform45.setRotation(new float[4]{0.0,0.0,1.0,1.57079});
-Transform45.setTranslation(new float[3]{0.072,1.1,0.0});
+Transform45.setRotation(new float[4]{0,0,1,1.57079});
+Transform45.setTranslation(new float[3]{0.072,1.1,0});
 //note label rotated back to original coordinate frame
 Billboard& Billboard46 =  Billboard();
 Shape& Shape47 =  Shape();
@@ -223,7 +223,7 @@ Transform34.addChild(&Group35);
 Collision16.addChildren(&Transform34);
 
 Transform& Transform51 =  Transform();
-Transform51.setRotation(new float[4]{1.0,0.0,0.0,1.57079});
+Transform51.setRotation(new float[4]{1,0,0,1.57079});
 //Perpendicular Z arrow and label, note right-hand rule
 Group& Group52 =  Group();
 Group& Group53 =  Group();
@@ -236,7 +236,7 @@ Shape54.setGeometry(&Cylinder55);
 Appearance& Appearance56 =  Appearance();
 Appearance56.setDEF(CString("Blue"));
 Material& Material57 =  Material();
-Material57.setDiffuseColor(new float[3]{0.3,0.3,1.0});
+Material57.setDiffuseColor(new float[3]{0.3,0.3,1});
 Material57.setEmissiveColor(new float[3]{0.1,0.1,0.33});
 Appearance56.addChild(&Material57);
 
@@ -245,7 +245,7 @@ Shape54.addChild(&Appearance56);
 Group53.addChild(&Shape54);
 
 Transform& Transform58 =  Transform();
-Transform58.setTranslation(new float[3]{0.0,1.0,0.0});
+Transform58.setTranslation(new float[3]{0,1,0});
 Shape& Shape59 =  Shape();
 Cone& Cone60 =  Cone();
 Cone60.setUSE(CString("ArrowCone"));
@@ -262,8 +262,8 @@ Group53.addChild(&Transform58);
 Group52.addChild(&Group53);
 
 Transform& Transform62 =  Transform();
-Transform62.setRotation(new float[4]{1.0,0.0,0.0,-1.57079});
-Transform62.setTranslation(new float[3]{0.0,1.1,0.072});
+Transform62.setRotation(new float[4]{1,0,0,-1.57079});
+Transform62.setTranslation(new float[3]{0,1.1,0.072});
 //note label rotated back to original coordinate frame
 Billboard& Billboard63 =  Billboard();
 Shape& Shape64 =  Shape();

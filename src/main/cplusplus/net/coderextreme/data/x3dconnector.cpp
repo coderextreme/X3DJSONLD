@@ -38,7 +38,7 @@ X3D0.setHead(&head1);
 
 Scene& Scene7 =  Scene();
 Viewpoint& Viewpoint8 =  Viewpoint();
-Viewpoint8.setPosition(new float[3]{0.0,0.0,5.0});
+Viewpoint8.setPosition(new float[3]{0,0,5});
 Viewpoint8.setDescription(CString("Only Viewpoint"));
 Scene7.addChild(&Viewpoint8);
 
@@ -78,7 +78,7 @@ Scene7.addChild(&Transform10);
 
 Transform& Transform17 =  Transform();
 Transform17.setDEF(CString("G2"));
-Transform17.setTranslation(new float[3]{1.0,-1.0,0.01});
+Transform17.setTranslation(new float[3]{1,-1,0.01});
 Shape& Shape18 =  Shape();
 Appearance& Appearance19 =  Appearance();
 Material& Material20 =  Material();
@@ -95,7 +95,7 @@ Transform17.addChild(&Shape18);
 
 PlaneSensor& PlaneSensor22 =  PlaneSensor();
 PlaneSensor22.setDescription(CString("Grab to move"));
-PlaneSensor22.setOffset(new float[3]{1.0,-1.0,0.01});
+PlaneSensor22.setOffset(new float[3]{1,-1,0.01});
 PlaneSensor22.setDEF(CString("PS2"));
 Transform17.addChild(&PlaneSensor22);
 

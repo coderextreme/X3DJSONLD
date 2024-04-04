@@ -1,5 +1,3 @@
-//#define False false
-//#define True true
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
@@ -5990,7 +5988,7 @@ Scene7.addChild(&Transform24);
 TimeSensor& TimeSensor1348 =  TimeSensor();
 TimeSensor1348.setDEF(CString("Armature_Clock"));
 TimeSensor1348.setCycleInterval(10.416666666666666);
-TimeSensor1348.setLoop(True);
+TimeSensor1348.setLoop(true);
 Scene7.addChild(&TimeSensor1348);
 
 ProximitySensor& ProximitySensor1349 =  ProximitySensor();

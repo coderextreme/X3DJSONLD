@@ -1,5 +1,3 @@
-//#define False false
-//#define True true
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
@@ -122,7 +120,7 @@ Transform19.addChild(&Transform24);
 
 StringSensor& StringSensor29 =  StringSensor();
 StringSensor29.setDEF(CString("RightSensor"));
-StringSensor29.setEnabled(False);
+StringSensor29.setEnabled(false);
 Transform19.addChild(&StringSensor29);
 
 TouchSensor& TouchSensor30 =  TouchSensor();
@@ -173,7 +171,7 @@ Transform31.addChild(&Transform36);
 
 StringSensor& StringSensor41 =  StringSensor();
 StringSensor41.setDEF(CString("UpSensor"));
-StringSensor41.setEnabled(False);
+StringSensor41.setEnabled(false);
 Transform31.addChild(&StringSensor41);
 
 TouchSensor& TouchSensor42 =  TouchSensor();
@@ -242,7 +240,7 @@ Transform48.addChild(&Transform53);
 
 StringSensor& StringSensor58 =  StringSensor();
 StringSensor58.setDEF(CString("CenterSensor"));
-StringSensor58.setEnabled(False);
+StringSensor58.setEnabled(false);
 Transform48.addChild(&StringSensor58);
 
 TouchSensor& TouchSensor59 =  TouchSensor();

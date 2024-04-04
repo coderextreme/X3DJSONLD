@@ -67,11 +67,11 @@ IndexedLineSet14.setColorIndex(new int[3]{0,1,2}, 3);
 IndexedLineSet14.setColorPerVertex(False);
 IndexedLineSet14.setCoordIndex(new int32_t[9]{0,1,-1,0,2,-1,0,3,-1}, 9);
 Coordinate& Coordinate15 =  Coordinate();
-Coordinate15.setPoint(new float[12]{0.0,0.0,0.0,0.1,0.0,0.0,0.0,0.1,0.0,0.0,0.0,0.1}, 12);
+Coordinate15.setPoint(new float[12]{0,0,0,0.1,0,0,0,0.1,0,0,0,0.1}, 12);
 IndexedLineSet14.setCoord(&Coordinate15);
 
 CColor& Color16 =  CColor();
-Color16.setColor(new float[9]{1.0,0.0,0.0,0.0,0.6,0.0,0.0,0.0,1.0}, 9);
+Color16.setColor(new float[9]{1,0,0,0,0.6,0,0,0,1}, 9);
 IndexedLineSet14.setColor(&Color16);
 
 Shape13.setGeometry(&IndexedLineSet14);
@@ -84,7 +84,7 @@ Group& Group17 =  Group();
 //DEFS for markers of skeleton joints, segments, and sites
 Transform& Transform18 =  Transform();
 Transform& Transform19 =  Transform();
-Transform19.setTranslation(new float[3]{0.0,2.0,0.0});
+Transform19.setTranslation(new float[3]{0,2,0});
 Shape& Shape20 =  Shape();
 Shape20.setDEF(CString("HAnimRootShape"));
 Sphere& Sphere21 =  Sphere();
@@ -94,7 +94,7 @@ Shape20.setGeometry(&Sphere21);
 Appearance& Appearance22 =  Appearance();
 Material& Material23 =  Material();
 Material23.setDEF(CString("HAnimRootMaterial"));
-Material23.setDiffuseColor(new float[3]{0.8,0.0,0.0});
+Material23.setDiffuseColor(new float[3]{0.8,0,0});
 Material23.setTransparency(0.3);
 Appearance22.addChild(&Material23);
 
@@ -105,7 +105,7 @@ Transform19.addChild(&Shape20);
 Transform18.addChild(&Transform19);
 
 Transform& Transform24 =  Transform();
-Transform24.setTranslation(new float[3]{0.0,2.1,0.0});
+Transform24.setTranslation(new float[3]{0,2.1,0});
 Shape& Shape25 =  Shape();
 Shape25.setDEF(CString("HAnimJointShape"));
 Sphere& Sphere26 =  Sphere();
@@ -115,7 +115,7 @@ Shape25.setGeometry(&Sphere26);
 Appearance& Appearance27 =  Appearance();
 Material& Material28 =  Material();
 Material28.setDEF(CString("HAnimJointMaterial"));
-Material28.setDiffuseColor(new float[3]{0.0,0.0,0.8});
+Material28.setDiffuseColor(new float[3]{0,0,0.8});
 Material28.setTransparency(0.3);
 Appearance27.addChild(&Material28);
 
@@ -126,18 +126,18 @@ Transform24.addChild(&Shape25);
 Transform18.addChild(&Transform24);
 
 Transform& Transform29 =  Transform();
-Transform29.setTranslation(new float[3]{0.0,2.05,0.0});
+Transform29.setTranslation(new float[3]{0,2.05,0});
 Shape& Shape30 =  Shape();
 Shape30.setDEF(CString("HAnimSegmentLine"));
 LineSet& LineSet31 =  LineSet();
 LineSet31.setVertexCount(new int32_t[1]{2}, 1);
 ColorRGBA& ColorRGBA32 =  ColorRGBA();
 ColorRGBA32.setDEF(CString("HAnimSegmentLineColorRGBA"));
-ColorRGBA32.setColor(new float[8]{1.0,1.0,0.0,1.0,1.0,1.0,0.0,0.1}, 8);
+ColorRGBA32.setColor(new float[8]{1,1,0,1,1,1,0,0.1}, 8);
 LineSet31.addChild(&ColorRGBA32);
 
 Coordinate& Coordinate33 =  Coordinate();
-Coordinate33.setPoint(new float[6]{-0.05,0.0,0.0,0.05,0.0,0.0}, 6);
+Coordinate33.setPoint(new float[6]{-0.05,0,0,0.05,0,0}, 6);
 LineSet31.setCoord(Coordinate33);
 
 Shape30.setGeometry(&LineSet31);
@@ -147,7 +147,7 @@ Transform29.addChild(&Shape30);
 Transform18.addChild(&Transform29);
 
 Transform& Transform34 =  Transform();
-Transform34.setTranslation(new float[3]{0.0,2.1,0.0});
+Transform34.setTranslation(new float[3]{0,2.1,0});
 Shape& Shape35 =  Shape();
 Shape35.setDEF(CString("HAnimSiteShape"));
 IndexedFaceSet& IndexedFaceSet36 =  IndexedFaceSet();
@@ -157,18 +157,18 @@ IndexedFaceSet36.setSolid(False);
 IndexedFaceSet36.setCoordIndex(new int32_t[32]{0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1}, 32);
 ColorRGBA& ColorRGBA37 =  ColorRGBA();
 ColorRGBA37.setDEF(CString("HAnimSiteColorRGBA"));
-ColorRGBA37.setColor(new float[24]{1.0,1.0,0.0,1.0,1.0,1.0,0.0,0.1,1.0,1.0,0.0,1.0,1.0,1.0,0.0,0.1,1.0,1.0,0.0,1.0,1.0,1.0,0.0,0.1}, 24);
+ColorRGBA37.setColor(new float[24]{1,1,0,1,1,1,0,0.1,1,1,0,1,1,1,0,0.1,1,1,0,1,1,1,0,0.1}, 24);
 IndexedFaceSet36.addChild(&ColorRGBA37);
 
 Coordinate& Coordinate38 =  Coordinate();
-Coordinate38.setPoint(new float[18]{0.0,0.01,0.0,-0.01,0.0,0.0,0.0,0.0,0.01,0.01,0.0,0.0,0.0,0.0,-0.01,0.0,-0.01,0.0}, 18);
+Coordinate38.setPoint(new float[18]{0,0.01,0,-0.01,0,0,0,0,0.01,0.01,0,0,0,0,-0.01,0,-0.01,0}, 18);
 IndexedFaceSet36.setCoord(&Coordinate38);
 
 Shape35.setGeometry(&IndexedFaceSet36);
 
 Appearance& Appearance39 =  Appearance();
 Material& Material40 =  Material();
-Material40.setDiffuseColor(new float[3]{1.0,1.0,0.0});
+Material40.setDiffuseColor(new float[3]{1,1,0});
 Material40.setTransparency(0.3);
 Appearance39.addChild(&Material40);
 
@@ -203,12 +203,12 @@ HAnimHumanoid43.setSkinCoord(&Coordinate44);
 HAnimJoint& HAnimJoint45 =  HAnimJoint();
 HAnimJoint45.X3DNode::setName(CString("humanoid_root"));
 HAnimJoint45.setDEF(CString("hanim_humanoid_root"));
-HAnimJoint45.setCenter(new float[3]{0.0,0.824,0.0277});
+HAnimJoint45.setCenter(new float[3]{0,0.824,0.0277});
 HAnimSegment& HAnimSegment46 =  HAnimSegment();
 HAnimSegment46.X3DNode::setName(CString("sacrum"));
 HAnimSegment46.setDEF(CString("hanim_sacrum"));
 Transform& Transform47 =  Transform();
-Transform47.setTranslation(new float[3]{0.0,0.824,0.0277});
+Transform47.setTranslation(new float[3]{0,0.824,0.0277});
 Transform& Transform48 =  Transform();
 //Empty Transform
 Shape& Shape49 =  Shape();
@@ -223,7 +223,7 @@ Shape& Shape50 =  Shape();
 LineSet& LineSet51 =  LineSet();
 LineSet51.setVertexCount(new int32_t[1]{2}, 1);
 Coordinate& Coordinate52 =  Coordinate();
-Coordinate52.setPoint(new float[6]{0.0,0.824,0.0277,0.0,0.9149,0.0016}, 6);
+Coordinate52.setPoint(new float[6]{0,0.824,0.0277,0,0.9149,0.0016}, 6);
 LineSet51.setCoord(Coordinate52);
 
 //from humanoid_root to sacroiliac vertices 2
@@ -378,7 +378,7 @@ Shape& Shape84 =  Shape();
 LineSet& LineSet85 =  LineSet();
 LineSet85.setVertexCount(new int32_t[1]{2}, 1);
 Coordinate& Coordinate86 =  Coordinate();
-Coordinate86.setPoint(new float[6]{0.0,0.824,0.0277,0.0028,1.0568,-0.0776}, 6);
+Coordinate86.setPoint(new float[6]{0,0.824,0.0277,0.0028,1.0568,-0.0776}, 6);
 LineSet85.setCoord(Coordinate86);
 
 //from humanoid_root to vl5 vertices 2
@@ -436,12 +436,12 @@ HAnimJoint45.addChildren(&HAnimSegment46);
 HAnimJoint& HAnimJoint97 =  HAnimJoint();
 HAnimJoint97.X3DNode::setName(CString("sacroiliac"));
 HAnimJoint97.setDEF(CString("hanim_sacroiliac"));
-HAnimJoint97.setCenter(new float[3]{0.0,0.9149,0.0016});
+HAnimJoint97.setCenter(new float[3]{0,0.9149,0.0016});
 HAnimSegment& HAnimSegment98 =  HAnimSegment();
 HAnimSegment98.X3DNode::setName(CString("pelvis"));
 HAnimSegment98.setDEF(CString("hanim_pelvis"));
 Transform& Transform99 =  Transform();
-Transform99.setTranslation(new float[3]{0.0,0.9149,0.0016});
+Transform99.setTranslation(new float[3]{0,0.9149,0.0016});
 Transform& Transform100 =  Transform();
 //Empty Transform
 Shape& Shape101 =  Shape();
@@ -456,7 +456,7 @@ Shape& Shape102 =  Shape();
 LineSet& LineSet103 =  LineSet();
 LineSet103.setVertexCount(new int32_t[1]{2}, 1);
 Coordinate& Coordinate104 =  Coordinate();
-Coordinate104.setPoint(new float[6]{0.0,0.9149,0.0016,0.0961,0.9124,-0.0001}, 6);
+Coordinate104.setPoint(new float[6]{0,0.9149,0.0016,0.0961,0.9124,-0.0001}, 6);
 LineSet103.setCoord(Coordinate104);
 
 //from sacroiliac to l_hip vertices 2
@@ -527,7 +527,7 @@ Shape& Shape118 =  Shape();
 LineSet& LineSet119 =  LineSet();
 LineSet119.setVertexCount(new int32_t[1]{2}, 1);
 Coordinate& Coordinate120 =  Coordinate();
-Coordinate120.setPoint(new float[6]{0.0,0.9149,0.0016,-0.095,0.9171,0.0029}, 6);
+Coordinate120.setPoint(new float[6]{0,0.9149,0.0016,-0.095,0.9171,0.0029}, 6);
 LineSet119.setCoord(Coordinate120);
 
 //from sacroiliac to r_hip vertices 2
@@ -749,7 +749,7 @@ HAnimSegment168.setDEF(CString("hanim_l_talus"));
 Transform& Transform169 =  Transform();
 Transform169.setScale(new float[3]{0.15,0.15,0.15});
 Transform169.setTranslation(new float[3]{0.08,0.06,-0.025});
-Transform169.setRotation(new float[4]{1.0,0.0,0.0,-1.57});
+Transform169.setRotation(new float[4]{1,0,0,-1.57});
 //Transform left foot
 Transform& Transform170 =  Transform();
 //Empty Transform left foot
@@ -1700,7 +1700,7 @@ Shape& Shape390 =  Shape();
 LineSet& LineSet391 =  LineSet();
 LineSet391.setVertexCount(new int32_t[1]{2}, 1);
 Coordinate& Coordinate392 =  Coordinate();
-Coordinate392.setPoint(new float[6]{5.6085,0.003,4.6485,5.6485,0.0,4.9925}, 6);
+Coordinate392.setPoint(new float[6]{5.6085,0.003,4.6485,5.6485,0,4.9925}, 6);
 LineSet391.setCoord(Coordinate392);
 
 //from l_tarsal_proximal_interphalangeal_5 to l_tarsal_distal_interphalangeal_5 vertices 2
@@ -1730,7 +1730,7 @@ HAnimJoint385.addChildren(&HAnimSegment386);
 HAnimJoint& HAnimJoint397 =  HAnimJoint();
 HAnimJoint397.X3DNode::setName(CString("l_tarsal_distal_interphalangeal_5"));
 HAnimJoint397.setDEF(CString("hanim_l_tarsal_distal_interphalangeal_5"));
-HAnimJoint397.setCenter(new float[3]{5.6485,0.0,4.9925});
+HAnimJoint397.setCenter(new float[3]{5.6485,0,4.9925});
 HAnimJoint385.addChildren(&HAnimJoint397);
 
 HAnimJoint376.addChildren(&HAnimJoint385);
@@ -1902,7 +1902,7 @@ HAnimSegment432.setDEF(CString("hanim_r_talus"));
 Transform& Transform433 =  Transform();
 Transform433.setScale(new float[3]{0.15,0.15,0.15});
 Transform433.setTranslation(new float[3]{-0.05,0.06,-0.025});
-Transform433.setRotation(new float[4]{1.0,0.0,0.0,-1.57});
+Transform433.setRotation(new float[4]{1,0,0,-1.57});
 //Transform right foot
 Transform& Transform434 =  Transform();
 //Empty Transform right foot
@@ -2853,7 +2853,7 @@ Shape& Shape654 =  Shape();
 LineSet& LineSet655 =  LineSet();
 LineSet655.setVertexCount(new int32_t[1]{2}, 1);
 Coordinate& Coordinate656 =  Coordinate();
-Coordinate656.setPoint(new float[6]{-5.6085,0.003,4.6485,-5.6495,0.0,4.9925}, 6);
+Coordinate656.setPoint(new float[6]{-5.6085,0.003,4.6485,-5.6495,0,4.9925}, 6);
 LineSet655.setCoord(Coordinate656);
 
 //from r_tarsal_proximal_interphalangeal_5 to r_tarsal_distal_interphalangeal_5 vertices 2
@@ -2883,7 +2883,7 @@ HAnimJoint649.addChildren(&HAnimSegment650);
 HAnimJoint& HAnimJoint661 =  HAnimJoint();
 HAnimJoint661.X3DNode::setName(CString("r_tarsal_distal_interphalangeal_5"));
 HAnimJoint661.setDEF(CString("hanim_r_tarsal_distal_interphalangeal_5"));
-HAnimJoint661.setCenter(new float[3]{-5.6495,0.0,4.9925});
+HAnimJoint661.setCenter(new float[3]{-5.6495,0,4.9925});
 HAnimJoint649.addChildren(&HAnimJoint661);
 
 HAnimJoint640.addChildren(&HAnimJoint649);
@@ -4830,10 +4830,10 @@ HAnimSegment1107.setDEF(CString("hanim_l_carpal"));
 Transform& Transform1108 =  Transform();
 Transform1108.setScale(new float[3]{0.2,0.2,0.2});
 Transform1108.setTranslation(new float[3]{0.2,0.85,-0.05});
-Transform1108.setRotation(new float[4]{0.0,0.0,1.0,-3.14});
+Transform1108.setRotation(new float[4]{0,0,1,-3.14});
 //Transform left hand
 Transform& Transform1109 =  Transform();
-Transform1109.setRotation(new float[4]{0.0,1.0,0.0,-1.57});
+Transform1109.setRotation(new float[4]{0,1,0,-1.57});
 //Transform left hand
 Shape& Shape1110 =  Shape();
 Shape1110.setUSE(CString("HAnimJointShape"));
@@ -6042,10 +6042,10 @@ HAnimSegment1383.setDEF(CString("hanim_r_carpal"));
 Transform& Transform1384 =  Transform();
 Transform1384.setScale(new float[3]{0.2,0.2,0.2});
 Transform1384.setTranslation(new float[3]{-0.2,0.85,-0.05});
-Transform1384.setRotation(new float[4]{0.0,0.0,1.0,-3.14});
+Transform1384.setRotation(new float[4]{0,0,1,-3.14});
 //Transform right hand
 Transform& Transform1385 =  Transform();
-Transform1385.setRotation(new float[4]{0.0,1.0,0.0,1.57});
+Transform1385.setRotation(new float[4]{0,1,0,1.57});
 //Transform right hand
 Shape& Shape1386 =  Shape();
 Shape1386.setUSE(CString("HAnimJointShape"));

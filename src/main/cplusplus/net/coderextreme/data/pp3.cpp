@@ -62,7 +62,7 @@ Transform14.setScale(new float[3]{0.5,0.5,0.5});
 Shape& Shape15 =  Shape();
 Appearance& Appearance16 =  Appearance();
 Material& Material17 =  Material();
-Material17.setDiffuseColor(new float[3]{0.7,1.0,0.0});
+Material17.setDiffuseColor(new float[3]{0.7,1,0});
 Material17.setTransparency(0.5);
 Appearance16.addChild(&Material17);
 
@@ -70,8 +70,8 @@ Shape15.addChild(&Appearance16);
 
 Extrusion& Extrusion18 =  Extrusion();
 Extrusion18.setCreaseAngle(0.785);
-Extrusion18.setCrossSection(new float[34]{1.0,0.0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.0,-1.0,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.0,0.0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0.0,1.0,0.38,0.92,0.71,0.71,0.92,0.38,1.0,0.0}, 34);
-Extrusion18.setSpine(new float[6]{-2.5,0.0,0.0,-1.5,0.0,0.0}, 6);
+Extrusion18.setCrossSection(new float[34]{1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0}, 34);
+Extrusion18.setSpine(new float[6]{-2.5,0,0,-1.5,0,0}, 6);
 Shape15.setGeometry(&Extrusion18);
 
 Transform14.addChild(&Shape15);
@@ -85,7 +85,7 @@ Transform19.setScale(new float[3]{0.5,0.5,0.5});
 Shape& Shape20 =  Shape();
 Appearance& Appearance21 =  Appearance();
 Material& Material22 =  Material();
-Material22.setDiffuseColor(new float[3]{0.0,0.7,1.0});
+Material22.setDiffuseColor(new float[3]{0,0.7,1});
 Material22.setTransparency(0.5);
 Appearance21.addChild(&Material22);
 
@@ -93,19 +93,19 @@ Shape20.addChild(&Appearance21);
 
 Extrusion& Extrusion23 =  Extrusion();
 Extrusion23.setCreaseAngle(0.785);
-Extrusion23.setCrossSection(new float[34]{1.0,0.0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.0,-1.0,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.0,0.0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0.0,1.0,0.38,0.92,0.71,0.71,0.92,0.38,1.0,0.0}, 34);
-Extrusion23.setSpine(new float[6]{1.5,0.0,0.0,2.5,0.0,0.0}, 6);
+Extrusion23.setCrossSection(new float[34]{1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0}, 34);
+Extrusion23.setSpine(new float[6]{1.5,0,0,2.5,0,0}, 6);
 Shape20.setGeometry(&Extrusion23);
 
 Transform19.addChild(&Shape20);
 
 Transform& Transform24 =  Transform();
-Transform24.setTranslation(new float[3]{2.0,0.0,0.0});
+Transform24.setTranslation(new float[3]{2,0,0});
 Shape& Shape25 =  Shape();
 Appearance& Appearance26 =  Appearance();
 Material& Material27 =  Material();
 Material27.setDEF(CString("MaterialLightBlue"));
-Material27.setDiffuseColor(new float[3]{1.0,1.0,1.0});
+Material27.setDiffuseColor(new float[3]{1,1,1});
 Appearance26.addChild(&Material27);
 
 Shape25.addChild(&Appearance26);
@@ -137,7 +137,7 @@ Transform31.setScale(new float[3]{0.5,0.5,0.5});
 Shape& Shape32 =  Shape();
 Appearance& Appearance33 =  Appearance();
 Material& Material34 =  Material();
-Material34.setDiffuseColor(new float[3]{0.0,0.7,1.0});
+Material34.setDiffuseColor(new float[3]{0,0.7,1});
 Material34.setTransparency(0.5);
 Appearance33.addChild(&Material34);
 
@@ -145,14 +145,14 @@ Shape32.addChild(&Appearance33);
 
 Extrusion& Extrusion35 =  Extrusion();
 Extrusion35.setCreaseAngle(0.785);
-Extrusion35.setCrossSection(new float[34]{1.0,0.0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.0,-1.0,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.0,0.0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0.0,1.0,0.38,0.92,0.71,0.71,0.92,0.38,1.0,0.0}, 34);
-Extrusion35.setSpine(new float[6]{0.0,1.5,0.0,0.0,2.5,0.0}, 6);
+Extrusion35.setCrossSection(new float[34]{1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0}, 34);
+Extrusion35.setSpine(new float[6]{0,1.5,0,0,2.5,0}, 6);
 Shape32.setGeometry(&Extrusion35);
 
 Transform31.addChild(&Shape32);
 
 Transform& Transform36 =  Transform();
-Transform36.setTranslation(new float[3]{-0.5,2.0,0.0});
+Transform36.setTranslation(new float[3]{-0.5,2,0});
 Shape& Shape37 =  Shape();
 Appearance& Appearance38 =  Appearance();
 Material& Material39 =  Material();
@@ -188,7 +188,7 @@ Transform43.setScale(new float[3]{0.5,0.5,0.5});
 Shape& Shape44 =  Shape();
 Appearance& Appearance45 =  Appearance();
 Material& Material46 =  Material();
-Material46.setDiffuseColor(new float[3]{0.7,1.0,0.0});
+Material46.setDiffuseColor(new float[3]{0.7,1,0});
 Material46.setTransparency(0.5);
 Appearance45.addChild(&Material46);
 
@@ -196,8 +196,8 @@ Shape44.addChild(&Appearance45);
 
 Extrusion& Extrusion47 =  Extrusion();
 Extrusion47.setCreaseAngle(0.785);
-Extrusion47.setCrossSection(new float[34]{1.0,0.0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.0,-1.0,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.0,0.0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0.0,1.0,0.38,0.92,0.71,0.71,0.92,0.38,1.0,0.0}, 34);
-Extrusion47.setSpine(new float[6]{0.0,-2.5,0.0,0.0,-1.5,0.0}, 6);
+Extrusion47.setCrossSection(new float[34]{1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0}, 34);
+Extrusion47.setSpine(new float[6]{0,-2.5,0,0,-1.5,0}, 6);
 Shape44.setGeometry(&Extrusion47);
 
 Transform43.addChild(&Shape44);
@@ -210,7 +210,7 @@ Transform& Transform48 =  Transform();
 Shape& Shape49 =  Shape();
 Appearance& Appearance50 =  Appearance();
 Material& Material51 =  Material();
-Material51.setDiffuseColor(new float[3]{1.0,0.0,0.7});
+Material51.setDiffuseColor(new float[3]{1,0,0.7});
 Appearance50.addChild(&Material51);
 
 Shape49.addChild(&Appearance50);
@@ -222,7 +222,7 @@ Transform48.addChild(&Shape49);
 
 Transform& Transform53 =  Transform();
 Transform53.setScale(new float[3]{0.5,0.5,0.5});
-Transform53.setTranslation(new float[3]{-0.5,0.0,1.0});
+Transform53.setTranslation(new float[3]{-0.5,0,1});
 Shape& Shape54 =  Shape();
 Appearance& Appearance55 =  Appearance();
 Material& Material56 =  Material();
@@ -397,12 +397,12 @@ Scene10.addChild(&NavigationInfo78);
 
 Viewpoint& Viewpoint79 =  Viewpoint();
 Viewpoint79.setDescription(CString("Process pipes"));
-Viewpoint79.setOrientation(new float[4]{1.0,0.0,0.0,-0.4});
-Viewpoint79.setPosition(new float[3]{0.0,5.0,12.0});
+Viewpoint79.setOrientation(new float[4]{1,0,0,-0.4});
+Viewpoint79.setPosition(new float[3]{0,5,12});
 Scene10.addChild(&Viewpoint79);
 
 Transform& Transform80 =  Transform();
-Transform80.setTranslation(new float[3]{0.0,-2.5,0.0});
+Transform80.setTranslation(new float[3]{0,-2.5,0});
 ProtoInstance& ProtoInstance81 =  ProtoInstance();
 ProtoInstance81.setName(CString("Process"));
 Transform80.addChild(&ProtoInstance81);
@@ -417,7 +417,7 @@ Transform82.addChild(&ProtoInstance83);
 Scene10.addChild(&Transform82);
 
 Transform& Transform84 =  Transform();
-Transform84.setTranslation(new float[3]{0.0,2.5,0.0});
+Transform84.setTranslation(new float[3]{0,2.5,0});
 ProtoInstance& ProtoInstance85 =  ProtoInstance();
 ProtoInstance85.setName(CString("Process"));
 Transform84.addChild(&ProtoInstance85);

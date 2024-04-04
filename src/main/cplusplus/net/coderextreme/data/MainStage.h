@@ -1,5 +1,3 @@
-//#define False false
-//#define True true
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
@@ -73,25 +71,25 @@ WorldInfo14.setTitle(CString("MainStage.x3d"));
 Scene13.addChild(&WorldInfo14);
 
 NavigationInfo& NavigationInfo15 =  NavigationInfo();
-NavigationInfo15.setHeadlight(False);
+NavigationInfo15.setHeadlight(false);
 Scene13.addChild(&NavigationInfo15);
 
 DirectionalLight& DirectionalLight16 =  DirectionalLight();
 DirectionalLight16.setAmbientIntensity(1);
 DirectionalLight16.setDirection(new float[3]{-0.5,-0.5,-0.5});
-DirectionalLight16.setGlobal(True);
+DirectionalLight16.setGlobal(true);
 Scene13.addChild(&DirectionalLight16);
 
 DirectionalLight& DirectionalLight17 =  DirectionalLight();
 DirectionalLight17.setAmbientIntensity(1);
 DirectionalLight17.setDirection(new float[3]{-1.0,-1.0,-1.0});
-DirectionalLight17.setGlobal(True);
+DirectionalLight17.setGlobal(true);
 Scene13.addChild(&DirectionalLight17);
 
 DirectionalLight& DirectionalLight18 =  DirectionalLight();
 DirectionalLight18.setAmbientIntensity(1);
 DirectionalLight18.setDirection(new float[3]{1.0,1.0,-1.0});
-DirectionalLight18.setGlobal(True);
+DirectionalLight18.setGlobal(true);
 DirectionalLight18.setIntensity(0.5);
 Scene13.addChild(&DirectionalLight18);
 

@@ -91,7 +91,7 @@ Background17.setTopUrl(new CString[2]{CString("../resources/images/all_probes/st
 Scene15.addChild(&Background17);
 
 Viewpoint& Viewpoint18 =  Viewpoint();
-Viewpoint18.setPosition(new float[3]{0.0,0.0,20.0});
+Viewpoint18.setPosition(new float[3]{0,0,20});
 Viewpoint18.setDescription(CString("Look at the bubbles flying"));
 Scene15.addChild(&Viewpoint18);
 

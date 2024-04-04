@@ -210,7 +210,7 @@ Scene8.addChild(&WorldInfo32);
 
 Viewpoint& Viewpoint33 =  Viewpoint();
 Viewpoint33.setDescription(CString("Only Viewpoint"));
-Viewpoint33.setPosition(new float[3]{0.0,0.0,5.0});
+Viewpoint33.setPosition(new float[3]{0,0,5});
 Scene8.addChild(&Viewpoint33);
 
 Background& Background34 =  Background();
@@ -242,7 +242,7 @@ Scene8.addChild(&Transform35);
 
 Transform& Transform41 =  Transform();
 Transform41.setDEF(CString("G2"));
-Transform41.setTranslation(new float[3]{1.0,-1.0,0.01});
+Transform41.setTranslation(new float[3]{1,-1,0.01});
 Shape& Shape42 =  Shape();
 Appearance& Appearance43 =  Appearance();
 Material& Material44 =  Material();
@@ -260,14 +260,14 @@ Transform41.addChild(&Shape42);
 PlaneSensor& PlaneSensor46 =  PlaneSensor();
 PlaneSensor46.setDEF(CString("PS2"));
 PlaneSensor46.setDescription(CString("Grab to move"));
-PlaneSensor46.setOffset(new float[3]{1.0,-1.0,0.01});
+PlaneSensor46.setOffset(new float[3]{1,-1,0.01});
 Transform41.addChild(&PlaneSensor46);
 
 Scene8.addChild(&Transform41);
 
 Transform& Transform47 =  Transform();
 Transform47.setDEF(CString("G3"));
-Transform47.setTranslation(new float[3]{1.0,1.0,0.01});
+Transform47.setTranslation(new float[3]{1,1,0.01});
 Shape& Shape48 =  Shape();
 Appearance& Appearance49 =  Appearance();
 Material& Material50 =  Material();
@@ -285,14 +285,14 @@ Transform47.addChild(&Shape48);
 PlaneSensor& PlaneSensor52 =  PlaneSensor();
 PlaneSensor52.setDEF(CString("PS3"));
 PlaneSensor52.setDescription(CString("Grab to move"));
-PlaneSensor52.setOffset(new float[3]{1.0,1.0,0.01});
+PlaneSensor52.setOffset(new float[3]{1,1,0.01});
 Transform47.addChild(&PlaneSensor52);
 
 Scene8.addChild(&Transform47);
 
 Transform& Transform53 =  Transform();
 Transform53.setDEF(CString("G4"));
-Transform53.setTranslation(new float[3]{-1.0,1.0,0.01});
+Transform53.setTranslation(new float[3]{-1,1,0.01});
 Shape& Shape54 =  Shape();
 Appearance& Appearance55 =  Appearance();
 Material& Material56 =  Material();
@@ -310,7 +310,7 @@ Transform53.addChild(&Shape54);
 PlaneSensor& PlaneSensor58 =  PlaneSensor();
 PlaneSensor58.setDEF(CString("PS4"));
 PlaneSensor58.setDescription(CString("Grab to move"));
-PlaneSensor58.setOffset(new float[3]{-1.0,1.0,0.01});
+PlaneSensor58.setOffset(new float[3]{-1,1,0.01});
 Transform53.addChild(&PlaneSensor58);
 
 Scene8.addChild(&Transform53);

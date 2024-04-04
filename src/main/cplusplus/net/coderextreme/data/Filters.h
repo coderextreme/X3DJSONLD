@@ -1,5 +1,3 @@
-//#define False false
-//#define True true
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
@@ -88,7 +86,7 @@ Viewpoint& Viewpoint18 =  Viewpoint();
 Viewpoint18.setDescription(CString("View entire audio model"));
 Viewpoint18.setOrientation(new float[4]{1.0,0.0,0.0,-0.5});
 Viewpoint18.setPosition(new float[3]{0.0,500.0,600.0});
-Viewpoint18.setRetainUserOffsets(True);
+Viewpoint18.setRetainUserOffsets(true);
 Scene14.addChild(&Viewpoint18);
 
 Transform& Transform19 =  Transform();
@@ -208,7 +206,7 @@ Transform40.addChild(&Shape41);
 Scene14.addChild(&Transform40);
 
 ListenerPointSource& ListenerPointSource45 =  ListenerPointSource();
-ListenerPointSource45.setTrackCurrentView(True);
+ListenerPointSource45.setTrackCurrentView(true);
 Scene14.addChild(&ListenerPointSource45);
 
 StreamAudioDestination& StreamAudioDestination46 =  StreamAudioDestination();
@@ -225,7 +223,7 @@ BiquadFilter52.setQualityFactor(30);
 BiquadFilter52.setType(CString("ALLPASS"));
 AudioClip& AudioClip53 =  AudioClip();
 AudioClip53.setDescription(CString("Techno beat"));
-AudioClip53.setLoop(True);
+AudioClip53.setLoop(true);
 AudioClip53.setUrl(new CString[2]{CString("sound/techno_beat.mp3"), CString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/techno_beat.mp3")}, 2);
 BiquadFilter52.addChildren(AudioClip53);
 
@@ -248,7 +246,7 @@ BiquadFilter57.setQualityFactor(15);
 BiquadFilter57.setType(CString("ALLPASS"));
 AudioClip& AudioClip58 =  AudioClip();
 AudioClip58.setDescription(CString("Simple beat"));
-AudioClip58.setLoop(True);
+AudioClip58.setLoop(true);
 AudioClip58.setUrl(new CString[2]{CString("sound/beat.mp3"), CString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/beat.mp3")}, 2);
 BiquadFilter57.addChildren(AudioClip58);
 
@@ -270,7 +268,7 @@ BiquadFilter62.setQualityFactor(0);
 BiquadFilter62.setType(CString("ALLPASS"));
 AudioClip& AudioClip63 =  AudioClip();
 AudioClip63.setDescription(CString("Wobble loop"));
-AudioClip63.setLoop(True);
+AudioClip63.setLoop(true);
 AudioClip63.setUrl(new CString[2]{CString("sound/wobble_loop.mp3"), CString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/wobble_loop.mp3")}, 2);
 BiquadFilter62.addChildren(AudioClip63);
 

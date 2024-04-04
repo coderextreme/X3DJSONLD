@@ -57,7 +57,7 @@ Scene3.addChild(&Script4);
 Shape& Shape9 =  Shape();
 Appearance& Appearance10 =  Appearance();
 Material& Material11 =  Material();
-Material11.setDiffuseColor(new float[3]{1.0,0.0,0.0});
+Material11.setDiffuseColor(new float[3]{1,0,0});
 Appearance10.addChild(&Material11);
 
 Shape9.addChild(&Appearance10);

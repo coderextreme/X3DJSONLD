@@ -1,5 +1,3 @@
-//#define False false
-//#define True true
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
@@ -119,7 +117,7 @@ Shape24.setDEF(CString("AxisLinesShape"));
 //RGB lines showing XYZ axes
 IndexedLineSet& IndexedLineSet25 =  IndexedLineSet();
 IndexedLineSet25.setColorIndex(new int[3]{0,1,2}, 3);
-IndexedLineSet25.setColorPerVertex(False);
+IndexedLineSet25.setColorPerVertex(false);
 IndexedLineSet25.setCoordIndex(new int32_t[9]{0,1,-1,0,2,-1,0,3,-1}, 9);
 Coordinate& Coordinate26 =  Coordinate();
 Coordinate26.setPoint(new float[12]{0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0}, 12);
@@ -170,15 +168,15 @@ Scene17.addChild(&Transform31);
 TimeSensor& TimeSensor34 =  TimeSensor();
 TimeSensor34.setDEF(CString("ClockTimer"));
 TimeSensor34.setCycleInterval(4.767);
-TimeSensor34.setEnabled(False);
-TimeSensor34.setLoop(True);
+TimeSensor34.setEnabled(false);
+TimeSensor34.setLoop(true);
 Scene17.addChild(&TimeSensor34);
 
 //Alternative replay: enable ClockStepper for discrete time-step motion at 1 fps
 TimeSensor& TimeSensor35 =  TimeSensor();
 TimeSensor35.setDEF(CString("ClockStepper"));
 TimeSensor35.setCycleInterval(286);
-TimeSensor35.setLoop(True);
+TimeSensor35.setLoop(true);
 Scene17.addChild(&TimeSensor35);
 
 ScalarInterpolator& ScalarInterpolator36 =  ScalarInterpolator();

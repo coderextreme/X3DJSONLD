@@ -362,8 +362,8 @@ ProtoBody42.addChild(&DirectionalLight57);
 
 PositionInterpolator& PositionInterpolator62 =  PositionInterpolator();
 PositionInterpolator62.setDEF(CString("CameraPositionInterpolator"));
-PositionInterpolator62.setKey(new float[2]{0.0,1.0}, 2);
-PositionInterpolator62.setKeyValue(new float[6]{0.0,0.0,0.0,0.0,0.0,0.0}, 6);
+PositionInterpolator62.setKey(new float[2]{0,1}, 2);
+PositionInterpolator62.setKeyValue(new float[6]{0,0,0,0,0,0}, 6);
 IS& IS63 =  IS();
 Connect& connect64 =  Connect();
 connect64.setNodeField(CString("set_fraction"));
@@ -376,8 +376,8 @@ ProtoBody42.addChild(&PositionInterpolator62);
 
 OrientationInterpolator& OrientationInterpolator65 =  OrientationInterpolator();
 OrientationInterpolator65.setDEF(CString("CameraOrientationInterpolator"));
-OrientationInterpolator65.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator65.setKeyValue(new float[8]{0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0}, 8);
+OrientationInterpolator65.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator65.setKeyValue(new float[8]{0,1,0,0,0,1,0,0}, 8);
 IS& IS66 =  IS();
 Connect& connect67 =  Connect();
 connect67.setNodeField(CString("set_fraction"));
@@ -2096,7 +2096,7 @@ Shape257.setGeometry(&Text258);
 
 Appearance& Appearance260 =  Appearance();
 Material& Material261 =  Material();
-Material261.setDiffuseColor(new float[3]{1.0,1.0,0.2});
+Material261.setDiffuseColor(new float[3]{1,1,0.2});
 Appearance260.addChild(&Material261);
 
 Shape257.addChild(&Appearance260);

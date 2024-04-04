@@ -294,8 +294,8 @@ Group46.addChild(&TimeSensor47);
 
 PositionInterpolator& PositionInterpolator56 =  PositionInterpolator();
 PositionInterpolator56.setDEF(CString("HUMANOIDROOT_POSITION_ANIMATOR"));
-PositionInterpolator56.setKey(new float[19]{0.0,0.04167,0.125,0.1667,0.2083,0.25,0.2917,0.375,0.4583,0.5,0.5417,0.5833,0.625,0.7083,0.75,0.7917,0.875,0.9167,1.0}, 19);
-PositionInterpolator56.setKeyValue(new float[57]{0.0,-0.00928,0.0,0.0,-0.003858,0.0,0.0,-0.008847,0.0,0.0,-0.01486,0.0,0.0,-0.02641,0.0,0.0,-0.03934,0.0,0.0,-0.0502,0.0,0.0,-0.07469,0.0,0.0,-0.02732,0.0,0.0,-0.01608,0.0,0.0,-0.01129,0.0,0.0,-0.005819,0.0,0.0,-0.002004,0.0,0.0,-0.002579,0.0,0.0,-0.0143,0.0,0.0,-0.03799,0.0,0.0,-0.05648,0.0,0.0,-0.045,0.0,0.0,-0.00928,0.0}, 57);
+PositionInterpolator56.setKey(new float[19]{0,0.04167,0.125,0.1667,0.2083,0.25,0.2917,0.375,0.4583,0.5,0.5417,0.5833,0.625,0.7083,0.75,0.7917,0.875,0.9167,1}, 19);
+PositionInterpolator56.setKeyValue(new float[57]{0,-0.00928,0,0,-0.003858,0,0,-0.008847,0,0,-0.01486,0,0,-0.02641,0,0,-0.03934,0,0,-0.0502,0,0,-0.07469,0,0,-0.02732,0,0,-0.01608,0,0,-0.01129,0,0,-0.005819,0,0,-0.002004,0,0,-0.002579,0,0,-0.0143,0,0,-0.03799,0,0,-0.05648,0,0,-0.045,0,0,-0.00928,0}, 57);
 IS& IS57 =  IS();
 Connect& connect58 =  Connect();
 connect58.setNodeField(CString("value_changed"));
@@ -308,8 +308,8 @@ Group46.addChild(&PositionInterpolator56);
 
 OrientationInterpolator& OrientationInterpolator59 =  OrientationInterpolator();
 OrientationInterpolator59.setDEF(CString("HUMANOIDROOT_ANIMATOR"));
-OrientationInterpolator59.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator59.setKeyValue(new float[8]{0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0}, 8);
+OrientationInterpolator59.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator59.setKeyValue(new float[8]{0,0,1,0,0,0,1,0}, 8);
 IS& IS60 =  IS();
 Connect& connect61 =  Connect();
 connect61.setNodeField(CString("value_changed"));
@@ -323,8 +323,8 @@ Group46.addChild(&OrientationInterpolator59);
 //no SACROILIAC_ANIMATOR
 OrientationInterpolator& OrientationInterpolator62 =  OrientationInterpolator();
 OrientationInterpolator62.setDEF(CString("L_HIP_ANIMATOR"));
-OrientationInterpolator62.setKey(new float[7]{0.0,0.25,0.375,0.6667,0.7917,0.9167,1.0}, 7);
-OrientationInterpolator62.setKeyValue(new float[28]{-0.873,0.06094,0.484,0.2865,0.9963,-0.01057,0.08481,0.2488,0.9965,0.01591,-0.08222,0.3836,-1.0,0.0,0.0,0.5518,-0.9964,0.02231,0.0817,0.5351,-0.9809,0.04912,0.1881,0.5204,-0.873,0.06094,0.484,0.2865}, 28);
+OrientationInterpolator62.setKey(new float[7]{0,0.25,0.375,0.6667,0.7917,0.9167,1}, 7);
+OrientationInterpolator62.setKeyValue(new float[28]{-0.873,0.06094,0.484,0.2865,0.9963,-0.01057,0.08481,0.2488,0.9965,0.01591,-0.08222,0.3836,-1,0,0,0.5518,-0.9964,0.02231,0.0817,0.5351,-0.9809,0.04912,0.1881,0.5204,-0.873,0.06094,0.484,0.2865}, 28);
 IS& IS63 =  IS();
 Connect& connect64 =  Connect();
 connect64.setNodeField(CString("value_changed"));
@@ -337,8 +337,8 @@ Group46.addChild(&OrientationInterpolator62);
 
 OrientationInterpolator& OrientationInterpolator65 =  OrientationInterpolator();
 OrientationInterpolator65.setDEF(CString("L_KNEE_ANIMATOR"));
-OrientationInterpolator65.setKey(new float[8]{0.0,0.2083,0.375,0.5,0.6667,0.7917,0.9167,1.0}, 8);
-OrientationInterpolator65.setKeyValue(new float[32]{1.0,0.0,0.0,0.3226,1.0,0.0,0.0,0.1556,1.0,0.0,0.0,0.08678,1.0,0.0,0.0,0.8751,1.0,0.0,0.0,1.131,1.0,0.0,0.0,0.09961,1.0,0.0,0.0,0.3942,1.0,0.0,0.0,0.3226}, 32);
+OrientationInterpolator65.setKey(new float[8]{0,0.2083,0.375,0.5,0.6667,0.7917,0.9167,1}, 8);
+OrientationInterpolator65.setKeyValue(new float[32]{1,0,0,0.3226,1,0,0,0.1556,1,0,0,0.08678,1,0,0,0.8751,1,0,0,1.131,1,0,0,0.09961,1,0,0,0.3942,1,0,0,0.3226}, 32);
 IS& IS66 =  IS();
 Connect& connect67 =  Connect();
 connect67.setNodeField(CString("value_changed"));
@@ -351,8 +351,8 @@ Group46.addChild(&OrientationInterpolator65);
 
 OrientationInterpolator& OrientationInterpolator68 =  OrientationInterpolator();
 OrientationInterpolator68.setDEF(CString("L_ANKLE_ANIMATOR"));
-OrientationInterpolator68.setKey(new float[11]{0.0,0.125,0.2083,0.375,0.4583,0.5,0.6667,0.75,0.7917,0.9167,1.0}, 11);
-OrientationInterpolator68.setKeyValue(new float[44]{1.0,0.0,0.0,0.6001,1.0,0.0,0.0,0.6509,1.0,0.0,0.0,0.6001,1.0,0.0,0.0,0.6001,1.0,0.0,0.0,0.6509,1.0,0.0,0.0,0.6001,1.0,0.0,0.0,0.6001,1.0,0.0,0.0,0.6509,1.0,0.0,0.0,0.6001,1.0,0.0,0.0,0.6509,1.0,0.0,0.0,0.6001}, 44);
+OrientationInterpolator68.setKey(new float[11]{0,0.125,0.2083,0.375,0.4583,0.5,0.6667,0.75,0.7917,0.9167,1}, 11);
+OrientationInterpolator68.setKeyValue(new float[44]{1,0,0,0.6001,1,0,0,0.6509,1,0,0,0.6001,1,0,0,0.6001,1,0,0,0.6509,1,0,0,0.6001,1,0,0,0.6001,1,0,0,0.6509,1,0,0,0.6001,1,0,0,0.6509,1,0,0,0.6001}, 44);
 IS& IS69 =  IS();
 Connect& connect70 =  Connect();
 connect70.setNodeField(CString("value_changed"));
@@ -366,8 +366,8 @@ Group46.addChild(&OrientationInterpolator68);
 //no L_MIDTARSAL_ANIMATOR
 OrientationInterpolator& OrientationInterpolator71 =  OrientationInterpolator();
 OrientationInterpolator71.setDEF(CString("R_HIP_ANIMATOR"));
-OrientationInterpolator71.setKey(new float[8]{0.0,0.125,0.2083,0.2917,0.5,0.7917,0.9167,1.0}, 8);
-OrientationInterpolator71.setKeyValue(new float[32]{-0.5831,0.03511,0.8116,0.1481,-0.995,0.02296,0.09674,0.4683,-1.0,0.00192,0.007964,0.4732,-0.998,-0.0158,-0.06102,0.5079,-0.9131,-0.06243,-0.403,0.3361,1.0,0.0,0.0,0.2571,0.9891,-0.02805,0.1444,0.3879,-0.5831,0.03511,0.8116,0.1481}, 32);
+OrientationInterpolator71.setKey(new float[8]{0,0.125,0.2083,0.2917,0.5,0.7917,0.9167,1}, 8);
+OrientationInterpolator71.setKeyValue(new float[32]{-0.5831,0.03511,0.8116,0.1481,-0.995,0.02296,0.09674,0.4683,-1,0.00192,0.007964,0.4732,-0.998,-0.0158,-0.06102,0.5079,-0.9131,-0.06243,-0.403,0.3361,1,0,0,0.2571,0.9891,-0.02805,0.1444,0.3879,-0.5831,0.03511,0.8116,0.1481}, 32);
 IS& IS72 =  IS();
 Connect& connect73 =  Connect();
 connect73.setNodeField(CString("value_changed"));
@@ -380,8 +380,8 @@ Group46.addChild(&OrientationInterpolator71);
 
 OrientationInterpolator& OrientationInterpolator74 =  OrientationInterpolator();
 OrientationInterpolator74.setDEF(CString("R_KNEE_ANIMATOR"));
-OrientationInterpolator74.setKey(new float[8]{0.0,0.125,0.2083,0.375,0.5,0.6667,0.9167,1.0}, 8);
-OrientationInterpolator74.setKeyValue(new float[32]{1.0,0.0,0.0,0.8573,1.0,0.0,0.0,0.5351,1.0,0.0,0.0,0.1756,1.0,0.0,0.0,0.1194,1.0,0.0,0.0,0.3153,1.0,0.0,0.0,0.09354,1.0,0.0,0.0,0.08558,1.0,0.0,0.0,0.8573}, 32);
+OrientationInterpolator74.setKey(new float[8]{0,0.125,0.2083,0.375,0.5,0.6667,0.9167,1}, 8);
+OrientationInterpolator74.setKeyValue(new float[32]{1,0,0,0.8573,1,0,0,0.5351,1,0,0,0.1756,1,0,0,0.1194,1,0,0,0.3153,1,0,0,0.09354,1,0,0,0.08558,1,0,0,0.8573}, 32);
 IS& IS75 =  IS();
 Connect& connect76 =  Connect();
 connect76.setNodeField(CString("value_changed"));
@@ -394,8 +394,8 @@ Group46.addChild(&OrientationInterpolator74);
 
 OrientationInterpolator& OrientationInterpolator77 =  OrientationInterpolator();
 OrientationInterpolator77.setDEF(CString("R_ANKLE_ANIMATOR"));
-OrientationInterpolator77.setKey(new float[11]{0.0,0.125,0.2083,0.375,0.4583,0.5,0.6667,0.75,0.7917,0.9167,1.0}, 11);
-OrientationInterpolator77.setKeyValue(new float[44]{1.0,0.0,0.0,0.8001,1.0,0.0,0.0,0.8509,1.0,0.0,0.0,0.8001,1.0,0.0,0.0,0.8001,1.0,0.0,0.0,0.8509,1.0,0.0,0.0,0.8001,1.0,0.0,0.0,0.8001,1.0,0.0,0.0,0.8001,1.0,0.0,0.0,0.8001,1.0,0.0,0.0,0.8509,1.0,0.0,0.0,0.86001}, 44);
+OrientationInterpolator77.setKey(new float[11]{0,0.125,0.2083,0.375,0.4583,0.5,0.6667,0.75,0.7917,0.9167,1}, 11);
+OrientationInterpolator77.setKeyValue(new float[44]{1,0,0,0.8001,1,0,0,0.8509,1,0,0,0.8001,1,0,0,0.8001,1,0,0,0.8509,1,0,0,0.8001,1,0,0,0.8001,1,0,0,0.8001,1,0,0,0.8001,1,0,0,0.8509,1,0,0,0.86001}, 44);
 IS& IS78 =  IS();
 Connect& connect79 =  Connect();
 connect79.setNodeField(CString("value_changed"));
@@ -409,8 +409,8 @@ Group46.addChild(&OrientationInterpolator77);
 //no L_MIDTARSAL_ANIMATOR
 OrientationInterpolator& OrientationInterpolator80 =  OrientationInterpolator();
 OrientationInterpolator80.setDEF(CString("VL5_ANIMATOR"));
-OrientationInterpolator80.setKey(new float[6]{0.0,0.2083,0.375,0.75,0.8333,1.0}, 6);
-OrientationInterpolator80.setKeyValue(new float[24]{0.0,1.0,0.0,0.0826,-0.01972,-0.5974,0.8017,0.08231,0.009296,-0.9648,0.2627,0.1734,-0.01238,0.9549,-0.2968,0.08732,-0.008125,0.9691,-0.2463,0.158,0.0,1.0,0.0,0.0826}, 24);
+OrientationInterpolator80.setKey(new float[6]{0,0.2083,0.375,0.75,0.8333,1}, 6);
+OrientationInterpolator80.setKeyValue(new float[24]{0,1,0,0.0826,-0.01972,-0.5974,0.8017,0.08231,0.009296,-0.9648,0.2627,0.1734,-0.01238,0.9549,-0.2968,0.08732,-0.008125,0.9691,-0.2463,0.158,0,1,0,0.0826}, 24);
 IS& IS81 =  IS();
 Connect& connect82 =  Connect();
 connect82.setNodeField(CString("value_changed"));
@@ -423,8 +423,8 @@ Group46.addChild(&OrientationInterpolator80);
 
 OrientationInterpolator& OrientationInterpolator83 =  OrientationInterpolator();
 OrientationInterpolator83.setDEF(CString("SKULLBASE_ANIMATOR"));
-OrientationInterpolator83.setKey(new float[14]{0.0,0.28,0.3,0.32,0.4,0.45,0.6,0.65,0.7,0.75,0.85,0.9,0.95,1.0}, 14);
-OrientationInterpolator83.setKeyValue(new float[56]{-1.0,0.0,0.0,1.0,-1.0,0.0,0.0,1.0,-1.0,0.0,0.0,0.999,-1.0,0.0,0.0,0.99,-1.0,0.0,0.0,0.99,-1.0,0.0,0.0,0.9,-1.0,0.0,0.0,0.9,-1.0,0.0,0.0,0.9,-1.0,0.0,0.0,0.9,-1.0,0.0,0.0,0.9,-1.0,0.0,0.0,0.9,-1.0,0.0,0.0,0.9,-1.0,0.0,0.0,0.9,-1.0,0.0,0.0,1.0}, 56);
+OrientationInterpolator83.setKey(new float[14]{0,0.28,0.3,0.32,0.4,0.45,0.6,0.65,0.7,0.75,0.85,0.9,0.95,1}, 14);
+OrientationInterpolator83.setKeyValue(new float[56]{-1,0,0,1,-1,0,0,1,-1,0,0,0.999,-1,0,0,0.99,-1,0,0,0.99,-1,0,0,0.9,-1,0,0,0.9,-1,0,0,0.9,-1,0,0,0.9,-1,0,0,0.9,-1,0,0,0.9,-1,0,0,0.9,-1,0,0,0.9,-1,0,0,1}, 56);
 IS& IS84 =  IS();
 Connect& connect85 =  Connect();
 connect85.setNodeField(CString("value_changed"));
@@ -437,8 +437,8 @@ Group46.addChild(&OrientationInterpolator83);
 
 OrientationInterpolator& OrientationInterpolator86 =  OrientationInterpolator();
 OrientationInterpolator86.setDEF(CString("L_SHOULDER_ANIMATOR"));
-OrientationInterpolator86.setKey(new float[7]{0.0,0.25,0.375,0.6667,0.7917,0.9167,1.0}, 7);
-OrientationInterpolator86.setKeyValue(new float[28]{0.0,0.0,1.0,0.1,0.0,0.0,1.0,0.2,0.0,0.0,1.0,0.2,0.86,0.25,0.42,0.5,0.86,0.25,0.42,0.8,0.86,0.25,0.42,0.4,0.86,0.25,0.42,0.2}, 28);
+OrientationInterpolator86.setKey(new float[7]{0,0.25,0.375,0.6667,0.7917,0.9167,1}, 7);
+OrientationInterpolator86.setKeyValue(new float[28]{0,0,1,0.1,0,0,1,0.2,0,0,1,0.2,0.86,0.25,0.42,0.5,0.86,0.25,0.42,0.8,0.86,0.25,0.42,0.4,0.86,0.25,0.42,0.2}, 28);
 IS& IS87 =  IS();
 Connect& connect88 =  Connect();
 connect88.setNodeField(CString("value_changed"));
@@ -451,8 +451,8 @@ Group46.addChild(&OrientationInterpolator86);
 
 OrientationInterpolator& OrientationInterpolator89 =  OrientationInterpolator();
 OrientationInterpolator89.setDEF(CString("L_ELBOW_ANIMATOR"));
-OrientationInterpolator89.setKey(new float[6]{0.0,0.28,0.32,0.64,0.76,1.0}, 6);
-OrientationInterpolator89.setKeyValue(new float[24]{0.0,0.0,1.0,0.0,-1.0,0.0,0.0,0.1229,-1.0,0.0,0.0,0.1229,-1.0,0.0,0.0,0.5976,-1.0,0.0,0.0,0.3917,0.0,0.0,1.0,0.0}, 24);
+OrientationInterpolator89.setKey(new float[6]{0,0.28,0.32,0.64,0.76,1}, 6);
+OrientationInterpolator89.setKeyValue(new float[24]{0,0,1,0,-1,0,0,0.1229,-1,0,0,0.1229,-1,0,0,0.5976,-1,0,0,0.3917,0,0,1,0}, 24);
 IS& IS90 =  IS();
 Connect& connect91 =  Connect();
 connect91.setNodeField(CString("value_changed"));
@@ -465,8 +465,8 @@ Group46.addChild(&OrientationInterpolator89);
 
 OrientationInterpolator& OrientationInterpolator92 =  OrientationInterpolator();
 OrientationInterpolator92.setDEF(CString("L_WRIST_ANIMATOR"));
-OrientationInterpolator92.setKey(new float[5]{0.0,0.32,0.64,0.88,1.0}, 5);
-OrientationInterpolator92.setKeyValue(new float[20]{0.0,0.0,1.0,0.0,0.067,0.98,-0.128,4.15,0.067,0.98,-0.128,4.15,0.067,0.98,-0.128,4.15,0.0,0.0,1.0,0.0}, 20);
+OrientationInterpolator92.setKey(new float[5]{0,0.32,0.64,0.88,1}, 5);
+OrientationInterpolator92.setKeyValue(new float[20]{0,0,1,0,0.067,0.98,-0.128,4.15,0.067,0.98,-0.128,4.15,0.067,0.98,-0.128,4.15,0,0,1,0}, 20);
 IS& IS93 =  IS();
 Connect& connect94 =  Connect();
 connect94.setNodeField(CString("value_changed"));
@@ -479,8 +479,8 @@ Group46.addChild(&OrientationInterpolator92);
 
 OrientationInterpolator& OrientationInterpolator95 =  OrientationInterpolator();
 OrientationInterpolator95.setDEF(CString("R_SHOULDER_ANIMATOR"));
-OrientationInterpolator95.setKey(new float[6]{0.0,0.45,0.64,0.76,0.88,1.0}, 6);
-OrientationInterpolator95.setKeyValue(new float[24]{0.0,0.0,1.0,0.0,0.9992,0.02042,0.03558,7.2,0.9989,-0.04623,0.005159,4.079,-0.8687,-0.2525,-0.4261,1.501,-0.941,-0.2893,-0.1754,0.4788,0.0,0.0,1.0,0.0}, 24);
+OrientationInterpolator95.setKey(new float[6]{0,0.45,0.64,0.76,0.88,1}, 6);
+OrientationInterpolator95.setKeyValue(new float[24]{0,0,1,0,0.9992,0.02042,0.03558,7.2,0.9989,-0.04623,0.005159,4.079,-0.8687,-0.2525,-0.4261,1.501,-0.941,-0.2893,-0.1754,0.4788,0,0,1,0}, 24);
 IS& IS96 =  IS();
 Connect& connect97 =  Connect();
 connect97.setNodeField(CString("value_changed"));
@@ -493,8 +493,8 @@ Group46.addChild(&OrientationInterpolator95);
 
 OrientationInterpolator& OrientationInterpolator98 =  OrientationInterpolator();
 OrientationInterpolator98.setDEF(CString("R_ELBOW_ANIMATOR"));
-OrientationInterpolator98.setKey(new float[6]{0.0,0.28,0.32,0.64,0.76,1.0}, 6);
-OrientationInterpolator98.setKeyValue(new float[24]{0.0,0.0,1.0,0.0,-1.0,0.0,0.0,0.04151,-1.0,0.0,0.0,0.04151,-1.0,0.0,0.0,0.5855,-1.0,0.0,0.0,0.5852,0.0,0.0,1.0,0.0}, 24);
+OrientationInterpolator98.setKey(new float[6]{0,0.28,0.32,0.64,0.76,1}, 6);
+OrientationInterpolator98.setKeyValue(new float[24]{0,0,1,0,-1,0,0,0.04151,-1,0,0,0.04151,-1,0,0,0.5855,-1,0,0,0.5852,0,0,1,0}, 24);
 IS& IS99 =  IS();
 Connect& connect100 =  Connect();
 connect100.setNodeField(CString("value_changed"));
@@ -507,8 +507,8 @@ Group46.addChild(&OrientationInterpolator98);
 
 OrientationInterpolator& OrientationInterpolator101 =  OrientationInterpolator();
 OrientationInterpolator101.setDEF(CString("R_WRIST_ANIMATOR"));
-OrientationInterpolator101.setKey(new float[6]{0.0,0.28,0.32,0.64,0.76,1.0}, 6);
-OrientationInterpolator101.setKeyValue(new float[24]{0.0,0.0,1.0,0.0,-0.0585279,0.983903,-0.168849,1.85956,-0.0585279,0.983903,-0.168849,1.85956,-0.00222418,0.99801,-0.0630095,1.46072,0.0,1.0,0.0,0.497349,0.0,0.0,1.0,0.0}, 24);
+OrientationInterpolator101.setKey(new float[6]{0,0.28,0.32,0.64,0.76,1}, 6);
+OrientationInterpolator101.setKeyValue(new float[24]{0,0,1,0,-0.0585279,0.983903,-0.168849,1.85956,-0.0585279,0.983903,-0.168849,1.85956,-0.00222418,0.99801,-0.0630095,1.46072,0,1,0,0.497349,0,0,1,0}, 24);
 IS& IS102 =  IS();
 Connect& connect103 =  Connect();
 connect103.setNodeField(CString("value_changed"));
@@ -639,7 +639,7 @@ Scene15.addChild(&ProtoDeclare17);
 
 Viewpoint& Viewpoint120 =  Viewpoint();
 Viewpoint120.setDescription(CString("LOA1_SwimmingFlutterKickAnimation scene"));
-Viewpoint120.setPosition(new float[3]{0.0,0.0,12.0});
+Viewpoint120.setPosition(new float[3]{0,0,12});
 Scene15.addChild(&Viewpoint120);
 
 Anchor& Anchor121 =  Anchor();
@@ -658,7 +658,7 @@ Shape122.setGeometry(&Text123);
 
 Appearance& Appearance125 =  Appearance();
 Material& Material126 =  Material();
-Material126.setDiffuseColor(new float[3]{1.0,1.0,0.2});
+Material126.setDiffuseColor(new float[3]{1,1,0.2});
 Appearance125.addChild(&Material126);
 
 Shape122.addChild(&Appearance125);
