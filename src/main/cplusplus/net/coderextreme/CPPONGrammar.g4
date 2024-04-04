@@ -26,7 +26,7 @@ field : IDENTIFIER; // field of node or statement, TODO get list from X3DUOM
 
 variable : IDENTIFIER WHOLE?; // TODO IDENTIFIER is a list of concrete types and statements from X3DUOM
 
-string : '"' ( 'https://' | 'http://' | '*' | '%' | '!' | '?' | '<' | '>' | AT | QUOTE | '~' | '#' | '/' ~('/') | '\\"' | '\\' | '.' | ~'"' )*? '"';
+string : '"' ( 'https://' | 'http://' | '*' | '%' | '!' | '?' | '<' | '>' | AT | QUOTE | '~' | '#' | '/' ~('/') | '\\"' | '\\\\' | '\\' | '.' | ~'"' )*? '"';
 // string: '"' ([a-zA-Z0-9_.,/%?!@#$^*()<>{}~`\\] | '\\"' | '\\')* '"' ;
 
 cstring : 'CString' '(' string ')';
