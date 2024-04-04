@@ -43,7 +43,7 @@ Scene7.addChild(&NavigationInfo8);
 
 Viewpoint& Viewpoint9 =  Viewpoint();
 Viewpoint9.setDescription(CString("Rubiks Cube on Fire"));
-Viewpoint9.setPosition(new float[3]{0.0,0.0,12.0});
+Viewpoint9.setPosition(new float[3]{0,0,12});
 Scene7.addChild(&Viewpoint9);
 
 ProtoDeclare& ProtoDeclare10 =  ProtoDeclare();
@@ -88,7 +88,7 @@ Shape19.addChild(&IS20);
 
 Appearance& Appearance22 =  Appearance();
 Material& Material23 =  Material();
-Material23.setDiffuseColor(new float[3]{1.0,1.0,1.0});
+Material23.setDiffuseColor(new float[3]{1,1,1});
 Appearance22.addChild(&Material23);
 
 Shape19.addChild(&Appearance22);
@@ -375,7 +375,7 @@ ProtoInstance87.addChild(&fieldValue88);
 fieldValue& fieldValue89 =  fieldValue();
 fieldValue89.setName(CString("myShape"));
 Box& Box90 =  Box();
-Box90.setSize(new float[3]{1.0,1.0,1.0});
+Box90.setSize(new float[3]{1,1,1});
 fieldValue89.addChild(&Box90);
 
 ProtoInstance87.addChild(&fieldValue89);

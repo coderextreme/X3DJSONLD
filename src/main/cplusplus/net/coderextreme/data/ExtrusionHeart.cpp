@@ -54,19 +54,19 @@ X3D0.setHead(&head1);
 Scene& Scene10 =  Scene();
 Viewpoint& Viewpoint11 =  Viewpoint();
 Viewpoint11.setDescription(CString("Extrusion Heart"));
-Viewpoint11.setOrientation(new float[4]{1.0,0.0,0.0,1.57});
-Viewpoint11.setPosition(new float[3]{0.0,-4.0,0.0});
+Viewpoint11.setOrientation(new float[4]{1,0,0,1.57});
+Viewpoint11.setPosition(new float[3]{0,-4,0});
 Scene10.addChild(&Viewpoint11);
 
 Transform& Transform12 =  Transform();
-Transform12.setTranslation(new float[3]{0.0,-0.5,0.0});
+Transform12.setTranslation(new float[3]{0,-0.5,0});
 Shape& Shape13 =  Shape();
 Extrusion& Extrusion14 =  Extrusion();
 Extrusion14.setCreaseAngle(3.14159);
-Extrusion14.setCrossSection(new float[26]{0.0,0.8,0.2,1.0,0.7,0.95,1.0,0.5,0.8,0.0,0.5,-0.3,0.0,-0.7,-0.5,-0.3,-0.8,0.0,-1.0,0.5,-0.7,0.95,-0.2,1.0,0.0,0.8}, 26);
-Extrusion14.setScale(new float[10]{0.01,0.01,0.8,0.8,1.0,1.0,0.8,0.8,0.01,0.01}, 10);
+Extrusion14.setCrossSection(new float[26]{0,0.8,0.2,1,0.7,0.95,1,0.5,0.8,0,0.5,-0.3,0,-0.7,-0.5,-0.3,-0.8,0,-1,0.5,-0.7,0.95,-0.2,1,0,0.8}, 26);
+Extrusion14.setScale(new float[10]{0.01,0.01,0.8,0.8,1,1,0.8,0.8,0.01,0.01}, 10);
 Extrusion14.setSolid(False);
-Extrusion14.setSpine(new float[15]{0.0,0.0,0.0,0.0,0.1,0.0,0.0,0.5,0.0,0.0,0.9,0.0,0.0,1.0,0.0}, 15);
+Extrusion14.setSpine(new float[15]{0,0,0,0,0.1,0,0,0.5,0,0,0.9,0,0,1,0}, 15);
 Shape13.setGeometry(&Extrusion14);
 
 Appearance& Appearance15 =  Appearance();

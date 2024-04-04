@@ -93,7 +93,7 @@ Viewpoint18.setDescription(CString("Hello MFString syntax"));
 Scene17.addChild(&Viewpoint18);
 
 Background& Background19 =  Background();
-Background19.setSkyColor(new float[3]{0.6,1.0,0.8}, 3);
+Background19.setSkyColor(new float[3]{0.6,1,0.8}, 3);
 Scene17.addChild(&Background19);
 
 Shape& Shape20 =  Shape();

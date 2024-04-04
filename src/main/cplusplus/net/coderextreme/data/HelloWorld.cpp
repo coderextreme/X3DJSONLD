@@ -137,13 +137,13 @@ Scene25.addChild(&WorldInfo26);
 Group& Group27 =  Group();
 Viewpoint& Viewpoint28 =  Viewpoint();
 Viewpoint28.setDEF(CString("ViewUpClose"));
-Viewpoint28.setCenterOfRotation(new float[3]{0.0,-1.0,0.0});
+Viewpoint28.setCenterOfRotation(new float[3]{0,-1,0});
 Viewpoint28.setDescription(CString("Hello world!"));
-Viewpoint28.setPosition(new float[3]{0.0,-1.0,7.0});
+Viewpoint28.setPosition(new float[3]{0,-1,7});
 Group27.addChild(&Viewpoint28);
 
 Transform& Transform29 =  Transform();
-Transform29.setRotation(new float[4]{0.0,1.0,0.0,3.0});
+Transform29.setRotation(new float[4]{0,1,0,3});
 Shape& Shape30 =  Shape();
 Sphere& Sphere31 =  Sphere();
 Shape30.setGeometry(&Sphere31);
@@ -151,7 +151,7 @@ Shape30.setGeometry(&Sphere31);
 Appearance& Appearance32 =  Appearance();
 Material& Material33 =  Material();
 Material33.setDEF(CString("MaterialLightBlue"));
-Material33.setDiffuseColor(new float[3]{0.1,0.5,1.0});
+Material33.setDiffuseColor(new float[3]{0.1,0.5,1});
 Appearance32.addChild(&Material33);
 
 ImageTexture& ImageTexture34 =  ImageTexture();
@@ -166,7 +166,7 @@ Transform29.addChild(&Shape30);
 Group27.addChild(&Transform29);
 
 Transform& Transform35 =  Transform();
-Transform35.setTranslation(new float[3]{0.0,-2.0,0.0});
+Transform35.setTranslation(new float[3]{0,-2,0});
 Shape& Shape36 =  Shape();
 Text& Text37 =  Text();
 Text37.setDEF(CString("TextMessage"));

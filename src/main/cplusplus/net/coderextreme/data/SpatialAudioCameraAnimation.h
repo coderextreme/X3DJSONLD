@@ -1,5 +1,3 @@
-//#define False false
-//#define True true
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
@@ -99,7 +97,7 @@ Scene14.addChild(&Viewpoint18);
 TimeSensor& TimeSensor19 =  TimeSensor();
 TimeSensor19.setDEF(CString("TIMER"));
 TimeSensor19.setCycleInterval(33.333332);
-TimeSensor19.setLoop(True);
+TimeSensor19.setLoop(true);
 Scene14.addChild(&TimeSensor19);
 
 PositionInterpolator& PositionInterpolator20 =  PositionInterpolator();
@@ -267,7 +265,7 @@ Transform43.addChild(&Billboard48);
 Scene14.addChild(&Transform43);
 
 ListenerPointSource& ListenerPointSource55 =  ListenerPointSource();
-ListenerPointSource55.setTrackCurrentView(True);
+ListenerPointSource55.setTrackCurrentView(true);
 Scene14.addChild(&ListenerPointSource55);
 
 StreamAudioDestination& StreamAudioDestination56 =  StreamAudioDestination();
@@ -276,7 +274,7 @@ SpatialSound57.setDEF(CString("Audio1"));
 Gain& Gain58 =  Gain();
 AudioClip& AudioClip59 =  AudioClip();
 AudioClip59.setDescription(CString("Violin"));
-AudioClip59.setLoop(True);
+AudioClip59.setLoop(true);
 AudioClip59.setUrl(new CString[2]{CString("sound/violin.mp3"), CString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3")}, 2);
 Gain58.addChildren(AudioClip59);
 
@@ -289,7 +287,7 @@ SpatialSound60.setDEF(CString("Audio2"));
 Gain& Gain61 =  Gain();
 AudioClip& AudioClip62 =  AudioClip();
 AudioClip62.setDescription(CString("Saxophone"));
-AudioClip62.setLoop(True);
+AudioClip62.setLoop(true);
 AudioClip62.setUrl(new CString[2]{CString("sound/saxophone.mp3"), CString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/saxophone.mp3")}, 2);
 Gain61.addChildren(AudioClip62);
 

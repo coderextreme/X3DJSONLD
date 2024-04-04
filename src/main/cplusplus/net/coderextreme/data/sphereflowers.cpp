@@ -175,7 +175,7 @@ Sound37.setMaxBack(100);
 Sound37.setMaxFront(100);
 Sound37.setMinBack(20);
 Sound37.setMinFront(20);
-Sound37.setLocation(new float[3]{0.0,1.0,0.0});
+Sound37.setLocation(new float[3]{0,1,0});
 AudioClip& AudioClip38 =  AudioClip();
 AudioClip38.setDEF(CString("AudioClip"));
 AudioClip38.setDescription(CString("Chandubabamusic #1"));

@@ -88,8 +88,8 @@ Scene16.addChild(&WorldInfo17);
 
 Background& Background18 =  Background();
 Background18.setGroundAngle(new float[1]{1.57}, 1);
-Background18.setGroundColor(new float[6]{0.0,0.5,0.0,0.0,0.5,0.0}, 6);
-Background18.setSkyColor(new float[3]{0.0,0.0,1.0}, 3);
+Background18.setGroundColor(new float[6]{0,0.5,0,0,0.5,0}, 6);
+Background18.setSkyColor(new float[3]{0,0,1}, 3);
 Scene16.addChild(&Background18);
 
 NavigationInfo& NavigationInfo19 =  NavigationInfo();
@@ -104,8 +104,8 @@ Scene16.addChild(&Viewpoint20);
 Viewpoint& Viewpoint21 =  Viewpoint();
 Viewpoint21.setDEF(CString("Top_View"));
 Viewpoint21.setDescription(CString("Top View"));
-Viewpoint21.setOrientation(new float[4]{1.0,0.0,0.0,-1.57});
-Viewpoint21.setPosition(new float[3]{0.0,10.0,0.0});
+Viewpoint21.setOrientation(new float[4]{1,0,0,-1.57});
+Viewpoint21.setPosition(new float[3]{0,10,0});
 Scene16.addChild(&Viewpoint21);
 
 TouchSensor& TouchSensor22 =  TouchSensor();

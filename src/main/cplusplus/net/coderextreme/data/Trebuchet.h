@@ -1,5 +1,3 @@
-//#define False false
-//#define True true
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
@@ -111,7 +109,7 @@ Sound20.setMaxFront(1000);
 AudioClip& AudioClip21 =  AudioClip();
 AudioClip21.setDEF(CString("HolyGrail"));
 AudioClip21.setDescription(CString("HolyGrail"));
-AudioClip21.setLoop(True);
+AudioClip21.setLoop(true);
 AudioClip21.setUrl(new CString[2]{CString("holygral.mp3"), CString("http://www.nps.navy.mil/code32/vrml/holygral.mp3")}, 2);
 Sound20.setSource(AudioClip21);
 
@@ -544,10 +542,10 @@ Transform& Transform125 =  Transform();
 Transform125.setRotation(new float[4]{0.0,0.0,1.0,1.57});
 Shape& Shape126 =  Shape();
 Extrusion& Extrusion127 =  Extrusion();
-Extrusion127.setBeginCap(False);
+Extrusion127.setBeginCap(false);
 Extrusion127.setCrossSection(new float[24]{1.0,-0.38,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.0,-1.0,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.0,-0.38,-1.0,-1.1,1.0,-1.1,1.0,-0.38}, 24);
-Extrusion127.setEndCap(False);
-Extrusion127.setSolid(False);
+Extrusion127.setEndCap(false);
+Extrusion127.setSolid(false);
 Extrusion127.setSpine(new float[6]{0.0,6.0,0.0,0.0,-11.0,0.0}, 6);
 Shape126.setGeometry(&Extrusion127);
 
@@ -610,11 +608,11 @@ Appearance140.addChild(&Material141);
 Shape139.addChild(&Appearance140);
 
 Extrusion& Extrusion142 =  Extrusion();
-Extrusion142.setBeginCap(False);
-Extrusion142.setConvex(False);
+Extrusion142.setBeginCap(false);
+Extrusion142.setConvex(false);
 Extrusion142.setCreaseAngle(1.57);
 Extrusion142.setCrossSection(new float[34]{0.9,0.0,0.81,-0.34,0.63,-0.63,0.34,-0.83,0.0,-0.9,-0.34,-0.81,-0.63,-0.63,-0.81,-0.34,-0.9,0.0,-0.81,0.34,-0.63,0.63,-0.34,0.81,0.0,0.9,0.38,0.81,0.63,0.63,0.81,0.34,0.9,0.0}, 34);
-Extrusion142.setEndCap(False);
+Extrusion142.setEndCap(false);
 Extrusion142.setSpine(new float[51]{2.0,0.0,0.0,1.85,0.0,0.77,1.41,0.0,1.41,0.77,0.0,1.85,0.0,0.0,2.0,-0.77,0.0,1.85,-1.41,0.0,1.41,-1.85,0.0,0.77,-2.0,0.0,0.0,-1.85,0.0,-0.77,-1.41,0.0,-1.41,-0.77,0.0,-1.85,0.0,0.0,-2.0,0.77,0.0,-1.85,1.41,0.0,-1.41,1.85,0.0,-0.77,2.0,0.0,0.0}, 51);
 Shape139.setGeometry(&Extrusion142);
 
@@ -697,11 +695,11 @@ Appearance162.setUSE(CString("rope"));
 Shape161.addChild(&Appearance162);
 
 Extrusion& Extrusion163 =  Extrusion();
-Extrusion163.setBeginCap(False);
+Extrusion163.setBeginCap(false);
 Extrusion163.setCreaseAngle(0.76);
 Extrusion163.setCrossSection(new float[34]{0.1,0.0,0.092,-0.038,0.071,-0.071,0.038,-0.092,0.0,-0.1,-0.038,-0.092,-0.071,-0.071,-0.092,-0.038,-0.1,0.0,-0.092,0.038,-0.071,0.071,-0.038,0.092,0.0,0.1,0.038,0.092,0.071,0.071,0.092,0.038,0.1,0.0}, 34);
-Extrusion163.setEndCap(False);
-Extrusion163.setSolid(False);
+Extrusion163.setEndCap(false);
+Extrusion163.setSolid(false);
 Extrusion163.setSpine(new float[6]{-15.2,1.4,2.2,-12.0,-0.8,2.2}, 6);
 Shape161.setGeometry(&Extrusion163);
 
@@ -755,11 +753,11 @@ Appearance175.setUSE(CString("rope"));
 Shape174.addChild(&Appearance175);
 
 Extrusion& Extrusion176 =  Extrusion();
-Extrusion176.setBeginCap(False);
+Extrusion176.setBeginCap(false);
 Extrusion176.setCreaseAngle(0.76);
 Extrusion176.setCrossSection(new float[34]{0.1,0.0,0.092,-0.038,0.071,-0.071,0.038,-0.092,0.0,-0.1,-0.038,-0.092,-0.071,-0.071,-0.092,-0.038,-0.1,0.0,-0.092,0.038,-0.071,0.071,-0.038,0.092,0.0,0.1,0.038,0.092,0.071,0.071,0.092,0.038,0.1,0.0}, 34);
-Extrusion176.setEndCap(False);
-Extrusion176.setSolid(False);
+Extrusion176.setEndCap(false);
+Extrusion176.setSolid(false);
 Extrusion176.setSpine(new float[6]{-33.0,0.9,2.5,-18.5,1.9,2.55}, 6);
 Shape174.setGeometry(&Extrusion176);
 
@@ -771,11 +769,11 @@ Appearance178.setUSE(CString("rope"));
 Shape177.addChild(&Appearance178);
 
 Extrusion& Extrusion179 =  Extrusion();
-Extrusion179.setBeginCap(False);
+Extrusion179.setBeginCap(false);
 Extrusion179.setCreaseAngle(0.76);
 Extrusion179.setCrossSection(new float[34]{0.1,0.0,0.092,-0.038,0.071,-0.071,0.038,-0.092,0.0,-0.1,-0.038,-0.092,-0.071,-0.071,-0.092,-0.038,-0.1,0.0,-0.092,0.038,-0.071,0.071,-0.038,0.092,0.0,0.1,0.038,0.092,0.071,0.071,0.092,0.038,0.1,0.0}, 34);
-Extrusion179.setEndCap(False);
-Extrusion179.setSolid(False);
+Extrusion179.setEndCap(false);
+Extrusion179.setSolid(false);
 Extrusion179.setSpine(new float[6]{-35.7,-0.8,2.5,-18.8,-0.8,2.55}, 6);
 Shape177.setGeometry(&Extrusion179);
 
@@ -878,11 +876,11 @@ Transform& Transform203 =  Transform();
 Transform203.setTranslation(new float[3]{1.0,-1.0,0.0});
 Shape& Shape204 =  Shape();
 Extrusion& Extrusion205 =  Extrusion();
-Extrusion205.setBeginCap(False);
+Extrusion205.setBeginCap(false);
 Extrusion205.setCreaseAngle(0.785);
 Extrusion205.setCrossSection(new float[18]{1.0,0.0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.0,-1.0,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.0,0.0}, 18);
-Extrusion205.setEndCap(False);
-Extrusion205.setSolid(False);
+Extrusion205.setEndCap(false);
+Extrusion205.setSolid(false);
 Extrusion205.setSpine(new float[6]{0.0,-1.0,0.0,0.0,1.0,0.0}, 6);
 Shape204.setGeometry(&Extrusion205);
 

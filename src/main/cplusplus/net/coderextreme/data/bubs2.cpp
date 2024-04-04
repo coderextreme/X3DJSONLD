@@ -57,8 +57,8 @@ NavigationInfo11.setType(new CString[1]{CString("EXAMINE")}, 1);
 Scene10.addChild(&NavigationInfo11);
 
 Viewpoint& Viewpoint12 =  Viewpoint();
-Viewpoint12.setPosition(new float[3]{0.0,0.0,4.0});
-Viewpoint12.setOrientation(new float[4]{1.0,0.0,0.0,0.0});
+Viewpoint12.setPosition(new float[3]{0,0,4});
+Viewpoint12.setOrientation(new float[4]{1,0,0,0});
 Viewpoint12.setDescription(CString("Bubbles in action"));
 Scene10.addChild(&Viewpoint12);
 
@@ -83,7 +83,7 @@ Shape17.setGeometry(&Sphere18);
 
 Appearance& Appearance19 =  Appearance();
 Material& Material20 =  Material();
-Material20.setDiffuseColor(new float[3]{1.0,0.0,0.0});
+Material20.setDiffuseColor(new float[3]{1,0,0});
 Material20.setTransparency(0.2);
 Appearance19.addChild(&Material20);
 

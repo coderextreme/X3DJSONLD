@@ -1,5 +1,3 @@
-//#define False false
-//#define True true
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
@@ -262,7 +260,7 @@ ProtoBody& ProtoBody47 =  ProtoBody();
 Group& Group48 =  Group();
 TimeSensor& TimeSensor49 =  TimeSensor();
 TimeSensor49.setDEF(CString("TIMER"));
-TimeSensor49.setLoop(True);
+TimeSensor49.setLoop(true);
 IS& IS50 =  IS();
 Connect& connect51 =  Connect();
 connect51.setNodeField(CString("cycleInterval"));

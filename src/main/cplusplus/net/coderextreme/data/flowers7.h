@@ -1,5 +1,3 @@
-//#define False false
-//#define True true
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
@@ -339,7 +337,7 @@ Scene15.addChild(&Transform19);
 
 Script& Script60 =  Script();
 Script60.setDEF(CString("UrlSelector"));
-Script60.setDirectOutput(True);
+Script60.setDirectOutput(true);
 field& field61 =  field();
 field61.setName(CString("frontUrls"));
 field61.setType(CString("MFString"));
@@ -453,7 +451,7 @@ Scene15.addChild(&Script60);
 //<TimeSensor DEF=\"Clock\" cycleInterval=\"45\" loop='true'/> <ROUTE fromNode='Clock' fromField='fraction_changed' toNode='UrlSelector' toField='set_fraction'/> <ROUTE fromNode='UrlSelector' fromField='front' toNode='background' toField='frontUrl'/> <ROUTE fromNode='UrlSelector' fromField='back' toNode='background' toField='backUrl'/> <ROUTE fromNode='UrlSelector' fromField='left' toNode='background' toField='leftUrl'/> <ROUTE fromNode='UrlSelector' fromField='right' toNode='background' toField='rightUrl'/> <ROUTE fromNode='UrlSelector' fromField='top' toNode='background' toField='topUrl'/> <ROUTE fromNode='UrlSelector' fromField='bottom' toNode='background' toField='bottomUrl'/> <ROUTE fromNode='UrlSelector' fromField='front' toNode='frontShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='back' toNode='backShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='left' toNode='leftShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='right' toNode='rightShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='top' toNode='topShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='bottom' toNode='bottomShader' toField='url'/>
 Script& Script75 =  Script();
 Script75.setDEF(CString("Animate"));
-Script75.setDirectOutput(True);
+Script75.setDirectOutput(true);
 field& field76 =  field();
 field76.setName(CString("set_fraction"));
 field76.setType(CString("SFFloat"));
@@ -546,7 +544,7 @@ Scene15.addChild(&Script75);
 TimeSensor& TimeSensor83 =  TimeSensor();
 TimeSensor83.setDEF(CString("TourTime"));
 TimeSensor83.setCycleInterval(5);
-TimeSensor83.setLoop(True);
+TimeSensor83.setLoop(true);
 Scene15.addChild(&TimeSensor83);
 
 ROUTE& ROUTE84 =  ROUTE();

@@ -1,5 +1,3 @@
-//#define False false
-//#define True true
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
@@ -9727,7 +9725,7 @@ ProtoBody1769.addChild(&Switch1781);
 
 Script& Script1784 =  Script();
 Script1784.setDEF(CString("BehaviorSelectionScript"));
-Script1784.setDirectOutput(True);
+Script1784.setDirectOutput(true);
 Script1784.setUrl(new CString[2]{CString("HAnimBehaviorPrototypesScript.js"), CString("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/HAnimBehaviorPrototypesScript.js")}, 2);
 field& field1785 =  field();
 field1785.setName(CString("HumanoidArray"));

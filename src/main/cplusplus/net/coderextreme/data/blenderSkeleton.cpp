@@ -55,7 +55,7 @@ Shape11.setGeometry(&Box12);
 
 Appearance& Appearance13 =  Appearance();
 Material& Material14 =  Material();
-Material14.setDiffuseColor(new float[3]{0.0,0.0,1.0});
+Material14.setDiffuseColor(new float[3]{0,0,1});
 Appearance13.addChild(&Material14);
 
 Shape11.addChild(&Appearance13);
@@ -74,7 +74,7 @@ Shape16.setGeometry(&Sphere17);
 Appearance& Appearance18 =  Appearance();
 Appearance18.setDEF(CString("JointAppearance"));
 Material& Material19 =  Material();
-Material19.setDiffuseColor(new float[3]{1.0,0.5,0.0});
+Material19.setDiffuseColor(new float[3]{1,0.5,0});
 Material19.setTransparency(0.5);
 Appearance18.addChild(&Material19);
 
@@ -103,7 +103,7 @@ Transform22.setTranslation(new float[3]{7.35889,-6.92579,4.95831});
 Viewpoint& Viewpoint23 =  Viewpoint();
 Viewpoint23.setDEF(CString("CA_Camera"));
 Viewpoint23.setFieldOfView(0.6911112070083618);
-Viewpoint23.setOrientation(new float[4]{-3.627339850709177e-8,-0.4730778932571411,-0.8810206651687622,0.0});
+Viewpoint23.setOrientation(new float[4]{-3.627339850709177e-8,-0.4730778932571411,-0.8810206651687622,0});
 Viewpoint23.setPosition(new float[3]{-3.927080456378462e-7,-2.123415470123291e-7,2.384185791015625e-7});
 Transform22.addChild(&Viewpoint23);
 
@@ -1170,7 +1170,7 @@ HAnimJoint258.addChildren(&HAnimSegment259);
 HAnimJoint& HAnimJoint266 =  HAnimJoint();
 HAnimJoint266.X3DNode::setName(CString("l_tarsal_distal_phalanx_5"));
 HAnimJoint266.setDEF(CString("hanim_l_tarsal_distal_phalanx_5"));
-HAnimJoint266.setCenter(new float[3]{0.1271,0.0,0.0});
+HAnimJoint266.setCenter(new float[3]{0.1271,0,0});
 HAnimSegment& HAnimSegment267 =  HAnimSegment();
 HAnimSegment267.X3DNode::setName(CString("SEGMENT_FOR_l_tarsal_distal_phalanx_5"));
 HAnimSegment267.setDEF(CString("hanim_SEGMENT_FOR_l_tarsal_distal_phalanx_5"));
@@ -1179,7 +1179,7 @@ TouchSensor268.setDescription(CString("joint l_tarsal_distal_phalanx_5 segment S
 HAnimSegment267.addChild(&TouchSensor268);
 
 Transform& Transform269 =  Transform();
-Transform269.setTranslation(new float[3]{0.1271,0.0,0.0});
+Transform269.setTranslation(new float[3]{0.1271,0,0});
 Shape& Shape270 =  Shape();
 Shape270.setUSE(CString("JointShape"));
 Transform269.addChild(&Shape270);
@@ -1190,7 +1190,7 @@ HAnimSite& HAnimSite271 =  HAnimSite();
 HAnimSite271.X3DNode::setName(CString("SEGMENT_FOR_l_tarsal_distal_phalanx_5_tip"));
 HAnimSite271.setDEF(CString("hanim_SEGMENT_FOR_l_tarsal_distal_phalanx_5_tip"));
 Transform& Transform272 =  Transform();
-Transform272.setTranslation(new float[3]{0.1271,0.0,0.0});
+Transform272.setTranslation(new float[3]{0.1271,0,0});
 Shape& Shape273 =  Shape();
 Shape273.setUSE(CString("SiteShape"));
 Transform272.addChild(&Shape273);
@@ -2175,7 +2175,7 @@ HAnimJoint482.addChildren(&HAnimSegment483);
 HAnimJoint& HAnimJoint490 =  HAnimJoint();
 HAnimJoint490.X3DNode::setName(CString("r_tarsal_distal_phalanx_5"));
 HAnimJoint490.setDEF(CString("hanim_r_tarsal_distal_phalanx_5"));
-HAnimJoint490.setCenter(new float[3]{-0.1271,0.0,0.0});
+HAnimJoint490.setCenter(new float[3]{-0.1271,0,0});
 HAnimSegment& HAnimSegment491 =  HAnimSegment();
 HAnimSegment491.X3DNode::setName(CString("SEGMENT_FOR_r_tarsal_distal_phalanx_5"));
 HAnimSegment491.setDEF(CString("hanim_SEGMENT_FOR_r_tarsal_distal_phalanx_5"));
@@ -2184,7 +2184,7 @@ TouchSensor492.setDescription(CString("joint r_tarsal_distal_phalanx_5 segment S
 HAnimSegment491.addChild(&TouchSensor492);
 
 Transform& Transform493 =  Transform();
-Transform493.setTranslation(new float[3]{-0.1271,0.0,0.0});
+Transform493.setTranslation(new float[3]{-0.1271,0,0});
 Shape& Shape494 =  Shape();
 Shape494.setUSE(CString("JointShape"));
 Transform493.addChild(&Shape494);
@@ -2195,7 +2195,7 @@ HAnimSite& HAnimSite495 =  HAnimSite();
 HAnimSite495.X3DNode::setName(CString("SEGMENT_FOR_r_tarsal_distal_phalanx_5_tip"));
 HAnimSite495.setDEF(CString("hanim_SEGMENT_FOR_r_tarsal_distal_phalanx_5_tip"));
 Transform& Transform496 =  Transform();
-Transform496.setTranslation(new float[3]{-0.1271,0.0,0.0});
+Transform496.setTranslation(new float[3]{-0.1271,0,0});
 Shape& Shape497 =  Shape();
 Shape497.setUSE(CString("SiteShape"));
 Transform496.addChild(&Shape497);
@@ -5994,7 +5994,7 @@ Scene7.addChild(&TimeSensor1348);
 
 ProximitySensor& ProximitySensor1349 =  ProximitySensor();
 ProximitySensor1349.setDEF(CString("Armature_Close"));
-ProximitySensor1349.setSize(new float[3]{1000000.0,1000000.0,1000000.0});
+ProximitySensor1349.setSize(new float[3]{1000000,1000000,1000000});
 Scene7.addChild(&ProximitySensor1349);
 
 ROUTE& ROUTE1350 =  ROUTE();
@@ -6006,878 +6006,878 @@ Scene7.addChild(&ROUTE1350);
 
 OrientationInterpolator& OrientationInterpolator1351 =  OrientationInterpolator();
 OrientationInterpolator1351.setDEF(CString("Armature_OI_sacrum"));
-OrientationInterpolator1351.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1351.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1351.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1351.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1351);
 
 OrientationInterpolator& OrientationInterpolator1352 =  OrientationInterpolator();
 OrientationInterpolator1352.setDEF(CString("Armature_OI_pelvis"));
-OrientationInterpolator1352.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1352.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1352.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1352.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1352);
 
 OrientationInterpolator& OrientationInterpolator1353 =  OrientationInterpolator();
 OrientationInterpolator1353.setDEF(CString("Armature_OI_l_thigh"));
-OrientationInterpolator1353.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1353.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1353.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1353.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1353);
 
 OrientationInterpolator& OrientationInterpolator1354 =  OrientationInterpolator();
 OrientationInterpolator1354.setDEF(CString("Armature_OI_l_calf"));
-OrientationInterpolator1354.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1354.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1354.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1354.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1354);
 
 OrientationInterpolator& OrientationInterpolator1355 =  OrientationInterpolator();
 OrientationInterpolator1355.setDEF(CString("Armature_OI_l_talus"));
-OrientationInterpolator1355.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1355.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1355.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1355.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1355);
 
 OrientationInterpolator& OrientationInterpolator1356 =  OrientationInterpolator();
 OrientationInterpolator1356.setDEF(CString("Armature_OI_l_navicular"));
-OrientationInterpolator1356.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1356.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1356.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1356.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1356);
 
 OrientationInterpolator& OrientationInterpolator1357 =  OrientationInterpolator();
 OrientationInterpolator1357.setDEF(CString("Armature_OI_l_cuneiform_1"));
-OrientationInterpolator1357.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1357.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1357.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1357.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1357);
 
 OrientationInterpolator& OrientationInterpolator1358 =  OrientationInterpolator();
 OrientationInterpolator1358.setDEF(CString("Armature_OI_l_metatarsal_1"));
-OrientationInterpolator1358.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1358.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1358.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1358.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1358);
 
 OrientationInterpolator& OrientationInterpolator1359 =  OrientationInterpolator();
 OrientationInterpolator1359.setDEF(CString("Armature_OI_l_tarsal_proximal_phalanx_1"));
-OrientationInterpolator1359.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1359.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1359.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1359.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1359);
 
 OrientationInterpolator& OrientationInterpolator1360 =  OrientationInterpolator();
 OrientationInterpolator1360.setDEF(CString("Armature_OI_l_tarsal_distal_phalanx_1"));
-OrientationInterpolator1360.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1360.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1360.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1360.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1360);
 
 OrientationInterpolator& OrientationInterpolator1361 =  OrientationInterpolator();
 OrientationInterpolator1361.setDEF(CString("Armature_OI_l_cuneiform_2"));
-OrientationInterpolator1361.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1361.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1361.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1361.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1361);
 
 OrientationInterpolator& OrientationInterpolator1362 =  OrientationInterpolator();
 OrientationInterpolator1362.setDEF(CString("Armature_OI_l_metatarsal_2"));
-OrientationInterpolator1362.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1362.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1362.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1362.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1362);
 
 OrientationInterpolator& OrientationInterpolator1363 =  OrientationInterpolator();
 OrientationInterpolator1363.setDEF(CString("Armature_OI_l_tarsal_proximal_phalanx_2"));
-OrientationInterpolator1363.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1363.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1363.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1363.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1363);
 
 OrientationInterpolator& OrientationInterpolator1364 =  OrientationInterpolator();
 OrientationInterpolator1364.setDEF(CString("Armature_OI_l_tarsal_middle_phalanx_2"));
-OrientationInterpolator1364.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1364.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1364.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1364.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1364);
 
 OrientationInterpolator& OrientationInterpolator1365 =  OrientationInterpolator();
 OrientationInterpolator1365.setDEF(CString("Armature_OI_l_tarsal_distal_phalanx_2"));
-OrientationInterpolator1365.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1365.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1365.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1365.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1365);
 
 OrientationInterpolator& OrientationInterpolator1366 =  OrientationInterpolator();
 OrientationInterpolator1366.setDEF(CString("Armature_OI_l_cuneiform_3"));
-OrientationInterpolator1366.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1366.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1366.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1366.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1366);
 
 OrientationInterpolator& OrientationInterpolator1367 =  OrientationInterpolator();
 OrientationInterpolator1367.setDEF(CString("Armature_OI_l_metatarsal_3"));
-OrientationInterpolator1367.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1367.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1367.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1367.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1367);
 
 OrientationInterpolator& OrientationInterpolator1368 =  OrientationInterpolator();
 OrientationInterpolator1368.setDEF(CString("Armature_OI_l_tarsal_proximal_phalanx_3"));
-OrientationInterpolator1368.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1368.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1368.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1368.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1368);
 
 OrientationInterpolator& OrientationInterpolator1369 =  OrientationInterpolator();
 OrientationInterpolator1369.setDEF(CString("Armature_OI_l_tarsal_middle_phalanx_3"));
-OrientationInterpolator1369.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1369.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1369.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1369.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1369);
 
 OrientationInterpolator& OrientationInterpolator1370 =  OrientationInterpolator();
 OrientationInterpolator1370.setDEF(CString("Armature_OI_l_tarsal_distal_phalanx_3"));
-OrientationInterpolator1370.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1370.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1370.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1370.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1370);
 
 OrientationInterpolator& OrientationInterpolator1371 =  OrientationInterpolator();
 OrientationInterpolator1371.setDEF(CString("Armature_OI_l_calcaneus"));
-OrientationInterpolator1371.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1371.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1371.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1371.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1371);
 
 OrientationInterpolator& OrientationInterpolator1372 =  OrientationInterpolator();
 OrientationInterpolator1372.setDEF(CString("Armature_OI_l_cuboid"));
-OrientationInterpolator1372.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1372.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1372.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1372.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1372);
 
 OrientationInterpolator& OrientationInterpolator1373 =  OrientationInterpolator();
 OrientationInterpolator1373.setDEF(CString("Armature_OI_l_metatarsal_4"));
-OrientationInterpolator1373.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1373.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1373.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1373.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1373);
 
 OrientationInterpolator& OrientationInterpolator1374 =  OrientationInterpolator();
 OrientationInterpolator1374.setDEF(CString("Armature_OI_l_tarsal_proximal_phalanx_4"));
-OrientationInterpolator1374.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1374.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1374.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1374.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1374);
 
 OrientationInterpolator& OrientationInterpolator1375 =  OrientationInterpolator();
 OrientationInterpolator1375.setDEF(CString("Armature_OI_l_tarsal_middle_phalanx_4"));
-OrientationInterpolator1375.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1375.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1375.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1375.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1375);
 
 OrientationInterpolator& OrientationInterpolator1376 =  OrientationInterpolator();
 OrientationInterpolator1376.setDEF(CString("Armature_OI_l_tarsal_distal_phalanx_4"));
-OrientationInterpolator1376.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1376.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1376.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1376.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1376);
 
 OrientationInterpolator& OrientationInterpolator1377 =  OrientationInterpolator();
 OrientationInterpolator1377.setDEF(CString("Armature_OI_l_metatarsal_5"));
-OrientationInterpolator1377.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1377.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1377.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1377.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1377);
 
 OrientationInterpolator& OrientationInterpolator1378 =  OrientationInterpolator();
 OrientationInterpolator1378.setDEF(CString("Armature_OI_l_tarsal_proximal_phalanx_5"));
-OrientationInterpolator1378.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1378.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1378.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1378.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1378);
 
 OrientationInterpolator& OrientationInterpolator1379 =  OrientationInterpolator();
 OrientationInterpolator1379.setDEF(CString("Armature_OI_l_tarsal_middle_phalanx_5"));
-OrientationInterpolator1379.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1379.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1379.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1379.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1379);
 
 OrientationInterpolator& OrientationInterpolator1380 =  OrientationInterpolator();
 OrientationInterpolator1380.setDEF(CString("Armature_OI_l_tarsal_distal_phalanx_5"));
-OrientationInterpolator1380.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1380.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1380.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1380.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1380);
 
 OrientationInterpolator& OrientationInterpolator1381 =  OrientationInterpolator();
 OrientationInterpolator1381.setDEF(CString("Armature_OI_r_thigh"));
-OrientationInterpolator1381.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1381.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1381.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1381.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1381);
 
 OrientationInterpolator& OrientationInterpolator1382 =  OrientationInterpolator();
 OrientationInterpolator1382.setDEF(CString("Armature_OI_r_calf"));
-OrientationInterpolator1382.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1382.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1382.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1382.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1382);
 
 OrientationInterpolator& OrientationInterpolator1383 =  OrientationInterpolator();
 OrientationInterpolator1383.setDEF(CString("Armature_OI_r_talus"));
-OrientationInterpolator1383.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1383.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1383.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1383.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1383);
 
 OrientationInterpolator& OrientationInterpolator1384 =  OrientationInterpolator();
 OrientationInterpolator1384.setDEF(CString("Armature_OI_r_navicular"));
-OrientationInterpolator1384.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1384.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1384.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1384.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1384);
 
 OrientationInterpolator& OrientationInterpolator1385 =  OrientationInterpolator();
 OrientationInterpolator1385.setDEF(CString("Armature_OI_r_cuneiform_1"));
-OrientationInterpolator1385.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1385.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1385.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1385.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1385);
 
 OrientationInterpolator& OrientationInterpolator1386 =  OrientationInterpolator();
 OrientationInterpolator1386.setDEF(CString("Armature_OI_r_metatarsal_1"));
-OrientationInterpolator1386.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1386.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1386.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1386.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1386);
 
 OrientationInterpolator& OrientationInterpolator1387 =  OrientationInterpolator();
 OrientationInterpolator1387.setDEF(CString("Armature_OI_r_tarsal_proximal_phalanx_1"));
-OrientationInterpolator1387.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1387.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1387.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1387.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1387);
 
 OrientationInterpolator& OrientationInterpolator1388 =  OrientationInterpolator();
 OrientationInterpolator1388.setDEF(CString("Armature_OI_r_tarsal_distal_phalanx_1"));
-OrientationInterpolator1388.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1388.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1388.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1388.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1388);
 
 OrientationInterpolator& OrientationInterpolator1389 =  OrientationInterpolator();
 OrientationInterpolator1389.setDEF(CString("Armature_OI_r_cuneiform_2"));
-OrientationInterpolator1389.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1389.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1389.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1389.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1389);
 
 OrientationInterpolator& OrientationInterpolator1390 =  OrientationInterpolator();
 OrientationInterpolator1390.setDEF(CString("Armature_OI_r_metatarsal_2"));
-OrientationInterpolator1390.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1390.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1390.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1390.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1390);
 
 OrientationInterpolator& OrientationInterpolator1391 =  OrientationInterpolator();
 OrientationInterpolator1391.setDEF(CString("Armature_OI_r_tarsal_proximal_phalanx_2"));
-OrientationInterpolator1391.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1391.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1391.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1391.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1391);
 
 OrientationInterpolator& OrientationInterpolator1392 =  OrientationInterpolator();
 OrientationInterpolator1392.setDEF(CString("Armature_OI_r_tarsal_middle_phalanx_2"));
-OrientationInterpolator1392.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1392.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1392.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1392.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1392);
 
 OrientationInterpolator& OrientationInterpolator1393 =  OrientationInterpolator();
 OrientationInterpolator1393.setDEF(CString("Armature_OI_r_tarsal_distal_phalanx_2"));
-OrientationInterpolator1393.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1393.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1393.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1393.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1393);
 
 OrientationInterpolator& OrientationInterpolator1394 =  OrientationInterpolator();
 OrientationInterpolator1394.setDEF(CString("Armature_OI_r_cuneiform_3"));
-OrientationInterpolator1394.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1394.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1394.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1394.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1394);
 
 OrientationInterpolator& OrientationInterpolator1395 =  OrientationInterpolator();
 OrientationInterpolator1395.setDEF(CString("Armature_OI_r_metatarsal_3"));
-OrientationInterpolator1395.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1395.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1395.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1395.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1395);
 
 OrientationInterpolator& OrientationInterpolator1396 =  OrientationInterpolator();
 OrientationInterpolator1396.setDEF(CString("Armature_OI_r_tarsal_proximal_phalanx_3"));
-OrientationInterpolator1396.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1396.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1396.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1396.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1396);
 
 OrientationInterpolator& OrientationInterpolator1397 =  OrientationInterpolator();
 OrientationInterpolator1397.setDEF(CString("Armature_OI_r_tarsal_middle_phalanx_3"));
-OrientationInterpolator1397.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1397.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1397.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1397.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1397);
 
 OrientationInterpolator& OrientationInterpolator1398 =  OrientationInterpolator();
 OrientationInterpolator1398.setDEF(CString("Armature_OI_r_tarsal_distal_phalanx_3"));
-OrientationInterpolator1398.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1398.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1398.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1398.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1398);
 
 OrientationInterpolator& OrientationInterpolator1399 =  OrientationInterpolator();
 OrientationInterpolator1399.setDEF(CString("Armature_OI_r_calcaneus"));
-OrientationInterpolator1399.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1399.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1399.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1399.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1399);
 
 OrientationInterpolator& OrientationInterpolator1400 =  OrientationInterpolator();
 OrientationInterpolator1400.setDEF(CString("Armature_OI_r_cuboid"));
-OrientationInterpolator1400.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1400.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1400.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1400.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1400);
 
 OrientationInterpolator& OrientationInterpolator1401 =  OrientationInterpolator();
 OrientationInterpolator1401.setDEF(CString("Armature_OI_r_metatarsal_4"));
-OrientationInterpolator1401.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1401.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1401.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1401.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1401);
 
 OrientationInterpolator& OrientationInterpolator1402 =  OrientationInterpolator();
 OrientationInterpolator1402.setDEF(CString("Armature_OI_r_tarsal_proximal_phalanx_4"));
-OrientationInterpolator1402.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1402.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1402.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1402.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1402);
 
 OrientationInterpolator& OrientationInterpolator1403 =  OrientationInterpolator();
 OrientationInterpolator1403.setDEF(CString("Armature_OI_r_tarsal_middle_phalanx_4"));
-OrientationInterpolator1403.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1403.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1403.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1403.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1403);
 
 OrientationInterpolator& OrientationInterpolator1404 =  OrientationInterpolator();
 OrientationInterpolator1404.setDEF(CString("Armature_OI_r_tarsal_distal_phalanx_4"));
-OrientationInterpolator1404.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1404.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1404.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1404.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1404);
 
 OrientationInterpolator& OrientationInterpolator1405 =  OrientationInterpolator();
 OrientationInterpolator1405.setDEF(CString("Armature_OI_r_metatarsal_5"));
-OrientationInterpolator1405.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1405.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1405.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1405.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1405);
 
 OrientationInterpolator& OrientationInterpolator1406 =  OrientationInterpolator();
 OrientationInterpolator1406.setDEF(CString("Armature_OI_r_tarsal_proximal_phalanx_5"));
-OrientationInterpolator1406.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1406.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1406.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1406.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1406);
 
 OrientationInterpolator& OrientationInterpolator1407 =  OrientationInterpolator();
 OrientationInterpolator1407.setDEF(CString("Armature_OI_r_tarsal_middle_phalanx_5"));
-OrientationInterpolator1407.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1407.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1407.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1407.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1407);
 
 OrientationInterpolator& OrientationInterpolator1408 =  OrientationInterpolator();
 OrientationInterpolator1408.setDEF(CString("Armature_OI_r_tarsal_distal_phalanx_5"));
-OrientationInterpolator1408.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1408.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1408.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1408.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1408);
 
 OrientationInterpolator& OrientationInterpolator1409 =  OrientationInterpolator();
 OrientationInterpolator1409.setDEF(CString("Armature_OI_l5"));
-OrientationInterpolator1409.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1409.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1409.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1409.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1409);
 
 OrientationInterpolator& OrientationInterpolator1410 =  OrientationInterpolator();
 OrientationInterpolator1410.setDEF(CString("Armature_OI_l4"));
-OrientationInterpolator1410.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1410.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1410.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1410.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1410);
 
 OrientationInterpolator& OrientationInterpolator1411 =  OrientationInterpolator();
 OrientationInterpolator1411.setDEF(CString("Armature_OI_l3"));
-OrientationInterpolator1411.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1411.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1411.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1411.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1411);
 
 OrientationInterpolator& OrientationInterpolator1412 =  OrientationInterpolator();
 OrientationInterpolator1412.setDEF(CString("Armature_OI_l2"));
-OrientationInterpolator1412.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1412.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1412.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1412.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1412);
 
 OrientationInterpolator& OrientationInterpolator1413 =  OrientationInterpolator();
 OrientationInterpolator1413.setDEF(CString("Armature_OI_l1"));
-OrientationInterpolator1413.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1413.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1413.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1413.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1413);
 
 OrientationInterpolator& OrientationInterpolator1414 =  OrientationInterpolator();
 OrientationInterpolator1414.setDEF(CString("Armature_OI_t12"));
-OrientationInterpolator1414.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1414.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1414.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1414.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1414);
 
 OrientationInterpolator& OrientationInterpolator1415 =  OrientationInterpolator();
 OrientationInterpolator1415.setDEF(CString("Armature_OI_t11"));
-OrientationInterpolator1415.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1415.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1415.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1415.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1415);
 
 OrientationInterpolator& OrientationInterpolator1416 =  OrientationInterpolator();
 OrientationInterpolator1416.setDEF(CString("Armature_OI_t10"));
-OrientationInterpolator1416.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1416.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1416.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1416.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1416);
 
 OrientationInterpolator& OrientationInterpolator1417 =  OrientationInterpolator();
 OrientationInterpolator1417.setDEF(CString("Armature_OI_t9"));
-OrientationInterpolator1417.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1417.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1417.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1417.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1417);
 
 OrientationInterpolator& OrientationInterpolator1418 =  OrientationInterpolator();
 OrientationInterpolator1418.setDEF(CString("Armature_OI_t8"));
-OrientationInterpolator1418.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1418.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1418.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1418.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1418);
 
 OrientationInterpolator& OrientationInterpolator1419 =  OrientationInterpolator();
 OrientationInterpolator1419.setDEF(CString("Armature_OI_t7"));
-OrientationInterpolator1419.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1419.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1419.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1419.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1419);
 
 OrientationInterpolator& OrientationInterpolator1420 =  OrientationInterpolator();
 OrientationInterpolator1420.setDEF(CString("Armature_OI_t6"));
-OrientationInterpolator1420.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1420.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1420.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1420.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1420);
 
 OrientationInterpolator& OrientationInterpolator1421 =  OrientationInterpolator();
 OrientationInterpolator1421.setDEF(CString("Armature_OI_t5"));
-OrientationInterpolator1421.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1421.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1421.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1421.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1421);
 
 OrientationInterpolator& OrientationInterpolator1422 =  OrientationInterpolator();
 OrientationInterpolator1422.setDEF(CString("Armature_OI_t4"));
-OrientationInterpolator1422.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1422.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1422.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1422.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1422);
 
 OrientationInterpolator& OrientationInterpolator1423 =  OrientationInterpolator();
 OrientationInterpolator1423.setDEF(CString("Armature_OI_t3"));
-OrientationInterpolator1423.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1423.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1423.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1423.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1423);
 
 OrientationInterpolator& OrientationInterpolator1424 =  OrientationInterpolator();
 OrientationInterpolator1424.setDEF(CString("Armature_OI_t2"));
-OrientationInterpolator1424.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1424.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1424.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1424.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1424);
 
 OrientationInterpolator& OrientationInterpolator1425 =  OrientationInterpolator();
 OrientationInterpolator1425.setDEF(CString("Armature_OI_t1"));
-OrientationInterpolator1425.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1425.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1425.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1425.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1425);
 
 OrientationInterpolator& OrientationInterpolator1426 =  OrientationInterpolator();
 OrientationInterpolator1426.setDEF(CString("Armature_OI_c7"));
-OrientationInterpolator1426.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1426.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1426.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1426.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1426);
 
 OrientationInterpolator& OrientationInterpolator1427 =  OrientationInterpolator();
 OrientationInterpolator1427.setDEF(CString("Armature_OI_c6"));
-OrientationInterpolator1427.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1427.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1427.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1427.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1427);
 
 OrientationInterpolator& OrientationInterpolator1428 =  OrientationInterpolator();
 OrientationInterpolator1428.setDEF(CString("Armature_OI_c5"));
-OrientationInterpolator1428.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1428.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1428.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1428.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1428);
 
 OrientationInterpolator& OrientationInterpolator1429 =  OrientationInterpolator();
 OrientationInterpolator1429.setDEF(CString("Armature_OI_c4"));
-OrientationInterpolator1429.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1429.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1429.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1429.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1429);
 
 OrientationInterpolator& OrientationInterpolator1430 =  OrientationInterpolator();
 OrientationInterpolator1430.setDEF(CString("Armature_OI_c3"));
-OrientationInterpolator1430.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1430.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1430.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1430.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1430);
 
 OrientationInterpolator& OrientationInterpolator1431 =  OrientationInterpolator();
 OrientationInterpolator1431.setDEF(CString("Armature_OI_c2"));
-OrientationInterpolator1431.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1431.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1431.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1431.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1431);
 
 OrientationInterpolator& OrientationInterpolator1432 =  OrientationInterpolator();
 OrientationInterpolator1432.setDEF(CString("Armature_OI_c1"));
-OrientationInterpolator1432.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1432.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1432.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1432.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1432);
 
 OrientationInterpolator& OrientationInterpolator1433 =  OrientationInterpolator();
 OrientationInterpolator1433.setDEF(CString("Armature_OI_skull"));
-OrientationInterpolator1433.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1433.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1433.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1433.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1433);
 
 OrientationInterpolator& OrientationInterpolator1434 =  OrientationInterpolator();
 OrientationInterpolator1434.setDEF(CString("Armature_OI_l_eyelid"));
-OrientationInterpolator1434.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1434.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1434.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1434.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1434);
 
 OrientationInterpolator& OrientationInterpolator1435 =  OrientationInterpolator();
 OrientationInterpolator1435.setDEF(CString("Armature_OI_r_eyelid"));
-OrientationInterpolator1435.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1435.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1435.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1435.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1435);
 
 OrientationInterpolator& OrientationInterpolator1436 =  OrientationInterpolator();
 OrientationInterpolator1436.setDEF(CString("Armature_OI_l_eyeball"));
-OrientationInterpolator1436.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1436.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1436.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1436.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1436);
 
 OrientationInterpolator& OrientationInterpolator1437 =  OrientationInterpolator();
 OrientationInterpolator1437.setDEF(CString("Armature_OI_r_eyeball"));
-OrientationInterpolator1437.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1437.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1437.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1437.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1437);
 
 OrientationInterpolator& OrientationInterpolator1438 =  OrientationInterpolator();
 OrientationInterpolator1438.setDEF(CString("Armature_OI_l_eyebrow"));
-OrientationInterpolator1438.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1438.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1438.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1438.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1438);
 
 OrientationInterpolator& OrientationInterpolator1439 =  OrientationInterpolator();
 OrientationInterpolator1439.setDEF(CString("Armature_OI_r_eyebrow"));
-OrientationInterpolator1439.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1439.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1439.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1439.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1439);
 
 OrientationInterpolator& OrientationInterpolator1440 =  OrientationInterpolator();
 OrientationInterpolator1440.setDEF(CString("Armature_OI_jaw"));
-OrientationInterpolator1440.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1440.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1440.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1440.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1440);
 
 OrientationInterpolator& OrientationInterpolator1441 =  OrientationInterpolator();
 OrientationInterpolator1441.setDEF(CString("Armature_OI_l_clavicle"));
-OrientationInterpolator1441.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1441.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1441.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1441.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1441);
 
 OrientationInterpolator& OrientationInterpolator1442 =  OrientationInterpolator();
 OrientationInterpolator1442.setDEF(CString("Armature_OI_l_scapula"));
-OrientationInterpolator1442.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1442.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1442.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1442.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1442);
 
 OrientationInterpolator& OrientationInterpolator1443 =  OrientationInterpolator();
 OrientationInterpolator1443.setDEF(CString("Armature_OI_l_upperarm"));
-OrientationInterpolator1443.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1443.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1443.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1443.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1443);
 
 OrientationInterpolator& OrientationInterpolator1444 =  OrientationInterpolator();
 OrientationInterpolator1444.setDEF(CString("Armature_OI_l_forearm"));
-OrientationInterpolator1444.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1444.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1444.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1444.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1444);
 
 OrientationInterpolator& OrientationInterpolator1445 =  OrientationInterpolator();
 OrientationInterpolator1445.setDEF(CString("Armature_OI_l_carpal"));
-OrientationInterpolator1445.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1445.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1445.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1445.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1445);
 
 OrientationInterpolator& OrientationInterpolator1446 =  OrientationInterpolator();
 OrientationInterpolator1446.setDEF(CString("Armature_OI_l_trapezium"));
-OrientationInterpolator1446.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1446.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1446.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1446.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1446);
 
 OrientationInterpolator& OrientationInterpolator1447 =  OrientationInterpolator();
 OrientationInterpolator1447.setDEF(CString("Armature_OI_l_metacarpal_1"));
-OrientationInterpolator1447.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1447.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1447.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1447.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1447);
 
 OrientationInterpolator& OrientationInterpolator1448 =  OrientationInterpolator();
 OrientationInterpolator1448.setDEF(CString("Armature_OI_l_carpal_proximal_phalanx_1"));
-OrientationInterpolator1448.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1448.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1448.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1448.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1448);
 
 OrientationInterpolator& OrientationInterpolator1449 =  OrientationInterpolator();
 OrientationInterpolator1449.setDEF(CString("Armature_OI_l_carpal_distal_phalanx_1"));
-OrientationInterpolator1449.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1449.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1449.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1449.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1449);
 
 OrientationInterpolator& OrientationInterpolator1450 =  OrientationInterpolator();
 OrientationInterpolator1450.setDEF(CString("Armature_OI_l_trapezoid"));
-OrientationInterpolator1450.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1450.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1450.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1450.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1450);
 
 OrientationInterpolator& OrientationInterpolator1451 =  OrientationInterpolator();
 OrientationInterpolator1451.setDEF(CString("Armature_OI_l_metacarpal_2"));
-OrientationInterpolator1451.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1451.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1451.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1451.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1451);
 
 OrientationInterpolator& OrientationInterpolator1452 =  OrientationInterpolator();
 OrientationInterpolator1452.setDEF(CString("Armature_OI_l_carpal_proximal_phalanx_2"));
-OrientationInterpolator1452.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1452.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1452.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1452.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1452);
 
 OrientationInterpolator& OrientationInterpolator1453 =  OrientationInterpolator();
 OrientationInterpolator1453.setDEF(CString("Armature_OI_l_carpal_middle_phalanx_2"));
-OrientationInterpolator1453.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1453.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1453.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1453.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1453);
 
 OrientationInterpolator& OrientationInterpolator1454 =  OrientationInterpolator();
 OrientationInterpolator1454.setDEF(CString("Armature_OI_l_carpal_distal_phalanx_2"));
-OrientationInterpolator1454.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1454.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1454.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1454.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1454);
 
 OrientationInterpolator& OrientationInterpolator1455 =  OrientationInterpolator();
 OrientationInterpolator1455.setDEF(CString("Armature_OI_l_capitate"));
-OrientationInterpolator1455.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1455.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1455.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1455.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1455);
 
 OrientationInterpolator& OrientationInterpolator1456 =  OrientationInterpolator();
 OrientationInterpolator1456.setDEF(CString("Armature_OI_l_metacarpal_3"));
-OrientationInterpolator1456.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1456.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1456.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1456.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1456);
 
 OrientationInterpolator& OrientationInterpolator1457 =  OrientationInterpolator();
 OrientationInterpolator1457.setDEF(CString("Armature_OI_l_carpal_proximal_phalanx_3"));
-OrientationInterpolator1457.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1457.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1457.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1457.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1457);
 
 OrientationInterpolator& OrientationInterpolator1458 =  OrientationInterpolator();
 OrientationInterpolator1458.setDEF(CString("Armature_OI_l_carpal_middle_phalanx_3"));
-OrientationInterpolator1458.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1458.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1458.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1458.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1458);
 
 OrientationInterpolator& OrientationInterpolator1459 =  OrientationInterpolator();
 OrientationInterpolator1459.setDEF(CString("Armature_OI_l_carpal_distal_phalanx_3"));
-OrientationInterpolator1459.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1459.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1459.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1459.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1459);
 
 OrientationInterpolator& OrientationInterpolator1460 =  OrientationInterpolator();
 OrientationInterpolator1460.setDEF(CString("Armature_OI_l_hamate"));
-OrientationInterpolator1460.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1460.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1460.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1460.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1460);
 
 OrientationInterpolator& OrientationInterpolator1461 =  OrientationInterpolator();
 OrientationInterpolator1461.setDEF(CString("Armature_OI_l_metacarpal_4"));
-OrientationInterpolator1461.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1461.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1461.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1461.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1461);
 
 OrientationInterpolator& OrientationInterpolator1462 =  OrientationInterpolator();
 OrientationInterpolator1462.setDEF(CString("Armature_OI_l_carpal_proximal_phalanx_4"));
-OrientationInterpolator1462.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1462.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1462.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1462.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1462);
 
 OrientationInterpolator& OrientationInterpolator1463 =  OrientationInterpolator();
 OrientationInterpolator1463.setDEF(CString("Armature_OI_l_carpal_middle_phalanx_4"));
-OrientationInterpolator1463.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1463.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1463.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1463.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1463);
 
 OrientationInterpolator& OrientationInterpolator1464 =  OrientationInterpolator();
 OrientationInterpolator1464.setDEF(CString("Armature_OI_l_carpal_distal_phalanx_4"));
-OrientationInterpolator1464.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1464.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1464.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1464.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1464);
 
 OrientationInterpolator& OrientationInterpolator1465 =  OrientationInterpolator();
 OrientationInterpolator1465.setDEF(CString("Armature_OI_l_metacarpal_5"));
-OrientationInterpolator1465.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1465.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1465.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1465.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1465);
 
 OrientationInterpolator& OrientationInterpolator1466 =  OrientationInterpolator();
 OrientationInterpolator1466.setDEF(CString("Armature_OI_l_carpal_proximal_phalanx_5"));
-OrientationInterpolator1466.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1466.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1466.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1466.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1466);
 
 OrientationInterpolator& OrientationInterpolator1467 =  OrientationInterpolator();
 OrientationInterpolator1467.setDEF(CString("Armature_OI_l_carpal_middle_phalanx_5"));
-OrientationInterpolator1467.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1467.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1467.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1467.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1467);
 
 OrientationInterpolator& OrientationInterpolator1468 =  OrientationInterpolator();
 OrientationInterpolator1468.setDEF(CString("Armature_OI_l_carpal_distal_phalanx_5"));
-OrientationInterpolator1468.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1468.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1468.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1468.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1468);
 
 OrientationInterpolator& OrientationInterpolator1469 =  OrientationInterpolator();
 OrientationInterpolator1469.setDEF(CString("Armature_OI_r_clavicle"));
-OrientationInterpolator1469.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1469.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1469.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1469.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1469);
 
 OrientationInterpolator& OrientationInterpolator1470 =  OrientationInterpolator();
 OrientationInterpolator1470.setDEF(CString("Armature_OI_r_scapula"));
-OrientationInterpolator1470.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1470.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1470.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1470.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1470);
 
 OrientationInterpolator& OrientationInterpolator1471 =  OrientationInterpolator();
 OrientationInterpolator1471.setDEF(CString("Armature_OI_r_upperarm"));
-OrientationInterpolator1471.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1471.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1471.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1471.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1471);
 
 OrientationInterpolator& OrientationInterpolator1472 =  OrientationInterpolator();
 OrientationInterpolator1472.setDEF(CString("Armature_OI_r_forearm"));
-OrientationInterpolator1472.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1472.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1472.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1472.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1472);
 
 OrientationInterpolator& OrientationInterpolator1473 =  OrientationInterpolator();
 OrientationInterpolator1473.setDEF(CString("Armature_OI_r_carpal"));
-OrientationInterpolator1473.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1473.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1473.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1473.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1473);
 
 OrientationInterpolator& OrientationInterpolator1474 =  OrientationInterpolator();
 OrientationInterpolator1474.setDEF(CString("Armature_OI_r_trapezium"));
-OrientationInterpolator1474.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1474.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1474.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1474.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1474);
 
 OrientationInterpolator& OrientationInterpolator1475 =  OrientationInterpolator();
 OrientationInterpolator1475.setDEF(CString("Armature_OI_r_metacarpal_1"));
-OrientationInterpolator1475.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1475.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1475.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1475.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1475);
 
 OrientationInterpolator& OrientationInterpolator1476 =  OrientationInterpolator();
 OrientationInterpolator1476.setDEF(CString("Armature_OI_r_carpal_proximal_phalanx_1"));
-OrientationInterpolator1476.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1476.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1476.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1476.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1476);
 
 OrientationInterpolator& OrientationInterpolator1477 =  OrientationInterpolator();
 OrientationInterpolator1477.setDEF(CString("Armature_OI_r_carpal_distal_phalanx_1"));
-OrientationInterpolator1477.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1477.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1477.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1477.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1477);
 
 OrientationInterpolator& OrientationInterpolator1478 =  OrientationInterpolator();
 OrientationInterpolator1478.setDEF(CString("Armature_OI_r_trapezoid"));
-OrientationInterpolator1478.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1478.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1478.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1478.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1478);
 
 OrientationInterpolator& OrientationInterpolator1479 =  OrientationInterpolator();
 OrientationInterpolator1479.setDEF(CString("Armature_OI_r_metacarpal_2"));
-OrientationInterpolator1479.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1479.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1479.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1479.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1479);
 
 OrientationInterpolator& OrientationInterpolator1480 =  OrientationInterpolator();
 OrientationInterpolator1480.setDEF(CString("Armature_OI_r_carpal_proximal_phalanx_2"));
-OrientationInterpolator1480.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1480.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1480.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1480.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1480);
 
 OrientationInterpolator& OrientationInterpolator1481 =  OrientationInterpolator();
 OrientationInterpolator1481.setDEF(CString("Armature_OI_r_carpal_middle_phalanx_2"));
-OrientationInterpolator1481.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1481.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1481.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1481.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1481);
 
 OrientationInterpolator& OrientationInterpolator1482 =  OrientationInterpolator();
 OrientationInterpolator1482.setDEF(CString("Armature_OI_r_carpal_distal_phalanx_2"));
-OrientationInterpolator1482.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1482.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1482.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1482.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1482);
 
 OrientationInterpolator& OrientationInterpolator1483 =  OrientationInterpolator();
 OrientationInterpolator1483.setDEF(CString("Armature_OI_r_capitate"));
-OrientationInterpolator1483.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1483.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1483.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1483.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1483);
 
 OrientationInterpolator& OrientationInterpolator1484 =  OrientationInterpolator();
 OrientationInterpolator1484.setDEF(CString("Armature_OI_r_metacarpal_3"));
-OrientationInterpolator1484.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1484.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1484.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1484.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1484);
 
 OrientationInterpolator& OrientationInterpolator1485 =  OrientationInterpolator();
 OrientationInterpolator1485.setDEF(CString("Armature_OI_r_carpal_proximal_phalanx_3"));
-OrientationInterpolator1485.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1485.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1485.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1485.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1485);
 
 OrientationInterpolator& OrientationInterpolator1486 =  OrientationInterpolator();
 OrientationInterpolator1486.setDEF(CString("Armature_OI_r_carpal_middle_phalanx_3"));
-OrientationInterpolator1486.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1486.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1486.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1486.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1486);
 
 OrientationInterpolator& OrientationInterpolator1487 =  OrientationInterpolator();
 OrientationInterpolator1487.setDEF(CString("Armature_OI_r_carpal_distal_phalanx_3"));
-OrientationInterpolator1487.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1487.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1487.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1487.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1487);
 
 OrientationInterpolator& OrientationInterpolator1488 =  OrientationInterpolator();
 OrientationInterpolator1488.setDEF(CString("Armature_OI_r_hamate"));
-OrientationInterpolator1488.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1488.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1488.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1488.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1488);
 
 OrientationInterpolator& OrientationInterpolator1489 =  OrientationInterpolator();
 OrientationInterpolator1489.setDEF(CString("Armature_OI_r_metacarpal_4"));
-OrientationInterpolator1489.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1489.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1489.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1489.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1489);
 
 OrientationInterpolator& OrientationInterpolator1490 =  OrientationInterpolator();
 OrientationInterpolator1490.setDEF(CString("Armature_OI_r_carpal_proximal_phalanx_4"));
-OrientationInterpolator1490.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1490.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1490.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1490.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1490);
 
 OrientationInterpolator& OrientationInterpolator1491 =  OrientationInterpolator();
 OrientationInterpolator1491.setDEF(CString("Armature_OI_r_carpal_middle_phalanx_4"));
-OrientationInterpolator1491.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1491.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1491.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1491.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1491);
 
 OrientationInterpolator& OrientationInterpolator1492 =  OrientationInterpolator();
 OrientationInterpolator1492.setDEF(CString("Armature_OI_r_carpal_distal_phalanx_4"));
-OrientationInterpolator1492.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1492.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1492.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1492.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1492);
 
 OrientationInterpolator& OrientationInterpolator1493 =  OrientationInterpolator();
 OrientationInterpolator1493.setDEF(CString("Armature_OI_r_metacarpal_5"));
-OrientationInterpolator1493.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1493.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1493.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1493.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1493);
 
 OrientationInterpolator& OrientationInterpolator1494 =  OrientationInterpolator();
 OrientationInterpolator1494.setDEF(CString("Armature_OI_r_carpal_proximal_phalanx_5"));
-OrientationInterpolator1494.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1494.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1494.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1494.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1494);
 
 OrientationInterpolator& OrientationInterpolator1495 =  OrientationInterpolator();
 OrientationInterpolator1495.setDEF(CString("Armature_OI_r_carpal_middle_phalanx_5"));
-OrientationInterpolator1495.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1495.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1495.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1495.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1495);
 
 OrientationInterpolator& OrientationInterpolator1496 =  OrientationInterpolator();
 OrientationInterpolator1496.setDEF(CString("Armature_OI_r_carpal_distal_phalanx_5"));
-OrientationInterpolator1496.setKey(new float[2]{0.0,1.0}, 2);
-OrientationInterpolator1496.setKeyValue(new float[8]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 8);
+OrientationInterpolator1496.setKey(new float[2]{0,1}, 2);
+OrientationInterpolator1496.setKeyValue(new float[8]{0,0,0,0,0,0,0,0}, 8);
 Scene7.addChild(&OrientationInterpolator1496);
 
 ROUTE& ROUTE1497 =  ROUTE();

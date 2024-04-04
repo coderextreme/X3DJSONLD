@@ -1,5 +1,3 @@
-//#define False false
-//#define True true
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
@@ -319,7 +317,7 @@ Scene13.addChild(&ExternProtoDeclare49);
 
 Group& Group50 =  Group();
 NavigationInfo& NavigationInfo51 =  NavigationInfo();
-NavigationInfo51.setHeadlight(False);
+NavigationInfo51.setHeadlight(false);
 Group50.addChild(&NavigationInfo51);
 
 Viewpoint& Viewpoint52 =  Viewpoint();
@@ -360,7 +358,7 @@ Transform56.addChild(&PositionInterpolator57);
 TimeSensor& TimeSensor58 =  TimeSensor();
 TimeSensor58.setDEF(CString("Close_Time"));
 TimeSensor58.setCycleInterval(12);
-TimeSensor58.setLoop(True);
+TimeSensor58.setLoop(true);
 Transform56.addChild(&TimeSensor58);
 
 Viewpoint& Viewpoint59 =  Viewpoint();

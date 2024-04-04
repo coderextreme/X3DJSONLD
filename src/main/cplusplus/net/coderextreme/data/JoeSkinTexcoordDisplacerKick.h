@@ -1,5 +1,3 @@
-//#define False false
-//#define True true
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
@@ -105,7 +103,7 @@ Scene19.addChild(&WorldInfo20);
 
 NavigationInfo& NavigationInfo21 =  NavigationInfo();
 NavigationInfo21.setDEF(CString("Start_NavigationInfo"));
-NavigationInfo21.setHeadlight(False);
+NavigationInfo21.setHeadlight(false);
 NavigationInfo21.setSpeed(2.5);
 Scene19.addChild(&NavigationInfo21);
 
@@ -212,7 +210,7 @@ Shape39.setDEF(CString("AxisLinesShape"));
 //RGB lines showing XYZ axes
 IndexedLineSet& IndexedLineSet40 =  IndexedLineSet();
 IndexedLineSet40.setColorIndex(new int[3]{0,1,2}, 3);
-IndexedLineSet40.setColorPerVertex(False);
+IndexedLineSet40.setColorPerVertex(false);
 IndexedLineSet40.setCoordIndex(new int32_t[9]{0,1,-1,0,2,-1,0,3,-1}, 9);
 Coordinate& Coordinate41 =  Coordinate();
 Coordinate41.setPoint(new float[12]{0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0}, 12);
@@ -1371,7 +1369,7 @@ Group& Group242 =  Group();
 TimeSensor& TimeSensor243 =  TimeSensor();
 TimeSensor243.setDEF(CString("KickTimer"));
 TimeSensor243.setCycleInterval(3.73);
-TimeSensor243.setLoop(True);
+TimeSensor243.setLoop(true);
 Group242.addChild(&TimeSensor243);
 
 //Interpolators

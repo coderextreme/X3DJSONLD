@@ -1,5 +1,3 @@
-//#define False false
-//#define True true
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
@@ -88,7 +86,7 @@ Scene14.addChild(&Background17);
 Viewpoint& Viewpoint18 =  Viewpoint();
 Viewpoint18.setOrientation(new float[4]{1.0,0.0,0.0,-0.5});
 Viewpoint18.setPosition(new float[3]{0.0,500.0,600.0});
-Viewpoint18.setRetainUserOffsets(True);
+Viewpoint18.setRetainUserOffsets(true);
 Scene14.addChild(&Viewpoint18);
 
 Transform& Transform19 =  Transform();
@@ -276,7 +274,7 @@ Transform55.addChild(&Shape56);
 Scene14.addChild(&Transform55);
 
 ListenerPointSource& ListenerPointSource60 =  ListenerPointSource();
-ListenerPointSource60.setTrackCurrentView(True);
+ListenerPointSource60.setTrackCurrentView(true);
 Scene14.addChild(&ListenerPointSource60);
 
 StreamAudioDestination& StreamAudioDestination61 =  StreamAudioDestination();

@@ -92,7 +92,7 @@ WorldInfo18.setTitle(CString("HAnimHumanoid skin design patterns for apparel, me
 Scene17.addChild(&WorldInfo18);
 
 Background& Background19 =  Background();
-Background19.setSkyColor(new float[3]{0.0,0.6,0.6}, 3);
+Background19.setSkyColor(new float[3]{0,0.6,0.6}, 3);
 Scene17.addChild(&Background19);
 
 Group& Group20 =  Group();
@@ -297,7 +297,7 @@ Scene17.addChild(&Group20);
 Viewpoint& Viewpoint63 =  Viewpoint();
 Viewpoint63.setDEF(CString("ViewHelpText"));
 Viewpoint63.setDescription(CString("Select text to see website"));
-Viewpoint63.setPosition(new float[3]{0.0,0.0,12.0});
+Viewpoint63.setPosition(new float[3]{0,0,12});
 Scene17.addChild(&Viewpoint63);
 
 //Selectable Text design pattern has transparent Box and TouchSensor description as a tooltip
@@ -330,7 +330,7 @@ Anchor64.addChild(&Shape65);
 Shape& Shape70 =  Shape();
 //Author TODO: to adjust transparent Box as text-selection assist, set width and height to match size, then set transparency='1' to make invisible.
 Box& Box71 =  Box();
-Box71.setSize(new float[3]{11.0,2.0,0.001});
+Box71.setSize(new float[3]{11,2,0.001});
 Shape70.setGeometry(&Box71);
 
 Appearance& Appearance72 =  Appearance();

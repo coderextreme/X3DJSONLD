@@ -1,5 +1,3 @@
-//#define False false
-//#define True true
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
@@ -66,7 +64,7 @@ Extrusion& Extrusion14 =  Extrusion();
 Extrusion14.setCreaseAngle(3.14159);
 Extrusion14.setCrossSection(new float[26]{0.0,0.8,0.2,1.0,0.7,0.95,1.0,0.5,0.8,0.0,0.5,-0.3,0.0,-0.7,-0.5,-0.3,-0.8,0.0,-1.0,0.5,-0.7,0.95,-0.2,1.0,0.0,0.8}, 26);
 Extrusion14.setScale(new float[10]{0.01,0.01,0.8,0.8,1.0,1.0,0.8,0.8,0.01,0.01}, 10);
-Extrusion14.setSolid(False);
+Extrusion14.setSolid(false);
 Extrusion14.setSpine(new float[15]{0.0,0.0,0.0,0.0,0.1,0.0,0.0,0.5,0.0,0.0,0.9,0.0,0.0,1.0,0.0}, 15);
 Shape13.setGeometry(&Extrusion14);
 

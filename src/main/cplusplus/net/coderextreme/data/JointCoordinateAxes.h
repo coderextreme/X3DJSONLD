@@ -1,5 +1,3 @@
-//#define False false
-//#define True true
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
@@ -24,7 +22,7 @@ X3D0.setHead(&head1);
 
 Scene& Scene4 =  Scene();
 NavigationInfo& NavigationInfo5 =  NavigationInfo();
-NavigationInfo5.setHeadlight(False);
+NavigationInfo5.setHeadlight(false);
 Scene4.addChild(&NavigationInfo5);
 
 Group& Group6 =  Group();
@@ -41,8 +39,8 @@ Appearance9.addChild(&Material10);
 Shape8.addChild(&Appearance9);
 
 Cylinder& Cylinder11 =  Cylinder();
-Cylinder11.setTop(False);
-Cylinder11.setBottom(False);
+Cylinder11.setTop(false);
+Cylinder11.setBottom(false);
 Cylinder11.setRadius(0.025);
 Shape8.setGeometry(&Cylinder11);
 

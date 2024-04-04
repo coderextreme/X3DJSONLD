@@ -142,9 +142,9 @@ NavigationInfo28.setSpeed(1.5);
 Scene26.addChild(&NavigationInfo28);
 
 Viewpoint& Viewpoint29 =  Viewpoint();
-Viewpoint29.setCenterOfRotation(new float[3]{0.0,1.0,0.0});
+Viewpoint29.setCenterOfRotation(new float[3]{0,1,0});
 Viewpoint29.setDescription(CString("Diamond Man, LOA 0"));
-Viewpoint29.setPosition(new float[3]{0.0,1.0,3.0});
+Viewpoint29.setPosition(new float[3]{0,1,3});
 Scene26.addChild(&Viewpoint29);
 
 HAnimHumanoid& HAnimHumanoid30 =  HAnimHumanoid();
@@ -191,30 +191,30 @@ HAnimHumanoid30.setMetadata(&MetadataSet31);
 HAnimJoint& HAnimJoint38 =  HAnimJoint();
 HAnimJoint38.X3DNode::setName(CString("humanoid_root"));
 HAnimJoint38.setDEF(CString("hanim_humanoid_root"));
-HAnimJoint38.setCenter(new float[3]{0.0,0.824,0.0277});
+HAnimJoint38.setCenter(new float[3]{0,0.824,0.0277});
 HAnimJoint& HAnimJoint39 =  HAnimJoint();
 HAnimJoint39.X3DNode::setName(CString("sacroiliac"));
 HAnimJoint39.setDEF(CString("hanim_sacroiliac"));
-HAnimJoint39.setCenter(new float[3]{0.0,0.9149,0.0016});
+HAnimJoint39.setCenter(new float[3]{0,0.9149,0.0016});
 HAnimSegment& HAnimSegment40 =  HAnimSegment();
 HAnimSegment40.X3DNode::setName(CString("pelvis"));
 HAnimSegment40.setDEF(CString("hanim_pelvis"));
 Transform& Transform41 =  Transform();
-Transform41.setTranslation(new float[3]{0.0,0.9149,0.0016});
+Transform41.setTranslation(new float[3]{0,0.9149,0.0016});
 Shape& Shape42 =  Shape();
 Shape42.setDEF(CString("DiamondShape"));
 IndexedFaceSet& IndexedFaceSet43 =  IndexedFaceSet();
 IndexedFaceSet43.setCoordIndex(new int32_t[32]{0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1}, 32);
 IndexedFaceSet43.setCreaseAngle(0.5);
 Coordinate& Coordinate44 =  Coordinate();
-Coordinate44.setPoint(new float[18]{0.0,0.01,0.0,-0.01,0.0,0.0,0.0,0.0,0.01,0.01,0.0,0.0,0.0,0.0,-0.01,0.0,-0.01,0.0}, 18);
+Coordinate44.setPoint(new float[18]{0,0.01,0,-0.01,0,0,0,0,0.01,0.01,0,0,0,0,-0.01,0,-0.01,0}, 18);
 IndexedFaceSet43.setCoord(&Coordinate44);
 
 Shape42.setGeometry(&IndexedFaceSet43);
 
 Appearance& Appearance45 =  Appearance();
 Material& Material46 =  Material();
-Material46.setDiffuseColor(new float[3]{1.0,1.0,0.0});
+Material46.setDiffuseColor(new float[3]{1,1,0});
 Appearance45.addChild(&Material46);
 
 Shape42.addChild(&Appearance45);
@@ -242,21 +242,21 @@ HAnimSite47.addChild(&Viewpoint48);
 Viewpoint& Viewpoint49 =  Viewpoint();
 Viewpoint49.setDEF(CString("FrontView"));
 Viewpoint49.setDescription(CString("Front View"));
-Viewpoint49.setPosition(new float[3]{0.0,0.854,2.57665});
+Viewpoint49.setPosition(new float[3]{0,0.854,2.57665});
 HAnimSite47.addChild(&Viewpoint49);
 
 Viewpoint& Viewpoint50 =  Viewpoint();
 Viewpoint50.setDEF(CString("SideView"));
 Viewpoint50.setDescription(CString("Side View"));
-Viewpoint50.setOrientation(new float[4]{0.0,1.0,0.0,1.57079});
-Viewpoint50.setPosition(new float[3]{2.5929,0.854,0.0});
+Viewpoint50.setOrientation(new float[4]{0,1,0,1.57079});
+Viewpoint50.setPosition(new float[3]{2.5929,0.854,0});
 HAnimSite47.addChild(&Viewpoint50);
 
 Viewpoint& Viewpoint51 =  Viewpoint();
 Viewpoint51.setDEF(CString("TopView"));
 Viewpoint51.setDescription(CString("Top View"));
-Viewpoint51.setOrientation(new float[4]{1.0,0.0,0.0,-1.57079});
-Viewpoint51.setPosition(new float[3]{0.0,3.4495,0.0});
+Viewpoint51.setOrientation(new float[4]{1,0,0,-1.57079});
+Viewpoint51.setPosition(new float[3]{0,3.4495,0});
 HAnimSite47.addChild(&Viewpoint51);
 
 HAnimHumanoid30.setViewpoints(&HAnimSite47);

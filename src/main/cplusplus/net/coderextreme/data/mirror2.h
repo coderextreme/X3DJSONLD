@@ -1,5 +1,3 @@
-//#define False false
-//#define True true
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
@@ -246,7 +244,7 @@ Transform18.addChild(&Shape19);
 
 Script& Script46 =  Script();
 Script46.setDEF(CString("UrlSelector"));
-Script46.setDirectOutput(True);
+Script46.setDirectOutput(true);
 field& field47 =  field();
 field47.setName(CString("frontUrls"));
 field47.setType(CString("MFString"));
@@ -361,7 +359,7 @@ Transform18.addChild(&Script46);
 TimeSensor& TimeSensor61 =  TimeSensor();
 TimeSensor61.setDEF(CString("Clock"));
 TimeSensor61.setCycleInterval(45);
-TimeSensor61.setLoop(True);
+TimeSensor61.setLoop(true);
 Transform18.addChild(&TimeSensor61);
 
 ROUTE& ROUTE62 =  ROUTE();

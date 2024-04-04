@@ -1,5 +1,3 @@
-//#define False false
-//#define True true
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
@@ -114,7 +112,7 @@ Group& Group24 =  Group();
 TimeSensor& TimeSensor25 =  TimeSensor();
 TimeSensor25.setDEF(CString("Clock"));
 TimeSensor25.setCycleInterval(16);
-TimeSensor25.setLoop(True);
+TimeSensor25.setLoop(true);
 Group24.addChild(&TimeSensor25);
 
 OrientationInterpolator& OrientationInterpolator26 =  OrientationInterpolator();
@@ -160,8 +158,8 @@ Shape30.addChild(&Appearance31);
 
 //<IndexedFaceSet DEF=\"Orbit\" creaseAngle=\"0\"> <Coordinate DEF=\"OrbitCoordinates\"/> </IndexedFaceSet>
 IndexedFaceSet& IndexedFaceSet37 =  IndexedFaceSet();
-IndexedFaceSet37.setCcw(False);
-IndexedFaceSet37.setConvex(False);
+IndexedFaceSet37.setCcw(false);
+IndexedFaceSet37.setConvex(false);
 IndexedFaceSet37.setCoordIndex(new int32_t[4]{0,1,2,-1}, 4);
 IndexedFaceSet37.setDEF(CString("Orbit"));
 Coordinate& Coordinate38 =  Coordinate();

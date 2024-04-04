@@ -1,5 +1,3 @@
-//#define False false
-//#define True true
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
@@ -81,7 +79,7 @@ Scene8.addChild(&Transform11);
 TimeSensor& TimeSensor16 =  TimeSensor();
 TimeSensor16.setDEF(CString("TourTime"));
 TimeSensor16.setCycleInterval(5);
-TimeSensor16.setLoop(True);
+TimeSensor16.setLoop(true);
 Scene8.addChild(&TimeSensor16);
 
 GeoPositionInterpolator& GeoPositionInterpolator17 =  GeoPositionInterpolator();

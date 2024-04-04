@@ -93,8 +93,8 @@ Scene17.addChild(&WorldInfo18);
 
 Viewpoint& Viewpoint19 =  Viewpoint();
 Viewpoint19.setDescription(CString("ViewFrustum from above, looking down"));
-Viewpoint19.setOrientation(new float[4]{1.0,0.0,0.0,-1.57});
-Viewpoint19.setPosition(new float[3]{0.0,40.0,0.0});
+Viewpoint19.setOrientation(new float[4]{1,0,0,-1.57});
+Viewpoint19.setPosition(new float[3]{0,40,0});
 Scene17.addChild(&Viewpoint19);
 
 Viewpoint& Viewpoint20 =  Viewpoint();
@@ -103,13 +103,13 @@ Scene17.addChild(&Viewpoint20);
 
 Viewpoint& Viewpoint21 =  Viewpoint();
 Viewpoint21.setDescription(CString("ViewFrustum behind point of view"));
-Viewpoint21.setPosition(new float[3]{0.0,0.0,15.0});
+Viewpoint21.setPosition(new float[3]{0,0,15});
 Scene17.addChild(&Viewpoint21);
 
 Viewpoint& Viewpoint22 =  Viewpoint();
 Viewpoint22.setDescription(CString("ViewFrustum oblique side view"));
 Viewpoint22.setOrientation(new float[4]{0.8005,0.5926,0.0898,-0.3743});
-Viewpoint22.setPosition(new float[3]{-5.0,5.0,20.0});
+Viewpoint22.setPosition(new float[3]{-5,5,20});
 Scene17.addChild(&Viewpoint22);
 
 NavigationInfo& NavigationInfo23 =  NavigationInfo();
@@ -232,7 +232,7 @@ Inline43.setUrl(new CString[1]{CString("GridXZ_20x20Fixed.x3d")}, 1);
 Scene17.addChild(&Inline43);
 
 Transform& Transform44 =  Transform();
-Transform44.setScale(new float[3]{5.0,5.0,5.0});
+Transform44.setScale(new float[3]{5,5,5});
 Inline& Inline45 =  Inline();
 Inline45.setDEF(CString("CoordinateAxes"));
 Inline45.setUrl(new CString[1]{CString("CoordinateAxes.x3d")}, 1);

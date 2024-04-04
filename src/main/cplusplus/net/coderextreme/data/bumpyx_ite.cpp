@@ -87,7 +87,7 @@ NavigationInfo17.setType(new CString[4]{CString("ANY"), CString("EXAMINE"), CStr
 Scene15.addChild(&NavigationInfo17);
 
 Viewpoint& Viewpoint18 =  Viewpoint();
-Viewpoint18.setPosition(new float[3]{0.0,0.0,40.0});
+Viewpoint18.setPosition(new float[3]{0,0,40});
 Viewpoint18.setDescription(CString("Transparent rose"));
 Scene15.addChild(&Viewpoint18);
 

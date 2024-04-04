@@ -1,5 +1,3 @@
-//#define False false
-//#define True true
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
@@ -114,7 +112,7 @@ Shape20.addChild(&Appearance21);
 IndexedFaceSet& IndexedFaceSet23 =  IndexedFaceSet();
 IndexedFaceSet23.setDEF(CString("Box001-GEOMETRY"));
 IndexedFaceSet23.setCoordIndex(new int32_t[48]{0,1,2,-1,3,4,5,-1,6,7,8,-1,9,10,11,-1,12,13,14,-1,15,16,17,-1,18,19,20,-1,21,22,23,-1,24,25,26,-1,27,28,29,-1,30,31,32,-1,33,34,35,-1}, 48);
-IndexedFaceSet23.setSolid(False);
+IndexedFaceSet23.setSolid(false);
 Coordinate& Coordinate24 =  Coordinate();
 Coordinate24.setPoint(new float[108]{-1000.0,0.0,1000.0,-1000.0,0.0,-1000.0,1000.0,0.0,-1000.0,1000.0,0.0,-1000.0,1000.0,0.0,1000.0,-1000.0,0.0,1000.0,-1000.0,8.031588,1000.0,1000.0,8.031588,1000.0,1000.0,8.031588,-1000.0,1000.0,8.031588,-1000.0,-1000.0,8.031588,-1000.0,-1000.0,8.031588,1000.0,-1000.0,0.0,1000.0,1000.0,0.0,1000.0,1000.0,8.031588,1000.0,1000.0,8.031588,1000.0,-1000.0,8.031588,1000.0,-1000.0,0.0,1000.0,1000.0,0.0,1000.0,1000.0,0.0,-1000.0,1000.0,8.031588,-1000.0,1000.0,8.031588,-1000.0,1000.0,8.031588,1000.0,1000.0,0.0,1000.0,1000.0,0.0,-1000.0,-1000.0,0.0,-1000.0,-1000.0,8.031588,-1000.0,-1000.0,8.031588,-1000.0,1000.0,8.031588,-1000.0,1000.0,0.0,-1000.0,-1000.0,0.0,-1000.0,-1000.0,0.0,1000.0,-1000.0,8.031588,1000.0,-1000.0,8.031588,1000.0,-1000.0,8.031588,-1000.0,-1000.0,0.0,-1000.0}, 108);
 IndexedFaceSet23.setCoord(&Coordinate24);

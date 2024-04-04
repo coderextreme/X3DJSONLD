@@ -1,5 +1,3 @@
-//#define False false
-//#define True true
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
@@ -200,8 +198,8 @@ Shape32.setDEF(CString("Arch"));
 //note that convex='false' (meaning concave geometry) is crucial for this IFS of a geometric chord to render properly
 IndexedFaceSet& IndexedFaceSet33 =  IndexedFaceSet();
 IndexedFaceSet33.setDEF(CString("ArchIndex"));
-IndexedFaceSet33.setConvex(False);
-IndexedFaceSet33.setSolid(False);
+IndexedFaceSet33.setConvex(false);
+IndexedFaceSet33.setSolid(false);
 Coordinate& Coordinate34 =  Coordinate();
 Coordinate34.setDEF(CString("ArchChord"));
 IndexedFaceSet33.setCoord(&Coordinate34);

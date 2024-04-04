@@ -1,5 +1,3 @@
-//#define False false
-//#define True true
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
@@ -112,7 +110,7 @@ Scene9.addChild(&Transform16);
 TimeSensor& TimeSensor22 =  TimeSensor();
 TimeSensor22.setDEF(CString("ts"));
 TimeSensor22.setCycleInterval(2);
-TimeSensor22.setLoop(True);
+TimeSensor22.setLoop(true);
 Scene9.addChild(&TimeSensor22);
 
 ScalarInterpolator& ScalarInterpolator23 =  ScalarInterpolator();

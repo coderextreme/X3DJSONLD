@@ -1,5 +1,3 @@
-//#define False false
-//#define True true
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
@@ -1064,7 +1062,7 @@ Group244.setDEF(CString("KeyframeAnimation"));
 TimeSensor& TimeSensor245 =  TimeSensor();
 TimeSensor245.setDEF(CString("KeyframeTimer"));
 TimeSensor245.setCycleInterval(8.033494);
-TimeSensor245.setLoop(True);
+TimeSensor245.setLoop(true);
 Group244.addChild(&TimeSensor245);
 
 PositionInterpolator& PositionInterpolator246 =  PositionInterpolator();

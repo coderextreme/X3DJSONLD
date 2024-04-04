@@ -1,5 +1,3 @@
-//#define False false
-//#define True true
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
@@ -128,8 +126,8 @@ Appearance25.addChild(&Material26);
 
 PixelTexture& PixelTexture27 =  PixelTexture();
 PixelTexture27.setImage(CString("2 2 4 4278190335 16711935 4294967295 4294902015"));
-PixelTexture27.setRepeatS(False);
-PixelTexture27.setRepeatT(False);
+PixelTexture27.setRepeatS(false);
+PixelTexture27.setRepeatT(false);
 Appearance25.addChild(&PixelTexture27);
 
 Shape24.addChild(&Appearance25);

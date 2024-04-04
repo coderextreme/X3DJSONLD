@@ -12,8 +12,8 @@ X3D0.setHead(&head1);
 
 Scene& Scene2 =  Scene();
 Transform& Transform3 =  Transform();
-Transform3.setScale(new float[3]{10.0,10.0,1.0});
-Transform3.setRotation(new float[4]{1.0,0.0,0.0,3.14});
+Transform3.setScale(new float[3]{10,10,1});
+Transform3.setRotation(new float[4]{1,0,0,3.14});
 Shape& Shape4 =  Shape();
 Appearance& Appearance5 =  Appearance();
 Material& Material6 =  Material();

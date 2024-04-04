@@ -1,5 +1,3 @@
-//#define False false
-//#define True true
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
@@ -91,7 +89,7 @@ Shape& Shape19 =  Shape();
 Cylinder& Cylinder20 =  Cylinder();
 Cylinder20.setDEF(CString("ArrowCylinder"));
 Cylinder20.setRadius(0.025);
-Cylinder20.setTop(False);
+Cylinder20.setTop(false);
 Shape19.setGeometry(&Cylinder20);
 
 Appearance& Appearance21 =  Appearance();

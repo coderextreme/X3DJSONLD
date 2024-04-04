@@ -1,5 +1,3 @@
-//#define False false
-//#define True true
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
@@ -45,7 +43,7 @@ IndexedFaceSet10.setCreaseAngle(1.57);
 IndexedFaceSet10.setDEF(CString("IndexedFaceSet"));
 IndexedFaceSet10.setCoordIndex(new int32_t[33]{0,0,1,-1,0,1,1,-1,2,2,3,3,-1,0,3,3,0,-1,0,3,2,1,-1,1,2,2,1,-1,1,2,3,0,-1}, 33);
 IndexedFaceSet10.setNormalIndex(new int32_t[14]{0,-1,0,-1,1,-1,2,-1,3,-1,4,-1,5,-1}, 14);
-IndexedFaceSet10.setNormalPerVertex(False);
+IndexedFaceSet10.setNormalPerVertex(false);
 IndexedFaceSet10.setColorIndex(new int[33]{0,0,0,-1,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1}, 33);
 Coordinate& Coordinate11 =  Coordinate();
 Coordinate11.setPoint(new float[12]{0.0,0.0,1.0,0.0,1.0,1.0,1.0,1.0,1.0,1.0,0.0,1.0}, 12);
