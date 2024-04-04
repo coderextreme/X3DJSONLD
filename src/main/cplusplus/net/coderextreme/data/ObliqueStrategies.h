@@ -1,5 +1,3 @@
-//#define False false
-//#define True true
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
@@ -215,7 +213,7 @@ Shape& Shape45 =  Shape();
 Shape45.setDEF(CString("HeadlineClickSurface"));
 IndexedFaceSet& IndexedFaceSet46 =  IndexedFaceSet();
 IndexedFaceSet46.setCoordIndex(new int32_t[5]{0,1,2,3,-1}, 5);
-IndexedFaceSet46.setSolid(False);
+IndexedFaceSet46.setSolid(false);
 Coordinate& Coordinate47 =  Coordinate();
 Coordinate47.setPoint(new float[12]{1.0,1.0,0.0,1.0,-1.0,0.0,-1.0,-1.0,0.0,-1.0,1.0,0.0}, 12);
 IndexedFaceSet46.setCoord(&Coordinate47);
@@ -407,7 +405,7 @@ Shape79.setDEF(CString("TransparentClickSurface"));
 //support Selectable Text with a scalable IFS
 IndexedFaceSet& IndexedFaceSet80 =  IndexedFaceSet();
 IndexedFaceSet80.setCoordIndex(new int32_t[5]{0,1,2,3,-1}, 5);
-IndexedFaceSet80.setSolid(False);
+IndexedFaceSet80.setSolid(false);
 Coordinate& Coordinate81 =  Coordinate();
 Coordinate81.setPoint(new float[12]{1.0,1.0,0.0,1.0,-1.0,0.0,-1.0,-1.0,0.0,-1.0,1.0,0.0}, 12);
 IndexedFaceSet80.setCoord(&Coordinate81);

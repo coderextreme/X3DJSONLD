@@ -1,5 +1,3 @@
-//#define False false
-//#define True true
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
@@ -153,7 +151,7 @@ Transform11.addChild(&Script16);
 TimeSensor& TimeSensor22 =  TimeSensor();
 TimeSensor22.setDEF(CString("DECLBubble_bubbleA_bubbleClock"));
 TimeSensor22.setCycleInterval(10);
-TimeSensor22.setLoop(True);
+TimeSensor22.setLoop(true);
 Transform11.addChild(&TimeSensor22);
 
 ROUTE& ROUTE23 =  ROUTE();
@@ -275,7 +273,7 @@ Transform26.addChild(&Script31);
 TimeSensor& TimeSensor37 =  TimeSensor();
 TimeSensor37.setDEF(CString("DECLBubble_bubbleB_bubbleClock"));
 TimeSensor37.setCycleInterval(10);
-TimeSensor37.setLoop(True);
+TimeSensor37.setLoop(true);
 Transform26.addChild(&TimeSensor37);
 
 ROUTE& ROUTE38 =  ROUTE();
@@ -397,7 +395,7 @@ Transform41.addChild(&Script46);
 TimeSensor& TimeSensor52 =  TimeSensor();
 TimeSensor52.setDEF(CString("DECLBubble_bubbleC_bubbleClock"));
 TimeSensor52.setCycleInterval(10);
-TimeSensor52.setLoop(True);
+TimeSensor52.setLoop(true);
 Transform41.addChild(&TimeSensor52);
 
 ROUTE& ROUTE53 =  ROUTE();
@@ -519,7 +517,7 @@ Transform56.addChild(&Script61);
 TimeSensor& TimeSensor67 =  TimeSensor();
 TimeSensor67.setDEF(CString("DECLBubble_bubbleD_bubbleClock"));
 TimeSensor67.setCycleInterval(10);
-TimeSensor67.setLoop(True);
+TimeSensor67.setLoop(true);
 Transform56.addChild(&TimeSensor67);
 
 ROUTE& ROUTE68 =  ROUTE();

@@ -93,7 +93,7 @@ Background17.setTopUrl(new CString[2]{CString("../resources/images/all_probes/be
 Scene15.addChild(&Background17);
 
 Viewpoint& Viewpoint18 =  Viewpoint();
-Viewpoint18.setPosition(new float[3]{0.0,0.0,40.0});
+Viewpoint18.setPosition(new float[3]{0,0,40});
 Viewpoint18.setDescription(CString("Transparent rose"));
 Scene15.addChild(&Viewpoint18);
 

@@ -1,5 +1,3 @@
-//#define False false
-//#define True true
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
@@ -161,7 +159,7 @@ Transform14.addChild(&Script19);
 TimeSensor& TimeSensor25 =  TimeSensor();
 TimeSensor25.setDEF(CString("bubbleClock"));
 TimeSensor25.setCycleInterval(10);
-TimeSensor25.setLoop(True);
+TimeSensor25.setLoop(true);
 Transform14.addChild(&TimeSensor25);
 
 ROUTE& ROUTE26 =  ROUTE();

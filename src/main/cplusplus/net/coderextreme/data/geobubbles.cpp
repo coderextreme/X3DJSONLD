@@ -46,8 +46,8 @@ Scene& Scene8 =  Scene();
 //PositionInterpolator DEF='TourPosition' key='0 1' keyValue='-0.5 -0.5 4 -0.5 0.5 4'/
 GeoViewpoint& GeoViewpoint9 =  GeoViewpoint();
 GeoViewpoint9.setDEF(CString("Tour"));
-GeoViewpoint9.setPosition(new double[3]{0.0,0.0,4.0});
-GeoViewpoint9.setOrientation(new float[4]{1.0,0.0,0.0,0.0});
+GeoViewpoint9.setPosition(new double[3]{0,0,4});
+GeoViewpoint9.setOrientation(new float[4]{1,0,0,0});
 GeoViewpoint9.setDescription(CString("Tour Views"));
 Scene8.addChild(&GeoViewpoint9);
 
@@ -85,8 +85,8 @@ Scene8.addChild(&TimeSensor16);
 
 GeoPositionInterpolator& GeoPositionInterpolator17 =  GeoPositionInterpolator();
 GeoPositionInterpolator17.setDEF(CString("TourPosition"));
-GeoPositionInterpolator17.setKey(new float[2]{0.0,1.0}, 2);
-GeoPositionInterpolator17.setKeyValue(new double[6]{0.0015708,0.0,4.0,0.0,0.0015708,4.0}, 6);
+GeoPositionInterpolator17.setKey(new float[2]{0,1}, 2);
+GeoPositionInterpolator17.setKeyValue(new double[6]{0.0015708,0,4,0,0.0015708,4}, 6);
 Scene8.addChild(&GeoPositionInterpolator17);
 
 Script& Script18 =  Script();

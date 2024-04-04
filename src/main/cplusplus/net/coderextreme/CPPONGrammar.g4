@@ -13,7 +13,8 @@ ADD : '.add';
 WHOLE: [0-9]+;
 SENTINEL : '-1';
 FLOAT : [-+]?([0-9]+[.]?|[0-9]*[.][0-9]+)([eE][-+]?[0-9]+)?;
-BOOLEAN : 'true' | 'false';
+TRUE : [Tt][Rr][Uu][Ee];
+FALSE : [Ff][Aa][Ll][Ss][Ee];
 COMMENT : '//' ~[\r\n]* -> skip;
 OPENBRACKET : '[';
 CLOSEBRACKET : ']';
@@ -26,19 +27,21 @@ field : IDENTIFIER; // field of node or statement, TODO get list from X3DUOM
 variable : IDENTIFIER WHOLE?; // TODO IDENTIFIER is a list of concrete types and statements from X3DUOM
 
 string : '"' ( 'https://' | 'http://' | '*' | '%' | '!' | '?' | '<' | '>' | AT | QUOTE | '~' | '#' | '/' ~('/') | '\\"' | '\\' | '.' | ~'"' )*? '"';
+// string: '"' ([a-zA-Z0-9_.,/%?!@#$^*()<>{}~`\\] | '\\"' | '\\')* '"' ;
 
 cstring : 'CString' '(' string ')';
 
-boolean_list : BOOLEAN (',' boolean_list)*;
-integer_list : (SENTINEL | '-' WHOLE | '+'? WHOLE) (',' integer_list)*;
-float_list : FLOAT (',' float_list)*;
-string_list : cstring (',' string_list)*;
+boolean : 'true' | 'false';
+boolean_list : boolean (',' boolean)*;
+integer_list : (SENTINEL | '-' WHOLE | '+'? WHOLE) (',' (SENTINEL | '-' WHOLE | '+'? WHOLE))*;
+float_list : FLOAT (',' FLOAT)*;
+string_list : cstring (',' cstring)*;
 
 list : boolean_list | integer_list | float_list | string_list;
 
 construct_array : 'new ' type OPENBRACKET WHOLE CLOSEBRACKET '{'  list '}';
 
-parameters : (cstring | (SENTINEL | '-' WHOLE | '+'? WHOLE) | BOOLEAN | WHOLE (',' construct_array)? | FLOAT | construct_array (',' WHOLE)? | '(X3DNode *)'? REFERENCE? variable);
+parameters : (cstring | (SENTINEL | '-' WHOLE | '+'? WHOLE) | boolean | WHOLE (',' construct_array)? | FLOAT | construct_array (',' WHOLE)? | '(X3DNode *)'? REFERENCE? variable);
 
 operator : (EQUALS | X3DNODESET | SET | ADD );
 

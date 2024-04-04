@@ -127,7 +127,7 @@ ProtoDeclare24.setDocumentation(CString("https://www.web3d.org/x3d/content/examp
 ProtoBody& ProtoBody25 =  ProtoBody();
 Material& Material26 =  Material();
 Material26.setAmbientIntensity(0.248649);
-Material26.setDiffuseColor(new float[3]{1.0,0.452381,0.40339});
+Material26.setDiffuseColor(new float[3]{1,0.452381,0.40339});
 Material26.setShininess(0.902703);
 Material26.setSpecularColor(new float[3]{0.686486,0.396903,0.419275});
 ProtoBody25.addChild(&Material26);
@@ -288,7 +288,7 @@ ProtoDeclare54.setDocumentation(CString("https://www.web3d.org/x3d/content/examp
 ProtoBody& ProtoBody55 =  ProtoBody();
 Material& Material56 =  Material();
 Material56.setAmbientIntensity(0.25);
-Material56.setDiffuseColor(new float[3]{0.794445,0.249425,0.0});
+Material56.setDiffuseColor(new float[3]{0.794445,0.249425,0});
 Material56.setShininess(0.551515);
 Material56.setSpecularColor(new float[3]{0.62904,0.194211,0.033663});
 ProtoBody55.addChild(&Material56);
@@ -322,7 +322,7 @@ Material& Material62 =  Material();
 Material62.setAmbientIntensity(0.255814);
 Material62.setDiffuseColor(new float[3]{0.914894,0.444404,0.348914});
 Material62.setShininess(0.12766);
-Material62.setSpecularColor(new float[3]{0.345745,0.143066,0.0});
+Material62.setSpecularColor(new float[3]{0.345745,0.143066,0});
 ProtoBody61.addChild(&Material62);
 
 ProtoDeclare60.addChild(&ProtoBody61);
@@ -368,9 +368,9 @@ ProtoDeclare69.setDocumentation(CString("https://www.web3d.org/x3d/content/examp
 ProtoBody& ProtoBody70 =  ProtoBody();
 Material& Material71 =  Material();
 Material71.setAmbientIntensity(0.264706);
-Material71.setDiffuseColor(new float[3]{0.0,0.346939,0.253624});
+Material71.setDiffuseColor(new float[3]{0,0.346939,0.253624});
 Material71.setShininess(0.316327);
-Material71.setSpecularColor(new float[3]{0.0,0.311074,0.357143});
+Material71.setSpecularColor(new float[3]{0,0.311074,0.357143});
 ProtoBody70.addChild(&Material71);
 
 ProtoDeclare69.addChild(&ProtoBody70);
@@ -384,7 +384,7 @@ ProtoDeclare72.setDocumentation(CString("https://www.web3d.org/x3d/content/examp
 ProtoBody& ProtoBody73 =  ProtoBody();
 Material& Material74 =  Material();
 Material74.setAmbientIntensity(0.259259);
-Material74.setDiffuseColor(new float[3]{0.0,0.251004,0.239248});
+Material74.setDiffuseColor(new float[3]{0,0.251004,0.239248});
 Material74.setShininess(0.060606);
 Material74.setSpecularColor(new float[3]{0.177935,0.249369,0.229278});
 ProtoBody73.addChild(&Material74);
@@ -464,7 +464,7 @@ ProtoDeclare87.setDocumentation(CString("https://www.web3d.org/x3d/content/examp
 ProtoBody& ProtoBody88 =  ProtoBody();
 Material& Material89 =  Material();
 Material89.setAmbientIntensity(0.253968);
-Material89.setDiffuseColor(new float[3]{1.0,0.854922,0.0});
+Material89.setDiffuseColor(new float[3]{1,0.854922,0});
 Material89.setShininess(1);
 Material89.setSpecularColor(new float[3]{0.872449,0.247119,0.254214});
 ProtoBody88.addChild(&Material89);
@@ -515,7 +515,7 @@ Material& Material98 =  Material();
 Material98.setAmbientIntensity(0.263158);
 Material98.setDiffuseColor(new float[3]{0.345455,0.163262,0.122622});
 Material98.setShininess(0.048649);
-Material98.setSpecularColor(new float[3]{0.212121,0.107475,0.0});
+Material98.setSpecularColor(new float[3]{0.212121,0.107475,0});
 ProtoBody97.addChild(&Material98);
 
 ProtoDeclare96.addChild(&ProtoBody97);
@@ -545,7 +545,7 @@ ProtoDeclare102.setDocumentation(CString("https://www.web3d.org/x3d/content/exam
 ProtoBody& ProtoBody103 =  ProtoBody();
 Material& Material104 =  Material();
 Material104.setAmbientIntensity(0.215686);
-Material104.setDiffuseColor(new float[3]{0.087034,0.025888,0.0});
+Material104.setDiffuseColor(new float[3]{0.087034,0.025888,0});
 Material104.setShininess(0.045918);
 Material104.setSpecularColor(new float[3]{0.224138,0.104091,0.104091});
 ProtoBody103.addChild(&Material104);
@@ -561,7 +561,7 @@ ProtoDeclare105.setDocumentation(CString("https://www.web3d.org/x3d/content/exam
 ProtoBody& ProtoBody106 =  ProtoBody();
 Material& Material107 =  Material();
 Material107.setAmbientIntensity(0);
-Material107.setDiffuseColor(new float[3]{0.0,0.0,0.0});
+Material107.setDiffuseColor(new float[3]{0,0,0});
 Material107.setShininess(0.081633);
 Material107.setSpecularColor(new float[3]{0.293243,0.297387,0.290421});
 ProtoBody106.addChild(&Material107);
@@ -640,7 +640,7 @@ Anchor120.setUrl(new CString[4]{CString("../data/ArtDecoExamples.json"), CString
 Shape& Shape121 =  Shape();
 Appearance& Appearance122 =  Appearance();
 Material& Material123 =  Material();
-Material123.setDiffuseColor(new float[3]{0.8,0.4,0.0});
+Material123.setDiffuseColor(new float[3]{0.8,0.4,0});
 Appearance122.addChild(&Material123);
 
 Shape121.addChild(&Appearance122);

@@ -157,7 +157,7 @@ Switch28.setDEF(CString("VisibilitySwitch"));
 Switch28.setWhichChoice(-1);
 Transform& Transform29 =  Transform();
 Transform29.setDEF(CString("PositionTransform"));
-Transform29.setRotation(new float[4]{0.0,1.0,0.0,3.14159});
+Transform29.setRotation(new float[4]{0,1,0,3.14159});
 Transform& Transform30 =  Transform();
 Transform30.setDEF(CString("OrientationTransform"));
 Shape& Shape31 =  Shape();
@@ -166,7 +166,7 @@ IndexedLineSet32.setDEF(CString("FrustumLines"));
 IndexedLineSet32.setCoordIndex(new int32_t[24]{0,1,2,3,0,-1,4,5,6,7,4,-1,0,4,-1,1,5,-1,2,6,-1,3,7,-1}, 24);
 Coordinate& Coordinate33 =  Coordinate();
 Coordinate33.setDEF(CString("FrustumCoordinate"));
-Coordinate33.setPoint(new float[24]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, 24);
+Coordinate33.setPoint(new float[24]{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}, 24);
 IndexedLineSet32.setCoord(&Coordinate33);
 
 Shape31.setGeometry(&IndexedLineSet32);
@@ -415,7 +415,7 @@ Anchor77.setUrl(new CString[1]{CString("ViewFrustumExample.x3d")}, 1);
 Shape& Shape78 =  Shape();
 Appearance& Appearance79 =  Appearance();
 Material& Material80 =  Material();
-Material80.setDiffuseColor(new float[3]{0.8,0.4,0.0});
+Material80.setDiffuseColor(new float[3]{0.8,0.4,0});
 Appearance79.addChild(&Material80);
 
 Shape78.addChild(&Appearance79);

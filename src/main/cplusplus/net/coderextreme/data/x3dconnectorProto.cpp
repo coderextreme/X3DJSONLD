@@ -57,7 +57,7 @@ WorldInfo11.setTitle(CString("Connector Proto"));
 Scene10.addChild(&WorldInfo11);
 
 Viewpoint& Viewpoint12 =  Viewpoint();
-Viewpoint12.setPosition(new float[3]{0.0,0.0,5.0});
+Viewpoint12.setPosition(new float[3]{0,0,5});
 Viewpoint12.setDescription(CString("Only Viewpoint"));
 Scene10.addChild(&Viewpoint12);
 
@@ -97,7 +97,7 @@ Scene10.addChild(&Transform14);
 
 Transform& Transform21 =  Transform();
 Transform21.setDEF(CString("G2"));
-Transform21.setTranslation(new float[3]{1.0,-1.0,0.01});
+Transform21.setTranslation(new float[3]{1,-1,0.01});
 Shape& Shape22 =  Shape();
 Appearance& Appearance23 =  Appearance();
 Material& Material24 =  Material();
@@ -114,7 +114,7 @@ Transform21.addChild(&Shape22);
 
 PlaneSensor& PlaneSensor26 =  PlaneSensor();
 PlaneSensor26.setDescription(CString("Grab to move"));
-PlaneSensor26.setOffset(new float[3]{1.0,-1.0,0.01});
+PlaneSensor26.setOffset(new float[3]{1,-1,0.01});
 PlaneSensor26.setDEF(CString("PS2"));
 Transform21.addChild(&PlaneSensor26);
 
@@ -129,7 +129,7 @@ Scene10.addChild(&Transform21);
 
 Transform& Transform28 =  Transform();
 Transform28.setDEF(CString("G3"));
-Transform28.setTranslation(new float[3]{1.0,1.0,0.01});
+Transform28.setTranslation(new float[3]{1,1,0.01});
 Shape& Shape29 =  Shape();
 Appearance& Appearance30 =  Appearance();
 Material& Material31 =  Material();
@@ -146,7 +146,7 @@ Transform28.addChild(&Shape29);
 
 PlaneSensor& PlaneSensor33 =  PlaneSensor();
 PlaneSensor33.setDescription(CString("Grab to move"));
-PlaneSensor33.setOffset(new float[3]{1.0,1.0,0.01});
+PlaneSensor33.setOffset(new float[3]{1,1,0.01});
 PlaneSensor33.setDEF(CString("PS3"));
 Transform28.addChild(&PlaneSensor33);
 
@@ -161,7 +161,7 @@ Scene10.addChild(&Transform28);
 
 Transform& Transform35 =  Transform();
 Transform35.setDEF(CString("G4"));
-Transform35.setTranslation(new float[3]{-1.0,1.0,0.01});
+Transform35.setTranslation(new float[3]{-1,1,0.01});
 Shape& Shape36 =  Shape();
 Appearance& Appearance37 =  Appearance();
 Material& Material38 =  Material();
@@ -178,7 +178,7 @@ Transform35.addChild(&Shape36);
 
 PlaneSensor& PlaneSensor40 =  PlaneSensor();
 PlaneSensor40.setDescription(CString("Grab to move"));
-PlaneSensor40.setOffset(new float[3]{-1.0,1.0,0.01});
+PlaneSensor40.setOffset(new float[3]{-1,1,0.01});
 PlaneSensor40.setDEF(CString("PS4"));
 Transform35.addChild(&PlaneSensor40);
 

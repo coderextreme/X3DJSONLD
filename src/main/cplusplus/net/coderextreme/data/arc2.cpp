@@ -38,7 +38,7 @@ X3D0.setHead(&head1);
 
 Scene& Scene7 =  Scene();
 Viewpoint& Viewpoint8 =  Viewpoint();
-Viewpoint8.setPosition(new float[3]{0.0,0.0,5.0});
+Viewpoint8.setPosition(new float[3]{0,0,5});
 Viewpoint8.setDescription(CString("Only Viewpoint"));
 Scene7.addChild(&Viewpoint8);
 
@@ -57,7 +57,7 @@ Shape12.setGeometry(&Sphere13);
 
 Appearance& Appearance14 =  Appearance();
 Material& Material15 =  Material();
-Material15.setDiffuseColor(new float[3]{1.0,0.0,0.0});
+Material15.setDiffuseColor(new float[3]{1,0,0});
 Appearance14.addChild(&Material15);
 
 Shape12.addChild(&Appearance14);
@@ -66,8 +66,8 @@ Transform11.addChild(&Shape12);
 
 PositionInterpolator& PositionInterpolator16 =  PositionInterpolator();
 PositionInterpolator16.setDEF(CString("DECLpoint_INSTANCE_PI1"));
-PositionInterpolator16.setKey(new float[2]{0.0,1.0}, 2);
-PositionInterpolator16.setKeyValue(new float[6]{0.0,0.0,0.0,0.0,5.0,0.0}, 6);
+PositionInterpolator16.setKey(new float[2]{0,1}, 2);
+PositionInterpolator16.setKeyValue(new float[6]{0,0,0,0,5,0}, 6);
 Transform11.addChild(&PositionInterpolator16);
 
 Script& Script17 =  Script();
@@ -164,7 +164,7 @@ Shape30.setGeometry(&Sphere31);
 
 Appearance& Appearance32 =  Appearance();
 Material& Material33 =  Material();
-Material33.setDiffuseColor(new float[3]{1.0,0.0,0.0});
+Material33.setDiffuseColor(new float[3]{1,0,0});
 Appearance32.addChild(&Material33);
 
 Shape30.addChild(&Appearance32);
@@ -173,8 +173,8 @@ Transform29.addChild(&Shape30);
 
 PositionInterpolator& PositionInterpolator34 =  PositionInterpolator();
 PositionInterpolator34.setDEF(CString("DECLpoint_INSTANCE1000_PI1"));
-PositionInterpolator34.setKey(new float[2]{0.0,1.0}, 2);
-PositionInterpolator34.setKeyValue(new float[6]{0.0,0.0,0.0,0.0,5.0,0.0}, 6);
+PositionInterpolator34.setKey(new float[2]{0,1}, 2);
+PositionInterpolator34.setKeyValue(new float[6]{0,0,0,0,5,0}, 6);
 Transform29.addChild(&PositionInterpolator34);
 
 Script& Script35 =  Script();

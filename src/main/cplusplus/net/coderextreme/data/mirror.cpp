@@ -79,7 +79,7 @@ X3D0.setHead(&head1);
 
 Scene& Scene15 =  Scene();
 Viewpoint& Viewpoint16 =  Viewpoint();
-Viewpoint16.setPosition(new float[3]{0.0,5.0,100.0});
+Viewpoint16.setPosition(new float[3]{0,5,100});
 Viewpoint16.setDescription(CString("Switch background and images texture"));
 Scene15.addChild(&Viewpoint16);
 

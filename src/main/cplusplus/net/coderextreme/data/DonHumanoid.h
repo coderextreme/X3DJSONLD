@@ -1,5 +1,3 @@
-//#define False false
-//#define True true
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
@@ -65,7 +63,7 @@ Shape13.setDEF(CString("AxisLinesShape"));
 //RGB lines showing XYZ axes
 IndexedLineSet& IndexedLineSet14 =  IndexedLineSet();
 IndexedLineSet14.setColorIndex(new int[3]{0,1,2}, 3);
-IndexedLineSet14.setColorPerVertex(False);
+IndexedLineSet14.setColorPerVertex(false);
 IndexedLineSet14.setCoordIndex(new int32_t[9]{0,1,-1,0,2,-1,0,3,-1}, 9);
 Coordinate& Coordinate15 =  Coordinate();
 Coordinate15.setPoint(new float[12]{0.0,0.0,0.0,0.1,0.0,0.0,0.0,0.1,0.0,0.0,0.0,0.1}, 12);
@@ -154,7 +152,7 @@ Shape35.setDEF(CString("HAnimSiteShape"));
 IndexedFaceSet& IndexedFaceSet36 =  IndexedFaceSet();
 IndexedFaceSet36.setDEF(CString("DiamondIFS"));
 IndexedFaceSet36.setCreaseAngle(0.5);
-IndexedFaceSet36.setSolid(False);
+IndexedFaceSet36.setSolid(false);
 IndexedFaceSet36.setCoordIndex(new int32_t[32]{0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1}, 32);
 ColorRGBA& ColorRGBA37 =  ColorRGBA();
 ColorRGBA37.setDEF(CString("HAnimSiteColorRGBA"));

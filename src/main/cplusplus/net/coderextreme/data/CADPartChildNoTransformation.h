@@ -1,5 +1,3 @@
-//#define False false
-//#define True true
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
@@ -102,10 +100,10 @@ CADFace21.X3DNode::setName(CString("outerSurface"));
 Shape& Shape22 =  Shape();
 //note solid='true' and so one-sided external rendering only
 Cylinder& Cylinder23 =  Cylinder();
-Cylinder23.setBottom(False);
+Cylinder23.setBottom(false);
 Cylinder23.setHeight(3);
 Cylinder23.setRadius(2);
-Cylinder23.setTop(False);
+Cylinder23.setTop(false);
 Shape22.setGeometry(&Cylinder23);
 
 Appearance& Appearance24 =  Appearance();
@@ -124,10 +122,10 @@ CADFace26.X3DNode::setName(CString("innerSurface"));
 Shape& Shape27 =  Shape();
 //note solid='false' and so two-sided internal + external rendering
 Cylinder& Cylinder28 =  Cylinder();
-Cylinder28.setBottom(False);
+Cylinder28.setBottom(false);
 Cylinder28.setHeight(3);
-Cylinder28.setSolid(False);
-Cylinder28.setTop(False);
+Cylinder28.setSolid(false);
+Cylinder28.setTop(false);
 Shape27.setGeometry(&Cylinder28);
 
 Appearance& Appearance29 =  Appearance();

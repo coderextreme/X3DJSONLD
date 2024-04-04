@@ -1,5 +1,3 @@
-//#define False false
-//#define True true
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
@@ -68,7 +66,7 @@ Appearance14.addChild(&Material15);
 Shape13.addChild(&Appearance14);
 
 IndexedFaceSet& IndexedFaceSet16 =  IndexedFaceSet();
-IndexedFaceSet16.setConvex(False);
+IndexedFaceSet16.setConvex(false);
 IndexedFaceSet16.setDEF(CString("Orbit"));
 Coordinate& Coordinate17 =  Coordinate();
 Coordinate17.setDEF(CString("OrbitCoordinates"));
@@ -177,7 +175,7 @@ Scene7.addChild(&Script18);
 TimeSensor& TimeSensor22 =  TimeSensor();
 TimeSensor22.setDEF(CString("Clock"));
 TimeSensor22.setCycleInterval(16);
-TimeSensor22.setLoop(True);
+TimeSensor22.setLoop(true);
 Scene7.addChild(&TimeSensor22);
 
 ROUTE& ROUTE23 =  ROUTE();

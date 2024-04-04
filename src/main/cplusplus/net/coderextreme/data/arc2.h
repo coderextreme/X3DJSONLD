@@ -1,5 +1,3 @@
-//#define False false
-//#define True true
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
@@ -112,7 +110,7 @@ Transform11.addChild(&Script17);
 TimeSensor& TimeSensor22 =  TimeSensor();
 TimeSensor22.setDEF(CString("DECLpoint_INSTANCE_CL1"));
 TimeSensor22.setCycleInterval(3);
-TimeSensor22.setLoop(True);
+TimeSensor22.setLoop(true);
 Transform11.addChild(&TimeSensor22);
 
 ROUTE& ROUTE23 =  ROUTE();
@@ -219,7 +217,7 @@ Transform29.addChild(&Script35);
 TimeSensor& TimeSensor40 =  TimeSensor();
 TimeSensor40.setDEF(CString("DECLpoint_INSTANCE1000_CL1"));
 TimeSensor40.setCycleInterval(3);
-TimeSensor40.setLoop(True);
+TimeSensor40.setLoop(true);
 Transform29.addChild(&TimeSensor40);
 
 ROUTE& ROUTE41 =  ROUTE();

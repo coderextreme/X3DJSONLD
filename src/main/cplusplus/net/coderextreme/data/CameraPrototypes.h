@@ -1,5 +1,3 @@
-//#define False false
-//#define True true
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
 //#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
@@ -339,7 +337,7 @@ ProtoBody42.addChild(&NavigationInfo52);
 //this DirectionalLight replaces NavigationInfo headlight in order to add color capability
 DirectionalLight& DirectionalLight57 =  DirectionalLight();
 DirectionalLight57.setDEF(CString("CameraDirectionalLight"));
-DirectionalLight57.setGlobal(True);
+DirectionalLight57.setGlobal(true);
 //TODO confirm other default field values match NavigationInfo spec
 IS& IS58 =  IS();
 Connect& connect59 =  Connect();
@@ -405,8 +403,8 @@ ProtoBody42.addChild(&ROUTE69);
 
 Script& Script70 =  Script();
 Script70.setDEF(CString("CameraScript"));
-Script70.setDirectOutput(True);
-Script70.setMustEvaluate(True);
+Script70.setDirectOutput(true);
+Script70.setMustEvaluate(true);
 //binding is controlled externally, all camera operations proceed the same regardless of whether bound or not
 field& field71 =  field();
 field71.setName(CString("description"));
@@ -1198,8 +1196,8 @@ ProtoDeclare131.addChild(&ProtoInterface132);
 ProtoBody& ProtoBody145 =  ProtoBody();
 Script& Script146 =  Script();
 Script146.setDEF(CString("CameraShotScript"));
-Script146.setDirectOutput(True);
-Script146.setMustEvaluate(True);
+Script146.setDirectOutput(true);
+Script146.setMustEvaluate(true);
 field& field147 =  field();
 field147.setName(CString("description"));
 field147.setAccessType(CString("inputOutput"));
@@ -1560,8 +1558,8 @@ ProtoBody& ProtoBody189 =  ProtoBody();
 //Script holds CameraMovement initialization values for query by parent CameraShot, and also permits changing values via events
 Script& Script190 =  Script();
 Script190.setDEF(CString("CameraMovementScript"));
-Script190.setDirectOutput(True);
-Script190.setMustEvaluate(True);
+Script190.setDirectOutput(true);
+Script190.setMustEvaluate(true);
 field& field191 =  field();
 field191.setName(CString("description"));
 field191.setAccessType(CString("inputOutput"));
@@ -1889,7 +1887,7 @@ ProtoBody& ProtoBody229 =  ProtoBody();
 //Subsequent nodes do not render, but still must be a valid X3D subgraph
 Script& Script230 =  Script();
 Script230.setDEF(CString("OfflineRenderScript"));
-Script230.setMustEvaluate(True);
+Script230.setMustEvaluate(true);
 field& field231 =  field();
 field231.setName(CString("description"));
 field231.setAccessType(CString("inputOutput"));
