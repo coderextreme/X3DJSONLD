@@ -1,4 +1,4 @@
-// Generated from ../CPPONGrammar.g4 by ANTLR 4.10.1
+// Generated from ../CPPONGrammar.g4 by ANTLR 4.13.1
 // jshint ignore: start
 import antlr4 from 'antlr4';
 
@@ -140,12 +140,12 @@ export default class CPPONGrammarListener extends antlr4.tree.ParseTreeListener 
 	}
 
 
-	// Enter a parse tree produced by CPPONGrammarParser#constructor.
-	enterConstructor(ctx) {
+	// Enter a parse tree produced by CPPONGrammarParser#construct.
+	enterConstruct(ctx) {
 	}
 
-	// Exit a parse tree produced by CPPONGrammarParser#constructor.
-	exitConstructor(ctx) {
+	// Exit a parse tree produced by CPPONGrammarParser#construct.
+	exitConstruct(ctx) {
 	}
 
 

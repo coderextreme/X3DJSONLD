@@ -28,13 +28,13 @@ public class CPPONGrammarParser extends Parser {
 		RULE_type = 0, RULE_field = 1, RULE_variable = 2, RULE_string = 3, RULE_cstring = 4, 
 		RULE_boolean = 5, RULE_boolean_list = 6, RULE_integer_list = 7, RULE_float_list = 8, 
 		RULE_string_list = 9, RULE_list = 10, RULE_construct_array = 11, RULE_parameters = 12, 
-		RULE_operator = 13, RULE_funccall = 14, RULE_constructor = 15, RULE_set_field = 16, 
+		RULE_operator = 13, RULE_funccall = 14, RULE_construct = 15, RULE_set_field = 16, 
 		RULE_add_field = 17, RULE_line = 18, RULE_lines = 19, RULE_x3d = 20;
 	private static String[] makeRuleNames() {
 		return new String[] {
 			"type", "field", "variable", "string", "cstring", "boolean", "boolean_list", 
 			"integer_list", "float_list", "string_list", "list", "construct_array", 
-			"parameters", "operator", "funccall", "constructor", "set_field", "add_field", 
+			"parameters", "operator", "funccall", "construct", "set_field", "add_field", 
 			"line", "lines", "x3d"
 		};
 	}
@@ -1276,7 +1276,7 @@ public class CPPONGrammarParser extends Parser {
 	}
 
 	@SuppressWarnings("CheckReturnValue")
-	public static class ConstructorContext extends ParserRuleContext {
+	public static class ConstructContext extends ParserRuleContext {
 		public TypeContext type() {
 			return getRuleContext(TypeContext.class,0);
 		}
@@ -1284,23 +1284,23 @@ public class CPPONGrammarParser extends Parser {
 			return getRuleContext(FunccallContext.class,0);
 		}
 		public TerminalNode REFERENCE() { return getToken(CPPONGrammarParser.REFERENCE, 0); }
-		public ConstructorContext(ParserRuleContext parent, int invokingState) {
+		public ConstructContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_constructor; }
+		@Override public int getRuleIndex() { return RULE_construct; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CPPONGrammarListener ) ((CPPONGrammarListener)listener).enterConstructor(this);
+			if ( listener instanceof CPPONGrammarListener ) ((CPPONGrammarListener)listener).enterConstruct(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CPPONGrammarListener ) ((CPPONGrammarListener)listener).exitConstructor(this);
+			if ( listener instanceof CPPONGrammarListener ) ((CPPONGrammarListener)listener).exitConstruct(this);
 		}
 	}
 
-	public final ConstructorContext constructor() throws RecognitionException {
-		ConstructorContext _localctx = new ConstructorContext(_ctx, getState());
-		enterRule(_localctx, 30, RULE_constructor);
+	public final ConstructContext construct() throws RecognitionException {
+		ConstructContext _localctx = new ConstructContext(_ctx, getState());
+		enterRule(_localctx, 30, RULE_construct);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
@@ -1415,8 +1415,8 @@ public class CPPONGrammarParser extends Parser {
 	@SuppressWarnings("CheckReturnValue")
 	public static class LineContext extends ParserRuleContext {
 		public TerminalNode SEMI() { return getToken(CPPONGrammarParser.SEMI, 0); }
-		public ConstructorContext constructor() {
-			return getRuleContext(ConstructorContext.class,0);
+		public ConstructContext construct() {
+			return getRuleContext(ConstructContext.class,0);
 		}
 		public Set_fieldContext set_field() {
 			return getRuleContext(Set_fieldContext.class,0);
@@ -1450,7 +1450,7 @@ public class CPPONGrammarParser extends Parser {
 			case 1:
 				{
 				setState(199);
-				constructor();
+				construct();
 				}
 				break;
 			case 2:

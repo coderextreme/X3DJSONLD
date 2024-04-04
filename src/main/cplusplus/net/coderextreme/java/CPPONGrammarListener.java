@@ -157,15 +157,15 @@ public interface CPPONGrammarListener extends ParseTreeListener {
 	 */
 	void exitFunccall(CPPONGrammarParser.FunccallContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link CPPONGrammarParser#constructor}.
+	 * Enter a parse tree produced by {@link CPPONGrammarParser#construct}.
 	 * @param ctx the parse tree
 	 */
-	void enterConstructor(CPPONGrammarParser.ConstructorContext ctx);
+	void enterConstruct(CPPONGrammarParser.ConstructContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link CPPONGrammarParser#constructor}.
+	 * Exit a parse tree produced by {@link CPPONGrammarParser#construct}.
 	 * @param ctx the parse tree
 	 */
-	void exitConstructor(CPPONGrammarParser.ConstructorContext ctx);
+	void exitConstruct(CPPONGrammarParser.ConstructContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link CPPONGrammarParser#set_field}.
 	 * @param ctx the parse tree
