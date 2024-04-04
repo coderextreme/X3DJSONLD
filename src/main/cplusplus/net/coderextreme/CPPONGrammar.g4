@@ -47,12 +47,12 @@ operator : (EQUALS | X3DNODESET | SET | ADD );
 
 funccall : variable operator IDENTIFIER '(' parameters? ')';
 
-constructor : type REFERENCE? funccall;
+construct : type REFERENCE? funccall;
 
 set_field : funccall;
 add_field : funccall;
 
-line : (constructor | set_field | add_field) SEMI;
+line : (construct | set_field | add_field) SEMI;
 
 lines : line*;
 

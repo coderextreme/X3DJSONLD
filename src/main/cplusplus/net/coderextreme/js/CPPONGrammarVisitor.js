@@ -1,4 +1,4 @@
-// Generated from ../CPPONGrammar.g4 by ANTLR 4.10.1
+// Generated from ../CPPONGrammar.g4 by ANTLR 4.13.1
 // jshint ignore: start
 import antlr4 from 'antlr4';
 
@@ -96,8 +96,8 @@ export default class CPPONGrammarVisitor extends antlr4.tree.ParseTreeVisitor {
 	}
 
 
-	// Visit a parse tree produced by CPPONGrammarParser#constructor.
-	visitConstructor(ctx) {
+	// Visit a parse tree produced by CPPONGrammarParser#construct.
+	visitConstruct(ctx) {
 	  return this.visitChildren(ctx);
 	}
 
