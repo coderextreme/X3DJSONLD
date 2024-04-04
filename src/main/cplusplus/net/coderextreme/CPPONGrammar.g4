@@ -39,7 +39,7 @@ string_list : cstring (',' cstring)*;
 
 list : boolean_list | integer_list | float_list | string_list;
 
-construct_array : 'new ' type OPENBRACKET WHOLE CLOSEBRACKET '{'  list '}';
+construct_array : 'new ' type OPENBRACKET CLOSEBRACKET '{'  list '}';
 
 parameters : (cstring | (SENTINEL | '-' WHOLE | '+'? WHOLE) | boolean | WHOLE (',' construct_array)? | FLOAT | construct_array (',' WHOLE)? | '(X3DNode *)'? REFERENCE? variable);
 
