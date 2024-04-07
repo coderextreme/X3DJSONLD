@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/bash
 #
 # convert local json files to cpp
 #
