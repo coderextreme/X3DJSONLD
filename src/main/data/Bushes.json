@@ -52,7 +52,7 @@
           },
           {
             "@name":"translated",
-            "@content":"30 March 2024"
+            "@content":"10 April 2024"
           },
           {
             "@name":"generator",
@@ -73,7 +73,7 @@
           },
           { "Shape":
             {
-              "-appearance":
+              "-children":[
                 { "Appearance":
                   {
                     "-material":
@@ -85,7 +85,8 @@
                         }
                       }
                   }
-                },
+                }
+              ],
               "-geometry":
                 { "IndexedFaceSet":
                   {
@@ -105,7 +106,7 @@
           },
           { "Shape":
             {
-              "-appearance":
+              "-children":[
                 { "Appearance":
                   {
                     "-material":
@@ -117,7 +118,8 @@
                         }
                       }
                   }
-                },
+                }
+              ],
               "-geometry":
                 { "IndexedFaceSet":
                   {
@@ -137,7 +139,7 @@
           },
           { "Shape":
             {
-              "-appearance":
+              "-children":[
                 { "Appearance":
                   {
                     "-material":
@@ -149,7 +151,8 @@
                         }
                       }
                   }
-                },
+                }
+              ],
               "-geometry":
                 { "IndexedFaceSet":
                   {
@@ -169,7 +172,7 @@
           },
           { "Shape":
             {
-              "-appearance":
+              "-children":[
                 { "Appearance":
                   {
                     "-material":
@@ -181,7 +184,8 @@
                         }
                       }
                   }
-                },
+                }
+              ],
               "-geometry":
                 { "IndexedFaceSet":
                   {

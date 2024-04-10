@@ -36,7 +36,7 @@
           },
           {
             "@name":"translated",
-            "@content":"30 March 2024"
+            "@content":"10 April 2024"
           },
           {
             "@name":"generator",
@@ -58,7 +58,7 @@
         "-children":[
           { "NavigationInfo":
             {
-              "@type":["EXAMINE"]
+              "@type":"\"EXAMINE\""
             }
           },
           { "Viewpoint":
@@ -95,7 +95,7 @@
                                     "@radius":0.25
                                   }
                                 },
-                              "-appearance":
+                              "-children":[
                                 { "Appearance":
                                   {
                                     "-material":
@@ -107,6 +107,7 @@
                                       }
                                   }
                                 }
+                              ]
                             }
                           },
                           { "Script":
