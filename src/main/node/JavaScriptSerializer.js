@@ -48,7 +48,7 @@ JavaScriptSerializer.prototype = {
 		str += "ConfigurationProperties.setStripDefaultAttributes(true);\n";
 		str += "function doubleToFloat(d) {\n";
 		str += "    if (Float32Array)\n";
-        	str += "	return new Float32Array([d])[0];\n";
+        	str += "	return new Float32Array(d);\n";
 		str += "}\n";
 		// we figure out body first and print it out later
 		var body = "      var "+element.nodeName+0+" =  new "+element.nodeName+"()";
@@ -78,11 +78,10 @@ JavaScriptSerializer.prototype = {
 			}
 		}
 		if (type === "float") {
-			for (var v in values) {
-				values[v] = "doubleToFloat("+values[v]+")";
-			}
+			return 'Java.to(doubleToFloat(['+lead+values.join(j)+trail+']), Java.type("'+type+'[]"))';
+		} else {
+			return 'Java.to(['+lead+values.join(j)+trail+'], Java.type("'+type+'[]"))';
 		}
-		return 'Java.to(['+lead+values.join(j)+trail+'], Java.type("'+type+'[]"))';
 	},
 
 	printParentChild : function (element, node, cn, mapToMethod, n) {

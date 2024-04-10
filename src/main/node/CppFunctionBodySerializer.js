@@ -103,7 +103,7 @@ CppScriptSerializer.prototype = {
 		}
 		if (attrType === "SFImage" && element.nodeName !== "PixelTexture") {
 			let length = values[0]*values[1]*values[2];
-			str = values[0]+", "+values[1]+", "+values[2]+", "+NEW+" "+type+"["+(values.length-3)+"]{"+(values.slice(3, length+1).join(', '))+"}";
+			str = values[0]+", "+values[1]+", "+values[2]+", "+NEW+" "+type+"["+""/*(values.length-3)*/+"]{"+(values.slice(3, length+1).join(', '))+"}";
 			this.code[co] = attrType+PTR+' '+attrType+co+' = '+NEW+' '+attrType+'();\n'
 			this.code[co] += attrType+co+OBJ+'setValue('+str+');\n';
 			this.codeno++;
@@ -129,7 +129,7 @@ CppScriptSerializer.prototype = {
 			case "coordIndex":
 			case "vertexCount":
 			case "order":
-				str = shim+' '+type+'['+values.length+']{'+lead+values.join(j)+trail+'}, '+values.length;
+				str = shim+' '+type+'['+""/*values.length*/+']{'+lead+values.join(j)+trail+'}, '+values.length;
 				if (attr == "colorIndex") {
 					if (element.nodeName === "IndexedFaceSet") {
 						str = ""+str;
@@ -139,14 +139,14 @@ CppScriptSerializer.prototype = {
 				}
 				return str;
 			default:
-				str = values.length+", "+shim+" "+type+"["+(values.length)+"]{"+values.join(', ')+"}";
+				str = values.length+", "+shim+" "+type+"["+""/*(values.length)*/+"]{"+values.join(', ')+"}";
 				this.code[co] = attrType+PTR+' '+attrType+co+' = '+NEW+' '+attrType+'();\n'
 				this.code[co] += attrType+co+OBJ+'setValue('+str+');\n';
 				this.codeno++;
 				return attrType+co;
 			}
 		} else {
-			return shim+' '+type+'['+values.length+']{'+lead+values.join(j)+trail+'}'+(attrType.startsWith("MF") && type !== "boolean" ? ', '+values.length : '');
+			return shim+' '+type+'['+""/*values.length*/+']{'+lead+values.join(j)+trail+'}'+(attrType.startsWith("MF") && type !== "boolean" ? ', '+values.length : '');
 		}
 	},
 
