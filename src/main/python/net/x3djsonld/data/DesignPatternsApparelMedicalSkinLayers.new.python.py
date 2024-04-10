@@ -53,7 +53,7 @@ newModel=X3D(profile='Immersive',version='4.0',
       children=[
       HAnimHumanoid(DEF='a_SimpleSkeleton',name='SimpleSkeleton',version='2.0',
         children=[
-        HAnimJoint(name='humanoid_root',llimit=[0,0,0],ulimit=[0,0,0],
+        HAnimJoint(name='humanoid_root',
           children=[
           HAnimSegment(name='sacrum',
             children=[
@@ -64,7 +64,7 @@ newModel=X3D(profile='Immersive',version='4.0',
               Shape(DEF='SiteVisualization')])])])],),
       HAnimHumanoid(DEF='b_SimpleSkeletonMesh',name='SimpleSkeletonMesh',version='2.0',
         children=[
-        HAnimJoint(name='humanoid_root',llimit=[0,0,0],ulimit=[0,0,0],
+        HAnimJoint(name='humanoid_root',
           children=[
           HAnimSegment(name='sacrum',
             children=[
@@ -72,20 +72,20 @@ newModel=X3D(profile='Immersive',version='4.0',
               geometry=IndexedFaceSet(DEF='SegmentBoneMesh'))])])],),
       HAnimHumanoid(DEF='c_SkinIndexedGeometry',name='SkinIndexedGeometry',version='2.0',
         children=[
-        HAnimJoint(name='humanoid_root',llimit=[0,0,0],ulimit=[0,0,0],
+        HAnimJoint(name='humanoid_root',
           children=[
           HAnimSegment(name='sacrum')])],
         geometry=IndexedFaceSet(DEF='SkinMeshIFS')),
       HAnimHumanoid(DEF='d_SkinShapeIndexedGeometry',name='SkinShapeIndexedGeometry',version='2.0',
         children=[
-        HAnimJoint(name='humanoid_root',llimit=[0,0,0],ulimit=[0,0,0],
+        HAnimJoint(name='humanoid_root',
           children=[
           HAnimSegment(name='sacrum')]),
         Shape(
           geometry=IndexedFaceSet(USE='SkinMeshIFS'))],),
       HAnimHumanoid(DEF='e_SkinSwitchShapeIndexedGeometry',name='SkinSwitchShapeIndexedGeometry',version='2.0',
         children=[
-        HAnimJoint(name='humanoid_root',llimit=[0,0,0],ulimit=[0,0,0],
+        HAnimJoint(name='humanoid_root',
           children=[
           HAnimSegment(name='sacrum')]),
         Shape(
@@ -93,7 +93,7 @@ newModel=X3D(profile='Immersive',version='4.0',
             coord=Coordinate(DEF='SkinMeshCoordinate')))],),
       HAnimHumanoid(DEF='f_SynthesizedSkinShapeIndexedTwoPartGeometry',name='SynthesizedSkinShapeIndexedTwoPartGeometry',version='2.0',
         children=[
-        HAnimJoint(name='humanoid_root',llimit=[0,0,0],ulimit=[0,0,0],
+        HAnimJoint(name='humanoid_root',
           children=[
           HAnimSegment(name='sacrum')]),
         Shape(
@@ -101,13 +101,13 @@ newModel=X3D(profile='Immersive',version='4.0',
             coord=Coordinate(DEF='TwoPartSkinMesh')))],),
       HAnimHumanoid(DEF='g_ApparelSkinIndexedGeometryMultipleShapes',name='ApparelSkinIndexedGeometryMultipleShapes',version='2.0',
         children=[
-        HAnimJoint(name='humanoid_root',llimit=[0,0,0],ulimit=[0,0,0],
+        HAnimJoint(name='humanoid_root',
           children=[
           HAnimSegment(name='sacrum')]),
         Shape(),],),
       HAnimHumanoid(DEF='h_AnatomySkinIndexedGeometryMultipleShapes',name='AnatomySkinIndexedGeometryMultipleShapes',version='2.0',
         children=[
-        HAnimJoint(name='humanoid_root',llimit=[0,0,0],ulimit=[0,0,0],
+        HAnimJoint(name='humanoid_root',
           children=[
           HAnimSegment(name='sacrum')]),
         Shape(),],)]),

@@ -1,11 +1,8 @@
-
-# Configuration file for Pyjnius to map X3DJSAIL concrete classes to native Python classes
-# Note that no abstract base classes are included, only nodes and simple types
-
 import jnius_config
-jnius_config.set_classpath('c:/x3d-code/www.web3d.org/x3d/stylesheets/java/jars/X3DJSAIL.4.0.full.jar', '../../../jars/X3DJSAIL.4.0.full.jar', '.')
+jnius_config.set_classpath('.', 'c:/x3d-code/www.web3d.org/x3d/stylesheets/java/jars/X3DJSAIL.4.0.full.jar', '/c/x3d-code/www.web3d.org/x3d/stylesheets/java/jars/X3DJSAIL.4.0.full.jar', './X3DJSAIL.4.0.full.jar')
 from jnius import autoclass
 CommentsBlock = autoclass('org.web3d.x3d.jsail.Core.CommentsBlock')
+ConfigurationProperties = autoclass('org.web3d.x3d.jsail.ConfigurationProperties')
 AcousticProperties = autoclass('org.web3d.x3d.jsail.Shape.AcousticProperties')
 Analyser = autoclass('org.web3d.x3d.jsail.Sound.Analyser')
 Anchor = autoclass('org.web3d.x3d.jsail.Networking.Anchor')
@@ -306,6 +303,8 @@ MFMatrix4d = autoclass('org.web3d.x3d.jsail.fields.MFMatrix4d')
 SFMatrix4f = autoclass('org.web3d.x3d.jsail.fields.SFMatrix4f')
 MFMatrix4f = autoclass('org.web3d.x3d.jsail.fields.MFMatrix4f')
 SFString = autoclass('org.web3d.x3d.jsail.fields.SFString')
+SFNode = autoclass('org.web3d.x3d.jsail.fields.SFNode')
+MFNode = autoclass('org.web3d.x3d.jsail.fields.MFNode')
 SFRotation = autoclass('org.web3d.x3d.jsail.fields.SFRotation')
 MFRotation = autoclass('org.web3d.x3d.jsail.fields.MFRotation')
 MFString = autoclass('org.web3d.x3d.jsail.fields.MFString')

@@ -54,7 +54,7 @@ newModel=X3D(profile='Immersive',version='4.0',
       children=[
       HAnimHumanoid(DEF='a_SimpleSkeleton',name='SimpleSkeleton',version='2.0',
         skeleton=[
-        HAnimJoint(name='humanoid_root',ulimit=[0,0,0],llimit=[0,0,0],
+        HAnimJoint(name='humanoid_root',
           children=[
           HAnimSegment(name='sacrum',
             children=[
@@ -66,7 +66,7 @@ newModel=X3D(profile='Immersive',version='4.0',
       #  ============================== 
       HAnimHumanoid(DEF='b_SimpleSkeletonMesh',name='SimpleSkeletonMesh',version='2.0',
         skeleton=[
-        HAnimJoint(name='humanoid_root',ulimit=[0,0,0],llimit=[0,0,0],
+        HAnimJoint(name='humanoid_root',
           children=[
           HAnimSegment(name='sacrum',
             children=[
@@ -75,14 +75,14 @@ newModel=X3D(profile='Immersive',version='4.0',
       #  ============================== 
       HAnimHumanoid(DEF='c_SkinIndexedGeometry',name='SkinIndexedGeometry',version='2.0',
         skeleton=[
-        HAnimJoint(name='humanoid_root',ulimit=[0,0,0],llimit=[0,0,0],
+        HAnimJoint(name='humanoid_root',
           children=[
           HAnimSegment(name='sacrum')]),],
         geometry=IndexedFaceSet(DEF='SkinMeshIFS')),
       #  ============================== 
       HAnimHumanoid(DEF='d_SkinShapeIndexedGeometry',name='SkinShapeIndexedGeometry',version='2.0',
         skeleton=[
-        HAnimJoint(name='humanoid_root',ulimit=[0,0,0],llimit=[0,0,0],
+        HAnimJoint(name='humanoid_root',
           children=[
           HAnimSegment(name='sacrum')]),],
         skin=[
@@ -91,7 +91,7 @@ newModel=X3D(profile='Immersive',version='4.0',
       #  ============================== 
       HAnimHumanoid(DEF='e_SkinSwitchShapeIndexedGeometry',name='SkinSwitchShapeIndexedGeometry',version='2.0',
         skeleton=[
-        HAnimJoint(name='humanoid_root',ulimit=[0,0,0],llimit=[0,0,0],
+        HAnimJoint(name='humanoid_root',
           children=[
           HAnimSegment(name='sacrum')]),],
         #  TODO show X3D4.0 addition of <Switch DEF='AlternativeSkins' containerField='skin'> 
@@ -103,7 +103,7 @@ newModel=X3D(profile='Immersive',version='4.0',
       #  ============================== 
       HAnimHumanoid(DEF='f_SynthesizedSkinShapeIndexedTwoPartGeometry',name='SynthesizedSkinShapeIndexedTwoPartGeometry',version='2.0',
         skeleton=[
-        HAnimJoint(name='humanoid_root',ulimit=[0,0,0],llimit=[0,0,0],
+        HAnimJoint(name='humanoid_root',
           children=[
           HAnimSegment(name='sacrum')]),],
         skin=[
@@ -113,7 +113,7 @@ newModel=X3D(profile='Immersive',version='4.0',
       #  ============================== 
       HAnimHumanoid(DEF='g_ApparelSkinIndexedGeometryMultipleShapes',name='ApparelSkinIndexedGeometryMultipleShapes',version='2.0',
         skeleton=[
-        HAnimJoint(name='humanoid_root',ulimit=[0,0,0],llimit=[0,0,0],
+        HAnimJoint(name='humanoid_root',
           children=[
           HAnimSegment(name='sacrum')]),],
         skin=[
@@ -124,7 +124,7 @@ newModel=X3D(profile='Immersive',version='4.0',
       #  ============================== 
       HAnimHumanoid(DEF='h_AnatomySkinIndexedGeometryMultipleShapes',name='AnatomySkinIndexedGeometryMultipleShapes',version='2.0',
         skeleton=[
-        HAnimJoint(name='humanoid_root',ulimit=[0,0,0],llimit=[0,0,0],
+        HAnimJoint(name='humanoid_root',
           children=[
           HAnimSegment(name='sacrum')]),],
         #  allow multiple Shape nodes with containerField='skin', one for each layer of skin 

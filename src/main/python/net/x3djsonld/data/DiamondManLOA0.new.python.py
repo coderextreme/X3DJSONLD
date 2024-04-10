@@ -63,9 +63,9 @@ newModel=X3D(profile='Immersive',version='4.0',
         value=[
         MetadataString(name='usageRestrictions',value=["PERMISSION TO FULLY USE THIS SCENE GRAPH IS GRANTED PROVIDED THIS COPYRIGHT INFORMATION AND DOCUMENTATION OF THE ORIGINAL AUTHOR IS INCLUDED. This humanoid scene graph is provided _as-is_ and without warranty of any kind express implied or otherwise including without limitation any warranty of merchantability or fitness for a particular purpose."])]),
       children=[
-      HAnimJoint(DEF='hanim_humanoid_root',name='humanoid_root',center=(0,0.824,0.0277),llimit=[0,0,0],ulimit=[0,0,0],
+      HAnimJoint(DEF='hanim_humanoid_root',name='humanoid_root',center=(0,0.824,0.0277),
         children=[
-        HAnimJoint(DEF='hanim_sacroiliac',name='sacroiliac',center=(0,0.9149,0.0016),llimit=[0,0,0],ulimit=[0,0,0],
+        HAnimJoint(DEF='hanim_sacroiliac',name='sacroiliac',center=(0,0.9149,0.0016),
           children=[
           HAnimSegment(DEF='hanim_pelvis',name='pelvis',
             children=[
@@ -76,8 +76,8 @@ newModel=X3D(profile='Immersive',version='4.0',
                   material=Material(diffuseColor=(1,1,0))),
                 geometry=IndexedFaceSet(coordIndex=[0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1],creaseAngle=0.5,
                   coord=Coordinate(point=[(0,0.01,0),(-0.01,0,0),(0,0,0.01),(0.01,0,0),(0,0,-0.01),(0,-0.01,0)])))])])])]),
-      HAnimJoint(USE='hanim_humanoid_root',ulimit=[0,0,0],llimit=[0,0,0]),
-      HAnimJoint(USE='hanim_sacroiliac',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_humanoid_root'),
+      HAnimJoint(USE='hanim_sacroiliac'),
       HAnimSegment(USE='hanim_pelvis'),
       HAnimSite(DEF='hanim_site_view',name='site_view',
         children=[
