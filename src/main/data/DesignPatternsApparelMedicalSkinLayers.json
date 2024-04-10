@@ -68,7 +68,7 @@
           },
           {
             "@name":"translated",
-            "@content":"30 March 2024"
+            "@content":"10 April 2024"
           },
           {
             "@name":"generator",
@@ -116,6 +116,8 @@
                       { "HAnimJoint":
                         {
                           "@name":"humanoid_root",
+                          "@ulimit":[0,0,0],
+                          "@llimit":[0,0,0],
                           "-children":[
                             { "HAnimSegment":
                               {
@@ -165,6 +167,8 @@
                       { "HAnimJoint":
                         {
                           "@name":"humanoid_root",
+                          "@ulimit":[0,0,0],
+                          "@llimit":[0,0,0],
                           "-children":[
                             { "HAnimSegment":
                               {
@@ -201,6 +205,8 @@
                       { "HAnimJoint":
                         {
                           "@name":"humanoid_root",
+                          "@ulimit":[0,0,0],
+                          "@llimit":[0,0,0],
                           "-children":[
                             { "HAnimSegment":
                               {
@@ -232,6 +238,8 @@
                       { "HAnimJoint":
                         {
                           "@name":"humanoid_root",
+                          "@ulimit":[0,0,0],
+                          "@llimit":[0,0,0],
                           "-children":[
                             { "HAnimSegment":
                               {
@@ -268,6 +276,8 @@
                       { "HAnimJoint":
                         {
                           "@name":"humanoid_root",
+                          "@ulimit":[0,0,0],
+                          "@llimit":[0,0,0],
                           "-children":[
                             { "HAnimSegment":
                               {
@@ -318,6 +328,8 @@
                       { "HAnimJoint":
                         {
                           "@name":"humanoid_root",
+                          "@ulimit":[0,0,0],
+                          "@llimit":[0,0,0],
                           "-children":[
                             { "HAnimSegment":
                               {
@@ -360,6 +372,8 @@
                       { "HAnimJoint":
                         {
                           "@name":"humanoid_root",
+                          "@ulimit":[0,0,0],
+                          "@llimit":[0,0,0],
                           "-children":[
                             { "HAnimSegment":
                               {
@@ -398,6 +412,8 @@
                       { "HAnimJoint":
                         {
                           "@name":"humanoid_root",
+                          "@ulimit":[0,0,0],
+                          "@llimit":[0,0,0],
                           "-children":[
                             { "HAnimSegment":
                               {
@@ -464,17 +480,6 @@
                               }
                             }
                         }
-                      },
-                    "-appearance":
-                      { "Appearance":
-                        {
-                          "-material":
-                            { "Material":
-                              {
-                                "@diffuseColor":[0.9,0.9,0.9]
-                              }
-                            }
-                        }
                       }
                   }
                 },
@@ -489,17 +494,6 @@
                       { "Box":
                         {
                           "@size":[11,2,0.001]
-                        }
-                      },
-                    "-appearance":
-                      { "Appearance":
-                        {
-                          "-material":
-                            { "Material":
-                              {
-                                "@transparency":1
-                              }
-                            }
                         }
                       }
                   }

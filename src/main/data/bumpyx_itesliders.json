@@ -134,7 +134,7 @@
           },
           {
             "@name":"translated",
-            "@content":"30 March 2024"
+            "@content":"10 April 2024"
           },
           {
             "@name":"generator",
@@ -177,7 +177,7 @@
                       },
                       { "NavigationInfo":
                         {
-                          "@type":["EXAMINE"],
+                          "@type":"\"EXAMINE\"",
                           "@avatarSize":[0.25,1.75,0.75]
                         }
                       },
@@ -224,7 +224,7 @@
                                             "@height":50
                                           }
                                         },
-                                      "-appearance":
+                                      "-children":[
                                         { "Appearance":
                                           {
                                             "-material":
@@ -237,6 +237,7 @@
                                               }
                                           }
                                         }
+                                      ]
                                     }
                                   }
                                 ]
@@ -257,7 +258,7 @@
                                             "@height":3
                                           }
                                         },
-                                      "-appearance":
+                                      "-children":[
                                         { "Appearance":
                                           {
                                             "-material":
@@ -268,6 +269,7 @@
                                               }
                                           }
                                         }
+                                      ]
                                     }
                                   }
                                 ]
@@ -288,7 +290,7 @@
                                             "@USE":"Shaft"
                                           }
                                         },
-                                      "-appearance":
+                                      "-children":[
                                         { "Appearance":
                                           {
                                             "-material":
@@ -301,6 +303,7 @@
                                               }
                                           }
                                         }
+                                      ]
                                     }
                                   }
                                 ]
@@ -318,7 +321,7 @@
                                             "@USE":"Tip"
                                           }
                                         },
-                                      "-appearance":
+                                      "-children":[
                                         { "Appearance":
                                           {
                                             "-material":
@@ -329,6 +332,7 @@
                                               }
                                           }
                                         }
+                                      ]
                                     }
                                   }
                                 ]
@@ -350,7 +354,7 @@
                                             "@USE":"Shaft"
                                           }
                                         },
-                                      "-appearance":
+                                      "-children":[
                                         { "Appearance":
                                           {
                                             "-material":
@@ -363,6 +367,7 @@
                                               }
                                           }
                                         }
+                                      ]
                                     }
                                   }
                                 ]
@@ -381,7 +386,7 @@
                                             "@USE":"Tip"
                                           }
                                         },
-                                      "-appearance":
+                                      "-children":[
                                         { "Appearance":
                                           {
                                             "-material":
@@ -392,6 +397,7 @@
                                               }
                                           }
                                         }
+                                      ]
                                     }
                                   }
                                 ]
@@ -434,7 +440,7 @@
                                             "@radius":40
                                           }
                                         },
-                                      "-appearance":
+                                      "-children":[
                                         { "Appearance":
                                           {
                                             "-material":
@@ -589,6 +595,7 @@
                                             ]
                                           }
                                         }
+                                      ]
                                     }
                                   }
                                 ]
@@ -674,7 +681,7 @@
                           "-children":[
                             { "Shape":
                               {
-                                "-appearance":
+                                "-children":[
                                   { "Appearance":
                                     {
                                       "-material":
@@ -685,7 +692,8 @@
                                           }
                                         }
                                     }
-                                  },
+                                  }
+                                ],
                                 "-geometry":
                                   { "Box":
                                     {
@@ -711,7 +719,7 @@
                                 "-children":[
                                   { "Shape":
                                     {
-                                      "-appearance":
+                                      "-children":[
                                         { "Appearance":
                                           {
                                             "-material":
@@ -720,7 +728,8 @@
                                                 }
                                               }
                                           }
-                                        },
+                                        }
+                                      ],
                                       "-geometry":
                                         { "Cylinder":
                                           {
@@ -762,7 +771,7 @@
                                                   "@radius":0.08
                                                 }
                                               },
-                                            "-appearance":
+                                            "-children":[
                                               { "Appearance":
                                                 {
                                                   "-material":
@@ -773,6 +782,7 @@
                                                     }
                                                 }
                                               }
+                                            ]
                                           }
                                         }
                                       ]
@@ -787,7 +797,7 @@
                                             "@height":0.3
                                           }
                                         },
-                                      "-appearance":
+                                      "-children":[
                                         { "Appearance":
                                           {
                                             "-material":
@@ -797,6 +807,7 @@
                                               }
                                           }
                                         }
+                                      ]
                                     }
                                   }
                                 ]
@@ -808,7 +819,7 @@
                                 "-children":[
                                   { "Shape":
                                     {
-                                      "-appearance":
+                                      "-children":[
                                         { "Appearance":
                                           {
                                             "-material":
@@ -817,7 +828,8 @@
                                                 }
                                               }
                                           }
-                                        },
+                                        }
+                                      ],
                                       "-geometry":
                                         { "Cylinder":
                                           {
@@ -844,7 +856,7 @@
                                 "-children":[
                                   { "Shape":
                                     {
-                                      "-appearance":
+                                      "-children":[
                                         { "Appearance":
                                           {
                                             "-material":
@@ -853,7 +865,8 @@
                                                 }
                                               }
                                           }
-                                        },
+                                        }
+                                      ],
                                       "-geometry":
                                         { "Cylinder":
                                           {
@@ -895,7 +908,7 @@
                                                   "@radius":0.08
                                                 }
                                               },
-                                            "-appearance":
+                                            "-children":[
                                               { "Appearance":
                                                 {
                                                   "-material":
@@ -906,6 +919,7 @@
                                                     }
                                                 }
                                               }
+                                            ]
                                           }
                                         }
                                       ]
@@ -920,7 +934,7 @@
                                             "@height":0.3
                                           }
                                         },
-                                      "-appearance":
+                                      "-children":[
                                         { "Appearance":
                                           {
                                             "-material":
@@ -930,6 +944,7 @@
                                               }
                                           }
                                         }
+                                      ]
                                     }
                                   }
                                 ]
@@ -949,7 +964,7 @@
                                 "-children":[
                                   { "Shape":
                                     {
-                                      "-appearance":
+                                      "-children":[
                                         { "Appearance":
                                           {
                                             "-material":
@@ -958,7 +973,8 @@
                                                 }
                                               }
                                           }
-                                        },
+                                        }
+                                      ],
                                       "-geometry":
                                         { "Cylinder":
                                           {
@@ -1000,7 +1016,7 @@
                                                   "@radius":0.08
                                                 }
                                               },
-                                            "-appearance":
+                                            "-children":[
                                               { "Appearance":
                                                 {
                                                   "-material":
@@ -1011,6 +1027,7 @@
                                                     }
                                                 }
                                               }
+                                            ]
                                           }
                                         }
                                       ]
@@ -1025,7 +1042,7 @@
                                             "@height":0.3
                                           }
                                         },
-                                      "-appearance":
+                                      "-children":[
                                         { "Appearance":
                                           {
                                             "-material":
@@ -1035,6 +1052,7 @@
                                               }
                                           }
                                         }
+                                      ]
                                     }
                                   }
                                 ]
@@ -1054,7 +1072,7 @@
                                 "-children":[
                                   { "Shape":
                                     {
-                                      "-appearance":
+                                      "-children":[
                                         { "Appearance":
                                           {
                                             "-material":
@@ -1063,7 +1081,8 @@
                                                 }
                                               }
                                           }
-                                        },
+                                        }
+                                      ],
                                       "-geometry":
                                         { "Cylinder":
                                           {
@@ -1105,7 +1124,7 @@
                                                   "@radius":0.08
                                                 }
                                               },
-                                            "-appearance":
+                                            "-children":[
                                               { "Appearance":
                                                 {
                                                   "-material":
@@ -1116,6 +1135,7 @@
                                                     }
                                                 }
                                               }
+                                            ]
                                           }
                                         }
                                       ]
@@ -1130,7 +1150,7 @@
                                             "@height":0.3
                                           }
                                         },
-                                      "-appearance":
+                                      "-children":[
                                         { "Appearance":
                                           {
                                             "-material":
@@ -1140,6 +1160,7 @@
                                               }
                                           }
                                         }
+                                      ]
                                     }
                                   }
                                 ]
@@ -1159,7 +1180,7 @@
                                 "-children":[
                                   { "Shape":
                                     {
-                                      "-appearance":
+                                      "-children":[
                                         { "Appearance":
                                           {
                                             "-material":
@@ -1168,7 +1189,8 @@
                                                 }
                                               }
                                           }
-                                        },
+                                        }
+                                      ],
                                       "-geometry":
                                         { "Cylinder":
                                           {
@@ -1210,7 +1232,7 @@
                                                   "@radius":0.08
                                                 }
                                               },
-                                            "-appearance":
+                                            "-children":[
                                               { "Appearance":
                                                 {
                                                   "-material":
@@ -1221,6 +1243,7 @@
                                                     }
                                                 }
                                               }
+                                            ]
                                           }
                                         }
                                       ]
@@ -1235,7 +1258,7 @@
                                             "@height":0.3
                                           }
                                         },
-                                      "-appearance":
+                                      "-children":[
                                         { "Appearance":
                                           {
                                             "-material":
@@ -1245,6 +1268,7 @@
                                               }
                                           }
                                         }
+                                      ]
                                     }
                                   }
                                 ]
@@ -1264,7 +1288,7 @@
                                 "-children":[
                                   { "Shape":
                                     {
-                                      "-appearance":
+                                      "-children":[
                                         { "Appearance":
                                           {
                                             "-material":
@@ -1273,7 +1297,8 @@
                                                 }
                                               }
                                           }
-                                        },
+                                        }
+                                      ],
                                       "-geometry":
                                         { "Cylinder":
                                           {
@@ -1315,7 +1340,7 @@
                                                   "@radius":0.08
                                                 }
                                               },
-                                            "-appearance":
+                                            "-children":[
                                               { "Appearance":
                                                 {
                                                   "-material":
@@ -1326,6 +1351,7 @@
                                                     }
                                                 }
                                               }
+                                            ]
                                           }
                                         }
                                       ]
@@ -1340,7 +1366,7 @@
                                             "@height":0.3
                                           }
                                         },
-                                      "-appearance":
+                                      "-children":[
                                         { "Appearance":
                                           {
                                             "-material":
@@ -1350,6 +1376,7 @@
                                               }
                                           }
                                         }
+                                      ]
                                     }
                                   }
                                 ]

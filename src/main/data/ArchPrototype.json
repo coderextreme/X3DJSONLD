@@ -52,7 +52,7 @@
           },
           {
             "@name":"translated",
-            "@content":"30 March 2024"
+            "@content":"10 April 2024"
           },
           {
             "@name":"generator",
@@ -216,29 +216,6 @@
                                       { "Coordinate":
                                         {
                                           "@DEF":"ArchChord"
-                                        }
-                                      }
-                                  }
-                                },
-                              "-appearance":
-                                { "Appearance":
-                                  {
-                                    "-material":
-                                      { "Material":
-                                        {
-                                          "@DEF":"MaterialNode",
-                                          "IS": {
-                                              "connect": [
-                                                {
-                                                  "@nodeField":"emissiveColor",
-                                                  "@protoField":"emissiveColor"
-                                                },
-                                                {
-                                                  "@nodeField":"diffuseColor",
-                                                  "@protoField":"diffuseColor"
-                                                }
-                                              ]
-                                          }
                                         }
                                       }
                                   }
