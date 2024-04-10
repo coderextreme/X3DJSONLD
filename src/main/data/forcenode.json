@@ -32,7 +32,7 @@
           },
           {
             "@name":"translated",
-            "@content":"30 March 2024"
+            "@content":"10 April 2024"
           },
           {
             "@name":"generator",
@@ -83,7 +83,7 @@
                                         {
                                         }
                                       },
-                                    "-appearance":
+                                    "-children":[
                                       { "Appearance":
                                         {
                                           "-material":
@@ -94,6 +94,7 @@
                                             }
                                         }
                                       }
+                                    ]
                                   }
                                 },
                                 { "Transform":
@@ -115,7 +116,7 @@
                                                   }
                                               }
                                             },
-                                          "-appearance":
+                                          "-children":[
                                             { "Appearance":
                                               {
                                                 "-material":
@@ -126,6 +127,7 @@
                                                   }
                                               }
                                             }
+                                          ]
                                         }
                                       }
                                     ]
@@ -262,7 +264,7 @@
                                     "@spine":[0,-50,0,0,50,0]
                                   }
                                 },
-                              "-appearance":
+                              "-children":[
                                 { "Appearance":
                                   {
                                     "-material":
@@ -273,6 +275,7 @@
                                       }
                                   }
                                 }
+                              ]
                             }
                           },
                           { "Script":

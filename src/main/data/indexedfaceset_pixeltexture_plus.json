@@ -88,7 +88,7 @@
           },
           {
             "@name":"translated",
-            "@content":"30 March 2024"
+            "@content":"10 April 2024"
           },
           {
             "@name":"generator",
@@ -144,12 +144,12 @@
           },
           { "NavigationInfo":
             {
-              "@type":["EXAMINE","WALK","FLY","ANY"]
+              "@type":"\"EXAMINE\" \"WALK\" \"FLY\" \"ANY\""
             }
           },
           { "Shape":
             {
-              "-appearance":
+              "-children":[
                 { "Appearance":
                   {
                     "-material":
@@ -164,7 +164,8 @@
                         }
                       }
                   }
-                },
+                }
+              ],
               "-geometry":
                 { "IndexedFaceSet":
                   {
