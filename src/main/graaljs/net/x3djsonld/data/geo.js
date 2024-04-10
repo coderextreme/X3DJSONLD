@@ -91,16 +91,16 @@ geo.prototype = {
         .setAppearance(new Appearance()
           .setMaterial(new Material().setDiffuseColor(doubleToFloat(0.7),doubleToFloat(0.7),doubleToFloat(0.7)).setSpecularColor(doubleToFloat(0.5),doubleToFloat(0.5),doubleToFloat(0.5)))
           .setTexture(new ComposedCubeMapTexture("texture")
-            .setBack(new ImageTexture().setUrl(new MFString("\"../resources/images/bBK.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBK.png\"")))
-            .setBottom(new ImageTexture().setUrl(new MFString("\"../resources/images/bBT.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBT.png\"")))
-            .setFront(new ImageTexture().setUrl(new MFString("\"../resources/images/bFR.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/bFR.png\"")))
-            .setLeft(new ImageTexture().setUrl(new MFString("\"../resources/images/bLF.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/bLF.png\"")))
-            .setRight(new ImageTexture().setUrl(new MFString("\"../resources/images/bRT.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/bRT.png\"")))
-            .setTop(new ImageTexture().setUrl(new MFString("\"../resources/images/bTP.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/bTP.png\""))))
+            .setBackTexture(new ImageTexture().setUrl(new MFString("\"../resources/images/bBK.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBK.png\"")))
+            .setBottomTexture(new ImageTexture().setUrl(new MFString("\"../resources/images/bBT.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBT.png\"")))
+            .setFrontTexture(new ImageTexture().setUrl(new MFString("\"../resources/images/bFR.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/bFR.png\"")))
+            .setLeftTexture(new ImageTexture().setUrl(new MFString("\"../resources/images/bLF.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/bLF.png\"")))
+            .setRightTexture(new ImageTexture().setUrl(new MFString("\"../resources/images/bRT.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/bRT.png\"")))
+            .setTopTexture(new ImageTexture().setUrl(new MFString("\"../resources/images/bTP.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/bTP.png\""))))
           .addShaders(new ComposedShader().setLanguage("GLSL")
             .addField(new field().setName("chromaticDispertion").setType("SFVec3f").setAccessType("inputOutput").setValue("0.98 1 1.033"))
             .addField(new field().setName("cube").setType("SFNode").setAccessType("inputOutput")
-              .addChild(new ComposedCubeMapTexture()))
+              .addChild(new ComposedCubeMapTexture().setUSE("texture")))
             .addField(new field().setName("bias").setType("SFFloat").setAccessType("inputOutput").setValue("0.5"))
             .addField(new field().setName("scale").setType("SFFloat").setAccessType("inputOutput").setValue("0.5"))
             .addField(new field().setName("power").setType("SFFloat").setAccessType("inputOutput").setValue("2"))
@@ -109,7 +109,7 @@ geo.prototype = {
           .addShaders(new ComposedShader().setLanguage("GLSL")
             .addField(new field().setName("chromaticDispertion").setType("SFVec3f").setAccessType("initializeOnly").setValue("0.98 1 1.033"))
             .addField(new field().setName("cube").setType("SFNode").setAccessType("initializeOnly")
-              .addChild(new ComposedCubeMapTexture()))
+              .addChild(new ComposedCubeMapTexture().setUSE("texture")))
             .addField(new field().setName("bias").setType("SFFloat").setAccessType("initializeOnly").setValue("0.5"))
             .addField(new field().setName("scale").setType("SFFloat").setAccessType("initializeOnly").setValue("0.5"))
             .addField(new field().setName("power").setType("SFFloat").setAccessType("initializeOnly").setValue("2"))
@@ -147,14 +147,14 @@ geo.prototype = {
 		// first list informational meta elements of interest
 		var metaList = this.getX3dModel().getHead().getMetaList();
 		for (var m in metaList) {
-			meta = metaList[m];
-			if (meta.getName().equals(meta.NAME_ERROR) ||
-				meta.getName().equals(meta.NAME_WARNING) ||
-				meta.getName().equals(meta.NAME_HINT) ||
-				meta.getName().equals(meta.NAME_INFO) ||
-				meta.getName().equals(meta.NAME_TODO))
+			var metaObject = metaList[m];
+			if (metaObject.getName() === metaObject.NAME_ERROR ||
+				metaObject.getName() === metaObject.NAME_WARNING ||
+				metaObject.getName() === metaObject.NAME_HINT ||
+				metaObject.getName() === metaObject.NAME_INFO ||
+				metaObject.getName() === metaObject.NAME_TODO)
 			{
-				metaResult += meta.toStringX3D();
+				metaResult += metaObject.toStringX3D();
 			}
 		}
 		validationResult += this.x3dModel.validate(); // walk entire tree to validate correctness

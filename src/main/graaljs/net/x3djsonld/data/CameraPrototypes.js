@@ -559,13 +559,13 @@ CameraPrototypes.prototype = {
           .addField(new field().setName("offlineRender").setType("SFNode").setAccessType("inputOutput").setAppinfo("OfflineRender node")
             .addComments(" initialization node (if any) goes here "))
           .addField(new field().setName("ViewpointNode").setType("SFNode").setAccessType("initializeOnly").setAppinfo("node reference to permit getting setting fields from within Script")
-            .addChild(new Viewpoint()))
+            .addChild(new Viewpoint().setUSE("CameraViewpoint")))
           .addField(new field().setName("NavInfoNode").setType("SFNode").setAccessType("initializeOnly").setAppinfo("node reference to permit getting setting fields from within Script")
-            .addChild(new NavigationInfo()))
+            .addChild(new NavigationInfo().setUSE("CameraNavInfo")))
           .addField(new field().setName("CameraPI").setType("SFNode").setAccessType("initializeOnly").setAppinfo("node reference to permit getting setting fields from within Script")
-            .addChild(new PositionInterpolator()))
+            .addChild(new PositionInterpolator().setUSE("CameraPositionInterpolator")))
           .addField(new field().setName("CameraOI").setType("SFNode").setAccessType("initializeOnly").setAppinfo("node reference to permit getting setting fields from within Script")
-            .addChild(new OrientationInterpolator()))
+            .addChild(new OrientationInterpolator().setUSE("CameraOrientationInterpolator")))
           .addField(new field().setName("key").setType("MFFloat").setAccessType("inputOutput").setAppinfo("key array for interpolators"))
           .addField(new field().setName("keyValuePosition").setType("MFVec3f").setAccessType("inputOutput").setAppinfo("keyValue array for PositionInterpolator"))
           .addField(new field().setName("keyValueOrientation").setType("MFRotation").setAccessType("inputOutput").setAppinfo("keyValue array for OrientationInterpolator"))
@@ -1019,14 +1019,14 @@ CameraPrototypes.prototype = {
 		// first list informational meta elements of interest
 		var metaList = this.getX3dModel().getHead().getMetaList();
 		for (var m in metaList) {
-			meta = metaList[m];
-			if (meta.getName().equals(meta.NAME_ERROR) ||
-				meta.getName().equals(meta.NAME_WARNING) ||
-				meta.getName().equals(meta.NAME_HINT) ||
-				meta.getName().equals(meta.NAME_INFO) ||
-				meta.getName().equals(meta.NAME_TODO))
+			var metaObject = metaList[m];
+			if (metaObject.getName() === metaObject.NAME_ERROR ||
+				metaObject.getName() === metaObject.NAME_WARNING ||
+				metaObject.getName() === metaObject.NAME_HINT ||
+				metaObject.getName() === metaObject.NAME_INFO ||
+				metaObject.getName() === metaObject.NAME_TODO)
 			{
-				metaResult += meta.toStringX3D();
+				metaResult += metaObject.toStringX3D();
 			}
 		}
 		validationResult += this.x3dModel.validate(); // walk entire tree to validate correctness

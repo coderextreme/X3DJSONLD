@@ -146,17 +146,17 @@ CADPartChildNoTransformation.prototype = {
           .setShape(new Shape()
             .addComments(" note solid='false' and so two-sided internal + external rendering ")
             .setGeometry(new Cylinder().setBottom(false).setHeight(3).setSolid(false).setTop(false))
-            .setAppearance(new Appearance())))
+            .setAppearance(new Appearance().setUSE("AppearanceGrey"))))
         .addChild(new CADFace().setName("topCap")
           .setShape(new Shape()
             .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(this.IndexedTriangleSet_7_27_index).setNormalPerVertex(true).setSolid(true)
               .setCoord(new Coordinate().setPoint(this.Coordinate_8_27_point)))
-            .setAppearance(new Appearance())))
+            .setAppearance(new Appearance().setUSE("AppearanceGrey"))))
         .addChild(new CADFace().setName("bottomCap")
           .setShape(new Shape()
             .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(this.IndexedTriangleSet_7_32_index).setNormalPerVertex(true).setSolid(true)
               .setCoord(new Coordinate().setPoint(this.Coordinate_8_32_point)))
-            .setAppearance(new Appearance()))))));
+            .setAppearance(new Appearance().setUSE("AppearanceGrey")))))));
   },
   // end of initialize() method
 
@@ -189,14 +189,14 @@ CADPartChildNoTransformation.prototype = {
 		// first list informational meta elements of interest
 		var metaList = this.getX3dModel().getHead().getMetaList();
 		for (var m in metaList) {
-			meta = metaList[m];
-			if (meta.getName().equals(meta.NAME_ERROR) ||
-				meta.getName().equals(meta.NAME_WARNING) ||
-				meta.getName().equals(meta.NAME_HINT) ||
-				meta.getName().equals(meta.NAME_INFO) ||
-				meta.getName().equals(meta.NAME_TODO))
+			var metaObject = metaList[m];
+			if (metaObject.getName() === metaObject.NAME_ERROR ||
+				metaObject.getName() === metaObject.NAME_WARNING ||
+				metaObject.getName() === metaObject.NAME_HINT ||
+				metaObject.getName() === metaObject.NAME_INFO ||
+				metaObject.getName() === metaObject.NAME_TODO)
 			{
-				metaResult += meta.toStringX3D();
+				metaResult += metaObject.toStringX3D();
 			}
 		}
 		validationResult += this.x3dModel.validate(); // walk entire tree to validate correctness

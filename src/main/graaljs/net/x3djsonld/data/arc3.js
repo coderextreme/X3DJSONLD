@@ -175,13 +175,13 @@ arc3.prototype = {
 "            recompute_and_route(startnode.translation,val);" + "\n" + 
 "        }" + "\n")
         .addField(new field().setName("startnode").setType("SFNode").setAccessType("initializeOnly")
-          .addChild(new Group()))
+          .addChild(new Group().setUSE("DECLpoint_G1_node")))
         .addField(new field().setName("endnode").setType("SFNode").setAccessType("initializeOnly")
-          .addChild(new Group()))
+          .addChild(new Group().setUSE("DECLpoint_G2_node")))
         .addField(new field().setName("position").setType("SFNode").setAccessType("inputOutput")
-          .addChild(new Transform()))
+          .addChild(new Transform().setUSE("DECLx3dconnector_connector1_trans")))
         .addField(new field().setName("rotscale").setType("SFNode").setAccessType("inputOutput")
-          .addChild(new Transform()))
+          .addChild(new Transform().setUSE("DECLx3dconnector_connector1_rotscale")))
         .addField(new field().setName("set_startpoint").setType("SFVec3f").setAccessType("inputOnly"))
         .addField(new field().setName("set_endpoint").setType("SFVec3f").setAccessType("inputOnly"))))
     .addChild(new ROUTE().setFromNode("DECLpoint_G1_node").setFromField("translation").setToNode("DECLx3dconnector_connector1_S1").setToField("set_startpoint"))
@@ -218,14 +218,14 @@ arc3.prototype = {
 		// first list informational meta elements of interest
 		var metaList = this.getX3dModel().getHead().getMetaList();
 		for (var m in metaList) {
-			meta = metaList[m];
-			if (meta.getName().equals(meta.NAME_ERROR) ||
-				meta.getName().equals(meta.NAME_WARNING) ||
-				meta.getName().equals(meta.NAME_HINT) ||
-				meta.getName().equals(meta.NAME_INFO) ||
-				meta.getName().equals(meta.NAME_TODO))
+			var metaObject = metaList[m];
+			if (metaObject.getName() === metaObject.NAME_ERROR ||
+				metaObject.getName() === metaObject.NAME_WARNING ||
+				metaObject.getName() === metaObject.NAME_HINT ||
+				metaObject.getName() === metaObject.NAME_INFO ||
+				metaObject.getName() === metaObject.NAME_TODO)
 			{
-				metaResult += meta.toStringX3D();
+				metaResult += metaObject.toStringX3D();
 			}
 		}
 		validationResult += this.x3dModel.validate(); // walk entire tree to validate correctness

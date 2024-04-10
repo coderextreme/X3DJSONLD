@@ -190,36 +190,36 @@ CameraShape.prototype = {
         .addChild(new Shape()
           .setGeometry(new IndexedFaceSet("pCylinder1_0Geo").setDEF("pCylinder1_0Geo").setConvex(false).setCreaseAngle(0.7854).setCoordIndex(this.pCylinder1_0Geo_6_22_coordIndex)
             .setCoord(new Coordinate("pCylinder1GeoPoints").setPoint(this.pCylinder1GeoPoints_7_22_point)))
-          .setAppearance(new Appearance()))
+          .setAppearance(new Appearance().setUSE("CameraAppearance")))
         .addChild(new Shape()
           .setGeometry(new IndexedFaceSet("pCube1_0Geo").setDEF("pCube1_0Geo").setConvex(false).setCreaseAngle(0.7854).setCoordIndex(this.pCube1_0Geo_6_26_coordIndex)
             .setCoord(new Coordinate("pCube1GeoPoints").setPoint(this.pCube1GeoPoints_7_26_point)))
-          .setAppearance(new Appearance()))
+          .setAppearance(new Appearance().setUSE("CameraAppearance")))
         .addChild(new Shape()
           .setGeometry(new IndexedFaceSet("pPipe1_0Geo").setDEF("pPipe1_0Geo").setConvex(false).setCreaseAngle(0.7854).setCoordIndex(this.pPipe1_0Geo_6_30_coordIndex)
             .setCoord(new Coordinate("pPipe1GeoPoints").setPoint(this.pPipe1GeoPoints_7_30_point)))
-          .setAppearance(new Appearance()))
+          .setAppearance(new Appearance().setUSE("CameraAppearance")))
         .addChild(new Shape()
           .setGeometry(new IndexedFaceSet("pSphere1_0Geo").setDEF("pSphere1_0Geo").setConvex(false).setCreaseAngle(0.7854).setCoordIndex(this.pSphere1_0Geo_6_34_coordIndex)
             .setCoord(new Coordinate("pSphere1GeoPoints").setPoint(this.pSphere1GeoPoints_7_34_point)))
-          .setAppearance(new Appearance())))
+          .setAppearance(new Appearance().setUSE("CameraAppearance"))))
       .addChild(new Group()
         .addChild(new Transform("pCylinder1").setRotation(doubleToFloat(-1.0),doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.373518)).setTranslation(doubleToFloat(-0.038462),doubleToFloat(3.596312),doubleToFloat(3.297562))
           .addChild(new Shape()
-            .setAppearance(new Appearance())
-            .setGeometry(new IndexedFaceSet())))
+            .setAppearance(new Appearance().setUSE("CameraAppearance"))
+            .setGeometry(new IndexedFaceSet().setUSE("pCylinder1_0Geo"))))
         .addChild(new Transform("pCube1").setScale(doubleToFloat(1.0),doubleToFloat(0.727134),doubleToFloat(0.801457)).setTranslation(doubleToFloat(-0.030769),doubleToFloat(1.738461),doubleToFloat(1.4436))
           .addChild(new Shape()
-            .setAppearance(new Appearance())
-            .setGeometry(new IndexedFaceSet())))
+            .setAppearance(new Appearance().setUSE("CameraAppearance"))
+            .setGeometry(new IndexedFaceSet().setUSE("pCube1_0Geo"))))
         .addChild(new Transform("pPipe1").setScale(doubleToFloat(1.0),doubleToFloat(1.0),doubleToFloat(0.569444)).setTranslation(doubleToFloat(0.015385),doubleToFloat(1.630769),doubleToFloat(-1.973274))
           .addChild(new Shape()
-            .setAppearance(new Appearance())
-            .setGeometry(new IndexedFaceSet())))
+            .setAppearance(new Appearance().setUSE("CameraAppearance"))
+            .setGeometry(new IndexedFaceSet().setUSE("pPipe1_0Geo"))))
         .addChild(new Transform("pSphere1").setScale(doubleToFloat(1.1),doubleToFloat(1.1),doubleToFloat(0.1)).setTranslation(doubleToFloat(-0.015385),doubleToFloat(1.628515),doubleToFloat(-2.569231))
           .addChild(new Shape()
-            .setAppearance(new Appearance())
-            .setGeometry(new IndexedFaceSet()))))));
+            .setAppearance(new Appearance().setUSE("CameraAppearance"))
+            .setGeometry(new IndexedFaceSet().setUSE("pSphere1_0Geo")))))));
   },
   // end of initialize() method
 
@@ -252,14 +252,14 @@ CameraShape.prototype = {
 		// first list informational meta elements of interest
 		var metaList = this.getX3dModel().getHead().getMetaList();
 		for (var m in metaList) {
-			meta = metaList[m];
-			if (meta.getName().equals(meta.NAME_ERROR) ||
-				meta.getName().equals(meta.NAME_WARNING) ||
-				meta.getName().equals(meta.NAME_HINT) ||
-				meta.getName().equals(meta.NAME_INFO) ||
-				meta.getName().equals(meta.NAME_TODO))
+			var metaObject = metaList[m];
+			if (metaObject.getName() === metaObject.NAME_ERROR ||
+				metaObject.getName() === metaObject.NAME_WARNING ||
+				metaObject.getName() === metaObject.NAME_HINT ||
+				metaObject.getName() === metaObject.NAME_INFO ||
+				metaObject.getName() === metaObject.NAME_TODO)
 			{
-				metaResult += meta.toStringX3D();
+				metaResult += metaObject.toStringX3D();
 			}
 		}
 		validationResult += this.x3dModel.validate(); // walk entire tree to validate correctness
