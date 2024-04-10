@@ -61,7 +61,7 @@ protected static class ExitException extends SecurityException
     }
    */
 
-	public static void main(String args[]) {
+	public static void main(String args[]) throws URISyntaxException, MalformedURLException, IOException {
 		try {
 			String stylesheet = "src/main/lib/stylesheets/X3dToJson.xslt";
 			String extension = "json";
@@ -112,7 +112,7 @@ protected static class ExitException extends SecurityException
 						*/
 
 						System.err.println("URL is "+source);
-						URL u = new URL(source);
+						URL u = new URI(source).toURL();
 						if (source.indexOf("https://") == 0) {
 							source = "C:/x3d-code/"+source.substring(8);
 						} else if (source.indexOf("http://") == 0) {
@@ -133,7 +133,7 @@ protected static class ExitException extends SecurityException
 								bw.println(line);
 							}
 						} catch (IOException ioe) {
-							ioe.printStackTrace();
+							ioe.printStackTrace(System.err);
 						} finally {
 							if (br != null) {
 								br.close();
@@ -153,6 +153,11 @@ protected static class ExitException extends SecurityException
 						}
 						net.sf.saxon.Transform.main(new String[] {
 									"-warnings:recover",
+									"-dtd:off",
+									/*
+									"-xsd:C:/x3d-code/www.web3d.org/specifications/x3d-4.0.xsd",
+									*/
+									"-expand:on",
 									"-o:"+out,
 									"-s:"+source,
 									"-xsl:"+stylesheet,
@@ -172,6 +177,11 @@ protected static class ExitException extends SecurityException
 						}
 						net.sf.saxon.Transform.main(new String[] {
 									"-warnings:recover",
+									"-dtd:off",
+									/*
+									"-xsd:C:/x3d-code/www.web3d.org/specifications/x3d-4.0.xsd",
+									*/
+									"-expand:on",
 									"-o:"+out,
 									"-s:"+source,
 									"-xsl:"+stylesheet,
@@ -191,12 +201,12 @@ protected static class ExitException extends SecurityException
 					}
 				} catch (Throwable e) {
 					System.err.println("FATAL "+source+" > "+out);
-					e.printStackTrace();
+					e.printStackTrace(System.err);
 				}
 			}
 			//System.setSecurityManager(null); // or save and restore original
 		} catch (ExitException ee) {
-			ee.printStackTrace();
+			ee.printStackTrace(System.err);
 		}
 	}
 }

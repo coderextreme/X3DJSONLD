@@ -131,21 +131,13 @@ import org.web3d.x3d.jsail.Shape.*;
 	* @author Matthew T. Beitler
  */
 
-import net.coderextreme.X3DRoots;
-import java.util.List;
-import java.util.ArrayList;
-public class DiamondManLOA0patched2 implements X3DRoots
+public class DiamondManLOA0patched2
 {
 	/** Default constructor to create this object. */
 	public DiamondManLOA0patched2 ()
 	{
 	  initialize();
 	}
-        public List<X3D> getRootNodeList() {
-                List<X3D> list = new ArrayList<X3D>(1);
-                list.add(x3dModel);
-                return list;
-        }
 
 	/** Create and initialize the X3D model for this object. */
 	public final void initialize()
@@ -190,8 +182,8 @@ public class DiamondManLOA0patched2 implements X3DRoots
         .setMetadata(new MetadataString().setName("creationDate").setValue(new String[] {"05/12/99"}))
         .setMetadata(new MetadataString().setName("humanoidVersion").setValue(new String[] {"JointCenters 1.1 LOA0"}))
         .setMetadata(new MetadataString().setName("usageRestrictions").setValue(new String[] {"PERMISSION TO FULLY USE THIS SCENE GRAPH IS GRANTED PROVIDED THIS COPYRIGHT INFORMATION AND DOCUMENTATION OF THE ORIGINAL AUTHOR IS INCLUDED. This humanoid scene graph is provided _as-is_ and without warranty of any kind express implied or otherwise including without limitation any warranty of merchantability or fitness for a particular purpose."})))
-      .addSkeleton(new HAnimJoint("hanim_humanoid_root").setName("humanoid_root").setCenter(0.0,0.8240,0.0277).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
-        .addChild(new HAnimJoint("hanim_sacroiliac").setName("sacroiliac").setCenter(0.0,0.9149,0.0016).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
+      .addSkeleton(new HAnimJoint("hanim_humanoid_root").setName("humanoid_root").setCenter(0.0,0.8240,0.0277)
+        .addChild(new HAnimJoint("hanim_sacroiliac").setName("sacroiliac").setCenter(0.0,0.9149,0.0016)
           .addChild(new HAnimSegment("hanim_pelvis").setName("pelvis")
             .addChild(new Transform().setTranslation(0.0,0.9149,0.0016)
               .addChild(new Shape("DiamondShape")

@@ -104,21 +104,13 @@ import org.web3d.x3d.jsail.Texturing.*;
 	* @author Jin Hoon Lee and Min Joo Lee
  */
 
-import net.coderextreme.X3DRoots;
-import java.util.List;
-import java.util.ArrayList;
-public class KoreanCharacter07No implements X3DRoots
+public class KoreanCharacter07No
 {
 	/** Default constructor to create this object. */
 	public KoreanCharacter07No ()
 	{
 	  initialize();
 	}
-        public List<X3D> getRootNodeList() {
-                List<X3D> list = new ArrayList<X3D>(1);
-                list.add(x3dModel);
-                return list;
-        }
 
 	/** Create and initialize the X3D model for this object. */
 	public final void initialize()
@@ -156,7 +148,7 @@ public class KoreanCharacter07No implements X3DRoots
         .setMetadata(new MetadataString().setName("gender").setValue(new String[] {"male"}))
         .setMetadata(new MetadataFloat().setName("height").setValue(new double[] {1.5}))
         .setMetadata(new MetadataString().setName("humanoidVersion").setValue(new String[] {"2.0"})))
-      .addSkeleton(new HAnimJoint("hanim_humanoid_root").setName("humanoid_root").setCenter(0.0,34.790001,-1.299000).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
+      .addSkeleton(new HAnimJoint("hanim_humanoid_root").setName("humanoid_root").setCenter(0.0,34.790001,-1.299000)
         .addChild(new HAnimSegment("hanim_sacrum").setName("sacrum")
           .addChild(new Transform().setTranslation(0.0,34.790001,-1.299000)
             .addChild(new Shape()
@@ -166,7 +158,7 @@ public class KoreanCharacter07No implements X3DRoots
               .setGeometry(new IndexedFaceSet().setCreaseAngle(1.57).setCoordIndex(getIndexedFaceSet_8_32_coordIndex()).setTexCoordIndex(getIndexedFaceSet_8_32_texCoordIndex())
                 .setCoord(new Coordinate().setPoint(getCoordinate_9_32_point()))
                 .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.8186,0.5634,0.8987,0.5617,0.8871,0.5617,0.8526,0.5606,0.8181,0.5606,0.8160,0.5609,0.7815,0.5609,0.7188,0.5606,0.7815,0.5609,0.8160,0.5609,0.8181,0.5606,0.8526,0.5606,0.8871,0.5617,0.9077,0.5435,0.8943,0.5435,0.8566,0.5187,0.8190,0.4986,0.8158,0.4991,0.7835,0.5089,0.7188,0.5435,0.7835,0.5089,0.8158,0.4991,0.8190,0.4986,0.8566,0.5187,0.8943,0.5435,0.9017,0.4799,0.8882,0.4799,0.8592,0.4741,0.8178,0.4732,0.8155,0.4732,0.7814,0.4765,0.7186,0.5235,0.7814,0.4765,0.8155,0.4732,0.8178,0.4732,0.8592,0.4741,0.8882,0.4799,0.9035,0.4666,0.8895,0.4666,0.8545,0.4604,0.8198,0.4629,0.8161,0.4629,0.7809,0.4670,0.7185,0.5036,0.7809,0.4670,0.8161,0.4629,0.8198,0.4629,0.8545,0.4604,0.8895,0.4666,0.9004,0.4510,0.8882,0.4510,0.8562,0.4537,0.8211,0.4537,0.8228,0.4535,0.7785,0.4535,0.7195,0.4721,0.7785,0.4535,0.8228,0.4535,0.8211,0.4537,0.8562,0.4537,0.8882,0.4510,0.8199,0.4484})))))))
-        .addChild(new HAnimJoint("hanim_l_hip").setName("l_hip").setCenter(3.785000,34.070000,-1.570000).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
+        .addChild(new HAnimJoint("hanim_l_hip").setName("l_hip").setCenter(3.785000,34.070000,-1.570000)
           .addChild(new HAnimSegment("hanim_l_thigh").setName("l_thigh")
             .addChild(new Transform().setTranslation(3.785000,34.070000,-1.570000)
               .addChild(new Shape()
@@ -176,7 +168,7 @@ public class KoreanCharacter07No implements X3DRoots
                 .setGeometry(new IndexedFaceSet().setCreaseAngle(1.57).setCoordIndex(getIndexedFaceSet_9_41_coordIndex()).setTexCoordIndex(getIndexedFaceSet_9_41_texCoordIndex())
                   .setCoord(new Coordinate().setPoint(getCoordinate_10_41_point()))
                   .setTexCoord(new TextureCoordinate().setPoint(getTextureCoordinate_10_42_point()))))))
-          .addChild(new HAnimJoint("hanim_l_knee").setName("l_knee").setCenter(3.838000,18.400000,-1.212000).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
+          .addChild(new HAnimJoint("hanim_l_knee").setName("l_knee").setCenter(3.838000,18.400000,-1.212000)
             .addChild(new HAnimSegment("hanim_l_calf").setName("l_calf")
               .addChild(new Transform().setTranslation(3.838000,18.400000,-1.212000)
                 .addChild(new Shape()
@@ -186,7 +178,7 @@ public class KoreanCharacter07No implements X3DRoots
                   .setGeometry(new IndexedFaceSet().setCreaseAngle(1.57).setCoordIndex(getIndexedFaceSet_10_50_coordIndex()).setTexCoordIndex(getIndexedFaceSet_10_50_texCoordIndex())
                     .setCoord(new Coordinate().setPoint(getCoordinate_11_50_point()))
                     .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.9320,0.0281,0.9375,0.0382,0.9285,0.0402,0.9254,0.0312,0.9374,0.0240,0.9462,0.0354,0.8988,0.0252,0.8904,0.0380,0.8808,0.0336,0.8942,0.0184,0.9057,0.0303,0.9022,0.0409,0.9104,0.0324,0.9093,0.0416,0.9182,0.0316,0.9191,0.0408,0.9517,0.1696,0.9373,0.1675,0.9627,0.1723,0.8764,0.1822,0.8889,0.1769,0.9037,0.1713,0.9136,0.1687,0.9236,0.1679,0.9644,0.1089,0.9758,0.1044,0.9513,0.1129,0.9366,0.1157,0.8810,0.1091,0.8973,0.1096,0.9098,0.1121,0.9231,0.1139,0.9177,0.0179,0.9548,0.0300,0.9408,0.0161,0.9745,0.1762,0.8679,0.1104,0.9373,0.1675,0.9517,0.1696,0.9627,0.1723,0.8889,0.1769,0.9037,0.1713,0.9136,0.1687,0.9236,0.1679,0.9745,0.1762,0.8764,0.1822,0.9373,0.1675,0.9517,0.1696,0.9627,0.1723,0.9745,0.1762,0.8889,0.1769,0.9037,0.1713,0.9136,0.1687,0.9236,0.1679,0.9320,0.1713})))))))
-            .addChild(new HAnimJoint("hanim_l_talocrural").setName("l_talocrural").setCenter(3.826000,4.044000,-1.361000).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
+            .addChild(new HAnimJoint("hanim_l_talocrural").setName("l_talocrural").setCenter(3.826000,4.044000,-1.361000)
               .addChild(new HAnimSegment("hanim_l_talus").setName("l_talus")
                 .addChild(new Transform().setTranslation(3.826000,4.044000,-1.361000)
                   .addChild(new Shape()
@@ -196,7 +188,7 @@ public class KoreanCharacter07No implements X3DRoots
                     .setGeometry(new IndexedFaceSet().setCreaseAngle(1.57).setCoordIndex(getIndexedFaceSet_11_59_coordIndex()).setTexCoordIndex(getIndexedFaceSet_11_59_texCoordIndex())
                       .setCoord(new Coordinate().setPoint(getCoordinate_12_59_point()))
                       .setTexCoord(new TextureCoordinate().setPoint(getTextureCoordinate_12_60_point()))))))
-              .addChild(new HAnimJoint("hanim_l_metatarsophalangeal_2").setName("l_metatarsophalangeal_2").setCenter(3.826000,3.118000,-0.286700).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
+              .addChild(new HAnimJoint("hanim_l_metatarsophalangeal_2").setName("l_metatarsophalangeal_2").setCenter(3.826000,3.118000,-0.286700)
                 .addChild(new HAnimSegment("hanim_l_tarsal_proximal_phalanx_2").setName("l_tarsal_proximal_phalanx_2")
                   .addChild(new Transform().setTranslation(3.826000,3.118000,-0.286700)
                     .addChild(new Shape()
@@ -206,7 +198,7 @@ public class KoreanCharacter07No implements X3DRoots
                       .setGeometry(new IndexedFaceSet().setCreaseAngle(1.57).setCoordIndex(getIndexedFaceSet_12_68_coordIndex()).setTexCoordIndex(getIndexedFaceSet_12_68_texCoordIndex())
                         .setCoord(new Coordinate().setPoint(getCoordinate_13_68_point()))
                         .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.5046,0.9061,0.4664,0.9061,0.3813,0.8655,0.3794,0.8893,0.3680,0.8690,0.3703,0.8986,0.3591,0.8766,0.3794,0.8891,0.3680,0.8691,0.4666,0.8883,0.5046,0.8883,0.5509,0.9061,0.3967,0.9630,0.3877,0.9702,0.5620,0.9285,0.5046,0.9285,0.4059,0.9781,0.4144,0.9660,0.4542,0.9285,0.5657,0.9535,0.5046,0.9535,0.4506,0.9535,0.5561,0.9717,0.3970,0.9616,0.4144,0.9660,0.4224,0.8577,0.4263,0.8811,0.4134,0.9791,0.4208,0.9685,0.4208,0.9685,0.4291,0.8577,0.4329,0.8811,0.3769,0.9239,0.3855,0.9182,0.3855,0.9183,0.5020,0.9815,0.4591,0.9717,0.4263,0.8811,0.4263,0.9104,0.4263,0.9104,0.5498,0.8883,0.4329,0.8811,0.4329,0.9104,0.4329,0.9104,0.3843,0.9558,0.3913,0.9496,0.4741,0.8664,0.5046,0.8664,0.4263,0.9431,0.3913,0.9494,0.4263,0.9431,0.4329,0.9431,0.4329,0.9431,0.3813,0.8654,0.4224,0.8577,0.4291,0.8577,0.3704,0.8386,0.3800,0.8357,0.4179,0.8293,0.4204,0.8297,0.4204,0.8297,0.4204,0.8297,0.4179,0.8293,0.3800,0.8357,0.3704,0.8386,0.3666,0.8532,0.4291,0.8577})))))))))))
-        .addChild(new HAnimJoint("hanim_r_hip").setName("r_hip").setCenter(-3.785000,34.070000,-1.570000).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
+        .addChild(new HAnimJoint("hanim_r_hip").setName("r_hip").setCenter(-3.785000,34.070000,-1.570000)
           .addChild(new HAnimSegment("hanim_r_thigh").setName("r_thigh")
             .addChild(new Transform().setTranslation(-3.785000,34.070000,-1.570000)
               .addChild(new Shape()
@@ -216,7 +208,7 @@ public class KoreanCharacter07No implements X3DRoots
                 .setGeometry(new IndexedFaceSet().setCreaseAngle(1.57).setCoordIndex(getIndexedFaceSet_9_81_coordIndex()).setTexCoordIndex(getIndexedFaceSet_9_81_texCoordIndex())
                   .setCoord(new Coordinate().setPoint(getCoordinate_10_81_point()))
                   .setTexCoord(new TextureCoordinate().setPoint(getTextureCoordinate_10_82_point()))))))
-          .addChild(new HAnimJoint("hanim_r_knee").setName("r_knee").setCenter(-3.838000,18.400000,-1.212000).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
+          .addChild(new HAnimJoint("hanim_r_knee").setName("r_knee").setCenter(-3.838000,18.400000,-1.212000)
             .addChild(new HAnimSegment("hanim_r_calf").setName("r_calf")
               .addChild(new Transform().setTranslation(-3.838000,18.400000,-1.212000)
                 .addChild(new Shape()
@@ -226,7 +218,7 @@ public class KoreanCharacter07No implements X3DRoots
                   .setGeometry(new IndexedFaceSet().setCreaseAngle(1.57).setCoordIndex(getIndexedFaceSet_10_90_coordIndex()).setTexCoordIndex(getIndexedFaceSet_10_90_texCoordIndex())
                     .setCoord(new Coordinate().setPoint(getCoordinate_11_90_point()))
                     .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.9320,0.0281,0.9375,0.0382,0.9285,0.0402,0.9254,0.0312,0.9374,0.0240,0.9462,0.0354,0.8988,0.0252,0.8904,0.0380,0.8808,0.0336,0.8942,0.0184,0.9057,0.0303,0.9022,0.0409,0.9104,0.0324,0.9093,0.0416,0.9182,0.0316,0.9191,0.0408,0.9517,0.1696,0.9373,0.1675,0.9627,0.1723,0.8764,0.1822,0.8889,0.1769,0.9037,0.1713,0.9136,0.1687,0.9236,0.1679,0.9644,0.1089,0.9758,0.1044,0.9513,0.1129,0.9366,0.1157,0.8810,0.1091,0.8973,0.1096,0.9098,0.1121,0.9231,0.1139,0.9177,0.0179,0.9548,0.0300,0.9408,0.0161,0.9745,0.1762,0.8679,0.1104,0.9373,0.1675,0.9517,0.1696,0.9627,0.1723,0.8889,0.1769,0.9037,0.1713,0.9136,0.1687,0.9236,0.1679,0.9745,0.1762,0.8764,0.1822,0.9373,0.1675,0.9517,0.1696,0.9627,0.1723,0.9745,0.1762,0.8889,0.1769,0.9037,0.1713,0.9136,0.1687,0.9236,0.1679,0.9320,0.1713})))))))
-            .addChild(new HAnimJoint("hanim_r_talocrural").setName("r_talocrural").setCenter(-3.826000,4.044000,-1.361000).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
+            .addChild(new HAnimJoint("hanim_r_talocrural").setName("r_talocrural").setCenter(-3.826000,4.044000,-1.361000)
               .addChild(new HAnimSegment("hanim_r_talus").setName("r_talus")
                 .addChild(new Transform().setTranslation(-3.826000,4.044000,-1.361000)
                   .addChild(new Shape()
@@ -236,7 +228,7 @@ public class KoreanCharacter07No implements X3DRoots
                     .setGeometry(new IndexedFaceSet().setCreaseAngle(1.57).setCoordIndex(getIndexedFaceSet_11_99_coordIndex()).setTexCoordIndex(getIndexedFaceSet_11_99_texCoordIndex())
                       .setCoord(new Coordinate().setPoint(getCoordinate_12_99_point()))
                       .setTexCoord(new TextureCoordinate().setPoint(getTextureCoordinate_12_100_point()))))))
-              .addChild(new HAnimJoint("hanim_r_metatarsophalangeal_2").setName("r_metatarsophalangeal_2").setCenter(-3.826000,3.118000,-0.286700).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
+              .addChild(new HAnimJoint("hanim_r_metatarsophalangeal_2").setName("r_metatarsophalangeal_2").setCenter(-3.826000,3.118000,-0.286700)
                 .addChild(new HAnimSegment("hanim_r_tarsal_proximal_phalanx_2").setName("r_tarsal_proximal_phalanx_2")
                   .addChild(new Transform().setTranslation(-3.826000,3.118000,-0.286700)
                     .addChild(new Shape()
@@ -246,7 +238,7 @@ public class KoreanCharacter07No implements X3DRoots
                       .setGeometry(new IndexedFaceSet().setCreaseAngle(1.57).setCoordIndex(getIndexedFaceSet_12_108_coordIndex()).setTexCoordIndex(getIndexedFaceSet_12_108_texCoordIndex())
                         .setCoord(new Coordinate().setPoint(getCoordinate_13_108_point()))
                         .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.5046,0.9061,0.4664,0.9061,0.3813,0.8655,0.3794,0.8893,0.3680,0.8690,0.3703,0.8986,0.3591,0.8766,0.3794,0.8891,0.3680,0.8691,0.4666,0.8883,0.5046,0.8883,0.5509,0.9061,0.3967,0.9630,0.3877,0.9702,0.5620,0.9285,0.5046,0.9285,0.4059,0.9781,0.4144,0.9660,0.4542,0.9285,0.5657,0.9535,0.5046,0.9535,0.4506,0.9535,0.5561,0.9717,0.3970,0.9616,0.4144,0.9660,0.4224,0.8577,0.4263,0.8811,0.4134,0.9791,0.4208,0.9685,0.4208,0.9685,0.4291,0.8577,0.4329,0.8811,0.3769,0.9239,0.3855,0.9182,0.3855,0.9183,0.5020,0.9815,0.4591,0.9717,0.4263,0.8811,0.4263,0.9104,0.4263,0.9104,0.5498,0.8883,0.4329,0.8811,0.4329,0.9104,0.4329,0.9104,0.3843,0.9558,0.3913,0.9496,0.4741,0.8664,0.5046,0.8664,0.4263,0.9431,0.3913,0.9494,0.4263,0.9431,0.4329,0.9431,0.4329,0.9431,0.3813,0.8654,0.4224,0.8577,0.4291,0.8577,0.3704,0.8386,0.3800,0.8357,0.4179,0.8293,0.4204,0.8297,0.4204,0.8297,0.4204,0.8297,0.4179,0.8293,0.3800,0.8357,0.3704,0.8386,0.3666,0.8532,0.4291,0.8577})))))))))))
-        .addChild(new HAnimJoint("hanim_sacroiliac").setName("sacroiliac").setCenter(0.0,32.910000,-1.570000).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
+        .addChild(new HAnimJoint("hanim_sacroiliac").setName("sacroiliac").setCenter(0.0,32.910000,-1.570000)
           .addChild(new HAnimSegment("hanim_pelvis").setName("pelvis")
             .addChild(new Transform().setTranslation(0.0,32.910000,-1.570000)
               .addChild(new Shape()
@@ -256,7 +248,7 @@ public class KoreanCharacter07No implements X3DRoots
                 .setGeometry(new IndexedFaceSet().setCreaseAngle(1.57).setCoordIndex(getIndexedFaceSet_9_121_coordIndex()).setTexCoordIndex(getIndexedFaceSet_9_121_texCoordIndex())
                   .setCoord(new Coordinate().setPoint(getCoordinate_10_121_point()))
                   .setTexCoord(new TextureCoordinate().setPoint(getTextureCoordinate_10_122_point()))))))
-          .addChild(new HAnimJoint("hanim_l_shoulder").setName("l_shoulder").setCenter(7.266000,54.049999,-1.790000).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
+          .addChild(new HAnimJoint("hanim_l_shoulder").setName("l_shoulder").setCenter(7.266000,54.049999,-1.790000)
             .addChild(new HAnimSegment("hanim_l_upperarm").setName("l_upperarm")
               .addChild(new Transform().setTranslation(7.266000,54.049999,-1.790000)
                 .addChild(new Shape()
@@ -266,7 +258,7 @@ public class KoreanCharacter07No implements X3DRoots
                   .setGeometry(new IndexedFaceSet().setCreaseAngle(1.57).setCoordIndex(getIndexedFaceSet_10_130_coordIndex()).setTexCoordIndex(getIndexedFaceSet_10_130_texCoordIndex())
                     .setCoord(new Coordinate().setPoint(getCoordinate_11_130_point()))
                     .setTexCoord(new TextureCoordinate().setPoint(getTextureCoordinate_11_131_point()))))))
-            .addChild(new HAnimJoint("hanim_l_elbow").setName("l_elbow").setCenter(7.834000,43.389999,-1.651000).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
+            .addChild(new HAnimJoint("hanim_l_elbow").setName("l_elbow").setCenter(7.834000,43.389999,-1.651000)
               .addChild(new HAnimSegment("hanim_l_forearm").setName("l_forearm")
                 .addChild(new Transform().setTranslation(7.834000,43.389999,-1.651000)
                   .addChild(new Shape()
@@ -276,7 +268,7 @@ public class KoreanCharacter07No implements X3DRoots
                     .setGeometry(new IndexedFaceSet().setCreaseAngle(1.57).setCoordIndex(new int[] {0,12,11,-1,11,4,0,-1,12,13,5,-1,5,11,12,-1,13,1,8,-1,8,5,13,-1,1,2,9,-1,9,8,1,-1,2,3,10,-1,10,9,2,-1,3,14,6,-1,6,10,3,-1,15,0,4,-1,4,7,15,-1,14,15,7,-1,7,6,14,-1,4,11,23,-1,23,16,4,-1,11,5,17,-1,17,23,11,-1,5,8,20,-1,20,17,5,-1,10,6,18,-1,18,22,10,-1,7,4,16,-1,16,19,7,-1,8,9,21,-1,21,20,8,-1,9,10,22,-1,22,21,9,-1,6,7,19,-1,19,18,6,-1,16,23,24,-1,23,17,24,-1,17,20,24,-1,20,21,24,-1,21,22,24,-1,22,18,24,-1,18,19,24,-1,19,16,24,-1,12,0,25,-1,25,29,12,-1,13,30,26,-1,26,1,13,-1,1,26,27,-1,27,2,1,-1,2,27,28,-1,28,3,2,-1,3,28,31,-1,31,14,3,-1,0,15,32,-1,32,25,0,-1,13,12,29,-1,29,30,13,-1,15,14,31,-1,31,32,15,-1,29,25,34,-1,34,33,29,-1,25,32,35,-1,35,34,25,-1,32,31,36,-1,36,35,32,-1,31,28,37,-1,37,36,31,-1,28,27,38,-1,38,37,28,-1,27,26,39,-1,39,38,27,-1,26,30,40,-1,40,39,26,-1,30,29,33,-1,33,40,30,-1,33,34,41,-1,34,35,41,-1,35,36,41,-1,36,37,41,-1,37,38,41,-1,38,39,41,-1,39,40,41,-1,40,33,41,-1}).setTexCoordIndex(new int[] {1,0,8,-1,8,9,1,-1,0,2,10,-1,10,8,0,-1,2,3,11,-1,11,10,2,-1,3,4,12,-1,12,11,3,-1,4,5,13,-1,13,12,4,-1,5,6,14,-1,14,13,5,-1,7,1,9,-1,9,15,7,-1,25,7,15,-1,15,26,25,-1,9,8,16,-1,16,17,9,-1,8,10,18,-1,18,16,8,-1,10,11,19,-1,19,18,10,-1,13,14,20,-1,20,21,13,-1,15,9,17,-1,17,22,15,-1,11,12,23,-1,23,19,11,-1,12,13,21,-1,21,23,12,-1,26,15,22,-1,22,27,26,-1,17,16,24,-1,16,18,24,-1,18,19,24,-1,19,23,24,-1,23,21,24,-1,21,20,24,-1,27,22,24,-1,22,17,24,-1,0,1,28,-1,28,32,0,-1,2,33,29,-1,29,3,2,-1,3,29,30,-1,30,4,3,-1,4,30,31,-1,31,5,4,-1,5,31,35,-1,35,6,5,-1,1,7,36,-1,36,28,1,-1,2,0,32,-1,32,33,2,-1,7,25,34,-1,34,36,7,-1,32,28,38,-1,38,37,32,-1,28,36,39,-1,39,38,28,-1,36,34,40,-1,40,39,36,-1,35,31,41,-1,41,40,35,-1,31,30,42,-1,42,41,31,-1,30,29,43,-1,43,42,30,-1,29,33,44,-1,44,43,29,-1,33,32,37,-1,37,44,33,-1,37,38,45,-1,38,39,45,-1,39,40,45,-1,40,41,45,-1,41,42,45,-1,42,43,45,-1,43,44,45,-1,44,37,45,-1})
                       .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-0.0407,-0.8376,-1.2210,0.7331,-0.5933,0.8017,-0.0176,-0.6645,1.1820,-0.7221,-0.7616,0.9014,-0.0602,-7.3600,-0.7594,0.7233,-7.3600,0.0564,-0.7878,-7.3600,0.0568,-0.5288,-7.3650,-0.5335,0.4165,-7.3650,0.6592,-0.0602,-7.3600,0.9907,-0.5288,-7.3650,0.6609,0.4165,-7.3650,-0.4678,0.6188,-0.6937,-0.9942,1.1260,-0.5903,0.0001,-1.1000,-0.8178,0.0254,-0.5969,-0.8537,-1.0730,-0.0602,-7.9200,-0.6297,0.5422,-7.9200,0.0623,-0.6846,-7.9200,0.0627,-0.4317,-7.9150,-0.4625,0.3194,-7.9150,0.6006,-0.0602,-7.9200,0.8486,-0.4317,-7.9150,0.6022,0.3194,-7.9150,-0.3980,-0.0602,-8.1820,0.0650,-0.0299,-0.0952,-1.3930,0.7675,0.0555,0.8470,-0.0065,-0.0143,1.1650,-0.7382,-0.1075,0.8559,0.7086,0.0150,-1.1600,1.1980,0.0615,-0.0132,-1.1980,-0.2053,-0.0002,-0.6672,-0.1246,-1.2020,0.4447,0.8519,-0.9853,-0.1246,0.7619,-1.1650,-0.5954,0.7485,-1.0240,-1.0320,0.6748,-0.0338,-0.6669,0.7576,0.6468,-0.0988,0.8314,0.8871,0.5047,0.8844,0.6390,0.8466,0.8853,-0.0438,-0.1526,1.3670,-0.1493})))
                       .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.0471,0.5348,0.0457,0.5477,0.0517,0.5187,0.0571,0.5017,0.0625,0.4884,0.0657,0.4747,0.0673,0.4552,0.0409,0.5570,0.1806,0.5707,0.1797,0.5783,0.1804,0.5567,0.1838,0.5503,0.1875,0.5412,0.1933,0.5295,0.2007,0.5198,0.1750,0.5862,0.1900,0.5703,0.1907,0.5757,0.1892,0.5587,0.1918,0.5533,0.2114,0.5390,0.2025,0.5422,0.1895,0.5821,0.1949,0.5468,0.2041,0.5636,0.0292,0.5765,0.1758,0.5987,0.1959,0.5888,0.0457,0.5477,0.0571,0.5017,0.0625,0.4884,0.0657,0.4747,0.0471,0.5348,0.0517,0.5187,0.0292,0.5765,0.0673,0.4552,0.0409,0.5570,0.0471,0.5348,0.0457,0.5477,0.0409,0.5570,0.0292,0.5765,0.0657,0.4747,0.0625,0.4884,0.0571,0.5017,0.0517,0.5187,0.0500,0.5249})))))))
-              .addChild(new HAnimJoint("hanim_l_radiocarpal").setName("l_radiocarpal").setCenter(7.738000,35.430000,-1.558000).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
+              .addChild(new HAnimJoint("hanim_l_radiocarpal").setName("l_radiocarpal").setCenter(7.738000,35.430000,-1.558000)
                 .addChild(new HAnimSegment("hanim_l_carpal").setName("l_carpal")
                   .addChild(new Transform().setTranslation(7.738000,35.430000,-1.558000)
                     .addChild(new Shape()
@@ -286,7 +278,7 @@ public class KoreanCharacter07No implements X3DRoots
                       .setGeometry(new IndexedFaceSet().setCreaseAngle(1.57).setCoordIndex(getIndexedFaceSet_12_148_coordIndex()).setTexCoordIndex(getIndexedFaceSet_12_148_texCoordIndex())
                         .setCoord(new Coordinate().setPoint(getCoordinate_13_148_point()))
                         .setTexCoord(new TextureCoordinate().setPoint(getTextureCoordinate_13_149_point())))))))))
-          .addChild(new HAnimJoint("hanim_r_shoulder").setName("r_shoulder").setCenter(-7.266000,54.049999,-1.790000).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
+          .addChild(new HAnimJoint("hanim_r_shoulder").setName("r_shoulder").setCenter(-7.266000,54.049999,-1.790000)
             .addChild(new HAnimSegment("hanim_r_upperarm").setName("r_upperarm")
               .addChild(new Transform().setTranslation(-7.266000,54.049999,-1.790000)
                 .addChild(new Shape()
@@ -296,7 +288,7 @@ public class KoreanCharacter07No implements X3DRoots
                   .setGeometry(new IndexedFaceSet().setCreaseAngle(1.57).setCoordIndex(getIndexedFaceSet_10_160_coordIndex()).setTexCoordIndex(getIndexedFaceSet_10_160_texCoordIndex())
                     .setCoord(new Coordinate().setPoint(getCoordinate_11_160_point()))
                     .setTexCoord(new TextureCoordinate().setPoint(getTextureCoordinate_11_161_point()))))))
-            .addChild(new HAnimJoint("hanim_r_elbow").setName("r_elbow").setCenter(-7.834000,43.389999,-1.651000).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
+            .addChild(new HAnimJoint("hanim_r_elbow").setName("r_elbow").setCenter(-7.834000,43.389999,-1.651000)
               .addChild(new HAnimSegment("hanim_r_forearm").setName("r_forearm")
                 .addChild(new Transform().setTranslation(-7.834000,43.389999,-1.651000)
                   .addChild(new Shape()
@@ -306,7 +298,7 @@ public class KoreanCharacter07No implements X3DRoots
                     .setGeometry(new IndexedFaceSet().setCreaseAngle(1.57).setCoordIndex(new int[] {0,4,11,-1,11,12,0,-1,12,11,5,-1,5,13,12,-1,13,5,8,-1,8,1,13,-1,1,8,9,-1,9,2,1,-1,2,9,10,-1,10,3,2,-1,3,10,6,-1,6,14,3,-1,15,7,4,-1,4,0,15,-1,14,6,7,-1,7,15,14,-1,4,16,23,-1,23,11,4,-1,11,23,17,-1,17,5,11,-1,5,17,20,-1,20,8,5,-1,10,22,18,-1,18,6,10,-1,7,19,16,-1,16,4,7,-1,8,20,21,-1,21,9,8,-1,9,21,22,-1,22,10,9,-1,6,18,19,-1,19,7,6,-1,16,24,23,-1,23,24,17,-1,17,24,20,-1,20,24,21,-1,21,24,22,-1,22,24,18,-1,18,24,19,-1,19,24,16,-1,12,29,25,-1,25,0,12,-1,13,1,26,-1,26,30,13,-1,1,2,27,-1,27,26,1,-1,2,3,28,-1,28,27,2,-1,3,14,31,-1,31,28,3,-1,0,25,32,-1,32,15,0,-1,13,30,29,-1,29,12,13,-1,15,32,31,-1,31,14,15,-1,29,33,34,-1,34,25,29,-1,25,34,35,-1,35,32,25,-1,32,35,36,-1,36,31,32,-1,31,36,37,-1,37,28,31,-1,28,37,38,-1,38,27,28,-1,27,38,39,-1,39,26,27,-1,26,39,40,-1,40,30,26,-1,30,40,33,-1,33,29,30,-1,33,41,34,-1,34,41,35,-1,35,41,36,-1,36,41,37,-1,37,41,38,-1,38,41,39,-1,39,41,40,-1,40,41,33,-1}).setTexCoordIndex(new int[] {1,9,8,-1,8,0,1,-1,0,8,10,-1,10,2,0,-1,2,10,11,-1,11,3,2,-1,3,11,12,-1,12,4,3,-1,4,12,13,-1,13,5,4,-1,5,13,14,-1,14,6,5,-1,7,15,9,-1,9,1,7,-1,25,26,15,-1,15,7,25,-1,9,17,16,-1,16,8,9,-1,8,16,18,-1,18,10,8,-1,10,18,19,-1,19,11,10,-1,13,21,20,-1,20,14,13,-1,15,22,17,-1,17,9,15,-1,11,19,23,-1,23,12,11,-1,12,23,21,-1,21,13,12,-1,26,27,22,-1,22,15,26,-1,17,24,16,-1,16,24,18,-1,18,24,19,-1,19,24,23,-1,23,24,21,-1,21,24,20,-1,27,24,22,-1,22,24,17,-1,0,32,28,-1,28,1,0,-1,2,3,29,-1,29,33,2,-1,3,4,30,-1,30,29,3,-1,4,5,31,-1,31,30,4,-1,5,6,35,-1,35,31,5,-1,1,28,36,-1,36,7,1,-1,2,33,32,-1,32,0,2,-1,7,36,34,-1,34,25,7,-1,32,37,38,-1,38,28,32,-1,28,38,39,-1,39,36,28,-1,36,39,40,-1,40,34,36,-1,35,40,41,-1,41,31,35,-1,31,41,42,-1,42,30,31,-1,30,42,43,-1,43,29,30,-1,29,43,44,-1,44,33,29,-1,33,44,37,-1,37,32,33,-1,37,45,38,-1,38,45,39,-1,39,45,40,-1,40,45,41,-1,41,45,42,-1,42,45,43,-1,43,45,44,-1,44,45,37,-1})
                       .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.0407,-0.8376,-1.2210,-0.7331,-0.5933,0.8017,0.0176,-0.6645,1.1820,0.7221,-0.7616,0.9014,0.0602,-7.3600,-0.7594,-0.7233,-7.3600,0.0564,0.7878,-7.3600,0.0568,0.5288,-7.3650,-0.5335,-0.4165,-7.3650,0.6592,0.0602,-7.3600,0.9907,0.5288,-7.3650,0.6609,-0.4165,-7.3650,-0.4678,-0.6188,-0.6937,-0.9942,-1.1260,-0.5903,0.0001,1.1000,-0.8178,0.0254,0.5969,-0.8537,-1.0730,0.0602,-7.9200,-0.6297,-0.5422,-7.9200,0.0623,0.6846,-7.9200,0.0627,0.4317,-7.9150,-0.4625,-0.3194,-7.9150,0.6006,0.0602,-7.9200,0.8486,0.4317,-7.9150,0.6022,-0.3194,-7.9150,-0.3980,0.0602,-8.1820,0.0650,0.0299,-0.0952,-1.3930,-0.7675,0.0555,0.8470,0.0065,-0.0143,1.1650,0.7382,-0.1075,0.8559,-0.7086,0.0150,-1.1600,-1.1980,0.0615,-0.0132,1.1980,-0.2053,-0.0002,0.6672,-0.1246,-1.2020,-0.4447,0.8519,-0.9853,0.1246,0.7619,-1.1650,0.5954,0.7485,-1.0240,1.0320,0.6748,-0.0338,0.6669,0.7576,0.6468,0.0988,0.8314,0.8871,-0.5047,0.8844,0.6390,-0.8466,0.8853,-0.0438,0.1526,1.3670,-0.1493})))
                       .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.0471,0.5348,0.0457,0.5477,0.0517,0.5187,0.0571,0.5017,0.0625,0.4884,0.0657,0.4747,0.0673,0.4552,0.0409,0.5570,0.1806,0.5707,0.1797,0.5783,0.1804,0.5567,0.1838,0.5503,0.1875,0.5412,0.1933,0.5295,0.2007,0.5198,0.1750,0.5862,0.1900,0.5703,0.1907,0.5757,0.1892,0.5587,0.1918,0.5533,0.2114,0.5390,0.2025,0.5422,0.1895,0.5821,0.1949,0.5468,0.2041,0.5636,0.0292,0.5765,0.1758,0.5987,0.1959,0.5888,0.0457,0.5477,0.0571,0.5017,0.0625,0.4884,0.0657,0.4747,0.0471,0.5348,0.0517,0.5187,0.0292,0.5765,0.0673,0.4552,0.0409,0.5570,0.0471,0.5348,0.0457,0.5477,0.0409,0.5570,0.0292,0.5765,0.0657,0.4747,0.0625,0.4884,0.0571,0.5017,0.0517,0.5187,0.0500,0.5249})))))))
-              .addChild(new HAnimJoint("hanim_r_radiocarpal").setName("r_radiocarpal").setCenter(-7.738000,35.430000,-1.558000).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
+              .addChild(new HAnimJoint("hanim_r_radiocarpal").setName("r_radiocarpal").setCenter(-7.738000,35.430000,-1.558000)
                 .addChild(new HAnimSegment("hanim_r_carpal").setName("r_carpal")
                   .addChild(new Transform().setTranslation(-7.738000,35.430000,-1.558000)
                     .addChild(new Shape()
@@ -316,7 +308,7 @@ public class KoreanCharacter07No implements X3DRoots
                       .setGeometry(new IndexedFaceSet().setCreaseAngle(1.57).setCoordIndex(getIndexedFaceSet_12_178_coordIndex()).setTexCoordIndex(getIndexedFaceSet_12_178_texCoordIndex())
                         .setCoord(new Coordinate().setPoint(getCoordinate_13_178_point()))
                         .setTexCoord(new TextureCoordinate().setPoint(getTextureCoordinate_13_179_point())))))))))
-          .addChild(new HAnimJoint("hanim_vl5").setName("vl5").setCenter(0.0,37.060001,-1.409000).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
+          .addChild(new HAnimJoint("hanim_vl5").setName("vl5").setCenter(0.0,37.060001,-1.409000)
             .addChild(new HAnimSegment("hanim_l5").setName("l5")
               .addChild(new Transform().setTranslation(0.0,37.060001,-1.409000)
                 .addChild(new Shape()
@@ -326,7 +318,7 @@ public class KoreanCharacter07No implements X3DRoots
                   .setGeometry(new IndexedFaceSet().setCreaseAngle(1.57).setCoordIndex(getIndexedFaceSet_10_190_coordIndex()).setTexCoordIndex(getIndexedFaceSet_10_190_texCoordIndex())
                     .setCoord(new Coordinate().setPoint(getCoordinate_11_190_point()))
                     .setTexCoord(new TextureCoordinate().setPoint(getTextureCoordinate_11_191_point()))))))
-            .addChild(new HAnimJoint("hanim_skullbase").setName("skullbase").setCenter(0.0,37.060001,-1.409000).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
+            .addChild(new HAnimJoint("hanim_skullbase").setName("skullbase").setCenter(0.0,37.060001,-1.409000)
               .addChild(new HAnimSegment("hanim_skull").setName("skull")
                 .addChild(new Transform().setTranslation(0.0,37.060001,-1.409000)
                   .addChild(new Shape()
