@@ -180,13 +180,13 @@ arc1.prototype = {
             .addConnect(new connect().setNodeField("set_endpoint").setProtoField("set_endpoint"))))))
     .addChild(new ProtoInstance("connector1", "x3dconnector")
       .addFieldValue(new fieldValue().setName("startnode")
-        .addChild(new Transform()))
+        .addChild(new Transform().setUSE("G1")))
       .addFieldValue(new fieldValue().setName("endnode")
-        .addChild(new Transform()))
+        .addChild(new Transform().setUSE("G2")))
       .addFieldValue(new fieldValue().setName("transnode")
-        .addChild(new Transform()))
+        .addChild(new Transform().setUSE("transC1")))
       .addFieldValue(new fieldValue().setName("rotscalenode")
-        .addChild(new Transform()))
+        .addChild(new Transform().setUSE("rotscaleC1")))
       .addFieldValue(new fieldValue().setName("set_startpoint"))
       .addFieldValue(new fieldValue().setName("set_endpoint")))
     .addChild(new ROUTE().setFromNode("G1").setFromField("translation_changed").setToNode("connector1").setToField("set_startpoint"))
@@ -223,14 +223,14 @@ arc1.prototype = {
 		// first list informational meta elements of interest
 		var metaList = this.getX3dModel().getHead().getMetaList();
 		for (var m in metaList) {
-			meta = metaList[m];
-			if (meta.getName().equals(meta.NAME_ERROR) ||
-				meta.getName().equals(meta.NAME_WARNING) ||
-				meta.getName().equals(meta.NAME_HINT) ||
-				meta.getName().equals(meta.NAME_INFO) ||
-				meta.getName().equals(meta.NAME_TODO))
+			var metaObject = metaList[m];
+			if (metaObject.getName() === metaObject.NAME_ERROR ||
+				metaObject.getName() === metaObject.NAME_WARNING ||
+				metaObject.getName() === metaObject.NAME_HINT ||
+				metaObject.getName() === metaObject.NAME_INFO ||
+				metaObject.getName() === metaObject.NAME_TODO)
 			{
-				metaResult += meta.toStringX3D();
+				metaResult += metaObject.toStringX3D();
 			}
 		}
 		validationResult += this.x3dModel.validate(); // walk entire tree to validate correctness
