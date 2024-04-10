@@ -11,8 +11,8 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="saxon-he-12.1.jar"/>
-	<classpathentry kind="lib" path="X3DJSAIL-3.3-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="saxon-he-12.4.jar"/>
+	<classpathentry kind="lib" path="X3DJSAIL.4.0.full.jar"/>
 	<classpathentry excluding="**" kind="src" output="target/classes" path="src/main/resources">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>

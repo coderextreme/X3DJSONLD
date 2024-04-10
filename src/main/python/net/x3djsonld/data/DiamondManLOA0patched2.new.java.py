@@ -68,9 +68,9 @@ newModel=X3D(profile='Immersive',version='4.0',
         MetadataString(name='humanoidVersion',value=["JointCenters 1.1 LOA0"]),
         MetadataString(name='usageRestrictions',value=["PERMISSION TO FULLY USE THIS SCENE GRAPH IS GRANTED PROVIDED THIS COPYRIGHT INFORMATION AND DOCUMENTATION OF THE ORIGINAL AUTHOR IS INCLUDED. This humanoid scene graph is provided _as-is_ and without warranty of any kind express implied or otherwise including without limitation any warranty of merchantability or fitness for a particular purpose."])]),
       skeleton=[
-      HAnimJoint(DEF='hanim_humanoid_root',name='humanoid_root',center=(0,0.824,0.0277),llimit=[0,0,0],ulimit=[0,0,0],
+      HAnimJoint(DEF='hanim_humanoid_root',name='humanoid_root',center=(0,0.824,0.0277),
         children=[
-        HAnimJoint(DEF='hanim_sacroiliac',name='sacroiliac',center=(0,0.9149,0.0016),llimit=[0,0,0],ulimit=[0,0,0],
+        HAnimJoint(DEF='hanim_sacroiliac',name='sacroiliac',center=(0,0.9149,0.0016),
           children=[
           HAnimSegment(DEF='hanim_pelvis',name='pelvis',
             children=[
@@ -90,8 +90,8 @@ newModel=X3D(profile='Immersive',version='4.0',
         Viewpoint(DEF='TopView',description='Top View',orientation=(1,0,0,-1.57079),position=(0,3.4495,0))]),],
       #  original HAnimHumanoid info='"authorEmail=beitler@graphics.cis.upenn.edu beitler@acm.org" "authorName=Matthew T. Beitler" "copyright=Copyright 1999 Matthew T. Beitler" "creationDate=05/12/99" "humanoidVersion=JointCenters 1.1 LOA0" "usageRestrictions=PERMISSION TO FULLY USE THIS SCENE GRAPH IS GRANTED PROVIDED THIS COPYRIGHT INFORMATION AND DOCUMENTATION OF THE ORIGINAL AUTHOR IS INCLUDED. This humanoid scene graph is provided _as-is_ and without warranty of any kind express implied or otherwise including without limitation any warranty of merchantability or fitness for a particular purpose."' 
       joints=[
-      HAnimJoint(USE='hanim_humanoid_root',ulimit=[0,0,0],llimit=[0,0,0]),
-      HAnimJoint(USE='hanim_sacroiliac',ulimit=[0,0,0],llimit=[0,0,0])],
+      HAnimJoint(USE='hanim_humanoid_root'),
+      HAnimJoint(USE='hanim_sacroiliac')],
       segments=[
       HAnimSegment(USE='hanim_pelvis')],)])
 ) # X3D model complete

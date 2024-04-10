@@ -1,29 +1,58 @@
-# x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
-print("<!--")
-from x3d import *
-print("-->")
-import json
-model = (
-X3D(profile="Interchange", version="3.3", 
-head=head(
-component(name="Scripting", level=1),
-meta(name="title", content="sphere.x3d"),
-meta(name="creator", content="John Carlson"),
-meta(name="generator", content="manual"),
-meta(name="identifier", content="https://coderextreme.net/X3DJSONLD/src/main/data/sphere.x3d"),
-meta(name="description", content="a sphere"),
-meta(name="translated", content="26 August 2023"),
-meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
-meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
-]), 
-Scene=Scene(children=[
-Group(children=[
-Shape(
-appearance=
-Appearance(
-material=
-Material(diffuseColor=((1,1,1)))), 
-geometry=
-Sphere())])])))
-output = model.JSON()
-json.loads(output)
+import x3dpsail as x3d
+X3D0 = x3d.X3D()
+X3D0.setProfile("Interchange")
+X3D0.setVersion("3.3")
+head1 = x3d.head()
+component2 = x3d.component()
+component2.setName("Scripting")
+component2.setLevel(1)
+
+head1.addComponent(component2)
+meta3 = x3d.meta()
+meta3.setName("title")
+meta3.setContent("sphere.x3d")
+
+head1.addMeta(meta3)
+meta4 = x3d.meta()
+meta4.setName("creator")
+meta4.setContent("John Carlson")
+
+head1.addMeta(meta4)
+meta5 = x3d.meta()
+meta5.setName("generator")
+meta5.setContent("manual")
+
+head1.addMeta(meta5)
+meta6 = x3d.meta()
+meta6.setName("identifier")
+meta6.setContent("https://coderextreme.net/X3DJSONLD/src/main/data/sphere.x3d")
+
+head1.addMeta(meta6)
+meta7 = x3d.meta()
+meta7.setName("description")
+meta7.setContent("a sphere")
+
+head1.addMeta(meta7)
+
+X3D0.setHead(head1)
+Scene8 = x3d.Scene()
+Group9 = x3d.Group()
+Shape10 = x3d.Shape()
+Appearance11 = x3d.Appearance()
+Material12 = x3d.Material()
+Material12.setDiffuseColor([1,1,1])
+
+Appearance11.setMaterial(Material12)
+
+Shape10.setAppearance(Appearance11)
+Sphere13 = x3d.Sphere()
+
+Shape10.setGeometry(Sphere13)
+
+Group9.addChildren(Shape10)
+
+Scene8.addChildren(Group9)
+
+X3D0.setScene(Scene8)
+X3D0.toFileX3D("../personal/sphere.new.python.x3d")
+X3D0.toFileJSON("../personal/sphere.new.python.json")

@@ -20,7 +20,7 @@ pushd /c/x3d-code/www.web3d.org/x3d/stylesheets
 ant create.X3DJSAIL
 cp java/jars/*.jar /c/Users/john/pythonSAI
 mvn install:install-file -Dfile=/c/Users/john/pythonSAI/X3DJSAIL.4.0.full.jar -DgroupId=org.web3d.x3d -DartifactId=X3DJSAIL -Dversion=4.0.full -Dpackaging=jar
-mvn install:install-file -Dfile=/c/Users/john/X3DJSONLD/saxon-he-12.1.jar -DgroupId=net.sf.saxon -DartifactId=SAXON-HE -Dversion=12.1 -Dpackaging=jar
+mvn install:install-file -Dfile=/c/Users/john/X3DJSONLD/saxon-he-12.4.jar -DgroupId=net.sf.saxon -DartifactId=SAXON-HE -Dversion=12.4 -Dpackaging=jar
 
 popd
 
