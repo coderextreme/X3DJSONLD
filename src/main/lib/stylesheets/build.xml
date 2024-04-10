@@ -92,9 +92,9 @@ POSSIBILITY OF SUCH DAMAGE.
     <!-- https://www.saxonica.com/documentation10/#!about/gettingstarted/gettingstartedjava -->
     <!-- SaxonHE 11 (java.lang.NoClassDefFoundError: org/xmlresolver/Resolver) https://saxonica.plan.io/boards/3/topics/8478?r=8480 -->
     
-    <property name="saxon.dir"        location="java/lib" description="relative path from stylesheets directory"/>
-    <property name="saxon.jar"           value="saxon-he-12.1.jar "/><!-- previously saxon-he-11.4.jar saxon-he-10.6.jar saxon9he.jar -->
-    <property name="xmlresolver.jar"     value="xmlresolver-5.1.1.jar"/><!-- required with saxon-he-11+.jar -->
+    <property name="saxon.dir"        location="../content/examples/X3dForWebAuthors/lib/" description="relative path from stylesheets directory"/>
+    <property name="saxon.jar"           value="saxon-he-12.4.jar"/><!-- previously saxon-he-11.4.jar saxon-he-10.6.jar saxon9he.jar -->
+    <property name="xmlresolver.jar"     value="xmlresolver-5.2.2.jar"/><!-- required with saxon-he-11+.jar -->
     
     <property name=   "node.exe" value="node.exe"/>
 
