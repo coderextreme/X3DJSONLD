@@ -1,4 +1,4 @@
 set X3DJSONLD=C:\Users\%USERNAME%\pythonSAI
-set CLASSPATH=.;%X3DJSONLD%\saxon-he-12.1.jar;%X3DJSONLD%\jslint4java-2.0.5.jar;%X3DJSONLD%\json-schema-validator-2.2.6-lib.jar;%X3DJSONLD%\X3DJSAIL.4.0.full.jar
+set CLASSPATH=.;%X3DJSONLD%\saxon-he-12.4.jar;%X3DJSONLD%\jslint4java-2.0.5.jar;%X3DJSONLD%\json-schema-validator-2.2.6-lib.jar;%X3DJSONLD%\X3DJSAIL.4.0.full.jar
 set PYTHONSAI=..\pythonSAI
-set GRAAL_CLASSPATH=%PYTHONSAI%\X3DJSAIL.4.0.full.jar;.;%PYTHONSAI%\saxon-he-12.1.jar;%PYTHONSAI%\jslint4java-2.0.5.jar;%PYTHONSAI%\json-schema-validator-2.2.6-lib.jar
+set GRAAL_CLASSPATH=%PYTHONSAI%\X3DJSAIL.4.0.full.jar;.;%PYTHONSAI%\saxon-he-12.4.jar;%PYTHONSAI%\jslint4java-2.0.5.jar;%PYTHONSAI%\json-schema-validator-2.2.6-lib.jar
