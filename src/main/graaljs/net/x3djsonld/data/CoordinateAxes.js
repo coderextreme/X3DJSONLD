@@ -123,7 +123,7 @@ CoordinateAxes.prototype = {
           .addChild(new Transform().setTranslation(doubleToFloat(0.0),doubleToFloat(1.0),doubleToFloat(0.0))
             .addChild(new Shape()
               .setGeometry(new Cone("ArrowCone").setBottomRadius(.05).setHeight(.1))
-              .setAppearance(new Appearance()))))
+              .setAppearance(new Appearance().setUSE("Green")))))
         .addChild(new Transform().setTranslation(doubleToFloat(0.0),doubleToFloat(1.08),doubleToFloat(0.0))
           .addChild(new Billboard()
             .addChild(new Shape()
@@ -136,39 +136,39 @@ CoordinateAxes.prototype = {
         .addChild(new Group()
           .addChild(new Group("ArrowRed")
             .addChild(new Shape()
-              .setGeometry(new Cylinder())
+              .setGeometry(new Cylinder().setUSE("ArrowCylinder"))
               .setAppearance(new Appearance("Red")
                 .setMaterial(new Material().setDiffuseColor(doubleToFloat(.7),doubleToFloat(.1),doubleToFloat(.1)).setEmissiveColor(doubleToFloat(.33),doubleToFloat(0.0),doubleToFloat(0.0)))))
             .addChild(new Transform().setTranslation(doubleToFloat(0.0),doubleToFloat(1.0),doubleToFloat(0.0))
               .addChild(new Shape()
-                .setGeometry(new Cone())
-                .setAppearance(new Appearance()))))
+                .setGeometry(new Cone().setUSE("ArrowCone"))
+                .setAppearance(new Appearance().setUSE("Red")))))
           .addChild(new Transform().setRotation(doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(1.0),doubleToFloat(1.57079)).setTranslation(doubleToFloat(.072),doubleToFloat(1.1),doubleToFloat(0.0))
             .addComments(" note label rotated back to original coordinate frame ")
             .addChild(new Billboard()
               .addChild(new Shape()
-                .setAppearance(new Appearance())
+                .setAppearance(new Appearance().setUSE("LABEL_APPEARANCE"))
                 .setGeometry(new Text().setString(new MFString("\"X\""))
-                  .setFontStyle(new FontStyle())))))))
+                  .setFontStyle(new FontStyle().setUSE("LABEL_FONT"))))))))
       .addChild(new Transform().setRotation(doubleToFloat(1.0),doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(1.57079))
         .addComments(" Perpendicular Z arrow and label, note right-hand rule ")
         .addChild(new Group()
           .addChild(new Group("ArrowBlue")
             .addChild(new Shape()
-              .setGeometry(new Cylinder())
+              .setGeometry(new Cylinder().setUSE("ArrowCylinder"))
               .setAppearance(new Appearance("Blue")
                 .setMaterial(new Material().setDiffuseColor(doubleToFloat(.3),doubleToFloat(.3),doubleToFloat(1.0)).setEmissiveColor(doubleToFloat(.1),doubleToFloat(.1),doubleToFloat(.33)))))
             .addChild(new Transform().setTranslation(doubleToFloat(0.0),doubleToFloat(1.0),doubleToFloat(0.0))
               .addChild(new Shape()
-                .setGeometry(new Cone())
-                .setAppearance(new Appearance()))))
+                .setGeometry(new Cone().setUSE("ArrowCone"))
+                .setAppearance(new Appearance().setUSE("Blue")))))
           .addChild(new Transform().setRotation(doubleToFloat(1.0),doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(-1.57079)).setTranslation(doubleToFloat(0.0),doubleToFloat(1.1),doubleToFloat(.072))
             .addComments(" note label rotated back to original coordinate frame ")
             .addChild(new Billboard()
               .addChild(new Shape()
-                .setAppearance(new Appearance())
+                .setAppearance(new Appearance().setUSE("LABEL_APPEARANCE"))
                 .setGeometry(new Text().setString(new MFString("\"Z\""))
-                  .setFontStyle(new FontStyle())))))))));
+                  .setFontStyle(new FontStyle().setUSE("LABEL_FONT"))))))))));
   },
   // end of initialize() method
 
@@ -201,14 +201,14 @@ CoordinateAxes.prototype = {
 		// first list informational meta elements of interest
 		var metaList = this.getX3dModel().getHead().getMetaList();
 		for (var m in metaList) {
-			meta = metaList[m];
-			if (meta.getName().equals(meta.NAME_ERROR) ||
-				meta.getName().equals(meta.NAME_WARNING) ||
-				meta.getName().equals(meta.NAME_HINT) ||
-				meta.getName().equals(meta.NAME_INFO) ||
-				meta.getName().equals(meta.NAME_TODO))
+			var metaObject = metaList[m];
+			if (metaObject.getName() === metaObject.NAME_ERROR ||
+				metaObject.getName() === metaObject.NAME_WARNING ||
+				metaObject.getName() === metaObject.NAME_HINT ||
+				metaObject.getName() === metaObject.NAME_INFO ||
+				metaObject.getName() === metaObject.NAME_TODO)
 			{
-				metaResult += meta.toStringX3D();
+				metaResult += metaObject.toStringX3D();
 			}
 		}
 		validationResult += this.x3dModel.validate(); // walk entire tree to validate correctness

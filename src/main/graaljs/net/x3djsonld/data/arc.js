@@ -168,9 +168,9 @@ arc.prototype = {
             .addField(new field().setName("startnode").setType("SFNode").setAccessType("initializeOnly"))
             .addField(new field().setName("endnode").setType("SFNode").setAccessType("initializeOnly"))
             .addField(new field().setName("position").setType("SFNode").setAccessType("inputOutput")
-              .addChild(new Transform()))
+              .addChild(new Transform().setUSE("trans")))
             .addField(new field().setName("rotscale").setType("SFNode").setAccessType("inputOutput")
-              .addChild(new Transform()))
+              .addChild(new Transform().setUSE("rotscale")))
             .addField(new field().setName("set_startpoint").setType("SFVec3f").setAccessType("inputOnly"))
             .addField(new field().setName("set_endpoint").setType("SFVec3f").setAccessType("inputOnly"))
             .setIS(new IS()
@@ -241,14 +241,14 @@ arc.prototype = {
 		// first list informational meta elements of interest
 		var metaList = this.getX3dModel().getHead().getMetaList();
 		for (var m in metaList) {
-			meta = metaList[m];
-			if (meta.getName().equals(meta.NAME_ERROR) ||
-				meta.getName().equals(meta.NAME_WARNING) ||
-				meta.getName().equals(meta.NAME_HINT) ||
-				meta.getName().equals(meta.NAME_INFO) ||
-				meta.getName().equals(meta.NAME_TODO))
+			var metaObject = metaList[m];
+			if (metaObject.getName() === metaObject.NAME_ERROR ||
+				metaObject.getName() === metaObject.NAME_WARNING ||
+				metaObject.getName() === metaObject.NAME_HINT ||
+				metaObject.getName() === metaObject.NAME_INFO ||
+				metaObject.getName() === metaObject.NAME_TODO)
 			{
-				metaResult += meta.toStringX3D();
+				metaResult += metaObject.toStringX3D();
 			}
 		}
 		validationResult += this.x3dModel.validate(); // walk entire tree to validate correctness

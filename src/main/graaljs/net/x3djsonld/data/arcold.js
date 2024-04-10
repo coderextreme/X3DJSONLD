@@ -199,27 +199,27 @@ arcold.prototype = {
       .addFieldValue(new fieldValue().setName("endnode")
         .addChild(new ProtoInstance()))
       .addFieldValue(new fieldValue().setName("transnode")
-        .addChild(new Transform()))
+        .addChild(new Transform().setUSE("trans1")))
       .addFieldValue(new fieldValue().setName("rotscalenode")
-        .addChild(new Transform())))
+        .addChild(new Transform().setUSE("rotscale1"))))
     .addChild(new ProtoInstance("connector2", "x3dconnector")
       .addFieldValue(new fieldValue().setName("startnode")
         .addChild(new ProtoInstance()))
       .addFieldValue(new fieldValue().setName("endnode")
         .addChild(new ProtoInstance()))
       .addFieldValue(new fieldValue().setName("transnode")
-        .addChild(new Transform()))
+        .addChild(new Transform().setUSE("trans2")))
       .addFieldValue(new fieldValue().setName("rotscalenode")
-        .addChild(new Transform())))
+        .addChild(new Transform().setUSE("rotscale2"))))
     .addChild(new ProtoInstance("connector3", "x3dconnector")
       .addFieldValue(new fieldValue().setName("startnode")
         .addChild(new ProtoInstance()))
       .addFieldValue(new fieldValue().setName("endnode")
         .addChild(new ProtoInstance()))
       .addFieldValue(new fieldValue().setName("transnode")
-        .addChild(new Transform()))
+        .addChild(new Transform().setUSE("trans3")))
       .addFieldValue(new fieldValue().setName("rotscalenode")
-        .addChild(new Transform())))
+        .addChild(new Transform().setUSE("rotscale3"))))
     .addChild(new ROUTE().setFromNode("G1").setFromField("translation_changed").setToNode("connector1").setToField("set_startpoint"))
     .addChild(new ROUTE().setFromNode("G2").setFromField("translation_changed").setToNode("connector1").setToField("set_endpoint"))
     .addChild(new ROUTE().setFromNode("G1").setFromField("translation_changed").setToNode("connector2").setToField("set_startpoint"))
@@ -258,14 +258,14 @@ arcold.prototype = {
 		// first list informational meta elements of interest
 		var metaList = this.getX3dModel().getHead().getMetaList();
 		for (var m in metaList) {
-			meta = metaList[m];
-			if (meta.getName().equals(meta.NAME_ERROR) ||
-				meta.getName().equals(meta.NAME_WARNING) ||
-				meta.getName().equals(meta.NAME_HINT) ||
-				meta.getName().equals(meta.NAME_INFO) ||
-				meta.getName().equals(meta.NAME_TODO))
+			var metaObject = metaList[m];
+			if (metaObject.getName() === metaObject.NAME_ERROR ||
+				metaObject.getName() === metaObject.NAME_WARNING ||
+				metaObject.getName() === metaObject.NAME_HINT ||
+				metaObject.getName() === metaObject.NAME_INFO ||
+				metaObject.getName() === metaObject.NAME_TODO)
 			{
-				metaResult += meta.toStringX3D();
+				metaResult += metaObject.toStringX3D();
 			}
 		}
 		validationResult += this.x3dModel.validate(); // walk entire tree to validate correctness

@@ -133,7 +133,7 @@ DesignPatternsApparelMedicalSkinLayers.prototype = {
       .setMetadata(new MetadataString().setName("HAnimArchitecture").setReference(this.MetadataString_HAnimArchitecture_4_19_reference).setValue(new MFString("\"E.4 Multiple humanoids per file\"")))
       .addComments(" ============================== ")
       .addChild(new HAnimHumanoid("a_SimpleSkeleton").setName("SimpleSkeleton").setVersion("2.0")
-        .addSkeleton(new HAnimJoint().setName("humanoid_root").setLlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]"))).setUlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]")))
+        .addSkeleton(new HAnimJoint().setName("humanoid_root")
           .addChild(new HAnimSegment().setName("sacrum")
             .addChild(new Shape("JointVisualization"))
             .addChild(new Shape("SegmentVisualization"))
@@ -141,24 +141,24 @@ DesignPatternsApparelMedicalSkinLayers.prototype = {
               .addChild(new Shape("SiteVisualization"))))))
       .addComments(" ============================== ")
       .addChild(new HAnimHumanoid("b_SimpleSkeletonMesh").setName("SimpleSkeletonMesh").setVersion("2.0")
-        .addSkeleton(new HAnimJoint().setName("humanoid_root").setLlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]"))).setUlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]")))
+        .addSkeleton(new HAnimJoint().setName("humanoid_root")
           .addChild(new HAnimSegment().setName("sacrum")
             .addChild(new Shape()
               .setGeometry(new IndexedFaceSet("SegmentBoneMesh").setDEF("SegmentBoneMesh"))))))
       .addComments(" ============================== ")
       .addChild(new HAnimHumanoid("c_SkinIndexedGeometry").setName("SkinIndexedGeometry").setVersion("2.0")
-        .addSkeleton(new HAnimJoint().setName("humanoid_root").setLlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]"))).setUlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]")))
+        .addSkeleton(new HAnimJoint().setName("humanoid_root")
           .addChild(new HAnimSegment().setName("sacrum")))
         .addSkin(new IndexedFaceSet("SkinMeshIFS").setDEF("SkinMeshIFS")))
       .addComments(" ============================== ")
       .addChild(new HAnimHumanoid("d_SkinShapeIndexedGeometry").setName("SkinShapeIndexedGeometry").setVersion("2.0")
-        .addSkeleton(new HAnimJoint().setName("humanoid_root").setLlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]"))).setUlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]")))
+        .addSkeleton(new HAnimJoint().setName("humanoid_root")
           .addChild(new HAnimSegment().setName("sacrum")))
         .addSkin(new Shape()
-          .setGeometry(new IndexedFaceSet())))
+          .setGeometry(new IndexedFaceSet().setUSE("SkinMeshIFS"))))
       .addComments(" ============================== ")
       .addChild(new HAnimHumanoid("e_SkinSwitchShapeIndexedGeometry").setName("SkinSwitchShapeIndexedGeometry").setVersion("2.0")
-        .addSkeleton(new HAnimJoint().setName("humanoid_root").setLlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]"))).setUlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]")))
+        .addSkeleton(new HAnimJoint().setName("humanoid_root")
           .addChild(new HAnimSegment().setName("sacrum")))
         .addComments(" TODO show X3D4.0 addition of <Switch DEF='AlternativeSkins' containerField='skin'> ")
         .addSkin(new Shape()
@@ -167,21 +167,21 @@ DesignPatternsApparelMedicalSkinLayers.prototype = {
       .addComments(" similarly for LOD ")
       .addComments(" ============================== ")
       .addChild(new HAnimHumanoid("f_SynthesizedSkinShapeIndexedTwoPartGeometry").setName("SynthesizedSkinShapeIndexedTwoPartGeometry").setVersion("2.0")
-        .addSkeleton(new HAnimJoint().setName("humanoid_root").setLlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]"))).setUlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]")))
+        .addSkeleton(new HAnimJoint().setName("humanoid_root")
           .addChild(new HAnimSegment().setName("sacrum")))
         .addSkin(new Shape()
           .setGeometry(new IndexedFaceSet("TwoPartIndexedSkinMesh").setDEF("TwoPartIndexedSkinMesh")
             .setCoord(new Coordinate("TwoPartSkinMesh")))))
       .addComments(" ============================== ")
       .addChild(new HAnimHumanoid("g_ApparelSkinIndexedGeometryMultipleShapes").setName("ApparelSkinIndexedGeometryMultipleShapes").setVersion("2.0")
-        .addSkeleton(new HAnimJoint().setName("humanoid_root").setLlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]"))).setUlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]")))
+        .addSkeleton(new HAnimJoint().setName("humanoid_root")
           .addChild(new HAnimSegment().setName("sacrum")))
         .addSkin(new Shape())
         .addComments(" allow multiple Shape nodes with containerField='apparel', one for each layer of clothing ")
         .addComments(" TODO proposed for X3D4.1 <Shape containerField='apparel'/> "))
       .addComments(" ============================== ")
       .addChild(new HAnimHumanoid("h_AnatomySkinIndexedGeometryMultipleShapes").setName("AnatomySkinIndexedGeometryMultipleShapes").setVersion("2.0")
-        .addSkeleton(new HAnimJoint().setName("humanoid_root").setLlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]"))).setUlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]")))
+        .addSkeleton(new HAnimJoint().setName("humanoid_root")
           .addChild(new HAnimSegment().setName("sacrum")))
         .addComments(" allow multiple Shape nodes with containerField='skin', one for each layer of skin ")
         .addSkin(new Shape()))
@@ -232,14 +232,14 @@ DesignPatternsApparelMedicalSkinLayers.prototype = {
 		// first list informational meta elements of interest
 		var metaList = this.getX3dModel().getHead().getMetaList();
 		for (var m in metaList) {
-			meta = metaList[m];
-			if (meta.getName().equals(meta.NAME_ERROR) ||
-				meta.getName().equals(meta.NAME_WARNING) ||
-				meta.getName().equals(meta.NAME_HINT) ||
-				meta.getName().equals(meta.NAME_INFO) ||
-				meta.getName().equals(meta.NAME_TODO))
+			var metaObject = metaList[m];
+			if (metaObject.getName() === metaObject.NAME_ERROR ||
+				metaObject.getName() === metaObject.NAME_WARNING ||
+				metaObject.getName() === metaObject.NAME_HINT ||
+				metaObject.getName() === metaObject.NAME_INFO ||
+				metaObject.getName() === metaObject.NAME_TODO)
 			{
-				metaResult += meta.toStringX3D();
+				metaResult += metaObject.toStringX3D();
 			}
 		}
 		validationResult += this.x3dModel.validate(); // walk entire tree to validate correctness

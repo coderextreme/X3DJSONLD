@@ -184,8 +184,8 @@ DiamondManLOA0patched2.prototype = {
         .addValue(new MetadataString().setName("creationDate").setValue(new MFString("\"05/12/99\"")))
         .addValue(new MetadataString().setName("humanoidVersion").setValue(new MFString("\"JointCenters 1.1 LOA0\"")))
         .addValue(new MetadataString().setName("usageRestrictions").setValue(this.MetadataString_usageRestrictions_5_34_value)))
-      .addSkeleton(new HAnimJoint("hanim_humanoid_root").setName("humanoid_root").setCenter(doubleToFloat(0.0),doubleToFloat(0.8240),doubleToFloat(0.0277)).setLlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]"))).setUlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]")))
-        .addChild(new HAnimJoint("hanim_sacroiliac").setName("sacroiliac").setCenter(doubleToFloat(0.0),doubleToFloat(0.9149),doubleToFloat(0.0016)).setLlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]"))).setUlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]")))
+      .addSkeleton(new HAnimJoint("hanim_humanoid_root").setName("humanoid_root").setCenter(doubleToFloat(0.0),doubleToFloat(0.8240),doubleToFloat(0.0277))
+        .addChild(new HAnimJoint("hanim_sacroiliac").setName("sacroiliac").setCenter(doubleToFloat(0.0),doubleToFloat(0.9149),doubleToFloat(0.0016))
           .addChild(new HAnimSegment("hanim_pelvis").setName("pelvis")
             .addChild(new Transform().setTranslation(doubleToFloat(0.0),doubleToFloat(0.9149),doubleToFloat(0.0016))
               .addChild(new Shape("DiamondShape")
@@ -198,9 +198,9 @@ DiamondManLOA0patched2.prototype = {
         .addChild(new Viewpoint("FrontView").setDescription("Front View").setPosition(doubleToFloat(0.0),doubleToFloat(0.854),doubleToFloat(2.57665)))
         .addChild(new Viewpoint("SideView").setDescription("Side View").setOrientation(doubleToFloat(0.0),doubleToFloat(1.0),doubleToFloat(0.0),doubleToFloat(1.57079)).setPosition(doubleToFloat(2.5929),doubleToFloat(0.854),doubleToFloat(0.0)))
         .addChild(new Viewpoint("TopView").setDescription("Top View").setOrientation(doubleToFloat(1.0),doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(-1.57079)).setPosition(doubleToFloat(0.0),doubleToFloat(3.4495),doubleToFloat(0.0))))
-      .addJoints(new HAnimJoint().setLlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]"))).setUlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]"))))
-      .addJoints(new HAnimJoint().setLlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]"))).setUlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]"))))
-      .addSegments(new HAnimSegment())));
+      .addJoints(new HAnimJoint().setUSE("hanim_humanoid_root"))
+      .addJoints(new HAnimJoint().setUSE("hanim_sacroiliac"))
+      .addSegments(new HAnimSegment().setUSE("hanim_pelvis"))));
   },
   // end of initialize() method
 
@@ -233,14 +233,14 @@ DiamondManLOA0patched2.prototype = {
 		// first list informational meta elements of interest
 		var metaList = this.getX3dModel().getHead().getMetaList();
 		for (var m in metaList) {
-			meta = metaList[m];
-			if (meta.getName().equals(meta.NAME_ERROR) ||
-				meta.getName().equals(meta.NAME_WARNING) ||
-				meta.getName().equals(meta.NAME_HINT) ||
-				meta.getName().equals(meta.NAME_INFO) ||
-				meta.getName().equals(meta.NAME_TODO))
+			var metaObject = metaList[m];
+			if (metaObject.getName() === metaObject.NAME_ERROR ||
+				metaObject.getName() === metaObject.NAME_WARNING ||
+				metaObject.getName() === metaObject.NAME_HINT ||
+				metaObject.getName() === metaObject.NAME_INFO ||
+				metaObject.getName() === metaObject.NAME_TODO)
 			{
-				metaResult += meta.toStringX3D();
+				metaResult += metaObject.toStringX3D();
 			}
 		}
 		validationResult += this.x3dModel.validate(); // walk entire tree to validate correctness
