@@ -60,21 +60,13 @@ import org.web3d.x3d.jsail.Texturing.*;
 	* @author John Carlson
  */
 
-import net.coderextreme.X3DRoots;
-import java.util.List;
-import java.util.ArrayList;
-public class ballx3dom implements X3DRoots
+public class ballx3dom
 {
 	/** Default constructor to create this object. */
 	public ballx3dom ()
 	{
 	  initialize();
 	}
-        public List<X3D> getRootNodeList() {
-                List<X3D> list = new ArrayList<X3D>(1);
-                list.add(x3dModel);
-                return list;
-        }
 
 	/** Create and initialize the X3D model for this object. */
 	public final void initialize()

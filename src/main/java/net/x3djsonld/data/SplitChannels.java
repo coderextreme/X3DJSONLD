@@ -44,7 +44,7 @@ import org.web3d.x3d.jsail.Texturing.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
-			<td> 5 December 2021 </td>
+			<td> 23 April 2023 </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
@@ -60,7 +60,7 @@ import org.web3d.x3d.jsail.Texturing.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/SplitChannels.x3d" target="_blank">https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/SplitChannels.x3d</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/SplitChannels.x3d" target="_blank">https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/SplitChannels.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
@@ -88,21 +88,13 @@ import org.web3d.x3d.jsail.Texturing.*;
 	* @author Efi Lakka, Athanasios Malamos, Dick Puk, Don Brutzman
  */
 
-import net.coderextreme.X3DRoots;
-import java.util.List;
-import java.util.ArrayList;
-public class SplitChannels implements X3DRoots
+public class SplitChannels
 {
 	/** Default constructor to create this object. */
 	public SplitChannels ()
 	{
 	  initialize();
 	}
-        public List<X3D> getRootNodeList() {
-                List<X3D> list = new ArrayList<X3D>(1);
-                list.add(x3dModel);
-                return list;
-        }
 
 	/** Create and initialize the X3D model for this object. */
 	public final void initialize()
@@ -115,16 +107,16 @@ public class SplitChannels implements X3DRoots
     .addMeta(new meta().setName(meta.NAME_INFO       ).setContent("This work presents an innovative solution of the spatial sound in X3DOM framework, that based on a combinational methodology. Specifically, we suggested the enrichment of X3DOM with spatial sound features, using both the X3D sound nodes and the structure of Web Audio API."))
     .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("Efi Lakka, Athanasios Malamos, Dick Puk, Don Brutzman"))
     .addMeta(new meta().setName(meta.NAME_CREATED    ).setContent("28 October 2020"))
-    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("5 December 2021"))
+    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("23 April 2023"))
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("CHANGELOG.txt"))
     .addMeta(new meta().setName(meta.NAME_TODO       ).setContent("credit for audio files"))
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("http://www.medialab.hmu.gr/minipages/x3domAudio"))
-    .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/SplitChannels.x3d"))
+    .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/SplitChannels.x3d"))
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"))
     .addMeta(new meta().setName(meta.NAME_LICENSE    ).setContent("../license.html")))
   .setScene(new Scene()
     .addChild(new WorldInfo().setTitle("SplitChannels.x3d"))
-    .addChild(new NavigationInfo().setHtmlID("NAV").setType("NONE"))
+    .addChild(new NavigationInfo().setHtmlID("NAV").setType("\"NONE\""))
     .addChild(new Background().setSkyColor(new MFColor(new double[] {0.200,0.200,0.210})))
     .addChild(new Viewpoint().setOrientation(1.0,0.0,0.0,-0.5).setPosition(0.0,500.0,600.0).setRetainUserOffsets(true))
     .addChild(new Transform("PowerR").setTranslation(100.0,400.0,400.0)
@@ -137,14 +129,14 @@ public class SplitChannels implements X3DRoots
         .addChild(new Shape()
           .setAppearance(new Appearance("audio_emit2")
             .setMaterial(new Material().setDiffuseColor(0.0,1.0,0.0).setEmissiveColor(0.8,0.8,0.8).setSpecularColor(0.01,0.01,0.01))
-            .setTexture(new ImageTexture().setUrl(new String[] {"images/line.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/line.png"})))
+            .setTexture(new ImageTexture().setUrl(new String[] {"images/line.png","https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/images/line.png"})))
           .setGeometry(new Box().setSize(25.0,83.0,0.01))))
       .addChild(new Transform("volumeRight").setRotation(1.0,0.0,0.0,-0.5).setScale(10.0,10.0,10.0).setTranslation(0.0,-10.0,0.0)
         .addChild(new Shape()
           .setAppearance(new Appearance()
             .setMaterial(new Material().setAmbientIntensity(0.0933).setDiffuseColor(0.345,0.345,0.882).setShininess(0.51).setSpecularColor(0.46,0.46,0.46)))
           .setGeometry(new Text().setString(new String[] {"Right Channel Volume"})
-            .setFontStyle(new FontStyle().setFamily(new String[] {"Times"}).setCssStyle("BOLD"))))))
+            .setFontStyle(new FontStyle("VolumeFontStyle").setFamily(new String[] {"Times","SERIF"}).setCssStyle("BOLD"))))))
     .addChild(new Transform("PowerL").setTranslation(-100.0,400.0,400.0)
       .addChild(new Transform().setHtmlID("pL").setRotation(1.0,0.0,0.0,-0.5).setTranslation(0.0,40.0,0.0)
         .addChild(new Shape()
@@ -155,14 +147,14 @@ public class SplitChannels implements X3DRoots
         .addChild(new Shape()
           .setAppearance(new Appearance("audio_emit4")
             .setMaterial(new Material().setDiffuseColor(0.0,1.0,0.0).setEmissiveColor(0.8,0.8,0.8).setSpecularColor(0.01,0.01,0.01))
-            .setTexture(new ImageTexture().setUrl(new String[] {"images/line.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/line.png"})))
+            .setTexture(new ImageTexture().setUrl(new String[] {"images/line.png","https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/images/line.png"})))
           .setGeometry(new Box().setSize(25.0,83.0,0.01))))
       .addChild(new Transform("volumeLeft").setRotation(1.0,0.0,0.0,-0.5).setScale(10.0,10.0,10.0).setTranslation(0.0,-10.0,0.0)
         .addChild(new Shape()
           .setAppearance(new Appearance()
             .setMaterial(new Material().setAmbientIntensity(0.0933).setDiffuseColor(0.345,0.345,0.882).setShininess(0.51).setSpecularColor(0.46,0.46,0.46)))
           .setGeometry(new Text().setString(new String[] {"Left Channel Volume"})
-            .setFontStyle(new FontStyle().setFamily(new String[] {"Times"}).setCssStyle("BOLD"))))))
+            .setFontStyle(new FontStyle().setUSE("VolumeFontStyle"))))))
     .addChild(new Transform()
       .addChild(new Shape()
         .setAppearance(new Appearance("floor")
@@ -177,12 +169,12 @@ public class SplitChannels implements X3DRoots
           .addChild(new ChannelSelector().setChannelSelection(1).setHtmlID("ChannelSelector1")
             .addChild(new Gain().setUSE("ChannelSplitter"))))))
     .addChild(new ChannelSplitter("ChannelSplitter").setChannelCountMode("EXPLICIT")
-      .addChild(new AudioClip().setDescription("Violin").setUrl(new String[] {"sound/violin.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3"})))
+      .addChild(new AudioClip().setDescription("Violin").setUrl(new String[] {"sound/violin.mp3","https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3"})))
     .addChild(new Transform("Audio3").setRotation(1.0,0.0,0.0,-0.5).setTranslation(0.0,100.0,0.0)
       .addChild(new Shape()
         .setAppearance(new Appearance("audio_emit5")
           .setMaterial(new Material().setDiffuseColor(0.3,1.0,0.3).setEmissiveColor(0.8,0.8,0.8).setSpecularColor(0.01,0.01,0.01))
-          .setTexture(new ImageTexture().setUrl(new String[] {"images/loudspeaker.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/loudspeaker.png"})))
+          .setTexture(new ImageTexture().setUrl(new String[] {"images/loudspeaker.png","https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/images/loudspeaker.png"})))
         .setGeometry(new Box().setSize(100.0,100.0,0.001)))));
             }
             catch (Exception ex)
