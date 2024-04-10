@@ -55,27 +55,19 @@ import org.web3d.x3d.jsail.Shape.*;
 	* @author John Carlson
  */
 
-import net.coderextreme.X3DRoots;
-import java.util.List;
-import java.util.ArrayList;
-public class abox implements X3DRoots
+public class abox
 {
 	/** Default constructor to create this object. */
 	public abox ()
 	{
 	  initialize();
 	}
-        public List<X3D> getRootNodeList() {
-                List<X3D> list = new ArrayList<X3D>(1);
-                list.add(x3dModel);
-                return list;
-        }
 
 	/** Create and initialize the X3D model for this object. */
 	public final void initialize()
 	{
             try { // catch-all
-  x3dModel = new X3D().setProfile(X3D.PROFILE_IMMERSIVE).setVersion(X3D.VERSION_3_3)
+  x3dModel = new X3D().setProfile(X3D.PROFILE_IMMERSIVE).setVersion(X3D.VERSION_4_0)
   .setHead(new head()
     .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("abox.x3d"))
     .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("John Carlson"))

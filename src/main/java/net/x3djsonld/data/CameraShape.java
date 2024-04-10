@@ -81,21 +81,13 @@ import org.web3d.x3d.jsail.Shape.*;
 	* @author Jeff Weekley and Don Brutzman
  */
 
-import net.coderextreme.X3DRoots;
-import java.util.List;
-import java.util.ArrayList;
-public class CameraShape implements X3DRoots
+public class CameraShape
 {
 	/** Default constructor to create this object. */
 	public CameraShape ()
 	{
 	  initialize();
 	}
-        public List<X3D> getRootNodeList() {
-                List<X3D> list = new ArrayList<X3D>(1);
-                list.add(x3dModel);
-                return list;
-        }
 
 	/** Create and initialize the X3D model for this object. */
 	public final void initialize()
