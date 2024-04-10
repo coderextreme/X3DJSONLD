@@ -216,6 +216,7 @@ bubs2.prototype = {
     {
 		var testObject = new bubs2();
 		console.log ("bubs2 execution self-validation test results: " + testObject.validateSelf());
+		process.exit();
 	}
 }
 new bubs2().main();
