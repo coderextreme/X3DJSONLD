@@ -84,7 +84,7 @@ converted into an X3D HAnim model."
 },
 {
 "@name":"translated",
-"@content":"30 March 2024"
+"@content":"11 April 2024"
 },
 {
 "@name":"generator",
@@ -142,6 +142,8 @@ converted into an X3D HAnim model."
 "@name":"humanoid_root",
 "@DEF":"hanim_humanoid_root",
 "@center":[0,36,-0.008798],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -205,6 +207,8 @@ converted into an X3D HAnim model."
 "@name":"l_hip",
 "@DEF":"hanim_l_hip",
 "@center":[3.22,33.62,-0.2832],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -267,6 +271,8 @@ converted into an X3D HAnim model."
 "@name":"l_knee",
 "@DEF":"hanim_l_knee",
 "@center":[3.454,18.67,-0.02158],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -329,6 +335,8 @@ converted into an X3D HAnim model."
 "@name":"l_talocrural",
 "@DEF":"hanim_l_talocrural",
 "@center":[3.467,3.522,0.118],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -391,6 +399,8 @@ converted into an X3D HAnim model."
 "@name":"l_metatarsophalangeal_2",
 "@DEF":"hanim_l_metatarsophalangeal_2",
 "@center":[3.467,3.251,1.465],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -465,6 +475,8 @@ converted into an X3D HAnim model."
 "@name":"r_hip",
 "@DEF":"hanim_r_hip",
 "@center":[-3.22,33.62,-0.2832],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -527,6 +539,8 @@ converted into an X3D HAnim model."
 "@name":"r_knee",
 "@DEF":"hanim_r_knee",
 "@center":[-3.454,18.67,-0.02158],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -589,6 +603,8 @@ converted into an X3D HAnim model."
 "@name":"r_talocrural",
 "@DEF":"hanim_r_talocrural",
 "@center":[-3.679,3.522,0.118],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -651,6 +667,8 @@ converted into an X3D HAnim model."
 "@name":"r_metatarsophalangeal_2",
 "@DEF":"hanim_r_metatarsophalangeal_2",
 "@center":[-3.679,3.251,1.465],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -725,6 +743,8 @@ converted into an X3D HAnim model."
 "@name":"sacroiliac",
 "@DEF":"hanim_sacroiliac",
 "@center":[3.4E-5,31.26,-0.008798],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -787,6 +807,8 @@ converted into an X3D HAnim model."
 "@name":"l_shoulder",
 "@DEF":"hanim_l_shoulder",
 "@center":[4.778,51.03,-2.069],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -849,6 +871,8 @@ converted into an X3D HAnim model."
 "@name":"l_elbow",
 "@DEF":"hanim_l_elbow",
 "@center":[5.297,40.12,-2.055],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -911,6 +935,8 @@ converted into an X3D HAnim model."
 "@name":"l_radiocarpal",
 "@DEF":"hanim_l_radiocarpal",
 "@center":[5.07,31.99,-1.559],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -982,6 +1008,8 @@ converted into an X3D HAnim model."
 "@name":"r_shoulder",
 "@DEF":"hanim_r_shoulder",
 "@center":[-4.778,51.03,-2.069],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -1044,6 +1072,8 @@ converted into an X3D HAnim model."
 "@name":"r_elbow",
 "@DEF":"hanim_r_elbow",
 "@center":[-5.297,40.12,-2.055],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -1106,6 +1136,8 @@ converted into an X3D HAnim model."
 "@name":"r_radiocarpal",
 "@DEF":"hanim_r_radiocarpal",
 "@center":[-5.07,31.99,-1.559],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -1177,6 +1209,8 @@ converted into an X3D HAnim model."
 "@name":"vl5",
 "@DEF":"hanim_vl5",
 "@center":[2.5E-5,39.84,0.1163],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -1239,6 +1273,8 @@ converted into an X3D HAnim model."
 "@name":"skullbase",
 "@DEF":"hanim_skullbase",
 "@center":[2.5E-5,56.07,-1.554],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {

@@ -56,7 +56,7 @@
           },
           {
             "@name":"translated",
-            "@content":"10 April 2024"
+            "@content":"11 April 2024"
           },
           {
             "@name":"generator",
@@ -125,6 +125,36 @@
                             { "Sphere":
                               {
                               }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-children":[
+                                  {
+                                    "#comment":"Material begin"
+                                  },
+                                  {
+                                    "#comment":"Material complete, ImageTexture begin"
+                                  },
+                                  {
+                                    "#comment":"ImageTexture complete"
+                                  }
+                                ],
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@DEF":"MaterialLightBlue",
+                                      "@diffuseColor":[0.1,0.5,1]
+                                    }
+                                  },
+                                "-texture":
+                                  { "ImageTexture":
+                                    {
+                                      "@DEF":"ImageCloudlessEarth",
+                                      "@url":["earth-topo.png","earth-topo.jpg","earth-topo-small.gif","https://www.web3d.org/x3d/content/examples/Basic/earth-topo.png","https://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg","https://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif"]
+                                    }
+                                  }
+                              }
                             }
                         }
                       },
@@ -174,6 +204,25 @@
                                   { "FontStyle":
                                     {
                                       "@justify":["MIDDLE","MIDDLE"]
+                                    }
+                                  }
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-children":[
+                                  {
+                                    "#comment":"Material begin"
+                                  },
+                                  {
+                                    "#comment":"Material complete"
+                                  }
+                                ],
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@USE":"MaterialLightBlue"
                                     }
                                   }
                               }
