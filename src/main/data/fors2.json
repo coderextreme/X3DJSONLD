@@ -36,7 +36,7 @@
           },
           {
             "@name":"translated",
-            "@content":"10 April 2024"
+            "@content":"11 April 2024"
           },
           {
             "@name":"generator",
@@ -93,6 +93,25 @@
                               "-geometry":
                                 { "Sphere":
                                   {
+                                  }
+                                },
+                              "-appearance":
+                                { "Appearance":
+                                  {
+                                    "-children":[
+                                      {
+                                        "#comment":"comment before Material"
+                                      },
+                                      {
+                                        "#comment":"comment after Material"
+                                      }
+                                    ],
+                                    "-material":
+                                      { "Material":
+                                        {
+                                          "@diffuseColor":[1,0,0]
+                                        }
+                                      }
                                   }
                                 }
                             }
@@ -220,7 +239,7 @@
                               "@spine":[0,-50,0,0,0,0,0,50,0]
                             }
                           },
-                        "-children":[
+                        "-appearance":
                           { "Appearance":
                             {
                               "-material":
@@ -231,7 +250,6 @@
                                 }
                             }
                           }
-                        ]
                       }
                     },
                     { "Script":

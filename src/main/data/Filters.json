@@ -56,7 +56,7 @@
           },
           {
             "@name":"translated",
-            "@content":"10 April 2024"
+            "@content":"11 April 2024"
           },
           {
             "@name":"generator",
@@ -99,7 +99,7 @@
               "-children":[
                 { "Shape":
                   {
-                    "-children":[
+                    "-appearance":
                       { "Appearance":
                         {
                           "@DEF":"audio_emit",
@@ -112,8 +112,7 @@
                               }
                             }
                         }
-                      }
-                    ],
+                      },
                     "-geometry":
                       { "Sphere":
                         {
@@ -132,7 +131,7 @@
               "-children":[
                 { "Shape":
                   {
-                    "-children":[
+                    "-appearance":
                       { "Appearance":
                         {
                           "@DEF":"audio_emit2",
@@ -145,8 +144,7 @@
                               }
                             }
                         }
-                      }
-                    ],
+                      },
                     "-geometry":
                       { "Sphere":
                         {
@@ -165,7 +163,7 @@
               "-children":[
                 { "Shape":
                   {
-                    "-children":[
+                    "-appearance":
                       { "Appearance":
                         {
                           "@DEF":"audio_emit3",
@@ -178,8 +176,7 @@
                               }
                             }
                         }
-                      }
-                    ],
+                      },
                     "-geometry":
                       { "Sphere":
                         {
@@ -232,7 +229,7 @@
               "-children":[
                 { "Shape":
                   {
-                    "-children":[
+                    "-appearance":
                       { "Appearance":
                         {
                           "@DEF":"floor",
@@ -245,8 +242,7 @@
                               }
                             }
                         }
-                      }
-                    ],
+                      },
                     "-geometry":
                       { "Cylinder":
                         {

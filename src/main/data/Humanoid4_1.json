@@ -46,7 +46,7 @@
           },
           {
             "@name":"translated",
-            "@content":"10 April 2024"
+            "@content":"11 April 2024"
           },
           {
             "@name":"generator",
@@ -121,7 +121,7 @@
                                       "@radius":0.02
                                     }
                                   },
-                                "-children":[
+                                "-appearance":
                                   { "Appearance":
                                     {
                                       "-material":
@@ -134,7 +134,6 @@
                                         }
                                     }
                                   }
-                                ]
                               }
                             }
                           ]
@@ -153,7 +152,7 @@
                                       "@radius":0.02
                                     }
                                   },
-                                "-children":[
+                                "-appearance":
                                   { "Appearance":
                                     {
                                       "-material":
@@ -166,7 +165,6 @@
                                         }
                                     }
                                   }
-                                ]
                               }
                             }
                           ]
@@ -232,7 +230,7 @@
                                         }
                                     }
                                   },
-                                "-children":[
+                                "-appearance":
                                   { "Appearance":
                                     {
                                       "-material":
@@ -244,7 +242,6 @@
                                         }
                                     }
                                   }
-                                ]
                               }
                             }
                           ]
@@ -280,7 +277,6 @@
               "-skinCoord":
                 { "Coordinate":
                   {
-                    "@USE":"TheSkinCoord"
                   }
                 },
               "-skeleton":[

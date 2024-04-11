@@ -14,11 +14,11 @@
 "meta": [
 {
 "@name":"title",
-"@content":"Humanoid2.x3d"
+"@content":"JohnBoy.x3d"
 },
 {
 "@name":"identifier",
-"@content":"http://www.web3d.org/x3d/content/examples/HumanoidAnimation/Humanoid2.x3d"
+"@content":"http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d"
 },
 {
 "@name":"description",
@@ -46,7 +46,7 @@
 },
 {
 "@name":"translated",
-"@content":"30 March 2024"
+"@content":"11 April 2024"
 },
 {
 "@name":"generator",
@@ -110,37 +110,6 @@
 "-children":[
 { "Transform":
 {
-"@translation":[0,2,0],
-"-children":[
-{ "Shape":
-{
-"@DEF":"HAnimRootShape",
-"-appearance":
-{ "Appearance":
-{
-"-material":
-{ "Material":
-{
-"@DEF":"HAnimRootMaterial",
-"@diffuseColor":[0.8,0,0],
-"@transparency":0.3
-}
-}
-}
-},
-"-geometry":
-{ "Sphere":
-{
-"@radius":0.02
-}
-}
-}
-}
-]
-}
-},
-{ "Transform":
-{
 "@translation":[0,2.1,0],
 "-children":[
 { "Shape":
@@ -153,8 +122,7 @@
 { "Material":
 {
 "@DEF":"HAnimJointMaterial",
-"@diffuseColor":[0,0,0.8],
-"@transparency":0.3
+"@diffuseColor":[0,0,0]
 }
 }
 }
@@ -185,7 +153,7 @@
 { "ColorRGBA":
 {
 "@DEF":"HAnimSegmentLineColorRGBA",
-"@color":[1,1,0,1,1,1,0,0.1]
+"@color":[1,1,0,0,1,1,0,0]
 }
 },
 "-coord":
@@ -214,8 +182,8 @@
 "-material":
 { "Material":
 {
-"@diffuseColor":[1,1,0],
-"@transparency":0.3
+"@diffuseColor":[1,1,1],
+"@transparency":1.0
 }
 }
 }
@@ -260,7 +228,9 @@
 },
 { "Viewpoint":
 {
-"@description":"default"
+"@centerOfRotation":[0,1,0],
+"@description":"default",
+"@position":[0,1,3]
 }
 },
 { "HAnimHumanoid":
@@ -290,6 +260,8 @@ already work in view3dscene)"
 "@name":"humanoid_root",
 "@DEF":"hanim_humanoid_root",
 "@center":[0,0.824,0.0277],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -344,185 +316,6 @@ already work in view3dscene)"
 }
 }
 },
-{ "HAnimSite":
-{
-"@DEF":"hanim_buttocks_standing_wall_contact_point",
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite buttocks_standing_wall_contact_point"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
-}
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_crotch",
-"@translation":[0.0034,0.8266,0.0257],
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite crotch"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
-}
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_l_asis",
-"@translation":[0.0925,0.9983,0.1052],
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite l_asis"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
-}
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_l_iliocristale",
-"@translation":[0.1612,1.0537,8.0E-4],
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite l_iliocristale"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
-}
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_l_psis",
-"@translation":[0.0774,1.019,-0.1151],
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite l_psis"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
-}
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_l_trochanterion",
-"@translation":[0.1677,0.8336,0.0303],
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite l_trochanterion"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
-}
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_r_asis",
-"@translation":[-0.0887,1.0021,0.1112],
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite r_asis"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
-}
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_r_iliocristale",
-"@translation":[-0.1525,1.0628,0.0035],
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite r_iliocristale"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
-}
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_r_psis",
-"@translation":[-0.0716,1.019,-0.1138],
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite r_psis"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
-}
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_r_trochanterion",
-"@translation":[-0.1689,0.8419,0.0352],
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite r_trochanterion"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
-}
-},
 { "Shape":
 {
 "-geometry":
@@ -549,59 +342,6 @@ already work in view3dscene)"
 }
 }
 }
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_navel",
-"@translation":[0.0069,1.0966,0.1017],
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite navel"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
-}
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_waist_preferred_anterior",
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite waist_preferred_anterior"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
-}
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_waist_preferred_posterior",
-"@translation":[0.29,1.0915,-0.1091],
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite waist_preferred_posterior"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
-}
 }
 ]
 }
@@ -611,6 +351,8 @@ already work in view3dscene)"
 "@name":"sacroiliac",
 "@DEF":"hanim_sacroiliac",
 "@center":[0,0.9149,0.0016],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -667,17 +409,38 @@ already work in view3dscene)"
 },
 { "HAnimSite":
 {
-"@DEF":"hanim_l_femoral_lateral_epicondyles",
-"@translation":[0.1598,0.4967,0.0297],
+"@DEF":"hanim_buttocks_standing_wall_contact_point",
 "-children":[
 { "TouchSensor":
 {
-"@description":"HAnimSite l_femoral_lateral_epicondyles"
+"@description":"HAnimSite 93 buttocks_standing_wall_contact_point"
 }
 },
 { "Shape":
 {
 "@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":["93"],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
 }
 }
 ]
@@ -685,17 +448,39 @@ already work in view3dscene)"
 },
 { "HAnimSite":
 {
-"@DEF":"hanim_l_femoral_medial_epicondyles",
-"@translation":[0.0398,0.4946,0.0303],
+"@DEF":"hanim_crotch",
+"@translation":[0.0034,0.8266,0.0257],
 "-children":[
 { "TouchSensor":
 {
-"@description":"HAnimSite l_femoral_medial_epicondyles"
+"@description":"HAnimSite 38 crotch"
 }
 },
 { "Shape":
 {
 "@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":["38"],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
 }
 }
 ]
@@ -703,17 +488,39 @@ already work in view3dscene)"
 },
 { "HAnimSite":
 {
-"@DEF":"hanim_l_knee_crease",
-"@translation":[0.0993,0.4881,-0.0309],
+"@DEF":"hanim_l_asis",
+"@translation":[0.0925,0.9983,0.1052],
 "-children":[
 { "TouchSensor":
 {
-"@description":"HAnimSite l_knee_crease"
+"@description":"HAnimSite 32 l_asis"
 }
 },
 { "Shape":
 {
 "@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":["32"],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
 }
 }
 ]
@@ -721,16 +528,279 @@ already work in view3dscene)"
 },
 { "HAnimSite":
 {
-"@DEF":"hanim_l_suprapatella",
+"@DEF":"hanim_l_iliocristale",
+"@translation":[0.1612,1.0537,8.0E-4],
 "-children":[
 { "TouchSensor":
 {
-"@description":"HAnimSite l_suprapatella"
+"@description":"HAnimSite 33 l_iliocristale"
 }
 },
 { "Shape":
 {
 "@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":["33"],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
+}
+}
+]
+}
+},
+{ "HAnimSite":
+{
+"@DEF":"hanim_l_psis",
+"@translation":[0.0774,1.019,-0.1151],
+"-children":[
+{ "TouchSensor":
+{
+"@description":"HAnimSite 34 l_psis"
+}
+},
+{ "Shape":
+{
+"@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":["34"],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
+}
+}
+]
+}
+},
+{ "HAnimSite":
+{
+"@DEF":"hanim_l_trochanterion",
+"@translation":[0.1677,0.8336,0.0303],
+"-children":[
+{ "TouchSensor":
+{
+"@description":"HAnimSite 42 l_trochanterion"
+}
+},
+{ "Shape":
+{
+"@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":["42"],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
+}
+}
+]
+}
+},
+{ "HAnimSite":
+{
+"@DEF":"hanim_r_asis",
+"@translation":[-0.0887,1.0021,0.1112],
+"-children":[
+{ "TouchSensor":
+{
+"@description":"HAnimSite 35 r_asis"
+}
+},
+{ "Shape":
+{
+"@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":["35"],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
+}
+}
+]
+}
+},
+{ "HAnimSite":
+{
+"@DEF":"hanim_r_iliocristale",
+"@translation":[-0.1525,1.0628,0.0035],
+"-children":[
+{ "TouchSensor":
+{
+"@description":"HAnimSite 36 r_iliocristale"
+}
+},
+{ "Shape":
+{
+"@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":["36"],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
+}
+}
+]
+}
+},
+{ "HAnimSite":
+{
+"@DEF":"hanim_r_psis",
+"@translation":[-0.0716,1.019,-0.1138],
+"-children":[
+{ "TouchSensor":
+{
+"@description":"HAnimSite 37 r_psis"
+}
+},
+{ "Shape":
+{
+"@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":["37"],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
+}
+}
+]
+}
+},
+{ "HAnimSite":
+{
+"@DEF":"hanim_r_trochanterion",
+"@translation":[-0.1689,0.8419,0.0352],
+"-children":[
+{ "TouchSensor":
+{
+"@description":"HAnimSite 46 r_trochanterion"
+}
+},
+{ "Shape":
+{
+"@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":["46"],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
 }
 }
 ]
@@ -762,77 +832,6 @@ already work in view3dscene)"
 }
 }
 }
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_r_femoral_lateral_epicondyles",
-"@translation":[-0.1421,0.4992,0.031],
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite r_femoral_lateral_epicondyles"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
-}
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_r_femoral_medial_epicondyles",
-"@translation":[-0.0221,0.5014,0.0289],
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite r_femoral_medial_epicondyles"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
-}
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_r_knee_crease",
-"@translation":[-0.0825,0.4932,-0.0326],
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite r_knee_crease"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
-}
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_r_suprapatella",
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite r_suprapatella"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
-}
 }
 ]
 }
@@ -842,6 +841,8 @@ already work in view3dscene)"
 "@name":"l_hip",
 "@DEF":"hanim_l_hip",
 "@center":[0.0961,0.9124,-1.0E-4],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -898,17 +899,39 @@ already work in view3dscene)"
 },
 { "HAnimSite":
 {
-"@DEF":"hanim_l_lateral_malleolus",
-"@translation":[0.1308,0.0597,-0.1032],
+"@DEF":"hanim_l_femoral_lateral_epicondyles",
+"@translation":[0.1598,0.4967,0.0297],
 "-children":[
 { "TouchSensor":
 {
-"@description":"HAnimSite l_lateral_malleolus"
+"@description":"HAnimSite 40 l_femoral_lateral_epicondyles"
 }
 },
 { "Shape":
 {
 "@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":["40"],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
 }
 }
 ]
@@ -916,17 +939,39 @@ already work in view3dscene)"
 },
 { "HAnimSite":
 {
-"@DEF":"hanim_l_medial_malleolus",
-"@translation":[0.089,0.0716,-0.0881],
+"@DEF":"hanim_l_femoral_medial_epicondyles",
+"@translation":[0.0398,0.4946,0.0303],
 "-children":[
 { "TouchSensor":
 {
-"@description":"HAnimSite l_medial_malleolus"
+"@description":"HAnimSite 39 l_femoral_medial_epicondyles"
 }
 },
 { "Shape":
 {
 "@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":["39"],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
 }
 }
 ]
@@ -934,16 +979,78 @@ already work in view3dscene)"
 },
 { "HAnimSite":
 {
-"@DEF":"hanim_l_tibiale",
+"@DEF":"hanim_l_knee_crease",
+"@translation":[0.0993,0.4881,-0.0309],
 "-children":[
 { "TouchSensor":
 {
-"@description":"HAnimSite l_tibiale"
+"@description":"HAnimSite 90 l_knee_crease"
 }
 },
 { "Shape":
 {
 "@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":["90"],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
+}
+}
+]
+}
+},
+{ "HAnimSite":
+{
+"@DEF":"hanim_l_suprapatella",
+"-children":[
+{ "TouchSensor":
+{
+"@description":"HAnimSite 41 l_suprapatella"
+}
+},
+{ "Shape":
+{
+"@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":["41"],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
 }
 }
 ]
@@ -957,6 +1064,8 @@ already work in view3dscene)"
 "@name":"l_knee",
 "@DEF":"hanim_l_knee",
 "@center":[0.104,0.4867,0.0308],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -1013,17 +1122,39 @@ already work in view3dscene)"
 },
 { "HAnimSite":
 {
-"@DEF":"hanim_l_calcaneus_posterior",
-"@translation":[0.0974,0.0259,-0.1171],
+"@DEF":"hanim_l_lateral_malleolus",
+"@translation":[0.1308,0.0597,-0.1032],
 "-children":[
 { "TouchSensor":
 {
-"@description":"HAnimSite l_calcaneus_posterior"
+"@description":"HAnimSite 49 l_lateral_malleolus"
 }
 },
 { "Shape":
 {
 "@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":["49"],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
 }
 }
 ]
@@ -1031,17 +1162,78 @@ already work in view3dscene)"
 },
 { "HAnimSite":
 {
-"@DEF":"hanim_l_sphyrion",
-"@translation":[0.089,0.0575,-0.0943],
+"@DEF":"hanim_l_medial_malleolus",
+"@translation":[0.089,0.0716,-0.0881],
 "-children":[
 { "TouchSensor":
 {
-"@description":"HAnimSite l_sphyrion"
+"@description":"HAnimSite 48 l_medial_malleolus"
 }
 },
 { "Shape":
 {
 "@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":["48"],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
+}
+}
+]
+}
+},
+{ "HAnimSite":
+{
+"@DEF":"hanim_l_tibiale",
+"-children":[
+{ "TouchSensor":
+{
+"@description":"HAnimSite 47 l_tibiale"
+}
+},
+{ "Shape":
+{
+"@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":["47"],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
 }
 }
 ]
@@ -1055,6 +1247,8 @@ already work in view3dscene)"
 "@name":"l_talocrural",
 "@DEF":"hanim_l_talocrural",
 "@center":[0.1101,0.0656,-0.0736],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -1113,6 +1307,86 @@ already work in view3dscene)"
 }
 }
 }
+},
+{ "HAnimSite":
+{
+"@DEF":"hanim_l_calcaneus_posterior",
+"@translation":[0.0974,0.0259,-0.1171],
+"-children":[
+{ "TouchSensor":
+{
+"@description":"HAnimSite 58 l_calcaneus_posterior"
+}
+},
+{ "Shape":
+{
+"@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":["58"],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
+}
+}
+]
+}
+},
+{ "HAnimSite":
+{
+"@DEF":"hanim_l_sphyrion",
+"@translation":[0.089,0.0575,-0.0943],
+"-children":[
+{ "TouchSensor":
+{
+"@description":"HAnimSite 50 l_sphyrion"
+}
+},
+{ "Shape":
+{
+"@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":["50"],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
+}
+}
+]
+}
 }
 ]
 }
@@ -1122,6 +1396,8 @@ already work in view3dscene)"
 "@name":"l_tarsometatarsal_2",
 "@DEF":"hanim_l_tarsometatarsal_2",
 "@center":[0.08,0.0175,-0.0608],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -1175,126 +1451,6 @@ already work in view3dscene)"
 }
 }
 }
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_l_metatarsal_phalanx_1",
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite l_metatarsal_phalanx_1"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
-}
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_l_metatarsal_phalanx_5",
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite l_metatarsal_phalanx_5"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
-}
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_l_tarsal_distal_phalanx_1_tip",
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite l_tarsal_distal_phalanx_1_tip"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
-}
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_l_tarsal_distal_phalanx_2_tip",
-"@translation":[0.1195,0.0079,0.1433],
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite l_tarsal_distal_phalanx_2_tip"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
-}
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_l_tarsal_distal_phalanx_3_tip",
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite l_tarsal_distal_phalanx_3_tip"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
-}
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_l_tarsal_distal_phalanx_4_tip",
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite l_tarsal_distal_phalanx_4_tip"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
-}
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_l_tarsal_distal_phalanx_5_tip",
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite l_tarsal_distal_phalanx_5_tip"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
-}
 }
 ]
 }
@@ -1304,6 +1460,8 @@ already work in view3dscene)"
 "@name":"l_metatarsophalangeal_2",
 "@DEF":"hanim_l_metatarsophalangeal_2",
 "@center":[0.0824,0.0064,-0.004],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -1358,6 +1516,280 @@ already work in view3dscene)"
 }
 }
 }
+},
+{ "HAnimSite":
+{
+"@DEF":"hanim_l_metatarsal_phalanx_1",
+"-children":[
+{ "TouchSensor":
+{
+"@description":"HAnimSite 55 l_metatarsal_phalanx_1"
+}
+},
+{ "Shape":
+{
+"@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":["55"],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
+}
+}
+]
+}
+},
+{ "HAnimSite":
+{
+"@DEF":"hanim_l_metatarsal_phalanx_5",
+"-children":[
+{ "TouchSensor":
+{
+"@description":"HAnimSite 56 l_metatarsal_phalanx_5"
+}
+},
+{ "Shape":
+{
+"@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":["56"],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
+}
+}
+]
+}
+},
+{ "HAnimSite":
+{
+"@DEF":"hanim_l_tarsal_distal_phalanx_1_tip",
+"-children":[
+{ "TouchSensor":
+{
+"@description":"HAnimSite l_tarsal_distal_phalanx_1_tip"
+}
+},
+{ "Shape":
+{
+"@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":[""],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
+}
+}
+]
+}
+},
+{ "HAnimSite":
+{
+"@DEF":"hanim_l_tarsal_distal_phalanx_2_tip",
+"@translation":[0.1195,0.0079,0.1433],
+"-children":[
+{ "TouchSensor":
+{
+"@description":"HAnimSite l_tarsal_distal_phalanx_2_tip"
+}
+},
+{ "Shape":
+{
+"@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":[""],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
+}
+}
+]
+}
+},
+{ "HAnimSite":
+{
+"@DEF":"hanim_l_tarsal_distal_phalanx_3_tip",
+"-children":[
+{ "TouchSensor":
+{
+"@description":"HAnimSite l_tarsal_distal_phalanx_3_tip"
+}
+},
+{ "Shape":
+{
+"@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":[""],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
+}
+}
+]
+}
+},
+{ "HAnimSite":
+{
+"@DEF":"hanim_l_tarsal_distal_phalanx_4_tip",
+"-children":[
+{ "TouchSensor":
+{
+"@description":"HAnimSite l_tarsal_distal_phalanx_4_tip"
+}
+},
+{ "Shape":
+{
+"@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":[""],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
+}
+}
+]
+}
+},
+{ "HAnimSite":
+{
+"@DEF":"hanim_l_tarsal_distal_phalanx_5_tip",
+"-children":[
+{ "TouchSensor":
+{
+"@description":"HAnimSite l_tarsal_distal_phalanx_5_tip"
+}
+},
+{ "Shape":
+{
+"@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":[""],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
+}
+}
+]
+}
 }
 ]
 }
@@ -1366,7 +1798,9 @@ already work in view3dscene)"
 {
 "@name":"l_tarsal_distal_interphalangeal_2",
 "@DEF":"hanim_l_tarsal_distal_interphalangeal_2",
-"@center":[0.0841,0.0013,0.0216]
+"@center":[0.0841,0.0013,0.0216],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0]
 }
 }
 ]
@@ -1389,6 +1823,8 @@ already work in view3dscene)"
 "@name":"r_hip",
 "@DEF":"hanim_r_hip",
 "@center":[-0.095,0.9171,0.0029],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -1445,17 +1881,39 @@ already work in view3dscene)"
 },
 { "HAnimSite":
 {
-"@DEF":"hanim_r_lateral_malleolus",
-"@translation":[-0.1006,0.0658,-0.1075],
+"@DEF":"hanim_r_femoral_lateral_epicondyles",
+"@translation":[-0.1421,0.4992,0.031],
 "-children":[
 { "TouchSensor":
 {
-"@description":"HAnimSite r_lateral_malleolus"
+"@description":"HAnimSite 44 r_femoral_lateral_epicondyles"
 }
 },
 { "Shape":
 {
 "@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":["44"],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
 }
 }
 ]
@@ -1463,17 +1921,39 @@ already work in view3dscene)"
 },
 { "HAnimSite":
 {
-"@DEF":"hanim_r_medial_malleolus",
-"@translation":[-0.0591,0.076,-0.0928],
+"@DEF":"hanim_r_femoral_medial_epicondyles",
+"@translation":[-0.0221,0.5014,0.0289],
 "-children":[
 { "TouchSensor":
 {
-"@description":"HAnimSite r_medial_malleolus"
+"@description":"HAnimSite 43 r_femoral_medial_epicondyles"
 }
 },
 { "Shape":
 {
 "@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":["43"],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
 }
 }
 ]
@@ -1481,16 +1961,78 @@ already work in view3dscene)"
 },
 { "HAnimSite":
 {
-"@DEF":"hanim_r_tibiale",
+"@DEF":"hanim_r_knee_crease",
+"@translation":[-0.0825,0.4932,-0.0326],
 "-children":[
 { "TouchSensor":
 {
-"@description":"HAnimSite r_tibiale"
+"@description":"HAnimSite 91 r_knee_crease"
 }
 },
 { "Shape":
 {
 "@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":["91"],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
+}
+}
+]
+}
+},
+{ "HAnimSite":
+{
+"@DEF":"hanim_r_suprapatella",
+"-children":[
+{ "TouchSensor":
+{
+"@description":"HAnimSite 45 r_suprapatella"
+}
+},
+{ "Shape":
+{
+"@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":["45"],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
 }
 }
 ]
@@ -1504,6 +2046,8 @@ already work in view3dscene)"
 "@name":"r_knee",
 "@DEF":"hanim_r_knee",
 "@center":[-0.0867,0.4913,0.0318],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -1560,17 +2104,39 @@ already work in view3dscene)"
 },
 { "HAnimSite":
 {
-"@DEF":"hanim_r_calcaneus_posterior",
-"@translation":[-0.0692,0.0297,-0.1221],
+"@DEF":"hanim_r_lateral_malleolus",
+"@translation":[-0.1006,0.0658,-0.1075],
 "-children":[
 { "TouchSensor":
 {
-"@description":"HAnimSite r_calcaneus_posterior"
+"@description":"HAnimSite 53 r_lateral_malleolus"
 }
 },
 { "Shape":
 {
 "@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":["53"],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
 }
 }
 ]
@@ -1578,17 +2144,78 @@ already work in view3dscene)"
 },
 { "HAnimSite":
 {
-"@DEF":"hanim_r_sphyrion",
-"@translation":[-0.0603,0.061,-0.1002],
+"@DEF":"hanim_r_medial_malleolus",
+"@translation":[-0.0591,0.076,-0.0928],
 "-children":[
 { "TouchSensor":
 {
-"@description":"HAnimSite r_sphyrion"
+"@description":"HAnimSite 52 r_medial_malleolus"
 }
 },
 { "Shape":
 {
 "@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":["52"],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
+}
+}
+]
+}
+},
+{ "HAnimSite":
+{
+"@DEF":"hanim_r_tibiale",
+"-children":[
+{ "TouchSensor":
+{
+"@description":"HAnimSite 51 r_tibiale"
+}
+},
+{ "Shape":
+{
+"@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":["51"],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
 }
 }
 ]
@@ -1602,6 +2229,8 @@ already work in view3dscene)"
 "@name":"r_talocrural",
 "@DEF":"hanim_r_talocrural",
 "@center":[-0.0801,0.0712,-0.0766],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -1660,6 +2289,86 @@ already work in view3dscene)"
 }
 }
 }
+},
+{ "HAnimSite":
+{
+"@DEF":"hanim_r_calcaneus_posterior",
+"@translation":[-0.0692,0.0297,-0.1221],
+"-children":[
+{ "TouchSensor":
+{
+"@description":"HAnimSite 62 r_calcaneus_posterior"
+}
+},
+{ "Shape":
+{
+"@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":["62"],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
+}
+}
+]
+}
+},
+{ "HAnimSite":
+{
+"@DEF":"hanim_r_sphyrion",
+"@translation":[-0.0603,0.061,-0.1002],
+"-children":[
+{ "TouchSensor":
+{
+"@description":"HAnimSite 54 r_sphyrion"
+}
+},
+{ "Shape":
+{
+"@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":["54"],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
+}
+}
+]
+}
 }
 ]
 }
@@ -1669,6 +2378,8 @@ already work in view3dscene)"
 "@name":"r_tarsometatarsal_2",
 "@DEF":"hanim_r_tarsometatarsal_2",
 "@center":[-0.08,0.0175,-0.0608],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -1722,126 +2433,6 @@ already work in view3dscene)"
 }
 }
 }
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_r_metatarsal_phalanx_1",
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite r_metatarsal_phalanx_1"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
-}
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_r_metatarsal_phalanx_5",
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite r_metatarsal_phalanx_5"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
-}
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_r_tarsal_distal_phalanx_1_tip",
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite r_tarsal_distal_phalanx_1_tip"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
-}
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_r_tarsal_distal_phalanx_2_tip",
-"@translation":[-0.0883,0.0134,0.1383],
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite r_tarsal_distal_phalanx_2_tip"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
-}
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_r_tarsal_distal_phalanx_3_tip",
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite r_tarsal_distal_phalanx_3_tip"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
-}
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_r_tarsal_distal_phalanx_4_tip",
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite r_tarsal_distal_phalanx_4_tip"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
-}
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_r_tarsal_distal_phalanx_5_tip",
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite r_tarsal_distal_phalanx_5_tip"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
-}
 }
 ]
 }
@@ -1851,6 +2442,8 @@ already work in view3dscene)"
 "@name":"r_metatarsophalangeal_2",
 "@DEF":"hanim_r_metatarsophalangeal_2",
 "@center":[-0.0823,0.0064,-0.004],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -1905,6 +2498,280 @@ already work in view3dscene)"
 }
 }
 }
+},
+{ "HAnimSite":
+{
+"@DEF":"hanim_r_metatarsal_phalanx_1",
+"-children":[
+{ "TouchSensor":
+{
+"@description":"HAnimSite 59 r_metatarsal_phalanx_1"
+}
+},
+{ "Shape":
+{
+"@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":["59"],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
+}
+}
+]
+}
+},
+{ "HAnimSite":
+{
+"@DEF":"hanim_r_metatarsal_phalanx_5",
+"-children":[
+{ "TouchSensor":
+{
+"@description":"HAnimSite 60 r_metatarsal_phalanx_5"
+}
+},
+{ "Shape":
+{
+"@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":["60"],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
+}
+}
+]
+}
+},
+{ "HAnimSite":
+{
+"@DEF":"hanim_r_tarsal_distal_phalanx_1_tip",
+"-children":[
+{ "TouchSensor":
+{
+"@description":"HAnimSite r_tarsal_distal_phalanx_1_tip"
+}
+},
+{ "Shape":
+{
+"@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":[""],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
+}
+}
+]
+}
+},
+{ "HAnimSite":
+{
+"@DEF":"hanim_r_tarsal_distal_phalanx_2_tip",
+"@translation":[-0.0883,0.0134,0.1383],
+"-children":[
+{ "TouchSensor":
+{
+"@description":"HAnimSite r_tarsal_distal_phalanx_2_tip"
+}
+},
+{ "Shape":
+{
+"@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":[""],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
+}
+}
+]
+}
+},
+{ "HAnimSite":
+{
+"@DEF":"hanim_r_tarsal_distal_phalanx_3_tip",
+"-children":[
+{ "TouchSensor":
+{
+"@description":"HAnimSite r_tarsal_distal_phalanx_3_tip"
+}
+},
+{ "Shape":
+{
+"@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":[""],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
+}
+}
+]
+}
+},
+{ "HAnimSite":
+{
+"@DEF":"hanim_r_tarsal_distal_phalanx_4_tip",
+"-children":[
+{ "TouchSensor":
+{
+"@description":"HAnimSite r_tarsal_distal_phalanx_4_tip"
+}
+},
+{ "Shape":
+{
+"@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":[""],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
+}
+}
+]
+}
+},
+{ "HAnimSite":
+{
+"@DEF":"hanim_r_tarsal_distal_phalanx_5_tip",
+"-children":[
+{ "TouchSensor":
+{
+"@description":"HAnimSite r_tarsal_distal_phalanx_5_tip"
+}
+},
+{ "Shape":
+{
+"@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":[""],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
+}
+}
+]
+}
 }
 ]
 }
@@ -1913,7 +2780,9 @@ already work in view3dscene)"
 {
 "@name":"r_tarsal_distal_interphalangeal_2",
 "@DEF":"hanim_r_tarsal_distal_interphalangeal_2",
-"@center":[-0.0841,0.0013,0.0216]
+"@center":[-0.0841,0.0013,0.0216],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0]
 }
 }
 ]
@@ -1939,6 +2808,8 @@ already work in view3dscene)"
 "@name":"vl5",
 "@DEF":"hanim_vl5",
 "@center":[0.0028,1.0568,-0.0776],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -1995,17 +2866,39 @@ already work in view3dscene)"
 },
 { "HAnimSite":
 {
-"@DEF":"hanim_l_rib10",
-"@translation":[0.0871,1.1925,0.0992],
+"@DEF":"hanim_navel",
+"@translation":[0.0069,1.0966,0.1017],
 "-children":[
 { "TouchSensor":
 {
-"@description":"HAnimSite l_rib10"
+"@description":"HAnimSite 84 navel"
 }
 },
 { "Shape":
 {
 "@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":["84"],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
 }
 }
 ]
@@ -2013,17 +2906,38 @@ already work in view3dscene)"
 },
 { "HAnimSite":
 {
-"@DEF":"hanim_r_rib10",
-"@translation":[-0.0711,1.1941,0.1016],
+"@DEF":"hanim_waist_preferred_anterior",
 "-children":[
 { "TouchSensor":
 {
-"@description":"HAnimSite r_rib10"
+"@description":"HAnimSite 26 waist_preferred_anterior"
 }
 },
 { "Shape":
 {
 "@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":["26"],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
 }
 }
 ]
@@ -2031,33 +2945,39 @@ already work in view3dscene)"
 },
 { "HAnimSite":
 {
-"@DEF":"hanim_spine_1_middle_back",
+"@DEF":"hanim_waist_preferred_posterior",
+"@translation":[0.29,1.0915,-0.1091],
 "-children":[
 { "TouchSensor":
 {
-"@description":"HAnimSite spine_1_middle_back"
+"@description":"HAnimSite 27 waist_preferred_posterior"
 }
 },
 { "Shape":
 {
 "@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":["27"],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
 }
 }
 ]
-}
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_spine_2_middle_back",
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite spine_2_middle_back"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
 }
 }
 ]
@@ -2071,6 +2991,8 @@ already work in view3dscene)"
 "@name":"vl3",
 "@DEF":"hanim_vl3",
 "@center":[0.0041,1.1276,-0.0796],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -2124,6 +3046,164 @@ already work in view3dscene)"
 }
 }
 }
+},
+{ "HAnimSite":
+{
+"@DEF":"hanim_l_rib10",
+"@translation":[0.0871,1.1925,0.0992],
+"-children":[
+{ "TouchSensor":
+{
+"@description":"HAnimSite 28 l_rib10"
+}
+},
+{ "Shape":
+{
+"@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":["28"],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
+}
+}
+]
+}
+},
+{ "HAnimSite":
+{
+"@DEF":"hanim_r_rib10",
+"@translation":[-0.0711,1.1941,0.1016],
+"-children":[
+{ "TouchSensor":
+{
+"@description":"HAnimSite 30 r_rib10"
+}
+},
+{ "Shape":
+{
+"@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":["30"],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
+}
+}
+]
+}
+},
+{ "HAnimSite":
+{
+"@DEF":"hanim_spine_1_middle_back",
+"-children":[
+{ "TouchSensor":
+{
+"@description":"HAnimSite 24 spine_1_middle_back"
+}
+},
+{ "Shape":
+{
+"@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":["24"],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
+}
+}
+]
+}
+},
+{ "HAnimSite":
+{
+"@DEF":"hanim_spine_2_middle_back",
+"-children":[
+{ "TouchSensor":
+{
+"@description":"HAnimSite spine_2_middle_back"
+}
+},
+{ "Shape":
+{
+"@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":[""],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
+}
+}
+]
+}
 }
 ]
 }
@@ -2133,6 +3213,8 @@ already work in view3dscene)"
 "@name":"vl1",
 "@DEF":"hanim_vl1",
 "@center":[0.0048,1.1912,-0.0805],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -2186,60 +3268,6 @@ already work in view3dscene)"
 }
 }
 }
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_l_thelion",
-"@translation":[0.0918,1.3382,0.1192],
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite l_thelion"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
-}
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_r_thelion",
-"@translation":[-0.0736,1.3385,0.1217],
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite r_thelion"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
-}
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_substernale",
-"@translation":[0.0085,1.2995,0.1147],
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite substernale"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
-}
 }
 ]
 }
@@ -2249,6 +3277,8 @@ already work in view3dscene)"
 "@name":"vt10",
 "@DEF":"hanim_vt10",
 "@center":[0.0056,1.2848,-0.0822],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -2305,16 +3335,39 @@ already work in view3dscene)"
 },
 { "HAnimSite":
 {
-"@DEF":"hanim_l_chest_midsagittal_plane",
+"@DEF":"hanim_l_thelion",
+"@translation":[0.0918,1.3382,0.1192],
 "-children":[
 { "TouchSensor":
 {
-"@description":"HAnimSite l_chest_midsagittal_plane"
+"@description":"HAnimSite 29 l_thelion"
 }
 },
 { "Shape":
 {
 "@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":["29"],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
 }
 }
 ]
@@ -2322,16 +3375,39 @@ already work in view3dscene)"
 },
 { "HAnimSite":
 {
-"@DEF":"hanim_mesosternale",
+"@DEF":"hanim_r_thelion",
+"@translation":[-0.0736,1.3385,0.1217],
 "-children":[
 { "TouchSensor":
 {
-"@description":"HAnimSite mesosternale"
+"@description":"HAnimSite 31 r_thelion"
 }
 },
 { "Shape":
 {
 "@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":["31"],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
 }
 }
 ]
@@ -2339,33 +3415,39 @@ already work in view3dscene)"
 },
 { "HAnimSite":
 {
-"@DEF":"hanim_r_chest_midsagittal_plane",
+"@DEF":"hanim_substernale",
+"@translation":[0.0085,1.2995,0.1147],
 "-children":[
 { "TouchSensor":
 {
-"@description":"HAnimSite r_chest_midsagittal_plane"
+"@description":"HAnimSite 13 substernale"
 }
 },
 { "Shape":
 {
 "@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":["13"],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
 }
 }
 ]
-}
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_rear_center_midsagittal_plane",
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite rear_center_midsagittal_plane"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
 }
 }
 ]
@@ -2379,6 +3461,8 @@ already work in view3dscene)"
 "@name":"vt6",
 "@DEF":"hanim_vt6",
 "@center":[0.0059,1.3866,-0.08],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -2435,17 +3519,38 @@ already work in view3dscene)"
 },
 { "HAnimSite":
 {
-"@DEF":"hanim_cervicale",
-"@translation":[0.0064,1.52,-0.0815],
+"@DEF":"hanim_l_chest_midsagittal_plane",
 "-children":[
 { "TouchSensor":
 {
-"@description":"HAnimSite cervicale"
+"@description":"HAnimSite 94 l_chest_midsagittal_plane"
 }
 },
 { "Shape":
 {
 "@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":["94"],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
 }
 }
 ]
@@ -2453,17 +3558,38 @@ already work in view3dscene)"
 },
 { "HAnimSite":
 {
-"@DEF":"hanim_l_neck_base",
-"@translation":[0.0646,1.5141,-0.038],
+"@DEF":"hanim_mesosternale",
 "-children":[
 { "TouchSensor":
 {
-"@description":"HAnimSite l_neck_base"
+"@description":"HAnimSite 88 mesosternale"
 }
 },
 { "Shape":
 {
 "@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":["88"],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
 }
 }
 ]
@@ -2471,17 +3597,38 @@ already work in view3dscene)"
 },
 { "HAnimSite":
 {
-"@DEF":"hanim_r_neck_base",
-"@translation":[-0.0419,1.5149,-0.022],
+"@DEF":"hanim_r_chest_midsagittal_plane",
 "-children":[
 { "TouchSensor":
 {
-"@description":"HAnimSite r_neck_base"
+"@description":"HAnimSite 95 r_chest_midsagittal_plane"
 }
 },
 { "Shape":
 {
 "@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":["95"],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
 }
 }
 ]
@@ -2489,17 +3636,38 @@ already work in view3dscene)"
 },
 { "HAnimSite":
 {
-"@DEF":"hanim_suprasternale",
-"@translation":[0.0084,1.4714,0.0551],
+"@DEF":"hanim_rear_center_midsagittal_plane",
 "-children":[
 { "TouchSensor":
 {
-"@description":"HAnimSite suprasternale"
+"@description":"HAnimSite 92 rear_center_midsagittal_plane"
 }
 },
 { "Shape":
 {
 "@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":["92"],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
 }
 }
 ]
@@ -2513,6 +3681,8 @@ already work in view3dscene)"
 "@name":"vt1",
 "@DEF":"hanim_vt1",
 "@center":[0.0065,1.4951,-0.0387],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -2567,6 +3737,166 @@ already work in view3dscene)"
 }
 }
 },
+{ "HAnimSite":
+{
+"@DEF":"hanim_cervicale",
+"@translation":[0.0064,1.52,-0.0815],
+"-children":[
+{ "TouchSensor":
+{
+"@description":"HAnimSite 10 cervicale"
+}
+},
+{ "Shape":
+{
+"@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":["10"],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
+}
+}
+]
+}
+},
+{ "HAnimSite":
+{
+"@DEF":"hanim_l_neck_base",
+"@translation":[0.0646,1.5141,-0.038],
+"-children":[
+{ "TouchSensor":
+{
+"@description":"HAnimSite 82 l_neck_base"
+}
+},
+{ "Shape":
+{
+"@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":["82"],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
+}
+}
+]
+}
+},
+{ "HAnimSite":
+{
+"@DEF":"hanim_r_neck_base",
+"@translation":[-0.0419,1.5149,-0.022],
+"-children":[
+{ "TouchSensor":
+{
+"@description":"HAnimSite 83 r_neck_base"
+}
+},
+{ "Shape":
+{
+"@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":["83"],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
+}
+}
+]
+}
+},
+{ "HAnimSite":
+{
+"@DEF":"hanim_suprasternale",
+"@translation":[0.0084,1.4714,0.0551],
+"-children":[
+{ "TouchSensor":
+{
+"@description":"HAnimSite 12 suprasternale"
+}
+},
+{ "Shape":
+{
+"@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":["12"],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
+}
+}
+]
+}
+},
 { "Shape":
 {
 "-geometry":
@@ -2592,95 +3922,6 @@ already work in view3dscene)"
 }
 }
 }
-}
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_l_acromion",
-"@translation":[0.2032,1.476,-0.049],
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite l_acromion"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
-}
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_l_axilla_distal_pt",
-"@translation":[0.1706,1.4072,-0.0875],
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite l_axilla_distal_pt"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
-}
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_l_axilla_posterior_folds",
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite l_axilla_posterior_folds"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
-}
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_l_axilla_proximal",
-"@translation":[0.1777,1.4065,-0.0075],
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite l_axilla_proximal"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
-}
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_l_clavicale",
-"@translation":[0.0271,1.4943,0.0394],
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite l_clavicale"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
 }
 },
 { "Shape":
@@ -2709,95 +3950,6 @@ already work in view3dscene)"
 }
 }
 }
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_r_acromion",
-"@translation":[-0.1905,1.4791,-0.0431],
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite r_acromion"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
-}
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_r_axilla_distal_pt",
-"@translation":[-0.1603,1.4098,-0.0826],
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite r_axilla_distal_pt"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
-}
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_r_axilla_posterior_folds",
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite r_axilla_posterior_folds"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
-}
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_r_axilla_proximal",
-"@translation":[-0.1626,1.4072,-0.0031],
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite r_axilla_proximal"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
-}
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_r_clavicale",
-"@translation":[-0.0115,1.4943,0.04],
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite r_clavicale"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
-}
 }
 ]
 }
@@ -2807,6 +3959,8 @@ already work in view3dscene)"
 "@name":"vc4",
 "@DEF":"hanim_vc4",
 "@center":[0.0066,1.5662,-0.0084],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -2860,23 +4014,6 @@ already work in view3dscene)"
 }
 }
 }
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_adams_apple",
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite adams_apple"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
-}
 }
 ]
 }
@@ -2886,6 +4023,8 @@ already work in view3dscene)"
 "@name":"vc2",
 "@DEF":"hanim_vc2",
 "@center":[0.0066,1.5928,-0.0103],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -2942,263 +4081,38 @@ already work in view3dscene)"
 },
 { "HAnimSite":
 {
-"@DEF":"hanim_glabella",
+"@DEF":"hanim_adams_apple",
 "-children":[
 { "TouchSensor":
 {
-"@description":"HAnimSite glabella"
+"@description":"HAnimSite 11 adams_apple"
 }
 },
 { "Shape":
 {
 "@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":["11"],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
 }
 }
 ]
-}
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_l_ectocanthus",
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite l_ectocanthus"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
-}
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_l_gonion",
-"@translation":[0.0631,1.553,0.033],
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite l_gonion"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
-}
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_l_infraorbitale",
-"@translation":[0.0341,1.6171,0.0752],
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite l_infraorbitale"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
-}
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_l_tragion",
-"@translation":[0.0739,1.6348,0.0282],
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite l_tragion"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
-}
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_menton",
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite menton"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
-}
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_nuchale",
-"@translation":[0.0039,1.5972,-0.0796],
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite nuchale"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
-}
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_opisthocranion",
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite opisthocranion"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
-}
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_r_ectocanthus",
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite r_ectocanthus"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
-}
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_r_gonion",
-"@translation":[-0.052,1.5529,0.0347],
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite r_gonion"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
-}
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_r_infraorbitale",
-"@translation":[-0.0237,1.6171,0.0752],
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite r_infraorbitale"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
-}
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_r_tragion",
-"@translation":[-0.0646,1.6347,0.0302],
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite r_tragion"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
-}
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_sellion",
-"@translation":[0.0058,1.6316,0.0852],
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite sellion"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
-}
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_skull_vertex",
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite skull_vertex"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
-}
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_supramenton",
-"@translation":[0.0061,1.541,0.0805],
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite supramenton"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
 }
 }
 ]
@@ -3211,7 +4125,9 @@ already work in view3dscene)"
 {
 "@name":"skullbase",
 "@DEF":"hanim_skullbase",
-"@center":[0.0044,1.6209,0.0236]
+"@center":[0.0044,1.6209,0.0236],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0]
 }
 }
 ]
@@ -3225,6 +4141,8 @@ already work in view3dscene)"
 "@name":"l_sternoclavicular",
 "@DEF":"hanim_l_sternoclavicular",
 "@center":[0.082,1.4488,-0.0353],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -3278,6 +4196,205 @@ already work in view3dscene)"
 }
 }
 }
+},
+{ "HAnimSite":
+{
+"@DEF":"hanim_l_acromion",
+"@translation":[0.2032,1.476,-0.049],
+"-children":[
+{ "TouchSensor":
+{
+"@description":"HAnimSite 15 l_acromion"
+}
+},
+{ "Shape":
+{
+"@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":["15"],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
+}
+}
+]
+}
+},
+{ "HAnimSite":
+{
+"@DEF":"hanim_l_axilla_distal",
+"@translation":[0.1706,1.4072,-0.0875],
+"-children":[
+{ "TouchSensor":
+{
+"@description":"HAnimSite 17 l_axilla_distal"
+}
+},
+{ "Shape":
+{
+"@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":["17"],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
+}
+}
+]
+}
+},
+{ "HAnimSite":
+{
+"@DEF":"hanim_l_axilla_posterior_folds",
+"-children":[
+{ "TouchSensor":
+{
+"@description":"HAnimSite 18 l_axilla_posterior_folds"
+}
+},
+{ "Shape":
+{
+"@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":["18"],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
+}
+}
+]
+}
+},
+{ "HAnimSite":
+{
+"@DEF":"hanim_l_axilla_proximal",
+"@translation":[0.1777,1.4065,-0.0075],
+"-children":[
+{ "TouchSensor":
+{
+"@description":"HAnimSite 16 l_axilla_proximal"
+}
+},
+{ "Shape":
+{
+"@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":["16"],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
+}
+}
+]
+}
+},
+{ "HAnimSite":
+{
+"@DEF":"hanim_l_clavicale",
+"@translation":[0.0271,1.4943,0.0394],
+"-children":[
+{ "TouchSensor":
+{
+"@description":"HAnimSite 14 l_clavicale"
+}
+},
+{ "Shape":
+{
+"@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":["14"],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
+}
+}
+]
+}
 }
 ]
 }
@@ -3287,6 +4404,8 @@ already work in view3dscene)"
 "@name":"l_acromioclavicular",
 "@DEF":"hanim_l_acromioclavicular",
 "@center":[0.0962,1.4269,-0.0424],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -3340,41 +4459,6 @@ already work in view3dscene)"
 }
 }
 }
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_l_bideltoid",
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite l_bideltoid"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
-}
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_l_humeral_lateral_epicondyles",
-"@translation":[0.228,1.1482,-0.11],
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite l_humeral_lateral_epicondyles"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
-}
 }
 ]
 }
@@ -3384,6 +4468,8 @@ already work in view3dscene)"
 "@name":"l_shoulder",
 "@DEF":"hanim_l_shoulder",
 "@center":[0.2029,1.4376,-0.0387],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -3440,17 +4526,38 @@ already work in view3dscene)"
 },
 { "HAnimSite":
 {
-"@DEF":"hanim_l_humeral_medial_epicondyles",
-"@translation":[0.1735,1.1272,-0.1113],
+"@DEF":"hanim_l_bideltoid",
 "-children":[
 { "TouchSensor":
 {
-"@description":"HAnimSite l_humeral_medial_epicondyles"
+"@description":"HAnimSite 96 l_bideltoid"
 }
 },
 { "Shape":
 {
 "@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":["96"],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
 }
 }
 ]
@@ -3458,53 +4565,39 @@ already work in view3dscene)"
 },
 { "HAnimSite":
 {
-"@DEF":"hanim_l_olecranon",
-"@translation":[-0.1962,1.1375,-0.1123],
+"@DEF":"hanim_l_humeral_lateral_epicondyles",
+"@translation":[0.228,1.1482,-0.11],
 "-children":[
 { "TouchSensor":
 {
-"@description":"HAnimSite l_olecranon"
+"@description":"HAnimSite 63 l_humeral_lateral_epicondyles"
 }
 },
 { "Shape":
 {
 "@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":["63"],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
 }
 }
 ]
-}
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_l_radial_styloid",
-"@translation":[0.1901,0.8645,-0.0415],
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite l_radial_styloid"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
-}
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_l_radiale",
-"@translation":[0.2182,1.1212,-0.1167],
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite l_radiale"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
 }
 }
 ]
@@ -3518,6 +4611,8 @@ already work in view3dscene)"
 "@name":"l_elbow",
 "@DEF":"hanim_l_elbow",
 "@center":[0.2014,1.1357,-0.0682],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -3574,17 +4669,159 @@ already work in view3dscene)"
 },
 { "HAnimSite":
 {
-"@DEF":"hanim_l_ulnar_styloid",
-"@translation":[-0.2142,0.8529,-0.0648],
+"@DEF":"hanim_l_humeral_medial_epicondyles",
+"@translation":[0.1735,1.1272,-0.1113],
 "-children":[
 { "TouchSensor":
 {
-"@description":"HAnimSite l_ulnar_styloid"
+"@description":"HAnimSite 64 l_humeral_medial_epicondyles"
 }
 },
 { "Shape":
 {
 "@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":["64"],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
+}
+}
+]
+}
+},
+{ "HAnimSite":
+{
+"@DEF":"hanim_l_olecranon",
+"@translation":[-0.1962,1.1375,-0.1123],
+"-children":[
+{ "TouchSensor":
+{
+"@description":"HAnimSite 65 l_olecranon"
+}
+},
+{ "Shape":
+{
+"@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":["65"],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
+}
+}
+]
+}
+},
+{ "HAnimSite":
+{
+"@DEF":"hanim_l_radial_styloid",
+"@translation":[0.1901,0.8645,-0.0415],
+"-children":[
+{ "TouchSensor":
+{
+"@description":"HAnimSite 71 l_radial_styloid"
+}
+},
+{ "Shape":
+{
+"@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":["71"],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
+}
+}
+]
+}
+},
+{ "HAnimSite":
+{
+"@DEF":"hanim_l_radiale",
+"@translation":[0.2182,1.1212,-0.1167],
+"-children":[
+{ "TouchSensor":
+{
+"@description":"HAnimSite 69 l_radiale"
+}
+},
+{ "Shape":
+{
+"@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":["69"],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
 }
 }
 ]
@@ -3598,6 +4835,8 @@ already work in view3dscene)"
 "@name":"l_radiocarpal",
 "@DEF":"hanim_l_radiocarpal",
 "@center":[0.1984,0.8663,-0.0583],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -3658,6 +4897,46 @@ already work in view3dscene)"
 }
 }
 },
+{ "HAnimSite":
+{
+"@DEF":"hanim_l_ulnar_styloid",
+"@translation":[-0.2142,0.8529,-0.0648],
+"-children":[
+{ "TouchSensor":
+{
+"@description":"HAnimSite 70 l_ulnar_styloid"
+}
+},
+{ "Shape":
+{
+"@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":["70"],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
+}
+}
+]
+}
+},
 { "Shape":
 {
 "-geometry":
@@ -3685,24 +4964,6 @@ already work in view3dscene)"
 }
 }
 },
-{ "HAnimSite":
-{
-"@DEF":"hanim_l_metacarpal_phalanx_2",
-"@translation":[0.2009,0.8139,-0.0237],
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite l_metacarpal_phalanx_2"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
-}
-},
 { "Shape":
 {
 "-geometry":
@@ -3728,23 +4989,6 @@ already work in view3dscene)"
 }
 }
 }
-}
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_l_metacarpal_phalanx_3",
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite l_metacarpal_phalanx_3"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
 }
 },
 { "Shape":
@@ -3800,24 +5044,6 @@ already work in view3dscene)"
 }
 }
 }
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_l_metacarpal_phalanx_5",
-"@translation":[0.1929,0.786,-0.1122],
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite l_metacarpal_phalanx_5"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
-}
 }
 ]
 }
@@ -3827,6 +5053,8 @@ already work in view3dscene)"
 "@name":"l_carpometacarpal_1",
 "@DEF":"hanim_l_carpometacarpal_1",
 "@center":[0.1924,0.8472,-0.0534],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -3889,6 +5117,8 @@ already work in view3dscene)"
 "@name":"l_metacarpophalangeal_1",
 "@DEF":"hanim_l_metacarpophalangeal_1",
 "@center":[0.1951,0.8226,0.0246],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -3942,23 +5172,6 @@ already work in view3dscene)"
 }
 }
 }
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_l_carpal_distal_phalanx_1_tip",
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite l_carpal_distal_phalanx_1_tip"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
-}
 }
 ]
 }
@@ -3967,7 +5180,9 @@ already work in view3dscene)"
 {
 "@name":"l_carpal_interphalangeal_1",
 "@DEF":"hanim_l_carpal_interphalangeal_1",
-"@center":[0.1955,0.8159,0.0464]
+"@center":[0.1955,0.8159,0.0464],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0]
 }
 }
 ]
@@ -3981,6 +5196,8 @@ already work in view3dscene)"
 "@name":"l_carpometacarpal_2",
 "@DEF":"hanim_l_carpometacarpal_2",
 "@center":[0.1983,0.8024,-0.028],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -4034,6 +5251,46 @@ already work in view3dscene)"
 }
 }
 }
+},
+{ "HAnimSite":
+{
+"@DEF":"hanim_l_metacarpal_phalanx_2",
+"@translation":[0.2009,0.8139,-0.0237],
+"-children":[
+{ "TouchSensor":
+{
+"@description":"HAnimSite 75 l_metacarpal_phalanx_2"
+}
+},
+{ "Shape":
+{
+"@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":["75"],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
+}
+}
+]
+}
 }
 ]
 }
@@ -4043,6 +5300,8 @@ already work in view3dscene)"
 "@name":"l_metacarpophalangeal_2",
 "@DEF":"hanim_l_metacarpophalangeal_2",
 "@center":[0.1983,0.7815,-0.028],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -4106,6 +5365,8 @@ already work in view3dscene)"
 "@name":"l_carpal_proximal_interphalangeal_2",
 "@DEF":"hanim_l_carpal_proximal_interphalangeal_2",
 "@center":[0.2017,0.7363,-0.0248],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -4160,41 +5421,6 @@ vertices 2"
 }
 }
 }
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_l_carpal_distal_phalanx_2_tip",
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite l_carpal_distal_phalanx_2_tip"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
-}
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_l_dactylion",
-"@translation":[0.2056,0.6743,-0.0482],
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite l_dactylion"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
-}
 }
 ]
 }
@@ -4203,7 +5429,9 @@ vertices 2"
 {
 "@name":"l_carpal_distal_interphalangeal_2",
 "@DEF":"hanim_l_carpal_distal_interphalangeal_2",
-"@center":[0.2028,0.7139,-0.0236]
+"@center":[0.2028,0.7139,-0.0236],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0]
 }
 }
 ]
@@ -4220,6 +5448,8 @@ vertices 2"
 "@name":"l_carpometacarpal_3",
 "@DEF":"hanim_l_carpometacarpal_3",
 "@center":[0.1987,0.8029,-0.053],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -4273,6 +5503,45 @@ vertices 2"
 }
 }
 }
+},
+{ "HAnimSite":
+{
+"@DEF":"hanim_l_metacarpal_phalanx_3",
+"-children":[
+{ "TouchSensor":
+{
+"@description":"HAnimSite 76 l_metacarpal_phalanx_3"
+}
+},
+{ "Shape":
+{
+"@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":["76"],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
+}
+}
+]
+}
 }
 ]
 }
@@ -4282,6 +5551,8 @@ vertices 2"
 "@name":"l_metacarpophalangeal_3",
 "@DEF":"hanim_l_metacarpophalangeal_3",
 "@center":[0.1987,0.7818,-0.053],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -4345,6 +5616,8 @@ vertices 2"
 "@name":"l_carpal_proximal_interphalangeal_3",
 "@DEF":"hanim_l_carpal_proximal_interphalangeal_3",
 "@center":[0.2013,0.7273,-0.0503],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -4399,23 +5672,6 @@ vertices 2"
 }
 }
 }
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_l_carpal_distal_phalanx_3_tip",
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite l_carpal_distal_phalanx_3_tip"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
-}
 }
 ]
 }
@@ -4424,7 +5680,9 @@ vertices 2"
 {
 "@name":"l_carpal_distal_interphalangeal_3",
 "@DEF":"hanim_l_carpal_distal_interphalangeal_3",
-"@center":[0.2026,0.7011,-0.0494]
+"@center":[0.2026,0.7011,-0.0494],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0]
 }
 }
 ]
@@ -4441,6 +5699,8 @@ vertices 2"
 "@name":"l_carpometacarpal_4",
 "@DEF":"hanim_l_carpometacarpal_4",
 "@center":[0.1956,0.8019,-0.0794],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -4503,6 +5763,8 @@ vertices 2"
 "@name":"l_metacarpophalangeal_4",
 "@DEF":"hanim_l_metacarpophalangeal_4",
 "@center":[0.1956,0.7815,-0.0794],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -4566,6 +5828,8 @@ vertices 2"
 "@name":"l_carpal_proximal_interphalangeal_4",
 "@DEF":"hanim_l_carpal_proximal_interphalangeal_4",
 "@center":[0.1973,0.7287,-0.0777],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -4620,23 +5884,6 @@ vertices 2"
 }
 }
 }
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_l_carpal_distal_phalanx_4_tip",
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite l_carpal_distal_phalanx_4_tip"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
-}
 }
 ]
 }
@@ -4645,7 +5892,9 @@ vertices 2"
 {
 "@name":"l_carpal_distal_interphalangeal_4",
 "@DEF":"hanim_l_carpal_distal_interphalangeal_4",
-"@center":[0.1983,0.7045,-0.0767]
+"@center":[0.1983,0.7045,-0.0767],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0]
 }
 }
 ]
@@ -4662,6 +5911,8 @@ vertices 2"
 "@name":"l_carpometacarpal_5",
 "@DEF":"hanim_l_carpometacarpal_5",
 "@center":[0.1925,0.8066,-0.1036],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -4715,6 +5966,46 @@ vertices 2"
 }
 }
 }
+},
+{ "HAnimSite":
+{
+"@DEF":"hanim_l_metacarpal_phalanx_5",
+"@translation":[0.1929,0.786,-0.1122],
+"-children":[
+{ "TouchSensor":
+{
+"@description":"HAnimSite 77 l_metacarpal_phalanx_5"
+}
+},
+{ "Shape":
+{
+"@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":["77"],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
+}
+}
+]
+}
 }
 ]
 }
@@ -4724,6 +6015,8 @@ vertices 2"
 "@name":"l_metacarpophalangeal_5",
 "@DEF":"hanim_l_metacarpophalangeal_5",
 "@center":[0.1925,0.7866,-0.1036],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -4787,6 +6080,8 @@ vertices 2"
 "@name":"l_carpal_proximal_interphalangeal_5",
 "@DEF":"hanim_l_carpal_proximal_interphalangeal_5",
 "@center":[0.1938,0.7452,-0.1024],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -4841,23 +6136,6 @@ vertices 2"
 }
 }
 }
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_l_carpal_distal_phalanx_5_tip",
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite l_carpal_distal_phalanx_5_tip"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
-}
 }
 ]
 }
@@ -4866,7 +6144,9 @@ vertices 2"
 {
 "@name":"l_carpal_distal_interphalangeal_5",
 "@DEF":"hanim_l_carpal_distal_interphalangeal_5",
-"@center":[0.1948,0.7277,-0.1017]
+"@center":[0.1948,0.7277,-0.1017],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0]
 }
 }
 ]
@@ -4898,6 +6178,8 @@ vertices 2"
 "@name":"r_sternoclavicular",
 "@DEF":"hanim_r_sternoclavicular",
 "@center":[-0.0694,1.46,-0.033],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -4951,6 +6233,205 @@ vertices 2"
 }
 }
 }
+},
+{ "HAnimSite":
+{
+"@DEF":"hanim_r_acromion",
+"@translation":[-0.1905,1.4791,-0.0431],
+"-children":[
+{ "TouchSensor":
+{
+"@description":"HAnimSite 20 r_acromion"
+}
+},
+{ "Shape":
+{
+"@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":["20"],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
+}
+}
+]
+}
+},
+{ "HAnimSite":
+{
+"@DEF":"hanim_r_axilla_distal",
+"@translation":[-0.1603,1.4098,-0.0826],
+"-children":[
+{ "TouchSensor":
+{
+"@description":"HAnimSite 22 r_axilla_distal"
+}
+},
+{ "Shape":
+{
+"@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":["22"],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
+}
+}
+]
+}
+},
+{ "HAnimSite":
+{
+"@DEF":"hanim_r_axilla_posterior_folds",
+"-children":[
+{ "TouchSensor":
+{
+"@description":"HAnimSite 23 r_axilla_posterior_folds"
+}
+},
+{ "Shape":
+{
+"@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":["23"],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
+}
+}
+]
+}
+},
+{ "HAnimSite":
+{
+"@DEF":"hanim_r_axilla_proximal",
+"@translation":[-0.1626,1.4072,-0.0031],
+"-children":[
+{ "TouchSensor":
+{
+"@description":"HAnimSite 21 r_axilla_proximal"
+}
+},
+{ "Shape":
+{
+"@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":["21"],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
+}
+}
+]
+}
+},
+{ "HAnimSite":
+{
+"@DEF":"hanim_r_clavicale",
+"@translation":[-0.0115,1.4943,0.04],
+"-children":[
+{ "TouchSensor":
+{
+"@description":"HAnimSite 19 r_clavicale"
+}
+},
+{ "Shape":
+{
+"@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":["19"],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
+}
+}
+]
+}
 }
 ]
 }
@@ -4960,6 +6441,8 @@ vertices 2"
 "@name":"r_acromioclavicular",
 "@DEF":"hanim_r_acromioclavicular",
 "@center":[-0.0836,1.4281,-0.0401],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -5013,41 +6496,6 @@ vertices 2"
 }
 }
 }
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_r_bideltoid",
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite r_bideltoid"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
-}
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_r_humeral_lateral_epicondyles",
-"@translation":[-0.2224,1.1517,-0.1033],
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite r_humeral_lateral_epicondyles"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
-}
 }
 ]
 }
@@ -5057,6 +6505,8 @@ vertices 2"
 "@name":"r_shoulder",
 "@DEF":"hanim_r_shoulder",
 "@center":[-0.1907,1.4407,-0.0325],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -5113,17 +6563,38 @@ vertices 2"
 },
 { "HAnimSite":
 {
-"@DEF":"hanim_r_humeral_medial_epicondyles",
-"@translation":[-0.168,1.1298,-0.1062],
+"@DEF":"hanim_r_bideltoid",
 "-children":[
 { "TouchSensor":
 {
-"@description":"HAnimSite r_humeral_medial_epicondyles"
+"@description":"HAnimSite 97 r_bideltoid"
 }
 },
 { "Shape":
 {
 "@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":["97"],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
 }
 }
 ]
@@ -5131,53 +6602,39 @@ vertices 2"
 },
 { "HAnimSite":
 {
-"@DEF":"hanim_r_olecranon",
-"@translation":[-0.1907,1.1405,-0.1065],
+"@DEF":"hanim_r_humeral_lateral_epicondyles",
+"@translation":[-0.2224,1.1517,-0.1033],
 "-children":[
 { "TouchSensor":
 {
-"@description":"HAnimSite r_olecranon"
+"@description":"HAnimSite 66 r_humeral_lateral_epicondyles"
 }
 },
 { "Shape":
 {
 "@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":["66"],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
 }
 }
 ]
-}
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_r_radial_styloid",
-"@translation":[-0.1884,0.8676,-0.036],
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite r_radial_styloid"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
-}
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_r_radiale",
-"@translation":[-0.213,1.1305,-0.1091],
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite r_radiale"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
 }
 }
 ]
@@ -5191,6 +6648,8 @@ vertices 2"
 "@name":"r_elbow",
 "@DEF":"hanim_r_elbow",
 "@center":[-0.1949,1.1388,-0.062],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -5247,17 +6706,159 @@ vertices 2"
 },
 { "HAnimSite":
 {
-"@DEF":"hanim_r_ulnar_styloid",
-"@translation":[-0.2117,0.8562,-0.0584],
+"@DEF":"hanim_r_humeral_medial_epicondyles",
+"@translation":[-0.168,1.1298,-0.1062],
 "-children":[
 { "TouchSensor":
 {
-"@description":"HAnimSite r_ulnar_styloid"
+"@description":"HAnimSite 67 r_humeral_medial_epicondyles"
 }
 },
 { "Shape":
 {
 "@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":["67"],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
+}
+}
+]
+}
+},
+{ "HAnimSite":
+{
+"@DEF":"hanim_r_olecranon",
+"@translation":[-0.1907,1.1405,-0.1065],
+"-children":[
+{ "TouchSensor":
+{
+"@description":"HAnimSite 68 r_olecranon"
+}
+},
+{ "Shape":
+{
+"@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":["68"],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
+}
+}
+]
+}
+},
+{ "HAnimSite":
+{
+"@DEF":"hanim_r_radial_styloid",
+"@translation":[-0.1884,0.8676,-0.036],
+"-children":[
+{ "TouchSensor":
+{
+"@description":"HAnimSite 74 r_radial_styloid"
+}
+},
+{ "Shape":
+{
+"@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":["74"],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
+}
+}
+]
+}
+},
+{ "HAnimSite":
+{
+"@DEF":"hanim_r_radiale",
+"@translation":[-0.213,1.1305,-0.1091],
+"-children":[
+{ "TouchSensor":
+{
+"@description":"HAnimSite 72 r_radiale"
+}
+},
+{ "Shape":
+{
+"@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":["72"],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
 }
 }
 ]
@@ -5271,6 +6872,8 @@ vertices 2"
 "@name":"r_radiocarpal",
 "@DEF":"hanim_r_radiocarpal",
 "@center":[-0.1959,0.8694,-0.0521],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -5331,6 +6934,46 @@ vertices 2"
 }
 }
 },
+{ "HAnimSite":
+{
+"@DEF":"hanim_r_ulnar_styloid",
+"@translation":[-0.2117,0.8562,-0.0584],
+"-children":[
+{ "TouchSensor":
+{
+"@description":"HAnimSite 73 r_ulnar_styloid"
+}
+},
+{ "Shape":
+{
+"@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":["73"],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
+}
+}
+]
+}
+},
 { "Shape":
 {
 "-geometry":
@@ -5358,24 +7001,6 @@ vertices 2"
 }
 }
 },
-{ "HAnimSite":
-{
-"@DEF":"hanim_r_metacarpal_phalanx_2",
-"@translation":[-0.1977,0.8169,-0.0177],
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite r_metacarpal_phalanx_2"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
-}
-},
 { "Shape":
 {
 "-geometry":
@@ -5401,23 +7026,6 @@ vertices 2"
 }
 }
 }
-}
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_r_metacarpal_phalanx_3",
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite r_metacarpal_phalanx_3"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
 }
 },
 { "Shape":
@@ -5473,24 +7081,6 @@ vertices 2"
 }
 }
 }
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_r_metacarpal_phalanx_5",
-"@translation":[-0.1929,0.789,-0.1064],
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite r_metacarpal_phalanx_5"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
-}
 }
 ]
 }
@@ -5500,6 +7090,8 @@ vertices 2"
 "@name":"r_carpometacarpal_1",
 "@DEF":"hanim_r_carpometacarpal_1",
 "@center":[-0.1899,0.8502,-0.0473],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -5562,6 +7154,8 @@ vertices 2"
 "@name":"r_metacarpophalangeal_1",
 "@DEF":"hanim_r_metacarpophalangeal_1",
 "@center":[-0.1874,0.8256,0.0306],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -5615,23 +7209,6 @@ vertices 2"
 }
 }
 }
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_r_carpal_distal_phalanx_1_tip",
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite r_carpal_distal_phalanx_1_tip"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
-}
 }
 ]
 }
@@ -5640,7 +7217,9 @@ vertices 2"
 {
 "@name":"r_carpal_interphalangeal_1",
 "@DEF":"hanim_r_carpal_interphalangeal_1",
-"@center":[-0.1864,0.819,0.0506]
+"@center":[-0.1864,0.819,0.0506],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0]
 }
 }
 ]
@@ -5654,6 +7233,8 @@ vertices 2"
 "@name":"r_carpometacarpal_2",
 "@DEF":"hanim_r_carpometacarpal_2",
 "@center":[-0.1961,0.8055,-0.0218],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -5707,6 +7288,46 @@ vertices 2"
 }
 }
 }
+},
+{ "HAnimSite":
+{
+"@DEF":"hanim_r_metacarpal_phalanx_2",
+"@translation":[-0.1977,0.8169,-0.0177],
+"-children":[
+{ "TouchSensor":
+{
+"@description":"HAnimSite 78 r_metacarpal_phalanx_2"
+}
+},
+{ "Shape":
+{
+"@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":["78"],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
+}
+}
+]
+}
 }
 ]
 }
@@ -5716,6 +7337,8 @@ vertices 2"
 "@name":"r_metacarpophalangeal_2",
 "@DEF":"hanim_r_metacarpophalangeal_2",
 "@center":[-0.1961,0.7846,-0.0218],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -5779,6 +7402,8 @@ vertices 2"
 "@name":"r_carpal_proximal_interphalangeal_2",
 "@DEF":"hanim_r_carpal_proximal_interphalangeal_2",
 "@center":[-0.1954,0.7393,-0.0185],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -5833,41 +7458,6 @@ vertices 2"
 }
 }
 }
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_r_carpal_distal_phalanx_2_tip",
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite r_carpal_distal_phalanx_2_tip"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
-}
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_r_dactylion",
-"@translation":[-0.1941,0.6772,-0.0423],
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite r_dactylion"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
-}
 }
 ]
 }
@@ -5876,7 +7466,9 @@ vertices 2"
 {
 "@name":"r_carpal_distal_interphalangeal_2",
 "@DEF":"hanim_r_carpal_distal_interphalangeal_2",
-"@center":[-0.1945,0.7169,-0.0173]
+"@center":[-0.1945,0.7169,-0.0173],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0]
 }
 }
 ]
@@ -5893,6 +7485,8 @@ vertices 2"
 "@name":"r_carpometacarpal_3",
 "@DEF":"hanim_r_carpometacarpal_3",
 "@center":[-0.1972,0.806,-0.0468],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -5946,6 +7540,45 @@ vertices 2"
 }
 }
 }
+},
+{ "HAnimSite":
+{
+"@DEF":"hanim_r_metacarpal_phalanx_3",
+"-children":[
+{ "TouchSensor":
+{
+"@description":"HAnimSite 79 r_metacarpal_phalanx_3"
+}
+},
+{ "Shape":
+{
+"@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":["79"],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
+}
+}
+]
+}
 }
 ]
 }
@@ -5955,6 +7588,8 @@ vertices 2"
 "@name":"r_metacarpophalangeal_3",
 "@DEF":"hanim_r_metacarpophalangeal_3",
 "@center":[-0.1972,0.7849,-0.0468],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -6018,6 +7653,8 @@ vertices 2"
 "@name":"r_carpal_proximal_interphalangeal_3",
 "@DEF":"hanim_r_carpal_proximal_interphalangeal_3",
 "@center":[-0.195,0.7304,-0.0441],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -6072,23 +7709,6 @@ vertices 2"
 }
 }
 }
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_r_carpal_distal_phalanx_3_tip",
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite r_carpal_distal_phalanx_3_tip"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
-}
 }
 ]
 }
@@ -6097,7 +7717,9 @@ vertices 2"
 {
 "@name":"r_carpal_distal_interphalangeal_3",
 "@DEF":"hanim_r_carpal_distal_interphalangeal_3",
-"@center":[-0.1939,0.7042,-0.0432]
+"@center":[-0.1939,0.7042,-0.0432],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0]
 }
 }
 ]
@@ -6114,6 +7736,8 @@ vertices 2"
 "@name":"r_carpometacarpal_4",
 "@DEF":"hanim_r_carpometacarpal_4",
 "@center":[-0.1951,0.8049,-0.0732],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -6176,6 +7800,8 @@ vertices 2"
 "@name":"r_metacarpophalangeal_4",
 "@DEF":"hanim_r_metacarpophalangeal_4",
 "@center":[-0.1951,0.7845,-0.0732],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -6239,6 +7865,8 @@ vertices 2"
 "@name":"r_carpal_proximal_interphalangeal_4",
 "@DEF":"hanim_r_carpal_proximal_interphalangeal_4",
 "@center":[-0.192,0.7318,-0.0716],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -6293,23 +7921,6 @@ vertices 2"
 }
 }
 }
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_r_carpal_distal_phalanx_4_tip",
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite r_carpal_distal_phalanx_4_tip"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
-}
 }
 ]
 }
@@ -6318,7 +7929,9 @@ vertices 2"
 {
 "@name":"r_carpal_distal_interphalangeal_4",
 "@DEF":"hanim_r_carpal_distal_interphalangeal_4",
-"@center":[-0.1908,0.7077,-0.0706]
+"@center":[-0.1908,0.7077,-0.0706],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0]
 }
 }
 ]
@@ -6335,6 +7948,8 @@ vertices 2"
 "@name":"r_carpometacarpal_5",
 "@DEF":"hanim_r_carpometacarpal_5",
 "@center":[-0.1926,0.8096,-0.0975],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -6388,6 +8003,46 @@ vertices 2"
 }
 }
 }
+},
+{ "HAnimSite":
+{
+"@DEF":"hanim_r_metacarpal_phalanx_5",
+"@translation":[-0.1929,0.789,-0.1064],
+"-children":[
+{ "TouchSensor":
+{
+"@description":"HAnimSite 80 r_metacarpal_phalanx_5"
+}
+},
+{ "Shape":
+{
+"@USE":"HAnimSiteShape"
+}
+},
+{ "Billboard":
+{
+"-children":[
+{ "Shape":
+{
+"-geometry":
+{ "Text":
+{
+"@string":["80"],
+"-fontStyle":
+{ "FontStyle":
+{
+"@size":0.035
+}
+}
+}
+}
+}
+}
+]
+}
+}
+]
+}
 }
 ]
 }
@@ -6397,6 +8052,8 @@ vertices 2"
 "@name":"r_metacarpophalangeal_5",
 "@DEF":"hanim_r_metacarpophalangeal_5",
 "@center":[-0.1926,0.7896,-0.0975],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -6460,6 +8117,8 @@ vertices 2"
 "@name":"r_carpal_proximal_interphalangeal_5",
 "@DEF":"hanim_r_carpal_proximal_interphalangeal_5",
 "@center":[-0.1902,0.7483,-0.0963],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -6514,23 +8173,6 @@ vertices 2"
 }
 }
 }
-},
-{ "HAnimSite":
-{
-"@DEF":"hanim_r_carpal_distal_phalanx_5_tip",
-"-children":[
-{ "TouchSensor":
-{
-"@description":"HAnimSite r_carpal_distal_phalanx_5_tip"
-}
-},
-{ "Shape":
-{
-"@USE":"HAnimSiteShape"
-}
-}
-]
-}
 }
 ]
 }
@@ -6539,7 +8181,9 @@ vertices 2"
 {
 "@name":"r_carpal_distal_interphalangeal_5",
 "@DEF":"hanim_r_carpal_distal_interphalangeal_5",
-"@center":[-0.1908,0.754,-0.096]
+"@center":[-0.1908,0.754,-0.096],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0]
 }
 }
 ]
@@ -7290,21 +8934,6 @@ vertices 2"
 },
 { "HAnimSite":
 {
-"@USE":"hanim_navel"
-}
-},
-{ "HAnimSite":
-{
-"@USE":"hanim_waist_preferred_anterior"
-}
-},
-{ "HAnimSite":
-{
-"@USE":"hanim_waist_preferred_posterior"
-}
-},
-{ "HAnimSite":
-{
 "@USE":"hanim_l_femoral_lateral_epicondyles"
 }
 },
@@ -7321,26 +8950,6 @@ vertices 2"
 { "HAnimSite":
 {
 "@USE":"hanim_l_suprapatella"
-}
-},
-{ "HAnimSite":
-{
-"@USE":"hanim_r_femoral_lateral_epicondyles"
-}
-},
-{ "HAnimSite":
-{
-"@USE":"hanim_r_femoral_medial_epicondyles"
-}
-},
-{ "HAnimSite":
-{
-"@USE":"hanim_r_knee_crease"
-}
-},
-{ "HAnimSite":
-{
-"@USE":"hanim_r_suprapatella"
 }
 },
 { "HAnimSite":
@@ -7405,6 +9014,26 @@ vertices 2"
 },
 { "HAnimSite":
 {
+"@USE":"hanim_r_femoral_lateral_epicondyles"
+}
+},
+{ "HAnimSite":
+{
+"@USE":"hanim_r_femoral_medial_epicondyles"
+}
+},
+{ "HAnimSite":
+{
+"@USE":"hanim_r_knee_crease"
+}
+},
+{ "HAnimSite":
+{
+"@USE":"hanim_r_suprapatella"
+}
+},
+{ "HAnimSite":
+{
 "@USE":"hanim_r_lateral_malleolus"
 }
 },
@@ -7461,6 +9090,21 @@ vertices 2"
 { "HAnimSite":
 {
 "@USE":"hanim_r_tarsal_distal_phalanx_5_tip"
+}
+},
+{ "HAnimSite":
+{
+"@USE":"hanim_navel"
+}
+},
+{ "HAnimSite":
+{
+"@USE":"hanim_waist_preferred_anterior"
+}
+},
+{ "HAnimSite":
+{
+"@USE":"hanim_waist_preferred_posterior"
 }
 },
 { "HAnimSite":
@@ -7540,12 +9184,17 @@ vertices 2"
 },
 { "HAnimSite":
 {
+"@USE":"hanim_adams_apple"
+}
+},
+{ "HAnimSite":
+{
 "@USE":"hanim_l_acromion"
 }
 },
 { "HAnimSite":
 {
-"@USE":"hanim_l_axilla_distal_pt"
+"@USE":"hanim_l_axilla_distal"
 }
 },
 { "HAnimSite":
@@ -7561,111 +9210,6 @@ vertices 2"
 { "HAnimSite":
 {
 "@USE":"hanim_l_clavicale"
-}
-},
-{ "HAnimSite":
-{
-"@USE":"hanim_r_acromion"
-}
-},
-{ "HAnimSite":
-{
-"@USE":"hanim_r_axilla_distal_pt"
-}
-},
-{ "HAnimSite":
-{
-"@USE":"hanim_r_axilla_posterior_folds"
-}
-},
-{ "HAnimSite":
-{
-"@USE":"hanim_r_axilla_proximal"
-}
-},
-{ "HAnimSite":
-{
-"@USE":"hanim_r_clavicale"
-}
-},
-{ "HAnimSite":
-{
-"@USE":"hanim_adams_apple"
-}
-},
-{ "HAnimSite":
-{
-"@USE":"hanim_glabella"
-}
-},
-{ "HAnimSite":
-{
-"@USE":"hanim_l_ectocanthus"
-}
-},
-{ "HAnimSite":
-{
-"@USE":"hanim_l_gonion"
-}
-},
-{ "HAnimSite":
-{
-"@USE":"hanim_l_infraorbitale"
-}
-},
-{ "HAnimSite":
-{
-"@USE":"hanim_l_tragion"
-}
-},
-{ "HAnimSite":
-{
-"@USE":"hanim_menton"
-}
-},
-{ "HAnimSite":
-{
-"@USE":"hanim_nuchale"
-}
-},
-{ "HAnimSite":
-{
-"@USE":"hanim_opisthocranion"
-}
-},
-{ "HAnimSite":
-{
-"@USE":"hanim_r_ectocanthus"
-}
-},
-{ "HAnimSite":
-{
-"@USE":"hanim_r_gonion"
-}
-},
-{ "HAnimSite":
-{
-"@USE":"hanim_r_infraorbitale"
-}
-},
-{ "HAnimSite":
-{
-"@USE":"hanim_r_tragion"
-}
-},
-{ "HAnimSite":
-{
-"@USE":"hanim_sellion"
-}
-},
-{ "HAnimSite":
-{
-"@USE":"hanim_skull_vertex"
-}
-},
-{ "HAnimSite":
-{
-"@USE":"hanim_supramenton"
 }
 },
 { "HAnimSite":
@@ -7720,32 +9264,27 @@ vertices 2"
 },
 { "HAnimSite":
 {
-"@USE":"hanim_l_carpal_distal_phalanx_1_tip"
+"@USE":"hanim_r_acromion"
 }
 },
 { "HAnimSite":
 {
-"@USE":"hanim_l_carpal_distal_phalanx_2_tip"
+"@USE":"hanim_r_axilla_distal"
 }
 },
 { "HAnimSite":
 {
-"@USE":"hanim_l_dactylion"
+"@USE":"hanim_r_axilla_posterior_folds"
 }
 },
 { "HAnimSite":
 {
-"@USE":"hanim_l_carpal_distal_phalanx_3_tip"
+"@USE":"hanim_r_axilla_proximal"
 }
 },
 { "HAnimSite":
 {
-"@USE":"hanim_l_carpal_distal_phalanx_4_tip"
-}
-},
-{ "HAnimSite":
-{
-"@USE":"hanim_l_carpal_distal_phalanx_5_tip"
+"@USE":"hanim_r_clavicale"
 }
 },
 { "HAnimSite":
@@ -7797,36 +9336,6 @@ vertices 2"
 {
 "@USE":"hanim_r_metacarpal_phalanx_5"
 }
-},
-{ "HAnimSite":
-{
-"@USE":"hanim_r_carpal_distal_phalanx_1_tip"
-}
-},
-{ "HAnimSite":
-{
-"@USE":"hanim_r_carpal_distal_phalanx_2_tip"
-}
-},
-{ "HAnimSite":
-{
-"@USE":"hanim_r_dactylion"
-}
-},
-{ "HAnimSite":
-{
-"@USE":"hanim_r_carpal_distal_phalanx_3_tip"
-}
-},
-{ "HAnimSite":
-{
-"@USE":"hanim_r_carpal_distal_phalanx_4_tip"
-}
-},
-{ "HAnimSite":
-{
-"@USE":"hanim_r_carpal_distal_phalanx_5_tip"
-}
 }
 ],
 "-skin":[
@@ -7844,7 +9353,7 @@ vertices 2"
 "@ambientIntensity":0.6,
 "@diffuseColor":[1,1,1],
 "@shininess":0.6,
-"@transparency":0.2
+"@transparency":1.0
 }
 },
 "-texture":
@@ -7852,7 +9361,7 @@ vertices 2"
 {
 "@DEF":"zBlueSpiralBkg2",
 "@description":"Blue Spiral Pattern",
-"@url":["./data/zBlueSpiralBkg2.gif","zBlueSpiralBkg2.gif","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/zBlueSpiralBkg2.gif"]
+"@url":["../data/zBlueSpiralBkg2.gif","zBlueSpiralBkg2.gif","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/zBlueSpiralBkg2.gif"]
 }
 }
 }

@@ -64,7 +64,7 @@
           },
           {
             "@name":"translated",
-            "@content":"10 April 2024"
+            "@content":"11 April 2024"
           },
           {
             "@name":"generator",
@@ -301,7 +301,7 @@
                     { "NavigationInfo":
                       {
                         "@DEF":"CameraNavInfo",
-                        "@type":"\"EXAMINE\" \"FLY\" \"ANY\"",
+                        "@type":["EXAMINE","FLY","ANY"],
                         "IS": {
                             "connect": [
                               {
@@ -2134,7 +2134,7 @@
                                   }
                               }
                             },
-                          "-children":[
+                          "-appearance":
                             { "Appearance":
                               {
                                 "-material":
@@ -2145,7 +2145,6 @@
                                   }
                               }
                             }
-                          ]
                         }
                       }
                     ]
