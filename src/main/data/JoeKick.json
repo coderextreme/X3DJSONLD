@@ -74,7 +74,7 @@
           },
           {
             "@name":"translated",
-            "@content":"10 April 2024"
+            "@content":"11 April 2024"
           },
           {
             "@name":"generator",
@@ -1407,7 +1407,7 @@
                       { "Shape":
                         {
                           "@DEF":"Joe_Shape",
-                          "-children":[
+                          "-appearance":
                             { "Appearance":
                               {
                                 "@DEF":"Joe_skin_Appearance",
@@ -1433,8 +1433,7 @@
                                     }
                                   }
                               }
-                            }
-                          ],
+                            },
                           "-geometry":
                             { "IndexedFaceSet":
                               {
@@ -4236,7 +4235,7 @@
                       { "Shape":
                         {
                           "@DEF":"ball_Shape",
-                          "-children":[
+                          "-appearance":
                             { "Appearance":
                               {
                                 "@DEF":"ball_Appearance",
@@ -4255,8 +4254,7 @@
                                     }
                                   }
                               }
-                            }
-                          ],
+                            },
                           "-geometry":
                             { "IndexedFaceSet":
                               {
@@ -4360,7 +4358,7 @@
                       { "Shape":
                         {
                           "@DEF":"circle_Shape",
-                          "-children":[
+                          "-appearance":
                             { "Appearance":
                               {
                                 "@DEF":"circle0_Appearance",
@@ -4374,8 +4372,7 @@
                                     }
                                   }
                               }
-                            }
-                          ],
+                            },
                           "-geometry":
                             { "IndexedLineSet":
                               {
@@ -4403,7 +4400,7 @@
                       { "Shape":
                         {
                           "@DEF":"circle1_Shape",
-                          "-children":[
+                          "-appearance":
                             { "Appearance":
                               {
                                 "@DEF":"circle1_Appearance",
@@ -4416,8 +4413,7 @@
                                     }
                                   }
                               }
-                            }
-                          ],
+                            },
                           "-geometry":
                             { "IndexedLineSet":
                               {
@@ -4437,7 +4433,7 @@
                       { "Shape":
                         {
                           "@DEF":"circle2_Shape",
-                          "-children":[
+                          "-appearance":
                             { "Appearance":
                               {
                                 "@DEF":"circle2_Appearance",
@@ -4450,8 +4446,7 @@
                                     }
                                   }
                               }
-                            }
-                          ],
+                            },
                           "-geometry":
                             { "IndexedLineSet":
                               {

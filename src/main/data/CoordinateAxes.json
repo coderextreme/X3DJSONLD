@@ -56,7 +56,7 @@
           },
           {
             "@name":"translated",
-            "@content":"10 April 2024"
+            "@content":"11 April 2024"
           },
           {
             "@name":"generator",
@@ -111,7 +111,7 @@
                                       "@top":false
                                     }
                                   },
-                                "-children":[
+                                "-appearance":
                                   { "Appearance":
                                     {
                                       "@DEF":"Green",
@@ -124,7 +124,6 @@
                                         }
                                     }
                                   }
-                                ]
                               }
                             },
                             { "Transform":
@@ -141,13 +140,12 @@
                                             "@height":0.1
                                           }
                                         },
-                                      "-children":[
+                                      "-appearance":
                                         { "Appearance":
                                           {
                                             "@USE":"Green"
                                           }
                                         }
-                                      ]
                                     }
                                   }
                                 ]
@@ -165,7 +163,7 @@
                                 "-children":[
                                   { "Shape":
                                     {
-                                      "-children":[
+                                      "-appearance":
                                         { "Appearance":
                                           {
                                             "@DEF":"LABEL_APPEARANCE",
@@ -177,8 +175,7 @@
                                                 }
                                               }
                                           }
-                                        }
-                                      ],
+                                        },
                                       "-geometry":
                                         { "Text":
                                           {
@@ -227,7 +224,7 @@
                                             "@USE":"ArrowCylinder"
                                           }
                                         },
-                                      "-children":[
+                                      "-appearance":
                                         { "Appearance":
                                           {
                                             "@DEF":"Red",
@@ -240,7 +237,6 @@
                                               }
                                           }
                                         }
-                                      ]
                                     }
                                   },
                                   { "Transform":
@@ -255,13 +251,12 @@
                                                   "@USE":"ArrowCone"
                                                 }
                                               },
-                                            "-children":[
+                                            "-appearance":
                                               { "Appearance":
                                                 {
                                                   "@USE":"Red"
                                                 }
                                               }
-                                            ]
                                           }
                                         }
                                       ]
@@ -283,13 +278,12 @@
                                       "-children":[
                                         { "Shape":
                                           {
-                                            "-children":[
+                                            "-appearance":
                                               { "Appearance":
                                                 {
                                                   "@USE":"LABEL_APPEARANCE"
                                                 }
-                                              }
-                                            ],
+                                              },
                                             "-geometry":
                                               { "Text":
                                                 {
@@ -338,7 +332,7 @@
                                             "@USE":"ArrowCylinder"
                                           }
                                         },
-                                      "-children":[
+                                      "-appearance":
                                         { "Appearance":
                                           {
                                             "@DEF":"Blue",
@@ -351,7 +345,6 @@
                                               }
                                           }
                                         }
-                                      ]
                                     }
                                   },
                                   { "Transform":
@@ -366,13 +359,12 @@
                                                   "@USE":"ArrowCone"
                                                 }
                                               },
-                                            "-children":[
+                                            "-appearance":
                                               { "Appearance":
                                                 {
                                                   "@USE":"Blue"
                                                 }
                                               }
-                                            ]
                                           }
                                         }
                                       ]
@@ -394,13 +386,12 @@
                                       "-children":[
                                         { "Shape":
                                           {
-                                            "-children":[
+                                            "-appearance":
                                               { "Appearance":
                                                 {
                                                   "@USE":"LABEL_APPEARANCE"
                                                 }
-                                              }
-                                            ],
+                                              },
                                             "-geometry":
                                               { "Text":
                                                 {

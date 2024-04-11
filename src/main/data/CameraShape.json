@@ -52,7 +52,7 @@
           },
           {
             "@name":"translated",
-            "@content":"10 April 2024"
+            "@content":"11 April 2024"
           },
           {
             "@name":"generator",
@@ -117,7 +117,7 @@
                     "-children":[
                       { "Shape":
                         {
-                          "-children":[
+                          "-appearance":
                             { "Appearance":
                               {
                                 "@DEF":"CameraAppearance",
@@ -138,7 +138,6 @@
                                   }
                               }
                             }
-                          ]
                         }
                       },
                       { "Shape":
@@ -159,13 +158,12 @@
                                   }
                               }
                             },
-                          "-children":[
+                          "-appearance":
                             { "Appearance":
                               {
                                 "@USE":"CameraAppearance"
                               }
                             }
-                          ]
                         }
                       },
                       { "Shape":
@@ -186,13 +184,12 @@
                                   }
                               }
                             },
-                          "-children":[
+                          "-appearance":
                             { "Appearance":
                               {
                                 "@USE":"CameraAppearance"
                               }
                             }
-                          ]
                         }
                       },
                       { "Shape":
@@ -213,13 +210,12 @@
                                   }
                               }
                             },
-                          "-children":[
+                          "-appearance":
                             { "Appearance":
                               {
                                 "@USE":"CameraAppearance"
                               }
                             }
-                          ]
                         }
                       },
                       { "Shape":
@@ -240,13 +236,12 @@
                                   }
                               }
                             },
-                          "-children":[
+                          "-appearance":
                             { "Appearance":
                               {
                                 "@USE":"CameraAppearance"
                               }
                             }
-                          ]
                         }
                       }
                     ]
@@ -263,13 +258,12 @@
                           "-children":[
                             { "Shape":
                               {
-                                "-children":[
+                                "-appearance":
                                   { "Appearance":
                                     {
                                       "@USE":"CameraAppearance"
                                     }
-                                  }
-                                ],
+                                  },
                                 "-geometry":
                                   { "IndexedFaceSet":
                                     {
@@ -289,13 +283,12 @@
                           "-children":[
                             { "Shape":
                               {
-                                "-children":[
+                                "-appearance":
                                   { "Appearance":
                                     {
                                       "@USE":"CameraAppearance"
                                     }
-                                  }
-                                ],
+                                  },
                                 "-geometry":
                                   { "IndexedFaceSet":
                                     {
@@ -315,13 +308,12 @@
                           "-children":[
                             { "Shape":
                               {
-                                "-children":[
+                                "-appearance":
                                   { "Appearance":
                                     {
                                       "@USE":"CameraAppearance"
                                     }
-                                  }
-                                ],
+                                  },
                                 "-geometry":
                                   { "IndexedFaceSet":
                                     {
@@ -341,13 +333,12 @@
                           "-children":[
                             { "Shape":
                               {
-                                "-children":[
+                                "-appearance":
                                   { "Appearance":
                                     {
                                       "@USE":"CameraAppearance"
                                     }
-                                  }
-                                ],
+                                  },
                                 "-geometry":
                                   { "IndexedFaceSet":
                                     {

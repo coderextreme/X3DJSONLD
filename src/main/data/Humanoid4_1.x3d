@@ -69,7 +69,7 @@
 
 <HAnimHumanoid DEF='hanim_HAnim'  info='"humanoidVersion=2.0"' name='HAnim' scale='1 1 1' translation='0 0 0' version='2.0'>
           <!-- </LOD> -->
-          <Coordinate USE='TheSkinCoord' containerField='skinCoord'/>
+          <Coordinate containerField='skinCoord'/>
 <HAnimJoint DEF='hanim_humanoid_root' name='humanoid_root' containerField='skeleton' center='0.0000 0.8240 0.0277'>
   <HAnimSegment DEF='hanim_sacrum' name='sacrum'>
    <Transform translation='0.0000 0.8240 0.0277'>

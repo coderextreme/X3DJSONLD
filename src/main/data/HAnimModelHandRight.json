@@ -98,7 +98,7 @@
           },
           {
             "@name":"translated",
-            "@content":"10 April 2024"
+            "@content":"11 April 2024"
           },
           {
             "@name":"generator",
@@ -179,7 +179,7 @@
                                                   "@radius":0.025
                                                 }
                                               },
-                                            "-children":[
+                                            "-appearance":
                                               { "Appearance":
                                                 {
                                                   "@DEF":"HAnimJointAppearanceBlue",
@@ -191,7 +191,6 @@
                                                     }
                                                 }
                                               }
-                                            ]
                                           }
                                         }
                                       ]
@@ -199,7 +198,7 @@
                                   },
                                   { "Shape":
                                     {
-                                      "-children":[
+                                      "-appearance":
                                         { "Appearance":
                                           {
                                             "-material":
@@ -209,8 +208,7 @@
                                                 }
                                               }
                                           }
-                                        }
-                                      ],
+                                        },
                                       "-geometry":
                                         { "IndexedLineSet":
                                           {
@@ -228,7 +226,7 @@
                                   },
                                   { "Shape":
                                     {
-                                      "-children":[
+                                      "-appearance":
                                         { "Appearance":
                                           {
                                             "-material":
@@ -238,8 +236,7 @@
                                                 }
                                               }
                                           }
-                                        }
-                                      ],
+                                        },
                                       "-geometry":
                                         { "IndexedLineSet":
                                           {
@@ -257,7 +254,7 @@
                                   },
                                   { "Shape":
                                     {
-                                      "-children":[
+                                      "-appearance":
                                         { "Appearance":
                                           {
                                             "-material":
@@ -267,8 +264,7 @@
                                                 }
                                               }
                                           }
-                                        }
-                                      ],
+                                        },
                                       "-geometry":
                                         { "IndexedLineSet":
                                           {
@@ -316,7 +312,7 @@
                                                         "@radius":0.025
                                                       }
                                                     },
-                                                  "-children":[
+                                                  "-appearance":
                                                     { "Appearance":
                                                       {
                                                         "@DEF":"HAnimJointAppearanceRed",
@@ -328,7 +324,6 @@
                                                           }
                                                       }
                                                     }
-                                                  ]
                                                 }
                                               }
                                             ]
@@ -336,7 +331,7 @@
                                         },
                                         { "Shape":
                                           {
-                                            "-children":[
+                                            "-appearance":
                                               { "Appearance":
                                                 {
                                                   "-material":
@@ -346,8 +341,7 @@
                                                       }
                                                     }
                                                 }
-                                              }
-                                            ],
+                                              },
                                             "-geometry":
                                               { "IndexedLineSet":
                                                 {
@@ -396,7 +390,7 @@
                                               },
                                               { "Shape":
                                                 {
-                                                  "-children":[
+                                                  "-appearance":
                                                     { "Appearance":
                                                       {
                                                         "-material":
@@ -406,8 +400,7 @@
                                                             }
                                                           }
                                                       }
-                                                    }
-                                                  ],
+                                                    },
                                                   "-geometry":
                                                     { "IndexedLineSet":
                                                       {
@@ -453,7 +446,7 @@
                                                     },
                                                     { "Shape":
                                                       {
-                                                        "-children":[
+                                                        "-appearance":
                                                           { "Appearance":
                                                             {
                                                               "-material":
@@ -463,8 +456,7 @@
                                                                   }
                                                                 }
                                                             }
-                                                          }
-                                                        ],
+                                                          },
                                                         "-geometry":
                                                           { "IndexedLineSet":
                                                             {
@@ -510,7 +502,7 @@
                                                           },
                                                           { "Shape":
                                                             {
-                                                              "-children":[
+                                                              "-appearance":
                                                                 { "Appearance":
                                                                   {
                                                                     "-material":
@@ -520,8 +512,7 @@
                                                                         }
                                                                       }
                                                                   }
-                                                                }
-                                                              ],
+                                                                },
                                                               "-geometry":
                                                                 { "IndexedLineSet":
                                                                   {
@@ -582,7 +573,7 @@
                                         },
                                         { "Shape":
                                           {
-                                            "-children":[
+                                            "-appearance":
                                               { "Appearance":
                                                 {
                                                   "-material":
@@ -592,8 +583,7 @@
                                                       }
                                                     }
                                                 }
-                                              }
-                                            ],
+                                              },
                                             "-geometry":
                                               { "IndexedLineSet":
                                                 {
@@ -642,7 +632,7 @@
                                               },
                                               { "Shape":
                                                 {
-                                                  "-children":[
+                                                  "-appearance":
                                                     { "Appearance":
                                                       {
                                                         "-material":
@@ -652,8 +642,7 @@
                                                             }
                                                           }
                                                       }
-                                                    }
-                                                  ],
+                                                    },
                                                   "-geometry":
                                                     { "IndexedLineSet":
                                                       {
@@ -699,7 +688,7 @@
                                                     },
                                                     { "Shape":
                                                       {
-                                                        "-children":[
+                                                        "-appearance":
                                                           { "Appearance":
                                                             {
                                                               "-material":
@@ -709,8 +698,7 @@
                                                                   }
                                                                 }
                                                             }
-                                                          }
-                                                        ],
+                                                          },
                                                         "-geometry":
                                                           { "IndexedLineSet":
                                                             {
@@ -756,7 +744,7 @@
                                                           },
                                                           { "Shape":
                                                             {
-                                                              "-children":[
+                                                              "-appearance":
                                                                 { "Appearance":
                                                                   {
                                                                     "-material":
@@ -766,8 +754,7 @@
                                                                         }
                                                                       }
                                                                   }
-                                                                }
-                                                              ],
+                                                                },
                                                               "-geometry":
                                                                 { "IndexedLineSet":
                                                                   {
@@ -813,7 +800,7 @@
                                                                 },
                                                                 { "Shape":
                                                                   {
-                                                                    "-children":[
+                                                                    "-appearance":
                                                                       { "Appearance":
                                                                         {
                                                                           "-material":
@@ -823,8 +810,7 @@
                                                                               }
                                                                             }
                                                                         }
-                                                                      }
-                                                                    ],
+                                                                      },
                                                                     "-geometry":
                                                                       { "IndexedLineSet":
                                                                         {
@@ -888,7 +874,7 @@
                                         },
                                         { "Shape":
                                           {
-                                            "-children":[
+                                            "-appearance":
                                               { "Appearance":
                                                 {
                                                   "-material":
@@ -898,8 +884,7 @@
                                                       }
                                                     }
                                                 }
-                                              }
-                                            ],
+                                              },
                                             "-geometry":
                                               { "IndexedLineSet":
                                                 {
@@ -948,7 +933,7 @@
                                               },
                                               { "Shape":
                                                 {
-                                                  "-children":[
+                                                  "-appearance":
                                                     { "Appearance":
                                                       {
                                                         "-material":
@@ -958,8 +943,7 @@
                                                             }
                                                           }
                                                       }
-                                                    }
-                                                  ],
+                                                    },
                                                   "-geometry":
                                                     { "IndexedLineSet":
                                                       {
@@ -1005,7 +989,7 @@
                                                     },
                                                     { "Shape":
                                                       {
-                                                        "-children":[
+                                                        "-appearance":
                                                           { "Appearance":
                                                             {
                                                               "-material":
@@ -1015,8 +999,7 @@
                                                                   }
                                                                 }
                                                             }
-                                                          }
-                                                        ],
+                                                          },
                                                         "-geometry":
                                                           { "IndexedLineSet":
                                                             {
@@ -1062,7 +1045,7 @@
                                                           },
                                                           { "Shape":
                                                             {
-                                                              "-children":[
+                                                              "-appearance":
                                                                 { "Appearance":
                                                                   {
                                                                     "-material":
@@ -1072,8 +1055,7 @@
                                                                         }
                                                                       }
                                                                   }
-                                                                }
-                                                              ],
+                                                                },
                                                               "-geometry":
                                                                 { "IndexedLineSet":
                                                                   {
@@ -1119,7 +1101,7 @@
                                                                 },
                                                                 { "Shape":
                                                                   {
-                                                                    "-children":[
+                                                                    "-appearance":
                                                                       { "Appearance":
                                                                         {
                                                                           "-material":
@@ -1129,8 +1111,7 @@
                                                                               }
                                                                             }
                                                                         }
-                                                                      }
-                                                                    ],
+                                                                      },
                                                                     "-geometry":
                                                                       { "IndexedLineSet":
                                                                         {
@@ -1194,7 +1175,7 @@
                                         },
                                         { "Shape":
                                           {
-                                            "-children":[
+                                            "-appearance":
                                               { "Appearance":
                                                 {
                                                   "-material":
@@ -1204,8 +1185,7 @@
                                                       }
                                                     }
                                                 }
-                                              }
-                                            ],
+                                              },
                                             "-geometry":
                                               { "IndexedLineSet":
                                                 {
@@ -1223,7 +1203,7 @@
                                         },
                                         { "Shape":
                                           {
-                                            "-children":[
+                                            "-appearance":
                                               { "Appearance":
                                                 {
                                                   "-material":
@@ -1233,8 +1213,7 @@
                                                       }
                                                     }
                                                 }
-                                              }
-                                            ],
+                                              },
                                             "-geometry":
                                               { "IndexedLineSet":
                                                 {
@@ -1283,7 +1262,7 @@
                                               },
                                               { "Shape":
                                                 {
-                                                  "-children":[
+                                                  "-appearance":
                                                     { "Appearance":
                                                       {
                                                         "-material":
@@ -1293,8 +1272,7 @@
                                                             }
                                                           }
                                                       }
-                                                    }
-                                                  ],
+                                                    },
                                                   "-geometry":
                                                     { "IndexedLineSet":
                                                       {
@@ -1340,7 +1318,7 @@
                                                     },
                                                     { "Shape":
                                                       {
-                                                        "-children":[
+                                                        "-appearance":
                                                           { "Appearance":
                                                             {
                                                               "-material":
@@ -1350,8 +1328,7 @@
                                                                   }
                                                                 }
                                                             }
-                                                          }
-                                                        ],
+                                                          },
                                                         "-geometry":
                                                           { "IndexedLineSet":
                                                             {
@@ -1397,7 +1374,7 @@
                                                           },
                                                           { "Shape":
                                                             {
-                                                              "-children":[
+                                                              "-appearance":
                                                                 { "Appearance":
                                                                   {
                                                                     "-material":
@@ -1407,8 +1384,7 @@
                                                                         }
                                                                       }
                                                                   }
-                                                                }
-                                                              ],
+                                                                },
                                                               "-geometry":
                                                                 { "IndexedLineSet":
                                                                   {
@@ -1454,7 +1430,7 @@
                                                                 },
                                                                 { "Shape":
                                                                   {
-                                                                    "-children":[
+                                                                    "-appearance":
                                                                       { "Appearance":
                                                                         {
                                                                           "-material":
@@ -1464,8 +1440,7 @@
                                                                               }
                                                                             }
                                                                         }
-                                                                      }
-                                                                    ],
+                                                                      },
                                                                     "-geometry":
                                                                       { "IndexedLineSet":
                                                                         {
@@ -1526,7 +1501,7 @@
                                               },
                                               { "Shape":
                                                 {
-                                                  "-children":[
+                                                  "-appearance":
                                                     { "Appearance":
                                                       {
                                                         "-material":
@@ -1536,8 +1511,7 @@
                                                             }
                                                           }
                                                       }
-                                                    }
-                                                  ],
+                                                    },
                                                   "-geometry":
                                                     { "IndexedLineSet":
                                                       {
@@ -1583,7 +1557,7 @@
                                                     },
                                                     { "Shape":
                                                       {
-                                                        "-children":[
+                                                        "-appearance":
                                                           { "Appearance":
                                                             {
                                                               "-material":
@@ -1593,8 +1567,7 @@
                                                                   }
                                                                 }
                                                             }
-                                                          }
-                                                        ],
+                                                          },
                                                         "-geometry":
                                                           { "IndexedLineSet":
                                                             {
@@ -1640,7 +1613,7 @@
                                                           },
                                                           { "Shape":
                                                             {
-                                                              "-children":[
+                                                              "-appearance":
                                                                 { "Appearance":
                                                                   {
                                                                     "-material":
@@ -1650,8 +1623,7 @@
                                                                         }
                                                                       }
                                                                   }
-                                                                }
-                                                              ],
+                                                                },
                                                               "-geometry":
                                                                 { "IndexedLineSet":
                                                                   {
@@ -1697,7 +1669,7 @@
                                                                 },
                                                                 { "Shape":
                                                                   {
-                                                                    "-children":[
+                                                                    "-appearance":
                                                                       { "Appearance":
                                                                         {
                                                                           "-material":
@@ -1707,8 +1679,7 @@
                                                                               }
                                                                             }
                                                                         }
-                                                                      }
-                                                                    ],
+                                                                      },
                                                                     "-geometry":
                                                                       { "IndexedLineSet":
                                                                         {
