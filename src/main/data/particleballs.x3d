@@ -79,14 +79,8 @@
 		  <field name='bias' accessType='initializeOnly' type='SFFloat' value='0.5'></field>
 		  <field name='scale' accessType='initializeOnly' type='SFFloat' value='0.5'></field>
 		  <field name='power' accessType='initializeOnly' type='SFFloat' value='2'></field>
-                  <field name='a' type='SFFloat' accessType='inputOutput' value='2'></field>
-                  <field name='b' type='SFFloat' accessType='inputOutput' value='1'></field>
-                  <field name='c' type='SFFloat' accessType='inputOutput' value='5'></field>
-                  <field name='d' type='SFFloat' accessType='inputOutput' value='5'></field>
-                  <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
-                  <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
-		  <ShaderPart url='"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flower_particles.vs"' type="VERTEX" containerField='parts'></ShaderPart>
-		  <ShaderPart url='"https://coderextreme.net/X3DJSONLD/src/main/shaders/commonnew.fs"' containerField='parts' type='FRAGMENT'></ShaderPart>
+		  <ShaderPart url='"../shaders/x_iteparticles.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_iteparticles.vs"' type="VERTEX" containerField='parts'></ShaderPart>
+		  <ShaderPart DEF='commonfs' url='"https://coderextreme.net/X3DJSONLD/src/main/shaders/commonnew.fs"' containerField='parts' type='FRAGMENT'></ShaderPart>
                 </ComposedShader>
 		    </Appearance>
 	        </ParticleSystem>
