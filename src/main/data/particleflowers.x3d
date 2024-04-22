@@ -28,14 +28,14 @@
 		topUrl='"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"'
         ></Background>
         <Transform>
-		    <!--
                     <ParticleSystem maxParticles="20" geometryType="GEOMETRY">
 			<BoundedPhysicsModel>
 				<Sphere radius="100"/>
 			</BoundedPhysicsModel>
 			<ExplosionEmitter speed="2"  variation="0.75"/>
-				-->
+		    <!--
 			<Shape>
+				-->
             <Sphere/>
             <Appearance>
                 <Material diffuseColor='0.7 0.7 0.7' specularColor='0.5 0.5 0.5'/>
@@ -47,6 +47,7 @@
 			<ImageTexture url='"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"' containerField="rightTexture"/>
 			<ImageTexture url='"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"' containerField="topTexture"/>
                 </ComposedCubeMapTexture>  
+			    <!--
                 <ComposedShader language='GLSL'>
 		  <field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'></field>
 		  <field name='cube' type='SFNode' accessType="inputOutput">
@@ -58,7 +59,6 @@
 		  <ShaderPart url='"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.vs"' type="VERTEX" containerField='parts'></ShaderPart>
 		  <ShaderPart url='"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.fs"' containerField='parts' type='FRAGMENT'></ShaderPart>
                 </ComposedShader>
-			    <!--
 			    -->
 			    <!--
                             <ComposedShader DEF="shader" language="GLSL">
@@ -70,6 +70,7 @@
 		  		  <ShaderPart type="VERTEX" url='"https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.vs"'/>
 				  <ShaderPart type='FRAGMENT' url='"https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.fs"'/>
 	  		    </ComposedShader>
+			    -->
                 <ComposedShader language='GLSL'>
 		  <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1 1.033'></field>
 		  <field name='cube' type='SFNode' accessType="initializeOnly">
@@ -78,15 +79,14 @@
 		  <field name='bias' accessType='initializeOnly' type='SFFloat' value='0.5'></field>
 		  <field name='scale' accessType='initializeOnly' type='SFFloat' value='0.5'></field>
 		  <field name='power' accessType='initializeOnly' type='SFFloat' value='2'></field>
-		  <ShaderPart url='"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"' type="VERTEX" containerField='parts'></ShaderPart>
+		  <ShaderPart url='"../shaders/x_iteparticles.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_iteparticles.vs"' type="VERTEX" containerField='parts'></ShaderPart>
 		  <ShaderPart DEF='commonfs' url='"https://coderextreme.net/X3DJSONLD/src/main/shaders/commonnew.fs"' containerField='parts' type='FRAGMENT'></ShaderPart>
                 </ComposedShader>
-			    -->
 		    </Appearance>
-		    <!--
 	        </ParticleSystem>
-		    -->
+		    <!--
 	</Shape>
+		    -->
             </Transform>
     </Scene>
 </X3D>
