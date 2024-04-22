@@ -47,23 +47,26 @@
 			<ImageTexture url='"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"' containerField="rightTexture"/>
 			<ImageTexture url='"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"' containerField="topTexture"/>
                 </ComposedCubeMapTexture>  
-                <ComposedShader DEF="fw" language='GLSL'>
-		  <field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'></field>
-		  <field name='cube' type='SFNode' accessType="inputOutput">
+                            <ComposedShader DEF="shader" language="GLSL">
+				  <field name='cube' type='SFInt32' accessType='inputOutput' value='0'></field>
+				  <!--
+		  <field name='cube' type='SFNode' accessType="initializeOnly">
 			<ComposedCubeMapTexture USE="texture"></ComposedCubeMapTexture>
 		  </field>
-		  <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'></field>
-		  <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'></field>
-		  <field name='power' accessType='inputOutput' type='SFFloat' value='2'></field>
-                  <field name='a' type='SFFloat' accessType='inputOutput' value='2'></field>
-                  <field name='b' type='SFFloat' accessType='inputOutput' value='1'></field>
-                  <field name='c' type='SFFloat' accessType='inputOutput' value='5'></field>
-                  <field name='d' type='SFFloat' accessType='inputOutput' value='5'></field>
-                  <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
-                  <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
-		  <ShaderPart url='"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.vs"' type="VERTEX" containerField='parts'></ShaderPart>
-		  <ShaderPart url='"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.fs"' containerField='parts' type='FRAGMENT'></ShaderPart>
-                </ComposedShader>
+				  -->
+				  <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1.0 1.033'></field>
+				  <field name='bias' type='SFFloat' accessType='inputOutput' value='0.5'></field>
+				  <field name='scale' type='SFFloat' accessType='inputOutput' value='0.5'></field>
+				  <field name='power' type='SFFloat' accessType='inputOutput' value='2'></field>
+				  <field name='a' type='SFFloat' accessType='inputOutput' value='2'></field>
+				  <field name='b' type='SFFloat' accessType='inputOutput' value='1'></field>
+				  <field name='c' type='SFFloat' accessType='inputOutput' value='5'></field>
+				  <field name='d' type='SFFloat' accessType='inputOutput' value='5'></field>
+				  <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
+				  <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
+		  		  <ShaderPart type="VERTEX" url='"https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.vs"'/>
+				  <ShaderPart type='FRAGMENT' url='"https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.fs"'/>
+	  		    </ComposedShader>
                 <Script DEF='Animate'>
                   <field name="translation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
                   <field name="velocity" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
@@ -146,12 +149,12 @@ ecmascript:
 </Script>
 	    <TimeSensor DEF='TourTime' cycleInterval='5' loop='true'></TimeSensor>
             <ROUTE fromNode="TourTime" fromField="fraction_changed" toNode="Animate" toField="set_fraction"></ROUTE>
-            <ROUTE fromNode='Animate' fromField='a' toNode='fw' toField='a'/>
-            <ROUTE fromNode='Animate' fromField='b' toNode='fw' toField='b'/>
-            <ROUTE fromNode='Animate' fromField='c' toNode='fw' toField='c'/>
-            <ROUTE fromNode='Animate' fromField='d' toNode='fw' toField='d'/>
-            <ROUTE fromNode='Animate' fromField='pdelta' toNode='fw' toField='pdelta'/>
-            <ROUTE fromNode='Animate' fromField='tdelta' toNode='fw' toField='tdelta'/>
+            <ROUTE fromNode='Animate' fromField='a' toNode='x_ite' toField='a'/>
+            <ROUTE fromNode='Animate' fromField='b' toNode='x_ite' toField='b'/>
+            <ROUTE fromNode='Animate' fromField='c' toNode='x_ite' toField='c'/>
+            <ROUTE fromNode='Animate' fromField='d' toNode='x_ite' toField='d'/>
+            <ROUTE fromNode='Animate' fromField='pdelta' toNode='x_ite' toField='pdelta'/>
+            <ROUTE fromNode='Animate' fromField='tdelta' toNode='x_ite' toField='tdelta'/>
 		    </Appearance>
 	        </ParticleSystem>
 		    <!--
