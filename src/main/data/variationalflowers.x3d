@@ -28,15 +28,15 @@
 		topUrl='"../resources/images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"'
         ></Background>
         <Transform>
-                    <ParticleSystem maxParticles="20" geometryType="GEOMETRY">
+                    <ParticleSystem maxParticles="100" geometryType="GEOMETRY">
 			<BoundedPhysicsModel>
 				<Sphere radius="100"/>
 			</BoundedPhysicsModel>
 			<!--
 			<VariationPhysicsModel values="2 1 4 4 0 0" varations="0 0 0 0 0 0">
 			</VariationPhysicsModel>
-			-->
-			<ExplosionEmitter speed="2"  variation="0.75"/>
+				-->
+			<ExplosionEmitter speed="1"  variation="0.75"/>
 		    <!--
 			<Shape>
 				-->
@@ -92,11 +92,11 @@
 		  <field name='values' type='MFFloat' accessType='inputOutput' value='2 2 5 5 0 0'></field>
 		  <field name='variations' type='MFFloat' accessType='inputOutput' value='2 1 3 3 0.1 0.1'></field>
 		  <field name='lastframe' type='SFFloat' accessType='inputOutput' value='0'></field>
-		  <field name='framerate' type='SFFloat' accessType='inputOutput' value='0.1'></field>
+		  <field name='updaterate' type='SFFloat' accessType='inputOutput' value='0.1'></field>
 <![CDATA[
 ecmascript:
 			function set_fraction(f, tm) {
-			    if (lastframe + framerate < tm) {
+			    if (lastframe + updaterate < tm) {
 			  	lastframe = tm;
 				for (let v in values) {
 					values[v] = values[v] + (Math.random() - 0.5) * 2 * variations[v] * 0.1;
