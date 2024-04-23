@@ -29,10 +29,8 @@
         ></Background>
         <Transform>
                     <ParticleSystem maxParticles="100" geometryType="GEOMETRY">
-			<!--
-			<VariationPhysicsModel values="2 1 4 4 0 0" varations="0 0 0 0 0 0">
+			<VariationPhysicsModel values="2 2 5 5 0 0" varations="2 1 3 3 0.1 0.1">
 			</VariationPhysicsModel>
-				-->
 			<ExplosionEmitter speed="1"  variation="0.75"/>
             <Sphere/>
             <Appearance>
