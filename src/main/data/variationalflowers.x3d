@@ -29,17 +29,11 @@
         ></Background>
         <Transform>
                     <ParticleSystem maxParticles="100" geometryType="GEOMETRY">
-			<BoundedPhysicsModel>
-				<Sphere radius="100"/>
-			</BoundedPhysicsModel>
 			<!--
 			<VariationPhysicsModel values="2 1 4 4 0 0" varations="0 0 0 0 0 0">
 			</VariationPhysicsModel>
 				-->
 			<ExplosionEmitter speed="1"  variation="0.75"/>
-		    <!--
-			<Shape>
-				-->
             <Sphere/>
             <Appearance>
                 <Material diffuseColor='0.7 0.7 0.7' specularColor='0.5 0.5 0.5'/>
@@ -87,6 +81,8 @@
 		  <ShaderPart url='"../shaders/x_ite_variations.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_variations.vs"' type="VERTEX" containerField='parts'></ShaderPart>
 		  <ShaderPart url='"../shaders/commonnew.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/commonnew.fs"' containerField='parts' type='FRAGMENT'></ShaderPart>
                 </ComposedShader>
+		    </Appearance>
+	        </ParticleSystem>
                 <Script DEF='Animate'>
 		  <field name="set_fraction" accessType="inputOnly" type="SFFloat"></field>
 		  <field name='values' type='MFFloat' accessType='inputOutput' value='2 2 5 5 0 0'></field>
@@ -108,11 +104,6 @@ ecmascript:
 	    <TimeSensor DEF='TourTime' cycleInterval='45' loop='true'></TimeSensor>
             <ROUTE fromNode="TourTime" fromField="fraction_changed" toNode="Animate" toField="set_fraction"></ROUTE>
             <ROUTE fromNode='Animate' fromField='values' toNode='x_ite' toField='values'/>
-		    </Appearance>
-	        </ParticleSystem>
-		    <!--
-	</Shape>
-		    -->
             </Transform>
     </Scene>
 </X3D>
