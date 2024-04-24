@@ -361,7 +361,7 @@ Object .assign (Object .setPrototypeOf (X3DParticleEmitterNode .prototype, (X3DN
          {
             gl .bindBuffer (gl .ARRAY_BUFFER, inputParticles);
             gl .enableVertexAttribArray (attribute);
-            gl .vertexAttribPointer (attribute, 4, gl .FLOAT, false, particlesStride, particleOffsets [i]);
+            gl .vertexAttribPointer (attribute, 5, gl .FLOAT, false, particlesStride, particleOffsets [i]);
          }
 
          gl .bindBuffer (gl .ARRAY_BUFFER, null);
@@ -2105,10 +2105,11 @@ function ParticleSystem (executionContext)
    this .pauseTime                = 0;
    this .deltaTime                = 0;
    this .particlesStride          = Float32Array .BYTES_PER_ELEMENT * 7 * 4; // 7 x vec4
-   this .particleOffsets          = Array .from ({length: 7}, (_, i) => Float32Array .BYTES_PER_ELEMENT * 4 * i); // i x vec4
+   this .particleOffsets          = Array .from ({length: 7}, (_, i) => Float32Array .BYTES_PER_ELEMENT * 5 * i); // i x vec4
    this .particleOffset           = this .particleOffsets [0];
-   this .colorOffset              = this .particleOffsets [1];
-   this .matrixOffset             = this .particleOffsets [3];
+   this .particleValuesOffset     = this .particleOffsets [1];
+   this .colorOffset              = this .particleOffsets [3];
+   this .matrixOffset             = this .particleOffsets [4];
    this .texCoordOffset           = 0;
    this .instancesStride          = this .particlesStride;
 }
@@ -2884,6 +2885,7 @@ Object .assign (Object .setPrototypeOf (ParticleSystem .prototype, (X3DShapeNode
                const particlesStride = this .particlesStride;
 
                shaderNode .enableParticleAttribute       (gl, outputParticles, particlesStride, this .particleOffset, 1);
+               shaderNode .enableParticleValuesAttribute (gl, outputParticles, particlesStride, this .particleValuesOffset, 1);
                shaderNode .enableInstanceMatrixAttribute (gl, outputParticles, particlesStride, this .matrixOffset,   1);
                shaderNode .enableVertexAttribute         (gl, this .geometryBuffer, 0, this .verticesOffset);
             }
@@ -2954,6 +2956,7 @@ Object .assign (Object .setPrototypeOf (ParticleSystem .prototype, (X3DShapeNode
                const particlesStride = this .particlesStride;
 
                shaderNode .enableParticleAttribute       (gl, outputParticles, particlesStride, this .particleOffset, 1);
+               shaderNode .enableParticleValuesAttribute (gl, outputParticles, particlesStride, this .particleValuesOffset, 1);
                shaderNode .enableInstanceMatrixAttribute (gl, outputParticles, particlesStride, this .matrixOffset,   1);
 
                if (this .geometryContext .colorMaterial)
