@@ -361,7 +361,7 @@ Object .assign (Object .setPrototypeOf (X3DParticleEmitterNode .prototype, (X3DN
          {
             gl .bindBuffer (gl .ARRAY_BUFFER, inputParticles);
             gl .enableVertexAttribArray (attribute);
-            gl .vertexAttribPointer (attribute, 5, gl .FLOAT, false, particlesStride, particleOffsets [i]);
+            gl .vertexAttribPointer (attribute, 4, gl .FLOAT, false, particlesStride, particleOffsets [i]);
          }
 
          gl .bindBuffer (gl .ARRAY_BUFFER, null);
