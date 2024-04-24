@@ -2104,12 +2104,12 @@ function ParticleSystem (executionContext)
    this .creationTime             = 0;
    this .pauseTime                = 0;
    this .deltaTime                = 0;
-   this .particlesStride          = Float32Array .BYTES_PER_ELEMENT * 7 * 4; // 7 x vec4
-   this .particleOffsets          = Array .from ({length: 7}, (_, i) => Float32Array .BYTES_PER_ELEMENT * 5 * i); // i x vec4
+   this .particlesStride          = Float32Array .BYTES_PER_ELEMENT * 13 * 4; // 13 x vec4
+   this .particleOffsets          = Array .from ({length: 13}, (_, i) => Float32Array .BYTES_PER_ELEMENT * 4 * i); // i x vec4
    this .particleOffset           = this .particleOffsets [0];
    this .particleValuesOffset     = this .particleOffsets [1];
-   this .colorOffset              = this .particleOffsets [3];
-   this .matrixOffset             = this .particleOffsets [4];
+   this .colorOffset              = this .particleOffsets [7];
+   this .matrixOffset             = this .particleOffsets [8];
    this .texCoordOffset           = 0;
    this .instancesStride          = this .particlesStride;
 }
