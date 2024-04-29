@@ -16,7 +16,7 @@ uniform float power;
 in vec3 x3d_Normal;
 in vec4 x3d_Vertex;
 
-uniform float [6] values;
+uniform float [6] x3d_ParticleValues;
 
 out vec3 t;
 out vec3 tr;
@@ -69,6 +69,7 @@ vec4 rose_position(vec3 p, float[6] values) {
 
 void main()
 {
+  float [6] values = x3d_ParticleValues;
   vec3 position = x3d_Vertex.xyz;
 
   vec3 fragNormal = normalize(x3d_NormalMatrix*rose_normal(position, values));

@@ -15,21 +15,24 @@ STYLESHEETDIR=../lib/stylesheets
 
 DATATOJAVA='s/\/data\//\/java\/net\/coderextreme\/data\//' 
 DATATONODE='s/\/data\//\/node\/net\/coderextreme\/data\//' 
-DATATOPYTHON='s/\/data\//\/python\/net\/coderextreme\/data\//' 
 DATATOGRAAL='s/\/data\//\/graaljs\/net\/coderextreme\/data\//' 
+DATATOPYTHON='s/\/data\//\/python\/net\/coderextreme\/data\//' 
 
 PERSONALTOJAVA='s/\/personal\//\/java\/net\/coderextreme\/personal\//' 
 PERSONALTONODE='s/\/personal\//\/node\/net\/coderextreme\/personal\//' 
-PERSONALTOPYTHON='s/\/personal\//\/python\/net\/coderextreme\/personal\//' 
 PERSONALTOGRAAL='s/\/personal\//\/graaljs\/net\/coderextreme\/personal\//' 
+PERSONALTOPYTHON='s/\/personal\//\/python\/net\/coderextreme\/personal\//' 
 
 EXTOJAVA='s/\/Library\//\/java\/net\/coderextreme\/Library\//' 
 EXTONODE='s/\/Library\//\/node\/net\/coderextreme\/Library\//' 
 EXTOGRAAL='s/\/Library\//\/graaljs\/net\/coderextreme\/Library\//' 
+EXTOPYTHON='s/\/Library\//\/python\/net\/coderextreme\/Library\//' 
+
 ROOTTOJAVA='s/\/x3d_code\/www.web3d.org\//\/java\/net\/coderextreme\/x3d_code\/www_web3d_org\//' 
 ROOTTONODE='s/\/x3d_code\/www.web3d.org\//\/node\/net\/coderextreme\/x3d_code\/www_web3d_org\//' 
-ROOTTOPYTHON='s/\/x3d_code\/www.web3d.org\//\/python\/net\/coderextreme\/x3d_code\/www_web3d_org\//' 
 ROOTTOGRAAL='s/\/x3d_code\/www.web3d.org\//\/graaljs\/net\/coderextreme\/x3d_code\/www_web3d_org\//' 
+ROOTTOPYTHON='s/\/x3d_code\/www.web3d.org\//\/python\/net\/coderextreme\/x3d_code\/www_web3d_org\//' 
+
 # OVERWRITE=
 OVERWRITE=---overwrite
 LOCALTOROOT='s/^\.\.\/x3d-code/\/c\/x3d-code/'
@@ -61,14 +64,13 @@ JSONEXT=json
 # ls -d "$@" | sed 's/\(.*\)/"\1"/' | grep -v intermediate | grep -v "\.new" | xargs -P "$PROCESSORS" java net.coderextreme.RunSaxon --- "${OVERWRITE}" --"${STYLESHEETDIR}/X3dToJson.xslt" -json | xargs "${NODE}" "${NODEDIR}/xml2all.js" | xargs -P "$PROCESSORS" "${NODE}" "${NODEDIR}/json2all.js"
 # ls -d "$@" | grep -v intermediate | grep -v "\.new" | tr '\n' '\0'| xargs -0 -P "$PROCESSORS" java net.coderextreme.RunSaxon --- "${OVERWRITE}" --"${STYLESHEETDIR}/X3dToJson.xslt" -json | sed 's/^/Created /'
 echo  "ls -d $@ | grep -v intermediate | grep -v  '\.new'  | tr '\n' '\0'| xargs -0 -P $PROCESSORS java net.coderextreme.RunSaxon --- ${OVERWRITE} --${STYLESHEETDIR}/X3dToJson.xslt -json | sed 's/^\(.*\)\$/\"\1\"/' | xargs -P $PROCESSORS ${NODE} ${NODEDIR}/json2all.js"
-ls -d "$@" | grep -v intermediate | grep -v "\.new" | tr '\n' '\0'| xargs -0 -P "$PROCESSORS" java net.coderextreme.RunSaxon --- "${OVERWRITE}" --"${STYLESHEETDIR}/X3dToJson.xslt" -json | sed 's/^\(.*\)$/"\1"/' | xargs -P "$PROCESSORS" "${NODE}" "${NODEDIR}/json2all.js"
+ls -d "$@" | grep -v intermediate | grep -v '\.new' | tr '\n' '\0'| xargs -0 -P "$PROCESSORS" java net.coderextreme.RunSaxon --- "${OVERWRITE}" --"${STYLESHEETDIR}/X3dToJson.xslt" -json | sed 's/^\(.*\)$/"\1"/' | xargs -P "$PROCESSORS" "${NODE}" "${NODEDIR}/json2all.js"
 # ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d/.x3d.new/' -e "$ROOTTOLOCAL" -e 's/^\/c/../' | sed 's/\(.*\)/"\1"/'
 # Add exit here to just do conversions
 #
 # ls -d "$@" | grep -v intermediate | grep -v "\.new" | tr '\n' '\0' | xargs -0 -L 1 bash runtidy.sh | sed '/^$/d' | sed 's/^\(.*\)$/"\1"/' | xargs -P "$PROCESSORS" "${NODE}" "${NODEDIR}/json2all.js"
 
-
-echo test JSON to XML convertion .${JSONEXT} to .x3d.new
+echo "test JSON to XML convertion .${JSONEXT} to .x3d.new (temp xml)"
 # ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d/.x3d.new/' -e "$ROOTTOLOCAL" -e 's/^\/c/../' | sed 's/^\(.*\)$/"\1"/'
 ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d/.x3d.new/' -e "$ROOTTOLOCAL" -e 's/^\/c/../' | sed 's/^\(.*\)$/"\1"/' | tr '\n' '\0' | while read -d $'\0' -r file
 do
@@ -82,7 +84,6 @@ do
 done
 
 echo compile java programs
-# ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d/.java/' -e 's/^\/c/../' -e "$EXTOJAVA" -e "$DATATOJAVA" -e "$ROOTTOJAVA" -e "$PERSONALTOJAVA"| | sed -e 's/\(.*\)/'"\1"'/' -e 's/ /$/g'| tr '\n' '\0' | while read -d $'\0' -r i
 ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d/.java/' -e 's/^\/c/../' -e "$EXTOJAVA" -e "$DATATOJAVA" -e "$ROOTTOJAVA" -e "$PERSONALTOJAVA"| sed -e 's/\(.*\)/'"\1"'/' -e 's/ /$/g'| tr '\n' '\0' | while read -d $'\0' -r i
 do
 	# echo JAVAC "$i"
@@ -92,25 +93,19 @@ do
 	popd
 done
 
-
 echo run java programs
-# ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d/.class/' -e 's/^\/c/../' -e "$EXTOJAVA" -e "$DATATOJAVA" -e "$ROOTTOJAVA" -e "$PERSONALTOJAVA" | sed -e 's/\.class$//' -e 's/^\.\.\/java\///'
-
 ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d/.class/' -e 's/^\/c/../' -e "$EXTOJAVA" -e "$DATATOJAVA" -e "$ROOTTOJAVA" -e "$PERSONALTOJAVA" | sed -e 's/\.class$//' -e 's/^\.\.\/java\///' | sed -e 's/\(.*\)/'"\1"'/' -e 's/ /$/g' | tr '\n' '\0' | while read -d $'\0' -r i
 do
 	pushd ../java
-	echo java -Xss1g -Xmx4g "$i" # sh runToError.sh || echo "Failed"
+	echo java -Xss1g -Xmx4g "$i"
 	java -Xss1g -Xmx4g "$i" # sh runToError.sh || echo "Failed"
 	popd
 done
 
-echo Comparing JSON
-# ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d/.new.java.json/' -e "$ROOTTOLOCAL" -e 's/^\/c/../' | sed -e 's/ /$/g' # | tr '\n' '\0' | while read -d $'\0' -r i
+echo comparing java created json
 ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d/.new.java.json/' -e "$ROOTTOLOCAL" -e 's/^\/c/../' | sed -e 's/ /$/g' | tr '\n' '\0' | while read -d $'\0' -r i
 do
 	OLDJSON=`mydirname "$i" | sed -e "$LOCALTOROOT" `/`mybasename "$i" .new.java.json`.${JSONEXT}
-	# echo OLDJSON $OLDJSON
-	# echo NEWJSON $i
 	echo "${NODE}" --trace-warnings "${NODEDIR}/jsondiff.js" "$OLDJSON" "$i"
 	"${NODE}" --trace-warnings "${NODEDIR}/jsondiff.js" "$OLDJSON" "$i"
 done
