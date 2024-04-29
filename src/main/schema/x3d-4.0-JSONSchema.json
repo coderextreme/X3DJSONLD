@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
-  "title": "X3D V4.0 JSON Schema, generated 2024/04/01 01:49:36",
+  "title": "X3D V4.0 JSON Schema, generated 2024/04/29 01:37:20",
   "description": "Experimental JSON Schema for X3D V4.0",
   "type": "object",
   "properties": {
@@ -31300,6 +31300,94 @@
         }
       ]
     },
+    "VariationPhysicsModel": {
+      "type": "object",
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "@class": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@USE": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "@USE"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "-children": {
+              "$ref": "#/$defs/-childStatements"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
+            },
+            "@enabled": {
+              "default": true,
+              "$comment": "SFBool inputOutput",
+              "type": "boolean"
+            },
+            "-metadata": {
+              "$ref": "#/$defs/-X3DMetadataObjectSFNode"
+            },
+            "@values": {
+              "$comment": "MFFloat inputOutput",
+              "type": "array",
+              "items": {
+                "default": 0,
+                "type": "number"
+              }
+            },
+            "@variations": {
+              "$comment": "MFFloat inputOutput",
+              "type": "array",
+              "items": {
+                "default": 1,
+                "type": "number"
+              }
+            },
+            "@DEF": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@class": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@style": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
     "Viewpoint": {
       "type": "object",
       "oneOf": [
@@ -35943,6 +36031,9 @@
           "ForcePhysicsModel": {
             "$ref": "#/$defs/ForcePhysicsModel"
           },
+          "VariationPhysicsModel": {
+            "$ref": "#/$defs/VariationPhysicsModel"
+          },
           "WindPhysicsModel": {
             "$ref": "#/$defs/WindPhysicsModel"
           },
@@ -36835,6 +36926,9 @@
           },
           "ForcePhysicsModel": {
             "$ref": "#/$defs/ForcePhysicsModel"
+          },
+          "VariationPhysicsModel": {
+            "$ref": "#/$defs/VariationPhysicsModel"
           },
           "WindPhysicsModel": {
             "$ref": "#/$defs/WindPhysicsModel"
