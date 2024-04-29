@@ -26,7 +26,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('identifier'),
-              content_ : SFString('https://coderextreme.net/X3DJSONLD/src/main/data/plainflowers.x3d'))]),
+              content_ : SFString('https://coderextreme.net/X3DJSONLD/src/main/personal/plainflowers.x3d'))]),
       Scene_ : 
         Scene(
           children_ : [
@@ -44,7 +44,7 @@ var X3D0 =  X3D(
               children_ : [
                 ExternProtoDeclare(
                   name_ : SFString('FlowerProto'),
-                  url_ : MFString([SFString("../data/flowerproto.x3d#FlowerProto")]),
+                  url_ : MFString([SFString("../personal/flowerproto.x3d#FlowerProto")]),
                   field_ : [
                     field(
                       type_ : SFString("MFString"),

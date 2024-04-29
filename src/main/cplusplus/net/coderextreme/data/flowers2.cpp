@@ -184,13 +184,13 @@ Script39.addChild(&field40);
 
 field& field41 =  field();
 field41.setName(CString("coordinates"));
-field41.setAccessType(CString("outputOnly"));
+field41.setAccessType(CString("inputOutput"));
 field41.setType(CString("MFVec3f"));
 Script39.addChild(&field41);
 
 field& field42 =  field();
 field42.setName(CString("coordIndexes"));
-field42.setAccessType(CString("outputOnly"));
+field42.setAccessType(CString("inputOutput"));
 field42.setType(CString("MFInt32"));
 Script39.addChild(&field42);
 
@@ -231,44 +231,36 @@ Script39.addChild(&field47);
 
 
 Script39.setSourceCode(CString("ecmascript:")+
-_T("			var e = 5;")+
-_T("			var f = 5;")+
-_T("			var g = 5;")+
-_T("			var h = 5;")+
-_T("			var resolution = 100;")+
 _T("			function initialize() {")+
 _T("			     generateCoordinates();")+
-_T("			     var localci = [];")+
+_T("			     var arrIndex = 0;")+
 _T("			     for (var i = 0; i < resolution-1; i++) {")+
 _T("				for (var j = 0; j < resolution-1; j++) {")+
-_T("				     localci.push(i*resolution+j);")+
-_T("				     localci.push(i*resolution+j+1);")+
-_T("				     localci.push((i+1)*resolution+j+1);")+
-_T("				     localci.push((i+1)*resolution+j);")+
-_T("				     localci.push(-1);")+
+_T("				     coordIndexes[arrIndex++] = i*resolution+j;")+
+_T("				     coordIndexes[arrIndex++] = i*resolution+j+1;")+
+_T("				     coordIndexes[arrIndex++] = (i+1)*resolution+j+1;")+
+_T("				     coordIndexes[arrIndex++] = (i+1)*resolution+j;")+
+_T("				     coordIndexes[arrIndex++] = -1;")+
 _T("				}")+
 _T("			    }")+
-_T("			    coordIndexes = new MFInt32(localci);")+
 _T("			}")+
 _T("			function generateCoordinates() {")+
 _T("			     var theta = 0.0;")+
 _T("			     var phi = 0.0;")+
 _T("			     var delta = (2 * 3.141592653) / (resolution-1);")+
-_T("			     var localc = [];")+
+_T("			     var arrIndex = 0;")+
 _T("			     for (var i = 0; i < resolution; i++) {")+
 _T("				for (var j = 0; j < resolution; j++) {")+
 _T("					var rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);")+
-_T("					localc.push(new SFVec3f(")+
+_T("					coordinates[arrIndex++] = new SFVec3f(")+
 _T("						rho * Math.cos(phi) * Math.cos(theta),")+
 _T("						rho * Math.cos(phi) * Math.sin(theta),")+
 _T("						rho * Math.sin(phi)")+
-_T("					));")+
+_T("					);")+
 _T("					theta += delta;")+
 _T("				}")+
 _T("				phi += delta;")+
 _T("			     }")+
-_T("			     ")+
-_T("			     coordinates = new MFVec3f(localc);")+
 _T("			}")+
 _T("			function set_fraction(fraction, eventTime) {")+
 _T("				var choice = Math.floor(Math.random() * 4);")+

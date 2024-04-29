@@ -25,7 +25,7 @@ head1.addMeta(&meta4);
 
 meta& meta5 =  meta();
 meta5.setName(CString("identifier"));
-meta5.setContent(CString("https://coderextreme.net/X3DJSONLD/src/main/personal/flower.x3d"));
+meta5.setContent(CString("https://coderextreme.net/X3DJSONLD/src/main/data/flower.x3d"));
 head1.addMeta(&meta5);
 
 meta& meta6 =  meta();
@@ -126,7 +126,7 @@ Script18.addChild(&field21);
 //_T("	     localci.push(-1);")+
 //_T("	}")+
 //_T("    }")+
-//_T("    coordIndexes = new MFInt32(localci);")+
+//_T("    coordIndexes = new MFInt32(...localci);")+
 //_T("}")+
 //_T("function generateCoordinates(resolution) {")+
 //_T("     var theta = 0.0;")+
@@ -145,7 +145,7 @@ Script18.addChild(&field21);
 //_T("	}")+
 //_T("	phi += delta;")+
 //_T("     }")+
-//_T("     coordinates = new MFVec3f(localc);")+
+//_T("     coordinates = new MFVec3f(...localc);")+
 //_T("}")+
 //_T("function set_fraction(fraction, eventTime) {")+
 //_T("	t += 0.5;")+

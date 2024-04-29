@@ -67,7 +67,7 @@ head1.meta[11] = meta13;
 
 let meta14 = browser.currentScene.createNode("meta");
 meta14.name = "identifier";
-meta14.content = "https://coderextreme.net/X3DJSONLD/src/main/data/x3domflowers.x3d";
+meta14.content = "https://coderextreme.net/X3DJSONLD/src/main/personal/x3domflowers.x3d";
 head1.meta[12] = meta14;
 
 head = head1;
@@ -90,7 +90,7 @@ browser.currentScene.children[1] = Background17;
 let Group18 = browser.currentScene.createNode("Group");
 let ExternProtoDeclare19 = browser.currentScene.createNode("ExternProtoDeclare");
 ExternProtoDeclare19.name = "FlowerProto";
-ExternProtoDeclare19.url = new MFString(new java.lang.String["../data/flowerproto.json#FlowerProto"]);
+ExternProtoDeclare19.url = new MFString(new java.lang.String["../personal/flowerproto.json#FlowerProto"]);
 let field20 = browser.currentScene.createNode("field");
 field20.name = "vertex";
 field20.accessType = "inputOutput";

@@ -67,7 +67,7 @@ head1.meta[11] = meta13;
 
 let meta14 = browser.currentScene.createNode("meta");
 meta14.name = "identifier";
-meta14.content = "https://coderextreme.net/X3DJSONLD/src/main/data/flowers4.x3d";
+meta14.content = "https://coderextreme.net/X3DJSONLD/src/main/personal/flowers4.x3d";
 head1.meta[12] = meta14;
 
 let meta15 = browser.currentScene.createNode("meta");

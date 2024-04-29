@@ -14,7 +14,7 @@ head1.meta[0] = meta2;
 
 meta meta3 = createNode("meta");
 meta3.name = "identifier";
-meta3.content = "http://coderextreme.net/X3DJSONLD/src/main/data/ifscube.x3d";
+meta3.content = "http://coderextreme.net/X3DJSONLD/src/main/personal/ifscube.x3d";
 head1.meta[1] = meta3;
 
 meta meta4 = createNode("meta");

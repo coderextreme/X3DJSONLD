@@ -41,10 +41,11 @@
 			<ImageTexture DEF="rightShader" containerField="rightTexture" url='"../resources/images/all_probes/beach_cross/beach_right.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png"' ></ImageTexture>
 			<ImageTexture DEF="topShader" containerField="topTexture" url='"../resources/images/all_probes/beach_cross/beach_top.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png"' ></ImageTexture>
                 </ComposedCubeMapTexture>
-		<!--
 		<ComposedShader DEF='x3dom' language="GLSL">
+		  <!-- TODO VERIFY
                   <field name='cube' type='SFInt32' accessType='inputOutput' value='0'></field>
-		       <field name='cube' type='SFNode' accessType="inputOutput">
+		  -->
+		  <field name='cube' type='SFNode' accessType="inputOutput">
 			  <ComposedCubeMapTexture USE="texture"/>
 		  </field>
 
@@ -61,7 +62,6 @@
 		  <ShaderPart url='"https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs"' containerField='parts' type='VERTEX'></ShaderPart>
 		  <ShaderPart url='"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"' containerField='parts' type='FRAGMENT'></ShaderPart>
                 </ComposedShader>
-		-->
 		<ComposedShader DEF='x_ite' language="GLSL">
 		  <field name='cube' type='SFNode' accessType="inputOutput">
 			  <ComposedCubeMapTexture USE="texture"/>

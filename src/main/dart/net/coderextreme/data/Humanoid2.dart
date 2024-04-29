@@ -14,11 +14,11 @@ var X3D0 =  X3D(
           meta_ : [
             meta(
               name_ : SFString('title'),
-              content_ : SFString('Humanoid2.x3d')),
+              content_ : SFString('JohnBoy.x3d')),
 
             meta(
               name_ : SFString('identifier'),
-              content_ : SFString('http://www.web3d.org/x3d/content/examples/HumanoidAnimation/Humanoid2.x3d')),
+              content_ : SFString('http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d')),
 
             meta(
               name_ : SFString('description'),
@@ -70,22 +70,6 @@ var X3D0 =  X3D(
                 Transform(
                   children_ : [
                     Transform(
-                      translation_ : SFVec3f([SFDouble(0), SFDouble(2), SFDouble(0)]),
-                      child_ : 
-                        Shape(
-                          DEF_ : SFString('HAnimRootShape'),
-                          geometry_ : 
-                            Sphere(
-                              radius_ : 0.02),
-                          appearance_ : 
-                            Appearance(
-                              material_ : 
-                                Material(
-                                  DEF_ : SFString('HAnimRootMaterial'),
-                                  diffuseColor_ : SFColor([SFDouble(0.8), SFDouble(0), SFDouble(0)]),
-                                  transparency_ : 0.3)))),
-
-                    Transform(
                       translation_ : SFVec3f([SFDouble(0), SFDouble(2.1), SFDouble(0)]),
                       child_ : 
                         Shape(
@@ -98,8 +82,7 @@ var X3D0 =  X3D(
                               material_ : 
                                 Material(
                                   DEF_ : SFString('HAnimJointMaterial'),
-                                  diffuseColor_ : SFColor([SFDouble(0), SFDouble(0), SFDouble(0.8)]),
-                                  transparency_ : 0.3)))),
+                                  diffuseColor_ : SFColor([SFDouble(0), SFDouble(0), SFDouble(0)]))))),
 
                     Transform(
                       translation_ : SFVec3f([SFDouble(0), SFDouble(2.05), SFDouble(0)]),
@@ -112,7 +95,7 @@ var X3D0 =  X3D(
                               color_ : 
                                 ColorRGBA(
                                   DEF_ : SFString('HAnimSegmentLineColorRGBA'),
-                                  color_ : MFColorRGBA([SFColorRGBA(1), SFColorRGBA(1), SFColorRGBA(0), SFColorRGBA(1), SFColorRGBA(1), SFColorRGBA(1), SFColorRGBA(0), SFColorRGBA(0.1)])),
+                                  color_ : MFColorRGBA([SFColorRGBA(1), SFColorRGBA(1), SFColorRGBA(0), SFColorRGBA(0), SFColorRGBA(1), SFColorRGBA(1), SFColorRGBA(0), SFColorRGBA(0)])),
                               coord_ : 
                                 Coordinate(
                                   point_ : MFVec3f([SFVec3f([-0.05,0,0]),SFVec3f([0.05,0,0])]))))),
@@ -139,13 +122,15 @@ var X3D0 =  X3D(
                             Appearance(
                               material_ : 
                                 Material(
-                                  diffuseColor_ : SFColor([SFDouble(1), SFDouble(1), SFDouble(0)]),
-                                  transparency_ : 0.3))))])]),
+                                  diffuseColor_ : SFColor([SFDouble(1), SFDouble(1), SFDouble(1)]),
+                                  transparency_ : 1))))])]),
 
             NavigationInfo(
               speed_ : 1.5),
 
             Viewpoint(
+              position_ : SFVec3f([SFDouble(0), SFDouble(1), SFDouble(3)]),
+              centerOfRotation_ : SFVec3f([SFDouble(0), SFDouble(1), SFDouble(0)]),
               description_ : SFString('default')),
 
             HAnimHumanoid(
@@ -176,14 +161,14 @@ var X3D0 =  X3D(
                         ImageTexture(
                           DEF_ : SFString('zBlueSpiralBkg2'),
                           description_ : SFString('Blue Spiral Pattern'),
-                          url_ : MFString([SFString("./data/zBlueSpiralBkg2.gif"), SFString("zBlueSpiralBkg2.gif"), SFString("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/zBlueSpiralBkg2.gif")])),
+                          url_ : MFString([SFString("../data/zBlueSpiralBkg2.gif"), SFString("zBlueSpiralBkg2.gif"), SFString("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/zBlueSpiralBkg2.gif")])),
                       material_ : 
                         Material(
                           DEF_ : SFString('SkinMaterial'),
                           ambientIntensity_ : 0.6,
                           diffuseColor_ : SFColor([SFDouble(1), SFDouble(1), SFDouble(1)]),
                           shininess_ : 0.6,
-                          transparency_ : 0.2))),
+                          transparency_ : 1))),
               skinCoord_ : 
                 Coordinate(
                   USE_ : SFString('TheSkinCoord')),
@@ -218,115 +203,6 @@ var X3D0 =  X3D(
                                 ColorRGBA(
                                   USE_ : SFString('HAnimSegmentLineColorRGBA')))),
 
-                        HAnimSite(
-                          name_ : SFString('buttocks_standing_wall_contact_point'),
-                          DEF_ : SFString('hanim_buttocks_standing_wall_contact_point'),
-                          children_ : [
-                            TouchSensor(
-                              description_ : SFString('HAnimSite buttocks_standing_wall_contact_point')),
-
-                            Shape(
-                              USE_ : SFString('HAnimSiteShape'))]),
-
-                        HAnimSite(
-                          name_ : SFString('crotch'),
-                          DEF_ : SFString('hanim_crotch'),
-                          translation_ : SFVec3f([SFDouble(0.0034), SFDouble(0.8266), SFDouble(0.0257)]),
-                          children_ : [
-                            TouchSensor(
-                              description_ : SFString('HAnimSite crotch')),
-
-                            Shape(
-                              USE_ : SFString('HAnimSiteShape'))]),
-
-                        HAnimSite(
-                          name_ : SFString('l_asis'),
-                          DEF_ : SFString('hanim_l_asis'),
-                          translation_ : SFVec3f([SFDouble(0.0925), SFDouble(0.9983), SFDouble(0.1052)]),
-                          children_ : [
-                            TouchSensor(
-                              description_ : SFString('HAnimSite l_asis')),
-
-                            Shape(
-                              USE_ : SFString('HAnimSiteShape'))]),
-
-                        HAnimSite(
-                          name_ : SFString('l_iliocristale'),
-                          DEF_ : SFString('hanim_l_iliocristale'),
-                          translation_ : SFVec3f([SFDouble(0.1612), SFDouble(1.0537), SFDouble(0.0008)]),
-                          children_ : [
-                            TouchSensor(
-                              description_ : SFString('HAnimSite l_iliocristale')),
-
-                            Shape(
-                              USE_ : SFString('HAnimSiteShape'))]),
-
-                        HAnimSite(
-                          name_ : SFString('l_psis'),
-                          DEF_ : SFString('hanim_l_psis'),
-                          translation_ : SFVec3f([SFDouble(0.0774), SFDouble(1.019), SFDouble(-0.1151)]),
-                          children_ : [
-                            TouchSensor(
-                              description_ : SFString('HAnimSite l_psis')),
-
-                            Shape(
-                              USE_ : SFString('HAnimSiteShape'))]),
-
-                        HAnimSite(
-                          name_ : SFString('l_trochanterion'),
-                          DEF_ : SFString('hanim_l_trochanterion'),
-                          translation_ : SFVec3f([SFDouble(0.1677), SFDouble(0.8336), SFDouble(0.0303)]),
-                          children_ : [
-                            TouchSensor(
-                              description_ : SFString('HAnimSite l_trochanterion')),
-
-                            Shape(
-                              USE_ : SFString('HAnimSiteShape'))]),
-
-                        HAnimSite(
-                          name_ : SFString('r_asis'),
-                          DEF_ : SFString('hanim_r_asis'),
-                          translation_ : SFVec3f([SFDouble(-0.0887), SFDouble(1.0021), SFDouble(0.1112)]),
-                          children_ : [
-                            TouchSensor(
-                              description_ : SFString('HAnimSite r_asis')),
-
-                            Shape(
-                              USE_ : SFString('HAnimSiteShape'))]),
-
-                        HAnimSite(
-                          name_ : SFString('r_iliocristale'),
-                          DEF_ : SFString('hanim_r_iliocristale'),
-                          translation_ : SFVec3f([SFDouble(-0.1525), SFDouble(1.0628), SFDouble(0.0035)]),
-                          children_ : [
-                            TouchSensor(
-                              description_ : SFString('HAnimSite r_iliocristale')),
-
-                            Shape(
-                              USE_ : SFString('HAnimSiteShape'))]),
-
-                        HAnimSite(
-                          name_ : SFString('r_psis'),
-                          DEF_ : SFString('hanim_r_psis'),
-                          translation_ : SFVec3f([SFDouble(-0.0716), SFDouble(1.019), SFDouble(-0.1138)]),
-                          children_ : [
-                            TouchSensor(
-                              description_ : SFString('HAnimSite r_psis')),
-
-                            Shape(
-                              USE_ : SFString('HAnimSiteShape'))]),
-
-                        HAnimSite(
-                          name_ : SFString('r_trochanterion'),
-                          DEF_ : SFString('hanim_r_trochanterion'),
-                          translation_ : SFVec3f([SFDouble(-0.1689), SFDouble(0.8419), SFDouble(0.0352)]),
-                          children_ : [
-                            TouchSensor(
-                              description_ : SFString('HAnimSite r_trochanterion')),
-
-                            Shape(
-                              USE_ : SFString('HAnimSiteShape'))]),
-
                         Shape(
                           geometry_ : 
                             LineSet(
@@ -337,39 +213,7 @@ var X3D0 =  X3D(
                               /*from humanoid_root to vl5 vertices 2*/
                               color_ : 
                                 ColorRGBA(
-                                  USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-
-                        HAnimSite(
-                          name_ : SFString('navel'),
-                          DEF_ : SFString('hanim_navel'),
-                          translation_ : SFVec3f([SFDouble(0.0069), SFDouble(1.0966), SFDouble(0.1017)]),
-                          children_ : [
-                            TouchSensor(
-                              description_ : SFString('HAnimSite navel')),
-
-                            Shape(
-                              USE_ : SFString('HAnimSiteShape'))]),
-
-                        HAnimSite(
-                          name_ : SFString('waist_preferred_anterior'),
-                          DEF_ : SFString('hanim_waist_preferred_anterior'),
-                          children_ : [
-                            TouchSensor(
-                              description_ : SFString('HAnimSite waist_preferred_anterior')),
-
-                            Shape(
-                              USE_ : SFString('HAnimSiteShape'))]),
-
-                        HAnimSite(
-                          name_ : SFString('waist_preferred_posterior'),
-                          DEF_ : SFString('hanim_waist_preferred_posterior'),
-                          translation_ : SFVec3f([SFDouble(0.29), SFDouble(1.0915), SFDouble(-0.1091)]),
-                          children_ : [
-                            TouchSensor(
-                              description_ : SFString('HAnimSite waist_preferred_posterior')),
-
-                            Shape(
-                              USE_ : SFString('HAnimSiteShape'))])]),
+                                  USE_ : SFString('HAnimSegmentLineColorRGBA'))))]),
 
                     HAnimJoint(
                       name_ : SFString('sacroiliac'),
@@ -402,47 +246,213 @@ var X3D0 =  X3D(
                                       USE_ : SFString('HAnimSegmentLineColorRGBA')))),
 
                             HAnimSite(
-                              name_ : SFString('l_femoral_lateral_epicondyles'),
-                              DEF_ : SFString('hanim_l_femoral_lateral_epicondyles'),
-                              translation_ : SFVec3f([SFDouble(0.1598), SFDouble(0.4967), SFDouble(0.0297)]),
+                              name_ : SFString('buttocks_standing_wall_contact_point'),
+                              DEF_ : SFString('hanim_buttocks_standing_wall_contact_point'),
                               children_ : [
                                 TouchSensor(
-                                  description_ : SFString('HAnimSite l_femoral_lateral_epicondyles')),
+                                  description_ : SFString('HAnimSite 93 buttocks_standing_wall_contact_point')),
 
                                 Shape(
-                                  USE_ : SFString('HAnimSiteShape'))]),
+                                  USE_ : SFString('HAnimSiteShape')),
+
+                                Billboard(
+                                  children_ : [
+                                    Shape(
+                                      geometry_ : 
+                                        Text(
+                                          string_ : MFString([SFString("93")]),
+                                          fontStyle_ : 
+                                            FontStyle(
+                                              size_ : 0.035)))])]),
 
                             HAnimSite(
-                              name_ : SFString('l_femoral_medial_epicondyles'),
-                              DEF_ : SFString('hanim_l_femoral_medial_epicondyles'),
-                              translation_ : SFVec3f([SFDouble(0.0398), SFDouble(0.4946), SFDouble(0.0303)]),
+                              name_ : SFString('crotch'),
+                              DEF_ : SFString('hanim_crotch'),
+                              translation_ : SFVec3f([SFDouble(0.0034), SFDouble(0.8266), SFDouble(0.0257)]),
                               children_ : [
                                 TouchSensor(
-                                  description_ : SFString('HAnimSite l_femoral_medial_epicondyles')),
+                                  description_ : SFString('HAnimSite 38 crotch')),
 
                                 Shape(
-                                  USE_ : SFString('HAnimSiteShape'))]),
+                                  USE_ : SFString('HAnimSiteShape')),
+
+                                Billboard(
+                                  children_ : [
+                                    Shape(
+                                      geometry_ : 
+                                        Text(
+                                          string_ : MFString([SFString("38")]),
+                                          fontStyle_ : 
+                                            FontStyle(
+                                              size_ : 0.035)))])]),
 
                             HAnimSite(
-                              name_ : SFString('l_knee_crease'),
-                              DEF_ : SFString('hanim_l_knee_crease'),
-                              translation_ : SFVec3f([SFDouble(0.0993), SFDouble(0.4881), SFDouble(-0.0309)]),
+                              name_ : SFString('l_asis'),
+                              DEF_ : SFString('hanim_l_asis'),
+                              translation_ : SFVec3f([SFDouble(0.0925), SFDouble(0.9983), SFDouble(0.1052)]),
                               children_ : [
                                 TouchSensor(
-                                  description_ : SFString('HAnimSite l_knee_crease')),
+                                  description_ : SFString('HAnimSite 32 l_asis')),
 
                                 Shape(
-                                  USE_ : SFString('HAnimSiteShape'))]),
+                                  USE_ : SFString('HAnimSiteShape')),
+
+                                Billboard(
+                                  children_ : [
+                                    Shape(
+                                      geometry_ : 
+                                        Text(
+                                          string_ : MFString([SFString("32")]),
+                                          fontStyle_ : 
+                                            FontStyle(
+                                              size_ : 0.035)))])]),
 
                             HAnimSite(
-                              name_ : SFString('l_suprapatella'),
-                              DEF_ : SFString('hanim_l_suprapatella'),
+                              name_ : SFString('l_iliocristale'),
+                              DEF_ : SFString('hanim_l_iliocristale'),
+                              translation_ : SFVec3f([SFDouble(0.1612), SFDouble(1.0537), SFDouble(0.0008)]),
                               children_ : [
                                 TouchSensor(
-                                  description_ : SFString('HAnimSite l_suprapatella')),
+                                  description_ : SFString('HAnimSite 33 l_iliocristale')),
 
                                 Shape(
-                                  USE_ : SFString('HAnimSiteShape'))]),
+                                  USE_ : SFString('HAnimSiteShape')),
+
+                                Billboard(
+                                  children_ : [
+                                    Shape(
+                                      geometry_ : 
+                                        Text(
+                                          string_ : MFString([SFString("33")]),
+                                          fontStyle_ : 
+                                            FontStyle(
+                                              size_ : 0.035)))])]),
+
+                            HAnimSite(
+                              name_ : SFString('l_psis'),
+                              DEF_ : SFString('hanim_l_psis'),
+                              translation_ : SFVec3f([SFDouble(0.0774), SFDouble(1.019), SFDouble(-0.1151)]),
+                              children_ : [
+                                TouchSensor(
+                                  description_ : SFString('HAnimSite 34 l_psis')),
+
+                                Shape(
+                                  USE_ : SFString('HAnimSiteShape')),
+
+                                Billboard(
+                                  children_ : [
+                                    Shape(
+                                      geometry_ : 
+                                        Text(
+                                          string_ : MFString([SFString("34")]),
+                                          fontStyle_ : 
+                                            FontStyle(
+                                              size_ : 0.035)))])]),
+
+                            HAnimSite(
+                              name_ : SFString('l_trochanterion'),
+                              DEF_ : SFString('hanim_l_trochanterion'),
+                              translation_ : SFVec3f([SFDouble(0.1677), SFDouble(0.8336), SFDouble(0.0303)]),
+                              children_ : [
+                                TouchSensor(
+                                  description_ : SFString('HAnimSite 42 l_trochanterion')),
+
+                                Shape(
+                                  USE_ : SFString('HAnimSiteShape')),
+
+                                Billboard(
+                                  children_ : [
+                                    Shape(
+                                      geometry_ : 
+                                        Text(
+                                          string_ : MFString([SFString("42")]),
+                                          fontStyle_ : 
+                                            FontStyle(
+                                              size_ : 0.035)))])]),
+
+                            HAnimSite(
+                              name_ : SFString('r_asis'),
+                              DEF_ : SFString('hanim_r_asis'),
+                              translation_ : SFVec3f([SFDouble(-0.0887), SFDouble(1.0021), SFDouble(0.1112)]),
+                              children_ : [
+                                TouchSensor(
+                                  description_ : SFString('HAnimSite 35 r_asis')),
+
+                                Shape(
+                                  USE_ : SFString('HAnimSiteShape')),
+
+                                Billboard(
+                                  children_ : [
+                                    Shape(
+                                      geometry_ : 
+                                        Text(
+                                          string_ : MFString([SFString("35")]),
+                                          fontStyle_ : 
+                                            FontStyle(
+                                              size_ : 0.035)))])]),
+
+                            HAnimSite(
+                              name_ : SFString('r_iliocristale'),
+                              DEF_ : SFString('hanim_r_iliocristale'),
+                              translation_ : SFVec3f([SFDouble(-0.1525), SFDouble(1.0628), SFDouble(0.0035)]),
+                              children_ : [
+                                TouchSensor(
+                                  description_ : SFString('HAnimSite 36 r_iliocristale')),
+
+                                Shape(
+                                  USE_ : SFString('HAnimSiteShape')),
+
+                                Billboard(
+                                  children_ : [
+                                    Shape(
+                                      geometry_ : 
+                                        Text(
+                                          string_ : MFString([SFString("36")]),
+                                          fontStyle_ : 
+                                            FontStyle(
+                                              size_ : 0.035)))])]),
+
+                            HAnimSite(
+                              name_ : SFString('r_psis'),
+                              DEF_ : SFString('hanim_r_psis'),
+                              translation_ : SFVec3f([SFDouble(-0.0716), SFDouble(1.019), SFDouble(-0.1138)]),
+                              children_ : [
+                                TouchSensor(
+                                  description_ : SFString('HAnimSite 37 r_psis')),
+
+                                Shape(
+                                  USE_ : SFString('HAnimSiteShape')),
+
+                                Billboard(
+                                  children_ : [
+                                    Shape(
+                                      geometry_ : 
+                                        Text(
+                                          string_ : MFString([SFString("37")]),
+                                          fontStyle_ : 
+                                            FontStyle(
+                                              size_ : 0.035)))])]),
+
+                            HAnimSite(
+                              name_ : SFString('r_trochanterion'),
+                              DEF_ : SFString('hanim_r_trochanterion'),
+                              translation_ : SFVec3f([SFDouble(-0.1689), SFDouble(0.8419), SFDouble(0.0352)]),
+                              children_ : [
+                                TouchSensor(
+                                  description_ : SFString('HAnimSite 46 r_trochanterion')),
+
+                                Shape(
+                                  USE_ : SFString('HAnimSiteShape')),
+
+                                Billboard(
+                                  children_ : [
+                                    Shape(
+                                      geometry_ : 
+                                        Text(
+                                          string_ : MFString([SFString("46")]),
+                                          fontStyle_ : 
+                                            FontStyle(
+                                              size_ : 0.035)))])]),
 
                             Shape(
                               geometry_ : 
@@ -454,50 +464,7 @@ var X3D0 =  X3D(
                                   /*from sacroiliac to r_hip vertices 2*/
                                   color_ : 
                                     ColorRGBA(
-                                      USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-
-                            HAnimSite(
-                              name_ : SFString('r_femoral_lateral_epicondyles'),
-                              DEF_ : SFString('hanim_r_femoral_lateral_epicondyles'),
-                              translation_ : SFVec3f([SFDouble(-0.1421), SFDouble(0.4992), SFDouble(0.031)]),
-                              children_ : [
-                                TouchSensor(
-                                  description_ : SFString('HAnimSite r_femoral_lateral_epicondyles')),
-
-                                Shape(
-                                  USE_ : SFString('HAnimSiteShape'))]),
-
-                            HAnimSite(
-                              name_ : SFString('r_femoral_medial_epicondyles'),
-                              DEF_ : SFString('hanim_r_femoral_medial_epicondyles'),
-                              translation_ : SFVec3f([SFDouble(-0.0221), SFDouble(0.5014), SFDouble(0.0289)]),
-                              children_ : [
-                                TouchSensor(
-                                  description_ : SFString('HAnimSite r_femoral_medial_epicondyles')),
-
-                                Shape(
-                                  USE_ : SFString('HAnimSiteShape'))]),
-
-                            HAnimSite(
-                              name_ : SFString('r_knee_crease'),
-                              DEF_ : SFString('hanim_r_knee_crease'),
-                              translation_ : SFVec3f([SFDouble(-0.0825), SFDouble(0.4932), SFDouble(-0.0326)]),
-                              children_ : [
-                                TouchSensor(
-                                  description_ : SFString('HAnimSite r_knee_crease')),
-
-                                Shape(
-                                  USE_ : SFString('HAnimSiteShape'))]),
-
-                            HAnimSite(
-                              name_ : SFString('r_suprapatella'),
-                              DEF_ : SFString('hanim_r_suprapatella'),
-                              children_ : [
-                                TouchSensor(
-                                  description_ : SFString('HAnimSite r_suprapatella')),
-
-                                Shape(
-                                  USE_ : SFString('HAnimSiteShape'))])]),
+                                      USE_ : SFString('HAnimSegmentLineColorRGBA'))))]),
 
                         HAnimJoint(
                           name_ : SFString('l_hip'),
@@ -530,36 +497,87 @@ var X3D0 =  X3D(
                                           USE_ : SFString('HAnimSegmentLineColorRGBA')))),
 
                                 HAnimSite(
-                                  name_ : SFString('l_lateral_malleolus'),
-                                  DEF_ : SFString('hanim_l_lateral_malleolus'),
-                                  translation_ : SFVec3f([SFDouble(0.1308), SFDouble(0.0597), SFDouble(-0.1032)]),
+                                  name_ : SFString('l_femoral_lateral_epicondyles'),
+                                  DEF_ : SFString('hanim_l_femoral_lateral_epicondyles'),
+                                  translation_ : SFVec3f([SFDouble(0.1598), SFDouble(0.4967), SFDouble(0.0297)]),
                                   children_ : [
                                     TouchSensor(
-                                      description_ : SFString('HAnimSite l_lateral_malleolus')),
+                                      description_ : SFString('HAnimSite 40 l_femoral_lateral_epicondyles')),
 
                                     Shape(
-                                      USE_ : SFString('HAnimSiteShape'))]),
+                                      USE_ : SFString('HAnimSiteShape')),
+
+                                    Billboard(
+                                      children_ : [
+                                        Shape(
+                                          geometry_ : 
+                                            Text(
+                                              string_ : MFString([SFString("40")]),
+                                              fontStyle_ : 
+                                                FontStyle(
+                                                  size_ : 0.035)))])]),
 
                                 HAnimSite(
-                                  name_ : SFString('l_medial_malleolus'),
-                                  DEF_ : SFString('hanim_l_medial_malleolus'),
-                                  translation_ : SFVec3f([SFDouble(0.089), SFDouble(0.0716), SFDouble(-0.0881)]),
+                                  name_ : SFString('l_femoral_medial_epicondyles'),
+                                  DEF_ : SFString('hanim_l_femoral_medial_epicondyles'),
+                                  translation_ : SFVec3f([SFDouble(0.0398), SFDouble(0.4946), SFDouble(0.0303)]),
                                   children_ : [
                                     TouchSensor(
-                                      description_ : SFString('HAnimSite l_medial_malleolus')),
+                                      description_ : SFString('HAnimSite 39 l_femoral_medial_epicondyles')),
 
                                     Shape(
-                                      USE_ : SFString('HAnimSiteShape'))]),
+                                      USE_ : SFString('HAnimSiteShape')),
+
+                                    Billboard(
+                                      children_ : [
+                                        Shape(
+                                          geometry_ : 
+                                            Text(
+                                              string_ : MFString([SFString("39")]),
+                                              fontStyle_ : 
+                                                FontStyle(
+                                                  size_ : 0.035)))])]),
 
                                 HAnimSite(
-                                  name_ : SFString('l_tibiale'),
-                                  DEF_ : SFString('hanim_l_tibiale'),
+                                  name_ : SFString('l_knee_crease'),
+                                  DEF_ : SFString('hanim_l_knee_crease'),
+                                  translation_ : SFVec3f([SFDouble(0.0993), SFDouble(0.4881), SFDouble(-0.0309)]),
                                   children_ : [
                                     TouchSensor(
-                                      description_ : SFString('HAnimSite l_tibiale')),
+                                      description_ : SFString('HAnimSite 90 l_knee_crease')),
 
                                     Shape(
-                                      USE_ : SFString('HAnimSiteShape'))])]),
+                                      USE_ : SFString('HAnimSiteShape')),
+
+                                    Billboard(
+                                      children_ : [
+                                        Shape(
+                                          geometry_ : 
+                                            Text(
+                                              string_ : MFString([SFString("90")]),
+                                              fontStyle_ : 
+                                                FontStyle(
+                                                  size_ : 0.035)))])]),
+
+                                HAnimSite(
+                                  name_ : SFString('l_suprapatella'),
+                                  DEF_ : SFString('hanim_l_suprapatella'),
+                                  children_ : [
+                                    TouchSensor(
+                                      description_ : SFString('HAnimSite 41 l_suprapatella')),
+
+                                    Shape(
+                                      USE_ : SFString('HAnimSiteShape')),
+
+                                    Billboard(
+                                      children_ : [
+                                        Shape(
+                                          geometry_ : 
+                                            Text(
+                                              string_ : MFString([SFString("41")]),
+                                              fontStyle_ : 
+                                                FontStyle(
+                                                  size_ : 0.035)))])])]),
 
                             HAnimJoint(
                               name_ : SFString('l_knee'),
@@ -592,26 +610,66 @@ var X3D0 =  X3D(
                                               USE_ : SFString('HAnimSegmentLineColorRGBA')))),
 
                                     HAnimSite(
-                                      name_ : SFString('l_calcaneus_posterior'),
-                                      DEF_ : SFString('hanim_l_calcaneus_posterior'),
-                                      translation_ : SFVec3f([SFDouble(0.0974), SFDouble(0.0259), SFDouble(-0.1171)]),
+                                      name_ : SFString('l_lateral_malleolus'),
+                                      DEF_ : SFString('hanim_l_lateral_malleolus'),
+                                      translation_ : SFVec3f([SFDouble(0.1308), SFDouble(0.0597), SFDouble(-0.1032)]),
                                       children_ : [
                                         TouchSensor(
-                                          description_ : SFString('HAnimSite l_calcaneus_posterior')),
+                                          description_ : SFString('HAnimSite 49 l_lateral_malleolus')),
 
                                         Shape(
-                                          USE_ : SFString('HAnimSiteShape'))]),
+                                          USE_ : SFString('HAnimSiteShape')),
+
+                                        Billboard(
+                                          children_ : [
+                                            Shape(
+                                              geometry_ : 
+                                                Text(
+                                                  string_ : MFString([SFString("49")]),
+                                                  fontStyle_ : 
+                                                    FontStyle(
+                                                      size_ : 0.035)))])]),
 
                                     HAnimSite(
-                                      name_ : SFString('l_sphyrion'),
-                                      DEF_ : SFString('hanim_l_sphyrion'),
-                                      translation_ : SFVec3f([SFDouble(0.089), SFDouble(0.0575), SFDouble(-0.0943)]),
+                                      name_ : SFString('l_medial_malleolus'),
+                                      DEF_ : SFString('hanim_l_medial_malleolus'),
+                                      translation_ : SFVec3f([SFDouble(0.089), SFDouble(0.0716), SFDouble(-0.0881)]),
                                       children_ : [
                                         TouchSensor(
-                                          description_ : SFString('HAnimSite l_sphyrion')),
+                                          description_ : SFString('HAnimSite 48 l_medial_malleolus')),
 
                                         Shape(
-                                          USE_ : SFString('HAnimSiteShape'))])]),
+                                          USE_ : SFString('HAnimSiteShape')),
+
+                                        Billboard(
+                                          children_ : [
+                                            Shape(
+                                              geometry_ : 
+                                                Text(
+                                                  string_ : MFString([SFString("48")]),
+                                                  fontStyle_ : 
+                                                    FontStyle(
+                                                      size_ : 0.035)))])]),
+
+                                    HAnimSite(
+                                      name_ : SFString('l_tibiale'),
+                                      DEF_ : SFString('hanim_l_tibiale'),
+                                      children_ : [
+                                        TouchSensor(
+                                          description_ : SFString('HAnimSite 47 l_tibiale')),
+
+                                        Shape(
+                                          USE_ : SFString('HAnimSiteShape')),
+
+                                        Billboard(
+                                          children_ : [
+                                            Shape(
+                                              geometry_ : 
+                                                Text(
+                                                  string_ : MFString([SFString("47")]),
+                                                  fontStyle_ : 
+                                                    FontStyle(
+                                                      size_ : 0.035)))])])]),
 
                                 HAnimJoint(
                                   name_ : SFString('l_talocrural'),
@@ -644,7 +702,49 @@ var X3D0 =  X3D(
                                               /*from l_talocrural to l_tarsometatarsal_2 vertices 2*/
                                               color_ : 
                                                 ColorRGBA(
-                                                  USE_ : SFString('HAnimSegmentLineColorRGBA'))))]),
+                                                  USE_ : SFString('HAnimSegmentLineColorRGBA')))),
+
+                                        HAnimSite(
+                                          name_ : SFString('l_calcaneus_posterior'),
+                                          DEF_ : SFString('hanim_l_calcaneus_posterior'),
+                                          translation_ : SFVec3f([SFDouble(0.0974), SFDouble(0.0259), SFDouble(-0.1171)]),
+                                          children_ : [
+                                            TouchSensor(
+                                              description_ : SFString('HAnimSite 58 l_calcaneus_posterior')),
+
+                                            Shape(
+                                              USE_ : SFString('HAnimSiteShape')),
+
+                                            Billboard(
+                                              children_ : [
+                                                Shape(
+                                                  geometry_ : 
+                                                    Text(
+                                                      string_ : MFString([SFString("58")]),
+                                                      fontStyle_ : 
+                                                        FontStyle(
+                                                          size_ : 0.035)))])]),
+
+                                        HAnimSite(
+                                          name_ : SFString('l_sphyrion'),
+                                          DEF_ : SFString('hanim_l_sphyrion'),
+                                          translation_ : SFVec3f([SFDouble(0.089), SFDouble(0.0575), SFDouble(-0.0943)]),
+                                          children_ : [
+                                            TouchSensor(
+                                              description_ : SFString('HAnimSite 50 l_sphyrion')),
+
+                                            Shape(
+                                              USE_ : SFString('HAnimSiteShape')),
+
+                                            Billboard(
+                                              children_ : [
+                                                Shape(
+                                                  geometry_ : 
+                                                    Text(
+                                                      string_ : MFString([SFString("50")]),
+                                                      fontStyle_ : 
+                                                        FontStyle(
+                                                          size_ : 0.035)))])])]),
 
                                     HAnimJoint(
                                       name_ : SFString('l_tarsometatarsal_2'),
@@ -674,78 +774,7 @@ var X3D0 =  X3D(
                                                   /*from l_tarsometatarsal_2 to l_metatarsophalangeal_2 vertices 2*/
                                                   color_ : 
                                                     ColorRGBA(
-                                                      USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-
-                                            HAnimSite(
-                                              name_ : SFString('l_metatarsal_phalanx_1'),
-                                              DEF_ : SFString('hanim_l_metatarsal_phalanx_1'),
-                                              children_ : [
-                                                TouchSensor(
-                                                  description_ : SFString('HAnimSite l_metatarsal_phalanx_1')),
-
-                                                Shape(
-                                                  USE_ : SFString('HAnimSiteShape'))]),
-
-                                            HAnimSite(
-                                              name_ : SFString('l_metatarsal_phalanx_5'),
-                                              DEF_ : SFString('hanim_l_metatarsal_phalanx_5'),
-                                              children_ : [
-                                                TouchSensor(
-                                                  description_ : SFString('HAnimSite l_metatarsal_phalanx_5')),
-
-                                                Shape(
-                                                  USE_ : SFString('HAnimSiteShape'))]),
-
-                                            HAnimSite(
-                                              name_ : SFString('l_tarsal_distal_phalanx_1_tip'),
-                                              DEF_ : SFString('hanim_l_tarsal_distal_phalanx_1_tip'),
-                                              children_ : [
-                                                TouchSensor(
-                                                  description_ : SFString('HAnimSite l_tarsal_distal_phalanx_1_tip')),
-
-                                                Shape(
-                                                  USE_ : SFString('HAnimSiteShape'))]),
-
-                                            HAnimSite(
-                                              name_ : SFString('l_tarsal_distal_phalanx_2_tip'),
-                                              DEF_ : SFString('hanim_l_tarsal_distal_phalanx_2_tip'),
-                                              translation_ : SFVec3f([SFDouble(0.1195), SFDouble(0.0079), SFDouble(0.1433)]),
-                                              children_ : [
-                                                TouchSensor(
-                                                  description_ : SFString('HAnimSite l_tarsal_distal_phalanx_2_tip')),
-
-                                                Shape(
-                                                  USE_ : SFString('HAnimSiteShape'))]),
-
-                                            HAnimSite(
-                                              name_ : SFString('l_tarsal_distal_phalanx_3_tip'),
-                                              DEF_ : SFString('hanim_l_tarsal_distal_phalanx_3_tip'),
-                                              children_ : [
-                                                TouchSensor(
-                                                  description_ : SFString('HAnimSite l_tarsal_distal_phalanx_3_tip')),
-
-                                                Shape(
-                                                  USE_ : SFString('HAnimSiteShape'))]),
-
-                                            HAnimSite(
-                                              name_ : SFString('l_tarsal_distal_phalanx_4_tip'),
-                                              DEF_ : SFString('hanim_l_tarsal_distal_phalanx_4_tip'),
-                                              children_ : [
-                                                TouchSensor(
-                                                  description_ : SFString('HAnimSite l_tarsal_distal_phalanx_4_tip')),
-
-                                                Shape(
-                                                  USE_ : SFString('HAnimSiteShape'))]),
-
-                                            HAnimSite(
-                                              name_ : SFString('l_tarsal_distal_phalanx_5_tip'),
-                                              DEF_ : SFString('hanim_l_tarsal_distal_phalanx_5_tip'),
-                                              children_ : [
-                                                TouchSensor(
-                                                  description_ : SFString('HAnimSite l_tarsal_distal_phalanx_5_tip')),
-
-                                                Shape(
-                                                  USE_ : SFString('HAnimSiteShape'))])]),
+                                                      USE_ : SFString('HAnimSegmentLineColorRGBA'))))]),
 
                                         HAnimJoint(
                                           name_ : SFString('l_metatarsophalangeal_2'),
@@ -775,7 +804,148 @@ var X3D0 =  X3D(
                                                       /*from l_metatarsophalangeal_2 to l_tarsal_distal_interphalangeal_2 vertices 2*/
                                                       color_ : 
                                                         ColorRGBA(
-                                                          USE_ : SFString('HAnimSegmentLineColorRGBA'))))]),
+                                                          USE_ : SFString('HAnimSegmentLineColorRGBA')))),
+
+                                                HAnimSite(
+                                                  name_ : SFString('l_metatarsal_phalanx_1'),
+                                                  DEF_ : SFString('hanim_l_metatarsal_phalanx_1'),
+                                                  children_ : [
+                                                    TouchSensor(
+                                                      description_ : SFString('HAnimSite 55 l_metatarsal_phalanx_1')),
+
+                                                    Shape(
+                                                      USE_ : SFString('HAnimSiteShape')),
+
+                                                    Billboard(
+                                                      children_ : [
+                                                        Shape(
+                                                          geometry_ : 
+                                                            Text(
+                                                              string_ : MFString([SFString("55")]),
+                                                              fontStyle_ : 
+                                                                FontStyle(
+                                                                  size_ : 0.035)))])]),
+
+                                                HAnimSite(
+                                                  name_ : SFString('l_metatarsal_phalanx_5'),
+                                                  DEF_ : SFString('hanim_l_metatarsal_phalanx_5'),
+                                                  children_ : [
+                                                    TouchSensor(
+                                                      description_ : SFString('HAnimSite 56 l_metatarsal_phalanx_5')),
+
+                                                    Shape(
+                                                      USE_ : SFString('HAnimSiteShape')),
+
+                                                    Billboard(
+                                                      children_ : [
+                                                        Shape(
+                                                          geometry_ : 
+                                                            Text(
+                                                              string_ : MFString([SFString("56")]),
+                                                              fontStyle_ : 
+                                                                FontStyle(
+                                                                  size_ : 0.035)))])]),
+
+                                                HAnimSite(
+                                                  name_ : SFString('l_tarsal_distal_phalanx_1_tip'),
+                                                  DEF_ : SFString('hanim_l_tarsal_distal_phalanx_1_tip'),
+                                                  children_ : [
+                                                    TouchSensor(
+                                                      description_ : SFString('HAnimSite l_tarsal_distal_phalanx_1_tip')),
+
+                                                    Shape(
+                                                      USE_ : SFString('HAnimSiteShape')),
+
+                                                    Billboard(
+                                                      children_ : [
+                                                        Shape(
+                                                          geometry_ : 
+                                                            Text(
+                                                              string_ : MFString([SFString("")]),
+                                                              fontStyle_ : 
+                                                                FontStyle(
+                                                                  size_ : 0.035)))])]),
+
+                                                HAnimSite(
+                                                  name_ : SFString('l_tarsal_distal_phalanx_2_tip'),
+                                                  DEF_ : SFString('hanim_l_tarsal_distal_phalanx_2_tip'),
+                                                  translation_ : SFVec3f([SFDouble(0.1195), SFDouble(0.0079), SFDouble(0.1433)]),
+                                                  children_ : [
+                                                    TouchSensor(
+                                                      description_ : SFString('HAnimSite l_tarsal_distal_phalanx_2_tip')),
+
+                                                    Shape(
+                                                      USE_ : SFString('HAnimSiteShape')),
+
+                                                    Billboard(
+                                                      children_ : [
+                                                        Shape(
+                                                          geometry_ : 
+                                                            Text(
+                                                              string_ : MFString([SFString("")]),
+                                                              fontStyle_ : 
+                                                                FontStyle(
+                                                                  size_ : 0.035)))])]),
+
+                                                HAnimSite(
+                                                  name_ : SFString('l_tarsal_distal_phalanx_3_tip'),
+                                                  DEF_ : SFString('hanim_l_tarsal_distal_phalanx_3_tip'),
+                                                  children_ : [
+                                                    TouchSensor(
+                                                      description_ : SFString('HAnimSite l_tarsal_distal_phalanx_3_tip')),
+
+                                                    Shape(
+                                                      USE_ : SFString('HAnimSiteShape')),
+
+                                                    Billboard(
+                                                      children_ : [
+                                                        Shape(
+                                                          geometry_ : 
+                                                            Text(
+                                                              string_ : MFString([SFString("")]),
+                                                              fontStyle_ : 
+                                                                FontStyle(
+                                                                  size_ : 0.035)))])]),
+
+                                                HAnimSite(
+                                                  name_ : SFString('l_tarsal_distal_phalanx_4_tip'),
+                                                  DEF_ : SFString('hanim_l_tarsal_distal_phalanx_4_tip'),
+                                                  children_ : [
+                                                    TouchSensor(
+                                                      description_ : SFString('HAnimSite l_tarsal_distal_phalanx_4_tip')),
+
+                                                    Shape(
+                                                      USE_ : SFString('HAnimSiteShape')),
+
+                                                    Billboard(
+                                                      children_ : [
+                                                        Shape(
+                                                          geometry_ : 
+                                                            Text(
+                                                              string_ : MFString([SFString("")]),
+                                                              fontStyle_ : 
+                                                                FontStyle(
+                                                                  size_ : 0.035)))])]),
+
+                                                HAnimSite(
+                                                  name_ : SFString('l_tarsal_distal_phalanx_5_tip'),
+                                                  DEF_ : SFString('hanim_l_tarsal_distal_phalanx_5_tip'),
+                                                  children_ : [
+                                                    TouchSensor(
+                                                      description_ : SFString('HAnimSite l_tarsal_distal_phalanx_5_tip')),
+
+                                                    Shape(
+                                                      USE_ : SFString('HAnimSiteShape')),
+
+                                                    Billboard(
+                                                      children_ : [
+                                                        Shape(
+                                                          geometry_ : 
+                                                            Text(
+                                                              string_ : MFString([SFString("")]),
+                                                              fontStyle_ : 
+                                                                FontStyle(
+                                                                  size_ : 0.035)))])])]),
 
                                             HAnimJoint(
                                               name_ : SFString('l_tarsal_distal_interphalangeal_2'),
@@ -813,36 +983,87 @@ var X3D0 =  X3D(
                                           USE_ : SFString('HAnimSegmentLineColorRGBA')))),
 
                                 HAnimSite(
-                                  name_ : SFString('r_lateral_malleolus'),
-                                  DEF_ : SFString('hanim_r_lateral_malleolus'),
-                                  translation_ : SFVec3f([SFDouble(-0.1006), SFDouble(0.0658), SFDouble(-0.1075)]),
+                                  name_ : SFString('r_femoral_lateral_epicondyles'),
+                                  DEF_ : SFString('hanim_r_femoral_lateral_epicondyles'),
+                                  translation_ : SFVec3f([SFDouble(-0.1421), SFDouble(0.4992), SFDouble(0.031)]),
                                   children_ : [
                                     TouchSensor(
-                                      description_ : SFString('HAnimSite r_lateral_malleolus')),
+                                      description_ : SFString('HAnimSite 44 r_femoral_lateral_epicondyles')),
 
                                     Shape(
-                                      USE_ : SFString('HAnimSiteShape'))]),
+                                      USE_ : SFString('HAnimSiteShape')),
+
+                                    Billboard(
+                                      children_ : [
+                                        Shape(
+                                          geometry_ : 
+                                            Text(
+                                              string_ : MFString([SFString("44")]),
+                                              fontStyle_ : 
+                                                FontStyle(
+                                                  size_ : 0.035)))])]),
 
                                 HAnimSite(
-                                  name_ : SFString('r_medial_malleolus'),
-                                  DEF_ : SFString('hanim_r_medial_malleolus'),
-                                  translation_ : SFVec3f([SFDouble(-0.0591), SFDouble(0.076), SFDouble(-0.0928)]),
+                                  name_ : SFString('r_femoral_medial_epicondyles'),
+                                  DEF_ : SFString('hanim_r_femoral_medial_epicondyles'),
+                                  translation_ : SFVec3f([SFDouble(-0.0221), SFDouble(0.5014), SFDouble(0.0289)]),
                                   children_ : [
                                     TouchSensor(
-                                      description_ : SFString('HAnimSite r_medial_malleolus')),
+                                      description_ : SFString('HAnimSite 43 r_femoral_medial_epicondyles')),
 
                                     Shape(
-                                      USE_ : SFString('HAnimSiteShape'))]),
+                                      USE_ : SFString('HAnimSiteShape')),
+
+                                    Billboard(
+                                      children_ : [
+                                        Shape(
+                                          geometry_ : 
+                                            Text(
+                                              string_ : MFString([SFString("43")]),
+                                              fontStyle_ : 
+                                                FontStyle(
+                                                  size_ : 0.035)))])]),
 
                                 HAnimSite(
-                                  name_ : SFString('r_tibiale'),
-                                  DEF_ : SFString('hanim_r_tibiale'),
+                                  name_ : SFString('r_knee_crease'),
+                                  DEF_ : SFString('hanim_r_knee_crease'),
+                                  translation_ : SFVec3f([SFDouble(-0.0825), SFDouble(0.4932), SFDouble(-0.0326)]),
                                   children_ : [
                                     TouchSensor(
-                                      description_ : SFString('HAnimSite r_tibiale')),
+                                      description_ : SFString('HAnimSite 91 r_knee_crease')),
 
                                     Shape(
-                                      USE_ : SFString('HAnimSiteShape'))])]),
+                                      USE_ : SFString('HAnimSiteShape')),
+
+                                    Billboard(
+                                      children_ : [
+                                        Shape(
+                                          geometry_ : 
+                                            Text(
+                                              string_ : MFString([SFString("91")]),
+                                              fontStyle_ : 
+                                                FontStyle(
+                                                  size_ : 0.035)))])]),
+
+                                HAnimSite(
+                                  name_ : SFString('r_suprapatella'),
+                                  DEF_ : SFString('hanim_r_suprapatella'),
+                                  children_ : [
+                                    TouchSensor(
+                                      description_ : SFString('HAnimSite 45 r_suprapatella')),
+
+                                    Shape(
+                                      USE_ : SFString('HAnimSiteShape')),
+
+                                    Billboard(
+                                      children_ : [
+                                        Shape(
+                                          geometry_ : 
+                                            Text(
+                                              string_ : MFString([SFString("45")]),
+                                              fontStyle_ : 
+                                                FontStyle(
+                                                  size_ : 0.035)))])])]),
 
                             HAnimJoint(
                               name_ : SFString('r_knee'),
@@ -875,26 +1096,66 @@ var X3D0 =  X3D(
                                               USE_ : SFString('HAnimSegmentLineColorRGBA')))),
 
                                     HAnimSite(
-                                      name_ : SFString('r_calcaneus_posterior'),
-                                      DEF_ : SFString('hanim_r_calcaneus_posterior'),
-                                      translation_ : SFVec3f([SFDouble(-0.0692), SFDouble(0.0297), SFDouble(-0.1221)]),
+                                      name_ : SFString('r_lateral_malleolus'),
+                                      DEF_ : SFString('hanim_r_lateral_malleolus'),
+                                      translation_ : SFVec3f([SFDouble(-0.1006), SFDouble(0.0658), SFDouble(-0.1075)]),
                                       children_ : [
                                         TouchSensor(
-                                          description_ : SFString('HAnimSite r_calcaneus_posterior')),
+                                          description_ : SFString('HAnimSite 53 r_lateral_malleolus')),
 
                                         Shape(
-                                          USE_ : SFString('HAnimSiteShape'))]),
+                                          USE_ : SFString('HAnimSiteShape')),
+
+                                        Billboard(
+                                          children_ : [
+                                            Shape(
+                                              geometry_ : 
+                                                Text(
+                                                  string_ : MFString([SFString("53")]),
+                                                  fontStyle_ : 
+                                                    FontStyle(
+                                                      size_ : 0.035)))])]),
 
                                     HAnimSite(
-                                      name_ : SFString('r_sphyrion'),
-                                      DEF_ : SFString('hanim_r_sphyrion'),
-                                      translation_ : SFVec3f([SFDouble(-0.0603), SFDouble(0.061), SFDouble(-0.1002)]),
+                                      name_ : SFString('r_medial_malleolus'),
+                                      DEF_ : SFString('hanim_r_medial_malleolus'),
+                                      translation_ : SFVec3f([SFDouble(-0.0591), SFDouble(0.076), SFDouble(-0.0928)]),
                                       children_ : [
                                         TouchSensor(
-                                          description_ : SFString('HAnimSite r_sphyrion')),
+                                          description_ : SFString('HAnimSite 52 r_medial_malleolus')),
 
                                         Shape(
-                                          USE_ : SFString('HAnimSiteShape'))])]),
+                                          USE_ : SFString('HAnimSiteShape')),
+
+                                        Billboard(
+                                          children_ : [
+                                            Shape(
+                                              geometry_ : 
+                                                Text(
+                                                  string_ : MFString([SFString("52")]),
+                                                  fontStyle_ : 
+                                                    FontStyle(
+                                                      size_ : 0.035)))])]),
+
+                                    HAnimSite(
+                                      name_ : SFString('r_tibiale'),
+                                      DEF_ : SFString('hanim_r_tibiale'),
+                                      children_ : [
+                                        TouchSensor(
+                                          description_ : SFString('HAnimSite 51 r_tibiale')),
+
+                                        Shape(
+                                          USE_ : SFString('HAnimSiteShape')),
+
+                                        Billboard(
+                                          children_ : [
+                                            Shape(
+                                              geometry_ : 
+                                                Text(
+                                                  string_ : MFString([SFString("51")]),
+                                                  fontStyle_ : 
+                                                    FontStyle(
+                                                      size_ : 0.035)))])])]),
 
                                 HAnimJoint(
                                   name_ : SFString('r_talocrural'),
@@ -927,7 +1188,49 @@ var X3D0 =  X3D(
                                               /*from r_talocrural to r_tarsometatarsal_2 vertices 2*/
                                               color_ : 
                                                 ColorRGBA(
-                                                  USE_ : SFString('HAnimSegmentLineColorRGBA'))))]),
+                                                  USE_ : SFString('HAnimSegmentLineColorRGBA')))),
+
+                                        HAnimSite(
+                                          name_ : SFString('r_calcaneus_posterior'),
+                                          DEF_ : SFString('hanim_r_calcaneus_posterior'),
+                                          translation_ : SFVec3f([SFDouble(-0.0692), SFDouble(0.0297), SFDouble(-0.1221)]),
+                                          children_ : [
+                                            TouchSensor(
+                                              description_ : SFString('HAnimSite 62 r_calcaneus_posterior')),
+
+                                            Shape(
+                                              USE_ : SFString('HAnimSiteShape')),
+
+                                            Billboard(
+                                              children_ : [
+                                                Shape(
+                                                  geometry_ : 
+                                                    Text(
+                                                      string_ : MFString([SFString("62")]),
+                                                      fontStyle_ : 
+                                                        FontStyle(
+                                                          size_ : 0.035)))])]),
+
+                                        HAnimSite(
+                                          name_ : SFString('r_sphyrion'),
+                                          DEF_ : SFString('hanim_r_sphyrion'),
+                                          translation_ : SFVec3f([SFDouble(-0.0603), SFDouble(0.061), SFDouble(-0.1002)]),
+                                          children_ : [
+                                            TouchSensor(
+                                              description_ : SFString('HAnimSite 54 r_sphyrion')),
+
+                                            Shape(
+                                              USE_ : SFString('HAnimSiteShape')),
+
+                                            Billboard(
+                                              children_ : [
+                                                Shape(
+                                                  geometry_ : 
+                                                    Text(
+                                                      string_ : MFString([SFString("54")]),
+                                                      fontStyle_ : 
+                                                        FontStyle(
+                                                          size_ : 0.035)))])])]),
 
                                     HAnimJoint(
                                       name_ : SFString('r_tarsometatarsal_2'),
@@ -957,78 +1260,7 @@ var X3D0 =  X3D(
                                                   /*from r_tarsometatarsal_2 to r_metatarsophalangeal_2 vertices 2*/
                                                   color_ : 
                                                     ColorRGBA(
-                                                      USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-
-                                            HAnimSite(
-                                              name_ : SFString('r_metatarsal_phalanx_1'),
-                                              DEF_ : SFString('hanim_r_metatarsal_phalanx_1'),
-                                              children_ : [
-                                                TouchSensor(
-                                                  description_ : SFString('HAnimSite r_metatarsal_phalanx_1')),
-
-                                                Shape(
-                                                  USE_ : SFString('HAnimSiteShape'))]),
-
-                                            HAnimSite(
-                                              name_ : SFString('r_metatarsal_phalanx_5'),
-                                              DEF_ : SFString('hanim_r_metatarsal_phalanx_5'),
-                                              children_ : [
-                                                TouchSensor(
-                                                  description_ : SFString('HAnimSite r_metatarsal_phalanx_5')),
-
-                                                Shape(
-                                                  USE_ : SFString('HAnimSiteShape'))]),
-
-                                            HAnimSite(
-                                              name_ : SFString('r_tarsal_distal_phalanx_1_tip'),
-                                              DEF_ : SFString('hanim_r_tarsal_distal_phalanx_1_tip'),
-                                              children_ : [
-                                                TouchSensor(
-                                                  description_ : SFString('HAnimSite r_tarsal_distal_phalanx_1_tip')),
-
-                                                Shape(
-                                                  USE_ : SFString('HAnimSiteShape'))]),
-
-                                            HAnimSite(
-                                              name_ : SFString('r_tarsal_distal_phalanx_2_tip'),
-                                              DEF_ : SFString('hanim_r_tarsal_distal_phalanx_2_tip'),
-                                              translation_ : SFVec3f([SFDouble(-0.0883), SFDouble(0.0134), SFDouble(0.1383)]),
-                                              children_ : [
-                                                TouchSensor(
-                                                  description_ : SFString('HAnimSite r_tarsal_distal_phalanx_2_tip')),
-
-                                                Shape(
-                                                  USE_ : SFString('HAnimSiteShape'))]),
-
-                                            HAnimSite(
-                                              name_ : SFString('r_tarsal_distal_phalanx_3_tip'),
-                                              DEF_ : SFString('hanim_r_tarsal_distal_phalanx_3_tip'),
-                                              children_ : [
-                                                TouchSensor(
-                                                  description_ : SFString('HAnimSite r_tarsal_distal_phalanx_3_tip')),
-
-                                                Shape(
-                                                  USE_ : SFString('HAnimSiteShape'))]),
-
-                                            HAnimSite(
-                                              name_ : SFString('r_tarsal_distal_phalanx_4_tip'),
-                                              DEF_ : SFString('hanim_r_tarsal_distal_phalanx_4_tip'),
-                                              children_ : [
-                                                TouchSensor(
-                                                  description_ : SFString('HAnimSite r_tarsal_distal_phalanx_4_tip')),
-
-                                                Shape(
-                                                  USE_ : SFString('HAnimSiteShape'))]),
-
-                                            HAnimSite(
-                                              name_ : SFString('r_tarsal_distal_phalanx_5_tip'),
-                                              DEF_ : SFString('hanim_r_tarsal_distal_phalanx_5_tip'),
-                                              children_ : [
-                                                TouchSensor(
-                                                  description_ : SFString('HAnimSite r_tarsal_distal_phalanx_5_tip')),
-
-                                                Shape(
-                                                  USE_ : SFString('HAnimSiteShape'))])]),
+                                                      USE_ : SFString('HAnimSegmentLineColorRGBA'))))]),
 
                                         HAnimJoint(
                                           name_ : SFString('r_metatarsophalangeal_2'),
@@ -1058,7 +1290,148 @@ var X3D0 =  X3D(
                                                       /*from r_metatarsophalangeal_2 to r_tarsal_distal_interphalangeal_2 vertices 2*/
                                                       color_ : 
                                                         ColorRGBA(
-                                                          USE_ : SFString('HAnimSegmentLineColorRGBA'))))]),
+                                                          USE_ : SFString('HAnimSegmentLineColorRGBA')))),
+
+                                                HAnimSite(
+                                                  name_ : SFString('r_metatarsal_phalanx_1'),
+                                                  DEF_ : SFString('hanim_r_metatarsal_phalanx_1'),
+                                                  children_ : [
+                                                    TouchSensor(
+                                                      description_ : SFString('HAnimSite 59 r_metatarsal_phalanx_1')),
+
+                                                    Shape(
+                                                      USE_ : SFString('HAnimSiteShape')),
+
+                                                    Billboard(
+                                                      children_ : [
+                                                        Shape(
+                                                          geometry_ : 
+                                                            Text(
+                                                              string_ : MFString([SFString("59")]),
+                                                              fontStyle_ : 
+                                                                FontStyle(
+                                                                  size_ : 0.035)))])]),
+
+                                                HAnimSite(
+                                                  name_ : SFString('r_metatarsal_phalanx_5'),
+                                                  DEF_ : SFString('hanim_r_metatarsal_phalanx_5'),
+                                                  children_ : [
+                                                    TouchSensor(
+                                                      description_ : SFString('HAnimSite 60 r_metatarsal_phalanx_5')),
+
+                                                    Shape(
+                                                      USE_ : SFString('HAnimSiteShape')),
+
+                                                    Billboard(
+                                                      children_ : [
+                                                        Shape(
+                                                          geometry_ : 
+                                                            Text(
+                                                              string_ : MFString([SFString("60")]),
+                                                              fontStyle_ : 
+                                                                FontStyle(
+                                                                  size_ : 0.035)))])]),
+
+                                                HAnimSite(
+                                                  name_ : SFString('r_tarsal_distal_phalanx_1_tip'),
+                                                  DEF_ : SFString('hanim_r_tarsal_distal_phalanx_1_tip'),
+                                                  children_ : [
+                                                    TouchSensor(
+                                                      description_ : SFString('HAnimSite r_tarsal_distal_phalanx_1_tip')),
+
+                                                    Shape(
+                                                      USE_ : SFString('HAnimSiteShape')),
+
+                                                    Billboard(
+                                                      children_ : [
+                                                        Shape(
+                                                          geometry_ : 
+                                                            Text(
+                                                              string_ : MFString([SFString("")]),
+                                                              fontStyle_ : 
+                                                                FontStyle(
+                                                                  size_ : 0.035)))])]),
+
+                                                HAnimSite(
+                                                  name_ : SFString('r_tarsal_distal_phalanx_2_tip'),
+                                                  DEF_ : SFString('hanim_r_tarsal_distal_phalanx_2_tip'),
+                                                  translation_ : SFVec3f([SFDouble(-0.0883), SFDouble(0.0134), SFDouble(0.1383)]),
+                                                  children_ : [
+                                                    TouchSensor(
+                                                      description_ : SFString('HAnimSite r_tarsal_distal_phalanx_2_tip')),
+
+                                                    Shape(
+                                                      USE_ : SFString('HAnimSiteShape')),
+
+                                                    Billboard(
+                                                      children_ : [
+                                                        Shape(
+                                                          geometry_ : 
+                                                            Text(
+                                                              string_ : MFString([SFString("")]),
+                                                              fontStyle_ : 
+                                                                FontStyle(
+                                                                  size_ : 0.035)))])]),
+
+                                                HAnimSite(
+                                                  name_ : SFString('r_tarsal_distal_phalanx_3_tip'),
+                                                  DEF_ : SFString('hanim_r_tarsal_distal_phalanx_3_tip'),
+                                                  children_ : [
+                                                    TouchSensor(
+                                                      description_ : SFString('HAnimSite r_tarsal_distal_phalanx_3_tip')),
+
+                                                    Shape(
+                                                      USE_ : SFString('HAnimSiteShape')),
+
+                                                    Billboard(
+                                                      children_ : [
+                                                        Shape(
+                                                          geometry_ : 
+                                                            Text(
+                                                              string_ : MFString([SFString("")]),
+                                                              fontStyle_ : 
+                                                                FontStyle(
+                                                                  size_ : 0.035)))])]),
+
+                                                HAnimSite(
+                                                  name_ : SFString('r_tarsal_distal_phalanx_4_tip'),
+                                                  DEF_ : SFString('hanim_r_tarsal_distal_phalanx_4_tip'),
+                                                  children_ : [
+                                                    TouchSensor(
+                                                      description_ : SFString('HAnimSite r_tarsal_distal_phalanx_4_tip')),
+
+                                                    Shape(
+                                                      USE_ : SFString('HAnimSiteShape')),
+
+                                                    Billboard(
+                                                      children_ : [
+                                                        Shape(
+                                                          geometry_ : 
+                                                            Text(
+                                                              string_ : MFString([SFString("")]),
+                                                              fontStyle_ : 
+                                                                FontStyle(
+                                                                  size_ : 0.035)))])]),
+
+                                                HAnimSite(
+                                                  name_ : SFString('r_tarsal_distal_phalanx_5_tip'),
+                                                  DEF_ : SFString('hanim_r_tarsal_distal_phalanx_5_tip'),
+                                                  children_ : [
+                                                    TouchSensor(
+                                                      description_ : SFString('HAnimSite r_tarsal_distal_phalanx_5_tip')),
+
+                                                    Shape(
+                                                      USE_ : SFString('HAnimSiteShape')),
+
+                                                    Billboard(
+                                                      children_ : [
+                                                        Shape(
+                                                          geometry_ : 
+                                                            Text(
+                                                              string_ : MFString([SFString("")]),
+                                                              fontStyle_ : 
+                                                                FontStyle(
+                                                                  size_ : 0.035)))])])]),
 
                                             HAnimJoint(
                                               name_ : SFString('r_tarsal_distal_interphalangeal_2'),
@@ -1096,46 +1469,66 @@ var X3D0 =  X3D(
                                       USE_ : SFString('HAnimSegmentLineColorRGBA')))),
 
                             HAnimSite(
-                              name_ : SFString('l_rib10'),
-                              DEF_ : SFString('hanim_l_rib10'),
-                              translation_ : SFVec3f([SFDouble(0.0871), SFDouble(1.1925), SFDouble(0.0992)]),
+                              name_ : SFString('navel'),
+                              DEF_ : SFString('hanim_navel'),
+                              translation_ : SFVec3f([SFDouble(0.0069), SFDouble(1.0966), SFDouble(0.1017)]),
                               children_ : [
                                 TouchSensor(
-                                  description_ : SFString('HAnimSite l_rib10')),
+                                  description_ : SFString('HAnimSite 84 navel')),
 
                                 Shape(
-                                  USE_ : SFString('HAnimSiteShape'))]),
+                                  USE_ : SFString('HAnimSiteShape')),
+
+                                Billboard(
+                                  children_ : [
+                                    Shape(
+                                      geometry_ : 
+                                        Text(
+                                          string_ : MFString([SFString("84")]),
+                                          fontStyle_ : 
+                                            FontStyle(
+                                              size_ : 0.035)))])]),
 
                             HAnimSite(
-                              name_ : SFString('r_rib10'),
-                              DEF_ : SFString('hanim_r_rib10'),
-                              translation_ : SFVec3f([SFDouble(-0.0711), SFDouble(1.1941), SFDouble(0.1016)]),
+                              name_ : SFString('waist_preferred_anterior'),
+                              DEF_ : SFString('hanim_waist_preferred_anterior'),
                               children_ : [
                                 TouchSensor(
-                                  description_ : SFString('HAnimSite r_rib10')),
+                                  description_ : SFString('HAnimSite 26 waist_preferred_anterior')),
 
                                 Shape(
-                                  USE_ : SFString('HAnimSiteShape'))]),
+                                  USE_ : SFString('HAnimSiteShape')),
+
+                                Billboard(
+                                  children_ : [
+                                    Shape(
+                                      geometry_ : 
+                                        Text(
+                                          string_ : MFString([SFString("26")]),
+                                          fontStyle_ : 
+                                            FontStyle(
+                                              size_ : 0.035)))])]),
 
                             HAnimSite(
-                              name_ : SFString('spine_1_middle_back'),
-                              DEF_ : SFString('hanim_spine_1_middle_back'),
+                              name_ : SFString('waist_preferred_posterior'),
+                              DEF_ : SFString('hanim_waist_preferred_posterior'),
+                              translation_ : SFVec3f([SFDouble(0.29), SFDouble(1.0915), SFDouble(-0.1091)]),
                               children_ : [
                                 TouchSensor(
-                                  description_ : SFString('HAnimSite spine_1_middle_back')),
+                                  description_ : SFString('HAnimSite 27 waist_preferred_posterior')),
 
                                 Shape(
-                                  USE_ : SFString('HAnimSiteShape'))]),
+                                  USE_ : SFString('HAnimSiteShape')),
 
-                            HAnimSite(
-                              name_ : SFString('spine_2_middle_back'),
-                              DEF_ : SFString('hanim_spine_2_middle_back'),
-                              children_ : [
-                                TouchSensor(
-                                  description_ : SFString('HAnimSite spine_2_middle_back')),
-
-                                Shape(
-                                  USE_ : SFString('HAnimSiteShape'))])]),
+                                Billboard(
+                                  children_ : [
+                                    Shape(
+                                      geometry_ : 
+                                        Text(
+                                          string_ : MFString([SFString("27")]),
+                                          fontStyle_ : 
+                                            FontStyle(
+                                              size_ : 0.035)))])])]),
 
                         HAnimJoint(
                           name_ : SFString('vl3'),
@@ -1165,7 +1558,89 @@ var X3D0 =  X3D(
                                       /*from vl3 to vl1 vertices 2*/
                                       color_ : 
                                         ColorRGBA(
-                                          USE_ : SFString('HAnimSegmentLineColorRGBA'))))]),
+                                          USE_ : SFString('HAnimSegmentLineColorRGBA')))),
+
+                                HAnimSite(
+                                  name_ : SFString('l_rib10'),
+                                  DEF_ : SFString('hanim_l_rib10'),
+                                  translation_ : SFVec3f([SFDouble(0.0871), SFDouble(1.1925), SFDouble(0.0992)]),
+                                  children_ : [
+                                    TouchSensor(
+                                      description_ : SFString('HAnimSite 28 l_rib10')),
+
+                                    Shape(
+                                      USE_ : SFString('HAnimSiteShape')),
+
+                                    Billboard(
+                                      children_ : [
+                                        Shape(
+                                          geometry_ : 
+                                            Text(
+                                              string_ : MFString([SFString("28")]),
+                                              fontStyle_ : 
+                                                FontStyle(
+                                                  size_ : 0.035)))])]),
+
+                                HAnimSite(
+                                  name_ : SFString('r_rib10'),
+                                  DEF_ : SFString('hanim_r_rib10'),
+                                  translation_ : SFVec3f([SFDouble(-0.0711), SFDouble(1.1941), SFDouble(0.1016)]),
+                                  children_ : [
+                                    TouchSensor(
+                                      description_ : SFString('HAnimSite 30 r_rib10')),
+
+                                    Shape(
+                                      USE_ : SFString('HAnimSiteShape')),
+
+                                    Billboard(
+                                      children_ : [
+                                        Shape(
+                                          geometry_ : 
+                                            Text(
+                                              string_ : MFString([SFString("30")]),
+                                              fontStyle_ : 
+                                                FontStyle(
+                                                  size_ : 0.035)))])]),
+
+                                HAnimSite(
+                                  name_ : SFString('spine_1_middle_back'),
+                                  DEF_ : SFString('hanim_spine_1_middle_back'),
+                                  children_ : [
+                                    TouchSensor(
+                                      description_ : SFString('HAnimSite 24 spine_1_middle_back')),
+
+                                    Shape(
+                                      USE_ : SFString('HAnimSiteShape')),
+
+                                    Billboard(
+                                      children_ : [
+                                        Shape(
+                                          geometry_ : 
+                                            Text(
+                                              string_ : MFString([SFString("24")]),
+                                              fontStyle_ : 
+                                                FontStyle(
+                                                  size_ : 0.035)))])]),
+
+                                HAnimSite(
+                                  name_ : SFString('spine_2_middle_back'),
+                                  DEF_ : SFString('hanim_spine_2_middle_back'),
+                                  children_ : [
+                                    TouchSensor(
+                                      description_ : SFString('HAnimSite spine_2_middle_back')),
+
+                                    Shape(
+                                      USE_ : SFString('HAnimSiteShape')),
+
+                                    Billboard(
+                                      children_ : [
+                                        Shape(
+                                          geometry_ : 
+                                            Text(
+                                              string_ : MFString([SFString("")]),
+                                              fontStyle_ : 
+                                                FontStyle(
+                                                  size_ : 0.035)))])])]),
 
                             HAnimJoint(
                               name_ : SFString('vl1'),
@@ -1195,40 +1670,7 @@ var X3D0 =  X3D(
                                           /*from vl1 to vt10 vertices 2*/
                                           color_ : 
                                             ColorRGBA(
-                                              USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-
-                                    HAnimSite(
-                                      name_ : SFString('l_thelion'),
-                                      DEF_ : SFString('hanim_l_thelion'),
-                                      translation_ : SFVec3f([SFDouble(0.0918), SFDouble(1.3382), SFDouble(0.1192)]),
-                                      children_ : [
-                                        TouchSensor(
-                                          description_ : SFString('HAnimSite l_thelion')),
-
-                                        Shape(
-                                          USE_ : SFString('HAnimSiteShape'))]),
-
-                                    HAnimSite(
-                                      name_ : SFString('r_thelion'),
-                                      DEF_ : SFString('hanim_r_thelion'),
-                                      translation_ : SFVec3f([SFDouble(-0.0736), SFDouble(1.3385), SFDouble(0.1217)]),
-                                      children_ : [
-                                        TouchSensor(
-                                          description_ : SFString('HAnimSite r_thelion')),
-
-                                        Shape(
-                                          USE_ : SFString('HAnimSiteShape'))]),
-
-                                    HAnimSite(
-                                      name_ : SFString('substernale'),
-                                      DEF_ : SFString('hanim_substernale'),
-                                      translation_ : SFVec3f([SFDouble(0.0085), SFDouble(1.2995), SFDouble(0.1147)]),
-                                      children_ : [
-                                        TouchSensor(
-                                          description_ : SFString('HAnimSite substernale')),
-
-                                        Shape(
-                                          USE_ : SFString('HAnimSiteShape'))])]),
+                                              USE_ : SFString('HAnimSegmentLineColorRGBA'))))]),
 
                                 HAnimJoint(
                                   name_ : SFString('vt10'),
@@ -1261,44 +1703,67 @@ var X3D0 =  X3D(
                                                   USE_ : SFString('HAnimSegmentLineColorRGBA')))),
 
                                         HAnimSite(
-                                          name_ : SFString('l_chest_midsagittal_plane'),
-                                          DEF_ : SFString('hanim_l_chest_midsagittal_plane'),
+                                          name_ : SFString('l_thelion'),
+                                          DEF_ : SFString('hanim_l_thelion'),
+                                          translation_ : SFVec3f([SFDouble(0.0918), SFDouble(1.3382), SFDouble(0.1192)]),
                                           children_ : [
                                             TouchSensor(
-                                              description_ : SFString('HAnimSite l_chest_midsagittal_plane')),
+                                              description_ : SFString('HAnimSite 29 l_thelion')),
 
                                             Shape(
-                                              USE_ : SFString('HAnimSiteShape'))]),
+                                              USE_ : SFString('HAnimSiteShape')),
+
+                                            Billboard(
+                                              children_ : [
+                                                Shape(
+                                                  geometry_ : 
+                                                    Text(
+                                                      string_ : MFString([SFString("29")]),
+                                                      fontStyle_ : 
+                                                        FontStyle(
+                                                          size_ : 0.035)))])]),
 
                                         HAnimSite(
-                                          name_ : SFString('mesosternale'),
-                                          DEF_ : SFString('hanim_mesosternale'),
+                                          name_ : SFString('r_thelion'),
+                                          DEF_ : SFString('hanim_r_thelion'),
+                                          translation_ : SFVec3f([SFDouble(-0.0736), SFDouble(1.3385), SFDouble(0.1217)]),
                                           children_ : [
                                             TouchSensor(
-                                              description_ : SFString('HAnimSite mesosternale')),
+                                              description_ : SFString('HAnimSite 31 r_thelion')),
 
                                             Shape(
-                                              USE_ : SFString('HAnimSiteShape'))]),
+                                              USE_ : SFString('HAnimSiteShape')),
+
+                                            Billboard(
+                                              children_ : [
+                                                Shape(
+                                                  geometry_ : 
+                                                    Text(
+                                                      string_ : MFString([SFString("31")]),
+                                                      fontStyle_ : 
+                                                        FontStyle(
+                                                          size_ : 0.035)))])]),
 
                                         HAnimSite(
-                                          name_ : SFString('r_chest_midsagittal_plane'),
-                                          DEF_ : SFString('hanim_r_chest_midsagittal_plane'),
+                                          name_ : SFString('substernale'),
+                                          DEF_ : SFString('hanim_substernale'),
+                                          translation_ : SFVec3f([SFDouble(0.0085), SFDouble(1.2995), SFDouble(0.1147)]),
                                           children_ : [
                                             TouchSensor(
-                                              description_ : SFString('HAnimSite r_chest_midsagittal_plane')),
+                                              description_ : SFString('HAnimSite 13 substernale')),
 
                                             Shape(
-                                              USE_ : SFString('HAnimSiteShape'))]),
+                                              USE_ : SFString('HAnimSiteShape')),
 
-                                        HAnimSite(
-                                          name_ : SFString('rear_center_midsagittal_plane'),
-                                          DEF_ : SFString('hanim_rear_center_midsagittal_plane'),
-                                          children_ : [
-                                            TouchSensor(
-                                              description_ : SFString('HAnimSite rear_center_midsagittal_plane')),
-
-                                            Shape(
-                                              USE_ : SFString('HAnimSiteShape'))])]),
+                                            Billboard(
+                                              children_ : [
+                                                Shape(
+                                                  geometry_ : 
+                                                    Text(
+                                                      string_ : MFString([SFString("13")]),
+                                                      fontStyle_ : 
+                                                        FontStyle(
+                                                          size_ : 0.035)))])])]),
 
                                     HAnimJoint(
                                       name_ : SFString('vt6'),
@@ -1331,48 +1796,84 @@ var X3D0 =  X3D(
                                                       USE_ : SFString('HAnimSegmentLineColorRGBA')))),
 
                                             HAnimSite(
-                                              name_ : SFString('cervicale'),
-                                              DEF_ : SFString('hanim_cervicale'),
-                                              translation_ : SFVec3f([SFDouble(0.0064), SFDouble(1.52), SFDouble(-0.0815)]),
+                                              name_ : SFString('l_chest_midsagittal_plane'),
+                                              DEF_ : SFString('hanim_l_chest_midsagittal_plane'),
                                               children_ : [
                                                 TouchSensor(
-                                                  description_ : SFString('HAnimSite cervicale')),
+                                                  description_ : SFString('HAnimSite 94 l_chest_midsagittal_plane')),
 
                                                 Shape(
-                                                  USE_ : SFString('HAnimSiteShape'))]),
+                                                  USE_ : SFString('HAnimSiteShape')),
+
+                                                Billboard(
+                                                  children_ : [
+                                                    Shape(
+                                                      geometry_ : 
+                                                        Text(
+                                                          string_ : MFString([SFString("94")]),
+                                                          fontStyle_ : 
+                                                            FontStyle(
+                                                              size_ : 0.035)))])]),
 
                                             HAnimSite(
-                                              name_ : SFString('l_neck_base'),
-                                              DEF_ : SFString('hanim_l_neck_base'),
-                                              translation_ : SFVec3f([SFDouble(0.0646), SFDouble(1.5141), SFDouble(-0.038)]),
+                                              name_ : SFString('mesosternale'),
+                                              DEF_ : SFString('hanim_mesosternale'),
                                               children_ : [
                                                 TouchSensor(
-                                                  description_ : SFString('HAnimSite l_neck_base')),
+                                                  description_ : SFString('HAnimSite 88 mesosternale')),
 
                                                 Shape(
-                                                  USE_ : SFString('HAnimSiteShape'))]),
+                                                  USE_ : SFString('HAnimSiteShape')),
+
+                                                Billboard(
+                                                  children_ : [
+                                                    Shape(
+                                                      geometry_ : 
+                                                        Text(
+                                                          string_ : MFString([SFString("88")]),
+                                                          fontStyle_ : 
+                                                            FontStyle(
+                                                              size_ : 0.035)))])]),
 
                                             HAnimSite(
-                                              name_ : SFString('r_neck_base'),
-                                              DEF_ : SFString('hanim_r_neck_base'),
-                                              translation_ : SFVec3f([SFDouble(-0.0419), SFDouble(1.5149), SFDouble(-0.022)]),
+                                              name_ : SFString('r_chest_midsagittal_plane'),
+                                              DEF_ : SFString('hanim_r_chest_midsagittal_plane'),
                                               children_ : [
                                                 TouchSensor(
-                                                  description_ : SFString('HAnimSite r_neck_base')),
+                                                  description_ : SFString('HAnimSite 95 r_chest_midsagittal_plane')),
 
                                                 Shape(
-                                                  USE_ : SFString('HAnimSiteShape'))]),
+                                                  USE_ : SFString('HAnimSiteShape')),
+
+                                                Billboard(
+                                                  children_ : [
+                                                    Shape(
+                                                      geometry_ : 
+                                                        Text(
+                                                          string_ : MFString([SFString("95")]),
+                                                          fontStyle_ : 
+                                                            FontStyle(
+                                                              size_ : 0.035)))])]),
 
                                             HAnimSite(
-                                              name_ : SFString('suprasternale'),
-                                              DEF_ : SFString('hanim_suprasternale'),
-                                              translation_ : SFVec3f([SFDouble(0.0084), SFDouble(1.4714), SFDouble(0.0551)]),
+                                              name_ : SFString('rear_center_midsagittal_plane'),
+                                              DEF_ : SFString('hanim_rear_center_midsagittal_plane'),
                                               children_ : [
                                                 TouchSensor(
-                                                  description_ : SFString('HAnimSite suprasternale')),
+                                                  description_ : SFString('HAnimSite 92 rear_center_midsagittal_plane')),
 
                                                 Shape(
-                                                  USE_ : SFString('HAnimSiteShape'))])]),
+                                                  USE_ : SFString('HAnimSiteShape')),
+
+                                                Billboard(
+                                                  children_ : [
+                                                    Shape(
+                                                      geometry_ : 
+                                                        Text(
+                                                          string_ : MFString([SFString("92")]),
+                                                          fontStyle_ : 
+                                                            FontStyle(
+                                                              size_ : 0.035)))])])]),
 
                                         HAnimJoint(
                                           name_ : SFString('vt1'),
@@ -1404,6 +1905,90 @@ var X3D0 =  X3D(
                                                         ColorRGBA(
                                                           USE_ : SFString('HAnimSegmentLineColorRGBA')))),
 
+                                                HAnimSite(
+                                                  name_ : SFString('cervicale'),
+                                                  DEF_ : SFString('hanim_cervicale'),
+                                                  translation_ : SFVec3f([SFDouble(0.0064), SFDouble(1.52), SFDouble(-0.0815)]),
+                                                  children_ : [
+                                                    TouchSensor(
+                                                      description_ : SFString('HAnimSite 10 cervicale')),
+
+                                                    Shape(
+                                                      USE_ : SFString('HAnimSiteShape')),
+
+                                                    Billboard(
+                                                      children_ : [
+                                                        Shape(
+                                                          geometry_ : 
+                                                            Text(
+                                                              string_ : MFString([SFString("10")]),
+                                                              fontStyle_ : 
+                                                                FontStyle(
+                                                                  size_ : 0.035)))])]),
+
+                                                HAnimSite(
+                                                  name_ : SFString('l_neck_base'),
+                                                  DEF_ : SFString('hanim_l_neck_base'),
+                                                  translation_ : SFVec3f([SFDouble(0.0646), SFDouble(1.5141), SFDouble(-0.038)]),
+                                                  children_ : [
+                                                    TouchSensor(
+                                                      description_ : SFString('HAnimSite 82 l_neck_base')),
+
+                                                    Shape(
+                                                      USE_ : SFString('HAnimSiteShape')),
+
+                                                    Billboard(
+                                                      children_ : [
+                                                        Shape(
+                                                          geometry_ : 
+                                                            Text(
+                                                              string_ : MFString([SFString("82")]),
+                                                              fontStyle_ : 
+                                                                FontStyle(
+                                                                  size_ : 0.035)))])]),
+
+                                                HAnimSite(
+                                                  name_ : SFString('r_neck_base'),
+                                                  DEF_ : SFString('hanim_r_neck_base'),
+                                                  translation_ : SFVec3f([SFDouble(-0.0419), SFDouble(1.5149), SFDouble(-0.022)]),
+                                                  children_ : [
+                                                    TouchSensor(
+                                                      description_ : SFString('HAnimSite 83 r_neck_base')),
+
+                                                    Shape(
+                                                      USE_ : SFString('HAnimSiteShape')),
+
+                                                    Billboard(
+                                                      children_ : [
+                                                        Shape(
+                                                          geometry_ : 
+                                                            Text(
+                                                              string_ : MFString([SFString("83")]),
+                                                              fontStyle_ : 
+                                                                FontStyle(
+                                                                  size_ : 0.035)))])]),
+
+                                                HAnimSite(
+                                                  name_ : SFString('suprasternale'),
+                                                  DEF_ : SFString('hanim_suprasternale'),
+                                                  translation_ : SFVec3f([SFDouble(0.0084), SFDouble(1.4714), SFDouble(0.0551)]),
+                                                  children_ : [
+                                                    TouchSensor(
+                                                      description_ : SFString('HAnimSite 12 suprasternale')),
+
+                                                    Shape(
+                                                      USE_ : SFString('HAnimSiteShape')),
+
+                                                    Billboard(
+                                                      children_ : [
+                                                        Shape(
+                                                          geometry_ : 
+                                                            Text(
+                                                              string_ : MFString([SFString("12")]),
+                                                              fontStyle_ : 
+                                                                FontStyle(
+                                                                  size_ : 0.035)))])]),
+
                                                 Shape(
                                                   geometry_ : 
                                                     LineSet(
@@ -1416,60 +2001,6 @@ var X3D0 =  X3D(
                                                         ColorRGBA(
                                                           USE_ : SFString('HAnimSegmentLineColorRGBA')))),
 
-                                                HAnimSite(
-                                                  name_ : SFString('l_acromion'),
-                                                  DEF_ : SFString('hanim_l_acromion'),
-                                                  translation_ : SFVec3f([SFDouble(0.2032), SFDouble(1.476), SFDouble(-0.049)]),
-                                                  children_ : [
-                                                    TouchSensor(
-                                                      description_ : SFString('HAnimSite l_acromion')),
-
-                                                    Shape(
-                                                      USE_ : SFString('HAnimSiteShape'))]),
-
-                                                HAnimSite(
-                                                  name_ : SFString('l_axilla_distal_pt'),
-                                                  DEF_ : SFString('hanim_l_axilla_distal_pt'),
-                                                  translation_ : SFVec3f([SFDouble(0.1706), SFDouble(1.4072), SFDouble(-0.0875)]),
-                                                  children_ : [
-                                                    TouchSensor(
-                                                      description_ : SFString('HAnimSite l_axilla_distal_pt')),
-
-                                                    Shape(
-                                                      USE_ : SFString('HAnimSiteShape'))]),
-
-                                                HAnimSite(
-                                                  name_ : SFString('l_axilla_posterior_folds'),
-                                                  DEF_ : SFString('hanim_l_axilla_posterior_folds'),
-                                                  children_ : [
-                                                    TouchSensor(
-                                                      description_ : SFString('HAnimSite l_axilla_posterior_folds')),
-
-                                                    Shape(
-                                                      USE_ : SFString('HAnimSiteShape'))]),
-
-                                                HAnimSite(
-                                                  name_ : SFString('l_axilla_proximal'),
-                                                  DEF_ : SFString('hanim_l_axilla_proximal'),
-                                                  translation_ : SFVec3f([SFDouble(0.1777), SFDouble(1.4065), SFDouble(-0.0075)]),
-                                                  children_ : [
-                                                    TouchSensor(
-                                                      description_ : SFString('HAnimSite l_axilla_proximal')),
-
-                                                    Shape(
-                                                      USE_ : SFString('HAnimSiteShape'))]),
-
-                                                HAnimSite(
-                                                  name_ : SFString('l_clavicale'),
-                                                  DEF_ : SFString('hanim_l_clavicale'),
-                                                  translation_ : SFVec3f([SFDouble(0.0271), SFDouble(1.4943), SFDouble(0.0394)]),
-                                                  children_ : [
-                                                    TouchSensor(
-                                                      description_ : SFString('HAnimSite l_clavicale')),
-
-                                                    Shape(
-                                                      USE_ : SFString('HAnimSiteShape'))]),
-
                                                 Shape(
                                                   geometry_ : 
                                                     LineSet(
@@ -1480,61 +2011,7 @@ var X3D0 =  X3D(
                                                       /*from vt1 to r_sternoclavicular vertices 2*/
                                                       color_ : 
                                                         ColorRGBA(
-                                                          USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-
-                                                HAnimSite(
-                                                  name_ : SFString('r_acromion'),
-                                                  DEF_ : SFString('hanim_r_acromion'),
-                                                  translation_ : SFVec3f([SFDouble(-0.1905), SFDouble(1.4791), SFDouble(-0.0431)]),
-                                                  children_ : [
-                                                    TouchSensor(
-                                                      description_ : SFString('HAnimSite r_acromion')),
-
-                                                    Shape(
-                                                      USE_ : SFString('HAnimSiteShape'))]),
-
-                                                HAnimSite(
-                                                  name_ : SFString('r_axilla_distal_pt'),
-                                                  DEF_ : SFString('hanim_r_axilla_distal_pt'),
-                                                  translation_ : SFVec3f([SFDouble(-0.1603), SFDouble(1.4098), SFDouble(-0.0826)]),
-                                                  children_ : [
-                                                    TouchSensor(
-                                                      description_ : SFString('HAnimSite r_axilla_distal_pt')),
-
-                                                    Shape(
-                                                      USE_ : SFString('HAnimSiteShape'))]),
-
-                                                HAnimSite(
-                                                  name_ : SFString('r_axilla_posterior_folds'),
-                                                  DEF_ : SFString('hanim_r_axilla_posterior_folds'),
-                                                  children_ : [
-                                                    TouchSensor(
-                                                      description_ : SFString('HAnimSite r_axilla_posterior_folds')),
-
-                                                    Shape(
-                                                      USE_ : SFString('HAnimSiteShape'))]),
-
-                                                HAnimSite(
-                                                  name_ : SFString('r_axilla_proximal'),
-                                                  DEF_ : SFString('hanim_r_axilla_proximal'),
-                                                  translation_ : SFVec3f([SFDouble(-0.1626), SFDouble(1.4072), SFDouble(-0.0031)]),
-                                                  children_ : [
-                                                    TouchSensor(
-                                                      description_ : SFString('HAnimSite r_axilla_proximal')),
-
-                                                    Shape(
-                                                      USE_ : SFString('HAnimSiteShape'))]),
-
-                                                HAnimSite(
-                                                  name_ : SFString('r_clavicale'),
-                                                  DEF_ : SFString('hanim_r_clavicale'),
-                                                  translation_ : SFVec3f([SFDouble(-0.0115), SFDouble(1.4943), SFDouble(0.04)]),
-                                                  children_ : [
-                                                    TouchSensor(
-                                                      description_ : SFString('HAnimSite r_clavicale')),
-
-                                                    Shape(
-                                                      USE_ : SFString('HAnimSiteShape'))])]),
+                                                          USE_ : SFString('HAnimSegmentLineColorRGBA'))))]),
 
                                             HAnimJoint(
                                               name_ : SFString('vc4'),
@@ -1564,17 +2041,7 @@ var X3D0 =  X3D(
                                                           /*from vc4 to vc2 vertices 2*/
                                                           color_ : 
                                                             ColorRGBA(
-                                                              USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-
-                                                    HAnimSite(
-                                                      name_ : SFString('adams_apple'),
-                                                      DEF_ : SFString('hanim_adams_apple'),
-                                                      children_ : [
-                                                        TouchSensor(
-                                                          description_ : SFString('HAnimSite adams_apple')),
-
-                                                        Shape(
-                                                          USE_ : SFString('HAnimSiteShape'))])]),
+                                                              USE_ : SFString('HAnimSegmentLineColorRGBA'))))]),
 
                                                 HAnimJoint(
                                                   name_ : SFString('vc2'),
@@ -1607,163 +2074,24 @@ var X3D0 =  X3D(
                                                                   USE_ : SFString('HAnimSegmentLineColorRGBA')))),
 
                                                         HAnimSite(
-                                                          name_ : SFString('glabella'),
-                                                          DEF_ : SFString('hanim_glabella'),
+                                                          name_ : SFString('adams_apple'),
+                                                          DEF_ : SFString('hanim_adams_apple'),
                                                           children_ : [
                                                             TouchSensor(
-                                                              description_ : SFString('HAnimSite glabella')),
+                                                              description_ : SFString('HAnimSite 11 adams_apple')),
 
                                                             Shape(
-                                                              USE_ : SFString('HAnimSiteShape'))]),
+                                                              USE_ : SFString('HAnimSiteShape')),
 
-                                                        HAnimSite(
-                                                          name_ : SFString('l_ectocanthus'),
-                                                          DEF_ : SFString('hanim_l_ectocanthus'),
-                                                          children_ : [
-                                                            TouchSensor(
-                                                              description_ : SFString('HAnimSite l_ectocanthus')),
-
-                                                            Shape(
-                                                              USE_ : SFString('HAnimSiteShape'))]),
-
-                                                        HAnimSite(
-                                                          name_ : SFString('l_gonion'),
-                                                          DEF_ : SFString('hanim_l_gonion'),
-                                                          translation_ : SFVec3f([SFDouble(0.0631), SFDouble(1.553), SFDouble(0.033)]),
-                                                          children_ : [
-                                                            TouchSensor(
-                                                              description_ : SFString('HAnimSite l_gonion')),
-
-                                                            Shape(
-                                                              USE_ : SFString('HAnimSiteShape'))]),
-
-                                                        HAnimSite(
-                                                          name_ : SFString('l_infraorbitale'),
-                                                          DEF_ : SFString('hanim_l_infraorbitale'),
-                                                          translation_ : SFVec3f([SFDouble(0.0341), SFDouble(1.6171), SFDouble(0.0752)]),
-                                                          children_ : [
-                                                            TouchSensor(
-                                                              description_ : SFString('HAnimSite l_infraorbitale')),
-
-                                                            Shape(
-                                                              USE_ : SFString('HAnimSiteShape'))]),
-
-                                                        HAnimSite(
-                                                          name_ : SFString('l_tragion'),
-                                                          DEF_ : SFString('hanim_l_tragion'),
-                                                          translation_ : SFVec3f([SFDouble(0.0739), SFDouble(1.6348), SFDouble(0.0282)]),
-                                                          children_ : [
-                                                            TouchSensor(
-                                                              description_ : SFString('HAnimSite l_tragion')),
-
-                                                            Shape(
-                                                              USE_ : SFString('HAnimSiteShape'))]),
-
-                                                        HAnimSite(
-                                                          name_ : SFString('menton'),
-                                                          DEF_ : SFString('hanim_menton'),
-                                                          children_ : [
-                                                            TouchSensor(
-                                                              description_ : SFString('HAnimSite menton')),
-
-                                                            Shape(
-                                                              USE_ : SFString('HAnimSiteShape'))]),
-
-                                                        HAnimSite(
-                                                          name_ : SFString('nuchale'),
-                                                          DEF_ : SFString('hanim_nuchale'),
-                                                          translation_ : SFVec3f([SFDouble(0.0039), SFDouble(1.5972), SFDouble(-0.0796)]),
-                                                          children_ : [
-                                                            TouchSensor(
-                                                              description_ : SFString('HAnimSite nuchale')),
-
-                                                            Shape(
-                                                              USE_ : SFString('HAnimSiteShape'))]),
-
-                                                        HAnimSite(
-                                                          name_ : SFString('opisthocranion'),
-                                                          DEF_ : SFString('hanim_opisthocranion'),
-                                                          children_ : [
-                                                            TouchSensor(
-                                                              description_ : SFString('HAnimSite opisthocranion')),
-
-                                                            Shape(
-                                                              USE_ : SFString('HAnimSiteShape'))]),
-
-                                                        HAnimSite(
-                                                          name_ : SFString('r_ectocanthus'),
-                                                          DEF_ : SFString('hanim_r_ectocanthus'),
-                                                          children_ : [
-                                                            TouchSensor(
-                                                              description_ : SFString('HAnimSite r_ectocanthus')),
-
-                                                            Shape(
-                                                              USE_ : SFString('HAnimSiteShape'))]),
-
-                                                        HAnimSite(
-                                                          name_ : SFString('r_gonion'),
-                                                          DEF_ : SFString('hanim_r_gonion'),
-                                                          translation_ : SFVec3f([SFDouble(-0.052), SFDouble(1.5529), SFDouble(0.0347)]),
-                                                          children_ : [
-                                                            TouchSensor(
-                                                              description_ : SFString('HAnimSite r_gonion')),
-
-                                                            Shape(
-                                                              USE_ : SFString('HAnimSiteShape'))]),
-
-                                                        HAnimSite(
-                                                          name_ : SFString('r_infraorbitale'),
-                                                          DEF_ : SFString('hanim_r_infraorbitale'),
-                                                          translation_ : SFVec3f([SFDouble(-0.0237), SFDouble(1.6171), SFDouble(0.0752)]),
-                                                          children_ : [
-                                                            TouchSensor(
-                                                              description_ : SFString('HAnimSite r_infraorbitale')),
-
-                                                            Shape(
-                                                              USE_ : SFString('HAnimSiteShape'))]),
-
-                                                        HAnimSite(
-                                                          name_ : SFString('r_tragion'),
-                                                          DEF_ : SFString('hanim_r_tragion'),
-                                                          translation_ : SFVec3f([SFDouble(-0.0646), SFDouble(1.6347), SFDouble(0.0302)]),
-                                                          children_ : [
-                                                            TouchSensor(
-                                                              description_ : SFString('HAnimSite r_tragion')),
-
-                                                            Shape(
-                                                              USE_ : SFString('HAnimSiteShape'))]),
-
-                                                        HAnimSite(
-                                                          name_ : SFString('sellion'),
-                                                          DEF_ : SFString('hanim_sellion'),
-                                                          translation_ : SFVec3f([SFDouble(0.0058), SFDouble(1.6316), SFDouble(0.0852)]),
-                                                          children_ : [
-                                                            TouchSensor(
-                                                              description_ : SFString('HAnimSite sellion')),
-
-                                                            Shape(
-                                                              USE_ : SFString('HAnimSiteShape'))]),
-
-                                                        HAnimSite(
-                                                          name_ : SFString('skull_vertex'),
-                                                          DEF_ : SFString('hanim_skull_vertex'),
-                                                          children_ : [
-                                                            TouchSensor(
-                                                              description_ : SFString('HAnimSite skull_vertex')),
-
-                                                            Shape(
-                                                              USE_ : SFString('HAnimSiteShape'))]),
-
-                                                        HAnimSite(
-                                                          name_ : SFString('supramenton'),
-                                                          DEF_ : SFString('hanim_supramenton'),
-                                                          translation_ : SFVec3f([SFDouble(0.0061), SFDouble(1.541), SFDouble(0.0805)]),
-                                                          children_ : [
-                                                            TouchSensor(
-                                                              description_ : SFString('HAnimSite supramenton')),
-
-                                                            Shape(
-                                                              USE_ : SFString('HAnimSiteShape'))])]),
+                                                            Billboard(
+                                                              children_ : [
+                                                                Shape(
+                                                                  geometry_ : 
+                                                                    Text(
+                                                                      string_ : MFString([SFString("11")]),
+                                                                      fontStyle_ : 
+                                                                        FontStyle(
+                                                                          size_ : 0.035)))])])]),
 
                                                     HAnimJoint(
                                                       name_ : SFString('skullbase'),
@@ -1798,7 +2126,111 @@ var X3D0 =  X3D(
                                                           /*from l_sternoclavicular to l_acromioclavicular vertices 2*/
                                                           color_ : 
                                                             ColorRGBA(
-                                                              USE_ : SFString('HAnimSegmentLineColorRGBA'))))]),
+                                                              USE_ : SFString('HAnimSegmentLineColorRGBA')))),
+
+                                                    HAnimSite(
+                                                      name_ : SFString('l_acromion'),
+                                                      DEF_ : SFString('hanim_l_acromion'),
+                                                      translation_ : SFVec3f([SFDouble(0.2032), SFDouble(1.476), SFDouble(-0.049)]),
+                                                      children_ : [
+                                                        TouchSensor(
+                                                          description_ : SFString('HAnimSite 15 l_acromion')),
+
+                                                        Shape(
+                                                          USE_ : SFString('HAnimSiteShape')),
+
+                                                        Billboard(
+                                                          children_ : [
+                                                            Shape(
+                                                              geometry_ : 
+                                                                Text(
+                                                                  string_ : MFString([SFString("15")]),
+                                                                  fontStyle_ : 
+                                                                    FontStyle(
+                                                                      size_ : 0.035)))])]),
+
+                                                    HAnimSite(
+                                                      name_ : SFString('l_axilla_distal'),
+                                                      DEF_ : SFString('hanim_l_axilla_distal'),
+                                                      translation_ : SFVec3f([SFDouble(0.1706), SFDouble(1.4072), SFDouble(-0.0875)]),
+                                                      children_ : [
+                                                        TouchSensor(
+                                                          description_ : SFString('HAnimSite 17 l_axilla_distal')),
+
+                                                        Shape(
+                                                          USE_ : SFString('HAnimSiteShape')),
+
+                                                        Billboard(
+                                                          children_ : [
+                                                            Shape(
+                                                              geometry_ : 
+                                                                Text(
+                                                                  string_ : MFString([SFString("17")]),
+                                                                  fontStyle_ : 
+                                                                    FontStyle(
+                                                                      size_ : 0.035)))])]),
+
+                                                    HAnimSite(
+                                                      name_ : SFString('l_axilla_posterior_folds'),
+                                                      DEF_ : SFString('hanim_l_axilla_posterior_folds'),
+                                                      children_ : [
+                                                        TouchSensor(
+                                                          description_ : SFString('HAnimSite 18 l_axilla_posterior_folds')),
+
+                                                        Shape(
+                                                          USE_ : SFString('HAnimSiteShape')),
+
+                                                        Billboard(
+                                                          children_ : [
+                                                            Shape(
+                                                              geometry_ : 
+                                                                Text(
+                                                                  string_ : MFString([SFString("18")]),
+                                                                  fontStyle_ : 
+                                                                    FontStyle(
+                                                                      size_ : 0.035)))])]),
+
+                                                    HAnimSite(
+                                                      name_ : SFString('l_axilla_proximal'),
+                                                      DEF_ : SFString('hanim_l_axilla_proximal'),
+                                                      translation_ : SFVec3f([SFDouble(0.1777), SFDouble(1.4065), SFDouble(-0.0075)]),
+                                                      children_ : [
+                                                        TouchSensor(
+                                                          description_ : SFString('HAnimSite 16 l_axilla_proximal')),
+
+                                                        Shape(
+                                                          USE_ : SFString('HAnimSiteShape')),
+
+                                                        Billboard(
+                                                          children_ : [
+                                                            Shape(
+                                                              geometry_ : 
+                                                                Text(
+                                                                  string_ : MFString([SFString("16")]),
+                                                                  fontStyle_ : 
+                                                                    FontStyle(
+                                                                      size_ : 0.035)))])]),
+
+                                                    HAnimSite(
+                                                      name_ : SFString('l_clavicale'),
+                                                      DEF_ : SFString('hanim_l_clavicale'),
+                                                      translation_ : SFVec3f([SFDouble(0.0271), SFDouble(1.4943), SFDouble(0.0394)]),
+                                                      children_ : [
+                                                        TouchSensor(
+                                                          description_ : SFString('HAnimSite 14 l_clavicale')),
+
+                                                        Shape(
+                                                          USE_ : SFString('HAnimSiteShape')),
+
+                                                        Billboard(
+                                                          children_ : [
+                                                            Shape(
+                                                              geometry_ : 
+                                                                Text(
+                                                                  string_ : MFString([SFString("14")]),
+                                                                  fontStyle_ : 
+                                                                    FontStyle(
+                                                                      size_ : 0.035)))])])]),
 
                                                 HAnimJoint(
                                                   name_ : SFString('l_acromioclavicular'),
@@ -1828,28 +2260,7 @@ var X3D0 =  X3D(
                                                               /*from l_acromioclavicular to l_shoulder vertices 2*/
                                                               color_ : 
                                                                 ColorRGBA(
-                                                                  USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-
-                                                        HAnimSite(
-                                                          name_ : SFString('l_bideltoid'),
-                                                          DEF_ : SFString('hanim_l_bideltoid'),
-                                                          children_ : [
-                                                            TouchSensor(
-                                                              description_ : SFString('HAnimSite l_bideltoid')),
-
-                                                            Shape(
-                                                              USE_ : SFString('HAnimSiteShape'))]),
-
-                                                        HAnimSite(
-                                                          name_ : SFString('l_humeral_lateral_epicondyles'),
-                                                          DEF_ : SFString('hanim_l_humeral_lateral_epicondyles'),
-                                                          translation_ : SFVec3f([SFDouble(0.228), SFDouble(1.1482), SFDouble(-0.11)]),
-                                                          children_ : [
-                                                            TouchSensor(
-                                                              description_ : SFString('HAnimSite l_humeral_lateral_epicondyles')),
-
-                                                            Shape(
-                                                              USE_ : SFString('HAnimSiteShape'))])]),
+                                                                  USE_ : SFString('HAnimSegmentLineColorRGBA'))))]),
 
                                                     HAnimJoint(
                                                       name_ : SFString('l_shoulder'),
@@ -1882,48 +2293,45 @@ var X3D0 =  X3D(
                                                                       USE_ : SFString('HAnimSegmentLineColorRGBA')))),
 
                                                             HAnimSite(
-                                                              name_ : SFString('l_humeral_medial_epicondyles'),
-                                                              DEF_ : SFString('hanim_l_humeral_medial_epicondyles'),
-                                                              translation_ : SFVec3f([SFDouble(0.1735), SFDouble(1.1272), SFDouble(-0.1113)]),
+                                                              name_ : SFString('l_bideltoid'),
+                                                              DEF_ : SFString('hanim_l_bideltoid'),
                                                               children_ : [
                                                                 TouchSensor(
-                                                                  description_ : SFString('HAnimSite l_humeral_medial_epicondyles')),
+                                                                  description_ : SFString('HAnimSite 96 l_bideltoid')),
 
                                                                 Shape(
-                                                                  USE_ : SFString('HAnimSiteShape'))]),
+                                                                  USE_ : SFString('HAnimSiteShape')),
+
+                                                                Billboard(
+                                                                  children_ : [
+                                                                    Shape(
+                                                                      geometry_ : 
+                                                                        Text(
+                                                                          string_ : MFString([SFString("96")]),
+                                                                          fontStyle_ : 
+                                                                            FontStyle(
+                                                                              size_ : 0.035)))])]),
 
                                                             HAnimSite(
-                                                              name_ : SFString('l_olecranon'),
-                                                              DEF_ : SFString('hanim_l_olecranon'),
-                                                              translation_ : SFVec3f([SFDouble(-0.1962), SFDouble(1.1375), SFDouble(-0.1123)]),
+                                                              name_ : SFString('l_humeral_lateral_epicondyles'),
+                                                              DEF_ : SFString('hanim_l_humeral_lateral_epicondyles'),
+                                                              translation_ : SFVec3f([SFDouble(0.228), SFDouble(1.1482), SFDouble(-0.11)]),
                                                               children_ : [
                                                                 TouchSensor(
-                                                                  description_ : SFString('HAnimSite l_olecranon')),
+                                                                  description_ : SFString('HAnimSite 63 l_humeral_lateral_epicondyles')),
 
                                                                 Shape(
-                                                                  USE_ : SFString('HAnimSiteShape'))]),
+                                                                  USE_ : SFString('HAnimSiteShape')),
 
-                                                            HAnimSite(
-                                                              name_ : SFString('l_radial_styloid'),
-                                                              DEF_ : SFString('hanim_l_radial_styloid'),
-                                                              translation_ : SFVec3f([SFDouble(0.1901), SFDouble(0.8645), SFDouble(-0.0415)]),
-                                                              children_ : [
-                                                                TouchSensor(
-                                                                  description_ : SFString('HAnimSite l_radial_styloid')),
-
-                                                                Shape(
-                                                                  USE_ : SFString('HAnimSiteShape'))]),
-
-                                                            HAnimSite(
-                                                              name_ : SFString('l_radiale'),
-                                                              DEF_ : SFString('hanim_l_radiale'),
-                                                              translation_ : SFVec3f([SFDouble(0.2182), SFDouble(1.1212), SFDouble(-0.1167)]),
-                                                              children_ : [
-                                                                TouchSensor(
-                                                                  description_ : SFString('HAnimSite l_radiale')),
-
-                                                                Shape(
-                                                                  USE_ : SFString('HAnimSiteShape'))])]),
+                                                                Billboard(
+                                                                  children_ : [
+                                                                    Shape(
+                                                                      geometry_ : 
+                                                                        Text(
+                                                                          string_ : MFString([SFString("63")]),
+                                                                          fontStyle_ : 
+                                                                            FontStyle(
+                                                                              size_ : 0.035)))])])]),
 
                                                         HAnimJoint(
                                                           name_ : SFString('l_elbow'),
@@ -1956,15 +2364,88 @@ var X3D0 =  X3D(
                                                                           USE_ : SFString('HAnimSegmentLineColorRGBA')))),
 
                                                                 HAnimSite(
-                                                                  name_ : SFString('l_ulnar_styloid'),
-                                                                  DEF_ : SFString('hanim_l_ulnar_styloid'),
-                                                                  translation_ : SFVec3f([SFDouble(-0.2142), SFDouble(0.8529), SFDouble(-0.0648)]),
+                                                                  name_ : SFString('l_humeral_medial_epicondyles'),
+                                                                  DEF_ : SFString('hanim_l_humeral_medial_epicondyles'),
+                                                                  translation_ : SFVec3f([SFDouble(0.1735), SFDouble(1.1272), SFDouble(-0.1113)]),
                                                                   children_ : [
                                                                     TouchSensor(
-                                                                      description_ : SFString('HAnimSite l_ulnar_styloid')),
+                                                                      description_ : SFString('HAnimSite 64 l_humeral_medial_epicondyles')),
 
                                                                     Shape(
-                                                                      USE_ : SFString('HAnimSiteShape'))])]),
+                                                                      USE_ : SFString('HAnimSiteShape')),
+
+                                                                    Billboard(
+                                                                      children_ : [
+                                                                        Shape(
+                                                                          geometry_ : 
+                                                                            Text(
+                                                                              string_ : MFString([SFString("64")]),
+                                                                              fontStyle_ : 
+                                                                                FontStyle(
+                                                                                  size_ : 0.035)))])]),
+
+                                                                HAnimSite(
+                                                                  name_ : SFString('l_olecranon'),
+                                                                  DEF_ : SFString('hanim_l_olecranon'),
+                                                                  translation_ : SFVec3f([SFDouble(-0.1962), SFDouble(1.1375), SFDouble(-0.1123)]),
+                                                                  children_ : [
+                                                                    TouchSensor(
+                                                                      description_ : SFString('HAnimSite 65 l_olecranon')),
+
+                                                                    Shape(
+                                                                      USE_ : SFString('HAnimSiteShape')),
+
+                                                                    Billboard(
+                                                                      children_ : [
+                                                                        Shape(
+                                                                          geometry_ : 
+                                                                            Text(
+                                                                              string_ : MFString([SFString("65")]),
+                                                                              fontStyle_ : 
+                                                                                FontStyle(
+                                                                                  size_ : 0.035)))])]),
+
+                                                                HAnimSite(
+                                                                  name_ : SFString('l_radial_styloid'),
+                                                                  DEF_ : SFString('hanim_l_radial_styloid'),
+                                                                  translation_ : SFVec3f([SFDouble(0.1901), SFDouble(0.8645), SFDouble(-0.0415)]),
+                                                                  children_ : [
+                                                                    TouchSensor(
+                                                                      description_ : SFString('HAnimSite 71 l_radial_styloid')),
+
+                                                                    Shape(
+                                                                      USE_ : SFString('HAnimSiteShape')),
+
+                                                                    Billboard(
+                                                                      children_ : [
+                                                                        Shape(
+                                                                          geometry_ : 
+                                                                            Text(
+                                                                              string_ : MFString([SFString("71")]),
+                                                                              fontStyle_ : 
+                                                                                FontStyle(
+                                                                                  size_ : 0.035)))])]),
+
+                                                                HAnimSite(
+                                                                  name_ : SFString('l_radiale'),
+                                                                  DEF_ : SFString('hanim_l_radiale'),
+                                                                  translation_ : SFVec3f([SFDouble(0.2182), SFDouble(1.1212), SFDouble(-0.1167)]),
+                                                                  children_ : [
+                                                                    TouchSensor(
+                                                                      description_ : SFString('HAnimSite 69 l_radiale')),
+
+                                                                    Shape(
+                                                                      USE_ : SFString('HAnimSiteShape')),
+
+                                                                    Billboard(
+                                                                      children_ : [
+                                                                        Shape(
+                                                                          geometry_ : 
+                                                                            Text(
+                                                                              string_ : MFString([SFString("69")]),
+                                                                              fontStyle_ : 
+                                                                                FontStyle(
+                                                                                  size_ : 0.035)))])])]),
 
                                                             HAnimJoint(
                                                               name_ : SFString('l_radiocarpal'),
@@ -2000,6 +2481,27 @@ var X3D0 =  X3D(
                                                                             ColorRGBA(
                                                                               USE_ : SFString('HAnimSegmentLineColorRGBA')))),
 
+                                                                    HAnimSite(
+                                                                      name_ : SFString('l_ulnar_styloid'),
+                                                                      DEF_ : SFString('hanim_l_ulnar_styloid'),
+                                                                      translation_ : SFVec3f([SFDouble(-0.2142), SFDouble(0.8529), SFDouble(-0.0648)]),
+                                                                      children_ : [
+                                                                        TouchSensor(
+                                                                          description_ : SFString('HAnimSite 70 l_ulnar_styloid')),
+
+                                                                        Shape(
+                                                                          USE_ : SFString('HAnimSiteShape')),
+
+                                                                        Billboard(
+                                                                          children_ : [
+                                                                            Shape(
+                                                                              geometry_ : 
+                                                                                Text(
+                                                                                  string_ : MFString([SFString("70")]),
+                                                                                  fontStyle_ : 
+                                                                                    FontStyle(
+                                                                                      size_ : 0.035)))])]),
+
                                                                     Shape(
                                                                       geometry_ : 
                                                                         LineSet(
@@ -2012,17 +2514,6 @@ var X3D0 =  X3D(
                                                                             ColorRGBA(
                                                                               USE_ : SFString('HAnimSegmentLineColorRGBA')))),
 
-                                                                    HAnimSite(
-                                                                      name_ : SFString('l_metacarpal_phalanx_2'),
-                                                                      DEF_ : SFString('hanim_l_metacarpal_phalanx_2'),
-                                                                      translation_ : SFVec3f([SFDouble(0.2009), SFDouble(0.8139), SFDouble(-0.0237)]),
-                                                                      children_ : [
-                                                                        TouchSensor(
-                                                                          description_ : SFString('HAnimSite l_metacarpal_phalanx_2')),
-
-                                                                        Shape(
-                                                                          USE_ : SFString('HAnimSiteShape'))]),
-
                                                                     Shape(
                                                                       geometry_ : 
                                                                         LineSet(
@@ -2034,16 +2525,6 @@ var X3D0 =  X3D(
                                                                           color_ : 
                                                                             ColorRGBA(
                                                                               USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-
-                                                                    HAnimSite(
-                                                                      name_ : SFString('l_metacarpal_phalanx_3'),
-                                                                      DEF_ : SFString('hanim_l_metacarpal_phalanx_3'),
-                                                                      children_ : [
-                                                                        TouchSensor(
-                                                                          description_ : SFString('HAnimSite l_metacarpal_phalanx_3')),
-
-                                                                        Shape(
-                                                                          USE_ : SFString('HAnimSiteShape'))]),
 
                                                                     Shape(
                                                                       geometry_ : 
@@ -2067,18 +2548,7 @@ var X3D0 =  X3D(
                                                                           /*from l_radiocarpal to l_carpometacarpal_5 vertices 2*/
                                                                           color_ : 
                                                                             ColorRGBA(
-                                                                              USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-
-                                                                    HAnimSite(
-                                                                      name_ : SFString('l_metacarpal_phalanx_5'),
-                                                                      DEF_ : SFString('hanim_l_metacarpal_phalanx_5'),
-                                                                      translation_ : SFVec3f([SFDouble(0.1929), SFDouble(0.786), SFDouble(-0.1122)]),
-                                                                      children_ : [
-                                                                        TouchSensor(
-                                                                          description_ : SFString('HAnimSite l_metacarpal_phalanx_5')),
-
-                                                                        Shape(
-                                                                          USE_ : SFString('HAnimSiteShape'))])]),
+                                                                              USE_ : SFString('HAnimSegmentLineColorRGBA'))))]),
 
                                                                 HAnimJoint(
                                                                   name_ : SFString('l_carpometacarpal_1'),
@@ -2138,17 +2608,7 @@ var X3D0 =  X3D(
                                                                                   /*from l_metacarpophalangeal_1 to l_carpal_interphalangeal_1 vertices 2*/
                                                                                   color_ : 
                                                                                     ColorRGBA(
-                                                                                      USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-
-                                                                            HAnimSite(
-                                                                              name_ : SFString('l_carpal_distal_phalanx_1_tip'),
-                                                                              DEF_ : SFString('hanim_l_carpal_distal_phalanx_1_tip'),
-                                                                              children_ : [
-                                                                                TouchSensor(
-                                                                                  description_ : SFString('HAnimSite l_carpal_distal_phalanx_1_tip')),
-
-                                                                                Shape(
-                                                                                  USE_ : SFString('HAnimSiteShape'))])]),
+                                                                                      USE_ : SFString('HAnimSegmentLineColorRGBA'))))]),
 
                                                                         HAnimJoint(
                                                                           name_ : SFString('l_carpal_interphalangeal_1'),
@@ -2183,7 +2643,28 @@ var X3D0 =  X3D(
                                                                               /*from l_carpometacarpal_2 to l_metacarpophalangeal_2 vertices 2*/
                                                                               color_ : 
                                                                                 ColorRGBA(
-                                                                                  USE_ : SFString('HAnimSegmentLineColorRGBA'))))]),
+                                                                                  USE_ : SFString('HAnimSegmentLineColorRGBA')))),
+
+                                                                        HAnimSite(
+                                                                          name_ : SFString('l_metacarpal_phalanx_2'),
+                                                                          DEF_ : SFString('hanim_l_metacarpal_phalanx_2'),
+                                                                          translation_ : SFVec3f([SFDouble(0.2009), SFDouble(0.8139), SFDouble(-0.0237)]),
+                                                                          children_ : [
+                                                                            TouchSensor(
+                                                                              description_ : SFString('HAnimSite 75 l_metacarpal_phalanx_2')),
+
+                                                                            Shape(
+                                                                              USE_ : SFString('HAnimSiteShape')),
+
+                                                                            Billboard(
+                                                                              children_ : [
+                                                                                Shape(
+                                                                                  geometry_ : 
+                                                                                    Text(
+                                                                                      string_ : MFString([SFString("75")]),
+                                                                                      fontStyle_ : 
+                                                                                        FontStyle(
+                                                                                          size_ : 0.035)))])])]),
 
                                                                     HAnimJoint(
                                                                       name_ : SFString('l_metacarpophalangeal_2'),
@@ -2243,28 +2724,7 @@ var X3D0 =  X3D(
                                                                                       /*from l_carpal_proximal_interphalangeal_2 to l_carpal_distal_interphalangeal_2 vertices 2*/
                                                                                       color_ : 
                                                                                         ColorRGBA(
-                                                                                          USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-
-                                                                                HAnimSite(
-                                                                                  name_ : SFString('l_carpal_distal_phalanx_2_tip'),
-                                                                                  DEF_ : SFString('hanim_l_carpal_distal_phalanx_2_tip'),
-                                                                                  children_ : [
-                                                                                    TouchSensor(
-                                                                                      description_ : SFString('HAnimSite l_carpal_distal_phalanx_2_tip')),
-
-                                                                                    Shape(
-                                                                                      USE_ : SFString('HAnimSiteShape'))]),
-
-                                                                                HAnimSite(
-                                                                                  name_ : SFString('l_dactylion'),
-                                                                                  DEF_ : SFString('hanim_l_dactylion'),
-                                                                                  translation_ : SFVec3f([SFDouble(0.2056), SFDouble(0.6743), SFDouble(-0.0482)]),
-                                                                                  children_ : [
-                                                                                    TouchSensor(
-                                                                                      description_ : SFString('HAnimSite l_dactylion')),
-
-                                                                                    Shape(
-                                                                                      USE_ : SFString('HAnimSiteShape'))])]),
+                                                                                          USE_ : SFString('HAnimSegmentLineColorRGBA'))))]),
 
                                                                             HAnimJoint(
                                                                               name_ : SFString('l_carpal_distal_interphalangeal_2'),
@@ -2299,7 +2759,27 @@ var X3D0 =  X3D(
                                                                               /*from l_carpometacarpal_3 to l_metacarpophalangeal_3 vertices 2*/
                                                                               color_ : 
                                                                                 ColorRGBA(
-                                                                                  USE_ : SFString('HAnimSegmentLineColorRGBA'))))]),
+                                                                                  USE_ : SFString('HAnimSegmentLineColorRGBA')))),
+
+                                                                        HAnimSite(
+                                                                          name_ : SFString('l_metacarpal_phalanx_3'),
+                                                                          DEF_ : SFString('hanim_l_metacarpal_phalanx_3'),
+                                                                          children_ : [
+                                                                            TouchSensor(
+                                                                              description_ : SFString('HAnimSite 76 l_metacarpal_phalanx_3')),
+
+                                                                            Shape(
+                                                                              USE_ : SFString('HAnimSiteShape')),
+
+                                                                            Billboard(
+                                                                              children_ : [
+                                                                                Shape(
+                                                                                  geometry_ : 
+                                                                                    Text(
+                                                                                      string_ : MFString([SFString("76")]),
+                                                                                      fontStyle_ : 
+                                                                                        FontStyle(
+                                                                                          size_ : 0.035)))])])]),
 
                                                                     HAnimJoint(
                                                                       name_ : SFString('l_metacarpophalangeal_3'),
@@ -2359,17 +2839,7 @@ var X3D0 =  X3D(
                                                                                       /*from l_carpal_proximal_interphalangeal_3 to l_carpal_distal_interphalangeal_3 vertices 2*/
                                                                                       color_ : 
                                                                                         ColorRGBA(
-                                                                                          USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-
-                                                                                HAnimSite(
-                                                                                  name_ : SFString('l_carpal_distal_phalanx_3_tip'),
-                                                                                  DEF_ : SFString('hanim_l_carpal_distal_phalanx_3_tip'),
-                                                                                  children_ : [
-                                                                                    TouchSensor(
-                                                                                      description_ : SFString('HAnimSite l_carpal_distal_phalanx_3_tip')),
-
-                                                                                    Shape(
-                                                                                      USE_ : SFString('HAnimSiteShape'))])]),
+                                                                                          USE_ : SFString('HAnimSegmentLineColorRGBA'))))]),
 
                                                                             HAnimJoint(
                                                                               name_ : SFString('l_carpal_distal_interphalangeal_3'),
@@ -2464,17 +2934,7 @@ var X3D0 =  X3D(
                                                                                       /*from l_carpal_proximal_interphalangeal_4 to l_carpal_distal_interphalangeal_4 vertices 2*/
                                                                                       color_ : 
                                                                                         ColorRGBA(
-                                                                                          USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-
-                                                                                HAnimSite(
-                                                                                  name_ : SFString('l_carpal_distal_phalanx_4_tip'),
-                                                                                  DEF_ : SFString('hanim_l_carpal_distal_phalanx_4_tip'),
-                                                                                  children_ : [
-                                                                                    TouchSensor(
-                                                                                      description_ : SFString('HAnimSite l_carpal_distal_phalanx_4_tip')),
-
-                                                                                    Shape(
-                                                                                      USE_ : SFString('HAnimSiteShape'))])]),
+                                                                                          USE_ : SFString('HAnimSegmentLineColorRGBA'))))]),
 
                                                                             HAnimJoint(
                                                                               name_ : SFString('l_carpal_distal_interphalangeal_4'),
@@ -2509,7 +2969,28 @@ var X3D0 =  X3D(
                                                                               /*from l_carpometacarpal_5 to l_metacarpophalangeal_5 vertices 2*/
                                                                               color_ : 
                                                                                 ColorRGBA(
-                                                                                  USE_ : SFString('HAnimSegmentLineColorRGBA'))))]),
+                                                                                  USE_ : SFString('HAnimSegmentLineColorRGBA')))),
+
+                                                                        HAnimSite(
+                                                                          name_ : SFString('l_metacarpal_phalanx_5'),
+                                                                          DEF_ : SFString('hanim_l_metacarpal_phalanx_5'),
+                                                                          translation_ : SFVec3f([SFDouble(0.1929), SFDouble(0.786), SFDouble(-0.1122)]),
+                                                                          children_ : [
+                                                                            TouchSensor(
+                                                                              description_ : SFString('HAnimSite 77 l_metacarpal_phalanx_5')),
+
+                                                                            Shape(
+                                                                              USE_ : SFString('HAnimSiteShape')),
+
+                                                                            Billboard(
+                                                                              children_ : [
+                                                                                Shape(
+                                                                                  geometry_ : 
+                                                                                    Text(
+                                                                                      string_ : MFString([SFString("77")]),
+                                                                                      fontStyle_ : 
+                                                                                        FontStyle(
+                                                                                          size_ : 0.035)))])])]),
 
                                                                     HAnimJoint(
                                                                       name_ : SFString('l_metacarpophalangeal_5'),
@@ -2569,17 +3050,7 @@ var X3D0 =  X3D(
                                                                                       /*from l_carpal_proximal_interphalangeal_5 to l_carpal_distal_interphalangeal_5 vertices 2*/
                                                                                       color_ : 
                                                                                         ColorRGBA(
-                                                                                          USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-
-                                                                                HAnimSite(
-                                                                                  name_ : SFString('l_carpal_distal_phalanx_5_tip'),
-                                                                                  DEF_ : SFString('hanim_l_carpal_distal_phalanx_5_tip'),
-                                                                                  children_ : [
-                                                                                    TouchSensor(
-                                                                                      description_ : SFString('HAnimSite l_carpal_distal_phalanx_5_tip')),
-
-                                                                                    Shape(
-                                                                                      USE_ : SFString('HAnimSiteShape'))])]),
+                                                                                          USE_ : SFString('HAnimSegmentLineColorRGBA'))))]),
 
                                                                             HAnimJoint(
                                                                               name_ : SFString('l_carpal_distal_interphalangeal_5'),
@@ -2614,7 +3085,111 @@ var X3D0 =  X3D(
                                                           /*from r_sternoclavicular to r_acromioclavicular vertices 2*/
                                                           color_ : 
                                                             ColorRGBA(
-                                                              USE_ : SFString('HAnimSegmentLineColorRGBA'))))]),
+                                                              USE_ : SFString('HAnimSegmentLineColorRGBA')))),
+
+                                                    HAnimSite(
+                                                      name_ : SFString('r_acromion'),
+                                                      DEF_ : SFString('hanim_r_acromion'),
+                                                      translation_ : SFVec3f([SFDouble(-0.1905), SFDouble(1.4791), SFDouble(-0.0431)]),
+                                                      children_ : [
+                                                        TouchSensor(
+                                                          description_ : SFString('HAnimSite 20 r_acromion')),
+
+                                                        Shape(
+                                                          USE_ : SFString('HAnimSiteShape')),
+
+                                                        Billboard(
+                                                          children_ : [
+                                                            Shape(
+                                                              geometry_ : 
+                                                                Text(
+                                                                  string_ : MFString([SFString("20")]),
+                                                                  fontStyle_ : 
+                                                                    FontStyle(
+                                                                      size_ : 0.035)))])]),
+
+                                                    HAnimSite(
+                                                      name_ : SFString('r_axilla_distal'),
+                                                      DEF_ : SFString('hanim_r_axilla_distal'),
+                                                      translation_ : SFVec3f([SFDouble(-0.1603), SFDouble(1.4098), SFDouble(-0.0826)]),
+                                                      children_ : [
+                                                        TouchSensor(
+                                                          description_ : SFString('HAnimSite 22 r_axilla_distal')),
+
+                                                        Shape(
+                                                          USE_ : SFString('HAnimSiteShape')),
+
+                                                        Billboard(
+                                                          children_ : [
+                                                            Shape(
+                                                              geometry_ : 
+                                                                Text(
+                                                                  string_ : MFString([SFString("22")]),
+                                                                  fontStyle_ : 
+                                                                    FontStyle(
+                                                                      size_ : 0.035)))])]),
+
+                                                    HAnimSite(
+                                                      name_ : SFString('r_axilla_posterior_folds'),
+                                                      DEF_ : SFString('hanim_r_axilla_posterior_folds'),
+                                                      children_ : [
+                                                        TouchSensor(
+                                                          description_ : SFString('HAnimSite 23 r_axilla_posterior_folds')),
+
+                                                        Shape(
+                                                          USE_ : SFString('HAnimSiteShape')),
+
+                                                        Billboard(
+                                                          children_ : [
+                                                            Shape(
+                                                              geometry_ : 
+                                                                Text(
+                                                                  string_ : MFString([SFString("23")]),
+                                                                  fontStyle_ : 
+                                                                    FontStyle(
+                                                                      size_ : 0.035)))])]),
+
+                                                    HAnimSite(
+                                                      name_ : SFString('r_axilla_proximal'),
+                                                      DEF_ : SFString('hanim_r_axilla_proximal'),
+                                                      translation_ : SFVec3f([SFDouble(-0.1626), SFDouble(1.4072), SFDouble(-0.0031)]),
+                                                      children_ : [
+                                                        TouchSensor(
+                                                          description_ : SFString('HAnimSite 21 r_axilla_proximal')),
+
+                                                        Shape(
+                                                          USE_ : SFString('HAnimSiteShape')),
+
+                                                        Billboard(
+                                                          children_ : [
+                                                            Shape(
+                                                              geometry_ : 
+                                                                Text(
+                                                                  string_ : MFString([SFString("21")]),
+                                                                  fontStyle_ : 
+                                                                    FontStyle(
+                                                                      size_ : 0.035)))])]),
+
+                                                    HAnimSite(
+                                                      name_ : SFString('r_clavicale'),
+                                                      DEF_ : SFString('hanim_r_clavicale'),
+                                                      translation_ : SFVec3f([SFDouble(-0.0115), SFDouble(1.4943), SFDouble(0.04)]),
+                                                      children_ : [
+                                                        TouchSensor(
+                                                          description_ : SFString('HAnimSite 19 r_clavicale')),
+
+                                                        Shape(
+                                                          USE_ : SFString('HAnimSiteShape')),
+
+                                                        Billboard(
+                                                          children_ : [
+                                                            Shape(
+                                                              geometry_ : 
+                                                                Text(
+                                                                  string_ : MFString([SFString("19")]),
+                                                                  fontStyle_ : 
+                                                                    FontStyle(
+                                                                      size_ : 0.035)))])])]),
 
                                                 HAnimJoint(
                                                   name_ : SFString('r_acromioclavicular'),
@@ -2644,28 +3219,7 @@ var X3D0 =  X3D(
                                                               /*from r_acromioclavicular to r_shoulder vertices 2*/
                                                               color_ : 
                                                                 ColorRGBA(
-                                                                  USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-
-                                                        HAnimSite(
-                                                          name_ : SFString('r_bideltoid'),
-                                                          DEF_ : SFString('hanim_r_bideltoid'),
-                                                          children_ : [
-                                                            TouchSensor(
-                                                              description_ : SFString('HAnimSite r_bideltoid')),
-
-                                                            Shape(
-                                                              USE_ : SFString('HAnimSiteShape'))]),
-
-                                                        HAnimSite(
-                                                          name_ : SFString('r_humeral_lateral_epicondyles'),
-                                                          DEF_ : SFString('hanim_r_humeral_lateral_epicondyles'),
-                                                          translation_ : SFVec3f([SFDouble(-0.2224), SFDouble(1.1517), SFDouble(-0.1033)]),
-                                                          children_ : [
-                                                            TouchSensor(
-                                                              description_ : SFString('HAnimSite r_humeral_lateral_epicondyles')),
-
-                                                            Shape(
-                                                              USE_ : SFString('HAnimSiteShape'))])]),
+                                                                  USE_ : SFString('HAnimSegmentLineColorRGBA'))))]),
 
                                                     HAnimJoint(
                                                       name_ : SFString('r_shoulder'),
@@ -2698,48 +3252,45 @@ var X3D0 =  X3D(
                                                                       USE_ : SFString('HAnimSegmentLineColorRGBA')))),
 
                                                             HAnimSite(
-                                                              name_ : SFString('r_humeral_medial_epicondyles'),
-                                                              DEF_ : SFString('hanim_r_humeral_medial_epicondyles'),
-                                                              translation_ : SFVec3f([SFDouble(-0.168), SFDouble(1.1298), SFDouble(-0.1062)]),
+                                                              name_ : SFString('r_bideltoid'),
+                                                              DEF_ : SFString('hanim_r_bideltoid'),
                                                               children_ : [
                                                                 TouchSensor(
-                                                                  description_ : SFString('HAnimSite r_humeral_medial_epicondyles')),
+                                                                  description_ : SFString('HAnimSite 97 r_bideltoid')),
 
                                                                 Shape(
-                                                                  USE_ : SFString('HAnimSiteShape'))]),
+                                                                  USE_ : SFString('HAnimSiteShape')),
+
+                                                                Billboard(
+                                                                  children_ : [
+                                                                    Shape(
+                                                                      geometry_ : 
+                                                                        Text(
+                                                                          string_ : MFString([SFString("97")]),
+                                                                          fontStyle_ : 
+                                                                            FontStyle(
+                                                                              size_ : 0.035)))])]),
 
                                                             HAnimSite(
-                                                              name_ : SFString('r_olecranon'),
-                                                              DEF_ : SFString('hanim_r_olecranon'),
-                                                              translation_ : SFVec3f([SFDouble(-0.1907), SFDouble(1.1405), SFDouble(-0.1065)]),
+                                                              name_ : SFString('r_humeral_lateral_epicondyles'),
+                                                              DEF_ : SFString('hanim_r_humeral_lateral_epicondyles'),
+                                                              translation_ : SFVec3f([SFDouble(-0.2224), SFDouble(1.1517), SFDouble(-0.1033)]),
                                                               children_ : [
                                                                 TouchSensor(
-                                                                  description_ : SFString('HAnimSite r_olecranon')),
+                                                                  description_ : SFString('HAnimSite 66 r_humeral_lateral_epicondyles')),
 
                                                                 Shape(
-                                                                  USE_ : SFString('HAnimSiteShape'))]),
+                                                                  USE_ : SFString('HAnimSiteShape')),
 
-                                                            HAnimSite(
-                                                              name_ : SFString('r_radial_styloid'),
-                                                              DEF_ : SFString('hanim_r_radial_styloid'),
-                                                              translation_ : SFVec3f([SFDouble(-0.1884), SFDouble(0.8676), SFDouble(-0.036)]),
-                                                              children_ : [
-                                                                TouchSensor(
-                                                                  description_ : SFString('HAnimSite r_radial_styloid')),
-
-                                                                Shape(
-                                                                  USE_ : SFString('HAnimSiteShape'))]),
-
-                                                            HAnimSite(
-                                                              name_ : SFString('r_radiale'),
-                                                              DEF_ : SFString('hanim_r_radiale'),
-                                                              translation_ : SFVec3f([SFDouble(-0.213), SFDouble(1.1305), SFDouble(-0.1091)]),
-                                                              children_ : [
-                                                                TouchSensor(
-                                                                  description_ : SFString('HAnimSite r_radiale')),
-
-                                                                Shape(
-                                                                  USE_ : SFString('HAnimSiteShape'))])]),
+                                                                Billboard(
+                                                                  children_ : [
+                                                                    Shape(
+                                                                      geometry_ : 
+                                                                        Text(
+                                                                          string_ : MFString([SFString("66")]),
+                                                                          fontStyle_ : 
+                                                                            FontStyle(
+                                                                              size_ : 0.035)))])])]),
 
                                                         HAnimJoint(
                                                           name_ : SFString('r_elbow'),
@@ -2772,15 +3323,88 @@ var X3D0 =  X3D(
                                                                           USE_ : SFString('HAnimSegmentLineColorRGBA')))),
 
                                                                 HAnimSite(
-                                                                  name_ : SFString('r_ulnar_styloid'),
-                                                                  DEF_ : SFString('hanim_r_ulnar_styloid'),
-                                                                  translation_ : SFVec3f([SFDouble(-0.2117), SFDouble(0.8562), SFDouble(-0.0584)]),
+                                                                  name_ : SFString('r_humeral_medial_epicondyles'),
+                                                                  DEF_ : SFString('hanim_r_humeral_medial_epicondyles'),
+                                                                  translation_ : SFVec3f([SFDouble(-0.168), SFDouble(1.1298), SFDouble(-0.1062)]),
                                                                   children_ : [
                                                                     TouchSensor(
-                                                                      description_ : SFString('HAnimSite r_ulnar_styloid')),
+                                                                      description_ : SFString('HAnimSite 67 r_humeral_medial_epicondyles')),
 
                                                                     Shape(
-                                                                      USE_ : SFString('HAnimSiteShape'))])]),
+                                                                      USE_ : SFString('HAnimSiteShape')),
+
+                                                                    Billboard(
+                                                                      children_ : [
+                                                                        Shape(
+                                                                          geometry_ : 
+                                                                            Text(
+                                                                              string_ : MFString([SFString("67")]),
+                                                                              fontStyle_ : 
+                                                                                FontStyle(
+                                                                                  size_ : 0.035)))])]),
+
+                                                                HAnimSite(
+                                                                  name_ : SFString('r_olecranon'),
+                                                                  DEF_ : SFString('hanim_r_olecranon'),
+                                                                  translation_ : SFVec3f([SFDouble(-0.1907), SFDouble(1.1405), SFDouble(-0.1065)]),
+                                                                  children_ : [
+                                                                    TouchSensor(
+                                                                      description_ : SFString('HAnimSite 68 r_olecranon')),
+
+                                                                    Shape(
+                                                                      USE_ : SFString('HAnimSiteShape')),
+
+                                                                    Billboard(
+                                                                      children_ : [
+                                                                        Shape(
+                                                                          geometry_ : 
+                                                                            Text(
+                                                                              string_ : MFString([SFString("68")]),
+                                                                              fontStyle_ : 
+                                                                                FontStyle(
+                                                                                  size_ : 0.035)))])]),
+
+                                                                HAnimSite(
+                                                                  name_ : SFString('r_radial_styloid'),
+                                                                  DEF_ : SFString('hanim_r_radial_styloid'),
+                                                                  translation_ : SFVec3f([SFDouble(-0.1884), SFDouble(0.8676), SFDouble(-0.036)]),
+                                                                  children_ : [
+                                                                    TouchSensor(
+                                                                      description_ : SFString('HAnimSite 74 r_radial_styloid')),
+
+                                                                    Shape(
+                                                                      USE_ : SFString('HAnimSiteShape')),
+
+                                                                    Billboard(
+                                                                      children_ : [
+                                                                        Shape(
+                                                                          geometry_ : 
+                                                                            Text(
+                                                                              string_ : MFString([SFString("74")]),
+                                                                              fontStyle_ : 
+                                                                                FontStyle(
+                                                                                  size_ : 0.035)))])]),
+
+                                                                HAnimSite(
+                                                                  name_ : SFString('r_radiale'),
+                                                                  DEF_ : SFString('hanim_r_radiale'),
+                                                                  translation_ : SFVec3f([SFDouble(-0.213), SFDouble(1.1305), SFDouble(-0.1091)]),
+                                                                  children_ : [
+                                                                    TouchSensor(
+                                                                      description_ : SFString('HAnimSite 72 r_radiale')),
+
+                                                                    Shape(
+                                                                      USE_ : SFString('HAnimSiteShape')),
+
+                                                                    Billboard(
+                                                                      children_ : [
+                                                                        Shape(
+                                                                          geometry_ : 
+                                                                            Text(
+                                                                              string_ : MFString([SFString("72")]),
+                                                                              fontStyle_ : 
+                                                                                FontStyle(
+                                                                                  size_ : 0.035)))])])]),
 
                                                             HAnimJoint(
                                                               name_ : SFString('r_radiocarpal'),
@@ -2816,6 +3440,27 @@ var X3D0 =  X3D(
                                                                             ColorRGBA(
                                                                               USE_ : SFString('HAnimSegmentLineColorRGBA')))),
 
+                                                                    HAnimSite(
+                                                                      name_ : SFString('r_ulnar_styloid'),
+                                                                      DEF_ : SFString('hanim_r_ulnar_styloid'),
+                                                                      translation_ : SFVec3f([SFDouble(-0.2117), SFDouble(0.8562), SFDouble(-0.0584)]),
+                                                                      children_ : [
+                                                                        TouchSensor(
+                                                                          description_ : SFString('HAnimSite 73 r_ulnar_styloid')),
+
+                                                                        Shape(
+                                                                          USE_ : SFString('HAnimSiteShape')),
+
+                                                                        Billboard(
+                                                                          children_ : [
+                                                                            Shape(
+                                                                              geometry_ : 
+                                                                                Text(
+                                                                                  string_ : MFString([SFString("73")]),
+                                                                                  fontStyle_ : 
+                                                                                    FontStyle(
+                                                                                      size_ : 0.035)))])]),
+
                                                                     Shape(
                                                                       geometry_ : 
                                                                         LineSet(
@@ -2828,17 +3473,6 @@ var X3D0 =  X3D(
                                                                             ColorRGBA(
                                                                               USE_ : SFString('HAnimSegmentLineColorRGBA')))),
 
-                                                                    HAnimSite(
-                                                                      name_ : SFString('r_metacarpal_phalanx_2'),
-                                                                      DEF_ : SFString('hanim_r_metacarpal_phalanx_2'),
-                                                                      translation_ : SFVec3f([SFDouble(-0.1977), SFDouble(0.8169), SFDouble(-0.0177)]),
-                                                                      children_ : [
-                                                                        TouchSensor(
-                                                                          description_ : SFString('HAnimSite r_metacarpal_phalanx_2')),
-
-                                                                        Shape(
-                                                                          USE_ : SFString('HAnimSiteShape'))]),
-
                                                                     Shape(
                                                                       geometry_ : 
                                                                         LineSet(
@@ -2850,16 +3484,6 @@ var X3D0 =  X3D(
                                                                           color_ : 
                                                                             ColorRGBA(
                                                                               USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-
-                                                                    HAnimSite(
-                                                                      name_ : SFString('r_metacarpal_phalanx_3'),
-                                                                      DEF_ : SFString('hanim_r_metacarpal_phalanx_3'),
-                                                                      children_ : [
-                                                                        TouchSensor(
-                                                                          description_ : SFString('HAnimSite r_metacarpal_phalanx_3')),
-
-                                                                        Shape(
-                                                                          USE_ : SFString('HAnimSiteShape'))]),
 
                                                                     Shape(
                                                                       geometry_ : 
@@ -2883,18 +3507,7 @@ var X3D0 =  X3D(
                                                                           /*from r_radiocarpal to r_carpometacarpal_5 vertices 2*/
                                                                           color_ : 
                                                                             ColorRGBA(
-                                                                              USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-
-                                                                    HAnimSite(
-                                                                      name_ : SFString('r_metacarpal_phalanx_5'),
-                                                                      DEF_ : SFString('hanim_r_metacarpal_phalanx_5'),
-                                                                      translation_ : SFVec3f([SFDouble(-0.1929), SFDouble(0.789), SFDouble(-0.1064)]),
-                                                                      children_ : [
-                                                                        TouchSensor(
-                                                                          description_ : SFString('HAnimSite r_metacarpal_phalanx_5')),
-
-                                                                        Shape(
-                                                                          USE_ : SFString('HAnimSiteShape'))])]),
+                                                                              USE_ : SFString('HAnimSegmentLineColorRGBA'))))]),
 
                                                                 HAnimJoint(
                                                                   name_ : SFString('r_carpometacarpal_1'),
@@ -2954,17 +3567,7 @@ var X3D0 =  X3D(
                                                                                   /*from r_metacarpophalangeal_1 to r_carpal_interphalangeal_1 vertices 2*/
                                                                                   color_ : 
                                                                                     ColorRGBA(
-                                                                                      USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-
-                                                                            HAnimSite(
-                                                                              name_ : SFString('r_carpal_distal_phalanx_1_tip'),
-                                                                              DEF_ : SFString('hanim_r_carpal_distal_phalanx_1_tip'),
-                                                                              children_ : [
-                                                                                TouchSensor(
-                                                                                  description_ : SFString('HAnimSite r_carpal_distal_phalanx_1_tip')),
-
-                                                                                Shape(
-                                                                                  USE_ : SFString('HAnimSiteShape'))])]),
+                                                                                      USE_ : SFString('HAnimSegmentLineColorRGBA'))))]),
 
                                                                         HAnimJoint(
                                                                           name_ : SFString('r_carpal_interphalangeal_1'),
@@ -2999,7 +3602,28 @@ var X3D0 =  X3D(
                                                                               /*from r_carpometacarpal_2 to r_metacarpophalangeal_2 vertices 2*/
                                                                               color_ : 
                                                                                 ColorRGBA(
-                                                                                  USE_ : SFString('HAnimSegmentLineColorRGBA'))))]),
+                                                                                  USE_ : SFString('HAnimSegmentLineColorRGBA')))),
+
+                                                                        HAnimSite(
+                                                                          name_ : SFString('r_metacarpal_phalanx_2'),
+                                                                          DEF_ : SFString('hanim_r_metacarpal_phalanx_2'),
+                                                                          translation_ : SFVec3f([SFDouble(-0.1977), SFDouble(0.8169), SFDouble(-0.0177)]),
+                                                                          children_ : [
+                                                                            TouchSensor(
+                                                                              description_ : SFString('HAnimSite 78 r_metacarpal_phalanx_2')),
+
+                                                                            Shape(
+                                                                              USE_ : SFString('HAnimSiteShape')),
+
+                                                                            Billboard(
+                                                                              children_ : [
+                                                                                Shape(
+                                                                                  geometry_ : 
+                                                                                    Text(
+                                                                                      string_ : MFString([SFString("78")]),
+                                                                                      fontStyle_ : 
+                                                                                        FontStyle(
+                                                                                          size_ : 0.035)))])])]),
 
                                                                     HAnimJoint(
                                                                       name_ : SFString('r_metacarpophalangeal_2'),
@@ -3059,28 +3683,7 @@ var X3D0 =  X3D(
                                                                                       /*from r_carpal_proximal_interphalangeal_2 to r_carpal_distal_interphalangeal_2 vertices 2*/
                                                                                       color_ : 
                                                                                         ColorRGBA(
-                                                                                          USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-
-                                                                                HAnimSite(
-                                                                                  name_ : SFString('r_carpal_distal_phalanx_2_tip'),
-                                                                                  DEF_ : SFString('hanim_r_carpal_distal_phalanx_2_tip'),
-                                                                                  children_ : [
-                                                                                    TouchSensor(
-                                                                                      description_ : SFString('HAnimSite r_carpal_distal_phalanx_2_tip')),
-
-                                                                                    Shape(
-                                                                                      USE_ : SFString('HAnimSiteShape'))]),
-
-                                                                                HAnimSite(
-                                                                                  name_ : SFString('r_dactylion'),
-                                                                                  DEF_ : SFString('hanim_r_dactylion'),
-                                                                                  translation_ : SFVec3f([SFDouble(-0.1941), SFDouble(0.6772), SFDouble(-0.0423)]),
-                                                                                  children_ : [
-                                                                                    TouchSensor(
-                                                                                      description_ : SFString('HAnimSite r_dactylion')),
-
-                                                                                    Shape(
-                                                                                      USE_ : SFString('HAnimSiteShape'))])]),
+                                                                                          USE_ : SFString('HAnimSegmentLineColorRGBA'))))]),
 
                                                                             HAnimJoint(
                                                                               name_ : SFString('r_carpal_distal_interphalangeal_2'),
@@ -3115,7 +3718,27 @@ var X3D0 =  X3D(
                                                                               /*from r_carpometacarpal_3 to r_metacarpophalangeal_3 vertices 2*/
                                                                               color_ : 
                                                                                 ColorRGBA(
-                                                                                  USE_ : SFString('HAnimSegmentLineColorRGBA'))))]),
+                                                                                  USE_ : SFString('HAnimSegmentLineColorRGBA')))),
+
+                                                                        HAnimSite(
+                                                                          name_ : SFString('r_metacarpal_phalanx_3'),
+                                                                          DEF_ : SFString('hanim_r_metacarpal_phalanx_3'),
+                                                                          children_ : [
+                                                                            TouchSensor(
+                                                                              description_ : SFString('HAnimSite 79 r_metacarpal_phalanx_3')),
+
+                                                                            Shape(
+                                                                              USE_ : SFString('HAnimSiteShape')),
+
+                                                                            Billboard(
+                                                                              children_ : [
+                                                                                Shape(
+                                                                                  geometry_ : 
+                                                                                    Text(
+                                                                                      string_ : MFString([SFString("79")]),
+                                                                                      fontStyle_ : 
+                                                                                        FontStyle(
+                                                                                          size_ : 0.035)))])])]),
 
                                                                     HAnimJoint(
                                                                       name_ : SFString('r_metacarpophalangeal_3'),
@@ -3175,17 +3798,7 @@ var X3D0 =  X3D(
                                                                                       /*from r_carpal_proximal_interphalangeal_3 to r_carpal_distal_interphalangeal_3 vertices 2*/
                                                                                       color_ : 
                                                                                         ColorRGBA(
-                                                                                          USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-
-                                                                                HAnimSite(
-                                                                                  name_ : SFString('r_carpal_distal_phalanx_3_tip'),
-                                                                                  DEF_ : SFString('hanim_r_carpal_distal_phalanx_3_tip'),
-                                                                                  children_ : [
-                                                                                    TouchSensor(
-                                                                                      description_ : SFString('HAnimSite r_carpal_distal_phalanx_3_tip')),
-
-                                                                                    Shape(
-                                                                                      USE_ : SFString('HAnimSiteShape'))])]),
+                                                                                          USE_ : SFString('HAnimSegmentLineColorRGBA'))))]),
 
                                                                             HAnimJoint(
                                                                               name_ : SFString('r_carpal_distal_interphalangeal_3'),
@@ -3280,17 +3893,7 @@ var X3D0 =  X3D(
                                                                                       /*from r_carpal_proximal_interphalangeal_4 to r_carpal_distal_interphalangeal_4 vertices 2*/
                                                                                       color_ : 
                                                                                         ColorRGBA(
-                                                                                          USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-
-                                                                                HAnimSite(
-                                                                                  name_ : SFString('r_carpal_distal_phalanx_4_tip'),
-                                                                                  DEF_ : SFString('hanim_r_carpal_distal_phalanx_4_tip'),
-                                                                                  children_ : [
-                                                                                    TouchSensor(
-                                                                                      description_ : SFString('HAnimSite r_carpal_distal_phalanx_4_tip')),
-
-                                                                                    Shape(
-                                                                                      USE_ : SFString('HAnimSiteShape'))])]),
+                                                                                          USE_ : SFString('HAnimSegmentLineColorRGBA'))))]),
 
                                                                             HAnimJoint(
                                                                               name_ : SFString('r_carpal_distal_interphalangeal_4'),
@@ -3325,7 +3928,28 @@ var X3D0 =  X3D(
                                                                               /*from r_carpometacarpal_5 to r_metacarpophalangeal_5 vertices 2*/
                                                                               color_ : 
                                                                                 ColorRGBA(
-                                                                                  USE_ : SFString('HAnimSegmentLineColorRGBA'))))]),
+                                                                                  USE_ : SFString('HAnimSegmentLineColorRGBA')))),
+
+                                                                        HAnimSite(
+                                                                          name_ : SFString('r_metacarpal_phalanx_5'),
+                                                                          DEF_ : SFString('hanim_r_metacarpal_phalanx_5'),
+                                                                          translation_ : SFVec3f([SFDouble(-0.1929), SFDouble(0.789), SFDouble(-0.1064)]),
+                                                                          children_ : [
+                                                                            TouchSensor(
+                                                                              description_ : SFString('HAnimSite 80 r_metacarpal_phalanx_5')),
+
+                                                                            Shape(
+                                                                              USE_ : SFString('HAnimSiteShape')),
+
+                                                                            Billboard(
+                                                                              children_ : [
+                                                                                Shape(
+                                                                                  geometry_ : 
+                                                                                    Text(
+                                                                                      string_ : MFString([SFString("80")]),
+                                                                                      fontStyle_ : 
+                                                                                        FontStyle(
+                                                                                          size_ : 0.035)))])])]),
 
                                                                     HAnimJoint(
                                                                       name_ : SFString('r_metacarpophalangeal_5'),
@@ -3385,17 +4009,7 @@ var X3D0 =  X3D(
                                                                                       /*from r_carpal_proximal_interphalangeal_5 to r_carpal_distal_interphalangeal_5 vertices 2*/
                                                                                       color_ : 
                                                                                         ColorRGBA(
-                                                                                          USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-
-                                                                                HAnimSite(
-                                                                                  name_ : SFString('r_carpal_distal_phalanx_5_tip'),
-                                                                                  DEF_ : SFString('hanim_r_carpal_distal_phalanx_5_tip'),
-                                                                                  children_ : [
-                                                                                    TouchSensor(
-                                                                                      description_ : SFString('HAnimSite r_carpal_distal_phalanx_5_tip')),
-
-                                                                                    Shape(
-                                                                                      USE_ : SFString('HAnimSiteShape'))])]),
+                                                                                          USE_ : SFString('HAnimSegmentLineColorRGBA'))))]),
 
                                                                             HAnimJoint(
                                                                               name_ : SFString('r_carpal_distal_interphalangeal_5'),
@@ -3820,15 +4434,6 @@ var X3D0 =  X3D(
                   USE_ : SFString('hanim_r_trochanterion')),
               viewpoints_ : 
                 HAnimSite(
-                  USE_ : SFString('hanim_navel')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_waist_preferred_anterior')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_waist_preferred_posterior')),
-              viewpoints_ : 
-                HAnimSite(
                   USE_ : SFString('hanim_l_femoral_lateral_epicondyles')),
               viewpoints_ : 
                 HAnimSite(
@@ -3839,18 +4444,6 @@ var X3D0 =  X3D(
               viewpoints_ : 
                 HAnimSite(
                   USE_ : SFString('hanim_l_suprapatella')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_r_femoral_lateral_epicondyles')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_r_femoral_medial_epicondyles')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_r_knee_crease')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_r_suprapatella')),
               viewpoints_ : 
                 HAnimSite(
                   USE_ : SFString('hanim_l_lateral_malleolus')),
@@ -3889,6 +4482,18 @@ var X3D0 =  X3D(
                   USE_ : SFString('hanim_l_tarsal_distal_phalanx_5_tip')),
               viewpoints_ : 
                 HAnimSite(
+                  USE_ : SFString('hanim_r_femoral_lateral_epicondyles')),
+              viewpoints_ : 
+                HAnimSite(
+                  USE_ : SFString('hanim_r_femoral_medial_epicondyles')),
+              viewpoints_ : 
+                HAnimSite(
+                  USE_ : SFString('hanim_r_knee_crease')),
+              viewpoints_ : 
+                HAnimSite(
+                  USE_ : SFString('hanim_r_suprapatella')),
+              viewpoints_ : 
+                HAnimSite(
                   USE_ : SFString('hanim_r_lateral_malleolus')),
               viewpoints_ : 
                 HAnimSite(
@@ -3923,6 +4528,15 @@ var X3D0 =  X3D(
               viewpoints_ : 
                 HAnimSite(
                   USE_ : SFString('hanim_r_tarsal_distal_phalanx_5_tip')),
+              viewpoints_ : 
+                HAnimSite(
+                  USE_ : SFString('hanim_navel')),
+              viewpoints_ : 
+                HAnimSite(
+                  USE_ : SFString('hanim_waist_preferred_anterior')),
+              viewpoints_ : 
+                HAnimSite(
+                  USE_ : SFString('hanim_waist_preferred_posterior')),
               viewpoints_ : 
                 HAnimSite(
                   USE_ : SFString('hanim_l_rib10')),
@@ -3970,10 +4584,13 @@ var X3D0 =  X3D(
                   USE_ : SFString('hanim_suprasternale')),
               viewpoints_ : 
                 HAnimSite(
+                  USE_ : SFString('hanim_adams_apple')),
+              viewpoints_ : 
+                HAnimSite(
                   USE_ : SFString('hanim_l_acromion')),
               viewpoints_ : 
                 HAnimSite(
-                  USE_ : SFString('hanim_l_axilla_distal_pt')),
+                  USE_ : SFString('hanim_l_axilla_distal')),
               viewpoints_ : 
                 HAnimSite(
                   USE_ : SFString('hanim_l_axilla_posterior_folds')),
@@ -3983,69 +4600,6 @@ var X3D0 =  X3D(
               viewpoints_ : 
                 HAnimSite(
                   USE_ : SFString('hanim_l_clavicale')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_r_acromion')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_r_axilla_distal_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_r_axilla_posterior_folds')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_r_axilla_proximal')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_r_clavicale')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_adams_apple')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_glabella')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_l_ectocanthus')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_l_gonion')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_l_infraorbitale')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_l_tragion')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_menton')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_nuchale')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_opisthocranion')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_r_ectocanthus')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_r_gonion')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_r_infraorbitale')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_r_tragion')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_sellion')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_skull_vertex')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_supramenton')),
               viewpoints_ : 
                 HAnimSite(
                   USE_ : SFString('hanim_l_bideltoid')),
@@ -4078,22 +4632,19 @@ var X3D0 =  X3D(
                   USE_ : SFString('hanim_l_metacarpal_phalanx_5')),
               viewpoints_ : 
                 HAnimSite(
-                  USE_ : SFString('hanim_l_carpal_distal_phalanx_1_tip')),
+                  USE_ : SFString('hanim_r_acromion')),
               viewpoints_ : 
                 HAnimSite(
-                  USE_ : SFString('hanim_l_carpal_distal_phalanx_2_tip')),
+                  USE_ : SFString('hanim_r_axilla_distal')),
               viewpoints_ : 
                 HAnimSite(
-                  USE_ : SFString('hanim_l_dactylion')),
+                  USE_ : SFString('hanim_r_axilla_posterior_folds')),
               viewpoints_ : 
                 HAnimSite(
-                  USE_ : SFString('hanim_l_carpal_distal_phalanx_3_tip')),
+                  USE_ : SFString('hanim_r_axilla_proximal')),
               viewpoints_ : 
                 HAnimSite(
-                  USE_ : SFString('hanim_l_carpal_distal_phalanx_4_tip')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_l_carpal_distal_phalanx_5_tip')),
+                  USE_ : SFString('hanim_r_clavicale')),
               viewpoints_ : 
                 HAnimSite(
                   USE_ : SFString('hanim_r_bideltoid')),
@@ -4123,23 +4674,5 @@ var X3D0 =  X3D(
                   USE_ : SFString('hanim_r_metacarpal_phalanx_3')),
               viewpoints_ : 
                 HAnimSite(
-                  USE_ : SFString('hanim_r_metacarpal_phalanx_5')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_r_carpal_distal_phalanx_1_tip')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_r_carpal_distal_phalanx_2_tip')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_r_dactylion')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_r_carpal_distal_phalanx_3_tip')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_r_carpal_distal_phalanx_4_tip')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_r_carpal_distal_phalanx_5_tip')))]));
+                  USE_ : SFString('hanim_r_metacarpal_phalanx_5')))]));
 void main() { exit(0); }

@@ -30,8 +30,8 @@
         <Transform>
                     <ParticleSystem maxParticles="20" geometryType="GEOMETRY">
 			    <!--
-			    values - array of MFFloats to pass to ComposedShader
-			    variations in values - array of MFFloats to pass to ComposedShader that varies values
+			    * values - array of MFFloats to pass to ComposedShader
+			    * variations in values - array of MFFloats to pass to ComposedShader that varies values
 			    -->
 			<VariationPhysicsModel values="2 2 5 5 0 0" variations="0.2 0.1 0.3 0.3 0.01 0.01">
 			</VariationPhysicsModel>

@@ -74,7 +74,7 @@ head1.meta[12] = meta14;
 
 meta meta15 = createNode("meta");
 meta15.name = "identifier";
-meta15.content = "https://coderextreme.net/X3DJSONLD/src/main/data/flowers.x3d";
+meta15.content = "https://coderextreme.net/X3DJSONLD/src/main/personal/flowers.x3d";
 head1.meta[13] = meta15;
 
 head = head1;

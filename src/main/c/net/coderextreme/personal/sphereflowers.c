@@ -79,7 +79,7 @@ head1.meta[13] = meta15;
 
 meta meta16 = createNode("meta");
 meta16.name = "identifier";
-meta16.content = "https://coderextreme.net/X3DJSONLD/src/main/data/sphereflowers.x3d";
+meta16.content = "https://coderextreme.net/X3DJSONLD/src/main/personal/sphereflowers.x3d";
 head1.meta[14] = meta16;
 
 head = head1;
@@ -90,18 +90,18 @@ children = new MFNode();
 children[0] = NavigationInfo18;
 
 Background Background19 = createNode("Background");
-Background19.backUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_back.png"]);
-Background19.bottomUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]);
-Background19.frontUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_front.png"]);
-Background19.leftUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_left.png"]);
-Background19.rightUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_right.png"]);
-Background19.topUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_top.png"]);
+Background19.backUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]);
+Background19.bottomUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]);
+Background19.frontUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"]);
+Background19.leftUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]);
+Background19.rightUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]);
+Background19.topUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]);
 children[1] = Background19;
 
 Group Group20 = createNode("Group");
 ExternProtoDeclare ExternProtoDeclare21 = createNode("ExternProtoDeclare");
 ExternProtoDeclare21.name = "FlowerProto";
-ExternProtoDeclare21.url = new MFString(new java.lang.String["../personal/flowerproto.json#FlowerProto"]);
+ExternProtoDeclare21.url = new MFString(new java.lang.String["../personal/flowerproto.x3d#FlowerProto","https://coderextreme.net/X3DJSONLD/src/main/personal/flowerproto.x3d#FlowerProto"]);
 field field22 = createNode("field");
 field22.name = "vertex";
 field22.accessType = "inputOutput";
@@ -195,7 +195,7 @@ Sound37.location = new SFVec3f(new float[0,1,0]);
 AudioClip AudioClip38 = createNode("AudioClip");
 AudioClip38.DEF = "AudioClip";
 AudioClip38.description = "Chandubabamusic #1";
-AudioClip38.url = new MFString(new java.lang.String["../resources/chandubabamusic1.wav"]);
+AudioClip38.url = new MFString(new java.lang.String["../resources/chandubabamusic1.wav","https://coderextreme.net/X3DJSONLD/src/main/resources/chandubabamusic1.wav"]);
 Sound37.source = AudioClip38;
 
 Group20.children[9] = Sound37;

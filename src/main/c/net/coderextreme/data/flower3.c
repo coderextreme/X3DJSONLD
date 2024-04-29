@@ -126,7 +126,7 @@ Script18.setSourceCode(`ecmascript:\n"+
 "	     localci.push(-1);\n"+
 "	}\n"+
 "    }\n"+
-"    coordIndexes = new MFInt32(localci);\n"+
+"    coordIndexes = new MFInt32(...localci);\n"+
 "}\n"+
 "\n"+
 "function generateCoordinates(resolution) {\n"+
@@ -146,7 +146,7 @@ Script18.setSourceCode(`ecmascript:\n"+
 "	}\n"+
 "	phi += delta;\n"+
 "     }\n"+
-"     coordinates = new MFVec3f(localc);\n"+
+"     coordinates = new MFVec3f(...localc);\n"+
 "}\n"+
 "\n"+
 "function set_fraction(fraction, eventTime) {\n"+

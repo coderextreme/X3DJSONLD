@@ -6,9 +6,10 @@
 <component name="CubeMapTexturing" level="1"></component>
 <component name="Texturing" level="1"></component>
 <component name="Rendering" level="1"></component>
+<component name="Shape" level="4"></component>
 <component name="Grouping" level="3"></component>
 <component name="Core" level="1"></component>
-<!--<component name='Shape' level='4'></component>--><meta name="title" content="flowers4.x3d"></meta>
+<meta name="title" content="flowers4.x3d"></meta>
 <meta name="creator" content="John Carlson"></meta>
 <meta name="generator" content="manual"></meta>
 <meta name="identifier" content="https://coderextreme.net/X3DJSONLD/src/main/data/flowers4.x3d"></meta>
@@ -29,8 +30,8 @@
 <field name="bias" type="SFFloat" accessType="inputOutput" value="0.5"></field>
 <field name="scale" type="SFFloat" accessType="inputOutput" value="0.5"></field>
 <field name="power" type="SFFloat" accessType="inputOutput" value="2"></field>
-<ShaderPart url="&quot;../shaders/x3dom.vs&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs&quot;" type="VERTEX"></ShaderPart>
-<ShaderPart url="&quot;../shaders/pc_bubbles.fs&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs&quot;" type="FRAGMENT"></ShaderPart>
+<ShaderPart url="&quot;../shaders/x_ite.vs&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs&quot;" type="VERTEX"></ShaderPart>
+<ShaderPart url="&quot;../shaders/x_ite.fs&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs&quot;" type="FRAGMENT"></ShaderPart>
 </ComposedShader>
 </Appearance>
 <!--<Sphere>--><IndexedFaceSet convex="false" DEF="Orbit"><Coordinate DEF="OrbitCoordinates"></Coordinate>
@@ -40,13 +41,11 @@
 <Script DEF="OrbitScript"><field name="set_fraction" accessType="inputOnly" type="SFFloat"></field>
 <field name="coordinates" accessType="inputOutput" type="MFVec3f"></field>
 <field name="coordIndexes" accessType="outputOnly" type="MFInt32"></field>
+<field name="e" type="SFFloat" accessType="inputOutput" value="5"></field>
+<field name="f" type="SFFloat" accessType="inputOutput" value="5"></field>
+<field name="g" type="SFFloat" accessType="inputOutput" value="5"></field>
+<field name="h" type="SFFloat" accessType="inputOutput" value="5"></field>
 <![CDATA[ecmascript:
-
-var e = 5;
-var f = 5;
-var g = 5;
-var h = 5;
-
 function initialize() {
      var resolution = 100;
      updateCoordinates(resolution);
@@ -60,7 +59,7 @@ function initialize() {
 	     cis.push(-1);
 	}
     }
-    coordIndexes = new MFInt32(cis);
+    coordIndexes = new MFInt32(...cis);
 }
 
 function updateCoordinates(resolution) {
@@ -80,7 +79,7 @@ function updateCoordinates(resolution) {
 	}
 	phi += delta;
      }
-     coordinates = new MFVec3f(crds);
+     coordinates = new MFVec3f(...crds);
 }
 
 function set_fraction(fraction, eventTime) {
@@ -98,6 +97,9 @@ function set_fraction(fraction, eventTime) {
 	case 3:
 		h += Math.floor(Math.random() * 2) * 2 - 1;
 		break;
+	}
+	if (e < 1) {
+		e = 10;
 	}
 	if (f < 1) {
 		f = 10;

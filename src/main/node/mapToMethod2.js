@@ -15,7 +15,8 @@ var mapToMethod2 = {
 	"Appearance" : {
 		"ProtoInstance" : "addShaders",
 		"ProgramShader" : "addShaders",
-		"ComposedShader" : "addShaders"
+		"ComposedShader" : "addShaders",
+		"Script" : "addChild"
 	},
 	"ComposedShader" : {
 		"field" : "addField"

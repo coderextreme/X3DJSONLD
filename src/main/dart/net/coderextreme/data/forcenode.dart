@@ -118,7 +118,7 @@ ecmascript:eval (0
 					, function set_cycle(value) {
                                                 old = translation;
 						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);
-                                                keyValue = new MFVec3f([old, translation]);
+                                                keyValue = new MFVec3f(...[old, translation]);
 						// Browser.println(translation);
 					})),
 
@@ -152,7 +152,7 @@ ecmascript:eval (0
                           toField_ : SFString('set_translation'))])])),
 
             ProtoDeclare(
-              name_ : SFString('cyl'),
+              name_ : SFString('cylinder'),
               ProtoInterface_ : 
                 ProtoInterface(
                   field_ : [
@@ -217,17 +217,17 @@ ecmascript:eval (0
 
                 , function set_endA(value) {
 		    if (typeof spine === 'undefined') {
-		        spine = new MFVec3f([value, value]);
+		        spine = new MFVec3f(...[value, value]);
 		    } else {
-		        spine = new MFVec3f([value, spine[1]]);
+		        spine = new MFVec3f(...[value, spine[1]]);
 		    }
                 }
 
                 , function set_endB(value) {
 		    if (typeof spine === 'undefined') {
-		        spine = new MFVec3f([value, value]);
+		        spine = new MFVec3f(...[value, value]);
 		    } else {
-		        spine = new MFVec3f([spine[0], value]);
+		        spine = new MFVec3f(...[spine[0], value]);
 		    }
                 }
 
@@ -284,7 +284,7 @@ ecmascript:eval (0
                       value_ : SFString('50 50 -50'))]),
 
                 ProtoInstance(
-                  name_ : SFString('cyl'),
+                  name_ : SFString('cylinder'),
                   DEF_ : SFString('linkA'),
                   fieldValue_ : [
                     fieldValue(
@@ -296,7 +296,7 @@ ecmascript:eval (0
                       value_ : SFString('50 50 50'))]),
 
                 ProtoInstance(
-                  name_ : SFString('cyl'),
+                  name_ : SFString('cylinder'),
                   DEF_ : SFString('linkB'),
                   fieldValue_ : [
                     fieldValue(
@@ -308,7 +308,7 @@ ecmascript:eval (0
                       value_ : SFString('-50 -50 -50'))]),
 
                 ProtoInstance(
-                  name_ : SFString('cyl'),
+                  name_ : SFString('cylinder'),
                   DEF_ : SFString('linkC'),
                   fieldValue_ : [
                     fieldValue(

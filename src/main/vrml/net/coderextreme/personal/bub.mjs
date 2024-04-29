@@ -36,75 +36,71 @@ component7.level = 1;
 head1.component[5] = component7;
 
 let component8 = browser.currentScene.createNode("component");
-component8.name = "Shape";
-component8.level = 4;
+component8.name = "Grouping";
+component8.level = 3;
 head1.component[6] = component8;
 
 let component9 = browser.currentScene.createNode("component");
-component9.name = "Grouping";
-component9.level = 3;
+component9.name = "Core";
+component9.level = 1;
 head1.component[7] = component9;
 
-let component10 = browser.currentScene.createNode("component");
-component10.name = "Core";
-component10.level = 1;
-head1.component[8] = component10;
+//<component name='Shape' level='4'></component>
+let meta10 = browser.currentScene.createNode("meta");
+meta10.name = "title";
+meta10.content = "bub.x3d";
+head1.meta[8] = meta10;
 
 let meta11 = browser.currentScene.createNode("meta");
-meta11.name = "title";
-meta11.content = "bub.x3d";
+meta11.name = "creator";
+meta11.content = "John Carlson";
 head1.meta[9] = meta11;
 
 let meta12 = browser.currentScene.createNode("meta");
-meta12.name = "creator";
-meta12.content = "John Carlson";
+meta12.name = "description";
+meta12.content = "3 prismatic spheres";
 head1.meta[10] = meta12;
 
 let meta13 = browser.currentScene.createNode("meta");
-meta13.name = "description";
-meta13.content = "3 prismatic spheres";
+meta13.name = "generator";
+meta13.content = "X3D-Edit, https://savage.nps.edu/X3D-Edit";
 head1.meta[11] = meta13;
 
 let meta14 = browser.currentScene.createNode("meta");
-meta14.name = "generator";
-meta14.content = "X3D-Edit, https://savage.nps.edu/X3D-Edit";
+meta14.name = "identifier";
+meta14.content = "https://coderextreme.net/X3DJSONLD/src/main/personal/bub.x3d";
 head1.meta[12] = meta14;
-
-let meta15 = browser.currentScene.createNode("meta");
-meta15.name = "identifier";
-meta15.content = "https://coderextreme.net/X3DJSONLD/src/main/data/bub.x3d";
-head1.meta[13] = meta15;
 
 head = head1;
 
-let NavigationInfo17 = browser.currentScene.createNode("NavigationInfo");
+let NavigationInfo16 = browser.currentScene.createNode("NavigationInfo");
 browser.currentScene.children = new MFNode();
 
-browser.currentScene.children[0] = NavigationInfo17;
+browser.currentScene.children[0] = NavigationInfo16;
 
-let Background18 = browser.currentScene.createNode("Background");
-Background18.backUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]);
-Background18.bottomUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]);
-Background18.frontUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"]);
-Background18.leftUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]);
-Background18.rightUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]);
-Background18.topUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]);
-browser.currentScene.children[1] = Background18;
+let Background17 = browser.currentScene.createNode("Background");
+Background17.backUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]);
+Background17.bottomUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]);
+Background17.frontUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"]);
+Background17.leftUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]);
+Background17.rightUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]);
+Background17.topUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]);
+browser.currentScene.children[1] = Background17;
 
-let Viewpoint19 = browser.currentScene.createNode("Viewpoint");
-Viewpoint19.position = new SFVec3f(new float[0,0,20]);
-Viewpoint19.description = "Look at the bubbles flying";
-browser.currentScene.children[2] = Viewpoint19;
+let Viewpoint18 = browser.currentScene.createNode("Viewpoint");
+Viewpoint18.position = new SFVec3f(new float[0,0,20]);
+Viewpoint18.description = "Look at the bubbles flying";
+browser.currentScene.children[2] = Viewpoint18;
 
-let ProtoDeclare20 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
+let ProtoDeclare19 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="Bubble" ><ProtoBody><Transform DEF="transform"><Shape DEF="myShape"><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0.7 0.7 0.7" specularColor="0.5 0.5 0.5"></Material>
-<ComposedCubeMapTexture containerField="texture" DEF="texture"><ImageTexture containerField="back" url="&quot;../resources/images/all_probes/stpeters_cross/stpeters_back.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png&quot;"></ImageTexture>
-<ImageTexture containerField="bottom" url="&quot;../resources/images/all_probes/stpeters_cross/stpeters_bottom.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png&quot;"></ImageTexture>
-<ImageTexture containerField="front" url="&quot;../resources/images/all_probes/stpeters_cross/stpeters_front.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png&quot;"></ImageTexture>
-<ImageTexture containerField="left" url="&quot;../resources/images/all_probes/stpeters_cross/stpeters_left.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png&quot;"></ImageTexture>
-<ImageTexture containerField="right" url="&quot;../resources/images/all_probes/stpeters_cross/stpeters_right.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png&quot;"></ImageTexture>
-<ImageTexture containerField="top" url="&quot;../resources/images/all_probes/stpeters_cross/stpeters_top.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png&quot;"></ImageTexture>
+<ComposedCubeMapTexture containerField="texture" DEF="texture"><ImageTexture containerField="backTexture" url="&quot;../resources/images/all_probes/stpeters_cross/stpeters_back.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png&quot;"></ImageTexture>
+<ImageTexture containerField="bottomTexture" url="&quot;../resources/images/all_probes/stpeters_cross/stpeters_bottom.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png&quot;"></ImageTexture>
+<ImageTexture containerField="frontTexture" url="&quot;../resources/images/all_probes/stpeters_cross/stpeters_front.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png&quot;"></ImageTexture>
+<ImageTexture containerField="leftTexture" url="&quot;../resources/images/all_probes/stpeters_cross/stpeters_left.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png&quot;"></ImageTexture>
+<ImageTexture containerField="rightTexture" url="&quot;../resources/images/all_probes/stpeters_cross/stpeters_right.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png&quot;"></ImageTexture>
+<ImageTexture containerField="topTexture" url="&quot;../resources/images/all_probes/stpeters_cross/stpeters_top.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png&quot;"></ImageTexture>
 </ComposedCubeMapTexture>
 <!--<ComposedShader DEF='gl' language="GLSL"> <field name='cube' type='SFInt32' accessType="inputOutput" value='0'></field> <field name='chromaticDispertion' type='SFVec3f' accessType="inputOutput" value='0.98 1.0 1.033'></field> <field name='bias' type='SFFloat' accessType="inputOutput" value='0.5'></field> <field name='scale' type='SFFloat' accessType="inputOutput" value='0.5'></field> <field name='power' type='SFFloat' accessType="inputOutput" value='2.0'></field> <ShaderPart url='"../shaders/gl.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/gl.vs"' type='VERTEX'></ShaderPart> <ShaderPart url='"../shaders/pc_bubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"' type='FRAGMENT'></ShaderPart> </ComposedShader> <ComposedShader DEF='freewrl' language="GLSL"> <field name='fw_textureCoodGenType' type='SFInt32' accessType="inputOutput" value='0'></field> <field name='chromaticDispertion' type='SFVec3f' accessType="inputOutput" value='0.98 1.0 1.033'></field> <field name='bias' type='SFFloat' accessType="inputOutput" value='0.5'></field> <field name='scale' type='SFFloat' accessType="inputOutput" value='0.5'></field> <field name='power' type='SFFloat' accessType="inputOutput" value='2.0'></field> <ShaderPart url='"../shaders/freewrl.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.vs"' type='VERTEX'></ShaderPart> <ShaderPart url='"../shaders/pc_bubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"' type='FRAGMENT'></ShaderPart> </ComposedShader>--><!--<ComposedShader DEF='instant' language="GLSL"> <field name='cube' type='SFInt32' accessType="inputOutput" value='0'></field> <field name='chromaticDispertion' type='SFVec3f' accessType="inputOutput" value='0.98 1.0 1.033'></field> <field name='bias' type='SFFloat' accessType="inputOutput" value='0.5'></field> <field name='scale' type='SFFloat' accessType="inputOutput" value='0.5'></field> <field name='power' type='SFFloat' accessType="inputOutput" value='2.0'></field> <ShaderPart url='"../shaders/instant.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/instant.vs"' type='VERTEX'></ShaderPart> <ShaderPart url='"../shaders/pc_bubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"' type='FRAGMENT'></ShaderPart> </ComposedShader>--><ComposedShader DEF="x3dom" language="GLSL"><field name="cube" type="SFInt32" accessType="inputOutput" value="0"></field>
 <field name="chromaticDispertion" type="SFVec3f" accessType="inputOutput" value="0.98 1 1.033"></field>
@@ -160,198 +156,198 @@ let ProtoDeclare20 = browser.createX3DFromString(`<?xml version="1.0" encoding="
 <ROUTE fromNode="Bounce" fromField="translation_changed" toNode="transform" toField="set_translation"></ROUTE>
 </ProtoBody>
 </ProtoDeclare>`);
-ProtoDeclare20.name = "Bubble";
-let ProtoBody21 = browser.currentScene.createNode("ProtoBody");
-let Transform22 = browser.currentScene.createNode("Transform");
-Transform22.DEF = "transform";
-let Shape23 = browser.currentScene.createNode("Shape");
-Shape23.DEF = "myShape";
-let Appearance24 = browser.currentScene.createNode("Appearance");
-let Material25 = browser.currentScene.createNode("Material");
-Material25.diffuseColor = new SFColor(new float[0.7,0.7,0.7]);
-Material25.specularColor = new SFColor(new float[0.5,0.5,0.5]);
-Appearance24.material = Material25;
+ProtoDeclare19.name = "Bubble";
+let ProtoBody20 = browser.currentScene.createNode("ProtoBody");
+let Transform21 = browser.currentScene.createNode("Transform");
+Transform21.DEF = "transform";
+let Shape22 = browser.currentScene.createNode("Shape");
+Shape22.DEF = "myShape";
+let Appearance23 = browser.currentScene.createNode("Appearance");
+let Material24 = browser.currentScene.createNode("Material");
+Material24.diffuseColor = new SFColor(new float[0.7,0.7,0.7]);
+Material24.specularColor = new SFColor(new float[0.5,0.5,0.5]);
+Appearance23.material = Material24;
 
-let ComposedCubeMapTexture26 = browser.currentScene.createNode("ComposedCubeMapTexture");
-ComposedCubeMapTexture26.DEF = "texture";
+let ComposedCubeMapTexture25 = browser.currentScene.createNode("ComposedCubeMapTexture");
+ComposedCubeMapTexture25.DEF = "texture";
+let ImageTexture26 = browser.currentScene.createNode("ImageTexture");
+ImageTexture26.url = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]);
+ComposedCubeMapTexture25.topTexture = ImageTexture26;
+
 let ImageTexture27 = browser.currentScene.createNode("ImageTexture");
-ImageTexture27.url = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]);
-ComposedCubeMapTexture26.topTexture = ImageTexture27;
+ImageTexture27.url = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]);
+ComposedCubeMapTexture25.topTexture = ImageTexture27;
 
 let ImageTexture28 = browser.currentScene.createNode("ImageTexture");
-ImageTexture28.url = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]);
-ComposedCubeMapTexture26.topTexture = ImageTexture28;
+ImageTexture28.url = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"]);
+ComposedCubeMapTexture25.topTexture = ImageTexture28;
 
 let ImageTexture29 = browser.currentScene.createNode("ImageTexture");
-ImageTexture29.url = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"]);
-ComposedCubeMapTexture26.topTexture = ImageTexture29;
+ImageTexture29.url = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]);
+ComposedCubeMapTexture25.topTexture = ImageTexture29;
 
 let ImageTexture30 = browser.currentScene.createNode("ImageTexture");
-ImageTexture30.url = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]);
-ComposedCubeMapTexture26.topTexture = ImageTexture30;
+ImageTexture30.url = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]);
+ComposedCubeMapTexture25.topTexture = ImageTexture30;
 
 let ImageTexture31 = browser.currentScene.createNode("ImageTexture");
-ImageTexture31.url = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]);
-ComposedCubeMapTexture26.topTexture = ImageTexture31;
+ImageTexture31.url = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]);
+ComposedCubeMapTexture25.topTexture = ImageTexture31;
 
-let ImageTexture32 = browser.currentScene.createNode("ImageTexture");
-ImageTexture32.url = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]);
-ComposedCubeMapTexture26.topTexture = ImageTexture32;
-
-Appearance24.texture = ComposedCubeMapTexture26;
+Appearance23.texture = ComposedCubeMapTexture25;
 
 //<ComposedShader DEF='gl' language=\"GLSL\"> <field name='cube' type='SFInt32' accessType=\"inputOutput\" value='0'/> <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/> <field name='bias' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/> <ShaderPart url='\"../shaders/gl.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/gl.vs\"' type='VERTEX'></ShaderPart> <ShaderPart url='\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart> </ComposedShader> <ComposedShader DEF='freewrl' language=\"GLSL\"> <field name='fw_textureCoodGenType' type='SFInt32' accessType=\"inputOutput\" value='0'/> <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/> <field name='bias' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/> <ShaderPart url='\"../shaders/freewrl.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.vs\"' type='VERTEX'></ShaderPart> <ShaderPart url='\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart> </ComposedShader>
 //<ComposedShader DEF='instant' language=\"GLSL\"> <field name='cube' type='SFInt32' accessType=\"inputOutput\" value='0'/> <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/> <field name='bias' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/> <ShaderPart url='\"../shaders/instant.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/instant.vs\"' type='VERTEX'></ShaderPart> <ShaderPart url='\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart> </ComposedShader>
-let ComposedShader33 = browser.currentScene.createNode("ComposedShader");
-ComposedShader33.DEF = "x3dom";
-ComposedShader33.language = "GLSL";
-let field34 = browser.currentScene.createNode("field");
-field34.name = "cube";
-field34.type = "SFInt32";
-field34.accessType = "inputOutput";
-field34.value = "0";
-ComposedShader33.field = new MFNode();
+let ComposedShader32 = browser.currentScene.createNode("ComposedShader");
+ComposedShader32.DEF = "x3dom";
+ComposedShader32.language = "GLSL";
+let field33 = browser.currentScene.createNode("field");
+field33.name = "cube";
+field33.type = "SFInt32";
+field33.accessType = "inputOutput";
+field33.value = "0";
+ComposedShader32.field = new MFNode();
 
-ComposedShader33.field[0] = field34;
+ComposedShader32.field[0] = field33;
+
+let field34 = browser.currentScene.createNode("field");
+field34.name = "chromaticDispertion";
+field34.type = "SFVec3f";
+field34.accessType = "inputOutput";
+field34.value = "0.98 1 1.033";
+ComposedShader32.field[1] = field34;
 
 let field35 = browser.currentScene.createNode("field");
-field35.name = "chromaticDispertion";
-field35.type = "SFVec3f";
+field35.name = "bias";
+field35.type = "SFFloat";
 field35.accessType = "inputOutput";
-field35.value = "0.98 1 1.033";
-ComposedShader33.field[1] = field35;
+field35.value = "0.5";
+ComposedShader32.field[2] = field35;
 
 let field36 = browser.currentScene.createNode("field");
-field36.name = "bias";
+field36.name = "scale";
 field36.type = "SFFloat";
 field36.accessType = "inputOutput";
 field36.value = "0.5";
-ComposedShader33.field[2] = field36;
+ComposedShader32.field[3] = field36;
 
 let field37 = browser.currentScene.createNode("field");
-field37.name = "scale";
+field37.name = "power";
 field37.type = "SFFloat";
 field37.accessType = "inputOutput";
-field37.value = "0.5";
-ComposedShader33.field[3] = field37;
+field37.value = "2";
+ComposedShader32.field[4] = field37;
 
-let field38 = browser.currentScene.createNode("field");
-field38.name = "power";
-field38.type = "SFFloat";
-field38.accessType = "inputOutput";
-field38.value = "2";
-ComposedShader33.field[4] = field38;
+let ShaderPart38 = browser.currentScene.createNode("ShaderPart");
+ShaderPart38.url = new MFString(new java.lang.String["../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"]);
+ShaderPart38.type = "VERTEX";
+ComposedShader32.parts[5] = ShaderPart38;
 
 let ShaderPart39 = browser.currentScene.createNode("ShaderPart");
-ShaderPart39.url = new MFString(new java.lang.String["../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"]);
-ShaderPart39.type = "VERTEX";
-ComposedShader33.parts[5] = ShaderPart39;
+ShaderPart39.url = new MFString(new java.lang.String["../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"]);
+ShaderPart39.type = "FRAGMENT";
+ComposedShader32.parts[6] = ShaderPart39;
 
-let ShaderPart40 = browser.currentScene.createNode("ShaderPart");
-ShaderPart40.url = new MFString(new java.lang.String["../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"]);
-ShaderPart40.type = "FRAGMENT";
-ComposedShader33.parts[6] = ShaderPart40;
+Appearance23.shaders = new MFNode();
 
-Appearance24.shaders = new MFNode();
+Appearance23.shaders[0] = ComposedShader32;
 
-Appearance24.shaders[0] = ComposedShader33;
+let ComposedShader40 = browser.currentScene.createNode("ComposedShader");
+ComposedShader40.DEF = "x_ite";
+ComposedShader40.language = "GLSL";
+let field41 = browser.currentScene.createNode("field");
+field41.name = "cube";
+field41.type = "SFNode";
+field41.accessType = "inputOutput";
+let ComposedCubeMapTexture42 = browser.currentScene.createNode("ComposedCubeMapTexture");
+ComposedCubeMapTexture42.USE = "texture";
+field41.children = new MFNode();
 
-let ComposedShader41 = browser.currentScene.createNode("ComposedShader");
-ComposedShader41.DEF = "x_ite";
-ComposedShader41.language = "GLSL";
-let field42 = browser.currentScene.createNode("field");
-field42.name = "cube";
-field42.type = "SFNode";
-field42.accessType = "inputOutput";
-let ComposedCubeMapTexture43 = browser.currentScene.createNode("ComposedCubeMapTexture");
-ComposedCubeMapTexture43.USE = "texture";
-field42.children = new MFNode();
+field41.children[0] = ComposedCubeMapTexture42;
 
-field42.children[0] = ComposedCubeMapTexture43;
+ComposedShader40.field = new MFNode();
 
-ComposedShader41.field = new MFNode();
+ComposedShader40.field[0] = field41;
 
-ComposedShader41.field[0] = field42;
+let field43 = browser.currentScene.createNode("field");
+field43.name = "chromaticDispertion";
+field43.type = "SFVec3f";
+field43.accessType = "inputOutput";
+field43.value = "0.98 1 1.033";
+ComposedShader40.field[1] = field43;
 
 let field44 = browser.currentScene.createNode("field");
-field44.name = "chromaticDispertion";
-field44.type = "SFVec3f";
+field44.name = "bias";
+field44.type = "SFFloat";
 field44.accessType = "inputOutput";
-field44.value = "0.98 1 1.033";
-ComposedShader41.field[1] = field44;
+field44.value = "0.5";
+ComposedShader40.field[2] = field44;
 
 let field45 = browser.currentScene.createNode("field");
-field45.name = "bias";
+field45.name = "scale";
 field45.type = "SFFloat";
 field45.accessType = "inputOutput";
 field45.value = "0.5";
-ComposedShader41.field[2] = field45;
+ComposedShader40.field[3] = field45;
 
 let field46 = browser.currentScene.createNode("field");
-field46.name = "scale";
+field46.name = "power";
 field46.type = "SFFloat";
 field46.accessType = "inputOutput";
-field46.value = "0.5";
-ComposedShader41.field[3] = field46;
+field46.value = "2";
+ComposedShader40.field[4] = field46;
 
-let field47 = browser.currentScene.createNode("field");
-field47.name = "power";
-field47.type = "SFFloat";
-field47.accessType = "inputOutput";
-field47.value = "2";
-ComposedShader41.field[4] = field47;
+let ShaderPart47 = browser.currentScene.createNode("ShaderPart");
+ShaderPart47.url = new MFString(new java.lang.String["../shaders/x_ite.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"]);
+ShaderPart47.type = "VERTEX";
+ComposedShader40.parts[5] = ShaderPart47;
 
 let ShaderPart48 = browser.currentScene.createNode("ShaderPart");
-ShaderPart48.url = new MFString(new java.lang.String["../shaders/x_ite.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"]);
-ShaderPart48.type = "VERTEX";
-ComposedShader41.parts[5] = ShaderPart48;
+ShaderPart48.url = new MFString(new java.lang.String["../shaders/x_itebubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs"]);
+ShaderPart48.type = "FRAGMENT";
+ComposedShader40.parts[6] = ShaderPart48;
 
-let ShaderPart49 = browser.currentScene.createNode("ShaderPart");
-ShaderPart49.url = new MFString(new java.lang.String["../shaders/x_itebubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs"]);
-ShaderPart49.type = "FRAGMENT";
-ComposedShader41.parts[6] = ShaderPart49;
+Appearance23.shaders[1] = ComposedShader40;
 
-Appearance24.shaders[1] = ComposedShader41;
+Shape22.appearance = Appearance23;
 
-Shape23.appearance = Appearance24;
+let Sphere49 = browser.currentScene.createNode("Sphere");
+Shape22.geometry = Sphere49;
 
-let Sphere50 = browser.currentScene.createNode("Sphere");
-Shape23.geometry = Sphere50;
+Transform21.child = new undefined();
 
-Transform22.child = new undefined();
+Transform21.child[0] = Shape22;
 
-Transform22.child[0] = Shape23;
+ProtoBody20.children = new MFNode();
 
-ProtoBody21.children = new MFNode();
+ProtoBody20.children[0] = Transform21;
 
-ProtoBody21.children[0] = Transform22;
+let Script50 = browser.currentScene.createNode("Script");
+Script50.DEF = "Bounce";
+let field51 = browser.currentScene.createNode("field");
+field51.name = "translation";
+field51.accessType = "inputOutput";
+field51.type = "SFVec3f";
+field51.value = "0 0 0";
+Script50.field = new MFNode();
 
-let Script51 = browser.currentScene.createNode("Script");
-Script51.DEF = "Bounce";
+Script50.field[0] = field51;
+
 let field52 = browser.currentScene.createNode("field");
-field52.name = "translation";
+field52.name = "velocity";
 field52.accessType = "inputOutput";
 field52.type = "SFVec3f";
 field52.value = "0 0 0";
-Script51.field = new MFNode();
-
-Script51.field[0] = field52;
+Script50.field[1] = field52;
 
 let field53 = browser.currentScene.createNode("field");
-field53.name = "velocity";
-field53.accessType = "inputOutput";
-field53.type = "SFVec3f";
-field53.value = "0 0 0";
-Script51.field[1] = field53;
-
-let field54 = browser.currentScene.createNode("field");
-field54.name = "set_fraction";
-field54.accessType = "inputOnly";
-field54.type = "SFTime";
-Script51.field[2] = field54;
+field53.name = "set_fraction";
+field53.accessType = "inputOnly";
+field53.type = "SFTime";
+Script50.field[2] = field53;
 
 
-Script51.setSourceCode(`ecmascript:\n"+
+Script50.setSourceCode(`ecmascript:\n"+
 "			function initialize() {\n"+
 "			    translation = new SFVec3f(0, 0, 0);\n"+
 "			    velocity = new SFVec3f(\n"+
@@ -376,41 +372,41 @@ Script51.setSourceCode(`ecmascript:\n"+
 "				velocity.z += Math.random() * 0.2 - 0.1;\n"+
 "			    }\n"+
 "			}`)
-ProtoBody21.children[1] = Script51;
+ProtoBody20.children[1] = Script50;
 
-let TimeSensor55 = browser.currentScene.createNode("TimeSensor");
-TimeSensor55.DEF = "TourTime";
-TimeSensor55.cycleInterval = 0.15;
-TimeSensor55.loop = True;
-ProtoBody21.children[2] = TimeSensor55;
+let TimeSensor54 = browser.currentScene.createNode("TimeSensor");
+TimeSensor54.DEF = "TourTime";
+TimeSensor54.cycleInterval = 0.15;
+TimeSensor54.loop = True;
+ProtoBody20.children[2] = TimeSensor54;
+
+let ROUTE55 = browser.currentScene.createNode("ROUTE");
+ROUTE55.fromNode = "TourTime";
+ROUTE55.fromField = "cycleTime";
+ROUTE55.toNode = "Bounce";
+ROUTE55.toField = "set_fraction";
+ProtoBody20.children[3] = ROUTE55;
 
 let ROUTE56 = browser.currentScene.createNode("ROUTE");
-ROUTE56.fromNode = "TourTime";
-ROUTE56.fromField = "cycleTime";
-ROUTE56.toNode = "Bounce";
-ROUTE56.toField = "set_fraction";
-ProtoBody21.children[3] = ROUTE56;
+ROUTE56.fromNode = "Bounce";
+ROUTE56.fromField = "translation_changed";
+ROUTE56.toNode = "transform";
+ROUTE56.toField = "set_translation";
+ProtoBody20.children[4] = ROUTE56;
 
-let ROUTE57 = browser.currentScene.createNode("ROUTE");
-ROUTE57.fromNode = "Bounce";
-ROUTE57.fromField = "translation_changed";
-ROUTE57.toNode = "transform";
-ROUTE57.toField = "set_translation";
-ProtoBody21.children[4] = ROUTE57;
+ProtoDeclare19.protoBody = ProtoBody20;
 
-ProtoDeclare20.protoBody = ProtoBody21;
+browser.currentScene.children[3] = ProtoDeclare19;
 
-browser.currentScene.children[3] = ProtoDeclare20;
+let ProtoInstance57 = browser.currentScene.createNode("ProtoInstance");
+ProtoInstance57.name = "Bubble";
+browser.currentScene.children[4] = ProtoInstance57;
 
 let ProtoInstance58 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance58.name = "Bubble";
-browser.currentScene.children[4] = ProtoInstance58;
+browser.currentScene.children[5] = ProtoInstance58;
 
 let ProtoInstance59 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance59.name = "Bubble";
-browser.currentScene.children[5] = ProtoInstance59;
-
-let ProtoInstance60 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance60.name = "Bubble";
-browser.currentScene.children[6] = ProtoInstance60;
+browser.currentScene.children[6] = ProtoInstance59;
 

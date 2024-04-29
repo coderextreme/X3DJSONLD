@@ -22,7 +22,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('identifier'),
-              content_ : SFString('https://coderextreme.net/X3DJSONLD/src/main/data/force.x3d')),
+              content_ : SFString('https://coderextreme.net/X3DJSONLD/src/main/personal/force.x3d')),
 
             meta(
               name_ : SFString('description'),
@@ -150,7 +150,7 @@ ecmascript:eval (0
                       toField_ : SFString('set_translation'))])),
 
             ProtoDeclare(
-              name_ : SFString('cylinder'),
+              name_ : SFString('cyl'),
               ProtoInterface_ : 
                 ProtoInterface(
                   field_ : [
@@ -264,7 +264,7 @@ ecmascript:eval (0
                       value_ : SFString('50 50 50'))]),
 
                 ProtoInstance(
-                  name_ : SFString('cylinder'),
+                  name_ : SFString('cyl'),
                   DEF_ : SFString('linkA'),
                   fieldValue_ : [
                     fieldValue(

@@ -33,16 +33,13 @@ var X3D0 =  X3D(
               level_ : 1),
           component_ : 
             component(
-              name_ : SFString('Shape'),
-              level_ : 4),
-          component_ : 
-            component(
               name_ : SFString('Grouping'),
               level_ : 3),
           component_ : 
             component(
               name_ : SFString('Core'),
               level_ : 1),
+          /*<component name='Shape' level='4'></component>*/
           meta_ : [
             meta(
               name_ : SFString('title'),
@@ -62,7 +59,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('identifier'),
-              content_ : SFString('https://coderextreme.net/X3DJSONLD/src/main/data/bub.x3d'))]),
+              content_ : SFString('https://coderextreme.net/X3DJSONLD/src/main/personal/bub.x3d'))]),
       Scene_ : 
         Scene(
           children_ : [

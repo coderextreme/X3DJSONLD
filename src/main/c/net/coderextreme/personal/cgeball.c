@@ -56,7 +56,7 @@ head1.meta[8] = meta10;
 
 meta meta11 = createNode("meta");
 meta11.name = "identifier";
-meta11.content = "https://coderextreme.net/X3DJSONLD/src/main/data/ball.x3d";
+meta11.content = "https://coderextreme.net/X3DJSONLD/src/main/personal/ball.x3d";
 head1.meta[9] = meta11;
 
 meta meta12 = createNode("meta");

@@ -33,13 +33,16 @@ var X3D0 =  X3D(
               level_ : 1),
           component_ : 
             component(
+              name_ : SFString('Shape'),
+              level_ : 4),
+          component_ : 
+            component(
               name_ : SFString('Grouping'),
               level_ : 3),
           component_ : 
             component(
               name_ : SFString('Core'),
               level_ : 1),
-          /*<component name='Shape' level='4'></component>*/
           meta_ : [
             meta(
               name_ : SFString('title'),
@@ -110,85 +113,7 @@ var X3D0 =  X3D(
                                   topTexture_ : 
                                     ImageTexture(
                                       url_ : MFString([SFString("../resources/images/all_probes/stpeters_cross/stpeters_top.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png")]))),
-                              shaders_ : 
-                                ComposedShader(
-                                  DEF_ : SFString('x3dom'),
-                                  language_ : SFString('GLSL'),
-                                  field_ : [
-                                    field(
-                                      type_ : SFString("SFInt32"),
-                                      name_ : SFString('cube'),
-                                      accessType_ : SFString("inputOutput"),
-                                      value_ : SFString('0')),
-
-                                    field(
-                                      type_ : SFString("SFVec3f"),
-                                      name_ : SFString('chromaticDispertion'),
-                                      accessType_ : SFString("initializeOnly"),
-                                      value_ : SFString('0.98 1 1.033')),
-
-                                    field(
-                                      type_ : SFString("SFFloat"),
-                                      name_ : SFString('bias'),
-                                      accessType_ : SFString("inputOutput"),
-                                      value_ : SFString('0.5')),
-
-                                    field(
-                                      type_ : SFString("SFFloat"),
-                                      name_ : SFString('scale'),
-                                      accessType_ : SFString("inputOutput"),
-                                      value_ : SFString('0.5')),
-
-                                    field(
-                                      type_ : SFString("SFFloat"),
-                                      name_ : SFString('power'),
-                                      accessType_ : SFString("inputOutput"),
-                                      value_ : SFString('2')),
-
-                                    field(
-                                      type_ : SFString("SFFloat"),
-                                      name_ : SFString('a'),
-                                      accessType_ : SFString("inputOutput"),
-                                      value_ : SFString('10')),
-
-                                    field(
-                                      type_ : SFString("SFFloat"),
-                                      name_ : SFString('b'),
-                                      accessType_ : SFString("inputOutput"),
-                                      value_ : SFString('1')),
-
-                                    field(
-                                      type_ : SFString("SFFloat"),
-                                      name_ : SFString('c'),
-                                      accessType_ : SFString("inputOutput"),
-                                      value_ : SFString('20')),
-
-                                    field(
-                                      type_ : SFString("SFFloat"),
-                                      name_ : SFString('d'),
-                                      accessType_ : SFString("inputOutput"),
-                                      value_ : SFString('20')),
-
-                                    field(
-                                      type_ : SFString("SFFloat"),
-                                      name_ : SFString('tdelta'),
-                                      accessType_ : SFString("inputOutput"),
-                                      value_ : SFString('0')),
-
-                                    field(
-                                      type_ : SFString("SFFloat"),
-                                      name_ : SFString('pdelta'),
-                                      accessType_ : SFString("inputOutput"),
-                                      value_ : SFString('0')),
-                                  /*<field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field>*/
-                                  parts_ : 
-                                    ShaderPart(
-                                      type_ : SFString("VERTEX",
-                                      url_ : MFString([SFString("../shaders/x3dom_flowers_chromatic.vs"), SFString("https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs")]))],
-                                  parts_ : 
-                                    ShaderPart(
-                                      type_ : SFString("FRAGMENT",
-                                      url_ : MFString([SFString("../shaders/common.fs"), SFString("https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs")]))),
+                              /*<ComposedShader DEF='x3dom' language=\"GLSL\"> <field name='cube' type='SFInt32' accessType='inputOutput' value='0'></field> <field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field> <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1.0 1.033'></field> <field name='bias' type='SFFloat' accessType='inputOutput' value='0.5'></field> <field name='scale' type='SFFloat' accessType='inputOutput' value='0.5'></field> <field name='power' type='SFFloat' accessType='inputOutput' value='2'></field> <field name='a' type='SFFloat' accessType='inputOutput' value='10'></field> <field name='b' type='SFFloat' accessType='inputOutput' value='1'></field> <field name='c' type='SFFloat' accessType='inputOutput' value='20'></field> <field name='d' type='SFFloat' accessType='inputOutput' value='20'></field> <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field> <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field> <ShaderPart url='\"https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs\"' containerField='parts' type='VERTEX'></ShaderPart> <ShaderPart url='\"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart> </ComposedShader>*/
                               shaders_ : 
                                 ComposedShader(
                                   DEF_ : SFString('x_ite'),
@@ -264,11 +189,11 @@ var X3D0 =  X3D(
                                   parts_ : 
                                     ShaderPart(
                                       type_ : SFString("VERTEX",
-                                      url_ : MFString([SFString("../shaders/x_ite_flowers_chromatic.vs"), SFString("https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs")]))],
+                                      url_ : MFString([SFString("https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs"), SFString("https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs")]))],
                                   parts_ : 
                                     ShaderPart(
                                       type_ : SFString("FRAGMENT",
-                                      url_ : MFString([SFString("../shaders/x_ite.fs"), SFString("https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs")])))),
+                                      url_ : MFString([SFString("https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"), SFString("https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs")])))),
                           geometry_ : 
                             Sphere())),
 
@@ -448,42 +373,7 @@ ecmascript:eval (0
                       fromField_ : SFString('tdelta'),
                       toNode_ : SFString('x_ite'),
                       toField_ : SFString('tdelta')),
-
-                    ROUTE(
-                      fromNode_ : SFString('Animate'),
-                      fromField_ : SFString('a'),
-                      toNode_ : SFString('x3dom'),
-                      toField_ : SFString('a')),
-
-                    ROUTE(
-                      fromNode_ : SFString('Animate'),
-                      fromField_ : SFString('b'),
-                      toNode_ : SFString('x3dom'),
-                      toField_ : SFString('b')),
-
-                    ROUTE(
-                      fromNode_ : SFString('Animate'),
-                      fromField_ : SFString('c'),
-                      toNode_ : SFString('x3dom'),
-                      toField_ : SFString('c')),
-
-                    ROUTE(
-                      fromNode_ : SFString('Animate'),
-                      fromField_ : SFString('d'),
-                      toNode_ : SFString('x3dom'),
-                      toField_ : SFString('d')),
-
-                    ROUTE(
-                      fromNode_ : SFString('Animate'),
-                      fromField_ : SFString('pdelta'),
-                      toNode_ : SFString('x3dom'),
-                      toField_ : SFString('pdelta')),
-
-                    ROUTE(
-                      fromNode_ : SFString('Animate'),
-                      fromField_ : SFString('tdelta'),
-                      toNode_ : SFString('x3dom'),
-                      toField_ : SFString('tdelta'))])),
+                  /*<ROUTE fromNode='Animate' fromField='a' toNode='x3dom' toField='a'/> <ROUTE fromNode='Animate' fromField='b' toNode='x3dom' toField='b'/> <ROUTE fromNode='Animate' fromField='c' toNode='x3dom' toField='c'/> <ROUTE fromNode='Animate' fromField='d' toNode='x3dom' toField='d'/> <ROUTE fromNode='Animate' fromField='pdelta' toNode='x3dom' toField='pdelta'/> <ROUTE fromNode='Animate' fromField='tdelta' toNode='x3dom' toField='tdelta'/>*/])),
 
             ProtoInstance(
               name_ : SFString('flower')),

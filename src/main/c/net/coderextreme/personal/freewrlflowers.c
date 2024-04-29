@@ -29,7 +29,7 @@ head1.meta[3] = meta5;
 
 meta meta6 = createNode("meta");
 meta6.name = "identifier";
-meta6.content = "https://coderextreme.net/X3DJSONLD/src/main/data/freewrlflowers.x3d";
+meta6.content = "https://coderextreme.net/X3DJSONLD/src/main/personal/freewrlflowers.x3d";
 head1.meta[4] = meta6;
 
 head = head1;
@@ -51,7 +51,7 @@ children[1] = Background9;
 Group Group10 = createNode("Group");
 ExternProtoDeclare ExternProtoDeclare11 = createNode("ExternProtoDeclare");
 ExternProtoDeclare11.name = "FlowerProto";
-ExternProtoDeclare11.url = new MFString(new java.lang.String["../data/flowerproto.x3d#FlowerProto"]);
+ExternProtoDeclare11.url = new MFString(new java.lang.String["../personal/flowerproto.x3d#FlowerProto"]);
 field field12 = createNode("field");
 field12.name = "vertex";
 field12.accessType = "inputOutput";

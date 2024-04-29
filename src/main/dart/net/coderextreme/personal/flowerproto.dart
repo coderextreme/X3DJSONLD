@@ -62,7 +62,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('identifier'),
-              content_ : SFString('https://coderextreme.net/X3DJSONLD/src/main/data/flowerproto.x3d'))]),
+              content_ : SFString('https://coderextreme.net/X3DJSONLD/src/main/personal/flowerproto.x3d'))]),
       Scene_ : 
         Scene(
           children_ : [

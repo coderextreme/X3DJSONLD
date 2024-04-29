@@ -155,12 +155,12 @@ var X3D0 =  X3D(
                                 field(
                                   type_ : SFString("MFVec3f"),
                                   name_ : SFString('coordinates'),
-                                  accessType_ : SFString("outputOnly")),
+                                  accessType_ : SFString("inputOutput")),
 
                                 field(
                                   type_ : SFString("MFInt32"),
                                   name_ : SFString('coordIndexes'),
-                                  accessType_ : SFString("outputOnly")),
+                                  accessType_ : SFString("inputOutput")),
 
                                 field(
                                   type_ : SFString("SFFloat"),
@@ -194,46 +194,37 @@ var X3D0 =  X3D(
                               ],
 ecmascript:eval (0
 
-			var e = 5;
-			var f = 5;
-			var g = 5;
-			var h = 5;
-			var resolution = 100;
-
 			, function initialize() {
 			     generateCoordinates();
-			     var localci = [];
+			     var arrIndex = 0;
 			     for (var i = 0; i < resolution-1; i++) {
 				for (var j = 0; j < resolution-1; j++) {
-				     localci.push(i*resolution+j);
-				     localci.push(i*resolution+j+1);
-				     localci.push((i+1)*resolution+j+1);
-				     localci.push((i+1)*resolution+j);
-				     localci.push(-1);
+				     coordIndexes[arrIndex++] = i*resolution+j;
+				     coordIndexes[arrIndex++] = i*resolution+j+1;
+				     coordIndexes[arrIndex++] = (i+1)*resolution+j+1;
+				     coordIndexes[arrIndex++] = (i+1)*resolution+j;
+				     coordIndexes[arrIndex++] = -1;
 				}
 			    }
-			    coordIndexes = new MFInt32(localci);
 			}
 
 			, function generateCoordinates() {
 			     var theta = 0.0;
 			     var phi = 0.0;
 			     var delta = (2 * 3.141592653) / (resolution-1);
-			     var localc = [];
+			     var arrIndex = 0;
 			     for (var i = 0; i < resolution; i++) {
 				for (var j = 0; j < resolution; j++) {
 					var rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);
-					localc.push(new SFVec3f(
+					coordinates[arrIndex++] = new SFVec3f(
 						rho * Math.cos(phi) * Math.cos(theta),
 						rho * Math.cos(phi) * Math.sin(theta),
 						rho * Math.sin(phi)
-					));
+					);
 					theta += delta;
 				}
 				phi += delta;
 			     }
-			     
-			     coordinates = new MFVec3f(localc);
 			}
 
 			, function set_fraction(fraction, eventTime) {

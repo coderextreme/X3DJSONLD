@@ -14,7 +14,7 @@ head1.meta[0] = meta2;
 
 meta meta3 = createNode("meta");
 meta3.name = "identifier";
-meta3.content = "http://coderextreme.net/X3DJSONLD/src/main/data/ifscubeworks.x3d";
+meta3.content = "http://coderextreme.net/X3DJSONLD/src/main/personal/ifscubeworks.x3d";
 head1.meta[1] = meta3;
 
 meta meta4 = createNode("meta");
@@ -34,7 +34,7 @@ head1.meta[4] = meta6;
 
 meta meta7 = createNode("meta");
 meta7.name = "license";
-meta7.content = "https://www.web3d.org/x3d/content/examples/license.html";
+meta7.content = "https://coderextreme.net/X3DJSONLD/LICENSE";
 head1.meta[5] = meta7;
 
 meta meta8 = createNode("meta");
