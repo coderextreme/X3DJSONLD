@@ -40,217 +40,213 @@ component7.setLevel(1);
 head1.addChild(&component7);
 
 component& component8 =  component();
-component8.setName(CString("Shape"));
-component8.setLevel(4);
+component8.setName(CString("Grouping"));
+component8.setLevel(3);
 head1.addChild(&component8);
 
 component& component9 =  component();
-component9.setName(CString("Grouping"));
-component9.setLevel(3);
+component9.setName(CString("Core"));
+component9.setLevel(1);
 head1.addChild(&component9);
 
-component& component10 =  component();
-component10.setName(CString("Core"));
-component10.setLevel(1);
-head1.addChild(&component10);
+//<component name='Shape' level='4'></component>
+meta& meta10 =  meta();
+meta10.setName(CString("title"));
+meta10.setContent(CString("geo.x3d"));
+head1.addMeta(&meta10);
 
 meta& meta11 =  meta();
-meta11.setName(CString("title"));
-meta11.setContent(CString("geo.x3d"));
+meta11.setName(CString("creator"));
+meta11.setContent(CString("John Carlson"));
 head1.addMeta(&meta11);
 
 meta& meta12 =  meta();
-meta12.setName(CString("creator"));
-meta12.setContent(CString("John Carlson"));
+meta12.setName(CString("generator"));
+meta12.setContent(CString("manual"));
 head1.addMeta(&meta12);
 
 meta& meta13 =  meta();
-meta13.setName(CString("generator"));
-meta13.setContent(CString("manual"));
+meta13.setName(CString("identifier"));
+meta13.setContent(CString("https://coderextreme.net/X3DJSONLD/src/main/personal/geo.x3d"));
 head1.addMeta(&meta13);
 
 meta& meta14 =  meta();
-meta14.setName(CString("identifier"));
-meta14.setContent(CString("https://coderextreme.net/X3DJSONLD/src/main/data/geo.x3d"));
+meta14.setName(CString("description"));
+meta14.setContent(CString("a sphere"));
 head1.addMeta(&meta14);
-
-meta& meta15 =  meta();
-meta15.setName(CString("description"));
-meta15.setContent(CString("a sphere"));
-head1.addMeta(&meta15);
 
 X3D0.setHead(&head1);
 
-Scene& Scene16 =  Scene();
-NavigationInfo& NavigationInfo17 =  NavigationInfo();
-NavigationInfo17.setType(new CString[4]{CString("ANY"), CString("EXAMINE"), CString("FLY"), CString("LOOKAT")}, 4);
-Scene16.addChild(&NavigationInfo17);
+Scene& Scene15 =  Scene();
+NavigationInfo& NavigationInfo16 =  NavigationInfo();
+NavigationInfo16.setType(new CString[]{CString("ANY"), CString("EXAMINE"), CString("FLY"), CString("LOOKAT")}, 4);
+Scene15.addChild(&NavigationInfo16);
 
-Viewpoint& Viewpoint18 =  Viewpoint();
-Viewpoint18.setDEF(CString("Tour"));
-Viewpoint18.setDescription(CString("Tour Views"));
-Scene16.addChild(&Viewpoint18);
+Viewpoint& Viewpoint17 =  Viewpoint();
+Viewpoint17.setDEF(CString("Tour"));
+Viewpoint17.setDescription(CString("Tour Views"));
+Scene15.addChild(&Viewpoint17);
 
 //Viewpoint position='0 0 4' description='sphere in road'/
-Background& Background19 =  Background();
-Background19.setBackUrl(new CString[2]{CString("../resources/images/bBK.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBK.png")}, 2);
-Background19.setBottomUrl(new CString[2]{CString("../resources/images/bBT.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBT.png")}, 2);
-Background19.setFrontUrl(new CString[2]{CString("../resources/images/bFR.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/bFR.png")}, 2);
-Background19.setLeftUrl(new CString[2]{CString("../resources/images/bLF.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/bLF.png")}, 2);
-Background19.setRightUrl(new CString[2]{CString("../resources/images/bRT.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/bRT.png")}, 2);
-Background19.setTopUrl(new CString[2]{CString("../resources/images/bTP.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/bTP.png")}, 2);
-Scene16.addChild(&Background19);
+Background& Background18 =  Background();
+Background18.setBackUrl(new CString[]{CString("../resources/images/bBK.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBK.png")}, 2);
+Background18.setBottomUrl(new CString[]{CString("../resources/images/bBT.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBT.png")}, 2);
+Background18.setFrontUrl(new CString[]{CString("../resources/images/bFR.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/bFR.png")}, 2);
+Background18.setLeftUrl(new CString[]{CString("../resources/images/bLF.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/bLF.png")}, 2);
+Background18.setRightUrl(new CString[]{CString("../resources/images/bRT.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/bRT.png")}, 2);
+Background18.setTopUrl(new CString[]{CString("../resources/images/bTP.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/bTP.png")}, 2);
+Scene15.addChild(&Background18);
 
-Transform& Transform20 =  Transform();
-Shape& Shape21 =  Shape();
-Sphere& Sphere22 =  Sphere();
-Shape21.setGeometry(&Sphere22);
+Transform& Transform19 =  Transform();
+Shape& Shape20 =  Shape();
+Sphere& Sphere21 =  Sphere();
+Shape20.setGeometry(&Sphere21);
 
-Appearance& Appearance23 =  Appearance();
-Material& Material24 =  Material();
-Material24.setDiffuseColor(new float[3]{0.7,0.7,0.7});
-Material24.setSpecularColor(new float[3]{0.5,0.5,0.5});
-Appearance23.addChild(&Material24);
+Appearance& Appearance22 =  Appearance();
+Material& Material23 =  Material();
+Material23.setDiffuseColor(new float[]{0.7,0.7,0.7});
+Material23.setSpecularColor(new float[]{0.5,0.5,0.5});
+Appearance22.addChild(&Material23);
 
-ComposedCubeMapTexture& ComposedCubeMapTexture25 =  ComposedCubeMapTexture();
-ComposedCubeMapTexture25.setDEF(CString("texture"));
+ComposedCubeMapTexture& ComposedCubeMapTexture24 =  ComposedCubeMapTexture();
+ComposedCubeMapTexture24.setDEF(CString("texture"));
+ImageTexture& ImageTexture25 =  ImageTexture();
+ImageTexture25.setUrl(new CString[]{CString("../resources/images/bBK.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBK.png")}, 2);
+ComposedCubeMapTexture24.setBack(ImageTexture25);
+
 ImageTexture& ImageTexture26 =  ImageTexture();
-ImageTexture26.setUrl(new CString[2]{CString("../resources/images/bBK.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBK.png")}, 2);
-ComposedCubeMapTexture25.setBack(ImageTexture26);
+ImageTexture26.setUrl(new CString[]{CString("../resources/images/bBT.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBT.png")}, 2);
+ComposedCubeMapTexture24.setBottom(ImageTexture26);
 
 ImageTexture& ImageTexture27 =  ImageTexture();
-ImageTexture27.setUrl(new CString[2]{CString("../resources/images/bBT.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBT.png")}, 2);
-ComposedCubeMapTexture25.setBottom(ImageTexture27);
+ImageTexture27.setUrl(new CString[]{CString("../resources/images/bFR.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/bFR.png")}, 2);
+ComposedCubeMapTexture24.setFront(ImageTexture27);
 
 ImageTexture& ImageTexture28 =  ImageTexture();
-ImageTexture28.setUrl(new CString[2]{CString("../resources/images/bFR.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/bFR.png")}, 2);
-ComposedCubeMapTexture25.setFront(ImageTexture28);
+ImageTexture28.setUrl(new CString[]{CString("../resources/images/bLF.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/bLF.png")}, 2);
+ComposedCubeMapTexture24.setLeft(ImageTexture28);
 
 ImageTexture& ImageTexture29 =  ImageTexture();
-ImageTexture29.setUrl(new CString[2]{CString("../resources/images/bLF.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/bLF.png")}, 2);
-ComposedCubeMapTexture25.setLeft(ImageTexture29);
+ImageTexture29.setUrl(new CString[]{CString("../resources/images/bRT.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/bRT.png")}, 2);
+ComposedCubeMapTexture24.setRight(ImageTexture29);
 
 ImageTexture& ImageTexture30 =  ImageTexture();
-ImageTexture30.setUrl(new CString[2]{CString("../resources/images/bRT.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/bRT.png")}, 2);
-ComposedCubeMapTexture25.setRight(ImageTexture30);
+ImageTexture30.setUrl(new CString[]{CString("../resources/images/bTP.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/bTP.png")}, 2);
+ComposedCubeMapTexture24.setTop(ImageTexture30);
 
-ImageTexture& ImageTexture31 =  ImageTexture();
-ImageTexture31.setUrl(new CString[2]{CString("../resources/images/bTP.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/bTP.png")}, 2);
-ComposedCubeMapTexture25.setTop(ImageTexture31);
+Appearance22.addChild(&ComposedCubeMapTexture24);
 
-Appearance23.addChild(&ComposedCubeMapTexture25);
+ComposedShader& ComposedShader31 =  ComposedShader();
+ComposedShader31.setLanguage(CString("GLSL"));
+field& field32 =  field();
+field32.setName(CString("chromaticDispertion"));
+field32.setAccessType(CString("inputOutput"));
+field32.setType(CString("SFVec3f"));
+field32.setValue(CString("0.98 1 1.033"));
+ComposedShader31.addChild(&field32);
 
-ComposedShader& ComposedShader32 =  ComposedShader();
-ComposedShader32.setLanguage(CString("GLSL"));
 field& field33 =  field();
-field33.setName(CString("chromaticDispertion"));
+field33.setName(CString("cube"));
+field33.setType(CString("SFNode"));
 field33.setAccessType(CString("inputOutput"));
-field33.setType(CString("SFVec3f"));
-field33.setValue(CString("0.98 1 1.033"));
-ComposedShader32.addChild(&field33);
+ComposedCubeMapTexture& ComposedCubeMapTexture34 =  ComposedCubeMapTexture();
+ComposedCubeMapTexture34.setUSE(CString("texture"));
+field33.addChild(&ComposedCubeMapTexture34);
 
-field& field34 =  field();
-field34.setName(CString("cube"));
-field34.setType(CString("SFNode"));
-field34.setAccessType(CString("inputOutput"));
-ComposedCubeMapTexture& ComposedCubeMapTexture35 =  ComposedCubeMapTexture();
-ComposedCubeMapTexture35.setUSE(CString("texture"));
-field34.addChild(&ComposedCubeMapTexture35);
+ComposedShader31.addChild(&field33);
 
-ComposedShader32.addChild(&field34);
+field& field35 =  field();
+field35.setName(CString("bias"));
+field35.setAccessType(CString("inputOutput"));
+field35.setType(CString("SFFloat"));
+field35.setValue(CString("0.5"));
+ComposedShader31.addChild(&field35);
 
 field& field36 =  field();
-field36.setName(CString("bias"));
+field36.setName(CString("scale"));
 field36.setAccessType(CString("inputOutput"));
 field36.setType(CString("SFFloat"));
 field36.setValue(CString("0.5"));
-ComposedShader32.addChild(&field36);
+ComposedShader31.addChild(&field36);
 
 field& field37 =  field();
-field37.setName(CString("scale"));
+field37.setName(CString("power"));
 field37.setAccessType(CString("inputOutput"));
 field37.setType(CString("SFFloat"));
-field37.setValue(CString("0.5"));
-ComposedShader32.addChild(&field37);
+field37.setValue(CString("2"));
+ComposedShader31.addChild(&field37);
 
-field& field38 =  field();
-field38.setName(CString("power"));
-field38.setAccessType(CString("inputOutput"));
-field38.setType(CString("SFFloat"));
-field38.setValue(CString("2"));
-ComposedShader32.addChild(&field38);
+ShaderPart& ShaderPart38 =  ShaderPart();
+ShaderPart38.setUrl(new CString[]{CString("../shaders/x3dom.vs"), CString("https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs")}, 2);
+ShaderPart38.setType(CString("VERTEX"));
+ComposedShader31.setParts(&ShaderPart38);
 
 ShaderPart& ShaderPart39 =  ShaderPart();
-ShaderPart39.setUrl(new CString[2]{CString("../shaders/x3dom.vs"), CString("https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs")}, 2);
-ShaderPart39.setType(CString("VERTEX"));
-ComposedShader32.setParts(&ShaderPart39);
+ShaderPart39.setDEF(CString("common"));
+ShaderPart39.setUrl(new CString[]{CString("../shaders/common.fs"), CString("https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs")}, 2);
+ShaderPart39.setType(CString("FRAGMENT"));
+ComposedShader31.setParts(&ShaderPart39);
 
-ShaderPart& ShaderPart40 =  ShaderPart();
-ShaderPart40.setDEF(CString("common"));
-ShaderPart40.setUrl(new CString[2]{CString("../shaders/common.fs"), CString("https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs")}, 2);
-ShaderPart40.setType(CString("FRAGMENT"));
-ComposedShader32.setParts(&ShaderPart40);
+Appearance22.addChild(&ComposedShader31);
 
-Appearance23.addChild(&ComposedShader32);
+ComposedShader& ComposedShader40 =  ComposedShader();
+ComposedShader40.setLanguage(CString("GLSL"));
+field& field41 =  field();
+field41.setName(CString("chromaticDispertion"));
+field41.setAccessType(CString("initializeOnly"));
+field41.setType(CString("SFVec3f"));
+field41.setValue(CString("0.98 1 1.033"));
+ComposedShader40.addChild(&field41);
 
-ComposedShader& ComposedShader41 =  ComposedShader();
-ComposedShader41.setLanguage(CString("GLSL"));
 field& field42 =  field();
-field42.setName(CString("chromaticDispertion"));
+field42.setName(CString("cube"));
+field42.setType(CString("SFNode"));
 field42.setAccessType(CString("initializeOnly"));
-field42.setType(CString("SFVec3f"));
-field42.setValue(CString("0.98 1 1.033"));
-ComposedShader41.addChild(&field42);
+ComposedCubeMapTexture& ComposedCubeMapTexture43 =  ComposedCubeMapTexture();
+ComposedCubeMapTexture43.setUSE(CString("texture"));
+field42.addChild(&ComposedCubeMapTexture43);
 
-field& field43 =  field();
-field43.setName(CString("cube"));
-field43.setType(CString("SFNode"));
-field43.setAccessType(CString("initializeOnly"));
-ComposedCubeMapTexture& ComposedCubeMapTexture44 =  ComposedCubeMapTexture();
-ComposedCubeMapTexture44.setUSE(CString("texture"));
-field43.addChild(&ComposedCubeMapTexture44);
+ComposedShader40.addChild(&field42);
 
-ComposedShader41.addChild(&field43);
+field& field44 =  field();
+field44.setName(CString("bias"));
+field44.setAccessType(CString("initializeOnly"));
+field44.setType(CString("SFFloat"));
+field44.setValue(CString("0.5"));
+ComposedShader40.addChild(&field44);
 
 field& field45 =  field();
-field45.setName(CString("bias"));
+field45.setName(CString("scale"));
 field45.setAccessType(CString("initializeOnly"));
 field45.setType(CString("SFFloat"));
 field45.setValue(CString("0.5"));
-ComposedShader41.addChild(&field45);
+ComposedShader40.addChild(&field45);
 
 field& field46 =  field();
-field46.setName(CString("scale"));
+field46.setName(CString("power"));
 field46.setAccessType(CString("initializeOnly"));
 field46.setType(CString("SFFloat"));
-field46.setValue(CString("0.5"));
-ComposedShader41.addChild(&field46);
+field46.setValue(CString("2"));
+ComposedShader40.addChild(&field46);
 
-field& field47 =  field();
-field47.setName(CString("power"));
-field47.setAccessType(CString("initializeOnly"));
-field47.setType(CString("SFFloat"));
-field47.setValue(CString("2"));
-ComposedShader41.addChild(&field47);
+ShaderPart& ShaderPart47 =  ShaderPart();
+ShaderPart47.setUrl(new CString[]{CString("../shaders/x_ite.vs"), CString("https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs")}, 2);
+ShaderPart47.setType(CString("VERTEX"));
+ComposedShader40.setParts(&ShaderPart47);
 
 ShaderPart& ShaderPart48 =  ShaderPart();
-ShaderPart48.setUrl(new CString[2]{CString("../shaders/x_ite.vs"), CString("https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs")}, 2);
-ShaderPart48.setType(CString("VERTEX"));
-ComposedShader41.setParts(&ShaderPart48);
+ShaderPart48.setUrl(new CString[]{CString("../shaders/x_ite.fs"), CString("https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs")}, 2);
+ShaderPart48.setType(CString("FRAGMENT"));
+ComposedShader40.setParts(&ShaderPart48);
 
-ShaderPart& ShaderPart49 =  ShaderPart();
-ShaderPart49.setUrl(new CString[2]{CString("../shaders/x_ite.fs"), CString("https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs")}, 2);
-ShaderPart49.setType(CString("FRAGMENT"));
-ComposedShader41.setParts(&ShaderPart49);
+Appearance22.addChild(&ComposedShader40);
 
-Appearance23.addChild(&ComposedShader41);
+Shape20.addChild(&Appearance22);
 
-Shape21.addChild(&Appearance23);
+Transform19.addChild(&Shape20);
 
-Transform20.addChild(&Shape21);
+Scene15.addChild(&Transform19);
 
-Scene16.addChild(&Transform20);
-
-X3D0.setScene(&Scene16);
+X3D0.setScene(&Scene15);
 
 }

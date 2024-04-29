@@ -27,7 +27,7 @@ head1.meta[3] = meta5;
 
 let meta6 = browser.currentScene.createNode("meta");
 meta6.name = "identifier";
-meta6.content = "https://coderextreme.net/X3DJSONLD/src/main/data/sphere.x3d";
+meta6.content = "https://coderextreme.net/X3DJSONLD/src/main/personal/sphere.x3d";
 head1.meta[4] = meta6;
 
 let meta7 = browser.currentScene.createNode("meta");

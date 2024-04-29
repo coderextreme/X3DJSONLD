@@ -34,7 +34,7 @@ head1.meta[4] = meta6;
 
 meta meta7 = createNode("meta");
 meta7.name = "identifier";
-meta7.content = "https://coderextreme.net/X3DJSONLD/src/main/data/bubs.x3d";
+meta7.content = "https://coderextreme.net/X3DJSONLD/src/main/personal/bubs.x3d";
 head1.meta[5] = meta7;
 
 head = head1;

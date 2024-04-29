@@ -26,7 +26,7 @@ head1.addMeta(&meta4);
 
 meta& meta5 =  meta();
 meta5.setName(CString("identifier"));
-meta5.setContent(CString("https://coderextreme.net/X3DJSONLD/src/main/data/force.x3d"));
+meta5.setContent(CString("https://coderextreme.net/X3DJSONLD/src/main/data/extrusion.x3d"));
 head1.addMeta(&meta5);
 
 meta& meta6 =  meta();
@@ -86,7 +86,10 @@ _T("                function set_cycle(value) {")+
 _T("                        Browser.print(value);")+
 _T("                        var endA = new SFVec3f(spine[0].x*Math.random()*2, spine[0].y*Math.random()*2, spine[0].z*Math.random()*2);")+
 _T("                        var endB = new SFVec3f(spine[1].x*Math.random()*2, spine[1].y*Math.random()*2, spine[1].z*Math.random()*2);")+
-_T("		        spine = new MFVec3f([endA, endB]);")+
+_T("                        var tmpspine = new MFVec3f();")+
+_T("			tmpspine[0] = endA;")+
+_T("			tmpspine[1] = endB;")+
+_T("                        spine = tmpspine;")+
 _T("                }"));
 Group9.addChild(&Script15);
 

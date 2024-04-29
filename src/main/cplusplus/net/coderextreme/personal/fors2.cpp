@@ -31,7 +31,7 @@ head1.addMeta(&meta5);
 
 meta& meta6 =  meta();
 meta6.setName(CString("identifier"));
-meta6.setContent(CString("https://coderextreme.net/X3DJSONLD/src/main/data/fors2.x3d"));
+meta6.setContent(CString("https://coderextreme.net/X3DJSONLD/src/main/personal/fors2.x3d"));
 head1.addMeta(&meta6);
 
 meta& meta7 =  meta();
@@ -81,7 +81,7 @@ Appearance& Appearance19 =  Appearance();
 //comment before Material
 //comment after Material
 Material& Material20 =  Material();
-Material20.setDiffuseColor(new float[3]{1,0,0});
+Material20.setDiffuseColor(new float[]{1,0,0});
 Appearance19.addChild(&Material20);
 
 Shape17.addChild(&Appearance19);
@@ -92,8 +92,8 @@ ProtoBody13.addChild(&Transform14);
 
 PositionInterpolator& PositionInterpolator21 =  PositionInterpolator();
 PositionInterpolator21.setDEF(CString("NodePosition"));
-PositionInterpolator21.setKey(new float[2]{0,1}, 2);
-PositionInterpolator21.setKeyValue(new float[6]{0,0,0,0,5,0}, 6);
+PositionInterpolator21.setKey(new float[]{0,1}, 2);
+PositionInterpolator21.setKeyValue(new float[]{0,0,0,0,5,0}, 6);
 ProtoBody13.addChild(&PositionInterpolator21);
 
 Script& Script22 =  Script();
@@ -173,7 +173,7 @@ ProtoDeclare10.addChild(&ProtoBody13);
 Scene9.addChild(&ProtoDeclare10);
 
 ProtoDeclare& ProtoDeclare32 =  ProtoDeclare();
-ProtoDeclare32.setName(CString("cylinder"));
+ProtoDeclare32.setName(CString("cyl"));
 ProtoInterface& ProtoInterface33 =  ProtoInterface();
 field& field34 =  field();
 field34.setName(CString("positionA"));
@@ -194,13 +194,13 @@ Shape& Shape37 =  Shape();
 Extrusion& Extrusion38 =  Extrusion();
 Extrusion38.setDEF(CString("extrusion"));
 Extrusion38.setCreaseAngle(0.785);
-Extrusion38.setCrossSection(new float[34]{1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0}, 34);
-Extrusion38.setSpine(new float[9]{0,-50,0,0,0,0,0,50,0}, 9);
+Extrusion38.setCrossSection(new float[]{1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0}, 34);
+Extrusion38.setSpine(new float[]{0,-50,0,0,0,0,0,50,0}, 9);
 Shape37.setGeometry(&Extrusion38);
 
 Appearance& Appearance39 =  Appearance();
 Material& Material40 =  Material();
-Material40.setDiffuseColor(new float[3]{0,1,0});
+Material40.setDiffuseColor(new float[]{0,1,0});
 Appearance39.addChild(&Material40);
 
 Shape37.addChild(&Appearance39);
@@ -275,7 +275,7 @@ ProtoDeclare32.addChild(&ProtoBody36);
 Scene9.addChild(&ProtoDeclare32);
 
 Transform& Transform49 =  Transform();
-Transform49.setScale(new float[3]{0.1,0.1,0.1});
+Transform49.setScale(new float[]{0.1,0.1,0.1});
 ProtoInstance& ProtoInstance50 =  ProtoInstance();
 ProtoInstance50.setName(CString("node"));
 ProtoInstance50.setDEF(CString("nodeA"));
@@ -297,7 +297,7 @@ ProtoInstance52.addChild(&fieldValue53);
 Transform49.addChild(&ProtoInstance52);
 
 ProtoInstance& ProtoInstance54 =  ProtoInstance();
-ProtoInstance54.setName(CString("cylinder"));
+ProtoInstance54.setName(CString("cyl"));
 ProtoInstance54.setDEF(CString("linkA"));
 fieldValue& fieldValue55 =  fieldValue();
 fieldValue55.setName(CString("positionA"));

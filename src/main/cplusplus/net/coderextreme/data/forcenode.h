@@ -142,7 +142,7 @@ Script28.addChild(&field32);
 //_T("					function set_cycle(value) {")+
 //_T("                                                old = translation;")+
 //_T("						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);")+
-//_T("                                                keyValue = new MFVec3f([old, translation]);")+
+//_T("                                                keyValue = new MFVec3f(...[old, translation]);")+
 //_T("						// Browser.println(translation);")+
 //_T("					}"));
 Group13.addChild(&Script28);
@@ -188,7 +188,7 @@ ProtoDeclare9.addChild(&ProtoBody12);
 Scene8.addChild(&ProtoDeclare9);
 
 ProtoDeclare& ProtoDeclare38 =  ProtoDeclare();
-ProtoDeclare38.setName(CString("cyl"));
+ProtoDeclare38.setName(CString("cylinder"));
 ProtoInterface& ProtoInterface39 =  ProtoInterface();
 field& field40 =  field();
 field40.setName(CString("set_positionA"));
@@ -261,16 +261,16 @@ Script48.addChild(&IS52);
 //Script48.setSourceCode(CString("ecmascript:")+
 //_T("                function set_endA(value) {")+
 //_T("		    if (typeof spine === 'undefined') {")+
-//_T("		        spine = new MFVec3f([value, value]);")+
+//_T("		        spine = new MFVec3f(...[value, value]);")+
 //_T("		    } else {")+
-//_T("		        spine = new MFVec3f([value, spine[1]]);")+
+//_T("		        spine = new MFVec3f(...[value, spine[1]]);")+
 //_T("		    }")+
 //_T("                }")+
 //_T("                function set_endB(value) {")+
 //_T("		    if (typeof spine === 'undefined') {")+
-//_T("		        spine = new MFVec3f([value, value]);")+
+//_T("		        spine = new MFVec3f(...[value, value]);")+
 //_T("		    } else {")+
-//_T("		        spine = new MFVec3f([spine[0], value]);")+
+//_T("		        spine = new MFVec3f(...[spine[0], value]);")+
 //_T("		    }")+
 //_T("                }")+
 //_T("                function set_spine(value) {")+
@@ -342,7 +342,7 @@ ProtoInstance64.addChild(&fieldValue65);
 Transform56.addChild(&ProtoInstance64);
 
 ProtoInstance& ProtoInstance66 =  ProtoInstance();
-ProtoInstance66.setName(CString("cyl"));
+ProtoInstance66.setName(CString("cylinder"));
 ProtoInstance66.setDEF(CString("linkA"));
 fieldValue& fieldValue67 =  fieldValue();
 fieldValue67.setName(CString("set_positionA"));
@@ -357,7 +357,7 @@ ProtoInstance66.addChild(&fieldValue68);
 Transform56.addChild(&ProtoInstance66);
 
 ProtoInstance& ProtoInstance69 =  ProtoInstance();
-ProtoInstance69.setName(CString("cyl"));
+ProtoInstance69.setName(CString("cylinder"));
 ProtoInstance69.setDEF(CString("linkB"));
 fieldValue& fieldValue70 =  fieldValue();
 fieldValue70.setName(CString("set_positionA"));
@@ -372,7 +372,7 @@ ProtoInstance69.addChild(&fieldValue71);
 Transform56.addChild(&ProtoInstance69);
 
 ProtoInstance& ProtoInstance72 =  ProtoInstance();
-ProtoInstance72.setName(CString("cyl"));
+ProtoInstance72.setName(CString("cylinder"));
 ProtoInstance72.setDEF(CString("linkC"));
 fieldValue& fieldValue73 =  fieldValue();
 fieldValue73.setName(CString("set_positionA"));

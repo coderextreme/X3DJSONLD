@@ -9,10 +9,6 @@ var X3D0 =  X3D(
         head(
           component_ : 
             component(
-              name_ : SFString('Scripting'),
-              level_ : 1),
-          component_ : 
-            component(
               name_ : SFString('EnvironmentalEffects'),
               level_ : 3),
           component_ : 
@@ -42,19 +38,15 @@ var X3D0 =  X3D(
           meta_ : [
             meta(
               name_ : SFString('title'),
-              content_ : SFString('ball.x3d')),
+              content_ : SFString('fwball.x3d')),
 
             meta(
               name_ : SFString('creator'),
               content_ : SFString('John Carlson')),
 
             meta(
-              name_ : SFString('generator'),
-              content_ : SFString('manual')),
-
-            meta(
               name_ : SFString('identifier'),
-              content_ : SFString('https://coderextreme.net/X3DJSONLD/src/main/personal/ball.x3d')),
+              content_ : SFString('https://coderextreme.net/X3DJSONLD/src/main/personal/fwball.x3d')),
 
             meta(
               name_ : SFString('description'),
@@ -63,7 +55,7 @@ var X3D0 =  X3D(
         Scene(
           children_ : [
             WorldInfo(
-              title_ : SFString('ball.x3d')),
+              title_ : SFString('fwball.x3d')),
 
             NavigationInfo(
               type_ : MFString([SFString("ANY"), SFString("EXAMINE"), SFString("FLY"), SFString("LOOKAT")])),
@@ -150,9 +142,9 @@ var X3D0 =  X3D(
                           parts_ : 
                             ShaderPart(
                               type_ : SFString("VERTEX",
-                              url_ : MFString([SFString("../shaders/freewrl.vs"), SFString("https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.vs")]))],
+                              url_ : MFString([SFString("https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.vs")]))],
                           parts_ : 
                             ShaderPart(
                               type_ : SFString("FRAGMENT",
-                              url_ : MFString([SFString("../shaders/freewrl.fs"), SFString("https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.fs")]))))))]));
+                              url_ : MFString([SFString("https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.fs")]))))))]));
 void main() { exit(0); }

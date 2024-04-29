@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D profile="Full" version="4.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance">
+    <head>
+    	      <component level='1' name='Scripting'/>
+	      <component name='EnvironmentalEffects' level='3'></component>
+	      <component name='Shaders' level='1'></component>
+	      <component name='CubeMapTexturing' level='1'></component>
+	      <component name='Texturing' level='1'></component>
+	      <component name='Rendering' level='1'></component>
+	      <!--<component name='Shape' level='4'></component>-->
+	      <component name='Grouping' level='3'></component>
+	      <component name='Core' level='1'></component>
+        <meta name="title" content="bumpyfreewrl.x3d"></meta>
+        <meta name="creator" content="John Carlson"></meta>
+        <meta name="description" content="A flower"></meta>
+        <meta name="generator" content="X3D-Edit, https://savage.nps.edu/X3D-Edit"></meta>
+	<meta name="identifier" content="https://coderextreme.net/X3DJSONLD/src/main/personal/bumpyfreewrl.x3d"></meta>
+    </head>
+  <Scene>
+    <WorldInfo title='bumpyfreewrl.x3d'/>
+    <NavigationInfo type="&quot;EXAMINE&quot; &quot;ANY&quot;"/>
+    <Viewpoint position="0 0 40" description='Transparent rose'/>
+<!-- Images courtesy of Paul Debevec's Light Probe Image Gallery -->
+    <Background
+		backUrl='"../resources/images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"'
+		bottomUrl='"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"'
+		frontUrl='"../resources/images/all_probes/stpeters_cross/stpeters_front.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"'
+		leftUrl='"../resources/images/all_probes/stpeters_cross/stpeters_left.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"'
+		rightUrl='"../resources/images/all_probes/stpeters_cross/stpeters_right.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"'
+		topUrl='"../resources/images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"'
+	    ></Background> 
+	<Transform>
+	<Shape>
+	  <Sphere radius='5'></Sphere>
+	  <Appearance>
+          <Material diffuseColor=".7 .7 .7" specularColor=".5 .5 .5" ></Material>
+                <ComposedCubeMapTexture DEF="texture">
+			<ImageTexture id="backShader" containerField="back" url='"../resources/images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"' ></ImageTexture>
+			<ImageTexture id="bottomShader" containerField="bottom" url='"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"' ></ImageTexture>
+			<ImageTexture id="frontShader" containerField="front" url='"../resources/images/all_probes/stpeters_cross/stpeters_front.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"' ></ImageTexture>
+			<ImageTexture id="leftShader" containerField="left" url='"../resources/images/all_probes/stpeters_cross/stpeters_left.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"' ></ImageTexture>
+			<ImageTexture id="rightShader" containerField="right" url='"../resources/images/all_probes/stpeters_cross/stpeters_right.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"' ></ImageTexture>
+			<ImageTexture id="topShader" containerField="top" url='"../resources/images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"' ></ImageTexture>
+                </ComposedCubeMapTexture>
+                <ComposedShader DEF="freewrlShader" language="GLSL">
+                  <field name='chromaticDispertion' accessType='inputOnly' type='SFVec3f' value='0.98 1.0 1.033'></field>
+                  <field name='fw_textureCoordGenType' accessType='inputOnly' type='SFInt32' value='0'></field>
+                  <field name='bias' type='SFFloat' accessType='inputOnly' value='0.5'></field>
+                  <field name='scale' type='SFFloat' accessType='inputOnly' value='0.5'></field>
+                  <field name='power' type='SFFloat' accessType='inputOnly' value='2'></field>
+                  <field name='a' type='SFFloat' accessType='inputOutput' value='10'></field>
+                  <field name='b' type='SFFloat' accessType='inputOutput' value='1'></field>
+                  <field name='c' type='SFFloat' accessType='inputOutput' value='5'></field>
+                  <field name='d' type='SFFloat' accessType='inputOutput' value='5'></field>
+                  <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
+                  <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
+		  <ShaderPart url='"../shaders/freewrl_flowers_chromatic.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl_flowers_chromatic.vs"' containerField='parts' type='VERTEX'></ShaderPart>
+		  <ShaderPart url='"../shaders/freewrl_bubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl_bubbles.fs"' containerField='parts' type='FRAGMENT'></ShaderPart>
+                </ComposedShader>
+	  </Appearance>
+	</Shape>
+      </Transform>
+    </Scene>   
+</X3D>

@@ -58,7 +58,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('identifier'),
-              content_ : SFString('https://coderextreme.net/X3DJSONLD/src/main/data/flowers7.x3d')),
+              content_ : SFString('https://coderextreme.net/X3DJSONLD/src/main/personal/flowers7.x3d')),
 
             meta(
               name_ : SFString('description'),
@@ -118,7 +118,87 @@ var X3D0 =  X3D(
                             ImageTexture(
                               DEF_ : SFString('topShader'),
                               url_ : MFString([SFString("../resources/images/all_probes/beach_cross/beach_top.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png")]))),
-                      /*<ComposedShader DEF='x3dom' language=\"GLSL\"> <field name='cube' type='SFInt32' accessType='inputOutput' value='0'></field> <field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field> <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1.0 1.033'></field> <field name='bias' type='SFFloat' accessType='inputOutput' value='0.5'></field> <field name='scale' type='SFFloat' accessType='inputOutput' value='0.5'></field> <field name='power' type='SFFloat' accessType='inputOutput' value='2'></field> <field name='a' type='SFFloat' accessType='inputOutput' value='10'></field> <field name='b' type='SFFloat' accessType='inputOutput' value='1'></field> <field name='c' type='SFFloat' accessType='inputOutput' value='20'></field> <field name='d' type='SFFloat' accessType='inputOutput' value='20'></field> <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field> <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field> <ShaderPart url='\"https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs\"' containerField='parts' type='VERTEX'></ShaderPart> <ShaderPart url='\"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart> </ComposedShader>*/
+                      shaders_ : 
+                        ComposedShader(
+                          DEF_ : SFString('x3dom'),
+                          language_ : SFString('GLSL'),
+                          /*TODO VERIFY <field name='cube' type='SFInt32' accessType='inputOutput' value='0'></field>*/
+                          field_ : [
+                            field(
+                              type_ : SFString("SFNode"),
+                              name_ : SFString('cube'),
+                              accessType_ : SFString("inputOutput"),
+                              children_ : [
+                                ComposedCubeMapTexture(
+                                  USE_ : SFString('texture'))]),
+
+                            field(
+                              type_ : SFString("SFVec3f"),
+                              name_ : SFString('chromaticDispertion'),
+                              accessType_ : SFString("initializeOnly"),
+                              value_ : SFString('0.98 1 1.033')),
+
+                            field(
+                              type_ : SFString("SFFloat"),
+                              name_ : SFString('bias'),
+                              accessType_ : SFString("inputOutput"),
+                              value_ : SFString('0.5')),
+
+                            field(
+                              type_ : SFString("SFFloat"),
+                              name_ : SFString('scale'),
+                              accessType_ : SFString("inputOutput"),
+                              value_ : SFString('0.5')),
+
+                            field(
+                              type_ : SFString("SFFloat"),
+                              name_ : SFString('power'),
+                              accessType_ : SFString("inputOutput"),
+                              value_ : SFString('2')),
+
+                            field(
+                              type_ : SFString("SFFloat"),
+                              name_ : SFString('a'),
+                              accessType_ : SFString("inputOutput"),
+                              value_ : SFString('10')),
+
+                            field(
+                              type_ : SFString("SFFloat"),
+                              name_ : SFString('b'),
+                              accessType_ : SFString("inputOutput"),
+                              value_ : SFString('1')),
+
+                            field(
+                              type_ : SFString("SFFloat"),
+                              name_ : SFString('c'),
+                              accessType_ : SFString("inputOutput"),
+                              value_ : SFString('20')),
+
+                            field(
+                              type_ : SFString("SFFloat"),
+                              name_ : SFString('d'),
+                              accessType_ : SFString("inputOutput"),
+                              value_ : SFString('20')),
+
+                            field(
+                              type_ : SFString("SFFloat"),
+                              name_ : SFString('tdelta'),
+                              accessType_ : SFString("inputOutput"),
+                              value_ : SFString('0')),
+
+                            field(
+                              type_ : SFString("SFFloat"),
+                              name_ : SFString('pdelta'),
+                              accessType_ : SFString("inputOutput"),
+                              value_ : SFString('0')),
+                          parts_ : 
+                            ShaderPart(
+                              type_ : SFString("VERTEX",
+                              url_ : MFString([SFString("https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs"), SFString("https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs")]))],
+                          parts_ : 
+                            ShaderPart(
+                              type_ : SFString("FRAGMENT",
+                              url_ : MFString([SFString("https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"), SFString("https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs")]))),
                       shaders_ : 
                         ComposedShader(
                           DEF_ : SFString('x_ite'),

@@ -48,7 +48,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('identifier'),
-              content_ : SFString('https://coderextreme.net/X3DJSONLD/src/main/data/ball.x3d')),
+              content_ : SFString('https://coderextreme.net/X3DJSONLD/src/main/personal/ball.x3d')),
 
             meta(
               name_ : SFString('description'),

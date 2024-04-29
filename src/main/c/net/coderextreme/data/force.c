@@ -70,7 +70,11 @@ ProtoDeclare ProtoDeclare10 = browser.createX3DFromString(`<?xml version="1.0" e
 					function set_cycle(value) {
                                                 old = translation;
 						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);
-                                                keyValue = new MFVec3f([old, translation]);
+                                                var tmpkeyValue = new MFVec3f();
+			    			tmpkeyValue[0] = old;
+			    			tmpkeyValue[1] = translation;
+                                                keyValue = tmpkeyValue;
+			    		
 						// Browser.println(translation);
 					}]]></Script>
 <TimeSensor DEF="nodeClock" cycleInterval="3" loop="true"></TimeSensor>
@@ -193,7 +197,11 @@ Script29.setSourceCode(`ecmascript:\n"+
 "					function set_cycle(value) {\n"+
 "                                                old = translation;\n"+
 "						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);\n"+
-"                                                keyValue = new MFVec3f([old, translation]);\n"+
+"                                                var tmpkeyValue = new MFVec3f();\n"+
+"			    			tmpkeyValue[0] = old;\n"+
+"			    			tmpkeyValue[1] = translation;\n"+
+"                                                keyValue = tmpkeyValue;\n"+
+"			    		\n"+
 "						// Browser.println(translation);\n"+
 "					}`)
 Group14.children[2] = Script29;
@@ -261,17 +269,29 @@ ProtoDeclare ProtoDeclare39 = browser.createX3DFromString(`<?xml version="1.0" e
 
                 function set_endA(value) {
 		    if (typeof spine === 'undefined') {
-		        spine = new MFVec3f([value, value]);
+		        var tmpspine = new MFVec3f();
+			tmpspine[0] = value;
+			tmpspine[1] = value;
+			spine = tmpspine;
 		    } else {
-		        spine = new MFVec3f([value, spine[1]]);
+		        var tmpspine = new MFVec3f();
+			tmpspine[0] = value;
+			tmpspine[1] = spine[1];
+			spine = tmpspine;
 		    }
                 }
 
                 function set_endB(value) {
 		    if (typeof spine === 'undefined') {
-		        spine = new MFVec3f([value, value]);
+		        var tmpspine = new MFVec3f();
+			tmpspine[0] = value;
+			tmpspine[1] = value;
+			spine = tmpspine;
 		    } else {
-		        spine = new MFVec3f([spine[0], value]);
+		        var tmpspine = new MFVec3f();
+			tmpspine[0] = spine[0];
+			tmpspine[1] = value;
+			spine = tmpspine;
 		    }
                 }
 
@@ -364,17 +384,29 @@ Script49.setSourceCode(`ecmascript:\n"+
 "\n"+
 "                function set_endA(value) {\n"+
 "		    if (typeof spine === 'undefined') {\n"+
-"		        spine = new MFVec3f([value, value]);\n"+
+"		        var tmpspine = new MFVec3f();\n"+
+"			tmpspine[0] = value;\n"+
+"			tmpspine[1] = value;\n"+
+"			spine = tmpspine;\n"+
 "		    } else {\n"+
-"		        spine = new MFVec3f([value, spine[1]]);\n"+
+"		        var tmpspine = new MFVec3f();\n"+
+"			tmpspine[0] = value;\n"+
+"			tmpspine[1] = spine[1];\n"+
+"			spine = tmpspine;\n"+
 "		    }\n"+
 "                }\n"+
 "\n"+
 "                function set_endB(value) {\n"+
 "		    if (typeof spine === 'undefined') {\n"+
-"		        spine = new MFVec3f([value, value]);\n"+
+"		        var tmpspine = new MFVec3f();\n"+
+"			tmpspine[0] = value;\n"+
+"			tmpspine[1] = value;\n"+
+"			spine = tmpspine;\n"+
 "		    } else {\n"+
-"		        spine = new MFVec3f([spine[0], value]);\n"+
+"		        var tmpspine = new MFVec3f();\n"+
+"			tmpspine[0] = spine[0];\n"+
+"			tmpspine[1] = value;\n"+
+"			spine = tmpspine;\n"+
 "		    }\n"+
 "                }\n"+
 "\n"+

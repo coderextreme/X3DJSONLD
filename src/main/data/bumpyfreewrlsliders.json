@@ -587,7 +587,7 @@
                         {
                           "@DEF":"EntityManager",
                           "@networkMode":"networkReader",
-                          "-mapping":[
+                          "-children":[
                             { "DISEntityTypeMapping":
                               {
                                 "@category":77,

@@ -22,7 +22,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('identifier'),
-              content_ : SFString('https://coderextreme.net/X3DJSONLD/src/main/data/rubikOnFire.x3d')),
+              content_ : SFString('https://coderextreme.net/X3DJSONLD/src/main/personal/rubikOnFire.x3d')),
 
             meta(
               name_ : SFString('description'),

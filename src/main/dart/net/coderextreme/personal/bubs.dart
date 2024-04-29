@@ -30,7 +30,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('identifier'),
-              content_ : SFString('https://coderextreme.net/X3DJSONLD/src/main/data/bubs.x3d'))]),
+              content_ : SFString('https://coderextreme.net/X3DJSONLD/src/main/personal/bubs.x3d'))]),
       Scene_ : 
         Scene(
           children_ : [

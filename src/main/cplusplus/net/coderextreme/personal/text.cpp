@@ -26,7 +26,7 @@ head1.addMeta(&meta4);
 
 meta& meta5 =  meta();
 meta5.setName(CString("identifier"));
-meta5.setContent(CString("https://coderextreme.net/X3DJSONLD/src/main/data/text.x3d"));
+meta5.setContent(CString("https://coderextreme.net/X3DJSONLD/src/main/personal/text.x3d"));
 head1.addMeta(&meta5);
 
 meta& meta6 =  meta();
@@ -45,7 +45,7 @@ Scene& Scene8 =  Scene();
 Transform& Transform9 =  Transform();
 Shape& Shape10 =  Shape();
 Text& Text11 =  Text();
-Text11.setString(new CString[1]{CString("Node\"\"\"")}, 1);
+Text11.setString(new CString[]{CString("Node\"\"\"")}, 1);
 CFontStyle& FontStyle12 =  CFontStyle();
 Text11.setFontStyle(&FontStyle12);
 
@@ -61,7 +61,7 @@ Transform9.addChild(&Shape10);
 
 Shape& Shape15 =  Shape();
 Text& Text16 =  Text();
-Text16.setString(new CString[4]{CString("Node2"), CString("\\\\"), CString("\\\\\\\\"), CString("Node2")}, 4);
+Text16.setString(new CString[]{CString("Node2"), CString("\\\\"), CString("\\\\\\\\"), CString("Node2")}, 4);
 CFontStyle& FontStyle17 =  CFontStyle();
 Text16.setFontStyle(&FontStyle17);
 
@@ -77,7 +77,7 @@ Transform9.addChild(&Shape15);
 
 Shape& Shape20 =  Shape();
 Text& Text21 =  Text();
-Text21.setString(new CString[2]{CString("Node3 \\\\\\\\ \\\\ "), CString("Node3\"\"\"")}, 2);
+Text21.setString(new CString[]{CString("Node3 \\\\\\\\ \\\\ "), CString("Node3\"\"\"")}, 2);
 CFontStyle& FontStyle22 =  CFontStyle();
 Text21.setFontStyle(&FontStyle22);
 

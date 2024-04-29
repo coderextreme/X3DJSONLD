@@ -36,29 +36,29 @@ head1.addMeta(&meta6);
 
 meta& meta7 =  meta();
 meta7.setName(CString("identifier"));
-meta7.setContent(CString("https://coderextreme.net/X3DJSONLD/src/main/data/bubs.x3d"));
+meta7.setContent(CString("https://coderextreme.net/X3DJSONLD/src/main/personal/bubs.x3d"));
 head1.addMeta(&meta7);
 
 X3D0.setHead(&head1);
 
 Scene& Scene8 =  Scene();
 NavigationInfo& NavigationInfo9 =  NavigationInfo();
-NavigationInfo9.setType(new CString[1]{CString("EXAMINE")}, 1);
+NavigationInfo9.setType(new CString[]{CString("EXAMINE")}, 1);
 Scene8.addChild(&NavigationInfo9);
 
 Viewpoint& Viewpoint10 =  Viewpoint();
-Viewpoint10.setPosition(new float[3]{0,0,4});
-Viewpoint10.setOrientation(new float[4]{1,0,0,0});
+Viewpoint10.setPosition(new float[]{0,0,4});
+Viewpoint10.setOrientation(new float[]{1,0,0,0});
 Viewpoint10.setDescription(CString("Bubbles in action"));
 Scene8.addChild(&Viewpoint10);
 
 Background& Background11 =  Background();
-Background11.setBackUrl(new CString[2]{CString("../resources/images/BK.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/BK.png")}, 2);
-Background11.setBottomUrl(new CString[2]{CString("../resources/images/BT.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/BT.png")}, 2);
-Background11.setFrontUrl(new CString[2]{CString("../resources/images/FR.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/FR.png")}, 2);
-Background11.setLeftUrl(new CString[2]{CString("../resources/images/LF.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/LF.png")}, 2);
-Background11.setRightUrl(new CString[2]{CString("../resources/images/RT.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/RT.png")}, 2);
-Background11.setTopUrl(new CString[2]{CString("../resources/images/TP.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/TP.png")}, 2);
+Background11.setBackUrl(new CString[]{CString("../resources/images/BK.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/BK.png")}, 2);
+Background11.setBottomUrl(new CString[]{CString("../resources/images/BT.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/BT.png")}, 2);
+Background11.setFrontUrl(new CString[]{CString("../resources/images/FR.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/FR.png")}, 2);
+Background11.setLeftUrl(new CString[]{CString("../resources/images/LF.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/LF.png")}, 2);
+Background11.setRightUrl(new CString[]{CString("../resources/images/RT.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/RT.png")}, 2);
+Background11.setTopUrl(new CString[]{CString("../resources/images/TP.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/TP.png")}, 2);
 Scene8.addChild(&Background11);
 
 ProtoDeclare& ProtoDeclare12 =  ProtoDeclare();
@@ -73,7 +73,7 @@ Shape15.setGeometry(&Sphere16);
 
 Appearance& Appearance17 =  Appearance();
 Material& Material18 =  Material();
-Material18.setDiffuseColor(new float[3]{1,0,0});
+Material18.setDiffuseColor(new float[]{1,0,0});
 Material18.setTransparency(0.2);
 Appearance17.addChild(&Material18);
 

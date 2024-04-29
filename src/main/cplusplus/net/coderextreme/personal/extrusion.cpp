@@ -26,7 +26,7 @@ head1.addMeta(&meta4);
 
 meta& meta5 =  meta();
 meta5.setName(CString("identifier"));
-meta5.setContent(CString("https://coderextreme.net/X3DJSONLD/src/main/data/extrusion.x3d"));
+meta5.setContent(CString("https://coderextreme.net/X3DJSONLD/src/main/personal/extrusion.x3d"));
 head1.addMeta(&meta5);
 
 meta& meta6 =  meta();
@@ -46,14 +46,14 @@ Group& Group9 =  Group();
 Shape& Shape10 =  Shape();
 Extrusion& Extrusion11 =  Extrusion();
 Extrusion11.setDEF(CString("extrusion"));
-Extrusion11.setSpine(new float[6]{-50,-50,0,50,50,0}, 6);
+Extrusion11.setSpine(new float[]{-50,-50,0,50,50,0}, 6);
 Extrusion11.setCreaseAngle(0.785);
-Extrusion11.setCrossSection(new float[34]{1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0}, 34);
+Extrusion11.setCrossSection(new float[]{1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0}, 34);
 Shape10.setGeometry(&Extrusion11);
 
 Appearance& Appearance12 =  Appearance();
 Material& Material13 =  Material();
-Material13.setDiffuseColor(new float[3]{0,1,0});
+Material13.setDiffuseColor(new float[]{0,1,0});
 Appearance12.addChild(&Material13);
 
 Shape10.addChild(&Appearance12);

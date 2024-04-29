@@ -31,7 +31,7 @@
 					function set_cycle(value) {
                                                 old = translation;
 						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);
-                                                keyValue = new MFVec3f([old, translation]);
+                                                keyValue = new MFVec3f(...[old, translation]);
 						// Browser.println(translation);
 					}]]></Script>
 <TimeSensor DEF="nodeClock" cycleInterval="3" loop="true"></TimeSensor>
@@ -42,7 +42,7 @@
 </Group>
 </ProtoBody>
 </ProtoDeclare>
-<ProtoDeclare name="cyl"><ProtoInterface><field name="set_positionA" accessType="inputOnly" type="SFVec3f"></field>
+<ProtoDeclare name="cylinder"><ProtoInterface><field name="set_positionA" accessType="inputOnly" type="SFVec3f"></field>
 <field name="set_positionB" accessType="inputOnly" type="SFVec3f"></field>
 </ProtoInterface>
 <ProtoBody><Group><Shape><Extrusion DEF="extrusion" creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0" spine="0 -50 0 0 50 0"></Extrusion>
@@ -59,17 +59,17 @@
 
                 function set_endA(value) {
 		    if (typeof spine === 'undefined') {
-		        spine = new MFVec3f([value, value]);
+		        spine = new MFVec3f(...[value, value]);
 		    } else {
-		        spine = new MFVec3f([value, spine[1]]);
+		        spine = new MFVec3f(...[value, spine[1]]);
 		    }
                 }
 
                 function set_endB(value) {
 		    if (typeof spine === 'undefined') {
-		        spine = new MFVec3f([value, value]);
+		        spine = new MFVec3f(...[value, value]);
 		    } else {
-		        spine = new MFVec3f([spine[0], value]);
+		        spine = new MFVec3f(...[spine[0], value]);
 		    }
                 }
 
@@ -89,13 +89,13 @@
 </ProtoInstance>
 <ProtoInstance name="node" DEF="nodeD"><fieldValue name="position" value="50 50 -50"></fieldValue>
 </ProtoInstance>
-<ProtoInstance name="cyl" DEF="linkA"><fieldValue name="set_positionA" value="0 0 0"></fieldValue>
+<ProtoInstance name="cylinder" DEF="linkA"><fieldValue name="set_positionA" value="0 0 0"></fieldValue>
 <fieldValue name="set_positionB" value="50 50 50"></fieldValue>
 </ProtoInstance>
-<ProtoInstance name="cyl" DEF="linkB"><fieldValue name="set_positionA" value="0 0 0"></fieldValue>
+<ProtoInstance name="cylinder" DEF="linkB"><fieldValue name="set_positionA" value="0 0 0"></fieldValue>
 <fieldValue name="set_positionB" value="-50 -50 -50"></fieldValue>
 </ProtoInstance>
-<ProtoInstance name="cyl" DEF="linkC"><fieldValue name="set_positionA" value="50 50 50"></fieldValue>
+<ProtoInstance name="cylinder" DEF="linkC"><fieldValue name="set_positionA" value="50 50 50"></fieldValue>
 <fieldValue name="set_positionB" value="50 50 -50"></fieldValue>
 </ProtoInstance>
 </Transform>

@@ -208,7 +208,6 @@ HAnimHumanoid43.info = new MFString(new java.lang.String["humanoidVersion=2.0"])
 HAnimHumanoid43.version = "2.0";
 //</LOD>
 let Coordinate44 = browser.currentScene.createNode("Coordinate");
-Coordinate44.USE = "TheSkinCoord";
 HAnimHumanoid43.skinCoord = Coordinate44;
 
 let HAnimJoint45 = browser.currentScene.createNode("HAnimJoint");

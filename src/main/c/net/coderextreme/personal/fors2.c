@@ -29,7 +29,7 @@ head1.meta[3] = meta5;
 
 meta meta6 = createNode("meta");
 meta6.name = "identifier";
-meta6.content = "https://coderextreme.net/X3DJSONLD/src/main/data/fors2.x3d";
+meta6.content = "https://coderextreme.net/X3DJSONLD/src/main/personal/fors2.x3d";
 head1.meta[4] = meta6;
 
 meta meta7 = createNode("meta");
@@ -212,7 +212,7 @@ children[0] = ProtoDeclare10;
 
 ProtoDeclare ProtoDeclare32 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
-<ProtoDeclare name="cylinder" ><ProtoInterface><field name="positionA" accessType="inputOnly" type="SFVec3f"></field>
+<ProtoDeclare name="cyl" ><ProtoInterface><field name="positionA" accessType="inputOnly" type="SFVec3f"></field>
 <field name="positionB" accessType="inputOnly" type="SFVec3f"></field>
 </ProtoInterface>
 <ProtoBody><Shape><Extrusion DEF="extrusion" creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0" spine="0 -50 0 0 0 0 0 50 0"></Extrusion>
@@ -250,7 +250,7 @@ ProtoDeclare ProtoDeclare32 = browser.createX3DFromString(`<?xml version="1.0" e
 <ROUTE fromNode="MoveCylinder" fromField="spine" toNode="extrusion" toField="set_spine"></ROUTE>
 </ProtoBody>
 </ProtoDeclare>`);
-ProtoDeclare32.name = "cylinder";
+ProtoDeclare32.name = "cyl";
 ProtoInterface ProtoInterface33 = createNode("ProtoInterface");
 field field34 = createNode("field");
 field34.name = "positionA";
@@ -391,7 +391,7 @@ ProtoInstance52.fieldValue[0] = fieldValue53;
 Transform49.children[1] = ProtoInstance52;
 
 ProtoInstance ProtoInstance54 = createNode("ProtoInstance");
-ProtoInstance54.name = "cylinder";
+ProtoInstance54.name = "cyl";
 ProtoInstance54.DEF = "linkA";
 fieldValue fieldValue55 = createNode("fieldValue");
 fieldValue55.name = "positionA";

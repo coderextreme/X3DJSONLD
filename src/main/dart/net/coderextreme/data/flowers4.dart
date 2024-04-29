@@ -33,13 +33,16 @@ var X3D0 =  X3D(
               level_ : 1),
           component_ : 
             component(
+              name_ : SFString('Shape'),
+              level_ : 4),
+          component_ : 
+            component(
               name_ : SFString('Grouping'),
               level_ : 3),
           component_ : 
             component(
               name_ : SFString('Core'),
               level_ : 1),
-          /*<component name='Shape' level='4'></component>*/
           meta_ : [
             meta(
               name_ : SFString('title'),
@@ -140,11 +143,11 @@ var X3D0 =  X3D(
                           parts_ : 
                             ShaderPart(
                               type_ : SFString("VERTEX",
-                              url_ : MFString([SFString("../shaders/x3dom.vs"), SFString("https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs")]))],
+                              url_ : MFString([SFString("../shaders/x_ite.vs"), SFString("https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"), SFString("https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs")]))],
                           parts_ : 
                             ShaderPart(
                               type_ : SFString("FRAGMENT",
-                              url_ : MFString([SFString("../shaders/pc_bubbles.fs"), SFString("https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs")])))),
+                              url_ : MFString([SFString("../shaders/x_ite.fs"), SFString("https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"), SFString("https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs")])))),
                   /*<Sphere>*/
                   geometry_ : 
                     IndexedFaceSet(
@@ -171,14 +174,32 @@ var X3D0 =  X3D(
                   type_ : SFString("MFInt32"),
                   name_ : SFString('coordIndexes'),
                   accessType_ : SFString("outputOnly")),
+
+                field(
+                  type_ : SFString("SFFloat"),
+                  name_ : SFString('e'),
+                  accessType_ : SFString("inputOutput"),
+                  value_ : SFString('5')),
+
+                field(
+                  type_ : SFString("SFFloat"),
+                  name_ : SFString('f'),
+                  accessType_ : SFString("inputOutput"),
+                  value_ : SFString('5')),
+
+                field(
+                  type_ : SFString("SFFloat"),
+                  name_ : SFString('g'),
+                  accessType_ : SFString("inputOutput"),
+                  value_ : SFString('5')),
+
+                field(
+                  type_ : SFString("SFFloat"),
+                  name_ : SFString('h'),
+                  accessType_ : SFString("inputOutput"),
+                  value_ : SFString('5')),
               ],
 ecmascript:eval (0
-
-var e = 5;
-var f = 5;
-var g = 5;
-var h = 5;
-
 , function initialize() {
      var resolution = 100;
      updateCoordinates(resolution);
@@ -192,7 +213,7 @@ var h = 5;
 	     cis.push(-1);
 	}
     }
-    coordIndexes = new MFInt32(cis);
+    coordIndexes = new MFInt32(...cis);
 }
 
 , function updateCoordinates(resolution) {
@@ -212,7 +233,7 @@ var h = 5;
 	}
 	phi += delta;
      }
-     coordinates = new MFVec3f(crds);
+     coordinates = new MFVec3f(...crds);
 }
 
 , function set_fraction(fraction, eventTime) {
@@ -230,6 +251,9 @@ var h = 5;
 	case 3:
 		h += Math.floor(Math.random() * 2) * 2 - 1;
 		break;
+	}
+	if (e < 1) {
+		e = 10;
 	}
 	if (f < 1) {
 		f = 10;

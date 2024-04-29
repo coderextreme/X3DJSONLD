@@ -120,7 +120,7 @@ Script18.addChild(&field21);
 //_T("	     localci.push(-1);")+
 //_T("	}")+
 //_T("    }")+
-//_T("    coordIndexes = new MFInt32(localci);")+
+//_T("    coordIndexes = new MFInt32(...localci);")+
 //_T("}")+
 //_T("function generateCoordinates(resolution) {")+
 //_T("     var theta = 0.0;")+
@@ -139,7 +139,7 @@ Script18.addChild(&field21);
 //_T("	}")+
 //_T("	phi += delta;")+
 //_T("     }")+
-//_T("     coordinates = new MFVec3f(localc);")+
+//_T("     coordinates = new MFVec3f(...localc);")+
 //_T("}")+
 //_T("function set_fraction(fraction, eventTime) {")+
 //_T("	t += 0.5;")+

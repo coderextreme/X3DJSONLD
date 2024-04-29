@@ -22,7 +22,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('identifier'),
-              content_ : SFString('https://coderextreme.net/X3DJSONLD/src/main/personal/flower.x3d')),
+              content_ : SFString('https://coderextreme.net/X3DJSONLD/src/main/data/flower.x3d')),
 
             meta(
               name_ : SFString('description'),
@@ -109,7 +109,7 @@ var p = 0;
 	     localci.push(-1);
 	}
     }
-    coordIndexes = new MFInt32(localci);
+    coordIndexes = new MFInt32(...localci);
 }
 
 , function generateCoordinates(resolution) {
@@ -129,7 +129,7 @@ var p = 0;
 	}
 	phi += delta;
      }
-     coordinates = new MFVec3f(localc);
+     coordinates = new MFVec3f(...localc);
 }
 
 , function set_fraction(fraction, eventTime) {

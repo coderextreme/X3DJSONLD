@@ -81,7 +81,7 @@ head1.addMeta(&meta15);
 
 meta& meta16 =  meta();
 meta16.setName(CString("identifier"));
-meta16.setContent(CString("https://coderextreme.net/X3DJSONLD/src/main/data/sphereflowers.x3d"));
+meta16.setContent(CString("https://coderextreme.net/X3DJSONLD/src/main/personal/sphereflowers.x3d"));
 head1.addMeta(&meta16);
 
 X3D0.setHead(&head1);
@@ -91,18 +91,18 @@ NavigationInfo& NavigationInfo18 =  NavigationInfo();
 Scene17.addChild(&NavigationInfo18);
 
 Background& Background19 =  Background();
-Background19.setBackUrl(new CString[1]{CString("../resources/images/all_probes/stpeters_cross/stpeters_back.png")}, 1);
-Background19.setBottomUrl(new CString[1]{CString("../resources/images/all_probes/stpeters_cross/stpeters_bottom.png")}, 1);
-Background19.setFrontUrl(new CString[1]{CString("../resources/images/all_probes/stpeters_cross/stpeters_front.png")}, 1);
-Background19.setLeftUrl(new CString[1]{CString("../resources/images/all_probes/stpeters_cross/stpeters_left.png")}, 1);
-Background19.setRightUrl(new CString[1]{CString("../resources/images/all_probes/stpeters_cross/stpeters_right.png")}, 1);
-Background19.setTopUrl(new CString[1]{CString("../resources/images/all_probes/stpeters_cross/stpeters_top.png")}, 1);
+Background19.setBackUrl(new CString[]{CString("../resources/images/all_probes/stpeters_cross/stpeters_back.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png")}, 2);
+Background19.setBottomUrl(new CString[]{CString("../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png")}, 2);
+Background19.setFrontUrl(new CString[]{CString("../resources/images/all_probes/stpeters_cross/stpeters_front.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png")}, 2);
+Background19.setLeftUrl(new CString[]{CString("../resources/images/all_probes/stpeters_cross/stpeters_left.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png")}, 2);
+Background19.setRightUrl(new CString[]{CString("../resources/images/all_probes/stpeters_cross/stpeters_right.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png")}, 2);
+Background19.setTopUrl(new CString[]{CString("../resources/images/all_probes/stpeters_cross/stpeters_top.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png")}, 2);
 Scene17.addChild(&Background19);
 
 Group& Group20 =  Group();
 ExternProtoDeclare& ExternProtoDeclare21 =  ExternProtoDeclare();
 ExternProtoDeclare21.setName(CString("FlowerProto"));
-ExternProtoDeclare21.setUrl(new CString[1]{CString("../personal/flowerproto.json#FlowerProto")}, 1);
+ExternProtoDeclare21.setUrl(new CString[]{CString("../personal/flowerproto.x3d#FlowerProto"), CString("https://coderextreme.net/X3DJSONLD/src/main/personal/flowerproto.x3d#FlowerProto")}, 2);
 field& field22 =  field();
 field22.setName(CString("vertex"));
 field22.setAccessType(CString("inputOutput"));
@@ -175,11 +175,11 @@ Sound37.setMaxBack(100);
 Sound37.setMaxFront(100);
 Sound37.setMinBack(20);
 Sound37.setMinFront(20);
-Sound37.setLocation(new float[3]{0,1,0});
+Sound37.setLocation(new float[]{0,1,0});
 AudioClip& AudioClip38 =  AudioClip();
 AudioClip38.setDEF(CString("AudioClip"));
 AudioClip38.setDescription(CString("Chandubabamusic #1"));
-AudioClip38.setUrl(new CString[1]{CString("../resources/chandubabamusic1.wav")}, 1);
+AudioClip38.setUrl(new CString[]{CString("../resources/chandubabamusic1.wav"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/chandubabamusic1.wav")}, 2);
 Sound37.setSource(AudioClip38);
 
 Group20.addChild(&Sound37);
