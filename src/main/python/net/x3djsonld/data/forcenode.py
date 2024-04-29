@@ -74,7 +74,7 @@ ecmascript:
 					function set_cycle(value) {
                                                 old = translation;
 						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);
-                                                keyValue = new MFVec3f([old, translation]);
+                                                keyValue = new MFVec3f(...[old, translation]);
 						// Browser.println(translation);
 					}
 """),
@@ -83,7 +83,7 @@ ecmascript:
           ROUTE(fromNode='nodeClock',fromField='fraction_changed',toNode='NodePosition',toField='set_fraction'),
           ROUTE(fromNode='MoveBall',fromField='keyValue',toNode='NodePosition',toField='keyValue'),
           ROUTE(fromNode='NodePosition',fromField='value_changed',toNode='transform',toField='set_translation')])])),
-    ProtoDeclare(name='cyl',
+    ProtoDeclare(name='cylinder',
       ProtoInterface=ProtoInterface(
         field=[
         field(name='set_positionA',accessType='inputOnly',type='SFVec3f'),
@@ -111,17 +111,17 @@ ecmascript:
 
                 function set_endA(value) {
 		    if (typeof spine === 'undefined') {
-		        spine = new MFVec3f([value, value]);
+		        spine = new MFVec3f(...[value, value]);
 		    } else {
-		        spine = new MFVec3f([value, spine[1]]);
+		        spine = new MFVec3f(...[value, spine[1]]);
 		    }
                 }
                 
                 function set_endB(value) {
 		    if (typeof spine === 'undefined') {
-		        spine = new MFVec3f([value, value]);
+		        spine = new MFVec3f(...[value, value]);
 		    } else {
-		        spine = new MFVec3f([spine[0], value]);
+		        spine = new MFVec3f(...[spine[0], value]);
 		    }
                 }
                 
@@ -145,15 +145,15 @@ ecmascript:
       ProtoInstance(DEF='nodeD',name='node',
         fieldValue=[
         fieldValue(name='position',value=(50.0,50.0,-50.0))]),
-      ProtoInstance(DEF='linkA',name='cyl',
+      ProtoInstance(DEF='linkA',name='cylinder',
         fieldValue=[
         fieldValue(name='set_positionA',value=(0,0,0)),
         fieldValue(name='set_positionB',value=(50,50,50))]),
-      ProtoInstance(DEF='linkB',name='cyl',
+      ProtoInstance(DEF='linkB',name='cylinder',
         fieldValue=[
         fieldValue(name='set_positionA',value=(0,0,0)),
         fieldValue(name='set_positionB',value=(-50,-50,-50))]),
-      ProtoInstance(DEF='linkC',name='cyl',
+      ProtoInstance(DEF='linkC',name='cylinder',
         fieldValue=[
         fieldValue(name='set_positionA',value=(50,50,50)),
         fieldValue(name='set_positionB',value=(50,50,-50))])]),

@@ -10,7 +10,7 @@ meta2.setContent("ifscube.x3d")
 head1.addMeta(meta2)
 meta3 = x3d.meta()
 meta3.setName("identifier")
-meta3.setContent("http://coderextreme.net/X3DJSONLD/src/main/data/ifscube.x3d")
+meta3.setContent("http://coderextreme.net/X3DJSONLD/src/main/personal/ifscube.x3d")
 
 head1.addMeta(meta3)
 meta4 = x3d.meta()

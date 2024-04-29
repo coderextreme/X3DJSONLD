@@ -20,7 +20,7 @@ meta4.setContent("extrusion.x3d")
 head1.addMeta(meta4)
 meta5 = x3d.meta()
 meta5.setName("identifier")
-meta5.setContent("https://coderextreme.net/X3DJSONLD/src/main/data/force.x3d")
+meta5.setContent("https://coderextreme.net/X3DJSONLD/src/main/data/extrusion.x3d")
 
 head1.addMeta(meta5)
 meta6 = x3d.meta()
@@ -81,7 +81,10 @@ Script15.setSourceCode('''ecmascript:\n"+
 "                        Browser.print(value);\n"+
 "                        var endA = new SFVec3f(spine[0].x*Math.random()*2, spine[0].y*Math.random()*2, spine[0].z*Math.random()*2);\n"+
 "                        var endB = new SFVec3f(spine[1].x*Math.random()*2, spine[1].y*Math.random()*2, spine[1].z*Math.random()*2);\n"+
-"		        spine = new MFVec3f([endA, endB]);\n"+
+"                        var tmpspine = new MFVec3f();\n"+
+"			tmpspine[0] = endA;\n"+
+"			tmpspine[1] = endB;\n"+
+"                        spine = tmpspine;\n"+
 "                }''')
 
 Group9.addChildren(Script15)
