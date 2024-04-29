@@ -15,7 +15,7 @@
     <meta content='John Carlson' name='creator'/>
     <meta content='A flower proto with configurable shaders' name='description'/>
     <meta content='X3D-Edit, https://savage.nps.edu/X3D-Edit' name='generator'/>
-    <meta content='https://coderextreme.net/X3DJSONLD/src/main/data/flowerproto.x3d' name='identifier'/>
+    <meta content='https://coderextreme.net/X3DJSONLD/src/main/personal/flowerproto.x3d' name='identifier'/>
   </head>
   <Scene>
     <ProtoDeclare name='FlowerProto'>

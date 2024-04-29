@@ -9,7 +9,7 @@
 <!--component name='Shaders' level='1'></component--><!--component name='CubeMapTexturing' level='1'></component--><meta name="title" content="ball.x3d"></meta>
 <meta name="creator" content="John Carlson"></meta>
 <meta name="generator" content="manual"></meta>
-<meta name="identifier" content="https://coderextreme.net/X3DJSONLD/src/main/data/ball.x3d"></meta>
+<meta name="identifier" content="https://coderextreme.net/X3DJSONLD/src/main/personal/ball.x3d"></meta>
 <meta name="description" content="a prismatic sphere"></meta>
 </head>
 <Scene><WorldInfo title="ball.x3d"></WorldInfo>

@@ -4,7 +4,7 @@
 <meta name="created" content="December 13 2015"></meta>
 <meta name="modified" content="April 18 2017"></meta>
 <meta name="title" content="fors2.x3d"></meta>
-<meta name="identifier" content="https://coderextreme.net/X3DJSONLD/src/main/data/fors2.x3d"></meta>
+<meta name="identifier" content="https://coderextreme.net/X3DJSONLD/src/main/personal/fors2.x3d"></meta>
 <meta name="description" content="beginnings of a force directed graph in 3D"></meta>
 <meta name="generator" content="Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit"></meta>
 </head>
@@ -36,7 +36,7 @@
 <ROUTE fromNode="NodePosition" fromField="value_changed" toNode="transform" toField="set_translation"></ROUTE>
 </ProtoBody>
 </ProtoDeclare>
-<ProtoDeclare name="cylinder"><ProtoInterface><field name="positionA" accessType="inputOnly" type="SFVec3f"></field>
+<ProtoDeclare name="cyl"><ProtoInterface><field name="positionA" accessType="inputOnly" type="SFVec3f"></field>
 <field name="positionB" accessType="inputOnly" type="SFVec3f"></field>
 </ProtoInterface>
 <ProtoBody><Shape><Extrusion DEF="extrusion" creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0" spine="0 -50 0 0 0 0 0 50 0"></Extrusion>
@@ -78,7 +78,7 @@
 </ProtoInstance>
 <ProtoInstance name="node" DEF="nodeB"><fieldValue name="position" value="50 50 50"></fieldValue>
 </ProtoInstance>
-<ProtoInstance name="cylinder" DEF="linkA"><fieldValue name="positionA" value="0 0 0"></fieldValue>
+<ProtoInstance name="cyl" DEF="linkA"><fieldValue name="positionA" value="0 0 0"></fieldValue>
 <fieldValue name="positionB" value="50 50 50"></fieldValue>
 </ProtoInstance>
 </Transform>

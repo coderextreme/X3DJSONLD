@@ -7,10 +7,6 @@
 "head": {
 "component": [
 {
-"@name":"Scripting",
-"@level":1
-},
-{
 "@name":"EnvironmentalEffects",
 "@level":3
 },
@@ -42,19 +38,15 @@
 "meta": [
 {
 "@name":"title",
-"@content":"ball.x3d"
+"@content":"fwball.x3d"
 },
 {
 "@name":"creator",
 "@content":"John Carlson"
 },
 {
-"@name":"generator",
-"@content":"manual"
-},
-{
 "@name":"identifier",
-"@content":"https://coderextreme.net/X3DJSONLD/src/main/personal/ball.x3d"
+"@content":"https://coderextreme.net/X3DJSONLD/src/main/personal/fwball.x3d"
 },
 {
 "@name":"description",
@@ -62,7 +54,7 @@
 },
 {
 "@name":"translated",
-"@content":"01 April 2024"
+"@content":"29 April 2024"
 },
 {
 "@name":"generator",
@@ -78,7 +70,7 @@
 "-children":[
 { "WorldInfo":
 {
-"@title":"ball.x3d"
+"@title":"fwball.x3d"
 }
 },
 { "NavigationInfo":
@@ -162,14 +154,14 @@
 "-parts":[
 { "ShaderPart":
 {
-"@url":["../shaders/freewrl.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.vs"],
+"@url":["https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.vs"],
 "@type":"VERTEX"
 }
 },
 { "ShaderPart":
 {
 "@type":"FRAGMENT",
-"@url":["../shaders/freewrl.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.fs"]
+"@url":["https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.fs"]
 }
 }
 ]

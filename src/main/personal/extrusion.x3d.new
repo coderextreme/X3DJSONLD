@@ -3,7 +3,7 @@
 <X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd" ><head><meta name="creator" content="John W Carlson"></meta>
 <meta name="created" content="December 13 2015"></meta>
 <meta name="title" content="extrusion.x3d"></meta>
-<meta name="identifier" content="https://coderextreme.net/X3DJSONLD/src/main/data/extrusion.x3d"></meta>
+<meta name="identifier" content="https://coderextreme.net/X3DJSONLD/src/main/personal/extrusion.x3d"></meta>
 <meta name="description" content="beginnings of a force directed graph in 3D"></meta>
 <meta name="generator" content="Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit"></meta>
 </head>

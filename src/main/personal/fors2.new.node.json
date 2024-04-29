@@ -24,7 +24,7 @@
 },
 {
 "@name":"identifier",
-"@content":"https://coderextreme.net/X3DJSONLD/src/main/data/fors2.x3d"
+"@content":"https://coderextreme.net/X3DJSONLD/src/main/personal/fors2.x3d"
 },
 {
 "@name":"description",
@@ -36,7 +36,7 @@
 },
 {
 "@name":"translated",
-"@content":"01 April 2024"
+"@content":"29 April 2024"
 },
 {
 "@name":"generator",
@@ -214,7 +214,7 @@ Math.random()*100-50);",
 },
 { "ProtoDeclare":
 {
-"@name":"cylinder",
+"@name":"cyl",
 "ProtoInterface": {
 "field": [
 {
@@ -360,7 +360,7 @@ Math.random()*100-50);",
 },
 { "ProtoInstance":
 {
-"@name":"cylinder",
+"@name":"cyl",
 "@DEF":"linkA",
 "fieldValue": [
 {

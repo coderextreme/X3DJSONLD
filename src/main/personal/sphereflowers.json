@@ -66,11 +66,11 @@
           },
           {
             "@name":"identifier",
-            "@content":"https://coderextreme.net/X3DJSONLD/src/main/data/sphereflowers.x3d"
+            "@content":"https://coderextreme.net/X3DJSONLD/src/main/personal/sphereflowers.x3d"
           },
           {
             "@name":"translated",
-            "@content":"01 April 2024"
+            "@content":"29 April 2024"
           },
           {
             "@name":"generator",
@@ -90,12 +90,12 @@
           },
           { "Background":
             {
-              "@backUrl":["../resources/images/all_probes/stpeters_cross/stpeters_back.png"],
-              "@bottomUrl":["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"],
-              "@frontUrl":["../resources/images/all_probes/stpeters_cross/stpeters_front.png"],
-              "@leftUrl":["../resources/images/all_probes/stpeters_cross/stpeters_left.png"],
-              "@rightUrl":["../resources/images/all_probes/stpeters_cross/stpeters_right.png"],
-              "@topUrl":["../resources/images/all_probes/stpeters_cross/stpeters_top.png"]
+              "@backUrl":["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"],
+              "@bottomUrl":["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"],
+              "@frontUrl":["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"],
+              "@leftUrl":["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"],
+              "@rightUrl":["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"],
+              "@topUrl":["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]
             }
           },
           { "Group":
@@ -104,7 +104,7 @@
                 { "ExternProtoDeclare":
                   {
                     "@name":"FlowerProto",
-                    "@url":["../personal/flowerproto.json#FlowerProto"],
+                    "@url":["../personal/flowerproto.x3d#FlowerProto","https://coderextreme.net/X3DJSONLD/src/main/personal/flowerproto.x3d#FlowerProto"],
                     "field": [
                       {
                         "@name":"vertex",
@@ -197,7 +197,7 @@
                         {
                           "@DEF":"AudioClip",
                           "@description":"Chandubabamusic #1",
-                          "@url":["../resources/chandubabamusic1.wav"]
+                          "@url":["../resources/chandubabamusic1.wav","https://coderextreme.net/X3DJSONLD/src/main/resources/chandubabamusic1.wav"]
                         }
                       }
                   }

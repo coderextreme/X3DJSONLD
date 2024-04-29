@@ -6,7 +6,7 @@
 <meta name="creator" content="John Carlson"></meta>
 <meta name="description" content="Tour around a prismatic sphere"></meta>
 <meta name="generator" content="X3D-Edit, https://savage.nps.edu/X3D-Edit"></meta>
-<meta name="identifier" content="https://coderextreme.net/X3DJSONLD/src/main/data/bubs.x3d"></meta>
+<meta name="identifier" content="https://coderextreme.net/X3DJSONLD/src/main/personal/bubs.x3d"></meta>
 </head>
 <Scene><NavigationInfo type='"EXAMINE"'></NavigationInfo>
 <Viewpoint position="0 0 4" orientation="1 0 0 0" description="Bubbles in action"></Viewpoint>
