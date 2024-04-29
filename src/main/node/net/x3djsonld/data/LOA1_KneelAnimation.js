@@ -287,6 +287,7 @@ LOA1_KneelAnimation.prototype = {
     {
 		var testObject = new LOA1_KneelAnimation();
 		console.log ("LOA1_KneelAnimation execution self-validation test results: " + testObject.validateSelf());
+		process.exit();
 	}
 }
 new LOA1_KneelAnimation().main();

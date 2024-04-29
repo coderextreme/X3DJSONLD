@@ -353,6 +353,7 @@ bubs3.prototype = {
     {
 		var testObject = new bubs3();
 		console.log ("bubs3 execution self-validation test results: " + testObject.validateSelf());
+		process.exit();
 	}
 }
 new bubs3().main();

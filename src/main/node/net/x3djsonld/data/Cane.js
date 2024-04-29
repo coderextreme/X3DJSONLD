@@ -382,6 +382,7 @@ Cane.prototype = {
     {
 		var testObject = new Cane();
 		console.log ("Cane execution self-validation test results: " + testObject.validateSelf());
+		process.exit();
 	}
 }
 new Cane().main();

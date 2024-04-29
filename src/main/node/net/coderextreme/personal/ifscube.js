@@ -17,7 +17,7 @@ ConfigurationProperties.setStripDefaultAttributes(true);
       var X3D0 =  (new autoclass.X3D()).setProfile("Interchange").setVersion("3.3")
       .setHead(new autoclass.head()
         .addMeta(new autoclass.meta().setName("title").setContent("ifscube.x3d"))
-        .addMeta(new autoclass.meta().setName("identifier").setContent("http://coderextreme.net/X3DJSONLD/src/main/data/ifscube.x3d"))
+        .addMeta(new autoclass.meta().setName("identifier").setContent("http://coderextreme.net/X3DJSONLD/src/main/personal/ifscube.x3d"))
         .addMeta(new autoclass.meta().setName("description").setContent("Template for an Indexed Face Set"))
         .addMeta(new autoclass.meta().setName("creator").setContent("John Carlson"))
         .addMeta(new autoclass.meta().setName("created").setContent("4 April 2017")))

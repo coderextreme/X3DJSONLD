@@ -252,7 +252,7 @@ ObliqueStrategies.prototype = {
       .addChild((new autoclass.ROUTE()).setFromNode("PreviousTextClickedSensor").setFromField("isActive").setToNode("TextScript").setToField("selectPreviousCard"))
       .addChild((new autoclass.Shape())
         .setGeometry((new autoclass.Text()).setString(new autoclass.MFString("\"previous\""))
-          .setFontStyle((new autoclass.FontStyle())))
+          .setFontStyle((new autoclass.FontStyle()).setUSE("MessageFont")))
         .setAppearance((new autoclass.Appearance("InterfaceAppearance"))
           .setMaterial((new autoclass.Material()).setDiffuseColor(1.0,0.0,0.6))))
       .addChild((new autoclass.Transform()).setScale(2.0,0.6,1.0)
@@ -267,28 +267,28 @@ ObliqueStrategies.prototype = {
       .addChild((new autoclass.ROUTE()).setFromNode("NextTextClickedSensor").setFromField("isActive").setToNode("TextScript").setToField("selectNextCard"))
       .addChild((new autoclass.Shape())
         .setGeometry((new autoclass.Text()).setString(new autoclass.MFString("\"next\""))
-          .setFontStyle((new autoclass.FontStyle())))
-        .setAppearance((new autoclass.Appearance())))
+          .setFontStyle((new autoclass.FontStyle()).setUSE("MessageFont")))
+        .setAppearance((new autoclass.Appearance()).setUSE("InterfaceAppearance")))
       .addChild((new autoclass.Transform()).setScale(1.2,0.6,1.0)
-        .addChild((new autoclass.Shape()))))
+        .addChild((new autoclass.Shape()).setUSE("TransparentClickSurface"))))
     .addChild((new autoclass.Transform()).setScale(0.4,0.4,0.4).setTranslation(-3.3,-0.5,0.0)
-      .addChild((new autoclass.TouchSensor()))
+      .addChild((new autoclass.TouchSensor()).setUSE("RandomTextClickedSensor"))
       .addChild((new autoclass.ROUTE()).setFromNode("RandomTextClickedSensor").setFromField("isActive").setToNode("TextScript").setToField("selectRandomCard"))
       .addChild((new autoclass.Shape())
         .setGeometry((new autoclass.Text()).setString(new autoclass.MFString("\"random\""))
-          .setFontStyle((new autoclass.FontStyle())))
-        .setAppearance((new autoclass.Appearance())))
+          .setFontStyle((new autoclass.FontStyle()).setUSE("MessageFont")))
+        .setAppearance((new autoclass.Appearance()).setUSE("InterfaceAppearance")))
       .addChild((new autoclass.Transform()).setScale(1.8,0.6,1.0)
-        .addChild((new autoclass.Shape()))))
+        .addChild((new autoclass.Shape()).setUSE("TransparentClickSurface"))))
     .addChild((new autoclass.Transform()).setScale(0.4,0.4,0.4).setTranslation(3.3,-0.5,0.0)
       .addChild((new autoclass.Anchor("TextToSpeechAnchor")).setDescription("text to speech in browser").setParameter(new autoclass.MFString("\"target=_blank\"")).setUrl(new autoclass.MFString("\"http://translate.google.com/translate_tts?tl=en&amp;q=Overtly%20resist%20change\""))
         .addChild((new autoclass.ROUTE()).setFromNode("TextScript").setFromField("textToSpeechUrl").setToNode("TextToSpeechAnchor").setToField("url"))
         .addChild((new autoclass.Shape())
           .setGeometry((new autoclass.Text()).setString(new autoclass.MFString("\"speech\""))
-            .setFontStyle((new autoclass.FontStyle())))
-          .setAppearance((new autoclass.Appearance())))
+            .setFontStyle((new autoclass.FontStyle()).setUSE("MessageFont")))
+          .setAppearance((new autoclass.Appearance()).setUSE("InterfaceAppearance")))
         .addChild((new autoclass.Transform()).setScale(1.8,0.6,1.0)
-          .addChild((new autoclass.Shape()))))));
+          .addChild((new autoclass.Shape()).setUSE("TransparentClickSurface"))))));
   },
   // end of initialize() method
 
@@ -344,6 +344,7 @@ ObliqueStrategies.prototype = {
     {
 		var testObject = new ObliqueStrategies();
 		console.log ("ObliqueStrategies execution self-validation test results: " + testObject.validateSelf());
+		process.exit();
 	}
 }
 new ObliqueStrategies().main();

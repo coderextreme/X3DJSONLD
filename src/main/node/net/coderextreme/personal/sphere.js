@@ -20,7 +20,7 @@ ConfigurationProperties.setStripDefaultAttributes(true);
         .addMeta(new autoclass.meta().setName("title").setContent("sphere.x3d"))
         .addMeta(new autoclass.meta().setName("creator").setContent("John Carlson"))
         .addMeta(new autoclass.meta().setName("generator").setContent("manual"))
-        .addMeta(new autoclass.meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/sphere.x3d"))
+        .addMeta(new autoclass.meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/personal/sphere.x3d"))
         .addMeta(new autoclass.meta().setName("description").setContent("a sphere")))
       .setScene(new autoclass.Scene()
         .addChild(new autoclass.Group()

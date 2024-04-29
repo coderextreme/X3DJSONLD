@@ -184,6 +184,7 @@ rubik.prototype = {
     {
 		var testObject = new rubik();
 		console.log ("rubik execution self-validation test results: " + testObject.validateSelf());
+		process.exit();
 	}
 }
 new rubik().main();

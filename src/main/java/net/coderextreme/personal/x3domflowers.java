@@ -77,7 +77,7 @@ ProtoInstance ProtoInstance6 = null;
         .addMeta(new meta().setName("creator").setContent("John Carlson"))
         .addMeta(new meta().setName("description").setContent("5 or more prismatic flowers"))
         .addMeta(new meta().setName("generator").setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit"))
-        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/x3domflowers.x3d")))
+        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/personal/x3domflowers.x3d")))
       .setScene(new Scene()
         .addChild(new NavigationInfo())
         .addComments("Images courtesy of Paul Debevec's Light Probe Image Gallery")
@@ -134,7 +134,7 @@ private class MFString5 {
 }
 private class MFString6 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../data/flowerproto.json#FlowerProto"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../personal/flowerproto.json#FlowerProto"});
   }
 }
 }

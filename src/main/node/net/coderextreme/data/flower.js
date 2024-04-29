@@ -19,7 +19,7 @@ ConfigurationProperties.setStripDefaultAttributes(true);
         .addMeta(new autoclass.meta().setName("title").setContent("flower.x3d"))
         .addMeta(new autoclass.meta().setName("creator").setContent("John Carlson"))
         .addMeta(new autoclass.meta().setName("generator").setContent("manual"))
-        .addMeta(new autoclass.meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/personal/flower.x3d"))
+        .addMeta(new autoclass.meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/flower.x3d"))
         .addMeta(new autoclass.meta().setName("description").setContent("a flower")))
       .setScene(new autoclass.Scene()
         .addChild(new autoclass.NavigationInfo())
@@ -59,7 +59,7 @@ ConfigurationProperties.setStripDefaultAttributes(true);
 "	     localci.push(-1);\n"+
 "	}\n"+
 "    }\n"+
-"    coordIndexes = new MFInt32(localci);\n"+
+"    coordIndexes = new MFInt32(...localci);\n"+
 "}\n"+
 "\n"+
 "function generateCoordinates(resolution) {\n"+
@@ -79,7 +79,7 @@ ConfigurationProperties.setStripDefaultAttributes(true);
 "	}\n"+
 "	phi += delta;\n"+
 "     }\n"+
-"     coordinates = new MFVec3f(localc);\n"+
+"     coordinates = new MFVec3f(...localc);\n"+
 "}\n"+
 "\n"+
 "function set_fraction(fraction, eventTime) {\n"+

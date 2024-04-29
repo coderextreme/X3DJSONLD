@@ -19,7 +19,7 @@ ConfigurationProperties.setStripDefaultAttributes(true);
         .addMeta(new autoclass.meta().setName("title").setContent("flower3.x3d"))
         .addMeta(new autoclass.meta().setName("creator").setContent("John Carlson"))
         .addMeta(new autoclass.meta().setName("generator").setContent("manual"))
-        .addMeta(new autoclass.meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/flower3.x3d"))
+        .addMeta(new autoclass.meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/personal/flower3.x3d"))
         .addMeta(new autoclass.meta().setName("description").setContent("a flower")))
       .setScene(new autoclass.Scene()
         .addChild(new autoclass.NavigationInfo())

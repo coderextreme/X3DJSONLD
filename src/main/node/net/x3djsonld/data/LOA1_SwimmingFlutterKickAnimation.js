@@ -340,6 +340,7 @@ LOA1_SwimmingFlutterKickAnimation.prototype = {
     {
 		var testObject = new LOA1_SwimmingFlutterKickAnimation();
 		console.log ("LOA1_SwimmingFlutterKickAnimation execution self-validation test results: " + testObject.validateSelf());
+		process.exit();
 	}
 }
 new LOA1_SwimmingFlutterKickAnimation().main();

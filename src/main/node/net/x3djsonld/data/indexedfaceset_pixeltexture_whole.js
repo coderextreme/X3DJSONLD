@@ -225,6 +225,7 @@ indexedfaceset_pixeltexture_whole.prototype = {
     {
 		var testObject = new indexedfaceset_pixeltexture_whole();
 		console.log ("indexedfaceset_pixeltexture_whole execution self-validation test results: " + testObject.validateSelf());
+		process.exit();
 	}
 }
 new indexedfaceset_pixeltexture_whole().main();

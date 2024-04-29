@@ -22,7 +22,7 @@ ConfigurationProperties.setStripDefaultAttributes(true);
         .addMeta(new autoclass.meta().setName("created").setContent("4 April 2017"))
         .addMeta(new autoclass.meta().setName("generator").setContent("manual"))
         .addMeta(new autoclass.meta().setName("license").setContent("../license.html"))
-        .addMeta(new autoclass.meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/cube.x3d")))
+        .addMeta(new autoclass.meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/personal/cube.x3d")))
       .setScene(new autoclass.Scene()
         .addChild(new autoclass.Group()
           .addChild(new autoclass.Shape()

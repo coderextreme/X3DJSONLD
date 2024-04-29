@@ -24,7 +24,7 @@ var ProtoInstance3 = null;
         .addMeta(new autoclass.meta().setName("creator").setContent("John Carlson"))
         .addMeta(new autoclass.meta().setName("description").setContent("Tour around a prismatic sphere"))
         .addMeta(new autoclass.meta().setName("generator").setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit"))
-        .addMeta(new autoclass.meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/geo.x3d"))
+        .addMeta(new autoclass.meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/personal/geo.x3d"))
         .addMeta(new autoclass.meta().setName("translated").setContent("13 March 2016"))
         .addMeta(new autoclass.meta().setName("generator").setContent("X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"))
         .addComponent(new autoclass.component().setName("Scripting").setLevel(1)))

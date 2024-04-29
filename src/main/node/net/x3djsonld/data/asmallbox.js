@@ -153,6 +153,7 @@ asmallbox.prototype = {
     {
 		var testObject = new asmallbox();
 		console.log ("asmallbox execution self-validation test results: " + testObject.validateSelf());
+		process.exit();
 	}
 }
 new asmallbox().main();

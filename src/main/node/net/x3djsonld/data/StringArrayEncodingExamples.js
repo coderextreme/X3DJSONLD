@@ -189,6 +189,7 @@ StringArrayEncodingExamples.prototype = {
     {
 		var testObject = new StringArrayEncodingExamples();
 		console.log ("StringArrayEncodingExamples execution self-validation test results: " + testObject.validateSelf());
+		process.exit();
 	}
 }
 new StringArrayEncodingExamples().main();

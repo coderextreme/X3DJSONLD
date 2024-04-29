@@ -171,9 +171,9 @@ arc.prototype = {
             .addField((new autoclass.field()).setName("startnode").setType("SFNode").setAccessType("initializeOnly"))
             .addField((new autoclass.field()).setName("endnode").setType("SFNode").setAccessType("initializeOnly"))
             .addField((new autoclass.field()).setName("position").setType("SFNode").setAccessType("inputOutput")
-              .addChild((new autoclass.Transform())))
+              .addChild((new autoclass.Transform()).setUSE("trans")))
             .addField((new autoclass.field()).setName("rotscale").setType("SFNode").setAccessType("inputOutput")
-              .addChild((new autoclass.Transform())))
+              .addChild((new autoclass.Transform()).setUSE("rotscale")))
             .addField((new autoclass.field()).setName("set_startpoint").setType("SFVec3f").setAccessType("inputOnly"))
             .addField((new autoclass.field()).setName("set_endpoint").setType("SFVec3f").setAccessType("inputOnly"))
             .setIS((new autoclass.IS())
@@ -267,6 +267,7 @@ arc.prototype = {
     {
 		var testObject = new arc();
 		console.log ("arc execution self-validation test results: " + testObject.validateSelf());
+		process.exit();
 	}
 }
 new arc().main();

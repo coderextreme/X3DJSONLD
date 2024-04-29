@@ -11,7 +11,7 @@
     <meta content='2 random mathematical roses in spherical dimensions. rho = a + b * cos(c * theta) * cos(d * phi)' name='description'/>
     <meta content='https://coderextreme.net/X3DJSONLD/src/main/personal/flowers2.x3d' name='identifier'/>
     <meta content='manually written' name='generator'/>
-    <meta content='https://www.web3d.org/x3d/content/examples/license.html' name='license'/>
+    <meta content='https://coderextreme.net/X3DJSONLD/LICENSE' name='license'/>
   </head>
   <Scene>
     <NavigationInfo avatarSize='0.25 1.6 0.75' transitionType='"LINEAR"' type='"EXAMINE" "ANY"'/>

@@ -27,7 +27,7 @@ ConfigurationProperties.setStripDefaultAttributes(true);
         .addMeta(new autoclass.meta().setName("title").setContent("ball.x3d"))
         .addMeta(new autoclass.meta().setName("creator").setContent("John Carlson"))
         .addMeta(new autoclass.meta().setName("generator").setContent("manual"))
-        .addMeta(new autoclass.meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/ball.x3d"))
+        .addMeta(new autoclass.meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/personal/ball.x3d"))
         .addMeta(new autoclass.meta().setName("description").setContent("a prismatic sphere")))
       .setScene(new autoclass.Scene()
         .addChild(new autoclass.WorldInfo().setTitle("ball.x3d"))

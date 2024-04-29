@@ -75,7 +75,7 @@ flowers.prototype = {
     .addComponent((new autoclass.component()).setName("CubeMapTexturing").setLevel(1))
     .addComponent((new autoclass.component()).setName("Texturing").setLevel(1))
     .addComponent((new autoclass.component()).setName("Rendering").setLevel(1))
-    .addComments("<component name='Shape' level='4'></component>")
+    .addComponent((new autoclass.component()).setName("Shape").setLevel(4))
     .addComponent((new autoclass.component()).setName("Grouping").setLevel(3))
     .addComponent((new autoclass.component()).setName("Core").setLevel(1))
     .addMeta((new autoclass.meta()).setName("title").setContent("flowers.x3d"))
@@ -100,27 +100,29 @@ flowers.prototype = {
                 .setLeftTexture((new autoclass.ImageTexture()).setUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_left.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png\"")))
                 .setRightTexture((new autoclass.ImageTexture()).setUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_right.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png\"")))
                 .setTopTexture((new autoclass.ImageTexture()).setUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_top.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png\""))))
-              .addShaders((new autoclass.ComposedShader("x3dom")).setLanguage("GLSL")
-                .addField((new autoclass.field()).setName("cube").setType("SFInt32").setAccessType("inputOutput").setValue("0"))
-                .addComments(java.newArray("java.lang.String",[" ",
+              .addComments(java.newArray("java.lang.String",[" ",
+"			      <ComposedShader DEF='x3dom' language=\"GLSL\">",
+"                  <field name='cube' type='SFInt32' accessType='inputOutput' value='0'></field>",
 "		       <field name='cube' type='SFNode' accessType=\"inputOutput\">",
 "			  <ComposedCubeMapTexture USE=\"texture\"/>",
-"		  </field>"]))
-                .addField((new autoclass.field()).setName("chromaticDispertion").setType("SFVec3f").setAccessType("initializeOnly").setValue("0.98 1.0 1.033"))
-                .addField((new autoclass.field()).setName("bias").setType("SFFloat").setAccessType("inputOutput").setValue("0.5"))
-                .addField((new autoclass.field()).setName("scale").setType("SFFloat").setAccessType("inputOutput").setValue("0.5"))
-                .addField((new autoclass.field()).setName("power").setType("SFFloat").setAccessType("inputOutput").setValue("2"))
-                .addField((new autoclass.field()).setName("a").setType("SFFloat").setAccessType("inputOutput").setValue("10"))
-                .addField((new autoclass.field()).setName("b").setType("SFFloat").setAccessType("inputOutput").setValue("1"))
-                .addField((new autoclass.field()).setName("c").setType("SFFloat").setAccessType("inputOutput").setValue("20"))
-                .addField((new autoclass.field()).setName("d").setType("SFFloat").setAccessType("inputOutput").setValue("20"))
-                .addField((new autoclass.field()).setName("tdelta").setType("SFFloat").setAccessType("inputOutput").setValue("0"))
-                .addField((new autoclass.field()).setName("pdelta").setType("SFFloat").setAccessType("inputOutput").setValue("0"))
-                .addParts((new autoclass.ShaderPart()).setUrl(new autoclass.MFString("\"../shaders/x3dom_flowers_chromatic.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs\"")))
-                .addParts((new autoclass.ShaderPart()).setType("FRAGMENT").setUrl(new autoclass.MFString("\"../shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\""))))
+"			  </field>",
+"",
+"                  <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1.0 1.033'></field>",
+"                  <field name='bias' type='SFFloat' accessType='inputOutput' value='0.5'></field>",
+"                  <field name='scale' type='SFFloat' accessType='inputOutput' value='0.5'></field>",
+"                  <field name='power' type='SFFloat' accessType='inputOutput' value='2'></field>",
+"                  <field name='a' type='SFFloat' accessType='inputOutput' value='10'></field>",
+"                  <field name='b' type='SFFloat' accessType='inputOutput' value='1'></field>",
+"                  <field name='c' type='SFFloat' accessType='inputOutput' value='20'></field>",
+"                  <field name='d' type='SFFloat' accessType='inputOutput' value='20'></field>",
+"                  <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field>",
+"                  <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field>",
+"		  <ShaderPart url='\"https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs\"' containerField='parts' type='VERTEX'></ShaderPart>",
+"		  <ShaderPart url='\"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>",
+"			      </ComposedShader>"]))
               .addShaders((new autoclass.ComposedShader("x_ite")).setLanguage("GLSL")
                 .addField((new autoclass.field()).setName("cube").setType("SFNode").setAccessType("inputOutput")
-                  .addChild((new autoclass.ComposedCubeMapTexture())))
+                  .addChild((new autoclass.ComposedCubeMapTexture()).setUSE("texture")))
                 .addField((new autoclass.field()).setName("chromaticDispertion").setType("SFVec3f").setAccessType("initializeOnly").setValue("0.98 1.0 1.033"))
                 .addField((new autoclass.field()).setName("bias").setType("SFFloat").setAccessType("inputOnly").setValue("0.5"))
                 .addField((new autoclass.field()).setName("scale").setType("SFFloat").setAccessType("inputOnly").setValue("0.5"))
@@ -131,8 +133,8 @@ flowers.prototype = {
                 .addField((new autoclass.field()).setName("d").setType("SFFloat").setAccessType("inputOnly").setValue("20"))
                 .addField((new autoclass.field()).setName("tdelta").setType("SFFloat").setAccessType("inputOnly").setValue("0"))
                 .addField((new autoclass.field()).setName("pdelta").setType("SFFloat").setAccessType("inputOnly").setValue("0"))
-                .addParts((new autoclass.ShaderPart()).setUrl(new autoclass.MFString("\"../shaders/x_ite_flowers_chromatic.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs\"")))
-                .addParts((new autoclass.ShaderPart()).setType("FRAGMENT").setUrl(new autoclass.MFString("\"../shaders/x_ite.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs\"")))))
+                .addParts((new autoclass.ShaderPart()).setUrl(new autoclass.MFString("\"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs\"")))
+                .addParts((new autoclass.ShaderPart()).setType("FRAGMENT").setUrl(new autoclass.MFString("\"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs\"")))))
             .setGeometry((new autoclass.Sphere()))))
         .addChild((new autoclass.Script("Animate")).setSourceCode("\n" + 
 "\n" + 
@@ -221,12 +223,13 @@ flowers.prototype = {
         .addChild((new autoclass.ROUTE()).setFromNode("Animate").setFromField("d").setToNode("x_ite").setToField("d"))
         .addChild((new autoclass.ROUTE()).setFromNode("Animate").setFromField("pdelta").setToNode("x_ite").setToField("pdelta"))
         .addChild((new autoclass.ROUTE()).setFromNode("Animate").setFromField("tdelta").setToNode("x_ite").setToField("tdelta"))
-        .addChild((new autoclass.ROUTE()).setFromNode("Animate").setFromField("a").setToNode("x3dom").setToField("a"))
-        .addChild((new autoclass.ROUTE()).setFromNode("Animate").setFromField("b").setToNode("x3dom").setToField("b"))
-        .addChild((new autoclass.ROUTE()).setFromNode("Animate").setFromField("c").setToNode("x3dom").setToField("c"))
-        .addChild((new autoclass.ROUTE()).setFromNode("Animate").setFromField("d").setToNode("x3dom").setToField("d"))
-        .addChild((new autoclass.ROUTE()).setFromNode("Animate").setFromField("pdelta").setToNode("x3dom").setToField("pdelta"))
-        .addChild((new autoclass.ROUTE()).setFromNode("Animate").setFromField("tdelta").setToNode("x3dom").setToField("tdelta"))))
+        .addComments(java.newArray("java.lang.String",["",
+"            <ROUTE fromNode='Animate' fromField='a' toNode='x3dom' toField='a'/>",
+"            <ROUTE fromNode='Animate' fromField='b' toNode='x3dom' toField='b'/>",
+"            <ROUTE fromNode='Animate' fromField='c' toNode='x3dom' toField='c'/>",
+"            <ROUTE fromNode='Animate' fromField='d' toNode='x3dom' toField='d'/>",
+"            <ROUTE fromNode='Animate' fromField='pdelta' toNode='x3dom' toField='pdelta'/>",
+"            <ROUTE fromNode='Animate' fromField='tdelta' toNode='x3dom' toField='tdelta'/>"]))))
     .addChild((new autoclass.ProtoInstance()))
     .addChild((new autoclass.ProtoInstance()))
     .addChild((new autoclass.ProtoInstance())));
@@ -285,6 +288,7 @@ flowers.prototype = {
     {
 		var testObject = new flowers();
 		console.log ("flowers execution self-validation test results: " + testObject.validateSelf());
+		process.exit();
 	}
 }
 new flowers().main();

@@ -196,8 +196,7 @@ var X3D0 =  new X3D({
               version : new SFString("2.0"),
               /*</LOD>*/
               skinCoord : new SFNode(
-                new Coordinate({
-                  USE : new SFString("TheSkinCoord")})),
+                new Coordinate({})),
               joints : new MFNode([
                 new HAnimJoint({
                   name : new SFString("humanoid_root"),

@@ -58,8 +58,8 @@ var ProtoInstance1 = null;
                       .setCoord(new autoclass.Coordinate().setDEF("OrbitCoordinates").setPoint(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(1), java.newFloat(0), java.newFloat(1), java.newFloat(0), java.newFloat(1), java.newFloat(0), java.newFloat(0)]))))))
                 .addChild(new autoclass.Script().setDEF("OrbitScript")
                   .addField(new autoclass.field().setType(autoclass.field.TYPE_SFFLOAT).setName("set_fraction").setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY))
-                  .addField(new autoclass.field().setType(autoclass.field.TYPE_MFVEC3F).setName("coordinates").setAccessType(autoclass.field.ACCESSTYPE_OUTPUTONLY))
-                  .addField(new autoclass.field().setType(autoclass.field.TYPE_MFINT32).setName("coordIndexes").setAccessType(autoclass.field.ACCESSTYPE_OUTPUTONLY))
+                  .addField(new autoclass.field().setType(autoclass.field.TYPE_MFVEC3F).setName("coordinates").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT))
+                  .addField(new autoclass.field().setType(autoclass.field.TYPE_MFINT32).setName("coordIndexes").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT))
                   .addField(new autoclass.field().setType(autoclass.field.TYPE_SFFLOAT).setName("e").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("5"))
                   .addField(new autoclass.field().setType(autoclass.field.TYPE_SFFLOAT).setName("f").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("5"))
                   .addField(new autoclass.field().setType(autoclass.field.TYPE_SFFLOAT).setName("g").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("5"))
@@ -67,46 +67,37 @@ var ProtoInstance1 = null;
                   .addField(new autoclass.field().setType(autoclass.field.TYPE_SFINT32).setName("resolution").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("50"))
                   .setSourceCode("ecmascript:\n"+
 "\n"+
-"			var e = 5;\n"+
-"			var f = 5;\n"+
-"			var g = 5;\n"+
-"			var h = 5;\n"+
-"			var resolution = 100;\n"+
-"\n"+
 "			function initialize() {\n"+
 "			     generateCoordinates();\n"+
-"			     var localci = [];\n"+
+"			     var arrIndex = 0;\n"+
 "			     for (var i = 0; i < resolution-1; i++) {\n"+
 "				for (var j = 0; j < resolution-1; j++) {\n"+
-"				     localci.push(i*resolution+j);\n"+
-"				     localci.push(i*resolution+j+1);\n"+
-"				     localci.push((i+1)*resolution+j+1);\n"+
-"				     localci.push((i+1)*resolution+j);\n"+
-"				     localci.push(-1);\n"+
+"				     coordIndexes[arrIndex++] = i*resolution+j;\n"+
+"				     coordIndexes[arrIndex++] = i*resolution+j+1;\n"+
+"				     coordIndexes[arrIndex++] = (i+1)*resolution+j+1;\n"+
+"				     coordIndexes[arrIndex++] = (i+1)*resolution+j;\n"+
+"				     coordIndexes[arrIndex++] = -1;\n"+
 "				}\n"+
 "			    }\n"+
-"			    coordIndexes = new MFInt32(localci);\n"+
 "			}\n"+
 "\n"+
 "			function generateCoordinates() {\n"+
 "			     var theta = 0.0;\n"+
 "			     var phi = 0.0;\n"+
 "			     var delta = (2 * 3.141592653) / (resolution-1);\n"+
-"			     var localc = [];\n"+
+"			     var arrIndex = 0;\n"+
 "			     for (var i = 0; i < resolution; i++) {\n"+
 "				for (var j = 0; j < resolution; j++) {\n"+
 "					var rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);\n"+
-"					localc.push(new SFVec3f(\n"+
+"					coordinates[arrIndex++] = new SFVec3f(\n"+
 "						rho * Math.cos(phi) * Math.cos(theta),\n"+
 "						rho * Math.cos(phi) * Math.sin(theta),\n"+
 "						rho * Math.sin(phi)\n"+
-"					));\n"+
+"					);\n"+
 "					theta += delta;\n"+
 "				}\n"+
 "				phi += delta;\n"+
 "			     }\n"+
-"			     \n"+
-"			     coordinates = new MFVec3f(localc);\n"+
 "			}\n"+
 "\n"+
 "			function set_fraction(fraction, eventTime) {\n"+

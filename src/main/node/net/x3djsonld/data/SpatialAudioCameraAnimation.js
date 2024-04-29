@@ -155,7 +155,7 @@ SpatialAudioCameraAnimation.prototype = {
             .setAppearance((new autoclass.Appearance())
               .setMaterial((new autoclass.Material()).setAmbientIntensity(0.0933).setDiffuseColor(1.0,1.0,1.0).setShininess(0.51).setSpecularColor(0.46,0.46,0.46)))
             .setGeometry((new autoclass.Text()).setString(new autoclass.MFString("\"Saxophone\""))
-              .setFontStyle((new autoclass.FontStyle())))))))
+              .setFontStyle((new autoclass.FontStyle()).setUSE("ModelFontStyle")))))))
     .addChild((new autoclass.ListenerPointSource()).setId("ListenerPointSource").setTrackCurrentView(true))
     .addChild((new autoclass.StreamAudioDestination()).setId("AudioDestination")
       .addChild((new autoclass.SpatialSound("Audio1")).setId("SpatialSound1")
@@ -219,6 +219,7 @@ SpatialAudioCameraAnimation.prototype = {
     {
 		var testObject = new SpatialAudioCameraAnimation();
 		console.log ("SpatialAudioCameraAnimation execution self-validation test results: " + testObject.validateSelf());
+		process.exit();
 	}
 }
 new SpatialAudioCameraAnimation().main();

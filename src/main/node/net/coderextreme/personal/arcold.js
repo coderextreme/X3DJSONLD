@@ -32,7 +32,7 @@ var ProtoInstance12 = null;
         .addMeta(new autoclass.meta().setName("title").setContent("arcold.x3d"))
         .addMeta(new autoclass.meta().setName("creator").setContent("John Carlson"))
         .addMeta(new autoclass.meta().setName("generator").setContent("manual"))
-        .addMeta(new autoclass.meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/arc.x3d"))
+        .addMeta(new autoclass.meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/personal/arc.x3d"))
         .addMeta(new autoclass.meta().setName("description").setContent("an attempt to implement an arc in a graph")))
       .setScene(new autoclass.Scene()
         .addChild(new autoclass.Viewpoint().setPosition(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(5)])).setDescription("a moving graph"))

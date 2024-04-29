@@ -74,7 +74,7 @@ ProtoInstance ProtoInstance2 = null;
         .addMeta(new meta().setName("creator").setContent("John Carlson"))
         .addMeta(new meta().setName("description").setContent("5 or more prismatic flowers"))
         .addMeta(new meta().setName("generator").setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit"))
-        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/flowers.x3d")))
+        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/personal/flowers.x3d")))
       .setScene(new Scene()
         .addChild(new NavigationInfo())
         .addComments("Images courtesy of Paul Debevec's Light Probe Image Gallery")

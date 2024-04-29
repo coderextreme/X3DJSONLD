@@ -226,6 +226,7 @@ fors.prototype = {
     {
 		var testObject = new fors();
 		console.log ("fors execution self-validation test results: " + testObject.validateSelf());
+		process.exit();
 	}
 }
 new fors().main();

@@ -71,7 +71,7 @@ ProtoInstance ProtoInstance9 = null;
         .addMeta(new meta().setName("title").setContent("rubikFurnace.x3d"))
         .addMeta(new meta().setName("creator").setContent("John Carlson"))
         .addMeta(new meta().setName("generator").setContent("manual"))
-        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/rubikFurnace.x3d"))
+        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/personal/rubikFurnace.x3d"))
         .addMeta(new meta().setName("description").setContent("a green rubik cube")))
       .setScene(new Scene()
         .addChild(new NavigationInfo().setType("\"EXAMINE\""))

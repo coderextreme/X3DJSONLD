@@ -38,10 +38,6 @@ var X3D0 =  new X3D({
         new head({
           component : new SFNode(
             new component({
-              name : new SFString("Scripting"),
-              level : new SFInt32(1)})),
-          component : new SFNode(
-            new component({
               name : new SFString("EnvironmentalEffects"),
               level : new SFInt32(3)})),
           component : new SFNode(
@@ -71,19 +67,15 @@ var X3D0 =  new X3D({
           meta : new MFNode([
             new meta({
               name : new SFString("title"),
-              content : new SFString("ball.x3d")}),
+              content : new SFString("fwball.x3d")}),
 
             new meta({
               name : new SFString("creator"),
               content : new SFString("John Carlson")}),
 
             new meta({
-              name : new SFString("generator"),
-              content : new SFString("manual")}),
-
-            new meta({
               name : new SFString("identifier"),
-              content : new SFString("https://coderextreme.net/X3DJSONLD/src/main/personal/ball.x3d")}),
+              content : new SFString("https://coderextreme.net/X3DJSONLD/src/main/personal/fwball.x3d")}),
 
             new meta({
               name : new SFString("description"),
@@ -92,7 +84,7 @@ var X3D0 =  new X3D({
         new Scene({
           children : new MFNode([
             new WorldInfo({
-              title : new SFString("ball.x3d")}),
+              title : new SFString("fwball.x3d")}),
 
             new NavigationInfo({
               type : ["ANY","EXAMINE","FLY","LOOKAT"]}),
@@ -179,9 +171,9 @@ var X3D0 =  new X3D({
                           parts : new SFNode(
                             new ShaderPart({
                               type : "VERTEX",
-                              url : new MFString(["../shaders/freewrl.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.vs"])})]),
+                              url : new MFString(["https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.vs"])})]),
                           parts : new SFNode(
                             new ShaderPart({
                               type : "FRAGMENT",
-                              url : new MFString(["../shaders/freewrl.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.fs"])}))}))}))}))})])}))});
+                              url : new MFString(["https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.fs"])}))}))}))}))})])}))});
 console.log(X3D0.toXMLNode());

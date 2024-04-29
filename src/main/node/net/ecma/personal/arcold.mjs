@@ -60,7 +60,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("identifier"),
-              content : new SFString("https://coderextreme.net/X3DJSONLD/src/main/data/arc.x3d")}),
+              content : new SFString("https://coderextreme.net/X3DJSONLD/src/main/personal/arc.x3d")}),
 
             new meta({
               name : new SFString("description"),

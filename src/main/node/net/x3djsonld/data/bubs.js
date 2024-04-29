@@ -194,6 +194,7 @@ bubs.prototype = {
     {
 		var testObject = new bubs();
 		console.log ("bubs execution self-validation test results: " + testObject.validateSelf());
+		process.exit();
 	}
 }
 new bubs().main();

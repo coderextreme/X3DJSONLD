@@ -28,11 +28,11 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="extrusion.x3d">extrusion.x3d</a> </td>
+			<td> <a href="https://coderextreme.net/X3DJSONLD/src/main/data/extrusion.x3d">extrusion.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="https://coderextreme.net/X3DJSONLD/src/main/data/force.x3d" target="_blank">https://coderextreme.net/X3DJSONLD/src/main/data/force.x3d</a> </td>
+			<td> <a href="https://coderextreme.net/X3DJSONLD/src/main/data/extrusion.x3d" target="_blank">https://coderextreme.net/X3DJSONLD/src/main/data/extrusion.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
@@ -81,7 +81,7 @@ extrusion.prototype = {
     .addMeta((new autoclass.meta()).setName("creator").setContent("John W Carlson"))
     .addMeta((new autoclass.meta()).setName("created").setContent("December 13 2015"))
     .addMeta((new autoclass.meta()).setName("title").setContent("extrusion.x3d"))
-    .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/force.x3d"))
+    .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/extrusion.x3d"))
     .addMeta((new autoclass.meta()).setName("description").setContent("beginnings of a force directed graph in 3D"))
     .addMeta((new autoclass.meta()).setName("generator").setContent("Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit")))
   .setScene((new autoclass.Scene())
@@ -99,7 +99,10 @@ extrusion.prototype = {
 "                        Browser.print(value);" + "\n" + 
 "                        var endA = new SFVec3f(spine[0].x*Math.random()*2, spine[0].y*Math.random()*2, spine[0].z*Math.random()*2);" + "\n" + 
 "                        var endB = new SFVec3f(spine[1].x*Math.random()*2, spine[1].y*Math.random()*2, spine[1].z*Math.random()*2);" + "\n" + 
-"		        spine = new MFVec3f([endA, endB]);" + "\n" + 
+"                        var tmpspine = new MFVec3f();" + "\n" + 
+"			tmpspine[0] = endA;" + "\n" + 
+"			tmpspine[1] = endB;" + "\n" + 
+"                        spine = tmpspine;" + "\n" + 
 "                }" + "\n")
         .addField((new autoclass.field()).setName("set_cycle").setType("SFTime").setAccessType("inputOnly"))
         .addField((new autoclass.field()).setName("spine").setType("MFVec3f").setAccessType("inputOutput").setValue("-50 -50 0 50 50 0")))
@@ -160,6 +163,7 @@ extrusion.prototype = {
     {
 		var testObject = new extrusion();
 		console.log ("extrusion execution self-validation test results: " + testObject.validateSelf());
+		process.exit();
 	}
 }
 new extrusion().main();

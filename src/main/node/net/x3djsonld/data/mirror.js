@@ -104,23 +104,23 @@ mirror.prototype = {
   .setScene((new autoclass.Scene())
     .addChild((new autoclass.Viewpoint()).setDescription("Switch background and images texture").setPosition(0.0,5.0,100.0))
     .addChild((new autoclass.TextureBackground())
-      .setLeftTexture((new autoclass.ImageTexture("leftBackgroundTexture")).setUrl(new autoclass.MFString("\"../resources/images/all_probes/beach_cross/beach_left.png\" \"https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_left.png\"")))
-      .setRightTexture((new autoclass.ImageTexture("rightBackgroundTexture")).setUrl(new autoclass.MFString("\"../resources/images/all_probes/beach_cross/beach_right.png\" \"https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_right.png\"")))
-      .setFrontTexture((new autoclass.ImageTexture("frontBackgroundTexture")).setUrl(new autoclass.MFString("\"../resources/images/all_probes/beach_cross/beach_front.png\" \"https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_front.png\"")))
-      .setBackTexture((new autoclass.ImageTexture("backBackgroundTexture")).setUrl(new autoclass.MFString("\"../resources/images/all_probes/beach_cross/beach_back.png\" \"https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_back.png\"")))
-      .setTopTexture((new autoclass.ImageTexture("topBackgroundTexture")).setUrl(new autoclass.MFString("\"../resources/images/all_probes/beach_cross/beach_top.png\" \"https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_top.png\"")))
-      .setBottomTexture((new autoclass.ImageTexture("bottomBackgroundTexture")).setUrl(new autoclass.MFString("\"../resources/images/all_probes/beach_cross/beach_bottom.png\" \"https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_bottom.png\""))))
+      .setLeftTexture((new autoclass.ImageTexture("leftBackgroundTexture")).setUrl(new autoclass.MFString("\"../resources/images/all_probes/beach_cross/beach_left.png\" \"https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png\"")))
+      .setRightTexture((new autoclass.ImageTexture("rightBackgroundTexture")).setUrl(new autoclass.MFString("\"../resources/images/all_probes/beach_cross/beach_right.png\" \"https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png\"")))
+      .setFrontTexture((new autoclass.ImageTexture("frontBackgroundTexture")).setUrl(new autoclass.MFString("\"../resources/images/all_probes/beach_cross/beach_front.png\" \"https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png\"")))
+      .setBackTexture((new autoclass.ImageTexture("backBackgroundTexture")).setUrl(new autoclass.MFString("\"../resources/images/all_probes/beach_cross/beach_back.png\" \"https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png\"")))
+      .setTopTexture((new autoclass.ImageTexture("topBackgroundTexture")).setUrl(new autoclass.MFString("\"../resources/images/all_probes/beach_cross/beach_top.png\" \"https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png\"")))
+      .setBottomTexture((new autoclass.ImageTexture("bottomBackgroundTexture")).setUrl(new autoclass.MFString("\"../resources/images/all_probes/beach_cross/beach_bottom.png\" \"https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png\""))))
     .addChild((new autoclass.Transform())
       .addChild((new autoclass.Shape())
         .setAppearance((new autoclass.Appearance())
           .setMaterial((new autoclass.Material()).setDiffuseColor(.7,.7,.7).setSpecularColor(.5,.5,.5))
           .setTexture((new autoclass.ComposedCubeMapTexture())
-            .setBack((new autoclass.ImageTexture("backShader")).setUrl(new autoclass.MFString("\"../resources/images/all_probes/beach_cross/beach_back.png\" \"https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_back.png\"")))
-            .setBottom((new autoclass.ImageTexture("bottomShader")).setUrl(new autoclass.MFString("\"../resources/images/all_probes/beach_cross/beach_bottom.png\" \"https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_bottom.png\"")))
-            .setFront((new autoclass.ImageTexture("frontShader")).setUrl(new autoclass.MFString("\"../resources/images/all_probes/beach_cross/beach_front.png\" \"https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_front.png\"")))
-            .setLeft((new autoclass.ImageTexture("leftShader")).setUrl(new autoclass.MFString("\"../resources/images/all_probes/beach_cross/beach_left.png\" \"https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_left.png\"")))
-            .setRight((new autoclass.ImageTexture("rightShader")).setUrl(new autoclass.MFString("\"../resources/images/all_probes/beach_cross/beach_right.png\" \"https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_right.png\"")))
-            .setTop((new autoclass.ImageTexture("topShader")).setUrl(new autoclass.MFString("\"../resources/images/all_probes/beach_cross/beach_top.png\" \"https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_top.png\""))))
+            .setBackTexture((new autoclass.ImageTexture("backShader")).setUrl(new autoclass.MFString("\"../resources/images/all_probes/beach_cross/beach_back.png\" \"https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png\"")))
+            .setBottomTexture((new autoclass.ImageTexture("bottomShader")).setUrl(new autoclass.MFString("\"../resources/images/all_probes/beach_cross/beach_bottom.png\" \"https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png\"")))
+            .setFrontTexture((new autoclass.ImageTexture("frontShader")).setUrl(new autoclass.MFString("\"../resources/images/all_probes/beach_cross/beach_front.png\" \"https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png\"")))
+            .setLeftTexture((new autoclass.ImageTexture("leftShader")).setUrl(new autoclass.MFString("\"../resources/images/all_probes/beach_cross/beach_left.png\" \"https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png\"")))
+            .setRightTexture((new autoclass.ImageTexture("rightShader")).setUrl(new autoclass.MFString("\"../resources/images/all_probes/beach_cross/beach_right.png\" \"https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png\"")))
+            .setTopTexture((new autoclass.ImageTexture("topShader")).setUrl(new autoclass.MFString("\"../resources/images/all_probes/beach_cross/beach_top.png\" \"https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png\""))))
           .addShaders((new autoclass.ComposedShader("x3dom")).setLanguage("GLSL")
             .addField((new autoclass.field()).setName("chromaticDispertion").setType("SFVec3f").setAccessType("inputOutput").setValue("0.98 1 1.033"))
             .addField((new autoclass.field()).setName("cube").setType("SFInt32").setAccessType("inputOutput").setValue("0"))
@@ -241,6 +241,7 @@ mirror.prototype = {
     {
 		var testObject = new mirror();
 		console.log ("mirror execution self-validation test results: " + testObject.validateSelf());
+		process.exit();
 	}
 }
 new mirror().main();

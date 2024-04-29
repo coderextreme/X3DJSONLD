@@ -126,7 +126,7 @@ CoordinateAxes.prototype = {
           .addChild((new autoclass.Transform()).setTranslation(0.0,1.0,0.0)
             .addChild((new autoclass.Shape())
               .setGeometry((new autoclass.Cone("ArrowCone")).setBottomRadius(.05).setHeight(.1))
-              .setAppearance((new autoclass.Appearance())))))
+              .setAppearance((new autoclass.Appearance()).setUSE("Green")))))
         .addChild((new autoclass.Transform()).setTranslation(0.0,1.08,0.0)
           .addChild((new autoclass.Billboard())
             .addChild((new autoclass.Shape())
@@ -139,39 +139,39 @@ CoordinateAxes.prototype = {
         .addChild((new autoclass.Group())
           .addChild((new autoclass.Group("ArrowRed"))
             .addChild((new autoclass.Shape())
-              .setGeometry((new autoclass.Cylinder()))
+              .setGeometry((new autoclass.Cylinder()).setUSE("ArrowCylinder"))
               .setAppearance((new autoclass.Appearance("Red"))
                 .setMaterial((new autoclass.Material()).setDiffuseColor(.7,.1,.1).setEmissiveColor(.33,0.0,0.0))))
             .addChild((new autoclass.Transform()).setTranslation(0.0,1.0,0.0)
               .addChild((new autoclass.Shape())
-                .setGeometry((new autoclass.Cone()))
-                .setAppearance((new autoclass.Appearance())))))
+                .setGeometry((new autoclass.Cone()).setUSE("ArrowCone"))
+                .setAppearance((new autoclass.Appearance()).setUSE("Red")))))
           .addChild((new autoclass.Transform()).setRotation(0.0,0.0,1.0,1.57079).setTranslation(.072,1.1,0.0)
             .addComments(" note label rotated back to original coordinate frame ")
             .addChild((new autoclass.Billboard())
               .addChild((new autoclass.Shape())
-                .setAppearance((new autoclass.Appearance()))
+                .setAppearance((new autoclass.Appearance()).setUSE("LABEL_APPEARANCE"))
                 .setGeometry((new autoclass.Text()).setString(new autoclass.MFString("\"X\""))
-                  .setFontStyle((new autoclass.FontStyle()))))))))
+                  .setFontStyle((new autoclass.FontStyle()).setUSE("LABEL_FONT"))))))))
       .addChild((new autoclass.Transform()).setRotation(1.0,0.0,0.0,1.57079)
         .addComments(" Perpendicular Z arrow and label, note right-hand rule ")
         .addChild((new autoclass.Group())
           .addChild((new autoclass.Group("ArrowBlue"))
             .addChild((new autoclass.Shape())
-              .setGeometry((new autoclass.Cylinder()))
+              .setGeometry((new autoclass.Cylinder()).setUSE("ArrowCylinder"))
               .setAppearance((new autoclass.Appearance("Blue"))
                 .setMaterial((new autoclass.Material()).setDiffuseColor(.3,.3,1.0).setEmissiveColor(.1,.1,.33))))
             .addChild((new autoclass.Transform()).setTranslation(0.0,1.0,0.0)
               .addChild((new autoclass.Shape())
-                .setGeometry((new autoclass.Cone()))
-                .setAppearance((new autoclass.Appearance())))))
+                .setGeometry((new autoclass.Cone()).setUSE("ArrowCone"))
+                .setAppearance((new autoclass.Appearance()).setUSE("Blue")))))
           .addChild((new autoclass.Transform()).setRotation(1.0,0.0,0.0,-1.57079).setTranslation(0.0,1.1,.072)
             .addComments(" note label rotated back to original coordinate frame ")
             .addChild((new autoclass.Billboard())
               .addChild((new autoclass.Shape())
-                .setAppearance((new autoclass.Appearance()))
+                .setAppearance((new autoclass.Appearance()).setUSE("LABEL_APPEARANCE"))
                 .setGeometry((new autoclass.Text()).setString(new autoclass.MFString("\"Z\""))
-                  .setFontStyle((new autoclass.FontStyle()))))))))));
+                  .setFontStyle((new autoclass.FontStyle()).setUSE("LABEL_FONT"))))))))));
   },
   // end of initialize() method
 
@@ -227,6 +227,7 @@ CoordinateAxes.prototype = {
     {
 		var testObject = new CoordinateAxes();
 		console.log ("CoordinateAxes execution self-validation test results: " + testObject.validateSelf());
+		process.exit();
 	}
 }
 new CoordinateAxes().main();

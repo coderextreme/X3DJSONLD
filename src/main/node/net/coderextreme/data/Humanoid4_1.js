@@ -62,7 +62,7 @@ ConfigurationProperties.setStripDefaultAttributes(true);
         .addChild(new autoclass.Viewpoint().setDescription("default"))
         .addChild(new autoclass.HAnimHumanoid().setName("HAnim").setDEF("hanim_HAnim").setInfo(java.newArray("java.lang.String", ["humanoidVersion=2.0"])).setVersion("2.0")
           .addComments((new autoclass.CommentsBlock("</LOD>")))
-          .setSkinCoord(new autoclass.Coordinate().setContainerFieldOverride("skinCoord").setUSE("TheSkinCoord"))
+          .setSkinCoord(new autoclass.Coordinate().setContainerFieldOverride("skinCoord"))
           .addSkeleton(new autoclass.HAnimJoint("hanim_HAnim").setName("humanoid_root").setDEF("hanim_humanoid_root").setCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0.824), java.newFloat(0.0277)])).setContainerFieldOverride("skeleton")
             .addChild(new autoclass.HAnimSegment("hanim_humanoid_root").setName("sacrum").setDEF("hanim_sacrum")
               .addChild(new autoclass.Transform().setTranslation(java.newArray("float", [java.newFloat(0), java.newFloat(0.824), java.newFloat(0.0277)]))

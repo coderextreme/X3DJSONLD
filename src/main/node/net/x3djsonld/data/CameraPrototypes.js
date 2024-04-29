@@ -562,13 +562,13 @@ CameraPrototypes.prototype = {
           .addField((new autoclass.field()).setName("offlineRender").setType("SFNode").setAccessType("inputOutput").setAppinfo("OfflineRender node")
             .addComments(" initialization node (if any) goes here "))
           .addField((new autoclass.field()).setName("ViewpointNode").setType("SFNode").setAccessType("initializeOnly").setAppinfo("node reference to permit getting setting fields from within Script")
-            .addChild((new autoclass.Viewpoint())))
+            .addChild((new autoclass.Viewpoint()).setUSE("CameraViewpoint")))
           .addField((new autoclass.field()).setName("NavInfoNode").setType("SFNode").setAccessType("initializeOnly").setAppinfo("node reference to permit getting setting fields from within Script")
-            .addChild((new autoclass.NavigationInfo())))
+            .addChild((new autoclass.NavigationInfo()).setUSE("CameraNavInfo")))
           .addField((new autoclass.field()).setName("CameraPI").setType("SFNode").setAccessType("initializeOnly").setAppinfo("node reference to permit getting setting fields from within Script")
-            .addChild((new autoclass.PositionInterpolator())))
+            .addChild((new autoclass.PositionInterpolator()).setUSE("CameraPositionInterpolator")))
           .addField((new autoclass.field()).setName("CameraOI").setType("SFNode").setAccessType("initializeOnly").setAppinfo("node reference to permit getting setting fields from within Script")
-            .addChild((new autoclass.OrientationInterpolator())))
+            .addChild((new autoclass.OrientationInterpolator()).setUSE("CameraOrientationInterpolator")))
           .addField((new autoclass.field()).setName("key").setType("MFFloat").setAccessType("inputOutput").setAppinfo("key array for interpolators"))
           .addField((new autoclass.field()).setName("keyValuePosition").setType("MFVec3f").setAccessType("inputOutput").setAppinfo("keyValue array for PositionInterpolator"))
           .addField((new autoclass.field()).setName("keyValueOrientation").setType("MFRotation").setAccessType("inputOutput").setAppinfo("keyValue array for OrientationInterpolator"))
@@ -1045,6 +1045,7 @@ CameraPrototypes.prototype = {
     {
 		var testObject = new CameraPrototypes();
 		console.log ("CameraPrototypes execution self-validation test results: " + testObject.validateSelf());
+		process.exit();
 	}
 }
 new CameraPrototypes().main();

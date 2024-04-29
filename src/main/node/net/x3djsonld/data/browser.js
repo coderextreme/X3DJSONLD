@@ -147,6 +147,7 @@ browser.prototype = {
     {
 		var testObject = new browser();
 		console.log ("browser execution self-validation test results: " + testObject.validateSelf());
+		process.exit();
 	}
 }
 new browser().main();

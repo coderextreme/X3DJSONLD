@@ -96,7 +96,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("identifier"),
-              content : new SFString("https://coderextreme.net/X3DJSONLD/src/main/data/flowers.x3d")})])})),
+              content : new SFString("https://coderextreme.net/X3DJSONLD/src/main/personal/flowers.x3d")})])})),
       Scene : new SFNode(
         new Scene({
           children : new MFNode([
