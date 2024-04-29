@@ -1,20 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd" ><head><component name="Scripting" level="1"></component>
-<component name="EnvironmentalEffects" level="3"></component>
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd" ><head><component name="EnvironmentalEffects" level="3"></component>
 <component name="Shaders" level="1"></component>
 <component name="CubeMapTexturing" level="1"></component>
 <component name="Texturing" level="1"></component>
 <component name="Rendering" level="1"></component>
 <component name="Grouping" level="3"></component>
 <component name="Core" level="1"></component>
-<meta name="title" content="ball.x3d"></meta>
+<meta name="title" content="fwball.x3d"></meta>
 <meta name="creator" content="John Carlson"></meta>
-<meta name="generator" content="manual"></meta>
-<meta name="identifier" content="https://coderextreme.net/X3DJSONLD/src/main/personal/ball.x3d"></meta>
+<meta name="identifier" content="https://coderextreme.net/X3DJSONLD/src/main/personal/fwball.x3d"></meta>
 <meta name="description" content="a prismatic sphere"></meta>
 </head>
-<Scene><WorldInfo title="ball.x3d"></WorldInfo>
+<Scene><WorldInfo title="fwball.x3d"></WorldInfo>
 <NavigationInfo type="&quot;ANY&quot; &quot;EXAMINE&quot; &quot;FLY&quot; &quot;LOOKAT&quot;"></NavigationInfo>
 <Viewpoint description="Tour Views" position="0 0 12"></Viewpoint>
 <Background backUrl="&quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png&quot;" bottomUrl="&quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png&quot;" frontUrl="&quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png&quot;" leftUrl="&quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png&quot;" rightUrl="&quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png&quot;" topUrl="&quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png&quot;"></Background>
@@ -33,8 +31,8 @@
 <field name="bias" accessType="inputOutput" type="SFFloat" value="0.5"></field>
 <field name="scale" accessType="inputOutput" type="SFFloat" value="0.5"></field>
 <field name="power" accessType="inputOutput" type="SFFloat" value="2"></field>
-<ShaderPart url="&quot;../shaders/freewrl.vs&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.vs&quot;" type="VERTEX"></ShaderPart>
-<ShaderPart url="&quot;../shaders/freewrl.fs&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.fs&quot;" type="FRAGMENT"></ShaderPart>
+<ShaderPart url="&quot;https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.vs&quot;" type="VERTEX"></ShaderPart>
+<ShaderPart url="&quot;https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.fs&quot;" type="FRAGMENT"></ShaderPart>
 </ComposedShader>
 </Appearance>
 </Shape>

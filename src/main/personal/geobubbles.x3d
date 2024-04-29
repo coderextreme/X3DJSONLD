@@ -6,7 +6,7 @@
         <meta name='title' content='geobubbles.x3d'/>
         <meta name='creator' content='John Carlson'/>
         <meta name='generator' content='manual'/>
-	<meta name='identifier' content='https://coderextreme.net/X3DJSONLD/src/main/data/geobubbles.x3d'/>
+	<meta name='identifier' content='https://coderextreme.net/X3DJSONLD/src/main/personal/geobubbles.x3d'/>
         <meta name='description' content='geo bubbles'/>      
     </head>
     <Scene><!--Viewpoint DEF='Tour' position='0 0 4' orientation='1 0 0 0' description='Tour Views'/--><!--PositionInterpolator DEF='TourPosition' key='0 1' keyValue='-0.5 -0.5 4 -0.5 0.5 4'/-->

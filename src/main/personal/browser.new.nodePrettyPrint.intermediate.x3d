@@ -5,7 +5,7 @@
     <meta content='browser.x3d' name='title'/>
     <meta content='John Carlson' name='creator'/>
     <meta content='manual' name='generator'/>
-    <meta content='https://coderextreme.net/X3DJSONLD/src/main/data/browser.x3d' name='identifier'/>
+    <meta content='https://coderextreme.net/X3DJSONLD/src/main/personal/browser.x3d' name='identifier'/>
     <meta content='a script test with embedded \n between single quotes, a double backslash \\\\ a backslash \\ and a closing quote "' name='description'/>
   </head>
   <Scene>

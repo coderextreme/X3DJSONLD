@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
 <X3D  profile="Interchange" version="3.3" ><head><meta name="title" content="ifscubeworks.x3d"></meta>
-		<meta name="identifier" content="http://coderextreme.net/X3DJSONLD/src/main/data/ifscubeworks.x3d"></meta>
+		<meta name="identifier" content="http://coderextreme.net/X3DJSONLD/src/main/personal/ifscubeworks.x3d"></meta>
 <meta name="description" content="Template for an Indexed Face Set"></meta>
 <meta name="creator" content="John Carlson"></meta>
 <meta name="created" content="4 April 2017"></meta>
-<meta content='https://www.web3d.org/x3d/content/examples/license.html' name='license'></meta>
+<meta content='https://coderextreme.net/X3DJSONLD/LICENSE' name='license'></meta>
 <meta name='generator' content='X3D-Edit, https://savage.nps.edu/X3D-Edit'></meta>
 </head>
 <Scene>

@@ -6,7 +6,7 @@
     <meta content='December 13 2015' name='created'/>
     <meta content='April 18 2017' name='modified'/>
     <meta content='fors2.x3d' name='title'/>
-    <meta content='https://coderextreme.net/X3DJSONLD/src/main/data/fors2.x3d' name='identifier'/>
+    <meta content='https://coderextreme.net/X3DJSONLD/src/main/personal/fors2.x3d' name='identifier'/>
     <meta content='beginnings of a force directed graph in 3D' name='description'/>
     <meta content='Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit' name='generator'/>
   </head>
@@ -55,7 +55,7 @@ ecmascript:
         <ROUTE fromField='value_changed' fromNode='NodePosition' toField='set_translation' toNode='transform'/>
       </ProtoBody>
     </ProtoDeclare>
-    <ProtoDeclare name='cylinder'>
+    <ProtoDeclare name='cyl'>
       <ProtoInterface>
         <field name='positionA' accessType='inputOnly' type='SFVec3f'/>
         <field name='positionB' accessType='inputOnly' type='SFVec3f'/>
@@ -110,7 +110,7 @@ ecmascript:
       <ProtoInstance DEF='nodeB' name='node'>
         <fieldValue name='position' value='50 50 50'/>
       </ProtoInstance>
-      <ProtoInstance DEF='linkA' name='cylinder'>
+      <ProtoInstance DEF='linkA' name='cyl'>
         <fieldValue name='positionA' value='0 0 0'/>
         <fieldValue name='positionB' value='50 50 50'/>
       </ProtoInstance>

@@ -3,7 +3,7 @@
 <X3D profile='Interchange' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.3.xsd'>
   <head>
     <meta content='ifscubeworks.x3d' name='title'/>
-    <meta content='http://coderextreme.net/X3DJSONLD/src/main/data/ifscubeworks.x3d' name='identifier'/>
+    <meta content='http://coderextreme.net/X3DJSONLD/src/main/personal/ifscubeworks.x3d' name='identifier'/>
     <meta content='Template for an Indexed Face Set' name='description'/>
     <meta content='John Carlson' name='creator'/>
     <meta content='4 April 2017' name='created'/>

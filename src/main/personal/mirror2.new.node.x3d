@@ -2,19 +2,19 @@
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
 <X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
+    <!-- <component name='Shape' level='4'></component> -->
     <component name='Scripting' level='1'/>
     <component name='EnvironmentalEffects' level='3'/>
     <component name='Shaders' level='1'/>
     <component name='CubeMapTexturing' level='1'/>
     <component name='Texturing' level='1'/>
     <component name='Rendering' level='1'/>
-    <component name='Shape' level='4'/>
     <component name='Grouping' level='3'/>
     <component name='Core' level='1'/>
     <meta content='mirror2.x3d' name='title'/>
     <meta content='John Carlson' name='creator'/>
     <meta content='manual' name='generator'/>
-    <meta content='https://coderextreme.net/X3DJSONLD/src/main/data/mirror2.x3d' name='identifier'/>
+    <meta content='https://coderextreme.net/X3DJSONLD/src/main/personal/mirror2.x3d' name='identifier'/>
     <meta content='a mirrored sphere' name='description'/>
   </head>
   <Scene>
