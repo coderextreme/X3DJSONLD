@@ -326,7 +326,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 ConfigurationProperties.setStripDefaultAttributes(true);
 function doubleToFloat(d) {
     if (Float32Array)
-	return new Float32Array([d])[0];
+	return new Float32Array(d);
 }
       var X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
       .addComments(new CommentsBlock("All head/meta tags are optional, WorldInfo is also optional"))

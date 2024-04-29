@@ -326,7 +326,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 ConfigurationProperties.setStripDefaultAttributes(true);
 function doubleToFloat(d) {
     if (Float32Array)
-	return new Float32Array([d])[0];
+	return new Float32Array(d);
 }
 var ProtoInstance0 = null;
       var X3D0 =  new X3D().setProfile("Immersive").setVersion("3.2")
@@ -360,7 +360,7 @@ var ProtoInstance0 = null;
             .addChild(new Transform().setDEF("TR")
               .addChild(new Shape()
                 .setAppearance(new Appearance()
-                  .setMaterial(new Material().setDiffuseColor(Java.to([doubleToFloat(0.5),doubleToFloat(0.5),doubleToFloat(0.9)], Java.type("float[]"))))
+                  .setMaterial(new Material().setDiffuseColor(Java.to(doubleToFloat([0.5,0.5,0.9]), Java.type("float[]"))))
                   .addShaders(new ComposedShader().setLanguage("GLSL")
                     .addField(new field().setType(field.TYPE_SFVEC3F).setName("decis").setAccessType(field.ACCESSTYPE_INITIALIZEONLY))
                     .setIS(new IS()

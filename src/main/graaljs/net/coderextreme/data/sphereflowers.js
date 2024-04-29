@@ -326,7 +326,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 ConfigurationProperties.setStripDefaultAttributes(true);
 function doubleToFloat(d) {
     if (Float32Array)
-	return new Float32Array([d])[0];
+	return new Float32Array(d);
 }
 var ProtoInstance0 = null;
 var ProtoInstance1 = null;
@@ -370,7 +370,7 @@ var ProtoInstance6 = null;
           .addChild(ProtoInstance5 = new ProtoInstance().setName("flower"))
           .addChild(ProtoInstance6 = new ProtoInstance().setName("flower"))
           .addChild(new TimeSensor().setDEF("SongTime").setLoop(true))
-          .addChild(new Sound().setMaxBack(100).setMaxFront(100).setMinBack(20).setMinFront(20).setLocation(Java.to([doubleToFloat(0),doubleToFloat(1),doubleToFloat(0)], Java.type("float[]")))
+          .addChild(new Sound().setMaxBack(100).setMaxFront(100).setMinBack(20).setMinFront(20).setLocation(Java.to(doubleToFloat([0,1,0]), Java.type("float[]")))
             .setSource(new AudioClip().setDEF("AudioClip").setDescription("Chandubabamusic #1").setUrl(Java.to(["../resources/chandubabamusic1.wav","https://coderextreme.net/X3DJSONLD/src/main/resources/chandubabamusic1.wav"], Java.type("java.lang.String[]")))))
           .addChild(new ROUTE().setFromField("cycleTime").setFromNode("SongTime").setToField("startTime").setToNode("AudioClip"))))      ;
 ProtoInstance0

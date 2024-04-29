@@ -326,7 +326,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 ConfigurationProperties.setStripDefaultAttributes(true);
 function doubleToFloat(d) {
     if (Float32Array)
-	return new Float32Array([d])[0];
+	return new Float32Array(d);
 }
 var ProtoInstance0 = null;
 var ProtoInstance1 = null;
@@ -347,7 +347,7 @@ var ProtoInstance9 = null;
         .addMeta(new meta().setName("description").setContent("a kind of ThreeDTexture cube with spheres")))
       .setScene(new Scene()
         .addChild(new NavigationInfo().setType(Java.to(["EXAMINE"], Java.type("java.lang.String[]"))))
-        .addChild(new Viewpoint().setDescription("Rubiks Cube").setPosition(Java.to([doubleToFloat(0),doubleToFloat(0),doubleToFloat(12)], Java.type("float[]"))))
+        .addChild(new Viewpoint().setDescription("Rubiks Cube").setPosition(Java.to(doubleToFloat([0,0,12]), Java.type("float[]"))))
         .addChild(new ProtoDeclare().setName("sphereproto")
           .setProtoInterface(new ProtoInterface()
             .addField(new field().setType(field.TYPE_SFVEC3F).setName("xtranslation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0")))
@@ -358,7 +358,7 @@ var ProtoInstance9 = null;
               .addChild(new Shape()
                 .setGeometry(new Sphere())
                 .setAppearance(new Appearance()
-                  .setMaterial(new Material().setDiffuseColor(Java.to([doubleToFloat(1),doubleToFloat(1),doubleToFloat(1)], Java.type("float[]")))))))))
+                  .setMaterial(new Material().setDiffuseColor(Java.to(doubleToFloat([1,1,1]), Java.type("float[]")))))))))
         .addChild(new ProtoDeclare().setName("three")
           .setProtoInterface(new ProtoInterface()
             .addField(new field().setType(field.TYPE_SFVEC3F).setName("ytranslation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0")))

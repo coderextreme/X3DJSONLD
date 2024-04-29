@@ -163,11 +163,11 @@ indexedfaceset_pixeltexture_entire.prototype = {
 		var metaList = this.getX3dModel().getHead().getMetaList();
 		for (var m in metaList) {
 			var metaObject = metaList[m];
-			if (metaObject.getName().equals(metaObject.NAME_ERROR) ||
-				metaObject.getName().equals(metaObject.NAME_WARNING) ||
-				metaObject.getName().equals(metaObject.NAME_HINT) ||
-				metaObject.getName().equals(metaObject.NAME_INFO) ||
-				metaObject.getName().equals(metaObject.NAME_TODO))
+			if (metaObject.getName() === metaObject.NAME_ERROR ||
+				metaObject.getName() === metaObject.NAME_WARNING ||
+				metaObject.getName() === metaObject.NAME_HINT ||
+				metaObject.getName() === metaObject.NAME_INFO ||
+				metaObject.getName() === metaObject.NAME_TODO)
 			{
 				metaResult += metaObject.toStringX3D();
 			}

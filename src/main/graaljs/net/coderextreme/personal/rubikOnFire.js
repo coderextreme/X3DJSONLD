@@ -326,7 +326,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 ConfigurationProperties.setStripDefaultAttributes(true);
 function doubleToFloat(d) {
     if (Float32Array)
-	return new Float32Array([d])[0];
+	return new Float32Array(d);
 }
 var ProtoInstance0 = null;
 var ProtoInstance1 = null;
@@ -343,11 +343,11 @@ var ProtoInstance9 = null;
         .addMeta(new meta().setName("title").setContent("rubikOnFire.x3d"))
         .addMeta(new meta().setName("creator").setContent("John Carlson"))
         .addMeta(new meta().setName("generator").setContent("manual"))
-        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/rubikOnFire.x3d"))
+        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/personal/rubikOnFire.x3d"))
         .addMeta(new meta().setName("description").setContent("a white rubik cube")))
       .setScene(new Scene()
         .addChild(new NavigationInfo().setType(Java.to(["EXAMINE"], Java.type("java.lang.String[]"))))
-        .addChild(new Viewpoint().setDescription("Rubiks Cube on Fire").setPosition(Java.to([doubleToFloat(0),doubleToFloat(0),doubleToFloat(12)], Java.type("float[]"))))
+        .addChild(new Viewpoint().setDescription("Rubiks Cube on Fire").setPosition(Java.to(doubleToFloat([0,0,12]), Java.type("float[]"))))
         .addChild(new ProtoDeclare().setName("anyShape")
           .setProtoInterface(new ProtoInterface()
             .addField(new field().setType(field.TYPE_SFVEC3F).setName("xtranslation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
@@ -361,7 +361,7 @@ var ProtoInstance9 = null;
                 .setIS(new IS()
                   .addConnect(new connect().setNodeField("geometry").setProtoField("myShape")))
                 .setAppearance(new Appearance()
-                  .setMaterial(new Material().setDiffuseColor(Java.to([doubleToFloat(1),doubleToFloat(1),doubleToFloat(1)], Java.type("float[]")))))))))
+                  .setMaterial(new Material().setDiffuseColor(Java.to(doubleToFloat([1,1,1]), Java.type("float[]")))))))))
         .addChild(new ProtoDeclare().setName("three")
           .setProtoInterface(new ProtoInterface()
             .addField(new field().setType(field.TYPE_SFVEC3F).setName("ytranslation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
@@ -439,6 +439,6 @@ ProtoInstance9
           .addFieldValue(new fieldValue().setName("ttranslation").setValue("0 0 0"));
 ProtoInstance9
           .addFieldValue(new fieldValue().setName("myShape")
-            .addChild(new Box().setSize(Java.to([doubleToFloat(1),doubleToFloat(1),doubleToFloat(1)], Java.type("float[]")))));
+            .addChild(new Box().setSize(Java.to(doubleToFloat([1,1,1]), Java.type("float[]")))));
     X3D0.toFileX3D("../personal/rubikOnFire.new.graal.x3d");
     X3D0.toFileJSON("../personal/rubikOnFire.new.graal.json");

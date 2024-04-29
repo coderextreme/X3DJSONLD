@@ -326,7 +326,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 ConfigurationProperties.setStripDefaultAttributes(true);
 function doubleToFloat(d) {
     if (Float32Array)
-	return new Float32Array([d])[0];
+	return new Float32Array(d);
 }
       var X3D0 =  new X3D().setProfile("Immersive").setVersion("3.2")
       .setHead(new head()
@@ -398,10 +398,10 @@ function doubleToFloat(d) {
                 .addConnect(new connect().setNodeField("on").setProtoField("headlight"))
                 .addConnect(new connect().setNodeField("color").setProtoField("headlightColor"))
                 .addConnect(new connect().setNodeField("intensity").setProtoField("headlightIntensity"))))
-            .addChild(new PositionInterpolator().setDEF("CameraPositionInterpolator").setKey(Java.to([doubleToFloat(0),doubleToFloat(1)], Java.type("float[]"))).setKeyValue(Java.to([doubleToFloat(0),doubleToFloat(0),doubleToFloat(0),doubleToFloat(0),doubleToFloat(0),doubleToFloat(0)], Java.type("float[]")))
+            .addChild(new PositionInterpolator().setDEF("CameraPositionInterpolator").setKey(Java.to(doubleToFloat([0,1]), Java.type("float[]"))).setKeyValue(Java.to(doubleToFloat([0,0,0,0,0,0]), Java.type("float[]")))
               .setIS(new IS()
                 .addConnect(new connect().setNodeField("set_fraction").setProtoField("set_fraction"))))
-            .addChild(new OrientationInterpolator().setDEF("CameraOrientationInterpolator").setKey(Java.to([doubleToFloat(0),doubleToFloat(1)], Java.type("float[]"))).setKeyValue(Java.to([doubleToFloat(0),doubleToFloat(1),doubleToFloat(0),doubleToFloat(0),doubleToFloat(0),doubleToFloat(1),doubleToFloat(0),doubleToFloat(0)], Java.type("float[]")))
+            .addChild(new OrientationInterpolator().setDEF("CameraOrientationInterpolator").setKey(Java.to(doubleToFloat([0,1]), Java.type("float[]"))).setKeyValue(Java.to(doubleToFloat([0,1,0,0,0,1,0,0]), Java.type("float[]")))
               .setIS(new IS()
                 .addConnect(new connect().setNodeField("set_fraction").setProtoField("set_fraction"))))
             .addChild(new ROUTE().setFromField("value_changed").setFromNode("CameraPositionInterpolator").setToField("position").setToNode("CameraViewpoint"))
@@ -1185,13 +1185,13 @@ function alwaysPrint (outputValue)
 }`))
             .addComments(new CommentsBlock("Add any ROUTEs here, going from Script to other nodes within ProtoBody"))))
         .addComments(new CommentsBlock("=============== Launch Prototype Example =============="))
-        .addChild(new Background().setSkyColor(Java.to([doubleToFloat(0.282353),doubleToFloat(0.380392),doubleToFloat(0.470588)], Java.type("float[]"))))
+        .addChild(new Background().setSkyColor(Java.to(doubleToFloat([0.282353,0.380392,0.470588]), Java.type("float[]"))))
         .addChild(new Anchor().setDescription("launch CameraExample scene").setUrl(Java.to(["CameraExamples.x3d","https://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.x3d","CameraExamples.wrl","https://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.wrl"], Java.type("java.lang.String[]")))
           .addChild(new Transform()
             .addChild(new Shape()
               .setGeometry(new Text().setString(Java.to(["CameraPrototypes.x3d","defines multiple prototype nodes","","Click on this text to see","CameraExamples.x3d scene"], Java.type("java.lang.String[]")))
                 .setFontStyle(new FontStyle().setJustify(Java.to(["MIDDLE","MIDDLE"], Java.type("java.lang.String[]")))))
               .setAppearance(new Appearance()
-                .setMaterial(new Material().setDiffuseColor(Java.to([doubleToFloat(1),doubleToFloat(1),doubleToFloat(0.2)], Java.type("float[]")))))))))      ;
+                .setMaterial(new Material().setDiffuseColor(Java.to(doubleToFloat([1,1,0.2]), Java.type("float[]")))))))))      ;
     X3D0.toFileX3D("../data/CameraPrototypes.new.graal.x3d");
     X3D0.toFileJSON("../data/CameraPrototypes.new.graal.json");

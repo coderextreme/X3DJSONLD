@@ -326,7 +326,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 ConfigurationProperties.setStripDefaultAttributes(true);
 function doubleToFloat(d) {
     if (Float32Array)
-	return new Float32Array([d])[0];
+	return new Float32Array(d);
 }
 var ProtoInstance0 = null;
 var ProtoInstance1 = null;
@@ -347,7 +347,7 @@ var ProtoInstance9 = null;
         .addMeta(new meta().setName("description").setContent("a green rubik cube")))
       .setScene(new Scene()
         .addChild(new NavigationInfo().setType(Java.to(["EXAMINE"], Java.type("java.lang.String[]"))))
-        .addChild(new Viewpoint().setDescription("Rubiks Cube on Fire").setPosition(Java.to([doubleToFloat(0),doubleToFloat(0),doubleToFloat(12)], Java.type("float[]"))))
+        .addChild(new Viewpoint().setDescription("Rubiks Cube on Fire").setPosition(Java.to(doubleToFloat([0,0,12]), Java.type("float[]"))))
         .addChild(new ProtoDeclare().setName("anyShape")
           .setProtoInterface(new ProtoInterface()
             .addField(new field().setType(field.TYPE_SFVEC3F).setName("xtranslation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
@@ -355,7 +355,7 @@ var ProtoInstance9 = null;
               .addChild(new Shape()
                 .setGeometry(new Sphere())
                 .setAppearance(new Appearance()
-                  .setMaterial(new Material().setDiffuseColor(Java.to([doubleToFloat(1),doubleToFloat(1),doubleToFloat(1)], Java.type("float[]"))))))))
+                  .setMaterial(new Material().setDiffuseColor(Java.to(doubleToFloat([1,1,1]), Java.type("float[]"))))))))
           .setProtoBody(new ProtoBody()
             .addChild(new Transform()
               .setIS(new IS()
@@ -368,7 +368,7 @@ var ProtoInstance9 = null;
               .addChild(new Shape()
                 .setGeometry(new Sphere())
                 .setAppearance(new Appearance()
-                  .setMaterial(new Material().setDiffuseColor(Java.to([doubleToFloat(1),doubleToFloat(1),doubleToFloat(1)], Java.type("float[]"))))))))
+                  .setMaterial(new Material().setDiffuseColor(Java.to(doubleToFloat([1,1,1]), Java.type("float[]"))))))))
           .setProtoBody(new ProtoBody()
             .addChild(new Transform()
               .setIS(new IS()
@@ -389,7 +389,7 @@ var ProtoInstance9 = null;
               .addChild(new Shape()
                 .setGeometry(new Sphere())
                 .setAppearance(new Appearance()
-                  .setMaterial(new Material().setDiffuseColor(Java.to([doubleToFloat(1),doubleToFloat(1),doubleToFloat(1)], Java.type("float[]"))))))))
+                  .setMaterial(new Material().setDiffuseColor(Java.to(doubleToFloat([1,1,1]), Java.type("float[]"))))))))
           .setProtoBody(new ProtoBody()
             .addChild(new Transform()
               .setIS(new IS()
@@ -410,7 +410,7 @@ var ProtoInstance9 = null;
               .addChild(new Shape()
                 .setGeometry(new Sphere())
                 .setAppearance(new Appearance()
-                  .setMaterial(new Material().setDiffuseColor(Java.to([doubleToFloat(1),doubleToFloat(1),doubleToFloat(1)], Java.type("float[]"))))))))
+                  .setMaterial(new Material().setDiffuseColor(Java.to(doubleToFloat([1,1,1]), Java.type("float[]"))))))))
           .setProtoBody(new ProtoBody()
             .addChild(new Transform()
               .setIS(new IS()
@@ -448,8 +448,8 @@ ProtoInstance9
 ProtoInstance9
           .addFieldValue(new fieldValue().setName("myShape")
             .addChild(new Shape()
-              .setGeometry(new Box().setSize(Java.to([doubleToFloat(1),doubleToFloat(1),doubleToFloat(1)], Java.type("float[]"))))
+              .setGeometry(new Box().setSize(Java.to(doubleToFloat([1,1,1]), Java.type("float[]"))))
               .setAppearance(new Appearance()
-                .setMaterial(new Material().setDiffuseColor(Java.to([doubleToFloat(0),doubleToFloat(1),doubleToFloat(0)], Java.type("float[]")))))));
+                .setMaterial(new Material().setDiffuseColor(Java.to(doubleToFloat([0,1,0]), Java.type("float[]")))))));
     X3D0.toFileX3D("../data/rubikFurnace.new.graal.x3d");
     X3D0.toFileJSON("../data/rubikFurnace.new.graal.json");

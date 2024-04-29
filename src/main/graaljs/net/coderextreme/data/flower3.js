@@ -326,7 +326,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 ConfigurationProperties.setStripDefaultAttributes(true);
 function doubleToFloat(d) {
     if (Float32Array)
-	return new Float32Array([d])[0];
+	return new Float32Array(d);
 }
       var X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
       .setHead(new head()
@@ -337,13 +337,13 @@ function doubleToFloat(d) {
         .addMeta(new meta().setName("description").setContent("a flower")))
       .setScene(new Scene()
         .addChild(new NavigationInfo())
-        .addChild(new DirectionalLight().setDirection(Java.to([doubleToFloat(0),doubleToFloat(-0.8),doubleToFloat(-0.2)], Java.type("float[]"))).setIntensity(0.5))
-        .addChild(new Background().setSkyColor(Java.to([doubleToFloat(1),doubleToFloat(1),doubleToFloat(1)], Java.type("float[]"))))
-        .addChild(new Viewpoint().setDescription("One mathematical orbital").setPosition(Java.to([doubleToFloat(0),doubleToFloat(0),doubleToFloat(50)], Java.type("float[]"))))
-        .addChild(new Transform().setDEF("OrbitTransform").setTranslation(Java.to([doubleToFloat(8),doubleToFloat(0),doubleToFloat(0)], Java.type("float[]")))
+        .addChild(new DirectionalLight().setDirection(Java.to(doubleToFloat([0,-0.8,-0.2]), Java.type("float[]"))).setIntensity(0.5))
+        .addChild(new Background().setSkyColor(Java.to(doubleToFloat([1,1,1]), Java.type("float[]"))))
+        .addChild(new Viewpoint().setDescription("One mathematical orbital").setPosition(Java.to(doubleToFloat([0,0,50]), Java.type("float[]"))))
+        .addChild(new Transform().setDEF("OrbitTransform").setTranslation(Java.to(doubleToFloat([8,0,0]), Java.type("float[]")))
           .addChild(new Shape()
             .setAppearance(new Appearance()
-              .setMaterial(new Material().setDiffuseColor(Java.to([doubleToFloat(0),doubleToFloat(0.5),doubleToFloat(1)], Java.type("float[]"))).setSpecularColor(Java.to([doubleToFloat(0),doubleToFloat(0.5),doubleToFloat(1)], Java.type("float[]")))))
+              .setMaterial(new Material().setDiffuseColor(Java.to(doubleToFloat([0,0.5,1]), Java.type("float[]"))).setSpecularColor(Java.to(doubleToFloat([0,0.5,1]), Java.type("float[]")))))
             .setGeometry(new IndexedFaceSet().setConvex(false).setDEF("Orbit")
               .setCoord(new Coordinate().setDEF("OrbitCoordinates")))))
         .addChild(new Script().setDEF("OrbitScript")
@@ -373,7 +373,7 @@ function initialize() {
 	     localci.push(-1);
 	}
     }
-    coordIndexes = new MFInt32(localci);
+    coordIndexes = new MFInt32(...localci);
 }
 
 function generateCoordinates(resolution) {
@@ -393,7 +393,7 @@ function generateCoordinates(resolution) {
 	}
 	phi += delta;
      }
-     coordinates = new MFVec3f(localc);
+     coordinates = new MFVec3f(...localc);
 }
 
 function set_fraction(fraction, eventTime) {

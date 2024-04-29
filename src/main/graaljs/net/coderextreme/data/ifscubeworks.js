@@ -326,7 +326,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 ConfigurationProperties.setStripDefaultAttributes(true);
 function doubleToFloat(d) {
     if (Float32Array)
-	return new Float32Array([d])[0];
+	return new Float32Array(d);
 }
       var X3D0 =  new X3D().setProfile("Interchange").setVersion("3.3")
       .setHead(new head()
@@ -342,8 +342,8 @@ function doubleToFloat(d) {
         .addChild(new Group()
           .addChild(new Shape()
             .setGeometry(new IndexedFaceSet().setDEF("IndexedFaceSet").setCoordIndex(Java.to([0,0,1,-1,0,1,1,-1,2,2,3,3,-1,0,3,3,0,-1,0,3,2,1,-1,1,2,2,1,-1,1,2,3,0,-1], Java.type("int[]"))).setNormalIndex(Java.to([0,0,1,2,3,4,5], Java.type("int[]"))).setNormalPerVertex(false).setColorIndex(Java.to([0,0,0,-1,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1], Java.type("int[]")))
-              .setCoord(new Coordinate().setPoint(Java.to([doubleToFloat(0),doubleToFloat(0),doubleToFloat(1),doubleToFloat(0),doubleToFloat(1),doubleToFloat(1),doubleToFloat(1),doubleToFloat(1),doubleToFloat(1),doubleToFloat(1),doubleToFloat(0),doubleToFloat(1)], Java.type("float[]"))))
-              .setNormal(new Normal().setVector(Java.to([doubleToFloat(1),doubleToFloat(0),doubleToFloat(0),doubleToFloat(-1),doubleToFloat(0),doubleToFloat(0),doubleToFloat(0),doubleToFloat(1),doubleToFloat(0),doubleToFloat(0),doubleToFloat(0),doubleToFloat(-1),doubleToFloat(0),doubleToFloat(-1),doubleToFloat(0),doubleToFloat(0),doubleToFloat(0),doubleToFloat(1)], Java.type("float[]"))))
-              .setColor(new Color().setColor(Java.to([doubleToFloat(0),doubleToFloat(1),doubleToFloat(0)], Java.type("float[]"))))))))      ;
+              .setCoord(new Coordinate().setPoint(Java.to(doubleToFloat([0,0,1,0,1,1,1,1,1,1,0,1]), Java.type("float[]"))))
+              .setNormal(new Normal().setVector(Java.to(doubleToFloat([1,0,0,-1,0,0,0,1,0,0,0,-1,0,-1,0,0,0,1]), Java.type("float[]"))))
+              .setColor(new Color().setColor(Java.to(doubleToFloat([0,1,0]), Java.type("float[]"))))))))      ;
     X3D0.toFileX3D("../data/ifscubeworks.new.graal.x3d");
     X3D0.toFileJSON("../data/ifscubeworks.new.graal.json");

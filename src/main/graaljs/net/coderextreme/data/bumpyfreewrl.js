@@ -326,7 +326,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 ConfigurationProperties.setStripDefaultAttributes(true);
 function doubleToFloat(d) {
     if (Float32Array)
-	return new Float32Array([d])[0];
+	return new Float32Array(d);
 }
       var X3D0 =  new X3D().setProfile("Full").setVersion("4.0")
       .setHead(new head()
@@ -347,14 +347,14 @@ function doubleToFloat(d) {
       .setScene(new Scene()
         .addChild(new WorldInfo().setTitle("bumpyx_ite.x3d"))
         .addChild(new NavigationInfo())
-        .addChild(new Viewpoint().setPosition(Java.to([doubleToFloat(0),doubleToFloat(0),doubleToFloat(40)], Java.type("float[]"))).setDescription("Transparent rose"))
+        .addChild(new Viewpoint().setPosition(Java.to(doubleToFloat([0,0,40]), Java.type("float[]"))).setDescription("Transparent rose"))
         .addComments(new CommentsBlock("Images courtesy of Paul Debevec's Light Probe Image Gallery"))
         .addChild(new Background().setBackUrl(Java.to(["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"], Java.type("java.lang.String[]"))).setBottomUrl(Java.to(["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"], Java.type("java.lang.String[]"))).setFrontUrl(Java.to(["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"], Java.type("java.lang.String[]"))).setLeftUrl(Java.to(["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"], Java.type("java.lang.String[]"))).setRightUrl(Java.to(["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"], Java.type("java.lang.String[]"))).setTopUrl(Java.to(["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"], Java.type("java.lang.String[]"))))
         .addChild(new Transform()
           .addChild(new Shape()
             .setGeometry(new Sphere().setRadius(5))
             .setAppearance(new Appearance()
-              .setMaterial(new Material().setDiffuseColor(Java.to([doubleToFloat(0.7),doubleToFloat(0.7),doubleToFloat(0.7)], Java.type("float[]"))).setSpecularColor(Java.to([doubleToFloat(0.5),doubleToFloat(0.5),doubleToFloat(0.5)], Java.type("float[]"))))
+              .setMaterial(new Material().setDiffuseColor(Java.to(doubleToFloat([0.7,0.7,0.7]), Java.type("float[]"))).setSpecularColor(Java.to(doubleToFloat([0.5,0.5,0.5]), Java.type("float[]"))))
               .setTexture(new ComposedCubeMapTexture().setDEF("texture")
                 .setBackTexture(new ImageTexture().setUrl(Java.to(["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"], Java.type("java.lang.String[]"))))
                 .setBottomTexture(new ImageTexture().setUrl(Java.to(["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"], Java.type("java.lang.String[]"))))

@@ -105,7 +105,7 @@ flower3.prototype = {
 "	     localci.push(-1);" + "\n" + 
 "	}" + "\n" + 
 "    }" + "\n" + 
-"    coordIndexes = new MFInt32(localci);" + "\n" + 
+"    coordIndexes = new MFInt32(...localci);" + "\n" + 
 "}" + "\n" + 
 "\n" + 
 "function generateCoordinates(resolution) {" + "\n" + 
@@ -125,7 +125,7 @@ flower3.prototype = {
 "	}" + "\n" + 
 "	phi += delta;" + "\n" + 
 "     }" + "\n" + 
-"     coordinates = new MFVec3f(localc);" + "\n" + 
+"     coordinates = new MFVec3f(...localc);" + "\n" + 
 "}" + "\n" + 
 "\n" + 
 "function set_fraction(fraction, eventTime) {" + "\n" + 

@@ -326,7 +326,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 ConfigurationProperties.setStripDefaultAttributes(true);
 function doubleToFloat(d) {
     if (Float32Array)
-	return new Float32Array([d])[0];
+	return new Float32Array(d);
 }
       var X3D0 =  new X3D().setProfile("Immersive").setVersion("3.0")
       .setHead(new head()
@@ -346,10 +346,10 @@ function doubleToFloat(d) {
         .addMeta(new meta().setName("license").setContent("../../license.html")))
       .setScene(new Scene()
         .addChild(new WorldInfo().setTitle("jumpcut_loadurl.x3d"))
-        .addChild(new Background().setGroundAngle(Java.to([doubleToFloat(1.57)], Java.type("float[]"))).setGroundColor(Java.to([doubleToFloat(0),doubleToFloat(0.5),doubleToFloat(0),doubleToFloat(0),doubleToFloat(0.5),doubleToFloat(0)], Java.type("float[]"))).setSkyColor(Java.to([doubleToFloat(0),doubleToFloat(0),doubleToFloat(1)], Java.type("float[]"))))
+        .addChild(new Background().setGroundAngle(Java.to(doubleToFloat([1.57]), Java.type("float[]"))).setGroundColor(Java.to(doubleToFloat([0,0.5,0,0,0.5,0]), Java.type("float[]"))).setSkyColor(Java.to(doubleToFloat([0,0,1]), Java.type("float[]"))))
         .addChild(new NavigationInfo().setType(Java.to(["EXAMINE","WALK","FLY","ANY"], Java.type("java.lang.String[]"))))
         .addChild(new Viewpoint().setDEF("Front_View").setDescription("Front View"))
-        .addChild(new Viewpoint().setDEF("Top_View").setDescription("Top View").setOrientation(Java.to([doubleToFloat(1),doubleToFloat(0),doubleToFloat(0),doubleToFloat(-1.57)], Java.type("float[]"))).setPosition(Java.to([doubleToFloat(0),doubleToFloat(10),doubleToFloat(0)], Java.type("float[]"))))
+        .addChild(new Viewpoint().setDEF("Top_View").setDescription("Top View").setOrientation(Java.to(doubleToFloat([1,0,0,-1.57]), Java.type("float[]"))).setPosition(Java.to(doubleToFloat([0,10,0]), Java.type("float[]"))))
         .addChild(new TouchSensor().setDEF("STARTER").setDescription("touch to activate"))
         .addChild(new Transform().setDEF("ROOT")
           .addChild(new Shape()

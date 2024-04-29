@@ -464,7 +464,7 @@ SquawLOD023.prototype = {
           .setMaterial(new Material().setAmbientIntensity(0.9).setDiffuseColor(doubleToFloat(1.0),doubleToFloat(1.0),doubleToFloat(1.0)).setShininess(1.0))
           .setTexture(new ImageTexture().setUrl(new MFString("\"images/squaw011.jpg\" \"https://www.web3d.org/x3d/content/examples/Basic/Geospatial/images/squaw011.jpg\""))))
         .setGeometry(new GeoElevationGrid().setCcw(false).setCreaseAngle(0.5).setGeoGridOrigin(doubleToFloat(4343332.077840),doubleToFloat(741212.999947),doubleToFloat(0.0)).setGeoSystem(new MFString("\"UTM\" \"Z10\" \"N\"")).setSolid(false).setXDimension(51).setXSpacing(24.360000).setZDimension(67).setZSpacing(24.444444).setHeight(this.GeoElevationGrid_5_20_height)
-          .setGeoOrigin(new GeoOrigin())
+          .setGeoOrigin(new GeoOrigin().setUSE("ORIGIN"))
           .setTexCoord(new TextureCoordinate().setPoint(this.TextureCoordinate_6_21_point))))));
   },
   // end of initialize() method

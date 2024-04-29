@@ -2313,7 +2313,7 @@ HAnimBehaviorPrototypes.prototype = {
           .addField(new field().setName("enableBehavior").setType("SFInt32").setAccessType("inputOnly").setAppinfo("enable corresponding behavior"))
           .addField(new field().setName("disableBehavior").setType("SFInt32").setAccessType("inputOnly").setAppinfo("enable corresponding behavior"))
           .addField(new field().setName("timeSensorNode").setType("SFNode").setAccessType("initializeOnly")
-            .addChild(new TimeSensor()))
+            .addChild(new TimeSensor().setUSE("TimeSensorHolderStartStopTimes")))
           .addField(new field().setName("previousBodyIndex").setType("SFInt32").setAccessType("initializeOnly").setValue("-1").setAppinfo("remember prior body index to avoid unnecessary ROUTE teardown and creation"))
           .addField(new field().setName("traceEnabled").setType("SFBool").setAccessType("initializeOnly").setValue("true"))
           .setIS(new IS()
@@ -2373,11 +2373,11 @@ HAnimBehaviorPrototypes.prototype = {
 		var metaList = this.getX3dModel().getHead().getMetaList();
 		for (var m in metaList) {
 			var metaObject = metaList[m];
-			if (metaObject.getName().equals(metaObject.NAME_ERROR) ||
-				metaObject.getName().equals(metaObject.NAME_WARNING) ||
-				metaObject.getName().equals(metaObject.NAME_HINT) ||
-				metaObject.getName().equals(metaObject.NAME_INFO) ||
-				metaObject.getName().equals(metaObject.NAME_TODO))
+			if (metaObject.getName() === metaObject.NAME_ERROR ||
+				metaObject.getName() === metaObject.NAME_WARNING ||
+				metaObject.getName() === metaObject.NAME_HINT ||
+				metaObject.getName() === metaObject.NAME_INFO ||
+				metaObject.getName() === metaObject.NAME_TODO)
 			{
 				metaResult += metaObject.toStringX3D();
 			}

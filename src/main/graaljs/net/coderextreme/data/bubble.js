@@ -326,7 +326,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 ConfigurationProperties.setStripDefaultAttributes(true);
 function doubleToFloat(d) {
     if (Float32Array)
-	return new Float32Array([d])[0];
+	return new Float32Array(d);
 }
 var ProtoInstance0 = null;
       var X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
@@ -338,14 +338,14 @@ var ProtoInstance0 = null;
         .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/bubble.x3d")))
       .setScene(new Scene()
         .addChild(new NavigationInfo().setType(Java.to(["EXAMINE"], Java.type("java.lang.String[]"))))
-        .addChild(new Viewpoint().setPosition(Java.to([doubleToFloat(0),doubleToFloat(0),doubleToFloat(4)], Java.type("float[]"))).setOrientation(Java.to([doubleToFloat(1),doubleToFloat(0),doubleToFloat(0),doubleToFloat(0)], Java.type("float[]"))).setDescription("Bubble in action"))
+        .addChild(new Viewpoint().setPosition(Java.to(doubleToFloat([0,0,4]), Java.type("float[]"))).setOrientation(Java.to(doubleToFloat([1,0,0,0]), Java.type("float[]"))).setDescription("Bubble in action"))
         .addChild(new ProtoDeclare().setName("Bubble")
           .setProtoBody(new ProtoBody()
             .addChild(new Transform().setDEF("transform")
               .addChild(new Shape()
                 .setGeometry(new Sphere().setRadius(0.25))
                 .setAppearance(new Appearance()
-                  .setMaterial(new Material().setDiffuseColor(Java.to([doubleToFloat(1),doubleToFloat(0),doubleToFloat(0)], Java.type("float[]"))).setTransparency(0.2))))
+                  .setMaterial(new Material().setDiffuseColor(Java.to(doubleToFloat([1,0,0]), Java.type("float[]"))).setTransparency(0.2))))
               .addChild(new Script().setDEF("bounce")
                 .addField(new field().setType(field.TYPE_SFVEC3F).setName("scale").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("1 1 1"))
                 .addField(new field().setType(field.TYPE_SFVEC3F).setName("translation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
