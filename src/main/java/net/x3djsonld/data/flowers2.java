@@ -15,7 +15,7 @@ import org.web3d.x3d.jsail.Time.*;
 // Javadoc metadata annotations follow, see below for X3DJSAIL Java source code.
 /**
  * <p> 2 random mathematical roses in spherical dimensions. rho = a + b * cos(c * theta) * cos(d * phi). </p>
- <p> Related links: flowers2.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ <p> Related links:  source flowers2.java, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;">
         <caption>Scene Meta Information</caption>
 		<tr style="background-color:silver; border-color:silver;">
@@ -70,8 +70,8 @@ import org.web3d.x3d.jsail.Time.*;
 		It has been produced using the 
 		<a href="https://www.web3d.org/x3d/stylesheets/X3dToJava.xslt" target="_blank">X3dToJava.xslt</a>
 		stylesheet
-	       (<a href="https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/X3dToJava.xslt" target="_blank">version&amp;nbsp;control</a>)
-                is used to create Java source code from an original <code>.x3d</code> model.
+	       (<a href="https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/X3dToJava.xslt" target="_blank">version control</a>)
+                which is used to create Java source code from an original <code>.x3d</code> model.
 	</p>
 
 	* @author John Carlson
@@ -135,46 +135,37 @@ public class flowers2
             .addChild(new Script("OrbitScript").setSourceCode("""
 ecmascript:
 
-			var e = 5;
-			var f = 5;
-			var g = 5;
-			var h = 5;
-			var resolution = 100;
-
 			function initialize() {
 			     generateCoordinates();
-			     var localci = [];
+			     var arrIndex = 0;
 			     for (var i = 0; i < resolution-1; i++) {
 				for (var j = 0; j < resolution-1; j++) {
-				     localci.push(i*resolution+j);
-				     localci.push(i*resolution+j+1);
-				     localci.push((i+1)*resolution+j+1);
-				     localci.push((i+1)*resolution+j);
-				     localci.push(-1);
+				     coordIndexes[arrIndex++] = i*resolution+j;
+				     coordIndexes[arrIndex++] = i*resolution+j+1;
+				     coordIndexes[arrIndex++] = (i+1)*resolution+j+1;
+				     coordIndexes[arrIndex++] = (i+1)*resolution+j;
+				     coordIndexes[arrIndex++] = -1;
 				}
 			    }
-			    coordIndexes = new MFInt32(localci);
 			}
 
 			function generateCoordinates() {
 			     var theta = 0.0;
 			     var phi = 0.0;
 			     var delta = (2 * 3.141592653) / (resolution-1);
-			     var localc = [];
+			     var arrIndex = 0;
 			     for (var i = 0; i < resolution; i++) {
 				for (var j = 0; j < resolution; j++) {
 					var rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);
-					localc.push(new SFVec3f(
+					coordinates[arrIndex++] = new SFVec3f(
 						rho * Math.cos(phi) * Math.cos(theta),
 						rho * Math.cos(phi) * Math.sin(theta),
 						rho * Math.sin(phi)
-					));
+					);
 					theta += delta;
 				}
 				phi += delta;
 			     }
-			     
-			     coordinates = new MFVec3f(localc);
 			}
 
 			function set_fraction(fraction, eventTime) {
@@ -209,8 +200,8 @@ ecmascript:
 			}
 """)
               .addField(new field().setName("set_fraction").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTONLY))
-              .addField(new field().setName("coordinates").setType(field.TYPE_MFVEC3F).setAccessType(field.ACCESSTYPE_OUTPUTONLY))
-              .addField(new field().setName("coordIndexes").setType(field.TYPE_MFINT32).setAccessType(field.ACCESSTYPE_OUTPUTONLY))
+              .addField(new field().setName("coordinates").setType(field.TYPE_MFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT))
+              .addField(new field().setName("coordIndexes").setType(field.TYPE_MFINT32).setAccessType(field.ACCESSTYPE_INPUTOUTPUT))
               .addField(new field().setName("e").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(5))
               .addField(new field().setName("f").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(5))
               .addField(new field().setName("g").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(5))

@@ -148,10 +148,10 @@
       </Transform>
       <!-- DIS multiuser facilities -->
       <DISEntityManager DEF='EntityManager' networkMode='networkReader' >
-	      <DISEntityTypeMapping category='77' specific='1' url='"../data/Leif8Final.x3dv" "https://coderextreme.net/X3DJSONLD/src/main/data/Leif8Final.x3dv"'/>
-	      <DISEntityTypeMapping category='77' specific='2' url='"../data/Lily8Final.x3dv" "https://coderextreme.net/X3DJSONLD/src/main/data/Lily8Final.x3dv"'/>
-	      <DISEntityTypeMapping category='77' specific='3' url='"../data/Tufani8Final.x3dv" "https://coderextreme.net/X3DJSONLD/src/main/data/Tufani8Final.x3dv"'/>
-	      <DISEntityTypeMapping category='77' specific='4' url='"../data/Gramps8Final.x3dv" "https://coderextreme.net/X3DJSONLD/src/main/data/Gramps8Final.x3dv"'/>
+	      <DISEntityTypeMapping category='77' containerField='children' specific='1' url='"../data/Leif8Final.x3dv" "https://coderextreme.net/X3DJSONLD/src/main/data/Leif8Final.x3dv"'/>
+	      <DISEntityTypeMapping category='77' containerField='children' specific='2' url='"../data/Lily8Final.x3dv" "https://coderextreme.net/X3DJSONLD/src/main/data/Lily8Final.x3dv"'/>
+	      <DISEntityTypeMapping category='77' containerField='children' specific='3' url='"../data/Tufani8Final.x3dv" "https://coderextreme.net/X3DJSONLD/src/main/data/Tufani8Final.x3dv"'/>
+	      <DISEntityTypeMapping category='77' containerField='children' specific='4' url='"../data/Gramps8Final.x3dv" "https://coderextreme.net/X3DJSONLD/src/main/data/Gramps8Final.x3dv"'/>
       </DISEntityManager>
       <Collision enabled='false'>
         <Group DEF='AvatarHolder'/>

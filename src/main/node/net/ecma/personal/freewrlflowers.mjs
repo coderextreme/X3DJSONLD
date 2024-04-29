@@ -46,7 +46,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("identifier"),
-              content : new SFString("https://coderextreme.net/X3DJSONLD/src/main/data/freewrlflowers.x3d")})])})),
+              content : new SFString("https://coderextreme.net/X3DJSONLD/src/main/personal/freewrlflowers.x3d")})])})),
       Scene : new SFNode(
         new Scene({
           children : new MFNode([
@@ -64,7 +64,7 @@ var X3D0 =  new X3D({
               children : new MFNode([
                 new ExternProtoDeclare({
                   name : new SFString("FlowerProto"),
-                  url : new MFString(["../data/flowerproto.x3d#FlowerProto"]),
+                  url : new MFString(["../personal/flowerproto.x3d#FlowerProto"]),
                   field : new MFNode([
                     new field({
                       type : field.TYPE_MFSTRING,

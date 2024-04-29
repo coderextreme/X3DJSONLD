@@ -75,7 +75,7 @@ flowerproto.prototype = {
     .addComponent((new autoclass.component()).setName("CubeMapTexturing").setLevel(1))
     .addComponent((new autoclass.component()).setName("Texturing").setLevel(1))
     .addComponent((new autoclass.component()).setName("Rendering").setLevel(1))
-    .addComments("<component name='Shape' level='4'></component>")
+    .addComponent((new autoclass.component()).setName("Shape").setLevel(4))
     .addComponent((new autoclass.component()).setName("Grouping").setLevel(3))
     .addComponent((new autoclass.component()).setName("Core").setLevel(1))
     .addMeta((new autoclass.meta()).setName("title").setContent("flowerproto.x3d"))
@@ -86,8 +86,8 @@ flowerproto.prototype = {
   .setScene((new autoclass.Scene())
     .addChild((new autoclass.ProtoDeclare()).setName("FlowerProto")
       .setProtoInterface((new autoclass.ProtoInterface())
-        .addField((new autoclass.field()).setName("vertex").setType("MFString").setAccessType("inputOutput").setValue("\"../shaders/gl_flowers_chromatic.vs\""))
-        .addField((new autoclass.field()).setName("fragment").setType("MFString").setAccessType("inputOutput").setValue("\"../shaders/pc_flowers.fs\"")))
+        .addField((new autoclass.field()).setName("vertex").setType("MFString").setAccessType("inputOutput").setValue("\"https://coderextreme.net/X3DJSONLD/src/main/shaders/gl_flowers_chromatic.vs\""))
+        .addField((new autoclass.field()).setName("fragment").setType("MFString").setAccessType("inputOutput").setValue("\"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_flowers.fs\"")))
       .setProtoBody((new autoclass.ProtoBody())
         .addChild((new autoclass.Transform("transform"))
           .addChild((new autoclass.Shape())
@@ -265,6 +265,7 @@ flowerproto.prototype = {
     {
 		var testObject = new flowerproto();
 		console.log ("flowerproto execution self-validation test results: " + testObject.validateSelf());
+		process.exit();
 	}
 }
 new flowerproto().main();

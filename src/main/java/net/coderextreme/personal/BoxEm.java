@@ -65,7 +65,7 @@ ProtoInstance ProtoInstance3 = null;
         .addMeta(new meta().setName("title").setContent("BoxEm.x3d"))
         .addMeta(new meta().setName("creator").setContent("John Carlson"))
         .addMeta(new meta().setName("generator").setContent("manual"))
-        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/box.x3d"))
+        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/personal/box.x3d"))
         .addMeta(new meta().setName("description").setContent("3 boxes")))
       .setScene(new Scene()
         .addChild(new NavigationInfo().setType("\"EXAMINE\""))

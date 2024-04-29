@@ -14,7 +14,7 @@ import org.web3d.x3d.jsail.Time.*;
 // Javadoc metadata annotations follow, see below for X3DJSAIL Java source code.
 /**
  * <p> beginnings of a force directed graph in 3D. </p>
- <p> Related links: forcenode.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ <p> Related links:  source forcenode.java, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;">
         <caption>Scene Meta Information</caption>
 		<tr style="background-color:silver; border-color:silver;">
@@ -57,8 +57,8 @@ import org.web3d.x3d.jsail.Time.*;
 		It has been produced using the 
 		<a href="https://www.web3d.org/x3d/stylesheets/X3dToJava.xslt" target="_blank">X3dToJava.xslt</a>
 		stylesheet
-	       (<a href="https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/X3dToJava.xslt" target="_blank">version&amp;nbsp;control</a>)
-                is used to create Java source code from an original <code>.x3d</code> model.
+	       (<a href="https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/X3dToJava.xslt" target="_blank">version control</a>)
+                which is used to create Java source code from an original <code>.x3d</code> model.
 	</p>
 
 	* @author John W Carlson
@@ -109,7 +109,7 @@ ecmascript:
 					function set_cycle(value) {
                                                 old = translation;
 						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);
-                                                keyValue = new MFVec3f([old, translation]);
+                                                keyValue = new MFVec3f(...[old, translation]);
 						// Browser.println(translation);
 					}
 """)
@@ -122,7 +122,7 @@ ecmascript:
           .addChild(new ROUTE().setFromNode("nodeClock").setFromField("fraction_changed").setToNode("NodePosition").setToField("set_fraction"))
           .addChild(new ROUTE().setFromNode("MoveBall").setFromField("keyValue").setToNode("NodePosition").setToField("keyValue"))
           .addChild(new ROUTE().setFromNode("NodePosition").setFromField("value_changed").setToNode("transform").setToField("set_translation")))))
-    .addChild(new ProtoDeclare("cyl").setName("cyl")
+    .addChild(new ProtoDeclare("cylinder").setName("cylinder")
       .setProtoInterface(new ProtoInterface()
         .addField(new field().setName("set_positionA").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTONLY))
         .addField(new field().setName("set_positionB").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTONLY)))
@@ -137,17 +137,17 @@ ecmascript:
 
                 function set_endA(value) {
 		    if (typeof spine === 'undefined') {
-		        spine = new MFVec3f([value, value]);
+		        spine = new MFVec3f(...[value, value]);
 		    } else {
-		        spine = new MFVec3f([value, spine[1]]);
+		        spine = new MFVec3f(...[value, spine[1]]);
 		    }
                 }
                 
                 function set_endB(value) {
 		    if (typeof spine === 'undefined') {
-		        spine = new MFVec3f([value, value]);
+		        spine = new MFVec3f(...[value, value]);
 		    } else {
-		        spine = new MFVec3f([spine[0], value]);
+		        spine = new MFVec3f(...[spine[0], value]);
 		    }
                 }
                 
@@ -172,13 +172,13 @@ ecmascript:
         .addFieldValue(new fieldValue().setName("position").setValue(new SFVec3f(-50.0,-50.0,-50.0))))
       .addChild(new ProtoInstance("node", "nodeD").setContainerField("children")
         .addFieldValue(new fieldValue().setName("position").setValue(new SFVec3f(50.0,50.0,-50.0))))
-      .addChild(new ProtoInstance("cyl", "linkA").setContainerField("children")
+      .addChild(new ProtoInstance("cylinder", "linkA").setContainerField("children")
         .addFieldValue(new fieldValue().setName("set_positionA").setValue(new SFVec3f(0.0,0.0,0.0)))
         .addFieldValue(new fieldValue().setName("set_positionB").setValue(new SFVec3f(50.0,50.0,50.0))))
-      .addChild(new ProtoInstance("cyl", "linkB").setContainerField("children")
+      .addChild(new ProtoInstance("cylinder", "linkB").setContainerField("children")
         .addFieldValue(new fieldValue().setName("set_positionA").setValue(new SFVec3f(0.0,0.0,0.0)))
         .addFieldValue(new fieldValue().setName("set_positionB").setValue(new SFVec3f(-50.0,-50.0,-50.0))))
-      .addChild(new ProtoInstance("cyl", "linkC").setContainerField("children")
+      .addChild(new ProtoInstance("cylinder", "linkC").setContainerField("children")
         .addFieldValue(new fieldValue().setName("set_positionA").setValue(new SFVec3f(50.0,50.0,50.0)))
         .addFieldValue(new fieldValue().setName("set_positionB").setValue(new SFVec3f(50.0,50.0,-50.0)))))
     .addChild(new Script("clickHandler").setSourceCode("""

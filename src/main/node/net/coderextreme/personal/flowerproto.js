@@ -29,7 +29,7 @@ ConfigurationProperties.setStripDefaultAttributes(true);
         .addMeta(new autoclass.meta().setName("creator").setContent("John Carlson"))
         .addMeta(new autoclass.meta().setName("description").setContent("A flower proto with configurable shaders"))
         .addMeta(new autoclass.meta().setName("generator").setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit"))
-        .addMeta(new autoclass.meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/flowerproto.x3d")))
+        .addMeta(new autoclass.meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/personal/flowerproto.x3d")))
       .setScene(new autoclass.Scene()
         .addChild(new autoclass.ProtoDeclare().setName("FlowerProto")
           .setProtoInterface(new autoclass.ProtoInterface()

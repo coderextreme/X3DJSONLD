@@ -109,13 +109,13 @@ TextExamples.prototype = {
     .addChild((new autoclass.Transform()).setTranslation(-3.0,0.0,0.0)
       .addChild((new autoclass.Shape())
         .setGeometry((new autoclass.Text()).setString(new autoclass.MFString("\"I don't think so\" \"\" \"he said \\\"Hi\\\"\""))
-          .setFontStyle((new autoclass.FontStyle())))
-        .setAppearance((new autoclass.Appearance()))))
+          .setFontStyle((new autoclass.FontStyle()).setUSE("testFontStyle")))
+        .setAppearance((new autoclass.Appearance()).setUSE("LightBlueAppearance"))))
     .addChild((new autoclass.Transform()).setTranslation(3.0,0.0,0.0)
       .addChild((new autoclass.Shape())
         .setGeometry((new autoclass.Text()).setString(new autoclass.MFString("\"I don't think so\" \"\" \"he said \\\"Hi\\\"\""))
-          .setFontStyle((new autoclass.FontStyle())))
-        .setAppearance((new autoclass.Appearance())))));
+          .setFontStyle((new autoclass.FontStyle()).setUSE("testFontStyle")))
+        .setAppearance((new autoclass.Appearance()).setUSE("LightBlueAppearance")))));
   },
   // end of initialize() method
 
@@ -171,6 +171,7 @@ TextExamples.prototype = {
     {
 		var testObject = new TextExamples();
 		console.log ("TextExamples execution self-validation test results: " + testObject.validateSelf());
+		process.exit();
 	}
 }
 new TextExamples().main();

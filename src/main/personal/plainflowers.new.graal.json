@@ -62,7 +62,7 @@
 { "ExternProtoDeclare":
 {
 "@name":"FlowerProto",
-"@url":["../data/flowerproto.x3d#FlowerProto"],
+"@url":["../personal/flowerproto.x3d#FlowerProto"],
 "field": [
 {
 "@name":"vertex",

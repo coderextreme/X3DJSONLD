@@ -71,7 +71,7 @@ public class flowerproto implements X3DRoots {
         .addMeta(new meta().setName("creator").setContent("John Carlson"))
         .addMeta(new meta().setName("description").setContent("A flower proto with configurable shaders"))
         .addMeta(new meta().setName("generator").setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit"))
-        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/flowerproto.x3d")))
+        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/personal/flowerproto.x3d")))
       .setScene(new Scene()
         .addChild(new ProtoDeclare().setName("FlowerProto")
           .setProtoInterface(new ProtoInterface()

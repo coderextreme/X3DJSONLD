@@ -178,13 +178,13 @@ arc3.prototype = {
 "            recompute_and_route(startnode.translation,val);" + "\n" + 
 "        }" + "\n")
         .addField((new autoclass.field()).setName("startnode").setType("SFNode").setAccessType("initializeOnly")
-          .addChild((new autoclass.Group())))
+          .addChild((new autoclass.Group()).setUSE("DECLpoint_G1_node")))
         .addField((new autoclass.field()).setName("endnode").setType("SFNode").setAccessType("initializeOnly")
-          .addChild((new autoclass.Group())))
+          .addChild((new autoclass.Group()).setUSE("DECLpoint_G2_node")))
         .addField((new autoclass.field()).setName("position").setType("SFNode").setAccessType("inputOutput")
-          .addChild((new autoclass.Transform())))
+          .addChild((new autoclass.Transform()).setUSE("DECLx3dconnector_connector1_trans")))
         .addField((new autoclass.field()).setName("rotscale").setType("SFNode").setAccessType("inputOutput")
-          .addChild((new autoclass.Transform())))
+          .addChild((new autoclass.Transform()).setUSE("DECLx3dconnector_connector1_rotscale")))
         .addField((new autoclass.field()).setName("set_startpoint").setType("SFVec3f").setAccessType("inputOnly"))
         .addField((new autoclass.field()).setName("set_endpoint").setType("SFVec3f").setAccessType("inputOnly"))))
     .addChild((new autoclass.ROUTE()).setFromNode("DECLpoint_G1_node").setFromField("translation").setToNode("DECLx3dconnector_connector1_S1").setToField("set_startpoint"))
@@ -244,6 +244,7 @@ arc3.prototype = {
     {
 		var testObject = new arc3();
 		console.log ("arc3 execution self-validation test results: " + testObject.validateSelf());
+		process.exit();
 	}
 }
 new arc3().main();

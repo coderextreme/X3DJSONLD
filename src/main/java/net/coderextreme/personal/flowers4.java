@@ -70,7 +70,7 @@ public class flowers4 implements X3DRoots {
         .addMeta(new meta().setName("title").setContent("flowers4.x3d"))
         .addMeta(new meta().setName("creator").setContent("John Carlson"))
         .addMeta(new meta().setName("generator").setContent("manual"))
-        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/flowers4.x3d"))
+        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/personal/flowers4.x3d"))
         .addMeta(new meta().setName("description").setContent("an animated flower")))
       .setScene(new Scene()
         .addChild(new NavigationInfo())

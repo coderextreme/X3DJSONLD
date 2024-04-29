@@ -79,7 +79,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("identifier"),
-              content : new SFString("https://coderextreme.net/X3DJSONLD/src/main/data/flowers2.x3d")}),
+              content : new SFString("https://coderextreme.net/X3DJSONLD/src/main/personal/flowers2.x3d")}),
 
             new meta({
               name : new SFString("generator"),
@@ -87,7 +87,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("license"),
-              content : new SFString("https://www.web3d.org/x3d/content/examples/license.html")})])})),
+              content : new SFString("https://coderextreme.net/X3DJSONLD/LICENSE")})])})),
       Scene : new SFNode(
         new Scene({
           children : new MFNode([

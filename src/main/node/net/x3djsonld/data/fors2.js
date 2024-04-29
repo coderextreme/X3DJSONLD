@@ -228,6 +228,7 @@ fors2.prototype = {
     {
 		var testObject = new fors2();
 		console.log ("fors2 execution self-validation test results: " + testObject.validateSelf());
+		process.exit();
 	}
 }
 new fors2().main();

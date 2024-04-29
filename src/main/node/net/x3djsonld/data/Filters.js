@@ -214,6 +214,7 @@ Filters.prototype = {
     {
 		var testObject = new Filters();
 		console.log ("Filters execution self-validation test results: " + testObject.validateSelf());
+		process.exit();
 	}
 }
 new Filters().main();

@@ -136,6 +136,7 @@ asphere.prototype = {
     {
 		var testObject = new asphere();
 		console.log ("asphere execution self-validation test results: " + testObject.validateSelf());
+		process.exit();
 	}
 }
 new asphere().main();

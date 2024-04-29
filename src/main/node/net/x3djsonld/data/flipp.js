@@ -282,6 +282,7 @@ flipp.prototype = {
     {
 		var testObject = new flipp();
 		console.log ("flipp execution self-validation test results: " + testObject.validateSelf());
+		process.exit();
 	}
 }
 new flipp().main();
