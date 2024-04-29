@@ -326,7 +326,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 ConfigurationProperties.setStripDefaultAttributes(true);
 function doubleToFloat(d) {
     if (Float32Array)
-	return new Float32Array([d])[0];
+	return new Float32Array(d);
 }
       var X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
       .setHead(new head()
@@ -358,14 +358,14 @@ function doubleToFloat(d) {
         .addComments(new CommentsBlock("Example scene to illustrate X3D nodes and fields (XML elements and attributes)"))
         .addChild(new WorldInfo().setInfo(Java.to(["Example scene to illustrate a simple X3D model"], Java.type("java.lang.String[]"))).setTitle("Hello World!"))
         .addChild(new Group()
-          .addChild(new Viewpoint().setDEF("ViewUpClose").setCenterOfRotation(Java.to([doubleToFloat(0),doubleToFloat(-1),doubleToFloat(0)], Java.type("float[]"))).setDescription("Hello world!").setPosition(Java.to([doubleToFloat(0),doubleToFloat(-1),doubleToFloat(7)], Java.type("float[]"))))
-          .addChild(new Transform().setRotation(Java.to([doubleToFloat(0),doubleToFloat(1),doubleToFloat(0),doubleToFloat(3)], Java.type("float[]")))
+          .addChild(new Viewpoint().setDEF("ViewUpClose").setCenterOfRotation(Java.to(doubleToFloat([0,-1,0]), Java.type("float[]"))).setDescription("Hello world!").setPosition(Java.to(doubleToFloat([0,-1,7]), Java.type("float[]"))))
+          .addChild(new Transform().setRotation(Java.to(doubleToFloat([0,1,0,3]), Java.type("float[]")))
             .addChild(new Shape()
               .setGeometry(new Sphere())
               .setAppearance(new Appearance()
-                .setMaterial(new Material().setDEF("MaterialLightBlue").setDiffuseColor(Java.to([doubleToFloat(0.1),doubleToFloat(0.5),doubleToFloat(1)], Java.type("float[]"))))
+                .setMaterial(new Material().setDEF("MaterialLightBlue").setDiffuseColor(Java.to(doubleToFloat([0.1,0.5,1]), Java.type("float[]"))))
                 .setTexture(new ImageTexture().setDEF("ImageCloudlessEarth").setUrl(Java.to(["earth-topo.png","earth-topo.jpg","earth-topo-small.gif","https://www.web3d.org/x3d/content/examples/Basic/earth-topo.png","https://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg","https://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif"], Java.type("java.lang.String[]")))))))
-          .addChild(new Transform().setTranslation(Java.to([doubleToFloat(0),doubleToFloat(-2),doubleToFloat(0)], Java.type("float[]")))
+          .addChild(new Transform().setTranslation(Java.to(doubleToFloat([0,-2,0]), Java.type("float[]")))
             .addChild(new Shape()
               .setGeometry(new Text().setDEF("TextMessage").setString(Java.to(["Hello","world!"], Java.type("java.lang.String[]")))
                 .setFontStyle(new FontStyle().setJustify(Java.to(["MIDDLE","MIDDLE"], Java.type("java.lang.String[]")))))

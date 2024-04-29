@@ -152,7 +152,7 @@ SpatialAudioCameraAnimation.prototype = {
             .setAppearance(new Appearance()
               .setMaterial(new Material().setAmbientIntensity(0.0933).setDiffuseColor(doubleToFloat(1.0),doubleToFloat(1.0),doubleToFloat(1.0)).setShininess(0.51).setSpecularColor(doubleToFloat(0.46),doubleToFloat(0.46),doubleToFloat(0.46))))
             .setGeometry(new Text().setString(new MFString("\"Saxophone\""))
-              .setFontStyle(new FontStyle()))))))
+              .setFontStyle(new FontStyle().setUSE("ModelFontStyle")))))))
     .addChild(new ListenerPointSource().setId("ListenerPointSource").setTrackCurrentView(true))
     .addChild(new StreamAudioDestination().setId("AudioDestination")
       .addChild(new SpatialSound("Audio1").setId("SpatialSound1")

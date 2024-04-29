@@ -12,11 +12,11 @@ load('X3Dautoclass.js');
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d">JohnBoy.x3d</a> </td>
+			<td> <a href="http://www.web3d.org/x3d/content/examples/HumanoidAnimation/Humanoid1NoSegSite.x3d">Humanoid1NoSegSite.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d" target="_blank">http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d</a> </td>
+			<td> <a href="http://www.web3d.org/x3d/content/examples/HumanoidAnimation/Humanoid1NoSegSite.x3d" target="_blank">http://www.web3d.org/x3d/content/examples/HumanoidAnimation/Humanoid1NoSegSite.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
@@ -197,8 +197,8 @@ Humanoid1NoSegSite.prototype = {
   this.x3dModel = new X3D().setProfile("Immersive").setVersion("4.0")
   .setHead(new head()
     .addComponent(new component().setName("HAnim").setLevel(1))
-    .addMeta(new meta().setName("title").setContent("JohnBoy.x3d"))
-    .addMeta(new meta().setName("identifier").setContent("http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d"))
+    .addMeta(new meta().setName("title").setContent("Humanoid1NoSegSite.x3d"))
+    .addMeta(new meta().setName("identifier").setContent("http://www.web3d.org/x3d/content/examples/HumanoidAnimation/Humanoid1NoSegSite.x3d"))
     .addMeta(new meta().setName("description").setContent("An attempt at a standard LOA-4 skeleton"))
     .addMeta(new meta().setName("generator").setContent("h2.pl"))
     .addMeta(new meta().setName("modified").setContent("14 Jan 2023"))
@@ -250,43 +250,43 @@ Humanoid1NoSegSite.prototype = {
           .setTexture(new ImageTexture("zBlueSpiralBkg2").setDescription("Blue Spiral Pattern").setUrl(new MFString("\"../data/zBlueSpiralBkg2.gif\" \"zBlueSpiralBkg2.gif\" \"https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/zBlueSpiralBkg2.gif\"")))
           .setMaterial(new Material("SkinMaterial").setAmbientIntensity(0.6).setDiffuseColor(doubleToFloat(1.0),doubleToFloat(1.0),doubleToFloat(1.0)).setShininess(0.6).setTransparency(0.2))))
       .addComments(" </LOD> ")
-      .setSkinCoord(new Coordinate())
-      .addSkeleton(new HAnimJoint("hanim_humanoid_root").setName("humanoid_root").setCenter(doubleToFloat(0.0000),doubleToFloat(0.8240),doubleToFloat(0.0277)).setLlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]"))).setSkinCoordIndex(Java.to([0], Java.type("int[]"))).setSkinCoordWeight(Java.to([doubleToFloat(0.0)], Java.type("float[]"))).setUlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]")))
-        .addChild(new HAnimJoint("hanim_sacroiliac").setName("sacroiliac").setCenter(doubleToFloat(0.0000),doubleToFloat(0.9149),doubleToFloat(0.0016)).setLlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]"))).setSkinCoordIndex(Java.to([0], Java.type("int[]"))).setSkinCoordWeight(Java.to([doubleToFloat(0.0)], Java.type("float[]"))).setUlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]")))
-          .addChild(new HAnimJoint("hanim_l_hip").setName("l_hip").setCenter(doubleToFloat(0.0961),doubleToFloat(0.9124),doubleToFloat(-0.0001)).setLlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]"))).setSkinCoordIndex(Java.to([0], Java.type("int[]"))).setSkinCoordWeight(Java.to([doubleToFloat(0.0)], Java.type("float[]"))).setUlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]")))
-            .addChild(new HAnimJoint("hanim_l_knee").setName("l_knee").setCenter(doubleToFloat(0.1040),doubleToFloat(0.4867),doubleToFloat(0.0308)).setLlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]"))).setSkinCoordIndex(Java.to([0], Java.type("int[]"))).setSkinCoordWeight(Java.to([doubleToFloat(0.0)], Java.type("float[]"))).setUlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]")))
-              .addChild(new HAnimJoint("hanim_l_talocrural").setName("l_talocrural").setCenter(doubleToFloat(0.1101),doubleToFloat(0.0656),doubleToFloat(-0.0736)).setLlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]"))).setSkinCoordIndex(Java.to([0], Java.type("int[]"))).setSkinCoordWeight(Java.to([doubleToFloat(0.0)], Java.type("float[]"))).setUlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]")))
-                .addChild(new HAnimJoint("hanim_l_metatarsophalangeal_2").setName("l_metatarsophalangeal_2").setCenter(doubleToFloat(0.0824),doubleToFloat(0.0064),doubleToFloat(-0.0040)).setLlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]"))).setSkinCoordIndex(Java.to([0], Java.type("int[]"))).setSkinCoordWeight(Java.to([doubleToFloat(0.0)], Java.type("float[]"))).setUlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]")))))))
-          .addChild(new HAnimJoint("hanim_r_hip").setName("r_hip").setCenter(doubleToFloat(-0.0950),doubleToFloat(0.9171),doubleToFloat(0.0029)).setLlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]"))).setSkinCoordIndex(Java.to([0], Java.type("int[]"))).setSkinCoordWeight(Java.to([doubleToFloat(0.0)], Java.type("float[]"))).setUlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]")))
-            .addChild(new HAnimJoint("hanim_r_knee").setName("r_knee").setCenter(doubleToFloat(-0.0867),doubleToFloat(0.4913),doubleToFloat(0.0318)).setLlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]"))).setSkinCoordIndex(Java.to([0], Java.type("int[]"))).setSkinCoordWeight(Java.to([doubleToFloat(0.0)], Java.type("float[]"))).setUlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]")))
-              .addChild(new HAnimJoint("hanim_r_talocrural").setName("r_talocrural").setCenter(doubleToFloat(-0.0801),doubleToFloat(0.0712),doubleToFloat(-0.0766)).setLlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]"))).setSkinCoordIndex(Java.to([0], Java.type("int[]"))).setSkinCoordWeight(Java.to([doubleToFloat(0.0)], Java.type("float[]"))).setUlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]")))
-                .addChild(new HAnimJoint("hanim_r_metatarsophalangeal_2").setName("r_metatarsophalangeal_2").setCenter(doubleToFloat(-0.0823),doubleToFloat(0.0064),doubleToFloat(-0.0040)).setLlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]"))).setSkinCoordIndex(Java.to([0], Java.type("int[]"))).setSkinCoordWeight(Java.to([doubleToFloat(0.0)], Java.type("float[]"))).setUlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]"))))))))
-        .addChild(new HAnimJoint("hanim_vl5").setName("vl5").setCenter(doubleToFloat(0.0028),doubleToFloat(1.0568),doubleToFloat(-0.0776)).setLlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]"))).setSkinCoordIndex(Java.to([0], Java.type("int[]"))).setSkinCoordWeight(Java.to([doubleToFloat(0.0)], Java.type("float[]"))).setUlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]")))
-          .addChild(new HAnimJoint("hanim_skullbase").setName("skullbase").setCenter(doubleToFloat(0.0044),doubleToFloat(1.6209),doubleToFloat(0.0236)).setLlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]"))).setSkinCoordIndex(Java.to([0], Java.type("int[]"))).setSkinCoordWeight(Java.to([doubleToFloat(0.0)], Java.type("float[]"))).setUlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]"))))
-          .addChild(new HAnimJoint("hanim_l_shoulder").setName("l_shoulder").setCenter(doubleToFloat(0.2029),doubleToFloat(1.4376),doubleToFloat(-0.0387)).setLlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]"))).setSkinCoordIndex(Java.to([0], Java.type("int[]"))).setSkinCoordWeight(Java.to([doubleToFloat(0.0)], Java.type("float[]"))).setUlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]")))
-            .addChild(new HAnimJoint("hanim_l_elbow").setName("l_elbow").setCenter(doubleToFloat(0.2014),doubleToFloat(1.1357),doubleToFloat(-0.0682)).setLlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]"))).setSkinCoordIndex(Java.to([0], Java.type("int[]"))).setSkinCoordWeight(Java.to([doubleToFloat(0.0)], Java.type("float[]"))).setUlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]")))
-              .addChild(new HAnimJoint("hanim_l_radiocarpal").setName("l_radiocarpal").setCenter(doubleToFloat(0.1984),doubleToFloat(0.8663),doubleToFloat(-0.0583)).setLlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]"))).setSkinCoordIndex(Java.to([0], Java.type("int[]"))).setSkinCoordWeight(Java.to([doubleToFloat(0.0)], Java.type("float[]"))).setUlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]"))))))
-          .addChild(new HAnimJoint("hanim_r_shoulder").setName("r_shoulder").setCenter(doubleToFloat(-0.1907),doubleToFloat(1.4407),doubleToFloat(-0.0325)).setLlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]"))).setSkinCoordIndex(Java.to([0], Java.type("int[]"))).setSkinCoordWeight(Java.to([doubleToFloat(0.0)], Java.type("float[]"))).setUlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]")))
-            .addChild(new HAnimJoint("hanim_r_elbow").setName("r_elbow").setCenter(doubleToFloat(-0.1949),doubleToFloat(1.1388),doubleToFloat(-0.0620)).setLlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]"))).setSkinCoordIndex(Java.to([0], Java.type("int[]"))).setSkinCoordWeight(Java.to([doubleToFloat(0.0)], Java.type("float[]"))).setUlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]")))
-              .addChild(new HAnimJoint("hanim_r_radiocarpal").setName("r_radiocarpal").setCenter(doubleToFloat(-0.1959),doubleToFloat(0.8694),doubleToFloat(-0.0521)).setLlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]"))).setSkinCoordIndex(Java.to([0], Java.type("int[]"))).setSkinCoordWeight(Java.to([doubleToFloat(0.0)], Java.type("float[]"))).setUlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]"))))))))
-      .addJoints(new HAnimJoint().setLlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]"))).setUlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]"))))
-      .addJoints(new HAnimJoint().setLlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]"))).setUlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]"))))
-      .addJoints(new HAnimJoint().setLlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]"))).setUlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]"))))
-      .addJoints(new HAnimJoint().setLlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]"))).setUlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]"))))
-      .addJoints(new HAnimJoint().setLlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]"))).setUlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]"))))
-      .addJoints(new HAnimJoint().setLlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]"))).setUlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]"))))
-      .addJoints(new HAnimJoint().setLlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]"))).setUlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]"))))
-      .addJoints(new HAnimJoint().setLlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]"))).setUlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]"))))
-      .addJoints(new HAnimJoint().setLlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]"))).setUlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]"))))
-      .addJoints(new HAnimJoint().setLlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]"))).setUlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]"))))
-      .addJoints(new HAnimJoint().setLlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]"))).setUlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]"))))
-      .addJoints(new HAnimJoint().setLlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]"))).setUlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]"))))
-      .addJoints(new HAnimJoint().setLlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]"))).setUlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]"))))
-      .addJoints(new HAnimJoint().setLlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]"))).setUlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]"))))
-      .addJoints(new HAnimJoint().setLlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]"))).setUlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]"))))
-      .addJoints(new HAnimJoint().setLlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]"))).setUlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]"))))
-      .addJoints(new HAnimJoint().setLlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]"))).setUlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]"))))
-      .addJoints(new HAnimJoint().setLlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]"))).setUlimit(Java.to([doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(0.0)], Java.type("float[]"))))));
+      .setSkinCoord(new Coordinate().setUSE("TheSkinCoord"))
+      .addSkeleton(new HAnimJoint("hanim_humanoid_root").setName("humanoid_root").setCenter(doubleToFloat(0.0000),doubleToFloat(0.8240),doubleToFloat(0.0277)).setSkinCoordIndex(Java.to([0], Java.type("int[]"))).setSkinCoordWeight(Java.to([doubleToFloat(0.0)], Java.type("float[]")))
+        .addChild(new HAnimJoint("hanim_sacroiliac").setName("sacroiliac").setCenter(doubleToFloat(0.0000),doubleToFloat(0.9149),doubleToFloat(0.0016)).setSkinCoordIndex(Java.to([0], Java.type("int[]"))).setSkinCoordWeight(Java.to([doubleToFloat(0.0)], Java.type("float[]")))
+          .addChild(new HAnimJoint("hanim_l_hip").setName("l_hip").setCenter(doubleToFloat(0.0961),doubleToFloat(0.9124),doubleToFloat(-0.0001)).setSkinCoordIndex(Java.to([0], Java.type("int[]"))).setSkinCoordWeight(Java.to([doubleToFloat(0.0)], Java.type("float[]")))
+            .addChild(new HAnimJoint("hanim_l_knee").setName("l_knee").setCenter(doubleToFloat(0.1040),doubleToFloat(0.4867),doubleToFloat(0.0308)).setSkinCoordIndex(Java.to([0], Java.type("int[]"))).setSkinCoordWeight(Java.to([doubleToFloat(0.0)], Java.type("float[]")))
+              .addChild(new HAnimJoint("hanim_l_talocrural").setName("l_talocrural").setCenter(doubleToFloat(0.1101),doubleToFloat(0.0656),doubleToFloat(-0.0736)).setSkinCoordIndex(Java.to([0], Java.type("int[]"))).setSkinCoordWeight(Java.to([doubleToFloat(0.0)], Java.type("float[]")))
+                .addChild(new HAnimJoint("hanim_l_metatarsophalangeal_2").setName("l_metatarsophalangeal_2").setCenter(doubleToFloat(0.0824),doubleToFloat(0.0064),doubleToFloat(-0.0040)).setSkinCoordIndex(Java.to([0], Java.type("int[]"))).setSkinCoordWeight(Java.to([doubleToFloat(0.0)], Java.type("float[]")))))))
+          .addChild(new HAnimJoint("hanim_r_hip").setName("r_hip").setCenter(doubleToFloat(-0.0950),doubleToFloat(0.9171),doubleToFloat(0.0029)).setSkinCoordIndex(Java.to([0], Java.type("int[]"))).setSkinCoordWeight(Java.to([doubleToFloat(0.0)], Java.type("float[]")))
+            .addChild(new HAnimJoint("hanim_r_knee").setName("r_knee").setCenter(doubleToFloat(-0.0867),doubleToFloat(0.4913),doubleToFloat(0.0318)).setSkinCoordIndex(Java.to([0], Java.type("int[]"))).setSkinCoordWeight(Java.to([doubleToFloat(0.0)], Java.type("float[]")))
+              .addChild(new HAnimJoint("hanim_r_talocrural").setName("r_talocrural").setCenter(doubleToFloat(-0.0801),doubleToFloat(0.0712),doubleToFloat(-0.0766)).setSkinCoordIndex(Java.to([0], Java.type("int[]"))).setSkinCoordWeight(Java.to([doubleToFloat(0.0)], Java.type("float[]")))
+                .addChild(new HAnimJoint("hanim_r_metatarsophalangeal_2").setName("r_metatarsophalangeal_2").setCenter(doubleToFloat(-0.0823),doubleToFloat(0.0064),doubleToFloat(-0.0040)).setSkinCoordIndex(Java.to([0], Java.type("int[]"))).setSkinCoordWeight(Java.to([doubleToFloat(0.0)], Java.type("float[]"))))))))
+        .addChild(new HAnimJoint("hanim_vl5").setName("vl5").setCenter(doubleToFloat(0.0028),doubleToFloat(1.0568),doubleToFloat(-0.0776)).setSkinCoordIndex(Java.to([0], Java.type("int[]"))).setSkinCoordWeight(Java.to([doubleToFloat(0.0)], Java.type("float[]")))
+          .addChild(new HAnimJoint("hanim_skullbase").setName("skullbase").setCenter(doubleToFloat(0.0044),doubleToFloat(1.6209),doubleToFloat(0.0236)).setSkinCoordIndex(Java.to([0], Java.type("int[]"))).setSkinCoordWeight(Java.to([doubleToFloat(0.0)], Java.type("float[]"))))
+          .addChild(new HAnimJoint("hanim_l_shoulder").setName("l_shoulder").setCenter(doubleToFloat(0.2029),doubleToFloat(1.4376),doubleToFloat(-0.0387)).setSkinCoordIndex(Java.to([0], Java.type("int[]"))).setSkinCoordWeight(Java.to([doubleToFloat(0.0)], Java.type("float[]")))
+            .addChild(new HAnimJoint("hanim_l_elbow").setName("l_elbow").setCenter(doubleToFloat(0.2014),doubleToFloat(1.1357),doubleToFloat(-0.0682)).setSkinCoordIndex(Java.to([0], Java.type("int[]"))).setSkinCoordWeight(Java.to([doubleToFloat(0.0)], Java.type("float[]")))
+              .addChild(new HAnimJoint("hanim_l_radiocarpal").setName("l_radiocarpal").setCenter(doubleToFloat(0.1984),doubleToFloat(0.8663),doubleToFloat(-0.0583)).setSkinCoordIndex(Java.to([0], Java.type("int[]"))).setSkinCoordWeight(Java.to([doubleToFloat(0.0)], Java.type("float[]"))))))
+          .addChild(new HAnimJoint("hanim_r_shoulder").setName("r_shoulder").setCenter(doubleToFloat(-0.1907),doubleToFloat(1.4407),doubleToFloat(-0.0325)).setSkinCoordIndex(Java.to([0], Java.type("int[]"))).setSkinCoordWeight(Java.to([doubleToFloat(0.0)], Java.type("float[]")))
+            .addChild(new HAnimJoint("hanim_r_elbow").setName("r_elbow").setCenter(doubleToFloat(-0.1949),doubleToFloat(1.1388),doubleToFloat(-0.0620)).setSkinCoordIndex(Java.to([0], Java.type("int[]"))).setSkinCoordWeight(Java.to([doubleToFloat(0.0)], Java.type("float[]")))
+              .addChild(new HAnimJoint("hanim_r_radiocarpal").setName("r_radiocarpal").setCenter(doubleToFloat(-0.1959),doubleToFloat(0.8694),doubleToFloat(-0.0521)).setSkinCoordIndex(Java.to([0], Java.type("int[]"))).setSkinCoordWeight(Java.to([doubleToFloat(0.0)], Java.type("float[]"))))))))
+      .addJoints(new HAnimJoint().setUSE("hanim_humanoid_root"))
+      .addJoints(new HAnimJoint().setUSE("hanim_sacroiliac"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_hip"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_knee"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_talocrural"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_metatarsophalangeal_2"))
+      .addJoints(new HAnimJoint().setUSE("hanim_r_hip"))
+      .addJoints(new HAnimJoint().setUSE("hanim_r_knee"))
+      .addJoints(new HAnimJoint().setUSE("hanim_r_talocrural"))
+      .addJoints(new HAnimJoint().setUSE("hanim_r_metatarsophalangeal_2"))
+      .addJoints(new HAnimJoint().setUSE("hanim_vl5"))
+      .addJoints(new HAnimJoint().setUSE("hanim_skullbase"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_shoulder"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_elbow"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_radiocarpal"))
+      .addJoints(new HAnimJoint().setUSE("hanim_r_shoulder"))
+      .addJoints(new HAnimJoint().setUSE("hanim_r_elbow"))
+      .addJoints(new HAnimJoint().setUSE("hanim_r_radiocarpal"))));
   },
   // end of initialize() method
 
@@ -320,11 +320,11 @@ Humanoid1NoSegSite.prototype = {
 		var metaList = this.getX3dModel().getHead().getMetaList();
 		for (var m in metaList) {
 			var metaObject = metaList[m];
-			if (metaObject.getName().equals(metaObject.NAME_ERROR) ||
-				metaObject.getName().equals(metaObject.NAME_WARNING) ||
-				metaObject.getName().equals(metaObject.NAME_HINT) ||
-				metaObject.getName().equals(metaObject.NAME_INFO) ||
-				metaObject.getName().equals(metaObject.NAME_TODO))
+			if (metaObject.getName() === metaObject.NAME_ERROR ||
+				metaObject.getName() === metaObject.NAME_WARNING ||
+				metaObject.getName() === metaObject.NAME_HINT ||
+				metaObject.getName() === metaObject.NAME_INFO ||
+				metaObject.getName() === metaObject.NAME_TODO)
 			{
 				metaResult += metaObject.toStringX3D();
 			}

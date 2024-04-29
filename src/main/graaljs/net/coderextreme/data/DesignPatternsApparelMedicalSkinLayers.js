@@ -326,7 +326,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 ConfigurationProperties.setStripDefaultAttributes(true);
 function doubleToFloat(d) {
     if (Float32Array)
-	return new Float32Array([d])[0];
+	return new Float32Array(d);
 }
       var X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
       .setHead(new head()
@@ -347,7 +347,7 @@ function doubleToFloat(d) {
         .addMeta(new meta().setName("license").setContent("../license.html")))
       .setScene(new Scene()
         .addChild(new WorldInfo().setTitle("HAnimHumanoid skin design patterns for apparel, medical"))
-        .addChild(new Background().setSkyColor(Java.to([doubleToFloat(0),doubleToFloat(0.6),doubleToFloat(0.6)], Java.type("float[]"))))
+        .addChild(new Background().setSkyColor(Java.to(doubleToFloat([0,0.6,0.6]), Java.type("float[]"))))
         .addChild(new Group().setDEF("MultipleHumanoids")
           .setMetadata(new MetadataString().setName("HAnimArchitecture").setReference("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/Guidelines.html#MultipleHumanoidsPerFile").setValue(Java.to(["E.4 Multiple humanoids per file"], Java.type("java.lang.String[]"))))
           .addComments(new CommentsBlock("=============================="))
@@ -405,7 +405,7 @@ function doubleToFloat(d) {
             .addComments(new CommentsBlock("allow multiple Shape nodes with containerField='skin', one for each layer of skin"))
             .addSkin(new Shape().setContainerFieldOverride("skin")))
           .addComments(new CommentsBlock("==============================")))
-        .addChild(new Viewpoint().setDEF("ViewHelpText").setDescription("Select text to see website").setPosition(Java.to([doubleToFloat(0),doubleToFloat(0),doubleToFloat(12)], Java.type("float[]"))))
+        .addChild(new Viewpoint().setDEF("ViewHelpText").setDescription("Select text to see website").setPosition(Java.to(doubleToFloat([0,0,12]), Java.type("float[]"))))
         .addComments(new CommentsBlock("Selectable Text design pattern has transparent Box and TouchSensor description as a tooltip"))
         .addChild(new Anchor().setDescription("DesignPatternsApparelMedicalSkinLayers.x3d explores potential apparel approaches").setParameter(Java.to(["target=blank"], Java.type("java.lang.String[]"))).setUrl(Java.to(["https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/DesignPatternsApparelMedicalSkinLayersIndex.html"], Java.type("java.lang.String[]")))
           .addChild(new Shape()
@@ -413,10 +413,10 @@ function doubleToFloat(d) {
             .setGeometry(new Text().setString(Java.to(["DesignPatternsApparelMedicalSkinLayers.x3d","","explores potential apparel approaches"], Java.type("java.lang.String[]")))
               .setFontStyle(new FontStyle().setFamily(Java.to(["SANS"], Java.type("java.lang.String[]"))).setJustify(Java.to(["MIDDLE","MIDDLE"], Java.type("java.lang.String[]"))).setSize(0.6).setStyle("BOLD")))
             .setAppearance(new Appearance()
-              .setMaterial(new Material().setDiffuseColor(Java.to([doubleToFloat(0.9),doubleToFloat(0.9),doubleToFloat(0.9)], Java.type("float[]"))))))
+              .setMaterial(new Material().setDiffuseColor(Java.to(doubleToFloat([0.9,0.9,0.9]), Java.type("float[]"))))))
           .addChild(new Shape()
             .addComments(new CommentsBlock("Author TODO: to adjust transparent Box as text-selection assist, set width and height to match size, then set transparency='1' to make invisible."))
-            .setGeometry(new Box().setSize(Java.to([doubleToFloat(11),doubleToFloat(2),doubleToFloat(0.001)], Java.type("float[]"))))
+            .setGeometry(new Box().setSize(Java.to(doubleToFloat([11,2,0.001]), Java.type("float[]"))))
             .setAppearance(new Appearance()
               .setMaterial(new Material().setTransparency(1))))))      ;
     X3D0.toFileX3D("../data/DesignPatternsApparelMedicalSkinLayers.new.graal.x3d");

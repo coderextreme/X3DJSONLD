@@ -138,20 +138,20 @@ MainStage.prototype = {
               .setCoord(new Coordinate().setPoint(this.Coordinate_8_32_point)))))
         .addChild(new Transform("Circle1").setScale(doubleToFloat(.5),doubleToFloat(1.0),doubleToFloat(.5))
           .addChild(new Shape()
-            .setAppearance(new Appearance())
-            .setGeometry(new IndexedLineSet())))
+            .setAppearance(new Appearance().setUSE("LineColor"))
+            .setGeometry(new IndexedLineSet().setUSE("Orbit1"))))
         .addChild(new Transform("Circle2").setScale(doubleToFloat(.25),doubleToFloat(1.0),doubleToFloat(.25))
           .addChild(new Shape()
-            .setAppearance(new Appearance())
-            .setGeometry(new IndexedLineSet())))
+            .setAppearance(new Appearance().setUSE("LineColor"))
+            .setGeometry(new IndexedLineSet().setUSE("Orbit1"))))
         .addChild(new Transform("Circle3").setScale(doubleToFloat(2.0),doubleToFloat(1.0),doubleToFloat(2.0))
           .addChild(new Shape()
-            .setAppearance(new Appearance())
-            .setGeometry(new IndexedLineSet())))
+            .setAppearance(new Appearance().setUSE("LineColor"))
+            .setGeometry(new IndexedLineSet().setUSE("Orbit1"))))
         .addChild(new Transform("Circle4").setScale(doubleToFloat(3.0),doubleToFloat(1.0),doubleToFloat(3.0))
           .addChild(new Shape()
-            .setAppearance(new Appearance())
-            .setGeometry(new IndexedLineSet()))))));
+            .setAppearance(new Appearance().setUSE("LineColor"))
+            .setGeometry(new IndexedLineSet().setUSE("Orbit1")))))));
   },
   // end of initialize() method
 

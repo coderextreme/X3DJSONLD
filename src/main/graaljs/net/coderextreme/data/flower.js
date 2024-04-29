@@ -326,26 +326,26 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 ConfigurationProperties.setStripDefaultAttributes(true);
 function doubleToFloat(d) {
     if (Float32Array)
-	return new Float32Array([d])[0];
+	return new Float32Array(d);
 }
       var X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
       .setHead(new head()
         .addMeta(new meta().setName("title").setContent("flower.x3d"))
         .addMeta(new meta().setName("creator").setContent("John Carlson"))
         .addMeta(new meta().setName("generator").setContent("manual"))
-        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/personal/flower.x3d"))
+        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/flower.x3d"))
         .addMeta(new meta().setName("description").setContent("a flower")))
       .setScene(new Scene()
         .addChild(new NavigationInfo())
-        .addChild(new DirectionalLight().setDirection(Java.to([doubleToFloat(0),doubleToFloat(-0.8),doubleToFloat(-0.2)], Java.type("float[]"))).setIntensity(0.5))
-        .addChild(new Background().setSkyColor(Java.to([doubleToFloat(1),doubleToFloat(1),doubleToFloat(1)], Java.type("float[]"))))
-        .addChild(new Viewpoint().setDescription("One mathematical orbital").setPosition(Java.to([doubleToFloat(0),doubleToFloat(0),doubleToFloat(50)], Java.type("float[]"))))
-        .addChild(new Transform().setTranslation(Java.to([doubleToFloat(0),doubleToFloat(-1),doubleToFloat(1)], Java.type("float[]"))).setRotation(Java.to([doubleToFloat(0),doubleToFloat(1),doubleToFloat(0),doubleToFloat(3.1415926)], Java.type("float[]"))).setScale(Java.to([doubleToFloat(1.5),doubleToFloat(1.5),doubleToFloat(1.5)], Java.type("float[]")))
+        .addChild(new DirectionalLight().setDirection(Java.to(doubleToFloat([0,-0.8,-0.2]), Java.type("float[]"))).setIntensity(0.5))
+        .addChild(new Background().setSkyColor(Java.to(doubleToFloat([1,1,1]), Java.type("float[]"))))
+        .addChild(new Viewpoint().setDescription("One mathematical orbital").setPosition(Java.to(doubleToFloat([0,0,50]), Java.type("float[]"))))
+        .addChild(new Transform().setTranslation(Java.to(doubleToFloat([0,-1,1]), Java.type("float[]"))).setRotation(Java.to(doubleToFloat([0,1,0,3.1415926]), Java.type("float[]"))).setScale(Java.to(doubleToFloat([1.5,1.5,1.5]), Java.type("float[]")))
           .addChild(new Shape()
             .setAppearance(new Appearance()
-              .setMaterial(new Material().setTransparency(0.1).setDiffuseColor(Java.to([doubleToFloat(0.9),doubleToFloat(0.3),doubleToFloat(0.3)], Java.type("float[]"))).setSpecularColor(Java.to([doubleToFloat(0.8),doubleToFloat(0.8),doubleToFloat(0.8)], Java.type("float[]"))).setShininess(0.145)))
+              .setMaterial(new Material().setTransparency(0.1).setDiffuseColor(Java.to(doubleToFloat([0.9,0.3,0.3]), Java.type("float[]"))).setSpecularColor(Java.to(doubleToFloat([0.8,0.8,0.8]), Java.type("float[]"))).setShininess(0.145)))
             .setGeometry(new IndexedFaceSet().setCcw(false).setConvex(false).setCoordIndex(Java.to([0,1,2,-1], Java.type("int[]"))).setDEF("Orbit")
-              .setCoord(new Coordinate().setDEF("OrbitCoordinates").setPoint(Java.to([doubleToFloat(0),doubleToFloat(0),doubleToFloat(1),doubleToFloat(0),doubleToFloat(1),doubleToFloat(0),doubleToFloat(1),doubleToFloat(0),doubleToFloat(0)], Java.type("float[]")))))))
+              .setCoord(new Coordinate().setDEF("OrbitCoordinates").setPoint(Java.to(doubleToFloat([0,0,1,0,1,0,1,0,0]), Java.type("float[]")))))))
         .addChild(new Script().setDEF("OrbitScript")
           .addField(new field().setType(field.TYPE_SFFLOAT).setName("set_fraction").setAccessType(field.ACCESSTYPE_INPUTONLY))
           .addField(new field().setType(field.TYPE_MFVEC3F).setName("coordinates").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
@@ -373,7 +373,7 @@ function initialize() {
 	     localci.push(-1);
 	}
     }
-    coordIndexes = new MFInt32(localci);
+    coordIndexes = new MFInt32(...localci);
 }
 
 function generateCoordinates(resolution) {
@@ -393,7 +393,7 @@ function generateCoordinates(resolution) {
 	}
 	phi += delta;
      }
-     coordinates = new MFVec3f(localc);
+     coordinates = new MFVec3f(...localc);
 }
 
 function set_fraction(fraction, eventTime) {

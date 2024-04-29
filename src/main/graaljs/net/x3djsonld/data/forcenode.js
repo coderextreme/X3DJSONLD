@@ -107,7 +107,7 @@ forcenode.prototype = {
 "					function set_cycle(value) {" + "\n" + 
 "                                                old = translation;" + "\n" + 
 "						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);" + "\n" + 
-"                                                keyValue = new MFVec3f([old, translation]);" + "\n" + 
+"                                                keyValue = new MFVec3f(...[old, translation]);" + "\n" + 
 "						// Browser.println(translation);" + "\n" + 
 "					}" + "\n")
             .addField(new field().setName("translation").setType("SFVec3f").setAccessType("inputOutput").setValue("50 50 0"))
@@ -119,7 +119,7 @@ forcenode.prototype = {
           .addChild(new ROUTE().setFromNode("nodeClock").setFromField("fraction_changed").setToNode("NodePosition").setToField("set_fraction"))
           .addChild(new ROUTE().setFromNode("MoveBall").setFromField("keyValue").setToNode("NodePosition").setToField("keyValue"))
           .addChild(new ROUTE().setFromNode("NodePosition").setFromField("value_changed").setToNode("transform").setToField("set_translation")))))
-    .addChild(new ProtoDeclare().setName("cyl")
+    .addChild(new ProtoDeclare().setName("cylinder")
       .setProtoInterface(new ProtoInterface()
         .addField(new field().setName("set_positionA").setType("SFVec3f").setAccessType("inputOnly"))
         .addField(new field().setName("set_positionB").setType("SFVec3f").setAccessType("inputOnly")))
@@ -135,17 +135,17 @@ forcenode.prototype = {
 "\n" + 
 "                function set_endA(value) {" + "\n" + 
 "		    if (typeof spine === 'undefined') {" + "\n" + 
-"		        spine = new MFVec3f([value, value]);" + "\n" + 
+"		        spine = new MFVec3f(...[value, value]);" + "\n" + 
 "		    } else {" + "\n" + 
-"		        spine = new MFVec3f([value, spine[1]]);" + "\n" + 
+"		        spine = new MFVec3f(...[value, spine[1]]);" + "\n" + 
 "		    }" + "\n" + 
 "                }" + "\n" + 
 "                " + "\n" + 
 "                function set_endB(value) {" + "\n" + 
 "		    if (typeof spine === 'undefined') {" + "\n" + 
-"		        spine = new MFVec3f([value, value]);" + "\n" + 
+"		        spine = new MFVec3f(...[value, value]);" + "\n" + 
 "		    } else {" + "\n" + 
-"		        spine = new MFVec3f([spine[0], value]);" + "\n" + 
+"		        spine = new MFVec3f(...[spine[0], value]);" + "\n" + 
 "		    }" + "\n" + 
 "                }" + "\n" + 
 "                " + "\n" + 
@@ -169,13 +169,13 @@ forcenode.prototype = {
         .addFieldValue(new fieldValue().setName("position").setValue("-50.0 -50.0 -50.0")))
       .addChild(new ProtoInstance("nodeD", "node")
         .addFieldValue(new fieldValue().setName("position").setValue("50.0 50.0 -50.0")))
-      .addChild(new ProtoInstance("linkA", "cyl")
+      .addChild(new ProtoInstance("linkA", "cylinder")
         .addFieldValue(new fieldValue().setName("set_positionA").setValue("0 0 0"))
         .addFieldValue(new fieldValue().setName("set_positionB").setValue("50 50 50")))
-      .addChild(new ProtoInstance("linkB", "cyl")
+      .addChild(new ProtoInstance("linkB", "cylinder")
         .addFieldValue(new fieldValue().setName("set_positionA").setValue("0 0 0"))
         .addFieldValue(new fieldValue().setName("set_positionB").setValue("-50 -50 -50")))
-      .addChild(new ProtoInstance("linkC", "cyl")
+      .addChild(new ProtoInstance("linkC", "cylinder")
         .addFieldValue(new fieldValue().setName("set_positionA").setValue("50 50 50"))
         .addFieldValue(new fieldValue().setName("set_positionB").setValue("50 50 -50"))))
     .addChild(new Script("clickHandler").setSourceCode("\n" + 

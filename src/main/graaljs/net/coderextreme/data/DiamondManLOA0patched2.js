@@ -326,7 +326,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 ConfigurationProperties.setStripDefaultAttributes(true);
 function doubleToFloat(d) {
     if (Float32Array)
-	return new Float32Array([d])[0];
+	return new Float32Array(d);
 }
       var X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
       .setHead(new head()
@@ -357,7 +357,7 @@ function doubleToFloat(d) {
       .setScene(new Scene()
         .addChild(new WorldInfo().setInfo(Java.to(["HAnim 2.0 Default Joint Centers, Level Of Articulation (LOA) 0 -------------------------------------------------------- HANIM 1.1 (VRML 2.0) Author name: eMpTy (a.k.a. Matthew T. Beitler) HANIM 1.1 (VRML 2.0) Author email: beitler@graphics.cis.upenn.edu or beitler@acm.org HANIM 1.1 (VRML 2.0) Author homepage: http://www.cis.upenn.edu/~beitler HANIM 1.1 (VRML 2.0) Compliance Date: May 12, 1999 HANIM 1.1 Compliance Information: http://ece.uwaterloo.ca/~HAnim/ Construction Info (joint centers): The joint centers of this figure are based on the work of Norman Badler, director of the Center for Human Modeling and Simulation at the University of Pennsylvania. The original document which these joint centers are based on can be found at: http://www.cis.upenn.edu/~badler/anthro/89-71.ps, .pdf"], Java.type("java.lang.String[]"))).setTitle("HANIM 2.0 Default Joint Centers, LOA0"))
         .addChild(new NavigationInfo().setSpeed(1.5))
-        .addChild(new Viewpoint().setCenterOfRotation(Java.to([doubleToFloat(0),doubleToFloat(1),doubleToFloat(0)], Java.type("float[]"))).setDescription("Diamond Man, LOA 0").setPosition(Java.to([doubleToFloat(0),doubleToFloat(1),doubleToFloat(3)], Java.type("float[]"))))
+        .addChild(new Viewpoint().setCenterOfRotation(Java.to(doubleToFloat([0,1,0]), Java.type("float[]"))).setDescription("Diamond Man, LOA 0").setPosition(Java.to(doubleToFloat([0,1,3]), Java.type("float[]"))))
         .addChild(new HAnimHumanoid().setName("humanoid").setDEF("hanim_humanoid").setLoa(0).setVersion("2.0")
           .addComments(new CommentsBlock("original HAnimHumanoid info='\"authorEmail=beitler@graphics.cis.upenn.edu beitler@acm.org\" \"authorName=Matthew T. Beitler\" \"copyright=Copyright 1999 Matthew T. Beitler\" \"creationDate=05/12/99\" \"humanoidVersion=JointCenters 1.1 LOA0\" \"usageRestrictions=PERMISSION TO FULLY USE THIS SCENE GRAPH IS GRANTED PROVIDED THIS COPYRIGHT INFORMATION AND DOCUMENTATION OF THE ORIGINAL AUTHOR IS INCLUDED. This humanoid scene graph is provided _as-is_ and without warranty of any kind express implied or otherwise including without limitation any warranty of merchantability or fitness for a particular purpose.\"'"))
           .setMetadata(new MetadataSet().setName("HAnimHumanoid.info").setReference("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid")
@@ -367,20 +367,20 @@ function doubleToFloat(d) {
             .addValue(new MetadataString().setName("creationDate").setValue(Java.to(["05/12/99"], Java.type("java.lang.String[]"))))
             .addValue(new MetadataString().setName("humanoidVersion").setValue(Java.to(["JointCenters 1.1 LOA0"], Java.type("java.lang.String[]"))))
             .addValue(new MetadataString().setName("usageRestrictions").setValue(Java.to(["PERMISSION TO FULLY USE THIS SCENE GRAPH IS GRANTED PROVIDED THIS COPYRIGHT INFORMATION AND DOCUMENTATION OF THE ORIGINAL AUTHOR IS INCLUDED. This humanoid scene graph is provided _as-is_ and without warranty of any kind express implied or otherwise including without limitation any warranty of merchantability or fitness for a particular purpose."], Java.type("java.lang.String[]")))))
-          .addSkeleton(new HAnimJoint("hanim_humanoid").setName("humanoid_root").setDEF("hanim_humanoid_root").setCenter(Java.to([doubleToFloat(0),doubleToFloat(0.824),doubleToFloat(0.0277)], Java.type("float[]"))).setContainerFieldOverride("skeleton")
-            .addChild(new HAnimJoint("hanim_humanoid_root").setName("sacroiliac").setDEF("hanim_sacroiliac").setCenter(Java.to([doubleToFloat(0),doubleToFloat(0.9149),doubleToFloat(0.0016)], Java.type("float[]")))
+          .addSkeleton(new HAnimJoint("hanim_humanoid").setName("humanoid_root").setDEF("hanim_humanoid_root").setCenter(Java.to(doubleToFloat([0,0.824,0.0277]), Java.type("float[]"))).setContainerFieldOverride("skeleton")
+            .addChild(new HAnimJoint("hanim_humanoid_root").setName("sacroiliac").setDEF("hanim_sacroiliac").setCenter(Java.to(doubleToFloat([0,0.9149,0.0016]), Java.type("float[]")))
               .addChild(new HAnimSegment("hanim_sacroiliac").setName("pelvis").setDEF("hanim_pelvis")
-                .addChild(new Transform().setTranslation(Java.to([doubleToFloat(0),doubleToFloat(0.9149),doubleToFloat(0.0016)], Java.type("float[]")))
+                .addChild(new Transform().setTranslation(Java.to(doubleToFloat([0,0.9149,0.0016]), Java.type("float[]")))
                   .addChild(new Shape().setDEF("DiamondShape")
                     .setGeometry(new IndexedFaceSet().setCoordIndex(Java.to([0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1], Java.type("int[]"))).setCreaseAngle(0.5)
-                      .setCoord(new Coordinate().setPoint(Java.to([doubleToFloat(0),doubleToFloat(0.01),doubleToFloat(0),doubleToFloat(-0.01),doubleToFloat(0),doubleToFloat(0),doubleToFloat(0),doubleToFloat(0),doubleToFloat(0.01),doubleToFloat(0.01),doubleToFloat(0),doubleToFloat(0),doubleToFloat(0),doubleToFloat(0),doubleToFloat(-0.01),doubleToFloat(0),doubleToFloat(-0.01),doubleToFloat(0)], Java.type("float[]")))))
+                      .setCoord(new Coordinate().setPoint(Java.to(doubleToFloat([0,0.01,0,-0.01,0,0,0,0,0.01,0.01,0,0,0,0,-0.01,0,-0.01,0]), Java.type("float[]")))))
                     .setAppearance(new Appearance()
-                      .setMaterial(new Material().setDiffuseColor(Java.to([doubleToFloat(1),doubleToFloat(1),doubleToFloat(0)], Java.type("float[]"))))))))))
+                      .setMaterial(new Material().setDiffuseColor(Java.to(doubleToFloat([1,1,0]), Java.type("float[]"))))))))))
           .addViewpoints(new HAnimSite("hanim_humanoid").setName("site_view").setDEF("hanim_site_view").setContainerFieldOverride("viewpoints")
-            .addChild(new Viewpoint().setDEF("InclinedView").setDescription("Inclined View").setOrientation(Java.to([doubleToFloat(-0.113),doubleToFloat(0.993),doubleToFloat(0.0347),doubleToFloat(0.671)], Java.type("float[]"))).setPosition(Java.to([doubleToFloat(1.62),doubleToFloat(1.05),doubleToFloat(2.06)], Java.type("float[]"))))
-            .addChild(new Viewpoint().setDEF("FrontView").setDescription("Front View").setPosition(Java.to([doubleToFloat(0),doubleToFloat(0.854),doubleToFloat(2.57665)], Java.type("float[]"))))
-            .addChild(new Viewpoint().setDEF("SideView").setDescription("Side View").setOrientation(Java.to([doubleToFloat(0),doubleToFloat(1),doubleToFloat(0),doubleToFloat(1.57079)], Java.type("float[]"))).setPosition(Java.to([doubleToFloat(2.5929),doubleToFloat(0.854),doubleToFloat(0)], Java.type("float[]"))))
-            .addChild(new Viewpoint().setDEF("TopView").setDescription("Top View").setOrientation(Java.to([doubleToFloat(1),doubleToFloat(0),doubleToFloat(0),doubleToFloat(-1.57079)], Java.type("float[]"))).setPosition(Java.to([doubleToFloat(0),doubleToFloat(3.4495),doubleToFloat(0)], Java.type("float[]")))))
+            .addChild(new Viewpoint().setDEF("InclinedView").setDescription("Inclined View").setOrientation(Java.to(doubleToFloat([-0.113,0.993,0.0347,0.671]), Java.type("float[]"))).setPosition(Java.to(doubleToFloat([1.62,1.05,2.06]), Java.type("float[]"))))
+            .addChild(new Viewpoint().setDEF("FrontView").setDescription("Front View").setPosition(Java.to(doubleToFloat([0,0.854,2.57665]), Java.type("float[]"))))
+            .addChild(new Viewpoint().setDEF("SideView").setDescription("Side View").setOrientation(Java.to(doubleToFloat([0,1,0,1.57079]), Java.type("float[]"))).setPosition(Java.to(doubleToFloat([2.5929,0.854,0]), Java.type("float[]"))))
+            .addChild(new Viewpoint().setDEF("TopView").setDescription("Top View").setOrientation(Java.to(doubleToFloat([1,0,0,-1.57079]), Java.type("float[]"))).setPosition(Java.to(doubleToFloat([0,3.4495,0]), Java.type("float[]")))))
           .addJoints(new HAnimJoint("hanim_humanoid").setContainerFieldOverride("joints").setUSE("hanim_humanoid_root"))
           .addJoints(new HAnimJoint("hanim_humanoid").setContainerFieldOverride("joints").setUSE("hanim_sacroiliac"))
           .addSegments(new HAnimSegment("hanim_humanoid").setContainerFieldOverride("segments").setUSE("hanim_pelvis"))))      ;

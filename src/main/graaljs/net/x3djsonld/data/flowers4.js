@@ -72,7 +72,7 @@ flowers4.prototype = {
     .addComponent(new component().setName("CubeMapTexturing").setLevel(1))
     .addComponent(new component().setName("Texturing").setLevel(1))
     .addComponent(new component().setName("Rendering").setLevel(1))
-    .addComments("<component name='Shape' level='4'></component>")
+    .addComponent(new component().setName("Shape").setLevel(4))
     .addComponent(new component().setName("Grouping").setLevel(3))
     .addComponent(new component().setName("Core").setLevel(1))
     .addMeta(new meta().setName("title").setContent("flowers4.x3d"))
@@ -100,22 +100,14 @@ flowers4.prototype = {
             .addField(new field().setName("bias").setType("SFFloat").setAccessType("inputOutput").setValue("0.5"))
             .addField(new field().setName("scale").setType("SFFloat").setAccessType("inputOutput").setValue("0.5"))
             .addField(new field().setName("power").setType("SFFloat").setAccessType("inputOutput").setValue("2"))
-            .addParts(new ShaderPart().setUrl(new MFString("\"../shaders/x3dom.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs\"")))
-            .addParts(new ShaderPart().setType("FRAGMENT").setUrl(new MFString("\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs\"")))))
+            .addParts(new ShaderPart().setUrl(new MFString("\"../shaders/x_ite.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs\"")))
+            .addParts(new ShaderPart().setType("FRAGMENT").setUrl(new MFString("\"../shaders/x_ite.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs\"")))))
         .addComments(Java.to(["",
 "                <Sphere>"], Java.type("java.lang.String[]")))
         .setGeometry(new IndexedFaceSet("Orbit").setDEF("Orbit").setConvex(false)
           .setCoord(new Coordinate("OrbitCoordinates")))))
     .addChild(new Script("OrbitScript").setSourceCode("\n" + 
-"\n" + 
-"\n" + 
 "ecmascript:" + "\n" + 
-"\n" + 
-"var e = 5;" + "\n" + 
-"var f = 5;" + "\n" + 
-"var g = 5;" + "\n" + 
-"var h = 5;" + "\n" + 
-"\n" + 
 "function initialize() {" + "\n" + 
 "     var resolution = 100;" + "\n" + 
 "     updateCoordinates(resolution);" + "\n" + 
@@ -129,7 +121,7 @@ flowers4.prototype = {
 "	     cis.push(-1);" + "\n" + 
 "	}" + "\n" + 
 "    }" + "\n" + 
-"    coordIndexes = new MFInt32(cis);" + "\n" + 
+"    coordIndexes = new MFInt32(...cis);" + "\n" + 
 "}" + "\n" + 
 "\n" + 
 "function updateCoordinates(resolution) {" + "\n" + 
@@ -149,7 +141,7 @@ flowers4.prototype = {
 "	}" + "\n" + 
 "	phi += delta;" + "\n" + 
 "     }" + "\n" + 
-"     coordinates = new MFVec3f(crds);" + "\n" + 
+"     coordinates = new MFVec3f(...crds);" + "\n" + 
 "}" + "\n" + 
 "\n" + 
 "function set_fraction(fraction, eventTime) {" + "\n" + 
@@ -168,6 +160,9 @@ flowers4.prototype = {
 "		h += Math.floor(Math.random() * 2) * 2 - 1;" + "\n" + 
 "		break;" + "\n" + 
 "	}" + "\n" + 
+"	if (e < 1) {" + "\n" + 
+"		e = 10;" + "\n" + 
+"	}" + "\n" + 
 "	if (f < 1) {" + "\n" + 
 "		f = 10;" + "\n" + 
 "	}" + "\n" + 
@@ -182,7 +177,11 @@ flowers4.prototype = {
 "}" + "\n")
       .addField(new field().setName("set_fraction").setType("SFFloat").setAccessType("inputOnly"))
       .addField(new field().setName("coordinates").setType("MFVec3f").setAccessType("inputOutput"))
-      .addField(new field().setName("coordIndexes").setType("MFInt32").setAccessType("outputOnly")))
+      .addField(new field().setName("coordIndexes").setType("MFInt32").setAccessType("outputOnly"))
+      .addField(new field().setName("e").setType("SFFloat").setAccessType("inputOutput").setValue("5"))
+      .addField(new field().setName("f").setType("SFFloat").setAccessType("inputOutput").setValue("5"))
+      .addField(new field().setName("g").setType("SFFloat").setAccessType("inputOutput").setValue("5"))
+      .addField(new field().setName("h").setType("SFFloat").setAccessType("inputOutput").setValue("5")))
     .addChild(new TimeSensor("Clock").setCycleInterval(16).setLoop(true))
     .addChild(new ROUTE().setFromNode("OrbitScript").setFromField("coordIndexes").setToNode("Orbit").setToField("set_coordIndex"))
     .addChild(new ROUTE().setFromNode("OrbitScript").setFromField("coordinates").setToNode("OrbitCoordinates").setToField("set_point"))

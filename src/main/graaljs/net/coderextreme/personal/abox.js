@@ -326,7 +326,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 ConfigurationProperties.setStripDefaultAttributes(true);
 function doubleToFloat(d) {
     if (Float32Array)
-	return new Float32Array([d])[0];
+	return new Float32Array(d);
 }
 var ProtoInstance0 = null;
 var ProtoInstance1 = null;
@@ -335,7 +335,7 @@ var ProtoInstance1 = null;
         .addMeta(new meta().setName("title").setContent("abox.x3d"))
         .addMeta(new meta().setName("creator").setContent("John Carlson"))
         .addMeta(new meta().setName("generator").setContent("manual"))
-        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/abox.x3d"))
+        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/personal/abox.x3d"))
         .addMeta(new meta().setName("description").setContent("a box")))
       .setScene(new Scene()
         .addChild(new ProtoDeclare().setName("anyShape")
@@ -361,6 +361,6 @@ var ProtoInstance1 = null;
 ProtoInstance1
           .addFieldValue(new fieldValue().setName("myShape")
             .addChild(new Shape()
-              .setGeometry(new Box().setSize(Java.to([doubleToFloat(140),doubleToFloat(140),doubleToFloat(140)], Java.type("float[]"))))));
+              .setGeometry(new Box().setSize(Java.to(doubleToFloat([140,140,140]), Java.type("float[]"))))));
     X3D0.toFileX3D("../personal/abox.new.graal.x3d");
     X3D0.toFileJSON("../personal/abox.new.graal.json");

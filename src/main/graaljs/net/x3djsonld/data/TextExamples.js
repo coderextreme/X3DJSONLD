@@ -106,13 +106,13 @@ TextExamples.prototype = {
     .addChild(new Transform().setTranslation(doubleToFloat(-3.0),doubleToFloat(0.0),doubleToFloat(0.0))
       .addChild(new Shape()
         .setGeometry(new Text().setString(new MFString("\"I don't think so\" \"\" \"he said \\\"Hi\\\"\""))
-          .setFontStyle(new FontStyle()))
-        .setAppearance(new Appearance())))
+          .setFontStyle(new FontStyle().setUSE("testFontStyle")))
+        .setAppearance(new Appearance().setUSE("LightBlueAppearance"))))
     .addChild(new Transform().setTranslation(doubleToFloat(3.0),doubleToFloat(0.0),doubleToFloat(0.0))
       .addChild(new Shape()
         .setGeometry(new Text().setString(new MFString("\"I don't think so\" \"\" \"he said \\\"Hi\\\"\""))
-          .setFontStyle(new FontStyle()))
-        .setAppearance(new Appearance()))));
+          .setFontStyle(new FontStyle().setUSE("testFontStyle")))
+        .setAppearance(new Appearance().setUSE("LightBlueAppearance")))));
   },
   // end of initialize() method
 
