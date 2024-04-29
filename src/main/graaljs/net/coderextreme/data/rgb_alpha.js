@@ -326,7 +326,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 ConfigurationProperties.setStripDefaultAttributes(true);
 function doubleToFloat(d) {
     if (Float32Array)
-	return new Float32Array([d])[0];
+	return new Float32Array(d);
 }
       var X3D0 =  new X3D().setProfile("Interchange").setVersion("3.0")
       .setHead(new head()
@@ -351,25 +351,25 @@ function doubleToFloat(d) {
       .setScene(new Scene()
         .addChild(new NavigationInfo().setType(Java.to(["EXAMINE","WALK","FLY","ANY"], Java.type("java.lang.String[]"))))
         .addChild(new Group()
-          .addChild(new Transform().setTranslation(Java.to([doubleToFloat(6.14221),doubleToFloat(0.0694613),doubleToFloat(-0.000999451)], Java.type("float[]")))
+          .addChild(new Transform().setTranslation(Java.to(doubleToFloat([6.14221,0.0694613,-0.000999451]), Java.type("float[]")))
             .addChild(new Shape()
               .setAppearance(new Appearance()
                 .setMaterial(new Material())
                 .setTexture(new PixelTexture().setDEF("RgbOpacityCheckerboard").setImage(Java.to([2,2,4,0xFF0000FF| 0,0xFFFF0000| 0,0xFFFF0000| 0,0xFF0000FF| 0], Java.type("int[]")))))
               .setGeometry(new Box())))
-          .addChild(new Transform().setTranslation(Java.to([doubleToFloat(-4.85443),doubleToFloat(0.0694381),doubleToFloat(-0.00149918)], Java.type("float[]")))
+          .addChild(new Transform().setTranslation(Java.to(doubleToFloat([-4.85443,0.0694381,-0.00149918]), Java.type("float[]")))
             .addChild(new Shape()
               .setAppearance(new Appearance()
                 .setMaterial(new Material())
                 .setTexture(new PixelTexture().setUSE("RgbOpacityCheckerboard")))
               .setGeometry(new Sphere())))
-          .addChild(new Transform().setTranslation(Java.to([doubleToFloat(-1.47341),doubleToFloat(0.036672),doubleToFloat(-0.00175095)], Java.type("float[]")))
+          .addChild(new Transform().setTranslation(Java.to(doubleToFloat([-1.47341,0.036672,-0.00175095]), Java.type("float[]")))
             .addChild(new Shape()
               .setAppearance(new Appearance()
                 .setMaterial(new Material())
                 .setTexture(new PixelTexture().setUSE("RgbOpacityCheckerboard")))
               .setGeometry(new Cone())))
-          .addChild(new Transform().setTranslation(Java.to([doubleToFloat(2.31094),doubleToFloat(0.0694206),doubleToFloat(-0.00187683)], Java.type("float[]")))
+          .addChild(new Transform().setTranslation(Java.to(doubleToFloat([2.31094,0.0694206,-0.00187683]), Java.type("float[]")))
             .addChild(new Shape()
               .setAppearance(new Appearance()
                 .setMaterial(new Material())

@@ -326,7 +326,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 ConfigurationProperties.setStripDefaultAttributes(true);
 function doubleToFloat(d) {
     if (Float32Array)
-	return new Float32Array([d])[0];
+	return new Float32Array(d);
 }
 var ProtoInstance0 = null;
       var X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
@@ -348,10 +348,10 @@ var ProtoInstance0 = null;
         .addMeta(new meta().setName("license").setContent("../license.html")))
       .setScene(new Scene()
         .addChild(new WorldInfo().setTitle("ViewFrustumExample.x3d"))
-        .addChild(new Viewpoint().setDescription("ViewFrustum from above, looking down").setOrientation(Java.to([doubleToFloat(1),doubleToFloat(0),doubleToFloat(0),doubleToFloat(-1.57)], Java.type("float[]"))).setPosition(Java.to([doubleToFloat(0),doubleToFloat(40),doubleToFloat(0)], Java.type("float[]"))))
+        .addChild(new Viewpoint().setDescription("ViewFrustum from above, looking down").setOrientation(Java.to(doubleToFloat([1,0,0,-1.57]), Java.type("float[]"))).setPosition(Java.to(doubleToFloat([0,40,0]), Java.type("float[]"))))
         .addChild(new Viewpoint().setDescription("ViewFrustum from point of view"))
-        .addChild(new Viewpoint().setDescription("ViewFrustum behind point of view").setPosition(Java.to([doubleToFloat(0),doubleToFloat(0),doubleToFloat(15)], Java.type("float[]"))))
-        .addChild(new Viewpoint().setDescription("ViewFrustum oblique side view").setOrientation(Java.to([doubleToFloat(0.8005),doubleToFloat(0.5926),doubleToFloat(0.0898),doubleToFloat(-0.3743)], Java.type("float[]"))).setPosition(Java.to([doubleToFloat(-5),doubleToFloat(5),doubleToFloat(20)], Java.type("float[]"))))
+        .addChild(new Viewpoint().setDescription("ViewFrustum behind point of view").setPosition(Java.to(doubleToFloat([0,0,15]), Java.type("float[]"))))
+        .addChild(new Viewpoint().setDescription("ViewFrustum oblique side view").setOrientation(Java.to(doubleToFloat([0.8005,0.5926,0.0898,-0.3743]), Java.type("float[]"))).setPosition(Java.to(doubleToFloat([-5,5,20]), Java.type("float[]"))))
         .addChild(new NavigationInfo().setType(Java.to(["EXAMINE","FLY","ANY"], Java.type("java.lang.String[]"))))
         .addChild(new ExternProtoDeclare().setName("ViewFrustum").setAppinfo("Display view frustum associated with a given pair of Viewpoint NavigationInfo nodes").setUrl(Java.to(["ViewFrustumPrototype.x3d#ViewFrustum"], Java.type("java.lang.String[]")))
           .addField(new field().setType(field.TYPE_SFNODE).setName("ViewpointNode").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("required: insert Viewpoint DEF or USE node for view of interest"))
@@ -366,7 +366,7 @@ var ProtoInstance0 = null;
         .addChild(ProtoInstance0 = new ProtoInstance().setName("ViewFrustum"))
         .addComments(new CommentsBlock("Visualization assists"))
         .addChild(new Inline().setDEF("GridXZ").setUrl(Java.to(["GridXZ_20x20Fixed.x3d"], Java.type("java.lang.String[]"))))
-        .addChild(new Transform().setScale(Java.to([doubleToFloat(5),doubleToFloat(5),doubleToFloat(5)], Java.type("float[]")))
+        .addChild(new Transform().setScale(Java.to(doubleToFloat([5,5,5]), Java.type("float[]")))
           .addChild(new Inline().setDEF("CoordinateAxes").setUrl(Java.to(["CoordinateAxes.x3d"], Java.type("java.lang.String[]"))))))      ;
 ProtoInstance0
           .addFieldValue(new fieldValue().setName("ViewpointNode")

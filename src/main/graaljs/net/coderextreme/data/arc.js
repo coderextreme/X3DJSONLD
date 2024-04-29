@@ -326,7 +326,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 ConfigurationProperties.setStripDefaultAttributes(true);
 function doubleToFloat(d) {
     if (Float32Array)
-	return new Float32Array([d])[0];
+	return new Float32Array(d);
 }
 var ProtoInstance0 = null;
 var ProtoInstance1 = null;
@@ -349,8 +349,8 @@ var ProtoInstance12 = null;
         .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/arc.x3d"))
         .addMeta(new meta().setName("description").setContent("a generic proto to connect two objects")))
       .setScene(new Scene()
-        .addChild(new Viewpoint().setPosition(Java.to([doubleToFloat(0),doubleToFloat(0),doubleToFloat(5)], Java.type("float[]"))).setDescription("Only Viewpoint"))
-        .addChild(new Background().setSkyColor(Java.to([doubleToFloat(0.4),doubleToFloat(0.4),doubleToFloat(0.4)], Java.type("float[]"))))
+        .addChild(new Viewpoint().setPosition(Java.to(doubleToFloat([0,0,5]), Java.type("float[]"))).setDescription("Only Viewpoint"))
+        .addChild(new Background().setSkyColor(Java.to(doubleToFloat([0.4,0.4,0.4]), Java.type("float[]"))))
         .addChild(new ProtoDeclare().setName("point")
           .setProtoInterface(new ProtoInterface()
             .addField(new field().setType(field.TYPE_SFVEC3F).setName("translation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0")))
@@ -361,8 +361,8 @@ var ProtoInstance12 = null;
               .addChild(new Shape()
                 .setGeometry(new Sphere().setRadius(0.1))
                 .setAppearance(new Appearance()
-                  .setMaterial(new Material().setDiffuseColor(Java.to([doubleToFloat(1),doubleToFloat(0),doubleToFloat(0)], Java.type("float[]"))))))
-              .addChild(new PositionInterpolator().setDEF("PI1").setKey(Java.to([doubleToFloat(0),doubleToFloat(1)], Java.type("float[]"))).setKeyValue(Java.to([doubleToFloat(0),doubleToFloat(0),doubleToFloat(0),doubleToFloat(0),doubleToFloat(5),doubleToFloat(0)], Java.type("float[]"))))
+                  .setMaterial(new Material().setDiffuseColor(Java.to(doubleToFloat([1,0,0]), Java.type("float[]"))))))
+              .addChild(new PositionInterpolator().setDEF("PI1").setKey(Java.to(doubleToFloat([0,1]), Java.type("float[]"))).setKeyValue(Java.to(doubleToFloat([0,0,0,0,5,0]), Java.type("float[]"))))
               .addChild(new Script().setDEF("MB1")
                 .addField(new field().setType(field.TYPE_SFVEC3F).setName("translation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("50 50 0"))
                 .addField(new field().setType(field.TYPE_SFVEC3F).setName("old").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
@@ -392,7 +392,7 @@ var ProtoInstance12 = null;
                 .addChild(new Transform().setDEF("rotscale")
                   .addChild(new Shape()
                     .setAppearance(new Appearance()
-                      .setMaterial(new Material().setDiffuseColor(Java.to([doubleToFloat(0.2),doubleToFloat(0.7),doubleToFloat(0.7)], Java.type("float[]"))).setTransparency(0.5)))
+                      .setMaterial(new Material().setDiffuseColor(Java.to(doubleToFloat([0.2,0.7,0.7]), Java.type("float[]"))).setTransparency(0.5)))
                     .setGeometry(new Cylinder().setRadius(0.05)))))
               .addChild(new Script().setDEF("S1")
                 .addField(new field().setType(field.TYPE_SFNODE).setName("startnode").setAccessType(field.ACCESSTYPE_INITIALIZEONLY))

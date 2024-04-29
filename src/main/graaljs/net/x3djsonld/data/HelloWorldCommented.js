@@ -141,7 +141,7 @@ HelloWorldCommented.prototype = {
           .addComments(" Text complete, Appearance begin ")
           .setAppearance(new Appearance()
             .addComments(" Material begin ")
-            .setMaterial(new Material())
+            .setMaterial(new Material().setUSE("MaterialLightBlue"))
             .addComments(" Material complete "))
           .addComments(" Appearance complete "))
         .addComments(" Shape complete "))
@@ -180,11 +180,11 @@ HelloWorldCommented.prototype = {
 		var metaList = this.getX3dModel().getHead().getMetaList();
 		for (var m in metaList) {
 			var metaObject = metaList[m];
-			if (metaObject.getName().equals(metaObject.NAME_ERROR) ||
-				metaObject.getName().equals(metaObject.NAME_WARNING) ||
-				metaObject.getName().equals(metaObject.NAME_HINT) ||
-				metaObject.getName().equals(metaObject.NAME_INFO) ||
-				metaObject.getName().equals(metaObject.NAME_TODO))
+			if (metaObject.getName() === metaObject.NAME_ERROR ||
+				metaObject.getName() === metaObject.NAME_WARNING ||
+				metaObject.getName() === metaObject.NAME_HINT ||
+				metaObject.getName() === metaObject.NAME_INFO ||
+				metaObject.getName() === metaObject.NAME_TODO)
 			{
 				metaResult += metaObject.toStringX3D();
 			}

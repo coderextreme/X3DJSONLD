@@ -32,7 +32,7 @@ load('X3Dautoclass.js');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
-			<td> 5 December 2021 </td>
+			<td> 23 April 2023 </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
@@ -48,7 +48,7 @@ load('X3Dautoclass.js');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/SplitChannels.x3d" target="_blank">https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/SplitChannels.x3d</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/SplitChannels.x3d" target="_blank">https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/SplitChannels.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
@@ -99,16 +99,16 @@ SplitChannels.prototype = {
     .addMeta(new meta().setName("info").setContent("This work presents an innovative solution of the spatial sound in X3DOM framework, that based on a combinational methodology. Specifically, we suggested the enrichment of X3DOM with spatial sound features, using both the X3D sound nodes and the structure of Web Audio API."))
     .addMeta(new meta().setName("creator").setContent("Efi Lakka, Athanasios Malamos, Dick Puk, Don Brutzman"))
     .addMeta(new meta().setName("created").setContent("28 October 2020"))
-    .addMeta(new meta().setName("modified").setContent("5 December 2021"))
+    .addMeta(new meta().setName("modified").setContent("23 April 2023"))
     .addMeta(new meta().setName("reference").setContent("CHANGELOG.txt"))
     .addMeta(new meta().setName("TODO").setContent("credit for audio files"))
     .addMeta(new meta().setName("reference").setContent("http://www.medialab.hmu.gr/minipages/x3domAudio"))
-    .addMeta(new meta().setName("identifier").setContent("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/SplitChannels.x3d"))
+    .addMeta(new meta().setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/SplitChannels.x3d"))
     .addMeta(new meta().setName("generator").setContent("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"))
     .addMeta(new meta().setName("license").setContent("../license.html")))
   .setScene(new Scene()
     .addChild(new WorldInfo().setTitle("SplitChannels.x3d"))
-    .addChild(new NavigationInfo().setId("NAV").setType("NONE"))
+    .addChild(new NavigationInfo().setId("NAV").setType("\"NONE\""))
     .addChild(new Background().setSkyColor(new MFColor(Java.to([doubleToFloat(0.200),doubleToFloat(0.200),doubleToFloat(0.210)], Java.type("float[]")))))
     .addChild(new Viewpoint().setOrientation(doubleToFloat(1.0),doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(-0.5)).setPosition(doubleToFloat(0.0),doubleToFloat(500.0),doubleToFloat(600.0)).setRetainUserOffsets(true))
     .addChild(new Transform("PowerR").setTranslation(doubleToFloat(100.0),doubleToFloat(400.0),doubleToFloat(400.0))
@@ -121,14 +121,14 @@ SplitChannels.prototype = {
         .addChild(new Shape()
           .setAppearance(new Appearance("audio_emit2")
             .setMaterial(new Material().setDiffuseColor(doubleToFloat(0.0),doubleToFloat(1.0),doubleToFloat(0.0)).setEmissiveColor(doubleToFloat(0.8),doubleToFloat(0.8),doubleToFloat(0.8)).setSpecularColor(doubleToFloat(0.01),doubleToFloat(0.01),doubleToFloat(0.01)))
-            .setTexture(new ImageTexture().setUrl(new MFString("\"images/line.png\" \"https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/line.png\""))))
+            .setTexture(new ImageTexture().setUrl(new MFString("\"images/line.png\" \"https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/images/line.png\""))))
           .setGeometry(new Box().setSize(doubleToFloat(25.0),doubleToFloat(83.0),doubleToFloat(0.01)))))
       .addChild(new Transform("volumeRight").setRotation(doubleToFloat(1.0),doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(-0.5)).setScale(doubleToFloat(10.0),doubleToFloat(10.0),doubleToFloat(10.0)).setTranslation(doubleToFloat(0.0),doubleToFloat(-10.0),doubleToFloat(0.0))
         .addChild(new Shape()
           .setAppearance(new Appearance()
             .setMaterial(new Material().setAmbientIntensity(0.0933).setDiffuseColor(doubleToFloat(0.345),doubleToFloat(0.345),doubleToFloat(0.882)).setShininess(0.51).setSpecularColor(doubleToFloat(0.46),doubleToFloat(0.46),doubleToFloat(0.46))))
           .setGeometry(new Text().setString(new MFString("\"Right Channel Volume\""))
-            .setFontStyle(new FontStyle().setFamily(new MFString("\"Times\"")).setStyle("BOLD"))))))
+            .setFontStyle(new FontStyle("VolumeFontStyle").setFamily(new MFString("\"Times\" \"SERIF\"")).setStyle("BOLD"))))))
     .addChild(new Transform("PowerL").setTranslation(doubleToFloat(-100.0),doubleToFloat(400.0),doubleToFloat(400.0))
       .addChild(new Transform().setId("pL").setRotation(doubleToFloat(1.0),doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(-0.5)).setTranslation(doubleToFloat(0.0),doubleToFloat(40.0),doubleToFloat(0.0))
         .addChild(new Shape()
@@ -139,14 +139,14 @@ SplitChannels.prototype = {
         .addChild(new Shape()
           .setAppearance(new Appearance("audio_emit4")
             .setMaterial(new Material().setDiffuseColor(doubleToFloat(0.0),doubleToFloat(1.0),doubleToFloat(0.0)).setEmissiveColor(doubleToFloat(0.8),doubleToFloat(0.8),doubleToFloat(0.8)).setSpecularColor(doubleToFloat(0.01),doubleToFloat(0.01),doubleToFloat(0.01)))
-            .setTexture(new ImageTexture().setUrl(new MFString("\"images/line.png\" \"https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/line.png\""))))
+            .setTexture(new ImageTexture().setUrl(new MFString("\"images/line.png\" \"https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/images/line.png\""))))
           .setGeometry(new Box().setSize(doubleToFloat(25.0),doubleToFloat(83.0),doubleToFloat(0.01)))))
       .addChild(new Transform("volumeLeft").setRotation(doubleToFloat(1.0),doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(-0.5)).setScale(doubleToFloat(10.0),doubleToFloat(10.0),doubleToFloat(10.0)).setTranslation(doubleToFloat(0.0),doubleToFloat(-10.0),doubleToFloat(0.0))
         .addChild(new Shape()
           .setAppearance(new Appearance()
             .setMaterial(new Material().setAmbientIntensity(0.0933).setDiffuseColor(doubleToFloat(0.345),doubleToFloat(0.345),doubleToFloat(0.882)).setShininess(0.51).setSpecularColor(doubleToFloat(0.46),doubleToFloat(0.46),doubleToFloat(0.46))))
           .setGeometry(new Text().setString(new MFString("\"Left Channel Volume\""))
-            .setFontStyle(new FontStyle().setFamily(new MFString("\"Times\"")).setStyle("BOLD"))))))
+            .setFontStyle(new FontStyle().setUSE("VolumeFontStyle"))))))
     .addChild(new Transform()
       .addChild(new Shape()
         .setAppearance(new Appearance("floor")
@@ -157,16 +157,16 @@ SplitChannels.prototype = {
       .addChild(new Gain().setId("Gain3")
         .addChild(new ChannelMerger().setId("ChannelMerger")
           .addChild(new ChannelSelector().setId("ChannelSelector0")
-            .addChild(new Gain()))
+            .addChild(new Gain().setUSE("ChannelSplitter")))
           .addChild(new ChannelSelector().setChannelSelection(1).setId("ChannelSelector1")
-            .addChild(new Gain())))))
+            .addChild(new Gain().setUSE("ChannelSplitter"))))))
     .addChild(new ChannelSplitter("ChannelSplitter").setChannelCountMode("EXPLICIT")
-      .addChild(new AudioClip().setDescription("Violin").setUrl(new MFString("\"sound/violin.mp3\" \"https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3\""))))
+      .addChild(new AudioClip().setDescription("Violin").setUrl(new MFString("\"sound/violin.mp3\" \"https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3\""))))
     .addChild(new Transform("Audio3").setRotation(doubleToFloat(1.0),doubleToFloat(0.0),doubleToFloat(0.0),doubleToFloat(-0.5)).setTranslation(doubleToFloat(0.0),doubleToFloat(100.0),doubleToFloat(0.0))
       .addChild(new Shape()
         .setAppearance(new Appearance("audio_emit5")
           .setMaterial(new Material().setDiffuseColor(doubleToFloat(0.3),doubleToFloat(1.0),doubleToFloat(0.3)).setEmissiveColor(doubleToFloat(0.8),doubleToFloat(0.8),doubleToFloat(0.8)).setSpecularColor(doubleToFloat(0.01),doubleToFloat(0.01),doubleToFloat(0.01)))
-          .setTexture(new ImageTexture().setUrl(new MFString("\"images/loudspeaker.png\" \"https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/loudspeaker.png\""))))
+          .setTexture(new ImageTexture().setUrl(new MFString("\"images/loudspeaker.png\" \"https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/images/loudspeaker.png\""))))
         .setGeometry(new Box().setSize(doubleToFloat(100.0),doubleToFloat(100.0),doubleToFloat(0.001))))));
   },
   // end of initialize() method

@@ -326,7 +326,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 ConfigurationProperties.setStripDefaultAttributes(true);
 function doubleToFloat(d) {
     if (Float32Array)
-	return new Float32Array([d])[0];
+	return new Float32Array(d);
 }
       var X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
       .setHead(new head()
@@ -342,13 +342,13 @@ function doubleToFloat(d) {
       .setScene(new Scene()
         .addChild(new Group()
           .addComments(new CommentsBlock("DEFS for markers of skeleton joints, segments, and sites"))
-          .addChild(new Transform().setTranslation(Java.to([doubleToFloat(0),doubleToFloat(2.1),doubleToFloat(0)], Java.type("float[]")))
+          .addChild(new Transform().setTranslation(Java.to(doubleToFloat([0,2.1,0]), Java.type("float[]")))
             .addChild(new Shape().setDEF("HAnimSiteShape")
               .setGeometry(new IndexedFaceSet().setDEF("DiamondIFS").setCreaseAngle(0.5).setSolid(false).setCoordIndex(Java.to([0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1], Java.type("int[]")))
-                .setColor(new ColorRGBA().setDEF("HAnimSiteColorRGBA").setColor(Java.to([doubleToFloat(1),doubleToFloat(1),doubleToFloat(0),doubleToFloat(1),doubleToFloat(1),doubleToFloat(1),doubleToFloat(0),doubleToFloat(0.1)], Java.type("float[]"))))
-                .setCoord(new Coordinate().setPoint(Java.to([doubleToFloat(0),doubleToFloat(0.01),doubleToFloat(0),doubleToFloat(-0.01),doubleToFloat(0),doubleToFloat(0),doubleToFloat(0),doubleToFloat(0),doubleToFloat(0.01),doubleToFloat(0.01),doubleToFloat(0),doubleToFloat(0),doubleToFloat(0),doubleToFloat(0),doubleToFloat(-0.01),doubleToFloat(0),doubleToFloat(-0.01),doubleToFloat(0)], Java.type("float[]")))))
+                .setColor(new ColorRGBA().setDEF("HAnimSiteColorRGBA").setColor(Java.to(doubleToFloat([1,1,0,1,1,1,0,0.1]), Java.type("float[]"))))
+                .setCoord(new Coordinate().setPoint(Java.to(doubleToFloat([0,0.01,0,-0.01,0,0,0,0,0.01,0.01,0,0,0,0,-0.01,0,-0.01,0]), Java.type("float[]")))))
               .setAppearance(new Appearance()
-                .setMaterial(new Material().setDiffuseColor(Java.to([doubleToFloat(1),doubleToFloat(1),doubleToFloat(0)], Java.type("float[]"))).setTransparency(0.3))))))
+                .setMaterial(new Material().setDiffuseColor(Java.to(doubleToFloat([1,1,0]), Java.type("float[]"))).setTransparency(0.3))))))
         .addChild(new NavigationInfo().setSpeed(1.5))
         .addChild(new Viewpoint().setDescription("default")))      ;
     X3D0.toFileX3D("../data/IFS.new.graal.x3d");

@@ -149,19 +149,19 @@ rgb_alpha.prototype = {
         .addChild(new Shape()
           .setAppearance(new Appearance()
             .setMaterial(new Material())
-            .setTexture(new PixelTexture()))
+            .setTexture(new PixelTexture().setUSE("RgbOpacityCheckerboard")))
           .setGeometry(new Sphere())))
       .addChild(new Transform().setTranslation(doubleToFloat(-1.47341),doubleToFloat(0.036672),doubleToFloat(-0.00175095))
         .addChild(new Shape()
           .setAppearance(new Appearance()
             .setMaterial(new Material())
-            .setTexture(new PixelTexture()))
+            .setTexture(new PixelTexture().setUSE("RgbOpacityCheckerboard")))
           .setGeometry(new Cone())))
       .addChild(new Transform().setTranslation(doubleToFloat(2.31094),doubleToFloat(0.0694206),doubleToFloat(-0.00187683))
         .addChild(new Shape()
           .setAppearance(new Appearance()
             .setMaterial(new Material())
-            .setTexture(new PixelTexture()))
+            .setTexture(new PixelTexture().setUSE("RgbOpacityCheckerboard")))
           .setGeometry(new Cylinder())))));
   },
   // end of initialize() method

@@ -326,7 +326,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 ConfigurationProperties.setStripDefaultAttributes(true);
 function doubleToFloat(d) {
     if (Float32Array)
-	return new Float32Array([d])[0];
+	return new Float32Array(d);
 }
       var X3D0 =  new X3D().setProfile("Immersive").setVersion("3.0")
       .setHead(new head()
@@ -341,18 +341,18 @@ function doubleToFloat(d) {
         .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
         .addMeta(new meta().setName("license").setContent("../license.html")))
       .setScene(new Scene()
-        .addChild(new Transform().setTranslation(Java.to([doubleToFloat(0),doubleToFloat(2),doubleToFloat(0)], Java.type("float[]")))
+        .addChild(new Transform().setTranslation(Java.to(doubleToFloat([0,2,0]), Java.type("float[]")))
           .addChild(new Shape()
             .setGeometry(new Text().setString(Java.to(["Compare special character escaping"], Java.type("java.lang.String[]")))
               .setFontStyle(new FontStyle().setDEF("testFontStyle").setJustify(Java.to(["MIDDLE","MIDDLE"], Java.type("java.lang.String[]"))).setSize(0.8)))
             .setAppearance(new Appearance().setDEF("LightBlueAppearance")
-              .setMaterial(new Material().setDiffuseColor(Java.to([doubleToFloat(0.1),doubleToFloat(0.7),doubleToFloat(0.7)], Java.type("float[]")))))))
-        .addChild(new Transform().setTranslation(Java.to([doubleToFloat(-3),doubleToFloat(0),doubleToFloat(0)], Java.type("float[]")))
+              .setMaterial(new Material().setDiffuseColor(Java.to(doubleToFloat([0.1,0.7,0.7]), Java.type("float[]")))))))
+        .addChild(new Transform().setTranslation(Java.to(doubleToFloat([-3,0,0]), Java.type("float[]")))
           .addChild(new Shape()
             .setGeometry(new Text().setString(Java.to(["I don't think so","","he said \"Hi\""], Java.type("java.lang.String[]")))
               .setFontStyle(new FontStyle().setUSE("testFontStyle")))
             .setAppearance(new Appearance().setUSE("LightBlueAppearance"))))
-        .addChild(new Transform().setTranslation(Java.to([doubleToFloat(3),doubleToFloat(0),doubleToFloat(0)], Java.type("float[]")))
+        .addChild(new Transform().setTranslation(Java.to(doubleToFloat([3,0,0]), Java.type("float[]")))
           .addChild(new Shape()
             .setGeometry(new Text().setString(Java.to(["I don't think so","","he said \"Hi\""], Java.type("java.lang.String[]")))
               .setFontStyle(new FontStyle().setUSE("testFontStyle")))

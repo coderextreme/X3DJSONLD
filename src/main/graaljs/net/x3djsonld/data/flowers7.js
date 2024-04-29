@@ -65,23 +65,23 @@ flowers7.prototype = {
   initialize : function ()
   {
 
-	/** Large attribute array: field value field, scene-graph level=4, element #59, 9 total values */
-	this.field_frontUrls_4_59_value = new SFString("\"../resources/images/all_probes/beach_cross/beach_front.png\" \"../resources/images/all_probes/building_cross/building_front.png\" \"../resources/images/all_probes/campus_cross/campus_front.png\" \"../resources/images/all_probes/galileo_cross/galileo_front.png\" \"../resources/images/all_probes/grace_cross/grace_front.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_front.png\" \"../resources/images/all_probes/rnl_cross/rnl_front.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_front.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_front.png\"");
-
-	/** Large attribute array: field value field, scene-graph level=4, element #60, 9 total values */
-	this.field_backUrls_4_60_value = new SFString("\"../resources/images/all_probes/beach_cross/beach_back.png\" \"../resources/images/all_probes/building_cross/building_back.png\" \"../resources/images/all_probes/campus_cross/campus_back.png\" \"../resources/images/all_probes/galileo_cross/galileo_back.png\" \"../resources/images/all_probes/grace_cross/grace_back.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_back.png\" \"../resources/images/all_probes/rnl_cross/rnl_back.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_back.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_back.png\"");
-
 	/** Large attribute array: field value field, scene-graph level=4, element #61, 9 total values */
-	this.field_leftUrls_4_61_value = new SFString("\"../resources/images/all_probes/beach_cross/beach_left.png\" \"../resources/images/all_probes/building_cross/building_left.png\" \"../resources/images/all_probes/campus_cross/campus_left.png\" \"../resources/images/all_probes/galileo_cross/galileo_left.png\" \"../resources/images/all_probes/grace_cross/grace_left.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_left.png\" \"../resources/images/all_probes/rnl_cross/rnl_left.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_left.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_left.png\"");
+	this.field_frontUrls_4_61_value = new SFString("\"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/building_cross/building_front.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/campus_cross/campus_front.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/galileo_cross/galileo_front.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/grace_cross/grace_front.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/kitchen_cross/kitchen_front.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/rnl_cross/rnl_front.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_front.png\"");
 
 	/** Large attribute array: field value field, scene-graph level=4, element #62, 9 total values */
-	this.field_rightUrls_4_62_value = new SFString("\"../resources/images/all_probes/beach_cross/beach_right.png\" \"../resources/images/all_probes/building_cross/building_right.png\" \"../resources/images/all_probes/campus_cross/campus_right.png\" \"../resources/images/all_probes/galileo_cross/galileo_right.png\" \"../resources/images/all_probes/grace_cross/grace_right.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_right.png\" \"../resources/images/all_probes/rnl_cross/rnl_right.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_right.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_right.png\"");
+	this.field_backUrls_4_62_value = new SFString("\"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/building_cross/building_back.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/campus_cross/campus_back.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/galileo_cross/galileo_back.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/grace_cross/grace_back.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/kitchen_cross/kitchen_back.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/rnl_cross/rnl_back.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_back.png\"");
 
 	/** Large attribute array: field value field, scene-graph level=4, element #63, 9 total values */
-	this.field_topUrls_4_63_value = new SFString("\"../resources/images/all_probes/beach_cross/beach_top.png\" \"../resources/images/all_probes/building_cross/building_top.png\" \"../resources/images/all_probes/campus_cross/campus_top.png\" \"../resources/images/all_probes/galileo_cross/galileo_top.png\" \"../resources/images/all_probes/grace_cross/grace_top.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_top.png\" \"../resources/images/all_probes/rnl_cross/rnl_top.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_top.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_top.png\"");
+	this.field_leftUrls_4_63_value = new SFString("\"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/building_cross/building_left.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/campus_cross/campus_left.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/galileo_cross/galileo_left.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/grace_cross/grace_left.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/kitchen_cross/kitchen_left.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/rnl_cross/rnl_left.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_left.png\"");
 
 	/** Large attribute array: field value field, scene-graph level=4, element #64, 9 total values */
-	this.field_bottomUrls_4_64_value = new SFString("\"../resources/images/all_probes/beach_cross/beach_bottom.png\" \"../resources/images/all_probes/building_cross/building_bottom.png\" \"../resources/images/all_probes/campus_cross/campus_bottom.png\" \"../resources/images/all_probes/galileo_cross/galileo_bottom.png\" \"../resources/images/all_probes/grace_cross/grace_bottom.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_bottom.png\" \"../resources/images/all_probes/rnl_cross/rnl_bottom.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_bottom.png\"");
+	this.field_rightUrls_4_64_value = new SFString("\"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/building_cross/building_right.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/campus_cross/campus_right.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/galileo_cross/galileo_right.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/grace_cross/grace_right.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/kitchen_cross/kitchen_right.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/rnl_cross/rnl_right.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_right.png\"");
+
+	/** Large attribute array: field value field, scene-graph level=4, element #65, 9 total values */
+	this.field_topUrls_4_65_value = new SFString("\"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/building_cross/building_top.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/campus_cross/campus_top.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/galileo_cross/galileo_top.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/grace_cross/grace_top.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/kitchen_cross/kitchen_top.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/rnl_cross/rnl_top.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_top.png\"");
+
+	/** Large attribute array: field value field, scene-graph level=4, element #66, 9 total values */
+	this.field_bottomUrls_4_66_value = new SFString("\"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/building_cross/building_bottom.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/campus_cross/campus_bottom.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/galileo_cross/galileo_bottom.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/grace_cross/grace_bottom.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/kitchen_cross/kitchen_bottom.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/rnl_cross/rnl_bottom.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_bottom.png\"");
   this.x3dModel = new X3D().setProfile("Immersive").setVersion("4.0")
   .setHead(new head()
     .addComponent(new component().setName("Scripting").setLevel(1))
@@ -90,7 +90,7 @@ flowers7.prototype = {
     .addComponent(new component().setName("CubeMapTexturing").setLevel(1))
     .addComponent(new component().setName("Texturing").setLevel(1))
     .addComponent(new component().setName("Rendering").setLevel(1))
-    .addComments("<component name='Shape' level='4'></component>")
+    .addComponent(new component().setName("Shape").setLevel(4))
     .addComponent(new component().setName("Grouping").setLevel(3))
     .addComponent(new component().setName("Core").setLevel(1))
     .addMeta(new meta().setName("title").setContent("flowers7.x3d"))
@@ -115,11 +115,10 @@ flowers7.prototype = {
             .setRightTexture(new ImageTexture("rightShader").setUrl(new MFString("\"../resources/images/all_probes/beach_cross/beach_right.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png\"")))
             .setTopTexture(new ImageTexture("topShader").setUrl(new MFString("\"../resources/images/all_probes/beach_cross/beach_top.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png\""))))
           .addShaders(new ComposedShader("x3dom").setLanguage("GLSL")
-            .addField(new field().setName("cube").setType("SFInt32").setAccessType("inputOutput").setValue("0"))
-            .addComments(Java.to([" ",
-"		       <field name='cube' type='SFNode' accessType=\"inputOutput\">",
-"			  <ComposedCubeMapTexture USE=\"texture\"/>",
-"		  </field>"], Java.type("java.lang.String[]")))
+            .addComments(Java.to([" TODO VERIFY",
+"                  <field name='cube' type='SFInt32' accessType='inputOutput' value='0'></field>"], Java.type("java.lang.String[]")))
+            .addField(new field().setName("cube").setType("SFNode").setAccessType("inputOutput")
+              .addChild(new ComposedCubeMapTexture().setUSE("texture")))
             .addField(new field().setName("chromaticDispertion").setType("SFVec3f").setAccessType("initializeOnly").setValue("0.98 1.0 1.033"))
             .addField(new field().setName("bias").setType("SFFloat").setAccessType("inputOutput").setValue("0.5"))
             .addField(new field().setName("scale").setType("SFFloat").setAccessType("inputOutput").setValue("0.5"))
@@ -130,8 +129,8 @@ flowers7.prototype = {
             .addField(new field().setName("d").setType("SFFloat").setAccessType("inputOutput").setValue("20"))
             .addField(new field().setName("tdelta").setType("SFFloat").setAccessType("inputOutput").setValue("0"))
             .addField(new field().setName("pdelta").setType("SFFloat").setAccessType("inputOutput").setValue("0"))
-            .addParts(new ShaderPart().setUrl(new MFString("\"../shaders/x3dom_flowers_chromatic.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs\"")))
-            .addParts(new ShaderPart().setType("FRAGMENT").setUrl(new MFString("\"../shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\""))))
+            .addParts(new ShaderPart().setUrl(new MFString("\"https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs\"")))
+            .addParts(new ShaderPart().setType("FRAGMENT").setUrl(new MFString("\"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\""))))
           .addShaders(new ComposedShader("x_ite").setLanguage("GLSL")
             .addField(new field().setName("cube").setType("SFNode").setAccessType("inputOutput")
               .addChild(new ComposedCubeMapTexture().setUSE("texture")))
@@ -145,8 +144,8 @@ flowers7.prototype = {
             .addField(new field().setName("d").setType("SFFloat").setAccessType("inputOnly").setValue("20"))
             .addField(new field().setName("tdelta").setType("SFFloat").setAccessType("inputOnly").setValue("0"))
             .addField(new field().setName("pdelta").setType("SFFloat").setAccessType("inputOnly").setValue("0"))
-            .addParts(new ShaderPart().setUrl(new MFString("\"../shaders/x_ite_flowers_chromatic.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs\"")))
-            .addParts(new ShaderPart().setType("FRAGMENT").setUrl(new MFString("\"../shaders/x_ite.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs\"")))))
+            .addParts(new ShaderPart().setUrl(new MFString("\"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs\"")))
+            .addParts(new ShaderPart().setType("FRAGMENT").setUrl(new MFString("\"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs\"")))))
         .setGeometry(new Sphere())))
     .addChild(new Script("UrlSelector").setDirectOutput(true).setSourceCode("\n" + 
 "\n" + 
@@ -166,12 +165,12 @@ flowers7.prototype = {
 "                    bottom[0] = bottomUrls[side];" + "\n" + 
 "            }" + "\n" + 
 "        }" + "\n")
-      .addField(new field().setName("frontUrls").setType("MFString").setAccessType("initializeOnly").setValue(this.field_frontUrls_4_59_value))
-      .addField(new field().setName("backUrls").setType("MFString").setAccessType("initializeOnly").setValue(this.field_backUrls_4_60_value))
-      .addField(new field().setName("leftUrls").setType("MFString").setAccessType("initializeOnly").setValue(this.field_leftUrls_4_61_value))
-      .addField(new field().setName("rightUrls").setType("MFString").setAccessType("initializeOnly").setValue(this.field_rightUrls_4_62_value))
-      .addField(new field().setName("topUrls").setType("MFString").setAccessType("initializeOnly").setValue(this.field_topUrls_4_63_value))
-      .addField(new field().setName("bottomUrls").setType("MFString").setAccessType("initializeOnly").setValue(this.field_bottomUrls_4_64_value))
+      .addField(new field().setName("frontUrls").setType("MFString").setAccessType("initializeOnly").setValue(this.field_frontUrls_4_61_value))
+      .addField(new field().setName("backUrls").setType("MFString").setAccessType("initializeOnly").setValue(this.field_backUrls_4_62_value))
+      .addField(new field().setName("leftUrls").setType("MFString").setAccessType("initializeOnly").setValue(this.field_leftUrls_4_63_value))
+      .addField(new field().setName("rightUrls").setType("MFString").setAccessType("initializeOnly").setValue(this.field_rightUrls_4_64_value))
+      .addField(new field().setName("topUrls").setType("MFString").setAccessType("initializeOnly").setValue(this.field_topUrls_4_65_value))
+      .addField(new field().setName("bottomUrls").setType("MFString").setAccessType("initializeOnly").setValue(this.field_bottomUrls_4_66_value))
       .addField(new field().setName("front").setType("MFString").setAccessType("inputOutput"))
       .addField(new field().setName("back").setType("MFString").setAccessType("inputOutput"))
       .addField(new field().setName("left").setType("MFString").setAccessType("inputOutput"))

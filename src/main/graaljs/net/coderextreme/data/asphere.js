@@ -326,7 +326,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 ConfigurationProperties.setStripDefaultAttributes(true);
 function doubleToFloat(d) {
     if (Float32Array)
-	return new Float32Array([d])[0];
+	return new Float32Array(d);
 }
       var X3D0 =  new X3D().setProfile("Interchange").setVersion("3.3")
       .setHead(new head()
@@ -340,7 +340,7 @@ function doubleToFloat(d) {
         .addChild(new Group()
           .addChild(new Shape()
             .setAppearance(new Appearance()
-              .setMaterial(new Material().setDiffuseColor(Java.to([doubleToFloat(1),doubleToFloat(1),doubleToFloat(1)], Java.type("float[]")))))
+              .setMaterial(new Material().setDiffuseColor(Java.to(doubleToFloat([1,1,1]), Java.type("float[]")))))
             .setGeometry(new Sphere()))))      ;
     X3D0.toFileX3D("../data/asphere.new.graal.x3d");
     X3D0.toFileJSON("../data/asphere.new.graal.json");

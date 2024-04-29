@@ -326,7 +326,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 ConfigurationProperties.setStripDefaultAttributes(true);
 function doubleToFloat(d) {
     if (Float32Array)
-	return new Float32Array([d])[0];
+	return new Float32Array(d);
 }
 var ProtoInstance0 = null;
 var ProtoInstance1 = null;
@@ -344,9 +344,9 @@ var ProtoInstance1 = null;
         .addMeta(new meta().setName("license").setContent("https://www.web3d.org/x3d/content/examples/license.html")))
       .setScene(new Scene()
         .addChild(new NavigationInfo())
-        .addChild(new Viewpoint().setDescription("Two mathematical orbitals").setPosition(Java.to([doubleToFloat(0),doubleToFloat(0),doubleToFloat(50)], Java.type("float[]"))))
+        .addChild(new Viewpoint().setDescription("Two mathematical orbitals").setPosition(Java.to(doubleToFloat([0,0,50]), Java.type("float[]"))))
         .addChild(new Group()
-          .addChild(new DirectionalLight().setDirection(Java.to([doubleToFloat(1),doubleToFloat(1),doubleToFloat(1)], Java.type("float[]"))))
+          .addChild(new DirectionalLight().setDirection(Java.to(doubleToFloat([1,1,1]), Java.type("float[]"))))
           .addChild(new ProtoDeclare().setName("orbit")
             .setProtoInterface(new ProtoInterface()
               .addField(new field().setType(field.TYPE_SFVEC3F).setName("translation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("-8 0 0"))
@@ -356,7 +356,7 @@ var ProtoInstance1 = null;
             .setProtoBody(new ProtoBody()
               .addChild(new Group()
                 .addChild(new TimeSensor().setDEF("Clock").setCycleInterval(16).setLoop(true))
-                .addChild(new OrientationInterpolator().setDEF("OrbitPath").setKey(Java.to([doubleToFloat(0),doubleToFloat(0.5),doubleToFloat(1)], Java.type("float[]"))).setKeyValue(Java.to([doubleToFloat(1),doubleToFloat(0),doubleToFloat(0),doubleToFloat(0),doubleToFloat(1),doubleToFloat(0),doubleToFloat(0),doubleToFloat(3.14),doubleToFloat(1),doubleToFloat(0),doubleToFloat(0),doubleToFloat(6.28)], Java.type("float[]"))))
+                .addChild(new OrientationInterpolator().setDEF("OrbitPath").setKey(Java.to(doubleToFloat([0,0.5,1]), Java.type("float[]"))).setKeyValue(Java.to(doubleToFloat([1,0,0,0,1,0,0,3.14,1,0,0,6.28]), Java.type("float[]"))))
                 .addChild(new Transform().setDEF("OrbitTransform")
                   .setIS(new IS()
                     .addConnect(new connect().setNodeField("translation").setProtoField("translation")))
@@ -369,11 +369,11 @@ var ProtoInstance1 = null;
                           .addConnect(new connect().setNodeField("transparency").setProtoField("transparency")))))
                     .addComments(new CommentsBlock("<IndexedFaceSet DEF=\"Orbit\" creaseAngle=\"0\"> <Coordinate DEF=\"OrbitCoordinates\"/> </IndexedFaceSet>"))
                     .setGeometry(new IndexedFaceSet().setCcw(false).setConvex(false).setCoordIndex(Java.to([0,1,2,-1], Java.type("int[]"))).setDEF("Orbit")
-                      .setCoord(new Coordinate().setDEF("OrbitCoordinates").setPoint(Java.to([doubleToFloat(0),doubleToFloat(0),doubleToFloat(1),doubleToFloat(0),doubleToFloat(1),doubleToFloat(0),doubleToFloat(1),doubleToFloat(0),doubleToFloat(0)], Java.type("float[]")))))))
+                      .setCoord(new Coordinate().setDEF("OrbitCoordinates").setPoint(Java.to(doubleToFloat([0,0,1,0,1,0,1,0,0]), Java.type("float[]")))))))
                 .addChild(new Script().setDEF("OrbitScript")
                   .addField(new field().setType(field.TYPE_SFFLOAT).setName("set_fraction").setAccessType(field.ACCESSTYPE_INPUTONLY))
-                  .addField(new field().setType(field.TYPE_MFVEC3F).setName("coordinates").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
-                  .addField(new field().setType(field.TYPE_MFINT32).setName("coordIndexes").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
+                  .addField(new field().setType(field.TYPE_MFVEC3F).setName("coordinates").setAccessType(field.ACCESSTYPE_INPUTOUTPUT))
+                  .addField(new field().setType(field.TYPE_MFINT32).setName("coordIndexes").setAccessType(field.ACCESSTYPE_INPUTOUTPUT))
                   .addField(new field().setType(field.TYPE_SFFLOAT).setName("e").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("5"))
                   .addField(new field().setType(field.TYPE_SFFLOAT).setName("f").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("5"))
                   .addField(new field().setType(field.TYPE_SFFLOAT).setName("g").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("5"))
@@ -381,46 +381,37 @@ var ProtoInstance1 = null;
                   .addField(new field().setType(field.TYPE_SFINT32).setName("resolution").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("50"))
                   .setSourceCode(`ecmascript:
 
-			var e = 5;
-			var f = 5;
-			var g = 5;
-			var h = 5;
-			var resolution = 100;
-
 			function initialize() {
 			     generateCoordinates();
-			     var localci = [];
+			     var arrIndex = 0;
 			     for (var i = 0; i < resolution-1; i++) {
 				for (var j = 0; j < resolution-1; j++) {
-				     localci.push(i*resolution+j);
-				     localci.push(i*resolution+j+1);
-				     localci.push((i+1)*resolution+j+1);
-				     localci.push((i+1)*resolution+j);
-				     localci.push(-1);
+				     coordIndexes[arrIndex++] = i*resolution+j;
+				     coordIndexes[arrIndex++] = i*resolution+j+1;
+				     coordIndexes[arrIndex++] = (i+1)*resolution+j+1;
+				     coordIndexes[arrIndex++] = (i+1)*resolution+j;
+				     coordIndexes[arrIndex++] = -1;
 				}
 			    }
-			    coordIndexes = new MFInt32(localci);
 			}
 
 			function generateCoordinates() {
 			     var theta = 0.0;
 			     var phi = 0.0;
 			     var delta = (2 * 3.141592653) / (resolution-1);
-			     var localc = [];
+			     var arrIndex = 0;
 			     for (var i = 0; i < resolution; i++) {
 				for (var j = 0; j < resolution; j++) {
 					var rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);
-					localc.push(new SFVec3f(
+					coordinates[arrIndex++] = new SFVec3f(
 						rho * Math.cos(phi) * Math.cos(theta),
 						rho * Math.cos(phi) * Math.sin(theta),
 						rho * Math.sin(phi)
-					));
+					);
 					theta += delta;
 				}
 				phi += delta;
 			     }
-			     
-			     coordinates = new MFVec3f(localc);
 			}
 
 			function set_fraction(fraction, eventTime) {
