@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.3.xsd' profile="Immersive" version="3.3" ><head><meta name="title" content="bubs2.x3d"></meta>
+<component name='Scripting' level='1'/>
+<meta name="creator" content="John Carlson"></meta>
+<meta name="description" content="Tour around a prismatic sphere"></meta>
+<meta name="generator" content="X3D-Edit, https://savage.nps.edu/X3D-Edit"></meta>
+<meta name="identifier" content="https://coderextreme.net/X3DJSONLD/src/main/data/geo.x3d"></meta>
+<meta name="translated" content="13 March 2016"></meta>
+<meta name="generator" content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"></meta>
+</head>
+<Scene><NavigationInfo type='"EXAMINE"'></NavigationInfo>
+<Viewpoint position="0 0 4" orientation="1 0 0 0" description="Bubbles in action"></Viewpoint>
+<Background backUrl='"../resources/images/BK.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/BK.png"' bottomUrl='"../resources/images/BT.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/BT.png"' frontUrl='"../resources/images/FR.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/FR.png"' leftUrl='"../resources/images/LF.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/LF.png"' rightUrl='"../resources/images/RT.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/RT.png"' topUrl='"../resources/images/TP.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/TP.png"'></Background>
+<ProtoDeclare name="Bubble"><ProtoBody><Transform DEF="body_trans"><Shape><Sphere radius="0.25"></Sphere>
+<Appearance><Material diffuseColor="1 0 0" transparency="0.2"></Material>
+</Appearance>
+</Shape>
+<Script DEF="bounce"><field name="scale" accessType="inputOutput" type="SFVec3f" value="1 1 1"></field>
+<field name="translation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
+<field name="velocity" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
+<field name="scalvel" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
+<field name="set_fraction" accessType="inputOnly" type="SFFloat"></field>
+<![CDATA[ecmascript:
+function initialize() {
+    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);
+
+    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);
+}
+
+function set_fraction(value) {
+    if (typeof translation === 'undefined') {
+		translation = new SFVec3f(0, 0, 0);
+    }
+    if (typeof velocity === 'undefined') {
+		velocity = new SFVec3f(0, 0, 0);
+    }
+    if (typeof scalvel === 'undefined') {
+		scalvel = new SFVec3f(0, 0, 0);
+    }
+    if (typeof scale === 'undefined') {
+		scale = new SFVec3f(1, 1, 1);
+    }
+    translation = new SFVec3f(	translation.x + velocity.x, translation.y + velocity.y, translation.z + velocity.z);
+    scale = new SFVec3f(scale.x + scalvel.x, scale.y + scalvel.y, scale.z + scalvel.z);
+    // if you get to far away or too big, explode
+    if ( Math.abs(translation.x) > 256) {
+	translation.x = 0;
+	initialize();
+    }
+    if ( Math.abs(translation.y) > 256) {
+	translation.y = 0;
+	initialize();
+    }
+    if ( Math.abs(translation.z) > 256) {
+	translation.z = 0;
+	initialize();
+    }
+    if (Math.abs(scale.x) > 20) {
+	scale.x = scale.x/20;
+	translation.x = 0;
+	initialize();
+    }
+    if (Math.abs(scale.y) > 20) {
+	scale.y = scale.y/20;
+	translation.y = 0;
+	initialize();
+    }
+    if (Math.abs(scale.z) > 20) {
+	scale.z = scale.z/20;
+	translation.z = 0;
+	initialize();
+    }
+}]]></Script>
+<TimeSensor DEF="bubbleClock" cycleInterval="10" loop="true"></TimeSensor>
+<ROUTE fromNode="bounce" fromField="translation_changed" toNode="body_trans" toField="set_translation"></ROUTE>
+<ROUTE fromNode="bounce" fromField="scale_changed" toNode="body_trans" toField="set_scale"></ROUTE>
+<ROUTE fromNode="bubbleClock" fromField="fraction_changed" toNode="bounce" toField="set_fraction"></ROUTE>
+</Transform>
+</ProtoBody>
+</ProtoDeclare>
+<ProtoInstance name="Bubble" DEF="bubbleA"></ProtoInstance>
+<ProtoInstance name="Bubble" DEF="bubbleB"></ProtoInstance>
+<ProtoInstance name="Bubble" DEF="bubbleC"></ProtoInstance>
+<ProtoInstance name="Bubble" DEF="bubbleD"></ProtoInstance>
+</Scene>
+</X3D>
