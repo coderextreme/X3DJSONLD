@@ -38,7 +38,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('identifier'),
-              content_ : SFString('https://coderextreme.net/X3DJSONLD/src/main/data/flowers2.x3d')),
+              content_ : SFString('https://coderextreme.net/X3DJSONLD/src/main/personal/flowers2.x3d')),
 
             meta(
               name_ : SFString('generator'),
@@ -46,7 +46,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('license'),
-              content_ : SFString('https://www.web3d.org/x3d/content/examples/license.html'))]),
+              content_ : SFString('https://coderextreme.net/X3DJSONLD/LICENSE'))]),
       Scene_ : 
         Scene(
           children_ : [

@@ -26,7 +26,7 @@ head1.addMeta(&meta4);
 
 meta& meta5 =  meta();
 meta5.setName(CString("identifier"));
-meta5.setContent(CString("https://coderextreme.net/X3DJSONLD/src/main/data/abox.x3d"));
+meta5.setContent(CString("https://coderextreme.net/X3DJSONLD/src/main/personal/abox.x3d"));
 head1.addMeta(&meta5);
 
 meta& meta6 =  meta();

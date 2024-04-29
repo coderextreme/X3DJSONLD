@@ -176,7 +176,7 @@
 "                                                old = translation;",
 "\t\t\t\t\t\ttranslation = new SFVec3f(Math.random()*100-50, Math.random()*100-50,
 Math.random()*100-50);",
-"                                                keyValue = new MFVec3f([old, translation]);",
+"                                                keyValue = new MFVec3f(...[old, translation]);",
 "\t\t\t\t\t\t// Browser.println(translation);",
 "\t\t\t\t\t}",
 "",
@@ -232,7 +232,7 @@ Math.random()*100-50);",
 },
 { "ProtoDeclare":
 {
-"@name":"cyl",
+"@name":"cylinder",
 "ProtoInterface": {
 "field": [
 {
@@ -316,17 +316,17 @@ Math.random()*100-50);",
 "",
 "                function set_endA(value) {",
 "\t\t    if (typeof spine === 'undefined') {",
-"\t\t        spine = new MFVec3f([value, value]);",
+"\t\t        spine = new MFVec3f(...[value, value]);",
 "\t\t    } else {",
-"\t\t        spine = new MFVec3f([value, spine[1]]);",
+"\t\t        spine = new MFVec3f(...[value, spine[1]]);",
 "\t\t    }",
 "                }",
 "",
 "                function set_endB(value) {",
 "\t\t    if (typeof spine === 'undefined') {",
-"\t\t        spine = new MFVec3f([value, value]);",
+"\t\t        spine = new MFVec3f(...[value, value]);",
 "\t\t    } else {",
-"\t\t        spine = new MFVec3f([spine[0], value]);",
+"\t\t        spine = new MFVec3f(...[spine[0], value]);",
 "\t\t    }",
 "                }",
 "",
@@ -416,7 +416,7 @@ Math.random()*100-50);",
 },
 { "ProtoInstance":
 {
-"@name":"cyl",
+"@name":"cylinder",
 "@DEF":"linkA",
 "fieldValue": [
 {
@@ -432,7 +432,7 @@ Math.random()*100-50);",
 },
 { "ProtoInstance":
 {
-"@name":"cyl",
+"@name":"cylinder",
 "@DEF":"linkB",
 "fieldValue": [
 {
@@ -448,7 +448,7 @@ Math.random()*100-50);",
 },
 { "ProtoInstance":
 {
-"@name":"cyl",
+"@name":"cylinder",
 "@DEF":"linkC",
 "fieldValue": [
 {

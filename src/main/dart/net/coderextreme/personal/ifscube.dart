@@ -14,7 +14,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('identifier'),
-              content_ : SFString('http://coderextreme.net/X3DJSONLD/src/main/data/ifscube.x3d')),
+              content_ : SFString('http://coderextreme.net/X3DJSONLD/src/main/personal/ifscube.x3d')),
 
             meta(
               name_ : SFString('description'),

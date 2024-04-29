@@ -26,7 +26,7 @@ head1.addMeta(&meta4);
 
 meta& meta5 =  meta();
 meta5.setName(CString("identifier"));
-meta5.setContent(CString("https://coderextreme.net/X3DJSONLD/src/main/data/arc.x3d"));
+meta5.setContent(CString("https://coderextreme.net/X3DJSONLD/src/main/personal/arc.x3d"));
 head1.addMeta(&meta5);
 
 meta& meta6 =  meta();
@@ -38,12 +38,12 @@ X3D0.setHead(&head1);
 
 Scene& Scene7 =  Scene();
 Viewpoint& Viewpoint8 =  Viewpoint();
-Viewpoint8.setPosition(new float[3]{0,0,5});
+Viewpoint8.setPosition(new float[]{0,0,5});
 Viewpoint8.setDescription(CString("a moving graph"));
 Scene7.addChild(&Viewpoint8);
 
 Background& Background9 =  Background();
-Background9.setSkyColor(new float[3]{0.4,0.4,0.4}, 3);
+Background9.setSkyColor(new float[]{0.4,0.4,0.4}, 3);
 Scene7.addChild(&Background9);
 
 Transform& Transform10 =  Transform();
@@ -53,7 +53,7 @@ Transform11.setDEF(CString("rotscale1"));
 Shape& Shape12 =  Shape();
 Appearance& Appearance13 =  Appearance();
 Material& Material14 =  Material();
-Material14.setDiffuseColor(new float[3]{0.2,0.7,0.7});
+Material14.setDiffuseColor(new float[]{0.2,0.7,0.7});
 Appearance13.addChild(&Material14);
 
 Shape12.addChild(&Appearance13);
@@ -75,7 +75,7 @@ Transform17.setDEF(CString("rotscale2"));
 Shape& Shape18 =  Shape();
 Appearance& Appearance19 =  Appearance();
 Material& Material20 =  Material();
-Material20.setDiffuseColor(new float[3]{0.2,0.7,0.7});
+Material20.setDiffuseColor(new float[]{0.2,0.7,0.7});
 Appearance19.addChild(&Material20);
 
 Shape18.addChild(&Appearance19);
@@ -97,7 +97,7 @@ Transform23.setDEF(CString("rotscale3"));
 Shape& Shape24 =  Shape();
 Appearance& Appearance25 =  Appearance();
 Material& Material26 =  Material();
-Material26.setDiffuseColor(new float[3]{0.2,0.7,0.7});
+Material26.setDiffuseColor(new float[]{0.2,0.7,0.7});
 Appearance25.addChild(&Material26);
 
 Shape24.addChild(&Appearance25);
@@ -142,7 +142,7 @@ Shape35.setGeometry(&Sphere36);
 
 Appearance& Appearance37 =  Appearance();
 Material& Material38 =  Material();
-Material38.setDiffuseColor(new float[3]{1,0,0});
+Material38.setDiffuseColor(new float[]{1,0,0});
 Appearance37.addChild(&Material38);
 
 Shape35.addChild(&Appearance37);
@@ -151,8 +151,8 @@ Transform32.addChild(&Shape35);
 
 PositionInterpolator& PositionInterpolator39 =  PositionInterpolator();
 PositionInterpolator39.setDEF(CString("PI1"));
-PositionInterpolator39.setKey(new float[2]{0,1}, 2);
-PositionInterpolator39.setKeyValue(new float[6]{0,0,0,0,5,0}, 6);
+PositionInterpolator39.setKey(new float[]{0,1}, 2);
+PositionInterpolator39.setKeyValue(new float[]{0,0,0,0,5,0}, 6);
 Transform32.addChild(&PositionInterpolator39);
 
 Script& Script40 =  Script();

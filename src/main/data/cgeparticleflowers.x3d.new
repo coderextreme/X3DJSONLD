@@ -20,7 +20,7 @@
 <Transform><ParticleSystem maxParticles="20" geometryType="GEOMETRY"><BoundedPhysicsModel><Sphere radius="100"></Sphere>
 </BoundedPhysicsModel>
 <ExplosionEmitter containerField="emitter" speed="2" variation="0.75"></ExplosionEmitter>
-<!--<Shape>--><Sphere></Sphere>
+<Sphere></Sphere>
 <Appearance containerField="appearance"><Material containerField="material" diffuseColor="0.7 0.7 0.7" specularColor="0.5 0.5 0.5"></Material>
 <ComposedCubeMapTexture containerField="texture" DEF="texture"><ImageTexture containerField="backTexture" url="&quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png&quot;"></ImageTexture>
 <ImageTexture containerField="bottomTexture" url="&quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png&quot;"></ImageTexture>
@@ -43,6 +43,8 @@
 <!--<field name='cube' type='SFNode' accessType="initializeOnly"> <ComposedCubeMapTexture USE="texture"></ComposedCubeMapTexture> </field>--><ShaderPart type="VERTEX" url="&quot;https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.vs&quot;"></ShaderPart>
 <ShaderPart type="FRAGMENT" url="&quot;https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.fs&quot;"></ShaderPart>
 </ComposedShader>
+</Appearance>
+</ParticleSystem>
 <Script DEF="Animate"><field name="translation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
 <field name="velocity" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
 <field name="set_fraction" accessType="inputOnly" type="SFFloat"></field>
@@ -127,8 +129,6 @@
 <ROUTE fromNode="Animate" fromField="d" toNode="x_ite" toField="d"></ROUTE>
 <ROUTE fromNode="Animate" fromField="pdelta" toNode="x_ite" toField="pdelta"></ROUTE>
 <ROUTE fromNode="Animate" fromField="tdelta" toNode="x_ite" toField="tdelta"></ROUTE>
-</Appearance>
-</ParticleSystem>
-<!--</Shape>--></Transform>
+</Transform>
 </Scene>
 </X3D>

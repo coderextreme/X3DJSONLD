@@ -27,7 +27,7 @@ head1.meta[3] = meta5;
 
 let meta6 = browser.currentScene.createNode("meta");
 meta6.name = "identifier";
-meta6.content = "https://coderextreme.net/X3DJSONLD/src/main/data/glflowers.x3d";
+meta6.content = "https://coderextreme.net/X3DJSONLD/src/main/personal/glflowers.x3d";
 head1.meta[4] = meta6;
 
 head = head1;
@@ -49,7 +49,7 @@ browser.currentScene.children[1] = Background9;
 let Group10 = browser.currentScene.createNode("Group");
 let ExternProtoDeclare11 = browser.currentScene.createNode("ExternProtoDeclare");
 ExternProtoDeclare11.name = "FlowerProto";
-ExternProtoDeclare11.url = new MFString(new java.lang.String["../data/flowerproto.x3d#FlowerProto"]);
+ExternProtoDeclare11.url = new MFString(new java.lang.String["../personal/flowerproto.x3d#FlowerProto"]);
 let field12 = browser.currentScene.createNode("field");
 field12.name = "vertex";
 field12.accessType = "inputOutput";

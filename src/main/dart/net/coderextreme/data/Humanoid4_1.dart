@@ -155,8 +155,7 @@ var X3D0 =  X3D(
               version_ : SFString('2.0'),
               /*</LOD>*/
               skinCoord_ : 
-                Coordinate(
-                  USE_ : SFString('TheSkinCoord')),
+                Coordinate(),
               joints_ : [
                 HAnimJoint(
                   name_ : SFString('humanoid_root'),

@@ -197,7 +197,6 @@ HAnimHumanoid43.setInfo(new CString[]{CString("humanoidVersion=2.0")}, 1);
 HAnimHumanoid43.setVersion(CString("2.0"));
 //</LOD>
 Coordinate& Coordinate44 =  Coordinate();
-Coordinate44.setUSE(CString("TheSkinCoord"));
 HAnimHumanoid43.setSkinCoord(&Coordinate44);
 
 HAnimJoint& HAnimJoint45 =  HAnimJoint();

@@ -20,7 +20,7 @@
 },
 {
 "@name":"identifier",
-"@content":"https://coderextreme.net/X3DJSONLD/src/main/data/force.x3d"
+"@content":"https://coderextreme.net/X3DJSONLD/src/main/data/extrusion.x3d"
 },
 {
 "@name":"description",
@@ -106,7 +106,10 @@
 spine[0].z*Math.random()*2);",
 "                        var endB = new SFVec3f(spine[1].x*Math.random()*2, spine[1].y*Math.random()*2,
 spine[1].z*Math.random()*2);",
-"\t\t        spine = new MFVec3f([endA, endB]);",
+"                        var tmpspine = new MFVec3f();",
+"\t\t\ttmpspine[0] = endA;",
+"\t\t\ttmpspine[1] = endB;",
+"                        spine = tmpspine;",
 "                }",
 "",
 ""

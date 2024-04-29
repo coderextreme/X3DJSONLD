@@ -69,7 +69,7 @@ head1.meta[11] = meta13;
 
 meta meta14 = createNode("meta");
 meta14.name = "identifier";
-meta14.content = "https://coderextreme.net/X3DJSONLD/src/main/data/flowers4.x3d";
+meta14.content = "https://coderextreme.net/X3DJSONLD/src/main/personal/flowers4.x3d";
 head1.meta[12] = meta14;
 
 meta meta15 = createNode("meta");

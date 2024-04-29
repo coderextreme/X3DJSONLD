@@ -85,32 +85,32 @@ children[0] = Viewpoint16;
 TextureBackground TextureBackground17 = createNode("TextureBackground");
 ImageTexture ImageTexture18 = createNode("ImageTexture");
 ImageTexture18.DEF = "leftBackgroundTexture";
-ImageTexture18.url = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_left.png"]);
+ImageTexture18.url = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_left.png","https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png"]);
 TextureBackground17.topTexture = ImageTexture18;
 
 ImageTexture ImageTexture19 = createNode("ImageTexture");
 ImageTexture19.DEF = "rightBackgroundTexture";
-ImageTexture19.url = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_right.png"]);
+ImageTexture19.url = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_right.png","https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png"]);
 TextureBackground17.topTexture = ImageTexture19;
 
 ImageTexture ImageTexture20 = createNode("ImageTexture");
 ImageTexture20.DEF = "frontBackgroundTexture";
-ImageTexture20.url = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_front.png"]);
+ImageTexture20.url = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_front.png","https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png"]);
 TextureBackground17.topTexture = ImageTexture20;
 
 ImageTexture ImageTexture21 = createNode("ImageTexture");
 ImageTexture21.DEF = "backBackgroundTexture";
-ImageTexture21.url = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_back.png"]);
+ImageTexture21.url = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_back.png","https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png"]);
 TextureBackground17.topTexture = ImageTexture21;
 
 ImageTexture ImageTexture22 = createNode("ImageTexture");
 ImageTexture22.DEF = "topBackgroundTexture";
-ImageTexture22.url = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_top.png"]);
+ImageTexture22.url = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_top.png","https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png"]);
 TextureBackground17.topTexture = ImageTexture22;
 
 ImageTexture ImageTexture23 = createNode("ImageTexture");
 ImageTexture23.DEF = "bottomBackgroundTexture";
-ImageTexture23.url = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"]);
+ImageTexture23.url = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"]);
 TextureBackground17.topTexture = ImageTexture23;
 
 children[1] = TextureBackground17;
@@ -126,32 +126,32 @@ Appearance26.material = Material27;
 ComposedCubeMapTexture ComposedCubeMapTexture28 = createNode("ComposedCubeMapTexture");
 ImageTexture ImageTexture29 = createNode("ImageTexture");
 ImageTexture29.DEF = "backShader";
-ImageTexture29.url = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_back.png"]);
+ImageTexture29.url = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_back.png","https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png"]);
 ComposedCubeMapTexture28.topTexture = ImageTexture29;
 
 ImageTexture ImageTexture30 = createNode("ImageTexture");
 ImageTexture30.DEF = "bottomShader";
-ImageTexture30.url = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"]);
+ImageTexture30.url = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"]);
 ComposedCubeMapTexture28.topTexture = ImageTexture30;
 
 ImageTexture ImageTexture31 = createNode("ImageTexture");
 ImageTexture31.DEF = "frontShader";
-ImageTexture31.url = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_front.png"]);
+ImageTexture31.url = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_front.png","https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png"]);
 ComposedCubeMapTexture28.topTexture = ImageTexture31;
 
 ImageTexture ImageTexture32 = createNode("ImageTexture");
 ImageTexture32.DEF = "leftShader";
-ImageTexture32.url = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_left.png"]);
+ImageTexture32.url = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_left.png","https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png"]);
 ComposedCubeMapTexture28.topTexture = ImageTexture32;
 
 ImageTexture ImageTexture33 = createNode("ImageTexture");
 ImageTexture33.DEF = "rightShader";
-ImageTexture33.url = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_right.png"]);
+ImageTexture33.url = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_right.png","https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png"]);
 ComposedCubeMapTexture28.topTexture = ImageTexture33;
 
 ImageTexture ImageTexture34 = createNode("ImageTexture");
 ImageTexture34.DEF = "topShader";
-ImageTexture34.url = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_top.png"]);
+ImageTexture34.url = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_top.png","https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png"]);
 ComposedCubeMapTexture28.topTexture = ImageTexture34;
 
 Appearance26.texture = ComposedCubeMapTexture28;

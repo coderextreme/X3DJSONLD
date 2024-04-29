@@ -26,7 +26,7 @@ head1.addMeta(&meta4);
 
 meta& meta5 =  meta();
 meta5.setName(CString("identifier"));
-meta5.setContent(CString("https://coderextreme.net/X3DJSONLD/src/main/data/rubik.x3d"));
+meta5.setContent(CString("https://coderextreme.net/X3DJSONLD/src/main/personal/rubik.x3d"));
 head1.addMeta(&meta5);
 
 meta& meta6 =  meta();
@@ -38,12 +38,12 @@ X3D0.setHead(&head1);
 
 Scene& Scene7 =  Scene();
 NavigationInfo& NavigationInfo8 =  NavigationInfo();
-NavigationInfo8.setType(new CString[1]{CString("EXAMINE")}, 1);
+NavigationInfo8.setType(new CString[]{CString("EXAMINE")}, 1);
 Scene7.addChild(&NavigationInfo8);
 
 Viewpoint& Viewpoint9 =  Viewpoint();
 Viewpoint9.setDescription(CString("Rubiks Cube"));
-Viewpoint9.setPosition(new float[3]{0,0,12});
+Viewpoint9.setPosition(new float[]{0,0,12});
 Scene7.addChild(&Viewpoint9);
 
 ProtoDeclare& ProtoDeclare10 =  ProtoDeclare();
@@ -74,7 +74,7 @@ Shape17.setGeometry(&Sphere18);
 
 Appearance& Appearance19 =  Appearance();
 Material& Material20 =  Material();
-Material20.setDiffuseColor(new float[3]{1,1,1});
+Material20.setDiffuseColor(new float[]{1,1,1});
 Appearance19.addChild(&Material20);
 
 Shape17.addChild(&Appearance19);

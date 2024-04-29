@@ -33,13 +33,16 @@ var X3D0 =  X3D(
               level_ : 1),
           component_ : 
             component(
+              name_ : SFString('Shape'),
+              level_ : 4),
+          component_ : 
+            component(
               name_ : SFString('Grouping'),
               level_ : 3),
           component_ : 
             component(
               name_ : SFString('Core'),
               level_ : 1),
-          /*<component name='Shape' level='4'></component>*/
           meta_ : [
             meta(
               name_ : SFString('title'),
@@ -72,13 +75,13 @@ var X3D0 =  X3D(
                       type_ : SFString("MFString"),
                       name_ : SFString('vertex'),
                       accessType_ : SFString("inputOutput"),
-                      value_ : SFString('\"../shaders/gl_flowers_chromatic.vs\"')),
+                      value_ : SFString('\"https://coderextreme.net/X3DJSONLD/src/main/shaders/gl_flowers_chromatic.vs\"')),
 
                     field(
                       type_ : SFString("MFString"),
                       name_ : SFString('fragment'),
                       accessType_ : SFString("inputOutput"),
-                      value_ : SFString('\"../shaders/pc_flowers.fs\"'))]),
+                      value_ : SFString('\"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_flowers.fs\"'))]),
               ProtoBody_ : 
                 ProtoBody(
                   children_ : [

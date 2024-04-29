@@ -22,7 +22,7 @@ head1.meta[2] = meta4;
 
 let meta5 = browser.currentScene.createNode("meta");
 meta5.name = "identifier";
-meta5.content = "https://coderextreme.net/X3DJSONLD/src/main/data/force.x3d";
+meta5.content = "https://coderextreme.net/X3DJSONLD/src/main/personal/force.x3d";
 head1.meta[3] = meta5;
 
 let meta6 = browser.currentScene.createNode("meta");
@@ -231,7 +231,7 @@ browser.currentScene.children[0] = ProtoDeclare9;
 
 let ProtoDeclare37 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
-<ProtoDeclare name="cylinder" ><ProtoInterface><field name="set_positionA" accessType="inputOnly" type="SFVec3f"></field>
+<ProtoDeclare name="cyl" ><ProtoInterface><field name="set_positionA" accessType="inputOnly" type="SFVec3f"></field>
 <field name="set_positionB" accessType="inputOnly" type="SFVec3f"></field>
 </ProtoInterface>
 <ProtoBody><Shape><Extrusion DEF="extrusion" creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0" spine="0 -50 0 0 50 0"></Extrusion>
@@ -268,7 +268,7 @@ let ProtoDeclare37 = browser.createX3DFromString(`<?xml version="1.0" encoding="
 <ROUTE fromNode="MoveCylinder" fromField="spine" toNode="extrusion" toField="set_spine"></ROUTE>
 </ProtoBody>
 </ProtoDeclare>`);
-ProtoDeclare37.name = "cylinder";
+ProtoDeclare37.name = "cyl";
 let ProtoInterface38 = browser.currentScene.createNode("ProtoInterface");
 let field39 = browser.currentScene.createNode("field");
 field39.name = "set_positionA";
@@ -416,7 +416,7 @@ ProtoInstance58.fieldValue[0] = fieldValue59;
 Transform54.children[2] = ProtoInstance58;
 
 let ProtoInstance60 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance60.name = "cylinder";
+ProtoInstance60.name = "cyl";
 ProtoInstance60.DEF = "linkA";
 let fieldValue61 = browser.currentScene.createNode("fieldValue");
 fieldValue61.name = "set_positionA";

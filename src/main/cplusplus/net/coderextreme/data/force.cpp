@@ -148,7 +148,11 @@ Script29.setSourceCode(CString("ecmascript:")+
 _T("					function set_cycle(value) {")+
 _T("                                                old = translation;")+
 _T("						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);")+
-_T("                                                keyValue = new MFVec3f([old, translation]);")+
+_T("                                                var tmpkeyValue = new MFVec3f();")+
+_T("			    			tmpkeyValue[0] = old;")+
+_T("			    			tmpkeyValue[1] = translation;")+
+_T("                                                keyValue = tmpkeyValue;")+
+_T("			    		")+
 _T("						// Browser.println(translation);")+
 _T("					}"));
 Group14.addChild(&Script29);
@@ -267,16 +271,28 @@ Script49.addChild(&IS53);
 Script49.setSourceCode(CString("ecmascript:")+
 _T("                function set_endA(value) {")+
 _T("		    if (typeof spine === 'undefined') {")+
-_T("		        spine = new MFVec3f([value, value]);")+
+_T("		        var tmpspine = new MFVec3f();")+
+_T("			tmpspine[0] = value;")+
+_T("			tmpspine[1] = value;")+
+_T("			spine = tmpspine;")+
 _T("		    } else {")+
-_T("		        spine = new MFVec3f([value, spine[1]]);")+
+_T("		        var tmpspine = new MFVec3f();")+
+_T("			tmpspine[0] = value;")+
+_T("			tmpspine[1] = spine[1];")+
+_T("			spine = tmpspine;")+
 _T("		    }")+
 _T("                }")+
 _T("                function set_endB(value) {")+
 _T("		    if (typeof spine === 'undefined') {")+
-_T("		        spine = new MFVec3f([value, value]);")+
+_T("		        var tmpspine = new MFVec3f();")+
+_T("			tmpspine[0] = value;")+
+_T("			tmpspine[1] = value;")+
+_T("			spine = tmpspine;")+
 _T("		    } else {")+
-_T("		        spine = new MFVec3f([spine[0], value]);")+
+_T("		        var tmpspine = new MFVec3f();")+
+_T("			tmpspine[0] = spine[0];")+
+_T("			tmpspine[1] = value;")+
+_T("			spine = tmpspine;")+
 _T("		    }")+
 _T("                }")+
 _T("                function set_spine(value) {")+

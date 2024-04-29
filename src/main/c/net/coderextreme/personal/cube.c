@@ -39,7 +39,7 @@ head1.meta[5] = meta7;
 
 meta meta8 = createNode("meta");
 meta8.name = "identifier";
-meta8.content = "https://coderextreme.net/X3DJSONLD/src/main/data/cube.x3d";
+meta8.content = "https://coderextreme.net/X3DJSONLD/src/main/personal/cube.x3d";
 head1.meta[6] = meta8;
 
 head = head1;

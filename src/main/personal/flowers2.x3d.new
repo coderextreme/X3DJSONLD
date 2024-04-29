@@ -9,7 +9,7 @@
 <meta name="description" content="2 random mathematical roses in spherical dimensions. rho = a + b * cos(c * theta) * cos(d * phi)"></meta>
 <meta name="identifier" content="https://coderextreme.net/X3DJSONLD/src/main/personal/flowers2.x3d"></meta>
 <meta name="generator" content="manually written"></meta>
-<meta name="license" content="https://www.web3d.org/x3d/content/examples/license.html"></meta>
+<meta name="license" content="https://coderextreme.net/X3DJSONLD/LICENSE"></meta>
 </head>
 <Scene><NavigationInfo></NavigationInfo>
 <Viewpoint description="Two mathematical orbitals" position="0 0 50"></Viewpoint>

@@ -31,17 +31,16 @@
             "@level":1
           },
           {
+            "@name":"Shape",
+            "@level":4
+          },
+          {
             "@name":"Grouping",
             "@level":3
           },
           {
             "@name":"Core",
             "@level":1
-          }
-        ],
-        "-children":[
-          {
-            "#comment":"<component name='Shape' level='4'></component>"
           }
         ],
         "meta": [
@@ -90,13 +89,13 @@
                       "@name":"vertex",
                       "@accessType":"inputOutput",
                       "@type":"MFString",
-                      "@value":["../shaders/gl_flowers_chromatic.vs"]
+                      "@value":["https://coderextreme.net/X3DJSONLD/src/main/shaders/gl_flowers_chromatic.vs"]
                     },
                     {
                       "@name":"fragment",
                       "@accessType":"inputOutput",
                       "@type":"MFString",
-                      "@value":["../shaders/pc_flowers.fs"]
+                      "@value":["https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_flowers.fs"]
                     }
                   ]
               },

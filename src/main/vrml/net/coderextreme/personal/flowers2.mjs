@@ -42,7 +42,7 @@ head1.meta[6] = meta8;
 
 let meta9 = browser.currentScene.createNode("meta");
 meta9.name = "identifier";
-meta9.content = "https://coderextreme.net/X3DJSONLD/src/main/data/flowers2.x3d";
+meta9.content = "https://coderextreme.net/X3DJSONLD/src/main/personal/flowers2.x3d";
 head1.meta[7] = meta9;
 
 let meta10 = browser.currentScene.createNode("meta");
@@ -52,7 +52,7 @@ head1.meta[8] = meta10;
 
 let meta11 = browser.currentScene.createNode("meta");
 meta11.name = "license";
-meta11.content = "https://www.web3d.org/x3d/content/examples/license.html";
+meta11.content = "https://coderextreme.net/X3DJSONLD/LICENSE";
 head1.meta[9] = meta11;
 
 head = head1;

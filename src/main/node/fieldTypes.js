@@ -5443,6 +5443,18 @@ let fieldTypes = {"X3DNode" : {
 	"id" : "SFString",
 	"style" : "SFString",
 },
+"VariationPhysicsModel" : {
+	"enabled" : "SFBool",
+	"IS" : "SFNode",
+	"metadata" : "SFNode",
+	"values" : "MFFloat",
+	"variations" : "MFFloat",
+	"DEF" : "SFString",
+	"USE" : "SFString",
+	"class" : "SFString",
+	"id" : "SFString",
+	"style" : "SFString",
+},
 "Viewpoint" : {
 	"bindTime" : "SFTime",
 	"centerOfRotation" : "SFVec3f",
