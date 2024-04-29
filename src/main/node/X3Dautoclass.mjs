@@ -270,6 +270,7 @@ TriangleStripSet : java.import('org.web3d.x3d.jsail.Rendering.TriangleStripSet')
 TwoSidedMaterial : java.import('org.web3d.x3d.jsail.Shape.TwoSidedMaterial'),
 UniversalJoint : java.import('org.web3d.x3d.jsail.RigidBodyPhysics.UniversalJoint'),
 UnlitMaterial : java.import('org.web3d.x3d.jsail.Shape.UnlitMaterial'),
+VariationPhysicsModel : java.import('org.web3d.x3d.jsail.ParticleSystems.VariationPhysicsModel'),
 Viewpoint : java.import('org.web3d.x3d.jsail.Navigation.Viewpoint'),
 ViewpointGroup : java.import('org.web3d.x3d.jsail.Navigation.ViewpointGroup'),
 Viewport : java.import('org.web3d.x3d.jsail.Layering.Viewport'),

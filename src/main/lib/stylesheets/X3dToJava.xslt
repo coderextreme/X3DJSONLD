@@ -462,14 +462,16 @@ POSSIBILITY OF SUCH DAMAGE.
 		<xsl:variable name="archiveRelativeDirectory">
 			<xsl:choose>
 				<xsl:when test="contains($archiveName,'ConformanceNist') or
-								contains($archiveName,'Savage') or
-								contains($archiveName,'SavageDefense')">
+                                                contains($archiveName,'Savage') or
+                                                contains($archiveName,'SavageDefense')">
 					<xsl:text>../../../..</xsl:text>
 				</xsl:when>
 				<xsl:when test="contains($archiveName,'Basic') or
-								contains($archiveName,'Vrml2Sourcebook') or
-								contains($archiveName,'X3dForWebAuthors') or
-								contains($archiveName,'X3dForAdvancedModeling')">
+                                                contains($archiveName,'ConformanceNist') or
+                                                contains($archiveName,'HumanoidAnimation') or
+                                                contains($archiveName,'Vrml2Sourcebook') or
+                                                contains($archiveName,'X3dForWebAuthors') or
+                                                contains($archiveName,'X3dForAdvancedModeling')">
 					<xsl:text>../../..</xsl:text>
 				</xsl:when>
 			</xsl:choose>
@@ -525,7 +527,32 @@ POSSIBILITY OF SUCH DAMAGE.
 		
 		<xsl:text><![CDATA[ <p> Related links: ]]></xsl:text>
 		<xsl:if test="(string-length($sourceName) > 0)">
+			<xsl:variable name="sceneName" select="substring-before(normalize-space((//meta[@name='title']/@content)),'.x3d')"/>
+                        <xsl:choose>
+                            <xsl:when test="($sceneName = 'HelloWorld') or ($sceneName = 'newScene')">
+<xsl:text><![CDATA[Catalog page <a href="https://www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter01TechnicalOverview/]]></xsl:text>
+<xsl:value-of select="$sceneName"/>
+<xsl:text><![CDATA[Index.html" target="_blank">]]></xsl:text>
+<xsl:value-of select="$sceneName"/><xsl:text><![CDATA[</a>]]></xsl:text>
+				<xsl:text>, </xsl:text>
+                            </xsl:when>
+                            <xsl:when test="(string-length($archiveName) > 0) and not(starts-with($sceneName,'*'))"><!-- avoid fill-in prompts -->
+<xsl:text><![CDATA[Catalog page <a href="]]></xsl:text>
+<xsl:value-of select="$archiveRelativeDirectory"/>
+<xsl:value-of select="$sceneName"/>
+<xsl:text><![CDATA[Index.html" target="_blank">]]></xsl:text>
+<xsl:value-of select="$sceneName"/><xsl:text><![CDATA[</a>]]></xsl:text>
+				<xsl:text>, </xsl:text>
+                            </xsl:when>
+                        </xsl:choose>
+			<xsl:text> source </xsl:text>
 			<xsl:choose>
+				<xsl:when test="($sceneName = 'HelloWorld') or ($sceneName = 'newScene')">
+<xsl:text><![CDATA[<a href="https://www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter01TechnicalOverview/]]></xsl:text>
+<xsl:value-of select="$sourceName"/>
+<xsl:text><![CDATA[">]]></xsl:text>
+<xsl:value-of select="$sourceName"/><xsl:text><![CDATA[</a>]]></xsl:text>
+				</xsl:when>
 				<xsl:when test="(string-length($archiveName) > 0)">
 <xsl:text><![CDATA[<a href="]]></xsl:text>
 <xsl:value-of select="$archiveRelativeDirectory"/>
@@ -537,16 +564,7 @@ POSSIBILITY OF SUCH DAMAGE.
 					<xsl:value-of select="$sourceName"/>
 				</xsl:otherwise>
 			</xsl:choose>
-			<xsl:text> source, </xsl:text>
-			<xsl:variable name="sceneName" select="substring-before(normalize-space((//meta[@name='title']/@content)),'.x3d')"/>
-			<xsl:if test="(string-length($archiveName) > 0) and not(starts-with($sceneName,'*'))"><!-- avoid fill-in prompts -->
-<xsl:text><![CDATA[<a href="]]></xsl:text>
-<xsl:value-of select="$archiveRelativeDirectory"/>
-<xsl:value-of select="$sceneName"/>
-<xsl:text><![CDATA[Index.html" target="_top">]]></xsl:text>
-<xsl:value-of select="$sceneName"/><xsl:text><![CDATA[ catalog page</a>]]></xsl:text>
-				<xsl:text>, </xsl:text>
-			</xsl:if>
+			<xsl:text>, </xsl:text>
 		</xsl:if>
 <xsl:text><![CDATA[<a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>]]></xsl:text>
 			<xsl:text>, </xsl:text>
@@ -735,8 +753,8 @@ POSSIBILITY OF SUCH DAMAGE.
 		It has been produced using the 
 		<a href="https://www.web3d.org/x3d/stylesheets/X3dToJava.xslt" target="_blank">X3dToJava.xslt</a>
 		stylesheet
-	       (<a href="https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/X3dToJava.xslt" target="_blank">version&amp;nbsp;control</a>)
-                is used to create Java source code from an original <code>.x3d</code> model.
+	       (<a href="https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/X3dToJava.xslt" target="_blank">version control</a>)
+                which is used to create Java source code from an original <code>.x3d</code> model.
 	</p>
 ]]></xsl:text>
 			<xsl:for-each select="//meta[@name='creator']">
@@ -3281,7 +3299,7 @@ POSSIBILITY OF SUCH DAMAGE.
             <!-- https://stackoverflow.com/questions/7554590/how-to-replace-a-double-quote-with-string-in-xslt -->
             <xsl:variable name="quoteCharacter">"</xsl:variable>
             <xsl:variable name="quoteCount" select="string-length($inputString) - string-length(translate($inputString, $quoteCharacter, ''))"/>
-            <!-- split quoted substrings separated by whitespace with comma separators -->
+            <!-- split quoted substrings separated by whitespace with comma separators, TODO avoiding escaped quotes \" satisfactorily using ^(\\)" -->
             <xsl:variable name="quotePattern"    >"(\s)+"</xsl:variable><!-- whitespace between quotes -->
             <xsl:variable name="quoteReplacement">","</xsl:variable>
             <!-- note that X3D syntax also allows commas as whitespace separators -->
@@ -4247,7 +4265,7 @@ POSSIBILITY OF SUCH DAMAGE.
 					($attributeName='intensity')        or
 					($attributeName='interauralDistance') or
 					($attributeName='knee')             or
-					($attributeName='linearDampingFactor') or ($attributeName='linearVelocity') or
+					($attributeName='linearDampingFactor') or 
 					($attributeName='loopEnd')          or ($attributeName='loopStart')       or
 					($attributeName='mass')             or
 					($attributeName='maxAngle1')        or ($attributeName='maxAngle2')       or
@@ -4700,6 +4718,10 @@ POSSIBILITY OF SUCH DAMAGE.
 				<xsl:when test="preceding::*[(local-name() = $parentElementName) and (starts-with($parentElementName,'Xvl'))]">
 					<!-- avoid repetitious warnings, no message.  TODO fix, test is not trapping properly. -->
 					<xsl:text></xsl:text>
+				</xsl:when>
+				<xsl:when test="(count(ancestor::*[contains(local-name(),'Signature')]) > 0)">
+					<!-- ds: namespace elements -->
+					<xsl:text>SFString</xsl:text>
 				</xsl:when>
 				<xsl:otherwise>
 					<xsl:text></xsl:text>
@@ -5331,7 +5353,7 @@ POSSIBILITY OF SUCH DAMAGE.
 				<xsl:value-of select="."/><!-- might include quote marks but error exists anyway -->
 				<xsl:text>"</xsl:text>
 				<xsl:variable name="warningMessage">
-					<xsl:text>[*** X3dToJava.xslt error: encountered incorrect type</xsl:text>
+					<xsl:text>*** X3dToJava.xslt error: encountered incorrect type</xsl:text>
                                         <xsl:if test="($attributeType = lower-case($attributeType))">
                                             <xsl:text> (check incorrect capitalization)</xsl:text>
                                         </xsl:if>
