@@ -46,7 +46,7 @@
           },
           {
             "@name":"translated",
-            "@content":"11 April 2024"
+            "@content":"29 April 2024"
           },
           {
             "@name":"generator",
@@ -342,8 +342,6 @@
                     "@center":[0.0000,0.8240,0.0277],
                     "@skinCoordIndex":[0],
                     "@skinCoordWeight":[0],
-                    "@ulimit":[0,0,0],
-                    "@llimit":[0,0,0],
                     "-children":[
                       { "HAnimJoint":
                         {
@@ -352,8 +350,6 @@
                           "@center":[0.0000,0.9149,0.0016],
                           "@skinCoordIndex":[0],
                           "@skinCoordWeight":[0],
-                          "@ulimit":[0,0,0],
-                          "@llimit":[0,0,0],
                           "-children":[
                             { "HAnimJoint":
                               {
@@ -362,8 +358,6 @@
                                 "@center":[0.0961,0.9124,-0.0001],
                                 "@skinCoordIndex":[0],
                                 "@skinCoordWeight":[0],
-                                "@ulimit":[0,0,0],
-                                "@llimit":[0,0,0],
                                 "-children":[
                                   { "HAnimJoint":
                                     {
@@ -372,8 +366,6 @@
                                       "@center":[0.1040,0.4867,0.0308],
                                       "@skinCoordIndex":[0],
                                       "@skinCoordWeight":[0],
-                                      "@ulimit":[0,0,0],
-                                      "@llimit":[0,0,0],
                                       "-children":[
                                         { "HAnimJoint":
                                           {
@@ -382,8 +374,6 @@
                                             "@center":[0.1101,0.0656,-0.0736],
                                             "@skinCoordIndex":[0],
                                             "@skinCoordWeight":[0],
-                                            "@ulimit":[0,0,0],
-                                            "@llimit":[0,0,0],
                                             "-children":[
                                               { "HAnimJoint":
                                                 {
@@ -391,9 +381,7 @@
                                                   "@DEF":"hanim_l_metatarsophalangeal_2",
                                                   "@center":[0.0824,0.0064,-0.0040],
                                                   "@skinCoordIndex":[0],
-                                                  "@skinCoordWeight":[0],
-                                                  "@ulimit":[0,0,0],
-                                                  "@llimit":[0,0,0]
+                                                  "@skinCoordWeight":[0]
                                                 }
                                               }
                                             ]
@@ -412,8 +400,6 @@
                                 "@center":[-0.0950,0.9171,0.0029],
                                 "@skinCoordIndex":[0],
                                 "@skinCoordWeight":[0],
-                                "@ulimit":[0,0,0],
-                                "@llimit":[0,0,0],
                                 "-children":[
                                   { "HAnimJoint":
                                     {
@@ -422,8 +408,6 @@
                                       "@center":[-0.0867,0.4913,0.0318],
                                       "@skinCoordIndex":[0],
                                       "@skinCoordWeight":[0],
-                                      "@ulimit":[0,0,0],
-                                      "@llimit":[0,0,0],
                                       "-children":[
                                         { "HAnimJoint":
                                           {
@@ -432,8 +416,6 @@
                                             "@center":[-0.0801,0.0712,-0.0766],
                                             "@skinCoordIndex":[0],
                                             "@skinCoordWeight":[0],
-                                            "@ulimit":[0,0,0],
-                                            "@llimit":[0,0,0],
                                             "-children":[
                                               { "HAnimJoint":
                                                 {
@@ -441,9 +423,7 @@
                                                   "@DEF":"hanim_r_metatarsophalangeal_2",
                                                   "@center":[-0.0823,0.0064,-0.0040],
                                                   "@skinCoordIndex":[0],
-                                                  "@skinCoordWeight":[0],
-                                                  "@ulimit":[0,0,0],
-                                                  "@llimit":[0,0,0]
+                                                  "@skinCoordWeight":[0]
                                                 }
                                               }
                                             ]
@@ -465,8 +445,6 @@
                           "@center":[0.0028,1.0568,-0.0776],
                           "@skinCoordIndex":[0],
                           "@skinCoordWeight":[0],
-                          "@ulimit":[0,0,0],
-                          "@llimit":[0,0,0],
                           "-children":[
                             { "HAnimJoint":
                               {
@@ -474,9 +452,7 @@
                                 "@DEF":"hanim_skullbase",
                                 "@center":[0.0044,1.6209,0.0236],
                                 "@skinCoordIndex":[0],
-                                "@skinCoordWeight":[0],
-                                "@ulimit":[0,0,0],
-                                "@llimit":[0,0,0]
+                                "@skinCoordWeight":[0]
                               }
                             },
                             { "HAnimJoint":
@@ -486,8 +462,6 @@
                                 "@center":[0.2029,1.4376,-0.0387],
                                 "@skinCoordIndex":[0],
                                 "@skinCoordWeight":[0],
-                                "@ulimit":[0,0,0],
-                                "@llimit":[0,0,0],
                                 "-children":[
                                   { "HAnimJoint":
                                     {
@@ -496,8 +470,6 @@
                                       "@center":[0.2014,1.1357,-0.0682],
                                       "@skinCoordIndex":[0],
                                       "@skinCoordWeight":[0],
-                                      "@ulimit":[0,0,0],
-                                      "@llimit":[0,0,0],
                                       "-children":[
                                         { "HAnimJoint":
                                           {
@@ -505,9 +477,7 @@
                                             "@DEF":"hanim_l_radiocarpal",
                                             "@center":[0.1984,0.8663,-0.0583],
                                             "@skinCoordIndex":[0],
-                                            "@skinCoordWeight":[0],
-                                            "@ulimit":[0,0,0],
-                                            "@llimit":[0,0,0]
+                                            "@skinCoordWeight":[0]
                                           }
                                         }
                                       ]
@@ -523,8 +493,6 @@
                                 "@center":[-0.1907,1.4407,-0.0325],
                                 "@skinCoordIndex":[0],
                                 "@skinCoordWeight":[0],
-                                "@ulimit":[0,0,0],
-                                "@llimit":[0,0,0],
                                 "-children":[
                                   { "HAnimJoint":
                                     {
@@ -533,8 +501,6 @@
                                       "@center":[-0.1949,1.1388,-0.0620],
                                       "@skinCoordIndex":[0],
                                       "@skinCoordWeight":[0],
-                                      "@ulimit":[0,0,0],
-                                      "@llimit":[0,0,0],
                                       "-children":[
                                         { "HAnimJoint":
                                           {
@@ -542,9 +508,7 @@
                                             "@DEF":"hanim_r_radiocarpal",
                                             "@center":[-0.1959,0.8694,-0.0521],
                                             "@skinCoordIndex":[0],
-                                            "@skinCoordWeight":[0],
-                                            "@ulimit":[0,0,0],
-                                            "@llimit":[0,0,0]
+                                            "@skinCoordWeight":[0]
                                           }
                                         }
                                       ]

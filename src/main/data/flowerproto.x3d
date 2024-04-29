@@ -8,7 +8,7 @@
 	      <component name='CubeMapTexturing' level='1'></component>
 	      <component name='Texturing' level='1'></component>
 	      <component name='Rendering' level='1'></component>
-	      <!--<component name='Shape' level='4'></component>-->
+	      <component name='Shape' level='4'></component>
 	      <component name='Grouping' level='3'></component>
 	      <component name='Core' level='1'></component>
         <meta name="title" content="flowerproto.x3d"></meta>
@@ -20,8 +20,8 @@
     <Scene>
         <ProtoDeclare name="FlowerProto">
 	    <ProtoInterface>
-		<field accessType='inputOutput' name='vertex' type='MFString' value='"../shaders/gl_flowers_chromatic.vs"'/>
-		<field accessType='inputOutput' name='fragment' type='MFString' value='"../shaders/pc_flowers.fs"'/>
+		    <field accessType='inputOutput' name='vertex' type='MFString' value='"https://coderextreme.net/X3DJSONLD/src/main/shaders/gl_flowers_chromatic.vs"'/>
+		    <field accessType='inputOutput' name='fragment' type='MFString' value='"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_flowers.fs"'/>
 	    </ProtoInterface>
             <ProtoBody>
                 <Transform DEF="transform" translation="0 0 0">

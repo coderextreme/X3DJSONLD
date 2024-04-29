@@ -31,6 +31,10 @@
 "@level":1
 },
 {
+"@name":"Shape",
+"@level":4
+},
+{
 "@name":"Grouping",
 "@level":3
 },
@@ -62,7 +66,7 @@
 },
 {
 "@name":"translated",
-"@content":"30 March 2024"
+"@content":"29 April 2024"
 },
 {
 "@name":"generator",
@@ -112,94 +116,6 @@
 }
 },
 "-shaders":[
-{ "ComposedShader":
-{
-"@DEF":"x3dom",
-"@language":"GLSL",
-"field": [
-{
-"@name":"cube",
-"@accessType":"inputOutput",
-"@type":"SFInt32",
-"@value":0
-},
-{
-"@name":"chromaticDispertion",
-"@accessType":"initializeOnly",
-"@type":"SFVec3f",
-"@value":[0.98,1,1.033]
-},
-{
-"@name":"bias",
-"@accessType":"inputOutput",
-"@type":"SFFloat",
-"@value":0.5
-},
-{
-"@name":"scale",
-"@accessType":"inputOutput",
-"@type":"SFFloat",
-"@value":0.5
-},
-{
-"@name":"power",
-"@accessType":"inputOutput",
-"@type":"SFFloat",
-"@value":2.0
-},
-{
-"@name":"a",
-"@accessType":"inputOutput",
-"@type":"SFFloat",
-"@value":10.0
-},
-{
-"@name":"b",
-"@accessType":"inputOutput",
-"@type":"SFFloat",
-"@value":1.0
-},
-{
-"@name":"c",
-"@accessType":"inputOutput",
-"@type":"SFFloat",
-"@value":20.0
-},
-{
-"@name":"d",
-"@accessType":"inputOutput",
-"@type":"SFFloat",
-"@value":20.0
-},
-{
-"@name":"tdelta",
-"@accessType":"inputOutput",
-"@type":"SFFloat",
-"@value":0.0
-},
-{
-"@name":"pdelta",
-"@accessType":"inputOutput",
-"@type":"SFFloat",
-"@value":0.0
-}
-],
-"-parts":[
-{ "ShaderPart":
-{
-"@url":["../shaders/x3dom_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs"],
-"@type":"VERTEX"
-}
-},
-{ "ShaderPart":
-{
-"@type":"FRAGMENT",
-"@url":["../shaders/common.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"]
-}
-}
-]
-}
-},
 { "ComposedShader":
 {
 "@DEF":"x_ite",
@@ -281,14 +197,14 @@
 "-parts":[
 { "ShaderPart":
 {
-"@url":["../shaders/x_ite_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs"],
+"@url":["https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs"],
 "@type":"VERTEX"
 }
 },
 { "ShaderPart":
 {
 "@type":"FRAGMENT",
-"@url":["../shaders/x_ite.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"]
+"@url":["https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"]
 }
 }
 ]
@@ -617,54 +533,6 @@
 "@fromNode":"Animate",
 "@toField":"tdelta",
 "@toNode":"x_ite"
-}
-},
-{ "ROUTE":
-{
-"@fromField":"a",
-"@fromNode":"Animate",
-"@toField":"a",
-"@toNode":"x3dom"
-}
-},
-{ "ROUTE":
-{
-"@fromField":"b",
-"@fromNode":"Animate",
-"@toField":"b",
-"@toNode":"x3dom"
-}
-},
-{ "ROUTE":
-{
-"@fromField":"c",
-"@fromNode":"Animate",
-"@toField":"c",
-"@toNode":"x3dom"
-}
-},
-{ "ROUTE":
-{
-"@fromField":"d",
-"@fromNode":"Animate",
-"@toField":"d",
-"@toNode":"x3dom"
-}
-},
-{ "ROUTE":
-{
-"@fromField":"pdelta",
-"@fromNode":"Animate",
-"@toField":"pdelta",
-"@toNode":"x3dom"
-}
-},
-{ "ROUTE":
-{
-"@fromField":"tdelta",
-"@fromNode":"Animate",
-"@toField":"tdelta",
-"@toNode":"x3dom"
 }
 }
 ]

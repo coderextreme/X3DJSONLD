@@ -92,8 +92,10 @@
 </Appearance>
 </Shape>
 </Transform>
-<!--DIS multiuser facilities--><DISEntityManager DEF="EntityManager" networkMode="networkReader"><DISEntityTypeMapping category="77" specific="1" url="&quot;../data/Leif8Final.x3d&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/data/Leif8Final.x3d&quot;"></DISEntityTypeMapping>
-<DISEntityTypeMapping category="77" specific="2" url="&quot;../data/Lily8Final.x3d&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/data/Leif8Final.x3d&quot;"></DISEntityTypeMapping>
+<!--DIS multiuser facilities--><DISEntityManager DEF="EntityManager" networkMode="networkReader"><DISEntityTypeMapping category="77" specific="1" url="&quot;../data/Leif8Final.x3dv&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/data/Leif8Final.x3dv&quot;"></DISEntityTypeMapping>
+<DISEntityTypeMapping category="77" specific="2" url="&quot;../data/Lily8Final.x3dv&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/data/Lily8Final.x3dv&quot;"></DISEntityTypeMapping>
+<DISEntityTypeMapping category="77" specific="3" url="&quot;../data/Tufani8Final.x3dv&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/data/Tufani8Final.x3dv&quot;"></DISEntityTypeMapping>
+<DISEntityTypeMapping category="77" specific="4" url="&quot;../data/Gramps8Final.x3dv&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/data/Gramps8Final.x3dv&quot;"></DISEntityTypeMapping>
 </DISEntityManager>
 <Collision enabled="false"><Group DEF="AvatarHolder"></Group>
 </Collision>
