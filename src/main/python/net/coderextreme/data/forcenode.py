@@ -137,7 +137,7 @@ Script28.setSourceCode('''ecmascript:\n"+
 "					function set_cycle(value) {\n"+
 "                                                old = translation;\n"+
 "						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);\n"+
-"                                                keyValue = new MFVec3f([old, translation]);\n"+
+"                                                keyValue = new MFVec3f(...[old, translation]);\n"+
 "						// Browser.println(translation);\n"+
 "					}''')
 
@@ -183,7 +183,7 @@ ProtoDeclare9.setProtoBody(ProtoBody12)
 
 Scene8.addChildren(ProtoDeclare9)
 ProtoDeclare38 = x3d.ProtoDeclare()
-ProtoDeclare38.setName("cyl")
+ProtoDeclare38.setName("cylinder")
 ProtoInterface39 = x3d.ProtoInterface()
 field40 = x3d.field()
 field40.setName("set_positionA")
@@ -257,17 +257,17 @@ Script48.setSourceCode('''ecmascript:\n"+
 "\n"+
 "                function set_endA(value) {\n"+
 "		    if (typeof spine === 'undefined') {\n"+
-"		        spine = new MFVec3f([value, value]);\n"+
+"		        spine = new MFVec3f(...[value, value]);\n"+
 "		    } else {\n"+
-"		        spine = new MFVec3f([value, spine[1]]);\n"+
+"		        spine = new MFVec3f(...[value, spine[1]]);\n"+
 "		    }\n"+
 "                }\n"+
 "\n"+
 "                function set_endB(value) {\n"+
 "		    if (typeof spine === 'undefined') {\n"+
-"		        spine = new MFVec3f([value, value]);\n"+
+"		        spine = new MFVec3f(...[value, value]);\n"+
 "		    } else {\n"+
-"		        spine = new MFVec3f([spine[0], value]);\n"+
+"		        spine = new MFVec3f(...[spine[0], value]);\n"+
 "		    }\n"+
 "                }\n"+
 "\n"+
@@ -340,7 +340,7 @@ ProtoInstance64.addFieldValue(fieldValue65)
 
 Transform56.addChildren(ProtoInstance64)
 ProtoInstance66 = x3d.ProtoInstance()
-ProtoInstance66.setName("cyl")
+ProtoInstance66.setName("cylinder")
 ProtoInstance66.setDEF("linkA")
 fieldValue67 = x3d.fieldValue()
 fieldValue67.setName("set_positionA")
@@ -355,7 +355,7 @@ ProtoInstance66.addFieldValue(fieldValue68)
 
 Transform56.addChildren(ProtoInstance66)
 ProtoInstance69 = x3d.ProtoInstance()
-ProtoInstance69.setName("cyl")
+ProtoInstance69.setName("cylinder")
 ProtoInstance69.setDEF("linkB")
 fieldValue70 = x3d.fieldValue()
 fieldValue70.setName("set_positionA")
@@ -370,7 +370,7 @@ ProtoInstance69.addFieldValue(fieldValue71)
 
 Transform56.addChildren(ProtoInstance69)
 ProtoInstance72 = x3d.ProtoInstance()
-ProtoInstance72.setName("cyl")
+ProtoInstance72.setName("cylinder")
 ProtoInstance72.setDEF("linkC")
 fieldValue73 = x3d.fieldValue()
 fieldValue73.setName("set_positionA")

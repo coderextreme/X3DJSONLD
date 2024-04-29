@@ -20,7 +20,7 @@ meta4.setContent("text.x3d")
 head1.addMeta(meta4)
 meta5 = x3d.meta()
 meta5.setName("identifier")
-meta5.setContent("https://coderextreme.net/X3DJSONLD/src/main/data/text.x3d")
+meta5.setContent("https://coderextreme.net/X3DJSONLD/src/main/personal/text.x3d")
 
 head1.addMeta(meta5)
 meta6 = x3d.meta()

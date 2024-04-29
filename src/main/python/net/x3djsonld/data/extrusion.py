@@ -32,7 +32,7 @@ newModel=X3D(profile='Immersive',version='4.0',
     meta(name='creator',content='John W Carlson'),
     meta(name='created',content='December 13 2015'),
     meta(name='title',content='extrusion.x3d'),
-    meta(name='identifier',content='https://coderextreme.net/X3DJSONLD/src/main/data/force.x3d'),
+    meta(name='identifier',content='https://coderextreme.net/X3DJSONLD/src/main/data/extrusion.x3d'),
     meta(name='description',content='beginnings of a force directed graph in 3D'),
     meta(name='generator',content='Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit')]),
   Scene=Scene(
@@ -56,7 +56,10 @@ ecmascript:
                         Browser.print(value);
                         var endA = new SFVec3f(spine[0].x*Math.random()*2, spine[0].y*Math.random()*2, spine[0].z*Math.random()*2);
                         var endB = new SFVec3f(spine[1].x*Math.random()*2, spine[1].y*Math.random()*2, spine[1].z*Math.random()*2);
-		        spine = new MFVec3f([endA, endB]);
+                        var tmpspine = new MFVec3f();
+			tmpspine[0] = endA;
+			tmpspine[1] = endB;
+                        spine = tmpspine;
                 }
 """),
       ROUTE(fromNode='TourTime',fromField='cycleTime',toNode='MoveCylinder',toField='set_cycle'),

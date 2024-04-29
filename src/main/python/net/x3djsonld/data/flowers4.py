@@ -35,7 +35,7 @@ newModel=X3D(profile='Immersive',version='4.0',
     component(name='CubeMapTexturing',level=1),
     component(name='Texturing',level=1),
     component(name='Rendering',level=1),
-    # <component name='Shape' level='4'></component>
+    component(name='Shape',level=4),
     component(name='Grouping',level=3),
     component(name='Core',level=1),
     meta(name='title',content='flowers4.x3d'),
@@ -68,8 +68,8 @@ newModel=X3D(profile='Immersive',version='4.0',
             field(name='scale',type='SFFloat',accessType='inputOutput',value=0.5),
             field(name='power',type='SFFloat',accessType='inputOutput',value=2)],
             parts=[
-            ShaderPart(url=["../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"]),
-            ShaderPart(url=["../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"],type='FRAGMENT')])]),
+            ShaderPart(url=["../shaders/x_ite.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"]),
+            ShaderPart(url=["../shaders/x_ite.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"],type='FRAGMENT')])]),
         # 
                 <Sphere>
 		
@@ -79,16 +79,14 @@ newModel=X3D(profile='Immersive',version='4.0',
       field=[
       field(accessType='inputOnly',name='set_fraction',type='SFFloat'),
       field(accessType='inputOutput',name='coordinates',type='MFVec3f'),
-      field(accessType='outputOnly',name='coordIndexes',type='MFInt32')],
+      field(accessType='outputOnly',name='coordIndexes',type='MFInt32'),
+      field(name='e',type='SFFloat',accessType='inputOutput',value=5),
+      field(name='f',type='SFFloat',accessType='inputOutput',value=5),
+      field(name='g',type='SFFloat',accessType='inputOutput',value=5),
+      field(name='h',type='SFFloat',accessType='inputOutput',value=5)],
 
     sourceCode="""
 ecmascript:
-
-var e = 5;
-var f = 5;
-var g = 5;
-var h = 5;
-
 function initialize() {
      var resolution = 100;
      updateCoordinates(resolution);
@@ -102,7 +100,7 @@ function initialize() {
 	     cis.push(-1);
 	}
     }
-    coordIndexes = new MFInt32(cis);
+    coordIndexes = new MFInt32(...cis);
 }
 
 function updateCoordinates(resolution) {
@@ -122,7 +120,7 @@ function updateCoordinates(resolution) {
 	}
 	phi += delta;
      }
-     coordinates = new MFVec3f(crds);
+     coordinates = new MFVec3f(...crds);
 }
 
 function set_fraction(fraction, eventTime) {
@@ -140,6 +138,9 @@ function set_fraction(fraction, eventTime) {
 	case 3:
 		h += Math.floor(Math.random() * 2) * 2 - 1;
 		break;
+	}
+	if (e < 1) {
+		e = 10;
 	}
 	if (f < 1) {
 		f = 10;

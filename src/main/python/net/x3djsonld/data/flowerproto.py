@@ -35,7 +35,7 @@ newModel=X3D(profile='Immersive',version='4.0',
     component(name='CubeMapTexturing',level=1),
     component(name='Texturing',level=1),
     component(name='Rendering',level=1),
-    # <component name='Shape' level='4'></component>
+    component(name='Shape',level=4),
     component(name='Grouping',level=3),
     component(name='Core',level=1),
     meta(name='title',content='flowerproto.x3d'),
@@ -48,8 +48,8 @@ newModel=X3D(profile='Immersive',version='4.0',
     ProtoDeclare(name='FlowerProto',
       ProtoInterface=ProtoInterface(
         field=[
-        field(accessType='inputOutput',name='vertex',type='MFString',value=["../shaders/gl_flowers_chromatic.vs"]),
-        field(accessType='inputOutput',name='fragment',type='MFString',value=["../shaders/pc_flowers.fs"])]),
+        field(accessType='inputOutput',name='vertex',type='MFString',value=["https://coderextreme.net/X3DJSONLD/src/main/shaders/gl_flowers_chromatic.vs"]),
+        field(accessType='inputOutput',name='fragment',type='MFString',value=["https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_flowers.fs"])]),
       ProtoBody=ProtoBody(
         children=[
         Transform(DEF='transform',

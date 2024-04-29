@@ -30,7 +30,7 @@ meta6.setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit")
 head1.addMeta(meta6)
 meta7 = x3d.meta()
 meta7.setName("identifier")
-meta7.setContent("https://coderextreme.net/X3DJSONLD/src/main/data/bubs.x3d")
+meta7.setContent("https://coderextreme.net/X3DJSONLD/src/main/personal/bubs.x3d")
 
 head1.addMeta(meta7)
 

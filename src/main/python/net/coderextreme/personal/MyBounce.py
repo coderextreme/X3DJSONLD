@@ -25,7 +25,7 @@ meta5.setContent("3 prismatic spheres")
 head1.addMeta(meta5)
 meta6 = x3d.meta()
 meta6.setName("identifier")
-meta6.setContent("https://coderextreme.net/X3DJSONLD/src/main/data/SFVec3f.x3d")
+meta6.setContent("https://coderextreme.net/X3DJSONLD/src/main/personal/SFVec3f.x3d")
 
 head1.addMeta(meta6)
 

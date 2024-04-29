@@ -35,7 +35,7 @@ newModel=X3D(profile='Immersive',version='4.0',
     component(name='CubeMapTexturing',level=1),
     component(name='Texturing',level=1),
     component(name='Rendering',level=1),
-    # <component name='Shape' level='4'></component>
+    component(name='Shape',level=4),
     component(name='Grouping',level=3),
     component(name='Core',level=1),
     meta(name='title',content='flowers.x3d'),
@@ -63,28 +63,28 @@ newModel=X3D(profile='Immersive',version='4.0',
                 leftTexture=ImageTexture(url=["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]),
                 rightTexture=ImageTexture(url=["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]),
                 topTexture=ImageTexture(url=["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"])),
-              shaders=[
-              ComposedShader(DEF='x3dom',language='GLSL',
-                field=[
-                field(name='cube',type='SFInt32',accessType='inputOutput',value=0),
-                #  
+              #  
+			      <ComposedShader DEF='x3dom' language="GLSL">
+                  <field name='cube' type='SFInt32' accessType='inputOutput' value='0'></field>
 		       <field name='cube' type='SFNode' accessType="inputOutput">
 			  <ComposedCubeMapTexture USE="texture"/>
-		  </field>
+			  </field>
+
+                  <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1.0 1.033'></field>
+                  <field name='bias' type='SFFloat' accessType='inputOutput' value='0.5'></field>
+                  <field name='scale' type='SFFloat' accessType='inputOutput' value='0.5'></field>
+                  <field name='power' type='SFFloat' accessType='inputOutput' value='2'></field>
+                  <field name='a' type='SFFloat' accessType='inputOutput' value='10'></field>
+                  <field name='b' type='SFFloat' accessType='inputOutput' value='1'></field>
+                  <field name='c' type='SFFloat' accessType='inputOutput' value='20'></field>
+                  <field name='d' type='SFFloat' accessType='inputOutput' value='20'></field>
+                  <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
+                  <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
+		  <ShaderPart url='"https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs"' containerField='parts' type='VERTEX'></ShaderPart>
+		  <ShaderPart url='"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"' containerField='parts' type='FRAGMENT'></ShaderPart>
+			      </ComposedShader>
 		  
-                field(name='chromaticDispertion',accessType='initializeOnly',type='SFVec3f',value=(0.98,1.0,1.033)),
-                field(name='bias',type='SFFloat',accessType='inputOutput',value=0.5),
-                field(name='scale',type='SFFloat',accessType='inputOutput',value=0.5),
-                field(name='power',type='SFFloat',accessType='inputOutput',value=2),
-                field(name='a',type='SFFloat',accessType='inputOutput',value=10),
-                field(name='b',type='SFFloat',accessType='inputOutput',value=1),
-                field(name='c',type='SFFloat',accessType='inputOutput',value=20),
-                field(name='d',type='SFFloat',accessType='inputOutput',value=20),
-                field(name='tdelta',type='SFFloat',accessType='inputOutput',value=0),
-                field(name='pdelta',type='SFFloat',accessType='inputOutput',value=0)],
-                parts=[
-                ShaderPart(url=["../shaders/x3dom_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs"]),
-                ShaderPart(url=["../shaders/common.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"],type='FRAGMENT')]),
+              shaders=[
               ComposedShader(DEF='x_ite',language='GLSL',
                 field=[
                 field(name='cube',type='SFNode',accessType='inputOutput',
@@ -101,8 +101,8 @@ newModel=X3D(profile='Immersive',version='4.0',
                 field(name='tdelta',type='SFFloat',accessType='inputOnly',value=0),
                 field(name='pdelta',type='SFFloat',accessType='inputOnly',value=0)],
                 parts=[
-                ShaderPart(url=["../shaders/x_ite_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs"]),
-                ShaderPart(url=["../shaders/x_ite.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"],type='FRAGMENT')])]),
+                ShaderPart(url=["https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs"]),
+                ShaderPart(url=["https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"],type='FRAGMENT')])]),
             geometry=Sphere(),)]),
         Script(DEF='Animate',
           field=[
@@ -193,13 +193,16 @@ ecmascript:
         ROUTE(fromNode='Animate',fromField='c',toNode='x_ite',toField='c'),
         ROUTE(fromNode='Animate',fromField='d',toNode='x_ite',toField='d'),
         ROUTE(fromNode='Animate',fromField='pdelta',toNode='x_ite',toField='pdelta'),
-        ROUTE(fromNode='Animate',fromField='tdelta',toNode='x_ite',toField='tdelta'),
-        ROUTE(fromNode='Animate',fromField='a',toNode='x3dom',toField='a'),
-        ROUTE(fromNode='Animate',fromField='b',toNode='x3dom',toField='b'),
-        ROUTE(fromNode='Animate',fromField='c',toNode='x3dom',toField='c'),
-        ROUTE(fromNode='Animate',fromField='d',toNode='x3dom',toField='d'),
-        ROUTE(fromNode='Animate',fromField='pdelta',toNode='x3dom',toField='pdelta'),
-        ROUTE(fromNode='Animate',fromField='tdelta',toNode='x3dom',toField='tdelta')])),
+        ROUTE(fromNode='Animate',fromField='tdelta',toNode='x_ite',toField='tdelta')]
+        # 
+            <ROUTE fromNode='Animate' fromField='a' toNode='x3dom' toField='a'/>
+            <ROUTE fromNode='Animate' fromField='b' toNode='x3dom' toField='b'/>
+            <ROUTE fromNode='Animate' fromField='c' toNode='x3dom' toField='c'/>
+            <ROUTE fromNode='Animate' fromField='d' toNode='x3dom' toField='d'/>
+            <ROUTE fromNode='Animate' fromField='pdelta' toNode='x3dom' toField='pdelta'/>
+            <ROUTE fromNode='Animate' fromField='tdelta' toNode='x3dom' toField='tdelta'/>
+		    
+        )),
     ProtoInstance(name='flower'),
     ProtoInstance(name='flower'),
     ProtoInstance(name='flower')])

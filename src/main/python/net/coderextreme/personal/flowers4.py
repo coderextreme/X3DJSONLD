@@ -65,7 +65,7 @@ meta13.setContent("manual")
 head1.addMeta(meta13)
 meta14 = x3d.meta()
 meta14.setName("identifier")
-meta14.setContent("https://coderextreme.net/X3DJSONLD/src/main/data/flowers4.x3d")
+meta14.setContent("https://coderextreme.net/X3DJSONLD/src/main/personal/flowers4.x3d")
 
 head1.addMeta(meta14)
 meta15 = x3d.meta()
