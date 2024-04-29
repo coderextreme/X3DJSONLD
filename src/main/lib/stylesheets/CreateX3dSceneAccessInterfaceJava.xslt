@@ -4697,6 +4697,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 
 			String currentX3dJsailJarName = "(unlocated)";
 			boolean foundX3dJsailJar = false;
+	 /*
 			if    ( systemClassPath.contains("X3DJSAIL"))
 			{
 					 currentX3dJsailJarName = systemClassPath.substring(systemClassPath.indexOf("X3DJSAIL"));
@@ -4708,11 +4709,14 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 				{
 					if (currentX3dJsailJarName.equals(nextX3dJsailJar))
 					{
+	 */
 						 foundX3dJsailJar = true;
+	 /*
 						 break;
 					}
 				}
 			}
+	 */
 			if (!foundX3dJsailJar)
 			{
 				errorNotice = ConfigurationProperties.ERROR_CONFIGURATION_X3DJSAIL + " X3DJSAIL .jar archive " + currentX3dJsailJarName 
@@ -4891,6 +4895,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
         String currentX3dJsailJarName = new String();
         String errorNotice        = new String();
         boolean foundX3dJsailJar = false;
+	 /*
         if    ( systemClassPath.contains("X3DJSAIL"))
         {
                  currentX3dJsailJarName = systemClassPath.substring(systemClassPath.indexOf("X3DJSAIL"));
@@ -4902,11 +4907,14 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
             {
                 if (currentX3dJsailJarName.equals(nextX3dJsailJar))
                 {
+	 */
                      foundX3dJsailJar = true;
+	 /*
                      break;
                 }
             }
         }
+	 */
         if (!foundX3dJsailJar)
         {
             errorNotice = ConfigurationProperties.ERROR_CONFIGURATION_X3DJSAIL + " X3DJSAIL jar archive \"" + currentX3dJsailJarName 
@@ -13828,12 +13836,13 @@ setAttribute method invocations).
 															((@accessType='initializeOnly') or (@accessType='inputOutput')) and
                                                             not(@name = 'meta')]">
 				<!-- order is essential for elements, xsl:sort results in reverse order -->
-				<xsl:sort select="@name[not((. = 'head') or (. = 'skeleton') or (. = 'Scene') or (. = 'ProtoBody') or (. = 'ProtoInterface') or (. = 'IS') or (. = 'field') or (. = 'metadata'))]"/>
+				<xsl:sort select="@name[not((. = 'head') or (. = 'skeleton') or (. = 'skinCoord') or (. = 'Scene') or (. = 'ProtoBody') or (. = 'ProtoInterface') or (. = 'IS') or (. = 'field') or (. = 'metadata'))]"/>
 				<!-- special order for head elements: meta comes last -->
 				<!-- sort head before Scene in X3D -->
 				<xsl:sort select="(@name = 'Scene')"/>
 				<xsl:sort select="(@name = 'head')"/>
 				<xsl:sort select="(@name = 'skeleton')"/>
+				<xsl:sort select="(@name = 'skinCoord')"/>
 				<!-- sort ProtoInterface before ProtoBody in ProtoDeclare -->
 				<xsl:sort select="(@name = 'ProtoBody')"/>
 				<xsl:sort select="(@name = 'ProtoInterface')"/>
@@ -14561,12 +14570,18 @@ setAttribute method invocations).
 															((@accessType='initializeOnly') or (@accessType='inputOutput')) and
                                                             not(@name = 'meta')]">
 				<!-- order is essential for elements, xsl:sort results in reverse order -->
-				<xsl:sort select="@name[not((. = 'ProtoBody') or (. = 'ProtoInterface') or (. = 'IS') or (. = 'field') or (. = 'metadata'))]"/>
-				<!-- sort ProtoInterface before ProtoBody -->
+				<xsl:sort select="@name[not((. = 'head') or (. = 'skeleton') or (. = 'skinCoord') or (. = 'Scene') or (. = 'ProtoBody') or (. = 'ProtoInterface') or (. = 'IS') or (. = 'field') or (. = 'metadata'))]"/>
+				<!-- special order for head elements: meta comes last -->
+				<!-- sort head before Scene in X3D -->
+				<xsl:sort select="(@name = 'Scene')"/>
+				<xsl:sort select="(@name = 'head')"/>
+				<xsl:sort select="(@name = 'skeleton')"/>
+				<xsl:sort select="(@name = 'skinCoord')"/>
+				<!-- sort ProtoInterface before ProtoBody in ProtoDeclare -->
 				<xsl:sort select="(@name = 'ProtoBody')"/>
 				<xsl:sort select="(@name = 'ProtoInterface')"/>
 				<!-- necessary order for model validation: field/IS/metadata before all other nodes/statements -->
-                <!-- sort metadata before field and IS -->
+				<!-- sort field before IS in ProtoInstance -->
 				<xsl:sort select="(@name = 'IS')"/>
 				<xsl:sort select="(@name = 'field')"/>
 				<xsl:sort select="(@name = 'metadata')"/>
@@ -34314,7 +34329,7 @@ showing default attribute values, and other custom settings.</p>
 	 */
         // https://stackoverflow.com/questions/21696784/how-to-declare-an-arraylist-with-values
         public static final ArrayList<String> X3DJSAIL_JAR_RELEASE_VERSIONS = 
-            new ArrayList<>(Arrays.asList("X3DJSAIL.4.0.classes.jar", "X3DJSAIL.4.0.full.jar","X3DJSAIL.3.3.classes.jar", "X3DJSAIL.3.3.full.jar"));
+            new ArrayList<>(Arrays.asList("X3DJSAIL-4.0.classes.jar", "X3DJSAIL.4.0.classes.jar", "X3DJSAIL-4.0.full.jar", "X3DJSAIL.4.0.full.jar", "X3DJSAIL.3.3.classes.jar", "X3DJSAIL.3.3.full.jar"));
 
     // ==========================================================================================
 				
