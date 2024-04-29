@@ -40,7 +40,7 @@ meta8.setContent("2 random mathematical roses in spherical dimensions. rho = a +
 head1.addMeta(meta8)
 meta9 = x3d.meta()
 meta9.setName("identifier")
-meta9.setContent("https://coderextreme.net/X3DJSONLD/src/main/data/flowers2.x3d")
+meta9.setContent("https://coderextreme.net/X3DJSONLD/src/main/personal/flowers2.x3d")
 
 head1.addMeta(meta9)
 meta10 = x3d.meta()
@@ -50,7 +50,7 @@ meta10.setContent("manually written")
 head1.addMeta(meta10)
 meta11 = x3d.meta()
 meta11.setName("license")
-meta11.setContent("https://www.web3d.org/x3d/content/examples/license.html")
+meta11.setContent("https://coderextreme.net/X3DJSONLD/LICENSE")
 
 head1.addMeta(meta11)
 

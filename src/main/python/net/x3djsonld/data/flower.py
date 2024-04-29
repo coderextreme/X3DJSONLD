@@ -32,7 +32,7 @@ newModel=X3D(profile='Immersive',version='4.0',
     meta(name='title',content='flower.x3d'),
     meta(name='creator',content='John Carlson'),
     meta(name='generator',content='manual'),
-    meta(name='identifier',content='https://coderextreme.net/X3DJSONLD/src/main/personal/flower.x3d'),
+    meta(name='identifier',content='https://coderextreme.net/X3DJSONLD/src/main/data/flower.x3d'),
     meta(name='description',content='a flower')]),
   Scene=Scene(
     children=[
@@ -86,7 +86,7 @@ function initialize() {
 	     localci.push(-1);
 	}
     }
-    coordIndexes = new MFInt32(localci);
+    coordIndexes = new MFInt32(...localci);
 }
 
 function generateCoordinates(resolution) {
@@ -106,7 +106,7 @@ function generateCoordinates(resolution) {
 	}
 	phi += delta;
      }
-     coordinates = new MFVec3f(localc);
+     coordinates = new MFVec3f(...localc);
 }
 
 function set_fraction(fraction, eventTime) {

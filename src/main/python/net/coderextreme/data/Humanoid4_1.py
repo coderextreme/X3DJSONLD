@@ -191,7 +191,6 @@ HAnimHumanoid43.setInfo(["humanoidVersion=2.0"])
 HAnimHumanoid43.setVersion("2.0")
 #</LOD>
 Coordinate44 = x3d.Coordinate()
-Coordinate44.setUSE("TheSkinCoord")
 
 HAnimHumanoid43.setSkinCoord(Coordinate44)
 HAnimJoint45 = x3d.HAnimJoint()

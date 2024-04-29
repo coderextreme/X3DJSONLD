@@ -75,7 +75,11 @@ ecmascript:
 					function set_cycle(value) {
                                                 old = translation;
 						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);
-                                                keyValue = new MFVec3f([old, translation]);
+                                                var tmpkeyValue = new MFVec3f();
+			    			tmpkeyValue[0] = old;
+			    			tmpkeyValue[1] = translation;
+                                                keyValue = tmpkeyValue;
+			    		
 						// Browser.println(translation);
 					}
 """),
@@ -112,17 +116,29 @@ ecmascript:
 
                 function set_endA(value) {
 		    if (typeof spine === 'undefined') {
-		        spine = new MFVec3f([value, value]);
+		        var tmpspine = new MFVec3f();
+			tmpspine[0] = value;
+			tmpspine[1] = value;
+			spine = tmpspine;
 		    } else {
-		        spine = new MFVec3f([value, spine[1]]);
+		        var tmpspine = new MFVec3f();
+			tmpspine[0] = value;
+			tmpspine[1] = spine[1];
+			spine = tmpspine;
 		    }
                 }
                 
                 function set_endB(value) {
 		    if (typeof spine === 'undefined') {
-		        spine = new MFVec3f([value, value]);
+		        var tmpspine = new MFVec3f();
+			tmpspine[0] = value;
+			tmpspine[1] = value;
+			spine = tmpspine;
 		    } else {
-		        spine = new MFVec3f([spine[0], value]);
+		        var tmpspine = new MFVec3f();
+			tmpspine[0] = spine[0];
+			tmpspine[1] = value;
+			spine = tmpspine;
 		    }
                 }
                 

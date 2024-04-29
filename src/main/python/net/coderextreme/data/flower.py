@@ -20,7 +20,7 @@ meta4.setContent("manual")
 head1.addMeta(meta4)
 meta5 = x3d.meta()
 meta5.setName("identifier")
-meta5.setContent("https://coderextreme.net/X3DJSONLD/src/main/personal/flower.x3d")
+meta5.setContent("https://coderextreme.net/X3DJSONLD/src/main/data/flower.x3d")
 
 head1.addMeta(meta5)
 meta6 = x3d.meta()
@@ -123,7 +123,7 @@ Script18.setSourceCode('''ecmascript:\n"+
 "	     localci.push(-1);\n"+
 "	}\n"+
 "    }\n"+
-"    coordIndexes = new MFInt32(localci);\n"+
+"    coordIndexes = new MFInt32(...localci);\n"+
 "}\n"+
 "\n"+
 "function generateCoordinates(resolution) {\n"+
@@ -143,7 +143,7 @@ Script18.setSourceCode('''ecmascript:\n"+
 "	}\n"+
 "	phi += delta;\n"+
 "     }\n"+
-"     coordinates = new MFVec3f(localc);\n"+
+"     coordinates = new MFVec3f(...localc);\n"+
 "}\n"+
 "\n"+
 "function set_fraction(fraction, eventTime) {\n"+

@@ -70,7 +70,7 @@ meta14.setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit")
 head1.addMeta(meta14)
 meta15 = x3d.meta()
 meta15.setName("identifier")
-meta15.setContent("https://coderextreme.net/X3DJSONLD/src/main/data/flowerproto.x3d")
+meta15.setContent("https://coderextreme.net/X3DJSONLD/src/main/personal/flowerproto.x3d")
 
 head1.addMeta(meta15)
 

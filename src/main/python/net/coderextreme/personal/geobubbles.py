@@ -25,7 +25,7 @@ meta5.setContent("manual")
 head1.addMeta(meta5)
 meta6 = x3d.meta()
 meta6.setName("identifier")
-meta6.setContent("https://coderextreme.net/X3DJSONLD/src/main/data/geobubbles.x3d")
+meta6.setContent("https://coderextreme.net/X3DJSONLD/src/main/personal/geobubbles.x3d")
 
 head1.addMeta(meta6)
 meta7 = x3d.meta()
