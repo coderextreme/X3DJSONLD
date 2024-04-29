@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
 <X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Interchange" version="3.3" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-3.3.xsd" ><head><meta name="title" content="ifscube.x3d"></meta>
-<meta name="identifier" content="http://coderextreme.net/X3DJSONLD/src/main/data/ifscube.x3d"></meta>
+<meta name="identifier" content="http://coderextreme.net/X3DJSONLD/src/main/personal/ifscube.x3d"></meta>
 <meta name="description" content="Template for an Indexed Face Set"></meta>
 <meta name="creator" content="John Carlson"></meta>
 <meta name="created" content="4 April 2017"></meta>
