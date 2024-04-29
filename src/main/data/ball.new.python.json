@@ -7,10 +7,6 @@
 "head": {
 "component": [
 {
-"@name":"Scripting",
-"@level":1
-},
-{
 "@name":"EnvironmentalEffects",
 "@level":3
 },
@@ -62,7 +58,7 @@
 },
 {
 "@name":"translated",
-"@content":"30 March 2024"
+"@content":"29 April 2024"
 },
 {
 "@name":"generator",
@@ -88,17 +84,18 @@
 },
 { "Viewpoint":
 {
-"@description":"Tour Views"
+"@description":"Tour Views",
+"@position":[0,0,12]
 }
 },
 { "Background":
 {
-"@backUrl":["../resources/images/all_probes/stpeters_cross/stpeters_back.png"],
-"@bottomUrl":["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"],
-"@frontUrl":["../resources/images/all_probes/stpeters_cross/stpeters_front.png"],
-"@leftUrl":["../resources/images/all_probes/stpeters_cross/stpeters_left.png"],
-"@rightUrl":["../resources/images/all_probes/stpeters_cross/stpeters_right.png"],
-"@topUrl":["../resources/images/all_probes/stpeters_cross/stpeters_top.png"]
+"@backUrl":["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"],
+"@bottomUrl":["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"],
+"@frontUrl":["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"],
+"@leftUrl":["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"],
+"@rightUrl":["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"],
+"@topUrl":["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]
 }
 },
 { "Transform":
@@ -123,64 +120,6 @@
 "field": [
 {
 "@name":"chromaticDispertion",
-"@accessType":"inputOutput",
-"@type":"SFVec3f",
-"@value":[0.98,1,1.033]
-},
-{
-"@name":"cube",
-"@accessType":"inputOutput",
-"@type":"SFNode",
-"-children":[
-{ "ComposedCubeMapTexture":
-{
-"@USE":"texture"
-}
-}
-]
-},
-{
-"@name":"bias",
-"@accessType":"inputOutput",
-"@type":"SFFloat",
-"@value":0.5
-},
-{
-"@name":"scale",
-"@accessType":"inputOutput",
-"@type":"SFFloat",
-"@value":0.5
-},
-{
-"@name":"power",
-"@accessType":"inputOutput",
-"@type":"SFFloat",
-"@value":2.0
-}
-],
-"-parts":[
-{ "ShaderPart":
-{
-"@url":["../shaders/x3dom.vs"],
-"@type":"VERTEX"
-}
-},
-{ "ShaderPart":
-{
-"@DEF":"common",
-"@type":"FRAGMENT",
-"@url":["../shaders/common.fs"]
-}
-}
-]
-}
-},
-{ "ComposedShader":
-{
-"@language":"GLSL",
-"field": [
-{
-"@name":"chromaticDispertion",
 "@accessType":"initializeOnly",
 "@type":"SFVec3f",
 "@value":[0.98,1,1.033]
@@ -219,14 +158,15 @@
 "-parts":[
 { "ShaderPart":
 {
-"@url":["../shaders/x_ite.vs"],
+"@url":["https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"],
 "@type":"VERTEX"
 }
 },
 { "ShaderPart":
 {
+"@DEF":"commonfs",
 "@type":"FRAGMENT",
-"@url":["../shaders/x_itebubbles.fs"]
+"@url":["https://coderextreme.net/X3DJSONLD/src/main/shaders/commonnew.fs"]
 }
 }
 ]
@@ -240,37 +180,37 @@
 "-backTexture":
 { "ImageTexture":
 {
-"@url":["../resources/images/all_probes/stpeters_cross/stpeters_back.png"]
+"@url":["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]
 }
 },
 "-bottomTexture":
 { "ImageTexture":
 {
-"@url":["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]
+"@url":["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]
 }
 },
 "-frontTexture":
 { "ImageTexture":
 {
-"@url":["../resources/images/all_probes/stpeters_cross/stpeters_front.png"]
+"@url":["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"]
 }
 },
 "-leftTexture":
 { "ImageTexture":
 {
-"@url":["../resources/images/all_probes/stpeters_cross/stpeters_left.png"]
+"@url":["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]
 }
 },
 "-rightTexture":
 { "ImageTexture":
 {
-"@url":["../resources/images/all_probes/stpeters_cross/stpeters_right.png"]
+"@url":["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]
 }
 },
 "-topTexture":
 { "ImageTexture":
 {
-"@url":["../resources/images/all_probes/stpeters_cross/stpeters_top.png"]
+"@url":["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]
 }
 }
 }

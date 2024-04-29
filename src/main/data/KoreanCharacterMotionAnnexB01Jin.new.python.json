@@ -88,7 +88,7 @@ D (informative) Examples of HAnim motion data animation using a Motion object"
 },
 {
 "@name":"translated",
-"@content":"30 March 2024"
+"@content":"29 April 2024"
 },
 {
 "@name":"generator",
@@ -127,6 +127,8 @@ D (informative) Examples of HAnim motion data animation using a Motion object"
 "@name":"humanoid_root",
 "@DEF":"hanim_HumanoidRoot",
 "@center":[0,30.53,-0.7076],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -190,6 +192,8 @@ D (informative) Examples of HAnim motion data animation using a Motion object"
 "@name":"sacroiliac",
 "@DEF":"hanim_sacroiliac",
 "@center":[0,35.8,-0.7076],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -252,6 +256,8 @@ D (informative) Examples of HAnim motion data animation using a Motion object"
 "@name":"l_hip",
 "@DEF":"hanim_l_hip",
 "@center":[4.207,32.02,-0.8155],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -314,6 +320,8 @@ D (informative) Examples of HAnim motion data animation using a Motion object"
 "@name":"l_knee",
 "@DEF":"hanim_l_knee",
 "@center":[4.116,17.26,-0.8639],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -376,6 +384,8 @@ D (informative) Examples of HAnim motion data animation using a Motion object"
 "@name":"l_talocrural",
 "@DEF":"hanim_l_talocrural",
 "@center":[3.854,3.939,-0.7038],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -438,6 +448,8 @@ D (informative) Examples of HAnim motion data animation using a Motion object"
 "@name":"l_metatarsophalangeal",
 "@DEF":"hanim_l_metatarsophalangeal",
 "@center":[3.854,3.64,0.7402],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -512,6 +524,8 @@ D (informative) Examples of HAnim motion data animation using a Motion object"
 "@name":"r_hip",
 "@DEF":"hanim_r_hip",
 "@center":[-4.207,32.02,-0.8155],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -574,6 +588,8 @@ D (informative) Examples of HAnim motion data animation using a Motion object"
 "@name":"r_knee",
 "@DEF":"hanim_r_knee",
 "@center":[-4.116,17.26,-0.8639],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -636,6 +652,8 @@ D (informative) Examples of HAnim motion data animation using a Motion object"
 "@name":"r_talocrural",
 "@DEF":"hanim_r_talocrural",
 "@center":[-3.854,3.939,-0.7038],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -698,6 +716,8 @@ D (informative) Examples of HAnim motion data animation using a Motion object"
 "@name":"r_metatarsophalangeal",
 "@DEF":"hanim_r_metatarsophalangeal",
 "@center":[-3.854,3.64,0.7402],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -772,6 +792,8 @@ D (informative) Examples of HAnim motion data animation using a Motion object"
 "@name":"vl5",
 "@DEF":"hanim_vl5",
 "@center":[0,40.23,-0.8527],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -834,6 +856,8 @@ D (informative) Examples of HAnim motion data animation using a Motion object"
 "@name":"skullbase",
 "@DEF":"hanim_skullbase",
 "@center":[0,57.43,-0.6863],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -899,6 +923,8 @@ D (informative) Examples of HAnim motion data animation using a Motion object"
 "@name":"l_shoulder",
 "@DEF":"hanim_l_shoulder",
 "@center":[5.975,52,-0.1452],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -961,6 +987,8 @@ D (informative) Examples of HAnim motion data animation using a Motion object"
 "@name":"l_elbow",
 "@DEF":"hanim_l_elbow",
 "@center":[8.093,40.38,-0.2502],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -1023,6 +1051,8 @@ D (informative) Examples of HAnim motion data animation using a Motion object"
 "@name":"l_radiocarpal",
 "@DEF":"hanim_l_radiocarpal",
 "@center":[7.808,31.46,-0.05849],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -1094,6 +1124,8 @@ D (informative) Examples of HAnim motion data animation using a Motion object"
 "@name":"r_shoulder",
 "@DEF":"hanim_r_shoulder",
 "@center":[-5.975,52,-0.1452],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -1156,6 +1188,8 @@ D (informative) Examples of HAnim motion data animation using a Motion object"
 "@name":"r_elbow",
 "@DEF":"hanim_r_elbow",
 "@center":[-8.093,40.38,-0.2502],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -1218,6 +1252,8 @@ D (informative) Examples of HAnim motion data animation using a Motion object"
 "@name":"r_radiocarpal",
 "@DEF":"hanim_r_radiocarpal",
 "@center":[-7.808,31.46,-0.05849],
+"@llimit":[0,0,0],
+"@ulimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
