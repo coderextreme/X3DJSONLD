@@ -328,6 +328,7 @@ Teapot.prototype = {
     {
 		var testObject = new Teapot();
 		console.log ("Teapot execution self-validation test results: " + testObject.validateSelf());
+		process.exit();
 	}
 }
 new Teapot().main();

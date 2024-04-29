@@ -23,7 +23,7 @@ var ProtoInstance3 = null;
         .addMeta(new autoclass.meta().setName("title").setContent("BoxEm.x3d"))
         .addMeta(new autoclass.meta().setName("creator").setContent("John Carlson"))
         .addMeta(new autoclass.meta().setName("generator").setContent("manual"))
-        .addMeta(new autoclass.meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/box.x3d"))
+        .addMeta(new autoclass.meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/personal/box.x3d"))
         .addMeta(new autoclass.meta().setName("description").setContent("3 boxes")))
       .setScene(new autoclass.Scene()
         .addChild(new autoclass.NavigationInfo().setType(java.newArray("java.lang.String", ["EXAMINE"])))

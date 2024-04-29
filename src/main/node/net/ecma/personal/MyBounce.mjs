@@ -51,7 +51,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("identifier"),
-              content : new SFString("https://coderextreme.net/X3DJSONLD/src/main/data/SFVec3f.x3d")})])})),
+              content : new SFString("https://coderextreme.net/X3DJSONLD/src/main/personal/SFVec3f.x3d")})])})),
       Scene : new SFNode(
         new Scene({
           children : new MFNode([

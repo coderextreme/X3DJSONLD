@@ -100,7 +100,7 @@ ProtoInstance ProtoInstance6 = null;
 "					function set_cycle(value) {\n"+
 "                                                old = translation;\n"+
 "						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);\n"+
-"                                                keyValue = new MFVec3f([old, translation]);\n"+
+"                                                keyValue = new MFVec3f(...[old, translation]);\n"+
 "						// Browser.println(translation);\n"+
 "					}"))
               .addChild(new TimeSensor().setDEF("nodeClock").setCycleInterval(3).setLoop(true))
@@ -108,7 +108,7 @@ ProtoInstance ProtoInstance6 = null;
               .addChild(new ROUTE().setFromNode("nodeClock").setFromField("fraction_changed").setToNode("NodePosition").setToField("set_fraction"))
               .addChild(new ROUTE().setFromNode("MoveBall").setFromField("keyValue").setToNode("NodePosition").setToField("keyValue"))
               .addChild(new ROUTE().setFromNode("NodePosition").setFromField("value_changed").setToNode("transform").setToField("set_translation")))))
-        .addChild(new ProtoDeclare().setName("cyl")
+        .addChild(new ProtoDeclare().setName("cylinder")
           .setProtoInterface(new ProtoInterface()
             .addField(new field().setType("SFVec3f").setName("set_positionA").setAccessType(field.ACCESSTYPE_INPUTONLY))
             .addField(new field().setType("SFVec3f").setName("set_positionB").setAccessType(field.ACCESSTYPE_INPUTONLY)))
@@ -129,17 +129,17 @@ ProtoInstance ProtoInstance6 = null;
 "\n"+
 "                function set_endA(value) {\n"+
 "		    if (typeof spine === 'undefined') {\n"+
-"		        spine = new MFVec3f([value, value]);\n"+
+"		        spine = new MFVec3f(...[value, value]);\n"+
 "		    } else {\n"+
-"		        spine = new MFVec3f([value, spine[1]]);\n"+
+"		        spine = new MFVec3f(...[value, spine[1]]);\n"+
 "		    }\n"+
 "                }\n"+
 "\n"+
 "                function set_endB(value) {\n"+
 "		    if (typeof spine === 'undefined') {\n"+
-"		        spine = new MFVec3f([value, value]);\n"+
+"		        spine = new MFVec3f(...[value, value]);\n"+
 "		    } else {\n"+
-"		        spine = new MFVec3f([spine[0], value]);\n"+
+"		        spine = new MFVec3f(...[spine[0], value]);\n"+
 "		    }\n"+
 "                }\n"+
 "\n"+
@@ -153,9 +153,9 @@ ProtoInstance ProtoInstance6 = null;
           .addChild(ProtoInstance1 = new ProtoInstance().setName("node").setDEF("nodeB"))
           .addChild(ProtoInstance2 = new ProtoInstance().setName("node").setDEF("nodeC"))
           .addChild(ProtoInstance3 = new ProtoInstance().setName("node").setDEF("nodeD"))
-          .addChild(ProtoInstance4 = new ProtoInstance().setName("cyl").setDEF("linkA"))
-          .addChild(ProtoInstance5 = new ProtoInstance().setName("cyl").setDEF("linkB"))
-          .addChild(ProtoInstance6 = new ProtoInstance().setName("cyl").setDEF("linkC")))
+          .addChild(ProtoInstance4 = new ProtoInstance().setName("cylinder").setDEF("linkA"))
+          .addChild(ProtoInstance5 = new ProtoInstance().setName("cylinder").setDEF("linkB"))
+          .addChild(ProtoInstance6 = new ProtoInstance().setName("cylinder").setDEF("linkC")))
         .addChild(new Script().setDEF("clickHandler")
           .addField(new field().setType("SFInt32").setName("counter").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
           .addField(new field().setType("SFNode").setName("node_changed").setAccessType(field.ACCESSTYPE_OUTPUTONLY))

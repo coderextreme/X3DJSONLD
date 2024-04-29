@@ -233,6 +233,7 @@ SimpleShader.prototype = {
     {
 		var testObject = new SimpleShader();
 		console.log ("SimpleShader execution self-validation test results: " + testObject.validateSelf());
+		process.exit();
 	}
 }
 new SimpleShader().main();

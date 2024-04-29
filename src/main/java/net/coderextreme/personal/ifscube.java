@@ -59,7 +59,7 @@ public class ifscube implements X3DRoots {
       X3D X3D0 =  new X3D().setProfile("Interchange").setVersion("3.3")
       .setHead(new head()
         .addMeta(new meta().setName("title").setContent("ifscube.x3d"))
-        .addMeta(new meta().setName("identifier").setContent("http://coderextreme.net/X3DJSONLD/src/main/data/ifscube.x3d"))
+        .addMeta(new meta().setName("identifier").setContent("http://coderextreme.net/X3DJSONLD/src/main/personal/ifscube.x3d"))
         .addMeta(new meta().setName("description").setContent("Template for an Indexed Face Set"))
         .addMeta(new meta().setName("creator").setContent("John Carlson"))
         .addMeta(new meta().setName("created").setContent("4 April 2017")))

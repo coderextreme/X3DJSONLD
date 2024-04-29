@@ -35,7 +35,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("identifier"),
-              content : new SFString("http://coderextreme.net/X3DJSONLD/src/main/data/ifscubeworks.x3d")}),
+              content : new SFString("http://coderextreme.net/X3DJSONLD/src/main/personal/ifscubeworks.x3d")}),
 
             new meta({
               name : new SFString("description"),
@@ -51,7 +51,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("license"),
-              content : new SFString("https://www.web3d.org/x3d/content/examples/license.html")}),
+              content : new SFString("https://coderextreme.net/X3DJSONLD/LICENSE")}),
 
             new meta({
               name : new SFString("generator"),

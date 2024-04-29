@@ -62,7 +62,7 @@ public class geobubbles implements X3DRoots {
         .addMeta(new meta().setName("title").setContent("geobubbles.x3d"))
         .addMeta(new meta().setName("creator").setContent("John Carlson"))
         .addMeta(new meta().setName("generator").setContent("manual"))
-        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/geobubbles.x3d"))
+        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/personal/geobubbles.x3d"))
         .addMeta(new meta().setName("description").setContent("geo bubbles")))
       .setScene(new Scene()
         .addComments("Viewpoint DEF='Tour' position='0 0 4' orientation='1 0 0 0' description='Tour Views'/")

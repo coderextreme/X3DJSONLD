@@ -169,7 +169,9 @@ public class bumpyfreewrlsliders implements X3DRoots {
             .addComments("DIS multiuser facilities")
             .addChild(new DISEntityManager().setDEF("EntityManager").setNetworkMode("networkReader")
               .addChild(new DISEntityTypeMapping().setCategory(77).setSpecific(1).setUrl(new MFString16().getArray()))
-              .addChild(new DISEntityTypeMapping().setCategory(77).setSpecific(2).setUrl(new MFString17().getArray())))
+              .addChild(new DISEntityTypeMapping().setCategory(77).setSpecific(2).setUrl(new MFString17().getArray()))
+              .addChild(new DISEntityTypeMapping().setCategory(77).setSpecific(3).setUrl(new MFString18().getArray()))
+              .addChild(new DISEntityTypeMapping().setCategory(77).setSpecific(4).setUrl(new MFString19().getArray())))
             .addChild(new Collision().setEnabled(false)
               .addChild(new Group().setDEF("AvatarHolder")))
             .addChild(new ROUTE().setFromField("addedEntities").setFromNode("EntityManager").setToField("addChildren").setToNode("AvatarHolder"))
@@ -340,8 +342,8 @@ public class bumpyfreewrlsliders implements X3DRoots {
             .addChild(new ROUTE().setFromField("dValue").setFromNode("dValueTransformerScript").setToField("d").setToNode("freewrlShader"))
             .addChild(new ROUTE().setFromField("pdeltaValue").setFromNode("pdeltaValueTransformerScript").setToField("pdelta").setToNode("freewrlShader"))
             .addChild(new ROUTE().setFromField("tdeltaValue").setFromNode("tdeltaValueTransformerScript").setToField("tdelta").setToNode("freewrlShader"))
-            .setLayout(new Layout().setAlign(new MFString18().getArray()).setOffset(new MFFloat19().getArray()).setOffsetUnits(new MFString20().getArray()).setScaleMode(new MFString21().getArray()).setSize(new MFFloat22().getArray()).setSizeUnits(new MFString23().getArray()))
-            .setViewport(new Viewport().setClipBoundary(new MFFloat24().getArray())))))      ;
+            .setLayout(new Layout().setAlign(new MFString20().getArray()).setOffset(new MFFloat21().getArray()).setOffsetUnits(new MFString22().getArray()).setScaleMode(new MFString23().getArray()).setSize(new MFFloat24().getArray()).setSizeUnits(new MFString25().getArray()))
+            .setViewport(new Viewport().setClipBoundary(new MFFloat26().getArray())))))      ;
     return X3D0;
     }
 private class MFInt320 {
@@ -426,45 +428,55 @@ private class MFString15 {
 }
 private class MFString16 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../data/Leif8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Leif8Final.x3d"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../data/Leif8Final.x3dv","https://coderextreme.net/X3DJSONLD/src/main/data/Leif8Final.x3dv"});
   }
 }
 private class MFString17 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../data/Lily8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Leif8Final.x3d"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../data/Lily8Final.x3dv","https://coderextreme.net/X3DJSONLD/src/main/data/Lily8Final.x3dv"});
   }
 }
 private class MFString18 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"RIGHT","BOTTOM"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../data/Tufani8Final.x3dv","https://coderextreme.net/X3DJSONLD/src/main/data/Tufani8Final.x3dv"});
   }
 }
-private class MFFloat19 {
-  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0});
+private class MFString19 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../data/Gramps8Final.x3dv","https://coderextreme.net/X3DJSONLD/src/main/data/Gramps8Final.x3dv"});
   }
 }
 private class MFString20 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"WORLD","WORLD"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"RIGHT","BOTTOM"});
   }
 }
-private class MFString21 {
-  private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"NONE","NONE"});
-  }
-}
-private class MFFloat22 {
+private class MFFloat21 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0.4,1});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0});
+  }
+}
+private class MFString22 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"WORLD","WORLD"});
   }
 }
 private class MFString23 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"WORLD","WORLD"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"NONE","NONE"});
   }
 }
 private class MFFloat24 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0.4,1});
+  }
+}
+private class MFString25 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"WORLD","WORLD"});
+  }
+}
+private class MFFloat26 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
     return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,1,0,1});
   }

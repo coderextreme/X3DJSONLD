@@ -20,7 +20,7 @@ ConfigurationProperties.setStripDefaultAttributes(true);
         .addMeta(new autoclass.meta().setName("title").setContent("MyBounce.x3d"))
         .addMeta(new autoclass.meta().setName("creator").setContent("John Carlson"))
         .addMeta(new autoclass.meta().setName("description").setContent("3 prismatic spheres"))
-        .addMeta(new autoclass.meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/SFVec3f.x3d")))
+        .addMeta(new autoclass.meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/personal/SFVec3f.x3d")))
       .setScene(new autoclass.Scene()
         .addChild(new autoclass.NavigationInfo())
         .addChild(new autoclass.Transform().setDEF("transform")

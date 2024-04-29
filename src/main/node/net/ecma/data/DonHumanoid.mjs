@@ -42,6 +42,9 @@ var HAnimJoint = require('./x3d.mjs');
 var HAnimSegment = require('./x3d.mjs');
 var HAnimSite = require('./x3d.mjs');
 var TouchSensor = require('./x3d.mjs');
+var Billboard = require('./x3d.mjs');
+var Text = require('./x3d.mjs');
+var FontStyle = require('./x3d.mjs');
 var SFRotation = require('./x3d.mjs');
 var X3D0 =  new X3D({
 
@@ -56,11 +59,11 @@ var X3D0 =  new X3D({
           meta : new MFNode([
             new meta({
               name : new SFString("title"),
-              content : new SFString("DonHumanoid.x3d")}),
+              content : new SFString("JohnBoy.x3d")}),
 
             new meta({
               name : new SFString("identifier"),
-              content : new SFString("http://www.web3d.org/x3d/content/examples/HumanoidAnimation/DonHumanoid.x3d")}),
+              content : new SFString("http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d")}),
 
             new meta({
               name : new SFString("description"),
@@ -112,22 +115,6 @@ var X3D0 =  new X3D({
                 new Transform({
                   children : new MFNode([
                     new Transform({
-                      translation : new SFVec3f([0,2,0]),
-                      child : new SFNode(
-                        new Shape({
-                          DEF : new SFString("HAnimRootShape"),
-                          geometry : new SFNode(
-                            new Sphere({
-                              radius : new SFFloat(0.02)})),
-                          appearance : new SFNode(
-                            new Appearance({
-                              material : new SFNode(
-                                new Material({
-                                  DEF : new SFString("HAnimRootMaterial"),
-                                  diffuseColor : new SFColor([0.8,0,0]),
-                                  transparency : new SFFloat(0.3)}))}))}))}),
-
-                    new Transform({
                       translation : new SFVec3f([0,2.1,0]),
                       child : new SFNode(
                         new Shape({
@@ -140,8 +127,7 @@ var X3D0 =  new X3D({
                               material : new SFNode(
                                 new Material({
                                   DEF : new SFString("HAnimJointMaterial"),
-                                  diffuseColor : new SFColor([0,0,0.8]),
-                                  transparency : new SFFloat(0.3)}))}))}))}),
+                                  diffuseColor : new SFColor([0,0,0])}))}))}))}),
 
                     new Transform({
                       translation : new SFVec3f([0,2.05,0]),
@@ -154,7 +140,7 @@ var X3D0 =  new X3D({
                               color : new SFNode(
                                 new ColorRGBA({
                                   DEF : new SFString("HAnimSegmentLineColorRGBA"),
-                                  color : new MFColorRGBA([1,1,0,1,1,1,0,0.1])})),
+                                  color : new MFColorRGBA([1,1,0,0,1,1,0,0])})),
                               coord : new SFNode(
                                 new Coordinate({
                                   point : new MFVec3f([-0.05,0,0,0.05,0,0])}))}))}))}),
@@ -181,13 +167,15 @@ var X3D0 =  new X3D({
                             new Appearance({
                               material : new SFNode(
                                 new Material({
-                                  diffuseColor : new SFColor([1,1,0]),
-                                  transparency : new SFFloat(0.3)}))}))}))})])})])}),
+                                  diffuseColor : new SFColor([1,1,1]),
+                                  transparency : new SFFloat(1)}))}))}))})])})])}),
 
             new NavigationInfo({
               speed : new SFFloat(1.5)}),
 
             new Viewpoint({
+              position : new SFVec3f([0,1,3]),
+              centerOfRotation : new SFVec3f([0,1,0]),
               description : new SFString("default")}),
 
             new HAnimHumanoid({
@@ -218,14 +206,14 @@ var X3D0 =  new X3D({
                         new ImageTexture({
                           DEF : new SFString("zBlueSpiralBkg2"),
                           description : new SFString("Blue Spiral Pattern"),
-                          url : new MFString(["./data/zBlueSpiralBkg2.gif","zBlueSpiralBkg2.gif","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/zBlueSpiralBkg2.gif"])})),
+                          url : new MFString(["../data/zBlueSpiralBkg2.gif","zBlueSpiralBkg2.gif","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/zBlueSpiralBkg2.gif"])})),
                       material : new SFNode(
                         new Material({
                           DEF : new SFString("SkinMaterial"),
                           ambientIntensity : new SFFloat(0.6),
                           diffuseColor : new SFColor([1,1,1]),
                           shininess : new SFFloat(0.6),
-                          transparency : new SFFloat(0.2)}))}))})),
+                          transparency : new SFFloat(1)}))}))})),
               skinCoord : new SFNode(
                 new Coordinate({
                   USE : new SFString("TheSkinCoord")})),
@@ -260,115 +248,6 @@ var X3D0 =  new X3D({
                                 new ColorRGBA({
                                   USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
 
-                        new HAnimSite({
-                          name : new SFString("buttocks_standing_wall_contact_point"),
-                          DEF : new SFString("hanim_buttocks_standing_wall_contact_point"),
-                          children : new MFNode([
-                            new TouchSensor({
-                              description : new SFString("HAnimSite buttocks_standing_wall_contact_point")}),
-
-                            new Shape({
-                              USE : new SFString("HAnimSiteShape")})])}),
-
-                        new HAnimSite({
-                          name : new SFString("crotch"),
-                          DEF : new SFString("hanim_crotch"),
-                          translation : new SFVec3f([0.0034,0.8266,0.0257]),
-                          children : new MFNode([
-                            new TouchSensor({
-                              description : new SFString("HAnimSite crotch")}),
-
-                            new Shape({
-                              USE : new SFString("HAnimSiteShape")})])}),
-
-                        new HAnimSite({
-                          name : new SFString("l_asis"),
-                          DEF : new SFString("hanim_l_asis"),
-                          translation : new SFVec3f([0.0925,0.9983,0.1052]),
-                          children : new MFNode([
-                            new TouchSensor({
-                              description : new SFString("HAnimSite l_asis")}),
-
-                            new Shape({
-                              USE : new SFString("HAnimSiteShape")})])}),
-
-                        new HAnimSite({
-                          name : new SFString("l_iliocristale"),
-                          DEF : new SFString("hanim_l_iliocristale"),
-                          translation : new SFVec3f([0.1612,1.0537,0.0008]),
-                          children : new MFNode([
-                            new TouchSensor({
-                              description : new SFString("HAnimSite l_iliocristale")}),
-
-                            new Shape({
-                              USE : new SFString("HAnimSiteShape")})])}),
-
-                        new HAnimSite({
-                          name : new SFString("l_psis"),
-                          DEF : new SFString("hanim_l_psis"),
-                          translation : new SFVec3f([0.0774,1.019,-0.1151]),
-                          children : new MFNode([
-                            new TouchSensor({
-                              description : new SFString("HAnimSite l_psis")}),
-
-                            new Shape({
-                              USE : new SFString("HAnimSiteShape")})])}),
-
-                        new HAnimSite({
-                          name : new SFString("l_trochanterion"),
-                          DEF : new SFString("hanim_l_trochanterion"),
-                          translation : new SFVec3f([0.1677,0.8336,0.0303]),
-                          children : new MFNode([
-                            new TouchSensor({
-                              description : new SFString("HAnimSite l_trochanterion")}),
-
-                            new Shape({
-                              USE : new SFString("HAnimSiteShape")})])}),
-
-                        new HAnimSite({
-                          name : new SFString("r_asis"),
-                          DEF : new SFString("hanim_r_asis"),
-                          translation : new SFVec3f([-0.0887,1.0021,0.1112]),
-                          children : new MFNode([
-                            new TouchSensor({
-                              description : new SFString("HAnimSite r_asis")}),
-
-                            new Shape({
-                              USE : new SFString("HAnimSiteShape")})])}),
-
-                        new HAnimSite({
-                          name : new SFString("r_iliocristale"),
-                          DEF : new SFString("hanim_r_iliocristale"),
-                          translation : new SFVec3f([-0.1525,1.0628,0.0035]),
-                          children : new MFNode([
-                            new TouchSensor({
-                              description : new SFString("HAnimSite r_iliocristale")}),
-
-                            new Shape({
-                              USE : new SFString("HAnimSiteShape")})])}),
-
-                        new HAnimSite({
-                          name : new SFString("r_psis"),
-                          DEF : new SFString("hanim_r_psis"),
-                          translation : new SFVec3f([-0.0716,1.019,-0.1138]),
-                          children : new MFNode([
-                            new TouchSensor({
-                              description : new SFString("HAnimSite r_psis")}),
-
-                            new Shape({
-                              USE : new SFString("HAnimSiteShape")})])}),
-
-                        new HAnimSite({
-                          name : new SFString("r_trochanterion"),
-                          DEF : new SFString("hanim_r_trochanterion"),
-                          translation : new SFVec3f([-0.1689,0.8419,0.0352]),
-                          children : new MFNode([
-                            new TouchSensor({
-                              description : new SFString("HAnimSite r_trochanterion")}),
-
-                            new Shape({
-                              USE : new SFString("HAnimSiteShape")})])}),
-
                         new Shape({
                           geometry : new SFNode(
                             new LineSet({
@@ -379,39 +258,7 @@ var X3D0 =  new X3D({
                               /*from humanoid_root to vl5 vertices 2*/
                               color : new SFNode(
                                 new ColorRGBA({
-                                  USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
-
-                        new HAnimSite({
-                          name : new SFString("navel"),
-                          DEF : new SFString("hanim_navel"),
-                          translation : new SFVec3f([0.0069,1.0966,0.1017]),
-                          children : new MFNode([
-                            new TouchSensor({
-                              description : new SFString("HAnimSite navel")}),
-
-                            new Shape({
-                              USE : new SFString("HAnimSiteShape")})])}),
-
-                        new HAnimSite({
-                          name : new SFString("waist_preferred_anterior"),
-                          DEF : new SFString("hanim_waist_preferred_anterior"),
-                          children : new MFNode([
-                            new TouchSensor({
-                              description : new SFString("HAnimSite waist_preferred_anterior")}),
-
-                            new Shape({
-                              USE : new SFString("HAnimSiteShape")})])}),
-
-                        new HAnimSite({
-                          name : new SFString("waist_preferred_posterior"),
-                          DEF : new SFString("hanim_waist_preferred_posterior"),
-                          translation : new SFVec3f([0.29,1.0915,-0.1091]),
-                          children : new MFNode([
-                            new TouchSensor({
-                              description : new SFString("HAnimSite waist_preferred_posterior")}),
-
-                            new Shape({
-                              USE : new SFString("HAnimSiteShape")})])})])}),
+                                  USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
 
                     new HAnimJoint({
                       name : new SFString("sacroiliac"),
@@ -444,47 +291,213 @@ var X3D0 =  new X3D({
                                       USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
 
                             new HAnimSite({
-                              name : new SFString("l_femoral_lateral_epicondyles"),
-                              DEF : new SFString("hanim_l_femoral_lateral_epicondyles"),
-                              translation : new SFVec3f([0.1598,0.4967,0.0297]),
+                              name : new SFString("buttocks_standing_wall_contact_point"),
+                              DEF : new SFString("hanim_buttocks_standing_wall_contact_point"),
                               children : new MFNode([
                                 new TouchSensor({
-                                  description : new SFString("HAnimSite l_femoral_lateral_epicondyles")}),
+                                  description : new SFString("HAnimSite 93 buttocks_standing_wall_contact_point")}),
 
                                 new Shape({
-                                  USE : new SFString("HAnimSiteShape")})])}),
+                                  USE : new SFString("HAnimSiteShape")}),
+
+                                new Billboard({
+                                  children : new MFNode([
+                                    new Shape({
+                                      geometry : new SFNode(
+                                        new Text({
+                                          string : new MFString(["93"]),
+                                          fontStyle : new SFNode(
+                                            new FontStyle({
+                                              size : new SFFloat(0.035)}))}))})])})])}),
 
                             new HAnimSite({
-                              name : new SFString("l_femoral_medial_epicondyles"),
-                              DEF : new SFString("hanim_l_femoral_medial_epicondyles"),
-                              translation : new SFVec3f([0.0398,0.4946,0.0303]),
+                              name : new SFString("crotch"),
+                              DEF : new SFString("hanim_crotch"),
+                              translation : new SFVec3f([0.0034,0.8266,0.0257]),
                               children : new MFNode([
                                 new TouchSensor({
-                                  description : new SFString("HAnimSite l_femoral_medial_epicondyles")}),
+                                  description : new SFString("HAnimSite 38 crotch")}),
 
                                 new Shape({
-                                  USE : new SFString("HAnimSiteShape")})])}),
+                                  USE : new SFString("HAnimSiteShape")}),
+
+                                new Billboard({
+                                  children : new MFNode([
+                                    new Shape({
+                                      geometry : new SFNode(
+                                        new Text({
+                                          string : new MFString(["38"]),
+                                          fontStyle : new SFNode(
+                                            new FontStyle({
+                                              size : new SFFloat(0.035)}))}))})])})])}),
 
                             new HAnimSite({
-                              name : new SFString("l_knee_crease"),
-                              DEF : new SFString("hanim_l_knee_crease"),
-                              translation : new SFVec3f([0.0993,0.4881,-0.0309]),
+                              name : new SFString("l_asis"),
+                              DEF : new SFString("hanim_l_asis"),
+                              translation : new SFVec3f([0.0925,0.9983,0.1052]),
                               children : new MFNode([
                                 new TouchSensor({
-                                  description : new SFString("HAnimSite l_knee_crease")}),
+                                  description : new SFString("HAnimSite 32 l_asis")}),
 
                                 new Shape({
-                                  USE : new SFString("HAnimSiteShape")})])}),
+                                  USE : new SFString("HAnimSiteShape")}),
+
+                                new Billboard({
+                                  children : new MFNode([
+                                    new Shape({
+                                      geometry : new SFNode(
+                                        new Text({
+                                          string : new MFString(["32"]),
+                                          fontStyle : new SFNode(
+                                            new FontStyle({
+                                              size : new SFFloat(0.035)}))}))})])})])}),
 
                             new HAnimSite({
-                              name : new SFString("l_suprapatella"),
-                              DEF : new SFString("hanim_l_suprapatella"),
+                              name : new SFString("l_iliocristale"),
+                              DEF : new SFString("hanim_l_iliocristale"),
+                              translation : new SFVec3f([0.1612,1.0537,0.0008]),
                               children : new MFNode([
                                 new TouchSensor({
-                                  description : new SFString("HAnimSite l_suprapatella")}),
+                                  description : new SFString("HAnimSite 33 l_iliocristale")}),
 
                                 new Shape({
-                                  USE : new SFString("HAnimSiteShape")})])}),
+                                  USE : new SFString("HAnimSiteShape")}),
+
+                                new Billboard({
+                                  children : new MFNode([
+                                    new Shape({
+                                      geometry : new SFNode(
+                                        new Text({
+                                          string : new MFString(["33"]),
+                                          fontStyle : new SFNode(
+                                            new FontStyle({
+                                              size : new SFFloat(0.035)}))}))})])})])}),
+
+                            new HAnimSite({
+                              name : new SFString("l_psis"),
+                              DEF : new SFString("hanim_l_psis"),
+                              translation : new SFVec3f([0.0774,1.019,-0.1151]),
+                              children : new MFNode([
+                                new TouchSensor({
+                                  description : new SFString("HAnimSite 34 l_psis")}),
+
+                                new Shape({
+                                  USE : new SFString("HAnimSiteShape")}),
+
+                                new Billboard({
+                                  children : new MFNode([
+                                    new Shape({
+                                      geometry : new SFNode(
+                                        new Text({
+                                          string : new MFString(["34"]),
+                                          fontStyle : new SFNode(
+                                            new FontStyle({
+                                              size : new SFFloat(0.035)}))}))})])})])}),
+
+                            new HAnimSite({
+                              name : new SFString("l_trochanterion"),
+                              DEF : new SFString("hanim_l_trochanterion"),
+                              translation : new SFVec3f([0.1677,0.8336,0.0303]),
+                              children : new MFNode([
+                                new TouchSensor({
+                                  description : new SFString("HAnimSite 42 l_trochanterion")}),
+
+                                new Shape({
+                                  USE : new SFString("HAnimSiteShape")}),
+
+                                new Billboard({
+                                  children : new MFNode([
+                                    new Shape({
+                                      geometry : new SFNode(
+                                        new Text({
+                                          string : new MFString(["42"]),
+                                          fontStyle : new SFNode(
+                                            new FontStyle({
+                                              size : new SFFloat(0.035)}))}))})])})])}),
+
+                            new HAnimSite({
+                              name : new SFString("r_asis"),
+                              DEF : new SFString("hanim_r_asis"),
+                              translation : new SFVec3f([-0.0887,1.0021,0.1112]),
+                              children : new MFNode([
+                                new TouchSensor({
+                                  description : new SFString("HAnimSite 35 r_asis")}),
+
+                                new Shape({
+                                  USE : new SFString("HAnimSiteShape")}),
+
+                                new Billboard({
+                                  children : new MFNode([
+                                    new Shape({
+                                      geometry : new SFNode(
+                                        new Text({
+                                          string : new MFString(["35"]),
+                                          fontStyle : new SFNode(
+                                            new FontStyle({
+                                              size : new SFFloat(0.035)}))}))})])})])}),
+
+                            new HAnimSite({
+                              name : new SFString("r_iliocristale"),
+                              DEF : new SFString("hanim_r_iliocristale"),
+                              translation : new SFVec3f([-0.1525,1.0628,0.0035]),
+                              children : new MFNode([
+                                new TouchSensor({
+                                  description : new SFString("HAnimSite 36 r_iliocristale")}),
+
+                                new Shape({
+                                  USE : new SFString("HAnimSiteShape")}),
+
+                                new Billboard({
+                                  children : new MFNode([
+                                    new Shape({
+                                      geometry : new SFNode(
+                                        new Text({
+                                          string : new MFString(["36"]),
+                                          fontStyle : new SFNode(
+                                            new FontStyle({
+                                              size : new SFFloat(0.035)}))}))})])})])}),
+
+                            new HAnimSite({
+                              name : new SFString("r_psis"),
+                              DEF : new SFString("hanim_r_psis"),
+                              translation : new SFVec3f([-0.0716,1.019,-0.1138]),
+                              children : new MFNode([
+                                new TouchSensor({
+                                  description : new SFString("HAnimSite 37 r_psis")}),
+
+                                new Shape({
+                                  USE : new SFString("HAnimSiteShape")}),
+
+                                new Billboard({
+                                  children : new MFNode([
+                                    new Shape({
+                                      geometry : new SFNode(
+                                        new Text({
+                                          string : new MFString(["37"]),
+                                          fontStyle : new SFNode(
+                                            new FontStyle({
+                                              size : new SFFloat(0.035)}))}))})])})])}),
+
+                            new HAnimSite({
+                              name : new SFString("r_trochanterion"),
+                              DEF : new SFString("hanim_r_trochanterion"),
+                              translation : new SFVec3f([-0.1689,0.8419,0.0352]),
+                              children : new MFNode([
+                                new TouchSensor({
+                                  description : new SFString("HAnimSite 46 r_trochanterion")}),
+
+                                new Shape({
+                                  USE : new SFString("HAnimSiteShape")}),
+
+                                new Billboard({
+                                  children : new MFNode([
+                                    new Shape({
+                                      geometry : new SFNode(
+                                        new Text({
+                                          string : new MFString(["46"]),
+                                          fontStyle : new SFNode(
+                                            new FontStyle({
+                                              size : new SFFloat(0.035)}))}))})])})])}),
 
                             new Shape({
                               geometry : new SFNode(
@@ -496,50 +509,7 @@ var X3D0 =  new X3D({
                                   /*from sacroiliac to r_hip vertices 2*/
                                   color : new SFNode(
                                     new ColorRGBA({
-                                      USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
-
-                            new HAnimSite({
-                              name : new SFString("r_femoral_lateral_epicondyles"),
-                              DEF : new SFString("hanim_r_femoral_lateral_epicondyles"),
-                              translation : new SFVec3f([-0.1421,0.4992,0.031]),
-                              children : new MFNode([
-                                new TouchSensor({
-                                  description : new SFString("HAnimSite r_femoral_lateral_epicondyles")}),
-
-                                new Shape({
-                                  USE : new SFString("HAnimSiteShape")})])}),
-
-                            new HAnimSite({
-                              name : new SFString("r_femoral_medial_epicondyles"),
-                              DEF : new SFString("hanim_r_femoral_medial_epicondyles"),
-                              translation : new SFVec3f([-0.0221,0.5014,0.0289]),
-                              children : new MFNode([
-                                new TouchSensor({
-                                  description : new SFString("HAnimSite r_femoral_medial_epicondyles")}),
-
-                                new Shape({
-                                  USE : new SFString("HAnimSiteShape")})])}),
-
-                            new HAnimSite({
-                              name : new SFString("r_knee_crease"),
-                              DEF : new SFString("hanim_r_knee_crease"),
-                              translation : new SFVec3f([-0.0825,0.4932,-0.0326]),
-                              children : new MFNode([
-                                new TouchSensor({
-                                  description : new SFString("HAnimSite r_knee_crease")}),
-
-                                new Shape({
-                                  USE : new SFString("HAnimSiteShape")})])}),
-
-                            new HAnimSite({
-                              name : new SFString("r_suprapatella"),
-                              DEF : new SFString("hanim_r_suprapatella"),
-                              children : new MFNode([
-                                new TouchSensor({
-                                  description : new SFString("HAnimSite r_suprapatella")}),
-
-                                new Shape({
-                                  USE : new SFString("HAnimSiteShape")})])})])}),
+                                      USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
 
                         new HAnimJoint({
                           name : new SFString("l_hip"),
@@ -572,36 +542,87 @@ var X3D0 =  new X3D({
                                           USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
 
                                 new HAnimSite({
-                                  name : new SFString("l_lateral_malleolus"),
-                                  DEF : new SFString("hanim_l_lateral_malleolus"),
-                                  translation : new SFVec3f([0.1308,0.0597,-0.1032]),
+                                  name : new SFString("l_femoral_lateral_epicondyles"),
+                                  DEF : new SFString("hanim_l_femoral_lateral_epicondyles"),
+                                  translation : new SFVec3f([0.1598,0.4967,0.0297]),
                                   children : new MFNode([
                                     new TouchSensor({
-                                      description : new SFString("HAnimSite l_lateral_malleolus")}),
+                                      description : new SFString("HAnimSite 40 l_femoral_lateral_epicondyles")}),
 
                                     new Shape({
-                                      USE : new SFString("HAnimSiteShape")})])}),
+                                      USE : new SFString("HAnimSiteShape")}),
+
+                                    new Billboard({
+                                      children : new MFNode([
+                                        new Shape({
+                                          geometry : new SFNode(
+                                            new Text({
+                                              string : new MFString(["40"]),
+                                              fontStyle : new SFNode(
+                                                new FontStyle({
+                                                  size : new SFFloat(0.035)}))}))})])})])}),
 
                                 new HAnimSite({
-                                  name : new SFString("l_medial_malleolus"),
-                                  DEF : new SFString("hanim_l_medial_malleolus"),
-                                  translation : new SFVec3f([0.089,0.0716,-0.0881]),
+                                  name : new SFString("l_femoral_medial_epicondyles"),
+                                  DEF : new SFString("hanim_l_femoral_medial_epicondyles"),
+                                  translation : new SFVec3f([0.0398,0.4946,0.0303]),
                                   children : new MFNode([
                                     new TouchSensor({
-                                      description : new SFString("HAnimSite l_medial_malleolus")}),
+                                      description : new SFString("HAnimSite 39 l_femoral_medial_epicondyles")}),
 
                                     new Shape({
-                                      USE : new SFString("HAnimSiteShape")})])}),
+                                      USE : new SFString("HAnimSiteShape")}),
+
+                                    new Billboard({
+                                      children : new MFNode([
+                                        new Shape({
+                                          geometry : new SFNode(
+                                            new Text({
+                                              string : new MFString(["39"]),
+                                              fontStyle : new SFNode(
+                                                new FontStyle({
+                                                  size : new SFFloat(0.035)}))}))})])})])}),
 
                                 new HAnimSite({
-                                  name : new SFString("l_tibiale"),
-                                  DEF : new SFString("hanim_l_tibiale"),
+                                  name : new SFString("l_knee_crease"),
+                                  DEF : new SFString("hanim_l_knee_crease"),
+                                  translation : new SFVec3f([0.0993,0.4881,-0.0309]),
                                   children : new MFNode([
                                     new TouchSensor({
-                                      description : new SFString("HAnimSite l_tibiale")}),
+                                      description : new SFString("HAnimSite 90 l_knee_crease")}),
 
                                     new Shape({
-                                      USE : new SFString("HAnimSiteShape")})])})])}),
+                                      USE : new SFString("HAnimSiteShape")}),
+
+                                    new Billboard({
+                                      children : new MFNode([
+                                        new Shape({
+                                          geometry : new SFNode(
+                                            new Text({
+                                              string : new MFString(["90"]),
+                                              fontStyle : new SFNode(
+                                                new FontStyle({
+                                                  size : new SFFloat(0.035)}))}))})])})])}),
+
+                                new HAnimSite({
+                                  name : new SFString("l_suprapatella"),
+                                  DEF : new SFString("hanim_l_suprapatella"),
+                                  children : new MFNode([
+                                    new TouchSensor({
+                                      description : new SFString("HAnimSite 41 l_suprapatella")}),
+
+                                    new Shape({
+                                      USE : new SFString("HAnimSiteShape")}),
+
+                                    new Billboard({
+                                      children : new MFNode([
+                                        new Shape({
+                                          geometry : new SFNode(
+                                            new Text({
+                                              string : new MFString(["41"]),
+                                              fontStyle : new SFNode(
+                                                new FontStyle({
+                                                  size : new SFFloat(0.035)}))}))})])})])})])}),
 
                             new HAnimJoint({
                               name : new SFString("l_knee"),
@@ -634,26 +655,66 @@ var X3D0 =  new X3D({
                                               USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
 
                                     new HAnimSite({
-                                      name : new SFString("l_calcaneus_posterior"),
-                                      DEF : new SFString("hanim_l_calcaneus_posterior"),
-                                      translation : new SFVec3f([0.0974,0.0259,-0.1171]),
+                                      name : new SFString("l_lateral_malleolus"),
+                                      DEF : new SFString("hanim_l_lateral_malleolus"),
+                                      translation : new SFVec3f([0.1308,0.0597,-0.1032]),
                                       children : new MFNode([
                                         new TouchSensor({
-                                          description : new SFString("HAnimSite l_calcaneus_posterior")}),
+                                          description : new SFString("HAnimSite 49 l_lateral_malleolus")}),
 
                                         new Shape({
-                                          USE : new SFString("HAnimSiteShape")})])}),
+                                          USE : new SFString("HAnimSiteShape")}),
+
+                                        new Billboard({
+                                          children : new MFNode([
+                                            new Shape({
+                                              geometry : new SFNode(
+                                                new Text({
+                                                  string : new MFString(["49"]),
+                                                  fontStyle : new SFNode(
+                                                    new FontStyle({
+                                                      size : new SFFloat(0.035)}))}))})])})])}),
 
                                     new HAnimSite({
-                                      name : new SFString("l_sphyrion"),
-                                      DEF : new SFString("hanim_l_sphyrion"),
-                                      translation : new SFVec3f([0.089,0.0575,-0.0943]),
+                                      name : new SFString("l_medial_malleolus"),
+                                      DEF : new SFString("hanim_l_medial_malleolus"),
+                                      translation : new SFVec3f([0.089,0.0716,-0.0881]),
                                       children : new MFNode([
                                         new TouchSensor({
-                                          description : new SFString("HAnimSite l_sphyrion")}),
+                                          description : new SFString("HAnimSite 48 l_medial_malleolus")}),
 
                                         new Shape({
-                                          USE : new SFString("HAnimSiteShape")})])})])}),
+                                          USE : new SFString("HAnimSiteShape")}),
+
+                                        new Billboard({
+                                          children : new MFNode([
+                                            new Shape({
+                                              geometry : new SFNode(
+                                                new Text({
+                                                  string : new MFString(["48"]),
+                                                  fontStyle : new SFNode(
+                                                    new FontStyle({
+                                                      size : new SFFloat(0.035)}))}))})])})])}),
+
+                                    new HAnimSite({
+                                      name : new SFString("l_tibiale"),
+                                      DEF : new SFString("hanim_l_tibiale"),
+                                      children : new MFNode([
+                                        new TouchSensor({
+                                          description : new SFString("HAnimSite 47 l_tibiale")}),
+
+                                        new Shape({
+                                          USE : new SFString("HAnimSiteShape")}),
+
+                                        new Billboard({
+                                          children : new MFNode([
+                                            new Shape({
+                                              geometry : new SFNode(
+                                                new Text({
+                                                  string : new MFString(["47"]),
+                                                  fontStyle : new SFNode(
+                                                    new FontStyle({
+                                                      size : new SFFloat(0.035)}))}))})])})])})])}),
 
                                 new HAnimJoint({
                                   name : new SFString("l_talocrural"),
@@ -687,6 +748,48 @@ var X3D0 =  new X3D({
                                               color : new SFNode(
                                                 new ColorRGBA({
                                                   USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                        new HAnimSite({
+                                          name : new SFString("l_calcaneus_posterior"),
+                                          DEF : new SFString("hanim_l_calcaneus_posterior"),
+                                          translation : new SFVec3f([0.0974,0.0259,-0.1171]),
+                                          children : new MFNode([
+                                            new TouchSensor({
+                                              description : new SFString("HAnimSite 58 l_calcaneus_posterior")}),
+
+                                            new Shape({
+                                              USE : new SFString("HAnimSiteShape")}),
+
+                                            new Billboard({
+                                              children : new MFNode([
+                                                new Shape({
+                                                  geometry : new SFNode(
+                                                    new Text({
+                                                      string : new MFString(["58"]),
+                                                      fontStyle : new SFNode(
+                                                        new FontStyle({
+                                                          size : new SFFloat(0.035)}))}))})])})])}),
+
+                                        new HAnimSite({
+                                          name : new SFString("l_sphyrion"),
+                                          DEF : new SFString("hanim_l_sphyrion"),
+                                          translation : new SFVec3f([0.089,0.0575,-0.0943]),
+                                          children : new MFNode([
+                                            new TouchSensor({
+                                              description : new SFString("HAnimSite 50 l_sphyrion")}),
+
+                                            new Shape({
+                                              USE : new SFString("HAnimSiteShape")}),
+
+                                            new Billboard({
+                                              children : new MFNode([
+                                                new Shape({
+                                                  geometry : new SFNode(
+                                                    new Text({
+                                                      string : new MFString(["50"]),
+                                                      fontStyle : new SFNode(
+                                                        new FontStyle({
+                                                          size : new SFFloat(0.035)}))}))})])})])}),
 
                                         new Shape({
                                           geometry : new SFNode(
@@ -812,17 +915,7 @@ var X3D0 =  new X3D({
                                                           /*from l_tarsometatarsal_1 to l_metatarsophalangeal_1 vertices 2*/
                                                           color : new SFNode(
                                                             new ColorRGBA({
-                                                              USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
-
-                                                    new HAnimSite({
-                                                      name : new SFString("l_metatarsal_phalanx_1"),
-                                                      DEF : new SFString("hanim_l_metatarsal_phalanx_1"),
-                                                      children : new MFNode([
-                                                        new TouchSensor({
-                                                          description : new SFString("HAnimSite l_metatarsal_phalanx_1")}),
-
-                                                        new Shape({
-                                                          USE : new SFString("HAnimSiteShape")})])})])}),
+                                                              USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
 
                                                 new HAnimJoint({
                                                   name : new SFString("l_metatarsophalangeal_1"),
@@ -855,14 +948,24 @@ var X3D0 =  new X3D({
                                                                   USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
 
                                                         new HAnimSite({
-                                                          name : new SFString("l_tarsal_distal_phalanx_1_tip"),
-                                                          DEF : new SFString("hanim_l_tarsal_distal_phalanx_1_tip"),
+                                                          name : new SFString("l_metatarsal_phalanx_1"),
+                                                          DEF : new SFString("hanim_l_metatarsal_phalanx_1"),
                                                           children : new MFNode([
                                                             new TouchSensor({
-                                                              description : new SFString("HAnimSite l_tarsal_distal_phalanx_1_tip")}),
+                                                              description : new SFString("HAnimSite 55 l_metatarsal_phalanx_1")}),
 
                                                             new Shape({
-                                                              USE : new SFString("HAnimSiteShape")})])})])}),
+                                                              USE : new SFString("HAnimSiteShape")}),
+
+                                                            new Billboard({
+                                                              children : new MFNode([
+                                                                new Shape({
+                                                                  geometry : new SFNode(
+                                                                    new Text({
+                                                                      string : new MFString(["55"]),
+                                                                      fontStyle : new SFNode(
+                                                                        new FontStyle({
+                                                                          size : new SFFloat(0.035)}))}))})])})])})])}),
 
                                                     new HAnimJoint({
                                                       name : new SFString("l_tarsal_interphalangeal_1"),
@@ -986,18 +1089,7 @@ var X3D0 =  new X3D({
                                                                   /*from l_tarsal_proximal_interphalangeal_2 to l_tarsal_distal_interphalangeal_2 vertices 2*/
                                                                   color : new SFNode(
                                                                     new ColorRGBA({
-                                                                      USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
-
-                                                            new HAnimSite({
-                                                              name : new SFString("l_tarsal_distal_phalanx_2_tip"),
-                                                              DEF : new SFString("hanim_l_tarsal_distal_phalanx_2_tip"),
-                                                              translation : new SFVec3f([0.1195,0.0079,0.1433]),
-                                                              children : new MFNode([
-                                                                new TouchSensor({
-                                                                  description : new SFString("HAnimSite l_tarsal_distal_phalanx_2_tip")}),
-
-                                                                new Shape({
-                                                                  USE : new SFString("HAnimSiteShape")})])})])}),
+                                                                      USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
 
                                                         new HAnimJoint({
                                                           name : new SFString("l_tarsal_distal_interphalangeal_2"),
@@ -1122,17 +1214,7 @@ var X3D0 =  new X3D({
                                                                   /*from l_tarsal_proximal_interphalangeal_3 to l_tarsal_distal_interphalangeal_3 vertices 2*/
                                                                   color : new SFNode(
                                                                     new ColorRGBA({
-                                                                      USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
-
-                                                            new HAnimSite({
-                                                              name : new SFString("l_tarsal_distal_phalanx_3_tip"),
-                                                              DEF : new SFString("hanim_l_tarsal_distal_phalanx_3_tip"),
-                                                              children : new MFNode([
-                                                                new TouchSensor({
-                                                                  description : new SFString("HAnimSite l_tarsal_distal_phalanx_3_tip")}),
-
-                                                                new Shape({
-                                                                  USE : new SFString("HAnimSiteShape")})])})])}),
+                                                                      USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
 
                                                         new HAnimJoint({
                                                           name : new SFString("l_tarsal_distal_interphalangeal_3"),
@@ -1299,17 +1381,7 @@ var X3D0 =  new X3D({
                                                                   /*from l_tarsal_proximal_interphalangeal_4 to l_tarsal_distal_interphalangeal_4 vertices 2*/
                                                                   color : new SFNode(
                                                                     new ColorRGBA({
-                                                                      USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
-
-                                                            new HAnimSite({
-                                                              name : new SFString("l_tarsal_distal_phalanx_4_tip"),
-                                                              DEF : new SFString("hanim_l_tarsal_distal_phalanx_4_tip"),
-                                                              children : new MFNode([
-                                                                new TouchSensor({
-                                                                  description : new SFString("HAnimSite l_tarsal_distal_phalanx_4_tip")}),
-
-                                                                new Shape({
-                                                                  USE : new SFString("HAnimSiteShape")})])})])}),
+                                                                      USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
 
                                                         new HAnimJoint({
                                                           name : new SFString("l_tarsal_distal_interphalangeal_4"),
@@ -1344,17 +1416,7 @@ var X3D0 =  new X3D({
                                                           /*from l_tarsometatarsal_5 to l_metatarsophalangeal_5 vertices 2*/
                                                           color : new SFNode(
                                                             new ColorRGBA({
-                                                              USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
-
-                                                    new HAnimSite({
-                                                      name : new SFString("l_metatarsal_phalanx_5"),
-                                                      DEF : new SFString("hanim_l_metatarsal_phalanx_5"),
-                                                      children : new MFNode([
-                                                        new TouchSensor({
-                                                          description : new SFString("HAnimSite l_metatarsal_phalanx_5")}),
-
-                                                        new Shape({
-                                                          USE : new SFString("HAnimSiteShape")})])})])}),
+                                                              USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
 
                                                 new HAnimJoint({
                                                   name : new SFString("l_metatarsophalangeal_5"),
@@ -1384,7 +1446,27 @@ var X3D0 =  new X3D({
                                                               /*from l_metatarsophalangeal_5 to l_tarsal_proximal_interphalangeal_5 vertices 2*/
                                                               color : new SFNode(
                                                                 new ColorRGBA({
-                                                                  USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+                                                                  USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                                        new HAnimSite({
+                                                          name : new SFString("l_metatarsal_phalanx_5"),
+                                                          DEF : new SFString("hanim_l_metatarsal_phalanx_5"),
+                                                          children : new MFNode([
+                                                            new TouchSensor({
+                                                              description : new SFString("HAnimSite 56 l_metatarsal_phalanx_5")}),
+
+                                                            new Shape({
+                                                              USE : new SFString("HAnimSiteShape")}),
+
+                                                            new Billboard({
+                                                              children : new MFNode([
+                                                                new Shape({
+                                                                  geometry : new SFNode(
+                                                                    new Text({
+                                                                      string : new MFString(["56"]),
+                                                                      fontStyle : new SFNode(
+                                                                        new FontStyle({
+                                                                          size : new SFFloat(0.035)}))}))})])})])})])}),
 
                                                     new HAnimJoint({
                                                       name : new SFString("l_tarsal_proximal_interphalangeal_5"),
@@ -1414,17 +1496,7 @@ var X3D0 =  new X3D({
                                                                   /*from l_tarsal_proximal_interphalangeal_5 to l_tarsal_distal_interphalangeal_5 vertices 2*/
                                                                   color : new SFNode(
                                                                     new ColorRGBA({
-                                                                      USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
-
-                                                            new HAnimSite({
-                                                              name : new SFString("l_tarsal_distal_phalanx_5_tip"),
-                                                              DEF : new SFString("hanim_l_tarsal_distal_phalanx_5_tip"),
-                                                              children : new MFNode([
-                                                                new TouchSensor({
-                                                                  description : new SFString("HAnimSite l_tarsal_distal_phalanx_5_tip")}),
-
-                                                                new Shape({
-                                                                  USE : new SFString("HAnimSiteShape")})])})])}),
+                                                                      USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
 
                                                         new HAnimJoint({
                                                           name : new SFString("l_tarsal_distal_interphalangeal_5"),
@@ -1462,36 +1534,87 @@ var X3D0 =  new X3D({
                                           USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
 
                                 new HAnimSite({
-                                  name : new SFString("r_lateral_malleolus"),
-                                  DEF : new SFString("hanim_r_lateral_malleolus"),
-                                  translation : new SFVec3f([-0.1006,0.0658,-0.1075]),
+                                  name : new SFString("r_femoral_lateral_epicondyles"),
+                                  DEF : new SFString("hanim_r_femoral_lateral_epicondyles"),
+                                  translation : new SFVec3f([-0.1421,0.4992,0.031]),
                                   children : new MFNode([
                                     new TouchSensor({
-                                      description : new SFString("HAnimSite r_lateral_malleolus")}),
+                                      description : new SFString("HAnimSite 44 r_femoral_lateral_epicondyles")}),
 
                                     new Shape({
-                                      USE : new SFString("HAnimSiteShape")})])}),
+                                      USE : new SFString("HAnimSiteShape")}),
+
+                                    new Billboard({
+                                      children : new MFNode([
+                                        new Shape({
+                                          geometry : new SFNode(
+                                            new Text({
+                                              string : new MFString(["44"]),
+                                              fontStyle : new SFNode(
+                                                new FontStyle({
+                                                  size : new SFFloat(0.035)}))}))})])})])}),
 
                                 new HAnimSite({
-                                  name : new SFString("r_medial_malleolus"),
-                                  DEF : new SFString("hanim_r_medial_malleolus"),
-                                  translation : new SFVec3f([-0.0591,0.076,-0.0928]),
+                                  name : new SFString("r_femoral_medial_epicondyles"),
+                                  DEF : new SFString("hanim_r_femoral_medial_epicondyles"),
+                                  translation : new SFVec3f([-0.0221,0.5014,0.0289]),
                                   children : new MFNode([
                                     new TouchSensor({
-                                      description : new SFString("HAnimSite r_medial_malleolus")}),
+                                      description : new SFString("HAnimSite 43 r_femoral_medial_epicondyles")}),
 
                                     new Shape({
-                                      USE : new SFString("HAnimSiteShape")})])}),
+                                      USE : new SFString("HAnimSiteShape")}),
+
+                                    new Billboard({
+                                      children : new MFNode([
+                                        new Shape({
+                                          geometry : new SFNode(
+                                            new Text({
+                                              string : new MFString(["43"]),
+                                              fontStyle : new SFNode(
+                                                new FontStyle({
+                                                  size : new SFFloat(0.035)}))}))})])})])}),
 
                                 new HAnimSite({
-                                  name : new SFString("r_tibiale"),
-                                  DEF : new SFString("hanim_r_tibiale"),
+                                  name : new SFString("r_knee_crease"),
+                                  DEF : new SFString("hanim_r_knee_crease"),
+                                  translation : new SFVec3f([-0.0825,0.4932,-0.0326]),
                                   children : new MFNode([
                                     new TouchSensor({
-                                      description : new SFString("HAnimSite r_tibiale")}),
+                                      description : new SFString("HAnimSite 91 r_knee_crease")}),
 
                                     new Shape({
-                                      USE : new SFString("HAnimSiteShape")})])})])}),
+                                      USE : new SFString("HAnimSiteShape")}),
+
+                                    new Billboard({
+                                      children : new MFNode([
+                                        new Shape({
+                                          geometry : new SFNode(
+                                            new Text({
+                                              string : new MFString(["91"]),
+                                              fontStyle : new SFNode(
+                                                new FontStyle({
+                                                  size : new SFFloat(0.035)}))}))})])})])}),
+
+                                new HAnimSite({
+                                  name : new SFString("r_suprapatella"),
+                                  DEF : new SFString("hanim_r_suprapatella"),
+                                  children : new MFNode([
+                                    new TouchSensor({
+                                      description : new SFString("HAnimSite 45 r_suprapatella")}),
+
+                                    new Shape({
+                                      USE : new SFString("HAnimSiteShape")}),
+
+                                    new Billboard({
+                                      children : new MFNode([
+                                        new Shape({
+                                          geometry : new SFNode(
+                                            new Text({
+                                              string : new MFString(["45"]),
+                                              fontStyle : new SFNode(
+                                                new FontStyle({
+                                                  size : new SFFloat(0.035)}))}))})])})])})])}),
 
                             new HAnimJoint({
                               name : new SFString("r_knee"),
@@ -1524,26 +1647,66 @@ var X3D0 =  new X3D({
                                               USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
 
                                     new HAnimSite({
-                                      name : new SFString("r_calcaneus_posterior"),
-                                      DEF : new SFString("hanim_r_calcaneus_posterior"),
-                                      translation : new SFVec3f([-0.0692,0.0297,-0.1221]),
+                                      name : new SFString("r_lateral_malleolus"),
+                                      DEF : new SFString("hanim_r_lateral_malleolus"),
+                                      translation : new SFVec3f([-0.1006,0.0658,-0.1075]),
                                       children : new MFNode([
                                         new TouchSensor({
-                                          description : new SFString("HAnimSite r_calcaneus_posterior")}),
+                                          description : new SFString("HAnimSite 53 r_lateral_malleolus")}),
 
                                         new Shape({
-                                          USE : new SFString("HAnimSiteShape")})])}),
+                                          USE : new SFString("HAnimSiteShape")}),
+
+                                        new Billboard({
+                                          children : new MFNode([
+                                            new Shape({
+                                              geometry : new SFNode(
+                                                new Text({
+                                                  string : new MFString(["53"]),
+                                                  fontStyle : new SFNode(
+                                                    new FontStyle({
+                                                      size : new SFFloat(0.035)}))}))})])})])}),
 
                                     new HAnimSite({
-                                      name : new SFString("r_sphyrion"),
-                                      DEF : new SFString("hanim_r_sphyrion"),
-                                      translation : new SFVec3f([-0.0603,0.061,-0.1002]),
+                                      name : new SFString("r_medial_malleolus"),
+                                      DEF : new SFString("hanim_r_medial_malleolus"),
+                                      translation : new SFVec3f([-0.0591,0.076,-0.0928]),
                                       children : new MFNode([
                                         new TouchSensor({
-                                          description : new SFString("HAnimSite r_sphyrion")}),
+                                          description : new SFString("HAnimSite 52 r_medial_malleolus")}),
 
                                         new Shape({
-                                          USE : new SFString("HAnimSiteShape")})])})])}),
+                                          USE : new SFString("HAnimSiteShape")}),
+
+                                        new Billboard({
+                                          children : new MFNode([
+                                            new Shape({
+                                              geometry : new SFNode(
+                                                new Text({
+                                                  string : new MFString(["52"]),
+                                                  fontStyle : new SFNode(
+                                                    new FontStyle({
+                                                      size : new SFFloat(0.035)}))}))})])})])}),
+
+                                    new HAnimSite({
+                                      name : new SFString("r_tibiale"),
+                                      DEF : new SFString("hanim_r_tibiale"),
+                                      children : new MFNode([
+                                        new TouchSensor({
+                                          description : new SFString("HAnimSite 51 r_tibiale")}),
+
+                                        new Shape({
+                                          USE : new SFString("HAnimSiteShape")}),
+
+                                        new Billboard({
+                                          children : new MFNode([
+                                            new Shape({
+                                              geometry : new SFNode(
+                                                new Text({
+                                                  string : new MFString(["51"]),
+                                                  fontStyle : new SFNode(
+                                                    new FontStyle({
+                                                      size : new SFFloat(0.035)}))}))})])})])})])}),
 
                                 new HAnimJoint({
                                   name : new SFString("r_talocrural"),
@@ -1577,6 +1740,48 @@ var X3D0 =  new X3D({
                                               color : new SFNode(
                                                 new ColorRGBA({
                                                   USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                        new HAnimSite({
+                                          name : new SFString("r_calcaneus_posterior"),
+                                          DEF : new SFString("hanim_r_calcaneus_posterior"),
+                                          translation : new SFVec3f([-0.0692,0.0297,-0.1221]),
+                                          children : new MFNode([
+                                            new TouchSensor({
+                                              description : new SFString("HAnimSite 62 r_calcaneus_posterior")}),
+
+                                            new Shape({
+                                              USE : new SFString("HAnimSiteShape")}),
+
+                                            new Billboard({
+                                              children : new MFNode([
+                                                new Shape({
+                                                  geometry : new SFNode(
+                                                    new Text({
+                                                      string : new MFString(["62"]),
+                                                      fontStyle : new SFNode(
+                                                        new FontStyle({
+                                                          size : new SFFloat(0.035)}))}))})])})])}),
+
+                                        new HAnimSite({
+                                          name : new SFString("r_sphyrion"),
+                                          DEF : new SFString("hanim_r_sphyrion"),
+                                          translation : new SFVec3f([-0.0603,0.061,-0.1002]),
+                                          children : new MFNode([
+                                            new TouchSensor({
+                                              description : new SFString("HAnimSite 54 r_sphyrion")}),
+
+                                            new Shape({
+                                              USE : new SFString("HAnimSiteShape")}),
+
+                                            new Billboard({
+                                              children : new MFNode([
+                                                new Shape({
+                                                  geometry : new SFNode(
+                                                    new Text({
+                                                      string : new MFString(["54"]),
+                                                      fontStyle : new SFNode(
+                                                        new FontStyle({
+                                                          size : new SFFloat(0.035)}))}))})])})])}),
 
                                         new Shape({
                                           geometry : new SFNode(
@@ -1702,17 +1907,7 @@ var X3D0 =  new X3D({
                                                           /*from r_tarsometatarsal_1 to r_metatarsophalangeal_1 vertices 2*/
                                                           color : new SFNode(
                                                             new ColorRGBA({
-                                                              USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
-
-                                                    new HAnimSite({
-                                                      name : new SFString("r_metatarsal_phalanx_1"),
-                                                      DEF : new SFString("hanim_r_metatarsal_phalanx_1"),
-                                                      children : new MFNode([
-                                                        new TouchSensor({
-                                                          description : new SFString("HAnimSite r_metatarsal_phalanx_1")}),
-
-                                                        new Shape({
-                                                          USE : new SFString("HAnimSiteShape")})])})])}),
+                                                              USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
 
                                                 new HAnimJoint({
                                                   name : new SFString("r_metatarsophalangeal_1"),
@@ -1745,14 +1940,24 @@ var X3D0 =  new X3D({
                                                                   USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
 
                                                         new HAnimSite({
-                                                          name : new SFString("r_tarsal_distal_phalanx_1_tip"),
-                                                          DEF : new SFString("hanim_r_tarsal_distal_phalanx_1_tip"),
+                                                          name : new SFString("r_metatarsal_phalanx_1"),
+                                                          DEF : new SFString("hanim_r_metatarsal_phalanx_1"),
                                                           children : new MFNode([
                                                             new TouchSensor({
-                                                              description : new SFString("HAnimSite r_tarsal_distal_phalanx_1_tip")}),
+                                                              description : new SFString("HAnimSite 59 r_metatarsal_phalanx_1")}),
 
                                                             new Shape({
-                                                              USE : new SFString("HAnimSiteShape")})])})])}),
+                                                              USE : new SFString("HAnimSiteShape")}),
+
+                                                            new Billboard({
+                                                              children : new MFNode([
+                                                                new Shape({
+                                                                  geometry : new SFNode(
+                                                                    new Text({
+                                                                      string : new MFString(["59"]),
+                                                                      fontStyle : new SFNode(
+                                                                        new FontStyle({
+                                                                          size : new SFFloat(0.035)}))}))})])})])})])}),
 
                                                     new HAnimJoint({
                                                       name : new SFString("r_tarsal_interphalangeal_1"),
@@ -1876,18 +2081,7 @@ var X3D0 =  new X3D({
                                                                   /*from r_tarsal_proximal_interphalangeal_2 to r_tarsal_distal_interphalangeal_2 vertices 2*/
                                                                   color : new SFNode(
                                                                     new ColorRGBA({
-                                                                      USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
-
-                                                            new HAnimSite({
-                                                              name : new SFString("r_tarsal_distal_phalanx_2_tip"),
-                                                              DEF : new SFString("hanim_r_tarsal_distal_phalanx_2_tip"),
-                                                              translation : new SFVec3f([-0.0883,0.0134,0.1383]),
-                                                              children : new MFNode([
-                                                                new TouchSensor({
-                                                                  description : new SFString("HAnimSite r_tarsal_distal_phalanx_2_tip")}),
-
-                                                                new Shape({
-                                                                  USE : new SFString("HAnimSiteShape")})])})])}),
+                                                                      USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
 
                                                         new HAnimJoint({
                                                           name : new SFString("r_tarsal_distal_interphalangeal_2"),
@@ -2012,17 +2206,7 @@ var X3D0 =  new X3D({
                                                                   /*from r_tarsal_proximal_interphalangeal_3 to r_tarsal_distal_interphalangeal_3 vertices 2*/
                                                                   color : new SFNode(
                                                                     new ColorRGBA({
-                                                                      USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
-
-                                                            new HAnimSite({
-                                                              name : new SFString("r_tarsal_distal_phalanx_3_tip"),
-                                                              DEF : new SFString("hanim_r_tarsal_distal_phalanx_3_tip"),
-                                                              children : new MFNode([
-                                                                new TouchSensor({
-                                                                  description : new SFString("HAnimSite r_tarsal_distal_phalanx_3_tip")}),
-
-                                                                new Shape({
-                                                                  USE : new SFString("HAnimSiteShape")})])})])}),
+                                                                      USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
 
                                                         new HAnimJoint({
                                                           name : new SFString("r_tarsal_distal_interphalangeal_3"),
@@ -2189,17 +2373,7 @@ var X3D0 =  new X3D({
                                                                   /*from r_tarsal_proximal_interphalangeal_4 to r_tarsal_distal_interphalangeal_4 vertices 2*/
                                                                   color : new SFNode(
                                                                     new ColorRGBA({
-                                                                      USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
-
-                                                            new HAnimSite({
-                                                              name : new SFString("r_tarsal_distal_phalanx_4_tip"),
-                                                              DEF : new SFString("hanim_r_tarsal_distal_phalanx_4_tip"),
-                                                              children : new MFNode([
-                                                                new TouchSensor({
-                                                                  description : new SFString("HAnimSite r_tarsal_distal_phalanx_4_tip")}),
-
-                                                                new Shape({
-                                                                  USE : new SFString("HAnimSiteShape")})])})])}),
+                                                                      USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
 
                                                         new HAnimJoint({
                                                           name : new SFString("r_tarsal_distal_interphalangeal_4"),
@@ -2234,17 +2408,7 @@ var X3D0 =  new X3D({
                                                           /*from r_tarsometatarsal_5 to r_metatarsophalangeal_5 vertices 2*/
                                                           color : new SFNode(
                                                             new ColorRGBA({
-                                                              USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
-
-                                                    new HAnimSite({
-                                                      name : new SFString("r_metatarsal_phalanx_5"),
-                                                      DEF : new SFString("hanim_r_metatarsal_phalanx_5"),
-                                                      children : new MFNode([
-                                                        new TouchSensor({
-                                                          description : new SFString("HAnimSite r_metatarsal_phalanx_5")}),
-
-                                                        new Shape({
-                                                          USE : new SFString("HAnimSiteShape")})])})])}),
+                                                              USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
 
                                                 new HAnimJoint({
                                                   name : new SFString("r_metatarsophalangeal_5"),
@@ -2274,7 +2438,27 @@ var X3D0 =  new X3D({
                                                               /*from r_metatarsophalangeal_5 to r_tarsal_proximal_interphalangeal_5 vertices 2*/
                                                               color : new SFNode(
                                                                 new ColorRGBA({
-                                                                  USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+                                                                  USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                                        new HAnimSite({
+                                                          name : new SFString("r_metatarsal_phalanx_5"),
+                                                          DEF : new SFString("hanim_r_metatarsal_phalanx_5"),
+                                                          children : new MFNode([
+                                                            new TouchSensor({
+                                                              description : new SFString("HAnimSite 60 r_metatarsal_phalanx_5")}),
+
+                                                            new Shape({
+                                                              USE : new SFString("HAnimSiteShape")}),
+
+                                                            new Billboard({
+                                                              children : new MFNode([
+                                                                new Shape({
+                                                                  geometry : new SFNode(
+                                                                    new Text({
+                                                                      string : new MFString(["60"]),
+                                                                      fontStyle : new SFNode(
+                                                                        new FontStyle({
+                                                                          size : new SFFloat(0.035)}))}))})])})])})])}),
 
                                                     new HAnimJoint({
                                                       name : new SFString("r_tarsal_proximal_interphalangeal_5"),
@@ -2304,17 +2488,7 @@ var X3D0 =  new X3D({
                                                                   /*from r_tarsal_proximal_interphalangeal_5 to r_tarsal_distal_interphalangeal_5 vertices 2*/
                                                                   color : new SFNode(
                                                                     new ColorRGBA({
-                                                                      USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
-
-                                                            new HAnimSite({
-                                                              name : new SFString("r_tarsal_distal_phalanx_5_tip"),
-                                                              DEF : new SFString("hanim_r_tarsal_distal_phalanx_5_tip"),
-                                                              children : new MFNode([
-                                                                new TouchSensor({
-                                                                  description : new SFString("HAnimSite r_tarsal_distal_phalanx_5_tip")}),
-
-                                                                new Shape({
-                                                                  USE : new SFString("HAnimSiteShape")})])})])}),
+                                                                      USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
 
                                                         new HAnimJoint({
                                                           name : new SFString("r_tarsal_distal_interphalangeal_5"),
@@ -2349,7 +2523,69 @@ var X3D0 =  new X3D({
                                   /*from vl5 to vl4 vertices 2*/
                                   color : new SFNode(
                                     new ColorRGBA({
-                                      USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+                                      USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                            new HAnimSite({
+                              name : new SFString("navel"),
+                              DEF : new SFString("hanim_navel"),
+                              translation : new SFVec3f([0.0069,1.0966,0.1017]),
+                              children : new MFNode([
+                                new TouchSensor({
+                                  description : new SFString("HAnimSite 84 navel")}),
+
+                                new Shape({
+                                  USE : new SFString("HAnimSiteShape")}),
+
+                                new Billboard({
+                                  children : new MFNode([
+                                    new Shape({
+                                      geometry : new SFNode(
+                                        new Text({
+                                          string : new MFString(["84"]),
+                                          fontStyle : new SFNode(
+                                            new FontStyle({
+                                              size : new SFFloat(0.035)}))}))})])})])}),
+
+                            new HAnimSite({
+                              name : new SFString("waist_preferred_anterior"),
+                              DEF : new SFString("hanim_waist_preferred_anterior"),
+                              children : new MFNode([
+                                new TouchSensor({
+                                  description : new SFString("HAnimSite 26 waist_preferred_anterior")}),
+
+                                new Shape({
+                                  USE : new SFString("HAnimSiteShape")}),
+
+                                new Billboard({
+                                  children : new MFNode([
+                                    new Shape({
+                                      geometry : new SFNode(
+                                        new Text({
+                                          string : new MFString(["26"]),
+                                          fontStyle : new SFNode(
+                                            new FontStyle({
+                                              size : new SFFloat(0.035)}))}))})])})])}),
+
+                            new HAnimSite({
+                              name : new SFString("waist_preferred_posterior"),
+                              DEF : new SFString("hanim_waist_preferred_posterior"),
+                              translation : new SFVec3f([0.29,1.0915,-0.1091]),
+                              children : new MFNode([
+                                new TouchSensor({
+                                  description : new SFString("HAnimSite 27 waist_preferred_posterior")}),
+
+                                new Shape({
+                                  USE : new SFString("HAnimSiteShape")}),
+
+                                new Billboard({
+                                  children : new MFNode([
+                                    new Shape({
+                                      geometry : new SFNode(
+                                        new Text({
+                                          string : new MFString(["27"]),
+                                          fontStyle : new SFNode(
+                                            new FontStyle({
+                                              size : new SFFloat(0.035)}))}))})])})])})])}),
 
                         new HAnimJoint({
                           name : new SFString("vl4"),
@@ -2409,39 +2645,7 @@ var X3D0 =  new X3D({
                                           /*from vl3 to vl2 vertices 2*/
                                           color : new SFNode(
                                             new ColorRGBA({
-                                              USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
-
-                                    new HAnimSite({
-                                      name : new SFString("l_rib10"),
-                                      DEF : new SFString("hanim_l_rib10"),
-                                      translation : new SFVec3f([0.0871,1.1925,0.0992]),
-                                      children : new MFNode([
-                                        new TouchSensor({
-                                          description : new SFString("HAnimSite l_rib10")}),
-
-                                        new Shape({
-                                          USE : new SFString("HAnimSiteShape")})])}),
-
-                                    new HAnimSite({
-                                      name : new SFString("r_rib10"),
-                                      DEF : new SFString("hanim_r_rib10"),
-                                      translation : new SFVec3f([-0.0711,1.1941,0.1016]),
-                                      children : new MFNode([
-                                        new TouchSensor({
-                                          description : new SFString("HAnimSite r_rib10")}),
-
-                                        new Shape({
-                                          USE : new SFString("HAnimSiteShape")})])}),
-
-                                    new HAnimSite({
-                                      name : new SFString("spine_2_middle_back"),
-                                      DEF : new SFString("hanim_spine_2_middle_back"),
-                                      children : new MFNode([
-                                        new TouchSensor({
-                                          description : new SFString("HAnimSite spine_2_middle_back")}),
-
-                                        new Shape({
-                                          USE : new SFString("HAnimSiteShape")})])})])}),
+                                              USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
 
                                 new HAnimJoint({
                                   name : new SFString("vl2"),
@@ -2471,7 +2675,69 @@ var X3D0 =  new X3D({
                                               /*from vl2 to vl1 vertices 2*/
                                               color : new SFNode(
                                                 new ColorRGBA({
-                                                  USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+                                                  USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                        new HAnimSite({
+                                          name : new SFString("l_rib10"),
+                                          DEF : new SFString("hanim_l_rib10"),
+                                          translation : new SFVec3f([0.0871,1.1925,0.0992]),
+                                          children : new MFNode([
+                                            new TouchSensor({
+                                              description : new SFString("HAnimSite 28 l_rib10")}),
+
+                                            new Shape({
+                                              USE : new SFString("HAnimSiteShape")}),
+
+                                            new Billboard({
+                                              children : new MFNode([
+                                                new Shape({
+                                                  geometry : new SFNode(
+                                                    new Text({
+                                                      string : new MFString(["28"]),
+                                                      fontStyle : new SFNode(
+                                                        new FontStyle({
+                                                          size : new SFFloat(0.035)}))}))})])})])}),
+
+                                        new HAnimSite({
+                                          name : new SFString("r_rib10"),
+                                          DEF : new SFString("hanim_r_rib10"),
+                                          translation : new SFVec3f([-0.0711,1.1941,0.1016]),
+                                          children : new MFNode([
+                                            new TouchSensor({
+                                              description : new SFString("HAnimSite 30 r_rib10")}),
+
+                                            new Shape({
+                                              USE : new SFString("HAnimSiteShape")}),
+
+                                            new Billboard({
+                                              children : new MFNode([
+                                                new Shape({
+                                                  geometry : new SFNode(
+                                                    new Text({
+                                                      string : new MFString(["30"]),
+                                                      fontStyle : new SFNode(
+                                                        new FontStyle({
+                                                          size : new SFFloat(0.035)}))}))})])})])}),
+
+                                        new HAnimSite({
+                                          name : new SFString("spine_2_middle_back"),
+                                          DEF : new SFString("hanim_spine_2_middle_back"),
+                                          children : new MFNode([
+                                            new TouchSensor({
+                                              description : new SFString("HAnimSite spine_2_middle_back")}),
+
+                                            new Shape({
+                                              USE : new SFString("HAnimSiteShape")}),
+
+                                            new Billboard({
+                                              children : new MFNode([
+                                                new Shape({
+                                                  geometry : new SFNode(
+                                                    new Text({
+                                                      string : new MFString([""]),
+                                                      fontStyle : new SFNode(
+                                                        new FontStyle({
+                                                          size : new SFFloat(0.035)}))}))})])})])})])}),
 
                                     new HAnimJoint({
                                       name : new SFString("vl1"),
@@ -2561,18 +2827,7 @@ var X3D0 =  new X3D({
                                                           /*from vt11 to vt10 vertices 2*/
                                                           color : new SFNode(
                                                             new ColorRGBA({
-                                                              USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
-
-                                                    new HAnimSite({
-                                                      name : new SFString("substernale"),
-                                                      DEF : new SFString("hanim_substernale"),
-                                                      translation : new SFVec3f([0.0085,1.2995,0.1147]),
-                                                      children : new MFNode([
-                                                        new TouchSensor({
-                                                          description : new SFString("HAnimSite substernale")}),
-
-                                                        new Shape({
-                                                          USE : new SFString("HAnimSiteShape")})])})])}),
+                                                              USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
 
                                                 new HAnimJoint({
                                                   name : new SFString("vt10"),
@@ -2605,26 +2860,25 @@ var X3D0 =  new X3D({
                                                                   USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
 
                                                         new HAnimSite({
-                                                          name : new SFString("l_thelion"),
-                                                          DEF : new SFString("hanim_l_thelion"),
-                                                          translation : new SFVec3f([0.0918,1.3382,0.1192]),
+                                                          name : new SFString("substernale"),
+                                                          DEF : new SFString("hanim_substernale"),
+                                                          translation : new SFVec3f([0.0085,1.2995,0.1147]),
                                                           children : new MFNode([
                                                             new TouchSensor({
-                                                              description : new SFString("HAnimSite l_thelion")}),
+                                                              description : new SFString("HAnimSite 13 substernale")}),
 
                                                             new Shape({
-                                                              USE : new SFString("HAnimSiteShape")})])}),
+                                                              USE : new SFString("HAnimSiteShape")}),
 
-                                                        new HAnimSite({
-                                                          name : new SFString("r_thelion"),
-                                                          DEF : new SFString("hanim_r_thelion"),
-                                                          translation : new SFVec3f([-0.0736,1.3385,0.1217]),
-                                                          children : new MFNode([
-                                                            new TouchSensor({
-                                                              description : new SFString("HAnimSite r_thelion")}),
-
-                                                            new Shape({
-                                                              USE : new SFString("HAnimSiteShape")})])})])}),
+                                                            new Billboard({
+                                                              children : new MFNode([
+                                                                new Shape({
+                                                                  geometry : new SFNode(
+                                                                    new Text({
+                                                                      string : new MFString(["13"]),
+                                                                      fontStyle : new SFNode(
+                                                                        new FontStyle({
+                                                                          size : new SFFloat(0.035)}))}))})])})])})])}),
 
                                                     new HAnimJoint({
                                                       name : new SFString("vt9"),
@@ -2654,7 +2908,49 @@ var X3D0 =  new X3D({
                                                                   /*from vt9 to vt8 vertices 2*/
                                                                   color : new SFNode(
                                                                     new ColorRGBA({
-                                                                      USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+                                                                      USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                                            new HAnimSite({
+                                                              name : new SFString("l_thelion"),
+                                                              DEF : new SFString("hanim_l_thelion"),
+                                                              translation : new SFVec3f([0.0918,1.3382,0.1192]),
+                                                              children : new MFNode([
+                                                                new TouchSensor({
+                                                                  description : new SFString("HAnimSite 29 l_thelion")}),
+
+                                                                new Shape({
+                                                                  USE : new SFString("HAnimSiteShape")}),
+
+                                                                new Billboard({
+                                                                  children : new MFNode([
+                                                                    new Shape({
+                                                                      geometry : new SFNode(
+                                                                        new Text({
+                                                                          string : new MFString(["29"]),
+                                                                          fontStyle : new SFNode(
+                                                                            new FontStyle({
+                                                                              size : new SFFloat(0.035)}))}))})])})])}),
+
+                                                            new HAnimSite({
+                                                              name : new SFString("r_thelion"),
+                                                              DEF : new SFString("hanim_r_thelion"),
+                                                              translation : new SFVec3f([-0.0736,1.3385,0.1217]),
+                                                              children : new MFNode([
+                                                                new TouchSensor({
+                                                                  description : new SFString("HAnimSite 31 r_thelion")}),
+
+                                                                new Shape({
+                                                                  USE : new SFString("HAnimSiteShape")}),
+
+                                                                new Billboard({
+                                                                  children : new MFNode([
+                                                                    new Shape({
+                                                                      geometry : new SFNode(
+                                                                        new Text({
+                                                                          string : new MFString(["31"]),
+                                                                          fontStyle : new SFNode(
+                                                                            new FontStyle({
+                                                                              size : new SFFloat(0.035)}))}))})])})])})])}),
 
                                                         new HAnimJoint({
                                                           name : new SFString("vt8"),
@@ -2714,47 +3010,7 @@ var X3D0 =  new X3D({
                                                                           /*from vt7 to vt6 vertices 2*/
                                                                           color : new SFNode(
                                                                             new ColorRGBA({
-                                                                              USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
-
-                                                                    new HAnimSite({
-                                                                      name : new SFString("l_chest_midsagittal_plane"),
-                                                                      DEF : new SFString("hanim_l_chest_midsagittal_plane"),
-                                                                      children : new MFNode([
-                                                                        new TouchSensor({
-                                                                          description : new SFString("HAnimSite l_chest_midsagittal_plane")}),
-
-                                                                        new Shape({
-                                                                          USE : new SFString("HAnimSiteShape")})])}),
-
-                                                                    new HAnimSite({
-                                                                      name : new SFString("mesosternale"),
-                                                                      DEF : new SFString("hanim_mesosternale"),
-                                                                      children : new MFNode([
-                                                                        new TouchSensor({
-                                                                          description : new SFString("HAnimSite mesosternale")}),
-
-                                                                        new Shape({
-                                                                          USE : new SFString("HAnimSiteShape")})])}),
-
-                                                                    new HAnimSite({
-                                                                      name : new SFString("r_chest_midsagittal_plane"),
-                                                                      DEF : new SFString("hanim_r_chest_midsagittal_plane"),
-                                                                      children : new MFNode([
-                                                                        new TouchSensor({
-                                                                          description : new SFString("HAnimSite r_chest_midsagittal_plane")}),
-
-                                                                        new Shape({
-                                                                          USE : new SFString("HAnimSiteShape")})])}),
-
-                                                                    new HAnimSite({
-                                                                      name : new SFString("rear_center_midsagittal_plane"),
-                                                                      DEF : new SFString("hanim_rear_center_midsagittal_plane"),
-                                                                      children : new MFNode([
-                                                                        new TouchSensor({
-                                                                          description : new SFString("HAnimSite rear_center_midsagittal_plane")}),
-
-                                                                        new Shape({
-                                                                          USE : new SFString("HAnimSiteShape")})])})])}),
+                                                                              USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
 
                                                                 new HAnimJoint({
                                                                   name : new SFString("vt6"),
@@ -2787,14 +3043,84 @@ var X3D0 =  new X3D({
                                                                                   USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
 
                                                                         new HAnimSite({
-                                                                          name : new SFString("spine_1_middle_back"),
-                                                                          DEF : new SFString("hanim_spine_1_middle_back"),
+                                                                          name : new SFString("l_chest_midsagittal_plane"),
+                                                                          DEF : new SFString("hanim_l_chest_midsagittal_plane"),
                                                                           children : new MFNode([
                                                                             new TouchSensor({
-                                                                              description : new SFString("HAnimSite spine_1_middle_back")}),
+                                                                              description : new SFString("HAnimSite 94 l_chest_midsagittal_plane")}),
 
                                                                             new Shape({
-                                                                              USE : new SFString("HAnimSiteShape")})])})])}),
+                                                                              USE : new SFString("HAnimSiteShape")}),
+
+                                                                            new Billboard({
+                                                                              children : new MFNode([
+                                                                                new Shape({
+                                                                                  geometry : new SFNode(
+                                                                                    new Text({
+                                                                                      string : new MFString(["94"]),
+                                                                                      fontStyle : new SFNode(
+                                                                                        new FontStyle({
+                                                                                          size : new SFFloat(0.035)}))}))})])})])}),
+
+                                                                        new HAnimSite({
+                                                                          name : new SFString("mesosternale"),
+                                                                          DEF : new SFString("hanim_mesosternale"),
+                                                                          children : new MFNode([
+                                                                            new TouchSensor({
+                                                                              description : new SFString("HAnimSite 88 mesosternale")}),
+
+                                                                            new Shape({
+                                                                              USE : new SFString("HAnimSiteShape")}),
+
+                                                                            new Billboard({
+                                                                              children : new MFNode([
+                                                                                new Shape({
+                                                                                  geometry : new SFNode(
+                                                                                    new Text({
+                                                                                      string : new MFString(["88"]),
+                                                                                      fontStyle : new SFNode(
+                                                                                        new FontStyle({
+                                                                                          size : new SFFloat(0.035)}))}))})])})])}),
+
+                                                                        new HAnimSite({
+                                                                          name : new SFString("r_chest_midsagittal_plane"),
+                                                                          DEF : new SFString("hanim_r_chest_midsagittal_plane"),
+                                                                          children : new MFNode([
+                                                                            new TouchSensor({
+                                                                              description : new SFString("HAnimSite 95 r_chest_midsagittal_plane")}),
+
+                                                                            new Shape({
+                                                                              USE : new SFString("HAnimSiteShape")}),
+
+                                                                            new Billboard({
+                                                                              children : new MFNode([
+                                                                                new Shape({
+                                                                                  geometry : new SFNode(
+                                                                                    new Text({
+                                                                                      string : new MFString(["95"]),
+                                                                                      fontStyle : new SFNode(
+                                                                                        new FontStyle({
+                                                                                          size : new SFFloat(0.035)}))}))})])})])}),
+
+                                                                        new HAnimSite({
+                                                                          name : new SFString("rear_center_midsagittal_plane"),
+                                                                          DEF : new SFString("hanim_rear_center_midsagittal_plane"),
+                                                                          children : new MFNode([
+                                                                            new TouchSensor({
+                                                                              description : new SFString("HAnimSite 92 rear_center_midsagittal_plane")}),
+
+                                                                            new Shape({
+                                                                              USE : new SFString("HAnimSiteShape")}),
+
+                                                                            new Billboard({
+                                                                              children : new MFNode([
+                                                                                new Shape({
+                                                                                  geometry : new SFNode(
+                                                                                    new Text({
+                                                                                      string : new MFString(["92"]),
+                                                                                      fontStyle : new SFNode(
+                                                                                        new FontStyle({
+                                                                                          size : new SFFloat(0.035)}))}))})])})])})])}),
 
                                                                     new HAnimJoint({
                                                                       name : new SFString("vt5"),
@@ -2824,7 +3150,27 @@ var X3D0 =  new X3D({
                                                                                   /*from vt5 to vt4 vertices 2*/
                                                                                   color : new SFNode(
                                                                                     new ColorRGBA({
-                                                                                      USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+                                                                                      USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                                                            new HAnimSite({
+                                                                              name : new SFString("spine_1_middle_back"),
+                                                                              DEF : new SFString("hanim_spine_1_middle_back"),
+                                                                              children : new MFNode([
+                                                                                new TouchSensor({
+                                                                                  description : new SFString("HAnimSite 24 spine_1_middle_back")}),
+
+                                                                                new Shape({
+                                                                                  USE : new SFString("HAnimSiteShape")}),
+
+                                                                                new Billboard({
+                                                                                  children : new MFNode([
+                                                                                    new Shape({
+                                                                                      geometry : new SFNode(
+                                                                                        new Text({
+                                                                                          string : new MFString(["24"]),
+                                                                                          fontStyle : new SFNode(
+                                                                                            new FontStyle({
+                                                                                              size : new SFFloat(0.035)}))}))})])})])})])}),
 
                                                                         new HAnimJoint({
                                                                           name : new SFString("vt4"),
@@ -2914,29 +3260,7 @@ var X3D0 =  new X3D({
                                                                                               /*from vt2 to vt1 vertices 2*/
                                                                                               color : new SFNode(
                                                                                                 new ColorRGBA({
-                                                                                                  USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
-
-                                                                                        new HAnimSite({
-                                                                                          name : new SFString("cervicale"),
-                                                                                          DEF : new SFString("hanim_cervicale"),
-                                                                                          translation : new SFVec3f([0.0064,1.52,-0.0815]),
-                                                                                          children : new MFNode([
-                                                                                            new TouchSensor({
-                                                                                              description : new SFString("HAnimSite cervicale")}),
-
-                                                                                            new Shape({
-                                                                                              USE : new SFString("HAnimSiteShape")})])}),
-
-                                                                                        new HAnimSite({
-                                                                                          name : new SFString("suprasternale"),
-                                                                                          DEF : new SFString("hanim_suprasternale"),
-                                                                                          translation : new SFVec3f([0.0084,1.4714,0.0551]),
-                                                                                          children : new MFNode([
-                                                                                            new TouchSensor({
-                                                                                              description : new SFString("HAnimSite suprasternale")}),
-
-                                                                                            new Shape({
-                                                                                              USE : new SFString("HAnimSiteShape")})])})])}),
+                                                                                                  USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
 
                                                                                     new HAnimJoint({
                                                                                       name : new SFString("vt1"),
@@ -2969,26 +3293,46 @@ var X3D0 =  new X3D({
                                                                                                       USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
 
                                                                                             new HAnimSite({
-                                                                                              name : new SFString("l_neck_base"),
-                                                                                              DEF : new SFString("hanim_l_neck_base"),
-                                                                                              translation : new SFVec3f([0.0646,1.5141,-0.038]),
+                                                                                              name : new SFString("cervicale"),
+                                                                                              DEF : new SFString("hanim_cervicale"),
+                                                                                              translation : new SFVec3f([0.0064,1.52,-0.0815]),
                                                                                               children : new MFNode([
                                                                                                 new TouchSensor({
-                                                                                                  description : new SFString("HAnimSite l_neck_base")}),
+                                                                                                  description : new SFString("HAnimSite 10 cervicale")}),
 
                                                                                                 new Shape({
-                                                                                                  USE : new SFString("HAnimSiteShape")})])}),
+                                                                                                  USE : new SFString("HAnimSiteShape")}),
+
+                                                                                                new Billboard({
+                                                                                                  children : new MFNode([
+                                                                                                    new Shape({
+                                                                                                      geometry : new SFNode(
+                                                                                                        new Text({
+                                                                                                          string : new MFString(["10"]),
+                                                                                                          fontStyle : new SFNode(
+                                                                                                            new FontStyle({
+                                                                                                              size : new SFFloat(0.035)}))}))})])})])}),
 
                                                                                             new HAnimSite({
-                                                                                              name : new SFString("r_neck_base"),
-                                                                                              DEF : new SFString("hanim_r_neck_base"),
-                                                                                              translation : new SFVec3f([-0.0419,1.5149,-0.022]),
+                                                                                              name : new SFString("suprasternale"),
+                                                                                              DEF : new SFString("hanim_suprasternale"),
+                                                                                              translation : new SFVec3f([0.0084,1.4714,0.0551]),
                                                                                               children : new MFNode([
                                                                                                 new TouchSensor({
-                                                                                                  description : new SFString("HAnimSite r_neck_base")}),
+                                                                                                  description : new SFString("HAnimSite 12 suprasternale")}),
 
                                                                                                 new Shape({
-                                                                                                  USE : new SFString("HAnimSiteShape")})])}),
+                                                                                                  USE : new SFString("HAnimSiteShape")}),
+
+                                                                                                new Billboard({
+                                                                                                  children : new MFNode([
+                                                                                                    new Shape({
+                                                                                                      geometry : new SFNode(
+                                                                                                        new Text({
+                                                                                                          string : new MFString(["12"]),
+                                                                                                          fontStyle : new SFNode(
+                                                                                                            new FontStyle({
+                                                                                                              size : new SFFloat(0.035)}))}))})])})])}),
 
                                                                                             new Shape({
                                                                                               geometry : new SFNode(
@@ -3002,60 +3346,6 @@ var X3D0 =  new X3D({
                                                                                                     new ColorRGBA({
                                                                                                       USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
 
-                                                                                            new HAnimSite({
-                                                                                              name : new SFString("l_acromion"),
-                                                                                              DEF : new SFString("hanim_l_acromion"),
-                                                                                              translation : new SFVec3f([0.2032,1.476,-0.049]),
-                                                                                              children : new MFNode([
-                                                                                                new TouchSensor({
-                                                                                                  description : new SFString("HAnimSite l_acromion")}),
-
-                                                                                                new Shape({
-                                                                                                  USE : new SFString("HAnimSiteShape")})])}),
-
-                                                                                            new HAnimSite({
-                                                                                              name : new SFString("l_axilla_distal_pt"),
-                                                                                              DEF : new SFString("hanim_l_axilla_distal_pt"),
-                                                                                              translation : new SFVec3f([0.1706,1.4072,-0.0875]),
-                                                                                              children : new MFNode([
-                                                                                                new TouchSensor({
-                                                                                                  description : new SFString("HAnimSite l_axilla_distal_pt")}),
-
-                                                                                                new Shape({
-                                                                                                  USE : new SFString("HAnimSiteShape")})])}),
-
-                                                                                            new HAnimSite({
-                                                                                              name : new SFString("l_axilla_posterior_folds"),
-                                                                                              DEF : new SFString("hanim_l_axilla_posterior_folds"),
-                                                                                              children : new MFNode([
-                                                                                                new TouchSensor({
-                                                                                                  description : new SFString("HAnimSite l_axilla_posterior_folds")}),
-
-                                                                                                new Shape({
-                                                                                                  USE : new SFString("HAnimSiteShape")})])}),
-
-                                                                                            new HAnimSite({
-                                                                                              name : new SFString("l_axilla_proximal"),
-                                                                                              DEF : new SFString("hanim_l_axilla_proximal"),
-                                                                                              translation : new SFVec3f([0.1777,1.4065,-0.0075]),
-                                                                                              children : new MFNode([
-                                                                                                new TouchSensor({
-                                                                                                  description : new SFString("HAnimSite l_axilla_proximal")}),
-
-                                                                                                new Shape({
-                                                                                                  USE : new SFString("HAnimSiteShape")})])}),
-
-                                                                                            new HAnimSite({
-                                                                                              name : new SFString("l_clavicale"),
-                                                                                              DEF : new SFString("hanim_l_clavicale"),
-                                                                                              translation : new SFVec3f([0.0271,1.4943,0.0394]),
-                                                                                              children : new MFNode([
-                                                                                                new TouchSensor({
-                                                                                                  description : new SFString("HAnimSite l_clavicale")}),
-
-                                                                                                new Shape({
-                                                                                                  USE : new SFString("HAnimSiteShape")})])}),
-
                                                                                             new Shape({
                                                                                               geometry : new SFNode(
                                                                                                 new LineSet({
@@ -3066,61 +3356,7 @@ var X3D0 =  new X3D({
                                                                                                   /*from vt1 to r_sternoclavicular vertices 2*/
                                                                                                   color : new SFNode(
                                                                                                     new ColorRGBA({
-                                                                                                      USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
-
-                                                                                            new HAnimSite({
-                                                                                              name : new SFString("r_acromion"),
-                                                                                              DEF : new SFString("hanim_r_acromion"),
-                                                                                              translation : new SFVec3f([-0.1905,1.4791,-0.0431]),
-                                                                                              children : new MFNode([
-                                                                                                new TouchSensor({
-                                                                                                  description : new SFString("HAnimSite r_acromion")}),
-
-                                                                                                new Shape({
-                                                                                                  USE : new SFString("HAnimSiteShape")})])}),
-
-                                                                                            new HAnimSite({
-                                                                                              name : new SFString("r_axilla_distal_pt"),
-                                                                                              DEF : new SFString("hanim_r_axilla_distal_pt"),
-                                                                                              translation : new SFVec3f([-0.1603,1.4098,-0.0826]),
-                                                                                              children : new MFNode([
-                                                                                                new TouchSensor({
-                                                                                                  description : new SFString("HAnimSite r_axilla_distal_pt")}),
-
-                                                                                                new Shape({
-                                                                                                  USE : new SFString("HAnimSiteShape")})])}),
-
-                                                                                            new HAnimSite({
-                                                                                              name : new SFString("r_axilla_posterior_folds"),
-                                                                                              DEF : new SFString("hanim_r_axilla_posterior_folds"),
-                                                                                              children : new MFNode([
-                                                                                                new TouchSensor({
-                                                                                                  description : new SFString("HAnimSite r_axilla_posterior_folds")}),
-
-                                                                                                new Shape({
-                                                                                                  USE : new SFString("HAnimSiteShape")})])}),
-
-                                                                                            new HAnimSite({
-                                                                                              name : new SFString("r_axilla_proximal"),
-                                                                                              DEF : new SFString("hanim_r_axilla_proximal"),
-                                                                                              translation : new SFVec3f([-0.1626,1.4072,-0.0031]),
-                                                                                              children : new MFNode([
-                                                                                                new TouchSensor({
-                                                                                                  description : new SFString("HAnimSite r_axilla_proximal")}),
-
-                                                                                                new Shape({
-                                                                                                  USE : new SFString("HAnimSiteShape")})])}),
-
-                                                                                            new HAnimSite({
-                                                                                              name : new SFString("r_clavicale"),
-                                                                                              DEF : new SFString("hanim_r_clavicale"),
-                                                                                              translation : new SFVec3f([-0.0115,1.4943,0.04]),
-                                                                                              children : new MFNode([
-                                                                                                new TouchSensor({
-                                                                                                  description : new SFString("HAnimSite r_clavicale")}),
-
-                                                                                                new Shape({
-                                                                                                  USE : new SFString("HAnimSiteShape")})])})])}),
+                                                                                                      USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
 
                                                                                         new HAnimJoint({
                                                                                           name : new SFString("vc7"),
@@ -3150,7 +3386,49 @@ var X3D0 =  new X3D({
                                                                                                       /*from vc7 to vc6 vertices 2*/
                                                                                                       color : new SFNode(
                                                                                                         new ColorRGBA({
-                                                                                                          USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+                                                                                                          USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                                                                                new HAnimSite({
+                                                                                                  name : new SFString("l_neck_base"),
+                                                                                                  DEF : new SFString("hanim_l_neck_base"),
+                                                                                                  translation : new SFVec3f([0.0646,1.5141,-0.038]),
+                                                                                                  children : new MFNode([
+                                                                                                    new TouchSensor({
+                                                                                                      description : new SFString("HAnimSite 82 l_neck_base")}),
+
+                                                                                                    new Shape({
+                                                                                                      USE : new SFString("HAnimSiteShape")}),
+
+                                                                                                    new Billboard({
+                                                                                                      children : new MFNode([
+                                                                                                        new Shape({
+                                                                                                          geometry : new SFNode(
+                                                                                                            new Text({
+                                                                                                              string : new MFString(["82"]),
+                                                                                                              fontStyle : new SFNode(
+                                                                                                                new FontStyle({
+                                                                                                                  size : new SFFloat(0.035)}))}))})])})])}),
+
+                                                                                                new HAnimSite({
+                                                                                                  name : new SFString("r_neck_base"),
+                                                                                                  DEF : new SFString("hanim_r_neck_base"),
+                                                                                                  translation : new SFVec3f([-0.0419,1.5149,-0.022]),
+                                                                                                  children : new MFNode([
+                                                                                                    new TouchSensor({
+                                                                                                      description : new SFString("HAnimSite 83 r_neck_base")}),
+
+                                                                                                    new Shape({
+                                                                                                      USE : new SFString("HAnimSiteShape")}),
+
+                                                                                                    new Billboard({
+                                                                                                      children : new MFNode([
+                                                                                                        new Shape({
+                                                                                                          geometry : new SFNode(
+                                                                                                            new Text({
+                                                                                                              string : new MFString(["83"]),
+                                                                                                              fontStyle : new SFNode(
+                                                                                                                new FontStyle({
+                                                                                                                  size : new SFFloat(0.035)}))}))})])})])})])}),
 
                                                                                             new HAnimJoint({
                                                                                               name : new SFString("vc6"),
@@ -3270,17 +3548,7 @@ var X3D0 =  new X3D({
                                                                                                                       /*from vc3 to vc2 vertices 2*/
                                                                                                                       color : new SFNode(
                                                                                                                         new ColorRGBA({
-                                                                                                                          USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
-
-                                                                                                                new HAnimSite({
-                                                                                                                  name : new SFString("adams_apple"),
-                                                                                                                  DEF : new SFString("hanim_adams_apple"),
-                                                                                                                  children : new MFNode([
-                                                                                                                    new TouchSensor({
-                                                                                                                      description : new SFString("HAnimSite adams_apple")}),
-
-                                                                                                                    new Shape({
-                                                                                                                      USE : new SFString("HAnimSiteShape")})])})])}),
+                                                                                                                          USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
 
                                                                                                             new HAnimJoint({
                                                                                                               name : new SFString("vc2"),
@@ -3310,7 +3578,27 @@ var X3D0 =  new X3D({
                                                                                                                           /*from vc2 to vc1 vertices 2*/
                                                                                                                           color : new SFNode(
                                                                                                                             new ColorRGBA({
-                                                                                                                              USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+                                                                                                                              USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                                                                                                    new HAnimSite({
+                                                                                                                      name : new SFString("adams_apple"),
+                                                                                                                      DEF : new SFString("hanim_adams_apple"),
+                                                                                                                      children : new MFNode([
+                                                                                                                        new TouchSensor({
+                                                                                                                          description : new SFString("HAnimSite 11 adams_apple")}),
+
+                                                                                                                        new Shape({
+                                                                                                                          USE : new SFString("HAnimSiteShape")}),
+
+                                                                                                                        new Billboard({
+                                                                                                                          children : new MFNode([
+                                                                                                                            new Shape({
+                                                                                                                              geometry : new SFNode(
+                                                                                                                                new Text({
+                                                                                                                                  string : new MFString(["11"]),
+                                                                                                                                  fontStyle : new SFNode(
+                                                                                                                                    new FontStyle({
+                                                                                                                                      size : new SFFloat(0.035)}))}))})])})])})])}),
 
                                                                                                                 new HAnimJoint({
                                                                                                                   name : new SFString("vc1"),
@@ -3340,123 +3628,7 @@ var X3D0 =  new X3D({
                                                                                                                               /*from vc1 to skullbase vertices 2*/
                                                                                                                               color : new SFNode(
                                                                                                                                 new ColorRGBA({
-                                                                                                                                  USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
-
-                                                                                                                        new HAnimSite({
-                                                                                                                          name : new SFString("glabella"),
-                                                                                                                          DEF : new SFString("hanim_glabella"),
-                                                                                                                          children : new MFNode([
-                                                                                                                            new TouchSensor({
-                                                                                                                              description : new SFString("HAnimSite glabella")}),
-
-                                                                                                                            new Shape({
-                                                                                                                              USE : new SFString("HAnimSiteShape")})])}),
-
-                                                                                                                        new HAnimSite({
-                                                                                                                          name : new SFString("l_ectocanthus"),
-                                                                                                                          DEF : new SFString("hanim_l_ectocanthus"),
-                                                                                                                          children : new MFNode([
-                                                                                                                            new TouchSensor({
-                                                                                                                              description : new SFString("HAnimSite l_ectocanthus")}),
-
-                                                                                                                            new Shape({
-                                                                                                                              USE : new SFString("HAnimSiteShape")})])}),
-
-                                                                                                                        new HAnimSite({
-                                                                                                                          name : new SFString("l_infraorbitale"),
-                                                                                                                          DEF : new SFString("hanim_l_infraorbitale"),
-                                                                                                                          translation : new SFVec3f([0.0341,1.6171,0.0752]),
-                                                                                                                          children : new MFNode([
-                                                                                                                            new TouchSensor({
-                                                                                                                              description : new SFString("HAnimSite l_infraorbitale")}),
-
-                                                                                                                            new Shape({
-                                                                                                                              USE : new SFString("HAnimSiteShape")})])}),
-
-                                                                                                                        new HAnimSite({
-                                                                                                                          name : new SFString("l_tragion"),
-                                                                                                                          DEF : new SFString("hanim_l_tragion"),
-                                                                                                                          translation : new SFVec3f([0.0739,1.6348,0.0282]),
-                                                                                                                          children : new MFNode([
-                                                                                                                            new TouchSensor({
-                                                                                                                              description : new SFString("HAnimSite l_tragion")}),
-
-                                                                                                                            new Shape({
-                                                                                                                              USE : new SFString("HAnimSiteShape")})])}),
-
-                                                                                                                        new HAnimSite({
-                                                                                                                          name : new SFString("nuchale"),
-                                                                                                                          DEF : new SFString("hanim_nuchale"),
-                                                                                                                          translation : new SFVec3f([0.0039,1.5972,-0.0796]),
-                                                                                                                          children : new MFNode([
-                                                                                                                            new TouchSensor({
-                                                                                                                              description : new SFString("HAnimSite nuchale")}),
-
-                                                                                                                            new Shape({
-                                                                                                                              USE : new SFString("HAnimSiteShape")})])}),
-
-                                                                                                                        new HAnimSite({
-                                                                                                                          name : new SFString("opisthocranion"),
-                                                                                                                          DEF : new SFString("hanim_opisthocranion"),
-                                                                                                                          children : new MFNode([
-                                                                                                                            new TouchSensor({
-                                                                                                                              description : new SFString("HAnimSite opisthocranion")}),
-
-                                                                                                                            new Shape({
-                                                                                                                              USE : new SFString("HAnimSiteShape")})])}),
-
-                                                                                                                        new HAnimSite({
-                                                                                                                          name : new SFString("r_ectocanthus"),
-                                                                                                                          DEF : new SFString("hanim_r_ectocanthus"),
-                                                                                                                          children : new MFNode([
-                                                                                                                            new TouchSensor({
-                                                                                                                              description : new SFString("HAnimSite r_ectocanthus")}),
-
-                                                                                                                            new Shape({
-                                                                                                                              USE : new SFString("HAnimSiteShape")})])}),
-
-                                                                                                                        new HAnimSite({
-                                                                                                                          name : new SFString("r_infraorbitale"),
-                                                                                                                          DEF : new SFString("hanim_r_infraorbitale"),
-                                                                                                                          translation : new SFVec3f([-0.0237,1.6171,0.0752]),
-                                                                                                                          children : new MFNode([
-                                                                                                                            new TouchSensor({
-                                                                                                                              description : new SFString("HAnimSite r_infraorbitale")}),
-
-                                                                                                                            new Shape({
-                                                                                                                              USE : new SFString("HAnimSiteShape")})])}),
-
-                                                                                                                        new HAnimSite({
-                                                                                                                          name : new SFString("r_tragion"),
-                                                                                                                          DEF : new SFString("hanim_r_tragion"),
-                                                                                                                          translation : new SFVec3f([-0.0646,1.6347,0.0302]),
-                                                                                                                          children : new MFNode([
-                                                                                                                            new TouchSensor({
-                                                                                                                              description : new SFString("HAnimSite r_tragion")}),
-
-                                                                                                                            new Shape({
-                                                                                                                              USE : new SFString("HAnimSiteShape")})])}),
-
-                                                                                                                        new HAnimSite({
-                                                                                                                          name : new SFString("sellion"),
-                                                                                                                          DEF : new SFString("hanim_sellion"),
-                                                                                                                          translation : new SFVec3f([0.0058,1.6316,0.0852]),
-                                                                                                                          children : new MFNode([
-                                                                                                                            new TouchSensor({
-                                                                                                                              description : new SFString("HAnimSite sellion")}),
-
-                                                                                                                            new Shape({
-                                                                                                                              USE : new SFString("HAnimSiteShape")})])}),
-
-                                                                                                                        new HAnimSite({
-                                                                                                                          name : new SFString("skull_vertex"),
-                                                                                                                          DEF : new SFString("hanim_skull_vertex"),
-                                                                                                                          children : new MFNode([
-                                                                                                                            new TouchSensor({
-                                                                                                                              description : new SFString("HAnimSite skull_vertex")}),
-
-                                                                                                                            new Shape({
-                                                                                                                              USE : new SFString("HAnimSiteShape")})])})])}),
+                                                                                                                                  USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
 
                                                                                                                     new HAnimJoint({
                                                                                                                       name : new SFString("skullbase"),
@@ -3487,6 +3659,233 @@ var X3D0 =  new X3D({
                                                                                                                                   color : new SFNode(
                                                                                                                                     new ColorRGBA({
                                                                                                                                       USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                                                                                                            new HAnimSite({
+                                                                                                                              name : new SFString("glabella"),
+                                                                                                                              DEF : new SFString("hanim_glabella"),
+                                                                                                                              children : new MFNode([
+                                                                                                                                new TouchSensor({
+                                                                                                                                  description : new SFString("HAnimSite 1 glabella")}),
+
+                                                                                                                                new Shape({
+                                                                                                                                  USE : new SFString("HAnimSiteShape")}),
+
+                                                                                                                                new Billboard({
+                                                                                                                                  children : new MFNode([
+                                                                                                                                    new Shape({
+                                                                                                                                      geometry : new SFNode(
+                                                                                                                                        new Text({
+                                                                                                                                          string : new MFString(["1"]),
+                                                                                                                                          fontStyle : new SFNode(
+                                                                                                                                            new FontStyle({
+                                                                                                                                              size : new SFFloat(0.035)}))}))})])})])}),
+
+                                                                                                                            new HAnimSite({
+                                                                                                                              name : new SFString("l_ectocanthus"),
+                                                                                                                              DEF : new SFString("hanim_l_ectocanthus"),
+                                                                                                                              children : new MFNode([
+                                                                                                                                new TouchSensor({
+                                                                                                                                  description : new SFString("HAnimSite 85 l_ectocanthus")}),
+
+                                                                                                                                new Shape({
+                                                                                                                                  USE : new SFString("HAnimSiteShape")}),
+
+                                                                                                                                new Billboard({
+                                                                                                                                  children : new MFNode([
+                                                                                                                                    new Shape({
+                                                                                                                                      geometry : new SFNode(
+                                                                                                                                        new Text({
+                                                                                                                                          string : new MFString(["85"]),
+                                                                                                                                          fontStyle : new SFNode(
+                                                                                                                                            new FontStyle({
+                                                                                                                                              size : new SFFloat(0.035)}))}))})])})])}),
+
+                                                                                                                            new HAnimSite({
+                                                                                                                              name : new SFString("l_infraorbitale"),
+                                                                                                                              DEF : new SFString("hanim_l_infraorbitale"),
+                                                                                                                              translation : new SFVec3f([0.0341,1.6171,0.0752]),
+                                                                                                                              children : new MFNode([
+                                                                                                                                new TouchSensor({
+                                                                                                                                  description : new SFString("HAnimSite 3 l_infraorbitale")}),
+
+                                                                                                                                new Shape({
+                                                                                                                                  USE : new SFString("HAnimSiteShape")}),
+
+                                                                                                                                new Billboard({
+                                                                                                                                  children : new MFNode([
+                                                                                                                                    new Shape({
+                                                                                                                                      geometry : new SFNode(
+                                                                                                                                        new Text({
+                                                                                                                                          string : new MFString(["3"]),
+                                                                                                                                          fontStyle : new SFNode(
+                                                                                                                                            new FontStyle({
+                                                                                                                                              size : new SFFloat(0.035)}))}))})])})])}),
+
+                                                                                                                            new HAnimSite({
+                                                                                                                              name : new SFString("l_tragion"),
+                                                                                                                              DEF : new SFString("hanim_l_tragion"),
+                                                                                                                              translation : new SFVec3f([0.0739,1.6348,0.0282]),
+                                                                                                                              children : new MFNode([
+                                                                                                                                new TouchSensor({
+                                                                                                                                  description : new SFString("HAnimSite 4 l_tragion")}),
+
+                                                                                                                                new Shape({
+                                                                                                                                  USE : new SFString("HAnimSiteShape")}),
+
+                                                                                                                                new Billboard({
+                                                                                                                                  children : new MFNode([
+                                                                                                                                    new Shape({
+                                                                                                                                      geometry : new SFNode(
+                                                                                                                                        new Text({
+                                                                                                                                          string : new MFString(["4"]),
+                                                                                                                                          fontStyle : new SFNode(
+                                                                                                                                            new FontStyle({
+                                                                                                                                              size : new SFFloat(0.035)}))}))})])})])}),
+
+                                                                                                                            new HAnimSite({
+                                                                                                                              name : new SFString("nuchale"),
+                                                                                                                              DEF : new SFString("hanim_nuchale"),
+                                                                                                                              translation : new SFVec3f([0.0039,1.5972,-0.0796]),
+                                                                                                                              children : new MFNode([
+                                                                                                                                new TouchSensor({
+                                                                                                                                  description : new SFString("HAnimSite 81 nuchale")}),
+
+                                                                                                                                new Shape({
+                                                                                                                                  USE : new SFString("HAnimSiteShape")}),
+
+                                                                                                                                new Billboard({
+                                                                                                                                  children : new MFNode([
+                                                                                                                                    new Shape({
+                                                                                                                                      geometry : new SFNode(
+                                                                                                                                        new Text({
+                                                                                                                                          string : new MFString(["81"]),
+                                                                                                                                          fontStyle : new SFNode(
+                                                                                                                                            new FontStyle({
+                                                                                                                                              size : new SFFloat(0.035)}))}))})])})])}),
+
+                                                                                                                            new HAnimSite({
+                                                                                                                              name : new SFString("opisthocranion"),
+                                                                                                                              DEF : new SFString("hanim_opisthocranion"),
+                                                                                                                              children : new MFNode([
+                                                                                                                                new TouchSensor({
+                                                                                                                                  description : new SFString("HAnimSite 89 opisthocranion")}),
+
+                                                                                                                                new Shape({
+                                                                                                                                  USE : new SFString("HAnimSiteShape")}),
+
+                                                                                                                                new Billboard({
+                                                                                                                                  children : new MFNode([
+                                                                                                                                    new Shape({
+                                                                                                                                      geometry : new SFNode(
+                                                                                                                                        new Text({
+                                                                                                                                          string : new MFString(["89"]),
+                                                                                                                                          fontStyle : new SFNode(
+                                                                                                                                            new FontStyle({
+                                                                                                                                              size : new SFFloat(0.035)}))}))})])})])}),
+
+                                                                                                                            new HAnimSite({
+                                                                                                                              name : new SFString("r_ectocanthus"),
+                                                                                                                              DEF : new SFString("hanim_r_ectocanthus"),
+                                                                                                                              children : new MFNode([
+                                                                                                                                new TouchSensor({
+                                                                                                                                  description : new SFString("HAnimSite 86 r_ectocanthus")}),
+
+                                                                                                                                new Shape({
+                                                                                                                                  USE : new SFString("HAnimSiteShape")}),
+
+                                                                                                                                new Billboard({
+                                                                                                                                  children : new MFNode([
+                                                                                                                                    new Shape({
+                                                                                                                                      geometry : new SFNode(
+                                                                                                                                        new Text({
+                                                                                                                                          string : new MFString(["86"]),
+                                                                                                                                          fontStyle : new SFNode(
+                                                                                                                                            new FontStyle({
+                                                                                                                                              size : new SFFloat(0.035)}))}))})])})])}),
+
+                                                                                                                            new HAnimSite({
+                                                                                                                              name : new SFString("r_infraorbitale"),
+                                                                                                                              DEF : new SFString("hanim_r_infraorbitale"),
+                                                                                                                              translation : new SFVec3f([-0.0237,1.6171,0.0752]),
+                                                                                                                              children : new MFNode([
+                                                                                                                                new TouchSensor({
+                                                                                                                                  description : new SFString("HAnimSite 6 r_infraorbitale")}),
+
+                                                                                                                                new Shape({
+                                                                                                                                  USE : new SFString("HAnimSiteShape")}),
+
+                                                                                                                                new Billboard({
+                                                                                                                                  children : new MFNode([
+                                                                                                                                    new Shape({
+                                                                                                                                      geometry : new SFNode(
+                                                                                                                                        new Text({
+                                                                                                                                          string : new MFString(["6"]),
+                                                                                                                                          fontStyle : new SFNode(
+                                                                                                                                            new FontStyle({
+                                                                                                                                              size : new SFFloat(0.035)}))}))})])})])}),
+
+                                                                                                                            new HAnimSite({
+                                                                                                                              name : new SFString("r_tragion"),
+                                                                                                                              DEF : new SFString("hanim_r_tragion"),
+                                                                                                                              translation : new SFVec3f([-0.0646,1.6347,0.0302]),
+                                                                                                                              children : new MFNode([
+                                                                                                                                new TouchSensor({
+                                                                                                                                  description : new SFString("HAnimSite 7 r_tragion")}),
+
+                                                                                                                                new Shape({
+                                                                                                                                  USE : new SFString("HAnimSiteShape")}),
+
+                                                                                                                                new Billboard({
+                                                                                                                                  children : new MFNode([
+                                                                                                                                    new Shape({
+                                                                                                                                      geometry : new SFNode(
+                                                                                                                                        new Text({
+                                                                                                                                          string : new MFString(["7"]),
+                                                                                                                                          fontStyle : new SFNode(
+                                                                                                                                            new FontStyle({
+                                                                                                                                              size : new SFFloat(0.035)}))}))})])})])}),
+
+                                                                                                                            new HAnimSite({
+                                                                                                                              name : new SFString("sellion"),
+                                                                                                                              DEF : new SFString("hanim_sellion"),
+                                                                                                                              translation : new SFVec3f([0.0058,1.6316,0.0852]),
+                                                                                                                              children : new MFNode([
+                                                                                                                                new TouchSensor({
+                                                                                                                                  description : new SFString("HAnimSite 2 sellion")}),
+
+                                                                                                                                new Shape({
+                                                                                                                                  USE : new SFString("HAnimSiteShape")}),
+
+                                                                                                                                new Billboard({
+                                                                                                                                  children : new MFNode([
+                                                                                                                                    new Shape({
+                                                                                                                                      geometry : new SFNode(
+                                                                                                                                        new Text({
+                                                                                                                                          string : new MFString(["2"]),
+                                                                                                                                          fontStyle : new SFNode(
+                                                                                                                                            new FontStyle({
+                                                                                                                                              size : new SFFloat(0.035)}))}))})])})])}),
+
+                                                                                                                            new HAnimSite({
+                                                                                                                              name : new SFString("skull_vertex"),
+                                                                                                                              DEF : new SFString("hanim_skull_vertex"),
+                                                                                                                              translation : new SFVec3f([0.005,1.7504,0.0055]),
+                                                                                                                              children : new MFNode([
+                                                                                                                                new TouchSensor({
+                                                                                                                                  description : new SFString("HAnimSite 0 skull_vertex")}),
+
+                                                                                                                                new Shape({
+                                                                                                                                  USE : new SFString("HAnimSiteShape")}),
+
+                                                                                                                                new Billboard({
+                                                                                                                                  children : new MFNode([
+                                                                                                                                    new Shape({
+                                                                                                                                      geometry : new SFNode(
+                                                                                                                                        new Text({
+                                                                                                                                          string : new MFString(["0"]),
+                                                                                                                                          fontStyle : new SFNode(
+                                                                                                                                            new FontStyle({
+                                                                                                                                              size : new SFFloat(0.035)}))}))})])})])}),
 
                                                                                                                             new Shape({
                                                                                                                               geometry : new SFNode(
@@ -3558,50 +3957,7 @@ var X3D0 =  new X3D({
                                                                                                                                   /*from skullbase to temporomandibular vertices 2*/
                                                                                                                                   color : new SFNode(
                                                                                                                                     new ColorRGBA({
-                                                                                                                                      USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
-
-                                                                                                                            new HAnimSite({
-                                                                                                                              name : new SFString("l_gonion"),
-                                                                                                                              DEF : new SFString("hanim_l_gonion"),
-                                                                                                                              translation : new SFVec3f([0.0631,1.553,0.033]),
-                                                                                                                              children : new MFNode([
-                                                                                                                                new TouchSensor({
-                                                                                                                                  description : new SFString("HAnimSite l_gonion")}),
-
-                                                                                                                                new Shape({
-                                                                                                                                  USE : new SFString("HAnimSiteShape")})])}),
-
-                                                                                                                            new HAnimSite({
-                                                                                                                              name : new SFString("menton"),
-                                                                                                                              DEF : new SFString("hanim_menton"),
-                                                                                                                              children : new MFNode([
-                                                                                                                                new TouchSensor({
-                                                                                                                                  description : new SFString("HAnimSite menton")}),
-
-                                                                                                                                new Shape({
-                                                                                                                                  USE : new SFString("HAnimSiteShape")})])}),
-
-                                                                                                                            new HAnimSite({
-                                                                                                                              name : new SFString("r_gonion"),
-                                                                                                                              DEF : new SFString("hanim_r_gonion"),
-                                                                                                                              translation : new SFVec3f([-0.052,1.5529,0.0347]),
-                                                                                                                              children : new MFNode([
-                                                                                                                                new TouchSensor({
-                                                                                                                                  description : new SFString("HAnimSite r_gonion")}),
-
-                                                                                                                                new Shape({
-                                                                                                                                  USE : new SFString("HAnimSiteShape")})])}),
-
-                                                                                                                            new HAnimSite({
-                                                                                                                              name : new SFString("supramenton"),
-                                                                                                                              DEF : new SFString("hanim_supramenton"),
-                                                                                                                              translation : new SFVec3f([0.0061,1.541,0.0805]),
-                                                                                                                              children : new MFNode([
-                                                                                                                                new TouchSensor({
-                                                                                                                                  description : new SFString("HAnimSite supramenton")}),
-
-                                                                                                                                new Shape({
-                                                                                                                                  USE : new SFString("HAnimSiteShape")})])})])}),
+                                                                                                                                      USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
 
                                                                                                                         new HAnimJoint({
                                                                                                                           name : new SFString("l_eyelid_joint"),
@@ -3666,7 +4022,111 @@ var X3D0 =  new X3D({
                                                                                                       /*from l_sternoclavicular to l_acromioclavicular vertices 2*/
                                                                                                       color : new SFNode(
                                                                                                         new ColorRGBA({
-                                                                                                          USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+                                                                                                          USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                                                                                new HAnimSite({
+                                                                                                  name : new SFString("l_acromion"),
+                                                                                                  DEF : new SFString("hanim_l_acromion"),
+                                                                                                  translation : new SFVec3f([0.2032,1.476,-0.049]),
+                                                                                                  children : new MFNode([
+                                                                                                    new TouchSensor({
+                                                                                                      description : new SFString("HAnimSite 15 l_acromion")}),
+
+                                                                                                    new Shape({
+                                                                                                      USE : new SFString("HAnimSiteShape")}),
+
+                                                                                                    new Billboard({
+                                                                                                      children : new MFNode([
+                                                                                                        new Shape({
+                                                                                                          geometry : new SFNode(
+                                                                                                            new Text({
+                                                                                                              string : new MFString(["15"]),
+                                                                                                              fontStyle : new SFNode(
+                                                                                                                new FontStyle({
+                                                                                                                  size : new SFFloat(0.035)}))}))})])})])}),
+
+                                                                                                new HAnimSite({
+                                                                                                  name : new SFString("l_axilla_distal"),
+                                                                                                  DEF : new SFString("hanim_l_axilla_distal"),
+                                                                                                  translation : new SFVec3f([0.1706,1.4072,-0.0875]),
+                                                                                                  children : new MFNode([
+                                                                                                    new TouchSensor({
+                                                                                                      description : new SFString("HAnimSite 17 l_axilla_distal")}),
+
+                                                                                                    new Shape({
+                                                                                                      USE : new SFString("HAnimSiteShape")}),
+
+                                                                                                    new Billboard({
+                                                                                                      children : new MFNode([
+                                                                                                        new Shape({
+                                                                                                          geometry : new SFNode(
+                                                                                                            new Text({
+                                                                                                              string : new MFString(["17"]),
+                                                                                                              fontStyle : new SFNode(
+                                                                                                                new FontStyle({
+                                                                                                                  size : new SFFloat(0.035)}))}))})])})])}),
+
+                                                                                                new HAnimSite({
+                                                                                                  name : new SFString("l_axilla_posterior_folds"),
+                                                                                                  DEF : new SFString("hanim_l_axilla_posterior_folds"),
+                                                                                                  children : new MFNode([
+                                                                                                    new TouchSensor({
+                                                                                                      description : new SFString("HAnimSite 18 l_axilla_posterior_folds")}),
+
+                                                                                                    new Shape({
+                                                                                                      USE : new SFString("HAnimSiteShape")}),
+
+                                                                                                    new Billboard({
+                                                                                                      children : new MFNode([
+                                                                                                        new Shape({
+                                                                                                          geometry : new SFNode(
+                                                                                                            new Text({
+                                                                                                              string : new MFString(["18"]),
+                                                                                                              fontStyle : new SFNode(
+                                                                                                                new FontStyle({
+                                                                                                                  size : new SFFloat(0.035)}))}))})])})])}),
+
+                                                                                                new HAnimSite({
+                                                                                                  name : new SFString("l_axilla_proximal"),
+                                                                                                  DEF : new SFString("hanim_l_axilla_proximal"),
+                                                                                                  translation : new SFVec3f([0.1777,1.4065,-0.0075]),
+                                                                                                  children : new MFNode([
+                                                                                                    new TouchSensor({
+                                                                                                      description : new SFString("HAnimSite 16 l_axilla_proximal")}),
+
+                                                                                                    new Shape({
+                                                                                                      USE : new SFString("HAnimSiteShape")}),
+
+                                                                                                    new Billboard({
+                                                                                                      children : new MFNode([
+                                                                                                        new Shape({
+                                                                                                          geometry : new SFNode(
+                                                                                                            new Text({
+                                                                                                              string : new MFString(["16"]),
+                                                                                                              fontStyle : new SFNode(
+                                                                                                                new FontStyle({
+                                                                                                                  size : new SFFloat(0.035)}))}))})])})])}),
+
+                                                                                                new HAnimSite({
+                                                                                                  name : new SFString("l_clavicale"),
+                                                                                                  DEF : new SFString("hanim_l_clavicale"),
+                                                                                                  translation : new SFVec3f([0.0271,1.4943,0.0394]),
+                                                                                                  children : new MFNode([
+                                                                                                    new TouchSensor({
+                                                                                                      description : new SFString("HAnimSite 14 l_clavicale")}),
+
+                                                                                                    new Shape({
+                                                                                                      USE : new SFString("HAnimSiteShape")}),
+
+                                                                                                    new Billboard({
+                                                                                                      children : new MFNode([
+                                                                                                        new Shape({
+                                                                                                          geometry : new SFNode(
+                                                                                                            new Text({
+                                                                                                              string : new MFString(["14"]),
+                                                                                                              fontStyle : new SFNode(
+                                                                                                                new FontStyle({
+                                                                                                                  size : new SFFloat(0.035)}))}))})])})])})])}),
 
                                                                                             new HAnimJoint({
                                                                                               name : new SFString("l_acromioclavicular"),
@@ -3696,28 +4156,7 @@ var X3D0 =  new X3D({
                                                                                                           /*from l_acromioclavicular to l_shoulder vertices 2*/
                                                                                                           color : new SFNode(
                                                                                                             new ColorRGBA({
-                                                                                                              USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
-
-                                                                                                    new HAnimSite({
-                                                                                                      name : new SFString("l_bideltoid"),
-                                                                                                      DEF : new SFString("hanim_l_bideltoid"),
-                                                                                                      children : new MFNode([
-                                                                                                        new TouchSensor({
-                                                                                                          description : new SFString("HAnimSite l_bideltoid")}),
-
-                                                                                                        new Shape({
-                                                                                                          USE : new SFString("HAnimSiteShape")})])}),
-
-                                                                                                    new HAnimSite({
-                                                                                                      name : new SFString("l_humeral_lateral_epicondyles"),
-                                                                                                      DEF : new SFString("hanim_l_humeral_lateral_epicondyles"),
-                                                                                                      translation : new SFVec3f([0.228,1.1482,-0.11]),
-                                                                                                      children : new MFNode([
-                                                                                                        new TouchSensor({
-                                                                                                          description : new SFString("HAnimSite l_humeral_lateral_epicondyles")}),
-
-                                                                                                        new Shape({
-                                                                                                          USE : new SFString("HAnimSiteShape")})])})])}),
+                                                                                                              USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
 
                                                                                                 new HAnimJoint({
                                                                                                   name : new SFString("l_shoulder"),
@@ -3750,48 +4189,45 @@ var X3D0 =  new X3D({
                                                                                                                   USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
 
                                                                                                         new HAnimSite({
-                                                                                                          name : new SFString("l_humeral_medial_epicondyles"),
-                                                                                                          DEF : new SFString("hanim_l_humeral_medial_epicondyles"),
-                                                                                                          translation : new SFVec3f([0.1735,1.1272,-0.1113]),
+                                                                                                          name : new SFString("l_bideltoid"),
+                                                                                                          DEF : new SFString("hanim_l_bideltoid"),
                                                                                                           children : new MFNode([
                                                                                                             new TouchSensor({
-                                                                                                              description : new SFString("HAnimSite l_humeral_medial_epicondyles")}),
+                                                                                                              description : new SFString("HAnimSite 96 l_bideltoid")}),
 
                                                                                                             new Shape({
-                                                                                                              USE : new SFString("HAnimSiteShape")})])}),
+                                                                                                              USE : new SFString("HAnimSiteShape")}),
+
+                                                                                                            new Billboard({
+                                                                                                              children : new MFNode([
+                                                                                                                new Shape({
+                                                                                                                  geometry : new SFNode(
+                                                                                                                    new Text({
+                                                                                                                      string : new MFString(["96"]),
+                                                                                                                      fontStyle : new SFNode(
+                                                                                                                        new FontStyle({
+                                                                                                                          size : new SFFloat(0.035)}))}))})])})])}),
 
                                                                                                         new HAnimSite({
-                                                                                                          name : new SFString("l_olecranon"),
-                                                                                                          DEF : new SFString("hanim_l_olecranon"),
-                                                                                                          translation : new SFVec3f([-0.1962,1.1375,-0.1123]),
+                                                                                                          name : new SFString("l_humeral_lateral_epicondyles"),
+                                                                                                          DEF : new SFString("hanim_l_humeral_lateral_epicondyles"),
+                                                                                                          translation : new SFVec3f([0.228,1.1482,-0.11]),
                                                                                                           children : new MFNode([
                                                                                                             new TouchSensor({
-                                                                                                              description : new SFString("HAnimSite l_olecranon")}),
+                                                                                                              description : new SFString("HAnimSite 63 l_humeral_lateral_epicondyles")}),
 
                                                                                                             new Shape({
-                                                                                                              USE : new SFString("HAnimSiteShape")})])}),
+                                                                                                              USE : new SFString("HAnimSiteShape")}),
 
-                                                                                                        new HAnimSite({
-                                                                                                          name : new SFString("l_radial_styloid"),
-                                                                                                          DEF : new SFString("hanim_l_radial_styloid"),
-                                                                                                          translation : new SFVec3f([0.1901,0.8645,-0.0415]),
-                                                                                                          children : new MFNode([
-                                                                                                            new TouchSensor({
-                                                                                                              description : new SFString("HAnimSite l_radial_styloid")}),
-
-                                                                                                            new Shape({
-                                                                                                              USE : new SFString("HAnimSiteShape")})])}),
-
-                                                                                                        new HAnimSite({
-                                                                                                          name : new SFString("l_radiale"),
-                                                                                                          DEF : new SFString("hanim_l_radiale"),
-                                                                                                          translation : new SFVec3f([0.2182,1.1212,-0.1167]),
-                                                                                                          children : new MFNode([
-                                                                                                            new TouchSensor({
-                                                                                                              description : new SFString("HAnimSite l_radiale")}),
-
-                                                                                                            new Shape({
-                                                                                                              USE : new SFString("HAnimSiteShape")})])})])}),
+                                                                                                            new Billboard({
+                                                                                                              children : new MFNode([
+                                                                                                                new Shape({
+                                                                                                                  geometry : new SFNode(
+                                                                                                                    new Text({
+                                                                                                                      string : new MFString(["63"]),
+                                                                                                                      fontStyle : new SFNode(
+                                                                                                                        new FontStyle({
+                                                                                                                          size : new SFFloat(0.035)}))}))})])})])})])}),
 
                                                                                                     new HAnimJoint({
                                                                                                       name : new SFString("l_elbow"),
@@ -3824,15 +4260,88 @@ var X3D0 =  new X3D({
                                                                                                                       USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
 
                                                                                                             new HAnimSite({
-                                                                                                              name : new SFString("l_ulnar_styloid"),
-                                                                                                              DEF : new SFString("hanim_l_ulnar_styloid"),
-                                                                                                              translation : new SFVec3f([-0.2142,0.8529,-0.0648]),
+                                                                                                              name : new SFString("l_humeral_medial_epicondyles"),
+                                                                                                              DEF : new SFString("hanim_l_humeral_medial_epicondyles"),
+                                                                                                              translation : new SFVec3f([0.1735,1.1272,-0.1113]),
                                                                                                               children : new MFNode([
                                                                                                                 new TouchSensor({
-                                                                                                                  description : new SFString("HAnimSite l_ulnar_styloid")}),
+                                                                                                                  description : new SFString("HAnimSite 64 l_humeral_medial_epicondyles")}),
 
                                                                                                                 new Shape({
-                                                                                                                  USE : new SFString("HAnimSiteShape")})])})])}),
+                                                                                                                  USE : new SFString("HAnimSiteShape")}),
+
+                                                                                                                new Billboard({
+                                                                                                                  children : new MFNode([
+                                                                                                                    new Shape({
+                                                                                                                      geometry : new SFNode(
+                                                                                                                        new Text({
+                                                                                                                          string : new MFString(["64"]),
+                                                                                                                          fontStyle : new SFNode(
+                                                                                                                            new FontStyle({
+                                                                                                                              size : new SFFloat(0.035)}))}))})])})])}),
+
+                                                                                                            new HAnimSite({
+                                                                                                              name : new SFString("l_olecranon"),
+                                                                                                              DEF : new SFString("hanim_l_olecranon"),
+                                                                                                              translation : new SFVec3f([-0.1962,1.1375,-0.1123]),
+                                                                                                              children : new MFNode([
+                                                                                                                new TouchSensor({
+                                                                                                                  description : new SFString("HAnimSite 65 l_olecranon")}),
+
+                                                                                                                new Shape({
+                                                                                                                  USE : new SFString("HAnimSiteShape")}),
+
+                                                                                                                new Billboard({
+                                                                                                                  children : new MFNode([
+                                                                                                                    new Shape({
+                                                                                                                      geometry : new SFNode(
+                                                                                                                        new Text({
+                                                                                                                          string : new MFString(["65"]),
+                                                                                                                          fontStyle : new SFNode(
+                                                                                                                            new FontStyle({
+                                                                                                                              size : new SFFloat(0.035)}))}))})])})])}),
+
+                                                                                                            new HAnimSite({
+                                                                                                              name : new SFString("l_radial_styloid"),
+                                                                                                              DEF : new SFString("hanim_l_radial_styloid"),
+                                                                                                              translation : new SFVec3f([0.1901,0.8645,-0.0415]),
+                                                                                                              children : new MFNode([
+                                                                                                                new TouchSensor({
+                                                                                                                  description : new SFString("HAnimSite 71 l_radial_styloid")}),
+
+                                                                                                                new Shape({
+                                                                                                                  USE : new SFString("HAnimSiteShape")}),
+
+                                                                                                                new Billboard({
+                                                                                                                  children : new MFNode([
+                                                                                                                    new Shape({
+                                                                                                                      geometry : new SFNode(
+                                                                                                                        new Text({
+                                                                                                                          string : new MFString(["71"]),
+                                                                                                                          fontStyle : new SFNode(
+                                                                                                                            new FontStyle({
+                                                                                                                              size : new SFFloat(0.035)}))}))})])})])}),
+
+                                                                                                            new HAnimSite({
+                                                                                                              name : new SFString("l_radiale"),
+                                                                                                              DEF : new SFString("hanim_l_radiale"),
+                                                                                                              translation : new SFVec3f([0.2182,1.1212,-0.1167]),
+                                                                                                              children : new MFNode([
+                                                                                                                new TouchSensor({
+                                                                                                                  description : new SFString("HAnimSite 69 l_radiale")}),
+
+                                                                                                                new Shape({
+                                                                                                                  USE : new SFString("HAnimSiteShape")}),
+
+                                                                                                                new Billboard({
+                                                                                                                  children : new MFNode([
+                                                                                                                    new Shape({
+                                                                                                                      geometry : new SFNode(
+                                                                                                                        new Text({
+                                                                                                                          string : new MFString(["69"]),
+                                                                                                                          fontStyle : new SFNode(
+                                                                                                                            new FontStyle({
+                                                                                                                              size : new SFFloat(0.035)}))}))})])})])})])}),
 
                                                                                                         new HAnimJoint({
                                                                                                           name : new SFString("l_radiocarpal"),
@@ -3867,6 +4376,27 @@ var X3D0 =  new X3D({
                                                                                                                       color : new SFNode(
                                                                                                                         new ColorRGBA({
                                                                                                                           USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                                                                                                new HAnimSite({
+                                                                                                                  name : new SFString("l_ulnar_styloid"),
+                                                                                                                  DEF : new SFString("hanim_l_ulnar_styloid"),
+                                                                                                                  translation : new SFVec3f([-0.2142,0.8529,-0.0648]),
+                                                                                                                  children : new MFNode([
+                                                                                                                    new TouchSensor({
+                                                                                                                      description : new SFString("HAnimSite 70 l_ulnar_styloid")}),
+
+                                                                                                                    new Shape({
+                                                                                                                      USE : new SFString("HAnimSiteShape")}),
+
+                                                                                                                    new Billboard({
+                                                                                                                      children : new MFNode([
+                                                                                                                        new Shape({
+                                                                                                                          geometry : new SFNode(
+                                                                                                                            new Text({
+                                                                                                                              string : new MFString(["70"]),
+                                                                                                                              fontStyle : new SFNode(
+                                                                                                                                new FontStyle({
+                                                                                                                                  size : new SFFloat(0.035)}))}))})])})])}),
 
                                                                                                                 new Shape({
                                                                                                                   geometry : new SFNode(
@@ -3992,17 +4522,7 @@ var X3D0 =  new X3D({
                                                                                                                                   /*from l_metacarpophalangeal_1 to l_carpal_interphalangeal_1 vertices 2*/
                                                                                                                                   color : new SFNode(
                                                                                                                                     new ColorRGBA({
-                                                                                                                                      USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
-
-                                                                                                                            new HAnimSite({
-                                                                                                                              name : new SFString("l_carpal_distal_phalanx_1_tip"),
-                                                                                                                              DEF : new SFString("hanim_l_carpal_distal_phalanx_1_tip"),
-                                                                                                                              children : new MFNode([
-                                                                                                                                new TouchSensor({
-                                                                                                                                  description : new SFString("HAnimSite l_carpal_distal_phalanx_1_tip")}),
-
-                                                                                                                                new Shape({
-                                                                                                                                  USE : new SFString("HAnimSiteShape")})])})])}),
+                                                                                                                                      USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
 
                                                                                                                         new HAnimJoint({
                                                                                                                           name : new SFString("l_carpal_interphalangeal_1"),
@@ -4037,18 +4557,7 @@ var X3D0 =  new X3D({
                                                                                                                           /*from l_midcarpal_2 to l_carpometacarpal_2 vertices 2*/
                                                                                                                           color : new SFNode(
                                                                                                                             new ColorRGBA({
-                                                                                                                              USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
-
-                                                                                                                    new HAnimSite({
-                                                                                                                      name : new SFString("l_metacarpal_phalanx_2"),
-                                                                                                                      DEF : new SFString("hanim_l_metacarpal_phalanx_2"),
-                                                                                                                      translation : new SFVec3f([0.2009,0.8139,-0.0237]),
-                                                                                                                      children : new MFNode([
-                                                                                                                        new TouchSensor({
-                                                                                                                          description : new SFString("HAnimSite l_metacarpal_phalanx_2")}),
-
-                                                                                                                        new Shape({
-                                                                                                                          USE : new SFString("HAnimSiteShape")})])})])}),
+                                                                                                                              USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
 
                                                                                                                 new HAnimJoint({
                                                                                                                   name : new SFString("l_carpometacarpal_2"),
@@ -4078,7 +4587,28 @@ var X3D0 =  new X3D({
                                                                                                                               /*from l_carpometacarpal_2 to l_metacarpophalangeal_2 vertices 2*/
                                                                                                                               color : new SFNode(
                                                                                                                                 new ColorRGBA({
-                                                                                                                                  USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+                                                                                                                                  USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                                                                                                        new HAnimSite({
+                                                                                                                          name : new SFString("l_metacarpal_phalanx_2"),
+                                                                                                                          DEF : new SFString("hanim_l_metacarpal_phalanx_2"),
+                                                                                                                          translation : new SFVec3f([0.2009,0.8139,-0.0237]),
+                                                                                                                          children : new MFNode([
+                                                                                                                            new TouchSensor({
+                                                                                                                              description : new SFString("HAnimSite 75 l_metacarpal_phalanx_2")}),
+
+                                                                                                                            new Shape({
+                                                                                                                              USE : new SFString("HAnimSiteShape")}),
+
+                                                                                                                            new Billboard({
+                                                                                                                              children : new MFNode([
+                                                                                                                                new Shape({
+                                                                                                                                  geometry : new SFNode(
+                                                                                                                                    new Text({
+                                                                                                                                      string : new MFString(["75"]),
+                                                                                                                                      fontStyle : new SFNode(
+                                                                                                                                        new FontStyle({
+                                                                                                                                          size : new SFFloat(0.035)}))}))})])})])})])}),
 
                                                                                                                     new HAnimJoint({
                                                                                                                       name : new SFString("l_metacarpophalangeal_2"),
@@ -4138,28 +4668,7 @@ var X3D0 =  new X3D({
                                                                                                                                       /*from l_carpal_proximal_interphalangeal_2 to l_carpal_distal_interphalangeal_2 vertices 2*/
                                                                                                                                       color : new SFNode(
                                                                                                                                         new ColorRGBA({
-                                                                                                                                          USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
-
-                                                                                                                                new HAnimSite({
-                                                                                                                                  name : new SFString("l_carpal_distal_phalanx_2_tip"),
-                                                                                                                                  DEF : new SFString("hanim_l_carpal_distal_phalanx_2_tip"),
-                                                                                                                                  children : new MFNode([
-                                                                                                                                    new TouchSensor({
-                                                                                                                                      description : new SFString("HAnimSite l_carpal_distal_phalanx_2_tip")}),
-
-                                                                                                                                    new Shape({
-                                                                                                                                      USE : new SFString("HAnimSiteShape")})])}),
-
-                                                                                                                                new HAnimSite({
-                                                                                                                                  name : new SFString("l_dactylion"),
-                                                                                                                                  DEF : new SFString("hanim_l_dactylion"),
-                                                                                                                                  translation : new SFVec3f([0.2056,0.6743,-0.0482]),
-                                                                                                                                  children : new MFNode([
-                                                                                                                                    new TouchSensor({
-                                                                                                                                      description : new SFString("HAnimSite l_dactylion")}),
-
-                                                                                                                                    new Shape({
-                                                                                                                                      USE : new SFString("HAnimSiteShape")})])})])}),
+                                                                                                                                          USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
 
                                                                                                                             new HAnimJoint({
                                                                                                                               name : new SFString("l_carpal_distal_interphalangeal_2"),
@@ -4194,17 +4703,7 @@ var X3D0 =  new X3D({
                                                                                                                           /*from l_midcarpal_3 to l_carpometacarpal_3 vertices 2*/
                                                                                                                           color : new SFNode(
                                                                                                                             new ColorRGBA({
-                                                                                                                              USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
-
-                                                                                                                    new HAnimSite({
-                                                                                                                      name : new SFString("l_metacarpal_phalanx_3"),
-                                                                                                                      DEF : new SFString("hanim_l_metacarpal_phalanx_3"),
-                                                                                                                      children : new MFNode([
-                                                                                                                        new TouchSensor({
-                                                                                                                          description : new SFString("HAnimSite l_metacarpal_phalanx_3")}),
-
-                                                                                                                        new Shape({
-                                                                                                                          USE : new SFString("HAnimSiteShape")})])})])}),
+                                                                                                                              USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
 
                                                                                                                 new HAnimJoint({
                                                                                                                   name : new SFString("l_carpometacarpal_3"),
@@ -4234,7 +4733,27 @@ var X3D0 =  new X3D({
                                                                                                                               /*from l_carpometacarpal_3 to l_metacarpophalangeal_3 vertices 2*/
                                                                                                                               color : new SFNode(
                                                                                                                                 new ColorRGBA({
-                                                                                                                                  USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+                                                                                                                                  USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                                                                                                        new HAnimSite({
+                                                                                                                          name : new SFString("l_metacarpal_phalanx_3"),
+                                                                                                                          DEF : new SFString("hanim_l_metacarpal_phalanx_3"),
+                                                                                                                          children : new MFNode([
+                                                                                                                            new TouchSensor({
+                                                                                                                              description : new SFString("HAnimSite 76 l_metacarpal_phalanx_3")}),
+
+                                                                                                                            new Shape({
+                                                                                                                              USE : new SFString("HAnimSiteShape")}),
+
+                                                                                                                            new Billboard({
+                                                                                                                              children : new MFNode([
+                                                                                                                                new Shape({
+                                                                                                                                  geometry : new SFNode(
+                                                                                                                                    new Text({
+                                                                                                                                      string : new MFString(["76"]),
+                                                                                                                                      fontStyle : new SFNode(
+                                                                                                                                        new FontStyle({
+                                                                                                                                          size : new SFFloat(0.035)}))}))})])})])})])}),
 
                                                                                                                     new HAnimJoint({
                                                                                                                       name : new SFString("l_metacarpophalangeal_3"),
@@ -4294,17 +4813,7 @@ var X3D0 =  new X3D({
                                                                                                                                       /*from l_carpal_proximal_interphalangeal_3 to l_carpal_distal_interphalangeal_3 vertices 2*/
                                                                                                                                       color : new SFNode(
                                                                                                                                         new ColorRGBA({
-                                                                                                                                          USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
-
-                                                                                                                                new HAnimSite({
-                                                                                                                                  name : new SFString("l_carpal_distal_phalanx_3_tip"),
-                                                                                                                                  DEF : new SFString("hanim_l_carpal_distal_phalanx_3_tip"),
-                                                                                                                                  children : new MFNode([
-                                                                                                                                    new TouchSensor({
-                                                                                                                                      description : new SFString("HAnimSite l_carpal_distal_phalanx_3_tip")}),
-
-                                                                                                                                    new Shape({
-                                                                                                                                      USE : new SFString("HAnimSiteShape")})])})])}),
+                                                                                                                                          USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
 
                                                                                                                             new HAnimJoint({
                                                                                                                               name : new SFString("l_carpal_distal_interphalangeal_3"),
@@ -4351,18 +4860,7 @@ var X3D0 =  new X3D({
                                                                                                                           /*from l_midcarpal_4_5 to l_carpometacarpal_5 vertices 2*/
                                                                                                                           color : new SFNode(
                                                                                                                             new ColorRGBA({
-                                                                                                                              USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
-
-                                                                                                                    new HAnimSite({
-                                                                                                                      name : new SFString("l_metacarpal_phalanx_5"),
-                                                                                                                      DEF : new SFString("hanim_l_metacarpal_phalanx_5"),
-                                                                                                                      translation : new SFVec3f([0.1929,0.786,-0.1122]),
-                                                                                                                      children : new MFNode([
-                                                                                                                        new TouchSensor({
-                                                                                                                          description : new SFString("HAnimSite l_metacarpal_phalanx_5")}),
-
-                                                                                                                        new Shape({
-                                                                                                                          USE : new SFString("HAnimSiteShape")})])})])}),
+                                                                                                                              USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
 
                                                                                                                 new HAnimJoint({
                                                                                                                   name : new SFString("l_carpometacarpal_4"),
@@ -4452,17 +4950,7 @@ var X3D0 =  new X3D({
                                                                                                                                       /*from l_carpal_proximal_interphalangeal_4 to l_carpal_distal_interphalangeal_4 vertices 2*/
                                                                                                                                       color : new SFNode(
                                                                                                                                         new ColorRGBA({
-                                                                                                                                          USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
-
-                                                                                                                                new HAnimSite({
-                                                                                                                                  name : new SFString("l_carpal_distal_phalanx_4_tip"),
-                                                                                                                                  DEF : new SFString("hanim_l_carpal_distal_phalanx_4_tip"),
-                                                                                                                                  children : new MFNode([
-                                                                                                                                    new TouchSensor({
-                                                                                                                                      description : new SFString("HAnimSite l_carpal_distal_phalanx_4_tip")}),
-
-                                                                                                                                    new Shape({
-                                                                                                                                      USE : new SFString("HAnimSiteShape")})])})])}),
+                                                                                                                                          USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
 
                                                                                                                             new HAnimJoint({
                                                                                                                               name : new SFString("l_carpal_distal_interphalangeal_4"),
@@ -4497,7 +4985,28 @@ var X3D0 =  new X3D({
                                                                                                                               /*from l_carpometacarpal_5 to l_metacarpophalangeal_5 vertices 2*/
                                                                                                                               color : new SFNode(
                                                                                                                                 new ColorRGBA({
-                                                                                                                                  USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+                                                                                                                                  USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                                                                                                        new HAnimSite({
+                                                                                                                          name : new SFString("l_metacarpal_phalanx_5"),
+                                                                                                                          DEF : new SFString("hanim_l_metacarpal_phalanx_5"),
+                                                                                                                          translation : new SFVec3f([0.1929,0.786,-0.1122]),
+                                                                                                                          children : new MFNode([
+                                                                                                                            new TouchSensor({
+                                                                                                                              description : new SFString("HAnimSite 77 l_metacarpal_phalanx_5")}),
+
+                                                                                                                            new Shape({
+                                                                                                                              USE : new SFString("HAnimSiteShape")}),
+
+                                                                                                                            new Billboard({
+                                                                                                                              children : new MFNode([
+                                                                                                                                new Shape({
+                                                                                                                                  geometry : new SFNode(
+                                                                                                                                    new Text({
+                                                                                                                                      string : new MFString(["77"]),
+                                                                                                                                      fontStyle : new SFNode(
+                                                                                                                                        new FontStyle({
+                                                                                                                                          size : new SFFloat(0.035)}))}))})])})])})])}),
 
                                                                                                                     new HAnimJoint({
                                                                                                                       name : new SFString("l_metacarpophalangeal_5"),
@@ -4557,17 +5066,7 @@ var X3D0 =  new X3D({
                                                                                                                                       /*from l_carpal_proximal_interphalangeal_5 to l_carpal_distal_interphalangeal_5 vertices 2*/
                                                                                                                                       color : new SFNode(
                                                                                                                                         new ColorRGBA({
-                                                                                                                                          USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
-
-                                                                                                                                new HAnimSite({
-                                                                                                                                  name : new SFString("l_carpal_distal_phalanx_5_tip"),
-                                                                                                                                  DEF : new SFString("hanim_l_carpal_distal_phalanx_5_tip"),
-                                                                                                                                  children : new MFNode([
-                                                                                                                                    new TouchSensor({
-                                                                                                                                      description : new SFString("HAnimSite l_carpal_distal_phalanx_5_tip")}),
-
-                                                                                                                                    new Shape({
-                                                                                                                                      USE : new SFString("HAnimSiteShape")})])})])}),
+                                                                                                                                          USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
 
                                                                                                                             new HAnimJoint({
                                                                                                                               name : new SFString("l_carpal_distal_interphalangeal_5"),
@@ -4602,7 +5101,111 @@ var X3D0 =  new X3D({
                                                                                                       /*from r_sternoclavicular to r_acromioclavicular vertices 2*/
                                                                                                       color : new SFNode(
                                                                                                         new ColorRGBA({
-                                                                                                          USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+                                                                                                          USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                                                                                new HAnimSite({
+                                                                                                  name : new SFString("r_acromion"),
+                                                                                                  DEF : new SFString("hanim_r_acromion"),
+                                                                                                  translation : new SFVec3f([-0.1905,1.4791,-0.0431]),
+                                                                                                  children : new MFNode([
+                                                                                                    new TouchSensor({
+                                                                                                      description : new SFString("HAnimSite 20 r_acromion")}),
+
+                                                                                                    new Shape({
+                                                                                                      USE : new SFString("HAnimSiteShape")}),
+
+                                                                                                    new Billboard({
+                                                                                                      children : new MFNode([
+                                                                                                        new Shape({
+                                                                                                          geometry : new SFNode(
+                                                                                                            new Text({
+                                                                                                              string : new MFString(["20"]),
+                                                                                                              fontStyle : new SFNode(
+                                                                                                                new FontStyle({
+                                                                                                                  size : new SFFloat(0.035)}))}))})])})])}),
+
+                                                                                                new HAnimSite({
+                                                                                                  name : new SFString("r_axilla_distal"),
+                                                                                                  DEF : new SFString("hanim_r_axilla_distal"),
+                                                                                                  translation : new SFVec3f([-0.1603,1.4098,-0.0826]),
+                                                                                                  children : new MFNode([
+                                                                                                    new TouchSensor({
+                                                                                                      description : new SFString("HAnimSite 22 r_axilla_distal")}),
+
+                                                                                                    new Shape({
+                                                                                                      USE : new SFString("HAnimSiteShape")}),
+
+                                                                                                    new Billboard({
+                                                                                                      children : new MFNode([
+                                                                                                        new Shape({
+                                                                                                          geometry : new SFNode(
+                                                                                                            new Text({
+                                                                                                              string : new MFString(["22"]),
+                                                                                                              fontStyle : new SFNode(
+                                                                                                                new FontStyle({
+                                                                                                                  size : new SFFloat(0.035)}))}))})])})])}),
+
+                                                                                                new HAnimSite({
+                                                                                                  name : new SFString("r_axilla_posterior_folds"),
+                                                                                                  DEF : new SFString("hanim_r_axilla_posterior_folds"),
+                                                                                                  children : new MFNode([
+                                                                                                    new TouchSensor({
+                                                                                                      description : new SFString("HAnimSite 23 r_axilla_posterior_folds")}),
+
+                                                                                                    new Shape({
+                                                                                                      USE : new SFString("HAnimSiteShape")}),
+
+                                                                                                    new Billboard({
+                                                                                                      children : new MFNode([
+                                                                                                        new Shape({
+                                                                                                          geometry : new SFNode(
+                                                                                                            new Text({
+                                                                                                              string : new MFString(["23"]),
+                                                                                                              fontStyle : new SFNode(
+                                                                                                                new FontStyle({
+                                                                                                                  size : new SFFloat(0.035)}))}))})])})])}),
+
+                                                                                                new HAnimSite({
+                                                                                                  name : new SFString("r_axilla_proximal"),
+                                                                                                  DEF : new SFString("hanim_r_axilla_proximal"),
+                                                                                                  translation : new SFVec3f([-0.1626,1.4072,-0.0031]),
+                                                                                                  children : new MFNode([
+                                                                                                    new TouchSensor({
+                                                                                                      description : new SFString("HAnimSite 21 r_axilla_proximal")}),
+
+                                                                                                    new Shape({
+                                                                                                      USE : new SFString("HAnimSiteShape")}),
+
+                                                                                                    new Billboard({
+                                                                                                      children : new MFNode([
+                                                                                                        new Shape({
+                                                                                                          geometry : new SFNode(
+                                                                                                            new Text({
+                                                                                                              string : new MFString(["21"]),
+                                                                                                              fontStyle : new SFNode(
+                                                                                                                new FontStyle({
+                                                                                                                  size : new SFFloat(0.035)}))}))})])})])}),
+
+                                                                                                new HAnimSite({
+                                                                                                  name : new SFString("r_clavicale"),
+                                                                                                  DEF : new SFString("hanim_r_clavicale"),
+                                                                                                  translation : new SFVec3f([-0.0115,1.4943,0.04]),
+                                                                                                  children : new MFNode([
+                                                                                                    new TouchSensor({
+                                                                                                      description : new SFString("HAnimSite 19 r_clavicale")}),
+
+                                                                                                    new Shape({
+                                                                                                      USE : new SFString("HAnimSiteShape")}),
+
+                                                                                                    new Billboard({
+                                                                                                      children : new MFNode([
+                                                                                                        new Shape({
+                                                                                                          geometry : new SFNode(
+                                                                                                            new Text({
+                                                                                                              string : new MFString(["19"]),
+                                                                                                              fontStyle : new SFNode(
+                                                                                                                new FontStyle({
+                                                                                                                  size : new SFFloat(0.035)}))}))})])})])})])}),
 
                                                                                             new HAnimJoint({
                                                                                               name : new SFString("r_acromioclavicular"),
@@ -4632,28 +5235,7 @@ var X3D0 =  new X3D({
                                                                                                           /*from r_acromioclavicular to r_shoulder vertices 2*/
                                                                                                           color : new SFNode(
                                                                                                             new ColorRGBA({
-                                                                                                              USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
-
-                                                                                                    new HAnimSite({
-                                                                                                      name : new SFString("r_bideltoid"),
-                                                                                                      DEF : new SFString("hanim_r_bideltoid"),
-                                                                                                      children : new MFNode([
-                                                                                                        new TouchSensor({
-                                                                                                          description : new SFString("HAnimSite r_bideltoid")}),
-
-                                                                                                        new Shape({
-                                                                                                          USE : new SFString("HAnimSiteShape")})])}),
-
-                                                                                                    new HAnimSite({
-                                                                                                      name : new SFString("r_humeral_lateral_epicondyles"),
-                                                                                                      DEF : new SFString("hanim_r_humeral_lateral_epicondyles"),
-                                                                                                      translation : new SFVec3f([-0.2224,1.1517,-0.1033]),
-                                                                                                      children : new MFNode([
-                                                                                                        new TouchSensor({
-                                                                                                          description : new SFString("HAnimSite r_humeral_lateral_epicondyles")}),
-
-                                                                                                        new Shape({
-                                                                                                          USE : new SFString("HAnimSiteShape")})])})])}),
+                                                                                                              USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
 
                                                                                                 new HAnimJoint({
                                                                                                   name : new SFString("r_shoulder"),
@@ -4686,48 +5268,45 @@ var X3D0 =  new X3D({
                                                                                                                   USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
 
                                                                                                         new HAnimSite({
-                                                                                                          name : new SFString("r_humeral_medial_epicondyles"),
-                                                                                                          DEF : new SFString("hanim_r_humeral_medial_epicondyles"),
-                                                                                                          translation : new SFVec3f([-0.168,1.1298,-0.1062]),
+                                                                                                          name : new SFString("r_bideltoid"),
+                                                                                                          DEF : new SFString("hanim_r_bideltoid"),
                                                                                                           children : new MFNode([
                                                                                                             new TouchSensor({
-                                                                                                              description : new SFString("HAnimSite r_humeral_medial_epicondyles")}),
+                                                                                                              description : new SFString("HAnimSite 97 r_bideltoid")}),
 
                                                                                                             new Shape({
-                                                                                                              USE : new SFString("HAnimSiteShape")})])}),
+                                                                                                              USE : new SFString("HAnimSiteShape")}),
+
+                                                                                                            new Billboard({
+                                                                                                              children : new MFNode([
+                                                                                                                new Shape({
+                                                                                                                  geometry : new SFNode(
+                                                                                                                    new Text({
+                                                                                                                      string : new MFString(["97"]),
+                                                                                                                      fontStyle : new SFNode(
+                                                                                                                        new FontStyle({
+                                                                                                                          size : new SFFloat(0.035)}))}))})])})])}),
 
                                                                                                         new HAnimSite({
-                                                                                                          name : new SFString("r_olecranon"),
-                                                                                                          DEF : new SFString("hanim_r_olecranon"),
-                                                                                                          translation : new SFVec3f([-0.1907,1.1405,-0.1065]),
+                                                                                                          name : new SFString("r_humeral_lateral_epicondyles"),
+                                                                                                          DEF : new SFString("hanim_r_humeral_lateral_epicondyles"),
+                                                                                                          translation : new SFVec3f([-0.2224,1.1517,-0.1033]),
                                                                                                           children : new MFNode([
                                                                                                             new TouchSensor({
-                                                                                                              description : new SFString("HAnimSite r_olecranon")}),
+                                                                                                              description : new SFString("HAnimSite 66 r_humeral_lateral_epicondyles")}),
 
                                                                                                             new Shape({
-                                                                                                              USE : new SFString("HAnimSiteShape")})])}),
+                                                                                                              USE : new SFString("HAnimSiteShape")}),
 
-                                                                                                        new HAnimSite({
-                                                                                                          name : new SFString("r_radial_styloid"),
-                                                                                                          DEF : new SFString("hanim_r_radial_styloid"),
-                                                                                                          translation : new SFVec3f([-0.1884,0.8676,-0.036]),
-                                                                                                          children : new MFNode([
-                                                                                                            new TouchSensor({
-                                                                                                              description : new SFString("HAnimSite r_radial_styloid")}),
-
-                                                                                                            new Shape({
-                                                                                                              USE : new SFString("HAnimSiteShape")})])}),
-
-                                                                                                        new HAnimSite({
-                                                                                                          name : new SFString("r_radiale"),
-                                                                                                          DEF : new SFString("hanim_r_radiale"),
-                                                                                                          translation : new SFVec3f([-0.213,1.1305,-0.1091]),
-                                                                                                          children : new MFNode([
-                                                                                                            new TouchSensor({
-                                                                                                              description : new SFString("HAnimSite r_radiale")}),
-
-                                                                                                            new Shape({
-                                                                                                              USE : new SFString("HAnimSiteShape")})])})])}),
+                                                                                                            new Billboard({
+                                                                                                              children : new MFNode([
+                                                                                                                new Shape({
+                                                                                                                  geometry : new SFNode(
+                                                                                                                    new Text({
+                                                                                                                      string : new MFString(["66"]),
+                                                                                                                      fontStyle : new SFNode(
+                                                                                                                        new FontStyle({
+                                                                                                                          size : new SFFloat(0.035)}))}))})])})])})])}),
 
                                                                                                     new HAnimJoint({
                                                                                                       name : new SFString("r_elbow"),
@@ -4760,15 +5339,88 @@ var X3D0 =  new X3D({
                                                                                                                       USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
 
                                                                                                             new HAnimSite({
-                                                                                                              name : new SFString("r_ulnar_styloid"),
-                                                                                                              DEF : new SFString("hanim_r_ulnar_styloid"),
-                                                                                                              translation : new SFVec3f([-0.2117,0.8562,-0.0584]),
+                                                                                                              name : new SFString("r_humeral_medial_epicondyles"),
+                                                                                                              DEF : new SFString("hanim_r_humeral_medial_epicondyles"),
+                                                                                                              translation : new SFVec3f([-0.168,1.1298,-0.1062]),
                                                                                                               children : new MFNode([
                                                                                                                 new TouchSensor({
-                                                                                                                  description : new SFString("HAnimSite r_ulnar_styloid")}),
+                                                                                                                  description : new SFString("HAnimSite 67 r_humeral_medial_epicondyles")}),
 
                                                                                                                 new Shape({
-                                                                                                                  USE : new SFString("HAnimSiteShape")})])})])}),
+                                                                                                                  USE : new SFString("HAnimSiteShape")}),
+
+                                                                                                                new Billboard({
+                                                                                                                  children : new MFNode([
+                                                                                                                    new Shape({
+                                                                                                                      geometry : new SFNode(
+                                                                                                                        new Text({
+                                                                                                                          string : new MFString(["67"]),
+                                                                                                                          fontStyle : new SFNode(
+                                                                                                                            new FontStyle({
+                                                                                                                              size : new SFFloat(0.035)}))}))})])})])}),
+
+                                                                                                            new HAnimSite({
+                                                                                                              name : new SFString("r_olecranon"),
+                                                                                                              DEF : new SFString("hanim_r_olecranon"),
+                                                                                                              translation : new SFVec3f([-0.1907,1.1405,-0.1065]),
+                                                                                                              children : new MFNode([
+                                                                                                                new TouchSensor({
+                                                                                                                  description : new SFString("HAnimSite 68 r_olecranon")}),
+
+                                                                                                                new Shape({
+                                                                                                                  USE : new SFString("HAnimSiteShape")}),
+
+                                                                                                                new Billboard({
+                                                                                                                  children : new MFNode([
+                                                                                                                    new Shape({
+                                                                                                                      geometry : new SFNode(
+                                                                                                                        new Text({
+                                                                                                                          string : new MFString(["68"]),
+                                                                                                                          fontStyle : new SFNode(
+                                                                                                                            new FontStyle({
+                                                                                                                              size : new SFFloat(0.035)}))}))})])})])}),
+
+                                                                                                            new HAnimSite({
+                                                                                                              name : new SFString("r_radial_styloid"),
+                                                                                                              DEF : new SFString("hanim_r_radial_styloid"),
+                                                                                                              translation : new SFVec3f([-0.1884,0.8676,-0.036]),
+                                                                                                              children : new MFNode([
+                                                                                                                new TouchSensor({
+                                                                                                                  description : new SFString("HAnimSite 74 r_radial_styloid")}),
+
+                                                                                                                new Shape({
+                                                                                                                  USE : new SFString("HAnimSiteShape")}),
+
+                                                                                                                new Billboard({
+                                                                                                                  children : new MFNode([
+                                                                                                                    new Shape({
+                                                                                                                      geometry : new SFNode(
+                                                                                                                        new Text({
+                                                                                                                          string : new MFString(["74"]),
+                                                                                                                          fontStyle : new SFNode(
+                                                                                                                            new FontStyle({
+                                                                                                                              size : new SFFloat(0.035)}))}))})])})])}),
+
+                                                                                                            new HAnimSite({
+                                                                                                              name : new SFString("r_radiale"),
+                                                                                                              DEF : new SFString("hanim_r_radiale"),
+                                                                                                              translation : new SFVec3f([-0.213,1.1305,-0.1091]),
+                                                                                                              children : new MFNode([
+                                                                                                                new TouchSensor({
+                                                                                                                  description : new SFString("HAnimSite 72 r_radiale")}),
+
+                                                                                                                new Shape({
+                                                                                                                  USE : new SFString("HAnimSiteShape")}),
+
+                                                                                                                new Billboard({
+                                                                                                                  children : new MFNode([
+                                                                                                                    new Shape({
+                                                                                                                      geometry : new SFNode(
+                                                                                                                        new Text({
+                                                                                                                          string : new MFString(["72"]),
+                                                                                                                          fontStyle : new SFNode(
+                                                                                                                            new FontStyle({
+                                                                                                                              size : new SFFloat(0.035)}))}))})])})])})])}),
 
                                                                                                         new HAnimJoint({
                                                                                                           name : new SFString("r_radiocarpal"),
@@ -4803,6 +5455,27 @@ var X3D0 =  new X3D({
                                                                                                                       color : new SFNode(
                                                                                                                         new ColorRGBA({
                                                                                                                           USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                                                                                                new HAnimSite({
+                                                                                                                  name : new SFString("r_ulnar_styloid"),
+                                                                                                                  DEF : new SFString("hanim_r_ulnar_styloid"),
+                                                                                                                  translation : new SFVec3f([-0.2117,0.8562,-0.0584]),
+                                                                                                                  children : new MFNode([
+                                                                                                                    new TouchSensor({
+                                                                                                                      description : new SFString("HAnimSite 73 r_ulnar_styloid")}),
+
+                                                                                                                    new Shape({
+                                                                                                                      USE : new SFString("HAnimSiteShape")}),
+
+                                                                                                                    new Billboard({
+                                                                                                                      children : new MFNode([
+                                                                                                                        new Shape({
+                                                                                                                          geometry : new SFNode(
+                                                                                                                            new Text({
+                                                                                                                              string : new MFString(["73"]),
+                                                                                                                              fontStyle : new SFNode(
+                                                                                                                                new FontStyle({
+                                                                                                                                  size : new SFFloat(0.035)}))}))})])})])}),
 
                                                                                                                 new Shape({
                                                                                                                   geometry : new SFNode(
@@ -4928,17 +5601,7 @@ var X3D0 =  new X3D({
                                                                                                                                   /*from r_metacarpophalangeal_1 to r_carpal_interphalangeal_1 vertices 2*/
                                                                                                                                   color : new SFNode(
                                                                                                                                     new ColorRGBA({
-                                                                                                                                      USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
-
-                                                                                                                            new HAnimSite({
-                                                                                                                              name : new SFString("r_carpal_distal_phalanx_1_tip"),
-                                                                                                                              DEF : new SFString("hanim_r_carpal_distal_phalanx_1_tip"),
-                                                                                                                              children : new MFNode([
-                                                                                                                                new TouchSensor({
-                                                                                                                                  description : new SFString("HAnimSite r_carpal_distal_phalanx_1_tip")}),
-
-                                                                                                                                new Shape({
-                                                                                                                                  USE : new SFString("HAnimSiteShape")})])})])}),
+                                                                                                                                      USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
 
                                                                                                                         new HAnimJoint({
                                                                                                                           name : new SFString("r_carpal_interphalangeal_1"),
@@ -4973,18 +5636,7 @@ var X3D0 =  new X3D({
                                                                                                                           /*from r_midcarpal_2 to r_carpometacarpal_2 vertices 2*/
                                                                                                                           color : new SFNode(
                                                                                                                             new ColorRGBA({
-                                                                                                                              USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
-
-                                                                                                                    new HAnimSite({
-                                                                                                                      name : new SFString("r_metacarpal_phalanx_2"),
-                                                                                                                      DEF : new SFString("hanim_r_metacarpal_phalanx_2"),
-                                                                                                                      translation : new SFVec3f([-0.1977,0.8169,-0.0177]),
-                                                                                                                      children : new MFNode([
-                                                                                                                        new TouchSensor({
-                                                                                                                          description : new SFString("HAnimSite r_metacarpal_phalanx_2")}),
-
-                                                                                                                        new Shape({
-                                                                                                                          USE : new SFString("HAnimSiteShape")})])})])}),
+                                                                                                                              USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
 
                                                                                                                 new HAnimJoint({
                                                                                                                   name : new SFString("r_carpometacarpal_2"),
@@ -5014,7 +5666,28 @@ var X3D0 =  new X3D({
                                                                                                                               /*from r_carpometacarpal_2 to r_metacarpophalangeal_2 vertices 2*/
                                                                                                                               color : new SFNode(
                                                                                                                                 new ColorRGBA({
-                                                                                                                                  USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+                                                                                                                                  USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                                                                                                        new HAnimSite({
+                                                                                                                          name : new SFString("r_metacarpal_phalanx_2"),
+                                                                                                                          DEF : new SFString("hanim_r_metacarpal_phalanx_2"),
+                                                                                                                          translation : new SFVec3f([-0.1977,0.8169,-0.0177]),
+                                                                                                                          children : new MFNode([
+                                                                                                                            new TouchSensor({
+                                                                                                                              description : new SFString("HAnimSite 78 r_metacarpal_phalanx_2")}),
+
+                                                                                                                            new Shape({
+                                                                                                                              USE : new SFString("HAnimSiteShape")}),
+
+                                                                                                                            new Billboard({
+                                                                                                                              children : new MFNode([
+                                                                                                                                new Shape({
+                                                                                                                                  geometry : new SFNode(
+                                                                                                                                    new Text({
+                                                                                                                                      string : new MFString(["78"]),
+                                                                                                                                      fontStyle : new SFNode(
+                                                                                                                                        new FontStyle({
+                                                                                                                                          size : new SFFloat(0.035)}))}))})])})])})])}),
 
                                                                                                                     new HAnimJoint({
                                                                                                                       name : new SFString("r_metacarpophalangeal_2"),
@@ -5074,28 +5747,7 @@ var X3D0 =  new X3D({
                                                                                                                                       /*from r_carpal_proximal_interphalangeal_2 to r_carpal_distal_interphalangeal_2 vertices 2*/
                                                                                                                                       color : new SFNode(
                                                                                                                                         new ColorRGBA({
-                                                                                                                                          USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
-
-                                                                                                                                new HAnimSite({
-                                                                                                                                  name : new SFString("r_carpal_distal_phalanx_2_tip"),
-                                                                                                                                  DEF : new SFString("hanim_r_carpal_distal_phalanx_2_tip"),
-                                                                                                                                  children : new MFNode([
-                                                                                                                                    new TouchSensor({
-                                                                                                                                      description : new SFString("HAnimSite r_carpal_distal_phalanx_2_tip")}),
-
-                                                                                                                                    new Shape({
-                                                                                                                                      USE : new SFString("HAnimSiteShape")})])}),
-
-                                                                                                                                new HAnimSite({
-                                                                                                                                  name : new SFString("r_dactylion"),
-                                                                                                                                  DEF : new SFString("hanim_r_dactylion"),
-                                                                                                                                  translation : new SFVec3f([-0.1941,0.6772,-0.0423]),
-                                                                                                                                  children : new MFNode([
-                                                                                                                                    new TouchSensor({
-                                                                                                                                      description : new SFString("HAnimSite r_dactylion")}),
-
-                                                                                                                                    new Shape({
-                                                                                                                                      USE : new SFString("HAnimSiteShape")})])})])}),
+                                                                                                                                          USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
 
                                                                                                                             new HAnimJoint({
                                                                                                                               name : new SFString("r_carpal_distal_interphalangeal_2"),
@@ -5130,17 +5782,7 @@ var X3D0 =  new X3D({
                                                                                                                           /*from r_midcarpal_3 to r_carpometacarpal_3 vertices 2*/
                                                                                                                           color : new SFNode(
                                                                                                                             new ColorRGBA({
-                                                                                                                              USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
-
-                                                                                                                    new HAnimSite({
-                                                                                                                      name : new SFString("r_metacarpal_phalanx_3"),
-                                                                                                                      DEF : new SFString("hanim_r_metacarpal_phalanx_3"),
-                                                                                                                      children : new MFNode([
-                                                                                                                        new TouchSensor({
-                                                                                                                          description : new SFString("HAnimSite r_metacarpal_phalanx_3")}),
-
-                                                                                                                        new Shape({
-                                                                                                                          USE : new SFString("HAnimSiteShape")})])})])}),
+                                                                                                                              USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
 
                                                                                                                 new HAnimJoint({
                                                                                                                   name : new SFString("r_carpometacarpal_3"),
@@ -5170,7 +5812,27 @@ var X3D0 =  new X3D({
                                                                                                                               /*from r_carpometacarpal_3 to r_metacarpophalangeal_3 vertices 2*/
                                                                                                                               color : new SFNode(
                                                                                                                                 new ColorRGBA({
-                                                                                                                                  USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+                                                                                                                                  USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                                                                                                        new HAnimSite({
+                                                                                                                          name : new SFString("r_metacarpal_phalanx_3"),
+                                                                                                                          DEF : new SFString("hanim_r_metacarpal_phalanx_3"),
+                                                                                                                          children : new MFNode([
+                                                                                                                            new TouchSensor({
+                                                                                                                              description : new SFString("HAnimSite 79 r_metacarpal_phalanx_3")}),
+
+                                                                                                                            new Shape({
+                                                                                                                              USE : new SFString("HAnimSiteShape")}),
+
+                                                                                                                            new Billboard({
+                                                                                                                              children : new MFNode([
+                                                                                                                                new Shape({
+                                                                                                                                  geometry : new SFNode(
+                                                                                                                                    new Text({
+                                                                                                                                      string : new MFString(["79"]),
+                                                                                                                                      fontStyle : new SFNode(
+                                                                                                                                        new FontStyle({
+                                                                                                                                          size : new SFFloat(0.035)}))}))})])})])})])}),
 
                                                                                                                     new HAnimJoint({
                                                                                                                       name : new SFString("r_metacarpophalangeal_3"),
@@ -5230,17 +5892,7 @@ var X3D0 =  new X3D({
                                                                                                                                       /*from r_carpal_proximal_interphalangeal_3 to r_carpal_distal_interphalangeal_3 vertices 2*/
                                                                                                                                       color : new SFNode(
                                                                                                                                         new ColorRGBA({
-                                                                                                                                          USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
-
-                                                                                                                                new HAnimSite({
-                                                                                                                                  name : new SFString("r_carpal_distal_phalanx_3_tip"),
-                                                                                                                                  DEF : new SFString("hanim_r_carpal_distal_phalanx_3_tip"),
-                                                                                                                                  children : new MFNode([
-                                                                                                                                    new TouchSensor({
-                                                                                                                                      description : new SFString("HAnimSite r_carpal_distal_phalanx_3_tip")}),
-
-                                                                                                                                    new Shape({
-                                                                                                                                      USE : new SFString("HAnimSiteShape")})])})])}),
+                                                                                                                                          USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
 
                                                                                                                             new HAnimJoint({
                                                                                                                               name : new SFString("r_carpal_distal_interphalangeal_3"),
@@ -5287,18 +5939,7 @@ var X3D0 =  new X3D({
                                                                                                                           /*from r_midcarpal_4_5 to r_carpometacarpal_5 vertices 2*/
                                                                                                                           color : new SFNode(
                                                                                                                             new ColorRGBA({
-                                                                                                                              USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
-
-                                                                                                                    new HAnimSite({
-                                                                                                                      name : new SFString("r_metacarpal_phalanx_5"),
-                                                                                                                      DEF : new SFString("hanim_r_metacarpal_phalanx_5"),
-                                                                                                                      translation : new SFVec3f([-0.1929,0.789,-0.1064]),
-                                                                                                                      children : new MFNode([
-                                                                                                                        new TouchSensor({
-                                                                                                                          description : new SFString("HAnimSite r_metacarpal_phalanx_5")}),
-
-                                                                                                                        new Shape({
-                                                                                                                          USE : new SFString("HAnimSiteShape")})])})])}),
+                                                                                                                              USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
 
                                                                                                                 new HAnimJoint({
                                                                                                                   name : new SFString("r_carpometacarpal_4"),
@@ -5388,17 +6029,7 @@ var X3D0 =  new X3D({
                                                                                                                                       /*from r_carpal_proximal_interphalangeal_4 to r_carpal_distal_interphalangeal_4 vertices 2*/
                                                                                                                                       color : new SFNode(
                                                                                                                                         new ColorRGBA({
-                                                                                                                                          USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
-
-                                                                                                                                new HAnimSite({
-                                                                                                                                  name : new SFString("r_carpal_distal_phalanx_4_tip"),
-                                                                                                                                  DEF : new SFString("hanim_r_carpal_distal_phalanx_4_tip"),
-                                                                                                                                  children : new MFNode([
-                                                                                                                                    new TouchSensor({
-                                                                                                                                      description : new SFString("HAnimSite r_carpal_distal_phalanx_4_tip")}),
-
-                                                                                                                                    new Shape({
-                                                                                                                                      USE : new SFString("HAnimSiteShape")})])})])}),
+                                                                                                                                          USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
 
                                                                                                                             new HAnimJoint({
                                                                                                                               name : new SFString("r_carpal_distal_interphalangeal_4"),
@@ -5433,7 +6064,28 @@ var X3D0 =  new X3D({
                                                                                                                               /*from r_carpometacarpal_5 to r_metacarpophalangeal_5 vertices 2*/
                                                                                                                               color : new SFNode(
                                                                                                                                 new ColorRGBA({
-                                                                                                                                  USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
+                                                                                                                                  USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
+
+                                                                                                                        new HAnimSite({
+                                                                                                                          name : new SFString("r_metacarpal_phalanx_5"),
+                                                                                                                          DEF : new SFString("hanim_r_metacarpal_phalanx_5"),
+                                                                                                                          translation : new SFVec3f([-0.1929,0.789,-0.1064]),
+                                                                                                                          children : new MFNode([
+                                                                                                                            new TouchSensor({
+                                                                                                                              description : new SFString("HAnimSite 80 r_metacarpal_phalanx_5")}),
+
+                                                                                                                            new Shape({
+                                                                                                                              USE : new SFString("HAnimSiteShape")}),
+
+                                                                                                                            new Billboard({
+                                                                                                                              children : new MFNode([
+                                                                                                                                new Shape({
+                                                                                                                                  geometry : new SFNode(
+                                                                                                                                    new Text({
+                                                                                                                                      string : new MFString(["80"]),
+                                                                                                                                      fontStyle : new SFNode(
+                                                                                                                                        new FontStyle({
+                                                                                                                                          size : new SFFloat(0.035)}))}))})])})])})])}),
 
                                                                                                                     new HAnimJoint({
                                                                                                                       name : new SFString("r_metacarpophalangeal_5"),
@@ -5493,17 +6145,7 @@ var X3D0 =  new X3D({
                                                                                                                                       /*from r_carpal_proximal_interphalangeal_5 to r_carpal_distal_interphalangeal_5 vertices 2*/
                                                                                                                                       color : new SFNode(
                                                                                                                                         new ColorRGBA({
-                                                                                                                                          USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
-
-                                                                                                                                new HAnimSite({
-                                                                                                                                  name : new SFString("r_carpal_distal_phalanx_5_tip"),
-                                                                                                                                  DEF : new SFString("hanim_r_carpal_distal_phalanx_5_tip"),
-                                                                                                                                  children : new MFNode([
-                                                                                                                                    new TouchSensor({
-                                                                                                                                      description : new SFString("HAnimSite r_carpal_distal_phalanx_5_tip")}),
-
-                                                                                                                                    new Shape({
-                                                                                                                                      USE : new SFString("HAnimSiteShape")})])})])}),
+                                                                                                                                          USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
 
                                                                                                                             new HAnimJoint({
                                                                                                                               name : new SFString("r_carpal_distal_interphalangeal_5"),
@@ -6336,15 +6978,6 @@ var X3D0 =  new X3D({
                   USE : new SFString("hanim_r_trochanterion")})),
               viewpoints : new SFNode(
                 new HAnimSite({
-                  USE : new SFString("hanim_navel")})),
-              viewpoints : new SFNode(
-                new HAnimSite({
-                  USE : new SFString("hanim_waist_preferred_anterior")})),
-              viewpoints : new SFNode(
-                new HAnimSite({
-                  USE : new SFString("hanim_waist_preferred_posterior")})),
-              viewpoints : new SFNode(
-                new HAnimSite({
                   USE : new SFString("hanim_l_femoral_lateral_epicondyles")})),
               viewpoints : new SFNode(
                 new HAnimSite({
@@ -6355,18 +6988,6 @@ var X3D0 =  new X3D({
               viewpoints : new SFNode(
                 new HAnimSite({
                   USE : new SFString("hanim_l_suprapatella")})),
-              viewpoints : new SFNode(
-                new HAnimSite({
-                  USE : new SFString("hanim_r_femoral_lateral_epicondyles")})),
-              viewpoints : new SFNode(
-                new HAnimSite({
-                  USE : new SFString("hanim_r_femoral_medial_epicondyles")})),
-              viewpoints : new SFNode(
-                new HAnimSite({
-                  USE : new SFString("hanim_r_knee_crease")})),
-              viewpoints : new SFNode(
-                new HAnimSite({
-                  USE : new SFString("hanim_r_suprapatella")})),
               viewpoints : new SFNode(
                 new HAnimSite({
                   USE : new SFString("hanim_l_lateral_malleolus")})),
@@ -6387,22 +7008,19 @@ var X3D0 =  new X3D({
                   USE : new SFString("hanim_l_metatarsal_phalanx_1")})),
               viewpoints : new SFNode(
                 new HAnimSite({
-                  USE : new SFString("hanim_l_tarsal_distal_phalanx_1_tip")})),
-              viewpoints : new SFNode(
-                new HAnimSite({
-                  USE : new SFString("hanim_l_tarsal_distal_phalanx_2_tip")})),
-              viewpoints : new SFNode(
-                new HAnimSite({
-                  USE : new SFString("hanim_l_tarsal_distal_phalanx_3_tip")})),
-              viewpoints : new SFNode(
-                new HAnimSite({
-                  USE : new SFString("hanim_l_tarsal_distal_phalanx_4_tip")})),
-              viewpoints : new SFNode(
-                new HAnimSite({
                   USE : new SFString("hanim_l_metatarsal_phalanx_5")})),
               viewpoints : new SFNode(
                 new HAnimSite({
-                  USE : new SFString("hanim_l_tarsal_distal_phalanx_5_tip")})),
+                  USE : new SFString("hanim_r_femoral_lateral_epicondyles")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_r_femoral_medial_epicondyles")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_r_knee_crease")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_r_suprapatella")})),
               viewpoints : new SFNode(
                 new HAnimSite({
                   USE : new SFString("hanim_r_lateral_malleolus")})),
@@ -6423,22 +7041,16 @@ var X3D0 =  new X3D({
                   USE : new SFString("hanim_r_metatarsal_phalanx_1")})),
               viewpoints : new SFNode(
                 new HAnimSite({
-                  USE : new SFString("hanim_r_tarsal_distal_phalanx_1_tip")})),
-              viewpoints : new SFNode(
-                new HAnimSite({
-                  USE : new SFString("hanim_r_tarsal_distal_phalanx_2_tip")})),
-              viewpoints : new SFNode(
-                new HAnimSite({
-                  USE : new SFString("hanim_r_tarsal_distal_phalanx_3_tip")})),
-              viewpoints : new SFNode(
-                new HAnimSite({
-                  USE : new SFString("hanim_r_tarsal_distal_phalanx_4_tip")})),
-              viewpoints : new SFNode(
-                new HAnimSite({
                   USE : new SFString("hanim_r_metatarsal_phalanx_5")})),
               viewpoints : new SFNode(
                 new HAnimSite({
-                  USE : new SFString("hanim_r_tarsal_distal_phalanx_5_tip")})),
+                  USE : new SFString("hanim_navel")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_waist_preferred_anterior")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_waist_preferred_posterior")})),
               viewpoints : new SFNode(
                 new HAnimSite({
                   USE : new SFString("hanim_l_rib10")})),
@@ -6486,36 +7098,6 @@ var X3D0 =  new X3D({
                   USE : new SFString("hanim_r_neck_base")})),
               viewpoints : new SFNode(
                 new HAnimSite({
-                  USE : new SFString("hanim_l_acromion")})),
-              viewpoints : new SFNode(
-                new HAnimSite({
-                  USE : new SFString("hanim_l_axilla_distal_pt")})),
-              viewpoints : new SFNode(
-                new HAnimSite({
-                  USE : new SFString("hanim_l_axilla_posterior_folds")})),
-              viewpoints : new SFNode(
-                new HAnimSite({
-                  USE : new SFString("hanim_l_axilla_proximal")})),
-              viewpoints : new SFNode(
-                new HAnimSite({
-                  USE : new SFString("hanim_l_clavicale")})),
-              viewpoints : new SFNode(
-                new HAnimSite({
-                  USE : new SFString("hanim_r_acromion")})),
-              viewpoints : new SFNode(
-                new HAnimSite({
-                  USE : new SFString("hanim_r_axilla_distal_pt")})),
-              viewpoints : new SFNode(
-                new HAnimSite({
-                  USE : new SFString("hanim_r_axilla_posterior_folds")})),
-              viewpoints : new SFNode(
-                new HAnimSite({
-                  USE : new SFString("hanim_r_axilla_proximal")})),
-              viewpoints : new SFNode(
-                new HAnimSite({
-                  USE : new SFString("hanim_r_clavicale")})),
-              viewpoints : new SFNode(
-                new HAnimSite({
                   USE : new SFString("hanim_adams_apple")})),
               viewpoints : new SFNode(
                 new HAnimSite({
@@ -6552,16 +7134,19 @@ var X3D0 =  new X3D({
                   USE : new SFString("hanim_skull_vertex")})),
               viewpoints : new SFNode(
                 new HAnimSite({
-                  USE : new SFString("hanim_l_gonion")})),
+                  USE : new SFString("hanim_l_acromion")})),
               viewpoints : new SFNode(
                 new HAnimSite({
-                  USE : new SFString("hanim_menton")})),
+                  USE : new SFString("hanim_l_axilla_distal")})),
               viewpoints : new SFNode(
                 new HAnimSite({
-                  USE : new SFString("hanim_r_gonion")})),
+                  USE : new SFString("hanim_l_axilla_posterior_folds")})),
               viewpoints : new SFNode(
                 new HAnimSite({
-                  USE : new SFString("hanim_supramenton")})),
+                  USE : new SFString("hanim_l_axilla_proximal")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_l_clavicale")})),
               viewpoints : new SFNode(
                 new HAnimSite({
                   USE : new SFString("hanim_l_bideltoid")})),
@@ -6585,31 +7170,28 @@ var X3D0 =  new X3D({
                   USE : new SFString("hanim_l_ulnar_styloid")})),
               viewpoints : new SFNode(
                 new HAnimSite({
-                  USE : new SFString("hanim_l_carpal_distal_phalanx_1_tip")})),
-              viewpoints : new SFNode(
-                new HAnimSite({
                   USE : new SFString("hanim_l_metacarpal_phalanx_2")})),
-              viewpoints : new SFNode(
-                new HAnimSite({
-                  USE : new SFString("hanim_l_carpal_distal_phalanx_2_tip")})),
-              viewpoints : new SFNode(
-                new HAnimSite({
-                  USE : new SFString("hanim_l_dactylion")})),
               viewpoints : new SFNode(
                 new HAnimSite({
                   USE : new SFString("hanim_l_metacarpal_phalanx_3")})),
               viewpoints : new SFNode(
                 new HAnimSite({
-                  USE : new SFString("hanim_l_carpal_distal_phalanx_3_tip")})),
-              viewpoints : new SFNode(
-                new HAnimSite({
                   USE : new SFString("hanim_l_metacarpal_phalanx_5")})),
               viewpoints : new SFNode(
                 new HAnimSite({
-                  USE : new SFString("hanim_l_carpal_distal_phalanx_4_tip")})),
+                  USE : new SFString("hanim_r_acromion")})),
               viewpoints : new SFNode(
                 new HAnimSite({
-                  USE : new SFString("hanim_l_carpal_distal_phalanx_5_tip")})),
+                  USE : new SFString("hanim_r_axilla_distal")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_r_axilla_posterior_folds")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_r_axilla_proximal")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_r_clavicale")})),
               viewpoints : new SFNode(
                 new HAnimSite({
                   USE : new SFString("hanim_r_bideltoid")})),
@@ -6633,29 +7215,11 @@ var X3D0 =  new X3D({
                   USE : new SFString("hanim_r_ulnar_styloid")})),
               viewpoints : new SFNode(
                 new HAnimSite({
-                  USE : new SFString("hanim_r_carpal_distal_phalanx_1_tip")})),
-              viewpoints : new SFNode(
-                new HAnimSite({
                   USE : new SFString("hanim_r_metacarpal_phalanx_2")})),
-              viewpoints : new SFNode(
-                new HAnimSite({
-                  USE : new SFString("hanim_r_carpal_distal_phalanx_2_tip")})),
-              viewpoints : new SFNode(
-                new HAnimSite({
-                  USE : new SFString("hanim_r_dactylion")})),
               viewpoints : new SFNode(
                 new HAnimSite({
                   USE : new SFString("hanim_r_metacarpal_phalanx_3")})),
               viewpoints : new SFNode(
                 new HAnimSite({
-                  USE : new SFString("hanim_r_carpal_distal_phalanx_3_tip")})),
-              viewpoints : new SFNode(
-                new HAnimSite({
-                  USE : new SFString("hanim_r_metacarpal_phalanx_5")})),
-              viewpoints : new SFNode(
-                new HAnimSite({
-                  USE : new SFString("hanim_r_carpal_distal_phalanx_4_tip")})),
-              viewpoints : new SFNode(
-                new HAnimSite({
-                  USE : new SFString("hanim_r_carpal_distal_phalanx_5_tip")}))})])}))});
+                  USE : new SFString("hanim_r_metacarpal_phalanx_5")}))})])}))});
 console.log(X3D0.toXMLNode());

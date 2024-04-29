@@ -157,6 +157,7 @@ IFS.prototype = {
     {
 		var testObject = new IFS();
 		console.log ("IFS execution self-validation test results: " + testObject.validateSelf());
+		process.exit();
 	}
 }
 new IFS().main();

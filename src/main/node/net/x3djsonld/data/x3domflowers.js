@@ -157,6 +157,7 @@ x3domflowers.prototype = {
     {
 		var testObject = new x3domflowers();
 		console.log ("x3domflowers execution self-validation test results: " + testObject.validateSelf());
+		process.exit();
 	}
 }
 new x3domflowers().main();

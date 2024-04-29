@@ -99,7 +99,7 @@
 { "ExternProtoDeclare":
 {
 "@name":"FlowerProto",
-"@url":["../data/flowerproto.json#FlowerProto"],
+"@url":["../personal/flowerproto.json#FlowerProto"],
 "field": [
 {
 "@name":"vertex",

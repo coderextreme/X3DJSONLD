@@ -26,7 +26,7 @@ var ProtoInstance6 = null;
         .addMeta(new autoclass.meta().setName("creator").setContent("John W Carlson"))
         .addMeta(new autoclass.meta().setName("created").setContent("December 13 2015"))
         .addMeta(new autoclass.meta().setName("title").setContent("forcenode.x3d"))
-        .addMeta(new autoclass.meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/force.x3d"))
+        .addMeta(new autoclass.meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/personal/force.x3d"))
         .addMeta(new autoclass.meta().setName("description").setContent("beginnings of a force directed graph in 3D"))
         .addMeta(new autoclass.meta().setName("generator").setContent("Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit")))
       .setScene(new autoclass.Scene()

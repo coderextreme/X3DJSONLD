@@ -67,7 +67,7 @@ abox.prototype = {
   /** Create and initialize the X3D model. */
   initialize : function ()
   {
-  this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("3.3")
+  this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
   .setHead((new autoclass.head())
     .addMeta((new autoclass.meta()).setName("title").setContent("abox.x3d"))
     .addMeta((new autoclass.meta()).setName("creator").setContent("John Carlson"))
@@ -153,6 +153,7 @@ abox.prototype = {
     {
 		var testObject = new abox();
 		console.log ("abox execution self-validation test results: " + testObject.validateSelf());
+		process.exit();
 	}
 }
 new abox().main();

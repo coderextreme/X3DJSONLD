@@ -185,6 +185,7 @@ HelloWorldMinimal.prototype = {
     {
 		var testObject = new HelloWorldMinimal();
 		console.log ("HelloWorldMinimal execution self-validation test results: " + testObject.validateSelf());
+		process.exit();
 	}
 }
 new HelloWorldMinimal().main();

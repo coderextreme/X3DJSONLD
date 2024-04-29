@@ -195,6 +195,7 @@ InlineSoundSource.prototype = {
     {
 		var testObject = new InlineSoundSource();
 		console.log ("InlineSoundSource execution self-validation test results: " + testObject.validateSelf());
+		process.exit();
 	}
 }
 new InlineSoundSource().main();

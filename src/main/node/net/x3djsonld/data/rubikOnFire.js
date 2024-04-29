@@ -213,6 +213,7 @@ rubikOnFire.prototype = {
     {
 		var testObject = new rubikOnFire();
 		console.log ("rubikOnFire execution self-validation test results: " + testObject.validateSelf());
+		process.exit();
 	}
 }
 new rubikOnFire().main();

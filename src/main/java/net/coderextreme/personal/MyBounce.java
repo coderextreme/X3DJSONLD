@@ -62,7 +62,7 @@ public class MyBounce implements X3DRoots {
         .addMeta(new meta().setName("title").setContent("MyBounce.x3d"))
         .addMeta(new meta().setName("creator").setContent("John Carlson"))
         .addMeta(new meta().setName("description").setContent("3 prismatic spheres"))
-        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/SFVec3f.x3d")))
+        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/personal/SFVec3f.x3d")))
       .setScene(new Scene()
         .addChild(new NavigationInfo())
         .addChild(new Transform().setDEF("transform")

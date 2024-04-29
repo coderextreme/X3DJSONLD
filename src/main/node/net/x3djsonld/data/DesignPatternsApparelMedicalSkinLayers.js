@@ -158,7 +158,7 @@ DesignPatternsApparelMedicalSkinLayers.prototype = {
         .addSkeleton((new autoclass.HAnimJoint()).setName("humanoid_root").setLlimit(java.newArray("float", [0.0,0.0,0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
           .addChild((new autoclass.HAnimSegment()).setName("sacrum")))
         .addSkin((new autoclass.Shape())
-          .setGeometry((new autoclass.IndexedFaceSet()))))
+          .setGeometry((new autoclass.IndexedFaceSet()).setUSE("SkinMeshIFS"))))
       .addComments(" ============================== ")
       .addChild((new autoclass.HAnimHumanoid("e_SkinSwitchShapeIndexedGeometry")).setName("SkinSwitchShapeIndexedGeometry").setVersion("2.0")
         .addSkeleton((new autoclass.HAnimJoint()).setName("humanoid_root").setLlimit(java.newArray("float", [0.0,0.0,0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
@@ -258,6 +258,7 @@ DesignPatternsApparelMedicalSkinLayers.prototype = {
     {
 		var testObject = new DesignPatternsApparelMedicalSkinLayers();
 		console.log ("DesignPatternsApparelMedicalSkinLayers execution self-validation test results: " + testObject.validateSelf());
+		process.exit();
 	}
 }
 new DesignPatternsApparelMedicalSkinLayers().main();

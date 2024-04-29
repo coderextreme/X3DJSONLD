@@ -266,6 +266,7 @@ ArchPrototype.prototype = {
     {
 		var testObject = new ArchPrototype();
 		console.log ("ArchPrototype execution self-validation test results: " + testObject.validateSelf());
+		process.exit();
 	}
 }
 new ArchPrototype().main();

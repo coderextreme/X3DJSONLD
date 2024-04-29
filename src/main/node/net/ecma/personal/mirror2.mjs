@@ -66,16 +66,13 @@ var X3D0 =  new X3D({
               level : new SFInt32(1)})),
           component : new SFNode(
             new component({
-              name : new SFString("Shape"),
-              level : new SFInt32(4)})),
-          component : new SFNode(
-            new component({
               name : new SFString("Grouping"),
               level : new SFInt32(3)})),
           component : new SFNode(
             new component({
               name : new SFString("Core"),
               level : new SFInt32(1)})),
+          /*<component name='Shape' level='4'></component>*/
           meta : new MFNode([
             new meta({
               name : new SFString("title"),
@@ -91,7 +88,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("identifier"),
-              content : new SFString("https://coderextreme.net/X3DJSONLD/src/main/data/mirror2.x3d")}),
+              content : new SFString("https://coderextreme.net/X3DJSONLD/src/main/personal/mirror2.x3d")}),
 
             new meta({
               name : new SFString("description"),

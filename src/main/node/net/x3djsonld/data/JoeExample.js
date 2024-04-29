@@ -140,6 +140,7 @@ JoeExample.prototype = {
     {
 		var testObject = new JoeExample();
 		console.log ("JoeExample execution self-validation test results: " + testObject.validateSelf());
+		process.exit();
 	}
 }
 new JoeExample().main();

@@ -22,9 +22,9 @@ ConfigurationProperties.setStripDefaultAttributes(true);
         .addComponent(new autoclass.component().setName("CubeMapTexturing").setLevel(1))
         .addComponent(new autoclass.component().setName("Texturing").setLevel(1))
         .addComponent(new autoclass.component().setName("Rendering").setLevel(1))
+        .addComponent(new autoclass.component().setName("Shape").setLevel(4))
         .addComponent(new autoclass.component().setName("Grouping").setLevel(3))
         .addComponent(new autoclass.component().setName("Core").setLevel(1))
-        .addComments((new autoclass.CommentsBlock("<component name='Shape' level='4'></component>")))
         .addMeta(new autoclass.meta().setName("title").setContent("flowers4.x3d"))
         .addMeta(new autoclass.meta().setName("creator").setContent("John Carlson"))
         .addMeta(new autoclass.meta().setName("generator").setContent("manual"))
@@ -50,8 +50,8 @@ ConfigurationProperties.setStripDefaultAttributes(true);
                 .addField(new autoclass.field().setType(autoclass.field.TYPE_SFFLOAT).setName("bias").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
                 .addField(new autoclass.field().setType(autoclass.field.TYPE_SFFLOAT).setName("scale").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
                 .addField(new autoclass.field().setType(autoclass.field.TYPE_SFFLOAT).setName("power").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("2"))
-                .addParts(new autoclass.ShaderPart().setType("VERTEX").setUrl(java.newArray("java.lang.String", ["../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"])))
-                .addParts(new autoclass.ShaderPart().setType("FRAGMENT").setUrl(java.newArray("java.lang.String", ["../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"])))))
+                .addParts(new autoclass.ShaderPart().setType("VERTEX").setUrl(java.newArray("java.lang.String", ["../shaders/x_ite.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"])))
+                .addParts(new autoclass.ShaderPart().setType("FRAGMENT").setUrl(java.newArray("java.lang.String", ["../shaders/x_ite.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"])))))
             .addComments((new autoclass.CommentsBlock("<Sphere>")))
             .setGeometry(new autoclass.IndexedFaceSet().setConvex(false).setDEF("Orbit")
               .setCoord(new autoclass.Coordinate().setDEF("OrbitCoordinates")))))
@@ -59,13 +59,11 @@ ConfigurationProperties.setStripDefaultAttributes(true);
           .addField(new autoclass.field().setType(autoclass.field.TYPE_SFFLOAT).setName("set_fraction").setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY))
           .addField(new autoclass.field().setType(autoclass.field.TYPE_MFVEC3F).setName("coordinates").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT))
           .addField(new autoclass.field().setType(autoclass.field.TYPE_MFINT32).setName("coordIndexes").setAccessType(autoclass.field.ACCESSTYPE_OUTPUTONLY))
+          .addField(new autoclass.field().setType(autoclass.field.TYPE_SFFLOAT).setName("e").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("5"))
+          .addField(new autoclass.field().setType(autoclass.field.TYPE_SFFLOAT).setName("f").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("5"))
+          .addField(new autoclass.field().setType(autoclass.field.TYPE_SFFLOAT).setName("g").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("5"))
+          .addField(new autoclass.field().setType(autoclass.field.TYPE_SFFLOAT).setName("h").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("5"))
           .setSourceCode("ecmascript:\n"+
-"\n"+
-"var e = 5;\n"+
-"var f = 5;\n"+
-"var g = 5;\n"+
-"var h = 5;\n"+
-"\n"+
 "function initialize() {\n"+
 "     var resolution = 100;\n"+
 "     updateCoordinates(resolution);\n"+
@@ -79,7 +77,7 @@ ConfigurationProperties.setStripDefaultAttributes(true);
 "	     cis.push(-1);\n"+
 "	}\n"+
 "    }\n"+
-"    coordIndexes = new MFInt32(cis);\n"+
+"    coordIndexes = new MFInt32(...cis);\n"+
 "}\n"+
 "\n"+
 "function updateCoordinates(resolution) {\n"+
@@ -99,7 +97,7 @@ ConfigurationProperties.setStripDefaultAttributes(true);
 "	}\n"+
 "	phi += delta;\n"+
 "     }\n"+
-"     coordinates = new MFVec3f(crds);\n"+
+"     coordinates = new MFVec3f(...crds);\n"+
 "}\n"+
 "\n"+
 "function set_fraction(fraction, eventTime) {\n"+
@@ -117,6 +115,9 @@ ConfigurationProperties.setStripDefaultAttributes(true);
 "	case 3:\n"+
 "		h += Math.floor(Math.random() * 2) * 2 - 1;\n"+
 "		break;\n"+
+"	}\n"+
+"	if (e < 1) {\n"+
+"		e = 10;\n"+
 "	}\n"+
 "	if (f < 1) {\n"+
 "		f = 10;\n"+

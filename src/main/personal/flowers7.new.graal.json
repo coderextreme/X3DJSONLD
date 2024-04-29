@@ -112,26 +112,6 @@
 "-appearance":
 { "Appearance":
 {
-"-children":[
-{
-"#comment":"&lt;ComposedShader DEF='x3dom' language=\"GLSL\"&gt; &lt;field name='cube' type='SFInt32'
-accessType='inputOutput' value='0'&gt;&lt;/field&gt; &lt;field name='cube' type='SFNode' accessType=\"inputOutput\"&gt;
-&lt;ComposedCubeMapTexture USE=\"texture\"/&gt; &lt;/field&gt; &lt;field name='chromaticDispertion'
-accessType='initializeOnly' type='SFVec3f' value='0.98 1.0 1.033'&gt;&lt;/field&gt; &lt;field
-name='bias' type='SFFloat' accessType='inputOutput' value='0.5'&gt;&lt;/field&gt; &lt;field name='scale'
-type='SFFloat' accessType='inputOutput' value='0.5'&gt;&lt;/field&gt; &lt;field name='power' type='SFFloat'
-accessType='inputOutput' value='2'&gt;&lt;/field&gt; &lt;field name='a' type='SFFloat' accessType='inputOutput'
-value='10'&gt;&lt;/field&gt; &lt;field name='b' type='SFFloat' accessType='inputOutput' value='1'&gt;&lt;/field&gt;
-&lt;field name='c' type='SFFloat' accessType='inputOutput' value='20'&gt;&lt;/field&gt; &lt;field
-name='d' type='SFFloat' accessType='inputOutput' value='20'&gt;&lt;/field&gt; &lt;field name='tdelta'
-type='SFFloat' accessType='inputOutput' value='0'&gt;&lt;/field&gt; &lt;field name='pdelta' type='SFFloat'
-accessType='inputOutput' value='0'&gt;&lt;/field&gt; &lt;ShaderPart url='\"https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs\"
-\"https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs\"'
-containerField='parts' type='VERTEX'&gt;&lt;/ShaderPart&gt; &lt;ShaderPart url='\"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\"
-\"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\"' containerField='parts'
-type='FRAGMENT'&gt;&lt;/ShaderPart&gt; &lt;/ComposedShader&gt;"
-}
-],
 "-material":
 { "Material":
 {
@@ -140,6 +120,106 @@ type='FRAGMENT'&gt;&lt;/ShaderPart&gt; &lt;/ComposedShader&gt;"
 }
 },
 "-shaders":[
+{ "ComposedShader":
+{
+"@DEF":"x3dom",
+"@language":"GLSL",
+"-children":[
+{
+"#comment":"TODO VERIFY &lt;field name='cube' type='SFInt32' accessType='inputOutput'
+value='0'&gt;&lt;/field&gt;"
+}
+],
+"field": [
+{
+"@name":"cube",
+"@accessType":"inputOutput",
+"@type":"SFNode",
+"-children":[
+{ "ComposedCubeMapTexture":
+{
+"@USE":"texture"
+}
+}
+]
+},
+{
+"@name":"chromaticDispertion",
+"@accessType":"initializeOnly",
+"@type":"SFVec3f",
+"@value":[0.98,1,1.033]
+},
+{
+"@name":"bias",
+"@accessType":"inputOutput",
+"@type":"SFFloat",
+"@value":0.5
+},
+{
+"@name":"scale",
+"@accessType":"inputOutput",
+"@type":"SFFloat",
+"@value":0.5
+},
+{
+"@name":"power",
+"@accessType":"inputOutput",
+"@type":"SFFloat",
+"@value":2.0
+},
+{
+"@name":"a",
+"@accessType":"inputOutput",
+"@type":"SFFloat",
+"@value":10.0
+},
+{
+"@name":"b",
+"@accessType":"inputOutput",
+"@type":"SFFloat",
+"@value":1.0
+},
+{
+"@name":"c",
+"@accessType":"inputOutput",
+"@type":"SFFloat",
+"@value":20.0
+},
+{
+"@name":"d",
+"@accessType":"inputOutput",
+"@type":"SFFloat",
+"@value":20.0
+},
+{
+"@name":"tdelta",
+"@accessType":"inputOutput",
+"@type":"SFFloat",
+"@value":0.0
+},
+{
+"@name":"pdelta",
+"@accessType":"inputOutput",
+"@type":"SFFloat",
+"@value":0.0
+}
+],
+"-parts":[
+{ "ShaderPart":
+{
+"@url":["https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs"],
+"@type":"VERTEX"
+}
+},
+{ "ShaderPart":
+{
+"@type":"FRAGMENT",
+"@url":["https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"]
+}
+}
+]
+}
+},
 { "ComposedShader":
 {
 "@DEF":"x_ite",

@@ -202,27 +202,27 @@ arcold.prototype = {
       .addFieldValue((new autoclass.fieldValue()).setName("endnode")
         .addChild((new autoclass.ProtoInstance())))
       .addFieldValue((new autoclass.fieldValue()).setName("transnode")
-        .addChild((new autoclass.Transform())))
+        .addChild((new autoclass.Transform()).setUSE("trans1")))
       .addFieldValue((new autoclass.fieldValue()).setName("rotscalenode")
-        .addChild((new autoclass.Transform()))))
+        .addChild((new autoclass.Transform()).setUSE("rotscale1"))))
     .addChild((new autoclass.ProtoInstance("connector2", "x3dconnector"))
       .addFieldValue((new autoclass.fieldValue()).setName("startnode")
         .addChild((new autoclass.ProtoInstance())))
       .addFieldValue((new autoclass.fieldValue()).setName("endnode")
         .addChild((new autoclass.ProtoInstance())))
       .addFieldValue((new autoclass.fieldValue()).setName("transnode")
-        .addChild((new autoclass.Transform())))
+        .addChild((new autoclass.Transform()).setUSE("trans2")))
       .addFieldValue((new autoclass.fieldValue()).setName("rotscalenode")
-        .addChild((new autoclass.Transform()))))
+        .addChild((new autoclass.Transform()).setUSE("rotscale2"))))
     .addChild((new autoclass.ProtoInstance("connector3", "x3dconnector"))
       .addFieldValue((new autoclass.fieldValue()).setName("startnode")
         .addChild((new autoclass.ProtoInstance())))
       .addFieldValue((new autoclass.fieldValue()).setName("endnode")
         .addChild((new autoclass.ProtoInstance())))
       .addFieldValue((new autoclass.fieldValue()).setName("transnode")
-        .addChild((new autoclass.Transform())))
+        .addChild((new autoclass.Transform()).setUSE("trans3")))
       .addFieldValue((new autoclass.fieldValue()).setName("rotscalenode")
-        .addChild((new autoclass.Transform()))))
+        .addChild((new autoclass.Transform()).setUSE("rotscale3"))))
     .addChild((new autoclass.ROUTE()).setFromNode("G1").setFromField("translation_changed").setToNode("connector1").setToField("set_startpoint"))
     .addChild((new autoclass.ROUTE()).setFromNode("G2").setFromField("translation_changed").setToNode("connector1").setToField("set_endpoint"))
     .addChild((new autoclass.ROUTE()).setFromNode("G1").setFromField("translation_changed").setToNode("connector2").setToField("set_startpoint"))
@@ -284,6 +284,7 @@ arcold.prototype = {
     {
 		var testObject = new arcold();
 		console.log ("arcold execution self-validation test results: " + testObject.validateSelf());
+		process.exit();
 	}
 }
 new arcold().main();

@@ -35,7 +35,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("identifier"),
-              content : new SFString("http://coderextreme.net/X3DJSONLD/src/main/data/ifscube.x3d")}),
+              content : new SFString("http://coderextreme.net/X3DJSONLD/src/main/personal/ifscube.x3d")}),
 
             new meta({
               name : new SFString("description"),

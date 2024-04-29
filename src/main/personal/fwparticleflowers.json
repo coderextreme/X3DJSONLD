@@ -42,7 +42,7 @@
         "meta": [
           {
             "@name":"title",
-            "@content":"fwparticleflowers.x3d"
+            "@content":"particleflowers.x3d"
           },
           {
             "@name":"creator",
@@ -54,7 +54,7 @@
           },
           {
             "@name":"identifier",
-            "@content":"https://coderextreme.net/X3DJSONLD/src/main/personal/fwparticleflowers.x3d"
+            "@content":"https://coderextreme.net/X3DJSONLD/src/main/personal/particleflowers.x3d"
           },
           {
             "@name":"translated",
@@ -74,7 +74,7 @@
         "-children":[
           { "WorldInfo":
             {
-              "@title":"fwparticleflowers.x3d"
+              "@title":"particleflowers.x3d"
             }
           },
           { "NavigationInfo":
@@ -124,11 +124,6 @@
                           "@variation":0.75
                         }
                       },
-                    "-children":[
-                      {
-                        "#comment":"<Shape>"
-                      }
-                    ],
                     "-geometry":
                       { "Sphere":
                         {
@@ -281,67 +276,70 @@
                                 ]
                               }
                             }
-                          ],
-                          "-children":[
-                            { "Script":
-                              {
-                                "@DEF":"Animate",
-                                "field": [
-                                  {
-                                    "@name":"translation",
-                                    "@accessType":"inputOutput",
-                                    "@type":"SFVec3f",
-                                    "@value":[0,0,0]
-                                  },
-                                  {
-                                    "@name":"velocity",
-                                    "@accessType":"inputOutput",
-                                    "@type":"SFVec3f",
-                                    "@value":[0,0,0]
-                                  },
-                                  {
-                                    "@name":"set_fraction",
-                                    "@accessType":"inputOnly",
-                                    "@type":"SFFloat"
-                                  },
-                                  {
-                                    "@name":"a",
-                                    "@type":"SFFloat",
-                                    "@accessType":"inputOutput",
-                                    "@value":0.5
-                                  },
-                                  {
-                                    "@name":"b",
-                                    "@type":"SFFloat",
-                                    "@accessType":"inputOutput",
-                                    "@value":0.5
-                                  },
-                                  {
-                                    "@name":"c",
-                                    "@type":"SFFloat",
-                                    "@accessType":"inputOutput",
-                                    "@value":3
-                                  },
-                                  {
-                                    "@name":"d",
-                                    "@type":"SFFloat",
-                                    "@accessType":"inputOutput",
-                                    "@value":3
-                                  },
-                                  {
-                                    "@name":"tdelta",
-                                    "@type":"SFFloat",
-                                    "@accessType":"inputOutput",
-                                    "@value":0.5
-                                  },
-                                  {
-                                    "@name":"pdelta",
-                                    "@type":"SFFloat",
-                                    "@accessType":"inputOutput",
-                                    "@value":0.5
-                                  }
-                                ],
-                                "#sourceCode":[
+                          ]
+                        }
+                      }
+                  }
+                },
+                { "Script":
+                  {
+                    "@DEF":"Animate",
+                    "field": [
+                      {
+                        "@name":"translation",
+                        "@accessType":"inputOutput",
+                        "@type":"SFVec3f",
+                        "@value":[0,0,0]
+                      },
+                      {
+                        "@name":"velocity",
+                        "@accessType":"inputOutput",
+                        "@type":"SFVec3f",
+                        "@value":[0,0,0]
+                      },
+                      {
+                        "@name":"set_fraction",
+                        "@accessType":"inputOnly",
+                        "@type":"SFFloat"
+                      },
+                      {
+                        "@name":"a",
+                        "@type":"SFFloat",
+                        "@accessType":"inputOutput",
+                        "@value":0.5
+                      },
+                      {
+                        "@name":"b",
+                        "@type":"SFFloat",
+                        "@accessType":"inputOutput",
+                        "@value":0.5
+                      },
+                      {
+                        "@name":"c",
+                        "@type":"SFFloat",
+                        "@accessType":"inputOutput",
+                        "@value":3
+                      },
+                      {
+                        "@name":"d",
+                        "@type":"SFFloat",
+                        "@accessType":"inputOutput",
+                        "@value":3
+                      },
+                      {
+                        "@name":"tdelta",
+                        "@type":"SFFloat",
+                        "@accessType":"inputOutput",
+                        "@value":0.5
+                      },
+                      {
+                        "@name":"pdelta",
+                        "@type":"SFFloat",
+                        "@accessType":"inputOutput",
+                        "@value":0.5
+                      }
+                    ],
+                    "#sourceCode":[
 "",
 "",
 "ecmascript:",
@@ -414,78 +412,70 @@
 "",
 ""
 ]
-                              }
-                            },
-                            { "TimeSensor":
-                              {
-                                "@DEF":"TourTime",
-                                "@cycleInterval":5,
-                                "@loop":true
-                              }
-                            },
-                            { "ROUTE":
-                              {
-                                "@fromNode":"TourTime",
-                                "@fromField":"fraction_changed",
-                                "@toNode":"Animate",
-                                "@toField":"set_fraction"
-                              }
-                            },
-                            { "ROUTE":
-                              {
-                                "@fromNode":"Animate",
-                                "@fromField":"a",
-                                "@toNode":"fw",
-                                "@toField":"a"
-                              }
-                            },
-                            { "ROUTE":
-                              {
-                                "@fromNode":"Animate",
-                                "@fromField":"b",
-                                "@toNode":"fw",
-                                "@toField":"b"
-                              }
-                            },
-                            { "ROUTE":
-                              {
-                                "@fromNode":"Animate",
-                                "@fromField":"c",
-                                "@toNode":"fw",
-                                "@toField":"c"
-                              }
-                            },
-                            { "ROUTE":
-                              {
-                                "@fromNode":"Animate",
-                                "@fromField":"d",
-                                "@toNode":"fw",
-                                "@toField":"d"
-                              }
-                            },
-                            { "ROUTE":
-                              {
-                                "@fromNode":"Animate",
-                                "@fromField":"pdelta",
-                                "@toNode":"fw",
-                                "@toField":"pdelta"
-                              }
-                            },
-                            { "ROUTE":
-                              {
-                                "@fromNode":"Animate",
-                                "@fromField":"tdelta",
-                                "@toNode":"fw",
-                                "@toField":"tdelta"
-                              }
-                            }
-                          ]
-                        }
-                      }
                   }
                 },
-                {
-                  "#comment":"</Shape>"
+                { "TimeSensor":
+                  {
+                    "@DEF":"TourTime",
+                    "@cycleInterval":5,
+                    "@loop":true
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromNode":"TourTime",
+                    "@fromField":"fraction_changed",
+                    "@toNode":"Animate",
+                    "@toField":"set_fraction"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromNode":"Animate",
+                    "@fromField":"a",
+                    "@toNode":"fw",
+                    "@toField":"a"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromNode":"Animate",
+                    "@fromField":"b",
+                    "@toNode":"fw",
+                    "@toField":"b"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromNode":"Animate",
+                    "@fromField":"c",
+                    "@toNode":"fw",
+                    "@toField":"c"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromNode":"Animate",
+                    "@fromField":"d",
+                    "@toNode":"fw",
+                    "@toField":"d"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromNode":"Animate",
+                    "@fromField":"pdelta",
+                    "@toNode":"fw",
+                    "@toField":"pdelta"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromNode":"Animate",
+                    "@fromField":"tdelta",
+                    "@toNode":"fw",
+                    "@toField":"tdelta"
+                  }
                 }
               ]
             }

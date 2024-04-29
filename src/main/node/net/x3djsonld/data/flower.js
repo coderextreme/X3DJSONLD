@@ -20,7 +20,7 @@ var autoclass = require('./X3Dautoclass');
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="https://coderextreme.net/X3DJSONLD/src/main/personal/flower.x3d">flower.x3d</a> </td>
+			<td> <a href="https://coderextreme.net/X3DJSONLD/src/main/data/flower.x3d">flower.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> creator </i> </td>
@@ -32,7 +32,7 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="https://coderextreme.net/X3DJSONLD/src/main/personal/flower.x3d" target="_blank">https://coderextreme.net/X3DJSONLD/src/main/personal/flower.x3d</a> </td>
+			<td> <a href="https://coderextreme.net/X3DJSONLD/src/main/data/flower.x3d" target="_blank">https://coderextreme.net/X3DJSONLD/src/main/data/flower.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
@@ -72,7 +72,7 @@ flower.prototype = {
     .addMeta((new autoclass.meta()).setName("title").setContent("flower.x3d"))
     .addMeta((new autoclass.meta()).setName("creator").setContent("John Carlson"))
     .addMeta((new autoclass.meta()).setName("generator").setContent("manual"))
-    .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/personal/flower.x3d"))
+    .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/flower.x3d"))
     .addMeta((new autoclass.meta()).setName("description").setContent("a flower")))
   .setScene((new autoclass.Scene())
     .addChild((new autoclass.NavigationInfo()))
@@ -108,7 +108,7 @@ flower.prototype = {
 "	     localci.push(-1);" + "\n" + 
 "	}" + "\n" + 
 "    }" + "\n" + 
-"    coordIndexes = new MFInt32(localci);" + "\n" + 
+"    coordIndexes = new MFInt32(...localci);" + "\n" + 
 "}" + "\n" + 
 "\n" + 
 "function generateCoordinates(resolution) {" + "\n" + 
@@ -128,7 +128,7 @@ flower.prototype = {
 "	}" + "\n" + 
 "	phi += delta;" + "\n" + 
 "     }" + "\n" + 
-"     coordinates = new MFVec3f(localc);" + "\n" + 
+"     coordinates = new MFVec3f(...localc);" + "\n" + 
 "}" + "\n" + 
 "\n" + 
 "function set_fraction(fraction, eventTime) {" + "\n" + 
@@ -230,6 +230,7 @@ flower.prototype = {
     {
 		var testObject = new flower();
 		console.log ("flower execution self-validation test results: " + testObject.validateSelf());
+		process.exit();
 	}
 }
 new flower().main();

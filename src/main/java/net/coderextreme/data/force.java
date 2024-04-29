@@ -101,7 +101,11 @@ ProtoInstance ProtoInstance6 = null;
 "					function set_cycle(value) {\n"+
 "                                                old = translation;\n"+
 "						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);\n"+
-"                                                keyValue = new MFVec3f([old, translation]);\n"+
+"                                                var tmpkeyValue = new MFVec3f();\n"+
+"			    			tmpkeyValue[0] = old;\n"+
+"			    			tmpkeyValue[1] = translation;\n"+
+"                                                keyValue = tmpkeyValue;\n"+
+"			    		\n"+
 "						// Browser.println(translation);\n"+
 "					}"))
               .addChild(new TimeSensor().setDEF("nodeClock").setCycleInterval(3).setLoop(true))
@@ -130,17 +134,29 @@ ProtoInstance ProtoInstance6 = null;
 "\n"+
 "                function set_endA(value) {\n"+
 "		    if (typeof spine === 'undefined') {\n"+
-"		        spine = new MFVec3f([value, value]);\n"+
+"		        var tmpspine = new MFVec3f();\n"+
+"			tmpspine[0] = value;\n"+
+"			tmpspine[1] = value;\n"+
+"			spine = tmpspine;\n"+
 "		    } else {\n"+
-"		        spine = new MFVec3f([value, spine[1]]);\n"+
+"		        var tmpspine = new MFVec3f();\n"+
+"			tmpspine[0] = value;\n"+
+"			tmpspine[1] = spine[1];\n"+
+"			spine = tmpspine;\n"+
 "		    }\n"+
 "                }\n"+
 "\n"+
 "                function set_endB(value) {\n"+
 "		    if (typeof spine === 'undefined') {\n"+
-"		        spine = new MFVec3f([value, value]);\n"+
+"		        var tmpspine = new MFVec3f();\n"+
+"			tmpspine[0] = value;\n"+
+"			tmpspine[1] = value;\n"+
+"			spine = tmpspine;\n"+
 "		    } else {\n"+
-"		        spine = new MFVec3f([spine[0], value]);\n"+
+"		        var tmpspine = new MFVec3f();\n"+
+"			tmpspine[0] = spine[0];\n"+
+"			tmpspine[1] = value;\n"+
+"			spine = tmpspine;\n"+
 "		    }\n"+
 "                }\n"+
 "\n"+
