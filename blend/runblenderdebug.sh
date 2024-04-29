@@ -1,2 +1,2 @@
-/c/Program\ Files/Blender\ Foundation/Blender\ 4.0/blender.exe --debug-wm
+/c/Program\ Files/Blender\ Foundation/Blender\ 4.1/blender.exe --debug-wm
 
