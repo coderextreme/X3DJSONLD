@@ -31,6 +31,10 @@
 "@level":1
 },
 {
+"@name":"Shape",
+"@level":4
+},
+{
 "@name":"Grouping",
 "@level":3
 },
@@ -62,7 +66,7 @@
 },
 {
 "@name":"translated",
-"@content":"29 April 2024"
+"@content":"30 April 2024"
 },
 {
 "@name":"generator",
@@ -146,14 +150,14 @@
 "-parts":[
 { "ShaderPart":
 {
-"@url":["../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"],
+"@url":["../shaders/x_ite.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"],
 "@type":"VERTEX"
 }
 },
 { "ShaderPart":
 {
 "@type":"FRAGMENT",
-"@url":["../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"]
+"@url":["../shaders/x_ite.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"]
 }
 }
 ]
@@ -239,24 +243,36 @@
 "@name":"coordIndexes",
 "@accessType":"outputOnly",
 "@type":"MFInt32"
+},
+{
+"@name":"e",
+"@accessType":"inputOutput",
+"@type":"SFFloat",
+"@value":5.0
+},
+{
+"@name":"f",
+"@accessType":"inputOutput",
+"@type":"SFFloat",
+"@value":5.0
+},
+{
+"@name":"g",
+"@accessType":"inputOutput",
+"@type":"SFFloat",
+"@value":5.0
+},
+{
+"@name":"h",
+"@accessType":"inputOutput",
+"@type":"SFFloat",
+"@value":5.0
 }
 ],
 "#sourceCode":[
 "",
 "",
 "ecmascript:",
-"\"+",
-"\"",
-"\"+",
-"\"var e = 5;",
-"\"+",
-"\"var f = 5;",
-"\"+",
-"\"var g = 5;",
-"\"+",
-"\"var h = 5;",
-"\"+",
-"\"",
 "\"+",
 "\"function initialize() {",
 "\"+",
@@ -284,7 +300,7 @@
 "\"+",
 "\"    }",
 "\"+",
-"\"    coordIndexes = new MFInt32(cis);",
+"\"    coordIndexes = new MFInt32(...cis);",
 "\"+",
 "\"}",
 "\"+",
@@ -324,7 +340,7 @@
 "\"+",
 "\"     }",
 "\"+",
-"\"     coordinates = new MFVec3f(crds);",
+"\"     coordinates = new MFVec3f(...crds);",
 "\"+",
 "\"}",
 "\"+",
@@ -359,6 +375,12 @@
 "\"\t\th += Math.floor(Math.random() * 2) * 2 - 1;",
 "\"+",
 "\"\t\tbreak;",
+"\"+",
+"\"\t}",
+"\"+",
+"\"\tif (e &lt; 1) {",
+"\"+",
+"\"\t\te = 10;",
 "\"+",
 "\"\t}",
 "\"+",

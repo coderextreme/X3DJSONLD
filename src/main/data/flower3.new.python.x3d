@@ -72,7 +72,7 @@ ecmascript:
 "+
 "    }
 "+
-"    coordIndexes = new MFInt32(localci);
+"    coordIndexes = new MFInt32(...localci);
 "+
 "}
 "+
@@ -112,7 +112,7 @@ ecmascript:
 "+
 "     }
 "+
-"     coordinates = new MFVec3f(localc);
+"     coordinates = new MFVec3f(...localc);
 "+
 "}
 "+

@@ -8,6 +8,7 @@
     <component name='CubeMapTexturing' level='1'/>
     <component name='Texturing' level='1'/>
     <component name='Rendering' level='1'/>
+    <component name='Shape' level='4'/>
     <component name='Grouping' level='3'/>
     <component name='Core' level='1'/>
     <meta content='flowers4.x3d' name='title'/>
@@ -29,8 +30,8 @@
             <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'/>
             <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'/>
             <field name='power' accessType='inputOutput' type='SFFloat' value='2.0'/>
-            <ShaderPart url='"../shaders/x3dom.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"'/>
-            <ShaderPart type='FRAGMENT' url='"../shaders/pc_bubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"'/>
+            <ShaderPart url='"../shaders/x_ite.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"'/>
+            <ShaderPart type='FRAGMENT' url='"../shaders/x_ite.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"'/>
           </ComposedShader>
           <ComposedCubeMapTexture>
             <ImageTexture containerField='backTexture' url='"../resources/images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"'/>
@@ -50,20 +51,12 @@
       <field name='set_fraction' accessType='inputOnly' type='SFFloat'/>
       <field name='coordinates' accessType='inputOutput' type='MFVec3f'/>
       <field name='coordIndexes' accessType='outputOnly' type='MFInt32'/>
+      <field name='e' accessType='inputOutput' type='SFFloat' value='5.0'/>
+      <field name='f' accessType='inputOutput' type='SFFloat' value='5.0'/>
+      <field name='g' accessType='inputOutput' type='SFFloat' value='5.0'/>
+      <field name='h' accessType='inputOutput' type='SFFloat' value='5.0'/>
 <![CDATA[
 ecmascript:
-"+
-"
-"+
-"var e = 5;
-"+
-"var f = 5;
-"+
-"var g = 5;
-"+
-"var h = 5;
-"+
-"
 "+
 "function initialize() {
 "+
@@ -91,7 +84,7 @@ ecmascript:
 "+
 "    }
 "+
-"    coordIndexes = new MFInt32(cis);
+"    coordIndexes = new MFInt32(...cis);
 "+
 "}
 "+
@@ -131,7 +124,7 @@ ecmascript:
 "+
 "     }
 "+
-"     coordinates = new MFVec3f(crds);
+"     coordinates = new MFVec3f(...crds);
 "+
 "}
 "+
@@ -166,6 +159,12 @@ ecmascript:
 "		h += Math.floor(Math.random() * 2) * 2 - 1;
 "+
 "		break;
+"+
+"	}
+"+
+"	if (e < 1) {
+"+
+"		e = 10;
 "+
 "	}
 "+
