@@ -52,7 +52,7 @@ ecmascript:
 "+
 "						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);
 "+
-"                                                keyValue = new MFVec3f([old, translation]);
+"                                                keyValue = new MFVec3f(...[old, translation]);
 "+
 "						// Browser.println(translation);
 "+
@@ -67,7 +67,7 @@ ecmascript:
         </Group>
       </ProtoBody>
     </ProtoDeclare>
-    <ProtoDeclare name='cyl'>
+    <ProtoDeclare name='cylinder'>
       <ProtoInterface>
         <field name='set_positionA' accessType='inputOnly' type='SFVec3f'/>
         <field name='set_positionB' accessType='inputOnly' type='SFVec3f'/>
@@ -97,11 +97,11 @@ ecmascript:
 "+
 "		    if (typeof spine === 'undefined') {
 "+
-"		        spine = new MFVec3f([value, value]);
+"		        spine = new MFVec3f(...[value, value]);
 "+
 "		    } else {
 "+
-"		        spine = new MFVec3f([value, spine[1]]);
+"		        spine = new MFVec3f(...[value, spine[1]]);
 "+
 "		    }
 "+
@@ -113,11 +113,11 @@ ecmascript:
 "+
 "		    if (typeof spine === 'undefined') {
 "+
-"		        spine = new MFVec3f([value, value]);
+"		        spine = new MFVec3f(...[value, value]);
 "+
 "		    } else {
 "+
-"		        spine = new MFVec3f([spine[0], value]);
+"		        spine = new MFVec3f(...[spine[0], value]);
 "+
 "		    }
 "+
@@ -150,15 +150,15 @@ ecmascript:
       <ProtoInstance DEF='nodeD' name='node'>
         <fieldValue name='position' value='50 50 -50'/>
       </ProtoInstance>
-      <ProtoInstance DEF='linkA' name='cyl'>
+      <ProtoInstance DEF='linkA' name='cylinder'>
         <fieldValue name='set_positionA' value='0 0 0'/>
         <fieldValue name='set_positionB' value='50 50 50'/>
       </ProtoInstance>
-      <ProtoInstance DEF='linkB' name='cyl'>
+      <ProtoInstance DEF='linkB' name='cylinder'>
         <fieldValue name='set_positionA' value='0 0 0'/>
         <fieldValue name='set_positionB' value='-50 -50 -50'/>
       </ProtoInstance>
-      <ProtoInstance DEF='linkC' name='cyl'>
+      <ProtoInstance DEF='linkC' name='cylinder'>
         <fieldValue name='set_positionA' value='50 50 50'/>
         <fieldValue name='set_positionB' value='50 50 -50'/>
       </ProtoInstance>

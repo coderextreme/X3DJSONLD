@@ -31,6 +31,10 @@
 "@level":1
 },
 {
+"@name":"Shape",
+"@level":4
+},
+{
 "@name":"Grouping",
 "@level":3
 },
@@ -62,7 +66,7 @@
 },
 {
 "@name":"translated",
-"@content":"29 April 2024"
+"@content":"30 April 2024"
 },
 {
 "@name":"generator",
@@ -85,13 +89,13 @@
 "@name":"vertex",
 "@accessType":"inputOutput",
 "@type":"MFString",
-"@value":["../shaders/gl_flowers_chromatic.vs"]
+"@value":["https://coderextreme.net/X3DJSONLD/src/main/shaders/gl_flowers_chromatic.vs"]
 },
 {
 "@name":"fragment",
 "@accessType":"inputOutput",
 "@type":"MFString",
-"@value":["../shaders/pc_flowers.fs"]
+"@value":["https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_flowers.fs"]
 }
 ]
 },
