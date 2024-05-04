@@ -19,12 +19,12 @@
   <Scene>
     <Viewpoint description='Switch background and images texture' position='0 5 100'/>
     <TextureBackground>
-      <ImageTexture DEF='backBackgroundTexture' containerField='backTexture' url='"../resources/images/all_probes/beach_cross/beach_back.png" "https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_back.png"'/>
-      <ImageTexture DEF='bottomBackgroundTexture' containerField='bottomTexture' url='"../resources/images/all_probes/beach_cross/beach_bottom.png" "https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"'/>
-      <ImageTexture DEF='frontBackgroundTexture' containerField='frontTexture' url='"../resources/images/all_probes/beach_cross/beach_front.png" "https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_front.png"'/>
-      <ImageTexture DEF='leftBackgroundTexture' containerField='leftTexture' url='"../resources/images/all_probes/beach_cross/beach_left.png" "https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_left.png"'/>
-      <ImageTexture DEF='rightBackgroundTexture' containerField='rightTexture' url='"../resources/images/all_probes/beach_cross/beach_right.png" "https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_right.png"'/>
-      <ImageTexture DEF='topBackgroundTexture' containerField='topTexture' url='"../resources/images/all_probes/beach_cross/beach_top.png" "https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_top.png"'/>
+      <ImageTexture DEF='backBackgroundTexture' containerField='backTexture' url='"../resources/images/all_probes/beach_cross/beach_back.png" "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png"'/>
+      <ImageTexture DEF='bottomBackgroundTexture' containerField='bottomTexture' url='"../resources/images/all_probes/beach_cross/beach_bottom.png" "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"'/>
+      <ImageTexture DEF='frontBackgroundTexture' containerField='frontTexture' url='"../resources/images/all_probes/beach_cross/beach_front.png" "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png"'/>
+      <ImageTexture DEF='leftBackgroundTexture' containerField='leftTexture' url='"../resources/images/all_probes/beach_cross/beach_left.png" "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png"'/>
+      <ImageTexture DEF='rightBackgroundTexture' containerField='rightTexture' url='"../resources/images/all_probes/beach_cross/beach_right.png" "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png"'/>
+      <ImageTexture DEF='topBackgroundTexture' containerField='topTexture' url='"../resources/images/all_probes/beach_cross/beach_top.png" "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png"'/>
     </TextureBackground>
     <Transform>
       <Shape>
@@ -49,12 +49,12 @@
             <ShaderPart type='FRAGMENT' url='"../shaders/x_itemix.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itemix.fs"'/>
           </ComposedShader>
           <ComposedCubeMapTexture>
-            <ImageTexture DEF='backShader' containerField='backTexture' url='"../resources/images/all_probes/beach_cross/beach_back.png" "https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_back.png"'/>
-            <ImageTexture DEF='bottomShader' containerField='bottomTexture' url='"../resources/images/all_probes/beach_cross/beach_bottom.png" "https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"'/>
-            <ImageTexture DEF='frontShader' containerField='frontTexture' url='"../resources/images/all_probes/beach_cross/beach_front.png" "https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_front.png"'/>
-            <ImageTexture DEF='leftShader' containerField='leftTexture' url='"../resources/images/all_probes/beach_cross/beach_left.png" "https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_left.png"'/>
-            <ImageTexture DEF='rightShader' containerField='rightTexture' url='"../resources/images/all_probes/beach_cross/beach_right.png" "https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_right.png"'/>
-            <ImageTexture DEF='topShader' containerField='topTexture' url='"../resources/images/all_probes/beach_cross/beach_top.png" "https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_top.png"'/>
+            <ImageTexture DEF='backShader' containerField='backTexture' url='"../resources/images/all_probes/beach_cross/beach_back.png" "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png"'/>
+            <ImageTexture DEF='bottomShader' containerField='bottomTexture' url='"../resources/images/all_probes/beach_cross/beach_bottom.png" "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"'/>
+            <ImageTexture DEF='frontShader' containerField='frontTexture' url='"../resources/images/all_probes/beach_cross/beach_front.png" "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png"'/>
+            <ImageTexture DEF='leftShader' containerField='leftTexture' url='"../resources/images/all_probes/beach_cross/beach_left.png" "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png"'/>
+            <ImageTexture DEF='rightShader' containerField='rightTexture' url='"../resources/images/all_probes/beach_cross/beach_right.png" "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png"'/>
+            <ImageTexture DEF='topShader' containerField='topTexture' url='"../resources/images/all_probes/beach_cross/beach_top.png" "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png"'/>
           </ComposedCubeMapTexture>
         </Appearance>
         <Sphere radius='30.0'/>
