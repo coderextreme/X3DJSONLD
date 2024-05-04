@@ -62,7 +62,7 @@
 },
 {
 "@name":"translated",
-"@content":"29 April 2024"
+"@content":"30 April 2024"
 },
 {
 "@name":"generator",
@@ -88,42 +88,42 @@
 { "ImageTexture":
 {
 "@DEF":"backBackgroundTexture",
-"@url":["../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_back.png"]
+"@url":["../resources/images/all_probes/beach_cross/beach_back.png","https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png"]
 }
 },
 "-bottomTexture":
 { "ImageTexture":
 {
 "@DEF":"bottomBackgroundTexture",
-"@url":["../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"]
+"@url":["../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"]
 }
 },
 "-frontTexture":
 { "ImageTexture":
 {
 "@DEF":"frontBackgroundTexture",
-"@url":["../resources/images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_front.png"]
+"@url":["../resources/images/all_probes/beach_cross/beach_front.png","https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png"]
 }
 },
 "-leftTexture":
 { "ImageTexture":
 {
 "@DEF":"leftBackgroundTexture",
-"@url":["../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_left.png"]
+"@url":["../resources/images/all_probes/beach_cross/beach_left.png","https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png"]
 }
 },
 "-rightTexture":
 { "ImageTexture":
 {
 "@DEF":"rightBackgroundTexture",
-"@url":["../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_right.png"]
+"@url":["../resources/images/all_probes/beach_cross/beach_right.png","https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png"]
 }
 },
 "-topTexture":
 { "ImageTexture":
 {
 "@DEF":"topBackgroundTexture",
-"@url":["../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_top.png"]
+"@url":["../resources/images/all_probes/beach_cross/beach_top.png","https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png"]
 }
 }
 }
@@ -256,42 +256,42 @@
 { "ImageTexture":
 {
 "@DEF":"backShader",
-"@url":["../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_back.png"]
+"@url":["../resources/images/all_probes/beach_cross/beach_back.png","https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png"]
 }
 },
 "-bottomTexture":
 { "ImageTexture":
 {
 "@DEF":"bottomShader",
-"@url":["../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"]
+"@url":["../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"]
 }
 },
 "-frontTexture":
 { "ImageTexture":
 {
 "@DEF":"frontShader",
-"@url":["../resources/images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_front.png"]
+"@url":["../resources/images/all_probes/beach_cross/beach_front.png","https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png"]
 }
 },
 "-leftTexture":
 { "ImageTexture":
 {
 "@DEF":"leftShader",
-"@url":["../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_left.png"]
+"@url":["../resources/images/all_probes/beach_cross/beach_left.png","https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png"]
 }
 },
 "-rightTexture":
 { "ImageTexture":
 {
 "@DEF":"rightShader",
-"@url":["../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_right.png"]
+"@url":["../resources/images/all_probes/beach_cross/beach_right.png","https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png"]
 }
 },
 "-topTexture":
 { "ImageTexture":
 {
 "@DEF":"topShader",
-"@url":["../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_top.png"]
+"@url":["../resources/images/all_probes/beach_cross/beach_top.png","https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png"]
 }
 }
 }
