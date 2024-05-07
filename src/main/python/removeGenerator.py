@@ -55,7 +55,7 @@ class ClassPrinter:
             str += "case New"+self.node.get('name')+" obj -> {\n"
             fields = self.node.iter("field")
             for field in fields:
-                if field.get("type").endswith("FNode") and not field.get("name").startswith("add") and not field.get("name").startswith("remove") and not field.get("name") == "set_contacts":
+                if field.get("type").endswith("MFNode") and not field.get("name").startswith("add") and not field.get("name").startswith("remove") and not field.get("name") == "set_contacts":
                     try:
                         acceptableType = field.get("acceptableNodeTypes")
                         if acceptableType.find("|") >= 0:
@@ -140,22 +140,41 @@ class ClassPrinter:
                     fieldname = field.get("name")
                     if fieldname in ("meta", "unit", "component", "field", "fieldValue", "connect"):
                         fieldname += "List"
-                    fieldname = fieldname[0].upper()+fieldname[1:]
+                    ucfieldname = fieldname[0].upper()+fieldname[1:]
 
                     str += "\t{\n"
                     if field.get("accessType") != "inputOnly":
-                        str += '\t\t'+acceptableType+' children = obj.get'+fieldname+'();\n'
+                        str += '\t\t'+acceptableType+' children = obj.get'+ucfieldname+'();\n'
                     if field.get("accessType") != "outputOnly":
-                        str += '\t\t'+acceptableType+' leftOver = obj.removeSelected'+fieldname+'(children, toRemove);\n'
-                        str += '\t\tobj.set'+fieldname+'(leftOver);\n'
+                        str += '\t\t'+acceptableType+' leftOver = obj.removeSelected'+ucfieldname+'(children, toRemove);\n'
+                        str += '\t\tobj.set'+ucfieldname+'(leftOver);\n'
                     str += "\t}\n"
 
-                    jstr += '\tprivate '+acceptableType+' '+field.get("name")+' = null;\n'
-                    jstr += '\tpublic '+acceptableType+' get'+fieldname+'() { '+field.get("name")+' = super.get'+fieldname+'(); return '+field.get("name")+'; }\n'
+                    jstr += '\tprivate '+acceptableType+' '+fieldname+' = null;\n'
+                    jstr += '\tpublic '+acceptableType+' get'+ucfieldname+'() { '+fieldname+' = super.get'+ucfieldname+'(); return '+fieldname+'; }\n'
                     if field.get("accessType") != "outputOnly":
-                        jstr += '\tpublic '+acceptableType+' removeSelected'+fieldname+'('+acceptableType+' children, HashSet toRemove) { /*'+field.get("name")+'.removeAll(toRemove);*/ return super.get'+fieldname+'(); }\n'
-                        jstr += '\tpublic '+self.node.get("name")+' set'+fieldname+'('+acceptableType+' leftOver) { '+field.get("name")+' = leftOver; super.set'+fieldname+'(leftOver); return this; }\n'
-                    astr += '\t\t/*'+field.get("name")+'.removeAll(toRemove);*/\n'
+                        if acceptableType.endswith("[]"):
+                            jstr += '\tpublic '+acceptableType+' removeSelected'+ucfieldname+'('+acceptableType+' children, HashSet toRemove) {\n'
+
+                            jstr += '\t\tList<'+acceptableType[:-2]+'> list = (List<'+acceptableType[:-2]+'>)Arrays.asList('+fieldname+');\n'
+                            jstr += '\t\tif (list.removeAll(toRemove)) { super.set'+ucfieldname+'(('+acceptableType+')(list.toArray())); };\n'
+                            jstr += '\t\treturn super.get'+ucfieldname+'();\n'
+                            jstr += '\t}\n'
+                        elif acceptableType.startswith("ArrayList"):
+                            jstr += '\tpublic '+acceptableType+' removeSelected'+ucfieldname+'('+acceptableType+' children, HashSet toRemove) { '+fieldname+'.removeAll(toRemove); return super.get'+ucfieldname+'(); }\n'
+                        else:
+                            jstr += '\tpublic '+acceptableType+' removeSelected'+ucfieldname+'('+acceptableType+' children, HashSet toRemove) { /*'+fieldname+'.removeAll(toRemove);*/ return super.get'+ucfieldname+'(); }\n'
+                        jstr += '\tpublic '+self.node.get("name")+' set'+ucfieldname+'('+acceptableType+' leftOver) { '+fieldname+' = leftOver; super.set'+ucfieldname+'(leftOver); return this; }\n'
+                    if field.get("accessType") != "outputOnly":
+                        if acceptableType.endswith("[]"):
+                            astr += "\t\t{\n"
+                            astr += '\t\t\tList<'+acceptableType[:-2]+'> list = (List<'+acceptableType[:-2]+'>)Arrays.asList('+fieldname+');\n'
+                            astr += '\t\t\tif (list.removeAll(toRemove)) { super.set'+ucfieldname+'(('+acceptableType+')(list.toArray())); };\n'
+                            astr += "\t\t}\n"
+                        elif acceptableType.startswith("ArrayList"):
+                            astr += '\t\t'+fieldname+'.removeAll(toRemove);\n'
+                        else:
+                            astr += '\t\t/*'+fieldname+'.removeAll(toRemove);*/\n'
             str += "}\n"
             astr += "\t}\n"
             jstr += astr
@@ -168,6 +187,8 @@ class ClassPrinter:
 imports = "package net.coderextreme;\n\n"
 imports += "import java.util.HashSet;\n"
 imports += "import java.util.ArrayList;\n"
+imports += "import java.util.Arrays;\n"
+imports += "import java.util.List;\n"
 imports += "import org.web3d.x3d.jsail.fields.MFNode;\n"
 imports += "import org.web3d.x3d.jsail.fields.SFNode;\n"
 
