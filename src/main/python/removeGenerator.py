@@ -47,7 +47,7 @@ class ClassPrinter:
             except:
                 pass
         if not self.node.get('name').startswith("X3D")  or self.node.get('name') == "X3D":
-            java = open("../java/net/coderextreme/New"+self.node.get("name")+".java", "w")
+            java = open("C:/Users/john/jaminate/Jaminate/app/src/main/java/net/coderextreme/remove/New"+self.node.get("name")+".java", "w")
             jstr = ""
             astr = '\tpublic void removeAll(HashSet toRemove) {\n'
             jstr += imports
@@ -161,8 +161,10 @@ class ClassPrinter:
                         if acceptableType.endswith("[]"):
                             jstr += '\tpublic '+acceptableType+' removeSelected'+ucfieldname+'('+acceptableType+' children, HashSet toRemove) {\n'
 
-                            jstr += '\t\tList<'+acceptableType[:-2]+'> list = (List<'+acceptableType[:-2]+'>)Arrays.asList('+fieldname+');\n'
-                            jstr += '\t\tif (list.removeAll(toRemove)) { super.set'+ucfieldname+'(('+acceptableType+')(list.toArray())); };\n'
+                            jstr += '\t\tList<'+acceptableType[:-2]+'> list = Arrays.stream(super.get'+ucfieldname+'()).collect(Collectors.toList());\n'
+                            jstr += '\t\tSystem.err.println("List length = "+list.size());\n'
+                            jstr += '\t\tif (list.removeAll(toRemove)) { super.set'+ucfieldname+'(list.toArray(new '+acceptableType[:-2]+'[0])); };\n'
+                            jstr += '\t\tSystem.err.println("After list length = "+super.get'+ucfieldname+'().length);\n'
                             jstr += '\t\treturn super.get'+ucfieldname+'();\n'
                             jstr += '\t}\n'
                         elif acceptableType.startswith("ArrayList"):
@@ -173,8 +175,10 @@ class ClassPrinter:
                     if field.get("accessType") != "outputOnly":
                         if acceptableType.endswith("[]"):
                             astr += "\t\t{\n"
-                            astr += '\t\t\tList<'+acceptableType[:-2]+'> list = (List<'+acceptableType[:-2]+'>)Arrays.asList('+fieldname+');\n'
-                            astr += '\t\t\tif (list.removeAll(toRemove)) { super.set'+ucfieldname+'(('+acceptableType+')(list.toArray())); };\n'
+                            astr += '\t\tList<'+acceptableType[:-2]+'> list = Arrays.stream(super.get'+ucfieldname+'()).collect(Collectors.toList());\n'
+                            astr += '\t\tSystem.err.println("*List length = "+list.size());\n'
+                            astr += '\t\tif (list.removeAll(toRemove)) { super.set'+ucfieldname+'(list.toArray(new '+acceptableType[:-2]+'[0])); };\n'
+                            astr += '\t\tSystem.err.println("*After list length = "+super.get'+ucfieldname+'().length);\n'
                             astr += "\t\t}\n"
                         elif acceptableType.startswith("ArrayList"):
                             astr += '\t\t'+fieldname+'.removeAll(toRemove);\n'
@@ -189,10 +193,11 @@ class ClassPrinter:
         self.printed = True
         return str
 
-imports = "package net.coderextreme;\n\n"
+imports = "package net.coderextreme.remove;\n\n"
 imports += "import java.util.HashSet;\n"
 imports += "import java.util.ArrayList;\n"
 imports += "import java.util.Arrays;\n"
+imports += "import java.util.stream.Collectors;\n"
 imports += "import java.util.List;\n"
 imports += "import org.web3d.x3d.jsail.fields.MFNode;\n"
 imports += "import org.web3d.x3d.jsail.fields.SFNode;\n"
@@ -254,6 +259,6 @@ code += '''
 '''
 code += "}\n"
 
-f = open("../java/net/coderextreme/Remove.java", "w")
+f = open("C:/Users/john/jaminate/Jaminate/app/src/main/java/net/coderextreme/remove/Remove.java", "w")
 f.write(code)
 f.close()
