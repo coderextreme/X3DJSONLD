@@ -146,8 +146,13 @@ class ClassPrinter:
                     if field.get("accessType") != "inputOnly":
                         str += '\t\t'+acceptableType+' children = obj.get'+ucfieldname+'();\n'
                     if field.get("accessType") != "outputOnly":
-                        str += '\t\t'+acceptableType+' leftOver = obj.removeSelected'+ucfieldname+'(children, toRemove);\n'
+                        # first traverse hierarchy
+                        str += '\t\t'+acceptableType+' leftOver'+ucfieldname+' = this.removeChildren(children, toRemove);\n'
+                        str += '\t\tobj.set'+ucfieldname+'(leftOver'+ucfieldname+');\n'
+                        # then deal with field specifics
+                        str += '\t\t'+acceptableType+' leftOver = obj.removeSelected'+ucfieldname+'(leftOver'+ucfieldname+', toRemove);\n'
                         str += '\t\tobj.set'+ucfieldname+'(leftOver);\n'
+
                     str += "\t}\n"
 
                     jstr += '\tprivate '+acceptableType+' '+fieldname+' = null;\n'
@@ -219,12 +224,21 @@ for st in sts:
 code = imports
 code += "\n"
 code += "public class Remove {\n"
-code += "public void removeChildren(ArrayList children, HashSet toRemove) {\n"
+code += "public ArrayList removeChildren(ArrayList children, HashSet toRemove) {\n"
 code += "\tif (children != null) {\n"
 code += "\t\tfor (int ci = 0; ci < children.size(); ci++) {\n"
 code += "\t\t\tremoveChild(children.get(ci), toRemove);\n"
 code += "\t\t}\n"
 code += "\t}\n"
+code += "\treturn children;\n"
+code += "}\n"
+code += "public X3DNode[] removeChildren(X3DNode[] children, HashSet toRemove) {\n"
+code += "\tif (children != null) {\n"
+code += "\t\tfor (int ci = 0; ci < children.length; ci++) {\n"
+code += "\t\t\tremoveChild(children[ci], toRemove);\n"
+code += "\t\t}\n"
+code += "\t}\n"
+code += "\treturn children;\n"
 code += "}\n"
 code += "public void removeChild(Object child, HashSet toRemove) {\n"
 code += "switch (child) {\n"
