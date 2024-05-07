@@ -35,7 +35,7 @@ newModel=X3D(profile='Immersive',version='4.0',
     component(name='CubeMapTexturing',level=1),
     component(name='Texturing',level=1),
     component(name='Rendering',level=1),
-    component(name='Shape',level=4),
+    # <component name='Shape' level='4'></component>
     component(name='Grouping',level=3),
     component(name='Core',level=1),
     meta(name='title',content='mirror.x3d'),
@@ -47,24 +47,24 @@ newModel=X3D(profile='Immersive',version='4.0',
     children=[
     Viewpoint(position=(0,5,100),description='Switch background and images texture'),
     TextureBackground(
-      leftTexture=ImageTexture(DEF='leftBackgroundTexture',url=["../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_left.png"]),
-      rightTexture=ImageTexture(DEF='rightBackgroundTexture',url=["../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_right.png"]),
-      frontTexture=ImageTexture(DEF='frontBackgroundTexture',url=["../resources/images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_front.png"]),
-      backTexture=ImageTexture(DEF='backBackgroundTexture',url=["../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_back.png"]),
-      topTexture=ImageTexture(DEF='topBackgroundTexture',url=["../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_top.png"]),
-      bottomTexture=ImageTexture(DEF='bottomBackgroundTexture',url=["../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"])),
+      leftTexture=ImageTexture(DEF='leftBackgroundTexture',url=["../resources/images/all_probes/beach_cross/beach_left.png","https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png"]),
+      rightTexture=ImageTexture(DEF='rightBackgroundTexture',url=["../resources/images/all_probes/beach_cross/beach_right.png","https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png"]),
+      frontTexture=ImageTexture(DEF='frontBackgroundTexture',url=["../resources/images/all_probes/beach_cross/beach_front.png","https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png"]),
+      backTexture=ImageTexture(DEF='backBackgroundTexture',url=["../resources/images/all_probes/beach_cross/beach_back.png","https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png"]),
+      topTexture=ImageTexture(DEF='topBackgroundTexture',url=["../resources/images/all_probes/beach_cross/beach_top.png","https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png"]),
+      bottomTexture=ImageTexture(DEF='bottomBackgroundTexture',url=["../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"])),
     Transform(
       children=[
       Shape(
         appearance=Appearance(
           material=Material(diffuseColor=(.7,.7,.7),specularColor=(.5,.5,.5)),
           texture=ComposedCubeMapTexture(
-            backTexture=ImageTexture(DEF='backShader',url=["../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_back.png"]),
-            bottomTexture=ImageTexture(DEF='bottomShader',url=["../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"]),
-            frontTexture=ImageTexture(DEF='frontShader',url=["../resources/images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_front.png"]),
-            leftTexture=ImageTexture(DEF='leftShader',url=["../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_left.png"]),
-            rightTexture=ImageTexture(DEF='rightShader',url=["../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_right.png"]),
-            topTexture=ImageTexture(DEF='topShader',url=["../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_top.png"])),
+            backTexture=ImageTexture(DEF='backShader',url=["../resources/images/all_probes/beach_cross/beach_back.png","https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png"]),
+            bottomTexture=ImageTexture(DEF='bottomShader',url=["../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"]),
+            frontTexture=ImageTexture(DEF='frontShader',url=["../resources/images/all_probes/beach_cross/beach_front.png","https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png"]),
+            leftTexture=ImageTexture(DEF='leftShader',url=["../resources/images/all_probes/beach_cross/beach_left.png","https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png"]),
+            rightTexture=ImageTexture(DEF='rightShader',url=["../resources/images/all_probes/beach_cross/beach_right.png","https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png"]),
+            topTexture=ImageTexture(DEF='topShader',url=["../resources/images/all_probes/beach_cross/beach_top.png","https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png"])),
           shaders=[
           ComposedShader(DEF='x3dom',language='GLSL',
             field=[

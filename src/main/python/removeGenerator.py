@@ -35,8 +35,9 @@ class ClassPrinter:
             self.imprt = "import org.web3d.x3d.sai."+self.node.get("name")+";\n"
         else:
             self.imprt = "import org.web3d.x3d.sai."+self.package+"."+self.node.get("name")+";\n"
+        self.full = self.imprt[7:-2]
 
-    def printClass(self):
+    def printClass(self, imports):
         str = ""
         if self.printed:
             return str
@@ -46,7 +47,12 @@ class ClassPrinter:
             except:
                 pass
         if not self.node.get('name').startswith("X3D")  or self.node.get('name') == "X3D":
-            str += "case "+self.node.get('name')+" obj -> {\n"
+            java = open("../java/net/coderextreme/New"+self.node.get("name")+".java", "w")
+            jstr = ""
+            astr = '\tpublic void removeAll(HashSet toRemove) {\n'
+            jstr += imports
+            jstr += "public class New"+self.node.get("name")+" extends "+self.full+" {\n"
+            str += "case New"+self.node.get('name')+" obj -> {\n"
             fields = self.node.iter("field")
             for field in fields:
                 if field.get("type").endswith("FNode") and not field.get("name").startswith("add") and not field.get("name").startswith("remove") and not field.get("name") == "set_contacts":
@@ -93,7 +99,6 @@ class ClassPrinter:
                     elif acceptableType in ("X3DMetadataObject") and field.get("name") == "value":
                         acceptableType = "X3DNode[]"
                     #elif acceptableType in ("X3DComposableVolumeRenderStyleNode", "X3DNBodyCollidableNode", "X3DSingleTextureCoordinateNode", "X3DSingleTextureNode", "X3DTexture2DNode", "X3DVolumeRenderStyleNode"):
-                    #    print(f"{acceptableType} {field.get('name')}")
                     elif acceptableType in ("MFNode") and self.node.get('name') == "Scene":
                         acceptableType = "ArrayList<X3DNode>"
                     elif acceptableType in ("X3DChildNode", "MFNode", "X3DShaderNode", "CADFace", "Contact", "Contour2D", "DISEntityTypeMapping", "HAnimDisplacer", "HAnimJoint", "HAnimMotion", "HAnimSegment", "HAnimSite", "ShaderPart", "ShaderProgram", "X3DComposableVolumeRenderStyleNode", "X3DLayerNode", "X3DNBodyCollidableNode", "X3DParametricGeometryNode", "X3DParticlePhysicsModelNode", "X3DRigidJointNode", "X3DSingleTextureCoordinateNode", "X3DSingleTextureNode", "X3DSingleTextureTransformNode", "X3DTexture2DNode", "X3DUrlObject", "X3DVertexAttributeNode", "X3DVolumeRenderStyleNode"):
@@ -141,18 +146,30 @@ class ClassPrinter:
                     if field.get("accessType") != "inputOnly":
                         str += '\t\t'+acceptableType+' children = obj.get'+fieldname+'();\n'
                     if field.get("accessType") != "outputOnly":
-                        str += '\t\tremoveAll(children, toRemove);\n'
-                        str += '\t\tobj.set'+fieldname+'(children);\n'
+                        str += '\t\t'+acceptableType+' leftOver = obj.removeSelected'+fieldname+'(children, toRemove);\n'
+                        str += '\t\tobj.set'+fieldname+'(leftOver);\n'
                     str += "\t}\n"
+
+                    jstr += '\tprivate '+acceptableType+' '+field.get("name")+' = null;\n'
+                    jstr += '\tpublic '+acceptableType+' get'+fieldname+'() { '+field.get("name")+' = super.get'+fieldname+'(); return '+field.get("name")+'; }\n'
+                    if field.get("accessType") != "outputOnly":
+                        jstr += '\tpublic '+acceptableType+' removeSelected'+fieldname+'('+acceptableType+' children, HashSet toRemove) { /*'+field.get("name")+'.removeAll(toRemove);*/ return super.get'+fieldname+'(); }\n'
+                        jstr += '\tpublic '+self.node.get("name")+' set'+fieldname+'('+acceptableType+' leftOver) { '+field.get("name")+' = leftOver; super.set'+fieldname+'(leftOver); return this; }\n'
+                    astr += '\t\t/*'+field.get("name")+'.removeAll(toRemove);*/\n'
             str += "}\n"
+            astr += "\t}\n"
+            jstr += astr
+            jstr += "}\n"
+            java.write(jstr)
+            java.close()
         self.printed = True
         return str
 
-code = "package net.coderextreme;\n\n"
-code += "import java.util.HashSet;\n"
-code += "import java.util.ArrayList;\n"
-code += "import org.web3d.x3d.jsail.fields.MFNode;\n"
-code += "import org.web3d.x3d.jsail.fields.SFNode;\n"
+imports = "package net.coderextreme;\n\n"
+imports += "import java.util.HashSet;\n"
+imports += "import java.util.ArrayList;\n"
+imports += "import org.web3d.x3d.jsail.fields.MFNode;\n"
+imports += "import org.web3d.x3d.jsail.fields.SFNode;\n"
 
 soup = xml.etree.ElementTree.parse(open("../../specifications/X3dUnifiedObjectModel-4.0.xml")).getroot()
 
@@ -161,42 +178,45 @@ classes = {}
 ants = soup.iter("AbstractNodeType")
 for ant in ants:
     classes[ant.get('name')] = ClassPrinter(ant, "")
-    code += classes[ant.get('name')].imprt
+    imports += classes[ant.get('name')].imprt
 
 aots = soup.iter("AbstractObjectType")
 for aot in aots:
     classes[aot.get('name')] = ClassPrinter(aot, "")
-    code += classes[aot.get('name')].imprt
+    imports += classes[aot.get('name')].imprt
 
 cns = soup.iter("ConcreteNode")
 for cn in cns:
     classes[cn.get('name')] = ClassPrinter(cn, "")
-    code += classes[cn.get('name')].imprt
+    imports += classes[cn.get('name')].imprt
 
 sts = soup.iter("Statement")
 for st in sts:
     classes[st.get('name')] = ClassPrinter(st, "")
-    code += classes[st.get('name')].imprt
+    imports += classes[st.get('name')].imprt
 
+code = imports
 code += "\n"
 code += "public class Remove {\n"
 code += "public void removeChildren(ArrayList children, HashSet toRemove) {\n"
 code += "\tif (children != null) {\n"
 code += "\t\tfor (int ci = 0; ci < children.size(); ci++) {\n"
-code += "\t\t\tremoveNodes(children.get(ci), toRemove);\n"
+code += "\t\t\tremoveChild(children.get(ci), toRemove);\n"
 code += "\t\t}\n"
 code += "\t}\n"
 code += "}\n"
-code += "public void removeNodes(Object child, HashSet toRemove) {\n"
+code += "public void removeChild(Object child, HashSet toRemove) {\n"
 code += "switch (child) {\n"
 
 for k,v in classes.items():
-    code += v.printClass()
+    code += v.printClass(imports)
 
 code += "default -> {\n"
 code += "}\n"
 code += "}\n"
 code += "}\n"
+code += '''
+'''
 code += "}\n"
 
 f = open("../java/net/coderextreme/Remove.java", "w")
