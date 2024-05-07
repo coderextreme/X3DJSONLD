@@ -364,12 +364,21 @@ import org.web3d.x3d.jsail.Core.unit;
 import org.web3d.x3d.jsail.Core.X3D;
 
 public class Remove {
-public void removeChildren(ArrayList children, HashSet toRemove) {
+public ArrayList removeChildren(ArrayList children, HashSet toRemove) {
 	if (children != null) {
 		for (int ci = 0; ci < children.size(); ci++) {
 			removeChild(children.get(ci), toRemove);
 		}
 	}
+	return children;
+}
+public X3DNode[] removeChildren(X3DNode[] children, HashSet toRemove) {
+	if (children != null) {
+		for (int ci = 0; ci < children.length; ci++) {
+			removeChild(children[ci], toRemove);
+		}
+	}
+	return children;
 }
 public void removeChild(Object child, HashSet toRemove) {
 switch (child) {
@@ -378,21 +387,27 @@ case NewAcousticProperties obj -> {
 case NewAnalyser obj -> {
 	{
 		X3DNode[] children = obj.getChildren();
-		X3DNode[] leftOver = obj.removeSelectedChildren(children, toRemove);
+		X3DNode[] leftOverChildren = this.removeChildren(children, toRemove);
+		obj.setChildren(leftOverChildren);
+		X3DNode[] leftOver = obj.removeSelectedChildren(leftOverChildren, toRemove);
 		obj.setChildren(leftOver);
 	}
 }
 case NewAnchor obj -> {
 	{
 		X3DNode[] children = obj.getChildren();
-		X3DNode[] leftOver = obj.removeSelectedChildren(children, toRemove);
+		X3DNode[] leftOverChildren = this.removeChildren(children, toRemove);
+		obj.setChildren(leftOverChildren);
+		X3DNode[] leftOver = obj.removeSelectedChildren(leftOverChildren, toRemove);
 		obj.setChildren(leftOver);
 	}
 }
 case NewAppearance obj -> {
 	{
 		X3DNode[] children = obj.getShaders();
-		X3DNode[] leftOver = obj.removeSelectedShaders(children, toRemove);
+		X3DNode[] leftOverShaders = this.removeChildren(children, toRemove);
+		obj.setShaders(leftOverShaders);
+		X3DNode[] leftOver = obj.removeSelectedShaders(leftOverShaders, toRemove);
 		obj.setShaders(leftOver);
 	}
 }
@@ -405,7 +420,9 @@ case NewAudioClip obj -> {
 case NewAudioDestination obj -> {
 	{
 		X3DNode[] children = obj.getChildren();
-		X3DNode[] leftOver = obj.removeSelectedChildren(children, toRemove);
+		X3DNode[] leftOverChildren = this.removeChildren(children, toRemove);
+		obj.setChildren(leftOverChildren);
+		X3DNode[] leftOver = obj.removeSelectedChildren(leftOverChildren, toRemove);
 		obj.setChildren(leftOver);
 	}
 }
@@ -416,14 +433,18 @@ case NewBallJoint obj -> {
 case NewBillboard obj -> {
 	{
 		X3DNode[] children = obj.getChildren();
-		X3DNode[] leftOver = obj.removeSelectedChildren(children, toRemove);
+		X3DNode[] leftOverChildren = this.removeChildren(children, toRemove);
+		obj.setChildren(leftOverChildren);
+		X3DNode[] leftOver = obj.removeSelectedChildren(leftOverChildren, toRemove);
 		obj.setChildren(leftOver);
 	}
 }
 case NewBiquadFilter obj -> {
 	{
 		X3DNode[] children = obj.getChildren();
-		X3DNode[] leftOver = obj.removeSelectedChildren(children, toRemove);
+		X3DNode[] leftOverChildren = this.removeChildren(children, toRemove);
+		obj.setChildren(leftOverChildren);
+		X3DNode[] leftOver = obj.removeSelectedChildren(leftOverChildren, toRemove);
 		obj.setChildren(leftOver);
 	}
 }
@@ -448,7 +469,9 @@ case NewBufferAudioSource obj -> {
 case NewCADAssembly obj -> {
 	{
 		X3DNode[] children = obj.getChildren();
-		X3DNode[] leftOver = obj.removeSelectedChildren(children, toRemove);
+		X3DNode[] leftOverChildren = this.removeChildren(children, toRemove);
+		obj.setChildren(leftOverChildren);
+		X3DNode[] leftOver = obj.removeSelectedChildren(leftOverChildren, toRemove);
 		obj.setChildren(leftOver);
 	}
 }
@@ -457,14 +480,18 @@ case NewCADFace obj -> {
 case NewCADLayer obj -> {
 	{
 		X3DNode[] children = obj.getChildren();
-		X3DNode[] leftOver = obj.removeSelectedChildren(children, toRemove);
+		X3DNode[] leftOverChildren = this.removeChildren(children, toRemove);
+		obj.setChildren(leftOverChildren);
+		X3DNode[] leftOver = obj.removeSelectedChildren(leftOverChildren, toRemove);
 		obj.setChildren(leftOver);
 	}
 }
 case NewCADPart obj -> {
 	{
 		X3DNode[] children = obj.getChildren();
-		X3DNode[] leftOver = obj.removeSelectedChildren(children, toRemove);
+		X3DNode[] leftOverChildren = this.removeChildren(children, toRemove);
+		obj.setChildren(leftOverChildren);
+		X3DNode[] leftOver = obj.removeSelectedChildren(leftOverChildren, toRemove);
 		obj.setChildren(leftOver);
 	}
 }
@@ -473,26 +500,34 @@ case NewCartoonVolumeStyle obj -> {
 case NewChannelMerger obj -> {
 	{
 		X3DNode[] children = obj.getChildren();
-		X3DNode[] leftOver = obj.removeSelectedChildren(children, toRemove);
+		X3DNode[] leftOverChildren = this.removeChildren(children, toRemove);
+		obj.setChildren(leftOverChildren);
+		X3DNode[] leftOver = obj.removeSelectedChildren(leftOverChildren, toRemove);
 		obj.setChildren(leftOver);
 	}
 }
 case NewChannelSelector obj -> {
 	{
 		X3DNode[] children = obj.getChildren();
-		X3DNode[] leftOver = obj.removeSelectedChildren(children, toRemove);
+		X3DNode[] leftOverChildren = this.removeChildren(children, toRemove);
+		obj.setChildren(leftOverChildren);
+		X3DNode[] leftOver = obj.removeSelectedChildren(leftOverChildren, toRemove);
 		obj.setChildren(leftOver);
 	}
 }
 case NewChannelSplitter obj -> {
 	{
 		X3DNode[] children = obj.getChildren();
-		X3DNode[] leftOver = obj.removeSelectedChildren(children, toRemove);
+		X3DNode[] leftOverChildren = this.removeChildren(children, toRemove);
+		obj.setChildren(leftOverChildren);
+		X3DNode[] leftOver = obj.removeSelectedChildren(leftOverChildren, toRemove);
 		obj.setChildren(leftOver);
 	}
 	{
 		X3DNode[] children = obj.getOutputs();
-		X3DNode[] leftOver = obj.removeSelectedOutputs(children, toRemove);
+		X3DNode[] leftOverOutputs = this.removeChildren(children, toRemove);
+		obj.setOutputs(leftOverOutputs);
+		X3DNode[] leftOver = obj.removeSelectedOutputs(leftOverOutputs, toRemove);
 		obj.setOutputs(leftOver);
 	}
 }
@@ -507,14 +542,18 @@ case NewCollidableShape obj -> {
 case NewCollision obj -> {
 	{
 		X3DNode[] children = obj.getChildren();
-		X3DNode[] leftOver = obj.removeSelectedChildren(children, toRemove);
+		X3DNode[] leftOverChildren = this.removeChildren(children, toRemove);
+		obj.setChildren(leftOverChildren);
+		X3DNode[] leftOver = obj.removeSelectedChildren(leftOverChildren, toRemove);
 		obj.setChildren(leftOver);
 	}
 }
 case NewCollisionCollection obj -> {
 	{
 		X3DNode[] children = obj.getCollidables();
-		X3DNode[] leftOver = obj.removeSelectedCollidables(children, toRemove);
+		X3DNode[] leftOverCollidables = this.removeChildren(children, toRemove);
+		obj.setCollidables(leftOverCollidables);
+		X3DNode[] leftOver = obj.removeSelectedCollidables(leftOverCollidables, toRemove);
 		obj.setCollidables(leftOver);
 	}
 }
@@ -529,7 +568,9 @@ case NewCollisionSensor obj -> {
 case NewCollisionSpace obj -> {
 	{
 		X3DNode[] children = obj.getCollidables();
-		X3DNode[] leftOver = obj.removeSelectedCollidables(children, toRemove);
+		X3DNode[] leftOverCollidables = this.removeChildren(children, toRemove);
+		obj.setCollidables(leftOverCollidables);
+		X3DNode[] leftOver = obj.removeSelectedCollidables(leftOverCollidables, toRemove);
 		obj.setCollidables(leftOver);
 	}
 }
@@ -548,26 +589,34 @@ case NewComposedCubeMapTexture obj -> {
 case NewComposedShader obj -> {
 	{
 		ArrayList<field> children = obj.getFieldList();
-		ArrayList<field> leftOver = obj.removeSelectedFieldList(children, toRemove);
+		ArrayList<field> leftOverFieldList = this.removeChildren(children, toRemove);
+		obj.setFieldList(leftOverFieldList);
+		ArrayList<field> leftOver = obj.removeSelectedFieldList(leftOverFieldList, toRemove);
 		obj.setFieldList(leftOver);
 	}
 	{
 		X3DNode[] children = obj.getParts();
-		X3DNode[] leftOver = obj.removeSelectedParts(children, toRemove);
+		X3DNode[] leftOverParts = this.removeChildren(children, toRemove);
+		obj.setParts(leftOverParts);
+		X3DNode[] leftOver = obj.removeSelectedParts(leftOverParts, toRemove);
 		obj.setParts(leftOver);
 	}
 }
 case NewComposedTexture3D obj -> {
 	{
 		X3DNode[] children = obj.getTexture();
-		X3DNode[] leftOver = obj.removeSelectedTexture(children, toRemove);
+		X3DNode[] leftOverTexture = this.removeChildren(children, toRemove);
+		obj.setTexture(leftOverTexture);
+		X3DNode[] leftOver = obj.removeSelectedTexture(leftOverTexture, toRemove);
 		obj.setTexture(leftOver);
 	}
 }
 case NewComposedVolumeStyle obj -> {
 	{
 		X3DNode[] children = obj.getRenderStyle();
-		X3DNode[] leftOver = obj.removeSelectedRenderStyle(children, toRemove);
+		X3DNode[] leftOverRenderStyle = this.removeChildren(children, toRemove);
+		obj.setRenderStyle(leftOverRenderStyle);
+		X3DNode[] leftOver = obj.removeSelectedRenderStyle(leftOverRenderStyle, toRemove);
 		obj.setRenderStyle(leftOver);
 	}
 }
@@ -580,7 +629,9 @@ case NewContact obj -> {
 case NewContour2D obj -> {
 	{
 		X3DNode[] children = obj.getChildren();
-		X3DNode[] leftOver = obj.removeSelectedChildren(children, toRemove);
+		X3DNode[] leftOverChildren = this.removeChildren(children, toRemove);
+		obj.setChildren(leftOverChildren);
+		X3DNode[] leftOver = obj.removeSelectedChildren(leftOverChildren, toRemove);
 		obj.setChildren(leftOver);
 	}
 }
@@ -589,7 +640,9 @@ case NewContourPolyline2D obj -> {
 case NewConvolver obj -> {
 	{
 		X3DNode[] children = obj.getChildren();
-		X3DNode[] leftOver = obj.removeSelectedChildren(children, toRemove);
+		X3DNode[] leftOverChildren = this.removeChildren(children, toRemove);
+		obj.setChildren(leftOverChildren);
+		X3DNode[] leftOver = obj.removeSelectedChildren(leftOverChildren, toRemove);
 		obj.setChildren(leftOver);
 	}
 }
@@ -612,7 +665,9 @@ case NewCylinderSensor obj -> {
 case NewDelay obj -> {
 	{
 		X3DNode[] children = obj.getChildren();
-		X3DNode[] leftOver = obj.removeSelectedChildren(children, toRemove);
+		X3DNode[] leftOverChildren = this.removeChildren(children, toRemove);
+		obj.setChildren(leftOverChildren);
+		X3DNode[] leftOver = obj.removeSelectedChildren(leftOverChildren, toRemove);
 		obj.setChildren(leftOver);
 	}
 }
@@ -621,7 +676,9 @@ case NewDirectionalLight obj -> {
 case NewDISEntityManager obj -> {
 	{
 		X3DNode[] children = obj.getChildren();
-		X3DNode[] leftOver = obj.removeSelectedChildren(children, toRemove);
+		X3DNode[] leftOverChildren = this.removeChildren(children, toRemove);
+		obj.setChildren(leftOverChildren);
+		X3DNode[] leftOver = obj.removeSelectedChildren(leftOverChildren, toRemove);
 		obj.setChildren(leftOver);
 	}
 }
@@ -634,7 +691,9 @@ case NewDoubleAxisHingeJoint obj -> {
 case NewDynamicsCompressor obj -> {
 	{
 		X3DNode[] children = obj.getChildren();
-		X3DNode[] leftOver = obj.removeSelectedChildren(children, toRemove);
+		X3DNode[] leftOverChildren = this.removeChildren(children, toRemove);
+		obj.setChildren(leftOverChildren);
+		X3DNode[] leftOver = obj.removeSelectedChildren(leftOverChildren, toRemove);
 		obj.setChildren(leftOver);
 	}
 }
@@ -645,14 +704,18 @@ case NewEdgeEnhancementVolumeStyle obj -> {
 case NewElevationGrid obj -> {
 	{
 		X3DNode[] children = obj.getAttrib();
-		X3DNode[] leftOver = obj.removeSelectedAttrib(children, toRemove);
+		X3DNode[] leftOverAttrib = this.removeChildren(children, toRemove);
+		obj.setAttrib(leftOverAttrib);
+		X3DNode[] leftOver = obj.removeSelectedAttrib(leftOverAttrib, toRemove);
 		obj.setAttrib(leftOver);
 	}
 }
 case NewEspduTransform obj -> {
 	{
 		X3DNode[] children = obj.getChildren();
-		X3DNode[] leftOver = obj.removeSelectedChildren(children, toRemove);
+		X3DNode[] leftOverChildren = this.removeChildren(children, toRemove);
+		obj.setChildren(leftOverChildren);
+		X3DNode[] leftOver = obj.removeSelectedChildren(leftOverChildren, toRemove);
 		obj.setChildren(leftOver);
 	}
 }
@@ -675,7 +738,9 @@ case NewForcePhysicsModel obj -> {
 case NewGain obj -> {
 	{
 		X3DNode[] children = obj.getChildren();
-		X3DNode[] leftOver = obj.removeSelectedChildren(children, toRemove);
+		X3DNode[] leftOverChildren = this.removeChildren(children, toRemove);
+		obj.setChildren(leftOverChildren);
+		X3DNode[] leftOver = obj.removeSelectedChildren(leftOverChildren, toRemove);
 		obj.setChildren(leftOver);
 	}
 }
@@ -688,7 +753,9 @@ case NewGeoElevationGrid obj -> {
 case NewGeoLocation obj -> {
 	{
 		X3DNode[] children = obj.getChildren();
-		X3DNode[] leftOver = obj.removeSelectedChildren(children, toRemove);
+		X3DNode[] leftOverChildren = this.removeChildren(children, toRemove);
+		obj.setChildren(leftOverChildren);
+		X3DNode[] leftOver = obj.removeSelectedChildren(leftOverChildren, toRemove);
 		obj.setChildren(leftOver);
 	}
 }
@@ -698,14 +765,18 @@ case NewGeoLOD obj -> {
 	}
 	{
 		X3DNode[] children = obj.getRootNode();
-		X3DNode[] leftOver = obj.removeSelectedRootNode(children, toRemove);
+		X3DNode[] leftOverRootNode = this.removeChildren(children, toRemove);
+		obj.setRootNode(leftOverRootNode);
+		X3DNode[] leftOver = obj.removeSelectedRootNode(leftOverRootNode, toRemove);
 		obj.setRootNode(leftOver);
 	}
 }
 case NewGeoMetadata obj -> {
 	{
 		X3DNode[] children = obj.getData();
-		X3DNode[] leftOver = obj.removeSelectedData(children, toRemove);
+		X3DNode[] leftOverData = this.removeChildren(children, toRemove);
+		obj.setData(leftOverData);
+		X3DNode[] leftOver = obj.removeSelectedData(leftOverData, toRemove);
 		obj.setData(leftOver);
 	}
 }
@@ -720,7 +791,9 @@ case NewGeoTouchSensor obj -> {
 case NewGeoTransform obj -> {
 	{
 		X3DNode[] children = obj.getChildren();
-		X3DNode[] leftOver = obj.removeSelectedChildren(children, toRemove);
+		X3DNode[] leftOverChildren = this.removeChildren(children, toRemove);
+		obj.setChildren(leftOverChildren);
+		X3DNode[] leftOver = obj.removeSelectedChildren(leftOverChildren, toRemove);
 		obj.setChildren(leftOver);
 	}
 }
@@ -729,7 +802,9 @@ case NewGeoViewpoint obj -> {
 case NewGroup obj -> {
 	{
 		X3DNode[] children = obj.getChildren();
-		X3DNode[] leftOver = obj.removeSelectedChildren(children, toRemove);
+		X3DNode[] leftOverChildren = this.removeChildren(children, toRemove);
+		obj.setChildren(leftOverChildren);
+		X3DNode[] leftOver = obj.removeSelectedChildren(leftOverChildren, toRemove);
 		obj.setChildren(leftOver);
 	}
 }
@@ -738,49 +813,67 @@ case NewHAnimDisplacer obj -> {
 case NewHAnimHumanoid obj -> {
 	{
 		X3DNode[] children = obj.getJoints();
-		X3DNode[] leftOver = obj.removeSelectedJoints(children, toRemove);
+		X3DNode[] leftOverJoints = this.removeChildren(children, toRemove);
+		obj.setJoints(leftOverJoints);
+		X3DNode[] leftOver = obj.removeSelectedJoints(leftOverJoints, toRemove);
 		obj.setJoints(leftOver);
 	}
 	{
 		X3DNode[] children = obj.getMotions();
-		X3DNode[] leftOver = obj.removeSelectedMotions(children, toRemove);
+		X3DNode[] leftOverMotions = this.removeChildren(children, toRemove);
+		obj.setMotions(leftOverMotions);
+		X3DNode[] leftOver = obj.removeSelectedMotions(leftOverMotions, toRemove);
 		obj.setMotions(leftOver);
 	}
 	{
 		X3DNode[] children = obj.getSegments();
-		X3DNode[] leftOver = obj.removeSelectedSegments(children, toRemove);
+		X3DNode[] leftOverSegments = this.removeChildren(children, toRemove);
+		obj.setSegments(leftOverSegments);
+		X3DNode[] leftOver = obj.removeSelectedSegments(leftOverSegments, toRemove);
 		obj.setSegments(leftOver);
 	}
 	{
 		X3DNode[] children = obj.getSites();
-		X3DNode[] leftOver = obj.removeSelectedSites(children, toRemove);
+		X3DNode[] leftOverSites = this.removeChildren(children, toRemove);
+		obj.setSites(leftOverSites);
+		X3DNode[] leftOver = obj.removeSelectedSites(leftOverSites, toRemove);
 		obj.setSites(leftOver);
 	}
 	{
 		X3DNode[] children = obj.getSkeleton();
-		X3DNode[] leftOver = obj.removeSelectedSkeleton(children, toRemove);
+		X3DNode[] leftOverSkeleton = this.removeChildren(children, toRemove);
+		obj.setSkeleton(leftOverSkeleton);
+		X3DNode[] leftOver = obj.removeSelectedSkeleton(leftOverSkeleton, toRemove);
 		obj.setSkeleton(leftOver);
 	}
 	{
 		X3DNode[] children = obj.getSkin();
-		X3DNode[] leftOver = obj.removeSelectedSkin(children, toRemove);
+		X3DNode[] leftOverSkin = this.removeChildren(children, toRemove);
+		obj.setSkin(leftOverSkin);
+		X3DNode[] leftOver = obj.removeSelectedSkin(leftOverSkin, toRemove);
 		obj.setSkin(leftOver);
 	}
 	{
 		X3DNode[] children = obj.getViewpoints();
-		X3DNode[] leftOver = obj.removeSelectedViewpoints(children, toRemove);
+		X3DNode[] leftOverViewpoints = this.removeChildren(children, toRemove);
+		obj.setViewpoints(leftOverViewpoints);
+		X3DNode[] leftOver = obj.removeSelectedViewpoints(leftOverViewpoints, toRemove);
 		obj.setViewpoints(leftOver);
 	}
 }
 case NewHAnimJoint obj -> {
 	{
 		X3DNode[] children = obj.getChildren();
-		X3DNode[] leftOver = obj.removeSelectedChildren(children, toRemove);
+		X3DNode[] leftOverChildren = this.removeChildren(children, toRemove);
+		obj.setChildren(leftOverChildren);
+		X3DNode[] leftOver = obj.removeSelectedChildren(leftOverChildren, toRemove);
 		obj.setChildren(leftOver);
 	}
 	{
 		X3DNode[] children = obj.getDisplacers();
-		X3DNode[] leftOver = obj.removeSelectedDisplacers(children, toRemove);
+		X3DNode[] leftOverDisplacers = this.removeChildren(children, toRemove);
+		obj.setDisplacers(leftOverDisplacers);
+		X3DNode[] leftOver = obj.removeSelectedDisplacers(leftOverDisplacers, toRemove);
 		obj.setDisplacers(leftOver);
 	}
 }
@@ -789,19 +882,25 @@ case NewHAnimMotion obj -> {
 case NewHAnimSegment obj -> {
 	{
 		X3DNode[] children = obj.getChildren();
-		X3DNode[] leftOver = obj.removeSelectedChildren(children, toRemove);
+		X3DNode[] leftOverChildren = this.removeChildren(children, toRemove);
+		obj.setChildren(leftOverChildren);
+		X3DNode[] leftOver = obj.removeSelectedChildren(leftOverChildren, toRemove);
 		obj.setChildren(leftOver);
 	}
 	{
 		X3DNode[] children = obj.getDisplacers();
-		X3DNode[] leftOver = obj.removeSelectedDisplacers(children, toRemove);
+		X3DNode[] leftOverDisplacers = this.removeChildren(children, toRemove);
+		obj.setDisplacers(leftOverDisplacers);
+		X3DNode[] leftOver = obj.removeSelectedDisplacers(leftOverDisplacers, toRemove);
 		obj.setDisplacers(leftOver);
 	}
 }
 case NewHAnimSite obj -> {
 	{
 		X3DNode[] children = obj.getChildren();
-		X3DNode[] leftOver = obj.removeSelectedChildren(children, toRemove);
+		X3DNode[] leftOverChildren = this.removeChildren(children, toRemove);
+		obj.setChildren(leftOverChildren);
+		X3DNode[] leftOver = obj.removeSelectedChildren(leftOverChildren, toRemove);
 		obj.setChildren(leftOver);
 	}
 }
@@ -814,42 +913,54 @@ case NewImageTexture3D obj -> {
 case NewIndexedFaceSet obj -> {
 	{
 		X3DNode[] children = obj.getAttrib();
-		X3DNode[] leftOver = obj.removeSelectedAttrib(children, toRemove);
+		X3DNode[] leftOverAttrib = this.removeChildren(children, toRemove);
+		obj.setAttrib(leftOverAttrib);
+		X3DNode[] leftOver = obj.removeSelectedAttrib(leftOverAttrib, toRemove);
 		obj.setAttrib(leftOver);
 	}
 }
 case NewIndexedLineSet obj -> {
 	{
 		X3DNode[] children = obj.getAttrib();
-		X3DNode[] leftOver = obj.removeSelectedAttrib(children, toRemove);
+		X3DNode[] leftOverAttrib = this.removeChildren(children, toRemove);
+		obj.setAttrib(leftOverAttrib);
+		X3DNode[] leftOver = obj.removeSelectedAttrib(leftOverAttrib, toRemove);
 		obj.setAttrib(leftOver);
 	}
 }
 case NewIndexedQuadSet obj -> {
 	{
 		X3DNode[] children = obj.getAttrib();
-		X3DNode[] leftOver = obj.removeSelectedAttrib(children, toRemove);
+		X3DNode[] leftOverAttrib = this.removeChildren(children, toRemove);
+		obj.setAttrib(leftOverAttrib);
+		X3DNode[] leftOver = obj.removeSelectedAttrib(leftOverAttrib, toRemove);
 		obj.setAttrib(leftOver);
 	}
 }
 case NewIndexedTriangleFanSet obj -> {
 	{
 		X3DNode[] children = obj.getAttrib();
-		X3DNode[] leftOver = obj.removeSelectedAttrib(children, toRemove);
+		X3DNode[] leftOverAttrib = this.removeChildren(children, toRemove);
+		obj.setAttrib(leftOverAttrib);
+		X3DNode[] leftOver = obj.removeSelectedAttrib(leftOverAttrib, toRemove);
 		obj.setAttrib(leftOver);
 	}
 }
 case NewIndexedTriangleSet obj -> {
 	{
 		X3DNode[] children = obj.getAttrib();
-		X3DNode[] leftOver = obj.removeSelectedAttrib(children, toRemove);
+		X3DNode[] leftOverAttrib = this.removeChildren(children, toRemove);
+		obj.setAttrib(leftOverAttrib);
+		X3DNode[] leftOver = obj.removeSelectedAttrib(leftOverAttrib, toRemove);
 		obj.setAttrib(leftOver);
 	}
 }
 case NewIndexedTriangleStripSet obj -> {
 	{
 		X3DNode[] children = obj.getAttrib();
-		X3DNode[] leftOver = obj.removeSelectedAttrib(children, toRemove);
+		X3DNode[] leftOverAttrib = this.removeChildren(children, toRemove);
+		obj.setAttrib(leftOverAttrib);
+		X3DNode[] leftOver = obj.removeSelectedAttrib(leftOverAttrib, toRemove);
 		obj.setAttrib(leftOver);
 	}
 }
@@ -862,7 +973,9 @@ case NewIntegerTrigger obj -> {
 case NewIsoSurfaceVolumeData obj -> {
 	{
 		X3DNode[] children = obj.getRenderStyle();
-		X3DNode[] leftOver = obj.removeSelectedRenderStyle(children, toRemove);
+		X3DNode[] leftOverRenderStyle = this.removeChildren(children, toRemove);
+		obj.setRenderStyle(leftOverRenderStyle);
+		X3DNode[] leftOver = obj.removeSelectedRenderStyle(leftOverRenderStyle, toRemove);
 		obj.setRenderStyle(leftOver);
 	}
 }
@@ -871,14 +984,18 @@ case NewKeySensor obj -> {
 case NewLayer obj -> {
 	{
 		X3DNode[] children = obj.getChildren();
-		X3DNode[] leftOver = obj.removeSelectedChildren(children, toRemove);
+		X3DNode[] leftOverChildren = this.removeChildren(children, toRemove);
+		obj.setChildren(leftOverChildren);
+		X3DNode[] leftOver = obj.removeSelectedChildren(leftOverChildren, toRemove);
 		obj.setChildren(leftOver);
 	}
 }
 case NewLayerSet obj -> {
 	{
 		X3DNode[] children = obj.getLayers();
-		X3DNode[] leftOver = obj.removeSelectedLayers(children, toRemove);
+		X3DNode[] leftOverLayers = this.removeChildren(children, toRemove);
+		obj.setLayers(leftOverLayers);
+		X3DNode[] leftOver = obj.removeSelectedLayers(leftOverLayers, toRemove);
 		obj.setLayers(leftOver);
 	}
 }
@@ -887,14 +1004,18 @@ case NewLayout obj -> {
 case NewLayoutGroup obj -> {
 	{
 		X3DNode[] children = obj.getChildren();
-		X3DNode[] leftOver = obj.removeSelectedChildren(children, toRemove);
+		X3DNode[] leftOverChildren = this.removeChildren(children, toRemove);
+		obj.setChildren(leftOverChildren);
+		X3DNode[] leftOver = obj.removeSelectedChildren(leftOverChildren, toRemove);
 		obj.setChildren(leftOver);
 	}
 }
 case NewLayoutLayer obj -> {
 	{
 		X3DNode[] children = obj.getChildren();
-		X3DNode[] leftOver = obj.removeSelectedChildren(children, toRemove);
+		X3DNode[] leftOverChildren = this.removeChildren(children, toRemove);
+		obj.setChildren(leftOverChildren);
+		X3DNode[] leftOver = obj.removeSelectedChildren(leftOverChildren, toRemove);
 		obj.setChildren(leftOver);
 	}
 }
@@ -904,7 +1025,9 @@ case NewLinePickSensor obj -> {
 	}
 	{
 		X3DNode[] children = obj.getPickTarget();
-		X3DNode[] leftOver = obj.removeSelectedPickTarget(children, toRemove);
+		X3DNode[] leftOverPickTarget = this.removeChildren(children, toRemove);
+		obj.setPickTarget(leftOverPickTarget);
+		X3DNode[] leftOver = obj.removeSelectedPickTarget(leftOverPickTarget, toRemove);
 		obj.setPickTarget(leftOver);
 	}
 }
@@ -913,7 +1036,9 @@ case NewLineProperties obj -> {
 case NewLineSet obj -> {
 	{
 		X3DNode[] children = obj.getAttrib();
-		X3DNode[] leftOver = obj.removeSelectedAttrib(children, toRemove);
+		X3DNode[] leftOverAttrib = this.removeChildren(children, toRemove);
+		obj.setAttrib(leftOverAttrib);
+		X3DNode[] leftOver = obj.removeSelectedAttrib(leftOverAttrib, toRemove);
 		obj.setAttrib(leftOver);
 	}
 }
@@ -922,7 +1047,9 @@ case NewListenerPointSource obj -> {
 case NewLoadSensor obj -> {
 	{
 		X3DNode[] children = obj.getChildren();
-		X3DNode[] leftOver = obj.removeSelectedChildren(children, toRemove);
+		X3DNode[] leftOverChildren = this.removeChildren(children, toRemove);
+		obj.setChildren(leftOverChildren);
+		X3DNode[] leftOver = obj.removeSelectedChildren(leftOverChildren, toRemove);
 		obj.setChildren(leftOver);
 	}
 }
@@ -931,7 +1058,9 @@ case NewLocalFog obj -> {
 case NewLOD obj -> {
 	{
 		X3DNode[] children = obj.getChildren();
-		X3DNode[] leftOver = obj.removeSelectedChildren(children, toRemove);
+		X3DNode[] leftOverChildren = this.removeChildren(children, toRemove);
+		obj.setChildren(leftOverChildren);
+		X3DNode[] leftOver = obj.removeSelectedChildren(leftOverChildren, toRemove);
 		obj.setChildren(leftOver);
 	}
 }
@@ -952,7 +1081,9 @@ case NewMetadataInteger obj -> {
 case NewMetadataSet obj -> {
 	{
 		X3DNode[] children = obj.getValue();
-		X3DNode[] leftOver = obj.removeSelectedValue(children, toRemove);
+		X3DNode[] leftOverValue = this.removeChildren(children, toRemove);
+		obj.setValue(leftOverValue);
+		X3DNode[] leftOver = obj.removeSelectedValue(leftOverValue, toRemove);
 		obj.setValue(leftOver);
 	}
 }
@@ -967,21 +1098,27 @@ case NewMovieTexture obj -> {
 case NewMultiTexture obj -> {
 	{
 		X3DNode[] children = obj.getTexture();
-		X3DNode[] leftOver = obj.removeSelectedTexture(children, toRemove);
+		X3DNode[] leftOverTexture = this.removeChildren(children, toRemove);
+		obj.setTexture(leftOverTexture);
+		X3DNode[] leftOver = obj.removeSelectedTexture(leftOverTexture, toRemove);
 		obj.setTexture(leftOver);
 	}
 }
 case NewMultiTextureCoordinate obj -> {
 	{
 		X3DNode[] children = obj.getTexCoord();
-		X3DNode[] leftOver = obj.removeSelectedTexCoord(children, toRemove);
+		X3DNode[] leftOverTexCoord = this.removeChildren(children, toRemove);
+		obj.setTexCoord(leftOverTexCoord);
+		X3DNode[] leftOver = obj.removeSelectedTexCoord(leftOverTexCoord, toRemove);
 		obj.setTexCoord(leftOver);
 	}
 }
 case NewMultiTextureTransform obj -> {
 	{
 		X3DNode[] children = obj.getTextureTransform();
-		X3DNode[] leftOver = obj.removeSelectedTextureTransform(children, toRemove);
+		X3DNode[] leftOverTextureTransform = this.removeChildren(children, toRemove);
+		obj.setTextureTransform(leftOverTextureTransform);
+		X3DNode[] leftOver = obj.removeSelectedTextureTransform(leftOverTextureTransform, toRemove);
 		obj.setTextureTransform(leftOver);
 	}
 }
@@ -1004,7 +1141,9 @@ case NewNurbsPositionInterpolator obj -> {
 case NewNurbsSet obj -> {
 	{
 		X3DNode[] children = obj.getGeometry();
-		X3DNode[] leftOver = obj.removeSelectedGeometry(children, toRemove);
+		X3DNode[] leftOverGeometry = this.removeChildren(children, toRemove);
+		obj.setGeometry(leftOverGeometry);
+		X3DNode[] leftOver = obj.removeSelectedGeometry(leftOverGeometry, toRemove);
 		obj.setGeometry(leftOver);
 	}
 }
@@ -1019,7 +1158,9 @@ case NewNurbsTextureCoordinate obj -> {
 case NewNurbsTrimmedSurface obj -> {
 	{
 		X3DNode[] children = obj.getTrimmingContour();
-		X3DNode[] leftOver = obj.removeSelectedTrimmingContour(children, toRemove);
+		X3DNode[] leftOverTrimmingContour = this.removeChildren(children, toRemove);
+		obj.setTrimmingContour(leftOverTrimmingContour);
+		X3DNode[] leftOver = obj.removeSelectedTrimmingContour(leftOverTrimmingContour, toRemove);
 		obj.setTrimmingContour(leftOver);
 	}
 }
@@ -1038,14 +1179,18 @@ case NewOscillatorSource obj -> {
 case NewPackagedShader obj -> {
 	{
 		ArrayList<field> children = obj.getFieldList();
-		ArrayList<field> leftOver = obj.removeSelectedFieldList(children, toRemove);
+		ArrayList<field> leftOverFieldList = this.removeChildren(children, toRemove);
+		obj.setFieldList(leftOverFieldList);
+		ArrayList<field> leftOver = obj.removeSelectedFieldList(leftOverFieldList, toRemove);
 		obj.setFieldList(leftOver);
 	}
 }
 case NewParticleSystem obj -> {
 	{
 		X3DNode[] children = obj.getPhysics();
-		X3DNode[] leftOver = obj.removeSelectedPhysics(children, toRemove);
+		X3DNode[] leftOverPhysics = this.removeChildren(children, toRemove);
+		obj.setPhysics(leftOverPhysics);
+		X3DNode[] leftOver = obj.removeSelectedPhysics(leftOverPhysics, toRemove);
 		obj.setPhysics(leftOver);
 	}
 }
@@ -1056,7 +1201,9 @@ case NewPhysicalMaterial obj -> {
 case NewPickableGroup obj -> {
 	{
 		X3DNode[] children = obj.getChildren();
-		X3DNode[] leftOver = obj.removeSelectedChildren(children, toRemove);
+		X3DNode[] leftOverChildren = this.removeChildren(children, toRemove);
+		obj.setChildren(leftOverChildren);
+		X3DNode[] leftOver = obj.removeSelectedChildren(leftOverChildren, toRemove);
 		obj.setChildren(leftOver);
 	}
 }
@@ -1076,7 +1223,9 @@ case NewPointPickSensor obj -> {
 	}
 	{
 		X3DNode[] children = obj.getPickTarget();
-		X3DNode[] leftOver = obj.removeSelectedPickTarget(children, toRemove);
+		X3DNode[] leftOverPickTarget = this.removeChildren(children, toRemove);
+		obj.setPickTarget(leftOverPickTarget);
+		X3DNode[] leftOver = obj.removeSelectedPickTarget(leftOverPickTarget, toRemove);
 		obj.setPickTarget(leftOver);
 	}
 }
@@ -1085,7 +1234,9 @@ case NewPointProperties obj -> {
 case NewPointSet obj -> {
 	{
 		X3DNode[] children = obj.getAttrib();
-		X3DNode[] leftOver = obj.removeSelectedAttrib(children, toRemove);
+		X3DNode[] leftOverAttrib = this.removeChildren(children, toRemove);
+		obj.setAttrib(leftOverAttrib);
+		X3DNode[] leftOver = obj.removeSelectedAttrib(leftOverAttrib, toRemove);
 		obj.setAttrib(leftOver);
 	}
 }
@@ -1113,14 +1264,18 @@ case NewPrimitivePickSensor obj -> {
 	}
 	{
 		X3DNode[] children = obj.getPickTarget();
-		X3DNode[] leftOver = obj.removeSelectedPickTarget(children, toRemove);
+		X3DNode[] leftOverPickTarget = this.removeChildren(children, toRemove);
+		obj.setPickTarget(leftOverPickTarget);
+		X3DNode[] leftOver = obj.removeSelectedPickTarget(leftOverPickTarget, toRemove);
 		obj.setPickTarget(leftOver);
 	}
 }
 case NewProgramShader obj -> {
 	{
 		X3DNode[] children = obj.getPrograms();
-		X3DNode[] leftOver = obj.removeSelectedPrograms(children, toRemove);
+		X3DNode[] leftOverPrograms = this.removeChildren(children, toRemove);
+		obj.setPrograms(leftOverPrograms);
+		X3DNode[] leftOver = obj.removeSelectedPrograms(leftOverPrograms, toRemove);
 		obj.setPrograms(leftOver);
 	}
 }
@@ -1129,7 +1284,9 @@ case NewProjectionVolumeStyle obj -> {
 case NewProtoInstance obj -> {
 	{
 		ArrayList<fieldValue> children = obj.getFieldValueList();
-		ArrayList<fieldValue> leftOver = obj.removeSelectedFieldValueList(children, toRemove);
+		ArrayList<fieldValue> leftOverFieldValueList = this.removeChildren(children, toRemove);
+		obj.setFieldValueList(leftOverFieldValueList);
+		ArrayList<fieldValue> leftOver = obj.removeSelectedFieldValueList(leftOverFieldValueList, toRemove);
 		obj.setFieldValueList(leftOver);
 	}
 }
@@ -1138,7 +1295,9 @@ case NewProximitySensor obj -> {
 case NewQuadSet obj -> {
 	{
 		X3DNode[] children = obj.getAttrib();
-		X3DNode[] leftOver = obj.removeSelectedAttrib(children, toRemove);
+		X3DNode[] leftOverAttrib = this.removeChildren(children, toRemove);
+		obj.setAttrib(leftOverAttrib);
+		X3DNode[] leftOver = obj.removeSelectedAttrib(leftOverAttrib, toRemove);
 		obj.setAttrib(leftOver);
 	}
 }
@@ -1149,19 +1308,25 @@ case NewRectangle2D obj -> {
 case NewRigidBody obj -> {
 	{
 		X3DNode[] children = obj.getGeometry();
-		X3DNode[] leftOver = obj.removeSelectedGeometry(children, toRemove);
+		X3DNode[] leftOverGeometry = this.removeChildren(children, toRemove);
+		obj.setGeometry(leftOverGeometry);
+		X3DNode[] leftOver = obj.removeSelectedGeometry(leftOverGeometry, toRemove);
 		obj.setGeometry(leftOver);
 	}
 }
 case NewRigidBodyCollection obj -> {
 	{
 		X3DNode[] children = obj.getBodies();
-		X3DNode[] leftOver = obj.removeSelectedBodies(children, toRemove);
+		X3DNode[] leftOverBodies = this.removeChildren(children, toRemove);
+		obj.setBodies(leftOverBodies);
+		X3DNode[] leftOver = obj.removeSelectedBodies(leftOverBodies, toRemove);
 		obj.setBodies(leftOver);
 	}
 	{
 		X3DNode[] children = obj.getJoints();
-		X3DNode[] leftOver = obj.removeSelectedJoints(children, toRemove);
+		X3DNode[] leftOverJoints = this.removeChildren(children, toRemove);
+		obj.setJoints(leftOverJoints);
+		X3DNode[] leftOver = obj.removeSelectedJoints(leftOverJoints, toRemove);
 		obj.setJoints(leftOver);
 	}
 }
@@ -1176,21 +1341,27 @@ case NewScreenFontStyle obj -> {
 case NewScreenGroup obj -> {
 	{
 		X3DNode[] children = obj.getChildren();
-		X3DNode[] leftOver = obj.removeSelectedChildren(children, toRemove);
+		X3DNode[] leftOverChildren = this.removeChildren(children, toRemove);
+		obj.setChildren(leftOverChildren);
+		X3DNode[] leftOver = obj.removeSelectedChildren(leftOverChildren, toRemove);
 		obj.setChildren(leftOver);
 	}
 }
 case NewScript obj -> {
 	{
 		ArrayList<field> children = obj.getFieldList();
-		ArrayList<field> leftOver = obj.removeSelectedFieldList(children, toRemove);
+		ArrayList<field> leftOverFieldList = this.removeChildren(children, toRemove);
+		obj.setFieldList(leftOverFieldList);
+		ArrayList<field> leftOver = obj.removeSelectedFieldList(leftOverFieldList, toRemove);
 		obj.setFieldList(leftOver);
 	}
 }
 case NewSegmentedVolumeData obj -> {
 	{
 		X3DNode[] children = obj.getRenderStyle();
-		X3DNode[] leftOver = obj.removeSelectedRenderStyle(children, toRemove);
+		X3DNode[] leftOverRenderStyle = this.removeChildren(children, toRemove);
+		obj.setRenderStyle(leftOverRenderStyle);
+		X3DNode[] leftOver = obj.removeSelectedRenderStyle(leftOverRenderStyle, toRemove);
 		obj.setRenderStyle(leftOver);
 	}
 }
@@ -1201,7 +1372,9 @@ case NewShaderPart obj -> {
 case NewShaderProgram obj -> {
 	{
 		ArrayList<field> children = obj.getFieldList();
-		ArrayList<field> leftOver = obj.removeSelectedFieldList(children, toRemove);
+		ArrayList<field> leftOverFieldList = this.removeChildren(children, toRemove);
+		obj.setFieldList(leftOverFieldList);
+		ArrayList<field> leftOver = obj.removeSelectedFieldList(leftOverFieldList, toRemove);
 		obj.setFieldList(leftOver);
 	}
 }
@@ -1220,7 +1393,9 @@ case NewSound obj -> {
 case NewSpatialSound obj -> {
 	{
 		X3DNode[] children = obj.getChildren();
-		X3DNode[] leftOver = obj.removeSelectedChildren(children, toRemove);
+		X3DNode[] leftOverChildren = this.removeChildren(children, toRemove);
+		obj.setChildren(leftOverChildren);
+		X3DNode[] leftOver = obj.removeSelectedChildren(leftOverChildren, toRemove);
 		obj.setChildren(leftOver);
 	}
 }
@@ -1241,14 +1416,18 @@ case NewSquadOrientationInterpolator obj -> {
 case NewStaticGroup obj -> {
 	{
 		X3DNode[] children = obj.getChildren();
-		X3DNode[] leftOver = obj.removeSelectedChildren(children, toRemove);
+		X3DNode[] leftOverChildren = this.removeChildren(children, toRemove);
+		obj.setChildren(leftOverChildren);
+		X3DNode[] leftOver = obj.removeSelectedChildren(leftOverChildren, toRemove);
 		obj.setChildren(leftOver);
 	}
 }
 case NewStreamAudioDestination obj -> {
 	{
 		X3DNode[] children = obj.getChildren();
-		X3DNode[] leftOver = obj.removeSelectedChildren(children, toRemove);
+		X3DNode[] leftOverChildren = this.removeChildren(children, toRemove);
+		obj.setChildren(leftOverChildren);
+		X3DNode[] leftOver = obj.removeSelectedChildren(leftOverChildren, toRemove);
 		obj.setChildren(leftOver);
 	}
 }
@@ -1261,7 +1440,9 @@ case NewSurfaceEmitter obj -> {
 case NewSwitch obj -> {
 	{
 		X3DNode[] children = obj.getChildren();
-		X3DNode[] leftOver = obj.removeSelectedChildren(children, toRemove);
+		X3DNode[] leftOverChildren = this.removeChildren(children, toRemove);
+		obj.setChildren(leftOverChildren);
+		X3DNode[] leftOver = obj.removeSelectedChildren(leftOverChildren, toRemove);
 		obj.setChildren(leftOver);
 	}
 }
@@ -1304,7 +1485,9 @@ case NewTouchSensor obj -> {
 case NewTransform obj -> {
 	{
 		X3DNode[] children = obj.getChildren();
-		X3DNode[] leftOver = obj.removeSelectedChildren(children, toRemove);
+		X3DNode[] leftOverChildren = this.removeChildren(children, toRemove);
+		obj.setChildren(leftOverChildren);
+		X3DNode[] leftOver = obj.removeSelectedChildren(leftOverChildren, toRemove);
 		obj.setChildren(leftOver);
 	}
 }
@@ -1315,14 +1498,18 @@ case NewTransmitterPdu obj -> {
 case NewTriangleFanSet obj -> {
 	{
 		X3DNode[] children = obj.getAttrib();
-		X3DNode[] leftOver = obj.removeSelectedAttrib(children, toRemove);
+		X3DNode[] leftOverAttrib = this.removeChildren(children, toRemove);
+		obj.setAttrib(leftOverAttrib);
+		X3DNode[] leftOver = obj.removeSelectedAttrib(leftOverAttrib, toRemove);
 		obj.setAttrib(leftOver);
 	}
 }
 case NewTriangleSet obj -> {
 	{
 		X3DNode[] children = obj.getAttrib();
-		X3DNode[] leftOver = obj.removeSelectedAttrib(children, toRemove);
+		X3DNode[] leftOverAttrib = this.removeChildren(children, toRemove);
+		obj.setAttrib(leftOverAttrib);
+		X3DNode[] leftOver = obj.removeSelectedAttrib(leftOverAttrib, toRemove);
 		obj.setAttrib(leftOver);
 	}
 }
@@ -1331,7 +1518,9 @@ case NewTriangleSet2D obj -> {
 case NewTriangleStripSet obj -> {
 	{
 		X3DNode[] children = obj.getAttrib();
-		X3DNode[] leftOver = obj.removeSelectedAttrib(children, toRemove);
+		X3DNode[] leftOverAttrib = this.removeChildren(children, toRemove);
+		obj.setAttrib(leftOverAttrib);
+		X3DNode[] leftOver = obj.removeSelectedAttrib(leftOverAttrib, toRemove);
 		obj.setAttrib(leftOver);
 	}
 }
@@ -1348,14 +1537,18 @@ case NewViewpoint obj -> {
 case NewViewpointGroup obj -> {
 	{
 		X3DNode[] children = obj.getChildren();
-		X3DNode[] leftOver = obj.removeSelectedChildren(children, toRemove);
+		X3DNode[] leftOverChildren = this.removeChildren(children, toRemove);
+		obj.setChildren(leftOverChildren);
+		X3DNode[] leftOver = obj.removeSelectedChildren(leftOverChildren, toRemove);
 		obj.setChildren(leftOver);
 	}
 }
 case NewViewport obj -> {
 	{
 		X3DNode[] children = obj.getChildren();
-		X3DNode[] leftOver = obj.removeSelectedChildren(children, toRemove);
+		X3DNode[] leftOverChildren = this.removeChildren(children, toRemove);
+		obj.setChildren(leftOverChildren);
+		X3DNode[] leftOver = obj.removeSelectedChildren(leftOverChildren, toRemove);
 		obj.setChildren(leftOver);
 	}
 }
@@ -1371,14 +1564,18 @@ case NewVolumePickSensor obj -> {
 	}
 	{
 		X3DNode[] children = obj.getPickTarget();
-		X3DNode[] leftOver = obj.removeSelectedPickTarget(children, toRemove);
+		X3DNode[] leftOverPickTarget = this.removeChildren(children, toRemove);
+		obj.setPickTarget(leftOverPickTarget);
+		X3DNode[] leftOver = obj.removeSelectedPickTarget(leftOverPickTarget, toRemove);
 		obj.setPickTarget(leftOver);
 	}
 }
 case NewWaveShaper obj -> {
 	{
 		X3DNode[] children = obj.getChildren();
-		X3DNode[] leftOver = obj.removeSelectedChildren(children, toRemove);
+		X3DNode[] leftOverChildren = this.removeChildren(children, toRemove);
+		obj.setChildren(leftOverChildren);
+		X3DNode[] leftOver = obj.removeSelectedChildren(leftOverChildren, toRemove);
 		obj.setChildren(leftOver);
 	}
 }
@@ -1395,38 +1592,50 @@ case NewEXPORT obj -> {
 case NewExternProtoDeclare obj -> {
 	{
 		ArrayList<field> children = obj.getFieldList();
-		ArrayList<field> leftOver = obj.removeSelectedFieldList(children, toRemove);
+		ArrayList<field> leftOverFieldList = this.removeChildren(children, toRemove);
+		obj.setFieldList(leftOverFieldList);
+		ArrayList<field> leftOver = obj.removeSelectedFieldList(leftOverFieldList, toRemove);
 		obj.setFieldList(leftOver);
 	}
 }
 case Newfield obj -> {
 	{
 		ArrayList<X3DNode> children = obj.getChildren();
-		ArrayList<X3DNode> leftOver = obj.removeSelectedChildren(children, toRemove);
+		ArrayList<X3DNode> leftOverChildren = this.removeChildren(children, toRemove);
+		obj.setChildren(leftOverChildren);
+		ArrayList<X3DNode> leftOver = obj.removeSelectedChildren(leftOverChildren, toRemove);
 		obj.setChildren(leftOver);
 	}
 }
 case NewfieldValue obj -> {
 	{
 		ArrayList<X3DNode> children = obj.getChildren();
-		ArrayList<X3DNode> leftOver = obj.removeSelectedChildren(children, toRemove);
+		ArrayList<X3DNode> leftOverChildren = this.removeChildren(children, toRemove);
+		obj.setChildren(leftOverChildren);
+		ArrayList<X3DNode> leftOver = obj.removeSelectedChildren(leftOverChildren, toRemove);
 		obj.setChildren(leftOver);
 	}
 }
 case Newhead obj -> {
 	{
 		ArrayList<component> children = obj.getComponentList();
-		ArrayList<component> leftOver = obj.removeSelectedComponentList(children, toRemove);
+		ArrayList<component> leftOverComponentList = this.removeChildren(children, toRemove);
+		obj.setComponentList(leftOverComponentList);
+		ArrayList<component> leftOver = obj.removeSelectedComponentList(leftOverComponentList, toRemove);
 		obj.setComponentList(leftOver);
 	}
 	{
 		ArrayList<meta> children = obj.getMetaList();
-		ArrayList<meta> leftOver = obj.removeSelectedMetaList(children, toRemove);
+		ArrayList<meta> leftOverMetaList = this.removeChildren(children, toRemove);
+		obj.setMetaList(leftOverMetaList);
+		ArrayList<meta> leftOver = obj.removeSelectedMetaList(leftOverMetaList, toRemove);
 		obj.setMetaList(leftOver);
 	}
 	{
 		ArrayList<unit> children = obj.getUnitList();
-		ArrayList<unit> leftOver = obj.removeSelectedUnitList(children, toRemove);
+		ArrayList<unit> leftOverUnitList = this.removeChildren(children, toRemove);
+		obj.setUnitList(leftOverUnitList);
+		ArrayList<unit> leftOver = obj.removeSelectedUnitList(leftOverUnitList, toRemove);
 		obj.setUnitList(leftOver);
 	}
 }
@@ -1435,7 +1644,9 @@ case NewIMPORT obj -> {
 case NewIS obj -> {
 	{
 		ArrayList<connect> children = obj.getConnectList();
-		ArrayList<connect> leftOver = obj.removeSelectedConnectList(children, toRemove);
+		ArrayList<connect> leftOverConnectList = this.removeChildren(children, toRemove);
+		obj.setConnectList(leftOverConnectList);
+		ArrayList<connect> leftOver = obj.removeSelectedConnectList(leftOverConnectList, toRemove);
 		obj.setConnectList(leftOver);
 	}
 }
@@ -1444,7 +1655,9 @@ case Newmeta obj -> {
 case NewProtoBody obj -> {
 	{
 		ArrayList<X3DNode> children = obj.getChildren();
-		ArrayList<X3DNode> leftOver = obj.removeSelectedChildren(children, toRemove);
+		ArrayList<X3DNode> leftOverChildren = this.removeChildren(children, toRemove);
+		obj.setChildren(leftOverChildren);
+		ArrayList<X3DNode> leftOver = obj.removeSelectedChildren(leftOverChildren, toRemove);
 		obj.setChildren(leftOver);
 	}
 }
@@ -1453,7 +1666,9 @@ case NewProtoDeclare obj -> {
 case NewProtoInterface obj -> {
 	{
 		ArrayList<field> children = obj.getFieldList();
-		ArrayList<field> leftOver = obj.removeSelectedFieldList(children, toRemove);
+		ArrayList<field> leftOverFieldList = this.removeChildren(children, toRemove);
+		obj.setFieldList(leftOverFieldList);
+		ArrayList<field> leftOver = obj.removeSelectedFieldList(leftOverFieldList, toRemove);
 		obj.setFieldList(leftOver);
 	}
 }
@@ -1462,7 +1677,9 @@ case NewROUTE obj -> {
 case NewScene obj -> {
 	{
 		ArrayList<X3DNode> children = obj.getChildren();
-		ArrayList<X3DNode> leftOver = obj.removeSelectedChildren(children, toRemove);
+		ArrayList<X3DNode> leftOverChildren = this.removeChildren(children, toRemove);
+		obj.setChildren(leftOverChildren);
+		ArrayList<X3DNode> leftOver = obj.removeSelectedChildren(leftOverChildren, toRemove);
 		obj.setChildren(leftOver);
 	}
 }
