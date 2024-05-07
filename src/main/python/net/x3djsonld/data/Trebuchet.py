@@ -226,9 +226,9 @@ newModel=X3D(profile='Immersive',version='3.0',
             appearance=Appearance(
               material=Material(specularColor=(1,1,1)))),
           Transform(translation=(0,-2.5,0),
+            #  The Unicorn 
             children=[
             Shape(USE='Torus'),
-            #  The Unicorn 
             Transform(translation=(-2,-0,0),
               children=[
               Shape(
@@ -246,10 +246,9 @@ newModel=X3D(profile='Immersive',version='3.0',
         Transform(rotation=(1,0,0,-1.7),translation=(-17,-4.5,0),
           children=[
           Transform(scale=(.2,.2,.2),
+            #  Knot 
             children=[
-            Shape(USE='Torus',
-              #  Knot 
-              ),
+            Shape(USE='Torus'),
             Transform(translation=(-1,0,1.7),
               children=[
               Shape(
