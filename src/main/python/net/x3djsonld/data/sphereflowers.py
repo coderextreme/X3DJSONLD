@@ -47,10 +47,10 @@ newModel=X3D(profile='Immersive',version='4.0',
   Scene=Scene(
     children=[
     NavigationInfo(),
-    Background(backUrl=["../resources/images/all_probes/stpeters_cross/stpeters_back.png"],bottomUrl=["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"],frontUrl=["../resources/images/all_probes/stpeters_cross/stpeters_front.png"],leftUrl=["../resources/images/all_probes/stpeters_cross/stpeters_left.png"],rightUrl=["../resources/images/all_probes/stpeters_cross/stpeters_right.png"],topUrl=["../resources/images/all_probes/stpeters_cross/stpeters_top.png"]),
+    Background(backUrl=["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"],bottomUrl=["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"],frontUrl=["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"],leftUrl=["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"],rightUrl=["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"],topUrl=["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]),
     Group(
       children=[
-      ExternProtoDeclare(name='FlowerProto',url=["../personal/flowerproto.json#FlowerProto"],
+      ExternProtoDeclare(name='FlowerProto',url=["../data/flowerproto.x3d#FlowerProto","https://coderextreme.net/X3DJSONLD/src/main/data/flowerproto.x3d#FlowerProto"],
         field=[
         field(accessType='inputOutput',name='vertex',type='MFString'),
         field(accessType='inputOutput',name='fragment',type='MFString')]),
@@ -69,14 +69,10 @@ newModel=X3D(profile='Immersive',version='4.0',
       ProtoInstance(name='flower'),
       ProtoInstance(name='flower'),
       ProtoInstance(name='flower'),
-      TimeSensor(DEF='SongTime',loop=True)]
-      # 
-	        <Sound maxBack='100' maxFront='100' minBack='20' minFront='20' location='0 1 0'>
-			<AudioClip DEF='AudioClip' description='Chandubabamusic #1' url='"../resources/chandubabamusic1.wav"'/>
-		</Sound>
-      		<ROUTE fromField='cycleTime' fromNode='SongTime' toField='startTime' toNode='AudioClip'/>
-		
-      )])
+      TimeSensor(DEF='SongTime',loop=True),
+      Sound(maxBack=100,maxFront=100,minBack=20,minFront=20,location=(0,1,0),
+        source=AudioClip(DEF='AudioClip',description='Chandubabamusic #1',url=["../resources/chandubabamusic1.wav","https://coderextreme.net/X3DJSONLD/src/main/resources/chandubabamusic1.wav"])),
+      ROUTE(fromField='cycleTime',fromNode='SongTime',toField='startTime',toNode='AudioClip')])])
 ) # X3D model complete
 
 ####################################################################################################
