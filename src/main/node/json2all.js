@@ -76,6 +76,12 @@ convertJSON.convertJSON([
 	codeOutput : "../"
 	},
 	{ 
+	serializer : './JavaScriptSerializerNew.js',
+	folder : "../graaljs/net/remove/",
+	extension : ".js",
+	codeOutput : "../"
+	},
+	{ 
 	serializer : './PythonSerializerX3DJSAIL.js',
 	folder : "../python/net/coderextreme/",
 	extension : ".py",
