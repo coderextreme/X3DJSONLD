@@ -86,6 +86,12 @@ convertJSON.convertJSON([
 	folder : "../python/net/coderextreme/",
 	extension : ".py",
 	codeOutput : "../"
+	},
+	{ 
+	serializer : './PascalSerializer.js',
+	folder : "../pascal/net/coderextreme/",
+	extension : ".inc",
+	codeOutput : "../"
 	}
 	]);
 process.exit(0);
