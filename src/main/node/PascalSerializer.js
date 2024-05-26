@@ -98,8 +98,28 @@ PascalSerializer.prototype = {
 			MFTrail = "])";
 		} else if ( attrType === "MFString") {
 			// MFLead =  "T"+attrType+".Create(nil, True, '"+attr+"', [";
-			MFLead =  "([";
-			MFTrail = "])";
+			if (attr === "family") {
+				lead = "ff";
+                        	for (var v in values) {
+				    values[v] = values[v].charAt(0).toUpperCase() + values[v].slice(1).toLowerCase();
+				}
+				j = ", ff";
+				trail = "";
+				MFLead =  "";
+				MFTrail = "";
+			} else if (attr === "justify") {
+				lead = "fj";
+                        	for (var v in values) {
+				    values[v] = values[v].charAt(0).toUpperCase() + values[v].slice(1).toLowerCase();
+				}
+				j = ", fj";
+				trail = "";
+				MFLead =  "";
+				MFTrail = "";
+			} else {
+				MFLead =  "([";
+				MFTrail = "])";
+			}
 		}
                 if (type === "int") {
                         for (var v in values) {
@@ -478,9 +498,11 @@ PascalSerializer.prototype = {
 						method = "NameField";
 					}
 					if (attr === "string") {
-						method = "SetText";
+						method = "Text";
 					}
-					if (element.nodeName === 'meta') {
+					if (element.nodeName === 'X3D' && attr === "version") {
+						// DO NOTHING, Not suupported? TODO
+					} else if (element.nodeName === 'meta') {
 						if (attr === "name") {
 							MetaName = strval;
 						}
@@ -502,12 +524,12 @@ PascalSerializer.prototype = {
 							if (typeof DEF === 'undefined') {
 								console.error("Route: no DEF for:", FromNode);
 							} else {
-								console.log("Routing from DEF with value:", strval);
+								// console.log("Routing from DEF with value:", strval);
 								FromNode = DEF;
 							}
 						} else	if (attr === "fromField") {
 							FromField = strval.replace(/^'|'$/g, '');
-							if (FromField.endsWith("_changed")) {
+							if (FromField.endsWith("_changed") || FromField === "touchTime") {
 								FromField = "Event"+FromField.charAt(0).toUpperCase() + FromField.slice(1).toLowerCase();
 							} else {
 								FromField = "Fd"+FromField.charAt(0).toUpperCase() + FromField.slice(1).toLowerCase();
@@ -518,7 +540,7 @@ PascalSerializer.prototype = {
 							if (typeof DEF === 'undefined') {
 								console.error("Route: no DEF for:", ToNode);
 							} else {
-								console.log("Routing to DEF with value:", strval);
+								// console.log("Routing to DEF with value:", strval);
 								ToNode = DEF;
 							}
 						} else	if (attr === "toField") {
@@ -531,6 +553,12 @@ PascalSerializer.prototype = {
 							}
 							if ( ToField === "set_scale") {
 								ToField = "scale";
+							}
+							if ( ToField === "set_stopTime") {
+								ToField = "stopTime";
+							}
+							if ( ToField === "set_startTime") {
+								ToField = "startTime";
 							}
 							if (ToField.startsWith("set_")) {
 								ToField = "Event"+ToField.charAt(0).toUpperCase() + ToField.slice(1).toLowerCase();
@@ -561,7 +589,8 @@ PascalSerializer.prototype = {
 							// console.log("Found USE with value:", strval);
 						}
 						str += ' := '+this.DEFs[strval]+";\n";
-					} else	if (// attrType.startsWith("MF")
+					} else	if (attrType.startsWith("MF") && attr !== "justify" && attr !== "family" 
+						/*
 						attr === "info" ||
 						attr === "string" ||
 						attr === "keyValue" ||
@@ -575,6 +604,7 @@ PascalSerializer.prototype = {
 						attr === "url" ||
 						attr === "skinCoordIndex" ||
 						attr === "skinCoordWeight"
+						*/
 						) {
 						str += element.nodeName+stack[0];
 						str += '.Set'+method+strval+";\n";
@@ -583,6 +613,9 @@ PascalSerializer.prototype = {
 						) {
 						str += element.nodeName+stack[0];
 						str += '.Set'+method+"("+strval+");\n";
+					} else	if (attrType.startsWith("MFString") && attr === "justify") {
+						str += element.nodeName+stack[0];
+						str += '.'+method+" := "+(strval.replace(/, (.*)/, ";\n"+element.nodeName+stack[0]+"."+method+"Minor := $1"))+";\n";
 					} else {
 						str += element.nodeName+stack[0];
 						str += '.'+method+" := "+strval+";\n";
@@ -593,14 +626,14 @@ PascalSerializer.prototype = {
 			}
 			attrType = "";
 		}
-		/*
 		if (element.nodeName === "meta") {
-			str += "Result.Meta["+MetaName+"] := "+MetaContent+";\n";
+			str += "X3D0";
+			str += ".Meta["+MetaName+"] := "+MetaContent+";\n";
 		}
 		if (element.nodeName === "component") {
-			str += "Result.Components["+ComponentName+"] := "+ComponentLevel+";\n";
+			str += "X3D0";
+			str += ".Components["+ComponentName+"] := "+ComponentLevel+";\n";
 		}
-		*/
 		if (element.nodeName === "X3DRoute") {
 			str += parent_name+".AddRoute("+FromNode+"."+FromField+", "+ToNode+"."+ToField+");\n";
 		}
@@ -633,8 +666,10 @@ PascalSerializer.prototype = {
 						// isCastle = "Castle";
 						// params = "(nil)";
 					}
-					ch += node.nodeName+stack[0]+" := T"+isCastle+node.nodeName+isNode+".Create"+params+";\n";
-					this.code.push(node.nodeName+stack[0]+": T"+isCastle+node.nodeName+isNode+";");
+					if ( node.nodeName !== "X3DRoute") {
+						ch += node.nodeName+stack[0]+" := T"+isCastle+node.nodeName+isNode+".Create"+params+";\n";
+						this.code.push(node.nodeName+stack[0]+": T"+isCastle+node.nodeName+isNode+";");
+					}
 				}
 				var bodystr = this.subSerializeToString(node, mapToMethod, fieldTypes, n+1, stack, element.nodeName+stack[1]);
 				ch += bodystr;
