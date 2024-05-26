@@ -27,14 +27,16 @@ PascalSerializer.prototype = {
 		this.preno++;
 		var bodystr = "";
         
-		bodystr += "procedure "+clazz.replace(/.*\//, '')+";\n";
+		bodystr += "function "+clazz.replace(/.*\//, '')+": T"+element.nodeName+"RootNode;\n";
 		bodystr += "var\n";
 		var tailstr = "";
-		this.code.push(element.nodeName+stack[0]+": T" + element.nodeName+"RootNode;");
+		let rootNodeName =element.nodeName+stack[0];
+		this.code.push(rootNodeName+": T" + element.nodeName+"RootNode;");
 		tailstr += "\nbegin\n";
-		tailstr += element.nodeName+stack[0]+" := T"+element.nodeName+"RootNode.Create;\n";
+		tailstr += rootNodeName+" := T"+element.nodeName+"RootNode.Create;\n";
 		// tailstr += "Result := TX3DRootNode.Create('', Reader.BaseUrl);\n";
 		tailstr += this.subSerializeToString(element, mapToMethod, fieldTypes, 3, stack, "");
+		tailstr += "Result := "+rootNodeName+";\n";
 		tailstr += "end;\n";
 
 		str += bodystr;
@@ -501,6 +503,9 @@ PascalSerializer.prototype = {
 						method = "Text";
 					}
 					if (element.nodeName === 'X3D' && attr === "version") {
+						let majorMinor = strval.replace(/'/g, "").split(".");
+						str += "X3D0.ForceVersion.Major := "+majorMinor[0]+";\n";
+						str += "X3D0.ForceVersion.Minor := "+majorMinor[1]+";\n";
 						// DO NOTHING, Not suupported? TODO
 					} else if (element.nodeName === 'meta') {
 						if (attr === "name") {
@@ -702,10 +707,11 @@ PascalSerializer.prototype = {
 							method === ".SetSkin"
 						) {
 							ch += element.nodeName+stack[1]+method+"(["+node.nodeName+stack[0]+"]);\n";
+
 						} else if (
 							method === ".SetSkinCoord"
 						) {
-							ch += "{ "+element.nodeName+stack[1]+method+"("+node.nodeName+stack[0]+"); }\n";
+							ch += element.nodeName+stack[1]+method+"("+node.nodeName+stack[0]+");\n";
 						} else {
 							ch += element.nodeName+stack[1]+"."+method.slice(4)+" := "+node.nodeName+stack[0]+";\n";
 						}
