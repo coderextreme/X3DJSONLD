@@ -32,7 +32,7 @@ xml2json = (xml, par, fieldTypes) => {
 				  attrType.indexOf("Rotation") > 0 ||
 				  attrType.indexOf("Matrix") > 0)
 			 	 ) {
-				  field = [Array.from(field.split(/[, \t\n\r]+/) || []).map(e => parseFloat(e))];
+				  field = Array.from(field.split(/[, \t\n\r]+/) || []).map(e => parseFloat(e));
 			  } else if (typeof attrType !== 'undefined' && (attrType.indexOf("Int32") > 0 || attrType.indexOf("Double") > 0 || attrType.indexOf("Float") > 0)) {
 			  	field = parseFloat(field);
 			  }
@@ -68,5 +68,5 @@ xml2json = (xml, par, fieldTypes) => {
 for (let arg in process.argv) {
 	let str = fs.readFileSync(process.argv[arg]).toString();
 	let doc = domParser.parseFromString (str, 'application/xml');
-	console.log(JSON.stringify(xml2json(doc, null, fieldTypes), null, 0));
+	console.log(JSON.stringify(xml2json(doc, null, fieldTypes), null, 1));
 }
