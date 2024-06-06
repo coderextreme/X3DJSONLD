@@ -25,6 +25,17 @@ xml2json = (xml, par, fieldTypes) => {
 			  let a = el.attributes[anum];
 			  let attrType = fieldTypes[el.nodeName][a.name];
 			  let field = a.value;
+			  if (h.tag === "field" && a.name === "value") {
+	  			  for (let anum2 in el.attributes) {
+					  // console.error(el.attributes[anum2].name);
+					  if (el.attributes[anum2].name === "type") {
+						attrType = el.attributes[anum2].value;
+						console.error(attrType);
+					  } else {
+						// console.error("No type");
+					  }
+				  }
+		  	  }
 			  if (typeof attrType !== 'undefined' && (
 				  (attrType.startsWith("MF") && attrType !== "MFString") ||
 				  attrType.indexOf("Vec") > 0 ||
