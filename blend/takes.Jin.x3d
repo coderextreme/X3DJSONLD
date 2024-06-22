@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "http://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D profile="Immersive" version="4.0"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance"
+     xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-4.0.xsd">
+<head>
+	<component name="HAnim" level="1" />
+	<meta name="creator" content="John Carlson, Joe Williams and Andreas Plesch" />
+	<meta name="source" content="takes.Jin.x3dv" />
+	<meta name="description" content="Create Chaining animation from a JSON file" />
+	<meta name="version" content="3.0" />
+	<meta name="generator-previous" content="Jaminate, V3.0, https://github.com/coderextreme/jaminate/tree/main/Jaminate/app/src/main/resources/takesX3DJSAIL.js" />
+	<meta name="generator" content="tovrmlx3d, https://castle-engine.io/view3dscene.php#section_converting" />
+	<meta name="title" content="takes.Jin.x3dv" />
+	<meta name="translator" content="X3DJSAIL" />
+	<meta name="license" content="https://github.com/coderextreme/jaminate/blob/main/LICENSE" />
+</head>
+<Scene>
+	<WorldInfo
+		title="takes.Jin.x3dv" />
+	<BooleanSequencer DEF="Jin_Pitch010BooleanSequencer"
+		key="0.200000002980232 0.300000011920929 0.400000005960464 0.5 0.600000023841858 0.699999988079071 1.10000002384186 1.20000004768372"
+		keyValue="true false false false false false false false" />
+	<BooleanFilter DEF="Jin_Pitch010SPLITTERBooleanFilter" />
+	<BooleanFilter DEF="Jin_Pitch010FINALEBooleanFilter" />
+	<BooleanFilter DEF="Jin_Pitch010NEGATERBooleanFilter" />
+	<TimeTrigger DEF="Jin_Pitch010OffTimeTrigger" />
+	<TimeTrigger DEF="Jin_Pitch010OnTimeTrigger" />
+	<ROUTE fromNode="Jin_Pitch010BooleanSequencer" fromField="value_changed" toNode="Jin_Pitch010SPLITTERBooleanFilter" toField="set_boolean" />
+	<ROUTE fromNode="Jin_Pitch010SPLITTERBooleanFilter" fromField="inputTrue" toNode="Jin_Pitch010OnTimeTrigger" toField="set_boolean" />
+	<ROUTE fromNode="Jin_Pitch010SPLITTERBooleanFilter" fromField="inputFalse" toNode="Jin_Pitch010OffTimeTrigger" toField="set_boolean" />
+	<BooleanSequencer DEF="Jin_Pitch021BooleanSequencer"
+		key="0.200000002980232 0.300000011920929 0.400000005960464 0.5 0.600000023841858 0.699999988079071 1.10000002384186 1.20000004768372"
+		keyValue="false true false false false false false false" />
+	<BooleanFilter DEF="Jin_Pitch021SPLITTERBooleanFilter" />
+	<BooleanFilter DEF="Jin_Pitch021FINALEBooleanFilter" />
+	<BooleanFilter DEF="Jin_Pitch021NEGATERBooleanFilter" />
+	<TimeTrigger DEF="Jin_Pitch021OffTimeTrigger" />
+	<TimeTrigger DEF="Jin_Pitch021OnTimeTrigger" />
+	<ROUTE fromNode="Jin_Pitch021BooleanSequencer" fromField="value_changed" toNode="Jin_Pitch021SPLITTERBooleanFilter" toField="set_boolean" />
+	<ROUTE fromNode="Jin_Pitch021SPLITTERBooleanFilter" fromField="inputTrue" toNode="Jin_Pitch021OnTimeTrigger" toField="set_boolean" />
+	<ROUTE fromNode="Jin_Pitch021SPLITTERBooleanFilter" fromField="inputFalse" toNode="Jin_Pitch021OffTimeTrigger" toField="set_boolean" />
+	<BooleanSequencer DEF="Jin_Yaw012BooleanSequencer"
+		key="0.200000002980232 0.300000011920929 0.400000005960464 0.5 0.600000023841858 0.699999988079071 1.10000002384186 1.20000004768372"
+		keyValue="false false true false false false false false" />
+	<BooleanFilter DEF="Jin_Yaw012SPLITTERBooleanFilter" />
+	<BooleanFilter DEF="Jin_Yaw012FINALEBooleanFilter" />
+	<BooleanFilter DEF="Jin_Yaw012NEGATERBooleanFilter" />
+	<TimeTrigger DEF="Jin_Yaw012OffTimeTrigger" />
+	<TimeTrigger DEF="Jin_Yaw012OnTimeTrigger" />
+	<ROUTE fromNode="Jin_Yaw012BooleanSequencer" fromField="value_changed" toNode="Jin_Yaw012SPLITTERBooleanFilter" toField="set_boolean" />
+	<ROUTE fromNode="Jin_Yaw012SPLITTERBooleanFilter" fromField="inputTrue" toNode="Jin_Yaw012OnTimeTrigger" toField="set_boolean" />
+	<ROUTE fromNode="Jin_Yaw012SPLITTERBooleanFilter" fromField="inputFalse" toNode="Jin_Yaw012OffTimeTrigger" toField="set_boolean" />
+	<BooleanSequencer DEF="Jin_Yaw023BooleanSequencer"
+		key="0.200000002980232 0.300000011920929 0.400000005960464 0.5 0.600000023841858 0.699999988079071 1.10000002384186 1.20000004768372"
+		keyValue="false false false true false false false false" />
+	<BooleanFilter DEF="Jin_Yaw023SPLITTERBooleanFilter" />
+	<BooleanFilter DEF="Jin_Yaw023FINALEBooleanFilter" />
+	<BooleanFilter DEF="Jin_Yaw023NEGATERBooleanFilter" />
+	<TimeTrigger DEF="Jin_Yaw023OffTimeTrigger" />
+	<TimeTrigger DEF="Jin_Yaw023OnTimeTrigger" />
+	<ROUTE fromNode="Jin_Yaw023BooleanSequencer" fromField="value_changed" toNode="Jin_Yaw023SPLITTERBooleanFilter" toField="set_boolean" />
+	<ROUTE fromNode="Jin_Yaw023SPLITTERBooleanFilter" fromField="inputTrue" toNode="Jin_Yaw023OnTimeTrigger" toField="set_boolean" />
+	<ROUTE fromNode="Jin_Yaw023SPLITTERBooleanFilter" fromField="inputFalse" toNode="Jin_Yaw023OffTimeTrigger" toField="set_boolean" />
+	<BooleanSequencer DEF="Jin_Roll014BooleanSequencer"
+		key="0.200000002980232 0.300000011920929 0.400000005960464 0.5 0.600000023841858 0.699999988079071 1.10000002384186 1.20000004768372"
+		keyValue="false false false false true false false false" />
+	<BooleanFilter DEF="Jin_Roll014SPLITTERBooleanFilter" />
+	<BooleanFilter DEF="Jin_Roll014FINALEBooleanFilter" />
+	<BooleanFilter DEF="Jin_Roll014NEGATERBooleanFilter" />
+	<TimeTrigger DEF="Jin_Roll014OffTimeTrigger" />
+	<TimeTrigger DEF="Jin_Roll014OnTimeTrigger" />
+	<ROUTE fromNode="Jin_Roll014BooleanSequencer" fromField="value_changed" toNode="Jin_Roll014SPLITTERBooleanFilter" toField="set_boolean" />
+	<ROUTE fromNode="Jin_Roll014SPLITTERBooleanFilter" fromField="inputTrue" toNode="Jin_Roll014OnTimeTrigger" toField="set_boolean" />
+	<ROUTE fromNode="Jin_Roll014SPLITTERBooleanFilter" fromField="inputFalse" toNode="Jin_Roll014OffTimeTrigger" toField="set_boolean" />
+	<BooleanSequencer DEF="Jin_Roll025BooleanSequencer"
+		key="0.200000002980232 0.300000011920929 0.400000005960464 0.5 0.600000023841858 0.699999988079071 1.10000002384186 1.20000004768372"
+		keyValue="false false false false false true false false" />
+	<BooleanFilter DEF="Jin_Roll025SPLITTERBooleanFilter" />
+	<BooleanFilter DEF="Jin_Roll025FINALEBooleanFilter" />
+	<BooleanFilter DEF="Jin_Roll025NEGATERBooleanFilter" />
+	<TimeTrigger DEF="Jin_Roll025OffTimeTrigger" />
+	<TimeTrigger DEF="Jin_Roll025OnTimeTrigger" />
+	<ROUTE fromNode="Jin_Roll025BooleanSequencer" fromField="value_changed" toNode="Jin_Roll025SPLITTERBooleanFilter" toField="set_boolean" />
+	<ROUTE fromNode="Jin_Roll025SPLITTERBooleanFilter" fromField="inputTrue" toNode="Jin_Roll025OnTimeTrigger" toField="set_boolean" />
+	<ROUTE fromNode="Jin_Roll025SPLITTERBooleanFilter" fromField="inputFalse" toNode="Jin_Roll025OffTimeTrigger" toField="set_boolean" />
+	<BooleanSequencer DEF="Jin_Kick016BooleanSequencer"
+		key="0.200000002980232 0.300000011920929 0.400000005960464 0.5 0.600000023841858 0.699999988079071 1.10000002384186 1.20000004768372"
+		keyValue="false false false false false false true false" />
+	<BooleanFilter DEF="Jin_Kick016SPLITTERBooleanFilter" />
+	<BooleanFilter DEF="Jin_Kick016FINALEBooleanFilter" />
+	<BooleanFilter DEF="Jin_Kick016NEGATERBooleanFilter" />
+	<TimeTrigger DEF="Jin_Kick016OffTimeTrigger" />
+	<TimeTrigger DEF="Jin_Kick016OnTimeTrigger" />
+	<ROUTE fromNode="Jin_Kick016BooleanSequencer" fromField="value_changed" toNode="Jin_Kick016SPLITTERBooleanFilter" toField="set_boolean" />
+	<ROUTE fromNode="Jin_Kick016SPLITTERBooleanFilter" fromField="inputTrue" toNode="Jin_Kick016OnTimeTrigger" toField="set_boolean" />
+	<ROUTE fromNode="Jin_Kick016SPLITTERBooleanFilter" fromField="inputFalse" toNode="Jin_Kick016OffTimeTrigger" toField="set_boolean" />
+	<BooleanSequencer DEF="Jin_Kick027BooleanSequencer"
+		key="0.200000002980232 0.300000011920929 0.400000005960464 0.5 0.600000023841858 0.699999988079071 1.10000002384186 1.20000004768372"
+		keyValue="false false false false false false false true" />
+	<BooleanFilter DEF="Jin_Kick027SPLITTERBooleanFilter" />
+	<BooleanFilter DEF="Jin_Kick027FINALEBooleanFilter" />
+	<BooleanFilter DEF="Jin_Kick027NEGATERBooleanFilter" />
+	<TimeTrigger DEF="Jin_Kick027OffTimeTrigger" />
+	<TimeTrigger DEF="Jin_Kick027OnTimeTrigger" />
+	<TimeTrigger DEF="Jin_Kick027FINALETimeTrigger" />
+	<ROUTE fromNode="Jin_Kick027FINALEBooleanFilter" fromField="inputFalse" toNode="Jin_Kick027FINALETimeTrigger" toField="set_boolean" />
+	<ROUTE fromNode="Jin_Kick027BooleanSequencer" fromField="value_changed" toNode="Jin_Kick027SPLITTERBooleanFilter" toField="set_boolean" />
+	<ROUTE fromNode="Jin_Kick027SPLITTERBooleanFilter" fromField="inputTrue" toNode="Jin_Kick027OnTimeTrigger" toField="set_boolean" />
+	<ROUTE fromNode="Jin_Kick027SPLITTERBooleanFilter" fromField="inputFalse" toNode="Jin_Kick027OffTimeTrigger" toField="set_boolean" />
+	<ROUTE fromNode="Jin_Pitch010NEGATERBooleanFilter" fromField="inputNegate" toNode="Jin_Pitch010BooleanSequencer" toField="next" />
+	<ROUTE fromNode="Jin_Pitch021NEGATERBooleanFilter" fromField="inputNegate" toNode="Jin_Pitch021BooleanSequencer" toField="next" />
+	<ROUTE fromNode="Jin_Yaw012NEGATERBooleanFilter" fromField="inputNegate" toNode="Jin_Yaw012BooleanSequencer" toField="next" />
+	<ROUTE fromNode="Jin_Yaw023NEGATERBooleanFilter" fromField="inputNegate" toNode="Jin_Yaw023BooleanSequencer" toField="next" />
+	<ROUTE fromNode="Jin_Roll014NEGATERBooleanFilter" fromField="inputNegate" toNode="Jin_Roll014BooleanSequencer" toField="next" />
+	<ROUTE fromNode="Jin_Roll025NEGATERBooleanFilter" fromField="inputNegate" toNode="Jin_Roll025BooleanSequencer" toField="next" />
+	<ROUTE fromNode="Jin_Kick016NEGATERBooleanFilter" fromField="inputNegate" toNode="Jin_Kick016BooleanSequencer" toField="next" />
+	<ROUTE fromNode="Jin_Kick027NEGATERBooleanFilter" fromField="inputNegate" toNode="Jin_Kick027BooleanSequencer" toField="next" />
+</Scene>
+</X3D>

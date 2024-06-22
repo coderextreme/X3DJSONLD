@@ -43,7 +43,6 @@
             </IndexedFaceSet>
           </Shape>
         </Group>
-        <Transform DEF='pointList_TRANSFORM' rotation='0.0 1.0 0.0 0.0' scale='1.0 1.0 1.0' translation='232.535 -127.89001 21.59'/>
       </Transform>
     </Transform>
   </Scene>

@@ -1,0 +1,25 @@
+Jin:
+	Segment Geometry Animation
+	Animation Concatenation version (consider separate animations, especially on output)
+	Export
+Joe:
+	Texture Animation
+	Texture Appearance
+	HAnimDisplacer
+	Export Ball, Circles/Ground
+	Export
+
+Gramps:
+	Old Exporter fixing (mesh vs hanim position)
+	Texture Exports when exporting from X3D import
+	Export
+
+glTF export:
+	Validate X3D gramps model inside Blender (glTF exporter reports issues)
+	Look for another exporter
+
+Flipper:
+	Coordinate Interpolator animation
+
+Skip:
+	Integrate with Gramps
