@@ -47,7 +47,7 @@
             <Material USE='MaterialLightBlue'/>
           </Appearance>
           <Text DEF='TextMessage' string='"Hello" "world!"'>
-            <FontStyle family='"SERIF"' justify='"MIDDLE" "MIDDLE"'/>
+            <FontStyle justify='"MIDDLE" "MIDDLE"'/>
           </Text>
         </Shape>
       </Transform>

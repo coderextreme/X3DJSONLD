@@ -23,11 +23,11 @@
     <meta content='../license.html' name='license'/>
   </head>
   <Scene>
-    <NavigationInfo avatarSize='0.25 1.6 0.75' speed='1.5' transitionType='"LINEAR"' type='"EXAMINE" "ANY"'/>
+    <NavigationInfo speed='1.5'/>
     <Viewpoint centerOfRotation='0 1 0' description='AnnexB01Jin' position='0 1 3'/>
     <HAnimHumanoid DEF='hanim_AnnexB01Jin' name='AnnexB01Jin' info='"humanoidVersion=2.0"' scale='0.0225 0.0225 0.0225' version='2.0'>
-      <HAnimJoint DEF='hanim_HumanoidRoot' name='humanoid_root' containerField='skeleton' center='0 30.53 -0.7076' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
-        <HAnimSegment DEF='hanim_sacrum' name='sacrum' momentsOfInertia='0 0 0 0 0 0 0 0 0'>
+      <HAnimJoint DEF='hanim_HumanoidRoot' name='humanoid_root' containerField='skeleton' center='0 30.53 -0.7076'>
+        <HAnimSegment DEF='hanim_sacrum' name='sacrum'>
           <Transform translation='0 30.53 -0.7076'>
             <Shape>
               <Appearance>
@@ -41,8 +41,8 @@
             </Shape>
           </Transform>
         </HAnimSegment>
-        <HAnimJoint DEF='hanim_sacroiliac' name='sacroiliac' center='0 35.8 -0.7076' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
-          <HAnimSegment DEF='hanim_pelvis' name='pelvis' momentsOfInertia='0 0 0 0 0 0 0 0 0'>
+        <HAnimJoint DEF='hanim_sacroiliac' name='sacroiliac' center='0 35.8 -0.7076'>
+          <HAnimSegment DEF='hanim_pelvis' name='pelvis'>
             <Transform translation='0 35.8 -0.7076'>
               <Shape>
                 <Appearance>
@@ -56,8 +56,8 @@
               </Shape>
             </Transform>
           </HAnimSegment>
-          <HAnimJoint DEF='hanim_l_hip' name='l_hip' center='4.207 32.02 -0.8155' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
-            <HAnimSegment DEF='hanim_l_thigh' name='l_thigh' momentsOfInertia='0 0 0 0 0 0 0 0 0'>
+          <HAnimJoint DEF='hanim_l_hip' name='l_hip' center='4.207 32.02 -0.8155'>
+            <HAnimSegment DEF='hanim_l_thigh' name='l_thigh'>
               <Transform translation='4.207 32.02 -0.8155'>
                 <Shape>
                   <Appearance>
@@ -71,8 +71,8 @@
                 </Shape>
               </Transform>
             </HAnimSegment>
-            <HAnimJoint DEF='hanim_l_knee' name='l_knee' center='4.116 17.26 -0.8639' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
-              <HAnimSegment DEF='hanim_l_calf' name='l_calf' momentsOfInertia='0 0 0 0 0 0 0 0 0'>
+            <HAnimJoint DEF='hanim_l_knee' name='l_knee' center='4.116 17.26 -0.8639'>
+              <HAnimSegment DEF='hanim_l_calf' name='l_calf'>
                 <Transform translation='4.116 17.26 -0.8639'>
                   <Shape>
                     <Appearance>
@@ -86,8 +86,8 @@
                   </Shape>
                 </Transform>
               </HAnimSegment>
-              <HAnimJoint DEF='hanim_l_talocrural' name='l_talocrural' center='3.854 3.939 -0.7038' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
-                <HAnimSegment DEF='hanim_l_hindfoot' name='l_hindfoot' momentsOfInertia='0 0 0 0 0 0 0 0 0'>
+              <HAnimJoint DEF='hanim_l_talocrural' name='l_talocrural' center='3.854 3.939 -0.7038'>
+                <HAnimSegment DEF='hanim_l_hindfoot' name='l_hindfoot'>
                   <Transform translation='3.854 3.939 -0.7038'>
                     <Shape>
                       <Appearance>
@@ -101,8 +101,8 @@
                     </Shape>
                   </Transform>
                 </HAnimSegment>
-                <HAnimJoint DEF='hanim_l_metatarsophalangeal' name='l_metatarsophalangeal' center='3.854 3.64 0.7402' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
-                  <HAnimSegment DEF='hanim_l_middistal' name='l_middistal' momentsOfInertia='0 0 0 0 0 0 0 0 0'>
+                <HAnimJoint DEF='hanim_l_metatarsophalangeal' name='l_metatarsophalangeal' center='3.854 3.64 0.7402'>
+                  <HAnimSegment DEF='hanim_l_middistal' name='l_middistal'>
                     <Transform translation='3.854 3.64 0.7402'>
                       <Shape>
                         <Appearance>
@@ -120,8 +120,8 @@
               </HAnimJoint>
             </HAnimJoint>
           </HAnimJoint>
-          <HAnimJoint DEF='hanim_r_hip' name='r_hip' center='-4.207 32.02 -0.8155' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
-            <HAnimSegment DEF='hanim_r_thigh' name='r_thigh' momentsOfInertia='0 0 0 0 0 0 0 0 0'>
+          <HAnimJoint DEF='hanim_r_hip' name='r_hip' center='-4.207 32.02 -0.8155'>
+            <HAnimSegment DEF='hanim_r_thigh' name='r_thigh'>
               <Transform translation='-4.207 32.02 -0.8155'>
                 <Shape>
                   <Appearance>
@@ -135,8 +135,8 @@
                 </Shape>
               </Transform>
             </HAnimSegment>
-            <HAnimJoint DEF='hanim_r_knee' name='r_knee' center='-4.116 17.26 -0.8639' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
-              <HAnimSegment DEF='hanim_r_calf' name='r_calf' momentsOfInertia='0 0 0 0 0 0 0 0 0'>
+            <HAnimJoint DEF='hanim_r_knee' name='r_knee' center='-4.116 17.26 -0.8639'>
+              <HAnimSegment DEF='hanim_r_calf' name='r_calf'>
                 <Transform translation='-4.116 17.26 -0.8639'>
                   <Shape>
                     <Appearance>
@@ -150,8 +150,8 @@
                   </Shape>
                 </Transform>
               </HAnimSegment>
-              <HAnimJoint DEF='hanim_r_talocrural' name='r_talocrural' center='-3.854 3.939 -0.7038' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
-                <HAnimSegment DEF='hanim_r_hindfoot' name='r_hindfoot' momentsOfInertia='0 0 0 0 0 0 0 0 0'>
+              <HAnimJoint DEF='hanim_r_talocrural' name='r_talocrural' center='-3.854 3.939 -0.7038'>
+                <HAnimSegment DEF='hanim_r_hindfoot' name='r_hindfoot'>
                   <Transform translation='-3.854 3.939 -0.7038'>
                     <Shape>
                       <Appearance>
@@ -165,8 +165,8 @@
                     </Shape>
                   </Transform>
                 </HAnimSegment>
-                <HAnimJoint DEF='hanim_r_metatarsophalangeal' name='r_metatarsophalangeal' center='-3.854 3.64 0.7402' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
-                  <HAnimSegment DEF='hanim_r_middistal' name='r_middistal' momentsOfInertia='0 0 0 0 0 0 0 0 0'>
+                <HAnimJoint DEF='hanim_r_metatarsophalangeal' name='r_metatarsophalangeal' center='-3.854 3.64 0.7402'>
+                  <HAnimSegment DEF='hanim_r_middistal' name='r_middistal'>
                     <Transform translation='-3.854 3.64 0.7402'>
                       <Shape>
                         <Appearance>
@@ -184,8 +184,8 @@
               </HAnimJoint>
             </HAnimJoint>
           </HAnimJoint>
-          <HAnimJoint DEF='hanim_vl5' name='vl5' center='0 40.23 -0.8527' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
-            <HAnimSegment DEF='hanim_l5' name='l5' momentsOfInertia='0 0 0 0 0 0 0 0 0'>
+          <HAnimJoint DEF='hanim_vl5' name='vl5' center='0 40.23 -0.8527'>
+            <HAnimSegment DEF='hanim_l5' name='l5'>
               <Transform translation='0 40.23 -0.8527'>
                 <Shape>
                   <Appearance>
@@ -199,8 +199,8 @@
                 </Shape>
               </Transform>
             </HAnimSegment>
-            <HAnimJoint DEF='hanim_skullbase' name='skullbase' center='0 57.43 -0.6863' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
-              <HAnimSegment DEF='hanim_skull' name='skull' momentsOfInertia='0 0 0 0 0 0 0 0 0'>
+            <HAnimJoint DEF='hanim_skullbase' name='skullbase' center='0 57.43 -0.6863'>
+              <HAnimSegment DEF='hanim_skull' name='skull'>
                 <Transform translation='0 57.43 -0.6863'>
                   <Shape>
                     <Appearance>
@@ -215,8 +215,8 @@
                 </Transform>
               </HAnimSegment>
             </HAnimJoint>
-            <HAnimJoint DEF='hanim_l_shoulder' name='l_shoulder' center='5.975 52 -0.1452' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
-              <HAnimSegment DEF='hanim_l_upperarm' name='l_upperarm' momentsOfInertia='0 0 0 0 0 0 0 0 0'>
+            <HAnimJoint DEF='hanim_l_shoulder' name='l_shoulder' center='5.975 52 -0.1452'>
+              <HAnimSegment DEF='hanim_l_upperarm' name='l_upperarm'>
                 <Transform translation='5.975 52 -0.1452'>
                   <Shape>
                     <Appearance>
@@ -230,8 +230,8 @@
                   </Shape>
                 </Transform>
               </HAnimSegment>
-              <HAnimJoint DEF='hanim_l_elbow' name='l_elbow' center='8.093 40.38 -0.2502' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
-                <HAnimSegment DEF='hanim_l_forearm' name='l_forearm' momentsOfInertia='0 0 0 0 0 0 0 0 0'>
+              <HAnimJoint DEF='hanim_l_elbow' name='l_elbow' center='8.093 40.38 -0.2502'>
+                <HAnimSegment DEF='hanim_l_forearm' name='l_forearm'>
                   <Transform translation='8.093 40.38 -0.2502'>
                     <Shape>
                       <Appearance>
@@ -245,8 +245,8 @@
                     </Shape>
                   </Transform>
                 </HAnimSegment>
-                <HAnimJoint DEF='hanim_l_radiocarpal' name='l_radiocarpal' center='7.808 31.46 -0.05849' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
-                  <HAnimSegment DEF='hanim_l_hand' name='l_hand' momentsOfInertia='0 0 0 0 0 0 0 0 0'>
+                <HAnimJoint DEF='hanim_l_radiocarpal' name='l_radiocarpal' center='7.808 31.46 -0.05849'>
+                  <HAnimSegment DEF='hanim_l_hand' name='l_hand'>
                     <Transform translation='7.808 31.46 -0.05849'>
                       <Shape>
                         <Appearance>
@@ -263,8 +263,8 @@
                 </HAnimJoint>
               </HAnimJoint>
             </HAnimJoint>
-            <HAnimJoint DEF='hanim_r_shoulder' name='r_shoulder' center='-5.975 52 -0.1452' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
-              <HAnimSegment DEF='hanim_r_upperarm' name='r_upperarm' momentsOfInertia='0 0 0 0 0 0 0 0 0'>
+            <HAnimJoint DEF='hanim_r_shoulder' name='r_shoulder' center='-5.975 52 -0.1452'>
+              <HAnimSegment DEF='hanim_r_upperarm' name='r_upperarm'>
                 <Transform translation='-5.975 52 -0.1452'>
                   <Shape>
                     <Appearance>
@@ -278,8 +278,8 @@
                   </Shape>
                 </Transform>
               </HAnimSegment>
-              <HAnimJoint DEF='hanim_r_elbow' name='r_elbow' center='-8.093 40.38 -0.2502' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
-                <HAnimSegment DEF='hanim_r_forearm' name='r_forearm' momentsOfInertia='0 0 0 0 0 0 0 0 0'>
+              <HAnimJoint DEF='hanim_r_elbow' name='r_elbow' center='-8.093 40.38 -0.2502'>
+                <HAnimSegment DEF='hanim_r_forearm' name='r_forearm'>
                   <Transform translation='-8.093 40.38 -0.2502'>
                     <Shape>
                       <Appearance>
@@ -293,8 +293,8 @@
                     </Shape>
                   </Transform>
                 </HAnimSegment>
-                <HAnimJoint DEF='hanim_r_radiocarpal' name='r_radiocarpal' center='-7.808 31.46 -0.05849' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
-                  <HAnimSegment DEF='hanim_r_hand' name='r_hand' momentsOfInertia='0 0 0 0 0 0 0 0 0'>
+                <HAnimJoint DEF='hanim_r_radiocarpal' name='r_radiocarpal' center='-7.808 31.46 -0.05849'>
+                  <HAnimSegment DEF='hanim_r_hand' name='r_hand'>
                     <Transform translation='-7.808 31.46 -0.05849'>
                       <Shape>
                         <Appearance>

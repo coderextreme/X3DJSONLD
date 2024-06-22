@@ -19,7 +19,7 @@
       <Group DEF='GROUND'>
         <Transform DEF='dad_Import_Base'>
           <Group DEF='Import_Base'>
-            <NavigationInfo DEF='NavInfo1' avatarSize='0.25 1.6 0.75' transitionType='"LINEAR"' type='"EXAMINE" "ANY"'/>
+            <NavigationInfo DEF='NavInfo1'/>
             <Transform DEF='dad_Transform5' rotation='0 1 0 1.569'>
               <Group DEF='Transform5'>
                 <Transform DEF='dad_Cover_FACES01_FACES' rotation='0 -0.716 0.698 3.141' scale='0.1097 0.09537 0.09537' scaleOrientation='0.577 -0.577 0.577 2.094' translation='-0.189 1.74359 -0.02274'>

@@ -149,7 +149,7 @@ function set_centerstring(centerstr) {
         <ROUTE fromField='isOver' fromNode='UpTouch' toField='set_enabled' toNode='UpSensor'/>
       </ProtoBody>
     </ProtoDeclare>
-    <NavigationInfo avatarSize='0.25 1.6 0.75' transitionType='"LINEAR"' type='"EXAMINE" "ANY"'/>
+    <NavigationInfo/>
     <Viewpoint description='Process pipes' orientation='1 0 0 -0.4' position='0 5 12'/>
     <Transform translation='0 -2.5 0'>
       <ProtoInstance name='Process'/>

@@ -18,7 +18,7 @@
     <meta content='a sphere' name='description'/>
   </head>
   <Scene>
-    <NavigationInfo avatarSize='0.25 1.6 0.75' transitionType='"LINEAR"' type='"ANY" "EXAMINE" "FLY" "LOOKAT"'/>
+    <NavigationInfo type='"ANY" "EXAMINE" "FLY" "LOOKAT"'/>
     <Viewpoint DEF='Tour' description='Tour Views'/>
     <!-- Viewpoint position='0 0 4' description='sphere in road'/ -->
     <Background backUrl='"../resources/images/bBK.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBK.png"' bottomUrl='"../resources/images/bBT.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBT.png"' frontUrl='"../resources/images/bFR.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bFR.png"' leftUrl='"../resources/images/bLF.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bLF.png"' rightUrl='"../resources/images/bRT.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bRT.png"' topUrl='"../resources/images/bTP.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bTP.png"'/>

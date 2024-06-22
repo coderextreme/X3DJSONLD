@@ -80,7 +80,7 @@
           },
           {
             "@name":"translated",
-            "@content":"29 April 2024"
+            "@content":"22 June 2024"
           },
           {
             "@name":"generator",
@@ -119,8 +119,7 @@
                                 "-texture":
                                   { "PixelTexture":
                                     {
-                                      "@DEF":"RgbOpacityCheckerboard",
-                                      "@image":[2,2,4,-16776961,-65536,-65536,-16776961]
+                                      "@DEF":"RgbOpacityCheckerboard"
                                     }
                                   }
                               }

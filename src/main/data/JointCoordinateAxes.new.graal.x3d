@@ -6,7 +6,7 @@
     <meta content='Mon, 31 Jul 2023 03:48:04 GMT' name='converted'/>
   </head>
   <Scene>
-    <NavigationInfo avatarSize='0.25 1.6 0.75' headlight='false' transitionType='"LINEAR"' type='"EXAMINE" "ANY"'/>
+    <NavigationInfo headlight='false'/>
     <Group>
       <Group DEF='ARROW'>
         <Shape>

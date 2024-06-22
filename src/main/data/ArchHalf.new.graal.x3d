@@ -3,17 +3,18 @@
 <X3D profile='Interchange' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.3.xsd'>
   <head>
     <meta content='ArchHalf.x3d' name='title'/>
-    <meta content='Create a half arch with parameters clearSpanWidth=4; riseHeight=2; depth=3; topAbutmentHeight=0.5; pierWidth=0.5; pierHeight=1. Parameter clearSpanWidth measure refers to a full arc, consider clearSpanWidth/2 for the archHalf width. Modify them with Transform &gt; scale or editing the IndexedFileSet node. See the reference file ArchModelingDiagrams.pdf and the ArchScript_more_readable.js script to find further information.' name='description'/>
+    <meta content='Create a half arch with parameters clearSpanWidth=4; riseHeight=2; depth=3; topAbutmentHeight=0.5; pierWidth=0.5; pierHeight=1. Parameter clearSpanWidth measure refers to a full arc, consider clearSpanWidth/2 for the archHalf width. Modify them with Transform scale or by editing the IndexedFileSet node. See the reference file ArchModelingDiagrams.pdf and the ArchScript_more_readable.js script to find further information.' name='description'/>
     <meta content='Michele Foti, Don Brutzman' name='creator'/>
     <meta content='15 December 2014' name='created'/>
-    <meta content='16 February 2016' name='modified'/>
+    <meta content='20 October 2019' name='modified'/>
     <meta content='ArchModelingDiagrams.pdf' name='reference'/>
     <meta content='https://en.wikipedia.org/wiki/Arch' name='reference'/>
-    <meta content='http://X3dGraphics.com/examples/X3dForAdvancedModeling/Buildings/ArchHalf.x3d' name='identifier'/>
+    <meta content='https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/Buildings/ArchHalf.x3d' name='identifier'/>
     <meta content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' name='generator'/>
     <meta content='../license.html' name='license'/>
   </head>
   <Scene>
+    <WorldInfo title='ArchHalf.x3d'/>
     <Shape DEF='Arch'>
       <!-- note that convex='false' (meaning concave geometry) is crucial for this IFS of a geometric chord to render properly -->
       <Appearance>

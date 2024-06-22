@@ -31,7 +31,7 @@
                 <Material diffuseColor='0 0 1'/>
               </Appearance>
               <Text string='"Node"'>
-                <FontStyle family='"SERIF"' justify='"MIDDLE" "MIDDLE"' size='5.0'/>
+                <FontStyle justify='"MIDDLE" "MIDDLE"' size='5.0'/>
               </Text>
             </Shape>
           </Transform>

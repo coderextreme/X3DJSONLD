@@ -19,44 +19,44 @@
 <Scene><WorldInfo title="HAnimHumanoid skin design patterns for apparel, medical"></WorldInfo>
 <Background skyColor="0 0.6 0.6"></Background>
 <Group DEF="MultipleHumanoids"><MetadataString containerField="metadata" name="HAnimArchitecture" reference="https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/Guidelines.html#MultipleHumanoidsPerFile" value="&quot;E.4 Multiple humanoids per file&quot;"></MetadataString>
-<!--==============================--><HAnimHumanoid name="SimpleSkeleton" DEF="a_SimpleSkeleton" version="2.0"><HAnimJoint name="humanoid_root" containerField="skeleton"><HAnimSegment name="sacrum"><Shape DEF="JointVisualization"></Shape>
+<!--==============================--><HAnimHumanoid name="SimpleSkeleton" DEF="a_SimpleSkeleton" version="2.0"><HAnimJoint name="humanoid_root" ulimit="0 0 0" llimit="0 0 0" containerField="skeleton"><HAnimSegment name="sacrum"><Shape DEF="JointVisualization"></Shape>
 <Shape DEF="SegmentVisualization"></Shape>
 <HAnimSite name="feature01_tip" DEF="a_feature01_tip"><Shape DEF="SiteVisualization"></Shape>
 </HAnimSite>
 </HAnimSegment>
 </HAnimJoint>
 </HAnimHumanoid>
-<!--==============================--><HAnimHumanoid name="SimpleSkeletonMesh" DEF="b_SimpleSkeletonMesh" version="2.0"><HAnimJoint name="humanoid_root" containerField="skeleton"><HAnimSegment name="sacrum"><Shape><IndexedFaceSet DEF="SegmentBoneMesh"></IndexedFaceSet>
+<!--==============================--><HAnimHumanoid name="SimpleSkeletonMesh" DEF="b_SimpleSkeletonMesh" version="2.0"><HAnimJoint name="humanoid_root" ulimit="0 0 0" llimit="0 0 0" containerField="skeleton"><HAnimSegment name="sacrum"><Shape><IndexedFaceSet DEF="SegmentBoneMesh"></IndexedFaceSet>
 </Shape>
 </HAnimSegment>
 </HAnimJoint>
 </HAnimHumanoid>
-<!--==============================--><HAnimHumanoid name="SkinIndexedGeometry" DEF="c_SkinIndexedGeometry" version="2.0"><HAnimJoint name="humanoid_root" containerField="skeleton"><HAnimSegment name="sacrum"></HAnimSegment>
+<!--==============================--><HAnimHumanoid name="SkinIndexedGeometry" DEF="c_SkinIndexedGeometry" version="2.0"><HAnimJoint name="humanoid_root" ulimit="0 0 0" llimit="0 0 0" containerField="skeleton"><HAnimSegment name="sacrum"></HAnimSegment>
 </HAnimJoint>
 <IndexedFaceSet DEF="SkinMeshIFS" containerField="skin"></IndexedFaceSet>
 </HAnimHumanoid>
-<!--==============================--><HAnimHumanoid name="SkinShapeIndexedGeometry" DEF="d_SkinShapeIndexedGeometry" version="2.0"><HAnimJoint name="humanoid_root" containerField="skeleton"><HAnimSegment name="sacrum"></HAnimSegment>
+<!--==============================--><HAnimHumanoid name="SkinShapeIndexedGeometry" DEF="d_SkinShapeIndexedGeometry" version="2.0"><HAnimJoint name="humanoid_root" ulimit="0 0 0" llimit="0 0 0" containerField="skeleton"><HAnimSegment name="sacrum"></HAnimSegment>
 </HAnimJoint>
 <Shape containerField="skin"><IndexedFaceSet USE="SkinMeshIFS"></IndexedFaceSet>
 </Shape>
 </HAnimHumanoid>
-<!--==============================--><HAnimHumanoid name="SkinSwitchShapeIndexedGeometry" DEF="e_SkinSwitchShapeIndexedGeometry" version="2.0"><HAnimJoint name="humanoid_root" containerField="skeleton"><HAnimSegment name="sacrum"></HAnimSegment>
+<!--==============================--><HAnimHumanoid name="SkinSwitchShapeIndexedGeometry" DEF="e_SkinSwitchShapeIndexedGeometry" version="2.0"><HAnimJoint name="humanoid_root" ulimit="0 0 0" llimit="0 0 0" containerField="skeleton"><HAnimSegment name="sacrum"></HAnimSegment>
 </HAnimJoint>
 <!--TODO show X3D4.0 addition of <Switch DEF='AlternativeSkins' containerField='skin'>--><Shape containerField="skin"><IndexedFaceSet DEF="IndexedSkinMeshIFS"><Coordinate DEF="SkinMeshCoordinate"></Coordinate>
 </IndexedFaceSet>
 </Shape>
 </HAnimHumanoid>
-<!--similarly for LOD--><!--==============================--><HAnimHumanoid name="SynthesizedSkinShapeIndexedTwoPartGeometry" DEF="f_SynthesizedSkinShapeIndexedTwoPartGeometry" version="2.0"><HAnimJoint name="humanoid_root" containerField="skeleton"><HAnimSegment name="sacrum"></HAnimSegment>
+<!--similarly for LOD--><!--==============================--><HAnimHumanoid name="SynthesizedSkinShapeIndexedTwoPartGeometry" DEF="f_SynthesizedSkinShapeIndexedTwoPartGeometry" version="2.0"><HAnimJoint name="humanoid_root" ulimit="0 0 0" llimit="0 0 0" containerField="skeleton"><HAnimSegment name="sacrum"></HAnimSegment>
 </HAnimJoint>
 <Shape containerField="skin"><IndexedFaceSet DEF="TwoPartIndexedSkinMesh"><Coordinate DEF="TwoPartSkinMesh"></Coordinate>
 </IndexedFaceSet>
 </Shape>
 </HAnimHumanoid>
-<!--==============================--><HAnimHumanoid name="ApparelSkinIndexedGeometryMultipleShapes" DEF="g_ApparelSkinIndexedGeometryMultipleShapes" version="2.0"><HAnimJoint name="humanoid_root" containerField="skeleton"><HAnimSegment name="sacrum"></HAnimSegment>
+<!--==============================--><HAnimHumanoid name="ApparelSkinIndexedGeometryMultipleShapes" DEF="g_ApparelSkinIndexedGeometryMultipleShapes" version="2.0"><HAnimJoint name="humanoid_root" ulimit="0 0 0" llimit="0 0 0" containerField="skeleton"><HAnimSegment name="sacrum"></HAnimSegment>
 </HAnimJoint>
 <Shape containerField="skin"></Shape>
 <!--allow multiple Shape nodes with containerField='apparel', one for each layer of clothing--><!--TODO proposed for X3D4.1 <Shape containerField='apparel'></Shape>--></HAnimHumanoid>
-<!--==============================--><HAnimHumanoid name="AnatomySkinIndexedGeometryMultipleShapes" DEF="h_AnatomySkinIndexedGeometryMultipleShapes" version="2.0"><HAnimJoint name="humanoid_root" containerField="skeleton"><HAnimSegment name="sacrum"></HAnimSegment>
+<!--==============================--><HAnimHumanoid name="AnatomySkinIndexedGeometryMultipleShapes" DEF="h_AnatomySkinIndexedGeometryMultipleShapes" version="2.0"><HAnimJoint name="humanoid_root" ulimit="0 0 0" llimit="0 0 0" containerField="skeleton"><HAnimSegment name="sacrum"></HAnimSegment>
 </HAnimJoint>
 <!--allow multiple Shape nodes with containerField='skin', one for each layer of skin--><Shape containerField="skin"></Shape>
 </HAnimHumanoid>

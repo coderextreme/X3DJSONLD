@@ -15,7 +15,7 @@
 "@content":"Create a half arch with parameters clearSpanWidth=4; riseHeight=2; depth=3;
 topAbutmentHeight=0.5; pierWidth=0.5; pierHeight=1. Parameter clearSpanWidth measure
 refers to a full arc, consider clearSpanWidth/2 for the archHalf width. Modify them
-with Transform &gt; scale or editing the IndexedFileSet node. See the reference file
+with Transform scale or by editing the IndexedFileSet node. See the reference file
 ArchModelingDiagrams.pdf and the ArchScript_more_readable.js script to find further
 information."
 },
@@ -29,7 +29,7 @@ information."
 },
 {
 "@name":"modified",
-"@content":"16 February 2016"
+"@content":"20 October 2019"
 },
 {
 "@name":"reference",
@@ -41,7 +41,7 @@ information."
 },
 {
 "@name":"identifier",
-"@content":"http://X3dGraphics.com/examples/X3dForAdvancedModeling/Buildings/ArchHalf.x3d"
+"@content":"https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/Buildings/ArchHalf.x3d"
 },
 {
 "@name":"generator",
@@ -53,7 +53,7 @@ information."
 },
 {
 "@name":"translated",
-"@content":"29 April 2024"
+"@content":"22 June 2024"
 },
 {
 "@name":"generator",
@@ -67,6 +67,11 @@ information."
 },
 "Scene": {
 "-children":[
+{ "WorldInfo":
+{
+"@title":"ArchHalf.x3d"
+}
+},
 { "Shape":
 {
 "@DEF":"Arch",
